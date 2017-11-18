@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
 
@@ -353,7 +353,7 @@ Deze stap build wordt uitgevoerd de eenheidstests in het Pester-script dat we ee
     **\Integration\**
     ```
 
-1. Stel **TargetFolder** naar`$(BuildArtifactStagingDirectory)\`
+1. Stel **TargetFolder** naar`$(Build.ArtifactStagingDirectory)\`
 
 Deze stap kopieert de build en test scripts aan de staging-map zodanig dat het kan worden gepubliceerd als artefacten bouwen door de volgende stap.
 

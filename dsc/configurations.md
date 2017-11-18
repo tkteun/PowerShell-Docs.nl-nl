@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-configuraties
-ms.openlocfilehash: 3fdee72d5701433a3903697c5a0a32b112136592
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b0868a276dbf5cdb566ce1f35a96b3372cf49be1
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="dsc-configurations"></a>DSC-configuraties
 
@@ -31,7 +31,6 @@ Configuration MyDscConfiguration {
     }
 } 
 
-MyDscConfiguration 
 ```
 
 Sla het script als een ps1-bestand.
@@ -64,7 +63,6 @@ Configuration MyDscConfiguration {
     }
 }
 
-MyDscConfiguration 
 ```
 
 In dit voorbeeld wordt u de naam van het knooppunt door door te geven als de **ComputerName** parameter wanneer u de configuratieback compileert. De naam van de standaard 'localhost'.
@@ -99,7 +97,7 @@ MyDscConfiguration
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
--a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
+-a----       10/23/2015   4:32 PM           2842 localhost.mof
 ```  
 
 Als de configuratie een parameter, zoals in het tweede voorbeeld moet heeft die worden opgegeven tijdens de compilatie. Ga als volgt die zou als volgt uitzien:
@@ -137,7 +135,6 @@ Configuration DependsOnExample {
     }
 }
 
-DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>Met behulp van nieuwe resources in uw configuratie
