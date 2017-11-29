@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Werken met registersleutels
+title: Met registersleutels werken
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e7c16fe5f03330da3ea8f60b141d9e35eed474b9
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="working-with-registry-keys"></a>Werken met registersleutels
+# <a name="working-with-registry-keys"></a>Met registersleutels werken
 Omdat registersleutels items op Windows PowerShell-stations, lijkt werken met deze erg op werken met bestanden en mappen. Een kritieke verschil is dat elk item op een Windows PowerShell register gebaseerde station een container, net als een map op een bestandssysteemstation. Registervermeldingen en hun gekoppelde waarden zijn echter eigenschappen van de items, geen verschillende items.
 
 ### <a name="listing-all-subkeys-of-a-registry-key"></a>Lijst van alle subsleutels van een registersleutel
@@ -49,7 +49,7 @@ Deze opdrachten alleen de lijst rechtstreeks opgenomen, vergelijkbaar met behulp
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** kunt uitvoeren complexe filtermogelijkheden via de **pad**, **Filter**, **opnemen**, en **uitsluiten** parameters, maar deze parameters doorgaans alleen worden gebaseerd op naam. U kunt uitvoeren complexe filteren op basis van andere eigenschappen van items door de **Where-Object**cmdlet. De volgende opdracht worden alle sleutels binnen HKCU gevonden:\\Software die niet meer dan één subsleutels en hebben exact vier waarden hebben:
+**Get-ChildItem** kunt uitvoeren complexe filtermogelijkheden via de **pad**, **Filter**, **opnemen**, en **uitsluiten** parameters, maar deze parameters doorgaans alleen worden gebaseerd op naam. U kunt uitvoeren complexe filteren op basis van andere eigenschappen van items door de **Where-Object** cmdlet. De volgende opdracht worden alle sleutels binnen HKCU gevonden:\\Software die niet meer dan één subsleutels en hebben exact vier waarden hebben:
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }

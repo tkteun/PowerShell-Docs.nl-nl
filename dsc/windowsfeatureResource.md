@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-WindowsFeature-Resource
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-Resource
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   | 
 |---|---| 
-| Naam| Hiermee geeft u de naam van de rol of functie die u wilt zorgen toegevoegd of verwijderd. Dit is hetzelfde als de __naam__ eigenschap uit de [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, en niet de weergavenaam van de rol of functie.| 
+| Naam| Hiermee geeft u de naam van de rol of functie die u wilt zorgen toegevoegd of verwijderd. Dit is hetzelfde als de __naam__ eigenschap uit de [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, en niet de weergavenaam van de rol of functie.| 
 | referentie| Hiermee geeft u de referenties toevoegen of verwijderen van de rol of functie.| 
 | Zorg ervoor dat| Hiermee wordt aangegeven of de rol of functie is toegevoegd. Om ervoor te zorgen dat de rol of functie is toegevoegd, stel deze eigenschap in op 'Aanwezig' om ervoor te zorgen dat de rol of functie wordt verwijderd, de eigenschap instellen op 'Afwezig'.| 
 | IncludeAllSubFeature| Deze eigenschap instellen op __$true__ om te controleren of de status van alle vereiste subonderdelen met de status van de functie die u met opgeeft de __naam__ eigenschap.| 
