@@ -4,30 +4,30 @@ contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: Opslaan-Module
-ms.openlocfilehash: 296c5c5ffc6f1e12da0162237e562b13b3679110
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="save-module"></a><span data-ttu-id="0d540-103">Opslaan-Module</span><span class="sxs-lookup"><span data-stu-id="0d540-103">Save-Module</span></span>
+# <a name="save-module"></a><span data-ttu-id="99581-103">Opslaan-Module</span><span class="sxs-lookup"><span data-stu-id="99581-103">Save-Module</span></span>
 
-<span data-ttu-id="0d540-104">Hiermee slaat u een module Lokaal zonder het te installeren.</span><span class="sxs-lookup"><span data-stu-id="0d540-104">Saves a module locally without installing it.</span></span>
+<span data-ttu-id="99581-104">Hiermee slaat u een module Lokaal zonder het te installeren.</span><span class="sxs-lookup"><span data-stu-id="99581-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a><span data-ttu-id="0d540-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="0d540-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="99581-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="99581-105">Description</span></span>
 
-<span data-ttu-id="0d540-106">De cmdlet opslaan-Module een module van de opgegeven opslagplaats voor inspectie lokaal opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="0d540-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="0d540-107">De module is niet geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="0d540-107">The module is not installed.</span></span>
+<span data-ttu-id="99581-106">De cmdlet opslaan-Module een module van de opgegeven opslagplaats voor inspectie lokaal opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="99581-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="99581-107">De module is niet geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="99581-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="0d540-108">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="0d540-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="99581-108">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="99581-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="0d540-109">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="0d540-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="99581-109">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="99581-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="0d540-110">Opslaan-Module</span><span class="sxs-lookup"><span data-stu-id="0d540-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="99581-110">Opslaan-Module</span><span class="sxs-lookup"><span data-stu-id="99581-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a><span data-ttu-id="0d540-111">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="0d540-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="99581-111">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="99581-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -53,6 +53,15 @@ Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -
 
 # Save the role capability modules by piping the Find-RoleCapability output to Save-Module cmdlet.
 Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModulesPath
+
+
+# Save a specific prerelease version of a module to C:\MySavedModuleLocation
+Save-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -Path C:\MySavedModuleLocation -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelease
+
+
 
 ```
 
