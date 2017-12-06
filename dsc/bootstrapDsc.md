@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een virtuele machines op de eerste boot-up configureren met behulp van DSC
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >Van toepassing op: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ Zie voor meer informatie over het configureren van nieuwe virtuele machines op d
 
 Voor het uitvoeren van deze voorbeelden, moet u het:
 
-- Een opstartbare VHD werken met. U kunt geen ISO met een evaluatieversie van Windows Server 2016 op downloaden   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). U vindt instructies over het maken van een VHD van een ISO-installatiekopie op [opstartbare virtuele harde schijven maken](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Een opstartbare VHD werken met. U kunt geen ISO met een evaluatieversie van Windows Server 2016 op downloaden [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). U vindt instructies over het maken van een VHD van een ISO-installatiekopie op [opstartbare virtuele harde schijven maken](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - Een hostcomputer waarop Hyper-V is ingeschakeld. Zie voor informatie [overzicht Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 U kunt software-installatie en configuratie van een computer op initiële boot-up automatiseren met behulp van DSC.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Wijzig de naam en dat het bestand verplaatsen naar de juiste locatie op de VHD als `Pending.mof` met behulp van de [Item verplaatsen](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet. Bijvoorbeeld:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Ontkoppelen van de VHD door het aanroepen van de [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) cmdlet. Bijvoorbeeld:
 
@@ -202,6 +202,6 @@ Standaard wordt de waarde van de **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
 
 - [DSC-configuraties](configurations.md)
 - [De registersleutel DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
-- [Configureren van de lokale Configuration Manager (LCM)](metaConfig.md)
+- [De Local Configuration Manager (LCM) configureren](metaConfig.md)
 - [Een DSC web pull-server instellen](pullServer.md)
 
