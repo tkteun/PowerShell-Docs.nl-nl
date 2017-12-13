@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: De lokale Configuration Manager configureren
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De lokale Configuration Manager configureren
 
@@ -73,7 +73,7 @@ De volgende eigenschappen beschikbaar zijn in een **instellingen** blok.
 
 |  Eigenschap  |  Type  |  Beschrijving   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| string| Hiermee geeft u op wat er gebeurt na opnieuw opstarten tijdens de toepassing van een configuratie. De mogelijke waarden zijn __'ContinueConfiguration'__ en __'StopConfiguration'__. <ul><li> __ContinueConfiguration__: blijven toepassen van de huidige configuratie nadat de computer opnieuw is opgestart. Dit is de standaard falue</li><li>__StopConfiguration__: stoppen van de huidige configuratie nadat de computer opnieuw is opgestart.</li></ul>|
+| ActionAfterReboot| string| Hiermee geeft u op wat er gebeurt na opnieuw opstarten tijdens de toepassing van een configuratie. De mogelijke waarden zijn __'ContinueConfiguration'__ en __'StopConfiguration'__. <ul><li> __ContinueConfiguration__: blijven toepassen van de huidige configuratie nadat de computer opnieuw is opgestart. Dit is de standaardwaarde</li><li>__StopConfiguration__: stoppen van de huidige configuratie nadat de computer opnieuw is opgestart.</li></ul>|
 | AllowModuleOverwrite| BOOL| __$TRUE__ nieuwe configuraties die zijn gedownload van de pull-service zijn niet toegestaan als de oude versie in het doelknooppunt te overschrijven. Anders wordt $FALSE.|
 | CertificateID| string| De vingerafdruk van een certificaat gebruikt voor het beveiligen van referenties die zijn doorgegeven in een configuratie. Zie voor meer informatie [wilt beveiligen van referenties in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Opmerking:__ dit wordt automatisch beheerd als Azure Automation DSC-pull-service.|
 | ConfigurationDownloadManagers| CimInstance]| Verouderd. Gebruik __ConfigurationRepositoryWeb__ en __ConfigurationRepositoryShare__ blokken definiëren configuratie pull service-eindpunten.|
