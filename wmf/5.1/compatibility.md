@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: Compatibiliteit met WMF 5.1 besturingssystemen
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>Compatibiliteit met WMF 5.1 besturingssystemen #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 Over ' wordt geleverd-box * ": de functies van WMF 5.0 zijn opgenomen in de oorspronkelijke Windows 10 RTM-versie.
 De functies van WMF 5.1 zijn opgenomen in Windows Server 2016 en Windows 10 Verjaardag Edition. WMF 5.1 is niet van toepassing op deze besturingssysteemversies werken, zoals de updates worden geleverd via Windows Update.
 
+
+Er is alleen Houd er rekening mee dat WMF niet wordt geleverd bij Windows. WMF is een upgradepakket dat voorziet in een set van Windows-onderdelen voor eerder uitgebrachte versies van Windows. Hierdoor kan een belangrijk verschil wanneer hulp voor elk van deze functies, als de versie van deze onderdelen inroept niet overeenkomt met wat in het oorspronkelijke besturingssysteem verzonden.
 
