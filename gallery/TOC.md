@@ -39,6 +39,7 @@
 ### [Publiceren](psget/module/psget_publish-module.md)
 ### [Modules met PSEditions](psget/module/modulewithpseditionsupport.md)
 ### [Modules die instemming met licentie vereisen](psget/module/RequireLicenseAcceptance.md)
+### [Voorlopige versies](psget/module/PreReleaseModule.md)
 ### [Probleemoplossing](psget/psget_cmdlets_troubleshooting.md)
 
 ## Script
@@ -54,7 +55,7 @@
 ### [Publiceren](psget/script/psget_publish-script.md)
 ### [Scripts met PSEditions](psget/script/scriptwithpseditionsupport.md)
 ### [Acceptatie van de licentie vereisen voor scripts](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Voorlopige versies](psget/script/PreReleaseScript.md)
 ## Beheer van opslagplaats
 ### [NuGet-provider en NuGet.exe opstarten](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Opslagplaats registreren](psget/repository/psget_register-psrepository.md)
