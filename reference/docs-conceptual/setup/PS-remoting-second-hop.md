@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Maken van de tweede hop in PowerShell voor externe toegang
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Maken van de tweede hop in PowerShell voor externe toegang
 
@@ -256,12 +256,12 @@ U kunt doorgeven referenties binnen de **ScriptBlock** parameter van een aanroep
 - Is geen speciale configuratie vereist.
 - Werkt op elke server waarop WMF 2.0 of hoger wordt uitgevoerd.
 
-## <a name="cons"></a>Nadelen
+### <a name="cons"></a>Nadelen
 
 - Vereist een techniek onhandige code.
 - Als WMF 2.0 wordt uitgevoerd, moet andere syntaxis voor het doorgeven van de argumenten voor een externe sessie.
 
-## <a name="example"></a>Voorbeeld
+### <a name="example"></a>Voorbeeld
 
 Het volgende voorbeeld ziet u hoe u kunt doorgeven van referenties in een **Invoke-Command** scriptblok:
 
@@ -277,7 +277,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 ## <a name="see-also"></a>Zie ook
 
-[Beveiligingsoverwegingen voor externe communicatie van PowerShell](WinRMSecurity.md)
+[Beveiligingsoverwegingen bij externe communicatie met PowerShell](WinRMSecurity.md)
 
 
 
