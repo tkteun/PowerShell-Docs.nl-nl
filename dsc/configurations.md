@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-configuraties
-ms.openlocfilehash: c0cf0e7aa1d18898c50a0662e4fc76ab02932f08
-ms.sourcegitcommit: 7bb75bfb8d12aaa6b6071dcb2ca639d4ecceef26
+ms.openlocfilehash: eeee18e6a4bd09cc22d1ac4ed5cbfaea02346170
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="dsc-configurations"></a>DSC-configuraties
 
@@ -67,7 +67,7 @@ MyDscConfiguration
 
 ```
 
-In dit voorbeeld wordt u de naam van het knooppunt door door te geven als de **ComputerName** parameter wanneer u de configuratieback compileert. De naam van de standaard 'localhost'.
+In dit voorbeeld wordt u de naam van het knooppunt door door te geven als de **ComputerName** parameter door bij het compileren van de configuratie. De naam van de standaard 'localhost'.
 
 ## <a name="compiling-the-configuration"></a>De configuratie compileren
 

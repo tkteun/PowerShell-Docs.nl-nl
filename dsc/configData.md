@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met behulp van configuratiegegevens
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Met behulp van de configuratiegegevens in DSC
 
@@ -153,7 +153,7 @@ U kunt bijvoorbeeld een bestand met de naam maken `MyData.psd1` met de volgende 
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>Een configuratie met configuratiegegevens compileren
 
-Samengesteld op basis van een configuratie waarvoor u configuratiegegevens hebt gedefinieerd, u geeft de cofiguration gegevens als de waarde van de **ConfigurationData** parameter.
+Samengesteld op basis van een configuratie waarvoor u configuratiegegevens hebt gedefinieerd, geeft u de configuratiegegevens als de waarde van de **ConfigurationData** parameter.
 
 Hiermee maakt u een MOF-bestand voor elk item in de **AllNodes** matrix.
 Elke MOF-bestand worden benoemd met de `NodeName` eigenschap van de bijbehorende matrixvermelding.
@@ -187,7 +187,7 @@ DSC biedt drie speciale variabelen die kunnen worden gebruikt in een configurati
 ## <a name="using-non-node-data"></a>Met behulp van de gegevens niet-knooppunt
 
 Als er in de eerdere voorbeelden hebt gezien de **ConfigurationData** hashtabel kan een of meer sleutels naast de vereiste hebben **AllNodes** sleutel.
-In de voorbeelden in dit onderwerp, hebben we slechts één addiontal knooppunt gebruikt en met de naam `NonNodeData`. U kunt echter een willekeurig aantal addiontal sleutels definiëren, en elke gewenste naam.
+In de voorbeelden in dit onderwerp, hebben we slechts één extra knooppunt gebruikt en met de naam `NonNodeData`. U kunt echter een aantal aanvullende sleutels opgeven en elke gewenste naam.
 
 Zie voor een voorbeeld van het gebruik van niet-knooppuntgegevens [scheiden van gegevens en de omgeving](separatingEnvData.md).
 
