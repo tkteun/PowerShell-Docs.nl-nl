@@ -1,27 +1,39 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Externe opdrachten uit te voeren
+title: Externe opdrachten uitvoeren
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="running-remote-commands"></a>Externe opdrachten uit te voeren
+# <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
+
 U kunt de opdrachten uitvoeren op een of honderden computers met een enkele Windows PowerShell-opdracht. Windows PowerShell biedt ondersteuning voor externe verwerking met behulp van verschillende technologieën, zoals WMI, RPC en WS-Management.
+
+## <a name="remoting-in-powershell-core"></a>Externe toegang in PowerShell-kern
+
+PowerShell-Core, de nieuwere versie van PowerShell op Windows-, Mac OS- en Linux, WMI, ondersteunt WS-Management en SSH voor externe toegang.
+(RPC wordt niet langer ondersteund.)
+
+Zie voor meer informatie op om in te stellen:
+
+* [SSH Remoting in PowerShell Core] [de ssh-remoting]
+* [WinRM Remoting in PowerShell Core] [winrm remoting]
 
 ## <a name="remoting-without-configuration"></a>Externe toegang zonder configuratie
 Veel Windows PowerShell-cmdlets hebben de parameter ComputerName waarmee u kunt het verzamelen van gegevens en instellingen op een of meer externe computers wijzigen. Ze verschillende technologieën voor communicatie en veel werk op alle Windows-besturingssystemen die ondersteuning biedt zonder speciale configuratie voor Windows PowerShell gebruiken.
 
 Deze cmdlets zijn onder andere:
+
 * [Computer opnieuw opstarten](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Verbinding testen](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Schakel EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-gebeurtenislogboek](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Trouble
 - [Nieuwe-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan-Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
