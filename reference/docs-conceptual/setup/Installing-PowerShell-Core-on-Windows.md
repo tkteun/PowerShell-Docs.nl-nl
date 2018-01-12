@@ -2,10 +2,10 @@
 
 ## <a name="msi"></a>MSI
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1 Server 2008 R2 en hoger), downloaden uit het MSI-pakket
-<!-- TODO: either the Download Center or -->
-onze GitHub [releases][] pagina.
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1 Server 2008 R2 en hoger), het downloaden van het MSI-pakket van onze GitHub [releases][] pagina.
+
 Het MSI-bestand ziet er zo-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+<!-- TODO: should be updated to point to the Download Center as well -->
 
 Zodra u hebt gedownload, dubbelklikt u op het installatieprogramma en volg de aanwijzingen.
 

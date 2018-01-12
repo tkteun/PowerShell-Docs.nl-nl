@@ -224,7 +224,7 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
   - `PSEdition`: Dit is ingesteld op `Core` op PowerShell Core en `Desktop` op Windows PowerShell
   - `GitCommitId`: Dit is de Git commit-ID van de Git-vertakking of code waarbij PowerShell is opgebouwd.
     Uitgebrachte builds voor waarschijnlijk moeten hetzelfde zijn als `PSVersion`.
-  - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door`[System.Environment]::OSVersion.VersionString`
+  - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` is ingesteld op `Win32NT` op Windows, `MacOSX` op Mac OS, en `Unix` op Linux.
 - Verwijderd de `BuildVersion` eigenschap uit `$PSVersionTable`.
   Deze eigenschap is sterk gekoppeld aan de build-versie van Windows.
