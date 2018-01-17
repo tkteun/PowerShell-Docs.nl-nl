@@ -1,29 +1,28 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een DSC-resource in C# ontwerpen
-ms.openlocfilehash: c1dc97d4e05499d03450d6172d9674b06a674393
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="0cb9f-103">Een DSC-resource in C# ontwerpen</span><span class="sxs-lookup"><span data-stu-id="0cb9f-103">Authoring a DSC resource in C#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="ee167-103">Een DSC-resource in C# ontwerpen</span><span class="sxs-lookup"><span data-stu-id="ee167-103">Authoring a DSC resource in C#</span></span>
 
-> <span data-ttu-id="0cb9f-104">Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="0cb9f-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="ee167-104">Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ee167-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="0cb9f-105">Normaal gesproken is een aangepaste bron van Windows PowerShell Desired State Configuration (DSC) geïmplementeerd in een PowerShell-script.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="0cb9f-106">U kunt echter ook de functionaliteit van een aangepaste DSC-resource implementeren met de cmdlets in C# schrijven.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="0cb9f-107">Zie voor een inleiding op cmdlets in C# schrijven [schrijven van een Windows PowerShell-Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="0cb9f-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span></span>
+<span data-ttu-id="ee167-105">Normaal gesproken is een aangepaste bron van Windows PowerShell Desired State Configuration (DSC) geïmplementeerd in een PowerShell-script.</span><span class="sxs-lookup"><span data-stu-id="ee167-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="ee167-106">U kunt echter ook de functionaliteit van een aangepaste DSC-resource implementeren met de cmdlets in C# schrijven.</span><span class="sxs-lookup"><span data-stu-id="ee167-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="ee167-107">Zie voor een inleiding op cmdlets in C# schrijven [schrijven van een Windows PowerShell-Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="ee167-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span></span>
 
-<span data-ttu-id="0cb9f-108">Het proces van het maken van het MOF-schema, de mapstructuur maken, importeren en met behulp van uw aangepaste DSC-resource zijn niet alleen uit voor informatie over het implementeren van de resource in C# als cmdlets hetzelfde zoals beschreven in [schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="0cb9f-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="ee167-108">Het proces van het maken van het MOF-schema, de mapstructuur maken, importeren en met behulp van uw aangepaste DSC-resource zijn niet alleen uit voor informatie over het implementeren van de resource in C# als cmdlets hetzelfde zoals beschreven in [schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="ee167-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="0cb9f-109">Schrijven van een resource op basis van een cmdlet</span><span class="sxs-lookup"><span data-stu-id="0cb9f-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="0cb9f-110">In dit voorbeeld implementeert we een eenvoudige resource die u een tekstbestand en de inhoud ervan beheert.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="ee167-109">Schrijven van een resource op basis van een cmdlet</span><span class="sxs-lookup"><span data-stu-id="ee167-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="ee167-110">In dit voorbeeld implementeert we een eenvoudige resource die u een tekstbestand en de inhoud ervan beheert.</span><span class="sxs-lookup"><span data-stu-id="ee167-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="0cb9f-111">Schrijven van het MOF-schema</span><span class="sxs-lookup"><span data-stu-id="0cb9f-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="ee167-111">Schrijven van het MOF-schema</span><span class="sxs-lookup"><span data-stu-id="ee167-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="0cb9f-112">Hieronder volgt de MOF resourcedefinitie.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="ee167-112">Hieronder volgt de MOF resourcedefinitie.</span><span class="sxs-lookup"><span data-stu-id="ee167-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -35,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="0cb9f-113">Instellen van de Visual Studio-project</span><span class="sxs-lookup"><span data-stu-id="0cb9f-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="0cb9f-114">Instellen van een cmdlet-project</span><span class="sxs-lookup"><span data-stu-id="0cb9f-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="ee167-113">Instellen van de Visual Studio-project</span><span class="sxs-lookup"><span data-stu-id="ee167-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="ee167-114">Instellen van een cmdlet-project</span><span class="sxs-lookup"><span data-stu-id="ee167-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="0cb9f-115">Visual Studio niet openen.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="0cb9f-116">Maak een C#-project en geef de naam op.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="0cb9f-117">Selecteer **Class Library** uit de beschikbare sjablonen.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="0cb9f-118">Klik op **Ok**.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="0cb9f-119">Een assembly-verwijzing naar System.Automation.Management.dll toevoegen aan uw project.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="0cb9f-120">De assemblynaam overeenkomt met de naam van de resource wijzigen.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="0cb9f-121">In dit geval de assembly moet worden met de naam **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="ee167-115">Open Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ee167-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="ee167-116">Maak een C#-project en geef de naam op.</span><span class="sxs-lookup"><span data-stu-id="ee167-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="ee167-117">Selecteer **Class Library** uit de beschikbare sjablonen.</span><span class="sxs-lookup"><span data-stu-id="ee167-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="ee167-118">Klik op **Ok**.</span><span class="sxs-lookup"><span data-stu-id="ee167-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="ee167-119">Een assembly-verwijzing naar System.Automation.Management.dll toevoegen aan uw project.</span><span class="sxs-lookup"><span data-stu-id="ee167-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="ee167-120">De assemblynaam overeenkomt met de naam van de resource wijzigen.</span><span class="sxs-lookup"><span data-stu-id="ee167-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="ee167-121">In dit geval de assembly moet worden met de naam **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="ee167-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="0cb9f-122">De cmdlet-code schrijven</span><span class="sxs-lookup"><span data-stu-id="0cb9f-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="ee167-122">De cmdlet-code schrijven</span><span class="sxs-lookup"><span data-stu-id="ee167-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="0cb9f-123">De volgende C#-code implementeert de **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource** cmdlets.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="ee167-123">De volgende C#-code implementeert de **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource** cmdlets.</span><span class="sxs-lookup"><span data-stu-id="ee167-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -263,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="0cb9f-124">De resource implementeren</span><span class="sxs-lookup"><span data-stu-id="0cb9f-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="ee167-124">De resource implementeren</span><span class="sxs-lookup"><span data-stu-id="ee167-124">Deploying the resource</span></span>
 
-<span data-ttu-id="0cb9f-125">De gecompileerde dll-bestand moet worden opgeslagen in een bestandsstructuur die vergelijkbaar is met een resource op basis van scripts.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="0cb9f-126">Hieronder vindt u de mapstructuur voor deze bron.</span><span class="sxs-lookup"><span data-stu-id="0cb9f-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="ee167-125">De gecompileerde dll-bestand moet worden opgeslagen in een bestandsstructuur die vergelijkbaar is met een resource op basis van scripts.</span><span class="sxs-lookup"><span data-stu-id="ee167-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="ee167-126">Hieronder vindt u de mapstructuur voor deze bron.</span><span class="sxs-lookup"><span data-stu-id="ee167-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -278,9 +277,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="0cb9f-127">Zie ook</span><span class="sxs-lookup"><span data-stu-id="0cb9f-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="0cb9f-128">Concepten</span><span class="sxs-lookup"><span data-stu-id="0cb9f-128">Concepts</span></span>
-[<span data-ttu-id="0cb9f-129">Schrijven van een aangepaste DSC-resource met MOF</span><span class="sxs-lookup"><span data-stu-id="0cb9f-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="0cb9f-130">Andere bronnen</span><span class="sxs-lookup"><span data-stu-id="0cb9f-130">Other Resources</span></span>
-[<span data-ttu-id="0cb9f-131">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="0cb9f-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+### <a name="see-also"></a><span data-ttu-id="ee167-127">Zie ook</span><span class="sxs-lookup"><span data-stu-id="ee167-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="ee167-128">Concepten</span><span class="sxs-lookup"><span data-stu-id="ee167-128">Concepts</span></span>
+[<span data-ttu-id="ee167-129">Schrijven van een aangepaste DSC-resource met MOF</span><span class="sxs-lookup"><span data-stu-id="ee167-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="ee167-130">Andere bronnen</span><span class="sxs-lookup"><span data-stu-id="ee167-130">Other Resources</span></span>
+[<span data-ttu-id="ee167-131">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="ee167-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

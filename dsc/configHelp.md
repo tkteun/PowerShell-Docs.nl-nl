@@ -1,22 +1,21 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Schrijven van help voor DSC-configuraties
-ms.openlocfilehash: bcf5c4b1af3cfd8d2e6376c1b7344c7babcaba9a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c868fa0565baff833423db090a5d62824ab4cad8
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="5e079-103">Schrijven van help voor DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="5e079-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="9574d-103">Schrijven van help voor DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="9574d-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="5e079-104">Van toepassing op: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="5e079-104">Applies To: Windows Windows PowerShell 5.0</span></span>
+><span data-ttu-id="9574d-104">Van toepassing op: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="9574d-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="5e079-105">U kunt de help op basis van een opmerking in DSC-configuraties.</span><span class="sxs-lookup"><span data-stu-id="5e079-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="5e079-106">Gebruikers hebben toegang tot de help door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5e079-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="5e079-107">Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="5e079-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
+<span data-ttu-id="9574d-105">U kunt de help op basis van een opmerking in DSC-configuraties.</span><span class="sxs-lookup"><span data-stu-id="9574d-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="9574d-106">Gebruikers hebben toegang tot de help door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9574d-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="9574d-107">Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="9574d-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
 
-<span data-ttu-id="5e079-108">Het volgende voorbeeld ziet u een script dat een configuratie en help op basis van een opmerking voor bevat:</span><span class="sxs-lookup"><span data-stu-id="5e079-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
+<span data-ttu-id="9574d-108">Het volgende voorbeeld ziet u een script dat een configuratie en help op basis van een opmerking voor bevat:</span><span class="sxs-lookup"><span data-stu-id="9574d-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -60,9 +59,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="5e079-109">Configuratie help weergeven</span><span class="sxs-lookup"><span data-stu-id="5e079-109">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="9574d-109">Configuratie help weergeven</span><span class="sxs-lookup"><span data-stu-id="9574d-109">Viewing configuration help</span></span>
 
-<span data-ttu-id="5e079-110">Als u wilt weergeven in de help voor een configuratie, gebruiken de **Get-Help** cmdlet met de naam van de functie of type de naam van de functie gevolgd door `-?`.</span><span class="sxs-lookup"><span data-stu-id="5e079-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="5e079-111">Hieronder ziet u de uitvoer van de vorige functie wanneer doorgegeven aan **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="5e079-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
+<span data-ttu-id="9574d-110">Als u wilt weergeven in de help voor een configuratie, gebruiken de **Get-Help** cmdlet met de naam van de functie of type de naam van de functie gevolgd door `-?`.</span><span class="sxs-lookup"><span data-stu-id="9574d-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="9574d-111">Hieronder ziet u de uitvoer van de vorige functie wanneer doorgegeven aan **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="9574d-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -91,6 +90,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a><span data-ttu-id="5e079-112">Zie ook</span><span class="sxs-lookup"><span data-stu-id="5e079-112">See Also</span></span>
-* [<span data-ttu-id="5e079-113">DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="5e079-113">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="9574d-112">Zie ook</span><span class="sxs-lookup"><span data-stu-id="9574d-112">See Also</span></span>
+* [<span data-ttu-id="9574d-113">DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="9574d-113">DSC Configurations</span></span>](configurations.md)
 
