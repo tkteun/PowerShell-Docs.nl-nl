@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: pswawebapplication installeren
 ms.technology: powershell
-ms.openlocfilehash: a608a6272d3eae56ccf808b9d94525ca39df50cb
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
-## <a name="synopsis"></a>SAMENVATTING
+## <a name="synopsis"></a>SYNOPSIS
 
 Hiermee configureert u de Windows PowerShell® Web Access-webtoepassing in IIS.
 
@@ -46,7 +44,7 @@ Geeft aan dat een testcertificaat is gemaakt. Als deze parameter is ingesteld op
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;tekenreeks&gt;
+### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
 
 Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel van de Windows PowerShell Web Access-URL.
 
@@ -59,7 +57,7 @@ Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel 
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-websitenameltstringgt"></a>-Websitenaam&lt;tekenreeks&gt;
+### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
 
 Hiermee geeft u de naam van de webserver (IIS) website waarop u deze webtoepassing Windows PowerShell-webtoegang installeren.
 
@@ -106,7 +104,7 @@ Zie voor meer informatie [about_CommonParameters](http://go.microsoft.com/fwlink
 
 Deze cmdlet heeft geen invoer.
 
-## <a name="outputs"></a>UITVOER
+## <a name="outputs"></a>OUTPUTS
 
 Deze cmdlet produceert geen uitvoer.
 

@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: pswaauthorizationrule verwijderen
 ms.technology: powershell
-ms.openlocfilehash: a8304b68a446de0be98aa732304c71302fb8389e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SAMENVATTING
+## <a name="synopsis"></a>SYNOPSIS
 
 Verwijdert een opgegeven autorisatieregel uit de Windows PowerShell® Web Access.
 
@@ -116,7 +114,7 @@ Deze cmdlet accepteert een matrix van gehele getallen of een matrix met objecten
 
 Deze cmdlet accepteert een matrix van gehele getallen of een matrix met objecten PswaAuthorizationRule.
 
-## <a name="outputs"></a>UITVOER
+## <a name="outputs"></a>OUTPUTS
 
 Deze cmdlet produceert geen uitvoer.
 

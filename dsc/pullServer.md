@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een DSC web pull-server instellen
-ms.openlocfilehash: 03d4d148c87854b146091aa0e8d815b8c35def72
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 9a09804ef0efe3e4c92923910884710187d44ac5
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>Een DSC web pull-server instellen
 
@@ -21,7 +20,7 @@ Vereisten voor het gebruik van een pull-server:
 * Een server met:
   - WMF/PowerShell 5.0 of hoger
   - IIS-serverrol
-  - DSC-Service
+  - DSC Service
 * In het ideale geval sommige betekent dat voor het genereren van een certificaat voor het beveiligen van referenties die zijn doorgegeven aan de lokale Configuration Manager (LCM) op de doelknooppunten
 
 U kunt de IIS-serverrol en DSC-Service toevoegen met de wizard functies en onderdelen toevoegen in Serverbeheer of met behulp van PowerShell. De voorbeeldscripts opgenomen in dit onderwerp wordt afgehandeld beide stappen u ook.
@@ -183,6 +182,6 @@ De volgende onderwerpen wordt instellen van de pull-clients in detail beschreven
 
 ## <a name="see-also"></a>Zie ook
 * [Windows PowerShell Desired State Configuration-overzicht](overview.md)
-* [Configuraties vast te stellen](enactingConfigurations.md)
-* [Met behulp van een DSC-rapportserver](reportServer.md)
+* [Configuraties doorvoeren](enactingConfigurations.md)
+* [Een DSC-rapportserver gebruiken](reportServer.md)
 

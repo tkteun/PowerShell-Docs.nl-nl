@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxFile Resource
-ms.openlocfilehash: 14f1ae31a8409b8874d76a91b8b29595e30fbb46
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e4916414e4de29ab15d9c82c492671ebc16d5412
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile Resource
 
@@ -40,8 +39,8 @@ nxFile <string> #ResourceName
 
 |  Eigenschap |  Beschrijving | 
 |---|---|
-| Doelpad| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.| 
-| Bronpad| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.| 
+| DestinationPath| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.| 
+| SourcePath| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.| 
 | Zorg ervoor dat| Bepaalt of Controleer of het bestand bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het bestand bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het bestand bestaat niet. De standaardwaarde is 'Aanwezig'.| 
 | Type| Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'map' om aan te geven dat de resource een map is. Stel deze in op 'file' om aan te geven dat de resource een bestand is. De standaardwaarde is "bestand"| 
 | Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.| 

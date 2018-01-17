@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-gebruikersbron
-ms.openlocfilehash: a4e4e8af4fcfe5c997c460613174d8583261dedf
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 #<a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource #
 
@@ -44,7 +43,7 @@ User [string] #ResourceName
 | Beschrijving| Hiermee geeft u de beschrijving die u wilt gebruiken voor het gebruikersaccount.| 
 | Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op __$false__ om ervoor te zorgen dat deze is ingeschakeld.| 
 | Zorg ervoor dat| Hiermee wordt aangegeven of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.| 
-| Volledige naam| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.| 
+| FullName| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.| 
 | Wachtwoord| Geeft het wachtwoord dat u wilt gebruiken voor dit account. | 
 | PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op __$false__ zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is __$false__.| 
 | PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker bij de volgende aanmelding in het wachtwoord moet wijzigen. Deze eigenschap instellen op __$true__ als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is __$true__.| 

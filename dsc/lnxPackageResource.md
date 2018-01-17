@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxPackage Resource
-ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 41c627ebb39dad535f7acc8fe34739355f7a81b5
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC voor Linux nxPackage Resource
 
@@ -38,7 +37,7 @@ nxPackage <string> #ResourceName
 | Naam| De naam van het pakket waarvan u wilt om te controleren of een specifieke status.| 
 | Zorg ervoor dat| Bepaalt of Controleer of het pakket bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het pakket bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het pakket bestaat niet. De standaardwaarde is 'Aanwezig'.|  
 | PackageManager| Ondersteunde waarden zijn 'yum', 'apt' en 'zypper'. Hiermee geeft u de package manager te gebruiken bij het installeren van pakketten. Als **FilePath** is opgegeven, wordt het opgegeven pad wordt gebruikt om het pakket te installeren. Een Package Manager anders wordt gebruikt voor het installeren van het pakket van een vooraf geconfigureerde opslagplaats. Als geen van beide **PackageManager** noch **FilePath** zijn opgegeven, de standaard package manager voor het systeem wordt gebruikt.| 
-| filePath| Het pad waar het pakket zich bevindt| 
+| FilePath| Het pad waar het pakket zich bevindt| 
 | PackageGroup| Als **$true**, wordt de **naam** wordt verwacht dat de naam van de groep van een pakket voor gebruik met een **PackageManager**. **PacakgeGroup** is niet geldig bij het opgeven van een **FilePath**.| 
 | Argumenten| Een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies zoals opgegeven.| 
 | ReturnCode| De verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde opgegeven, dat wordt de configuratie een fout geretourneerd.| 

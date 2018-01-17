@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met behulp van een DSC-rapportserver
-ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-a-dsc-report-server"></a>Met behulp van een DSC-rapportserver
 
@@ -222,5 +221,5 @@ Houd er rekening mee dat deze voorbeelden zijn bedoeld om een beeld van wat u me
 ## <a name="see-also"></a>Zie ook
 - [De lokale Configuration Manager configureren](metaConfig.md)
 - [Een DSC web pull-server instellen](pullServer.md)
-- [Een pull-client met behulp van configuratienamen instellen](pullClientConfigNames.md)
+- [Een pull-client instellen met behulp van configuratienamen](pullClientConfigNames.md)
 

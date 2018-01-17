@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: pswaauthorizationrule ophalen
 ms.technology: powershell
-ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SAMENVATTING
+## <a name="synopsis"></a>SYNOPSIS
 
 Retourneert een set met autorisatieregels van de Windows PowerShell® Web Access.
 
@@ -52,7 +50,7 @@ Hiermee geeft u de id's van de regels die deze cmdlet moet ontvangen. Als er gee
 | Pijplijn-invoer accepteren?               | True (ByValue, ByPropertyName)       |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;tekenreeks\[\]&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;String\[\]&gt;
 
 Hiermee worden de namen van autorisatieregels om op te halen. Deze parameter retourneert alle regels waarmee exact overeenkomen met de namen van de regel van de tekenreeksen in deze matrix.
 
@@ -80,7 +78,7 @@ Deze cmdlet accepteert een matrix van gehele getallen of een matrix van tekenree
 
 Deze cmdlet accepteert een matrix van gehele getallen of een matrix van tekenreekswaarden als invoer.
 
-## <a name="outputs"></a>UITVOER
+## <a name="outputs"></a>OUTPUTS
 
 ### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 

@@ -1,23 +1,21 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell-cmdlet
 ms.date: 2016-12-12
 title: pswaauthorizationrule toevoegen
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 18422f71b2a5f9af07af94e4324d3c7774f1d5ea
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SAMENVATTING
+## <a name="synopsis"></a>SYNOPSIS
 
 Voegt een nieuwe autorisatieregel toe aan de Windows PowerShell® Web Access autorisatieregelset.
 
@@ -60,7 +58,7 @@ De autorisatieregels evalueren van de primaire aanmelden referentie van de Windo
 
 ## <a name="parameters"></a>Parameters
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;tekenreeks&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
 
 Hiermee geeft de naam van een computergroep in Active Directory Domain Services (AD DS) of het lokale groepen waarop deze regel toegang verleent.
 
@@ -73,7 +71,7 @@ Hiermee geeft de naam van een computergroep in Active Directory Domain Services 
 | Pijplijn-invoer accepteren?               | True (ByPropertyName)                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;tekenreeks&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
 
 Hiermee geeft u de naam van de computer waarop deze regel toegang verleent.
 
@@ -86,7 +84,7 @@ Hiermee geeft u de naam van de computer waarop deze regel toegang verleent.
 | Pijplijn-invoer accepteren?               | True (ByPropertyName)                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-configurationnameltstringgt"></a>-ConfigurationName&lt;tekenreeks&gt;
+### <a name="-configurationnameltstringgt"></a>-ConfigurationName&lt;String&gt;
 
 Geeft de naam van de configuratie van Windows PowerShell-sessie, ook wel bekend als runspace waarvoor deze regel toegang verleent.
 
@@ -139,7 +137,7 @@ Hiermee geeft u de beschrijvende naam voor deze regel.
 | Pijplijn-invoer accepteren?               | True (ByPropertyName)                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;tekenreeks\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
 
 Hiermee geeft u de naam van een of meer gebruikersgroepen in AD DS of lokale groepen waarop deze regel toegang verleent.
 
@@ -152,7 +150,7 @@ Hiermee geeft u de naam van een of meer gebruikersgroepen in AD DS of lokale gro
 | Pijplijn-invoer accepteren?               | True (ByPropertyName)                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;tekenreeks\[\]&gt;
+### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
 
 Hiermee geeft u een of meer gebruikers waarop deze regel toegang verleent. De gebruikersnaam mag een lokale gebruikersaccount op de gatewaycomputer of een gebruiker in AD DS.
 De indeling is `domain\user` of `computer\user`.
@@ -253,6 +251,6 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
 - [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Voeg lid](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [Nieuw Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 - [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

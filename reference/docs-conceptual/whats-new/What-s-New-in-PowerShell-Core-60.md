@@ -13,14 +13,14 @@ Dit betekent dat Windows PowerShell de API-set die worden aangeboden door .NET F
 
 De API's gedeeld tussen .NET Core en .NET Framework zijn gedefinieerd als onderdeel van [.NET Standard][].
 
-Zie voor meer informatie over hoe dit van invloed op module-script compatibiliteit tussen PowerShell Core en Windows PowerShell, [Backwards compatibility met Windows PowerShell] [#backwards-compatibiliteit-with-windows-powershell]
+Zie voor meer informatie over hoe dit van invloed op module-script compatibiliteit tussen PowerShell Core en Windows PowerShell, [Backwards compatibiliteit met Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Ondersteuning voor Mac OS- en Linux
 
 PowerShell officieel ondersteunt nu Mac OS- en Linux, met inbegrip van:
 
 - Windows 7, 8.1 en 10
-- Windows Server 2008 R2, 2012 R2 2016
+- Windows Server 2008 R2, 2012 R2, 2016
 - [Windows-serverkanaal puntkomma per jaar][semi-annual]
 - Ubuntu 14.04 16.04 en 17.04
 - Debian 8,7 + en 9
@@ -28,7 +28,7 @@ PowerShell officieel ondersteunt nu Mac OS- en Linux, met inbegrip van:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42,2
 - Fedora 25, 26
-- Mac OS 10,12 +
+- macOS 10.12+
 
 Onze community heeft ook bijgedragen pakketten voor de volgende platforms, maar ze zijn niet officieel ondersteund:
 
@@ -172,18 +172,18 @@ PowerShell Core verandert de standaardversleuteling die voldoen aan de breder ec
 Dit betekent dat alle ingebouwde cmdlets die gebruikmaken van de `-Encoding` parameter gebruik de `UTF8NoBOM` waarde standaard.
 De volgende cmdlets worden beïnvloed door deze wijziging:
 
-- Inhoud toevoegen
+- Add-Content
 - Export Clixml
 - Export-Csv
 - Export-PSSession
 - Indeling Hex
-- Get-inhoud
+- Get-Content
 - Import-Csv
-- Nieuwe ModuleManifest
+- New-ModuleManifest
 - Out-File
 - Selecteer-tekenreeks
-- Verzenden MailMessage
-- Set-inhoud
+- Send-MailMessage
+- Set-Content
 
 Deze cmdlets ook zijn bijgewerkt zodat de `-Encoding` -parameter accepteert universeel `System.Text.Encoding`.
 
@@ -376,7 +376,7 @@ U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][tele
 [changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET-standaard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET-Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [Veelgestelde vragen over]: https://github.com/dotnet/standard/blob/master/docs/faq.md

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-bestandsbron
-ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 54d01bf0769eeed0354606eb3543973b0f850a6f
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-file-resource"></a>DSC-bestandsbron
 
@@ -42,7 +41,7 @@ File [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   | 
 |---|---| 
-| Doelpad| Geeft de locatie waar u Zorg ervoor dat de status voor een bestand of map.| 
+| DestinationPath| Geeft de locatie waar u Zorg ervoor dat de status voor een bestand of map.| 
 | Kenmerken| Hiermee geeft u de gewenste status van de kenmerken voor het betreffende bestand of map.| 
 | Controlesom| Geeft het type controlesom kunt bepalen of twee bestanden hetzelfde zijn. Als __controlesom__ niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor vergelijking. Geldige waarden zijn: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.| 
 | Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.| 
@@ -51,7 +50,7 @@ File [string] #ResourceName
 | Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met de eigenschap Force, overschrijft dergelijke fouten. De standaardwaarde is __$false__.| 
 | Recurse| Hiermee wordt aangegeven als submappen opgenomen worden. Deze eigenschap instellen op __$true__ om aan te geven dat u wilt dat de submappen worden opgenomen. De standaardwaarde is __$false__. **Opmerking**: deze eigenschap is alleen geldig wanneer de eigenschap Type is ingesteld op de Directory.| 
 | dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
-| Bronpad| Geeft het pad van waaruit de bron van het bestand of map kopiëren.| 
+| SourcePath| Geeft het pad van waaruit de bron van het bestand of map kopiëren.| 
 | Type| Hiermee wordt aangegeven of de resource die wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'Map' om aan te geven dat de resource een map is. Stel deze in op 'File' om aan te geven dat de resource een bestand is. De standaardwaarde is 'File'.| 
 | MatchSource| Indien ingesteld op de standaardwaarde van __$false__, en vervolgens alle bestanden op de bron (bijvoorbeeld bestanden A, B en C) wordt toegevoegd aan het doel de eerste keer dat de configuratie is toegepast. Als een nieuw bestand (D) wordt toegevoegd aan de bron, het niet toegevoegd aan de bestemming, zelfs wanneer de configuratie wordt later opnieuw toegepast. Als de waarde __$true__, en vervolgens elke keer dat de configuratie is toegepast, nieuwe bestanden vervolgens gevonden op de bron (zoals bestand D in dit voorbeeld) worden toegevoegd aan de bestemming. De standaardwaarde is **$false**.| 
 

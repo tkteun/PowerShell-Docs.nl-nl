@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: MSFT_DSCLocalConfigurationManager klasse
-ms.openlocfilehash: 35f732698fcc58f7bd43945edd10c143ffb79af9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b2d2ce000988f2c10ab04c4ba5a4650bd3c75ec7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager klasse
 
@@ -39,7 +38,7 @@ De **MSFT_DSCLocalConfigurationManager** klasse heeft deze methoden.
 
 |Methode |Beschrijving |
 |:--- |:---|
-| [Voor ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Gebruik de Configuration-Agent voor de configuratie die in behandeling is.| 
+| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Gebruik de Configuration-Agent voor de configuratie die in behandeling is.| 
 | [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u foutopsporing van DSC-resource.| 
 | [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Hiermee schakelt u foutopsporing van DSC-resource.| 
 | [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Verzendt het configuratie-document naar het beheerde knooppunt en maakt gebruik van de **ophalen** methode van de configuratie-Agent de configuratie toepassen.| 
@@ -51,7 +50,7 @@ De **MSFT_DSCLocalConfigurationManager** klasse heeft deze methoden.
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Rechtstreeks roept de **ophalen** methode van een DSC-resource.| 
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Rechtstreeks roept de **ingesteld** methode van een DSC-resource.| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Rechtstreeks roept de **Test** methode van een DSC-resource.| 
-| [Terugdraaien](msft-dsclocalconfigurationmanager-rollback.md)| Hiermee wordt de terug naar een eerdere configuratie.| 
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Hiermee wordt de terug naar een eerdere configuratie.| 
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Het configuratiebestand voor verzendt naar het beheerde knooppunt en wordt deze opgeslagen als een wijziging in behandeling.| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Het configuratiebestand voor het beheerde knooppunt verzendt en gebruik van de configuratie-Agent voor de configuratie.| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Het configuratie-document verzenden naar het beheerde knooppunt en start met behulp van de configuratie-Agent de configuratie toepassen. Gebruik GetConfigurationResultOutput resultaat uitvoer ophalen.| 

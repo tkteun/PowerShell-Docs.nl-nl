@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Aanbevolen procedures voor server ophalen
-ms.openlocfilehash: 66b97f4edb43926866b39731d720a2dc8c91eb2e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="pull-server-best-practices"></a>Aanbevolen procedures voor server ophalen
 
@@ -16,7 +15,7 @@ ms.lasthandoff: 06/12/2017
 
 Overzicht: Dit document is bedoeld om het proces en uitbreidingsmogelijkheden engineers die voor de oplossing voorbereiden zich helpen bevatten. Gegevens moeten best practices te geven aangeduid met klanten en vervolgens worden gevalideerd door het productteam om ervoor te zorgen aanbevelingen toekomstige verbonden zijn en als stabiel beschouwd.
 
-| |Informatie over dit document|
+| |Doc Info|
 |:---|:---|
 auteur | Michael Greene  
 Revisoren | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic  
@@ -519,7 +518,7 @@ De functie PowerShell [een controlesom en DSC-MOF publiceren met SMB Pull-Server
 
 Een bestand wordt opgeslagen als u wilt maken van gegevens tijdens de implementatie van een pull-server met de OData-webservice. Het type bestand is afhankelijk van het besturingssysteem, zoals hieronder wordt beschreven.
 
- - **WindowsServer 2012**  
+ - **Windows Server 2012**  
 Het bestandstype worden altijd .mdb
  - **Windows Server 2012 R2**  
 Het bestandstype wordt standaard edb tenzij een .mdb is opgegeven in de configuratie

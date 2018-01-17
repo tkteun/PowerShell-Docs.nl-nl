@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Referentieopties in configuratiegegevens
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referentieopties in configuratiegegevens
 >Van toepassing op: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Als u wilt onderdrukken deze fout- en waarschuwingsberichten de sleutelwoorden g
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Opmerkingen:** <p>Opslaan van/overdragen ongecodeerde wachtwoorden ongecodeerd is doorgaans niet beveiligd. Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.</p> <p>De service Azure Automation DSC kunt u om referenties in om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.  Zie voor informatie: [DSC-configuraties compileren / Referentieassets](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Opslaan van/overdragen ongecodeerde wachtwoorden ongecodeerd is doorgaans niet beveiligd. Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.
+> De service Azure Automation DSC kunt u om referenties in om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.
+> Zie voor informatie: [DSC-configuraties compileren / Referentieassets](/azure/automation/automation-dsc-compile#credential-assets)
 
 Hier volgt een voorbeeld van het doorgeven van referenties voor tekst zonder opmaak:
 
@@ -133,7 +135,8 @@ WMF 5.0 toegevoegd automatisch `PsDscRunAsCredential` eigenschap voor alle resou
 Voor informatie over het gebruik van `PsDscRunAsCredential`, Zie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).
 Nieuwere resources en aangepaste resources kunnen u deze automatische eigenschap gebruiken in plaats van hun eigen eigenschap voor referenties maken.
 
->**Opmerking:** het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben hun eigen referentie-eigenschappen.
+> [!NOTE]
+> Het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben hun eigen referentie-eigenschappen.
 
 De beschikbare referentie vinden gebruiken eigenschappen van een resource `Get-DscResource -Name ResourceName -Syntax` of de Intellisense in de ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 In dit voorbeeld heeft twee problemen:
-1.  Een fout wordt uitgelegd ongecodeerde wachtwoorden worden niet aanbevolen
-2.  Een waarschuwing adviseert tegen het gebruik van een domeinreferentie
+1. Een fout wordt uitgelegd ongecodeerde wachtwoorden worden niet aanbevolen
+2. Een waarschuwing adviseert tegen het gebruik van een domeinreferentie
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Opmerking:** `NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
+> [!NOTE]
+> `NodeName`kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
 
 **Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico met zich mee.**
+
 Een uitzondering hierop is wanneer u de service Azure Automation DSC lezen omdat de gegevens wordt altijd versleuteld (in doorvoer in rust in de service en in rust in het knooppunt) opgeslagen.
 
 ## <a name="domain-credentials"></a>Domeinreferenties

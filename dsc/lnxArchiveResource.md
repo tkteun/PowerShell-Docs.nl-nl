@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxArchive Resource
-ms.openlocfilehash: da647432e14d2a4a3ceb2a36c7dee2dbfd350116
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e91ef5bcf4bdf413844c23d1d3bd823a535b536f
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive Resource
 
@@ -32,8 +31,8 @@ nxArchive <string> #ResourceName
 
 |  Eigenschap |  Beschrijving | 
 |---|---|
-| Bronpad| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. | 
-| Doelpad| Hiermee geeft u de locatie waar u Zorg ervoor dat de inhoud van het archief worden opgehaald.| 
+| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. | 
+| DestinationPath| Hiermee geeft u de locatie waar u Zorg ervoor dat de inhoud van het archief worden opgehaald.| 
 | Controlesom| Definieert het type moet worden gebruikt bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime', 'mtime' of 'md5'. De standaardwaarde is 'md5'.| 
 | Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.| 
 | dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 

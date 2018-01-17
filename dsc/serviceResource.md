@@ -1,16 +1,15 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Bron van het DSC-Service
-ms.openlocfilehash: 611729e5d971ebaf15ac947454cffadc6797927b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: DSC Service Resource
+ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-service-resource"></a>Bron van het DSC-Service
+# <a name="dsc-service-resource"></a>DSC Service Resource
 
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 

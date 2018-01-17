@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Instellen van een DSC-pull-client
-ms.openlocfilehash: d2d1bab7ba2b482b2a66ce59b5f80ea32c242c47
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 98a67b8d27eeb445bb70f75253ca31e12207d5bd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Instellen van een DSC-pull-client
 
@@ -19,8 +18,8 @@ Elk doelknooppunt heeft adviseert het gebruik van pull-modus en de URL of bestan
 
 De volgende onderwerpen wordt uitgelegd hoe pull clients instellen:
 
-* [Een pull-client met behulp van configuratienamen instellen](pullClientConfigNames.md)
-* [Instellen van een pull-client met behulp van configuratie-ID](pullClientConfigID.md)
+* [Een pull-client instellen met behulp van configuratienamen](pullClientConfigNames.md)
+* [Een pull-client instellen met behulp van het configuratie-id](pullClientConfigID.md)
 
 > **Opmerking**: deze onderwerpen van toepassing op PowerShell 5.0. Als u een pull-client in PowerShell 4.0 instelt, Zie [instellen van een pull-client met behulp van configuratie-ID in PowerShell 4.0](pullClientConfigID4.md).
 

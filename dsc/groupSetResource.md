@@ -1,15 +1,14 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 description: Biedt een mechanisme voor het beheren van lokale groepen in het doelknooppunt.
 title: DSC-GroupSet Resource
-ms.openlocfilehash: 0907a968bfc660adc873c28e8be6572d1d5cb993
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 158cb28747c5fe1987eb62b2cc0f6d6f6fb14332
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-groupset-resource"></a>DSC-GroupSet Resource
 
@@ -36,7 +35,7 @@ Group [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   | 
 |---|---| 
-| Groepsnaam| De namen van de groepen waarvoor u wilt om te controleren of een specifieke status.| 
+| GroupName| De namen van de groepen waarvoor u wilt om te controleren of een specifieke status.| 
 | MembersToExclude| Gebruik deze eigenschap leden verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie instellen, gebruikt u niet de **leden** eigenschap. Hierdoor wordt een fout gegenereerd.| 
 | referentie| De referenties die zijn vereist voor toegang tot externe bronnen. **Opmerking**: dit account de juiste Active Directory-machtigingen voor alle niet-lokale accounts toevoegen aan de groep moet hebben; anders wordt een fout optreedt.
 | Zorg ervoor dat| Hiermee wordt aangegeven of de groepen bestaan. Deze eigenschap instellen op 'Ontbreekt' om ervoor te zorgen dat de groepen bestaan niet. Instellen om "" (de standaardwaarde), zorgt u ervoor dat de groepen bestaan.| 

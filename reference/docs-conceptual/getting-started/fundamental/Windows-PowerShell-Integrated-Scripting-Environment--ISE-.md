@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell ISE (Integrated Scripting Environment)
 De Windows PowerShell Integrated Scripting Environment (ISE) is een van twee hosts voor de Windows PowerShell-engine en taal. Met hockeyapp die kunt u uitvoeren en scripts te testen op een manier die niet beschikbaar in de Windows PowerShell-Console zijn. De ISE voegt de syntaxis van de kleuren, tab-Aanvulling IntelliSense, visuele foutopsporing en contextgevoelige Help.
@@ -44,7 +44,7 @@ Hier zijn enkele van de functies die zijn toegevoegd aan de ISE in de meest rece
 
 - **Parseren van de weergave van fouten**. Windows PowerShell onderzoekt uw script terwijl u typt. Als er een fout wordt gedetecteerd, wordt een rode kronkeltje onder de strijdige code. Wanneer u de muisaanwijzer op de aangegeven fout, ziet u een tooltip het probleem dat is gevonden.
 
-- **Zoomen**. U kunt inzoomen op uw tekst gemakkelijker te lezen of uitzoomen om te zien van de grotere afbeelding met behulp van de schuifregelaar in de rechterbenedenhoek van de ISE-venster.
+- **Zoom**. U kunt inzoomen op uw tekst gemakkelijker te lezen of uitzoomen om te zien van de grotere afbeelding met behulp van de schuifregelaar in de rechterbenedenhoek van de ISE-venster.
 
 - **Rich text kopiëren en plakken**. Wanneer u kopiëren van de ISE naar het Klembord, het lettertype, grootte en kleurinformatie van de geselecteerde tekst is opgenomen.
 
@@ -63,5 +63,5 @@ Houd er rekening mee dat alle vermeldingen die met het label 'Preview' voorlopig
 > Windows PowerShell ISE vereist een grafische gebruikersinterface, kan niet worden uitgevoerd op de optie Server Core van Windows Server.
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van de Windows PowerShell Integrated Scripting Environment](Using-the-Windows-PowerShell-ISE.md)
+- [Met behulp van de Windows PowerShell Integrated Scripting Environment](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
