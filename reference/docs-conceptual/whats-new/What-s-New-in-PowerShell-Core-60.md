@@ -234,7 +234,7 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
 - Drie nieuwe automatische variabelen om te bepalen of PowerShell wordt uitgevoerd in een bepaald besturingssysteem toegevoegd: `$IsWindows`, `$IsMacOs`, en `$IsLinux`.
 - Voeg `GitCommitId` naar PowerShell Core banner.
   Nu u hoeft te worden uitgevoerd `$PSVersionTable` zodra u PowerShell als u de versie begint! (#3916) (Dank aan @iSazonov!)
-- Toevoegen van een JSON-configuratiebestand aangeroepen `PowerShellProperties.json` in `$PSHome` voor het opslaan van enkele instellingen die vereist zijn voor opstarten (bijvoorbeeld `ExecutionPolicy`).
+- Toevoegen van een JSON-configuratiebestand aangeroepen `powershell.config.json` in `$PSHome` voor het opslaan van enkele instellingen die vereist zijn voor opstarten (bijvoorbeeld `ExecutionPolicy`).
 - Pijplijn niet blokkeren wanneer Windows-EXE wordt uitgevoerd
 - De inventarisatie van COM-verzamelingen is ingeschakeld. (#4553)
 
