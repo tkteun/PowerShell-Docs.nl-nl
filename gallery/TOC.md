@@ -11,6 +11,7 @@
 ### [Een PowerShellGallery-account maken](psgallery/psgallery_creating_an_account.md)
 ### [Items maken en publiceren](psgallery/Creating-and-Publishing-an-item.md)
 ### [Publicatierichtlijnen en best practices](psgallery/psgallery-PublishingGuidelines.md)
+### [Itemmanifest en de UI-galerie](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Items uit catalogus verwijderen](psgallery/psgallery_unlist_items.md)
 ### [Items verwijderen](psgallery/Deleting-Items.md)
 ### [Itemeigenaars beheren](psgallery/Managing-Item-Owners.md)
