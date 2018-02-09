@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Met behulp van Windows PowerShell
+title: "Windows PowerShell gebruiken"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-windows-powershell"></a>Met behulp van Windows PowerShell
+# <a name="using-windows-powershell"></a>Windows PowerShell gebruiken
 Windows PowerShell® is een taakgebaseerde opdrachtregel-shell en scripttaal, speciaal ontworpen voor systeembeheer. Gebaseerd op .NET Framework, Windows PowerShell helpt IT-professionals en Hoofdgebruikers en het beheer van de Windows-besturingssysteem en toepassingen die op Windows worden uitgevoerd.
 
 Resources in deze sectie helpen u meer informatie over Windows PowerShell, functies die opgenomen in Windows PowerShell zijn en de grafische editor van Windows PowerShell, Windows PowerShell Integrated Scripting Environment.

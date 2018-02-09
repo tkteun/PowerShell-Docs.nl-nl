@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: De lokale Configuration Manager configureren
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De lokale Configuration Manager configureren
 
@@ -25,8 +25,8 @@ Het is ook verantwoordelijk is voor een aantal andere aspecten van DSC, waaronde
 Een speciaal soort configuratie kunt u de LCM om op te geven van elk van deze handelingen configureren.
 De volgende secties wordt beschreven hoe de LCM configureren.
 
-> **Opmerking**: dit onderwerp geldt voor de LCM geïntroduceerd in Windows PowerShell 5.0.
-Zie voor meer informatie over het configureren van de LCM in Windows PowerShell 4.0 [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaconfig4.md).
+Windows PowerShell 5.0 geïntroduceerd nieuwe instellingen voor het beheren van de lokale Configuration Manager.
+Zie voor meer informatie over het configureren van de LCM in Windows PowerShell 4.0 [configureren van de lokale Configuration Manager in eerdere versies van Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Schrijven en de configuratie van een LCM vast te stellen
 
@@ -90,38 +90,13 @@ De volgende eigenschappen beschikbaar zijn in een **instellingen** blok.
 
 ## <a name="pull-service"></a>Pull-service
 
-DSC-instellingen kunnen een knooppunt kan worden beheerd door binnenhalen van configuraties en -modules en rapportagegegevens publiceren naar een externe locatie.
-De huidige opties voor het pull-service zijn onder andere:
-
-- Azure Automation gewenst State Configuration-service
-- Een pull-service-exemplaar met Windows Server
-- Een SMB-share (biedt geen ondersteuning voor het publiceren van rapportagegegevens)
-
 LCM configuratie ondersteunt de volgende soorten pull-service-eindpunten definiëren:
 
 - **Configuratieserver**: een opslagplaats voor DSC-configuraties. Configuratieservers definiëren met behulp van **ConfigurationRepositoryWeb** (voor het web gebaseerde servers) en **ConfigurationRepositoryShare** (voor SMB-servers) geblokkeerd.
 - **Bronserver**: een opslagplaats voor DSC-resources, geleverd als PowerShell-modules. Bronservers definiëren met behulp van **ResourceRepositoryWeb** (voor het web gebaseerde servers) en **ResourceRepositoryShare** (voor SMB-servers) geblokkeerd.
 - **Rapportserver**: een service die DSC rapportgegevens worden verzonden. Rapportservers definiëren met behulp van **ReportServerWeb** blokken. Een rapportserver moet een webservice.
 
-**De aanbevolen oplossing**, en de optie met de meeste functies die beschikbaar is, is [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-De Azure-service kunt knooppunten lokale in datacenters persoonlijke of openbare clouds, zoals Azure en AWS beheren.
-Persoonlijke omgevingen waarin servers kunnen niet rechtstreeks verbinding met Internet maken, Beperk uitgaand verkeer naar de gepubliceerde Azure IP-bereik (Zie [Azure Datacenter IP-adresbereiken](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Functies van de online service die momenteel niet beschikbaar in de pull-service op Windows Server zijn:
-- Alle gegevens worden versleuteld in rust en onderweg
-- Clientcertificaten worden gemaakt en automatisch beheerd
-- Geheimen opslaan voor het centraal beheren van [wachtwoorden/referenties](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), of [variabelen](https://docs.microsoft.com/en-us/azure/automation/automation-variables) zoals servernamen of verbindingsreeksen
-- Centraal beheren knooppunt [LCM configuratie](metaConfig.md#basic-settings)
-- Centraal toewijzen configuraties aan client-knooppunten
-- Release-configuratie voor het testen alvorens productie gewijzigd in 'kokospalm groepen'
-- Grafische rapportage
-  - Details van de status op het niveau van de resource DSC van granulatie
-  - Uitgebreide foutberichten van clientcomputers voor probleemoplossing
-- [Integratie met Azure-logboekanalyse](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) voor waarschuwingen, geautomatiseerde taken Android/iOS-app voor rapportage en waarschuwingen
-
-U kunt ook, voor informatie over het instellen en gebruiken van pull-HTTP-service op Windows Server, Zie [een DSC-pull-server instellen](pullServer.md).
-Neem in kennis gesteld dat het een beperkte implementatie met alleen eenvoudige mogelijkheden van configuraties/modules opslaan en vastleggen van gegevens in een lokale database is.
+Zie voor meer informatie over pull-service, [Desired Configuration Pull-statusservice](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Configuratie server blokkeert
 

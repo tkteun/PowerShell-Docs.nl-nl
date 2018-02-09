@@ -3,26 +3,31 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell ISE (Integrated Scripting Environment)
+
 De Windows PowerShell Integrated Scripting Environment (ISE) is een van twee hosts voor de Windows PowerShell-engine en taal. Met hockeyapp die kunt u uitvoeren en scripts te testen op een manier die niet beschikbaar in de Windows PowerShell-Console zijn. De ISE voegt de syntaxis van de kleuren, tab-Aanvulling IntelliSense, visuele foutopsporing en contextgevoelige Help.
 
 De ISE kunt u opdrachten uitvoeren in een consolevenster, maar ondersteunt ook deelvensters die u gebruiken kunt om de broncode van uw script en andere hulpprogramma's die in de ISE kunnen aansluiten tegelijkertijd weer te geven. U kunt zelfs meerdere script Windows openen op hetzelfde moment, dit vooral nuttig is wanneer u een script dat gebruikmaakt van functies die zijn gedefinieerd in andere scripts of modules foutopsporing.
 
 ## <a name="whats-new"></a>What's New in System Center 2012 - Data Protection Manager (Wat is nieuw in System Center 2012 - Data Protection Manager)
+
 Hier zijn enkele van de functies die zijn toegevoegd aan de ISE in de meest recente versies van PowerShell.
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Toegevoegd in PowerShell 3.0 (WindowsServer 2012, Windows 8)
+
 **IntelliSense** automatisch ingevuld uw opdrachten door de menu's van de overeenkomende cmdlets, parameters, parameterwaarden bestanden of mappen worden weergegeven terwijl u typt.
 
 **Codefragmenten** korte gedeelten van code die u eenvoudig in de scripts uw schrijven invoegen kunt. Een verzameling van nuttig codefragmenten is opgenomen in het vak en kunt u meer met behulp van de **nieuw codefragment** cmdlet.
 
-**Invoegtoepassingen** die toevoegen de ISE-functies kunnen worden gemaakt door schrijven van code die met communiceert de [de Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md). Deze hulpprogramma's kunnen besturingselementen in een deelvenster met tabbladen worden weergegeven of REF werken op de achtergrond. De **opdrachten** invoegtoepassing is een goed voorbeeld en is opgenomen in versie 3.0 en hoger die een lijst van de beschikbare opdrachten en hun Help weergegeven.
+**Invoegtoepassingen** die toevoegen de ISE-functies kunnen worden gemaakt door schrijven van code die met communiceert de [de Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+
+Deze hulpprogramma's kunnen besturingselementen in een deelvenster met tabbladen worden weergegeven of REF werken op de achtergrond. De **opdrachten** invoegtoepassing is een goed voorbeeld en is opgenomen in versie 3.0 en hoger die een lijst van de beschikbare opdrachten en hun Help weergegeven.
 
 **Opnieuw opstarten van de Manager en automatisch opslaan** automatisch elke twee minuten opslaan uw scripts om te voorkomen dat het verlies van uw werk in het geval van een computer vastloopt of onverwacht opnieuw opgestart.
 
@@ -51,17 +56,16 @@ Hier zijn enkele van de functies die zijn toegevoegd aan de ISE in de meest rece
 - **Blok selecteren**. U kunt een segment blok vorm van tekst selecteren door de ALT-toets ingedrukt te houden bij het selecteren van tekst in het deelvenster script met de muis of door op **Alt + Shift + pijl**.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Toegevoegd in PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
+
 De ISE is geïntroduceerd in PowerShell versie 2.0.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Vereisten voor het uitvoeren van de Windows PowerShell ISE
-De ISE is beschikbaar op elke Windows-computer met Windows PowerShell versie 2.0 of hoger.
-Elke versie van Windows en Windows Server bevat een versie van Windows PowerShell en de ISE, maar u kunt upgraden naar de meest recente beschikbare door het installeren van het Windows Management Framework.
-Deze zoekopdracht uitvoeren om te zoeken naar de laatst beschikbare versie: [downloadt](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending).
-Houd er rekening mee dat alle vermeldingen die met het label 'Preview' voorlopige code zijn en niet de functie is voltooid.
+
+De ISE is beschikbaar op elke Windows-computer met Windows PowerShell versie 2.0 of hoger. Elke versie van Windows en Windows Server bevat een versie van Windows PowerShell en de ISE, maar u kunt upgraden naar de meest recente beschikbare door de Windows Management Framework (WMF) installeren. Zie de [WMF](/powershell/wmf/readme) documentatie voor meer informatie.
 
 > [!NOTE]
 > Windows PowerShell ISE vereist een grafische gebruikersinterface, kan niet worden uitgevoerd op de optie Server Core van Windows Server.
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van de Windows PowerShell Integrated Scripting Environment](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+[Doel van de windows power shell ise-objectmodel scripting](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

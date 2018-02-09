@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Windows PowerShell op oudere versies van Windows wordt gestart
+title: Windows PowerShell op oudere versies van Windows starten
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 ms.openlocfilehash: 52e3acc1fd3009ecad3b7134008e38d4edfb5ca7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Windows PowerShell op oudere versies van Windows wordt gestart
+# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Windows PowerShell op oudere versies van Windows starten
 Deze sectie wordt uitgelegd hoe u Windows PowerShell en Windows PowerShell Integrated Scripting Environment (ISE) starten op Windows® 7, Windows Server® 2008 R2 en Windows Server® 2008. Ook wordt uitgelegd hoe u de optionele functie inschakelt voor Windows PowerShell ISE in Windows PowerShell 2.0 op Windows Server® 2008 R2 en Windows Server® 2008.
 
 Windows PowerShell 4.0 installeren op ondersteunde systemen, downloaden en installeren [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). Zie voor meer informatie [Windows PowerShell installeren](Installing-Windows-PowerShell.md).

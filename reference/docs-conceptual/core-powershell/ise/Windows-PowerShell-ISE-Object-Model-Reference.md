@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Naslaginformatie voor Windows PowerShell ISE-objectmodel
+title: Naslaginformatie voor het objectmodel van Windows PowerShell ISE
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 ms.openlocfilehash: 624ddca3895ba3e24bf52a27babdb07e8714baae
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="windows-powershell-ise-object-model-reference"></a>Naslaginformatie voor Windows PowerShell ISE-objectmodel
+# <a name="windows-powershell-ise-object-model-reference"></a>Naslaginformatie voor het objectmodel van Windows PowerShell ISE
   
 ## <a name="object-model-reference"></a>Naslaginformatie
  Deze sectie bevat een verwijzing op de onderliggende klassen waarmee de verschillende objecten inWindows PowerShell® Integrated Scripting Environment (ISE). Zie voor de objecten onderverdeeld in hun hiërarchie [de ISE-Model objecthiërarchie](The-ISE-Object-Model-Hierarchy.md).
