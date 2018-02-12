@@ -108,7 +108,7 @@
 
 # Het DSC-pull-model
 
-## [Een web-pull-server instellen](pullServer.md)
+## [DSC-pull-service](pullServer.md)
 
 ## [Een DSC SMB-pull-server instellen](pullServerSMB.md)
 
