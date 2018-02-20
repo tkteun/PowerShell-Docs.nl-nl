@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: 413fc375ad4617bfae59d6a1217cf9f91c2cf090
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell ISE (Integrated Scripting Environment)
 
@@ -25,7 +25,7 @@ Hier zijn enkele van de functies die zijn toegevoegd aan de ISE in de meest rece
 
 **Codefragmenten** korte gedeelten van code die u eenvoudig in de scripts uw schrijven invoegen kunt. Een verzameling van nuttig codefragmenten is opgenomen in het vak en kunt u meer met behulp van de **nieuw codefragment** cmdlet.
 
-**Invoegtoepassingen** die toevoegen de ISE-functies kunnen worden gemaakt door schrijven van code die met communiceert de [de Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Invoegtoepassingen** die toevoegen de ISE-functies kunnen worden gemaakt door schrijven van code die met communiceert [de Windows PowerShell ISE Scripting Object Model](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
 Deze hulpprogramma's kunnen besturingselementen in een deelvenster met tabbladen worden weergegeven of REF werken op de achtergrond. De **opdrachten** invoegtoepassing is een goed voorbeeld en is opgenomen in versie 3.0 en hoger die een lijst van de beschikbare opdrachten en hun Help weergegeven.
 
