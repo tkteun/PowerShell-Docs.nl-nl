@@ -52,7 +52,7 @@ Andere zijn alleen aanwezig of is van toepassing in niet-Windows-installaties va
 - Negeer de `-ExecutionPolicy` overschakelen wanneer PowerShell op niet-Windows-platforms worden uitgevoerd omdat de ondertekening van het script wordt momenteel niet ondersteund. (#3481)
 - Vaste ConsoleHost inwilligen `NoEcho` op Unix-platforms. (#3801)
 - Vaste `Get-Help` ter ondersteuning van hoofdlettergevoelig patroon overeen op de Unix-platforms. (#3852)
-- `powershell`Man-pagina toegevoegd aan het pakket
+- `powershell` Man-pagina toegevoegd aan het pakket
 
 ### <a name="logging"></a>Logboekregistratie
 
@@ -65,14 +65,14 @@ Een aantal wijzigingen zijn aangebracht op Mac OS- en Linux ter ondersteuning va
 
 - Paden die tot de cmdlets zijn nu slash-networkdirect (zowel / en \ werk directory scheiding)
 - XDG Base Directory specificatie is nu in acht genomen en standaard gebruikt:
-  - Het pad van het Linux/Mac OS-profiel bevindt zich op`~/.config/powershell/profile.ps1`
-  - De geschiedenis pad op te slaan bevindt zich op`~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Het pad van de gebruiker-module bevindt zich op`~/.local/share/powershell/Modules`
+  - Het pad van het Linux/Mac OS-profiel bevindt zich op `~/.config/powershell/profile.ps1`
+  - De geschiedenis pad op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Het pad van de gebruiker-module bevindt zich op `~/.local/share/powershell/Modules`
 - Ondersteuning voor bestands- en mapnamen met de dubbele punt op Unix. (#4959)
 - Ondersteuning voor scriptnamen- of volledige paden met komma's. (#4136) (Dank aan @TimCurwick!)
 - Detecteren wanneer `-LiteralPath` wordt gebruikt voor het onderdrukken van jokertekens voor navigatie-cmdlets. (#5038)
 - Bijgewerkt `Get-ChildItem` meer achtige werkt de * nix `ls -R` en de Windows `DIR /S` systeemeigen opdrachten.
-  `Get-ChildItem`nu retourneert de symbolische koppelingen aangetroffen tijdens een recursieve zoekopdracht en niet in de mappen die het doel van deze koppelingen. (#3780)
+  `Get-ChildItem` nu retourneert de symbolische koppelingen aangetroffen tijdens een recursieve zoekopdracht en niet in de mappen die het doel van deze koppelingen. (#3780)
 
 ### <a name="case-sensitivity"></a>Hoofdlettergevoeligheid
 
@@ -93,11 +93,11 @@ Naast elkaar kan ook achterwaartse compatibiliteit zoals scripts kunnen worden g
 > Het installatieprogramma (MSI) gebaseerde in Windows biedt standaard een in-place update-installatie.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Hernoemd `powershell(.exe)` naar`pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Hernoemd `powershell(.exe)` naar `pwsh(.exe)`
 
 De binaire naam voor de belangrijkste PowerShell is gewijzigd van `powershell(.exe)` naar `pwsh(.exe)`.
 Deze wijziging biedt een deterministische manier voor gebruikers PowerShell Core uitvoeren op machines ter ondersteuning van side-by-side Windows PowerShell en PowerShell Core-installaties.
-`pwsh`is het ook veel korter en beter typt.
+`pwsh` is het ook veel korter en beter typt.
 
 Aanvullende wijzigingen aan `pwsh(.exe)` van `powershell.exe`:
 
@@ -210,7 +210,7 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
 ## <a name="language-updates"></a>Taalupdates
 
 - Unicode-escape parseren zodat gebruikers Unicode-tekens als argumenten, tekenreeksen of namen van variabelen gebruiken kunnen worden geïmplementeerd. (#3958) (Dank aan @rkeithhill!)
-- Toegevoegde nieuwe escape-teken voor ESC:`` `e``
+- Toegevoegde nieuwe escape-teken voor ESC: `` `e``
 - Ondersteuning toegevoegd voor het converteren van enum-waarden voor de tekenreeks (#4318) (met vriendelijke groet @KirkMunro)
 - Vaste casten één element matrix aan een algemene verzameling. (#3170)
 - Toegevoegde teken bereik overbelasting aan de `..` operator, dus `'a'..'z'` tekens retourneert tussen "a" en "z". (#5026) (Met vriendelijke groet @IISResetMe!)
@@ -220,11 +220,11 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
 
 ## <a name="engine-updates"></a>Engine-updates
 
-- `$PSVersionTable`heeft vier nieuwe eigenschappen:
+- `$PSVersionTable` heeft vier nieuwe eigenschappen:
   - `PSEdition`: Dit is ingesteld op `Core` op PowerShell Core en `Desktop` op Windows PowerShell
   - `GitCommitId`: Dit is de Git commit-ID van de Git-vertakking of code waarbij PowerShell is opgebouwd.
     Uitgebrachte builds voor waarschijnlijk moeten hetzelfde zijn als `PSVersion`.
-  - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` is ingesteld op `Win32NT` op Windows, `MacOSX` op Mac OS, en `Unix` op Linux.
 - Verwijderd de `BuildVersion` eigenschap uit `$PSVersionTable`.
   Deze eigenschap is sterk gekoppeld aan de build-versie van Windows.
@@ -302,18 +302,18 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
 - Voeg `-Extension` en `-LeafBase` verandert in een `Split-Path` zodat u paden tussen de bestandsnaamextensie en de rest van de bestandsnaam verdelen kunt. (#2721) (Dank aan @powercode!)
 - Voeg parameters toe `-Top` en `-Bottom` naar `Sort-Object` voor bovenste/onderste N sorteren
 - Een proces bovenliggende proces weergeven door toe te voegen de `CodeProperty "Parent"` naar `System.Diagnostics.Process`. (#2850) (Dank aan @powercode!)
-- MB gebruiken in plaats van KB voor geheugenkolommen van het`Get-Process`
+- MB gebruiken in plaats van KB voor geheugenkolommen van het `Get-Process`
 - Voeg `-NoNewLine` overschakelen voor `Out-String`. (#5056) (Met vriendelijke groet @raghav710)
-- `Move-Item`cmdlet respecteert `-Include`, `-Exclude`, en `-Filter` parameters. (#3878)
+- `Move-Item` cmdlet respecteert `-Include`, `-Exclude`, en `-Filter` parameters. (#3878)
 - Toestaan dat `*` moet worden gebruikt in het registerpad voor `Remove-Item`. (#4866)
 - Voeg `-Title` naar `Get-Credential` en Combineer de ervaring van de vragen in verschillende platforms.
 - Voeg de `-TimeOut` -parameter voor `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`cmdlets kunt nu handtekening bestandtijdstempel krijgen. (#4061)
+- `Get-AuthenticodeSignature` cmdlets kunt nu handtekening bestandtijdstempel krijgen. (#4061)
 - Verwijder niet-ondersteunde `-ShowWindow` overschakelen van `Get-Help`. (#4903)
 - Los `Get-Content -Delimiter` aan het scheidingsteken niet opnemen in de matrixelementen geretourneerd (#3706) (met vriendelijke groet @mklement0)
 - Voeg `Meta`, `Charset`, en `Transitional` parameters `ConvertTo-HTML` (#4184) (met vriendelijke groet @ergo3114)
 - Voeg `WindowsUBR` en `WindowsVersion` eigenschappen `Get-ComputerInfo` resultaat
-- Voeg `-Group` parameter`Get-Verb`
+- Voeg `-Group` parameter `Get-Verb`
 - Voeg `ShouldProcess` ondersteuning voor `New-FileCatalog` en `Test-FileCatalog` (corrigeert `-WhatIf` en `-Confirm`). (#3074) (Dank aan @iSazonov!)
 - Voeg `-WhatIf` overschakelen naar `Start-Process` cmdlet (#4735) (met vriendelijke groet @sarithsutha)
 - Voeg `ValidateNotNullOrEmpty` te veel bestaande parameters.
@@ -344,8 +344,8 @@ Voor meer informatie over deze in detail zien [wijzigingen op te splitsen in Pow
 ## <a name="filesystem-updates"></a>Bestandssysteem updates
 
 - Informatie over het gebruik van de provider van het bestandssysteem van een UNC-pad inschakelen. ($4998)
-- `Split-Path`werkt nu met UNC-toegangspunten
-- `cd`zonder argumenten nu gedraagt zich als`cd ~`
+- `Split-Path` werkt nu met UNC-toegangspunten
+- `cd` zonder argumenten nu gedraagt zich als `cd ~`
 - Vaste PowerShell-kern toestaan gebruik van paden die meer dan 260 tekens lang zijn. (#3960)
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Oplossingen voor problemen en verbeterde prestaties
@@ -361,8 +361,8 @@ Bekijk voor een volledige lijst van wijzigingen en correcties onze [changelog][]
   - het besturingssysteem of platform (`$PSVersionTable.OSDescription`)
   - de exacte versie van PowerShell (`$PSVersionTable.GitCommitId`)
 
-Als u opt-out van deze telemetrie wilt, verwijder `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-Verwijderen van dit bestand wordt overgeslagen alle telemetrie zelfs vóór de eerste uitvoering van PowerShell.
+Als u opt-out van deze telemetrie, verwijderen `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` of maak `POWERSHELL_TELEMETRY_OPTOUT` omgevingsvariabele met een van de volgende waarden: `true`, `1` of `yes`.
+Verwijderen van dit bestand of maken van de variabele wordt overgeslagen alle telemetrie zelfs vóór de eerste uitvoering van PowerShell.
 We zullen ook op het blootstellen van deze telemetriegegevens en de inzichten die we verzamelen van de telemetrie in de [community dashboard][community-dashboard].
 U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][telemetry-blog].
 

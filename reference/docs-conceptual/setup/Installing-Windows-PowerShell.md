@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: PowerShell-cmdlet, downloaden, installeren, setup, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell installeren
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
+Windows PowerShell wordt geleverd in elke Windows, Windows 7 SP1 en Windows Server 2008 R2 SP1 vanaf standaard geïnstalleerd.
 
-PowerShell wordt geleverd in elke Windows, Windows 7 SP1 en Windows Server 2008 R2 SP1 vanaf standaard geïnstalleerd.
-
-Linux-, Mac OS- en Windows-gebruikers die u wilt installeren **PowerShell 6** (bèta) in hun machines moet:
-
-1. PowerShell voor specifieke besturingssystemen en versie, ophalen uit [GitHub](https://github.com/powershell/powershell#get-powershell)
-1. Volg de installatie-instructies
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-PowerShell 6 is ook beschikbaar voor Docker; Zie [Docker installatie](https://github.com/PowerShell/PowerShell/tree/master/docker) instructies.
+Als u geïnteresseerd in PowerShell 6 en hoger bent, moet u PowerShell Core in plaats van Windows PowerShell te installeren. Zie [PowerShell Core installeren op Windows](Installing-PowerShell-Core-on-Windows.md).
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Het vinden van PowerShell in Windows 10, 8.1, 8.0 en 7
 
@@ -65,7 +56,7 @@ De enige uitzondering aan de bovenstaande regel is de ISE in Windows Server 2008
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Het controleren van de versie van PowerShell
 
-Als u wilt zoeken op welke versie van PowerShell die u hebt geïnstalleerd, start u een PowerShell-console (of de ISE) en type `$PSVersionTable` en druk op **ENTER**.
+Als u wilt zoeken op welke versie van PowerShell die u hebt geïnstalleerd, start u een PowerShell-console (of de ISE) en type `$PSVersionTable` en druk op **ENTER**. Zoek naar de `PSVersion` waarde.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Upgraden van bestaande Windows PowerShell
 
