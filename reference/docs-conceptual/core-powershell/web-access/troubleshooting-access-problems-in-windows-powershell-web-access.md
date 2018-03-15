@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell-cmdlet
 title: het oplossen van toegangsproblemen in windows powershell-webtoegang
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
@@ -34,7 +34,7 @@ Deze fout kan de volgende oorzaken hebben.
 
   Controleer of extern beheer is ingeschakeld op de computer waarop de gebruiker probeert verbinding maken.
 
-  Zie voor meer informatie [hoe configureren op uw Computer voor extern beheer](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Zie voor meer informatie [hoe configureren op uw Computer voor extern beheer](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Interne serverfout
 
@@ -61,7 +61,7 @@ Dit probleem kan optreden bij gebruikers die zijn aangemeld met een domeinnaam d
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Kan geen verbinding maken met een externe werkgroepcomputer
 
-Als de doelcomputer lid is van een werkgroep, gebruikt u de volgende syntaxis om te bieden uw gebruikersnaam en meld u bij de computer:`<workgroup_name>\<user_name>`
+Als de doelcomputer lid is van een werkgroep, gebruikt u de volgende syntaxis om te bieden uw gebruikersnaam en meld u bij de computer: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Kan de beheerhulpprogramma's voor Webserver (IIS) niet vinden ook al is de functie geïnstalleerd
 
@@ -92,7 +92,7 @@ Gebruik een punt (.) niet zelfstandig vertegenwoordigt de naam van de computer.
 
 Parameter | Value
 -- | --
-UserName | Server\_naam\\gebruiker\_naam<br/>Localhost\\gebruiker\_naam<br/>. \\gebruiker\_naam
+UserName | Server\_naam\\gebruiker\_naam<br/>Localhost\\user\_name<br/>. \\gebruiker\_naam
 UserGroup | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruiker\_groep<br/>. \\gebruiker\_groep
 ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_groep<br/>. \\computer\_groep
 
@@ -113,7 +113,7 @@ ComputerName | Servernaam
 Meld u aan bij een gatewayserver als doelcomputer met referenties die de volgende indeling hebben.
 
 - Server\_naam\\gebruiker\_naam
-- Localhost\\gebruiker\_naam
+- Localhost\\user\_name
 - . \\gebruiker\_naam
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Een beveiligings-id (SID) wordt weergegeven in een autorisatieregel
@@ -132,7 +132,7 @@ Autorisatieregels ondersteunen geen IPv6-adressen in de vorm van een domeinnaam.
 Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel.
 Zowel het domein als numerieke (met dubbele punten) IPv6-adressen worden ondersteund als naam van de doelcomputer op de aanmeldingspagina van Windows PowerShell-webtoegang, maar niet in autorisatieregels. 
 
-Zie voor meer informatie over IPv6-adressen [How IPv6 Works](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+Zie voor meer informatie over IPv6-adressen [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Zie ook
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 Dit onderwerp beschrijft de toegankelijkheidsfuncties van Windows PowerShell Integrated Scripting Environment (ISE) die handig zijn wellicht.
@@ -22,7 +22,7 @@ Dit onderwerp beschrijft de toegankelijkheidsfuncties van Windows PowerShell Int
 
 Microsoft streeft ernaar om zijn producten en diensten gebruiksvriendelijker te maken voor iedereen. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE beter toegankelijk voor mensen met beperkingen.
 
-Windows PowerShell ISE ondersteunt hoog contrast modus. Voor visueel gehinderd onderbrekingspunt informatie is beschikbaar via de cmdlets voor het beheren van onderbrekingspunten, zoals [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) en [Set PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Voor meer informatie Zie 'How to onderbrekingspunten beheren' in [hoe fouten opsporen in Scripts in de Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Naast de toegankelijkheidsfuncties en hulpprogramma's in Microsoft Windows maken maken de volgende functies Windows PowerShell ISE toegankelijker voor mensen met een handicap:
+Windows PowerShell ISE ondersteunt hoog contrast modus. Voor visueel gehinderd onderbrekingspunt informatie is beschikbaar via de cmdlets voor het beheren van onderbrekingspunten, zoals [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) en [Set PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Voor meer informatie Zie 'How to onderbrekingspunten beheren' in [hoe fouten opsporen in Scripts in de Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Naast de toegankelijkheidsfuncties en hulpprogramma's in Microsoft Windows maken maken de volgende functies Windows PowerShell ISE toegankelijker voor mensen met een handicap:
 
 - Sneltoetsen gebruiken
 
@@ -61,13 +61,13 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst bewerkt.
 |**Knippen**|CTRL + X|Script-veld-consolevenster|
 |**Zoeken in een Script**|CTRL+F|Scriptvenster|
 |**Volgende zoeken in een Script**|F3|Scriptvenster|
-|**Vorige in Script zoeken**|SHIFT + F3|Scriptvenster|
-|**Plakken**|Ctrl + V|Script-veld-consolevenster|
-|**Opnieuw uitvoeren**|CTRL + Y|Script-veld-consolevenster|
+|**Vorige in Script zoeken**|SHIFT+F3|Scriptvenster|
+|**Paste**|Ctrl + V|Script-veld-consolevenster|
+|**Redo**|CTRL + Y|Script-veld-consolevenster|
 |**Vervang in Script**|CTRL + H|Scriptvenster|
 |**Opslaan**|CTRL+S|Scriptvenster|
 |**Alles selecteren**|Ctrl + A|Script-veld-consolevenster|
-|**Ongedaan maken**|CTRL + Z|Script-veld-consolevenster|
+|**Undo**|CTRL + Z|Script-veld-consolevenster|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in de Script-veld.
@@ -76,7 +76,7 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in de Scr
 |----------|---------------------|
 |**Nieuw**|CTRL + N|
 |**Open**|CTRL + O|
-|**Uitvoeren**|F5|
+|**Run**|F5|
 |**Selectie uitvoeren**|F8|
 |**Uitvoering stoppen**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context niet-ambigue is (Er is geen tekst geselecteerd).|
 |**Tabblad** (naar het volgende script)|CTRL + TAB **Opmerking:** tabblad naar het volgende script werkt alleen als u één PowerShell tabblad openen, of wanneer er meer dan één PowerShell tabblad is geopend, maar de focus in het scriptvenster is.|
@@ -103,15 +103,15 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
 |Actie|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
-|**Voer/doorgaan**|F5|Scriptvenster wanneer foutopsporing van een script|
+|**Run/Continue**|F5|Scriptvenster wanneer foutopsporing van een script|
 |**In stap**|F11|Scriptvenster wanneer foutopsporing van een script|
 |**Stap Over**|F10|Scriptvenster wanneer foutopsporing van een script|
-|**Stap uit**|SHIFT + F11|Scriptvenster wanneer foutopsporing van een script|
+|**Stap uit**|SHIFT+F11|Scriptvenster wanneer foutopsporing van een script|
 |**Aanroepstack weergeven**|CTRL + SHIFT + D|Scriptvenster wanneer foutopsporing van een script|
 |**Lijst met onderbrekingspunten**|CTRL + SHIFT + L|Scriptvenster wanneer foutopsporing van een script|
-|**Onderbrekingspunt**|F9|Scriptvenster wanneer foutopsporing van een script|
+|**Toggle Breakpoint**|F9|Scriptvenster wanneer foutopsporing van een script|
 |**Verwijder alle onderbrekingspunten**|CTRL + SHIFT + F9|Scriptvenster wanneer foutopsporing van een script|
-|**Stop de foutopsporing**|SHIFT + F5|Scriptvenster wanneer foutopsporing van een script|
+|**Stop de foutopsporing**|SHIFT+F5|Scriptvenster wanneer foutopsporing van een script|
 
 > ![Opmerking](../core-powershell/web-access/images/Note.jpeg)**Opmerking**
 >
@@ -144,9 +144,9 @@ U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (Power
 
 |Actie|Sneltoets|
 |----------|---------------------|
-|**Afsluiten**|ALT+F4|
+|**Exit**|ALT+F4|
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van de Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE gebruiken](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

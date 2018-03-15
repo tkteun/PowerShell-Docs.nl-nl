@@ -4,27 +4,27 @@ contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: PackageManagement_cmdlets
-ms.openlocfilehash: aca4f461ff0e51aa812f8219c74bd7d85d1e7b2d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 92dcebfc79bdb123e3ab3c56fc1af1f793bcb1e3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-Cmdlets
 Dit is de kern van PackageManagement ter ondersteuning van software-detectie, installatie en -inventarisatie (SDII). Probeer de cmdlets voor deze bewerkingen uit:
--   Zoek-pakket
--   Zoeken naar PackageProvider
--   Get-pakket
+-   Find-Package
+-   Find-PackageProvider
+-   Get-Package
 -   Get-PackageProvider
 -   Get-PackageSource
--   Importeren PackageProvider
+-   Import-PackageProvider
 -   Install-Package
--   Installatie PackageProvider
--   Register PackageSource
--   Opslaan-pakket
+-   Install-PackageProvider
+-   Register-PackageSource
+-   Save-Package
 -   Set-PackageSource
 -   Verwijderen van pakket
--   Hef de registratie van PackageSource
+-   Unregister-PackageSource
 
 Als PackageManagement een PowerShell-module is, kunt u het volgende als u wilt bijwerken PackageManagement zelf doen:
 ```powershell
@@ -32,7 +32,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 In dit geval moet u PowerShell-sessie overschakelen naar de nieuwe versie van PackageManagement opnieuw invoeren.
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[Zoeken naar pakket Cmdlet](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[Zoeken naar pakket Cmdlet](https://technet.microsoft.com/library/dn890709.aspx)
 Met deze cmdlet kan de detectie van softwarepakketten in beschikbaar pakket gegevensbronnen waarvoor gebruik wordt geladen pakket providers.
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[Zoeken naar PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Zoeken naar PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
 De cmdlet zoeken PackageProvider zoeken naar overeenkomende PackageManagement providers die beschikbaar in het pakket gegevensbronnen die zijn geregistreerd met PowerShellGet zijn. Dit zijn pakket providers beschikbaar voor installatie met de cmdlet Install-PackageProvider. Standaard bevat deze modules beschikbaar in de PowerShell-galerie met de 'PackageManagement' en 'Provider' labels. 
 
 Zoeken naar PackageProvider vindt ook overeenkomende PackageManagement providers die beschikbaar in de PackageManagement azure blob-opslag waar we de PackageManagement boostrapper provider gebruiken zijn voor het zoeken en installeren.
@@ -73,7 +73,7 @@ Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
     
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[De Cmdlet Get-pakket](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[De Cmdlet Get-pakket](https://technet.microsoft.com/library/dn890704.aspx)
 Deze cmdlet retourneert een lijst van alle softwarepakketten die zijn geïnstalleerd met behulp van PackageManagement.
 ```powershell
 # Get all the packages installed by Programs provider
@@ -84,7 +84,7 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[De Cmdlet Get-PackageProvider](https://technet.microsoft.com/en-us/library/dn890703.aspx)
+## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[Get-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/dn890703.aspx)
 Pakket-providers die worden geladen en klaar voor gebruik op de lokale computer kunnen worden geïnventariseerd met de cmdlet.
 ```powershell
 # Get all currently loaded package providers
@@ -94,7 +94,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[De Cmdlet Get-PackageSource](https://technet.microsoft.com/en-us/library/dn890705.aspx)
+## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
 Deze cmdlet wordt een lijst met pakket-bronnen die zijn geregistreerd voor een Pakketprovider.
 ```powershelll
 # Get all package sources
@@ -128,7 +128,7 @@ Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use 
 ```
 
-##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[De Cmdlet Install-Package](https://technet.microsoft.com/en-us/library/dn890711.aspx)
+##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[ De Cmdlet Install-Package](https://technet.microsoft.com/en-us/library/dn890711.aspx)
 
 Met deze cmdlet kan de installatie van softwarepakketten in beschikbaar pakket gegevensbronnen waarvoor gebruik wordt geladen pakket providers.
 ```powershell
@@ -178,7 +178,7 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[De Cmdlet set-PackageSource](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
 Deze cmdlet wordt informatie over een bestaande pakketbron gewijzigd. 
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.

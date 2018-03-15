@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met behulp van een DSC-rapportserver
-ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: fdf16a2de6aea46844d3812029fae474e80ae6ac
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-a-dsc-report-server"></a>Met behulp van een DSC-rapportserver
 
@@ -92,7 +92,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Ophalen van rapportgegevens
 
-Rapporten die worden verzonden naar de pull-server worden ingevoerd in een database op de server. De rapporten zijn beschikbaar via de webservice aanroepen. Voor het ophalen van rapporten voor een bepaald knooppunt, door een HTTP-aanvraag te verzenden naar de webservice rapport in de volgende vorm: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` waar `MyNodeAgentId` is de AgentId van het knooppunt waarvan u wilt rapporten moeten worden opgehaald. U kunt de AgentID ophalen voor een knooppunt door het aanroepen van [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) op dat knooppunt.
+Rapporten die worden verzonden naar de pull-server worden ingevoerd in een database op de server. De rapporten zijn beschikbaar via de webservice aanroepen. Voor het ophalen van rapporten voor een bepaald knooppunt, door een HTTP-aanvraag te verzenden naar de webservice rapport in de volgende vorm: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` waar `MyNodeAgentId` is de AgentId van het knooppunt waarvan u wilt rapporten moeten worden opgehaald. U kunt de AgentID ophalen voor een knooppunt door het aanroepen van [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) op dat knooppunt.
 
 De rapporten worden geretourneerd als een matrix met JSON-objecten.
 

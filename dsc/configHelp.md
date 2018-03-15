@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Schrijven van help voor DSC-configuraties
-ms.openlocfilehash: c868fa0565baff833423db090a5d62824ab4cad8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c5d499ec887829c864c0f63f64af2d0a7738220b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Schrijven van help voor DSC-configuraties
 
 >Van toepassing op: Windows Windows PowerShell 5.0
 
-U kunt de help op basis van een opmerking in DSC-configuraties. Gebruikers hebben toegang tot de help door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet. Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
+U kunt de help op basis van een opmerking in DSC-configuraties. Gebruikers hebben toegang tot de help door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
 
 Het volgende voorbeeld ziet u een script dat een configuratie en help op basis van een opmerking voor bevat:
 

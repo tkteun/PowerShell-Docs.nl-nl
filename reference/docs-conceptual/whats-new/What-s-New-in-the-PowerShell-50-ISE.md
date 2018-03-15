@@ -3,19 +3,19 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Welke s die nieuw is in de 50 van de PowerShell ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat &#39; s die nieuw is in de Windows PowerShell ISE
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat&#39;s die nieuw is in de Windows PowerShell ISE
 Dit onderwerp worden de nieuwe en bijgewerkte functies die zijn geïntroduceerd in versies van Windows PowerShell Integrated Scripting Environment (ISE).
 
 ## <a name="feature-description"></a>Functiebeschrijving
 De Windows PowerShell ISE is een hosttoepassing waarmee u kunt schrijven, uitvoeren en scripts en modules in een grafische en intuïtieve omgeving testen. Belangrijkste functies zoals syntaxis-kleuren, tabblad voltooiing, visuele foutopsporing, Unicode-compatibiliteit en Help-onderwerpen bieden een rijke ervaring voor het uitvoeren van scripts.
 
-Zie voor een overzicht van Windows PowerShell ISE [overzicht van Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Zie voor een overzicht van Windows PowerShell ISE [overzicht van Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Nieuwe en gewijzigde functionaliteit in Windows PowerShell ISE
 De volgende tabel bevat de nieuwe en gewijzigde functies voor deze versie van Windows PowerShell ISE in Windows PowerShell.
@@ -167,7 +167,7 @@ Andere functies van Windows PowerShell ISE-bewerken:
 
 - **XML-syntaxiskleuren**XML-syntaxis Windows PowerShell ISE nu kleuren op dezelfde manier als het Windows PowerShell-syntaxis kleuren.
 
-- **Overeenkomende accolade** Windows PowerShell ISE omvat overeenkomende accolade en is gemarkeerd en kan worden gebruikt in de volgende manieren: (bijvoorbeeld met behulp van de **gaat u naar de overeenkomst** opdracht of **Ctrl +]** zoekt de accolade sluiten, hebt u een openingsaccolade geselecteerd).
+- **Overeenkomende accolade** Windows PowerShell ISE omvat overeenkomende accolade en is gemarkeerd en kan worden gebruikt in de volgende manieren: (bijvoorbeeld met behulp van de **gaat u naar de overeenkomst** opdracht of **Ctrl +]** zoekt de haakje sluiten, hebt u een openingsaccolade geselecteerd).
 
 - **Overzichtsweergave** het scriptvenster ondersteunt overzicht, waarmee samenvouwen of stukjes code door te klikken op plus of min uitvouwen in de linkermarge zich aanmeldt. U kunt de accolades gebruiken of de **#region** en **#endregion** labels markeert het begin of einde van een samenvouwbare sectie. Als u wilt uitvouwen of samenvouwen alle regio's, drukt u op **Ctrl + M**.
 
@@ -222,7 +222,7 @@ Opdracht weergeven is een nieuwe Windows PowerShell ISE 3.0.
 ## <a name="see-also"></a>Zie ook
 Zie de volgende koppelingen voor meer informatie over het gebruik van Windows PowerShell ISE in Windows PowerShell.
 
-- [Met behulp van de Windows PowerShell Integrated Scripting Environment](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [De Windows PowerShell Integrated Scripting Environment verkennen](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE op de TechNet-Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Referentieopties in configuratiegegevens
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referentieopties in configuratiegegevens
 >Van toepassing op: Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.
+In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/powershell/dsc/groupresource) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.
 Deze kan lokale groepen maken en leden toevoegen of verwijderen.
 De cmdlet accepteert zowel de `Credential` eigenschap en de automatische `PsDscRunAsCredential` eigenschap.
 De resource alleen gebruikt echter de `Credential` eigenschap.
@@ -231,7 +231,7 @@ In dit voorbeeld heeft twee problemen:
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Het eerste foutbericht heeft een URL met documentatie.
-Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) structuur en een certificaat.
+Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structuur en een certificaat.
 Voor meer informatie over certificaten en DSC [lezen van dit bericht](http://aka.ms/certs4dsc).
 
 Als u een wachtwoord als tekst zonder opmaak, de bron is vereist de `PsDscAllowPlainTextPassword` -sleutelwoord in de configuratiegegevens sectie als volgt:
@@ -270,7 +270,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName`kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
+> `NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
 
 **Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico met zich mee.**
 

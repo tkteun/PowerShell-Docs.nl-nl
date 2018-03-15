@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell-cmdlet
 title: de website op basis van windows powershell-console gebruiken
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -58,7 +58,7 @@ Dit websiteadres is standaard *https://\<servernaam\>/pswa*.
 
 Voordat u zich aanmeldt bij Windows PowerShell-webtoegang, moet u dat u hebt de naam of IP-adres van de externe computer die u wilt beheren.
 U moet een geautoriseerde gebruiker zijn op de externe computer en deze moet zo zijn geconfigureerd dat extern beheer is toegestaan.
-Zie voor meer informatie over het configureren van uw computer voor extern beheer toestaan [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+Zie voor meer informatie over het configureren van uw computer voor extern beheer toestaan [Enable and Use Remote Commands in Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 De eenvoudigste methode van de configuratie van de computer zodat extern beheer is het uitvoeren van de **Enable-PSRemoting - force** cmdlet uit op de computer, in een Windows PowerShell-sessie die is geopend met verhoogde gebruikersrechten (**Als Administrator uitvoeren**).
 
@@ -70,11 +70,11 @@ De eenvoudigste methode van de configuratie van de computer zodat extern beheer 
 
     > ![Opmerking](images/Note.jpeg) **Opmerking**:
     >
-    > - Als de doelcomputer zich in een werkgroep, gebruikt u de volgende syntaxis om te bieden uw gebruikersnaam en meld u bij de computer:`<workgroup_name>\<user_name>`
+    > - Als de doelcomputer zich in een werkgroep, gebruikt u de volgende syntaxis om te bieden uw gebruikersnaam en meld u bij de computer: `<workgroup_name>\<user_name>`
     > - Als de doelcomputer de gatewayserver is, kunt u `localhost` in het veld voor de Computer
     > - Als de doelcomputer de gatewayserver is en de gatewayserver zich in een werkgroep, moet u `<workgroup name>\<user_name>` opgeslagen in de gebruikersnaam van de. U kunt `localhost` in het veld voor de Computer.
 
-1. De **optionele verbindingsinstellingen** sectie heeft betrekking op de autorisatievereisten van de externe computer die u wilt beheren. Zie voor meer informatie over de parameters die equivalent aan optionele verbindingsinstellingen zijn de [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) help van cmdlet.
+1. De **optionele verbindingsinstellingen** sectie heeft betrekking op de autorisatievereisten van de externe computer die u wilt beheren. Zie voor meer informatie over de parameters die equivalent aan optionele verbindingsinstellingen zijn de [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) help van cmdlet.
 
     De gebruikte referenties om door te geven via de Windows PowerShell Web Access-gateway zijn meestal hetzelfde die worden herkend door de externe computer die u wilt beheren. Als u verschillende referenties gebruikt voor het beheren van de externe computer die u hebt opgegeven in stap 2, vouw de **optionele verbindingsinstellingen** sectie en de alternatieve referenties opgeven. Ga anders verder met stap 6.
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Bron van het DSC-Script
-ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-script-resource"></a>Bron van het DSC-Script
 
@@ -42,9 +42,9 @@ Script [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   | 
 |---|---| 
-| GetScript| Biedt een blok van Windows PowerShell-script dat wordt uitgevoerd wanneer u aanroept de [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet. Dit blok moet een hashtabel retourneren. De hash-tabel mag slechts één sleutelveld bevatten **resultaat** en de waarde moet van het type **tekenreeks**.| 
-| SetScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) -cmdlet de **TestScript** blok als eerste wordt gestart. Als de **TestScript** blokkeren retourneert **$false**, wordt de **SetScript** blok wordt uitgevoerd. Als de **TestScript** blokkeren retourneert **$true**, wordt de **SetScript** blok wordt niet uitgevoerd.| 
-| TestScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet dit blok wordt uitgevoerd. Als het resultaat **$false**, het blok SetScript wordt uitgevoerd. Als het resultaat **$true**, SetScript blok wordt niet uitgevoerd. De **TestScript** blok wordt ook uitgevoerd wanneer u aanroept de [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** blok wordt niet uitgevoerd, ongeacht welke het TestScript waarde blokkeren retourneert. De **TestScript** blok moet True worden geretourneerd als de configuratie van de werkelijke overeenkomt met de huidige configuratie van de gewenste status en False als komt niet overeen met. (De huidige configuratie van de gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt.)| 
+| GetScript| Biedt een blok van Windows PowerShell-script dat wordt uitgevoerd wanneer u aanroept de [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Dit blok moet een hashtabel retourneren. De hash-tabel mag slechts één sleutelveld bevatten **resultaat** en de waarde moet van het type **tekenreeks**.| 
+| SetScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -cmdlet de **TestScript** blok als eerste wordt gestart. Als de **TestScript** blokkeren retourneert **$false**, wordt de **SetScript** blok wordt uitgevoerd. Als de **TestScript** blokkeren retourneert **$true**, wordt de **SetScript** blok wordt niet uitgevoerd.| 
+| TestScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet dit blok wordt uitgevoerd. Als het resultaat **$false**, het blok SetScript wordt uitgevoerd. Als het resultaat **$true**, SetScript blok wordt niet uitgevoerd. De **TestScript** blok wordt ook uitgevoerd wanneer u aanroept de [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** blok wordt niet uitgevoerd, ongeacht welke het TestScript waarde blokkeren retourneert. De **TestScript** blok moet True worden geretourneerd als de configuratie van de werkelijke overeenkomt met de huidige configuratie van de gewenste status en False als komt niet overeen met. (De huidige configuratie van de gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt.)| 
 | referentie| Hiermee geeft u de referenties gebruiken om dit script uit te voeren als de referenties zijn vereist.| 
 | dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Schrijven van een aangepaste DSC-resource met PowerShell-klassen
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schrijven van een aangepaste DSC-resource met PowerShell-klassen
 
@@ -69,7 +69,7 @@ U ziet dat de eigenschappen zijn gewijzigd door de kenmerken. De betekenis van d
 - **DscProperty(NotConfigurable)**: de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk kan niet worden ingesteld door een configuratie, maar worden ingevuld met de **Get()** methode indien aanwezig.
 - **DscProperty()**: de eigenschap kan worden geconfigureerd, maar is niet vereist.
 
-De **$Path** en **$SourcePath** eigenschappen zijn beide tekenreeksen. De **$CreationTime** is een [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) eigenschap. De **$Ensure** eigenschap is een opsommingstype als volgt gedefinieerd.
+De **$Path** en **$SourcePath** eigenschappen zijn beide tekenreeksen. De **$CreationTime** is een [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) eigenschap. De **$Ensure** eigenschap is een opsommingstype als volgt gedefinieerd.
 
 ```powershell
 enum Ensure 
@@ -484,10 +484,10 @@ Zie voor meer informatie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md
 De **DscResource()** kenmerk duurt een optionele parameter **RunAsCredential**.
 Deze parameter heeft een van drie waarden:
 
-- `Optional`**PsDscRunAsCredential** is optioneel voor configuraties die aanroepen van deze resource. Dit is de standaardwaarde.
-- `Mandatory`**PsDscRunAsCredential** moet worden gebruikt voor een configuratie die deze resource roept.
-- `NotSupported`Configuraties die aanroepen van deze resource kunnen niet worden gebruikt **PsDscRunAsCredential**.
-- `Default`Hetzelfde als `Optional`.
+- `Optional` **PsDscRunAsCredential** is optioneel voor configuraties die aanroepen van deze resource. Dit is de standaardwaarde.
+- `Mandatory` **PsDscRunAsCredential** moet worden gebruikt voor een configuratie die deze resource roept.
+- `NotSupported` Configuraties die aanroepen van deze resource kunnen niet worden gebruikt **PsDscRunAsCredential**.
+- `Default` Hetzelfde als `Optional`.
 
 Het volgende kenmerk bijvoorbeeld gebruiken om op te geven dat uw aangepaste resource biedt geen ondersteuning met behulp van **PsDscRunAsCredential**:
 

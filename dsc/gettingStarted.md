@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Aan de slag met PowerShell Desired State Configuration
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Aan de slag met PowerShell Desired State Configuration #
 
@@ -16,7 +16,7 @@ Deze handleiding wordt beschreven hoe u begint met het maken van PowerShell Desi
 
 ## <a name="create-a-configuration"></a>Een configuratie maken ##
 
-[**Configuraties** ](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) zijn documenten die worden beschreven van een omgeving. Omgevingen bestaan uit '**knooppunten**', die meestal worden virtuele of fysieke machines. 
+[**Configuraties** ](https://msdn.microsoft.com/powershell/dsc/configurations) zijn documenten die worden beschreven van een omgeving. Omgevingen bestaan uit '**knooppunten**', die meestal worden virtuele of fysieke machines. 
 
 Configuraties kunnen worden geleverd in verschillende vormen. De eenvoudigste manier om te maken van een nieuwe configuratie is een ps1-bestand (PowerShell-script) te maken. U doet dit door uw keuze-editor te openen. De PowerShell ISE is een goede keuze, omdat deze DSC systeemeigen begrijpt. De volgende opslaan als een PS1:
 
@@ -44,9 +44,9 @@ De volgende regel wordt een importinstructie, vergelijkbaar met het importeren v
 
 'Knooppunt' definieert de naam van de machine die deze configuratie wordt toegepast. Hoewel deze configuratie lokaal bewerkt wordt, kunnen configuraties externe knooppunten bereiken en configureren. 
 
-Knooppunten kunnen namen voor machines of IP-adressen zijn. U kunt meerdere knooppunten in een configuratie voor één document hebben. Met behulp van [configuratiegegevens](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), u kunt ook van toepassing op meerdere knooppunten dezelfde configuratie hebben. Het knooppunt is in dit geval 'localhost' - wat betekent de lokale computer dat. 
+Knooppunten kunnen namen voor machines of IP-adressen zijn. U kunt meerdere knooppunten in een configuratie voor één document hebben. Met behulp van [configuratiegegevens](https://msdn.microsoft.com/powershell/dsc/configdata), u kunt ook van toepassing op meerdere knooppunten dezelfde configuratie hebben. Het knooppunt is in dit geval 'localhost' - wat betekent de lokale computer dat. 
 
-Het volgende item is een [ **resource**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Resources zijn de bouwstenen van configuraties. Elke bron is een module die de logica van de implementatie van een enkele aspect van een machine definieert. U kunt elke resource weergeven op uw computer door te voeren **Get-DscResource** in PowerShell. Resources moet aanwezig zijn op de lokale computer en geïmporteerd voordat ze kunnen worden gebruikt in een configuratie met **importeren DscResource** die zich op de tweede regel met deze configuratie. 
+Het volgende item is een [ **resource**](https://msdn.microsoft.com/powershell/dsc/resources). Resources zijn de bouwstenen van configuraties. Elke bron is een module die de logica van de implementatie van een enkele aspect van een machine definieert. U kunt elke resource weergeven op uw computer door te voeren **Get-DscResource** in PowerShell. Resources moet aanwezig zijn op de lokale computer en geïmporteerd voordat ze kunnen worden gebruikt in een configuratie met **importeren DscResource** die zich op de tweede regel met deze configuratie. 
 
 **Een configuratie vast te stellen**
 

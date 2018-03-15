@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Scheiden van gegevens en de omgeving
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Scheiden van gegevens en de omgeving
 
@@ -81,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-`$MyData`Hiermee geeft u twee verschillende knooppunten, elk met een eigen `NodeName` en `Role`. De configuratie maakt dynamisch **knooppunt** blokken door middel van de verzameling van knooppunten van krijgt `$MyData` (in het bijzonder `$AllNodes`) en filtert deze verzameling op basis van de `Role` eigenschap...
+`$MyData` Hiermee geeft u twee verschillende knooppunten, elk met een eigen `NodeName` en `Role`. De configuratie maakt dynamisch **knooppunt** blokken door middel van de verzameling van knooppunten van krijgt `$MyData` (in het bijzonder `$AllNodes`) en filtert deze verzameling op basis van de `Role` eigenschap...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Met behulp van de configuratiegegevens voor het definiëren van ontwikkeling en productie-omgevingen
 
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35
@@ -246,7 +246,7 @@ De volgende configuratie zorgt ervoor dat de aanwezigheid van twee websites.
 Gegevens voor elke website zijn gedefinieerd in de **AllNodes** matrix.
 Het bestand `Config.xml` wordt gebruikt voor beide websites, zodat we Definieer dit in een extra sleutel met de naam `NonNodeData`.
 Houd er rekening mee dat u net zoveel aanvullende sleutels als u wilt en u kunt deze de naam elke gewenste kan hebben.
-`NonNodeData`is niet een gereserveerd woord is zojuist wat we besloten om de extra sleutel een naam.
+`NonNodeData` is niet een gereserveerd woord is zojuist wat we besloten om de extra sleutel een naam.
 
 U aanvullende sleutels openen met behulp van de speciale variabele **$ConfigurationData**.
 In dit voorbeeld `ConfigFileContents` wordt geopend met de regel:

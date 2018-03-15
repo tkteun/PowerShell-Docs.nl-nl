@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibel PowerShell-edities
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
@@ -224,8 +224,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>Gebruikers van PowerShell Gallery vindt de lijst met modules die worden ondersteund op een specifieke editie van PowerShell met tags PSEdition_Desktop en PSEditon_Core.
-Modules zonder tags PSEdition_Desktop en PSEditon_Core worden beschouwd als te werken in PowerShell Desktop-edities.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>Gebruikers van PowerShell Gallery vindt de lijst met modules die worden ondersteund op een specifieke editie van PowerShell met tags PSEdition_Desktop en PSEdition_Core.
+Modules zonder tags PSEdition_Desktop en PSEdition_Core worden beschouwd als te werken in PowerShell Desktop-edities.
 
 ```powershell
 

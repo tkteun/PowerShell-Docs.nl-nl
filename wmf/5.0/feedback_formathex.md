@@ -2,15 +2,15 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: c8ad7c6c6ec992c8b6891ff657536797164562a8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="format-hex"></a>Indeling Hex
-**Indeling Hex** kunt u tekst of binaire gegevens weergeven in hexadecimale notatie; Zie [indeling Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
+**Indeling Hex** kunt u tekst of binaire gegevens weergeven in hexadecimale notatie; Zie [indeling Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
 ## <a name="example-1"></a>Voorbeeld 1
 De inhoud van een tekenreeks in hexadecimale notatie weergeven.

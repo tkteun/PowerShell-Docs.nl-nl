@@ -3,20 +3,20 @@ ms.date: 2017-06-12
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Zoeken naar DscResource
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Find-DscResource
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="find-dscresource"></a>Zoeken naar DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 Zoekt DSC-Resources in modules.
 
 ## <a name="description"></a>Beschrijving
 
-De cmdlet zoeken DscResource vindt [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) bronnen die zich bevinden in de modules die overeenkomen met de opgegeven criteria uit geregistreerde opslagplaatsen.
+De cmdlet zoeken DscResource vindt [Desired State Configuration (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) bronnen die zich bevinden in de modules die overeenkomen met de opgegeven criteria uit geregistreerde opslagplaatsen.
 Voor elke module die deze cmdlet wordt gevonden, retourneert zoeken DscResource een PSGetDscResourceInfo-object dat u kunt doorsluizen naar installatie-Module voor het installeren van de modules die met de resources die deze cmdlet retourneert.
 
 DSC is een nieuw management-platform in Windows PowerShell waarmee implementeren en beheren van configuratiegegevens voor de, softwareservices en beheren van de omgeving waarin deze services worden uitgevoerd.
@@ -41,7 +41,7 @@ Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Verwijzing naar het online help van cmdlet
 
-[Zoeken naar DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
+[Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
 ## <a name="example-commands"></a>Voorbeeldopdrachten
 ```powershell

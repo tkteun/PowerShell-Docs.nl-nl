@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: Nieuwe scenario's en onderdelen in WMF 5.1
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nieuwe scenario's en onderdelen in WMF 5.1 #
 
@@ -28,7 +28,7 @@ Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan vo
 
 ## <a name="catalog-cmdlets"></a>Catalogus-Cmdlets  
 
-Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) module; deze genereren en bestanden voor Windows-catalogus te valideren.  
+Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; deze genereren en bestanden voor Windows-catalogus te valideren.  
 
 ###<a name="new-filecatalog"></a>Nieuwe FileCatalog 
 --------------------------------
@@ -51,7 +51,7 @@ Hiermee maakt u het catalogusbestand.
 Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
 
 
-###<a name="test-filecatalog"></a>Test FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Test FileCatalog valideert de catalogus die vertegenwoordigt een reeks mappen. 
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Deze cmdlet worden alle bestanden-hashes vergeleken en hun relatieve paden te vinden in *catalogus* met toepassingsgroepen op *schijf*. Als er een discrepantie tussen het bestands-hashes en paden gedetecteerd wordt de status als *ValidationFailed*. Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* parameter. Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet uit op het catalogusbestand. Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter. 
+Deze cmdlet worden alle bestanden-hashes vergeleken en hun relatieve paden te vinden in *catalogus* met toepassingsgroepen op *schijf*. Als er een discrepantie tussen het bestands-hashes en paden gedetecteerd wordt de status als *ValidationFailed*. Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* parameter. Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet uit op het catalogusbestand. Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter. 
 
 
 ## <a name="module-analysis-cache"></a>Module Analysis-Cache ##
@@ -101,13 +101,13 @@ In een WMF 5.1:
 
 * U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290). Deze hashtabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
-**Voorbeeld:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**Voorbeeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * Als er meerdere versies van de module, PowerShell wordt de **dezelfde resolutie logica** als `Import-Module` en niet een plaatsingsfout--hetzelfde gedrag als `Import-Module` en `Import-DscResource`.
 
 
 ##<a name="improvements-to-pester"></a>Verbeteringen in lastige
-In WMF 5.1, is de versie van Pester die wordt geleverd met PowerShell bijgewerkt van 3.3.5 naar 3.4.0 met de toevoeging van doorvoeren https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, waardoor betere gedrag voor Lastige op Nano Server. 
+In WMF 5.1, de versie van Pester die wordt geleverd met PowerShell is bijgewerkt van 3.3.5 naar 3.4.0 met de toevoeging van het doorvoeren https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, die zorgt voor betere gedrag voor Pester op Nano Server. 
 
 U kunt de wijzigingen in versies 3.3.5-3.4.0 bekijken door te inspecteren van het bestand ChangeLog.md op: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 

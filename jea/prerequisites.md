@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: JEA vereisten
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Vereisten
 
@@ -33,8 +33,8 @@ U kunt ook JEA gebruiken op uw computer thuisnetwerk of:
 
 Client-besturingssysteem   | JEA beschikbaarheid
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Vooraf geïnstalleerd
-Windows 10-1603 1511     | Vooraf is geïnstalleerd, met verminderde functionaliteit<sup>2</sup>
+Windows 10 1607+          | Vooraf geïnstalleerd
+Windows 10 1603, 1511     | Vooraf is geïnstalleerd, met verminderde functionaliteit<sup>2</sup>
 Windows 10 1507           | Niet beschikbaar
 Windows 8, 8.1            | De volledige functionaliteit met WMF 5.1
 Windows 7                 | Verminderde functionaliteit<sup>1</sup> met WMF 5.1
@@ -72,7 +72,7 @@ Windows 10-gebruikers moeten de meest recente updates van de functie voor het op
 ## <a name="enable-powershell-remoting"></a>PowerShell op afstand inschakelen
 
 Externe communicatie van PowerShell vormt de basis waarop JEA is gebouwd.
-Het is daarom nodig om te controleren of externe communicatie van PowerShell is ingeschakeld en [goed beveiligde](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) op uw systeem voordat u JEA kunt gebruiken.
+Het is daarom nodig om te controleren of externe communicatie van PowerShell is ingeschakeld en [goed beveiligde](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) op uw systeem voordat u JEA kunt gebruiken.
 
 Externe communicatie van PowerShell is standaard ingeschakeld op Windows Server 2012 en 2012 R2 2016.
 U kunt PowerShell voor externe toegang inschakelen door de volgende opdracht in een PowerShell-venster met verhoogde bevoegdheid.
@@ -109,6 +109,6 @@ U kunt ook hele systeem PowerShell schrijffouten via Groepsbeleid inschakelen.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Als u meer informatie over de beveiliging PowerShell voor externe toegang en WinRM](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [Als u meer informatie over de beveiliging PowerShell voor externe toegang en WinRM](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ het Team van blauw* blogbericht op beveiliging](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

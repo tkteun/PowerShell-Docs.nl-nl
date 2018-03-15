@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Het MOF-bestand te beveiligen
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand te beveiligen
 
@@ -19,7 +19,7 @@ In dit onderwerp wordt beschreven hoe zorg ervoor dat het doelknooppunt het best
 
 Vanaf versie 5.0 PowerShell is het gehele MOF-bestand is standaard versleuteld wanneer deze wordt toegepast op het knooppunt met behulp van de **Start DSCConfiguration** cmdlet.
 De procedure beschreven in dit artikel is alleen vereist als voor het implementeren van een oplossing met behulp van het pull-service-protocol als certificaten worden niet beheerd, om ervoor te zorgen gedownload door het doelknooppunt configuraties kunnen worden ontsleuteld en gelezen door het systeem voordat ze worden toegepast (bijvoorbeeld de pull-service beschikbaar in Windows Server).
-Knooppunten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) automatisch certificaten geïnstalleerd en worden beheerd door de service met geen administratieve overhead vereist.
+Knooppunten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) automatisch certificaten geïnstalleerd en worden beheerd door de service met geen administratieve overhead vereist.
 
 >**Opmerking:** in dit onderwerp worden de certificaten die worden gebruikt voor versleuteling.
 >Voor versleuteling, een zelfondertekend certificaat volstaat, omdat de persoonlijke sleutel wordt altijd opgeslagen geheim en versleuteling betekent niet dat een vertrouwensrelatie van het document.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Ontsleuteling instellen
 
-Voordat u [ `Start-DscConfiguration` ](https://technet.microsoft.com/en-us/library/dn521623.aspx) kunt werken, hebt u zien of de lokale Configuration Manager op elk doelknooppunt welk certificaat moet worden gebruikt voor het decoderen van de referenties met behulp van de resource CertificateID om te controleren of de vingerafdruk van het certificaat. Deze voorbeeldfunctie vindt u de juiste lokale certificaatarchief (mogelijk moet aanpassen zodat deze wordt gevonden en het exacte certificaat dat u wilt gebruiken):
+Voordat u [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) kunt werken, hebt u zien of de lokale Configuration Manager op elk doelknooppunt welk certificaat moet worden gebruikt voor het decoderen van de referenties met behulp van de resource CertificateID om te controleren of de vingerafdruk van het certificaat. Deze voorbeeldfunctie vindt u de juiste lokale certificaatarchief (mogelijk moet aanpassen zodat deze wordt gevonden en het exacte certificaat dat u wilt gebruiken):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 Op dit moment kunt u de configuratie, die de gegevens uit twee bestanden uitvoeren:
 
- * A *. meta.mof-bestand dat de lokale Configuration Manager voor het ontsleutelen van de referenties met het certificaat dat is opgeslagen op het lokale computerarchief en geïdentificeerd door de vingerafdruk configureert. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx)van toepassing is de *. meta.mof-bestand.
+ * A *. meta.mof-bestand dat de lokale Configuration Manager voor het ontsleutelen van de referenties met het certificaat dat is opgeslagen op het lokale computerarchief en geïdentificeerd door de vingerafdruk configureert. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) van toepassing is de *. meta.mof-bestand.
  * Een MOF-bestand dat daadwerkelijk de configuratie geldt. Start DscConfiguration geldt de configuratie.
 
 Deze opdrachten worden die stappen uitvoeren:

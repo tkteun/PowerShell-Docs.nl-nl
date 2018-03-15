@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC oplossen
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>DSC oplossen
 
@@ -21,7 +21,7 @@ Windows PowerShell Desired State Configuration (DSC), is afhankelijk van WinRM. 
 
 ## <a name="using-get-dscconfigurationstatus"></a>Gebruik Get-DscConfigurationStatus
 
-De [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet Hiermee haalt u informatie over de configuratiestatus van de van een doelknooppunt. Een uitgebreide object wordt geretourneerd die bevat belangrijke informatie over het uitvoeren van de configuratie al dan niet geslaagd of mislukt is. U kunt verdiepen in het object voor het detecteren van gegevens over de configuratie uitvoeren zoals:
+De [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet Hiermee haalt u informatie over de configuratiestatus van de van een doelknooppunt. Een uitgebreide object wordt geretourneerd die bevat belangrijke informatie over het uitvoeren van de configuratie al dan niet geslaagd of mislukt is. U kunt verdiepen in het object voor het detecteren van gegevens over de configuratie uitvoeren zoals:
 
 * Alle resources die niet zijn geslaagd
 * Een resource die opnieuw worden opgestart aangevraagd
@@ -117,7 +117,7 @@ Consistency engine was run successfully.
 
 DSC-gebeurtenissen worden vastgelegd in een bepaalde structuur waarmee de gebruiker te verzamelen van gegevens uit een DSC-taak. De structuur is als volgt:
 
-**Taak-ID:<Guid>**
+**Taak-ID: <Guid>**
 **<Event Message>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Verzamelen van gebeurtenissen van een enkele DSC-bewerking
@@ -232,7 +232,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: foutberichten voor mislukte bewerkingen die recent zijn geregistreerd
 
-`$SeparateDscOperations[0].Group`bevat een reeks gebeurtenissen voor de meest recente bewerking. Voer de `Where-Object` cmdlet om de gebeurtenissen te filteren op basis van hun niveau weergavenaam. Resultaten worden opgeslagen in de `$myFailedEvent` variabele, die verder kan worden opgesplitst om het gebeurtenisbericht weergegeven:
+`$SeparateDscOperations[0].Group` bevat een reeks gebeurtenissen voor de meest recente bewerking. Voer de `Where-Object` cmdlet om de gebeurtenissen te filteren op basis van hun niveau weergavenaam. Resultaten worden opgeslagen in de `$myFailedEvent` variabele, die verder kan worden opgesplitst om het gebeurtenisbericht weergegeven:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -247,7 +247,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: alle gebeurtenissen die worden gegenereerd voor een bepaalde taak-ID.
 
-`$SeparateDscOperations`is een matrix van groepen, elk met de naam als de unieke taak-ID heeft. Door het uitvoeren van de `Where-Object` cmdlet, kunt u deze groepen van gebeurtenissen die gedurende een bepaalde taak-ID hebben uitpakken:
+`$SeparateDscOperations` is een matrix van groepen, elk met de naam als de unieke taak-ID heeft. Door het uitvoeren van de `Where-Object` cmdlet, kunt u deze groepen van gebeurtenissen die gedurende een bepaalde taak-ID hebben uitpakken:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [Aangepaste Windows PowerShell Desired State Configuration Resources bouwen](authoringResource.md)
 
 ### <a name="other-resources"></a>Andere bronnen
-* [Windows PowerShell Desired State Configuration-Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell Desired State Configuration-Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

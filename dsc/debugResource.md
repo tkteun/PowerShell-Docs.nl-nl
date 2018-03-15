@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Foutopsporing van DSC-resources
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>Foutopsporing van DSC-resources
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 In PowerShell 5.0 is een nieuwe functie geïntroduceerd in de gewenste status configuratie (DSC) waarmee u fouten opsporen in een DSC-resource als een configuratie wordt toegepast.
 
 ## <a name="enabling-dsc-debugging"></a>DSC-foutopsporing inschakelen
-Voordat u fouten in een resource opsporen kunt, u moet inschakelen door het aanroepen van foutopsporing de [inschakelen DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet. Deze cmdlet wordt een verplichte parameter **BreakAll**. 
+Voordat u fouten in een resource opsporen kunt, u moet inschakelen door het aanroepen van foutopsporing de [inschakelen DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet. Deze cmdlet wordt een verplichte parameter **BreakAll**. 
 
-U kunt controleren of foutopsporing is ingeschakeld door te kijken naar het resultaat van een aanroep naar [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+U kunt controleren of foutopsporing is ingeschakeld door te kijken naar het resultaat van een aanroep naar [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 De volgende PowerShell-uitvoer geeft het resultaat van de foutopsporing inschakelen:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Na het compileren van de configuratie, start u deze door aan te roepen [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). De configuratie wordt niet meer wanneer de lokale Configuration Manager (LCM) in de eerste resource in de configuratie aanroepen. Als u de `-Verbose` en `-Wait` parameters, de uitvoer geeft aan de regels die u invoeren moet om foutopsporing starten.
+Na het compileren van de configuratie, start u deze door aan te roepen [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). De configuratie wordt niet meer wanneer de lokale Configuration Manager (LCM) in de eerste resource in de configuratie aanroepen. Als u de `-Verbose` en `-Wait` parameters, de uitvoer geeft aan de regels die u invoeren moet om foutopsporing starten.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Nu kunt u de opdrachten voor foutopsporing in de ISE om het script resource te d
 
 ## <a name="disabling-dsc-debugging"></a>DSC-foutopsporing uit te schakelen
 
-Na het aanroepen [inschakelen DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), alle aanroepen voor [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) leidt ertoe dat de configuratie in het foutopsporingsprogramma te splitsen. Om toe te staan configuraties normaal uitgevoerd, moet u uitschakelen door het aanroepen van foutopsporing de [uitschakelen DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
+Na het aanroepen [inschakelen DscDebug](https://technet.microsoft.com/library/mt517870.aspx), alle aanroepen voor [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) leidt ertoe dat de configuratie in het foutopsporingsprogramma te splitsen. Om toe te staan configuraties normaal uitgevoerd, moet u uitschakelen door het aanroepen van foutopsporing de [uitschakelen DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.
 
 >**Opmerking:** Rebooting verandert de status van de foutopsporing van de LCM niet. Als foutopsporing is ingeschakeld, wordt het starten van een configuratie nog steeds onderbreken met foutopsporing na opnieuw opstarten.
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -18,7 +18,7 @@ Een PowerShell-module is een herbruikbare pakket op met een PowerShell-functiona
 
 ## <a name="what-is-a-powershell-script"></a>Wat is een PowerShell-script?
 
-Een PowerShell-script is een reeks opdrachten die zijn opgeslagen in een .ps1-bestand om in te schakelen hergebruik en delen. PowerShell-werkstromen zijn ook PowerShell-scripts, waardoor het overzicht van een verzameling taken en geef sequentiëren voor deze taken. Voor meer informatie raadpleegt u [aan de slag met PowerShell Workflow](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Een PowerShell-script is een reeks opdrachten die zijn opgeslagen in een .ps1-bestand om in te schakelen hergebruik en delen. PowerShell-werkstromen zijn ook PowerShell-scripts, waardoor het overzicht van een verzameling taken en geef sequentiëren voor deze taken. Voor meer informatie raadpleegt u [aan de slag met PowerShell Workflow](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Hoe weet PowerShell-Scripts verschilt van PowerShell-Modules?
 
@@ -48,7 +48,7 @@ Deze fout kan optreden vanwege de volgende redenen:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Waarom ik kan niet met mijn persoonlijke account aanmelden, maar ik gisteren kan aanmelden?
 
-Zorg ervoor dat uw account galerie niet geschikt is voor wijzigingen in uw primaire e-mailalias. Zie voor meer informatie [Microsoft e-aliassen](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Zorg ervoor dat uw account galerie niet geschikt is voor wijzigingen in uw primaire e-mailalias. Zie voor meer informatie [Microsoft e-aliassen](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Waarom zie ik niet alle galerij-items wanneer ik de categorie selectievakjes op het tabblad Items selecteren?
 
@@ -156,7 +156,7 @@ Daarom **PowerShellGet** moet een van de volgende besturingssystemen:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Is het mogelijk om deze te reserveren namen voor items die in de toekomst worden gepubliceerd?
 

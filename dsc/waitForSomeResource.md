@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-WaitForSome Resource
-ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 8b0ad0dbd31816cc673c7f77945927987e90e08b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC-WaitForSome Resource
 
@@ -40,12 +40,12 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| Het minimale aantal knooppunten dat moet zich in de gewenste status voor deze bron zou lukken.|
 | NodeName| De doelknooppunten van afhankelijk zijn van de bron.| 
-| ResourceName| De naam van de resource afhangen van.| 
+| ResourceName| De naam van de resource afhangen van. Als deze resource bij een andere configuratie hoort, de naam op als indeling ' [__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
 | RetryIntervalSec| Het aantal seconden alvorens het opnieuw proberen. Minimumwaarde is 1.| 
 | RetryCount| Het maximale aantal keren opnieuw proberen.| 
 | ThrottleLimit| Het aantal machines tegelijk verbinding maken. Standaard is de nieuwe-cimsession standaardwaarde.| 
 | dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | Zie [gebruik van DSC met gebruikersgegevens](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | Zie [gebruik van DSC met gebruikersgegevens](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
 
 ## <a name="example"></a>Voorbeeld

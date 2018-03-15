@@ -2,8 +2,8 @@
 
 In dit onderwerp biedt uitgevers met samenvattingsinformatie over het wijzigen van het manifest voor PowerShell Gallery publicaties zodat functies PowerShellGet-cmdlets en de gebruikersinterface van de PowerShell-galerie worden beïnvloed. Deze inhoud is geordend op waar de wijziging wordt weergegeven, vanaf het midden en klik op het navigatiegebied aan de linkerkant. Er is een sectie meer informatie over tags dekking biedt, waarin belangrijke veelgebruikte tags labels, evenals enkele van de meer. Er zijn twee onderwerpen vindt u voorbeelden van manifest: 
 
-* Zie voor modules, [Update Module-Manifest](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* Zie voor scripts, [scriptbestand met metagegevens maken](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* Zie voor modules, [Update Module-Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* Zie voor scripts, [scriptbestand met metagegevens maken](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell-galerie functie elementen beheerd door het Manifest
 
@@ -12,13 +12,13 @@ Elk item geeft aan of kan worden beheerd door het manifest module of script.
 
 | UI-Element | Beschrijving | Module | Script | 
 | --- | --- | --- | --- |
-| **Titel** | Dit is de naam van het item dat is gepubliceerd naar de galerie  | Nee | Nee |
+| **titel** | Dit is de naam van het item dat is gepubliceerd naar de galerie  | Nee | Nee |
 | **Versie** | De versie die wordt weergegeven is de tekenreeks in de metagegevens en een prerelease als is opgegeven. Het primaire gedeelte van de versie in een Module-manifest is de ModuleVersion. Voor een script wordt vastgesteld als. Versie. Als de tekenreeks van een prerelease-versie is opgegeven, worden deze toegevoegd aan de ModuleVersion voor modules of opgegeven als onderdeel van. De versie voor scripts. Er is voor het opgeven van prerelease tekenreeksen in de documentatie bij [modules](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), en in [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Ja | Ja |
 | **Beschrijving** | Dit is de beschrijving in het manifest van de module en in de bestandenlijst voor een script is. BESCHRIJVING | Ja | Ja |
 | **Vereisen dat gebruikers met licentie** | Een module kunt u vereisen dat de gebruiker een licentie accepteren door het wijzigen van de module-manifest met RequireLicenseAcceptance = $true, levert een LicenseURI en voorzien in een bestand license.txt in de hoofdmap van de modulemap. Aanvullende informatie is beschikbaar in de [vereisen licentie acceptatie](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance) onderwerp. | Ja | Nee |
 | **Opmerkingen bij de release** | Voor modules, wordt deze informatie uit de sectie ReleaseNotes onder PSData\PrivateData getekend. In de manifesten script, is de. RELEASENOTES-element. | Ja | Ja |
 | **Eigenaars** | Eigenaars zijn de lijst met gebruikers in de PowerShell-galerie die een artikel kunt bijwerken. De lijst eigenaar is niet opgenomen in het manifest item. Aanvullende documentatie wordt beschreven hoe u [eigenaren van item beheren](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Nee | Nee |
-| **Auteur** | Dit is opgenomen in het manifest van de module als de auteur en in een script manifest als. AUTEUR. Het veld auteur wordt vaak gebruikt om op te geven van een bedrijf of organisatie die zijn gekoppeld aan een item. | Ja | Ja |
+| **auteur** | Dit is opgenomen in het manifest van de module als de auteur en in een script manifest als. AUTEUR. Het veld auteur wordt vaak gebruikt om op te geven van een bedrijf of organisatie die zijn gekoppeld aan een item. | Ja | Ja |
 | **Copyright** | Dit is het veld Copyright in het manifest van de module en. COPYRIGHT in het manifest van een script. | Ja | Ja |
 | **FileList** | De lijst met bestanden is afkomstig van het pakket wanneer het wordt gepubliceerd naar de PowerShell-galerie. Het is geen instelbare door de manifest-gegevens. Opmerking: Er is een extra .nuspec-bestand worden weergegeven met elk item in de PowerShell-galerie is niet aanwezig zijn na de installatie van het item op een systeem. Dit is het manifest van de Nuget-pakket voor het item en kan worden genegeerd. | Nee | Nee |
 | **Tags** | Voor modules, Tags opgenomen onder PSData\PrivateData. Voor scripts, de sectie is met het label. LABELS. Houd er rekening mee dat labels kunnen niet spaties, zelfs wanneer ze tussen aanhalingstekens. Labels hebben aanvullende vereisten en betekenis zoals verderop in dit onderwerp in het gedeelte Details van de Tag wordt beschreven. | Ja | Ja |

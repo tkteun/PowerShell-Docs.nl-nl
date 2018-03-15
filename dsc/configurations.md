@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-configuraties
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>DSC-configuraties
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Met behulp van nieuwe resources in uw configuratie
 
 Als u de eerdere voorbeelden hebt uitgevoerd, u mogelijk opgevallen dat zijn u gewaarschuwd dat u een resource zijn gebruiken zonder expliciet importeren.
-Vandaag de dag DSC wordt geleverd met 12 resources als onderdeel van de module PSDesiredStateConfiguration. Andere bronnen in externe modules moeten worden geplaatst in `$env:PSModulePath` om te kunnen worden herkend door de LCM. Een nieuwe cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), kunnen worden gebruikt om te bepalen welke bronnen worden geïnstalleerd op het systeem en zijn beschikbaar voor gebruik door de LCM. Zodra deze modules zijn geplaatst `$env:PSModulePath` en correct worden herkend door [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), ze nog moeten worden geladen in uw configuratie. 
+Vandaag de dag DSC wordt geleverd met 12 resources als onderdeel van de module PSDesiredStateConfiguration. Andere bronnen in externe modules moeten worden geplaatst in `$env:PSModulePath` om te kunnen worden herkend door de LCM. Een nieuwe cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), kunnen worden gebruikt om te bepalen welke bronnen worden geïnstalleerd op het systeem en zijn beschikbaar voor gebruik door de LCM. Zodra deze modules zijn geplaatst `$env:PSModulePath` en correct worden herkend door [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ze nog moeten worden geladen in uw configuratie. 
 **Importeren DscResource** is een dynamische sleutelwoord dat alleen kan worden herkend binnen een **configuratie** blok (dat wil zeggen het is niet een cmdlet). 
 **Importeren DscResource** ondersteunt twee parameters:
 - **Modulenaam** is de aanbevolen manier van het gebruik van **importeren DscResource**. De naam van de module met de resources die worden geïmporteerd (evenals een string-matrix van modulenamen) worden geaccepteerd. 
-- **Naam** is de naam van de resource te importeren. Dit is niet de beschrijvende naam die wordt geretourneerd als 'Name' door [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), maar de naam van de klasse die wordt gebruikt wanneer definiëren van de resource-schema (geretourneerd als **ResourceType** door [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Naam** is de naam van de resource te importeren. Dit is niet de beschrijvende naam die wordt geretourneerd als 'Name' door [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), maar de naam van de klasse die wordt gebruikt wanneer definiëren van de resource-schema (geretourneerd als **ResourceType** door [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## <a name="see-also"></a>Zie ook
 * [Windows PowerShell Desired State Configuration-overzicht](overview.md)

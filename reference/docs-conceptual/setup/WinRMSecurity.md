@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>Beveiligingsoverwegingen voor externe communicatie van PowerShell
 
@@ -14,7 +14,7 @@ Externe communicatie van PowerShell is de aanbevolen manier voor het beheren van
 
 ## <a name="what-is-powershell-remoting"></a>Wat is PowerShell voor externe toegang?
 
-Externe communicatie van PowerShell gebruikt [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), dit is de Microsoft-implementatie van de [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, zodat gebruikers kunnen uitvoeren van PowerShell de opdrachten op externe computers. U vindt meer informatie over het gebruik van PowerShell voor externe toegang op [externe opdrachten uitgevoerd](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+Externe communicatie van PowerShell gebruikt [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), dit is de Microsoft-implementatie van de [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protocol, zodat gebruikers kunnen uitvoeren van PowerShell de opdrachten op externe computers. U vindt meer informatie over het gebruik van PowerShell voor externe toegang op [externe opdrachten uitgevoerd](https://technet.microsoft.com/library/dd819505.aspx).
 
 Externe communicatie van PowerShell is niet hetzelfde als het gebruik van de **ComputerName** parameter van een cmdlet uit te voeren op een externe computer waarop Remote Procedure Call (RPC) gebruikt als het onderliggende protocol.
 
@@ -33,7 +33,7 @@ De standaardregel voor Windows Firewall voor externe communicatie van PowerShell
 
 ## <a name="process-isolation"></a>Geïsoleerde processen
 
-Externe communicatie van PowerShell gebruikt [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) voor communicatie tussen computers. WinRM wordt uitgevoerd als een service onder het account Network Service en geïsoleerde processen die worden uitgevoerd als gebruikersaccounts aan host PowerShell exemplaren gestart. Een exemplaar van PowerShell uitgevoerd als een gebruiker heeft geen toegang tot een proces dat een exemplaar van PowerShell uitgevoerd als een andere gebruiker.
+Externe communicatie van PowerShell gebruikt [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) voor communicatie tussen computers. WinRM wordt uitgevoerd als een service onder het account Network Service en geïsoleerde processen die worden uitgevoerd als gebruikersaccounts aan host PowerShell exemplaren gestart. Een exemplaar van PowerShell uitgevoerd als een gebruiker heeft geen toegang tot een proces dat een exemplaar van PowerShell uitgevoerd als een andere gebruiker.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Gebeurtenislogboeken gegenereerd door externe communicatie van PowerShell
 
@@ -50,10 +50,10 @@ Ongeacht het transportprotocol gebruikt (HTTP of HTTPS) versleutelt externe comm
 
 Verificatie bevestigt de identiteit van de client bij de server- en in het ideale geval - de server naar de client.
     
-Wanneer een client verbinding maakt met een domeinserver met de naam van de computer (dat wil zeggen: server01, of server01.contoso.com), is het standaardverificatieprotocol [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+Wanneer een client verbinding maakt met een domeinserver met de naam van de computer (dat wil zeggen: server01, of server01.contoso.com), is het standaardverificatieprotocol [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos wordt gegarandeerd dat de gebruikers-id en de identiteit van server zonder een soort herbruikbare referenties te verzenden.
 
-Wanneer een client verbinding maakt met de domeinserver van een met behulp van het IP-adres of verbinding met een werkgroepserver is maakt, is Kerberos-verificatie niet mogelijk. In dat geval PowerShell voor externe toegang is afhankelijk van de [NTLM-verificatieprotocol](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). Het NTLM-verificatieprotocol wordt gegarandeerd dat de identiteit van de gebruiker zonder een soort delegable referentie te verzenden. Om te bewijzen dat gebruikers-id, het NTLM-protocol is vereist dat de client en de server een sessiesleutel van het wachtwoord van de gebruiker berekenen zonder ooit uitwisselen van het wachtwoord zelf. De server normaal gesproken weet niet het wachtwoord van de gebruiker, zodat deze communiceert met de domeincontroller de gebruiker het wachtwoord en berekent de sessiesleutel voor de server. 
+Wanneer een client verbinding maakt met de domeinserver van een met behulp van het IP-adres of verbinding met een werkgroepserver is maakt, is Kerberos-verificatie niet mogelijk. In dat geval PowerShell voor externe toegang is afhankelijk van de [NTLM-verificatieprotocol](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Het NTLM-verificatieprotocol wordt gegarandeerd dat de identiteit van de gebruiker zonder een soort delegable referentie te verzenden. Om te bewijzen dat gebruikers-id, het NTLM-protocol is vereist dat de client en de server een sessiesleutel van het wachtwoord van de gebruiker berekenen zonder ooit uitwisselen van het wachtwoord zelf. De server normaal gesproken weet niet het wachtwoord van de gebruiker, zodat deze communiceert met de domeincontroller de gebruiker het wachtwoord en berekent de sessiesleutel voor de server. 
       
 Het NTLM-protocol wordt echter niet, gegarandeerd dat de identiteit van server. Net als bij alle protocollen die gebruikmaken van NTLM voor verificatie, kan de domeincontroller voor het berekenen van een sessiesleutel NTLM en waardoor imiteren van de server worden aangeroepen door een kwaadwillende persoon met toegang tot een domein van het computeraccount.
 

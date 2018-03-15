@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 description: Richtlijnen voor uitgevers
 title: PowerShell-galerie publiceren richtlijnen en aanbevolen procedures
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publiceren richtlijnen en aanbevolen procedures
 
@@ -19,7 +19,7 @@ Items die zijn gepubliceerd in deze richtlijnen wordt vaker worden geïnstalleer
 Hieronder volgen richtlijnen voor wat een goede PowerShell-galerie-item, welke optionele Manifest instellingen zijn zeer belangrijk uw code met feedback van de eerste revisoren verbetering maakt en [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), versiebeheer de module, documentatie, tests en voorbeelden voor het gebruik van wat u hebt gedeeld.
 Veel van deze documentatie volgt de richtlijnen voor publicatie [Resource Modules van hoge kwaliteit DSC](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Zie voor het mechanisme van een item publiceren naar de PowerShell-galerie, [maken en publiceren van een Item](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+Zie voor het mechanisme van een item publiceren naar de PowerShell-galerie, [maken en publiceren van een Item](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Feedback over deze richtlijnen wordt verwelkomde. Als u feedback hebt, opent u problemen in onze [Github-opslagplaats voor documentatie](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ Er zijn verschillende artikelen beschikbaar zijn in MSDN voor het doorgeven van 
 * Richtlijnen voor het ontwikkelen van help zijn [Cmdlet helpen schrijven](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Maken van de help van cmdlet, dit is de beste manier om een PowerShell-script, functie of cmdlet.
   Voor informatie over het maken van de help van cmdlet beginnen met [schrijven Cmdlet helpen](https://go.microsoft.com/fwlink/?LinkID=123415) in de MSDN-bibliotheek.
-  Zie het Help-informatie in een script toevoegen [opmerking op basis van Help over](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Zie het Help-informatie in een script toevoegen [opmerking op basis van Help over](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Veel modules ook documentatie in tekstindeling zoals MarkDown-bestanden.
   Dit is vooral handig zijn wanneer er een site in Github, waar Markdown een intensief gebruikte indeling is.
   De aanbevolen procedure is het gebruik van [Markdown met een vleugje Github](https://help.github.com/categories/writing-on-github/)

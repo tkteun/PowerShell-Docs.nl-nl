@@ -1,22 +1,22 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Het schrijven en uitvoeren van Scripts in de Windows PowerShell ISE
+title: Scripts schrijven en uitvoeren in Windows PowerShell ISE
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Het schrijven en uitvoeren van Scripts in de Windows PowerShell ISE
+# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Scripts schrijven en uitvoeren in Windows PowerShell ISE
 In dit onderwerp wordt beschreven hoe maken, bewerken, uitvoeren en scripts in het deelvenster Script opslaat.
 
 ## <a name="how-to-create-and-run-scripts"></a>Het maken en scripts uitvoeren
 U kunt openen en bewerken van Windows PowerShell-bestanden in het scriptvenster. Specifieke bestandstypen van belang zijn in Windows PowerShell zijn scriptbestanden (.ps1), gegevens scriptbestanden (.psd1) en module scriptbestanden (.psm1). Deze bestandstypen zijn syntaxis in de editor scriptvenster gekleurd. Andere veelvoorkomende bestandstypen die u in het scriptvenster openen kunt zijn configuratiebestanden (.ps1xml), XML-bestanden en tekstbestanden.
 
 > [!NOTE]
-> De Windows PowerShell-uitvoeringsbeleid bepaalt of u kunt scripts uitvoeren en Windows PowerShell-profielen en configuratiebestanden laden. Het standaarduitvoeringsbeleid beperkt, wordt voorkomen dat alle scripts uitgevoerd en voorkomt u dat bij het laden profielen. Als u wilt wijzigen van het uitvoeringsbeleid zodat profielen worden geladen en worden gebruikt, Zie [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) en [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> De Windows PowerShell-uitvoeringsbeleid bepaalt of u kunt scripts uitvoeren en Windows PowerShell-profielen en configuratiebestanden laden. Het standaarduitvoeringsbeleid beperkt, wordt voorkomen dat alle scripts uitgevoerd en voorkomt u dat bij het laden profielen. Als u wilt wijzigen van het uitvoeringsbeleid zodat profielen worden geladen en worden gebruikt, Zie [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) en [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### <a name="to-create-a-new-script-file"></a>Voor het maken van een script
 Klik op de werkbalk op **nieuw** , of op de **bestand** menu, klikt u op **nieuw**. Het bestand wordt weergegeven in een nieuw tabblad bestand onder het huidige PowerShell-tabblad. Vergeet niet de tabbladen PowerShell zijn alleen zichtbaar als er meer dan één. Standaard wordt een bestand van het type script (.ps1) gemaakt, maar deze kan worden opgeslagen met een nieuwe naam en extensie. Meerdere scriptbestanden kunnen worden gemaakt op hetzelfde tabblad PowerShell.
@@ -139,5 +139,4 @@ Windows PowerShell ISE ondersteunt de volgende opties voor codering: ASCII, BigE
 Windows PowerShell ISE niet verandert de codering van scripts die zijn gemaakt door in een andere editor, zelfs wanneer u gebruikt de opslaan of OpslaanAls opdrachten in Windows PowerShell ISE.
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van de Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Kennismaking met Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

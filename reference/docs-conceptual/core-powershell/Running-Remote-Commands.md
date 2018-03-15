@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
 title: Externe opdrachten uitvoeren
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -28,10 +28,10 @@ Veel Windows PowerShell-cmdlets hebben de parameter ComputerName waarmee u kunt 
 
 Deze cmdlets zijn onder andere:
 
-* [Computer opnieuw opstarten](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Verbinding testen](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Schakel EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-gebeurtenislogboek](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell voor externe toegang
 Windows PowerShell op afstand, die gebruikmaakt van het protocol WS-Management, kunt u een Windows PowerShell-opdracht uitvoeren op een of meer externe computers. Hiermee kunt u permanente verbindingen tot stand brengen, 1:1 interactieve sessies starten en scripts uitvoeren op meerdere computers.
 
-Voor het gebruik van Windows PowerShell op afstand, moet de externe computer worden geconfigureerd voor extern beheer. Zie voor meer informatie, waaronder instructies [over vereisten voor externe](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+Voor het gebruik van Windows PowerShell op afstand, moet de externe computer worden geconfigureerd voor extern beheer. Zie voor meer informatie, waaronder instructies [over vereisten voor externe](https://technet.microsoft.com/library/dd315349.aspx).
 
-Nadat u Windows PowerShell voor externe toegang hebt geconfigureerd, worden veel remoting strategieën voor u beschikbaar zijn. De rest van dit document vindt u enkele van deze. Zie voor meer informatie [over externe](https://technet.microsoft.com/en-us/library/dd347744.aspx) en [over veelgestelde vragen over extern](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+Nadat u Windows PowerShell voor externe toegang hebt geconfigureerd, worden veel remoting strategieën voor u beschikbaar zijn. De rest van dit document vindt u enkele van deze. Zie voor meer informatie [over externe](https://technet.microsoft.com/library/dd347744.aspx) en [over veelgestelde vragen over extern](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### <a name="start-an-interactive-session"></a>Een interactieve sessie starten
 Gebruikt u een interactieve sessie starten met een externe computer, de [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.
@@ -141,12 +141,12 @@ Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Trouble
 - [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [Nieuwe-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan-Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md

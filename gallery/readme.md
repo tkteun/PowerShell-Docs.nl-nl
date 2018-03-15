@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery, psget
 title: De PowerShell-galerie
-ms.openlocfilehash: 9fe341e4b297764321f3b3f07caca8ef4b8b40e0
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell-galerie
 
@@ -22,7 +22,7 @@ De PowerShellGet-module bevat cmdlets voor het detecteren, installeren, bijwerke
 
 Installeren van items uit de galerie, is de meest recente versie van de module PowerShellGet, die beschikbaar is in Windows 10, in Windows Management Framework (WMF) 5.0 of in het installatieprogramma (MSI) gebaseerde (voor PowerShell 3 en 4) vereist.
 
-- [**Ophalen van Windows 10**](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409),
+- [**Get Windows 10**](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409),
 - [**Ophalen van WMF 5.0**](http://go.microsoft.com/fwlink/?LinkId=398175), of
 - [**MSI-Installer ophalen**](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
@@ -50,7 +50,7 @@ Daarom **PowerShellGet** moet een van de volgende besturingssystemen:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 
 ## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Hebt u feedback?

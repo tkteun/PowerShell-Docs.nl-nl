@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell-cmdlet
-title: Fouten opsporen in Scripts in Windows PowerShell ISE
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Fouten opsporen in scripts in Windows PowerShell ISE
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in Scripts in Windows PowerShell ISE
+# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in scripts in Windows PowerShell ISE
 
 Dit onderwerp wordt beschreven hoe u fouten opsporen in scripts op een lokale computer met behulp van de visuele foutopsporing functies voor Windows PowerShell Integrated Scripting Environment (ISE).
 
@@ -42,7 +42,7 @@ Geeft alle onderbrekingspunten in de huidige Windows PowerShell-sessie.
 Op de **Debug** menu, klikt u op **lijst onderbrekingspunten**. Het volgende script is een voorbeeld van hoe u alle onderbrekingspunten van het consolevenster weergeven met behulp van kunt de [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet.
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 Een onderbrekingspunt uitschakelen wordt niet verwijderd. het uitgeschakeld totdat deze is ingeschakeld.  Alle onderbrekingspunten uitschakelen in de huidige sessie op de **Debug** menu, klikt u op **alle onderbrekingspunten uitschakelen**. Het volgende script is een voorbeeld van hoe u alle onderbrekingspunten van het consolevenster uitschakelen met behulp van kunt de [uitschakelen PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet.
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 U alle onderbrekingspunten gedefinieerd in de huidige sessie op de **Debug** menu, klikt u op **alle onderbrekingspunten**. Het volgende script is een voorbeeld van hoe u alle onderbrekingspunten van het consolevenster inschakelen met behulp van kunt de [inschakelen PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet.
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>Het beheren van een sessie voor foutopsporing
-Voordat u foutopsporing, moet u een of meer onderbrekingspunten instellen. U kunt een onderbrekingspunt niet instellen, tenzij het script dat u fouten wilt opsporen wordt opgeslagen. Zie voor instructies over hoe u kunt geen onderbrekingspunt instellen [onderbrekingspunten beheren](#how-to-manage-breakpoints) of [Set PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Nadat u foutopsporing hebt gestart, kunt u een script niet bewerken, totdat u stopt met het opsporen van fouten. Een script met een of meer onderbrekingspunten die zijn ingesteld, wordt automatisch opgeslagen voordat deze wordt uitgevoerd.
+Voordat u foutopsporing, moet u een of meer onderbrekingspunten instellen. U kunt een onderbrekingspunt niet instellen, tenzij het script dat u fouten wilt opsporen wordt opgeslagen. Zie voor instructies over hoe u kunt geen onderbrekingspunt instellen [onderbrekingspunten beheren](#how-to-manage-breakpoints) of [Set PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Nadat u foutopsporing hebt gestart, kunt u een script niet bewerken, totdat u stopt met het opsporen van fouten. Een script met een of meer onderbrekingspunten die zijn ingesteld, wordt automatisch opgeslagen voordat deze wordt uitgevoerd.
 
 ### <a name="to-start-debugging"></a>Foutopsporing te starten
 Druk op **F5** of klik op de werkbalk op de **-Script uitvoeren** pictogram, of op de **Debug** menu klikt u op **uitvoeren/doorgaan**. Het script wordt uitgevoerd totdat de eerste onderbrekingspunt aangetroffen. Deze bewerking daar pauzeert en markeert u de regel waarop het programma is onderbroken.
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van de Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Kennismaking met Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

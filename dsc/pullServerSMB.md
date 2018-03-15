@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een SMB DSC-pull-server instellen
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Een SMB DSC-pull-server instellen
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Een DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) pull-server is een computer die als host fungeert voor SMB-bestandsshares die DSC-configuratiebestanden en DSC-resources beschikbaar voor de doelknooppunten wanneer die knooppunten van deze vragen.
+Een DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) pull-server is een computer die als host fungeert voor SMB-bestandsshares die DSC-configuratiebestanden en DSC-resources beschikbaar voor de doelknooppunten wanneer die knooppunten van deze vragen.
 
 Wilt gebruiken een SMB-pull-server voor DSC, moet u u:
 - Instellen van een SMB-bestandsshare op een server met PowerShell 4.0 of hoger
@@ -25,7 +25,7 @@ Er zijn een aantal manieren op een SMB-bestandsshare instellen, maar bekijken we
 
 ### <a name="install-the-xsmbshare-resource"></a>De resource xSmbShare installeren
 
-Roep de [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet voor het installeren van de **xSmbShare** module.
+Roep de [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet voor het installeren van de **xSmbShare** module.
 >**Opmerking**: **Install-Module** is opgenomen in de **PowerShellGet** module die is opgenomen in PowerShell 5.0. U kunt downloaden via de **PowerShellGet** -module voor PowerShell 3.0 en 4.0 op [PackageManagement PowerShell-Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). De **xSmbShare** bevat de DSC-resource **xSmbShare**, die kan worden gebruikt voor het maken van een SMB-bestandsshare.
 
 ### <a name="create-the-directory-and-file-share"></a>De directory en bestandsshare maken

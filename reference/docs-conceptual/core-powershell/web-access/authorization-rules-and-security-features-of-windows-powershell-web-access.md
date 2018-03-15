@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -24,7 +24,7 @@ Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigu
 Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels.
 Zie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
 
-Beheerders kunnen definiëren 0 - *n*  verificatieregels voor Windows PowerShell Web Access.
+Beheerders kunnen definiëren 0 -*n* verificatieregels voor Windows PowerShell Web Access.
 De standaardbeveiliging is beperkend, niet toelatend. Als er geen verificatieregels zijn, heeft geen enkele gebruiker toegang tot iets.
 
 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) en [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) in Windows Server 2012 R2 bevatten de parameter Credential waarmee u toevoegen en testen van Windows PowerShell-webtoegang autorisatieregels van een externe computer, of uit binnen een actieve sessie voor Windows PowerShell Web Access.
@@ -32,7 +32,7 @@ Als kunt andere Windows PowerShell-cmdlets die u een referentieparameter hebt u 
 U maakt een PSCredential-object met de referenties die u wilt doorgeven aan een externe computer, voeren de [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
 
 Windows PowerShell-webtoegang verificatieregels zijn regels van de goedgekeurde IP-adressen.
-Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows-PowerShellÂ [sessieconfiguraties](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
+Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows-PowerShellÂ [sessieconfiguraties](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
 Voor een uitleg op **runspaces** Zie [begin gebruik van PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > **Opmerking over beveiliging**
@@ -103,7 +103,7 @@ Deze regels worden pas geëvalueerd nadat een gebruiker is geverifieerd door de 
 De laatste beveiligingslaag voor Windows PowerShell-internettoegang is de beveiligingsconfiguratie voor doel van het computer.
 Gebruikers moeten de juiste toegangsrechten op de doelcomputer en ook in de Windows PowerShell Web Access-autorisatieregels geconfigureerd om uit te voeren van een Windows PowerShell-webconsole die van invloed op een doelcomputer via Windows PowerShell-webtoegang hebben.
 
-Deze laag biedt dezelfde beveiligingsmechanismen die evalueren verbindingspogingen als gebruikers proberen een externe Windows PowerShell-sessie met een doelcomputer van Windows PowerShell maken door het uitvoeren van de [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) of [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
+Deze laag biedt dezelfde beveiligingsmechanismen die evalueren verbindingspogingen als gebruikers proberen een externe Windows PowerShell-sessie met een doelcomputer van Windows PowerShell maken door het uitvoeren van de [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) of [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
 
 Standaard gebruikt Windows PowerShell Web Access de primaire gebruikersnaam en het wachtwoord voor verificatie op de gateway en de doelcomputer.
 Het web gebaseerde aanmeldingspagina, in de sectie **optionele verbindingsinstellingen**, biedt gebruikers de mogelijkheid om andere referenties te bieden voor de doelcomputer maken als ze vereist zijn.

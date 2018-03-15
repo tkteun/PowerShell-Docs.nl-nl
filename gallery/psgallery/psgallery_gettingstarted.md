@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell-galerie
 
@@ -103,7 +103,7 @@ Standaard [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) en [S
 
 Voor het implementeren van een item uit de galerie PowerShell voor Azure Automation, klikt u op **implementeren in Azure Automation** op de detailpagina item. U wordt omgeleid naar de Azure-beheerportal, waar u zich aanmelden met behulp van de referenties van uw Azure-account. Houd er rekening mee dat het implementeren van items met afhankelijkheden alle afhankelijkheden voor Azure Automation inzetten. De knop 'Implementeren in Azure Automation' kan worden uitgeschakeld door het toevoegen van de **AzureAutomationNotSupported** label in de itemmetagegevens van uw.
 
-Zie voor meer informatie over Azure Automation, de [Azure Automation-website](http://azure.microsoft.com/en-us/services/automation/).
+Zie voor meer informatie over Azure Automation, de [Azure Automation-website](http://azure.microsoft.com/services/automation/).
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>Bijwerken van de items van de PowerShell Gallery
 

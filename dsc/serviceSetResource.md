@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC ServiceSet Resource
-ms.openlocfilehash: 9556a1d513c3819a36c1161e3b35388ca1eb66f9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet Resource
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   | 
 |---|---| 
-| Naam| Hiermee geeft u de servicenamen van de. Houd er rekening mee dat soms dit van de weergavenamen verschilt. U krijgt een lijst van de services en de huidige staat met de [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) cmdlet.|
+| Naam| Hiermee geeft u de servicenamen van de. Houd er rekening mee dat soms dit van de weergavenamen verschilt. U krijgt een lijst van de services en de huidige staat met de [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
 | StartupType| Hiermee geeft het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatische**, **uitgeschakelde**, en **handmatig**|  
 | BuiltInAccount| Hiermee geeft u het aanmeldingsaccount voor de services. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.| 
 | Status| Geeft de status die u wilt zorgen voor de services: **gestopt** of **met**.| 

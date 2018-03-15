@@ -3,11 +3,11 @@ ms.date: 2017-10-16
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Configuraties vast te stellen
-ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enacting-configurations"></a>Configuraties vast te stellen
 
@@ -19,10 +19,10 @@ Er zijn twee manieren op te nemen PowerShell Desired State Configuration (DSC) c
 
 ![Push-modus](images/pushModel.png "hoe push-modus werkt")
 
-Push-modus verwijst naar een gebruiker een configuratie naar een target-knooppunt actief zijn toegepast door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+Push-modus verwijst naar een gebruiker een configuratie naar een target-knooppunt actief zijn toegepast door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
-Na het maken en een configuratie compileren, u kunt nemen deze in de modus push door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, instellen van de parameter - Path van het pad naar MOF van de configuratie van de cmdlet.
-Bijvoorbeeld, als de configuratie van de MOF bevindt zich op `C:\DSC\Configurations\localhost.mof`, zou u deze toepassen op de lokale computer met de volgende opdracht:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+Na het maken en een configuratie compileren, u kunt nemen deze in de modus push door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, instellen van de parameter - Path van het pad naar MOF van de configuratie van de cmdlet.
+Bijvoorbeeld, als de configuratie van de MOF bevindt zich op `C:\DSC\Configurations\localhost.mof`, zou u deze toepassen op de lokale computer met de volgende opdracht: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Opmerking__: DSC wordt standaard een configuratie uitgevoerd als achtergrondtaak. Roep de configuratie interactief wordt uitgevoerd, de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) met de __-wacht__ parameter.
 
@@ -40,7 +40,7 @@ De LCM controleert of de client in overeenstemming met de configuratie met regel
 De LCM gecontroleerd op bijgewerkte configuraties op de pull-service met regelmatige tussenpozen opgegeven door de **RefreshModeFrequency** eigenschap van de LCM.
 Zie voor meer informatie over het configureren van de LCM [configureren van de lokale Configuration Manager](metaConfig.md).
 
-De aanbevolen oplossing voor het hosten van een Pull-Service, is de DSC-cloudservice, [Azure Automation](https://azure.microsoft.com/en-us/services/automation/).
+De aanbevolen oplossing voor het hosten van een Pull-Service, is de DSC-cloudservice, [Azure Automation](https://azure.microsoft.com/services/automation/).
 Dit wordt gehost oplossing biedt grafische beheerprogramma, rapportage en gecentraliseerd beheer.
 
 Zie voor meer informatie over het instellen van een Pull-Service op Windows Server [instellen van een DSC-webserver pull](pullServer.md).

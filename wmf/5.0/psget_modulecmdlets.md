@@ -2,38 +2,38 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 91b60a22580dcb8eae245f45e202710812522a64
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 10f20967465a1911628552f0d468c63e4e88dcd7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Cmdlets voor het beheer van de Module PowerShellGet
 
-- [Zoeken naar DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
-- [Zoek-Module](https://technet.microsoft.com/en-us/library/dn807167.aspx)
-- [Zoeken naar Script](https://technet.microsoft.com/en-us/library/mt654001.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
+- [Zoeken naar Script](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Installatie-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
+- [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
 - [Script voor installatie](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [Nieuwe ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publiceren-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publiceren Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
+- [Publish-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
+- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
 - [Register PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Opslaan-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Opslaan-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
+- [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
 - [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Verwijderen-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
+- [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
 - [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
 - [Update-Module](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Update ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Script voor het bijwerken](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Update ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Hef de registratie van PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Ondersteuning voor de installatie van module afhankelijkheid, Get-InstalledModule en verwijdering van installatie-Module-cmdlets
 - Module afhankelijkheden populatie toegevoegd in de cmdlet Publish-Module. De lijsten RequiredModules en NestedModules van PSModuleInfo worden gebruikt bij het voorbereiden van de lijst afhankelijkheid van een module moet worden gepubliceerd.

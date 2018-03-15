@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: JEA configuraties registreren
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>JEA configuraties registreren
 
@@ -19,7 +19,7 @@ Dit proces de sessie-configuratie-informatie is van toepassing op het systeem en
 
 ## <a name="single-machine-configuration"></a>Configuratie van één machine
 
-Voor kleine omgevingen, kunt u JEA implementeren via het registreren van de sessie configuratie bestand met de [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
+Voor kleine omgevingen, kunt u JEA implementeren via het registreren van de sessie configuratie bestand met de [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
 
 Zorg ervoor dat de volgende vereisten is voldaan voordat u begint:
 - Een of meer rollen is gemaakt en opgeslagen in de map 'RoleCapabilities' van een geldig PowerShell-module.
@@ -28,7 +28,7 @@ Zorg ervoor dat de volgende vereisten is voldaan voordat u begint:
 
 U moet ook een naam voor uw eindpunt JEA selecteren.
 De naam van het eindpunt JEA is vereist wanneer gebruikers verbinding wilt maken met het systeem met JEA.
-U kunt de [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet om de namen van bestaande eindpunten op het systeem te controleren.
+U kunt de [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet om de namen van bestaande eindpunten op het systeem te controleren.
 Eindpunten die met 'microsoft beginnen' zijn doorgaans geleverd bij Windows.
 Het eindpunt 'microsoft.powershell' is het standaardeindpunt gebruikt bij het verbinden met een externe PowerShell-eindpunt.
 

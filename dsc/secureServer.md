@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Aanbevolen procedures voor server ophalen
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Aanbevolen procedures voor server ophalen
 
@@ -24,7 +24,7 @@ Gepubliceerd | April 2015
 ## <a name="abstract"></a>Abstracte
 
 Dit document is ontworpen voor de officiële richtlijnen voor iedereen plannen voor een implementatie van Windows PowerShell Desired State Configuration pull-server. Een pull-server is een eenvoudige service die alleen minuten te implementeren. Hoewel dit document technische procedures richtlijnen die kan worden gebruikt in een implementatie biedt, is de waarde van dit document als een verwijzing voor aanbevolen procedures en wat u moet denken voordat u implementeert.
-Lezers enigszins bekend bent met DSC moeten hebben en de voorwaarden voor het beschrijven van de onderdelen die zijn opgenomen in een DSC-implementatie. Zie voor meer informatie de [Windows PowerShell Desired Configuration overzicht](https://technet.microsoft.com/en-us/library/dn249912.aspx) onderwerp.
+Lezers enigszins bekend bent met DSC moeten hebben en de voorwaarden voor het beschrijven van de onderdelen die zijn opgenomen in een DSC-implementatie. Zie voor meer informatie de [Windows PowerShell Desired Configuration overzicht](https://technet.microsoft.com/library/dn249912.aspx) onderwerp.
 Zoals DSC wordt verwacht op cloud uitgebracht ontwikkelen, worden de onderliggende technologie inclusief pull-server wordt ook verwacht ontwikkelen en nieuwe mogelijkheden bieden. Dit document bevat een versietabel in de bijlage die voorziet in verwijzingen naar de vorige releases en verwijzingen naar toekomstige Zoek oplossingen te moedigen toekomstgerichte ontwerpen.
 
 De twee hoofdonderdelen van dit document:
@@ -43,7 +43,7 @@ Windows PowerShell biedt een set met taaluitbreidingen voor Desired State Config
 ### <a name="pull-server-role"></a>Pull-serverfunctie  
 Een pull-server biedt een gecentraliseerde service voor het opslaan van de configuraties die toegankelijk is voor de doelknooppunten.
  
-De functie van de pull-server kan worden geïmplementeerd als een Web Server-exemplaar of een SMB-bestandsshare. De mogelijkheid van web server bevat een OData-interface en kunt u eventueel opnemen mogelijkheden voor de doelknooppunten om te rapporteren terug bevestiging van het slagen of mislukken als configuraties zijn toegepast. Deze functionaliteit is handig in omgevingen wanneer er een groot aantal doelknooppunten. Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente zijn gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige implementatie of als een taak voor opnieuw voorkomende waardoor dit ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op grote schaal. Zie voor meer informatie [Windows PowerShell Desired status Pull-configuratieservers](https://technet.microsoft.com/en-us/library/dn249913.aspx) en [Push als Pull-Configuratiemodi](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+De functie van de pull-server kan worden geïmplementeerd als een Web Server-exemplaar of een SMB-bestandsshare. De mogelijkheid van web server bevat een OData-interface en kunt u eventueel opnemen mogelijkheden voor de doelknooppunten om te rapporteren terug bevestiging van het slagen of mislukken als configuraties zijn toegepast. Deze functionaliteit is handig in omgevingen wanneer er een groot aantal doelknooppunten. Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente zijn gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige implementatie of als een taak voor opnieuw voorkomende waardoor dit ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op grote schaal. Zie voor meer informatie [Windows PowerShell Desired status Pull-configuratieservers](https://technet.microsoft.com/library/dn249913.aspx) en [Push als Pull-Configuratiemodi](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planning van de configuratie
 

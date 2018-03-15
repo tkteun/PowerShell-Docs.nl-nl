@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een DSC-resource in C# ontwerpen
-ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Een DSC-resource in C# ontwerpen
 
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Normaal gesproken is een aangepaste bron van Windows PowerShell Desired State Configuration (DSC) geïmplementeerd in een PowerShell-script. U kunt echter ook de functionaliteit van een aangepaste DSC-resource implementeren met de cmdlets in C# schrijven. Zie voor een inleiding op cmdlets in C# schrijven [schrijven van een Windows PowerShell-Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).
+Normaal gesproken is een aangepaste bron van Windows PowerShell Desired State Configuration (DSC) geïmplementeerd in een PowerShell-script. U kunt echter ook de functionaliteit van een aangepaste DSC-resource implementeren met de cmdlets in C# schrijven. Zie voor een inleiding op cmdlets in C# schrijven [schrijven van een Windows PowerShell-Cmdlet](https://technet.microsoft.com/library/dd878294.aspx).
 
 Het proces van het maken van het MOF-schema, de mapstructuur maken, importeren en met behulp van uw aangepaste DSC-resource zijn niet alleen uit voor informatie over het implementeren van de resource in C# als cmdlets hetzelfde zoals beschreven in [schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md).
 
@@ -281,5 +281,5 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Concepten
 [Schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Andere bronnen
-[Schrijven van een Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+[Schrijven van een Windows PowerShell-Cmdlet](https://msdn.microsoft.com/library/dd878294.aspx)
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Een PowerShell-galerie-Account maken
-ms.openlocfilehash: e21575320f220c1ba7ecd9bd464a814b3ebf49d9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 5af38884d819cb9c600a061109233614bd33666f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 ## <a name="creating-a-powershell-gallery-account"></a>Een PowerShell-galerie-Account maken
 
@@ -23,7 +23,7 @@ In de volgende pagina voor het gebruik van Azure Active Directory-account, selec
 Zodra u zich hebt aangemeld, wordt u gevraagd een gebruikersnaam voor de PowerShell-galerie maken. Raadpleeg de gebruiksrechtovereenkomst en privacybeleid die zijn gekoppeld in, voer een gebruikersnaam en klik op registreren.
 
 Opmerking: De accountnaam van dit kan niet worden gewijzigd zodra deze is gemaakt.  
-Zie [beheren Item eigenaars](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) voor meer informatie hierover.
+Zie [beheren Item eigenaars](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) voor meer informatie hierover.
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Aanbevolen procedures voor PowerShell Gallery Accounts
 
@@ -35,5 +35,5 @@ Organisaties die vaak naar de PowerShell-galerie publiceren maken een uniek acco
 In veel gevallen wordt dat account niet regelmatig gecontroleerd. In dat geval is een best practice doorsturen van Outlook gebruiken om e-mail te verzenden naar een ander account, meestal een binnen de organisatie, die wordt bewaakt door de eigenaar van het item.
 
 Als er meerdere eigenaren van een item is gekoppeld, gaan alle communicatie die afkomstig van de PowerShell-galerie zijn naar alle eigenaren.
-Zie [beheren Item eigenaars](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) voor meer informatie over het toevoegen van eigenaren aan een item. 
+Zie [beheren Item eigenaars](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) voor meer informatie over het toevoegen van eigenaren aan een item. 
 

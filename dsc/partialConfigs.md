@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Gedeeltelijke PowerShell Desired State Configuration-configuraties
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Gedeeltelijke PowerShell Desired State Configuration-configuraties
 
@@ -18,10 +18,10 @@ In PowerShell 5.0 kan Desired State Configuration (DSC) configuraties moeten wor
 U kunt gedeeltelijke configuraties in push-modus, pull-modus of een combinatie van beide gebruiken.
 
 ## <a name="partial-configurations-in-push-mode"></a>Gedeeltelijke configuraties in de modus push
-Voor het gebruik van gedeeltelijke configuraties in de modus push, configureert u de LCM op het doelknooppunt voor het ontvangen van de gedeeltelijk configuraties. Elke gedeeltelijke configuratie moet worden geactiveerd met de doel-met de cmdlet Publish-DSCConfiguration. Het doelknooppunt vervolgens combineert de gedeeltelijke configuratie in een configuratie voor één, en u kunt de configuratie toepassen door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.
+Voor het gebruik van gedeeltelijke configuraties in de modus push, configureert u de LCM op het doelknooppunt voor het ontvangen van de gedeeltelijk configuraties. Elke gedeeltelijke configuratie moet worden geactiveerd met de doel-met de cmdlet Publish-DSCConfiguration. Het doelknooppunt vervolgens combineert de gedeeltelijke configuratie in een configuratie voor één, en u kunt de configuratie toepassen door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>De LCM voor push-modus gedeeltelijke configuraties configureren
-Voor het configureren van de LCM voor gedeeltelijke configuraties in push-modus, die u maakt een **DSCLocalConfigurationManager** configuratie met een **PartialConfiguration** blok voor elke gedeeltelijke configuratie. Zie voor meer informatie over het configureren van de LCM [Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx). Het volgende voorbeeld ziet u de configuratie van een LCM die twee gedeeltelijke configuraties verwacht: één waarmee het besturingssysteem wordt geïmplementeerd en één die wordt geïmplementeerd en SharePoint configureert.
+Voor het configureren van de LCM voor gedeeltelijke configuraties in push-modus, die u maakt een **DSCLocalConfigurationManager** configuratie met een **PartialConfiguration** blok voor elke gedeeltelijke configuratie. Zie voor meer informatie over het configureren van de LCM [Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx). Het volgende voorbeeld ziet u de configuratie van een LCM die twee gedeeltelijke configuraties verwacht: één waarmee het besturingssysteem wordt geïmplementeerd en één die wordt geïmplementeerd en SharePoint configureert.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ De **RefreshMode** voor elke gedeeltelijke configuratie is ingesteld op 'Push'. 
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publiceren en starten van de push-modus gedeeltelijke configuraties
 
-Vervolgens aanroepen [publiceren DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) voor elke configuratie de configuratiedocumenten als de mappen die wordt doorgegeven bevatten de **pad** parameters. `Publish-DSCConfiguration`de configuratie MOF-bestanden naar de doelknooppunten plaatst. Na het publiceren van beide configuraties die u kunt aanroepen `Start-DSCConfiguration –UseExisting` in het doelknooppunt.
+Vervolgens aanroepen [publiceren DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) voor elke configuratie de configuratiedocumenten als de mappen die wordt doorgegeven bevatten de **pad** parameters. `Publish-DSCConfiguration`de configuratie MOF-bestanden naar de doelknooppunten plaatst. Na het publiceren van beide configuraties die u kunt aanroepen `Start-DSCConfiguration –UseExisting` in het doelknooppunt.
 
 Bijvoorbeeld, als u hebt de volgende configuratie MOF-documenten op het knooppunt authoring gecompileerd:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Opmerking:** de gebruiker die de [publiceren DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet moet beheerdersbevoegdheden hebben op het doelknooppunt.
+>**Opmerking:** de gebruiker die de [publiceren DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet moet beheerdersbevoegdheden hebben op het doelknooppunt.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Gedeeltelijke configuraties in pull-modus
 
@@ -211,7 +211,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Naamgeving en de configuratiedocumenten te plaatsen op de pull-server (ConfigurationID)
 
-De configuratiedocumenten gedeeltelijke moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratiedocumenten moeten als volgt de naam: _ConfigurationName_. _ConfigurationID_`.mof`, waarbij _ConfigurationName_ is de naam van de configuratie van de gedeeltelijk en _ConfigurationID_ wordt de configuratie-ID gedefinieerd in de LCM op de doelknooppunt. De configuratiedocumenten moeten als volgt worden genoemd in ons voorbeeld:
+De configuratiedocumenten gedeeltelijke moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratiedocumenten moeten als volgt de naam: _ConfigurationName_. _ConfigurationID_`.mof`, waarbij _ConfigurationName_ is de naam van de configuratie van de gedeeltelijk en _ConfigurationID_ is de configuratie-ID is gedefinieerd in de LCM op het doel knooppunt. De configuratiedocumenten moeten als volgt worden genoemd in ons voorbeeld:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -377,5 +377,5 @@ SharePointConfig
 **Concepten**
 [Windows PowerShell Desired State Configuration Pull-Servers](pullServer.md) 
 
-[Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx) 
 

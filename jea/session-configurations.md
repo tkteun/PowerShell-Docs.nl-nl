@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: JEA Sessieconfiguraties
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA Sessieconfiguraties
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 U kunt het configuratiebestand van de sessie openen in een teksteditor.
 De `-SessionType RestrictedRemoteServer` veld geeft aan dat de sessieconfiguratie van de wordt gebruikt door JEA voor beveiligde management.
-Sessies is geconfigureerd op deze manier wordt uitgevoerd [NoLanguage modus](https://technet.microsoft.com/en-us/library/dn433292.aspx) en hebt u alleen de volgende standaardopdrachten uit 8-(en aliassen) beschikbaar:
+Sessies is geconfigureerd op deze manier wordt uitgevoerd [NoLanguage modus](https://technet.microsoft.com/library/dn433292.aspx) en hebt u alleen de volgende standaardopdrachten uit 8-(en aliassen) beschikbaar:
 
 - Clear-Host (cls, wissen)
 - Exit-PSSession (exsn, afsluiten)
@@ -46,7 +46,7 @@ Sessies is geconfigureerd op deze manier wordt uitgevoerd [NoLanguage modus](htt
 - Get-FormatData
 - Help ontvangen
 - Meetobject (maatregel)
-- Uitgaande standaard
+- Out-Default
 - Select-Object (geselecteerd)
 
 Geen PowerShell-providers beschikbaar zijn en worden dat alle externe programma's (uitvoerbare bestanden, scripts, enzovoort).
@@ -128,7 +128,7 @@ Standaardgebruikers moeten hebben geen toegang tot de map en een beperkt aantal 
 ### <a name="user-drive"></a>Schijf van de gebruiker
 
 Als uw gebruikers verbinding moeten voor het kopiëren van bestanden naar het eindpunt JEA om een opdracht wordt uitgevoerd, kunt u de schijf van de gebruiker in het configuratiebestand van de sessie inschakelen.
-De schijf van de gebruiker is een [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) die is toegewezen aan een unieke map voor elke gebruiker die verbinding maakt.
+De schijf van de gebruiker is een [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) die is toegewezen aan een unieke map voor elke gebruiker die verbinding maakt.
 Deze map fungeert als een ruimte voor deze bestanden te kopiëren van het systeem zonder zodat ze toegang hebben tot het volledige bestandssysteem of de provider bestandssysteem blootstellen.
 De inhoud van de gebruiker stations zijn permanent over de sessies voor situaties waarin de verbinding met het netwerk mag worden onderbroken.
 

@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) bekende problemen en beperkingen
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 In de WMF 4.0 en WMF 5.0 Preview-versies, DSC zou niet toestaan dat wachtwoorden in de configuratie van de lengte van meer dan 121 tekens. DSC is geforceerd korte wachtwoorden gebruiken, zelfs als langdurige en een sterk wachtwoord is vereist. Deze laatste wijziging kan wachtwoorden van willekeurige lengte in de DSC-configuratie.
 
-**Oplossing:** opnieuw maken van het certificaat met gegevenscodering of sleutel uitwisselen sleutel gebruiks- en Document versleuteling Enhanced Key usage (1.3.6.1.4.1.311.80.1). TechNet-artikel <https://technet.microsoft.com/en-us/library/dn807171.aspx> bevat meer informatie.
+**Oplossing:** opnieuw maken van het certificaat met gegevenscodering of sleutel uitwisselen sleutel gebruiks- en Document versleuteling Enhanced Key usage (1.3.6.1.4.1.311.80.1). TechNet-artikel <https://technet.microsoft.com/library/dn807171.aspx> bevat meer informatie.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC-cmdlets mislukken na het installeren van WMF 5.0 RTM
@@ -89,7 +89,7 @@ De cmdlet Invoke-DscResource retourneert geen uitgebreide, waarschuwing, en fout
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Foutopsporing eenvoudig DSC-Resources kan niet worden uitgevoerd in combinatie met Invoke-DscResource
 -----------------------------------------------------------------------
 Wanneer LCM wordt uitgevoerd in de foutopsporingsmodus (Zie [foutopsporing DSC-resources](https://msdn.microsoft.com/powershell/dsc/debugresource) voor meer informatie), de cmdlet Invoke-DscResource geeft geen informatie over runspace verbinding maken met voor foutopsporing.
-**Oplossing:** ontdekken en te koppelen aan de runspace met behulp van cmdlets **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get Runspace** en  **Foutopsporing Runspace** voor foutopsporing van de DSC-resource.
+**Oplossing:** ontdekken en te koppelen aan de runspace met behulp van cmdlets **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **Get Runspace** en **Foutopsporing Runspace** voor foutopsporing van de DSC-resource.
 
 ```powershell
 # Find all the processes hosting PowerShell

@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: JEA rol mogelijkheden
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA rol mogelijkheden
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> De [algemene PowerShell-parameters](https://technet.microsoft.com/en-us/library/hh847884.aspx) zijn altijd toegestaan, zelfs als u de beschikbare parameters beperken.
+> De [algemene PowerShell-parameters](https://technet.microsoft.com/library/hh847884.aspx) zijn altijd toegestaan, zelfs als u de beschikbare parameters beperken.
 > U moet niet expliciet vermeld ze in het veld Parameters.
 
 De volgende tabel beschrijft de verschillende manieren kunt u een cmdlet zichtbaar of functie aanpassen.
@@ -111,7 +111,7 @@ U kunt een ValidatePattern en de ValidateSet niet toepassen op de dezelfde cmdle
 
 Als u dit doet, wordt de ValidatePattern de ValidateSet overschreven.
 
-Bekijk voor meer informatie over ValidatePattern [dit *artikel van Hey, Scripting Guy!* boeken](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) en de [PowerShell reguliere expressies](https://technet.microsoft.com/en-us/library/hh847880.aspx) verwijst naar inhoud.
+Bekijk voor meer informatie over ValidatePattern [dit *artikel van Hey, Scripting Guy!* boeken](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) en de [PowerShell reguliere expressies](https://technet.microsoft.com/library/hh847880.aspx) verwijst naar inhoud.
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Externe opdrachten en PowerShell-scripts toestaan
 
@@ -128,7 +128,7 @@ Veel uitvoerbare bestanden kunt u zowel lezen van de huidige status en wijzig de
 Neem bijvoorbeeld de rol van een bestand serverbeheerder die wil controleren welke netwerkshares worden gehost door de lokale computer.
 Een manier om te controleren om te gebruiken, is `net share`.
 Echter, zodat net.exe is zeer gevaarlijke omdat de beheerder kan net zo eenvoudig gebruik van de opdracht om te krijgen van beheerdersbevoegdheden met `net group Administrators unprivilegedjeauser /add`.
-Er is een betere benadering om toe te staan [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) die hetzelfde resultaat bereikt, maar heeft een veel meer beperkt bereik.
+Er is een betere benadering om toe te staan [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) die hetzelfde resultaat bereikt, maar heeft een veel meer beperkt bereik.
 
 Wanneer externe opdrachten beschikbaar maken voor gebruikers in een sessie JEA, geef altijd het volledige pad naar het uitvoerbare bestand om te controleren of een gelijknamige (en mogelijk malicous) programma elders geplaatst op het systeem niet in plaats daarvan wordt uitgevoerd.
 
