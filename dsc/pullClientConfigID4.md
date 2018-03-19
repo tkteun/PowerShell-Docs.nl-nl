@@ -13,7 +13,7 @@ ms.lasthandoff: 01/17/2018
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Elk doelknooppunt heeft adviseert het gebruik van pull-modus en de URL opgegeven waar deze contact opnemen met de pull-server configuraties ophalen. U moet de lokale Configuration Manager (LCM) configureren met de benodigde informatie om dit te doen. Als u wilt de LCM configureren, moet u een speciaal soort configuratie bekend als een 'metaconfiguratie' maken. Zie voor meer informatie over het configureren van de LCM [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md)
+Elk doelknooppunt heeft adviseert het gebruik van pull-modus en de URL opgegeven waar deze contact opnemen met de pull-server configuraties ophalen. U moet de lokale Configuration Manager (LCM) configureren met de benodigde informatie om dit te doen. Als u wilt de LCM configureren, moet u een speciaal soort configuratie bekend als een 'metaconfiguratie' maken. Zie voor meer informatie over het configureren van de LCM [Windows PowerShell 4.0 Gewenste statusconfiguratie Lokale configuratiebeheerder](metaConfig4.md)
 
 Het volgende script voor het configureren van de LCM naar pull-configuraties van een server met de naam 'PullServer':
 
