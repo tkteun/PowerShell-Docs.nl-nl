@@ -1,0 +1,209 @@
+- name: Overzicht van Windows Management Framework (WMF)
+  href: README.md
+- name: WMF 5.1
+  href: 5.1/release-notes.md
+  items:
+    - name: Nieuwe scenario's en onderdelen
+      href: 5.1/scenarios-features.md
+      items:
+        - name: Verbeteringen in Desired State Configuration (DSC)
+          href: 5.1/DSC-improvements.md
+        - name: Verbeteringen in de PowerShell-console
+          href: 5.1/console-improvements.md
+        - name: Verbeteringen in de PowerShell-engine
+          href: 5.1/engine-improvements.md
+        - name: Verbeteringen in pakketbeheer
+          href: 5.1/package-management-improvements.md
+        - name: Verbeteringen in JEA
+          href: 5.1/jea-improvements.md
+        - name: Catalogus-cmdlets
+          href: 5.1/catalog-cmdlets.md
+        - name: Fouten die zijn verholpen in WMF 5.1
+          href: 5.1/bugfixes.md
+    - name: Installeren en configureren
+      href: 5.1/install-configure.md
+    - name: Bekende problemen
+      href: 5.1/known-issues.md
+    - name: Compatibiliteit
+      href: 5.1/Compatibility.md
+    - name: Productcompatibiliteit
+      href: 5.1/productincompat.md
+- name: WMF 5.0
+  href: 5.0/releasenotes.md
+  items:
+    - name: Installatiedetails
+      href: 5.0/requirements.md
+    - name: Bekende problemen en beperkingen
+      href: 5.0/limitation_overview.md
+      items:
+        - name: Bekende problemen voor Desired State Configuration (DSC)
+          href: 5.0/limitation_dsc.md
+    - name: Productcompatibiliteitsstatus
+      href: 5.0/productincompat.md
+    - name: Mogelijke scenario's met WMF 5.0
+      href: ''
+      items:
+        - name: Just Enough Administration (JEA)
+          href: 5.0/jea_overview.md
+          items:
+            - name: Een JEA-eindpunt maken en hier verbinding mee maken
+              href: 5.0/jea_endpoint.md
+            - name: Rapportage over JEA
+              href: 5.0/jea_report.md
+        - name: Aangepaste typen maken met PowerShell-klassen
+          href: 5.0/class_overview.md
+          items:
+            - name: Aangepaste typen definiëren
+              href: 5.0/class_newtype.md
+            - name: Basisklasse declareren
+              href: 5.0/class_base.md
+            - name: Geïmplementeerde interface declareren
+              href: 5.0/class_interface.md
+            - name: Klasseconstructor oproepbasis
+              href: 5.0/class_baseconstructor.md
+            - name: Klassemethode oproepbasis
+              href: 5.0/class_basemethod.md
+        - name: Verbeteringen in foutopsporing voor PowerShell-scripts
+          href: 5.0/debug_overview.md
+        - name: Verbeteringen in Desired State Configuration (DSC)
+          href: 5.0/dsc_improvements.md
+          items:
+            - name: Configuraties
+              href: ''
+              items:
+                - name: Afhankelijkheden van meerdere knooppunten opgeven
+                  href: 5.0/dsc_waitfor.md
+                - name: Versleutelde MOF's
+                  href: 5.0/dsc_encryptedmof.md
+                - name: Help-ondersteuning voor DSC-configuratie
+                  href: 5.0/dsc_confighelp.md
+                - name: Verbeteringen ontwerpen met PowerShell ISE
+                  href: 5.0/dsc_authoring.md
+                - name: Mogelijkheid van identieke dubbele resources in een configuratie
+                  href: 5.0/dsc_identicalduplicate.md
+                - name: Sleutelwoorden voor Import-DscResource bieden ondersteuning voor de parameter -ModuleVersion
+                  href: 5.0/dsc_importdscresource.md
+                - name: WOW64-ondersteuning voor configuratiesleutelwoord
+                  href: 5.0/dsc_wow64.md
+            - name: Bronnen
+              href: ''
+              items:
+                - name: DSC-resources op basis van een klasse
+                  href: 5.0/dsc_classbasedresource.md
+                - name: Foutopsporing voor DSC-resourcescripts
+                  href: 5.0/dsc_resourcedebugging.md
+                - name: Automatische RunAs-ondersteuning voor DSC-resources
+                  href: 5.0/dsc_runas.md
+                - name: Ondersteuning voor zij aan zij versiebeheer voor DSC-resources
+                  href: 5.0/dsc_sxsresource.md
+                - name: Nieuwe in-vak-resources
+                  href: 5.0/dsc_newresources.md
+            - name: Local Configuration Manager
+              href: ''
+              items:
+                - name: Knooppunt met meerdere configuratiefragmenten configureren
+                  href: 5.0/dsc_partialconfig.md
+                  items:
+                    - name: Ondersteuning voor gemengde RefreshModes
+                      href: 5.0/dsc_partialconfig_mixedmode.md
+                - name: DSC-engine met nieuw kenmerk configureren
+                  href: 5.0/dsc_metaconfiguration.md
+                - name: Gedetailleerde informatie over LCM-status
+                  href: 5.0/dsc_lcmstate.md
+                - name: Frequenties voor RefreshMode en ConfigurationMode hoeven geen veelvoud van elkaar te zijn
+                  href: 5.0/dsc_freqnomultiple.md
+                - name: Aanvullende waarde voor eigenschap RefreshMode
+                  href: 5.0/dsc_refreshmode.md
+            - name: Cmdlets
+              href: ''
+              items:
+                - name: Meer informatie over de configuratiestatus
+                  href: 5.0/dsc_getconfigurationstatus.md
+                - name: De cmdlet Test-DscConfiguration ondersteunt verwijzingsconfiguraties
+                  href: 5.0/dsc_testconfiguration.md
+                - name: Directe toegang tot DSC-resourcemethoden
+                  href: 5.0/dsc_directaccess.md
+                - name: Configuratiedocument leveren zonder toe te passen
+                  href: 5.0/dsc_publishconfig.md
+                - name: DSC-documenten verwijderen
+                  href: 5.0/dsc_removeconfigdoc.md
+                - name: Uniforme en consistente status en statusweergave
+                  href: 5.0/dsc_statestatus.md
+                - name: Cmdlet Set-DscLocalConfigurationManager biedt ondersteuning voor parameter -Force
+                  href: 5.0/dsc_setdsclcm.md
+            - name: Pull-modus
+              href: ''
+              items:
+                - name: On-demand PULL van DSC-configuraties
+                  href: 5.0/dsc_updateconfig.md
+                - name: Scheiding van knooppunt- en configuratie-id's
+                  href: 5.0/dsc_nodeid.md
+                - name: 'Scheiding van de opslagplaatsen voor configuraties, resources en rapporten'
+                  href: 5.0/dsc_repository.md
+                - name: Configuratiestatus rapporteren naar centrale locatie
+                  href: 5.0/dsc_reporting.md
+        - name: PowerShell-gebruik controleren met behulp van transcriptie en logboekregistratie
+          href: 5.0/audit_overview.md
+          items:
+            - name: Verbeterde transcriptiemogelijkheden
+              href: 5.0/audit_transcript.md
+            - name: Tracering en logboekregistratie voor scripts
+              href: 5.0/audit_script.md
+            - name: Cmdlets voor Cryptographic Message-syntaxis (CMS)
+              href: 5.0/audit_cms.md
+        - name: 'Detecteren, installeren en inventariseren van software met PackageManagement'
+          href: 5.0/oneget_overview.md
+          items:
+            - name: PackageManagement-cmdlets
+              href: 5.0/oneget_cmdlets.md
+        - name: 'Detecteren, installeren en inventariseren van PowerShell-modules met PowerShellGet'
+          href: 5.0/psget_module_overview.md
+          items:
+            - name: Een PowerShell-opslagplaats registreren
+              href: 5.0/psget_psrepository.md
+            - name: Side-by-Side-versie-ondersteuning op PowerShell 5.0 of hoger
+              href: 5.0/psget_modulesxsinstall.md
+            - name: Installatie van module-afhankelijkheden
+              href: 5.0/psget_moduledependency.md
+            - name: PowerShellGet-cmdlets voor modulebeheer
+              href: 5.0/psget_modulecmdlets.md
+        - name: 'Detecteren, installeren en beheren van PwerShell-scripts met PowerShellGet'
+          href: 5.0/psget_script_overview.md
+          items:
+            - name: PowerShellGet-cmdlets voor scriptbeheer
+              href: 5.0/psget_scriptcmdlets.md
+        - name: Nieuwe en bijgewerkte cmdlets op basis van feedback van de community
+          href: 5.0/feedback_cmdlets.md
+          items:
+            - name: Symbolische koppelingen met Item-cmdlets
+              href: 5.0/feedback_symbolic.md
+            - name: Archief-cmdlets
+              href: 5.0/feedback_archive.md
+            - name: Klembord-cmdlets
+              href: 5.0/feedback_clipboard.md
+            - name: Convert-String
+              href: 5.0/feedback_convertstring.md
+            - name: Gestructureerd objecten buiten tekenreeks uitpakken en parseren
+              href: 5.0/feedback_convertfromString.md
+            - name: Format-Hex
+              href: 5.0/feedback_formathex.md
+            - name: Parameter NoNewLine
+              href: 5.0/feedback_nonewline.md
+            - name: New-TemporaryFile
+              href: 5.0/feedback_tempfile.md
+            - name: New-Guid
+              href: 5.0/feedback_newguid.md
+            - name: Get-ChildItem heeft parameter -Depth
+              href: 5.0/feedback_getchilditem.md
+            - name: Updates voor FileInfo-object
+              href: 5.0/feedback_fileinfo.md
+            - name: 'Module-ondersteuning voor declareren versiebereiken (1.*, enzovoort)'
+              href: 5.0/feedback_moduleversionranges.md
+        - name: Gegevensstroom
+          href: 5.0/informationstream_overview.md
+        - name: PowerShell-cmdlets genereren op basis van OData-eindpunt
+          href: 5.0/odata_overview.md
+        - name: Beheer van netwerkswitch met PowerShell
+          href: 5.0/networkswitch_overview.md
+        - name: Registratie van software-inventaris (SIL)
+          href: 5.0/sil_overview.md
