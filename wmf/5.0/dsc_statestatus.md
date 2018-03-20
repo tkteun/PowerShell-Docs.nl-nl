@@ -2,14 +2,14 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
-# <a name="unified-and-consistent-state-and-status-representation"></a>Uniforme en consistente status en de weergave Status
+# <a name="unified-and-consistent-state-and-status-representation"></a>Uniforme en consistente status en statusweergave
 
 Een reeks verbeteringen zijn aangebracht in deze release voor automatische LCM toestand en status van de DSC gebouwd. Dit omvat uniforme en consistente status en status verklaringen, beheerbare datetime-eigenschap van status objecten geretourneerd door de cmdlet Get-DscConfigurationStatus en verbeterde LCM status details eigenschap die is geretourneerd door Get-DscLocalConfigurationManager cmdlet.
 
@@ -28,7 +28,7 @@ De volgende tabel ziet u de resulterende toestand en status gerelateerd eigensch
 | S**^**                          | Actieve                 | Geslaagd    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Mislukt    | $false        | $null                        | F                              |
 | S, F                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
 | S, r                            | PendingReboot        | Geslaagd    | $true         | S                            | r                              |
@@ -36,7 +36,7 @@ De volgende tabel ziet u de resulterende toestand en status gerelateerd eigensch
 | r, S                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
 
-^ S<sub>ik</sub>: een reeks resources die F toegepast<sub>ik</sub>: een reeks resources die wordt toegepast zonder succes r: een bron die opnieuw opstarten vereist\*
+^ S<sub>ik</sub>: een reeks resources die F toegepast<sub>ik</sub>: een reeks resources die wordt toegepast zonder succes r: een bron die opnieuw opstarten vereist \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
