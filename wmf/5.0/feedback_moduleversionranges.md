@@ -10,7 +10,7 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 03/20/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modules ondersteuning voor het declareren van versie bereiken (1.*, enzovoort)
-In combinatie met **- MinimumVersion**, **- MaximumVersion** nu kan de gebruiker get/import-module binnen een bepaald bereik. De parameter bieden ook ondersteuning voor **. ***. Het volgende voorbeeld ziet u hoe het werkt:
+In combinatie met **- MinimumVersion**, **- MaximumVersion** nu kan de gebruiker get/import-module binnen een bepaald bereik. De parameter bieden ook ondersteuning voor **.**\*. Het volgende voorbeeld ziet u hoe het werkt:
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
