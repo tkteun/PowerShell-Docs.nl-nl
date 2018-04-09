@@ -5,7 +5,7 @@ keywords: DSC, powershell, configuratie, setup
 title: Referentieopties in configuratiegegevens
 ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
 ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/15/2018
 ---
@@ -283,7 +283,7 @@ Met een lokale account elimineert mogelijke blootstelling van domeinreferenties 
 
 **Als u referenties met DSC-resources, liever dan een lokale account via een domeinaccount, indien mogelijk.**
 
-Als er een '\' of '@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.
+Als er een '\' of '\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.
 Er is een uitzondering voor "localhost", "127.0.0.1" en ":: 1" in het domeingedeelte van de gebruikersnaam.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
