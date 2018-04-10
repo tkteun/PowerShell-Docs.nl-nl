@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 41a676939cb45e780b572b8e718ae315d641d4f8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="information-stream"></a><span data-ttu-id="62328-102">Gegevensstroom</span><span class="sxs-lookup"><span data-stu-id="62328-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="da4bd-102">Gegevensstroom</span><span class="sxs-lookup"><span data-stu-id="da4bd-102">Information Stream</span></span>
 
-<span data-ttu-id="62328-103">Een nieuwe gestructureerde gegevens stream kan nu worden gebruikt voor het verzenden van gestructureerde gegevens tussen een script en de host.</span><span class="sxs-lookup"><span data-stu-id="62328-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="62328-104">**Write-Host** ook bijgewerkt met de uitvoer naar de stroom informatie kunt u nu vastleggen of het stilte verzenden.</span><span class="sxs-lookup"><span data-stu-id="62328-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="62328-105">De nieuwe **schrijven informatie** cmdlet (samen met een bijbehorende WriteInformation-API) gebruikt met **- InformationVariable** en **- InformationAction** algemene parameters kunt u meer flexibiliteit en mogelijkheid.</span><span class="sxs-lookup"><span data-stu-id="62328-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="da4bd-103">Een nieuwe gestructureerde gegevens stream kan nu worden gebruikt voor het verzenden van gestructureerde gegevens tussen een script en de host.</span><span class="sxs-lookup"><span data-stu-id="da4bd-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="da4bd-104">**Write-Host** ook bijgewerkt met de uitvoer naar de stroom informatie kunt u nu vastleggen of het stilte verzenden.</span><span class="sxs-lookup"><span data-stu-id="da4bd-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="da4bd-105">De nieuwe **schrijven informatie** cmdlet (samen met een bijbehorende WriteInformation-API) gebruikt met **- InformationVariable** en **- InformationAction** algemene parameters kunt u meer flexibiliteit en mogelijkheid.</span><span class="sxs-lookup"><span data-stu-id="da4bd-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -91,7 +91,7 @@ WARNING: Some important logging information
 PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
-PS C:\Users\demo> $ivOutput.Process 
+PS C:\Users\demo> $ivOutput.Process
 MessageData     : System.Diagnostics.Process (powershell)
 Source          : c:\temp\OutputGusher.ps1
 TimeGenerated   : 2/9/2015 5:08:52 PM
@@ -104,7 +104,7 @@ ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
-PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke() 
+PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -123,4 +123,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-
