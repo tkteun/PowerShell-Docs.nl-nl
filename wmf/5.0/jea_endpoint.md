@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Maken en te verbinden met een eindpunt JEA
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Een JEA-eindpunt maken en hier verbinding mee maken
 Een JEA om eindpunt te maken, moet u maken en registreren van een speciaal geconfigureerde configuratie van de PowerShell-sessie-bestand dat kan worden gegenereerd met de **nieuw PSSessionConfigurationFile** cmdlet.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Hiermee maakt u een sessie-configuratiebestand dat uitziet: 
+Hiermee maakt u een sessie-configuratiebestand dat uitziet:
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 Wanneer u een eindpunt JEA maakt, moeten de volgende parameters van de opdracht (en de bijbehorende sleutels in het bestand) worden ingesteld:
 1.  SessionType naar RestrictedRemoteServer
@@ -64,7 +64,7 @@ Wanneer u een eindpunt JEA maakt, moeten de volgende parameters van de opdracht 
 Het veld RoleDefinitions definieert welke groepen toegang had tot welke mogelijkheden rol.  De mogelijkheid van een rol is een bestand dat u een reeks mogelijkheden die zullen worden blootgesteld definieert voor het koppelen van gebruikers.  Kunt u mogelijkheden van rol met de **nieuw PSRoleCapabilityFile** opdracht.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 Hierdoor wordt een sjabloon rol mogelijkheid ziet gegenereerd:
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 Om te worden gebruikt door een sessieconfiguratie JEA, moet de rol mogelijkheden worden opgeslagen als een geldige PowerShell-module in een map met de naam 'RoleCapabilities'. Een module mogelijk meerdere rol capability-bestanden, indien gewenst.
@@ -138,7 +138,7 @@ Als u wilt configureren welke cmdlets, functies, aliassen en scripts die een geb
 Ten slotte zodra u klaar bent met het aanpassen van uw sessieconfiguratie en de gerelateerde rol mogelijkheden, registreren van deze sessieconfiguratie en het eindpunt te maken door te voeren **Register-PSSessionConfiguration**.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Verbinding maken met een eindpunt JEA
@@ -148,4 +148,3 @@ Verbinding maken met een eindpunt JEA werkt op dezelfde manier verbinding maken 
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Zodra u hebt gekoppeld aan de sessie JEA, kunt u zich beperkt tot de opdrachten wilt plaatsen in de rol mogelijkheden die u toegang tot hebt uitgevoerd. Als u probeert een opdracht is niet toegestaan voor uw rol uit te voeren, wordt er een fout optreden.
-

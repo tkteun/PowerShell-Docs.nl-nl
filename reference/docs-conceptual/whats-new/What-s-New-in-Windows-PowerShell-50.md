@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
 Windows PowerShell 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid verbeteren en kunnen u bepalen en beheren van Windows-omgevingen gemakkelijker en uitvoerig.
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 bevat belangrijke nieuwe functies die het gebruik ervan u
 Windows PowerShell 5.0 is achterwaarts compatibel. Cmdlets, providers, modules, -modules, scripts, functies en -profielen die zijn ontworpen voor Windows PowerShell 4.0, Windows PowerShell 3.0 en Windows PowerShell 2.0 in het algemeen kunt u werken in Windows PowerShell 5.0 zonder wijzigingen.
 
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
-Windows PowerShell 5.0 wordt standaard geïnstalleerd op Windows Server 2016 Technical Preview en Windows 10. 
+Windows PowerShell 5.0 wordt standaard geïnstalleerd op Windows Server 2016 Technical Preview en Windows 10.
 
 Windows PowerShell 5.0 installeren op Windows Server 2012 R2, Windows 8.1 Enterprise of Windows 8.1 Pro, downloaden en installeren [Windows Management Framework 5.0](http://aka.ms/wmf5download). Zorg ervoor dat de details van de download te lezen en voldoen aan alle systeemvereisten voordat u Windows Management Framework 5.0 installeert.
 
@@ -184,7 +184,7 @@ Veel updates en verbeteringen voor Windows PowerShell Desired State Configuratio
 
 - De cmdlet New-Guid maakt gebruik van de .NET Framework-Guid-klasse voor het genereren van een GUID zijn, is nuttig wanneer u bij het schrijven van scripts of DSC-resources.
 
-- Omdat informatie over de bestandsversie misleidend, is met name als er een bestand is hersteld, zijn eigenschappen van nieuwe FileVersionRaw en ProductVersionRaw script beschikbaar voor FileInfo objecten. Bijvoorbeeld, kunt u uitvoeren de volgende opdracht om de waarden van deze eigenschappen voor powershell.exe, weer te geven waar $pid de proces-ID bevat voor een actieve sessie van Windows PowerShell:```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Omdat informatie over de bestandsversie misleidend, is met name als er een bestand is hersteld, zijn eigenschappen van nieuwe FileVersionRaw en ProductVersionRaw script beschikbaar voor FileInfo objecten. Bijvoorbeeld, kunt u uitvoeren de volgende opdracht om de waarden van deze eigenschappen voor powershell.exe, weer te geven waar $pid de proces-ID bevat voor een actieve sessie van Windows PowerShell:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 - Nieuwe cmdlets Enter PSHostProcess en afsluiten PSHostProcess kunt u Windows PowerShell-scripts in processen die gescheiden van het huidige proces dat wordt uitgevoerd in de Windows PowerShell-console voor foutopsporing. Uitvoeren van de Enter-PSHostProcess invoeren of koppelen aan een specifiek proces-ID en voer Get-Runspace om te retourneren van de actieve runspaces binnen het proces. Exit-PSHostProcess ontkoppelen van het proces, wanneer u hebt het script in het proces voor foutopsporing worden uitgevoerd.
 
@@ -230,11 +230,11 @@ Veel updates en verbeteringen voor Windows PowerShell Desired State Configuratio
 
     -   Restore DscConfiguration
 
-    -   Test DscConfiguration
+    -   Test-DscConfiguration
 
     -   Vergelijken DscConfiguration
 
-    -   Publiceren DscConfiguration
+    -   Publish-DscConfiguration
 
     -   Set-DscLocalConfigurationManager
 
@@ -352,7 +352,7 @@ Windows PowerShell 4.0 omvat de volgende nieuwe functies.
 
 - De waarde van **$PSVersionTable.PSVersion** is bijgewerkt naar 4.0.
 
-- **WHERE()** operator gedrag is gewijzigd. `Collection.Where('property -match name')`het accepteren van een tekenreeksexpressie in de indeling `"Property -CompareOperator Value"` wordt niet langer ondersteund. Echter, de **Where()** operator accepteert tekenreeksexpressies in de indeling van een scriptblock; dit wordt nog steeds ondersteund.
+- **WHERE()** operator gedrag is gewijzigd. `Collection.Where('property -match name')` het accepteren van een tekenreeksexpressie in de indeling `"Property -CompareOperator Value"` wordt niet langer ondersteund. Echter, de **Where()** operator accepteert tekenreeksexpressies in de indeling van een scriptblock; dit wordt nog steeds ondersteund.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nieuwe functies in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -490,7 +490,7 @@ Hier volgen de voordelen van Windows PowerShell Workflow
 
 - **Persistentie.** : een werkstroom wordt opgeslagen (of controle-waarnaar wordt verwezen) op bepaalde tijdstippen die zijn gedefinieerd door de auteur, zodat u de werkstroom vanaf de laatst vastgelegde taak (of controlepunt) hervatten kunt in plaats van de werkstroom vanaf het begin opnieuw te starten.
 
-- **Robuustheid.** Geautomatiseerd foutherstel. Werkstromen blijven na geplande en ongeplande opnieuw wordt opgestart. U kunt de werkstroom onderbreekt en hervat vervolgens de werkstroom vanaf het laatste punt in de persistentie. Werkstroomauteurs kunnen aanwijzen specifieke activiteiten moet opnieuw worden uitgevoerd in geval van storing op een of meer beheerde knooppunten.
+- **Robustness.** Geautomatiseerd foutherstel. Werkstromen blijven na geplande en ongeplande opnieuw wordt opgestart. U kunt de werkstroom onderbreekt en hervat vervolgens de werkstroom vanaf het laatste punt in de persistentie. Werkstroomauteurs kunnen aanwijzen specifieke activiteiten moet opnieuw worden uitgevoerd in geval van storing op een of meer beheerde knooppunten.
 
 - **Mogelijkheid om te verbreken, opnieuw verbinding maken en uitvoeren in verbroken sessies.** Gebruikers kunnen verbinding maken en Verbreek de verbinding tussen de werkstroomserver, maar de werkstroom continu wordt uitgevoerd. U kunt Meld u af bij de clientcomputer of de client opnieuw opstarten en controleren van de uitvoering van de werkstroom van een andere computer zonder de werkstroom te onderbreken.
 
@@ -604,19 +604,19 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows PowerShell Core-installatie, in
 
 |||
 |-|-|
-|-JobTrigger|Nieuwe-JobTrigger|
-|Connect-PSSession|Nieuwe PSSessionConfigurationFile|
-|ConverterenVan Json|New-PSTransportOption|
-|ConvertTo-Json|Nieuwe PSWorkflowExecutionOption|
+|Add-JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
 |Disable-ScheduledJob|Nieuwe ScheduledJobOption|
-|Verbinding verbreken-PSSession|Nieuwe WinEvent|
+|Disconnect-PSSession|New-WinEvent|
 |Enable-JobTrigger|Ontvangen-PSSession|
-|Enable-ScheduledJob|Register CimIndicationEvent|
+|Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Verwijder CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Verwijder TypeData|
+|Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Help opslaan|
@@ -624,13 +624,13 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows PowerShell Core-installatie, in
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
 |Importeren IseSnippet|Set-ScheduledJobOption|
-|Aanroepen AsWorkflow|Opdracht weergeven|
-|Aanroepen CimMethod|Weergeven ControlPanelItem|
+|Invoke-AsWorkflow|Opdracht weergeven|
+|Aanroepen CimMethod|Show-ControlPanelItem|
 |Aanroepen RestMethod|Suspend-Job|
-|Aanroepen WebRequest|Test PSSessionConfigurationFile|
+|Aanroepen WebRequest|Test-PSSessionConfigurationFile|
 |Nieuwe CimInstance|De blokkering opheffen bestand|
-|Nieuwe-CimSession|Unregister-ScheduledJob|
-|Nieuwe CimSessionOption|Help bijwerken|
+|New-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Help bijwerken|
 |Nieuwe IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen in bestaande essentiële Cmdlets en -Providers
@@ -713,4 +713,3 @@ Voor het verbeteren van de mogelijkheid van Windows PowerShell 3.0 interpreteren
 ## <a name="see-also"></a>Zie ook
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

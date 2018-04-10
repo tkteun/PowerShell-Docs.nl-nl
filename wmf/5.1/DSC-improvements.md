@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: DSC-verbeteringen in WMF 5.1
-ms.openlocfilehash: ce897dab2344455453e9bf2d0b5a897f9abb4392
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 04bf8ed820d24f1062e05d19c8f3b0c041298979
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in Desired State Configuration (DSC) in WMF 5.1
 
@@ -26,13 +26,19 @@ We hebben de volgende bekende problemen opgelost in WMF 5.1:
 In WMF 5.0 is de PowerShell-foutopsporing niet gestopt op de resource op basis van klasse-methode (Set-Get/Test) rechtstreeks.
 In WMF 5.1 stopt het foutopsporingsprogramma bij de methode op basis van een klasse resource op dezelfde manier als voor bronnen op basis van het MOF-methoden.
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC-pull-client ondersteunt TLS 1.1 en TLS 1.2 
-Voorheen ondersteund de DSC-pull-client alleen SSL3.0 en TLS1.0 via HTTPS-verbindingen. Wanneer geforceerde veiliger protocollen gebruiken, zou de pull-client niet meer werkt. In WMF 5.1, de DSC pull-client niet langer biedt ondersteuning voor SSL 3.0 en voegt ondersteuning toe voor de veiliger TLS 1.1 en TLS 1.2-protocollen.  
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC-pull-client ondersteunt TLS 1.1 en TLS 1.2
+Voorheen ondersteund de DSC-pull-client alleen SSL3.0 en TLS1.0 via HTTPS-verbindingen.
+Wanneer geforceerde veiliger protocollen gebruiken, zou de pull-client niet meer werkt.
+In WMF 5.1, de DSC pull-client niet langer biedt ondersteuning voor SSL 3.0 en voegt ondersteuning toe voor de veiliger TLS 1.1 en TLS 1.2-protocollen.
 
 ## <a name="improved-pull-server-registration"></a>Verbeterde pull-server registreren ##
 
-In eerdere versies van WMF zou gelijktijdige registraties/reporting aanvragen voor een DSC-pull-server tijdens het gebruik van de database ESENT leiden tot LCM niet te registreren en/of te rapporteren. In dergelijke gevallen de gebeurtenislogboeken op de pull-server heeft de fout "Exemplaarnaam al in gebruik."
-Dit is vanwege een onjuist patroon wordt gebruikt voor toegang tot de ESENT-database in een scenario met meerdere threads. In WMF 5.1, is dit probleem opgelost. Werkt probleemloos in WMF 5.1 gelijktijdige registraties of reporting (met betrekking tot ESENT database). Dit probleem is alleen van toepassing op de ESENT-database en niet van toepassing op de OLEDB-database. 
+In eerdere versies van WMF zou gelijktijdige registraties/reporting aanvragen voor een DSC-pull-server tijdens het gebruik van de database ESENT leiden tot LCM niet te registreren en/of te rapporteren.
+In dergelijke gevallen de gebeurtenislogboeken op de pull-server heeft de fout "Exemplaarnaam al in gebruik."
+Dit is vanwege een onjuist patroon wordt gebruikt voor toegang tot de ESENT-database in een scenario met meerdere threads.
+In WMF 5.1, is dit probleem opgelost.
+Werkt probleemloos in WMF 5.1 gelijktijdige registraties of reporting (met betrekking tot ESENT database).
+Dit probleem is alleen van toepassing op de ESENT-database en niet van toepassing op de OLEDB-database.
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Permanente logboekbestand voor database-exemplaar ESENT inschakelen
 Eariler versie van DSC-PullServer, zijn de schijfruimte van de pullserver becouse die is de database-instantie wordt gemaakt zonder circulair vastleggen invullen van de logboekbestanden van de ESENT-database. U hebt de optie om te bepalen het gedrag circulair vastleggen van het exemplaar met behulp van web.config van de pullserver in deze release. CircularLogging is standaard ingesteld op TRUE.
@@ -45,7 +51,7 @@ Eariler versie van DSC-PullServer, zijn de schijfruimte van de pullserver becous
   </appSettings>
 ```
 ## <a name="pull-partial-configuration-naming-convention"></a>Pull-naamconventie gedeeltelijke configuratie
-In de vorige release de naamconventie voor een gedeeltelijke configuratie is dat het MOF-bestandsnaam in de pull-server/service moet overeenkomen met de configuratienaam van de van gedeeltelijke opgegeven in de lokale configuration manager-instellingen die op zijn beurt moeten overeenkomen met de naam van de configuratie is ingesloten in het MOF-bestand. 
+In de vorige release de naamconventie voor een gedeeltelijke configuratie is dat het MOF-bestandsnaam in de pull-server/service moet overeenkomen met de configuratienaam van de van gedeeltelijke opgegeven in de lokale configuration manager-instellingen die op zijn beurt moeten overeenkomen met de naam van de configuratie is ingesloten in het MOF-bestand.
 
 Zie de onderstaande momentopnamen:
 
@@ -53,14 +59,14 @@ Zie de onderstaande momentopnamen:
 
 ![Voorbeeld metaconfiguratie](../images/MetaConfigPartialOne.png)
 
-• Voorbeeld gedeeltelijke configuratiedefinitie 
+• Voorbeeld gedeeltelijke configuratiedefinitie
 
 ```powershell
 Configuration PartialOne
 {
     Node('localhost')
     {
-        File test 
+        File test
         {
             DestinationPath = "$env:TEMP\partialconfigexample.txt"
             Contents = 'Partial Config Example'
@@ -74,11 +80,12 @@ PartialOne
 
 ![Voorbeeld gegenereerde mof-bestand](../images/PartialGeneratedMof.png)
 
-• Bestandsnaam in de opslagplaats pull-configuratie 
+• Bestandsnaam in de opslagplaats pull-configuratie
 
 ![Bestandsnaam in de opslagplaats voor configuratie](../images/PartialInConfigRepository.png)
 
-Naam van de service Azure Automation gegenereerd MOF-bestanden als `<ConfigurationName>.<NodeName>.mof`. De onderstaande configuratie compileert dus naar PartialOne.localhost.mof.
+Naam van de service Azure Automation gegenereerd MOF-bestanden als `<ConfigurationName>.<NodeName>.mof`.
+De onderstaande configuratie compileert dus naar PartialOne.localhost.mof.
 
 Hierdoor was het niet mogelijk in pull een van de configuratie van uw gedeeltelijke van Azure Automation-service.
 
@@ -87,7 +94,7 @@ Configuration PartialOne
 {
     Node('localhost')
     {
-        File test 
+        File test
         {
             DestinationPath = "$env:TEMP\partialconfigexample.txt"
             Contents = 'Partial Config Example'
@@ -97,7 +104,9 @@ Configuration PartialOne
 PartialOne
 ```
 
-In WMF 5.1, een gedeeltelijke configuratie in de pull-server/service kan de naam `<ConfigurationName>.<NodeName>.mof`. Bovendien, als een machine is binnenhalen van een configuratie voor één uit een pull serverservice vervolgens in het configuratiebestand op de pull-server configuration opslagplaats hebben een willekeurige bestandsnaam. Deze flexibiliteit naming kunt u voor het beheren van uw knooppunten gedeeltelijk door Azure Automation-service, waarbij een bepaalde configuratie voor uw knooppunt afkomstig is uit Azure Automation DSC en met een gedeeltelijke configuratie die u lokaal beheren.
+In WMF 5.1, een gedeeltelijke configuratie in de pull-server/service kan de naam `<ConfigurationName>.<NodeName>.mof`.
+Bovendien, als een machine is binnenhalen van een configuratie voor één uit een pull serverservice vervolgens in het configuratiebestand op de pull-server configuration opslagplaats hebben een willekeurige bestandsnaam.
+Deze flexibiliteit naming kunt u voor het beheren van uw knooppunten gedeeltelijk door Azure Automation-service, waarbij een bepaalde configuratie voor uw knooppunt afkomstig is uit Azure Automation DSC en met een gedeeltelijke configuratie die u lokaal beheren.
 
 De metaconfiguratie hieronder ingesteld op een knooppunt als niet-beheerd zowel lokaal als door Azure Automation-service.
 
@@ -108,7 +117,7 @@ De metaconfiguratie hieronder ingesteld op een knooppunt als niet-beheerd zowel 
         Settings
         {
             RefreshFrequencyMins = 30
-            RefreshMode = "PULL"            
+            RefreshMode = "PULL"
         }
 
         ConfigurationRepositoryWeb web
@@ -121,9 +130,9 @@ De metaconfiguratie hieronder ingesteld op een knooppunt als niet-beheerd zowel 
         # Partial configuration managed by Azure Automation service.
         PartialConfiguration PartialConfigurationManagedByAzureAutomation
         {
-            ConfigurationSource = "[ConfigurationRepositoryWeb]Web"   
+            ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
         }
-    
+
         # This partial configuration is managed locally.
         PartialConfiguration OnPremisesConfig
         {
@@ -137,31 +146,35 @@ De metaconfiguratie hieronder ingesteld op een knooppunt als niet-beheerd zowel 
    Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
-# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Met behulp van PsDscRunAsCredential met samengestelde DSC-resources   
+# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Met behulp van PsDscRunAsCredential met samengestelde DSC-resources
 
-Ondersteuning voor het gebruik van toegevoegd [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) met DSC [samengestelde](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) resources.    
+Ondersteuning voor het gebruik van toegevoegd [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) met DSC [samengestelde](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) resources.
 
-U kunt nu een waarde opgeven voor PsDscRunAsCredential bij gebruik van samengestelde bronnen binnen configuraties. Als u opgeeft, wordt alle resources binnen een samengestelde bron uitgevoerd als een RunAs-gebruiker. Als een samengestelde bron een andere samengestelde bron aanroept, zijn alle bijbehorende resources ook uitgevoerd als RunAs-gebruiker. Run as-referenties worden doorgegeven aan een niveau van de samengestelde bron-hiërarchie. Als een bron binnen een samengestelde bron wordt een eigen waarde voor PsDscRunAsCredential opgegeven, resulteert een merge-fout tijdens het compileren van de configuratie.
+U kunt nu een waarde opgeven voor PsDscRunAsCredential bij gebruik van samengestelde bronnen binnen configuraties.
+Als u opgeeft, wordt alle resources binnen een samengestelde bron uitgevoerd als een RunAs-gebruiker.
+Als een samengestelde bron een andere samengestelde bron aanroept, zijn alle bijbehorende resources ook uitgevoerd als RunAs-gebruiker.
+Run as-referenties worden doorgegeven aan een niveau van de samengestelde bron-hiërarchie.
+Als een bron binnen een samengestelde bron wordt een eigen waarde voor PsDscRunAsCredential opgegeven, resulteert een merge-fout tijdens het compileren van de configuratie.
 
-Dit voorbeeld ziet u informatie over het gebruik met [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) samengestelde bron opgenomen in de module PSDesiredStateConfiguration. 
+Dit voorbeeld ziet u informatie over het gebruik met [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) samengestelde bron opgenomen in de module PSDesiredStateConfiguration.
 
 
 
 ```powershell
 
-Configuration InstallWindowsFeature     
+Configuration InstallWindowsFeature
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node $AllNodes.NodeName
     {
-        WindowsFeatureSet features 
-        {  
-            Name = @("Telnet-Client","SNMP-Service")  
-            Ensure = "Present"  
-            IncludeAllSubFeature = $true  
-            PsDscRunAsCredential = Get-Credential   
-        }  
+        WindowsFeatureSet features
+        {
+            Name = @("Telnet-Client","SNMP-Service")
+            Ensure = "Present"
+            IncludeAllSubFeature = $true
+            PsDscRunAsCredential = Get-Credential
+        }
     }
 
 }
@@ -178,23 +191,25 @@ $configData = @{
 }
 
 
-InstallWindowsFeature -ConfigurationData $configData 
+InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
 ##<a name="dsc-module-and-configuration-signing-validations"></a>DSC-module en configuratie validaties ondertekening
-In DSC worden-configuraties en modules gedistribueerd naar beheerde computers van de pull-server. Als de pull-server is aangetast, kan mogelijk een aanvaller de modules die zich in de pull-server en de configuraties aanpassen en laat het gedistribueerd naar alle beheerde knooppunten, inbreuk op deze. 
+In DSC worden-configuraties en modules gedistribueerd naar beheerde computers van de pull-server.
+Als de pull-server is aangetast, kan mogelijk een aanvaller de modules die zich in de pull-server en de configuraties aanpassen en laat het gedistribueerd naar alle beheerde knooppunten, inbreuk op deze.
 
- In WMF 5.1 DSC ondersteunt de digitale handtekeningen van catalogus en de configuratie valideren (. MOF)-bestanden. Deze functie wordt voorkomen dat knooppunten configuraties of module-bestanden die niet zijn ondertekend door een vertrouwde ondertekenaar of waarmee is geknoeid nadat ze zijn ondertekend door vertrouwde ondertekenaar wordt uitgevoerd. 
+ In WMF 5.1 DSC ondersteunt de digitale handtekeningen van catalogus en de configuratie valideren (. MOF)-bestanden.
+Deze functie wordt voorkomen dat knooppunten configuraties of module-bestanden die niet zijn ondertekend door een vertrouwde ondertekenaar of waarmee is geknoeid nadat ze zijn ondertekend door vertrouwde ondertekenaar wordt uitgevoerd.
 
 
 
-###<a name="how-to-sign-configuration-and-module"></a>Het ondertekenen van de configuratie en -module 
+###<a name="how-to-sign-configuration-and-module"></a>Het ondertekenen van de configuratie en -module
 ***
-* Configuratiebestanden (. MOF-bestanden): de bestaande PowerShell-cmdlet [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wordt uitgebreid met ondersteuning voor ondertekening van het MOF-bestanden.  
-* Modules: Ondertekening van modules wordt uitgevoerd door de ondertekening van de corresponderende module catalogus met behulp van de volgende stappen uit: 
-    1. Een catalogusbestand maken: een catalogusbestand bevat een verzameling van cryptografische hashes of vingerafdrukken. 
-       Elke vingerafdruk overeenkomt met een bestand dat is opgenomen in de module. 
+* Configuratiebestanden (. MOF-bestanden): de bestaande PowerShell-cmdlet [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wordt uitgebreid met ondersteuning voor ondertekening van het MOF-bestanden.
+* Modules: Ondertekening van modules wordt uitgevoerd door de ondertekening van de corresponderende module catalogus met behulp van de volgende stappen uit:
+    1. Een catalogusbestand maken: een catalogusbestand bevat een verzameling van cryptografische hashes of vingerafdrukken.
+       Elke vingerafdruk overeenkomt met een bestand dat is opgenomen in de module.
        De nieuwe cmdlet [nieuw FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), zodat gebruikers kunnen maken van een catalogusbestand voor de module is toegevoegd.
     2. Meld u aan het catalogusbestand: Gebruik [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) om de catalogusbestand te ondertekenen.
     3. Plaats het catalogusbestand in de modulemap.
@@ -203,7 +218,9 @@ Volgens de conventies worden catalogusbestand module onder de modulemap met deze
 ###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>Instellingen voor LocalConfigurationManager ondertekenen validaties inschakelen
 
 ####<a name="pull"></a>Pull-
-De LocalConfigurationManager van een knooppunt voert ondertekenen validatie van modules en configuraties op basis van de huidige instellingen. Validatie van handtekening is standaard uitgeschakeld. Validatie van handtekening kan worden ingeschakeld door het blok 'SignatureValidation' toe te voegen aan de definitie van de meta-configuratie van het knooppunt zoals hieronder:
+De LocalConfigurationManager van een knooppunt voert ondertekenen validatie van modules en configuraties op basis van de huidige instellingen.
+Validatie van handtekening is standaard uitgeschakeld.
+Validatie van handtekening kan worden ingeschakeld door het blok 'SignatureValidation' toe te voegen aan de definitie van de meta-configuratie van het knooppunt zoals hieronder:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -211,9 +228,9 @@ Configuration EnableSignatureValidation
 {
     Settings
     {
-        RefreshMode = 'PULL'        
-    } 
-    
+        RefreshMode = 'PULL'
+    }
+
     ConfigurationRepositoryWeb pullserver{
       ConfigurationNames = 'sql'
       ServerURL = 'http://localhost:8080/PSDSCPullServer/PSDSCPullServer.svc'
@@ -222,18 +239,19 @@ Configuration EnableSignatureValidation
     }
     SignatureValidation validations{
         # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
-        TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
-        SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
+        TrustedStorePath = 'Cert:\LocalMachine\DSCStore'
+        SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.
     }
- 
+
 }
 EnableSignatureValidation
-Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose 
+Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
  ```
 
-Het instellen van de bovenstaande metaconfiguratie toe op een knooppunt kunt handtekeningvalidatie op gedownloade configuraties en modules. De lokale Configuration Manager voert de volgende stappen uit om te controleren of de digitale handtekeningen.
+Het instellen van de bovenstaande metaconfiguratie toe op een knooppunt kunt handtekeningvalidatie op gedownloade configuraties en modules.
+De lokale Configuration Manager voert de volgende stappen uit om te controleren of de digitale handtekeningen.
 
-1. Controleer of de handtekening van een configuratiebestand (. MOF) is ongeldig. 
+1. Controleer of de handtekening van een configuratiebestand (. MOF) is ongeldig.
    Dit maakt gebruik van de PowerShell-cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), die wordt uitgebreid in 5.1 ter ondersteuning van de handtekeningvalidatie MOF.
 2. Controleer of de certificeringsinstantie die de ondertekenaar gemachtigd wordt vertrouwd.
 3. Module of systeembronnen afhankelijkheden van de configuratie naar een tijdelijke locatie downloaden.
@@ -244,7 +262,8 @@ Het instellen van de bovenstaande metaconfiguratie toe op een knooppunt kunt han
 5. Installatie-Module voor $env: ProgramFiles\WindowsPowerShell\Modules\
 6. Procesconfiguratie
 
-> Opmerking: De handtekeningvalidatie van module-catalogus en -configuratie wordt alleen uitgevoerd wanneer de configuratie wordt toegepast op het systeem voor het eerst of wanneer de module wordt gedownload en geïnstalleerd. De handtekening van Current.mof of de afhankelijkheden van de module wordt niet gevalideerd door consistentiecontrole wordt uitgevoerd.
+> Opmerking: De handtekeningvalidatie van module-catalogus en -configuratie wordt alleen uitgevoerd wanneer de configuratie wordt toegepast op het systeem voor het eerst of wanneer de module wordt gedownload en geïnstalleerd.
+De handtekening van Current.mof of de afhankelijkheden van de module wordt niet gevalideerd door consistentiecontrole wordt uitgevoerd.
 Verificatie is mislukt in elk stadium, bijvoorbeeld als de configuratie die is opgehaald uit de pull-server is niet ondertekend, vervolgens verwerking van de configuratie wordt beëindigd met de fout hieronder wordt weergegeven als alle tijdelijke bestanden worden verwijderd.
 
 ![Uitvoer van de voorbeeldconfiguratie-fout](../images/PullUnsignedConfigFail.png)
@@ -254,7 +273,8 @@ Binnenhalen van een module waarvan catalogus niet is ondertekend op dezelfde man
 ![Voorbeeld uitvoer Foutenmodule](../images/PullUnisgnedCatalog.png)
 
 ####<a name="push"></a>Push
-Een configuratie met behulp van push geleverd kan op de bron geknoeid voordat deze naar het knooppunt afgeleverd. De lokale Configuration Manager voert vergelijkbare handtekening Validatiestappen voor configuratie (pushed of gepubliceerd s).
+Een configuratie met behulp van push geleverd kan op de bron geknoeid voordat deze naar het knooppunt afgeleverd.
+De lokale Configuration Manager voert vergelijkbare handtekening Validatiestappen voor configuratie (pushed of gepubliceerd s).
 Hieronder vindt u een compleet voorbeeld van validatie van handtekening voor de push.
 
 * Handtekeningvalidatie op het knooppunt inschakelen.
@@ -265,17 +285,17 @@ Configuration EnableSignatureValidation
 {
     Settings
     {
-        RefreshMode = 'PUSH'        
-    } 
+        RefreshMode = 'PUSH'
+    }
     SignatureValidation validations{
-        TrustedStorePath = 'Cert:\LocalMachine\DSCStore'   
-        SignedItemType =  'Configuration','Module'             
+        TrustedStorePath = 'Cert:\LocalMachine\DSCStore'
+        SignedItemType =  'Configuration','Module'
     }
 
 }
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
-``` 
+```
 * Maak een voorbeeldconfiguratiebestand.
 
 ```powershell
@@ -292,11 +312,11 @@ Configuration Test
 Test
 ```
 
-* Probeer de niet-ondertekende configuratiebestand pushen naar het knooppunt. 
+* Probeer de niet-ondertekende configuratiebestand pushen naar het knooppunt.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
-``` 
+```
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
 * Meld u aan het configuratiebestand met code signing-certificaat.
@@ -306,4 +326,3 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 * Probeer het ondertekende MOF-bestand worden gepusht.
 
 ![SignMofFile](../images/PushSignedMof.png)
-

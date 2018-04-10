@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 4868cf657f678ee43a6c92d5ee286e9ddb490964
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 2b6b81d250c3d745f3ab21ebadb9a657583638b0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="network-switch-management-with-powershell"></a>Switch-netwerkbeheer met PowerShell
+# <a name="network-switch-management-with-powershell"></a>Beheer van netwerkswitch met PowerShell
 
 De **Get-NetworkSwitchEthernetPort** cmdlet retourneert nu de volgende aanvullende informatie met exemplaren:
 
@@ -70,4 +70,3 @@ PS> Get-Command *-NetworkSwitch*
 ```
 
 Meer informatie is beschikbaar in de Jeffrey Snover WMF 5.0 Preview aankondiging blogbericht: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
-

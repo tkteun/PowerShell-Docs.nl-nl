@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
 
@@ -96,7 +96,7 @@ U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop
    >**![Opmerking](images/note.jpeg) Opmerking**
    >
    >Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets voegt geen webserver (IIS)-beheerhulpprogramma's standaard. Als u de beheerhulpprogramma's op dezelfde server als de Windows PowerShell Web Access-gateway installeren wilt, voegt u de `-IncludeManagementTools` parameter aan de installatieopdracht (zoals omschreven in deze stap). Als u de Windows PowerShell Web Access-website vanaf een externe computer beheert, installeert u de module IIS-beheer door het installeren van [Remote Server Administration Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) of [Remote Server Administration Hulpprogramma's voor Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) op de computer van waaruit u wilt beheren van de gateway.
-   
+
    Als u functies en onderdelen op een offline-VHD wilt installeren, dient u de parameter `-ComputerName` en de parameter `-VHD` toe te voegen. De parameter `-ComputerName` bevat de naam van de server waaraan de VHD moet worden gekoppeld en de parameter `-VHD` bevat het pad naar het VHD-bestand op de opgegeven server.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ Administrators kunnen het testcertificaat vervangen door een ondertekend certifi
 U kunt Windows PowerShell-webtoegang webtoepassingsconfiguratie door waarop voltooien de `Install-PswaWebApplication` cmdlet of door te voeren op basis van GUI-configuratiestappen in IIS-beheer. De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toepassingen, **pswa_pool**) in de **standaardwebsite** container, zoals wordt weergegeven in IIS-beheer; als gewenst, kunt u opdracht geven de cmdlet de standaardsitecontainer van de webtoepassing wijzigen. IIS-beheer biedt configuratieopties voor webtoepassingen, zoals opties voor het wijzigen van het poortnummer of het SSL-certificaat (Secure Sockets Layer).
 
 >**![Opmerking over beveiliging](images/securitynote.jpeg) opmerking over beveiliging**
-> 
->Administrators wordt ten sterkste aangeraden de gateway zodanig te configureren dat gebruik wordt gemaakt van een geldig certificaat dat is ondertekend door een CA. 
+>
+>Administrators wordt ten sterkste aangeraden de gateway zodanig te configureren dat gebruik wordt gemaakt van een geldig certificaat dat is ondertekend door een CA.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>De gateway voor Windows PowerShell-webtoegang configureren met een testcertificaat door middel van Install-PswaWebApplication
 
@@ -145,8 +145,8 @@ De volgende instellingen worden geconfigureerd door de cmdlet uit te voeren. U k
 
 In dit voorbeeld is de resulterende website voor Windows PowerShell-webtoegang https://\<*servernaam*\>/myWebApp.
 
->**![Opmerking](images/note.jpeg) Opmerking** 
-> 
+>**![Opmerking](images/note.jpeg) Opmerking**
+>
 >U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule) en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>De gateway voor Windows PowerShell-webtoegang configureren met een geldig certificaat door middel van Install-PswaWebApplication en IIS-beheer
@@ -193,9 +193,9 @@ In dit voorbeeld is de resulterende website voor Windows PowerShell-webtoegang h
 
     U kunt Windows PowerShell-webtoegang openen door te openen **https://\<servernaam\>/pswa** in een browservenster.
 
->**![Opmerking](images/note.jpeg) Opmerking** 
-> 
->U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. 
+>**![Opmerking](images/note.jpeg) Opmerking**
+>
+>U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen.
 >Zie voor meer informatie [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Configureer een beperkende autorisatieregel toevoegen
@@ -219,7 +219,7 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker gemiddelde scripting en cmdlet-behoeften.
-   
+
    In het volgende voorbeeld krijgt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang om de computer `Contoso_214` te beheren en een sessieconfiguratie genaamd `NewAdminsOnly` te gebruiken.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -254,7 +254,7 @@ U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop
 
 6. U wordt gevraagd vereiste onderdelen toe te voegen, zoals .NET Framework 4.5 en functieservices van Webserver (IIS). Voeg de vereiste onderdelen toe en ga door.
 
-    >**![Opmerking](images/note.jpeg) Opmerking** 
+    >**![Opmerking](images/note.jpeg) Opmerking**
     >
     >Windows PowerShell-webtoegang installeren met behulp van de functies en onderdelen installeert ook webserver (IIS), met inbegrip van de module IIS-beheer. Als u de Wizard Functies toevoegen en onderdelen gebruikt worden standaard de invoegtoepassing en andere IIS-beheerprogramma's geïnstalleerd. Als u Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets, zoals beschreven in de volgende procedure, worden standaard geen beheerhulpprogramma's toegevoegd.
 
@@ -292,7 +292,10 @@ Instructies in deze sectie zijn voor het installeren van de Windows PowerShell W
 
 10. ![](images/SecurityNote.jpeg) Optionele beveiligingsstap:
 
-    Met de website in het deelvenster voor structuurweergave is geselecteerd, dubbelklikt u op **SSL-instellingen** in het inhoudsvenster. Selecteer **SSL vereisen**, en klik vervolgens in de **acties** deelvenster, klikt u op **toepassen**. Typ in het **SSL-instellingen** deelvenster kunt u vereisen dat gebruikers verbinding maken met de Windows PowerShell Web Access-website over clientcertificaten beschikken. Aan de hand van een clientcertificaat kan de identiteit van de gebruiker van een clientapparaat worden geverifieerd. Zie voor meer informatie over hoe clientcertificaten de beveiliging van Windows PowerShell Web Access kan verbeteren, [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in deze handleiding.
+    Met de website in het deelvenster voor structuurweergave is geselecteerd, dubbelklikt u op **SSL-instellingen** in het inhoudsvenster.
+Selecteer **SSL vereisen**, en klik vervolgens in de **acties** deelvenster, klikt u op **toepassen**.
+Typ in het **SSL-instellingen** deelvenster kunt u vereisen dat gebruikers verbinding maken met de Windows PowerShell Web Access-website over clientcertificaten beschikken. Aan de hand van een clientcertificaat kan de identiteit van de gebruiker van een clientapparaat worden geverifieerd.
+Zie voor meer informatie over hoe clientcertificaten de beveiliging van Windows PowerShell Web Access kan verbeteren, [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in deze handleiding.
 
 11. Open een browsersessie op een clientapparaat. Zie voor meer informatie over ondersteunde browsers en apparaten, [Browser en clientapparaat ondersteunen](#browser-and-client-device-support) in dit onderwerp.
 
@@ -300,9 +303,9 @@ Instructies in deze sectie zijn voor het installeren van de Windows PowerShell W
 
     De Windows PowerShell Web Access-console aanmeldingspagina moet worden weergegeven in de browser.
 
-    >**![Opmerking](images/note.jpeg) Opmerking** 
-    > 
-    >U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. 
+    >**![Opmerking](images/note.jpeg) Opmerking**
+    >
+    >U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen.
     >Zie voor meer informatie [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. In een Windows PowerShell-sessie die is geopend met verhoogde gebruikersrechten (als Administrator uitvoeren) voert u het volgende script waarin *application_pool_name* vertegenwoordigt de naam van de groep van toepassingen die u hebt gemaakt in stap 3 de groep van toepassingen om toegangsrechten te geven tot het autorisatiebestand.
@@ -363,9 +366,9 @@ Instructies in deze sectie zijn voor het installeren van de Windows PowerShell W
 
     Omdat de primaire website naar de map Windows PowerShell-webtoegang verwijst, de aanmeldingspagina van Windows PowerShell-webtoegang in de browser moet worden weergegeven wanneer u opent **https://\<*gateway_server_name* \>**. U hoeft niet om toe te voegen **/pswa** naar de URL.
 
-    >**![Opmerking](images/note.jpeg) Opmerking** 
-    > 
-    >U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. 
+    >**![Opmerking](images/note.jpeg) Opmerking**
+    >
+    >U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen.
     >Zie voor meer informatie [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Configureer een beperkende autorisatieregel toevoegen
@@ -390,13 +393,13 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker '™ s typische scripting- en cmdlet-behoeften. 
-    
+    Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker '™ s typische scripting- en cmdlet-behoeften.
+
     In het volgende voorbeeld krijgt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang om de computer `Contoso_214` te beheren en een sessieconfiguratie genaamd `NewAdminsOnly` te gebruiken.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Controleer of dat de regel is gemaakt door de `Get-PswaAuthorizationRule` -cmdlet of `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Controleer of dat de regel is gemaakt door de `Get-PswaAuthorizationRule` -cmdlet of `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     Voorbeeld: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
