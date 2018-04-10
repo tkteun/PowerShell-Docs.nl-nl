@@ -1,43 +1,43 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: Get-InstalledScript
-ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 668327905b0dab40119940a3134b674c452f538d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="get-installedscript"></a><span data-ttu-id="e31f4-103">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="e31f4-103">Get-InstalledScript</span></span>
+# <a name="get-installedscript"></a><span data-ttu-id="39d67-103">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="39d67-103">Get-InstalledScript</span></span>
 
-<span data-ttu-id="e31f4-104">Haalt geïnstalleerde scripts op een computer.</span><span class="sxs-lookup"><span data-stu-id="e31f4-104">Gets installed scripts on a computer.</span></span>
+<span data-ttu-id="39d67-104">Haalt geïnstalleerde scripts op een computer.</span><span class="sxs-lookup"><span data-stu-id="39d67-104">Gets installed scripts on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="e31f4-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="e31f4-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="39d67-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="39d67-105">Description</span></span>
 
-<span data-ttu-id="e31f4-106">De cmdlet Get-InstalledScript haalt geïnstalleerde PowerShell-scripts op een computer.</span><span class="sxs-lookup"><span data-stu-id="e31f4-106">The Get-InstalledScript cmdlet gets installed PowerShell scripts on a computer.</span></span>
+<span data-ttu-id="39d67-106">De cmdlet Get-InstalledScript haalt geïnstalleerde PowerShell-scripts op een computer.</span><span class="sxs-lookup"><span data-stu-id="39d67-106">The Get-InstalledScript cmdlet gets installed PowerShell scripts on a computer.</span></span>
 
-<span data-ttu-id="e31f4-107">Voor elke geïnstalleerde script retourneert Get-InstalledScript een PSRepositoryItemInfo-object dat kan eventueel worden doorgesluisd naar Uninstall-Script voor het verwijderen van de geïnstalleerde scripts.</span><span class="sxs-lookup"><span data-stu-id="e31f4-107">For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Script for uninstalling the installed scripts.</span></span>
+<span data-ttu-id="39d67-107">Voor elke geïnstalleerde script retourneert Get-InstalledScript een PSRepositoryItemInfo-object dat kan eventueel worden doorgesluisd naar Uninstall-Script voor het verwijderen van de geïnstalleerde scripts.</span><span class="sxs-lookup"><span data-stu-id="39d67-107">For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Script for uninstalling the installed scripts.</span></span>
 
-- <span data-ttu-id="e31f4-108">Get-InstalledScript kunt geïnstalleerde scripts op basis van naam, Versieparameters filteren.</span><span class="sxs-lookup"><span data-stu-id="e31f4-108">Get-InstalledScript can filter installed scripts based on name, version parameters.</span></span>
-- <span data-ttu-id="e31f4-109">Get-InstalledScript kunt filteren met Versieparameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="e31f4-109">Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="e31f4-110">Deze parameters zijn, met uitzondering van MinmimumVersion en MaximumVersion, sluiten elkaar wederzijds uit.</span><span class="sxs-lookup"><span data-stu-id="e31f4-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="e31f4-111">Deze Versieparameters zijn alleen met de naam van één script zonder eventuele jokertekens toegestaan.</span><span class="sxs-lookup"><span data-stu-id="e31f4-111">These version parameters are allowed only with the single script name without any wildcards.</span></span>
-  - <span data-ttu-id="e31f4-112">Als de parameter RequiredVersion niet is opgegeven, retourneert Get-InstalledScript de meest recente versie van het geïnstalleerde script dat gelijk is aan of groter is dan de opgegeven minimumversie of de nieuwste versie van het script als er geen minimum versie is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="e31f4-112">If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="e31f4-113">Als de parameter RequiredVersion is opgegeven, wordt met Get-InstalledScript alleen de versie van geïnstalleerde script die exact overeenkomt met de opgegeven versie retourneert.</span><span class="sxs-lookup"><span data-stu-id="e31f4-113">If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="39d67-108">Get-InstalledScript kunt geïnstalleerde scripts op basis van naam, Versieparameters filteren.</span><span class="sxs-lookup"><span data-stu-id="39d67-108">Get-InstalledScript can filter installed scripts based on name, version parameters.</span></span>
+- <span data-ttu-id="39d67-109">Get-InstalledScript kunt filteren met Versieparameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="39d67-109">Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="39d67-110">Deze parameters zijn, met uitzondering van MinmimumVersion en MaximumVersion, sluiten elkaar wederzijds uit.</span><span class="sxs-lookup"><span data-stu-id="39d67-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="39d67-111">Deze Versieparameters zijn alleen met de naam van één script zonder eventuele jokertekens toegestaan.</span><span class="sxs-lookup"><span data-stu-id="39d67-111">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="39d67-112">Als de parameter RequiredVersion niet is opgegeven, retourneert Get-InstalledScript de meest recente versie van het geïnstalleerde script dat gelijk is aan of groter is dan de opgegeven minimumversie of de nieuwste versie van het script als er geen minimum versie is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="39d67-112">If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span>
+  - <span data-ttu-id="39d67-113">Als de parameter RequiredVersion is opgegeven, wordt met Get-InstalledScript alleen de versie van geïnstalleerde script die exact overeenkomt met de opgegeven versie retourneert.</span><span class="sxs-lookup"><span data-stu-id="39d67-113">If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="e31f4-114">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="e31f4-114">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="39d67-114">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="39d67-114">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e31f4-115">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="e31f4-115">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="39d67-115">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="39d67-115">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="e31f4-116">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="e31f4-116">Get-InstalledScript</span></span>](http://go.microsoft.com/fwlink/?LinkId=619790)
+[<span data-ttu-id="39d67-116">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="39d67-116">Get-InstalledScript</span></span>](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## <a name="example-commands"></a><span data-ttu-id="e31f4-117">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="e31f4-117">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="39d67-117">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="39d67-117">Example commands</span></span>
 
 ```powershell
 
@@ -98,4 +98,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-

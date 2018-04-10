@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: Uninstall-Script
-ms.openlocfilehash: 41f2b88ee81cf9f8c1a8c415ed658f29f4f08c3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 3d35235d001063784226dbbdb60595c5efee928d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="uninstall-script"></a><span data-ttu-id="b859a-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="b859a-103">Uninstall-Script</span></span>
+# <a name="uninstall-script"></a><span data-ttu-id="44305-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="44305-103">Uninstall-Script</span></span>
 
-<span data-ttu-id="b859a-104">Hiermee verwijdert u een scriptbestand dat is geïnstalleerd met PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="b859a-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
+<span data-ttu-id="44305-104">Hiermee verwijdert u een scriptbestand dat is geïnstalleerd met PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="44305-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="b859a-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="b859a-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="44305-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="44305-105">Description</span></span>
 
-<span data-ttu-id="b859a-106">Het opgegeven script-bestanden die zijn geïnstalleerd vanuit de onlineopslagplaats Hiermee verwijdert u de cmdlet Uninstall-Script.</span><span class="sxs-lookup"><span data-stu-id="b859a-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
+<span data-ttu-id="44305-106">Het opgegeven script-bestanden die zijn geïnstalleerd vanuit de onlineopslagplaats Hiermee verwijdert u de cmdlet Uninstall-Script.</span><span class="sxs-lookup"><span data-stu-id="44305-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="b859a-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="b859a-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="44305-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="44305-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b859a-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="b859a-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="44305-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="44305-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="b859a-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="b859a-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
+[<span data-ttu-id="44305-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="44305-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a><span data-ttu-id="b859a-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="b859a-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="44305-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="44305-110">Example commands</span></span>
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -73,4 +73,3 @@ VERBOSE: Performing the operation "Uninstall-Script" on target "Version '2.5.0-a
 VERBOSE: Successfully uninstalled the script 'Required-Script1' from script base 'C:\Users\manikb\Documents\WindowsPowerShell\Scripts'.
 
 ```
-

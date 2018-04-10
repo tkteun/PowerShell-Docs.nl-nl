@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Publiceren Script
-ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Publish-Script
+ms.openlocfilehash: 6e273a4bacd2bf150a6fa6c4436c3c34f41078ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-script"></a><span data-ttu-id="7e102-103">Publiceren Script</span><span class="sxs-lookup"><span data-stu-id="7e102-103">Publish-Script</span></span>
+# <a name="publish-script"></a><span data-ttu-id="be1dd-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="be1dd-103">Publish-Script</span></span>
 
-<span data-ttu-id="7e102-104">De cmdlet Publish-Script wordt het opgegeven script publiceert naar de on line galerie.</span><span class="sxs-lookup"><span data-stu-id="7e102-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
+<span data-ttu-id="be1dd-104">De cmdlet Publish-Script wordt het opgegeven script publiceert naar de on line galerie.</span><span class="sxs-lookup"><span data-stu-id="be1dd-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-## <a name="description"></a><span data-ttu-id="7e102-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="7e102-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="be1dd-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="be1dd-105">Description</span></span>
 
-<span data-ttu-id="7e102-106">Publiceren Script cmdlet kunt u voor het publiceren van het scriptbestand met geldige metagegevens zoals versie, Guid, auteur en de beschrijving, enzovoort. Switch-parameter bij de cmdlet Publish-Script Force bootstraps de NuGet.exe zonder te vragen.</span><span class="sxs-lookup"><span data-stu-id="7e102-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
+<span data-ttu-id="be1dd-106">Publiceren Script cmdlet kunt u voor het publiceren van het scriptbestand met geldige metagegevens zoals versie, Guid, auteur en de beschrijving, enzovoort. Switch-parameter bij de cmdlet Publish-Script Force bootstraps de NuGet.exe zonder te vragen.</span><span class="sxs-lookup"><span data-stu-id="be1dd-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="7e102-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="7e102-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="be1dd-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="be1dd-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="7e102-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="7e102-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="be1dd-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="be1dd-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="7e102-109">Publiceren Script</span><span class="sxs-lookup"><span data-stu-id="7e102-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="be1dd-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="be1dd-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a><span data-ttu-id="7e102-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="7e102-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="be1dd-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="be1dd-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -75,4 +75,3 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-

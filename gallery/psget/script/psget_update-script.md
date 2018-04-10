@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Script voor het bijwerken
-ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Update-Script
+ms.openlocfilehash: 23e558a063689d263f68d34ec3b154be1c77ae89
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-script"></a><span data-ttu-id="95649-103">Script voor het bijwerken</span><span class="sxs-lookup"><span data-stu-id="95649-103">Update-Script</span></span>
+# <a name="update-script"></a><span data-ttu-id="132a8-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="132a8-103">Update-Script</span></span>
 
-<span data-ttu-id="95649-104">Updatescript cmdlet kunt u in-place bijwerken van de scriptbestanden die zijn geïnstalleerd met de cmdlet Install-Script.</span><span class="sxs-lookup"><span data-stu-id="95649-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+<span data-ttu-id="132a8-104">Updatescript cmdlet kunt u in-place bijwerken van de scriptbestanden die zijn geïnstalleerd met de cmdlet Install-Script.</span><span class="sxs-lookup"><span data-stu-id="132a8-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="95649-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="95649-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="132a8-105">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="132a8-105">Description</span></span>
 
-<span data-ttu-id="95649-106">De cmdlet updatescript werkt het opgegeven script uit de opslagplaats waaruit deze eerder was geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="95649-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
+<span data-ttu-id="132a8-106">De cmdlet updatescript werkt het opgegeven script uit de opslagplaats waaruit deze eerder was geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="132a8-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="95649-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="95649-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="132a8-107">De syntaxis van cmdlet</span><span class="sxs-lookup"><span data-stu-id="132a8-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="95649-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="95649-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="132a8-108">Verwijzing naar het online help van cmdlet</span><span class="sxs-lookup"><span data-stu-id="132a8-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="95649-109">Script voor het bijwerken</span><span class="sxs-lookup"><span data-stu-id="95649-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="132a8-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="132a8-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-## <a name="example-commands"></a><span data-ttu-id="95649-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="95649-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="132a8-110">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="132a8-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -74,4 +74,3 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-

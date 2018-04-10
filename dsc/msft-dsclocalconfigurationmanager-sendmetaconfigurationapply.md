@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 350555220757b1939b1de34ab423e963635eb53c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: ab82b239ddfdb4075d9440cd66343266b3c08eda
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="12ec4-103">SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="12ec4-103">SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="44c1e-103">De SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="44c1e-103">SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="12ec4-104">Hiermee stelt u de lokale Configuration Manager-instellingen die worden gebruikt voor het beheren van de configuratie-Agent.</span><span class="sxs-lookup"><span data-stu-id="12ec4-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
+<span data-ttu-id="44c1e-104">Hiermee stelt u de lokale Configuration Manager-instellingen die worden gebruikt voor het beheren van de configuratie-Agent.</span><span class="sxs-lookup"><span data-stu-id="44c1e-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="12ec4-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="12ec4-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="44c1e-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="44c1e-105">Syntax</span></span>
 ------
 
 ```mof
@@ -23,40 +23,30 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="12ec4-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="12ec4-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="44c1e-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="44c1e-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="12ec4-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="12ec4-107">*ConfigurationData* \[in\]</span></span>  
-<span data-ttu-id="12ec4-108">De omgevingsgegevens voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="12ec4-108">The environment data for the configuration.</span></span>
+<span data-ttu-id="44c1e-107">*ConfigurationData* \[in\] de omgevingsgegevens voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="44c1e-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="12ec4-109">*Force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="12ec4-109">*force* \[in\]</span></span>  
-<span data-ttu-id="12ec4-110">**de waarde True** om af te dwingen van de configuratie te stoppen.</span><span class="sxs-lookup"><span data-stu-id="12ec4-110">**true** to force the configuration to stop.</span></span>
+<span data-ttu-id="44c1e-108">*Force* \[in\] **true** om af te dwingen van de configuratie te stoppen.</span><span class="sxs-lookup"><span data-stu-id="44c1e-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="12ec4-111">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="12ec4-111">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="44c1e-109">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="44c1e-109">Return value</span></span>
 ------------
 
-<span data-ttu-id="12ec4-112">Retourneert nul geslaagd; Anders retourneert een foutcode.</span><span class="sxs-lookup"><span data-stu-id="12ec4-112">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="44c1e-110">Retourneert nul geslaagd; Anders retourneert een foutcode.</span><span class="sxs-lookup"><span data-stu-id="44c1e-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="12ec4-113">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="12ec4-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="44c1e-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="44c1e-111">Remarks</span></span>
 
-<span data-ttu-id="12ec4-114">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="12ec4-114">This is a static method.</span></span>
+<span data-ttu-id="44c1e-112">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="44c1e-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="12ec4-115">Vereisten</span><span class="sxs-lookup"><span data-stu-id="12ec4-115">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="44c1e-113">Vereisten</span><span class="sxs-lookup"><span data-stu-id="44c1e-113">Requirements</span></span>
 ------------
-><span data-ttu-id="12ec4-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="12ec4-116">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="44c1e-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="44c1e-114">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="12ec4-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="12ec4-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="12ec4-118">Zie ook</span><span class="sxs-lookup"><span data-stu-id="12ec4-118">See also</span></span>
+><span data-ttu-id="44c1e-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="44c1e-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="12ec4-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="12ec4-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="44c1e-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="44c1e-116">See also</span></span>
 
 
- 
-
- 
-
-
-
+[<span data-ttu-id="44c1e-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="44c1e-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

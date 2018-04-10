@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 04f0f3146473dc71f492086449d9dce5467c55db
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 7815d458a9a67639a31c917510097212d104eb8a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="d6678-103">TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="d6678-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="bca5e-103">De TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="bca5e-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="d6678-104">Het configuratiebestand voor het beheerde knooppunt verzendt en controleert of de huidige configuratie op basis van het document.</span><span class="sxs-lookup"><span data-stu-id="d6678-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
+<span data-ttu-id="bca5e-104">Het configuratiebestand voor het beheerde knooppunt verzendt en controleert of de huidige configuratie op basis van het document.</span><span class="sxs-lookup"><span data-stu-id="bca5e-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="d6678-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="d6678-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="bca5e-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="bca5e-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,46 +25,34 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="d6678-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="d6678-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="bca5e-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="bca5e-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="d6678-107">*configurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="d6678-107">*configurationData* \[in\]</span></span>  
-<span data-ttu-id="d6678-108">De omgevingsgegevens voor de confuguration.</span><span class="sxs-lookup"><span data-stu-id="d6678-108">Environment data for the confuguration.</span></span>
+<span data-ttu-id="bca5e-107">*configurationData* \[in\] omgevingsgegevens voor de confuguration.</span><span class="sxs-lookup"><span data-stu-id="bca5e-107">*configurationData* \[in\] Environment data for the confuguration.</span></span>
 
-<span data-ttu-id="d6678-109">*InDesiredState* \[uit\]</span><span class="sxs-lookup"><span data-stu-id="d6678-109">*InDesiredState* \[out\]</span></span>  
-<span data-ttu-id="d6678-110">Bij resultaat, geeft aan of het beheerde knooppunt in de status van de opgegeven door het configuratie-document.</span><span class="sxs-lookup"><span data-stu-id="d6678-110">On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
+<span data-ttu-id="bca5e-108">*InDesiredState* \[uit\] bij resultaat, geeft aan of het beheerde knooppunt in de status van de opgegeven door het configuratie-document.</span><span class="sxs-lookup"><span data-stu-id="bca5e-108">*InDesiredState* \[out\] On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
 
-<span data-ttu-id="d6678-111">*ResourcesInDesiredState* \[uit\]</span><span class="sxs-lookup"><span data-stu-id="d6678-111">*ResourcesInDesiredState* \[out\]</span></span>  
-<span data-ttu-id="d6678-112">Op return bevat een ingesloten exemplaar van de **MSFT_ResourceInDesiredState** klasse waarmee bronnen die zich in de gewenste status.</span><span class="sxs-lookup"><span data-stu-id="d6678-112">On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
+<span data-ttu-id="bca5e-109">*ResourcesInDesiredState* \[uit\] op return bevat een ingesloten exemplaar van de **MSFT_ResourceInDesiredState** klasse waarmee bronnen die zich in de gewenste status.</span><span class="sxs-lookup"><span data-stu-id="bca5e-109">*ResourcesInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
 
-<span data-ttu-id="d6678-113">*ResourcesNotInDesiredState* \[uit\]</span><span class="sxs-lookup"><span data-stu-id="d6678-113">*ResourcesNotInDesiredState* \[out\]</span></span>  
-<span data-ttu-id="d6678-114">Op return bevat een ingesloten exemplaar van de **MSFT_ResourceNotInDesiredState** klasse waarmee bronnen die zich niet in de gewenste status.</span><span class="sxs-lookup"><span data-stu-id="d6678-114">On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
+<span data-ttu-id="bca5e-110">*ResourcesNotInDesiredState* \[uit\] op return bevat een ingesloten exemplaar van de **MSFT_ResourceNotInDesiredState** klasse waarmee bronnen die zich niet in de gewenste status.</span><span class="sxs-lookup"><span data-stu-id="bca5e-110">*ResourcesNotInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="d6678-115">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="d6678-115">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="bca5e-111">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="bca5e-111">Return value</span></span>
 ------------
 
-<span data-ttu-id="d6678-116">Retourneert nul geslaagd; Anders retourneert een foutcode.</span><span class="sxs-lookup"><span data-stu-id="d6678-116">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="bca5e-112">Retourneert nul geslaagd; Anders retourneert een foutcode.</span><span class="sxs-lookup"><span data-stu-id="bca5e-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="d6678-117">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="d6678-117">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="bca5e-113">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="bca5e-113">Remarks</span></span>
 
-<span data-ttu-id="d6678-118">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="d6678-118">This is a static method.</span></span>
+<span data-ttu-id="bca5e-114">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="bca5e-114">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="d6678-119">Vereisten</span><span class="sxs-lookup"><span data-stu-id="d6678-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="bca5e-115">Vereisten</span><span class="sxs-lookup"><span data-stu-id="bca5e-115">Requirements</span></span>
 ------------
-><span data-ttu-id="d6678-120">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d6678-120">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="bca5e-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="bca5e-116">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="d6678-121">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d6678-121">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="d6678-122">Zie ook</span><span class="sxs-lookup"><span data-stu-id="d6678-122">See also</span></span>
+><span data-ttu-id="bca5e-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="bca5e-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="d6678-123">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d6678-123">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="bca5e-118">Zie ook</span><span class="sxs-lookup"><span data-stu-id="bca5e-118">See also</span></span>
 
 
- 
-
- 
-
-
-
+[<span data-ttu-id="bca5e-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="bca5e-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
