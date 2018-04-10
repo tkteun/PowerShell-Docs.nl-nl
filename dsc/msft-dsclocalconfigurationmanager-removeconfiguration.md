@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Hiermee verwijdert u de configuratiebestanden.
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>Parameters
 ----------
 
-*Fase* \[in\]  
-Hiermee geeft u op welke configuratie-document te verwijderen. De volgende waarden zijn geldig:
+*Fase* \[in\] geeft aan welke configuratie-document te verwijderen. De volgende waarden zijn geldig:
 
 |Value |Beschrijving |
 |:--- |:---|
@@ -35,8 +34,7 @@ Hiermee geeft u op welke configuratie-document te verwijderen. De volgende waard
 |**2** | De **in behandeling** configuratie document (pending.mof).  |
 |**4** | De **vorige** configuratie document (previous.mof). |
 
-*Force* \[in\]  
-**de waarde True** om af te dwingen van het verwijderen van de configuratie.
+*Force* \[in\] **true** om af te dwingen van het verwijderen van de configuratie.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -58,11 +56,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

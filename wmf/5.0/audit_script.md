@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="script-tracing-and-logging"></a>Script tracering en logboekregistratie
+# <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
 Terwijl Windows PowerShell al heeft het **LogPipelineExecutionDetails** Groepsbeleid van PowerShell-scripttaal instellen voor het aanroepen van cmdlets melden, heeft veel functies die u kunt zich aanmelden en controleren. De nieuwe functie voor gedetailleerde tracering van Script stelt u gedetailleerde bijhouden en analyseren van Windows PowerShell scripts gebruiken op een systeem. Nadat u gedetailleerde script tracering ingeschakeld, Windows PowerShell alle scriptblokken registreert in het gebeurtenislogboek ETW **Microsoft-Windows-PowerShell/operationeel**. Als een scriptblok maakt een ander scriptblok (bijvoorbeeld een script waarmee de cmdlet Invoke-Expression op een tekenreeks aangeroepen), wordt die resulterende scriptblok wordt ook vastgelegd.
 
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Net als bij alle logboekregistratie systemen waarvoor een buffer beperkt bewaren (dat wil zeggen ETW-Logboeken) is een aanval op deze infrastructuur voor het logboek met onnodig gebeurtenissen voor het verbergen van eerdere bewijs overspoelen. Om u te beschermen tegen deze aanval, zorg ervoor dat er een vorm van gebeurtenislogboek verzameling instellen (dat wil zeggen, Windows Event Forwarding, [ontdekken van de Adversary met bewaking van Windows-gebeurtenislogboek](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) gebeurtenislogboeken af bij de computer als verplaatsen snel mogelijk.
-

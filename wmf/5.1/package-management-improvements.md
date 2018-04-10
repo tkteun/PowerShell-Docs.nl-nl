@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 contributor: jianyunt, quoctruong
 title: Verbeteringen in beheer van het pakket in WMF 5.1
-ms.openlocfilehash: b55a1742530b7cd48d60d79b7d4866ebee80a3b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d8b66cc101a6d963b484bba26a1bcd7f71437536
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>Verbeteringen in beheer van het pakket in WMF 5.1#
 
 ## <a name="improvements-in-packagemanagement"></a>Verbeteringen in PackageManagement ##
-Hier volgen de fixes die zijn aangebracht in de WMF 5.1: 
+Hier volgen de fixes die zijn aangebracht in de WMF 5.1:
 
 ### <a name="version-alias"></a>Versie Alias
 
-**Scenario**: als u versie 1.0 en 2.0 van een pakket, P1, dat is geïnstalleerd op uw systeem hebt en u wilt verwijderen, versie 1.0, moet u uitvoeren `Uninstall-Package -Name P1 -Version 1.0` en versie 1.0 worden verwijderd na het uitvoeren van de cmdlet verwacht. Maar het resultaat is dat versie 2.0 wordt verwijderd.  
-    
+**Scenario**: als u versie 1.0 en 2.0 van een pakket, P1, dat is geïnstalleerd op uw systeem hebt en u wilt verwijderen, versie 1.0, moet u uitvoeren `Uninstall-Package -Name P1 -Version 1.0` en versie 1.0 worden verwijderd na het uitvoeren van de cmdlet verwacht. Maar het resultaat is dat versie 2.0 wordt verwijderd.
+
 Dit komt doordat de `-Version` parameter is een alias van de `-MinimumVersion` parameter. Wanneer PackageManagement een gekwalificeerde pakket met de minimale versie 1.0 zoekt, wordt de meest recente versie. Dit is verwacht gedrag in normale gevallen omdat zoeken naar dat de meest recente versie is meestal het gewenste resultaat oplevert. Maar deze moet niet van toepassing op de `Uninstall-Package` geval.
-    
-**Oplossing**: verwijderd `-Version` alias volledig in PackageManagement (ook OneGet) en PowerShellGet. 
+
+**Oplossing**: verwijderd `-Version` alias volledig in PackageManagement (ook OneGet) en PowerShellGet.
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Meerdere wordt u gevraagd om het uitvoeren van de bootstrap de NuGet-provider
 
-**Scenario**: bij het uitvoeren van `Find-Module` of `Install-Module` of andere cmdlets PackageManagement op uw computer voor de eerste keer, PackageManagement probeert te bootstrap van de NuGet-provider. Dit gebeurt omdat de provider PowerShellGet ook de NuGet-provider gebruikt voor het downloaden van de PowerShell-modules. PackageManagement wordt vervolgens de gebruiker toestemming voor het installeren van de NuGet-provider. Nadat de gebruiker 'Ja' voor het uitvoeren van de bootstrap selecteert, kunt u de nieuwste versie van de NuGet-provider wordt geïnstalleerd. 
-    
+**Scenario**: bij het uitvoeren van `Find-Module` of `Install-Module` of andere cmdlets PackageManagement op uw computer voor de eerste keer, PackageManagement probeert te bootstrap van de NuGet-provider. Dit gebeurt omdat de provider PowerShellGet ook de NuGet-provider gebruikt voor het downloaden van de PowerShell-modules. PackageManagement wordt vervolgens de gebruiker toestemming voor het installeren van de NuGet-provider. Nadat de gebruiker 'Ja' voor het uitvoeren van de bootstrap selecteert, kunt u de nieuwste versie van de NuGet-provider wordt geïnstalleerd.
+
 Echter, in sommige gevallen wanneer u een oude versie van het NuGet-provider is geïnstalleerd op uw computer hebt soms de oudere versie van het NuGet opgehaald geladen eerst naar de PowerShell-sessie (dat wil zeggen de voorwaarde race in PackageManagement). PowerShellGet vereist echter de latere versie van de NuGet-provider om te werken, zodat PowerShellGet PackageManagement naar bootstrap de NuGet-provider opnieuw wordt gevraagd. Dit resulteert in meerdere wordt u gevraagd om het uitvoeren van de bootstrap de NuGet-provider.
 
 **Oplossing**: In WMF5.1, PackageManagement laadt de meest recente versie van de NuGet-provider om te voorkomen dat meerdere wordt u gevraagd om het uitvoeren van de bootstrap de NuGet-provider.
@@ -68,4 +68,3 @@ In de WMF 5.1, duurt PackageManagement nu nieuwe proxyparameters `-ProxyCredenti
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
-

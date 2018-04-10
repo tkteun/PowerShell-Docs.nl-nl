@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 60f4b49575dbb28ce74af0500e6982ec5d2e7a66
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 07d7db9dcc4288e6b72d5df37d82e44eb6f72ad2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Verzendt het configuratie-document naar het beheerde knooppunt en maakt gebruik van de **ophalen** methode van de configuratie-Agent de configuratie toepassen.
 
@@ -26,11 +26,9 @@ uint32 GetConfiguration(
 <a name="parameters"></a>Parameters
 ----------
 
-*configurationData* \[in\]  
-Hiermee geeft u de configuratiegegevens te verzenden.
+*configurationData* \[in\] Hiermee geeft u de configuratiegegevens te verzenden.
 
-*configuraties* \[uit\]  
-Bevat een ingesloten exemplaar van de configuraties op return.
+*configuraties* \[uit\] op return bevat een ingesloten exemplaar van de configuraties.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -52,9 +50,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
- 
-
- 
-
-
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Instellen van een pull-client met behulp van configuratie-ID
-ms.openlocfilehash: 6e3dda1de0bfbf52fb876fdcd2dd2e99da4583dd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Een pull-client instellen met behulp van het configuratie-id
+ms.openlocfilehash: 93e533fd4e729e1af0124ad69ca7e384e1cb3aa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="setting-up-a-pull-client-using-configuration-id"></a>Instellen van een pull-client met behulp van configuratie-ID
+# <a name="setting-up-a-pull-client-using-configuration-id"></a>Een pull-client instellen met behulp van het configuratie-id
 
 > Van toepassing op: Windows PowerShell 5.0
 
@@ -29,14 +29,14 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
-        }      
+
+        }
     }
 }
 PullClientConfigID
@@ -66,14 +66,14 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryShare SMBPullServer
         {
             SourcePath = '\\SMBPullServer\PullSource'
-            
-        }     
+
+        }
     }
 }
 PullClientConfigID
@@ -81,7 +81,7 @@ PullClientConfigID
 
 ## <a name="resource-and-report-servers"></a>Bron- en -servers
 
-Als u alleen een **ConfigurationRepositoryWeb** of **ConfigurationRepositoryShare** blokkeren in uw configuratie LCM (zoals in het vorige voorbeeld), haalt de pull-client binnen resources uit de opgegeven server, maar wordt u rapporten niet naar verzenden. U kunt een enkel pull-server gebruiken voor configuraties, bronnen en rapportage, maar u moet maken een **ReportRepositoryWeb** blok voor het instellen van rapportage. 
+Als u alleen een **ConfigurationRepositoryWeb** of **ConfigurationRepositoryShare** blokkeren in uw configuratie LCM (zoals in het vorige voorbeeld), haalt de pull-client binnen resources uit de opgegeven server, maar wordt u rapporten niet naar verzenden. U kunt een enkel pull-server gebruiken voor configuraties, bronnen en rapportage, maar u moet maken een **ReportRepositoryWeb** blok voor het instellen van rapportage.
 
 Het volgende voorbeeld ziet een metaconfiguratie instellen van een client voor het pull-configuraties en resources en verzenden gegevens rapporteren aan een enkele pull-server.
 
@@ -95,17 +95,17 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
-        
+
+
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
@@ -129,16 +129,16 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
             ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'
@@ -156,4 +156,3 @@ PullClientConfigID
 ## <a name="see-also"></a>Zie ook
 
 * [Een pull-client met de configuratienamen instellen](pullClientConfigNames.md)
-

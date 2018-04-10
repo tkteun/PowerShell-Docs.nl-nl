@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Met behulp van de indeling opdrachten moeten worden gewijzigd uitvoer weergeven
+title: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 0163fcb21d586fc98902d9bdcfab6fe4eb97c225
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-format-commands-to-change-output-view"></a>Met behulp van de indeling opdrachten moeten worden gewijzigd uitvoer weergeven
+# <a name="using-format-commands-to-change-output-view"></a>Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
+
 Windows PowerShell is een set cmdlets waarmee u kunt bepalen welke eigenschappen voor bepaalde objecten worden weergegeven. De namen van alle cmdlets beginnen met de term **indeling**. Ze kunnen u selecteren van een of meer eigenschappen om weer te geven.
 
 De **indeling** -cmdlets zijn **indeling hele**, **lijst indelen**, **Format-Table**, en **indeling-aangepaste**. Er wordt alleen beschreven de **indeling hele**, **lijst indelen**, en **Format-Table** cmdlets in deze handleiding.
@@ -18,7 +19,7 @@ Elke cmdlet indeling heeft standaardeigenschappen die worden gebruikt als u geen
 
 Als u de opdracht **Get-Process - naam powershell** met twee exemplaren van Windows PowerShell wordt uitgevoerd, beschikt u uitvoer die er als volgt uit:
 
-```
+```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     995       9    30308      27996   152     2.73   2760 powershell
@@ -28,6 +29,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 In de rest van deze sectie wordt besproken hoe u **indeling** -cmdlets voor het wijzigen van de manier waarop de uitvoer van deze opdracht wordt weergegeven.
 
 ### <a name="using-format-wide-for-single-item-output"></a>Gebruik van de hele indeling voor één Item uitvoer
+
 De **indeling hele** cmdlet, wordt standaard alleen de standaardeigenschap van een object. De informatie die is gekoppeld aan elk object wordt in één kolom weergegeven:
 
 ```
@@ -45,13 +47,15 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 ```
 
 #### <a name="controlling-format-wide-display-with-column"></a>Indeling Wide weergeven met kolom beheren
+
 Met de **indeling hele** cmdlet, kunt u slechts één eigenschap tegelijk weergeven. Hierdoor is het nuttig voor het weergeven van eenvoudige lijsten die slechts één element per regel. Als u een eenvoudige lijst, stel de waarde van de **kolom** parameter 1 door te typen:
 
-```
+```powershell
 Get-Command Format-Wide -Property Name -Column 1
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Met behulp van de lijst van de indeling voor een lijst weergeven
+
 De **lijst indelen** cmdlet geeft een object in de vorm van een lijst weer met elke eigenschap met het label en wordt weergegeven op een afzonderlijke regel:
 
 ```
@@ -86,15 +90,17 @@ Id          : 3448
 ```
 
 #### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Gedetailleerde informatie van de ophalen met behulp van de lijst indelen met jokertekens
+
 De **lijst indelen** cmdlet kunt u een jokerteken gebruiken als de waarde van de **eigenschap** parameter. Hiermee kunt u gedetailleerde informatie weergeven. Objecten bevatten vaak meer gegevens dan u nodig hebt, dat is waarom Windows PowerShell biedt niet alle eigenschapswaarden standaard weergegeven. Als u alle eigenschappen van een object, gebruiken de **lijst indelen-eigenschap \&#42;** opdracht. Meer dan 60 regels van de uitvoer voor een enkel proces worden gegenereerd door de volgende opdracht:
 
-```
+```powershell
 Get-Process -Name powershell | Format-List -Property *
 ```
 
 Hoewel de **lijst indelen** opdracht is handig voor het weergeven van details over als u een overzicht van de uitvoer die veel objecten bevat wilt, een eenvoudigere tabelweergave is het vaak nuttig.
 
 ### <a name="using-format-table-for-tabular-output"></a>Gebruik tabel opmaken voor uitvoer in tabelvorm
+
 Als u de **Format-Table** cmdlet met de eigenschapnamen van geen opgegeven voor het formatteren van de uitvoer van de **Get-Process** opdracht, krijgt u exact dezelfde uitvoer als zonder uit te voeren zonder opmaak. De reden is dat processen worden gewoonlijk weergegeven in tabelvorm, omdat de meeste Windows PowerShell-objecten.
 
 ```
@@ -107,6 +113,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 #### <a name="improving-format-table-output-autosize"></a>Verbetering van de uitvoer van de tabel opmaken (AutoSize)
+
 Hoewel een tabellarische weergave nuttig is voor het weergeven van een groot aantal vergelijkbare informatie, kan het moeilijk te interpreteren als de weergave te klein voor de gegevens is zijn. Bijvoorbeeld als u probeert om weer te geven Procespad, -ID, naam en bedrijf, krijgt u ingekorte uitvoer van het Procespad van het en de kolom bedrijf:
 
 ```
@@ -156,6 +163,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 De kolom-ID is afgekapt zodat het past binnen de vermelding in de bovenstaande uitvoer en de kolomkoppen zijn gestapeld. Automatisch vergroten of verkleinen van de kolommen biedt niet altijd wat u wilt.
 
 #### <a name="wrapping-format-table-output-in-columns-wrap"></a>Onmiddellijke Format-Table-uitvoer in kolommen (terugloop)
+
 U kunt afdwingen langdurige **Format-Table** gegevens om in te verpakken in de kolom weergeven met behulp van de **teruglopen** parameter. Met behulp van de **teruglopen** parameter alleen wordt niet per se te doen wat u verwacht, omdat deze standaardinstellingen gebruikt als u geen ook opgeeft **AutoSize**:
 
 ```
@@ -198,6 +206,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
 ```
 
 #### <a name="organizing-table-output--groupby"></a>Tabeluitvoer ordenen (-GroupBy)
+
 Is een andere handige parameter voor uitvoer in tabelvorm besturingselement **GroupBy**. Meer in tabelvorm aanbiedingen in het bijzonder mogelijk moeilijk te vergelijken. De **GroupBy** parameter gegroepeerd op basis van een waarde van de eigenschap uitvoer. We kunnen bijvoorbeeld processen door bedrijf voor gemakkelijker inspectie als de waarde van het bedrijf van de eigenschap aanbieding weggelaten groeperen:
 
 ```
@@ -211,4 +220,3 @@ Name         Id Path
 powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 ```
-

@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-gebruikersbron
-ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource #
 
- 
+
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
@@ -37,18 +37,18 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschappen
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
-| UserName| Geeft de accountnaam waarvan u wilt om te controleren of een specifieke status.| 
-| Beschrijving| Hiermee geeft u de beschrijving die u wilt gebruiken voor het gebruikersaccount.| 
-| Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op __$false__ om ervoor te zorgen dat deze is ingeschakeld.| 
-| Zorg ervoor dat| Hiermee wordt aangegeven of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.| 
-| FullName| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.| 
-| Wachtwoord| Geeft het wachtwoord dat u wilt gebruiken voor dit account. | 
-| PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op __$false__ zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is __$false__.| 
-| PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker bij de volgende aanmelding in het wachtwoord moet wijzigen. Deze eigenschap instellen op __$true__ als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is __$true__.| 
-| PasswordNeverExpires| Hiermee wordt aangegeven als het wachtwoord vervalt. Om ervoor te zorgen dat het wachtwoord voor dit account nooit verloopt, deze eigenschap instellen op __$true__, en wordt ingesteld op __$false__ als het wachtwoord verloopt. De standaardwaarde is __$false__.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
+| UserName| Geeft de accountnaam waarvan u wilt om te controleren of een specifieke status.|
+| Beschrijving| Hiermee geeft u de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
+| Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op __$false__ om ervoor te zorgen dat deze is ingeschakeld.|
+| Zorg ervoor dat| Hiermee wordt aangegeven of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
+| FullName| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
+| Wachtwoord| Geeft het wachtwoord dat u wilt gebruiken voor dit account. |
+| PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op __$false__ zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is __$false__.|
+| PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker bij de volgende aanmelding in het wachtwoord moet wijzigen. Deze eigenschap instellen op __$true__ als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is __$true__.|
+| PasswordNeverExpires| Hiermee wordt aangegeven als het wachtwoord vervalt. Om ervoor te zorgen dat het wachtwoord voor dit account nooit verloopt, deze eigenschap instellen op __$true__, en wordt ingesteld op __$false__ als het wachtwoord verloopt. De standaardwaarde is __$false__.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld
 
@@ -61,4 +61,3 @@ User UserExample
     DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
-

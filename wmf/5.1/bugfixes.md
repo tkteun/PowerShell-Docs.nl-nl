@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: Oplossingen voor problemen in WMF 5.1
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Oplossingen voor problemen in WMF 5.1#
 
@@ -16,13 +16,15 @@ ms.lasthandoff: 06/12/2017
 
 De volgende opmerkelijke fouten zijn verholpen in WMF 5.1:
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Automatische detectie van module respecteert volledig`$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Automatische detectie van module respecteert volledig `$env:PSModulePath` ###
 
-Module auto-discovery (modules laden zonder een expliciete Import-Module bij het aanroepen van een opdracht automatisch) is geïntroduceerd in WMF 3. Wanneer geïntroduceerd, PowerShell gecontroleerd voor opdrachten in `$PSHome\Modules` voordat u `$env:PSModulePath`.
+Module auto-discovery (modules laden zonder een expliciete Import-Module bij het aanroepen van een opdracht automatisch) is geïntroduceerd in WMF 3.
+Wanneer geïntroduceerd, PowerShell gecontroleerd voor opdrachten in `$PSHome\Modules` voordat u `$env:PSModulePath`.
 
-Dit gedrag te houden van WMF 5.1 gewijzigd `$env:PSModulePath` volledig. Hiermee kunt u een door de gebruiker opgestelde module die wordt gedefinieerd door PowerShell-opdrachten (bijvoorbeeld `Get-ChildItem`) automatisch geladen en de ingebouwde opdracht correct te overschrijven.
+Dit gedrag te houden van WMF 5.1 gewijzigd `$env:PSModulePath` volledig.
+Hiermee kunt u een door de gebruiker opgestelde module die wordt gedefinieerd door PowerShell-opdrachten (bijvoorbeeld `Get-ChildItem`) automatisch geladen en de ingebouwde opdracht correct te overschrijven.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Omleiding van bestand geen langer harde-codes`-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Omleiding van bestand geen langer harde-codes `-Encoding Unicode` ###
 
 In alle eerdere versies van PowerShell is het onmogelijk om te bepalen de bestandscodering gebruikt door de omleidingsoperator van bestand bijvoorbeeld `Get-ChildItem > out.txt` omdat PowerShell toegevoegd `-Encoding Unicode`.
 
@@ -32,7 +34,7 @@ Beginnen met WMF 5.1, kunt u nu wijzigen de bestandscodering van omleiding door 
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Een regressie bij het openen van de leden van vast`System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Een regressie bij het openen van de leden van vast `System.Reflection.TypeInfo` ###
 
 Een regressie geïntroduceerd in WMF 5.0 heeft toegang tot leden van `System.Reflection.RuntimeType`, bijvoorbeeld `[int].ImplementedInterfaces`.
 Deze fout is verholpen in WMF 5.1.
@@ -40,7 +42,8 @@ Deze fout is verholpen in WMF 5.1.
 
 ### <a name="fixed-some-issues-with-com-objects"></a>Sommige problemen opgelost met COM-objecten ###
 
-WMF 5.0 geïntroduceerd om een nieuw COM-binder voor aanroepen methoden op COM-objecten en toegang tot eigenschappen van de COM-objecten. Deze nieuwe binder prestaties aanzienlijk verbeterd, maar ook een aantal fouten die zijn vastgesteld in WMF 5.1 geïntroduceerd.
+WMF 5.0 geïntroduceerd om een nieuw COM-binder voor aanroepen methoden op COM-objecten en toegang tot eigenschappen van de COM-objecten.
+Deze nieuwe binder prestaties aanzienlijk verbeterd, maar ook een aantal fouten die zijn vastgesteld in WMF 5.1 geïntroduceerd.
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>Argument conversies zijn niet altijd correct worden uitgevoerd ####
 
@@ -73,10 +76,11 @@ In het bovenstaande voorbeeld geschreven WMF 5.0 onjuist de Scripting.Dictionary
 
 Dit wijzigen adressen [uitgeven 1752224 op verbinding maken](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]`is niet toegestaan in klassen ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` is niet toegestaan in klassen ###
 
-WMF 5.0 geïntroduceerd klassen met de validatie van het type letterlijke waarden in klassen gebruikt.  
-`[ordered]`ziet eruit als een letterlijke waarde van het type, maar is niet een waar .NET-type. WMF 5.0 onjuist heeft een fout gerapporteerd op `[ordered]` binnen een klasse:
+WMF 5.0 geïntroduceerd klassen met de validatie van het type letterlijke waarden in klassen gebruikt.
+`[ordered]` ziet eruit als een letterlijke waarde van het type, maar is niet een waar .NET-type.
+WMF 5.0 onjuist heeft een fout gerapporteerd op `[ordered]` binnen een klasse:
 
 ```
 class CThing
@@ -95,13 +99,14 @@ Voordat u WMF 5.1, als u meerdere versies van een module geïnstalleerd had en z
 
 WMF 5.1 corrigeert dit door te retourneren van de help voor de nieuwste versie van het onderwerp.
 
-`Get-Help`biedt geen manier om op te geven welke versie u hulp wilt. Om dit te voorkomen, navigeer naar de map modules en de hulp rechtstreeks met een hulpprogramma zoals uw favoriete editor weergeven. 
+`Get-Help` biedt geen manier om op te geven welke versie u hulp wilt.
+Om dit te voorkomen, navigeer naar de map modules en de hulp rechtstreeks met een hulpprogramma zoals uw favoriete editor weergeven.
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>lezen van STDIN PowerShell.exe werkt niet
 
 Klanten gebruiken `powershell -command -` van systeemeigen apps uit te voeren PowerShell doorgeeft in het script via STDIN helaas dit is verbroken vanwege een andere wijzigingen van de console-host.
 
-https://WindowsServer.uservoice.com/forums/301869-PowerShell/Suggestions/15854689-PowerShell-exe-Command-is-broken-on-Windows-10
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
 
 ### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>PowerShell.exe maakt piek in CPU-gebruik bij het opstarten
 
@@ -109,4 +114,3 @@ PowerShell maakt gebruik van een WMI-query om te controleren of het via Groepsbe
 De WMI-query belandt tzres.mui.dll injecteren in elk proces op het systeem omdat de Win32_Process WMI-klasse probeert op te halen van de lokale tijdzone-informatie.
 Dit resulteert in een grote CPU piek in de wmiprvse (de WMI-provider host).
 FIX is het gebruik van Win32-API-aanroepen dezelfde informatie in plaats van WMI ophalen.
-

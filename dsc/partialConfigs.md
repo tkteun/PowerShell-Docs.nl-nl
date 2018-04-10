@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Gedeeltelijke PowerShell Desired State Configuration-configuraties
-ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cd2812724c2279a7effc4739f23193c1dc836ce5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Gedeeltelijke PowerShell Desired State Configuration-configuraties
 
 >Van toepassing op: Windows PowerShell 5.0 en hoger.
 
-In PowerShell 5.0 kan Desired State Configuration (DSC) configuraties moeten worden geleverd in fragmenten en uit meerdere bronnen. De lokale Configuration Manager (LCM) in het doelknooppunt plaatst de fragmenten samen voordat u deze als een configuratie voor één toepast. Deze mogelijkheid ondersteunt het beheer van de configuratie tussen teams of personen delen. Bijvoorbeeld, als twee of meer teams van ontwikkelaars aan een service samenwerken, ze mogelijk elk wilt configuraties voor het beheren van hun deel van de service maken. Elk van deze configuraties kan worden opgehaald uit verschillende pull-servers en ze in verschillende stadia van de ontwikkeling van kunnen worden toegevoegd. Gedeeltelijke configuraties kunnen ook verschillende personen of teams verschillende aspecten van de knooppunten configureren zonder dat voor het coördineren van het bewerken van een configuratie voor één document te bepalen. Een team worden verantwoordelijk voor het implementeren van een virtuele machine en het besturingssysteem, terwijl een ander team andere toepassingen en services op deze virtuele machine kunt implementeren. Met gedeeltelijke configuraties kunt elk team maken van een eigen configuratie, zonder een van beide wordt onnodig ingewikkeld.
+In PowerShell 5.0 kan Desired State Configuration (DSC) configuraties moeten worden geleverd in fragmenten en uit meerdere bronnen. De lokale Configuration Manager (LCM) in het doelknooppunt plaatst de fragmenten samen voordat u deze als een configuratie voor één toepast. Deze mogelijkheid ondersteunt het beheer van de configuratie tussen teams of personen delen.
+Bijvoorbeeld, als twee of meer teams van ontwikkelaars aan een service samenwerken, ze mogelijk elk wilt configuraties voor het beheren van hun deel van de service maken. Elk van deze configuraties kan worden opgehaald uit verschillende pull-servers en ze in verschillende stadia van de ontwikkeling van kunnen worden toegevoegd. Gedeeltelijke configuraties kunnen ook verschillende personen of teams verschillende aspecten van de knooppunten configureren zonder dat voor het coördineren van het bewerken van een configuratie voor één document te bepalen. Een team worden verantwoordelijk voor het implementeren van een virtuele machine en het besturingssysteem, terwijl een ander team andere toepassingen en services op deze virtuele machine kunt implementeren. Met gedeeltelijke configuraties kunt elk team maken van een eigen configuratie, zonder een van beide wordt onnodig ingewikkeld.
 
 U kunt gedeeltelijke configuraties in push-modus, pull-modus of een combinatie van beide gebruiken.
 
@@ -21,7 +22,8 @@ U kunt gedeeltelijke configuraties in push-modus, pull-modus of een combinatie v
 Voor het gebruik van gedeeltelijke configuraties in de modus push, configureert u de LCM op het doelknooppunt voor het ontvangen van de gedeeltelijk configuraties. Elke gedeeltelijke configuratie moet worden geactiveerd met de doel-met de cmdlet Publish-DSCConfiguration. Het doelknooppunt vervolgens combineert de gedeeltelijke configuratie in een configuratie voor één, en u kunt de configuratie toepassen door het aanroepen van de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>De LCM voor push-modus gedeeltelijke configuraties configureren
-Voor het configureren van de LCM voor gedeeltelijke configuraties in push-modus, die u maakt een **DSCLocalConfigurationManager** configuratie met een **PartialConfiguration** blok voor elke gedeeltelijke configuratie. Zie voor meer informatie over het configureren van de LCM [Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx). Het volgende voorbeeld ziet u de configuratie van een LCM die twee gedeeltelijke configuraties verwacht: één waarmee het besturingssysteem wordt geïmplementeerd en één die wordt geïmplementeerd en SharePoint configureert.
+Voor het configureren van de LCM voor gedeeltelijke configuraties in push-modus, die u maakt een **DSCLocalConfigurationManager** configuratie met een **PartialConfiguration** blok voor elke gedeeltelijke configuratie. Zie voor meer informatie over het configureren van de LCM [Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx).
+Het volgende voorbeeld ziet u de configuratie van een LCM die twee gedeeltelijke configuraties verwacht: één waarmee het besturingssysteem wordt geïmplementeerd en één die wordt geïmplementeerd en SharePoint configureert.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -29,7 +31,7 @@ configuration PartialConfigDemo
 {
     Node localhost
     {
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description = 'Configuration to add the SharePoint service account to the Administrators group.'
@@ -42,7 +44,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 De **RefreshMode** voor elke gedeeltelijke configuratie is ingesteld op 'Push'. De namen van de **PartialConfiguration** blokken (in dit geval 'ServiceAccountConfig' en "SharePointConfig") moeten overeenkomen met precies de namen van de configuraties die naar het doelknooppunt worden gepusht.
@@ -62,26 +64,26 @@ PS C:\PartialConfigTest> Get-ChildItem -Recurse
     Directory: C:\PartialConfigTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
-d-----        8/11/2016   1:55 PM                ServiceAccountConfig                                                                                                                  
-d-----       11/17/2016   4:14 PM                SharePointConfig                                                                                                                                    
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        8/11/2016   1:55 PM                ServiceAccountConfig
+d-----       11/17/2016   4:14 PM                SharePointConfig
 
 
     Directory: C:\PartialConfigTest\ServiceAccountConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----        8/11/2016   2:02 PM           2034 TestVM.mof                                                                                                                                
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
 
     Directory: C:\DscTests\SharePointConfig
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                         
-----                -------------         ------ ----                                                                                                                                         
--a----       11/17/2016   4:14 PM           1930 TestVM.mof                                                                                                                                     
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       11/17/2016   4:14 PM           1930 TestVM.mof
 ```
 
 U wilt publiceren en de configuraties als volgt uitvoeren:
@@ -91,8 +93,8 @@ PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -Comput
 PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
 PS C:\PartialConfigTest> Start-DscConfiguration -UseExisting -ComputerName 'TestVM'
 
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
---     ----            -------------   -----         -----------     --------             -------                  
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
@@ -106,7 +108,8 @@ Gedeeltelijke configuraties kunnen worden opgehaald uit een of meer pull-servers
 
 Voor het configureren van de LCM om op te halen van gedeeltelijke configuraties van een pull-server, u de pull-server definiëren in hetzij een **ConfigurationRepositoryWeb** (voor een HTTP-pull-server) of **ConfigurationRepositoryShare** () voor een SMB-pull-server) blokkeren. Vervolgens maakt u **PartialConfiguration** blokken die naar de pull-server met behulp van verwijzen de **ConfigurationSource** eigenschap. U moet ook maken een **instellingen** blok om op te geven dat de LCM pull-modus gebruikt en op te geven de **ConfigurationNames** of **ConfigurationID** die de pull-server en doel knooppunt gebruiken om te bepalen van de configuraties. De volgende meta-configuratie definieert een HTTP-pull-server met de naam CONTOSO PullSrv en twee gedeeltelijke configuraties die gebruikmaken van die pull-server.
 
-Voor meer informatie over het configureren van het gebruik van LCM **ConfigurationNames**, Zie [instellen van een pull-client met behulp van configuratienamen](pullClientConfigNames.md). Voor informatie over het configureren van het gebruik van LCM **ConfigurationID**, Zie [instellen van een pull-client met behulp van configuratie-ID](pullClientConfigID.md).
+Voor meer informatie over het configureren van het gebruik van LCM **ConfigurationNames**, Zie [instellen van een pull-client met behulp van configuratienamen](pullClientConfigNames.md).
+Voor informatie over het configureren van het gebruik van LCM **ConfigurationID**, Zie [instellen van een pull-client met behulp van configuratie-ID](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>De LCM voor pull-modus configuraties met configuratienamen configureren
 
@@ -125,26 +128,26 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
-            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
-   
+
 }
-``` 
+```
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>De LCM voor pull-modus configuraties met ConfigurationID configureren
 
@@ -158,15 +161,15 @@ configuration PartialConfigDemoConfigID
         {
             RefreshMode                     = 'Pull'
             ConfigurationID                 = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins            = 30 
+            RefreshFrequencyMins            = 30
             RebootNodeIfNeeded              = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description                     = 'Configuration for the Base OS'
@@ -182,7 +185,7 @@ configuration PartialConfigDemoConfigID
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 U kunt gedeeltelijke configuraties uit meer dan één pull-server ophalen, moet u alleen voor het definiëren van elk pull-server en vervolgens verwijzen naar de juiste pull-server in elk **PartialConfiguration** blok.
@@ -191,11 +194,13 @@ Nadat de meta-configuratie is gemaakt, moet u het voor het maken van een configu
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Naamgeving en de configuratiedocumenten te plaatsen op de pull-server (ConfigurationNames)
 
-De configuratiedocumenten gedeeltelijke moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). 
+De configuratiedocumenten gedeeltelijke moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Naamgeving van configuratiedocumenten op de pull-server in PowerShell 5.1
 
-Als u van slechts één gedeeltelijke configuratie van een afzonderlijke pull-server binnenhalen, kan het configuratiebestand voor elke naam hebben. Als u van meer dan één gedeeltelijke configuratie van een pull-server binnenhalen, de configuratie-document kan worden benoemd ofwel `<ConfigurationName>.mof`, waarbij _ConfigurationName_ is de naam van de configuratie van de gedeeltelijke of `<ConfigurationName>.<NodeName>.mof`, waarbij  _ConfigurationName_ is de naam van de configuratie van de gedeeltelijk en _NodeName_ is de naam van het doelknooppunt. Hiermee kunt u pull-configuraties van Azure Automation DSC-pull-server.
+Als u van slechts één gedeeltelijke configuratie van een afzonderlijke pull-server binnenhalen, kan het configuratiebestand voor elke naam hebben.
+Als u van meer dan één gedeeltelijke configuratie van een pull-server binnenhalen, de configuratie-document kan worden benoemd ofwel `<ConfigurationName>.mof`, waarbij _ConfigurationName_ is de naam van de configuratie van de gedeeltelijke of `<ConfigurationName>.<NodeName>.mof`, waarbij  _ConfigurationName_ is de naam van de configuratie van de gedeeltelijk en _NodeName_ is de naam van het doelknooppunt.
+Hiermee kunt u pull-configuraties van Azure Automation DSC-pull-server.
 
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Naamgeving van configuratiedocumenten op de pull-server in PowerShell 5.0
@@ -228,7 +233,8 @@ Nadat de LCM in het doelknooppunt is geconfigureerd en de configuratie van docum
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Gedeeltelijke configuraties in gemengde push als pull-modi
 
-U kunt ook push mix en pull-modi voor gedeeltelijke configuraties. U kunt één gedeeltelijke configuratie die is opgehaald uit een pull-server, terwijl een andere gedeeltelijke configuratie wordt doorgeschoven, dat wil zeggen, kunnen hebben. Geef de vernieuwingsmodus voor elke gedeeltelijke configuratie zoals beschreven in de vorige secties. Bijvoorbeeld de volgende meta-configuratie wordt beschreven in het hetzelfde voorbeeld door de `ServiceAccountConfig` gedeeltelijke configuratie in pull-modus en de `SharePointConfig` gedeeltelijke configuratie in de modus push.
+U kunt ook push mix en pull-modi voor gedeeltelijke configuraties. U kunt één gedeeltelijke configuratie die is opgehaald uit een pull-server, terwijl een andere gedeeltelijke configuratie wordt doorgeschoven, dat wil zeggen, kunnen hebben. Geef de vernieuwingsmodus voor elke gedeeltelijke configuratie zoals beschreven in de vorige secties.
+Bijvoorbeeld de volgende meta-configuratie wordt beschreven in het hetzelfde voorbeeld door de `ServiceAccountConfig` gedeeltelijke configuratie in pull-modus en de `SharePointConfig` gedeeltelijke configuratie in de modus push.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Gemengde push als pull-modi met ConfigurationNames
 
@@ -247,27 +253,27 @@ Configuration PartialConfigDemoConfigNames
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
-            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38
             ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
-        }     
-        
-        PartialConfiguration ServiceAccountConfig 
+        }
+
+        PartialConfiguration ServiceAccountConfig
         {
             Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
-            RefreshMode                     = 'Pull' 
+            RefreshMode                     = 'Pull'
         }
- 
+
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
             DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Push'
         }
-   
+
 }
-``` 
+```
 
 ### <a name="mixed-push-and-pull-modes-using-configurationid"></a>Gemengde push als pull-modi met ConfigurationID
 
@@ -281,15 +287,15 @@ configuration PartialConfigDemo
         {
             RefreshMode             = 'Pull'
             ConfigurationID         = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins    = 30 
+            RefreshFrequencyMins    = 30
             RebootNodeIfNeeded      = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL               = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
            PartialConfiguration ServiceAccountConfig
         {
             Description             = 'Configuration for the Base OS'
@@ -304,7 +310,7 @@ configuration PartialConfigDemo
         }
     }
 }
-PartialConfigDemo 
+PartialConfigDemo
 ```
 
 Houd er rekening mee dat de **RefreshMode** opgegeven in het instellingenblok is 'Pull', maar de **RefreshMode** voor de `SharePointConfig` gedeeltelijke configuratie is 'Push'.
@@ -335,7 +341,7 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-            
+
         }
 
         WindowsFeature Telnet
@@ -372,10 +378,9 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##<a name="see-also"></a>Zie ook 
+##<a name="see-also"></a>Zie ook
 
 **Concepten**
-[Windows PowerShell Desired State Configuration Pull-Servers](pullServer.md) 
+[Windows PowerShell Desired State Configuration Pull-Servers](pullServer.md)
 
-[Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx) 
-
+[Windows configureren van de lokale Configuration Manager](https://technet.microsoft.com/library/mt421188.aspx)

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 505ff4ebef2d0b063edacbdfa465616890be1001
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a>Cmdlets voor het scriptbeheer van het PowerShellGet
+# <a name="powershellget-cmdlets-for-script-management"></a>PowerShellGet-cmdlets voor scriptbeheer
 
 ## <a name="find-script-cmdlet"></a>Zoeken naar Script cmdlet
 Zoeken naar Script cmdlet kunt u voor het detecteren van de scriptbestanden met verschillende zoekcriteria zoals naam, label, filter, opdrachtnaam, het bereik van versie, exacte versie, alle versies, inclusief de bijbehorende afhankelijkheden en van bepaalde of alle geregistreerde-opslagplaatsen.
@@ -686,4 +686,3 @@ Repository : GalleryINT
 PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
-

@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Opslaan-Module
-ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Save-Module
+ms.openlocfilehash: c9078afb03dc074ee3831c2c395c0f1e6c4ffa38
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="save-module"></a>Opslaan-Module
+# <a name="save-module"></a>Save-Module
 
 Hiermee slaat u een module Lokaal zonder het te installeren.
 
@@ -25,7 +25,7 @@ Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Verwijzing naar het online help van cmdlet
 
-[Opslaan-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
+[Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
 
 ## <a name="example-commands"></a>Voorbeeldopdrachten
 
@@ -64,4 +64,3 @@ Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelea
 
 
 ```
-

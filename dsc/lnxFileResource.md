@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxFile Resource
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile Resource
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving | 
+|  Eigenschap |  Beschrijving |
 |---|---|
-| DestinationPath| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.| 
-| SourcePath| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.| 
-| Zorg ervoor dat| Bepaalt of Controleer of het bestand bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het bestand bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het bestand bestaat niet. De standaardwaarde is 'Aanwezig'.| 
-| Type| Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'map' om aan te geven dat de resource een map is. Stel deze in op 'file' om aan te geven dat de resource een bestand is. De standaardwaarde is "bestand"| 
-| Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.| 
-| Controlesom| Definieert het type moet worden gebruikt bij het bepalen of twee bestanden hetzelfde zijn. Als **controlesom** niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor vergelijking. Waarden zijn: 'ctime', 'mtime' of 'md5'.| 
-| Recurse| Hiermee wordt aangegeven als submappen opgenomen worden. Deze eigenschap instellen op **$true** om aan te geven dat u wilt dat de submappen worden opgenomen. De standaardwaarde is **$false**. **Opmerking:** deze eigenschap is alleen geldig wanneer de **Type** eigenschap is ingesteld op de directory.| 
-| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.| 
-| Koppelingen| Hiermee geeft u het gewenste gedrag voor symbolische koppelingen. Deze eigenschap instellen op 'volgen' symbolische koppelingen volgen en reageren op de doel-koppelingen (bijvoorbeeld) Kopieer het bestand in plaats van de koppeling). Deze eigenschap instellen op 'beheren' om te reageren op de koppeling (bijvoorbeeld) Kopieer de koppeling zelf). Deze eigenschap instellen op 'negeren' om door te negeren symbolische koppelingen.| 
-| Groep| De naam van de **groep** eigenaar van het bestand of map.| 
-| Modus| Hiermee geeft u de gewenste machtigingen voor de resource octaal of symbolische-notatie. (bijvoorbeeld 777 of rwxrwxrwx). Als symbolische notatie wordt gebruikt, bieden niet het eerste teken waarmee wordt aangegeven van de map of bestand.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
+| DestinationPath| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.|
+| SourcePath| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.|
+| Zorg ervoor dat| Bepaalt of Controleer of het bestand bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het bestand bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het bestand bestaat niet. De standaardwaarde is 'Aanwezig'.|
+| Type| Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'map' om aan te geven dat de resource een map is. Stel deze in op 'file' om aan te geven dat de resource een bestand is. De standaardwaarde is "bestand"|
+| Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.|
+| Controlesom| Definieert het type moet worden gebruikt bij het bepalen of twee bestanden hetzelfde zijn. Als **controlesom** niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor vergelijking. Waarden zijn: 'ctime', 'mtime' of 'md5'.|
+| Recurse| Hiermee wordt aangegeven als submappen opgenomen worden. Deze eigenschap instellen op **$true** om aan te geven dat u wilt dat de submappen worden opgenomen. De standaardwaarde is **$false**. **Opmerking:** deze eigenschap is alleen geldig wanneer de **Type** eigenschap is ingesteld op de directory.|
+| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.|
+| Koppelingen| Hiermee geeft u het gewenste gedrag voor symbolische koppelingen. Deze eigenschap instellen op 'volgen' symbolische koppelingen volgen en reageren op de doel-koppelingen (bijvoorbeeld) Kopieer het bestand in plaats van de koppeling). Deze eigenschap instellen op 'beheren' om te reageren op de koppeling (bijvoorbeeld) Kopieer de koppeling zelf). Deze eigenschap instellen op 'negeren' om door te negeren symbolische koppelingen.|
+| Groep| De naam van de **groep** eigenaar van het bestand of map.|
+| Modus| Hiermee geeft u de gewenste machtigingen voor de resource octaal of symbolische-notatie. (bijvoorbeeld 777 of rwxrwxrwx). Als symbolische notatie wordt gebruikt, bieden niet het eerste teken waarmee wordt aangegeven van de map of bestand.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Als u meer informatie
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 Het volgende voorbeeld zorgt ervoor dat de map `/opt/mydir` bestaat, en of een bestand met de opgegeven inhoud deze map bestaat.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

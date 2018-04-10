@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
-title: Met behulp van JEA
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: JEA gebruiken
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-jea"></a>Met behulp van JEA
+# <a name="using-jea"></a>JEA gebruiken
 
 > Van toepassing op: Windows PowerShell 5.0
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 U kunt ook deze persistent maken de cmdlets via een proxyserver doorgestuurd vanuit impliciete remoting met [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
@@ -189,4 +189,3 @@ Het is raadzaam dat u een specifieke lokale gebruiker met geen andere rechten ge
 Houd er rekening mee dat zelfs een onbevoegde gebruiker zich nog steeds bij een Windows-machine standaard aanmelden kan, inclusief het gebruik van onbeperkte PowerShell.
 Waarmee ze om te bladeren (enkele van) het bestandssysteem en meer informatie over uw OS-omgeving.
 Als u wilt vergrendelen tot een virtuele machine met behulp van PowerShell Direct met JEA heeft alleen toegang tot een beheerder van de Hyper-V, moet u lokale aanmeldingsrechten aan de Hyper-V-beheer JEA account weigeren.
-

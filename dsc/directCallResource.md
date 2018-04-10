@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Rechtstreeks aanroepen van methoden van DSC-resource
-ms.openlocfilehash: 68344d1be5c41e5ce4660e0a62019fa0a52c2541
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Methoden voor het rechtstreeks aanroepen van DSC-resources
+ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>Rechtstreeks aanroepen van methoden van DSC-resource
+# <a name="calling-dsc-resource-methods-directly"></a>Methoden voor het rechtstreeks aanroepen van DSC-resources
 
 >Van toepassing op: Windows PowerShell 5.0
 
-U kunt de [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) cmdlet rechtstreeks aanroepen van de functies of methoden van een DSC-resource (de **Get-TargetResource**, **Set TargetResource**, en  **Test-TargetResource** functies van een bron op basis van MOF of de **ophalen**, **ingesteld**, en **Test** methoden van een bron op basis van een klasse). Dit kan worden gebruikt door derden die DSC-resources wilt gebruiken of als een nuttig hulpmiddel bij het ontwikkelen van resources. 
+U kunt de [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) cmdlet rechtstreeks aanroepen van de functies of methoden van een DSC-resource (de **Get-TargetResource**, **Set TargetResource**, en  **Test-TargetResource** functies van een bron op basis van MOF of de **ophalen**, **ingesteld**, en **Test** methoden van een bron op basis van een klasse).
+Dit kan worden gebruikt door derden die DSC-resources wilt gebruiken of als een nuttig hulpmiddel bij het ontwikkelen van resources.
 
 Deze cmdlet wordt doorgaans gebruikt in combinatie met een eigenschap metaconfiguratie `refreshMode = 'Disabled'`, maar deze kan worden gebruikt, wat er ook **refreshMode** is ingesteld op.
 
@@ -51,7 +52,6 @@ $result.ItemValue | fl
 >**Opmerking:** rechtstreeks aanroepen van methoden van de samengestelde bron wordt niet ondersteund. Roep in plaats daarvan de methoden van de onderliggende resources die gezamenlijk de samengestelde bron.
 
 ## <a name="see-also"></a>Zie ook
-- [Schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md) 
+- [Schrijven van een aangepaste DSC-resource met MOF](authoringResourceMOF.md)
 - [Schrijven van een aangepaste DSC-resource met PowerShell-klassen](authoringResourceClass.md)
 - [Foutopsporing voor DSC-resources](debugResource.md)
-

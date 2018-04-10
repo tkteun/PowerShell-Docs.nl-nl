@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.1
-ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 467a191f40d85bfca7c794915d6274a9a1b201e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-in-wmf-51"></a>Bekende problemen in WMF 5.1 #
 
@@ -18,17 +18,17 @@ ms.lasthandoff: 07/27/2017
 Bij het installeren van WMF als u probeert te start PowerShell als beheerder van de snelkoppeling mogelijk dat u een bericht 'Onbekende fout'.
 Open de snelkoppeling als niet-beheerders en de snelkoppeling werkt nu zelfs als administrator.
 
-## <a name="pester"></a>Lastige
+## <a name="pester"></a>Pester
 In deze release zijn er twee problemen die u houden moet rekening wanneer u Pester op Nano Server:
 
-* Tests uitgevoerd tegen Pester zelf kan vanwege verschillen tussen volledige CLR en CORE CLR leiden tot een aantal fouten. In het bijzonder is de methode Validate niet beschikbaar op het type XmlDocument. Zes tests die proberen te valideren van het schema van de logboeken van de uitvoer NUnit bekend is mislukt. 
+* Tests uitgevoerd tegen Pester zelf kan vanwege verschillen tussen volledige CLR en CORE CLR leiden tot een aantal fouten. In het bijzonder is de methode Validate niet beschikbaar op het type XmlDocument. Zes tests die proberen te valideren van het schema van de logboeken van de uitvoer NUnit bekend is mislukt.
 * Een Code dekking test momenteel mislukt, omdat de *WindowsFeature* DSC-Resource bestaat niet in de Nano Server. Deze fouten worden echter in het algemeen onschadelijk zijn en kunnen worden genegeerd.
 
-## <a name="operation-validation"></a>Bewerking valideren 
+## <a name="operation-validation"></a>Bewerking valideren
 
 * Help bijwerken is mislukt voor module Microsoft.PowerShell.Operation.Validation vanwege niet-werkende help-URI
 
-## <a name="dsc-after-uninstall-wmf"></a>DSC nadat WMF verwijderen 
+## <a name="dsc-after-uninstall-wmf"></a>DSC nadat WMF verwijderen
 * Verwijderen van WMF verwijdert niet DSC MOF documenten uit de configuratiemap. DSC werkt niet correct als de MOF-documenten bevatten nieuwere eigenschappen die niet beschikbaar op de oudere systemen. Voer het volgende script in dit geval van PowerShell-console met verhoogde bevoegdheid voor opschonen van de DSC-statussen.
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -38,7 +38,7 @@ In deze release zijn er twee problemen die u houden moet rekening wanneer u Pest
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## <a name="jea-virtual-accounts"></a>JEA virtuele Accounts
 JEA eindpunten en sessieconfiguraties geconfigureerd voor het gebruik van virtuele accounts in WMF 5.0 niet geconfigureerd voor gebruik van een virtueel account na de upgrade naar WMF 5.1.
@@ -61,4 +61,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

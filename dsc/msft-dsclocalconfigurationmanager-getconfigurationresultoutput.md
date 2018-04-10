@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Hiermee wordt de uitvoer van de Configuration-Agent die is gekoppeld aan een specifieke taak opgehaald.
 
@@ -27,14 +27,11 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>Parameters
 ----------
 
-*jobId* \[in\]  
-De ID van de taak voor die uitvoergegevens ophalen.
+*jobId* \[in\] de ID van de taak voor die uitvoergegevens ophalen.
 
-*resumeOutputBookmark* \[in\]  
-Hiermee geeft u de uitvoer moet een vervolg van een vorige bladwijzer.
+*resumeOutputBookmark* \[in\] Hiermee geeft u de uitvoer moet een vervolg van een vorige bladwijzer.
 
-*output* \[out\]  
-De uitvoer voor de gespecificeerde taak.
+*uitvoer* \[uit\] de uitvoer voor de opgegeven taak.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -56,10 +53,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

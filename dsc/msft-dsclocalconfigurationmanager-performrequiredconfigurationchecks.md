@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>De PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Een consistentiecontrole begint met het gebruik van Taakplanner.
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>Parameters
 ----------
 
-*Vlaggen* \[in\]  
-Een bitmasker waarmee het type van een consistentiecontrole uit te voeren. De volgende waarden geldig zijn en kunnen worden gecombineerd met behulp van een bitwise **of** bewerking:
+*Vlaggen* \[in\] een bitmasker waarmee het type van een consistentiecontrole uit te voeren. De volgende waarden geldig zijn en kunnen worden gecombineerd met behulp van een bitwise **of** bewerking:
 
 |Value |Beschrijving |
 |:--- |:---|
@@ -55,11 +54,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

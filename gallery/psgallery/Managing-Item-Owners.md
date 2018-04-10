@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Beheer van eigenaren
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Beheer van eigenaren
 
 Eigendom van een item in de PowerShell-galerie wordt gedefinieerd door die het item gepubliceerd naar de galerie.
 Soms moet deze metagegevens afgezien van het eerste item publiceren, wat betekent dat de metagegevens van de eigenaar moet veranderlijke dat terwijl het item zelf kan niet worden beheerd.
 
-Alle item eigenaars zijn peers. Dit betekent dat de eigenaar van elk item een nieuwe versie van een item kunt publiceren. Het betekent ook dat de eigenaar van elk item een andere eigenaar van het item kunt verwijderen. Er is geen eigenaar heeft meer dan andere eigenaars-instantie.  
+Alle item eigenaars zijn peers.
+Dit betekent dat de eigenaar van elk item een nieuwe versie van een item kunt publiceren. Het betekent ook dat de eigenaar van elk item een andere eigenaar van het item kunt verwijderen.
+Er is geen eigenaar heeft meer dan andere eigenaars-instantie.
 
-## <a name="setting-an-items-initial-owner"></a>De eerste eigenaar van een Item instellen 
+## <a name="setting-an-items-initial-owner"></a>De eerste eigenaar van een Item instellen
 
 Wanneer een nieuw item is gepubliceerd naar de PowerShell-galerie, is de eigenaar van de eerste gedefinieerd door de gebruiker die het item wordt gepubliceerd. Dit wordt bepaald door waarvan API-sleutel in de cmdlet Publish-Module is gebruikt.
 
@@ -78,4 +80,3 @@ Er wordt een proces om te controleren of uw eigendom van het item volgt.
 Als we moet u een eigenaar van het item bepalen, wordt de koppeling eigenaren beheren gebruiken voor het item onszelf en verzendt u de uitnodiging om te worden van een eigenaar.
 We zullen dit alleen doen nadat u hebt gecontroleerd dat u een eigenaar moet en het proces voor dit af van de omstandigheden hangt.
 Vaak het item Project URL zullen worden gebruikt voor het vinden van een manier om contact op met de eigenaar van het project, maar we kunnen ook Twitter, E-mail of andere wijze gebruikmaken voor communicatie met de eigenaar van het project.
-

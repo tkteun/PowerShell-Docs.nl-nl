@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC ServiceSet Resource
-ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a7516120f0c4bc1c91031adc8aabf6a59b845246
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet Resource
 
@@ -30,21 +30,21 @@ Service [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
 | Naam| Hiermee geeft u de servicenamen van de. Houd er rekening mee dat soms dit van de weergavenamen verschilt. U krijgt een lijst van de services en de huidige staat met de [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
-| StartupType| Hiermee geeft het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatische**, **uitgeschakelde**, en **handmatig**|  
-| BuiltInAccount| Hiermee geeft u het aanmeldingsaccount voor de services. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.| 
-| Status| Geeft de status die u wilt zorgen voor de services: **gestopt** of **met**.| 
+| StartupType| Hiermee geeft het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatische**, **uitgeschakelde**, en **handmatig**|
+| BuiltInAccount| Hiermee geeft u het aanmeldingsaccount voor de services. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.|
+| Status| Geeft de status die u wilt zorgen voor de services: **gestopt** of **met**.|
 | Zorg ervoor dat| Geeft aan of de services op het systeem zijn. Deze eigenschap instellen op **afwezig** om ervoor te zorgen dat de services niet bestaan. Instellen op **aanwezig** (de standaardwaarde) zorgt ervoor dat de doelservices bestaat.|
-| referentie| Hiermee geeft u referenties voor het account waaronder resource voor de service wordt uitgevoerd. Deze eigenschap en de **BuiltinAccount** eigenschap kan niet samen worden gebruikt.| 
-| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is *ResourceName* en het type *ResourceType*, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
+| referentie| Hiermee geeft u referenties voor het account waaronder resource voor de service wordt uitgevoerd. Deze eigenschap en de **BuiltinAccount** eigenschap kan niet samen worden gebruikt.|
+| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is *ResourceName* en het type *ResourceType*, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 
@@ -64,8 +64,7 @@ configuration ServiceSetTest
             Name        = @("TermService", "Audiosrv")
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

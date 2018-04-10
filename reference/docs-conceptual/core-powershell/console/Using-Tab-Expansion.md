@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Met behulp van de uitbreiding van het tabblad
+title: Met behulp van de tabbladuitbreiding
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-tab-expansion"></a>Met behulp van de uitbreiding van het tabblad
+# <a name="using-tab-expansion"></a>Met behulp van de tabbladuitbreiding
+
 Opdrachtregelprogramma houders bevatten vaak een manier om de namen van opdrachten of grote bestanden automatisch te voltooien versnellen van de opdracht vermelding en bieden. Windows PowerShell kunt u in te vullen bestandsnamen en de namen van cmdlets door op de **tabblad** sleutel.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > Een beperking van het tabblad uitbreidingsproces is dat tabbladen altijd worden geïnterpreteerd als pogingen tot het voltooien van een woord. Als u kopieert en plakt u opdrachtvoorbeelden in een PowerShell-console, controleert u of het voorbeeld bevat geen tabbladen. Zo ja, wordt de resultaten onvoorspelbaar en bijna zeker niet juist.
-

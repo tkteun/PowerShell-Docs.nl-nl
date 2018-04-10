@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Cross-knooppunt afhankelijkheden opgeven
-ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Afhankelijkheden van meerdere knooppunten opgeven
+ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="specifying-cross-node-dependencies"></a>Cross-knooppunt afhankelijkheden opgeven
+# <a name="specifying-cross-node-dependencies"></a>Afhankelijkheden van meerdere knooppunten opgeven
 
 > Van toepassing op: Windows PowerShell 5.0
 
@@ -17,7 +17,7 @@ DSC biedt speciale bronnen **WaitForAll**, **WaitForAny**, en **WaitForSome** di
 
 * **WaitForAll**: is geslaagd als de opgegeven bron in de gewenste status op alle doelknooppunten gedefinieerd is in de **NodeName** eigenschap.
 * **WaitForAny**: is geslaagd als de opgegeven bron in de gewenste status op ten minste één van de doelknooppunten gedefinieerd is in de **NodeName** eigenschap.
-* **WaitForSome**: Hiermee geeft u een **NodeCount** eigenschap naast een **NodeName** eigenschap. De resource is geslaagd als de bron in de gewenste status van een minimum aantal knooppunten is (opgegeven door **NodeCount**) gedefinieerd door de **NodeName** eigenschap. 
+* **WaitForSome**: Hiermee geeft u een **NodeCount** eigenschap naast een **NodeName** eigenschap. De resource is geslaagd als de bron in de gewenste status van een minimum aantal knooppunten is (opgegeven door **NodeCount**) gedefinieerd door de **NodeName** eigenschap.
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX-bronnen
 
@@ -35,13 +35,13 @@ Configuration JoinDomain
     {
         WindowsFeature InstallAD
         {
-            Ensure = 'Present' 
-            Name = 'AD-Domain-Services' 
+            Ensure = 'Present'
+            Name = 'AD-Domain-Services'
         }
 
-        xADDomain NewDomain 
-        { 
-            DomainName = 'Contoso.com'            
+        xADDomain NewDomain
+        {
+            DomainName = 'Contoso.com'
             DomainAdministratorCredential = (Get-Credential)
             SafemodeAdministratorPassword = (Get-Credential)
             DatabasePath = "C:\Windows\NTDS"
@@ -79,4 +79,3 @@ Configuration JoinDomain
 * [DSC-configuraties](configurations.md)
 * [DSC-Resources](resources.md)
 * [De lokale Configuration Manager configureren](metaConfig.md)
-

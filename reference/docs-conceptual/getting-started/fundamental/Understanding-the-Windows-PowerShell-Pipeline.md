@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Inzicht in de Windows PowerShell-Pipeline
+title: Informatie over de Windows PowerShell-pijplijn
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-the-windows-powershell-pipeline"></a>Inzicht in de Windows PowerShell-Pipeline
+# <a name="understanding-the-windows-powershell-pipeline"></a>Informatie over de Windows PowerShell-pijplijn
 Piping werkt vrijwel overal in Windows PowerShell. Hoewel u tekst op het scherm ziet, wordt in Windows PowerShell tekst tussen opdrachten niet pipe. In plaats daarvan doorgesluisd deze objecten.
 
 De notatie die wordt gebruikt voor pijplijnen is vergelijkbaar met die in andere houders gebruikt, dus op het eerste gezicht het niet altijd duidelijk is Windows PowerShell introduceert een nieuwe. Als u bijvoorbeeld de **uitgaande Host** cmdlet om af te dwingen van een weergave per pagina van de uitvoer van een andere opdracht, de uitvoer ziet er net zoals de normale tekst die wordt weergegeven op het scherm, opgedeeld in pagina's:
@@ -61,4 +61,3 @@ In feite de informatie van de kop uitvoeren door de **Get-Location** cmdlet alle
 Gezien het feit dat er mogelijk meer informatie de uitvoer van een Windows PowerShell opdracht dan zien we in het consolevenster weergegeven hoe kunt u de niet-zichtbare elementen ophalen? Hoe bekijkt u de extra gegevens? En wat gebeurt er als u wilt weergeven van de gegevens in een indeling die anders dan een Windows PowerShell normaal gesproken gebruikt?
 
 De rest van dit hoofdstuk wordt beschreven hoe u kunt detecteren de structuur van de specifieke Windows PowerShell-objecten selecteren van specifieke items en opmaak ze gemakkelijker weergegeven en hoe deze gegevens worden verzonden naar alternatieve uitvoerlocaties, zoals bestanden en printers.
-

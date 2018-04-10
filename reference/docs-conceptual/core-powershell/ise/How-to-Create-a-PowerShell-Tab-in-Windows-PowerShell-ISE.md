@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Het maken van een tabblad PowerShell in Windows PowerShell ISE
+title: Een PowerShell-tabblad maken in Windows PowerShell ISE
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 3cfeb18babe6b63f0e02da8cf0fd460950f1afce
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 4d4388d889f2178b2cd24cb0f3350aee37327625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Het maken van een tabblad PowerShell in Windows PowerShell ISE
+# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Een PowerShell-tabblad maken in Windows PowerShell ISE
+
 Tabbladen in de Windows PowerShell Integrated Scripting Environment (ISE) kunt u tegelijkertijd maken en gebruiken van verschillende uitvoeringsomgevingen binnen dezelfde toepassing.
 Elk tabblad PowerShell overeenkomt met een afzonderlijke uitvoeringsomgeving of de sessie.
 
@@ -53,6 +54,5 @@ Zie voor meer informatie over het opslaan van een script [hoe een Script opslaat
 
 ## <a name="see-also"></a>Zie ook
 
-- [Met behulp van de Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
 - [Het gebruik van het consolevenster in de Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-

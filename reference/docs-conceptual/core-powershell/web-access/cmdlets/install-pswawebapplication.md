@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: pswawebapplication installeren
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ De **Install-PswaWebApplication** cmdlet Windows PowerShell-webtoegang webtoepas
 
 Geeft aan dat een testcertificaat is gemaakt. Als deze parameter is ingesteld op true, wordt deze cmdlet een testcertificaat maakt en configureert u de Windows PowerShell Web Access-webtoepassing met het certificaat voor HTTPS-aanvragen. Als deze parameter is ingesteld op false, wordt er geen certificaat of een binding gemaakt. Deze waarde ingesteld op false als een ander certificaat wordt gebruikt voor Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -48,7 +48,7 @@ Geeft aan dat een testcertificaat is gemaakt. Als deze parameter is ingesteld op
 
 Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel van de Windows PowerShell Web Access-URL.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -61,7 +61,7 @@ Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel 
 
 Hiermee geeft u de naam van de webserver (IIS) website waarop u deze webtoepassing Windows PowerShell-webtoegang installeren.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -74,7 +74,7 @@ Hiermee geeft u de naam van de webserver (IIS) website waarop u deze webtoepassi
 
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |
@@ -87,7 +87,7 @@ Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
 De cmdlet wordt niet uitgevoerd.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |

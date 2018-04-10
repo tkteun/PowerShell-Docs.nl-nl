@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-WindowsFeatureSet Resource
-ms.openlocfilehash: a2bb008852ccfdc04998a57d3e64e08bf05e6433
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: a6fecba0397b88ce39f6f1a1be6cc366c8a983a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC-WindowsFeatureSet Resource
 
@@ -23,28 +23,28 @@ Gebruik deze bron als u wilt configureren, een aantal functies van Windows naar 
 ```
 WindowsFeatureSet [string] #ResourceName
 {
-    Name = [string[]] 
+    Name = [string[]]
     [ Ensure = [string] { Absent | Present }  ]
     [ Source = [string] ]
     [ IncludeAllSubFeature = [bool] ]
     [ Credential = [PSCredential] ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
-| Naam| De namen van de functies of onderdelen die u wilt zorgen worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, en niet de weergavenaam van de functies of onderdelen.| 
-| referentie| De referenties toevoegen of verwijderen van de functies of onderdelen.| 
-| Zorg ervoor dat| Hiermee wordt aangegeven of de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen zijn toegevoegd, stel deze eigenschap in op 'Aanwezig' om ervoor te zorgen dat de functies of onderdelen zijn verwijderd, de eigenschap instellen op 'Afwezig'.| 
-| IncludeAllSubFeature| Deze eigenschap instellen op **$true** om op te nemen van alle vereiste subonderdelen met van de functies die u met opgeeft de **naam** eigenschap.| 
-| Logboekpad| Het pad naar een logboekbestand waar u de resourceprovider aan te melden van de bewerking.| 
-| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
-| Bron| Geeft de locatie van het bronbestand moet worden gebruikt voor de installatie, indien nodig.| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
+| Naam| De namen van de functies of onderdelen die u wilt zorgen worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, en niet de weergavenaam van de functies of onderdelen.|
+| referentie| De referenties toevoegen of verwijderen van de functies of onderdelen.|
+| Zorg ervoor dat| Hiermee wordt aangegeven of de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen zijn toegevoegd, stel deze eigenschap in op 'Aanwezig' om ervoor te zorgen dat de functies of onderdelen zijn verwijderd, de eigenschap instellen op 'Afwezig'.|
+| IncludeAllSubFeature| Deze eigenschap instellen op **$true** om op te nemen van alle vereiste subonderdelen met van de functies die u met opgeeft de **naam** eigenschap.|
+| Logboekpad| Het pad naar een logboekbestand waar u de resourceprovider aan te melden van de bewerking.|
+| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| Bron| Geeft de locatie van het bronbestand moet worden gebruikt voor de installatie, indien nodig.|
 
 ## <a name="example"></a>Voorbeeld
 
@@ -62,8 +62,7 @@ configuration FeatureSetTest
             Name                    = @("SMTP-Server", "Web-Server")
             Ensure                  = 'Present'
             IncludeAllSubFeature    = $true
-        } 
+        }
     }
 }
 ```
-

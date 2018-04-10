@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met behulp van configuratiegegevens
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Met behulp van de configuratiegegevens in DSC
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Met behulp van de ingebouwde DSC **ConfigurationData** parameter, kunt u gegevens die kunnen worden gebruikt in een configuratie definiëren. Hiermee kunt u voor het maken van een configuratie voor één die kan worden gebruikt voor meerdere knooppunten of voor verschillende omgevingen. Bijvoorbeeld, als u een toepassing ontwikkelt, kunt u één configuratie gebruiken voor ontwikkel- en productie-omgevingen en configuratiegegevens gebruiken om op te geven gegevens voor elke omgeving.
+Met behulp van de ingebouwde DSC **ConfigurationData** parameter, kunt u gegevens die kunnen worden gebruikt in een configuratie definiëren.
+Hiermee kunt u voor het maken van een configuratie voor één die kan worden gebruikt voor meerdere knooppunten of voor verschillende omgevingen.
+Bijvoorbeeld, als u een toepassing ontwikkelt, kunt u één configuratie gebruiken voor ontwikkel- en productie-omgevingen en configuratiegegevens gebruiken om op te geven gegevens voor elke omgeving.
 
-Dit onderwerp beschrijft de structuur van de **ConfigurationData** hash-tabel. Zie voor voorbeelden van het gebruik van configuratiegegevens [scheiden van gegevens en de omgeving](separatingEnvData.md).
+Dit onderwerp beschrijft de structuur van de **ConfigurationData** hash-tabel.
+Zie voor voorbeelden van het gebruik van configuratiegegevens [scheiden van gegevens en de omgeving](separatingEnvData.md).
 
 ## <a name="the-configurationdata-common-parameter"></a>De algemene parameter ConfigurationData
 
-Een DSC-configuratie heeft een algemene parameter **ConfigurationData**, dat u opgeeft wanneer u de configuratie compileren. Zie voor meer informatie over het compileren van configuraties [DSC-configuraties](configurations.md).
+Een DSC-configuratie heeft een algemene parameter **ConfigurationData**, dat u opgeeft wanneer u de configuratie compileren.
+Zie voor meer informatie over het compileren van configuraties [DSC-configuraties](configurations.md).
 
-De **ConfigurationData** -parameter is een hasthtable waarvoor ten minste één sleutel met de naam moet **AllNodes**. Het kan ook een of meer sleutels hebben.
+De **ConfigurationData** -parameter is een hasthtable waarvoor ten minste één sleutel met de naam moet **AllNodes**.
+Het kan ook een of meer sleutels hebben.
 
 >**Opmerking:** de voorbeelden in dit onderwerp gebruiken één extra sleutel (anders dan de benoemde **AllNodes** key) met de naam `NonNodeData`, maar u kunt een willekeurig aantal aanvullende sleutels bevatten en naam elke gewenste.
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 De waarde van de **AllNodes** sleutel is een matrix. Elk element van deze matrix is ook een hashtabel die ten minste één sleutel met de naam moet hebben **NodeName**:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 U kunt andere sleutels toevoegen aan elk hash-tabel:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-Als u wilt een eigenschap van toepassing op alle knooppunten, kunt u een lid van de **AllNodes** matrix heeft een **NodeName** van `*`. Bijvoorbeeld, voor elk knooppunt een `LogPath` eigenschap, u kunt dit doen:
+Als u wilt een eigenschap van toepassing op alle knooppunten, kunt u een lid van de **AllNodes** matrix heeft een **NodeName** van `*`.
+Bijvoorbeeld, voor elk knooppunt een `LogPath` eigenschap, u kunt dit doen:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ Dit is het equivalent van het toevoegen van een eigenschap met de naam `LogPath`
 
 ## <a name="defining-the-configurationdata-hashtable"></a>De hashtabel ConfigurationData definiëren
 
-U kunt definiëren **ConfigurationData** als een variabele binnen hetzelfde scriptbestand als een configuratie (zoals in het vorige voorbeeld) of in een afzonderlijke `.psd1` bestand. Voor het definiëren van **ConfigurationData** in een `.psd1` bestand, maakt u een bestand met alleen de hash-tabel die de configuratiegegevens vertegenwoordigt.
+U kunt definiëren **ConfigurationData** als een variabele binnen hetzelfde scriptbestand als een configuratie (zoals in het vorige voorbeeld) of in een afzonderlijke `.psd1` bestand.
+Voor het definiëren van **ConfigurationData** in een `.psd1` bestand, maakt u een bestand met alleen de hash-tabel die de configuratiegegevens vertegenwoordigt.
 
 U kunt bijvoorbeeld een bestand met de naam maken `MyData.psd1` met de volgende inhoud:
 
@@ -186,11 +193,11 @@ DSC biedt drie speciale variabelen die kunnen worden gebruikt in een configurati
 ## <a name="using-non-node-data"></a>Met behulp van de gegevens niet-knooppunt
 
 Als er in de eerdere voorbeelden hebt gezien de **ConfigurationData** hashtabel kan een of meer sleutels naast de vereiste hebben **AllNodes** sleutel.
-In de voorbeelden in dit onderwerp, hebben we slechts één extra knooppunt gebruikt en met de naam `NonNodeData`. U kunt echter een aantal aanvullende sleutels opgeven en elke gewenste naam.
+In de voorbeelden in dit onderwerp, hebben we slechts één extra knooppunt gebruikt en met de naam `NonNodeData`.
+U kunt echter een aantal aanvullende sleutels opgeven en elke gewenste naam.
 
 Zie voor een voorbeeld van het gebruik van niet-knooppuntgegevens [scheiden van gegevens en de omgeving](separatingEnvData.md).
 
 ## <a name="see-also"></a>Zie ook
 - [Referentieopties in configuratiegegevens](configDataCredentials.md)
 - [DSC-configuraties](configurations.md)
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: pswaauthorizationrule ophalen
 ms.technology: powershell
-ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -41,7 +41,7 @@ Als noch de **Id** parameter noch de **RuleName** parameter wordt opgegeven, wor
 
 Hiermee geeft u de id's van de regels die deze cmdlet moet ontvangen. Als er geen id's zijn opgegeven, retourneert deze cmdlet alle autorisatieregels.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -54,7 +54,7 @@ Hiermee geeft u de id's van de regels die deze cmdlet moet ontvangen. Als er gee
 
 Hiermee worden de namen van autorisatieregels om op te halen. Deze parameter retourneert alle regels waarmee exact overeenkomen met de namen van de regel van de tekenreeksen in deze matrix.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |

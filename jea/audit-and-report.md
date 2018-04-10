@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: Controle en rapportage over JEA
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Controle en rapportage over JEA
 
@@ -144,11 +144,11 @@ Voor elke opdracht die een gebruiker wordt uitgevoerd, een regel 'CommandInvocat
 ParameterBindings Volg elke CommandInvocation om aan te geven over elke parameter en de waarde die is opgegeven met de opdracht.
 In het bovenstaande voorbeeld ziet u dat de parameter 'Name' is de waarde 'Dns' voor de cmdlet 'Get-Service' opgegeven.
 
-De uitvoer van elke opdracht ook activeren een CommandInvocation meestal uitgaande standaardwaarden. De InputObject Out-Default is het PowerShell-object geretourneerd van de opdracht.
+De uitvoer van elke opdracht ook activeren een CommandInvocation meestal uitgaande standaardwaarden.
+De InputObject Out-Default is het PowerShell-object geretourneerd van de opdracht.
 De details van dat object worden afgedrukt een paar regels hieronder nauw mimicking wat de gebruiker zou hebben gezien.
 
 ## <a name="see-also"></a>Zie ook
 
 - [Acties van de gebruiker in een sessie JEA controleren](audit-and-report.md)
 - [*PowerShell ♥ het Team van blauw* blogbericht op beveiliging](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

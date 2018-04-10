@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Zoek-Module
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Find-Module
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="find-module"></a>Zoek-Module
+# <a name="find-module"></a>Find-Module
 Zoeken naar modules vanuit een online-galerie die voldoen aan opgegeven criteria.
 
 ## <a name="description"></a>Beschrijving
@@ -21,7 +21,7 @@ Voor elke module die wordt gevonden, retourneert Find-Module een PSRepositoryIte
 - Zoek-Module kunt filteren met Versieparameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Deze parameters zijn, met uitzondering van MinmimumVersion en MaximumVersion, sluiten elkaar wederzijds uit.
   - Deze Versieparameters zijn alleen met de naam van de één module zonder eventuele jokertekens toegestaan.
-  - Als de parameter RequiredVersion niet is opgegeven, retourneert Find-Module de nieuwste versie van de module die gelijk is aan of groter is dan de opgegeven minimumversie of de nieuwste versie van de module als er geen minimum versie is opgegeven. 
+  - Als de parameter RequiredVersion niet is opgegeven, retourneert Find-Module de nieuwste versie van de module die gelijk is aan of groter is dan de opgegeven minimumversie of de nieuwste versie van de module als er geen minimum versie is opgegeven.
   - Als de parameter RequiredVersion is opgegeven, retourneert Find-Module alleen de versie van de module die exact overeenkomt met de opgegeven versie.
 - Zoek-Module kunt filteren op de metagegevens van de module met de - parameter van label
 - Zoek-Module kunt filteren op zoektaal opslagplaats-specifieke met de - parameter Filter.
@@ -34,7 +34,7 @@ Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Verwijzing naar het online help van cmdlet
 
-[Zoek-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
+[Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
 ## <a name="example-commands"></a>Voorbeeldopdrachten
 ```powershell
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

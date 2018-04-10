@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>Nieuwe taalfuncties in PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Nieuwe taalfuncties in PowerShell 5.0
 
 PowerShell 5.0 introduceert de volgende nieuwe taalelementen in Windows PowerShell:
 
 ## <a name="class-keyword"></a>Klasse sleutelwoord
 
-De **klasse** sleutelwoord definieert een nieuwe klasse. Dit is een echte .NET Framework-type. Klasseleden zijn openbaar, maar alleen openbare binnen het modulebereik.
+De **klasse** sleutelwoord definieert een nieuwe klasse. Dit is een echte .NET Framework-type.
+Klasseleden zijn openbaar, maar alleen openbare binnen het modulebereik.
 U mag niet verwijzen naar de typenaam als tekenreeks (bijvoorbeeld `New-Object` niet werkt), en in deze release kunt u een letterlijke waarde van het type niet gebruiken (bijvoorbeeld `[MyClass]`) buiten het scriptmodule /-bestand waarin de klasse is gedefinieerd.
 
 ```powershell
@@ -57,18 +58,18 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Importeren DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
 **Importeren DscResource** is nu een waar dynamische sleutelwoord.
 PowerShell parseert de opgegeven module root-module, zoeken naar klassen die bevatten de **DscResource** kenmerk.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Een nieuw veld **ImplementingAssembly**, is toegevoegd aan ModuleInfo. Het is ingesteld op de dynamische assembly voor een scriptmodule gemaakt als het script klassen gedefinieerd of de assembly geladen voor binaire modules. Het is niet ingesteld als ModuleType = Manifest. 
+Een nieuw veld **ImplementingAssembly**, is toegevoegd aan ModuleInfo. Het is ingesteld op de dynamische assembly voor een scriptmodule gemaakt als het script klassen gedefinieerd of de assembly geladen voor binaire modules. Het is niet ingesteld als ModuleType = Manifest.
 
 Na te denken over de **ImplementingAssembly** veld detecteert resources in een module. Dit betekent dat u de resources die zijn geschreven in PowerShell of andere beheerde talen kunt detecteren.
 
-De velden met initalisatiefuncties:      
+De velden met initalisatiefuncties:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ Een type is optioneel.
 $s = "hello"
 ```
 
-Alle leden zijn openbaar. 
+Alle leden zijn openbaar.
 
 ## <a name="constructors-and-instantiation"></a>Constructors en instantiëring
 
-Windows PowerShell-klassen kunnen hebben constructors; ze hebben dezelfde naam als de klasse. Constructors kunnen overbelast. Statische constructors worden ondersteund. Eigenschappen met initialisatie-expressies zijn geïnitialiseerd voordat code wordt uitgevoerd in een constructor. Statische eigenschappen worden geïnitialiseerd voordat de hoofdtekst van een statische constructor en eigenschappen van objectexemplaar zijn geïnitialiseerd voordat de hoofdtekst van de niet-statische constructor. Er is momenteel geen syntaxis voor een constructor aanroept vanuit een andere constructor (zoals de C\# syntaxis ': this()"). De tijdelijke oplossing is voor het definiëren van een algemene Init-methode. 
+Windows PowerShell-klassen kunnen hebben constructors; ze hebben dezelfde naam als de klasse. Constructors kunnen overbelast. Statische constructors worden ondersteund. Eigenschappen met initialisatie-expressies zijn geïnitialiseerd voordat code wordt uitgevoerd in een constructor. Statische eigenschappen worden geïnitialiseerd voordat de hoofdtekst van een statische constructor en eigenschappen van objectexemplaar zijn geïnitialiseerd voordat de hoofdtekst van de niet-statische constructor. Er is momenteel geen syntaxis voor een constructor aanroept vanuit een andere constructor (zoals de C\# syntaxis ': this()"). De tijdelijke oplossing is voor het definiëren van een algemene Init-methode.
 
 De volgende zijn manieren instantiëren van klassen in deze release.
 
@@ -113,7 +114,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 In deze release werkt New-Object niet met de klassen die zijn gedefinieerd in Windows PowerShell. Ook voor deze release is de typenaam alleen zichtbaar lexically, wat betekent dat het is niet zichtbaar zijn buiten de module of het script dat de klasse definieert. Functies exemplaren van een klasse is gedefinieerd in Windows PowerShell kunnen terugkeren en exemplaren werken goed buiten de module of het script.
 
-`Get-Member -Static`Geeft een lijst constructors, zodat u overloads zoals een andere methode kunt bekijken. De prestaties van deze syntaxis werkt ook aanzienlijk sneller dan New-Object.
+`Get-Member -Static` Geeft een lijst constructors, zodat u overloads zoals een andere methode kunt bekijken. De prestaties van deze syntaxis werkt ook aanzienlijk sneller dan New-Object.
 
 De pseudo statische methode met de naam **nieuwe** werkt met .NET-typen, zoals wordt weergegeven in het volgende voorbeeld.
 
@@ -151,12 +152,12 @@ De methodeaanroep:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Overbelaste methoden--dat wil zeggen, die hetzelfde zijn als een bestaande methode met de naam, maar met de opgegeven waarden--onderscheiden worden ook ondersteund.
 
-## <a name="properties"></a>Eigenschappen 
+## <a name="properties"></a>Eigenschappen
 
 Alle eigenschappen zijn openbaar. Eigenschappen vereisen een nieuwe regel of een puntkomma. Als er geen objecttype is opgegeven, is het eigenschapstype-object.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>End-to-End-voorbeeld
 
-Het volgende voorbeeld maakt diverse nieuwe, aangepaste klassen voor het implementeren van een HTML-dynamische taal van het opmaakmodel (DSL). Het voorbeeld wordt vervolgens hulpfuncties voor het maken van specifieke elementtypen als onderdeel van de elementklasse zoals kopstijlen en tabellen, omdat de typen kunnen niet worden gebruikt buiten het bereik van een module.
+Het volgende voorbeeld maakt diverse nieuwe, aangepaste klassen voor het implementeren van een HTML-dynamische taal van het opmaakmodel (DSL).
+Het voorbeeld wordt vervolgens hulpfuncties voor het maken van specifieke elementtypen als onderdeel van de elementklasse zoals kopstijlen en tabellen, omdat de typen kunnen niet worden gebruikt buiten het bereik van een module.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

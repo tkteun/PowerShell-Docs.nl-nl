@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,installeren
 title: Nieuwe scenario's en onderdelen in WMF 5.1
-ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nieuwe scenario's en onderdelen in WMF 5.1 #
 
@@ -26,35 +26,41 @@ Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan vo
 - [Get-Module resultaten door CompatiblePSEditions filteren]()
 - [Voorkomen dat de uitvoering van script tenzij uitvoeren op een compatibele versie van PowerShell]()
 
-## <a name="catalog-cmdlets"></a>Catalogus-Cmdlets  
+## <a name="catalog-cmdlets"></a>Catalogus-Cmdlets
 
-Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; deze genereren en bestanden voor Windows-catalogus te valideren.  
+Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; deze genereren en bestanden voor Windows-catalogus te valideren.
 
-###<a name="new-filecatalog"></a>Nieuwe FileCatalog 
+###<a name="new-filecatalog"></a>Nieuwe FileCatalog
 --------------------------------
 
-Nieuwe FileCatalog maakt een Windows-catalogusbestand voor mappen en bestanden. Dit catalogusbestand bevat hashes voor alle bestanden in de opgegeven paden. De set mappen samen met de bijbehorende catalogusbestand voor deze mappen, kunnen gebruikers distribueren. Deze informatie is nuttig om te valideren of de wijzigingen voor de mappen zijn aangebracht sinds de aanmaaktijd van de catalogus.    
+Nieuwe FileCatalog maakt een Windows-catalogusbestand voor mappen en bestanden.
+Dit catalogusbestand bevat hashes voor alle bestanden in de opgegeven paden.
+De set mappen samen met de bijbehorende catalogusbestand voor deze mappen, kunnen gebruikers distribueren.
+Deze informatie is nuttig om te valideren of de wijzigingen voor de mappen zijn aangebracht sinds de aanmaaktijd van de catalogus.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-Catalogus versie 1 en 2 worden ondersteund. De SHA1-hash-algoritme voor het maken van bestands-hashes; maakt gebruik van versie 1 SHA256 maakt gebruik van versie 2. Catalogusversie 2 van de wordt niet ondersteund op *Windows Server 2008 R2* of *Windows 7*. U moet catalogusversie 2 van de gebruiken voor *Windows 8*, *Windows Server 2012*, en latere besturingssystemen.  
+Catalogus versie 1 en 2 worden ondersteund.
+De SHA1-hash-algoritme voor het maken van bestands-hashes; maakt gebruik van versie 1 SHA256 maakt gebruik van versie 2.
+Catalogusversie 2 van de wordt niet ondersteund op *Windows Server 2008 R2* of *Windows 7*.
+U moet catalogusversie 2 van de gebruiken voor *Windows 8*, *Windows Server 2012*, en latere besturingssystemen.
 
 ![](../images/NewFileCatalog.jpg)
 
-Hiermee maakt u het catalogusbestand. 
+Hiermee maakt u het catalogusbestand.
 
-![](../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)
 
-![](../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg)
 
-Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.   
+Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-Test FileCatalog valideert de catalogus die vertegenwoordigt een reeks mappen. 
+Test FileCatalog valideert de catalogus die vertegenwoordigt een reeks mappen.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -62,7 +68,11 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Deze cmdlet worden alle bestanden-hashes vergeleken en hun relatieve paden te vinden in *catalogus* met toepassingsgroepen op *schijf*. Als er een discrepantie tussen het bestands-hashes en paden gedetecteerd wordt de status als *ValidationFailed*. Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* parameter. Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet uit op het catalogusbestand. Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter. 
+Deze cmdlet worden alle bestanden-hashes vergeleken en hun relatieve paden te vinden in *catalogus* met toepassingsgroepen op *schijf*.
+Als er een discrepantie tussen het bestands-hashes en paden gedetecteerd wordt de status als *ValidationFailed*.
+Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* parameter.
+Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet uit op het catalogusbestand.
+Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter.
 
 
 ## <a name="module-analysis-cache"></a>Module Analysis-Cache ##
@@ -71,13 +81,17 @@ Beginnen met WMF 5.1, biedt PowerShell controle over het bestand dat wordt gebru
 Deze cache wordt standaard opgeslagen in het bestand `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 De cache is doorgaans lezen bij het opstarten tijdens het zoeken naar een opdracht en geschreven in een achtergrondthread enige tijd opnieuw nadat een module is geïmporteerd.
 
-Als u wilt wijzigen van de standaardlocatie van de cache, de `$env:PSModuleAnalysisCachePath` omgevingsvariabele voordat u start PowerShell. Wijzigingen in deze omgevingsvariabele wordt alleen van invloed op de onderliggende processen. De waarde moet een volledig pad (inclusief bestandsnaam) zijn dat PowerShell gemachtigd is te maken en bestanden schrijven name. Schakel de bestandscache van deze waarde instelt op een ongeldige locatie, bijvoorbeeld:
+Als u wilt wijzigen van de standaardlocatie van de cache, de `$env:PSModuleAnalysisCachePath` omgevingsvariabele voordat u start PowerShell.
+Wijzigingen in deze omgevingsvariabele wordt alleen van invloed op de onderliggende processen.
+De waarde moet een volledig pad (inclusief bestandsnaam) zijn dat PowerShell gemachtigd is te maken en bestanden schrijven name.
+Schakel de bestandscache van deze waarde instelt op een ongeldige locatie, bijvoorbeeld:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Hiermee stelt het pad naar een ongeldige apparaat. Als PowerShell kan niet naar het pad schrijven, geen fout wordt geretourneerd, maar u kunt zien die fouten rapporteren met behulp van een traceerders:
+Hiermee stelt het pad naar een ongeldige apparaat.
+Als PowerShell kan niet naar het pad schrijven, geen fout wordt geretourneerd, maar u kunt zien die fouten rapporteren met behulp van een traceerders:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
@@ -94,12 +108,14 @@ Instellen van deze omgevingsvariabele wordt onmiddellijk van kracht in het huidi
 
 ##<a name="specifying-module-version"></a>Moduleversie opgeven
 
-In WMF 5.1 `using module` gedraagt zich dezelfde manier als andere constructies module-gerelateerde in PowerShell. Voorheen moest u geen manier om op te geven van een bepaalde moduleversie; Als er meerdere versies aanwezig is, resulteert dit in een fout.
+In WMF 5.1 `using module` gedraagt zich dezelfde manier als andere constructies module-gerelateerde in PowerShell.
+Voorheen moest u geen manier om op te geven van een bepaalde moduleversie; Als er meerdere versies aanwezig is, resulteert dit in een fout.
 
 
 In een WMF 5.1:
 
-* U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290). Deze hashtabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
+* U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+Deze hashtabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
 **Voorbeeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
@@ -107,7 +123,6 @@ In een WMF 5.1:
 
 
 ##<a name="improvements-to-pester"></a>Verbeteringen in lastige
-In WMF 5.1, de versie van Pester die wordt geleverd met PowerShell is bijgewerkt van 3.3.5 naar 3.4.0 met de toevoeging van het doorvoeren https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, die zorgt voor betere gedrag voor Pester op Nano Server. 
+In WMF 5.1, de versie van Pester die wordt geleverd met PowerShell is bijgewerkt van 3.3.5 naar 3.4.0 met de toevoeging van het doorvoeren https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, die zorgt voor betere gedrag voor Pester op Nano Server.
 
 U kunt de wijzigingen in versies 3.3.5-3.4.0 bekijken door te inspecteren van het bestand ChangeLog.md op: https://github.com/pester/Pester/blob/master/CHANGELOG.md
-

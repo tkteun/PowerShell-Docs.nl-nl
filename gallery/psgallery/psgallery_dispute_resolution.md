@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: psgallery_dispute_resolution
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dispute-resolution"></a>Geschillen
 
@@ -39,4 +39,3 @@ Publiceren van code en aan de slag of de naam van de gewonnen naar iemand die da
 Als u een item dat is in strijd met een van deze items vinden, klik op de koppeling 'Misbruik melden' op de detailpagina item en het verzenden van een rapport.
 
 **Dit beleid kan worden gewijzigd op de keuze van de PowerShell-galerie.**
-

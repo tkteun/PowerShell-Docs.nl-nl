@@ -133,7 +133,7 @@ Door het installeren van de [ `WindowsPSModulePath` ] [ windowspsmodulepath] -mo
 Installeer eerst de `WindowsPSModulePath` module op basis van de PowerShell-galerie:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Hoeft u PowerShell registreren als een subsysteem met een OpenSSH op basis van e
 
 Zie voor meer informatie over het configureren en gebruiken van externe toegang op basis van SSH [PowerShell voor externe toegang via SSH][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>Standaardcodering is UTF-8 zonder een stuklijst
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standaardcodering is UTF-8 zonder een stuklijst, met uitzondering van nieuw ModuleManifest
 
 In het verleden Windows PowerShell-cmdlets, zoals `Get-Content`, `Set-Content` verschillende coderingen, zoals ASCII- en UTF-16 wordt gebruikt.
 De verschillen in de Aanvraagcodering gemaakt problemen wanneer de combinatie van cmdlets zonder op te geven een codering.
@@ -176,10 +176,9 @@ De volgende cmdlets worden beïnvloed door deze wijziging:
 - Export Clixml
 - Export-Csv
 - Export-PSSession
-- Indeling Hex
+- Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Selecteer-tekenreeks
 - Send-MailMessage
@@ -190,6 +189,8 @@ Deze cmdlets ook zijn bijgewerkt zodat de `-Encoding` -parameter accepteert univ
 De standaardwaarde van `$OutputEncoding` ook is gewijzigd in UTF-8.
 
 Als een best practice moet u expliciet coderingen instellen in scripts met de `-Encoding` parameter voor het produceren van deterministische gedrag in verschillende platforms.
+
+`New-ModuleManifest` cmdlet heeft geen **codering** parameter. De codering van de module-manifest (.psd1)-bestand gemaakt met `New-ModuleManifest` cmdlet is afhankelijk van omgeving: als het PowerShell-kern waarop Linux vervolgens codering UTF-8 (geen BOM); anders codering is UTF-16 (met BOM). (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Ondersteuning voor backgrounding van pijplijnen met en-teken (`&`) (#3360)
 
@@ -225,7 +226,7 @@ Zie voor meer informatie over PowerShell taken [about_Jobs](https://msdn.microso
   - `GitCommitId`: Dit is de Git commit-ID van de Git-vertakking of code waarbij PowerShell is opgebouwd.
     Uitgebrachte builds voor waarschijnlijk moeten hetzelfde zijn als `PSVersion`.
   - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform`: Dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` is ingesteld op `Win32NT` op Windows, `MacOSX` op Mac OS, en `Unix` op Linux.
+  - `Platform`: Dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` is ingesteld op `Win32NT` op Windows, `Unix` op Mac OS, en `Unix` op Linux.
 - Verwijderd de `BuildVersion` eigenschap uit `$PSVersionTable`.
   Deze eigenschap is sterk gekoppeld aan de build-versie van Windows.
   In plaats daarvan het is raadzaam dat u `GitCommitId` voor het ophalen van de exacte build-versie van PowerShell Core. (#3877) (Dank aan @iSazonov!)

@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
+
 Dit onderwerp beschrijft de toegankelijkheidsfuncties van Windows PowerShell Integrated Scripting Environment (ISE) die handig zijn wellicht.
 
 * [Het wijzigen van de grootte en locatie van de Console en het Script deelvensters](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE ondersteunt hoog contrast modus. Voor visueel gehinderd o
 - Wijziging van de tekst
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Het wijzigen van de grootte en locatie van de Console en het Script deelvensters
+
 De volgende stappen kunt u de grootte en locatie van het consolevenster en het scriptvenster wijzigen. Wanneer u de Windows PowerShell ISE opnieuw opent, wordt de grootte en locatie aangebrachte wijzigingen blijven behouden.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>Aan de scriptvenster en consolevenster vergroten of verkleinen
@@ -40,6 +42,7 @@ De volgende stappen kunt u de grootte en locatie van het consolevenster en het s
 2. Wanneer de muisaanwijzer in een dubbele pijl verandert, sleept u de rand om de grootte van het deelvenster te wijzigen.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>De scriptvenster en consolevenster verplaatsen
+
 Voer een van de volgende handelingen uit:
 
 - Verplaatst u het scriptvenster boven het consolevenster **CTRL + 1** of klik op de werkbalk op de **weergeven Script deelvenster eerste** pictogram, of in de **weergave** menu, klikt u op **weergeven Deelvenster boven script**.
@@ -53,6 +56,7 @@ Voer een van de volgende handelingen uit:
 - Als u wilt het scriptvenster weergeven wanneer het consolevenster gemaximaliseerd, aan de rechterkant rand van de rij met tabs, klikt u op de **scriptvenster weergeven** pictogram, of in de **weergave** menu, schakel de **Script weergeven Deelvenster** menuoptie.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Sneltoetsen voor het bewerken van tekst
+
 U kunt de volgende sneltoetsen gebruiken wanneer u tekst bewerkt.
 
 |Actie|Sneltoetsen gebruiken|Gebruik in|
@@ -70,6 +74,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst bewerkt.
 |**Undo**|CTRL + Z|Script-veld-consolevenster|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
+
 U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in de Script-veld.
 
 |Actie|Sneltoets|
@@ -83,6 +88,7 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in de Scr
 |**Tabblad** (naar vorige script)|CTRL + SHIFT + TAB **Opmerking:** tabblad naar vorige script werkt wanneer u hebt slechts één PowerShell tabblad geopend, of als er meer dan één PowerShell tabblad is geopend en de focus is in de Script-veld.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Sneltoetsen voor de weergave aanpassen
+
 U kunt de volgende sneltoetsen gebruiken voor het aanpassen van de weergave in Windows PowerShell ISE. Ze zijn toegankelijk vanaf de deelvensters in de toepassing.
 
 |Actie|Sneltoets|
@@ -99,6 +105,7 @@ U kunt de volgende sneltoetsen gebruiken voor het aanpassen van de weergave in W
 |**Uitzoomen**|CTRL + MINTEKEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Sneltoetsen voor foutopsporing in scripts
+
 U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
 |Actie|Sneltoets|Gebruik in|
@@ -130,6 +137,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 |**Console weergeven Debug-opdrachten**|H of?|-Consolevenster, als u fouten opspoort een script|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Sneltoetsen voor Windows PowerShell-tabbladen
+
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 
 |Actie|Sneltoets|
@@ -140,6 +148,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 |**Volgende Windows PowerShell-tabblad**|CTRL + TAB. Deze sneltoets werkt alleen als er geen bestanden geopend op elk tabblad PowerShell zijn.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
+
 U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (PowerShell.exe) te starten of om af te sluiten van Windows PowerShell ISE.
 
 |Actie|Sneltoets|
@@ -148,5 +157,5 @@ U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (Power
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>Zie ook
-- [Windows PowerShell ISE gebruiken](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Introducing the Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

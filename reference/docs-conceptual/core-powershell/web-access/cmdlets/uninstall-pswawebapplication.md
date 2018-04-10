@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Uninstall-pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ De **Uninstall-PswaWebApplication** cmdlet verwijdert u de Windows PowerShell-we
 Geeft aan dat de testcertificaten gemaakt door de **installeren\_PswaWebApplication** cmdlet (met de **UseTestCertificate** parameter) is verwijderd.
 Het testcertificaat met dezelfde naam als het account dat is gemaakt door de **Install-PswaWebApplication** cmdlet wordt verwijderd.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -49,7 +49,7 @@ Het testcertificaat met dezelfde naam als het account dat is gemaakt door de **I
 
 Hiermee geeft u de naam van de webtoepassing te verwijderen.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -62,7 +62,7 @@ Hiermee geeft u de naam van de webtoepassing te verwijderen.
 
 Geeft de naam van de website waarop de webtoepassing is geïnstalleerd.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -75,7 +75,7 @@ Geeft de naam van de website waarop de webtoepassing is geïnstalleerd.
 
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |
@@ -88,7 +88,7 @@ Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
 De cmdlet wordt niet uitgevoerd.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |

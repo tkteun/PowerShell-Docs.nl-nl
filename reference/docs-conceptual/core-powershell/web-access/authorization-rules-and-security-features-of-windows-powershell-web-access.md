@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -186,7 +186,7 @@ Hier volgen enkele voorbeelden van dit scenario.
 - Sommige beheerders bieden bepaalde gebruikers uitgebreidere toegang dan andere. Een beheerder maakt bijvoorbeeld twee gebruikersgroepen, **Admins** en **basisondersteuning**. De beheerder maakt ook een eindpunt met een beperkte runspace genaamd **Pswaeindpunt**, en definieert de volgende twee regels: **beheerders,\*,\***  en  **Basisondersteuning,\*, Pswaeindpunt**. De eerste regel biedt alle gebruikers in de **Admin** groepstoegang tot alle computers en de tweede regel biedt alle gebruikers in de **basisondersteuning** groep alleen toegang tot computers met  **Pswaeindpunt**.
 
 - Een beheerder heeft een besloten testomgeving ingesteld en wil alle geautoriseerde netwerkgebruikers toegang geven tot alle computers in het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot alle sessieconfiguraties waartoe ze gewoonlijk toegang hebben. Omdat dit een besloten testomgeving is, maakt de beheerder een autorisatieregel die niet veilig is.
-  - De beheerder voert de cmdlet `Add-PswaAuthorizationRule * * *`, waarin het jokerteken  **\***  voor alle gebruikers alle computers en alle configuraties.
+  - De beheerder voert de cmdlet `Add-PswaAuthorizationRule * * *`, waarin het jokerteken **\*** voor alle gebruikers alle computers en alle configuraties.
   - Deze regel komt overeen met het volgende: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   >**Opmerking**:

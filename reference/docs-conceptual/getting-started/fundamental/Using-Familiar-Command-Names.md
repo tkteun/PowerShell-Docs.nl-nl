@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Met behulp van bekende opdrachtnamen
+title: Bekende opdrachtnamen gebruiken
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-familiar-command-names"></a>Met behulp van bekende opdrachtnamen
+# <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 Aangeroepen met een mechanisme *aliasing*, kunnen gebruikers om te verwijzen naar opdrachten met alternatieve namen van Windows PowerShell. Aliasing kan gebruikers met ervaring in andere houders hergebruiken algemene namen van opdrachten die ze al bekend vergelijkbare bewerkingen uitvoeren in Windows PowerShell. Hoewel er geen Windows PowerShell-aliassen in detail worden besproken, kunt u ze nog steeds gebruiken als u aan de slag met Windows PowerShell.
 
 De naam van een opdracht die u typt koppelt aliasing aan een andere opdracht. Bijvoorbeeld, Windows PowerShell is een interne functie met de naam **wissen Host** die het uitvoervenster worden gewist. Als u de **cls** of **wissen** een opdrachtprompt, Windows PowerShell-opdracht wordt geïnterpreteerd dat dit is een alias voor de **wissen Host** functioneren en de wordtuitgevoerd **Schakel Host** functie.
@@ -20,13 +20,13 @@ Hier volgt een kort overzicht van de algemene Cmd.exe- en UNIX-opdrachten die u 
 
 |||||
 |-|-|-|-|
-|CAT|Dir|koppelen|RM|
+|CAT|Dir|koppelen|rm|
 |cd|echo|verplaatsen|rmdir|
 |chdir|wissen|popd|slaapstand|
-|wissen|H|PS|Sorteren|
+|wissen|h|ps|Sorteren|
 |CLS|Geschiedenis|pushd|t|
 |Kopiëren|kill|pwd|Type|
-|DEL|LP|r|schrijven|
+|del|LP|r|schrijven|
 |diff|Ls|ren||
 
 Als u merkt met behulp van een van deze opdrachten reflexively en meer informatie over de werkelijke naam van de systeemeigen Windows PowerShell-opdracht wilt, kunt u de **Get-Alias** opdracht:
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

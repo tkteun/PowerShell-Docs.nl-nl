@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Weergave Object structuur Get lid
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>Objectstructuur (Get-lid) weergeven
+
 Omdat objecten wordt een centrale rol in Windows PowerShell spelen, zijn er verschillende ingebouwde opdrachten ontworpen voor gebruik met willekeurige objecttypen. Het belangrijkste instrument is de **Get-lid** opdracht.
 
 De eenvoudigste methode voor het analyseren van de objecten die een opdracht wordt geretourneerd naar de uitvoer van de opdracht voor pipe is de **Get-lid** cmdlet. De **Get-lid** cmdlet ziet u de formele naam van het objecttype en een volledig overzicht van de bijbehorende leden. Het aantal elementen die worden geretourneerd soms enigszins overweldigend kan zijn. Een procesobject kan bijvoorbeeld meer dan 100 leden hebben.
 
 Overzicht van alle leden van een proces-object en de uitvoer van de pagina zodat u alles kunt bekijken, typt u:
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 De uitvoer van deze opdracht wordt als volgt uitzien:
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ Er zijn meer dan 60 eigenschappen voor een proces. De Windows PowerShell toont v
 > Windows PowerShell bepaalt hoe u een objecttype dat u met behulp van informatie opgeslagen in XML-bestanden die eindigt op namen hebben. format.ps1xml. De indelingsgegevens voor proces-objecten die System.Diagnostics.Process .NET-objecten, wordt opgeslagen in DotNetTypes.format.ps1xml.
 
 Als u nodig hebt om te kijken naar eigenschappen dan degene die standaard door Windows PowerShell wordt weergegeven, moet u de uitvoergegevens zelf formatteren. Dit kan worden gedaan met behulp van de indeling-cmdlets.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een virtuele machines op de eerste boot-up configureren met behulp van DSC
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >Van toepassing op: Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Wijzig de naam en dat het bestand verplaatsen naar de juiste locatie op de VHD a
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Een virtuele machine maken met behulp van de VHD waar u het document DSC MOF hebt geïnstalleerd. Na de eerste boot-up en besturingssysteeminstallatie wordt IIS geïnstalleerd.
+7. Een virtuele machine maken met behulp van de VHD waar u het document DSC MOF hebt geïnstalleerd.
+Na de eerste boot-up en besturingssysteeminstallatie wordt IIS geïnstalleerd.
 U kunt dit controleren door het aanroepen van de [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>DSC-metaconfiguratie toe invoeren in een VHD
@@ -203,4 +204,3 @@ Standaard wordt de waarde van de **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
 - [De registersleutel DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
 - [De Local Configuration Manager (LCM) configureren](metaConfig.md)
 - [Een DSC web pull-server instellen](pullServer.md)
-

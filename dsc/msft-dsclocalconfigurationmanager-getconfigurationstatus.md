@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: a41e7a15fc935c2cd5fd4cb66d0ab13509d5d4e0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: dde4ac003b346018561481e05ca7374475f9ff1d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Haal de geschiedenis van de configuratie-status.
 
@@ -26,11 +26,9 @@ uint32 GetConfigurationStatus(
 <a name="parameters"></a>Parameters
 ----------
 
-*Alle* \[in\]  
-**de waarde True** als deze methode informatie over de configuratie op de machine wordt uitgevoerd retourneren moet, met inbegrip van de configuratie-toepassing en de consistentiecontrole.
+*Alle* \[in\] **true** als deze methode informatie over de configuratie op de machine wordt uitgevoerd retourneren moet, met inbegrip van de configuratie-toepassing en de consistentiecontrole.
 
-*configurationStatus* \[out\]  
-Op return bevat een ingesloten exemplaar van de **MSFT_DSCConfigurationStatus** klasse die de instellingen definieert.
+*configurationStatus* \[uit\] op return bevat een ingesloten exemplaar van de **MSFT_DSCConfigurationStatus** klasse die de instellingen definieert.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -52,11 +50,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -59,7 +59,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
     Restart-Service sshd
     ```
 1. Het pad waar OpenSSH is geïnstalleerd op uw pad Env variabele toevoegen
-    - Dit moet langs de lijnen van`C:\Program Files\OpenSSH\`
+    - Dit moet langs de lijnen van `C:\Program Files\OpenSSH\`
     - Hiermee kunt u de ssh.exe die u wilt zoeken
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup op de Machine met Linux (Ubuntu 14.04)
@@ -92,11 +92,11 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 1. Installeer de meest recente [PowerShell voor Mac OS] bouwen
     - Controleer of dat de SSH-externe toegang is ingeschakeld met de volgende stappen:
-      - Open`System Preferences`
-      - Klik op`Sharing`
-      - Controleer `Remote Login` -melding`Remote Login: On`
+      - Open `System Preferences`
+      - Klik op `Sharing`
+      - Controleer `Remote Login` -melding `Remote Login: On`
       - Toegang tot de juiste gebruikers toestaan
-1. Bewerk de `sshd_config` bestand op locatie`/private/etc/ssh/sshd_config`
+1. Bewerk de `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config`
     - Uw favoriete editor gebruiken of
     ```bash
     sudo nano /private/etc/ssh/sshd_config

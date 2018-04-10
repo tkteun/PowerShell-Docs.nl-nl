@@ -1,45 +1,45 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een pull-client met behulp van configuratie-ID in PowerShell 4.0 instellen
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Een pull-client met behulp van configuratie-ID in PowerShell 4.0 instellen
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Elk doelknooppunt heeft adviseert het gebruik van pull-modus en de URL opgegeven waar deze contact opnemen met de pull-server configuraties ophalen. U moet de lokale Configuration Manager (LCM) configureren met de benodigde informatie om dit te doen. Als u wilt de LCM configureren, moet u een speciaal soort configuratie bekend als een 'metaconfiguratie' maken. Zie voor meer informatie over het configureren van de LCM [Windows PowerShell 4.0 Gewenste statusconfiguratie Lokale configuratiebeheerder](metaConfig4.md)
+Elk doelknooppunt heeft adviseert het gebruik van pull-modus en de URL opgegeven waar deze contact opnemen met de pull-server configuraties ophalen. U moet de lokale Configuration Manager (LCM) configureren met de benodigde informatie om dit te doen. Als u wilt de LCM configureren, moet u een speciaal soort configuratie bekend als een 'metaconfiguratie' maken. Zie voor meer informatie over het configureren van de LCM [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md)
 
 Het volgende script voor het configureren van de LCM naar pull-configuraties van een server met de naam 'PullServer':
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-In het script **DownloadManagerCustomData** geeft de URL van de pull-server en (voor dit voorbeeld) een onbeveiligde verbinding toestaat. 
+In het script **DownloadManagerCustomData** geeft de URL van de pull-server en (voor dit voorbeeld) een onbeveiligde verbinding toestaat.
 
 Nadat dit script wordt uitgevoerd, maakt deze een nieuwe uitvoermap met de naam **SimpleMetaConfigurationForPull** en er een MOF-bestand metaconfiguratie plaatst.
 
-Gebruiken om toe te passen op de configuratie, **Set DscLocalConfigurationManager** met parameters voor **ComputerName** (gebruiken 'localhost') en **pad** (het pad naar de locatie van de doel van het knooppunt localhost.meta.mof-bestand). Bijvoorbeeld: 
+Gebruiken om toe te passen op de configuratie, **Set DscLocalConfigurationManager** met parameters voor **ComputerName** (gebruiken 'localhost') en **pad** (het pad naar de locatie van de doel van het knooppunt localhost.meta.mof-bestand). Bijvoorbeeld:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Als de pull-server als een SMB-bestandsshare in plaats van een webservice instel
 De **DscFileDownloadManager** duurt een **bronpad** in plaats van de eigenschap **ServerUrl**. Het volgende script configureert de LCM om op te halen van de configuraties van een SMB-share met de naam 'SmbDscShare' op een server met de naam 'CONTOSO-SERVER':
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Een DSC web pull-server instellen](pullServer.md)
 - [Een DSC SMB-pull-server instellen](pullServerSMB.md)
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-WindowsPackageCab Resource
-ms.openlocfilehash: 1d7c8d9bf45d2eda8734daa8877315d219662c75
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: af45956c1fe8cffa1d7fd779847eded9e3f6b51e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC-WindowsPackageCab Resource
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/17/2018
 
 De **WindowsPackageCab** in Windows PowerShell Desired State Configuration (DSC)-bron biedt een mechanisme om te installeren of verwijderen van Windows-CAB-pakketten in een doelknooppunt.
 
-Het doelknooppunt moet de DISM-PowerShell-module geïnstalleerd hebben. Zie voor informatie [Gebruik DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14). 
+Het doelknooppunt moet de DISM-PowerShell-module geïnstalleerd hebben. Zie voor informatie [Gebruik DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
 
 
 ## <a name="syntax"></a>Syntaxis
@@ -32,13 +32,13 @@ Het doelknooppunt moet de DISM-PowerShell-module geïnstalleerd hebben. Zie voor
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
-| Naam| Geeft de naam van het pakket voor u wilt een specifieke status zorgen.| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
+| Naam| Geeft de naam van het pakket voor u wilt een specifieke status zorgen.|
 | Zorg ervoor dat| Hiermee wordt aangegeven of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig' controleert u dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.|
-| Pad| Geeft het pad waar het pakket zich bevindt.| 
-| Logboekpad| Hiermee geeft u het volledige pad waar u de provider een logboekbestand om te installeren of verwijderen van het pakket opslaan.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = '[ ResourceType] ResourceName' ''.| 
+| Pad| Geeft het pad waar het pakket zich bevindt.|
+| Logboekpad| Hiermee geeft u het volledige pad waar u de provider een logboekbestand om te installeren of verwijderen van het pakket opslaan.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = '[ ResourceType] ResourceName' ''.|
 
 ## <a name="example"></a>Voorbeeld
 
@@ -76,4 +76,3 @@ Configuration Sample_WindowsPackageCab
     }
 }
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: b839b476bb4ef7f8d73b158d61f0e8cbc1265e60
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: a3b176101bebf7081febd8629bddcfa0ae1e7540
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Importeren DscResource sleutelwoord ondersteunt ModuleVersion - parameter
 
@@ -19,7 +19,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 * **Naam**: namen van een of meer resources om te importeren.
 * **Modulenaam**: modulenamen of ModuleSpecification objecten van een of meer modules voor het importeren.
-* **ModuleVersion**: versie van de module iet importeren. Als u gebruikt, moet de modulenaam slechts één module met de naam vertegenwoordigen. 
+* **ModuleVersion**: versie van de module iet importeren. Als u gebruikt, moet de modulenaam slechts één module met de naam vertegenwoordigen.
 
 In de Windows PowerShell ISE, wordt deze weergegeven met IntelliSense:
 
@@ -27,5 +27,4 @@ In de Windows PowerShell ISE, wordt deze weergegeven met IntelliSense:
 
 **Opmerking**: de `–ModuleVersion` parameter kan alleen worden gebruikt in combinatie met de `–ModuleName` parameter. Deze kan niet worden gebruikt met resourcenamen met alleen de `–Name` parameter.
 
-Voordat dit is de enige manier om de moduleversie opgeven bij het laden van DSC-resources met behulp van de specificatie moduleobject bijvoorbeeld:`–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
-
+Voordat dit is de enige manier om de moduleversie opgeven bij het laden van DSC-resources met behulp van de specificatie moduleobject bijvoorbeeld: `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`

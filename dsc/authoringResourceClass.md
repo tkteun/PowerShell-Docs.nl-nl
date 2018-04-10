@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Schrijven van een aangepaste DSC-resource met PowerShell-klassen
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schrijven van een aangepaste DSC-resource met PowerShell-klassen
 
@@ -30,8 +30,8 @@ Voor het implementeren van een aangepaste DSC-resource met een PowerShell-klasse
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>De klasse maken
@@ -72,10 +72,10 @@ U ziet dat de eigenschappen zijn gewijzigd door de kenmerken. De betekenis van d
 De **$Path** en **$SourcePath** eigenschappen zijn beide tekenreeksen. De **$CreationTime** is een [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) eigenschap. De **$Ensure** eigenschap is een opsommingstype als volgt gedefinieerd.
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 De **Get()**, **Set()**, en **Test()** methoden zijn vergelijkbaar met de **Get-TargetResource**, **Set TargetResource** , en **Test TargetResource** functies in de bron van een script.
 
-Deze code bevat ook de functie CopyFile(), een Help-functie waarmee het bestand worden gekopieerd **$SourcePath** naar **$Path**. 
+Deze code bevat ook de functie CopyFile(), een Help-functie waarmee het bestand worden gekopieerd **$SourcePath** naar **$Path**.
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>De resource testen
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>Zie ook
 ### <a name="concepts"></a>Concepten
 [Aangepaste Windows PowerShell Desired State Configuration Resources bouwen](authoringResource.md)
-

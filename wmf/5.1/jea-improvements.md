@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 contributor: ryanpu
 title: Verbeteringen in Just Enough Administration (JEA)
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbeteringen in Just Enough Administration (JEA)
 
@@ -28,7 +28,7 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-De map back-ups maken van de schijf van de gebruiker wordt gemaakt op`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+De map back-ups maken van de schijf van de gebruiker wordt gemaakt op `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
 Als u wilt gebruikmaken van de schijf van de gebruiker en kopieer de bestanden naar/van een eindpunt JEA is geconfigureerd om de schijf van de gebruiker weer te geven, gebruikt u de `-ToSession` en `-FromSession` parameters op Copy-Item.
 
@@ -50,7 +50,7 @@ U kunt vervolgens aangepaste functies om te verwerken van de gegevens die zijn o
 
 In sommige gevallen moet een taak die een gebruiker moet uitvoeren in een sessie JEA mogelijk toegang tot bronnen voorbij de lokale computer.
 Wanneer een sessie JEA is geconfigureerd voor gebruik van een virtueel account, wordt elke poging tot deze bronnen afkomstig zijn van de identiteit van de lokale computer, niet de virtueel account of verbonden gebruiker weergegeven.
-In TP5, hebben we ondersteuning voor het uitvoeren van JEA onder de context van een [groep beheerd serviceaccount] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), waardoor het veel eenvoudiger toegang tot netwerkbronnen met behulp van een domein ingeschakeld de identiteit.
+In TP5, hebben we ondersteuning voor het uitvoeren van JEA onder de context van een [groep beheerd serviceaccount] ingeschakeld (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), waardoor het veel eenvoudiger toegang tot netwerkbronnen met behulp van de identiteit van een domein.
 
 Gebruik voor het configureren van een sessie JEA worden uitgevoerd onder een beheerd serviceaccount voor de volgende sleutel in uw bestand voor:
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Vaste: Virtuele accounts worden nu ondersteund op Windows Server 2008 R2
 WMF 5.1 bent u nu virtuele accounts gebruiken op Windows Server 2008 R2 inschakelen consistente configuraties en functie pariteit via Windows Server 2008 R2 - 2016.
 Virtuele accounts blijven wordt niet ondersteund wanneer u JEA op Windows 7.
-

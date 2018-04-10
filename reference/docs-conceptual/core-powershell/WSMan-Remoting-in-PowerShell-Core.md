@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management (WSMan) voor externe toegang in PowerShell-kern 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>Externe communicatie van WS-Management (WSMan) in PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instructies voor het maken van een eindpunt voor externe toegang
 
@@ -28,19 +28,19 @@ Het script moet worden uitgevoerd binnen een beheerdersniveau PowerShell-sessie 
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>Uitgevoerd door het exemplaar van PowerShell die wordt geregistreerd
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Uitgevoerd door een ander exemplaar van PowerShell namens het exemplaar dat wordt geregistreerd
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Bijvoorbeeld:
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 Een PowerShell-sessie met het nieuwe PowerShell-eindpunt maken door te geven `-ConfigurationName "some endpoint name"`. Maak verbinding met de PowerShell-exemplaar van het bovenstaande voorbeeld door een te gebruiken:
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

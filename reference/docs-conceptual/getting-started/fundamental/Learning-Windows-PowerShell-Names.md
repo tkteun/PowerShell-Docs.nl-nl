@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Namen van Learning Windows PowerShell
+title: Meer informatie over Windows PowerShell-namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="learning-windows-powershell-names"></a>Namen van Learning Windows PowerShell
+# <a name="learning-windows-powershell-names"></a>Meer informatie over Windows PowerShell-namen
 Namen van opdrachten en parameters van de Learning is een aanzienlijke tijd investering met de meeste opdrachtregelinterfaces. Het probleem is dat er heel weinig patronen, dus de enige manier om te leren door bewerkingsopdrachten van elke opdracht en elke parameter die u wilt gebruiken op regelmatige basis.
 
 Wanneer u met een nieuwe opdracht of een parameter werkt, kan niet in het algemeen u wat u al weet; u hebt om erachter te komen van een nieuwe naam. Als u hoe interfaces Breid uit van een kleine set van hulpprogramma's met incrementele toevoegingen aan functionaliteit kijken, is het eenvoudig om te zien waarom de structuur is niet-standaard. Met de namen van opdrachten in het bijzonder klinkt dit logisch omdat elke opdracht een afzonderlijk hulpprogramma is, maar er een betere manier is voor het verwerken van opdrachten.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell heeft verschillende parameters, ook wel *algemene parameters*
 De Windows PowerShell-kern-cmdlets gebruiken standaard namen voor de overeenkomstige parameters. Hoewel het gebruik van de namen van parameters niet wordt afgedwongen, is het expliciete richtlijnen voor het gebruik ter bevordering van normalisatie.
 
 Bijvoorbeeld de richtlijnen beveelt een parameter naam verwijst naar een computer met de naam als **ComputerName**, in plaats van de Server, Host, systeem, knooppunt of andere veelvoorkomende alternatieve woorden. Namen zijn onder de belangrijke voorgestelde parameter **Force**, **uitsluiten**, **opnemen**, **PassThru**, **pad**, en **CaseSensitive**.
-

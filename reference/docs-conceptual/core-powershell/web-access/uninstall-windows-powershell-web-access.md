@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: windows powershell-internettoegang verwijderen
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell-internettoegang verwijderen
 
@@ -29,7 +29,7 @@ De procedures in deze sectie kunt u beide verwijderen:
 
 - de webtoepassing Windows PowerShell-webtoegang en
 - de functie Windows PowerShell-webtoegang
- 
+
 met behulp van Windows PowerShell-cmdlets.
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Stap 1: De webtoepassing met behulp van cmdlets verwijderen
@@ -96,9 +96,9 @@ Procedures in deze sectie kunt u zowel de webtoepassing van Windows PowerShell-w
 
 > ![Waarschuwing Opmerking](images/SecurityNote.jpeg)**Opmerking**:
 >
-> Het certificaat wordt hierbij niet verwijderd. 
+> Het certificaat wordt hierbij niet verwijderd.
 >
-> Als u een zelfondertekend certificaat hebt gemaakt of een testcertificaat hebt gebruikt en dit wilt verwijderen, verwijdert u het certificaat in IIS-beheer. 
+> Als u een zelfondertekend certificaat hebt gemaakt of een testcertificaat hebt gebruikt en dit wilt verwijderen, verwijdert u het certificaat in IIS-beheer.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Stap 2: Windows PowerShell-internettoegang met de functies verwijderen en de Wizard functies verwijderen
 
@@ -121,4 +121,4 @@ Procedures in deze sectie kunt u zowel de webtoepassing van Windows PowerShell-w
 ## <a name="see-also"></a>Zie ook
 
 - [Installeren en gebruiken van Windows PowerShell-internettoegang](install-and-use-windows-powershell-web-access.md)
-- [IIS 7.0 Manager Help](https://technet.microsoft.com/library/cc732664.aspx)
+- [IIS Manager 7.0 Help](https://technet.microsoft.com/library/cc732664.aspx)

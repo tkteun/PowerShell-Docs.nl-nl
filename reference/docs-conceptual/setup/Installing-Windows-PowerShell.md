@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
+ms.date: 08/09/2017
 keywords: PowerShell-cmdlet, downloaden, installeren, setup, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell installeren
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
 Windows PowerShell wordt geleverd in elke Windows, Windows 7 SP1 en Windows Server 2008 R2 SP1 vanaf standaard geïnstalleerd.
@@ -45,7 +45,8 @@ Versies van Windows Server zonder de gebruikersinterface zijn benoemde **Core** 
 
 In alle edities van de Core, wanneer u zich bij de server aanmeldt krijgt u een Windows-opdrachtpromptvenster.
 
-Type `powershell` en druk op **ENTER** PowerShell starten binnen de opdrachtpromptsessie. Type `exit` de PowerShell-sessie te beëindigen en terugkeren naar de opdrachtprompt.
+Type `powershell` en druk op **ENTER** PowerShell starten binnen de opdrachtpromptsessie.
+Type `exit` de PowerShell-sessie te beëindigen en terugkeren naar de opdrachtprompt.
 
 ### <a name="windows-server-desktop-editions"></a>Bureaublad van Windows Server-edities
 

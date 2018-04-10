@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Informatie ophalen over opdrachten
+title: Informatie over opdrachten verkrijgen
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: 98e449110860ea81939d6ec0b7b1a8534a2da2aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1426c171d74afc87751f7d31d46571b9c98fa47e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-information-about-commands"></a>Informatie ophalen over opdrachten
+# <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
 De Windows PowerShell **Get-Command** cmdlet haalt alle opdrachten die beschikbaar in de huidige sessie zijn. Wanneer u typt **Get-Command** bij een Windows PowerShell-prompt ziet u uitvoer die vergelijkbaar is met het volgende:
 
 ```
@@ -28,7 +28,7 @@ In de uitvoer van de **Get-Command** opdracht, de definities eindigen op de wegl
 
 De **Get-Command** cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet opgehaald. Als u de syntaxis van de cmdlet Get-Help, gebruikt u de volgende opdracht:
 
-**GET-opdracht Get-Help-syntaxis**
+**Get-Command Get-Help -Syntax**
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
@@ -77,4 +77,3 @@ Als scripts in de Windows PowerShell-zoekpad weergeven, typt u:
 ```
 Get-Command -CommandType Script
 ```
-

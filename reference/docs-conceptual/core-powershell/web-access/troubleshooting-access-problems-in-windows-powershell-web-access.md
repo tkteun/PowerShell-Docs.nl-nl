@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: het oplossen van toegangsproblemen in windows powershell-webtoegang
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
@@ -130,7 +130,7 @@ Kan niet aanmelden bij een doelcomputer die is opgegeven in autorisatieregels al
 Autorisatieregels ondersteunen geen IPv6-adressen in de vorm van een domeinnaam.
 
 Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel.
-Zowel het domein als numerieke (met dubbele punten) IPv6-adressen worden ondersteund als naam van de doelcomputer op de aanmeldingspagina van Windows PowerShell-webtoegang, maar niet in autorisatieregels. 
+Zowel het domein als numerieke (met dubbele punten) IPv6-adressen worden ondersteund als naam van de doelcomputer op de aanmeldingspagina van Windows PowerShell-webtoegang, maar niet in autorisatieregels.
 
 Zie voor meer informatie over IPv6-adressen [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 

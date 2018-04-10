@@ -58,7 +58,7 @@ Als u een specifieke installatie van PowerShell gebruiken met Visual Studio Code
 
 1. Klik op **File-Voorkeuren > Instellingen ->**
 1. Twee deelvensters van de editor wordt weergegeven.
-   In het deelvenster van de meest rechtse (`settings.json`), voeg de onderstaande instelling geschikt is voor uw besturingssysteem ergens tussen de twee accolades (`{` en `}`) en vervang  *<version>*  met de geïnstalleerde PowerShell-versie:
+   In het deelvenster van de meest rechtse (`settings.json`), voeg de onderstaande instelling geschikt is voor uw besturingssysteem ergens tussen de twee accolades (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:
 
   ```json
     // On Windows:

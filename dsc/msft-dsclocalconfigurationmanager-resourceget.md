@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: ResourceGet-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: De ResourceGet-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceGet-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>De ResourceGet-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Rechtstreeks roept de **ophalen** methode van een DSC-resource.
 
@@ -28,17 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parameters
 ----------
 
-*ResourceType* \[in\]  
-De naam van de bron aan te roepen.
+*ResourceType* \[in\] de naam van de bron aan te roepen.
 
-*ModuleName* \[in\]  
-De naam van de module met de bron aan te roepen.
+*Modulenaam* \[in\] de naam van de module met de bron aan te roepen.
 
-*resourceProperty* \[in\]  
-Hiermee geeft u de naam van de resource-eigenschap en de waarde ervan in een hashtabel als de sleutel en waarde, respectievelijk. Gebruik de [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet voor het detecteren van de resource-eigenschappen en hun typen.
+*resourceProperty* \[in\] specificeert de naam van de resource-eigenschap en de waarde in een hashtabel als sleutel en waarde, respectievelijk. Gebruik de [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet voor het detecteren van de resource-eigenschappen en hun typen.
 
-*configuraties* \[uit\]  
-Bevat een ingesloten exemplaar van de configuraties op return.
+*configuraties* \[uit\] op return bevat een ingesloten exemplaar van de configuraties.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -60,11 +56,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

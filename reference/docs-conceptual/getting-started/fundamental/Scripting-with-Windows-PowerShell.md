@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Met Windows PowerShell-scripts
+title: Scripts uitvoeren met Windows PowerShell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="scripting-with-windows-powershell"></a>Met Windows PowerShell-scripts
+# <a name="scripting-with-windows-powershell"></a>Scripts uitvoeren met Windows PowerShell
 
 Windows PowerShell® is een taakgebaseerde opdrachtregel-shell en scripttaal, speciaal ontworpen voor systeembeheer. Gebaseerd op .NET Framework, Windows PowerShell helpt IT-professionals en Hoofdgebruikers en het beheer van de Windows-besturingssysteem en toepassingen die op Windows worden uitgevoerd.
 
@@ -23,4 +23,3 @@ Windows PowerShell omvat de volgende functies:
 - Vereenvoudigde, op basis van een opdracht navigatie van het besturingssysteem, waarmee gebruikers navigeren het register en andere gegevensarchieven met dezelfde technieken die ze gebruiken om het bestandssysteem te navigeren.
 - Krachtige mogelijkheden voor het manipuleren. Objecten kunnen rechtstreeks worden gemanipuleerd of verzonden naar andere hulpprogramma's of databases.
 - Uitbreidbare interface. Independent software vendors en ontwikkelaars van ondernemingen kunnen bouwen aangepaste hulpprogramma's en hulpmiddelen voor het beheren van hun software.
-

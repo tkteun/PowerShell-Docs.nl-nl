@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
 title: Register PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="register-psrepository"></a>Register PSRepository
 
@@ -16,7 +16,7 @@ Hiermee haalt u de geregistreerde opslagplaatsen op een computer.
 
 ## <a name="description"></a>Beschrijving
 
-De cmdlet Register-PSRepository registreert de onlineopslagplaats voor PowerShell-modules. Nadat een opslagplaats is geregistreerd, u ernaar kunt verwijzen vanuit de Find-Module installeren-Module en de cmdlets Publish-Module. De geregistreerde opslagplaats, wordt de standaard-opslagplaats in zoek-Module en installatie-Module. 
+De cmdlet Register-PSRepository registreert de onlineopslagplaats voor PowerShell-modules. Nadat een opslagplaats is geregistreerd, u ernaar kunt verwijzen vanuit de Find-Module installeren-Module en de cmdlets Publish-Module. De geregistreerde opslagplaats, wordt de standaard-opslagplaats in zoek-Module en installatie-Module.
 
 Geregistreerde opslagplaatsen zijn specifiek voor een gebruiker. Ze zijn niet geregistreerd in een context van het gehele systeem.
 
@@ -32,8 +32,9 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 
 ## <a name="example-commands"></a>Voorbeeldopdrachten
 
-### <a name="register-a-powershell-repository"></a>Registreren van een PowerShell-opslagplaats
-U kunt PowerShellGet werken tegen interne opslagplaatsen configureren. Nadat een opslagplaats is geregistreerd, kunt u zoeken-Module en installatie-Module om hiermee te werken.
+### <a name="register-a-powershell-repository"></a>Een PowerShell-opslagplaats registreren
+U kunt PowerShellGet werken tegen interne opslagplaatsen configureren.
+Nadat een opslagplaats is geregistreerd, kunt u zoeken-Module en installatie-Module om hiermee te werken.
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

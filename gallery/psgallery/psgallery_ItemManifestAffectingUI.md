@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Item manifest waarden die invloed van de gebruikersinterface van de PowerShell-galerie
 
-In dit onderwerp biedt uitgevers met samenvattingsinformatie over het wijzigen van het manifest voor PowerShell Gallery publicaties zodat functies PowerShellGet-cmdlets en de gebruikersinterface van de PowerShell-galerie worden beïnvloed. Deze inhoud is geordend op waar de wijziging wordt weergegeven, vanaf het midden en klik op het navigatiegebied aan de linkerkant. Er is een sectie meer informatie over tags dekking biedt, waarin belangrijke veelgebruikte tags labels, evenals enkele van de meer. Er zijn twee onderwerpen vindt u voorbeelden van manifest: 
+In dit onderwerp biedt uitgevers met samenvattingsinformatie over het wijzigen van het manifest voor PowerShell Gallery publicaties zodat functies PowerShellGet-cmdlets en de gebruikersinterface van de PowerShell-galerie worden beïnvloed.
+Deze inhoud is geordend op waar de wijziging wordt weergegeven, vanaf het midden en klik op het navigatiegebied aan de linkerkant. Er is een sectie meer informatie over tags dekking biedt, waarin belangrijke veelgebruikte tags labels, evenals enkele van de meer.
+Er zijn twee onderwerpen vindt u voorbeelden van manifest:
 
 * Zie voor modules, [Update Module-Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * Zie voor scripts, [scriptbestand met metagegevens maken](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -10,7 +12,7 @@ In dit onderwerp biedt uitgevers met samenvattingsinformatie over het wijzigen v
 De onderstaande tabel bevat de elementen van de PowerShell-galerie-item pagina gebruikersinterface die worden beheerd door de uitgever.
 Elk item geeft aan of kan worden beheerd door het manifest module of script.
 
-| UI-Element | Beschrijving | Module | Script | 
+| UI-Element | Beschrijving | Module | Script |
 | --- | --- | --- | --- |
 | **titel** | Dit is de naam van het item dat is gepubliceerd naar de galerie  | Nee | Nee |
 | **Versie** | De versie die wordt weergegeven is de tekenreeks in de metagegevens en een prerelease als is opgegeven. Het primaire gedeelte van de versie in een Module-manifest is de ModuleVersion. Voor een script wordt vastgesteld als. Versie. Als de tekenreeks van een prerelease-versie is opgegeven, worden deze toegevoegd aan de ModuleVersion voor modules of opgegeven als onderdeel van. De versie voor scripts. Er is voor het opgeven van prerelease tekenreeksen in de documentatie bij [modules](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), en in [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Ja | Ja |
@@ -49,18 +51,26 @@ De pagina bewerken van de PowerShell-galerie-item kunt uitgevers wijzigen aantal
 * Opmerkingen bij de release
 * Licentie nodig
 
-Deze aanpak is algemeen niet aanbevolen, behalve wanneer nodig om op te lossen wat wordt weergegeven voor een oudere versie van een module. Gebruikers die de module verkrijgen ziet de metagegevens komt niet overeen met wat in de PowerShell-galerie, waardoor problemen met het item wordt weergegeven. Dit leidt vaak in query's naar de item eigenaren van de wijziging te bevestigen. Het is raadzaam dat elk gewenst moment dat deze aanpak wordt gebruikt, een nieuwe versie van het item moet worden gepubliceerd met de dezelfde wijzigingen. 
+Deze aanpak is algemeen niet aanbevolen, behalve wanneer nodig om op te lossen wat wordt weergegeven voor een oudere versie van een module.
+Gebruikers die de module verkrijgen ziet de metagegevens komt niet overeen met wat in de PowerShell-galerie, waardoor problemen met het item wordt weergegeven.
+Dit leidt vaak in query's naar de item eigenaren van de wijziging te bevestigen.
+Het is raadzaam dat elk gewenst moment dat deze aanpak wordt gebruikt, een nieuwe versie van het item moet worden gepubliceerd met de dezelfde wijzigingen.
 
 ## <a name="tag-details"></a>Details van label
 
-Labels zijn eenvoudige tekenreeksen consumers gebruikt om items te vinden. Labels zijn het nuttigst wanneer deze consistent worden gebruikt voor veel items die betrekking hebben op hetzelfde onderwerp. Met behulp van meerdere versies van dezelfde biedt word (bijvoorbeeld database en databases, of test en testen) gewoonlijk weinig voordeel. Tags zijn niet hoofdlettergevoelig tekenreeksen van één woord en mag geen lege waarden bevatten. Als er een wachtwoordzin die u denkt gebruikers wordt gezocht dat naar, voegt u toe dat het item beschrijving en het in de zoekresultaten worden gevonden. Gebruik Pascal hoofdlettergebruik, afbreekstreepje, onderstrepingsteken of punt als u probeert om leesbaarheid te verbeteren. Lange, complexe en ongebruikelijke-labels maken voorzichtig zijn als ze vaak worden getypt. 
+Labels zijn eenvoudige tekenreeksen consumers gebruikt om items te vinden.
+Labels zijn het nuttigst wanneer deze consistent worden gebruikt voor veel items die betrekking hebben op hetzelfde onderwerp. Met behulp van meerdere versies van dezelfde biedt word (bijvoorbeeld database en databases, of test en testen) gewoonlijk weinig voordeel.
+Tags zijn niet hoofdlettergevoelig tekenreeksen van één woord en mag geen lege waarden bevatten. Als er een wachtwoordzin die u denkt gebruikers wordt gezocht dat naar, voegt u toe dat het item beschrijving en het in de zoekresultaten worden gevonden. Gebruik Pascal hoofdlettergebruik, afbreekstreepje, onderstrepingsteken of punt als u probeert om leesbaarheid te verbeteren. Lange, complexe en ongebruikelijke-labels maken voorzichtig zijn als ze vaak worden getypt.
 
-Er zijn labels die belangrijk zijn te weten, als de PowerShell-galerie en PowerShellGet cmdlets ze behandelen uniek. PSEdition_Desktop PSEdition_Core zijn de specifieke voorbeelden en hierboven zijn beschreven. 
+Er zijn labels die belangrijk zijn te weten, als de PowerShell-galerie en PowerShellGet cmdlets ze behandelen uniek. PSEdition_Desktop PSEdition_Core zijn de specifieke voorbeelden en hierboven zijn beschreven.
 
-Zoals eerder vermeld, worden de meeste waarde door tags bieden wanneer ze specifiek en gebruikte consistent voor veel items zijn. Als een publisher bij het vinden van de beste labels te gebruiken, is de eenvoudigste manier om te zoeken van de PowerShell-galerie voor labels die u overweegt. In het ideale geval zal er veel items geretourneerd en beschrijvingen van de objecten worden uitgelijnd met uw gebruik van die sleutel woord. 
+Zoals eerder vermeld, worden de meeste waarde door tags bieden wanneer ze specifiek en gebruikte consistent voor veel items zijn.
+Als een publisher bij het vinden van de beste labels te gebruiken, is de eenvoudigste manier om te zoeken van de PowerShell-galerie voor labels die u overweegt.
+In het ideale geval zal er veel items geretourneerd en beschrijvingen van de objecten worden uitgelijnd met uw gebruik van die sleutel woord.
 
-Hier volgen enkele veelgebruikte codes vanaf 14-12/2017 ter referentie. In sommige gevallen zijn vergelijkbaar, maar mogelijk minder ideaal opties weergegeven naast het label.
-Het is een best practice om te gebruiken van de Tag voorkeur als die leiden tot minder ruis en beter zoekresultaten voor consumenten. 
+Hier volgen enkele veelgebruikte codes vanaf 14-12/2017 ter referentie.
+In sommige gevallen zijn vergelijkbaar, maar mogelijk minder ideaal opties weergegeven naast het label.
+Het is een best practice om te gebruiken van de Tag voorkeur als die leiden tot minder ruis en beter zoekresultaten voor consumenten.
 
 
 | **Voorkeur label** | **Alternatieven en -opmerkingen** |
@@ -125,5 +135,3 @@ Het is een best practice om te gebruiken van de Tag voorkeur als die leiden tot 
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

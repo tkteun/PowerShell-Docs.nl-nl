@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Een SMB DSC-pull-server instellen
-ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Een DSC SMB-pull-server instellen
+ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="setting-up-a-dsc-smb-pull-server"></a>Een SMB DSC-pull-server instellen
+# <a name="setting-up-a-dsc-smb-pull-server"></a>Een DSC SMB-pull-server instellen
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,19 +37,19 @@ Configuration SmbShare {
 
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -57,11 +57,11 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
-        
+
     }
- 
+
 }
 ```
 
@@ -78,19 +78,19 @@ Configuration DSCSMB {
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
 Import-DscResource -ModuleName cNtfsAccessControl
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -98,11 +98,11 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
 
         cNtfsPermissionEntry PermissionSet1 {
-            
+
         Ensure = 'Present'
         Path = 'C:\DSCSMB'
         Principal = 'myDomain\Contoso-Server$'
@@ -116,12 +116,12 @@ Import-DscResource -ModuleName cNtfsAccessControl
             }
         )
         DependsOn = '[File]CreateFolder'
-        
+
         }
- 
-        
+
+
     }
- 
+
 }
 ```
 
@@ -133,10 +133,12 @@ Elke configuratie MOF-bestand moet de naam _ConfigurationID_MOF, waarbij _Config
 
 >**Opmerking:** moet u configuratie-ID's gebruiken als u een SMB-pull-server. Namen worden niet ondersteund voor SMB.
 
-Elke resource module moet worden ingepakt en met de naam op basis van de volgende patroon `{Module Name}_{Module Version}.zip`. Bijvoorbeeld, een module met de naam xWebAdminstration met een moduleversie van 3.1.2.0 de naam 'xWebAdministration_3.2.1.0.zip'. Elke versie van een module moet worden opgenomen in een enkel zip-bestand. Omdat er slechts één versie van een resource in elke zip-bestand in WMF 5.0 met de indeling van de module hebt toegevoegd wordt ondersteuning voor meerdere moduleversies van de in een enkele map wordt niet ondersteund. Dit betekent dat voordat verpakking van DSC-resource-modules voor gebruik met pull-server moet u een kleine wijziging aanbrengt in de mapstructuur. De standaardindeling van modules met van DSC-resource in WMF 5.0 is ' {Modulemap}\{moduleversie} \DscResources\{DSC-Resourcemap}\'. Pakketten voor de pull-server te verwijderen en daarna de **{moduleversie}** map zodat het pad ' {Modulemap} \DscResources\{DSC-Resourcemap}\'. Met deze wijziging van de map zip zoals hierboven wordt beschreven en plaats deze zip-bestanden in de map van SMB-share. 
+Elke resource module moet worden ingepakt en met de naam op basis van de volgende patroon `{Module Name}_{Module Version}.zip`. Bijvoorbeeld, een module met de naam xWebAdminstration met een moduleversie van 3.1.2.0 de naam 'xWebAdministration_3.2.1.0.zip'. Elke versie van een module moet worden opgenomen in een enkel zip-bestand. Omdat er slechts één versie van een resource in elke zip-bestand in WMF 5.0 met de indeling van de module hebt toegevoegd wordt ondersteuning voor meerdere moduleversies van de in een enkele map wordt niet ondersteund. Dit betekent dat voordat verpakking van DSC-resource-modules voor gebruik met pull-server moet u een kleine wijziging aanbrengt in de mapstructuur. De standaardindeling van modules met van DSC-resource in WMF 5.0 is ' {Modulemap}\{moduleversie} \DscResources\{DSC-Resourcemap}\'. Pakketten voor de pull-server te verwijderen en daarna de **{moduleversie}** map zodat het pad ' {Modulemap} \DscResources\{DSC-Resourcemap}\'. Met deze wijziging van de map zip zoals hierboven wordt beschreven en plaats deze zip-bestanden in de map van SMB-share.
 
 ## <a name="creating-the-mof-checksum"></a>Maken van de controlesom MOF
-Een configuratie MOF-bestand moet worden gekoppeld aan een bestand controlesom zodat een LCM in een doelknooppunt kunt de configuratie valideren. Aanroepen voor het maken van een controlesom, de [nieuw DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. De cmdlet heeft een **pad** parameter waarmee de map waarin de configuratie van de MOF zich bevindt. De cmdlet maakt een controlesom-bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` is de naam van het mof-bestand voor configuratie. Als er meer dan één configuratie MOF-bestanden in de opgegeven map, wordt een controlesom gemaakt voor elke configuratie in de map.
+Een configuratie MOF-bestand moet worden gekoppeld aan een bestand controlesom zodat een LCM in een doelknooppunt kunt de configuratie valideren.
+Aanroepen voor het maken van een controlesom, de [nieuw DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet. De cmdlet heeft een **pad** parameter waarmee de map waarin de configuratie van de MOF zich bevindt. De cmdlet maakt een controlesom-bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` is de naam van het mof-bestand voor configuratie.
+Als er meer dan één configuratie MOF-bestanden in de opgegeven map, wordt een controlesom gemaakt voor elke configuratie in de map.
 
 De controlesom bestand moet aanwezig zijn in dezelfde map als het MOF-bestand voor configuratie (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` standaard), en hebben dezelfde naam als de `.checksum` extensie toegevoegd.
 
@@ -164,12 +166,12 @@ configuration SmbCredTest
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
             ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
         }
-         
-         ConfigurationRepositoryShare SmbConfigShare      
+
+         ConfigurationRepositoryShare SmbConfigShare
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
@@ -179,8 +181,8 @@ configuration SmbCredTest
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
-            
-        }      
+
+        }
     }
 }
 
@@ -198,7 +200,7 @@ $ConfigurationData = @{
 
         })
 
-        
+
 
 }
 ```
@@ -214,5 +216,3 @@ Speciale dankzij het volgende:
 - [Windows PowerShell Desired State Configuration-overzicht](overview.md)
 - [Configuraties doorvoeren](enactingConfigurations.md)
 - [Een pull-client instellen met behulp van het configuratie-id](pullClientConfigID.md)
-
- 

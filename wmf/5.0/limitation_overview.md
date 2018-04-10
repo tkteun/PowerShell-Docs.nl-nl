@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-and-limitations"></a>Bekende problemen en beperkingen
 
@@ -63,23 +63,23 @@ Er zijn twee oplossingen voor dit probleem, afhankelijk van de versie van Window
 **Oplossing:**
 - Voor systemen met **Windows Server 2008 R2**
   1. Open Powershell als beheerder
-  2. De volgende opdracht uitvoeren 
-  
+  2. De volgende opdracht uitvoeren
+
   ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
   ```
   3. Voer de opdracht en de fout negeren als ze worden geacht.
-  
+
   ```powershell
     Publish-SilData
    ```
   4. Verwijder de bestanden in de map \Windows\System32\Logfiles\SIL\
-  
+
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
   5. Alle beschikbare belangrijke Windows-Updates installeren en de bewerking Sysyprep normaal.
-  
+
 - Voor systemen met **Windows Server 2012**
   1.    Na het installeren van WMF 5.0 op de server worden 'd Sysprep, meld u aan als beheerder.
   2.    Kopieer Generize.xml van directory \Windows\System32\Sysprep\ActionFiles\ naar een locatie buiten de Windows-map C:\ bijvoorbeeld.
@@ -96,24 +96,23 @@ Er zijn twee oplossingen voor dit probleem, afhankelijk van de versie van Window
   7.    Voer de volgende opdracht eigenaar van het bestand Generalize.xml in de map system32:
 
     ```
-    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
 
   8.    Voer de volgende opdracht om de juiste machtigingen instellen voor het bestand:
 
     ```
-    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
     ```
-      * Ja bij de prompt voor bevestiging. 
+      * Ja bij de prompt voor bevestiging.
       * Houd er rekening mee dat `<AdministratorUserName>` moet worden vervangen door de gebruikersnaam die beheerder is op de machine. Bijvoorbeeld 'Beheerder'.
-      
+
   9.    Kopieer het bestand dat u bewerkt en opgeslagen naar de Sysprep-map met de volgende opdracht:
 
     ```
-    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
       * Ja (opmerking die wordt u niet gevraagd om te overschrijven, double Controleer in het opgegeven pad) overschrijven.
       * Wordt ervan uitgegaan dat de bewerkte kopie van Generalize.xml is gekopieerd naar C:\.
 
   10.   Generalize.XML is nu bijgewerkt met de tijdelijke oplossing. Voer Sysprep met de optie generalize is ingeschakeld.
-

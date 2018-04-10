@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: de website op basis van windows powershell-console gebruiken
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -18,15 +18,18 @@ Windows PowerShell Web Access kunnen gebruikers zich aanmelden bij een beveiligd
 
 Omdat de Windows PowerShell-console wordt uitgevoerd in een webbrowser, kan worden geopend vanaf een groot aantal clientapparaten; bijna alle apparaten met een webbrowser werken.
 
-Het web gebaseerde Windows PowerShell-console is gericht op een externe computer die is opgegeven door gebruikers als onderdeel van het proces aanmelden. 
+Het web gebaseerde Windows PowerShell-console is gericht op een externe computer die is opgegeven door gebruikers als onderdeel van het proces aanmelden.
 
 Dit onderwerp wordt beschreven hoe u zich aanmeldt bij en aan de slag met de webconsole voor Windows PowerShell Web Access.
 
-In dit onderwerp wordt niet beschreven hoe u Windows PowerShell gebruiken of cmdlets of scripts worden uitgevoerd. Zie voor meer informatie over het gebruik van Windows PowerShell en scripting resources de [Zie ook](#see-also) sectie aan het einde van dit onderwerp.
+In dit onderwerp wordt niet beschreven hoe u Windows PowerShell gebruiken of cmdlets of scripts worden uitgevoerd.
+Zie voor meer informatie over het gebruik van Windows PowerShell en scripting resources de [Zie ook](#see-also) sectie aan het einde van dit onderwerp.
 
 ## <a name="supported-browsers-and-client-devices"></a>Ondersteunde browsers en clientapparaten
 
-Windows PowerShell-webtoegang ondersteunt de volgende internetbrowsers. Hoewel mobiele browsers officieel niet worden ondersteund, is het mogelijk dat veel kunnen worden uitgevoerd van het web gebaseerde Windows PowerShell-console. Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites kunnen worden uitgevoerd, werken waarschijnlijk wel, maar zijn niet officieel getest.
+Windows PowerShell-webtoegang ondersteunt de volgende internetbrowsers.
+Hoewel mobiele browsers officieel niet worden ondersteund, is het mogelijk dat veel kunnen worden uitgevoerd van het web gebaseerde Windows PowerShell-console.
+Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites kunnen worden uitgevoerd, werken waarschijnlijk wel, maar zijn niet officieel getest.
 
 ### <a name="supported-desktop-computer-browsers"></a>Ondersteunde browsers voor desktopcomputers
 

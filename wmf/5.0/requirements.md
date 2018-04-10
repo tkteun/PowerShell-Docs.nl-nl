@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>Systeemvereisten
 
@@ -55,7 +55,7 @@ Zorg ervoor dat de volgende vereisten wordt voldaan:
 Windows Server 2008 R2 SP1 en Windows 7 SP1 systemen hebben ingebouwde PowerShell 2.0, WinRM en WMI. WMF 3.0 en WMF 4.0-pakketten, die deze ingebouwde onderdelen bijwerkt, zijn na de release van Windows Server 2008 R2 SP1 en Windows 7 SP1 uitgebracht. Pakketten installeren/verwijderen WMF 3.0 en WMF 4.0 gesignaleerde sommige problemen in het volgende upgradepad:
 
 - Built-in --> WMF 4.0
-- Built-in --> WMF 3.0 --> WMF4.0. 
+- Built-in --> WMF 3.0 --> WMF4.0.
 
 We al deze problemen opgelost in WMF 4.0-pakketten. Er is daarom een vereiste van WMF 4.0 voor het installeren van WMF 5.0 op Windows Server 2008 R2 SP1 en Windows 7 SP1. Hieronder worden de specifieke problemen die optreden kunnen als u WMF 4.0 niet vóór de upgrade naar WMF 5.0 installeert:
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  Klik op **geïnstalleerde updates weergeven.**
 
 4.  Selecteer **Windows Management Framework 5.0** uit de lijst met geïnstalleerde updates. Dit komt overeen met *KB3134758*, *KB3134759*, of *KB3134760*. Klik op **verwijderen.**
-

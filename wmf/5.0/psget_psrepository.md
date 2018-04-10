@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 81ce13a082ad1d7a13ba5fd76a7595b55708f54e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 269f4112704067f291728e4c1d745d68ec6ccd6f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="register-a-powershell-repository"></a>Registreren van een PowerShell-opslagplaats
+# <a name="register-a-powershell-repository"></a>Een PowerShell-opslagplaats registreren
 U kunt PowerShellGet interne opslagplaatsen kunnen configureren. Dit wordt gedaan met behulp van de volgende toevoegingen:
 - Register-PSRepository: Registreert een opslagplaats voor de huidige gebruiker.
 - Registratie-PSRepository: Hiermee verwijdert u een geregistreerde opslagplaats voor de huidige gebruiker.
@@ -42,4 +42,3 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
-

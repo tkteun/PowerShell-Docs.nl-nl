@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: psgallery_deploy_to_azure_automation
-ms.openlocfilehash: 223acbcc2f6cd4f15e1ee55d3f2f68df851cd902
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8da4eabead6a419dc0c01c74335c06bf8be25d0c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-<a name="deploy-to-azure-automation"></a>Implementeren in Azure Automation
+<a name="deploy-to-azure-automation"></a>Implementeren naar Azure Automation
 ===========================
 
 De implementeren in Azure Automation-knop op de detailpagina item implementeert het item uit de galerie PowerShell voor Azure Automation.
@@ -27,4 +27,3 @@ Als u een module implementeert, wordt deze weergegeven in de sectie Modules van 
 De implementeren in Azure Automation-knop kan worden uitgeschakeld door de tag AzureAutomationNotSupported toe te voegen aan de itemmetagegevens.
 
 Zie voor meer informatie over Azure Automation, de Azure Automation-website [Azure Automation-website](http://azure.microsoft.com/services/automation/).
-

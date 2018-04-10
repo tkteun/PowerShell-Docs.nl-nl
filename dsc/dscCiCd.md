@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
 
 In dit voorbeeld laat zien hoe een continue integratie met doorlopend implementatie (CI/CD)-pijplijn maken met behulp van PowerShell, DSC, Pester en Visual Studio Team Foundation Server (TFS).
 
-Nadat de pijplijn is gemaakt en geconfigureerd, kunt u gebruiken deze volledig implementeren, configureren en testen van een DNS-server en host-records die zijn gekoppeld. Dit proces wordt het eerste deel van een pijplijn die moet worden gebruikt in een ontwikkelingsomgeving gesimuleerd.
+Nadat de pijplijn is gemaakt en geconfigureerd, kunt u gebruiken deze volledig implementeren, configureren en testen van een DNS-server en host-records die zijn gekoppeld.
+Dit proces wordt het eerste deel van een pijplijn die moet worden gebruikt in een ontwikkelingsomgeving gesimuleerd.
 
 Een geautomatiseerde CI/CD-pijplijn, kunt u software sneller en betrouwbaarder, ervoor te zorgen dat alle code wordt getest en dat er een huidige build van uw code is beschikbaar te allen tijde.
 
@@ -60,7 +61,7 @@ De computer moet worden uitgevoerd [Windows Server 2016](https://www.microsoft.c
 ### <a name="testagent2"></a>TestAgent2
 
 Dit is de computer die als host fungeert voor de website die in dit voorbeeld configureert.
-De computer moet worden uitgevoerd [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+De computer moet worden uitgevoerd [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>Voeg de code naar TFS
 
@@ -156,7 +157,8 @@ Hiermee vindt u alle knooppunten die zijn gedefinieerd als bestanden met de rol 
 
 Met behulp van de configuratiegegevens voor het definiëren van knooppunten is belangrijk bij het uitvoeren van CI omdat knooppunt informatie waarschijnlijk tussen omgevingen veranderen zullen en configuratiegegevens met kunt u gemakkelijk wijzigingen aanbrengen in knooppunt informatie zonder de configuratiecode te wijzigen.
 
-In de eerste resource blok, de configuratie roept de [WindowsFeature](windowsFeatureResource.md) om ervoor te zorgen dat de DNS-functie is ingeschakeld. De resource-blokken die resources van de aanroep van volgen de [xDnsServer](https://github.com/PowerShell/xDnsServer) module voor het configureren van de primaire zone en DNS-records.
+In de eerste resource blok, de configuratie roept de [WindowsFeature](windowsFeatureResource.md) om ervoor te zorgen dat de DNS-functie is ingeschakeld.
+De resource-blokken die resources van de aanroep van volgen de [xDnsServer](https://github.com/PowerShell/xDnsServer) module voor het configureren van de primaire zone en DNS-records.
 
 U ziet dat de twee `xDnsRecord` blokken zijn samengevoegd in `foreach` lussen die matrices in de configuratiegegevens doorlopen.
 De configuratiegegevens wordt opnieuw gemaakt door de `DevEnv.ps1` script, dat zullen we op volgende.
@@ -199,7 +201,8 @@ In ons geval alleen de `RawEnvData` parameter wordt gebruikt.
 ### <a name="the-psake-build-script"></a>Het psake build script
 
 De [psake](https://github.com/psake/psake) bouwen script gedefinieerd in `Build.ps1` (in de hoofdmap van de opslagplaats Demo_CI `./InfraDNS/Build.ps1`) taken die deel van de build uitmaken definieert.
-Het definieert ook welke andere elke taak afhankelijk van is taken. Als deze wordt aangeroepen, het script psake zorgt ervoor dat de opgegeven taak (of de taak met de naam `Default` als niets wordt opgegeven) wordt uitgevoerd en dat alle afhankelijkheden ook uitvoeren (dit is recursieve, zodat de afhankelijkheden van afhankelijkheden hebt uitgevoerd, enzovoort).
+Het definieert ook welke andere elke taak afhankelijk van is taken.
+Als deze wordt aangeroepen, het script psake zorgt ervoor dat de opgegeven taak (of de taak met de naam `Default` als niets wordt opgegeven) wordt uitgevoerd en dat alle afhankelijkheden ook uitvoeren (dit is recursieve, zodat de afhankelijkheden van afhankelijkheden hebt uitgevoerd, enzovoort).
 
 In dit voorbeeld wordt de `Default` taak is gedefinieerd als:
 
@@ -263,7 +266,7 @@ De mappen die wordt gebruikt voor het voorbeeld maakt en verwijdert u alle testr
 
 De [psake](https://github.com/psake/psake) gedefinieerd in een script voor implementatie `Deploy.ps1` (in de hoofdmap van de opslagplaats Demo_CI `./InfraDNS/Deploy.ps1`) taken die implementeren en uitvoeren van de configuratie definieert.
 
-`Deploy.ps1`definieert de volgende taken:
+`Deploy.ps1` definieert de volgende taken:
 
 #### <a name="deploymodules"></a>DeployModules
 
@@ -334,8 +337,8 @@ Deze stap build wordt uitgevoerd de `initiate.ps1` -bestand, dat het psake build
 
 ### <a name="publish-test-results"></a>Testresultaten publiceren
 
-1. Stel **Resultaatindeling testen** naar`NUnit`
-1. Stel **testresultaten bestanden** naar`InfraDNS/Tests/Results/*.xml`
+1. Stel **Resultaatindeling testen** naar `NUnit`
+1. Stel **testresultaten bestanden** naar `InfraDNS/Tests/Results/*.xml`
 1. Stel **testen uitvoeren titel** naar `Unit`.
 1. Zorg ervoor dat **beheeropties** **ingeschakeld** en **altijd uitgevoerd** zijn beide ingeschakeld.
 
@@ -352,15 +355,15 @@ Deze stap build wordt uitgevoerd de eenheidstests in het Pester-script dat we ee
     **\Integration\**
     ```
 
-1. Stel **TargetFolder** naar`$(Build.ArtifactStagingDirectory)\`
+1. Stel **TargetFolder** naar `$(Build.ArtifactStagingDirectory)\`
 
 Deze stap kopieert de build en test scripts aan de staging-map zodanig dat het kan worden gepubliceerd als artefacten bouwen door de volgende stap.
 
 ### <a name="publish-artifact"></a>Publiceren van artefacten
 
-1. Stel **pad voor het publiceren van** naar`$(Build.ArtifactStagingDirectory)\`
-1. Stel **artefact naam** naar`Deploy`
-1. Stel **artefact Type** naar`Server`
+1. Stel **pad voor het publiceren van** naar `$(Build.ArtifactStagingDirectory)\`
+1. Stel **artefact naam** naar `Deploy`
+1. Stel **artefact Type** naar `Server`
 1. Selecteer `Enabled` in **opties instellen**
 
 ## <a name="enable-continuous-integration"></a>Continue integratie inschakelen
@@ -393,21 +396,21 @@ Bewerk de stappen uit als volgt:
 
 ### <a name="powershell-script"></a>PowerShell Script
 
-1. Stel de **scriptpad** veld`$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Stel de **argumenten** veld`-fileName Deploy`
+1. Stel de **scriptpad** veld `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Stel de **argumenten** veld `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>Testresultaten eerst publiceren
 
 1. Selecteer `NUnit` voor de **Resultaatindeling Test** veld
-1. Stel de **resultaat testbestanden** veld`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Stel de **testen uitvoeren titel** naar`Integration`
+1. Stel de **resultaat testbestanden** veld `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Stel de **testen uitvoeren titel** naar `Integration`
 1. Onder **beheeropties**, Controleer **altijd worden uitgevoerd**
 
 ### <a name="second-publish-test-results"></a>Tweede publiceren testresultaten
 
 1. Selecteer `NUnit` voor de **Resultaatindeling Test** veld
-1. Stel de **resultaat testbestanden** veld`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Stel de **testen uitvoeren titel** naar`Acceptance`
+1. Stel de **resultaat testbestanden** veld `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Stel de **testen uitvoeren titel** naar `Acceptance`
 1. Onder **beheeropties**, Controleer **altijd worden uitgevoerd**
 
 ## <a name="verify-your-results"></a>De resultaten controleren
@@ -422,10 +425,3 @@ U kunt het resultaat van de implementatie controleren door een browser op de cli
 In dit voorbeeld configureert de DNS-server `TestAgent1` zodat de URL `www.contoso.com` wordt omgezet naar `TestAgent2`, maar deze een website niet daadwerkelijk implementeren.
 Het basisproject hiertoe vindt u in de opslagplaats onder de `WebApp` map.
 U kunt de stubs voor het maken van psake scripts, Pester tests en DSC-configuraties gebruiken voor het implementeren van uw eigen website.
-
-
-
-
-
-
-

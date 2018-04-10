@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 7ad4a00f7beba0de70696d88cd5448c7c638c50c
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 0c450d765531c18c0b73c5c64262e9895f92068a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="archive-cmdlets"></a>Archief-cmdlets
 
@@ -16,7 +16,7 @@ Twee nieuwe cmdlets, **comprimeren archief** en **uit te breiden archief**laat u
 ## <a name="compress-archive"></a>Compress-archief
 De **comprimeren archief** cmdlet maakt een nieuw archiefbestand van opgegeven bestanden. Een archiefbestand kan meerdere bestanden die moeten worden verpakt en optioneel in een enkel bestand gemakkelijker verwerking en opslag zijn gecomprimeerd. Een archiefbestand worden gecomprimeerd met behulp van een compressiealgoritme die is opgegeven in de **- CompressionLevel** parameter.
 ```powershell
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>] 
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 ```
 
@@ -26,4 +26,3 @@ De **uit te breiden archief** cmdlet bestanden uit een bestand opgegeven archief
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>
 ```
-

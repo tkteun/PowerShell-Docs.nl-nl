@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: pswaauthorizationrule verwijderen
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ Verwijdert een opgegeven autorisatieregel uit de Windows PowerShell Web Access.
 
 De cmdlet uitvoert zonder dat om bevestiging wordt gevraagd. Standaard wordt de cmdlet gevraagd om bevestiging voordat u doorgaat.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -53,7 +53,7 @@ De cmdlet uitvoert zonder dat om bevestiging wordt gevraagd. Standaard wordt de 
 
 Hiermee geeft u de id's van een of meer regels te verwijderen.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -66,7 +66,7 @@ Hiermee geeft u de id's van een of meer regels te verwijderen.
 
 Hiermee geeft u de regels te verwijderen.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -79,7 +79,7 @@ Hiermee geeft u de regels te verwijderen.
 
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |
@@ -91,7 +91,7 @@ Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
 Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
-|||  
+|||
 |-|-|
 | Nodig?                            | onjuist                                |
 | Positie?                            | Met de naam                                |

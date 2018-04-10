@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
 keywords: jea powershell beveiliging
 title: JEA beveiligingsoverwegingen
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA beveiligingsoverwegingen
 
@@ -153,4 +153,3 @@ Daarom is het belangrijk om te bepalen van uw gebruikers JEA uitgebreide machtig
 
 Een gebruikelijk is JEA voor regelmatig onderhoud van de dagelijkse en hebben een 'just-in tijd' uitgebreide oplossing voor het beheer van toegang kunnen gebruikers zich tijdelijk worden lokale beheerders in noodsituaties.
 Dit zorgt ervoor gebruikers geen permanente beheerders op het systeem, maar deze rechten kunnen krijgen als en alleen wanneer ze een werkstroom die het gebruik van deze machtigingen documenten voltooien.
-

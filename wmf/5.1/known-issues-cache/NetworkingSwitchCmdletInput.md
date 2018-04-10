@@ -1,49 +1,52 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 contributor: vaibch
 title: Fout Netwerkswitchbeheer-cmdlets
-ms.openlocfilehash: d9fcdedbfc7d0c3f68624ed1db6259e04c3d06d1
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
-De cmdlets Netwerkswitchbeheer kan worden gebruikt voor het beheren van netwerkswitches via WSMAN. Er zijn enkele cmdlets van deze module geschikt is voor het accepteren van waarden van pijplijnen. WMF Preview-versie 5.1 mislukt de cmdlets die de waarde van de pijplijn kan accepteren moet worden uitgevoerd wanneer de waarden niet via pijplijnen doorgegeven worden.
+De cmdlets Netwerkswitchbeheer kan worden gebruikt voor het beheren van netwerkswitches via WSMAN.
+Er zijn enkele cmdlets van deze module geschikt is voor het accepteren van waarden van pijplijnen.
+WMF Preview-versie 5.1 mislukt de cmdlets die de waarde van de pijplijn kan accepteren moet worden uitgevoerd wanneer de waarden niet via pijplijnen doorgegeven worden.
 
 Als de parameter 'InputObject' niet gebruikt wordt, blijven de cmdlet moet worden uitgevoerd zonder fouten.
 
-Hier volgt de lijst van beïnvloede cmdlets dat wil zeggen deze cmdlets kunnen accepteren waarde voor parameter 'InputObject' van de pijplijn. Als deze waarde niet uit de pijplijn wordt doorgegeven mislukt tijdens de uitvoering van de cmdlet.
+Hier volgt de lijst van beïnvloede cmdlets dat wil zeggen deze cmdlets kunnen accepteren waarde voor parameter 'InputObject' van de pijplijn.
+Als deze waarde niet uit de pijplijn wordt doorgegeven mislukt tijdens de uitvoering van de cmdlet.
 
-- Schakel NetworkSwitchEthernetPort
-- Schakel NetworkSwitchEthernetPort
-- Verwijder NetworkSwitchEthernetPortIPAddress
+- Disable-NetworkSwitchEthernetPort
+- Enable-NetworkSwitchEthernetPort
+- Remove-NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchPortMode
 - Set-NetworkSwitchPortProperty
 - Schakel NetworkSwitchFeature
 - Schakel NetworkSwitchFeature
-- Verwijder NetworkSwitchVlan
+- Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
 ### <a name="resolution"></a>Oplossing
 De cmdlets werk fijn wanneer de waarde van parameter InputObject doorgegeven in deze pijplijn. Er zijn enkele voorbeelden die voor de bovenstaande cmdlets werken:
 
-- Schakel NetworkSwitchEthernetPort
+- Disable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
 
-- Schakel NetworkSwitchEthernetPort
+- Enable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Enable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
 
-- Verwijder NetworkSwitchEthernetPortIPAddress
+- Remove-NetworkSwitchEthernetPortIPAddress
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Remove-NetworkSwitchEthernetPortIPAddress -CimSession $cimSession
@@ -82,4 +85,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: DSC-Pull-Service
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: DSC-pull-service
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-desired State Configuration-Service
 
@@ -67,7 +67,7 @@ Hieronder vindt u een voorbeeldscript.
 De eenvoudigste manier voor het instellen van een pull-webserver is met de resource xWebService, opgenomen in de module xPSDesiredStateConfiguration.
 De volgende stappen wordt uitgelegd hoe u de bron in een configuratie die de webservice heeft ingesteld.
 
-1. Roep de [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet voor het installeren van de **xPSDesiredStateConfiguration** module. **Opmerking**: **Install-Module** is opgenomen in de **PowerShellGet** module die is opgenomen in PowerShell 5.0. U kunt downloaden via de **PowerShellGet** -module voor PowerShell 3.0 en 4.0 op [PackageManagement PowerShell-Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186). 
+1. Roep de [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet voor het installeren van de **xPSDesiredStateConfiguration** module. **Opmerking**: **Install-Module** is opgenomen in de **PowerShellGet** module die is opgenomen in PowerShell 5.0. U kunt downloaden via de **PowerShellGet** -module voor PowerShell 3.0 en 4.0 op [PackageManagement PowerShell-Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 1. Een SSL-certificaat ophalen voor de DSC-Pull-server via een vertrouwde certificeringsinstantie zich binnen uw organisatie of een openbare CA. Het certificaat dat is ontvangen van de instantie is meestal de PFX-indeling. Installeer het certificaat op het knooppunt dat de DSC-Pull-server op de standaardlocatie CERT: \LocalMachine\My moet worden. Noteer de certificaatvingerafdruk van het.
 1. Selecteer een GUID moet worden gebruikt als de registratiesleutel. Voor het genereren van een met behulp van PowerShell, typ het volgende achter de PS-prompt en druk op enter: '``` [guid]::newGuid()```'of'```New-Guid```'. Deze sleutel wordt door de knooppunten van de client worden gebruikt als een gedeelde sleutel om te verifiëren tijdens de registratie. Zie de sectie registratiesleutel hieronder voor meer informatie.
 1. Start in de PowerShell ISE (F5) het volgende configuratiescript (opgenomen in de map voorbeeld van de **xPSDesiredStateConfiguration** module als Sample_xDscWebService.ps1). Dit script is ingesteld van de pull-server.
@@ -127,7 +127,7 @@ De volgende stappen wordt uitgelegd hoe u de bron in een configuratie die de web
 1. Voer de configuratie, voor het doorgeven van de vingerafdruk van het SSL-certificaat als de **certificateThumbPrint** parameter en de registratie van een GUID sleutel als de **RegistrationKey** parameter:
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ De volgende stappen wordt uitgelegd hoe u de bron in een configuratie die de web
 #### <a name="registration-key"></a>Registratiesleutel
 
 Als u wilt toestaan client knooppunten om te registreren bij de server, zodat ze configuratienamen in plaats van een configuratie-ID gebruiken kunnen, een registratiesleutel die is gemaakt door de bovenstaande configuratie wordt opgeslagen in een bestand met de naam `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. De registratiesleutel fungeert als een gedeeld geheim gebruikt tijdens de initiële registratie door de client met de pull-server. De client genereert een zelfondertekend certificaat dat is gebruikt voor een unieke verificatie naar de pull-server wanneer de registratie is voltooid. De vingerafdruk van dit certificaat wordt lokaal opgeslagen en die zijn gekoppeld aan de URL van de pull-server.
-> **Opmerking**: registratiesleutels worden niet ondersteund in PowerShell 4.0. 
+> **Opmerking**: registratiesleutels worden niet ondersteund in PowerShell 4.0.
 
 Om te configureren van een knooppunt om te verifiëren met de pull-server van de registratie van de moet sleutel in de metaconfiguratie voor elk doelknooppunt die zal worden geregistreerd met deze pull-server. Houd er rekening mee dat de **RegistrationKey** in de onderstaande metaconfiguratie wordt verwijderd nadat de doelmachine heeft geregistreerd en de waarde '140a952b-b9d6-406b-b416-e0f759c9c0e4' moet overeenkomen met de waarde die is opgeslagen in de RegistrationKeys.txt-bestand op de pull-server. Altijd worden beschouwd door de waarde van de registratie-sleutel veilig, omdat elke doelcomputer registreren bij de pull-server geïnstalleerd is toegestaan.
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ Om de instelling gezamenlijk valideren en het beheren van de eenvoudiger, pull-s
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

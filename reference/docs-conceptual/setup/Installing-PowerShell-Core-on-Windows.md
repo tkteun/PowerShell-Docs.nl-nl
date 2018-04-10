@@ -1,18 +1,18 @@
-# <a name="installing-powershell-core-on-windows"></a>PowerShell Core installeren in Windows
+# <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
 ## <a name="msi"></a>MSI
 
 PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1 Server 2008 R2 en hoger), het downloaden van het MSI-pakket van onze GitHub [releases][] pagina.
 
-Het MSI-bestand ziet er zo-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Het MSI-bestand ziet er zo- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Zodra u hebt gedownload, dubbelklikt u op het installatieprogramma en volg de aanwijzingen.
 
 Er is een snelkoppeling geplaatst in het Menu Start na de installatie.
 
-* Het pakket wordt standaard geïnstalleerd op`$env:ProgramFiles\PowerShell\`
-* U kunt PowerShell via het Menu Start starten of`$env:ProgramFiles\PowerShell\pwsh.exe`
+* Het pakket wordt standaard geïnstalleerd op `$env:ProgramFiles\PowerShell\`
+* U kunt PowerShell via het Menu Start starten of `$env:ProgramFiles\PowerShell\pwsh.exe`
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -23,7 +23,7 @@ Voor meer informatie over het inschakelen van PowerShell voor externe toegang vi
   Volledig hersteld (inclusief optionele pakketten), ondersteunde systemen beschikt al over deze software al geïnstalleerd.
 * Windows Management Framework (WMF) installeren [4.0](https://www.microsoft.com/download/details.aspx?id=40855) of hoger ([5.1](https://www.microsoft.com/download/details.aspx?id=54616)) in Windows 7 en Windows Server 2008 R2.
 
-## <a name="zip"></a>POSTCODE
+## <a name="zip"></a>ZIP
 
 PowerShell binaire ZIP-archief zijn bedoeld om geavanceerde implementatiescenario's inschakelen.
 Worden opgemerkt dat de controle van vereisten zoals in het MSI-pakket bij gebruik van het ZIP-archief krijgen Won't.

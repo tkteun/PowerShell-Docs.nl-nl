@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-10-13
+ms.date: 10/13/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Desired State Configuration overzicht voor besluitvormers
-ms.openlocfilehash: ae545ead0718def44d5a17708d254b872691e1d3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Overzicht Desired State Configuration voor besluitvormers
+ms.openlocfilehash: 3d2d4b7e09fb699751151d7af641410bae3b38a4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration overzicht voor Engineers
+# <a name="desired-state-configuration-overview-for-engineers"></a>Overzicht Desired State Configuration voor technici
 
 Dit document is bedoeld voor teams van ontwikkelaars en bewerkingen om te begrijpen wat de voordelen van PowerShell Desired State Configuration (DSC).
 Voor de weergave van een hoger niveau van de waarde DSC biedt, raadpleegt u [Desired Configuration overzicht voor besluitvormers](decisionMaker.md)

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 350555220757b1939b1de34ab423e963635eb53c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: ab82b239ddfdb4075d9440cd66343266b3c08eda
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>De SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Hiermee stelt u de lokale Configuration Manager-instellingen die worden gebruikt voor het beheren van de configuratie-Agent.
 
@@ -26,11 +26,9 @@ uint32 SendMetaConfigurationApply(
 <a name="parameters"></a>Parameters
 ----------
 
-*ConfigurationData* \[in\]  
-De omgevingsgegevens voor de configuratie.
+*ConfigurationData* \[in\] de omgevingsgegevens voor de configuratie.
 
-*Force* \[in\]  
-**de waarde True** om af te dwingen van de configuratie te stoppen.
+*Force* \[in\] **true** om af te dwingen van de configuratie te stoppen.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -52,11 +50,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

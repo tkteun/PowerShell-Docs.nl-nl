@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: De Package DSC-Resource
-ms.openlocfilehash: 68b996e0f51e60bc178c27e3a71f07fb7220f847
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cfa9d53d5ea588b0ec97e5503302a451caa09e03
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-package-resource"></a>De Package DSC-Resource
 
@@ -33,17 +33,17 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschappen
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
-| Naam| Geeft de naam van het pakket waarvan u wilt om te controleren of een specifieke status.| 
-| Pad| Geeft het pad waar het pakket zich bevindt.| 
-| product-id| Geeft de product-ID die een unieke identificatie van het pakket.| 
-| Argumenten| Geeft een lijst van een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies zoals opgegeven.| 
-| referentie| Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket is altijd geïnstalleerd op het lokale systeem.| 
-| Zorg ervoor dat| Hiermee wordt aangegeven of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig' controleert u dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.| 
-| Logboekpad| Hiermee geeft u het volledige pad waar u de provider een logboekbestand om te installeren of verwijderen van het pakket opslaan.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = '[ ResourceType] ResourceName' ''.| 
-| ReturnCode| Geeft aan de verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde opgegeven, dat wordt de configuratie een fout geretourneerd.| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
+| Naam| Geeft de naam van het pakket waarvan u wilt om te controleren of een specifieke status.|
+| Pad| Geeft het pad waar het pakket zich bevindt.|
+| product-id| Geeft de product-ID die een unieke identificatie van het pakket.|
+| Argumenten| Geeft een lijst van een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies zoals opgegeven.|
+| referentie| Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket is altijd geïnstalleerd op het lokale systeem.|
+| Zorg ervoor dat| Hiermee wordt aangegeven of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig' controleert u dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.|
+| Logboekpad| Hiermee geeft u het volledige pad waar u de provider een logboekbestand om te installeren of verwijderen van het pakket opslaan.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = '[ ResourceType] ResourceName' ''.|
+| ReturnCode| Geeft aan de verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde opgegeven, dat wordt de configuratie een fout geretourneerd.|
 
 ## <a name="example"></a>Voorbeeld
 
@@ -58,7 +58,6 @@ Configuration PackageTest
         Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
         Name        = "TestPackage"
         ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-    } 
+    }
 }
 ```
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Systeemvereisten voor Windows PowerShell
+title: Windows PowerShell-systeemvereisten
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-powershell-system-requirements"></a>Systeemvereisten voor Windows PowerShell
+# <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
 Dit onderwerp worden de systeemvereisten voor Windows PowerShell 3.0, Windows PowerShell 4.0 en Windows PowerShell 5.0 en voor speciale functies, zoals Windows PowerShell Integrated Scripting Environment (ISE), CIM-opdrachten en werkstromen.
 
 Windows® 8.1 en Windows Server® 2012 R2 moet u alle vereiste programma's bevatten. Dit onderwerp is bedoeld voor gebruikers van eerdere versies van Windows.
@@ -65,7 +65,7 @@ Zie het installeren van de volledige installatie van Microsoft .NET Framework 4 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 vereist Windows Management Framework 4.0 moet worden geïnstalleerd op Windows Server 2008 R2 SP1 en Windows 7 SP1.
 
-## <a name="ws-management-30"></a>3.0 WS-Management
+## <a name="ws-management-30"></a>WS-Management 3.0
 Windows PowerShell 3.0 en Windows PowerShell 4.0 vereist WS-Management-3.0, die ondersteuning biedt voor de WinRM-service en de WSMan-protocol. Dit programma is opgenomen in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 en Windows Management Framework 3.0.
 
 ## <a name="windows-management-instrumentation-30"></a>Windows Management Instrumentation 3.0
@@ -85,11 +85,11 @@ Echter bepaalde items, zoals de volgende, vereisen een grafische gebruikersinter
 
     1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Opdracht weergeven](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Weergeven ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Weergeven EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parameters
 
@@ -111,13 +111,13 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 en Windows PowerShell 4.0 worden 
 
 - [Cmdlets van Background Intelligent Transfer Service (BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-gebeurtenislogboek](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
 - [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Help opslaan](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Help bijwerken](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 Ook de **WinRM** service is niet aanwezig is op Windows PE.
 
@@ -125,4 +125,3 @@ Ook de **WinRM** service is niet aanwezig is op Windows PE.
 - [Aan de slag met Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Windows PowerShell installeren](Installing-Windows-PowerShell.md)
 - [Windows PowerShell starten](Starting-Windows-PowerShell.md)
-

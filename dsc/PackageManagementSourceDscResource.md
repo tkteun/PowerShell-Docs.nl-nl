@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-PackageManagementSource Resource
-ms.openlocfilehash: 1c904c70369a75802484c3c0520df63602760361
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 8c0cb5a3b0a019ddb5ed995406f499298103b07c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC-PackageManagementSource Resource
 
@@ -30,30 +30,29 @@ PSModule [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschappen
-|  Eigenschap  |  Beschrijving   | 
-|---|---| 
-| Naam| Hiermee geeft u de naam van de pakketbron om te worden ingeschreven of niet geregistreerd op uw systeem.| 
-| Zorg ervoor dat| Hiermee wordt bepaald of de pakketbron worden geregistreerd of de registratie is verwijderd.| 
-| InstallationPolicy| Hiermee bepaalt u of u de pakketbron vertrouwt. Een van: 'Niet vertrouwd', 'Vertrouwd'.| 
-| ProviderName| Hiermee geeft u de naam van de OneGet provider waarmee u interop met de pakketbron kunt.| 
-| SourceUri| Hiermee geeft u de URI van de pakketbron.| 
-| SourceCredential| Biedt toegang tot het pakket op een externe bron.| 
+|  Eigenschap  |  Beschrijving   |
+|---|---|
+| Naam| Hiermee geeft u de naam van de pakketbron om te worden ingeschreven of niet geregistreerd op uw systeem.|
+| Zorg ervoor dat| Hiermee wordt bepaald of de pakketbron worden geregistreerd of de registratie is verwijderd.|
+| InstallationPolicy| Hiermee bepaalt u of u de pakketbron vertrouwt. Een van: 'Niet vertrouwd', 'Vertrouwd'.|
+| ProviderName| Hiermee geeft u de naam van de OneGet provider waarmee u interop met de pakketbron kunt.|
+| SourceUri| Hiermee geeft u de URI van de pakketbron.|
+| SourceCredential| Biedt toegang tot het pakket op een externe bron.|
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld wordt de http://nuget.org pakket bron via de **PackageManagementSource** DSC-resource.
+In dit voorbeeld wordt de http://nuget.org pakket bron met behulp van de **PackageManagementSource** DSC-resource.
 
 ```powershell
 Configuration PackageManagementSourceTest
-{    
+{
     PackageManagementSource SourceRepository
     {
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
     }
 }
 ```
-

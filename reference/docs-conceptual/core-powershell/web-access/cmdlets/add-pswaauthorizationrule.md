@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell-cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: pswaauthorizationrule toevoegen
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ De autorisatieregels evalueren van de primaire aanmelden referentie van de Windo
 
 Hiermee geeft de naam van een computergroep in Active Directory Domain Services (AD DS) of het lokale groepen waarop deze regel toegang verleent.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -75,7 +75,7 @@ Hiermee geeft de naam van een computergroep in Active Directory Domain Services 
 
 Hiermee geeft u de naam van de computer waarop deze regel toegang verleent.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -88,7 +88,7 @@ Hiermee geeft u de naam van de computer waarop deze regel toegang verleent.
 
 Geeft de naam van de configuratie van Windows PowerShell-sessie, ook wel bekend als runspace waarvoor deze regel toegang verleent.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -101,7 +101,7 @@ Geeft de naam van de configuratie van Windows PowerShell-sessie, ook wel bekend 
 
 Hiermee geeft u een **PSCredential** -object voor een gebruikersaccount dat u wilt gebruiken om Windows PowerShell-webtoegang autorisatieregels te wijzigen. Als u deze parameter niet toevoegt, gebruikt de cmdlet het account momenteel aangemelde gebruiker. Ophalen van een **PSCredential** -object, dat vereist is voor het op afstand autorisatieregels toevoegen, voert u de [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -115,7 +115,7 @@ Hiermee geeft u een **PSCredential** -object voor een gebruikersaccount dat u wi
 Hiermee wordt de opdracht uitgevoerd zonder gebruikersbevestiging. \
 Bovendien ook wordt gevraagd om bevestiging wanneer u een eenvoudige of korte computernaam (zoals een naam die niet een domeinnaam of is geen volledig pad) opgeven. Bevestiging is aangevraagd uit veiligheidsoverwegingen, zodat u kunt de eenvoudige naam toevoegen van een computer alleen als de computer zich in een werkgroep.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -128,7 +128,7 @@ Bovendien ook wordt gevraagd om bevestiging wanneer u een eenvoudige of korte co
 
 Hiermee geeft u de beschrijvende naam voor deze regel.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
@@ -141,7 +141,7 @@ Hiermee geeft u de beschrijvende naam voor deze regel.
 
 Hiermee geeft u de naam van een of meer gebruikersgroepen in AD DS of lokale groepen waarop deze regel toegang verleent.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -155,7 +155,7 @@ Hiermee geeft u de naam van een of meer gebruikersgroepen in AD DS of lokale gro
 Hiermee geeft u een of meer gebruikers waarop deze regel toegang verleent. De gebruikersnaam mag een lokale gebruikersaccount op de gatewaycomputer of een gebruiker in AD DS.
 De indeling is `domain\user` of `computer\user`.
 
-|||  
+|||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | De waarde True                                 |
@@ -217,9 +217,9 @@ In dit voorbeeld laat zien hoe voor het invoeren van waarden van de naam van geb
 In dit voorbeeld ziet u hoe u alle parameters waaruit waarden pijplijn naam van de eigenschap.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

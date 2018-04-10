@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Kennismaking met Windows PowerShell ISE
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
@@ -20,13 +20,13 @@ Probeer deze functies in Windows PowerShell ISE.
 
 De Windows PowerShell ISE kunt u bepaalde aspecten van de weergave aanpassen. Ook heeft een eigen Windows PowerShell-profiel, waarin u functies, aliassen, variabelen en opdrachten die u gebruikt in de Windows PowerShell ISE kunt opslaan.
 
-### <a name="to-start-the-windows-powershell-ise"></a>Starten van de Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>Starten van de Windows PowerShell ISE
 
 Voer een van de volgende handelingen uit:
 
 - Klik op **Start**, wijs **alle programma's**, wijs **Windows PowerShell V2**, en klik vervolgens op **Windows PowerShell ISE**.
 - In de Windows PowerShell-console Cmd.exe of in het vak uitvoeren, type, **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Om hulp te krijgen in de Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Om hulp te krijgen in de Windows PowerShell ISE
 
 Op de **Help** menu, klikt u op **Windows PowerShell Help**. Of druk op F1. Windows PowerShell ISE- en Windows PowerShell, inclusief alle van de Help-informatie van de cmdlet Get-Help beschrijving van het bestand dat wordt geopend.

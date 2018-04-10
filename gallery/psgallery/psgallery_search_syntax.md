@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galerie, powershell, cmdlet, psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>Galerie Zoeksyntaxis
 
@@ -49,7 +49,7 @@ is een andere manier om items met 'AzureRM.Profile' niet vinden in het id-veld.
 Het filter 'Id' is een subtekenreeks, dus als u zoekt naar het volgende:
 
     Id:"azure"
-    
+
 U krijgt resultaten zoals 'AzureRM.Profile' en 'Azure.Storage'.
 
 U kunt ook zoeken naar meerdere trefwoorden in één veld. Of meng en velden overeenkomen.
@@ -71,7 +71,7 @@ Om te zoeken in alle items met de opgegeven functie.
     Functions:"Update-AzureRM"
 
 Om te zoeken in alle items met de opgegeven cmdlet.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 Om te zoeken in alle items met de opgegeven naam van de DSC-Resource.
@@ -88,8 +88,7 @@ Alle items met de opgegeven PowerShellVersion zoeken
 Ten slotte, als u een veld die wordt niet ondersteund, zoals 'opdrachten', gebruiken we net negeren, en zoeken van alle velden. Zodat de volgende query
 
     commands:blobs storage
-    
+
 Is geïnterpreteerd exact hetzelfde zijn als deze query:
 
     blobs storage
-

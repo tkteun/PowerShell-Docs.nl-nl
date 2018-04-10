@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
+keywords: wmf,powershell,installeren
 title: Verbeteringen in de beheerconsole in WMF 5.1
-ms.openlocfilehash: b0859191ea310c9b73fe9f255d7f256a1cc1af1f
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 2abc02010c6c1d9f7fc617e9831b2d1243e0a3ee
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="console-improvements-in-wmf-51"></a>Verbeteringen in de beheerconsole in WMF 5.1#
 
@@ -21,7 +21,8 @@ De volgende wijzigingen zijn aangebracht aan powershell.exe in WMF 5.1 om de con
 Windows 10 is ondersteuning toegevoegd voor [VT100 escapereeksen](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
 PowerShell worden bepaalde VT100 opmaak escapereeksen genegeerd bij het berekenen van de Tabelbreedten.
 
-PowerShell toegevoegd ook een nieuwe API die kan worden gebruikt in de opmaak opgeven om te bepalen of VT100 wordt ondersteund. Bijvoorbeeld:
+PowerShell toegevoegd ook een nieuwe API die kan worden gebruikt in de opmaak opgeven om te bepalen of VT100 wordt ondersteund.
+Bijvoorbeeld:
 
 ```
 if ($host.UI.SupportsVirtualTerminal)
@@ -37,17 +38,18 @@ else
 Hier volgt een volledige [voorbeeld](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) die kunnen worden gebruikt om te markeren overeenkomsten uit de Select-tekenreeks.
 Opslaan van het voorbeeld in een bestand met de naam `MatchInfo.format.ps1xml`, voert u voor het gebruik ervan in uw profiel of elders, `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-Houd er rekening mee dat VT100 escapereeksen worden alleen ondersteund met de update voor Windows 10 Verjaardag; starten ze worden niet ondersteund op oudere systemen.   
+Houd er rekening mee dat VT100 escapereeksen worden alleen ondersteund met de update voor Windows 10 Verjaardag; starten ze worden niet ondersteund op oudere systemen.
 
 ### <a name="vi-mode-support-in-psreadline"></a>Ondersteuning voor VI-modus in PSReadline
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) voegt ondersteuning toe voor vi-modus. Voer om vi modus gebruiken `Set-PSReadlineOption -EditMode Vi`.
 
-### <a name="redirected-stdin-with-interactive-input"></a>Omgeleide stdin met interactieve invoer 
+### <a name="redirected-stdin-with-interactive-input"></a>Omgeleide stdin met interactieve invoer
 
 In eerdere versies, PowerShell met vanaf `powershell -File -` is vereist wanneer stdin is omgeleid en u wilt voert opdrachten interactief.
 
-Met WMF 5.1, dit moeilijk te detecteren optie is niet meer nodig. U kunt PowerShell starten zonder opties, zoals `powershell`.
+Met WMF 5.1, dit moeilijk te detecteren optie is niet meer nodig.
+U kunt PowerShell starten zonder opties, zoals `powershell`.
 
-Let op: PSReadline biedt momenteel geen ondersteuning voor omgeleid stdin, en de ingebouwde opdrachtregel bewerken ervaring met omgeleide stdin is zeer beperkt, bijvoorbeeld pijltoetsen werken niet. Een toekomstige release van PSReadline moet dit probleem kunt oplossen.   
-
+Let op: PSReadline biedt momenteel geen ondersteuning voor omgeleid stdin, en de ingebouwde opdrachtregel bewerken ervaring met omgeleide stdin is zeer beperkt, bijvoorbeeld pijltoetsen werken niet.
+Een toekomstige release van PSReadline moet dit probleem kunt oplossen.

@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galerie, powershell, cmdlet, psget
-title: Publiceren-Module
-ms.openlocfilehash: 53fca3d6756ebf698023152ce5b58b45eb0ef757
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Publish-Module
+ms.openlocfilehash: 8b73be2814678ce143cc5b53e2b8103b3297eb6a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-module"></a>Publiceren-Module
+# <a name="publish-module"></a>Publish-Module
 
 Een opgegeven module uit de lokale computer aan een online galerie publiceert.
 
@@ -33,7 +33,7 @@ Get-Command -Name Publish-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Verwijzing naar het online help van cmdlet
 
-[Publiceren-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
+[Publish-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
 
 ## <a name="example-commands"></a>Voorbeeldopdrachten
 
@@ -72,8 +72,8 @@ _------ ---- ---------- -----------
 ### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>Maakt een module met afhankelijkheden en bereik van de versie opgegeven in de eigenschap RequiredModules van de module-manifest.
 
 **Opmerking:**
-  - \*wordt alleen ondersteund in MaximumVersion en ook moet aan het einde van de versietekenreeks. 
-  - \*vervangen door 999999999 in de version-object.
+  - \* wordt alleen ondersteund in MaximumVersion en ook moet aan het einde van de versietekenreeks.
+  - \* vervangen door 999999999 in de version-object.
 
 ```powershell
 PS C:\windows\system32> $requiredModules = @( @{ModuleName = 'RequiredModule1'; ModuleVersion = '0.1'; MaximumVersion = '1.9'; }, @{ModuleName = 'RequiredModule2'; MaximumVersion = '1.*'; })
@@ -180,4 +180,3 @@ Als 'SnippetPx' niet beschikbaar in de opslagplaats is, hieronder fout gegeneree
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-

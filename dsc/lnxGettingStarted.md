@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met Desired State Configuration (DSC) aan de slag voor Linux
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Met Desired State Configuration (DSC) aan de slag voor Linux
 
@@ -25,14 +25,14 @@ De volgende versies van Linux-besturingssystemen worden ondersteund voor DSC voo
 
 De volgende tabel beschrijft de afhankelijkheden vereist pakket voor DSC voor Linux.
 
-|  Vereist pakket |  Beschrijving |  Minimale versie | 
+|  Vereist pakket |  Beschrijving |  Minimale versie |
 |---|---|---|
-| glibc| GNU-bibliotheek| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| Open Management Infrastructure| 1.0.8.1| 
-| Openssl| OpenSSL-bibliotheken| 0.9.8 of 1.0| 
-| ctypes| CTypes Python-bibliotheek| Moet overeenkomen met de versie van Python| 
-| libcurl| http-clientbibliotheek cURL| 7.15.1| 
+| glibc| GNU-bibliotheek| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| Open Management Infrastructure| 1.0.8.1|
+| Openssl| OpenSSL-bibliotheken| 0.9.8 of 1.0|
+| ctypes| CTypes Python-bibliotheek| Moet overeenkomen met de versie van Python|
+| libcurl| http-clientbibliotheek cURL| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>DSC voor Linux installeren
 
@@ -52,12 +52,12 @@ Voer de volgende opdracht voor het installeren van OMI op een systeem CentOS 7 x
 
 ### <a name="installing-dsc"></a>DSC installeren
 
-DSC voor Linux is beschikbaar als download [hier](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest). 
+DSC voor Linux is beschikbaar als download [hier](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).
 
 Installeer het pakket dat geschikt is voor uw Linux-systeem (.rpm of .deb) en de versie van OpenSSL (ssl_098 of ssl_100) en de architectuur (x64/x86) voor het installeren van DSC. RPM pakketten zijn geschikt voor CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server en Oracle Linux. DEB pakketten zijn geschikt voor Debian GNU/Linux en Ubuntu Server. De ssl_098-pakketten zijn geschikt voor computers met OpenSSL 0.9.8 hebt geïnstalleerd terwijl de ssl_100-pakketten geschikt voor computers met OpenSSL 1.0 is geïnstalleerd zijn.
 
 > **Opmerking**: om te bepalen van de geïnstalleerde versie van OpenSSL, voert u de opdracht openssl-versie.
- 
+
 Voer de volgende opdracht DSC installeren op een systeem CentOS 7 x64.
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ De configuratie van Windows PowerShell-sleutelwoord gebruikt voor het maken van 
 1. Importeer de module NX inschakelen. De nx Windows PowerShell-module moet bevat het schema voor ingebouwde bronnen voor DSC voor Linux en worden geïnstalleerd op uw lokale computer en geïmporteerd in de configuratie.
 
     -Voor het installeren van de module nx, kopieert u de modulemap nx naar elk `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules`. De module nx is opgenomen in de DSC voor Linux-installatiepakket (MSI). Gebruik de module nx in uw configuratie importeren de __importeren DSCResource__ opdracht:
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>De configuratie van de push naar de Linux-computer
@@ -117,15 +117,15 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **Opmerking**:
 * Voor de modus 'Push' moet de gebruikersreferentie de hoofdgebruiker op de Linux-computer.
 * Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, de New-CimSession moet worden gebruikt met de parameter – UseSSL is ingesteld op $true.
 * Het SSL-certificaat gebruikt door OMI (DSC) is opgegeven in het bestand: `/opt/omi/etc/omiserver.conf` met de eigenschappen: pemfile en keyfile.
-Als dit certificaat niet wordt vertrouwd door de Windows-computer die u gebruikt de [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet op, kunt u voor het negeren van validatie van het servercertificaat met de opties CIMSession:`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Als dit certificaat niet wordt vertrouwd door de Windows-computer die u gebruikt de [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet op, kunt u voor het negeren van validatie van het servercertificaat met de opties CIMSession: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Voer de volgende opdracht om de DSC-configuratie naar de Linux-knooppunt.
 
@@ -162,7 +162,7 @@ DSC voor Linux bevat scripts werken met de configuratie van de lokale Linux-comp
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  Geldt een MOF-bestand voor configuratie voor de computer. Net als bij de [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet. Het pad naar MOF toepassen van de configuratie vereist.
 
@@ -182,4 +182,3 @@ De volgende logboekbestanden worden gegenereerd voor DSC voor Linux-berichten.
 |---|---|---|
 |omiserver.log|/var/opt/OMI/log|Berichten met betrekking tot de werking van de OMI-CIM-server.|
 |dsc.log|/var/opt/OMI/log|Berichten met betrekking tot de werking van de bewerkingen van de lokale Configuration Manager (LCM) en DSC-resources.|
-

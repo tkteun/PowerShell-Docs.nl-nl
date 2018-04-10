@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Schrijven van een aangepaste DSC-resource met MOF
-ms.openlocfilehash: c416fd7cac80d37f1ca1393fa644b4bc15743724
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4e336e837d2153fecab8325cb8714ffed85a6175
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Schrijven van een aangepaste DSC-resource met MOF
 
@@ -56,12 +56,12 @@ class Demo_IISWebsite : OMI_BaseResource
 
 Houd rekening met de volgende met betrekking tot de vorige code:
 
-* `FriendlyName`definieert de naam die u gebruiken kunt om te verwijzen naar deze aangepaste resource in scripts voor DSC-configuratie. In dit voorbeeld `Website` komt overeen met de beschrijvende naam `Archive` voor de ingebouwde archief-resource.
+* `FriendlyName` definieert de naam die u gebruiken kunt om te verwijzen naar deze aangepaste resource in scripts voor DSC-configuratie. In dit voorbeeld `Website` komt overeen met de beschrijvende naam `Archive` voor de ingebouwde archief-resource.
 * De klasse die u definieert voor de aangepaste resource moet worden afgeleid van `OMI_BaseResource`.
 * De kwalificatie type `[Key]`op een eigenschap aangeeft dat deze eigenschap een unieke identificatie van de resource-instantie. Ten minste één `[Key]` eigenschap is vereist.
 * De `[Required]` kwalificatie geeft aan dat de eigenschap vereist is (er moet een waarde worden opgegeven in een configuratiescript dat gebruikmaakt van deze bron).
 * De `[write]` kwalificatie geeft aan dat deze eigenschap optioneel is bij het gebruik van de aangepaste resource in een configuratiescript. De `[read]` kwalificatie geeft aan dat een eigenschap kan niet worden ingesteld door een configuratie en is alleen voor rapportagedoeleinden.
-* `Values`Hiermee beperkt u de waarden die kunnen worden toegewezen aan de eigenschap aan de lijst met waarden die zijn gedefinieerd in `ValueMap`. Zie voor meer informatie [ValueMap en waarde-kwalificaties bevat](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* `Values` Hiermee beperkt u de waarden die kunnen worden toegewezen aan de eigenschap aan de lijst met waarden die zijn gedefinieerd in `ValueMap`. Zie voor meer informatie [ValueMap en waarde-kwalificaties bevat](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
 * Met inbegrip van een eigenschap genaamd `Ensure` met waarden `Present` en `Absent` in de bron, wordt aanbevolen als een manier om een consistente stijl met ingebouwde DSC-resources te onderhouden.
 * Naam van het schemabestand voor uw aangepaste resource als volgt: `classname.schema.mof`, waarbij `classname` is de id die volgt de `class` -sleutelwoord in de schemadefinitie van de.
 
@@ -117,7 +117,7 @@ function Get-TargetResource
                                         Protocol = $Website.bindings.Collection.protocol;
                                         Binding = $Website.bindings.Collection.bindingInformation;
                                     }
-  
+
         $getTargetResourceResult;
 }
 ```
@@ -131,7 +131,7 @@ Afhankelijk van de waarden die zijn opgegeven voor de resource-eigenschappen in 
 Het volgende voorbeeld ziet u dit.
 
 ```powershell
-# The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
+# The Set-TargetResource function is used to create, delete or configure a website on the target machine.
 function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
@@ -157,7 +157,7 @@ function Set-TargetResource
 
         [string[]]$Protocol
     )
- 
+
     <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
     <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
     <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
@@ -207,15 +207,15 @@ $ApplicationPool
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-#Include logic to 
+#Include logic to
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
 $result
 }
 ```
 
-**Opmerking**: voor gemakkelijker foutopsporing, gebruikt u de **Write-Verbose** cmdlet in uw implementatie van de vorige drie functies. 
->Deze cmdlet schrijft tekst naar de uitgebreide berichtenstroom. 
+**Opmerking**: voor gemakkelijker foutopsporing, gebruikt u de **Write-Verbose** cmdlet in uw implementatie van de vorige drie functies.
+>Deze cmdlet schrijft tekst naar de uitgebreide berichtenstroom.
 >Standaard de uitgebreide berichtenstroom niet wordt weergegeven, maar kunt u deze weergeven door het wijzigen van de waarde van de **$VerbosePreference** variabele of met behulp van de **uitgebreid** parameter in de DSC-cmdlets = new.
 
 ### <a name="creating-the-module-manifest"></a>Maken van de module-manifest
@@ -290,7 +290,3 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
-
-
-
-

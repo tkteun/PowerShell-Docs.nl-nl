@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxPackage Resource
-ms.openlocfilehash: 41c627ebb39dad535f7acc8fe34739355f7a81b5
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 0a62bb01c2daa57bd5d6f1ef131ec8ae6d6f81ee
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC voor Linux nxPackage Resource
 
@@ -26,29 +26,29 @@ nxPackage <string> #ResourceName
     [ ReturnCode = <uint32> ]
     [ LogPath = <string> ]
     [ DependsOn = <string[]> ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving | 
+|  Eigenschap |  Beschrijving |
 |---|---|
-| Naam| De naam van het pakket waarvan u wilt om te controleren of een specifieke status.| 
-| Zorg ervoor dat| Bepaalt of Controleer of het pakket bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het pakket bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het pakket bestaat niet. De standaardwaarde is 'Aanwezig'.|  
-| PackageManager| Ondersteunde waarden zijn 'yum', 'apt' en 'zypper'. Hiermee geeft u de package manager te gebruiken bij het installeren van pakketten. Als **FilePath** is opgegeven, wordt het opgegeven pad wordt gebruikt om het pakket te installeren. Een Package Manager anders wordt gebruikt voor het installeren van het pakket van een vooraf geconfigureerde opslagplaats. Als geen van beide **PackageManager** noch **FilePath** zijn opgegeven, de standaard package manager voor het systeem wordt gebruikt.| 
-| FilePath| Het pad waar het pakket zich bevindt| 
-| PackageGroup| Als **$true**, wordt de **naam** wordt verwacht dat de naam van de groep van een pakket voor gebruik met een **PackageManager**. **PacakgeGroup** is niet geldig bij het opgeven van een **FilePath**.| 
-| Argumenten| Een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies zoals opgegeven.| 
-| ReturnCode| De verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde opgegeven, dat wordt de configuratie een fout geretourneerd.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
+| Naam| De naam van het pakket waarvan u wilt om te controleren of een specifieke status.|
+| Zorg ervoor dat| Bepaalt of Controleer of het pakket bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het pakket bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het pakket bestaat niet. De standaardwaarde is 'Aanwezig'.|
+| PackageManager| Ondersteunde waarden zijn 'yum', 'apt' en 'zypper'. Hiermee geeft u de package manager te gebruiken bij het installeren van pakketten. Als **FilePath** is opgegeven, wordt het opgegeven pad wordt gebruikt om het pakket te installeren. Een Package Manager anders wordt gebruikt voor het installeren van het pakket van een vooraf geconfigureerde opslagplaats. Als geen van beide **PackageManager** noch **FilePath** zijn opgegeven, de standaard package manager voor het systeem wordt gebruikt.|
+| FilePath| Het pad waar het pakket zich bevindt|
+| PackageGroup| Als **$true**, wordt de **naam** wordt verwacht dat de naam van de groep van een pakket voor gebruik met een **PackageManager**. **PacakgeGroup** is niet geldig bij het opgeven van een **FilePath**.|
+| Argumenten| Een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies zoals opgegeven.|
+| ReturnCode| De verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde opgegeven, dat wordt de configuratie een fout geretourneerd.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld
 
 Het volgende voorbeeld zorgt ervoor dat het pakket met de naam 'httpd' op een Linux-computer, met behulp van de 'Yum' package manager is geïnstalleerd.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxPackage httpd
@@ -59,4 +59,3 @@ nxPackage httpd
 }
 }
 ```
-

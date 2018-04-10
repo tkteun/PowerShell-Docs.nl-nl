@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxArchive Resource
-ms.openlocfilehash: e91ef5bcf4bdf413844c23d1d3bd823a535b536f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 142f0317914f1bd3a0523d706b19662f3f64c8b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive Resource
 
@@ -29,21 +29,21 @@ nxArchive <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving | 
+|  Eigenschap |  Beschrijving |
 |---|---|
-| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. | 
-| DestinationPath| Hiermee geeft u de locatie waar u Zorg ervoor dat de inhoud van het archief worden opgehaald.| 
-| Controlesom| Definieert het type moet worden gebruikt bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime', 'mtime' of 'md5'. De standaardwaarde is 'md5'.| 
-| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.| 
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.| 
-| Zorg ervoor dat| Hiermee bepaalt u of Controleer of de inhoud van het archief bestaat op de **bestemming**. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de inhoud bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat ze bestaan niet. De standaardwaarde is 'Aanwezig'.| 
+| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. |
+| DestinationPath| Hiermee geeft u de locatie waar u Zorg ervoor dat de inhoud van het archief worden opgehaald.|
+| Controlesom| Definieert het type moet worden gebruikt bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime', 'mtime' of 'md5'. De standaardwaarde is 'md5'.|
+| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.|
+| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| Zorg ervoor dat| Hiermee bepaalt u of Controleer of de inhoud van het archief bestaat op de **bestemming**. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de inhoud bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat ze bestaan niet. De standaardwaarde is 'Aanwezig'.|
 
 ## <a name="example"></a>Voorbeeld
 
 Het volgende voorbeeld ziet u hoe u de **nxArchive** resource om ervoor te zorgen dat de inhoud van een archiefbestand aangeroepen `website.tar` bestaan en op een bepaalde bestemming worden opgehaald.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFile SyncArchiveFromWeb
 {
@@ -60,6 +60,5 @@ nxArchive SyncWebDir
    DestinationPath = “/usr/local/apache2/htdocs/”
    Force = $false
    DependsOn = "[nxFile]SyncArchiveFromWeb"
-} 
+}
 ```
-

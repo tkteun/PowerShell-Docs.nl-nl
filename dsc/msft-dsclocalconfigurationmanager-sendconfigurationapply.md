@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 20f732d35860cccde4e507dc6916e27d0cf8c5f6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: De SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 8edf8c55089e767394ba21b42fe74072777a45c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>De SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Het configuratiebestand voor het beheerde knooppunt verzendt en gebruik van de configuratie-Agent voor de configuratie.
 
@@ -26,11 +26,9 @@ uint32 SendConfigurationApply(
 <a name="parameters"></a>Parameters
 ----------
 
-*ConfigurationData* \[in\]  
-De omgevingsgegevens voor de configuratie.
+*ConfigurationData* \[in\] de omgevingsgegevens voor de configuratie.
 
-*Force* \[in\]  
-**de waarde True** om af te dwingen van de configuratie te stoppen.
+*Force* \[in\] **true** om af te dwingen van de configuratie te stoppen.
 
 ## <a name="return-value"></a>Retourwaarde
 ------------
@@ -52,11 +50,3 @@ Dit is een statische methode.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, powershell, setup
-ms.openlocfilehash: 8b414331bbfb7dc71d960241a6bc83b0b22641db
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,installeren
+ms.openlocfilehash: 7eaa4dfb68bc299ad31bce81af96b6a760c4fcc5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-custom-types-using-powershell-classes"></a>Maken van aangepaste typen met behulp van PowerShell-klassen
+# <a name="creating-custom-types-using-powershell-classes"></a>Aangepaste typen maken met PowerShell-klassen
 
 We hebben de PowerShell-taal voor het definiëren van klassen en andere door de gebruiker gedefinieerde typen met behulp van formele syntaxis en de semantiek die vergelijkbaar met andere objectgeoriënteerde programmeertalen zijn verbeterd. Het doel is om in te schakelen van ontwikkelaars en IT-professionals Profiteer van PowerShell voor een breed scala aan gebruiksvoorbeelden, ontwikkeling van PowerShell-artefacten (zoals DSC-resources) te vereenvoudigen en dekking van management vlakken versnellen.
 
@@ -20,4 +20,3 @@ We hebben de PowerShell-taal voor het definiëren van klassen en andere door de 
 -   Ondersteuning voor overname met de klasse in PowerShell en klasse base DSC-resource
 -   Fouten opsporen in typen met behulp van de PowerShell-taal
 -   Genereren en verwerken van uitzonderingen met behulp van formele mechanismen en op het juiste niveau
-

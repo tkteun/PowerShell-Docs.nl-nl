@@ -1,4 +1,4 @@
-# <a name="powershell-core-support-lifecycle"></a>PowerShell Core Support Lifecycle
+# <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
 PowerShell Core is een unieke set van hulpprogramma's en onderdelen die is verzonden, geïnstalleerd en geconfigureerd afzonderlijk vanuit Windows PowerShell.
 PowerShell Core is daarom niet opgenomen in de licentieovereenkomsten voor Windows 7/8.1/10 of Windows Server.
@@ -34,7 +34,7 @@ Uiteindelijk we verwachten PowerShell Core invoert 'op lange termijn onderhoud' 
 PowerShell Core wordt officieel ondersteund op de volgende platforms:
 
 * Windows 7, 8.1 en 10
-* Windows Server 2008 R2, 2012 R2 2016
+* Windows Server 2008 R2, 2012 R2, 2016
 * [Windows-serverkanaal puntkomma per jaar][semi-annual]
 * Ubuntu 14.04 16.04 en 17.04
 * Debian 8,7 + en 9
@@ -42,7 +42,7 @@ PowerShell Core wordt officieel ondersteund op de volgende platforms:
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42,2
 * Fedora 25, 26
-* Mac OS 10,12 +
+* macOS 10.12+
 
 Onze community heeft ook bijgedragen pakketten voor de volgende platforms, maar ze zijn niet officieel suppported:
 
@@ -62,12 +62,12 @@ Ondersteuning voor PowerShell Core niet van toepassing op andere modules product
 Bijvoorbeeld, met behulp van de `ActiveDirectory` module die wordt geleverd als onderdeel van Windows Server een niet-ondersteund scenario is.
 
 Modules die niet expliciet PowerShell Core ondersteunen mogelijk echter compatibel in sommige gevallen.
-Door het installeren van de [`WindowsPSModulePath`][] -module, kunt u de Windows PowerShell toevoegen `PSModulePath` naar uw PowerShell-kern `PSModulePath`.
+Door het installeren van de [ `WindowsPSModulePath` ][] -module, kunt u de Windows PowerShell toevoegen `PSModulePath` naar uw PowerShell-kern `PSModulePath`.
 
 Installeer eerst de `WindowsPSModulePath` module op basis van de PowerShell-galerie:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -89,4 +89,4 @@ Add-WindowsPSModulePath
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT-licentie]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

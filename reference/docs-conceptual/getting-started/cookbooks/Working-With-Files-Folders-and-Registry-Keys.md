@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Werken met bestanden, mappen en registersleutels
+title: Met bestanden, mappen en registersleutels werken
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en registersleutels
+
 Windows PowerShell maakt gebruik van het zelfstandig naamwoord **Item** om te verwijzen naar objecten gevonden op een Windows PowerShell-station. Het bestandssysteem van Windows PowerShell-provider betreft een **Item** mogelijk een bestand, een map of het Windows PowerShell-station. Aanbieding van en werken met de volgende items is een kritieke basic taak in de meeste beheerinstellingen, zodat we willen deze taken in detail behandeld.
 
 ### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Het inventariseren van bestanden, mappen en registersleutels (Get-ChildItem)
+
 Omdat een verzameling items ophalen uit een bepaalde locatie een algemene taak is, de **Get-ChildItem** cmdlet is speciaal ontworpen om te retourneren van alle items gevonden binnen een container, zoals een map.
 
 Als u wilt retourneren van alle bestanden en mappen die zijn opgenomen in de map C: rechtstreeks\\Windows, type:
@@ -20,6 +22,7 @@ Als u wilt retourneren van alle bestanden en mappen die zijn opgenomen in de map
 ```
 PS> Get-ChildItem -Path C:\Windows
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
+
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2006-05-16   8:10 AM          0 0.log
@@ -32,13 +35,14 @@ De aanbieding lijkt op wat u ziet wanneer u de **dir** opdracht in **Cmd.exe**, 
 
 U kunt zeer complexe aanbiedingen uitvoeren met behulp van de parameters van de **Get-ChildItem** cmdlet. Kijken we enkele scenario's naast. Ziet u de syntaxis van de **Get-ChildItem** cmdlet door te typen:
 
-```
-PS> Get-Command -Name Get-ChildItem -Syntax
+```powershell
+Get-Command -Name Get-ChildItem -Syntax
 ```
 
 Deze parameters kunnen worden gecombineerd en worden aangepast om zeer aangepaste uitvoer te halen.
 
 #### <a name="listing-all-contained-items--recurse"></a>Lijst van alle opgenomen Items (-Recurse)
+
 Als zowel de items in een Windows-map en alle items die deel uitmaken van de submappen wilt weergeven, gebruikt de **Recurse** parameter van **Get-ChildItem**. De aanbieding wordt alles weergegeven in de Windows-map en de items in de submappen ervan. Bijvoorbeeld:
 
 ```
@@ -53,6 +57,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 #### <a name="filtering-items-by-name--name"></a>Items met de naam filteren (-naam)
+
 Alleen de namen van items weergegeven, gebruikt u de **naam** parameter van **Get-Childitem**:
 
 ```
@@ -64,15 +69,17 @@ assembly
 ```
 
 #### <a name="forcibly-listing-hidden-items--force"></a>Geforceerd verborgen Items weergeven (-Force)
+
 Items die normaal gesproken niet zichtbaar in Windows Verkenner of Cmd.exe zijn worden niet weergegeven in de uitvoer van een **Get-ChildItem** opdracht. U verborgen items weergeven met behulp de **Force** parameter van **Get-ChildItem**. Bijvoorbeeld:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
 Deze parameter is met de naam Force omdat kunt u de normale werking van geforceerd overschrijven de **Get-ChildItem** opdracht. Force is een veelgebruikte parameter dat ervoor zorgt een actie die een cmdlet niet normaal kunt uitvoeren, dat hoewel een actie op die de beveiliging van het systeem wordt aangetast wordt niet uitgevoerd.
 
 #### <a name="matching-item-names-with-wildcards"></a>Overeenkomende itemnamen met jokertekens
+
 **De Get-ChildItem** opdracht accepteert jokertekens in het pad van de items om weer te geven.
 
 Omdat met jokertekens worden verwerkt door de Windows PowerShell-engine, alle cmdlets die jokertekens accepteert de dezelfde notatie hebben en hetzelfde gedrag overeenkomende hebt. De Windows PowerShell-notatie hebben jokertekens bevat:
@@ -89,6 +96,7 @@ Als u alle bestanden in de Windows-map met het achtervoegsel **.log** en exact v
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -103,24 +111,27 @@ Mode                LastWriteTime     Length Name
 
 Als u alle bestanden die met de letter beginnen **x** Typ in de Windows-map:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
 Als u alle bestanden waarvan de naam met begint **x** of **z**, type:
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
 #### <a name="excluding-items--exclude"></a>Items uitsluiten (-uitsluiten)
+
 U kunt specifieke items uitsluiten door de **uitsluiten** parameter van Get-ChildItem. Hiermee kunt u complexe filteren in één instructie uitvoeren.
 
 Stel dat u wilt zoeken naar het DLL-bestand van Windows Time-Service in de map System32 en alle makkelijk te onthouden over de naam van het DLL-bestand is dat het begint met de letter "W" en '32' bevat.
 
 Een expressie, zoals **w\&#42; 32\&#42;. DLL-bestand** vindt u alle dll-bestanden die voldoen aan de voorwaarden, maar er kan ook de Windows 95 en 16-bits Windows compatibiliteit dll-bestanden met '95' of '16' geretourneerd in hun naam. U kunt bestanden met een van deze getallen in hun namen met behulp van weglaten de **uitsluiten** parameter met het patroon  **\&#42;\[ 9516]\&#42;**:
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+```
+PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+
 Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -132,13 +143,15 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      82944 ws2_32.dll
 -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
 -a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+-a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
+```
 
 #### <a name="mixing-get-childitem-parameters"></a>De combinatie van Parameters voor Get-ChildItem
+
 U kunt verschillende van de parameters van de **Get-ChildItem** cmdlet in dezelfde opdracht. Voordat u parameters mengen, moet u dat u bekend met jokertekens bent. De volgende opdracht wordt bijvoorbeeld geen resultaten oplevert:
 
-```
-PS> Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
+```powershell
+Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
 Er zijn geen resultaten, zelfs als er zijn twee dll's die met de letter "z" in de Windows-map beginnen.
@@ -162,4 +175,3 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
-

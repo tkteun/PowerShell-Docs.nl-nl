@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: meer leren met powershell
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Meer leren met PowerShell
 
-Andere bronnen voor meer informatie over PowerShell  
+Andere bronnen voor meer informatie over PowerShell
 
 ## <a name="resources-for-windows-powershell-users"></a>Bronnen voor gebruikers van Windows PowerShell
 
@@ -32,11 +32,11 @@ Naast de Help beschikbaar op de opdrachtregel geven de volgende bronnen informat
 
 ### <a name="script-center-learn"></a>Script Center meer
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials voor de bezet Admin-reeks
-- [PowerShell 'SmowerShell': Waarom moet u informatie over Windows PowerShell &#40; Deel 1 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Deze zijn gesteld via de pijplijn: hoe samengestelde van Windows PowerShell-opdrachten voor het plezier en winst &#40; Deel 2 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Enige Provider? Geen nauwelijks: een overzicht van Windows PowerShell-Providers &#40; Deel 3 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [De belangrijkste gebeurtenis — Windows PowerShell biedt gebeurtenislogboeken &#40; Onderdeel 4 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Meer dan op afstand mogelijk — met Windows PowerShell voor het beheren van het externe bureaublad &#40; Onderdeel 5 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell': Waarom moet u Windows PowerShell meer &#40;deel 1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Deze zijn gesteld via de Pipeline, hoe u Windows PowerShell-opdrachten voor plezier en winst samengestelde &#40;deel 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Enige Provider? Geen nauwelijks: een overzicht van Windows PowerShell-Providers &#40;deel 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [De belangrijkste gebeurtenis — Windows PowerShell biedt gebeurtenislogboeken &#40;Part 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Meer dan op afstand mogelijk — met Windows PowerShell voor het beheren van het externe bureaublad &#40;deel 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Nu meer voordat het geval van nood
 - [Windows PowerShell: Meer informatie over deze nu voordat het geval van nood - deel 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
@@ -51,4 +51,3 @@ De volgende bronnen vindt bronnen voor ontwikkelaars hun eigen Windows PowerShel
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Referentie-inhoud bevat.
 - [Windows PowerShell-programmeergids](http://go.microsoft.com/fwlink/p/?LinkID=89596). Vindt u zelfstudies. Bevat ook informatie over de basisconcepten van Windows PowerShell.
-

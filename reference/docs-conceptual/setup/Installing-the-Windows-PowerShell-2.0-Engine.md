@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: De Engine voor Windows PowerShell 2.0 installeren
+title: De Windows PowerShell 2.0-engine installeren
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installing-the-windows-powershell-20-engine"></a>De Engine voor Windows PowerShell 2.0 installeren
+# <a name="installing-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-engine installeren
 In dit onderwerp wordt uitgelegd hoe de Engine voor Windows PowerShell 2.0 installeren.
 
 Windows PowerShell 3.0 is ontworpen voor achterwaartse compatibiliteit met Windows PowerShell 2.0. Cmdlets, providers-modules, modules en scripts die zijn geschreven voor Windows PowerShell 2.0 worden uitgevoerd in Windows PowerShell 3.0 en Windows PowerShell 4.0 ongewijzigd. Echter, vanwege een wijziging in de runtime activering-beleid in Microsoft .NET Framework 4, Windows PowerShell host programma's die zijn geschreven voor Windows PowerShell 2.0 en gecompileerd met Common Language Runtime (CLR) 2.0 kunnen niet worden uitgevoerd zonder aanpassingen in later versies van Windows PowerShell, die is gecompileerd met CLR-4.0.
@@ -77,5 +77,4 @@ Het Windows PowerShell 3.0 is geïnstalleerd op Windows 7, Windows Server 2008 R
 - [Systeemvereisten voor Windows PowerShell](Windows-PowerShell-System-Requirements.md)
 - [Windows PowerShell installeren](Installing-Windows-PowerShell.md)
 - [Windows PowerShell starten](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-- [De Windows PowerShell 2.0-Engine wordt gestart](Starting-the-Windows-PowerShell-2.0-Engine.md)
-
+- [De Windows PowerShell 2.0-engine starten](Starting-the-Windows-PowerShell-2.0-Engine.md)

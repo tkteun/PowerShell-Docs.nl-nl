@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Met behulp van statische klassen en methoden
+title: Statische klassen en methoden gebruiken
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-static-classes-and-methods"></a>Met behulp van statische klassen en methoden
+# <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 Niet alle .NET Framework-klassen kunnen worden gemaakt met behulp van **New-Object**. Bijvoorbeeld, als u probeert te maken van een **System.Environment** of een **System.Math** object met **New-Object**, krijgt u de volgende foutberichten weergegeven:
 
 ```
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 We kunnen nu eigenschappen om weer te geven van System.Environment selecteren.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>Statische eigenschappen van System.Environment weer te geven
+
 De eigenschappen van System.Environment ook statisch zijn en moeten worden opgegeven in een andere manier dan normale eigenschappen. We gebruiken **::** om aan te geven in Windows PowerShell die we willen werken met een statische methode of eigenschap. Overzicht van de opdracht die is gebruikt voor het starten van Windows PowerShell, controleren we de **CommandLine** eigenschap door te typen:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Math met System.Math doen
+
 De statische klasse System.Math is nuttig voor het uitvoeren van sommige rekenkundige bewerkingen. De belangrijke leden van **System.Math** zijn voornamelijk methoden, waarin kunnen worden weergegeven met behulp van **Get-lid**.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

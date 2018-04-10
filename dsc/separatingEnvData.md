@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: Scheiden van gegevens en de omgeving
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Configuratie- en omgevingsgegevens scheiden
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a>Scheiden van gegevens en de omgeving
+# <a name="separating-configuration-and-environment-data"></a>Configuratie- en omgevingsgegevens scheiden
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -26,18 +26,19 @@ Voor een gedetailleerde beschrijving van de **ConfigurationData** hashtabel, Zie
 
 ## <a name="a-simple-example"></a>Een eenvoudig voorbeeld
 
-Bekijk een voorbeeld van een zeer eenvoudig om te zien hoe dit werkt. Een configuratie voor één dat ervoor dat zorgt u maakt **IIS** aanwezig is op sommige knooppunten en dat **Hyper-V** aanwezig is op andere: 
+Bekijk een voorbeeld van een zeer eenvoudig om te zien hoe dit werkt.
+Een configuratie voor één dat ervoor dat zorgt u maakt **IIS** aanwezig is op sommige knooppunten en dat **Hyper-V** aanwezig is op andere:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ Het resultaat is dat twee MOF-bestanden worden gemaakt:
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` Hiermee geeft u twee verschillende knooppunten, elk met een eigen `NodeName` en `Role`. De configuratie maakt dynamisch **knooppunt** blokken door middel van de verzameling van knooppunten van krijgt `$MyData` (in het bijzonder `$AllNodes`) en filtert deze verzameling op basis van de `Role` eigenschap...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Met behulp van de configuratiegegevens voor het definiëren van ontwikkeling en productie-omgevingen
@@ -128,7 +129,9 @@ Definiëren we de ontwikkeling en productie-omgevingsgegevens in een bestand nam
 
 ### <a name="configuration-script-file"></a>Script-configuratiebestand
 
-Nu in de configuratie die is gedefinieerd in een `.ps1` -bestand filteren we de knooppunten die is gedefinieerd in `DevProdEnvData.psd1` door hun rol (`MSSQL`, `Dev`, of beide), en ze dienovereenkomstig configureren. De ontwikkelomgeving heeft de SQL Server- en IIS op één knooppunt, terwijl de productie-omgeving ze op twee verschillende knooppunten heeft. De site-inhoud is ook verschillend zijn, zoals opgegeven door de `SiteContents` eigenschappen.
+Nu in de configuratie die is gedefinieerd in een `.ps1` -bestand filteren we de knooppunten die is gedefinieerd in `DevProdEnvData.psd1` door hun rol (`MSSQL`, `Dev`, of beide), en ze dienovereenkomstig configureren.
+De ontwikkelomgeving heeft de SQL Server- en IIS op één knooppunt, terwijl de productie-omgeving ze op twee verschillende knooppunten heeft.
+De site-inhoud is ook verschillend zijn, zoals opgegeven door de `SiteContents` eigenschappen.
 
 Aan het einde van het configuratiescript noemen we de configuratie (gecompileerd deze naar een MOF-document), waarbij `DevProdEnvData.psd1` als de `$ConfigurationData` parameter.
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ Wanneer u deze configuratie uitvoert, drie MOF-bestanden worden gemaakt (één v
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ In dit voorbeeld `ConfigFileContents` wordt geopend met de regel:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [Met behulp van configuratiegegevens](configData.md)
 - [Referentieopties in configuratiegegevens](configDataCredentials.md)
 - [DSC-configuraties](configurations.md)
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Desired State Configuration snel starten
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Typ de volgende tekst in een teksteditor:
 </body>
 ```
 
-Opslaan als `index.htm` in de `test` map die u eerder hebt gemaakt. 
+Opslaan als `index.htm` in de `test` map die u eerder hebt gemaakt.
 
 ## <a name="write-the-configuration"></a>Schrijven van de configuratie
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Test de configuratie
 
-U kunt aanroepen de [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet om te controleren of de configuratie is voltooid. 
+U kunt aanroepen de [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet om te controleren of de configuratie is voltooid.
 
 U kunt ook de resultaten testen rechtstreeks in dit geval door te bladeren naar `http://localhost/` in een webbrowser.
 Als de eerste stap in dit voorbeeld ziet u de 'Hallo wereld' HTML-pagina die u hebt gemaakt.
@@ -132,6 +132,3 @@ Als de eerste stap in dit voorbeeld ziet u de 'Hallo wereld' HTML-pagina die u h
 - Meer informatie over DSC-configuraties op [DSC-configuraties](configurations.md).
 - Zie wat DSC-resources beschikbaar zijn en het maken van aangepaste DSC-resources op [DSC-resources](resources.md).
 - DSC-configuraties en resources in de [PowerShell Gallery](https://www.powershellgallery.com/).
-
-
-
