@@ -67,19 +67,19 @@ Een aantal wijzigingen zijn aangebracht op Mac OS- en Linux ter ondersteuning va
 - XDG Base Directory specificatie is nu in acht genomen en standaard gebruikt:
   - Het pad van het Linux/Mac OS-profiel bevindt zich op `~/.config/powershell/profile.ps1`
   - De geschiedenis pad op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Het pad van de gebruiker-module bevindt zich op `~/.local/share/powershell/Modules`
+  - Het pad voor de gebruikersmodule bevindt zich op `~/.local/share/powershell/Modules`
 - Ondersteuning voor bestands- en mapnamen met de dubbele punt op Unix. (#4959)
 - Ondersteuning voor scriptnamen- of volledige paden met komma's. (#4136) (Dank aan @TimCurwick!)
-- Detecteren wanneer `-LiteralPath` wordt gebruikt voor het onderdrukken van jokertekens voor navigatie-cmdlets. (#5038)
-- Bijgewerkt `Get-ChildItem` meer achtige werkt de * nix `ls -R` en de Windows `DIR /S` systeemeigen opdrachten.
-  `Get-ChildItem` nu retourneert de symbolische koppelingen aangetroffen tijdens een recursieve zoekopdracht en niet in de mappen die het doel van deze koppelingen. (#3780)
+- Detectie wanneer`-LiteralPath` wordt gebruikt om jokerteken-uitbreiding voor navigatie-cmdlets te onderdrukken. (#5038)
+- `Get-ChildItem`is bijgewerkt, zodat deze meer werkt zoals het *NIX-achtige `ls -R` en de systeemeigen `DIR /S`-opdrachten van Windows.
+  `Get-ChildItem` retourneert nu de symbolische koppelingen die worden aangetroffen tijdens een recursieve zoekopdracht en zoekt niet in de mappen waarnaar deze koppelingen verwijzen. (#3780)
 
 ### <a name="case-sensitivity"></a>Hoofdlettergevoeligheid
 
 Linux- en Mac OS zijn meestal hoofdlettergevoelig terwijl Windows behoud van de aanvraag niet hoofdlettergevoelig is.
 In het algemeen is PowerShell niet hoofdlettergevoelig.
 
-Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op Mac OS- en Linux, dus het hoofdlettergebruik van de `PSModulePath` omgevingsvariabele is gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad om te bepalen van de naam van de module. (#5097)
+Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op macOS en Linux. Daarom is het hoofdlettergebruik van de omgevingsvariabele `PSModulePath`gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad om de naam van de module te bepalen. (#5097)
 
 ## <a name="support-for-side-by-side-installations"></a>Ondersteuning voor side-by-side-installaties
 
