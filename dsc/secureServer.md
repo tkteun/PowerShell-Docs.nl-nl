@@ -3,19 +3,22 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Best practices voor pull-servers
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
+> [!IMPORTANT]
+> De Pull-Server (Windows-onderdeel *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om de nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met een overgang clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen vermeld [hier](pullserver.md#community-solutions-for-pull-service).
+
 Overzicht: Dit document is bedoeld om het proces en uitbreidingsmogelijkheden engineers die voor de oplossing voorbereiden zich helpen bevatten. Gegevens moeten best practices te geven aangeduid met klanten en vervolgens worden gevalideerd door het productteam om ervoor te zorgen aanbevelingen toekomstige verbonden zijn en als stabiel beschouwd.
 
-| |Doc Info|
+| |Informatie over dit document|
 |:---|:---|
 auteur | Michael Greene
 Revisoren | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic

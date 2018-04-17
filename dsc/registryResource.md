@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-Resource voor register
-ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 98e9a6251cb4e55443498bd770b4c563c25c7509
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC-Resource voor register
 
@@ -22,7 +22,7 @@ Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Enable | Disable }  ]
+    [ Ensure = [string] { Present | Absent }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
@@ -35,12 +35,12 @@ Registry [string] #ResourceName
 |  Eigenschap  |  Beschrijving   |
 |---|---|
 | Toets| Geeft het pad van de registersleutel waarvoor u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
-| ValueName| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks ook specificeren ValueType of Waardegegevens.|
+| Waardenaam| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks ook specificeren ValueType of Waardegegevens.|
 | Zorg ervoor dat| Hiermee wordt aangegeven als de sleutel en waarde bestaan. Om ervoor te zorgen dat ze doen, stel deze eigenschap in op 'Aanwezig'. Om ervoor te zorgen dat ze niet bestaat, de eigenschap instellen op 'Afwezig'. De standaardwaarde is 'Aanwezig'.|
 | Force| Als de opgegeven registersleutel aanwezig is, __Force__ overschreven met de nieuwe waarde. Als een registersleutel met subsleutels verwijdert, moet dit __$true__|
 | Hex| Hiermee wordt aangegeven als gegevens zullen worden uitgedrukt in hexadecimale notatie. Als u opgeeft, wordt de waardegegevens DWORD/QWORD is opgenomen in hexadecimale notatie. Niet geldig voor andere typen. De standaardwaarde is __$false__.|
 | dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| ValueData| De gegevens voor de registerwaarde.|
+| Waardegegevens| De gegevens voor de registerwaarde.|
 | ValueType| Geeft het type van de waarde. De ondersteunde typen zijn:
 <ul><li>Tekenreeks (REG_SZ)</li>
 
