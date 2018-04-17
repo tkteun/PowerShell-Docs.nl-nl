@@ -11,6 +11,8 @@
               href: setup/Installing-PowerShell-Core-on-Windows.md
             - name: PowerShell Core in macOS en Linux installeren
               href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+            - name: PowerShell Core in ARM
+              href: PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
           items:
