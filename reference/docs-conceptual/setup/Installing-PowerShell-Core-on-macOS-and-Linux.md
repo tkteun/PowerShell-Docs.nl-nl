@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-macos-and-linux"></a>PowerShell Core in macOS en Linux installeren
 
-Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25][fed25], [Fedora 26][fed26], [Arch Linux][arch], and [macOS 10.12][mac].
+Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], [boog Linux][arch], en [Mac OS 10,12][mac].
 
 Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell AppImage][lai]. U kunt ook proberen implementeren PowerShell binaire bestanden rechtstreeks met het Linux [ `tar.gz` archief][tar], maar u moet de vereiste afhankelijkheden op basis van het besturingssysteem in de afzonderlijke stappen instellen.
 
@@ -588,10 +588,10 @@ Wanneer er nieuwe versies van PowerShell zijn uitgebracht, Homebrew van formules
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> Opmerking:-vanwege van [dit probleem in Cask](https://github.com/caskroom/homebrew-cask/issues/29301), u hebt momenteel doen opnieuw moet installeren om bij te werken.
+> Opmerking: De bovenstaande opdrachten kunnen worden aangeroepen vanuit een host PowerShell (pwsh), maar de PowerShell-shell moet worden afgesloten en opnieuw worden ingevoerd om de upgrade is voltooid en de waarden in $PSVersionTable vernieuwen.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/

@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met bestanden en mappen werken
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>Met bestanden en mappen werken
 
-Navigeren door Windows PowerShell-stations en bewerken van de items op deze lijkt op het manipuleren van bestanden en mappen op de fysieke schijven Windows. Het omgaan met specifieke bestanden en mappen manipulatie taken in deze sectie worden besproken.
+Navigeren door Windows PowerShell-stations en bewerken van de items op deze lijkt op het manipuleren van bestanden en mappen op de fysieke schijven Windows. Deze sectie wordt beschreven hoe u omgaat met specifieke bestanden en mappen manipulatie taken-met behulp van PowerShell.
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Lijst van alle bestanden en mappen in een map
 
 U kunt alle items rechtstreeks in een map verkrijgen door middel van **Get-ChildItem**. Voeg de optionele **Force** parameter worden verborgen items van system. Deze opdracht geeft bijvoorbeeld de inhoud direct van Windows PowerShell-station C (dit is hetzelfde als het fysieke Windows-station C):
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 De opdracht bevat alleen de rechtstreeks opgenomen items, vergelijkbaar met behulp van Cmd.exe **DIR** opdracht of **ls** in een UNIX-shell. Om te geven opgenomen items, moet u opgeven de **-Recurse** ook de parameter. (Dit kan een zeer lange tijd in beslag nemen.) Overzicht van alles op het station C:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** kunt items filteren met de **pad**, **Filter**, **opnemen**, en **uitsluiten** parameters, maar deze zijn Normaal gesproken alleen gebaseerd op naam. U kunt uitvoeren complexe filteren op basis van andere eigenschappen van items door **Where-Object**.
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Kopiëren is klaar met **Copy-Item**. De volgende opdracht maakt een back-up C:\\boot.ini naar C:\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Als het doelbestand al bestaat, mislukt die poging kopiëren. Om een bestaande bestemming overschrijven, gebruikt u de parameter Force:
+Als het doelbestand al bestaat, mislukt die poging kopiëren. Als u wilt een reeds bestaande bestemming overschrijven, gebruiken de **Force** parameter:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 Met deze opdracht werkt zelfs wanneer het doel alleen-lezen is.
 
-Werkt op dezelfde manier map kopiëren. Deze opdracht kopieert u de map C:\\temp\\test1 naar de nieuwe map c:\\temp\\DeleteMe recursief:
+Werkt op dezelfde manier map kopiëren. Deze opdracht kopieert u de map C:\\temp\\test1 naar de nieuwe map C:\\temp\\DeleteMe recursief:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 U kunt ook een selectie van items kopiëren. De volgende opdracht kopieert alle txt-bestanden die zich ergens in c:\\gegevens naar c:\\temp\\tekst:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 U kunt nog steeds andere hulpprogramma's gebruiken om systeem te bestand kopiëren. XCOPY en ROBOCOPY COM-objecten, zoals de **Scripting.FileSystemObject,** werkt met alle in Windows PowerShell. Bijvoorbeeld, kunt u Windows Script Host **Scripting.FileSystem COM** klasse back-up C:\\boot.ini naar C:\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>Bestanden en mappen maken
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 U kunt verwijderen opgenomen items met **Item verwijderen**, maar u wordt gevraagd om te bevestigen dat de verwijzing wordt verwijderd als het item iets anders bevat. Bijvoorbeeld, als u probeert te verwijderen van de map C:\\temp\\DeleteMe die andere items bevat, Windows PowerShell wordt u gevraagd om bevestiging voordat u de map te verwijderen:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 Als u niet worden gevraagd om elk item opgenomen wilt, geeft u de **Recurse** parameter:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Toewijzing van een lokale map als Windows toegankelijk station
