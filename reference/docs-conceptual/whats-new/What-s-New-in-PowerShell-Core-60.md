@@ -1,19 +1,19 @@
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
-[PowerShell Core 6.0] [ github] is een nieuwe open-source versie van PowerShell die cross-platform werkt (Windows, Mac OS en Linux) en gebouwd is voor heterogene omgevingen en de hybride cloud.
+[PowerShell Core 6.0] [ github] is een nieuwe open-source versie van PowerShell die cross-platform werkt (Windows, macOS en Linux) en gebouwd is voor heterogene omgevingen en de hybride cloud.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>.NET Framework is verplaatst naar .NET Core
 
 PowerShell Core maakt gebruik van [.NET Core 2.0][] als de runtime.
-Met .NET core 2.0 kan PowerShell Core werken op meerdere platformen (Windows, Mac OS en Linux).
+Met .NET core 2.0 kan PowerShell Core werken op meerdere platformen (Windows, macOS en Linux).
 PowerShell Core maakt ook de API-set beschikbaar die wordt aangeboden door .NET Core 2.0 en die gebruikt kan worden in PowerShell-cmdlets en -scripts.
 
 Windows PowerShell gebruikte de .NET Framework runtime voor het hosten van de PowerShell-engine.
-Dit betekent dat Windows PowerShell de API-set beschikbaar maakt die aangeboden wordt door .NET Framework.
+Dit betekent dat Windows PowerShell de API-set beschikbaar maakt die wordt aangeboden door .NET Framework.
 
 De API's gedeeld tussen .NET Core en .NET Framework zijn gedefinieerd als onderdeel van [.NET Standard][].
 
-Voor meer informatie over hoe dit van invloed is op module/script compatibiliteit tussen PowerShell Core en Windows PowerShell, kijk op [Backwards compatibiliteit met Windows PowerShell](#backwards-compatibility-with-windows-powershell).
+Meer informatie over hoe dit van invloed is op de module/script-compatibiliteit tussen PowerShell Core en Windows PowerShell, is te vinden onder [Compatibiliteit met eerdere versies van Windows PowerShell].
 
 ## <a name="support-for-macos-and-linux"></a>Ondersteuning voor macOS en Linux
 
@@ -30,11 +30,11 @@ PowerShell ondersteunt nu ook officieel macOS en Linux, inclusief:
 - Fedora 25 en 26
 - macOS 10.12+
 
-Onze community heeft ook packages bijgedragen voor de volgende platformen, maar ze zijn niet officieel ondersteund:
+Onze community heeft ook pakketten voor de volgende platformen bijgedragen, maar deze worden niet officieel ondersteund:
 
 - Arch Linux
 - Kali Linux
-- AppImage (werkt op meerdere Linux platformen)
+- AppImage (werkt op meerdere Linux-platformen)
 
 Ook hebben we experimentele (niet-ondersteunde) versies voor de volgende platforms:
 
@@ -42,43 +42,43 @@ Ook hebben we experimentele (niet-ondersteunde) versies voor de volgende platfor
 - Raspbian (Stretch)
 
 Een aantal wijzigingen zijn aangebracht in PowerShell Core 6.0 zodat deze beter werkt op niet-Windows-systemen.
-Sommige hiervan zijn breaking-changes, die ook PowerShell Core op Windows beïnvloeden.
-Andere zijn alleen aanwezig of van toepassing op niet-Windows-installaties van PowerShell Core.
+Sommige van deze wijzigingen zijn behoorlijk ingrijpend en als zodanig ook van invloed op Windows.
+Andere zijn alleen aanwezig in of van toepassing op niet-Windows-installaties van PowerShell Core.
 
-- Ondersteuning toegevoegd voor native command-globbing op Unix-platformen.
+- Ondersteuning toegevoegd voor native opdracht-globbing op Unix-platformen.
 - De `more` functionaliteit respecteert de Linux `$PAGER` en wordt standaard ingesteld op `less`.
-  Dit betekent dat nu wildcards met native binaries/commando's gebruikt kunnen worden (bijvoorbeeld `ls *.txt`). (#3463)
+  Dit betekent dat u nu jokertekens met native binaire gegevens/opdrachten kunt gebruiken (bijvoorbeeld `ls *.txt`). (#3463)
 - Afsluitende backslash is automatisch ge-escaped wanneer er omgegaan wordt met systeemeigen commando argumenten. (#4965)
 - Negeer de `-ExecutionPolicy` switch wanneer PowerShell op niet-Windows-platformen worden uitgevoerd omdat script-signing momenteel niet wordt ondersteund. (#3481)
 - Vaste ConsoleHost voor het honeren van `NoEcho` op Unix-platformen. (#3801)
-- Vaste `Get-Help` ter ondersteuning van hoofdlettergevoelig pattern-matching op de Unix-platformen. (#3852)
-- `powershell` man-page toegevoegd aan de package
+- Vaste `Get-Help` ter ondersteuning van niet-hoofdlettergevoelige patroonovereenkomsten op Unix-platformen.
+- Man-pagina voor `powershell` toegevoegd aan het pakket
 
-### <a name="logging"></a>Logging
+### <a name="logging"></a>Logboekregistratie
 
-Op macOS, gebruikt PowerShell de native `os_log` API's om te loggen naar Apple's [unified logging system][os_log].
-Op Linux, gebruikt PowerShell [Syslog][], een universele logging methodiek.
+Op macOS gebruikt PowerShell de native 'os_log'-API's voor registratie naar het uniformen registratiesysteem van Apple.
+In Linux maakt PowerShell gebruik van Syslog, een universele registratieoplossing.
 
 ### <a name="filesystem"></a>Bestandssysteem
 
-Een aantal wijzigingen zijn aangebracht op macOS en Linux ter ondersteuning van op Windows van oudsher niet ondersteund tekens:
+Dankzij een aantal wijzigingen in macOS en Linux worden nu ook tekens voor bestandsnamen ondersteund die doorgaans niet worden ondersteund in Windows:
 
-- Paden die aan cmdlets worden opgegeven zijn nu slash-agnostisch (zowel / en \ werken als directory scheidingsteken)
-- XDG Base Directory Specification wordt nu in acht genomen en standaard gebruikt:
-  - Het pad voor het Linux/maxOS profile bevindt zich op `~/.config/powershell/profile.ps1`
-  - Het pad om history op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Het pad voor de user-modules bevindt zich op `~/.local/share/powershell/Modules`
+- Paden die aan cmdlets worden opgegeven, zijn nu slash-agnostisch (zowel / als \ kan worden gebruikt als scheidingsteken voor mappen)
+- XDG Base Directory-specificatie wordt nu in acht genomen en standaard gebruikt:
+  - Het pad van het Linux/Mac OS-profiel bevindt zich op `~/.config/powershell/profile.ps1`
+  - Het pad om de geschiedenis op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Het pad voor de gebruikersmodule bevindt zich op `~/.local/share/powershell/Modules`
 - Ondersteuning voor bestands- en mapnamen met de dubbele punt op Unix. (#4959)
 - Ondersteuning voor scriptnamen- of volledige paden met komma's. (#4136) (Dank aan @TimCurwick!)
-- Detectie wanneer `-LiteralPath` wordt gebruikt om wildcard-expansion voor navigatie-cmdlets te onderdrukken. (#5038)
-- Update van `Get-ChildItem` zodiat die meer zoals *NIX achtige `ls -R` werkt en de Windows `DIR /S` systeemeigen opdrachten.
-  `Get-ChildItem` geeft nu de symbolische-links terug die aangetroffen worden tijdens een recursieve zoekopdracht en zoekt niet in de mappen waar deze symbolische-links naar wijzen. (#3780)
+- Detectie wanneer `-LiteralPath` wordt gebruikt om jokerteken-uitbreiding voor navigatie-cmdlets te onderdrukken.
+- 'Get-ChildItem' is bijgewerkt, zodat deze meer werkt zoals het *NIX-achtige 'ls -R' en de systeemeigen 'DIR /S'-opdrachten van Windows.
+  'Get-ChildItem' retourneert nu de symbolische koppelingen die worden aangetroffen tijdens een recursieve zoekopdracht en zoekt niet in de mappen waarnaar deze koppelingen verwijzen.
 
 ### <a name="case-sensitivity"></a>Hoofdlettergevoeligheid
 
 Linux- en macOS zijn meestal hoofdlettergevoelig terwijl Windows niet hoofdlettergevoelig is terwijl wel de (hoofd)letter opgeslagen wordt. In het algemeen is PowerShell niet hoofdlettergevoelig.
 
-Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op macOS- en Linux, dus is het hoofdlettergebruik van de `PSModulePath` omgevingsvariabele is gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad voor het bepalen van de naam van de module. (#5097)
+Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op macOS en Linux. Daarom is het hoofdlettergebruik van de omgevingsvariabele `PSModulePath`gestandaardiseerd. 'Import-Module' is niet hoofdlettergevoelig bij het gebruik van een bestandspad om de naam van de module te bepalen.
 
 ## <a name="support-for-side-by-side-installations"></a>Ondersteuning voor side-by-side-installaties
 
