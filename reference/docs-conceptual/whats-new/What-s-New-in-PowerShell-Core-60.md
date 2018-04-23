@@ -1,4 +1,4 @@
-# <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
+﻿# <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
 [PowerShell Core 6.0][github] is een nieuwe open-source versie van PowerShell die cross-platform werkt (Windows, macOS en Linux) en gebouwd is voor heterogene omgevingen en de hybride cloud.
 
@@ -13,6 +13,7 @@ Dit betekent dat Windows PowerShell de API-set beschikbaar maakt die wordt aange
 
 De API's gedeeld tussen .NET Core en .NET Framework zijn gedefinieerd als onderdeel van [.NET Standard][].
 
+Meer informatie over hoe dit van invloed is op de module/script-compatibiliteit tussen PowerShell Core en Windows PowerShell, is te vinden onder [Compatibiliteit met eerdere versies van Windows PowerShell].
 Meer informatie over hoe dit van invloed is op de module/script-compatibiliteit tussen PowerShell Core en Windows PowerShell, is te vinden onder [Compatibiliteit met eerdere versies van Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Ondersteuning voor macOS en Linux
@@ -22,7 +23,7 @@ PowerShell ondersteunt nu ook officieel macOS en Linux, inclusief:
 - Windows 7, 8.1 en 10
 - Windows Server 2008 R2, 2012 R2, 2016
 - [Windows Server Semi-Annual-kanaal][semi-annual]
-- Ubuntu 14.04 16.04 en 17.04
+- Ubuntu 14.04, 16.04 en 17.04
 - Debian 8.7+ en 9
 - CentOS 7
 - Red Hat Enterprise Linux 7
@@ -48,8 +49,8 @@ Andere zijn alleen aanwezig in of van toepassing op niet-Windows-installaties va
 - Ondersteuning toegevoegd voor native opdracht-globbing op Unix-platformen.
 - De `more` functionaliteit respecteert de Linux `$PAGER` en wordt standaard ingesteld op `less`.
   Dit betekent dat u nu jokertekens met native binaire gegevens/opdrachten kunt gebruiken (bijvoorbeeld `ls *.txt`). (#3463)
-- Afsluitende backslash is automatisch ontsnapt systeemeigen opdrachtargumenten betreft. (#4965)
-- Negeer de `-ExecutionPolicy` overschakelen wanneer PowerShell op niet-Windows-platforms worden uitgevoerd omdat de ondertekening van het script wordt momenteel niet ondersteund. (#3481)
+- Afsluitende backslash is automatisch ge-escaped wanneer er omgegaan wordt met systeemeigen commando argumenten. (#4965)
+- Negeer de `-ExecutionPolicy` switch wanneer PowerShell op niet-Windows-platformen worden uitgevoerd omdat script-signing momenteel niet wordt ondersteund. (#3481)
 - Vaste ConsoleHost voor het honeren van `NoEcho` op Unix-platformen. (#3801)
 - Vaste `Get-Help` ter ondersteuning van niet-hoofdlettergevoelige patroonovereenkomsten op Unix-platformen. (#3852)
 - Man-pagina voor `powershell` toegevoegd aan het pakket
@@ -77,8 +78,7 @@ Dankzij een aantal wijzigingen in macOS en Linux worden nu ook tekens voor besta
 
 ### <a name="case-sensitivity"></a>Hoofdlettergevoeligheid
 
-Linux- en Mac OS zijn meestal hoofdlettergevoelig terwijl Windows behoud van de aanvraag niet hoofdlettergevoelig is.
-In het algemeen is PowerShell niet hoofdlettergevoelig.
+Linux- en macOS zijn meestal hoofdlettergevoelig terwijl Windows niet hoofdlettergevoelig is terwijl wel de (hoofd)letter opgeslagen wordt. In het algemeen is PowerShell niet hoofdlettergevoelig.
 
 Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op macOS en Linux. Daarom is het hoofdlettergebruik van de omgevingsvariabele `PSModulePath`gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad om de naam van de module te bepalen. (#5097)
 
