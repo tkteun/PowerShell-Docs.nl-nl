@@ -1,4 +1,4 @@
-# <a name="powershell-core-on-arm"></a>PowerShell Core op ARM
+# <a name="powershell-core-on-arm"></a>PowerShell Core in ARM
 
 Vandaag de dag werkt PowerShell Core op sommige apparaten ARM, met inbegrip van Windows 10 ARM32/ARM64 zowel Raspbian, een experimentele, niet-ondersteunde status.
 
