@@ -8,7 +8,8 @@ U kunt Visual Studio Code in Windows met PowerShell versie 5 met behulp van Wind
 Voordat u begint het, Controleer of dat PowerShell bestaat op uw systeem.
 Zie voor moderne werkbelastingen op Windows-, Mac OS- en Linux:
 
-- [PowerShell Core installeert op Mac OS- en Linux][install-pscore-linux]
+- [PowerShell Core installeren op Linux][install-pscore-linux]
+- [PowerShell Core installeert op Mac OS][install-pscore-macos]
 - [PowerShell Core installeren in Windows][install-pscore-windows]
 
 Zie voor traditionele Windows PowerShell-werkbelastingen, [Windows PowerShell installeren][install-winps].
@@ -171,7 +172,8 @@ Er zijn enkele blogs die mogelijk nuttig om aan de slag met PowerShell-extensie 
 - [PowerShell-script voor foutopsporing in Visual Studio Code – deel 2][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/

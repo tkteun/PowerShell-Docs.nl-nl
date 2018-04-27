@@ -4,33 +4,35 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,installeren
 title: Nieuwe scenario's en onderdelen in WMF 5.1
-ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>Nieuwe scenario's en onderdelen in WMF 5.1 #
+# <a name="new-scenarios-and-features-in-wmf-51"></a>Nieuwe scenario's en onderdelen in WMF 5.1
 
 > Opmerking: Deze informatie is voorlopig en kan worden gewijzigd.
 
-## <a name="powershell-editions"></a>PowerShell-edities ##
+## <a name="powershell-editions"></a>PowerShell-edities
+
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
 - **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
 - **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
 **Meer informatie over het gebruik van PowerShell-edities**
-- [Vaststellen actieve editie van PowerShell]()
-- [Een module compatibiliteit met bepaalde versies van PowerShell declareren]()
-- [Get-Module resultaten door CompatiblePSEditions filteren]()
-- [Voorkomen dat de uitvoering van script tenzij uitvoeren op een compatibele versie van PowerShell]()
+
+- [Actieve versie van PowerShell met $PSVersionTable bepalen](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Get-Module resultaten door met de parameter PSEdition CompatiblePSEditions filteren](/powershell/module/microsoft.powershell.core/get-module)
+- [Voorkomen dat de uitvoering van script tenzij uitvoeren op een compatibele versie van PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [Een module compatibiliteit met bepaalde versies van PowerShell declareren](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## <a name="catalog-cmdlets"></a>Catalogus-Cmdlets
 
-Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) module; deze genereren en bestanden voor Windows-catalogus te valideren.
+Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) module; deze genereren en bestanden voor Windows-catalogus te valideren.
 
-###<a name="new-filecatalog"></a>Nieuwe FileCatalog
+### <a name="new-filecatalog"></a>Nieuwe FileCatalog
 --------------------------------
 
 Nieuwe FileCatalog maakt een Windows-catalogusbestand voor mappen en bestanden.
@@ -41,6 +43,7 @@ Deze informatie is nuttig om te valideren of de wijzigingen voor de mappen zijn 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 Catalogus versie 1 en 2 worden ondersteund.
 De SHA1-hash-algoritme voor het maken van bestands-hashes; maakt gebruik van versie 1 SHA256 maakt gebruik van versie 2.
 Catalogusversie 2 van de wordt niet ondersteund op *Windows Server 2008 R2* of *Windows 7*.
@@ -56,8 +59,7 @@ Hiermee maakt u het catalogusbestand.
 
 Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
 
-
-###<a name="test-filecatalog"></a>Test-FileCatalog
+### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
 Test FileCatalog valideert de catalogus die vertegenwoordigt een reeks mappen.
@@ -74,8 +76,8 @@ Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* pa
 Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet uit op het catalogusbestand.
 Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter.
 
+## <a name="module-analysis-cache"></a>Module Analysis-Cache
 
-## <a name="module-analysis-cache"></a>Module Analysis-Cache ##
 Beginnen met WMF 5.1, biedt PowerShell controle over het bestand dat wordt gebruikt voor cachegegevens over een module, zoals de opdrachten die zijn geëxporteerd.
 
 Deze cache wordt standaard opgeslagen in het bestand `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
@@ -106,23 +108,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 Instellen van deze omgevingsvariabele wordt onmiddellijk van kracht in het huidige proces.
 
-##<a name="specifying-module-version"></a>Moduleversie opgeven
+## <a name="specifying-module-version"></a>Moduleversie opgeven
 
 In WMF 5.1 `using module` gedraagt zich dezelfde manier als andere constructies module-gerelateerde in PowerShell.
 Voorheen moest u geen manier om op te geven van een bepaalde moduleversie; Als er meerdere versies aanwezig is, resulteert dit in een fout.
 
-
 In een WMF 5.1:
 
-* U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+- U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
 Deze hashtabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
 **Voorbeeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* Als er meerdere versies van de module, PowerShell wordt de **dezelfde resolutie logica** als `Import-Module` en niet een plaatsingsfout--hetzelfde gedrag als `Import-Module` en `Import-DscResource`.
+- Als er meerdere versies van de module, PowerShell wordt de **dezelfde resolutie logica** als `Import-Module` en niet een plaatsingsfout--hetzelfde gedrag als `Import-Module` en `Import-DscResource`.
 
+## <a name="improvements-to-pester"></a>Verbeteringen in lastige
 
-##<a name="improvements-to-pester"></a>Verbeteringen in lastige
 In WMF 5.1, de versie van Pester die wordt geleverd met PowerShell is bijgewerkt van 3.3.5 naar 3.4.0 met de toevoeging van het doorvoeren https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, die zorgt voor betere gedrag voor Pester op Nano Server.
 
 U kunt de wijzigingen in versies 3.3.5-3.4.0 bekijken door te inspecteren van het bestand ChangeLog.md op: https://github.com/pester/Pester/blob/master/CHANGELOG.md

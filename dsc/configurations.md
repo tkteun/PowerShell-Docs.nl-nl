@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-configuraties
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>DSC-configuraties
 
@@ -72,7 +72,7 @@ In dit voorbeeld wordt u de naam van het knooppunt door door te geven als de **C
 ## <a name="compiling-the-configuration"></a>De configuratie compileren
 
 Voordat u een configuratie op te nemen kunt, die u moet deze worden gecompileerd tot een MOF-document.
-U doen dit door het aanroepen van de configuratie, net als een PowerShell-functie.
+U doen dit door het aanroepen van de configuratie, zoals u zou een PowerShell-functie aanroept.
 De laatste regel van het voorbeeld met alleen de naam van de configuratie, roept de configuratie.
 
 >**Opmerking:** voor het aanroepen van een configuratie met de functie moet in het globale bereik (net als bij een andere PowerShell-functie).
