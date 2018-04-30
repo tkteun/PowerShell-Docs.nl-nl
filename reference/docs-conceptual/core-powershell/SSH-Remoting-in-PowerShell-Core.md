@@ -34,30 +34,40 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 ## <a name="setup-on-windows-machine"></a>Setup op Windows-computer
 
-1. [De nieuwste versie van Core voor Windows PowerShell installeren] []
+1. Installeer de nieuwste versie van [Core voor Windows PowerShell]
     - U kunt zien dat als de SSH-ondersteuning voor externe communicatie door te kijken heeft de parameter wordt ingesteld voor New-PSSession
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Installeer de meest recente [Win32 OpenSSH] opbouwen vanuit GitHub met de [installatie] instructies
 1. Bewerk het bestand sshd_config op de locatie waar u de Win32-OpenSSH geïnstalleerd
     - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - De vermelding voor een PowerShell-subsysteem toevoegen, vervangen door `c:/program files/powershell/6.0.0/pwsh.exe` met het juiste pad naar de versie die u wilt gebruiken
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Verificatie met sleutel (optioneel) inschakelen
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Start de service sshd
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Het pad waar OpenSSH is geïnstalleerd op uw pad Env variabele toevoegen
     - Dit moet langs de lijnen van `C:\Program Files\OpenSSH\`
     - Hiermee kunt u de ssh.exe die u wilt zoeken
@@ -66,24 +76,33 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 1. Installeer de meest recente [PowerShell voor Linux] opbouwen vanuit GitHub
 1. Installeer [Ubuntu SSH] indien nodig
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Bewerk het bestand sshd_config op locatie /etc/ssh
     - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Een PowerShell-subsysteem vermelding toevoegen
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Verificatie met sleutel (optioneel) inschakelen
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Start de service sshd
+
     ```bash
     sudo service sshd restart
     ```
@@ -92,28 +111,37 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 1. Installeer de meest recente [PowerShell voor Mac OS] bouwen
     - Controleer of dat de SSH-externe toegang is ingeschakeld met de volgende stappen:
-      - Open `System Preferences`
+      - openen `System Preferences`
       - Klik op `Sharing`
       - Controleer `Remote Login` -melding `Remote Login: On`
       - Toegang tot de juiste gebruikers toestaan
 1. Bewerk de `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config`
     - Uw favoriete editor gebruiken of
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Een PowerShell-subsysteem vermelding toevoegen
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Verificatie met sleutel (optioneel) inschakelen
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Start de service sshd
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo-opdracht werkt niet in de externe sessie op Linux-machine.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Core voor Windows PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [installatie]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell voor Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell voor Mac OS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell voor Mac OS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
