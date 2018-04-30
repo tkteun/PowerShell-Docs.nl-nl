@@ -9,10 +9,12 @@
           items:
             - name: PowerShell Core in Windows installeren
               href: setup/Installing-PowerShell-Core-on-Windows.md
-            - name: PowerShell Core in macOS en Linux installeren
-              href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+            - name: PowerShell Core in Linux installeren
+              href: setup/Installing-PowerShell-Core-on-Linux.md
+            - name: PowerShell Core in macOS installeren
+              href: setup/Installing-PowerShell-Core-on-macOS.md
             - name: PowerShell Core in ARM
-              href: PowerShell-Core-on-ARM.md
+              href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
           items:
@@ -87,7 +89,7 @@
                   href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
                 - name: Profielen gebruiken in Windows PowerShell ISE
                   href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
-                - name: Tab-aanvulling gebruiken in het scriptvenster en consolevenster
+                - name: Tab-aanvulling gebruiken in het script- en consolevenster
                   href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
                 - name: Het consolevenster gebruiken in Windows PowerShell ISE
                   href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
@@ -137,15 +139,15 @@
         - name: Webtoegang
           href: ''
           items:
-            - name: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
+            - name: Autorisatieregels en beveiligingsfuncties
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-            - name: Windows PowerShell-webtoegang installeren en gebruiken
+            - name: Installatie
               href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
-            - name: Toegangsproblemen voor Windows PowerShell-webtoegang oplossen
+            - name: Toegangsproblemen oplossen
               href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
             - name: Windows PowerShell-webtoegang verwijderen
               href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
-            - name: De webconsole voor Windows PowerShell gebruiken
+            - name: De webconsole voor PowerShell gebruiken
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
         - name: Handleiding voor werkstromen
           href: core-powershell/workflows-guide.md
