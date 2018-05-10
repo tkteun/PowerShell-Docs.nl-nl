@@ -1,14 +1,14 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Welke s nieuw met PowerShell
-ms.openlocfilehash: a4f931cfcda947181d6a12a509ca0cfe14279e8b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Wat is er nieuw met PowerShell 5.0
+ms.openlocfilehash: 0510e447f55cb7faedbfa3daa45b81ae4cb93de2
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="what39s-new-with-powershell"></a>Wat&#39;s nieuw met PowerShell
+# <a name="whats-new-with-powershell-50"></a>Wat is er nieuw met PowerShell 5.0
 Windows PowerShell® 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid verbeteren en kunnen u bepalen en beheren van Windows-omgevingen gemakkelijker en uitvoerig.  De belangrijke verbeteringen zijn in het gebied van Desired State Configuration, beveiliging, prestaties, externe toegang en verbeteringen van de taal.
 
 Windows PowerShell 5.0 is achterwaarts compatibel. Cmdlets, providers, modules, -modules, scripts, functies en -profielen die zijn ontworpen voor Windows PowerShell 4.0, Windows PowerShell 3.0 en Windows PowerShell 2.0 in het algemeen kunt u werken in Windows PowerShell 5.0 zonder wijzigingen.

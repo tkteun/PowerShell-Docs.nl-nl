@@ -25,7 +25,7 @@ Zie voor traditionele Windows PowerShell-werkbelastingen, [Windows PowerShell in
 > [!IMPORTANT]
 > Op Mac OS, moet u OpenSSL voor de PowerShell-uitbreiding correct te laten werken.
 > De eenvoudigste manier om dit te bereiken is voor het installeren van [Homebrew](http://brew.sh/) en voer vervolgens `brew install openssl`.
-> De PowerShell-extensie is nu mogelijk zijn geladen.
+> VS-Code kunt nu laden de de PowerShell-extensie is.
 
 - **Windows**: Volg de instructies voor installatie op de [tegenover Code uitgevoerd op Windows](https://code.visualstudio.com/docs/setup/windows) pagina
 
@@ -38,8 +38,8 @@ Zie voor traditionele Windows PowerShell-werkbelastingen, [Windows PowerShell in
 
 - Start **snelle Open** door te drukken **Ctrl + P** (**Cmd + P** op Mac).
 - Typ in het vak snel openen `ext install powershell` en treffers **Enter**.
-- De **extensies** weergave wilt openen op de zijmarge. Selecteer de PowerShell-uitbreiding van Microsoft.
-  U ziet, zoals hieronder:
+- De **extensies** weergave wordt geopend op de zijmarge. Selecteer de PowerShell-uitbreiding van Microsoft.
+  Ziet er ongeveer zoals hieronder:
 
   ![VSCode](../../images/vscode.png)
 
@@ -58,7 +58,7 @@ Om af te sluiten van Visual Studio Code **File -> afsluiten**.
 Als u een specifieke installatie van PowerShell gebruiken met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand van de gebruiker-instellingen.
 
 1. Klik op **File-Voorkeuren > Instellingen ->**
-1. Twee deelvensters van de editor wordt weergegeven.
+1. Twee deelvensters van de editor worden weergegeven.
    In het deelvenster van de meest rechtse (`settings.json`), voeg de onderstaande instelling geschikt is voor uw besturingssysteem ergens tussen de twee accolades (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:
 
   ```json
@@ -153,7 +153,7 @@ Volg deze stappen om uw configuratiebestand foutopsporing te maken:
 ```
 
 Hiermee wordt de algemene scenario's voor foutopsporing.
-Echter, wanneer u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.
+Echter, als u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.
 U kunt drukt u op deze knop om meer PowerShell foutopsporing configuraties toevoegt. Een handige configuratie om toe te voegen is **PowerShell: Script starten**.
 Met deze configuratie kunt u een specifiek bestand met optionele argumenten die moet worden gestart telkens wanneer u op F5 drukken ongeacht welk bestand is momenteel actief zijn in de editor.
 

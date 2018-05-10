@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Het MOF-bestand te beveiligen
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand te beveiligen
 
@@ -137,7 +137,7 @@ Het volgende voorbeeld:
  1. maakt een certificaat op de **ontwerpen knooppunt**.
  2. het certificaat op met inbegrip van de persoonlijke sleutel exporteert de **ontwerpen knooppunt**.
  3. Hiermee verwijdert u de persoonlijke sleutel uit de **ontwerpen knooppunt**, maar blijft de openbare-sleutelcertificaat de **mijn** opslaan.
- 4. het certificaat met persoonlijke sleutel in het basiscertificaatarchief geïmporteerd op de **doelknooppunt**.
+ 4. geïmporteerd certificaat van de persoonlijke sleutel in het certificaatarchief My(Personal) op de **doelknooppunt**.
    - Deze moet worden toegevoegd aan het basisarchief zodat deze worden vertrouwd door de **doelknooppunt**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Op het knooppunt ontwerpen: maken en het certificaat exporteren
