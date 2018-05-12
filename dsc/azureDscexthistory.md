@@ -1,16 +1,16 @@
 ---
 description: Meer informatie over de geschiedenis voor de uitbreiding Desired State Configuration (DSC) in Azure.
-ms.date: 03/14/2018
+ms.date: 05/09/2018
 ms.topic: conceptual
 keywords: DSC, azure, powershell-uitbreiding
 title: Versiegeschiedenis van Azure DSC-extensie
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 59c014b4b169a589561f57c1ee2a5e861137aee5
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versiegeschiedenis van Azure gewenst status configuratie-uitbreiding
 
@@ -20,10 +20,10 @@ In dit artikel wordt bevatten informatie over elke versie van de Azure DSC VM-ex
 
 ## <a name="latest-versions"></a>Meest recente versies
 
-### <a name="version-275"></a>Versie 2,75
+### <a name="version-276"></a>Versie 2.76
 
 - **Releasedatum:**
-  - 5 maart 2018
+  - 9 mei 2018
 - **Ondersteuning van het besturingssysteem:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -38,6 +38,42 @@ In dit artikel wordt bevatten informatie over elke versie van de Azure DSC VM-ex
   - WMF 4.0
 - **Omgeving:**
   - Azure
+- **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016; voor andere Windows-besturingssystemen installeert de [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installeren van WMF opnieuw opstarten vereist). DSC-rol is voor de Nano-Server geïnstalleerd op de virtuele machine.
+- **Nieuwe functies**
+  - Verbetering van de metagegevens van de uitbreiding voor substatus en andere kleine oplossingen voor problemen.
+
+### <a name="version-219"></a>Versie 2.19
+
+- **Releasedatum:**
+  - 3 juni 2016
+- **Ondersteuning van het besturingssysteem:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 SP1
+- **WMF ondersteuning:**
+  - WMF 5.0 RTM
+  - WMF 4.0 bijwerken
+  - WMF 4.0
+- **Omgeving:**
+  - Azure
+  - Azure China
+  - Azure Government
+- **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016 Technical Preview; voor andere besturingssystemen, installeert de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
+- **Nieuwe functies**
+  - De DSC-uitbreiding is nu op aangehouden Azure China. Deze versie bevat voornamelijk oplossingen voor het uitvoeren van de extensie op Azure China.
+
+## <a name="supported-versions"></a>Ondersteunde versies
+
+> [!WARNING]
+> Versie 2.4 via 2,13 gebruik WMF 5.0 Public Preview waarvan handtekeningcertificaten in augustus 2016 verlopen.  Zie voor meer informatie over dit probleem [blogbericht](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+
+### <a name="version-275"></a>Versie 2,75
+
+- **Releasedatum:** 5 maart 2018
+- **Ondersteuning van het besturingssysteem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
+- **Ondersteuning van WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0-Update, WMF 4.0
+- **Omgeving:** Azure
 - **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016; voor andere Windows-besturingssystemen installeert de [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installeren van WMF opnieuw opstarten vereist). DSC-rol is voor de Nano-Server geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
   - Na de GitHub recente verplaatsen naar TLS 1.2, kan niet vrijgeven van een virtuele machine aan Azure Automation DSC met ZELFOPLOSSING Resource Manager-sjablonen die beschikbaar zijn op Azure Marketplace of gebruik van DSC-extensie om een configuratie die wordt gehost op GitHub. Hier ziet u een foutbericht weergegeven dat vergelijkbaar is met de volgende tijdens de implementatie van de extensie:
@@ -68,32 +104,6 @@ In dit artikel wordt bevatten informatie over elke versie van de Azure DSC VM-ex
     ```
 
   - TLS 1.2 wordt nu afgedwongen in de nieuwe versie van de extensie. Tijdens de implementatie van de extensie als u al de AutoUpgradeMinorVersion = true in het Resource Manager-sjabloon en de uitbreiding wordt autoupgraded naar 2,75 get. Geef voor handmatige updates `TypeHandlerVersion = 2.75` in de Resource Manager-sjabloon.
-
-### <a name="version-219"></a>Versie 2.19
-
-- **Releasedatum:**
-  - 3 juni 2016
-- **Ondersteuning van het besturingssysteem:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF ondersteuning:**
-  - WMF 5.0 RTM
-  - WMF 4.0 bijwerken
-  - WMF 4.0
-- **Omgeving:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016 Technical Preview; voor andere besturingssystemen, installeert de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
-- **Nieuwe functies**
-  - De DSC-uitbreiding is nu op aangehouden Azure China. Deze versie bevat voornamelijk oplossingen voor het uitvoeren van de extensie op Azure China.
-
-## <a name="supported-versions"></a>Ondersteunde versies
-
-> [!WARNING]
-> Versie 2.4 via 2,13 gebruik WMF 5.0 Public Preview waarvan handtekeningcertificaten in augustus 2016 verlopen.  Zie voor meer informatie over dit probleem [blogbericht](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
 
 ### <a name="version-270---272"></a>Versie 2,70 2.72
 
