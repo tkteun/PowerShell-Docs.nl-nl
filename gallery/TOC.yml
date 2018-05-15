@@ -1,130 +1,84 @@
 - name: Overzicht
   href: readme.md
+- name: PowerShellGet installeren
+  href: installing-psget.md
+- name: Aan de slag
+  href: getting-started.md
+- name: Instructies
   items:
-    - name: Galerie
+    - name: Zoeken naar items in de galerie
       items:
-        - name: Aan de slag
-          href: psgallery/psgallery_gettingstarted.md
-        - name: Status
-          href: psgallery/psgallery_status.md
-        - name: Galerie Veelgestelde vragen
-          href: psgallery/psgallery_faqs.md
-        - name: Galerie Items-tabblad
-          href: psgallery/psgallery_items_tab.md
-        - name: Galerie zoeksyntaxis
-          href: psgallery/psgallery_search_syntax.md
-        - name: Items met compatibele PSEditions
-          href: psgallery/psgallery_pseditions.md
-        - name: FileList-weergave
-          href: psgallery/psgallery_filelist_feature.md
-        - name: Implementeren naar Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: Een PowerShellGallery-account maken
-          href: psgallery/psgallery_creating_an_account.md
+        - name: Zoeken naar items
+          href: how-to/finding-items/search-syntax.md
+        - name: Zoeken op PSEdition
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: Zoekresultaten filteren
+          href: how-to/finding-items/filtering-items.md
+    - name: Publiceren naar de galerie
+      items:
         - name: Items maken en publiceren
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: Publicatierichtlijnen en best practices
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: Itemmanifest en de UI-galerie
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: Een PowerShellGallery-account maken
+          href: how-to/publishing-items/creating-an-account.md
         - name: Items uit catalogus verwijderen
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: Items verwijderen
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: Itemeigenaars beheren
-          href: psgallery/Managing-Item-Owners.md
-        - name: Misbruik melden
-          href: psgallery/psgallery_report_abuse.md
-        - name: Geschillenoplossing
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: Werken met items
+      items:
+        - name: FileList-weergave
+          href: how-to/working-with-items/filelist-view.md
+        - name: Implementeren naar Azure Automation
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Items waarvoor acceptatie van de licentie is vereist
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Contact opnemen met itemeigenaars
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: Contact opnemen met beheerders
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: Feedback geven via sociale media of opmerkingen
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: Acceptatie van de licentie vereisen bij Itemdetails
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Acceptatie van de licentie vereisen bij implementeren naar Azure Automation
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: Naleving PowerShell Gallery GDPR
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: Concepten
   items:
-    - name: PowerShellGet-module ophalen
-      href: psget/get_psget_module.md
-    - name: Module
+    - name: Publicatierichtlijnen en best practices
+      href: concepts/publishing-guidelines.md
+    - name: Itemmanifest en de UI-galerie
+      href: concepts/item-manifest-affecting-ui.md
+    - name: Specifieke PSEditions vereisen
       items:
-        - name: Modules zoeken
-          href: psget/module/psget_find-module.md
-        - name: DSC-resources zoeken
-          href: psget/module/psget_find-dscresource.md
-        - name: Rolmogelijkheden zoeken
-          href: psget/module/psget_find-rolecapability.md
-        - name: Opdrachten zoeken
-          href: psget/module/psget_find-command.md
-        - name: Opslaan
-          href: psget/module/psget_save-module.md
-        - name: Installeren
-          href: psget/module/psget_install-module.md
-        - name: Bijwerken
-          href: psget/module/psget_update-module.md
-        - name: Verwijderen
-          href: psget/module/psget_uninstall-module.md
-        - name: Geïnstalleerde modules ophalen
-          href: psget/module/psget_get-installedmodule.md
-        - name: Modulemanifest bijwerken
-          href: psget/module/psget_update-modulemanifest.md
-        - name: Publiceren
-          href: psget/module/psget_publish-module.md
-        - name: Modules met PSEditions
-          href: psget/module/modulewithpseditionsupport.md
-        - name: Modules die instemming met licentie vereisen
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: Voorlopige versies
-          href: psget/module/PreReleaseModule.md
-        - name: Problemen oplossen
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: Script
+        - name: Scripts met ondersteuning voor PSEditions schrijven
+          href: concepts/script-psedition-support.md
+        - name: Modules met ondersteuning voor PSEditions schrijven
+          href: concepts/module-psedition-support.md
+    - name: Acceptatie van licentie vereisen
       items:
-        - name: Zoeken
-          href: psget/script/psget_find-script.md
-        - name: Opslaan
-          href: psget/script/psget_save-script.md
-        - name: Installeren
-          href: psget/script/psget_install-script.md
-        - name: Bijwerken
-          href: psget/script/psget_update-script.md
-        - name: Verwijderen
-          href: psget/script/psget_uninstall-script.md
-        - name: Geïnstalleerde scripts ophalen
-          href: psget/script/psget_get-installedscript.md
-        - name: Scriptbestand met metagegevens maken
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: Metagegevens van scriptbestand testen
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: Metagegevens van scriptbestand bijwerken
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: Publiceren
-          href: psget/script/psget_publish-script.md
-        - name: Scripts met PSEditions
-          href: psget/script/scriptwithpseditionsupport.md
-        - name: Acceptatie van de licentie vereisen voor scripts
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: Voorlopige versies
-          href: psget/script/PreReleaseScript.md
-    - name: Beheer van opslagplaats
+        - name: Acceptatie van licentie vereisen voor scripts
+          href: concepts/script-license-acceptance.md
+        - name: Acceptatie van licentie vereisen voor modules
+          href: concepts/module-license-acceptance.md
+    - name: Items definiëren als voorlopige versie
       items:
-        - name: NuGet-provider en NuGet.exe opstarten
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: Opslagplaats registreren
-          href: psget/repository/psget_register-psrepository.md
-        - name: Geregistreerde opslagplaats vermelden
-          href: psget/repository/psget_get-psrepository.md
-        - name: Geregistreerde opslagplaats aanpassen
-          href: psget/repository/psget_set-psrepository.md
-        - name: Registratie van opslagplaats intrekken
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: PackageManagement-cmdlets
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: Een module definiëren als voorlopige versie
+          href: concepts/module-prerelease-support.md
+        - name: Een script definiëren als voorlopige versie
+          href: concepts/script-prerelease-support.md
+    - name: Regelprofiel voor PSScriptAnalyzer
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: Ondersteuning krijgen
+  items:
+    - name: Misbruik melden
+      href: how-to/getting-support/report-abuse.md
+    - name: Geschillenoplossing
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Contact opnemen met beheerders
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Problemen oplossen
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: NuGet-provider en NuGet.exe opstarten
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: AVG-naleving
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: Galerie Veelgestelde vragen
+  href: faqs.md
+- name: PowerShellGet-cmdlets
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
