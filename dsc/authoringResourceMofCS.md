@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Een DSC-resource in C# ontwerpen
-ms.openlocfilehash: 112b2ae3eb7ecbccc4ae04cd71e06ea43f5e9249
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e8d3561f197950137877fc902063e43cbfc258ad
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Een DSC-resource in C# ontwerpen
 
@@ -37,7 +36,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ### <a name="setting-up-the-visual-studio-project"></a>Instellen van de Visual Studio-project
 #### <a name="setting-up-a-cmdlet-project"></a>Instellen van een cmdlet-project
 
-1. Open Visual Studio.
+1. Visual Studio niet openen.
 1. Maak een C#-project en geef de naam op.
 1. Selecteer **Class Library** uit de beschikbare sjablonen.
 1. Klik op **Ok**.

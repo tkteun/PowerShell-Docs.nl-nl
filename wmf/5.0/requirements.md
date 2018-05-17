@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce68bc57a5da049cf895165420ba7c4e21b3e63b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="system-requirements"></a>Systeemvereisten
 
@@ -50,12 +48,12 @@ Zorg ervoor dat de volgende vereisten wordt voldaan:
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) is geïnstalleerd.
 - [.NET framework 4.5 of hoger](https://msdn.microsoft.com/library/5a4x27ek.aspx) is geïnstalleerd.
 
-**WMF 4.0 Dependency**
+**WMF 4.0 afhankelijkheid**
 
 Windows Server 2008 R2 SP1 en Windows 7 SP1 systemen hebben ingebouwde PowerShell 2.0, WinRM en WMI. WMF 3.0 en WMF 4.0-pakketten, die deze ingebouwde onderdelen bijwerkt, zijn na de release van Windows Server 2008 R2 SP1 en Windows 7 SP1 uitgebracht. Pakketten installeren/verwijderen WMF 3.0 en WMF 4.0 gesignaleerde sommige problemen in het volgende upgradepad:
 
-- Built-in --> WMF 4.0
-- Built-in --> WMF 3.0 --> WMF4.0.
+- Ingebouwde WMF 4.0-->
+- Ingebouwde--> WMF 3.0 WMF4.0-->.
 
 We al deze problemen opgelost in WMF 4.0-pakketten. Er is daarom een vereiste van WMF 4.0 voor het installeren van WMF 5.0 op Windows Server 2008 R2 SP1 en Windows 7 SP1. Hieronder worden de specifieke problemen die optreden kunnen als u WMF 4.0 niet vóór de upgrade naar WMF 5.0 installeert:
 

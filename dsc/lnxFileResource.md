@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxFile Resource
-ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f1eb98092049ae837d144ccf99a84fe5614144e0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile Resource
 
@@ -40,7 +39,7 @@ nxFile <string> #ResourceName
 |  Eigenschap |  Beschrijving |
 |---|---|
 | DestinationPath| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.|
-| SourcePath| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.|
+| Bronpad| Hiermee geeft u het pad van waaruit de bron van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.|
 | Zorg ervoor dat| Bepaalt of Controleer of het bestand bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het bestand bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het bestand bestaat niet. De standaardwaarde is 'Aanwezig'.|
 | Type| Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'map' om aan te geven dat de resource een map is. Stel deze in op 'file' om aan te geven dat de resource een bestand is. De standaardwaarde is "bestand"|
 | Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.|

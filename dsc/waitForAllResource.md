@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-WaitForAll Resource
-ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-waitforall-resource"></a>DSC-WaitForAll Resource
 
@@ -37,9 +36,9 @@ WaitForAll [string] #ResourceName
 |  Eigenschap  |  Beschrijving   |
 |---|---|
 | ResourceName| De naam van de resource afhangen van. Als deze resource bij een andere configuratie hoort, de naam op als indeling ' [__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
-| NodeName| De doelknooppunten van afhankelijk zijn van de bron.|
+| nodeName| De doelknooppunten van afhankelijk zijn van de bron.|
 | RetryIntervalSec| Het aantal seconden alvorens het opnieuw proberen. Minimumwaarde is 1.|
-| RetryCount| Het maximale aantal keren opnieuw proberen.|
+| retryCount| Het maximale aantal keren opnieuw proberen.|
 | ThrottleLimit| Het aantal machines tegelijk verbinding maken. Standaard is de nieuwe-cimsession standaardwaarde.|
 | dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 

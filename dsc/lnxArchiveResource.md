@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxArchive Resource
-ms.openlocfilehash: 142f0317914f1bd3a0523d706b19662f3f64c8b6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive Resource
 
@@ -31,7 +30,7 @@ nxArchive <string> #ResourceName
 
 |  Eigenschap |  Beschrijving |
 |---|---|
-| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. |
+| Bronpad| Hiermee geeft u het bronpad van het bestand. Dit moet een tar .zip, of..GZ-bestand. |
 | DestinationPath| Hiermee geeft u de locatie waar u Zorg ervoor dat de inhoud van het archief worden opgehaald.|
 | Controlesom| Definieert het type moet worden gebruikt bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime', 'mtime' of 'md5'. De standaardwaarde is 'md5'.|
 | Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een map die is niet leeg) leidt tot een fout opgetreden. Met behulp van de **Force** eigenschap heeft een dergelijke fouten. De standaardwaarde is **$false**.|

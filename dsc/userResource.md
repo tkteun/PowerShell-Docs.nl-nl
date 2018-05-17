@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC-gebruikersbron
-ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f2660933aec43967e3f4082a983ef328a5b93851
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 #<a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource #
 
@@ -43,7 +42,7 @@ User [string] #ResourceName
 | Beschrijving| Hiermee geeft u de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
 | Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op __$false__ om ervoor te zorgen dat deze is ingeschakeld.|
 | Zorg ervoor dat| Hiermee wordt aangegeven of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| FullName| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
+| Volledige naam| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
 | Wachtwoord| Geeft het wachtwoord dat u wilt gebruiken voor dit account. |
 | PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op __$false__ zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is __$false__.|
 | PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker bij de volgende aanmelding in het wachtwoord moet wijzigen. Deze eigenschap instellen op __$true__ als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is __$true__.|

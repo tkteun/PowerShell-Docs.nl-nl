@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,installeren
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: 715ac6fe5df47066415a65d91a0982fd7070a426
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ae50e8d1495d7075163714ed873940d2d1d19b8e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -25,7 +23,7 @@ WMF installatie worden toegevoegd en/of updates van de volgende functies:
 - Windows Management Instrumentation (WMI)
 - Windows PowerShell-webservices (Management OData IIS-extensie)
 - Registratie van software-inventaris (SIL)
-- Server Manager CIM Provider
+- CIM-Provider van Serverbeheer
 
 ## <a name="wmf-release-notes"></a>WMF Release-opmerkingen
 

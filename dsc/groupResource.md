@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Groep DSC-Resource
-ms.openlocfilehash: 6a4732439bb45e36fa9201975f12194442611002
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 68e0840eaeb116b92260ca697acd5796460a2909
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-group-resource"></a>Groep DSC-Resource
 
@@ -35,7 +34,7 @@ Group [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   |
 |---|---|
-| GroupName| De naam van de groep waarvoor u om te controleren of een specifieke status.|
+| Groepsnaam| De naam van de groep waarvoor u om te controleren of een specifieke status.|
 | referentie| De referenties die zijn vereist voor toegang tot externe bronnen. **Opmerking**: dit account de juiste Active Directory-machtigingen voor alle niet-lokale accounts toevoegen aan de groep moet hebben; anders wordt een fout optreedt wanneer de configuratie in het doelknooppunt wordt uitgevoerd.
 | Beschrijving| De beschrijving van de groep.|
 | Zorg ervoor dat| Hiermee wordt aangegeven of de groep bestaat. Deze eigenschap instellen op 'Ontbreekt' om ervoor te zorgen dat de groep niet bestaat. Instellen om "" (de standaardwaarde), zorgt u ervoor dat de groep bestaat.|

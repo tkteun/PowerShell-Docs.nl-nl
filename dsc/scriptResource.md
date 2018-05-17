@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Bron van het DSC-Script
-ms.openlocfilehash: 6a39fbd914f9a0bb0f192b7b1f81f404bb6b93c1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-script-resource"></a>Bron van het DSC-Script
 
@@ -42,7 +41,7 @@ Script [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   |
 |---|---|
-| GetScript| Biedt een blok van Windows PowerShell-script dat wordt uitgevoerd wanneer u aanroept de [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Dit blok moet een hashtabel retourneren. De hash-tabel mag slechts één sleutelveld bevatten **resultaat** en de waarde moet van het type **tekenreeks**.|
+| Ophalen script| Biedt een blok van Windows PowerShell-script dat wordt uitgevoerd wanneer u aanroept de [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Dit blok moet een hashtabel retourneren. De hash-tabel mag slechts één sleutelveld bevatten **resultaat** en de waarde moet van het type **tekenreeks**.|
 | SetScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -cmdlet de **TestScript** blok als eerste wordt gestart. Als de **TestScript** blokkeren retourneert **$false**, wordt de **SetScript** blok wordt uitgevoerd. Als de **TestScript** blokkeren retourneert **$true**, wordt de **SetScript** blok wordt niet uitgevoerd.|
 | TestScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet dit blok wordt uitgevoerd. Als het resultaat **$false**, het blok SetScript wordt uitgevoerd. Als het resultaat **$true**, SetScript blok wordt niet uitgevoerd. De **TestScript** blok wordt ook uitgevoerd wanneer u aanroept de [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** blok wordt niet uitgevoerd, ongeacht welke het TestScript waarde blokkeren retourneert. De **TestScript** blok moet True worden geretourneerd als de configuratie van de werkelijke overeenkomt met de huidige configuratie van de gewenste status en False als komt niet overeen met. (De huidige configuratie van de gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt.)|
 | referentie| Hiermee geeft u de referenties gebruiken om dit script uit te voeren als de referenties zijn vereist.|

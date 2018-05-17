@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC gebruiken op Nano Server
-ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e26c525b48e8656a3479db9c0a760eaeb8cf58a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC gebruiken op Nano Server
 
@@ -34,19 +33,19 @@ Zie voor meer informatie over het installeren en gebruiken van Nano Server, even
 * Alle DSC-cmdlets die bestaan op een volledige versie van Windows Server, waaronder het volgende:
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
   * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
-  * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
+  * [Schakel DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
-  * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
+  * [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
   * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
   * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
-  * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
-  * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
+  * [Update DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
+  * [Restore DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
   * [Aanroepen DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
-  * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+  * [Zoeken naar DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
   * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
@@ -108,7 +107,7 @@ Zie voor meer informatie over het installeren en gebruiken van Nano Server, even
   *Kan type [management.managementobject] niet vinden: Controleer of de assembly met dit type is geladen.*
 
 * Resources die geen functionele
-  * [User](userResource.md)
+  * [Gebruiker](userResource.md)
 
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>DSC-functies niet beschikbaar op Nano Server

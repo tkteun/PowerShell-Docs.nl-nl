@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: PowerShell-scripts
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell is ontworpen voor het verbeteren van de opdrachtregel en scri
 ### <a name="discoverability"></a>Detectie
 Windows PowerShell kunt gemakkelijk detecteren van de functies. Bijvoorbeeld: voor een lijst met cmdlets die bekijken en wijzigen van de Windows-services, typt u:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Nadat u ontdekte welke cmdlet voert een taak, kunt u meer informatie over de cmdlet met de cmdlet Get-Help. Typ bijvoorbeeld het volgende Help-informatie over de cmdlet Get-Service:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 De meeste cmdlets verzenden objecten die kunnen worden bewerkt en vervolgens naar tekst voor de weergave wordt weergegeven. Voor een volledig begrip van de uitvoer van deze cmdlet, de uitvoer doorsluizen naar de cmdlet Get-lid. De volgende opdracht geeft bijvoorbeeld informatie over de leden van de objectuitvoer door de cmdlet Get-Service.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

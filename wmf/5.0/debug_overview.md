@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Verbeteringen in foutopsporing voor PowerShell-scripts
 
@@ -42,14 +40,14 @@ Er zijn nieuwe, geavanceerde foutopsporing functies waarmee u kunnen koppelen aa
 Nieuwe cmdlets er zijn toegevoegd waarmee u een lijst met huidige runspaces in een proces en de Windows PowerShell-console of de ISE-foutopsporingsprogramma koppelen aan die runspace voor foutopsporing in scripts kunt:
 
 -   Get-Runspace
--   Debug-Runspace
--   Enable-RunspaceDebug
--   Disable-RunspaceDebug
+-   Foutopsporing Runspace
+-   Schakel RunspaceDebug
+-   Schakel RunspaceDebug
 -   Get-RunspaceDebug
 
 ### <a name="attach-to-process-hosting-powershell"></a>Koppelen aan een proces voor het hosten van PowerShell
 
 U kunt nu koppelen aan het proces voor elke computer met Windows PowerShell geladen. U doen dit door te voeren in een interactieve sessie met het proces, net zoals bij hoe u in een interactieve externe sessie invoeren door de Enter-PSSession cmdlet:
 
--   Enter-PSHostProcess
--   Exit-PSHostProcess
+-   Voer PSHostProcess
+-   Exit PSHostProcess

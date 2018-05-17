@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
-ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
 
@@ -36,7 +35,7 @@ Voor het bouwen en uitvoeren van dit voorbeeld, moet u een omgeving met meerdere
 Dit is de computer waar u doet al het werk instellen en uitvoeren in het voorbeeld.
 
 De clientcomputer moet een Windows-computer met het volgende zijn geïnstalleerd:
-- [Git](https://git-scm.com/)
+- [GIT](https://git-scm.com/)
 - een lokale git-opslagplaats gekloond van https://github.com/PowerShell/Demo_CI
 - een teksteditor, zoals [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -320,14 +319,14 @@ Hier komen aan bod de build-stappen die u aan de build toevoegen zult. Zie voor 
 Een nieuwe build-definitie maken (Selecteer de **leeg** sjabloon) met de naam 'InfraDNS'.
 Voeg dat de volgende stappen uit om u te bouwen definitie:
 
-- PowerShell Script
+- PowerShell-Script
 - Testresultaten publiceren
 - Bestanden kopiëren
 - Publiceren van artefacten
 
 Na het toevoegen van deze stappen te bouwen, bewerk de eigenschappen van elke stap als volgt:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell-Script
 
 1. Stel de **Type** eigenschap `File Path`.
 1. Stel de **scriptpad** eigenschap `initiate.ps1`.
@@ -388,13 +387,13 @@ Selecteer **continue implementatie** zodat een nieuwe release geactiveerd elk ge
 
 De volgende stappen toevoegen aan de definitie van de release:
 
-- PowerShell Script
+- PowerShell-Script
 - Testresultaten publiceren
 - Testresultaten publiceren
 
 Bewerk de stappen uit als volgt:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell-Script
 
 1. Stel de **scriptpad** veld `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Stel de **argumenten** veld `-fileName Deploy`

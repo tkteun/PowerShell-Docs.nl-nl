@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,installeren
+ms.topic: conceptual
 contributor: vaibch
 title: Fout Netwerkswitchbeheer-cmdlets
-ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 197a25411a82e5d256a9420706535d5411991f1b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 De cmdlets Netwerkswitchbeheer kan worden gebruikt voor het beheren van netwerkswitches via WSMAN.
 Er zijn enkele cmdlets van deze module geschikt is voor het accepteren van waarden van pijplijnen.
@@ -20,33 +19,33 @@ Als de parameter 'InputObject' niet gebruikt wordt, blijven de cmdlet moet worde
 Hier volgt de lijst van beïnvloede cmdlets dat wil zeggen deze cmdlets kunnen accepteren waarde voor parameter 'InputObject' van de pijplijn.
 Als deze waarde niet uit de pijplijn wordt doorgegeven mislukt tijdens de uitvoering van de cmdlet.
 
-- Disable-NetworkSwitchEthernetPort
-- Enable-NetworkSwitchEthernetPort
-- Remove-NetworkSwitchEthernetPortIPAddress
+- Schakel NetworkSwitchEthernetPort
+- Schakel NetworkSwitchEthernetPort
+- Verwijder NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchEthernetPortIPAddress
 - Set-NetworkSwitchPortMode
 - Set-NetworkSwitchPortProperty
 - Schakel NetworkSwitchFeature
 - Schakel NetworkSwitchFeature
-- Remove-NetworkSwitchVlan
+- Verwijder NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
 ### <a name="resolution"></a>Oplossing
 De cmdlets werk fijn wanneer de waarde van parameter InputObject doorgegeven in deze pijplijn. Er zijn enkele voorbeelden die voor de bovenstaande cmdlets werken:
 
-- Disable-NetworkSwitchEthernetPort
+- Schakel NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
 
-- Enable-NetworkSwitchEthernetPort
+- Schakel NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Enable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
 
-- Remove-NetworkSwitchEthernetPortIPAddress
+- Verwijder NetworkSwitchEthernetPortIPAddress
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Remove-NetworkSwitchEthernetPortIPAddress -CimSession $cimSession

@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
-title: DSC ServiceSet Resource
-ms.openlocfilehash: a7516120f0c4bc1c91031adc8aabf6a59b845246
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: DSC ServiceSet-Resource
+ms.openlocfilehash: 1f879d2eafeb11e69968252a11f0c550c9b103f3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="dsc-serviceset-resource"></a>DSC ServiceSet Resource
+# <a name="dsc-serviceset-resource"></a>DSC ServiceSet-Resource
 
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 

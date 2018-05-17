@@ -1,20 +1,17 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
-title: Uninstall-pswawebapplication
-ms.technology: powershell
-ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Uninstall-PswaWebApplication
+ms.openlocfilehash: b2a3e4d584fd04ee49e1e6408dba39fd8bc555dc
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
-## <a name="synopsis"></a>SYNOPSIS
+## <a name="synopsis"></a>SAMENVATTING
 
 Hiermee verwijdert u de webtoepassing Windows PowerShell®.
 
@@ -58,7 +55,7 @@ Hiermee geeft u de naam van de webtoepassing te verwijderen.
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-websitename-ltstringgt"></a>-WebSiteName &lt;String&gt;
+### <a name="-websitename-ltstringgt"></a>-Websitenaam &lt;tekenreeks&gt;
 
 Geeft de naam van de website waarop de webtoepassing is geïnstalleerd.
 
@@ -105,7 +102,7 @@ Zie voor meer informatie [about_CommonParameters](http://go.microsoft.com/fwlink
 
 Deze cmdlet heeft geen invoer.
 
-## <a name="outputs"></a>OUTPUTS
+## <a name="outputs"></a>UITVOER
 
 Deze cmdlet retourneert geen uitvoer.
 

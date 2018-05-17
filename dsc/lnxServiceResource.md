@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: DSC voor Linux nxService Resource
-ms.openlocfilehash: b02fb1153570f628682533cb57a7d429e5cc8762
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9cab889368469f2c854a387b919aea58a49f2210
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService Resource
 
@@ -31,7 +30,7 @@ nxService <string> #ResourceName
 |  Eigenschap |  Beschrijving |
 |---|---|
 | Naam| De naam van de service /-daemon te configureren.|
-| Controller| Het type servicecontroller moet worden gebruikt bij het configureren van de service.|
+| Domeincontroller| Het type servicecontroller moet worden gebruikt bij het configureren van de service.|
 | Ingeschakeld| Hiermee wordt aangegeven of de service wordt gestart bij het opstarten.|
 | Status| Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap op 'Gestopt' om ervoor te zorgen dat de service niet wordt uitgevoerd. Stel deze in op 'Uitvoeren' om ervoor te zorgen dat de service niet wordt uitgevoerd.|
 | dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|

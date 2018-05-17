@@ -1,6 +1,13 @@
-
 ---
-MS.Date: 12-06/2017 Inzender: manikb ms.topic: verwijzen naar trefwoorden: galerie, powershell, cmdlet, psget titel: uitvoeren van de bootstrap-NuGet
+ms.date: 06/12/2017
+contributor: manikb
+keywords: Galerie, powershell, cmdlet, psget
+title: Uitvoeren van de bootstrap NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>De NuGet-provider en NuGet.exe bootstrap
 

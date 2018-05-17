@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, powershell, configuratie, setup
 title: Met Desired State Configuration (DSC) aan de slag voor Linux
-ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 0534cede979eb2917adb608dba622539fe4bdc45
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Met Desired State Configuration (DSC) aan de slag voor Linux
 
@@ -27,9 +26,9 @@ De volgende tabel beschrijft de afhankelijkheden vereist pakket voor DSC voor Li
 
 |  Vereist pakket |  Beschrijving |  Minimale versie |
 |---|---|---|
-| glibc| GNU-bibliotheek| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
-| omiserver| Open Management Infrastructure| 1.0.8.1|
+| Glibc| GNU-bibliotheek| 2... 4 – 31.30|
+| Python| Python| 2.4 – 3.4|
+| omniserver| Open Management Infrastructure| 1.0.8.1|
 | Openssl| OpenSSL-bibliotheken| 0.9.8 of 1.0|
 | ctypes| CTypes Python-bibliotheek| Moet overeenkomen met de versie van Python|
 | libcurl| http-clientbibliotheek cURL| 7.15.1|
@@ -181,4 +180,4 @@ De volgende logboekbestanden worden gegenereerd voor DSC voor Linux-berichten.
 |Logboekbestand|Adreslijst|Beschrijving|
 |---|---|---|
 |omiserver.log|/var/opt/OMI/log|Berichten met betrekking tot de werking van de OMI-CIM-server.|
-|dsc.log|/var/opt/OMI/log|Berichten met betrekking tot de werking van de bewerkingen van de lokale Configuration Manager (LCM) en DSC-resources.|
+|DSC.log|/var/opt/OMI/log|Berichten met betrekking tot de werking van de bewerkingen van de lokale Configuration Manager (LCM) en DSC-resources.|
