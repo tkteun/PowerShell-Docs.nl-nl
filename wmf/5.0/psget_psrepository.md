@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 269f4112704067f291728e4c1d745d68ec6ccd6f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="register-a-powershell-repository"></a><span data-ttu-id="56ce8-102">Een PowerShell-opslagplaats registreren</span><span class="sxs-lookup"><span data-stu-id="56ce8-102">Register a PowerShell Repository</span></span>
-<span data-ttu-id="56ce8-103">U kunt PowerShellGet interne opslagplaatsen kunnen configureren.</span><span class="sxs-lookup"><span data-stu-id="56ce8-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="56ce8-104">Dit wordt gedaan met behulp van de volgende toevoegingen:</span><span class="sxs-lookup"><span data-stu-id="56ce8-104">This is done by using the following additions:</span></span>
-- <span data-ttu-id="56ce8-105">Register-PSRepository: Registreert een opslagplaats voor de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="56ce8-105">Register-PSRepository: Registers a repository for the current user.</span></span>
-- <span data-ttu-id="56ce8-106">Registratie-PSRepository: Hiermee verwijdert u een geregistreerde opslagplaats voor de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="56ce8-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
-- <span data-ttu-id="56ce8-107">Set-PSRepository: Waarden voor een geregistreerde-opslagplaats instellen.</span><span class="sxs-lookup"><span data-stu-id="56ce8-107">Set-PSRepository: Set values for a registered repository.</span></span>
-- <span data-ttu-id="56ce8-108">Get-PSRepository: Alle geregistreerde opslagplaatsen voor de huidige gebruiker niet ophalen.</span><span class="sxs-lookup"><span data-stu-id="56ce8-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
+# <a name="register-a-powershell-repository"></a><span data-ttu-id="4420f-102">Een PowerShell-opslagplaats registreren</span><span class="sxs-lookup"><span data-stu-id="4420f-102">Register a PowerShell Repository</span></span>
+<span data-ttu-id="4420f-103">U kunt PowerShellGet interne opslagplaatsen kunnen configureren.</span><span class="sxs-lookup"><span data-stu-id="4420f-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="4420f-104">Dit wordt gedaan met behulp van de volgende toevoegingen:</span><span class="sxs-lookup"><span data-stu-id="4420f-104">This is done by using the following additions:</span></span>
+- <span data-ttu-id="4420f-105">Register-PSRepository: Registreert een opslagplaats voor de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="4420f-105">Register-PSRepository: Registers a repository for the current user.</span></span>
+- <span data-ttu-id="4420f-106">Registratie-PSRepository: Hiermee verwijdert u een geregistreerde opslagplaats voor de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="4420f-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
+- <span data-ttu-id="4420f-107">Set-PSRepository: Waarden voor een geregistreerde-opslagplaats instellen.</span><span class="sxs-lookup"><span data-stu-id="4420f-107">Set-PSRepository: Set values for a registered repository.</span></span>
+- <span data-ttu-id="4420f-108">Get-PSRepository: Alle geregistreerde opslagplaatsen voor de huidige gebruiker niet ophalen.</span><span class="sxs-lookup"><span data-stu-id="4420f-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
 
-<span data-ttu-id="56ce8-109">Nadat een opslagplaats is geregistreerd, kunt u zoeken-Module en installatie-Module om hiermee te werken.</span><span class="sxs-lookup"><span data-stu-id="56ce8-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+<span data-ttu-id="4420f-109">Nadat een opslagplaats is geregistreerd, kunt u zoeken-Module en installatie-Module om hiermee te werken.</span><span class="sxs-lookup"><span data-stu-id="4420f-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 \#Register a default repository
