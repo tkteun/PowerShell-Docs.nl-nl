@@ -1,13 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, powershell, cmdlet, psgallery, psget
-title: De PowerShell-galerie
-ms.openlocfilehash: 65e0c427310ac20621109a6620e926a7894cf8f8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
+ en---ms.date: 12-06/2017 Inzender: JKeithB trefwoorden: galerie, powershell, cmdlet, psgallery, psget titel: de PowerShell Gallery
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell-galerie
 
@@ -27,9 +18,9 @@ Bekijk de [aan de slag](getting-started.md) pagina voor meer informatie over het
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-De **PowerShellGet** module vereist **PowerShell 3.0 of hoger**.
+De **PowerShellGet** module vereist **Windows PowerShell 3.0 of hoger**, of **PowerShell Core 6.0 of hoger**.
 
-Daarom **PowerShellGet** moet een van de volgende besturingssystemen:
+Een geschikte versie van **Windows PowerShell** is beschikbaar voor deze besturingssystemen:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -40,6 +31,10 @@ Daarom **PowerShellGet** moet een van de volgende besturingssystemen:
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell Core** veel besturingssystemen ondersteund. Zie [in dit artikel](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) voor een volledige lijst.
+
+Veel modules die worden gehost in de galerie ondersteuning biedt voor verschillende besturingssystemen en aanvullende vereisten hebben. Raadpleeg de documentatie voor de modules voor meer informatie.
 
 ## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Hebt u feedback?
 
