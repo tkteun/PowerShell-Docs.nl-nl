@@ -1,41 +1,40 @@
-﻿# <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
+# <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell-kern 6.0
 
-[PowerShell Core 6.0][github] is een nieuwe open-source versie van PowerShell die cross-platform werkt (Windows, macOS en Linux) en gebouwd is voor heterogene omgevingen en de hybride cloud.
+[PowerShell Core 6.0] [ github] is een nieuwe versie van PowerShell die cross-platform (Windows, Mac OS en Linux), open source en gebouwd voor heterogene omgevingen en de hybride cloud.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>.NET Framework is verplaatst naar .NET Core
 
-PowerShell Core maakt gebruik van [.NET Core 2.0][] als de runtime.
-Met .NET core 2.0 kan PowerShell Core werken op meerdere platformen (Windows, macOS en Linux).
-PowerShell Core maakt ook de API-set beschikbaar die wordt aangeboden door .NET Core 2.0 en die gebruikt kan worden in PowerShell-cmdlets en -scripts.
+Maakt gebruik van PowerShell Core [.NET Core 2.0][] als de runtime.
+.NET core 2.0 kunt PowerShell Core werken op meerdere platforms (Windows, Mac OS en Linux).
+PowerShell Core wordt ook de API-set die worden aangeboden door .NET Core 2.0 moet worden gebruikt in de PowerShell-cmdlets en -scripts.
 
-Windows PowerShell gebruikte de .NET Framework runtime voor het hosten van de PowerShell-engine.
-Dit betekent dat Windows PowerShell de API-set beschikbaar maakt die wordt aangeboden door .NET Framework.
+Windows PowerShell gebruikt de .NET Framework runtime voor het hosten van de PowerShell-engine.
+Dit betekent dat Windows PowerShell de API-set die worden aangeboden door .NET Framework beschrijft.
 
 De API's gedeeld tussen .NET Core en .NET Framework zijn gedefinieerd als onderdeel van [.NET Standard][].
 
-Meer informatie over hoe dit van invloed is op de module/script-compatibiliteit tussen PowerShell Core en Windows PowerShell, is te vinden onder [Compatibiliteit met eerdere versies van Windows PowerShell].
-Meer informatie over hoe dit van invloed is op de module/script-compatibiliteit tussen PowerShell Core en Windows PowerShell, is te vinden onder [Compatibiliteit met eerdere versies van Windows PowerShell](#backwards-compatibility-with-windows-powershell).
+Zie voor meer informatie over hoe dit van invloed op module-script compatibiliteit tussen PowerShell Core en Windows PowerShell, [Backwards compatibiliteit met Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
-## <a name="support-for-macos-and-linux"></a>Ondersteuning voor macOS en Linux
+## <a name="support-for-macos-and-linux"></a>Ondersteuning voor Mac OS- en Linux
 
-PowerShell ondersteunt nu ook officieel macOS en Linux, inclusief:
+PowerShell officieel ondersteunt nu Mac OS- en Linux, met inbegrip van:
 
 - Windows 7, 8.1 en 10
 - Windows Server 2008 R2, 2012 R2, 2016
-- [Windows Server Semi-Annual-kanaal][semi-annual]
-- Ubuntu 14.04, 16.04 en 17.04
-- Debian 8.7+ en 9
+- [Windows-serverkanaal puntkomma per jaar][semi-annual]
+- Ubuntu 14.04 16.04 en 17.04
+- Debian 8,7 + en 9
 - CentOS 7
 - Red Hat Enterprise Linux 7
-- OpenSUSE 42.2
-- Fedora 25 en 26
+- OpenSUSE 42,2
+- Fedora 25, 26
 - macOS 10.12+
 
-Onze community heeft ook pakketten voor de volgende platformen bijgedragen, maar deze worden niet officieel ondersteund:
+Onze community heeft ook bijgedragen pakketten voor de volgende platforms, maar ze zijn niet officieel ondersteund:
 
-- Arch Linux
+- Boog Linux
 - Kali Linux
-- AppImage (werkt op meerdere Linux-platformen)
+- AppImage (werkt op meerdere platforms voor Linux)
 
 Ook hebben we experimentele (niet-ondersteunde) versies voor de volgende platforms:
 
@@ -43,44 +42,44 @@ Ook hebben we experimentele (niet-ondersteunde) versies voor de volgende platfor
 - Raspbian (Stretch)
 
 Een aantal wijzigingen zijn aangebracht in PowerShell Core 6.0 zodat deze beter werkt op niet-Windows-systemen.
-Sommige van deze wijzigingen zijn behoorlijk ingrijpend en als zodanig ook van invloed op Windows.
-Andere zijn alleen aanwezig in of van toepassing op niet-Windows-installaties van PowerShell Core.
+Sommige van deze zijn wijzigingen, die ook van invloed op Windows splitsen.
+Andere zijn alleen aanwezig of is van toepassing in niet-Windows-installaties van PowerShell Core.
 
-- Ondersteuning toegevoegd voor native opdracht-globbing op Unix-platformen.
+- Ondersteuning toegevoegd voor systeemeigen opdracht bij globbing op Unix-platforms.
 - De `more` functionaliteit respecteert de Linux `$PAGER` en wordt standaard ingesteld op `less`.
-  Dit betekent dat u nu jokertekens met native binaire gegevens/opdrachten kunt gebruiken (bijvoorbeeld `ls *.txt`). (#3463)
-- Afsluitende backslash is automatisch ge-escaped wanneer er omgegaan wordt met systeemeigen commando argumenten. (#4965)
-- Negeer de `-ExecutionPolicy` switch wanneer PowerShell op niet-Windows-platformen worden uitgevoerd omdat script-signing momenteel niet wordt ondersteund. (#3481)
-- Vaste ConsoleHost voor het honeren van `NoEcho` op Unix-platformen. (#3801)
-- Vaste `Get-Help` ter ondersteuning van niet-hoofdlettergevoelige patroonovereenkomsten op Unix-platformen. (#3852)
-- Man-pagina voor `powershell` toegevoegd aan het pakket
+  Dit betekent dat u kunt nu met gebruik van jokertekens systeemeigen binaire bestanden/opdrachten (bijvoorbeeld `ls *.txt`). (#3463)
+- Afsluitende backslash is automatisch ontsnapt systeemeigen opdrachtargumenten betreft. (#4965)
+- Negeer de `-ExecutionPolicy` overschakelen wanneer PowerShell op niet-Windows-platforms worden uitgevoerd omdat de ondertekening van het script wordt momenteel niet ondersteund. (#3481)
+- Vaste ConsoleHost inwilligen `NoEcho` op Unix-platforms. (#3801)
+- Vaste `Get-Help` ter ondersteuning van hoofdlettergevoelig patroon overeen op de Unix-platforms. (#3852)
+- `powershell` Man-pagina toegevoegd aan het pakket
 
 ### <a name="logging"></a>Logboekregistratie
 
-Op macOS gebruikt PowerShell de native `os_log`-API's voor registratie[ naar het uniformen registratiesysteem van Apple][os_log].
-In Linux maakt PowerShell gebruik van [Syslog][], een universele registratieoplossing.
+Op Mac OS, PowerShell wordt het native `os_log` API's om Apple [unified logboekregistratie system][os_log].
+Op Linux, PowerShell wordt [Syslog][], een oplossing alomtegenwoordige logboekregistratie.
 
 ### <a name="filesystem"></a>Bestandssysteem
 
-Dankzij een aantal wijzigingen in macOS en Linux worden nu ook tekens voor bestandsnamen ondersteund die doorgaans niet worden ondersteund in Windows:
+Een aantal wijzigingen zijn aangebracht op Mac OS- en Linux ter ondersteuning van oudsher niet ondersteund op Windows tekens:
 
-- Paden die aan cmdlets worden opgegeven, zijn nu slash-agnostisch (zowel / als \ kan worden gebruikt als scheidingsteken voor mappen)
-
-- XDG Base Directory-specificatie wordt nu in acht genomen en standaard gebruikt:
+- Paden die tot de cmdlets zijn nu slash-networkdirect (zowel / en \ werk directory scheiding)
+- XDG Base Directory specificatie is nu in acht genomen en standaard gebruikt:
   - Het pad van het Linux/Mac OS-profiel bevindt zich op `~/.config/powershell/profile.ps1`
-  - Het pad om de geschiedenis op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Het pad voor de gebruikersmodule bevindt zich op `~/.local/share/powershell/Modules`
+  - De geschiedenis pad op te slaan bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Het pad van de gebruiker-module bevindt zich op `~/.local/share/powershell/Modules`
 - Ondersteuning voor bestands- en mapnamen met de dubbele punt op Unix. (#4959)
 - Ondersteuning voor scriptnamen- of volledige paden met komma's. (#4136) (Dank aan @TimCurwick!)
-- Detectie wanneer`-LiteralPath` wordt gebruikt om jokerteken-uitbreiding voor navigatie-cmdlets te onderdrukken. (#5038)
-- `Get-ChildItem`is bijgewerkt, zodat deze meer werkt zoals het *NIX-achtige `ls -R` en de systeemeigen `DIR /S`-opdrachten van Windows.
-  `Get-ChildItem` retourneert nu de symbolische koppelingen die worden aangetroffen tijdens een recursieve zoekopdracht en zoekt niet in de mappen waarnaar deze koppelingen verwijzen. (#3780)
+- Detecteren wanneer `-LiteralPath` wordt gebruikt voor het onderdrukken van jokertekens voor navigatie-cmdlets. (#5038)
+- Bijgewerkt `Get-ChildItem` meer achtige werkt de * nix `ls -R` en de Windows `DIR /S` systeemeigen opdrachten.
+  `Get-ChildItem` nu retourneert de symbolische koppelingen aangetroffen tijdens een recursieve zoekopdracht en niet in de mappen die het doel van deze koppelingen. (#3780)
 
 ### <a name="case-sensitivity"></a>Hoofdlettergevoeligheid
 
-Linux- en macOS zijn meestal hoofdlettergevoelig terwijl Windows niet hoofdlettergevoelig is terwijl wel de (hoofd)letter opgeslagen wordt. In het algemeen is PowerShell niet hoofdlettergevoelig.
+Linux- en Mac OS zijn meestal hoofdlettergevoelig terwijl Windows behoud van de aanvraag niet hoofdlettergevoelig is.
+In het algemeen is PowerShell niet hoofdlettergevoelig.
 
-Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op macOS en Linux. Daarom is het hoofdlettergebruik van de omgevingsvariabele `PSModulePath`gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad om de naam van de module te bepalen. (#5097)
+Omgevingsvariabelen zijn bijvoorbeeld hoofdlettergevoelig op Mac OS- en Linux, dus het hoofdlettergebruik van de `PSModulePath` omgevingsvariabele is gestandaardiseerd. (#3255) `Import-Module` is niet hoofdlettergevoelig bij het gebruik van een bestandspad om te bepalen van de naam van de module. (#5097)
 
 ## <a name="support-for-side-by-side-installations"></a>Ondersteuning voor side-by-side-installaties
 
@@ -173,7 +172,7 @@ PowerShell Core verandert de standaardversleuteling die voldoen aan de breder ec
 Dit betekent dat alle ingebouwde cmdlets die gebruikmaken van de `-Encoding` parameter gebruik de `UTF8NoBOM` waarde standaard.
 De volgende cmdlets worden beïnvloed door deze wijziging:
 
-- Add-Content
+- Inhoud toevoegen
 - Export Clixml
 - Export-Csv
 - Export-PSSession
@@ -182,7 +181,7 @@ De volgende cmdlets worden beïnvloed door deze wijziging:
 - Import-Csv
 - Out-File
 - Selecteer-tekenreeks
-- Send-MailMessage
+- Verzenden MailMessage
 - Set-Content
 
 Deze cmdlets ook zijn bijgewerkt zodat de `-Encoding` -parameter accepteert universeel `System.Text.Encoding`.
@@ -374,7 +373,7 @@ U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][tele
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
@@ -384,6 +383,6 @@ U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][tele
 [Veelgestelde vragen over]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
