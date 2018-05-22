@@ -154,14 +154,20 @@
     - name: Wat is nieuw
       href: ''
       items:
-        - name: Wat is er nieuw in PowerShell?
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Wat is er nieuw in Windows PowerShell 5.0?
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: Wat is er nieuw in PowerShell 5.0 ISE?
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: Wat is er nieuw in PowerShell Core 6.0?
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Wijzigingen in PowerShell Core 6.0 die fouten veroorzaken
+              href: whats-new/breaking-changes-ps6.md
+            - name: Bekende problemen in PowerShell Core 6.0
+              href: whats-new/known-issues-ps6.md
+        - name: Wat is er nieuw in PowerShell 5.0?
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Wat is er nieuw in Windows PowerShell 5.0?
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: Wat is er nieuw in PowerShell 5.0 ISE?
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Levenscyclus voor ondersteuning van PowerShell Core
       href: PowerShell-Core-Support.md
     - name: Meer informatie
