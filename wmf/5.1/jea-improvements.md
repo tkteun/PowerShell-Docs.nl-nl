@@ -49,7 +49,7 @@ U kunt vervolgens aangepaste functies om te verwerken van de gegevens die zijn o
 
 In sommige gevallen moet een taak die een gebruiker moet uitvoeren in een sessie JEA mogelijk toegang tot bronnen voorbij de lokale computer.
 Wanneer een sessie JEA is geconfigureerd voor gebruik van een virtueel account, wordt elke poging tot deze bronnen afkomstig zijn van de identiteit van de lokale computer, niet de virtueel account of verbonden gebruiker weergegeven.
-In TP5, hebben we ondersteuning voor het uitvoeren van JEA onder de context van een [groep beheerd serviceaccount] ingeschakeld (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), waardoor het veel eenvoudiger toegang tot netwerkbronnen met behulp van de identiteit van een domein.
+In TP5, hebben we ondersteuning voor het uitvoeren van JEA onder de context van een [groep beheerd serviceaccount](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) ingeschakeld, waardoor het veel eenvoudiger toegang tot netwerkbronnen met behulp van de identiteit van een domein.
 
 Gebruik voor het configureren van een sessie JEA worden uitgevoerd onder een beheerd serviceaccount voor de volgende sleutel in uw bestand voor:
 
