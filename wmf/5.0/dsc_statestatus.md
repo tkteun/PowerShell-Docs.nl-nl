@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Uniforme en consistente status en statusweergave
 
@@ -21,7 +21,7 @@ De weergave van LCM status en de status van de DSC-bewerking worden herzien en u
 
 De volgende tabel ziet u de resulterende toestand en status gerelateerd eigenschappen onder enkele typische scenario's.
 
-| **Scenario**                    | **LCMState\***       | **Status** | **Opnieuw opstarten aangevraagd**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| Scenario                    | LCMState       | Status | Opnieuw opstarten aangevraagd  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Actieve                 | Geslaagd    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Mislukt    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Uitbreiding in de cmdlet Get-DscConfigurationStatus
 
 Er zijn enkele verbeteringen zijn aangebracht aan de cmdlet Get-DscConfigurationStatus in deze release. De eigenschap StartDate van objecten die worden geretourneerd door de cmdlet is eerder van het tekenreekstype. Nu is van het type Datetime, waardoor complexe te selecteren en filteren eenvoudiger op basis van de intrinsieke eigenschappen van een datum/tijd-object.
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 Hier volgt een voorbeeld waarin alle records voor DSC-bewerking is uitgevoerd op dezelfde dag van week vandaag retourneert.
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 Records van bewerkingen die geen wijzigingen knooppuntconfiguratie aanbrengen, (dat wil zeggen leesbewerkingen alleen) worden geëlimineerd. Daarom Test-DscConfiguration Get DscConfiguration bewerkingen zijn niet langer verontreinigde objecten van de cmdlet Get-DscConfigurationStatus geretourneerd.
 Records van de bewerking meta configuratie-instelling wordt toegevoegd aan het retourtype van de cmdlet Get-DscConfigurationStatus.
 
 Hieronder volgt een voorbeeld van resultaat geretourneerd door Get-DscConfigurationStatus – alle cmdlet.
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Uitbreiding in de cmdlet Get-DscLocalConfigurationManager
+
 Een nieuw veld van LCMStateDetail is toegevoegd aan het object dat wordt geretourneerd door de cmdlet Get-DscLocalConfigurationManager. Dit veld wordt gevuld wanneer LCMState 'Bezet' is. Het kan worden opgehaald met de volgende cmdlet:
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 Hier volgt een voorbeeld van uitvoer van een doorlopende bewaking van een configuratie die twee keer opnieuw opstarten op een externe knooppunt vereist.
+
 ```powershell
 Start a configuration that requires two reboots
 
