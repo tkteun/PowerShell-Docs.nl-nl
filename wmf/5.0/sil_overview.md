@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 4bfedd585958f84889954bd9ee022ea47ac191b2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e7198999c17b5c0d77724a82b322e6485065225e
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="software-inventory-logging-sil"></a>Registratie van software-inventaris (SIL)
 
-** Belangrijk: ** *wanneer WMF 5.0 installeert op een Windows Server 2012 R2-Server waarop SIL al wordt uitgevoerd, is het nodig om uit te voeren van de cmdlet Start-SilLogging eenmaal na de installatie WMF als de installatie foutievelijk de Software stopt Inventaris-functie voor logboekregistratie.*
+**Belangrijk:** *wanneer WMF 5.0 installeert op een Windows Server 2012 R2-Server waarop SIL al wordt uitgevoerd, is het nodig om uit te voeren van de cmdlet Start-SilLogging eenmaal na de installatie WMF als de installatie foutievelijk stopt de Software Inventory Logging functie.*
 
 Logboekregistratie van software-inventaris vermindert het gebruik van de operationele kosten van het verkrijgen van nauwkeurige informatie over de Microsoft-software die lokaal wordt geïnstalleerd op een server, maar vooral voor grote aantallen servers in een IT-omgeving (ervan uitgaande dat de software is geïnstalleerd en uitgevoerd in de IT-omgeving). Voorwaarde die is ingesteld, kunt u het doorsturen van deze gegevens naar een aggregatieserver en de logboekgegevens op één plek verzamelen via een uniform, automatisch proces.
 

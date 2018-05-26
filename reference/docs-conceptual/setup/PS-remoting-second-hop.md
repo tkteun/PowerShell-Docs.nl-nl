@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Maken van de tweede hop in PowerShell voor externe toegang
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Maken van de tweede hop in PowerShell voor externe toegang
 
@@ -21,7 +21,7 @@ Er zijn verschillende manieren om dit probleem te verhelpen. In dit onderwerp, z
 
 ## <a name="credssp"></a>CredSSP
 
-U kunt de [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) voor verificatie. CredSSP in de cache opgeslagen referenties op de externe server (_ServerB_), zodat deze wordt geopend u maximaal credential theft aanvallen. Als de externe computer is geknoeid, heeft de aanvaller toegang tot de referenties van de gebruiker. CredSSP is standaard uitgeschakeld in zowel client- en servercomputers. Alleen in de meest vertrouwde omgevingen, moet u CredSSP inschakelen. Bijvoorbeeld, een domeinbeheerder verbinding te maken met een domeincontroller, omdat de domeincontroller uiterst vertrouwde is.
+U kunt de [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) voor verificatie. CredSSP in de cache opgeslagen referenties op de externe server (_ServerB_), zodat deze wordt geopend u maximaal credential theft aanvallen. Als de externe computer is geknoeid, heeft de aanvaller toegang tot de referenties van de gebruiker. CredSSP is standaard uitgeschakeld in zowel client- en servercomputers. Alleen in de meest vertrouwde omgevingen, moet u CredSSP inschakelen. Bijvoorbeeld, een domeinbeheerder verbinding te maken met een domeincontroller, omdat de domeincontroller uiterst vertrouwde is.
 
 Zie voor meer informatie over de beveiligingsoverwegingen wanneer u CredSSP voor externe communicatie van PowerShell [onbedoeld Sabotage: Houd er rekening mee van CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -175,7 +175,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-In dit voorbeeld wordt de `$using` variabele wordt gebruikt om de `$ServerC` variabele zichtbaar is voor _ServerB_. Voor meer informatie over de `$using` variabele, Zie [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+In dit voorbeeld wordt de `$using` variabele wordt gebruikt om de `$ServerC` variabele zichtbaar is voor _ServerB_. Voor meer informatie over de `$using` variabele, Zie [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Op meerdere servers te delegeren referenties _ServerC_, stel de waarde van de **PrincipalsAllowedToDelegateToAccount** parameter op _ServerC_ om in een matrix:
 
@@ -212,8 +212,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hoe Windows Server 2012 versnellingen de last van het Kerberos-beperkte overdracht, deel 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hoe Windows Server 2012 versnellingen de last van het Kerberos-beperkte overdracht, deel 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Informatie over Kerberos-beperkte overdracht voor Azure Active Directory Application Proxy implementaties met geïntegreerde Windows-verificatie](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory-Schema kenmerken M2.210 kenmerk msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and beperkte delegering Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory-Schema kenmerken M2.210 kenmerk msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and beperkte delegering Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Resource op basis van Kerberos-beperkte overdracht](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Extern beheer zonder beperkte delegering PrincipalsAllowedToDelegateToAccount gebruiken](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -236,7 +236,7 @@ Zie voor meer informatie over het gebruik van PSSessionConfiguration en RunAs vo
 
 JEA kunt u beperken welke opdrachten die een beheerder kan worden uitgevoerd tijdens een PowerShell-sessie. Het kan worden gebruikt voor het oplossen van de tweede hop probleem.
 
-Zie voor meer informatie over JEA [net genoeg beheer](https://docs.microsoft.com/en-us/powershell/jea/overview).
+Zie voor meer informatie over JEA [net genoeg beheer](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Voordelen
 
@@ -249,7 +249,7 @@ Zie voor meer informatie over JEA [net genoeg beheer](https://docs.microsoft.com
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Referenties in een scriptblok Invoke-Command doorgeven
 
-U kunt doorgeven referenties binnen de **ScriptBlock** parameter van een aanroep naar de [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
+U kunt doorgeven referenties binnen de **ScriptBlock** parameter van een aanroep naar de [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) cmdlet.
 
 ### <a name="pros"></a>Voordelen
 

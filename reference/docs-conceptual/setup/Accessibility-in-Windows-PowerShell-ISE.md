@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -27,7 +27,7 @@ Windows PowerShell ISE ondersteunt hoog contrast modus. Voor visueel gehinderd o
 
 - Sneltoetsen gebruiken
 
-- De kleur tabel syntaxis en de mogelijkheid diverse andere om kleurinstellingen te wijzigen met behulp van de [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting-object.
+- De kleur tabel syntaxis en de mogelijkheid diverse andere om kleurinstellingen te wijzigen met behulp van de [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting-object.
 
 - Wijziging van de tekst
 
@@ -65,13 +65,13 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst bewerkt.
 |**Knippen**|CTRL + X|Script-veld-consolevenster|
 |**Zoeken in een Script**|CTRL+F|Scriptvenster|
 |**Volgende zoeken in een Script**|F3|Scriptvenster|
-|**Vorige in Script zoeken**|SHIFT+F3|Scriptvenster|
-|**Paste**|Ctrl + V|Script-veld-consolevenster|
+|**Vorige in Script zoeken**|SHIFT + F3|Scriptvenster|
+|**Plakken**|Ctrl + V|Script-veld-consolevenster|
 |**Redo**|CTRL + Y|Script-veld-consolevenster|
 |**Vervang in Script**|CTRL + H|Scriptvenster|
 |**Opslaan**|CTRL+S|Scriptvenster|
 |**Alles selecteren**|Ctrl + A|Script-veld-consolevenster|
-|**Undo**|CTRL + Z|Script-veld-consolevenster|
+|**Ongedaan maken**|CTRL + Z|Script-veld-consolevenster|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 
@@ -80,8 +80,8 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in de Scr
 |Actie|Sneltoets|
 |----------|---------------------|
 |**Nieuw**|CTRL + N|
-|**Open**|CTRL + O|
-|**Run**|F5|
+|**openen**|CTRL + O|
+|**uitvoeren**|F5|
 |**Selectie uitvoeren**|F8|
 |**Uitvoering stoppen**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context niet-ambigue is (Er is geen tekst geselecteerd).|
 |**Tabblad** (naar het volgende script)|CTRL + TAB **Opmerking:** tabblad naar het volgende script werkt alleen als u één PowerShell tabblad openen, of wanneer er meer dan één PowerShell tabblad is geopend, maar de focus in het scriptvenster is.|
@@ -110,15 +110,15 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
 |Actie|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
-|**Run/Continue**|F5|Scriptvenster wanneer foutopsporing van een script|
+|**Voer/doorgaan**|F5|Scriptvenster wanneer foutopsporing van een script|
 |**In stap**|F11|Scriptvenster wanneer foutopsporing van een script|
 |**Stap Over**|F10|Scriptvenster wanneer foutopsporing van een script|
-|**Stap uit**|SHIFT+F11|Scriptvenster wanneer foutopsporing van een script|
+|**Stap uit**|SHIFT + F11|Scriptvenster wanneer foutopsporing van een script|
 |**Aanroepstack weergeven**|CTRL + SHIFT + D|Scriptvenster wanneer foutopsporing van een script|
 |**Lijst met onderbrekingspunten**|CTRL + SHIFT + L|Scriptvenster wanneer foutopsporing van een script|
-|**Toggle Breakpoint**|F9|Scriptvenster wanneer foutopsporing van een script|
+|**Onderbrekingspunt**|F9|Scriptvenster wanneer foutopsporing van een script|
 |**Verwijder alle onderbrekingspunten**|CTRL + SHIFT + F9|Scriptvenster wanneer foutopsporing van een script|
-|**Stop de foutopsporing**|SHIFT+F5|Scriptvenster wanneer foutopsporing van een script|
+|**Stop de foutopsporing**|SHIFT + F5|Scriptvenster wanneer foutopsporing van een script|
 
 > ![Opmerking](../core-powershell/web-access/images/Note.jpeg)**Opmerking**
 >
@@ -153,7 +153,7 @@ U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (Power
 
 |Actie|Sneltoets|
 |----------|---------------------|
-|**Exit**|ALT+F4|
+|**Afsluiten**|ALT+F4|
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>Zie ook

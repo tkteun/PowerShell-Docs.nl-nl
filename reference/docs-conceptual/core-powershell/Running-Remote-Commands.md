@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Externe opdrachten uitvoeren
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: eb9f0ce0102de13d4fcd1d51f0e9174e9d5c340c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -134,29 +134,29 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 Windows PowerShell extern beheer begint alleen hier. Met behulp van de geïnstalleerd met Windows PowerShell-cmdlets, kunt u tot stand brengen en externe sessies configureren van de lokale en externe is afgelopen, maken van aangepaste en beperkte sessies, kunnen gebruikers opdrachten voor het importeren vanuit een externe sessie die daadwerkelijk worden uitgevoerd impliciet op de externe sessie, configureert u de beveiliging van een externe sessie en nog veel meer.
 
 Windows PowerShell omvat te vergemakkelijken externe configuratie, een WSMan-provider. De WSMAN: station dat de provider maakt, kunt u navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
-Zie voor meer informatie over de WSMan-provider [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) en [over WS-Management-Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), of typ 'Get-Help wsman' in de Windows PowerShell-console.
+Zie voor meer informatie over de WSMan-provider [WSMan Provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-Cmdlets](https://technet.microsoft.com/library/dd819481.aspx), of typ 'Get-Help wsman' in de Windows PowerShell-console.
 
 Zie voor meer informatie
 
-- [Over externe Veelgestelde vragen](https://technet.microsoft.com/en-us/library/dd315359.aspx)
+- [Over externe Veelgestelde vragen](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
+Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Zie ook
 
-- [about_Remote](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
+- [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
+- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
+- [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
+- [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan Provider](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

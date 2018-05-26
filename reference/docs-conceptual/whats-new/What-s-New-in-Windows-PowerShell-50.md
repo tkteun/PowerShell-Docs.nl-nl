@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
-ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
 Windows PowerShell 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid verbeteren en kunnen u bepalen en beheren van Windows-omgevingen gemakkelijker en uitvoerig.
@@ -230,11 +230,11 @@ Veel updates en verbeteringen voor Windows PowerShell Desired State Configuratio
 
     -   Restore DscConfiguration
 
-    -   Test-DscConfiguration
+    -   Test DscConfiguration
 
     -   Vergelijken DscConfiguration
 
-    -   Publish-DscConfiguration
+    -   Publiceren DscConfiguration
 
     -   Set-DscLocalConfigurationManager
 
@@ -316,7 +316,7 @@ Windows PowerShell 4.0 omvat de volgende nieuwe functies.
 
 ### <a name="new-features-in-windows-powershell"></a>Nieuwe functies in Windows PowerShell
 
-- **Windows PowerShell Desired State Configuration** (DSC) is een nieuw managementsysteem in Windows PowerShell 4.0 waarmee de implementatie en beheer van configuratiegegevens voor softwareservices en de omgeving waarin deze services worden uitgevoerd. Zie voor meer informatie over DSC [aan de slag met Windows PowerShell Desired State Configuration](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0).
+- **Windows PowerShell Desired State Configuration** (DSC) is een nieuw managementsysteem in Windows PowerShell 4.0 waarmee de implementatie en beheer van configuratiegegevens voor softwareservices en de omgeving waarin deze services worden uitgevoerd. Zie voor meer informatie over DSC [aan de slag met Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 
 - **Help opslaan** nu kunt u de help voor modules die zijn geïnstalleerd op externe computers opslaan. U kunt Help opslaan module Help downloaden vanuit een internetverbinding client (waarvoor niet alle modules waarvoor u hulp wilt worden altijd geïnstalleerd) en kopieer de opgeslagen Help voor een externe gedeelde map of een externe computer waarop geen Internet toegang.
 
@@ -472,7 +472,7 @@ Windows PowerShell 3.0 bevat de volgende nieuwe functies.
 - [Verbeteringen in behandeling speciaal teken](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-werkstroom
-Windows PowerShell Workflow biedt de kracht van Windows Workflow Foundation voor Windows PowerShell. U kunt schrijven van werkstromen in XAML of in de taal van de Windows PowerShell en voer ze net zoals u zou een cmdlet uitvoert. De [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet workflw opdrachten opgehaald en de [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet krijgt help voor werkstromen.
+Windows PowerShell Workflow biedt de kracht van Windows Workflow Foundation voor Windows PowerShell. U kunt schrijven van werkstromen in XAML of in de taal van de Windows PowerShell en voer ze net zoals u zou een cmdlet uitvoert. De [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet workflw opdrachten opgehaald en de [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet krijgt help voor werkstromen.
 
 Werkstromen zijn reeksen multicomputer management-activiteiten die langlopende, herhaalbaar, regelmatig, parallel lopend, onderbreekbaar, suspendable en opnieuw starten. Werkstromen kunnen worden hervat vanaf een opzettelijk of per ongeluk onderbreking, bijvoorbeeld een netwerkstoring of een Windows opnieuw wordt opgestart een stroomstoring.
 
@@ -490,7 +490,7 @@ Hier volgen de voordelen van Windows PowerShell Workflow
 
 - **Persistentie.** : een werkstroom wordt opgeslagen (of controle-waarnaar wordt verwezen) op bepaalde tijdstippen die zijn gedefinieerd door de auteur, zodat u de werkstroom vanaf de laatst vastgelegde taak (of controlepunt) hervatten kunt in plaats van de werkstroom vanaf het begin opnieuw te starten.
 
-- **Robustness.** Geautomatiseerd foutherstel. Werkstromen blijven na geplande en ongeplande opnieuw wordt opgestart. U kunt de werkstroom onderbreekt en hervat vervolgens de werkstroom vanaf het laatste punt in de persistentie. Werkstroomauteurs kunnen aanwijzen specifieke activiteiten moet opnieuw worden uitgevoerd in geval van storing op een of meer beheerde knooppunten.
+- **Robuustheid.** Geautomatiseerd foutherstel. Werkstromen blijven na geplande en ongeplande opnieuw wordt opgestart. U kunt de werkstroom onderbreekt en hervat vervolgens de werkstroom vanaf het laatste punt in de persistentie. Werkstroomauteurs kunnen aanwijzen specifieke activiteiten moet opnieuw worden uitgevoerd in geval van storing op een of meer beheerde knooppunten.
 
 - **Mogelijkheid om te verbreken, opnieuw verbinding maken en uitvoeren in verbroken sessies.** Gebruikers kunnen verbinding maken en Verbreek de verbinding tussen de werkstroomserver, maar de werkstroom continu wordt uitgevoerd. U kunt Meld u af bij de clientcomputer of de client opnieuw opstarten en controleren van de uitvoering van de werkstroom van een andere computer zonder de werkstroom te onderbreken.
 
@@ -504,7 +504,7 @@ Windows PowerShell-webtoegang is een Windows Server 2012-functie waarmee gebruik
 Zie voor meer informatie [Windows PowerShell-webtoegang implementeren](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### <a name="new-windows-powershell-ise-features"></a>Nieuwe functies van Windows PowerShell ISE
-Voor Windows PowerShell 3.0 en Windows PowerShell Integrated Scripting Environment (ISE) heeft veel nieuwe functies, waaronder IntelliSense weergeven opdrachtvenster, een uniforme consolevenster codefragmenten, haakje-koppeling, vouw samenvouwen secties, automatisch moeten worden opgeslagen, onlangs geopende items lijst, uitgebreide kopiëren, blok kopiëren en volledige ondersteuning voor het schrijven van werkstromen voor Windows PowerShell-script. Zie voor meer informatie [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+Voor Windows PowerShell 3.0 en Windows PowerShell Integrated Scripting Environment (ISE) heeft veel nieuwe functies, waaronder IntelliSense weergeven opdrachtvenster, een uniforme consolevenster codefragmenten, haakje-koppeling, vouw samenvouwen secties, automatisch moeten worden opgeslagen, onlangs geopende items lijst, uitgebreide kopiëren, blok kopiëren en volledige ondersteuning voor het schrijven van werkstromen voor Windows PowerShell-script. Zie voor meer informatie [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Ondersteuning voor Microsoft .NET Framework 4
 Windows PowerShell is gebouwd op basis van de Common Language Runtime 4.0. Cmdlet, script en werkstroomauteurs kunnen gebruiken de nieuwe Microsoft .NET Framework 4-klassen in Windows PowerShell met kenmerken, zoals compatibiliteit van toepassingen en implementatie, uitbreidbaarheid Framework beheerd, parallelle berekeningen, netwerken, Windows Communication Foundation en Windows Workflow Foundation.
@@ -517,9 +517,9 @@ Vanaf Windows PowerShell 3.0 kan worden permanente gebruiker beheerde sessies ('
 
 U kunt nu een sessie verbreken zonder de opdrachten die worden uitgevoerd in de sessie verstoren. U kunt de sessie sluiten en de computer afsluiten. Later kunt u verbinding kunt maken met de sessie van een andere sessie op dezelfde of een andere computer.
 
-De **ComputerName** parameter van de [Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet nu haalt alle sessies van de gebruiker die verbinding met de computer maken, zelfs als deze zijn gestart in een andere sessie op een andere computer. U kunt verbinding maken met de sessies, krijgen de resultaten van opdrachten, nieuwe opdrachten starten en vervolgens de sessie verbreken.
+De **ComputerName** parameter van de [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet nu haalt alle sessies van de gebruiker die verbinding met de computer maken, zelfs als deze zijn gestart in een andere sessie op een andere computer. U kunt verbinding maken met de sessies, krijgen de resultaten van opdrachten, nieuwe opdrachten starten en vervolgens de sessie verbreken.
 
-Nieuwe cmdlets toegevoegd ter ondersteuning van de functie verbroken sessies, inclusief [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060), en Receive-PSSession en nieuwe parameters zijn toegevoegd aan -cmdlets die PSSessions, zoals beheren de **InDisconnectedSession** parameter van de [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet.
+Nieuwe cmdlets toegevoegd ter ondersteuning van de functie verbroken sessies, inclusief [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060), en Receive-PSSession en nieuwe parameters zijn toegevoegd aan -cmdlets die PSSessions, zoals beheren de **InDisconnectedSession** parameter van de [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet.
 
 De functie sessies verbroken wordt alleen ondersteund als de computers van beide van oorsprong ('client') en wordt beëindigd ('server') uiteinden van de verbinding actief zijn Windows PowerShell 3.0.
 
@@ -531,17 +531,17 @@ Als de verbroken sessie is gestart met behulp van de InvokeCommand, maakt de Win
 Deze functies bieden een betrouwbaardere en herstelbare remoting-ervaring en toestaan dat gebruikers langlopende taken uitvoeren die robuust sessies, zoals werkstromen vereisen.
 
 ### <a name="updatable-help-system"></a>Bijwerkbare Help-systeem
-U kunt nu downloaden van bijgewerkte help-bestanden voor de cmdlets in uw modules. De [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet identificeert de nieuwste help-bestanden, downloadt u deze vanaf het Internet, ze zijn uitgepakt, evalueert deze en installeert u ze in de juiste map specifieke taal zijn gebonden voor de module.
+U kunt nu downloaden van bijgewerkte help-bestanden voor de cmdlets in uw modules. De [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet identificeert de nieuwste help-bestanden, downloadt u deze vanaf het Internet, ze zijn uitgepakt, evalueert deze en installeert u ze in de juiste map specifieke taal zijn gebonden voor de module.
 
 De bijgewerkte help-bestanden wilt gebruiken, typt u gewoon `Get-Help`. U hoeft niet opnieuw opstarten van Windows of Windows PowerShell. U werkt de help voor modules in de map $pshome, start u Windows PowerShell met de optie 'Als administrator uitvoeren'.
 
-Ter ondersteuning van gebruikers die geen toegang tot Internet en gebruikers achter een firewall, de nieuwe [Help opslaan](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet help-bestanden downloadt naar een systeemmap, zoals een bestandsshare. Gebruikers kunnen vervolgens gebruiken de [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet voor het ophalen van bijgewerkte help-bestanden van de bestandsshare.
+Ter ondersteuning van gebruikers die geen toegang tot Internet en gebruikers achter een firewall, de nieuwe [Help opslaan](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet help-bestanden downloadt naar een systeemmap, zoals een bestandsshare. Gebruikers kunnen vervolgens gebruiken de [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet voor het ophalen van bijgewerkte help-bestanden van de bestandsshare.
 
-U kunt de [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet bij te werken help-bestanden voor alle of bepaalde modules in alle ondersteunde UI culturen. U kunt zelfs toe leiden dat een [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) opdracht in uw Windows PowerShell-profiel. Standaard downloadt Windows PowerShell help-bestanden voor een module niet meer dan één keer per dag.
+U kunt de [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet bij te werken help-bestanden voor alle of bepaalde modules in alle ondersteunde UI culturen. U kunt zelfs toe leiden dat een [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) opdracht in uw Windows PowerShell-profiel. Standaard downloadt Windows PowerShell help-bestanden voor een module niet meer dan één keer per dag.
 
-Windows 8 en Windows Server 2012-modules bevatten geen help-bestanden. Voor het downloaden van de meest recente help-bestanden, typt u `Update-Help`. Typ voor meer informatie `Get-Help` (zonder parameters) of Raadpleeg [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+Windows 8 en Windows Server 2012-modules bevatten geen help-bestanden. Voor het downloaden van de meest recente help-bestanden, typt u `Update-Help`. Typ voor meer informatie `Get-Help` (zonder parameters) of Raadpleeg [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
 
-Wanneer de help-bestanden voor een cmdlet zijn niet geïnstalleerd op de computer, de [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet worden nu automatisch gegenereerde help weergegeven. De help automatisch wordt gegenereerd, bevat de opdrachtsyntaxis en instructies voor het gebruik van de [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet helpbestanden te downloaden.
+Wanneer de help-bestanden voor een cmdlet zijn niet geïnstalleerd op de computer, de [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet worden nu automatisch gegenereerde help weergegeven. De help automatisch wordt gegenereerd, bevat de opdrachtsyntaxis en instructies voor het gebruik van de [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet helpbestanden te downloaden.
 
 Een module-auteur kan ondersteunen bij te werken Help voor de module. U kunt bijvoorbeeld help-bestanden in de module en bij te werken Help bijwerken of laat de help-bestanden en bij te werken Help gebruiken ze te installeren. Zie voor meer informatie over ondersteunende bij te werken Help [ondersteunende bij te werken Help](http://go.microsoft.com/FWLink/?LinkID=242129) in MSDN.
 
@@ -579,22 +579,22 @@ U kunt een sessie waarin gebruikers kunnen alleen de cmdlets uitvoeren van een b
 
 In eerdere versies van Windows PowerShell zijn besturingselement op dit niveau is alleen beschikbaar voor gebruikers die een C#-programma of een script complexe opstarten kan schrijven. Elk lid van de groep Administrators op de computer kan nu een sessieconfiguratie aanpassen met behulp van een configuratiebestand.
 
-Voor het maken van een configuratiebestand sessie gebruikt de [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet. Als het configuratiebestand van de sessie voor een sessieconfiguratie geldt, gebruiken de [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) of [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
+Voor het maken van een configuratiebestand sessie gebruikt de [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet. Als het configuratiebestand van de sessie voor een sessieconfiguratie geldt, gebruiken de [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) of [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlets.
 
-Zie voor meer informatie [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) en [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Zie voor meer informatie [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) en [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Geplande taken en taak Scheduler-integratie
 U kunt nu Windows PowerShell-achtergrondtaken plannen en ze beheren in Windows PowerShell en in Taakplanner.
 
 Windows PowerShell geplande taken zijn een handig hybride van Windows PowerShell-achtergrondtaken en Taakplanner-taken.
 
-Net als Windows PowerShell-achtergrondtaken, geplande taken asynchroon op de achtergrond uitgevoerd. Exemplaren van geplande taken die zijn voltooid, kunnen worden beheerd met behulp van de taak-cmdlets, zoals [starttaak](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) en [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Net als Windows PowerShell-achtergrondtaken, geplande taken asynchroon op de achtergrond uitgevoerd. Exemplaren van geplande taken die zijn voltooid, kunnen worden beheerd met behulp van de taak-cmdlets, zoals [starttaak](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) en [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
 
 U kunt geplande taken zoals Taakplanner-taken uitvoeren volgens een schema eenmalig of terugkerende of als reactie op een actie of een gebeurtenis. U kunt bekijken en beheren van geplande taken in Taakplanner, inschakelen en uitschakelen, indien nodig, ze uitvoeren of deze als sjabloon gebruiken en stel de voorwaarden waaronder de taak wordt gestart.
 
 Bovendien Geplande taken worden geleverd met een aangepaste set cmdlets voor het beheer ervan. De cmdlets kunt u maken, bewerken, beheren, uitschakelen, en geplande taken opnieuw in te schakelen, triggers geplande taak maken en stelt u opties voor geplande taak.
 
-Zie voor meer informatie over de geplande taken [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92).
+Zie voor meer informatie over de geplande taken [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
 
 ### <a name="windows-powershell-language-enhancements"></a>Verbeteringen in Windows PowerShell-taal
 Windows PowerShell 3.0 bevat veel functies die zijn ontworpen voor de taal eenvoudigere, eenvoudiger te gebruiken en om veelvoorkomende fouten te voorkomen. De verbeteringen omvatten eigenschap opsomming, aantal en de lengte-eigenschappen op scalaire objecten, nieuwe omleiding operators, de bereikaanpassingsfunctie $Using, PSItem automatische variabelen, flexibele script opmaak, de kenmerken van variabelen, vereenvoudigde kenmerk argumenten, numerieke opdrachtnamen, de operator stoppen parseren, verbeterde matrix splatting, nieuwe bits-operators, geordende woordenboeken, PSCustomObject casten en verbeterde Opmerking gebaseerde Help-informatie.
@@ -604,19 +604,19 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows PowerShell Core-installatie, in
 
 |||
 |-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
-|ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo-Json|New-PSWorkflowExecutionOption|
+|-JobTrigger|Nieuwe-JobTrigger|
+|Connect-PSSession|Nieuwe PSSessionConfigurationFile|
+|ConverterenVan Json|New-PSTransportOption|
+|ConvertTo-Json|Nieuwe PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
 |Disable-ScheduledJob|Nieuwe ScheduledJobOption|
-|Disconnect-PSSession|New-WinEvent|
+|Verbinding verbreken-PSSession|Nieuwe WinEvent|
 |Enable-JobTrigger|Ontvangen-PSSession|
-|Enable-ScheduledJob|Register-CimIndicationEvent|
+|Enable-ScheduledJob|Register CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Verwijder CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Remove-TypeData|
+|Get-CimSession|Verwijder TypeData|
 |Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Help opslaan|
@@ -624,13 +624,13 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows PowerShell Core-installatie, in
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
 |Importeren IseSnippet|Set-ScheduledJobOption|
-|Invoke-AsWorkflow|Opdracht weergeven|
-|Aanroepen CimMethod|Show-ControlPanelItem|
+|Aanroepen AsWorkflow|Opdracht weergeven|
+|Aanroepen CimMethod|Weergeven ControlPanelItem|
 |Aanroepen RestMethod|Suspend-Job|
-|Aanroepen WebRequest|Test-PSSessionConfigurationFile|
+|Aanroepen WebRequest|Test PSSessionConfigurationFile|
 |Nieuwe CimInstance|De blokkering opheffen bestand|
-|New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Help bijwerken|
+|Nieuwe-CimSession|Unregister-ScheduledJob|
+|Nieuwe CimSessionOption|Help bijwerken|
 |Nieuwe IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen in bestaande essentiële Cmdlets en -Providers
@@ -641,21 +641,21 @@ De Windows PowerShell-providers zijn ook sterk verbeterd, inclusief certificaat 
 ### <a name="remote-module-import-and-discovery"></a>Externe module-import en detectie
 Windows PowerShell 3.0 breidt module detectie, importeren en impliciete remoting mogelijkheden op externe computers. De Module-cmdlets modules ophalen op externe computers en importeer de modules in de lokale of externe computer met behulp van Windows PowerShell op afstand. Nieuwe ondersteuning voor CIM-sessie kunt u gebruikmaken van CIM- en WMI voor het beheren van niet-Windows-computers door het importeren van opdrachten op de lokale computer die impliciet wordt uitgevoerd op de externe computer.
 
-Zie voor meer informatie het help-onderwerpen voor de [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) en [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlets.
+Zie voor meer informatie het help-onderwerpen voor de [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) en [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlets.
 
 ### <a name="enhanced-tab-completion"></a>Verbeterde Tab-aanvulling
 Tab-Aanvulling in de Windows PowerShell-console nu voltooit de namen van cmdlets, parameters parameterwaarden, opsommingen, .NET Frameworks typen, COM-objecten, verborgen mappen en meer. Het tabblad voltooiing onderdeel wordt volledig herschreven op basis van een nieuwe parser en de abstracte syntaxisstructuur voor de ondersteuning van meer scenario's, waaronder parseren structuren in het geheugen en schouderstreek tab-Aanvulling.
 
 ### <a name="module-auto-loading"></a>Module automatisch-laden
-De [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet nu haalt alle cmdlets en -functies uit alle modules weer die zijn geïnstalleerd op de computer, zelfs als de module niet is geïmporteerd in de huidige sessie.
+De [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet nu haalt alle cmdlets en -functies uit alle modules weer die zijn geïnstalleerd op de computer, zelfs als de module niet is geïmporteerd in de huidige sessie.
 
 Wanneer u de cmdlet die u nodig hebt, kunt u dit onmiddellijk zonder te importeren geen modules. Windows PowerShell-modules worden nu automatisch geïmporteerd wanneer u een cmdlet in de module. U hoeft niet meer te zoeken naar de module en voor het gebruik van de cmdlets te importeren.
 
-Met de cmdlet uitgevoerd in een opdracht automatisch importeren van modules wordt geactiveerd **Get-Command** voor een cmdlet zonder jokertekens of met [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) voor een cmdlet zonder jokertekens.
+Met de cmdlet uitgevoerd in een opdracht automatisch importeren van modules wordt geactiveerd **Get-Command** voor een cmdlet zonder jokertekens of met [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) voor een cmdlet zonder jokertekens.
 
 U kunt inschakelen, uitschakelen en configureren van automatische importeren van modules met behulp van de **$PSModuleAutoLoadingPreference** voorkeursvariabele.
 
-Zie voor meer informatie [about_Modules [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b), en de help-onderwerpen voor de [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) en [Import-Module ](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlets.
+Zie voor meer informatie [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b), en de help-onderwerpen voor de [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) en [Import-Module ](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlets.
 
 ### <a name="module-experience-improvements"></a>Module ervaring verbeteringen
 Windows PowerShell 3.0 biedt geavanceerde functies die worden ondersteund voor modules, waaronder de volgende nieuwe functies.
@@ -672,16 +672,16 @@ Windows PowerShell 3.0 biedt geavanceerde functies die worden ondersteund voor m
 
 6. Verbeterd, module vereisten, met inbegrip van volledig gekwalificeerde vereiste modules met versie en de GUID en de vereiste modules automatisch importeren
 
-7. Rustigere, gestroomlijnde bewerking van de [nieuw ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet.
+7. Rustigere, gestroomlijnde bewerking van de [nieuw ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet.
 
 8. Nieuwe **Module** parameter voor #Requires
 
-9. Verbeterde [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet met beide **MinimumVersion** en **RequiredVersion** parameters.
+9. Verbeterde [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet met beide **MinimumVersion** en **RequiredVersion** parameters.
 
 ### <a name="simplified-command-discovery"></a>Vereenvoudigde opdracht detectie
-U hoeft niet meer voor het importeren van alle modules voor het detecteren van de opdrachten die beschikbaar zijn voor uw sessie. In Windows PowerShell 3.0 de [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet alle opdrachten van alle geïnstalleerde modules opgehaald. En als u een opdracht, de module die exporteert u de opdracht wordt automatisch geïmporteerd in uw sessie.
+U hoeft niet meer voor het importeren van alle modules voor het detecteren van de opdrachten die beschikbaar zijn voor uw sessie. In Windows PowerShell 3.0 de [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet alle opdrachten van alle geïnstalleerde modules opgehaald. En als u een opdracht, de module die exporteert u de opdracht wordt automatisch geïmporteerd in uw sessie.
 
-De nieuwe [opdracht weergeven](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet is speciaal ontworpen voor beginnende gebruikers. U kunt zoeken naar de opdrachten in een venster. U kunt alle opdrachten weergeven of filteren door de module, een module importeren door te klikken op een knop, tekstvakken en vervolgkeuzelijsten maken van een geldige opdracht en kopieer vervolgens of de opdracht uitgevoerd zonder het venster gebruiken.
+De nieuwe [opdracht weergeven](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet is speciaal ontworpen voor beginnende gebruikers. U kunt zoeken naar de opdrachten in een venster. U kunt alle opdrachten weergeven of filteren door de module, een module importeren door te klikken op een knop, tekstvakken en vervolgkeuzelijsten maken van een geldige opdracht en kopieer vervolgens of de opdracht uitgevoerd zonder het venster gebruiken.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Verbeterde logboekregistratie van diagnostische gegevens en ondersteuning voor beleid
 Windows PowerShell 3.0 verbetert de logboekregistratie en tracering van ondersteuning voor opdrachten en modules met ondersteuning voor gebeurtenistracering in Windows (ETW) zich aanmeldt, een bewerkbare **LogPipelineExecutionDetails** eigenschap van modules en de "inschakelen op Module Logboekregistratie' groep beleidsinstelling. U kunt nu de parameterwaarden vanuit logboekdetails krijgen door de logboekeigenschappen weer te geven.
@@ -692,13 +692,13 @@ Nieuwe opmaak en uitvoer verbeteringen verbeteren de efficiëntie van alle gebru
 ### <a name="enhanced-console-host-experience"></a>Verbeterde Console Host-ervaring
 Het programma voor Windows PowerShell-console host heeft nieuwe functies in Windows PowerShell 3.0 single threaded apartment inclusief standaard. De nieuwe optie 'Uitvoeren met PowerShell' in Verkenner kunt u scripts uitvoeren in een onbeperkte-sessie met de rechtermuisknop op. Nieuwe console host starten logica Start Windows PowerShell sneller en nieuwe lettertypen kunnen u de vertrouwde console-venster afstemmen.
 
-Zie voor meer informatie [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
+Zie voor meer informatie [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>Nieuwe Cmdlet en het hosten van API 's
 De nieuwe Cmdlet API en die als host fungeert API bevatten openbare geavanceerde syntaxisstructuur (AST) API's en API's voor pijplijn paginering, geneste pijplijnen runspace pools tab-aanvulling, Windows RT, de verouderde cmdlet-kenmerk en term en zelfstandig naamwoord eigenschappen van het object FunctionInfo.
 
 ### <a name="performance-improvements"></a>Verbeterde prestaties
-Aanzienlijke prestatieverbeteringen in Windows PowerShell afkomstig zijn van de nieuwe taal parser dat is gemaakt op dynamische Runtime taal (DLR) in .NET Framework 4., samen met de runtime script compilatie, verbeteringen van de engine-betrouwbaarheid en wijzigingen in de algoritme van de [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) verbeteren de prestaties, vooral wanneer zoeken netwerk deelt.
+Aanzienlijke prestatieverbeteringen in Windows PowerShell afkomstig zijn van de nieuwe taal parser dat is gemaakt op dynamische Runtime taal (DLR) in .NET Framework 4., samen met de runtime script compilatie, verbeteringen van de engine-betrouwbaarheid en wijzigingen in de algoritme van de [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) verbeteren de prestaties, vooral wanneer zoeken netwerk deelt.
 
 ### <a name="runas-and-shared-host-support"></a>RunAs en ondersteuning voor gedeelde hostgroep
 Windows PowerShell 3.0 bevat ondersteuning voor RunAs- en gedeeld Host-functies.
@@ -708,8 +708,8 @@ De *RunAs* functie, die zijn bestemd voor Windows PowerShell Workflow, kan gebru
 De **SharedHost** functie kan meerdere gebruikers op meerdere computers verbinding maken met een Werkstroomsessie gelijktijdig en de voortgang van een werkstroom. Gebruikers kunnen geen werkstroom starten op één computer en maak verbinding met de Werkstroomsessie op een andere computer zonder de sessie verbreken met de oorspronkelijke computer. Gebruikers moeten dezelfde machtigingen hebben en dezelfde sessieconfiguratie gebruikt. Zie voor meer informatie 'Uitgevoerd een Windows PowerShell Workflow' aan de slag met Windows PowerShell Workflow.
 
 ### <a name="special-character-handling-improvements"></a>Verbeteringen in behandeling speciaal teken
-Voor het verbeteren van de mogelijkheid van Windows PowerShell 3.0 interpreteren en correct verwerkt speciale tekens, de **LiteralPath** speciale tekens in paden verwerkt, parameter is geldig voor bijna alle cmdlets die u hebt een  **Pad** parameter, met inbegrip van de nieuwe [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) en [Help opslaan](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlets. De parser bevat ook speciale logica ter verbetering van de verwerking van het teken backtick (\`) en vierkante haken in paden en bestandsnamen.
+Voor het verbeteren van de mogelijkheid van Windows PowerShell 3.0 interpreteren en correct verwerkt speciale tekens, de **LiteralPath** speciale tekens in paden verwerkt, parameter is geldig voor bijna alle cmdlets die u hebt een  **Pad** parameter, met inbegrip van de nieuwe [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) en [Help opslaan](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlets. De parser bevat ook speciale logica ter verbetering van de verwerking van het teken backtick (\`) en vierkante haken in paden en bestandsnamen.
 
 ## <a name="see-also"></a>Zie ook
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)

@@ -2,11 +2,11 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -112,7 +112,7 @@ Als de gebruiker geen alternatieve referenties opgeeft, worden ook de primaire g
 Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie.
 U kunt maken _beperkte runspaces_ of sessieconfiguraties voor Windows PowerShell-webtoegang en bepaalde gebruikers verbinding maken met alleen specifieke sessieconfiguraties wanneer ze zich bij Windows PowerShell-internettoegang aanmelden toestaan.
 U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en toegang tot het eindpunt voor een specifieke groep gebruikers verder beperken via autorisatieregels die in deze sectie beschreven.
-Zie voor meer informatie over beperkte runspaces [maken van een beperkte runspace](https://msdn.microsoft.com/en-us/library/dn614668).
+Zie voor meer informatie over beperkte runspaces [maken van een beperkte runspace](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Autorisatieregels configureren
 
@@ -122,7 +122,7 @@ In de tweede procedure wordt beschreven hoe u een autorisatieregel verwijdert di
 
 Als u van plan bent aangepaste sessieconfiguraties gebruiken om specifieke gebruikers werken binnen beperkte runspaces in Windows PowerShell Web Access in staat, maakt u uw aangepaste sessieconfiguraties voordat u autorisatieregels die naar deze verwijzen toevoegt.
 U kunt de Windows PowerShell Web Access cmdlets niet gebruiken aangepaste sessieconfiguraties maken.
-Zie voor meer informatie over het maken van aangepaste sessieconfiguraties [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Zie voor meer informatie over het maken van aangepaste sessieconfiguraties [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web Access cmdlets ondersteunen één jokerteken, een sterretje ( \* ).
 Jokertekens binnen tekenreeksen worden niet ondersteund. Gebruik één sterretje per eigenschap (gebruikers, computers of sessieconfiguraties).
@@ -142,7 +142,7 @@ Jokertekens binnen tekenreeksen worden niet ondersteund. Gebruik één sterretje
 2. **Optionele stap** voor het beperken van gebruikerstoegang met behulp van sessieconfiguraties:
 
     Controleren of de sessieconfiguraties die u wilt gebruiken, al in uw regels bestaan.
-Als ze nog geen hebt is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Als ze nog geen hebt is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker '™ s typische scripting- en cmdlet-behoeften. Typ het volgende en druk vervolgens op **Enter**.
 
@@ -253,6 +253,6 @@ Als de gateway-server wordt uitgevoerd van Windows Server 2012 R2, Windows Power
 
 ## <a name="see-also"></a>Zie ook
 
-- [Installeren en gebruiken van Windows PowerShell-internettoegang](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Installeren en gebruiken van Windows PowerShell-internettoegang](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)

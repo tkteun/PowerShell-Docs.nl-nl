@@ -1,13 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: eb3be6ef8a0fb8e611178206cbc817ac34b40f3e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a6366e18b4b6478bfab89475bc6975e6491da9f7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Overzicht van Windows Management Framework (WMF) 5.0 RTM Release-opmerkingen
+
+**WMF 5.0 is superceeded door WMF 5.1. Gebruikers met WMF 5.0 upgrade naar WMF 5.1 ondersteuning krijgen. Volg de [installatie intructions van WMF 5.1](../5.1/install-configure.md)**
 
 Windows Management Framework (WMF) 5.0 biedt RTM functionaliteit die is bijgewerkt van WMF 4.0. WMF 5.0 RTM is beschikbaar voor installatie alleen op **Windows Server 2012 R2**, **Windows Server 2012**, **Windows Server 2008 R2**, **Windows 8.1**, en **Windows 7 SP1** en bijgewerkte versies of introductie van de volgende functies bevat:
 

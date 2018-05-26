@@ -1,4 +1,13 @@
- en---ms.date: 12-06/2017 Inzender: JKeithB trefwoorden: galerie, powershell, cmdlet, psgallery, psget titel: de PowerShell Gallery
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: Galerie, powershell, cmdlet, psgallery, psget
+title: De PowerShell-galerie
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell-galerie
 

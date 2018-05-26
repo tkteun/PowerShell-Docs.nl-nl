@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: De Windows PowerShell 2.0-engine starten
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 585e1003554362d11fe99414bd3e80c497799a88
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-engine starten
 
@@ -37,13 +37,13 @@ Als u wilt uitvoeren van de Windows PowerShell 2.0-Engine in een externe sessie,
 
 Dit is een geavanceerde taak die gewoonlijk wordt uitgevoerd door een systeembeheerder.
 
-De volgende procedure wordt de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet voor het maken van een sessieconfiguratie die gebruikmaakt van de Windows PowerShell 2.0-Engine. U kunt ook de **PowerShellVersion** parameter van de [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet voor het maken van een sessie-configuratiebestand voor een sessie die door de Engine voor Windows PowerShell 2.0 wordt geladen en u kunt de **PSVersion** parameter van de [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parameter om de sessieconfiguratie van een voor het gebruik van de Windows PowerShell 2.0-Engine te wijzigen.
+De volgende procedure wordt de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet voor het maken van een sessieconfiguratie die gebruikmaakt van de Windows PowerShell 2.0-Engine. U kunt ook de **PowerShellVersion** parameter van de [nieuw PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet voor het maken van een sessie-configuratiebestand voor een sessie die door de Engine voor Windows PowerShell 2.0 wordt geladen en u kunt de **PSVersion** parameter van de [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parameter om de sessieconfiguratie van een voor het gebruik van de Windows PowerShell 2.0-Engine te wijzigen.
 
-Zie voor meer informatie over configuratiebestanden sessie [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Zie voor informatie over sessieconfiguraties, zoals setup en beveiliging, [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+Zie voor meer informatie over configuratiebestanden sessie [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Zie voor informatie over sessieconfiguraties, zoals setup en beveiliging, [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>Een externe Windows PowerShell 2.0-sessie starten
 
-1. Voor het maken van een sessieconfiguratie waarvoor de Engine voor Windows PowerShell 2.0 gebruikt de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet met de waarde '2.0'. Deze opdracht uitvoeren op de computer op 'server-side'- of ontvangende kant van de verbinding.
+1. Voor het maken van een sessieconfiguratie waarvoor de Engine voor Windows PowerShell 2.0 gebruikt de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet met de waarde '2.0'. Deze opdracht uitvoeren op de computer op 'server-side'- of ontvangende kant van de verbinding.
 
    De volgende voorbeeldopdracht maakt de PS2-sessieconfiguratie op de computer Server01. Om deze opdracht uitvoert, start u Windows PowerShell 4.0 of Windows PowerShell 3.0 met de **als administrator uitvoeren** optie.
 
@@ -51,7 +51,7 @@ Zie voor meer informatie over configuratiebestanden sessie [about_Session_Config
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. Gebruik voor het maken van een sessie op de computer Server01 die gebruikmaakt van de sessieconfiguratie PS2 de **ConfigurationName** parameter van cmdlets die het maken van een externe sessie, zoals de [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet.
+2. Gebruik voor het maken van een sessie op de computer Server01 die gebruikmaakt van de sessieconfiguratie PS2 de **ConfigurationName** parameter van cmdlets die het maken van een externe sessie, zoals de [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet.
 
    Wanneer een sessie die gebruikmaakt van de sessieconfiguratie van de wordt gestart, wordt automatisch de Windows PowerShell 2.0-Engine geladen in de sessie.
 
@@ -63,7 +63,7 @@ Zie voor meer informatie over configuratiebestanden sessie [about_Session_Config
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Een achtergrondtaak starten met de Windows PowerShell 2.0-Engine
 
-Voor het starten van een achtergrondtaak met de Windows PowerShell 2.0-Engine, gebruiken de **PSVersion** parameter van de [starttaak](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet.
+Voor het starten van een achtergrondtaak met de Windows PowerShell 2.0-Engine, gebruiken de **PSVersion** parameter van de [starttaak](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet.
 
 De volgende opdracht begint een achtergrondtaak met de Windows PowerShell 2.0-Engine
 

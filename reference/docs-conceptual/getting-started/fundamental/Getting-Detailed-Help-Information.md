@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Gedetailleerde Help-informatie verkrijgen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="getting-detailed-help-information"></a>Gedetailleerde Help-informatie verkrijgen
 Windows PowerShell bevat gedetailleerde Help-onderwerpen waarin wordt uitgelegd concepten voor Windows PowerShell en de Windows PowerShell-taal. Er zijn ook Help-onderwerpen voor elke cmdlet en de provider en Help-onderwerpen voor veel functies en scripts.
@@ -128,7 +128,7 @@ get-help c:\ps-test\TestScript.ps1
 
 De parameters die zijn ontworpen voor het weergeven van de cmdlet Help zoals *gedetailleerd*, *volledige*, *voorbeelden*, en *Parameter*, voor script Help-informatie en hulp nodig hebt, te werken. Echter, wanneer u alle Help weergeven door in te voeren ' get-help \*', Help voor functies en scripts niet wordt weergegeven.
 
-Zie voor meer informatie over het schrijven van Help-onderwerpen voor de functies en scripts [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af), en [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Zie voor meer informatie over het schrijven van Help-onderwerpen voor de functies en scripts [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), en [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Help-informatie Online
 Als u met het Internet verbonden bent, is een van de aanbevolen manieren om hulp te krijgen om de Help-onderwerpen online weer te geven. Omdat online-onderwerpen gemakkelijk om bij te werken, zijn ze waarschijnlijk de meest actuele informatie bieden.
@@ -165,10 +165,10 @@ De eerste regel in het gedeelte Verwante koppelingen van het onderwerp worden hi
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Zie voor meer informatie over het online ondersteuning bieden voor uw Help-onderwerpen [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), en zien [schrijven Cmdlet helpen](https://go.microsoft.com/fwlink/?LinkID=123415) in de MSDN-bibliotheek.
+Zie voor meer informatie over het online ondersteuning bieden voor uw Help-onderwerpen [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), en zien [schrijven Cmdlet helpen](https://go.microsoft.com/fwlink/?LinkID=123415) in de MSDN-bibliotheek.
 
 ## <a name="see-also"></a>Zie ook
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)

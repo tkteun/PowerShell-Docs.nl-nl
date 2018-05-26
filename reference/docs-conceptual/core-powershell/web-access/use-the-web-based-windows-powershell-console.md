@@ -2,11 +2,11 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: de website op basis van windows powershell-console gebruiken
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -81,7 +81,7 @@ De eenvoudigste methode van de configuratie van de computer zodat extern beheer 
 
     De gebruikte referenties om door te geven via de Windows PowerShell Web Access-gateway zijn meestal hetzelfde die worden herkend door de externe computer die u wilt beheren. Als u verschillende referenties gebruikt voor het beheren van de externe computer die u hebt opgegeven in stap 2, vouw de **optionele verbindingsinstellingen** sectie en de alternatieve referenties opgeven. Ga anders verder met stap 6.
 
-1. Als de Windows PowerShell Web Access-beheerder een aangepaste sessieconfiguratie voor gebruikers van Windows PowerShell-webtoegang gemaakt heeft, typ de naam van de naam van de sessie-configuratie in de **configuratienaam** veld. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Als de Windows PowerShell Web Access-beheerder een aangepaste sessieconfiguratie voor gebruikers van Windows PowerShell-webtoegang gemaakt heeft, typ de naam van de naam van de sessie-configuratie in de **configuratienaam** veld. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Houd de **verificatietype** ingesteld op **standaard** tenzij u iets anders door de Windows PowerShell Web Access-beheerder hebt gekregen.
 

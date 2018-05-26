@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Scripts schrijven en uitvoeren in Windows PowerShell ISE
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Scripts schrijven en uitvoeren in Windows PowerShell ISE
 
@@ -130,7 +130,7 @@ Druk op **CTRL + S** of klik op de werkbalk op de **opslaan** pictogram, of op d
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>Voor het opslaan van een script in ASCII-codering
 
-Standaard slaat Windows PowerShell ISE nieuwe scriptbestanden (.ps1), gegevens scriptbestanden (.psd1) en module scriptbestanden (.psm1) als Unicode (BigEndianUnicode) standaard. Â Sla een script in een andere codering, zoals ASCII (ANSI), gebruikt u de **opslaan** of **SaveAs** methoden op de [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) object.
+Standaard slaat Windows PowerShell ISE nieuwe scriptbestanden (.ps1), gegevens scriptbestanden (.psd1) en module scriptbestanden (.psm1) als Unicode (BigEndianUnicode) standaard. Â Sla een script in een andere codering, zoals ASCII (ANSI), gebruikt u de **opslaan** of **SaveAs** methoden op de [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) object.
 
 De volgende opdracht slaat een nieuw script als Mijnscript.ps1 ASCII-codering.
 

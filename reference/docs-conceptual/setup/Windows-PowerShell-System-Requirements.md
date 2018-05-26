@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell-systeemvereisten
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
 Dit onderwerp worden de systeemvereisten voor Windows PowerShell 3.0, Windows PowerShell 4.0 en Windows PowerShell 5.0 en voor speciale functies, zoals Windows PowerShell Integrated Scripting Environment (ISE), CIM-opdrachten en werkstromen.
@@ -65,7 +65,7 @@ Zie het installeren van de volledige installatie van Microsoft .NET Framework 4 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 vereist Windows Management Framework 4.0 moet worden geïnstalleerd op Windows Server 2008 R2 SP1 en Windows 7 SP1.
 
-## <a name="ws-management-30"></a>WS-Management 3.0
+## <a name="ws-management-30"></a>3.0 WS-Management
 Windows PowerShell 3.0 en Windows PowerShell 4.0 vereist WS-Management-3.0, die ondersteuning biedt voor de WinRM-service en de WSMan-protocol. Dit programma is opgenomen in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 en Windows Management Framework 3.0.
 
 ## <a name="windows-management-instrumentation-30"></a>Windows Management Instrumentation 3.0
@@ -83,19 +83,19 @@ Echter bepaalde items, zoals de volgende, vereisen een grafische gebruikersinter
 
 - Cmdlets
 
-    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Opdracht weergeven](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Weergeven ControlPanelItem](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Weergeven EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parameters
 
-    1.  **ShowWindow** parameter van de [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.
+    1.  **ShowWindow** parameter van de [Get-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.
 
-    2.  **ShowSecurityDescriptorUI** parameter van de [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) en [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) cmdlets.
+    2.  **ShowSecurityDescriptorUI** parameter van de [Register-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) en [Set-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) cmdlets.
 
 ## <a name="windows-powershell-engine-requirements"></a>Vereisten voor Windows PowerShell-Engine
 Windows PowerShell 4.0 is ontworpen voor achterwaartse compatibiliteit met Windows PowerShell 3.0 en Windows PowerShell 2.0. Cmdlets, providers, -modules, modules en scripts die zijn geschreven voor Windows PowerShell 2.0 en Windows PowerShell 3.0 ongewijzigd in Windows PowerShell 4.0 worden uitgevoerd.
@@ -111,13 +111,13 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 en Windows PowerShell 4.0 worden 
 
 - [Cmdlets van Background Intelligent Transfer Service (BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+- [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Help opslaan](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Help bijwerken](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 Ook de **WinRM** service is niet aanwezig is op Windows PE.
 
