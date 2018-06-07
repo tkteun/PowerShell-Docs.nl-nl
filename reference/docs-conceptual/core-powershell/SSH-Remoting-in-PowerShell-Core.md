@@ -42,7 +42,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installeer de meest recente [Win32 OpenSSH] opbouwen vanuit GitHub met de [installatie] instructies
+1. Installeer de meest recente [Win32-OpenSSH] opbouwen vanuit GitHub met de [installatie] instructies
 1. Bewerk het bestand sshd_config op de locatie waar u de Win32-OpenSSH geïnstalleerd
     - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 
@@ -131,7 +131,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
     - Een PowerShell-subsysteem vermelding toevoegen
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Verificatie met sleutel (optioneel) inschakelen
@@ -242,8 +242,8 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo-opdracht werkt niet in de externe sessie op Linux-machine.
 
 [Core voor Windows PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
-[installatie]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
+[Installatie]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell voor Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
 [PowerShell voor Mac OS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
