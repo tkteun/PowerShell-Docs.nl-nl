@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Objecten verwijderen vanuit de Pipeline waar Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753835"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Verwijderen van objecten uit de pijplijn (Where-Object)
 
 In Windows PowerShell kunt u vaak genereren en doorgegeven meer objecten voor een pijplijn dan u wenst. U kunt opgeven dat de eigenschappen van bepaalde objecten worden weergegeven met behulp van de **indeling** cmdlets, maar dit niet helpt met het probleem van het gehele objecten verwijderen uit de weergave. U wilt filteren, objecten vóór het einde van een pijplijn, zodat u acties op slechts een subset van de objecten in eerste instantie gegenereerd uitvoeren kan.
 
-Windows PowerShell omvat een **Where-Object** u elk object in de pijplijn te testen en alleen langs de pijplijn te doorgeven kunt als deze voldoet aan de voorwaarde van een afzonderlijke test-cmdlet. Objecten die niet door de test worden verwijderd vanuit de pipeline. U de testvoorwaarde opgeven als de waarde van de **waar ObjectFilterScript** parameter.
+Windows PowerShell omvat een `Where-Object` u elk object in de pijplijn te testen en alleen langs de pijplijn te doorgeven kunt als deze voldoet aan de voorwaarde van een afzonderlijke test-cmdlet. Objecten die niet door de test worden verwijderd vanuit de pipeline. U de testvoorwaarde opgeven als de waarde van de `Where-Object` **FilterScript** parameter.
 
 ### <a name="performing-simple-tests-with-where-object"></a>U eenvoudige tests uitvoert met de Where-Object
 
-De waarde van **FilterScript** is een *scriptblok* - een of meer Windows PowerShell-opdrachten omgeven door accolades {} - die resulteert in waar of ONWAAR. Deze scriptblokken is zeer eenvoudig, maar ze worden gemaakt moet weten over een andere Windows PowerShell-concept vergelijkingsoperators. Een vergelijkingsoperator vergelijkt de items die worden weergegeven voor elke zijde van deze. Vergelijkingsoperators beginnen met een '-' teken en worden gevolgd door een naam. Basic vergelijkingsoperators werken op vrijwel elke soort object. De meer geavanceerde vergelijkingsoperators mogelijk werken alleen op tekst- of -matrices.
+De waarde van **FilterScript** is een *scriptblok* -een of meer Windows PowerShell-opdrachten omgeven door accolades {} -die resulteert in op true of false. Deze scriptblokken is zeer eenvoudig, maar ze worden gemaakt moet weten over een andere Windows PowerShell-concept vergelijkingsoperators. Een vergelijkingsoperator vergelijkt de items die worden weergegeven voor elke zijde van deze. Vergelijkingsoperators beginnen met een '-' teken en worden gevolgd door een naam. Basic vergelijkingsoperators werken op vrijwel elke soort object. De meer geavanceerde vergelijkingsoperators mogelijk werken alleen op tekst- of -matrices.
 
 > [!NOTE]
 > Als u werkt met tekst zijn, Windows PowerShell-vergelijkingsoperators standaard niet hoofdlettergevoelig.
@@ -35,7 +36,7 @@ Symbolen zoals <>, vanwege het parseren van de overwegingen en = niet als vergel
 |-zoals|Lijkt (vergelijking van jokertekens voor tekst)|"bestand.doc'-zoals ' f\*basisbedrijfstoepassingen?"|
 |-notlike|Is geen zoals (vergelijking van jokertekens voor tekst)|'bestand.doc'-notlike ' p\*.doc '|
 |-bevat|Bevat|1,2,3 - 1 bevat|
-|-notcontains|Bevat geen|1,2,3 -notcontains 4|
+|-notcontains|Bevat geen|1,2,3 - notcontains 4|
 
 De speciale variabele '$_' WHERE-Object scriptblokken gebruiken om te verwijzen naar het huidige object in de pijplijn. Hier volgt een voorbeeld van hoe het werkt. Als u een lijst met getallen hebben en retourneren van de waarden die minder dan 3 zijn, kunt u Where-Object voor het filteren van de getallen door te typen:
 
