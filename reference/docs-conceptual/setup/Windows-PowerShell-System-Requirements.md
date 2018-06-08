@@ -4,10 +4,11 @@ keywords: PowerShell-cmdlet
 title: Windows PowerShell-systeemvereisten
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483046"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
 Dit onderwerp worden de systeemvereisten voor Windows PowerShell 3.0, Windows PowerShell 4.0 en Windows PowerShell 5.0 en voor speciale functies, zoals Windows PowerShell Integrated Scripting Environment (ISE), CIM-opdrachten en werkstromen.

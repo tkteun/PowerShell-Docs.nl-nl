@@ -4,10 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery, psget
 title: De PowerShell-galerie
 ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482927"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell-galerie
 

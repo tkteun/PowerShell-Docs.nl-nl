@@ -3,10 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell-cmdlet, downloaden, installeren, setup, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell installeren
 ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482995"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
 Windows PowerShell wordt geleverd in elke Windows, Windows 7 SP1 en Windows Server 2008 R2 SP1 vanaf standaard geïnstalleerd.
