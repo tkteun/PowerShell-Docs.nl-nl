@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251480"
 ---
 # <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Net als bij alle logboekregistratie systemen waarvoor een buffer beperkt bewaren (dat wil zeggen ETW-Logboeken) is een aanval op deze infrastructuur voor het logboek met onnodig gebeurtenissen voor het verbergen van eerdere bewijs overspoelen. Om u te beschermen tegen deze aanval, zorg ervoor dat er een vorm van gebeurtenislogboek verzameling instellen (dat wil zeggen, Windows Event Forwarding, [ontdekken van de Adversary met bewaking van Windows-gebeurtenislogboek](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) gebeurtenislogboeken af bij de computer als verplaatsen snel mogelijk.
+Net als bij alle logboekregistratie systemen waarvoor een buffer beperkt bewaren (dat wil zeggen ETW-Logboeken) is een aanval op deze infrastructuur voor het logboek met onnodig gebeurtenissen voor het verbergen van eerdere bewijs overspoelen. Om u te beschermen tegen deze aanval, zorg ervoor dat er een vorm van gebeurtenislogboek verzameling instellen (dat wil zeggen, Windows Event Forwarding, [ontdekken van de Adversary met bewaking van Windows-gebeurtenislogboek](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) gebeurtenislogboeken af bij de computer als verplaatsen snel mogelijk.

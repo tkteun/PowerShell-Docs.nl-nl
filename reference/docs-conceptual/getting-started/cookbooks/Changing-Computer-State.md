@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Computerstatus wijzigen
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251514"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
 
@@ -49,16 +50,16 @@ Zie 'Win32Shutdown methode van de Win32_OperatingSystem Class' in MSDN voor meer
 
 Afgesloten en opnieuw starten van de computers zijn meestal hetzelfde type taak. Hulpprogramma's die een computer afsluiten dan in het algemeen start ook, en vice versa. Er zijn twee eenvoudige opties voor het opnieuw opstarten van een computer uit de Windows PowerShell. Tsshutdn.exe of Shutdown.exe gebruiken met de juiste argumenten. Krijgt u gedetailleerde informatie over het van gebruiksinformatie van **tsshutdn.exe /?** of **shutdown.exe /?**.
 
-U kunt ook afsluiten en opnieuw opstarten van bewerkingen met behulp van **Win32_OperatingSystem** rechtstreeks vanuit Windows PowerShell ook.
+U kunt ook afsluiten en opnieuw starten van bewerkingen rechtstreeks vanuit Windows PowerShell ook.
 
-Als u wilt de computer afsluiten, gebruikt u de methode Win32Shutdown met de **1** vlag.
+Gebruik de opdracht computer opnieuw opstarten om de computer afsluiten
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-Als u wilt het besturingssysteem opnieuw te starten, gebruikt u de methode Win32Shutdown met de **2** vlag.
+Als u wilt het besturingssysteem opnieuw te starten, gebruikt u de opdracht computer opnieuw opstarten
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```
