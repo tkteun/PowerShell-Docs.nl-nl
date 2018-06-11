@@ -74,7 +74,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup op de Machine met Linux (Ubuntu 14.04)
 
-1. Installeer de meest recente [PowerShell voor Linux] opbouwen vanuit GitHub
+1. Installeer de meest recente [PowerShell-kern voor Linux] opbouwen vanuit GitHub
 1. Installeer [Ubuntu SSH] indien nodig
 
     ```bash
@@ -109,7 +109,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 ## <a name="setup-on-macos-machine"></a>Setup op Mac OS-Machine
 
-1. Installeer de meest recente [PowerShell voor Mac OS] bouwen
+1. Installeer de meest recente [PowerShell-kern voor Mac OS] bouwen
     - Controleer of dat de SSH-externe toegang is ingeschakeld met de volgende stappen:
       - openen `System Preferences`
       - Klik op `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo-opdracht werkt niet in de externe sessie op Linux-machine.
 
-[Core voor Windows PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Core voor Windows PowerShell]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell-kern voor Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell-kern voor Mac OS]: ../setup/installing-powershell-core-on-macos.md
 [Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installatie]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell voor Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell voor Mac OS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
