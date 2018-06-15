@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1 Server 2008 R2 en hoger), het downloaden van het MSI-pakket van onze GitHub [releases][] pagina.
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1 Server 2008 R2 en hoger), het downloaden van het MSI-pakket van onze pagina met GitHub [releases] [].
 
-Het MSI-bestand ziet er zo- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Het MSI-bestand ziet er zo- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Zodra u hebt gedownload, dubbelklikt u op het installatieprogramma en volg de aanwijzingen.
 
 Er is een snelkoppeling geplaatst in het Menu Start na de installatie.
 
-- Het pakket wordt standaard geïnstalleerd op `$env:ProgramFiles\PowerShell\`
-- U kunt PowerShell via het Menu Start starten of `$env:ProgramFiles\PowerShell\pwsh.exe`
+- Het pakket wordt standaard geïnstalleerd op `$env:ProgramFiles\PowerShell\<version>`
+- U kunt PowerShell via het Menu Start starten of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -126,12 +126,12 @@ De volgende stappen helpen u bij de implementatie van PowerShell Core naar een a
 PowerShell Core ondersteunt de PowerShell Remoting Protocol (PSRP) via WSMan- en SSH.
 Zie voor meer informatie
 
-- [SSH Remoting in PowerShell-kern][ssh-remoting]
-- [Externe communicatie van WSMan in PowerShell-kern][wsman-remoting]
+- [SSH Remoting in PowerShell Core] [de ssh-remoting]
+- [WSMan Remoting in PowerShell Core] [wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>Artefacten installatie-instructies
 
-We een archief met CoreCLR bits elke CI-versie met publiceren [AppVeyor][].
+We publiceren een archief met CoreCLR bits elke CI-versie met [AppVeyor] [].
 
 PowerShell-kern van het artefact CoreCLR installeren:
 
@@ -140,8 +140,4 @@ PowerShell-kern van het artefact CoreCLR installeren:
 3. Pak het zipbestand naar `bin` directory
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[releases]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman-remoting]:... /Core-PowerShell/WSMan-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
