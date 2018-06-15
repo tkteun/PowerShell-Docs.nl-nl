@@ -7,7 +7,7 @@ PowerShell Core wordt echter ondersteund onder traditionele Microsoft support-ov
 U kunt ook betalen voor [ondersteuning][] voor PowerShell Core door het indienen van een aanvraag voor de ondersteuning voor uw probleem.
 
 We bieden ook [communityondersteuning][] op GitHub waarin u een probleem, een fout of een aanvraag van de functie kan opslaan.
-U kunt ook u Help-informatie van andere leden van de community mogelijk vinden op de algemene [Microsoft-Community][] of Microsoft [PowerShell technische Community][].
+U kunt ook u Help-informatie van andere leden van de community mogelijk vinden op de algemene [Microsoft-Community][] of Microsoft [PowerShell Tech-Community][].
 We bieden geen garantie er dat het probleem worden aangepakt of tijdig opgelost.
 Als er een probleem dat onmiddellijke aandacht vereist, moet u de traditionele betaald ondersteuningsopties.
 
@@ -41,7 +41,7 @@ PowerShell Core wordt officieel ondersteund op de volgende platforms:
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42,2
-* Fedora 25, 26
+* Fedora 27, 28
 * macOS 10.12+
 
 Onze community heeft ook bijgedragen pakketten voor de volgende platforms, maar ze zijn niet officieel suppported:
@@ -62,7 +62,7 @@ Ondersteuning voor PowerShell Core niet van toepassing op andere modules product
 Bijvoorbeeld, met behulp van de `ActiveDirectory` module die wordt geleverd als onderdeel van Windows Server een niet-ondersteund scenario is.
 
 Modules die niet expliciet PowerShell Core ondersteunen mogelijk echter compatibel in sommige gevallen.
-Door het installeren van de [`WindowsPSModulePath`][] -module, kunt u de Windows PowerShell toevoegen `PSModulePath` naar uw PowerShell-kern `PSModulePath`.
+Door het installeren van de [ `WindowsPSModulePath` ][] -module, kunt u de Windows PowerShell toevoegen `PSModulePath` naar uw PowerShell-kern `PSModulePath`.
 
 Installeer eerst de `WindowsPSModulePath` module op basis van de PowerShell-galerie:
 
@@ -83,10 +83,10 @@ Add-WindowsPSModulePath
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [communityondersteuning]: https://github.com/powershell/powershell/issues
 [Microsoft-Community]: https://answers.microsoft.com/
-[PowerShell technische Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[PowerShell Tech-Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [ondersteuning]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT-licentie]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
