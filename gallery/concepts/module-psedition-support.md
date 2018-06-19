@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189513"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibel PowerShell-edities
 
@@ -249,4 +250,4 @@ Find-Module -Tag PSEdition_Core
 
 - [Scripts met PSEditions](script-psedition-support.md)
 - [Ondersteuning voor PSEditions op PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Update module-manifest] (/ powershell/module/powershellget/update-modulemanifest)
+- [Update module-manifest] (/powershell/module/powershellget/update-modulemanifest)
