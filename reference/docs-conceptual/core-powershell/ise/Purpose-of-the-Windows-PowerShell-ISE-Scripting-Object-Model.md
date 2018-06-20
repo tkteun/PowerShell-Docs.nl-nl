@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951321"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Doel van het scriptobjectmodel van Windows PowerShell ISE
 

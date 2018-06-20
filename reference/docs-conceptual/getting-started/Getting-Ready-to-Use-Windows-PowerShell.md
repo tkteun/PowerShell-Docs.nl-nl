@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950964"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Voorbereiden voor het gebruik van Windows PowerShell
 Overweeg de volgende opties voor setup bij het Windows PowerShell is geïnstalleerd en gestart. U kunt deze taken uitvoeren op elk gewenst moment.

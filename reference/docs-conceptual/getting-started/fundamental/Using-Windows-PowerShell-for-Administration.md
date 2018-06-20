@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954327"
 ---
 # <a name="using-windows-powershell-for-administration"></a>Windows PowerShell voor beheer gebruiken
 De fundamentele doelstelling van Windows PowerShell biedt betere en eenvoudiger beheer via systemen, interactief of uit het script. In dit hoofdstuk doorloopt oplossingen voor veel specifieke problemen bij het beheren van Windows-systemen met Windows PowerShell. Hoewel we geen scripts of functies in de Windows PowerShell User's Guide besproken hebben, kunnen de oplossingen worden gebruikt via scripts of als functies later. We tonen voorbeelden die functies als onderdeel van de oplossing opnemen voor het oplossen van problemen.

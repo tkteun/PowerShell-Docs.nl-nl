@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951066"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Informatie over de Windows PowerShell-pijplijn
 Piping werkt vrijwel overal in Windows PowerShell. Hoewel u tekst op het scherm ziet, wordt in Windows PowerShell tekst tussen opdrachten niet pipe. In plaats daarvan doorgesluisd deze objecten.

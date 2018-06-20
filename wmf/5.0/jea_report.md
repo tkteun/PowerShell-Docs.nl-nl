@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218719"
 ---
 # <a name="reporting-on-jea"></a>Rapportage over JEA
 Om te rapporteren over de status van de configuratie van uw JEA, kunt u het volgende gebruiken:

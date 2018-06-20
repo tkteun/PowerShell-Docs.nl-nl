@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951083"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Informatie over belangrijke Windows PowerShell-concepten
 Het ontwerp van de Windows PowerShell integreert concepten van veel verschillende omgevingen. Meerdere personen met ervaring in specifieke houders of programmeeromgevingen bekend zijn, maar heel weinig mensen weten over deze. Sommige van deze concepten kijken bevat een handig overzicht van de shell.

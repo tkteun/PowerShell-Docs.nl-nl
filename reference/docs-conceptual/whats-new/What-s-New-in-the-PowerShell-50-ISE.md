@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953579"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat&#39;s die nieuw is in de Windows PowerShell ISE
 Dit onderwerp worden de nieuwe en bijgewerkte functies die zijn geïntroduceerd in versies van Windows PowerShell Integrated Scripting Environment (ISE).

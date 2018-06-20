@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219545"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>PowerShell-cmdlets genereren op basis van OData-eindpunt
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Windows PowerShell-cmdlets op basis van een OData-eindpunt genereren

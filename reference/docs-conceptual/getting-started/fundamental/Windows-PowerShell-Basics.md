@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950529"
 ---
 # <a name="windows-powershell-basics"></a>Basisinformatie over Windows PowerShell
 Grafische gebruikersinterfaces gebruiken aantal basisconcepten die bekend bij de meeste computergebruikers. Gebruikers, is afhankelijk van de kennis van deze interfaces voor het uitvoeren van taken. Besturingssystemen huidige gebruikers met een grafische weergave van items die kunnen worden bekeken, meestal met vervolgkeuzemenu's voor toegang tot bepaalde functionaliteit en context menu's voor toegang tot specifieke context-functies.

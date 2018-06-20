@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225586"
 ---
 # <a name="new-guid"></a>New-Guid
 Vaak script (of misschien schrijven van een DSC-resource), hebt u de noodzaak van een unieke id. GUID's werken ook, en het is gemakkelijk om aan te roepen de .NET Framework-Guid-klasse voor het genereren van een, maar met een cmdlet maakt dit beter kunnen worden gevonden voor eindgebruikers die niet al bekend met de .NET Framework-klasse bent:

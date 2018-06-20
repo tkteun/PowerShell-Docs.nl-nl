@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219528"
 ---
 # <a name="register-a-powershell-repository"></a>Een PowerShell-opslagplaats registreren
 U kunt PowerShellGet interne opslagplaatsen kunnen configureren. Dit wordt gedaan met behulp van de volgende toevoegingen:

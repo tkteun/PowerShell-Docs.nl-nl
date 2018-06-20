@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953324"
 ---
 # <a name="using-variables-to-store-objects"></a>Variabelen gebruiken om objecten op te slaan
 PowerShell werkt met objecten. PowerShell kunt u variabelen in wezen benoemde objecten, behouden de uitvoer voor later gebruik te maken. Als u worden gebruikt voor het werken met variabelen in andere houders Vergeet niet dat PowerShell variabelen objecten, niet naar tekst.

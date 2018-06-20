@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219902"
 ---
 # <a name="declare-base-class"></a>Basisklasse declareren
 U kunt een Windows PowerShell-klasse declareren als basistype voor een andere Windows PowerShell-klasse.

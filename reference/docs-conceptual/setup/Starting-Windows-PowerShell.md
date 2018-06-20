@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953120"
 ---
 # <a name="starting-windows-powershell"></a>Windows PowerShell starten
 PowerShell is een scripting engine dll die is ingesloten in meerdere hosts.  De meest voorkomende host die u wilt beginnen met zijn de interactieve opdrachtregel PowerShell.exe en de interactieve Scripting omgeving PowerShell_ISE.exe.

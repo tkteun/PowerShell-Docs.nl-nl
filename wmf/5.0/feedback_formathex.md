@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218209"
 ---
 # <a name="format-hex"></a>Format-Hex
 **Indeling Hex** kunt u tekst of binaire gegevens weergeven in hexadecimale notatie; Zie [indeling Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)

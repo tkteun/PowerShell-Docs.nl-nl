@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188425"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Een JEA-eindpunt maken en hier verbinding mee maken
 Een JEA om eindpunt te maken, moet u maken en registreren van een speciaal geconfigureerde configuratie van de PowerShell-sessie-bestand dat kan worden gegenereerd met de **nieuw PSSessionConfigurationFile** cmdlet.

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221949"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdlets
 Dit is de kern van PackageManagement ter ondersteuning van software-detectie, installatie en -inventarisatie (SDII). Probeer de cmdlets voor deze bewerkingen uit:

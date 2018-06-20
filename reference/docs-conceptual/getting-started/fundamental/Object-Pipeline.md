@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948207"
 ---
 # <a name="object-pipeline"></a>Objectpijplijn
 Pijplijnen fungeren als een reeks verbonden segmenten van de pipe. Items verplaatst langs de pijplijn is doorlaten van elk segment. Voor het maken van een pijplijn in Windows PowerShell, u verbinding maakt opdrachten samen met de pipe-operator ' | '. De uitvoer van elke opdracht wordt gebruikt als invoer voor de volgende opdracht.

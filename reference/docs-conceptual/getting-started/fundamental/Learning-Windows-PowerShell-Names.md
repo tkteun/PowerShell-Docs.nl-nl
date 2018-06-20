@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953470"
 ---
 # <a name="learning-windows-powershell-names"></a>Meer informatie over Windows PowerShell-namen
 Namen van opdrachten en parameters van de Learning is een aanzienlijke tijd investering met de meeste opdrachtregelinterfaces. Het probleem is dat er heel weinig patronen, dus de enige manier om te leren door bewerkingsopdrachten van elke opdracht en elke parameter die u wilt gebruiken op regelmatige basis.

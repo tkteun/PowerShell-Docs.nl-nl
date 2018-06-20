@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951848"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 Niet alle .NET Framework-klassen kunnen worden gemaakt met behulp van **New-Object**. Bijvoorbeeld, als u probeert te maken van een **System.Environment** of een **System.Math** object met **New-Object**, krijgt u de volgende foutberichten weergegeven:

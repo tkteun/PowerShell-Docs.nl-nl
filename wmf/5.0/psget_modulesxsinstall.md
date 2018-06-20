@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218346"
 ---
 # <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Ondersteuning voor side-by-Side-versie in PowerShell 5.0 of hoger
 

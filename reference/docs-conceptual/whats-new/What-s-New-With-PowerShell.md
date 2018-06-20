@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677243"
 ---
 # <a name="whats-new-with-powershell-50"></a>Wat is er nieuw met PowerShell 5.0
 Windows PowerShell® 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid verbeteren en kunnen u bepalen en beheren van Windows-omgevingen gemakkelijker en uitvoerig.  De belangrijke verbeteringen zijn in het gebied van Desired State Configuration, beveiliging, prestaties, externe toegang en verbeteringen van de taal.
