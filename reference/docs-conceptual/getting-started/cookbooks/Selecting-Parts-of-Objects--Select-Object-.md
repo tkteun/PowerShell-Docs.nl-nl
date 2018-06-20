@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953885"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="518ff-103">Delen van objecten (Select-Object) selecteren</span><span class="sxs-lookup"><span data-stu-id="518ff-103">Selecting Parts of Objects (Select-Object)</span></span>
 

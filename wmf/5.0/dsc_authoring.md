@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218243"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a><span data-ttu-id="cd394-102">Verbeteringen ontwerpen met PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="cd394-102">Authoring Improvements using PowerShell ISE</span></span>
 

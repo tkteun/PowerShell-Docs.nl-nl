@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189360"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="002d0-103">Samengestelde bronnen: met een DSC-configuratie als een bron</span><span class="sxs-lookup"><span data-stu-id="002d0-103">Composite resources: Using a DSC configuration as a resource</span></span>
 

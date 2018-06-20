@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952304"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="a2f35-103">Werken met bestanden, mappen en registersleutels</span><span class="sxs-lookup"><span data-stu-id="a2f35-103">Working With Files, Folders and Registry Keys</span></span>
 

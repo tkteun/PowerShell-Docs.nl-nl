@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219647"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a><span data-ttu-id="fb0a8-102">Importeren DscResource sleutelwoord ondersteunt ModuleVersion - parameter</span><span class="sxs-lookup"><span data-stu-id="fb0a8-102">Import-DscResource keyword supports -ModuleVersion parameter</span></span>
 

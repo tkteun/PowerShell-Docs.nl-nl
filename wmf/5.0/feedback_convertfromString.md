@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189564"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a><span data-ttu-id="fa16f-102">Gestructureerd objecten buiten tekenreeks uitpakken en parseren</span><span class="sxs-lookup"><span data-stu-id="fa16f-102">Extract and Parse Structured Objects out of String</span></span>
 <span data-ttu-id="fa16f-103">Dit brengt ook aanvullende functionaliteit voor de cmdlet ConverterenVan-tekenreeks:</span><span class="sxs-lookup"><span data-stu-id="fa16f-103">This also introduces some additional functionality for the ConvertFrom-String cmdlet:</span></span>

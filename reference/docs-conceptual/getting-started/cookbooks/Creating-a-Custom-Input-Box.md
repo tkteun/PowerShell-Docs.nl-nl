@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954752"
 ---
 # <a name="creating-a-custom-input-box"></a><span data-ttu-id="0654d-103">Een aangepast invoervak maken</span><span class="sxs-lookup"><span data-stu-id="0654d-103">Creating a Custom Input Box</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189802"
 ---
 # <a name="nonewline-parameter"></a><span data-ttu-id="acf4c-102">De parameter NoNewLine</span><span class="sxs-lookup"><span data-stu-id="acf4c-102">NoNewLine parameter</span></span>
 <span data-ttu-id="acf4c-103">**Out-File**, **toevoegen inhoud**, en **Set inhoud** hebt nu een nieuwe **– NoNewline** switch die gewoon een nieuwe regel na de uitvoer wordt weggelaten.</span><span class="sxs-lookup"><span data-stu-id="acf4c-103">**Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.</span></span>

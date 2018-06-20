@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950964"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="a2574-103">Voorbereiden voor het gebruik van Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="a2574-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="a2574-104">Overweeg de volgende opties voor setup bij het Windows PowerShell is geïnstalleerd en gestart.</span><span class="sxs-lookup"><span data-stu-id="a2574-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="a2574-105">U kunt deze taken uitvoeren op elk gewenst moment.</span><span class="sxs-lookup"><span data-stu-id="a2574-105">You can perform these tasks at any time.</span></span>

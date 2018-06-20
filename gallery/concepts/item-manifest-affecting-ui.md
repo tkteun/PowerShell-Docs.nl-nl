@@ -5,8 +5,10 @@ keywords: PowerShell
 title: Item manifest waarden die invloed van de gebruikersinterface van de PowerShell-galerie
 ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
 ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048846"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a><span data-ttu-id="5f3ad-103">Item manifest waarden die invloed van de gebruikersinterface van de PowerShell-galerie</span><span class="sxs-lookup"><span data-stu-id="5f3ad-103">Item manifest values that impact the PowerShell Gallery UI</span></span>
 

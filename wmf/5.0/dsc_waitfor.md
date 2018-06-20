@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187203"
 ---
 # <a name="specifying-cross-node-dependencies"></a><span data-ttu-id="045e9-102">Afhankelijkheden van meerdere knooppunten opgeven</span><span class="sxs-lookup"><span data-stu-id="045e9-102">Specifying Cross Node Dependencies</span></span>
 

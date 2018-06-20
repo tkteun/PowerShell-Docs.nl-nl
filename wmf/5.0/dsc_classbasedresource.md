@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221847"
 ---
 # <a name="class-based-dsc-resources"></a><span data-ttu-id="bd942-102">DSC-resources op basis van een klasse</span><span class="sxs-lookup"><span data-stu-id="bd942-102">Class-based DSC Resources</span></span>
 

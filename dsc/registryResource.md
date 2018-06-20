@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188697"
 ---
 # <a name="dsc-registry-resource"></a><span data-ttu-id="a6ebe-103">DSC-Resource voor register</span><span class="sxs-lookup"><span data-stu-id="a6ebe-103">DSC Registry Resource</span></span>
 

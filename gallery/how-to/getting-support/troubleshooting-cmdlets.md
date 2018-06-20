@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219824"
 ---
 # <a name="troubleshooting-cmdlets"></a><span data-ttu-id="6a1b7-103">Cmdlets voor het oplossen van problemen</span><span class="sxs-lookup"><span data-stu-id="6a1b7-103">Troubleshooting cmdlets</span></span>
 

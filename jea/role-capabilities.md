@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190533"
 ---
 # <a name="jea-role-capabilities"></a><span data-ttu-id="1739e-103">JEA rol mogelijkheden</span><span class="sxs-lookup"><span data-stu-id="1739e-103">JEA Role Capabilities</span></span>
 

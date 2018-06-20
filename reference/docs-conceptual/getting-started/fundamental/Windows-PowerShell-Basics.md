@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950529"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="598d5-103">Basisinformatie over Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="598d5-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="598d5-104">Grafische gebruikersinterfaces gebruiken aantal basisconcepten die bekend bij de meeste computergebruikers.</span><span class="sxs-lookup"><span data-stu-id="598d5-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="598d5-105">Gebruikers, is afhankelijk van de kennis van deze interfaces voor het uitvoeren van taken.</span><span class="sxs-lookup"><span data-stu-id="598d5-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="598d5-106">Besturingssystemen huidige gebruikers met een grafische weergave van items die kunnen worden bekeken, meestal met vervolgkeuzemenu's voor toegang tot bepaalde functionaliteit en context menu's voor toegang tot specifieke context-functies.</span><span class="sxs-lookup"><span data-stu-id="598d5-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

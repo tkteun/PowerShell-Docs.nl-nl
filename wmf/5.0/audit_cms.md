@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189904"
 ---
 # <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="d3399-102">Cmdlets voor cryptografische bericht-syntaxis (CMS)</span><span class="sxs-lookup"><span data-stu-id="d3399-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
 

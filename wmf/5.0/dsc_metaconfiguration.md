@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225705"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a><span data-ttu-id="52fa4-102">DSC-LCM met nieuwe metagegevens configuratiekenmerk configureren</span><span class="sxs-lookup"><span data-stu-id="52fa4-102">Configure DSC LCM with new meta-configuration attribute</span></span>
 

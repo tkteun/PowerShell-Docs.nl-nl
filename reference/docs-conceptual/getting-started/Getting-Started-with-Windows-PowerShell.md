@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949482"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="6b3ae-103">Aan de slag met Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="6b3ae-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="6b3ae-104">Windows PowerShell is een Windows opdrachtregel-shell speciaal is ontworpen voor systeembeheerders.</span><span class="sxs-lookup"><span data-stu-id="6b3ae-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="6b3ae-105">Windows PowerShell bevat een interactieve prompt en een scriptomgeving op servers die kan afzonderlijk of in combinatie worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="6b3ae-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

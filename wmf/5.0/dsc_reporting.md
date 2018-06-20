@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225518"
 ---
 # <a name="report-configuration-status-to-central-location"></a><span data-ttu-id="e7bc3-102">Configuratiestatus rapporteren naar centrale locatie</span><span class="sxs-lookup"><span data-stu-id="e7bc3-102">Report Configuration Status to Central Location</span></span>
 

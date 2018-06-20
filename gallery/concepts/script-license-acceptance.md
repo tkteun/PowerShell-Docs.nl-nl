@@ -5,8 +5,10 @@ keywords: PowerShell
 title: Het vereisen van instemming van de licentie voor scripts
 ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
 ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048816"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="85904-103">Het vereisen van instemming van de licentie voor scripts</span><span class="sxs-lookup"><span data-stu-id="85904-103">Requiring license acceptance for scripts</span></span>
 

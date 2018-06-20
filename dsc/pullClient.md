@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186657"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a><span data-ttu-id="35c0e-103">Instellen van een DSC-pull-client</span><span class="sxs-lookup"><span data-stu-id="35c0e-103">Setting up a DSC pull client</span></span>
 

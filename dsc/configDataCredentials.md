@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190040"
 ---
 # <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="37642-103">Referentieopties in configuratiegegevens</span><span class="sxs-lookup"><span data-stu-id="37642-103">Credentials Options in Configuration Data</span></span>
 ><span data-ttu-id="37642-104">Van toepassing op: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="37642-104">Applies To: Windows PowerShell 5.0</span></span>

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190550"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a><span data-ttu-id="03a56-103">Het bouwen van een pijplijn continue integratie en continue implementatie met DSC</span><span class="sxs-lookup"><span data-stu-id="03a56-103">Building a Continuous Integration and Continuous Deployment pipeline with DSC</span></span>
 

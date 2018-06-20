@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190295"
 ---
 # <a name="pull-server-best-practices"></a><span data-ttu-id="a7a26-103">Best practices voor pull-servers</span><span class="sxs-lookup"><span data-stu-id="a7a26-103">Pull server best practices</span></span>
 

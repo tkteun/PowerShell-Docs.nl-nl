@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218719"
 ---
 # <a name="reporting-on-jea"></a><span data-ttu-id="73fec-102">Rapportage over JEA</span><span class="sxs-lookup"><span data-stu-id="73fec-102">Reporting on JEA</span></span>
 <span data-ttu-id="73fec-103">Om te rapporteren over de status van de configuratie van uw JEA, kunt u het volgende gebruiken:</span><span class="sxs-lookup"><span data-stu-id="73fec-103">In order to report on the state of your JEA configuration, you can use:</span></span>

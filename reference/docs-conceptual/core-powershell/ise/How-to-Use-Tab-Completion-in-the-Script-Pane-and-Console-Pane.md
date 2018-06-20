@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954922"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a><span data-ttu-id="bb6b1-103">Tab-aanvulling gebruiken in het scriptvenster en consolevenster</span><span class="sxs-lookup"><span data-stu-id="bb6b1-103">How to Use Tab Completion in the Script Pane and Console Pane</span></span>
 

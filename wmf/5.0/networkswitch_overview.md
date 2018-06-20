@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187908"
 ---
 # <a name="network-switch-management-with-powershell"></a><span data-ttu-id="f7633-102">Beheer van netwerkswitch met PowerShell</span><span class="sxs-lookup"><span data-stu-id="f7633-102">Network Switch Management with PowerShell</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34309572"
 ---
 # <a name="breaking-changes-for-powershell-60"></a><span data-ttu-id="8bdd9-103">Wijzigingen op te splitsen voor PowerShell 6.0</span><span class="sxs-lookup"><span data-stu-id="8bdd9-103">Breaking Changes for PowerShell 6.0</span></span>
 

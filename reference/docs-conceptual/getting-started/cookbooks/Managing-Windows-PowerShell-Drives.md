@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951865"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="67bd1-103">Windows PowerShell-stations beheren</span><span class="sxs-lookup"><span data-stu-id="67bd1-103">Managing Windows PowerShell Drives</span></span>
 

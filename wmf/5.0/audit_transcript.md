@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222448"
 ---
 # <a name="enhanced-transcription-options"></a><span data-ttu-id="0b074-102">Verbeterde transcriptiemogelijkheden</span><span class="sxs-lookup"><span data-stu-id="0b074-102">Enhanced Transcription Options</span></span>
 

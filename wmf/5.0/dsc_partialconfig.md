@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189394"
 ---
 # <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a><span data-ttu-id="a89d0-102">Configureer knooppunt met meerdere configuratie fragmenten (gedeeltelijke configuraties)</span><span class="sxs-lookup"><span data-stu-id="a89d0-102">Configure Node with multiple configuration fragments (partial configurations)</span></span>
 

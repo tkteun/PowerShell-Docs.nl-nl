@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189955"
 ---
 # <a name="resource-authoring-checklist"></a><span data-ttu-id="dceb8-103">Controlelijst voor het ontwerpen van resource</span><span class="sxs-lookup"><span data-stu-id="dceb8-103">Resource authoring checklist</span></span>
 <span data-ttu-id="dceb8-104">Deze controlelijst is een lijst met aanbevolen procedures bij het ontwerpen van een nieuwe DSC-Resource.</span><span class="sxs-lookup"><span data-stu-id="dceb8-104">This checklist is a list of best practices when authoring a new DSC Resource.</span></span>
