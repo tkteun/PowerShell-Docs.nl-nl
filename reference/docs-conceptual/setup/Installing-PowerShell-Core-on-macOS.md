@@ -1,7 +1,7 @@
-# <a name="installing-powershell-core-on-macos"></a>PowerShell Core installeert op Mac OS
+# <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
 PowerShell Core biedt ondersteuning voor Mac OS 10.12 en hoger.
-Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
+Alle pakketten zijn beschikbaar op onze GitHub [Versies][] pagina.
 Wanneer het pakket is geïnstalleerd, uitvoeren `pwsh` vanaf een terminal.
 
 ### <a name="installation-via-homebrew-on-macos-1012"></a>Installatie via Homebrew op Mac OS 10,12
@@ -36,15 +36,14 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een host PowerShell (pwsh), maar de PowerShell-shell moet worden afgesloten en opnieuw worden opgestart om de upgrade te voltooien.
-> en de waarden in $PSVersionTable vernieuwen.
+> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een host PowerShell (pwsh), maar de PowerShell-shell moet worden afgesloten en opnieuw gestart om de upgrade is voltooid en de waarden in $PSVersionTable vernieuwen.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
 
 ### <a name="installation-via-direct-download"></a>Installatie via directe Download
 
-Pak het pakket downloaden `powershell-6.0.2-osx.10.12-x64.pkg` van de [releases][] pagina op uw Mac OS-machine.
+Pak het pakket downloaden `powershell-6.0.2-osx.10.12-x64.pkg` van de [Versies][] pagina op uw Mac OS-machine.
 
 U kunt dubbelklikken op het bestand en volg de aanwijzingen of installeren vanaf de terminal:
 
@@ -94,11 +93,11 @@ Als u wilt de aanvullende PowerShell paden verwijderen, raadpleegt u de [paden][
 > [!NOTE]
 > Dit is niet nodig als u met Homebrew geïnstalleerd.
 
-[paden]:#paths
+[Paden]:#paths
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`
 * Gebruikersprofielen worden gelezen uit `~/.config/powershell/profile.ps1`
 * Standaardprofielen worden gelezen uit `$PSHOME/profile.ps1`
 * Gebruikersmodules worden gelezen uit `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ Zodat er op de host-specifieke standaardprofielen bestaat `Microsoft.PowerShell_
 PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] op Mac OS.
 
 Omdat Mac OS geen afwijking van BSD, het voorvoegsel is `/usr/local` wordt gebruikt in plaats van `/opt`.
-Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.0.0/`, en de symlink wordt geplaatst op `/usr/local/bin/pwsh`.
+Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`, en de symlink wordt geplaatst op `/usr/local/bin/pwsh`.
 
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[Versies]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
