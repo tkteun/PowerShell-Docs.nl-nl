@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie, setup
 title: Met behulp van configuratiegegevens
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189683"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940375"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Met behulp van de configuratiegegevens in DSC
 
->Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Met behulp van de ingebouwde DSC **ConfigurationData** parameter, kunt u gegevens die kunnen worden gebruikt in een configuratie definiëren.
 Hiermee kunt u voor het maken van een configuratie voor één die kan worden gebruikt voor meerdere knooppunten of voor verschillende omgevingen.
@@ -25,10 +25,11 @@ Zie voor voorbeelden van het gebruik van configuratiegegevens [scheiden van gege
 Een DSC-configuratie heeft een algemene parameter **ConfigurationData**, dat u opgeeft wanneer u de configuratie compileren.
 Zie voor meer informatie over het compileren van configuraties [DSC-configuraties](configurations.md).
 
-De **ConfigurationData** -parameter is een hasthtable waarvoor ten minste één sleutel met de naam moet **AllNodes**.
+De **ConfigurationData** -parameter is een hashtabel die ten minste één sleutel met de naam moet hebben **AllNodes**.
 Het kan ook een of meer sleutels hebben.
 
->**Opmerking:** de voorbeelden in dit onderwerp gebruiken één extra sleutel (anders dan de benoemde **AllNodes** key) met de naam `NonNodeData`, maar u kunt een willekeurig aantal aanvullende sleutels bevatten en naam elke gewenste.
+> [!NOTE]
+> De voorbeelden in dit onderwerp gebruiken één extra sleutel (anders dan de benoemde **AllNodes** key) met de naam `NonNodeData`, maar u kunt een willekeurig aantal aanvullende sleutels bevatten en naam elke gewenste.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC biedt drie speciale variabelen die kunnen worden gebruikt in een configurati
 
 - **$AllNodes** verwijst naar de volledige verzameling van knooppunten die zijn gedefinieerd in **ConfigurationData**. U kunt filteren de **AllNodes** verzameling met behulp van **. WHERE()** en **. ForEach()**.
 - **Knooppunt** verwijst naar een bepaald item in de **AllNodes** verzameling nadat deze is gefilterd met behulp van **. WHERE()** of **. ForEach()**.
+  - U kunt meer lezen over deze methoden in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** verwijst naar de volledige hash-tabel die is doorgegeven als parameter bij het compileren van een configuratie.
 
 ## <a name="using-non-node-data"></a>Met behulp van de gegevens niet-knooppunt
@@ -199,5 +201,6 @@ U kunt echter een aantal aanvullende sleutels opgeven en elke gewenste naam.
 Zie voor een voorbeeld van het gebruik van niet-knooppuntgegevens [scheiden van gegevens en de omgeving](separatingEnvData.md).
 
 ## <a name="see-also"></a>Zie ook
+
 - [Referentieopties in configuratiegegevens](configDataCredentials.md)
 - [DSC-configuraties](configurations.md)

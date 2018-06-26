@@ -1,14 +1,14 @@
 ---
 description: Meer informatie over de geschiedenis voor de uitbreiding Desired State Configuration (DSC) in Azure.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: DSC, azure, powershell-uitbreiding
 title: Versiegeschiedenis van Azure DSC-extensie
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189938"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940324"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versiegeschiedenis van Azure gewenst status configuratie-uitbreiding
 
@@ -16,12 +16,12 @@ De VM-extensie voor Azure Desired State Configuration (DSC) wordt bijgewerkt wan
 
 In dit artikel wordt bevatten informatie over elke versie van de Azure DSC VM-extensie welke omgevingen ondersteunt, en opmerkingen toe te voegen en opmerkingen van nieuwe functies of wijzigingen.
 
-## <a name="latest-versions"></a>Meest recente versies
+## <a name="latest-version"></a>Meest recente versie
 
 ### <a name="version-276"></a>Versie 2.76
 
 - **Releasedatum:**
-  - 9 mei 2018
+  - 9 mei 2018 (Azure) | Juni 21, 2018 (Azure China, Azure Government)
 - **Ondersteuning van het besturingssysteem:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ In dit artikel wordt bevatten informatie over elke versie van de Azure DSC VM-ex
   - WMF 4.0
 - **Omgeving:**
   - Azure
+  - Azure China
+  - Azure Government
 - **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016; voor andere Windows-besturingssystemen installeert de [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installeren van WMF opnieuw opstarten vereist). DSC-rol is voor de Nano-Server geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
   - Verbetering van de metagegevens van de uitbreiding voor substatus en andere kleine oplossingen voor problemen.
-
-### <a name="version-219"></a>Versie 2.19
-
-- **Releasedatum:**
-  - 3 juni 2016
-- **Ondersteuning van het besturingssysteem:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF ondersteuning:**
-  - WMF 5.0 RTM
-  - WMF 4.0 bijwerken
-  - WMF 4.0
-- **Omgeving:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Opmerking:** DSC door deze versie wordt gebruikt om te worden opgenomen in Windows Server 2016 Technical Preview; voor andere besturingssystemen, installeert de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
-- **Nieuwe functies**
-  - De DSC-uitbreiding is nu op aangehouden Azure China. Deze versie bevat voornamelijk oplossingen voor het uitvoeren van de extensie op Azure China.
 
 ## <a name="supported-versions"></a>Ondersteunde versies
 

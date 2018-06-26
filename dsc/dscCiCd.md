@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie, setup
 title: Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190550"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940341"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn continue integratie en continue implementatie met DSC
 
@@ -36,6 +36,7 @@ Voor het bouwen en uitvoeren van dit voorbeeld, moet u een omgeving met meerdere
 Dit is de computer waar u doet al het werk instellen en uitvoeren in het voorbeeld.
 
 De clientcomputer moet een Windows-computer met het volgende zijn geïnstalleerd:
+
 - [GIT](https://git-scm.com/)
 - een lokale git-opslagplaats gekloond van https://github.com/PowerShell/Demo_CI
 - een teksteditor, zoals [Visual Studio Code](https://code.visualstudio.com/)
@@ -73,21 +74,22 @@ Als u de opslagplaats Demo_CI hebt niet op uw clientcomputer hebt gekloond, dit 
 1. Navigeer naar de TFS-server in een webbrowser op de clientcomputer.
 1. In TFS, [maken van een nieuw teamproject](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) Demo_CI met de naam.
 
-    Zorg ervoor dat **versiebeheer** is ingesteld op **Git**.
+   Zorg ervoor dat **versiebeheer** is ingesteld op **Git**.
 1. Op de clientcomputer voegt u een externe toe aan de opslagplaats die u zojuist hebt gemaakt in TFS met de volgende opdracht:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Waar `<YourTFSRepoURL>` de kloon-URL naar de TFS-opslagplaats die u in de vorige stap hebt gemaakt.
+   Waar `<YourTFSRepoURL>` de kloon-URL naar de TFS-opslagplaats die u in de vorige stap hebt gemaakt.
 
-    Als u niet waar deze URL zoeken weet, Zie [klonen van een bestaande Git-opslagplaats](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   Als u niet waar deze URL zoeken weet, Zie [klonen van een bestaande Git-opslagplaats](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. De code van uw lokale opslagplaats pushen naar uw opslagplaats TFS met de volgende opdracht:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. De opslagplaats TFS worden ingevuld met de code Demo_CI.
 
->**Opmerking:** in dit voorbeeld wordt de code in de `ci-cd-example` vertakking van de Git-opslagplaats.
->Zorg ervoor dat de vertakking opgeven als de standaardvertakking in TFS-project en voor de CI/CD-triggers die u maakt.
+> [!NOTE]
+> In dit voorbeeld wordt de code in de `ci-cd-example` vertakking van de Git-opslagplaats.
+> Zorg ervoor dat de vertakking opgeven als de standaardvertakking in TFS-project en voor de CI/CD-triggers die u maakt.
 
 ## <a name="understanding-the-code"></a>Wat is de code?
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 Hiermee vindt u alle knooppunten die zijn gedefinieerd als bestanden met de rol `DNSServer` in de [configuratiegegevens](configData.md), die wordt gemaakt door de `DevEnv.ps1` script.
+
+U kunt meer lezen over de `Where` methode in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 Met behulp van de configuratiegegevens voor het definiëren van knooppunten is belangrijk bij het uitvoeren van CI omdat knooppunt informatie waarschijnlijk tussen omgevingen veranderen zullen en configuratiegegevens met kunt u gemakkelijk wijzigingen aanbrengen in knooppunt informatie zonder de configuratiecode te wijzigen.
 
@@ -348,12 +352,12 @@ Deze stap build wordt uitgevoerd de eenheidstests in het Pester-script dat we ee
 
 1. Elk van de volgende regels toevoegen **inhoud**:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Stel **TargetFolder** naar `$(Build.ArtifactStagingDirectory)\`
 
