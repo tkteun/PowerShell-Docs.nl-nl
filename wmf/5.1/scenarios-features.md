@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Nieuwe scenario's en onderdelen in WMF 5.1
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190312"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090360"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nieuwe scenario's en onderdelen in WMF 5.1
 
@@ -25,12 +25,12 @@ Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan vo
 
 - [Actieve versie van PowerShell met $PSVersionTable bepalen](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Get-Module resultaten door met de parameter PSEdition CompatiblePSEditions filteren](/powershell/module/microsoft.powershell.core/get-module)
-- [Voorkomen dat de uitvoering van script tenzij uitvoeren op een compatibele versie van PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Een module compatibiliteit met bepaalde versies van PowerShell declareren](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Voorkomen dat de uitvoering van script tenzij uitvoeren op een compatibele versie van PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Een module compatibiliteit met bepaalde versies van PowerShell declareren](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Catalogus-Cmdlets
 
-Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) module; deze genereren en bestanden voor Windows-catalogus te valideren.
+Twee nieuwe cmdlets toegevoegd de [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) module; deze genereren en bestanden voor Windows-catalogus te valideren.
 
 ### <a name="new-filecatalog"></a>Nieuwe FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Hiermee maakt u het catalogusbestand.
 
 ![](../images/CatalogFile2.jpg)
 
-Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.
+Als u wilt controleren of de integriteit van catalogusbestand (Pester.cat in bovenstaande voorbeeld), meld u aan met behulp van [Set AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet.
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Deze cmdlet worden alle bestanden-hashes vergeleken en hun relatieve paden te vinden in *catalogus* met toepassingsgroepen op *schijf*.
 Als er een discrepantie tussen het bestands-hashes en paden gedetecteerd wordt de status als *ValidationFailed*.
 Gebruikers kunnen deze informatie ophalen met behulp van de *-gedetailleerde* parameter.
-Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet uit op het catalogusbestand.
+Er wordt ook weergegeven ondertekenen status van de catalogus in *handtekening* -eigenschap hebben die gelijk is aan het aanroepen [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) cmdlet uit op het catalogusbestand.
 Gebruikers kunnen ook een bestand tijdens de validatie overslaan met behulp van de *- FilesToSkip* parameter.
 
 ## <a name="module-analysis-cache"></a>Module Analysis-Cache
@@ -115,7 +115,7 @@ Voorheen moest u geen manier om op te geven van een bepaalde moduleversie; Als e
 
 In een WMF 5.1:
 
-- U kunt [ModuleSpecification-Constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+- U kunt [ModuleSpecification-Constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 Deze hashtabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
 **Voorbeeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
