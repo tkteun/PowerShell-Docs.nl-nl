@@ -42,7 +42,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installeer de meest recente [Win32-OpenSSH] opbouwen vanuit GitHub met de [installatie] instructies
+1. Installeer de meest recente [Win32 OpenSSH] opbouwen vanuit GitHub met de [installatie] instructies
 1. Bewerk het bestand sshd_config op de locatie waar u de Win32-OpenSSH geïnstalleerd
     - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 
@@ -54,6 +54,22 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt.
+    Zie [dit probleem op GitHub voor meer informatie](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Eén oplossing is voor het maken van een symlink naar de Powershell-installatiemap op die geen spaties bevatten:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    en voer vervolgens in het subsysteem:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - Verificatie met sleutel (optioneel) inschakelen
@@ -74,7 +90,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde authentic
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup op de Machine met Linux (Ubuntu 14.04)
 
-1. Installeer de meest recente [PowerShell-kern voor Linux] opbouwen vanuit GitHub
+1. Installeer de meest recente [PowerShell Core voor Linux] opbouwen vanuit GitHub
 1. Installeer [Ubuntu SSH] indien nodig
 
     ```bash
@@ -242,8 +258,8 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo-opdracht werkt niet in de externe sessie op Linux-machine.
 
 [Core voor Windows PowerShell]: ../setup/installing-powershell-core-on-windows.md#msi
-[PowerShell-kern voor Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell Core voor Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
 [PowerShell-kern voor Mac OS]: ../setup/installing-powershell-core-on-macos.md
-[Win32-OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installatie]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html

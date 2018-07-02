@@ -21,6 +21,21 @@ Wanneer het pakket is geïnstalleerd, uitvoeren `pwsh` vanaf een terminal.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
+## <a name="installing-preview-releases"></a>Preview-versies installeren
+
+Wanneer u een evaluatieversie van PowerShell Core installeert voor Linux via een opslagplaats pakket, de naam van het pakket verandert van `powershell` naar `powershell-preview`.
+
+Installeren via de directe download verandert niet, dan de bestandsnaam.
+
+Hier volgt een tabel met de opdrachten voor het installeren van de stabiel en preview pakketten met behulp van de verschillende pakket managers:
+
+|Distrobution(s)|Stabiele opdracht | Preview-opdracht |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| openSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>Installatie via pakket opslagplaats - Ubuntu 14.04
@@ -59,7 +74,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Houd er rekening mee dat `dpkg -i` mislukt met hangt afhankelijkheden; de volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
+> [!NOTE]
+> De `dpkg -i` opdracht is mislukt met afhankelijkheden waaraan niet is voldaan.
+> De volgende opdracht `apt-get install -f` deze problemen worden opgelost en klaar is met het configureren van het PowerShell-pakket.
 
 ### <a name="uninstallation---ubuntu-1404"></a>Verwijdering - Ubuntu 14.04
 
@@ -104,7 +121,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Houd er rekening mee dat `dpkg -i` mislukt met hangt afhankelijkheden; de volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
+> [!NOTE]
+> De `dpkg -i` opdracht is mislukt met afhankelijkheden waaraan niet is voldaan.
+> De volgende opdracht `apt-get install -f` deze problemen worden opgelost en klaar is met het configureren van het PowerShell-pakket.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Verwijdering - Ubuntu 16.04
 
@@ -114,7 +133,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-> Opmerking: Ondersteuning voor Ubuntu 18.04 is toegevoegd na `6.1.0-preview.2`
+> [!NOTE]
+> Er is ondersteuning voor Ubuntu 17.04 toegevoegd na `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1710"></a>Installatie via pakket opslagplaats - Ubuntu 17.10
 
@@ -151,7 +171,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> Houd er rekening mee dat `dpkg -i` mislukt met hangt afhankelijkheden; de volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
+> [!NOTE]
+> De `dpkg -i` opdracht is mislukt met afhankelijkheden waaraan niet is voldaan.
+> De volgende opdracht `apt-get install -f` deze problemen worden opgelost en klaar is met het configureren van het PowerShell-pakket.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Verwijdering - Ubuntu 17.10
 
@@ -161,7 +183,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> Opmerking: Ondersteuning voor Ubuntu 18.04 is toegevoegd na `6.1.0-preview.2`
+> [!NOTE]
+> Er is ondersteuning voor Ubuntu 18.04 toegevoegd na `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via pakket opslagplaats - Ubuntu 18.04
 
@@ -198,7 +221,9 @@ sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Houd er rekening mee dat `dpkg -i` mislukt met hangt afhankelijkheden; de volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
+> [!NOTE]
+> De `dpkg -i` opdracht is mislukt met afhankelijkheden waaraan niet is voldaan.
+> De volgende opdracht `apt-get install -f` deze problemen worden opgelost en klaar is met het configureren van het PowerShell-pakket.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Verwijdering - Ubuntu 17.10
 
@@ -248,8 +273,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Houd er rekening mee dat `dpkg -i` mislukt met afhankelijkheden waaraan niet is voldaan.
-> De volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
+> De `dpkg -i` opdracht is mislukt met afhankelijkheden waaraan niet is voldaan.
+> De volgende opdracht `apt-get install -f` deze problemen worden opgelost en klaar is met het configureren van het PowerShell-pakket.
 
 ### <a name="uninstallation---debian-8"></a>Verwijdering - Debian 8
 
@@ -298,10 +323,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> Houd er rekening mee dat `dpkg -i` mislukt met afhankelijkheden waaraan niet is voldaan.
-> De volgende opdracht `apt-get install -f` wordt deze omgezet en voltooit u vervolgens het PowerShell-pakket configureren.
-
 ### <a name="uninstallation---debian-9"></a>Verwijdering - Debian 9
 
 ```sh
@@ -310,6 +331,7 @@ sudo apt-get remove powershell
 
 ## <a name="centos-7"></a>CentOS 7
 
+> [!NOTE]
 > Dit pakket werkt ook op Oracle Linux 7.
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Installatie via pakket opslagplaats (voorkeur) - CentOS 7
@@ -396,22 +418,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42,2
 
-> [!NOTE]
-> Bij de installatie van PowerShell Core `zypper` mogelijk de volgende fout te melden:
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> In dit geval controleren of een compatibel `libcurl` bibliotheek aanwezig is, door te controleren dat de volgende geeft opdracht de `libcurl4` pakket geïnstalleerd:
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> Kies vervolgens de `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` oplossing wanneer de PowerShell-pakket installeert.
+Bij de installatie van PowerShell Core `zypper` mogelijk de volgende fout te melden:
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+In dit geval controleren of een compatibel `libcurl` bibliotheek aanwezig is, door te controleren dat de volgende geeft opdracht de `libcurl4` pakket geïnstalleerd:
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+Kies vervolgens de `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` oplossing wanneer de PowerShell-pakket installeert.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installatie via pakket opslagplaats (voorkeur) - OpenSUSE 42,2
 
@@ -458,7 +479,8 @@ sudo zypper remove powershell
 
 ## <a name="fedora"></a>Fedora
 
-> Houd er rekening mee, Fedora 28 wordt alleen ondersteund in PowerShell Core 6.1 en hoger.
+> [!NOTE]
+> Fedora 28 wordt alleen ondersteund in PowerShell Core 6.1 en hoger.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installatie via pakket opslagplaats (voorkeur) - Fedora 27, Fedora 28
 
@@ -510,7 +532,10 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Boog Linux
 
-PowerShell is beschikbaar via de [Boog Linux][] gebruiker opslagplaats (AUR).
+> [!NOTE]
+> Boog ondersteuning is experimentele.
+
+PowerShell is beschikbaar via de [Arch Linux][] gebruiker opslagplaats (AUR).
 
 * Het kan worden gecompileerd met het [meest recente release met tags][arch-release]
 * Het kan worden gecompileerd uit de [nieuwste doorvoeren naar het hoofdniveau][arch-git]
@@ -520,12 +545,15 @@ Pakketten in de AUR community bewaard zijn: Er is geen officiële ondersteuning.
 
 Zie voor meer informatie over het installeren van pakketten uit de AUR de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Boog Linux]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux-AppImage
+
+> [!NOTE]
+> Ondersteuning voor AppImage is experimentele
 
 Gebruik van een recente Linux-distributie, downloaden de AppImage `powershell-6.0.1-x86_64.AppImage` van de [releases][] pagina naar de Linux-machine.
 
@@ -543,6 +571,9 @@ Dit pakket is een enkele binaire waarde die geschikt is onafhankelijk van de Lin
 [appimage]: http://appimage.org/
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Ondersteuning voor Kali is experimentele.
 
 ### <a name="installation"></a>Installatie
 
@@ -579,6 +610,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## <a name="raspbian"></a>Raspbian
+
+> [!NOTE]
+> Ondersteuning voor Raspbian is experimentele.
 
 PowerShell is momenteel alleen ondersteund op Raspbian Stretch.
 
