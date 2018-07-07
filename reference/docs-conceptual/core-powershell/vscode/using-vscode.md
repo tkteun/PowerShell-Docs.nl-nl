@@ -1,67 +1,67 @@
-# <a name="using-visual-studio-code-for-powershell-development"></a><span data-ttu-id="82c63-101">Met behulp van Visual Studio Code voor het ontwikkelen van PowerShell</span><span class="sxs-lookup"><span data-stu-id="82c63-101">Using Visual Studio Code for PowerShell Development</span></span>
+# <a name="using-visual-studio-code-for-powershell-development"></a><span data-ttu-id="b3251-101">Visual Studio Code gebruiken voor het ontwikkelen van PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3251-101">Using Visual Studio Code for PowerShell Development</span></span>
 
-<span data-ttu-id="82c63-102">Naast de [PowerShell ISE][ise], PowerShell wordt ook goed ondersteund in Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="82c63-102">In addition to the [PowerShell ISE][ise], PowerShell is also well-supported in Visual Studio Code.</span></span>
-<span data-ttu-id="82c63-103">Bovendien wordt de ISE niet ondersteund met PowerShell-kern wanneer Visual Studio Code wordt ondersteund voor PowerShell Core op alle platforms (Windows, Mac OS en Linux)</span><span class="sxs-lookup"><span data-stu-id="82c63-103">Furthermore, the ISE is not supported with PowerShell Core, while Visual Studio Code is supported for PowerShell Core on all platforms (Windows, macOS, and Linux)</span></span>
+<span data-ttu-id="b3251-102">Naast de [PowerShell ISE][ise], PowerShell wordt ook goed ondersteund in Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="b3251-102">In addition to the [PowerShell ISE][ise], PowerShell is also well-supported in Visual Studio Code.</span></span>
+<span data-ttu-id="b3251-103">Bovendien wordt de ISE niet ondersteund met PowerShell Core, terwijl de Visual Studio Code voor PowerShell Core wordt ondersteund op alle platformen (Windows, macOS en Linux)</span><span class="sxs-lookup"><span data-stu-id="b3251-103">Furthermore, the ISE is not supported with PowerShell Core, while Visual Studio Code is supported for PowerShell Core on all platforms (Windows, macOS, and Linux)</span></span>
 
-<span data-ttu-id="82c63-104">U kunt Visual Studio Code in Windows met PowerShell versie 5 met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) voor eerdere Windows-besturingssystemen (bijvoorbeeld Windows 8.1, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="82c63-104">You can use Visual Studio Code on Windows with PowerShell version 5 by using Windows 10 or by installing [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) for down-level Windows OSs (e.g. Windows 8.1, etc.).</span></span>
+<span data-ttu-id="b3251-104">U kunt Visual Studio Code op Windows met PowerShell versie 5 gebruiken met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) voor downlevel-Windows-OSs (bijvoorbeeld Windows 8.1, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="b3251-104">You can use Visual Studio Code on Windows with PowerShell version 5 by using Windows 10 or by installing [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) for down-level Windows OSs (e.g. Windows 8.1, etc.).</span></span>
 
-<span data-ttu-id="82c63-105">Voordat u begint het, Controleer of dat PowerShell bestaat op uw systeem.</span><span class="sxs-lookup"><span data-stu-id="82c63-105">Before starting it, please make sure PowerShell exists on your system.</span></span>
-<span data-ttu-id="82c63-106">Zie voor moderne werkbelastingen op Windows-, Mac OS- en Linux:</span><span class="sxs-lookup"><span data-stu-id="82c63-106">For modern workloads on Windows, macOS, and Linux, see:</span></span>
+<span data-ttu-id="b3251-105">Voordat u begint met het, Controleer of dat PowerShell bestaat op uw systeem.</span><span class="sxs-lookup"><span data-stu-id="b3251-105">Before starting it, please make sure PowerShell exists on your system.</span></span>
+<span data-ttu-id="b3251-106">Zie voor moderne workloads in Windows, macOS en Linux:</span><span class="sxs-lookup"><span data-stu-id="b3251-106">For modern workloads on Windows, macOS, and Linux, see:</span></span>
 
-- <span data-ttu-id="82c63-107">[PowerShell Core installeren op Linux][install-pscore-linux]</span><span class="sxs-lookup"><span data-stu-id="82c63-107">[Installing PowerShell Core on Linux][install-pscore-linux]</span></span>
-- <span data-ttu-id="82c63-108">[PowerShell Core installeert op Mac OS][install-pscore-macos]</span><span class="sxs-lookup"><span data-stu-id="82c63-108">[Installing PowerShell Core on macOS][install-pscore-macos]</span></span>
-- <span data-ttu-id="82c63-109">[PowerShell Core installeren in Windows][install-pscore-windows]</span><span class="sxs-lookup"><span data-stu-id="82c63-109">[Installing PowerShell Core on Windows][install-pscore-windows]</span></span>
+- <span data-ttu-id="b3251-107">[PowerShell Core in Linux installeren][install-pscore-linux]</span><span class="sxs-lookup"><span data-stu-id="b3251-107">[Installing PowerShell Core on Linux][install-pscore-linux]</span></span>
+- <span data-ttu-id="b3251-108">[PowerShell Core in macOS installeren][install-pscore-macos]</span><span class="sxs-lookup"><span data-stu-id="b3251-108">[Installing PowerShell Core on macOS][install-pscore-macos]</span></span>
+- <span data-ttu-id="b3251-109">[PowerShell Core in Windows installeren][install-pscore-windows]</span><span class="sxs-lookup"><span data-stu-id="b3251-109">[Installing PowerShell Core on Windows][install-pscore-windows]</span></span>
 
-<span data-ttu-id="82c63-110">Zie voor traditionele Windows PowerShell-werkbelastingen, [Windows PowerShell installeren][install-winps].</span><span class="sxs-lookup"><span data-stu-id="82c63-110">For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].</span></span>
+<span data-ttu-id="b3251-110">Zie voor traditionele Windows PowerShell-workloads, [Windows PowerShell installeren][install-winps].</span><span class="sxs-lookup"><span data-stu-id="b3251-110">For traditional Windows PowerShell workloads, see [Installing Windows PowerShell][install-winps].</span></span>
 
-## <a name="editing-with-visual-studio-code"></a><span data-ttu-id="82c63-111">Bewerken met Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="82c63-111">Editing with Visual Studio Code</span></span>
+## <a name="editing-with-visual-studio-code"></a><span data-ttu-id="b3251-111">Bewerken met Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-111">Editing with Visual Studio Code</span></span>
 
-### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[<span data-ttu-id="82c63-112">1. Visual Studio Code installeren</span><span class="sxs-lookup"><span data-stu-id="82c63-112">1. Installing Visual Studio Code</span></span>](https://code.visualstudio.com/Docs/setup/setup-overview)
+### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[<span data-ttu-id="b3251-112">1. Visual Studio Code installeren</span><span class="sxs-lookup"><span data-stu-id="b3251-112">1. Installing Visual Studio Code</span></span>](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- <span data-ttu-id="82c63-113">**Linux**: Volg de instructies voor installatie op de [uitgevoerd tegenover Code op Linux](https://code.visualstudio.com/docs/setup/linux) pagina</span><span class="sxs-lookup"><span data-stu-id="82c63-113">**Linux**: follow the installation instructions on the [Running VS Code on Linux](https://code.visualstudio.com/docs/setup/linux) page</span></span>
+- <span data-ttu-id="b3251-113">**Linux**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op Linux](https://code.visualstudio.com/docs/setup/linux) pagina</span><span class="sxs-lookup"><span data-stu-id="b3251-113">**Linux**: follow the installation instructions on the [Running VS Code on Linux](https://code.visualstudio.com/docs/setup/linux) page</span></span>
 
-- <span data-ttu-id="82c63-114">**Mac OS**: Volg de instructies voor installatie op de [uitgevoerd tegenover Code op Mac OS](https://code.visualstudio.com/docs/setup/mac) pagina</span><span class="sxs-lookup"><span data-stu-id="82c63-114">**macOS**: follow the installation instructions on the [Running VS Code on macOS](https://code.visualstudio.com/docs/setup/mac) page</span></span>
+- <span data-ttu-id="b3251-114">**macOS**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op macOS](https://code.visualstudio.com/docs/setup/mac) pagina</span><span class="sxs-lookup"><span data-stu-id="b3251-114">**macOS**: follow the installation instructions on the [Running VS Code on macOS](https://code.visualstudio.com/docs/setup/mac) page</span></span>
 
-> [!IMPORTANT]
-> <span data-ttu-id="82c63-115">Op Mac OS, moet u OpenSSL voor de PowerShell-uitbreiding correct te laten werken.</span><span class="sxs-lookup"><span data-stu-id="82c63-115">On macOS, you must install OpenSSL for the PowerShell extension to work correctly.</span></span>
-> <span data-ttu-id="82c63-116">De eenvoudigste manier om dit te bereiken is voor het installeren van [Homebrew](http://brew.sh/) en voer vervolgens `brew install openssl`.</span><span class="sxs-lookup"><span data-stu-id="82c63-116">The easiest way to accomplish this is to install [Homebrew](http://brew.sh/) and then run `brew install openssl`.</span></span>
-> <span data-ttu-id="82c63-117">VS-Code kunt nu laden de de PowerShell-extensie is.</span><span class="sxs-lookup"><span data-stu-id="82c63-117">VS Code can now load the the PowerShell extension successfully.</span></span>
+  > [!IMPORTANT]
+  > <span data-ttu-id="b3251-115">Op Mac OS, moet u OpenSSL voor de extensie van PowerShell correct te laten werken.</span><span class="sxs-lookup"><span data-stu-id="b3251-115">On macOS, you must install OpenSSL for the PowerShell extension to work correctly.</span></span>
+  > <span data-ttu-id="b3251-116">De eenvoudigste manier om dit te doen is voor het installeren van [Homebrew](http://brew.sh/) en voer `brew install openssl`.</span><span class="sxs-lookup"><span data-stu-id="b3251-116">The easiest way to accomplish this is to install [Homebrew](http://brew.sh/) and then run `brew install openssl`.</span></span>
+  > <span data-ttu-id="b3251-117">VS Code kan nu laden de de PowerShell-extensie is.</span><span class="sxs-lookup"><span data-stu-id="b3251-117">VS Code can now load the the PowerShell extension successfully.</span></span>
 
-- <span data-ttu-id="82c63-118">**Windows**: Volg de instructies voor installatie op de [tegenover Code uitgevoerd op Windows](https://code.visualstudio.com/docs/setup/windows) pagina</span><span class="sxs-lookup"><span data-stu-id="82c63-118">**Windows**: follow the installation instructions on the [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) page</span></span>
+- <span data-ttu-id="b3251-118">**Windows**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op Windows](https://code.visualstudio.com/docs/setup/windows) pagina</span><span class="sxs-lookup"><span data-stu-id="b3251-118">**Windows**: follow the installation instructions on the [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) page</span></span>
 
-### <a name="2-installing-powershell-extension"></a><span data-ttu-id="82c63-119">2. Installeren van PowerShell-extensie</span><span class="sxs-lookup"><span data-stu-id="82c63-119">2. Installing PowerShell Extension</span></span>
+### <a name="2-installing-powershell-extension"></a><span data-ttu-id="b3251-119">2. PowerShell-extensie installeren</span><span class="sxs-lookup"><span data-stu-id="b3251-119">2. Installing PowerShell Extension</span></span>
 
-- <span data-ttu-id="82c63-120">Start de Visual Studio Code app door:</span><span class="sxs-lookup"><span data-stu-id="82c63-120">Launch the Visual Studio Code app by:</span></span>
-    - <span data-ttu-id="82c63-121">**Windows**: typen `code` in uw PowerShell-sessie</span><span class="sxs-lookup"><span data-stu-id="82c63-121">**Windows**: typing `code` in your PowerShell session</span></span>
-    - <span data-ttu-id="82c63-122">**Linux**: typen `code` in uw terminal</span><span class="sxs-lookup"><span data-stu-id="82c63-122">**Linux**: typing `code` in your terminal</span></span>
-    - <span data-ttu-id="82c63-123">**Mac OS**: typen `code` in uw terminal</span><span class="sxs-lookup"><span data-stu-id="82c63-123">**macOS**: typing `code` in your terminal</span></span>
+- <span data-ttu-id="b3251-120">Start Visual Studio Code app door:</span><span class="sxs-lookup"><span data-stu-id="b3251-120">Launch the Visual Studio Code app by:</span></span>
+  - <span data-ttu-id="b3251-121">**Windows**: typen `code` in uw PowerShell-sessie</span><span class="sxs-lookup"><span data-stu-id="b3251-121">**Windows**: typing `code` in your PowerShell session</span></span>
+  - <span data-ttu-id="b3251-122">**Linux**: typen `code` in uw terminal</span><span class="sxs-lookup"><span data-stu-id="b3251-122">**Linux**: typing `code` in your terminal</span></span>
+  - <span data-ttu-id="b3251-123">**macOS**: typen `code` in uw terminal</span><span class="sxs-lookup"><span data-stu-id="b3251-123">**macOS**: typing `code` in your terminal</span></span>
 
-- <span data-ttu-id="82c63-124">Start **snelle Open** door te drukken **Ctrl + P** (**Cmd + P** op Mac).</span><span class="sxs-lookup"><span data-stu-id="82c63-124">Launch **Quick Open** by pressing **Ctrl+P** (**Cmd+P** on Mac).</span></span>
-- <span data-ttu-id="82c63-125">Typ in het vak snel openen `ext install powershell` en treffers **Enter**.</span><span class="sxs-lookup"><span data-stu-id="82c63-125">In Quick Open, type `ext install powershell` and hit **Enter**.</span></span>
-- <span data-ttu-id="82c63-126">De **extensies** weergave wordt geopend op de zijmarge.</span><span class="sxs-lookup"><span data-stu-id="82c63-126">The **Extensions** view opens on the Side Bar.</span></span> <span data-ttu-id="82c63-127">Selecteer de PowerShell-uitbreiding van Microsoft.</span><span class="sxs-lookup"><span data-stu-id="82c63-127">Select the PowerShell extension from Microsoft.</span></span>
-  <span data-ttu-id="82c63-128">Ziet er ongeveer zoals hieronder:</span><span class="sxs-lookup"><span data-stu-id="82c63-128">You should see something like below:</span></span>
+- <span data-ttu-id="b3251-124">Start **snel openen** door te drukken **Ctrl + P** (**Cmd + P** op Mac).</span><span class="sxs-lookup"><span data-stu-id="b3251-124">Launch **Quick Open** by pressing **Ctrl+P** (**Cmd+P** on Mac).</span></span>
+- <span data-ttu-id="b3251-125">Typ in snel openen `ext install powershell` en klik op **Enter**.</span><span class="sxs-lookup"><span data-stu-id="b3251-125">In Quick Open, type `ext install powershell` and hit **Enter**.</span></span>
+- <span data-ttu-id="b3251-126">De **extensies** weergave geopend op de zijbalk.</span><span class="sxs-lookup"><span data-stu-id="b3251-126">The **Extensions** view opens on the Side Bar.</span></span> <span data-ttu-id="b3251-127">Selecteer de PowerShell-uitbreiding van Microsoft.</span><span class="sxs-lookup"><span data-stu-id="b3251-127">Select the PowerShell extension from Microsoft.</span></span>
+  <span data-ttu-id="b3251-128">U zou iets moet zien zoals hieronder:</span><span class="sxs-lookup"><span data-stu-id="b3251-128">You should see something like below:</span></span>
 
   ![VSCode](../../images/vscode.png)
 
-- <span data-ttu-id="82c63-130">Klik op de **installeren** knop van de PowerShell-extensie van Microsoft.</span><span class="sxs-lookup"><span data-stu-id="82c63-130">Click the **Install** button on the PowerShell extension from Microsoft.</span></span>
-- <span data-ttu-id="82c63-131">Na de installatie ziet u de **installeren** knop verandert in **opnieuw laden**.</span><span class="sxs-lookup"><span data-stu-id="82c63-131">After the install, you see the **Install** button turns to **Reload**.</span></span>
-  <span data-ttu-id="82c63-132">Klik op **opnieuw laden**.</span><span class="sxs-lookup"><span data-stu-id="82c63-132">Click on **Reload**.</span></span>
-- <span data-ttu-id="82c63-133">Nadat Visual Studio Code opnieuw laden heeft, bent u klaar om te bewerken.</span><span class="sxs-lookup"><span data-stu-id="82c63-133">After Visual Studio Code has reload, you are ready for editing.</span></span>
+- <span data-ttu-id="b3251-130">Klik op de **installeren** knop van de PowerShell-extensie van Microsoft.</span><span class="sxs-lookup"><span data-stu-id="b3251-130">Click the **Install** button on the PowerShell extension from Microsoft.</span></span>
+- <span data-ttu-id="b3251-131">Na de installatie, ziet u de **installeren** knop verandert in **opnieuw laden**.</span><span class="sxs-lookup"><span data-stu-id="b3251-131">After the install, you see the **Install** button turns to **Reload**.</span></span>
+  <span data-ttu-id="b3251-132">Klik op **opnieuw laden**.</span><span class="sxs-lookup"><span data-stu-id="b3251-132">Click on **Reload**.</span></span>
+- <span data-ttu-id="b3251-133">Nadat Visual Studio Code opnieuw laden is, bent u klaar voor het bewerken van.</span><span class="sxs-lookup"><span data-stu-id="b3251-133">After Visual Studio Code has reload, you are ready for editing.</span></span>
 
-<span data-ttu-id="82c63-134">Bijvoorbeeld voor het maken van een nieuw bestand, klikt u op **File -> nieuw**.</span><span class="sxs-lookup"><span data-stu-id="82c63-134">For example, to create a new file, click **File->New**.</span></span>
-<span data-ttu-id="82c63-135">Als u wilt opslaan, klikt u op **File -> Opslaan** en geef vervolgens een bestandsnaam, gaan we spreek `HelloWorld.ps1`.</span><span class="sxs-lookup"><span data-stu-id="82c63-135">To save it, click **File->Save** and then provide a file name, let's say `HelloWorld.ps1`.</span></span>
-<span data-ttu-id="82c63-136">U sluit het bestand, klik op 'x' naast de bestandsnaam.</span><span class="sxs-lookup"><span data-stu-id="82c63-136">To close the file, click on "x" next to the file name.</span></span>
-<span data-ttu-id="82c63-137">Om af te sluiten van Visual Studio Code **File -> afsluiten**.</span><span class="sxs-lookup"><span data-stu-id="82c63-137">To exit Visual Studio Code, **File->Exit**.</span></span>
+<span data-ttu-id="b3251-134">Bijvoorbeeld, als u wilt een nieuw bestand maken, klikt u op **File -> New**.</span><span class="sxs-lookup"><span data-stu-id="b3251-134">For example, to create a new file, click **File->New**.</span></span>
+<span data-ttu-id="b3251-135">Als u wilt opslaan, klikt u op **File -> Opslaan** en geef vervolgens een bestandsnaam op, laten we zeggen `HelloWorld.ps1`.</span><span class="sxs-lookup"><span data-stu-id="b3251-135">To save it, click **File->Save** and then provide a file name, let's say `HelloWorld.ps1`.</span></span>
+<span data-ttu-id="b3251-136">U sluit het bestand, klikt u op 'x' naast de bestandsnaam van het.</span><span class="sxs-lookup"><span data-stu-id="b3251-136">To close the file, click on "x" next to the file name.</span></span>
+<span data-ttu-id="b3251-137">Om af te sluiten van Visual Studio Code, **File -> afsluiten**.</span><span class="sxs-lookup"><span data-stu-id="b3251-137">To exit Visual Studio Code, **File->Exit**.</span></span>
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a><span data-ttu-id="82c63-138">Een specifieke geïnstalleerde versie van PowerShell</span><span class="sxs-lookup"><span data-stu-id="82c63-138">Using a specific installed version of PowerShell</span></span>
+#### <a name="using-a-specific-installed-version-of-powershell"></a><span data-ttu-id="b3251-138">Met behulp van een specifieke versie van PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3251-138">Using a specific installed version of PowerShell</span></span>
 
-<span data-ttu-id="82c63-139">Als u een specifieke installatie van PowerShell gebruiken met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand van de gebruiker-instellingen.</span><span class="sxs-lookup"><span data-stu-id="82c63-139">If you wish to use a specific installation of PowerShell with Visual Studio Code, you need to add a new variable to your user settings file.</span></span>
+<span data-ttu-id="b3251-139">Als u gebruiken van een specifieke installatie van PowerShell met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand met gebruiker instellingen.</span><span class="sxs-lookup"><span data-stu-id="b3251-139">If you wish to use a specific installation of PowerShell with Visual Studio Code, you need to add a new variable to your user settings file.</span></span>
 
-1. <span data-ttu-id="82c63-140">Klik op **File-Voorkeuren > Instellingen ->**</span><span class="sxs-lookup"><span data-stu-id="82c63-140">Click **File -> Preferences -> Settings**</span></span>
-1. <span data-ttu-id="82c63-141">Twee deelvensters van de editor worden weergegeven.</span><span class="sxs-lookup"><span data-stu-id="82c63-141">Two editor panes appear.</span></span>
-   <span data-ttu-id="82c63-142">In het deelvenster van de meest rechtse (`settings.json`), voeg de onderstaande instelling geschikt is voor uw besturingssysteem ergens tussen de twee accolades (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:</span><span class="sxs-lookup"><span data-stu-id="82c63-142">In the right-most pane (`settings.json`), insert the setting below appropriate for your OS somewhere between the two curly brackets (`{` and `}`) and replace *<version>* with the installed PowerShell version:</span></span>
+1. <span data-ttu-id="b3251-140">Klik op **File -> Voorkeuren >-instellingen**</span><span class="sxs-lookup"><span data-stu-id="b3251-140">Click **File -> Preferences -> Settings**</span></span>
+2. <span data-ttu-id="b3251-141">Twee deelvensters van de rapporteditor worden weergegeven.</span><span class="sxs-lookup"><span data-stu-id="b3251-141">Two editor panes appear.</span></span>
+   <span data-ttu-id="b3251-142">In het deelvenster uiterst rechts (`settings.json`), invoegen van de instelling van de onderstaande geschikt is voor uw besturingssysteem ergens tussen de twee gekrulde haken (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:</span><span class="sxs-lookup"><span data-stu-id="b3251-142">In the right-most pane (`settings.json`), insert the setting below appropriate for your OS somewhere between the two curly brackets (`{` and `}`) and replace *<version>* with the installed PowerShell version:</span></span>
 
-  ```json
+   ```json
     // On Windows:
     "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
 
@@ -70,15 +70,16 @@
 
     // On macOS:
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-  ```
-1. <span data-ttu-id="82c63-143">Vervangt de instelling met het pad naar het gewenste uitvoerbare PowerShell</span><span class="sxs-lookup"><span data-stu-id="82c63-143">Replace the setting with the path to the desired PowerShell executable</span></span>
-1. <span data-ttu-id="82c63-144">Sla het instellingenbestand en Visual Studio Code opnieuw starten</span><span class="sxs-lookup"><span data-stu-id="82c63-144">Save the settings file and restart Visual Studio Code</span></span>
+   ```
 
-#### <a name="configuration-settings-for-visual-studio-code"></a><span data-ttu-id="82c63-145">Configuratie-instellingen voor Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="82c63-145">Configuration settings for Visual Studio Code</span></span>
+3. <span data-ttu-id="b3251-143">De instelling vervangen door het pad naar de gewenste uitvoerbare PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3251-143">Replace the setting with the path to the desired PowerShell executable</span></span>
+4. <span data-ttu-id="b3251-144">Het bestand met instellingen opslaan en opnieuw opstarten van Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-144">Save the settings file and restart Visual Studio Code</span></span>
 
-<span data-ttu-id="82c63-146">U kunt configuratie-instellingen in toevoegen met behulp van de stappen in de vorige alinea `settings.json`.</span><span class="sxs-lookup"><span data-stu-id="82c63-146">By using the steps in the previous paragraph you can add configuration settings in `settings.json`.</span></span>
+#### <a name="configuration-settings-for-visual-studio-code"></a><span data-ttu-id="b3251-145">Configuratie-instellingen voor Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-145">Configuration settings for Visual Studio Code</span></span>
 
-<span data-ttu-id="82c63-147">U wordt aangeraden de volgende configuratieinstellingen voor Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="82c63-147">We recommend the following configuration settings for Visual Studio Code:</span></span>
+<span data-ttu-id="b3251-146">U kunt configuratie-instellingen in toevoegen met behulp van de stappen in de vorige alinea `settings.json`.</span><span class="sxs-lookup"><span data-stu-id="b3251-146">By using the steps in the previous paragraph you can add configuration settings in `settings.json`.</span></span>
+
+<span data-ttu-id="b3251-147">U wordt aangeraden de volgende configuratie-instellingen voor Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="b3251-147">We recommend the following configuration settings for Visual Studio Code:</span></span>
 
 ```json
 {
@@ -90,41 +91,41 @@
 }
 ```
 
-## <a name="debugging-with-visual-studio-code"></a><span data-ttu-id="82c63-148">Foutopsporing met Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="82c63-148">Debugging with Visual Studio Code</span></span>
+## <a name="debugging-with-visual-studio-code"></a><span data-ttu-id="b3251-148">Fouten opsporen met Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-148">Debugging with Visual Studio Code</span></span>
 
-### <a name="no-workspace-debugging"></a><span data-ttu-id="82c63-149">Er is geen werkruimte foutopsporing</span><span class="sxs-lookup"><span data-stu-id="82c63-149">No-workspace debugging</span></span>
+### <a name="no-workspace-debugging"></a><span data-ttu-id="b3251-149">Geen werkruimte foutopsporing</span><span class="sxs-lookup"><span data-stu-id="b3251-149">No-workspace debugging</span></span>
 
-<span data-ttu-id="82c63-150">Vanaf versie van Visual Studio Code 1,9 kunt u PowerShell-scripts zonder te openen van de map met het PowerShell-script voor foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="82c63-150">As of Visual Studio Code version 1.9 you can debug PowerShell scripts without having to open the folder containing the PowerShell script.</span></span>
-<span data-ttu-id="82c63-151">Gewoon openen met de PowerShell-scriptbestand **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk op F5 foutopsporing te starten.</span><span class="sxs-lookup"><span data-stu-id="82c63-151">Simply open the PowerShell script file with **File->Open File...**, set a breakpoint on a line (press F9) and then press F5 to start debugging.</span></span>
-<span data-ttu-id="82c63-152">Hier ziet u het actiedeelvenster voor foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing te verdelen.</span><span class="sxs-lookup"><span data-stu-id="82c63-152">You should see the Debug actions pane appear which allows you to break into the debugger, step, resume and stop debugging.</span></span>
+<span data-ttu-id="b3251-150">Vanaf versie van Visual Studio Code 1.9 kunt u PowerShell-scripts fouten opsporen zonder te open de map met het PowerShell-script.</span><span class="sxs-lookup"><span data-stu-id="b3251-150">As of Visual Studio Code version 1.9 you can debug PowerShell scripts without having to open the folder containing the PowerShell script.</span></span>
+<span data-ttu-id="b3251-151">Open gewoon de PowerShell-scriptbestand met **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk vervolgens op F5 foutopsporing te starten.</span><span class="sxs-lookup"><span data-stu-id="b3251-151">Simply open the PowerShell script file with **File->Open File...**, set a breakpoint on a line (press F9) and then press F5 to start debugging.</span></span>
+<span data-ttu-id="b3251-152">U ziet het actiedeelvenster van foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing opsplitsen.</span><span class="sxs-lookup"><span data-stu-id="b3251-152">You should see the Debug actions pane appear which allows you to break into the debugger, step, resume and stop debugging.</span></span>
 
-### <a name="workspace-debugging"></a><span data-ttu-id="82c63-153">Werkruimte foutopsporing</span><span class="sxs-lookup"><span data-stu-id="82c63-153">Workspace debugging</span></span>
+### <a name="workspace-debugging"></a><span data-ttu-id="b3251-153">Werkruimte-foutopsporing</span><span class="sxs-lookup"><span data-stu-id="b3251-153">Workspace debugging</span></span>
 
-<span data-ttu-id="82c63-154">Werkruimte foutopsporing verwijst naar het opsporen van fouten in de context van een map die u hebt geopend in met behulp van Visual Studio Code **map openen...**  van de **bestand** menu.</span><span class="sxs-lookup"><span data-stu-id="82c63-154">Workspace debugging refers to debugging in the context of a folder that you have opened in Visual Studio Code using **Open Folder...** from the **File** menu.</span></span>
-<span data-ttu-id="82c63-155">De map die u opent is meestal de projectmap PowerShell en/of de hoofdmap van de Git-opslagplaats.</span><span class="sxs-lookup"><span data-stu-id="82c63-155">The folder you open is typically your PowerShell project folder and/or the root of your Git repository.</span></span>
+<span data-ttu-id="b3251-154">Werkruimte foutopsporing verwijst naar het opsporen van fouten in de context van een map die u hebt geopend in Visual Studio Code met behulp van **map openen...**  uit de **bestand** menu.</span><span class="sxs-lookup"><span data-stu-id="b3251-154">Workspace debugging refers to debugging in the context of a folder that you have opened in Visual Studio Code using **Open Folder...** from the **File** menu.</span></span>
+<span data-ttu-id="b3251-155">De map die u opent is meestal de projectmap op PowerShell en/of de hoofdmap van de Git-opslagplaats.</span><span class="sxs-lookup"><span data-stu-id="b3251-155">The folder you open is typically your PowerShell project folder and/or the root of your Git repository.</span></span>
 
-<span data-ttu-id="82c63-156">U kunt zelfs in deze modus starten foutopsporing van het momenteel geselecteerde PowerShell-script door op F5 te drukken.</span><span class="sxs-lookup"><span data-stu-id="82c63-156">Even in this mode, you can start debugging the currently selected PowerShell script by simply pressing F5.</span></span>
-<span data-ttu-id="82c63-157">Echter, kunt u voor het definiëren van configuraties met meerdere foutopsporing dan alleen het geopende bestand foutopsporing werkruimte foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="82c63-157">However, workspace debugging allows you to define multiple debug configurations other than just debugging the currently open file.</span></span>
-<span data-ttu-id="82c63-158">U kunt bijvoorbeeld een configuraties toevoegen:</span><span class="sxs-lookup"><span data-stu-id="82c63-158">For instance, you can add a configurations to:</span></span>
+<span data-ttu-id="b3251-156">Zelfs in deze modus kunt u beginnen met het opsporen van fouten in de momenteel geselecteerde PowerShell-script door op F5 te drukken.</span><span class="sxs-lookup"><span data-stu-id="b3251-156">Even in this mode, you can start debugging the currently selected PowerShell script by simply pressing F5.</span></span>
+<span data-ttu-id="b3251-157">Echter, kunt u definiëren configuraties met meerdere foutopsporing dan alleen opsporen van fouten in het geopende bestand werkruimte foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="b3251-157">However, workspace debugging allows you to define multiple debug configurations other than just debugging the currently open file.</span></span>
+<span data-ttu-id="b3251-158">U kunt bijvoorbeeld een configuraties die u kunt toevoegen:</span><span class="sxs-lookup"><span data-stu-id="b3251-158">For instance, you can add a configurations to:</span></span>
 
-- <span data-ttu-id="82c63-159">Pester tests in de foutopsporing starten</span><span class="sxs-lookup"><span data-stu-id="82c63-159">Launch Pester tests in the debugger</span></span>
-- <span data-ttu-id="82c63-160">Een specifiek bestand met argumenten in het foutopsporingsprogramma starten</span><span class="sxs-lookup"><span data-stu-id="82c63-160">Launch a specific file with arguments in the debugger</span></span>
-- <span data-ttu-id="82c63-161">Een interactieve sessie in de foutopsporing starten</span><span class="sxs-lookup"><span data-stu-id="82c63-161">Launch an interactive session in the debugger</span></span>
-- <span data-ttu-id="82c63-162">Het foutopsporingsprogramma koppelen aan een hostproces van PowerShell</span><span class="sxs-lookup"><span data-stu-id="82c63-162">Attach the debugger to a PowerShell host process</span></span>
+- <span data-ttu-id="b3251-159">Pester tests in het foutopsporingsprogramma Start</span><span class="sxs-lookup"><span data-stu-id="b3251-159">Launch Pester tests in the debugger</span></span>
+- <span data-ttu-id="b3251-160">Een specifiek bestand met argumenten in het foutopsporingsprogramma Start</span><span class="sxs-lookup"><span data-stu-id="b3251-160">Launch a specific file with arguments in the debugger</span></span>
+- <span data-ttu-id="b3251-161">Een interactieve sessie in het foutopsporingsprogramma Start</span><span class="sxs-lookup"><span data-stu-id="b3251-161">Launch an interactive session in the debugger</span></span>
+- <span data-ttu-id="b3251-162">Het foutopsporingsprogramma koppelen aan een hostproces van PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3251-162">Attach the debugger to a PowerShell host process</span></span>
 
-<span data-ttu-id="82c63-163">Volg deze stappen om uw configuratiebestand foutopsporing te maken:</span><span class="sxs-lookup"><span data-stu-id="82c63-163">Follow these steps to create your debug configuration file:</span></span>
+  <span data-ttu-id="b3251-163">Volg deze stappen om uw debug-configuratiebestand te maken:</span><span class="sxs-lookup"><span data-stu-id="b3251-163">Follow these steps to create your debug configuration file:</span></span>
 
-1. <span data-ttu-id="82c63-164">Open de **Debug** weergeven door te drukken **Ctrl + Shift + D** (**Cmd + Shift + D** op Mac).</span><span class="sxs-lookup"><span data-stu-id="82c63-164">Open the **Debug** view by pressing **Ctrl+Shift+D** (**Cmd+Shift+D** on Mac).</span></span>
-1. <span data-ttu-id="82c63-165">Druk op de **configureren** tandwielpictogram-pictogram op de werkbalk.</span><span class="sxs-lookup"><span data-stu-id="82c63-165">Press the **Configure** gear icon in the toolbar.</span></span>
-1. <span data-ttu-id="82c63-166">Visual Studio Code wordt u gevraagd te **omgeving Selecteer**.</span><span class="sxs-lookup"><span data-stu-id="82c63-166">Visual Studio Code prompts you to **Select Environment**.</span></span>
-   <span data-ttu-id="82c63-167">Kies **PowerShell**.</span><span class="sxs-lookup"><span data-stu-id="82c63-167">Choose **PowerShell**.</span></span>
+  1. <span data-ttu-id="b3251-164">Open de **Debug** weergeven door te drukken **Ctrl + Shift + D** (**Cmd + Shift + D** op Mac).</span><span class="sxs-lookup"><span data-stu-id="b3251-164">Open the **Debug** view by pressing **Ctrl+Shift+D** (**Cmd+Shift+D** on Mac).</span></span>
+  2. <span data-ttu-id="b3251-165">Druk op de **configureren** tandwielpictogram in de werkbalk.</span><span class="sxs-lookup"><span data-stu-id="b3251-165">Press the **Configure** gear icon in the toolbar.</span></span>
+  3. <span data-ttu-id="b3251-166">U wordt gevraagd om Visual Studio Code **omgeving selecteert**.</span><span class="sxs-lookup"><span data-stu-id="b3251-166">Visual Studio Code prompts you to **Select Environment**.</span></span>
+  <span data-ttu-id="b3251-167">Kies **PowerShell**.</span><span class="sxs-lookup"><span data-stu-id="b3251-167">Choose **PowerShell**.</span></span>
 
-   <span data-ttu-id="82c63-168">Als u dit doet, Visual Studio Code een map en een bestand '.vscode\launch.json' gemaakt in de hoofdmap van uw werkruimtemap.</span><span class="sxs-lookup"><span data-stu-id="82c63-168">When you do this, Visual Studio Code creates a directory and a file ".vscode\launch.json" in the root of your workspace folder.</span></span>
-   <span data-ttu-id="82c63-169">Hier wordt de configuratie van de foutopsporing is opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="82c63-169">This is where your debug configuration is stored.</span></span> <span data-ttu-id="82c63-170">Als de bestanden zich in een Git-opslagplaats, wilt u waarschijnlijk het bestand launch.json doorvoeren.</span><span class="sxs-lookup"><span data-stu-id="82c63-170">If your files are in a Git repository, you typically want to commit the launch.json file.</span></span>
-   <span data-ttu-id="82c63-171">De inhoud van het bestand launch.json zijn:</span><span class="sxs-lookup"><span data-stu-id="82c63-171">The contents of the launch.json file are:</span></span>
+  <span data-ttu-id="b3251-168">Als u dit doet, maakt Visual Studio Code een map en een bestand '.vscode\launch.json' in de hoofdmap van de werkruimtemap van uw.</span><span class="sxs-lookup"><span data-stu-id="b3251-168">When you do this, Visual Studio Code creates a directory and a file ".vscode\launch.json" in the root of your workspace folder.</span></span>
+  <span data-ttu-id="b3251-169">Dit is waar uw debug-configuratie is opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="b3251-169">This is where your debug configuration is stored.</span></span> <span data-ttu-id="b3251-170">Als de bestanden zich in een Git-opslagplaats, wilt u meestal het bestand launch.json doorvoeren.</span><span class="sxs-lookup"><span data-stu-id="b3251-170">If your files are in a Git repository, you typically want to commit the launch.json file.</span></span>
+  <span data-ttu-id="b3251-171">De inhoud van het bestand launch.json zijn:</span><span class="sxs-lookup"><span data-stu-id="b3251-171">The contents of the launch.json file are:</span></span>
 
-```json
-{
+  ```json
+  {
     "version": "0.2.0",
     "configurations": [
         {
@@ -149,43 +150,45 @@
             "cwd": "${workspaceRoot}"
         }
     ]
-}
-```
+  }
+  ```
 
-<span data-ttu-id="82c63-172">Hiermee wordt de algemene scenario's voor foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="82c63-172">This represents the common debug scenarios.</span></span>
-<span data-ttu-id="82c63-173">Echter, als u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.</span><span class="sxs-lookup"><span data-stu-id="82c63-173">However, when you open this file in the editor, you see an **Add Configuration...** button.</span></span>
-<span data-ttu-id="82c63-174">U kunt drukt u op deze knop om meer PowerShell foutopsporing configuraties toevoegt.</span><span class="sxs-lookup"><span data-stu-id="82c63-174">You can press this button to add more PowerShell debug configurations.</span></span> <span data-ttu-id="82c63-175">Een handige configuratie om toe te voegen is **PowerShell: Script starten**.</span><span class="sxs-lookup"><span data-stu-id="82c63-175">One handy configuration to add is **PowerShell: Launch Script**.</span></span>
-<span data-ttu-id="82c63-176">Met deze configuratie kunt u een specifiek bestand met optionele argumenten die moet worden gestart telkens wanneer u op F5 drukken ongeacht welk bestand is momenteel actief zijn in de editor.</span><span class="sxs-lookup"><span data-stu-id="82c63-176">With this configuration, you can specify a specific file with optional arguments that should be launched whenever you press F5 no matter which file is currently active in the editor.</span></span>
+  <span data-ttu-id="b3251-172">Hiermee wordt de algemene scenario's voor foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="b3251-172">This represents the common debug scenarios.</span></span>
+  <span data-ttu-id="b3251-173">Echter, als u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.</span><span class="sxs-lookup"><span data-stu-id="b3251-173">However, when you open this file in the editor, you see an **Add Configuration...** button.</span></span>
+  <span data-ttu-id="b3251-174">U drukt op deze knop om toe te voegen meer PowerShell-configuraties voor foutopsporing.</span><span class="sxs-lookup"><span data-stu-id="b3251-174">You can press this button to add more PowerShell debug configurations.</span></span> <span data-ttu-id="b3251-175">Een handige configuratie toe te voegen is **PowerShell: Script Start**.</span><span class="sxs-lookup"><span data-stu-id="b3251-175">One handy configuration to add is **PowerShell: Launch Script**.</span></span>
+  <span data-ttu-id="b3251-176">Met deze configuratie kunt u een specifiek bestand met optionele argumenten die moet worden gestart wanneer u op F5 drukt ongeacht welk bestand is momenteel actief zijn in de editor.</span><span class="sxs-lookup"><span data-stu-id="b3251-176">With this configuration, you can specify a specific file with optional arguments that should be launched whenever you press F5 no matter which file is currently active in the editor.</span></span>
 
-<span data-ttu-id="82c63-177">Wanneer de configuratie van de foutopsporing is gemaakt, kunt u selecteren welke configuratie u gebruiken tijdens een foutopsporingssessie voor wilt door een te selecteren in de configuratie van de foutopsporing vervolgkeuzelijst in de **Debug** van weergave-werkbalk.</span><span class="sxs-lookup"><span data-stu-id="82c63-177">Once the debug configuration is established, you can select which configuration you want to use during a debug session by selecting one from the debug configuration drop-down in the **Debug** view's toolbar.</span></span>
+  <span data-ttu-id="b3251-177">Zodra de configuratie van de foutopsporing tot stand is gebracht, kunt u selecteren welke configuratie u gebruiken tijdens een foutopsporingssessie wilt door het selecteren van een van de configuratie van de foutopsporing vervolgkeuzelijst in de **Debug** van weergave-werkbalk.</span><span class="sxs-lookup"><span data-stu-id="b3251-177">Once the debug configuration is established, you can select which configuration you want to use during a debug session by selecting one from the debug configuration drop-down in the **Debug** view's toolbar.</span></span>
 
-<span data-ttu-id="82c63-178">Er zijn enkele blogs die mogelijk nuttig om aan de slag met PowerShell-extensie voor Visual Studio Code te gaan</span><span class="sxs-lookup"><span data-stu-id="82c63-178">There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code</span></span>
+  <span data-ttu-id="b3251-178">Er zijn een paar blogs die mogelijk nuttig zijn om aan de slag met PowerShell-extensie voor Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-178">There are a few blogs that may be helpful to get you started using PowerShell extension for Visual Studio Code</span></span>
 
-- <span data-ttu-id="82c63-179">Visual Studio Code: [PowerShell-uitbreiding][ps-extension]</span><span class="sxs-lookup"><span data-stu-id="82c63-179">Visual Studio Code: [PowerShell Extension][ps-extension]</span></span>
-- <span data-ttu-id="82c63-180">[Schrijven en foutopsporing van PowerShell-scripts in Visual Studio Code][debug]</span><span class="sxs-lookup"><span data-stu-id="82c63-180">[Write and debug PowerShell scripts in Visual Studio Code][debug]</span></span>
-- <span data-ttu-id="82c63-181">[Foutopsporing van Visual Studio Code richtlijnen][vscode-guide]</span><span class="sxs-lookup"><span data-stu-id="82c63-181">[Debugging Visual Studio Code Guidance][vscode-guide]</span></span>
-- <span data-ttu-id="82c63-182">[Foutopsporing van PowerShell in Visual Studio Code][ps-vscode]</span><span class="sxs-lookup"><span data-stu-id="82c63-182">[Debugging PowerShell in Visual Studio Code][ps-vscode]</span></span>
-- <span data-ttu-id="82c63-183">[Aan de slag met PowerShell-ontwikkeling in Visual Studio Code][getting-started]</span><span class="sxs-lookup"><span data-stu-id="82c63-183">[Get started with PowerShell development in Visual Studio Code][getting-started]</span></span>
-- <span data-ttu-id="82c63-184">[Visual Studio Code bewerkingsfuncties voor PowerShell-ontwikkeling: deel 1][editing-part1]</span><span class="sxs-lookup"><span data-stu-id="82c63-184">[Visual Studio Code editing features for PowerShell development – Part 1][editing-part1]</span></span>
-- <span data-ttu-id="82c63-185">[Visual Studio Code bewerkingsfuncties voor PowerShell ontwikkeling – deel 2][editing-part2]</span><span class="sxs-lookup"><span data-stu-id="82c63-185">[Visual Studio Code editing features for PowerShell development – Part 2][editing-part2]</span></span>
-- <span data-ttu-id="82c63-186">[PowerShell-script voor foutopsporing in Visual Studio Code – deel 1][debugging-part1]</span><span class="sxs-lookup"><span data-stu-id="82c63-186">[Debugging PowerShell script in Visual Studio Code – Part 1][debugging-part1]</span></span>
-- <span data-ttu-id="82c63-187">[PowerShell-script voor foutopsporing in Visual Studio Code – deel 2][debugging-part2]</span><span class="sxs-lookup"><span data-stu-id="82c63-187">[Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]</span></span>
+<span data-ttu-id="b3251-179">Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="b3251-179">Visual Studio Code:</span></span>
+
+- <span data-ttu-id="b3251-180">[Extensie van PowerShell][ps-extension]</span><span class="sxs-lookup"><span data-stu-id="b3251-180">[PowerShell Extension][ps-extension]</span></span>
+- <span data-ttu-id="b3251-181">[Schrijf en fouten opsporen in PowerShell-scripts in Visual Studio Code][debug]</span><span class="sxs-lookup"><span data-stu-id="b3251-181">[Write and debug PowerShell scripts in Visual Studio Code][debug]</span></span>
+- <span data-ttu-id="b3251-182">[Foutopsporing van Visual Studio Code-richtlijnen][vscode-guide]</span><span class="sxs-lookup"><span data-stu-id="b3251-182">[Debugging Visual Studio Code Guidance][vscode-guide]</span></span>
+- <span data-ttu-id="b3251-183">[Foutopsporing in PowerShell in Visual Studio Code][ps-vscode]</span><span class="sxs-lookup"><span data-stu-id="b3251-183">[Debugging PowerShell in Visual Studio Code][ps-vscode]</span></span>
+- <span data-ttu-id="b3251-184">[Aan de slag met PowerShell-ontwikkeling in Visual Studio Code][getting-started]</span><span class="sxs-lookup"><span data-stu-id="b3251-184">[Get started with PowerShell development in Visual Studio Code][getting-started]</span></span>
+- <span data-ttu-id="b3251-185">[Visual Studio Code bewerken van functies voor het ontwikkelen van PowerShell-deel 1][editing-part1]</span><span class="sxs-lookup"><span data-stu-id="b3251-185">[Visual Studio Code editing features for PowerShell development – Part 1][editing-part1]</span></span>
+- <span data-ttu-id="b3251-186">[Visual Studio Code bewerken van functies voor het ontwikkelen van PowerShell-deel 2][editing-part2]</span><span class="sxs-lookup"><span data-stu-id="b3251-186">[Visual Studio Code editing features for PowerShell development – Part 2][editing-part2]</span></span>
+- <span data-ttu-id="b3251-187">[PowerShell-script voor foutopsporing in Visual Studio Code – deel 1][debugging-part1]</span><span class="sxs-lookup"><span data-stu-id="b3251-187">[Debugging PowerShell script in Visual Studio Code – Part 1][debugging-part1]</span></span>
+- <span data-ttu-id="b3251-188">[PowerShell-script voor foutopsporing in Visual Studio Code – deel 2][debugging-part2]</span><span class="sxs-lookup"><span data-stu-id="b3251-188">[Debugging PowerShell script in Visual Studio Code – Part 2][debugging-part2]</span></span>
 
 [ise]: ../ise-guide.md
 [install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
-[ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/
-[ps-vscode]:https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]:https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
+[ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-visual-studio-code"></a><span data-ttu-id="82c63-188">PowerShell-extensie voor Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="82c63-188">PowerShell Extension for Visual Studio Code</span></span>
+## <a name="powershell-extension-for-visual-studio-code"></a><span data-ttu-id="b3251-189">PowerShell-extensie voor Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3251-189">PowerShell Extension for Visual Studio Code</span></span>
 
-<span data-ttu-id="82c63-189">Broncode van de PowerShell-uitbreiding kunt u vinden op [GitHub](https://github.com/PowerShell/vscode-powershell).</span><span class="sxs-lookup"><span data-stu-id="82c63-189">The PowerShell extension's source code can be found on [GitHub](https://github.com/PowerShell/vscode-powershell).</span></span>
+<span data-ttu-id="b3251-190">De broncode van de PowerShell-extensie kunt u vinden op [GitHub](https://github.com/PowerShell/vscode-powershell).</span><span class="sxs-lookup"><span data-stu-id="b3251-190">The PowerShell extension's source code can be found on [GitHub](https://github.com/PowerShell/vscode-powershell).</span></span>
