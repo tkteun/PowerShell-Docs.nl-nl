@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: c68d17d38336dec08e078366ea5f2071fcf7c5a8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 03555cc73da1272bdebebc3d93b26aaf8fabc18e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189734"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892681"
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Hiermee verwijdert u de configuratiebestanden.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 RemoveConfiguration(
@@ -23,36 +22,32 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
-*Fase* \[in\] geeft aan welke configuratie-document te verwijderen. De volgende waarden zijn geldig:
+*Fase* \[in\] geeft aan welke configuratiedocument te verwijderen. De volgende waarden zijn geldig:
 
 |Value |Beschrijving |
 |:--- |:---|
-|**1** | De **huidige** configuratie document (current.mof). |
-|**2** | De **in behandeling** configuratie document (pending.mof).  |
-|**4** | De **vorige** configuratie document (previous.mof). |
+|**1** | De **huidige** configuratiedocument (current.mof). |
+|**2** | De **in behandeling** configuratiedocument (pending.mof).  |
+|**4** | De **vorige** configuratiedocument (previous.mof). |
 
-*Force* \[in\] **true** om af te dwingen van het verwijderen van de configuratie.
+*Afdwingen dat* \[in\] **waar** om af te dwingen van het verwijderen van de configuratie.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

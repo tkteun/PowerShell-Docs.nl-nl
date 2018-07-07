@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219008"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893923"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
-Het configuratiebestand voor het beheerde knooppunt verzendt en controleert of de huidige configuratie op basis van het document.
+Het configuratiebestand voor verzendt naar de beheerd knooppunt en controleert of de huidige configuratie op basis van het document.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 TestConfiguration(
@@ -25,34 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
 *configurationData* \[in\] omgevingsgegevens voor de confuguration.
 
-*InDesiredState* \[uit\] bij resultaat, geeft aan of het beheerde knooppunt in de status van de opgegeven door het configuratie-document.
+*InDesiredState* \[uit\] bij resultaat, geeft aan of de beheerde knooppunt in de status die is opgegeven door het configuratiebestand.
 
-*ResourcesInDesiredState* \[uit\] op return bevat een ingesloten exemplaar van de **MSFT_ResourceInDesiredState** klasse waarmee bronnen die zich in de gewenste status.
+*ResourcesInDesiredState* \[uit\] bij resultaat, bevat een ingesloten exemplaar van de **MSFT_ResourceInDesiredState** klasse waarmee bronnen die zich in de gewenste status.
 
-*ResourcesNotInDesiredState* \[uit\] op return bevat een ingesloten exemplaar van de **MSFT_ResourceNotInDesiredState** klasse waarmee bronnen die zich niet in de gewenste status.
+*ResourcesNotInDesiredState* \[uit\] bij resultaat, bevat een ingesloten exemplaar van de **MSFT_ResourceNotInDesiredState** klasse die Hiermee geeft u de resources die zich niet in de gewenste status.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

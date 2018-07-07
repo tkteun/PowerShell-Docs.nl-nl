@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De StopConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: aaed29cb81e2079c4673b621b81c52e109aa7b48
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218872"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893872"
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De StopConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
-Stopt het wijzigen van de configuratie die wordt uitgevoerd.
+Hiermee stopt u de wijziging in de configuratie die wordt uitgevoerd.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 StopConfiguration(
@@ -22,28 +21,24 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
-*Force* \[in\] **true** om af te dwingen van de configuratie te stoppen.
+*afdwingen dat* \[in\] **waar** om af te dwingen de configuratie om te stoppen.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

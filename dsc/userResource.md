@@ -1,24 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: DSC-gebruikersbron
-ms.openlocfilehash: f2660933aec43967e3f4082a983ef328a5b93851
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: Gebruiker van de DSC-Resource
+ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189649"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892522"
 ---
-#<a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource #
+# <a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource
 
+Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
->Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+De **gebruiker** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale gebruikersaccounts op het doelknooppunt.
 
-
-De __gebruiker__ in Windows PowerShell Desired State Configuration (DSC)-bron biedt een mechanisme voor het beheren van lokale gebruikersaccounts in het doelknooppunt.
-
-
-##<a name="syntax"></a>Syntaxis ##
+## <a name="syntax"></a>Syntaxis
 
 ```
 User [string] #ResourceName
@@ -37,18 +34,19 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschappen
+
 |  Eigenschap  |  Beschrijving   |
 |---|---|
 | UserName| Geeft de accountnaam waarvan u wilt om te controleren of een specifieke status.|
-| Beschrijving| Hiermee geeft u de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
-| Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op __$false__ om ervoor te zorgen dat deze is ingeschakeld.|
-| Zorg ervoor dat| Hiermee wordt aangegeven of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| Volledige naam| Hiermee geeft u een tekenreeks met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
-| Wachtwoord| Geeft het wachtwoord dat u wilt gebruiken voor dit account. |
-| PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op __$true__ om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op __$false__ zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is __$false__.|
-| PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker bij de volgende aanmelding in het wachtwoord moet wijzigen. Deze eigenschap instellen op __$true__ als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is __$true__.|
-| PasswordNeverExpires| Hiermee wordt aangegeven als het wachtwoord vervalt. Om ervoor te zorgen dat het wachtwoord voor dit account nooit verloopt, deze eigenschap instellen op __$true__, en wordt ingesteld op __$false__ als het wachtwoord verloopt. De standaardwaarde is __$false__.|
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| Beschrijving| Geeft aan dat de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
+| Disabled| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op `$true` om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op `$false` om ervoor te zorgen dat deze is ingeschakeld.|
+| Zorg ervoor dat| Geeft aan of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
+| Volledige naam| Hiermee geeft u een tekenreeks zijn met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
+| Wachtwoord| Geeft het wachtwoord die u wilt gebruiken voor dit account. |
+| PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op `$true` om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op `$false` zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is `$false`.|
+| PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker het wachtwoord bij de volgende aanmelding moet wijzigen. Deze eigenschap instellen op `$true` als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is `$true`.|
+| PasswordNeverExpires| Hiermee wordt aangegeven als het wachtwoord verloopt. Om ervoor te zorgen dat het wachtwoord voor dit account nooit verloopt, deze eigenschap instellen op `$true`, en stel deze in op `$false` als het wachtwoord verloopt. De standaardwaarde is `$false`.|
+| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld
 

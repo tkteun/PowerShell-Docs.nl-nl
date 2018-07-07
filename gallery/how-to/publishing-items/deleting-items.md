@@ -3,21 +3,21 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Items verwijderen
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218226"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893090"
 ---
 # <a name="deleting-items"></a>Items verwijderen
 
-De PowerShell-galerie biedt geen ondersteuning voor permanente verwijdering van items, omdat dat zou iedereen die is afhankelijk van het resterende beschikbare worden verbroken.
+De PowerShell Gallery biedt geen ondersteuning voor permanente verwijdering van items, omdat dat zou iedereen die is afhankelijk van het resterende beschikbare worden verbroken.
 
-In plaats daarvan een manier om een item dat u op de pagina voor het beheer van item op de website doen kunt unlist biedt ondersteuning voor de PowerShell-galerie.
-Wanneer een item niet-vermelde is, wordt deze niet meer weergegeven in zoekresultaten en in een item op te nemen, zowel op de PowerShell-galerie en PowerShellGet opdrachten gebruiken.
-Echter, blijft deze downloadbare door te geven van de exacte versie, is wat de geautomatiseerde scripts om verder te werken is toegestaan.
+In plaats daarvan een manier om een item, die kan worden uitgevoerd op de pagina voor het beheer van item op de website unlist biedt ondersteuning voor de PowerShell Gallery.
+Wanneer een item niet-vermelde is, wordt deze niet meer weergegeven in het zoekvak en in elk item worden vermeld, zowel op de PowerShell Gallery en het gebruik van PowerShellGet-opdrachten.
+Het blijft echter downloaden door op te geven de exacte versie, die u kunt de geautomatiseerde scripts om verder te werken.
 
-Als u een uitzonderlijke situatie als u denkt dat met het een van de items die moet worden verwijderd, kan deze handmatig worden verwerkt door het team van PowerShell-galerie.
-Bijvoorbeeld, als er een probleem met het auteursrecht, of mogelijk schadelijke inhoud, die mogelijk een geldige reden om deze te verwijderen.
-U dient een ondersteuningsaanvraag via [PowerShell Gallery] (http://www.PowerShellGallery.com) in dat geval.
+Als u een uitzonderlijke geval waar denkt u dat een van de items die moet worden verwijderd, kan dit handmatig worden verwerkt door de PowerShell Gallery-team.
+Bijvoorbeeld, als er een probleem auteursrecht, of mogelijk schadelijke inhoud, die mogelijk een geldige reden om deze te verwijderen.
+U dient een ondersteuningsaanvraag via [PowerShell Gallery](http://www.PowerShellGallery.com) in dat geval.

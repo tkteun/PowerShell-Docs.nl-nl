@@ -1,41 +1,46 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189564"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892351"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Gestructureerd objecten buiten tekenreeks uitpakken en parseren
-Dit brengt ook aanvullende functionaliteit voor de cmdlet ConverterenVan-tekenreeks:
 
--   Hiermee verwijdert u de teksteigenschap gebied standaard. U kunt opnemen met de parameter - IncludeExtent.
+Dit ook aanvullende functionaliteit voor introduceert de `ConvertFrom-String` cmdlet:
 
--   Veel learning-algoritme foutoplossingen van MVP en community feedback.
+- Hiermee verwijdert u de eigenschap van de tekst voor zover standaard. U kunt opnemen met de parameter - IncludeExtent.
 
--   Een nieuwe UpdateTemplate - parameter voor de resultaten van het leeralgoritme in een opmerking in het sjabloonbestand op te slaan. Hierdoor kunt u de learning verwerken (de traagste fase) een eenmalige kosten. Het omzetten van tekenreeks uitgevoerd met een sjabloon met de gecodeerde learning-algoritme is nu bijna onmiddellijk.
+- Veel learning-algoritme voor oplossingen voor problemen van MVP en community-feedback.
 
+- Een nieuwe UpdateTemplate - parameter op te slaan van de resultaten van het learning-algoritme in een opmerking in het sjabloonbestand. Dit maakt het learning verwerken (de traagste fase) een eenmalige kosten. Het omzetten van tekenreeks uitvoeren met een sjabloon met het gecodeerde learning-algoritme is nu nagenoeg onmiddellijke.
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Uitpakken en parseren van gestructureerde objecten uit de inhoud van de tekenreeks
-----------------------------------------------------------
+## <a name="extract-and-parse-structured-objects-out-of-string-content"></a>Gestructureerd objecten buiten tekenreeks inhoud uitpakken en parseren
 
-In samenwerking met [Microsoft Research](http://research.microsoft.com/), een nieuwe **ConverterenVan-tekenreeks** cmdlet is toegevoegd.
+In samenwerking met [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F), een nieuwe `ConvertFrom-String` cmdlet is toegevoegd.
 
-Deze cmdlet ondersteunt twee modi: basic gescheiden parseren en automatisch gegenereerd voorbeeld aangestuurde parseren.
+Deze cmdlet ondersteunt twee modi: basic gescheiden parseren en automatisch gegenereerde voorbeeld gebaseerde parseren.
 
-Parseren standaard gescheiden splitst de invoer op witruimte en worden de namen van eigenschappen wordt toegewezen aan de resulterende groepen. U kunt het scheidingsteken aanpassen:
+Gescheiden parseren, standaard, splitst de invoer op witruimte en namen van eigenschappen aan de resulterende groepen toegewezen. U kunt het scheidingsteken aanpassen:
 
-> 1 \[C:\\temp\] &gt; &gt; 'Hallo wereld' | ConverterenVan-tekenreeks | Format-Table-automatisch
+```powershell
+"Hello World" | ConvertFrom-String | Format-Table -Auto
+```
 
-P1    P2
---    --
+```output
+P1     P2
+--     --
+Hello  World
+```
 
-De cmdlet ondersteunt ook automatisch gegenereerde voorbeeld aangestuurde parseren op basis van de [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) onderzoek werk in [Microsoft Research](http://research.microsoft.com).
+De cmdlet biedt ook ondersteuning voor automatisch gegenereerde voorbeeld gebaseerde parseren op basis van de [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html) werk in onderzoek [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F).
 
-Houd rekening met een op tekst gebaseerde adresboek om te beginnen:
+Als u wilt beginnen, kunt u overwegen een op tekst gebaseerde adresboek:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -55,9 +60,11 @@ Houd rekening met een op tekst gebaseerde adresboek om te beginnen:
     Hanna Moos
 
     Puyallup, WA
+```
 
-Kopieer een paar voorbeelden naar een bestand, dat u als uw sjabloon gebruiken gaat:
+Enkele voorbeelden kopiëren naar een bestand, dat u als de sjabloon gebruikt:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -65,11 +72,11 @@ Kopieer een paar voorbeelden naar een bestand, dat u als uw sjabloon gebruiken g
     Antonio Moreno
 
     Renton, WA
+```
 
+Plaats accolades om de gegevens die u ophalen wilt, een naam geven als u dit doet. Omdat de **naam** eigenschap (en de andere eigenschappen die zijn gekoppeld) kunnen meerdere keren worden weergegeven, gebruikt u een sterretje (\*) om aan te geven dat dit resulteert in meerdere records (in plaats van een aantal eigenschappen in één extraheren record):
 
-
-Plaats accolades gebruiken om gegevens die u ophalen wilt, een naam geven als u doet dit. Omdat de **naam** eigenschap (en de andere eigenschappen die zijn gekoppeld) kunnen meerdere keren worden weergegeven, gebruikt u een sterretje (\*) om aan te geven dat dit resulteert in meerdere records (in plaats van een aantal eigenschappen in te pakken op een record):
-
+```
     {Name\*:Ana Trujillo}
 
     {City:Redmond}, {State:WA}
@@ -77,15 +84,22 @@ Plaats accolades gebruiken om gegevens die u ophalen wilt, een naam geven als u 
     {Name\*:Antonio Moreno}
 
     {City:Renton}, {State:WA}
+```
 
-In deze reeks voorbeelden **ConverterenVan-tekenreeks** uitvoer op basis van het object automatisch nu uit invoerbestanden met vergelijkbare structuur kan extraheren.
+In deze reeks voorbeelden, `ConvertFrom-String` uitvoer op basis van het object nu automatisch uit invoerbestanden met vergelijkbare structuur extraheren.
 
-> 2 \[C:\\temp\]
->
-> &gt;&gt; Get-inhoud. \\addresses.output.txt | ConverterenVan-tekenreeks - sjabloonbestand. \\addresses.template.txt | &gt; &gt; &gt; Format-Table-automatisch
->
-> ExtentText naam stad status
-> ----------                     ----               ----     -----
-> ANA Trujillo...                ANA Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Hardy...                Thomas Hardy Seattle WA Pascaline Berglund...          Pascaline Berglund Redmond WA Hanna Moos...                  Hanna Moos Puyallup WA
+```powershell
+Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresses.template.txt | Format-Table -Auto
+```
 
-Aanvullende gegevensmanipulatie op uitgepakte tekst, doen de **ExtentText** eigenschap bevat de onbewerkte tekst waaruit de record is opgehaald. Feedback geven over deze functie of inhoud waarvoor u problemen ondervindt schrijven voorbeelden te delen, kunt u een e-mail <psdmfb@microsoft.com>.
+```output
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
+```
+
+Aanvullende gegevens manipuleren op geëxtraheerde tekst, doet de **ExtentText** eigenschap bevat de onbewerkte tekst waaruit de record is opgehaald. Feedback geven over deze functie of inhoud die u ondervindt problemen bij het schrijven van voorbeelden te delen, stuur e-mail <psdmfb@microsoft.com>.

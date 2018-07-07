@@ -3,61 +3,58 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Modules die instemming met licentie vereisen
-ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048842"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893107"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules die instemming met licentie vereisen
 
 ## <a name="synopsis"></a>SAMENVATTING
 
-Juridische afdelingen voor sommige uitgevers van de module vereist dat klanten expliciet de licentievoorwaarden accepteren voordat hun-module installeren vanuit PowerShell-galerie. Als een gebruiker wordt geïnstalleerd, bijgewerkt of een module met behulp van PowerShellGet, rechtstreeks of als een afhankelijkheid voor een ander item wordt opgeslagen en die module moet de gebruiker akkoord gaat met een licentie, moet de gebruiker aan ze de licentievoorwaarden accepteren of dat de bewerking is mislukt.
+Juridische afdelingen voor sommige uitgevers van module vereisen dat klanten de licentie expliciet accepteren moeten voordat u de module installeert vanuit PowerShell Gallery. Als een gebruiker wordt geïnstalleerd, bijgewerkt of Hiermee slaat u een module met behulp van PowerShellGet, rechtstreeks of als een afhankelijkheid van een ander object en die module moet de gebruiker akkoord gaat met een licentie, wordt de gebruiker moet geven ze de gebruiksrechtovereenkomst accepteren of de bewerking is mislukt.
 
 ## <a name="publish-requirements-for-modules"></a>Vereisten voor Modules publiceren
 
-Modules die u dat wilt gebruikers moeten akkoord gaan met licentievoorwaarden moeten volgende vereisten voldoen:
+Modules die u dat wilt gebruikers om licentie te accepteren, moeten de volgende vereisten voldoen:
 
-- PSData sectie van de module-manifest bevatten RequireLicenseAcceptance = $True.
-- Module moet license.txt bestand in de hoofdmap bevatten.
+- PSData-sectie van de module-manifest moet zijn opgenomen RequireLicenseAcceptance = $True.
+- Module moet license.txt-bestand in de hoofdmap bevatten.
 - Module-manifest moet licentie Uri bevatten.
 - Module moet worden gepubliceerd met PowerShellGet indeling versie 2.0 en hoger.
 
 ## <a name="impact-on-installsaveupdate-module"></a>Gevolgen voor de installatie/Save/Update-Module
 
-- Cmdlets opslaan-installatie-Update wordt ondersteuning voor een nieuwe parameter – het AcceptLicense gedraagt zich alsof de gebruiker de licentievoorwaarden hebt gezien.
-- Als RequiredLicenseAcceptance ingesteld op True is en – AcceptLicense niet is opgegeven, de gebruiker worden weergegeven de license.txt, en met gevraagd: &quot;gaat u akkoord met deze licentievoorwaarden (Ja/Nee/YesToAll/NoToAll)&quot;.
-  - Als de licentie is geaccepteerd
-    - **Opslaan-Module:** de module wordt gekopieerd naar de gebruiker&#39;s systeem
-    - **Installatie-Module:** de module wordt gekopieerd naar de gebruiker&#39;s systeem naar de juiste map (op basis van bereik)
+- Installeer/Save/Update cmdlets biedt ondersteuning voor een nieuwe parameter – AcceptLicense die gedraagt zich alsof de gebruiker de licentie hebt gezien.
+- Als RequiredLicenseAcceptance ingesteld op True is en – AcceptLicense niet is opgegeven, de gebruiker wordt weergegeven de license.txt, en u wordt gevraagd met: &quot;gaat u akkoord met deze licentievoorwaarden (Ja/Nee/YesToAll/NoToAll)&quot;.
+  - Als de licentie wordt geaccepteerd
+    - **Save-Module:** de module wordt gekopieerd naar de gebruiker&#39;s system
+    - **Install-Module:** de module wordt gekopieerd naar de gebruiker&#39;s systeem naar de juiste map (op basis van bereik)
     - **Update-Module:** de module wordt bijgewerkt.
-  - Als de licentie is geweigerd.
-    - Bewerking wordt geannuleerd.
-- Alle cmdlets wordt voor de metagegevens (requireLicenseAcceptance en versie-indeling) waarin staat dat de acceptatie van een licentie is vereist dat gecontroleerd
-  - Als de versie van de indeling van de client is ouder dan 2.0, bewerking mislukken en vraag de gebruiker naar de client bijwerken.
-  - Als de module is gepubliceerd met versie ouder is dan 2.0-indeling, worden requireLicenseAcceptance vlag genegeerd.
+  - Als de licentie is afgewezen.
+    - Kan de bewerking wordt geannuleerd.
+    - Alle cmdlets wordt gecontroleerd voor de metagegevens (requireLicenseAcceptance en versie-indeling) waarmee wordt aangegeven dat een acceptatie van de licentie is vereist
+    - Als de versie van client ouder is dan 2.0, wordt de bewerking mislukt en de vraag de gebruiker om de client te werken.
+    - Als de module is gepubliceerd met versie ouder is dan 2.0, worden requireLicenseAcceptance vlag genegeerd.
 
+## <a name="module-dependencies"></a>Module-afhankelijkheden
 
- ## <a name="module-dependencies"></a>Module-afhankelijkheden
-- Tijdens het opslaan-installatie-Update is-bewerking, als een afhankelijke module (iets anders is afhankelijk van de module) licentie acceptatie en vervolgens het gedrag van licentie acceptatie (boven vereist) vereist.
-- Als de moduleversie al wordt vermeld in de lokale catalogus als het wordt geïnstalleerd op het systeem, zouden we omzeilen licentie moet worden gecontroleerd.
-- Tijdens de bewerking opslaan-installatie-Update, als een afhankelijke module een licentie moet en de acceptatie van de licentie niet wordt uitgevoerd, zal de bewerking mislukken en volg normale processen voor het item kan niet opslaan-installatie-update.
+- Tijdens de installatie/Save/Update is-bewerking, als een afhankelijke-module (iets anders afhankelijk is van de module) is vereist voor acceptatie van de licentie en het gedrag van licentie acceptatie (hierboven) vereist.
+- Als de versie van de module al in de lokale catalogus opgenomen is als het wordt geïnstalleerd op het systeem, zouden we negeren controleren van de licentie.
+- Tijdens de installatie/Save/Update-bewerking, als een afhankelijke module een licentie moet en de acceptatie van de licentie niet wordt uitgevoerd, wordt de bewerking niet voldoen aan en volgt normale processen voor het item kan niet installeren/save/bijwerken.
 
- ## <a name="impact-on--force"></a>Gevolgen voor de - Force
+## <a name="impact-on--force"></a>Gevolgen voor de - Force
 
-Geven – Force is niet voldoende zijn voor het accepteren van een licentie. – AcceptLicense is vereist voor de machtiging om te installeren. Als – Force is opgegeven, RequiredLicenseAcceptance is ingesteld op True, en – AcceptLicense niet is opgegeven, mislukt de bewerking.
+Op te geven `–Force` is niet voldoende is om een licentie te accepteren. `–AcceptLicense` is vereist voor de machtiging om te installeren. Als `–Force` is opgegeven, RequiredLicenseAcceptance is ingesteld op True, en `–AcceptLicense` niet is opgegeven, mislukt de bewerking.
 
 ## <a name="examples"></a>VOORBEELDEN
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Voorbeeld 1: Update Module Manifest licentie acceptatie vereisen
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Voorbeeld 1: Update-Module Manifest om te vereisen van instemming met licentie vereisen
 
-```PowerShell
-PS> Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance
-
-PrivateData = @{
-
+```powershell
+Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
     PSData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
@@ -66,13 +63,15 @@ PrivateData = @{
  } # End of PrivateData hashtable
 ```
 
-Deze opdracht werkt het manifestbestand en wordt de RequireLicenseAcceptance-vlag ingesteld op true.
+Met deze opdracht werkt het manifestbestand en wordt de RequireLicenseAcceptance-vlag ingesteld op true.
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>Voorbeeld 2: Installeer Module vereisen licentie acceptatie
+### <a name="example-2-install-module-requiring-license-acceptance"></a>Voorbeeld 2: Install Module waarvoor instemming met licentie vereisen
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -85,23 +84,25 @@ copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
-
 ```
 
-Deze opdracht geeft de licentie van license.txt bestand en vraagt de gebruiker de licentievoorwaarden accepteren.
+Met deze opdracht ziet u de licentie van license.txt bestand en vraagt de gebruiker om de licentie te accepteren.
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 3: Installatie Module vereisen licentie instemming met - AcceptLicense
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 3: Install Module waarvoor instemming met licentie vereisen bij - AcceptLicense
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
-Module is zonder een prompt te accepteren van de licentie geïnstalleerd.
+Module is geïnstalleerd zonder een prompt om licentie te accepteren.
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Voorbeeld 4: Installatie Module vereisen licentie instemming met - Force
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Voorbeeld 4: Install Module waarvoor instemming met licentie vereisen bij - Force
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```
+
+```output
 PackageManagement\Install-Package : License Acceptance is required for module 'ModuleRequireLicenseAcceptance'. Please specify '-AcceptLicense' to perform this operation.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm1:1837 char:21
 + ...          $null = PackageManagement\Install-Package @PSBoundParameters
@@ -112,13 +113,15 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Voorbeeld 5: Installatie Module met afhankelijkheden vereisen van instemming met licentie
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Voorbeeld 5: Install-Module met afhankelijkheden die instemming met licentie vereisen
 
-Module 'ModuleWithDependency', is afhankelijk van de module 'ModuleRequireLicenseAcceptance'. Gebruiker wordt gevraagd om een licentie accepteren.
+Module 'ModuleWithDependency', is afhankelijk van module 'ModuleRequireLicenseAcceptance'. Gebruiker wordt gevraagd naar licentie accepteren.
 
-```PowerShell
-PS> Install-Module -Name ModuleWithDependency
+```powershell
+Install-Module -Name ModuleWithDependency
+```
 
+```output
 License Acceptance
 MIT License 2.0
 Copyright (c) 2016 PowerShell Team
@@ -132,28 +135,31 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Voorbeeld 6: Installatie Module met afhankelijkheden licentie acceptatie en -AcceptLicense vereisen
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Voorbeeld 6: Install-Module met afhankelijkheden die instemming met licentie vereisen en -AcceptLicense vereisen
 
-Module 'ModuleWithDependency', is afhankelijk van de module 'ModuleRequireLicenseAcceptance'. Gebruiker niet gevraagd licentie accepteren omdat - AcceptLicense is opgegeven.
+Module 'ModuleWithDependency', is afhankelijk van module 'ModuleRequireLicenseAcceptance'. Gebruiker niet gevraagd om te accepteren van licentie - AcceptLicense is opgegeven.
 
-```PowerShell
-PS>  Install-Module -Name ModuleWithDependency -AcceptLicense
+```powershell
+Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Voorbeeld 7: Vereisen van instemming van de licentie op een client die ouder zijn dan PSGetFormatVersion 2.0-module installeren
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Voorbeeld 7: Die instemming met licentie vereisen op een client die ouder zijn dan PSGetFormatVersion 2.0-module installeren
 
-```PowerShell
-PS C:\windows\system32> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
-
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a>Voorbeeld 8: Sla Module vereisen van instemming met licentie
+### <a name="example-8-save-module-requiring-license-acceptance"></a>Voorbeeld 8: Sla Module die instemming met licentie vereisen
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -168,21 +174,23 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Deze opdracht geeft de licentie van license.txt bestand en vraagt de gebruiker de licentievoorwaarden accepteren.
+Met deze opdracht ziet u de licentie van license.txt bestand en vraagt de gebruiker om de licentie te accepteren.
 
-### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 9: Sla Module vereisen van instemming met AcceptLicense - licentie
+### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 9: Module die instemming met licentie vereisen bij - AcceptLicense opslaan
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 ```
 
-Module is zonder een prompt te accepteren van de licentie opgeslagen.
+Module is opgeslagen zonder een prompt om licentie te accepteren.
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>Voorbeeld 10: Update Module vereisen licentie acceptatie
+### <a name="example-10-update-module-requiring-license-acceptance"></a>Voorbeeld 10: Update-Module waarvoor instemming met licentie vereisen
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -197,20 +205,20 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Deze opdracht geeft de licentie van license.txt bestand en vraagt de gebruiker de licentievoorwaarden accepteren.
+Met deze opdracht ziet u de licentie van license.txt bestand en vraagt de gebruiker om de licentie te accepteren.
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 11: Module Update vereisen licentie instemming met - AcceptLicense
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Voorbeeld 11: Update-Module waarvoor instemming met licentie vereisen bij - AcceptLicense
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
-Module bijgewerkt zonder een prompt licentie accepteren.
+Module wordt bijgewerkt zonder een prompt om licentie te accepteren.
 
-## <a name="more-details"></a>meer informatie
+## <a name="more-details"></a>Meer informatie
 
-### <a name="require-license-acceptance-for-scriptsscript-license-acceptancemd"></a>[Acceptatie van de licentie vereisen voor scripts](./script-license-acceptance.md)
+[Acceptatie van de licentie vereisen voor scripts](./script-license-acceptance.md)
 
-### <a name="require-license-acceptance-support-on-powershellgalleryhow-toworking-with-itemsitems-that-require-license-acceptancemd"></a>[Acceptatie van de licentie-ondersteuning op PowerShellGallery vereist](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Ondersteuning voor acceptatie van de licentie op PowerShellGallery vereisen](../how-to/working-with-items/items-that-require-license-acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationhow-toworking-with-itemsdeploy-to-azure-automationmd"></a>[Acceptatie van de licentie vereisen bij implementeren naar Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Acceptatie van de licentie vereisen bij implementeren naar Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)

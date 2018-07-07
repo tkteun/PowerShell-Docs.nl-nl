@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 46eec896df643996bea5f2c371a9294034caae6b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218413"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892539"
 ---
 # <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 
-Verzendt het configuratie-document naar het beheerde knooppunt en maakt gebruik van de **ophalen** methode van de configuratie-Agent de configuratie toepassen.
+Het configuratiebestand voor verzendt naar de beheerd knooppunt en maakt gebruik van de **ophalen** methode van de Agent configureren om toe te passen van de configuratie.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 GetConfiguration(
@@ -23,30 +22,26 @@ uint32 GetConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
 *configurationData* \[in\] Hiermee geeft u de configuratiegegevens te verzenden.
 
-*configuraties* \[uit\] op return bevat een ingesloten exemplaar van de configuraties.
+*configuraties* \[uit\] bij resultaat, bevat een ingesloten exemplaar van de configuraties.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

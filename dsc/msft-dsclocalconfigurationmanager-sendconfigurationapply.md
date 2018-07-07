@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: c578f4f52d3ea70e7bcf683ac204d6e484d4630d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222153"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893168"
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>De SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
 
-Het configuratiebestand voor het beheerde knooppunt verzendt en gebruik van de configuratie-Agent voor de configuratie.
+Het configuratiebestand voor verzendt naar de beheerd knooppunt en maakt gebruik van de Agent configureren om toe te passen van de configuratie.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 SendConfigurationApply(
@@ -23,30 +22,26 @@ uint32 SendConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
 *ConfigurationData* \[in\] de omgevingsgegevens voor de configuratie.
 
-*Force* \[in\] **true** om af te dwingen van de configuratie te stoppen.
+*afdwingen dat* \[in\] **waar** om af te dwingen de configuratie om te stoppen.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

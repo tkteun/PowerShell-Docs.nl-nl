@@ -1,71 +1,72 @@
 ---
 ms.date: 08/09/2017
-keywords: PowerShell-cmdlet, downloaden, installeren, setup, windows 10, windows 8.1, windows 8.0, windows 7
+keywords: PowerShell, cmdlet, downloaden, installeren, instellingen, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell installeren
-ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e703d3444b1d661c482b314781cf9a1cb16ef7ed
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482995"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893518"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
-Windows PowerShell wordt geleverd in elke Windows, Windows 7 SP1 en Windows Server 2008 R2 SP1 vanaf standaard geïnstalleerd.
 
-Als u geïnteresseerd in PowerShell 6 en hoger bent, moet u PowerShell Core in plaats van Windows PowerShell te installeren. Zie [PowerShell Core installeren op Windows](Installing-PowerShell-Core-on-Windows.md).
+Windows PowerShell is standaard in elke Windows, beginnen met Windows 7 SP1 en Windows Server 2008 R2 SP1 is geïnstalleerd.
 
-## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Het vinden van PowerShell in Windows 10, 8.1, 8.0 en 7
+Als u geïnteresseerd in PowerShell 6 en hoger bent, moet u PowerShell Core in plaats van Windows PowerShell installeren. Zie [PowerShell Core installeren in Windows](Installing-PowerShell-Core-on-Windows.md).
 
-Soms zoeken PowerShell kan-console of ISE (Integrated Scripting Environment) in Windows moeilijk zijn, zoals de locatie wordt verplaatst van één versie van Windows naar de volgende.
+## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>PowerShell zoeken in Windows 10, 8.1, 8.0 en 7
+
+Soms zoeken naar PowerShell kan ISE (Integrated Scripting Environment) in Windows-console of lastig zijn, als u de locatie van één versie van Windows worden verplaatst naar de volgende.
 
 De volgende tabellen kunt u PowerShell niet vinden in uw Windows-versie.
-Alle versies die hier zijn de oorspronkelijke versie als vrijgegeven met geen updates.
+Alle versies die hier zijn de oorspronkelijke versie uitgebracht, er zijn geen updates.
 
-### <a name="for-console"></a>Voor de Console
+### <a name="for-console"></a>Voor Console
 
 Versie | Locatie
 -- | --
-Windows 10 | Klik op pictogram linksboven lagere hoek Windows, begint te typen van PowerShell
-Windows 8.1, 8.0 | Start PowerShell te typen op het startscherm.<br/>Als een waarde op het bureaublad, klikt u op links lagere hoek pictogram van Windows, begint te typen van PowerShell
-Windows 7 SP1 | Klik op links lagere hoek Windows pictogram op de zoekopdracht vak begin typen PowerShell
+Windows 10 | Klik op links lagere Windows hoekpictogram en begin met het typen van PowerShell
+Windows 8.1, 8.0 | Begin met het typen van PowerShell in het startscherm.<br/>Als een waarde op het bureaublad, klik op links lagere Windows hoekpictogram, begin met het typen van PowerShell
+Windows 7 SP1 | Klik op links lagere hoek Windows pictogram op de zoekopdracht vak begin te typen van PowerShell
 
 ### <a name="for-ise"></a>Voor ISE
 
 Versie | Locatie
 -- | --
-Windows 10 | Klik op pictogram linksboven lagere hoek Windows, begint te typen ISE
-Windows 8.1, 8.0 | Typ op het startscherm **PowerShell ISE**.<br/>Als op bureaublad, klikt u op lagere hoek Windows pictogram, typ **PowerShell ISE**
-Windows 7 SP1 | Klik op links lagere hoek Windows pictogram op de zoekopdracht vak begin typen PowerShell
+Windows 10 | Klik op links lagere Windows hoekpictogram en begin met het typen van ISE
+Windows 8.1, 8.0 | Typ op het startscherm **PowerShell ISE**.<br/>Als u op bureaublad, klikt u op lagere hoekpictogram van Windows, typt u **PowerShell ISE**
+Windows 7 SP1 | Klik op links lagere hoek Windows pictogram op de zoekopdracht vak begin te typen van PowerShell
 
-## <a name="finding-powershell-in-windows-server-versions"></a>Het vinden van PowerShell in Windows Server-versies
+## <a name="finding-powershell-in-windows-server-versions"></a>PowerShell zoeken in Windows Server-versies
 
 Beginnen met Windows Server 2008 R2, worden Windows-besturingssysteem geïnstalleerd zonder de grafische gebruikersinterface (GUI).
-Versies van Windows Server zonder de gebruikersinterface zijn benoemde **Core** versies en edities met de gebruikersinterface zijn benoemde **bureaublad**.
+Edities van Windows Server zonder GUI heten **Core** versies en edities met de GUI met de naam **Desktop**.
 
 ### <a name="windows-server-core-editions"></a>Windows Server Core-versies
 
-In alle edities van de Core, wanneer u zich bij de server aanmeldt krijgt u een Windows-opdrachtpromptvenster.
+In alle Core-versies, als u zich bij de server krijgt u een Windows-opdrachtpromptvenster.
 
-Type `powershell` en druk op **ENTER** PowerShell starten binnen de opdrachtpromptsessie.
-Type `exit` de PowerShell-sessie te beëindigen en terugkeren naar de opdrachtprompt.
+Type `powershell` en druk op **ENTER** PowerShell starten in de opdrachtprompt-sessie.
+Type `exit` de PowerShell-sessie beëindigen en terugkeren naar de opdrachtprompt.
 
-### <a name="windows-server-desktop-editions"></a>Bureaublad van Windows Server-edities
+### <a name="windows-server-desktop-editions"></a>Edities van Windows Server Desktop
 
-In alle edities van bureaublad, klik op het pictogram links lagere hoek Windows, begint te typen van PowerShell.
-Krijgt u zowel de console en de ISE-opties.
+In alle edities van bureaublad, klik op het pictogram links lagere hoek Windows, begin met het typen van PowerShell.
+U profiteert van zowel de console en de ISE-opties.
 
-De enige uitzondering aan de bovenstaande regel is de ISE in Windows Server 2008 R2 SP1; in dit geval, klik op het pictogram links lagere hoek Windows, typ PowerShell ISE.
+De enige uitzondering op de regel hierboven is de ISE in Windows Server 2008 R2 SP1; in dit geval, klik op het pictogram links lagere hoek Windows, typt u PowerShell ISE.
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Het controleren van de versie van PowerShell
 
-Als u wilt zoeken op welke versie van PowerShell die u hebt geïnstalleerd, start u een PowerShell-console (of de ISE) en type `$PSVersionTable` en druk op **ENTER**. Zoek naar de `PSVersion` waarde.
+Als wilt weten welke versie van PowerShell die u hebt geïnstalleerd, start u een PowerShell-console (of de ISE) en het type `$PSVersionTable` en druk op **ENTER**. Zoek de `PSVersion` waarde.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Upgraden van bestaande Windows PowerShell
 
 Het installatiepakket voor PowerShell wordt geleverd in een installatieprogramma WMF.
 De versie van het installatieprogramma WMF overeenkomt met de versie van PowerShell; Er is geen zelfstandige installatieprogramma voor Windows PowerShell.
 
-Als u wilt bijwerken van uw huidige versie van PowerShell in Windows gebruik u de volgende tabel om te vinden van het installatieprogramma voor de versie van PowerShell die u bijwerken wilt naar.
+Als u nodig hebt om bij te werken uw huidige versie van PowerShell, in Windows, gebruikt u in de volgende tabel om te vinden van het installatieprogramma voor de versie van PowerShell die u bijwerken wilt naar.
 
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
@@ -74,19 +75,20 @@ Windows 8.1<br/>Windows Server 2012 R2 | - | geïnstalleerd | [WMF 5.0](https://
 Windows 8<br/>Windows Server 2012 | geïnstalleerd | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **Opmerking 1**:
-  >>
-  >> Op de eerste release van Windows 10, met automatische updates is ingeschakeld, wordt PowerShell van versie 5.0-5.1 bijgewerkt.
-  >>
-  >> Als de oorspronkelijke versie van Windows 10 niet via de Windows-Updates bijgewerkt is, is de versie van PowerShell 5.0.
+> [!NOTE]
+>
+> Op de eerste release van Windows 10, met automatische updates is ingeschakeld, wordt de PowerShell van versie 5.0-5.1 bijgewerkt.
+>
+> Als de oorspronkelijke versie van Windows 10 niet via Windows-Updates bijgewerkt is, is de versie van PowerShell 5.0.
 
-## <a name="need-azure-powershell"></a>Moet u Azure PowerShell
+## <a name="need-azure-powershell"></a>Moet Azure PowerShell
 
-Als u zoekt **Azure PowerShell**, kan worden gestart met [overzicht van Azure PowerShell](https://docs.microsoft.com/powershell/azure).
+Als u zoekt **Azure PowerShell**, u zou kunnen beginnen met [overzicht van Azure PowerShell](/powershell/azure/overview).
 
-Wat u moet mogelijk anders is [installeren en configureren van Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
+Wat u moet mogelijk anders is [installeren en configureren van Azure PowerShell](/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Systeemvereisten voor Windows PowerShell](Windows-PowerShell-System-Requirements.md)
-- [Windows PowerShell starten](Starting-Windows-PowerShell.md)
+[Windows PowerShell-systeemvereisten](Windows-PowerShell-System-Requirements.md)
+
+[Windows PowerShell starten](Starting-Windows-PowerShell.md)

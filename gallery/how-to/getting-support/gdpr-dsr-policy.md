@@ -2,102 +2,102 @@
 ms.date: 03/27/2018
 contributor: JKeithB
 keywords: Galerie, powershell, psgallery, GDPR
-title: PowerShell-galerie GDPR naleving
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: PowerShell Gallery GDPR-naleving
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189751"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893243"
 ---
-# <a name="powershell-gallery-gdpr-compliance"></a>PowerShell-galerie GDPR naleving
+# <a name="powershell-gallery-gdpr-compliance"></a>PowerShell Gallery GDPR-naleving
 
 ## <a name="overview"></a>Overzicht
 
-In mei 2018 wordt Europese privacywetgeving is de algemene gegevens beveiliging regelgeving (GDPR), van kracht.
-De GDPR legt nieuwe regels voor bedrijven, overheidsinstanties, non-profitorganisaties en andere organisaties aanbieding goederen en diensten naar mensen in de Europese Unie, of dat verzamelen en analyseren van gegevens die zijn gekoppeld aan de EU inwoners.
-De GDPR is van toepassing ongeacht waar u zich bevindt.
+Een Europese wetgeving, de General Data Protection Regulation (GDPR), wordt in mei 2018 van kracht.
+De AVG legt een nieuwe regels voor bedrijven, overheidsinstellingen worden gesteld, non-profitorganisaties en andere organisaties die aanbieding goederen en diensten naar mensen in de Europese Unie (EU) of die verzamelen en analyseren van gegevens van inwoners van de EU.
+De AVG is van toepassing, ongeacht waar u zich bevinden.
 
 > [!NOTE]
-> Dit artikel bevat verschillende stappen voor het verwijderen van persoonlijke gegevens van de PowerShell Gallery en kan worden gebruikt ter ondersteuning van uw verplichtingen onder de GDPR. Als u algemene informatie over GDPR zoekt, raadpleegt u de [GDPR sectie van de portal Service vertrouwen](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+> In dit artikel bevat stappen voor het verwijderen van persoonlijke gegevens van de PowerShell Gallery en kan worden gebruikt voor de ondersteuning van uw verplichtingen onder de AVG. Als u algemene informatie over GDPR zoekt, raadpleegt u de [GDPR-sectie van de Service Trust-portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-## <a name="personally-identifiable-data"></a>Persoonlijk herleidbare informatie
+## <a name="personally-identifiable-data"></a>Persoonlijke gegevens verzenden
 
-De PowerShell-galerie slaat de volgende informatie die kan worden geleverd door gebruikers die mogelijk persoonlijke gegevens bevatten:
+De PowerShell Gallery slaat de volgende informatie die kan worden geleverd door gebruikers die mogelijk persoonlijke gegevens bevatten:
 
-* Account voor PowerShell Gallery
-* Items die zijn gepubliceerd naar de PowerShell-galerie
-* E-mailcorrespondentie met het team PowerShell Gallery
+- PowerShell Gallery-account
+- Items die zijn gepubliceerd naar de PowerShell Gallery
+- E-mailcorrespondentie met het team van PowerShell Gallery
 
-De meeste gebruikers doen PowerShell Gallery account niet maken.
-Een account is niet vereist tenzij u gaat een item publiceren of de functie 'Eigenaar Neem contact op met' in de PowerShell-galerie.
-De PowerShell-galerie slaat dan e-mailcorrespondentie geïnitieerd door de gebruiker, geen persoonlijk herleidbare informatie voor gebruikers die geen account hebt gemaakt.
+De meeste gebruikers maken geen een PowerShell Gallery-account.
+Een account is niet vereist, tenzij u gaat publiceren van een item of de functie 'Neem contact op met eigenaar' in de PowerShell Gallery.
+De PowerShell Gallery slaat dan e-mailcorrespondentie gestart door de gebruiker, geen persoonlijke gegevens voor gebruikers die geen een account hebt gemaakt.
 
-Gebruikers die een PowerShell-galerie-account maken kunnen u items publiceren naar de PowerShell-galerie.
-Deze items moet PowerShell-code worden verwacht, maar andere informatie, inclusief persoonlijke gegevens kunnen bevatten.
-De informatie hieronder wordt beschreven hoe u alle items kan krijgen u hebt gepubliceerd naar de PowerShell-galerie.
+Gebruikers die een PowerShell Gallery-account maken kunnen items publiceren naar de PowerShell Gallery.
+Deze items moet PowerShell-code worden verwacht, maar andere gegevens, waaronder persoonlijke gegevens kunnen bevatten.
+De informatie hieronder ziet u hoe u krijgt alle items u hebt gepubliceerd naar de PowerShell Gallery.
 
-## <a name="dsr-export-of-powershell-gallery-data"></a>DSR exporteren van gegevens van de PowerShell-galerie
+## <a name="dsr-export-of-powershell-gallery-data"></a>DSR-exporteren van gegevens van de PowerShell Gallery
 
-De volgende secties wordt beschreven hoe onderwerp gegevensaanvragen (DSR) in de PowerShell-galerie worden ondersteunt door uitleg over het exporteren van gegevens die zijn opgeslagen in de PowerShell-galerie en het aanvragen van deze informatie is verwijderd.
+De volgende secties beschrijven hoe de PowerShell Gallery onderwerp gegevensaanvragen (DSR), ondersteunt door waarin wordt uitgelegd hoe u kunt exporteren die zijn opgeslagen in de PowerShell Gallery en het verwijderen van deze informatie aanvragen.
 
 ### <a name="email"></a>E-mail
 
-E-mailcorrespondentie kan het volgende omvatten:
+E-mailcorrespondentie, kan het volgende omvatten:
 
-* E-mailbericht verzonden naar de eigenaren van PowerShell-galerie-items als de code-analyse scant gedetecteerd een probleem met een ze hebt gepubliceerd naar de PowerShell-galerie-item
-* E-mailbericht verzonden door iemand die naar de PowerShell Gallery team met behulp van het e-mailadres op de pagina 'Contact met ons opnemen' (cgadmin@microsoft.com)
-* Gebruikers die de functie 'Eigenaar Neem contact op met' in de galerie met PowerShell gebruiken om e-mail te verzenden naar de eigenaar van een item in de PowerShell-galerie geregistreerd
+- E-mailbericht verzonden naar de eigenaars van de PowerShell Gallery items als de analyse code scant is een probleem opgetreden met een willekeurig item die ze hebt gepubliceerd naar de PowerShell Gallery
+- E-mailbericht verzonden door iemand die naar de PowerShell Gallery-team met behulp van het e-mailadres op de pagina 'Contact opnemen' [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- Geregistreerde gebruikers die de functie 'Neem contact op met eigenaar' in de PowerShell Gallery gebruiken om e-mail te verzenden naar de eigenaar van een item in de PowerShell Gallery
 
-E-mailberichten verzonden naar de galerie met PowerShell of door hebben een bewaarbeleid van 90 dagen voor de ondersteuning van onderzoeken van mogelijke beveiliging moet schadelijke code worden gedetecteerd in de PowerShell-galerie.
+E-mailberichten verzonden naar de PowerShell Gallery of door hebben een bewaarbeleid van 90 dagen voor de ondersteuning van onderzoeken van mogelijke beveiliging moet schadelijke code worden gedetecteerd in de PowerShell Gallery.
 E-mailberichten worden na 90 dagen verwijderd door het beleid.
 
-Kopieën van alle e-mailberichten verzonden naar of van uw e-mailadres en de PowerShell-galerie in de voorbije 90 dagen mag worden aangevraagd.
-Om aan te vragen deze overeenkomst, een e-mail sturen naar cgadmin@microsoft.com, met de titel: 'DSR aanvraag voor e-mailberichten met betrekking tot dit account'.
-In de hoofdtekst van het bericht staat welke informatie die u aanvraagt (bijvoorbeeld: Stuur alle e-mailberichten verzonden naar of ontvangen van dit e-mailadres.) Alle e-mailberichten met betrekking tot uw e-mailadres binnen 90 dagen van de aanvraag wordt verzonden binnen 7 dagen.
+U kunt kopieën van alle e-mailberichten verzonden naar of van uw e-mailadres en de PowerShell Gallery in de afgelopen 90 dagen aanvragen.
+Om aan te vragen van deze overeenkomst, stuur een e-mail naar [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), met de titel: "DSR-aanvraag voor e-mailberichten met betrekking tot dit account.
+In de hoofdtekst van het bericht, staat welke gegevens u aanvraagt (bijvoorbeeld: Stuur alle e-mailberichten verzonden naar of ontvangen van dit e-mailadres.) Alle e-mailberichten met betrekking tot uw e-mailadres binnen 90 dagen na de aanvraag wordt verzonden binnen 7 dagen.
 
-### <a name="powershell-gallery-account-information"></a>Accountgegevens PowerShell Gallery
+### <a name="powershell-gallery-account-information"></a>PowerShell Gallery-accountgegevens
 
-Als u een PowerShell-galerie-account hebt gemaakt, vindt u alle persoonlijke gegevens die zijn opgeslagen in PowerShell Gallery door de volgende stappen:
+Als u een PowerShell Gallery-account hebt gemaakt, vindt u alle persoonlijke gegevens die zijn opgeslagen in de PowerShell Gallery door de volgende stappen uit:
 
-1. Aanmelden bij de PowerShell-galerie en klik vervolgens op uw gebruikersnaam
-2. De volgende pagina weergegeven, is de Account-pagina, waarin het e-mailadres dat is gebruikt voor het account PowerShell Gallery
+1. Aanmelden bij de PowerShell Gallery, en klik vervolgens op uw gebruikersnaam
+2. De volgende pagina wordt weergegeven is de Account-pagina, waarin het e-mailadres dat is gebruikt voor het account van de PowerShell Gallery
 
-Als u meer dan één account hebt gemaakt in de PowerShell-galerie, moet u deze stappen herhalen voor elke account.
+Als u meer dan één account hebt gemaakt in de PowerShell Gallery, moet u deze stappen herhalen voor elk account.
 
 ### <a name="items-in-the-powershell-gallery"></a>Items in de PowerShell-galerie
 
-Te vergemakkelijken uitvoerende items die zijn gepubliceerd naar de PowerShell-galerie, hebben we het script 'GetPSGalleryItemsForAuthor' gepubliceerd naar de PowerShell-galerie.
-Dit script exporteert u een kopie van elke versie van elk item in de PowerShell-galerie op basis van de auteur informatie opgeslagen in het item geplaatst.
+Om te kunnen exporteren items die zijn gepubliceerd naar de PowerShell Gallery, hebben we het script "GetPSGalleryItemsForAuthor" gepubliceerd naar de PowerShell Gallery.
+Met dit script wordt een kopie van elke versie van elk item in de PowerShell Gallery op basis van de van auteurgegevens die zijn opgeslagen in het artikel plaatsen geëxporteerd.
 
 > [!NOTE]
-> De auteur wordt opgeslagen in het manifest item wanneer u uw item publiceren.
-> Er is geen garantie dat de auteur is dezelfde id als het account waarmee u in de PowerShell-galerie.
-> Als u een andere waarde in het veld Auteur gebruikt, moet u op te geven dat de waarde bij gebruik van dit script.
+> De auteur van de wordt opgeslagen in het itemmanifest van de wanneer u uw item publiceert.
+> Er is geen garantie dat de auteur van de dezelfde id als het account dat u in de PowerShell Gallery gebruikt is.
+> Als u een andere waarde in het veld ' auteur ' gebruikt, moet u die waarde leveren wanneer dit script te gebruiken.
 
 U kunt het script downloaden met behulp van de volgende PowerShell-opdracht:
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
-U kunt het script vervolgens rechtstreeks uitvoeren met de volgende PowerShell-opdrachten:
+U kunt het script vervolgens rechtstreeks door het uitvoeren van de volgende PowerShell-opdrachten uitvoeren:
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-U wordt gevraagd de auteur en een map op uw systeem waar u de items worden opgeslagen op te geven.
+U wordt gevraagd om op te geven van de auteur en een map op uw systeem waar u de items worden opgeslagen.
 
-## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Verwijderen van persoonlijke gegevens van de PowerShell Gallery
+## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Verwijderen van persoonlijke gegevens uit de PowerShell Gallery
 
-Verwijder uw account PowerShell Gallery of een item dat u in de PowerShell-galerie bezit, e-mailbericht verzendt cgadmin@microsoft.com met de titel: 'GDPR aanvraag voor artikelen met betrekking tot dit account'.
+Als u wilt verwijderen van de PowerShell Gallery-account of een item dat u in de PowerShell Gallery eigenaar bent, e-mailbericht verzendt cgadmin@microsoft.com met de titel: 'AVG-aanvraag voor artikelen met betrekking tot dit account'.
 In de hoofdtekst van het bericht staat welke gegevens u wilt verwijderen. Bijvoorbeeld:
 
-* Verwijder versie x.y.z van mijn 'item name'-item
-* Verwijder alle versies van het item 'item name'
-* Verwijder op mijn account PowerShell Gallery
+- Verwijder x.y.z versie van het item "itemnaam"
+- Verwijder alle versies van mijn item "itemnaam"
+- Verwijder op mijn account PowerShell Gallery
 
-De beheerders PowerShell Gallery moeten reageren binnen 7 dagen.
-De opgegeven items worden verwijderd binnen 30 dagen nadat de aanvraag is verzonden.
+De PowerShell Gallery-beheerders wordt binnen 7 werkdagen beantwoorden.
+De items die is opgegeven worden, verwijderd binnen 30 dagen nadat de aanvraag is verzonden.

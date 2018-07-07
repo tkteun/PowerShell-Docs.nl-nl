@@ -1,264 +1,269 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: 1efc016df6882fa962f59dfd3e53eaa6d6b0c121
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 04ad6940f443bc23d5e2347952b2d173aceac408
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190295"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893447"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
->Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> De Pull-Server (Windows-onderdeel *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om de nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met een overgang clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen vermeld [hier](pullserver.md#community-solutions-for-pull-service).
+> De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](pullserver.md#community-solutions-for-pull-service).
 
-Overzicht: Dit document is bedoeld om het proces en uitbreidingsmogelijkheden engineers die voor de oplossing voorbereiden zich helpen bevatten. Gegevens moeten best practices te geven aangeduid met klanten en vervolgens worden gevalideerd door het productteam om ervoor te zorgen aanbevelingen toekomstige verbonden zijn en als stabiel beschouwd.
+Samenvatting: Dit document is bedoeld om op te nemen proces en uitbreidbaarheid voor de ondersteuning van technici die zijn voorbereid voor de oplossing. Details dient aanbevolen procedures aangeduid met de klanten en vervolgens worden gevalideerd door het productteam om te controleren of aanbevelingen toekomstige gericht zijn en als stabiel beschouwd.
 
 | |Informatie over dit document|
 |:---|:---|
-auteur | Michael Greene
+De auteur | Michael Greene
 Revisoren | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
 Gepubliceerd | April 2015
 
-## <a name="abstract"></a>Abstracte
+## <a name="abstract"></a>Samenvatting
 
-Dit document is ontworpen voor de officiële richtlijnen voor iedereen plannen voor een implementatie van Windows PowerShell Desired State Configuration pull-server. Een pull-server is een eenvoudige service die alleen minuten te implementeren. Hoewel dit document technische procedures richtlijnen die kan worden gebruikt in een implementatie biedt, is de waarde van dit document als een verwijzing voor aanbevolen procedures en wat u moet denken voordat u implementeert.
-Lezers enigszins bekend bent met DSC moeten hebben en de voorwaarden voor het beschrijven van de onderdelen die zijn opgenomen in een DSC-implementatie. Zie voor meer informatie de [Windows PowerShell Desired Configuration overzicht](https://technet.microsoft.com/library/dn249912.aspx) onderwerp.
-Zoals DSC wordt verwacht op cloud uitgebracht ontwikkelen, worden de onderliggende technologie inclusief pull-server wordt ook verwacht ontwikkelen en nieuwe mogelijkheden bieden. Dit document bevat een versietabel in de bijlage die voorziet in verwijzingen naar de vorige releases en verwijzingen naar toekomstige Zoek oplossingen te moedigen toekomstgerichte ontwerpen.
+Dit document is ontworpen als officiële richtlijn voor iedereen plannen voor een implementatie van Windows PowerShell Desired State Configuration pull-server. Een pull-server is een eenvoudige service die duurt slechts enkele minuten om te implementeren. Hoewel dit document technische uitleg die kan worden gebruikt in een implementatie biedt, wordt de waarde van dit document is als referentie voor aanbevolen procedures en wat te denken voordat u implementeert.
+Lezers mooi met DSC moeten zijn en de voorwaarden die worden gebruikt om te beschrijven van de onderdelen die zijn opgenomen in een DSC-implementatie. Zie voor meer informatie de [Windows PowerShell Desired State Configuration Overview](/powershell/dsc/overview) onderwerp.
+Zoals DSC wordt verwacht op cloudcadans ontwikkelen, wordt de onderliggende technologie, met inbegrip van pull-server ook verwacht ontwikkelen en nieuwe mogelijkheden geïntroduceerd. Dit document bevat een versietabel met in de bijlage die verwijzingen naar de vorige releases en verwijzingen naar toekomstige uitziende oplossingen om aan te moedigen toekomstgerichte ontwerpen biedt.
 
-De twee hoofdonderdelen van dit document:
+De twee belangrijkste secties van dit document:
 
- - Planning van de configuratie
- - Installatiehandleiding
+- Planning van de configuratie
+- Installatiehandleiding
 
-### <a name="versions-of-the-windows-management-framework"></a>Versies van het Windows Management Framework
+### <a name="versions-of-the-windows-management-framework"></a>Versies van Windows Management Framework
+
 De informatie in dit document is bedoeld om te passen op Windows Management Framework 5.0. WMF 5.0 is niet vereist voor de implementatie en het gebruik van een pull-server, is versie 5.0 de focus van dit document.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
-Desired State Configuration (DSC) is een beheerplatform waarmee configuratiegegevens implementeren en beheren met behulp van een industrie-syntaxis Managed Object Format (MOF) met de naam voor het beschrijven van het Common Information Model (CIM). Er bestaat een open source-project, Open Management Infrastructure (OMI), om verdere ontwikkeling van deze standaarden in verschillende platforms, waaronder Linux en -netwerkbesturingssystemen hardware. Zie voor meer informatie de [DMTF pagina koppelen aan MOF specificaties](http://dmtf.org/standards/cim), en [OMI documenten en bron](https://collaboration.opengroup.org/omi/documents.php).
 
-Windows PowerShell biedt een set met taaluitbreidingen voor Desired State Configuration waarmee u kunt maken en beheren van declaratieve configuraties.
+Desired State Configuration (DSC) is een beheerplatform waarmee configuratiegegevens implementeren en beheren met behulp van een industrie-syntaxis met de naam van het Managed Object Format (MOF) om te beschrijven van het Common Information Model (CIM). Er bestaat een open source-project, Open Management Infrastructure (OMI), om verdere ontwikkeling van deze standaarden voor platformen, waaronder Linux en de hardware, besturingssystemen. Zie voor meer informatie de [DMTF-pagina koppelen volgens de specificaties van MOF](https://www.dmtf.org/standards/cim), en [OMI documenten en bron](https://collaboration.opengroup.org/omi/documents.php).
 
-### <a name="pull-server-role"></a>Pull-serverfunctie
-Een pull-server biedt een gecentraliseerde service voor het opslaan van de configuraties die toegankelijk is voor de doelknooppunten.
+Windows PowerShell biedt een set met taaluitbreidingen voor Desired State Configuration die u gebruiken kunt voor het maken en beheren van declaratieve configuraties.
 
-De functie van de pull-server kan worden geïmplementeerd als een Web Server-exemplaar of een SMB-bestandsshare. De mogelijkheid van web server bevat een OData-interface en kunt u eventueel opnemen mogelijkheden voor de doelknooppunten om te rapporteren terug bevestiging van het slagen of mislukken als configuraties zijn toegepast. Deze functionaliteit is handig in omgevingen wanneer er een groot aantal doelknooppunten.
-Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente zijn gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige implementatie of als een taak voor opnieuw voorkomende waardoor dit ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op grote schaal. Zie voor meer informatie [Windows PowerShell Desired status Pull-configuratieservers](https://technet.microsoft.com/library/dn249913.aspx) en [Push als Pull-Configuratiemodi](https://technet.microsoft.com/library/dn249913.aspx).
+### <a name="pull-server-role"></a>Pull-server-rol
+
+Een pull-server voorziet in een gecentraliseerde service voor het opslaan van configuraties die is toegankelijk voor de doelknooppunten.
+
+De functie voor pull-server kan worden geïmplementeerd als een Web Server-exemplaar of een SMB-bestandsshare. De web server-functie bevat een OData-interface en kan de mogelijkheden voor doelknooppunten om te rapporteren terug bevestiging van het slagen of mislukken als configuraties zijn toegepast (optioneel) bevatten. Deze functionaliteit is nuttig in omgevingen waarin er een groot aantal doelknooppunten.
+Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige installatie of als een opnieuw voorkomende taak waardoor ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op schaal. Zie voor meer informatie, [Windows PowerShell Desired State Configuration Pull-Servers](/powershell/dsc/pullServer) en
+
+[Pushen en ophalen van configuratie-modi](/powershell/dsc/pullServer).
 
 ## <a name="configuration-planning"></a>Planning van de configuratie
 
-Er is voor de implementatie van enterprise software informatie die vooraf kan worden verzameld om u te helpen bij het plannen voor de juiste architectuur en om te worden voorbereid voor de stappen die nodig zijn om de implementatie te vervolledigen. De volgende secties bevatten informatie over het voorbereiden en de organisatie-verbindingen die waarschijnlijk moet van tevoren gebeuren.
+Er is informatie die vooraf kan worden verzameld om u te helpen bij het plannen voor de juiste architectuur en om te worden voorbereid voor de stappen die nodig zijn om uit te voeren van de implementatie voor alle enterprise software-implementatie. De volgende secties bevatten informatie over het voorbereiden en de organisatie-verbindingen die waarschijnlijk moet gebeuren vooraf.
 
 ### <a name="software-requirements"></a>Softwarevereisten
 
-Implementatie van een pull-server vereist de functie DSC-Service van Windows Server. Deze functie is geïntroduceerd in Windows Server 2012 en via lopende versies van Windows Management Framework (WMF) is bijgewerkt.
+Implementatie van een pull-server vereist de functie van de DSC-Service van Windows Server. Deze functie is geïntroduceerd in Windows Server 2012 en is bijgewerkt via voortdurende versies van Windows Management Framework (WMF).
 
-### <a name="software-downloads"></a>Softwaredownloads
+### <a name="software-downloads"></a>Software downloaden
 
-Naast de meest recente inhoud vanaf Windows Update installeert, zijn er twee downloads beschouwd als aanbevolen procedure voor het implementeren van een DSC-pull-server: de meest recente versie van Windows Management Framework en een DSC-module voor het automatiseren van de inrichting van pull-server.
+Naast het installeren van de meest recente inhoud van Windows Update, er zijn twee downloads beschouwd als aanbevolen procedure voor het implementeren van een DSC-pull-server: de nieuwste versie van Windows Management Framework en een DSC-module voor het automatiseren van pull-server inrichten.
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 bevat een functie met de naam de DSC-Service. De functie DSC-Service biedt de functionaliteit pull-server, met inbegrip van de binaire bestanden die ondersteuning bieden voor de OData-eindpunt.
-WMF is opgenomen in Windows Server en een flexibele uitgebracht tussen versies van Windows Server wordt bijgewerkt. [Nieuwe versies van WMF 5.0](http://aka.ms/wmf5latest) kunt bevatten updates voor de functie DSC-Service. Daarom is een aanbevolen procedure voor het downloaden van de nieuwste versie van WMF en om te controleren van de release-opmerkingen om te bepalen of de versie een update op de functie voor DSC-service bevat. U moet ook de sectie van de release-opmerkingen die aangeeft of de status van het ontwerp voor een update of scenario wordt vermeld als stabiel of experimentele bekijken.
-Als u wilt toestaan voor een flexibele releasecyclus afzonderlijke functies worden gedeclareerd stabiele, is wat aangeeft dat de functie gereed om te worden gebruikt in een productieomgeving, zelfs terwijl WMF Preview-versie wordt uitgebracht.
-Andere functies die in het verleden zijn bijgewerkt door WMF-versies (Zie de opmerkingen bij de Release van WMF voor verdere details):
+Windows Server 2012 R2 bevat een functie met de naam van de DSC-Service. De functie DSC-Service biedt de functionaliteit pull-server, met inbegrip van de binaire bestanden die ondersteuning bieden voor het OData-eindpunt.
+WMF is opgenomen in Windows Server en een flexibele uitgebracht tussen Windows Server-versies is bijgewerkt. [Nieuwe versies van WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) kunnen updates op de functie voor DSC-Service zijn. Daarom is het een aanbevolen procedure voor het downloaden van de nieuwste versie van WMF en om te controleren om na te gaan als u de release van een update voor de functie voor DSC-service bevat de opmerkingen bij de release. Ook moet u de sectie van de opmerkingen bij de release die aangeeft of de status van het ontwerp voor een update of scenario wordt vermeld als stabiel of experimentele controleren.
+Als u wilt toestaan voor een flexibele releasecyclus afzonderlijke functies worden gedeclareerd stabiel, is wat aangeeft dat de functie gereed om te worden gebruikt in een productie-omgeving, terwijl de WMF in Preview-versie is uitgebracht.
+Andere functies die in het verleden zijn bijgewerkt door versies van WMF (Zie de opmerkingen bij de Release van WMF voor verdere details):
 
- - Windows PowerShell, Windows PowerShell Integrated Scripting
- - Environment (ISE) Windows PowerShell-webservices (Management OData
- - IIS-extensie) Windows PowerShell Desired State Configuration (DSC)
- - Windows Remote Management (WinRM) Windows Management Instrumentation (WMI)
+- Windows PowerShell Windows PowerShell Integrated Scripting
+- Environment (ISE) Windows PowerShell-webservices (Management OData
+- IIS-extensie) Windows PowerShell Desired State Configuration (DSC)
+- Windows Remote Management (WinRM) Windows Management Instrumentation (WMI)
 
 ### <a name="dsc-resource"></a>DSC-resource
 
-De implementatie van een pull-server kan worden vereenvoudigd door de service met een DSC-configuratiescript inricht. Dit document bevat configuratiescripts die kunnen worden gebruikt voor het implementeren van een knooppunt van de server gereed productie. Voor het gebruik van de configuratiescripts een DSC-module is vereist dat niet is opgenomen in Windows Server. De vereiste modulenaam **xPSDesiredStateConfiguration**, waaronder de DSC-resource **xDscWebService**. De module xPSDesiredStateConfiguration kan worden gedownload [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+De implementatie van een pull-server kan worden vereenvoudigd door de service met behulp van een DSC-configuratiescript inricht. Dit document bevat configuratiescripts die kunnen worden gebruikt voor het implementeren van een productie gereed server-knooppunt. Voor het gebruik van de van configuratiescripts, een DSC-module is vereist dat niet is opgenomen in Windows Server. De modulenaam van de vereiste is **xPSDesiredStateConfiguration**, waaronder de DSC-resource **xDscWebService**. De module xPSDesiredStateConfiguration kan worden gedownload [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
-Gebruik de **Install-Module** cmdlet uit de **PowerShellGet** module.
+Gebruik de `Install-Module` cmdlet uit de **PowerShellGet** module.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-De **PowerShellGet** module zal de module die u wilt downloaden:
+De **PowerShellGet** module wordt de module te downloaden:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
 Taak plannen|
 ---|
-Hebt u toegang tot de installatiebestanden voor Windows Server 2012 R2?|
-De implementatieomgeving internettoegang hebben tot WMF en de module downloaden vanaf de on line galerie?|
-Hoe wordt u de meest recente beveiligingsupdates na de installatie van het besturingssysteem installeren?|
-Wordt de omgeving hebben toegang tot het Internet om updates te downloaden of wordt er een lokale server met Windows Server Update Services (WSUS)?|
-Hebt u toegang tot Windows Server-installatiebestanden die al updates via offline injectie zijn?|
+U hebt toegang tot de installatiebestanden voor Windows Server 2012 R2?|
+De implementatieomgeving van een internettoegang hebben tot de module en WMF downloaden uit de galerie met online?|
+Hoe installeert u de meest recente beveiligingsupdates na de installatie van het besturingssysteem?|
+Wordt de omgeving hebt u toegang tot Internet om updates te downloaden of heeft deze een lokale Windows Server Update Services (WSUS)-server?|
+Hebt u toegang tot bestanden die al updates via offline injectie zijn voor installatie van Windows Server?|
 
 ### <a name="hardware-requirements"></a>Hardwarevereisten
 
-Implementaties van pull-server worden ondersteund op fysieke en virtuele servers. De sizing vereisten voor pull-server worden uitgelijnd met de vereisten voor Windows Server 2012 R2.
+Pull-server-implementaties worden ondersteund op fysieke en virtuele servers. Vereisten voor pull-server de grootte uitgelijnd met de vereisten voor Windows Server 2012 R2.
 
-Processor: 1,4 GHz, 64-bits processor geheugen: 512 MB aan schijfruimte: 32 GB netwerk: Gigabit Ethernet-Adapter
+Processor: 1,4 GHz, 64-bits processor geheugen: 512 MB schijfruimte: 32 GB-netwerk: Gigabit Ethernet-Adapter
 
 Taak plannen|
 ---|
-U implementeert op fysieke hardware of op een virtualisatieplatform?|
-Wat is het proces voor het aanvragen van een nieuwe server voor de doelomgeving?|
+Wilt u implementeren op fysieke hardware of op een virtualisatieplatform?|
+Wat is het proces voor het aanvragen van een nieuwe server voor uw doelomgeving?|
 Wat is de gemiddelde verwerkingstijd voor een server beschikbaar?|
-Welke server grootte vraagt u de?|
+Welke grootte-server zal u vragen?|
 
 ### <a name="accounts"></a>Accounts
 
-Er zijn geen vereisten voor serviceaccount voor het implementeren van een pull-server-exemplaar.
-Er zijn echter scenario's waarin de website kan worden uitgevoerd in de context van een lokale gebruikersaccount.
-Bijvoorbeeld, als er nodig is toegang tot een storage-share voor website-inhoud en de Windows-Server of het apparaat waarop de storage-share zijn niet verbonden met het domein.
+Er zijn geen vereisten voor serviceaccount om een pull-server-exemplaar te implementeren.
+Er zijn echter scenario's waarin de website in de context van een lokale gebruikersaccount toegekend uitvoeren kan.
+Bijvoorbeeld, als er behoefte aan toegang tot een storage-share voor website-inhoud en de Windows-Server of het apparaat die als host fungeert voor de storage-share zijn niet toegevoegd aan een domein.
 
 ### <a name="dns-records"></a>DNS-records
 
-U moet een servernaam moet worden gebruikt wanneer clients configureren voor gebruik met een pull-server-omgeving.
-De hostnaam van de server wordt meestal gebruikt in een testomgeving, of het IP-adres voor de server kan worden gebruikt als DNS-naamomzetting niet beschikbaar is.
-In productieomgevingen of in een testomgeving die is bedoeld voor een productie-implementatie, is de aanbevolen procedure om een DNS CNAME-record te maken.
+U moet een servernaam bij het configureren van clients gebruiken om te werken met een pull-server-omgeving.
+Hostnaam van de server wordt meestal gebruikt in een testomgeving, of het IP-adres voor de server kan worden gebruikt als DNS-naamomzetting niet beschikbaar is.
+In een productieomgeving of in een testomgeving die is bedoeld om weer te geven van een productie-implementatie, wordt de aanbevolen procedure is het maken van een DNS CNAME-record.
 
 Een DNS CNAME kunt u een alias om te verwijzen naar de host-A-record maken.
-De bedoeling van de naamrecord van de aanvullende is om de flexibiliteit te vergroten, moet een wijziging zijn vereist in de toekomst.
-Kunt u een CNAME isoleren van configuratie van de client, zodat de wijzigingen in de server-omgeving, zoals een pull-server vervangen of toevoegen van extra pull-servers, is een overeenkomstige wijziging in de configuratie van de client niet vereist.
+Het doel van de extra UPN-record is de flexibiliteit te vergroten moet een wijziging vereist in de toekomst zijn.
+Een CNAME te isoleren van configuratie van de client zodat wijzigingen in de server-omgeving, zoals het vervangen van een pull-server of het toevoegen van extra pull-servers, wordt een bijbehorende wijziging in de configuratie van de client vereist.
 
-Houd rekening met de oplossingsarchitectuur bij het kiezen van een naam voor de DNS-record.
-Als met behulp van taakverdeling, wordt het certificaat dat wordt gebruikt om verkeer te beveiligen via HTTPS moet dezelfde naam als de DNS-record.
+Bij het kiezen van een naam op voor de DNS-record, houd rekening met de oplossingsarchitectuur.
+Als met behulp van de taakverdeling, moet het certificaat dat wordt gebruikt om verkeer te beveiligen via HTTPS voor het delen van dezelfde naam als de DNS-record.
 
 Scenario |Best practices
 :---|:---
-Testomgeving |De geplande productie-omgeving, indien mogelijk reproduceren. Een hostnaam voor de server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres in plaats van een hostnaam worden gebruikt.|
-Implementatie van één knooppunt |Maak een DNS CNAME-record die naar de hostnaam van de server verwijst.|
+Testomgeving |De geplande productie-omgeving, indien mogelijk reproduceren. De hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres kan worden gebruikt in plaats van een hostnaam.|
+Implementatie met één knooppunt |Maak een DNS CNAME-record die naar de hostnaam van de server verwijst.|
 
-Zie voor meer informatie [DNS Round Robin configureren in Windows Server](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
+Zie voor meer informatie, [DNS Round Robin configureren in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Taak plannen|
 ---|
-Weet u contactpersoon om DNS-records gemaakt en gewijzigd?|
-Wat is de gemiddelde reactietijd voor een aanvraag voor een DNS-record ook?|
-Moet u de statische Hostname-A-records voor servers aanvragen?|
-Wat u vraagt de als een CNAME?|
-Indien nodig, wat voor soort Load Balancing-oplossing wordt u gebruiken? (Zie de sectie taakverdeling voor meer informatie)|
+Wist u dat met wie neem contact op met om DNS-records gemaakt en gewijzigd?|
+Wat is de gemiddelde doorlooptijd voor een aanvraag voor een DNS-record?|
+Moet u om aan te vragen van statische hostnaam-A-records voor servers?|
+Welke vragen u als een CNAME?|
+Indien nodig, welk type Load Balancing-oplossing wordt u gebruiken? (Zie sectie Load Balancing voor meer informatie)|
 
 ### <a name="public-key-infrastructure"></a>Openbare-sleutelinfrastructuur
 
-De meeste organisaties vereisen vandaag dat netwerkverkeer, met name verkeer dat dergelijke gevoelige gegevens bevat, hoe servers zijn geconfigureerd, moet worden gevalideerd en/of tijdens de overdracht versleuteld.
-Het is mogelijk voor het implementeren van een pull-server via HTTP wat vergemakkelijkt clientaanvragen in normale tekst, is het beste beveiligd verkeer via HTTPS. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set parameters in de DSC-resource **xPSDesiredStateConfiguration**.
+De meeste organisaties vereisen dat het netwerkverkeer, met name verkeer dat dergelijke gevoelige gegevens bevat, hoe servers zijn geconfigureerd, moet worden gevalideerd en/of tijdens de overdracht versleuteld.
+Het is mogelijk om te implementeren met behulp van HTTP, vereenvoudigt het uitvoeren van een pull-server aanvragen van clients in normale tekst, het is een best practice voor beveiligde via HTTPS-verkeer. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set parameters in de DSC-resource **xPSDesiredStateConfiguration**.
 
-Certificaatvereisten voor het beveiligen van HTTPS-verkeer voor pull-server zijn niet anders dan een andere HTTPS-website te beveiligen. De **webserver** sjabloon in een Windows Server Certificate Services voldoet aan de vereiste mogelijkheden.
+De vereisten voor certificaten voor het beveiligen van HTTPS-verkeer voor pull-server zijn niet anders dan het beveiligen van een andere HTTPS-website. De **webserver** sjabloon in een Windows Server Certificate Services voldoet aan de vereiste mogelijkheden.
 
 Taak plannen|
 ---|
-Als certificaataanvragen niet worden geautomatiseerd, die u moet contact op aanvragen van een certificaat?|
-Wat is de gemiddelde reactietijd ook voor de aanvraag?|
-Hoe wordt het certificaatbestand overgedragen voor u?|
-Hoe wordt de persoonlijke sleutel van het certificaat worden overgebracht naar u?|
+Als certificaataanvragen niet zijn geautomatiseerd, die u moet contact opnemen met op aanvragen van een certificaat?|
+Wat is de gemiddelde doorlooptijd voor de aanvraag?|
+Hoe wordt het certificaatbestand worden overgebracht naar u?|
+Hoe wordt de persoonlijke sleutel van het certificaat aan u worden overgedragen?|
 Hoe lang is de verlooptijd van de standaard?|
-Hebt u verrekend op een DNS-naam voor de pull-server-omgeving, die u voor de certificaatnaam gebruiken kunt?|
+Hebt u verrekend op een DNS-naam voor de pull-server-omgeving, die u voor de naam van het certificaat gebruiken kunt?|
 
 ### <a name="choosing-an-architecture"></a>Een architectuur kiezen
 
-Een pull-server kan worden geïmplementeerd via een webservice die zijn gehost op IIS of een SMB-bestandsshare. In de meeste gevallen wordt de optie web service bieden meer flexibiliteit. Het is niet ongewoon is voor HTTPS-verkeer naar de grenzen van netwerken, passeren dat SMB-verkeer is vaak gefilterd of geblokkeerd tussen netwerken. De web-service biedt ook de optie een overeenstemming Server of Web Reporting Manager (zowel onderwerpen worden opgelost in een toekomstige versie van dit document) die bieden een mechanisme voor clients voor statusrapportage terug naar een server voor gecentraliseerde zichtbaarheid op te nemen.
-SMB biedt een optie voor omgevingen waar beleid bepaalt dat een webserver niet worden gebruikt en voor andere omgevingsvereisten waaruit een Webserverrol ongewenste.
-In beide gevallen moet u evalueren van de vereisten voor het ondertekenen en versleutelen van verkeer. HTTPS, SMB-ondertekening en IPSEC-beleidsregels zijn alle opties waard.
+Een pull-server kan worden geïmplementeerd met behulp van een webservice die zijn gehost op IIS of een SMB-bestandsshare. In de meeste gevallen wordt de web service-optie bieden meer flexibiliteit. Het is niet ongebruikelijk dat HTTPS-verkeer naar de grenzen van het netwerk, door te gaan dat SMB-verkeer is vaak gefilterd of geblokkeerd tussen netwerken. De webservice biedt ook de mogelijkheid om op te nemen van een conformiteit van Server of Web Reporting Manager (beide onderwerpen in een toekomstige versie van dit document worden verholpen) die bieden een mechanisme voor clients voor statusrapportage terug naar een server voor gecentraliseerde zichtbaarheid.
+SMB biedt een optie voor omgevingen waar beleid bepaalt dat een webserver niet moet worden gebruikt, en voor andere omgevingsvereisten die een web server-rol ongewenste maken.
+Vergeet niet om te evalueren van de vereisten voor het ondertekenen en versleutelen van verkeer in beide gevallen. HTTPS en SMB-ondertekening IPSEC-beleid zijn alle opties waard.
 
 #### <a name="load-balancing"></a>Taakverdeling
-Clients communiceren met de webservice indienen voor informatie die in een enkel antwoord wordt geretourneerd. Er zijn geen opeenvolgende aanvragen zijn vereist, zodat het niet nodig zijn voor het platform om ervoor te zorgen sessies worden beheerd op één server op elk punt in tijd voor de taakverdeling.
+
+Clients communiceren met de webservice te vragen voor informatie die in een enkel antwoord wordt geretourneerd. Er zijn geen opeenvolgende aanvragen zijn vereist, dus het is niet nodig zijn voor de load balancer-platform, zodat er sessies op één server op elk gewenst moment worden bijgehouden in de tijd.
 
 Taak plannen|
 ---|
-Welke oplossing voor taakverdeling verkeer tussen servers worden gebruikt?|
-Als een load balancer, die een aanvraag voor het toevoegen van een nieuwe configuratie op het apparaat te laten gebruiken?|
-Wat is de gemiddelde reactietijd ook voor een aanvraag voor het configureren van een nieuwe load balanced webservice?|
-Welke informatie is alleen vereist voor de aanvraag?|
-U moet aanvragen een extra IP-adres of het team dat verantwoordelijk is voor de taakverdeling wordt afgehandeld die?|
-Hebt u de DNS-records die nodig zijn en wordt dit door het team dat verantwoordelijk is voor het configureren van de oplossing voor taakverdeling worden vereist?|
-De load balancing oplossing vereist dat de PKI worden verwerkt door het apparaat of saldo HTTPS-verkeer, zolang er geen sessievereisten zijn laden?|
+Welke oplossing wordt gebruikt voor verkeer te verdelen over meerdere servers?|
+Als u een load balancer, die een aanvraag voor het toevoegen van een nieuwe configuratie op het apparaat?|
+Wat is de gemiddelde doorlooptijd voor een aanvraag voor het configureren van een nieuwe load balanced webservice?|
+Welke gegevens zijn vereist voor de aanvraag?|
+Hebt u nodig om aan te vragen van een extra IP-adres of het team dat verantwoordelijk is voor de taakverdeling wordt afgehandeld dat?|
+Hebt u de DNS-records die nodig zijn, en deze zijn vereist om het team dat verantwoordelijk is voor het configureren van de load balancer-oplossing?|
+De oplossing voor taakverdeling vereist dat de PKI worden verwerkt door het apparaat of saldo HTTPS-verkeer, zolang er geen sessievereisten zijn laden?|
 
-### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Fasering configuraties en modules op de pull-server
+### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Staging-configuraties en -modules op de pull-server
 
-Als onderdeel van de planning van de configuratie, moet u nadenken over welke DSC-modules en configuraties die wordt gehost door de pull-server. Omwille van de planning van de configuratie is het belangrijk dat u basiskennis van het voorbereiden en implementeren van inhoud naar een pull-server.
+Als onderdeel van de planning van de configuratie, moet u nadenken over welke DSC-modules en configuraties worden gehost door de pull-server. Voor de planning van de configuratie is het belangrijk dat u hebt een basiskennis hebt van het voorbereiden en implementeren van inhoud naar een pull-server.
 
-In de toekomst wordt in deze sectie uitgebreid en opgenomen in de Operations Guide voor DSC-Pull-Server.  De handleiding wordt uitgelegd hoe het dagelijkse proces voor het beheren van modules en configuraties gedurende een periode met automation.
+Deze sectie wordt in de toekomst worden uitgebreid en opgenomen in de Operations Guide voor DSC-Pull-Server.  De handleiding wordt uitgelegd hoe het dagelijkse proces voor het beheren van modules en configuraties na verloop van tijd met automation.
 
 #### <a name="dsc-modules"></a>DSC-modules
-Clients die aanvragen van een configuratie moet de vereiste DSC-modules. Een functionaliteit van de pull-server is voor het automatiseren van distributie op verzoek van DSC-modules voor clients. Als u een pull-server mogelijk als een lab of het testen van het concept voor de eerste keer implementeert, gaat u waarschijnlijk afhangen van DSC-modules die beschikbaar via openbare opslagplaatsen zoals de galerie met PowerShell of de PowerShell.org GitHub-opslagplaatsen voor DSC-modules zijn .
 
-Het is essentieel dat zelfs voor vertrouwde online-bronnen zoals de PowerShell-galerie, elke module die is gedownload van een openbare opslagplaats moet worden gecontroleerd door iemand met PowerShell-ervaring en kennis van de omgeving waar de modules worden onthouden gebruikt voordat het wordt gebruikt in productie. Tijdens het uitvoeren van deze taak is het een goed moment om te controleren voor elke extra nettolading in de module die zoals documentatie en voorbeeld-scripts kan worden verwijderd. Zo beperkt u de netwerkbandbreedte per client in de eerste aanvraag wanneer modules worden gedownload via het netwerk van de server met de client.
+Clients die aanvragen van een configuratie moet de vereiste DSC-modules. Een functionaliteit van de pull-server is voor het automatiseren van distributie op aanvraag van DSC-modules voor clients. Als u een pull-server mogelijk als een testomgeving of testen van concept voor het eerst implementeert, gaat u waarschijnlijk afhangen van DSC-modules die beschikbaar via openbare opslagplaatsen, zoals de PowerShell Gallery of de PowerShell.org GitHub-opslagplaatsen voor DSC-modules zijn .
 
-Elke module moet worden verpakt in een specifieke indeling, een ZIP-bestand met de naam ModuleName_Version.zip waarin de nettolading van de module. Nadat het bestand is gekopieerd naar de server die een controlesom-bestand moet worden gemaakt. Wanneer clients verbinding met de server maken, wordt de controlesom gebruikt om te controleren of dat de inhoud van de DSC-module niet is gewijzigd sinds het is gepubliceerd.
+Het is essentieel om te onthouden dat zelfs voor betrouwbare online-bronnen, zoals de PowerShell Gallery, een module die is gedownload vanuit een openbare opslagplaats, moet worden gecontroleerd door iemand met PowerShell-ervaring en kennis van de omgeving waar de modules worden gebruikt voordat het wordt gebruikt in de productieomgeving. Tijdens het uitvoeren van deze taak is het een goed moment om te controleren voor elke extra nettolading in de module die kan worden verwijderd, zoals documentatie en scripts. Zo beperkt u de netwerkbandbreedte per client in de eerste aanvraag wanneer modules worden gedownload via het netwerk van server naar de client.
+
+Elke module moet zijn ingepakt in een specifieke indeling, een ZIP-bestand met de naam ModuleName_Version.zip met de nettolading van de module. Nadat het bestand wordt gekopieerd naar de server die een controlesom-bestand moet worden gemaakt. Wanneer clients verbinding met de server maken, wordt de controlesom gebruikt om te controleren of dat de inhoud van de DSC-module is niet gewijzigd sinds het is gepubliceerd.
 
 ```powershell
-New-DscCheckSum -ConfigurationPath .\ -OutPath .\
+New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Taak plannen|
 ---|
-Als u van plan bent een test- of testomgeving omgeving weet welke scenario's sleutel om te valideren?|
-Zijn er openbaar beschikbare modules die bronnen ten aanzien van alles wat die u moet bevatten of u moet uw eigen resources ontwerpen?|
-Uw omgeving internettoegang hebben tot openbare modules ophalen?|
-Wie is verantwoordelijk voor het controleren van de DSC-modules?|
+Als u van plan bent een omgeving met test- of testomgeving weet welke scenario's sleutel valideren?|
+Zijn er openbaar beschikbare modules met resources voor alles wat die u nodig hebt of moet u uw eigen resources maken?|
+Wordt uw omgeving hebt u toegang tot Internet om op te halen van openbare modules?|
+Wie zijn verantwoordelijk voor het controleren van DSC-modules?|
 Als u van plan bent een productie-omgeving wat u gebruikt als een lokale opslagplaats voor het opslaan van DSC-modules?|
-Een centrale team DSC-modules van App-teams accepteert? Wat is het proces|
-Wordt u verpakking, kopiëren en een controlesom voor gereed is voor productie DSC modules maken met de server uit de opslagplaats van uw bron automatiseren?|
-Kan uw team zijn verantwoordelijk voor het beheren van het automatiseringsplatform?|
+Accepteert een centraal team DSC-modules van App-teams? Wat is het proces?|
+Wordt u verpakking, kopiëren en het maken van een controlesom voor gereed is voor productie DSC modules met de server uit de opslagplaats van het automatiseren?|
+Uw team zijn verantwoordelijk voor het beheren van het automatiseringsplatform?|
 
 #### <a name="dsc-configurations"></a>DSC-configuraties
 
-Het doel van een pull-server is bieden een gecentraliseerde mechanisme voor het distribueren van DSC-configuraties voor client-knooppunten. De configuraties worden opgeslagen op de server als MOF-documenten.
-Elk document worden benoemd met een unieke GUID. Wanneer clients verbinding maken met een pull-server worden geconfigureerd, krijgen ze ook de GUID voor de configuratie die moet aanvragen. Dit systeem voor het verwijzen naar configuraties door GUID wordt gegarandeerd dat globale uniekheid en flexibele zodanig is dat een configuratie met een granulatie per knooppunt, of als een configuratie van de functie die veel servers met identieke configuraties omvat kan worden toegepast.
+Het doel van een pull-server is een gecentraliseerde mechanisme voor het distribueren van DSC-configuraties voor de client-knooppunten bieden. De configuraties worden opgeslagen op de server als MOF-documenten.
+Elk document worden benoemd met een unieke GUID. Wanneer clients verbinding maken met een pull-server worden geconfigureerd, krijgen ze ook de GUID voor de configuratie van die deze moeten aanvragen. Dit systeem voor het verwijzen naar configuraties door GUID gegarandeerd uniek globale en flexibele heeft dat kan een configuratie met granulatie per knooppunt, of als een configuratie van de functie die omvat veel servers waarvoor identieke configuraties moeten worden toegepast.
 
 #### <a name="guids"></a>GUID 's
 
-Planning voor de configuratie van GUID's is waard extra aandacht bij gegevensclassificatie via de implementatie van een pull-server. Er is geen specifieke vereiste voor het verwerken van GUID's en het proces is waarschijnlijk uniek voor elke omgeving. Het proces kan variëren van eenvoudige tot complexe: een centraal opgeslagen CSV-bestand, een eenvoudige SQL-tabel, een CMDB of een complexe oplossing integratie met een andere oplossing voor hulpprogramma's of software vereisen. Er zijn twee algemene methoden:
+Planning voor de configuratie van GUID's is waard is om extra aandacht bij via een pull-server-implementatie. Er is geen specifieke vereisten voor het afhandelen van GUID's en het proces is waarschijnlijk moet uniek zijn voor elke omgeving. Het proces kan variëren van eenvoudige tot complexe: een centraal opgeslagen CSV-bestand, een eenvoudige SQL-tabel, een CMDB of een complexe oplossingen maken waarvoor integratie met een ander hulpprogramma of software-oplossing nodig. Er zijn twee algemene methoden:
 
- - **Toewijzen van GUID's per server** : biedt een zekere mate van zekerheid dat de configuratie van elke server afzonderlijk wordt beheerd. Dit biedt een niveau van precisie rond updates en kunt werken goed in omgevingen met enkele servers.
- - **Toewijzen van GUID's per serverfunctie** : alle servers die dezelfde functie, zoals webservers, uitvoeren met dezelfde GUID verwijzen naar de vereiste configuratiegegevens.  Let wel dat als veel servers dezelfde GUID delen, deze zou worden bijgewerkt tegelijkertijd wanneer de configuratie wordt gewijzigd.
+- **Toewijzen van GUID's per server** : biedt een zekere mate van zekerheid dat de configuratie van elke server afzonderlijk wordt beheerd. Dit biedt een precisieniveau om updates en kan ze goed werken in omgevingen met een klein aantal servers.
+- **Toewijzen van GUID's per serverfunctie** : alle servers die dezelfde functie, zoals webservers vervullen, gebruikt u dezelfde GUID om te verwijzen naar de vereiste configuratiegegevens.  Er rekening mee dat als veel servers dezelfde GUID delen, al deze zou worden bijgewerkt tegelijkertijd wanneer de configuratie wordt gewijzigd.
 
-De GUID is iets die gevoelige gegevens moeten worden overwogen omdat deze kan worden gebruikt door iemand met kwade bedoelingen intelligence over hoe de servers zijn geïmplementeerd en geconfigureerd in uw omgeving te krijgen. Zie voor meer informatie [veilig toewijzen van GUID's in PowerShell Desired status Pull-configuratiemodus](http://blogs.msdn.com/b/powershell/archive/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode.aspx).
+  De GUID is iets dat gevoelige gegevens moet worden overwogen omdat deze kan worden gebruikt door iemand met kwade bedoelingen te krijgen van inzicht in hoe servers zijn geïmplementeerd en geconfigureerd in uw omgeving. Zie voor meer informatie, [veilig bij het toewijzen van GUID's in PowerShell Desired State Configuration Pull-modus](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Taak plannen|
 ---|
-Wie is verantwoordelijk voor het kopiëren van configuraties in naar de map van de pull-server wanneer ze gereed zijn?|
-Als configuraties zijn gemaakt door een toepassingsteam van, wat het proces is op deze aanlevert?|
-Wordt u gebruikmaken van een opslagplaats voor het opslaan van configuraties als ze worden gemaakt, verschillende teams?|
-Automatiseert het proces van het kopiëren van configuraties naar de server en het maken van een controlesom wanneer ze gereed zijn?|
-Hoe wordt u GUID's toewijzen aan servers of -rollen en waar dit worden opgeslagen?|
-Wat u gebruikt als een proces voor het configureren van clientcomputers en hoe wordt geïntegreerd met uw proces voor het maken en opslaan van de configuratie van GUID's?|
+Wie zijn verantwoordelijk voor het kopiëren van configuraties in naar de map van de pull-server wanneer ze klaar zijn?|
+Als configuraties zijn gemaakt door een team van toepassing, wat het proces is om ze uit?|
+Gebruik u van een opslagplaats voor het opslaan van configuraties als ze worden gemaakt, tussen teams?|
+Automatiseert u het proces van configuraties kopiëren naar de server en het maken van een controlesom wanneer ze klaar zijn?|
+Hoe wordt u GUID's toewijzen aan servers of rollen en waar deze worden opgeslagen?|
+Wat u gebruikt als een proces voor het configureren van clientcomputers, en hoe wordt deze dan geïntegreerd met het proces voor het maken en opslaan van configuratie-GUID's?|
 
 ## <a name="installation-guide"></a>Installatiehandleiding
 
-*Scripts die zijn opgegeven in dit document zijn stabiele voorbeelden. Altijd zorgvuldig te controleren scripts voordat deze wordt uitgevoerd in een productieomgeving.*
+*Scripts die worden vermeld in dit document zijn stabiel voorbeelden. Altijd zorgvuldig te controleren scripts voordat deze wordt uitgevoerd in een productie-omgeving.*
 
 ### <a name="prerequisites"></a>Vereisten
 
-De versie van PowerShell op uw server gebruik de volgende opdracht om te controleren.
+De versie van PowerShell op uw server gebruik de volgende opdracht uit om te controleren.
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
 Indien mogelijk een upgrade uitvoeren naar de nieuwste versie van Windows Management Framework.
-Download vervolgens het `xPsDesiredStateConfiguration` module met behulp van de volgende opdracht.
-
+Download vervolgens het `xPsDesiredStateConfiguration` module met behulp van de volgende opdracht uit.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-De opdracht vraagt naar uw goedkeuring wordt vereist voor het downloaden van de module.
+De opdracht vraagt om uw goedkeuring wordt vereist voor het downloaden van de module.
 
 ### <a name="installation-and-configuration-scripts"></a>Installatie en configuratie-scripts
--
 
-De beste methode voor het implementeren van een DSC-pull-server is een DSC-configuratiescript gebruiken. Dit document biedt zowel basisinstellingen die alleen de DSC-webservice configureren en geavanceerde instellingen dat er een Windows Server end-to-end inclusief DSC webservice configureren waaronder scripts.
+De beste methode voor het implementeren van een DSC-pull-server is het gebruik van een script voor DSC-configuratie. Dit document worden gepresenteerd scripts, met inbegrip van beide basisinstellingen die alleen de DSC-webservice configureren en geavanceerde instellingen van een Windows Server-end-to-end met DSC webservice configureren.
 
-Opmerking: Op dit moment de `xPSDesiredStateConfiguation` DSC-module vereist dat de server moet de landinstelling EN-US.
+Opmerking: Momenteel de `xPSDesiredStateConfiguation` DSC-module vereist dat de server om te worden van de landinstelling EN-US.
 
-### <a name="basic-configuration-for-windows-server-2012"></a>Basisconfiguratie voor Windows Server 2012
--------------------------------------------
+### <a name="basic-configuration-for-windows-server-2012"></a>Basisinformatie over de configuratie voor Windows Server 2012
+
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
 
@@ -355,6 +360,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ServerDisabledByDefault
         {
             Ensure = 'Present'
@@ -363,6 +369,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientEnabled
         {
             Ensure = 'Present'
@@ -371,6 +378,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientDisabledByDefault
         {
             Ensure = 'Present'
@@ -379,6 +387,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry SSL2ServerDisabled
         {
             Ensure = 'Present'
@@ -449,6 +458,7 @@ Configuration PullServer {
         }
     }
 }
+
 $configData = @{
     AllNodes = @(
         @{
@@ -467,6 +477,7 @@ $configData = @{
             }
         )
     }
+
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
@@ -474,16 +485,18 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-
 ### <a name="verify-pull-server-functionality"></a>Controleer de functionaliteit van de pull-server
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
 function Verify-DSCPullServer ($fqdn) {
-    ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
+    ([xml](Invoke-WebRequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN'
 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
+```
+
+```output
 Expected Result:
 Action
 Module
@@ -511,28 +524,28 @@ Configuration PullClient {
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
 }
+
 PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
 
+## <a name="additional-references-snippets-and-examples"></a>Aanvullende verwijzingen, codefragmenten en voorbeelden
 
-## <a name="additional-references-snippets-and-examples"></a>Aanvullende verwijzingen, fragmenten en voorbeelden
-
-Dit voorbeeld toont hoe u handmatig een clientverbinding tot stand (vereist WMF5) voor het testen.
+Dit voorbeeld laat zien hoe u handmatig een clientverbinding tot stand (vereist WMF5) voor het testen.
 
 ```powershell
-Update-DSCConfiguration –Wait -Verbose
+Update-DscConfiguration –Wait -Verbose
 ```
 
-De [toevoegen DnsServerResourceRecordName](http://bit.ly/1G1H31L) -cmdlet gebruikt voor een type CNAME-record toevoegen aan een DNS-zone.
+De [toevoegen DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet een type CNAME-record toevoegen aan een DNS-zone wordt gebruikt.
 
-De functie PowerShell [een controlesom en DSC-MOF publiceren met SMB Pull-Server maken](http://bit.ly/1E46BhI) genereert automatisch de vereiste controlesom en kopieert u de configuratie van de MOF- en controlesom bestanden naar de SMB-pull-server.
+De PowerShell-functie aan [een controlesom en DSC MOF publiceren met SMB-Pull-Server maken](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) genereert automatisch de vereiste controlesom en vervolgens de configuratie van de MOF- en controlesom bestanden worden gekopieerd naar de SMB-pull-server.
 
 ## <a name="appendix---understanding-odata-service-data-file-types"></a>Bijlage - Understanding ODATA-servicegegevens bestandstypen
 
-Een bestand wordt opgeslagen als u wilt maken van gegevens tijdens de implementatie van een pull-server met de OData-webservice. Het type bestand is afhankelijk van het besturingssysteem, zoals hieronder wordt beschreven.
+Een bestand wordt opgeslagen voor het maken van informatie tijdens de implementatie van een pull-server met de OData-webservice. Het type bestand is afhankelijk van het besturingssysteem, zoals hieronder wordt beschreven.
 
- - **Windows Server 2012** het bestandstype worden altijd .mdb
- - **Windows Server 2012 R2** het bestandstype wordt standaard edb tenzij een .mdb is opgegeven in de configuratie
+- **Windows Server 2012** het bestandstype is altijd .mdb
+- **Windows Server 2012 R2** het bestandstype wordt standaard edb, tenzij een .mdb is opgegeven in de configuratie
 
-In de [voorbeeldscript geavanceerde](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) voor het installeren van een Pull-Server, vindt u ook een voorbeeld van hoe u kunt de instellingen van het bestand web.config om te voorkomen dat een kans van de fout is veroorzaakt door het bestandstype automatisch te bepalen.
+In de [voorbeeldscript geavanceerde](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) voor het installeren van een Pull-Server, vindt u ook een voorbeeld van hoe u kunt de instellingen van het bestand web.config om te voorkomen dat elke kans van de fout wordt veroorzaakt door het bestandstype automatisch te bepalen.

@@ -1,32 +1,32 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: DSC uitvoeren met gebruikersreferenties
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189700"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893903"
 ---
 # <a name="running-dsc-with-user-credentials"></a>DSC uitvoeren met gebruikersreferenties
 
-> Van toepassing op: Windows PowerShell 5.0, 5.1 van Windows PowerShell
+> Van toepassing op: Windows PowerShell 5.0 en Windows PowerShell 5.1
 
 U kunt een DSC-resource onder een opgegeven set referenties uitvoeren met behulp van de automatische **PsDscRunAsCredential** eigenschap in de configuratie.
-Standaard wordt elke resource DSC uitgevoerd als het systeem-account.
-Er zijn momenten wanneer uitgevoerd, zoals een gebruiker is nodig, zoals een MSI-pakketten installeren in de context van een specifieke gebruiker, instellen van een gebruiker registersleutels, toegang tot specifieke lokale directory van een gebruiker of toegang tot een netwerk share.
+DSC wordt standaard elke resource uitgevoerd als het systeem-account.
+Er zijn tijden wanneer uitgevoerd als een gebruiker is nodig, zoals het installeren van MSI-pakketten in de context van een specifieke gebruiker, instellen van een gebruiker-registersleutels, toegang tot specifieke lokale directory van een gebruiker of toegang krijgen tot een netwerk share.
 
-Elke DSC-resource heeft een **PsDscRunAsCredential** eigenschap die kan worden ingesteld op de referenties van een gebruiker (een [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) object).
-De referentie kan worden vastgelegd als de waarde van de eigenschap in de configuratie of u kunt de waarde instellen op [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), die wordt de gebruiker gevraagd om een referentie wanneer de configuratie wordt gecompileerd (voor meer informatie over compileren van configuraties, Zie [configuraties](configurations.md).
+Elke DSC-resource heeft een **PsDscRunAsCredential** eigenschap die kan worden ingesteld op de referenties van een gebruiker (een [PSCredential](/dotnet/api/system.management.automation.pscredential) object).
+De referentie op die kan worden vastgelegd als de waarde van de eigenschap in de configuratie, of u kunt de waarde instellen op [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), die wordt de gebruiker gevraagd om een referentie wanneer de configuratie wordt gecompileerd (voor meer informatie over -configuraties compileren, Zie [configuraties](configurations.md).
 
->**Opmerking:** In PowerShell 5.0, met behulp van de **PsDscRunAsCredential** eigenschap in de configuraties voor het aanroepen van samengestelde bronnen wordt niet ondersteund.
->In PowerShell 5.1, de **PsDscRunAsCredential** eigenschap wordt ondersteund in de configuraties voor het aanroepen van samengestelde bronnen.
+> [!NOTE] 
+> In PowerShell 5.0, met behulp van de **PsDscRunAsCredential** eigenschap in configuraties aanroepen van samengestelde resources wordt niet ondersteund.
+> In PowerShell 5.1, de **PsDscRunAsCredential** eigenschap wordt ondersteund in configuraties aanroepen van samengestelde resources.
+> De **PsDscRunAsCredential** eigenschap is niet beschikbaar in PowerShell 4.0.
 
->**Opmerking:** de **PsDscRunAsCredential** eigenschap is niet beschikbaar in PowerShell 4.0.
-
-In het volgende voorbeeld **Get-Credential** wordt gebruikt voor de gebruiker gevraagd om referenties.
-De [register](registryResource.md) bron wordt gebruikt om te wijzigen van de registersleutel die de achtergrondkleur voor het Windows-opdrachtpromptvenster geeft.
+In het volgende voorbeeld `Get-Credential` wordt gebruikt voor de gebruiker gevraagd om referenties.
+De [register](registryResource.md) bron wordt gebruikt om de registersleutel die Hiermee geeft u de achtergrondkleur voor het Windows-opdrachtpromptvenster wijzigen.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Opmerking:** in dit voorbeeld wordt ervan uitgegaan dat u hebt een geldig certificaat op `C:\publicKeys\targetNode.cer`, en dat de vingerafdruk van certificaat de waarde die wordt weergegeven is.
->Zie voor meer informatie over het coderen van referenties in het MOF-bestanden van DSC-configuratie [beveiligen van het MOF-bestand](secureMOF.md).
+
+> [!NOTE]
+> In dit voorbeeld wordt ervan uitgegaan dat u hebt een geldig certificaat op `C:\publicKeys\targetNode.cer`, en dat de vingerafdruk van certificaat de waarde die wordt weergegeven is.
+> Zie voor meer informatie over het versleutelen van de referenties in MOF-bestanden voor DSC-configuratie [beveiligen van het MOF-bestand](secureMOF.md).

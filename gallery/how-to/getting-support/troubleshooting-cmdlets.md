@@ -3,21 +3,21 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Cmdlets voor het oplossen van problemen
-ms.openlocfilehash: e8890cb6bbe661b8524d83cabf91483acbde8095
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c0a1fbcafd8c4443dc9d628c54c4c525d9701861
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219824"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892471"
 ---
 # <a name="troubleshooting-cmdlets"></a>Cmdlets voor het oplossen van problemen
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Het oplossen van ' Waarschuwing: pakket de pakketnaam kan niet worden gedownload ' probleem?
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Over het oplossen van ' Waarschuwing: kan het pakket 'uw pakket name' niet downloaden "probleem
 
-Het is bekend dat Install-Module of Update soms op sommige computers mislukt.
+Dit apparaat gerapporteerd die `Install-Module` of `Update-Module` soms op sommige computers mislukt.
 Op basis van ons onderzoek, is het iets te maken met de netwerkverbinding.
-Onlangs is bijgewerkt NuGet provider zodat het op betrouwbare wijze pakketten kan downloaden.
-U kunt de laatste build van NuGet-provider installeren en vervolgens installeren of bijwerken van de module in onderstaande instructies volgen.
+Onlangs bijgewerkt we NuGet-provider zodat deze op betrouwbare wijze pakketten kan downloaden.
+U kunt de meest recente versie van NuGet-provider installeren en vervolgens installeren of bijwerken van uw module in onderstaande instructies volgen.
 We gaan 'Azure'-module gebruiken als het onderstaande voorbeeld.
 
 ```powershell

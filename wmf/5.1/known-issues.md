@@ -3,47 +3,52 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.1
-ms.openlocfilehash: d53031bea978087c68fcb22989c7cd2e2cf2d9fa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219450"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892134"
 ---
-# <a name="known-issues-in-wmf-51"></a>Bekende problemen in WMF 5.1 #
+# <a name="known-issues-in-wmf-51"></a>Bekende problemen in WMF 5.1
 
-> Opmerking: Deze informatie kan worden gewijzigd.
+> [!Note]
+> Deze informatie kan worden gewijzigd.
 
-## <a name="starting-powershell-shortcut-as-administrator"></a>Snelkoppeling PowerShell als beheerder vanaf
-Bij het installeren van WMF als u probeert te start PowerShell als beheerder van de snelkoppeling mogelijk dat u een bericht 'Onbekende fout'.
-Open de snelkoppeling als niet-beheerders en de snelkoppeling werkt nu zelfs als administrator.
+## <a name="starting-powershell-shortcut-as-administrator"></a>PowerShell-snelkoppeling starten als beheerder
+
+Bij de installatie van WMF, als u probeert te start PowerShell als beheerder van de snelkoppeling, krijgt u mogelijk een bericht 'Onbekende fout'.
+Opent u de snelkoppeling als niet-beheerder en de snelkoppeling werkt nu ook als administrator.
 
 ## <a name="pester"></a>Lastige
-In deze release zijn er twee problemen die u houden moet rekening wanneer u Pester op Nano Server:
 
-* Tests uitgevoerd tegen Pester zelf kan vanwege verschillen tussen volledige CLR en CORE CLR leiden tot een aantal fouten. In het bijzonder is de methode Validate niet beschikbaar op het type XmlDocument. Zes tests die proberen te valideren van het schema van de logboeken van de uitvoer NUnit bekend is mislukt.
-* Een Code dekking test momenteel mislukt, omdat de *WindowsFeature* DSC-Resource bestaat niet in de Nano Server. Deze fouten worden echter in het algemeen onschadelijk zijn en kunnen worden genegeerd.
+In deze release zijn er twee problemen die u houden moet rekening bij het gebruik van Pester op Nano Server:
+
+- Met het uitvoeren van tests in Pester zelf kan resulteren in fouten opgetreden vanwege verschillen tussen volledige CLR en CORE CLR. In het bijzonder is de methode valideren niet beschikbaar op het type XmlDocument. Zes tests die probeert te valideren van het schema van de logboeken van de uitvoer NUnit bekend is mislukt.
+- Een Code-dekking test op dit moment is mislukt omdat de *WindowsFeature* DSC-Resource bestaat niet in Nano Server. Deze fouten zijn echter in het algemeen goedaardige en kunnen veilig worden genegeerd.
 
 ## <a name="operation-validation"></a>Bewerking valideren
 
-* Help bijwerken is mislukt voor module Microsoft.PowerShell.Operation.Validation vanwege niet-werkende help-URI
+- `Update-Help` voor de module Microsoft.PowerShell.Operation.Validation vanwege niet-werkende help-URI is mislukt
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC nadat WMF verwijderen
-* Verwijderen van WMF verwijdert niet DSC MOF documenten uit de configuratiemap. DSC werkt niet correct als de MOF-documenten bevatten nieuwere eigenschappen die niet beschikbaar op de oudere systemen. Voer het volgende script in dit geval van PowerShell-console met verhoogde bevoegdheid voor opschonen van de DSC-statussen.
- ```powershell
+
+- WMF verwijderen, worden DSC MOF documenten niet verwijderd uit de configuratiemap. DSC goed niet als de MOF-documenten bevatten nieuwere-eigenschappen die niet beschikbaar op de oudere systemen zijn. In dit geval, voer het volgende script uit met verhoogde bevoegdheden PowerShell-console voor het opschonen van de DSC-statussen.
+
+  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof.checksum"
            )
-
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```
+  ```
 
 ## <a name="jea-virtual-accounts"></a>JEA virtuele Accounts
-JEA eindpunten en sessieconfiguraties geconfigureerd voor het gebruik van virtuele accounts in WMF 5.0 niet geconfigureerd voor gebruik van een virtueel account na de upgrade naar WMF 5.1.
-Dit betekent dat de opdrachten uitvoert in JEA-sessies wordt uitgevoerd onder de identiteit van de gebruiker verbinding maakt in plaats van een tijdelijke administrator-account mogelijk zo wordt voorkomen dat de gebruiker met opdrachten waarvoor verhoogde bevoegdheden vereist.
-Voor het herstellen van de virtuele accounts, moet u de registratie ongedaan maken en alle sessieconfiguraties die gebruikmaken van virtuele accounts opnieuw te registreren.
+
+JEA-eindpunten en sessieconfiguraties geconfigureerd voor het gebruik van virtuele accounts in WMF 5.0 wordt niet geconfigureerd voor het gebruik van een virtueel account na de upgrade naar WMF 5.1.
+Dit betekent dat opdrachten worden uitgevoerd in JEA-sessies worden uitgevoerd onder de identiteit van de gebruiker van de verbinding maakt in plaats van een tijdelijke administrator-account, mogelijk zo wordt voorkomen dat de gebruiker uitvoeren van opdrachten waarvoor verhoogde bevoegdheden.
+Als u de virtuele accounts herstellen, moet u de registratie ongedaan maken en alle sessieconfiguraties die gebruikmaken van virtuele accounts opnieuw te registreren.
 
 ```powershell
 # Find the JEA endpoint by its name

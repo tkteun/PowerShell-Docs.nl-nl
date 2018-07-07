@@ -1,67 +1,67 @@
-# <a name="using-visual-studio-code-for-powershell-development"></a>Met behulp van Visual Studio Code voor het ontwikkelen van PowerShell
+# <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
 Naast de [PowerShell ISE][ise], PowerShell wordt ook goed ondersteund in Visual Studio Code.
-Bovendien wordt de ISE niet ondersteund met PowerShell-kern wanneer Visual Studio Code wordt ondersteund voor PowerShell Core op alle platforms (Windows, Mac OS en Linux)
+Bovendien wordt de ISE niet ondersteund met PowerShell Core, terwijl de Visual Studio Code voor PowerShell Core wordt ondersteund op alle platformen (Windows, macOS en Linux)
 
-U kunt Visual Studio Code in Windows met PowerShell versie 5 met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) voor eerdere Windows-besturingssystemen (bijvoorbeeld Windows 8.1, enzovoort).
+U kunt Visual Studio Code op Windows met PowerShell versie 5 gebruiken met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) voor downlevel-Windows-OSs (bijvoorbeeld Windows 8.1, enzovoort).
 
-Voordat u begint het, Controleer of dat PowerShell bestaat op uw systeem.
-Zie voor moderne werkbelastingen op Windows-, Mac OS- en Linux:
+Voordat u begint met het, Controleer of dat PowerShell bestaat op uw systeem.
+Zie voor moderne workloads in Windows, macOS en Linux:
 
-- [PowerShell Core installeren op Linux][install-pscore-linux]
-- [PowerShell Core installeert op Mac OS][install-pscore-macos]
-- [PowerShell Core installeren in Windows][install-pscore-windows]
+- [PowerShell Core in Linux installeren][install-pscore-linux]
+- [PowerShell Core in macOS installeren][install-pscore-macos]
+- [PowerShell Core in Windows installeren][install-pscore-windows]
 
-Zie voor traditionele Windows PowerShell-werkbelastingen, [Windows PowerShell installeren][install-winps].
+Zie voor traditionele Windows PowerShell-workloads, [Windows PowerShell installeren][install-winps].
 
 ## <a name="editing-with-visual-studio-code"></a>Bewerken met Visual Studio Code
 
 ### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[1. Visual Studio Code installeren](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux**: Volg de instructies voor installatie op de [uitgevoerd tegenover Code op Linux](https://code.visualstudio.com/docs/setup/linux) pagina
+- **Linux**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op Linux](https://code.visualstudio.com/docs/setup/linux) pagina
 
-- **Mac OS**: Volg de instructies voor installatie op de [uitgevoerd tegenover Code op Mac OS](https://code.visualstudio.com/docs/setup/mac) pagina
+- **macOS**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op macOS](https://code.visualstudio.com/docs/setup/mac) pagina
 
-> [!IMPORTANT]
-> Op Mac OS, moet u OpenSSL voor de PowerShell-uitbreiding correct te laten werken.
-> De eenvoudigste manier om dit te bereiken is voor het installeren van [Homebrew](http://brew.sh/) en voer vervolgens `brew install openssl`.
-> VS-Code kunt nu laden de de PowerShell-extensie is.
+  > [!IMPORTANT]
+  > Op Mac OS, moet u OpenSSL voor de extensie van PowerShell correct te laten werken.
+  > De eenvoudigste manier om dit te doen is voor het installeren van [Homebrew](http://brew.sh/) en voer `brew install openssl`.
+  > VS Code kan nu laden de de PowerShell-extensie is.
 
-- **Windows**: Volg de instructies voor installatie op de [tegenover Code uitgevoerd op Windows](https://code.visualstudio.com/docs/setup/windows) pagina
+- **Windows**: Volg de instructies voor installatie op de [VS-Code wordt uitgevoerd op Windows](https://code.visualstudio.com/docs/setup/windows) pagina
 
-### <a name="2-installing-powershell-extension"></a>2. Installeren van PowerShell-extensie
+### <a name="2-installing-powershell-extension"></a>2. PowerShell-extensie installeren
 
-- Start de Visual Studio Code app door:
-    - **Windows**: typen `code` in uw PowerShell-sessie
-    - **Linux**: typen `code` in uw terminal
-    - **Mac OS**: typen `code` in uw terminal
+- Start Visual Studio Code app door:
+  - **Windows**: typen `code` in uw PowerShell-sessie
+  - **Linux**: typen `code` in uw terminal
+  - **macOS**: typen `code` in uw terminal
 
-- Start **snelle Open** door te drukken **Ctrl + P** (**Cmd + P** op Mac).
-- Typ in het vak snel openen `ext install powershell` en treffers **Enter**.
-- De **extensies** weergave wordt geopend op de zijmarge. Selecteer de PowerShell-uitbreiding van Microsoft.
-  Ziet er ongeveer zoals hieronder:
+- Start **snel openen** door te drukken **Ctrl + P** (**Cmd + P** op Mac).
+- Typ in snel openen `ext install powershell` en klik op **Enter**.
+- De **extensies** weergave geopend op de zijbalk. Selecteer de PowerShell-uitbreiding van Microsoft.
+  U zou iets moet zien zoals hieronder:
 
   ![VSCode](../../images/vscode.png)
 
 - Klik op de **installeren** knop van de PowerShell-extensie van Microsoft.
-- Na de installatie ziet u de **installeren** knop verandert in **opnieuw laden**.
+- Na de installatie, ziet u de **installeren** knop verandert in **opnieuw laden**.
   Klik op **opnieuw laden**.
-- Nadat Visual Studio Code opnieuw laden heeft, bent u klaar om te bewerken.
+- Nadat Visual Studio Code opnieuw laden is, bent u klaar voor het bewerken van.
 
-Bijvoorbeeld voor het maken van een nieuw bestand, klikt u op **File -> nieuw**.
-Als u wilt opslaan, klikt u op **File -> Opslaan** en geef vervolgens een bestandsnaam, gaan we spreek `HelloWorld.ps1`.
-U sluit het bestand, klik op 'x' naast de bestandsnaam.
-Om af te sluiten van Visual Studio Code **File -> afsluiten**.
+Bijvoorbeeld, als u wilt een nieuw bestand maken, klikt u op **File -> New**.
+Als u wilt opslaan, klikt u op **File -> Opslaan** en geef vervolgens een bestandsnaam op, laten we zeggen `HelloWorld.ps1`.
+U sluit het bestand, klikt u op 'x' naast de bestandsnaam van het.
+Om af te sluiten van Visual Studio Code, **File -> afsluiten**.
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Een specifieke geïnstalleerde versie van PowerShell
+#### <a name="using-a-specific-installed-version-of-powershell"></a>Met behulp van een specifieke versie van PowerShell
 
-Als u een specifieke installatie van PowerShell gebruiken met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand van de gebruiker-instellingen.
+Als u gebruiken van een specifieke installatie van PowerShell met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand met gebruiker instellingen.
 
-1. Klik op **File-Voorkeuren > Instellingen ->**
-1. Twee deelvensters van de editor worden weergegeven.
-   In het deelvenster van de meest rechtse (`settings.json`), voeg de onderstaande instelling geschikt is voor uw besturingssysteem ergens tussen de twee accolades (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:
+1. Klik op **File -> Voorkeuren >-instellingen**
+2. Twee deelvensters van de rapporteditor worden weergegeven.
+   In het deelvenster uiterst rechts (`settings.json`), invoegen van de instelling van de onderstaande geschikt is voor uw besturingssysteem ergens tussen de twee gekrulde haken (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:
 
-  ```json
+   ```json
     // On Windows:
     "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
 
@@ -70,15 +70,16 @@ Als u een specifieke installatie van PowerShell gebruiken met Visual Studio Code
 
     // On macOS:
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-  ```
-1. Vervangt de instelling met het pad naar het gewenste uitvoerbare PowerShell
-1. Sla het instellingenbestand en Visual Studio Code opnieuw starten
+   ```
+
+3. De instelling vervangen door het pad naar de gewenste uitvoerbare PowerShell
+4. Het bestand met instellingen opslaan en opnieuw opstarten van Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Configuratie-instellingen voor Visual Studio Code
 
 U kunt configuratie-instellingen in toevoegen met behulp van de stappen in de vorige alinea `settings.json`.
 
-U wordt aangeraden de volgende configuratieinstellingen voor Visual Studio Code:
+U wordt aangeraden de volgende configuratie-instellingen voor Visual Studio Code:
 
 ```json
 {
@@ -90,41 +91,41 @@ U wordt aangeraden de volgende configuratieinstellingen voor Visual Studio Code:
 }
 ```
 
-## <a name="debugging-with-visual-studio-code"></a>Foutopsporing met Visual Studio Code
+## <a name="debugging-with-visual-studio-code"></a>Fouten opsporen met Visual Studio Code
 
-### <a name="no-workspace-debugging"></a>Er is geen werkruimte foutopsporing
+### <a name="no-workspace-debugging"></a>Geen werkruimte foutopsporing
 
-Vanaf versie van Visual Studio Code 1,9 kunt u PowerShell-scripts zonder te openen van de map met het PowerShell-script voor foutopsporing.
-Gewoon openen met de PowerShell-scriptbestand **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk op F5 foutopsporing te starten.
-Hier ziet u het actiedeelvenster voor foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing te verdelen.
+Vanaf versie van Visual Studio Code 1.9 kunt u PowerShell-scripts fouten opsporen zonder te open de map met het PowerShell-script.
+Open gewoon de PowerShell-scriptbestand met **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk vervolgens op F5 foutopsporing te starten.
+U ziet het actiedeelvenster van foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing opsplitsen.
 
-### <a name="workspace-debugging"></a>Werkruimte foutopsporing
+### <a name="workspace-debugging"></a>Werkruimte-foutopsporing
 
-Werkruimte foutopsporing verwijst naar het opsporen van fouten in de context van een map die u hebt geopend in met behulp van Visual Studio Code **map openen...**  van de **bestand** menu.
-De map die u opent is meestal de projectmap PowerShell en/of de hoofdmap van de Git-opslagplaats.
+Werkruimte foutopsporing verwijst naar het opsporen van fouten in de context van een map die u hebt geopend in Visual Studio Code met behulp van **map openen...**  uit de **bestand** menu.
+De map die u opent is meestal de projectmap op PowerShell en/of de hoofdmap van de Git-opslagplaats.
 
-U kunt zelfs in deze modus starten foutopsporing van het momenteel geselecteerde PowerShell-script door op F5 te drukken.
-Echter, kunt u voor het definiëren van configuraties met meerdere foutopsporing dan alleen het geopende bestand foutopsporing werkruimte foutopsporing.
-U kunt bijvoorbeeld een configuraties toevoegen:
+Zelfs in deze modus kunt u beginnen met het opsporen van fouten in de momenteel geselecteerde PowerShell-script door op F5 te drukken.
+Echter, kunt u definiëren configuraties met meerdere foutopsporing dan alleen opsporen van fouten in het geopende bestand werkruimte foutopsporing.
+U kunt bijvoorbeeld een configuraties die u kunt toevoegen:
 
-- Pester tests in de foutopsporing starten
-- Een specifiek bestand met argumenten in het foutopsporingsprogramma starten
-- Een interactieve sessie in de foutopsporing starten
+- Pester tests in het foutopsporingsprogramma Start
+- Een specifiek bestand met argumenten in het foutopsporingsprogramma Start
+- Een interactieve sessie in het foutopsporingsprogramma Start
 - Het foutopsporingsprogramma koppelen aan een hostproces van PowerShell
 
-Volg deze stappen om uw configuratiebestand foutopsporing te maken:
+  Volg deze stappen om uw debug-configuratiebestand te maken:
 
-1. Open de **Debug** weergeven door te drukken **Ctrl + Shift + D** (**Cmd + Shift + D** op Mac).
-1. Druk op de **configureren** tandwielpictogram-pictogram op de werkbalk.
-1. Visual Studio Code wordt u gevraagd te **omgeving Selecteer**.
-   Kies **PowerShell**.
+  1. Open de **Debug** weergeven door te drukken **Ctrl + Shift + D** (**Cmd + Shift + D** op Mac).
+  2. Druk op de **configureren** tandwielpictogram in de werkbalk.
+  3. U wordt gevraagd om Visual Studio Code **omgeving selecteert**.
+  Kies **PowerShell**.
 
-   Als u dit doet, Visual Studio Code een map en een bestand '.vscode\launch.json' gemaakt in de hoofdmap van uw werkruimtemap.
-   Hier wordt de configuratie van de foutopsporing is opgeslagen. Als de bestanden zich in een Git-opslagplaats, wilt u waarschijnlijk het bestand launch.json doorvoeren.
-   De inhoud van het bestand launch.json zijn:
+  Als u dit doet, maakt Visual Studio Code een map en een bestand '.vscode\launch.json' in de hoofdmap van de werkruimtemap van uw.
+  Dit is waar uw debug-configuratie is opgeslagen. Als de bestanden zich in een Git-opslagplaats, wilt u meestal het bestand launch.json doorvoeren.
+  De inhoud van het bestand launch.json zijn:
 
-```json
-{
+  ```json
+  {
     "version": "0.2.0",
     "configurations": [
         {
@@ -149,25 +150,27 @@ Volg deze stappen om uw configuratiebestand foutopsporing te maken:
             "cwd": "${workspaceRoot}"
         }
     ]
-}
-```
+  }
+  ```
 
-Hiermee wordt de algemene scenario's voor foutopsporing.
-Echter, als u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.
-U kunt drukt u op deze knop om meer PowerShell foutopsporing configuraties toevoegt. Een handige configuratie om toe te voegen is **PowerShell: Script starten**.
-Met deze configuratie kunt u een specifiek bestand met optionele argumenten die moet worden gestart telkens wanneer u op F5 drukken ongeacht welk bestand is momenteel actief zijn in de editor.
+  Hiermee wordt de algemene scenario's voor foutopsporing.
+  Echter, als u dit bestand in de editor opent, ziet u een **configuratie toevoegen...**  knop.
+  U drukt op deze knop om toe te voegen meer PowerShell-configuraties voor foutopsporing. Een handige configuratie toe te voegen is **PowerShell: Script Start**.
+  Met deze configuratie kunt u een specifiek bestand met optionele argumenten die moet worden gestart wanneer u op F5 drukt ongeacht welk bestand is momenteel actief zijn in de editor.
 
-Wanneer de configuratie van de foutopsporing is gemaakt, kunt u selecteren welke configuratie u gebruiken tijdens een foutopsporingssessie voor wilt door een te selecteren in de configuratie van de foutopsporing vervolgkeuzelijst in de **Debug** van weergave-werkbalk.
+  Zodra de configuratie van de foutopsporing tot stand is gebracht, kunt u selecteren welke configuratie u gebruiken tijdens een foutopsporingssessie wilt door het selecteren van een van de configuratie van de foutopsporing vervolgkeuzelijst in de **Debug** van weergave-werkbalk.
 
-Er zijn enkele blogs die mogelijk nuttig om aan de slag met PowerShell-extensie voor Visual Studio Code te gaan
+  Er zijn een paar blogs die mogelijk nuttig zijn om aan de slag met PowerShell-extensie voor Visual Studio Code
 
-- Visual Studio Code: [PowerShell-uitbreiding][ps-extension]
-- [Schrijven en foutopsporing van PowerShell-scripts in Visual Studio Code][debug]
-- [Foutopsporing van Visual Studio Code richtlijnen][vscode-guide]
-- [Foutopsporing van PowerShell in Visual Studio Code][ps-vscode]
+Visual Studio Code:
+
+- [Extensie van PowerShell][ps-extension]
+- [Schrijf en fouten opsporen in PowerShell-scripts in Visual Studio Code][debug]
+- [Foutopsporing van Visual Studio Code-richtlijnen][vscode-guide]
+- [Foutopsporing in PowerShell in Visual Studio Code][ps-vscode]
 - [Aan de slag met PowerShell-ontwikkeling in Visual Studio Code][getting-started]
-- [Visual Studio Code bewerkingsfuncties voor PowerShell-ontwikkeling: deel 1][editing-part1]
-- [Visual Studio Code bewerkingsfuncties voor PowerShell ontwikkeling – deel 2][editing-part2]
+- [Visual Studio Code bewerken van functies voor het ontwikkelen van PowerShell-deel 1][editing-part1]
+- [Visual Studio Code bewerken van functies voor het ontwikkelen van PowerShell-deel 2][editing-part2]
 - [PowerShell-script voor foutopsporing in Visual Studio Code – deel 1][debugging-part1]
 - [PowerShell-script voor foutopsporing in Visual Studio Code – deel 2][debugging-part2]
 
@@ -176,16 +179,16 @@ Er zijn enkele blogs die mogelijk nuttig om aan de slag met PowerShell-extensie 
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
-[ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/
-[ps-vscode]:https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]:https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
+[ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
 ## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-extensie voor Visual Studio Code
 
-Broncode van de PowerShell-uitbreiding kunt u vinden op [GitHub](https://github.com/PowerShell/vscode-powershell).
+De broncode van de PowerShell-extensie kunt u vinden op [GitHub](https://github.com/PowerShell/vscode-powershell).

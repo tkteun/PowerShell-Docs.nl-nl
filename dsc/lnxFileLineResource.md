@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: DSC voor Linux nxFileLine Resource
-ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: DSC voor Linux nxFileLine-Resource
+ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219630"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893294"
 ---
-# <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine Resource
+# <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine-Resource
 
-De **nxFileLine** in PowerShell Desired State Configuration (DSC)-bron biedt een mechanisme op voor het beheren van de regels in een configuratiebestand op een Linux-knooppunt.
+De **nxFileLine** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme op voor het beheren van de regels in een configuratiebestand op een Linux-knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -30,17 +30,17 @@ nxFileLine <string> #ResourceName
 
 |  Eigenschap |  Beschrijving |
 |---|---|
-| filePath| Het volledige pad naar het bestand om regels in in het doelknooppunt te beheren.|
-| ContainsLine| Een regel om ervoor te zorgen bestaat in het bestand. Deze regel wordt toegevoegd aan het bestand als deze niet in het bestand bestaat nog. **ContainsLine** is verplicht, maar kan worden ingesteld op een lege tekenreeks ('ContainsLine = ''') als deze niet nodig is.|
-| DoesNotContainPattern| Een reguliere-expressiepatroon voor regels die niet in het bestand moet bestaan. Voor alle regels die zijn opgenomen in het bestand die overeenkomen met de reguliere expressie, wordt de regel wordt verwijderd uit het bestand.|
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| FilePath| Het volledige pad naar het bestand om regels in op het doelknooppunt te beheren.|
+| ContainsLine| Een regel om ervoor te zorgen bestaat in het bestand. Deze regel wordt toegevoegd aan het bestand als deze niet in het bestand bestaat. **ContainsLine** is verplicht, maar kan worden ingesteld op een lege tekenreeks (`ContainsLine = ""`) als deze niet nodig is.|
+| DoesNotContainPattern| Een reguliere-expressiepatroon voor regels die niet in het bestand moet bestaan. Voor alle regels die zijn opgenomen in het bestand die overeenkomen met deze reguliere expressie, wordt de regel wordt verwijderd uit het bestand.|
+| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld wordt met behulp van de **nxFileLine** resource voor het configureren van de `/etc/sudoers` -bestand, zorgt u ervoor dat de gebruiker: monuser niet requiretty is geconfigureerd.
+In dit voorbeeld wordt met behulp van de **nxFileLine** resource die u wilt configureren van de `/etc/sudoers` -bestand, ervoor zorgen dat de gebruiker: monuser is geconfigureerd voor het niet requiretty.
 
-```
-Import-DSCResource -Module nx
+```powershell
+Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {

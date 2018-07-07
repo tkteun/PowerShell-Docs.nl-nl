@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: De ResourceSet-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 0c9c1d33117067d76d61036d5839f0b676eb4a97
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2712b7ff0a19e643c1f343d436c084f8970c9dd4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219613"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892097"
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>De ResourceSet-methode van de klasse MSFT_DSCLocalConfigurationManager
 
 Rechtstreeks roept de **ingesteld** methode van een DSC-resource.
 
-<a name="syntax"></a>Syntaxis
-------
+## <a name="syntax"></a>Syntaxis
 
 ```mof
 uint32 ResourceSet(
@@ -25,34 +24,30 @@ uint32 ResourceSet(
 );
 ```
 
-<a name="parameters"></a>Parameters
-----------
+## <a name="parameters"></a>Parameters
 
-*ResourceType* \[in\] de naam van de bron aan te roepen.
+*ResourceType* \[in\] de naam van de resource om aan te roepen.
 
-*Modulenaam* \[in\] de naam van de module met de bron aan te roepen.
+*ModuleName* \[in\] de naam van de module met de resource om aan te roepen.
 
-*resourceProperty* \[in\] specificeert de naam van de resource-eigenschap en de waarde in een hashtabel als sleutel en waarde, respectievelijk. Gebruik de [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet voor het detecteren van de resource-eigenschappen en hun typen.
+*resourceProperty* \[in\] Hiermee geeft u de naam van de resource-eigenschap en de waarde ervan in een hash-tabel als de sleutel en waarde, respectievelijk. Gebruik de [sleutelwoorden Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet voor het detecteren van resource-eigenschappen en het bijhorende type.
 
-*RebootRequired* \[uit\] op return deze eigenschap is ingesteld op **true** als het doelknooppunt moet opnieuw worden opgestart.
+*RebootRequired* \[uit\] bij resultaat, deze eigenschap is ingesteld op **waar** als het doelknooppunt moet opnieuw worden opgestart.
 
 ## <a name="return-value"></a>Retourwaarde
-------------
 
-Retourneert nul geslaagd; Anders retourneert een foutcode.
+Retourneert nul op succes; Anders retourneert een foutcode.
 
 ## <a name="remarks"></a>Opmerkingen
 
 Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -3,29 +3,32 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Uitvoeren van de bootstrap NuGet
-ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a935b6862f3912a4b419ca00b4d4dd5aab9c20fc
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221796"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892698"
 ---
-# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>De NuGet-provider en NuGet.exe bootstrap
+# <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Het NuGet-provider en NuGet.exe opstarten
 
 NuGet.exe is niet opgenomen in de meest recente NuGet-provider.
 Publiceren voor bewerkingen van een module of een script, PowerShellGet de binaire uitvoerbare NuGet.exe vereist.
 Alleen de NuGet-provider vereist voor alle andere bewerkingen is, inclusief *vinden*, *installeren*, *opslaan*, en *verwijderen*.
-PowerShellGet bevat de logica voor het afhandelen van hetzij een gecombineerde bootstrap van de NuGet-provider en NuGet.exe of bootstrap van alleen de NuGet-provider.
-In beide gevallen wordt moet alleen een enkel bericht plaatsvinden.
-Als de machine niet is verbonden met Internet, moet de gebruiker of beheerder een vertrouwde instantie van de NuGet-provider en/of het bestand NuGet.exe kopiëren naar de niet-verbonden computer.
+PowerShellGet, bevat de logica voor het afhandelen van ofwel een gecombineerde bootstrap van het NuGet-provider en NuGet.exe of bootstrap van alleen de NuGet-provider.
+In beide gevallen moet alleen een enkel bericht moet worden uitgevoerd.
+Als de machine niet is verbonden met Internet, moet de gebruiker of beheerder een vertrouwde instantie van de NuGet-provider en/of het bestand NuGet.exe kopiëren naar de niet-verbonden machine.
 
->**Opmerking**: vanaf versie 6, de NuGet-provider is opgenomen in de installatie van PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> [!NOTE]
+> Vanaf versie 6, is het NuGet-provider opgenomen in de installatie van PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
-## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Fout bij het oplossen van wanneer de NuGet-provider is niet geïnstalleerd op een computer waarop Internet is aangesloten
+## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Het oplossen van de fout als de NuGet-provider is niet geïnstalleerd op een computer die Internet is verbonden
 
 ```powershell
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -37,9 +40,13 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Find-Module], InvalidOperationException
    + FullyQualifiedErrorId : CouldNotInstallNuGetProvider,Find-Module
+```
 
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+```powershell
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -52,11 +59,13 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     PSGallery        Contoso module
 ```
 
-## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>Fout bij het oplossen van wanneer de provider NuGet beschikbaar is en NuGet.exe is niet beschikbaar tijdens het publiceren op een computer waarop Internet is aangesloten
+## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>Fout bij het oplossen van wanneer vindt u het NuGet-provider en NuGet.exe is niet beschikbaar tijdens het publiceren op een computer die is Internet verbonden
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -67,8 +76,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetExe,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -76,11 +90,13 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>Fout bij het oplossen van wanneer zowel NuGet-provider en NuGet.exe zijn niet beschikbaar tijdens het publiceren op een computer waarop Internet is aangesloten
+## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>Het oplossen van fout wanneer zowel NuGet-provider en NuGet.exe zijn niet beschikbaar tijdens het publiceren op een computer die Internet is verbonden
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -92,8 +108,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetBinaries,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -102,62 +123,64 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>De NuGet-provider op een computer die niet is verbonden met Internet handmatig uitvoeren van de bootstrap
+## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>Handmatig opstarten de NuGet-provider op een computer die niet is verbonden met Internet
 
-De processen aangetoond dat hierboven wordt ervan uitgegaan dat de computer is verbonden met Internet en bestanden kan downloaden vanaf een openbaar toegankelijke locatie.
-Als dat niet mogelijk is, is de enige optie bootstrap van een machine met behulp van de bovenstaande processen en de provider handmatig kopiëren naar het geïsoleerde knooppunt via een vertrouwde offlineproces.
-De meest voorkomende gebruiksvoorbeeld voor dit scenario is wanneer een persoonlijke galerie beschikbaar ter ondersteuning van een geïsoleerde omgeving.
+De processen aangetoond dat hierboven wordt ervan uitgegaan dat de machine is verbonden met Internet en bestanden kan downloaden vanaf een openbare locatie.
+Als dat niet mogelijk is, is de enige optie bootstrap-een virtuele machine met de bovenstaande processen en de provider handmatig kopiëren naar het geïsoleerde knooppunt via een offlineproces vertrouwd.
+De meest voorkomende use-case voor dit scenario is wanneer een privégalerie beschikbaar voor ondersteuning van een geïsoleerde omgeving.
 
-Nadat u het proces hierboven voor een Internet verbonden machine bootstrap, vindt u provider-bestanden in de locatie:
+Nadat u het proces dat hierboven is een Internet verbonden virtuele machine opstarten, vindt u bestanden van de provider op de locatie:
 
 ```
 C:\Program Files\PackageManagement\ProviderAssemblies\
 ```
 
-De map/bestand structuur van de NuGet-provider zijn (mogelijk met een andere versienummer):
-
-NuGet<br>
---2.8.5.208<br>
----Microsoft.PackageManagement.NuGetProvider.dll
-
-Kopieer deze mappen en het bestand met een vertrouwd proces op de virtuele machines offline.
-
-## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>Bewerkingen op een machine die niet is verbonden met Internet NuGet.exe ter ondersteuning van handmatig uitvoeren van de bootstrap publiceren
-
-Naast het proces van de provider NuGet handmatig bootstrap als de computer wordt gebruikt voor het publiceren van modules of scripts in een persoonlijke galerie met de *publiceren-Module* of *publiceren Script* -cmdlets het NuGet.exe binaire uitvoerbare bestand is vereist.
-De meest voorkomende gebruiksvoorbeeld voor dit scenario is wanneer een persoonlijke galerie beschikbaar ter ondersteuning van een geïsoleerde omgeving.
-Er zijn twee opties om op te halen van het bestand NuGet.exe.
-
-Een mogelijkheid is het bootstrap van een machine die is verbonden met Internet en kopieer de bestanden naar de offline-machines met een vertrouwd proces.
-Na het uitvoeren van de bootstrap de Internet verbonden machine, zich het binaire NuGet.exe bevindt in een van twee mappen:
-
-Als de *publiceren-Module* of *publiceren Script* cmdlets zijn uitgevoerd met verhoogde machtigingen (als een Administrator):
+De structuur van de map/bestand van het NuGet-provider zijn (eventueel met een andere versie getal):
 
 ```
+NuGet
+--2.8.5.208
+----Microsoft.PackageManagement.NuGetProvider.dll
+```
+
+Kopieer deze mappen en het bestand met behulp van een vertrouwd proces op de offline virtuele machines.
+
+## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>Handmatig opstarten NuGet.exe ter ondersteuning van bewerkingen op een computer die niet is verbonden met Internet publiceren
+
+Naast het proces handmatig opstarten van het NuGet-provider als de machine wordt gebruikt om modules of scripts publiceren naar een privégalerie met de `Publish-Module` of `Publish-Script` cmdlets, het NuGet.exe binaire uitvoerbare bestand is vereist.
+
+De meest voorkomende use-case voor dit scenario is wanneer een privégalerie beschikbaar voor ondersteuning van een geïsoleerde omgeving.
+Er zijn twee opties voor het bestand NuGet.exe verkrijgen.
+
+Een optie is het bootstrap-een virtuele machine die is verbonden met Internet en kopieer de bestanden naar de offline-machines met behulp van een vertrouwd proces.
+Na het opstarten van het Internet verbonden machine, worden de binaire NuGet.exe worden geplaatst in een van twee mappen:
+
+Als de `Publish-Module` of `Publish-Script` cmdlets zijn uitgevoerd met verhoogde bevoegdheden (als beheerder):
+
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-Als de cmdlets zijn uitgevoerd als een gebruiker zonder verhoogde machtigingen:
+Als de cmdlets zijn uitgevoerd als een gebruiker zonder verhoogde bevoegdheden:
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Er is een tweede optie NuGet.exe downloaden van de website NuGet.Org: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
-Als u een Nuget-versie voor productiemachines, zorg ervoor dat deze later is dan 2.8.5.208 en identificeren van de versie die zijn gelabeld 'aanbevolen'.
-Vergeet niet om de blokkering van het bestand als het is gedownload via een browser te.
-Dit kan worden uitgevoerd met behulp van de *blokkering bestand* cmdlet.
+Een tweede optie is om NuGet.exe downloaden van de website NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) bij het selecteren van een Nuget-versie voor productiemachines, zorgt ervoor dat deze later zijn dan 2.8.5.208 en identificeren van de versie die is is met het label " aanbevolen'.
+Vergeet niet om de blokkering van het bestand als deze is gedownload met behulp van een browser.
+Dit kan worden uitgevoerd met behulp van de `Unblock-File` cmdlet.
 
-In beide gevallen wordt het bestand NuGet.exe kan worden gekopieerd naar een locatie in *$env: pad*, maar de standaardlocaties zijn:
+In beide gevallen moet het bestand NuGet.exe kan worden gekopieerd naar een locatie in `$env:path`, maar de standaard locaties zijn:
 
-Het uitvoerbare bestand om beschikbaar te maken zodat alle gebruikers kunnen gebruiken *publiceren-Module* en *publiceren Script* cmdlets:
+Het uitvoerbare bestand om beschikbaar te maken zodat alle gebruikers kunnen gebruiken `Publish-Module` en `Publish-Script` cmdlets:
 
-```
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-Als u het uitvoerbare bestand voor een specifieke gebruiker, kopiëren naar de locatie binnen alleen die gebruiker profiel:
+Als u het uitvoerbare bestand op een specifieke gebruiker, kopiëren naar de locatie binnen van die gebruiker-profiel:
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
