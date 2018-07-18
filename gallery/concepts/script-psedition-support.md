@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
-title: Script met compatibel PowerShell-edities
-ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Script met compatibele PowerShell-edities
+ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219246"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093657"
 ---
-# <a name="script-with-compatible-powershell-editions"></a>Script met compatibel PowerShell-edities
+# <a name="script-with-compatible-powershell-editions"></a>Script met compatibele PowerShell-edities
 
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
@@ -52,20 +52,18 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-PowerShell Gallery gebruikers kunnen de lijst met scripts die worden ondersteund op een specifieke editie van PowerShell vinden.
-Scripts zonder PSEdition_Desktop en PSEditon_Core worden beschouwd als te werken in PowerShell Desktop-edities.
+Gebruikers van de PowerShell Gallery vindt de lijst met scripts die worden ondersteund op een specifieke editie van PowerShell.
+Scripts zonder PSEdition_Desktop en PSEditon_Core worden beschouwd als goed werken op het bureaublad van de PowerShell-edities.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
-## <a name="more-details"></a>meer informatie
+## <a name="more-details"></a>Meer informatie
 
 - [Modules met PSEditions](module-psedition-support.md)
-- [Ondersteuning voor PSEditions op PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-items/searching-by-psedition.md)

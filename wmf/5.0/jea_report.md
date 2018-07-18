@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218719"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093759"
 ---
 # <a name="reporting-on-jea"></a>Rapportage over JEA
-Om te rapporteren over de status van de configuratie van uw JEA, kunt u het volgende gebruiken:
-1.  **Get-PSSessionConfiguration** geregistreerd om te retourneren van een lijst met alle eindpunten op een bepaalde computer.
-2.  **Get-PSSessionCapability** om te rapporteren over de mogelijkheden voor een bepaalde gebruiker op een specifieke eindpunt heeft.
+
+Als u wilt rapporteren over de status van de JEA-configuratie, kunt u het volgende gebruiken:
+
+1. **Get-PSSessionConfiguration** geregistreerd om terug te keren een lijst van alle eindpunten op een bepaalde computer.
+1. **Get-PSSessionCapability** om te rapporteren over de mogelijkheden voor een bepaalde gebruiker is op een bepaald eindpunt.
 
 Hier volgt een voorbeeld van **Get-PSSessionCapability**:
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,10 +38,8 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
-Om te rapporteren over de _acties_ gebruikers tijdens een sessie JEA duurde, kunt u:
-1. Schakel de transcripties 'failover-de-schouder' voor dat eindpunt JEA en raadpleegt u de map met de tekst voor een volledige logboek van acties van elke gebruiker
+Om te rapporteren over de _acties_ gebruikers duurde tijdens een JEA-sessie, kunt u:
+1. De "over-the-schouder" Transcripten voor dat JEA-eindpunt inschakelen en raadpleegt u de map transcript voor een volledige logboek van acties van elke gebruiker
 2. PowerShell-module logboekregistratie inschakelen en controleren van de PowerShell-gebeurtenislogboeken.

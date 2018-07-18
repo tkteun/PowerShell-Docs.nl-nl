@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: DSC-Resource voor register
-ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: DSC-Registerresource
+ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188697"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093582"
 ---
-# <a name="dsc-registry-resource"></a>DSC-Resource voor register
+# <a name="dsc-registry-resource"></a>DSC-Registerresource
 
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-De **register** in Windows PowerShell Desired State Configuration (DSC)-bron biedt een mechanisme voor het beheren van registersleutels en -waarden in een doelknooppunt.
+De **register** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van registersleutels en -waarden op een doelknooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -32,35 +32,22 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschappen
+
 |  Eigenschap  |  Beschrijving   |
 |---|---|
-| Toets| Geeft het pad van de registersleutel waarvoor u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
-| Waardenaam| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks ook specificeren ValueType of Waardegegevens.|
-| Zorg ervoor dat| Hiermee wordt aangegeven als de sleutel en waarde bestaan. Om ervoor te zorgen dat ze doen, stel deze eigenschap in op 'Aanwezig'. Om ervoor te zorgen dat ze niet bestaat, de eigenschap instellen op 'Afwezig'. De standaardwaarde is 'Aanwezig'.|
-| Force| Als de opgegeven registersleutel aanwezig is, __Force__ overschreven met de nieuwe waarde. Als een registersleutel met subsleutels verwijdert, moet dit __$true__|
-| Hex| Hiermee wordt aangegeven als gegevens zullen worden uitgedrukt in hexadecimale notatie. Als u opgeeft, wordt de waardegegevens DWORD/QWORD is opgenomen in hexadecimale notatie. Niet geldig voor andere typen. De standaardwaarde is __$false__.|
-| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| Waardegegevens| De gegevens voor de registerwaarde.|
-| ValueType| Geeft het type van de waarde. De ondersteunde typen zijn:
-<ul><li>Tekenreeks (REG_SZ)</li>
-
-
-<li>Binair (REG-BINARY)</li>
-
-
-<li>DWORD 32-bits (REG_DWORD)</li>
-
-
-<li>Qword 64-bits (REG_QWORD)</li>
-
-
-<li>Met meerdere tekenreeksen (REG_MULTI_SZ)</li>
-
-
-<li>Uit te breiden tekenreeks (REG_EXPAND_SZ)</li></ul>
+| Toets| Geeft het pad van de registersleutel die u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
+| Waardenaam| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens op te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks tijdens het instellen van ook ValueType of Waardegegevens.|
+| Zorg ervoor dat| Geeft aan of de sleutel en waarde bestaan. Om ervoor te zorgen dat ze doen, stelt u deze eigenschap in 'Aanwezig'. Om ervoor te zorgen dat deze niet bestaan, de eigenschap instellen op 'Ontbreekt'. De standaardwaarde is 'Aanwezig'.|
+| Force| Als de opgegeven registersleutel aanwezig is, **Force** overschreven door de nieuwe waarde. Als een registersleutel met subsleutels verwijdert, moet dit **$true** |
+| Hexadecimaal| Hiermee wordt aangegeven als gegevens zullen worden uitgedrukt in hexadecimale notatie. Als u opgeeft, worden de gegevens van de DWORD-/ QWORD-waarde wordt weergegeven in hexadecimale notatie. Niet geldig voor andere typen. De standaardwaarde is **$false**.|
+| DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| Waardegegevens| De gegevens voor de waarde van het register.|
+| ValueType| Geeft het type van de waarde. De ondersteunde typen zijn: tekenreeks (REG_SZ), binair (REG-BINARY), DWORD-32-bits (REG_DWORD), Qword 64-bits (REG_QWORD), met meerdere tekenreeksen (REG_MULTI_SZ), uitbreidbare tekenreeks (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Voorbeeld
-In dit voorbeeld zorgt ervoor dat een sleutel met de naam 'ExampleKey' aanwezig is in de **HKEY\_lokale\_MACHINE** hive.
+
+In dit voorbeeld zorgt ervoor dat een sleutel met de naam "ExampleKey" aanwezig zijn in de **HKEY\_lokale\_MACHINE** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -74,5 +61,5 @@ Configuration RegistryTest
 }
 ```
 
->**Opmerking:** aanbrengen in een registerinstelling in de **HKEY\_huidige\_gebruiker** hive vereist dat de configuratie wordt uitgevoerd met gebruikersgegevens, in plaats van als het systeem.
->U kunt de **PsDscRunAsCredential** eigenschap gebruikersreferenties voor de configuratie opgeven. Zie voor een voorbeeld [DSC uitgevoerd met gebruikersgegevens](runAsUser.md)
+> [!NOTE]
+> Wijzigen van een instelling in het register in de **HKEY\_huidige\_gebruiker** hive vereist dat de configuratie wordt uitgevoerd met de referenties van gebruiker, in plaats van als het systeem. U kunt de **PsDscRunAsCredential** eigenschap om op te geven voor de configuratie van de gebruikersreferenties. Zie voor een voorbeeld [DSC uitvoeren met gebruikersreferenties](runAsUser.md).

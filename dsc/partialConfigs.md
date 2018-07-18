@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Gedeeltelijke configuraties van PowerShell Desired State Configuration
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892998"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093929"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Gedeeltelijke configuraties van PowerShell Desired State Configuration
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Naamgeving en het plaatsen van de van configuratiedocumenten op de pull-server (ConfigurationID)
 
-De documenten gedeeltelijke configuratie moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratiedocumenten moeten de naam als volgt: *ConfigurationName*. * ConfigurationID8`.mof`, waarbij *ConfigurationName* is de naam van de configuratie van de gedeeltelijke en *ConfigurationID* is de configuratie-ID is gedefinieerd in de LCM op het doelknooppunt. In ons voorbeeld moeten u als volgt de van configuratiedocumenten krijgen:
+De documenten gedeeltelijke configuratie moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in de `web.config` -bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratiedocumenten moeten de naam als volgt: _ConfigurationName_. * ConfigurationID8`.mof`, waarbij _ConfigurationName_ is de naam van de configuratie van de gedeeltelijke en _ConfigurationID_ is de configuratie-ID is gedefinieerd in de LCM op het doelknooppunt. In ons voorbeeld moeten u als volgt de van configuratiedocumenten krijgen:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>Voorbeeldconfiguratie SharePointConfig gedeeltelijk

@@ -4,12 +4,12 @@ keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893736"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094225"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ Deze cmdlet retourneert de autorisatie-regelobject.
 
 ### <a name="example-1"></a>VOORBEELD 1
 
-In dit voorbeeld verleent toegang tot de sessieconfiguratie *Pswaeindpunt*, een beperkte runspace op *srv2* voor gebruikers in de *SMAdmins* groep. \
-**Houd er rekening mee**: naam van de computer moet een volledig gekwalificeerde domeinnaam (FQDN). Beheerders definiëren voor een beperkte sessieconfiguratie of een runspace, dit is een beperkt aantal cmdlets en taken die eindgebruikers kunnen worden uitgevoerd. Een beperkte runspace te definiëren kan voorkomen dat gebruikers toegang tot andere computers die niet in de toegestane Windows PowerShell® runspace, dus firewallopties voor een beter beveiligde verbinding. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) of de [installeren en gebruik Windows PowerShell-webtoegang](../install-and-use-windows-powershell-web-access.md).
+In dit voorbeeld verleent toegang tot de sessieconfiguratie _Pswaeindpunt_, een beperkte runspace op _srv2_ voor gebruikers in de _SMAdmins_ groep.
+
+> [!NOTE]
+> Naam van de computer moet een volledig gekwalificeerde domeinnaam (FQDN). Beheerders definiëren voor een beperkte sessieconfiguratie of een runspace, dit is een beperkt aantal cmdlets en taken die eindgebruikers kunnen worden uitgevoerd. Een beperkte runspace te definiëren kan voorkomen dat gebruikers toegang tot andere computers die niet in de toegestane Windows PowerShell® runspace, dus firewallopties voor een beter beveiligde verbinding. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) of de [installeren en gebruik Windows PowerShell-webtoegang](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>VOORBEELD 6
 
 In dit voorbeeld kan alle gebruikers toegang tot alle eindpunten op alle computers.
-Hiermee schakelt u in feite uit autorisatieregels. \
-**Houd er rekening mee**: het gebruik van de `*` jokerteken wordt niet aanbevolen voor implementaties van de beveiliging van gevoelige en moet alleen worden beschouwd voor testomgevingen of wordt gebruikt in implementaties waarbij de beveiliging kan worden verminderd.
+Dit wordt in feite uitgeschakeld autorisatieregels.
+
+> [!NOTE]
+> Het gebruik van de `*` jokerteken wordt niet aanbevolen voor implementaties van de beveiliging van gevoelige en moet alleen worden beschouwd voor testomgevingen of wordt gebruikt in implementaties waarbij de beveiliging kan worden verminderd.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

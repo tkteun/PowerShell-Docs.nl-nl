@@ -58,8 +58,8 @@ Om af te sluiten van Visual Studio Code, **File -> afsluiten**.
 Als u gebruiken van een specifieke installatie van PowerShell met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand met gebruiker instellingen.
 
 1. Klik op **File -> Voorkeuren >-instellingen**
-2. Twee deelvensters van de rapporteditor worden weergegeven.
-   In het deelvenster uiterst rechts (`settings.json`), invoegen van de instelling van de onderstaande geschikt is voor uw besturingssysteem ergens tussen de twee gekrulde haken (`{` en `}`) en vervang *<version>* met de geïnstalleerde PowerShell-versie:
+1. Twee deelvensters van de rapporteditor worden weergegeven.
+   In het deelvenster uiterst rechts (`settings.json`), invoegen van de instelling van de onderstaande geschikt is voor uw besturingssysteem ergens tussen de twee gekrulde haken (`{` en `}`) en vervang **\<versie\>** met de geïnstalleerde versie van PowerShell:
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Als u gebruiken van een specifieke installatie van PowerShell met Visual Studio 
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. De instelling vervangen door het pad naar de gewenste uitvoerbare PowerShell
-4. Het bestand met instellingen opslaan en opnieuw opstarten van Visual Studio Code
+1. De instelling vervangen door het pad naar de gewenste uitvoerbare PowerShell
+1. Het bestand met instellingen opslaan en opnieuw opstarten van Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Configuratie-instellingen voor Visual Studio Code
 

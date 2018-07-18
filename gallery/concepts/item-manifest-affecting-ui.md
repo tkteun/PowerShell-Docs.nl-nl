@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Item manifest van de waarden die van invloed zijn op de UI van de PowerShell-galerie
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893474"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093970"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Item manifest van de waarden die van invloed zijn op de UI van de PowerShell-galerie
 
@@ -84,65 +84,67 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017.
 In sommige gevallen zijn vergelijkbaar, maar wellicht minder ideaal opties die worden weergegeven naast het label.
 Dit is een aanbevolen procedure om te gebruiken van de Tag bij voorkeur als die leiden tot minder ruis en betere zoekresultaten voor consumenten.
 
-| **Gewenste tag** | **Alternatieven en opmerkingen** |
+| Gewenste tag | Alternatieven en opmerkingen |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration minder wenselijk is, is te lang |
-| **ResourceManager** | ARM wordt gebruikt om te beschrijven van de groep van processors die zijn en mag niet worden gebruikt voor Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD wordt momenteel niet gebruikt door zelf  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Beveiliging** | Defense is minder nauwkeurig |
-| **Database** | Databases (meervoud) is minder wenselijk |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Implementatie** | Implementeer wat minder vaak wordt gebruikt |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | Testen is minder wenselijk |
-| **VersionControl** | Versie is minder nauwkeurig, hoewel er vaker gebruikt  |
-| **Logboekregistratie** | Voorkeur gebruik van de logboekregistratie als actie |
-| **Log** | Logboek voorkeur worden gebruikt als een ding |
-| **Back-up** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Opslag** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Netwerk** | Netwerken is vergelijkbaar, minder vaak worden gebruikt |
-| **SharePoint** |  |
-| **Rapportage** | Rapportage is een actie, het rapport is een ding |
-| **Rapport** | Rapport is een ding |
-| **WinRM** |  |
-| **Bewaking** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Kleur** |  |
-| **DNS** |  |
-| **Office365** | Office spellen verdient de voorkeur. O365 wordt minder vaak gebruikt, hoewel kortere | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | Hyper-v is het minder gebruikelijk als een label |
-| **Configuratie** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Primair gebruikt voor de AzureRM-modules |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration minder wenselijk is, is te lang |
+| ResourceManager | ARM wordt gebruikt om te beschrijven van de groep van processors die zijn en mag niet worden gebruikt voor Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| Sleutelwoorden voor dscresource bieden |  |
+| Automatisering |  |
+| REST |  |
+| ActiveDirectory- | AD wordt momenteel niet gebruikt door zelf  |
+| SQL Server |  |
+| DBA |  |
+| Beveiliging | Defense is minder nauwkeurig |
+| Database | Databases (meervoud) is minder wenselijk |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| Implementatie | Implementeer wat minder vaak wordt gebruikt |
+| Cloud |  |
+| GIT |  |
+| Test | Testen is minder wenselijk |
+| VersionControl | Versie is minder nauwkeurig, hoewel er vaker gebruikt  |
+| Logboekregistratie | Voorkeur gebruik van de logboekregistratie als actie |
+| Logboek | Logboek voorkeur worden gebruikt als een ding |
+| Back-up |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| Met AzureAutomation |  |
+| Opslag |  |
+| GitHub |  |
+| JSON |  |
+| Exchange |  |
+| Netwerk | Netwerken is vergelijkbaar, minder vaak worden gebruikt |
+| SharePoint |  |
+| Rapportage | Rapportage is een actie, het rapport is een ding |
+| Rapport | Rapport is een ding |
+| WinRM |  |
+| Controle |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Kleur |  |
+| DNS |  |
+| Office 365 | Office spellen verdient de voorkeur. O365 wordt minder vaak gebruikt, hoewel kortere |
+| Gitlab |  |
+| Lastige |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | Hyper-v is het minder gebruikelijk als een label |
+| Configuratie |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI (Engelstalig) |  |
+| Firewall |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Primair gebruikt voor de AzureRM-modules |
+| Postcode |  |
+| MSI-BESTAND |  |
+| Mac |  |
+| PoshBot |  |

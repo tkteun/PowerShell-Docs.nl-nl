@@ -2,38 +2,38 @@
 ms.date: 09/26/2017
 contributor: keithb
 keywords: Galerie, powershell, cmdlet, psget
-title: Prerelease-moduleversies
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Voor voorlopige moduleversies
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189836"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093776"
 ---
-# <a name="prerelease-module-versions"></a>Prerelease-moduleversies
+# <a name="prerelease-module-versions"></a>Voor voorlopige moduleversies
 
-Vanaf versie 1.6.0 bieden PowerShellGet en de PowerShell-galerie ondersteuning voor versies die groter zijn dan 1.0.0 als een prerelease-tagging. Voorafgaand aan deze functie zijn prerelease-items beperkt tot een versie die begint met 0 hebben. Het doel van deze functies is het bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning aanroepconventie zonder te verbreken achterwaartse compatibiliteit met PowerShell versies 3 en hoger of bestaande versies van PowerShellGet. Dit onderwerp richt zich op de module-specifieke functies. De equivalente functies voor scripts zijn in de [Prerelease-versies van Scripts](script-prerelease-support.md) onderwerp. Deze functies gebruikt, kunnen uitgevers identificeren module of script als versie 2.5.0-alpha en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
+Vanaf versie 1.6.0, bieden powershellget hebt en de PowerShell Gallery ondersteuning voor het labelen van versies die groter zijn dan 1.0.0 als een voorlopige versie. Voorlopige items zijn voordat u deze functie beperkt tot het met een versie die begint met 0. Het doel van deze functies is te bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versiebeheer Verdrag zonder dat belangrijke achterwaartse compatibiliteit met PowerShell 3 en hoger of bestaande versie van PowerShellGet. In dit onderwerp richt zich op de module-specifieke functies. De equivalente functies voor scripts zijn de [voorlopige versies van Scripts](script-prerelease-support.md) onderwerp. Met behulp van deze functies, kunnen uitgevers identificeren van een module of script als versie 2.5.0-alpha en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
 
-Op een hoog niveau: de prerelease modulefuncties
+Op hoog niveau, de prerelease modulefuncties zijn onder andere:
 
-- Een Prerelease-reeks toevoegen aan de sectie PSData van de module-manifest verwijst naar de module als een prerelease-versie. Wanneer de module wordt gepubliceerd naar de PowerShell-galerie, is deze gegevens opgehaald uit het manifest en gebruikt om deze items te identificeren.
-- Ophalen van een prerelease-items vereist - AllowPrerelease vlag toe te voegen aan de PowerShellGet opdrachten Find-Module installeren-Module, Update-Module en opslaan-Module. Als de vlag niet is opgegeven, wordt deze items niet worden weergegeven.
-- Moduleversies weergegeven door Find-Module, Get-InstalledModule en in de galerie met PowerShell wordt weergegeven als één tekenreeks met de Prerelease tekenreeks toegevoegd, zoals in 2.5.0-alpha.
+- Een Prerelease-tekenreeks toe te voegen aan de sectie PSData van de module-manifest geeft aan dat de module een prerelease-versie. Wanneer de module is gepubliceerd naar de PowerShell Gallery, is deze gegevens opgehaald uit het manifest en gebruikt om te bepalen welke prerelease items.
+- Ophalen van deze items vereist - AllowPrerelease vlag toe te voegen aan de PowerShellGet-opdrachten Find-Module, Install-Module, Update-Module en Save-Module. Als de vlag niet opgegeven is, wordt deze items niet worden weergegeven.
+- Moduleversies Find-Module, Get-InstalledModule, en met de PowerShell Gallery weergegeven als een enkele tekenreeks met de Prerelease tekenreeks toegevoegd, zoals in 2.5.0-alpha weergegeven.
 
-Hieronder vindt u details voor de functies.
+Details voor de functies zijn hieronder vermeld.
 
 Deze wijzigingen hebben geen invloed op de ondersteuning van de module-versie die is ingebouwd in PowerShell en compatibel zijn met PowerShell 3.0 en 4.0 5.
 
-## <a name="identifying-a-module-version-as-a-prerelease"></a>Een moduleversie identificeren als een voorlopige versie
+## <a name="identifying-a-module-version-as-a-prerelease"></a>De versie van een module te identificeren als een voorlopige versie
 
-Ondersteuning voor voorlopige versies PowerShellGet vereist het gebruik van twee velden in de Module-Manifest:
+PowerShellGet-ondersteuning voor voorlopige versies vereist het gebruik van twee velden die in de Module-Manifest:
 
-- De ModuleVersion opgenomen in het manifest van de module moet een versie 3-onderdeel als een prerelease-versie wordt gebruikt en aan de bestaande PowerShell versiebeheer voldoen moet. De indeling van versie zou A.B.C, waarbij A, B en C alle gehele getallen zijn zijn.
-- De Prerelease tekenreeks is opgegeven in het manifest module in de sectie PSData van PrivateData.
+- De opgenomen in de module-manifest ModuleVersion moet een versie 3-onderdeel als een prerelease-versie wordt gebruikt en aan de bestaande versiebeheer in PowerShell voldoen moet. De indeling van versie zou A.B.C, waarbij A, B en C gehele getallen zijn zijn.
+- De Prerelease tekenreeks is opgegeven in de module-manifest, in de sectie PSData van PrivateData.
 
-Gedetailleerde vereisten voor de Prerelease tekenreeks zijn hieronder.
+Gedetailleerde vereisten voor de Prerelease tekenreeks staan hieronder.
 
-Een voorbeeld van een module-manifest dat definieert een module als een voorlopige versie in deze sectie eruit als het volgende:
+Een voorbeeld van een modulemanifest dat een module als een voorlopige versie definieert in deze sectie eruit als volgt uit:
 
 ```powershell
 @{
@@ -49,26 +49,26 @@ Een voorbeeld van een module-manifest dat definieert een module als een voorlopi
 
 De gedetailleerde vereisten voor voorlopige tekenreeks zijn:
 
-- Deze tekenreeks kan alleen worden opgegeven wanneer de ModuleVersion 3 segmenten voor Major.Minor.Build. Dit wordt uitgelijnd met SemVer v1.0.0.
-- Een afbreekstreepje is het scheidingsteken tussen het Build-nummer en de Prerelease tekenreeks. Een afbreekstreepje kan worden opgenomen in de Prerelease tekenreeks als het eerste teken alleen.
-- De Prerelease tekenreeks mag alleen ASCII-letters en cijfers bevatten [0-9A-Za - z-]. Het is een best practice om te beginnen met de voorlopige versie tekenreeks met een alfanumerieke tekens, omdat deze gemakkelijker te identificeren dat dit een prerelease-versie is bij het scannen van een lijst met items.
-- Alleen SemVer v1.0.0 prerelease tekenreeksen worden ondersteund op dit moment. Prerelease tekenreeks __moet niet__ beide punt bevatten of + [. +], die zijn toegestaan in SemVer 2.0.
-- Voorbeelden van ondersteunde Prerelease tekenreeks zijn:-alpha, -a1,-bèta, -update20171020
+- Deze tekenreeks kan alleen worden opgegeven wanneer de ModuleVersion 3 segmenten voor Major.Minor.Build is. Deze correspondeert met SemVer versie 1.0.0 gebruikt.
+- Een koppelteken is het scheidingsteken tussen de Build-nummer en de Prerelease tekenreeks. Een koppelteken mag worden opgenomen in de Prerelease tekenreeks als het eerste teken, alleen.
+- De Prerelease tekenreeks mag alleen ASCII-letters [0-9 bis-Za - z-]. Het is een best practice om te beginnen met de voorlopige versie tekenreeks met een alpha-teken, zoals het eenvoudiger om te identificeren dat dit een voorlopige versie is bij het scannen van een lijst met items.
+- Alleen SemVer v1.0.0 prerelease tekenreeksen worden ondersteund op dit moment. Voorlopige tekenreeks __moet niet__ beide punt bevatten of + [. +], die zijn toegestaan in SemVer 2.0.
+- Voorbeelden van ondersteunde Prerelease tekenreeks zijn:-alpha, a1,-bèta, -update20171020
 
-__Voorlopige versies gevolgen voor de mappen en de installatie sorteren__
+__Voorlopige versies gevolgen voor sorteren en de installatie-mappen__
 
-Sorteervolgorde verandert wanneer u een prerelease-versie, wat belangrijk bij het publiceren van de PowerShell-galerie, en modules met behulp van PowerShellGet opdrachten installeren. Als de Prerelease tekenreeks is opgegeven voor twee modules, wordt de sorteervolgorde is gebaseerd op het volgende op het afbreekstreepje tekenreeksdeel. Dus is versie 2.5.0-alpha kleiner dan 2.5.0-beta, dat is minder dan 2.5.0-gamma. Als twee modules de dezelfde ModuleVersion hebben en slechts één een Prerelease tekenreeks heeft, de module zonder de Prerelease tekenreeks wordt ervan uitgegaan dat de versie gereed is voor productie en worden gesorteerd als een hogere versie dan de prerelease versie (waaronder de voorlopige versie tekenreeks). Als u bijvoorbeeld bij het vergelijken van releases 2.5.0 en 2.5.0-beta, de 2.5.0 versie wordt beschouwd als de grootste van de twee.
+Sorteervolgorde wordt gewijzigd wanneer u een prerelease-versie, dit belangrijk is bij het publiceren naar de PowerShell Gallery, en bij het installeren van modules met PowerShellGet-opdrachten. Als de Prerelease tekenreeks is opgegeven voor de twee modules, de sorteervolgorde is op basis van de tekenreeks deel afbreekstreepjes te volgen. Dus, versie 2.5.0-alpha is kleiner dan 2.5.0-beta, die kleiner is dan 2.5.0-gamma. Als twee modules de dezelfde ModuleVersion hebben en slechts één een voorlopige tekenreeks is, de module zonder de Prerelease tekenreeks wordt ervan uitgegaan dat de versie gereed is voor productie en als een hogere versie dan de prerelease-versie (waaronder de voorlopige versie worden gesorteerd tekenreeks). Een voorbeeld: bij het vergelijken van releases 2.5.0 en 2.5.0-beta, de 2.5.0 versie wordt beschouwd als de hoogste waarde van de twee.
 
-Bij het publiceren van de PowerShell-galerie, moet de versie van de module wordt gepubliceerd hebben standaard een hogere versie dan eventuele eerder gepubliceerde versie die in de PowerShell-galerie.
+Bij het publiceren naar de PowerShell Gallery, moet de versie van de module worden gepubliceerd hebben standaard een hogere versie dan alle eerder gepubliceerde versie die in de PowerShell Gallery.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Zoeken en ophalen van een prerelease-items met PowerShellGet opdrachten
+## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Zoeken en ophalen van prerelease items met PowerShellGet-opdrachten
 
-Omgaan met prerelease items met PowerShellGet Find-Module, installatie-Module, Update-Module, en de opdrachten opslaan-Module vereist de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze prerelease-items worden opgenomen als deze aanwezig zijn. Als de vlag - AllowPrerelease niet is opgegeven, wordt deze items niet weergegeven.
+Omgaan met prerelease items zoeken van de PowerShellGet-Module, Install-Module, Update-Module, gebruikt en opdrachten Save-Module vereist de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze items worden opgenomen als deze aanwezig zijn. Als de vlag - AllowPrerelease niet is opgegeven, wordt deze items niet weergegeven.
 
-De enige uitzonderingen op dit in de module PowerShellGet opdrachten zijn Get-InstalledModule en in sommige gevallen met Uninstall-Module.
+De enige uitzonderingen op deze in de PowerShellGet-module-opdrachten zijn Get-InstalledModule en soms met Uninstall-Module.
 
 - Get-InstalledModule weergegeven altijd automatisch de prerelease-informatie in de tekenreeks voor modules.
-- Verwijderen van de Module standaard verwijdert de meest recente versie van een module als __geen versie__ is opgegeven. Dit gedrag is niet gewijzigd. Echter, als een prerelease-versie wordt opgegeven met - RequiredVersion, - AllowPrerelease is vereist.
+- Verwijderen van de Module wordt standaard verwijderen van de meest recente versie van een module als __geen versie__ is opgegeven. Dit gedrag is niet gewijzigd. Echter, als een prerelease-versie is opgegeven met behulp van - RequiredVersion, - AllowPrerelease is vereist.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -108,10 +108,9 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
-Side-by-side-installatie van versies van een module die alleen als gevolg van de voorlopige versie opgegeven verschillen, wordt niet ondersteund. Als u een module met behulp van PowerShellGet installeert, zijn verschillende versies van dezelfde module geïnstalleerde side-by-side door het maken van de naam van een map met de ModuleVersion. De ModuleVersion, zonder de prerelease tekenreeks wordt gebruikt voor naam van de map. Als een gebruiker MyModule versie 2.5.0-alpha installeert, wordt deze naar de map MyModule\2.5.0 worden geïnstalleerd. Als de gebruiker vervolgens 2.5.0-beta installeert, de versie 2.5.0-beta wordt __te veel schrijven__ de inhoud van de map MyModule\2.5.0. Een voordeel hiervan is dat er hoeft te verwijderen de prerelease versie na de installatie van de versie gereed is voor productie. Het volgende voorbeeld ziet u wat ze kunnen verwachten:
+Side-by-side-installatie van de versies van een module die alleen vanwege de voorlopige versie opgegeven verschillen wordt niet ondersteund. Bij het installeren van een module met PowerShellGet, zijn verschillende versies van dezelfde module geïnstalleerd side-by-side met het maken van de naam van een map met behulp van de ModuleVersion. De ModuleVersion, zonder de prerelease tekenreeks wordt gebruikt voor naam van de map. Als een gebruiker MyModule versie 2.5.0-alpha installeert, wordt deze naar de map MyModule\2.5.0 worden geïnstalleerd. Als de gebruiker wordt vervolgens geïnstalleerd 2.5.0-beta, de versie 2.5.0-beta wordt __sprake van redundante schrijven__ de inhoud van de map MyModule\2.5.0. Een voordeel van deze benadering is dat er niet nodig voor ongedaan maken-installatie de prerelease versie na de installatie van de versie gereed is voor productie. Het volgende voorbeeld ziet u wat u kunt verwachten:
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -139,8 +138,8 @@ Version         Name                                Repository           Descrip
 
 ```
 
-Verwijderen-Module kan de meest recente versie van een module wordt verwijderd wanneer - RequiredVersion wordt niet meegeleverd.
--RequiredVersion is opgegeven, en een voorlopige versie, moet - AllowPrerelease worden toegevoegd aan de opdracht.
+Verwijderen-Module worden de meest recente versie van een module verwijderen wanneer - RequiredVersion is niet opgegeven.
+Als - RequiredVersion is opgegeven, en een voorlopige versie is, moet - AllowPrerelease worden toegevoegd aan de opdracht.
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -183,11 +182,11 @@ Version         Name                                Repository           Descrip
 
 ```
 
-## <a name="more-details"></a>meer informatie
+## <a name="more-details"></a>Meer informatie
 
-- [Script prerelease-versies](script-prerelease-support.md)
+- [Script voor voorlopige versies](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)
-- [Installatie-Module](/powershell/module/powershellget/install-module)
+- [Install-Module](/powershell/module/powershellget/install-module)
 - [Save-Module](/powershell/module/powershellget/save-module)
 - [Update-Module](/powershell/module/powershellget/Update-Module)
 - [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)

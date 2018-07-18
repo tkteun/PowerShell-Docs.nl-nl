@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: Referentieopties in configuratiegegevens
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: Referentieopties in de configuratiegegevens
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190040"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093674"
 ---
-# <a name="credentials-options-in-configuration-data"></a>Referentieopties in configuratiegegevens
+# <a name="credentials-options-in-configuration-data"></a>Referentieopties in de configuratiegegevens
 >Van toepassing op: Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>Ongecodeerde wachtwoorden en domeingebruikers
+## <a name="plain-text-passwords-and-domain-users"></a>Tekst zonder opmaak wachtwoorden en domeingebruikers
 
 DSC-configuraties met een referentie zonder versleuteling wordt een foutbericht over ongecodeerde wachtwoorden worden gegenereerd.
 DSC wordt ook een waarschuwing gegenereerd wanneer met domeinreferenties.
-Als u wilt onderdrukken deze fout- en waarschuwingsberichten de sleutelwoorden gebruiken om DSC configuration gegevens:
+Gebruik de trefwoorden DSC-configuratie gegevens als u wilt onderdrukken deze fout- en waarschuwingsberichten:
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Opslaan van/overdragen ongecodeerde wachtwoorden ongecodeerd is doorgaans niet beveiligd. Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.
-> De service Azure Automation DSC kunt u om referenties in om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.
+> Opslag/verzending van niet-versleutelde wachtwoorden in platte tekst is in het algemeen niet beveiligd. Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.
+> De service Azure Automation DSC kunt u om referenties op om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.
 > Zie voor informatie: [DSC-configuraties compileren / Referentieassets](/azure/automation/automation-dsc-compile#credential-assets)
 
-Hier volgt een voorbeeld van het doorgeven van referenties voor tekst zonder opmaak:
+Hier volgt een voorbeeld van het doorgeven van referenties met tekst zonder opmaak:
 
 ```powershell
 #Prompt user for their credentials
@@ -125,20 +125,20 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a>Afhandeling van referenties in DSC
+## <a name="handling-credentials-in-dsc"></a>Verwerken van de referenties in DSC
 
-Run as-configuratie-DSC-resources `Local System` standaard.
-Sommige resources moeten echter een referentie, bijvoorbeeld wanneer de `Package` resource nodig heeft voor het installeren van software met een specifiek gebruikersaccount.
+DSC-configuratieresources run as- `Local System` standaard.
+Sommige resources moeten echter een referentie, bijvoorbeeld wanneer de `Package` resource nodig heeft voor het installeren van software die onder een bepaalde gebruikersaccount.
 
-Eerdere bronnen gebruikt een vastgelegde `Credential` naam voor het afhandelen van deze eigenschap.
+Eerder gebruikte vastgelegde `Credential` eigenschapsnaam voor het afhandelen van dit.
 WMF 5.0 toegevoegd automatisch `PsDscRunAsCredential` eigenschap voor alle resources.
-Voor informatie over het gebruik van `PsDscRunAsCredential`, Zie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).
-Nieuwere resources en aangepaste resources kunnen u deze automatische eigenschap gebruiken in plaats van hun eigen eigenschap voor referenties maken.
+Voor informatie over het gebruik van `PsDscRunAsCredential`, Zie [DSC uitvoeren met gebruikersreferenties](runAsUser.md).
+Nieuwere resources en aangepaste resources kunnen u deze automatische eigenschap gebruiken in plaats van het maken van hun eigen eigenschap voor referenties.
 
 > [!NOTE]
-> Het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben hun eigen referentie-eigenschappen.
+> Het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben ze hun eigen referentie-eigenschappen.
 
-De beschikbare referentie vinden gebruiken eigenschappen van een resource `Get-DscResource -Name ResourceName -Syntax` of de Intellisense in de ISE (`CTRL+SPACE`).
+Eigenschappen van een resource gebruiken op de beschikbare referentie niet vinden een `Get-DscResource -Name ResourceName -Syntax` of de Intellisense in de ISE (`CTRL+SPACE`).
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,24 +156,24 @@ Group [String] #ResourceName
 }
 ```
 
-In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/powershell/dsc/groupresource) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.
-Deze kan lokale groepen maken en leden toevoegen of verwijderen.
-De cmdlet accepteert zowel de `Credential` eigenschap en de automatische `PsDscRunAsCredential` eigenschap.
-De resource alleen gebruikt echter de `Credential` eigenschap.
+In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/powershell/dsc/groupresource) -resource in de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.
+Het kan maken van lokale groepen en leden toevoegen of verwijderen.
+Accepteert zowel de `Credential` eigenschap en de automatische `PsDscRunAsCredential` eigenschap.
+Echter, de resource maakt alleen gebruik van de `Credential` eigenschap.
 
-Voor meer informatie over de `PsDscRunAsCredential` eigenschap, Zie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).
+Voor meer informatie over de `PsDscRunAsCredential` eigenschap, Zie [DSC uitvoeren met gebruikersreferenties](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Voorbeeld: De bron van referentie-eigenschap
+## <a name="example-the-group-resource-credential-property"></a>Voorbeeld: De bron van gebruikersgroep referentie-eigenschap
 
-DSC wordt uitgevoerd onder `Local System`, zodat het al machtigingen heeft voor lokale gebruikers en groepen te wijzigen.
-Als het lid dat wordt toegevoegd een lokaal account is, zijn er is geen referentie is nodig.
-Als de `Group` resource wordt een domeinaccount toegevoegd aan de lokale groep en vervolgens een referentie op die nodig is.
+DSC wordt uitgevoerd onder `Local System`, zodat deze heeft al machtigingen om lokale gebruikers en groepen te wijzigen.
+Als het lid toegevoegd een lokaal account is, zijn er is geen referentie is nodig.
+Als de `Group` resource wordt een domeinaccount toegevoegd aan de lokale groep en vervolgens een referentie nodig is.
 
 Anonieme query's naar Active Directory zijn niet toegestaan.
-De `Credential` eigenschap van de `Group` resource wordt het domeinaccount dat wordt gebruikt om te zoeken in Active Directory.
-Voor de meeste doeleinden mogelijk een algemene gebruikersaccount standaard gebruikers kunnen *lezen* de meeste van de objecten in Active Directory.
+De `Credential` eigenschap van de `Group` resource is het domeinaccount dat wordt gebruikt om te zoeken in Active Directory.
+Voor de meeste doeleinden mogelijk een algemeen gebruikersaccount, standaard kunnen gebruikers *lezen* meeste van de objecten in Active Directory.
 
-## <a name="example-configuration"></a>Voorbeeldconfiguratie
+## <a name="example-configuration"></a>Voorbeeld van een configuratie
 
 De volgende voorbeeldcode maakt gebruik van DSC voor het vullen van een lokale groep met een domeingebruiker:
 
@@ -225,16 +225,16 @@ for node 'localhost'.
 ```
 
 In dit voorbeeld heeft twee problemen:
-1. Een fout wordt uitgelegd ongecodeerde wachtwoorden worden niet aanbevolen
-2. Een waarschuwing adviseert tegen het gebruik van een domeinreferentie
+1. Een fout wordt uitgelegd dat ongecodeerde wachtwoorden worden niet aanbevolen
+2. Een waarschuwing wordt beschermd tegen het gebruik van een domeinreferentie
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
-Het eerste foutbericht heeft een URL met documentatie.
+Het eerste foutbericht heeft een URL met de documentatie.
 Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structuur en een certificaat.
-Voor meer informatie over certificaten en DSC [lezen van dit bericht](http://aka.ms/certs4dsc).
+Voor meer informatie over certificaten en DSC [leest u dit bericht](http://aka.ms/certs4dsc).
 
-Als u een wachtwoord als tekst zonder opmaak, de bron is vereist de `PsDscAllowPlainTextPassword` -sleutelwoord in de configuratiegegevens sectie als volgt:
+Als u wilt afdwingen dat een wachtwoord als tekst zonder opmaak, de resource vereist de `PsDscAllowPlainTextPassword` sleutelwoord in de configuratiegegevens sectie als volgt:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -272,24 +272,22 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > [!NOTE]
 > `NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
 
-**Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico met zich mee.**
-
-Een uitzondering hierop is wanneer u de service Azure Automation DSC lezen omdat de gegevens wordt altijd versleuteld (in doorvoer in rust in de service en in rust in het knooppunt) opgeslagen.
+**Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico's.**
 
 ## <a name="domain-credentials"></a>Domeinreferenties
 
-De voorbeeld-configuratiescript opnieuw uitgevoerd (met of zonder versleuteling), nog steeds de waarschuwing die gebruik van een domein-account voor een referentie wordt niet aanbevolen genereert.
-Met een lokale account elimineert mogelijke blootstelling van domeinreferenties die kan worden gebruikt op andere servers.
+Het voorbeeld van de configuratie-script opnieuw is uitgevoerd (met of zonder versleuteling), nog steeds worden gegenereerd voor de waarschuwing die met behulp van een domein-account voor een referentie wordt niet aanbevolen.
+Met behulp van een lokaal account wordt voorkomen dat potentiële blootstelling van domeinreferenties die kan worden gebruikt op andere servers.
 
-**Als u referenties met DSC-resources, liever dan een lokale account via een domeinaccount, indien mogelijk.**
+**Als u referenties voor DSC-resources, moet u een lokaal account liever via een domeinaccount, indien mogelijk.**
 
 Als er een '\' of '\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.
-Er is een uitzondering voor "localhost", "127.0.0.1" en ":: 1" in het domeingedeelte van de gebruikersnaam.
+Er is een uitzondering voor 'localhost', '127.0.0.1' en ':: 1" in het domeingedeelte van de naam van de gebruiker.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-In de DSC `Group` resource voorbeeld hierboven opvragen van een Active Directory-domein *vereist* een domeinaccount.
-In dit geval toevoegen de `PSDscAllowDomainUser` eigenschap in op de `ConfigurationData` blokkeren als volgt:
+In de DSC `Group` resourcevoorbeeld hierboven, uitvoeren van query's een Active Directory-domein *vereist* een domeinaccount.
+In dit geval voegen de `PSDscAllowDomainUser` eigenschap in op de `ConfigurationData` blokkeren als volgt:
 
 ```powershell
 $cd = @{
@@ -304,4 +302,4 @@ $cd = @{
 }
 ```
 
-Het configuratiescript wordt nu het MOF-bestand zonder fouten of waarschuwingen gegenereerd.
+Het configuratiescript wordt nu het MOF-bestand met geen fouten of waarschuwingen hebben gegenereerd.

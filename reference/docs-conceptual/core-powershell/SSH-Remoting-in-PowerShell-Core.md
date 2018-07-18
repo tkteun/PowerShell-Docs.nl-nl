@@ -46,8 +46,8 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. De meest recente [Win32 OpenSSH]-build installeren vanuit GitHub met behulp van de [installatie]-instructies
-3. Bewerk het bestand sshd_config op de locatie waar u Win32 OpenSSH geïnstalleerd
+1. De meest recente [Win32 OpenSSH]-build installeren vanuit GitHub met behulp van de [installatie]-instructies
+1. Bewerk het bestand sshd_config op de locatie waar u Win32 OpenSSH geïnstalleerd
    - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 
    ```
@@ -59,8 +59,8 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
     ```
 
     > [!NOTE]
-    Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt.
-    Zie [dit probleem op GitHub voor meer informatie](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt.
+    > Zie [dit probleem op GitHub voor meer informatie](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     Eén oplossing is het maken van een symlink naar de Powershell-installatiemap die geen spaties bevatten:
 
@@ -84,27 +84,27 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
    PubkeyAuthentication yes
    ```
 
-4. De sshd-service opnieuw starten
+1. De sshd-service opnieuw starten
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Het pad waar OpenSSH is geïnstalleerd op uw pad Env variabele toevoegen
+1. Het pad waar OpenSSH is geïnstalleerd op uw pad Env variabele toevoegen
    - Dit moet zijn aan de regels van `C:\Program Files\OpenSSH\`
    - Hiermee kunt u de ssh.exe worden gevonden
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installatie op de Machine voor Linux (Ubuntu 14.04)
 
 1. De meest recente [PowerShell Core voor Linux]-build installeren vanuit GitHub
-2. [Ubuntu SSH] indien nodig geïnstalleerd
+1. [Ubuntu SSH] indien nodig geïnstalleerd
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Bewerk het bestand sshd_config op locatie /etc/ssh
+1. Bewerk het bestand sshd_config op locatie /etc/ssh
    - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 
    ```
@@ -123,7 +123,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
    PubkeyAuthentication yes
    ```
 
-4. De sshd-service opnieuw starten
+1. De sshd-service opnieuw starten
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
      - Klik op `Sharing`
      - Controleer `Remote Login` -melding `Remote Login: On`
      - Toegang tot de juiste gebruikers toestaan
-2. Bewerk de `sshd_config` -bestand op locatie `/private/etc/ssh/sshd_config`
+1. Bewerk de `sshd_config` -bestand op locatie `/private/etc/ssh/sshd_config`
    - Uw favoriete editor gebruiken of
 
      ```bash
@@ -162,7 +162,7 @@ Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificat
      PubkeyAuthentication yes
      ```
 
-3. De sshd-service opnieuw starten
+1. De sshd-service opnieuw starten
 
    ```bash
    sudo launchctl stop com.openssh.sshd

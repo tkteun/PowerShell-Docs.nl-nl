@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 contributor: ryanpu
 title: Verbeteringen in Just Enough Administration (JEA)
-ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892715"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093616"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbeteringen in Just Enough Administration (JEA)
 
@@ -50,7 +50,7 @@ U kunt vervolgens aangepaste functies voor het verwerken van de gegevens die zij
 
 In sommige gevallen kan een taak die een gebruiker nodig heeft om uit te voeren in een JEA-sessie moet toegang tot bronnen voorbij de lokale computer.
 Wanneer een JEA-sessie is geconfigureerd voor het gebruik van een virtueel account, wordt elke poging tot deze bronnen afkomstig zijn van de identiteit van de lokale computer, niet de virtuele-account of verbonden gebruiker weergegeven.
-TP5, is voorzien van ondersteuning voor het uitvoeren van JEA in de context van een [groep beheerd serviceaccount] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), waardoor het veel eenvoudiger toegang krijgen tot netwerkbronnen met behulp van de identiteit van een domein.
+TP5, is voorzien van ondersteuning voor het uitvoeren van JEA in de context van een [groep beheerd serviceaccount](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), waardoor het veel eenvoudiger toegang krijgen tot netwerkbronnen met behulp van de identiteit van een domein.
 
 Voor het configureren van een JEA-sessie moet worden uitgevoerd in een gMSA-account, gebruikt u de volgende sleutel in het bestand voor:
 

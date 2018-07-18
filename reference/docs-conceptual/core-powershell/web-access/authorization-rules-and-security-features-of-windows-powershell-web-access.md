@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893719"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094242"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -163,9 +163,8 @@ Hier volgen enkele voorbeelden van dit scenario.
 
 - Een beheerder heeft een besloten testomgeving ingesteld en wil alle geautoriseerde netwerkgebruikers toegang geven tot alle computers in het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot alle sessieconfiguraties waartoe ze gewoonlijk toegang hebben. Omdat dit een besloten testomgeving is, maakt de beheerder een autorisatieregel die niet veilig is. -De beheerder voert de cmdlet `Add-PswaAuthorizationRule * * *`, waarin het jokerteken **\*** om weer te geven van alle gebruikers, alle computers en alle configuraties. -Met deze regel is het equivalent van de volgende opties: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Deze regel wordt niet aangeraden in een beveiligde omgeving en omzeilt de beveiligingslaag autorisatie van de beveiliging van Windows PowerShell-webtoegang.
+  > [!NOTE]
+  > Deze regel wordt niet aangeraden in een beveiligde omgeving en omzeilt de beveiligingslaag autorisatie van de beveiliging van Windows PowerShell-webtoegang.
 
 - Een beheerder moet gebruikers toestaan verbinding te maken met doelcomputers in een omgeving met zowel werkgroepen als domeinen, waarbij werkgroepcomputers af en toe worden gebruikt om verbinding te maken met doelcomputers in domeinen en computers in domeinen af en toe worden gebruikt om verbinding te maken met doelcomputers in werkgroepen. De beheerder heeft een gatewayserver *PswaServer*, in een werkgroep en de doelcomputer *srv1.contoso.com* zich in een domein. Gebruiker *Chris* is een geautoriseerde lokale gebruiker op zowel de gatewayserver van de werkgroep als de doelcomputer. Zijn gebruikersnaam op de werkgroepserver is *chrisLocal*; en zijn gebruikersnaam op de doelcomputer is *contoso\\chris*. De beheerder verleent Chris toegang tot srv1.contoso.com door de volgende regel toe te voegen.
 
@@ -180,10 +179,9 @@ Windows PowerShell-webtoegang stelt in het voorgaande scenario kan een geslaagde
 
 1. Verificatie op de gatewayserver werkgroep door de naam van een gebruiker toe te voegen in de indeling *servernaam*\\*gebruikersnaam* aan de autorisatieregel
 
-2. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de pagina aanmelden de **optionele verbindingsinstellingen** gebied
+1. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de pagina aanmelden de **optionele verbindingsinstellingen** gebied
 
    > [!NOTE]
-   >
    > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows PowerShell Web Access cmdlets voor autorisatieregels. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie voor meer informatie over het configureren van een vertrouwensrelatie tussen verschillende domeinen [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx").
    > Zie voor meer informatie over hoe u werkgroepcomputers toevoegt aan een lijst met vertrouwde hosts [extern beheer met Serverbeheer](https://technet.microsoft.com/library/dd759202.aspx)
 

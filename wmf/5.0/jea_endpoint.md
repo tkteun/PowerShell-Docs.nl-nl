@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188425"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093715"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Een JEA-eindpunt maken en hier verbinding mee maken
-Een JEA om eindpunt te maken, moet u maken en registreren van een speciaal geconfigureerde configuratie van de PowerShell-sessie-bestand dat kan worden gegenereerd met de **nieuw PSSessionConfigurationFile** cmdlet.
+Voor het maken van een JEA-eindpunt, moet u maken en registreren van een speciaal geconfigureerd PowerShell-sessie configuratiebestand, die kan worden gegenereerd met de **New-PSSessionConfigurationFile** cmdlet.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Hiermee maakt u een sessie-configuratiebestand dat uitziet:
+Hiermee maakt u een sessie-configuratiebestand dat er als uitzien volgt:
 ```powershell
 @{
 
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-Wanneer u een eindpunt JEA maakt, moeten de volgende parameters van de opdracht (en de bijbehorende sleutels in het bestand) worden ingesteld:
+Bij het maken van een JEA-eindpunt, moeten de volgende parameters van de opdracht (en de bijbehorende sleutels in het bestand) worden ingesteld:
 1.  SessionType naar RestrictedRemoteServer
 2.  RunAsVirtualAccount naar **$true**
-3.  TranscriptPath naar de map waarin 'over de schouder' transcripties moeten worden opgeslagen na elke sessie
-4.  RoleDefinitions naar een hashtabel die definieert welke groepen hebben toegang tot welke 'rol mogelijkheden'.  Dit veld wordt gedefinieerd **die** kunt doen **wat** op dit eindpunt.   Rol mogelijkheden zijn speciale bestanden die worden kort beschreven.
+3.  TranscriptPath naar de map waarin 'meekijk' Transcripten moeten worden opgeslagen na elke sessie
+4.  RoleDefinitions naar een hashtabel waarmee wordt gedefinieerd welke groepen hebben toegang tot welke 'Rolmogelijkheden'.  Dit veld wordt gedefinieerd **die** kunt doen **wat** op dit eindpunt.   Rolmogelijkheden zijn speciale bestanden die binnenkort worden beschreven.
 
 
-Het veld RoleDefinitions definieert welke groepen toegang had tot welke mogelijkheden rol.  De mogelijkheid van een rol is een bestand dat u een reeks mogelijkheden die zullen worden blootgesteld definieert voor het koppelen van gebruikers.  Kunt u mogelijkheden van rol met de **nieuw PSRoleCapabilityFile** opdracht.
+Het veld RoleDefinitions wordt gedefinieerd welke groepen heeft toegang tot de mogelijkheden van welke rol.  De mogelijkheid van een rol is een bestand dat u een verscheidenheid aan functies die worden weergegeven definieert voor het koppelen van gebruikers.  Rolmogelijkheden met kunt u de **New-PSRoleCapabilityFile** opdracht.
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-Hierdoor wordt een sjabloon rol mogelijkheid ziet gegenereerd:
+Dit genereert een sjabloon voor rol-functie die er als uitzien volgt:
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-Om te worden gebruikt door een sessieconfiguratie JEA, moet de rol mogelijkheden worden opgeslagen als een geldige PowerShell-module in een map met de naam 'RoleCapabilities'. Een module mogelijk meerdere rol capability-bestanden, indien gewenst.
 
-Als u wilt configureren welke cmdlets, functies, aliassen en scripts die een gebruiker toegang heeft tot bij het verbinden met een sessie JEA, uw eigen regels aan het rol mogelijkheid bestand toevoegen na de opmerkingen van sjablonen. Bekijk voor uitvoerig stil in hoe u de mogelijkheden van de rol kunt configureren, de volledige [handleiding ervaren](http://aka.ms/JEA).
+Om te worden gebruikt door een sessieconfiguratie JEA, moet de Rolmogelijkheden worden opgeslagen als een geldige PowerShell-module in een map met de naam 'RoleCapabilities'. Een module mogelijk meerdere rol mogelijkheid bestanden, indien gewenst.
 
-Ten slotte zodra u klaar bent met het aanpassen van uw sessieconfiguratie en de gerelateerde rol mogelijkheden, registreren van deze sessieconfiguratie en het eindpunt te maken door te voeren **Register-PSSessionConfiguration**.
+Om te beginnen met de configuratie van welke cmdlets, functies, aliassen en scripts die een gebruiker toegang heeft tot bij het verbinden met een JEA-sessie, moet u uw eigen regels toevoegen aan de rol mogelijkheid bestand na de opmerkingen van sjablonen. Voor een stil in hoe u Rolmogelijkheden kunt configureren, bekijkt u de volledige [gids voor gebruikerservaring](http://aka.ms/JEA).
+
+Tot slot zodra u klaar bent met het aanpassen van de sessieconfiguratie en aanverwante mogelijkheden van de rol, registreren van deze sessieconfiguratie en het eindpunt maken door te voeren **Register-PSSessionConfiguration**.
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>Verbinding maken met een eindpunt JEA
-Verbinding maken met een eindpunt JEA werkt op dezelfde manier verbinding maken met een andere PowerShell eindpunt werkt.  Hoeft u alleen de naam van uw eindpunt JEA geven als de parameter 'ConfigurationName' voor **New-PSSession**, **Invoke-Command**, of **Enter-PSSession**.
+## <a name="connect-to-a-jea-endpoint"></a>Verbinding maken met een JEA-eindpunt
+
+Verbinding maken met een JEA-eindpunt werkt op dezelfde manier verbinding te maken met een andere PowerShell-eindpunt werkt.  U hoeft uw JEA-eindpunt om naam te geven als de parameter 'ConfigurationName' voor **New-PSSession**, **Invoke-Command**, of **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-Zodra u hebt gekoppeld aan de sessie JEA, kunt u zich beperkt tot de opdrachten wilt plaatsen in de rol mogelijkheden die u toegang tot hebt uitgevoerd. Als u probeert een opdracht is niet toegestaan voor uw rol uit te voeren, wordt er een fout optreden.
+
+Nadat u verbinding hebt gemaakt met de JEA-sessie, zich kunt u beperkt tot de opdrachten in de whitelist opgenomen in de rol-mogelijkheden die u toegang tot hebt uitgevoerd. Als u probeert een opdracht niet toegestaan voor uw rol uit te voeren, wordt u er een fout optreden.
