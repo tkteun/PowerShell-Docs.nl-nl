@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: Referentieopties in configuratiegegevens
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: Referentieopties in de configuratiegegevens
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190040"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093674"
 ---
-# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="37642-103">Referentieopties in configuratiegegevens</span><span class="sxs-lookup"><span data-stu-id="37642-103">Credentials Options in Configuration Data</span></span>
-><span data-ttu-id="37642-104">Van toepassing op: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="37642-104">Applies To: Windows PowerShell 5.0</span></span>
+# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="159f5-103">Referentieopties in de configuratiegegevens</span><span class="sxs-lookup"><span data-stu-id="159f5-103">Credentials Options in Configuration Data</span></span>
+><span data-ttu-id="159f5-104">Van toepassing op: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="159f5-104">Applies To: Windows PowerShell 5.0</span></span>
 
-## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="37642-105">Ongecodeerde wachtwoorden en domeingebruikers</span><span class="sxs-lookup"><span data-stu-id="37642-105">Plain Text Passwords and Domain Users</span></span>
+## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="159f5-105">Tekst zonder opmaak wachtwoorden en domeingebruikers</span><span class="sxs-lookup"><span data-stu-id="159f5-105">Plain Text Passwords and Domain Users</span></span>
 
-<span data-ttu-id="37642-106">DSC-configuraties met een referentie zonder versleuteling wordt een foutbericht over ongecodeerde wachtwoorden worden gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="37642-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
-<span data-ttu-id="37642-107">DSC wordt ook een waarschuwing gegenereerd wanneer met domeinreferenties.</span><span class="sxs-lookup"><span data-stu-id="37642-107">Also, DSC will generate a warning when using domain credentials.</span></span>
-<span data-ttu-id="37642-108">Als u wilt onderdrukken deze fout- en waarschuwingsberichten de sleutelwoorden gebruiken om DSC configuration gegevens:</span><span class="sxs-lookup"><span data-stu-id="37642-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
-* <span data-ttu-id="37642-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="37642-109">**PsDscAllowPlainTextPassword**</span></span>
-* <span data-ttu-id="37642-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="37642-110">**PsDscAllowDomainUser**</span></span>
+<span data-ttu-id="159f5-106">DSC-configuraties met een referentie zonder versleuteling wordt een foutbericht over ongecodeerde wachtwoorden worden gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="159f5-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
+<span data-ttu-id="159f5-107">DSC wordt ook een waarschuwing gegenereerd wanneer met domeinreferenties.</span><span class="sxs-lookup"><span data-stu-id="159f5-107">Also, DSC will generate a warning when using domain credentials.</span></span>
+<span data-ttu-id="159f5-108">Gebruik de trefwoorden DSC-configuratie gegevens als u wilt onderdrukken deze fout- en waarschuwingsberichten:</span><span class="sxs-lookup"><span data-stu-id="159f5-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
+* <span data-ttu-id="159f5-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="159f5-109">**PsDscAllowPlainTextPassword**</span></span>
+* <span data-ttu-id="159f5-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="159f5-110">**PsDscAllowDomainUser**</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="37642-111">Opslaan van/overdragen ongecodeerde wachtwoorden ongecodeerd is doorgaans niet beveiligd.</span><span class="sxs-lookup"><span data-stu-id="37642-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="37642-112">Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.</span><span class="sxs-lookup"><span data-stu-id="37642-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
-> <span data-ttu-id="37642-113">De service Azure Automation DSC kunt u om referenties in om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.</span><span class="sxs-lookup"><span data-stu-id="37642-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
-> <span data-ttu-id="37642-114">Zie voor informatie: [DSC-configuraties compileren / Referentieassets](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="37642-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
+> <span data-ttu-id="159f5-111">Opslag/verzending van niet-versleutelde wachtwoorden in platte tekst is in het algemeen niet beveiligd.</span><span class="sxs-lookup"><span data-stu-id="159f5-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="159f5-112">Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.</span><span class="sxs-lookup"><span data-stu-id="159f5-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
+> <span data-ttu-id="159f5-113">De service Azure Automation DSC kunt u om referenties op om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.</span><span class="sxs-lookup"><span data-stu-id="159f5-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
+> <span data-ttu-id="159f5-114">Zie voor informatie: [DSC-configuraties compileren / Referentieassets](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="159f5-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
 
-<span data-ttu-id="37642-115">Hier volgt een voorbeeld van het doorgeven van referenties voor tekst zonder opmaak:</span><span class="sxs-lookup"><span data-stu-id="37642-115">The following is an example of passing plain text credentials:</span></span>
+<span data-ttu-id="159f5-115">Hier volgt een voorbeeld van het doorgeven van referenties met tekst zonder opmaak:</span><span class="sxs-lookup"><span data-stu-id="159f5-115">The following is an example of passing plain text credentials:</span></span>
 
 ```powershell
 #Prompt user for their credentials
@@ -125,20 +125,20 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="37642-116">Afhandeling van referenties in DSC</span><span class="sxs-lookup"><span data-stu-id="37642-116">Handling Credentials in DSC</span></span>
+## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="159f5-116">Verwerken van de referenties in DSC</span><span class="sxs-lookup"><span data-stu-id="159f5-116">Handling Credentials in DSC</span></span>
 
-<span data-ttu-id="37642-117">Run as-configuratie-DSC-resources `Local System` standaard.</span><span class="sxs-lookup"><span data-stu-id="37642-117">DSC configuration resources run as `Local System` by default.</span></span>
-<span data-ttu-id="37642-118">Sommige resources moeten echter een referentie, bijvoorbeeld wanneer de `Package` resource nodig heeft voor het installeren van software met een specifiek gebruikersaccount.</span><span class="sxs-lookup"><span data-stu-id="37642-118">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
+<span data-ttu-id="159f5-117">DSC-configuratieresources run as- `Local System` standaard.</span><span class="sxs-lookup"><span data-stu-id="159f5-117">DSC configuration resources run as `Local System` by default.</span></span>
+<span data-ttu-id="159f5-118">Sommige resources moeten echter een referentie, bijvoorbeeld wanneer de `Package` resource nodig heeft voor het installeren van software die onder een bepaalde gebruikersaccount.</span><span class="sxs-lookup"><span data-stu-id="159f5-118">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
 
-<span data-ttu-id="37642-119">Eerdere bronnen gebruikt een vastgelegde `Credential` naam voor het afhandelen van deze eigenschap.</span><span class="sxs-lookup"><span data-stu-id="37642-119">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
-<span data-ttu-id="37642-120">WMF 5.0 toegevoegd automatisch `PsDscRunAsCredential` eigenschap voor alle resources.</span><span class="sxs-lookup"><span data-stu-id="37642-120">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
-<span data-ttu-id="37642-121">Voor informatie over het gebruik van `PsDscRunAsCredential`, Zie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="37642-121">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
-<span data-ttu-id="37642-122">Nieuwere resources en aangepaste resources kunnen u deze automatische eigenschap gebruiken in plaats van hun eigen eigenschap voor referenties maken.</span><span class="sxs-lookup"><span data-stu-id="37642-122">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
+<span data-ttu-id="159f5-119">Eerder gebruikte vastgelegde `Credential` eigenschapsnaam voor het afhandelen van dit.</span><span class="sxs-lookup"><span data-stu-id="159f5-119">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
+<span data-ttu-id="159f5-120">WMF 5.0 toegevoegd automatisch `PsDscRunAsCredential` eigenschap voor alle resources.</span><span class="sxs-lookup"><span data-stu-id="159f5-120">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
+<span data-ttu-id="159f5-121">Voor informatie over het gebruik van `PsDscRunAsCredential`, Zie [DSC uitvoeren met gebruikersreferenties](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="159f5-121">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="159f5-122">Nieuwere resources en aangepaste resources kunnen u deze automatische eigenschap gebruiken in plaats van het maken van hun eigen eigenschap voor referenties.</span><span class="sxs-lookup"><span data-stu-id="159f5-122">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="37642-123">Het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben hun eigen referentie-eigenschappen.</span><span class="sxs-lookup"><span data-stu-id="37642-123">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
+> <span data-ttu-id="159f5-123">Het ontwerp van sommige resources zijn meerdere referenties gebruiken om een bepaalde reden en hebben ze hun eigen referentie-eigenschappen.</span><span class="sxs-lookup"><span data-stu-id="159f5-123">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
 
-<span data-ttu-id="37642-124">De beschikbare referentie vinden gebruiken eigenschappen van een resource `Get-DscResource -Name ResourceName -Syntax` of de Intellisense in de ISE (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="37642-124">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
+<span data-ttu-id="159f5-124">Eigenschappen van een resource gebruiken op de beschikbare referentie niet vinden een `Get-DscResource -Name ResourceName -Syntax` of de Intellisense in de ISE (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="159f5-124">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,26 +156,26 @@ Group [String] #ResourceName
 }
 ```
 
-<span data-ttu-id="37642-125">In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/powershell/dsc/groupresource) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.</span><span class="sxs-lookup"><span data-stu-id="37642-125">This example uses a [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
-<span data-ttu-id="37642-126">Deze kan lokale groepen maken en leden toevoegen of verwijderen.</span><span class="sxs-lookup"><span data-stu-id="37642-126">It can create local groups and add or remove members.</span></span>
-<span data-ttu-id="37642-127">De cmdlet accepteert zowel de `Credential` eigenschap en de automatische `PsDscRunAsCredential` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="37642-127">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
-<span data-ttu-id="37642-128">De resource alleen gebruikt echter de `Credential` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="37642-128">However, the resource only uses the `Credential` property.</span></span>
+<span data-ttu-id="159f5-125">In dit voorbeeld wordt een [groep](https://msdn.microsoft.com/powershell/dsc/groupresource) -resource in de `PSDesiredStateConfiguration` ingebouwde DSC-resource-module.</span><span class="sxs-lookup"><span data-stu-id="159f5-125">This example uses a [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
+<span data-ttu-id="159f5-126">Het kan maken van lokale groepen en leden toevoegen of verwijderen.</span><span class="sxs-lookup"><span data-stu-id="159f5-126">It can create local groups and add or remove members.</span></span>
+<span data-ttu-id="159f5-127">Accepteert zowel de `Credential` eigenschap en de automatische `PsDscRunAsCredential` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="159f5-127">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
+<span data-ttu-id="159f5-128">Echter, de resource maakt alleen gebruik van de `Credential` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="159f5-128">However, the resource only uses the `Credential` property.</span></span>
 
-<span data-ttu-id="37642-129">Voor meer informatie over de `PsDscRunAsCredential` eigenschap, Zie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="37642-129">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="159f5-129">Voor meer informatie over de `PsDscRunAsCredential` eigenschap, Zie [DSC uitvoeren met gebruikersreferenties](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="159f5-129">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="37642-130">Voorbeeld: De bron van referentie-eigenschap</span><span class="sxs-lookup"><span data-stu-id="37642-130">Example: The Group resource Credential property</span></span>
+## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="159f5-130">Voorbeeld: De bron van gebruikersgroep referentie-eigenschap</span><span class="sxs-lookup"><span data-stu-id="159f5-130">Example: The Group resource Credential property</span></span>
 
-<span data-ttu-id="37642-131">DSC wordt uitgevoerd onder `Local System`, zodat het al machtigingen heeft voor lokale gebruikers en groepen te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="37642-131">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
-<span data-ttu-id="37642-132">Als het lid dat wordt toegevoegd een lokaal account is, zijn er is geen referentie is nodig.</span><span class="sxs-lookup"><span data-stu-id="37642-132">If the member added is a local account, then no credential is necessary.</span></span>
-<span data-ttu-id="37642-133">Als de `Group` resource wordt een domeinaccount toegevoegd aan de lokale groep en vervolgens een referentie op die nodig is.</span><span class="sxs-lookup"><span data-stu-id="37642-133">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
+<span data-ttu-id="159f5-131">DSC wordt uitgevoerd onder `Local System`, zodat deze heeft al machtigingen om lokale gebruikers en groepen te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="159f5-131">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
+<span data-ttu-id="159f5-132">Als het lid toegevoegd een lokaal account is, zijn er is geen referentie is nodig.</span><span class="sxs-lookup"><span data-stu-id="159f5-132">If the member added is a local account, then no credential is necessary.</span></span>
+<span data-ttu-id="159f5-133">Als de `Group` resource wordt een domeinaccount toegevoegd aan de lokale groep en vervolgens een referentie nodig is.</span><span class="sxs-lookup"><span data-stu-id="159f5-133">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
 
-<span data-ttu-id="37642-134">Anonieme query's naar Active Directory zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="37642-134">Anonymous queries to Active Directory are not allowed.</span></span>
-<span data-ttu-id="37642-135">De `Credential` eigenschap van de `Group` resource wordt het domeinaccount dat wordt gebruikt om te zoeken in Active Directory.</span><span class="sxs-lookup"><span data-stu-id="37642-135">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
-<span data-ttu-id="37642-136">Voor de meeste doeleinden mogelijk een algemene gebruikersaccount standaard gebruikers kunnen *lezen* de meeste van de objecten in Active Directory.</span><span class="sxs-lookup"><span data-stu-id="37642-136">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
+<span data-ttu-id="159f5-134">Anonieme query's naar Active Directory zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="159f5-134">Anonymous queries to Active Directory are not allowed.</span></span>
+<span data-ttu-id="159f5-135">De `Credential` eigenschap van de `Group` resource is het domeinaccount dat wordt gebruikt om te zoeken in Active Directory.</span><span class="sxs-lookup"><span data-stu-id="159f5-135">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
+<span data-ttu-id="159f5-136">Voor de meeste doeleinden mogelijk een algemeen gebruikersaccount, standaard kunnen gebruikers *lezen* meeste van de objecten in Active Directory.</span><span class="sxs-lookup"><span data-stu-id="159f5-136">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
 
-## <a name="example-configuration"></a><span data-ttu-id="37642-137">Voorbeeldconfiguratie</span><span class="sxs-lookup"><span data-stu-id="37642-137">Example Configuration</span></span>
+## <a name="example-configuration"></a><span data-ttu-id="159f5-137">Voorbeeld van een configuratie</span><span class="sxs-lookup"><span data-stu-id="159f5-137">Example Configuration</span></span>
 
-<span data-ttu-id="37642-138">De volgende voorbeeldcode maakt gebruik van DSC voor het vullen van een lokale groep met een domeingebruiker:</span><span class="sxs-lookup"><span data-stu-id="37642-138">The following example code uses DSC to populate a local group with a domain user:</span></span>
+<span data-ttu-id="159f5-138">De volgende voorbeeldcode maakt gebruik van DSC voor het vullen van een lokale groep met een domeingebruiker:</span><span class="sxs-lookup"><span data-stu-id="159f5-138">The following example code uses DSC to populate a local group with a domain user:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -201,7 +201,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-<span data-ttu-id="37642-139">Deze code genereert een fout en de waarschuwing weergegeven:</span><span class="sxs-lookup"><span data-stu-id="37642-139">This code generates both an error and warning message:</span></span>
+<span data-ttu-id="159f5-139">Deze code genereert een fout en de waarschuwing weergegeven:</span><span class="sxs-lookup"><span data-stu-id="159f5-139">This code generates both an error and warning message:</span></span>
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -224,17 +224,17 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-<span data-ttu-id="37642-140">In dit voorbeeld heeft twee problemen:</span><span class="sxs-lookup"><span data-stu-id="37642-140">This example has two issues:</span></span>
-1. <span data-ttu-id="37642-141">Een fout wordt uitgelegd ongecodeerde wachtwoorden worden niet aanbevolen</span><span class="sxs-lookup"><span data-stu-id="37642-141">An error explains that plain text passwords are not recommended</span></span>
-2. <span data-ttu-id="37642-142">Een waarschuwing adviseert tegen het gebruik van een domeinreferentie</span><span class="sxs-lookup"><span data-stu-id="37642-142">A warning advises against using a domain credential</span></span>
+<span data-ttu-id="159f5-140">In dit voorbeeld heeft twee problemen:</span><span class="sxs-lookup"><span data-stu-id="159f5-140">This example has two issues:</span></span>
+1. <span data-ttu-id="159f5-141">Een fout wordt uitgelegd dat ongecodeerde wachtwoorden worden niet aanbevolen</span><span class="sxs-lookup"><span data-stu-id="159f5-141">An error explains that plain text passwords are not recommended</span></span>
+2. <span data-ttu-id="159f5-142">Een waarschuwing wordt beschermd tegen het gebruik van een domeinreferentie</span><span class="sxs-lookup"><span data-stu-id="159f5-142">A warning advises against using a domain credential</span></span>
 
-## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="37642-143">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="37642-143">PsDscAllowPlainTextPassword</span></span>
+## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="159f5-143">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="159f5-143">PsDscAllowPlainTextPassword</span></span>
 
-<span data-ttu-id="37642-144">Het eerste foutbericht heeft een URL met documentatie.</span><span class="sxs-lookup"><span data-stu-id="37642-144">The first error message has a URL with documentation.</span></span>
-<span data-ttu-id="37642-145">Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structuur en een certificaat.</span><span class="sxs-lookup"><span data-stu-id="37642-145">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structure and a certificate.</span></span>
-<span data-ttu-id="37642-146">Voor meer informatie over certificaten en DSC [lezen van dit bericht](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="37642-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
+<span data-ttu-id="159f5-144">Het eerste foutbericht heeft een URL met de documentatie.</span><span class="sxs-lookup"><span data-stu-id="159f5-144">The first error message has a URL with documentation.</span></span>
+<span data-ttu-id="159f5-145">Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structuur en een certificaat.</span><span class="sxs-lookup"><span data-stu-id="159f5-145">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structure and a certificate.</span></span>
+<span data-ttu-id="159f5-146">Voor meer informatie over certificaten en DSC [leest u dit bericht](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="159f5-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
 
-<span data-ttu-id="37642-147">Als u een wachtwoord als tekst zonder opmaak, de bron is vereist de `PsDscAllowPlainTextPassword` -sleutelwoord in de configuratiegegevens sectie als volgt:</span><span class="sxs-lookup"><span data-stu-id="37642-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
+<span data-ttu-id="159f5-147">Als u wilt afdwingen dat een wachtwoord als tekst zonder opmaak, de resource vereist de `PsDscAllowPlainTextPassword` sleutelwoord in de configuratiegegevens sectie als volgt:</span><span class="sxs-lookup"><span data-stu-id="159f5-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -270,26 +270,24 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> <span data-ttu-id="37642-148">`NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.</span><span class="sxs-lookup"><span data-stu-id="37642-148">`NodeName` cannot equal asterisk, a specific node name is mandatory.</span></span>
+> <span data-ttu-id="159f5-148">`NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.</span><span class="sxs-lookup"><span data-stu-id="159f5-148">`NodeName` cannot equal asterisk, a specific node name is mandatory.</span></span>
 
-<span data-ttu-id="37642-149">**Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico met zich mee.**</span><span class="sxs-lookup"><span data-stu-id="37642-149">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
+<span data-ttu-id="159f5-149">**Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico's.**</span><span class="sxs-lookup"><span data-stu-id="159f5-149">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
 
-<span data-ttu-id="37642-150">Een uitzondering hierop is wanneer u de service Azure Automation DSC lezen omdat de gegevens wordt altijd versleuteld (in doorvoer in rust in de service en in rust in het knooppunt) opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="37642-150">An exception would be when using the Azure Automation DSC service, only because the data is always stored encrypted (in transit, at rest in the service, and at rest on the node).</span></span>
+## <a name="domain-credentials"></a><span data-ttu-id="159f5-150">Domeinreferenties</span><span class="sxs-lookup"><span data-stu-id="159f5-150">Domain Credentials</span></span>
 
-## <a name="domain-credentials"></a><span data-ttu-id="37642-151">Domeinreferenties</span><span class="sxs-lookup"><span data-stu-id="37642-151">Domain Credentials</span></span>
+<span data-ttu-id="159f5-151">Het voorbeeld van de configuratie-script opnieuw is uitgevoerd (met of zonder versleuteling), nog steeds worden gegenereerd voor de waarschuwing die met behulp van een domein-account voor een referentie wordt niet aanbevolen.</span><span class="sxs-lookup"><span data-stu-id="159f5-151">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
+<span data-ttu-id="159f5-152">Met behulp van een lokaal account wordt voorkomen dat potentiële blootstelling van domeinreferenties die kan worden gebruikt op andere servers.</span><span class="sxs-lookup"><span data-stu-id="159f5-152">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
 
-<span data-ttu-id="37642-152">De voorbeeld-configuratiescript opnieuw uitgevoerd (met of zonder versleuteling), nog steeds de waarschuwing die gebruik van een domein-account voor een referentie wordt niet aanbevolen genereert.</span><span class="sxs-lookup"><span data-stu-id="37642-152">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
-<span data-ttu-id="37642-153">Met een lokale account elimineert mogelijke blootstelling van domeinreferenties die kan worden gebruikt op andere servers.</span><span class="sxs-lookup"><span data-stu-id="37642-153">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
+<span data-ttu-id="159f5-153">**Als u referenties voor DSC-resources, moet u een lokaal account liever via een domeinaccount, indien mogelijk.**</span><span class="sxs-lookup"><span data-stu-id="159f5-153">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
 
-<span data-ttu-id="37642-154">**Als u referenties met DSC-resources, liever dan een lokale account via een domeinaccount, indien mogelijk.**</span><span class="sxs-lookup"><span data-stu-id="37642-154">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
+<span data-ttu-id="159f5-154">Als er een '\' of '\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.</span><span class="sxs-lookup"><span data-stu-id="159f5-154">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
+<span data-ttu-id="159f5-155">Er is een uitzondering voor 'localhost', '127.0.0.1' en ':: 1" in het domeingedeelte van de naam van de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="159f5-155">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
 
-<span data-ttu-id="37642-155">Als er een '\' of '\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.</span><span class="sxs-lookup"><span data-stu-id="37642-155">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
-<span data-ttu-id="37642-156">Er is een uitzondering voor "localhost", "127.0.0.1" en ":: 1" in het domeingedeelte van de gebruikersnaam.</span><span class="sxs-lookup"><span data-stu-id="37642-156">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
+## <a name="psdscallowdomainuser"></a><span data-ttu-id="159f5-156">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="159f5-156">PSDscAllowDomainUser</span></span>
 
-## <a name="psdscallowdomainuser"></a><span data-ttu-id="37642-157">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="37642-157">PSDscAllowDomainUser</span></span>
-
-<span data-ttu-id="37642-158">In de DSC `Group` resource voorbeeld hierboven opvragen van een Active Directory-domein *vereist* een domeinaccount.</span><span class="sxs-lookup"><span data-stu-id="37642-158">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
-<span data-ttu-id="37642-159">In dit geval toevoegen de `PSDscAllowDomainUser` eigenschap in op de `ConfigurationData` blokkeren als volgt:</span><span class="sxs-lookup"><span data-stu-id="37642-159">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
+<span data-ttu-id="159f5-157">In de DSC `Group` resourcevoorbeeld hierboven, uitvoeren van query's een Active Directory-domein *vereist* een domeinaccount.</span><span class="sxs-lookup"><span data-stu-id="159f5-157">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
+<span data-ttu-id="159f5-158">In dit geval voegen de `PSDscAllowDomainUser` eigenschap in op de `ConfigurationData` blokkeren als volgt:</span><span class="sxs-lookup"><span data-stu-id="159f5-158">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
 
 ```powershell
 $cd = @{
@@ -304,4 +302,4 @@ $cd = @{
 }
 ```
 
-<span data-ttu-id="37642-160">Het configuratiescript wordt nu het MOF-bestand zonder fouten of waarschuwingen gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="37642-160">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
+<span data-ttu-id="159f5-159">Het configuratiescript wordt nu het MOF-bestand met geen fouten of waarschuwingen hebben gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="159f5-159">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
