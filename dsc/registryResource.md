@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Registerresource
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093582"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267718"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registerresource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 De **register** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van registersleutels en -waarden op een doelknooppunt.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
-|---|---|
+| Eigenschap | Beschrijving |
+| --- | --- |
 | Toets| Geeft het pad van de registersleutel die u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
 | Waardenaam| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens op te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks tijdens het instellen van ook ValueType of Waardegegevens.|
 | Zorg ervoor dat| Geeft aan of de sleutel en waarde bestaan. Om ervoor te zorgen dat ze doen, stelt u deze eigenschap in 'Aanwezig'. Om ervoor te zorgen dat deze niet bestaan, de eigenschap instellen op 'Ontbreekt'. De standaardwaarde is 'Aanwezig'.|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Wijzigen van een instelling in het register in de **HKEY\_huidige\_gebruiker** hive vereist dat de configuratie wordt uitgevoerd met de referenties van gebruiker, in plaats van als het systeem. U kunt de **PsDscRunAsCredential** eigenschap om op te geven voor de configuratie van de gebruikersreferenties. Zie voor een voorbeeld [DSC uitvoeren met gebruikersreferenties](runAsUser.md).
+> Wijzigen van een instelling in het register in de `HKEY\CURRENT\USER` hive vereist dat de configuratie wordt uitgevoerd met de referenties van gebruiker, in plaats van als het systeem. U kunt de **PsDscRunAsCredential** eigenschap om op te geven voor de configuratie van de gebruikersreferenties. Zie voor een voorbeeld [DSC uitvoeren met gebruikersreferenties](runAsUser.md).

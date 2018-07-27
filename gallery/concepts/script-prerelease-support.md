@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galerie, powershell, cmdlet, psget
 title: Voorlopige versies van scripts
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093845"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268463"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Voorlopige versies van scripts
 
@@ -45,12 +45,12 @@ De tekenreeks moet voldoen aan de volgende vereisten voor het gebruik van een pr
 - Een prerelease-achtervoegsel kan alleen worden opgegeven als de versie 3 segmenten voor Major.Minor.Build.
   Deze correspondeert met SemVer versie 1.0.0 gebruikt
 - De prerelease-achtervoegsel is een tekenreeks die begint met een afbreekstreepje en mag de ASCII-letters [0-9 bis-Za - z-]
-- Alleen SemVer v1.0.0 prerelease tekenreeksen worden ondersteund op dit moment is het achtervoegsel van de voorlopige __moet niet__ beide punt bevatten of + [. +], die zijn toegestaan in SemVer 2.0
+- Alleen SemVer v1.0.0 prerelease tekenreeksen worden ondersteund op dit moment is het achtervoegsel van de voorlopige **moet niet** beide punt bevatten of + [. +], die zijn toegestaan in SemVer 2.0
 - Voorbeelden van ondersteunde PrereleaseString tekenreeksen zijn:-alpha, a1,-bèta, -update20171020
 
-__Voorlopige versies gevolgen voor sorteren en de installatie-mappen__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Voorlopige versies gevolgen voor sorteren en de installatie-mappen
 
-Sorteervolgorde wordt gewijzigd wanneer u een prerelease-versie, dit belangrijk is bij het publiceren naar de PowerShell Gallery, en bij het installeren van scripts met PowerShellGet-opdrachten. Als twee versies met het versienummer scripts bestaat, de sorteervolgorde is op basis van de tekenreeks deel afbreekstreepjes te volgen. Dus, versie 2.5.0-alpha is kleiner dan 2.5.0-beta, die kleiner is dan 2.5.0-gamma. Als twee scripts de dezelfde versienummer hebben en slechts één een PrereleaseString, het script heeft __zonder__ de prerelease-achtervoegsel wordt ervan uitgegaan dat de versie gereed is voor productie en als een hogere versie dan de voorlopige versie worden gesorteerd Versie. Een voorbeeld: bij het vergelijken van releases 2.5.0 en 2.5.0-beta, de 2.5.0 versie wordt beschouwd als de hoogste waarde van de twee.
+Sorteervolgorde wordt gewijzigd wanneer u een prerelease-versie, dit belangrijk is bij het publiceren naar de PowerShell Gallery, en bij het installeren van scripts met PowerShellGet-opdrachten. Als twee versies met het versienummer scripts bestaat, de sorteervolgorde is op basis van de tekenreeks deel afbreekstreepjes te volgen. Dus, versie 2.5.0-alpha is kleiner dan 2.5.0-beta, die kleiner is dan 2.5.0-gamma. Als twee scripts de dezelfde versienummer hebben en slechts één een PrereleaseString, het script heeft **zonder** de prerelease-achtervoegsel wordt ervan uitgegaan dat de versie gereed is voor productie en als een hogere versie dan de voorlopige versie worden gesorteerd Versie. Een voorbeeld: bij het vergelijken van releases 2.5.0 en 2.5.0-beta, de 2.5.0 versie wordt beschouwd als de hoogste waarde van de twee.
 
 Bij het publiceren naar de PowerShell Gallery, moet de versie van het script wordt gepubliceerd hebben standaard een hogere versie dan alle eerder gepubliceerde versie die in de PowerShell Gallery. Een uitgever kan versie 2.5.0-alpha bijwerken met 2.5.0-beta of 2.5.0 (met geen voorvoegsel prerelease).
 
@@ -61,7 +61,7 @@ Omgaan met prerelease items met PowerShellGet Find-Script, installatiescript, Up
 De enige uitzonderingen op deze in de PowerShellGet-script-opdrachten zijn Get-InstalledScript en soms met Uninstall-Script.
 
 - Get-InstalledScript weergegeven altijd automatisch de prerelease-informatie in de tekenreeks als deze aanwezig is.
-- Uninstall-Script wordt standaard verwijderen van de meest recente versie van een script als __geen versie__ is opgegeven. Dit gedrag is niet gewijzigd. Echter, als een prerelease-versie is opgegeven met behulp van - RequiredVersion, - AllowPrerelease is vereist.
+- Uninstall-Script wordt standaard verwijderen van de meest recente versie van een script als **geen versie** is opgegeven. Dit gedrag is niet gewijzigd. Echter, als een prerelease-versie is opgegeven met behulp van `-RequiredVersion`, `-AllowPrerelease` is vereist.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

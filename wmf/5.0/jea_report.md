@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093759"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268575"
 ---
 # <a name="reporting-on-jea"></a>Rapportage over JEA
 
 Als u wilt rapporteren over de status van de JEA-configuratie, kunt u het volgende gebruiken:
 
 1. **Get-PSSessionConfiguration** geregistreerd om terug te keren een lijst van alle eindpunten op een bepaalde computer.
-1. **Get-PSSessionCapability** om te rapporteren over de mogelijkheden voor een bepaalde gebruiker is op een bepaald eindpunt.
+2. **Get-PSSessionCapability** om te rapporteren over de mogelijkheden voor een bepaalde gebruiker is op een bepaald eindpunt.
 
 Hier volgt een voorbeeld van **Get-PSSessionCapability**:
 
@@ -41,5 +41,6 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 ```
 
 Om te rapporteren over de _acties_ gebruikers duurde tijdens een JEA-sessie, kunt u:
+
 1. De "over-the-schouder" Transcripten voor dat JEA-eindpunt inschakelen en raadpleegt u de map transcript voor een volledige logboek van acties van elke gebruiker
 2. PowerShell-module logboekregistratie inschakelen en controleren van de PowerShell-gebeurtenislogboeken.

@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Script met compatibele PowerShell-edities
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093657"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267810"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele PowerShell-edities
 
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
 - **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
+
 - **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
 De actieve editie van PowerShell wordt weergegeven in de eigenschap PSEdition van $PSVersionTable.
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Auteurs van scripts kunnen met de parameter PSEdition in een #requires-instructie verhinderen dat een script wordt uitgevoerd, tenzij het wordt uitgevoerd op een compatibele versie van PowerShell.
+Auteurs van scripts kunnen voorkomen dat er een script uitgevoerd, tenzij deze wordt uitgevoerd op een compatibele versie van PowerShell met de parameter PSEdition in een `#requires` instructie.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

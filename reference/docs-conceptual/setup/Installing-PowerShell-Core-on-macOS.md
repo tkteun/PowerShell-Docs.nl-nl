@@ -1,22 +1,31 @@
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
-PowerShell Core biedt ondersteuning voor Mac OS 10.12 en hoger.
-Alle pakketten zijn beschikbaar op onze GitHub [Versies][] pagina.
-Wanneer het pakket is geïnstalleerd, uitvoeren `pwsh` vanaf een terminal.
+PowerShell Core biedt ondersteuning voor macOS 10.12 en hoger.
+Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
+Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 
-### <a name="installation-via-homebrew-on-macos-1012"></a>Installatie via Homebrew op Mac OS 10,12
+### <a name="installation-via-homebrew-on-macos-1012"></a>Installatie via Homebrew in macOS 10.12 +
 
-[Homebrew] [ brew] is de voorkeur package manager voor Mac OS.
-Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew geïnstalleerd [hun instructies][brew].
+[Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
+Typ in een terminalvenster `brew` om uit te voeren van Homebrew.  Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
 
-Zodra u Homebrew hebt geïnstalleerd, is het eenvoudig om PowerShell installeren.
-Installeer eerst [Homebrew Cask][cask], zodat u kunt meer pakketten installeren:
-
+> [!NOTE]
+> Als u Homebrew in het verleden hebt geïnstalleerd, is het altijd een goed idee om uit te voeren "brew bijwerken naar de fabrieksinstellingen" & & 'brew update'.
 ```sh
-brew tap caskroom/cask
+brew update-reset
+brew update
 ```
 
-U kunt nu PowerShell installeren:
+> Oudere versies van Homebrew gebruikt de tikt u op 'caskroom/cask', die is afgeschaft, en naar homebrew/cask gemigreerd.  Meer informatie kunt vinden op [Homebrew-cask][cask]. Gebruik de opdracht 'homebrew tikt u op' om uw huidige tap's weer te geven.  Als u ' caskroom/cask' ziet u 'update brew' kunt gebruiken om de tap's migreren Homebrew.
+
+```sh
+brew tap
+brew update
+```
+
+Nadat u geïnstalleerd / Homebrew bijgewerkt hebt, is het eenvoudig om PowerShell installeren.
+
+Voor het installeren van PowerShell:
 
 ```sh
 brew cask install powershell
@@ -28,7 +37,12 @@ Controleer ten slotte of het installeren van uw correct werkt:
 pwsh
 ```
 
-Wanneer er nieuwe versies van PowerShell zijn uitgebracht, Homebrew van formules bijwerken en upgrade uitvoeren van PowerShell:
+Als u PowerShell sluiten en keer terug naar bash-, gebruikt u de opdracht 'exit'. 
+```sh
+exit
+```
+
+Wanneer er nieuwe versies van PowerShell worden uitgebracht, de Homebrew-formule bijwerken en PowerShell een upgrade uitvoert:
 
 ```sh
 brew update
@@ -36,14 +50,51 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een host PowerShell (pwsh), maar de PowerShell-shell moet worden afgesloten en opnieuw gestart om de upgrade is voltooid en de waarden in $PSVersionTable vernieuwen.
+> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw gestart om de upgrade is voltooid en de waarden in $PSVersionTable vernieuwen.
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
+### <a name="installing-preview-via-homebrew-on-macos-1012"></a>Preview-versie via Homebrew in macOS 10.12 + installeren
 
-### <a name="installation-via-direct-download"></a>Installatie via directe Download
+[Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
+Typ in een terminalvenster `brew` om uit te voeren van Homebrew.  Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
 
-Pak het pakket downloaden `powershell-6.0.2-osx.10.12-x64.pkg` van de [Versies][] pagina op uw Mac OS-machine.
+> [!NOTE]
+> Als u Homebrew in het verleden hebt geïnstalleerd, is het altijd een goed idee om uit te voeren "brew bijwerken naar de fabrieksinstellingen" & & 'brew update'.
+```sh
+brew update-reset
+brew update
+```
+
+U moet vervolgens, tik op de `versions` fusten opslagplaats om op te halen van de preview-pakket:
+
+```sh
+brew tap homebrew/cask-versions
+```
+
+Voor het installeren van PowerShell-voorbeeld:
+
+```sh
+brew cask install powershell-preview
+```
+
+Controleer ten slotte of het installeren van uw correct werkt:
+
+```sh
+pwsh-preview
+```
+
+Wanneer er nieuwe versies van PowerShell worden uitgebracht, bijwerken van Homebrew-formules en bijwerken van de PowerShell-voorbeeld:
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw gestart om de upgrade is voltooid en de waarden in $PSVersionTable vernieuwen.
+
+### <a name="installation-via-direct-download"></a>Installatie via directe downloaden
+
+Pak het pakket downloaden `powershell-6.0.2-osx.10.12-x64.pkg` uit de [releases][] pagina naar uw macOS-computer.
 
 U kunt dubbelklikken op het bestand en volg de aanwijzingen of installeren vanaf de terminal:
 
@@ -53,9 +104,9 @@ sudo installer -pkg powershell-6.0.2-osx.10.12-x64.pkg -target /
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-PowerShell binair `tar.gz` archieven voor Mac OS- en Linux-platformen om in te schakelen geavanceerde implementatiescenario's worden geleverd.
+PowerShell binaire `tar.gz` archieven voor macOS en Linux-platformen om in te schakelen geavanceerde implementatiescenario's worden geleverd.
 
-### <a name="installing-binary-archives-on-macos"></a>Installeren van de binaire archieven op Mac OS
+### <a name="installing-binary-archives-on-macos"></a>Installeren van de binaire archieven in macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -76,42 +127,52 @@ sudo ln -s /usr/local/microsoft/powershell/6.0.2/pwsh /usr/local/bin/pwsh
 
 ## <a name="uninstalling-powershell-core"></a>PowerShell Core verwijderen
 
-Als u met Homebrew PowerShell hebt geïnstalleerd, is het verwijderen is eenvoudig:
+Als u PowerShell hebt geïnstalleerd met Homebrew, is verwijderen is eenvoudig:
 
 ```sh
 brew cask uninstall powershell
 ```
 
-Als u via de directe download PowerShell hebt geïnstalleerd, moet PowerShell handmatig worden verwijderd:
+Als u PowerShell hebt geïnstalleerd via de directe download, moet PowerShell handmatig worden verwijderd:
 
 ```sh
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Als u wilt de aanvullende PowerShell paden verwijderen, raadpleegt u de [paden][] sectie in dit document en verwijdert u de paden met behulp van de gewenste `sudo rm`.
+Als u wilt verwijderen van de extra PowerShell-paden, raadpleegt u de [paden][] sectie in dit document en verwijder de paden met behulp van de gewenste `sudo rm`.
 
 > [!NOTE]
-> Dit is niet nodig als u met Homebrew geïnstalleerd.
+> Dit is niet nodig als u met Homebrew hebt geïnstalleerd.
 
 [Paden]:#paths
 
 ## <a name="paths"></a>Paden
 
 * `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`
-* Gebruikersprofielen worden gelezen uit `~/.config/powershell/profile.ps1`
-* Standaardprofielen worden gelezen uit `$PSHOME/profile.ps1`
-* Gebruikersmodules worden gelezen uit `~/.local/share/powershell/Modules`
-* Gedeelde modules worden gelezen uit `/usr/local/share/powershell/Modules`
-* Standaardmodules worden gelezen uit `$PSHOME/Modules`
-* Geschiedenis van PSReadline wordt vastgelegd `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* Gebruikersprofielen worden gelezen in `~/.config/powershell/profile.ps1`
+* Standaardprofielen worden gelezen in `$PSHOME/profile.ps1`
+* Gebruikersmodules worden gelezen in `~/.local/share/powershell/Modules`
+* Gedeelde modules worden gelezen in `/usr/local/share/powershell/Modules`
+* Standaardmodules worden gelezen in `$PSHOME/Modules`
+* PSReadline geschiedenis wordt vastgelegd `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-De profielen respecteren van PowerShell per host-configuratie.
-Zodat er op de host-specifieke standaardprofielen bestaat `Microsoft.PowerShell_profile.ps1` in dezelfde locaties.
+De profielen met inachtneming van de PowerShell-per-host-configuratie.
+Zodat de standaardprofielen voor de host-specifieke bestaat op `Microsoft.PowerShell_profile.ps1` in dezelfde locaties.
 
-PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] op Mac OS.
+PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] in macOS.
 
-Omdat Mac OS geen afwijking van BSD, het voorvoegsel is `/usr/local` wordt gebruikt in plaats van `/opt`.
+Omdat Mac OS een afleiding van BSD, het voorvoegsel is `/usr/local` wordt gebruikt in plaats van `/opt`.
 Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.0.2/`, en de symlink wordt geplaatst op `/usr/local/bin/pwsh`.
 
-[Versies]: https://github.com/PowerShell/PowerShell/releases/latest
+## <a name="additional-resources"></a>Aanvullende bronnen
+
+* [Homebrew Web][brew]
+* [Homebrew Github-opslagplaats][GitHub]
+* [Homebrew-Cask][cask]
+
+
+[brew]: http://brew.sh/
+[GitHub]: https://github.com/Homebrew
+[Cask]: https://github.com/Homebrew/homebrew-cask
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

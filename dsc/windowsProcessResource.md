@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC WindowsProcess-Resource
-ms.openlocfilehash: 3c4e6d8377c3dcbf4f1db87a603d5483b8caafb8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093732"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267954"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-Resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 De **WindowsProcess** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het configureren van processen op een doelknooppunt.
 
@@ -34,13 +34,13 @@ WindowsProcess [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
-|---|---|
+| Eigenschap | Beschrijving |
+| --- | --- |
 | Argumenten| Geeft een reeks van argumenten worden doorgegeven aan de proces-is. Als u meerdere argumenten doorgeven wilt, plaatst u ze allemaal op deze tekenreeks.|
 | Pad| Het pad naar het uitvoerbare bestand. Als dit de naam van het uitvoerbare bestand (niet de volledig gekwalificeerde pad), de DSC-resource wordt zoeken in de omgeving **pad** variabele (`$env:Path`) naar het uitvoerbare bestand niet vinden. Als de waarde van deze eigenschap een volledig gekwalificeerde pad is, DSC niet gebruiken de **pad** omgevingsvariabele het bestand te vinden en genereert een fout als het pad niet bestaat. Relatieve paden zijn niet toegestaan.|
 | Referentie| Geeft aan dat de referenties voor het starten van het proces.|
 | Zorg ervoor dat| Geeft aan of het proces bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het proces bestaat. Anders wordt deze ingesteld op 'Ontbreekt'. De standaardwaarde is 'Aanwezig'.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = "[ ResourceType] ResourceName"''.|
+| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"` .|
 | StandardErrorPath| Geeft het pad voor het schrijven van de standard-fout. Er een bestaand bestand wordt overschreven.|
 | StandardInputPath| Geeft de locatie van de standaard invoer.|
 | StandardOutputPath| Geeft de locatie voor het schrijven van de standaarduitvoer. Er een bestaand bestand wordt overschreven.|

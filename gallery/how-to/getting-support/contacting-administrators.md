@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Neem contact op met Galerie beheerders
-ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093818"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268650"
 ---
 # <a name="contact-gallery-administrators"></a>Neem contact op met Galerie beheerders
 
@@ -24,6 +24,6 @@ U moet contact opnemen met beheerders van de galerie wanneer:
 
 ## <a name="how-to-contact-gallery-administrators"></a>Hoe u contact op met de galerie beheerders
 
-1. Stuur ons een e-mailbericht: <cgadmin@microsoft.com>.
+1. Stuur ons een e-mailbericht: cgadmin@microsoft.com.
 2. Als u misbruik van een item, vindt u misbruik koppeling hieronder de gegevens in het linkerdeelvenster.
 3. Verzend uw vraag op voor alle overige algemene vragen met betrekking tot de galerie, [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

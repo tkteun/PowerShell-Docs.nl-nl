@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093878"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267936"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Uniforme en consistente status en statusweergave
 
@@ -15,40 +15,41 @@ Een reeks verbeteringen zijn aangebracht in deze release voor automatische ingeb
 De weergave van LCM-status en de status van de DSC-bewerking worden herzien en geïntegreerde op basis van de volgende regels:
 
 1. NotProcessed weer resource heeft geen invloed op LCM-status en DSC-status.
-1. LCM stoppen verdere informatie verwerken zodra er een resource die opnieuw opstarten aanvragen wordt aangetroffen.
-1. Een resource die opnieuw opstarten aanvragen is niet in de gewenste status totdat opnieuw opstarten daadwerkelijk gebeurt.
-1. Na het vaststellen van een resource die is mislukt, houdt LCM verwerken van meer resources, zolang ze niet afhankelijk van de fout een zijn.
-1. De algemene status geretourneerd door `Get-DscConfigurationStatus` cmdlet is de super set alle resources de status.
-1. De status PendingReboot is een superset van PendingConfiguration staat.
+2. LCM stoppen verdere informatie verwerken zodra er een resource die opnieuw opstarten aanvragen wordt aangetroffen.
+3. Een resource die opnieuw opstarten aanvragen is niet in de gewenste status totdat opnieuw opstarten daadwerkelijk gebeurt.
+4. Na het vaststellen van een resource die is mislukt, houdt LCM verwerken van meer resources, zolang ze niet afhankelijk van de fout een zijn.
+5. De algemene status geretourneerd door `Get-DscConfigurationStatus` cmdlet is de super set alle resources de status.
+6. De status PendingReboot is een superset van PendingConfiguration staat.
 
-   De onderstaande tabel ziet u de resulterende status en de status eigenschappen met betrekking tot onder een aantal typische scenario's.
+De onderstaande tabel ziet u de resulterende status en de status eigenschappen met betrekking tot onder een aantal typische scenario's.
 
-   | Scenario                    | LCMState       | Status | Opnieuw opstarten aangevraagd  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-   | S**^**                          | Actieve                 | Geslaagd    | $false        | S                            | $null                          |
-   | F**^**                          | PendingConfiguration | Mislukt    | $false        | $null                        | F                              |
-   | S, F                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
-   | F, S                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
-   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-   | S, r                            | PendingReboot        | Geslaagd    | $true         | S                            | r                              |
-   | F, r                            | PendingReboot        | Mislukt    | $true         | $null                        | F, r                           |
-   | r, S                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
-   | r, F                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
+| Scenario                        | LCMState             | Status     | Opnieuw opstarten aangevraagd | ResourcesInDesiredState   | ResourcesNotInDesiredState |
+|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+| S**^**                          | Actieve                 | Geslaagd    | $false        | S                            | $null                          |
+| F**^**                          | PendingConfiguration | Mislukt    | $false        | $null                        | F                              |
+| S, F                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
+| F, S                             | PendingConfiguration | Mislukt    | $false        | S                            | F                              |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Mislukt    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S, r                            | PendingReboot        | Geslaagd    | $true         | S                            | r                              |
+| F, r                            | PendingReboot        | Mislukt    | $true         | $null                        | F, r                           |
+| r, S                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Geslaagd    | $true         | $null                        | r                              |
 
-   ^
-   S<sub>ik</sub>: een reeks resources die is toegepast, F<sub>ik</sub>: een reeks resources die toegepast zonder succes r: A resource waarvoor opnieuw opstarten \*
+- S<sub>ik</sub>: een reeks resources die is toegepast
+- F<sub>ik</sub>: een reeks resources die zonder succes toegepast
+- r: een resource die is vereist opnieuw opstarten
 
-   ```powershell
-   $LCMState = (Get-DscLocalConfigurationManager).LCMState
-   $Status = (Get-DscConfigurationStatus).Status
+```powershell
+$LCMState = (Get-DscLocalConfigurationManager).LCMState
+$Status = (Get-DscConfigurationStatus).Status
 
-   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
-   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-   ```
+$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Uitbreiding in de cmdlet Get-DscConfigurationStatus
 
@@ -56,32 +57,32 @@ Er zijn enkele verbeteringen zijn aangebracht aan `Get-DscConfigurationStatus` c
 
 ```powershell
 (Get-DscConfigurationStatus).StartDate | Format-List *
-DateTime : Friday, November 13, 2015 1:39:44 PM
-Date : 11/13/2015 12:00:00 AM
-Day : 13
-DayOfWeek : Friday
-DayOfYear : 317
-Hour : 13
-Kind : Local
+
+DateTime    : Friday, November 13, 2015 1:39:44 PM
+Date        : 11/13/2015 12:00:00 AM
+Day         : 13
+DayOfWeek   : Friday
+DayOfYear   : 317
+Hour        : 13
+Kind        : Local
 Millisecond : 886
-Minute : 39
-Month : 11
-Second : 44
-Ticks : 635830187848860000
-TimeOfDay : 13:39:44.8860000
-Year : 2015
+Minute      : 39
+Month       : 11
+Second      : 44
+Ticks       : 635830187848860000
+TimeOfDay   : 13:39:44.8860000
+Year        : 2015
 ```
 
-Hieronder volgt een voorbeeld waarin retourneert dat alle records voor DSC-bewerking op dezelfde dag van week vandaag is er gebeurd.
+Het volgende voorbeeld retourneert alle records van DSC-bewerking die hebben plaatsgevonden op dezelfde dag van week als de huidige dag.
 
 ```powershell
 (Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-Records van bewerkingen die geen wijzigingen in van het knooppunt configuratie aanbrengen mag (dat wil zeggen alleen bewerkingen lezen) worden geëlimineerd. Daarom `Test-DscConfiguration`, `Get-DscConfiguration` bewerkingen zijn niet meer in de geretourneerde objecten uit verontreinigde `Get-DscConfigurationStatus` cmdlet.
-Records van meta-configuratie-instelling bewerking wordt toegevoegd aan het rendement van `Get-DscConfigurationStatus` cmdlet.
+Records van bewerkingen die geen wijzigingen in van het knooppunt configuratie aanbrengen mag (dat wil zeggen alleen bewerkingen lezen) worden geëlimineerd. Daarom `Test-DscConfiguration`, `Get-DscConfiguration` bewerkingen zijn niet meer in de geretourneerde objecten uit verontreinigde `Get-DscConfigurationStatus` cmdlet. Records van meta-configuratie-instelling bewerking wordt toegevoegd aan het rendement van `Get-DscConfigurationStatus` cmdlet.
 
-Hieronder volgt een voorbeeld van resultaat geretourneerd vanuit `Get-DscConfigurationStatus` – alle cmdlet.
+Hieronder volgt een voorbeeld van resultaat geretourneerd vanuit `Get-DscConfigurationStatus –All` cmdlet.
 
 ```output
 All configuration operations:

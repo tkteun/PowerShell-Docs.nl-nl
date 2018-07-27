@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Package Management-Resource
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892498"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268089"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC-Package Management-Resource
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
-|---|---|
+| Eigenschap | Beschrijving |
+| --- | --- |
 | Naam| Hiermee geeft u de naam van het pakket dat moet worden geïnstalleerd of verwijderd.|
 | AdditionalParameters| Specifieke hashtabel van de provider van de parameters die worden doorgegeven aan `Get-Package -AdditionalArguments`. Bijvoorbeeld, kunt u aanvullende parameters, zoals het doelpad doorgeven voor NuGet-provider.|
 | Zorg ervoor dat| Bepaalt of het pakket moet worden geïnstalleerd of verwijderd.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Extra Parameters
 
 De volgende tabel bevat opties voor de eigenschap AdditionalParameters.
-|  Parameter  | Beschrijving   |
-|---|---|
+
+| Parameter | Beschrijving |
+| --- | --- |
 | DestinationPath| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee geeft u een locatie waar u het pakket dat moet worden geïnstalleerd.|
-| InstallationPolicy| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee bepaalt u of u het pakket met de bron vertrouwt. Een van: 'Niet-vertrouwde', 'Vertrouwd'.|
+| InstallationPolicy| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee bepaalt u of u het pakket met de bron vertrouwt. Een van: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Voorbeeld
 

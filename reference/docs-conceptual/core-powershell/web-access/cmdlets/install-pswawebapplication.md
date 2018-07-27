@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: PowerShell-cmdlet
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189598"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268296"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SAMENVATTING
 
-Hiermee configureert u de Windows PowerShell® Web Access-webtoepassing in IIS.
+Hiermee configureert u de web-App voor Windows PowerShell-webtoegang in IIS.
 
 ## <a name="syntax"></a>SYNTAXIS
 
@@ -25,26 +25,27 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>BESCHRIJVING
 
-De **Install-PswaWebApplication** cmdlet Windows PowerShell-webtoegang webtoepassing configureert. Deze cmdlet installeert de webtoepassing, koppelt u deze aan een website en eventueel maakt een test SSL certificaat met de **useTestCertificate** parameter. Voor beveiliging moeten webbeheerders redenen een testcertificaat niet gebruiken voor productieomgevingen.
+De **Install-PswaWebApplication** cmdlet web-App voor Windows PowerShell-internettoegang configureert.
+Deze cmdlet installeert de webtoepassing, koppelt het aan een website en (optioneel) maakt een test SSL certificaat met de **useTestCertificate** parameter. Voor beveiliging moeten redenen webbeheerders een testcertificaat niet gebruiken voor productieomgevingen.
 
 ## <a name="parameters"></a>PARAMETERS
 
 ### <a name="-usetestcertificate"></a>-UseTestCertificate
 
-Geeft aan dat een testcertificaat is gemaakt. Als deze parameter is ingesteld op true, wordt deze cmdlet een testcertificaat maakt en configureert u de Windows PowerShell Web Access-webtoepassing met het certificaat voor HTTPS-aanvragen. Als deze parameter is ingesteld op false, wordt er geen certificaat of een binding gemaakt. Deze waarde ingesteld op false als een ander certificaat wordt gebruikt voor Windows PowerShell Web Access.
+Hiermee geeft u op dat een testcertificaat is gemaakt. Als deze parameter is ingesteld op true, en vervolgens deze cmdlet een testcertificaat maakt en configureert u de web-App voor Windows PowerShell-webtoegang, met het certificaat voor HTTPS-aanvragen. Als deze parameter is ingesteld op false, wordt er geen certificaat of een binding gemaakt. Deze waarde ingesteld op ONWAAR als een ander certificaat wordt gebruikt voor Windows PowerShell-webtoegang.
 
 |||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
-| Positie?                            | Met de naam                                |
-| Standaardwaarde                        | De waarde True                                 |
+| Positie?                            | met de naam                                |
+| Standaardwaarde                        | True                                 |
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;tekenreeks&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
-Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel van de Windows PowerShell Web Access-URL.
+Hiermee geeft u de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel van de URL van de Windows PowerShell Web Access.
 
 |||
 |-|-|
@@ -55,15 +56,15 @@ Geeft de naam voor uw webtoepassing. Dit wordt weergegeven als het laatste deel 
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
-### <a name="-websitenameltstringgt"></a>-Websitenaam&lt;tekenreeks&gt;
+### <a name="-websitename"></a>-Websitenaam
 
-Hiermee geeft u de naam van de webserver (IIS) website waarop u deze webtoepassing Windows PowerShell-webtoegang installeren.
+Hiermee geeft u de naam van de webserver (IIS) website waarvoor u wilt deze web-App voor Windows PowerShell-webtoegang installeren.
 
 |||
 |-|-|
 | Aliassen                              | geen                                 |
 | Nodig?                            | onjuist                                |
-| Positie?                            | Met de naam                                |
+| Positie?                            | met de naam                                |
 | Standaardwaarde                        | Standaardwebsite                     |
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
@@ -75,7 +76,7 @@ Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 |||
 |-|-|
 | Nodig?                            | onjuist                                |
-| Positie?                            | Met de naam                                |
+| Positie?                            | met de naam                                |
 | Standaardwaarde                        | onjuist                                |
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
@@ -88,19 +89,18 @@ De cmdlet wordt niet uitgevoerd.
 |||
 |-|-|
 | Nodig?                            | onjuist                                |
-| Positie?                            | Met de naam                                |
+| Positie?                            | met de naam                                |
 | Standaardwaarde                        | onjuist                                |
 | Pijplijn-invoer accepteren?               | onjuist                                |
 | Jokertekens accepteren?          | onjuist                                |
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-Deze cmdlet ondersteunt de algemene parameters:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer en - OutVariable.
-Zie voor meer informatie [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+Deze cmdlet worden de gangbare parameters ondersteund:-Verbose,-Debug, - ErrorAction, -ErrorVariable,-OutBuffer en - OutVariable. Zie voor meer informatie, [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>INVOER
 
-Deze cmdlet heeft geen invoer.
+Deze cmdlet gebruikt geen invoer.
 
 ## <a name="outputs"></a>UITVOER
 
@@ -118,7 +118,7 @@ Install-PswaWebApplication
 
 ### <a name="example-2"></a>VOORBEELD 2
 
-In dit voorbeeld installeert de webtoepassing PSWA met een testcertificaat en het gebruik van de standaardwaarden voor de **WebApplicationName** en **Websitenaam** parameters.
+In dit voorbeeld installeert de webtoepassing PSWA met een testcertificaat en met behulp van de standaardwaarden voor de **WebApplicationName** en **Websitenaam** parameters.
 
 ```
 Install-PswaWebApplication -UseTestCertificate

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Pakketresource
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093800"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268667"
 ---
 # <a name="dsc-package-resource"></a>DSC-Pakketresource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 De **pakket** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van pakketten, zoals Windows Installer en setup.exe pakketten, op een doelknooppunt.
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
-|---|---|
+| Eigenschap | Beschrijving |
+| --- | --- |
 | Naam| Geeft de naam van het pakket waarvan u wilt om te controleren of een specifieke status.|
 | Pad| Geeft het pad waar het pakket zich bevindt.|
 | product-id| Geeft de product-ID die een unieke identificatie van het pakket.|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Referentie| Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket is altijd geïnstalleerd op het lokale systeem.|
 | Zorg ervoor dat| Geeft aan of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig"Controleer of dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.|
 | Logboekpad| Geeft het volledige pad waar u wilt dat de provider een logboekbestand om te installeren of verwijderen van het pakket op te slaan.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = "[ ResourceType] ResourceName"''.|
+| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 | ReturnCode| Geeft aan dat de verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde die hier beschikbaar zijn, dat de configuratie wordt een fout geretourneerd.|
 
 ## <a name="example"></a>Voorbeeld

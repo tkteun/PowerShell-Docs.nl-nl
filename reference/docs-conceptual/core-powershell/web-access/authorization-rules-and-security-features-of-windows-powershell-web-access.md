@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094242"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268344"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -19,21 +19,20 @@ Windows PowerShell-webtoegang in Windows Server 2012 R2 en Windows Server 2012 h
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Autorisatieregels en sitebeveiliging configureren
 
-Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent.
-'Windows PowerShell Web Access'-toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels. Zie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. 'Windows PowerShell Web Access'-toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels.
+Zie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
 
 Beheerders kunnen definiëren `{0-n}` -verificatieregels voor Windows PowerShell-webtoegang. De standaardbeveiliging is beperkend, niet toelatend. Als er geen verificatieregels zijn, heeft geen enkele gebruiker toegang tot iets.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) en [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) in Windows Server 2012 R2 bevatten de parameter Credential waarmee u kunt toevoegen en autorisatieregels van Windows PowerShell-internettoegang vanaf een externe testen computer, of uit binnen een actieve sessie van de Windows PowerShell-webtoegang. Als kunt andere Windows PowerShell-cmdlets waarvoor de parameter Credential, u een PSCredential-object opgeven als de waarde van de parameter. Voer voor het maken van een PSCredential-object met de referenties die u wilt doorgeven aan een externe computer de [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.
+[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) en [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) in Windows Server 2012 R2 bevatten de parameter Credential waarmee u kunt toevoegen en autorisatieregels van Windows PowerShell-internettoegang vanaf een externe testen computer, of uit binnen een actieve sessie van de Windows PowerShell-webtoegang. Als kunt andere Windows PowerShell-cmdlets waarvoor de parameter Credential, u een PSCredential-object opgeven als de waarde van de parameter. Voer voor het maken van een PSCredential-object met de referenties die u wilt doorgeven aan een externe computer de [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet.
 
-Windows PowerShell Web Access-verificatieregels zijn regels die bepaalde verbindingen. Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows-PowerShellÂ [sessieconfiguraties](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
+Windows PowerShell Web Access-verificatieregels zijn regels die bepaalde verbindingen. Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows-PowerShellÂ [sessieconfiguraties](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
 Voor een uitleg op **runspaces** Zie [begin gebruik van PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
-> **Opmerking over beveiliging** een gebruiker moet slechts één regel waar toegang krijgen. Als een gebruiker toegang tot een computer met volledige taaltoegang of alleen toegang tot Windows PowerShell-cmdlets voor extern beheer, van de webconsole krijgt, kunt de gebruiker aanmelden (of hop) op andere computers die zijn verbonden met de eerste doelcomputer. Er is de veiligste manier om Windows PowerShell-webtoegang configureren zodat gebruikers alleen toegang tot beperkte sessieconfiguraties waarmee ze specifieke taken die ze normaal gesproken nodig hebben om uit te voeren op afstand.
+> Voor een gebruiker hoeft slechts één regel waar te zijn om ervoor te zorgen dat hij of zij toegang krijgt. Als een gebruiker toegang tot een computer met volledige taaltoegang of alleen toegang tot Windows PowerShell-cmdlets voor extern beheer, van de webconsole krijgt, kunt de gebruiker aanmelden (of hop) op andere computers die zijn verbonden met de eerste doelcomputer. Er is de veiligste manier om Windows PowerShell-webtoegang configureren zodat gebruikers alleen toegang tot beperkte sessieconfiguraties waarmee ze specifieke taken die ze normaal gesproken nodig hebben om uit te voeren op afstand.
 
-De cmdlets waarnaar wordt verwezen in [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) toestaan om te maken van een reeks toegangsregels die worden gebruikt voor het autoriseren van een gebruiker op de Windows PowerShell Web Access-gateway.
-De regels verschillen van de toegangsbeheerlijsten (ACL’s) op de doelcomputer en bieden een extra beveiligingslaag voor internettoegang. Meer informatie over beveiliging vindt u in het volgende gedeelte.
+De cmdlets waarnaar wordt verwezen in [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) toestaan om te maken van een reeks toegangsregels die worden gebruikt voor het autoriseren van een gebruiker op de Windows PowerShell Web Access-gateway. De regels verschillen van de toegangsbeheerlijsten (ACL’s) op de doelcomputer en bieden een extra beveiligingslaag voor internettoegang. Meer informatie over beveiliging vindt u in het volgende gedeelte.
 
 Als gebruikers niet een van de voorgaande beveiligingslagen worden doorgegeven, ontvangen ze een algemeen 'toegang geweigerd'-bericht in hun browservensters. Hoewel beveiligingsgegevens worden geregistreerd op de gatewayserver, zien eindgebruikers geen informatie over hoeveel beveiligingslagen ze zijn gepasseerd of op welke laag de aanmeldings- of verificatiefout is opgetreden.
 
@@ -42,6 +41,7 @@ Zie voor meer informatie over het configureren van autorisatieregels [autorisati
 ### <a name="security"></a>Beveiliging
 
 Het beveiligingsmodel van Windows PowerShell-webtoegang bevinden zich vier lagen tussen een eindgebruiker van de webconsole en een doelcomputer. Windows PowerShell Web Access-beheerders kunnen beveiligingslagen toevoegen via aanvullende configuratie in de IIS-beheerconsole. Zie voor meer informatie over het beveiligen van websites in de IIS-beheerconsole, [Configure Web Server Security (IIS7)](https://technet.microsoft.com/library/cc731278).
+
 Voor meer informatie over IIS best practices en voorkomen van denial-of-service-aanvallen, Zie [Best Practices voor om te voorkomen dat DoS/tot denial of Service-aanvallen](https://technet.microsoft.com/library/cc750213).
 Een beheerder kan ook kopen en aanvullende retail verificatiesoftware installeren.
 
@@ -60,14 +60,14 @@ Gedetailleerde informatie over elke laag kan worden gevonden in de volgende rubr
 
 Gebruikers van Windows PowerShell-webtoegang moeten altijd een gebruikersnaam en wachtwoord voor het verifiëren van hun accounts op de gateway opgeven. Echter dat Windows PowerShell-webtoegang beheerders ook verificatie van clientcertificaten desgewenst kunnen inschakelen of uitschakelen, Zie [installeren en gebruiken van windows powershell-webtoegang](install-and-use-windows-powershell-web-access.md) om in te schakelen van een testcertificaat en hoger, het configureren van een legitiem certificaat).
 
-De optionele functie voor clientcertificaten vereist dat eindgebruikers beschikken over een geldig clientcertificaat naast hun gebruikersnaam en wachtwoord en maakt deel uit van de webserverconfiguratie (IIS). Als de clientcertificaatlaag is ingeschakeld, vraagt de aanmeldingspagina van Windows PowerShell-webtoegang gebruikers een geldig certificaat voordat hun aanmeldingsreferenties worden geëvalueerd.
-Bij verificatie van clientcertificaten wordt het clientcertificaat automatisch gecontroleerd. Als een geldig certificaat niet wordt gevonden, geeft de Windows PowerShell-webtoegang gebruikers, zodat ze het certificaat kunnen verstrekken. Als een geldig clientcertificaat wordt gevonden, wordt de aanmeldingspagina voor gebruikers voor hun gebruikersnamen en wachtwoorden in Windows PowerShell-webtoegang geopend.
+De optionele functie voor clientcertificaten vereist dat eindgebruikers beschikken over een geldig clientcertificaat naast hun gebruikersnaam en wachtwoord en maakt deel uit van de webserverconfiguratie (IIS). Als de clientcertificaatlaag is ingeschakeld, vraagt de aanmeldingspagina van Windows PowerShell-webtoegang gebruikers een geldig certificaat voordat hun aanmeldingsreferenties worden geëvalueerd. Bij verificatie van clientcertificaten wordt het clientcertificaat automatisch gecontroleerd. Als een geldig certificaat niet wordt gevonden, geeft de Windows PowerShell-webtoegang gebruikers, zodat ze het certificaat kunnen verstrekken. Als een geldig clientcertificaat wordt gevonden, wordt de aanmeldingspagina voor gebruikers voor hun gebruikersnamen en wachtwoorden in Windows PowerShell-webtoegang geopend.
 
-Dit is een voorbeeld van aanvullende beveiligingsinstellingen die worden aangeboden via IIS-webserver. Zie voor meer informatie over andere IIS-beveiligingsfuncties [Configure Web Server Security (IIS 7)](https://technet.microsoft.com/library/cc731278)
+Dit is een voorbeeld van aanvullende beveiligingsinstellingen die worden aangeboden via IIS-webserver. Zie voor meer informatie over andere IIS-beveiligingsfuncties [Configure Web Server Security (IIS 7)](https://technet.microsoft.com/library/cc731278).
 
 #### <a name="windows-powershell-web-access-forms-based-gateway-authentication"></a>Windows PowerShell-webtoegang op formulieren gebaseerde gatewayverificatie
 
-De aanmeldingspagina van Windows PowerShell-webtoegang vereist een set referenties (gebruikersnaam en wachtwoord) en biedt gebruikers de mogelijkheid andere referenties voor de doelcomputer op te geven. Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
+De aanmeldingspagina van Windows PowerShell-webtoegang vereist een set referenties (gebruikersnaam en wachtwoord) en biedt gebruikers de mogelijkheid andere referenties voor de doelcomputer op te geven.
+Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
 
 De vereiste referenties zijn geverifieerd op de Windows PowerShell Web Access-gateway. Deze referenties moeten geldige gebruikersaccounts op een van beide de lokale Windows PowerShell-webtoegang gatewayserver of in Active Directory.
 
@@ -81,18 +81,17 @@ Deze regels worden pas geëvalueerd nadat een gebruiker is geverifieerd door de 
 
 De laatste beveiligingslaag voor Windows PowerShell-webtoegang is het doel van computer-beveiligingsconfiguratie. Gebruikers moeten de juiste toegangsrechten op de doelcomputer en ook in de Windows PowerShell Web Access-autorisatieregels geconfigureerd om uit te voeren van een Windows PowerShell web-console op basis van die van invloed op een doelcomputer via Windows PowerShell-webtoegang hebben.
 
-Deze laag biedt dezelfde beveiligingsmechanismen die verbindingspogingen evalueren als gebruikers proberen te maken van een externe Windows PowerShell-sessie met een doelcomputer uit in Windows PowerShell door uit te voeren de [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) of [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlets.
+Deze laag biedt dezelfde beveiligingsmechanismen die verbindingspogingen evalueren als gebruikers proberen te maken van een externe Windows PowerShell-sessie met een doelcomputer uit in Windows PowerShell door uit te voeren de [Enter-PSSession](/powershell/module/microsoft.powershell.core/Enter-PSSession) of [New-PSSession](/powershell/module/microsoft.powershell.core/new-pssession) cmdlets.
 
 Standaard Windows PowerShell-webtoegang maakt gebruik van de primaire gebruikersnaam en het wachtwoord voor verificatie op zowel de gateway en de doelcomputer. Het web gebaseerde aanmeldingspagina, in een sectie met de titel **optionele verbindingsinstellingen**, biedt het gebruikers de mogelijkheid om andere referenties voor de doelcomputer op te geven als ze vereist zijn. Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
 
-Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie. U kunt maken _beperkte runspaces_ of sessieconfiguraties voor Windows PowerShell-webtoegang, en bepaalde gebruikers verbinding maken met alleen specifieke sessieconfiguraties wanneer ze zich aanmelden bij Windows PowerShell-webtoegang. U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en de toegang tot het eindpunt voor specifieke gebruikers verder beperken met behulp van de autorisatieregels die in dit gedeelte worden beschreven.
-Zie voor meer informatie over beperkte runspaces [het maken van een beperkte runspace](https://msdn.microsoft.com/library/dn614668).
+Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie. U kunt maken _beperkte runspaces_ of sessieconfiguraties voor Windows PowerShell-webtoegang, en bepaalde gebruikers verbinding maken met alleen specifieke sessieconfiguraties wanneer ze zich aanmelden bij Windows PowerShell-webtoegang. U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en de toegang tot het eindpunt voor specifieke gebruikers verder beperken met behulp van de autorisatieregels die in dit gedeelte worden beschreven. Zie voor meer informatie over beperkte runspaces [het maken van een beperkte runspace](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Autorisatieregels configureren
 
 Beheerders willen waarschijnlijk dezelfde autorisatieregel voor Windows PowerShell Web Access-gebruikers die al is gedefinieerd in hun omgeving voor extern beheer van Windows PowerShell. In de eerste procedure in dit gedeelte wordt beschreven hoe u een veilige autorisatieregel toevoegt waarmee toegang wordt verleend aan één gebruiker die zich aanmeldt om één computer te beheren en binnen één sessieconfiguratie. In de tweede procedure wordt beschreven hoe u een autorisatieregel verwijdert die niet meer nodig is.
 
-Als u van plan bent aangepaste sessieconfiguraties gebruiken waarmee specifieke gebruikers kunnen werken binnen beperkte runspaces in Windows PowerShell-webtoegang, maakt u uw aangepaste sessieconfiguraties voordat u autorisatieregels die ernaar verwijzen. U kunt de Windows PowerShell Web Access cmdlets niet gebruiken voor aangepaste sessieconfiguraties maken. Zie voor meer informatie over het maken van aangepaste sessieconfiguraties [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Als u van plan bent aangepaste sessieconfiguraties gebruiken waarmee specifieke gebruikers kunnen werken binnen beperkte runspaces in Windows PowerShell-webtoegang, maakt u uw aangepaste sessieconfiguraties voordat u autorisatieregels die ernaar verwijzen. U kunt de Windows PowerShell Web Access cmdlets niet gebruiken voor aangepaste sessieconfiguraties maken. Zie voor meer informatie over het maken van aangepaste sessieconfiguraties [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web Access cmdlets ondersteunen één jokerteken, een sterretje ( \* ). Jokertekens binnen tekenreeksen worden niet ondersteund. Gebruik één sterretje per eigenschap (gebruikers, computers of sessieconfiguraties).
 
@@ -111,23 +110,24 @@ Windows PowerShell Web Access cmdlets ondersteunen één jokerteken, een sterret
 
    Controleer of de sessieconfiguraties die u wilt gebruiken, al bestaan in uw regels.
 
-   Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+   Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker '™ s typische scripting en cmdlet-behoeften. Typ het volgende en druk vervolgens op **Enter**.
 
-```
-Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
-   -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
-```
+   ```
+   Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
+      -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+   ```
 
-- In het volgende voorbeeld wordt een gebruiker met de naam _JSmith_ in de _Contoso_ domein krijgt toegangsrechten voor het beheren van de computer _Contoso_214_, en de sessieconfiguratie van een met de naam gebruiken _NewAdminsOnly_.
+   - In het volgende voorbeeld wordt een gebruiker met de naam _JSmith_ in de _Contoso_ domein krijgt toegangsrechten voor het beheren van de computer _Contoso_214_, en de sessieconfiguratie van een met de naam gebruiken _NewAdminsOnly_.
 
-```powershell
-Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
-   -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
-```
+   ```powershell
+   Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
+      -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+   ```
 
-4. Controleer of dat de regel is gemaakt door de **Get-PswaAuthorizationRule** -cmdlet of **Test-PswaAuthorizationRule - UserName &lt;domein\\gebruiker | computer\\ gebruiker&gt; - ComputerName** &lt;computer_name&gt;. Bijvoorbeeld, **Test-PswaAuthorizationRule - UserName Contoso\\JSmith - ComputerName Contoso_214**.
+4. Controleer of dat de regel is gemaakt door de **Get-PswaAuthorizationRule** -cmdlet of `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>`.
+   Voorbeeld: `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
 
 #### <a name="to-remove-an-authorization-rule"></a>Een autorisatieregel verwijderen
 
@@ -135,27 +135,26 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
 
 2. Typ het volgende en druk vervolgens op **Enter**, waarbij *regel-ID* vertegenwoordigt de unieke id van de regel die u wilt verwijderen.
 
-```
-Remove-PswaAuthorizationRule -ID <rule ID>
-```
+   ```
+   Remove-PswaAuthorizationRule -ID <rule ID>
+   ```
 
-Als u de id van de regel die u wilt verwijderen niet kent maar wel de beschrijvende naam, kunt u de naam van de regel doorgeven aan de cmdlet `Remove-PswaAuthorizationRule` om de regel te verwijderen, zoals in het volgende voorbeeld:
+   Als u de id van de regel die u wilt verwijderen niet kent maar wel de beschrijvende naam, kunt u de naam van de regel doorgeven aan de cmdlet `Remove-PswaAuthorizationRule` om de regel te verwijderen, zoals in het volgende voorbeeld:
 
-```
-Get-PswaAuthorizationRule `
-   -RuleName <rule-name> | Remove-PswaAuthorizationRule
-```
+   ```
+   Get-PswaAuthorizationRule `
+      -RuleName <rule-name> | Remove-PswaAuthorizationRule
+  ```
 
 > [!NOTE]
->
 > U wordt niet gevraagd om te bevestigen of u wilt verwijderen van de opgegeven autorisatieregel; de regel wordt verwijderd wanneer u op de toets **Enter**. Wees er zeker van dat u de autorisatieregel wilt verwijderen voordat u de cmdlet `Remove-PswaAuthorizationRule` uitvoert.
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Andere voorbeeldscenario’s met autorisatieregels
 
-Elke Windows PowerShell-sessie gebruikt een sessieconfiguratie; Als deze niet voor een sessie opgegeven is, Windows PowerShell maakt gebruik van de standaard ingebouwde Windows PowerShell, sessieconfiguratie genaamd Microsoft.PowerShell. De standaardsessieconfiguratie bevat alle cmdlets die beschikbaar zijn op een computer. Beheerders kunnen de toegang tot alle computers beperken door een sessieconfiguratie met een beperkte runspace (een beperkt aantal cmdlets en taken die eindgebruikers kunnen uitvoeren) te definiëren. Een gebruiker die toegang tot een computer met volledige taaltoegang of alleen de Windows PowerShell extern beheer-cmdlets hebben kunt verbinden met andere computers die zijn verbonden met de eerste computer. Een beperkte runspace te definiëren kan voorkomen dat gebruikers toegang krijgen tot andere computers vanuit hun toegestane Windows PowerShell-runspace en verbetert de beveiliging van uw Windows PowerShell Web Access-omgeving. De sessieconfiguratie kan (via Groepsbeleid) worden gedistribueerd naar alle computers die beheerders toegankelijk willen maken via Windows PowerShell-webtoegang. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx).
-Hier volgen enkele voorbeelden van dit scenario.
+Elke Windows PowerShell-sessie gebruikt een sessieconfiguratie; Als deze niet voor een sessie opgegeven is, Windows PowerShell maakt gebruik van de standaard ingebouwde Windows PowerShell, sessieconfiguratie genaamd Microsoft.PowerShell. De standaardsessieconfiguratie bevat alle cmdlets die beschikbaar zijn op een computer. Beheerders kunnen de toegang tot alle computers beperken door een sessieconfiguratie met een beperkte runspace (een beperkt aantal cmdlets en taken die eindgebruikers kunnen uitvoeren) te definiëren. Een gebruiker die toegang tot een computer met volledige taaltoegang of alleen de Windows PowerShell extern beheer-cmdlets hebben kunt verbinden met andere computers die zijn verbonden met de eerste computer. Een beperkte runspace te definiëren kan voorkomen dat gebruikers toegang krijgen tot andere computers vanuit hun toegestane Windows PowerShell-runspace en verbetert de beveiliging van uw Windows PowerShell Web Access-omgeving. De sessieconfiguratie kan (via Groepsbeleid) worden gedistribueerd naar alle computers die beheerders toegankelijk willen maken via Windows PowerShell-webtoegang. Zie voor meer informatie over sessieconfiguraties [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Hier volgen enkele voorbeelden van dit scenario.
 
-- Een beheerder maakt een eindpunt met de naam **Pswaeindpunt**, met een beperkte runspace. Vervolgens, de beheerder maakt een regel,  **\*,\*, Pswaeindpunt**, en distribueert het eindpunt naar andere computers. De regel verleent alle gebruikers toegang krijgen tot alle computers met het eindpunt **Pswaeindpunt**. Als dit de enige autorisatieregel is die is gedefinieerd in de regelset, zijn computers zonder dat eindpunt niet toegankelijk.
+- Een beheerder maakt een eindpunt met de naam **Pswaeindpunt**, met een beperkte runspace. Vervolgens, de beheerder maakt een regel, `*,*,PswaEndpoint`, en distribueert het eindpunt naar andere computers. De regel verleent alle gebruikers toegang krijgen tot alle computers met het eindpunt **Pswaeindpunt**.
+  Als dit de enige autorisatieregel is die is gedefinieerd in de regelset, zijn computers zonder dat eindpunt niet toegankelijk.
 
 - De beheerder wordt gemaakt van een eindpunt met een beperkte runspace met de naam **Pswaeindpunt**, en wil de toegang beperken tot specifieke gebruikers. De beheerder maakt een groep gebruikers genaamd **Level1Support**, en definieert de volgende regel: **Level1Support,\*, Pswaeindpunt**. De regel verleent alle gebruikers in de groep **Level1Support** toegang tot alle computers met de **Pswaeindpunt** configuratie. Op vergelijkbare wijze kan de toegang worden beperkt tot een specifieke set computers.
 
@@ -179,11 +178,11 @@ Windows PowerShell-webtoegang stelt in het voorgaande scenario kan een geslaagde
 
 1. Verificatie op de gatewayserver werkgroep door de naam van een gebruiker toe te voegen in de indeling *servernaam*\\*gebruikersnaam* aan de autorisatieregel
 
-1. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de pagina aanmelden de **optionele verbindingsinstellingen** gebied
+2. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de pagina aanmelden de **optionele verbindingsinstellingen** gebied
 
    > [!NOTE]
-   > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows PowerShell Web Access cmdlets voor autorisatieregels. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie voor meer informatie over het configureren van een vertrouwensrelatie tussen verschillende domeinen [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx").
-   > Zie voor meer informatie over hoe u werkgroepcomputers toevoegt aan een lijst met vertrouwde hosts [extern beheer met Serverbeheer](https://technet.microsoft.com/library/dd759202.aspx)
+   > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows PowerShell Web Access cmdlets voor autorisatieregels. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie voor meer informatie over het configureren van een vertrouwensrelatie tussen verschillende domeinen [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx).
+   > Zie voor meer informatie over hoe u werkgroepcomputers toevoegt aan een lijst met vertrouwde hosts, [extern beheer met Serverbeheer](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Eén set autorisatieregels gebruiken voor meerdere sites
 
@@ -193,11 +192,9 @@ Het pad naar het XML-bestand met autorisatieregels wordt opgeslagen in de **poww
 
 ## <a name="session-management"></a>Sessiebeheer
 
-Standaard beperkt Windows PowerShell-webtoegang een gebruiker tot drie sessies tegelijk. U kunt de webtoepassing bewerken **web.config** bestand in IIS-beheer voor de ondersteuning van een ander aantal sessies per gebruiker.
-Het pad naar de **web.config** bestand `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Standaard beperkt Windows PowerShell-webtoegang een gebruiker tot drie sessies tegelijk. U kunt de webtoepassing bewerken **web.config** bestand in IIS-beheer voor de ondersteuning van een ander aantal sessies per gebruiker. Het pad naar de **web.config** bestand `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
-IIS-webserver is standaard geconfigureerd voor het opnieuw opstarten van de groep van toepassingen als alle instellingen worden bewerkt. Bijvoorbeeld, de groep van toepassingen opnieuw wordt gestart als wijzigingen worden aangebracht in de **web.config** bestand.
->Omdat **Windows PowerShell-webtoegang** gebruikt in het geheugen sessie wordt aangegeven, gebruikers die zijn aangemeld bij **Windows PowerShell-webtoegang** sessies hun sessie wanneer de groep van toepassingen opnieuw wordt opgestart kwijt.
+IIS-webserver is standaard geconfigureerd voor het opnieuw opstarten van de groep van toepassingen als alle instellingen worden bewerkt. Bijvoorbeeld, de groep van toepassingen opnieuw wordt gestart als wijzigingen worden aangebracht in de **web.config** bestand. > omdat **Windows PowerShell-webtoegang** maakt gebruik van de sessiestatus in het geheugen, > gebruikers die zijn aangemeld bij **Windows PowerShell-webtoegang** sessies hun sessie wanneer de groep van toepassingen opnieuw wordt opgestart kwijt.
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Standaardparameters instellen op de aanmeldingspagina
 
@@ -206,16 +203,16 @@ Als uw Windows PowerShell Web Access-gateway op Windows Server 2012 R2 wordt uit
 Bijvoorbeeld, de `defaultApplicationName` sleutel, zoals wordt weergegeven in het volgende codeblok, is de waarde van de **$PSSessionApplicationName** voorkeursvariabele op de doelcomputer.
 
 ```xml
-    <appSettings>
-            <add key="maxSessionsAllowedPerUser" value="3"/>
-            <add key="defaultPortNumber" value="5985"/>
-            <add key="defaultSSLPortNumber" value="5986"/>
-            <add key="defaultApplicationName" value="WSMAN"/>
-            <add key="defaultUseSslSelection" value="0"/>
-            <add key="defaultAuthenticationType" value="0"/>
-            <add key="defaultAllowRedirection" value="0"/>
-            <add key="defaultConfigurationName" value="Microsoft.PowerShell"/>
-    </appSettings>
+  <appSettings>
+      <add key="maxSessionsAllowedPerUser" value="3"/>
+      <add key="defaultPortNumber" value="5985"/>
+      <add key="defaultSSLPortNumber" value="5986"/>
+      <add key="defaultApplicationName" value="WSMAN"/>
+      <add key="defaultUseSslSelection" value="0"/>
+      <add key="defaultAuthenticationType" value="0"/>
+      <add key="defaultAllowRedirection" value="0"/>
+      <add key="defaultConfigurationName" value="Microsoft.PowerShell"/>
+  </appSettings>
 ```
 
 ### <a name="time-outs-and-unplanned-disconnections"></a>Time-outs en niet-geplande afgebroken sessies
