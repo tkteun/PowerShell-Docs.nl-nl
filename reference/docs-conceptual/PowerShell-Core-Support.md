@@ -48,7 +48,7 @@ Platforms die worden weergegeven als `Experimental` zijn niet officieel onderste
 | Debian 8,7 + en 9                                | Ondersteund   | Ondersteund   |
 | CentOS 7                                          | Ondersteund   | Ondersteund   |
 | Red Hat Enterprise Linux 7                        | Ondersteund   | Ondersteund   |
-| OpenSUSE 42.2                                     | Ondersteund   | Ondersteund   |
+| OpenSUSE 42,3                                     | Ondersteund   | Ondersteund   |
 | Fedora 27                                         | Ondersteund   | Ondersteund   |
 | Fedora 28                                         |             | Ondersteund   |
 | macOS 10.12+                                      | Ondersteund   | Ondersteund   |

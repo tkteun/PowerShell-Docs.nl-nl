@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Bekende problemen voor PowerShell 6.0
-ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893685"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267997"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen voor PowerShell 6.0
 
@@ -102,8 +102,8 @@ Een groot aantal van de opdrachten (cmdlets) die doorgaans beschikbaar zijn in P
 
 De volgende tabel bevat opdrachten die bekend zijn niet te werken in PowerShell op Linux/macOS.
 
-|Opdrachten |Operationele status | Opmerkingen|
-|---------|------------------|------|
+|Opdrachten|Operationele status|Opmerkingen|
+|--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
 |`Get-Acl`, `Set-Acl`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
