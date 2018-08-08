@@ -1,3 +1,14 @@
+---
+title: PowerShell Core in macOS installeren
+description: Informatie over PowerShell Core in macOS installeren
+ms.date: 08/06/2018
+ms.openlocfilehash: ff1814d95b3ca3fa8497069dff249fd2ad5576ef
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587462"
+---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
 PowerShell Core biedt ondersteuning voor macOS 10.12 en hoger.
@@ -37,7 +48,7 @@ Controleer ten slotte of het installeren van uw correct werkt:
 pwsh
 ```
 
-Als u PowerShell sluiten en keer terug naar bash-, gebruikt u de opdracht 'exit'. 
+Als u PowerShell sluiten en keer terug naar bash-, gebruikt u de opdracht 'exit'.
 ```sh
 exit
 ```

@@ -1,3 +1,14 @@
+---
+title: Levenscyclus voor ondersteuning van PowerShell Core
+description: Beleid met betrekking tot ondersteuning voor PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587156"
+---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
 PowerShell Core is een afzonderlijke set hulpprogramma's en onderdelen die is verzonden, geïnstalleerd en geconfigureerd afzonderlijk van Windows PowerShell.
@@ -7,7 +18,7 @@ PowerShell Core wordt echter ondersteund onder traditionele Microsoft support-ov
 U kunt ook betalen voor [ondersteuning][] voor PowerShell Core via een ondersteuningsaanvraag voor uw probleem.
 
 We bieden ook [communityondersteuning][] op GitHub, waar u een probleem, een fout of een functie-aanvraag kan indienen.
-U kunt ook u Help-informatie van andere leden van de community kan vinden op de algemene [Microsoft Community][] of de Microsoft [PowerShell-Tech-Community][].
+U kunt ook u Help-informatie van andere leden van de community kan vinden op de algemene [Microsoft Community][] of de Microsoft [PowerShell Tech-Community][].
 We bieden geen garantie er dat uw probleem wordt opgelost of tijdig worden opgelost.
 Als er een probleem dat onmiddellijke aandacht vereist, moet u de traditionele betaalde ondersteuningsopties.
 
@@ -44,7 +55,8 @@ Platforms die worden weergegeven als `Experimental` zijn niet officieel onderste
 | Windows Server 2008 R2, 2012 R2, 2016             | Ondersteund   | Ondersteund   |
 | [Windows Server semi-Annual-kanaal][semi-annual] | Ondersteund   | Ondersteund   |
 | Ubuntu 14.04 en 16.04                           | Ondersteund   | Ondersteund   |
-| Ubuntu 17.10 en 18.04                           |             | Ondersteund   |
+| Ubuntu 18.04                                      |             | Ondersteund   |
+| Ubuntu 18.10 (via Snap-pakket)                   |             | Community   |
 | Debian 8,7 + en 9                                | Ondersteund   | Ondersteund   |
 | CentOS 7                                          | Ondersteund   | Ondersteund   |
 | Red Hat Enterprise Linux 7                        | Ondersteund   | Ondersteund   |
@@ -56,6 +68,10 @@ Platforms die worden weergegeven als `Experimental` zijn niet officieel onderste
 | Raspbian                                          | Experimentele| Community   |
 | Kali                                              | Community   | Community   |
 | AppImage (werkt op meerdere platforms voor Linux)     | Community   | Community   |
+| [Snap-pakket](https://snapcraft.io/powershell)   | Zie de opmerking    | Zie de opmerking    |
+
+> [!NOTE]
+> Snap-pakketten worden experimentele gedurende een periode.  Nadat er we zeker van bent dat module komt niet leiden tot nieuwe voor ondersteuningsproblemen, de ondersteuning voor de distributie die u kunt het pakket worden uitgevoerd op volgen.
 
 ## <a name="platform-which-are-out-of-support"></a>Platforms die niet worden ondersteund
 
@@ -65,13 +81,14 @@ Daarom de ondersteuning voor de volgende versies is beëindigd door de eigenaren
 
 | Besturingssysteem       | Versie | Einde van hun levensduur                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Augustus 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42,1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16,10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Opmerkingen bij de licentieverlening
 
@@ -106,7 +123,7 @@ Add-WindowsPSModulePath
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [communityondersteuning]: https://github.com/powershell/powershell/issues
 [Microsoft Community]: https://answers.microsoft.com/
-[PowerShell-Tech-Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[PowerShell Tech-Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [ondersteuning]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png

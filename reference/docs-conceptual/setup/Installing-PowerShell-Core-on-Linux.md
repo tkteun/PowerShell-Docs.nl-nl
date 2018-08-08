@@ -1,8 +1,19 @@
+---
+title: PowerShell Core in Linux installeren
+description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
+ms.date: 08/06/2018
+ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587445"
+---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], en [boog Linux][arch].
+Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], en [Arch Linux][arch].
 
-Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell AppImage][lai].
+Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell module pakket][snap].
 U kunt ook PowerShell binaire bestanden rechtstreeks met behulp van de Linux implementeren [ `tar.gz` archief][tar], maar dan moet u voor het instellen van de vereiste afhankelijkheden op basis van het besturingssysteem in de afzonderlijke stappen.
 
 Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
@@ -10,7 +21,7 @@ Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -19,7 +30,7 @@ Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
@@ -132,56 +143,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1710"></a>Ubuntu 17.10
-
-> [!NOTE]
-> Er is ondersteuning voor Ubuntu 17.04 toegevoegd na `6.1.0-preview.2`
-
-### <a name="installation-via-package-repository---ubuntu-1710"></a>Installatie via Pakketopslagplaats - Ubuntu 17.10
-
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daarna hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` bij te werken.
-
-### <a name="installation-via-direct-download---ubuntu-1710"></a>Installatie via de directe Download - Ubuntu 17.10
-
-Het Debian-pakket downloaden `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` uit de [releases][] pagina naar de Ubuntu-machine.
-
-Voer vervolgens het volgende uit in de terminal:
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> De `dpkg -i` opdracht is mislukt met nog niet vervulde afhankelijkheden.
-> De volgende opdracht, `apt-get install -f` deze problemen worden opgelost en vervolgens klaar is met het PowerShell-pakket configureren.
-
-### <a name="uninstallation---ubuntu-1710"></a>Verwijderen - Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
@@ -231,6 +192,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## <a name="ubuntu-1810"></a>Ubuntu 18.10
+
+> [!NOTE]
+> Er is ondersteuning voor Ubuntu 18.10 toegevoegd na `6.1.0-preview.3`.
+> Zoals 18.10 een dagelijkse build is, is het alleen community ondersteund.
+
+Installeren op 18.10 wordt ondersteund `snapd`. Zie [module pakket] [ snap] voor volledige instructies;
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -536,7 +505,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Er is een experimenteel boog ondersteuning.
 
-PowerShell is beschikbaar via de [Linux boog][] gebruiker opslagplaats (AUR).
+PowerShell is beschikbaar via de [Arch Linux][] gebruiker opslagplaats (AUR).
 
 * Het kan worden gecompileerd met de [meest recente versie gemarkeerd][arch-release]
 * Het kan worden gecompileerd uit de [laatste doorvoering naar hoofdniveau][arch-git]
@@ -546,10 +515,37 @@ Pakketten in de AUR zijn community onderhouden: Er is geen officiële ondersteun
 
 Zie voor meer informatie over het installeren van pakketten van de AUR de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Linux boog]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## <a name="snap-package"></a>Snap-pakket
+
+### <a name="getting-snapd"></a>Snapd ophalen
+
+`snapd` is vereist voor het uitvoeren van snaps.  Gebruik [deze instructies](https://docs.snapcraft.io/core/install) om ervoor te zorgen dat u hebt `snapd` geïnstalleerd.
+
+### <a name="installation-via-snap"></a>Installatie via de module
+
+PowerShell Core voor Linux is gepubliceerd naar de [module store](https://snapcraft.io/store) voor eenvoudige installatie (en -updates).
+Dit is de voorkeursmethode.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+Nadat de installatie van module, automatisch bijgewerkt, maar u kunt activeren een upgrade uitvoeren met behulp `sudo snap refresh powershell-preview`.
+
+### <a name="uninstallation"></a>Verwijderen
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## <a name="linux-appimage"></a>Linux AppImage
 

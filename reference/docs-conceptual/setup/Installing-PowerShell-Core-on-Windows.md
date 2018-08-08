@@ -1,3 +1,14 @@
+---
+title: PowerShell Core in Windows installeren
+description: Informatie over PowerShell Core in Windows installeren
+ms.date: 08/06/2018
+ms.openlocfilehash: 84c158b97519194888cf031c57a2a4634120c456
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587115"
+---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
 ## <a name="msi"></a>MSI-BESTAND
