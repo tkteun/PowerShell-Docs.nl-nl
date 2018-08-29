@@ -1,37 +1,43 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482723"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134007"
 ---
 # <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
-De Windows PowerShell `Get-Command` cmdlet haalt alle opdrachten die beschikbaar in de huidige sessie zijn. Wanneer u typt `Get-Command` achter de PowerShell-prompt, ziet u uitvoer die vergelijkbaar is met het volgende:
 
-```
-PS> Get-Command
-CommandType     Name                            Definition
------------     ----                            ----------
-Cmdlet          Add-Content                     Add-Content [-Path] <String[...
-Cmdlet          Add-History                     Add-History [[-InputObject] ...
-Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
+De PowerShell `Get-Command` geeft opdrachten die beschikbaar in uw huidige sessie zijn.
+Bij het uitvoeren van de `Get-Command` cmdlet, ziet u iets die vergelijkbaar is met de volgende uitvoer:
+
+```output
+CommandType     Name                    Version    Source
+-----------     ----                    -------    ------
+Cmdlet          Add-Computer            3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-Content             3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-History             3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-JobTrigger          1.1.0.0    PSScheduledJob
+Cmdlet          Add-LocalGroupMember    1.0.0.0    Microsoft.PowerShell.LocalAccounts
+Cmdlet          Add-Member              3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Add-PSSnapin            3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Dit lijkt veel uitvoer zoals de uitvoer van de Help van Cmd.exe: een tabellaire samenvatting van interne opdrachten. In het fragment van de **Get-Command** opdracht uitvoer hierboven, om de opdracht heeft een CommandType Cmdlet. Een cmdlet zich van Windows PowerShell intrinsieke opdrachttype - een type dat overeenkomt met ongeveer tot de **dir** en **cd** opdrachten van Cmd.exe en dient te worden in de houders UNIX zoals BASH.
+Dit ziet er veel uitvoer als in het Help-informatie van Cmd.exe: een tabellaire overzicht van interne opdrachten. In het fragment van het `Get-Command` opdracht uitvoer hierboven, elke opdracht die wordt weergegeven een CommandType Cmdlet heeft. Een cmdlet is van PowerShell intrinsieke opdrachttype. Dit type komt overeen met ongeveer naar opdrachten zoals `dir` en `cd` in Cmd.exe of de ingebouwde opdrachten van Unix shells zoals bash.
 
-In de uitvoer van de `Get-Command` opdracht, de definities eindigen op de weglatingstekens (...) om aan te geven dat de inhoud door PowerShell kan niet worden weergegeven in de beschikbare ruimte. Wanneer de uitvoer wordt weergegeven in Windows PowerShell, de uitvoer als tekst indelingen en vervolgens rangschikt zodat de gegevens correct in het venster past. We zullen hebben over deze later in de sectie op formatters.
+De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet retourneert. Het volgende voorbeeld laat zien hoe de syntaxis van de `Get-Help` cmdlet:
 
-De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet opgehaald. Als u de syntaxis van de cmdlet Get-Help, gebruikt u de volgende opdracht:
-
-```
+```powershell
 Get-Command Get-Help -Syntax
+```
 
+```output
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -45,23 +51,32 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### <a name="displaying-available-command-types"></a>Beschikbare opdrachttypen weergeven
-De **Get-Command** opdracht de lijst bevat niet alle opdrachten die beschikbaar is in Windows PowerShell. In plaats daarvan de **Get-Command** opdracht geeft alleen de cmdlets in de huidige sessie. Enkele andere soorten opdrachten daadwerkelijk wordt ondersteund door Windows PowerShell. Aliassen, functies en scripts zijn ook Windows PowerShell-opdrachten, hoewel ze niet in de Windows PowerShell User's Guide in detail worden besproken. Externe bestanden die uitvoerbare zijn of een handler van het type geregistreerd bestand ook worden ingedeeld als opdrachten.
+## <a name="displaying-available-command-by-type"></a>Beschikbare opdracht weergeven per type
 
-Als u alle opdrachten in de sessie, typt u:
+De `Get-Command` opdracht geeft alleen de cmdlets in de huidige sessie. PowerShell ondersteunt daadwerkelijk diverse andere soorten opdrachten:
+
+- Aliassen
+- Functies
+- Scripts
+
+Externe uitvoerbare bestanden of bestanden waarvoor een geregistreerde type handler, zijn ook geclassificeerd als opdrachten.
+
+Als alle opdrachten in de sessie, typt u:
 
 ```powershell
 Get-Command *
 ```
 
-Omdat deze lijst externe bestanden in uw zoekpad bevat, kan het duizenden items bevatten. Dit is meer handig om te kijken naar een beperkte reeks opdrachten.
-
-Als u ingebouwde opdrachten van andere typen, gebruikt de **CommandType** parameter van de `Get-Command` cmdlet.
+Deze lijst bevat externe opdrachten in het pad voor de zoekopdracht, zodat deze duizenden items kan bevatten.
+Dit is meer handig om te kijken naar een lagere reeks opdrachten.
 
 > [!NOTE]
-> Het sterretje (\*) wordt gebruikt voor de vergelijking argumenten in Windows PowerShell-opdracht met jokertekens. De \* betekent 'overeenkomstig met een of meer van de tekens'. U kunt typen `Get-Command a*` vinden alle opdrachten die met de letter beginnen "a". In tegenstelling tot jokerteken identieke in Cmd.exe jokertekens van Windows PowerShell ook overeen met een periode.
+> Het sterretje (\*) wordt gebruikt voor vergelijking in PowerShell opdrachtargumenten met jokertekens. De \* betekent 'overeenkomstig met een of meer van de tekens'. U kunt typen `Get-Command a*` vinden alle opdrachten die met de letter beginnen "a". In tegenstelling tot vergelijking in Cmd.exe met jokertekens, wordt de PowerShell-jokertekens ook overeenkomen met een periode.
 
-Als u de opdracht-aliassen die de toegewezen bijnaam van opdrachten, typt u:
+Gebruik de **CommandType** parameter van `Get-Command` om op te halen van systeemeigen opdrachten van andere typen.
+cmdlet.
+
+Als Opdrachtaliassen, die de toegewezen bijnamen van opdrachten, typt u:
 
 ```powershell
 Get-Command -CommandType Alias
@@ -73,7 +88,7 @@ Als u de functies in de huidige sessie, typt u:
 Get-Command -CommandType Function
 ```
 
-Als scripts in de Windows PowerShell-zoekpad weergeven, typt u:
+Als scripts in de PowerShell-zoekpad weergeven, typt u:
 
 ```powershell
 Get-Command -CommandType Script

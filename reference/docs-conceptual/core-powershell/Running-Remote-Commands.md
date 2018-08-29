@@ -1,47 +1,44 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: PowerShell-cmdlet
 title: Externe opdrachten uitvoeren
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482876"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133833"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
-U kunt de opdrachten uitvoeren op een of honderden computers met een enkele Windows PowerShell-opdracht. Windows PowerShell biedt ondersteuning voor externe verwerking met behulp van verschillende technologieën, zoals WMI, RPC en WS-Management.
+U kunt opdrachten uitvoeren op een of honderden computers met slechts één PowerShell-opdracht. Windows PowerShell biedt ondersteuning voor externe computing met behulp van verschillende technologieën, zoals WMI, RPC en WS-Management.
 
-## <a name="remoting-in-powershell-core"></a>Externe toegang in PowerShell-kern
+PowerShell Core biedt ondersteuning voor WMI, WS-Management en SSH voor externe toegang. RPC wordt niet meer ondersteund.
 
-PowerShell-Core, de nieuwere versie van PowerShell op Windows-, Mac OS- en Linux, WMI, ondersteunt WS-Management en SSH voor externe toegang.
-(RPC wordt niet langer ondersteund.)
+Zie voor meer informatie over externe communicatie in PowerShell Core, de volgende artikelen:
 
-Zie voor meer informatie op om in te stellen:
+- [SSH in PowerShell Core voor externe toegang][ssh-remoting]
+- [Externe communicatie van WSMan in PowerShell Core][wsman-remoting]
 
-* [SSH Remoting in PowerShell-kern][ssh-remoting]
-* [Externe communicatie van WSMan in PowerShell-kern][wsman-remoting]
+## <a name="windows-powershell-remoting-without-configuration"></a>Windows PowerShell voor externe toegang zonder configuratie
 
-## <a name="remoting-without-configuration"></a>Externe toegang zonder configuratie
-
-Veel Windows PowerShell-cmdlets hebben de parameter ComputerName waarmee u kunt het verzamelen van gegevens en instellingen op een of meer externe computers wijzigen. Ze verschillende technologieën voor communicatie en veel werk op alle Windows-besturingssystemen die ondersteuning biedt zonder speciale configuratie voor Windows PowerShell gebruiken.
+Veel Windows PowerShell-cmdlets hebben de parameter ComputerName waarmee u voor het verzamelen van gegevens en instellingen op een of meer externe computers wijzigen. Deze cmdlets gebruikt verschillende communicatieprotocollen en werkt op alle Windows-besturingssystemen zonder speciale configuratie.
 
 Deze cmdlets zijn onder andere:
 
-* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
-* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
-* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
+- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
+- [Clear-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
+- [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
+- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
+- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
+- [Set-Service](/powershell/module/microsoft.powershell.management/set-service)
+- [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
+- [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
-Normaal gesproken cmdlets die ondersteuning bieden voor externe toegang zonder speciale configuratie hebt de parameter ComputerName en hoeft niet de sessie-parameter. Om deze cmdlets in uw sessie, typt u:
+Normaal gesproken cmdlets die ondersteuning bieden voor externe toegang zonder speciale configuratie hebt de parameter ComputerName en hoeft de sessie-parameter. U vindt deze cmdlets in uw sessie, typt u:
 
 ```powershell
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
@@ -49,35 +46,39 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell voor externe toegang
 
-Windows PowerShell op afstand, die gebruikmaakt van het protocol WS-Management, kunt u een Windows PowerShell-opdracht uitvoeren op een of meer externe computers. Hiermee kunt u permanente verbindingen tot stand brengen, 1:1 interactieve sessies starten en scripts uitvoeren op meerdere computers.
+Windows PowerShell voor externe toegang kunt met behulp van het protocol WS-Management, u een Windows PowerShell-opdracht uitvoeren op een of meer externe computers. U kunt permanente verbindingen tot stand brengen, interactieve sessies starten en scripts uitvoeren op externe computers.
 
-Voor het gebruik van Windows PowerShell op afstand, moet de externe computer worden geconfigureerd voor extern beheer. Zie voor meer informatie, waaronder instructies [over vereisten voor externe](https://technet.microsoft.com/library/dd315349.aspx).
+Voor het gebruik van Windows PowerShell voor externe toegang, moet de externe computer worden geconfigureerd voor extern beheer.
+Zie voor meer informatie, inclusief instructies [over externe vereisten](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
 
-Nadat u Windows PowerShell voor externe toegang hebt geconfigureerd, worden veel remoting strategieën voor u beschikbaar zijn. De rest van dit document vindt u enkele van deze. Zie voor meer informatie [over externe](https://technet.microsoft.com/library/dd347744.aspx) en [over veelgestelde vragen over extern](https://technet.microsoft.com/library/dd347744.aspx).
+Nadat u Windows PowerShell voor externe toegang hebt geconfigureerd, worden veel externe communicatie van strategieën voor u beschikbaar zijn.
+Dit artikel worden slechts enkele van deze. Zie voor meer informatie, [over externe](/powershell/module/microsoft.powershell.core/about/about_remote).
 
-### <a name="start-an-interactive-session"></a>Een interactieve sessie starten
+### <a name="start-an-interactive-session"></a>Start een interactieve sessie
 
-Gebruikt u een interactieve sessie starten met een externe computer, de [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.
-Bijvoorbeeld, u een interactieve sessie starten met de externe computer Server01, typt u:
+Gebruiken om een interactieve sessie starten met een externe computer, de [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet.
+Bijvoorbeeld, om een interactieve sessie starten met de externe computer Server01, typt u:
 
 ```powershell
 Enter-PSSession Server01
 ```
 
-De wijzigingen in de opdrachtprompt om weer te geven van de naam van de computer waarop u bent verbonden. Daarna alle opdrachten die u typt u bij de opdrachtprompt op de externe computer uitvoeren en de resultaten worden weergegeven op de lokale computer.
+De wijzigingen van de opdrachtprompt om weer te geven van de naam van de externe computer. Alle opdrachten die u typt u bij de opdrachtprompt worden uitgevoerd op de externe computer en de resultaten worden weergegeven op de lokale computer.
 
-Als u wilt de interactieve sessie beëindigen, typt u:
+Als u de interactieve sessie beëindigen, typt u:
 
 ```powershell
 Exit-PSSession
 ```
 
-Zie voor meer informatie over de cmdlets Enter-PSSession en afsluiten-PSSession [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) en [afsluiten-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
+Zie voor meer informatie over de Enter-PSSession en afsluiten PSSession-cmdlets:
 
-### <a name="run-a-remote-command"></a>Een externe opdracht wordt uitgevoerd
+- [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
+- [Afsluiten PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
 
-Wilt willekeurige opdracht uitvoeren op een of meer externe computers, gebruikt de [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet.
-Bijvoorbeeld, om uit te voeren een [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) opdracht op de Server01 en Server02 externe computers, type:
+### <a name="run-a-remote-command"></a>Een externe opdracht uitvoeren
+
+Als u wilt een opdracht uitvoeren op een of meer computers, gebruiken de [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) cmdlet. Bijvoorbeeld, om uit te voeren een [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) opdracht op de Server01 en Server02 externe computers, type:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -92,39 +93,33 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-Zie voor meer informatie over de cmdlet Invoke-Command [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
-
 ### <a name="run-a-script"></a>Een Script uitvoeren
 
-U kunt een script uitvoeren op een of meer externe computers door de parameter bestandspad van de cmdlet Invoke-Command te gebruiken. Het script moet op of toegankelijk is voor uw lokale computer. De resultaten worden geretourneerd naar de lokale computer.
+Als u wilt een script uitvoeren op een of meer externe computers, gebruikt u de parameter van het bestandspad van de `Invoke-Command` cmdlet. Het script moet op of toegankelijk is voor uw lokale computer. De resultaten worden geretourneerd naar de lokale computer.
 
-De volgende opdracht wordt het script DiskCollect.ps1 uitgevoerd op de externe computers Server01 en Server02.
+De volgende opdracht wordt bijvoorbeeld het DiskCollect.ps1-script uitgevoerd op de externe computers, Server01 en Server02.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-Zie voor meer informatie over de cmdlet Invoke-Command [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
-
 ### <a name="establish-a-persistent-connection"></a>Een permanente verbinding tot stand brengen
 
-Voor het uitvoeren van een reeks van verwante opdrachten die gegevens delen, sessie op de externe computer maken en gebruik vervolgens de cmdlet Invoke-Command opdrachten kunt uitvoeren in de sessie die u maakt. Gebruik de cmdlet New-PSSession voor het maken van een externe sessie.
-
-De volgende opdracht maakt bijvoorbeeld een externe sessie op de computer Server01 en een andere externe sessie op de computer Server02. De sessieobjecten worden opgeslagen in de variabele $s.
+Gebruik de `New-PSSession` cmdlet voor het maken van een permanente sessie op een externe computer. Het volgende voorbeeld wordt een externe sessies op Server01 en Server02. De sessieobjecten worden opgeslagen in de `$s` variabele.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-Nu dat de sessies tot stand gebracht worden, kunt u elke opdracht uitvoeren in ze. En omdat de sessies persistent zijn, kunt u worden verzameld in één opdracht en deze in de volgende opdracht gebruiken.
+Nu dat de sessies tot stand worden gebracht, kunt u een opdracht uitvoeren in deze. En omdat de sessies persistent zijn, kunt u gegevens verzamelen in één opdracht en deze gebruiken in een andere opdracht.
 
-Bijvoorbeeld de volgende opdracht wordt een opdracht Get-HotFix uitgevoerd in de sessies in de variabele $s en de resultaten worden opgeslagen in de variabele $h. De variabele $h in elk van de sessies in $s is gemaakt, maar deze niet bestaat in de lokale sessie.
+Bijvoorbeeld een Get-HotFix-opdracht in de volgende opdracht wordt uitgevoerd in de sessies in de variabele $s en de resultaten worden opgeslagen in de variabele $h. De variabele $h in elk van de sessies in $s is gemaakt, maar deze nog niet bestaat in de lokale sessie.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kunt u de gegevens in de variabele $h in de volgende opdrachten, zoals de volgende. De resultaten worden weergegeven op de lokale computer.
+Nu kunt u de gegevens in de `$h` variabele met andere opdrachten in dezelfde sessie. De resultaten worden weergegeven op de lokale computer. Bijvoorbeeld:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -132,18 +127,19 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 
 ### <a name="advanced-remoting"></a>Geavanceerde voor externe toegang
 
-Windows PowerShell extern beheer begint alleen hier. Met behulp van de geïnstalleerd met Windows PowerShell-cmdlets, kunt u tot stand brengen en externe sessies configureren van de lokale en externe is afgelopen, maken van aangepaste en beperkte sessies, kunnen gebruikers opdrachten voor het importeren vanuit een externe sessie die daadwerkelijk worden uitgevoerd impliciet op de externe sessie, configureert u de beveiliging van een externe sessie en nog veel meer.
+Windows PowerShell extern beheer alleen hier begint. Met behulp van de cmdlets die met Windows PowerShell is geïnstalleerd, kunt u tot stand brengen en externe sessies configureren bij de uiteinden lokale en externe maken van aangepaste en beperkte sessies, kunnen gebruikers opdrachten voor het importeren van een externe sessie die daadwerkelijk wordt uitgevoerd impliciet op de externe sessie, configureert u de beveiliging van een externe sessie en nog veel meer.
 
-Windows PowerShell omvat te vergemakkelijken externe configuratie, een WSMan-provider. De WSMAN: station dat de provider maakt, kunt u navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
-Zie voor meer informatie over de WSMan-provider [WSMan Provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-Cmdlets](https://technet.microsoft.com/library/dd819481.aspx), of typ 'Get-Help wsman' in de Windows PowerShell-console.
+Windows PowerShell omvat een WSMan-provider. Hiermee maakt u de provider een `WSMAN:` station waarmee u navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
+
+Zie voor meer informatie over de WSMan-provider [WSMan-Provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-Cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ in de Windows PowerShell-console `Get-Help wsman`.
 
 Zie voor meer informatie
 
-- [Over externe Veelgestelde vragen](https://technet.microsoft.com/library/dd315359.aspx)
+- [Over veelgestelde vragen over externe](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Zie voor hulp bij externe communicatie van fouten, [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Zie ook
 
@@ -153,7 +149,7 @@ Zie voor meer informatie over fouten voor externe toegang, [about_Remote_Trouble
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

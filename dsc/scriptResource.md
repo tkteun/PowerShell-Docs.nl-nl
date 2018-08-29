@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: Bron van het DSC-Script
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.date: 08/24/2018
+keywords: DSC, powershell, configuratie en installatie
+title: Script voor DSC-Resource
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189445"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133890"
 ---
-# <a name="dsc-script-resource"></a>Bron van het DSC-Script
+# <a name="dsc-script-resource"></a>Script voor DSC-Resource
 
+> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.x
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
-
-De **Script** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het uitvoeren van Windows PowerShell-scriptblokken op de doelknooppunten. De `Script` resource heeft `GetScript`, `SetScript`, en `TestScript` eigenschappen. Deze eigenschappen moeten worden ingesteld op scriptblokken dat wordt uitgevoerd op elk doelknooppunt.
-
-De `GetScript` scriptblok als resultaat moet een hashtabel die vertegenwoordigt de status van het huidige knooppunt. De hash-tabel mag slechts één sleutelveld bevatten `Result` en de waarde moet van het type `String`. Het is niet vereist voor het resultaat opgeleverd. DSC geen reactie met de uitvoer van deze scriptblok.
-
-De `TestScript` scriptblok moet bepalen of het huidige knooppunt moet worden gewijzigd. Er moet worden geretourneerd `$true` als het knooppunt bijgewerkt is. Er moet worden geretourneerd `$false` als de configuratie van het knooppunt verouderd is en moet worden bijgewerkt door de `SetScript` scriptblok. De `TestScript` scriptblok wordt aangeroepen door DSC.
-
-De `SetScript` scriptblok het knooppunt moet wijzigen. Deze wordt aangeroepen door DSC als de `TestScript` blokkeren return `$false`.
-
-Als u wilt gebruiken van variabelen uit het configuratiescript in de `GetScript`, `TestScript`, of `SetScript` scriptblokken, gebruikt u de `$using:` bereik (Zie hieronder voor een voorbeeld).
-
+De **Script** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het uitvoeren van Windows PowerShell-scriptblokken op doelknooppunten. De **Script** maakt gebruik van resource `GetScript`, `SetScript`, en `TestScript` -eigenschappen die u definieert om uit te voeren van de bijbehorende DSC scriptblokken bevatten status bewerkingen.
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
+> [!NOTE]
+> De `GetScript`, `TestScript`, en `SetScript` blokken worden opgeslagen als tekenreeksen.
+
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
-|---|---|
-| Ophalen script| Biedt een blok van Windows PowerShell-script dat wordt uitgevoerd wanneer u aanroept de [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet. Dit blok moet een hashtabel retourneren. De hash-tabel mag slechts één sleutelveld bevatten **resultaat** en de waarde moet van het type **tekenreeks**.|
-| SetScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -cmdlet de **TestScript** blok als eerste wordt gestart. Als de **TestScript** blokkeren retourneert **$false**, wordt de **SetScript** blok wordt uitgevoerd. Als de **TestScript** blokkeren retourneert **$true**, wordt de **SetScript** blok wordt niet uitgevoerd.|
-| TestScript| Biedt een blok van Windows PowerShell-script. Wanneer u aanroept de [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet dit blok wordt uitgevoerd. Als het resultaat **$false**, het blok SetScript wordt uitgevoerd. Als het resultaat **$true**, SetScript blok wordt niet uitgevoerd. De **TestScript** blok wordt ook uitgevoerd wanneer u aanroept de [Test DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** blok wordt niet uitgevoerd, ongeacht welke het TestScript waarde blokkeren retourneert. De **TestScript** blok moet True worden geretourneerd als de configuratie van de werkelijke overeenkomt met de huidige configuratie van de gewenste status en False als komt niet overeen met. (De huidige configuratie van de gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt.)|
-| referentie| Hiermee geeft u de referenties gebruiken om dit script uit te voeren als de referenties zijn vereist.|
-| dependsOn| Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.
+|Eigenschap|Beschrijving|
+|--------|-----------|
+|Ophalen script|Een scriptblok waarmee de huidige status van het knooppunt wordt geretourneerd.|
+|SetScript|Een scriptblok die DSC gebruikt voor het afdwingen van naleving bij het knooppunt niet is opgenomen in de gewenste status.|
+|TestScript|Een scriptblok die bepaalt of het knooppunt in de gewenste status.|
+|Referentie| Geeft aan dat de referenties wilt gebruiken voor het uitvoeren van dit script als referenties vereist zijn.|
+|DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.
 
-## <a name="example-1"></a>Voorbeeld 1
+### <a name="getscript"></a>Ophalen script
+
+DSC maakt geen gebruik van de uitvoer van `GetScript`. De [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet voert de `GetScript` om op te halen van de huidige status van een knooppunt. Een retourwaarde hoeft niet uit `GetScript`. Als u een retourwaarde opgeeft, moet dit een `hashtable` met een **resultaat** sleutel waarvan de waarde is een `String`.
+
+### <a name="testscript"></a>TestScript
+
+De `TestScript` wordt uitgevoerd door DSC om te bepalen of de `SetScript` moet worden uitgevoerd. Als de `TestScript` retourneert `$false`, DSC wordt uitgevoerd de `SetScript` om het knooppunt terug naar de gewenste status. De App moet retourneren een `boolean` waarde. Een resultaat van `$true` geeft aan dat het knooppunt voldoet en `SetScript` moet niet worden uitgevoerd.
+
+De [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) -cmdlet voert de `TestScript` om op te halen van de naleving van de knooppunten van de **Script** resources. Echter, in dit geval de `SetScript` niet wordt uitgevoerd, ongeacht wat de `TestScript` retourneert blokkeren.
+
+> [!NOTE]
+> Alle uitvoer van uw `TestScript` maakt deel uit van de geretourneerde waarde. PowerShell interpreteert unsuppressed uitvoer als niet-nul, wat dat betekent uw `TestScript` retourneert `$true` , ongeacht de status van het knooppunt.
+> Dit leidt tot onvoorspelbare resultaten, fout-positieven, en zorgt ervoor dat problemen tijdens het oplossen van problemen.
+
+### <a name="setscript"></a>SetScript
+
+De `SetScript` Hiermee wijzigt u het knooppunt enfore de gewenste status. Deze wordt aangeroepen door DSC als de `TestScript` script blok retourneert `$false`. De `SetScript` moet retourneren geen waarde hebben.
+
+## <a name="examples"></a>Voorbeelden
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Voorbeeld 1: Voorbeeldtekst met behulp van de bron van een Script schrijven
+
+In dit voorbeeld test sprake is van `C:\TempFolder\TestFile.txt` op elk knooppunt. Als deze niet bestaat, wordt gemaakt met behulp van de `SetScript`. De `GetScript` retourneert de inhoud van het bestand en de geretourneerde waarde wordt niet gebruikt.
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>Voorbeeld 2
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Voorbeeld 2: De versie-informatie met behulp van een bron van het Script vergelijken
+
+In dit voorbeeld wordt de *compatibel* versie-informatie uit een tekstbestand op de computer ontwerpen en slaat deze op in de `$version` variabele. Bij het genereren van het knooppunt MOF-bestand, DSC vervangt de `$using:version` variabelen in elk script blokkeren met de waarde van de `$version` variabele. Tijdens de uitvoering, de *compatibel* versie is opgeslagen in een tekstbestand op elk knooppunt en vergeleken en op de volgende uitvoeringen worden bijgewerkt.
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-Deze bron is de versie van de configuratie naar een tekstbestand schrijven. Deze versie beschikbaar is op de clientcomputer, maar bevindt zich niet op een van de knooppunten, dus het moet worden doorgegeven aan elk van de `Script` scriptblokken van de resource met de PowerShell `using` bereik. Wanneer het genereren van het knooppunt MOF-bestand, de waarde van de `$version` variabele wordt gelezen uit een tekstbestand op de clientcomputer. DSC-vervangt de `$using:version` variabelen in elk script blokkeren met de waarde van de `$version` variabele.

@@ -1,37 +1,39 @@
 ---
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
-ms.date: 08/06/2018
-ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.date: 08/14/2018
+ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587496"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133883"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
 ## <a name="overview"></a>Overzicht
 
-PowerShell voor externe toegang gebruikt normaal gesproken WinRM verbinding-onderhandeling en gegevenstransport. SSH is gekozen voor deze implementatie voor externe toegang, omdat deze nu beschikbaar voor zowel Windows als Linux-platforms is en waar meerdere platforms PowerShell voor externe toegang kunt. WinRM biedt een robuuste hostingmodel echter ook voor externe PowerShell-sessies die deze implementatie wordt nog niet. En dit betekent dat PowerShell externe eindpunt-configuratie en JEA (Just Enough Administration) wordt nog niet ondersteund in deze implementatie.
+PowerShell voor externe toegang gebruikt normaal gesproken WinRM verbinding-onderhandeling en gegevenstransport. SSH is nu beschikbaar voor Linux en Windows-platform en kunt waar meerdere platforms externe communicatie van PowerShell.
 
-PowerShell SSH voor externe toegang kunt u eenvoudige PowerShell-sessie voor externe toegang tussen Windows en Linux-machines. Dit wordt gedaan door het maken van een PowerShell-proces op de doel-VM als een SSH-subsysteem te hosten. Dit wordt uiteindelijk worden gewijzigd naar een meer algemene hostingmodel die vergelijkbaar is met de werking van WinRM ter ondersteuning van de configuratie van eindpunten en JEA.
+WinRM biedt een robuuste hostingmodel voor de externe PowerShell-sessies. die deze implementatie op basis van een SSH-remoting momenteel geen ondersteuning voor de configuratie van het externe eindpunt en JEA (Just Enough Administration).
 
-De `New-PSSession`, `Enter-PSSession` en `Invoke-Command` cmdlets hebben nu een nieuwe parameterset om deze nieuwe verbinding voor externe toegang mogelijk te maken
+Externe communicatie met SSH kunt u eenvoudige PowerShell-sessie voor externe toegang tussen Windows en Linux-machines. SSH voor externe toegang maakt een hostproces PowerShell op de doel-VM als een SSH-subsysteem.
+Uiteindelijk zult we een algemene hostingmodel, vergelijkbaar met WinRM, ter ondersteuning van configuratie van eindpunten en JEA implementeren.
+
+De `New-PSSession`, `Enter-PSSession`, en `Invoke-Command` cmdlets hebben nu een nieuwe parameterset voor de ondersteuning van deze nieuwe verbinding voor externe toegang.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Deze nieuwe parameterset waarschijnlijk zullen veranderen, maar voor nu kunt u maken van SSH PSSessions kunt u communiceren met vanaf de opdrachtregel of opdrachten en scripts aanroepen op. U opgeven van de doel-VM met de parameter hostnaam en gebruikersnaam van de naam van de gebruiker voorzien. Als de cmdlets interactief wordt uitgevoerd op de PowerShell-opdrachtregel wordt u gevraagd om een wachtwoord. Maar u hebt ook de optie voor het gebruik van verificatie van SSH-sleutel en geef het pad van een bestand met persoonlijke sleutel met de parameter KeyFilePath.
+Voor het maken van een externe sessie die u opgeeft de doel-VM met de `HostName` parameter en geeft u de gebruikersnaam van de met `UserName`. Als de cmdlets interactief wordt uitgevoerd, wordt u gevraagd om een wachtwoord. U kunt ook gebruiken met behulp van een persoonlijk sleutelbestand met SSH-sleutelverificatie de `KeyFilePath` parameter.
 
 ## <a name="general-setup-information"></a>Algemene instellingen
 
-SSH is vereist om te worden geïnstalleerd op alle virtuele machines. U moet zowel client installeren (`ssh.exe`) en de server (`sshd.exe`) zodat u met externe toegang naar en van de machines experimenteren kunt. Voor Windows moet u voor het installeren van [Win32-OpenSSH vanuit GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
-Voor Linux moet u SSH (inclusief sshd-server) geschikt is voor uw platform installeren. U moet ook een recente PowerShell-build of een pakket van de SSH-functie voor externe communicatie met GitHub.
-SSH-subsystemen tot stand brengen van een PowerShell-proces op de externe computer wordt gebruikt en de SSH-server moet worden geconfigureerd voor die. Bovendien moet u wachtwoordverificatie en eventueel sleutel gebaseerde verificatie inschakelen.
+SSH moet worden geïnstalleerd op alle virtuele machines. Zowel de SSH-client installeren (`ssh.exe`) en de server (`sshd.exe`) zodat u externe naar en van de machines kunt. Voor Windows, installeert u [Win32-OpenSSH vanuit GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).
+Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform. U moet ook PowerShell Core installeren vanuit GitHub om op te halen van de SSH-functie voor externe toegang. De SSH-server moet worden geconfigureerd voor het maken van een SSH-subsysteem voor het hosten van een PowerShell-proces op de externe computer. Ook moet u inschakelen wachtwoord of sleutel gebaseerde verificatie configureren.
 
-## <a name="setup-on-windows-machine"></a>Instellen op Windows-Machine
+## <a name="set-up-on-windows-machine"></a>Op Windows-Machine instellen
 
 1. Installeer de nieuwste versie van [PowerShell Core voor Windows]
 
@@ -55,27 +57,22 @@ SSH-subsystemen tot stand brengen van een PowerShell-proces op de externe comput
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
-     > Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt.
-     > Zie [dit probleem op GitHub voor meer informatie](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt. Zie voor meer informatie, [deze GitHub-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Eén oplossing is het maken van een symlink naar de Powershell-installatiemap die geen spaties bevatten:
+     Eén oplossing is het maken van een symlink naar de Powershell-installatiemap die geen spaties:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
      en geef de code in het subsysteem:
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-     ```
-
-     ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
    - Verificatie met sleutel (optioneel) inschakelen
@@ -90,12 +87,9 @@ SSH-subsystemen tot stand brengen van een PowerShell-proces op de externe comput
    Restart-Service sshd
    ```
 
-5. Het pad waar OpenSSH is geïnstalleerd op uw pad Env variabele toevoegen
+5. Voeg het pad waar OpenSSH wordt geïnstalleerd in uw padomgevingsvariabele bevindt. Voorbeeld: `C:\Program Files\OpenSSH\`. Deze vermelding kunt u de ssh.exe worden gevonden.
 
-   - Dit moet zijn aan de regels van `C:\Program Files\OpenSSH\`
-   - Hiermee kunt u de ssh.exe worden gevonden
-
-## <a name="setup-on-linux-ubuntu-1404-machine"></a>Installatie op de Machine voor Linux (Ubuntu 14.04)
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Op Linux (Ubuntu 14.04) Machine instellen
 
 1. De meest recente [PowerShell Core voor Linux]-build installeren vanuit GitHub
 2. [Ubuntu SSH] indien nodig geïnstalleerd
@@ -131,7 +125,7 @@ SSH-subsystemen tot stand brengen van een PowerShell-proces op de externe comput
    sudo service sshd restart
    ```
 
-## <a name="setup-on-macos-machine"></a>Instellen op MacOS-computer
+## <a name="set-up-on-macos-machine"></a>Ingesteld op MacOS-computer
 
 1. Installeer de nieuwste build van de [PowerShell Core voor MacOS]
 
@@ -176,7 +170,7 @@ SSH-subsystemen tot stand brengen van een PowerShell-proces op de externe comput
 
 ## <a name="powershell-remoting-example"></a>Voorbeeld van PowerShell voor externe toegang
 
-De eenvoudigste manier om te testen voor externe toegang is om te proberen deze slechts op één computer. Ik zal hier een externe sessie naar dezelfde computer op een Linux-vak maken. U ziet dat ik ben met behulp van PowerShell-cmdlets vanaf een opdrachtprompt, zodat we ziet u aanwijzingen uit in SSH waarin wordt gevraagd om te controleren of de hostcomputer, evenals een wachtwoord wordt gevraagd. U kunt hetzelfde doen op een Windows-machine om ervoor te zorgen voor externe toegang werkt er en vervolgens extern tussen machines wijzig gewoon de naam van de host.
+De eenvoudigste manier om te testen voor externe toegang is om het te proberen op één computer. In dit voorbeeld maken we een externe sessie terug naar de dezelfde Linux-machine. We zijn met behulp van PowerShell cmdlets interactief zodat we zien uit in SSH waarin wordt gevraagd om te controleren of de computer en dat u wordt gevraagd om een wachtwoord gevraagd. U kunt hetzelfde doen op een Windows-machine om ervoor te zorgen voor externe toegang werkt. Klik vervolgens op afstand tussen machines door de hostnaam te wijzigen.
 
 ```powershell
 #
@@ -197,9 +191,9 @@ $session
 ```
 
 ```output
- Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
- -- ----            ------------    ------------    -----         -----------------     ------------
-  1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+ Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
+ -- ----   ------------    ------------    -----    -----------------     ------------
+  1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
 ```
 
 ```powershell
