@@ -2,16 +2,16 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
 ms.date: 08/06/2018
-ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 0a1f30ef75a0feeb97df9a35a08d6b0d3edaeccf
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587445"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133837"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], en [Arch Linux][arch].
+Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], en [boog Linux][arch].
 
 Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell module pakket][snap].
 U kunt ook PowerShell binaire bestanden rechtstreeks met behulp van de Linux implementeren [ `tar.gz` archief][tar], maar dan moet u voor het instellen van de vereiste afhankelijkheden op basis van het besturingssysteem in de afzonderlijke stappen.
@@ -77,12 +77,13 @@ Vanaf hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` om bij te we
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installatie via de directe Download - Ubuntu 14.04
 
-Het Debian-pakket downloaden `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` uit de [releases][] pagina naar de Ubuntu-machine.
+Het Debian-pakket downloaden `powershell_6.0.3-1.ubuntu.14.04_amd64.deb`
+uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -124,12 +125,13 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via de directe Download - Ubuntu 16.04
 
-Het Debian-pakket downloaden `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` uit de [releases][] pagina naar de Ubuntu-machine.
+Het Debian-pakket downloaden `powershell_6.0.3-1.ubuntu.16.04_amd64.deb`
+uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -174,7 +176,8 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via de directe Download - Ubuntu 18.04
 
-Het Debian-pakket downloaden `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` uit de [releases][] pagina naar de Ubuntu-machine.
+Het Debian-pakket downloaden `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb`
+uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
@@ -233,12 +236,13 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---debian-8"></a>Installatie via de directe Download - Debian 8
 
-Het Debian-pakket downloaden `powershell_6.0.2-1.debian.8_amd64.deb` uit de [releases][] pagina naar de Debian-machine.
+Het Debian-pakket downloaden `powershell_6.0.3-1.debian.8_amd64.deb`
+uit de [releases][] pagina naar de Debian-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -284,12 +288,13 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installatie via de directe Download - Debian 9
 
-Het Debian-pakket downloaden `powershell_6.0.2-1.debian.9_amd64.deb` uit de [releases][] pagina naar de Debian-machine.
+Het Debian-pakket downloaden `powershell_6.0.3-1.debian.9_amd64.deb`
+uit de [releases][] pagina naar de Debian-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -323,18 +328,19 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoef
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via de directe Download - CentOS 7
 
-Met behulp van [CentOS 7][], het RPM-pakket downloaden `powershell-6.0.2-1.rhel.7.x86_64.rpm` uit de [releases][] pagina op de computer CentOS.
+Met behulp van [CentOS 7][], het RPM-pakket downloaden `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+uit de [releases][] pagina op de computer CentOS.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo yum install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Verwijderen - CentOS 7
@@ -366,18 +372,19 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoef
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via de directe Download - Red Hat Enterprise Linux (RHEL) 7
 
-Download het RPM-pakket `powershell-6.0.2-1.rhel.7.x86_64.rpm` uit de [releases][] pagina naar de Red Hat Enterprise Linux-machine.
+Download het RPM-pakket `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+uit de [releases][] pagina naar de Red Hat Enterprise Linux-machine.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
-sudo yum install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Verwijderen - Red Hat Enterprise Linux (RHEL) 7
@@ -427,18 +434,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-423"></a>Installatie via de directe Download - OpenSUSE 42,3
 
-Download het RPM-pakket `powershell-6.0.2-1.rhel.7.x86_64.rpm` uit de [releases][] pagina op de computer OpenSUSE.
+Download het RPM-pakket `powershell-6.0.3-1.rhel.7.x86_64.rpm` uit de [releases][] pagina op de computer OpenSUSE.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---opensuse-423"></a>Verwijderen - OpenSUSE 42,3
@@ -478,13 +485,14 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installatie via de directe Download - Fedora 27, Fedora 28
 
-Download het RPM-pakket `powershell-6.0.2-1.rhel.7.x86_64.rpm` uit de [releases][] pagina op de computer Fedora.
+Download het RPM-pakket `powershell-6.0.3-1.rhel.7.x86_64.rpm`
+uit de [releases][] pagina op de computer Fedora.
 
 Voer vervolgens het volgende uit in de terminal:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
@@ -505,7 +513,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Er is een experimenteel boog ondersteuning.
 
-PowerShell is beschikbaar via de [Arch Linux][] gebruiker opslagplaats (AUR).
+PowerShell is beschikbaar via de [Linux boog][] gebruiker opslagplaats (AUR).
 
 * Het kan worden gecompileerd met de [meest recente versie gemarkeerd][arch-release]
 * Het kan worden gecompileerd uit de [laatste doorvoering naar hoofdniveau][arch-git]
@@ -515,7 +523,7 @@ Pakketten in de AUR zijn community onderhouden: Er is geen officiële ondersteun
 
 Zie voor meer informatie over het installeren van pakketten van de AUR de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Linux boog]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
@@ -581,7 +589,7 @@ wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libs
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
 # Install PowerShell
-sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
@@ -624,13 +632,13 @@ Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) en 
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.2-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.0.3-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -710,7 +718,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/opt/microsoft/powershell/6.0.2/`
+* `$PSHOME` is `/opt/microsoft/powershell/6.0.3/`
 * Gebruikersprofielen worden gelezen in `~/.config/powershell/profile.ps1`
 * Standaardprofielen worden gelezen in `$PSHOME/profile.ps1`
 * Gebruikersmodules worden gelezen in `~/.local/share/powershell/Modules`
