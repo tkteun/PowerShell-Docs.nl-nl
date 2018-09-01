@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134007"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353167"
 ---
 # <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
 
@@ -29,7 +29,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Dit ziet er veel uitvoer als in het Help-informatie van Cmd.exe: een tabellaire overzicht van interne opdrachten. In het fragment van het `Get-Command` opdracht uitvoer hierboven, elke opdracht die wordt weergegeven een CommandType Cmdlet heeft. Een cmdlet is van PowerShell intrinsieke opdrachttype. Dit type komt overeen met ongeveer naar opdrachten zoals `dir` en `cd` in Cmd.exe of de ingebouwde opdrachten van Unix shells zoals bash.
+Dit ziet er veel uitvoer als in het Help-informatie van **cmd.exe**: een tabellaire overzicht van interne opdrachten. In het fragment van het `Get-Command` opdracht uitvoer hierboven, elke opdracht die wordt weergegeven een CommandType Cmdlet heeft. Een cmdlet is van PowerShell intrinsieke opdrachttype. Dit type komt overeen met ongeveer naar opdrachten zoals `dir` en `cd` in **cmd.exe** of de ingebouwde opdrachten van de Unix-houders zoals bash.
 
 De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet retourneert. Het volgende voorbeeld laat zien hoe de syntaxis van de `Get-Help` cmdlet:
 
@@ -71,7 +71,7 @@ Deze lijst bevat externe opdrachten in het pad voor de zoekopdracht, zodat deze 
 Dit is meer handig om te kijken naar een lagere reeks opdrachten.
 
 > [!NOTE]
-> Het sterretje (\*) wordt gebruikt voor vergelijking in PowerShell opdrachtargumenten met jokertekens. De \* betekent 'overeenkomstig met een of meer van de tekens'. U kunt typen `Get-Command a*` vinden alle opdrachten die met de letter beginnen "a". In tegenstelling tot vergelijking in Cmd.exe met jokertekens, wordt de PowerShell-jokertekens ook overeenkomen met een periode.
+> Het sterretje (\*) wordt gebruikt voor vergelijking in PowerShell opdrachtargumenten met jokertekens. De \* betekent 'overeenkomstig met een of meer van de tekens'. U kunt typen `Get-Command a*` vinden alle opdrachten die met de letter beginnen "a". In tegenstelling tot jokertekens **cmd.exe**, van PowerShell jokerteken wordt ook overeenkomen met een punt.
 
 Gebruik de **CommandType** parameter van `Get-Command` om op te halen van systeemeigen opdrachten van andere typen.
 cmdlet.

@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell-cmdlet
 title: Meer informatie over PowerShell-namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: d4e374530c8628df0d53fd860c4b7a149c58eb60
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134209"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353263"
 ---
 # <a name="learning-powershell-names"></a>Meer informatie over PowerShell-namen
 
@@ -19,10 +19,13 @@ Dit lijkt het logisch is voor de namen van opdrachten na elke opdracht een afzon
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Meer informatie over opdrachtnamen in traditionele shells
 
-De meeste opdrachten zijn gemaakt voor de elementen van het besturingssysteem of toepassingen, zoals services of processen beheren. De opdrachten hebben namen die kunnen of kunnen past niet in een serie. Bijvoorbeeld, op Windows-systemen, kunt u de `net start` en `net stop` opdrachten starten en stoppen van een service. **SC. EXE** is een ander hulpprogramma voor service-beheer voor Windows. Deze naam past niet in het naamgevingspatroon voor de `net` opdrachten-service. Windows heeft voor het beheer van bedrijfsprocessen, de `tasklist` opdracht lijst processen en de `taskkill` opdracht voor het beëindigen van processen.
+De meeste opdrachten zijn gemaakt voor de elementen van het besturingssysteem of toepassingen, zoals services of processen beheren. De opdrachten hebben namen die kunnen of kunnen past niet in een serie. Bijvoorbeeld, op Windows-systemen, kunt u de `net start` en `net stop` opdrachten starten en stoppen van een service. **SC.exe** is een ander hulpprogramma voor service-beheer voor Windows. Deze naam past niet in het naamgevingspatroon voor de **net.exe** opdrachten-service. Windows heeft voor het beheer van bedrijfsprocessen, de **tasklist.exe** opdracht lijst processen en de **taskkill.exe** opdracht voor het beëindigen van processen.
 
-Ook hebben deze opdrachten onregelmatige parameter specificaties. U kunt geen gebruiken de `net start` opdracht voor het starten van een service op een externe computer. De `sc` opdracht kan een service starten op een externe computer.
-Maar als de externe computer, moet u de naam met een dubbele backslash voorafgaan. Als u wilt de spooler-service op een externe computer met de naam DC01 start, typt u `sc \\DC01 start spooler`. Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Voorbeeld: `tasklist /S DC01`.
+Ook hebben deze opdrachten onregelmatige parameter specificaties. U kunt geen gebruiken de `net start` opdracht voor het starten van een service op een externe computer. De **sc.exe** opdracht kan een service starten op een externe computer. Maar als de externe computer, moet u de naam met een dubbele backslash voorafgaan. Als u wilt de spooler-service op een externe computer met de naam DC01 start, typt u `sc.exe \\DC01 start spooler`.
+Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Voorbeeld: `tasklist /S DC01`.
+
+> [!NOTE]
+> Voorafgaand aan PowerShell v6, `sc` is een alias voor de `Set-Content` cmdlet. Om uit te voeren de **sc.exe** opdracht, moet u de bestandsextensie opnemen.
 
 Services en -processen zijn voorbeelden van beheerbare elementen op een computer die goed gedefinieerde levenscyclus hebben. U kan starten of stoppen van services en -processen of een lijst van alle actieve services of processen. Hoewel er belangrijke technische verschillen daartussen zijn, zijn welke acties die u op services en -processen uitvoeren conceptueel gezien hetzelfde. Bovendien, de opties die we voor het aanpassen van een actie door de parameters op te geven mogelijk qua ontwerp vergelijkbaar ook.
 
@@ -37,8 +40,7 @@ PowerShell is een aanbevolen set van standaardbewerkingen. Zelfstandige naamwoor
 Voor dit voorbeeld van twee zelfstandige naamwoorden en werkwoorden vereenvoudigen consistentie niet weten dat veel eenvoudiger. Breid uit die lijst op een gestandaardiseerde verzameling 10 woorden en 10 woorden. Nu hoeft u slechts 20 woorden om te begrijpen.
 Maar deze woorden kunnen worden gecombineerd tot 100 namen van afzonderlijke opdrachten formulier.
 
-Het is gemakkelijk te begrijpen wat een PowerShell-opdracht door te lezen van de naam doet. De opdracht voor het afsluiten van een computer is `Stop-Computer`. De opdracht om een lijst van alle computers in een netwerk is `Get-Computer`.
-De opdracht voor het ophalen van de systeemdatum is `Get-Date`.
+Het is gemakkelijk te begrijpen wat een PowerShell-opdracht door te lezen van de naam doet. De opdracht voor het afsluiten van een computer is `Stop-Computer`. De opdracht om een lijst van alle computers in een netwerk is `Get-Computer`. De opdracht voor het ophalen van de systeemdatum is `Get-Date`.
 
 U kunt alle opdrachten die een bepaalde bewerking met bevatten een lijst de **term** parameter voor `Get-Command`. Bijvoorbeeld, om te zien van alle cmdlets die gebruikmaken van de term `Get`, type:
 

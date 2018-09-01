@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Variabelen gebruiken om objecten op te slaan
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134055"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353215"
 ---
-# <a name="using-variables-to-store-objects"></a>Variabelen gebruiken voor het opslaan van objecten
+# <a name="using-variables-to-store-objects"></a>Variabelen gebruiken om objecten op te slaan
 
 PowerShell in combinatie met objecten. PowerShell kunt u benoemde objecten bekend als variabelen maken.
 Namen van variabelen kunnen de onderstrepingsteken teken kan alle alfanumerieke tekens bevatten. Wanneer gebruikt in PowerShell, een variabele altijd is opgegeven met behulp van de \$ gevolgd door de naam van variabele.
@@ -80,13 +80,13 @@ Get-ChildItem variable:
 
 ## <a name="using-cmdexe-variables"></a>Cmd.exe variabelen gebruiken
 
-PowerShell kunt gebruiken de dezelfde omgevingsvariabelen die beschikbaar zijn voor alle Windows-proces, met inbegrip van Cmd.exe. Deze variabelen worden weergegeven via een station met de naam `env:`. U kunt deze variabelen weergeven door de volgende opdracht te typen:
+PowerShell kunt gebruiken de dezelfde omgevingsvariabelen die beschikbaar zijn voor alle Windows-proces, inclusief **cmd.exe**. Deze variabelen worden weergegeven via een station met de naam `env:`. U kunt deze variabelen weergeven door de volgende opdracht te typen:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-De standaard `*-Variable` cmdlets zijn niet ontworpen voor gebruik met omgevingsvariabelen. Omgevingsvariabelen worden geopend met behulp van de `env:` stationsvoorvoegsel. Bijvoorbeeld, de **% SystemRoot %** variabele in Cmd.exe root directory-naam van het besturingssysteem bevat. In PowerShell, gebruikt u `$env:SystemRoot` voor toegang tot dezelfde waarde.
+De standaard `*-Variable` cmdlets zijn niet ontworpen voor gebruik met omgevingsvariabelen. Omgevingsvariabelen worden geopend met behulp van de `env:` stationsvoorvoegsel. Bijvoorbeeld, de **% SystemRoot %** variabele in **cmd.exe** bevat de naam van de map hoofdmap van het besturingssysteem. In PowerShell, gebruikt u `$env:SystemRoot` voor toegang tot dezelfde waarde.
 
 ```
 PS> $env:SystemRoot

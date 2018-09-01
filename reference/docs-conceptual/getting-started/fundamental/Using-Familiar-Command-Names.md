@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Bekende opdrachtnamen gebruiken
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134080"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353246"
 ---
 # <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 
@@ -16,9 +16,9 @@ PowerShell ondersteunt om te verwijzen naar opdrachten met alternatieve namen-al
 
 Een nieuwe naam koppelt aliasing aan een andere opdracht. PowerShell heeft bijvoorbeeld een interne functie met de naam `Clear-Host` die het uitvoervenster worden gewist. U kunt beide typen de `cls` of `clear` alias achter de opdrachtprompt. PowerShell wordt deze aliassen wordt geïnterpreteerd en wordt uitgevoerd de `Clear-Host` functie.
 
-Deze functie helpt gebruikers voor meer informatie over PowerShell. Eerste, de meeste Cmd.exe- en Unix-gebruikers hebben een grote statusprovider van opdrachten die gebruikers al bekend met de naam. De PowerShell-equivalenten kunnen niet dezelfde resultaten opleveren. De resultaten zijn echter sluiten voldoende die gebruikers kunnen werken zonder te weten de naam van de PowerShell-opdracht. 'Finger geheugen' is een andere belangrijke bron van frustraties wanneer een nieuwe opdrachtshell learning. Als u Cmd.exe voor jaar hebt gebruikt, mogelijk reflexively typt u de `cls` opdracht voor het wissen van het scherm. Zonder de alias voor `Clear-Host`, u een foutbericht ontvangt en weet niet wat u moet doen om te wissen van de uitvoer.
+Deze functie helpt gebruikers voor meer informatie over PowerShell. Eerste, meest **cmd.exe** en Unix-gebruikers hebben een grote statusprovider van opdrachten die gebruikers al bekend met de naam. De PowerShell-equivalenten kunnen niet dezelfde resultaten opleveren. De resultaten zijn echter sluiten voldoende die gebruikers kunnen werken zonder te weten de naam van de PowerShell-opdracht. 'Finger geheugen' is een andere belangrijke bron van frustraties wanneer een nieuwe opdrachtshell learning. Als u hebt gebruikt **cmd.exe** jaar reflexively Typ bijvoorbeeld de `cls` opdracht voor het wissen van het scherm. Zonder de alias voor `Clear-Host`, u een foutbericht ontvangt en weet niet wat u moet doen om te wissen van de uitvoer.
 
-De volgende lijst bevat enkele van de algemene Cmd.exe- en Unix-opdrachten die u kunt gebruiken in PowerShell:
+De volgende lijst bevat enkele van de algemene **cmd.exe** en Unix-opdrachten die u in PowerShell gebruiken kunt:
 
 |||||
 |-|-|-|-|
