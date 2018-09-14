@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.0?
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587241"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557229"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
@@ -373,14 +373,14 @@ Voor een volledige lijst van wijzigingen en correcties, Bekijk onze [changelog][
   - de OS-platform (`$PSVersionTable.OSDescription`)
   - de exacte versie van PowerShell (`$PSVersionTable.GitCommitId`)
 
-Als u opt-out van deze telemetrische gegevens wilt, verwijder `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` of maak `POWERSHELL_TELEMETRY_OPTOUT` omgevingsvariabele met een van de volgende waarden: `true`, `1` of `yes`.
-Verwijderen van dit bestand of het maken van de variabele omzeilt alle telemetrie zelfs vóór de eerste uitvoering van PowerShell.
+Als u opt-out van deze telemetrische gegevens, maken `POWERSHELL_TELEMETRY_OPTOUT` omgevingsvariabele met een van de volgende waarden: `true`, `1` of `yes`.
+Het maken van de variabele omzeilt alle telemetrie zelfs vóór de eerste uitvoering van PowerShell.
 We zijn ook van plan op het blootstellen van deze telemetrische gegevens en de inzichten die we verzamelen van de telemetrie in de [community dashboard][community-dashboard].
 U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
