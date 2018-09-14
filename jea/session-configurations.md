@@ -1,68 +1,68 @@
 ---
 ms.date: 06/12/2017
-keywords: jea powershell beveiliging
+keywords: jea, powershell, beveiliging
 title: JEA Sessieconfiguraties
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190091"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522951"
 ---
 # <a name="jea-session-configurations"></a>JEA Sessieconfiguraties
 
-> Van toepassing op: Windows PowerShell 5.0
+> Is van toepassing op: Windows PowerShell 5.0
 
-Een eindpunt JEA is geregistreerd op een systeem door het maken en registreren van een configuratiebestand van de PowerShell-sessie in een bepaalde manier.
-Bepalen van sessieconfiguraties *die* het eindpunt JEA kunt gebruiken, en welke rollen hebben toegang tot.
-Ze bepalen ook algemene instellingen die van toepassing op gebruikers van een rol in de sessie JEA.
+Een JEA-eindpunt is op een systeem door het maken en registreren van een configuratiebestand van de PowerShell-sessie op een specifieke manier geregistreerd.
+Sessieconfiguraties bepalen *die* de JEA-eindpunt kunt gebruiken en welke rollen hebben ze toegang tot.
+Ze bepalen ook algemene instellingen die van toepassing op gebruikers van een rol in de JEA-sessie.
 
-In dit onderwerp wordt beschreven hoe een configuratiebestand van de PowerShell-sessie maken en een eindpunt JEA registreren.
+In dit onderwerp wordt beschreven hoe u een PowerShell-sessie-configuratiebestand maken en registreren van een JEA-eindpunt.
 
-## <a name="create-a-session-configuration-file"></a>Een configuratiebestand sessie maken
+## <a name="create-a-session-configuration-file"></a>Een sessie-configuratiebestand maken
 
-Om een eindpunt JEA registreren, moet u opgeven hoe dat eindpunt moet worden geconfigureerd.
-Er zijn veel opties om te overwegen hier, de belangrijkste welke is die toegang moeten hebben tot het eindpunt JEA, welke functies worden ze worden toegewezen, welke identiteit JEA gebruiken onder de dekt en wat de naam van het eindpunt JEA zal zijn.
+Als u wilt een JEA-eindpunt registreren, moet u opgeven hoe dit eindpunt moet worden geconfigureerd.
+Er zijn veel opties om te overwegen, de belangrijkste van welke wordt die toegang moeten hebben tot de JEA-eindpunt, welke functies worden ze worden toegewezen, welke identiteit JEA gebruikt op de achtergrond en wat is de naam van de JEA-eindpunt.
 Deze worden alle gedefinieerd in een configuratiebestand voor PowerShell-sessie die is een PowerShell-gegevensbestand eindigt met de extensie .pssc.
 
-Voer de volgende opdracht voor het maken van een geraamte sessie-configuratiebestand voor JEA eindpunten.
+Voer de volgende opdracht voor het maken van een minimale sessie-configuratiebestand voor de JEA-eindpunten.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEAEndpoint.pssc
 ```
 
 > [!TIP]
-> Alleen de meest voorkomende configuratieopties zijn standaard opgenomen in het geraamte bestand.
-> Gebruik de `-Full` switch in de gegenereerde voor alle toepasselijke instellingen wilt opnemen.
+> Alleen de meest voorkomende configuratieopties zijn standaard opgenomen in de minimale bestand.
+> Gebruik de `-Full` overschakelen naar alle toepasselijke instellingen worden opgenomen in de gegenereerde voor.
 
 U kunt het configuratiebestand van de sessie openen in een teksteditor.
-De `-SessionType RestrictedRemoteServer` veld geeft aan dat de sessieconfiguratie van de wordt gebruikt door JEA voor beveiligde management.
-Sessies is geconfigureerd op deze manier wordt uitgevoerd [NoLanguage modus](https://technet.microsoft.com/library/dn433292.aspx) en hebt u alleen de volgende standaardopdrachten uit 8-(en aliassen) beschikbaar:
+De `-SessionType RestrictedRemoteServer` veld geeft aan dat de sessieconfiguratie van de wordt gebruikt door JEA voor veilig beheer.
+Sessies die is geconfigureerd op deze manier wordt uitgevoerd [NoLanguage modus](https://technet.microsoft.com/library/dn433292.aspx) en hebt u alleen de volgende 8 standaardopdrachten (en aliassen) beschikbaar:
 
 - Clear-Host (cls, wissen)
-- Exit-PSSession (exsn, afsluiten)
+- Afsluiten PSSession (exsn, afsluiten)
 - Get-Command (gcm)
 - Get-FormatData
 - Help ontvangen
-- Meetobject (maatregel)
+- Meting-Object (eenheid)
 - Uitgaande standaard
-- Select-Object (geselecteerd)
+- Select-Object (selecteren)
 
-Geen PowerShell-providers beschikbaar zijn en worden dat alle externe programma's (uitvoerbare bestanden, scripts, enzovoort).
+Er zijn geen PowerShell-providers zijn beschikbaar, noch zijn dat externe programma's (uitvoerbare bestanden, scripts, enzovoort).
 
-Er zijn diverse andere velden die u wilt configureren voor de sessie JEA.
-Ze worden in de volgende secties besproken.
+Er zijn diverse andere velden die u wilt configureren voor de JEA-sessie.
+Ze worden behandeld in de volgende secties.
 
-### <a name="choose-the-jea-identity"></a>Kies de identiteit JEA
+### <a name="choose-the-jea-identity"></a>Kies de JEA-identiteit
 
-JEA moet achter de schermen wordt een identiteit (account) moet worden gebruikt wanneer een gebruiker verbonden opdrachten uit te voeren.
-U besluiten welke identiteit JEA wordt gebruikt in het configuratiebestand van de sessie.
+Achter de schermen moet JEA een identiteit (account) om te gebruiken bij het uitvoeren van de gebruiker van een verbonden-opdrachten.
+U bepalen welke identiteit JEA wordt gebruikt in het configuratiebestand van de sessie.
 
-#### <a name="local-virtual-account"></a>Lokale virtuele-Account
+#### <a name="local-virtual-account"></a>Lokale virtueel Account
 
-Als de rollen die worden ondersteund door dit eindpunt JEA worden gebruikt voor het beheren van de lokale computer en een lokaal beheerdersaccount volstaat om de opdrachten succes is uitgevoerd, moet u JEA voor het gebruik van een lokale virtuele-account configureren.
+Als de rollen die worden ondersteund door dit JEA-eindpunt worden gebruikt voor het beheren van de lokale computer en een lokale administrator-account voldoende is om de opdrachten succes is uitgevoerd, moet u de JEA voor het gebruik van een lokale virtuele-account configureren.
 Virtuele accounts zijn tijdelijke accounts die uniek is voor een specifieke gebruiker en alleen de laatste voor de duur van de PowerShell-sessie.
-Op een lidserver of werkstation virtuele accounts deel uitmaken van de lokale computer **beheerders** groeperen en hebben toegang tot de meeste systeembronnen.
+Op een lidserver of werkstation virtuele accounts deel uitmaken van de lokale computer **beheerders** groep en toegang hebben tot de meeste systeembronnen.
 Op een Active Directory-domeincontroller virtuele accounts deel uitmaken van het domein **Domeinadministrators** groep.
 
 ```powershell
@@ -70,10 +70,10 @@ Op een Active Directory-domeincontroller virtuele accounts deel uitmaken van het
 RunAsVirtualAccount = $true
 ```
 
-Als de rollen die worden ondersteund door de sessieconfiguratie geen dergelijke brede bevoegdheden vereist, kunt u eventueel de beveiligingsgroepen waartoe het virtuele-account behoort.
-De opgegeven beveiligingsgroepen moet op een lidserver of werkstation lokale groepen, niet voor groepen van een domein.
+Als de rollen die worden ondersteund door de sessieconfiguratie geen dergelijke uitgebreide bevoegdheden vereist, kunt u eventueel de beveiligingsgroepen die de virtuele-account behoort.
+Op een lidserver of werkstation zijn de opgegeven beveiligingsgroepen lokale groepen, niet voor groepen van een domein.
 
-Wanneer een of meer beveiligingsgroepen wordt opgegeven, wordt niet langer virtueel account aan de beheerdersgroep lokaal of domeinbeheerder behoren.
+Wanneer een of meer beveiligingsgroepen is opgegeven, wordt niet langer de virtuele account aan de beheerdersgroep lokaal of domein behoren.
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -84,59 +84,59 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 #### <a name="group-managed-service-account"></a>Door groep beheerd serviceaccount
 
 
-Een beheerd serviceaccount (gMSA) is voor scenario's vereisen dat de gebruiker JEA voor toegang tot netwerkbronnen zoals andere machines of webservices, een geschiktere identiteit moet worden gebruikt.
-gMSA accounts bieden u de identiteit van een domein dat kan worden gebruikt voor verificatie op basis van bronnen op elke computer in het domein.
-De rechten van het gMSA-account biedt u wordt bepaald door de bronnen die u wilt openen.
-U wordt automatisch geen beheerdersrechten op alle machines of services tenzij de beheerder van de machine-service heeft expliciet verleend voor het gMSA-account beheerdersbevoegdheden.
+Voor scenario's vereisen dat de JEA-gebruiker voor toegang tot netwerkbronnen, zoals andere computers of webservices, is een groep beheerd serviceaccount (gMSA) een geschiktere identiteit te gebruiken.
+gMSA-accounts bieden u een domein-id die kan worden gebruikt voor verificatie op basis van resources op elke computer in het domein.
+De rechten van het gMSA-account biedt u wordt bepaald door de resources die u wilt openen.
+U wordt automatisch geen beheerdersrechten op alle machines of services, tenzij de machine/service-beheerder heeft expliciet verleend voor het gMSA-account beheerdersbevoegdheden.
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
 GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
-accounts van gMSA mag alleen worden gebruikt wanneer toegang tot netwerkbronnen zijn vereist voor een aantal oorzaken hebben:
+gMSA-accounts moeten alleen worden gebruikt wanneer toegang tot netwerkbronnen zijn vereist voor een aantal oorzaken hebben:
 
-- Is het moeilijker te traceren terug acties voor een gebruiker wanneer u een beheerd serviceaccount omdat elke gebruiker dezelfde run as-id deelt. U moet Raadpleeg Logboeken correleren van gebruikers met hun acties en transcripties van PowerShell-sessie.
+- Is het moeilijker om te traceren terug acties aan een gebruiker bij het gebruik van een gMSA-account, omdat elke gebruiker dezelfde run as-id deelt. U moet moet u de PowerShell-sessie transcripties en logboeken correleren van gebruikers met hun acties.
 
-- Het gMSA-account hebben mogelijk toegang tot veel netwerkbronnen die de gebruiker die de verbinding heeft geen toegang tot nodig. Probeert altijd effectieve machtigingen beperken in een sessie JEA volgen het principe van minimale bevoegdheden.
+- Het gMSA-account hebben mogelijk toegang tot veel netwerkbronnen die de gebruiker die de verbinding heeft geen toegang nodig tot. Probeer altijd aan de effectieve machtigingen beperken in een JEA-sessie te volgen het principe van minimale bevoegdheden.
 
 > [!NOTE]
-> Groep beheerde serviceaccounts zijn alleen beschikbaar in Windows PowerShell 5.1 of nieuwere en op computers die lid zijn van een domein.
+> Groep beheerde serviceaccounts zijn alleen beschikbaar in Windows PowerShell 5.1 of hoger en op domein systemen.
 
 
 #### <a name="more-information-about-run-as-users"></a>Meer informatie over run as-gebruikers
 
-Meer informatie over uitvoeren als identiteiten en hoe ze rekening te houden in de beveiliging van een sessie JEA vindt u in de [beveiligingsoverwegingen](security-considerations.md) artikel.
+Als u meer informatie over uitvoeren als-id's en hoe ze factor in de beveiliging van een JEA-sessie te vinden in de [beveiligingsoverwegingen](security-considerations.md) artikel.
 
-### <a name="session-transcripts"></a>Sessie transcripties
+### <a name="session-transcripts"></a>Transcripten van sessie
 
-Het verdient aanbeveling dat u een configuratiebestand voor JEA sessie automatisch vastleggen uitgeschreven gebruikerssessies configureert.
-PowerShell-sessie transcripties bevatten informatie over de gebruiker verbinding maakt, het run as-identiteit is toegewezen, en de opdrachten uitgevoerd door de gebruiker.
-Ze kunnen nuttig zijn voor een controle team wil weten wie een bepaalde wijziging in een systeem uitgevoerd.
+Het is raadzaam dat u een JEA-sessie-configuratiebestand op automatisch vastleggen Transcripten van gebruikerssessies configureert.
+PowerShell-sessie Transcripten bevatten informatie over de gebruiker verbinding maakt, het uitvoeren als-identiteit is toegewezen, en de opdrachten worden uitgevoerd door de gebruiker.
+Ze kunnen nuttig zijn voor een beoordelingsteam die nodig heeft om te begrijpen wie een specifieke wijziging in een systeem hebt uitgevoerd.
 
-Voor het configureren van automatische schrijffouten in het configuratiebestand van de sessie, Geef een pad naar een map waar de transcripties moeten worden opgeslagen.
+Voor het configureren van automatische transcriptie in het configuratiebestand van de sessie, Geef een pad naar een map waar de Transcripten moeten worden opgeslagen.
 
 ```powershell
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-De opgegeven map moet worden geconfigureerd om te voorkomen dat gebruikers wijzigen of verwijderen van alle gegevens in dit.
-Transcripties worden geschreven naar de map door het lokale systeemaccount, waarvoor lees- en schrijftoegang tot de map is vereist.
-Standaardgebruikers moeten hebben geen toegang tot de map en een beperkt aantal Beveiligingsbeheerders moet toegang hebben tot de transcripties controleren.
+De opgegeven map moet worden geconfigureerd om te voorkomen dat gebruikers van wijzigt of verwijdert alle gegevens in het.
+Transcripten worden geschreven naar de map met het lokale systeemaccount, waarvoor lezen en schrijven toegang tot de map is vereist.
+Standaardgebruikers kunnen geen toegang moeten hebben tot de map en een beperkte set van administrators voor rapportbeveiliging moet toegang hebben tot de Transcripten controleren.
 
 ### <a name="user-drive"></a>Schijf van de gebruiker
 
-Als uw gebruikers verbinding moeten voor het kopiëren van bestanden naar het eindpunt JEA om een opdracht wordt uitgevoerd, kunt u de schijf van de gebruiker in het configuratiebestand van de sessie inschakelen.
+Als uw verbindende gebruikers moeten het kopiëren van bestanden naar/van de JEA-eindpunt om uit te voeren van een opdracht, kunt u de schijf van de gebruiker in het configuratiebestand van de sessie inschakelen.
 De schijf van de gebruiker is een [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) die is toegewezen aan een unieke map voor elke gebruiker die verbinding maakt.
-Deze map fungeert als een ruimte voor deze bestanden te kopiëren van het systeem zonder zodat ze toegang hebben tot het volledige bestandssysteem of de provider bestandssysteem blootstellen.
-De inhoud van de gebruiker stations zijn permanent over de sessies voor situaties waarin de verbinding met het netwerk mag worden onderbroken.
+Deze map fungeert als een ruimte voor deze bestanden te kopiëren naar/van het systeem zonder zodat ze toegang hebben tot het volledige systeem of de provider bestandssysteem om vrij te geven.
+De inhoud van de gebruiker stations zijn persistent in verschillende sessies voor situaties waar de verbinding met het netwerk kan worden onderbroken.
 
 ```powershell
 MountUserDrive = $true
 ```
 
 Standaard kunt de schijf van de gebruiker u voor het opslaan van een maximum van 50MB aan gegevens per gebruiker.
-U kunt de hoeveelheid gegevens die een gebruiker met gebruiken kunt beperken de *UserDriveMaximumSize* veld.
+U kunt de hoeveelheid gegevens die een gebruiker kan worden gebruikt met beperken de *UserDriveMaximumSize* veld.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -144,17 +144,17 @@ MountUserDrive = $true
 UserDriveMaximumSize = 524288000
 ```
 
-Als u niet dat de gegevens in het station gebruiker permanent zijn wilt, kunt u een geplande taak op het systeem automatisch opschonen van de map elke nacht configureren.
+Als u niet dat gegevens in de schijf van de gebruiker permanent zijn wilt, kunt u een geplande taak configureren op het systeem voor het automatisch opschonen van de map elke nacht.
 
 > [!NOTE]
 > De schijf van de gebruiker is alleen beschikbaar in Windows PowerShell 5.1 of hoger.
 
 ### <a name="role-definitions"></a>Roldefinities
 
-Roldefinities in een configuratiebestand sessie definiëren de toewijzing van *gebruikers* naar *rollen*.
-Elke gebruiker of groep die zijn opgenomen in dit veld wordt automatisch worden gemachtigd voor het eindpunt JEA wanneer deze is geregistreerd.
-Elke gebruiker of groep kan worden opgenomen als de sleutel in de hash-tabel slechts één keer, maar kan meerdere functies worden toegewezen.
-De naam van de mogelijkheid van de rol moet de naam van het bestand van de rol mogelijkheid zonder de extensie .psrc.
+Roldefinities in een sessie-configuratiebestand definieert de toewijzing van *gebruikers* naar *rollen*.
+Elke gebruiker of groep die zijn opgenomen in dit veld wordt automatisch een machtiging verleend de JEA-eindpunt wanneer deze is geregistreerd.
+Elke gebruiker of groep kan worden opgenomen als een sleutel in de hash-tabel slechts één keer, maar meerdere rollen kan worden toegewezen.
+De naam van de mogelijkheid van de rol moet de naam van het bestand van een rol mogelijkheid, zonder de extensie .psrc.
 
 ```powershell
 RoleDefinitions = @{
@@ -164,11 +164,11 @@ RoleDefinitions = @{
 }
 ```
 
-Als een gebruiker tot meer dan één groep in de roldefinitie van de behoort, krijgen ze toegang tot de functies van elk.
-Als twee rollen toegang tot de dezelfde cmdlets verlenen, wordt de meest strikte parameterset worden toegekend aan de gebruiker.
+Als een gebruiker tot meer dan één groep in het roldefinitie van de behoort, krijgt zij toegang tot de functies van elk.
+Als twee rollen toegang tot de dezelfde cmdlets verleent, worden de meest strikte parameterset wordt toegekend aan de gebruiker.
 
-Bij het opgeven van lokale gebruikers en groepen in het veld rol-definities, moet u de naam van de computer gebruikt (geen *localhost* of *.*) voordat u de backslash.
-U kunt de naam van de computer controleren door te inspecteren de `$env:computername` variabele.
+Bij het opgeven van lokale gebruikers en groepen in het veld van de definities rol, zorg ervoor dat u de naam van de computer (niet *localhost* of *.*) voor de backslash opgeeft.
+U kunt de naam van de computer controleren door het inspecteren van de `$env:computername` variabele.
 
 ```powershell
 RoleDefinitions = @{
@@ -177,26 +177,26 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Zoekvolgorde van rol mogelijkheid
-Zoals u in het bovenstaande voorbeeld, rol mogelijkheden zijn waarnaar wordt verwezen door de platte domeinnaam (bestandsnaam zonder de extensie) van het bestand van de mogelijkheid rol.
-Als meerdere rol mogelijkheden beschikbaar op het systeem met dezelfde naam platte zijn, kunnen PowerShell de impliciete zoekvolgorde wordt gebruikt om de effectieve rol mogelijkheid-bestand te selecteren.
-Het **niet** toegang geven tot alle rol capability-bestanden met dezelfde naam.
+Zoals u in het bovenstaande voorbeeld, rolmogelijkheden zijn waarnaar wordt verwezen door de platte domeinnaam (bestandsnaam zonder extensie) van het bestand van de mogelijkheid rol.
+Als meerdere functie-mogelijkheden beschikbaar op het systeem met dezelfde naam platte zijn, kunnen PowerShell de impliciete zoekvolgorde wordt gebruikt om de effectieve rol mogelijkheid-bestand te selecteren.
+Het wordt **niet** toegang geven tot alle rol mogelijkheid bestanden met dezelfde naam.
 
-JEA gebruikt de `$env:PSModulePath` omgevingsvariabele om te bepalen welke paden om te scannen op rol capability-bestanden.
-In elk van die paden zoekt JEA naar geldige PowerShell-modules die een submap 'RoleCapabilities' bevatten.
-Net als bij het importeren van modules, verkiest JEA rol mogelijkheden die worden geleverd met Windows tot mogelijkheden van de aangepaste rol met dezelfde naam.
-Voor alle andere naamconflicten wordt prioriteit bepaald door de volgorde waarin Windows de bestanden in de map somt (niet noodzakelijkerwijs alfabetisch).
-Het eerste rol mogelijkheid bestand gevonden die overeenkomt met de gewenste naam voor de gebruiker die de verbinding wordt gebruikt.
+JEA maakt gebruik van de `$env:PSModulePath` omgevingsvariabele om te bepalen welke paden om te scannen op rol mogelijkheid bestanden.
+Binnen elk van deze paden zoekt JEA naar geldige PowerShell-modules die een submap 'RoleCapabilities' bevatten.
+Net als bij importeren van modules, verkiest JEA rolmogelijkheden die worden geleverd met Windows op de mogelijkheden van de aangepaste rol met dezelfde naam.
+Voor alle andere naamconflicten wordt prioriteit bepaald door de volgorde waarin Windows de bestanden in de map inventariseert (niet noodzakelijkerwijs worden alfabetisch).
+Het eerste bestand van de rol-mogelijkheid gevonden die overeenkomt met de gewenste naam wordt gebruikt voor de gebruiker die verbinding maakt.
 
-Aangezien de zoekvolgorde van rol mogelijkheid is niet deterministisch wanneer twee of meer mogelijkheden van de functie dezelfde naam delen, is het **sterk aanbevolen** Zorg ervoor dat functie-mogelijkheden unieke namen hebben op uw computer.
+Aangezien de zoekvolgorde van rol mogelijkheid is niet deterministisch wanneer twee of meer rolmogelijkheden dezelfde naam delen, is het **sterk aanbevolen** Zorg ervoor dat rolmogelijkheden unieke namen hebben op uw computer.
 
 ### <a name="conditional-access-rules"></a>Regels voor voorwaardelijke toegang
 
-Alle gebruikers en groepen die zijn opgenomen in het veld RoleDefinitions krijgen automatisch toegang tot JEA eindpunten.
-Regels voor voorwaardelijke toegang kunnen u deze toegang verfijnen en gebruikers moeten behoren tot meer beveiligingsgroepen die hebben geen invloed op de rollen die ze zijn toegewezen.
-Dit is handig als u integreren van een 'just-in tijd wilt' bevoegde toegang tot oplossing voor het beheer, smartcardverificatie of een andere oplossing multifactor-verificatie met JEA.
+Alle gebruikers en groepen die zijn opgenomen in het veld RoleDefinitions worden automatisch verleend voor toegang tot de JEA-eindpunten.
+Regels voor voorwaardelijke toegang kunnen u deze toegang verfijnen en vereisen dat gebruikers deel uitmaken van aanvullende beveiligingsgroepen die niet van invloed op de rollen die zijn toegewezen.
+Dit is handig als u integreren een 'just in time wilt' in beschermde modus toegang krijgen tot de oplossing voor het beheer, smartcardverificatie of andere oplossing voor meervoudige verificatie met JEA.
 
 Regels voor voorwaardelijke toegang worden gedefinieerd in het veld RequiredGroups in een sessie-configuratiebestand.
-Daar kunt u een hash-tabel (eventueel geneste) die gebruikmaakt van bieden 'En' en 'Of' sleutels u uw regels samenstelt.
+Daar kunt u een hash-tabel (eventueel geneste) die gebruikmaakt van bieden 'En' en 'Of' sleutels te maken van uw regels.
 Hier volgen enkele voorbeelden van hoe u dit veld:
 
 ```powershell
@@ -215,20 +215,20 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Regels voor voorwaardelijke toegang zijn alleen beschikbaar in Windows PowerShell 5.1 of hoger.
 
 ### <a name="other-properties"></a>Andere eigenschappen
-Sessie-configuratiebestanden kunnen alles die een rol mogelijkheid bestand uitvoeren kunt, maar wel zonder de mogelijkheid om te verbinden gebruikerstoegang geven tot andere opdrachten ook doen.
-Als u dat alle gebruikers toegang tot bepaalde cmdlets, functies of providers wilt, kunt u doen rechts in het configuratiebestand van de sessie.
-Voer voor een volledige lijst met ondersteunde eigenschappen in het configuratiebestand van de sessie `Get-Help New-PSSessionConfigurationFile -Full`.
+Sessie-configuratiebestanden kunnen ook doen alles wat die een bestand van de mogelijkheid rol doen kunt, maar wel zonder de mogelijkheid om te verbinden gebruikerstoegang geven tot andere opdrachten.
+Als u wilt dat alle gebruikers toegang tot bepaalde cmdlets, functies of -providers, kunt u doen rechts in het configuratiebestand van de sessie.
+Voor een volledige lijst van ondersteunde eigenschappen in het configuratiebestand van de sessie, voert u `Get-Help New-PSSessionConfigurationFile -Full`.
 
-## <a name="testing-a-session-configuration-file"></a>Een configuratiebestand sessie testen
+## <a name="testing-a-session-configuration-file"></a>Testen van een sessie-configuratiebestand
 
-U kunt testen met een sessie configuratie met de [Test PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.
-Het is raadzaam dat u uw configuratiebestand sessie testen als u de voor-bestand handmatig met een teksteditor om te controleren of dat de syntaxis is juist hebt bewerkt.
-Als een sessie-configuratiebestand deze test niet slaagt, is het niet mogelijk is op het systeem worden geregistreerd.
+U kunt testen met een sessie configureren met behulp van de [Test PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.
+Het is raadzaam dat u het configuratiebestand van de sessie testen als u hebt de voor-bestand handmatig met behulp van een teksteditor om te controleren of dat de syntaxis juist is bewerkt.
+Als een sessie-configuratiebestand deze test niet slaagt, is het niet mogelijk om te worden geregistreerd op het systeem.
 
 ## <a name="sample-session-configuration-file"></a>Voorbeeldconfiguratiebestand sessie
 
-Hieronder volgt een voorbeeld van een volledige waarin wordt getoond hoe maakt en valideert de sessieconfiguratie van een voor JEA.
-Houd er rekening mee dat de definities van gebruikersrollen worden gemaakt en opgeslagen in de `$roles` variabele voor uw gemak en de leesbaarheid.
+Hieronder volgt een compleet voorbeeld waarin wordt getoond hoe maakt en valideert de sessieconfiguratie van een voor JEA.
+Houd er rekening mee dat de definities van gebruikersrollen worden gemaakt en opgeslagen in de `$roles` variabele voor uw gemak en leesbaarheid.
 Het is niet vereist om dit te doen.
 
 ```powershell
@@ -242,12 +242,12 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a>Sessie-configuratiebestanden bijwerken
+## <a name="updating-session-configuration-files"></a>Bijwerken van de sessie-configuratiebestanden
 
-Als u wijzigen van de eigenschappen van een sessieconfiguratie JEA wilt, met inbegrip van de toewijzing van gebruikers aan rollen, moet u [registratie](register-jea.md#unregistering-jea-configurations) en [opnieuw registreren](register-jea.md) de sessieconfiguratie JEA.
-Wanneer u de configuratie van de sessie JEA opnieuw registreren, gebruikt u een bijgewerkte PowerShell-sessie configuratiebestand met de gewenste wijzigingen.
+Als u wijzigen eigenschappen van een JEA-sessieconfiguratie wilt, met inbegrip van de toewijzing van gebruikers aan rollen, moet u [registratie](register-jea.md#unregistering-jea-configurations) en [opnieuw registreren](register-jea.md) de JEA-sessieconfiguratie.
+Als u de JEA-sessieconfiguratie opnieuw registreert, een bijgewerkte PowerShell-sessie configuratiebestand gebruiken met de gewenste wijzigingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [De configuratie van een JEA registreren](register-jea.md)
-- [Auteur JEA rollen](role-capabilities.md)
+- [Een JEA-configuratiegegevens registreren](register-jea.md)
+- [De auteur van JEA-rollen](role-capabilities.md)

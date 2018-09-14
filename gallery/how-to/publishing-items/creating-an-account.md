@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
-title: Maken van een account PowerShell Gallery
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Het maken van een account met PowerShell Gallery
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219562"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522823"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>Maken van een account PowerShell Gallery
+# <a name="creating-a-powershell-gallery-account"></a>Het maken van een account met PowerShell Gallery
 
-Een PowerShell-galerie-account moet worden ingesteld voordat u verder niets te publiceren naar de PowerShell-galerie.
-De PowerShell Gallery-accounts moeten worden gekoppeld aan een account voor het e-functionaliteit van Azure Active Directory of een Microsoft-account voor e-mail (met een domein van outlook.com, hotmail.com, enz.)
+U moet een PowerShell Gallery-account maken voordat u iets publiceert naar de PowerShell Gallery.
+PowerShell Gallery-accounts moeten worden gekoppeld aan een aanmeldingsaccount van e-mail kunnen ontvangen. Dit account kan worden een Azure Active Directory-account of een Microsoft-ID, zoals een e-mailaccount van outlook.com of hotmail.com.
 
-Voor het maken van een PowerShell-galerie-account, gaat u naar https://PowerShellGallery.com en klik op 'Register' (Zie de onderstaande afbeelding).
+Voor het maken van een PowerShell Gallery-account, gaat u naar [ https://PowerShellGallery.com ](https://PowerShellGallery.com) en klikt u op **aanmelden** zoals wordt weergegeven in de volgende afbeelding.
 
-![Registreren van nieuwe account](../../Images/CreatingAccount-Register.png)
+![Nieuw account registreren](../../Images/CreateAccount-Register.png)
 
-In de volgende pagina voor het gebruik van Azure Active Directory-account, selecteer 'Werk of School-Account' en meld u aan met uw account.
-Voor het gebruik van een Microsoft-account - bijvoorbeeld in een domein Hotmail.com of Outlook.com - Kies 'Persoonlijke Account' en aanmelden.
+Voor het gebruik van Azure Active Directory-account, selecteert u **werk- of Schoolaccount**, en meld u aan met uw account. Kies voor het gebruik van een Microsoft-ID, **persoonlijk Account** en meld u aan.
 
-Zodra u zich hebt aangemeld, wordt u gevraagd een gebruikersnaam voor de PowerShell-galerie maken.
-Raadpleeg de gebruiksrechtovereenkomst en privacybeleid die zijn gekoppeld in, voer een gebruikersnaam en klik op registreren.
+U wordt vervolgens gevraagd om te maken van een gebruikersnaam voor de PowerShell Gallery. Raadpleeg de gebruiksrechtovereenkomst en privacybeleid, voer een gebruikersnaam in en klik vervolgens op **registreren**.
 
-Opmerking: De accountnaam van dit kan niet worden gewijzigd zodra deze is gemaakt.
-Zie [beheren Item eigenaars](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) voor meer informatie hierover.
+> [!NOTE]
+> De accountnaam kan niet worden gewijzigd nadat deze is gemaakt. Zie voor meer informatie, [Itemeigenaars beheren](managing-item-owners.md).
 
-## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Aanbevolen procedures voor PowerShell Gallery Accounts
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Aanbevolen procedures voor PowerShell Gallery-accounts
 
-Het is belangrijk dat het e-mailaccount gebruikt met uw account PowerShell Gallery actief worden bewaakt.
-Alle communiction met eigenaren van PowerShell-galerie-items is via het e-mailbericht met het adres dat is gekoppeld aan uw account PowerShell Gallery.
-Als er kan geen verbinding met de eigenaar van een item, kan het operationele team worden vereist om een item onder bepaalde omstandigheden te verwijderen.
+Het is belangrijk voor het bewaken van het e-mailaccount gebruikt in combinatie met de PowerShell Gallery-account actief. Alle communicatie met eigenaren van PowerShell-galerie-items, verloopt via dit e-mailadres. Als het team van de PowerShell Gallery-bewerkingen kan geen verbinding met de eigenaar van een item, kunnen we vereist om een item te verwijderen.
 
-Organisaties die vaak naar de PowerShell-galerie publiceren maken een uniek account daarvoor in Outlook.com of een ander domein voor Microsoft-account.
-In veel gevallen wordt dat account niet regelmatig gecontroleerd.
-In dat geval is een best practice doorsturen van Outlook gebruiken om e-mail te verzenden naar een ander account, meestal een binnen de organisatie, die wordt bewaakt door de eigenaar van het item.
+Organisaties die vaak naar de PowerShell Gallery publiceren maken een unieke externe account voor dat doel. U wordt aangeraden dat u e-mailbericht doorsturen gebruiken voor het doorsturen van meldingen naar een adres binnen uw organisatie.
 
-Als er meerdere eigenaren van een item is gekoppeld, gaan alle communicatie die afkomstig van de PowerShell-galerie zijn naar alle eigenaren.
-Zie [beheren Item eigenaars](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) voor meer informatie over het toevoegen van eigenaren aan een item.
+Wanneer meerdere eigenaren gekoppeld aan een item zijn, worden alle PowerShell Gallery-meldingen worden verzonden naar alle eigenaren. Zie voor meer informatie, [Itemeigenaars beheren](managing-item-owners.md).

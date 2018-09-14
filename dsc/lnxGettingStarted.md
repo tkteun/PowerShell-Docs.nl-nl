@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Aan de slag met Desired State Configuration (DSC) voor Linux
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893593"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523013"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met Desired State Configuration (DSC) voor Linux
 
@@ -75,7 +75,7 @@ Het sleutelwoord Windows PowerShell-configuratie wordt gebruikt voor het maken v
 
 1. Importeer de nx-module. De nx Windows PowerShell-module moet bevat het schema voor ingebouwde resources voor DSC voor Linux, en worden geïnstalleerd op uw lokale computer en geïmporteerd in de configuratie.
 
-   - Als u wilt de nx-module installeert, kopieert u de modulemap nx naar een `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules`. De nx-module is opgenomen in de DSC voor Linux-installatiepakket (MSI). Als u wilt importeren in de configuratie van de nx-module, gebruikt de `Import-DSCResource` opdracht:
+   - Als u wilt de nx-module installeert, kopieert u de modulemap nx naar een `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules`. De nx-module is opgenomen in de DSC voor Linux-installatiepakket. Als u wilt importeren in de configuratie van de nx-module, gebruikt de `Import-DSCResource` opdracht:
 
    ```powershell
    Configuration ExampleConfiguration{

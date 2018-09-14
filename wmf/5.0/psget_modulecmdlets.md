@@ -1,49 +1,49 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190601"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522819"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-cmdlets voor modulebeheer
 
-- [Zoeken naar DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Zoeken naar sleutelwoorden-dscresource bieden](https://technet.microsoft.com/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
-- [Zoeken naar Script](https://technet.microsoft.com/library/mt654001.aspx)
-- [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Installatie-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Script voor installatie](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publish-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Register PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Verwijderen-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Update-Module](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Script voor het bijwerken](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Hef de registratie van PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
+- [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
+- [Get-InstalledScript](https://technet.microsoft.com/library/mt653994.aspx)
+- [Get-PSRepository](https://technet.microsoft.com/library/dn807170.aspx)
+- [Install-Module](https://technet.microsoft.com/library/dn807162.aspx)
+- [Script voor installatie](https://technet.microsoft.com/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/library/mt653995.aspx)
+- [Publish-Module](https://technet.microsoft.com/library/dn807163.aspx)
+- [Publish-Script](https://technet.microsoft.com/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/library/mt654005.aspx)
+- [Verwijderen-Module](https://technet.microsoft.com/library/mt653996.aspx)
+- [Uninstall-Script](https://technet.microsoft.com/library/mt653989.aspx)
+- [Update-Module](https://technet.microsoft.com/library/dn807166.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
+- [De registratie ongedaan maken-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
-## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Ondersteuning voor de installatie van module afhankelijkheid, Get-InstalledModule en verwijdering van installatie-Module-cmdlets
-- Module afhankelijkheden populatie toegevoegd in de cmdlet Publish-Module. De lijsten RequiredModules en NestedModules van PSModuleInfo worden gebruikt bij het voorbereiden van de lijst afhankelijkheid van een module moet worden gepubliceerd.
-- Ondersteuning voor toegevoegde afhankelijkheid installatie in de cmdlets Install-Module en Update-Module. Module-afhankelijkheden zijn geïnstalleerd en wordt automatisch bijgewerkt.
-- Een parameter - IncludeDependencies toegevoegd aan module afhankelijkheden opgenomen in de resultaten van de cmdlet Find-Module.
-- -MaximumVersion ondersteuning toegevoegd voor de Find-Module installeren-Module en Update-Module-cmdlets.
-- Toegevoegde nieuwe Get-InstalledModule en verwijdering van installatie-Module-cmdlets.
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Ondersteuning voor de installatie van module afhankelijkheid, Get-InstalledModule en Uninstall-Module-cmdlets
+- Populatie van module-afhankelijkheden toegevoegd in de cmdlet Publish-Module. De lijsten RequiredModules en NestedModules van PSModuleInfo worden gebruikt bij het voorbereiden van de afhankelijkheidslijst van een module worden gepubliceerd.
+- Ondersteuning voor extra afhankelijkheid installatie in de cmdlets Install-Module en Update-Module. Module-afhankelijkheden zijn geïnstalleerd en bijgewerkt door standaard.
+- Een parameter - IncludeDependencies toegevoegd aan de cmdlet Find-Module module-afhankelijkheden opgenomen in de resultaten.
+- -MaximumVersion ondersteuning toegevoegd voor de Find-Module, Install-Module en Update-Module-cmdlets.
+- Nieuwe Uninstall-Module en Get-InstalledModule cmdlets toegevoegd.
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>PowerShellGet cmdlets demo met afhankelijkheden van de module ondersteuning:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>PowerShellGet-cmdlets demo met module-afhankelijkheden ondersteunen:
 
-### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Zorg ervoor dat de module afhankelijkheden beschikbaar in de opslagplaats zijn:
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Zorg ervoor dat het module-afhankelijkheden beschikbaar in de opslagplaats zijn:
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -57,7 +57,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Maakt een module met afhankelijkheden die zijn opgegeven in de eigenschappen RequiredModules en NestedModules van de module-manifest.
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Hiermee maakt u een module met afhankelijkheden die zijn opgegeven in de eigenschappen RequiredModules en NestedModules van de module-manifest.
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +71,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Twee versies publiceren (**"1.0"** en **'2.0'**) van de module TestDepWithNestedRequiredModules1 met afhankelijkheden in de opslagplaats.
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Twee versies publiceren (**"1.0"** en **"2.0"**) van de module TestDepWithNestedRequiredModules1 met afhankelijkheden in de opslagplaats.
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>De module TestDepWithNestedRequiredModules1 met de bijbehorende afhankelijkheden vinden door op te geven - IncludeDependencies.
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>De module TestDepWithNestedRequiredModules1 met de afhankelijkheden ervan vinden door - IncludeDependencies op te geven.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Metagegevens Find-Module gebruiken om de afhankelijkheden van de module.
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Metagegevens Find-Module gebruiken om de module-afhankelijkheden te zoeken.
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +130,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>De module TestDepWithNestedRequiredModules1 met afhankelijkheden installeren.
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Installeer de module TestDepWithNestedRequiredModules1 met afhankelijkheden.
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>De cmdlet Uninstall-Module voor het verwijderen van een module die u hebt geïnstalleerd via PowerShellGet uitvoeren.
-Als elke andere module, is afhankelijk van de module die u wilt verwijderen, PowerShellGet een fout genereert.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Voer de cmdlet Uninstall-Module voor het verwijderen van een module die u met behulp van PowerShellGet hebt geïnstalleerd.
+Als elke andere module, is afhankelijk van de module die u wilt verwijderen, genereert PowerShellGet een fout.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a>De cmdlet opslaan-Module
+## <a name="save-module-cmdlet"></a>De cmdlet Save-Module
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -203,12 +203,12 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## <a name="update-modulemanifest-cmdlet"></a>De cmdlet update ModuleManifest
-Deze nieuwe cmdlet wordt gebruikt om te manifestbestand met invoer eigenschapswaarden update. Het duurt alle parameters die Test ModuleManifest biedt.
+## <a name="update-modulemanifest-cmdlet"></a>De cmdlet update-ModuleManifest
+Dit is een nieuwe cmdlet wordt gebruikt om te update manifestbestand met invoer eigenschapswaarden. Het duurt voordat alle parameters die Test ModuleManifest heeft.
 
-We merken dat veel van de module auteurs wilt opgeven '\*' in de geëxporteerde waarden zoals FunctionsToExport, CmdletsToExport, enz. Tijdens de publicatie van de module voor PowerShell Gallery, niet-opgegeven functies en opdrachten niet ingevuld correct naar de galerie. Daarom raden we module auteurs update hun manifesten met de juiste waarden.
+We u ziet dat veel van de module auteurs wilt opgeven '\*' in de geëxporteerde waarden zoals FunctionsToExport, CmdletsToExport, enz. Tijdens het publiceren van de module voor PowerShell Gallery, worden niet-opgegeven functies en opdrachten niet ingevuld correct naar de galerie. Daarom stellen we voor module auteurs update hun manifesten met de juiste waarden.
 
-Als u hebt de modules die eigenschappen hebt geëxporteerd, vult Update ModuleManifest in het opgegeven manifestbestand met gegevens van geëxporteerde functies, -cmdlets, variabelen enzovoort:
+Als u modules die eigenschappen hebt geëxporteerd hebt, wordt het opgegeven manifestbestand met de gegevens van geëxporteerde functies, -cmdlets, variabelen, enzovoort vult u Update-ModuleManifest:
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -257,11 +257,11 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-Voor elke module er zijn ook metagegevensvelden gekoppeld. Om metagegevens correct weergegeven op PowrShell galerie, kunt u Update ModuleManifest onder PrivateData deze velden te vullen.
+Voor elke module, er zijn ook metagegevensvelden die ermee verbonden zijn. Om de metagegevens juist op PowrShell galerie weergeven, kunt u Update-ModuleManifest om deze velden onder PrivateData te vullen.
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
-PrivateData hashtabel van de sjabloon manifestbestand heeft de volgende eigenschappen:
+PrivateData hashtabel van de sjabloon manifest-bestand heeft de volgende eigenschappen:
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Opmerking:*** DscResourcesToExport wordt alleen ondersteund op de meest recente versie 5.0-PowerShell. We niet mogelijk om te werken van het veld als u op de vorige versie van PowerShell uitvoert.
+***Opmerking:*** DscResourcesToExport wordt alleen ondersteund op de meest recente PowerShell-versie 5.0. We niet mogelijk om bij te werken van het veld als u op vorige PowerShell-versie worden uitgevoerd.
