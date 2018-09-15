@@ -2,12 +2,12 @@
 title: PowerShell Core in macOS installeren
 description: Informatie over PowerShell Core in macOS installeren
 ms.date: 08/06/2018
-ms.openlocfilehash: 50b8dbbf26f02580e4be45978c926d5337da6b63
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 042c933dfa83f3ab52e315036e4f817145116d00
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557157"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611484"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
@@ -15,17 +15,46 @@ PowerShell Core biedt ondersteuning voor macOS 10.12 en hoger.
 Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
 Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 
-### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de meest recente preview release via Homebrew in macOS 10.12 of hoger
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de nieuwste stabiele versie via Homebrew in macOS 10.12 of hoger
+
+[Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
+Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
+
+Nu kunt u PowerShell hebt geïnstalleerd:
+
+```sh
+brew cask install powershell
+```
+
+Controleer ten slotte of het installeren van uw correct werkt:
+
+```sh
+pwsh
+```
+
+Wanneer er nieuwe versies van PowerShell worden uitgebracht, de Homebrew-formule bijwerken en PowerShell een upgrade uitvoert:
+
+```sh
+brew update
+brew cask upgrade powershell
+```
+
+> [!NOTE]
+> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw worden opgestart om de upgrade te voltooien.
+> en vernieuw de waarden in $PSVersionTable.
+
+[brew]: http://brew.sh/
+
+## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de meest recente preview release via Homebrew in macOS 10.12 of hoger
 
 [Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
 Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
 
 Nadat u Homebrew hebt geïnstalleerd, is het eenvoudig om PowerShell installeren.
-Installeer eerst [Homebrew-Cask][cask], zodat u meer pakketten installeren kunt en te installeren [Cask-versies] [cask-versie] waarmee u alternatieve versies van pakketten installeren:
+Installeer eerst [Cask-versies] [ cask-versions] waarmee u alternatieve versies van cask pakketten installeren:
 
 ```sh
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 ```
 
 Nu kunt u PowerShell hebt geïnstalleerd:
@@ -51,51 +80,7 @@ brew cask upgrade powershell-preview
 > De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw worden opgestart om de upgrade te voltooien.
 > en vernieuw de waarden in $PSVersionTable.
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
-[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
-
-### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de meest recente preview release via Homebrew in macOS 10.12 of hoger
-
-[Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
-Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
-
-Nadat u Homebrew hebt geïnstalleerd, is het eenvoudig om PowerShell installeren.
-Installeer eerst [Homebrew-Cask][cask], zodat u meer pakketten installeren kunt en te installeren [Cask-versies] [cask-versie] waarmee u alternatieve versies van pakketten installeren:
-
-```sh
-brew tap caskroom/cask
-brew tap caskroom/versions
-```
-
-Nu kunt u PowerShell hebt geïnstalleerd:
-
-```sh
-brew cask install powershell-preview
-```
-
-Controleer ten slotte of het installeren van uw correct werkt:
-
-```sh
-pwsh-preview
-```
-
-Wanneer er nieuwe versies van PowerShell worden uitgebracht, de Homebrew-formule bijwerken en PowerShell een upgrade uitvoert:
-
-```sh
-brew update
-brew cask upgrade powershell-preview
-```
-
-> [!NOTE]
-> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw worden opgestart om de upgrade te voltooien.
-> en vernieuw de waarden in $PSVersionTable.
-
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
-[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
-
-### <a name="installation-via-direct-download"></a>Installatie via directe downloaden
+## <a name="installation-via-direct-download"></a>Installatie via directe downloaden
 
 Pak het pakket downloaden `powershell-6.1.0-osx-x64.pkg`
 uit de [releases][] pagina naar uw macOS-computer.
@@ -108,7 +93,7 @@ sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-PowerShell binaire `tar.gz` archieven voor macOS en Linux-platformen om in te schakelen geavanceerde implementatiescenario's worden geleverd.
+PowerShell binaire `tar.gz` archieven worden opgegeven voor het macOS-platform om in te schakelen geavanceerde implementatiescenario's.
 
 ### <a name="installing-binary-archives-on-macos"></a>Installeren van de binaire archieven in macOS
 
@@ -143,12 +128,10 @@ Als u PowerShell hebt geïnstalleerd via de directe download, moet PowerShell ha
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Als u wilt verwijderen van de extra PowerShell-paden, raadpleegt u de [paden][] sectie in dit document en verwijder de paden met behulp van de gewenste `sudo rm`.
+Als u wilt verwijderen van de extra PowerShell-paden, raadpleegt u de [paden](#paths) sectie in dit document en verwijder de paden met behulp van de gewenste `sudo rm`.
 
 > [!NOTE]
 > Dit is niet nodig als u met Homebrew hebt geïnstalleerd.
-
-[Paden]:#paths
 
 ## <a name="paths"></a>Paden
 
@@ -175,7 +158,8 @@ Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, en de symlink wordt g
 * [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/
-[GitHub]: https://github.com/Homebrew
 [Cask]: https://github.com/Homebrew/homebrew-cask
+[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
+[GitHub]: https://github.com/Homebrew
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

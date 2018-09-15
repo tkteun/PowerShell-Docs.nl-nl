@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 27e7e846e9ba6ab34d83a084c2589b67a9d5cba9
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557305"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611519"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
 
@@ -34,6 +34,11 @@ Op Windows, het team van .NET verzonden de [Windows-compatibiliteitspakket voor 
 We hebben het Windows-compatibiliteitspakket naar PowerShell Core 6.1 release toegevoegd zodat alle modules of scripts die gebruikmaken van deze API's kunnen erop vertrouwen dat ze beschikbaar worden gesteld.
 
 De Windows-compatibiliteitspakket kunt u PowerShell Core gebruiken **meer dan 1900 cmdlets die worden geleverd met Windows 10 oktober 2018 Update en Windows Server 2019**.
+
+## <a name="support-for-application-whitelisting"></a>Ondersteuning voor opname in de Whitelist
+
+PowerShell Core 6.1 heeft pariteit met de ondersteuning van Windows PowerShell 5.1 [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) opname in de whitelist.
+Opname in de whitelist kunt gedetailleerde controle over welke binaire bestanden mogen worden uitgevoerd gebruikt in combinatie met PowerShell [beperkte taalmodus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Verbeterde prestaties
 
@@ -153,7 +158,7 @@ Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Bekijk voor meer informatie over dit gedrag [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/2-Draft-Accepted/RFC0025-PSCore6-and-Windows-Modules.md).
+Bekijk voor meer informatie over dit gedrag [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown-cmdlets en -rendering
 
