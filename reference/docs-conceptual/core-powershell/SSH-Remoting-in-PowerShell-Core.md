@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 0605e2400ab23a5ca97910621a59a64d19a80bde
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557104"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134277"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -167,22 +167,6 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
-
-## <a name="authentication"></a>Verificatie
-
-PowerShell voor externe toegang via SSH is afhankelijk van de authenticatie-uitwisseling tussen de SSH-client en de SSH-service en implementeert niet alle verificatiemethoden zelf.
-Dit betekent dat alle geconfigureerde verificatiemethoden, waaronder multi-factor authentication wordt verwerkt door de SSH- en onafhankelijk van PowerShell.
-U kunt bijvoorbeeld de SSH-service om te vereisen dat verificatie van de openbare sleutel, evenals een eenmalig wachtwoord voor extra beveiliging configureren.
-Configuratie van multi-factor authentication is buiten het bereik van deze documentatie.
-Raadpleeg de documentatie voor SSH over het correct multi-factor authentication configureren en te werken buiten PowerShell valideren voordat u probeert te gebruiken met PowerShell voor externe toegang.
-
-## <a name="authentication"></a>Verificatie
-
-PowerShell voor externe toegang via SSH is afhankelijk van de authenticatie-uitwisseling tussen de SSH-client en de SSH-service en implementeert niet alle verificatiemethoden zelf.
-Dit betekent dat alle geconfigureerde verificatiemethoden, waaronder multi-factor authentication wordt verwerkt door de SSH- en onafhankelijk van PowerShell.
-U kunt bijvoorbeeld de SSH-service om te vereisen dat verificatie van de openbare sleutel, evenals een eenmalig wachtwoord voor extra beveiliging configureren.
-Configuratie van multi-factor authentication is buiten het bereik van deze documentatie.
-Raadpleeg de documentatie voor SSH over het correct multi-factor authentication configureren en te werken buiten PowerShell valideren voordat u probeert te gebruiken met PowerShell voor externe toegang.
 
 ## <a name="authentication"></a>Verificatie
 
