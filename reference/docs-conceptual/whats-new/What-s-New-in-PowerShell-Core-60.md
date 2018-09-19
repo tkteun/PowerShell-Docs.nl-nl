@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.0?
 ms.date: 08/06/2018
-ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557229"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289239"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
@@ -80,7 +80,7 @@ Een aantal wijzigingen zijn aangebracht in macOS en Linux voor de ondersteuning 
   - De geschiedenis opslaan pad bevindt zich in `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - Het pad naar module bevindt zich in `~/.local/share/powershell/Modules`
 - Ondersteuning voor bestands- en mapnamen met het teken puntkomma's op Unix. (#4959)
-- Ondersteuning voor scriptnamen van het of de volledige paden met komma's. (#4136) (Dank aan @TimCurwick!)
+- Ondersteuning voor scriptnamen van het of de volledige paden met komma's. (#4136) (Dank aan [ @TimCurwick ](https://github.com/TimCurwick)!)
 - Detecteren wanneer `-LiteralPath` wordt gebruikt voor het onderdrukken van jokertekens voor navigatie-cmdlets. (#5038)
 - Bijgewerkt `Get-ChildItem` meer lijkt te werken de * nix `ls -R` en de Windows `DIR /S` systeemeigen opdrachten.
   `Get-ChildItem` retourneert nu symbolische koppelingen worden aangetroffen tijdens een recursieve zoekopdracht en niet de mappen zoeken die het doel van deze koppelingen. (#3780)
@@ -118,7 +118,7 @@ Aanvullende wijzigingen aan `pwsh(.exe)` van `powershell.exe`:
   Deze wijziging is echter vereist dat u expliciet opgeven `-c` of `-Command` tijdens het uitvoeren van opdrachten zoals `pwsh.exe -Command Get-Command`. (#4019)
 - PowerShell Core accepteert de `-i` (of `-Interactive`) switch om aan te geven van een interactieve shell. (#3558) Hiermee kunt PowerShell om te worden gebruikt als een standaardshell op Unix-platforms.
 - Parameters verwijderd `-importsystemmodules` en `-psconsoleFile` van `pwsh.exe`. (#4995)
-- Gewijzigd `pwsh -version` en ingebouwde Help-informatie voor `pwsh.exe` om uit te lijnen met andere hulpprogramma's voor native modus. (#4958 & #4931) (Bedankt @iSazonov)
+- Gewijzigd `pwsh -version` en ingebouwde Help-informatie voor `pwsh.exe` om uit te lijnen met andere hulpprogramma's voor native modus. (#4958 & #4931) (Bedankt [ @iSazonov ](https://github.com/iSazonov))
 - Ongeldig argument foutberichten voor `-File` en `-Command` en afsluitcodes die consistent zijn met Unix-standaarden (#4573)
 - Toegevoegd `-WindowStyle` parameter op Windows. (#4573) Updates voor installaties op basis van het pakket op niet-Windows-platforms zijn op deze manier in-place updates.
 
@@ -214,21 +214,21 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 
 ## <a name="semantic-versioning"></a>Semantisch versiebeheer
 
-- Aangebracht `SemanticVersion` compatibel is met `SemVer 2.0`. (#5037) (Bedankt @iSazonov!)
-- Standaard gewijzigd `ModuleVersion` in `New-ModuleManifest` naar `0.0.1` SemVer afgestemd. (#4842) (Bedankt @LDSpits)
-- Toegevoegd `semver` als een type accelerator voor `System.Management.Automation.SemanticVersion`. (#4142) (Dank aan @oising!)
+- Aangebracht `SemanticVersion` compatibel is met `SemVer 2.0`. (#5037) (Bedankt [ @iSazonov ](https://github.com/iSazonov)!)
+- Standaard gewijzigd `ModuleVersion` in `New-ModuleManifest` naar `0.0.1` SemVer afgestemd. (#4842) (Bedankt [ @LDSpits ](https://github.com/LDSpits))
+- Toegevoegd `semver` als een type accelerator voor `System.Management.Automation.SemanticVersion`. (#4142) (Dank aan [ @oising ](https://github.com/oising)!)
 - Vergelijking van de ingeschakeld een `SemanticVersion` exemplaar en een `Version` exemplaar dat is opgesteld met `Major` en `Minor` Versiewaarden.
 
 ## <a name="language-updates"></a>Taalupdates
 
-- Implementeren zodat gebruikers Unicode-tekens als argumenten, tekenreeksen of namen van variabelen gebruiken kunnen parseren Unicode-escape. (#3958) (Dank aan @rkeithhill!)
+- Implementeren zodat gebruikers Unicode-tekens als argumenten, tekenreeksen of namen van variabelen gebruiken kunnen parseren Unicode-escape. (#3958) (Dank aan [ @rkeithhill ](https://github.com/rkeithhill)!)
 - Toegevoegde nieuwe escape-teken voor ESC: `` `e``
-- Ondersteuning toegevoegd voor het converteren van de enum-waarden voor de tekenreeks (#4318) (Bedankt @KirkMunro)
+- Ondersteuning toegevoegd voor het converteren van de enum-waarden voor de tekenreeks (#4318) (Bedankt [ @KirkMunro ](https://github.com/KirkMunro))
 - Vaste casten één element matrix aan een generieke verzameling. (#3170)
-- Toegevoegde teken bereik overbelasting naar de `..` operator, dus `'a'..'z'` tekens retourneert op basis van een' naar 'z'. (#5026) (Bedankt @IISResetMe!)
+- Toegevoegde teken bereik overbelasting naar de `..` operator, dus `'a'..'z'` tekens retourneert op basis van een' naar 'z'. (#5026) (Bedankt [ @IISResetMe ](https://github.com/IISResetMe)!)
 - Vaste toewijzing van variabele alleen-lezen-variabelen niet overschrijven
 - Lokale variabelen van automatische variabelen naar 'DottedScopes' pushen wanneer dotting script-cmdlets (#4709)
-- Gebruik van 'Singleline, Multiline' optie in splitsingsoperator inschakelen (#4721) (Bedankt @iSazonov)
+- Gebruik van 'Singleline, Multiline' optie in splitsingsoperator inschakelen (#4721) (Bedankt [ @iSazonov ](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Engine-updates
 
@@ -240,12 +240,12 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
   - `Platform`: Dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` is ingesteld op `Win32NT` op Windows, `Unix` op Mac OS en `Unix` op Linux.
 - Verwijderd de `BuildVersion` eigenschap `$PSVersionTable`.
   Deze eigenschap is nauw verbonden met de build-versie van Windows.
-  In plaats daarvan raden wij aan dat u `GitCommitId` om op te halen van de exacte build-versie van PowerShell Core. (#3877) (Dank aan @iSazonov!)
+  In plaats daarvan raden wij aan dat u `GitCommitId` om op te halen van de exacte build-versie van PowerShell Core. (#3877) (Dank aan [ @iSazonov ](https://github.com/iSazonov)!)
 - Verwijder `ClrVersion` eigenschap `$PSVersionTable`.
   Deze eigenschap is niet van belang voor .NET Core en is alleen voor specifieke verouderde doeleinden die niet van toepassing op PowerShell in .NET Core blijven behouden.
 - Drie nieuwe automatische variabelen om te bepalen of PowerShell wordt uitgevoerd in een bepaald besturingssysteem toegevoegd: `$IsWindows`, `$IsMacOs`, en `$IsLinux`.
 - Voeg `GitCommitId` naar PowerShell Core banner.
-  Nu kunt u niet om uit te voeren `$PSVersionTable` als u PowerShell om de versie te downloaden begint! (#3916) (Dank aan @iSazonov!)
+  Nu kunt u niet om uit te voeren `$PSVersionTable` als u PowerShell om de versie te downloaden begint! (#3916) (Dank aan [ @iSazonov ](https://github.com/iSazonov)!)
 - Toevoegen van een JSON-configuratiebestand met de naam `powershell.config.json` in `$PSHome` voor het opslaan van enkele instellingen die vereist zijn voor en opstarttijd (bijvoorbeeld `ExecutionPolicy`).
 - Pijplijn niet blokkeren bij het uitvoeren van Windows EXE
 - De inventarisatie van COM-verzamelingen is ingeschakeld. (#4553)
@@ -255,93 +255,93 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 ### <a name="new-cmdlets"></a>Er zijn nieuwe cmdlets
 
 - Voeg `Get-Uptime` naar `Microsoft.PowerShell.Utility`.
-- Voeg `Remove-Alias` opdracht. (#5143) (Bedankt @PowershellNinja!)
-- Voeg `Remove-Service` aan Management-module. (#4858) (Bedankt @joandrsn!)
+- Voeg `Remove-Alias` opdracht. (#5143) (Bedankt [ @PowershellNinja ](https://github.com/PowershellNinja)!)
+- Voeg `Remove-Service` aan Management-module. (#4858) (Bedankt [ @joandrsn ](https://github.com/joandrsn)!)
 
 ### <a name="web-cmdlets"></a>Web-cmdlets
 
-- Certificaat-verificatie-ondersteuning voor cmdlets voor web toevoegen. (#4646) (Bedankt @markekraus)
-- Ondersteuning voor inhoud headers toevoegen aan de web-cmdlets. (#4494 & #4640) (Bedankt @markekraus)
-- Ondersteuning voor meerdere koppeling koptekst toevoegen aan Web-Cmdlets. (#5265) (Bedankt @markekraus!)
+- Certificaat-verificatie-ondersteuning voor cmdlets voor web toevoegen. (#4646) (Bedankt [ @markekraus ](https://github.com/markekraus))
+- Ondersteuning voor inhoud headers toevoegen aan de web-cmdlets. (#4494 & #4640) (Bedankt [ @markekraus ](https://github.com/markekraus))
+- Ondersteuning voor meerdere koppeling koptekst toevoegen aan Web-Cmdlets. (#5265) (Bedankt [ @markekraus ](https://github.com/markekraus)!)
 - Ondersteuning voor koppeling header paginering in web-cmdlets (#3828)
   - Voor `Invoke-WebRequest`, wanneer het antwoord bevat de header van een koppeling maken we een eigenschap RelationLink als een woordenlijst die de URL's en `rel` kenmerken en zorg ervoor dat de URL's zijn absolute te vereenvoudigen voor ontwikkelaars om te gebruiken.
   - Voor `Invoke-RestMethod`, wanneer het antwoord bevat een koppeling header geven we weer een `-FollowRelLink` switch automatisch volgen `next` `rel` koppelingen totdat ze niet meer bestaat of één keer wordt bereikt de optionele `-MaximumFollowRelLink` parameterwaarde.
-- Voeg `-CustomMethod` parameter voor web-cmdlets om toe te staan voor niet-standaard methode termen. (#3142) (Dank aan @Lee303!)
-- Voeg `SslProtocol` ondersteuning voor Web-Cmdlets. (#5329) (Bedankt @markekraus!)
-- Toevoegen van Multipart ondersteuning voor web-cmdlets. (#4782) (Bedankt @markekraus)
-- Voeg `-NoProxy` voor web-cmdlets zodat ze het hele systeem proxy-instellingen kunnen negeren. (#3447) (Dank aan @TheFlyingCorpse!)
-- Gebruiker Agent van de Web-Cmdlets nu rapporten de OS-platform (#4937) (Bedankt @LDSpits)
+- Voeg `-CustomMethod` parameter voor web-cmdlets om toe te staan voor niet-standaard methode termen. (#3142) (Dank aan [ @Lee303 ](https://github.com/Lee303)!)
+- Voeg `SslProtocol` ondersteuning voor Web-Cmdlets. (#5329) (Bedankt [ @markekraus ](https://github.com/markekraus)!)
+- Toevoegen van Multipart ondersteuning voor web-cmdlets. (#4782) (Bedankt [ @markekraus ](https://github.com/markekraus))
+- Voeg `-NoProxy` voor web-cmdlets zodat ze het hele systeem proxy-instellingen kunnen negeren. (#3447) (Dank aan [ @TheFlyingCorpse ](https://github.com/TheFlyingCorpse)!)
+- Gebruiker Agent van de Web-Cmdlets nu rapporten de OS-platform (#4937) (Bedankt [ @LDSpits ](https://github.com/LDSpits))
 - Voeg `-SkipHeaderValidation` overschakelen naar de web-cmdlets voor de ondersteuning van headers toe te voegen zonder het valideren van de headerwaarde. (#4085)
 - Web-cmdlets voor het HTTPS-certificaat van de server niet valideren als vereist inschakelen.
-- Verificatieparameters toevoegen aan de web-cmdlets. (#5052) (Bedankt @markekraus)
+- Verificatieparameters toevoegen aan de web-cmdlets. (#5052) (Bedankt [ @markekraus ](https://github.com/markekraus))
   - Voeg `-Authentication` waarmee de drie opties: basisverificatie, OAuth en Bearer.
   - Voeg `-Token` ophalen OAuth en Bearer-opties voor het bearer-token.
   - Voeg `-AllowUnencryptedAuthentication` authentication dat is opgegeven voor een transportschema dan HTTPS overslaan.
-- Voeg `-ResponseHeadersVariable` naar `Invoke-RestMethod` waarmee het vastleggen van antwoordheaders. (#4888) (Bedankt @markekraus)
+- Voeg `-ResponseHeadersVariable` naar `Invoke-RestMethod` waarmee het vastleggen van antwoordheaders. (#4888) (Bedankt [ @markekraus ](https://github.com/markekraus))
 - Corrigeer de web-cmdlets voor het HTTP-antwoord opnemen in de uitzondering als de statuscode van het antwoord niet geslaagd is. (#3201)
-- Web-cmdlets wijzigen `UserAgent` van `WindowsPowerShell` naar `PowerShell`. (#4914) (Bedankt @markekraus)
+- Web-cmdlets wijzigen `UserAgent` van `WindowsPowerShell` naar `PowerShell`. (#4914) (Bedankt [ @markekraus ](https://github.com/markekraus))
 - Voeg expliciete `ContentType` detectie `Invoke-RestMethod` (#4692)
-- Web-cmdlets oplossen `-SkipHeaderValidation` om te werken met niet-standaard gebruikersagent headers. (#4479 & #4512) (Bedankt @markekraus)
+- Web-cmdlets oplossen `-SkipHeaderValidation` om te werken met niet-standaard gebruikersagent headers. (#4479 & #4512) (Bedankt [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-cmdlets
 
-- Voeg `-AsHashtable` naar `ConvertFrom-Json` om terug te keren een `Hashtable` in plaats daarvan. (#5043) (Bedankt @bergmeister!)
+- Voeg `-AsHashtable` naar `ConvertFrom-Json` om terug te keren een `Hashtable` in plaats daarvan. (#5043) (Bedankt [ @bergmeister ](https://github.com/bergmeister)!)
 - Gebruik kleurcodes indelingsfunctie met `ConvertTo-Json` uitvoer. (#2787) (Dank aan @kittholland!)
 - Voeg `Jobject` ondersteuning van serialisatie `ConvertTo-Json`. (#5141)
 - Los `ConvertFrom-Json` deserialiseren van een matrix met tekenreeksen uit de pijplijn die samen een volledige JSON-tekenreeks te maken.
   Dit wordt soms vorm doorbreekt waar het parseren van JSON opgelost. (#3823)
 - Verwijder de `AliasProperty "Count"` gedefinieerd voor `System.Array`.
-  Hiermee verwijdert u de overbodige `Count` eigenschap op sommige `ConvertFrom-Json` uitvoer. (#3231) (Dank aan @PetSerAl!)
+  Hiermee verwijdert u de overbodige `Count` eigenschap op sommige `ConvertFrom-Json` uitvoer. (#3231) (Dank aan [ @PetSerAl ](https://github.com/PetSerAl)!)
 
 ### <a name="csv-cmdlets"></a>CSV-cmdlets
 
-- Voeg `PSTypeName` ondersteuning voor `Import-Csv` en `ConvertFrom-Csv`. (#5389) (Bedankt @markekraus!)
-- Controleer `Import-Csv` ondersteunen `CR`, `LF`, en `CRLF` als scheidingstekens regel. (#5363) (Bedankt @iSazonov!)
-- Controleer `-NoTypeInformation` de standaard op `Export-Csv` en `ConvertTo-Csv`. (#5164) (Bedankt @markekraus)
+- Voeg `PSTypeName` ondersteuning voor `Import-Csv` en `ConvertFrom-Csv`. (#5389) (Bedankt [ @markekraus ](https://github.com/markekraus)!)
+- Controleer `Import-Csv` ondersteunen `CR`, `LF`, en `CRLF` als scheidingstekens regel. (#5363) (Bedankt [ @iSazonov ](https://github.com/iSazonov)!)
+- Controleer `-NoTypeInformation` de standaard op `Export-Csv` en `ConvertTo-Csv`. (#5164) (Bedankt [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Service-cmdlets
 
-- Voeg eigenschappen toe `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, en `StartupType` naar de `ServiceController` objecten die worden geretourneerd door `Get-Service`. (#4907) (Bedankt @joandrsn)
-- Voeg functionaliteit voor het instellen van referenties voor `Set-Service` opdracht. (#4844) (Bedankt @joandrsn)
+- Voeg eigenschappen toe `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, en `StartupType` naar de `ServiceController` objecten die worden geretourneerd door `Get-Service`. (#4907) (Bedankt [ @joandrsn ](https://github.com/joandrsn))
+- Voeg functionaliteit voor het instellen van referenties voor `Set-Service` opdracht. (#4844) (Bedankt [ @joandrsn ](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Andere cmdlets
 
 - Voeg een parameter voor `Get-ChildItem` met de naam `-FollowSymlink` die symlinks op aanvraag, met controles voor koppeling lussen passeert. (#4020)
-- Update `Add-Type` ter ondersteuning van `CSharpVersion7`. (#3933) (Dank aan @iSazonov)
+- Update `Add-Type` ter ondersteuning van `CSharpVersion7`. (#3933) (Dank aan [ @iSazonov ](https://github.com/iSazonov))
 - Verwijder de `Microsoft.PowerShell.LocalAccounts` module vanwege het gebruik van niet-ondersteunde API's tot een betere oplossing is gevonden. (#4302)
 - Verwijder de `*-Counter` -cmdlets in `Microsoft.PowerShell.Diagnostics` vanwege het gebruik van niet-ondersteunde API's tot een betere oplossing is gevonden. (#4303)
 - Voeg ondersteuning toe voor `Invoke-Item -Path <folder>`. (#4262)
-- Voeg `-Extension` en `-LeafBase` verandert in een `Split-Path` zodat u paden tussen de extensie en de rest van de bestandsnaam splitsen. (#2721) (Dank aan @powercode!)
+- Voeg `-Extension` en `-LeafBase` verandert in een `Split-Path` zodat u paden tussen de extensie en de rest van de bestandsnaam splitsen. (#2721) (Dank aan [ @powercode ](https://github.com/powercode)!)
 - Voeg parameters toe `-Top` en `-Bottom` naar `Sort-Object` voor bovenste/onderste N sorteren
-- Een proces bovenliggende proces stellen door toe te voegen de `CodeProperty "Parent"` naar `System.Diagnostics.Process`. (#2850) (Dank aan @powercode!)
+- Een proces bovenliggende proces stellen door toe te voegen de `CodeProperty "Parent"` naar `System.Diagnostics.Process`. (#2850) (Dank aan [ @powercode ](https://github.com/powercode)!)
 - MB gebruiken in plaats van KB voor geheugenkolommen van het `Get-Process`
-- Voeg `-NoNewLine` overschakelen voor `Out-String`. (#5056) (Bedankt @raghav710)
+- Voeg `-NoNewLine` overschakelen voor `Out-String`. (#5056) (Bedankt [ @raghav710 ](https://github.com/raghav710))
 - `Move-Item` cmdlet zich houdt aan `-Include`, `-Exclude`, en `-Filter` parameters. (#3878)
 - Toestaan dat `*` moet worden gebruikt in het registerpad voor `Remove-Item`. (#4866)
 - Voeg `-Title` naar `Get-Credential` en lever een geïntegreerde ervaring de prompt ervaring verschillende platforms.
 - Voeg de `-TimeOut` parameter `Test-Connection`. (#2492)
 - `Get-AuthenticodeSignature` cmdlets hebt nu toegang tot bestand handtekening timestamp. (#4061)
 - Verwijder niet-ondersteunde `-ShowWindow` overschakelen van `Get-Help`. (#4903)
-- Los `Get-Content -Delimiter` geretourneerde (#3706) het scheidingsteken niet opnemen in de matrixelementen (Bedankt @mklement0)
-- Voeg `Meta`, `Charset`, en `Transitional` parameters `ConvertTo-HTML` (#4184) (Bedankt @ergo3114)
+- Los `Get-Content -Delimiter` geretourneerde (#3706) het scheidingsteken niet opnemen in de matrixelementen (Bedankt [ @mklement0 ](https://github.com/mklement0))
+- Voeg `Meta`, `Charset`, en `Transitional` parameters `ConvertTo-HTML` (#4184) (Bedankt [ @ergo3114 ](https://github.com/ergo3114))
 - Voeg `WindowsUBR` en `WindowsVersion` eigenschappen `Get-ComputerInfo` resultaat
 - Voeg `-Group` parameter `Get-Verb`
-- Voeg `ShouldProcess` ondersteuning `New-FileCatalog` en `Test-FileCatalog` (corrigeert `-WhatIf` en `-Confirm`). (#3074) (Dank aan @iSazonov!)
-- Voeg `-WhatIf` overschakelen naar `Start-Process` cmdlet (#4735) (Bedankt @sarithsutha)
+- Voeg `ShouldProcess` ondersteuning `New-FileCatalog` en `Test-FileCatalog` (corrigeert `-WhatIf` en `-Confirm`). (#3074) (Dank aan [ @iSazonov ](https://github.com/iSazonov)!)
+- Voeg `-WhatIf` overschakelen naar `Start-Process` cmdlet (#4735) (Bedankt [ @sarithsutha ](https://github.com/sarithsutha))
 - Voeg `ValidateNotNullOrEmpty` te veel bestaande parameters.
 
 ## <a name="tab-completion"></a>Tab-aanvulling
 
-- Het type Deductie in de tab-aanvulling op basis van waarden van variabelen runtime verbeterd. (#2744) (Dank aan @powercode!) Hiermee kunt de tab-Aanvulling in dergelijke situaties:
+- Het type Deductie in de tab-aanvulling op basis van waarden van variabelen runtime verbeterd. (#2744) (Dank aan [ @powercode ](https://github.com/powercode)!) Hiermee kunt de tab-Aanvulling in dergelijke situaties:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Tab-aanvulling voor hash-tabel toevoegen `-Property` van `Select-Object`. (#3625) (Dank aan @powercode)
-- Inschakelen van argument automatisch aanvullen voor `-ExcludeProperty` en `-ExpandProperty` van `Select-Object`. (#3443) (Dank aan @iSazonov!)
-- Is een fout opgelost in de tab-Aanvulling kunnen `native.exe --<tab>` aanroep in systeemeigen completer mogelijk maakt. (#3633) (Dank aan @powercode!)
+- Tab-aanvulling voor hash-tabel toevoegen `-Property` van `Select-Object`. (#3625) (Dank aan [ @powercode ](https://github.com/powercode))
+- Inschakelen van argument automatisch aanvullen voor `-ExcludeProperty` en `-ExpandProperty` van `Select-Object`. (#3443) (Dank aan [ @iSazonov ](https://github.com/iSazonov)!)
+- Is een fout opgelost in de tab-Aanvulling kunnen `native.exe --<tab>` aanroep in systeemeigen completer mogelijk maakt. (#3633) (Dank aan [ @powercode ](https://github.com/powercode)!)
 
 ## <a name="breaking-changes"></a>Belangrijke wijzigingen
 
