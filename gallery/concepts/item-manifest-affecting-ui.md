@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Item manifest van de waarden die van invloed zijn op de UI van de PowerShell-galerie
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268174"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532967"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Item manifest van de waarden die van invloed zijn op de UI van de PowerShell-galerie
 
@@ -44,6 +44,8 @@ De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van he
 | **Versiegeschiedenis** | De versiegeschiedenis weerspiegelt de updates die zijn aangebracht in een module in de PowerShell Gallery. Als een versie van een item wordt weergegeven met behulp van de functie verwijderen, zal dit niet worden weergegeven in de versiegeschiedenis, behalve voor de item-eigenaren. | Nee | Nee |
 | **Project-Site** | Site van het project is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een ProjectURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. PROJECTURI. | Ja | Ja |
 | **Licentie** | De koppeling van een licentie is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een LicenseURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. LICENSEURI. Het is belangrijk te weten dat als een licentie niet via de LicenseURI opgegeven is of binnen een module, geef de gebruiksvoorwaarden voor de PowerShell Gallery vervolgens de gebruiksvoorwaarden voor het item. Zie de gebruiksvoorwaarden voor meer informatie. | Ja | Ja |
+| **Pictogram** | Een pictogram kan worden opgegeven voor een item in de PowerShell Gallery door het opgeven van de markering IconURI in het manifest van het script of in de sectie Privatedata PSData van de module-manifest. De IconURI moet verwijzen naar de installatiekopie van een 32 x 32 met transparantie achtergrond. De URI **moet** worden van een directe afbeeldings-URL en **moet niet** gaat u naar een webpagina met de installatiekopie of een bestand in de PowerShell Gallery-pakket. | Ja | Ja |
+
 
 ## <a name="editing-item-details"></a>Details van item bewerken
 
