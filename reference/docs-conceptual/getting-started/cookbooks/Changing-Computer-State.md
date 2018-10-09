@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Computerstatus wijzigen
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267882"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851080"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
 
@@ -52,14 +52,20 @@ Afgesloten en opnieuw opstarten van computers worden in het algemeen dezelfde ge
 
 U kunt ook afsluiten en opnieuw starten van bewerkingen rechtstreeks vanuit Windows PowerShell ook.
 
-Als u wilt afsluiten de computer, gebruikt u de opdracht stop-computer
+Als u wilt afsluiten de computer, gebruikt u de opdracht Stop-Computer
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-Als u wilt het besturingssysteem opnieuw hebt opgestart, gebruikt u de opdracht computer opnieuw opstarten
+Als u wilt het besturingssysteem opnieuw hebt opgestart, gebruikt u de opdracht Computer opnieuw opstarten
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+Als u wilt afdwingen dat een onmiddellijk opnieuw opstarten van de computer, gebruikt u de parameter - Force.
+
+```powershell
+Restart-Computer -Force
 ```

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268412"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851321"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
 
@@ -327,7 +327,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
    Wijzig de standaardpoort als een andere website al gebruikmaakt van nummer 443 of als u andere veiligheidsredenen hebt om het poortnummer te wijzigen. Als een andere website die wordt uitgevoerd op de gatewayserver van de geselecteerde poort gebruikmaakt, een waarschuwing wordt weergegeven wanneer u klikt op **OK** in de **Website toevoegen** in het dialoogvenster. U moet een niet-gebruikte poort gebruiken voor het uitvoeren van Windows PowerShell-webtoegang.
 
-1. (Optioneel) Geef de naam van een host die zinvol is voor uw organisatie en gebruikers, zoals zo nodig voor uw organisatie **www.contoso.com**. Klik op **OK**.
+1. (Optioneel) Geef de naam van een host die zinvol is voor uw organisatie en gebruikers, zoals zo nodig voor uw organisatie **`www.contoso.com`**. Klik op **OK**.
 
 1. Voor een veiliger productieomgeving raden we u ten sterkste aan een geldig certificaat op te geven dat is ondertekend door een CA. Omdat gebruikers alleen verbinding met Windows PowerShell-internettoegang via een HTTPS-website maken kunnen, moet u een SSL-certificaat opgeven. Zie [configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-Manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
 
@@ -406,7 +406,7 @@ Gebruik voor een veilige productieomgeving altijd een geldig SSL-certificaat dat
    - Klik op **importeren** aan een bestaand en geldig certificaat importeren vanaf een locatie op uw netwerk.
    - Klik op **certificaataanvraag maken** , zoals een certificaat aanvragen bij een Certificeringsinstantie [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), of [GeoTrust](https://www.geotrust.com/). De algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
 
-     Bijvoorbeeld, als de clientbrowser aanvragen http://www.contoso.com/, de algemene naam moet ook http://www.contoso.com/. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows PowerShell Web Access-gateway met een certificaat.
+     Bijvoorbeeld, als de clientbrowser aanvragen `http://www.contoso.com/`, de algemene naam moet ook `http://www.contoso.com/`. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows PowerShell Web Access-gateway met een certificaat.
 
    - Klik op **een zelfondertekend certificaat maken** te maken van een certificaat dat u direct gebruiken kunt en later door een CA hebt ondertekend indien gewenst. Geef een beschrijvende naam voor de zelf-ondertekend certificaat, bijvoorbeeld **Windows PowerShell-webtoegang**. Deze optie wordt niet als veilig beschouwd en wordt alleen aanbevolen voor een persoonlijke testomgeving.
 

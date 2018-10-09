@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
 title: Informatie over belangrijke concepten van PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353191"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850994"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Informatie over belangrijke concepten van PowerShell
 
@@ -23,7 +23,7 @@ Als u hulpprogramma's voor tekst-de verwerking hebt gebruikt voor het verwerken 
 
 ## <a name="the-command-family-is-extensible"></a>De opdracht serie worden uitgebreid
 
-Interfaces, zoals **cmd.exe**niet bieden een manier waarop u kunt rechtstreeks uitbreiden van de ingebouwde opdrachtenset. U kunt externe opdrachtregelprogramma's die worden uitgevoerd in maken **cmd.exe**. Maar deze hulpprogramma's voor externe services, zoals Help-integratie niet hebt. **cmd.exe**niet automatisch zeker weet dat deze externe hulpprogramma's geldige opdrachten zijn.
+Interfaces, zoals **cmd.exe** niet bieden een manier waarop u kunt rechtstreeks uitbreiden van de ingebouwde opdrachtenset. U kunt externe opdrachtregelprogramma's die worden uitgevoerd in maken **cmd.exe**. Maar deze hulpprogramma's voor externe services, zoals Help-integratie niet hebt. **cmd.exe** niet automatisch zeker weet dat deze externe hulpprogramma's geldige opdrachten zijn.
 
 De systeemeigen in PowerShell-opdrachten worden aangeduid als *cmdlets* (uitgesproken als opdracht kunt). U kunt uw eigen modules cmdlets maken en functies met gecompileerde code of scripts. Modules kunnen cmdlets en providers toevoegen aan de shell. PowerShell biedt ook ondersteuning voor scripts die vergelijkbaar met UNIX-shell-scripts zijn en **cmd.exe** batch-bestanden.
 

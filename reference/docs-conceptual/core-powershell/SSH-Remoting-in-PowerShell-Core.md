@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134277"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851234"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -35,7 +35,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
 
 ## <a name="set-up-on-windows-machine"></a>Op Windows-Machine instellen
 
-1. Installeer de nieuwste versie van [PowerShell Core voor Windows]
+1. Installeer de nieuwste versie van [PowerShell Core voor Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - U kunt zien dat als dat zo de SSH-ondersteuning voor externe communicatie is door te kijken naar de parameter wordt ingesteld voor `New-PSSession`
 
@@ -47,7 +47,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. De meest recente [Win32 OpenSSH]-build installeren vanuit GitHub met behulp van de [installatie]-instructies
+2. Installeer de meest recente [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) samengesteld op basis van GitHub met behulp van de [installatie](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructies
 3. Bewerk het bestand sshd_config op de locatie waar u Win32 OpenSSH geïnstalleerd
 
    - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
@@ -91,8 +91,8 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Op Linux (Ubuntu 14.04) Machine instellen
 
-1. De meest recente [PowerShell Core voor Linux]-build installeren vanuit GitHub
-2. [Ubuntu SSH] indien nodig geïnstalleerd
+1. Installeer de meest recente [PowerShell Core voor Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) samengesteld op basis van GitHub
+2. Installeer [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) indien nodig
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
 
 ## <a name="set-up-on-macos-machine"></a>Ingesteld op MacOS-computer
 
-1. Installeer de nieuwste build van de [PowerShell Core voor MacOS]
+1. Installeer de meest recente [PowerShell Core voor MacOS](../setup/installing-powershell-core-on-macos.md) bouwen
 
    - Zorg ervoor dat SSH voor externe toegang is ingeschakeld door de volgende stappen:
      - Open `System Preferences`
@@ -316,7 +316,5 @@ De sudo-opdracht werkt niet in de externe sessie op Linux-machine.
 [PowerShell Core voor MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[installatie](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

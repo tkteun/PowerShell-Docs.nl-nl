@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289222"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851304"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
 
@@ -197,11 +197,11 @@ en [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invok
 
 ## <a name="remoting-improvements"></a>Verbeteringen voor externe toegang
 
-### <a name="powershell-direct-tries-to-use-powershell-core-first"></a>PowerShell Direct probeert eerst te gebruiken PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct for Containers probeert eerst te gebruiken PowerShell Core
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van PowerShell en Hyper-V, waarmee u verbinding maken met een Hyper-V virtuele machine zonder netwerkverbinding of andere services extern beheer.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van PowerShell en Hyper-V, waarmee u verbinding maken met een Hyper-V virtuele machine of de Container zonder netwerkverbinding of andere services extern beheer.
 
-In het verleden verbonden PowerShell Direct met behulp van het postvak in Windows PowerShell-exemplaar op de virtuele machine.
+In het verleden verbonden PowerShell Direct met behulp van het postvak in Windows PowerShell-exemplaar voor de Container.
 Nu, PowerShell Direct eerst verbinding probeert te maken met behulp van de beschikbare `pwsh.exe` op de `PATH` omgevingsvariabele.
 Als `pwsh.exe` is niet beschikbaar is, PowerShell Direct terugvalt voor het gebruik van `powershell.exe`.
 
@@ -310,45 +310,44 @@ Op veler verzoek `Update-Help` langer moet worden uitgevoerd als beheerder.
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nieuwe methoden/eigenschappen op `PSCustomObject`
 
 Dankzij [ @iSazonov ](https://github.com/iSazonov), hebben we nieuwe methoden en eigenschappen die moeten toegevoegd `PSCustomObject`.
-`PSCustomObject` bevat nu een `Count` / `Length` eigenschap waarmee het aantal items.
-
-Deze voorbeelden retourneren `2` als het aantal `PSCustomObjects` in de verzameling.
+`PSCustomObject` bevat nu een `Count` / `Length` eigenschap net als andere objecten.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 Deze taak bevat ook `ForEach` en `Where` methoden waarmee u kunt werken en te filteren op `PSCustomObject` items:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -507,7 +506,7 @@ Als u wilt zich afmelden deze telemetrische gegevens, stel de omgevingsvariabele
 
 Om te voorkomen dat het gebruik van niet-versleuteld verkeer, nu vereist gebruik van NTLM/Negotiate- of HTTPS PowerShell voor externe toegang op Unix-platforms.
 
-Bekijk voor meer informatie over deze wijzigingen [pull-aanvraag #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+Bekijk voor meer informatie over deze wijzigingen [probleem #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Verwijderd `VisualBasic` als een ondersteunde taal in Add-Type
 

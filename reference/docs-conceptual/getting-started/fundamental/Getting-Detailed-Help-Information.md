@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Gedetailleerde Help-informatie verkrijgen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134031"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851269"
 ---
-# <a name="getting-detailed-help-information"></a>Gedetailleerde help-informatie verkrijgen
+# <a name="getting-detailed-help-information"></a>Gedetailleerde Help-informatie verkrijgen
 
 PowerShell bevat gedetailleerde Help-artikelen waarin wordt uitgelegd van de PowerShell-concepten en de PowerShell-taal. Er zijn ook Help-artikelen voor elke cmdlet en de provider en voor veel functies en scripts.
 
@@ -149,7 +149,7 @@ Voor het weergeven van de Help-artikelen online is een van de beste manieren om 
 Als u online Help, gebruikt u de **Online** parameter van de `Get-Help` cmdlet. Alle Help-artikelen die worden geleverd met PowerShell, met inbegrip van provider Help en conceptuele (Help-artikelen over) zijn online beschikbaar in de [PowerShell](/powershell/scripting/powershell-scripting) documentatie.
 
 > [!NOTE]
-> U kunt geen gebruiken de **Online** parameter met de conceptuele (about_ *) of provider Help-artikelen.
+> U kunt geen gebruiken de **Online** parameter met de conceptuele (about_\*) of provider Help-artikelen.
 > Online-help is optioneel, zodat deze niet voor elke cmdlet, een functie of een script werkt.
 
 Bijvoorbeeld, om op te halen van de online versie van het Help-artikel over de `Get-ChildItem` cmdlet, type:
