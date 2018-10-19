@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851234"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451062"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851234"
 
 PowerShell voor externe toegang gebruikt normaal gesproken WinRM verbinding-onderhandeling en gegevenstransport. SSH is nu beschikbaar voor Linux en Windows-platform en kunt waar meerdere platforms externe communicatie van PowerShell.
 
-WinRM biedt een robuuste hostingmodel voor de externe PowerShell-sessies. die deze implementatie op basis van een SSH-remoting momenteel geen ondersteuning voor de configuratie van het externe eindpunt en JEA (Just Enough Administration).
+WinRM biedt een robuuste hostingmodel voor de externe PowerShell-sessies. Externe toegang op basis van SSH ondersteunt momenteel geen configuratie van externe eindpunten en JEA (Just Enough Administration).
 
 Externe communicatie met SSH kunt u eenvoudige PowerShell-sessie voor externe toegang tussen Windows en Linux-machines. SSH voor externe toegang maakt een hostproces PowerShell op de doel-VM als een SSH-subsysteem.
 Uiteindelijk zult we een algemene hostingmodel, vergelijkbaar met WinRM, ter ondersteuning van configuratie van eindpunten en JEA implementeren.
@@ -48,7 +48,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
    ```
 
 2. Installeer de meest recente [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) samengesteld op basis van GitHub met behulp van de [installatie](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instructies
-3. Bewerk het bestand sshd_config op de locatie waar u Win32 OpenSSH geïnstalleerd
+3. Bewerk het bestand sshd_config op `%ProgramData%\ssh`.
 
    - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 
@@ -57,7 +57,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ Voor Linux installeren SSH (inclusief sshd-server) geschikt is voor uw platform.
      Eén oplossing is het maken van een symlink naar de Powershell-installatiemap die geen spaties:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      en geef de code in het subsysteem:

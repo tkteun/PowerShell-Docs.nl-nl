@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Bekende problemen voor PowerShell 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267997"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450993"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen voor PowerShell 6.0
 
@@ -90,9 +90,9 @@ De mogelijkheid beperkte administration (JEA) voor externe toegang om eindpunten
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, en PowerShell
 
-Omdat PowerShell wordt uitgevoerd voor de meeste opdrachten in het geheugen (zoals Python of Ruby), kunt u sudo niet rechtstreeks met PowerShell dient te worden gebruiken. (U kunt natuurlijk uitvoeren `powershell` van sudo.) Indien nodig een PowerShell-cmdlet uit in PowerShell ook uitvoeren met sudo, bijvoorbeeld `sudo `Set-Date` 8/18/2016`, en vervolgens u zou doen `sudo powershell `Set-datum` 8/18/2016`. Evenzo, kunt u niet exec een ingebouwde PowerShell direct. In plaats daarvan moet u zou doen `exec powershell item_to_exec`.
+Omdat PowerShell wordt uitgevoerd voor de meeste opdrachten in het geheugen (zoals Python of Ruby), kunt u sudo niet rechtstreeks met PowerShell dient te worden gebruiken. (U kunt natuurlijk uitvoeren `pwsh` van sudo.) Indien nodig een PowerShell-cmdlet uit in PowerShell ook uitvoeren met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, en vervolgens u zou doen `sudo pwsh Set-Date 8/18/2016`. Evenzo, kunt u niet exec een ingebouwde PowerShell direct. In plaats daarvan moet u zou doen `exec pwsh item_to_exec`.
 
-Dit probleem wordt momenteel bijgehouden als onderdeel van #3232.
+Dit probleem op dit moment worden bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Ontbrekende Cmdlets
 
