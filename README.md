@@ -1,17 +1,17 @@
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft Open Source-gedragscode
 
-Dit project onderschrijft de [Microsoft Open Source gedragscode](https://opensource.microsoft.com/codeofconduct/).
-Zie voor meer informatie de [Veelgestelde vragen over gedragscode](https://opensource.microsoft.com/codeofconduct/faq/) of neem contact op met [ opencode@microsoft.com ](mailto:opencode@microsoft.com) met aanvullende vragen of opmerkingen.
+Dit project heeft de [Microsoft Open Source gedragscode](https://opensource.microsoft.com/codeofconduct/) geadopteerd.
+Zie voor meer informatie de [Veelgestelde vragen over gedragscode pagina](https://opensource.microsoft.com/codeofconduct/faq/) of neem contact op met [ opencode@microsoft.com ](mailto:opencode@microsoft.com) met aanvullende vragen of opmerkingen (in het Engels).
 
-[![Status maken](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
 
 ## <a name="powershell-documentation"></a>PowerShell-documentatie
 
-Welkom bij de PowerShell-Docs-opslagplaats, behuizing van de officiële PowerShell-documentatie.
+Welkom bij de PowerShell-Docs-repository, thuispagina van de officiële PowerShell-documentatie.
 
 ## <a name="repository-structure"></a>Structuur van de opslagplaats
 
-Elk van de volgende op het hoogste niveau mappen in deze opslagplaats bevat een DocSet die is gepubliceerd naar [Microsoft-Docs](https://docs.microsoft.com/powershell).
+Elk van de volgende top-level mappen in deze repository bevat een DocSet die gepubliceerd is op [Microsoft-Docs](https://docs.microsoft.com/powershell).
 
 - [/Developer/](https://docs.microsoft.com/powershell/developer/) is de toekomstige thuispagina van de PowerShell SDK-documentatie
   - We zijn bezig met het migreren van deze inhoud van MSDN
@@ -32,5 +32,5 @@ Lees voor meer informatie over bijdragen op onze [gids voor bijdragers](CONTRIBU
 ## <a name="licenses"></a>Licenties
 
 Er zijn twee licentiebestanden voor dit project.
-De MIT-licentie geldt voor de code die is opgenomen in deze opslagplaats.
+De MIT-licentie geldt voor de code die is opgenomen in deze repository.
 Creative Commons-licentie geldt voor de documentatie.
