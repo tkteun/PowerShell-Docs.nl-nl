@@ -1,36 +1,38 @@
-## Microsoft Open Source Code of Conduct
+# <a name="microsoft-open-source-code-of-conduct"></a>Microsoft Open Source-gedragscode
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Dit project onderschrijft de [Microsoft Open Source gedragscode](https://opensource.microsoft.com/codeofconduct/).
+Zie voor meer informatie de [Veelgestelde vragen over gedragscode](https://opensource.microsoft.com/codeofconduct/faq/) of neem contact op met [ opencode@microsoft.com ](mailto:opencode@microsoft.com) met aanvullende vragen of opmerkingen.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[![Status maken](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
 
-# PowerShell Documentation
+## <a name="powershell-documentation"></a>PowerShell-documentatie
 
-Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation. 
+Welkom bij de PowerShell-Docs-opslagplaats, behuizing van de officiële PowerShell-documentatie.
 
-## Repository Structure
-Each folder in this repo publishes to [MSDN](https://msdn.microsoft.com/en-us/powershell). The folders correspond to the following PowerShell assets:
-* [/dsc/](https://msdn.microsoft.com/en-us/powershell/dsc/) is  for the Desired State Configuration feature
-* [/gallery/](https://msdn.microsoft.com/powershell/gallery) is for the [PowerShell Gallery](https://www.powershellgallery.com/)
-* [/jea/](https://msdn.microsoft.com/powershell/jea/) is for the Just Enough Administration feature
-* [/reference/](https://msdn.microsoft.com/powershell/reference/) is for PowerShell module reference across versions 2.0, 3.0, 4.0, 5.0, 5.1, and 6.0
-  * This content will be retrieved by the `Get-Help` cmdlet in the future
-* [/scripting/](https://msdn.microsoft.com/en-us/powershell/scripting/) is general PowerShell reference content
-* [/wmf](https://msdn.microsoft.com/en-us/powershell/wmf/readme) contains release notes for the Windows Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows. 
+## <a name="repository-structure"></a>Structuur van de opslagplaats
 
+Elk van de volgende op het hoogste niveau mappen in deze opslagplaats bevat een DocSet die is gepubliceerd naar [Microsoft-Docs](https://docs.microsoft.com/powershell).
 
+- [/Developer/](https://docs.microsoft.com/powershell/developer/) is de toekomst start van de PowerShell SDK-documentatie
+  - We zijn bezig met het migreren van deze inhoud van MSDN
+- [/DSC/](https://docs.microsoft.com/powershell/dsc/) is voor de functie met Desired State Configuration
+- [/Gallery/](https://docs.microsoft.com/powershell/gallery) is voor de [PowerShell Gallery](https://www.powershellgallery.com/)
+- [/jea/](https://docs.microsoft.com/powershell/jea/) is voor de functie Just Enough Administration
+- [/Reference/](https://docs.microsoft.com/powershell/scripting/) is bedoeld voor PowerShell conceptuele onderwerpen en -Moduleverwijzing voorkomen in versie 3.0, 4.0, 5.0, 5.1 en 6.0
+  - Deze inhoud is ook de bron van de help-inhoud opgehaald door de `Get-Help` cmdlet
+- [/WMF](https://docs.microsoft.com/powershell/wmf/readme) bevat opmerkingen bij de release voor de Windows Management Framework, het pakket gebruikt voor het distribueren van nieuwe versies van PowerShell met eerdere versies van Windows.
 
-## Contributing
+## <a name="contributing"></a>Bij te dragen
 
-We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch. 
-Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./STYLE.md) to review before making contributions.
-Please use the Issue and Pull Request templates to help keep documentation consistent across versions. 
+We actief bijdragen samenvoegen in deze opslagplaats via [pull-aanvraag](https://help.github.com/articles/using-pull-requests/) in de *staging* vertakking.
+Houd er rekening mee dat voordat u een pull-aanvraag verzenden, u moet [Meld u aan een gebruiksrechtovereenkomst voor bijdrage](https://cla.microsoft.com/) om ervoor te zorgen dat de community gratis gebruik van uw bijdragen.
 
-## Licenses
+Lees voor meer informatie op die bijdragen aan onze [gids voor inzenders van](CONTRIBUTING.md).
+Handleiding voor de medewerkers bevat gedetailleerde informatie over het om bij te dragen van documentatie, voorgestelde hulpprogramma's, en stijl en indelingsvereisten er gelden.
+Gebruik de probleem- en Pull-aanvragen van sjablonen voor documentatie consistent te houden in verschillende versies.
 
-There are two license files for this project. 
-The MIT License applies to the code contained in this repo.
-The Creative Commons license applies to the documentation. 
+## <a name="licenses"></a>Licenties
+
+Er zijn twee licentiebestanden voor dit project.
+De MIT-licentie geldt voor de code die is opgenomen in deze opslagplaats.
+Creative Commons-licentie geldt voor de documentatie.
