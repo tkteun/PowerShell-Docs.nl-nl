@@ -2,25 +2,25 @@
 ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
-title: Het vereisen van instemming van de licentie voor scripts
-ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+title: Vereisen van instemming met licentie vereisen voor scripts
+ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048816"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002579"
 ---
-# <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="85904-103">Het vereisen van instemming van de licentie voor scripts</span><span class="sxs-lookup"><span data-stu-id="85904-103">Requiring license acceptance for scripts</span></span>
+# <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="d3d42-103">Vereisen van instemming met licentie vereisen voor scripts</span><span class="sxs-lookup"><span data-stu-id="d3d42-103">Requiring license acceptance for scripts</span></span>
 
-<span data-ttu-id="85904-104">Acceptatie van de licentie wordt niet ondersteund voor scripts.</span><span class="sxs-lookup"><span data-stu-id="85904-104">License Acceptance is not supported for scripts.</span></span> <span data-ttu-id="85904-105">Het scenario waarbij een script is afhankelijk van een module die vereist dat de acceptatie van de licentie wordt echter ondersteund.</span><span class="sxs-lookup"><span data-stu-id="85904-105">However, the scenario where a script depends on a module that requires license acceptance is supported.</span></span>
+<span data-ttu-id="d3d42-104">Acceptatie van de licentie wordt niet ondersteund voor scripts.</span><span class="sxs-lookup"><span data-stu-id="d3d42-104">License Acceptance is not supported for scripts.</span></span> <span data-ttu-id="d3d42-105">Het scenario waarbij een script afhankelijk is van een module die is vereist acceptatie van de licentie wordt echter ondersteund.</span><span class="sxs-lookup"><span data-stu-id="d3d42-105">However, the scenario where a script depends on a module that requires license acceptance is supported.</span></span>
 
-<span data-ttu-id="85904-106">Script commands(Install-Script/Save-Script/Update-Script) ondersteunen een nieuwe parameter - AcceptLicense dat zich gedraagt alsof de gebruiker de licentievoorwaarden hebt gezien.</span><span class="sxs-lookup"><span data-stu-id="85904-106">Script commands(Install-Script/Save-Script/Update-Script) support a new parameter -AcceptLicense that behaves as though user saw the license.</span></span> <span data-ttu-id="85904-107">Als niet - AcceptLicense is opgegeven; de gebruiker wordt license.txt voor afhankelijke module weergegeven en wordt gevraagd of u de licentievoorwaarden accepteert.</span><span class="sxs-lookup"><span data-stu-id="85904-107">If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.</span></span>
+<span data-ttu-id="d3d42-106">Script commands(Install-Script/Save-Script/Update-Script) ondersteuning voor een nieuwe parameter - AcceptLicense dat zich gedraagt alsof de gebruiker de licentie hebt gezien.</span><span class="sxs-lookup"><span data-stu-id="d3d42-106">Script commands(Install-Script/Save-Script/Update-Script) support a new parameter -AcceptLicense that behaves as though user saw the license.</span></span> <span data-ttu-id="d3d42-107">Als de - AcceptLicense is niet opgegeven. de gebruiker wordt license.txt voor afhankelijke module weergegeven en u wordt gevraagd om de licentie te accepteren.</span><span class="sxs-lookup"><span data-stu-id="d3d42-107">If -AcceptLicense is not specified; the user will be shown license.txt for dependent module and prompted to accept the license.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="85904-108">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="85904-108">EXAMPLES</span></span>
+## <a name="examples"></a><span data-ttu-id="d3d42-108">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="d3d42-108">EXAMPLES</span></span>
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="85904-109">Voorbeeld 1: Installatiescript met afhankelijkheden vereisen van instemming met licentie</span><span class="sxs-lookup"><span data-stu-id="85904-109">Example 1: Install Script with dependencies requiring license acceptance</span></span>
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="d3d42-109">Voorbeeld 1: Installatiescript met afhankelijkheden die instemming met licentie vereisen</span><span class="sxs-lookup"><span data-stu-id="d3d42-109">Example 1: Install Script with dependencies requiring license acceptance</span></span>
 
-<span data-ttu-id="85904-110">Script 'ScriptRequireLicenseAcceptance', is afhankelijk van de module 'ModuleRequireLicenseAcceptance'.</span><span class="sxs-lookup"><span data-stu-id="85904-110">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="85904-111">Gebruiker wordt gevraagd om een licentie accepteren.</span><span class="sxs-lookup"><span data-stu-id="85904-111">User is prompted to Accept License.</span></span>
+<span data-ttu-id="d3d42-110">Script 'ScriptRequireLicenseAcceptance', is afhankelijk van module 'ModuleRequireLicenseAcceptance'.</span><span class="sxs-lookup"><span data-stu-id="d3d42-110">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="d3d42-111">Gebruiker wordt gevraagd naar licentie accepteren.</span><span class="sxs-lookup"><span data-stu-id="d3d42-111">User is prompted to Accept License.</span></span>
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -38,16 +38,16 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="85904-112">Voorbeeld 2: Installatiescript met afhankelijkheden licentie acceptatie en -AcceptLicense vereisen</span><span class="sxs-lookup"><span data-stu-id="85904-112">Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense</span></span>
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="d3d42-112">Voorbeeld 2: Installatiescript met afhankelijkheden die instemming met licentie vereisen en -AcceptLicense vereisen</span><span class="sxs-lookup"><span data-stu-id="d3d42-112">Example 2: Install Script with dependencies requiring license acceptance and -AcceptLicense</span></span>
 
-<span data-ttu-id="85904-113">Script 'ScriptRequireLicenseAcceptance', is afhankelijk van de module 'ModuleRequireLicenseAcceptance'.</span><span class="sxs-lookup"><span data-stu-id="85904-113">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="85904-114">Gebruiker niet gevraagd licentie accepteren omdat - AcceptLicense is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="85904-114">User is not prompted to accept license as -AcceptLicense is specified.</span></span>
+<span data-ttu-id="d3d42-113">Script 'ScriptRequireLicenseAcceptance', is afhankelijk van module 'ModuleRequireLicenseAcceptance'.</span><span class="sxs-lookup"><span data-stu-id="d3d42-113">Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'.</span></span> <span data-ttu-id="d3d42-114">Gebruiker niet gevraagd om te accepteren van licentie - AcceptLicense is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="d3d42-114">User is not prompted to accept license as -AcceptLicense is specified.</span></span>
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a><span data-ttu-id="85904-115">meer informatie</span><span class="sxs-lookup"><span data-stu-id="85904-115">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="d3d42-115">Meer informatie</span><span class="sxs-lookup"><span data-stu-id="d3d42-115">More details</span></span>
 
-- [<span data-ttu-id="85904-116">Acceptatie van de licentie-ondersteuning vereist voor Modules</span><span class="sxs-lookup"><span data-stu-id="85904-116">Require License Acceptance support for Modules</span></span>](module-license-acceptance.md)
-- [<span data-ttu-id="85904-117">Acceptatie van de licentie-ondersteuning op PowerShellGallery vereist</span><span class="sxs-lookup"><span data-stu-id="85904-117">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [<span data-ttu-id="85904-118">Acceptatie van de licentie vereisen bij implementeren naar Azure Automation</span><span class="sxs-lookup"><span data-stu-id="85904-118">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [<span data-ttu-id="d3d42-116">Ondersteuning voor acceptatie van de licentie vereisen voor Modules</span><span class="sxs-lookup"><span data-stu-id="d3d42-116">Require License Acceptance support for Modules</span></span>](module-license-acceptance.md)
+- [<span data-ttu-id="d3d42-117">Ondersteuning voor acceptatie van de licentie op PowerShellGallery vereisen</span><span class="sxs-lookup"><span data-stu-id="d3d42-117">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [<span data-ttu-id="d3d42-118">Acceptatie van de licentie vereisen bij implementeren naar Azure Automation</span><span class="sxs-lookup"><span data-stu-id="d3d42-118">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-packages/deploy-to-azure-automation.md)
