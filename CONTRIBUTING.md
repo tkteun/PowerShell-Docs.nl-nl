@@ -1,8 +1,8 @@
 # <a name="contributor-guide"></a>Gids voor inzenders
 
-Hartelijk dank voor uw interesse in een bijdrage levert aan kwaliteit documentatie.
-Als een open source-project van harte welkom invoer- en updates van de community.
-De volgende onderwerpen wordt uitgelegd hoe bijdragen aan de PowerShell-documentatie.
+Hartelijk dank voor uw interesse om een bijdrage te leveren aan de kwaliteit van de documentatie.
+Omdat dit een opensourceproject is, zijn invoer en updates vanuit de community van harte welkom.
+De volgende onderwerpen leggen uit hoe je bijdraagt aan de PowerShell-documentatie.
 
 1. [Aan de slag](./contributing/1-GET-STARTED.md)
 2. [PowerShell-documentatie schrijven](./contributing/2-WRITING.md)
