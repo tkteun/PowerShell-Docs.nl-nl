@@ -2,12 +2,12 @@
 title: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 description: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134097"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225791"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
@@ -124,12 +124,11 @@ U kunt bijvoorbeeld een configuraties die u kunt toevoegen:
 - Een interactieve sessie in het foutopsporingsprogramma Start
 - Het foutopsporingsprogramma koppelen aan een hostproces van PowerShell
 
-  Volg deze stappen om uw debug-configuratiebestand te maken:
+Volg deze stappen om uw debug-configuratiebestand te maken:
 
   1. Open de **Debug** weergeven door te drukken **Ctrl + Shift + D** (**Cmd + Shift + D** op Mac).
   2. Druk op de **configureren** tandwielpictogram in de werkbalk.
-  3. U wordt gevraagd om Visual Studio Code **omgeving selecteert**.
-  Kies **PowerShell**.
+  3. U wordt gevraagd om Visual Studio Code **omgeving selecteert**. Kies **PowerShell**.
 
   Als u dit doet, maakt Visual Studio Code een map en een bestand '.vscode\launch.json' in de hoofdmap van de werkruimtemap van uw.
   Dit is waar uw debug-configuratie is opgeslagen. Als de bestanden zich in een Git-opslagplaats, wilt u meestal het bestand launch.json doorvoeren.
@@ -171,9 +170,7 @@ U kunt bijvoorbeeld een configuraties die u kunt toevoegen:
 
   Zodra de configuratie van de foutopsporing tot stand is gebracht, kunt u selecteren welke configuratie u gebruiken tijdens een foutopsporingssessie wilt door het selecteren van een van de configuratie van de foutopsporing vervolgkeuzelijst in de **Debug** van weergave-werkbalk.
 
-  Er zijn een paar blogs die mogelijk nuttig zijn om aan de slag met PowerShell-extensie voor Visual Studio Code
-
-Visual Studio Code:
+Er zijn een paar blogs die mogelijk nuttig zijn om aan de slag met PowerShell-extensie voor Visual Studio Code:
 
 - [Extensie van PowerShell][ps-extension]
 - [Schrijf en fouten opsporen in PowerShell-scripts in Visual Studio Code][debug]

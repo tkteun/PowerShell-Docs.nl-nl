@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Script met compatibele PowerShell-edities
-ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587207"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002408"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele PowerShell-edities
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>Meer informatie
 
 - [Modules met PSEditions](module-psedition-support.md)
-- [Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-items/searching-by-psedition.md)
+- [Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-packages/searching-by-psedition.md)

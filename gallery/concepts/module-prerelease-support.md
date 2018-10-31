@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: Galerie, powershell, cmdlet, psget
 title: Voor voorlopige moduleversies
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268616"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002766"
 ---
 # <a name="prerelease-module-versions"></a>Voor voorlopige moduleversies
 
-Vanaf versie 1.6.0, bieden powershellget hebt en de PowerShell Gallery ondersteuning voor het labelen van versies die groter zijn dan 1.0.0 als een voorlopige versie. Voorlopige items zijn voordat u deze functie beperkt tot het met een versie die begint met 0. Het doel van deze functies is te bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versiebeheer Verdrag zonder dat belangrijke achterwaartse compatibiliteit met PowerShell 3 en hoger of bestaande versie van PowerShellGet. In dit onderwerp richt zich op de module-specifieke functies. De equivalente functies voor scripts zijn de [voorlopige versies van Scripts](script-prerelease-support.md) onderwerp. Met behulp van deze functies, kunnen uitgevers identificeren van een module of script als versie 2.5.0-alpha en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
+Vanaf versie 1.6.0, bieden powershellget hebt en de PowerShell Gallery ondersteuning voor het labelen van versies die groter zijn dan 1.0.0 als een voorlopige versie. Voorlopige pakketten zijn voordat u deze functie beperkt tot het met een versie die begint met 0. Het doel van deze functies is te bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versiebeheer Verdrag zonder dat belangrijke achterwaartse compatibiliteit met PowerShell 3 en hoger of bestaande versie van PowerShellGet. In dit onderwerp richt zich op de module-specifieke functies. De equivalente functies voor scripts zijn de [voorlopige versies van Scripts](script-prerelease-support.md) onderwerp. Met behulp van deze functies, kunnen uitgevers identificeren van een module of script als versie 2.5.0-alpha en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
 
 Op hoog niveau, de prerelease modulefuncties zijn onder andere:
 
-- Een Prerelease-tekenreeks toe te voegen aan de sectie PSData van de module-manifest geeft aan dat de module een prerelease-versie. Wanneer de module is gepubliceerd naar de PowerShell Gallery, is deze gegevens opgehaald uit het manifest en gebruikt om te bepalen welke prerelease items.
-- Ophalen van deze items vereist toe te voegen `-AllowPrerelease` vlag voor de PowerShellGet-opdrachten `Find-Module`, `Install-Module`, `Update-Module`, en `Save-Module`. Als de vlag niet opgegeven is, wordt deze items niet worden weergegeven.
+- Een Prerelease-tekenreeks toe te voegen aan de sectie PSData van de module-manifest geeft aan dat de module een prerelease-versie. Wanneer de module is gepubliceerd naar de PowerShell Gallery, is deze gegevens opgehaald uit het manifest en gebruikt voor het identificeren van prerelease-pakketten.
+- Ophalen van prerelease-pakketten vereist toe te voegen `-AllowPrerelease` vlag voor de PowerShellGet-opdrachten `Find-Module`, `Install-Module`, `Update-Module`, en `Save-Module`. Als de vlag niet opgegeven is, wordt deze pakketten niet worden weergegeven.
 - Moduleversies weergegeven door `Find-Module`, `Get-InstalledModule`, en in de PowerShell Gallery wordt weergegeven als een enkele tekenreeks met de Prerelease tekenreeks toegevoegd, zoals in 2.5.0-alpha.
 
 Details voor de functies zijn hieronder vermeld.
@@ -51,7 +51,7 @@ De gedetailleerde vereisten voor voorlopige tekenreeks zijn:
 
 - Deze tekenreeks kan alleen worden opgegeven wanneer de ModuleVersion 3 segmenten voor Major.Minor.Build is. Deze correspondeert met SemVer versie 1.0.0 gebruikt.
 - Een koppelteken is het scheidingsteken tussen de Build-nummer en de Prerelease tekenreeks. Een koppelteken mag worden opgenomen in de Prerelease tekenreeks als het eerste teken, alleen.
-- De Prerelease tekenreeks mag alleen ASCII-letters [0-9 bis-Za - z-]. Het is een best practice om te beginnen met de voorlopige versie tekenreeks met een alpha-teken, zoals het eenvoudiger om te identificeren dat dit een voorlopige versie is bij het scannen van een lijst met items.
+- De Prerelease tekenreeks mag alleen ASCII-letters [0-9 bis-Za - z-]. Het is een best practice om te beginnen met de voorlopige versie tekenreeks met een alpha-teken, zoals het eenvoudiger om te identificeren dat dit een voorlopige versie is bij het scannen van een lijst met pakketten.
 - Alleen SemVer v1.0.0 prerelease tekenreeksen worden ondersteund op dit moment. Voorlopige tekenreeks **moet niet** beide punt bevatten of + [. +], die zijn toegestaan in SemVer 2.0.
 - Voorbeelden van ondersteunde Prerelease tekenreeks zijn:-alpha, a1,-bèta, -update20171020
 
@@ -61,9 +61,9 @@ Sorteervolgorde wordt gewijzigd wanneer u een prerelease-versie, dit belangrijk 
 
 Bij het publiceren naar de PowerShell Gallery, moet de versie van de module worden gepubliceerd hebben standaard een hogere versie dan alle eerder gepubliceerde versie die in de PowerShell Gallery.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Zoeken en ophalen van prerelease items met PowerShellGet-opdrachten
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Zoeken en ophalen van prerelease pakketten met PowerShellGet-opdrachten
 
-Omgaan met prerelease items zoeken van de PowerShellGet-Module, Install-Module, Update-Module, gebruikt en opdrachten Save-Module vereist de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze items worden opgenomen als deze aanwezig zijn. Als de vlag - AllowPrerelease niet is opgegeven, wordt deze items niet weergegeven.
+Omgaan met prerelease-pakketten zoeken van de PowerShellGet-Module, Install-Module, Update-Module, gebruikt en opdrachten Save-Module vereist de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze prerelease-pakketten worden opgenomen als deze aanwezig zijn. Als AllowPrerelease - vlag niet opgegeven is, wordt deze pakketten niet worden weergegeven.
 
 De enige uitzonderingen op deze in de PowerShellGet-module-opdrachten zijn Get-InstalledModule en soms met Uninstall-Module.
 

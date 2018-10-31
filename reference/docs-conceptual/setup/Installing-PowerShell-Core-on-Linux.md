@@ -2,16 +2,16 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
 ms.date: 08/06/2018
-ms.openlocfilehash: d60e1d5a89b6907b67c19b8cfcde969be156bd60
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a20384c768113ed2313591cfa8c29eeadd94f80f
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851286"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225995"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42,3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], en [boog Linux][arch].
+Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubuntu 18.10][u1810], [Debian 8][deb8], [Debian 9] [ deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [ Fedora 28][fedora], en [boog Linux][arch].
 
 Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell module pakket][snap].
 U kunt ook PowerShell binaire bestanden rechtstreeks met behulp van de Linux implementeren [ `tar.gz` archief][tar], maar dan moet u voor het instellen van de vereiste afhankelijkheden op basis van het besturingssysteem in de afzonderlijke stappen.
@@ -21,8 +21,8 @@ Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u18]: #ubuntu-1810
-[u18]: #ubuntu-1804
+[u1804]: #ubuntu-1804
+[u1810]: #ubuntu-1810
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -45,7 +45,6 @@ Hier volgt een tabel met de opdrachten om de met de verschillende pakketmanagers
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, Red Hat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
@@ -393,65 +392,62 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-423"></a>OpenSUSE 42,3
+## <a name="opensuse"></a>OpenSUSE
 
-Bij het installeren van PowerShell Core, `zypper` mogelijk meldt u de volgende fout:
-
-```Output
-Problem: nothing provides libcurl needed by powershell-6.1.0-1.rhel.7.x86_64
- Solution 1: do not install powershell-6.1.0-1.rhel.7.x86_64
- Solution 2: break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies
-```
-
-Controleer in dit geval een compatibel `libcurl` bibliotheek aanwezig is door te controleren dat de volgende toont opdracht de `libcurl4` verpakken als geïnstalleerd:
+### <a name="installation---opensuse-423"></a>Installatie - openSUSE 42,3
 
 ```sh
-zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-```
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar libicu52_1
 
-Kies vervolgens de `break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies` oplossing wanneer u het PowerShell-pakket installeert.
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
-### <a name="installation-via-package-repository-preferred---opensuse-423"></a>Installatie via (aanbevolen) - Pakketopslagplaats OpenSUSE 42,3
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
 
-PowerShell Core voor Linux is gepubliceerd naar de officiële Microsoft-opslagplaatsen voor eenvoudige installatie (en -updates).
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
 
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
 
-# Add the Microsoft Repository
-zypper ar https://packages.microsoft.com/rhel/7/prod/
-
-# Update the list of products
-sudo zypper update
-
-# Install PowerShell
-sudo zypper install powershell
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-423"></a>Installatie via de directe Download - OpenSUSE 42,3
-
-Download het RPM-pakket `powershell-6.1.0-1.rhel.7.x86_64.rpm` uit de [releases][] pagina op de computer OpenSUSE.
+### <a name="installation---opensuse-leap-15"></a>Installatie - openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.1.0-1.rhel.7.x86_64.rpm
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
+
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+
+# Start PowerShell
+pwsh
 ```
 
-U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>Verwijderen - openSUSE 42,3, openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---opensuse-423"></a>Verwijderen - OpenSUSE 42,3
-
-```sh
-sudo zypper remove powershell
+rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
 ## <a name="fedora"></a>Fedora
@@ -542,15 +538,31 @@ Dit is de voorkeursmethode.
 
 ```sh
 # Install PowerShell
+sudo snap install powershell --classic
+
+# Start PowerShell
+pwsh
+```
+
+Als u installeren van de preview-versie wilt, gebruikt u de volgende methode.
+
+```sh
+# Install PowerShell
 sudo snap install powershell-preview --classic
 
 # Start PowerShell
 pwsh-preview
 ```
 
-Nadat de installatie van module, automatisch bijgewerkt, maar u kunt activeren een upgrade uitvoeren met behulp `sudo snap refresh powershell-preview`.
+Nadat de installatie van module, automatisch bijgewerkt, maar u kunt activeren een upgrade uitvoeren met behulp `sudo snap refresh powershell` of `sudo snap refresh powershell-preview`.
 
 ### <a name="uninstallation"></a>Verwijderen
+
+```sh
+sudo snap remove powershell
+```
+
+of
 
 ```sh
 sudo snap remove powershell-preview
@@ -558,7 +570,7 @@ sudo snap remove powershell-preview
 
 ## <a name="kali"></a>Kali
 
-### <a name="installation"></a>Installatie
+### <a name="installation---kali"></a>Installatie - Kali
 
 ```sh
 # Download & Install prerequisites
@@ -597,7 +609,7 @@ Ook CoreCLR (en dus PowerShell Core) werkt alleen op apparaten van Pi 2 en Pi 3 
 
 Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) en volg de [installatie-instructies](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) zodat deze naar uw Pi.
 
-### <a name="installation"></a>Installatie
+### <a name="installation---raspbian"></a>Installatie - Raspbian
 
 ```sh
 # Install prerequisites
@@ -653,7 +665,9 @@ Het volgende diagram toont de .NET Core 2.0-afhankelijkheden die officieel onder
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42,3 | libunwind, libcurl, openssl-bibliotheken, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-bibliotheken, libicu |
+| OpenSUSE 42,3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotheken, libicu, compat openssl10 |
 
 Voor het implementeren van binaire bestanden voor PowerShell op Linux-distributies die officieel niet worden ondersteund, moet u de vereiste afhankelijkheden voor het doelbesturingssysteem installeren in afzonderlijke stappen.

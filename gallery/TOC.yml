@@ -10,37 +10,37 @@ items:
   - name: Zoeken naar items in de galerie
     items:
     - name: Zoeken naar items
-      href: how-to/finding-items/search-syntax.md
+      href: how-to/finding-packages/search-syntax.md
     - name: Zoeken op PSEdition
-      href: how-to/finding-items/searching-by-psedition.md
+      href: how-to/finding-packages/searching-by-psedition.md
     - name: Zoekresultaten filteren
-      href: how-to/finding-items/filtering-items.md
+      href: how-to/finding-packages/filtering-packages.md
   - name: Publiceren naar de galerie
     items:
     - name: Items maken en publiceren
-      href: how-to/publishing-items/publishing-an-item.md
+      href: how-to/publishing-packages/publishing-a-package.md
     - name: Een PowerShellGallery-account maken
-      href: how-to/publishing-items/creating-an-account.md
+      href: how-to/publishing-packages/creating-an-account.md
     - name: Items uit catalogus verwijderen
-      href: how-to/publishing-items/unlisting-items.md
+      href: how-to/publishing-packages/unlisting-packages.md
     - name: Items verwijderen
-      href: how-to/publishing-items/deleting-items.md
+      href: how-to/publishing-packages/deleting-packages.md
     - name: Itemeigenaars beheren
-      href: how-to/publishing-items/managing-item-owners.md
+      href: how-to/publishing-packages/managing-package-owners.md
   - name: Werken met items
     items:
     - name: FileList-weergave
-      href: how-to/working-with-items/filelist-view.md
+      href: how-to/working-with-packages/filelist-view.md
     - name: Implementeren naar Azure Automation
-      href: how-to/working-with-items/deploy-to-azure-automation.md
+      href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Pakket handmatig downloaden
-      href: how-to/working-with-items/manual-download.md
+      href: how-to/working-with-packages/manual-download.md
     - name: Items waarvoor acceptatie van de licentie is vereist
-      href: how-to/working-with-items/items-that-require-license-acceptance.md
+      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
     - name: Contact opnemen met itemeigenaars
-      href: how-to/working-with-items/contacting-item-owners.md
+      href: how-to/working-with-packages/contacting-package-owners.md
     - name: Feedback geven via sociale media of opmerkingen
-      href: how-to/working-with-items/social-media-feedback.md
+      href: how-to/working-with-packages/social-media-feedback.md
   - name: Accountprofielen beheren
     items:
     - name: PowerShell Gallery-accountinstellingen
@@ -52,7 +52,7 @@ items:
   - name: Publicatierichtlijnen en best practices
     href: concepts/publishing-guidelines.md
   - name: Itemmanifest en de UI-galerie
-    href: concepts/item-manifest-affecting-ui.md
+    href: concepts/package-manifest-affecting-ui.md
   - name: Specifieke PSEditions vereisen
     items:
     - name: Scripts met ondersteuning voor PSEditions schrijven
@@ -91,9 +91,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-cmdlets
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522919"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002322"

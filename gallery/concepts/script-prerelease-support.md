@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galerie, powershell, cmdlet, psget
 title: Voorlopige versies van scripts
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268463"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002732"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Voorlopige versies van scripts
 
-Vanaf versie 1.6.0, bieden powershellget hebt en de PowerShell Gallery ondersteuning voor het labelen van versies die groter zijn dan 1.0.0 als een voorlopige versie. Voorlopige items zijn voordat u deze functie beperkt tot het met een versie die begint met 0. Het doel van deze functies is te bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versiebeheer Verdrag zonder dat belangrijke achterwaartse compatibiliteit met PowerShell 3 en hoger of bestaande versie van PowerShellGet. In dit onderwerp richt zich op de script-specifieke functies. De equivalente functies voor modules die zich in de [voorlopige versie moduleversies](module-prerelease-support.md) onderwerp. Met behulp van deze functies, kunnen uitgevers een script op als versie 2.5.0-alpha identificeren en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
+Vanaf versie 1.6.0, bieden powershellget hebt en de PowerShell Gallery ondersteuning voor het labelen van versies die groter zijn dan 1.0.0 als een voorlopige versie. Voorlopige pakketten zijn voordat u deze functie beperkt tot het met een versie die begint met 0. Het doel van deze functies is te bieden meer ondersteuning voor [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versiebeheer Verdrag zonder dat belangrijke achterwaartse compatibiliteit met PowerShell 3 en hoger of bestaande versie van PowerShellGet. In dit onderwerp richt zich op de script-specifieke functies. De equivalente functies voor modules die zich in de [voorlopige versie moduleversies](module-prerelease-support.md) onderwerp. Met behulp van deze functies, kunnen uitgevers een script op als versie 2.5.0-alpha identificeren en later een versie gereed is voor productie 2.5.0 die de prerelease versie vervangt.
 
 Op hoog niveau, de prerelease-script-functies zijn onder andere:
 
-- Een PrereleaseString achtervoegsel toevoegen aan de tekenreeks in het manifest van het script. Wanneer de scripts is gepubliceerd naar de PowerShell Gallery, is deze gegevens opgehaald uit het manifest en gebruikt om te bepalen welke prerelease items.
-- Ophalen van deze items vereist - AllowPrerelease vlag toe te voegen aan de PowerShellGet-opdrachten Find-Script Install-Script, Update-Script en Save-Script. Als de vlag niet opgegeven is, wordt deze items niet worden weergegeven.
+- Een PrereleaseString achtervoegsel toevoegen aan de tekenreeks in het manifest van het script. Wanneer de scripts is gepubliceerd naar de PowerShell Gallery, is deze gegevens opgehaald uit het manifest en gebruikt voor het identificeren van prerelease-pakketten.
+- Verkrijgen van prerelease pakketten vereist - AllowPrerelease vlag toe te voegen aan de PowerShellGet-opdrachten Find-Script Install-Script, Update-Script en Save-Script. Als de vlag niet opgegeven is, wordt deze pakketten niet worden weergegeven.
 - Script-versies weergegeven door Find-Script Get-InstalledScript, en in de PowerShell Gallery weergegeven met de PrereleaseString, zoals in 2.5.0-alpha.
 
 Details voor de functies zijn hieronder vermeld.
@@ -54,9 +54,9 @@ Sorteervolgorde wordt gewijzigd wanneer u een prerelease-versie, dit belangrijk 
 
 Bij het publiceren naar de PowerShell Gallery, moet de versie van het script wordt gepubliceerd hebben standaard een hogere versie dan alle eerder gepubliceerde versie die in de PowerShell Gallery. Een uitgever kan versie 2.5.0-alpha bijwerken met 2.5.0-beta of 2.5.0 (met geen voorvoegsel prerelease).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Zoeken en ophalen van prerelease items met PowerShellGet-opdrachten
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Zoeken en ophalen van prerelease pakketten met PowerShellGet-opdrachten
 
-Omgaan met prerelease items met PowerShellGet Find-Script, installatiescript, Update-Script, en Save-Script-opdrachten moet de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze items worden opgenomen als deze aanwezig zijn. Als de vlag - AllowPrerelease niet is opgegeven, wordt deze items niet weergegeven.
+Omgaan met prerelease pakketten met PowerShellGet Find-Script, installatiescript, Update-Script, en Save-Script-opdrachten moet de vlag - AllowPrerelease toe te voegen. Als - AllowPrerelease is opgegeven, wordt deze prerelease-pakketten worden opgenomen als deze aanwezig zijn. Als AllowPrerelease - vlag niet opgegeven is, wordt deze pakketten niet worden weergegeven.
 
 De enige uitzonderingen op deze in de PowerShellGet-script-opdrachten zijn Get-InstalledScript en soms met Uninstall-Script.
 

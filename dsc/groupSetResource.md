@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 description: Biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt.
 title: DSC GroupSet-Resource
-ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6fa8e9637da896848e859dc60a42add12e973b34
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892423"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226114"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-Resource
 
-> Van toepassing op: Windows Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 De **GroupSet** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt. Deze resource is een [samengestelde resource](authoringResourceComposite.md) die roept de [groep resource](groupResource.md) voor elke groep die is opgegeven in de `GroupName` parameter.
 

@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
+keywords: DSC, powershell, configuratie en installatie
 title: Schrijfhulp voor DSC-configuraties
-ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a4b5e688744b9a4519ce06d920ad8f11efeb99ad
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222660"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225689"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Schrijfhulp voor DSC-configuraties
 
->Van toepassing op: Windows Windows PowerShell 5.0
+>Van toepassing op: Windows PowerShell 5.0
 
-U kunt de help op basis van een opmerking in DSC-configuraties. Gebruikers hebben toegang tot de help door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
+U kunt help op basis van een opmerking in DSC-configuraties gebruiken. Gebruikers hebben toegang tot de Help-informatie door het aanroepen van de configuratie-functie met `-?`, of met behulp van de [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet. Zie voor meer informatie over PowerShell-help op basis van een opmerking [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
 
-Het volgende voorbeeld ziet u een script dat een configuratie en help op basis van een opmerking voor bevat:
+Het volgende voorbeeld ziet u een script dat een configuratie- en opmerking op basis van de help voor deze bevat:
 
 ```powershell
 <#
@@ -50,18 +50,18 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$ComputerName,[string]$FilePath)
-    File f
-    {
+    param([string]$ComputerName,[string]$FilePath)
+    File f
+    {
         Contents="Hello World"
-        DestinationPath = "c:\Destination.txt"
-    }
+        DestinationPath = "c:\Destination.txt"
+    }
 }
 ```
 
 ## <a name="viewing-configuration-help"></a>Configuratie help weergeven
 
-Als u wilt weergeven in de help voor een configuratie, gebruiken de **Get-Help** cmdlet met de naam van de functie of type de naam van de functie gevolgd door `-?`. Hieronder ziet u de uitvoer van de vorige functie wanneer doorgegeven aan **Get-Help**:
+Als u de help voor een configuratie, gebruikt u de **Get-Help** cmdlet met de naam van de functie of type de naam van de functie gevolgd door `-?`. Hieronder volgt de uitvoer van de vorige functie wanneer doorgegeven aan **Get-Help**:
 
 ```powershell
 PS C:\> Get-Help HelpSample1

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.1
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892134"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225842"
 ---
 # <a name="known-issues-in-wmf-51"></a>Bekende problemen in WMF 5.1
 
@@ -33,7 +33,7 @@ In deze release zijn er twee problemen die u houden moet rekening bij het gebrui
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC nadat WMF verwijderen
 
-- WMF verwijderen, worden DSC MOF documenten niet verwijderd uit de configuratiemap. DSC goed niet als de MOF-documenten bevatten nieuwere-eigenschappen die niet beschikbaar op de oudere systemen zijn. In dit geval, voer het volgende script uit met verhoogde bevoegdheden PowerShell-console voor het opschonen van de DSC-statussen.
+- WMF verwijderen, worden DSC MOF documenten niet verwijderd uit de configuratiemap. DSC goed niet als de MOF-documenten bevatten nieuwere-eigenschappen die niet beschikbaar op de oudere systemen zijn. Voer het volgende script in dit geval van PowerShell-console met verhoogde bevoegdheid voor het opschonen van de DSC-statussen.
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",

@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: DSC voor Linux nxUser Resource
-ms.openlocfilehash: ca77bcd1f23a78ddb9e2ac988e4aadfec504bbbe
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: DSC voor Linux nxUser-Resource
+ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218923"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226029"
 ---
-# <a name="dsc-for-linux-nxuser-resource"></a>DSC voor Linux nxUser Resource
+# <a name="dsc-for-linux-nxuser-resource"></a>DSC voor Linux nxUser-Resource
 
-De **nxUser** in PowerShell Desired State Configuration (DSC)-bron biedt een mechanisme op voor het beheren van lokale gebruikers op een Linux-knooppunt.
+De **nxUser** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale gebruikers op een Linux-knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -36,16 +36,16 @@ nxUser <string> #ResourceName
 
 |  Eigenschap |  Geeft de accountnaam waarvan u wilt om te controleren of een specifieke status. |
 |---|---|
-| UserName| Hiermee geeft u de locatie op waar u om te controleren of de status voor een bestand of map.|
-| Zorg ervoor dat| Geeft aan of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| Volledige naam| Een tekenreeks met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
+| UserName| Hiermee geeft u de locatie waar u om te controleren of de status van een bestand of map.|
+| Zorg ervoor dat| Hiermee geeft u op of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
+| Volledige naam| Een tekenreeks zijn met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
 | Beschrijving| De beschrijving voor het gebruikersaccount.|
-| Wachtwoord| De hash van het wachtwoord van gebruikers in de juiste vorm voor de Linux-computer. Dit is meestal een gezouten SHA-256 of SHA-512 hash. Voor Debian en Ubuntu Linux, kan deze waarde met de opdracht mkpasswd worden gegenereerd. Voor andere Linux-distributies, kan de methode crypt van Python Crypt bibliotheek worden gebruikt voor het genereren van de hash.|
-| Disabled| Hiermee wordt aangegeven of het account is ingeschakeld. Deze eigenschap instellen op **$true** om ervoor te zorgen dat dit account is uitgeschakeld en stel deze in op **$false** om ervoor te zorgen dat deze is ingeschakeld.|
-| PasswordChangeRequired| Hiermee wordt aangegeven of de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op **$true** om ervoor te zorgen dat de gebruiker kan het wachtwoord wijzigen en stel deze in op **$false** zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is **$false**. Deze eigenschap wordt alleen beoordeeld als het gebruikersaccount niet aanwezig waren en wordt gemaakt.|
+| Wachtwoord| De hash van het wachtwoord van de gebruiker in de juiste vorm voor de Linux-computer. Dit is meestal een gezouten SHA-256, of een hash van SHA-512. Op Debian en Ubuntu Linux, kan deze waarde worden gegenereerd met de opdracht mkpasswd. Voor andere Linux-distributies, kan de crypt-methode van de Python-Crypt-bibliotheek worden gebruikt voor het genereren van de hash.|
+| Disabled| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op **$true** om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op **$false** om ervoor te zorgen dat deze is ingeschakeld.|
+| PasswordChangeRequired| Geeft aan of de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op **$true** om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op **$false** zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is **$false**. Deze eigenschap wordt alleen beoordeeld als het gebruikersaccount niet aanwezig waren en wordt gemaakt.|
 | Basismap| De basismap voor de gebruiker.|
 | Groeps-id| De primaire groeps-ID voor de gebruiker.|
-| dependsOn | Hiermee wordt aangegeven dat de configuratie van een andere resource uitvoeren moet voordat deze bron is geconfigureerd. Bijvoorbeeld, als de ID van het scriptblok voor resource configuratie die u wilt uitvoeren eerst is 'ResourceName' en het type is 'ResourceType', de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van het scriptblok voor resource-configuratie die u wilt uitvoeren 'ResourceName' voor het eerst is en het type is 'ResourceType', de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld
 

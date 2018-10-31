@@ -2,29 +2,29 @@
 ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery, psget
-title: De PowerShell-galerie
-ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+title: De PowerShell Gallery
+ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482927"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225615"
 ---
-# <a name="the-powershell-gallery"></a>De PowerShell-galerie
+# <a name="the-powershell-gallery"></a>De PowerShell Gallery
 
-De PowerShell-galerie is de centrale opslagplaats voor PowerShell-inhoud. In dit vindt u nuttige PowerShell-modules met PowerShell-opdrachten en resources Desired State Configuration (DSC).
-U kunt ook PowerShell-scripts, kunnen sommige van deze PowerShell-werkstromen en overzicht maken van een set taken bevatten en sequentiëren voor deze taken bieden vinden. Sommige van deze items zijn gemaakt door Microsoft en anderen zijn ontworpen door de PowerShell-community.
+De PowerShell Gallery is de centrale opslagplaats voor PowerShell-inhoud. In deze vindt u nuttige PowerShell-modules met PowerShell-opdrachten en de resources van Desired State Configuration (DSC).
+U vindt hier ook PowerShell-scripts, waarvan sommige mogelijk PowerShell-werkstromen en die beschrijven een aantal taken en sequentiëren voor deze taken bieden. Sommige van deze pakketten zijn geschreven door Microsoft en anderen worden geschreven door de PowerShell-community.
 
-## <a name="powershellget-overview"></a>Overzicht van PowerShellGet
+## <a name="powershellget-overview"></a>PowerShellGet-overzicht
 
-De PowerShellGet-module bevat cmdlets voor het detecteren, installeren, bijwerken en publiceren van PowerShell-artefacten, zoals Modules, DSC-Resources, rol mogelijkheden en -Scripts uit de [PowerShell Gallery](https://www.PowerShellGallery.com) en andere persoonlijke opslagplaatsen.
+De PowerShellGet-module bevat cmdlets voor het detecteren, installeren, bijwerken en publiceren van PowerShell-pakketten die artefacten, zoals Modules, DSC-Resources, Rolmogelijkheden en Scripts bevatten de [PowerShell Gallery](https://www.PowerShellGallery.com)en andere opslagplaatsen met privé.
 
 ## <a name="getting-started-with-the-gallery"></a>Aan de slag met de galerie
 
-Installeren van items uit de galerie, is de meest recente versie van de module PowerShellGet vereist.
-Zie [installeren PowerShellGet](installing-psget.md) voor volledige instructies.
+Installatie van pakketten uit de galerie, is de meest recente versie van de PowerShellGet-module vereist.
+Zie [PowerShellGet installeren](installing-psget.md) voor volledige instructies.
 
-Bekijk de [aan de slag](getting-started.md) pagina voor meer informatie over het gebruik van PowerShellGet opdrachten in de galerie. U kunt ook uitvoeren *Update-Help-Module PowerShellGet* om lokale help voor deze opdrachten te installeren.
+Bekijk de [aan de slag](getting-started.md) pagina voor meer informatie over het gebruik van PowerShellGet-opdrachten in de galerie. U kunt ook uitvoeren *Update-Help-Module PowerShellGet* om lokale help voor deze opdrachten te installeren.
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
@@ -36,16 +36,17 @@ Een geschikte versie van **Windows PowerShell** is beschikbaar voor deze besturi
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
+- WindowsServer 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** vereist ook .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** moet .NET Framework 4.5 of hoger. U kunt installeren .NET Framework 4.5 of hoger van [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-**PowerShell Core** veel besturingssystemen ondersteund. Zie [in dit artikel](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) voor een volledige lijst.
+Aangezien **PowerShell Core** platformoverschrijdende is en dat betekent dat het werkt op Windows, Linux en Mac OS, die ook wordt **PowerShellGet** beschikbaar is op deze systemen. Voor een volledige lijst van systemen die worden ondersteund door **PowerShell Core** Zie [PowerShell installeren](/powershell/scripting/setup/installing-powershell).
 
-Veel modules die worden gehost in de galerie ondersteuning biedt voor verschillende besturingssystemen en aanvullende vereisten hebben. Raadpleeg de documentatie voor de modules voor meer informatie.
+Veel modules die worden gehost in de galerie ondersteuning biedt voor verschillende besturingssystemen en gelden aanvullende vereisten. Raadpleeg de documentatie voor de modules voor meer informatie.
 
 ## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Hebt u feedback?
 
-Meer informatie over de PowerShell-galerie en PowerShellGet vindt u in de [aan de slag](getting-started.md) pagina. Geef feedback en rapport problemen met [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+Meer informatie over de PowerShell Gallery en PowerShellGet vindt u de [aan de slag](getting-started.md) pagina. Geef feedback en het rapport problemen met behulp van [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

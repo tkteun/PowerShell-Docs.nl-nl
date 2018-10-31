@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Een DSC SMB-pull-server instellen
-ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: ebf9ac7923a7c226bc01014d890d993d452af578
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892862"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225859"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Een DSC SMB-pull-server instellen
 
@@ -132,7 +132,7 @@ Een MOF-configuratiebestand moet de naam *ConfigurationID*.mof, waar *Configurat
 > [!NOTE]
 > Als u een SMB-pull-server, moet u configuratie-ID's gebruiken. Namen worden niet ondersteund voor SMB.
 
-Elke resource-module moet worden ingepakt en met de naam op basis van de het volgende patroon `{Module Name}_{Module Version}.zip`. Bijvoorbeeld, een module met de naam xWebAdminstration met de moduleversie van een van 3.1.2.0 zou worden met de naam 'xWebAdministration_3.2.1.0.zip'. Elke versie van een module moet worden opgenomen in een enkel zip-bestand. Omdat er slechts één versie van een resource in elke zip-bestand dat de indeling van de module toegevoegd in WMF 5.0 met de ondersteuning voor meerdere moduleversies van de in één map niet wordt ondersteund. Dit betekent dat voordat verpakking van DSC-resource-modules voor gebruik met pull-server moet u een kleine wijziging aanbrengen in de mapstructuur. De standaardnotatie van modules met DSC-resource in WMF 5.0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Pakketten voor de pull-server te verwijderen en daarna de `{Module version}` map, zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Met deze wijziging, zip-de map, zoals hierboven beschreven en plaatst deze zip-bestanden op de SMB-share-map.
+Elke resource-module moet worden ingepakt en met de naam op basis van het volgende patroon `{Module Name}_{Module Version}.zip`. Bijvoorbeeld, een module met de naam xWebAdminstration met de moduleversie van een van 3.1.2.0 zou worden met de naam 'xWebAdministration_3.2.1.0.zip'. Elke versie van een module moet worden opgenomen in een enkel zip-bestand. Omdat er slechts één versie van een resource in elke zip-bestand dat de indeling van de module toegevoegd in WMF 5.0 met de ondersteuning voor meerdere moduleversies van de in één map niet wordt ondersteund. Dit betekent dat voordat verpakking van DSC-resource-modules voor gebruik met pull-server moet u een kleine wijziging aanbrengen in de mapstructuur. De standaardnotatie van modules met DSC-resource in WMF 5.0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Pakketten voor de pull-server te verwijderen en daarna de `{Module version}` map, zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Met deze wijziging, zip-de map, zoals hierboven beschreven en plaatst deze zip-bestanden op de SMB-share-map.
 
 ## <a name="creating-the-mof-checksum"></a>Het maken van de controlesom MOF
 

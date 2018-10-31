@@ -2,15 +2,15 @@
 ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
-title: PowerShell Gallery-Accountinstellingen
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+title: PowerShell Gallery-accountinstellingen
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523322"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002783"
 ---
-# <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-Accountinstellingen
+# <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
 Uw account PowerShell Gallery is de naam van een zichtbaar voor iedereen die is gekoppeld aan een identiteit. Deze identiteit is ofwel een Microsoft-ID, zoals `user@hotmail.com` of `user@outlook.com`, of een Azure Active Directory (AAD)-account.
 
@@ -34,7 +34,7 @@ Wanneer u een nieuw e-mailadres opgeeft, verzendt de PowerShell Gallery een veri
 PowerShell Gallery bevat de volgende meldingsopties:
 
 - Gebruikers contact met mij kunnen via de PowerShell Gallery
-- Een melding ontvangen wanneer een item wordt doorgestuurd naar de PowerShell-galerie met behulp van mijn account
+- Een melding ontvangen wanneer een pakket wordt doorgestuurd naar de PowerShell-galerie met behulp van mijn account
 
 ![E-mailadres wijzigen](../../Images/PSGallery_AccountEmailOptions.png)
 

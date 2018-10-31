@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie, setup
-title: Schrijven van een aangepaste DSC-resource met PowerShell-klassen
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, configuratie en installatie
+title: Schrijven van een aangepaste DSC-resource met de PowerShell-klassen
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189462"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226080"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schrijven van een aangepaste DSC-resource met PowerShell-klassen
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schrijven van een aangepaste DSC-resource met de PowerShell-klassen
 
-> Van toepassing op: Windows Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
-Dankzij de introductie van de klassen van PowerShell in Windows PowerShell 5.0, kunt u nu een DSC-resource definiëren door een klasse maken. De klasse definieert de schema- en de implementatie van de resource, dus u hoeft niet te maken van een afzonderlijke MOF-bestand. De mapstructuur voor een bron op basis van een klasse is ook eenvoudiger, omdat een **DSCResources** map is niet nodig.
+U kunt nu een DSC-resource met het maken van een klasse met de introductie van PowerShell-klassen in Windows PowerShell 5.0 definiëren. De klasse definieert de schema- en de implementatie van de resource, dus u hoeft niet te maken van een afzonderlijk MOF-bestand. De mapstructuur voor een resource op basis van een klasse is ook eenvoudiger, omdat een **DSCResources** map is niet nodig.
 
-Het schema is in een klasse gebaseerde DSC-resource gedefinieerd als de eigenschappen van de klasse die kan worden gewijzigd met kenmerken om op te geven van het eigenschapstype... De resource wordt geïmplementeerd door **Get()**, **Set()**, en **Test()** methoden (gelijk aan de **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource** functies in de bron van een script.
+In een resource van de DSC-klasse op basis van is het schema gedefinieerd als eigenschappen van de klasse op die kunnen worden gewijzigd met kenmerken om op te geven van het eigenschapstype... De resource is geïmplementeerd door **Get()**, **Set()**, en **Test()** methoden (gelijk aan de **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource** functies in de bron van een script.
 
-In dit onderwerp, maken we een eenvoudige resource met de naam **FileResource** die een bestand in een opgegeven pad beheert.
+In dit onderwerp, maken we een eenvoudige resource met de naam **FileResource** die een bestand in een opgegeven pad worden beheerd.
 
-Zie voor meer informatie over DSC-resources [bouwen aangepaste Windows PowerShell Desired status configuratie Resources](authoringResource.md)
+Zie voor meer informatie over DSC-resources [maken aangepaste Windows PowerShell Desired State Configuration Resources](authoringResource.md)
 
->**Opmerking:** algemene verzamelingen worden niet ondersteund in de klasse-bronnen.
+>**Opmerking:** algemene verzamelingen worden niet ondersteund in resources op basis van een klasse.
 
-## <a name="folder-structure-for-a-class-resource"></a>Mapstructuur voor een klasse-bron
+## <a name="folder-structure-for-a-class-resource"></a>Mapstructuur voor een klasse-resource
 
-Voor het implementeren van een aangepaste DSC-resource met een PowerShell-klasse, maken de volgende mapstructuur. De klasse is gedefinieerd in **MyDscResource.psm1** en de module-manifest wordt gedefinieerd in **MyDscResource.psd1**.
+Voor het implementeren van een aangepaste DSC-resource met een PowerShell-klasse, maken de volgende mapstructuur. De klasse is gedefinieerd in **MyDscResource.psm1** en de module-manifest is gedefinieerd in **MyDscResource.psd1**.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>De klasse maken
 
-Het sleutelwoord klasse kunt u een PowerShell-klasse maken. Als u wilt opgeven dat een klasse een DSC-resource is, gebruiken de **DscResource()** kenmerk. De naam van de klasse is de naam van de DSC-resource.
+U het sleutelwoord klasse gebruiken om een PowerShell-klasse te maken. Als u wilt opgeven dat een klasse een DSC-resource is, gebruikt u de **DscResource()** kenmerk. De naam van de klasse is de naam van de DSC-resource.
 
 ```powershell
 [DscResource()]
@@ -46,7 +46,7 @@ class FileResource {
 
 ### <a name="declare-properties"></a>Eigenschappen declareren
 
-De DSC-resource-schema is gedefinieerd als de eigenschappen van de klasse. We declareren drie eigenschappen als volgt.
+De DSC-resource-schema wordt gedefinieerd als de eigenschappen van de klasse. We declareren drie eigenschappen als volgt.
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ De DSC-resource-schema is gedefinieerd als de eigenschappen van de klasse. We de
 [Nullable[datetime]] $CreationTime
 ```
 
-U ziet dat de eigenschappen zijn gewijzigd door de kenmerken. De betekenis van de kenmerken is als volgt:
+U ziet dat de eigenschappen zijn gewijzigd door kenmerken. De betekenis van de kenmerken is als volgt:
 
-- **DscProperty(Key)**: de eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die zijn gemarkeerd als sleutels combineren moeten om een unieke identificatie van een resource-instantie in een configuratie.
+- **DscProperty(Key)**: de eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die zijn gemarkeerd als sleutels moeten een combinatie van als unieke identificatie van een resource-instanties binnen een configuratie.
 - **DscProperty(Mandatory)**: de eigenschap is vereist.
-- **DscProperty(NotConfigurable)**: de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk kan niet worden ingesteld door een configuratie, maar worden ingevuld met de **Get()** methode indien aanwezig.
-- **DscProperty()**: de eigenschap kan worden geconfigureerd, maar is niet vereist.
+- **DscProperty(NotConfigurable)**: de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk kan niet worden ingesteld door een configuratie, maar worden ingevuld door de **Get()** methode indien aanwezig.
+- **DscProperty()**: de eigenschap kan worden geconfigureerd, maar dit is niet vereist.
 
-De **$Path** en **$SourcePath** eigenschappen zijn beide tekenreeksen. De **$CreationTime** is een [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) eigenschap. De **$Ensure** eigenschap is een opsommingstype als volgt gedefinieerd.
+De **$Path** en **$SourcePath** eigenschappen zijn beide tekenreeksen. De **$CreationTime** is een [datum-/](https://technet.microsoft.com/library/system.datetime.aspx) eigenschap. De **$Ensure** eigenschap is een opsommingstype, als volgt gedefinieerd.
 
 ```powershell
 enum Ensure
@@ -79,7 +79,7 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a>Implementeren van de methoden
+### <a name="implementing-the-methods"></a>Implementatie van de methoden
 
 De **Get()**, **Set()**, en **Test()** methoden zijn vergelijkbaar met de **Get-TargetResource**, **Set TargetResource** , en **Test TargetResource** functies in de bron van een script.
 
@@ -217,7 +217,7 @@ Deze code bevat ook de functie CopyFile(), een Help-functie waarmee het bestand 
 ```
 
 ### <a name="the-complete-file"></a>Het volledige bestand
-Het klassebestand voltooid volgt.
+De volledige klassebestand volgt.
 
 ```powershell
 enum Ensure
@@ -415,7 +415,7 @@ class FileResource
 ```
 
 
-## <a name="create-a-manifest"></a>Maken van een manifest
+## <a name="create-a-manifest"></a>Een manifest maken
 
 Als u een resource op basis van een klasse met de DSC-engine, moet u opnemen een **DscResourcesToExport** -instructie in het manifestbestand geeft u de module voor het exporteren van de resource. Onze manifest ziet er als volgt:
 
@@ -453,9 +453,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a>De resource testen
+## <a name="test-the-resource"></a>Testen van de resource
 
-Na het opslaan van de klasse en de manifest-bestanden in de mapstructuur zoals eerder beschreven, kunt u een configuratie die gebruikmaakt van de nieuwe resource. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [vast te stellen configuraties](enactingConfigurations.md). De volgende configuratie wordt gecontroleerd of het bestand op `c:\test\test.txt` bestaat en als dat niet het geval is, kopieert u het bestand van `c:\test.txt` (u moet maken `c:\test.txt` voordat u de configuratie uitvoeren).
+Na het opslaan van de klasse en de manifest-bestanden in de mapstructuur, zoals eerder beschreven, kunt u een configuratie die gebruikmaakt van de nieuwe resource maken. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [configuraties doorvoeren](enactingConfigurations.md). De volgende configuratie wordt gecontroleerd om te zien of het bestand op `c:\test\test.txt` bestaat en, als dit niet het geval is, kopieert u het bestand van `c:\test.txt` (u moet maken `c:\test.txt` voordat u de configuratie uitvoeren).
 
 ```powershell
 Configuration Test
@@ -476,16 +476,16 @@ Start-DscConfiguration -Wait -Force Test
 
 >**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in PowerShell 5.0 en hoger.
 
-De **PsDscRunAsCredential** eigenschap kan worden gebruikt [DSC-configuraties](configurations.md) resource blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
-Zie voor meer informatie [DSC uitgevoerd met gebruikersreferenties](runAsUser.md).
+De **PsDscRunAsCredential** eigenschap kan worden gebruikt [DSC-configuraties](configurations.md) resource blokkeren om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
+Zie voor meer informatie, [DSC uitvoeren met gebruikersreferenties](runAsUser.md).
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Vereist of niet toestaan van PsDscRunAsCredential voor uw resource
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Vereist of PsDscRunAsCredential weigeren voor uw resource
 
-De **DscResource()** kenmerk duurt een optionele parameter **RunAsCredential**.
+De **DscResource()** kenmerk heeft een optionele parameter **RunAsCredential**.
 Deze parameter heeft een van drie waarden:
 
 - `Optional` **PsDscRunAsCredential** is optioneel voor configuraties die aanroepen van deze resource. Dit is de standaardwaarde.
-- `Mandatory` **PsDscRunAsCredential** moet worden gebruikt voor een configuratie die deze resource roept.
+- `Mandatory` **PsDscRunAsCredential** moet worden gebruikt voor de configuratie die deze resource aanroept.
 - `NotSupported` Configuraties die aanroepen van deze resource kunnen niet worden gebruikt **PsDscRunAsCredential**.
 - `Default` Hetzelfde als `Optional`.
 
@@ -497,11 +497,11 @@ class FileResource {
 }
 ```
 
-### <a name="access-the-user-context"></a>Toegang tot de gebruikerscontext
+### <a name="access-the-user-context"></a>Toegang tot de context van de gebruiker
 
-Voor toegang tot de gebruikerscontext van binnen een aangepaste bron, kunt u de automatische variabele `$global:PsDscContext`.
+U kunt de automatische variabele gebruiken voor toegang tot de gebruikerscontext uit binnen een aangepaste resource, `$global:PsDscContext`.
 
-De volgende code zou bijvoorbeeld de gebruikerscontext waaronder de bron wordt uitgevoerd naar de uitgebreide uitvoerstroom schrijven:
+Bijvoorbeeld schrijft de volgende code de gebruikerscontext waarmee de resource wordt uitgevoerd naar de stroom uitgebreide uitvoer:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -511,4 +511,4 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="see-also"></a>Zie ook
 ### <a name="concepts"></a>Concepten
-[Aangepaste Windows PowerShell Desired State Configuration Resources bouwen](authoringResource.md)
+[Maken van aangepaste Windows PowerShell Desired State Configuration Resources](authoringResource.md)

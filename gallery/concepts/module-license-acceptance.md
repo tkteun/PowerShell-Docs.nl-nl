@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Modules die instemming met licentie vereisen
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893107"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002664"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules die instemming met licentie vereisen
 
 ## <a name="synopsis"></a>SAMENVATTING
 
-Juridische afdelingen voor sommige uitgevers van module vereisen dat klanten de licentie expliciet accepteren moeten voordat u de module installeert vanuit PowerShell Gallery. Als een gebruiker wordt geïnstalleerd, bijgewerkt of Hiermee slaat u een module met behulp van PowerShellGet, rechtstreeks of als een afhankelijkheid van een ander object en die module moet de gebruiker akkoord gaat met een licentie, wordt de gebruiker moet geven ze de gebruiksrechtovereenkomst accepteren of de bewerking is mislukt.
+Juridische afdelingen voor sommige uitgevers van module vereisen dat klanten de licentie expliciet accepteren moeten voordat u de module installeert vanuit PowerShell Gallery. Als een gebruiker wordt geïnstalleerd, bijgewerkt of een module met behulp van PowerShellGet, rechtstreeks of als een afhankelijkheid voor een ander pakket worden opgeslagen en die module moet de gebruiker akkoord gaat met een licentie, wordt de gebruiker moet geven ze de gebruiksrechtovereenkomst accepteren of de bewerking is mislukt.
 
 ## <a name="publish-requirements-for-modules"></a>Vereisten voor Modules publiceren
 
@@ -43,7 +43,7 @@ Modules die u dat wilt gebruikers om licentie te accepteren, moeten de volgende 
 
 - Tijdens de installatie/Save/Update is-bewerking, als een afhankelijke-module (iets anders afhankelijk is van de module) is vereist voor acceptatie van de licentie en het gedrag van licentie acceptatie (hierboven) vereist.
 - Als de versie van de module al in de lokale catalogus opgenomen is als het wordt geïnstalleerd op het systeem, zouden we negeren controleren van de licentie.
-- Tijdens de installatie/Save/Update-bewerking, als een afhankelijke module een licentie moet en de acceptatie van de licentie niet wordt uitgevoerd, wordt de bewerking niet voldoen aan en volgt normale processen voor het item kan niet installeren/save/bijwerken.
+- Tijdens de installatie/Save/Update-bewerking, als een afhankelijke module een licentie moet en de acceptatie van de licentie niet wordt uitgevoerd, wordt de bewerking niet voldoen aan en volgt normale processen voor het pakket kan niet installeren/save/bijwerken.
 
 ## <a name="impact-on--force"></a>Gevolgen voor de - Force
 
@@ -219,6 +219,6 @@ Module wordt bijgewerkt zonder een prompt om licentie te accepteren.
 
 [Acceptatie van de licentie vereisen voor scripts](./script-license-acceptance.md)
 
-[Ondersteuning voor acceptatie van de licentie op PowerShellGallery vereisen](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Ondersteuning voor acceptatie van de licentie op PowerShellGallery vereisen](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Acceptatie van de licentie vereisen bij implementeren naar Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Acceptatie van de licentie vereisen bij implementeren naar Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

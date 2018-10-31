@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
 title: Understanding PowerShell-pijplijnen
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 3ee03f001668fb24ff9be1ea6ecb3817e319d0ee
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134192"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002852"
 ---
 # <a name="understanding-pipelines"></a>Inzicht in pijplijnen
 
@@ -61,7 +61,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 Ook het wisselbestand minder CPU-gebruik omdat verwerking naar overgebracht de `Out-Host` cmdlet wanneer er een volledige pagina Gereed om weer te geven. De cmdlets die worden voorafgegaan door het in de pijplijn onderbreken worden uitgevoerd totdat de volgende pagina van de uitvoer beschikbaar is.
 
-Hier ziet u het verschil Windows Taakbeheer om CPU en geheugen dat wordt gebruikt door PowerShell te bewaken. Voer de volgende opdracht uit: `Get-ChildItem C:\\Windows -Recurse`. Vergelijk de CPU- en geheugengebruik op deze opdracht: `Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging`.
+Hier ziet u het verschil Windows Taakbeheer om CPU en geheugen dat wordt gebruikt door PowerShell te bewaken. Voer de volgende opdracht uit: `Get-ChildItem C:\Windows -Recurse`. Vergelijk de CPU- en geheugengebruik op deze opdracht: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
 ## <a name="objects-in-the-pipeline"></a>Objecten in de pijplijn
 
