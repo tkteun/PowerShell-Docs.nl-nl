@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/30/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Problemen met DSC oplossen
-ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
+ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268191"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410011"
 ---
 # <a name="troubleshooting-dsc"></a>Problemen met DSC oplossen
 
@@ -503,7 +503,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -513,7 +513,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-U kunt zien dat `DebugMode` is ingesteld op **FALSE**.
+U kunt zien dat `DebugMode` is ingesteld op **'None'**.
 
 Voor het instellen van de `DebugMode` demonstreren, gebruikt u de volgende PowerShell-resource:
 
@@ -603,12 +603,12 @@ function Test-TargetResource
 
 Met dit script genereert een willekeurig getal en de code van de provider dienovereenkomstig bijgewerkt. Met `DebugMode` ingesteld op false, de inhoud van het bestand '**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**"nooit worden gewijzigd.
 
-Stel nu `DebugMode` naar **waar** in uw configuratiescript:
+Stel nu `DebugMode` naar **"ForceModuleImport"** in uw configuratiescript:
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 
