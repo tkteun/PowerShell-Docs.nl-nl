@@ -1,6 +1,6 @@
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft Open Source-gedragscode
 
-Voor dit project is de Dit project heeft de [Microsoft opensourcegedragscode](https://opensource.microsoft.com/codeofconduct/) vastgesteld.
+Voor dit project is de [Microsoft opensourcegedragscode](https://opensource.microsoft.com/codeofconduct/) vastgesteld.
 Bekijk de [veelgestelde vragen over gedragscode](https://opensource.microsoft.com/codeofconduct/faq/) voor meer informatie of neem contact op met [opencode@microsoft.com](mailto:opencode@microsoft.com) als u verder nog vragen of opmerkingen hebt.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
