@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: PowerShell-cmdlet
 title: Help voor de PowerShell.exe-opdrachtregel
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133853"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691827"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe Help voor de opdrachtregel
 
@@ -51,7 +51,10 @@ Hiermee stelt u het standaardbeleid voor uitvoering voor de huidige sessie en op
 
 Voert het opgegeven script in het lokale bereik ('dot-Source'), zodat de functies en variabelen die het script wordt gemaakt, beschikbaar in de huidige sessie zijn. Geef het pad naar het script en eventueel parameters. **Bestand** moet de laatste parameter in de opdracht. Alle waarden zijn ingevoerd na de **-bestand** parameter wordt geïnterpreteerd als het script logbestandspad en -parameters doorgegeven aan het script.
 
-Parameters doorgegeven aan het script worden doorgegeven als letterlijke tekenreeksen (na interpretatie door de huidige shell). Bijvoorbeeld, als u in cmd.exe en wilt een omgevingsvariabele doorgeven, gebruikt u de syntaxis cmd.exe: `powershell -File .\test.ps1 -Sample %windir%` In dit voorbeeld wordt het script de letterlijke tekenreeks ontvangt `$env:windir` en niet de waarde van deze omgevingsvariabele: `powershell -File .\test.ps1 -Sample $env:windir`
+Parameters doorgegeven aan het script worden doorgegeven als letterlijke tekenreeksen, na de interpretatie van de huidige shell. Bijvoorbeeld, als u zich in cmd.exe en wilt een omgevingsvariabele doorgeven, zou u de syntaxis cmd.exe gebruiken: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Daarentegen uitgevoerd `powershell.exe -File .\test.ps1 -TestParam $env:windir` in cmd.exe resultaten in het script ontvangen van de letterlijke tekenreeks `$env:windir` omdat er geen speciale betekenis voor de huidige cmd.exe-shell.
+De `$env:windir` stijl van de variabele omgevingsverwijzing _kunt_ worden gebruikt binnen een `-Command` parameter, omdat er deze wordt geïnterpreteerd als PowerShell-code.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {tekst | XML}
 
@@ -103,22 +106,31 @@ Hiermee stelt u de vensterstijl voor de sessie. Geldige waarden zijn normaal, ge
 
 ### <a name="-command"></a>-Opdracht
 
-Hiermee voert u de opgegeven opdrachten (met parameters) alsof ze zijn getypt achter de PowerShell-opdrachtprompt. Na de uitvoering, PowerShell wordt afgesloten, tenzij de `-NoExit` parameter is opgegeven.
-Alle tekst na `-Command` als een enkele opdrachtregel wordt verzonden naar PowerShell. Dit wijkt af van hoe u `-File` parameters die worden verzonden naar een script worden verwerkt.
+Hiermee voert u de opgegeven opdrachten (met parameters) alsof ze zijn getypt achter de PowerShell-opdrachtprompt.
+Na de uitvoering, PowerShell wordt afgesloten, tenzij de **NoExit** parameter is opgegeven.
+Alle tekst na `-Command` als een enkele opdrachtregel wordt verzonden naar PowerShell.
+Dit wijkt af van hoe u `-File` parameters die worden verzonden naar een script worden verwerkt.
 
-De waarde van de opdracht kan niet '-', een tekenreeks. of een scriptblok. Als de waarde van de opdracht '-', de opdrachttekst worden gelezen uit de standaard invoer.
+De waarde van `-Command` kan '-', een tekenreeks of een scriptblok.
+De resultaten van de opdracht keert terug naar de bovenliggende shell als gedeserialiseerde XML-objecten die niet live objecten.
 
-Scriptblokken moeten tussen accolades ({}). U kunt een scriptblok alleen wanneer PowerShell.exe uitgevoerd in PowerShell. De resultaten van het script keert terug naar de bovenliggende shell als gedeserialiseerde XML-objecten die niet live objecten.
+Als de waarde van `-Command` is '-', de opdrachttekst worden gelezen uit de standaard invoer.
 
-Als de waarde van de opdracht een tekenreeks is, **opdracht** moet de laatste parameter in de opdracht, omdat alle tekens hebt getypt nadat de opdracht als de opdrachtargumenten worden geïnterpreteerd.
+Wanneer de waarde van `-Command` is een tekenreeks, **opdracht** _moet_ worden de laatste parameter zijn opgegeven, omdat alle tekens hebt getypt nadat de opdracht als de opdrachtargumenten worden geïnterpreteerd.
 
-Gebruik de indeling voor het schrijven van een tekenreeks is die wordt uitgevoerd een PowerShell-opdracht:
+De **opdracht** parameter accepteert alleen een scriptblok voor uitvoering op wanneer de waarde die is doorgegeven aan kan worden herkend `-Command` als ScriptBlock-type.
+Dit is _alleen_ mogelijk bij het uitvoeren van PowerShell.exe uit een andere PowerShell-host.
+Het type kan zich bevinden in een bestaande variabele, geretourneerd door een expressie of geparseerd door de PowerShell ScriptBlock hosten als een letterlijke scriptblok tussen accolades `{}`voordat wordt doorgegeven aan PowerShell.exe.
 
-```powershell
+In cmd.exe, er is niet goed als een scriptblok (of ScriptBlock type), zodat de waarde die is doorgegeven aan **opdracht** wordt _altijd_ een tekenreeks zijn.
+U kunt een scriptblok binnen de tekenreeks schrijven, maar in plaats van wordt uitgevoerd het gedragen precies alsof u de gegevens hebt ingevoerd bij een typische PowerShell-prompt, de inhoud van het script afdrukken blokkeren weer uit voor u.
+
+Een tekenreeks doorgegeven aan `-Command` nog steeds worden uitgevoerd als PowerShell, zodat het script blok tussen accolades vaak niet vereist in de eerste plaats zijn bij het uitvoeren van cmd.exe.
+Voor het uitvoeren van een inline-scriptblok zoals gedefinieerd in een tekenreeks, de [aanroep-operator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` kan worden gebruikt:
+
+```console
 "& {<command>}"
 ```
-
-De aanhalingstekens geven een tekenreeks en de invoke-operator (&) zorgt ervoor dat de opdracht moet worden uitgevoerd.
 
 ### <a name="-help---"></a>-Help-,?, /?
 
