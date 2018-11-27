@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133852"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321075"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -20,19 +20,19 @@ Windows PowerShell-webtoegang in Windows Server 2012 R2 en Windows Server 2012 h
 ## <a name="configuring-authorization-rules-and-site-security"></a>Autorisatieregels en sitebeveiliging configureren
 
 Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. 'Windows PowerShell Web Access'-toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels.
-Zie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Zie [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Beheerders kunnen definiëren `{0-n}` -verificatieregels voor Windows PowerShell-webtoegang. De standaardbeveiliging is beperkend, niet toelatend. Als er geen verificatieregels zijn, heeft geen enkele gebruiker toegang tot iets.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) en [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) in Windows Server 2012 R2 bevatten de parameter Credential waarmee u kunt toevoegen en autorisatieregels van Windows PowerShell-internettoegang vanaf een externe testen computer, of uit binnen een actieve sessie van de Windows PowerShell-webtoegang. Als kunt andere Windows PowerShell-cmdlets waarvoor de parameter Credential, u een PSCredential-object opgeven als de waarde van de parameter. Voer voor het maken van een PSCredential-object met de referenties die u wilt doorgeven aan een externe computer de [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet.
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) en [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) in Windows Server 2012 R2 bevatten de parameter Credential waarmee u kunt toevoegen en autorisatieregels van Windows PowerShell-internettoegang vanaf een externe testen computer, of uit binnen een actieve sessie van de Windows PowerShell-webtoegang. Als kunt andere Windows PowerShell-cmdlets waarvoor de parameter Credential, u een PSCredential-object opgeven als de waarde van de parameter. Voer voor het maken van een PSCredential-object met de referenties die u wilt doorgeven aan een externe computer de [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet.
 
-Windows PowerShell Web Access-verificatieregels zijn regels die bepaalde verbindingen. Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows-PowerShellÂ [sessieconfiguraties](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
+Windows PowerShell Web Access-verificatieregels zijn regels die bepaalde verbindingen. Elke regel is een definitie van een toegestane verbinding tussen gebruikers, doelcomputers en bepaalde Windows PowerShell [sessieconfiguraties](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (ook wel eindpunten of _runspaces_) op opgegeven doelcomputers.
 Voor een uitleg op **runspaces** Zie [begin gebruik van PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Voor een gebruiker hoeft slechts één regel waar te zijn om ervoor te zorgen dat hij of zij toegang krijgt. Als een gebruiker toegang tot een computer met volledige taaltoegang of alleen toegang tot Windows PowerShell-cmdlets voor extern beheer, van de webconsole krijgt, kunt de gebruiker aanmelden (of hop) op andere computers die zijn verbonden met de eerste doelcomputer. Er is de veiligste manier om Windows PowerShell-webtoegang configureren zodat gebruikers alleen toegang tot beperkte sessieconfiguraties waarmee ze specifieke taken die ze normaal gesproken nodig hebben om uit te voeren op afstand.
 
-De cmdlets waarnaar wordt verwezen in [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) toestaan om te maken van een reeks toegangsregels die worden gebruikt voor het autoriseren van een gebruiker op de Windows PowerShell Web Access-gateway. De regels verschillen van de toegangsbeheerlijsten (ACL’s) op de doelcomputer en bieden een extra beveiligingslaag voor internettoegang. Meer informatie over beveiliging vindt u in het volgende gedeelte.
+De cmdlets waarnaar wordt verwezen in [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) toestaan om te maken van een reeks toegangsregels die worden gebruikt voor het autoriseren van een gebruiker op de Windows PowerShell Web Access-gateway. De regels verschillen van de toegangsbeheerlijsten (ACL’s) op de doelcomputer en bieden een extra beveiligingslaag voor internettoegang. Meer informatie over beveiliging vindt u in het volgende gedeelte.
 
 Als gebruikers niet een van de voorgaande beveiligingslagen worden doorgegeven, ontvangen ze een algemeen 'toegang geweigerd'-bericht in hun browservensters. Hoewel beveiligingsgegevens worden geregistreerd op de gatewayserver, zien eindgebruikers geen informatie over hoeveel beveiligingslagen ze zijn gepasseerd of op welke laag de aanmeldings- of verificatiefout is opgetreden.
 
@@ -229,4 +229,4 @@ Als de gateway-server wordt uitgevoerd Windows Server 2012 R2, Windows PowerShel
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

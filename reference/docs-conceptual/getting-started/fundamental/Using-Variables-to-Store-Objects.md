@@ -3,17 +3,17 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Variabelen gebruiken om objecten op te slaan
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353215"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320955"
 ---
 # <a name="using-variables-to-store-objects"></a>Variabelen gebruiken om objecten op te slaan
 
 PowerShell in combinatie met objecten. PowerShell kunt u benoemde objecten bekend als variabelen maken.
-Namen van variabelen kunnen de onderstrepingsteken teken kan alle alfanumerieke tekens bevatten. Wanneer gebruikt in PowerShell, een variabele altijd is opgegeven met behulp van de \$ gevolgd door de naam van variabele.
+Namen van variabelen kunnen het onderstrepingsteken en een alfanumerieke tekens bevatten. Wanneer gebruikt in PowerShell, een variabele altijd is opgegeven met behulp van de \$ gevolgd door de naam van variabele.
 
 ## <a name="creating-a-variable"></a>Het maken van een variabele
 

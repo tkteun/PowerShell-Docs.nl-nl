@@ -1,33 +1,33 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Welke s die nieuw is in de 50 van de PowerShell ISE
+title: Nieuw in PowerShell 50 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953579"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320581"
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat&#39;s die nieuw is in de Windows PowerShell ISE
-Dit onderwerp worden de nieuwe en bijgewerkte functies die zijn geïntroduceerd in versies van Windows PowerShell Integrated Scripting Environment (ISE).
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat&#39;nieuw in de Windows PowerShell ISE
+In dit onderwerp wordt uitgelegd dat de nieuwe en bijgewerkte functies die zijn geïntroduceerd in versies van Windows PowerShell Integrated Scripting Environment (ISE).
 
 ## <a name="feature-description"></a>Functiebeschrijving
-De Windows PowerShell ISE is een hosttoepassing waarmee u kunt schrijven, uitvoeren en scripts en modules in een grafische en intuïtieve omgeving testen. Belangrijkste functies zoals syntaxis-kleuren, tabblad voltooiing, visuele foutopsporing, Unicode-compatibiliteit en Help-onderwerpen bieden een rijke ervaring voor het uitvoeren van scripts.
+De Windows PowerShell ISE is een hosttoepassing waarmee u te schrijven, uitvoeren en scripts en modules testen in een grafische en intuïtieve omgeving. Belangrijke functies zoals syntaxiskleuren, tabblad voltooiing, visuele foutopsporing, Unicode-naleving en contextgevoelige Help-onderwerpen bieden een rijke scripting ervaring.
 
-Zie voor een overzicht van Windows PowerShell ISE [overzicht van Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Zie voor een overzicht van Windows PowerShell ISE, [overzicht van Windows PowerShell Integrated Scripting Environment](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Nieuwe en gewijzigde functionaliteit in Windows PowerShell ISE
-De volgende tabel bevat de nieuwe en gewijzigde functies voor deze versie van Windows PowerShell ISE in Windows PowerShell.
+De volgende tabel bevat de nieuwe en gewijzigde functies voor deze release van Windows PowerShell ISE in Windows PowerShell.
 
 |Onderdeel/functionaliteit|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 |**[IntelliSense](#intellisense)**|X|X||
 |**[Codefragmenten](#snippets)**|X|X||
-|**[Extra hulpprogramma 's](#add-on-tools)**|X|X||
-|**[Opnieuw opstarten van de Manager en automatisch moeten worden opgeslagen](#restart-manager-and-auto-save)**|X|X||
-|**[Recent gebruikte](#most-recently-used-list)**|X|X||
+|**[Invoegtoepassing hulpprogramma 's](#add-on-tools)**|X|X||
+|**[Opnieuw opstarten van de Manager en automatisch opslaan](#restart-manager-and-auto-save)**|X|X||
+|**[Meest recent gebruikte](#most-recently-used-list)**|X|X||
 |**[Consolevenster](#console-pane)**|X|X||
 |**[Opdrachtregelopties](#command-line-switches)**|X|X||
 |**[Nieuwe functies van de editor](#new-editor-features)**|X|X||
@@ -35,88 +35,88 @@ De volgende tabel bevat de nieuwe en gewijzigde functies voor deze versie van Wi
 |**[De cmdlet opdracht weergeven](#show-command-cmdlet)**|X|X||
 
 ### <a name="intellisense"></a>IntelliSense
-**In de ISE 3.0 toegevoegd**
+**Toegevoegd in ISE 3.0**
 
-IntelliSense is een automatische voltooiing hulp-functie die deel uitmaakt van Windows PowerShell ISE. IntelliSense geeft klikbaar menu's met overeenkomende mogelijk cmdlets, parameters, parameterwaarden, bestanden of mappen terwijl u typt.
+IntelliSense is een functie voor automatisch aanvullen hulp op die deel uitmaakt van Windows PowerShell ISE. IntelliSense geeft geklikt menu's met overeenkomende mogelijk cmdlets, parameters, parameterwaarden, bestanden of mappen terwijl u typt.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Met de toevoeging van IntelliSense is het eenvoudiger voor het detecteren van de cmdlet en syntaxis als u Windows PowerShell ISE gebruiken om scripts te maken. U kunt ook Windows PowerShell ISE voor meer informatie over Windows PowerShell bij het maken van nieuwe scripts gebruiken.
+Met de toevoeging van IntelliSense is het eenvoudiger cmdlet en syntaxis wordt gedetecteerd wanneer u Windows PowerShell ISE gebruiken om scripts te maken. U kunt ook Windows PowerShell ISE gebruiken voor meer informatie over Windows PowerShell bij het maken van nieuwe scripts.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Wanneer u cmdlets in Windows PowerShell ISE 3.0 of hoger typt, een schuifbare en klikbaar menu wordt weergegeven, zodat u kunt bladeren en selecteer de juiste opdrachten.
+Wanneer u cmdlets in Windows PowerShell ISE 3.0 of hoger, een overzicht en geklikt menu wordt weergegeven, zodat u kunt bladeren en selecteer de juiste opdrachten.
 
 ### <a name="snippets"></a>Codefragmenten
-**In de ISE 3.0 toegevoegd**
+**Toegevoegd in ISE 3.0**
 
-*Codefragmenten* korte gedeelten van Windows PowerShell-code die u in de scripts die u in Windows PowerShell ISE maakt kunt invoegen. Windows PowerShell ISE wordt geleverd met een standaardset codefragmenten. U kunt codefragmenten toevoegen met behulp van de **nieuw codefragment** cmdlet terwijl u werkt in Windows PowerShell ISE.
+*Codefragmenten* korte secties van de Windows PowerShell-code die u kunt invoegen in de scripts die u in Windows PowerShell ISE maakt. Windows PowerShell ISE wordt geleverd met een standaardset aan fragmenten. U kunt codefragmenten toevoegen met behulp van de **New-fragment** cmdlet tijdens het werken in Windows PowerShell ISE.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-U kunt snel samenstellen en maken van scripts voor uw omgeving te automatiseren met behulp van codefragmenten.
+U kunt snel samen te stellen en scripts voor het automatiseren van uw omgeving maken met behulp van codefragmenten.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Codefragmenten op in Windows PowerShell 3.0 of hoger, gebruiken de **bewerken** menu, klikt u op **Start codefragmenten**, of druk op **Ctrl J**.
+Voor het gebruik van codefragmenten in Windows PowerShell 3.0 of hoger, is het op de **bewerken** menu, klikt u op **Start codefragmenten**, of druk op **Ctrl-J**.
 
-### <a name="add-on-tools"></a>Extra hulpprogramma 's
+### <a name="add-on-tools"></a>Invoegtoepassing hulpprogramma 's
 **Toegevoegd in PowerShell 3.0**
 
-Windows PowerShell ISE ondersteunt nu de invoegtoepassingen die Windows Presentation Foundation (WPF)-besturingselementen die worden toegevoegd met behulp van het objectmodel zijn. Extra hulpprogramma's kunnen worden weergegeven als een verticale of horizontale venster in de console. Meerdere invoegtoepassingen in een deelvenster worden weergegeven als een besturingselement met tabbladen. U kunt ook toevoegen of verwijderen van de invoegtoepassing-hulpprogramma's die worden geproduceerd door niet-Microsoft partijen. Zie voor meer informatie over het importeren of te verwijderen van de invoegtoepassing extra [bewerkingen in het Windows PowerShell ISE](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE biedt nu ondersteuning voor invoegtoepassingen, die Windows Presentation Foundation (WPF)-besturingselementen die worden toegevoegd met behulp van het objectmodel zijn. Invoegtoepassingen kunnen worden weergegeven als een verticale of horizontale deelvenster in de console. Meerdere invoegtoepassingen in een deelvenster worden weergegeven als een besturingselement met tabbladen. U kunt ook toevoegen of verwijderen van de invoegtoepassing-hulpprogramma's die worden geproduceerd door niet-Microsoft partijen. Zie voor meer informatie over het importeren of te verwijderen van de invoegtoepassing extra [Windows PowerShell ISE-bewerkingen](https://technet.microsoft.com/library/cc732148.aspx).
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Invoegtoepassingen toestaan u uitbreiden en aanpassen van Windows PowerShell ISE met hulpprogramma's die u kunnen uw scripting ervaring te verbeteren of functionaliteit toevoegen aan Windows PowerShell ISE.
+Invoegtoepassingen kunnen u uitbreiden en aanpassen van Windows PowerShell ISE met hulpprogramma's die u kunnen uw scripting ervaring te verbeteren of functionaliteit toevoegen aan Windows PowerShell ISE.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
 Windows PowerShell ISE 3.0 en hoger worden geleverd met de **opdrachten** invoegtoepassing. De **opdrachten** invoegtoepassing kunt u bladeren cmdlets en help-informatie over de cmdlets side-by-side met toegang tot de **Script** en **Console** deelvensters.
 
-Extra invoegtoepassingen kunnen worden gevonden met behulp van de **Open-invoegtoepassing voor extra Website** opdracht op de **invoegtoepassingen** menu.
+Aanvullende invoegtoepassingen kunnen worden gevonden met behulp van de **Open invoegtoepassing extra Website** opdracht op de **invoegtoepassingen** menu.
 
-### <a name="restart-manager-and-auto-save"></a>Opnieuw opstarten van de manager en automatisch moeten worden opgeslagen
+### <a name="restart-manager-and-auto-save"></a>Opnieuw opstarten van de manager en automatisch opslaan
 **Toegevoegd in PowerShell 3.0**
 
-Windows PowerShell ISE nu automatisch opgeslagen open scripts elke twee minuten op een andere locatie.  Als Windows PowerShell ISE werkt niet, of als het besturingssysteem opnieuw wordt opgestart, nadat Windows PowerShell ISE opnieuw is opgestart, herstelt openen scripts die zijn in de laatste sessie, zelfs als de scripts zijn niet opgeslagen.
+Windows PowerShell ISE nu automatisch opgeslagen uw open scripts elke twee minuten in een andere locatie.  Als Windows PowerShell ISE niet meer werkt, of als het besturingssysteem opnieuw wordt opgestart, nadat Windows PowerShell ISE opnieuw is opgestart, wordt hersteld scripts die zijn geopend in de vorige sessie, zelfs als de scripts zijn niet opgeslagen.
 
-De automatische opslaan als interval wilt wijzigen, kunt u de volgende opdracht uitvoeren in het consolevenster: **$psise. Options.AutoSaveMinuteInterval**.
+Als u wilt wijzigen van het interval voor automatisch opslaan, kunt u de volgende opdracht uitvoeren in het consolevenster: **$psise. Options.AutoSaveMinuteInterval**.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-U kunt nu werken in Windows PowerShell ISE weten dat uw open scripts automatisch worden opgeslagen in het geval van een onverwacht opnieuw opgestart.
+U kunt nu werken in Windows PowerShell ISE wetenschap dat uw open-scripts worden automatisch opgeslagen in het geval van een onverwacht opnieuw opgestart.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-De scripts automatisch opnieuw opstarten in geval van een Windows PowerShell ISE 2.0 niet opgeslagen.
+Windows PowerShell ISE 2.0 wordt niet opgeslagen voor de scripts automatisch in het geval van een opnieuw opstarten.
 
-### <a name="most-recently-used-list"></a>Recent gebruikte
+### <a name="most-recently-used-list"></a>Meest recent gebruikte
 **Toegevoegd in PowerShell 3.0**
 
-Windows PowerShell ISE heeft nu een lijst met recent zijn gebruikt voor bestanden. Wanneer u een bestand in Windows PowerShell ISE opent, het bestand wordt toegevoegd aan de lijst met recent zijn gebruikt op de **bestand** menu.
+Windows PowerShell ISE heeft nu een lijst met recent zijn gebruikt voor bestanden. Wanneer u een bestand in Windows PowerShell ISE opent, het bestand wordt toegevoegd aan de lijst met meest recent gebruikte op de **bestand** menu.
 
 Als u wilt wijzigen van het aantal bestanden in de lijst met recent zijn gebruikt, kunt u de volgende opdracht uitvoeren in het consolevenster: **$psise. Options.MruCount**.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-U kunt nu de meest recentelijk gebruikte lijst eenvoudig toegang tot uw bestanden vaak gebruikt.
+U kunt nu de lijst met meest recent gebruikte eenvoudige toegang tot uw bestanden vaak gebruikt.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
 Windows PowerShell ISE 2.0 beschikt niet over een lijst met recent zijn gebruikt.
 
 ### <a name="console-pane"></a>Consolevenster
 **Toegevoegd in PowerShell 3.0**
 
-De afzonderlijke opdracht en de uitvoer deelvensters die beschikbaar in de eerste versie van Windows PowerShell ISE waren zijn gecombineerd in één Console deelvenster. Het consolevenster lijkt in functie en het uiterlijk aan een typische Windows PowerShell-console, maar deze bevat de volgende verbeteringen (de meeste worden beschreven in dit onderwerp).
+De afzonderlijke opdracht en de deelvensters van de uitvoer die beschikbaar in de eerste release van Windows PowerShell ISE waren zijn gecombineerd in één Console-venster. Het consolevenster lijkt in functie en het uiterlijk aan een typische Windows PowerShell-console, maar deze bevat de volgende verbeteringen (de meeste worden beschreven in dit onderwerp).
 
-- Kleur van de syntaxis voor de ingevoerde tekst (geen uitvoertekst), met inbegrip van XML-syntaxis
+- Kleur van de syntaxis voor invoertekst (geen uitvoertekst), inclusief syntaxis en voorbeelden XML
 
 - IntelliSense
 
-- Overeenkomende accolade
+- Accolade die overeenkomt met
 
-- Fout-vermelding
+- Vermelding van fout
 
 - Volledige ondersteuning voor Unicode
 
@@ -124,23 +124,23 @@ De afzonderlijke opdracht en de uitvoer deelvensters die beschikbaar in de eerst
 
 - **CTRL + F1** opdracht contextgevoelige weergeven
 
-- Complexe script en ondersteuning van rechts naar links
+- Complexe schrifttypen en ondersteuning van rechts naar links
 
-- Lettertype-ondersteuning
+- Ondersteuning voor lettertype
 
 - Uitzoomen
 
-- Modi van regel selecteren en blok selecteren
+- Regel selecteren en de blok-Selecteer-modi
 
-- Behoud van getypeerde inhoud op de opdrachtregel als u op de **Up** pijl geschiedenis weergeven in de console
+- Behoud van getypeerde inhoud op de opdrachtregel als u op de **van** pijl geschiedenis weergeven in de console
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Het toevoegen van deze wijzigingen consolevenster biedt een scripting-ervaring die consistenter met de console-interface.
+Het toevoegen van deze wijzigingen consolevenster biedt een scripting ervaring die consistenter wordt met de console-interface.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Windows PowerShell ISE 2.0 heeft afzonderlijke opdracht en uitvoer deelvensters.
+Windows PowerShell ISE 2.0 heeft afzonderlijke opdracht en deelvensters van de uitvoer.
 
 ### <a name="command-line-switches"></a>Opdrachtregelopties
 **Toegevoegd in PowerShell 3.0**
@@ -151,78 +151,78 @@ Als u Windows PowerShell ISE vanaf de opdrachtregel starten (door te typen **pow
 
 - *-Help*: een Help-venster wordt weergegeven
 
-- *-mta*: Start Windows PowerShell ISE in meerdere threads apartment-modus. De standaardmodus voor de bewerking voor Windows PowerShell ISE is single thread apartment-modus, of *- sta*.
+- *-mta*: Start Windows PowerShell ISE in de modus apartment meerdere threads. De standaardmodus voor de bewerking voor Windows PowerShell ISE is een single-threaded apartment-modus, of *- sta*.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Het toevoegen van deze opdrachtregelopties kunt u bepalen van de omgeving waarin de Windows PowerShell ISE wordt uitgevoerd.
+Het toevoegen van deze opdrachtregelopties kunt u voor het beheren van de omgeving waarin de Windows PowerShell ISE wordt uitgevoerd.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Deze opdrachtregelparameters worden niet herkend door Windows PowerShell ISE 2.0.
+Windows PowerShell ISE 2.0 wordt niet herkend voor deze opdrachtregelopties.
 
 ### <a name="new-editor-features"></a>Nieuwe functies van de editor
 **Toegevoegd in PowerShell 3.0**
 
-Andere functies van Windows PowerShell ISE-bewerken:
+Andere Windows PowerShell ISE-bewerkingsfuncties zijn onder andere:
 
-- **XML-syntaxiskleuren**XML-syntaxis Windows PowerShell ISE nu kleuren op dezelfde manier als het Windows PowerShell-syntaxis kleuren.
+- **XML-syntaxiskleuren**XML-syntaxis Windows PowerShell ISE nu kleuren op dezelfde manier als u deze Windows PowerShell-syntaxis kleuren.
 
-- **Overeenkomende accolade** Windows PowerShell ISE omvat overeenkomende accolade en is gemarkeerd en kan worden gebruikt in de volgende manieren: (bijvoorbeeld met behulp van de **gaat u naar de overeenkomst** opdracht of **Ctrl +]** zoekt de haakje sluiten, hebt u een openingsaccolade geselecteerd).
+- **Accolade die overeenkomt met** Windows PowerShell ISE bevat toe die overeenkomen met en te markeren en kan worden gebruikt in de volgende manieren: (bijvoorbeeld met behulp van de **gaat u naar overeenkomende reeks** opdracht of **Ctrl +]** wordt gezocht naar de haakje sluiten, hebt u een openingsaccolade geselecteerd).
 
-- **Overzichtsweergave** het scriptvenster ondersteunt overzicht, waarmee samenvouwen of stukjes code door te klikken op plus of min uitvouwen in de linkermarge zich aanmeldt. U kunt de accolades gebruiken of de **#region** en **#endregion** labels markeert het begin of einde van een samenvouwbare sectie. Als u wilt uitvouwen of samenvouwen alle regio's, drukt u op **Ctrl + M**.
+- **Overzichtsweergave** het scriptvenster biedt ondersteuning voor een overzicht maken, waarmee samenvouwen of uitvouwen gedeelten van de code door te klikken op plus of min zich in de linkermarge. U kunt de accolades gebruiken of de **#region** en **#endregion** tags aan het begin of einde van een samenvouwbare sectie markeren. Als u wilt uitvouwen of samenvouwen van alle regio's, drukt u op **Ctrl + M**.
 
-- **Slepen en neerzetten tekstbewerking**Windows PowerShell ISE nu ondersteunt slepen en neerzetten van tekst bewerken. U kunt elk blok tekst selecteren en sleept u deze tekst naar een andere locatie in de editor of de console om de tekst te verplaatsen. Als u Houd Ctrl ingedrukt terwijl u de geselecteerde tekst sleept, wanneer u de muisknop loslaat wordt de tekst wordt gekopieerd naar de nieuwe locatie. In deze versie van Windows PowerShell ISE, evenals de vorige versie van Windows PowerShell ISE, als u slepen en neerzetten van bestanden naar de Windows PowerShell ISE Windows PowerShell ISE opent u het bestand.
+- **Slepen en neerzetten tekstbewerking**Windows PowerShell ISE nu ondersteunt slepen en tekst bewerken neerzetten. U kunt een blok tekst selecteert en sleept u deze tekst naar een andere locatie in de editor of in de console om de tekst te verplaatsen. Als u u de Ctrl-toets houdt terwijl u sleept u de geselecteerde tekst, wanneer u de muisknop loslaat wordt de tekst gekopieerd naar de nieuwe locatie. Wanneer u bestanden slepen en naar de Windows PowerShell ISE neerzetten, wordt Windows PowerShell ISE in deze versie van Windows PowerShell ISE, evenals de vorige versie van Windows PowerShell ISE, het bestand.
 
-- **Parseren van de weergave van fouten** Parse fouten worden aangegeven met een rode onderstreping. Wanneer u de muisaanwijzer op een fout aangegeven, wordt het probleem dat is gevonden in de code weergegeven in knopinfo.
+- **De weergave van fouten parseren** Parse-fouten worden aangegeven met rood onderstreept. Wanneer u de muisaanwijzer over een opgegeven fout, geeft de knopinfo die het probleem dat is gevonden in de code.
 
-- **Zoomen** het zoompercentage van de console'™ s inhoud kan worden ingesteld met behulp van de schuifregelaar Inzoomen (in de rechterbenedenhoek van Windows PowerShell ISE-venster) of met de opdracht **$psise.options.Zoom** in het consolevenster.
+- **Zoomen** het zoompercentage van de console'™ s inhoud kan worden ingesteld met behulp van de zoomschuifregelaar (in de rechterbenedenhoek van de Windows PowerShell ISE-venster) of met de opdracht **$psise.options.Zoom** in het consolevenster.
 
-- **Rich text kopiëren en plakken** kopiëren naar het Klembord in Windows PowerShell ISE gehandhaafd het lettertype, grootte en kleurinformatie van de oorspronkelijke selectie.
+- **Uitgebreide tekst kopiëren en plakken** kopiëren naar het Klembord in Windows PowerShell ISE behoudt van het lettertype, grootte en kleurinformatie van de oorspronkelijke selectie.
 
-- **Blok selecteren** kunt u een blok tekst door de ALT-toets ingedrukt te houden bij het selecteren van tekst in het deelvenster Script met de muis of door op **Alt + Shift + pijl**.
+- **Selectie blokkeren** kunt u een blok tekst selecteren door de ALT-toets ingedrukt te houden bij het selecteren van tekst in het scriptvenster met de muis, of door te drukken **Alt + Shift + pijltoets**.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-De aanvullende functies bieden een consistentere en krachtige omgeving voor het bewerken.
+De aanvullende functies bieden een consistente en krachtige bewerken omgeving.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Deze bewerking uitbreidingen zijn niet aanwezig in Windows PowerShell ISE 2.0.
+Deze bewerking uitbreidingen zijn niet aanwezig zijn in Windows PowerShell ISE 2.0.
 
 ### <a name="new-help-viewer-window"></a>Nieuwe Help-venster
 **Toegevoegd in PowerShell 3.0**
 
-Als u op **F1** wanneer de cursor zich in een cmdlet of deel uitmaken van een cmdlet gemarkeerd hebt, de nieuwe Help-viewer Help-onderwerpen over de gemarkeerde cmdlet geopend. Typ het volgende Windows PowerShell over Help-informatie **operators** in het consolevenster, en druk **F1**.
+Als u druk op **F1** als de cursor zich in een cmdlet, of als onderdeel van een cmdlet die is gemarkeerd, voor de nieuwe Help-viewer contextgevoelige Help-informatie over de gemarkeerde cmdlet wordt geopend. Als Windows PowerShell over Help-informatie weergeven, typt **operators** in het consolevenster en druk vervolgens op **F1**.
 
-Voordat u deze functie gebruiken, moet u de meest recente versie van Windows PowerShell Help-onderwerpen downloaden van de website van Microsoft. De eenvoudigste methode voor het downloaden van de Help-onderwerpen is om uit te voeren de **Update-Help** cmdlet in het consolevenster bij het uitvoeren van Windows PowerShell ISE als beheerder.
+Voordat u deze functie gebruiken, downloadt u de meest recente versie van Windows PowerShell Help-onderwerpen van de website van Microsoft. De eenvoudigste methode voor het downloaden van de Help-onderwerpen is om uit te voeren de **Update-Help** cmdlet in het consolevenster bij het uitvoeren van Windows PowerShell ISE als administrator.
 
-U kunt wijzigen waar de **F1** sleutel wordt gezocht naar Help. In de **extra**/**opties** menu op de **algemene instellingen** tabblad onder **overige instellingen**, kunt u instellen of schakel de selectievakje **lokale help-inhoud gebruiken in plaats van online inhoud**. Als dit selectievakje inschakelt, zoekt vervolgens naar de client de cmdlet Help in de gedownloade Help gevonden in de map modules.  Als het selectievakje is uitgeschakeld, klikt u vervolgens zoekt de client op de TechNet-bibliotheek voor de help van cmdlet.
+U kunt wijzigen en waar u de **F1** sleutel ziet er uit voor hulp. In de **extra**/**opties** menu op de **algemene instellingen** tabblad onder **overige instellingen**, kunt u instellen of wissen de selectievakje **lokale help-inhoud gebruiken in plaats van online-inhoud**. Als dit selectievakje inschakelt, klikt u vervolgens zoekt de client de cmdlet Help-informatie in de gedownloade Help gevonden in de map modules.  Als het selectievakje is uitgeschakeld, klikt u vervolgens zoekt de client op de TechNet-bibliotheek voor de help van de cmdlet.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Contextgevoelige Help zonder uw huidige cmdlet of script biedt een naadloze learning-ervaring.
+Contextgevoelige Help zonder uw huidige cmdlet of script biedt een naadloze leerervaring.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Het help-bestand op de lokale computer op F1 drukt in eerdere versies van Windows PowerShell ISE worden geopend. In Windows PowerShell ISE 3.0 en hoger, wordt er een venster geopend waarin de help voor de cmdlet die doorzoekbaar en kunnen worden geconfigureerd. Deze Help-ervaring is er nieuw voor Windows PowerShell ISE 3.0 en bij te werken Help is er nieuw voor Windows PowerShell 3.0.
+Het help-bestand op de lokale computer op F1 drukt in eerdere versies van Windows PowerShell ISE worden geopend. In Windows PowerShell ISE 3.0 en hoger, wordt er een venster geopend met de help voor de cmdlet die is doorzoekbaar en kunnen worden geconfigureerd. In dit Help-ervaring is er nieuw voor Windows PowerShell ISE 3.0 en bij te werken Help is er nieuw voor Windows PowerShell 3.0.
 
 ### <a name="show-command-cmdlet"></a>De cmdlet opdracht weergeven
 **Toegevoegd in PowerShell 3.0**
 
-De **opdracht weergeven** cmdlet kunt u samenstellen of een cmdlet of functie uitvoeren door een grafische formulier invullen. Het formulier kan gebruikers die werken met Windows PowerShell in een grafische omgeving. **Opdracht weergeven** ook schakelt geavanceerde scripttalen voor het maken van een snelle GUI op basis van Windows PowerShell.
+De **opdracht weergeven** cmdlet kunt u samenstellen of een cmdlet of de functie uitvoeren door in te vullen in een grafische vorm. Het formulier kan gebruikers werken met Windows PowerShell in een grafische omgeving. **Opdracht weergeven** ook kunnen geavanceerde scripttalen te maken van een snelle Windows PowerShell gebaseerde gebruikersinterface geopend.
 
 **Welke toegevoegde waarde van deze wijziging?**
 
-Met behulp van **opdracht weergeven** in uw Windows PowerShell-scripts, kunt u uw gebruikers opgeven met de grafische omgeving waaraan die bekend zijn. **Opdracht weergeven** kunt inleidende gebruikers meer informatie over Windows PowerShell.
+Met behulp van **opdracht weergeven** in uw Windows PowerShell-scripts, kunt u uw gebruikers opgeven met de grafische omgeving waarmee ze al bekend zijn. **Opdracht weergeven** kunt inleidende gebruikers meer informatie over Windows PowerShell.
 
-**Wat werkt er anders?**
+**Wat werkt anders?**
 
-Opdracht weergeven is een nieuwe Windows PowerShell ISE 3.0.
+Show-opdracht is een nieuwe Windows PowerShell ISE 3.0.
 
 ## <a name="see-also"></a>Zie ook
 Zie de volgende koppelingen voor meer informatie over het gebruik van Windows PowerShell ISE in Windows PowerShell.
 
 - [De Windows PowerShell Integrated Scripting Environment verkennen](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [ISE op de TechNet-Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Script Center](http://technet.microsoft.com/scriptcenter/default)
+- [ISE op de TechNet-Wiki](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Scriptcentrum](https://technet.microsoft.com/scriptcenter/default)

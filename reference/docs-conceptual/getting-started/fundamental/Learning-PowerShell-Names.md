@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: PowerShell-cmdlet
 title: Meer informatie over PowerShell-namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851252"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320479"
 ---
 # <a name="learning-powershell-names"></a>Meer informatie over PowerShell-namen
 
-Meer informatie over de namen van opdrachten en parameters vereist een aanzienlijke tijd-investering met de meeste opdrachtregelinterfaces. Het probleem is dat er enkele patronen zijn. Te onthouden is alleen manier om te leren van de opdrachten en parameters die u wilt een regelmatig gebruikt.
+Meer informatie over de namen van opdrachten en parameters vereist een aanzienlijke tijd-investering met de meeste opdrachtregelinterfaces. Het probleem is dat er enkele patronen zijn. Te onthouden is de enige manier om meer informatie over de opdrachten en parameters die u wilt een regelmatig gebruikt.
 
 Wanneer u met een nieuwe opdracht of een parameter werkt, u niet altijd gebruiken wat u al kent. U hebt om erachter te komen van een nieuwe naam. Traditioneel opdrachtregelinterfaces beginnen met een kleine set hulpprogramma's en laten groeien met incrementele toevoegingen. Het is gemakkelijk om te zien waarom er geen standaard-structuur is.
 Dit lijkt het logisch is voor de namen van opdrachten na elke opdracht een afzonderlijk hulpprogramma wordt. PowerShell is een betere manier voor het afhandelen van namen van opdrachten.

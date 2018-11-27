@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851321"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320683"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
 
@@ -25,7 +25,7 @@ Nadat de gateway is geïnstalleerd en geconfigureerd, kunnen gebruikers een Wind
 
 Windows PowerShell-webtoegang installatie en configuratie is een proces drie stappen:
 
-1. [Windows PowerShell-webtoegang installeren](#install-windows-powershell-web-access)
+1. [Windows PowerShell-webtoegang installeren](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [De Gateway configureren](#configure-the-gateway)
 1. [Configureren van een beperkende autorisatieregel toevoegen](#configure-a-restrictive-authorization-rule)
 
@@ -59,7 +59,7 @@ Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites ku
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Mobiele apparaten of browsers die minimaal zijn getest
 
 - Windows Phone 7 en 7.5
-- Google Android via WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari voor iPhone-besturingssysteem 5.0.1
 - Apple Safari voor iPad 2-besturingssysteem 5.0.1
 
@@ -75,7 +75,7 @@ Voor het gebruik van de Windows PowerShell-webtoegang op basis van een web-conso
 
 U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop Windows Server 2012 R2 of Windows Server 2012 met behulp van een Windows PowerShell-cmdlets, of met behulp van de toevoegen Wizard functies en onderdelen die is geopend vanuit binnen Server Manager. Voor snelle installatie en configuratie, gebruikt u Windows PowerShell-cmdlets, zoals beschreven in deze sectie.
 
-1. [Windows PowerShell-webtoegang installeren](#install-Windows-powershell-web-access)
+1. [Windows PowerShell-webtoegang installeren](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [De Gateway configureren](#configure-the-gateway)
 1. [Configureren van een beperkende autorisatieregel toevoegen](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Configureren van een beperkende autorisatieregel toevoegen
 
-Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. Windows PowerShell-webtoegang toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels. Zie voor meer informatie over Windows PowerShell Web Access cmdlets, de cmdlet-naslaginformatie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. Windows PowerShell-webtoegang toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels. Zie voor meer informatie over Windows PowerShell Web Access cmdlets, de cmdlet-naslaginformatie [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en beveiliging [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -360,7 +360,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Configureren van een beperkende autorisatieregel toevoegen
 
-Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. Windows PowerShell-webtoegang toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels. Zie voor meer informatie over Windows PowerShell Web Access cmdlets, de cmdlet-naslaginformatie [Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md).
+Nadat Windows PowerShell-webtoegang is geïnstalleerd en de gateway is geconfigureerd, wordt gebruikers de aanmeldingspagina in een browser kunnen openen, maar ze pas aanmelden nadat de Windows PowerShell Web Access-beheerder gebruikers toegang expliciet verleent. Windows PowerShell-webtoegang toegangsbeheer wordt beheerd met behulp van de set Windows PowerShell-cmdlets die in de volgende tabel beschreven. Er is geen vergelijkbare grafische gebruikersinterface voor het toevoegen of beheren van autorisatieregels. Zie voor meer informatie over Windows PowerShell Web Access cmdlets, de cmdlet-naslaginformatie [Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en beveiliging [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ Gebruik voor een veilige productieomgeving altijd een geldig SSL-certificaat dat
 1. In de **acties** deelvenster, een van de volgende handelingen uit. Zie voor meer informatie over het configureren van servercertificaten in IIS [Configuring Server Certificates in IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Klik op **importeren** aan een bestaand en geldig certificaat importeren vanaf een locatie op uw netwerk.
-   - Klik op **certificaataanvraag maken** , zoals een certificaat aanvragen bij een Certificeringsinstantie [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), of [GeoTrust](https://www.geotrust.com/). De algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
+   - Klik op **certificaataanvraag maken** , zoals een certificaat aanvragen bij een Certificeringsinstantie [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), of [GeoTrust](https://www.geotrust.com/). De algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
 
      Bijvoorbeeld, als de clientbrowser aanvragen `http://www.contoso.com/`, de algemene naam moet ook `http://www.contoso.com/`. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows PowerShell Web Access-gateway met een certificaat.
 
