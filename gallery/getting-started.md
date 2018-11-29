@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Aan de slag met de PowerShell Gallery
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225672"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576886"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
 
-De juiste manier om pakketten te installeren vanuit de PowerShell Gallery is met de cmdlets in de [PowerShellGet](/powershell/module/powershellget) module. U hoeft zich niet aanmelden bij het downloaden van items vanuit de PowerShell Gallery.
+De PowerShell Gallery is een pakketopslagplaats met scripts, modules en DSC-resources kunt u downloaden en gebruiken. Gebruik van de cmdlets in de [PowerShellGet](/powershell/module/powershellget) module om pakketten te installeren vanuit de PowerShell Gallery. U hoeft zich niet aanmelden bij het downloaden van items vanuit de PowerShell Gallery.
 
 > [!NOTE]
 > Het is mogelijk een pakket rechtstreeks downloaden vanuit de PowerShell Gallery, maar dit is niet een aanbevolen aanpak.
@@ -20,9 +20,9 @@ De juiste manier om pakketten te installeren vanuit de PowerShell Gallery is met
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Detectie van pakketten van de PowerShell Gallery
 
-U kunt pakketten in de PowerShell Gallery vinden met behulp van de **zoeken** besturingselement op deze website, of door te bladeren door de pagina's Modules en -Scripts. U kunt pakketten vanuit de PowerShell Gallery ook vinden door te voeren de [Find-Module][] en [Find-Script][] cmdlets, afhankelijk van het itemtype met `-Repository PSGallery`.
+U kunt pakketten in de PowerShell Gallery vinden met behulp van de **zoeken** besturingselement in de PowerShell Gallery [startpagina](https://www.powershellgallery.com), of door te bladeren door de Modules en -Scripts uit de [pakketten pagina ](https://www.powershellgallery.com/packages). U kunt pakketten vanuit de PowerShell Gallery ook vinden door te voeren de [Find-Module][], [sleutelwoorden zoeken-dscresource bieden], en [Find-Script][] cmdlets, afhankelijk van het pakkettype met `-Repository PSGallery`.
 
-Resultaten van de galerie filteren kan worden gedaan met behulp van de volgende parameters:
+U kunt de resultaten van de galerie filteren met behulp van de volgende parameters:
 
 - Naam
 - AllVersions
@@ -35,7 +35,7 @@ Resultaten van de galerie filteren kan worden gedaan met behulp van de volgende 
 - Opdracht
 - Filter
 
-Als u alleen geïnteresseerd in het detecteren van specifieke DSC-resources in de galerie bent, kunt u uitvoeren de [Zoeken naar sleutelwoorden-dscresource bieden] cmdlet. Zoeken naar sleutelwoorden-dscresource bieden retourneert gegevens van DSC-resources die zijn opgenomen in de galerie.
+Als u alleen geïnteresseerd in het detecteren van specifieke DSC-resources in de galerie bent, kunt u uitvoeren de [sleutelwoorden zoeken-dscresource bieden] cmdlet. Zoeken naar sleutelwoorden-dscresource bieden retourneert gegevens van DSC-resources die zijn opgenomen in de galerie.
 Omdat de DSC-resources worden altijd geleverd als onderdeel van een module, moet u nog steeds uitgevoerd [Install-Module][] voor het installeren van de DSC-resources.
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>Meer informatie over pakketten in de PowerShell Gallery
@@ -62,28 +62,28 @@ Als u ontdekt een pakket dat u denkt dat niet is gepubliceerd in goed vertrouwen
 
 ### <a name="install"></a>Installeren
 
-Voor het installeren van een pakket uit de galerie voor gebruik, voer een de [Install-Module][] of [Script voor installatie][] cmdlet, afhankelijk van het pakkettype.
+Voor het installeren van een pakket uit de galerie voor gebruik, voer een de [Install-Module][] of [installatiescript][] cmdlet, afhankelijk van het pakkettype.
 
 [Install-Module][] installeert van de module `$env:ProgramFiles\WindowsPowerShell\Modules` standaard.
 Hiervoor moet een administrator-account. Als u de `-Scope CurrentUser` parameter, de module is geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[Script voor installatie][] wordt geïnstalleerd met het script `$env:ProgramFiles\WindowsPowerShell\Scripts` standaard.
+[installatiescript][] wordt geïnstalleerd met het script `$env:ProgramFiles\WindowsPowerShell\Scripts` standaard.
 Hiervoor moet een administrator-account. Als u de `-Scope CurrentUser` parameter, het script is geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Standaard [Install-Module][] en [Script voor installatie][] installeert de meest recente versie van een pakket.
+Standaard [Install-Module][] en [installatiescript][] installeert de meest recente versie van een pakket.
 Voor het installeren van een oudere versie van het pakket, voeg de `-RequiredVersion` parameter.
 
 ### <a name="deploy"></a>Implementeer
 
-Voor het implementeren van een pakket vanuit de PowerShell Gallery voor Azure Automation, klikt u op **implementeren in Azure Automation** op de detailpagina van het pakket. U wordt omgeleid naar de Azure-beheerportal waar u zich aanmelden met behulp van de referenties van uw Azure-account. Houd er rekening mee dat voor het implementeren van pakketten met afhankelijkheden alle afhankelijkheden voor Azure Automation implementeren. De knop 'Implementeren voor Azure Automation' kan worden uitgeschakeld door toe te voegen de **AzureAutomationNotSupported** tag in de pakketmetagegevens van uw.
+Voor het implementeren van een pakket vanuit de PowerShell Gallery voor Azure Automation, klikt u op **Azure Automation**, klikt u vervolgens op **implementeren in Azure Automation** op de detailpagina van het pakket. U wordt omgeleid naar de Azure Management Portal waar u zich aanmelden met behulp van de referenties van uw Azure-account. Houd er rekening mee dat alle afhankelijkheden implementeren van pakketten met afhankelijkheden in Azure Automation implementeert. De knop 'Implementeren voor Azure Automation' kan worden uitgeschakeld door toe te voegen de **AzureAutomationNotSupported** tag in de pakketmetagegevens van uw.
 
 Zie voor meer informatie over Azure Automation, de [Azure Automation](/azure/automation) documentatie.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Pakketten vanuit de PowerShell Gallery worden bijgewerkt
 
-Voer de [Update-Module] [] of [updatescript] [] cmdlet voor het bijwerken van pakketten geïnstalleerd vanuit de PowerShell Gallery. Wanneer uitvoert zonder extra parameters, [] [-Update-Module] probeert bij te werken van elke module geïnstalleerd door te voeren [Install-Module][]. Als u wilt bijwerken selectief modules, toevoegen de `-Name` parameter.
+Voer de [Update-Module] [] of [updatescript] [] cmdlet voor het bijwerken van pakketten geïnstalleerd vanuit de PowerShell Gallery. Wanneer uitvoert zonder extra parameters, [] [-Update-Module] probeert bij te werken van alle modules die zijn geïnstalleerd door te voeren [Install-Module][]. Als u wilt bijwerken selectief modules, toevoegen de `-Name` parameter. 
 
-Op dezelfde manier als uitvoert zonder eventuele extra parameters, [updatescript] [] ook probeert om bij te werken van elk script dat is geïnstalleerd door te voeren [Script voor installatie][]. Als u selectief-bijwerken scripts, wilt toevoegen de `-Name` parameter.
+Op dezelfde manier als uitvoert zonder extra parameters, [updatescript] [] ook probeert bij te werken alle scripts die zijn geïnstalleerd door te voeren [installatiescript][]. Als u selectief-bijwerken scripts, wilt toevoegen de `-Name` parameter.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Lijst met pakketten die u hebt geïnstalleerd vanuit de PowerShell Gallery
 
@@ -91,13 +91,13 @@ Als u wilt weten welke modules die u hebt geïnstalleerd vanuit de PowerShell Ga
 
 Op dezelfde manier als u wilt weten welke scripts die u hebt geïnstalleerd vanuit de PowerShell Gallery, voer de [Get-InstalledScript][] cmdlet. Met deze opdracht worden alle van de scripts die u hebt op uw systeem en die rechtstreeks vanuit de PowerShell Gallery zijn geïnstalleerd.
 
-[Zoeken naar sleutelwoorden-dscresource bieden]: /powershell/module/powershellget/Find-DscResource
+[sleutelwoorden zoeken-dscresource bieden]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module
 [Find-Script]: /powershell/module/powershellget/Find-Script
 [Get-InstalledModule]: /powershell/module/powershellget/Get-InstalledModule
 [Get-InstalledScript]: /powershell/module/powershellget/Get-InstalledScript
 [Install-Module]: /powershell/module/powershellget/Install-Module
-[Script voor installatie]: /powershell/module/powershellget/Install-Script
+[installatiescript]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
