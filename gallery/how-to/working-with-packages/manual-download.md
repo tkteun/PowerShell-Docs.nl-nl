@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galerie, powershell, psgallery
 title: Pakket handmatig downloaden
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004039"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742819"
 ---
 # <a name="manual-package-download"></a>Pakket handmatig downloaden
 
-De Powershell Gallery biedt ondersteuning voor downloaden van een pakket van de website rechtstreeks, zonder gebruik van de PowerShellGet-cmdlets. Het pakket worden gedownload als een NuGet-pakket (.nupkg)-bestand, dat vervolgens eenvoudig kan worden gekopieerd naar een interne opslagplaats.
+De Powershell Gallery biedt ondersteuning voor downloaden van een pakket van de website rechtstreeks, zonder gebruik van de PowerShellGet-cmdlets. U kunt een pakket downloaden als een NuGet-pakket (.nupkg)-bestand, dat u vervolgens naar een interne opslagplaats kopiëren kunt.
 
 > [!NOTE]
 > Handmatige pakket downloaden is **niet** bedoeld als vervanging voor de cmdlet Install-Module.
@@ -45,7 +45,7 @@ De beste aanpak is het verwijderen van de NuGet-specifieke elementen uit de map.
 1. Pak de inhoud van het NuGet-pakket naar een lokale map.
 2. NuGet-specifieke elementen verwijderen uit de map.
 3. Wijzig de naam van de map. De standaardnaam van de map is meestal `<name>.<version>`. De versie kan bevatten "-prerelease ' als de module is gemarkeerd als een prerelease-versie. Wijzig de naam van de map tot alleen de modulenaam. Bijvoorbeeld, wordt 'azurerm.storage.5.0.4-preview' 'azurerm.storage'.
-4. Kopieer de map naar uw PSModulePath.
+4. Kopieer de map naar een van de mappen in de `$env:PSModulePath value`. `$env:PSModulePath` is een door puntkomma's gescheiden reeks paden waarin PowerShell er voor modules ziet.
 
 > [!IMPORTANT]
 > Bevat geen eventuele afhankelijkheden vereist door de module voor het handmatig worden gedownload. Als het pakket afhankelijkheden heeft, moeten ze worden geïnstalleerd op het systeem voor deze module correct te laten werken. De PowerShell-galerie bevat alle afhankelijkheden die zijn vereist voor het pakket.
