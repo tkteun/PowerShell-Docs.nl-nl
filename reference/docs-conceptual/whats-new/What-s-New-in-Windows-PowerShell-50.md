@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320717"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978892"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
 Windows PowerShell 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid wordt verbeterd, en kunnen u zelf regelen en beheren van Windows gebaseerde omgevingen gemakkelijker en uitgebreider.
@@ -410,7 +410,7 @@ Vanaf Windows PowerShell 3.0, auteurs van C# cmdlets kunt vullen de **HelpUri** 
 
 U kunt ook een **HelpUri** waarde in de eerste gerelateerde koppeling van een XML-indeling cmdlet help-bestand of de. De richtlijn van de koppeling van de help op basis van een opmerking in een functie.
 
-Zie voor meer informatie over ondersteunende online help [ondersteunende Online Help](https://go.microsoft.com/fwlink/?LinkId=242132) in MSDN.
+Zie voor meer informatie over ondersteunende online help [ondersteunende Online Help](/powershell/developer/module/supporting-online-help) in de Microsoft-Docs.
 
 ### <a name="cim-integration"></a>CIM-integratie
 
