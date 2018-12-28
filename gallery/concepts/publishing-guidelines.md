@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 description: Richtlijnen voor uitgevers
 title: PowerShell Gallery richtlijnen en aanbevolen procedures publiceren
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235402"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655392"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery richtlijnen en aanbevolen procedures publiceren
 
@@ -33,6 +33,7 @@ Pakketten die aan deze richtlijnen voldoet, zijn veel vaker zal worden gedownloa
 - Reageren op feedback
 - Bieden van modules in plaats van scripts
 - Vindt u koppelingen naar de projectsite van een
+- Label van het pakket met de compatibel PSEdition(s) en platforms 
 - Tests met uw modules bevatten
 - Opgenomen en/of te koppelen aan licentievoorwaarden
 - Meld u aan uw code
@@ -93,7 +94,7 @@ Gebruikers die feedback geven feitelijke zijn belangrijk om te reageren op, zoal
 Er zijn twee methoden voor feedback beschikbaar in de PowerShell Gallery:
 
 - Neem contact op met de eigenaar: Dit kan een gebruiker een e-mailbericht verzenden naar de eigenaar van het pakket. Als de eigenaar van een pakket, is het belangrijk om te controleren van het e-mailadres gebruikt in combinatie met de PowerShell Gallery-pakketten en reageren op problemen die worden gegenereerd. Een nadeel van deze methode is dat alleen de gebruiker en de eigenaar ooit de communicatie, zien zodat de eigenaar van de mogelijk moet u de dezelfde vraag worden beantwoord vaak.
-- Opmerkingen: Is een opmerkingenveld onder aan de pakketpagina.
+- Opmerkingen: Pagina is aan de onderkant van het pakket met een opmerkingenveld.
   Het voordeel van dit systeem is dat andere gebruikers kunnen zien de opmerkingen en -antwoorden, waardoor het aantal keren dat die een enkele vraag moet worden beantwoord.
   Als de eigenaar van een pakket, is het raadzaam dat u de opmerkingen voor elk pakket volgt.
 Zie [Feedback geven via Socialemedia of opmerkingen](../how-to/working-with-packages/social-media-feedback.md) voor meer informatie over hoe u dat doet.
@@ -134,6 +135,16 @@ Een koppeling toe te voegen, wordt dit gedaan door ProjectURI te nemen in de sec
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Wanneer een ProjectURI is opgegeven, wordt de PowerShell Gallery bevat een koppeling naar de Site van het Project aan de linkerkant van de pakketpagina.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Label van het pakket met de compatibel PSEdition(s) en platforms 
+
+De volgende codes gebruiken om te demonstreren aan gebruikers die pakketten goed met hun omgeving werkt:
+
+- PSEdition_Desktop: Pakketten die compatibel met Windows PowerShell zijn 
+- PSEdition_Core: Pakketten die compatibel met Powershell Core zijn 
+- Windows: Pakketten die compatibel zijn met het Windows-besturingssysteem
+- Linux: Pakketten die compatibel zijn met het Linux-besturingssystemen 
+- MacOS: Pakketten die compatibel zijn met het Mac-besturingssysteem
 
 ## <a name="include-tests"></a>Tests opnemen
 

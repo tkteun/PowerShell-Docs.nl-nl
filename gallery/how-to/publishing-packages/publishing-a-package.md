@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Het maken en publiceren van een item
-ms.openlocfilehash: ced892b558b81c3ef9575b5a01e74932515b412a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 3875c7ae8231f254e655f149c788503cb0b3077c
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004041"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655426"
 ---
 # <a name="creating-and-publishing-an-item"></a>Het maken en publiceren van een item
 
@@ -36,7 +36,7 @@ Als u een account hebt gemaakt, krijgt u de API-sleutel die nodig zijn voor het 
 Nadat u zich aan met het account, wordt uw gebruikersnaam wordt weergegeven aan de bovenkant van de PowerShell Gallery-pagina's in plaats van Register.
 Op uw gebruikersnaam te klikken gaat u naar de pagina Mijn Account waar u de API-sleutel vinden.
 
-Opmerking: De API-sleutel moet worden behandeld als veilig zijn als uw gebruikersnaam en wachtwoord.
+Opmerking: De API-sleutel moet zo veilig als uw gebruikersnaam en wachtwoord worden behandeld.
 Met deze sleutel kunt u of iemand anders, een item die in de PowerShell Gallery van jou bijwerken.
 Het is raadzaam het bijwerken van de sleutel regelmatig, die kan worden uitgevoerd met behulp van de sleutel opnieuw instellen op de pagina My Account.
 
@@ -56,10 +56,11 @@ PrivateData ondersteunt het toevoegen van nieuwe sleutels, zodat de elementen di
 Manifest elementen belangrijkste in te vullen voor u naar de PowerShell-galerie publiceren-item zijn:
 
 - Script of de naam van de Module - die zijn opgehaald uit de namen van de. Ps1 voor een script of het. PSD1 voor een module.
-- Versie - dit is een vereiste primaire sleutel, indeling diende SemVer-richtlijnen (Zie de aanbevolen procedures voor meer informatie)
-- Auteur: dit is een vereiste primaire sleutel en bevat de naam moet worden gekoppeld aan het item (auteurs en eigenaren, Zie hieronder)
+- Versie - dit is een vereiste primaire sleutel, indeling moet SemVer richtlijnen volgen. Zie de aanbevolen procedures voor meer informatie.
+- Auteur: dit is een vereiste primaire sleutel, en bevat de naam moet worden gekoppeld aan het item. Zie auteurs en eigenaren van onderstaande.
 - Beschrijving: dit is een vereiste primaire sleutel gebruikt om te kort wordt uitgelegd wat dit item doet en eventuele vereisten voor het gebruik ervan
 - ProjectURI - dit is een ten zeerste aanbevolen URI-veld in PSData waarmee een koppeling naar een Github-opslagplaats of soortgelijke locatie waar het doen van ontwikkeling op het item
+- Labels - het wordt sterk aanbevolen voor het taggen van uw pakket op basis van de compatibiliteit met PSEditions en platforms. Zie [richtlijnen publiceren](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) voor meer informatie.
 
 Auteurs en eigenaren van de PowerShell Gallery items verwante concepten zijn echter niet altijd overeenkomen.
 Itemeigenaars zijn gebruikers met PowerShell Gallery-accounts die gemachtigd voor het onderhouden van het item. Mogelijk zijn er veel eigenaren die elk item kunnen bijwerken.
@@ -104,7 +105,7 @@ De meeste van de andere opties op de opdrachtregel moet zich in het manifest geg
 Om fouten te voorkomen, het is raadzaam dat u probeert de opdrachten met - Whatif-Verbose, voordat u publiceert.
 Dit bespaart veel tijd sinds telkens wanneer u publiceren naar de PowerShell Gallery, moet u het versienummer in de manifest-sectie van het item bijwerken.
 
-Voorbeelden zijn: ' Publish-Module-pad '. \MyModule ' - RequiredVersion "0.0.1" - NugetAPIKey 'GUID' - Whatif-uitgebreide ' ' Publish-Script-pad '.\MyScriptFile.PS1' - NugetAPIKey 'GUID' - Whatif-uitgebreide '
+Voorbeelden zijn: ' Publiceren-Module-pad '. \MyModule ' - RequiredVersion "0.0.1" - NugetAPIKey 'GUID' - Whatif-uitgebreide ' ' publiceren-Script-pad '.\MyScriptFile.PS1' - NugetAPIKey 'GUID' - Whatif-uitgebreide '
 
 De uitvoer zorgvuldig te controleren, en als er geen fouten of waarschuwingen, herhaalt u de opdracht zonder - Whatif.
 

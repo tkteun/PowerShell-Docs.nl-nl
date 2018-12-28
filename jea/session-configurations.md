@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: JEA Sessieconfiguraties
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522951"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655460"
 ---
 # <a name="jea-session-configurations"></a>JEA Sessieconfiguraties
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Een JEA-eindpunt is op een systeem door het maken en registreren van een configuratiebestand van de PowerShell-sessie op een specifieke manier geregistreerd.
 Sessieconfiguraties bepalen *die* de JEA-eindpunt kunt gebruiken en welke rollen hebben ze toegang tot.
@@ -80,6 +80,8 @@ Wanneer een of meer beveiligingsgroepen is opgegeven, wordt niet langer de virtu
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Virtuele accounts krijgen tijdelijk de aanmelden als een service rechts in het beveiligingsbeleid van de lokale server.  Als een van de opgegeven VirtualAccountGroups is al toegekend dit recht in het beleid, worden de afzonderlijke virtuele account niet meer toegevoegd en verwijderd uit het beleid.  Dit kan zijn nuttig in scenario's zoals domeincontrollers waarbij wijzigingen aan het beveiligingsbeleid voor domeincontroller nauw worden gecontroleerd.  Dit is alleen beschikbaar in Windows Server 2016 met de November 2018 of later updatepakket en Windows Server 2019 met de 2019 januari of later updatepakket.
 
 #### <a name="group-managed-service-account"></a>Door groep beheerd serviceaccount
 

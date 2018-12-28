@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Script met compatibele PowerShell-edities
-ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002408"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655273"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele PowerShell-edities
 
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
-- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
+- **Desktop-editie:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows, zoals Server Core- en Windows Desktop volledige footprint.
 
-- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
+- **Core-editie:** Gebaseerd op .NET Core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows, zoals Nano Server en Windows IoT verminderde footprint.
 
 De actieve editie van PowerShell wordt weergegeven in de eigenschap PSEdition van $PSVersionTable.
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>Meer informatie
 
 - [Modules met PSEditions](module-psedition-support.md)
-- [Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-packages/searching-by-psedition.md)
+- [Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-packages/searching-by-compatibility.md)

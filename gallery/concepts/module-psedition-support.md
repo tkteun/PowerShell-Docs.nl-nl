@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Modules met compatibele PowerShell-edities
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002681"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655324"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibele PowerShell-edities
 
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
-- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
-- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
+- **Desktop-editie:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows, zoals Server Core- en Windows Desktop volledige footprint.
+- **Core-editie:** Gebaseerd op .NET Core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows, zoals Nano Server en Windows IoT verminderde footprint.
 
 De actieve editie van PowerShell wordt weergegeven in de eigenschap PSEdition van `$PSVersionTable`.
 
@@ -96,7 +96,7 @@ Auteurs kunnen publiceren een één module die gericht is op een van beide of be
 
 Een één-module kan worden gebruikt voor Desktop- en Core-edities, die de module auteur heeft om toe te voegen vereist logica in beide velden RootModule of in de module-manifest $PSEdition-variabele. Modules kunnen twee sets gecompileerde dll-bestanden die gericht is op CoreCLR zowel FullCLR hebben. Hier volgen de verschillende opties voor het verpakken van uw module met de logica voor het laden van de juiste DLL-bestanden.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Optie 1: Inpakken van een module die zijn gericht op meerdere versies en meerdere edities van PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Optie 1: Verpakking van een module die zijn gericht op meerdere versies en meerdere edities van PowerShell
 
 De inhoud van de module-map
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [Scripts met PSEditions](script-psedition-support.md)
 
-[Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-packages/searching-by-psedition.md)
+[Ondersteuning op PowerShellGallery PSEditions](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Modulemanifest bijwerken](/powershell/module/powershellget/update-modulemanifest)
