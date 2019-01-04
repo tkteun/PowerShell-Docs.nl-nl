@@ -1,15 +1,15 @@
 ---
-title: Het repliceren van de ISE-ervaring in Visual Studio Code
-description: Het repliceren van de ISE-ervaring in Visual Studio Code
+title: De ISE-ervaring in Visual Studio Code repliceren
+description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
-ms.openlocfilehash: 0ac38985a842a0dfc6118d0ae7116d12e1579daf
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655508"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012480"
 ---
-# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Het repliceren van de ISE-ervaring in Visual Studio Code
+# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
 
 Terwijl de PowerShell-extensie voor VSCode niet zoeken naar volledige functiepariteit met de PowerShell ISE, zijn er functies om de VSCode-ervaring voor gebruikers van de ISE natuurlijker maken.
 
@@ -57,7 +57,7 @@ Als u wilt stoppen met de geïntegreerde console bij het opstarten, instellen:
 ```
 
 > [!NOTE]
-> De achtergrond PowerShell-proces wordt nog steeds beginnen omdat dat intellisense, script-analyse, symbool navigatie, enzovoort biedt. Maar de console niet weergegeven.
+> De achtergrond PowerShell-proces wordt nog steeds beginnen omdat die zorgt voor IntelliSense, script-analyse, symbool navigatie, enzovoort. Maar de console niet weergegeven.
 
 ## <a name="assume-files-are-powershell-by-default"></a>Wordt ervan uitgegaan dat standaard worden bestanden PowerShell
 

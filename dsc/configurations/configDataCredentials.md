@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Referentieopties in de configuratiegegevens
-ms.openlocfilehash: a1ecccfd0560903fa8c1cec9a4d57e7217be7f6c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403986"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012429"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referentieopties in de configuratiegegevens
 >Van toepassing op: Windows PowerShell 5.0
@@ -41,23 +41,24 @@ $username = "User1"
 # DSC requires explicit confirmation before storing passwords insecurely
 $ConfigurationData = @{
     AllNodes = @(
-        @{
-            # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-            NodeName="*"
-            PSDscAllowPlainTextPassword = $true
-        },
-        #however, each node still needs to be explicitly defined for "*" to have meaning
-        @{
-            NodeName = "TestMachine1"
-        },
-        #we can also use a property to define node-specific passwords, although this is no more secure
-        @{
-            NodeName = "TestMachine2";
-            UserName = "User2"
-            LocalPassword = "ThisIsYetAnotherPlaintextPassword"
-        }
+            @{
+                # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
+                NodeName="*"
+                PSDscAllowPlainTextPassword = $true
+            },
+            #however, each node still needs to be explicitly defined for "*" to have meaning
+            @{
+                NodeName = "TestMachine1"
+            },
+            #we can also use a property to define node-specific passwords, although this is no more secure
+            @{
+                NodeName = "TestMachine2";
+                UserName = "User2"
+                LocalPassword = "ThisIsYetAnotherPlaintextPassword"
+            }
         )
 }
+
 configuration unencryptedPasswordDemo
 {
     Node "TestMachine1"
@@ -112,17 +113,48 @@ configuration unencryptedPasswordDemo
             MembersToInclude = "User2"
         }
     }
-
 }
+
 # We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
+
 # We need to pass the MOF to the machines we named.
 #-wait: doesn't use jobs so we get blocked at the prompt until the configuration is done
 #-verbose: so we can see what's going on and catch any errors
 #-force: for testing purposes, I run start-dscconfiguration frequently + want to make sure i'm
 #        not blocked by previous configurations that are still running
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
+```
+
+Dit is een fragment uit het bestand '.mof' is gegenereerd door de configuratie voor 'TestMachine1'. De `System.Security.SecureString` gebruikt in de configuratie is geconverteerd naar tekst zonder opmaak en opgeslagen in het bestand '.mof' als een `MSF_Credential`. Een `SecureString` is versleuteld met het huidige gebruikersprofiel voor. Dit werkt goed met alle vormen van extern beheer van PowerShell. Een bestand ".mof" is ontworpen om te worden van een zelfstandige configuratie alleen-mechanisme. Begin in PowerShell 5.0, zijn "MOF-bestanden op een knooppunt versleuteld in rust, maar niet in overdracht naar het knooppunt. Dit betekent dat de wachtwoorden in een bestand '.mof' worden weergegeven als niet-versleutelde tekst wanneer u ze op een knooppunt toepast. Voor het versleutelen van de referenties die u wilt gebruiken een **Pull-Server**. Zie voor meer informatie, [beveiligen MOF-bestanden met certificaten](./pull-server/secureMOF.md).
+
+```syntax
+instance of MSFT_Credential as $MSFT_Credential1ref
+{
+Password = "ThisIsYetAnotherPlaintextPassword";
+ UserName = "User2";
+
+};
+
+instance of MSFT_UserResource as $MSFT_UserResource1ref
+{
+ResourceID = "[User]User2";
+ Description = "local account";
+ UserName = "User2";
+ Ensure = "Present";
+ Password = $MSFT_Credential1ref;
+ Disabled = False;
+ SourceInfo = "::66::9::User";
+ PasswordNeverExpires = True;
+ ModuleName = "PsDesiredStateConfiguration";
+ PasswordChangeRequired = False;
+
+ModuleVersion = "1.0";
+
+ ConfigurationName = "unencryptedPasswordDemo";
+
+};
 ```
 
 ## <a name="handling-credentials-in-dsc"></a>Verwerken van de referenties in DSC
