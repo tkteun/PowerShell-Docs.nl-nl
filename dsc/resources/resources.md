@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Resources
-ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012446"
+ms.locfileid: "54046688"
 ---
 # <a name="dsc-resources"></a>DSC-Resources
 
@@ -104,3 +104,53 @@ Configuration TestConfig
 > Begin in PowerShell 5.0, is intellisense toegevoegd voor DSC. Deze nieuwe functie kunt u gebruikmaken van \<tabblad\> en \<Ctrl + spatie\> naar sleutelnamen automatisch aanvullen.
 
 ![Tab-aanvulling van resource](../media/resource-tabcompletion.png)
+
+## <a name="built-in-resources"></a>Ingebouwde resources
+
+Naast de bronnen van de community zijn er ingebouwde resources voor Windows, resources voor Linux en resources voor de afhankelijkheid van meerdere knooppunten. U kunt de bovenstaande stappen gebruiken om te bepalen van de syntaxis van deze resources en het gebruik ervan. De pagina's die u beschikbaar deze resources maakt zijn gearchiveerd onder **verwijzing**.
+
+Ingebouwde resources voor Windows
+
+* [Archiefresource](../reference/resources/windows/archiveResource.md)
+* [Omgevingsresource](../reference/resources/windows/environmentResource.md)
+* [Bestandsresource](../reference/resources/windows/fileResource.md)
+* [Groepsresource](../reference/resources/windows/groupResource.md)
+* [GroupSet-resource](../reference/resources/windows/groupSetResource.md)
+* [Logboekresource](../reference/resources/windows/logResource.md)
+* [Pakketresource](../reference/resources/windows/packageResource.md)
+* [ProcessSet-resource](../reference/resources/windows/ProcessSetResource.md)
+* [Registerresource](../reference/resources/windows/registryResource.md)
+* [Scriptresource](../reference/resources/windows/scriptResource.md)
+* [Serviceresource](../reference/resources/windows/serviceResource.md)
+* [ServiceSet-resource](../reference/resources/windows/serviceSetResource.md)
+* [Gebruikersresource](../reference/resources/windows/userResource.md)
+* [WindowsFeature-resource](../reference/resources/windows/windowsFeatureResource.md)
+* [WindowsFeatureSet-resource](../reference/resources/windows/windowsFeatureSetResource.md)
+* [WindowsOptionalFeature-resource](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [WindowsOptionalFeatureSet-resource](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsProcess-resource](../reference/resources/windows/windowsProcessResource.md)
+
+[Afhankelijkheid van meerdere knooppunten](../configurations/crossNodeDependencies.md) resources
+
+* [WaitForAll Resource](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome Resource](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny Resource](../reference/resources/windows/waitForAnyResource.md)
+
+Package Management-resources
+
+* [PackageManagement-Resource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Linux-resources
+
+* [Linux-Archiefresource](../reference/resources/linux/lnxArchiveResource.md)
+* [Linux-Omgevingsresource](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux FileLine Resource](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux-bestand voor Resource](../reference/resources/linux/lnxFileResource.md)
+* [Linux-groep-Resource](../reference/resources/linux/lnxGroupResource.md)
+* [Linux-Pakketresource](../reference/resources/linux/lnxPackageResource.md)
+* [Linux-Script-Resource](../reference/resources/linux/lnxScriptResource.md)
+* [Bron van het Linux-Service](../reference/resources/linux/lnxServiceResource.md)
+* [Linux SshAuthorizedKeys Resource](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux-gebruikersbron](../reference/resources/linux/lnxUserResource.md)

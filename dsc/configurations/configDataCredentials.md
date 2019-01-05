@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Referentieopties in de configuratiegegevens
-ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012429"
+ms.locfileid: "54046638"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referentieopties in de configuratiegegevens
 >Van toepassing op: Windows PowerShell 5.0
@@ -115,7 +115,8 @@ configuration unencryptedPasswordDemo
     }
 }
 
-# We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
+# We declared the ConfigurationData in a local variable, but we need to pass it
+# in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 
@@ -127,7 +128,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-Dit is een fragment uit het bestand '.mof' is gegenereerd door de configuratie voor 'TestMachine1'. De `System.Security.SecureString` gebruikt in de configuratie is geconverteerd naar tekst zonder opmaak en opgeslagen in het bestand '.mof' als een `MSF_Credential`. Een `SecureString` is versleuteld met het huidige gebruikersprofiel voor. Dit werkt goed met alle vormen van extern beheer van PowerShell. Een bestand ".mof" is ontworpen om te worden van een zelfstandige configuratie alleen-mechanisme. Begin in PowerShell 5.0, zijn "MOF-bestanden op een knooppunt versleuteld in rust, maar niet in overdracht naar het knooppunt. Dit betekent dat de wachtwoorden in een bestand '.mof' worden weergegeven als niet-versleutelde tekst wanneer u ze op een knooppunt toepast. Voor het versleutelen van de referenties die u wilt gebruiken een **Pull-Server**. Zie voor meer informatie, [beveiligen MOF-bestanden met certificaten](./pull-server/secureMOF.md).
+Dit is een fragment uit het bestand '.mof' is gegenereerd door de configuratie voor 'TestMachine1'. De `System.Security.SecureString` gebruikt in de configuratie is geconverteerd naar tekst zonder opmaak en opgeslagen in het bestand '.mof' als een `MSF_Credential`. Een `SecureString` is versleuteld met het huidige gebruikersprofiel voor. Dit werkt goed met alle vormen van extern beheer van PowerShell. Een bestand ".mof" is ontworpen om te worden van een zelfstandige configuratie alleen-mechanisme. Begin in PowerShell 5.0, zijn "MOF-bestanden op een knooppunt versleuteld in rust, maar niet in overdracht naar het knooppunt. Dit betekent dat de wachtwoorden in een bestand '.mof' worden weergegeven als niet-versleutelde tekst wanneer u ze op een knooppunt toepast. Voor het versleutelen van de referenties die u wilt gebruiken een **Pull-Server**. Zie voor meer informatie, [beveiligen MOF-bestanden met certificaten](../pull-server/secureMOF.md).
 
 ```syntax
 instance of MSFT_Credential as $MSFT_Credential1ref
