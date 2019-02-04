@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222170"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685254"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="2ac8d-102">Detectie van de PowerShell-Module installeren en met PowerShellGet inventariseren</span><span class="sxs-lookup"><span data-stu-id="2ac8d-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="7ec38-102">PowerShell-Module detecteren, installeren en inventariseren van scripts met PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="7ec38-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 
-<span data-ttu-id="2ac8d-103">PowerShellGet is opgenomen in deze versie van WMF:</span><span class="sxs-lookup"><span data-stu-id="2ac8d-103">PowerShellGet is included in this release of WMF:</span></span>
--   <span data-ttu-id="2ac8d-104">Zoek-Module kunt filteren op de metagegevens van de module met de - parameter van label</span><span class="sxs-lookup"><span data-stu-id="2ac8d-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
--   <span data-ttu-id="2ac8d-105">Zoek-Module kunt filteren op zoektaal opslagplaats-specifieke met de - parameter Filter</span><span class="sxs-lookup"><span data-stu-id="2ac8d-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
--   <span data-ttu-id="2ac8d-106">Zoek-Module kunt filteren op basis van de module met de opdracht-, - DscResource, inhoud en - parameters bevat</span><span class="sxs-lookup"><span data-stu-id="2ac8d-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
--   <span data-ttu-id="2ac8d-107">Zoeken naar DscResource kunt detectie van afzonderlijke DSC-resources in de opslagplaatsen</span><span class="sxs-lookup"><span data-stu-id="2ac8d-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
--   <span data-ttu-id="2ac8d-108">Ondersteuning voor het installeren van en publiceren naar de gedeelde bestanden met NuGet</span><span class="sxs-lookup"><span data-stu-id="2ac8d-108">Support for installing from and publishing to file shares with NuGet</span></span>
+<span data-ttu-id="7ec38-103">PowerShellGet is opgenomen in deze versie van WMF:</span><span class="sxs-lookup"><span data-stu-id="7ec38-103">PowerShellGet is included in this release of WMF:</span></span>
+-   <span data-ttu-id="7ec38-104">Find-Module kunt filteren op de metagegevens van de module met de - parameter Tag</span><span class="sxs-lookup"><span data-stu-id="7ec38-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+-   <span data-ttu-id="7ec38-105">Find-Module kunt filteren op zoektaal van de opslagplaats-specifieke met de parameter - Filter</span><span class="sxs-lookup"><span data-stu-id="7ec38-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
+-   <span data-ttu-id="7ec38-106">Find-Module kan filteren op basis van de module met de opdracht-, - sleutelwoorden dscresource bieden, inhoud en - parameters bevat</span><span class="sxs-lookup"><span data-stu-id="7ec38-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
+-   <span data-ttu-id="7ec38-107">Zoeken naar sleutelwoorden-dscresource bieden kunt detectie van afzonderlijke DSC-resources in opslagplaatsen</span><span class="sxs-lookup"><span data-stu-id="7ec38-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
+-   <span data-ttu-id="7ec38-108">Ondersteuning voor het installeren van en publiceren naar bestandsshares met NuGet</span><span class="sxs-lookup"><span data-stu-id="7ec38-108">Support for installing from and publishing to file shares with NuGet</span></span>
 
-## <a name="example-commands"></a><span data-ttu-id="2ac8d-109">Voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="2ac8d-109">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="7ec38-109">Van de voorbeeldopdrachten</span><span class="sxs-lookup"><span data-stu-id="7ec38-109">Example commands</span></span>
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -52,10 +52,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a><span data-ttu-id="2ac8d-110">Nieuwe functies in PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="2ac8d-110">New features in PowerShellGet</span></span>
--   <span data-ttu-id="2ac8d-111">Side-by-side-versie-ondersteuning in Windows PowerShell 5.0 of hoger</span><span class="sxs-lookup"><span data-stu-id="2ac8d-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
--   <span data-ttu-id="2ac8d-112">Ondersteuning voor de installatie van module afhankelijkheid</span><span class="sxs-lookup"><span data-stu-id="2ac8d-112">Module dependency installation support</span></span>
--   <span data-ttu-id="2ac8d-113">Drie nieuwe cmdlets</span><span class="sxs-lookup"><span data-stu-id="2ac8d-113">Three new cmdlets</span></span>
-    -   <span data-ttu-id="2ac8d-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="2ac8d-114">Get-InstalledModule</span></span>
-    -   <span data-ttu-id="2ac8d-115">Verwijderen-Module</span><span class="sxs-lookup"><span data-stu-id="2ac8d-115">Uninstall-Module</span></span>
-    -   <span data-ttu-id="2ac8d-116">Opslaan-Module</span><span class="sxs-lookup"><span data-stu-id="2ac8d-116">Save-Module</span></span>
+## <a name="new-features-in-powershellget"></a><span data-ttu-id="7ec38-110">Nieuwe functies in PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="7ec38-110">New features in PowerShellGet</span></span>
+-   <span data-ttu-id="7ec38-111">Ondersteuning voor de side-by-side-versie van Windows PowerShell 5.0 of hoger</span><span class="sxs-lookup"><span data-stu-id="7ec38-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+-   <span data-ttu-id="7ec38-112">Ondersteuning voor de installatie van module afhankelijkheid</span><span class="sxs-lookup"><span data-stu-id="7ec38-112">Module dependency installation support</span></span>
+-   <span data-ttu-id="7ec38-113">Drie nieuwe cmdlets</span><span class="sxs-lookup"><span data-stu-id="7ec38-113">Three new cmdlets</span></span>
+    -   <span data-ttu-id="7ec38-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="7ec38-114">Get-InstalledModule</span></span>
+    -   <span data-ttu-id="7ec38-115">Verwijderen-Module</span><span class="sxs-lookup"><span data-stu-id="7ec38-115">Uninstall-Module</span></span>
+    -   <span data-ttu-id="7ec38-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="7ec38-116">Save-Module</span></span>
