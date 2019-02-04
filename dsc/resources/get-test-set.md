@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Get-Test-Set
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403984"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687732"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Ophalen, testen, en instellen](/media/get-test-set.png)
+![Ophalen, testen en instellen](/media/get-test-set.png)
 
 PowerShell Desired State Configuration is opgebouwd rond een **ophalen**, **Test**, en **ingesteld** proces. DSC [resources](resources.md) elk bevat methoden voor het voltooien van elk van deze bewerkingen. In een [configuratie](../configurations/configurations.md), definieert u de resource-blokken in te vullen in sleutels die parameters voor een resource worden **ophalen**, **Test**, en **instellen** methoden.
 
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Zie ook
 
-- [Overzicht van Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Overzicht van Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Instellen van een SMB-pull-server](../pull-server/pullServerSMB.md)
 - [Een pull-client configureren](../pull-server/pullClientConfigID.md)

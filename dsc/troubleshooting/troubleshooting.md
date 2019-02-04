@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Problemen met DSC oplossen
 ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404361"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684953"
 ---
 # <a name="troubleshooting-dsc"></a>Problemen met DSC oplossen
 
@@ -15,7 +15,7 @@ _Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 In dit onderwerp wordt beschreven hoe problemen met DSC wanneer er zich problemen voordoen.
 
-## <a name="winrm-dependency"></a>WinRM-afhankelijkheid
+## <a name="winrm-dependency"></a>WinRM Dependency
 
 Windows PowerShell Desired State Configuration (DSC), is afhankelijk van WinRM. WinRM is niet standaard ingeschakeld op Windows Server 2008 R2 en Windows 7. Voer `Set-WSManQuickConfig`, in een Windows PowerShell met verhoogde bevoegdheden om in te schakelen WinRM-sessie.
 

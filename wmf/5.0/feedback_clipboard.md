@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: e6b54519d878ab572662075709beb4cf4454b0c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d5ec95abb1d3160afc4179cff991cb5ef72d85fe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188054"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685919"
 ---
 # <a name="clipboard-cmdlets"></a>Klembord-cmdlets
-**Get-Klembord** en **Set Klembord** het eenvoudiger voor u om inhoud naar en van een Windows PowerShell-sessie te brengen. Bijvoorbeeld, als u Windows Verkenner gebruiken drie bestanden naar het Klembord te kopiëren (door ze te selecteren en op `ctrl-c`, bijvoorbeeld), u kunt vervolgens gemakkelijk toegang tot de inhoud van het Klembord als een lijst met bestanden:
+**Get-Klembord** en **Set-Klembord** maken het gemakkelijker voor u om inhoud naar en van een Windows PowerShell-sessie te brengen. Bijvoorbeeld, als u Windows Verkenner gebruiken drie bestanden naar het Klembord te kopiëren (door ze te selecteren en op `ctrl-c`, bijvoorbeeld), u kunt vervolgens gemakkelijk toegang tot de inhoud van het Klembord als een lijst van bestanden:
 
 ```powershell
 PS C:\\&gt; Get-Clipboard -Format FileDropList
@@ -28,4 +28,4 @@ Mode LastWriteTime Length Name
 ```
 
 
-De Klembord-cmdlets ondersteunen afbeeldingen, audio-bestanden, bestandslijsten en tekst.
+De Klembord-cmdlets bieden ondersteuning voor afbeeldingen, audio-bestanden, bestandslijsten en tekst.

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Instellen van een Pull-Client met behulp van configuratie-ID's in PowerShell 4.0
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404397"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685478"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Instellen van een Pull-Client met behulp van configuratie-ID's in PowerShell 4.0
 
@@ -47,7 +47,7 @@ U kunt een willekeurige maken **Guid** met behulp van het voorbeeld hieronder.
 
 Elke client moet worden geconfigureerd in **Pull** modus en de url van de pull-server waar de configuratie is opgeslagen. Om dit te doen, moet u de lokale Configuration Manager (LCM) configureren met de benodigde informatie. Als u wilt de LCM configureren, u een speciaal soort configuratie maken met een **LocalConfigurationManager** blokkeren. Zie voor meer informatie over het configureren van de LCM [de Local Configuration Manager configureren](../managing-nodes/metaConfig4.md).
 
-## <a name="http-dsc-pull-server"></a>HTTP-DSC-Pull-Server
+## <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Als de pull-server is ingesteld als een webservice, stelt u de **DownloadManagerName** naar **WebDownloadManager**. De **WebDownloadManager** dat u opgeeft moet een **ServerUrl** naar de **DownloadManagerCustomData** sleutel. U kunt ook een waarde voor opgeven **AllowUnsecureConnection**, zoals in het onderstaande voorbeeld. Het volgende script wordt de LCM geconfigureerd voor pull-configuraties van een server met de naam 'PullServer'.
 

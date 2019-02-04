@@ -4,11 +4,11 @@ ms.date: 06/21/2018
 keywords: DSC, powershell, azure,-extensie
 title: Versiegeschiedenis van Azure DSC-extensie
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404366"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688124"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versiegeschiedenis van Azure Desired State Configuration-extensie
 
@@ -159,7 +159,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-220"></a>Versie 2,20
 
 - **Uitgebracht op:** 2 augustus 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.1 Preview, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -170,7 +170,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version--219"></a>Versie 2.19
 
 - **Uitgebracht op:** 3 juni 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Omgeving:** Azure, Azure China, Azure Government
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -180,7 +180,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-218"></a>Versie 2.18
 
 - **Uitgebracht op:** 3 juni 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -192,7 +192,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-217"></a>Versie 2.17
 
 - **Uitgebracht op:** 26 april 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -203,7 +203,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-216"></a>Versie 2,16
 
 - **Uitgebracht op:** 21 april 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -214,7 +214,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-215"></a>Versie 2.15
 
 - **Uitgebracht op:** 14 maart 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
@@ -227,7 +227,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 ### <a name="version-214"></a>Versie 2.14
 
 - **Uitgebracht op:** 25 februari 2016
-- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, WindowsServer 2012, Windows Server 2008 R2 SP1
+- **Ondersteuning voor het besturingssysteem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **WMF-ondersteuning:** WMF 5.0 RTM, WMF 4.0
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).

@@ -3,13 +3,13 @@ ms.date: 04/11/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-pull-service
 ms.openlocfilehash: 659a8f8b2ce7d34058e789c5de336dc1f1f2abb2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403993"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687795"
 ---
-# <a name="desired-state-configuration-pull-service"></a>Pull-Service voor Desired State Configuration
+# <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull Service
 
 > Van toepassing op: Windows PowerShell 5.0
 
@@ -24,7 +24,7 @@ Dit concept wordt aangeduid als 'pull-service'.
 
 De huidige opties voor het pull-service zijn onder andere:
 
-- Azure Automation Desired State Configuration-service
+- Azure Automation Desired State Configuration service
 - Een pull-service die wordt uitgevoerd op Windows Server
 - Community onderhouden open-source-oplossingen
 - Een SMB-share
@@ -59,7 +59,7 @@ Vereisten voor het gebruik van een pull-server:
 - Een server met:
   - WMF/PowerShell 5.0 of hoger
   - IIS-serverrol
-  - DSC-Service
+  - DSC Service
 - In het ideale geval sommige betekent dat voor het genereren van een certificaat voor het beveiligen van referenties die zijn doorgegeven aan de lokale Configuration Manager (LCM) op de doelknooppunten
 
 De beste manier om Windows Server configureren voor host pull-service is het gebruik van een DSC-configuratie.
@@ -69,7 +69,7 @@ Hieronder vindt u een voorbeeldscript.
 
 |WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (Windows Server Insider Preview 17090)|
 |---------|---------|---------|---------|
-|MDB     |ESENT (standaard), MDB |ESENT (standaard), MDB|ESENT (standaard), SQL Server, MDB
+|MDB     |ESENT (Default), MDB |ESENT (Default), MDB|ESENT (standaard), SQL Server, MDB
 
 Vanaf de release 17090 van [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server is een ondersteunde optie voor het Pull-Service (Windows-functie *DSC-Service*).  Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die nog niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -276,5 +276,5 @@ De volgende onderwerpen wordt het instellen van pull-clients in detail beschreve
 - [Windows PowerShell Desired State Configuration-overzicht](../overview/overview.md)
 - [Configuraties doorvoeren](enactingConfigurations.md)
 - [Een DSC-rapportserver gebruiken](reportServer.md)
-- [[MS-DSCPM]: Pull-Model Protocol Desired State Configuration](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Pull-Model Protocol fouten Desired State Configuration](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata](https://msdn.microsoft.com/library/mt612824.aspx)

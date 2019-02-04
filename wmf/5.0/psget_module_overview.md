@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222170"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685254"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Detectie van de PowerShell-Module installeren en met PowerShellGet inventariseren
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShell-Module detecteren, installeren en inventariseren van scripts met PowerShellGet
 
 PowerShellGet is opgenomen in deze versie van WMF:
--   Zoek-Module kunt filteren op de metagegevens van de module met de - parameter van label
--   Zoek-Module kunt filteren op zoektaal opslagplaats-specifieke met de - parameter Filter
--   Zoek-Module kunt filteren op basis van de module met de opdracht-, - DscResource, inhoud en - parameters bevat
--   Zoeken naar DscResource kunt detectie van afzonderlijke DSC-resources in de opslagplaatsen
--   Ondersteuning voor het installeren van en publiceren naar de gedeelde bestanden met NuGet
+-   Find-Module kunt filteren op de metagegevens van de module met de - parameter Tag
+-   Find-Module kunt filteren op zoektaal van de opslagplaats-specifieke met de parameter - Filter
+-   Find-Module kan filteren op basis van de module met de opdracht-, - sleutelwoorden dscresource bieden, inhoud en - parameters bevat
+-   Zoeken naar sleutelwoorden-dscresource bieden kunt detectie van afzonderlijke DSC-resources in opslagplaatsen
+-   Ondersteuning voor het installeren van en publiceren naar bestandsshares met NuGet
 
-## <a name="example-commands"></a>Voorbeeldopdrachten
+## <a name="example-commands"></a>Van de voorbeeldopdrachten
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -53,9 +53,9 @@ Find-Module -Filter RBAC -Repository PSGallery
 ```
 
 ## <a name="new-features-in-powershellget"></a>Nieuwe functies in PowerShellGet
--   Side-by-side-versie-ondersteuning in Windows PowerShell 5.0 of hoger
+-   Ondersteuning voor de side-by-side-versie van Windows PowerShell 5.0 of hoger
 -   Ondersteuning voor de installatie van module afhankelijkheid
 -   Drie nieuwe cmdlets
     -   Get-InstalledModule
     -   Verwijderen-Module
-    -   Opslaan-Module
+    -   Save-Module

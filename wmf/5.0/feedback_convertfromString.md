@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892351"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685618"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Gestructureerd objecten buiten tekenreeks uitpakken en parseren
 
@@ -31,8 +31,8 @@ Gescheiden parseren, standaard, splitst de invoer op witruimte en namen van eige
 ```
 
 ```output
-P1     P2
---     --
+P1     P2
+--     --
 Hello  World
 ```
 
@@ -41,49 +41,49 @@ De cmdlet biedt ook ondersteuning voor automatisch gegenereerde voorbeeld gebase
 Als u wilt beginnen, kunt u overwegen een op tekst gebaseerde adresboek:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 
-    Thomas Hardy
+    Thomas Hardy
 
-    Seattle, WA
+    Seattle, WA
 
-    Christina Berglund
+    Christina Berglund
 
-    Redmond, WA
+    Redmond, WA
 
-    Hanna Moos
+    Hanna Moos
 
-    Puyallup, WA
+    Puyallup, WA
 ```
 
 Enkele voorbeelden kopiëren naar een bestand, dat u als de sjabloon gebruikt:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 ```
 
 Plaats accolades om de gegevens die u ophalen wilt, een naam geven als u dit doet. Omdat de **naam** eigenschap (en de andere eigenschappen die zijn gekoppeld) kunnen meerdere keren worden weergegeven, gebruikt u een sterretje (\*) om aan te geven dat dit resulteert in meerdere records (in plaats van een aantal eigenschappen in één extraheren record):
 
 ```
-    {Name\*:Ana Trujillo}
+    {Name\*:Ana Trujillo}
 
-    {City:Redmond}, {State:WA}
+    {City:Redmond}, {State:WA}
 
-    {Name\*:Antonio Moreno}
+    {Name\*:Antonio Moreno}
 
-    {City:Renton}, {State:WA}
+    {City:Renton}, {State:WA}
 ```
 
 In deze reeks voorbeelden, `ConvertFrom-String` uitvoer op basis van het object nu automatisch uit invoerbestanden met vergelijkbare structuur extraheren.
@@ -93,13 +93,13 @@ Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresse
 ```
 
 ```output
-ExtentText                     Name               City     State
-----------                     ----               ----     -----
-Ana Trujillo...                Ana Trujillo       Redmond  WA
-Antonio Moreno...              Antonio Moreno     Renton   WA
-Thomas Hardy...                Thomas Hardy       Seattle  WA
-Christina Berglund...          Christina Berglund Redmond  WA
-Hanna Moos...                  Hanna Moos         Puyallup WA
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
 ```
 
 Aanvullende gegevens manipuleren op geëxtraheerde tekst, doet de **ExtentText** eigenschap bevat de onbewerkte tekst waaruit de record is opgehaald. Feedback geven over deze functie of inhoud die u ondervindt problemen bij het schrijven van voorbeelden te delen, stuur e-mail <psdmfb@microsoft.com>.
