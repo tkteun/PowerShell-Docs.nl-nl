@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 6dadbe9c41ed0a61839ef94fe0a950fe501941ee
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e61f59f8f7634853c9f6e0d3923939543ff04f20
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219229"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685611"
 ---
-# <a name="information-stream"></a><span data-ttu-id="d5263-102">Gegevensstroom</span><span class="sxs-lookup"><span data-stu-id="d5263-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="c3c44-102">Gegevensstroom</span><span class="sxs-lookup"><span data-stu-id="c3c44-102">Information Stream</span></span>
 
-<span data-ttu-id="d5263-103">Een nieuwe gestructureerde gegevens stream kan nu worden gebruikt voor het verzenden van gestructureerde gegevens tussen een script en de host.</span><span class="sxs-lookup"><span data-stu-id="d5263-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="d5263-104">**Write-Host** ook bijgewerkt met de uitvoer naar de stroom informatie kunt u nu vastleggen of het stilte verzenden.</span><span class="sxs-lookup"><span data-stu-id="d5263-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="d5263-105">De nieuwe **schrijven informatie** cmdlet (samen met een bijbehorende WriteInformation-API) gebruikt met **- InformationVariable** en **- InformationAction** algemene parameters kunt u meer flexibiliteit en mogelijkheid.</span><span class="sxs-lookup"><span data-stu-id="d5263-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="c3c44-103">Een nieuwe gestructureerde gegevensstroom kan nu worden gebruikt voor het verzenden van gestructureerde gegevens tussen een script en de host.</span><span class="sxs-lookup"><span data-stu-id="c3c44-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="c3c44-104">**Write-Host** is ook bijgewerkt voor het verzenden van de uitvoer naar de stroom informatie kunt u nu vastleggen of het stilte.</span><span class="sxs-lookup"><span data-stu-id="c3c44-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="c3c44-105">De nieuwe **schrijven gegevens** cmdlet (samen met een bijbehorende WriteInformation-API) die wordt gebruikt met **- InformationVariable** en **- InformationAction** algemene parameters Hiermee kunt meer flexibiliteit en mogelijkheden.</span><span class="sxs-lookup"><span data-stu-id="c3c44-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -69,7 +69,7 @@ MessageData
 {[Message, =============================], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMa...
 {[Message, I ], [NoNewLine, True], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
 {[Message, <3], [NoNewLine, True], [ForegroundColor, Red], [BackgroundColor, DarkMagenta]}
-{[Message,  Output], [NoNewLine, False], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
+{[Message,  Output], [NoNewLine, False], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
 {[Message, =============================], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMa...
 {[Message, ], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMagenta]}
 {[Message, SCRIPT COMPLETE!One!Eleven!], [NoNewLine, False], [ForegroundColor, Green], [BackgroundColor, DarkMagenta]}
@@ -91,34 +91,34 @@ PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
 PS C:\Users\demo> $ivOutput.Process
-MessageData     : System.Diagnostics.Process (powershell)
-Source          : c:\temp\OutputGusher.ps1
-TimeGenerated   : 2/9/2015 5:08:52 PM
-Tags            : {Process}
-User            : demo
-Computer        : srv2
-ProcessId       : 4008
-NativeThreadId  : 7980
+MessageData     : System.Diagnostics.Process (powershell)
+Source          : c:\temp\OutputGusher.ps1
+TimeGenerated   : 2/9/2015 5:08:52 PM
+Tags            : {Process}
+User            : demo
+Computer        : srv2
+ProcessId       : 4008
+NativeThreadId  : 7980
 ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
 PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-    559      41   119704     130968 ...46     7.77   4008 powershell
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    559      41   119704     130968 ...46     7.77   4008 powershell
 
 PS C:\Users\demo> $information = $ps.Streams.Information
 PS C:\Users\demo> $information | ? { $_.Tags -contains 'LogLow'}
 
-MessageData     : Some spammy logging information
-Source          : C:\temp\OutputGusher.ps1
-TimeGenerated   : 2/9/2015 5:08:53 PM
-Tags            : {LogLow}
-User            : demo
-Computer        : srv2
-ProcessId       : 4008
-NativeThreadId  : 2276
+MessageData     : Some spammy logging information
+Source          : C:\temp\OutputGusher.ps1
+TimeGenerated   : 2/9/2015 5:08:53 PM
+Tags            : {LogLow}
+User            : demo
+Computer        : srv2
+ProcessId       : 4008
+NativeThreadId  : 2276
 ManagedThreadId : 14
 ```

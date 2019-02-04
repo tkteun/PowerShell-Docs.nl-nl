@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 9486fdbaeca66c83551564c76ce47482f77c36b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 424e0b7a4d62fc35e5040a7e425950e887021d7e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225603"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683777"
 ---
-# <a name="call-base-class-constructor"></a><span data-ttu-id="b5304-102">Klasseconstructor oproepbasis</span><span class="sxs-lookup"><span data-stu-id="b5304-102">Call Base Class Constructor</span></span>
+# <a name="call-base-class-constructor"></a><span data-ttu-id="b58fd-102">Klasseconstructor oproepbasis</span><span class="sxs-lookup"><span data-stu-id="b58fd-102">Call Base Class Constructor</span></span>
 
-<span data-ttu-id="b5304-103">Als u een constructor basisklasse vanuit een subklasse, gebruikt u het sleutelwoord **base**:</span><span class="sxs-lookup"><span data-stu-id="b5304-103">To call a base class constructor from a subclass, use the keyword **base**:</span></span>
+<span data-ttu-id="b58fd-103">Als u wilt een oproepbasis aanroepen vanuit een subklasse, gebruikt u het sleutelwoord **basis**:</span><span class="sxs-lookup"><span data-stu-id="b58fd-103">To call a base class constructor from a subclass, use the keyword **base**:</span></span>
 
 ```powershell
 class A
@@ -31,7 +31,7 @@ class B : A
 [B]::new().a # return 103
 ```
 
-<span data-ttu-id="b5304-104">Als een basisklasse heeft een standaardconstructor (niets parameter), kunt u een expliciete constructoraanroep weglaten:</span><span class="sxs-lookup"><span data-stu-id="b5304-104">If a base class has a default (no parameter) constructor, you can omit an explicit constructor call:</span></span>
+<span data-ttu-id="b58fd-104">Als een basisklasse heeft een standaardconstructor (Er is geen parameter), kunt u een expliciete constructoraanroep weglaten:</span><span class="sxs-lookup"><span data-stu-id="b58fd-104">If a base class has a default (no parameter) constructor, you can omit an explicit constructor call:</span></span>
 
 ```powershell
 class C : B
