@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: toegangsproblemen in windows powershell-webtoegang oplossen
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403973"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688117"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
 Bijgewerkt: Juni 24 2013 (herziene versie van 23 augustus 2017)
 
-Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
+Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 De volgende secties enkele veelvoorkomende problemen identificeren tijdens het verbinding maken met een externe computer met Windows PowerShell-webtoegang en de tabel bevat suggesties voor het oplossen van problemen.
 
@@ -91,21 +91,21 @@ Gebruik een punt (.) niet op zichzelf voor de computernaam van de.
 
 #### <a name="all-cases"></a>Alle aanvragen
 
-Parameter | Value
+Parameter | Waarde
 -- | --
 UserName | Server\_naam\\gebruiker\_naam<br/>Localhost\\gebruiker\_naam<br/>. \\gebruiker\_naam
-Gebruikersgroep | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruiker\_groep<br/>. \\gebruiker\_groep
-ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_groep<br/>. \\computer\_groep
+Gebruikersgroep | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruiker\_groep<br/>.\\user\_group
+ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_group<br/>.\\computer\_group
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
-Parameter | Value
+Parameter | Waarde
 -- | --
 ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
-Parameter | Value
+Parameter | Waarde
 -- | --
 ComputerName | Servernaam
 
@@ -139,4 +139,4 @@ Zie voor meer informatie over IPv6-adressen, [How IPv6 Works](https://technet.mi
 
 - [Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [De webgebaseerde Windows PowerShell-Console gebruiken](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

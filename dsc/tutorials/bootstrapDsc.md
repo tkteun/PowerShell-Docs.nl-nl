@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404393"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686906"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
 
@@ -18,16 +18,17 @@ ms.locfileid: "53404393"
 
 > [!NOTE]
 > De **DSCAutomationHostEnabled** registersleutel die worden beschreven in dit onderwerp is niet beschikbaar in PowerShell 4.0.
-> Zie voor informatie over het configureren van nieuwe virtuele machines bij de eerste keer opstarten in PowerShell 4.0 [wilt automatisch configureren van uw Machines met behulp van DSC bij de eerste keer opstarten?] > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Zie voor meer informatie over het configureren van nieuwe virtuele machines bij de eerste keer opstarten in PowerShell 4.0 [wilt automatisch configureren van uw Machines met behulp van DSC bij de eerste keer opstarten?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Om uit te voeren van deze voorbeelden, hebt u het volgende nodig:
 
-- Een opstartbare virtuele harde schijf om te werken met. U kunt een ISO met een evaluatieversie van Windows Server 2016 op downloaden [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). U vindt instructies over het maken van een VHD van een ISO-installatiekopie op [opstartbare virtuele Hardeschijven maken](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Een opstartbare virtuele harde schijf om te werken met. U kunt een ISO met een evaluatieversie van Windows Server 2016 op downloaden [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  U vindt instructies over het maken van een VHD van een ISO-installatiekopie op [opstartbare virtuele Hardeschijven maken](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Een hostcomputer waarop Hyper-V is ingeschakeld. Zie voor meer informatie, [overzicht van Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   U kunt software-installatie en configuratie voor een computer bij de eerste keer opstarten automatiseren met behulp van DSC.
   U doen dit door een van beide injecteren van een MOF-configuratiebestand of een metaconfiguration in opstartbare media (zoals een VHD) zodat ze worden uitgevoerd tijdens de eerste keer opstarten.
-  Dit gedrag is opgegeven door de [de registersleutel dscautomationhostenabled](DSCAutomationHostEnabled.md) registersleutel onder `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Dit gedrag is opgegeven door de [de registersleutel dscautomationhostenabled](DSCAutomationHostEnabled.md) registersleutel onder `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   Standaard is de waarde van deze sleutel 2, waarmee DSC om uit te voeren bij het opstarten.
 
   Als u niet dat DSC om uit te voeren bij het opstarten wilt, stel de waarde van de [de registersleutel dscautomationhostenabled](DSCAutomationHostEnabled.md) registersleutel in op 0.
@@ -172,7 +173,7 @@ U kunt dit controleren door het aanroepen van de [Get-WindowsFeature](/powershel
 
 ## <a name="disable-dsc-at-boot-time"></a>DSC bij het opstarten uitschakelen
 
-Standaard is de waarde van de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` sleutel is ingesteld op 2, waarmee een DSC-configuratie voor het uitvoeren als de computer is in behandeling of de huidige status. Als u niet dat een configuratie om uit te voeren bij de eerste keer opstarten wilt, moet u dus de waarde van deze sleutel instellen op 0:
+Standaard is de waarde van de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` sleutel is ingesteld op 2, waarmee een DSC-configuratie voor het uitvoeren als de computer is in behandeling of de huidige status. Als u niet dat een configuratie om uit te voeren bij de eerste keer opstarten wilt, moet u dus de waarde van deze sleutel instellen op 0:
 
 1. De VHD koppelen door het aanroepen van de [VHD koppelen](/powershell/module/hyper-v/mount-vhd) cmdlet. Bijvoorbeeld:
 
@@ -186,10 +187,10 @@ Standaard is de waarde van de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Cur
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Navigeer naar de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` met behulp van de PowerShell-registerprovider.
+3. Navigeer naar de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` met behulp van de PowerShell-registerprovider.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Wijzig de waarde van `DSCAutomationHostEnabled` op 0.

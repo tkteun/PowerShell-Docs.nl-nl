@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Met software-installaties werken
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404614"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686724"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
 
@@ -89,7 +89,7 @@ Hoewel we nu verschillende manieren om te kijken naar toepassingen die het Windo
 
 Hoewel er geen gegarandeerde manier om te vinden van elke toepassing op een systeem is, is het mogelijk om te zoeken van alle programma's met aanbiedingen weergegeven in het dialoogvenster toevoegen of verwijderen van programma's. Toevoegen of verwijderen van programma's vindt deze toepassingen in de volgende registersleutel:
 
-**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\verwijderen**.
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
 
 We kunnen ook naar de deze sleutel om te zoeken naar toepassingen. Als u wilt maken het gemakkelijker om de sleutel verwijderen weer te geven, kunnen we een Windows PowerShell-station worden toegewezen aan deze registerlocatie:
 

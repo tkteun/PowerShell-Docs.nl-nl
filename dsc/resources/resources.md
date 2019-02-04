@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Resources
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046688"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686066"
 ---
 # <a name="dsc-resources"></a>DSC-Resources
 
@@ -19,7 +19,7 @@ Een resource kan iets als algemene als een bestand of de instelling van een IIS-
 
 Elke resource heeft een * schema waarmee wordt bepaald van de syntaxis van de benodigde voor het gebruik van de resource in een [configuratie](../configurations/configurations.md). Schema van een resource kan worden gedefinieerd in de volgende manieren:
 
-- **'Schema.Mof'** bestand: De meeste resources definiëren hun *schema* in een 'schema.mof'-bestand, met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- **'Schema.Mof'** file: De meeste resources definiëren hun *schema* in een 'schema.mof'-bestand, met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
 - **'\<Resourcenaam\>. schema.psm1'** bestand: [Samengestelde Resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een '<ResourceName>. schema.psm1' met behulp van het bestand een [parameterblok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
 - **'\<Resourcenaam\>.psm1'** bestand: Klasse van DSC-resources definiëren hun *schema* in het klassendefinitie van de. Syntaxis van de items worden aangeduid als de klasse-eigenschappen. Zie voor meer informatie, [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
@@ -109,7 +109,7 @@ Configuration TestConfig
 
 Naast de bronnen van de community zijn er ingebouwde resources voor Windows, resources voor Linux en resources voor de afhankelijkheid van meerdere knooppunten. U kunt de bovenstaande stappen gebruiken om te bepalen van de syntaxis van deze resources en het gebruik ervan. De pagina's die u beschikbaar deze resources maakt zijn gearchiveerd onder **verwijzing**.
 
-Ingebouwde resources voor Windows
+Ingebouwde Windows-resources
 
 * [Archiefresource](../reference/resources/windows/archiveResource.md)
 * [Omgevingsresource](../reference/resources/windows/environmentResource.md)
@@ -139,7 +139,7 @@ Ingebouwde resources voor Windows
 
 Package Management-resources
 
-* [PackageManagement-Resource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagement Resource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
 * [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux-resources
@@ -150,7 +150,7 @@ Linux-resources
 * [Linux-bestand voor Resource](../reference/resources/linux/lnxFileResource.md)
 * [Linux-groep-Resource](../reference/resources/linux/lnxGroupResource.md)
 * [Linux-Pakketresource](../reference/resources/linux/lnxPackageResource.md)
-* [Linux-Script-Resource](../reference/resources/linux/lnxScriptResource.md)
-* [Bron van het Linux-Service](../reference/resources/linux/lnxServiceResource.md)
+* [Linux Script Resource](../reference/resources/linux/lnxScriptResource.md)
+* [Linux Service Resource](../reference/resources/linux/lnxServiceResource.md)
 * [Linux SshAuthorizedKeys Resource](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
 * [Linux-gebruikersbron](../reference/resources/linux/lnxUserResource.md)

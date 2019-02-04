@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Pakketten met compatibel besturingssysteem of PowerShell-edities
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747701"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685954"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakketten met compatibele PowerShell-edities en besturingssystemen
 
@@ -54,9 +54,9 @@ Find-Module -Tag PSEdition_Core, Linux
 
 Omdat PowerShell Core beschikbaar voor Windows, Linux en Mac OS is, kunnen de pakketten in de galerie zijn ontworpen voor elke combinatie van deze besturingssystemen. In de gebruikersinterface van de galerie door de volgende searchs-codes te vinden van pakketten die zijn gemarkeerd door het besturingssysteem te gebruiken:
 
-- Labels: 'Windows'
-- Labels: "Linux"
-- Labels: "MacOS" 
+- Tags: "Windows"
+- Tags: "Linux"
+- Tags: "MacOS" 
 
 U kunt deze tags opgeven op `Find-Module` (en andere cmdlets in de PowerShellGet-module), zoals deze:
 
@@ -69,11 +69,11 @@ Find-Module -Tag Linux
 
 U kunt zoeken naar een pakket met meerdere compatibiliteiten met behulp van de syntaxis: 
 
-Labels: "Compatibility1" "Compatibility2" 
+Tags: "Compatibility1" "Compatibility2" 
 
 Als u een pakket met de compatibiliteit van de PowerShell Core die wordt uitgevoerd op mijn Windows- en Linux-machines zoekt, bijvoorbeeld de search-codes gebruiken:
 
-Labels: "PSEdition_Core" 'Windows' "Linux" 
+Tags: "PSEdition_Core" "Windows" "Linux" 
 
 Als u wilt zoeken met behulp van PowerShell, kunt u de `Find-Module` (en de andere cmdlets in de PowerShellGet-module), zoals deze:
 

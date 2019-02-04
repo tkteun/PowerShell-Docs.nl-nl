@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
 ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655342"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687249"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
 
@@ -44,7 +44,7 @@ De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van he
 | **Versiegeschiedenis** | De versiegeschiedenis weerspiegelt de updates die zijn aangebracht in een module in de PowerShell Gallery. Als een versie van een pakket is verborgen met behulp van de functie verwijderen, zal dit niet worden weergegeven in de versiegeschiedenis, behalve voor de eigenaren van het pakket. | Nee | Nee |
 | **Project-Site** | Site van het project is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een ProjectURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. PROJECTURI. | Ja | Ja |
 | **Licentie** | De koppeling van een licentie is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een LicenseURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. LICENSEURI. Het is belangrijk te weten dat als een licentie niet via de LicenseURI opgegeven is of binnen een module, geef de gebruiksvoorwaarden voor de PowerShell Gallery vervolgens de gebruiksvoorwaarden voor het pakket. Zie de gebruiksvoorwaarden voor meer informatie. | Ja | Ja |
-| **Pictogram** | Een pictogram kan worden opgegeven voor een pakket in de PowerShell-galerie door op te geven van de markering IconURI in het manifest van het script of in de sectie Privatedata PSData van de module-manifest. De IconURI moet verwijzen naar de installatiekopie van een 32 x 32 met transparantie achtergrond. De URI **moet** worden van een directe afbeeldings-URL en **moet niet** gaat u naar een webpagina met de installatiekopie of een bestand in de PowerShell Gallery-pakket. | Ja | Ja |
+| **Icon** | Een pictogram kan worden opgegeven voor een pakket in de PowerShell-galerie door op te geven van de markering IconURI in het manifest van het script of in de sectie Privatedata PSData van de module-manifest. De IconURI moet verwijzen naar de installatiekopie van een 32 x 32 met transparantie achtergrond. De URI **moet** worden van een directe afbeeldings-URL en **moet niet** gaat u naar een webpagina met de installatiekopie of een bestand in de PowerShell Gallery-pakket. | Ja | Ja |
 
 
 ## <a name="editing-package-details"></a>Pakketdetails bewerken
@@ -83,11 +83,11 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | DSCResourceKit |  |
 | SQL |  |
 | AWS |  |
-| Sleutelwoorden voor dscresource bieden |  |
+| DSCResource |  |
 | Automatisering |  |
 | REST |  |
 | ActiveDirectory- | AD wordt momenteel niet gebruikt door zelf  |
-| SQL Server |  |
+| SQLServer |  |
 | DBA |  |
 | Beveiliging | Defense is minder nauwkeurig |
 | Database | Databases (meervoud) is minder wenselijk |
@@ -105,10 +105,10 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | IaaS |  |
 | Linux |  |
 | IIS |  |
-| Met AzureAutomation |  |
+| AzureAutomation |  |
 | Opslag |  |
 | GitHub |  |
-| JSON |  |
+| Json |  |
 | Exchange |  |
 | Netwerk | Netwerken is vergelijkbaar, minder vaak worden gebruikt |
 | SharePoint |  |
@@ -121,9 +121,9 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | Google |  |
 | Kleur |  |
 | DNS |  |
-| Office 365 | Office spellen verdient de voorkeur. O365 wordt minder vaak gebruikt, hoewel kortere |
+| Office365 | Office spellen verdient de voorkeur. O365 wordt minder vaak gebruikt, hoewel kortere |
 | Gitlab |  |
-| Lastige |  |
+| Pester |  |
 | AzureAD |  |
 | HTML |  |
 | Hyper-V | Hyper-v is het minder gebruikelijk als een label |
@@ -136,6 +136,6 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | Appveyor |  |
 | AzureRm | Primair gebruikt voor de AzureRM-modules |
 | Postcode |  |
-| MSI-BESTAND |  |
-| macOS |  |
+| MSI |  |
+| MacOS |  |
 | PoshBot |  |

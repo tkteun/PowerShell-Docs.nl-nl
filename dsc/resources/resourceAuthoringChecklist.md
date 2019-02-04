@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Controlelijst voor het ontwerpen van resource
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404023"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683959"
 ---
 # <a name="resource-authoring-checklist"></a>Controlelijst voor het ontwerpen van resource
 
@@ -222,7 +222,7 @@ Zorg ervoor dat u fouten in de End-to-End scenario's controleren (met behulp van
 
 Zorg ervoor dat logboeken gegenereerd door de resource die eenvoudig te begrijpen en geef de waarde voor de gebruiker. Resources moeten alle informatie die nuttig voor de gebruiker zijn kan uitvoeren, maar meer logboeken is niet altijd beter. U moet voorkomen van redundantie en gegevens die niet worden uitgevoerd bieden een extra waarde: iemand anders gaat u door de honderden logboekvermeldingen om te zoeken wat ze zoekt niet maken. Er zijn geen logboeken is natuurlijk niet een aanvaardbare oplossing voor dit probleem ofwel.
 
-Wanneer u test, u moet ook uitgebreide analyseren en fouten opsporen in Logboeken (door het uitvoeren van `Start-DscConfiguration` met `–Verbose` en `–Debug` op de juiste wijze verandert), ook als ETW-Logboeken. DSC-ETW-logboeken bekijken, gaat u naar Logboeken en opent u de volgende map: Toepassingen en Services van Microsoft - Windows - Desired State Configuration.  Er standaard worden operationele kanaal, maar zorg ervoor dat u inschakelt analytische en foutopsporing van kanalen voordat de configuratie wordt uitgevoerd.
+Wanneer u test, u moet ook uitgebreide analyseren en fouten opsporen in Logboeken (door het uitvoeren van `Start-DscConfiguration` met `–Verbose` en `–Debug` op de juiste wijze verandert), ook als ETW-Logboeken. DSC-ETW-logboeken bekijken, gaat u naar Logboeken en opent u de volgende map: Applications and Services- Microsoft - Windows - Desired State Configuration.  Er standaard worden operationele kanaal, maar zorg ervoor dat u inschakelt analytische en foutopsporing van kanalen voordat de configuratie wordt uitgevoerd.
 Om in te schakelen analytische/Debug kanalen, kunt u onderstaande script uitvoeren:
 
 ```powershell

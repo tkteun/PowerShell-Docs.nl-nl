@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655290"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687130"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -47,7 +47,7 @@ SSH moet worden geïnstalleerd op alle virtuele machines. Zowel de SSH-client in
    ```
 
 2. Installeer de meest recente Win32-OpenSSH. Zie voor installatie-instructies [installatie van OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Bewerk de `sshd_config` bestand dat zich bevindt in `%ProgramData%\ssh`.
+3. Bewerk de `sshd_config` bestand dat zich bevindt in `$env:ProgramData\ssh`.
 
    - Zorg ervoor dat de wachtwoordverificatie is ingeschakeld
 

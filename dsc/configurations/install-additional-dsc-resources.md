@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, resource, galerie, instellen
 title: Installeren van extra DSC-Resources
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404354"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686381"
 ---
 # <a name="install-additional-dsc-resources"></a>Installeren van extra DSC-Resources
 
@@ -20,16 +20,16 @@ Dit is een overzicht van de OOB-resources dat is opgenomen in PowerShell 4.0 en 
 
 |Informatiebron  |Beschrijving  |
 |---------|---------|
-|**Bestand**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **bestemming** en wordt deze bijgewerkt wanneer de **bron** wijzigingen door het vergelijken van datums, controlesommen en hashes.|
+|**File**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **bestemming** en wordt deze bijgewerkt wanneer de **bron** wijzigingen door het vergelijken van datums, controlesommen en hashes.|
 |**Archiveren**|Hiermee wordt de archieven en een opgegeven locatie. Valideert de archieven met een opgegeven **controlesom**.|
 |**Omgeving**|Hiermee beheert u omgevingsvariabelen.|
 |**Groep**|Lokale groepen worden beheerd en besturingselementen van groepslidmaatschap.|
 |**Log**|Schrijft berichten naar de `Microsoft-Windows-Desired State Configuration/Analytic` gebeurtenislogboek.|
-|**Pakket**|Installeert of verwijdert met behulp van pakketten **argumenten**, **LogPath**, **ReturnCode**, andere instellingen.|
-|**register**|Hiermee beheert u sleutels en waarden.|
+|**Package**|Installeert of verwijdert met behulp van pakketten **argumenten**, **LogPath**, **ReturnCode**, andere instellingen.|
+|**Registry**|Hiermee beheert u sleutels en waarden.|
 |**Script**|U ontwerpt waarmee u uw eigen [get-test-set](../resources/get-test-set.md) scriptblokken.|
 |**Service**|Hiermee configureert u Windows-services.|
-|**Gebruiker** |Hiermee beheert u lokale gebruikers en -kenmerken.|
+|**User** |Hiermee beheert u lokale gebruikers en -kenmerken.|
 |**WindowsFeature**|Hiermee beheert u functies en onderdelen.|
 |**WindowsProcess**|Hiermee configureert u Windows-processen.|
 

@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Windows PowerShell starten
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404446"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688320"
 ---
 # <a name="starting-windows-powershell"></a>Windows PowerShell starten
 PowerShell is een scripting engine dll die is ingesloten in meerdere hosts.  De meest voorkomende host die u wilt beginnen zijn de interactieve opdrachtregel PowerShell.exe en de interactieve Scripting omgeving PowerShell_ISE.exe.

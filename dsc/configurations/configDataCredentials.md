@@ -2,14 +2,15 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Referentieopties in de configuratiegegevens
-ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046638"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686374"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referentieopties in de configuratiegegevens
+
 >Van toepassing op: Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Tekst zonder opmaak wachtwoorden en domeingebruikers
@@ -17,146 +18,14 @@ ms.locfileid: "54046638"
 DSC-configuraties met een referentie zonder versleuteling wordt een foutbericht over ongecodeerde wachtwoorden worden gegenereerd.
 DSC wordt ook een waarschuwing gegenereerd wanneer met domeinreferenties.
 Gebruik de trefwoorden DSC-configuratie gegevens als u wilt onderdrukken deze fout- en waarschuwingsberichten:
-* **PsDscAllowPlainTextPassword**
-* **PsDscAllowDomainUser**
+
+- **PsDscAllowPlainTextPassword**
+- **PsDscAllowDomainUser**
 
 > [!NOTE]
 > Opslag/verzending van niet-versleutelde wachtwoorden in platte tekst is in het algemeen niet beveiligd. Referenties beveiligen met behulp van de technieken die verderop in dit onderwerp aan bod wordt aanbevolen.
 > De service Azure Automation DSC kunt u om referenties op om te worden gecompileerd in configuraties en veilig opgeslagen centraal te beheren.
 > Zie voor informatie: [DSC-configuraties compileren / Referentieassets](/azure/automation/automation-dsc-compile#credential-assets)
-
-Hier volgt een voorbeeld van het doorgeven van referenties met tekst zonder opmaak:
-
-```powershell
-#Prompt user for their credentials
-#credentials will be unencrypted in the MOF
-$promptedCreds = get-credential -Message "Please enter your credentials to generate a DSC MOF:"
-
-# Store passwords in plaintext, in the document itself
-# will also be stored in plaintext in the mof
-$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
-$username = "User1"
-[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-
-# DSC requires explicit confirmation before storing passwords insecurely
-$ConfigurationData = @{
-    AllNodes = @(
-            @{
-                # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-                NodeName="*"
-                PSDscAllowPlainTextPassword = $true
-            },
-            #however, each node still needs to be explicitly defined for "*" to have meaning
-            @{
-                NodeName = "TestMachine1"
-            },
-            #we can also use a property to define node-specific passwords, although this is no more secure
-            @{
-                NodeName = "TestMachine2";
-                UserName = "User2"
-                LocalPassword = "ThisIsYetAnotherPlaintextPassword"
-            }
-        )
-}
-
-configuration unencryptedPasswordDemo
-{
-    Node "TestMachine1"
-    {
-        # We use the plaintext password to generate a new account
-        User User1
-        {
-            UserName = $username
-            Password = $credential
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-        # We use the prompted password to add this account to the local admins group
-        Group addToAdmin
-        {
-            # Ensure the user exists before we add the user to a group
-            DependsOn = "[User]User1"
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            Ensure = "Present"
-            MembersToInclude = "User1"
-        }
-    }
-
-    Node "TestMachine2"
-    {
-        # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
-        $username = $node.UserName
-        [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
-
-        User User2
-        {
-            UserName = $username
-            Password = $nodeCred
-            Description = "local account"
-            Ensure = "Present"
-            Disabled = $false
-            PasswordNeverExpires = $true
-            PasswordChangeRequired = $false
-        }
-
-        Group addToAdmin
-        {
-            Credential = $promptedCreds
-            GroupName = "Administrators"
-            DependsOn = "[User]User2"
-            Ensure = "Present"
-            MembersToInclude = "User2"
-        }
-    }
-}
-
-# We declared the ConfigurationData in a local variable, but we need to pass it
-# in to our configuration function
-# We need to invoke the configuration function we created to generate a MOF
-unencryptedPasswordDemo -ConfigurationData $ConfigurationData
-
-# We need to pass the MOF to the machines we named.
-#-wait: doesn't use jobs so we get blocked at the prompt until the configuration is done
-#-verbose: so we can see what's going on and catch any errors
-#-force: for testing purposes, I run start-dscconfiguration frequently + want to make sure i'm
-#        not blocked by previous configurations that are still running
-Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
-```
-
-Dit is een fragment uit het bestand '.mof' is gegenereerd door de configuratie voor 'TestMachine1'. De `System.Security.SecureString` gebruikt in de configuratie is geconverteerd naar tekst zonder opmaak en opgeslagen in het bestand '.mof' als een `MSF_Credential`. Een `SecureString` is versleuteld met het huidige gebruikersprofiel voor. Dit werkt goed met alle vormen van extern beheer van PowerShell. Een bestand ".mof" is ontworpen om te worden van een zelfstandige configuratie alleen-mechanisme. Begin in PowerShell 5.0, zijn "MOF-bestanden op een knooppunt versleuteld in rust, maar niet in overdracht naar het knooppunt. Dit betekent dat de wachtwoorden in een bestand '.mof' worden weergegeven als niet-versleutelde tekst wanneer u ze op een knooppunt toepast. Voor het versleutelen van de referenties die u wilt gebruiken een **Pull-Server**. Zie voor meer informatie, [beveiligen MOF-bestanden met certificaten](../pull-server/secureMOF.md).
-
-```syntax
-instance of MSFT_Credential as $MSFT_Credential1ref
-{
-Password = "ThisIsYetAnotherPlaintextPassword";
- UserName = "User2";
-
-};
-
-instance of MSFT_UserResource as $MSFT_UserResource1ref
-{
-ResourceID = "[User]User2";
- Description = "local account";
- UserName = "User2";
- Ensure = "Present";
- Password = $MSFT_Credential1ref;
- Disabled = False;
- SourceInfo = "::66::9::User";
- PasswordNeverExpires = True;
- ModuleName = "PsDesiredStateConfiguration";
- PasswordChangeRequired = False;
-
-ModuleVersion = "1.0";
-
- ConfigurationName = "unencryptedPasswordDemo";
-
-};
-```
 
 ## <a name="handling-credentials-in-dsc"></a>Verwerken van de referenties in DSC
 
@@ -237,31 +106,40 @@ DomainCredentialExample -DomainCredential $cred
 Deze code genereert een fout en de waarschuwing weergegeven:
 
 ```
-ConvertTo-MOFInstance : System.InvalidOperationException error processing
-property 'Credential' OF TYPE 'Group': Converting and storing encrypted
-passwords as plain text is not recommended. For more information on securing
-credentials in MOF file, please refer to MSDN blog:
-http://go.microsoft.com/fwlink/?LinkId=393729
+ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
+TYPE 'Group': Converting and storing encrypted passwords as plain text is not recommended.
+For more information on securing credentials in MOF file, please refer to MSDN blog:
+https://go.microsoft.com/fwlink/?LinkId=393729
 
 At line:11 char:9
 +   Group
-At line:297 char:16
+At line:341 char:16
 +     $aliasId = ConvertTo-MOFInstance $keywordName $canonicalizedValue
 +                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Write-Error], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessProperty,ConvertTo-MOFInstance
+WARNING: It is not recommended to use domain credential for node 'localhost'. In order to suppress
+the warning, you can add a property named 'PSDscAllowDomainUser' with a value of $true to your DSC
+configuration data for node 'localhost'.
 
-WARNING: It is not recommended to use domain credential for node 'localhost'.
-In order to suppress the warning, you can add a property named
-'PSDscAllowDomainUser' with a value of $true to your DSC configuration data
-for node 'localhost'.
+Compilation errors occurred while processing configuration
+'DomainCredentialExample'. Please review the errors reported in error stream and modify your
+configuration code appropriately.
+At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:3917 char:5
++     throw $ErrorRecord
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (DomainCredentialExample:String) [], InvalidOperationException
+    + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
 
 In dit voorbeeld heeft twee problemen:
+
 1. Een fout wordt uitgelegd dat ongecodeerde wachtwoorden worden niet aanbevolen
 2. Een waarschuwing wordt beschermd tegen het gebruik van een domeinreferentie
 
-## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
+De vlaggen **PSDSCAllowPlainTextPassword** en **PSDSCAllowDomainUser** onderdrukken van de fout en waarschuwing waarin de gebruiker van het risico.
+
+## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
 Het eerste foutbericht heeft een URL met de documentatie.
 Deze koppeling wordt uitgelegd hoe u voor het versleutelen van wachtwoorden met een [ConfigurationData](./configData.md) structuur en een certificaat.
@@ -270,12 +148,12 @@ Voor meer informatie over certificaten en DSC [leest u dit bericht](http://aka.m
 Als u wilt afdwingen dat een wachtwoord als tekst zonder opmaak, de resource vereist de `PsDscAllowPlainTextPassword` sleutelwoord in de configuratiegegevens sectie als volgt:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
 Configuration DomainCredentialExample
 {
-    param
-    (
-        [PSCredential] $DomainCredential
-    )
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     node localhost
@@ -284,7 +162,7 @@ Configuration DomainCredentialExample
         {
             GroupName        = 'ApplicationAdmins'
             MembersToInclude = 'contoso\alice'
-            Credential       = $DomainCredential
+            Credential       = $credential
         }
     }
 }
@@ -298,12 +176,56 @@ $cd = @{
     )
 }
 
-$cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
-DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
+DomainCredentialExample -ConfigurationData $cd
 ```
 
-> [!NOTE]
-> `NodeName` kan niet gelijk zijn aan sterretje, de naam van een specifiek knooppunt is verplicht.
+### <a name="localhostmof"></a>localhost.MOF
+
+De **PSDSCAllowPlainTextPassword** vlag vereist dat de gebruiker bevestigt de kans op tekst zonder opmaak wachtwoorden opslaan in een MOF-bestand. In de gegenereerde MOF-bestand, zelfs als een **PSCredential** object bevat een **SecureString** is gebruikt, wordt de wachtwoorden worden nog wel weergegeven als tekst zonder opmaak. Dit is de enige keer dat de referenties worden weergegeven. Toegang krijgen tot dit MOF-bestand biedt iedereen toegang tot het Administrator-account.
+
+```
+/*
+@TargetNode='localhost'
+@GeneratedBy=Administrator
+@GenerationDate=01/31/2019 06:43:13
+@GenerationHost=Server01
+*/
+
+instance of MSFT_Credential as $MSFT_Credential1ref
+{
+Password = "ThisIsAPlaintextPassword";
+ UserName = "Administrator";
+
+};
+
+instance of MSFT_GroupResource as $MSFT_GroupResource1ref
+{
+ResourceID = "[Group]DomainUserToLocalGroup";
+ MembersToInclude = {
+    "contoso\\alice"
+};
+ Credential = $MSFT_Credential1ref;
+ SourceInfo = "::11::9::Group";
+ GroupName = "ApplicationAdmins";
+ ModuleName = "PSDesiredStateConfiguration";
+
+ModuleVersion = "1.0";
+
+ ConfigurationName = "DomainCredentialExample";
+
+};
+```
+
+### <a name="credentials-in-transit-and-at-rest"></a>Referenties in-transit en inactieve
+
+- De **PSDscAllowPlainTextPassword** vlag kan de compilatie van MOF-bestanden die wachtwoorden in niet-versleutelde tekst bevatten.
+  Voorzorgsmaatregelen nemen bij het opslaan van MOF-bestanden met niet-versleutelde tekst wachtwoorden.
+- Wanneer het MOF-bestand wordt geleverd aan een knooppunt in **Push** modus WinRM versleutelt de communicatie ter bescherming van het wachtwoord niet-versleutelde tekst, tenzij u de standaardwaarde van vervangen door de **AllowUnencrypted** parameter.
+  - Het MOF-bestand in rust versleutelen van de MOF met een certificaat worden beveiligd voordat deze is toegepast op een knooppunt.
+- In **Pull** modus, u kunt Windows pull-server configureren om HTTPS te gebruiken voor het versleutelen van verkeer dat gebruikmaakt van het protocol is opgegeven in Internet Information Server. Zie voor meer informatie de artikelen [instellen van een DSC-pull-client](../pull-server/pullclient.md) en [beveiligen MOF-bestanden met certificaten](../pull-server/secureMOF.md).
+  - In de [Statusconfiguratie van Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) -service, Pull-verkeer wordt altijd versleuteld.
+- Klik op het knooppunt MOF-bestanden zijn versleuteld in rust vanaf PowerShell 5.0.
+  - Bestanden zijn in PowerShell 4.0 MOF niet-versleuteld in rust, tenzij ze zijn versleuteld met een certificaat wanneer ze gepusht of naar het knooppunt opgehaald.
 
 **Microsoft adviseert om te voorkomen dat ongecodeerde wachtwoorden vanwege de aanzienlijke beveiligingsrisico's.**
 
@@ -314,7 +236,7 @@ Met behulp van een lokaal account wordt voorkomen dat potentiële blootstelling 
 
 **Als u referenties voor DSC-resources, moet u een lokaal account liever via een domeinaccount, indien mogelijk.**
 
-Als er een '\' of '\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.
+Als er een '\\'of'\@' in de `Username` eigenschap van de referentie en vervolgens de DSC zal worden beschouwd als een domeinaccount.
 Er is een uitzondering voor 'localhost', '127.0.0.1' en ':: 1" in het domeingedeelte van de naam van de gebruiker.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
@@ -323,16 +245,36 @@ In de DSC `Group` resourcevoorbeeld hierboven, uitvoeren van query's een Active 
 In dit geval voegen de `PSDscAllowDomainUser` eigenschap in op de `ConfigurationData` blokkeren als volgt:
 
 ```powershell
+$password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
+$username = "contoso\Administrator"
+[PSCredential] $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+
+Configuration DomainCredentialExample
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    node localhost
+    {
+        Group DomainUserToLocalGroup
+        {
+            GroupName        = 'ApplicationAdmins'
+            MembersToInclude = 'contoso\alice'
+            Credential       = $credential
+        }
+    }
+}
+
 $cd = @{
     AllNodes = @(
         @{
             NodeName = 'localhost'
             PSDscAllowDomainUser = $true
-            # PSDscAllowPlainTextPassword = $true
-            CertificateFile = "C:\PublicKeys\server1.cer"
+            PSDscAllowPlainTextPassword = $true
         }
     )
 }
+
+DomainCredentialExample -ConfigurationData $cd
 ```
 
 Het configuratiescript wordt nu het MOF-bestand met geen fouten of waarschuwingen hebben gegenereerd.

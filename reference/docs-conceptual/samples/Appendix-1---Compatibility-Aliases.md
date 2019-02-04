@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Bijlage 1 - Compatibiliteitsaliassen
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
 ms.openlocfilehash: 113bbee1af185f98777df5767022d54accb69447
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404598"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684687"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bijlage 1 - Compatibiliteitsaliassen
 
@@ -24,14 +24,14 @@ Alias           cls                             Clear-Host
 
 |Opdracht CMD|UNIX-opdracht|PS-Opdracht|PS Alias|
 |---------------|----------------|--------------|------------|
-|**dir**|**Ls**|**Get-ChildItem**|**GCI**|
-|**CLS**|**Wissen**|**Clear-Host** (functie)|**CLS**|
-|**DEL, wissen, rmdir**|**RM**|**Item verwijderen**|**gereserveerde instanties**|
-|**Kopiëren**|**CP**|**Copy-Item**|**CI**|
-|**verplaatsen**|**MV**|**Item verplaatsen**|**MI**|
-|**Wijzig de naam**|**MV**|**Rename-Item**|**rni**|
-|**Type**|**CAT**|**Get-inhoud**|**GC-exemplaar**|
-|**cd**|**cd**|**Locatie instellen**|**SL**|
-|**MD**|**mkdir**|**Nieuw Item**|**Ni**|
-|**pushd**|**pushd**|**Push-locatie**|**pushd**|
-|**popd**|**popd**|**Pop-locatie**|**popd**|
+|**dir**|**ls**|**Get-ChildItem**|**gci**|
+|**cls**|**Wissen**|**Clear-Host** (functie)|**cls**|
+|**DEL, wissen, rmdir**|**rm**|**Remove-Item**|**ri**|
+|**copy**|**cp**|**Copy-Item**|**ci**|
+|**move**|**mv**|**Item verplaatsen**|**mi**|
+|**Wijzig de naam**|**mv**|**Rename-Item**|**rni**|
+|**type**|**cat**|**Get-Content**|**gc**|
+|**cd**|**cd**|**Set-Location**|**sl**|
+|**md**|**mkdir**|**New-Item**|**ni**|
+|**pushd**|**pushd**|**Push-Location**|**pushd**|
+|**popd**|**popd**|**Pop-Location**|**popd**|

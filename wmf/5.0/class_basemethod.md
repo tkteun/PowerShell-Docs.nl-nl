@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: d7aec1a2ba8964e877ddd7406609fe135b1eb462
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0e79127faf3f9bf6fe7d525db5bb946daf3b93e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219739"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687634"
 ---
 # <a name="call-base-class-method"></a>Klassemethode oproepbasis
 
@@ -26,7 +26,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-Voor het aanroepen van methoden van de basisklasse van overschreven implementaties, geconverteerd naar de basisklasse ([baseClass] $dit) op aanroepen:
+Voor het aanroepen van methoden van de basisklasse van overschreven-implementaties, geconverteerd naar de basisklasse ([baseClass] $dit) op voor aanroepen:
 
 ```powershell
 class childClass2 : baseClass
@@ -40,7 +40,7 @@ class childClass2 : baseClass
 [childClass2]::new().foo() # return 301500
 ```
 
-Alle methoden van PowerShell zijn virtueel. U kunt niet-virtuele .NET-methoden in een subklasse verbergen met behulp van dezelfde syntaxis als voor een onderdrukking: alleen methoden met dezelfde naam en handtekening declareren.
+Alle methoden voor PowerShell zijn virtueel. U kunt niet-virtuele .NET-methoden in een subklasse verbergen met behulp van dezelfde syntaxis als voor een onderdrukking: alleen methoden met dezelfde naam en handtekening declareren.
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

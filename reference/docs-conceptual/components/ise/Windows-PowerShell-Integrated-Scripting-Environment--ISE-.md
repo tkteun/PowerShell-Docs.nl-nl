@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
 ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403887"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683833"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell ISE (Integrated Scripting Environment)
 
@@ -50,7 +50,7 @@ Deze hulpprogramma's kunnen besturingselementen in een deelvenster met tabbladen
 
 - **De weergave van fouten parseren**. Windows PowerShell onderzoekt uw script terwijl u typt. Als er een fout wordt gedetecteerd, wordt een rode golflijn onder de strijdige code weergegeven. Wanneer u de muisaanwijzer over de fout aangegeven, ziet u een knopinfo het probleem dat is gevonden.
 
-- **Zoomen**. U kunt inzoomen op uw tekst gemakkelijker te lezen of uitzoomen om te zien van het grote geheel met behulp van de schuifregelaar in de rechterbenedenhoek van de ISE-venster.
+- **Zoom**. U kunt inzoomen op uw tekst gemakkelijker te lezen of uitzoomen om te zien van het grote geheel met behulp van de schuifregelaar in de rechterbenedenhoek van de ISE-venster.
 
 - **Uitgebreide tekst kopiëren en plakken**. Wanneer u kopiëren van de ISE naar het Klembord, het lettertype, grootte en kleurinformatie van de geselecteerde tekst wordt opgenomen.
 

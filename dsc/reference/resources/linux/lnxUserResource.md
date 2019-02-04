@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxUser-Resource
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048249"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686010"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC voor Linux nxUser-Resource
 
@@ -38,13 +38,13 @@ nxUser <string> #ResourceName
 |---|---|
 | UserName| Hiermee geeft u de locatie waar u om te controleren of de status van een bestand of map.|
 | Zorg ervoor dat| Hiermee geeft u op of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| Volledige naam| Een tekenreeks zijn met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
+| FullName| Een tekenreeks zijn met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
 | Beschrijving| De beschrijving voor het gebruikersaccount.|
 | Wachtwoord| De hash van het wachtwoord van de gebruiker in de juiste vorm voor de Linux-computer. Dit is meestal een gezouten SHA-256, of een hash van SHA-512. Op Debian en Ubuntu Linux, kan deze waarde worden gegenereerd met de opdracht mkpasswd. Voor andere Linux-distributies, kan de crypt-methode van de Python-Crypt-bibliotheek worden gebruikt voor het genereren van de hash.|
 | Uitgeschakeld| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op **$true** om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op **$false** om ervoor te zorgen dat deze is ingeschakeld.|
 | PasswordChangeRequired| Geeft aan of de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op **$true** om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op **$false** zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is **$false**. Deze eigenschap wordt alleen beoordeeld als het gebruikersaccount niet aanwezig waren en wordt gemaakt.|
-| Basismap| De basismap voor de gebruiker.|
-| Groeps-id| De primaire groeps-ID voor de gebruiker.|
+| HomeDirectory| De basismap voor de gebruiker.|
+| GroupID| De primaire groeps-ID voor de gebruiker.|
 | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van het scriptblok voor resource-configuratie die u wilt uitvoeren 'ResourceName' voor het eerst is en het type is 'ResourceType', de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld

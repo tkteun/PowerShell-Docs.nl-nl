@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Items rechtstreeks bewerken
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404545"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685191"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
 
@@ -93,7 +93,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken (**\\**), als Register vermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
+Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken (**\\**), als registervermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
 
 ### <a name="renaming-existing-items-rename-item"></a>Naam van bestaande Items (naam wijzigen-Item) wijzigen
 

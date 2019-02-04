@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Het bouwen van een pijplijn voor continue integratie en continue implementatie met DSC
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404377"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687263"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn voor continue integratie en continue implementatie met DSC
 
@@ -37,7 +37,7 @@ Dit is de computer waar u al het werk instellen en het voorbeeld uitvoert, doet.
 
 De clientcomputer moet een Windows-computer met het volgende zijn geïnstalleerd:
 
-- [GIT](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - een lokale git-opslagplaats gekloond vanuit https://github.com/PowerShell/Demo_CI
 - een teksteditor, zoals [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -388,7 +388,7 @@ Laten we een release-definitie maken zodat het project wordt geïmplementeerd vo
 
 Om dit te doen, Voeg een nieuwe release-definitie die is gekoppeld aan de `InfraDNS` build-definitie die u eerder hebt gemaakt.
 Zorg ervoor dat u selecteert **continue implementatie** zodat een nieuwe versie wordt geactiveerd telkens wanneer een nieuwe build is voltooid.
-([Het: U werkt met release-definities](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) en configureer deze als volgt:
+([Wat release-pijplijnen zijn? ](/azure/devops/pipelines/release/what-is-release-management)) en configureer deze als volgt:
 
 De volgende stappen toevoegen aan de release-definitie:
 

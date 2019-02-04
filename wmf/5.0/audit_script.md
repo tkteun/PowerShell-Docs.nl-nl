@@ -1,71 +1,71 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
-ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
+ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/09/2018
-ms.locfileid: "35251480"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684659"
 ---
 # <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
-Terwijl Windows PowerShell al heeft het **LogPipelineExecutionDetails** Groepsbeleid van PowerShell-scripttaal instellen voor het aanroepen van cmdlets melden, heeft veel functies die u kunt zich aanmelden en controleren. De nieuwe functie voor gedetailleerde tracering van Script stelt u gedetailleerde bijhouden en analyseren van Windows PowerShell scripts gebruiken op een systeem. Nadat u gedetailleerde script tracering ingeschakeld, Windows PowerShell alle scriptblokken registreert in het gebeurtenislogboek ETW **Microsoft-Windows-PowerShell/operationeel**. Als een scriptblok maakt een ander scriptblok (bijvoorbeeld een script waarmee de cmdlet Invoke-Expression op een tekenreeks aangeroepen), wordt die resulterende scriptblok wordt ook vastgelegd.
+Het Windows PowerShell al is de **LogPipelineExecutionDetails** Groepsbeleid van de PowerShell-scripttaal instellen om aan te melden het aanroepen van cmdlets, heeft veel functies die u wilt aanmelden en/of gecontroleerd. De nieuwe functie voor gedetailleerde tracering van Script kunt u gedetailleerde bijhouden en analyseren van Windows PowerShell scripts gebruiken op een systeem inschakelen. Nadat u gedetailleerde script tracering ingeschakeld, Windows PowerShell-alle scriptblokken logboeken naar het gebeurtenislogboek ETW **Microsoft-Windows-PowerShell/Operational**. Als een scriptblok maakt een andere scriptblok (bijvoorbeeld een script waarmee de cmdlet Invoke-Expression wordt aangeroepen op een tekenreeks), wordt die resulterende scriptblok wordt ook vastgelegd.
 
-Registreren van deze gebeurtenissen kan worden ingeschakeld via de **schakelt logboekregistratie van PowerShell-Script blok** instelling voor Groepsbeleid (in Beheersjablonen -> Windows-onderdelen -> Windows PowerShell).
+Logboekregistratie van deze gebeurtenissen kan worden ingeschakeld via de **PowerShell-Script blok logboekregistratie kunnen inschakelen** groepsbeleidsinstelling (in Beheersjablonen -> Windows-onderdelen -> Windows PowerShell).
 
 De gebeurtenissen zijn:
 
-| Kanaal | Operationele                                 |
+| Kanaal | Operational                                 |
 |---------|---------------------------------------------|
 | Niveau   | Verbose                                     |
 | Opcode  | Maken                                      |
 | Taak    | CommandStart                                |
-| Sleutelwoord | Runspace                                    |
+| Trefwoord | runspace                                    |
 | Gebeurtenis-id | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
-| Bericht | Het maken van Scriptblock tekst (%1 van %2): </br> %3 </br> ScriptBlock-ID: %4 |
+| Bericht | Het maken van Scriptblock tekst (%1% 2): </br> %3 </br> ScriptBlock-ID: %4 |
 
 
-De tekst die is ingesloten in het bericht is de omvang van het scriptblok gecompileerd. De ID is een GUID die de levensduur van het scriptblok wordt bewaard.
+De tekst die is ingesloten in het bericht is de omvang van het scriptblok gecompileerd. De ID is een GUID die voor de levensduur van het scriptblok worden bewaard.
 
-Wanneer u uitgebreide logboekregistratie inschakelt, wordt de functie voor schrijfbewerkingen beginnen en eindigen markeringen:
+Wanneer u uitgebreide logboekregistratie inschakelt, wordt de functie schrijfbewerkingen beginnen en eindigen van markeringen:
 
-| Kanaal | Operationele                                            |
+| Kanaal | Operational                                            |
 |---------|--------------------------------------------------------|
 | Niveau   | Verbose                                                |
-| Opcode  | Open (/ sluiten)                                         |
+| Opcode  | Open (/ afsluiten)                                         |
 | Taak    | CommandStart (/ CommandStop)                           |
-| Sleutelwoord | Runspace                                               |
-| Gebeurtenis-id | ScriptBlock\_aanroepen\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_aanroepen\_voltooid\_Detail (0x100A = 4106) |
-| Bericht | Gestarte (/ voltooide)-aanroep van ScriptBlock-ID: %1 </br> Runspace-ID: %2 |
+| Trefwoord | runspace                                               |
+| Gebeurtenis-id | ScriptBlock\_aanroepen\_Start\_details (0x1009 = 4105) / </br> ScriptBlock\_aanroepen\_voltooid\_details (0x100A = 4106) |
+| Bericht | Gestart (/ voltooide) aanroepen van ScriptBlock-ID: %1 </br> Runspace-ID: %2 |
 
-De ID is de GUID die vertegenwoordigt het scriptblok (die kan worden gecorreleerd met gebeurtenis-ID 0x1008) en de Runspace-ID vertegenwoordigt de runspace op waarin dit scriptblok is uitgevoerd.
+De ID is de GUID voor het scriptblok (die kan worden gecorreleerd met gebeurtenis-ID 0x1008) en de Runspace-ID vertegenwoordigt de runspace waarin deze scriptblok is uitgevoerd.
 
-Procenttekens in het bericht het aanroepen van vertegenwoordigen gestructureerde ETW-eigenschappen. Terwijl ze worden vervangen door de werkelijke waarden in de berichttekst, een krachtigere manier toegang tot deze worden opgehaald van het bericht met de cmdlet Get-WinEvent en gebruik vervolgens de **eigenschappen** matrix van het bericht.
+Procenttekens in het bericht aanroep vertegenwoordigen gestructureerde ETW-eigenschappen. Terwijl ze worden vervangen door de werkelijke waarden in de berichttekst, een robuustere manier toegang tot deze wordt het bericht met de cmdlet Get-WinEvent ophalen en gebruik vervolgens de **eigenschappen** matrix van het bericht.
 
-Hier volgt een voorbeeld van hoe deze functie uitpakken een schadelijke poging kunt voor het versleutelen en verbergen, een script weergeven:
+Hier volgt een voorbeeld van hoe deze functie kunt uitpakken een schadelijke poging voor het versleutelen en een script, onleesbaar maakt:
 
 ```powershell
 ## Malware
 function SuperDecrypt
 {
-    param($script)
-    $bytes = [Convert]::FromBase64String($script)
+    param($script)
+    $bytes = [Convert]::FromBase64String($script)
 
-    ## XOR “encryption”
-    $xorKey = 0x42
-    for($counter = 0; $counter -lt $bytes.Length; $counter++)
-    {
-        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
-    }
-    [System.Text.Encoding]::Unicode.GetString($bytes)
+    ## XOR “encryption”
+    $xorKey = 0x42
+    for($counter = 0; $counter -lt $bytes.Length; $counter++)
+    {
+        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
+    }
+    [System.Text.Encoding]::Unicode.GetString($bytes)
 }
 
 $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
 Invoke-Expression $decrypted
 ```
 
-Dit uitgevoerd, wordt de volgende logboekvermeldingen gegenereerd:
+Uitvoeren van dit genereert de volgende vermeldingen:
 
 ```
 Compiling Scriptblock text (1 of 1):
@@ -97,7 +97,7 @@ Write-Host 'Pwnd'
 ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8
 ```
 
-Windows PowerShell verbroken als het script bloklengte groter is dan wat ETW is geschikt voor bedrijf in één gebeurtenis, het script in meerdere delen. Hier volgt voorbeeldcode voor een script van de berichten in het logboek elke:
+Windows PowerShell verbroken als het script bloklengte groter is dan wat ETW is geschikt voor bedrijf in één gebeurtenis, het script in meerdere delen. Hier volgt een voorbeeldcode om een script uit de logboekberichten weer:
 
 ```powershell
 $created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } | Where-Object { $_.<...> }
@@ -105,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Net als bij alle logboekregistratie systemen waarvoor een buffer beperkt bewaren (dat wil zeggen ETW-Logboeken) is een aanval op deze infrastructuur voor het logboek met onnodig gebeurtenissen voor het verbergen van eerdere bewijs overspoelen. Om u te beschermen tegen deze aanval, zorg ervoor dat er een vorm van gebeurtenislogboek verzameling instellen (dat wil zeggen, Windows Event Forwarding, [ontdekken van de Adversary met bewaking van Windows-gebeurtenislogboek](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) gebeurtenislogboeken af bij de computer als verplaatsen snel mogelijk.
+Net als bij alle logboekregistratie-systemen waarvoor een beperkte retentie buffer (dat wil zeggen ETW-Logboeken), is een aanval op deze infrastructuur aan het logboek met onnodig gebeurtenissen om te verbergen oudere bewijs overspoelen. Zorg ervoor dat u een vorm van gebeurtenis logboekverzameling instellen hebt om uzelf te beschermen tegen deze aanvallen, (dat wil zeggen Windows Event Forwarding, [ontdekken van de kwaadwillende persoon met bewaking van Windows-gebeurtenislogboek](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) te verplaatsen van gebeurtenislogboeken af bij de computer als snel mogelijk.

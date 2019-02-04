@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 1595a3e817fd711c35128f06927fd57df7a63fb8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218243"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688761"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>Verbeteringen ontwerpen met PowerShell ISE
 
-DSC-configuraties in Windows PowerShell ISE Authoring is veel eenvoudiger, dankzij de volgende verbeteringen:
+DSC-configuraties in Windows PowerShell ISE ontwerpen, is het veel eenvoudiger, dankzij de volgende verbeteringen:
 
-- Lijst van alle DSC-resources binnen een **configuratie** blok of **knooppunt** blok door te voeren **Ctrl + spatiebalk** op een lege regel in het.
-- Automatisch aanvullen in de resource-eigenschappen die van de **opsomming** type.
-- Automatisch aanvullen in de **DependsOn** eigenschap van DSC-resources op basis van andere exemplaren resource in de configuratie.
-- Betere tab-aanvulling van de waarden van de resource-eigenschap.
+- Lijst met alle DSC-resources binnen een **configuratie** blokkeren of **knooppunt** blokkeren door in te voeren **Ctrl + spatie** op een lege regel in het.
+- Automatisch aanvullen van resource-eigenschappen die van de **opsomming** type.
+- Automatische aanvulling op de **DependsOn** eigenschap van DSC-resources, op basis van andere resource-exemplaren in de configuratie.
+- Betere tab-aanvulling van de waarden van de resource-eigenschappen.
 
-**Opmerking:** moet u een lege tekenreeks voor waarden van de resource-eigenschap hebben voordat u Ctrl + spatiebalk gebruiken kunt voor een lijst met de opties. Drukken **tabblad** doorlopen opties.
+**Opmerking:** Voordat u Ctrl + spatie gebruiken kunt om de opties weer te geven, moet u een lege tekenreeks voor waarden van de resource-eigenschap hebben. Drukken **tabblad** bladeren door opties.

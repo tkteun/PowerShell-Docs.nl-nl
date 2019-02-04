@@ -3,11 +3,11 @@ title: De ISE-ervaring in Visual Studio Code repliceren
 description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012480"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687375"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
 
@@ -19,9 +19,9 @@ Dit document probeert te lijstinstellingen die u in VSCode configureren kunt zod
 
 | Functie                              | ISE-Binding                  | VSCode-Binding                              |
 | ----------------                      | -----------                  | --------------                              |
-| Onderbreken en foutopsporingsprogramma opsplitsen          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Onderbreken en foutopsporingsprogramma opsplitsen          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Huidige regel/gemarkeerde tekst uitvoeren | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Lijst met beschikbare fragmenten               | <kbd>CTRL</kbd>+<kbd>"j"</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>+<kbd>"j"</kbd> |
+| Lijst met beschikbare fragmenten               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
 ### <a name="custom-key-bindings"></a>Aangepaste sleutel-bindingen
 
@@ -102,7 +102,7 @@ Als u meer manieren om te maken van VSCode kunt u meer vertrouwd voor ISE-gebrui
 
 We zijn altijd blij te accepteren van pull-aanvragen en ook bijdragen!
 
-## <a name="vscode-tips"></a>Tips voor VSCode
+## <a name="vscode-tips"></a>VSCode Tips
 
 ### <a name="command-palette"></a>Command Palette
 

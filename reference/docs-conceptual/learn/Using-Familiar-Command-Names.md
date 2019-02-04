@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Bekende opdrachtnamen gebruiken
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404623"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688922"
 ---
 # <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 
@@ -22,14 +22,14 @@ De volgende lijst bevat enkele van de algemene **cmd.exe** en Unix-opdrachten di
 
 |||||
 |-|-|-|-|
-|CAT|dir|koppelen|RM|
+|CAT|dir|koppelen|rm|
 |cd|echo|verplaatsen|rmdir|
 |chdir|Wissen|popd|slaapstand|
-|wissen|H|PS|Sorteren|
+|wissen|h|ps|Sorteren|
 |CLS|Geschiedenis|pushd|t|
 |Kopiëren|KILL-instructie|pwd|Type|
-|DEL|LP|r|schrijven|
-|diff|Ls|ren||
+|del|lp|r|schrijven|
+|diff|ls|ren||
 
 De `Get-Alias` cmdlet ziet u de echte naam van de systeemeigen PowerShell-opdracht die is gekoppeld aan een alias.
 
@@ -45,7 +45,7 @@ Alias           cls -> Clear-Host
 
 ## <a name="interpreting-standard-aliases"></a>Standard aliassen interpreteren
 
-De aliassen we vorige beschreven zijn ontworpen voor de naam van compatibiliteit met andere opdrachtshells.
+De aliassen die we eerder beschreven, zijn ontworpen voor de naam van compatibiliteit met andere opdrachtshells.
 De meeste aliassen die zijn ingebouwd in PowerShell zijn ontworpen voor kort te houden. Kortere namen zijn gemakkelijker te type, maar zijn moeilijk te lezen als u niet wat ze verwijzen weet naar.
 
 PowerShell-aliassen proberen te manipuleren tussen duidelijkheid en beknopt te houden. PowerShell maakt gebruik van een standaardset aliassen voor veelvoorkomende woorden en bewerkingen.
@@ -54,7 +54,7 @@ Voorbeeld van de afkortingen:
 
 | Zelfstandig naamwoord of term | Afkorting |
 |--------------|--------------|
-| Ophalen          | G            |
+| Ophalen          | g            |
 | Instellen          | s            |
 | Item         | Ik            |
 | Locatie     | l            |
@@ -65,11 +65,11 @@ Deze aliassen zijn opgebouwd uit overzichtelijke als u weet dat de stenonaam.
 
 | Naam van cmdlet    | Alias |
 |----------------|-------|
-| `Get-Item `    | GI    |
-| `Set-Item`     | SI    |
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
 | `Get-Location` | GB    |
 | `Set-Location` | SL    |
-| `Get-Command`  | GCM   |
+| `Get-Command`  | gcm   |
 | `Get-Alias`    | GAL   |
 
 Als u bekend met PowerShell aliasing bent, is het gemakkelijk te raden dat de **sal** alias verwijst naar `Set-Alias`.

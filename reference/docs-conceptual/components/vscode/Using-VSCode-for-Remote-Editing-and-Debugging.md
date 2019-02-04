@@ -1,15 +1,15 @@
 ---
-title: Met behulp van Visual Studio Code voor het externe bewerken en foutopsporing
-description: Met behulp van Visual Studio Code voor het externe bewerken en foutopsporing
+title: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
+description: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655509"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688950"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Met behulp van Visual Studio Code voor het externe bewerken en foutopsporing
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 
 Bedoeld voor degenen die bekend zijn met de ISE zijn misschien herinnert u zich dat u kunt uitvoeren `psedit file.ps1` rechtstreeks vanuit de geïntegreerde console bestanden - lokale of externe - te openen in de ISE.
 
@@ -61,7 +61,7 @@ De watered omlaag uitleg van de cmdlet is:
 - `Enter-PSSession -ContainerId foo` en `Enter-PSSession -VmId foo` een sessie via PowerShell Direct starten
 - `Enter-PSSession -HostName foo` Hiermee wordt een sessie via SSH gestart
 
-Voor meer informatie over `Enter-PSSession`, bekijk de documenten [hier](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+Voor meer informatie over `Enter-PSSession`, bekijk de documenten [hier](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 Ik moet gebruikmaken van SSH voor externe toegang omdat ik in Mac OS een Ubuntu-VM in Azure.
 

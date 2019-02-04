@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: PowerShell-cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404032"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686416"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
 Bijgewerkt: 24: juni 2013
 
-Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
+Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell-webtoegang in Windows Server 2012 R2 en Windows Server 2012 heeft een beperkend beveiligingsmodel. Gebruikers moeten expliciet toegang worden verleend voordat ze kunnen zich aanmelden bij de Windows PowerShell Web Access-gateway en het web gebaseerde Windows PowerShell-console gebruiken.
 
@@ -186,13 +186,13 @@ Windows PowerShell-webtoegang stelt in het voorgaande scenario kan een geslaagde
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Eén set autorisatieregels gebruiken voor meerdere sites
 
-Autorisatieregels worden opgeslagen in een XML-bestand. De naam van het pad van het XML-bestand is standaard `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Autorisatieregels worden opgeslagen in een XML-bestand. De naam van het pad van het XML-bestand is standaard `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Het pad naar het XML-bestand met autorisatieregels wordt opgeslagen in de **powwa.config** -bestand, dat is gevonden in `%windir%\Web\PowershellWebAccess\data`. De beheerder heeft de flexibiliteit om te wijzigen van de verwijzing naar het standaardpad in **powwa.config** op basis van voorkeuren of vereisten. De beheerder om de locatie van het bestand te wijzigen zodat kunt meerdere Windows PowerShell-webtoegang gateways dezelfde autorisatieregels gebruiken, als een dergelijke configuratie vereist is.
+Het pad naar het XML-bestand met autorisatieregels wordt opgeslagen in de **powwa.config** -bestand, dat is gevonden in `$env:windir\Web\PowershellWebAccess\data`. De beheerder heeft de flexibiliteit om te wijzigen van de verwijzing naar het standaardpad in **powwa.config** op basis van voorkeuren of vereisten. De beheerder om de locatie van het bestand te wijzigen zodat kunt meerdere Windows PowerShell-webtoegang gateways dezelfde autorisatieregels gebruiken, als een dergelijke configuratie vereist is.
 
 ## <a name="session-management"></a>Sessiebeheer
 
-Standaard beperkt Windows PowerShell-webtoegang een gebruiker tot drie sessies tegelijk. U kunt de webtoepassing bewerken **web.config** bestand in IIS-beheer voor de ondersteuning van een ander aantal sessies per gebruiker. Het pad naar de **web.config** bestand `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Standaard beperkt Windows PowerShell-webtoegang een gebruiker tot drie sessies tegelijk. U kunt de webtoepassing bewerken **web.config** bestand in IIS-beheer voor de ondersteuning van een ander aantal sessies per gebruiker. Het pad naar de **web.config** bestand `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 IIS-webserver is standaard geconfigureerd voor het opnieuw opstarten van de groep van toepassingen als alle instellingen worden bewerkt. Bijvoorbeeld, de groep van toepassingen opnieuw wordt gestart als wijzigingen worden aangebracht in de **web.config** bestand. > omdat **Windows PowerShell-webtoegang** maakt gebruik van de sessiestatus in het geheugen, > gebruikers die zijn aangemeld bij **Windows PowerShell-webtoegang** sessies hun sessie wanneer de groep van toepassingen opnieuw wordt opgestart kwijt.
 

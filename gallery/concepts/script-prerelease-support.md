@@ -4,11 +4,11 @@ contributor: keithb
 keywords: Galerie, powershell, cmdlet, psget
 title: Voorlopige versies van scripts
 ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002732"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683980"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Voorlopige versies van scripts
 

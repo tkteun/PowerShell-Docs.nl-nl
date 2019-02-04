@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell-systeemvereisten
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 164ccefa050373064977108aaa13a3ecbeb28713
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403974"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687760"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
 In dit onderwerp worden de systeemvereisten voor Windows PowerShell 3.0, Windows PowerShell 4.0 en Windows PowerShell 5.0 en Windows PowerShell 5.1 en speciale functies, zoals Windows PowerShell Integrated Scripting Environment (ISE), CIM-opdrachten, en werkstromen.
@@ -36,7 +36,7 @@ Windows PowerShell 5.1 wordt uitgevoerd op de volgende versies van Windows.
 
 - Windows 7 met Service Pack 1 installeren [Windows Management Framework 5.1](https://aka.ms/wmf5download) om uit te voeren van Windows PowerShell 5.1
 
-Windows PowerShell 5.0 (Superceeded door Windows PowerShell 5.1) wordt uitgevoerd op de volgende versies van Windows.
+Windows PowerShell 5.0 (vervangen door Windows PowerShell 5.1) wordt uitgevoerd op de volgende versies van Windows.
 
 - Windows Server 2019, hogere versie is standaard geïnstalleerd
 
@@ -112,7 +112,7 @@ Echter bepaalde items, zoals de volgende, vereisen een grafische gebruikersinter
 
 - Cmdlets
 
-    1.  [Out GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
     2.  [Opdracht weergeven](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
@@ -144,7 +144,7 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 en Windows PowerShell 4.0 worden 
 
 - [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Help opslaan](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
 - [Update-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 

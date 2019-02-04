@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC gebruiken op Nano Server
 ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403981"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686584"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC gebruiken op Nano Server
 
@@ -43,9 +43,9 @@ Zowel push als pull-modi
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
-- [Sleutelwoorden Invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Zoeken naar sleutelwoorden-dscresource bieden](https://technet.microsoft.com/en-us/library/mt517874.aspx)
-- [Sleutelwoorden Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
+- [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
+- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
 - -Configuraties compileren (Zie [DSC-configuraties](../configurations/configurations.md))
@@ -82,10 +82,10 @@ Zowel push als pull-modi
 
 - **Archiveren**
 - **Omgeving**
-- **Bestand**
+- **File**
 - **Log**
 - **ProcessSet**
-- **register**
+- **Registry**
 - **Script**
 - **WindowsPackageCab**
 - **WindowsProcess**
@@ -107,7 +107,7 @@ Zowel push als pull-modi
   *Kan type [management.managementobject] niet vinden: Controleer of de assembly met dit type is geladen.*
 
 - Resources die geen functionele
-- **Gebruiker**
+- **User**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>DSC-functies niet beschikbaar in Nano Server
 

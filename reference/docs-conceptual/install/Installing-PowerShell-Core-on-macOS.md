@@ -3,11 +3,11 @@ title: PowerShell Core in macOS installeren
 description: Informatie over PowerShell Core in macOS installeren
 ms.date: 12/12/2018
 ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403980"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688481"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 

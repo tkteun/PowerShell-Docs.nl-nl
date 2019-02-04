@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Gebruiker van de DSC-Resource
 ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048337"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687501"
 ---
 # <a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource
 
@@ -41,7 +41,7 @@ User [string] #ResourceName
 | Beschrijving| Geeft aan dat de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
 | Uitgeschakeld| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op `$true` om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op `$false` om ervoor te zorgen dat deze is ingeschakeld.|
 | Zorg ervoor dat| Geeft aan of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| Volledige naam| Hiermee geeft u een tekenreeks zijn met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
+| FullName| Hiermee geeft u een tekenreeks zijn met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
 | Wachtwoord| Geeft het wachtwoord die u wilt gebruiken voor dit account. |
 | PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op `$true` om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op `$false` zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is `$false`.|
 | PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker het wachtwoord bij de volgende aanmelding moet wijzigen. Deze eigenschap instellen op `$true` als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is `$true`.|

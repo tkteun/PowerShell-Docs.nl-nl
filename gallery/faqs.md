@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Veelgestelde vragen over de PowerShell Gallery
 ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002869"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688012"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -35,7 +35,7 @@ Zodra u hebt geregistreerd in de galerie, gebruikt u de [Publish-Module](https:/
 
 **U hoeft niet te registreren of aanmelden bij de galerie te installeren of sla-pakketten.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ontvangen "kan aanvraag niet verwerken. 'De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket.'. De externe server heeft een fout geretourneerd: (403)-verboden. " Fout bij het publiceren van een pakket naar de PowerShell Gallery. Wat moet dat betekenen?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ontvangen "kan aanvraag niet verwerken. 'De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket.'. De externe server heeft een fout geretourneerd: (403)-verboden." Fout bij het publiceren van een pakket naar de PowerShell Gallery. Wat moet dat betekenen?
 
 Deze fout kan optreden voor de volgende redenen:
 

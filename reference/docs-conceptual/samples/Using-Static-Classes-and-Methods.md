@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Statische klassen en methoden gebruiken
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
 ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404506"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687032"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 Niet alle .NET Framework-klassen kunnen worden gemaakt met behulp van **New-Object**. Bijvoorbeeld, als u probeert te maken een **System.Environment** of een **System.Math** object met **New-Object**, krijgt u de volgende foutberichten:

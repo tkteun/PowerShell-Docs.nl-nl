@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell, cmdlet, downloaden, installeren, instellingen, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell installeren
 ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403978"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687326"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
 

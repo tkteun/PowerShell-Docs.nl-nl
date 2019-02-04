@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Het ISEEditor-object
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404538"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686150"
 ---
 # <a name="the-iseeditor-object"></a>Het ISEEditor-object
 
@@ -246,6 +246,6 @@ $myEditor.InsertText($selection.ToLower())
 ## <a name="see-also"></a>Zie ook
 
 - [Het ISEFile-Object](The-ISEFile-Object.md)
-- [Het PowerShellTab-Object](The-PowerShellTab-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

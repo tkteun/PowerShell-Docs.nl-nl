@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404314"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683826"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
 
 Bijgewerkt: 5: november 2013 (bewerkt: 23 augustus 2017)
 
-Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
+Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="introduction"></a>Inleiding
 
@@ -136,7 +136,7 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
    - Pad: / pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Voorbeeld**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
    - Pad: / pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Open de IIS-beheerconsole op een van de volgende manieren.
 
@@ -271,7 +271,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 7. In de **groep van toepassingen** veld, selecteert u de groep van toepassingen die u hebt gemaakt in stap 3.
 
-8. In de **fysiek pad** veld, blader naar de locatie van de toepassing. U kunt de standaardlocatie bevindt, `%windir%/Web/PowerShellWebAccess/wwwroot`. Klik op **OK**.
+8. In de **fysiek pad** veld, blader naar de locatie van de toepassing. U kunt de standaardlocatie bevindt, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Klik op **OK**.
 
 9. Volg de stappen in de procedure [configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-Manager) in dit onderwerp.
 
@@ -318,7 +318,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 1. Er wordt automatisch een groep toepassingen gemaakt voor de nieuwe website. Voor het gebruik van een andere groep van toepassingen, klikt u op **Selecteer** om te selecteren van een groep van toepassingen om te koppelen aan de nieuwe website. Selecteer de alternatieve groep van toepassingen in de **groep van toepassingen selecteren** in het dialoogvenster en klik vervolgens op **OK**.
 
-1. In de **fysiek pad** tekst vak, gaat u naar %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. In de **fysiek pad** tekst vak, gaat u naar % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. In de **Type** veld van de **Binding** gedeelte **https**.
 

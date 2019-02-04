@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50998517"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684652"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Sleutelwoord sleutelwoorden import-dscresource bieden ondersteuning biedt voor de parameter - ModuleVersion
 
@@ -16,9 +16,9 @@ We hebben een nieuwe parameter toegevoegd de `Import-DscResource` dynamische sle
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **Naam**: naam van een of meer resources te importeren.
-* **ModuleName**: modulenamen of ModuleSpecification objecten van een of meer modules te importeren.
-* **ModuleVersion**: versie van de module te importeren. Als u gebruikt, moet ModuleName slechts één module met de naam vertegenwoordigen.
+* **Naam**: Namen van een of meer resources te importeren.
+* **ModuleName**: Modulenamen of ModuleSpecification objecten van een of meer modules te importeren.
+* **ModuleVersion**: De versie van de module te importeren. Als u gebruikt, moet ModuleName slechts één module met de naam vertegenwoordigen.
 
 In de Windows PowerShell ISE, wordt deze weergegeven met IntelliSense:
 

@@ -1,91 +1,91 @@
 ---
 ms.date: 06/12/2017
-keywords: jea powershell beveiliging
-title: JEA beveiligingsoverwegingen
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: jea, powershell, beveiliging
+title: Overwegingen bij de beveiliging van JEA
+ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190176"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687242"
 ---
-# <a name="jea-security-considerations"></a>JEA beveiligingsoverwegingen
+# <a name="jea-security-considerations"></a>Overwegingen bij de beveiliging van JEA
 
 > Van toepassing op: Windows PowerShell 5.0
 
-JEA helpt u bij uw beveiligingspostuur verbeteren door het aantal permanente beheerders op uw computers te verminderen.
-Dit gebeurt door het maken van een nieuw toegangspunt voor gebruikers voor het beheren van het systeem (een PowerShell-sessie configuration) nauw standaard om te voorkomen dat misbruik wordt vergrendeld.
-Gebruikers die sommige, maar niet nodig hebben onbeperkte toegang tot de computer voor het uitvoeren van beheertaken kan toegang tot het eindpunt JEA worden verleend.
-JEA kunnen deze opdrachten uit te voeren admin zonder rechtstreeks beheerderstoegang, kunt u vervolgens die gebruikers verwijderen uit maximaal bevoorrechte beveiligingsgroepen (zodat ze kunnen gebruikers standaard).
+JEA helpt u bij uw beveiligingspostuur verbeteren door het aantal permanente beheerders op uw virtuele machines te verminderen.
+Dit gebeurt door het maken van een nieuw toegangspunt voor gebruikers voor het beheren van het systeem (een PowerShell-sessie-configuratie) die nauw standaard om te voorkomen dat misbruik wordt vergrendeld.
+Gebruikers die sommige, maar niet nodig hebben onbeperkte toegang tot de machine administratieve taken uit te voeren toegang tot de JEA-eindpunt kan worden verleend.
+JEA kunnen ze admin-opdrachten uitvoeren zonder rechtstreeks met beheerderstoegang, kunt u vervolgens deze gebruikers verwijderen uit maximaal beschermde-beveiligingsgroepen (zodat ze standaardgebruikers).
 
-Dit onderwerp beschrijft de JEA beveiligingsmodel en best practices in meer detail.
+Dit onderwerp beschrijft de JEA-beveiligingsmodel en aanbevolen procedures in meer detail.
 
-## <a name="run-as-account"></a>Run As-account
+## <a name="run-as-account"></a>Uitvoeren als-account
 
-Elk eindpunt JEA heeft een aangewezen 'uitvoeren als'-account, dat het account waaronder de gebruiker verbinding maakt acties worden uitgevoerd.
-Dit account is geconfigureerd in de [sessie configuratiebestand](session-configurations.md), en het account dat u kiest een grote invloed heeft op de beveiliging van uw eindpunt.
+Elke JEA-eindpunt heeft een aangewezen 'uitvoeren als'-account, dit is het account waarmee de gebruiker verbinding maakt acties worden uitgevoerd.
+Dit account kan worden geconfigureerd in de [sessie configuratiebestand](session-configurations.md), en het account dat u kiest een grote invloed heeft op de beveiliging van uw eindpunt.
 
-**Virtuele accounts** zijn de aanbevolen manier van het configureren van het run as-account.
-Virtuele accounts zijn eenmalige, tijdelijke lokale accounts die zijn gemaakt voor de gebruiker verbinding probeert te maken voor gebruik tijdens de duur van hun JEA-sessie.
+**Virtuele accounts** zijn de aanbevolen manier om de uitvoeren als-account configureren.
+Virtuele-accounts zijn eenmalige, tijdelijke lokale accounts die zijn gemaakt voor de gebruiker die de verbinding moet worden gebruikt tijdens de duur van hun JEA-sessie.
 Zodra de sessie wordt beëindigd, wordt de virtuele-account wordt vernietigd en kan niet meer worden gebruikt.
-De gebruiker verbinding maakt niet de referenties voor de virtuele account weet en virtueel account toegang tot het systeem via andere middelen, zoals Extern bureaublad of een onbeperkte PowerShell-eindpunt niet gebruiken.
+Gebruiker die de verbinding niet weet de referenties voor de virtuele-account en de virtuele-account niet gebruiken voor toegang tot het systeem via andere middelen, zoals Extern bureaublad of een onbeperkte PowerShell-eindpunt.
 
-Standaard worden virtuele accounts behoren tot de lokale groep administrators op de machine.
-Dit geeft ze volledige rechten voor het beheren van op het systeem, maar geen rechten voor het beheren van bronnen op het netwerk.
-Bij de verificatie met andere virtuele machines, worden de context van de gebruiker die het lokale computeraccount niet de virtueel account.
+Standaard worden virtuele accounts behoren tot de lokale beheerdersgroep op de machine.
+Dit biedt ze volledige rechten voor het beheren van alles op het systeem, maar geen rechten voor het beheren van bronnen op het netwerk.
+Bij het verifiëren met andere virtuele machines, worden de context van de gebruiker van het account lokale computer, niet op het virtuele account.
 
-Domeincontrollers zijn een speciaal geval, omdat er geen concept van een lokale groep administrators.
-In plaats daarvan virtuele accounts in plaats daarvan behoren tot Domeinadministrators en de directoryservices op de domeincontroller kunnen beheren.
-De identiteit van het domein is nog steeds beperkt tot het op de domeincontroller waar de sessie JEA is geïnstantieerd en toegang tot het netwerk wordt weergegeven in plaats daarvan afkomstig zijn van de computer van het domeincontrollerobject gebruiken.
+Domeincontrollers vormen een speciaal geval, omdat er geen concept van een lokale groep administrators.
+In plaats daarvan virtuele accounts behoren tot de groep Domeinadministrators in plaats daarvan en de directoryservices op de domeincontroller kunnen beheren.
+De domein-identiteit is nog steeds beperkt tot het gebruik van de domeincontroller waar de JEA-sessie is gemaakt, en toegang tot het netwerk wordt weergegeven in plaats daarvan afkomstig zijn van de domain controller computer-object.
 
-In beide gevallen kunt u ook expliciet welke beveiligingsgroepen virtueel account tot behoren moet definiëren.
-Dit is een goede gewoonte wanneer de taak die u uitvoert zonder lokale/of domein beheerdersbevoegdheden kan worden gedaan.
-Als u al een beveiligingsgroep die is gedefinieerd voor uw beheerders hebt, kunt u gewoon het lidmaatschap van de virtueel account verlenen aan die groep hieraan de machtigingen die nodig is.
-Virtueel account lidmaatschap is beperkt tot lokale beveiligingsgroepen op werkstation en servers, maar op een domeincontroller alleen kan worden lid van domein, beveiligingsgroepen.
-Wanneer u een of meer beveiligingsgroepen voor de virtuele-account om u te behoren tot opgeeft, wordt deze niet langer hoort bij de standaardgroepen (lokale Administrators of domeinbeheerder).
+In beide gevallen kunt u ook expliciet welke beveiligingsgroepen de virtueel account tot behoren moet definiëren.
+Dit is een goede gewoonte wanneer de taak die u uitvoert zonder beheerdersbevoegdheden lokale/domein kan worden gedaan.
+Als u al een beveiligingsgroep die is gedefinieerd voor uw beheerders hebt, kunt u gewoon het lidmaatschap van de virtueel account verlenen aan die groep wijs hieraan de machtigingen die nodig zijn.
+Virtueel accountlidmaatschap is beperkt tot lokale beveiligingsgroepen op werkstations en lidservers, maar op een domeincontroller ze kunnen alleen leden van de domein-beveiligingsgroepen.
+Wanneer u een of meer beveiligingsgroepen voor de virtuele-account om u te behoren tot opgeeft, wordt deze niet meer behoren tot de standaard-groepen (lokale beheerder of domeinbeheerder).
 
 De onderstaande tabel bevat een overzicht van de mogelijke configuratie-opties en de resulterende machtigingen voor virtuele accounts
 
-Het computertype                | Configuratie van virtueel account | Lokale gebruikerscontext                                      | Netwerk gebruikerscontext
+Het computertype                | Configuratie van virtueel account | Lokale gebruikerscontext                                      | Netwerk-gebruikerscontext
 -----------------------------|-------------------------------------|---------------------------------------------------------|--------------------------------------------------
-Domeincontroller            | Standaardinstelling                             | Domeingebruiker, lid is van '*domein*\Domain Admins'         | Computeraccount
-Domeincontroller            | Domeingroepen A en B               | Domeingebruiker, lid is van '*domein*\A ','*domein*\ber '       | Computeraccount
-Lidserver of werkstation | Standaardinstelling                             | Lokale gebruiker, lid is van '*BUILTIN*\Administrators'        | Computeraccount
-Lidserver of werkstation | Lokale groepen C en D                | Lokale gebruiker, lid is van '*COMPUTER*\C' en '*COMPUTER*\D' | Computeraccount
+Domeincontroller            | Standaard                             | Domeingebruiker, lid van '*domein*\Domain beheerders         | Computeraccount
+Domeincontroller            | Domeingroepen A en B               | Domeingebruiker, lid van '*domein*\A ','*domein*\B'       | Computeraccount
+Lidserver of werkstation | Standaard                             | Lokale gebruiker, lid van '*BUILTIN*\Administrators'        | Computeraccount
+Lidserver of werkstation | Lokale groepen C en D                | Lokale gebruiker, lid van '*COMPUTER*\C' en '*COMPUTER*\D' | Computeraccount
 
-Als u gebeurtenissen voor beveiligingscontrole en de gebeurtenislogboeken van toepassingen bekijkt, ziet u dat elke gebruiker JEA sessie een uniek virtueel account heeft.
-Zo kunt u gebruikersacties in een eindpunt JEA terug naar de oorspronkelijke gebruiker die de opdracht uitvoert.
-Virtueel account namen volgt u de indeling ' WinRM virtuele gebruikers\\WinRM\_VA\_*ACCOUNTNUMBER*\_*domein* \_ *sAMAccountName*' als gebruiker "Els' in 'Contoso' domein opnieuw wordt opgestart een service in een eindpunt JEA, de gebruikersnaam die is gekoppeld aan de service control manager gebeurtenissen zou bijvoorbeeld ' WinRM virtuele gebruikers\\WinRM\_ VA\_1\_contoso\_Els '.
+Wanneer u gebeurtenissen voor beveiligingscontrole en gebeurtenislogboeken van toepassing bekijkt, ziet u dat elke gebruikerssessie JEA een unieke virtueel account is.
+Zo kunt u het bijhouden van acties in een JEA-eindpunt van de gebruiker terug naar de oorspronkelijke gebruiker die de opdracht uitvoert.
+Virtueel account namen worden als volgt de indeling ' WinRM virtuele gebruikers\\WinRM\_VA\_*ACCOUNTNUMBER*\_*domein* \_ *sAMAccountName*' als gebruiker 'Els' in domein "Contoso" opnieuw wordt opgestart een service in een JEA-eindpunt, de gebruikersnaam die is gekoppeld aan de service control manager gebeurtenissen zou bijvoorbeeld ' WinRM virtuele gebruikers\\WinRM\_ Evaluatie van beveiligingsproblemen\_1\_contoso\_Els '.
 
 
-**Groep beheerde serviceaccounts (gmsa's)** zijn nuttig wanneer er een lidserver moet toegang hebben tot netwerkbronnen in de sessie JEA.
-Een voorbeeld gebruiksvoorbeeld voor dit is een JEA-eindpunt dat wordt gebruikt voor toegang tot een REST-API die worden gehost op een andere computer beheren.
-Het is gemakkelijk om te schrijven functies om de gewenste aanroepen in de REST-API, maar om te verifiëren met de API die u moeten een netwerk-id.
-Met behulp van een groep beheerd serviceaccount, maakt de 'tweede hop' mogelijk en toch hebben besturingselement gedurende welke computers de account kunnen gebruiken.
-De effectieve machtigingen van de gMSA worden gedefinieerd door de beveiligingsgroepen (lokaal of domeinbeheerder) waarbij het gMSA-account hoort.
+**Groep beheerde serviceaccounts (gmsa's)** zijn nuttig wanneer een lidserver moet toegang hebben tot netwerkbronnen in de JEA-sessie.
+Een voorbeeld van de use-case voor dit is een JEA-eindpunt dat wordt gebruikt voor het beheren van toegang tot een REST-API die wordt gehost op een andere computer.
+Het is gemakkelijk om te schrijven functies om de gewenste aanroepen in de REST-API, maar om te kunnen verifiëren met de API die u moeten een netwerk-id.
+Met behulp van een groep beheerd serviceaccount, maakt het 'tweede hop' mogelijk terwijl nog steeds controle over welke computers de account kunnen gebruiken.
+De effectieve machtigingen van de gMSA worden gedefinieerd door de beveiligingsgroepen (lokaal of domein) waarbij het gMSA-account hoort.
 
-Wanneer een JEA-eindpunt is geconfigureerd voor gebruik van een beheerd serviceaccount, verschijnt de acties van gebruikers met alle JEA afkomstig zijn van dezelfde groep beheerd serviceaccount.
-De enige manier kunt u acties terug naar een specifieke gebruiker traceren is het identificeren van de reeks opdrachten uitvoert in de tekst van een PowerShell-sessie.
+Wanneer een JEA-eindpunt is geconfigureerd om een gMSA-account te gebruiken, verschijnt de acties van gebruikers met alle JEA afkomstig zijn van dezelfde groep beheerd serviceaccount.
+De enige manier kunt u acties terug naar een specifieke gebruiker traceren is het identificeren van de reeks opdrachten uitvoeren in de tekst van een PowerShell-sessie.
 
-**-Passthrough referenties** worden gebruikt wanneer u niet opgeven van een run as-account en wilt dat PowerShell te gebruiken referenties van de gebruiker van de verbindende opdrachten uit te voeren op de externe server.
-Deze configuratie is *niet* voor JEA wordt aanbevolen als u de verbindende gebruiker direct toegang verlenen tot bevoegde beheergroepen zou moeten.
-Als de gebruiker verbinding maakt al beheerdersbevoegdheden, kunnen JEA helemaal te voorkomen en beheren van het systeem via andere, onbeperkte middelen.
-Zie de sectie hieronder voor het [JEA biedt geen bescherming tegen admins](#jea-does-not-protect-against-admins) voor meer informatie.
+**-Passthrough referenties** worden gebruikt wanneer u niet opgeven van een uitvoeren als-account en wilt dat PowerShell-opdrachten uitvoeren op de externe server met referenties van de gebruiker van het maken van verbinding.
+Deze configuratie is *niet* voor JEA aanbevolen als u de verbindende gebruikers direct toegang geven tot privileged beheergroepen zou moeten.
+Als gebruiker die de verbinding is al beheerdersbevoegdheden, kunnen ze helemaal te voorkomen dat JEA en beheren van het systeem via andere, onbeperkte betekent.
+Zie het gedeelte hieronder voor het [JEA biedt geen bescherming tegen beheerders](#jea-does-not-protect-against-admins) voor meer informatie.
 
-**Standaard run as-accounts** kunt u opgeven van een gebruikersaccount op waaronder de gehele PowerShell-sessie wordt uitgevoerd.
-Dit is een belangrijk verschil, omdat een sessieconfiguratie is ingesteld op een vaste run as-account gebruiken (met de `-RunAsCredential` parameter) is niet JEA-bewust.
-Dat betekent dat roldefinities niet meer werkt zoals verwacht, en elke gebruiker die toegang hebben tot het eindpunt wordt dezelfde rol worden toegewezen.
+**Standaard uitvoeren als-accounts** kunt u opgeven van een gebruikersaccount op waaronder de volledige PowerShell-sessie wordt uitgevoerd.
+Dit is een belangrijke onderscheidende factor zijn, omdat een sessieconfiguratie ingesteld voor het gebruik van een vaste uitvoeren als-account (met de `-RunAsCredential` parameter) is niet JEA-bewust.
+Dit betekent dat dat roldefinities niet langer werken zoals verwacht, en elke gebruiker die is gemachtigd voor toegang tot het eindpunt wordt dezelfde rol worden toegewezen.
 
-U moet een RunAsCredential niet gebruiken op een eindpunt JEA vanwege de problemen bij het traceren van acties weer voor specifieke gebruikers en het ontbreken van ondersteuning voor het toewijzen van gebruikers aan rollen.
+U moet een RunAsCredential niet gebruiken op een JEA-eindpunt vanwege de problemen bij het traceren van acties terug naar specifieke gebruikers en het ontbreken van ondersteuning voor het toewijzen van gebruikers aan rollen.
 
 ## <a name="winrm-endpoint-acl"></a>WinRM ACL voor eindpunten
 
-Als met de reguliere PowerShell remoting eindpunten, elk eindpunt JEA een afzonderlijke toegangsbeheerlijst (ACL heeft) instellen in de WinRM-configuratie die bepaalt kunnen die worden geverifieerd met het eindpunt JEA.
-Als u niet goed geconfigureerd, vertrouwde gebruikers wellicht geen toegang krijgen tot het eindpunt JEA en/of niet-vertrouwde gebruikers toegang kunnen krijgen.
-De WinRM-ACL bepaalt echter niet het geval is, de toewijzing van gebruikers aan rollen JEA.
+Omdat elke JEA-eindpunt met de reguliere PowerShell remoting eindpunten, een afzonderlijke toegangsbeheerlijst (ACL) instellen in de WinRM-configuratie die bepaalt kunnen die worden geverifieerd met de JEA-eindpunt.
+Als u niet goed geconfigureerd, vertrouwde gebruikers wellicht geen toegang hebben tot de JEA-eindpunt en/of niet-vertrouwde gebruikers toegang kunnen krijgen.
+De WinRM-ACL beïnvloedt echter niet zo is, de toewijzing van gebruikers aan rollen JEA.
 Die wordt beheerd door de *RoleDefinitions* veld in het configuratiebestand van de sessie die is geregistreerd op het systeem.
 
-Standaard, wanneer u registreert een JEA-eindpunt met een configuratiebestand sessie als een of meer mogelijkheden voor rol, wordt de WinRM-ACL worden geconfigureerd, zodat alle gebruikers toewijzen aan een of meer rollen-toegang tot het eindpunt.
+Standaard, wanneer u een JEA-eindpunt met behulp van een sessie-configuratiebestand als een of meer rolmogelijkheden, registreert wordt de WinRM-ACL worden geconfigureerd dat alle gebruikers toe te wijzen aan een of meer rollen toegang tot het eindpunt.
 Bijvoorbeeld, een JEA-sessie die is geconfigureerd met behulp van de volgende opdrachten wordt volledige toegang verlenen tot *CONTOSO\JEA\_Lev1* en *CONTOSO\JEA\_Lev2*.
 
 ```powershell
@@ -94,7 +94,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-U kunt controleren de machtigingen van gebruiker met de [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
+U kunt controleren de machtigingen van de gebruiker met de [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission
@@ -105,20 +105,20 @@ CONTOSO\JEA_Lev1 AccessAllowed
 CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
-Als u wilt wijzigen welke gebruikers toegang hebben, voer een `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` voor een interactieve prompt of `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` de machtigingen bijwerken.
-Gebruikers moeten ten minste *Invoke* rechten voor toegang tot het eindpunt JEA.
+Als u wilt wijzigen welke gebruikers toegang hebben, voer een `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` voor een interactieve prompt of `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` om bij te werken van de machtigingen.
+Gebruikers moeten ten minste *Invoke* rechten voor toegang tot de JEA-eindpunt.
 
-Als extra gebruikers toegang tot het eindpunt JEA krijgen maar niet in een van de rollen gedefinieerd in het configuratiebestand van de sessie vallen, worden ze kunnen een JEA-sessie starten, maar hebben alleen toegang tot de standaard-cmdlets.
-U kunt de gebruikersmachtigingen in een eindpunt JEA controleren door te voeren `Get-PSSessionCapability`.
-Bekijk de [controle en rapportage over JEA](audit-and-report.md) artikel voor meer informatie over controle en die opdrachten van een gebruiker toegang heeft tot in een JEA-eindpunt.
+Als extra gebruikers toegang tot de JEA-eindpunt krijgen, maar niet in een van de rollen die zijn gedefinieerd in het configuratiebestand van de sessie vallen, worden ze wel een JEA-sessie starten, maar hebben alleen toegang tot de standaard-cmdlets.
+U kunt de machtigingen van de gebruiker in een JEA-eindpunt controleren door te voeren `Get-PSSessionCapability`.
+Bekijk de [controle en rapportage over JEA](audit-and-report.md) artikel voor meer informatie over het controleren van opdrachten van een gebruiker die toegang heeft tot in een JEA-eindpunt.
 
 ## <a name="least-privilege-roles"></a>Minimale bevoegdheid rollen
 
-Bij het ontwerpen van JEA rollen, is het belangrijk te weten dat de virtuele of groep beheerde service-account met achter de schermen vaak onbeperkte toegang tot het beheer van de lokale computer heeft.
-JEA rol mogelijkheden te beperken waarvoor dat account kan worden gebruikt door het beperken van de opdrachten en toepassingen die kunnen worden uitgevoerd met behulp van die bevoegde context.
-Onjuist ontworpen rollen kunt gevaarlijke opdrachten die een gebruiker kan opsplitsen buiten de grenzen JEA of toegang krijgen tot gevoelige informatie.
+Bij het ontwerpen van JEA-functies, is het belangrijk om te weten dat de virtuele of een groep beheerde service-account die wordt uitgevoerd op de achtergrond vaak onbeperkte toegang tot het beheer van de lokale computer is.
+Rolmogelijkheden JEA te beperken wat dat account kan worden gebruikt door het beperken van de opdrachten en toepassingen die kunnen worden uitgevoerd met behulp van die beschermde context.
+Niet goed ontworpen rollen kunt gevaarlijke opdrachten die een gebruiker kan verbreken buiten de grenzen van de JEA of toegang krijgen tot gevoelige informatie.
 
-Neem bijvoorbeeld de volgende vermelding van de rol-functionaliteit:
+Bijvoorbeeld, houd rekening met de volgende vermelding van de rol-mogelijkheid:
 
 ```powershell
 @{
@@ -126,12 +126,12 @@ Neem bijvoorbeeld de volgende vermelding van de rol-functionaliteit:
 }
 ```
 
-Deze mogelijkheid rol kan gebruikers een PowerShell-cmdlet uitvoeren met het zelfstandig naamwoord 'Proces' van de module Microsoft.PowerShell.Management.
-Gebruikers hebben mogelijk nodig voor toegang tot cmdlets, zoals `Get-Process` om te begrijpen welke toepassingen worden uitgevoerd op het systeem en `Stop-Process` afsluiten een vastgelopen toepassingen.
-Deze vermelding ook kan echter `Start-Process`, die kan worden gebruikt om op te starten met volledige administrator-machtigingen van een willekeurige programma.
-Het programma niet moet lokaal op het systeem worden geïnstalleerd zodat een adversary kan een programma te starten op een bestandsshare waarmee de verbindende gebruikersbevoegdheden voor lokale beheerder en schadelijke software wordt uitgevoerd.'
+De mogelijkheid van deze rol kan gebruikers een PowerShell-cmdlet uitvoeren met het zelfstandig naamwoord 'Proces' van de module Microsoft.PowerShell.Management.
+Gebruikers mogelijk toegang tot cmdlets, zoals `Get-Process` om te begrijpen welke toepassingen worden uitgevoerd op het systeem en `Stop-Process` afsluiten een vastgelopen toepassingen.
+Deze post ook kan echter `Start-Process`, die kan worden gebruikt om een willekeurige programma met volledige beheerdersrechten worden opgestart.
+Het programma niet moet lokaal op het systeem worden geïnstalleerd, zodat een kwaadwillende persoon kan een programma te starten op een bestandsshare waarmee de verbindende gebruiker lokale beheerdersbevoegdheden en schadelijke software wordt uitgevoerd.'
 
-Een beter beveiligde versie van deze mogelijkheid met dezelfde functie eruit als:
+Een beter beveiligde versie van deze dezelfde rol mogelijkheid zou er als volgt uitzien:
 
 ```powershell
 @{
@@ -139,16 +139,16 @@ Een beter beveiligde versie van deze mogelijkheid met dezelfde functie eruit als
 }
 ```
 
-Vermijd het gebruik van jokertekens in de mogelijkheden van de rol en zorg ervoor dat [effectieve machtigingen van de audit](audit-and-report.md#check-effective-rights-for-a-specific-user) regelmatig om te begrijpen die opdrachten van een gebruiker toegang heeft tot.
+Vermijd het gebruik van jokertekens in rolmogelijkheden en zorg ervoor dat u [controleren de machtigingen van de effectieve gebruikersnaam](audit-and-report.md#check-effective-rights-for-a-specific-user) regelmatig om te begrijpen welke opdrachten van een gebruiker toegang heeft tot.
 
 ## <a name="jea-does-not-protect-against-admins"></a>JEA biedt geen bescherming tegen beheerders
 
-Een van de belangrijkste principes van JEA is dat kunnen niet-beheerders om uit te voeren *sommige* beheertaken.
-JEA biedt geen bescherming tegen mensen die al administrator-bevoegdheden hebben.
-Gebruikers die deel uitmaken van 'Domeinadministrators', 'lokale beheerders,' of andere maximaal bevoorrechte groepen in uw omgeving nog steeds mogelijk om op te halen om de bescherming van JEA wanneer u zich aanmeldt bij de computer via een andere manier.
-Ze kunnen bijvoorbeeld aanmelden met RDP, externe MMC-consoles gebruiken of verbinding maken met onbeperkte PowerShell-eindpunten.
-Lokale beheerder zijn op het systeem kunt JEA configuraties als u extra gebruikers beheren van het systeem of wijzigen van een rol mogelijkheid om uit te breiden het bereik van wat een gebruiker in hun sessie JEA doen kan mogen ook wijzigen.
-Daarom is het belangrijk om te bepalen van uw gebruikers JEA uitgebreide machtigingen om te zien of er andere manieren ze kunnen bevoorrechte toegang krijgen tot het systeem.
+Een van de belangrijkste principes van JEA is dat het niet-beheerders om uit te voeren kunt *sommige* beheertaken.
+JEA biedt geen bescherming tegen mensen die al administrator-bevoegdheden hebt.
+Gebruikers die deel uitmaken van 'Domeinadministrators', 'lokale admins', of andere maximaal beschermde groepen in uw omgeving worden nog steeds de JEA-beveiligingen als u zich aanmeldt bij de computer via een andere manier wordt omzeild.
+Ze kunnen, bijvoorbeeld: Meld u aan met RDP, externe MMC-consoles gebruiken of verbinding maken met onbeperkte PowerShell-eindpunten.
+Lokale beheerders op het systeem kunt JEA configuraties zodat andere gebruikers te beheren van het systeem of te wijzigen van de mogelijkheid van een rol om uit te breiden het bereik van wat een gebruiker in hun sessie JEA doen kan ook wijzigen.
+Daarom is het belangrijk om te bepalen van uw gebruikers JEA uitgebreide machtigingen om te zien of er andere manieren kan ook bevoegde toegang tot het systeem.
 
-Een gebruikelijk is JEA voor regelmatig onderhoud van de dagelijkse en hebben een 'just-in tijd' uitgebreide oplossing voor het beheer van toegang kunnen gebruikers zich tijdelijk worden lokale beheerders in noodsituaties.
-Dit zorgt ervoor gebruikers geen permanente beheerders op het systeem, maar deze rechten kunnen krijgen als en alleen wanneer ze een werkstroom die het gebruik van deze machtigingen documenten voltooien.
+Een normaal worden bij gebruik van JEA voor reguliere dagelijks onderhoud en hebben een 'just in time' in beschermde modus beheeroplossing toegang toestaan dat gebruikers tijdelijk worden lokale beheerders in noodsituaties.
+Dit zorgt ervoor gebruikers zijn geen permanente beheerders op het systeem, maar deze rechten kunnen krijgen als en alleen wanneer ze een werkstroom die documenten van hun gebruik van deze machtigingen hebt voltooid.

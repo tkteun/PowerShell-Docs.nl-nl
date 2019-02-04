@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222000"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688264"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interactie met symbolische koppelingen met verbeterde Item-cmdlets
 
-Ter ondersteuning van de symbolische koppelingen  **\*-Item** en enkele verwante cmdlets zijn uitgebreid. Nu u symbolische koppelingen in een eenvoudige lijn met maken kunt **New Item**. U kunt zien dat de artikel-gerelateerde cmdlets (**Item verwijderen, Get-ChildItem**) gedragen zich op dezelfde manier voor voordat.
+Ter ondersteuning van symbolische koppelingen,  **\*-Item** en enkele verwante cmdlets zijn uitgebreid. Nu u de symbolische koppelingen in een eenvoudige lijn met maken kunt **New Item**. U kunt zien dat de Item-gerelateerde cmdlets (**Remove-Item, Get-ChildItem**) gedragen zich op dezelfde manier als voor voordat.
 
 Hieronder ziet u dat enkele gebruiksvoorbeelden van de nieuwe mogelijkheden:
 
-## <a name="new-item"></a>NIEUW ITEM
+## <a name="new-item"></a>NEW-ITEM
 
 ### <a name="symbolic-link-files"></a>BESTANDEN VAN DE SYMBOLISCHE KOPPELING
 
@@ -52,7 +52,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>DIRECTORY KOPPELINGEN
+### <a name="directory-junctions"></a>DIRECTORY-KOPPELINGEN
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
@@ -110,7 +110,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>ITEM VERWIJDEREN
+## <a name="remove-item"></a>REMOVE-ITEM
 
 ```powershell
 # Works like any other item type

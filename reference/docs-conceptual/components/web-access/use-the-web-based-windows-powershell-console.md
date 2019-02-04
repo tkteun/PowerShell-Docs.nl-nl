@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: de website op basis van windows powershell-console gebruiken
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404449"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686486"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
 Bijgewerkt: 24: juni 2013
 
-Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
+Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell Web Access kunnen gebruikers zich aanmelden met een beveiligde website. Als u wilt gebruiken Windows PowerShell-sessies, cmdlets en scripts voor het beheren van een externe computer.
 

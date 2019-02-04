@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 1556d1e07a3a085346f2cdc48ef6888ad18687ad
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320462"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685765"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-cmdlets voor modulebeheer
 
-- [Zoeken naar sleutelwoorden-dscresource bieden](https://technet.microsoft.com/library/mt654006.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
 - [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
@@ -32,7 +32,7 @@ ms.locfileid: "52320462"
 - [Update-ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
 - [Update-Script](https://technet.microsoft.com/library/mt653997.aspx)
 - [Update-ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
-- [De registratie ongedaan maken-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Ondersteuning voor de installatie van module afhankelijkheid, Get-InstalledModule en Uninstall-Module-cmdlets
 - Populatie van module-afhankelijkheden toegevoegd in de cmdlet Publish-Module. De lijsten RequiredModules en NestedModules van PSModuleInfo worden gebruikt bij het voorbereiden van de afhankelijkheidslijst van een module worden gepubliceerd.

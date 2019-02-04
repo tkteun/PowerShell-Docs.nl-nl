@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Rolmogelijkheden JEA
 ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522936"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685492"
 ---
 # <a name="jea-role-capabilities"></a>Rolmogelijkheden JEA
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Bij het maken van een JEA-eindpunt, moet u definiëren een of meer "rolmogelijkheden" die worden beschreven *wat* iemand in een JEA-sessie kunt doen.
 De mogelijkheid van een rol is een PowerShell-gegevensbestand met de extensie .psrc met een lijst met alle cmdlets, functies, -providers en externe programma's die beschikbaar zijn voor het koppelen van gebruikers moeten worden gemaakt.

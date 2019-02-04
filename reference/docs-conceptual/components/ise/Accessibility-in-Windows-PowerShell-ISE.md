@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403972"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686717"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -80,11 +80,11 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het sc
 
 |Actie|Sneltoets|
 |----------|---------------------|
-|**Nieuw**|CTRL + N|
+|**Nieuw**|CTRL+N|
 |**Open**|CTRL + O|
 |**Uitvoeren**|F5|
 |**Selectie uitvoeren**|F8|
-|**Uitvoering stoppen**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst geselecteerd).|
+|**Stop Execution**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst geselecteerd).|
 |**Tabblad** (naar het volgende script)|CTRL + TAB **Opmerking:** Tabblad naar het volgende script werkt alleen wanneer u een eenmalige PowerShell-tabblad openen, of als u meer dan één PowerShell-tabblad openen, maar de focus zich in het scriptvenster.|
 |**Tabblad** (naar het vorige script)|CTRL + SHIFT + TAB **Opmerking:** Tabblad naar het vorige script werkt wanneer u slechts één PowerShell-tabblad openen, of als er meer dan één PowerShell-tabblad openen en de focus zich in het scriptvenster.|
 
@@ -119,7 +119,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 |**Lijst met onderbrekingspunten**|CTRL + SHIFT + L|Scriptvenster, bij het opsporen van fouten in een script|
 |**Onderbrekingspunt in-/ uitschakelen**|F9|Scriptvenster, bij het opsporen van fouten in een script|
 |**Verwijder alle onderbrekingspunten**|CTRL + SHIFT + F9|Scriptvenster, bij het opsporen van fouten in een script|
-|**Foutopsporingsprogramma stopt**|SHIFT + F5|Scriptvenster, bij het opsporen van fouten in een script|
+|**Stop Debugger**|SHIFT + F5|Scriptvenster, bij het opsporen van fouten in een script|
 
 > [!NOTE]
 >
@@ -154,7 +154,7 @@ U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (Power
 
 |Actie|Sneltoets|
 |----------|---------------------|
-|**Afsluiten**|ALT+F4|
+|**Exit**|ALT+F4|
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>Zie ook

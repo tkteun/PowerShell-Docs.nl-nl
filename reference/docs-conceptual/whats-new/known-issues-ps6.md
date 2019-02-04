@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Bekende problemen voor PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450993"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686759"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen voor PowerShell 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "49450993"
 
 Alpha versies van PowerShell in Linux en macOS zijn voornamelijk functioneel maar wel enkele belangrijke beperkingen en problemen betreffende de bruikbaarheid. Bètaversies. ook van PowerShell in Linux en macOS functionele en stabieler dan alpha releases, maar nog steeds kunnen worden zonder een reeks functies en kan bevatten fouten. In sommige gevallen kan zijn deze problemen gewoon bugs die nog niet zijn opgelost. In andere gevallen (net als bij de standaardaliassen voor ls, cp, enzovoort), we op zoek zijn naar feedback van de community met betrekking tot de opties die we.
 
-Opmerking: Vanwege de overeenkomsten van veel onderliggende subsystemen PowerShell op Linux en Mac OS is meestal hetzelfde niveau van de rijpheid op fouten en functies. Behalve zoals hieronder aangegeven, worden de problemen in deze sectie wordt toegepast op beide besturingssystemen.
+Opmerking: Vanwege de overeenkomsten van veel onderliggende subsystemen vaak PowerShell op Linux en Mac OS delen dezelfde mate van rijpheid op fouten en functies. Behalve zoals hieronder aangegeven, worden de problemen in deze sectie wordt toegepast op beide besturingssystemen.
 
 ### <a name="case-sensitivity-in-powershell"></a>Hoofdlettergevoeligheid in PowerShell
 
@@ -25,7 +25,7 @@ PowerShell is in het verleden op uniforme wijze niet-hoofdlettergevoelig, met en
 
 - Bij het opgeven van een bestand in PowerShell, kan de juiste aanvraag moet worden gebruikt.
 
-#### <a name="indirectly"></a>Indirect
+#### <a name="indirectly"></a>Indirectly
 
 - Als een script probeert te laden van een module en de naam van de module is niet correct, indeling, mislukt de laden van de module. Dit kan een probleem is met bestaande scripts veroorzaken als de naam waarmee de module waarnaar wordt verwezen, komt niet overeen met de werkelijke bestandsnaam.
 - Tabvoltooiing wordt niet automatisch aanvullen als de aanvraag van de naam van bestand onjuist is. Het fragment om te voltooien moet juist worden geïntegreerd. (Voltooiing is niet hoofdlettergevoelig voor naam en type lid voltooiingen.)
@@ -107,7 +107,7 @@ De volgende tabel bevat opdrachten die bekend zijn niet te werken in PowerShell 
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
 |`Get-Acl`, `Set-Acl`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
-|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld ' Start-proces gvim - PassThru gebruikt | Wacht-proces werkt niet. het wachten tot het proces is mislukt.|
+|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld `Start-Process gvim -PassThru | Wait-Process` werkt niet; deze moet worden gewacht op het proces is mislukt.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Beschikbare maar werkt niet.|Schrijft een foutbericht met de mededeling dat de opdrachten niet werkt. Deze moeten worden opgelost in een toekomstige release.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenisbronnen zijn beschikbaar.|De PowerShell-opdrachten eventing aanwezig zijn, maar de meeste van de bronnen van gebeurtenissen die worden gebruikt met de opdrachten (zoals System.Timers.Timer) zijn niet beschikbaar in Linux maken van de opdrachten die niet kan worden gebruikt in de Alpha-release.|
 |`Set-ExecutionPolicy`|Beschikbare maar werkt niet.|Retourneert een bericht weergegeven dat niet wordt ondersteund op dit platform. Uitvoeringsbeleid is een gebruiker gerichte "veiligheid belt" die voorkomt dat de gebruiker van het maken van dure fouten. Het is niet een beveiligingsgrens.|

@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
-title: Met behulp van de sleutelwoorden Import-dscresource bieden
+title: Import-DSCResource gebruiken
 ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404033"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686612"
 ---
-# <a name="using-import-dscresource"></a>Met behulp van de sleutelwoorden Import-dscresource bieden
+# <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
 `Import-DScResource` is een dynamische sleutelwoord, die alleen kan worden gebruikt in een configuratie-scriptblok. De `Import-DSCResource` trefwoord dat u wilt importeren van alle resources die nodig zijn in uw configuratie. Resources onder `$phsome` automatisch worden geïmporteerd, maar het is nog steeds beschouwd als aanbevolen procedure voor het expliciet importeren van alle resources die worden gebruikt uw [configuratie](Configurations.md).
 
@@ -75,7 +75,7 @@ Dit gebruik heeft de volgende voordelen:
 
 Bij het ontwerpen van de DSC-configuratie in ISE biedt PowerShell IntelliSence voor resources en resource-eigenschappen. Resourcedefinities onder de `$pshome` modulepad worden automatisch geladen. Wanneer het importeren van resources met behulp van de `Import-DSCResource` trefwoord, de opgegeven resource-definities zijn toegevoegd en Intellisense om op te nemen van de geïmporteerde resource-schema is uitgevouwen.
 
-![Resource-Intellisense](/media/resource-intellisense.png)
+![Resource Intellisense](/media/resource-intellisense.png)
 
 > [!NOTE]
 > Begin in PowerShell 5.0, is tab-Aanvulling toegevoegd aan de ISE voor DSC-resources en hun eigenschappen. Zie voor meer informatie, [Resources](../resources/resources.md).

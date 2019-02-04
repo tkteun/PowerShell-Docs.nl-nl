@@ -3,36 +3,36 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Communitybronnen
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219365"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685086"
 ---
 # <a name="community-resources"></a>Communitybronnen #
 > Opmerking: Deze informatie is voorlopig en kan worden gewijzigd.
 
-Het PowerShell-team is geïnteresseerd in moedigt feedback van klanten op de product- en biedt ondersteuning voor meerdere benaderingen voor gebruikers om contact met ons opnemen.
-Een van de hieronder vermelde methoden kunt u om feedback te geven aan ons, maar we raden dat u begint met de koppelingen op de startpagina van PowerShell.
+Het PowerShell-team ontvangt graag feedback van klanten op het product worden gebruikers aangemoedigd en biedt ondersteuning voor meerdere methoden voor gebruikers om contact met ons opnemen.
+Een van de hieronder vermelde methoden kunt u ons feedback te geven, maar wij raden dat u beginnen met de koppelingen op de startpagina van PowerShell.
 
-De [PowerShell startpagina](https://microsoft.com/powershell) is het Centrum voor informatie over PowerShell en heeft er een koppeling rechtstreeks voor 'Feedback' in het menu aan de bovenkant van de pagina.
-U kunt er snel toegang tot onze kanalen feedback starten.
-Dit is de aanbevolen aanpak voor het geven van feedback, omdat deze actief behouden na verloop van tijd blijft en wordt u rechtstreeks naar de beste locatie.
+De [PowerShell startpagina](https://microsoft.com/powershell) het center voor meer informatie over PowerShell en een koppeling heeft rechtstreeks voor 'Feedback' in het menu aan de bovenkant van de pagina.
+U kunt er snel toegang tot onze feedbackkanalen starten.
+Dit is de aanbevolen aanpak voor het geven van feedback, omdat deze wordt actief na verloop van tijd worden onderhouden, en wordt u doorgeleid naar de beste locatie.
 
-Het PowerShell-team beheert een [UserVoice forum](https://windowsserver.uservoice.com/forums/301869-powershell/) om vast te leggen problemen en suggesties met Windows PowerShell en onze services.
-Dit forum ondersteunt toe te voegen stemmen om bestaande problemen die het team PowerShell gebruikt om de prioriteit van ons werk.
-Voer de woorden of zinnen die betrekking op uw probleem in de zoekfunctie aan de rechterkant om te zien hebben als deze eerder is is geïdentificeerd.
-Als niets overeenkomt, u kunt een nieuw item toevoegen.
-Er zijn subsecties weergegeven op het recht voor de verschillende functiegebieden die wordt beheerd door de PowerShell-team.
-U kunt uw probleem toevoegen in het desbetreffende gebied, of laat het veld in de hoofdmap en de PowerShell-team wordt plaats deze in de juiste locatie nadat we bespreken.
+Het PowerShell-team beheert een [UserVoice-forum](https://windowsserver.uservoice.com/forums/301869-powershell/) problemen en suggesties met Windows PowerShell en onze services vast te leggen.
+Dit forum ondersteunt toe te voegen stemmen voor bestaande problemen, dat gebruikmaakt van het PowerShell-team om ons werk prioriteit te geven.
+Voer de woorden of zinsdelen die betrekking op uw probleem in de zoekfunctie aan de rechterkant om te zien hebben als deze eerder heeft zijn geïdentificeerd.
+Als niets overeenkomt, kunt u een nieuw item toe te voegen.
+Er zijn subsecties weergegeven op het recht voor de voor verschillende functiegebieden die het PowerShell-team beheert.
+U kunt uw probleem toevoegen in het desbetreffende gebied, of laat het veld in de hoofdmap en het PowerShell-team zal plaats deze in de juiste locatie na het.
 
-Gebruikers die bekend met GitHub zijn kunnen feedback over veel PowerShell-functies door problemen in de [PowerShell GitHub site](https://github.com/powershell).
-Er zijn veel opslagplaatsen we onderhouden en gebruiken voor open-source ontwikkeling en vastleggen van de gebruiker problemen op die locatie.
-Er zijn enkele belangrijke opslagplaatsen te wijzen:
+Gebruikers die bekend met GitHub zijn kunnen feedback geven over veel PowerShell-functies door in te dienen problemen in de [PowerShell GitHub-site](https://github.com/powershell).
+Er zijn veel opslagplaatsen we beheren en gebruiken voor het ontwikkelen met open source en vastleggen van de gebruiker problemen op die locatie.
+Er zijn enkele belangrijke opslagplaatsen om:
 
-* [PowerShell-Docs](https://github.com/PowerShell/powershell-docs), waarbij alle documentatie (inclusief deze inhoud) wordt onderhouden.
-* [PowerShell](https://github.com/PowerShell/powershell) is de locatie voor PowerShell Core, de toekomstige versie van PowerShell.
-Dit is de plaats voorstellen van functie aanbevelingen of problemen voor PowerShell Core verhogen.
-* [PowerShellGet](https://github.com/PowerShell/powershellget) -opslagplaats is voor de cmdlets en PowerShellGet-module.
-* [DSCResources](https://github.com/PowerShell/DscResources) bevat de DSC-modules onderhouden door het PowerShell-team en gepubliceerd naar de PowerShell-galerie in de DSC-Resource Kit.
+* [PowerShell-documenten](https://github.com/PowerShell/powershell-docs), waar alle documentatie (met inbegrip van deze inhoud) wordt onderhouden.
+* [PowerShell](https://github.com/PowerShell/powershell) is de locatie voor PowerShell-kern en dat de toekomstige versie van PowerShell.
+Dit is de plek waar u voorstellen functieaanbevelingen of problemen voor PowerShell Core verhogen.
+* [PowerShellGet](https://github.com/PowerShell/powershellget) opslagplaats is voor de PowerShellGet-module en de cmdlets.
+* [DSCResources](https://github.com/PowerShell/DscResources) bevat de DSC-modules worden onderhouden door het PowerShell-team en gepubliceerd naar de PowerShell Gallery in de DSC-Resource Kit.

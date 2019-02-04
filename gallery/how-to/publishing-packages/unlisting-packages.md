@@ -4,13 +4,13 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Pakketten uit catalogus verwijderen
 ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004049"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684393"
 ---
-# <a name="unlisting-packages"></a>Unlisting pakketten
+# <a name="unlisting-packages"></a>Pakketten uit de catalogus verwijderen
 
 **Waarom is een pakket verwijderen vanuit PowerShell Gallery is niet beschikbaar zijn gemaakt als een optie?**
 

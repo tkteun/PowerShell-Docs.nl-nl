@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893185"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685310"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-cmdlets
 
@@ -82,7 +82,7 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[De Cmdlet Get-PackageProvider](/powershell/module/PackageManagement/Get-PackageProvider)
+## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[Get-PackageProvider Cmdlet](/powershell/module/PackageManagement/Get-PackageProvider)
 
 Pakket-providers die worden geladen en gereed voor gebruik op de lokale computer kunnen worden geïnventariseerd door met de cmdlet.
 
@@ -94,7 +94,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[De Cmdlet Get-PackageSource](/powershell/module/PackageManagement/Get-PackageSource)
+## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[Get-PackageSource Cmdlet](/powershell/module/PackageManagement/Get-PackageSource)
 
 Deze cmdlet wordt een lijst met pakketbronnen die zijn geregistreerd voor een Pakketprovider.
 
@@ -187,7 +187,7 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -Source c:\test
 ```
 
-## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[De Cmdlet set-PackageSource](/powershell/module/PackageManagement/Set-PackageSource)
+## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[Set-PackageSource Cmdlet](/powershell/module/PackageManagement/Set-PackageSource)
 
 Deze cmdlet wijzigt informatie over een bestaande pakketbron.
 

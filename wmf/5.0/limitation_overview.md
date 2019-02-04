@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892981"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687025"
 ---
 # <a name="known-issues-and-limitations"></a>Bekende problemen en beperkingen
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell-snelkoppelingen worden verbroken wanneer voor de eerste keer gebruikt
 
-**Oplossing:** een van de volgende acties uitvoeren:
+**Oplossing:** Voer een van de volgende acties uit:
 
 1. Klik met de rechtermuisknop op de PowerShell-snelkoppeling. Selecteer 'Windows PowerShell' om te starten in een modus zonder verhoogde bevoegdheden.
 2. Klik met de rechtermuisknop op de PowerShell-snelkoppeling. Klik met de rechtermuisknop op 'Windows PowerShell' en selecteer 'als Administrator uitvoeren"om te starten in een modus met uitgebreide bevoegdheden.
@@ -23,7 +23,7 @@ Wanneer u een van de bovengenoemde stappen hebt uitgevoerd, werkt de PowerShell-
 
 Op Windows 7, kan het gebruik van PowerShell-modules en DSC-resources leiden tot fouten gerapporteerd over ExecutionPolicy.
 
-**Oplossing:** het uitvoeringsbeleid instellen op RemoteSigned met de volgende opdracht in een verhoogde PowerShell-sessie (als Administrator uitvoeren):
+**Oplossing:** Het uitvoeringsbeleid instellen op RemoteSigned met de volgende opdracht in een verhoogde PowerShell-sessie (als Administrator uitvoeren):
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -33,19 +33,19 @@ Set-ExecutionPolicy RemoteSigned
 
 Het eindpunt van de oude Exchange leidt naar een nieuw eindpunt. Er is een fout in de logica voor de omleiding die het resultaat is in een crash.
 
-**Oplossing:** rechtstreeks verbinding maken met het nieuwe eindpunt.
+**Oplossing:** Rechtstreeks verbinding maken met het nieuwe eindpunt.
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Software Inventory Logging functie is ten onrechte gestopt na de installatie van WMF 5.0 op Windows Server 2012 R2
 
 Bij het installeren van WMF 5.0 op een Windows Server 2012 R2 waarop SIL al wordt uitgevoerd, wordt de functie logboekregistratie van Software-inventaris per ongeluk gestopt na de installatie.
 
-**Oplossing:** voert u de cmdlet Start-SilLogging eenmaal na de installatie van WMF, zoals het installatieproces foutievelijk met de functie logboekregistratie van Software-inventaris stopt.
+**Oplossing:** De cmdlet Start-SilLogging eenmaal na de installatie van WMF, worden uitgevoerd omdat het installatieproces foutievelijk met de functie logboekregistratie van Software-inventaris stopt.
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` werkt niet als LiteralPath - en - Recurse samen worden gebruikt
 
 Als de naam van een map klikt u vervolgens een ongeldige jokerteken bevat `Get-ChildItem` wordt geen verwachte resultaten opleveren wanneer zowel - LiteralPath en -Recurse samen worden gebruikt.
 
-**Oplossing:** niet ideaal, maar de huidige oplossing is om te implementeren recursie in het script in plaats van afhankelijk zijn van de cmdlet.
+**Oplossing:** Niet ideaal, maar de huidige oplossing is het implementeren van recursie in het script in plaats van afhankelijk zijn van de cmdlet.
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep is mislukt na de installatie van WMF 5.0
 

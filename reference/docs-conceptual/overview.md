@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: PowerShell-scripts
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404349"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685093"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-Systemen beheren, kan een complexe taak zijn. Hulpprogramma's die een consistente interface Help-informatie voor het beheren van de inherente complexiteit. Helaas worden niet opdrachtregelprogramma's en scripts COM-objecten bekend zijn voor hun consistentie.
+Systemen beheren, kan een complexe taak zijn. Hulpprogramma's die een consistente interface Help-informatie voor het beheren van de inherente complexiteit. Helaas, opdrachtregelprogramma's en Scriptobjecten Component Object Model (COM) worden niet bekend zijn voor hun consistentie.
 
 De consistentie van PowerShell is een van de primaire activa. Als u informatie over het gebruik bijvoorbeeld de `Sort-Object` cmdlet, kunt u deze kennis gebruiken om te sorteren van de uitvoer van een cmdlet. U hebt geen voor meer informatie over de verschillende sorteren routines van elke cmdlet.
 

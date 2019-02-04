@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxGroup-Resource
 ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048326"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688341"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC voor Linux nxGroup-Resource
 
@@ -31,7 +31,7 @@ nxGroup <string> #ResourceName
 
 |  Eigenschap |  Beschrijving |
 |---|---|
-| Groepsnaam| Hiermee geeft u de naam van de groep waarvan u wilt om te controleren of een specifieke status.|
+| GroupName| Hiermee geeft u de naam van de groep waarvan u wilt om te controleren of een specifieke status.|
 | Zorg ervoor dat| Hiermee bepaalt u of om te controleren of de groep bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de groep bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat de groep bestaat niet. De standaardwaarde is 'Aanwezig'.|
 | Leden| Hiermee geeft u de leden die de groep.|
 | MembersToInclude| Hiermee geeft u de gebruikers die u wilt ervoor zorgen zijn leden van de groep.|

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: De StopConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048174"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687753"
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>De StopConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
 

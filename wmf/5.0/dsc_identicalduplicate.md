@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 28f4f8ae2bbddc8fb5ef9d95d3061a91fcc8ffe2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187529"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687361"
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Identieke dubbele Resources in een configuratie toestaan
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Toestaan van identieke dubbele Resources in een configuratie
 
-DSC niet toestaan of conflicterende resourcedefinities binnen een configuratie verwerkt. In plaats van het conflict op te lossen, gewoon is mislukt. Als het hergebruik van de configuratie wordt meer door samengestelde bronnen worden gebruikt, wordt vaker enzovoort conflicten optreden. Wanneer u conflicterende resourcedefinities identiek zijn, moet DSC smart en dit toestaan. Met deze release ondersteuning wordt voor meerdere resource-exemplaren die identiek zijn gedefinieerd:
+DSC niet toestaan of conflicterende resourcedefinities binnen een configuratie worden verwerkt. In plaats van het conflict op te lossen, gewoon is mislukt. Als het hergebruik van de configuratie wordt meer samengestelde resources gebruikt, wordt vaker enzovoort conflicten optreden. Wanneer er conflicterende resourcedefinities identiek zijn, moet de DSC Wees slim en dit toestaan. Met deze versie wordt ondersteund met meerdere exemplaren van resources met identieke definities:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -51,9 +51,9 @@ Configuration WebApplication
 }
 ```
 
-In eerdere versies is het resultaat een compilatie is mislukt vanwege een conflict tussen de WindowsFeature FE_IIS en WindowsFeature Worker_IIS exemplaren probeert om te controleren of de rol 'Webserver' is geïnstalleerd. U ziet dat *alle* van de eigenschappen die worden geconfigureerd in deze twee configuraties identiek zijn. Aangezien *alle* van de eigenschappen in deze twee bronnen identiek zijn, resulteert dit in een geslaagde compilatie nu.
+In eerdere versies is het resultaat een compilatie is mislukt vanwege een conflict tussen de WindowsFeature FE_IIS en WindowsFeature Worker_IIS exemplaren probeert om te controleren of de rol 'Webserver' is geïnstalleerd. U ziet dat *alle* zijn identiek in deze twee configuraties van de eigenschappen die worden geconfigureerd. Aangezien *alle* van de eigenschappen in deze twee resources identiek zijn, resulteert dit in een geslaagde compilatie nu.
 
-Als een van de eigenschappen van verschillen tussen de twee bronnen, worden deze niet gezien identiek en compilatie mislukt:
+Als een van de eigenschappen van de verschillen tussen de twee resources, ze komen niet in aanmerking identiek zijn en compilatie mislukt:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -94,4 +94,4 @@ Configuration WebApplication
 }
 ```
 
-Deze configuratie vergelijkbaar mislukken omdat de WindowsFeature FE_IIS en WindowsFeature Worker_IIS resources niet langer identiek zijn en daarom in strijd.
+Deze configuratie is vergelijkbaar mislukken omdat de FE_IIS WindowsFeature en de resources WindowsFeature Worker_IIS daarom in strijd niet langer identiek zijn zijn.

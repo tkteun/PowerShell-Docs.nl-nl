@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Instellen van een Pull-Client met behulp van configuratie-ID's in PowerShell 5.0 en hoger
 ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404293"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685870"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Instellen van een Pull-Client met behulp van configuratie-ID's in PowerShell 5.0 en hoger
 
@@ -51,7 +51,7 @@ Voor meer informatie over het gebruik van **GUID's** in uw omgeving, Zie [planne
 
 Elke client moet worden geconfigureerd in **Pull** modus en de url van de pull-server waar de configuratie is opgeslagen. Om dit te doen, moet u de lokale Configuration Manager (LCM) configureren met de benodigde informatie. Als u wilt de LCM configureren, maakt u een speciaal soort configuratie, voorzien van de **DSCLocalConfigurationManager** kenmerk. Zie voor meer informatie over het configureren van de LCM [de Local Configuration Manager configureren](../managing-nodes/metaConfig.md).
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Pull-Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Het volgende script wordt de LCM geconfigureerd voor pull-configuraties van een server met de naam 'CONTOSO-PullSrv'.
 
@@ -117,7 +117,7 @@ Als u alleen opgeeft de **ConfigurationRepositoryWeb** of **ConfigurationReposit
 > [!NOTE]
 > U kunt combineren **ConfigurationRepositoryWeb** met **ResourceRepositoryShare** of **ConfigurationRepositoryShare** met **ResourceRepositoryWeb** . Voorbeelden van deze worden hieronder niet weergegeven.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Pull-Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 De volgende metaconfiguration configureert u een pull-client om de configuraties van **CONTOSO-PullSrv** en de daarbij behorende bronnen uit **CONTOSO-ResourceSrv**.
 
@@ -211,7 +211,7 @@ PullClientConfigID
 
 Standaard worden knooppunten rapporten niet verzenden naar een geconfigureerde Pull-Server. U kunt een enkel pull-server gebruiken voor configuraties, resources en rapportage, maar u moet maken een **ReportRepositoryWeb** blokkeren voor het instellen van rapportage.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC-Pull-Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Het volgende voorbeeld ziet een metaconfiguration instellen van een client pull-configuraties, resources en verzenden gegevens rapporteren aan een enkele pull-server.
 

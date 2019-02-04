@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Meer informatie over PowerShell
 ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012548"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684666"
 ---
 # <a name="more-powershell-learning"></a>Meer informatie over PowerShell
 
@@ -22,7 +22,7 @@ Naast de Help beschikbaar op de opdrachtregel geven de volgende bronnen informat
 - [De pagina met informatie over PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/) is de Windows PowerShell-hub in het TechNet Script Center. Deze pagina als host fungeert voor een reeks beginner videosessies die wordt uitgevoerd door de Microsoft Scripting Guy Ed Wilson. Het bevat ook Windows PowerShell-quizzen, koppelingen naar community-inhoud en meer.
 - Hebt u vragen over het gebruik van Windows PowerShell? Verbinding maken met honderden andere mensen dezelfde interesses hebben op de [TechNet PowerShell-forum](https://social.technet.microsoft.com/Forums/home?forum=winserverpowershell).
 
-## <a name="video-training"></a>Videotraining
+## <a name="video-training"></a>Video Training
 
 ### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 

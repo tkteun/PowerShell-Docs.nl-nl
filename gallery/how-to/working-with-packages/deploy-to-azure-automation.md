@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Implementeren naar Azure Automation
 ms.openlocfilehash: dc382b1cf3ceaa787f54c555d01e6bd9ba70e680
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004038"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687942"
 ---
 # <a name="deploy-to-azure-automation"></a>Implementeren naar Azure Automation
 

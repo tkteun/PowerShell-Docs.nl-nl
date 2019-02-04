@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 4338364c64eff2a7a59c5ae9fe80f75760cade42
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dc72debe0dc7e56c9e59e6903c7d6cf3025e622c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218073"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685905"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>Verbeteringen in Desired State Configuration (DSC)
 
-## <a name="dsc-feedback-survey"></a>DSC Feedback enquête
+## <a name="dsc-feedback-survey"></a>Enquête voor Feedback van DSC
 
-Zodra u enige tijd hebt en de nieuwe PowerShell Desired State Configuration-functies en functionaliteit die is geïntroduceerd in deze release, kunt u ons helpen blijven het product beter maken door middel van een snelle [WMF 5.0 RTM enquête](https://www.surveymonkey.com/r/SGLQM5W). Deze enquête kunt u voor het delen van uw feedback over deze nieuwe functies en functionaliteit.
+Nadat u enige tijd in de nieuwe Desired State Configuration van PowerShell-functies en functionaliteit die is geïntroduceerd in deze release hebben gehad, kunt u ons helpen doorgaan om het product te verbeteren door een snelle [WMF 5.0 RTM enquête](https://www.surveymonkey.com/r/SGLQM5W). Deze enquête kunt u voor het delen van uw feedback over deze nieuwe functies en functionaliteit.
 
-Hartelijk dank voor uw deelname aan onze enquête. Uw feedback is erg belangrijk voor ons.
+Hartelijk dank voor uw deelname aan onze enquête. Uw feedback is zeer belangrijk voor ons.
 
 **PSDesiredStateConfiguration moduleversie is bijgewerkt naar 1.1**
 

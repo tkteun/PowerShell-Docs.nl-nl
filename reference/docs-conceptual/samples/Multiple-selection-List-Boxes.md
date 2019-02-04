@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Meerdere selectielijstvelden
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403977"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684785"
 ---
 # <a name="multiple-selection-list-boxes"></a>Meervoudige selectie keuzelijsten
 
@@ -184,5 +184,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Zie ook
 
 - [Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt van WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week:  Meervoudige selectie keuzelijsten- en nog veel meer!](https://technet.microsoft.com/library/ff730950.aspx)

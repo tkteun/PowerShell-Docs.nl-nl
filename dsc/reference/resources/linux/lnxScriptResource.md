@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxScript Resource
 ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048258"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689041"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC voor Linux nxScript Resource
 
@@ -32,7 +32,7 @@ nxScript <string> #ResourceName
 
 |  Eigenschap |  Beschrijving |
 |---|---|
-| Ophalen script| Biedt een script dat wordt uitgevoerd wanneer u aanroepen de [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet. Het script moet beginnen met een shebang, zoals #! / bin/bash.|
+| GetScript| Biedt een script dat wordt uitgevoerd wanneer u aanroepen de [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet. Het script moet beginnen met een shebang, zoals #! / bin/bash.|
 | SetScript| Bevat een script. Wanneer u aanroepen de [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, de **TestScript** als eerste wordt gestart. Als de **TestScript** blok retourneert een afsluitcode dan 0, de **SetScript** blok wordt uitgevoerd. Als de **TestScript** retourneert een afsluitcode 0, de **SetScript** kan niet worden uitgevoerd. Het script moet beginnen met een shebang zoals `#!/bin/bash`.|
 | TestScript| Bevat een script. Wanneer u aanroepen de [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, met dit script wordt uitgevoerd. Als deze een afsluitcode dan 0 retourneert, wordt de SetScript wordt uitgevoerd. Als deze een afsluitcode 0 retourneert, de **SetScript** kan niet worden uitgevoerd. De **TestScript** wordt ook uitgevoerd wanneer u aanroepen de [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** niet wordt uitgevoerd, ongeacht welke afsluitcode wordt geretourneerd vanaf de **TestScript**. De **TestScript** moet retourneert een afsluitcode 0 als de feitelijke configuratie komt overeen met de huidige configuratie van gewenste status en een afsluiten code dan 0 als deze niet overeenkomt. (De huidige configuratie van gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt). Het script moet beginnen met een shebang, zoals 1#!/bin/bash.1|
 | Gebruiker| De gebruiker het script als uit te voeren.|

@@ -4,13 +4,13 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: DSC-verbeteringen in WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523019"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683798"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in Desired State Configuration (DSC) in WMF 5.1
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Improvements in Desired State Configuration (DSC) in WMF 5.1
 
 ## <a name="dsc-class-resource-improvements"></a>DSC-klasse resource verbeteringen
 
@@ -206,12 +206,12 @@ Deze functie wordt voorkomen dat knooppunten configuraties of module bestanden d
 ### <a name="how-to-sign-configuration-and-module"></a>Het ondertekenen van de configuratie en -module
 
 ***
-* Configuratiebestanden (. MOF-bestanden): de bestaande PowerShell-cmdlet [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wordt uitgebreid met ondersteuning voor ondertekening van de MOF-bestanden.
+* Configuratiebestanden (. MOF-bestanden): De bestaande PowerShell-cmdlet [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wordt uitgebreid met ondersteuning voor ondertekening van de MOF-bestanden.
 * Modules: Ondertekening van modules wordt uitgevoerd door het ondertekenen van de bijbehorende module-catalogus met behulp van de volgende stappen uit:
-    1. Maken van een catalogusbestand: een catalogusbestand bevat een verzameling van cryptografische hashes of de vingerafdrukken.
+    1. Maak een catalogusbestand: Een catalogusbestand bevat een verzameling van cryptografische hashes of de vingerafdrukken.
        Elke vingerafdruk komt overeen met een bestand dat is opgenomen in de module.
        De nieuwe cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), zodat gebruikers kunnen maken van een catalogusbestand voor de module is toegevoegd.
-    2. Meld u aan de catalogusbestand: Gebruik [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) om de catalogusbestand te ondertekenen.
+    2. Meld u aan het catalogusbestand: Gebruik [Set AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) om de catalogusbestand te ondertekenen.
     3. Plaats het catalogusbestand in de modulemap.
 Volgens de conventies wordt moet module catalogusbestand worden geplaatst in de modulemap met dezelfde naam als de module.
 

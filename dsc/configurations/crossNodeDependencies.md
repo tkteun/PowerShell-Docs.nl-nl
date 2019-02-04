@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Afhankelijkheden van meerdere knooppunten opgeven
 ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403890"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687522"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Afhankelijkheden van meerdere knooppunten opgeven
 
@@ -55,7 +55,7 @@ WaitForSome [String] #ResourceName
 
 Alle **WaitForXXXX** delen van de volgende syntaxis van de sleutels.
 
-|  De eigenschap |  Beschrijving || RetryIntervalSec | Het aantal seconden alvorens het opnieuw te proberen. Minimumwaarde is 1. | | RetryCount | Het maximum aantal nieuwe pogingen. | | ThrottleLimit | Het aantal machines tegelijk verbinding kunnen maken. De standaardwaarde is `New-CimSession` standaard. | | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Zie voor meer informatie, [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Zie [DSC gebruiken met de referenties van gebruiker](./runAsUser.md) |
+|  Property  |  Description   | | RetryIntervalSec| The number of seconds before retrying. Minimumwaarde is 1. | | RetryCount | Het maximum aantal nieuwe pogingen. | | ThrottleLimit | Het aantal machines tegelijk verbinding kunnen maken. De standaardwaarde is `New-CimSession` standaard. | | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Zie voor meer informatie, [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Zie [DSC gebruiken met de referenties van gebruiker](./runAsUser.md) |
 
 
 ## <a name="using-waitforxxxx-resources"></a>Met behulp van WaitForXXXX bronnen

@@ -3,15 +3,15 @@ title: PowerShell Core in Windows installeren
 description: Informatie over PowerShell Core in Windows installeren
 ms.date: 08/06/2018
 ms.openlocfilehash: 7c109c7e1848af2349092c1e70fe4a7a25be54b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404345"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688054"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
-## <a name="msi"></a>MSI-BESTAND
+## <a name="msi"></a>MSI
 
 PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases][] pagina.
 
@@ -34,7 +34,7 @@ Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende
   Volledig hersteld (inclusief optionele pakketten), heeft ondersteunde systemen al dit geïnstalleerd.
 - Installeer de Windows Management Framework (WMF) 4.0 of hoger op Windows 7 en Windows Server 2008 R2.
 
-## <a name="zip"></a>POSTCODE
+## <a name="zip"></a>ZIP
 
 PowerShell binaire ZIP-archieven zijn opgegeven voor het inschakelen van geavanceerde implementatiescenario's.
 Worden opgemerkt bij het gebruik van het ZIP-archief, kunt u de controle van vereisten zoals in het MSI-pakket wordt niet ophalen.

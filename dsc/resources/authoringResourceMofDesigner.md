@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Met behulp van de ontwerpfunctie voor Resource-hulpprogramma
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403976"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686654"
 ---
 # <a name="using-the-resource-designer-tool"></a>Met behulp van de ontwerpfunctie voor Resource-hulpprogramma
 
@@ -23,7 +23,7 @@ Gebruik de [Install-Module](/powershell/module/PowershellGet/Install-Module) cmd
 Het eerste wat dat we moeten doen is beslissen over de eigenschappen die de resource wordt weergegeven. In dit voorbeeld definiëren we een Active Directory-gebruiker met de volgende eigenschappen.
 
 Naam van de beschrijving
-* **Gebruikersnaam**: Sleuteleigenschap die een unieke identificatie van de gebruiker.
+* **UserName**: Sleuteleigenschap die een unieke identificatie van de gebruiker.
 * **Zorg ervoor dat**: Geeft aan of het gebruikersaccount moet aanwezig zijn of niet aanwezig. Deze parameter heeft slechts twee mogelijke waarden zijn.
 * **DomainCredential**: Het domeinwachtwoord voor de gebruiker.
 * **Wachtwoord**: Het gewenste wachtwoord voor de gebruiker om toe te staan een configuratie van het wachtwoord indien nodig wijzigen.

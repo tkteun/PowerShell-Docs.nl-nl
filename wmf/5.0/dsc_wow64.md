@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: d8ff24b0aba55e1ef964ee05db14b2fddadafdf0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5d0065fb3d65c5ccc520bcabc76f0e23d4265818
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222017"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684169"
 ---
-# <a name="wow64-support-for-configuration-keyword"></a>WOW64-ondersteuning voor configuratie sleutelwoord
+# <a name="wow64-support-for-configuration-keyword"></a>WOW64-ondersteuning voor Configuratiesleutelwoord
 
-Het sleutelwoord configuratie wordt nu ondersteund in de modus WOW64 op een 64-bits computer. Dit betekent dat een DSC-configuratie kan worden gedefinieerd en gecompileerd binnen een 32-bits proces zoals Windows PowerShell ISE (x 86) wordt uitgevoerd op een 64-bits computer.
+Het sleutelwoord configuratie wordt nu ondersteund in WOW64 op een 64-bits computer. Dit betekent dat een DSC-configuratie kan worden gedefinieerd en gecompileerd in een 32-bits proces, zoals Windows PowerShell ISE (x 86) wordt uitgevoerd op een 64-bits computer.

@@ -3,11 +3,11 @@ ms.date: 08/24/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Script voor DSC-Resource
 ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048311"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684841"
 ---
 # <a name="dsc-script-resource"></a>Script voor DSC-Resource
 
@@ -35,13 +35,13 @@ Script [string] #ResourceName
 
 |Eigenschap|Beschrijving|
 |--------|-----------|
-|Ophalen script|Een scriptblok waarmee de huidige status van het knooppunt wordt geretourneerd.|
+|GetScript|Een scriptblok waarmee de huidige status van het knooppunt wordt geretourneerd.|
 |SetScript|Een scriptblok die DSC gebruikt voor het afdwingen van naleving bij het knooppunt niet is opgenomen in de gewenste status.|
 |TestScript|Een scriptblok die bepaalt of het knooppunt in de gewenste status.|
 |Referentie| Geeft aan dat de referenties wilt gebruiken voor het uitvoeren van dit script als referenties vereist zijn.|
 |DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.
 
-### <a name="getscript"></a>Ophalen script
+### <a name="getscript"></a>GetScript
 
 DSC maakt geen gebruik van de uitvoer van `GetScript`. De [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet voert de `GetScript` om op te halen van de huidige status van een knooppunt. Een retourwaarde hoeft niet uit `GetScript`. Als u een retourwaarde opgeeft, moet dit een `hashtable` met een **resultaat** sleutel waarvan de waarde is een `String`.
 

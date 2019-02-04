@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Pakket eigenaars beheren
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004063"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685975"
 ---
 # <a name="managing-package-owners"></a>Pakket eigenaars beheren
 
@@ -34,7 +34,7 @@ Nadat een pakket is gepubliceerd naar de PowerShell Gallery, is het eenvoudig ex
 5. Een e-mailbericht wordt verzonden naar de nieuwe mede-eigenaar, een uitnodiging om een eigenaar van een pakket.
 6. Zodra de gebruiker klikt op de koppeling, zijn ze een volledige mede-eigenaar met volledig beheer over een pakket, inclusief de mogelijkheid om andere gebruikers als eigenaren te verwijderen.
 
-**Houd er rekening mee**: totdat de nieuwe eigenaar eigenaar te zijn aangeeft, ze *niet* worden vermeld als een eigenaar van een pakket.
+**HOUD ER REKENING MEE**: Totdat de nieuwe eigenaar eigenaar te zijn aangeeft, ze *niet* worden vermeld als een eigenaar van een pakket.
 Bij het weergeven van de **eigenaren beheren** pagina, ziet u een vermelding 'in afwachting van goedkeuring' in de huidige eigenaren.
 Deze uitnodiging kan worden verwijderd; net zoals andere eigenaren kunnen worden verwijderd.
 Dit proces van de uitnodigingen wordt voorkomen dat gebruikers om andere gebruikers toevoegen als eigenaren van hun pakketten.

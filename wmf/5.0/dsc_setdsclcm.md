@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: b8c3cbc056bb085e8319637571e7a2ce5cd77685
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187058"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687690"
 ---
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>De cmdlet Set-DscLocalConfigurationManager ondersteunt - force-parameter
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Cmdlet Set-DscLocalConfigurationManager biedt ondersteuning - parameter force
 
-Een is ondersteuning toegevoegd voor de nieuwe parameter aan de cmdlet Set-DscLocalConfigurationManager. Hierdoor wordt de gebruiker meta-configuratie op de machine deterministische opnieuw instellen wanneer er andere bewerkingen, zoals een consistentiecontrole uit op de achtergrond worden uitgevoerd omdat hierdoor alle actieve bewerkingen moet worden gestopt.
+We hebben een ondersteuning voor nieuwe parameter toegevoegd aan de cmdlet Set-DscLocalConfigurationManager. Hierdoor wordt de gebruiker meta-configuratie op de machine deterministische wijze opnieuw instellen als andere bewerkingen zoals het consistentiecontrole uit in de achtergrond worden uitgevoerd omdat alle actieve bewerkingen moet worden gestopt.
 
-De ervaring ziet eruit als dit tijdens het instellen van meta-configuratie zonder – Force-parameter.
+De ervaring ziet eruit als dit bij een poging om in te stellen meta-configuratie zonder – Force-parameter.
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -27,7 +27,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-Wanneer we gebruiken – forceren correct werkt u de meta-configuratie op het systeem door het annuleren van de huidige lopende bewerking op de machine.
+Als we gebruiken – geforceerd is werkt u de configuratie van de metagegevens op systeem door het annuleren van de huidige actieve bewerking op de machine.
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".

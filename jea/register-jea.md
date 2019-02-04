@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Configuraties van JEA registreren
 ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002903"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689062"
 ---
 # <a name="registering-jea-configurations"></a>Configuraties van JEA registreren
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Zodra u hebt uw [rolmogelijkheden](role-capabilities.md) en [sessie configuratiebestand](session-configurations.md) gemaakt, de laatste stap voordat u de JEA kunt gebruiken is de JEA-eindpunt registreren.
 De JEA-eindpunt registreren met het systeem, wordt het eindpunt beschikbaar voor gebruik door gebruikers en automation-engines.

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: JEA-vereisten
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893032"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688355"
 ---
 # <a name="prerequisites"></a>Vereisten
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Just Enough Administration is een functie die wordt geleverd met Windows PowerShell 5.0 en hoger.
 Dit onderwerp beschrijft de vereisten waaraan moeten worden voldaan om te starten met behulp van JEA.

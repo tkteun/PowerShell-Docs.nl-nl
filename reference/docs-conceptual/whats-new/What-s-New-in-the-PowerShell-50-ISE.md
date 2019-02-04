@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Nieuw in PowerShell 50 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320581"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687928"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Wat&#39;nieuw in de Windows PowerShell ISE
 In dit onderwerp wordt uitgelegd dat de nieuwe en bijgewerkte functies die zijn geïntroduceerd in versies van Windows PowerShell Integrated Scripting Environment (ISE).
@@ -147,9 +147,9 @@ Windows PowerShell ISE 2.0 heeft afzonderlijke opdracht en deelvensters van de u
 
 Als u Windows PowerShell ISE vanaf de opdrachtregel starten (door te typen **powershell_ise.exe**), kunt u de volgende nieuwe schakelopties toevoegen.
 
-- *-NoProfile*: Start Windows PowerShell ISE zonder uitgevoerd **$profile**
+- *-NoProfile*: Hiermee start u Windows PowerShell ISE zonder uitgevoerd **$profile**
 
-- *-Help*: een Help-venster wordt weergegeven
+- *-Help*: Een Help-venster wordt weergegeven
 
 - *-mta*: Start Windows PowerShell ISE in de modus apartment meerdere threads. De standaardmodus voor de bewerking voor Windows PowerShell ISE is een single-threaded apartment-modus, of *- sta*.
 
@@ -176,7 +176,7 @@ Andere Windows PowerShell ISE-bewerkingsfuncties zijn onder andere:
 
 - **De weergave van fouten parseren** Parse-fouten worden aangegeven met rood onderstreept. Wanneer u de muisaanwijzer over een opgegeven fout, geeft de knopinfo die het probleem dat is gevonden in de code.
 
-- **Zoomen** het zoompercentage van de console'™ s inhoud kan worden ingesteld met behulp van de zoomschuifregelaar (in de rechterbenedenhoek van de Windows PowerShell ISE-venster) of met de opdracht **$psise.options.Zoom** in het consolevenster.
+- **Zoomen** het zoompercentage van de inhoud van de console kan worden ingesteld met behulp van de zoomschuifregelaar (in de rechterbenedenhoek van de Windows PowerShell ISE-venster) of met de opdracht **$psise.options.Zoom** in het consolevenster.
 
 - **Uitgebreide tekst kopiëren en plakken** kopiëren naar het Klembord in Windows PowerShell ISE behoudt van het lettertype, grootte en kleurinformatie van de oorspronkelijke selectie.
 
@@ -225,4 +225,4 @@ Zie de volgende koppelingen voor meer informatie over het gebruik van Windows Po
 
 - [De Windows PowerShell Integrated Scripting Environment verkennen](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE op de TechNet-Wiki](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Scriptcentrum](https://technet.microsoft.com/scriptcenter/default)
+- [Script Center](https://technet.microsoft.com/scriptcenter/default)

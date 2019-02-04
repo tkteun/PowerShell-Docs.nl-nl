@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219528"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685233"
 ---
 # <a name="register-a-powershell-repository"></a>Een PowerShell-opslagplaats registreren
-U kunt PowerShellGet interne opslagplaatsen kunnen configureren. Dit wordt gedaan met behulp van de volgende toevoegingen:
+PowerShellGet tegen interne opslagplaatsen werken, kunt u configureren. Dit wordt gedaan met behulp van de volgende toevoegingen:
 - Register-PSRepository: Registreert een opslagplaats voor de huidige gebruiker.
-- Registratie-PSRepository: Hiermee verwijdert u een geregistreerde opslagplaats voor de huidige gebruiker.
-- Set-PSRepository: Waarden voor een geregistreerde-opslagplaats instellen.
-- Get-PSRepository: Alle geregistreerde opslagplaatsen voor de huidige gebruiker niet ophalen.
+- De registratie ongedaan maken-PSRepository: Hiermee verwijdert u een geregistreerde opslagplaats voor de huidige gebruiker.
+- Set-PSRepository: Waarden voor een geregistreerde opslagplaats instellen.
+- Get-PSRepository: Alle geregistreerde opslagplaatsen voor de huidige gebruiker ophalen.
 
-Nadat een opslagplaats is geregistreerd, kunt u zoeken-Module en installatie-Module om hiermee te werken.
+Nadat een opslagplaats is geregistreerd, kunt u Find-Module en Install-Module gebruiken om hiermee te werken.
 
 ```powershell
 \#Register a default repository

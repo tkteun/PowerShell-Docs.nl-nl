@@ -3,15 +3,15 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Package Management-Resource
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048301"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686864"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC-Package Management-Resource
 
-Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0 en Windows PowerShell 5.1
+Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
 De **PackageManagement** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van Package Management-pakketten op een doelknooppunt. Deze resource is vereist de **PackageManagement** -module, beschikbaar is via [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
 

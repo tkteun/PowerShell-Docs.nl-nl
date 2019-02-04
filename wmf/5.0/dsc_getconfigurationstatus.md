@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 04087fde3f4c87a5db59e2a2ca174344f3886988
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b803c86c41770b85a7ee8aa97ef62dab50850ec0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225535"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685541"
 ---
 # <a name="details-about-configuration-status"></a>Meer informatie over de configuratiestatus
 
-De [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet Hiermee haalt u informatie over de configuratiestatus van de van een doelknooppunt.
-Zie voor meer informatie [probleemoplossing DSC](https://msdn.microsoft.com/powershell/dsc/troubleshooting).
+De [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet krijgt u informatie over de configuratiestatus van een doelknooppunt.
+Zie voor meer informatie, [DSC oplossen van problemen](https://msdn.microsoft.com/powershell/dsc/troubleshooting).

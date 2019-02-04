@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
-title: Gebruik referenties met DSC-Resources
+title: Referenties gebruiken met DSC-resources
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404350"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686850"
 ---
-# <a name="use-credentials-with-dsc-resources"></a>Gebruik referenties met DSC-Resources
+# <a name="use-credentials-with-dsc-resources"></a>Referenties gebruiken met DSC-resources
 
-> Van toepassing op: Windows PowerShell 5.0 en Windows PowerShell 5.1
+> Van toepassing op: Windows PowerShell 5.0, Windows PowerShell 5.1
 
 U kunt een DSC-resource onder een opgegeven set referenties uitvoeren met behulp van de automatische **PsDscRunAsCredential** eigenschap in de configuratie.
 DSC wordt standaard elke resource uitgevoerd als het systeem-account.

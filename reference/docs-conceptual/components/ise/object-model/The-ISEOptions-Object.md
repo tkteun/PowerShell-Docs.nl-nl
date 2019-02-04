@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Het ISEOptions-object
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404493"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686262"
 ---
 # <a name="the-iseoptions-object"></a>Het ISEOptions-object
 
@@ -238,7 +238,7 @@ Hiermee geeft u de voorgrondkleur aan voor de tekst van de fout die wordt weerge
 $psISE.Options.ErrorForegroundColor = 'green'
 ```
 
-### <a name="fontname"></a>Lettertypenaam
+### <a name="fontname"></a>FontName
 
 In Windows PowerShell ISE 2.0 en hoger ondersteund.
 
@@ -249,7 +249,7 @@ Hiermee geeft u de naam van het lettertype in momenteel wordt gebruikt in het sc
 $psISE.Options.FontName = 'Courier New'
 ```
 
-### <a name="fontsize"></a>Tekengrootte
+### <a name="fontsize"></a>FontSize
 
 In Windows PowerShell ISE 2.0 en hoger ondersteund.
 
@@ -408,7 +408,7 @@ Hiermee geeft u op of het scriptvenster worden uitgevouwen en samengevouwen tuss
 $psISE.Options.ShowOutlining = $false
 ```
 
-### <a name="showtoolbar"></a>WerkbalkWeergeven
+### <a name="showtoolbar"></a>ShowToolBar
 
 In Windows PowerShell ISE 2.0 en hoger ondersteund.
 

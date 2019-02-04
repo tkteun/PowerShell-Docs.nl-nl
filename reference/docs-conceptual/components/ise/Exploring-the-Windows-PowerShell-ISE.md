@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404458"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684477"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
@@ -45,14 +45,14 @@ De volgende knoppen bevinden zich op de werkbalk.
 |**Redo**|Voert de actie die alleen ongedaan is gemaakt.|
 |**Script uitvoeren**|Een script wordt uitgevoerd.|
 |**Selectie uitvoeren**|Een geselecteerde gedeelte van een script wordt uitgevoerd.|
-|**Uitvoering stoppen**|Hiermee stopt u een script dat wordt uitgevoerd.|
+|**Stop Execution**|Hiermee stopt u een script dat wordt uitgevoerd.|
 |**Nieuwe externe PowerShell-tabblad**|Hiermee maakt u een nieuwe PowerShell-tabblad waarmee een sessie op een externe computer. Een dialoogvenster wordt weergegeven en vraagt u om in te voeren van gegevens die zijn vereist om de externe verbinding te maken.|
 |**Start PowerShell.exe**|Hiermee opent een PowerShell-Console.|
 |**Script deelvenster-bovenaan weergeven**|Het scriptvenster verplaatst naar de bovenkant in de weergave.|
 |**Scriptvenster rechts weergeven**|Het scriptvenster verplaatst naar rechts in de weergave.|
 |**Gemaximaliseerd scriptvenster weergeven**|Het scriptvenster maximaliseert.|
 
-## <a name="script-tab"></a>Tabblad script
+## <a name="script-tab"></a>Script Tab
 
 Geeft de naam van het script dat u wilt bewerken. U kunt klikken op een tabblad script om te selecteren van het script dat u wilt bewerken.
 

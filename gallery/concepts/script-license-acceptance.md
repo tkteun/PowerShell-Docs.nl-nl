@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Vereisen van instemming met licentie vereisen voor scripts
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002579"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684211"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Vereisen van instemming met licentie vereisen voor scripts
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Voorbeeld 2: Installatiescript met afhankelijkheden die instemming met licentie vereisen en -AcceptLicense vereisen
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Voorbeeld 2: Script met afhankelijkheden vereisen van instemming met licentie vereisen en -AcceptLicense installeren
 
 Script 'ScriptRequireLicenseAcceptance', is afhankelijk van module 'ModuleRequireLicenseAcceptance'. Gebruiker niet gevraagd om te accepteren van licentie - AcceptLicense is opgegeven.
 

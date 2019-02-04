@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Schrijven van een aangepaste DSC-resource met de PowerShell-klassen
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404337"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688313"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schrijven van een aangepaste DSC-resource met de PowerShell-klassen
 
@@ -30,8 +30,8 @@ Voor het implementeren van een aangepaste DSC-resource met een PowerShell-klasse
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>De klasse maken
@@ -86,7 +86,6 @@ De **Get()**, **Set()**, en **Test()** methoden zijn vergelijkbaar met de **Get-
 Deze code bevat ook de functie CopyFile(), een Help-functie waarmee het bestand worden gekopieerd **$SourcePath** naar **$Path**.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Deze code bevat ook de functie CopyFile(), een Help-functie waarmee het bestand 
 ```
 
 ### <a name="the-complete-file"></a>Het volledige bestand
+
 De volledige klassebestand volgt.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Een manifest maken
 
 Als u een resource op basis van een klasse met de DSC-engine, moet u opnemen een **DscResourcesToExport** -instructie in het manifestbestand geeft u de module voor het exporteren van de resource. Onze manifest ziet er als volgt:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Meerdere klasse-resources in een module declareren
+
+Een module kan meerdere klasse op basis van DSC-resources kunt definiëren. U kunt de mapstructuur op de volgende manieren maken:
+
+1. Definieer de eerste resource in de '<ModuleName>.psm1 ' Bestands- en latere resources onder de **DSCResources** map.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Voor alle resources definiëren de **DSCResources** map.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> Toevoegen in een PSM1-bestanden in de bovenstaande voorbeelden de **DSCResources** naar de **NestedModules** sleutel in uw PSD1-bestand.
+
 ### <a name="access-the-user-context"></a>Toegang tot de context van de gebruiker
 
 U kunt de automatische variabele gebruiken voor toegang tot de gebruikerscontext uit binnen een aangepaste resource, `$global:PsDscContext`.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Zie ook
-### <a name="concepts"></a>Concepten
+
 [Maken van aangepaste Windows PowerShell Desired State Configuration Resources](authoringResource.md)

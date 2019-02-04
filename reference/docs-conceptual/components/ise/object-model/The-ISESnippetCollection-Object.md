@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Het ISESnippetCollection-object
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404605"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684610"
 ---
 # <a name="the-isesnippetcollection-object"></a>Het ISESnippetCollection-object
 
@@ -31,6 +31,6 @@ $SnipFile = Join-Path ( Split-Path $profile) 'Snippets\MySnips.snippets.ps1xml' 
 
 ## <a name="see-also"></a>Zie ook
 
-- [Het isesnippet-object](The-ISESnippetObject.md)
+- [The ISESnippetObject](The-ISESnippetObject.md)
 - [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

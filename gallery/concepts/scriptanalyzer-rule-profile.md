@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: ScriptAnalyzer regel profiel voor galerie
 ms.openlocfilehash: d91a88981cc2f3269a1f8b6ee864f8333a2f097c
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002493"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683854"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>ScriptAnalyzer regel profiel voor galerie
 

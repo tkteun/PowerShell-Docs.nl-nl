@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: d4168640f67cb1dd44e91d1867e87fd7a6b7f549
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0a481fb9d4f2aab89bc448c71b01f1d541cf24bc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218346"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687991"
 ---
-# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Ondersteuning voor side-by-Side-versie in PowerShell 5.0 of hoger
+# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Ondersteuning voor side-by-Side-versie op PowerShell 5.0 of hoger
 
-Er is nu side-by-side (SxS) module versie-ondersteuning in installatie-Module, Update-Module en Publish-Module-cmdlets die worden uitgevoerd in Windows PowerShell 5.0 of hoger.
-We hebben ook een parameter - RequiredVersion toegevoegd aan de cmdlet Publish-Module om op te geven van de versie moet worden gepubliceerd. De parameter Path ondersteunt nu het basispad voor de module met de versie-map.
+Er is nu side-by-side (SxS)-module versie-ondersteuning in Install-Module, Update-Module en Publish-Module-cmdlets die worden uitgevoerd in Windows PowerShell 5.0 of hoger.
+We hebben ook een parameter - RequiredVersion toegevoegd aan de cmdlet Publish-Module om op te geven van de versie moet worden gepubliceerd. De parameter Path ondersteunt nu het basispad module met de versie-map.
 
 **Voorbeelden van Install-Module:**
 ```powershell

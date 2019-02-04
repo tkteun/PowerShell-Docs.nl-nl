@@ -5,11 +5,11 @@ ms.topic: conceptual
 contributor: vaibch
 title: Fout Netwerkswitchbeheer-cmdlets
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893151"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685247"
 ---
 # <a name="network-switch-manager-cmdlets-failure"></a>Fout bij Netwerkswitchbeheer-Cmdlets
 

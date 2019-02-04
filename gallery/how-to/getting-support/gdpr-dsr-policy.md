@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, psgallery, GDPR
 title: PowerShell Gallery GDPR-naleving
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002647"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687816"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell Gallery GDPR-naleving
 
@@ -53,7 +53,7 @@ E-mailberichten verzonden naar de PowerShell Gallery of door hebben een bewaarbe
 E-mailberichten worden na 90 dagen verwijderd door het beleid.
 
 U kunt kopieën van alle e-mailberichten verzonden naar of van uw e-mailadres en de PowerShell Gallery in de afgelopen 90 dagen aanvragen.
-Om aan te vragen van deze overeenkomst, stuur een e-mail naar [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), met de titel: "DSR-aanvraag voor e-mailberichten met betrekking tot dit account.
+Om aan te vragen van deze overeenkomst, stuur een e-mail naar [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), met de titel: 'DSR aanvragen voor e-mailberichten met betrekking tot dit account'.
 In de hoofdtekst van het bericht, staat welke gegevens u aanvraagt (bijvoorbeeld: Stuur alle e-mailberichten verzonden naar of ontvangen van dit e-mailadres.) Alle e-mailberichten met betrekking tot uw e-mailadres binnen 90 dagen na de aanvraag wordt verzonden binnen 7 dagen.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell Gallery-accountgegevens
@@ -92,7 +92,7 @@ U wordt gevraagd om op te geven van de auteur en een map op uw systeem waar u de
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Verwijderen van persoonlijke gegevens uit de PowerShell Gallery
 
-Als u wilt verwijderen van de PowerShell Gallery-account of een pakket dat u in de PowerShell Gallery eigenaar bent, e-mailbericht verzendt cgadmin@microsoft.com met de titel: 'AVG-aanvraag voor artikelen met betrekking tot dit account'.
+Als u wilt verwijderen van de PowerShell Gallery-account of een pakket dat u in de PowerShell Gallery eigenaar bent, e-mailbericht verzendt cgadmin@microsoft.com met de titel: 'AVG de aanvraag voor artikelen met betrekking tot dit account'.
 In de hoofdtekst van het bericht staat welke gegevens u wilt verwijderen. Bijvoorbeeld:
 
 - Verwijder versie x.y.z van mijn pakket "pakketnaam"

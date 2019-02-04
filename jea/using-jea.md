@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: JEA gebruiken
 ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522987"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686857"
 ---
 # <a name="using-jea"></a>JEA gebruiken
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Dit onderwerp beschrijft de verschillende manieren waarop u kunt verbinding maken met en gebruiken van een JEA-eindpunt.
 

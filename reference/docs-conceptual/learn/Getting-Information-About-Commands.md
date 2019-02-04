@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404554"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688446"
 ---
 # <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
 

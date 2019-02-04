@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Best practices voor pull-servers
 ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404389"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686675"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -75,7 +75,7 @@ Andere functies die in het verleden zijn bijgewerkt door versies van WMF (Zie de
 
 - Windows PowerShell Windows PowerShell Integrated Scripting
 - Environment (ISE) Windows PowerShell-webservices (Management OData
-- IIS-extensie) Windows PowerShell Desired State Configuration (DSC)
+- IIS Extension)  Windows PowerShell Desired State Configuration (DSC)
 - Windows Remote Management (WinRM) Windows Management Instrumentation (WMI)
 
 ### <a name="dsc-resource"></a>DSC-resource

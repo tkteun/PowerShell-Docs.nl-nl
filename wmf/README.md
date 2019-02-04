@@ -1,6 +1,6 @@
 # <a name="readme"></a>LEESMIJ-BESTAND
 
-Deze map bevat de documentatie voor Windows Management Framework (WMF).
-Dit is geconfigureerd als een afzonderlijke docset binnen de opslagplaats PowerShell-documenten.
+Deze map bevat de documentatie voor de Windows Management Framework (WMF).
+Dit is geconfigureerd als een afzonderlijke docset binnen de PowerShell-Docs-opslagplaats.
 
-Zie voor informatie over bijdragen aan deze docset, de PowerShell-documenten [handleiding voor bijdragers](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md).
+Zie voor informatie over een bijdrage levert aan deze docset, de PowerShell-documenten [gids voor inzenders](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md).

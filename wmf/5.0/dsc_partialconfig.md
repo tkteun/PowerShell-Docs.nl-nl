@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 779c39b590c05b944c61f53155cf2e602a7cfc4e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cb26e816b2bd95280ec3a426dbf60629c7668077
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189394"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686248"
 ---
-# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Configureer knooppunt met meerdere configuratie fragmenten (gedeeltelijke configuraties)
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Knooppunt met meerdere configuratiefragmenten (gedeeltelijke configuraties) configureren
 
-WMF 5.0 helpt u bij van configuratiedocumenten naar een knooppunt in fragmenten leveren. Zie voor meer informatie [gedeeltelijke configuraties](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
+WMF 5.0 helpt u configuratiedocumenten te leveren aan een knooppunt in fragmenten. Zie voor meer informatie, [gedeeltelijke configuraties](https://msdn.microsoft.com/powershell/dsc/partialconfigs).

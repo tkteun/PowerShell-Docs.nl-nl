@@ -2,12 +2,12 @@
 title: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 description: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403903"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686696"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
@@ -63,6 +63,24 @@ Bijvoorbeeld, als u wilt een nieuw bestand maken, klikt u op **File -> New**.
 Als u wilt opslaan, klikt u op **File -> Opslaan** en geef vervolgens een bestandsnaam op, laten we zeggen `HelloWorld.ps1`.
 U sluit het bestand, klikt u op 'x' naast de bestandsnaam van het.
 Om af te sluiten van Visual Studio Code, **File -> afsluiten**.
+
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installeren van de PowerShell-extensie op systemen met beperkte toegang
+
+Sommige systemen zijn ingesteld op een manier die nodig zijn alle code handtekeningen moet worden gecontroleerd en dus nodig PowerShell Editor Services handmatig worden goedgekeurd om te worden uitgevoerd op het systeem.
+Als u de extensie van PowerShell hebt geïnstalleerd, maar een foutmelding als zijn bereikt, is een Groepsbeleid-update die uitvoeringsbeleid wijzigen een waarschijnlijke oorzaak:
+
+```
+Language server startup failed.
+```
+
+Open een PowerShell-prompt en voer voor het handmatig goedkeuren van PowerShell Editor Services en dus de PowerShell-extensie voor VSCode:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+U wordt gevraagd met "Wilt u uitvoeren van software van deze niet-vertrouwde uitgever?"
+Type `R` het bestand uit te voeren. Vervolgens opent u Visual Studio Code en controleer of de PowerShell-uitbreiding correct functioneert. Als u nog steeds problemen aan de slag hebt, laat het ons weten op [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Met behulp van een specifieke versie van PowerShell
 

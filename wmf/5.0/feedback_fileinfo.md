@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 63c3b8237a9883b147380dfe9cb173107cea9aa9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5280ef5ff95679dc8721be8f5f81031a4ffe796f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225637"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687067"
 ---
 # <a name="updates-to-fileinfo-object"></a>Updates voor FileInfo-object
-Informatie over de bestandsversie misleidend kan zijn, met name in gevallen waarin het bestand is hersteld. Deze versie van WMF 5.0 voegt nieuwe **FileVersionRaw** en **ProductVersionRaw** script eigenschappen FileInfo objecten. Hier volgen de eigenschappen, zoals weergegeven voor powershell.exe (ervan uitgaande dat $pid is de ID van het PowerShell-proces):
+Informatie over de bestandsversie kan misleidend zijn, met name in gevallen waar het bestand is hersteld. Deze versie van WMF 5.0 voegt nieuwe **FileVersionRaw** en **ProductVersionRaw** script eigenschappen voor FileInfo-objecten. Hier zijn de eigenschappen als worden weergegeven voor de powershell.exe (ervan uitgaande dat $pid is de ID van de PowerShell-proces):
 
 ```powershell
 PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force

@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Objecten uit de pijplijn verwijderen Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404530"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685723"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Objecten verwijderen uit de pijplijn (Where-Object)
 
@@ -27,16 +27,16 @@ Vanwege het parseren van overwegingen, symbolen zoals <>, en = niet als vergelij
 
 |Vergelijkingsoperator|Betekenis|Voorbeeld (retourneert ' True ')|
 |-----------------------|-----------|--------------------------|
-|-eq|is gelijk aan|1 - eq 1|
+|-eq|is gelijk aan|1 -eq 1|
 |-ne|Is niet gelijk aan|1 - ne 2|
 |-lt|is kleiner dan|1 - lt 2|
 |-le|Is kleiner dan of gelijk aan|1 - le 2|
 |-gt|is groter dan|2 - gt 1|
 |-ge|Is groter dan of gelijk zijn aan|2 -ge 1|
-|-Als|Is vergelijkbaar met (vergelijking van jokertekens voor tekst)|"bestand.doc"-, zoals ' f\*basisbedrijfstoepassingen? "|
+|-like|Is vergelijkbaar met (vergelijking van jokertekens voor tekst)|"bestand.doc"-, zoals ' f\*basisbedrijfstoepassingen? "|
 |-notlike zijn|Is niet als (vergelijking van jokertekens voor tekst)|"bestand.doc"-notlike zijn "p\*.doc"|
 |-bevat|bevat|1,2,3 - 1 bevat|
-|-notcontains|bevat niet|1,2,3 - notcontains 4|
+|-notcontains|bevat niet|1,2,3 -notcontains 4|
 
 WHERE-Object-scriptblokken de speciale variabele gebruiken `$_` om te verwijzen naar het huidige object in de pijplijn. Hier volgt een voorbeeld van hoe het werkt. Als u een lijst met getallen hebben en alleen wilt retourneren die minder dan 3 zijn, kunt u Where-Object voor het filteren van de getallen door te typen:
 

@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Services beheren
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
 ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404501"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687011"
 ---
 # <a name="managing-services"></a>Services beheren
 
@@ -159,5 +159,5 @@ Zie voor meer informatie, [-Service instellen [m2]](https://technet.microsoft.co
 
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
 - [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [[M2] restart-Service](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [[M2] onderbreken-Service](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)

@@ -2,13 +2,13 @@
 ms.date: 06/12/2017
 contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
-title: Uitvoeren van de bootstrap NuGet
+title: Bootstrapping NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002135"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683966"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Het NuGet-provider en NuGet.exe opstarten
 
@@ -155,7 +155,7 @@ Als de cmdlets zijn uitgevoerd als een gebruiker zonder verhoogde bevoegdheden:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Een tweede optie is om NuGet.exe downloaden van de website NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) bij het selecteren van een Nuget-versie voor productiemachines, zorgt ervoor dat deze later zijn dan 2.8.5.208 en identificeren van de versie die is is met het label " aanbevolen'. Vergeet niet om de blokkering van het bestand als deze is gedownload met behulp van een browser. Dit kan worden uitgevoerd met behulp van de `Unblock-File` cmdlet.
+Een tweede optie is om NuGet.exe downloaden van de website NuGet.Org: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Bij het selecteren van een Nuget-versie voor productiemachines, zorgt ervoor dat deze later zijn dan 2.8.5.208 en de versie die zijn gelabeld 'aanbevolen' identificeren. Vergeet niet om de blokkering van het bestand als deze is gedownload met behulp van een browser. Dit kan worden uitgevoerd met behulp van de `Unblock-File` cmdlet.
 
 In beide gevallen moet het bestand NuGet.exe kan worden gekopieerd naar een locatie in `$env:path`, maar de standaard locaties zijn:
 

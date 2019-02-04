@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Configuraties doorvoeren
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404494"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684176"
 ---
 # <a name="enacting-configurations"></a>Configuraties doorvoeren
 
@@ -48,6 +48,6 @@ Begrijp echter dat deze implementatie heeft beperkte functionaliteit en sommige 
 
 De volgende onderwerpen wordt uitgelegd voor pull-service en -clients:
 
-- [Overzicht van Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Overzicht van Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Instellen van een SMB-pull-server](pullServerSMB.md)
 - [Een pull-client configureren](pullClientConfigID.md)

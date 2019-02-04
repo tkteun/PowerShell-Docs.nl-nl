@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851304"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687893"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
 
@@ -37,7 +37,7 @@ De Windows-compatibiliteitspakket kunt u PowerShell Core gebruiken **meer dan 19
 
 ## <a name="support-for-application-whitelisting"></a>Ondersteuning voor opname in de Whitelist
 
-PowerShell Core 6.1 heeft pariteit met de ondersteuning van Windows PowerShell 5.1 [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) opname in de whitelist.
+PowerShell Core 6.1 heeft pariteit met de ondersteuning van Windows PowerShell 5.1 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) opname in de whitelist.
 Opname in de whitelist kunt gedetailleerde controle over welke binaire bestanden mogen worden uitgevoerd gebruikt in combinatie met PowerShell [beperkte taalmodus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Verbeterde prestaties
@@ -54,7 +54,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tijd (sec)   | 25.178                 | 19.653              | 6.641               |
-| Versnellen (%) | N.v.t.                    | 21,9%               | 66.2%               |
+| Versnellen (%) | N.v.t.                    | 21.9%               | 66.2%               |
 
 Op deze manier zijn sorteren scenario's zoals deze verbeterd door meer dan 15%:
 
@@ -65,7 +65,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tijd (sec)   | 12.170                 | 8.493               | 7.08                |
-| Versnellen (%) | N.v.t.                    | 30,2%               | 16.6%               |
+| Versnellen (%) | N.v.t.                    | 30.2%               | 16.6%               |
 
 `Import-Csv` heeft ook zijn sped van aanzienlijk na een regressie vanuit Windows PowerShell.
 Het volgende voorbeeld wordt een test CSV met 26,616 rijen en zes kolommen:
@@ -88,7 +88,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tijd (sec)   | 0.259                  | 0.577               | 0,125                  |
+| Tijd (sec)   | 0.259                  | 0.577               | 0.125                  |
 | Versnellen (%) | N.v.t.                    | -122.8%             | 78,3% (% 51.7 van WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleer `system32` voor compatibel inbox-modules op Windows
@@ -209,7 +209,7 @@ Als `pwsh.exe` is niet beschikbaar is, PowerShell Direct terugvalt voor het gebr
 
 `Enable-PSRemoting` u maakt nu twee externe communicatie van sessieconfiguraties:
 
-- Een voor de belangrijkste versie van PowerShell. Bijvoorbeeld,`PowerShell.6`. Dit eindpunt dat kan worden gebruikt voor updates van de secundaire versie als de sessieconfiguratie 'systeembrede' PowerShell 6
+- Een voor de belangrijkste versie van PowerShell. Voorbeeld: `PowerShell.6`. Dit eindpunt dat kan worden gebruikt voor updates van de secundaire versie als de sessieconfiguratie 'systeembrede' PowerShell 6
 - Een specifieke versies sessieconfiguratie, bijvoorbeeld: `PowerShell.6.1.0`
 
 Dit gedrag is handig als u wilt dat meerdere versies van PowerShell 6 geïnstalleerd en toegankelijk is op dezelfde computer.

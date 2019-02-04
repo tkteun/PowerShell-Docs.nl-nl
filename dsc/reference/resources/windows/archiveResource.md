@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Archiefresource
 ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048283"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688404"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Archiefresource
 
@@ -35,7 +35,7 @@ Archive [string] #ResourceName
 |---|---|
 | Bestemming| Hiermee geeft u de locatie waar u om te controleren of de dat inhoud van het archief worden geëxtraheerd.|
 | Pad| Hiermee geeft u het bronpad van het bestand.|
-| __Controlesom__| Definieert het type te gebruiken bij het bepalen of twee bestanden hetzelfde zijn. Als __controlesom__ niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor de vergelijking. Geldige waarden zijn: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate none (standaard). Als u opgeeft __controlesom__ zonder __valideren__, mislukt de configuratie van de.|
+| __Checksum__| Definieert het type te gebruiken bij het bepalen of twee bestanden hetzelfde zijn. Als __controlesom__ niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor de vergelijking. Geldige waarden zijn: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate none (standaard). Als u opgeeft __controlesom__ zonder __valideren__, mislukt de configuratie van de.|
 | Zorg ervoor dat| Hiermee bepaalt u of om te controleren of de inhoud van het archief bestaat op de __bestemming__. Deze eigenschap instellen op __aanwezig__ om te controleren of de inhoud bestaat. Stel deze in op __afwezig__ om te controleren of ze bestaan niet. De standaardwaarde is __aanwezig__.|
 | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resource-configuratie-scriptblok die u wilt uitvoeren eerst ResourceName en het bijbehorende type is is __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 | Valideren| De controlesom-eigenschap wordt gebruikt om te bepalen of het archief overeenkomt met de handtekening. Als u controlesom zonder te valideren opgeeft, mislukt de configuratie. Als u valideren zonder controlesom opgeeft, wordt er een SHA-256-controlesom standaard gebruikt.|

@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
-title: Afhankelijkheden van resources met behulp van DependsOn
+title: Resourceafhankelijkheden met behulp van DependsOn
 ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403963"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688061"
 ---
-# <a name="resource-dependencies-using-dependson"></a>Afhankelijkheden van resources met behulp van DependsOn
+# <a name="resource-dependencies-using-dependson"></a>Resourceafhankelijkheden met behulp van DependsOn
 
 Wanneer u schrijft [configuraties](configurations.md), u toevoegen [Resource blokken](../resources/resources.md) aspecten van een doel knooppunt configureren. Als u doorgaat met het toevoegen van de Resource-blokken, kunnen uw configuraties meegroeien, erg groot tijd en moeite kosten om te beheren. Een dergelijke uitdaging is de toegepaste volgorde van de resource-blokken. Resources worden meestal toegepast in de volgorde waarin die ze worden gedefinieerd in de configuratie. Als uw configuratie grotere en complexere groeit, kunt u de `DependsOn` sleutel om de toegepaste volgorde van uw resources door op te geven dat een resource afhankelijk van een andere resource is te wijzigen.
 

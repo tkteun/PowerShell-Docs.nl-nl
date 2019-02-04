@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 0543afbc72148b1ba713e59655126c069b16ef33
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5b31fe833fb0f9d0f3f2733e777e4608a697d583
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218430"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685632"
 ---
-# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>Side-By-Side Module Versioning ondersteuning voor DSC-Resources
+# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>Side-By-Side-Module-ondersteuning voor versiebeheer voor DSC-Resources
 
 Modules met DSC-resources kunnen worden geïnstalleerd side-by-side en DSC-configuraties kunt een specifieke versie van de resource die is geïnstalleerd op het systeem.
 
-Zie voor meer informatie [door resources met meerdere versies](https://msdn.microsoft.com/powershell/dsc/sxsresource).
+Zie voor meer informatie, [resources met meerdere versies gebruiken](https://msdn.microsoft.com/powershell/dsc/sxsresource).
 
 ## <a name="known-issues"></a>Bekende problemen
 
-In deze release Hier volgen enkele bekende problemen van side-by-side-installatie:
+In deze release volgen de volgende bekende problemen van side-by-side-installatie:
 
--   Met behulp van twee verschillende versies van de DSC-resource in dezelfde configuratie wordt niet ondersteund.
+-   Met behulp van twee verschillende versies van de DSC-resource binnen dezelfde configuratie wordt niet ondersteund.

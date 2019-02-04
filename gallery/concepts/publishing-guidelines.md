@@ -5,11 +5,11 @@ keywords: Galerie, powershell, cmdlet, psgallery
 description: Richtlijnen voor uitgevers
 title: PowerShell Gallery richtlijnen en aanbevolen procedures publiceren
 ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655392"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689118"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery richtlijnen en aanbevolen procedures publiceren
 
@@ -28,7 +28,7 @@ Feedback over deze richtlijnen wordt verwelkomde. Als u feedback hebt, opent u p
 De volgende aanbevolen procedures zijn wat de gebruikers van de items van de PowerShell Gallery zegt is belangrijk en vindt u in de volgorde van prioriteit nominale.
 Pakketten die aan deze richtlijnen voldoet, zijn veel vaker zal worden gedownload en worden vastgesteld door anderen.
 
-- Gebruik PSScriptAnalyzer
+- Use PSScriptAnalyzer
 - Documentatie en voorbeelden
 - Reageren op feedback
 - Bieden van modules in plaats van scripts
@@ -44,7 +44,7 @@ Pakketten die aan deze richtlijnen voldoet, zijn veel vaker zal worden gedownloa
 
 Elk van deze wordt kort beschreven in de volgende secties.
 
-## <a name="use-psscriptanalyzer"></a>Gebruik PSScriptAnalyzer
+## <a name="use-psscriptanalyzer"></a>Use PSScriptAnalyzer
 
 [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) is een hulpmiddel gratis statische code die geschikt is voor PowerShell-code.
 PSScriptAnalyzer identificeert de meest voorkomende problemen die in de PowerShell-code, en vaak een aanbeveling voor het oplossen van het probleem.
@@ -142,7 +142,7 @@ De volgende codes gebruiken om te demonstreren aan gebruikers die pakketten goed
 
 - PSEdition_Desktop: Pakketten die compatibel met Windows PowerShell zijn 
 - PSEdition_Core: Pakketten die compatibel met Powershell Core zijn 
-- Windows: Pakketten die compatibel zijn met het Windows-besturingssysteem
+- Windows : Pakketten die compatibel zijn met het Windows-besturingssysteem
 - Linux: Pakketten die compatibel zijn met het Linux-besturingssystemen 
 - MacOS: Pakketten die compatibel zijn met het Mac-besturingssysteem
 

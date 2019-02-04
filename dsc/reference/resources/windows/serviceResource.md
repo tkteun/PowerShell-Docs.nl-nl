@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Bron van het DSC-Service
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048177"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688299"
 ---
 # <a name="dsc-service-resource"></a>Bron van het DSC-Service
 
@@ -42,7 +42,7 @@ Service [string] #ResourceName
 | BuiltInAccount| Geeft aan dat de aanmeldingsaccount gebruiken voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.|
 | Referentie| Geeft aan dat referenties voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de __BuiltinAccount__ eigenschap samen kan worden gebruikt.|
 | DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| Opstarttype van| Geeft aan dat het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**|
+| StartupType| Geeft aan dat het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**|
 | Status| Geeft de status die u wilt om ervoor te zorgen voor de service.|
 | Beschrijving | Geeft aan dat de beschrijving van de doelservice.|
 | DisplayName | Geeft de naam van de doelservice.|

@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: f491e30859cbe6cbaa58f94389382ff231c52956
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e2c9233734a6ede04e8ec2bbad05950cbb31cbba
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225688"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687984"
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modules ondersteuning voor het declareren van versie bereiken (1.*, enzovoort)
-In combinatie met **- MinimumVersion**, **- MaximumVersion** nu kan de gebruiker get/import-module binnen een bepaald bereik. De parameter bieden ook ondersteuning voor **.** \*. Het volgende voorbeeld ziet u hoe het werkt:
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Module-ondersteuning voor declareren versiebereiken (1.*, enzovoort)
+In combinatie met **- MinimumVersion**, **- MaximumVersion** kunnen nu get /-import-module binnen het bereik van specifieke gebruiker. De parameter bieden ook ondersteuning **.** \*. Het volgende voorbeeld laat zien hoe het werkt:
 
-U kunt nu combineren **- MinimumVersion** en **- MaximumVersion** module binnen een specifiek bereik te importeren:
+U kunt nu, combineren **- MinimumVersion** en **- MaximumVersion** module binnen een bepaald bereik te importeren:
 
 ```powershell
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*

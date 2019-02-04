@@ -1,15 +1,15 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: De tweede hop maken in PowerShell voor externe toegang
+title: De tweede hop maken voor externe communicatie met PowerShell
 ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403989"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684750"
 ---
-# <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken in PowerShell voor externe toegang
+# <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken voor externe communicatie met PowerShell
 
 Het "tweede hop '-probleem verwijst naar een situatie als volgt uit:
 

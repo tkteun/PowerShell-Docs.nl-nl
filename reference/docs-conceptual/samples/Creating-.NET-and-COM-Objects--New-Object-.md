@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: .NET- en COM-objecten Nieuw Object maken
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404621"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684127"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET- en COM-objecten (New-Object) maken
 
@@ -123,7 +123,7 @@ U kunt **New-Object** om te werken met onderdelen van de Component Object Model 
 
 **New-Object** maakt gebruik van .NET Framework Runtime aanroepbare Wrappers te maken van COM-objecten, zodat deze dezelfde beperkingen die door .NET Framework worden ondersteund heeft bij het aanroepen van COM-objecten. Voor het maken van een COM-object, moet u opgeven de **ComObject** parameter met de programma-id of *ProgId* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van COM-gebruik en het bepalen van wat programma-id's zijn beschikbaar op een systeem is buiten het bereik van deze handleiding, maar meest bekende objecten uit omgevingen zoals WSH kunnen worden gebruikt in Windows PowerShell.
 
-U kunt de WSH-objecten maken door op te geven deze ProgID: **Instantie**, **WScript.Network**, **Scripting.Dictionary**, en **Scripting.FileSystemObject**. De volgende opdrachten maakt deze objecten:
+U kunt de WSH-objecten maken door op te geven deze ProgID: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary**, and **Scripting.FileSystemObject**. De volgende opdrachten maakt deze objecten:
 
 ```powershell
 New-Object -ComObject WScript.Shell

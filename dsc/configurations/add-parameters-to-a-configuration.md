@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, resource, galerie, instellen
-title: Voeg Parameters toe aan een configuratie
+title: Parameters toevoegen aan een configuratie
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403979"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685401"
 ---
-# <a name="add-parameters-to-a-configuration"></a>Voeg Parameters toe aan een configuratie
+# <a name="add-parameters-to-a-configuration"></a>Parameters toevoegen aan een configuratie
 
 Functies, zoals [configuraties](configurations.md) kunnen als parameters worden gebruikt om toe te staan van meer dynamische configuraties op basis van de invoer van de gebruiker. De stappen zijn vergelijkbaar met die wordt beschreven in [functies met Parameters](/powershell/module/microsoft.powershell.core/about/about_functions).
 

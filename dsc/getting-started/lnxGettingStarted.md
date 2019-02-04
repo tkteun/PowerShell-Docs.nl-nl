@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Aan de slag met Desired State Configuration (DSC) voor Linux
 ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403965"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686598"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met Desired State Configuration (DSC) voor Linux
 
@@ -20,7 +20,7 @@ De volgende versies van de Linux-besturingssystemen worden ondersteund voor DSC 
 - CentOS 5, 6 en 7 (x86/x64)
 - Debian GNU/Linux 6, 7 en 8 (x86/x64)
 - Oracle Linux 5, 6 en 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5, 6 en 7 (x86/x64)
+- Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 en 12 (x86/x64)
 - Server Ubuntu 12.04 LTS, 14.04 LTS en 16.04 LTS (x86/x64)
 
@@ -28,9 +28,9 @@ De volgende tabel beschrijft de vereiste pakketafhankelijkheden voor DSC voor Li
 
 |  Vereist pakket |  Beschrijving |  Minimale versie |
 |---|---|---|
-| glibc| GNU-bibliotheek| 2... 4 – 31.30|
-| Python| Python| 2.4 – 3.4|
-| omniserver| Open Management Infrastructure| 1.0.8.1|
+| glibc| GNU-bibliotheek| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| Open Management Infrastructure| 1.0.8.1|
 | openssl| OpenSSL-bibliotheken| versie 0.9.8 of 1.0|
 | ctypes| CTypes Python-bibliotheek| Moet overeenkomen met de Python-versie|
 | libcurl| cURL http-clientbibliotheek| 7.15.1|
@@ -186,4 +186,4 @@ De volgende logboekbestanden worden gegenereerd voor DSC voor Linux-berichten.
 |Logboekbestand|Adreslijst|Beschrijving|
 |---|---|---|
 |**omiserver.log**|`/var/opt/omi/log`|Berichten die betrekking hebben op de werking van de OMI-CIM-server.|
-|**DSC.log**|`/var/opt/omi/log`|Berichten die betrekking hebben op de werking van de lokale Configuration Manager (LCM) en DSC-resource-bewerkingen.|
+|**dsc.log**|`/var/opt/omi/log`|Berichten die betrekking hebben op de werking van de lokale Configuration Manager (LCM) en DSC-resource-bewerkingen.|

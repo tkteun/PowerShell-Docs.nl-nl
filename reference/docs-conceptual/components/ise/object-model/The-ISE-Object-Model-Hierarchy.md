@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: De objectmodelhiërarchie van ISE
 ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404466"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683770"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>De objectmodelhiërarchie van ISE
 
@@ -15,7 +15,7 @@ Dit onderwerp bevat de hiërarchie van objecten die deel uitmaken van Windows Po
 Windows PowerShell ISE is opgenomen in Windows PowerShell 3.0 en Windows PowerShell 4.0.
 Klik op een object waarmee u de referentiedocumentatie voor de klasse die het object definieert.
 
-## <a name="psise-object"></a>$psISE object
+## <a name="psise-object"></a>$psISE Object
 
 De **$psISE** -object is de [hoofdobject](The-ObjectModelRoot-Object.md) van de hiërarchie van Windows PowerShell ISE-object.
 Op het hoogste niveau bevindt, wordt de volgende objecten beschikbaar zijn voor het uitvoeren van scripts:

@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219579"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686969"
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>Detectie PowerShell-scripts, installatie en beheer met PowerShellGet
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShell-Script detecteren, installeren en beheren met PowerShellGet
 
 Functie voor het delen van PowerShell-Script is toegevoegd aan de PowerShellGet in de WMF 5.0 RTM-versie.
-De volgende nieuwe cmdlets toegevoegd aan de PowerShellGet-module voor de ondersteuning van de PowerShell-Scripts.
+De volgende nieuwe-cmdlets zijn toegevoegd aan de PowerShellGet-module voor de ondersteuning van de PowerShell-Scripts.
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -38,7 +38,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-De syntaxis van de script-Cmdlets voor delen:
+De syntaxis van script-Cmdlets voor delen:
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 

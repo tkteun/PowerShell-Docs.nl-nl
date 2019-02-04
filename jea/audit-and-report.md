@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Controle en rapportage over JEA
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851217"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688600"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Controle en rapportage over JEA
 
-> Is van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows PowerShell 5.0
 
 Nadat u de JEA hebt geïmplementeerd, wilt u regelmatige controle van de JEA-configuratie.
 Dit helpt u bij het bepalen als de juiste personen toegang tot de JEA-eindpunt hebben en hun rollen nog steeds geschikt zijn.

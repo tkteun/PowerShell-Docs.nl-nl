@@ -4,15 +4,15 @@ contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Cmdlets voor het oplossen van problemen
 ms.openlocfilehash: f5cd9c0cc23fef5891bf02c10b6541ab0f9d418a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002459"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686549"
 ---
 # <a name="troubleshooting-cmdlets"></a>Cmdlets voor het oplossen van problemen
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Over het oplossen van ' Waarschuwing: kan het pakket 'uw pakket name' niet downloaden "probleem
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Over het oplossen van ' Waarschuwing: Pakket met de pakketnaam kan niet downloaden"probleem
 
 Dit apparaat gerapporteerd die `Install-Module` of `Update-Module` soms op sommige computers mislukt.
 Op basis van ons onderzoek, is het iets te maken met de netwerkverbinding.

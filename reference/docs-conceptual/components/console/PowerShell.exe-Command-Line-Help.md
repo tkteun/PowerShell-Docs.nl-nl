@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Help voor de PowerShell.exe-opdrachtregel
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403955"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688824"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe Help voor de opdrachtregel
 
@@ -72,7 +72,7 @@ Na het uitvoeren van opstartopdrachten afsluiten niet.
 
 Hiermee verbergt u de copyright banner bij het opstarten.
 
-### <a name="-noninteractive"></a>-Niet-interactieve
+### <a name="-noninteractive"></a>-NonInteractive
 
 Niet aanwezig zijn van een interactieve prompt voor de gebruiker.
 
@@ -80,7 +80,7 @@ Niet aanwezig zijn van een interactieve prompt voor de gebruiker.
 
 Het PowerShell-profiel niet worden geladen.
 
-### <a name="-outputformat-text--xml"></a>-Uitvoerindeling {tekst | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 
 Bepaalt hoe de uitvoer van PowerShell wordt opgemaakt. Geldige waarden zijn 'Tekst' (tekenreeksen) of 'XML' (geserialiseerde CLIXML-indeling).
 
@@ -100,7 +100,7 @@ Als PowerShell 3.0 niet is geïnstalleerd, is de enige geldige waarde '2.0'. And
 
 Zie voor meer informatie, [Windows PowerShell installeren](../../setup/installing-windows-powershell.md).
 
-### <a name="-windowstyle-window-style"></a>-Vensterstijl <Window style>
+### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
 Hiermee stelt u de vensterstijl voor de sessie. Geldige waarden zijn normaal, geminimaliseerd, gemaximaliseerd en verborgen.
 

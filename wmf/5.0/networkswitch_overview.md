@@ -1,29 +1,29 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 11b5e36f703c242e0bc820ab19d11d39305fa90c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 61c5df1b64cb9c54f9c7372a56e77abf319658dd
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187908"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683763"
 ---
 # <a name="network-switch-management-with-powershell"></a>Beheer van netwerkswitch met PowerShell
 
 De **Get-NetworkSwitchEthernetPort** cmdlet retourneert nu de volgende aanvullende informatie met exemplaren:
 
-- IP-adres – het IP-adres die zijn gekoppeld aan de poort
+- IP-adres – het IP-adres dat is gekoppeld aan de poort
 - PortMode: de poortmodus: toegang, route of trunk
 - AccessVLAN – de de VLAN-ID die is gekoppeld aan deze poort in de toegangsmodus
-- TrunkedVLANList – een lijst met de id van VLAN's die zijn gekoppeld aan deze poort in de trunkmodus
+- TrunkedVLANList: een lijst met id's van VLAN's die zijn gekoppeld aan deze poort in de trunkmodus
 
-## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Fundamentele netwerkbeheer switch met Windows PowerShell
+## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Fundamentele beheer van netwerkswitch met Windows PowerShell
 
-De netwerkswitch-cmdlets die zijn geïntroduceerd in WMF 5.0, kunt u switch, virtuele LAN (VLAN) en basic Layer 2-switch-poort netwerkconfiguratie van toepassing op Windows Server 2012 R2-logo gecertificeerde netwerkswitches. Microsoft blijft doorgevoerd in de ondersteuning van de [Datacenter Abstraction](http://technet.microsoft.com/cloud/dal.aspx) visie Layer (DAL), en waarde voor onze klanten en partners in deze ruimte weergeven. Met deze cmdlets kunt u uitvoeren:
+De netwerkswitch-cmdlets die zijn geïntroduceerd in WMF 5.0, kunt u switch, virtuele LAN (VLAN) en basic Layer 2-switch-poort netwerkconfiguratie toepassen op Windows Server 2012 R2-logo gecertificeerde netwerkswitches. Microsoft blijft doorgevoerd op de ondersteuning van de [Datacenter Abstraction](http://technet.microsoft.com/cloud/dal.aspx) visie Layer (DAL), en om weer te geven waarde voor onze klanten en partners in deze ruimte. Met deze cmdlets die u kunt uitvoeren:
 
-- Global switch configuratie, zoals:
-    - Naam van de host
-    - Set switch banner
+- Globale switch configuratie, zoals:
+    - Set-hostnaam
+    - Set-switch banner
     - Configuratie blijven behouden
     - Functie- of uitschakelen
 
@@ -33,13 +33,13 @@ De netwerkswitch-cmdlets die zijn geïntroduceerd in WMF 5.0, kunt u switch, vir
     - VLAN opsommen
     - Beschrijvende naam van de set met een VLAN
 
-- Configuratie van laag 2-poort:
-    - Poorten opsommen
+- Configuratie van de laag-2-poort:
+    - Poorten inventariseren
     - In- of uitschakelen van poorten
-    - Set-poort modi en eigenschappen
+    - Set-poort-modi en eigenschappen
     - Toevoegen of koppelen van de VLAN Trunk of toegang op de poort
 
-Te verkennen door te zoeken naar alle van de cmdlets NetworkSwitch!
+Beginnen met het verkennen door te zoeken naar alle van de cmdlets systeemtaak!
 
 ```powershell
 PS> Get-Command *-NetworkSwitch*
@@ -68,4 +68,4 @@ PS> Get-Command *-NetworkSwitch*
 | Function    | Set-NetworkSwitchVlanProperty             | NetworkSwitch |
 ```
 
-Meer informatie is beschikbaar in de Jeffrey Snover WMF 5.0 Preview aankondiging blogbericht: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
+Meer informatie is beschikbaar in Jeffrey Snover van WMF 5.0 Preview aankondiging blogpost: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>

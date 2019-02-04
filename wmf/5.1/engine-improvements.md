@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: PowerShell-Engine-verbeteringen in WMF 5.1
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892889"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687445"
 ---
 # <a name="powershell-engine-improvements"></a>Verbeteringen van de PowerShell-Engine
 

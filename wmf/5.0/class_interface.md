@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 116f79a95126d0a1c579a95ec99eb5d8b75cc1e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4b593e9a1eca43ee7ad85fc921ae3c1d62722db9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225484"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687858"
 ---
 # <a name="declare-implemented-interface"></a>Geïmplementeerde interface declareren
 
-U kunt geïmplementeerde interfaces declareren nadat basistypen of onmiddellijk nadat een dubbele punt (:), als er geen basistype dat is opgegeven. Alle namen gescheiden door komma's. Het is heel vergelijkbaar met C#-syntaxis.
+U kunt geïmplementeerde interfaces aangeven na basistypen of onmiddellijk nadat een dubbele punt (:), als er geen basistype dat is opgegeven. Alle namen worden gescheiden door komma's. Het is heel vergelijkbaar met C# syntaxis.
 
 ```powershell
 class MyComparable : system.IComparable

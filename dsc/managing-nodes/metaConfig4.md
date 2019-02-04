@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: De Local Configuration Manager configureren in eerdere versies van Windows PowerShell
-ms.openlocfilehash: 31ba2ecdaa5a2ff7fcfddb1791c4d00343f4b5d5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403991"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688859"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>De Local Configuration Manager configureren in eerdere versies van Windows PowerShell
 
@@ -34,9 +34,20 @@ Hieronder vindt u de Local Configuration Manager-eigenschappen die u kunt instel
 - **Referentie**: Geeft aan dat referenties (net als bij Get-Credential) vereist voor toegang tot externe resources, zoals contact opnemen met de configuration-service.
 - **DownloadManagerCustomData**: Hiermee geeft u een matrix met aangepaste gegevens die specifiek zijn voor het Downloadbeheer.
 - **DownloadManagerName**: Geeft de naam van de configuratie en de module Downloadbeheer.
-- **RebootNodeIfNeeded**: Bepaalde wijzigingen in de configuratie op een doelknooppunt mogelijk deze opnieuw worden gestart om de wijzigingen worden toegepast. Met de waarde **waar**, deze eigenschap wordt het knooppunt opnieuw zodra de configuratie is volledig is van toepassing, zonder verdere waarschuwing. Als **False** (de standaardwaarde), de configuratie wordt voltooid, maar het knooppunt moet handmatig opnieuw worden gestart voor de wijzigingen worden doorgevoerd.
+- **RebootNodeIfNeeded**: Stel dit in op `$true` om toe te staan van bronnen op te starten op het knooppunt met behulp van de `$global:DSCMachineStatus` vlag. Anders moet u handmatig het knooppunt voor de configuratie die vereist dat het opnieuw opstarten. De standaardwaarde is `$false`. Voor het gebruik van deze instelling als de voorwaarde van een opnieuw opstarten wordt gepubliceerd door iets anders dan DSC (zoals Windows-installatieprogramma), combineert u deze instelling met de [xPendingReboot](https://github.com/powershell/xpendingreboot) module.
 - **RefreshFrequencyMins**: Gebruikt wanneer u een pull-service hebt ingesteld. Hiermee geeft u de frequentie (in minuten) waarbinnen de Local Configuration Manager neemt contact op met een pull-service voor het downloaden van de huidige configuratie. Deze waarde kan worden ingesteld in combinatie met ConfigurationModeFrequencyMins. Wanneer RefreshMode is ingesteld op PULL, wordt het doelknooppunt neemt contact op met de pull-service op basis van een interval dat is ingesteld door RefreshFrequencyMins en downloadt de huidige configuratie. Volgens het interval dat is ingesteld door ConfigurationModeFrequencyMins, geldt de consistentie-engine klikt u vervolgens de meest recente configuratie die is gedownload naar het doelknooppunt. Als RefreshFrequencyMins niet is ingesteld op een geheel getal meervoud van ConfigurationModeFrequencyMins, het systeem wordt deze naar boven afronden. De standaardwaarde is 30.
 - **RefreshMode**: Mogelijke waarden zijn **Push** (de standaardinstelling) en **Pull**. In de pushconfiguratie van '', moet u een configuratiebestand op elk doelknooppunt plaatsen met behulp van een clientcomputer. In de modus 'pull', moet u een pull-service voor Local Configuration Manager en neem contact op met toegang tot de configuratiebestanden instellen.
+
+> [!NOTE]
+> De LCM begint de **ConfigurationModeFrequencyMins** cyclus op basis van:
+>
+> - Een nieuwe metaconfig wordt toegepast met behulp van `Set-DscLocalConfigurationManager`
+> - Een machine opnieuw opstarten
+>
+> Voor een voorwaarde waar de timer tijdens de uitvoering van een crash die binnen 30 seconden worden gedetecteerd en de cyclus wordt opnieuw gestart.
+> Een gelijktijdige bewerking kan vertragen de cyclus wordt gestart, als de duur van deze bewerking de geconfigureerde cyclus frequentie overschrijdt, de volgende timer niet gestart.
+>
+> Bijvoorbeeld: de metaconfig is geconfigureerd met een pull-frequentie van 15 minuten en een pull-wordt uitgevoerd op T1.  Het knooppunt voor 16 minuten niet is voltooid.  De eerste 15 minuten cyclus wordt genegeerd en volgende pull bij T1 + 15 + 15 wordt uitgevoerd.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Voorbeeld van de lokale Configuration Manager-instellingen bijwerken
 

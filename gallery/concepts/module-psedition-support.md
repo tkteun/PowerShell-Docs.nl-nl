@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galerie, powershell, cmdlet, psget
 title: Modules met compatibele PowerShell-edities
 ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655324"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684995"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibele PowerShell-edities
 
@@ -118,7 +118,7 @@ De inhoud van de module-map
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-Inhoud van PSScriptAnalyzer.psd1 bestand
+Contents of PSScriptAnalyzer.psd1 file
 
 ```powershell
 @{
