@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
-title: Geavanceerde DSC-ontwerpen voor samenstelling en samenwerking
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: Informatie over de DSC-rol in een CI/CD-pijplijn
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687172"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803375"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Geavanceerde DSC-ontwerpen voor samenstelling en samenwerking
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de DSC-rol in een CI/CD-pijplijn
 
 Dit artikel beschrijft de soorten methoden voor het combineren van configuraties en resources.
 Het doel voor elk scenario is hetzelfde, te verminderen van complexiteit wanneer meerdere configuraties voorkeur een server end Implementatiestatus bereiken.
