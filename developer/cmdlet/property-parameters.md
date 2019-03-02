@@ -8,84 +8,36 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
-ms.openlocfilehash: 431ed002fdcf682072552e8b64134f130503dfbb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849992"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251418"
 ---
 # <a name="property-parameters"></a>Eigenschapsparameters
 
 De volgende tabel bevat de aanbevolen namen en de functionaliteit voor de Eigenschapsparameters.
 
-Gegevens over het aantal type: Int32
-
-Deze parameter implementeren zodat de gebruiker het aantal objecten opgeven kan moeten worden verwerkt.
-
-Beschrijving van het gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan een beschrijving op voor een resource opgeven.
-
-Van het gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan het referentieobject voor het ophalen van gegevens uit opgeven.
-
-ID-gegevenstype:
-
-Implementeer deze parameter zodat de gebruiker kan de id van een resource opgeven.
-
-Invoer-gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan de specificatie-bestand voor invoer opgeven.
-
-Locatie-gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan de locatie van de resource opgeven.
-
-Logboeknaam gegevenstype: Tekenreeks
-
-Deze parameter implementeren zodat de gebruiker de naam van het logboekbestand opgeven kan te verwerken of gebruiken.
-
-De naam van gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan de naam van de resource opgeven.
-
-Uitvoer-gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan het uitvoerbestand opgeven.
-
-De eigenaar van het gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan de naam van de eigenaar van de resource opgeven.
-
-Eigenschap gegevenstype: Tekenreeks
-
-Deze parameter implementeren zodat de gebruiker opgeven kan de naam of de namen van de eigenschappen te gebruiken.
-
-Reden voor gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan aangeven waarom deze cmdlet wordt aangeroepen.
-
-Regex-gegevenstype: SwitchParameter
-
-Implementeer deze parameter zodat de reguliere expressies worden gebruikt wanneer de parameter is opgegeven. Als deze parameter is opgegeven, worden de jokertekens zijn niet omgezet.
-
-Snelheid van het gegevenstype: Int32
-
-Implementeer deze parameter zodat de gebruiker kan de baudrate opgeven. De gebruiker Hiermee stelt u deze parameter met de snelheid van de resource.
-
-Status gegevens van het type: Sleutelwoord matrix
-
-Implementeer deze parameter zodat de gebruiker kan de namen van Staten, zoals KEYDOWN opgeven.
-
-Waarde voor gegevenstype: Object
-
-Implementeer deze parameter zodat de gebruiker kan een waarde om te bieden aan de cmdlet opgeven.
-
-Versie-gegevenstype: Tekenreeks
-
-Implementeer deze parameter zodat de gebruiker kan de versie van de eigenschap opgeven.
+|Parameter|Functionaliteit|
+|---|---|
+|**Aantal**<br>Gegevenstype: Int32|Deze parameter implementeren zodat de gebruiker het aantal objecten opgeven kan moeten worden verwerkt.|
+|**Beschrijving**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan een beschrijving op voor een resource opgeven.|
+|**From**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan het referentieobject voor het ophalen van gegevens uit opgeven.|
+|**Id**<br>Gegevenstype: Afhankelijke resource|Implementeer deze parameter zodat de gebruiker kan de id van een resource opgeven.|
+|**Invoer**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de specificatie-bestand voor invoer opgeven.|
+|**Locatie**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de locatie van de resource opgeven.|
+|**LogName**<br>Gegevenstype: Tekenreeks|Deze parameter implementeren zodat de gebruiker de naam van het logboekbestand opgeven kan te verwerken of gebruiken.|
+|**Naam**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de naam van de resource opgeven.|
+|**Uitvoer**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan het uitvoerbestand opgeven.|
+|**Eigenaar**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de naam van de eigenaar van de resource opgeven.|
+|**De eigenschap**<br>Gegevenstype: Tekenreeks|Deze parameter implementeren zodat de gebruiker opgeven kan de naam of de namen van de eigenschappen te gebruiken.|
+|**Reden**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan aangeven waarom deze cmdlet wordt aangeroepen.|
+|**Regex**<br>Gegevenstype: SwitchParameter|Implementeer deze parameter zodat de reguliere expressies worden gebruikt wanneer de parameter is opgegeven. Als deze parameter is opgegeven, worden de jokertekens zijn niet omgezet.|
+|**snelheid**<br>Gegevenstype: Int32|Implementeer deze parameter zodat de gebruiker kan de baudrate opgeven. De gebruiker Hiermee stelt u deze parameter met de snelheid van de resource.|
+|**status**<br>Gegevenstype: Sleutelwoord matrix|Implementeer deze parameter zodat de gebruiker kan de namen van Staten, zoals KEYDOWN opgeven.|
+|**Waarde**<br>Gegevenstype: Object|Implementeer deze parameter zodat de gebruiker kan een waarde om te bieden aan de cmdlet opgeven.|
+|**Versie**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de versie van de eigenschap opgeven.|
 
 ## <a name="see-also"></a>Zie ook
 

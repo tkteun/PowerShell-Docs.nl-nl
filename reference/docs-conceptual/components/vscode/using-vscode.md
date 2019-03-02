@@ -2,12 +2,12 @@
 title: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 description: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686696"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251384"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
@@ -116,17 +116,28 @@ U wordt aangeraden de volgende configuratie-instellingen voor Visual Studio Code
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Als u niet dat deze instellingen wilt beïnvloeden alle bestandstypen, kan VSCode per taal configuraties. Maken van een bepaalde taal-instelling door te nemen van instellingen een `[<language-name>]` veld. Bijvoorbeeld:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Zie voor meer informatie over bestand codering in VS Code [begrijpen bestandscodering](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Fouten opsporen met Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Geen werkruimte foutopsporing
 
-Vanaf versie van Visual Studio Code 1.9 kunt u PowerShell-scripts fouten opsporen zonder te open de map met het PowerShell-script.
-Open gewoon de PowerShell-scriptbestand met **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk vervolgens op F5 foutopsporing te starten.
-U ziet het actiedeelvenster van foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing opsplitsen.
+Vanaf versie van Visual Studio Code 1.9 kunt u PowerShell-scripts fouten opsporen zonder te open de map met het PowerShell-script. Open de PowerShell-scriptbestand met **File -> bestand openen...** , stel een onderbrekingspunt in op een regel (druk op F9) en druk vervolgens op F5 foutopsporing te starten. U ziet het actiedeelvenster van foutopsporing worden weergegeven waarmee u in het foutopsporingsprogramma, stap, hervatten en stop foutopsporing opsplitsen.
 
 ### <a name="workspace-debugging"></a>Werkruimte-foutopsporing
 

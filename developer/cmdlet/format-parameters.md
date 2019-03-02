@@ -8,45 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 10e025c5-9aa6-45a5-b851-23d14db1f4cc
 caps.latest.revision: 7
-ms.openlocfilehash: 4f24af9b32f785695d156bfb4784aa03c97e8987
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0bd3888d81aa6d1dde26c0066f7bca9dac8a8bca
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849418"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251180"
 ---
 # <a name="format-parameters"></a>Opmaakparameters
 
 De volgende tabel bevat de namen van de aanbevolen en de functionaliteit voor parameters die worden gebruikt om te maken of om gegevens te genereren.
 
-Gegevenstype: Trefwoord
-
-Implementeer deze parameter om op te geven van de indeling van de cmdlet-uitvoer. Mogelijke waarden zijn mogelijk tekst of Script.
-
-Binary-gegevenstype: SwitchParameter
-
-Deze parameter om aan te geven dat de binaire waarden worden verwerkt door de cmdlet worden geïmplementeerd.
-
-Codering van gegevens, typt u: Trefwoord
-
-Implementeer deze parameter om op te geven van het type codering die wordt ondersteund. Mogelijke waarden zijn mogelijk ASCII, UTF8, Unicode, UTF7, BigEndianUnicode, Byte en tekenreeks.
-
-Nieuwe regel gegevenstype: SwitchParameter
-
-Implementeer deze parameter zodat de nieuwe regeltekens worden ondersteund wanneer de parameter is opgegeven.
-
-ShortName gegevenstype: SwitchParameter
-
-Implementeer deze parameter zodat korte namen worden ondersteund wanneer de parameter is opgegeven.
-
-Breedte van het gegevenstype: Int32
-
-Implementeer deze parameter zodat de gebruiker kan de breedte van het uitvoerapparaat opgeven.
-
-Gegevens van het type verpakken: SwitchParameter
-
-Implementeer deze parameter zodat tekstterugloop wordt ondersteund wanneer de parameter is opgegeven.
-
+|Parameter|Functionaliteit|
+|---|---|
+|**Als**<br>Gegevenstype: Trefwoord|Implementeer deze parameter om op te geven van de indeling van de cmdlet-uitvoer. Mogelijke waarden zijn mogelijk tekst of Script.|
+|**Binary**<br>Gegevenstype: SwitchParameter|Deze parameter om aan te geven dat de binaire waarden worden verwerkt door de cmdlet worden geïmplementeerd.|
+|**Codering**<br>Gegevenstype: Trefwoord|Implementeer deze parameter om op te geven van het type codering die wordt ondersteund. Mogelijke waarden zijn mogelijk ASCII, UTF8, Unicode, UTF7, BigEndianUnicode, Byte en tekenreeks.|
+|**NewLine**<br>Gegevenstype: SwitchParameter|Implementeer deze parameter zodat de nieuwe regeltekens worden ondersteund wanneer de parameter is opgegeven.|
+|**Korte naam**<br>Gegevenstype: SwitchParameter|Implementeer deze parameter zodat korte namen worden ondersteund wanneer de parameter is opgegeven.|
+|**Breedte**<br>Gegevenstype: Int32|Implementeer deze parameter zodat de gebruiker kan de breedte van het uitvoerapparaat opgeven.|
+|**Wrap**<br>Gegevenstype: SwitchParameter|Implementeer deze parameter zodat tekstterugloop wordt ondersteund wanneer de parameter is opgegeven.|
 ## <a name="see-also"></a>Zie ook
 
 [Cmdlet-Parameters](./cmdlet-parameters.md)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
-ms.openlocfilehash: 2fc1a3947ca6076387ea85d7f8ba9018ed7385a0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8271512d06047f3ff5e45f81d971ffe2c1f6afd7
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849530"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251452"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Over het schrijven van een cmdlet
 
-In dit artikel laat zien hoe het schrijven van een cmdlet. De **verzenden begroeting** cmdlet wordt de naam van een enkele gebruiker als invoer en vervolgens schrijft een begroeting voor die gebruiker. Hoewel de cmdlet niet veel werk te hoeven, is dit voorbeeld ziet u de belangrijkste secties van een cmdlet.
+In dit artikel laat zien hoe het schrijven van een cmdlet. De `Send-Greeting` cmdlet wordt de naam van een enkele gebruiker als invoer en vervolgens schrijft een begroeting voor die gebruiker. Hoewel de cmdlet niet veel werk te hoeven, is dit voorbeeld ziet u de belangrijkste secties van een cmdlet.
 
 ## <a name="steps-to-write-a-cmdlet"></a>Stappen voor het schrijven van een cmdlet
 
@@ -52,7 +52,7 @@ using System.Management.Automation;  // Windows PowerShell assembly.
 
 namespace SendGreeting
 {
-  // Declare the class as a cmdlet and specify and
+  // Declare the class as a cmdlet and specify the
   // appropriate verb and noun for the cmdlet name.
   [Cmdlet(VerbsCommunications.Send, "Greeting")]
   public class SendGreetingCommand : Cmdlet
