@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846849"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429768"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="e5df6-102">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="e5df6-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="6a7bd-102">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="6a7bd-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="e5df6-103">Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="e5df6-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="e5df6-104">U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht.</span><span class="sxs-lookup"><span data-stu-id="e5df6-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="e5df6-105">(Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e5df6-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
-<span data-ttu-id="e5df6-106">Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="e5df6-106">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="e5df6-107">U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht.</span><span class="sxs-lookup"><span data-stu-id="e5df6-107">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="e5df6-108">(Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e5df6-108">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="6a7bd-103">Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="6a7bd-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="6a7bd-104">U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht.</span><span class="sxs-lookup"><span data-stu-id="6a7bd-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="6a7bd-105">(Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6a7bd-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="e5df6-109">Voorbeeld van code</span><span class="sxs-lookup"><span data-stu-id="e5df6-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="6a7bd-106">Voorbeeld van code</span><span class="sxs-lookup"><span data-stu-id="6a7bd-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -72,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="e5df6-110">Zie ook</span><span class="sxs-lookup"><span data-stu-id="e5df6-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6a7bd-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="6a7bd-107">See Also</span></span>
 
-[<span data-ttu-id="e5df6-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="e5df6-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="6a7bd-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="6a7bd-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
