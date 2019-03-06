@@ -2,12 +2,12 @@
 title: Informatie over bestandscodering in VSCode en PowerShell
 description: Bestandscodering in VSCode en PowerShell configureren
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251723"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429802"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Informatie over bestandscodering in VSCode en PowerShell
 
@@ -68,7 +68,7 @@ Binnen handbereik [verwijzing](https://www.i18nqa.com/debug/utf8-debug.html) gee
 De extensie van PowerShell communiceert met behulp van scripts in een aantal manieren:
 
 1. Als scripts worden bewerkt in VSCode, worden de inhoud door VSCode verzonden naar de extensie. De [Language Server Protocol][] mandaten dat deze inhoud wordt verzonden in UTF-8. Het is daarom niet mogelijk om de extensie te krijgen van de verkeerde codering.
-2. Tijdens de uitvoering van scripts rechtstreeks in de geïntegreerde Console bent ze gelezen uit het bestand door PowerShell direct. Codering van TF PowerShell wijkt af van de VSCode, iets Hier Fout kunt gaan.
+2. Tijdens de uitvoering van scripts rechtstreeks in de geïntegreerde Console bent ze gelezen uit het bestand door PowerShell direct. Als de PowerShell-codering van de VSCode verschilt, kan iets fout gaan hier.
 3. Wanneer u een script dat is geopend in VSCode verwijst naar een ander script dat niet is geopend in VSCode, valt de extensie terug op het laden van de inhoud van het script van het bestandssysteem. De standaardinstelling UTF-8-codering van de PowerShell-extensie, maar maakt gebruik van [byte-volgordemarkering][], of stuklijst, detectie selecteert u de juiste codering.
 
 Het probleem treedt op wanneer ervan uitgaande dat de codering van stuklijst zonder indelingen (zoals [UTF-8][] met geen stuklijst en [Windows-1252][]).

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851826"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430029"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Een Windows PowerShell-containerprovider maken
 
@@ -25,7 +25,6 @@ In dit onderwerp wordt beschreven hoe u een Windows PowerShell-provider die kan 
 Providers die kunnen worden gebruikt voor meerdere niveaus gegevensarchieven worden aangeduid als Windows PowerShell-container-providers. Wel rekening mee dat de provider van een Windows PowerShell-container kan worden gebruikt alleen wanneer er een container (geen geneste containers) met items erin. Als er geneste containers, moet u een Windows PowerShell-provider voor navigatie implementeren. Zie voor meer informatie over het implementeren van Windows PowerShell-navigatie-provider [het maken van een Windows PowerShell-Provider navigatie](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> U kunt downloaden de C# bronbestand (AccessDBSampleProvider04.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt downloaden de C# bronbestand (AccessDBSampleProvider04.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
@@ -418,7 +417,6 @@ Zie voor een compleet voorbeeld van code, [AccessDbProviderSample04 codevoorbeel
 ## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-Provider
 
 Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows PowerShell-Provider testen
 
@@ -537,8 +535,6 @@ Als uw Windows PowerShell-provider is geregistreerd met Windows PowerShell, kunt
 [Implementatie van een Item Windows PowerShell-Provider](./creating-a-windows-powershell-item-provider.md)
 
 [Implementatie van een Windows PowerShell-Provider van navigatie](./creating-a-windows-powershell-navigation-provider.md)
-
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851056"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429989"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
 Dit onderwerp beschrijft het maken van een Windows PowerShell-provider die de gegevens in een gegevensarchief kunt bewerken. In dit onderwerp worden de elementen van de gegevens in de store bedoeld om op te slaan als 'items' van de gegevens. Als gevolg hiervan wordt een provider die u kunt de gegevens in de store bewerken aangeduid als een Windows PowerShell-item-provider.
 
 > [!NOTE]
-> U kunt downloaden de C# bronbestand (AccessDBSampleProvider03.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt downloaden de C# bronbestand (AccessDBSampleProvider03.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
@@ -88,7 +87,6 @@ Voordat de Windows PowerShell-item-provider de items in de store manipuleren kan
 
 ## <a name="checking-for-path-validity"></a>Controleren op pad geldigheid
 
-Bij het zoeken naar een artikel van gegevens, de Windows PowerShell-runtime het levert een Windows PowerShell-pad naar de provider, zoals gedefinieerd in de sectie 'PSPath concepten' van [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Een Windows PowerShell-item-provider moet controleren of de syntactische en semantische geldigheid van een pad dat is doorgegeven aan het door het implementeren van de [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) methode. Deze methode retourneert `true` als het pad geldig is, en `false` anders. Houd er rekening mee dat de implementatie van deze methode niet moet controleren of de aanwezigheid van het item in het pad, maar alleen dat het pad de syntaxis is en semantisch juist zijn.
 Bij het zoeken naar een artikel van gegevens, de Windows PowerShell-runtime het levert een Windows PowerShell-pad naar de provider, zoals gedefinieerd in de sectie 'PSPath concepten' van [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Een Windows PowerShell-item-provider moet controleren of de syntactische en semantische geldigheid van een pad dat is doorgegeven aan het door het implementeren van de [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) methode. Deze methode retourneert `true` als het pad geldig is, en `false` anders. Houd er rekening mee dat de implementatie van deze methode niet moet controleren of de aanwezigheid van het item in het pad, maar alleen dat het pad de syntaxis is en semantisch juist zijn.
 
 Hier volgt de implementatie van de [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) methode voor deze provider. Houd er rekening mee dat deze implementatie een NormalizePath Help-methode als u wilt converteren van alle scheidingstekens in het pad naar een uniform aanroept.
@@ -266,11 +264,9 @@ Zie voor een compleet voorbeeld van code, [AccessDbProviderSample03 codevoorbeel
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
 Bij het schrijven van een provider, is het mogelijk dat het nodig zijn voor leden toevoegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer u klaar bent, maakt u een typen-bestand dat Windows PowerShell gebruiken om de leden van het object te identificeren en een indelingsbestand waarmee wordt gedefinieerd hoe het object wordt weergegeven. Zie voor meer informatie over [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Bij het schrijven van een provider, is het mogelijk dat het nodig zijn voor leden toevoegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer u klaar bent, maakt u een typen-bestand dat Windows PowerShell gebruiken om de leden van het object te identificeren en een indelingsbestand waarmee wordt gedefinieerd hoe het object wordt weergegeven. Zie voor meer informatie over [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-provider
 
-Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows PowerShell-provider testen
@@ -289,16 +285,10 @@ Als deze Windows PowerShell-item-provider is geregistreerd met Windows PowerShel
 
 [Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Het maken van een Container Windows PowerShell-provider](./creating-a-windows-powershell-container-provider.md)
 
 [Het maken van een station Windows PowerShell-provider](./creating-a-windows-powershell-drive-provider.md)
-
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

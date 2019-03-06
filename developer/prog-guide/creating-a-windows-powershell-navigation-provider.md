@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847479"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430026"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Een Windows PowerShell-navigatieprovider maken
 
 In dit onderwerp wordt beschreven hoe u een Windows PowerShell navigatie-provider die het gegevensarchief kunt gaan maken. Dit type provider biedt ondersteuning voor recursieve opdrachten, geneste containers en relatieve paden.
 
 > [!NOTE]
-> U kunt downloaden de C# bronbestand (AccessDBSampleProvider05.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt downloaden de C# bronbestand (AccessDBSampleProvider05.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
@@ -186,11 +185,9 @@ Zie voor een compleet voorbeeld van code, [AccessDbProviderSample05 codevoorbeel
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
 Het is mogelijk voor een provider moet leden toevoegen aan bestaande objecten of nieuwe objecten worden gedefinieerd. Zie voor meer informatie,[objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Het is mogelijk voor een provider moet leden toevoegen aan bestaande objecten of nieuwe objecten worden gedefinieerd. Zie voor meer informatie,[objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-provider
 
-Zie voor meer informatie, [hoe u Cmdlets registreren, Providers en hosting van toepassingen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Zie voor meer informatie, [hoe u Cmdlets registreren, Providers en hosting van toepassingen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows PowerShell-provider testen
@@ -323,11 +320,7 @@ Als uw Windows PowerShell-provider is geregistreerd met Windows PowerShell, kunt
 
 [Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementeer een Container Windows PowerShell-provider](./creating-a-windows-powershell-container-provider.md)
-
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

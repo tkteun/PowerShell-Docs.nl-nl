@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851294"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429666"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Een Windows PowerShell-provider maken
 
@@ -33,7 +33,6 @@ Windows PowerShell biedt verschillende providers (zoals de bestandssysteem-provi
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Toegang tot de opgeslagen gegevens met behulp van Windows PowerShell-paden
 
-Windows PowerShell-providers zijn toegankelijk voor de Windows PowerShell-runtime en opdrachten via een programma door het gebruik van Windows PowerShell-paden. De meeste van de tijd worden deze paden gebruikt voor rechtstreekse toegang tot de gegevens via de provider. Sommige paden kunnen echter worden omgezet in provider-interne paden waardoor een cmdlet voor het gebruiken van Windows PowerShell application programming interfaces (API's) voor toegang tot de gegevens. Zie voor meer informatie over de werking van Windows PowerShell-providers in Windows PowerShell, [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 Windows PowerShell-providers zijn toegankelijk voor de Windows PowerShell-runtime en opdrachten via een programma door het gebruik van Windows PowerShell-paden. De meeste van de tijd worden deze paden gebruikt voor rechtstreekse toegang tot de gegevens via de provider. Sommige paden kunnen echter worden omgezet in provider-interne paden waardoor een cmdlet voor het gebruiken van Windows PowerShell application programming interfaces (API's) voor toegang tot de gegevens. Zie voor meer informatie over de werking van Windows PowerShell-providers in Windows PowerShell, [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>Blootstellen van Provider-Cmdlets met behulp van Windows PowerShell-stations
@@ -64,8 +63,6 @@ De volgende tabel geeft een lijst met onderwerpen die bevatten codevoorbeelden d
 |[Het maken van een Windows PowerShell-eigenschap Provider](./creating-a-windows-powershell-property-provider.md)|In dit onderwerp laat zien hoe een Windows PowerShell-provider waarmee de gebruiker voor het bewerken van de eigenschappen van items in een gegevensarchief te maken.|
 
 ## <a name="see-also"></a>Zie ook
-
-[How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [How Windows PowerShell Works](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

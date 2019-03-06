@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: 348d34dc0132705fa4a50fb6fe1fd43f510ae210
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845141"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429887"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>Runspace04-codevoorbeeld (VB.NET)
 
 Hier volgt de broncode VB.NET voor het voorbeeld Runspace04. In dit voorbeeld wordt de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse voor het uitvoeren van een script dat wordt een afsluitende fout gegenereerd. De host-toepassing is verantwoordelijk voor de fout vastgelegd en interpreteren van de foutrecord.
 
 > [!NOTE]
-> U kunt het bronbestand VB.NET (runspace02.vb) voor dit voorbeeld downloaden met behulp van Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt het bronbestand VB.NET (runspace02.vb) voor dit voorbeeld downloaden met behulp van Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.

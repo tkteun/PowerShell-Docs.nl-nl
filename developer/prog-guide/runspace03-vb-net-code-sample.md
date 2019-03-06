@@ -8,20 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 77d0871953950374d2eece65bead0f2075b1138b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847710"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429853"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Runspace03-codevoorbeeld (VB.NET)
 
 Hier volgt de broncode VB.NET voor de consoletoepassing die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een Script opgegeven](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68). In dit voorbeeld wordt de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse voor het uitvoeren van een script dat haalt de verwerking van gegevens voor een lijst van procesnamen die zijn doorgegeven aan het script. Deze leest hoe gebruikersinvoer objecten doorgeven aan een script en foutobjecten, evenals de uitvoer-objecten ophalen.
-Hier volgt de broncode VB.NET voor de consoletoepassing die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een Script opgegeven](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68). In dit voorbeeld wordt de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse voor het uitvoeren van een script dat haalt de verwerking van gegevens voor een lijst van procesnamen die zijn doorgegeven aan het script. Deze leest hoe gebruikersinvoer objecten doorgeven aan een script en foutobjecten, evenals de uitvoer-objecten ophalen.
 
 > [!NOTE]
-> U kunt het bronbestand VB.NET (runspace03.vb) voor dit voorbeeld downloaden met behulp van Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt het bronbestand VB.NET (runspace03.vb) voor dit voorbeeld downloaden met behulp van Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.

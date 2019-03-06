@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846324"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429972"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Een Windows PowerShell-inhoudsprovider maken
 
 In dit onderwerp wordt beschreven hoe u een Windows PowerShell-provider waarmee de gebruiker voor het bewerken van de inhoud van de items in een gegevensarchief maken. Als gevolg hiervan wordt een provider die u kunt de inhoud van items bewerken aangeduid als een Windows PowerShell-inhoudsprovider.
 
 > [!NOTE]
-> U kunt downloaden de C# bronbestand (AccessDBSampleProvider06.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > U kunt downloaden de C# bronbestand (AccessDBSampleProvider06.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
@@ -233,11 +232,9 @@ Zie voor een compleet voorbeeld van code, [AccessDbProviderSample06 codevoorbeel
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
 Bij het schrijven van een provider, is het mogelijk dat het nodig zijn voor leden toevoegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit wordt gedaan, moet u een typen-bestand dat Windows PowerShell gebruiken om de leden van het object te identificeren en een indelingsbestand waarmee wordt gedefinieerd hoe het object wordt weergegeven. Zie voor meer informatie, [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Bij het schrijven van een provider, is het mogelijk dat het nodig zijn voor leden toevoegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit wordt gedaan, moet u een typen-bestand dat Windows PowerShell gebruiken om de leden van het object te identificeren en een indelingsbestand waarmee wordt gedefinieerd hoe het object wordt weergegeven. Zie voor meer informatie, [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-Provider
 
-Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows PowerShell-Provider testen
@@ -285,11 +282,7 @@ Country   : USA
 
 [Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementatie van een navigatie Windows PowerShell-provider](./creating-a-windows-powershell-navigation-provider.md)
-
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

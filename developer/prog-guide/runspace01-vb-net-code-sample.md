@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846849"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429768"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01-codevoorbeeld (VB.NET)
 
-Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht. (Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.
 Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht. (Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.
 
 ## <a name="code-sample"></a>Voorbeeld van code

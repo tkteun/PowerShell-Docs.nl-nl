@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848837"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430006"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Een Windows PowerShell-eigenschapsprovider maken
 
 In dit onderwerp wordt beschreven hoe u een provider waarmee de gebruiker voor het bewerken van de eigenschappen van items in een gegevensarchief maken. Als gevolg hiervan, wordt dit type provider aangeduid als een Windows PowerShell-provider voor de eigenschap. Bijvoorbeeld, de registerprovider geleverd door Windows PowerShell-ingangen-registersleutelwaarden als eigenschappen van het register sleutel item. Dit type provider moet toevoegen de [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface voor de implementatie van de .NET-klasse.
 
 > [!NOTE]
-> Windows PowerShell biedt een sjabloon voor bestanden die u gebruiken kunt voor het ontwikkelen van een Windows PowerShell-provider. Het bestand TemplateProvider.cs is beschikbaar op de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 > Windows PowerShell biedt een sjabloon voor bestanden die u gebruiken kunt voor het ontwikkelen van een Windows PowerShell-provider. Het bestand TemplateProvider.cs is beschikbaar op de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > De gedownloade sjabloon is beschikbaar in de  **\<voorbeelden van PowerShell >** directory. U moet een kopie van dit bestand en de kopie gebruiken voor het maken van een nieuwe Windows PowerShell-provider, alle functionaliteit die u niet hoeft verwijderen.
@@ -150,7 +149,6 @@ Hier volgt de standaardimplementatie van [System.Management.Automation.Provider.
 ## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-provider
 
 Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Zie ook
 
@@ -159,9 +157,5 @@ Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http:/
 [Ontwerp uw Windows PowerShell-provider](./designing-your-windows-powershell-provider.md)
 
 [Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
