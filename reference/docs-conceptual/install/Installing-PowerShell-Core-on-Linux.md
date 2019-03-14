@@ -2,12 +2,12 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
 ms.date: 08/06/2018
-ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404007"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795722"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
@@ -44,7 +44,7 @@ Hier volgt een tabel met de opdrachten om de met de verschillende pakketmanagers
 |Verdeling van|Stabiele opdracht | Preview-opdracht |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, Red Hat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
@@ -146,9 +146,6 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> [!NOTE]
-> Er is ondersteuning voor Ubuntu 18.04 toegevoegd na `6.1.0-preview.2`
-
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via Pakketopslagplaats - Ubuntu 18.04
 
 PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
@@ -198,8 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> Er is ondersteuning voor Ubuntu 18.10 toegevoegd na `6.1.0-preview.3`.
-> Zoals 18.10 een dagelijkse build is, is het alleen community ondersteund.
+> 18.10 is een [tussentijdse release](https://www.ubuntu.com/about/release-cycle), is het alleen [community ondersteund](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Installeren op 18.10 wordt ondersteund `snapd`. Zie [module pakket] [ snap] voor volledige instructies;
 
@@ -392,7 +388,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a>OpenSUSE
+## <a name="opensuse"></a>openSUSE
 
 ### <a name="installation---opensuse-423"></a>Installatie - openSUSE 42,3
 
@@ -659,21 +655,21 @@ Het volgende diagram toont de .NET Core 2.0-afhankelijkheden die officieel onder
 
 | Besturingssysteem                 | Afhankelijkheden |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-bibliotheken, libicu |
-| OpenSUSE 42,3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE 42,3 | libcurl4, libopenssl1_0_0, libicu52_1 |
 | openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotheken, libicu, compat openssl10 |
 
 Voor het implementeren van binaire bestanden voor PowerShell op Linux-distributies die officieel niet worden ondersteund, moet u de vereiste afhankelijkheden voor het doelbesturingssysteem installeren in afzonderlijke stappen.
 Bijvoorbeeld, onze [Amazon Linux dockerfile] [ amazon-dockerfile] afhankelijkheden eerst geïnstalleerd en pakt u vervolgens de Linux `tar.gz` archief.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>Installatie - binaire archieven
 

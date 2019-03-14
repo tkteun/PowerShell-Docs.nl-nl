@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847626"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794702"
 ---
 # <a name="background-jobs"></a>Achtergrondtaken
 
@@ -21,7 +21,6 @@ Cmdlets hun actie kunt uitvoeren, intern of als een Windows PowerShell*achtergro
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Achtergrondtaken, onderliggende taken en de opslagplaats van de taak
 
-Het taakobject dat wordt geretourneerd door de cmdlets die ondersteuning bieden voor achtergrondtaken definieert de taak. (De [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet retourneert ook een taakobject.) De naam van de taak, een id die wordt gebruikt om op te geven van de taak, de informatie over de status en de onderliggende taken zijn opgenomen in deze definitie. De taak uitvoeren niet een van de hoeveelheid werk. Elke achtergrondtaak heeft ten minste één onderliggende taak, omdat de onderliggende taak het echte werk voert. Wanneer u een cmdlet uitvoert, zodat het werk wordt uitgevoerd als achtergrondtaak, de cmdlet de taak en de onderliggende taken moet toevoegen aan een algemene opslagplaats, aangeduid als de *taak opslagplaats*.
 Het taakobject dat wordt geretourneerd door de cmdlets die ondersteuning bieden voor achtergrondtaken definieert de taak. (De [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet retourneert ook een taakobject.) De naam van de taak, een id die wordt gebruikt om op te geven van de taak, de informatie over de status en de onderliggende taken zijn opgenomen in deze definitie. De taak uitvoeren niet een van de hoeveelheid werk. Elke achtergrondtaak heeft ten minste één onderliggende taak, omdat de onderliggende taak het echte werk voert. Wanneer u een cmdlet uitvoert, zodat het werk wordt uitgevoerd als achtergrondtaak, de cmdlet de taak en de onderliggende taken moet toevoegen aan een algemene opslagplaats, aangeduid als de *taak opslagplaats*.
 
 Zie de volgende onderwerpen voor meer informatie over hoe achtergrondtaken worden verwerkt op de opdrachtregel:

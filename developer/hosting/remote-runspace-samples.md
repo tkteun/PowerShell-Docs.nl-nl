@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
 caps.latest.revision: 7
-ms.openlocfilehash: e11197e4f919519945ad3846dfef99c9e292aa9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4b79b533e9fb926e851c9d0eebc932aec80ad959
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851105"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794311"
 ---
 # <a name="remote-runspace-samples"></a>Voorbeelden van externe runspaces
 
@@ -23,7 +23,6 @@ In deze sectie bevat voorbeelden van code die wordt beschreven hoe runspaces die
 
 > [!NOTE]
 > Zie voor meer informatie over het uitvoeren van opdrachten op een externe computer [Windows PowerShell voor externe toegang](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx).
-> Zie voor meer informatie over het uitvoeren van opdrachten op een externe computer, [Windows PowerShell voor externe toegang] (https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).
 
  [Voorbeeld van RemoteRunspace01](./remoterunspace01-sample.md) dit voorbeeld laat zien over het maken van een externe runspace die wordt gebruikt om een externe verbinding te maken.
 

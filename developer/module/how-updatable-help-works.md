@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850223"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794379"
 ---
 # <a name="how-updatable-help-works"></a>De werking van Help die kan worden bijgewerkt
 
@@ -21,7 +21,6 @@ In dit onderwerp wordt uitgelegd hoe bij te werken Help processen de HelpInfo XM
 
 ## <a name="the-update-help-process"></a>Het proces voor Update-Help
 
-De volgende lijst beschrijft de acties van de [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet wanneer een gebruiker een opdracht voor het bijwerken van de help-bestanden voor een module in een bepaalde gebruikersinterfacecultuur uitvoert.
 De volgende lijst beschrijft de acties van de [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet wanneer een gebruiker een opdracht voor het bijwerken van de help-bestanden voor een module in een bepaalde gebruikersinterfacecultuur uitvoert.
 
 1. `Update-Help` Met deze eigenschap wordt het externe HelpInfo XML-bestand van de locatie die is opgegeven door de waarde van de **HelpInfoURI** sleutel in de module-manifest en valideert u het bestand op basis van het schema. (Als u het schema, Zie [HelpInfo XML-Schema](./helpinfo-xml-schema.md).) Vervolgens `Update-Help` zoekt naar een lokale HelpInfo XML-bestand voor de module in de modulemap op de computer van de gebruiker.
@@ -36,7 +35,6 @@ De volgende lijst beschrijft de acties van de [Update-Help](/powershell/module/M
 
 ## <a name="the-save-help-process"></a>Het proces Help opslaan
 
-De volgende lijst beschrijft de acties van de [Help opslaan](/powershell/module/Microsoft.PowerShell.Core/Save-Help) en [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlets wanneer een gebruiker wordt uitgevoerd voor opdrachten voor het bijwerken van de help-bestanden in een bestandsshare en deze bestanden vervolgens gebruiken om bij te werken van de help-bestanden op de de computer van de gebruiker.
 De volgende lijst beschrijft de acties van de [Help opslaan](/powershell/module/Microsoft.PowerShell.Core/Save-Help) en [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlets wanneer een gebruiker wordt uitgevoerd voor opdrachten voor het bijwerken van de help-bestanden in een bestandsshare en deze bestanden vervolgens gebruiken om bij te werken van de help-bestanden op de de computer van de gebruiker.
 
 De `Save-Help` cmdlet worden de volgende acties uitgevoerd in reactie op een opdracht voor het opslaan van de help-bestanden voor een module in een bestandsshare die is opgegeven door de **doelpad** parameter.

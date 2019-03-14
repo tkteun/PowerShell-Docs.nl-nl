@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Configuratie- en omgevingsgegevens scheiden
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687515"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794923"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Configuratie- en omgevingsgegevens scheiden
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Bekijk een compleet voorbeeld die gebruikmaakt van een configuratie voor één voor het instellen van zowel ontwikkeling als productie-omgevingen van een website. Zowel IIS en SQL Server in de ontwikkelomgeving zijn geïnstalleerd op een afzonderlijke knooppunten. In de productieomgeving, zijn IIS en SQL Server geïnstalleerd op afzonderlijke knooppunten. Gebruiken we een bestand met configuratiegegevens .psd1 om op te geven van de gegevens voor de twee verschillende omgevingen.
 
- ### <a name="configuration-data-file"></a>Bestand met configuratiegegevens
+### <a name="configuration-data-file"></a>Bestand met configuratiegegevens
 
 Definiëren we de ontwikkeling en productie-omgeving-gegevens in een bestand met de naam `DevProdEnvData.psd1` als volgt:
 

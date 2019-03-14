@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
-ms.openlocfilehash: 980fbff49a3481d92c2ca8483772b1704462c499
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 03284495fbd6d6cfaed639604e87bc70c7023b6c
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847927"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795036"
 ---
 # <a name="remoterunspacepool01-sample"></a>Voorbeeld RemoteRunspacePool01
 
@@ -31,7 +31,6 @@ Dit voorbeeld laat zien hoe u een van de groep van een externe runspace en hoe u
 
 - Het maken van een externe runspace die gebruikmaakt van de [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object om de externe verbinding te maken.
 
-- Met de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets gelijktijdig met behulp van de groep externe runspace.
 - Met de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets gelijktijdig met behulp van de groep externe runspace.
 
 - De groep externe runspace als u wilt vrijgeven van de externe verbinding wordt gesloten.

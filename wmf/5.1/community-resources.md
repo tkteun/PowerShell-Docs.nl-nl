@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Communitybronnen
-ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685086"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794872"
 ---
-# <a name="community-resources"></a>Communitybronnen #
+# <a name="community-resources"></a>Communitybronnen
 > Opmerking: Deze informatie is voorlopig en kan worden gewijzigd.
 
 Het PowerShell-team ontvangt graag feedback van klanten op het product worden gebruikers aangemoedigd en biedt ondersteuning voor meerdere methoden voor gebruikers om contact met ons opnemen.

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845596"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794634"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell-opmaakbestanden
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml definieert de weergave van diverse .NET-objecten, zoal
 FileSystem.Format.ps1xml definieert de weergave van bestandssysteemobjecten zoals bestands- en -objecten.
 
 Help.Format.ps1xml definieert de verschillende weergaven worden gebruikt door de [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, zoals de gedetailleerde, volledige, parameters en voorbeeld-weergaven.
-Definieert de verschillende weergaven die worden gebruikt door de [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, zoals de gedetailleerde, volledige, parameters en voorbeeld-weergaven.
 
 PowerShellCore.Format.ps1xml definieert de weergave van de objecten die worden gegenereerd door de Windows PowerShell core-cmdlets, zoals de objecten die worden geretourneerd door de [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) en [Get-geschiedenis](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.
-Definieert de weergave van de objecten die worden gegenereerd door de Windows PowerShell core-cmdlets, zoals de objecten die worden geretourneerd door de [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) en [Get-geschiedenis](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.
 
 PowerShellTrace.Format.ps1xml definieert de weergave van traceringsobjecten, zoals systemen die worden gegenereerd door de [Trace-opdracht](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
-Definieert de weergave van traceringsobjecten, zoals systemen die worden gegenereerd door de [Trace-opdracht](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.
 
 Registry.Format.ps1xml definieert de weergave van registerobjecten, zoals de sleutel en post-objecten.
 

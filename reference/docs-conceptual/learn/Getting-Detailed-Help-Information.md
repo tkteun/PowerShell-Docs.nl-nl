@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Gedetailleerde Help-informatie verkrijgen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684085"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794566"
 ---
 # <a name="getting-detailed-help-information"></a>Gedetailleerde Help-informatie verkrijgen
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 Als u alleen de voorbeelden weergeven in een Help-artikel, gebruiken de **voorbeelden** parameter van de `Get-Help`.
-Bijvoorbeeld, om weer te geven alleen de voorbeelden in het Help-artikel voor de `Get-ChildItem `cmdlet, type:
+Bijvoorbeeld, om weer te geven alleen de voorbeelden in het Help-artikel voor de `Get-ChildItem` cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

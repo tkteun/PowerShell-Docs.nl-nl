@@ -3,16 +3,17 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: WMF 5.1 compatibiliteit met clientbesturingssystemen
-ms.openlocfilehash: 441124d2ad3de7601e8dcdd2073ba7094a11de81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f4d7d1403c1f397bf6720485d7a7302543c2010f
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686255"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794958"
 ---
-# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 compatibiliteit met clientbesturingssystemen #
+# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 compatibiliteit met clientbesturingssystemen
 
-> Opmerking: Deze informatie is voorlopig en kan worden gewijzigd.
+> [!NOTE]
+> Deze informatie is voorlopig en kan worden gewijzigd.
 
 | Versie van besturingssysteem | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
@@ -29,11 +30,9 @@ ms.locfileid: "55686255"
 | Windows Server 2003| | | |  | Ja |
 | Windows XP | | | |  | Ja |
 
-
 Over ' wordt geleverd-vak * ': De functies van WMF 5.0 zijn opgenomen in de oorspronkelijke Windows 10 RTM-versie.
 De functies van WMF 5.1 zijn opgenomen in Windows Server 2016 en Windows 10 Anniversary Edition.
 WMF 5.1 is niet van toepassing voor deze versies van besturingssystemen, zoals de updates worden geleverd via Windows Update.
-
 
 Eén ding te weten is dat WMF niet wordt geleverd bij Windows.
 WMF is een upgradepakket dat een set Windows-functies voor eerder uitgebrachte versies van Windows biedt.

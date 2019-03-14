@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845778"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795433"
 ---
 # <a name="extending-properties-for-objects"></a>Eigenschappen voor objecten uitbreiden
 
@@ -101,7 +101,6 @@ In het volgende voorbeeld wordt de `VersionInfo` eigenschap wordt toegevoegd aan
 
 ## <a name="property-sets"></a>Eigenschap instellen
 
-Een groep van uitgebreide eigenschappen die kan worden verwezen door de naam van de set Hiermee definieert u een eigenschap worden ingesteld. Bijvoorbeeld, de `Property` parameter van de [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet kunt opgeven een bepaalde eigenschap is ingesteld om te worden weergegeven. Wanneer een eigenschap worden ingesteld is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weergegeven.
 Een groep van uitgebreide eigenschappen die kan worden verwezen door de naam van de set Hiermee definieert u een eigenschap worden ingesteld. Bijvoorbeeld, de `Property` parameter van de [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet kunt opgeven een bepaalde eigenschap is ingesteld om te worden weergegeven. Wanneer een eigenschap worden ingesteld is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weergegeven.
 
 Er is geen beperking voor het aantal groepen die kunnen worden gedefinieerd voor een object. De eigenschap die wordt gebruikt voor het definiëren van de standaard weergave-eigenschappen van een object moeten echter worden opgegeven in de set van PSStandardMembers lid. De set-namen van de standaard-eigenschappen zijn in het bestand van de typen Types.ps1xml DefaultDisplayProperty, DefaultDisplayPropertySet en DefaultKeyPropertySet. Een extra eigenschappensets die u aan de ledenset PSStandardMembers toevoegt worden genegeerd.

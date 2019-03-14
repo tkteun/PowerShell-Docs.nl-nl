@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219545"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794485"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>PowerShell-cmdlets genereren op basis van OData-eindpunt
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Windows PowerShell-cmdlets op basis van een OData-eindpunt genereren
---------------------------------------------------------------
 
-**Export ODataEndpointProxy** is een cmdlet waarmee een set Windows PowerShell-cmdlets op basis van de functionaliteit die door een bepaalde OData-eindpunt genereert.
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Windows PowerShell-cmdlets op basis van een OData-eindpunt genereren
 
-Het volgende voorbeeld ziet u het gebruik van deze nieuwe cmdlet:
+**Exporteren-ODataEndpointProxy** is een cmdlet die een set van Windows PowerShell-cmdlets op basis van de functionaliteit die door een opgegeven OData-eindpunt genereert.
 
-\# Basic gebruiksvoorbeeld van Export ODataEndpointProxy
+Het volgende voorbeeld laat zien hoe het gebruik van deze nieuwe cmdlet:
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -46,19 +44,20 @@ ipmo 'C:\Users\user\Generated.psd1'
 #
 ```
 
-Er zijn nog steeds delen van de belangrijkste gebruiksvoorbeelden in ontwikkeling voor deze functie, inclusief, maar niet beperkt tot:
+Er zijn nog steeds delen met belangrijke use cases in de ontwikkeling van deze functionaliteit wilt gebruiken, met inbegrip van, maar niet beperkt tot:
 -   Koppelingen
--   Streams doorgeven
+-   Doorgeven van stromen
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Windows PowerShell-cmdlets op basis van een OData-eindpunt met ODataUtils genereren
-------------------------------------------------------------------------------
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Windows PowerShell-cmdlets op basis van een OData-eindpunt met ODataUtils genereren
+
 De module ODataUtils kunt genereren van Windows PowerShell-cmdlets van REST-eindpunten die ondersteuning bieden voor OData. De volgende incrementele verbeteringen zijn in de Microsoft.PowerShell.ODataUtils Windows PowerShell-module.
--   Aanvullende informatie van server-side '-eindpunt voor de clientzijde kanaal.
--   Ondersteuning voor paginering aan clientzijde
--   Serverzijde filteren met behulp van de - parameter selecteren
+-   Aanvullende informatie van server-side-eindpunt voor client-side-Channel.
+-   Client-side-ondersteuning voor paginering
+-   Serverzijde filteren met behulp van de - Select-parameters
 -   Ondersteuning voor web-aanvraagheaders
 
-De webtoepassingsproxy-cmdlets die worden gegenereerd door de cmdlet Export-ODataEndPointProxy bevatten aanvullende informatie (wordt niet vermeld in de $metadata gebruikt tijdens het genereren van de client-side '-proxy) van de server side OData-eindpunt op de stroom van gegevens (een nieuwe Windows PowerShell 5.0-functie). Hier volgt een voorbeeld van hoe deze gegevens ophalen.
+De proxy-cmdlets die worden gegenereerd door de cmdlet Export-ODataEndPointProxy bevatten aanvullende informatie (niet in de $metadata gebruikt tijdens het genereren van de client-side-proxy genoemd) van de server side OData-eindpunt op de gegevensstroom (een nieuwe Windows PowerShell 5.0-functie). Hier volgt een voorbeeld van hoe u die informatie.
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -80,7 +79,8 @@ $additionalInfo = $infoStream.GetEnumerator() | % MessageData
 $additionalInfo['odata.count']
 ```
 
-U krijgt de records van het include-bestand in batches met behulp van de client-paginering ondersteuning. Dit is handig wanneer u een grote hoeveelheid gegevens van de server via het netwerk ophalen moet.
+De records krijgt u vanaf de server in batches met behulp van de client-side-ondersteuning voor paginering. Dit is handig als u een grote hoeveelheid gegevens uit de server via het netwerk ophalen moet.
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -93,14 +93,16 @@ $skipCount += $batchSize
 }
 ```
 
-Ondersteuning voor de gegenereerde proxy-cmdlets de – Selecteer parameter dat u als een filter gebruiken kunt voor het ontvangen van de recordeigenschappen die de client nodig heeft. Dit reduceert de hoeveelheid gegevens die worden overgebracht via het netwerk, omdat het filteren aan de serverzijde plaatsvindt.
+De gegenereerde proxy-cmdlets bieden ondersteuning voor de Select-parameters die u als een filter gebruiken kunt voor het ontvangen van de recordeigenschappen die de client nodig heeft. Dit vermindert de hoeveelheid gegevens die worden overgedragen via het netwerk, omdat het filteren op de server wordt uitgevoerd.
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-De cmdlet Export-ODataEndpointProxy en de webtoepassingsproxy-cmdlets die worden gegenereerd door, nu ondersteuning voor de parameter Headers (levering waarden als hash-tabel), waarmee u kunt aanvullende informatie die wordt verwacht door het eindpunt van de OData-serverzijde kanaal. In het volgende voorbeeld kunt u een abonnementssleutel via Headers voor services die door de abonnementssleutel van een voor de verificatie worden verwacht kanaal.
+De cmdlet Export-ODataEndpointProxy en de webtoepassingsproxy-cmdlets die worden gegenereerd door, bieden nu ondersteuning voor de parameter Headers (supply waarden als een hash-tabel), die u gebruiken kunt voor aanvullende informatie die wordt verwacht door het OData-eindpunt voor server-side-channel. In het volgende voorbeeld, kunt u een abonnementssleutel via Headers voor services die een abonnementssleutel voor verificatie verwacht kanaal.
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

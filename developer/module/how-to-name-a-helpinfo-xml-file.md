@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64e85b53-5aeb-4d6c-903c-af4ab62f11c1
 caps.latest.revision: 7
-ms.openlocfilehash: a3e8ae664d5c0e29d0f84174950bebe6a1da6a81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 462cd7bd486a5924bb2bc43e0ac8d1558e30e657
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848088"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794804"
 ---
 # <a name="how-to-name-a-helpinfo-xml-file"></a>Een naam geven aan een HelpInfo-XML-bestand
 
@@ -28,7 +28,6 @@ Een HelpInfo XML-bestand moet een naam met de volgende indeling hebben.
 De elementen van de naam zijn als volgt.
 
 ModuleName de waarde van de **naam** eigenschap van de **ModuleInfo** object dat de [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet retourneert.
-De waarde van de **naam** eigenschap van de **ModuleInfo** object dat de [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet retourneert.
 
 ModuleGUID de waarde van de **GUID** sleutel in de module-manifest.
 

@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Bekende opdrachtnamen gebruiken
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688922"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795671"
 ---
 # <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 
@@ -22,13 +22,13 @@ De volgende lijst bevat enkele van de algemene **cmd.exe** en Unix-opdrachten di
 
 |||||
 |-|-|-|-|
-|CAT|dir|koppelen|rm|
-|cd|echo|verplaatsen|rmdir|
-|chdir|Wissen|popd|slaapstand|
+|CAT|dir|Koppelen|rm|
+|cd|echo|Verplaatsen|rmdir|
+|chdir|Wissen|popd|Slaapstand|
 |wissen|h|ps|Sorteren|
 |CLS|Geschiedenis|pushd|t|
-|Kopiëren|KILL-instructie|pwd|Type|
-|del|lp|r|schrijven|
+|kopiëren|KILL-instructie|pwd|Type|
+|del|lp|r|Schrijven|
 |diff|ls|ren||
 
 De `Get-Alias` cmdlet ziet u de echte naam van de systeemeigen PowerShell-opdracht die is gekoppeld aan een alias.
@@ -65,7 +65,7 @@ Deze aliassen zijn opgebouwd uit overzichtelijke als u weet dat de stenonaam.
 
 | Naam van cmdlet    | Alias |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | si    |
 | `Get-Location` | GB    |
 | `Set-Location` | SL    |

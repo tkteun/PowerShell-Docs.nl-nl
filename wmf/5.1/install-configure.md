@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 contributor: keithb
 title: Installeren en configureren van WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685058"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795569"
 ---
-# <a name="install-and-configure-wmf-51"></a>Installeren en configureren van WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>Installeren en configureren van WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>Download en installeer het pakket WMF 5.1
 
@@ -22,11 +21,11 @@ Download het WMF 5.1-pakket voor het besturingssysteem en de architectuur die u 
 |------------------------|-------------------------|----------------------------------------|
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
-| Windows Server 2008 R2 | [.NET framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
+| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
 | Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
 
-[.NET framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
+[.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
 [Win7-KB3191566-x86.ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
 [Win7AndW2K8R2-KB3191566-x64.ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
@@ -67,8 +66,8 @@ Windows PowerShell Desired State Configuration (DSC), is afhankelijk van WinRM.
 WinRM is niet standaard ingeschakeld op Windows Server 2008 R2 en Windows 7.
 Voer `Set-WSManQuickConfig`, in een Windows PowerShell met verhoogde bevoegdheden om in te schakelen WinRM-sessie.
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>WMF 5.1 installeren voor Windows Server 2012 R2, WindowsServer 2012 en Windows 8.1
+
 **Installeren in Windows Explorer (of een Verkenner in Windows Server 2012 R2 of Windows 8.1)**
 
 1. Navigeer naar de map waarin u het MSU-bestand hebt gedownload.

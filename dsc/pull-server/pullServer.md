@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-pull-service
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429955"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794719"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull Service
 
@@ -88,7 +88,7 @@ De volgende stappen wordt uitgelegd over het gebruik van de resource in een conf
 2. Een SSL-certificaat voor de DSC-Pull-server ophalen van een vertrouwde certificeringsinstantie, zich binnen uw organisatie of een openbare CA. Het certificaat dat is ontvangen van de instantie is meestal in de PFX-indeling.
 3. Installeer het certificaat op het knooppunt dat de DSC-Pull-server op de standaardlocatie bevindt, die moet worden `CERT:\LocalMachine\My`.
    - Noteer de certificaatvingerafdruk van het.
-4. Selecteer een GUID moet worden gebruikt als de registratiesleutel. Voor het genereren van een met behulp van PowerShell, typ het volgende bij de PS-prompt en druk op enter: ` [guid]::newGuid()` of `New-Guid`. Deze sleutel worden door knooppunten van de client gebruikt, dus als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratiesleutel hieronder voor meer informatie.
+4. Selecteer een GUID moet worden gebruikt als de registratiesleutel. Voor het genereren van een met behulp van PowerShell, typ het volgende bij de PS-prompt en druk op enter: `[guid]::newGuid()` of `New-Guid`. Deze sleutel worden door knooppunten van de client gebruikt, dus als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratiesleutel hieronder voor meer informatie.
 5. Start in de PowerShell ISE (F5) het volgende configuratiescript (opgenomen in de map met voorbeelden van de **xPSDesiredStateConfiguration** module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script stelt u de pull-server.
 
     ```powershell

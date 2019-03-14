@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847276"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795348"
 ---
 # <a name="naming-help-files"></a>Naamgeving van Help-bestanden
 
-In dit onderwerp wordt uitgelegd hoe u om de naam van een help op basis van een XML-bestand zodat het [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet kunt vinden. De vereisten voor de naam verschillen voor elk opdrachttype.
 In dit onderwerp wordt uitgelegd hoe u om de naam van een help op basis van een XML-bestand zodat het [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet kunt vinden. De vereisten voor de naam verschillen voor elk opdrachttype.
 
 ## <a name="cmdlet-help-files"></a>Cmdlet Help-bestanden
@@ -30,7 +29,6 @@ Het help-bestand voor een C# cmdlet moet de naam voor de assembly waarin de cmdl
 
 De indeling van de assembly-naam is vereist, zelfs wanneer de assembly een geneste module is.
 
-Bijvoorbeeld, de [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is gedefinieerd in de assembly Microsoft.PowerShell.Diagnostics.dll. De `Get-Help` cmdlet zoekt een help-onderwerp voor de `Get-WinEvent` cmdlet alleen in het bestand Microsoft.PowerShell.Diagnostics.dll help.xml in de modulemap.
 Bijvoorbeeld, de [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is gedefinieerd in de assembly Microsoft.PowerShell.Diagnostics.dll. De `Get-Help` cmdlet zoekt een help-onderwerp voor de `Get-WinEvent` cmdlet alleen in het bestand Microsoft.PowerShell.Diagnostics.dll help.xml in de modulemap.
 
 ## <a name="provider-help-files"></a>Provider van Help-bestanden
@@ -47,7 +45,6 @@ Bijvoorbeeld, is de certificaat-provider gedefinieerd in de assembly Microsoft.P
 
 ## <a name="function-help-files"></a>Functie Help-bestanden
 
-Functions kunnen worden vastgelegd met behulp van [help op basis van een opmerking](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) of in een XML-help-bestand wordt vermeld. Als de functie wordt gedocumenteerd in een XML-bestand, de functie moet beschikken over een `.ExternalHelp` Opmerking trefwoord dat u de functie aan het XML-bestand koppelt. Anders wordt de `Get-Help` cmdlet kan het help-bestand niet vinden.
 Functions kunnen worden vastgelegd met behulp van [help op basis van een opmerking](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) of in een XML-help-bestand wordt vermeld. Als de functie wordt gedocumenteerd in een XML-bestand, de functie moet beschikken over een `.ExternalHelp` Opmerking trefwoord dat u de functie aan het XML-bestand koppelt. Anders wordt de `Get-Help` cmdlet kan het help-bestand niet vinden.
 
 Er zijn geen technische vereisten voor de naam van een help-bestand. Er is echter een best practice om de naam van het help-bestand voor de scriptmodule waarin de functie is gedefinieerd. Bijvoorbeeld, is de volgende functie gedefinieerd in het bestand MyModule.psm1.

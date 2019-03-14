@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: b74d3443e644bde9ec909a2cb8e0d94a6f3c2385
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 8ce6cf1fcabf306b412b6f97915f34ab15436202
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852239"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795178"
 ---
 # <a name="host02-sample"></a>Voorbeeld Host02
 
-Dit voorbeeld laat zien hoe u een hosttoepassing die gebruikmaakt van de Windows PowerShell-runtime, samen met de implementatie van een aangepaste host schrijft. De hosttoepassing wordt de cultuur van de host ingesteld op Duits, wordt uitgevoerd de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) -cmdlet en geeft de resultaten op als u ze ziet met behulp van pwrsh.exe en vervolgens af te drukken om de huidige datum en tijd in het Duits.
 Dit voorbeeld laat zien hoe u een hosttoepassing die gebruikmaakt van de Windows PowerShell-runtime, samen met de implementatie van een aangepaste host schrijft. De hosttoepassing wordt de cultuur van de host ingesteld op Duits, wordt uitgevoerd de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) -cmdlet en geeft de resultaten op als u ze ziet met behulp van pwrsh.exe en vervolgens af te drukken om de huidige datum en tijd in het Duits.
 
 ## <a name="requirements"></a>Vereisten

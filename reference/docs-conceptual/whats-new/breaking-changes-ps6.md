@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Belangrijke wijzigingen voor PowerShell 6.0
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685261"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795688"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Belangrijke wijzigingen voor PowerShell 6.0
 
@@ -65,6 +65,10 @@ Vanwege het gebruik van niet-ondersteunde API's, `Microsoft.PowerShell.LocalAcco
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdlets
 
 Vanwege het gebruik van niet-ondersteunde API's, de `*-Counter` is verwijderd uit de PowerShell Core tot een betere oplossing is gevonden.
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdlets
+
+Vanwege het gebruik van niet-ondersteunde API's, de `*-EventLog` uit PowerShell Core is verwijderd. tot een betere oplossing is gevonden. `Get-WinEvent` en `Create-WinEvent` zijn beschikbaar om te halen en op Windows-gebeurtenissen maken.
 
 ## <a name="enginelanguage-changes"></a>Wijzigingen van de engine/taal
 
@@ -179,9 +183,9 @@ Wijzigen van de afsluitcodes van `pwsh.exe` zodat bij de Unix-overeenkomsten
 
 Vanwege een niet-ondersteunde API's, de `LocalAccounts` module en de `Counter` -cmdlets in de `Diagnostics` module zijn verwijderd totdat er een betere oplossing wordt gevonden.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Uitvoeren van powershell-script met Boole-parameter werkt niet [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Uitvoeren van PowerShell-script met Boole-parameter werkt niet [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Eerder, met behulp van powershell.exe (nu `pwsh.exe`) voor het uitvoeren van een PowerShell-script met `-File` geen manier om door te geven $true opgegeven/$false als parameterwaarden. Ondersteuning voor $true/$false als geparseerde waarden voor parameters is toegevoegd. Switch-waarden worden ook ondersteund als op dit moment gedocumenteerde syntaxis werkt niet.
+Eerder, met behulp van **powershell.exe** (nu **pwsh.exe**) voor het uitvoeren van een PowerShell-script met `-File` geen manier om door te geven die `$true` / `$false` als parameter de waarden. Ondersteuning voor `$true` / `$false` als geparseerde waarden voor parameters is toegevoegd. Switch-waarden worden ook ondersteund als op dit moment gedocumenteerde syntaxis werkt niet.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Verwijder `ClrVersion` eigenschap `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Schakel shebang gebruik van PowerShell op niet-Windows-platforms. Dit betekent d
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementeren van Unicode-escape parseren [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` of `` `u{####} `` wordt geconverteerd naar het bijbehorende Unicode-teken. Om uit te voeren een letterlijke tekenreeks `` `u ``, als u de backtick: ``` ``u ```.
+`` `u####`` of `` `u{####}`` wordt geconverteerd naar het bijbehorende Unicode-teken. Om uit te voeren een letterlijke tekenreeks `` `u``, als u de backtick: ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Wijziging `New-ModuleManifest` coderen naar `UTF8NoBOM` op niet-Windows-platforms [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
