@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850132"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056444"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="647ac-102">Voorbeeld Runspace05</span><span class="sxs-lookup"><span data-stu-id="647ac-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="f956e-102">Voorbeeld Runspace05</span><span class="sxs-lookup"><span data-stu-id="f956e-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="647ac-103">In dit voorbeeld laat zien hoe u een module toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object zodat de cmdlet van de module beschikbaar is wanneer de runspace wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="647ac-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="647ac-104">De module biedt u een cmdlet Get-Proc (gedefinieerd door de [GetProcessSample01 voorbeeld](../cmdlet/getprocesssample01-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="647ac-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="f956e-103">In dit voorbeeld laat zien hoe u een module toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object zodat de cmdlet van de module beschikbaar is wanneer de runspace wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="f956e-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="f956e-104">De module biedt u een cmdlet Get-Proc (gedefinieerd door de [GetProcessSample01 voorbeeld](../cmdlet/getprocesssample01-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="f956e-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="647ac-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="647ac-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="f956e-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="f956e-105">Requirements</span></span>
 
-<span data-ttu-id="647ac-106">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="647ac-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="f956e-106">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="f956e-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="647ac-107">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="647ac-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="f956e-107">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="f956e-107">Demonstrates</span></span>
 
-<span data-ttu-id="647ac-108">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="647ac-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="f956e-108">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="f956e-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="647ac-109">Het maken van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="647ac-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="f956e-109">Het maken van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="f956e-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="647ac-110">Toevoegen van de module aan de [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="647ac-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="f956e-110">Toevoegen van de module aan de [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="f956e-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="647ac-111">Het maken van een [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object die gebruikmaakt van de [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="647ac-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="f956e-111">Het maken van een [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object die gebruikmaakt van de [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span><span class="sxs-lookup"><span data-stu-id="f956e-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="647ac-112">Het maken van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object dat de runspace gebruikt.</span><span class="sxs-lookup"><span data-stu-id="647ac-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="f956e-112">Het maken van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object dat de runspace gebruikt.</span><span class="sxs-lookup"><span data-stu-id="f956e-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="647ac-113">Van de module get-proc cmdlet toe te voegen aan de pijplijn met de [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="647ac-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="f956e-113">Van de module get-proc cmdlet toe te voegen aan de pijplijn met de [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="f956e-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="647ac-114">De opdracht synchroon wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="647ac-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="f956e-114">De opdracht synchroon wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="f956e-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="647ac-115">Uitpakken van de eigenschappen van de [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.</span><span class="sxs-lookup"><span data-stu-id="647ac-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="f956e-115">Uitpakken van de eigenschappen van de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.</span><span class="sxs-lookup"><span data-stu-id="f956e-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="647ac-116">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="647ac-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f956e-116">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f956e-116">Example</span></span>
 
-<span data-ttu-id="647ac-117">Hiermee maakt u een runspace die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object voor het definiëren van de elementen die beschikbaar zijn wanneer de runspace wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="647ac-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="647ac-118">In dit voorbeeld wordt is een module die een cmdlet Get-Proc definieert toegevoegd aan de sessiestatus van de eerste.</span><span class="sxs-lookup"><span data-stu-id="647ac-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="f956e-117">Hiermee maakt u een runspace die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object voor het definiëren van de elementen die beschikbaar zijn wanneer de runspace wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="f956e-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="f956e-118">In dit voorbeeld wordt is een module die een cmdlet Get-Proc definieert toegevoegd aan de sessiestatus van de eerste.</span><span class="sxs-lookup"><span data-stu-id="f956e-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="647ac-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="647ac-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f956e-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f956e-119">See Also</span></span>
 
-[<span data-ttu-id="647ac-120">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="647ac-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="f956e-120">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="f956e-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

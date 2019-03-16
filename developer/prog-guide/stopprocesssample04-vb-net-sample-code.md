@@ -8,21 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 8d8ff5f225609fc1ae9a1df6f2e990d632224102
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430057"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057821"
 ---
-# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="b4813-102">StopProcessSample04-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="b4813-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
+# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="22864-102">StopProcessSample04-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="22864-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="b4813-103">Hier is de volledige VB.NET-voorbeeldcode voor het StopProc04 voorbeeld-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b4813-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="b4813-104">Dit is de code voor de `Stop-Process` cmdlet die worden beschreven in [parametersets toe te voegen aan een Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="b4813-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="b4813-105">De `Stop-Process` cmdlet is ontworpen om te beëindigen van processen die worden opgehaald met de cmdlet Get-Proc (beschreven in [het maken van uw eerste Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="b4813-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
+<span data-ttu-id="22864-103">Hier is de volledige VB.NET-voorbeeldcode voor het StopProc04 voorbeeld-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="22864-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="22864-104">Dit is de code voor de `Stop-Process` cmdlet die worden beschreven in [parametersets toe te voegen aan een Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="22864-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="22864-105">De `Stop-Process` cmdlet is ontworpen om te beëindigen van processen die worden opgehaald met de cmdlet Get-Proc (beschreven in [het maken van uw eerste Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="22864-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b4813-106">U kunt het bronbestand VB.NET (stopprocesssample04.vb) voor deze cmdlet Stop-Proc is met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen downloaden.</span><span class="sxs-lookup"><span data-stu-id="b4813-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="b4813-107">Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="b4813-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="22864-106">U kunt het bronbestand VB.NET (stopprocesssample04.vb) voor deze cmdlet Stop-Proc is met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen downloaden.</span><span class="sxs-lookup"><span data-stu-id="22864-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="22864-107">Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="22864-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="b4813-108">De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.</span><span class="sxs-lookup"><span data-stu-id="b4813-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="22864-108">De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.</span><span class="sxs-lookup"><span data-stu-id="22864-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
 ```vb
 Imports System
@@ -258,9 +258,9 @@ ContinueForEach1:
                     "Are you sure you wish to stop the process?", processName)
 
                 ' It is possible that ProcessRecord is called multiple
-                ' when objects are recieved as inputs from a pipeline.
+                ' when objects are received as inputs from a pipeline.
                 ' So, to retain YesToAll and NoToAll input that the
-                ' user may enter across mutilple calls to this
+                ' user may enter across multiple calls to this
                 ' function, they are stored as private members of the
                 ' Cmdlet.
                 If Not ShouldContinue(message, "Warning!", yesToAll, noToAll) Then
@@ -477,8 +477,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="b4813-109">Zie ook</span><span class="sxs-lookup"><span data-stu-id="b4813-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="22864-109">Zie ook</span><span class="sxs-lookup"><span data-stu-id="22864-109">See Also</span></span>
 
-[<span data-ttu-id="b4813-110">Windows PowerShell-programmeergids</span><span class="sxs-lookup"><span data-stu-id="b4813-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="22864-110">Windows PowerShell-programmeergids</span><span class="sxs-lookup"><span data-stu-id="22864-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="b4813-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="b4813-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="22864-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="22864-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
