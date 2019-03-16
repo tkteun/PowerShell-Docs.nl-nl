@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850111"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056512"
 ---
 # <a name="required-development-guidelines"></a>Vereiste richtlijnen voor de ontwikkeling
 
@@ -107,7 +107,7 @@ Als u cmdlets naam, gebruik dan niet een van de volgende speciale tekens bevatte
 |%|procentteken|
 |+|plusteken|
 |=|gelijkteken|
-|~|tilda|
+|~|tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Namen van parameters die kunnen worden gebruikt (RD03)
 
@@ -122,9 +122,9 @@ Voor deze aanroepen die de cmdlet moet opgeven dat deze bevestiging aanvragen do
 > [!NOTE]
 > Als de Cmdlet-kenmerk van de cmdlet-klasse geeft aan dat de cmdlet biedt ondersteuning voor aanroepen naar de [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode en de cmdlet is mislukt voor de aanroep naar de [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode, de gebruiker kan het systeem onverwacht wijzigen.
 
-Gebruik de [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode voor een aanpassing van het systeem. Een gebruikersvoorkeur en de `Whatif` parameterbesturingselement de [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. Daarentegen de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -aanroep wordt een extra controle uitgevoerd op mogelijk schadelijke wijzigingen. Deze methode niet wordt beheerd door een gebruikersvoorkeur of de `Whatif` parameter. Als uw cmdlet roept de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode, moet er een `Force` parameter die de aanroepen voor deze twee methoden omzeilt en die met de bewerking wordt voortgezet. Dit is belangrijk omdat hierdoor de cmdlet moet worden gebruikt in niet-interactieve scripts en -hosts.
+Gebruik de [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode voor een aanpassing van het systeem. Een gebruikersvoorkeur en de `WhatIf` parameterbesturingselement de [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. Daarentegen de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -aanroep wordt een extra controle uitgevoerd op mogelijk schadelijke wijzigingen. Deze methode niet wordt beheerd door een gebruikersvoorkeur of de `WhatIf` parameter. Als uw cmdlet roept de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode, moet er een `Force` parameter die de aanroepen voor deze twee methoden omzeilt en die met de bewerking wordt voortgezet. Dit is belangrijk omdat hierdoor de cmdlet moet worden gebruikt in niet-interactieve scripts en -hosts.
 
-Als uw cmdlets deze aanroepen ondersteunen, kan de gebruiker kan bepalen of er daadwerkelijk de actie moet worden uitgevoerd. Bijvoorbeeld, de [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) aanroepen van cmdlet de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode voordat deze stopt met een set van kritieke processen, met inbegrip van het systeem, Winlogon, en Spoolsrv processen.
+Als uw cmdlets deze aanroepen ondersteunen, kan de gebruiker kan bepalen of er daadwerkelijk de actie moet worden uitgevoerd. Bijvoorbeeld, de [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) aanroepen van cmdlet de [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode voordat deze stopt met een set van kritieke processen, met inbegrip van het systeem, Winlogon, en Spoolsv processen.
 
 Zie voor meer informatie over het ondersteunen van deze methoden [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
 

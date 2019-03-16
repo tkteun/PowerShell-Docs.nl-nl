@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852008"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058025"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Declaratie van het kenmerk Cmdlet
 
@@ -36,9 +36,9 @@ Het kenmerk Cmdlet identificeert een Microsoft .NET Framework-klasse als een cmd
 
 `NounName` ([System.String](/dotnet/api/System.String)) vereist. Hiermee geeft u de cmdlet-zelfstandig naamwoord. Deze zelfstandig naamwoord Hiermee geeft u de resource die de cmdlet reageert. Zie voor meer informatie over de cmdlet-woorden [Cmdlet declaratie](./cmdlet-class-declaration.md) en [ten zeerste aangeraden ontwikkeling richtlijnen](./strongly-encouraged-development-guidelines.md).
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) met de naam van parameter optioneel. `True` Geeft aan dat de cmdlet biedt ondersteuning voor aanroepen naar de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode, die de cmdlet een manier biedt om de gebruiker vragen voordat een actie die wijzigingen van het systeem wordt uitgevoerd. `False`, de standaardwaarde geeft aan dat de cmdlet geen ondersteuning voor aanroepen naar de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. Zie voor meer informatie over aanvragen voor bevestiging [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) met de naam van parameter optioneel. `True` Geeft aan dat de cmdlet biedt ondersteuning voor aanroepen naar de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode, die de cmdlet een manier biedt om de gebruiker vragen voordat een actie die wijzigingen van het systeem wordt uitgevoerd. `False`, de standaardwaarde geeft aan dat de cmdlet geen ondersteuning voor aanroepen naar de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. Zie voor meer informatie over aanvragen voor bevestiging [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) met de naam van parameter optioneel. Hiermee geeft u op wanneer de actie van de cmdlet moet worden bevestigd door een aanroep naar de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) alleen worden aangeroepen wanneer de ConfirmImpact-waarde van de cmdlet (standaard is dit normaal) gelijk aan of groter is dan de waarde van is de `$ConfirmPreference` variabele. Deze parameter moet worden opgegeven alleen wanneer de `SupportsShouldProcess` parameter is opgegeven.
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) met de naam van parameter optioneel. Hiermee geeft u op wanneer de actie van de cmdlet moet worden bevestigd door een aanroep naar de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode. [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) alleen worden aangeroepen wanneer de ConfirmImpact-waarde van de cmdlet (standaard is dit normaal) gelijk aan of groter is dan de waarde van is de `$ConfirmPreference` variabele. Deze parameter moet worden opgegeven alleen wanneer de `SupportsShouldProcess` parameter is opgegeven.
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) met de naam van parameter optioneel. Hiermee geeft u dat de standaardparameter ingesteld dat de Windows PowerShell-runtime probeert te gebruiken als deze niet kan bepalen welke parameter ingesteld voor het gebruik. U ziet dat deze situatie te worden geëlimineerd door de unieke parameter van elke parameter is een verplichte parameter ingesteld.
 
@@ -54,9 +54,9 @@ Er is een situatie waarin de standaardparameter instellen, zelfs als een standaa
 
 **VerbName NounName**
 
-- Alle cmdlets die bronnen buiten Windows PowerShell wijzigen moet bevatten de `SupportsShouldProcess` sleutelwoord wanneer de Cmdlet-kenmerk is gedeclareerd, waardoor de cmdlet om aan te roepen de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode voordat de cmdlet wordt de bijbehorende actie uitgevoerd. Als de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen retourneert `false`, de actie niet moet worden genomen. Voor meer informatie over de bevestiging van aanvragen die worden gegenereerd door de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen, Zie [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
+- Alle cmdlets die bronnen buiten Windows PowerShell wijzigen moet bevatten de `SupportsShouldProcess` sleutelwoord wanneer de Cmdlet-kenmerk is gedeclareerd, waardoor de cmdlet om aan te roepen de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode voordat de cmdlet wordt de bijbehorende actie uitgevoerd. Als de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen retourneert `false`, de actie niet moet worden genomen. Voor meer informatie over de bevestiging van aanvragen die worden gegenereerd door de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen, Zie [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
 
-De `Confirm` en `WhatIf` cmdlet-parameters zijn alleen beschikbaar voor cmdlets die ondersteuning bieden voor [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen.
+De `Confirm` en `WhatIf` cmdlet-parameters zijn alleen beschikbaar voor cmdlets die ondersteuning bieden voor [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen.
 
 ## <a name="example"></a>Voorbeeld
 

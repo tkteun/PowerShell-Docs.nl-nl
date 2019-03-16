@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687025"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054371"
 ---
 # <a name="known-issues-and-limitations"></a>Bekende problemen en beperkingen
 
@@ -54,7 +54,7 @@ Er zijn twee oplossingen voor dit probleem, afhankelijk van de versie van Window
 **Oplossing:**
 
 - Voor systemen met **Windows Server 2008 R2**
-  1. Open Powershell als beheerder
+  1. Open PowerShell als beheerder
   2. De volgende opdracht uitvoeren
 
      ```powershell
@@ -77,7 +77,7 @@ Er zijn twee oplossingen voor dit probleem, afhankelijk van de versie van Window
 
 - Voor systemen met **Windows Server 2012**
   1. Na de installatie van WMF 5.0 op de server als 'd Sysprep, meld u aan als beheerder.
-  2. Kopieer Generize.xml van directory \Windows\System32\Sysprep\ActionFiles\ naar een locatie buiten de Windows-map, C:\ bijvoorbeeld.
+  2. Generize.xml van directory \Windows\System32\Sysprep\ActionFiles\ kopiëren naar een locatie buiten de Windows-map, C:\ bijvoorbeeld.
   3. Uw exemplaar Generalize.xml Open met Kladblok.
   4. Zoeken en verwijderen van de volgende tekst, één exemplaar van elke moet worden verwijderd (ze zijn aan het einde van het document).
 

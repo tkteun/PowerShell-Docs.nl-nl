@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683826"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056716"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
 
@@ -97,7 +97,7 @@ U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets, wordt Web Server (IIS)-beheerhulpprogramma's standaard niet toegevoegd. Als u de beheerhulpprogramma's installeren op dezelfde server als de Windows PowerShell Web Access-gateway wilt, voegt u toe de `-IncludeManagementTools` parameter aan de installatieopdracht (zoals omschreven in deze stap). Als u de Windows PowerShell Web Access-website vanaf een externe computer beheert, installeert u de module IIS-beheer door het installeren van [Remote Server Administration Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) of [Remote Server Administration Hulpprogramma's voor Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) op de computer van waaruit u wilt beheren van de gateway.
+   > Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets, wordt Web Server (IIS)-beheerhulpprogramma's standaard niet toegevoegd. Als u de beheerhulpprogramma's installeren op dezelfde server als de Windows PowerShell Web Access-gateway wilt, voegt u toe de `-IncludeManagementTools` parameter aan de installatieopdracht (zoals omschreven in deze stap). Als u de Windows PowerShell Web Access-website vanaf een externe computer beheert, installeert u de module IIS-beheer door het installeren van [Remote Server Administration Tools voor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) of [Remote Server Administration Hulpprogramma's voor Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) op de computer van waaruit u wilt beheren van de gateway.
 
    Als u functies en onderdelen op een offline-VHD wilt installeren, dient u de parameter `-ComputerName` en de parameter `-VHD` toe te voegen. De parameter `-ComputerName` bevat de naam van de server waaraan de VHD moet worden gekoppeld en de parameter `-VHD` bevat het pad naar het VHD-bestand op de opgegeven server.
 
@@ -178,7 +178,7 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
 7. In de **sitebinding toevoegen** in het dialoogvenster de **Type** veld **https**.
 
 8. In de **SSL-certificaat** veld, selecteert u uw ondertekend certificaat in de vervolgkeuzelijst.
-   Klik op **OK**. Zie [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-Manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
+   Klik op **OK**. Zie [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
 
    De web-App voor Windows PowerShell-webtoegang is nu geconfigureerd voor het gebruik van uw ondertekend SSL-certificaat.
 
@@ -273,7 +273,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 8. In de **fysiek pad** veld, blader naar de locatie van de toepassing. U kunt de standaardlocatie bevindt, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Klik op **OK**.
 
-9. Volg de stappen in de procedure [configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-Manager) in dit onderwerp.
+9. Volg de stappen in de procedure [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp.
 
 10. ![](images/SecurityNote.jpeg) Optionele beveiligingsstap:
 
@@ -329,7 +329,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 1. (Optioneel) Geef de naam van een host die zinvol is voor uw organisatie en gebruikers, zoals zo nodig voor uw organisatie **`www.contoso.com`**. Klik op **OK**.
 
-1. Voor een veiliger productieomgeving raden we u ten sterkste aan een geldig certificaat op te geven dat is ondertekend door een CA. Omdat gebruikers alleen verbinding met Windows PowerShell-internettoegang via een HTTPS-website maken kunnen, moet u een SSL-certificaat opgeven. Zie [configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-Manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
+1. Voor een veiliger productieomgeving raden we u ten sterkste aan een geldig certificaat op te geven dat is ondertekend door een CA. Omdat gebruikers alleen verbinding met Windows PowerShell-internettoegang via een HTTPS-website maken kunnen, moet u een SSL-certificaat opgeven. Zie [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
 
 1. Klik op **OK** sluiten de **Website toevoegen** in het dialoogvenster.
 

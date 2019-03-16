@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
-ms.openlocfilehash: 4b3fa7a54dc4096e79c4de94c8b28f4a784d4627
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846744"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058008"
 ---
 # <a name="how-to-support-jobs"></a>Taken ondersteunen
 
@@ -47,7 +47,7 @@ In dit voorbeeld laat zien hoe ter ondersteuning van taken bij het schrijven van
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Een verwerkingsmethode voor de van de record, Voeg een `if` instructie om te detecteren of de cmdlet moet worden uitgevoerd als een taak. De volgende code gebruikt de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+3. Een verwerkingsmethode voor de van de record, Voeg een `if` instructie om te detecteren of de cmdlet moet worden uitgevoerd als een taak. De volgende code gebruikt de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
     ```csharp
     protected override void ProcessRecord()
@@ -131,7 +131,7 @@ In dit voorbeeld laat zien hoe ter ondersteuning van taken bij het schrijven van
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. Als de cmdlet het werk voert, roept de [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode om te retourneren van een procesobject aan de pijplijn. Als het werk wordt uitgevoerd als een taak, kunt u de onderliggende taak toevoegen aan de job.
+5. Als de cmdlet het werk voert, roept de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode om te retourneren van een procesobject aan de pijplijn. Als het werk wordt uitgevoerd als een taak, kunt u de onderliggende taak toevoegen aan de job.
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -168,7 +168,7 @@ using System.Threading;              // Thread pool namespace for posting work.
 using System.Diagnostics;            // Diagnostics namespace for retrieving
                                      // process objects.
 
-// This sample showes a cmdlet whose work can be done by the cmdlet or by using
+// This sample shows a cmdlet whose work can be done by the cmdlet or by using
 // a background job. Background jobs are executed in their own thread,
 // independent of the pipeline thread in which the cmdlet is executed.
 //

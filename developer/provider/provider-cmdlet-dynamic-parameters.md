@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848459"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058229"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamische parameters voor provider-cmdlets
 
@@ -73,7 +73,7 @@ Hier volgt een lijst van de statische parameters die kunnen worden gebruikt om t
 
 `Copy-Item` cmdlet kunt u dynamische parameters die worden geactiveerd door de `Path`, `Destination`, en `Recurse` parameters van de `Copy-Item` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) methode.
 
-De cmdlet Get-ChildItems kunt u dynamische parameters die worden geactiveerd door de `Path` en `Recures` parameters van de `Get-ChildItem` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) en [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) methoden.
+De cmdlet Get-ChildItems kunt u dynamische parameters die worden geactiveerd door de `Path` en `Recurse` parameters van de `Get-ChildItem` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) en [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) methoden.
 
 `Get-Content` cmdlet kunt u dynamische parameters die worden geactiveerd door de `Path` parameter van de `Get-Content` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) methode.
 
@@ -89,7 +89,7 @@ De cmdlet Get-ChildItems kunt u dynamische parameters die worden geactiveerd doo
 
 `New-ItemProperty` cmdlet kunt u dynamische parameters die worden geactiveerd door de `Path`, `Name`, `PropertyType`, en `Value` parameters van de `New-ItemProperty` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) methode.
 
-`New-PSDrive` cmdlet kunt u dynamische parameters die worden geactiveerd door de [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object dat wordt geretourneerd door de `New-PSDrive` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) methode.
+`New-PSDrive` cmdlet kunt u dynamische parameters die worden geactiveerd door de [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object dat wordt geretourneerd door de `New-PSDrive` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) methode.
 
 `Remove-Item` U kunt dynamische parameters gedefinieerd die worden geactiveerd door de `Path` en `Recurse` parameters van de `Remove-Item` cmdlet door het implementeren van de [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) methode.
 

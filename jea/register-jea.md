@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Configuraties van JEA registreren
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689062"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059436"
 ---
 # <a name="registering-jea-configurations"></a>Configuraties van JEA registreren
 
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 Deze configuratie kan vervolgens worden toegepast op een systeem met [rechtstreeks aanroepen van de Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) of bijwerken van de [pull-serverconfiguratie](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 De DSC-resources kunt u het standaardeindpunt voor de externe communicatie van Microsoft.PowerShell vervangen.
-Als u dit doet, wordt een back-up unconstrainted-eindpunt met de naam 'Microsoft.PowerShell.Restricted' met de standaard-WinRM-ACL (zodat gebruikers van extern beheer- en lokale beheerders groepsleden om deze te openen) automatisch geregistreerd in de resource.
+Als u dit doet, wordt een back-up onbeperkte eindpunt met de naam 'Microsoft.PowerShell.Restricted' met de standaard-WinRM-ACL (zodat gebruikers van extern beheer- en lokale beheerders groepsleden om deze te openen) automatisch geregistreerd in de resource.
 
 ## <a name="unregistering-jea-configurations"></a>De registratie JEA-configuraties
 

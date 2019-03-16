@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Een DSC-rapportserver gebruiken
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686577"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059266"
 ---
 # <a name="using-a-dsc-report-server"></a>Een DSC-rapportserver gebruiken
 
@@ -16,7 +16,8 @@ Van toepassing op: Windows PowerShell 5.0
 > [!IMPORTANT]
 > De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](pullserver.md#community-solutions-for-pull-service).
 >
-> **Houd er rekening mee** de rapportserver die in dit onderwerp is niet beschikbaar in PowerShell 4.0.
+> [!NOTE]
+> De rapportserver die in dit onderwerp is niet beschikbaar in PowerShell 4.0.
 
 De lokale Configuration Manager (LCM) van een knooppunt kan worden geconfigureerd voor het verzenden van rapporten over de status van de configuratie met een pull-server, die vervolgens kan worden opgevraagd die gegevens op te halen. Telkens wanneer het knooppunt wordt gecontroleerd en van toepassing is een configuratie, stuurt deze een rapport op de rapportserver. Deze rapporten worden opgeslagen in een database op de server en kunnen worden opgehaald door het aanroepen van de reporting webservice. Elk rapport bevat informatie zoals welke configuraties zijn toegepast en of deze is voltooid, de resources gebruikt, eventuele fouten die zijn gegenereerd, en begin- en eindtijden.
 

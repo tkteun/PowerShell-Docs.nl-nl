@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
 caps.latest.revision: 7
-ms.openlocfilehash: c156b2d6a7e7d3fcbd1679d2d61c94f31be0f76a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3205286fbbc823d21e29a328b3ba9c4c1459d9ff
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845918"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056954"
 ---
 # <a name="runspace07-sample"></a>Voorbeeld Runspace07
 
@@ -35,11 +35,11 @@ In dit voorbeeld ziet u het volgende.
 
 - De cmdlets synchroon uitgevoerd.
 
-- Uitpakken van de eigenschappen van de [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.
+- Uitpakken van de eigenschappen van de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld wordt een runspace gebruikt door een [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object om uit te voeren de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Meetobject dat](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.
+In dit voorbeeld wordt een runspace gebruikt door een [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object om uit te voeren de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Meetobject dat](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

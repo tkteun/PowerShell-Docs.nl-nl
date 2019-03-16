@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846072"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054931"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>Het element EntrySelectedBy voor ListEntry voor ListControl (opmaak)
 
@@ -44,7 +44,7 @@ Geen.
 |Element|Description|
 |-------------|-----------------|
 |[SelectionCondition-Element voor EntrySelectedBy voor ListControl (indeling)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voorwaarde die moet bestaan voor deze definitie voor het weergeven van lijst moet worden gebruikt.|
-|[SelectionSetName-Element voor EnrtySelectedBy voor ListControl (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een set van .NET-typen die gebruikmaken van de definitie van deze lijst weergeven.|
+|[SelectionSetName-Element voor EntrySelectedBy voor ListControl (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een set van .NET-typen die gebruikmaken van de definitie van deze lijst weergeven.|
 |[TypeName-Element voor EntrySelectedBy voor ListControl (indeling)](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type dat gebruikmaakt van de definitie van deze lijst weergeven.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
@@ -79,7 +79,7 @@ Het volgende voorbeeld ziet hoe u definieert de objecten voor een lijst weergeve
 
 [SelectionCondition-Element voor EntrySelectedBy voor ListControl (indeling)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[SelectionSetName-Element voor EnrtySelectedBy voor ListControl (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName-Element voor EntrySelectedBy voor ListControl (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName-Element voor EntrySelectedBy voor ListControl (indeling)](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

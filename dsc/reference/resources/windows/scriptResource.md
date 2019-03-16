@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Script voor DSC-Resource
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684841"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054744"
 ---
 # <a name="dsc-script-resource"></a>Script voor DSC-Resource
 
@@ -33,7 +33,7 @@ Script [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|Eigenschap|Beschrijving|
+|Eigenschap|Description|
 |--------|-----------|
 |GetScript|Een scriptblok waarmee de huidige status van het knooppunt wordt geretourneerd.|
 |SetScript|Een scriptblok die DSC gebruikt voor het afdwingen van naleving bij het knooppunt niet is opgenomen in de gewenste status.|
@@ -57,7 +57,7 @@ De [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-D
 
 ### <a name="setscript"></a>SetScript
 
-De `SetScript` Hiermee wijzigt u het knooppunt enfore de gewenste status. Deze wordt aangeroepen door DSC als de `TestScript` script blok retourneert `$false`. De `SetScript` moet retourneren geen waarde hebben.
+De `SetScript` Hiermee wijzigt u het knooppunt om af te dwingen de gewenste status. Deze wordt aangeroepen door DSC als de `TestScript` script blok retourneert `$false`. De `SetScript` moet retourneren geen waarde hebben.
 
 ## <a name="examples"></a>Voorbeelden
 

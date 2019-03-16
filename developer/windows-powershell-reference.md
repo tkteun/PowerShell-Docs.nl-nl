@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851084"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055492"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell
 
@@ -47,10 +47,10 @@ Naast de SDK van Windows PowerShell bevatten de volgende bronnen meer informatie
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) deze naamruimte bevat de klassen, opsommingen en interfaces die nodig zijn voor het implementeren van een Windows PowerShell-provider. In het bijzonder de [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) klasse is de basisklasse van die alle Windows PowerShell providerklassen moeten worden afgeleid.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) deze naamruimte bevat de klassen voor de cmdlets en providers die zijn geïmplementeerd door de Windows PowerShell. Op deze manier is het aanbevolen dat u maakt een *uwnaam*. De naamruimte van de opdrachten voor die cmdlets die u implementeert.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) deze naamruimte bevat de klassen voor de cmdlets en providers die zijn geïmplementeerd door de Windows PowerShell. Op deze manier is het aanbevolen dat u maakt een *uwnaam*. De naamruimte van de opdrachten voor die cmdlets die u implementeert.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) deze naamruimte bevat de klassen, opsommingen en interfaces die gebruikmaakt van de cmdlet voor het definiëren van de interactie tussen de gebruiker en de Windows PowerShell.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) deze naamruimte bevat de basisklassen die worden gebruikt door andere naamruimteklassen. Bijvoorbeeld, de [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klasse is de basisklasse van de [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasse.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) deze naamruimte bevat de basisklassen die worden gebruikt door andere naamruimteklassen. Bijvoorbeeld, de [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klasse is de basisklasse van de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasse.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) deze naamruimte bevat de klassen, opsommingen en interfaces die worden gebruikt voor het maken van een Windows PowerShell-runspace. In deze context is de Windows PowerShell-runspace de context waarin een of meer pijplijnen van Windows PowerShell cmdlets aanroepen. Dat wil zeggen, werken cmdlets binnen de context van een Windows PowerShell-runspace. Zie voor meer informatie aboutWindows PowerShell runspaces, [Windows PowerShell Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

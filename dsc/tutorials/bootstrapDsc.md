@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
-ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686906"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059419"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
 
@@ -98,7 +98,7 @@ Configuration SampleIISInstall
 
 7. Een virtuele machine maken met behulp van de installatie van de DSC MOF-document VHD.
 
-Na het eerste boot-up en installatie van besturingssysteem, wordt IIS geïnstalleerd.
+Na de initiële boot-up en installatie van besturingssysteem, wordt IIS geïnstalleerd.
 U kunt dit controleren door het aanroepen van de [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Een DSC-metaconfiguration invoeren in een VHD
@@ -140,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Instellen van een DSC-pull-endwebserver](../pull-server/pullServer.md), en sla de **SampleIISInistall** configuratie naar de juiste map.
+2. [Instellen van een DSC-pull-endwebserver](../pull-server/pullServer.md), en sla de **SampleIISInstall** configuratie naar de juiste map.
 
 3. Op een computer waarop PowerShell 5.0 of hoger, sla de bovenstaande metaconfiguration (**PullClientBootstrap**) als een PowerShell-script (.ps1)-bestand.
 
@@ -168,7 +168,7 @@ configuration PullClientBootstrap
 
 8. Een virtuele machine maken met behulp van de installatie van de DSC MOF-document VHD.
 
-Na het eerste boot-up en installatie van besturingssysteem, DSC klikt, wordt de configuratie van de pull-server en IIS wordt geïnstalleerd.
+Na de initiële boot-up en installatie van besturingssysteem, DSC klikt, wordt de configuratie van de pull-server en IIS wordt geïnstalleerd.
 U kunt dit controleren door het aanroepen van de [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) cmdlet.
 
 ## <a name="disable-dsc-at-boot-time"></a>DSC bij het opstarten uitschakelen

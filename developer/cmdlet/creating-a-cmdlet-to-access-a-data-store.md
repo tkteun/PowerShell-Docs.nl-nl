@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849180"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059521"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 
-In deze sectie wordt beschreven hoe u een cmdlet die toegang heeft tot opgeslagen gegevens in een Windows PowerShell-provider maken. Dit type cmdlet maakt gebruik van de infrastructuur van Windows PowerShell-provider van de Windows PowerShell-runtime en daarom de cmdlet-klasse moet zijn afgeleid van de [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse.
+In deze sectie wordt beschreven hoe u een cmdlet die toegang heeft tot opgeslagen gegevens in een Windows PowerShell-provider maken. Dit type cmdlet maakt gebruik van de infrastructuur van Windows PowerShell-provider van de Windows PowerShell-runtime en daarom de cmdlet-klasse moet zijn afgeleid van de [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse.
 
 De Select-Str cmdlet die hier worden beschreven kunt vinden en tekenreeksen in een bestand of object selecteren. De patronen die wordt gebruikt voor het identificeren van de tekenreeks kunnen via expliciet worden opgegeven. de `Path` parameter van de cmdlet of impliciet via de `Script` parameter.
 
@@ -45,7 +45,7 @@ Onderwerpen in deze sectie bevatten het volgende:
 
 De eerste stap bij het maken van de cmdlet is altijd naamgeving van de cmdlet en de .NET-klasse die de cmdlet declareren. Deze cmdlet detecteert bepaalde tekenreeksen, zodat de hier gekozen naam van de term 'Selecteren' is gedefinieerd door de [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) klasse. De naam van het zelfstandig naamwoord 'Str' wordt gebruikt omdat de cmdlet van tekenreeksen fungeert. Houd er rekening mee dat de naam van de cmdlet werkwoord en een zelfstandig naamwoord naam van de cmdlet-klasse worden weergegeven in de onderstaande verklaring. Zie voor meer informatie over goedgekeurde werkwoorden [namen van de term cmdlets](./approved-verbs-for-windows-powershell-commands.md).
 
-De .NET-klasse voor deze cmdlet moet zijn afgeleid van de [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse, omdat de ondersteuning die door de Windows PowerShell-runtime nodig zijn om beschikbaar te stellen van de Windows PowerShell-provider infrastructuur. Houd er rekening mee dat deze cmdlet ook maakt gebruik van de klassen van de .NET Framework-reguliere expressies, zoals [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+De .NET-klasse voor deze cmdlet moet zijn afgeleid van de [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse, omdat de ondersteuning die door de Windows PowerShell-runtime nodig zijn om beschikbaar te stellen van de Windows PowerShell-provider infrastructuur. Houd er rekening mee dat deze cmdlet ook maakt gebruik van de klassen van de .NET Framework-reguliere expressies, zoals [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 De volgende code wordt de klassedefinitie van deze cmdlet Selecteer Str.
 
@@ -117,7 +117,7 @@ Als deze parameter is opgegeven, de cmdlet maakt gebruik van de standaardset van
 
 Deze cmdlet definieert de volgende ondersteuning voor parameters die kunnen worden gebruikt voor het wijzigen van de zoekmogelijkheden van de cmdlet.
 
-De `Script` parameter geeft u een scriptblok die kan worden gebruikt om u te bieden een zoekmechanisme alternatieve voor de cmdlet. Het script moet de patronen gebruikt om de overeenkomende bevatten en retourneren een [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object. Houd er rekening mee dat deze parameter is ook de unieke parameter waarmee de `ScriptParameterSet` parameterset. Wanneer de Windows PowerShell-runtime ziet deze parameter, het maakt gebruik van alleen de parameters die deel uitmaken van de `ScriptParameterSet` parameterset.
+De `Script` parameter geeft u een scriptblok die kan worden gebruikt om u te bieden een zoekmechanisme alternatieve voor de cmdlet. Het script moet de patronen gebruikt om de overeenkomende bevatten en retourneren een [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object. Houd er rekening mee dat deze parameter is ook de unieke parameter waarmee de `ScriptParameterSet` parameterset. Wanneer de Windows PowerShell-runtime ziet deze parameter, het maakt gebruik van alleen de parameters die deel uitmaken van de `ScriptParameterSet` parameterset.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Parametersets declareren
 
-Deze cmdlet maakt gebruik van twee parametersets (`ScriptParameterSet` en `PatternParameterSet`, namelijk thedefault) als de namen van de twee parameter die wordt gebruikt in toegang tot gegevens. `PatternParameterSet` de standaardset van de parameter is en wordt gebruikt als de `Pattern` parameter is opgegeven. `ScriptParameterSet` wordt gebruikt wanneer de gebruiker Hiermee geeft u een zoekmechanisme voor alternatieve via de `Script` parameter. Zie voor meer informatie over parametersets [parametersets toe te voegen aan een Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Deze cmdlet maakt gebruik van twee parametersets (`ScriptParameterSet` en `PatternParameterSet`, dit is de standaardinstelling) als de namen van de twee parameter die wordt gebruikt in toegang tot gegevens. `PatternParameterSet` de standaardset van de parameter is en wordt gebruikt als de `Pattern` parameter is opgegeven. `ScriptParameterSet` wordt gebruikt wanneer de gebruiker Hiermee geeft u een zoekmechanisme voor alternatieve via de `Script` parameter. Zie voor meer informatie over parametersets [parametersets toe te voegen aan een Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Invoer verwerking van methoden overschrijven
 
-Cmdlets moet een of meer van de verwerking van methoden voor invoer overschrijven de [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasse. Zie voor meer informatie over de van invoer-verwerkingsmethoden, [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Cmdlets moet een of meer van de verwerking van methoden voor invoer overschrijven de [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasse. Zie voor meer informatie over de van invoer-verwerkingsmethoden, [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Deze cmdlet vervangt de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) gecompileerd aan de methode voor het bouwen van een matrix van reguliere expressies bij het opstarten. Dit verhoogt de prestaties tijdens de zoekopdrachten die overeenkomen met eenvoudige niet gebruiken.
+Deze cmdlet vervangt de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) gecompileerd aan de methode voor het bouwen van een matrix van reguliere expressies bij het opstarten. Dit verhoogt de prestaties tijdens de zoekopdrachten die overeenkomen met eenvoudige niet gebruiken.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Deze cmdlet ook overschrijft de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het verwerken van de selecties die tekenreeks waarmee de gebruiker op de opdrachtregel. Het schrijft de resultaten van de selectie van de tekenreeks in de vorm van een aangepast object door het aanroepen van een particulier **MatchString** methode.
+Deze cmdlet ook overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het verwerken van de selecties die tekenreeks waarmee de gebruiker op de opdrachtregel. Het schrijft de resultaten van de selectie van de tekenreeks in de vorm van een aangepast object door het aanroepen van een particulier **MatchString** methode.
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>Toegang krijgen tot inhoud
 
-De cmdlet moet de provider aangegeven door de Windows PowerShell-pad, zodat deze toegang heeft tot de gegevens openen. De [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object voor de runspace wordt gebruikt voor toegang tot de provider, terwijl de [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) eigenschap van de cmdlet wordt gebruikt voor het openen van de provider. Toegang tot inhoud wordt geleverd door het ophalen van de [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) -object voor de provider geopend.
+De cmdlet moet de provider aangegeven door de Windows PowerShell-pad, zodat deze toegang heeft tot de gegevens openen. De [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object voor de runspace wordt gebruikt voor toegang tot de provider, terwijl de [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) eigenschap van de cmdlet wordt gebruikt voor het openen van de provider. Toegang tot inhoud wordt geleverd door het ophalen van de [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) -object voor de provider geopend.
 
 In dit voorbeeld selecteren Str-cmdlet gebruikt de [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) eigenschap om de inhoud om te scannen zichtbaar te maken. Vervolgens kan worden aangeroepen de [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) methode, waarbij de vereiste Windows PowerShell-pad wordt doorgegeven.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

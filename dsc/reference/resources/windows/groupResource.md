@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Groep van de DSC-Resource
-ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048250"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054965"
 ---
 # <a name="dsc-group-resource"></a>Groep van de DSC-Resource
 
@@ -33,11 +33,11 @@ Group [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
-| Groepsnaam| De naam van de groep waarvan u wilt om te controleren of een specifieke status.|
+| GroupName| De naam van de groep waarvan u wilt om te controleren of een specifieke status.|
 | Referentie| De referenties die zijn vereist voor toegang tot externe bronnen. **Houd er rekening mee**: Dit account moet hebben tot de juiste Active Directory-machtigingen voor alle niet-lokale accounts toevoegen aan de groep. anders treedt een fout op wanneer de configuratie wordt uitgevoerd op het doelknooppunt.
-| Beschrijving| De beschrijving van de groep.|
+| Description| De beschrijving van de groep.|
 | Zorg ervoor dat| Geeft aan of de groep bestaat. Deze eigenschap instellen op 'Ontbreekt' om ervoor te zorgen dat de groep niet bestaat. Instellen om "" (de standaardwaarde), zorgt u ervoor dat de groep bestaat.|
 | Leden| Gebruik deze eigenschap om het lidmaatschap van de huidige vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, mag niet een gebruiken de **MembersToExclude** of **MembersToInclude** eigenschap. In dat geval wordt een fout gegenereerd.|
 | MembersToExclude| Gebruik deze eigenschap leden verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt een fout gegenereerd.|
@@ -95,7 +95,7 @@ Group AddADUserToLocalAdminGroup {
 Het volgende voorbeeld laat zien hoe om te controleren of een lokale groep, TigerTeamAdmins, op de server TigerTeamSource.Contoso.Com bevat niet de account van een bepaald domein, Contoso\JerryG.
 
 ```powershell
-Configuration SecureTigerTeamSrouce {
+Configuration SecureTigerTeamSource {
   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
   Node TigerTeamSource.Contoso.Com {

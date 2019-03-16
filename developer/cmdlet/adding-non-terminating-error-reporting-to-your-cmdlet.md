@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851014"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056053"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
 
-Cmdlets afsluitfouten kunt melden door het aanroepen van de [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode en nog steeds kan functioneren op het huidige invoerobject of verdere inkomende pipeline-objecten. In deze sectie wordt uitgelegd hoe u een cmdlet die afsluitfouten uit de invoer verwerkingsmethoden rapporten maken.
+Cmdlets afsluitfouten kunt melden door het aanroepen van de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode en nog steeds kan functioneren op het huidige invoerobject of verdere inkomende pipeline-objecten. In deze sectie wordt uitgelegd hoe u een cmdlet die afsluitfouten uit de invoer verwerkingsmethoden rapporten maken.
 
-Voor afsluitfouten (evenals afsluitende fouten), de cmdlet moet slagen voor een [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object identificeren van de fout. Elke foutrecord wordt geïdentificeerd door een unieke tekenreeks met de naam van de 'fout-id." Naast de-id, de categorie van elke fout die is opgegeven door de constanten zijn gedefinieerd door een [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) opsomming. De gebruiker kan zien fouten op basis van hun categorie door in te stellen de `$ErrorView` variabele 'CategoryView'.
+Voor afsluitfouten (evenals afsluitende fouten), de cmdlet moet slagen voor een [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object identificeren van de fout. Elke foutrecord wordt geïdentificeerd door een unieke tekenreeks met de naam van de 'fout-id." Naast de-id, de categorie van elke fout die is opgegeven door de constanten zijn gedefinieerd door een [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) opsomming. De gebruiker kan zien fouten op basis van hun categorie door in te stellen de `$ErrorView` variabele 'CategoryView'.
 
 Zie voor meer informatie over foutrecords [Windows PowerShell-foutrecords](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Alle cmdlets moet ten minste één van de invoer voor het verwerken van methoden
 > [!NOTE]
 > De cmdlet moet onafhankelijk mogelijk elke record verwerken.
 
-Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter voor invoer geleverd door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. Details van deze overschrijving worden vermeld in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter voor invoer geleverd door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. Details van deze overschrijving worden vermeld in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Om te onthouden wanneer die fouten rapporteren
 
-De [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object dat de cmdlet wordt doorgegeven tijdens het schrijven van een fout is een uitzondering in de kern vereist. Volg de richtlijnen voor .NET bij het bepalen van de uitzondering te gebruiken. In feite, als de fout semantisch gelijk zijn aan een bestaande uitzondering is, de cmdlet moet gebruiken of afgeleid van de uitzondering. Anders moet afleiden een nieuwe uitzondering of uitzonderingen hiërarchie rechtstreeks vanuit de [System.Exception](/dotnet/api/System.Exception) klasse.
+De [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object dat de cmdlet wordt doorgegeven tijdens het schrijven van een fout is een uitzondering in de kern vereist. Volg de richtlijnen voor .NET bij het bepalen van de uitzondering te gebruiken. In feite, als de fout semantisch gelijk zijn aan een bestaande uitzondering is, de cmdlet moet gebruiken of afgeleid van de uitzondering. Anders moet afleiden een nieuwe uitzondering of uitzonderingen hiërarchie rechtstreeks vanuit de [System.Exception](/dotnet/api/System.Exception) klasse.
 
 Houd er rekening mee met het volgende bij het maken van fout-id's (toegankelijk via de eigenschap FullyQualifiedErrorId van de klasse ErrorRecord).
 
@@ -135,7 +135,7 @@ Niet-verwerkte uitzonderingen zijn niet opgepikt door Windows PowerShell in de v
 
 ## <a name="reporting-nonterminating-errors"></a>Rapportage afsluitfouten
 
-Een van de invoer verwerkingsmethoden kan een nonterminating fout rapporteren aan de uitvoer stream met de [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode. Hier volgt een voorbeeld van deze cmdlet Get-procedure die laat zien van de aanroep van [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) uit binnen de onderdrukking van de [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. In dit geval wordt de aanroep uitgevoerd als de cmdlet kan een proces voor een opgegeven proces-id niet vinden.
+Een van de invoer verwerkingsmethoden kan een nonterminating fout rapporteren aan de uitvoer stream met de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode. Hier volgt een voorbeeld van deze cmdlet Get-procedure die laat zien van de aanroep van [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) uit binnen de onderdrukking van de [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. In dit geval wordt de aanroep uitgevoerd als de cmdlet kan een proces voor een opgegeven proces-id niet vinden.
 
 ```csharp
 protected override void ProcessRecord()

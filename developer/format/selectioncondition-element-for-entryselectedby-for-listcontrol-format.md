@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847850"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058960"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
 
@@ -44,7 +44,7 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[PropertyName-Element voor SelectionCondition voor EmtrySelectedBy voor ListEntry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd.|
+|[PropertyName-Element voor SelectionCondition voor EntrySelectedBy voor ListEntry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd.|
 |[ScriptBlock-Element voor SelectionCondition voor EntrySelectedBy voor ListEntry (indeling)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script dat de voorwaarde wordt geactiveerd.|
 |[SelectionSetName-Element voor SelectionCondition voor EntrySelectedBy voor ListEntry (indeling)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de set met .NET-typen waarvoor de voorwaarde is geactiveerd.|
 |[TypeName-Element voor SelectionCondition voor EntrySelectedBy voor ListEntry (indeling)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type dat de voorwaarde wordt geactiveerd.|
@@ -75,7 +75,7 @@ Zie voor meer informatie over andere onderdelen van een lijst weergeven, [het ma
 
 [ListEntry-Element (indeling)](./listentry-element-for-listcontrol-format.md)
 
-[SelectionSetName-Element voor EnrtySelectedBy voor ListEntry (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName-Element voor EntrySelectedBy voor ListEntry (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName-Element voor EntrySelectedBy voor ListEntry (indeling)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 

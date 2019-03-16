@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in PowerShell Core met behulp van SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687130"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056529"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -62,7 +62,7 @@ SSH moet worden geïnstalleerd op alle virtuele machines. Zowel de SSH-client in
      > [!NOTE]
      > Er is een fout in OpenSSH voor Windows waarmee wordt voorkomen dat spaties in subsysteem uitvoerbare paden werkt. Zie voor meer informatie, [deze GitHub-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Eén oplossing is het maken van een symlink naar de Powershell-installatiemap die geen spaties:
+     Eén oplossing is het maken van een symlink naar de PowerShell-installatiemap die geen spaties:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

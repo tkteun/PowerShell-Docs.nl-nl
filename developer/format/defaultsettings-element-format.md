@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846576"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059062"
 ---
 # <a name="defaultsettings-element-format"></a>Het element DefaultSettings (opmaak)
 
@@ -45,7 +45,7 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[DisplayError-Element (Frmat)](./displayerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de tekenreeks #ERR wordt weergegeven wanneer een fout optreedt bij het weergeven van een hoeveelheid gegevens.|
+|[DisplayError-Element (indeling)](./displayerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de tekenreeks #ERR wordt weergegeven wanneer een fout optreedt bij het weergeven van een hoeveelheid gegevens.|
 |[EnumerableExpansions-Element (indeling)](./enumerableexpansions-element-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de verschillende manieren waarop .NET-worden uitgevouwen objecten wanneer ze worden weergegeven in een weergave.|
 |[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het minimum aantal eigenschappen die een object hebben moet om het object in een tabel weer te geven.|
 |[ShowError Element (indeling)](./showerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de volledige foutrecord wordt weergegeven wanneer een fout optreedt bij het weergeven van een hoeveelheid gegevens.|
@@ -63,7 +63,7 @@ Geen.
 
 [Configuratie-Element](./configuration-element-format.md)
 
-[DisplayError-Element (Frmat)](./displayerror-element-format.md)
+[DisplayError-Element (indeling)](./displayerror-element-format.md)
 
 [EnumerableExpansions-Element (indeling)](./enumerableexpansions-element-format.md)
 

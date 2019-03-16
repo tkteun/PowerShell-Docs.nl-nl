@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849096"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054982"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Parametersets toevoegen aan een cmdlet
 
@@ -179,7 +179,7 @@ Hoewel er een unieke parameter voor elke parameter is ingesteld moet, kunnen tot
 
 ## <a name="overriding-an-input-processing-method"></a>Invoer verwerken methode te overschrijven
 
-Elke cmdlet moet verwerken van methode invoer overschrijven, dit is meestal de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. In deze cmdlet de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode zodat een willekeurig aantal processen kan worden verwerkt door de cmdlet wordt overschreven. Het bevat een instructie Select die aanroepen van een andere methode op basis van welke parameterset de gebruiker is opgegeven.
+Elke cmdlet moet verwerken van methode invoer overschrijven, dit is meestal de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. In deze cmdlet de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode zodat een willekeurig aantal processen kan worden verwerkt door de cmdlet wordt overschreven. Het bevat een instructie Select die aanroepen van een andere methode op basis van welke parameterset de gebruiker is opgegeven.
 
 ```csharp
 protected override void ProcessRecord()

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: JEA Sessieconfiguraties
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689125"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056584"
 ---
 # <a name="jea-session-configurations"></a>JEA Sessieconfiguraties
 
@@ -60,7 +60,7 @@ U bepalen welke identiteit JEA wordt gebruikt in het configuratiebestand van de 
 
 #### <a name="local-virtual-account"></a>Lokale virtueel Account
 
-Als de rollen die worden ondersteund door dit JEA-eindpunt worden gebruikt voor het beheren van de lokale computer en een lokale administrator-account voldoende is om de opdrachten succes is uitgevoerd, moet u de JEA voor het gebruik van een lokale virtuele-account configureren.
+Als de rollen die worden ondersteund door dit JEA-eindpunt worden gebruikt voor het beheren van de lokale computer en een lokale administrator-account voldoende is om de opdrachten is uitgevoerd, moet u de JEA voor het gebruik van een lokale virtuele-account configureren.
 Virtuele accounts zijn tijdelijke accounts die uniek is voor een specifieke gebruiker en alleen de laatste voor de duur van de PowerShell-sessie.
 Op een lidserver of werkstation virtuele accounts deel uitmaken van de lokale computer **beheerders** groep en toegang hebben tot de meeste systeembronnen.
 Op een Active Directory-domeincontroller virtuele accounts deel uitmaken van het domein **Domeinadministrators** groep.
@@ -80,6 +80,7 @@ Wanneer een of meer beveiligingsgroepen is opgegeven, wordt niet langer de virtu
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > Virtuele accounts krijgen tijdelijk de aanmelden als een service rechts in het beveiligingsbeleid van de lokale server.  Als een van de opgegeven VirtualAccountGroups is al toegekend dit recht in het beleid, worden de afzonderlijke virtuele account niet meer toegevoegd en verwijderd uit het beleid.  Dit kan zijn nuttig in scenario's zoals domeincontrollers waarbij wijzigingen aan het beveiligingsbeleid voor domeincontroller nauw worden gecontroleerd.  Dit is alleen beschikbaar in Windows Server 2016 met de November 2018 of later updatepakket en Windows Server 2019 met de 2019 januari of later updatepakket.
 
@@ -104,7 +105,6 @@ gMSA-accounts moeten alleen worden gebruikt wanneer toegang tot netwerkbronnen z
 
 > [!NOTE]
 > Groep beheerde serviceaccounts zijn alleen beschikbaar in Windows PowerShell 5.1 of hoger en op domein systemen.
-
 
 #### <a name="more-information-about-run-as-users"></a>Meer informatie over run as-gebruikers
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Zoekvolgorde van rol mogelijkheid
+
 Zoals u in het bovenstaande voorbeeld, rolmogelijkheden zijn waarnaar wordt verwezen door de platte domeinnaam (bestandsnaam zonder extensie) van het bestand van de mogelijkheid rol.
 Als meerdere functie-mogelijkheden beschikbaar op het systeem met dezelfde naam platte zijn, kunnen PowerShell de impliciete zoekvolgorde wordt gebruikt om de effectieve rol mogelijkheid-bestand te selecteren.
 Het wordt **niet** toegang geven tot alle rol mogelijkheid bestanden met dezelfde naam.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Regels voor voorwaardelijke toegang zijn alleen beschikbaar in Windows PowerShell 5.1 of hoger.
 
 ### <a name="other-properties"></a>Andere eigenschappen
+
 Sessie-configuratiebestanden kunnen ook doen alles wat die een bestand van de mogelijkheid rol doen kunt, maar wel zonder de mogelijkheid om te verbinden gebruikerstoegang geven tot andere opdrachten.
 Als u wilt dat alle gebruikers toegang tot bepaalde cmdlets, functies of -providers, kunt u doen rechts in het configuratiebestand van de sessie.
 Voor een volledige lijst van ondersteunde eigenschappen in het configuratiebestand van de sessie, voert u `Get-Help New-PSSessionConfigurationFile -Full`.

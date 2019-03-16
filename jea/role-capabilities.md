@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Rolmogelijkheden JEA
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685492"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055050"
 ---
 # <a name="jea-role-capabilities"></a>Rolmogelijkheden JEA
 
@@ -58,7 +58,7 @@ De PowerShell-help-documentatie bevat enkele voorbeelden van hoe u het bestand k
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell-cmdlets en-functies
 
-Voor het autoriseren van gebruikers om uit te voeren PowerShell-cmdlets of functies toevoegen de naam van de cmdlet of functie in de velden VisbibleCmdlets of VisibleFunctions.
+Voor het autoriseren van gebruikers om uit te voeren PowerShell-cmdlets of functies toevoegen de naam van de cmdlet of functie in de velden VisibleCmdlets of VisibleFunctions.
 Als u niet zeker weet of een opdracht is een cmdlet of functie, kunt u uitvoeren `Get-Command <name>` en de eigenschap 'CommandType' in de uitvoer controleren.
 
 ```powershell
@@ -101,7 +101,6 @@ Voorbeeld                                                                       
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Kan de gebruiker om uit te voeren `My-Func` met de `Param1` parameter. Alleen "Value1" en 'Value2' kan worden opgegeven voor de parameter.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Kan de gebruiker om uit te voeren `My-Func` met de `Param1` parameter. Een willekeurige waarde beginnen met 'contoso' kan worden opgegeven voor de parameter.
 
-
 > [!WARNING]
 > Het verdient voor aanbevolen procedures voor beveiliging, geen jokertekens gebruiken bij het definiëren van zichtbaar cmdlets of functies.
 > In plaats daarvan moet u elke vertrouwde opdracht om te controleren of er worden geen andere opdrachten die de dezelfde naamgevingsschema delen per ongeluk zijn gemachtigd expliciet vermelden.
@@ -129,7 +128,7 @@ Een manier om te controleren, is met `net share`.
 Echter, zodat net.exe is zeer gevaarlijke omdat de beheerder kan net zo eenvoudig gebruik van de opdracht om te krijgen van beheerdersbevoegdheden met `net group Administrators unprivilegedjeauser /add`.
 Er is een betere benadering om toe te staan [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) die geven hetzelfde resultaat, maar een nog veel meer beperkt bereik heeft.
 
-Wanneer externe opdrachten beschikbaar maken voor gebruikers in een JEA-sessie, is altijd opgeven van het volledige pad naar het uitvoerbare bestand om te controleren of een gelijknamige (en mogelijk malicous) programma elders geplaatst op het systeem niet in plaats daarvan wordt uitgevoerd.
+Wanneer externe opdrachten beschikbaar maken voor gebruikers in een JEA-sessie, is altijd opgeven van het volledige pad naar het uitvoerbare bestand om te controleren of een gelijknamige (en mogelijk schadelijke) programma elders geplaatst op het systeem niet in plaats daarvan wordt uitgevoerd.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Toegang tot de PowerShell-providers
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Vergeet niet om toe te voegen van de naam van uw aangepaste functies voor de **VisibleFunctions** veld, zodat ze kunnen worden uitgevoerd door de JEA-gebruikers.
 
-
 De hoofdtekst (scriptblok) van aangepaste functies in de standaardmodus voor de taal voor het systeem wordt uitgevoerd en niet is onderworpen aan beperkingen voor de JEA-taal.
 Dit betekent dat functies kunnen toegang krijgen het bestandssysteem en register tot en uitvoeren van opdrachten die zijn niet zichtbaar in het bestand van de mogelijkheid rol.
 Let erop om te voorkomen waardoor arbitraire code moet worden uitgevoerd wanneer met behulp van parameters en te voorkomen dat invoer van de gebruiker rechtstreeks in de cmdlets, zoals uitvoeromleiding `Invoke-Expression`.
@@ -211,14 +209,12 @@ Zie [inzicht krijgen in een PowerShell-Module](https://msdn.microsoft.com/librar
 
 ## <a name="updating-role-capabilities"></a>Rolmogelijkheden bijwerken
 
-
 U kunt een bestand van de mogelijkheid rol op elk gewenst moment bijwerken door gewoon wijzigingen aan de rol mogelijkheid bestand worden opgeslagen.
 Een nieuwe JEA-sessies gestart nadat de mogelijkheid van de rol is bijgewerkt, verschijnt op de nieuwe mogelijkheden.
 
 Dit is de reden waarom het beheren van toegang tot de map van de mogelijkheden van rol is dus belangrijk.
 Alleen uiterst vertrouwde beheerders mogen rol mogelijkheid bestanden te wijzigen.
 Als een niet-vertrouwde gebruiker rol mogelijkheid bestanden wijzigt kan, kunnen ze eenvoudig geven zelf toegang aan de cmdlets waarmee ze zijn bevoegdheden te verhogen.
-
 
 Voor beheerders het vergrendelen van toegang tot de rolmogelijkheden wilt, zorg ervoor dat lokaal systeem, leestoegang heeft tot de rol mogelijkheid bestanden en met modules.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

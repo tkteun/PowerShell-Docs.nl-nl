@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848060"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056648"
 ---
 # <a name="format-schema-xml-reference"></a>Naslaginformatie over XML voor opmaakschema
 
@@ -81,7 +81,7 @@ De onderwerpen in deze sectie beschrijven de XML-elementen die worden gebruikt d
 
 [DefaultSettings-Element (indeling)](./defaultsettings-element-format.md) algemene instellingen die betrekking hebben op alle weergaven van de opmaak bestand definieert. Algemene instellingen omvatten weergeven van fouten, tekstterugloop in tabellen, definiëren hoe verzamelingen zijn uitgevouwen, en meer.
 
-[DisplayError-Element (Frmat)](./displayerror-element-format.md) geeft aan dat de tekenreeks #ERR wordt weergegeven wanneer er treedt een fout op bij het weergeven van een hoeveelheid gegevens.
+[DisplayError-Element (indeling)](./displayerror-element-format.md) geeft aan dat de tekenreeks #ERR wordt weergegeven wanneer er treedt een fout op bij het weergeven van een hoeveelheid gegevens.
 
 [EntrySelectedBy-Element voor CustomEntry voor besturingselementen voor de configuratie (-indeling)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) definieert de .NET-typen die gebruikmaken van de definitie van de algemene controle of de voorwaarde die moet bestaan voor dit besturingselement moet worden gebruikt. Dit element wordt gebruikt bij het definiëren van een algemene besturingselement dat kan worden gebruikt door alle weergaven in de opmaak-bestand.
 
@@ -235,7 +235,7 @@ De onderwerpen in deze sectie beschrijven de XML-elementen die worden gebruikt d
 
 [PropertyName-Element voor SelectionCondition voor GroupBy (indeling)](./propertyname-element-for-selectioncondition-for-groupby-format.md) Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd. Als deze eigenschap is aanwezig, of wanneer deze wordt geëvalueerd naar `true`, de voorwaarde wordt voldaan en de definitie wordt gebruikt. Dit element wordt gebruikt bij het definiëren van hoe een nieuwe groep objecten worden weergegeven.
 
-[PropertyName-Element voor SelectionCondition voor EmtrySelectedBy voor ListEntry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd. Als deze eigenschap is aanwezig, of wanneer deze wordt geëvalueerd naar `true`, de voorwaarde wordt voldaan en vermelding in de lijst wordt gebruikt.
+[PropertyName-Element voor SelectionCondition voor EntrySelectedBy voor ListEntry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd. Als deze eigenschap is aanwezig, of wanneer deze wordt geëvalueerd naar `true`, de voorwaarde wordt voldaan en vermelding in de lijst wordt gebruikt.
 
 [PropertyName-Element voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) Hiermee geeft u de .NET-eigenschap die de voorwaarde wordt geactiveerd. Als deze eigenschap is aanwezig, of wanneer deze wordt geëvalueerd naar `true`, de voorwaarde wordt voldaan en de vermelding in de tabel wordt gebruikt.
 
@@ -363,7 +363,7 @@ De onderwerpen in deze sectie beschrijven de XML-elementen die worden gebruikt d
 
 [TableRowEntries-Element (indeling)](./tablerowentries-element-for-tablecontrol-format.md) definieert de rijen van de tabel.
 
-[TableRowEntry-Element (indeling)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) definieert de gegevens die worden weergegeven in een rij van de tabel.
+[TableRowEntry-Element (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) definieert de gegevens die worden weergegeven in een rij van de tabel.
 
 [Tekstelement voor CustomItem voor besturingselementen voor de configuratie (-indeling)](./text-element-for-customitem-for-controls-for-configuration-format.md) geeft tekst die wordt toegevoegd aan de gegevens die worden weergegeven door het besturingselement, zoals een label, vierkante haken om de gegevens en spaties laten inspringen van de gegevens. Dit element wordt gebruikt bij het definiëren van een algemene besturingselement dat kan worden gebruikt door alle weergaven in de opmaak-bestand.
 
@@ -427,7 +427,7 @@ De onderwerpen in deze sectie beschrijven de XML-elementen die worden gebruikt d
 
 [Breedte van Element (indeling)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) bepaalt de breedte (in tekens) van een kolom.
 
-[Inpakken van Element (indeling)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) geeft aan dat de tekst die langer is dan de breedte van de kolom wordt weergegeven op de volgende regel.
+[Inpakken van Element (indeling)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) geeft aan dat de tekst die langer is dan de breedte van de kolom wordt weergegeven op de volgende regel.
 
 [WrapTables-Element (indeling)](./wraptables-element-format.md) geeft aan dat de gegevens in een cel in de tabel is verplaatst naar de volgende regel wanneer de gegevens langer dan de breedte van de kolom is.
 

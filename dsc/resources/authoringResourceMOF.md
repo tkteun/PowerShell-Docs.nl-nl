@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Een aangepaste DSC-resource met MOF schrijven
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687564"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059725"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Een aangepaste DSC-resource met MOF schrijven
 
@@ -69,7 +69,8 @@ Houd rekening met de volgende met betrekking tot de vorige code:
 
 De resource-script implementeert de logica van de resource. In deze module, moet u drie functies met de naam opnemen **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource**. Alle drie de functies neemt een parameterset die identiek is aan de set eigenschappen die zijn gedefinieerd in het MOF-schema dat u hebt gemaakt voor uw resource. In dit document, wordt deze reeks eigenschappen aangeduid als het "resource-eigenschappen." Deze drie functies in een bestand met de naam Store <ResourceName>.psm1. In het volgende voorbeeld worden de functies worden opgeslagen in een bestand met de naam Demo_IISWebsite.psm1.
 
-> **Houd er rekening mee**: Wanneer u de dezelfde configuratiescript voor uw resource meer dan één keer uitvoert, ontvangt u geen fouten en de resource moet blijven in dezelfde staat als het script is één keer uitgevoerd. U doet dit door ervoor te zorgen dat uw **Get-TargetResource** en **Test TargetResource** functies laat de bron niet gewijzigd en deze aan te roepen de **Set-TargetResource**werken meer dan één keer in een reeks met dezelfde parameter waarden is altijd gelijk is aan één keer aanroepen.
+> [!NOTE]
+> Wanneer u de dezelfde configuratiescript voor uw resource meer dan één keer uitvoert, ontvangt u geen fouten en de resource moet blijven in dezelfde staat als het script is één keer uitgevoerd. U doet dit door ervoor te zorgen dat uw **Get-TargetResource** en **Test TargetResource** functies laat de bron niet gewijzigd en deze aan te roepen de **Set-TargetResource**werken meer dan één keer in een reeks met dezelfde parameter waarden is altijd gelijk is aan één keer aanroepen.
 
 In de **Get-TargetResource** functie-implementatie, de belangrijkste resource eigenschapswaarden die zijn opgegeven als parameters gebruiken om te controleren of de status van de opgegeven resource-exemplaar. Deze functie moet een hash-tabel met een lijst met alle resource-eigenschappen als sleutels en de werkelijke waarden van deze eigenschappen als de bijbehorende waarden retourneren. De volgende code geeft een voorbeeld.
 

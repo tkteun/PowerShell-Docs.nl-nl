@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850062"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054693"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Een cmdlet maken zonder parameters
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-U ziet dat voor de klassendefinitie van de de [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) kenmerk met de syntaxis van de `[Cmdlet(verb, noun, ...)]`, wordt gebruikt voor het identificeren van deze klasse als een cmdlet. Dit is de enige vereiste kenmerk voor alle cmdlets en hierdoor kan de Windows PowerShell-runtime ze correct aanroept. U kunt instellen dat kenmerk trefwoorden voor de klasse verder declareren indien nodig. Let erop dat de kenmerkdeclaratie voor onze GetProcCommand voorbeeldklasse alleen het zelfstandig naamwoord en werkwoord namen voor de cmdlet Get-Proc declareert.
+U ziet dat voor de klassendefinitie van de de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) kenmerk met de syntaxis van de `[Cmdlet(verb, noun, ...)]`, wordt gebruikt voor het identificeren van deze klasse als een cmdlet. Dit is de enige vereiste kenmerk voor alle cmdlets en hierdoor kan de Windows PowerShell-runtime ze correct aanroept. U kunt instellen dat kenmerk trefwoorden voor de klasse verder declareren indien nodig. Let erop dat de kenmerkdeclaratie voor onze GetProcCommand voorbeeldklasse alleen het zelfstandig naamwoord en werkwoord namen voor de cmdlet Get-Proc declareert.
 
 > [!NOTE]
 > Voor alle Windows PowerShell-klassen in kenmerk overeenkomen de trefwoorden die u kunt instellen met eigenschappen van de kenmerkklasse.
@@ -78,27 +78,27 @@ U ziet dat voor de klassendefinitie van de de [System.Management.Automation.Cmdl
 Naam van de klasse van de cmdlet, is het raadzaam in overeenstemming met de cmdletnaam van de in de naam van de klasse. Om dit te doen, gebruikt u de indeling "VerbNounCommand" en 'Bewerking' en "Zelfstandig naamwoord" vervangen door het werkwoord en een zelfstandig naamwoord gebruikt in de cmdletnaam. Zoals wordt weergegeven in de vorige klassedefinitie, de voorbeeld-cmdlet Get-Proc definieert een klasse genaamd GetProcCommand, die is afgeleid van de [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) basisklasse.
 
 > [!IMPORTANT]
-> Als u wilt voor het definiëren van een cmdlet die rechtstreeks toegang heeft tot de Windows PowerShell-runtime, uw .NET-klasse moet zijn afgeleid van de [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse. Zie voor meer informatie over deze klasse [het maken van een Cmdlet die parametersets definieert](./adding-parameter-sets-to-a-cmdlet.md).
+> Als u wilt voor het definiëren van een cmdlet die rechtstreeks toegang heeft tot de Windows PowerShell-runtime, uw .NET-klasse moet zijn afgeleid van de [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) basisklasse. Zie voor meer informatie over deze klasse [het maken van een Cmdlet die parametersets definieert](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > De klasse voor een cmdlet moet expliciet gemarkeerd als openbaar. Klassen die niet zijn gemarkeerd als openbare standaard ingesteld op interne en zal niet worden gevonden door de Windows PowerShell-runtime.
 
-Windows PowerShell gebruikt de [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) naamruimte voor de cmdlet-klassen. Het verdient aanbeveling uw cmdlet-klassen in een naamruimte opdrachten van uw API-naamruimte, bijvoorbeeld xxx.PS.Commands plaatsen.
+Windows PowerShell gebruikt de [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) naamruimte voor de cmdlet-klassen. Het verdient aanbeveling uw cmdlet-klassen in een naamruimte opdrachten van uw API-naamruimte, bijvoorbeeld xxx.PS.Commands plaatsen.
 
 ## <a name="overriding-an-input-processing-method"></a>Invoer verwerken methode te overschrijven
 
 De [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasse biedt drie verwerkingsmethoden van de belangrijkste invoer, ten minste een van die de cmdlet moet overschrijven. Zie voor meer informatie over hoe Windows PowerShell records verwerkt [hoe Windows PowerShell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-Voor alle soorten invoer, de Windows PowerShell-runtime roept [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) om in te schakelen van verwerking. Als de cmdlet sommige voorverwerking of setup uitvoert moet, kunt deze dit doen door deze methode te overschrijven.
+Voor alle soorten invoer, de Windows PowerShell-runtime roept [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) om in te schakelen van verwerking. Als de cmdlet sommige voorverwerking of setup uitvoert moet, kunt deze dit doen door deze methode te overschrijven.
 
 > [!NOTE]
 > Windows PowerShell wordt de term 'record' gebruikt om te beschrijven van de set met parameterwaarden die zijn opgegeven als een cmdlet wordt aangeroepen.
 
-Als de cmdlet pijpleidinginvoer accepteert, overschrijven deze de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, en (optioneel) de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)methode. Bijvoorbeeld, een cmdlet beide methoden kan overschrijven als het verzamelt alle invoer met behulp van [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) en wordt vervolgens toegepast op de invoer als geheel in plaats van één element tegelijk, als de `Sort-Object` cmdlet is.
+Als de cmdlet pijpleidinginvoer accepteert, overschrijven deze de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, en (optioneel) de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)methode. Bijvoorbeeld, een cmdlet beide methoden kan overschrijven als het verzamelt alle invoer met behulp van [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) en wordt vervolgens toegepast op de invoer als geheel in plaats van één element tegelijk, als de `Sort-Object` cmdlet is.
 
-Als uw cmdlet pijpleidinginvoer neemt, overschrijven deze de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Houd er rekening mee dat deze methode vaak in plaats van gebruikt wordt [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) wanneer de cmdlet kan niet worden uitgevoerd op één element op een tijdstip, zoals het geval van een cmdlet sorteren.
+Als uw cmdlet pijpleidinginvoer neemt, overschrijven deze de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Houd er rekening mee dat deze methode vaak in plaats van gebruikt wordt [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) wanneer de cmdlet kan niet worden uitgevoerd op één element op een tijdstip, zoals het geval van een cmdlet sorteren.
 
-Omdat deze voorbeeld-cmdlet Get-Proc pijpleidinginvoer ontvangen moet, dit vervangt de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode en maakt gebruik van de standaard-implementaties voor [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) en [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). De [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) onderdrukking processen worden opgehaald en schrijft deze naar de opdrachtregel met behulp van de [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode.
+Omdat deze voorbeeld-cmdlet Get-Proc pijpleidinginvoer ontvangen moet, dit vervangt de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode en maakt gebruik van de standaard-implementaties voor [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) en [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). De [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) onderdrukking processen worden opgehaald en schrijft deze naar de opdrachtregel met behulp van de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - Invoer verwerken methode kan ook invoer ontvangen van het uitvoerobject van een upstream-cmdlet op de pijplijn. Zie voor meer informatie, [het maken van een Cmdlet voor het proces Pijpleidinginvoer](./adding-parameters-that-process-pipeline-input.md). Houd er rekening mee dat de cmdlet kunt invoer van een combinatie van de opdrachtregel ontvangen en pipeline-gegevensbronnen.
 
-- De downstream-cmdlet kan niet worden geretourneerd gedurende een lange periode of helemaal niet. Om die reden, de verwerking van de methode in uw cmdlet invoer moet niet vergrendelingen hebben tijdens het aanroepen van [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), met name vergrendelingen waarvoor het bereik het cmdlet-exemplaar overschrijdt.
+- De downstream-cmdlet kan niet worden geretourneerd gedurende een lange periode of helemaal niet. Om die reden, de verwerking van de methode in uw cmdlet invoer moet niet vergrendelingen hebben tijdens het aanroepen van [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), met name vergrendelingen waarvoor het bereik het cmdlet-exemplaar overschrijdt.
 
 > [!IMPORTANT]
 > Cmdlets moet nooit aanroepen [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) of een equivalent daarvan.
 
-- Uw cmdlet hebt objectvariabelen opschonen na afloop verwerken (bijvoorbeeld, als het openen van de schuifknop van een bestand van de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en houdt de ingang voor gebruik door openen.[ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Het is belangrijk te onthouden dat de Windows PowerShell-runtime niet altijd aanroepen de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode, waarmee de object-opschoning moet uitvoeren.
+- Uw cmdlet hebt objectvariabelen opschonen na afloop verwerken (bijvoorbeeld, als het openen van de schuifknop van een bestand van de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en houdt de ingang voor gebruik door openen.[ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Het is belangrijk te onthouden dat de Windows PowerShell-runtime niet altijd aanroepen de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode, waarmee de object-opschoning moet uitvoeren.
 
-Bijvoorbeeld, [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kan niet worden aangeroepen als de cmdlet halverwege wordt geannuleerd of als een afsluitende fout in een deel van de cmdlet optreedt. Daarom een cmdlet waarvoor de object-opschoning moet implementeren de volledige [System.Idisposable](/dotnet/api/System.IDisposable) patroon, waaronder de finalizer, zodat de runtime beide aanroepen kan [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) aan het einde van de verwerking.
+Bijvoorbeeld, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kan niet worden aangeroepen als de cmdlet halverwege wordt geannuleerd of als een afsluitende fout in een deel van de cmdlet optreedt. Daarom een cmdlet waarvoor de object-opschoning moet implementeren de volledige [System.IDisposable](/dotnet/api/System.IDisposable) patroon, waaronder de finalizer, zodat de runtime beide aanroepen kan [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) aan het einde van de verwerking.
 
 ## <a name="code-sample"></a>Voorbeeld van code
 

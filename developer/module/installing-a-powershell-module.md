@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851126"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059776"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
 
@@ -160,7 +160,7 @@ Het installatieprogramma van de module Fabrikam voegt om in te schakelen van de 
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Wanneer deze stappen voltooid zijn, de **ListAvailable** parameter van de [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) -cmdlet krijgt u beide modules voor Fabrikam. Als u wilt importeren in een bepaalde module, gebruikt u de `MiminumVersion` of `RequiredVersion` parameters van de [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
+Wanneer deze stappen voltooid zijn, de **ListAvailable** parameter van de [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) -cmdlet krijgt u beide modules voor Fabrikam. Als u wilt importeren in een bepaalde module, gebruikt u de `MinimumVersion` of `RequiredVersion` parameters van de [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.
 
 Als beide modules zijn geïmporteerd in dezelfde sessie en de modules cmdlets met dezelfde namen bevatten, gelden de cmdlets die laatste worden geïmporteerd in de sessie.
 

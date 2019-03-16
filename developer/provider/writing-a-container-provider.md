@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848424"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056461"
 ---
 # <a name="writing-a-container-provider"></a>Een containerprovider schrijven
 
@@ -44,7 +44,7 @@ Declareer de provider worden afgeleid van de [System.Management.Automation.Provi
 
 ### <a name="implementing-getchilditems"></a>GetChildItems implementeren
 
-De PowerShell-engine roept de [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) methode wanneer een gebruiker roept de [Microsoft.Powershell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) de cmdlet. Deze methode haalt de items die zijn van de onderliggende objecten van het item in het opgegeven pad.
+De PowerShell-engine roept de [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) de cmdlet. Deze methode haalt de items die zijn van de onderliggende objecten van het item in het opgegeven pad.
 
 In het voorbeeld van Access-database, het gedrag van de [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) methode is afhankelijk van het type van het opgegeven item. Als het item het station is, klikt u vervolgens de onderliggende tabellen zijn en de methode retourneert de set met tabellen uit de database. Als het opgegeven item een tabel is, worden de rijen van de tabel met de onderliggende objecten. Als het item een rij is, klikt u vervolgens het heeft geen onderliggende items en de methode retourneert alleen die rij. Alle onderliggende items worden verzonden naar de PowerShell-engine door de [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) methode.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Nieuw item implementeren
 
-De [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) methode maakt u een nieuw item van het opgegeven type in het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.Powershell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
+De [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) methode maakt u een nieuw item van het opgegeven type in het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) cmdlet.
 
 In dit voorbeeld wordt de methode geïmplementeerd logica om te bepalen of het pad en het type overeenkomen. Dat wil zeggen, alleen een tabel direct onder het station (de database) kan worden gemaakt, en alleen een rij kan worden gemaakt onder een tabel. Als het opgegeven pad en de type-item op deze manier niet overeenkomen, wordt in de methode een uitzondering genereert.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>CopyItem implementeren
 
-De [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) het opgegeven item worden gekopieerd naar het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.Powershell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Deze methode kan ook worden recursieve, kopieert alle van de onderliggende items naast het item zelf.
+De [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) het opgegeven item worden gekopieerd naar het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) cmdlet. Deze methode kan ook worden recursieve, kopieert alle van de onderliggende items naast het item zelf.
 
 Net als de [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) methode, deze methode voert logica om ervoor te zorgen dat het opgegeven item is van het juiste type voor het pad waarop deze wordt gekopieerd. Bijvoorbeeld, als het doelpad een tabel is, moet het item dat moet worden gekopieerd een rij.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>RemoveItem implementeren
 
-De [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) methode verwijdert het item in het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.Powershell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
+De [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) methode verwijdert het item in het opgegeven pad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

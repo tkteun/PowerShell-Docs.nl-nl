@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846667"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055645"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Een Windows PowerShell-stationprovider maken
 
@@ -61,7 +61,7 @@ Zoals beschreven in [ontwerp van uw Windows PowerShell-Provider](./designing-you
 
 Alle Windows PowerShell-providers worden beschouwd als staatloze items, wat betekent dat uw provider station moet maken van alle informatie over de status die nodig is voor door de Windows PowerShell-runtime wordt uw provider.
 
-Voor deze provider station bevat informatie over de status de verbinding met de database die als onderdeel van de stationsinformatie wordt bijgehouden. Dit is de code die laat hoe deze gegevens worden opgeslagen zien de [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station wordt beschreven:
+Voor deze provider station bevat informatie over de status de verbinding met de database die als onderdeel van de stationsinformatie wordt bijgehouden. Dit is de code die laat hoe deze gegevens worden opgeslagen zien de [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station wordt beschreven:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Als u wilt toestaan dat de Windows PowerShell-runtime maken van een station, de 
 
 Het onderdrukken van deze methode moet het volgende doen:
 
-- Controleer de [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) lid bestaat en dat een verbinding met het gegevensarchief kan worden uitgevoerd.
+- Controleer de [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) lid bestaat en dat een verbinding met het gegevensarchief kan worden uitgevoerd.
 
 - Een station maken en vullen van het lid van de verbinding, ter ondersteuning van de `New-PSDrive` cmdlet.
 
-- Valideer de [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object voor het voorgestelde station.
+- Valideer de [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object voor het voorgestelde station.
 
-- Wijzig de [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object met de beschrijving van het station met de vereiste prestaties of betrouwbaarheid informatie of het bieden van extra gegevens voor bellers met behulp van het station.
+- Wijzig de [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) object met de beschrijving van het station met de vereiste prestaties of betrouwbaarheid informatie of het bieden van extra gegevens voor bellers met behulp van het station.
 
-- Afhandelen van fouten met behulp van de [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) methode en vervolgens terug `null`.
+- Afhandelen van fouten met behulp van de [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) methode en vervolgens terug `null`.
 
   Deze methode retourneert een van beide de stationsinformatie die is doorgegeven aan de methode of een provider-versie van het.
 

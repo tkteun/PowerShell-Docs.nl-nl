@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845722"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055084"
 ---
 # <a name="cmdlet-class-declaration"></a>Declaratie van cmdlet-klassen
 
 Een Microsoft .NET Framework-klasse is gedeclareerd als een cmdlet door op te geven de **Cmdlet** kenmerk, zoals metagegevens voor de klasse. (De **Cmdlet** kenmerk is de enige vereiste kenmerk voor alle cmdlets). Wanneer u opgeeft de **Cmdlet** kenmerk, moet u het werkwoord-en-zelfstandig naamwoord paar die de cmdlet voor de gebruiker identificeert. Daarnaast moet u de Windows PowerShell-functionaliteit die ondersteuning biedt voor de cmdlet beschrijft. Voor meer informatie over de syntaxis van de declaratie die wordt gebruikt om op te geven de **Cmdlet** kenmerk, Zie [Cmdlet kenmerkdeclaratie](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> De **Cmdlet** kenmerk wordt gedefinieerd door de [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasse. De eigenschappen van deze klasse komen overeen met de declaratie-parameters die worden gebruikt wanneer u het kenmerk declareren.
+> De **Cmdlet** kenmerk wordt gedefinieerd door de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasse. De eigenschappen van deze klasse komen overeen met de declaratie-parameters die worden gebruikt wanneer u het kenmerk declareren.
 
 ## <a name="nouns"></a>Zelfstandige naamwoorden
 
@@ -57,7 +57,7 @@ Wanneer u cmdlets naam, gebruikt u Pascal hoofdlettergebruik. Bijvoorbeeld, de `
 
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute declaratie](./cmdlet-attribute-declaration.md)
 

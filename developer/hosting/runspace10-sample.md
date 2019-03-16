@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
-ms.openlocfilehash: eb3624bea589e2ab0d7b4f76874e073b942c001f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851119"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059504"
 ---
 # <a name="runspace10-sample"></a>Voorbeeld Runspace10
 
@@ -37,7 +37,7 @@ In dit voorbeeld ziet u het volgende.
 
 - De opdracht toe te voegen aan de pijplijn van de [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
-- Uitpakken van de eigenschappen van de [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.
+- Uitpakken van de eigenschappen van de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.
 
 ## <a name="example"></a>Voorbeeld
 

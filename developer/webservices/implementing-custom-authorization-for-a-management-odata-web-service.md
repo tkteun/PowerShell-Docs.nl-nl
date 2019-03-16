@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851420"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057889"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Aangepaste autorisatie implementeren voor een Management OData-webservice
 
-Een derde partij te implementeren met behulp van de Windows PowerShell-webservice vereist de [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface om beschikbaar te stellen van Windows PowerShell-cmdlets. Deze interface voert gebruikersautorisatie met de webservice. Na het schrijven van de code voor het implementeren van de interface, moet u het compileren in een DLL-bestand moet worden gebruikt in de web-App.
+Een derde partij te implementeren met behulp van de Windows PowerShell-webservice vereist de [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface om beschikbaar te stellen van Windows PowerShell-cmdlets. Deze interface voert gebruikersautorisatie met de webservice. Na het schrijven van de code voor het implementeren van de interface, moet u het compileren in een DLL-bestand moet worden gebruikt in de web-App.
 
 ## <a name="pass-through-authorization"></a>Pass through-verificatie
 
-De eenvoudigste manier voor het implementeren van de [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is een Pass Through-implementatie die alle gebruikers worden geautoriseerd. In dit voorbeeld biedt geen beveiliging en s alleen beschikbaar als een llustration van hoe u de interface te implementeren. Een implementatie van de [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface moet twee methoden overschrijven: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In dit voorbeeld wordt de [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) retourneert altijd de **System.Security.Principal.WindowsIdentity** object dat is gekoppeld aan de huidige gebruiker .
+De eenvoudigste manier voor het implementeren van de [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is een Pass Through-implementatie die alle gebruikers worden geautoriseerd. In dit voorbeeld biedt geen beveiliging en s alleen beschikbaar als een afbeelding van hoe u de interface te implementeren. Een implementatie van de [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface moet twee methoden overschrijven: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In dit voorbeeld wordt de [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) retourneert altijd de **System.Security.Principal.WindowsIdentity** object dat is gekoppeld aan de huidige gebruiker.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Autorisatie op basis van rollen
 
-Het volgende voorbeeld wordt een autorisatiebeleid op basis van rollen voor geïmplementeerd. Het beleid is gedefinieerd in een XML-bestand dat zich in de map van het hoofdvenster van de toepassing met het bestand web.config bevindt en MOF- en XML-toewijzing van schema-bestanden. Zie voor meer informatie over het configureren van het bestand met autorisatieregels schema [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md). Het eerste deel van het voorbeeld implementeert de [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methoden. In dit geval de interfacemethoden methoden aanroepen de `RbacSystem` klasse (hieronder gedefinieerd) die daadwerkelijk werken van de machtigingen voor de gebruiker controleren.
+Het volgende voorbeeld wordt een autorisatiebeleid op basis van rollen voor geïmplementeerd. Het beleid is gedefinieerd in een XML-bestand dat zich in de map van het hoofdvenster van de toepassing met het bestand web.config bevindt en MOF- en XML-toewijzing van schema-bestanden. Zie voor meer informatie over het configureren van het bestand met autorisatieregels schema [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md). Het eerste deel van het voorbeeld implementeert de [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methoden. In dit geval de interfacemethoden methoden aanroepen de `RbacSystem` klasse (hieronder gedefinieerd) die daadwerkelijk werken van de machtigingen voor de gebruiker controleren.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Ten slotte de klasse RbacSystem implementeert voor methoden die het werk van de machtigingen voor de gebruiker controleren en de autorisatiestatus van de terug naar de methoden die zijn gedefinieerd in de implementatie van de [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.
+Ten slotte de klasse RbacSystem implementeert voor methoden die het werk van de machtigingen voor de gebruiker controleren en de autorisatiestatus van de terug naar de methoden die zijn gedefinieerd in de implementatie van de [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.

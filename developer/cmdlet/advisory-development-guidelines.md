@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845792"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056563"
 ---
 # <a name="advisory-development-guidelines"></a>Geadviseerde richtlijnen voor de ontwikkeling
 
@@ -61,7 +61,7 @@ Bijvoorbeeld, de [Remove-Item](/powershell/module/microsoft.powershell.managemen
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Referenties via Windows PowerShell (AD03) verwerken
 
-Er moet een cmdlet definieert een `Credential` parameter vertegenwoordigt referenties. Deze parameter moet van het type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) en moet worden gedefinieerd met behulp van een verklaring van referentie-kenmerk. Deze ondersteuning wordt de gebruiker voor de gebruikersnaam, het wachtwoord of voor beide automatisch gevraagd als een volledige referentie niet rechtstreeks wordt opgegeven. Zie voor meer informatie over het kenmerk referentie [referentie kenmerkdeclaratie](./credential-attribute-declaration.md).
+Er moet een cmdlet definieert een `Credential` parameter vertegenwoordigt referenties. Deze parameter moet van het type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) en moet worden gedefinieerd met behulp van een verklaring van referentie-kenmerk. Deze ondersteuning wordt de gebruiker voor de gebruikersnaam, het wachtwoord of voor beide automatisch gevraagd als een volledige referentie niet rechtstreeks wordt opgegeven. Zie voor meer informatie over het kenmerk referentie [referentie kenmerkdeclaratie](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Ondersteuning voor codering Parameters (AD04)
 
@@ -89,17 +89,17 @@ Als u de .NET Framework-klasse die een cmdlet, naam van de klasse '*\<werkwoord 
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Als er geen Pijpleidinginvoer de methode BeginProcessing (AC02 overschrijft)
 
-Als de cmdlet geen invoer van de pijplijn accepteert, verwerking moet worden geïmplementeerd in de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode. Gebruik van deze methode kunt Windows PowerShell om te onderhouden tussen cmdlets te bestellen. De eerste cmdlet in de pijplijn retourneert altijd de objecten voordat de resterende cmdlets in de pijplijn krijgen de kans om te beginnen de verwerking.
+Als de cmdlet geen invoer van de pijplijn accepteert, verwerking moet worden geïmplementeerd in de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode. Gebruik van deze methode kunt Windows PowerShell om te onderhouden tussen cmdlets te bestellen. De eerste cmdlet in de pijplijn retourneert altijd de objecten voordat de resterende cmdlets in de pijplijn krijgen de kans om te beginnen de verwerking.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Voor het afhandelen van overschrijft verzoeken stoppen de StopProcessing-methode (AC03)
 
-Overschrijf de [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) methode zodat uw cmdlet stopsignaal kan verwerken. Sommige cmdlets erg lang duren om de bewerking te voltooien en ze laat een lange periode tussen aanroepen naar de Windows PowerShell-runtime, zoals wanneer de cmdlet Hiermee blokkeert u de thread in langlopende RPC-aanroepen. Dit bevat cmdlets die naar aanroepen de [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode, naar de [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode, en andere feedback mechanismen die erg lang duren kunnen om uit te voeren. Voor deze gevallen moet de gebruiker mogelijk een stopsignaal verzenden naar deze cmdlets.
+Overschrijf de [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) methode zodat uw cmdlet stopsignaal kan verwerken. Sommige cmdlets erg lang duren om de bewerking te voltooien en ze laat een lange periode tussen aanroepen naar de Windows PowerShell-runtime, zoals wanneer de cmdlet Hiermee blokkeert u de thread in langlopende RPC-aanroepen. Dit bevat cmdlets die naar aanroepen de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode, naar de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode, en andere feedback mechanismen die erg lang duren kunnen om uit te voeren. Voor deze gevallen moet de gebruiker mogelijk een stopsignaal verzenden naar deze cmdlets.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>De IDisposable-Interface (AC04) implementeren
 
-Als uw cmdlet objecten die niet worden verwijderd van (geschreven naar de pijplijn heeft) door de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, uw cmdlet mogelijk extra object verwijdering. Bijvoorbeeld, als de cmdlet wordt geopend de schuifknop van een bestand van de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en houdt de ingang openen voor gebruik door de [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, deze ingang heeft aan het einde van de verwerking wordt gesloten.
+Als uw cmdlet objecten die niet worden verwijderd van (geschreven naar de pijplijn heeft) door de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, uw cmdlet mogelijk extra object verwijdering. Bijvoorbeeld, als de cmdlet wordt geopend de schuifknop van een bestand van de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en houdt de ingang openen voor gebruik door de [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, deze ingang heeft aan het einde van de verwerking wordt gesloten.
 
-De Windows PowerShell-runtime niet altijd aanroepen de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Bijvoorbeeld, de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode kan niet worden aangeroepen als de cmdlet halverwege via de bewerking is geannuleerd of als een afsluitende fout in een deel van de cmdlet optreedt. Daarom de .NET Framework-klasse voor een cmdlet waarvoor object opschoning moet implementeren de volledige [System.Idisposable](/dotnet/api/System.IDisposable) interface-patroon, waaronder de finalizer, zodat de Windows PowerShell-runtime kunt roept de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking.
+De Windows PowerShell-runtime niet altijd aanroepen de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Bijvoorbeeld, de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode kan niet worden aangeroepen als de cmdlet halverwege via de bewerking is geannuleerd of als een afsluitende fout in een deel van de cmdlet optreedt. Daarom de .NET Framework-klasse voor een cmdlet waarvoor object opschoning moet implementeren de volledige [System.IDisposable](/dotnet/api/System.IDisposable) interface-patroon, waaronder de finalizer, zodat de Windows PowerShell-runtime kunt roept de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Serialisatie-vriendelijk parametertypen (AC05) gebruiken
 
@@ -117,7 +117,7 @@ Ingebouwde rehydratable typen:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

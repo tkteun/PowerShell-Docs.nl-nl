@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851798"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056256"
 ---
 # <a name="examples-of-cmdlet-code"></a>Voorbeelden van cmdlet-code
 
@@ -38,7 +38,7 @@ In deze sectie bevat voorbeelden van de cmdlet-code die u gebruiken kunt om te b
 
 [Het onderdrukken van invoer verwerkingsmethoden](./how-to-override-input-processing-methods.md) deze voorbeelden ziet u de basisstructuur gebruikt voor het overschrijven van de methoden BeginProcessing ProcessRecord en EndProcessing.
 
-[Hoe u ondersteuningsaanvragen shouldprocess wordt overgeslagen](./how-to-request-confirmations.md) dit voorbeeld laat zien hoe de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)methoden moeten worden aangeroepen vanuit een cmdlet.
+[Hoe u ondersteuningsaanvragen shouldprocess wordt overgeslagen](./how-to-request-confirmations.md) dit voorbeeld laat zien hoe de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden moeten worden aangeroepen vanuit een cmdlet.
 
 [Hoe u ondersteuning voor transacties](./how-to-support-transactions.md) dit voorbeeld laat zien hoe u om aan te geven dat de cmdlet biedt ondersteuning voor transacties en het implementeren van de actie die moet worden uitgevoerd wanneer de cmdlet wordt gebruikt binnen een transactie.
 

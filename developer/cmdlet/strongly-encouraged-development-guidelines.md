@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794966"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057719"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Zeer aangeraden richtlijnen voor de ontwikkeling
 
@@ -101,7 +101,7 @@ Wanneer dezelfde parameter wordt gebruikt door meerdere cmdlets, moet u altijd h
 
 #### <a name="parameters-that-take-true-and-false"></a>Parameters die True en False
 
-Als de parameter alleen wordt `true` en `false`, definieert u de parameter als type [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Een switch-parameter wordt beschouwd als `true` wanneer deze is opgegeven in een opdracht. Als de parameter niet is opgenomen in een opdracht, Windows PowerShell rekening gehouden met de waarde van de parameter `false`. Definieer geen Booleaanse parameters.
+Als de parameter alleen wordt `true` en `false`, definieert u de parameter als type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Een switch-parameter wordt beschouwd als `true` wanneer deze is opgegeven in een opdracht. Als de parameter niet is opgenomen in een opdracht, Windows PowerShell rekening gehouden met de waarde van de parameter `false`. Definieer geen Booleaanse parameters.
 
 Als de parameter moet onderscheid maken tussen de 3 waarden: $true, $false en 'Onbekende', definieert u een parameter van het type null-waarden bevatten\<bool >.  De noodzaak voor een 3rd 'Onbekende' waarde treedt meestal op wanneer de cmdlet een Boole-eigenschap van een object kunt wijzigen. In dit geval 'Onbekende' betekent dat de huidige waarde van de eigenschap niet wijzigen.
 
@@ -111,7 +111,7 @@ Gebruikers moeten vaak dezelfde bewerking op basis van meerdere argumenten uitvo
 
 #### <a name="support-the-passthru-parameter"></a>Ondersteuning voor de Parameter PassThru gebruikt
 
-Standaard veel cmdlets die wijzigen het systeem, zoals de [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, fungeren als 'sinks' voor objecten en geen resultaat geretourneerd. Deze cmdlet moet implementeren de `PassThru` parameter om af te dwingen van de cmdlet om een object te retourneren. Wanneer de `PassThru` parameter is opgegeven, wordt de cmdlet retourneert een object met behulp van een aanroep naar de [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode. Bijvoorbeeld de volgende opdracht wordt het proces Calc beëindigd en wordt het resulterende proces doorgegeven aan de pijplijn.
+Standaard veel cmdlets die wijzigen het systeem, zoals de [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet, fungeren als 'sinks' voor objecten en geen resultaat geretourneerd. Deze cmdlet moet implementeren de `PassThru` parameter om af te dwingen van de cmdlet om een object te retourneren. Wanneer de `PassThru` parameter is opgegeven, wordt de cmdlet retourneert een object met behulp van een aanroep naar de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode. Bijvoorbeeld de volgende opdracht wordt het proces Calc beëindigd en wordt het resulterende proces doorgegeven aan de pijplijn.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ De Windows PowerShell-runtime kan een gebruiker kunt u opgeven hoe voor het afha
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Ondersteuning voor de WriteWarning, WriteVerbose en WriteDebug methoden
 
-Er moet een cmdlet aanroepen de [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode wanneer de cmdlet wordt een bewerking die mogelijk een onbedoelde resultaat. Bijvoorbeeld, een cmdlet moet deze methode niet aanroepen als de cmdlet is een alleen-lezenbestand overschrijven.
+Er moet een cmdlet aanroepen de [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode wanneer de cmdlet wordt een bewerking die mogelijk een onbedoelde resultaat. Bijvoorbeeld, een cmdlet moet deze methode niet aanroepen als de cmdlet is een alleen-lezenbestand overschrijven.
 
-Er moet een cmdlet aanroepen de [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode als voor de gebruiker is vereist voor sommige details over de cmdlet wordt uitgevoerd. Bijvoorbeeld, een cmdlet die deze informatie moet aanroepen, als de auteur van de cmdlet vindt dat er scenario's die mogelijk meer informatie zijn over de cmdlet wordt uitgevoerd.
+Er moet een cmdlet aanroepen de [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode als voor de gebruiker is vereist voor sommige details over de cmdlet wordt uitgevoerd. Bijvoorbeeld, een cmdlet die deze informatie moet aanroepen, als de auteur van de cmdlet vindt dat er scenario's die mogelijk meer informatie zijn over de cmdlet wordt uitgevoerd.
 
-De cmdlet moet aanroepen de [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode wanneer u een developer- of ondersteuningsmedewerker moet begrijpen wat de cmdlet-bewerking is beschadigd. Het is niet nodig voor de cmdlet om aan te roepen de [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode in dezelfde code roept de [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode omdat de `Debug` parameter geeft u beide sets met informatie.
+De cmdlet moet aanroepen de [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode wanneer u een developer- of ondersteuningsmedewerker moet begrijpen wat de cmdlet-bewerking is beschadigd. Het is niet nodig voor de cmdlet om aan te roepen de [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode in dezelfde code roept de [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode omdat de `Debug` parameter geeft u beide sets met informatie.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Ondersteuning voor WriteProgress voor bewerkingen die lange tijd duren
 
-Bewerkingen van de cmdlet die duurt lang duren om uit te voeren en die kan niet worden uitgevoerd op de achtergrond moet ondersteunen voortgangsrapportage via periodieke aanroepen naar de [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) methode.
+Bewerkingen van de cmdlet die duurt lang duren om uit te voeren en die kan niet worden uitgevoerd op de achtergrond moet ondersteunen voortgangsrapportage via periodieke aanroepen naar de [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) methode.
 
 #### <a name="use-the-host-interfaces"></a>Gebruik van de hostinterfaces
 
-Af en toe een cmdlet moet communiceren rechtstreeks met de gebruiker in plaats van met behulp van de verschillende schrijven, of moeten de methoden die worden ondersteund door de [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasse. In dit geval wordt de cmdlet moet zijn afgeleid van de [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasse en het gebruik van de [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) eigenschap. Deze eigenschap ondersteunt verschillende niveaus van het communicatietype, met inbegrip van de typen PromptForChoice-Prompt en WriteLine/ReadLine. Op het meest specifiek niveau, het biedt ook manieren om te lezen en schrijven van afzonderlijke sleutels en buffers zijn getroffen.
+Af en toe een cmdlet moet communiceren rechtstreeks met de gebruiker in plaats van met behulp van de verschillende schrijven, of moeten de methoden die worden ondersteund door de [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasse. In dit geval wordt de cmdlet moet zijn afgeleid van de [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasse en het gebruik van de [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) eigenschap. Deze eigenschap ondersteunt verschillende niveaus van het communicatietype, met inbegrip van de typen PromptForChoice-Prompt en WriteLine/ReadLine. Op het meest specifiek niveau, het biedt ook manieren om te lezen en schrijven van afzonderlijke sleutels en buffers zijn getroffen.
 
-Tenzij een cmdlet is speciaal ontworpen voor het genereren van een grafische gebruikersinterface (GUI), moet deze de host niet overslaan met behulp van de [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) eigenschap. Een voorbeeld van een cmdlet die is ontworpen voor het genereren van een GUI is de [Out GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
+Tenzij een cmdlet is speciaal ontworpen voor het genereren van een grafische gebruikersinterface (GUI), moet deze de host niet overslaan met behulp van de [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) eigenschap. Een voorbeeld van een cmdlet die is ontworpen voor het genereren van een GUI is de [Out GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet.
 
 > [!NOTE]
 > Cmdlets gebruik niet de [System.Console](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Als de cmdlet kan de gebruiker een bestand of een gegevensbron op te geven, moet
 
 Als de gegevens die de cmdlet leest of schrijft om te worden van een bestand is, wordt de cmdlet Windows PowerShell pad invoer accepteren moet en moet worden gebruikt door de cmdlet de [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) eigenschap voor de omzetting van de Windows PowerShell-paden in de paden die door het bestandssysteem herkend. De specifieke mechanismen zijn onder andere de volgende methoden:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Als de gegevens die de cmdlet leest of schrijft alleen is een reeks tekenreeksen in plaats van een bestand, de cmdlet moet gebruiken de gegevens van de provider-inhoud (`Content` lid) te lezen en schrijven. Deze informatie wordt opgehaald uit de [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) eigenschap. Deze mechanismen kunnen andere gegevensarchieven deel te nemen aan het lezen en schrijven van gegevens.
+Als de gegevens die de cmdlet leest of schrijft alleen is een reeks tekenreeksen in plaats van een bestand, de cmdlet moet gebruiken de gegevens van de provider-inhoud (`Content` lid) te lezen en schrijven. Deze informatie wordt opgehaald uit de [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) eigenschap. Deze mechanismen kunnen andere gegevensarchieven deel te nemen aan het lezen en schrijven van gegevens.
 
 #### <a name="support-wildcard-characters"></a>Ondersteuning voor jokertekens
 
@@ -206,11 +206,11 @@ Als u het ontwerpen van een object voor een cmdlet, zorgt u ervoor dat de leden 
 
 Bestaande .NET Framework-objecten die worden geretourneerd door cmdlets ontbreken enkele belangrijke of handige leden die nodig zijn voor het script developer of de gebruiker vaak. Deze ontbrekende leden kunnen zich met name belangrijk om weer te geven en voor het maken van het lid van de juiste namen zodat het object correct kan worden doorgegeven aan de pijplijn. Maak een aangepaste Types.ps1xml-bestand om deze vereiste leden. Wanneer u dit bestand maakt, wordt aangeraden de volgende naamconventie gebruikt: *< Your_Product_Name >*. Types.ps1xml.
 
-Bijvoorbeeld zou u een `Mode` script eigenschap in op de [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) om de kenmerken van een bestand duidelijker weer te geven. Bovendien zou u een `Count` alias-eigenschap op de [System.Array](/dotnet/api/System.Array) type om het consistent gebruik van de naam van die eigenschap (in plaats van `Length`).
+Bijvoorbeeld zou u een `Mode` script eigenschap in op de [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) om de kenmerken van een bestand duidelijker weer te geven. Bovendien zou u een `Count` alias-eigenschap op de [System.Array](/dotnet/api/System.Array) type om het consistent gebruik van de naam van die eigenschap (in plaats van `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>De interface van de IComparable
 
-Implementeer een [System.Icomparable](/dotnet/api/System.IComparable) -interface op alle objecten van de uitvoer. Hiermee wordt de uitvoer-objecten voor eenvoudig worden doorgesluisd naar verschillende sorteer- en analyse-cmdlets.
+Implementeer een [System.IComparable](/dotnet/api/System.IComparable) -interface op alle objecten van de uitvoer. Hiermee wordt de uitvoer-objecten voor eenvoudig worden doorgesluisd naar verschillende sorteer- en analyse-cmdlets.
 
 ##### <a name="update-display-information"></a>Weergave-informatie bijwerken
 
@@ -230,11 +230,11 @@ Een parameter accepteert invoer van de pijplijn als de **Parameter** kenmerk bev
 
 #### <a name="support-the-processrecord-method"></a>Ondersteuning voor de methode ProcessRecord
 
-Voor het accepteren van alle records uit de vorige cmdlet in de pijplijn de cmdlet moet worden geïmplementeerd de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. Windows PowerShell wordt deze methode meerdere keren één keer voor elke record die wordt verzonden aan uw cmdlet.
+Voor het accepteren van alle records uit de vorige cmdlet in de pijplijn de cmdlet moet worden geïmplementeerd de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode. Windows PowerShell wordt deze methode meerdere keren één keer voor elke record die wordt verzonden aan uw cmdlet.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Schrijven van afzonderlijke Records aan de pijplijn (SC03)
 
-Wanneer een cmdlet objecten retourneert, de cmdlet moet worden gebruikt voor het schrijven van de objecten onmiddellijk nadat ze zijn gegenereerd. De cmdlet moet ze niet bevatten om ze in een gecombineerde matrix van de buffer. De cmdlets die de objecten worden weergegeven als invoer wordt vervolgens mogelijk zijn om te verwerken, weergeven, of verwerken en de uitvoer-objecten onmiddellijk weergegeven. Een cmdlet die uitvoer genereert objecten één voor één moet aanroepen de [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode. Een cmdlet die objecten uitvoer gegenereerd in batches (bijvoorbeeld, omdat een onderliggende API een matrix met objecten van de uitvoer retourneert) moet aanroepen de [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) met de tweede parameter is ingesteld naar `true`.
+Wanneer een cmdlet objecten retourneert, de cmdlet moet worden gebruikt voor het schrijven van de objecten onmiddellijk nadat ze zijn gegenereerd. De cmdlet moet ze niet bevatten om ze in een gecombineerde matrix van de buffer. De cmdlets die de objecten worden weergegeven als invoer wordt vervolgens mogelijk zijn om te verwerken, weergeven, of verwerken en de uitvoer-objecten onmiddellijk weergegeven. Een cmdlet die uitvoer genereert objecten één voor één moet aanroepen de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode. Een cmdlet die objecten uitvoer gegenereerd in batches (bijvoorbeeld, omdat een onderliggende API een matrix met objecten van de uitvoer retourneert) moet aanroepen de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) met de tweede parameter is ingesteld naar `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Controleer de Cmdlets niet hoofdlettergevoelig en (SC04) met een aanvraag te behouden
 

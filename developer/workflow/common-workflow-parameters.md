@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846905"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054795"
 ---
 # <a name="common-workflow-parameters"></a>Veelvoorkomende werkstroomparameters
 
@@ -26,7 +26,7 @@ De algemene werkstroomparameters zijn ondergebracht in verschillende categorieë
 |Naam|Type|Description|Kan worden opgegeven door de eindgebruiker tijdens de uitvoering?|Kan worden opgegeven door de auteur van de werkstroom tijdens het ontwerpen?|Kan worden opgegeven door de auteur van de werkstroom op instantiëring?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|Een lijst met computernamen waarvoor u taken starten.|Ja|Ja|Ja|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|De verificatiereferentie op die moet gebruiken om aan te melden op de computers die zijn opgegeven door de parameter PSComputerName. Deze parameter is alleen geldig als PSComputerName is opgegeven.|Ja|Ja|Ja|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|De verificatiereferentie op die moet gebruiken om aan te melden op de computers die zijn opgegeven door de parameter PSComputerName. Deze parameter is alleen geldig als PSComputerName is opgegeven.|Ja|Ja|Ja|
 |PSPort|UInt32|De poort moet worden gebruikt om uit te voeren van de werkstroom.|Ja|Ja|Ja|
 |PSUseSSL|Booleaanse waarde|Secure Sockets Layer (SSL)-protocol gebruiken om te maken van een beveiligde verbinding met de externe computer voor het uitvoeren van de werkstroom.|Ja|Ja|Ja|
 |PSConfigurationName|Tekenreeks|De sessieconfiguratie gebruikt voor het uitvoeren van de werkstroom.|Ja|Ja|Ja|

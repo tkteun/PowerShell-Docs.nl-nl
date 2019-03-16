@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Het maken en publiceren van een item
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684358"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055475"
 ---
 # <a name="creating-and-publishing-an-item"></a>Het maken en publiceren van een item
 
@@ -75,7 +75,7 @@ Er zijn een paar hulpprogramma's die u uitvoeren op basis van uw code wilt voor 
 Als de manifest-gegevens in uw item kan niet worden gelezen door de PowerShell Gallery-infrastructuur, wordt het niet mogelijk om te publiceren.
 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) wordt catch veelvoorkomende problemen die kan leiden de module dat ertoe kan niet worden gebruikt wanneer deze is geïnstalleerd. Deze moet worden uitgevoerd voor elke module voordat u publiceert naar de PowerShell Gallery.
 
-Evenzo, [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) valideert de metagegevens in een script, en moeten worden uitgevoerd op elk script (gepubliceerde is gescheiden van een module) voordat u publiceert naar de Powershell Gallery.
+Evenzo, [Test ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) valideert de metagegevens in een script, en moeten worden uitgevoerd op elk script (gepubliceerde is gescheiden van een module) voordat u publiceert naar de PowerShell Gallery.
 
 
 ## <a name="publishing-items"></a>Publiceren Items
@@ -87,14 +87,14 @@ Moet u de [Publish-Script](/powershell/module/PowerShellGet/publish-script) of [
 
 De meeste van de andere opties op de opdrachtregel moet zich in het manifest gegevens voor het item dat u publiceren wilt, zodat u niet nodig om op te geven ze in de opdracht.
 
-Om fouten te voorkomen, het is raadzaam dat u probeert de opdrachten met - Whatif-Verbose, voordat u publiceert. Dit bespaart veel tijd sinds telkens wanneer u publiceren naar de PowerShell Gallery, moet u het versienummer in de manifest-sectie van het item bijwerken.
+Om fouten te voorkomen, het is raadzaam dat u probeert de opdrachten met - WhatIf-Verbose, voordat u publiceert. Dit bespaart veel tijd sinds telkens wanneer u publiceren naar de PowerShell Gallery, moet u het versienummer in de manifest-sectie van het item bijwerken.
 
 Voorbeelden zijn:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-De uitvoer zorgvuldig te controleren, en als er geen fouten of waarschuwingen, herhaalt u de opdracht zonder - Whatif.
+De uitvoer zorgvuldig te controleren, en als er geen fouten of waarschuwingen, herhaalt u de opdracht zonder - WhatIf.
 
 Alle items die worden gepubliceerd naar de PowerShell Gallery worden gescand op virussen en geanalyseerd met behulp van de PowerShell-Script Analyzer. Eventuele problemen die ontstaan op dat moment terug naar de publisher verzonden voor naamomzetting.
 

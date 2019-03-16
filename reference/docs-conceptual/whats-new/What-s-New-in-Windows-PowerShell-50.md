@@ -2,19 +2,21 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
-ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688635"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055101"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
+
 Windows PowerShell 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid wordt verbeterd, en kunnen u zelf regelen en beheren van Windows gebaseerde omgevingen gemakkelijker en uitgebreider.
 
 Windows PowerShell 5.0 is achterwaarts compatibel. -Cmdlets, providers, -modules, -modules, scripts, functies en -profielen die zijn ontworpen voor Windows PowerShell 4.0, Windows PowerShell 3.0 en Windows PowerShell 2.0 in het algemeen werken in Windows PowerShell 5.0 zonder wijzigingen.
 
 ## <a name="installing-windows-powershell"></a>Windows PowerShell installeren
+
 Windows PowerShell 5.0 wordt standaard geïnstalleerd op Windows Server 2016 Technical Preview en Windows 10.
 
 Voor het installeren van Windows PowerShell 5.0 op Windows Server 2012 R2, Windows 8.1 Enterprise of Windows 8.1 Pro, download en installeer [Windows Management Framework 5.0](https://aka.ms/wmf5download). Moet u de details van de download lezen en voldoen aan alle systeemvereisten, voordat u Windows Management Framework 5.0 installeren.
@@ -27,6 +29,7 @@ Voor het installeren van Windows PowerShell 5.0 op Windows Server 2012 R2, Windo
 - [Nieuwe functies in Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Updatepakket van Windows PowerShell 4.0-updates in November 2014 (KB 3000850)
+
 Veel updates en verbeteringen aan Windows PowerShell Desired State Configuration (DSC) in Windows PowerShell 4.0 zijn beschikbaar in de [updatepakket van November 2014 voor Windows RT 8.1, Windows 8.1 en Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). U kunt bepalen of KB 3000850 is geïnstalleerd op uw systeem door het uitvoeren van `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
 - Updates voor bestaande cmdlets in de [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) module
@@ -140,8 +143,8 @@ Veel updates en verbeteringen aan Windows PowerShell Desired State Configuration
 - De parameter FullyQualifiedName is toegevoegd voor Import-Module en Remove-Module-cmdlets voor de ondersteuning van meerdere versies van een module voor enkele opslaan.
 - Help opslaan, Update-Help, Import-PSSession, Export-PSSession en Get-opdracht hebt een nieuwe parameter FullyQualifiedModule van het type ModuleSpecification. Deze parameter om op te geven van een module met de volledig gekwalificeerde naam toevoegen.
 - De waarde van **$PSVersionTable.PSVersion** is bijgewerkt naar 5.0.
-- WMF 5.0 (PowerShell 5.0) bevat de **Pester** module.  Lastige is een eenheid testframework voor PowerShell. Het biedt een paar eenvoudige-en-klare trefwoorden waarmee u de tests voor uw scripts maken. 
- 
+- WMF 5.0 (PowerShell 5.0) bevat de **Pester** module.  Lastige is een eenheid testframework voor PowerShell. Het biedt een paar eenvoudige-en-klare trefwoorden waarmee u de tests voor uw scripts maken.
+
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nieuwe functies in Windows PowerShell Desired State Configuration
 
 - Verbeteringen van de Windows PowerShell-taal kunnen u Windows PowerShell Desired State Configuration (DSC) resources definiëren met behulp van klassen. Sleutelwoorden import-dscresource bieden is nu een waar dynamische sleutelwoord; Windows PowerShell parseert basismodule van de opgegeven module, zoeken naar klassen die het kenmerk sleutelwoorden dscresource bieden bevatten. U kunt nu klassen gebruiken voor het definiëren van DSC-resources, die geen een MOF-bestand of een submap sleutelwoorden dscresource bieden in de modulemap vereist is. Een Windows PowerShell-module-bestand kan meerdere DSC-resource-klassen bevatten.
@@ -482,7 +485,9 @@ Er zijn nieuwe cmdlets zijn toegevoegd aan de Windows PowerShell Core-installati
 |New-CimSessionOption|Help bijwerken|
 |Nieuwe IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Verbeteringen voor bestaande Core-Cmdlets en ProvidersWindows PowerShell 3.0 bevat nieuwe functies voor bestaande cmdlets, met inbegrip van de syntaxis van de vereenvoudigde en nieuwe parameters voor de volgende cmdlets: Computer-cmdlets, CSV-cmdlets Get-ChildItem, Get-opdracht Get-inhoud, Get-geschiedenis meting-Object,-cmdlets voor beveiliging, Select-Object, selecteer-tekenreeks, Split-Path, Start-proces, t-Object, Test-Connection, lid zijn van het toevoegen en WMI-cmdlets.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen voor bestaande essentiële Cmdlets en Providers
+
+Windows PowerShell 3.0 bevat nieuwe functies voor bestaande cmdlets, met inbegrip van de syntaxis van de vereenvoudigde en nieuwe parameters voor de volgende cmdlets: Computer-cmdlets, CSV-cmdlets Get-ChildItem, Get-opdracht Get-inhoud, Get-geschiedenis meting-Object,-cmdlets voor beveiliging, Select-Object, selecteer-tekenreeks, Split-Path, Start-proces, t-Object, Test-Connection, lid zijn van het toevoegen en WMI-cmdlets.
 
 De Windows PowerShell-providers zijn ook aanzienlijk verbeterd, waaronder Certificate Providerondersteuning voor het beheren van Secure Socket Layer (SSL)-certificaten voor het hosten van web, ondersteuning voor de referentie, permanente netwerkstations en alternatieve gegevensstreams in door het bestandssysteem.
 

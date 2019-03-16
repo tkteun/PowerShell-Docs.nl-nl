@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 contributor: keithb
 title: Installeren en configureren van WMF 5.1
-ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795569"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055983"
 ---
 # <a name="install-and-configure-wmf-51"></a>Installeren en configureren van WMF 5.1
 
@@ -34,7 +34,8 @@ Download het WMF 5.1-pakket voor het besturingssysteem en de architectuur die u 
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>WMF 5.1 voor Windows Server 2008 R2 en Windows 7 installeren
 
-> **Opmerking:** Installatie-instructies voor Windows Server 2008 R2 en Windows 7 zijn gewijzigd en verschillen van de instructies voor de andere pakketten. Installatie-instructies voor Windows Server 2012 R2, Windows Server 2012 en Windows 8.1 staan hieronder.
+> [!NOTE]
+> Installatie-instructies voor Windows Server 2008 R2 en Windows 7 zijn gewijzigd en verschillen van de instructies voor de andere pakketten. Installatie-instructies voor Windows Server 2012 R2, Windows Server 2012 en Windows 8.1 staan hieronder.
 
 **WMF 5.1 installeren op Windows Server 2008 R2 en Windows 7**
 

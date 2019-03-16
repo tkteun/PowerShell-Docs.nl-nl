@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
-ms.openlocfilehash: e18564c10898c73128e0a4bc7d077e7c7ffb1c22
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851238"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058756"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>Het element EntrySelectedBy voor TableRowEntry voor TableControl (opmaak)
 
@@ -51,7 +51,7 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry-Element voor TableControl (indeling)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|De gegevens die worden weergegeven in een rij van de tabel definieert.|
+|[TableRowEntry-Element voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|De gegevens die worden weergegeven in een rij van de tabel definieert.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -89,7 +89,7 @@ Het volgende voorbeeld wordt een `TableRowEntry` element dat wordt gebruikt om w
 
 [SelectionSetName-Element voor EntrySelectedBy voor TableControl (indeling)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableRowEntry-Element voor TableControl (indeling)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry-Element voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [TypeName-Element voor EntrySelectedBy voor TableControl (indeling)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

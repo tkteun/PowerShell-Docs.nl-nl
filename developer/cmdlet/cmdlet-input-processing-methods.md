@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794940"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059368"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Invoerverwerkingsmethoden voor cmdlets
 
@@ -63,7 +63,7 @@ Voor een uitgebreider voorbeeld van hoe u de [System.Management.Automation.Cmdle
 
 Cmdlets moet worden overschreven de [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) methode om toe te voegen na verwerking bewerkingen die geldig zijn voor alle records die zijn verwerkt door de cmdlet. Bijvoorbeeld, de cmdlet om op te schonen objectvariabelen nadat deze is voltooid mogelijk verwerken.
 
-Wanneer een opdracht pijplijn wordt verwerkt door Windows PowerShell, aanroepen Windows PowerShell met deze methode eenmaal voor elk exemplaar van de cmdlet in de pijplijn. Het is echter belangrijk te weten dat de Windows PowerShell-runtime niet roept de [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) methode als de cmdlet halverwege is geannuleerd door de verwerking van invoer of als een afsluitende fout in een deel van de cmdlet optreedt. Om deze reden moet een cmdlet die opschonen voor object vereist de volledige implementeren [System.Idisposable](/dotnet/api/System.IDisposable) patroon, waaronder een finalizer, zodat de runtime zowel aanroepen kan de [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) en [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking. Zie voor meer informatie over hoe de opdracht-pipeline in Windows PowerShell wordt aangeroepen, [Cmdlet verwerking Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Wanneer een opdracht pijplijn wordt verwerkt door Windows PowerShell, aanroepen Windows PowerShell met deze methode eenmaal voor elk exemplaar van de cmdlet in de pijplijn. Het is echter belangrijk te weten dat de Windows PowerShell-runtime niet roept de [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) methode als de cmdlet halverwege is geannuleerd door de verwerking van invoer of als een afsluitende fout in een deel van de cmdlet optreedt. Om deze reden moet een cmdlet die opschonen voor object vereist de volledige implementeren [System.IDisposable](/dotnet/api/System.IDisposable) patroon, waaronder een finalizer, zodat de runtime zowel aanroepen kan de [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) en [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking. Zie voor meer informatie over hoe de opdracht-pipeline in Windows PowerShell wordt aangeroepen, [Cmdlet verwerking Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 De volgende code toont een implementatie van de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode.
 
@@ -88,6 +88,6 @@ Voor een uitgebreider voorbeeld van hoe u de [System.Management.Automation.Cmdle
 
 [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
 
-[System.Idisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

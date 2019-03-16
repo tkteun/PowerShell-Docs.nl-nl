@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
 caps.latest.revision: 8
-ms.openlocfilehash: e4abbb14b31406b845d9b6af6b6372338fb0d926
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846975"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059555"
 ---
 # <a name="users-requesting-confirmation"></a>Gebruikers die bevestiging vragen
 
 Wanneer u een waarde opgeeft `true` voor de `SupportsShouldProcess` parameter van de Cmdlet kenmerk verklaring die gebruikers kunnen opgeven de `Confirm` parameter bij de opdrachtprompt.
 
-In de standaardomgeving, kunnen gebruikers opgeven de `Confirm` parameter of `"-Confirm:$true` zodat bevestiging wordt gevraagd wanneer de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode wordt aangeroepen. Dit omzeilt [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bevestiging aanvragen, zelfs voor invloedrijke bewerkingen.
+In de standaardomgeving, kunnen gebruikers opgeven de `Confirm` parameter of `"-Confirm:$true` zodat bevestiging wordt gevraagd wanneer de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) methode wordt aangeroepen. Dit omzeilt [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bevestiging aanvragen, zelfs voor invloedrijke bewerkingen.
 
-Als `Confirm` niet is opgegeven, de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroep vraagt om bevestiging als de `$ConfirmPreference` voorkeursvariabele is gelijk aan of groter is dan de `ConfirmImpact` instellen van de cmdlet of -provider. De standaardinstelling van `$ConfirmPreference` is hoog. Daarom in de standaardomgeving aanvraag alleen-cmdlets en providers die een grote impact-actie opgeeft bevestigen.
+Als `Confirm` niet is opgegeven, de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroep vraagt om bevestiging als de `$ConfirmPreference` voorkeursvariabele is gelijk aan of groter is dan de `ConfirmImpact` instellen van de cmdlet of -provider. De standaardinstelling van `$ConfirmPreference` is hoog. Daarom in de standaardomgeving aanvraag alleen-cmdlets en providers die een grote impact-actie opgeeft bevestigen.
 
-Als `Confirm` false is of als `"-Confirm:$false` is opgegeven, wordt de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroep vraagt om bevestiging van de gebruiker en de `$ConfirmPreference` shell-variabele wordt genegeerd.
+Als `Confirm` false is of als `"-Confirm:$false` is opgegeven, wordt de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroep vraagt om bevestiging van de gebruiker en de `$ConfirmPreference` shell-variabele wordt genegeerd.
 
 ## <a name="remarks"></a>Opmerkingen
 

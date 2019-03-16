@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846800"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055033"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Gebruikersberichten toevoegen aan uw cmdlet
 
@@ -82,7 +82,7 @@ Onderwerpen in deze sectie bevatten het volgende:
 
 De eerste stap bij het maken van de cmdlet is altijd naamgeving van de cmdlet en de .NET-klasse die de cmdlet declareren. Een of andere vorm van cmdlet kunt meldingen voor gebruikers van de verwerking van methoden; invoer schrijven dus in het algemeen kunt u naam deze cmdlet met behulp van een bewerking die aangeeft welke system wijzigingen die de cmdlet uitvoert. Zie voor meer informatie over goedgekeurde werkwoorden [namen van de term cmdlets](./approved-verbs-for-windows-powershell-commands.md).
 
-De cmdlet Stop-Proc is ontworpen om te wijzigen van het systeem. daarom de [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -declaratie voor de .NET-klasse moet bevatten de `SupportsShouldProcess` sleutelwoord kenmerk hebben en worden ingesteld op `true`.
+De cmdlet Stop-Proc is ontworpen om te wijzigen van het systeem. daarom de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -declaratie voor de .NET-klasse moet bevatten de `SupportsShouldProcess` sleutelwoord kenmerk hebben en worden ingesteld op `true`.
 
 De volgende code is de definitie voor deze cmdlet Stop-Proc klasse. Zie voor meer informatie over deze definitie [maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Invoer verwerken methode te overschrijven
 
-De cmdlet moet verwerken van methode invoer overschrijven, meestal worden [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Deze cmdlet Stop-Proc overschrijft de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) invoermethode voor verwerking. In deze implementatie van de cmdlet Stop-Proc worden aangeroepen om uitgebreide berichten, Foutopsporingsberichten en waarschuwingen te schrijven.
+De cmdlet moet verwerken van methode invoer overschrijven, meestal worden [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Deze cmdlet Stop-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) invoermethode voor verwerking. In deze implementatie van de cmdlet Stop-Proc worden aangeroepen om uitgebreide berichten, Foutopsporingsberichten en waarschuwingen te schrijven.
 
 > [!NOTE]
-> Voor meer informatie over hoe deze methode roept de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden, Zie [Maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md).
+> Voor meer informatie over hoe deze methode roept de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden, Zie [Maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="writing-a-verbose-message"></a>Een uitgebreid bericht schrijven
 
-De [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode wordt gebruikt om algemene op gebruikersniveau informatie die is gerelateerd aan bepaalde voorwaarden te schrijven. De systeembeheerder kunt die informatie vervolgens gebruiken om door te gaan met het verwerken van andere opdrachten. Alle gegevens die zijn geschreven met deze methode moet bovendien zo nodig worden gelokaliseerd.
+De [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode wordt gebruikt om algemene op gebruikersniveau informatie die is gerelateerd aan bepaalde voorwaarden te schrijven. De systeembeheerder kunt die informatie vervolgens gebruiken om door te gaan met het verwerken van andere opdrachten. Alle gegevens die zijn geschreven met deze methode moet bovendien zo nodig worden gelokaliseerd.
 
-De volgende code uit deze cmdlet Stop-Proc toont twee verzoeken aan de [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode van de onderdrukking van de [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+De volgende code uit deze cmdlet Stop-Proc toont twee verzoeken aan de [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) methode van de onderdrukking van de [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>Geen foutopsporingsbericht schrijven
 
-De [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode wordt gebruikt om te schrijven foutopsporingsberichten die kunnen worden gebruikt om op te lossen van de werking van de cmdlet. De aanroep wordt uitgevoerd vanaf een invoer verwerken van methode.
+De [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode wordt gebruikt om te schrijven foutopsporingsberichten die kunnen worden gebruikt om op te lossen van de werking van de cmdlet. De aanroep wordt uitgevoerd vanaf een invoer verwerken van methode.
 
 > [!NOTE]
-> Windows PowerShell ook definieert een `Debug` parameter geeft beide uitgebreide en informatie voor foutopsporing. Als uw cmdlet biedt ondersteuning voor deze parameter, hoeft deze niet aan te roepen [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) in dezelfde code die worden aangeroepen [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell ook definieert een `Debug` parameter geeft beide uitgebreide en informatie voor foutopsporing. Als uw cmdlet biedt ondersteuning voor deze parameter, hoeft deze niet aan te roepen [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) in dezelfde code die worden aangeroepen [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-De volgende twee secties van de code van de voorbeeld-cmdlet Stop-Proc weergeven aanroepen naar de [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode van de onderdrukking van de [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+De volgende twee secties van de code van de voorbeeld-cmdlet Stop-Proc weergeven aanroepen naar de [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) methode van de onderdrukking van de [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
-Dit foutopsporingsbericht wordt geschreven direct vóór de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) wordt genoemd.
+Dit foutopsporingsbericht wordt geschreven direct vóór de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) wordt genoemd.
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-Dit foutopsporingsbericht wordt geschreven direct vóór de [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) wordt genoemd.
+Dit foutopsporingsbericht wordt geschreven direct vóór de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) wordt genoemd.
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell automatisch stuurt een [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroepen naar de van traceringsinfrastructuur en -cmdlets. Hiermee wordt de methodeaanroepen zonder deze aan de ontwikkeling van extra werk binnen de cmdlet, worden herleid tot de hosttoepassing, een bestand of een foutopsporingsprogramma. De volgende opdrachtregel vermelding implementeert een tracering-bewerking.
+Windows PowerShell automatisch stuurt een [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroepen naar de van traceringsinfrastructuur en -cmdlets. Hiermee wordt de methodeaanroepen zonder deze aan de ontwikkeling van extra werk binnen de cmdlet, worden herleid tot de hosttoepassing, een bestand of een foutopsporingsprogramma. De volgende opdrachtregel vermelding implementeert een tracering-bewerking.
 
 **PS > trace-expressie stop-proc-bestand proc.log-opdracht stop-proc Kladblok**
 
 ## <a name="writing-a-warning-message"></a>Schrijven van een waarschuwingsbericht wordt weergegeven
 
-De [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode wordt gebruikt voor het schrijven van een waarschuwing wanneer de cmdlet wordt een bewerking die mogelijk een onverwacht resultaat, bijvoorbeeld een alleen-lezen-bestand te overschrijven.
+De [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode wordt gebruikt voor het schrijven van een waarschuwing wanneer de cmdlet wordt een bewerking die mogelijk een onverwacht resultaat, bijvoorbeeld een alleen-lezen-bestand te overschrijven.
 
-De volgende code uit de voorbeeld-cmdlet Stop-Proc toont het aanroepen van de [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode van de onderdrukking van de [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+De volgende code uit de voorbeeld-cmdlet Stop-Proc toont het aanroepen van de [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) methode van de onderdrukking van de [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ De volgende code uit de voorbeeld-cmdlet Stop-Proc toont het aanroepen van de [S
 
 ## <a name="writing-a-progress-message"></a>Schrijven van een bericht wordt uitgevoerd
 
-De [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) wordt gebruikt voor het schrijven van berichten over de voortgang bij bewerkingen van de cmdlet een uitgebreide hoeveelheid tijd in beslag nemen. Een aanroep van [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) geeft een [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) -object dat wordt verzonden naar de hosttoepassing voor rendering aan de gebruiker.
+De [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) wordt gebruikt voor het schrijven van berichten over de voortgang bij bewerkingen van de cmdlet een uitgebreide hoeveelheid tijd in beslag nemen. Een aanroep van [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) geeft een [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) -object dat wordt verzonden naar de hosttoepassing voor rendering aan de gebruiker.
 
 > [!NOTE]
-> Deze cmdlet Stop-Proc bevat geen een aanroep naar de [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) methode.
+> Deze cmdlet Stop-Proc bevat geen een aanroep naar de [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) methode.
 
 De volgende code is een voorbeeld van een bericht Bezig is geschreven door een cmdlet die probeert een item te kopiëren.
 

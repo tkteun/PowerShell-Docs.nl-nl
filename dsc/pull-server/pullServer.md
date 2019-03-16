@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-pull-service
-ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794719"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056767"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull Service
 
@@ -72,7 +72,8 @@ Hieronder vindt u een voorbeeldscript.
 
 Vanaf de release 17090 van [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server is een ondersteunde optie voor het Pull-Service (Windows-functie *DSC-Service*). Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die nog niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Houd er rekening mee**: Ondersteuning van SQL Server wordt niet naar de vorige versie van WMF 5.1 (of eerder) toegevoegd en is alleen beschikbaar op Windows Server-versies groter is dan of gelijk zijn aan 17090.
+> [!NOTE]
+> Ondersteuning van SQL Server wordt niet naar de vorige versie van WMF 5.1 (of eerder) toegevoegd en is alleen beschikbaar op Windows Server-versies groter is dan of gelijk zijn aan 17090.
 
 Voor het configureren van de pull-server voor het gebruik van SQL Server, stelt **SqlProvider** naar `$true` en **SqlConnectionString** naar een geldige SQL Server-verbindingsreeks. Zie voor meer informatie, [SqlClient verbindingsreeksen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Voor een voorbeeld van SQL Server-configuratie met **xDscWebService**, eerst lezen [met behulp van de resource xDscWebService](#using-the-xdscwebservice-resource) en bekijk [Sample_xDscWebServiceRegistration_ UseSQLProvider.ps1 op GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).

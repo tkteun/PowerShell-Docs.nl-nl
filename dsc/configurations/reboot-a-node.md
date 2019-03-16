@@ -2,12 +2,12 @@
 ms.date: 1/17/2019
 keywords: DSC, powershell, configuratie en installatie
 title: Een knooppunt opnieuw opstarten
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685688"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054727"
 ---
 # <a name="reboot-a-node"></a>Een knooppunt opnieuw opstarten
 
@@ -47,14 +47,14 @@ xPendingReboot [String] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 | --- | --- |
 | Naam| De vereiste parameter moet uniek zijn per exemplaar van de resource in een configuratie.|
 | SkipComponentBasedServicing | Overslaan opnieuw wordt opgestart door het onderdeel Component-Based Servicing geactiveerd. |
 | SkipWindowsUpdate | Overslaan opnieuw wordt opgestart geactiveerd door Windows Update.|
 | SkipPendingFileRename | Opnieuw opstarten in behandeling zijnde-naam overslaan. |
 | SkipCcmClientSDK | Overslaan opnieuw wordt opgestart geactiveerd door de ConfigMgr-client. |
-| SkipComputerRename | Overslaan Hiermee computerbeleid door de naam van de Computer wordt opnieuw opgestart. |
+| SkipComputerRename | Overslaan opnieuw wordt opgestart door de naam van de Computer geactiveerd. |
 | PSDSCRunAsCredential | Ondersteund in versie 5. De resource als de opgegeven gebruiker uitgevoerd. |
 | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`. Zie voor meer informatie, [DependsOn gebruiken](resource-depends-on.md)|
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849222"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056903"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>Het element TableColumnItems voor TableRowEntry voor TableControl (opmaak)
 
@@ -47,7 +47,7 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry-Element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|De gegevens die worden weergegeven in een rij van de tabel definieert.|
+|[TableRowEntry-Element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|De gegevens die worden weergegeven in een rij van de tabel definieert.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -80,6 +80,6 @@ Het volgende voorbeeld wordt een `TableColumnItems` element dat drie eigenschapp
 
 [TableColumnItem-Element (indeling)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Schrijven van een bestand opmaak PowerShell](./writing-a-powershell-formatting-file.md)

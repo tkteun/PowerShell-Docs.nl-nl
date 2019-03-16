@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849516"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059572"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typen cmdlet-parameters
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Verwissel de Parameters
 
-Windows PowerShell biedt een [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type waarmee u een parameter definiëren waarvan de waarde automatisch is ingesteld op `false` als de parameter niet wordt opgegeven wanneer de cmdlet is met de naam. Gebruik indien mogelijk de switch-parameters in plaats van Booleaanse parameters.
+Windows PowerShell biedt een [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type waarmee u een parameter definiëren waarvan de waarde automatisch is ingesteld op `false` als de parameter niet wordt opgegeven wanneer de cmdlet is met de naam. Gebruik indien mogelijk de switch-parameters in plaats van Booleaanse parameters.
 
 Houd rekening met het volgende voorbeeld. Standaard worden een object op in de pijplijn in verschillende Windows PowerShell-cmdlets niet geslaagd. Deze cmdlets hebben echter een `PassThru` switch-parameter die het standaardgedrag overschrijft. Als de `PassThru` parameter is opgegeven wanneer deze cmdlets worden aangeroepen, wordt de cmdlet retourneert een uitvoerobject aan de pijplijn.
 
-Als u de parameter een standaardwaarde van `true` als de parameter niet is opgegeven in de aanroep, houd rekening met het gevoel van de parameter omkeren. Voor het voorbeeld in plaats van de parameterkenmerk instelt op een Booleaanse waarde `true`, de eigenschap declareert de [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typt, en stel de standaardwaarde van de parameter `false`.
+Als u de parameter een standaardwaarde van `true` als de parameter niet is opgegeven in de aanroep, houd rekening met het gevoel van de parameter omkeren. Voor het voorbeeld in plaats van de parameterkenmerk instelt op een Booleaanse waarde `true`, de eigenschap declareert de [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typt, en stel de standaardwaarde van de parameter `false`.
 
-Voor het definiëren van een switch-parameter, de eigenschap als declareren de [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typt, zoals wordt weergegeven in het volgende voorbeeld.
+Voor het definiëren van een switch-parameter, de eigenschap als declareren de [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typt, zoals wordt weergegeven in het volgende voorbeeld.
 
 ```csharp
 [Parameter(Position = 1)]

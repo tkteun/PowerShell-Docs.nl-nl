@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850601"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059470"
 ---
 # <a name="confirmation-messages"></a>Bevestigingsberichten
 
-Hier volgen verschillende bevestigingsberichten die kunnen worden weergegeven, afhankelijk van de varianten van de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden die worden aangeroepen.
+Hier volgen verschillende bevestigingsberichten die kunnen worden weergegeven, afhankelijk van de varianten van de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.ShouldContinue ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden die worden aangeroepen.
 
 > [!IMPORTANT]
 > Zie voor een voorbeeld van code die laat zien hoe u aan te vragen van bevestigingen, [het verzoek bevestigingen](./how-to-request-confirmations.md).
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Als de gebruiker selecteert **Ja** of **Ja op Alles** naar de bevestiging aanvragen (zoals weergegeven in het volgende voorbeeld), een aanroep naar de [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode wordt gemaakt, waardoor een tweede bevestigingsbericht wordt weergegeven.
+Als de gebruiker selecteert **Ja** of **Ja op Alles** naar de bevestiging aanvragen (zoals weergegeven in het volgende voorbeeld), een aanroep naar de [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)methode wordt gemaakt, waardoor een tweede bevestigingsbericht wordt weergegeven.
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Als de gebruiker selecteert **Ja** of **Ja op Alles** naar het vorige bericht, een aanroep naar de [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode wordt gemaakt, waardoor een tweede bevestigingsbericht wordt weergegeven.
+Als de gebruiker selecteert **Ja** of **Ja op Alles** naar het vorige bericht, een aanroep naar de [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methode wordt gemaakt, waardoor een tweede bevestigingsbericht wordt weergegeven.
 
 ```output
 Confirm

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847990"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057940"
 ---
 # <a name="cmdlet-error-reporting"></a>Foutrapportage voor cmdlets
 
@@ -43,7 +43,7 @@ De volgende richtlijnen kunnen worden gebruikt om te bepalen of een fout wordt e
 
 ## <a name="reporting-nonterminating-errors"></a>Rapportage afsluitfouten
 
-De rapportage van een nonterminating fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet van de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode, de [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, of de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Dergelijke fouten worden gerapporteerd door het aanroepen van de [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode die op zijn beurt een foutrecord worden verzonden naar de foutstroom.
+De rapportage van een nonterminating fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet van de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode, de [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, of de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Dergelijke fouten worden gerapporteerd door het aanroepen van de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode die op zijn beurt een foutrecord worden verzonden naar de foutstroom.
 
 ## <a name="reporting-terminating-errors"></a>Rapportage van fouten wordt beëindigd
 
@@ -53,7 +53,7 @@ U kunt ook uw eigen uitzonderingen definiëren voor problemen die specifiek zijn
 
 ## <a name="error-records"></a>Foutrecords
 
-Windows PowerShell beschrijft een nonterminating fout via het gebruik van [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objecten. Elke [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) object biedt foutinformatie categorie, een optionele doelobject en meer informatie over het probleem.
+Windows PowerShell beschrijft een nonterminating fout via het gebruik van [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objecten. Elke [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object biedt foutinformatie categorie, een optionele doelobject en meer informatie over het probleem.
 
 ### <a name="error-identifiers"></a>Fout-id 's
 
@@ -61,7 +61,7 @@ De fout-id is een eenvoudige tekenreeks die de fout in de cmdlet aanduidt. Windo
 
 De volgende richtlijnen moeten worden gevolgd als fout-id's op te geven.
 
-- Andere, zeer specifieke fout-id's toewijzen aan andere codepaden. Elk codepad die worden aangeroepen [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) zijn eigen fout-id moet hebben.
+- Andere, zeer specifieke fout-id's toewijzen aan andere codepaden. Elk codepad die worden aangeroepen [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) zijn eigen fout-id moet hebben.
 
 - Fout-id's moeten uniek zijn voor CLR-uitzonderingstypen voor zowel afsluitfouten als nonterminating.
 

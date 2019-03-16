@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Feedback geven via sociale media of opmerkingen
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684351"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054999"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Feedback geven via sociale media of opmerkingen
 
-De Powershell Gallery ondersteunt twee methoden voor gebruikers om openbare feedback geven over een pakket:
+De PowerShell Gallery ondersteunt twee methoden voor gebruikers om openbare feedback geven over een pakket:
 
 - Gebruik de koppelingen aan de linkerkant ' delen ' van een pakket op sociale media-sites, Facebook, LinkedIn en Twitter;
 - Gebruik de functie opmerkingen opmerkingen plaatsen op een pakket en auteurs toestaan om te bekijken voor opmerkingen over pakketten die ze publiceren.
@@ -26,8 +26,7 @@ Gebruikers moeten zich aanmelden bij de site die ze hebben gekozen om te kunnen 
 
 Gebruikers worden aangemoedigd om dit te doen als ze een pakket is iets dat die ze naar anderen aanbeveelt vinden.
 De PowerShell Gallery elke site sociale media voor 'gedeelde' van het pakket wordt gecontroleerd en het aantal keren dat pakket weergegeven in elk van de sociale-mediasites is gedeeld.
-Omdat dit het aantal keren dat er iets is gedeeld geeft, worden geïnterpreteerd andere gebruikers als 'liking' van het pakket.
-
+Omdat dit het aantal keren dat er iets is gedeeld geeft, worden geïnterpreteerd van andere gebruikers als 'liking' van het pakket.
 
 ## <a name="comments"></a>Opmerkingen
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: dbb6f7c4cbefeaaaec0747511f50192bcf08c20c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851469"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058076"
 ---
 # <a name="comment-based-help-keywords"></a>Trefwoorden voor Help op basis van opmerkingen
 
@@ -23,7 +23,7 @@ Dit onderwerp geeft een lijst van en beschrijft de trefwoorden in de help op bas
 
 Hieronder vindt u Help-informatie voor geldige op basis van een opmerking trefwoorden. Ze worden weergegeven in de volgorde waarin ze doorgaans worden weergegeven in een Help-onderwerp samen met het bedoelde gebruik. Deze trefwoorden kunnen worden weergegeven in een willekeurige volgorde in de Help op basis van een opmerking en ze zijn niet hoofdlettergevoelig.
 
-Houd er rekening mee dat de `.ExternalHelp` sleutelwoord voorrang boven alle andere trefwoorden help op basis van een opmerking. Wanneer `.ExternalHelp` aanwezig is, de [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet wordt niet weergegeven op basis van een opmerking Help-informatie, zelfs wanneer deze een help-bestand dat overeenkomt met de waarde van het trefwoord kan vinden.
+Houd er rekening mee dat de `.ExternalHelp` sleutelwoord voorrang boven alle andere trefwoorden help op basis van een opmerking. Wanneer `.ExternalHelp` aanwezig is, de [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet wordt niet weergegeven op basis van een opmerking Help-informatie, zelfs wanneer deze een help-bestand dat overeenkomt met de waarde van het trefwoord kan vinden.
 
 `.Synopsis` Een korte beschrijving van de functie of het script. Dit trefwoord kan slechts één keer worden gebruikt in elk onderwerp.
 
@@ -61,9 +61,9 @@ De `.Link` sleutelwoord inhoud kan ook bestaan uit een URI Uniform Resource Iden
 
 `.ExternalHelp` `<XML Help File>` Hiermee geeft u het pad en/of de naam van een Help-informatie op basis van een XML-bestand voor het script of functie.
 
-De `.ExternalHelp` sleutelwoord vertelt de [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet voor hulp bij het script of functie in een XML-bestand. De **. ExternalHelp** sleutelwoord is vereist bij het gebruik van een help op basis van een XML-bestand voor een script of functie. Zonder dit `Get-Help` wordt een help-bestand voor de functie of het script niet vinden.
+De `.ExternalHelp` sleutelwoord vertelt de [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet voor hulp bij het script of functie in een XML-bestand. De **. ExternalHelp** sleutelwoord is vereist bij het gebruik van een help op basis van een XML-bestand voor een script of functie. Zonder dit `Get-Help` wordt een help-bestand voor de functie of het script niet vinden.
 
-De `.ExternalHelp` sleutelwoord voorrang boven alle andere trefwoorden help op basis van een opmerking. Wanneer `.ExternalHelp` aanwezig is, de [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet wordt niet weergegeven op basis van een opmerking Help-informatie, zelfs wanneer deze een help-bestand dat overeenkomt met de waarde van het trefwoord kan vinden.
+De `.ExternalHelp` sleutelwoord voorrang boven alle andere trefwoorden help op basis van een opmerking. Wanneer `.ExternalHelp` aanwezig is, de [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) cmdlet wordt niet weergegeven op basis van een opmerking Help-informatie, zelfs wanneer deze een help-bestand dat overeenkomt met de waarde van het trefwoord kan vinden.
 
 Wanneer de functie wordt geëxporteerd met een scriptmodule, de waarde van `.ExternalHelp` moet een bestandsnaam zonder een pad. `Get-Help` zoekt naar het bestand in een submap van de taalinstelling van de modulemap. Er zijn geen vereisten voor de bestandsnaam, maar een best practice is het gebruik van de volgende bestandsindeling: naam: `<ScriptModule>.psm1-help.xml`.
 

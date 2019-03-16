@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848627"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057872"
 ---
 # <a name="tablecolumnheader-element-format"></a>Het element TableColumnHeader (opmaak)
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Label-Element voor TableColumnHeader voor TableControl (indeling)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee definieert u het label dat wordt weergegeven aan de bovenkant van de kolom. Als u geen naam opgeeft, wordt de naam van de eigenschap waarvan de waarde wordt weergegeven in de rijen gebruikt.|
 |[Breedte van Element voor TableColumnHeader voor TableControl (indeling)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Vereist element.<br /><br /> Geeft de breedte (in tekens) van de kolom.|
-|[Uitlijning-Element voor TableColumbnHeader voor TableControl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoe het label van de kolom wordt weergegeven. Als er geen uitlijning is opgegeven, wordt het label links uitgelijnd.|
+|[Uitlijning-Element voor TableColumnHeader voor TableControl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoe het label van de kolom wordt weergegeven. Als er geen uitlijning is opgegeven, wordt het label links uitgelijnd.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -82,7 +82,7 @@ Het volgende voorbeeld ziet u twee `TableColumnHeader` elementen. Het eerste ele
 
 ## <a name="see-also"></a>Zie ook
 
-[Uitlijning-Element voor TableColumnHeader voor TableContrl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Uitlijning-Element voor TableColumnHeader voor TableControl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Het maken van een tabelweergave](./creating-a-table-view.md)
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Resourceafhankelijkheden met behulp van DependsOn
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688061"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055696"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Resourceafhankelijkheden met behulp van DependsOn
 
@@ -16,7 +16,7 @@ Wanneer u schrijft [configuraties](configurations.md), u toevoegen [Resource blo
 De `DependsOn` sleutel kan worden gebruikt in elk blok van de Resource. Dit is gedefinieerd met het mechanisme voor dezelfde sleutel/waarde als de sleutels van andere Resource. De `DependsOn` sleutel wordt verwacht dat een matrix met tekenreeksen met de volgende syntaxis.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 Het volgende voorbeeld wordt een firewallregel na het inschakelen en configureren van het openbare profiel.

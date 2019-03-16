@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Instellen van een Pull-Client met behulp van configuratienamen in PowerShell 5.0 en hoger
-ms.openlocfilehash: fd038a105da7a83ecad9b571e611b65c8ec847b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688075"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058182"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Instellen van een Pull-Client met behulp van configuratienamen in PowerShell 5.0 en hoger
 
@@ -23,8 +23,9 @@ Voordat u een pull-client instelt, moet u een pull-server instellen. Al deze ord
 
 Elk doelknooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources, en zelfs de status rapporteren. De volgende secties laten zien hoe u een pull-client configureren met een SMB-share of een HTTP-DSC-Pull-Server. Wanneer van het knooppunt LCM vernieuwd, wordt het contact opnemen met de geconfigureerde locatie voor het downloaden van de toegewezen configuraties. Als alle vereiste resources niet aanwezig zijn op het knooppunt, wordt deze ze automatisch downloaden van de geconfigureerde locatie. Als het knooppunt is geconfigureerd met een [Report Server](reportServer.md), deze wordt vervolgens rapporteert de status van de bewerking.
 
-> **Houd er rekening mee**: In dit onderwerp is van toepassing op PowerShell 5.0.
-Zie voor meer informatie over het instellen van een pull-client in PowerShell 4.0 [instellen van een pull-client met behulp van configuratie-ID in PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> In dit onderwerp is van toepassing op PowerShell 5.0.
+> Zie voor meer informatie over het instellen van een pull-client in PowerShell 4.0 [instellen van een pull-client met behulp van configuratie-ID in PowerShell 4.0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
@@ -49,7 +50,8 @@ Het volgende script wordt de LCM geconfigureerd voor pull-configuraties van een 
 - In het script de **ConfigurationRepositoryWeb** blok definieert de pull-server. De **ServerURL** eigenschap geeft u het eindpunt voor de pull-server.
 
 - De **RegistrationKey** eigenschap is een gedeelde sleutel tussen alle knooppunten van de client voor een pull-server en die pull-server. De dezelfde waarde wordt opgeslagen in een bestand op de pull-server.
-  > **Houd er rekening mee**: Registratiesleutels werken alleen met **web** pull-servers. U moet nog steeds gebruiken **ConfigurationID** met een **SMB** pull-server.
+  > [!NOTE]
+  > Registratiesleutels werken alleen met **web** pull-servers. U moet nog steeds gebruiken **ConfigurationID** met een **SMB** pull-server.
   > Voor informatie over het configureren van een pull-server met behulp van **ConfigurationID**, Zie [instellen van een pull-client met behulp van configuratie-ID](pullClientConfigId.md)
 
 - De **ConfigurationNames** eigenschap is een matrix die Hiermee geeft u de namen van de configuraties die bestemd zijn voor de client-knooppunt.

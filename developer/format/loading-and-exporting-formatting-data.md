@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794192"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054183"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Opmaakgegevens laden en exporteren
 
@@ -27,7 +27,7 @@ Opmaak bestanden kunnen worden geladen in de huidige sessie met de volgende meth
 
 - U kunt een modulemanifest dat verwijst naar het bestand met opmaak maken. Modules kunnen u verpakt u opmaak van bestanden voor distributie. Gebruik de [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet voor het maken van het manifest en de [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet voor het laden van de module in de huidige sessie. Zie voor meer informatie over modules [schrijven van een Windows PowerShell-Module](../module/writing-a-windows-powershell-module.md).
 
-- U kunt een module die verwijst naar het bestand met opmaak. Gebruik de [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) om te verwijzen naar uw opmaak bestanden. Het wordt ten zeerste aangeraden modules voor pakket-cmdlets en de bijbehorende opmaak en typen bestanden gebruiken om te worden gedistribueerd. Zie voor meer informatie over modules [schrijven van een Windows PowerShell-Module](../module/writing-a-windows-powershell-module.md).
+- U kunt een module die verwijst naar het bestand met opmaak. Gebruik de [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) om te verwijzen naar uw opmaak bestanden. Het wordt ten zeerste aangeraden modules voor pakket-cmdlets en de bijbehorende opmaak en typen bestanden gebruiken om te worden gedistribueerd. Zie voor meer informatie over modules [schrijven van een Windows PowerShell-Module](../module/writing-a-windows-powershell-module.md).
 
 - Als u opdrachten via een programma aanroept, kunt u een vermelding in het opmaak toevoegen aan de eerste sessiestatus van de runspace waarin de opdrachten worden uitgevoerd. Zie voor meer informatie over .NET-type gebruikt voor het toevoegen van het bestand opmaak, de [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) klasse.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251299"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057126"
 ---
 # <a name="security-parameters"></a>Beveiligingsparameters
 
@@ -29,7 +29,7 @@ De volgende tabel bevat de aanbevolen namen en de functionaliteit voor parameter
 |**CertStoreLocation**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de locatie van het certificaatarchief opgeven. De locatie is doorgaans een bestandspad.|
 |**CertSubjectName**<br>Gegevenstype: Tekenreeks|Deze parameter implementeren zodat de gebruiker kan de verlener van een certificaat opgeven of zodat de gebruiker kan een subtekenreeks opgeven.|
 |**CertUsage**<br>Gegevenstype: Tekenreeks|Deze parameter om op te geven van het gebruik van de sleutel of het uitgebreide sleutelgebruik implementeren. De sleutel kan worden weergegeven als een en ander maskeren, wat een object-id (OID), of een tekenreeks.|
-|**Referentie**<br>Gegevenstype: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementeer deze parameter zodat de cmdlet wordt automatisch de gebruiker gevraagd om een gebruikersnaam of wachtwoord. Een prompt voor zowel wordt weergegeven als een volledige referentie niet rechtstreeks worden verstrekt.|
+|**Referentie**<br>Gegevenstype: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementeer deze parameter zodat de cmdlet wordt automatisch de gebruiker gevraagd om een gebruikersnaam of wachtwoord. Een prompt voor zowel wordt weergegeven als een volledige referentie niet rechtstreeks worden verstrekt.|
 |**CSPName**<br>Gegevenstype: Tekenreeks|Implementeer deze parameter zodat de gebruiker kan de naam van de certificaat-provider (CSP) opgeven.|
 |**CSPType**<br>Gegevenstype: Geheel getal|Implementeer deze parameter zodat de gebruiker kan het type van de CSP opgeven.|
 |**Groep**<br>Gegevenstype: Tekenreeks|Deze parameter implementeren zodat de gebruiker kan een verzameling van beveiligings-principals voor toegang tot opgeven. Zie voor meer informatie, de beschrijving van de **Principal** parameter.|

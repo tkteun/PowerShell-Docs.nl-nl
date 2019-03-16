@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
-ms.openlocfilehash: eff40a01b60985788ae0e21156fec7ec4e27fcf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846751"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056393"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Invoerverwerkingsmethoden negeren
 
 Deze voorbeelden laten zien hoe de invoer voor het verwerken van methoden die in een cmdlet overschrijven. Deze methoden worden gebruikt om uit te voeren van de volgende bewerkingen:
 
-- De [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode wordt gebruikt voor het opstarten van eenmalige-bewerkingen die geldig voor alle objecten die zijn verwerkt door de cmdlet zijn uitvoeren. Deze methode worden slechts één keer aanroept in de Windows PowerShell-runtime.
+- De [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode wordt gebruikt voor het opstarten van eenmalige-bewerkingen die geldig voor alle objecten die zijn verwerkt door de cmdlet zijn uitvoeren. Deze methode worden slechts één keer aanroept in de Windows PowerShell-runtime.
 
-- De [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode wordt gebruikt voor het verwerken van de objecten die zijn doorgegeven aan de cmdlet. De Windows PowerShell-runtime wordt deze methode voor elk object doorgegeven aan de cmdlet.
+- De [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode wordt gebruikt voor het verwerken van de objecten die zijn doorgegeven aan de cmdlet. De Windows PowerShell-runtime wordt deze methode voor elk object doorgegeven aan de cmdlet.
 
-- De [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode wordt gebruikt voor het uitvoeren van bewerkingen voor de verwerking eenmalige post. Deze methode worden slechts één keer aanroept in de Windows PowerShell-runtime.
+- De [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode wordt gebruikt voor het uitvoeren van bewerkingen voor de verwerking eenmalige post. Deze methode worden slechts één keer aanroept in de Windows PowerShell-runtime.
 
 ## <a name="to-override-the-beginprocessing-method"></a>Voor de onderdrukking van de methode BeginProcessing
 
-- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode.
+- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode.
 
-De volgende klasse worden afgedrukt een voorbeeldbericht weergegeven. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.Beginprocessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode.
+De volgende klasse worden afgedrukt een voorbeeldbericht weergegeven. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.BeginProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]
@@ -50,9 +50,9 @@ public class TestBeginProcessingClassTemplate : Cmdlet
 
 ## <a name="to-override-the-processrecord-method"></a>Voor de onderdrukking van de methode ProcessRecord
 
-- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
-De volgende klasse worden afgedrukt een voorbeeldbericht weergegeven. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
+De volgende klasse worden afgedrukt een voorbeeldbericht weergegeven. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "ProcessRecordClass")]
@@ -74,9 +74,9 @@ public class TestProcessRecordClassTemplate : Cmdlet
 
 ## <a name="to-override-the-endprocessing-method"></a>Voor de onderdrukking van de methode EndProcessing
 
-- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode.
+- Declareer een beveiligde onderdrukking van de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode.
 
-De volgende klasse worden afgedrukt een voorbeeld. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.Endprocessing* ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode.
+De volgende klasse worden afgedrukt een voorbeeld. Voor het gebruik van deze klasse het werkwoord en een zelfstandig naamwoord in de Cmdlet-kenmerk wijzigen, wijzigt u de naam van de klasse in overeenstemming met de nieuwe werkwoord en een zelfstandig naamwoord en vervolgens de gewenste functionaliteit toevoegen aan de onderdrukking van de [System.Management.Automation.Cmdlet.EndProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "EndProcessingClass")]
@@ -97,10 +97,10 @@ public class TestEndProcessingClassTemplate : Cmdlet
 
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
 [Schrijven van een Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)

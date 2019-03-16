@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6d6d43fa-c900-4e2f-952d-deccd584236f
 caps.latest.revision: 11
-ms.openlocfilehash: 0d7bbfd8be3bf2bd1af75a45ca4db016dfb6bff6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6142350e3843a5feddcb5cee8901bbfa607d8d4c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848179"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055974"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>Het element TypeName voor SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
 
@@ -57,7 +57,7 @@ Zie voor meer informatie over andere onderdelen van een brede weergave [het make
 
 ## <a name="see-also"></a>Zie ook
 
-[Een brede weergave opgelost](./creating-a-wide-view.md)
+[Het maken van een brede weergave](./creating-a-wide-view.md)
 
 [Voorwaarden voor wanneer gegevens worden weergegeven definiëren](./defining-conditions-for-displaying-data.md)
 

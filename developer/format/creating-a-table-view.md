@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850657"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057362"
 ---
 # <a name="creating-a-table-view"></a>Een tabelweergave maken
 
@@ -95,7 +95,7 @@ De volgende XML-elementen worden gebruikt voor het definiëren van een lijst wee
 
 2. De [TableColumnHeader](./tablecolumnheader-element-format.md) element wordt gedefinieerd wat er aan de bovenkant van een kolom van de tabel wordt weergegeven. Geef deze elementen in de volgorde waarin u de headers weergegeven.
 
-   Er is geen limiet voor het aantal van deze element dat u kunt gebruiken, maar het aantal [TableColumnHeader](./tablecolumnheader-element-format.md) elementen in uw tabelweergave moeten gelijk zijn aan het aantal [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elementen die u gebruikt.
+   Er is geen limiet voor het aantal van deze element dat u kunt gebruiken, maar het aantal [TableColumnHeader](./tablecolumnheader-element-format.md) elementen in uw tabelweergave moeten gelijk zijn aan het aantal [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) elementen die u gebruikt.
 
 3. De [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) element Hiermee geeft u de tekst die wordt weergegeven. Dit element is optioneel.
 
@@ -136,7 +136,7 @@ De volgende XML-elementen kunnen worden gebruikt voor definities voor een rij:
 
 - De [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) element Hiermee geeft u de objecten die worden weergegeven door de definitie van een specifieke. Dit element is optioneel en is alleen nodig wanneer u meerdere definiëren [TableRowEntry](./listentry-element-for-listcontrol-format.md) elementen die verschillende objecten worden weergegeven.
 
-- De [verpakken](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) element geeft aan dat de tekst die langer is dan de breedte van de kolom wordt weergegeven op de volgende regel. Standaard de tekst die langer is dan de breedte van legendakolom wordt afgekapt.
+- De [verpakken](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) element geeft aan dat de tekst die langer is dan de breedte van de kolom wordt weergegeven op de volgende regel. Standaard de tekst die langer is dan de breedte van legendakolom wordt afgekapt.
 
 - De [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) element definieert de eigenschappen of scripts waarvan de waarden worden weergegeven in de rij.
 

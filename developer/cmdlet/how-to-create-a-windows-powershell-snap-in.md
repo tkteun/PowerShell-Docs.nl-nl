@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], examples
 ms.assetid: 71bd9b2c-5f2e-4aa8-b5fe-08c956540d37
 caps.latest.revision: 10
-ms.openlocfilehash: 73834cea1d90943cf954728d6295d8eb33e14f57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 43199544dc02ccae4b61053c30d6ed36576adfcf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849439"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055934"
 ---
 # <a name="how-to-create-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module maken
 
@@ -25,7 +25,7 @@ Module-assembly's moeten worden geïnstalleerd in een beveiligde map, net zoals 
 
 ## <a name="windows-powershell-snap-in-classes"></a>Windows PowerShell-module klassen
 
-Alle Windows PowerShell-module-klassen die zijn afgeleid van de [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) of [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klassen.
+Alle Windows PowerShell-module-klassen die zijn afgeleid van de [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) of [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klassen.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -35,7 +35,7 @@ Alle Windows PowerShell-module-klassen die zijn afgeleid van de [System.Manageme
 
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn)
+[System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)
 
 [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
 

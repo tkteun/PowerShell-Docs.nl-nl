@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 9e8123e9b1068e0fd6efec8508eacf594ff22301
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845932"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054897"
 ---
 # <a name="runspace04-sample"></a>Voorbeeld Runspace04
 
@@ -35,7 +35,7 @@ In dit voorbeeld ziet u het volgende.
 
 - De opdrachten aanroepen synchroon.
 
-- Met behulp van [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten die u wilt extraheren en weergave-eigenschappen van de objecten die worden geretourneerd door de opdrachten.
+- Met behulp van [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten die u wilt extraheren en weergave-eigenschappen van de objecten die worden geretourneerd door de opdrachten.
 
 - Ophalen en weergeven van foutrecords die zijn gegenereerd tijdens het uitvoeren van de opdrachten.
 

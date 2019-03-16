@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851833"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056427"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Een Windows PowerShell-hosttoepassing schrijven
 
@@ -29,7 +29,7 @@ De volgende onderwerpen wordt uitgelegd hoe u een toepassing maken die als host 
 
 [Toe te voegen en aan te roepen opdrachten](./adding-and-invoking-commands.md) wordt uitgelegd hoe u maken en uitvoeren van een pijplijn opdracht in uw hosttoepassing...
 
-[Het maken van externe runspaces](./creating-remote-runspaces.md) Expains een runspace verbinden met een externe computer.
+[Het maken van externe runspaces](./creating-remote-runspaces.md) wordt uitgelegd hoe u een runspace verbinden met een externe computer.
 
 [Het maken van een aangepaste gebruikersinterface](./creating-a-custom-user-interface.md) Introduces aangepaste gebruiker interfaces en vindt u koppelingen naar voorbeelden.
 

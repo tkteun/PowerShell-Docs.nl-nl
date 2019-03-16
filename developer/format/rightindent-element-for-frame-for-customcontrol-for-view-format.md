@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
-ms.openlocfilehash: 85c165475bd67c378557c12820e450fbf8cb186e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849887"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058790"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>Het element RightIndent voor Frame voor CustomControl voor Weergave (opmaak)
 
 Hiermee geeft u op hoeveel tekens de gegevens van de rechtermarge is verplaatst. Dit element wordt gebruikt bij het definiëren van een aangepast besturingselement-weergave.
 
-Configuratie van Element (indeling) ViewDefinitions-Element (indeling) weergave Element (indeling) CustomControl Element (indeling) CustomEntries Element voor CustomControl voor weergave (indeling) CustomEntry Element voor CustomEntries voor weergave (indeling) CustomItem Element voor CustomEntry voor Frame-Element voor CustomItem voor CustomControl voor weergave (indeling) RightIndent Element CutomControlView (indeling)
+Configuratie van Element (indeling) ViewDefinitions-Element (indeling) weergave Element (indeling) CustomControl Element (indeling) CustomEntries Element voor CustomControl voor weergave (indeling) CustomEntry Element voor CustomEntries voor weergave (indeling) CustomItem Element voor CustomEntry voor Frame-Element voor CustomItem voor CustomControl voor weergave (indeling) RightIndent Element CustomControlView (indeling)
 
 ## <a name="syntax"></a>Syntaxis
 

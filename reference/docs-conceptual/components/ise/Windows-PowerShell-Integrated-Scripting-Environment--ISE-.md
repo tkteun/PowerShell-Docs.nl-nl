@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683833"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054710"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell ISE (Integrated Scripting Environment)
 
@@ -34,7 +34,7 @@ Deze hulpprogramma's kunnen besturingselementen in een deelvenster met tabbladen
 
 **De meeste lijst van de laatstgebruikte** maakt nu deel uit van het menu bestand openen zodat u gemakkelijk om te gaan naar de bestanden die u vaak gebruikt.
 
-**Samengevoegde consolevenster**. In eerdere versies van de ISE zijn er afzonderlijke deelvensters van de opdracht en het resultaat. Ze zijn nu met de gecombineerd tot één deelvenster dat meer rechtstreeks lijkt op wat u ziet in de Windows Powershell-Console.
+**Samengevoegde consolevenster**. In eerdere versies van de ISE zijn er afzonderlijke deelvensters van de opdracht en het resultaat. Ze zijn nu met de gecombineerd tot één deelvenster dat meer rechtstreeks lijkt op wat u ziet in de Windows PowerShell-Console.
 
 **Opdrachtregelopties**. Verschillende nieuwe opdrachtregelopties geven u meer controle over de werking van de ISE. Het ISE - NoProfile gestart zonder dat een profiel-script is uitgevoerd. -Een help-venster met de ISE help wordt geopend. -mta begint de ISE in 'modus apartment meerdere threads'. De standaardwaarde is één thread.
 

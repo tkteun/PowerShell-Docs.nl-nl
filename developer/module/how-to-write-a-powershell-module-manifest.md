@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849054"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059487"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Een manifest voor een PowerShell-module schrijven
 
@@ -77,7 +77,7 @@ De volgende tabel beschrijft de elementen die u in een module-manifest hebben ku
 |PowerShellVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van de Windows PowerShell-engine die is vereist voor deze module. Huidige geldige waarden zijn 1.0, 2.0, 3.0, 4.0 en 5.0.<br /><br /> Voorbeeld: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> Type: tekenreeks|' '|Hiermee geeft u de naam van de Windows PowerShell-host die is vereist door de module. Deze naam wordt geleverd door Windows PowerShell. Typ de naam van een hostprogramma, in het programma vindt: `$host.name` .<br /><br /> Voorbeeld: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van de host Windows PowerShell is vereist voor deze module.<br /><br /> Voorbeeld: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van Microsoft .NET Framework is vereist voor deze module.<br /><br /> Voorbeeld: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van Microsoft .NET Framework is vereist voor deze module.<br /><br /> Voorbeeld: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van de common language runtime (CLR) vereist voor deze module.<br /><br /> Voorbeeld: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Type: tekenreeks|' '|Processorarchitectuur (geen, X86, Amd64) vereist voor deze module. Geldige waarden zijn x86, AMD64 IA64, en niets in (onbekend of niet-opgegeven).<br /><br /> Voorbeeld: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Type: [string[]]|@()|Modules die moeten worden geïmporteerd in de globale omgeving vóór het importeren van deze module. Alle modules die worden vermeld, tenzij ze al geladen zijn, dit wordt geladen. (Bijvoorbeeld: sommige modules mogelijk al geladen door een andere module.). Het is ook mogelijk om op te geven van een specifieke versie te laden met behulp van `RequiredVersion` in plaats van `ModuleVersion`. Bij het gebruik van `ModuleVersion` deze de nieuwste versie beschikbaar met een minimum van de opgegeven versie wordt geladen.<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851140"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055730"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>Het element TableRowEntries voor TableControl (opmaak)
 
@@ -41,7 +41,7 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[TableRowEntry-Element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Vereist element.<br /><br /> De gegevens die worden weergegeven in een rij van de tabel definieert.|
+|[TableRowEntry-Element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Vereist element.<br /><br /> De gegevens die worden weergegeven in een rij van de tabel definieert.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -84,6 +84,6 @@ Het volgende voorbeeld wordt een `TableRowEntries` element dat definieert een ri
 
 [TableControl-Element (indeling)](./tablecontrol-element-format.md)
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Schrijven van een bestand opmaak PowerShell](./writing-a-powershell-formatting-file.md)

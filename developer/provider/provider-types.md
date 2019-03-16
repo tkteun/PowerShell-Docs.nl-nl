@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848494"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057957"
 ---
 # <a name="provider-types"></a>Typen providers
 
@@ -65,7 +65,7 @@ Container ingeschakelde providers toestaan dat de gebruiker voor het beheren van
 
 De [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasse definieert de volgende methoden voor het implementeren van specifieke provider-cmdlets. Ter ondersteuning van een cmdlet provider in de meeste gevallen moet u de methode die de Windows PowerShell-engine roept de cmdlet, zoals aanroepen overschrijven de `CopyItem` methode voor het `Copy-Item` cmdlet, en (optioneel) u kunt een tweede methode, zoals overschrijven`CopyItemDynamicParameters`, voor dynamische parameters toe te voegen aan de cmdlet.
 
-- De [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) en [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) methoden definiëren hoe de provider ondersteunt de `Copy-Item` provider-cmdlet. Deze cmdlet kan de gebruiker een item te kopiëren van de ene locatie naar een andere.
+- De [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) en [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) methoden definiëren hoe de provider ondersteunt de `Copy-Item` provider-cmdlet. Deze cmdlet kan de gebruiker een item te kopiëren van de ene locatie naar een andere.
 
 - De [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) en [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) methoden definiëren hoe de provider ondersteunt de `Get-ChildItem` provider-cmdlet. Deze cmdlet kan de gebruiker om op te halen van de onderliggende items van het bovenliggende item.
 

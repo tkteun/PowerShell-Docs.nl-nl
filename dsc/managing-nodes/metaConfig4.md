@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: De Local Configuration Manager configureren in eerdere versies van Windows PowerShell
-ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688859"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055305"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>De Local Configuration Manager configureren in eerdere versies van Windows PowerShell
 
@@ -87,7 +87,8 @@ Als u wilt de instellingen toepast, kunt u de **Set-DscLocalConfigurationManager
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Houd er rekening mee**: Voor de **pad** parameter, moet u hetzelfde pad dat u hebt opgegeven voor de **OutputPath** parameter wanneer u de configuratie in het vorige voorbeeld aangeroepen.
+> [!NOTE]
+> Voor de **pad** parameter, moet u hetzelfde pad dat u hebt opgegeven voor de **OutputPath** parameter wanneer u de configuratie in het vorige voorbeeld aangeroepen.
 
 Als u wilt zien van de huidige instellingen van de lokale Configuration Manager, kunt u de **Get-DscLocalConfigurationManager** cmdlet.
 Als u deze cmdlet zonder parameters aanroepen, krijgt het standaard maar de Local Configuration Manager-instellingen voor het knooppunt waarop u deze uitvoeren.

@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galerie, powershell, psgallery
 title: Pakket handmatig downloaden
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687697"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054867"
 ---
 # <a name="manual-package-download"></a>Pakket handmatig downloaden
 
-De Powershell Gallery biedt ondersteuning voor downloaden van een pakket van de website rechtstreeks, zonder gebruik van de PowerShellGet-cmdlets. U kunt een pakket downloaden als een NuGet-pakket (.nupkg)-bestand, dat u vervolgens naar een interne opslagplaats kopiëren kunt.
+De PowerShell Gallery biedt ondersteuning voor downloaden van een pakket van de website rechtstreeks, zonder gebruik van de PowerShellGet-cmdlets. U kunt een pakket downloaden als een NuGet-pakket (.nupkg)-bestand, dat u vervolgens naar een interne opslagplaats kopiëren kunt.
 
 > [!NOTE]
 > Handmatige pakket downloaden is **niet** bedoeld als vervanging voor de cmdlet Install-Module.

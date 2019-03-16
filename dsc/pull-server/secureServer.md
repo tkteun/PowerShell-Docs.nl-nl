@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686675"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057702"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -20,7 +20,7 @@ Samenvatting: Dit document is bedoeld om op te nemen proces en uitbreidbaarheid 
 
 | |Informatie over dit document|
 |:---|:---|
-De auteur | Michael Greene
+Auteur | Michael Greene
 Revisoren | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
 Gepubliceerd | April 2015
 
@@ -260,7 +260,7 @@ De opdracht vraagt om uw goedkeuring wordt vereist voor het downloaden van de mo
 
 De beste methode voor het implementeren van een DSC-pull-server is het gebruik van een script voor DSC-configuratie. Dit document worden gepresenteerd scripts, met inbegrip van beide basisinstellingen die alleen de DSC-webservice configureren en geavanceerde instellingen van een Windows Server-end-to-end met DSC webservice configureren.
 
-Opmerking:  Op dit moment de `xPSDesiredStateConfiguation` DSC-module vereist dat de server om te worden van de landinstelling EN-US.
+Opmerking:  Op dit moment de `xPSDesiredStateConfiguration` DSC-module vereist dat de server om te worden van de landinstelling EN-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Basisinformatie over de configuratie voor Windows Server 2012
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 0f025213087e6f308adf8e597fc01c1320251f76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849138"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054868"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 
@@ -110,7 +110,7 @@ De volgende code uit deze cmdlet Stop-Proc definieert de `HelpMessage` kenmerk t
 
 ## <a name="overriding-an-input-processing-method"></a>Invoer verwerken methode te overschrijven
 
-De cmdlet moet verwerken van methode invoer overschrijven, dit is meestal [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Bij het wijzigen van het systeem, de cmdlet moet aanroepen de [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden om toe te staan de de gebruiker om feedback te geven voordat er een wijziging is aangebracht. Zie voor meer informatie over deze methoden, [maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md).
+De cmdlet moet verwerken van methode invoer overschrijven, dit is meestal [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Bij het wijzigen van het systeem, de cmdlet moet aanroepen de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden waarmee de gebruiker om feedback te geven voordat er een wijziging is aangebracht. Zie voor meer informatie over deze methoden, [maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="supporting-wildcard-expansion"></a>Ondersteunende jokertekens
 

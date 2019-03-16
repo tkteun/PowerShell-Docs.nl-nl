@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847486"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057600"
 ---
 # <a name="updatable-help-overview"></a>Overzicht van Help die kan worden bijgewerkt
 
@@ -31,7 +31,9 @@ Bij te werken Help wordt volledig ondersteund door alle Windows PowerShell-modul
 
 Bij te werken Help bevat de volgende functies.
 
-- De [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, waarmee wordt bepaald of gebruikers beschikken over de nieuwste helpbestanden voor een module-bestanden en, als dit niet het geval is, downloadt de nieuwste helpbestanden van het Internet, ze uitgepakt en installeert u ze in de submappen van de juiste module op de de computer van de gebruiker. Gebruikers kunnen gebruiken de [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet om de zojuist geïnstalleerde help-onderwerpen onmiddellijk weer te geven. Ze hoeft niet opnieuw opstarten van Windows PowerShell.
+- De [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet, waarmee wordt bepaald of gebruikers beschikken over de nieuwste helpbestanden voor een module-bestanden en, als dit niet het geval is, downloadt de nieuwste helpbestanden van het Internet, ze uitgepakt en installeert u ze in de submappen van de juiste module op de de computer van de gebruiker.
+  Gebruikers kunnen gebruiken de [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet om de zojuist geïnstalleerde help-onderwerpen onmiddellijk weer te geven.
+  Ze hoeft niet opnieuw starten van PowerShell.
 
 - De [Help opslaan](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlet, de nieuwste help downloadt-bestanden op het Internet en slaat ze op in een bestand system-map. Gebruikers kunnen gebruiken de `Update-Help` cmdlet help-bestanden van de map van het systeem, verkrijgen en uitpakken en installeert u deze in de submappen van de module op de computer van de gebruiker. De `Save-Help` cmdlet is ontworpen voor gebruikers met beperkte of geen toegang tot Internet en voor bedrijven die wil toegang tot Internet beperken.
 

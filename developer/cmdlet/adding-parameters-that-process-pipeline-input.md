@@ -8,15 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programer's Guide], pipeline input
+- parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: c790d20a792bcdb4a34485e53375560e129433a8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845785"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054753"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken
 
@@ -93,7 +93,7 @@ De vorige declaratie stelt de `ValueFromPipeline` trefwoord `true` zodat de Wind
 
 Als de cmdlet voor het afhandelen van de invoer van de pijplijn is, moet de juiste invoer verwerkingsmethoden overschrijven. De van basic input-verwerkingsmethoden zijn geïntroduceerd in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter is niets opgegeven door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. U ziet dat binnen [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), de aanroep van [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) is de uitvoer mechanisme voor het verzenden van uitvoer objecten aan de pijplijn. De tweede parameter van deze aanroep `enumerateCollection`, is ingesteld op `true` vertellen dat de Windows PowerShell-runtime voor het inventariseren van de matrix met proces-objecten en een proces op een tijdstip schrijven naar de opdrachtregel.
+Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter is niets opgegeven door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. U ziet dat binnen [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), de aanroep van [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) is de uitvoer mechanisme voor het verzenden van uitvoer objecten aan de pijplijn. De tweede parameter van deze aanroep `enumerateCollection`, is ingesteld op `true` vertellen dat de Windows PowerShell-runtime voor het inventariseren van de matrix met proces-objecten en een proces op een tijdstip schrijven naar de opdrachtregel.
 
 ```csharp
 protected override void ProcessRecord()

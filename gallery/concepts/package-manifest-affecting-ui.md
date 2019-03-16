@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687249"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058212"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
 
@@ -21,7 +21,7 @@ In dit onderwerp biedt uitgevers met beknopte informatie over het wijzigen van h
 
 De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van het pakket gebruikersinterface die worden beheerd door de uitgever. Elk item wordt aangegeven als kan worden beheerd door de module of het script het manifest.
 
-| UI-Element | Beschrijving | Module | Script |
+| UI-Element | Description | Module | Script |
 | --- | --- | --- | --- |
 | **Titel** | Dit is de naam van het pakket dat wordt gepubliceerd naar de galerie  | Nee | Nee |
 | **Versie** | De versie die wordt weergegeven is de tekenreeks in de metagegevens en een voorlopige als is opgegeven. De primaire deel van de versie in een Module-manifest is de ModuleVersion. Voor een script, wordt dit aangeduid als. Versie. Als een tekenreeks prerelease-versie is opgegeven, wordt deze toegevoegd aan de ModuleVersion voor modules, of als onderdeel van de opgegeven. De versie voor scripts. Er is voor het opgeven van prerelease tekenreeksen in de documentatie bij [modules](module-prerelease-support.md), en in [scripts](script-prerelease-support.md) | Ja | Ja |
@@ -40,7 +40,7 @@ De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van he
 | **Rolmogelijkheden** | Dit wordt weergegeven wanneer de module die is gepubliceerd naar de PowerShell Gallery bevat een of meer rollen capability (.psrc)-bestanden, die worden gebruikt door JEA. Zie de JEA-documentatie voor meer informatie over [rolmogelijkheden](/powershell/jea/role-capabilities). | Ja | Nee |
 | **PowerShell-edities** | Dit is opgegeven in een script of een module-manifest. Modules die zijn ontworpen om te worden gebruikt met PowerShell 5.0 en onder dit wordt bepaald met behulp van labels. Gebruik de tag PSEdition_Desktop voor bureaublad, en voor core, gebruikt u de tag PSEdition_Core. Voor modules die worden gebruikt alleen in PowerShell 5.1 en hoger, is er een CompatiblePSEditions sleutel in het manifest van de belangrijkste. Voor extra details, raadpleegt u de functie PS-editie in [de PowerShell-Get-documentatie](module-psedition-support.md). | Ja | Ja |
 | **Afhankelijkheden** | Afhankelijkheden zijn de modules in de PowerShell Gallery die zijn gedefinieerd in een van beide de module als RequiredModules of in het manifest van het script als #Requires-Module (naam). | Ja | Ja |
-| **Minimale versie van Powershell** | Dit kan worden opgegeven in een module-manifest als PowerShellVersion | Ja | Nee |
+| **Minimale versie van PowerShell** | Dit kan worden opgegeven in een module-manifest als PowerShellVersion | Ja | Nee |
 | **Versiegeschiedenis** | De versiegeschiedenis weerspiegelt de updates die zijn aangebracht in een module in de PowerShell Gallery. Als een versie van een pakket is verborgen met behulp van de functie verwijderen, zal dit niet worden weergegeven in de versiegeschiedenis, behalve voor de eigenaren van het pakket. | Nee | Nee |
 | **Project-Site** | Site van het project is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een ProjectURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. PROJECTURI. | Ja | Ja |
 | **Licentie** | De koppeling van een licentie is opgegeven voor modules in de sectie Privatedata\PSData van de module-manifest door een LicenseURI op te geven. In het manifest van het script, wordt dit bepaald door het op te geven. LICENSEURI. Het is belangrijk te weten dat als een licentie niet via de LicenseURI opgegeven is of binnen een module, geef de gebruiksvoorwaarden voor de PowerShell Gallery vervolgens de gebruiksvoorwaarden voor het pakket. Zie de gebruiksvoorwaarden voor meer informatie. | Ja | Ja |
@@ -52,7 +52,7 @@ De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van he
 De pagina pakket bewerken van PowerShell-galerie kan uitgevers te wijzigen welke velden worden weergegeven voor een pakket specifiek aantal:
 
 - Title
-- Beschrijving
+- Description
 - Samenvatting
 - Pictrogram-URL
 - URL van startpagina van project
@@ -93,7 +93,7 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | Database | Databases (meervoud) is minder wenselijk |
 | DevOps |  |
 | Windows |  |
-| Build |  |
+| Ontwikkelen |  |
 | Implementatie | Implementeer wat minder vaak wordt gebruikt |
 | Cloud |  |
 | GIT |  |

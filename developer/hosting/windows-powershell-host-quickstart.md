@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847787"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059674"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snelstartgids voor Windows PowerShell-hosts
 
@@ -112,7 +112,7 @@ Terwijl de standaard-runspace gebruikt in de vorige voorbeelden wordt geladen va
 
 ### <a name="creating-an-initialsessionstate-object"></a>Het maken van een object InitialSessionState
 
-Voor het maken van een aangepaste runspace, moet u eerst maken een [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object. In het volgende voorbeeld gebruiken we de [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) te maken van een ruspace na het maken van een standaard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+Voor het maken van een aangepaste runspace, moet u eerst maken een [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object. In het volgende voorbeeld gebruiken we de [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) te maken van een runspace na het maken van een standaard [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Beperken van de runspace
 
-In het vorige voorbeeld, er een standaard gemaakt [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object dat alle van de ingebouwde Windows PowerShell-kern geladen. Er kan ook zijn met de naam de [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methode voor het maken van een InitialSessionState-object dat alleen de opdrachten in de Mirosoft.PowerShell.Core zou laden de module. Voor het maken van een meer beperkte runspace, moet u een lege [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object door het aanroepen van de [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) methode, en vervolgens opdrachten toevoegen aan de InitialSessionState.
+In het vorige voorbeeld, er een standaard gemaakt [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object dat alle van de ingebouwde Windows PowerShell-kern geladen. Er kan ook zijn met de naam de [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methode voor het maken van een InitialSessionState-object dat alleen de opdrachten in de Microsoft.PowerShell.Core zou laden de module. Voor het maken van een meer beperkte runspace, moet u een lege [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object door het aanroepen van de [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) methode, en vervolgens opdrachten toevoegen aan de InitialSessionState.
 
 Met behulp van een runspace dat alleen de opdrachten die u opgeeft wordt geladen biedt aanzienlijk betere prestaties.
 

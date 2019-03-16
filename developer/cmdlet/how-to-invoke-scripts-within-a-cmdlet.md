@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cc0bc6ce-48a5-4d9c-927e-636bca743e9f
 caps.latest.revision: 9
-ms.openlocfilehash: 4b4d5645785b751eb1390e196f5b9437b4a1e13b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7dcb8bc20ab56225764854f9dc6fdfd858ed7451
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846695"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055781"
 ---
 # <a name="how-to-invoke-scripts-within-a-cmdlet"></a>Scripts in een cmdlet aanroepen
 
-In dit voorbeeld laat zien hoe een script dat wordt doorgegeven aan een cmdlet aanroepen. Het script is uitgevoerd door de cmdlet en de resultaten worden geretourneerd aan de cmdlet als een verzameling van [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten.
+In dit voorbeeld laat zien hoe een script dat wordt doorgegeven aan een cmdlet aanroepen. Het script is uitgevoerd door de cmdlet en de resultaten worden geretourneerd aan de cmdlet als een verzameling van [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten.
 
 ## <a name="to-invoke-a-script-block"></a>Om aan te roepen, een scriptblok
 
@@ -37,7 +37,7 @@ In dit voorbeeld laat zien hoe een script dat wordt doorgegeven aan een cmdlet a
                                   );
     ```
 
-2. Vervolgens de resulterende verzameling van het script doorloopt [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objecten en de noodzakelijke bewerkingen uit te voeren.
+2. Vervolgens de resulterende verzameling van het script doorloopt [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten en de noodzakelijke bewerkingen uit te voeren.
 
     ```c
     foreach (PSObject psObject in psObjects)

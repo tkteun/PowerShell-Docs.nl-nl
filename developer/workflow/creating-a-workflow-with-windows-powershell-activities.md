@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845036"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055424"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Een werkstroom maken met Windows PowerShell-activiteiten
 
@@ -33,9 +33,9 @@ De volgende procedures wordt beschreven hoe u een werkstroom maken die controlee
 
 2. Maken van een argument met de naam `ComputerName` met een argumenttype van `String[]`. Dit argument geeft de namen van de computers om te controleren en te koppelen.
 
-3. Maken van een argument met de naam `DomainCred` van het type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument vertegenwoordigt de domeinreferenties van een domeinaccount dat gemachtigd is op een computer toevoegen aan het domein.
+3. Maken van een argument met de naam `DomainCred` van het type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument vertegenwoordigt de domeinreferenties van een domeinaccount dat gemachtigd is op een computer toevoegen aan het domein.
 
-4. Maken van een argument met de naam `MachineCred` van het type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument geeft de referenties van een beheerder op de computers om te controleren en te koppelen.
+4. Maken van een argument met de naam `MachineCred` van het type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument geeft de referenties van een beheerder op de computers om te controleren en te koppelen.
 
 5. Voeg een **ParallelForEach** activiteit binnen de **reeks** activiteit. Voer `comp` en `ComputerName` in de tekstvakken zodat de lus de elementen van doorloopt de `ComputerName` matrix.
 
