@@ -815,7 +815,7 @@ items:
       - name: Het element TableRowEntries voor TableControl (opmaak)
         href: ./format/tablerowentries-element-for-tablecontrol-format.md
       - name: Het element TableRowEntry voor TableRowEntries voor TableControl (opmaak)
-        href: ./format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md
+        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
       - name: Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
         href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
       - name: Het element Tekst voor CustomItem voor Besturingselementen voor Weergave (opmaak)
@@ -879,7 +879,7 @@ items:
       - name: Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
       - name: Het element Wrap voor TableRowEntry voor TableControl (opmaak)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: Het element WrapTables (opmaak)
         href: ./format/wraptables-element-format.md
   - name: Help-onderwerpen op basis van opmerkingen schrijven
@@ -1006,8 +1006,6 @@ items:
       href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
     - name: Een werkstroom maken met Windows PowerShell-activiteiten
       href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: De Windows PowerShell-werkstroomactiviteitcontroller uitbreiden
-      href: ./workflow/extending-the-windows-powershell-workflow-activity-controller.md
     - name: Een Windows PowerShell-werkstroom importeren en aanroepen
       href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
     - name: Taken plannen met de Windows PowerShell-API
@@ -1143,9 +1141,9 @@ items:
     items:
     - name: Wat is nieuw
       href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: d95ae41e37ade171609500f0dd2627712aa6dae9
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.openlocfilehash: 1ccdff0cabb81cbd68ecbfbdae69672463f9c4e8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451097"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056614"
