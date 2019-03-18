@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Veelgestelde vragen over de PowerShell Gallery
-ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688012"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057685"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -31,7 +31,8 @@ Modules zijn in het algemeen beter voor het delen van, maar we zijn inschakelen 
 
 Voordat u pakketten naar de galerie publiceren kunt, moet u een account registreren in de PowerShell Gallery. Dit is omdat een NuGetApiKey, die wordt geleverd bij de registratie voor het publiceren van pakketten vereist. Als u wilt registreren, gebruikt u uw persoonlijke, werk of schoolaccount aanmelden bij de PowerShell Gallery. Een eenmalige registratie-proces is vereist wanneer u zich aanmeldt voor de eerste keer. Daarna is uw NuGetApiKey beschikbaar op uw profielpagina.
 
-Zodra u hebt geregistreerd in de galerie, gebruikt u de [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) of [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlets voor het publiceren van uw pakket naar de galerie. Ga naar het tabblad ' Publish ' voor meer informatie over het uitvoeren van deze cmdlets of lees de [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) en [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) documentatie.
+Zodra u hebt geregistreerd in de galerie, gebruikt u de [Publish-Module][] of [Publish-Script][] cmdlets voor het publiceren van uw pakket naar de galerie.
+Ga naar het tabblad ' Publish ' voor meer informatie over het uitvoeren van deze cmdlets of lees de [Publish-Module][] en [Publish-Script][] documentatie.
 
 **U hoeft niet te registreren of aanmelden bij de galerie te installeren of sla-pakketten.**
 
@@ -56,29 +57,37 @@ Als u een selectievakje categorie selecteert, worden u melding "Ik wil graag om 
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Wat zijn de vereisten voor het publiceren van een module aan de galerie met PowerShell?
 
-Elk soort PowerShell-module (scriptmodules, binaire modules of manifest modules) kan worden gepubliceerd naar de galerie. Voor het publiceren van een module PowerShellGet moet weten van enkele dingen die over het - de-versie, beschrijving, de auteur en hoe deze wordt in licentie gegeven. Deze informatie wordt gelezen als onderdeel van het publicatieproces van de *module-manifest* (.psd1)-bestand, of van de waarde van de [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) van cmdlet **LicenseUri** parameter. Alle modules die zijn gepubliceerd naar de galerie moeten modulemanifesten hebben. Een module met de volgende informatie in het manifest kan worden gepubliceerd naar de galerie:
+Elk soort PowerShell-module (scriptmodules, binaire modules of manifest modules) kan worden gepubliceerd naar de galerie.
+Voor het publiceren van een module PowerShellGet moet weten van enkele dingen die over het - de-versie, beschrijving, de auteur en hoe deze wordt in licentie gegeven.
+Deze informatie wordt gelezen als onderdeel van het publicatieproces van de *module-manifest* (.psd1)-bestand, of van de waarde van de [Publish-Module][] van de cmdlet **LicenseUri** de parameter.
+Alle modules die zijn gepubliceerd naar de galerie moeten modulemanifesten hebben.
+Een module met de volgende informatie in het manifest kan worden gepubliceerd naar de galerie:
 
 - Versie
-- Beschrijving
-- De auteur
-- Een URI met de licentievoorwaarden van de module als deel van de **PrivateData** sectie van het manifest, of in de **LicenseUri** parameter van de [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+- Description
+- Auteur
+- Een URI met de licentievoorwaarden van de module als deel van de **PrivateData** sectie van het manifest, of in de **LicenseUri** parameter van de [Publish-Module][] cmdlet.
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hoe maak ik een goed ingedeelde module-manifest?
 
-De eenvoudigste manier om te maken van een module-manifest is om uit te voeren de [ **New-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet. In PowerShell 5.0 of hoger, nieuw-ModuleManifest genereert een goed ingedeelde module-manifest met lege velden voor nuttige metagegevens zoals **ProjectUri**, **LicenseUri**, en **Tags**. Gewoon vult u het aantal lege waarden of de gegenereerde manifest gebruiken als een voorbeeld van de juiste indeling.
+De eenvoudigste manier om te maken van een module-manifest is om uit te voeren de [Nieuwe ModuleManifest][] cmdlet. In PowerShell 5.0 of hoger, nieuw-ModuleManifest genereert een goed ingedeelde module-manifest met lege velden voor nuttige metagegevens zoals **ProjectUri**, **LicenseUri**, en **Tags**. Gewoon vult u het aantal lege waarden of de gegenereerde manifest gebruiken als een voorbeeld van de juiste indeling.
 
-Om te controleren of alle vereiste metagegevensvelden correct hebt ingevuld, gebruikt u de [ **Test ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+Om te controleren of alle vereiste metagegevensvelden correct hebt ingevuld, gebruikt u de [Test-ModuleManifest][] cmdlet.
 
-Voor het bijwerken van de velden van de manifest-bestand module, gebruikt u de [ **Update ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+Voor het bijwerken van de velden van de manifest-bestand module, gebruikt u de [Update-ModuleManifest][] cmdlet.
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Wat zijn de vereisten voor het publiceren van een script naar de galerie?
 
-Elk soort PowerShell-script (scripts of werkstromen) kan worden gepubliceerd naar de galerie. Voor het publiceren van een script, PowerShellGet moet weten van enkele dingen die over het - de-versie, beschrijving, de auteur en hoe deze wordt in licentie gegeven. Deze informatie wordt gelezen als onderdeel van het publicatieproces van het scriptbestand *PSScriptInfo* sectie, of van de waarde van de [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) van cmdlet  **LicenseUri** parameter. Alle scripts die zijn gepubliceerd naar de galerie moeten metagegevens hebben. Elk script dat in de sectie PSScriptInfo, de volgende gegevens bevat kan worden gepubliceerd naar de galerie:
+Elk soort PowerShell-script (scripts of werkstromen) kan worden gepubliceerd naar de galerie.
+Voor het publiceren van een script, PowerShellGet moet weten van enkele dingen die over het - de-versie, beschrijving, de auteur en hoe deze wordt in licentie gegeven.
+Deze informatie wordt gelezen als onderdeel van het publicatieproces van het scriptbestand *PSScriptInfo* sectie, of van de waarde van de [Publish-Script][] van de cmdlet **LicenseUri**parameter.
+Alle scripts die zijn gepubliceerd naar de galerie moeten metagegevens hebben.
+Elk script dat in de sectie PSScriptInfo, de volgende gegevens bevat kan worden gepubliceerd naar de galerie:
 
 - Versie
-- Beschrijving
-- De auteur
-- Een URI met de licentievoorwaarden van het script, hetzij als onderdeel van de **PSScriptInfo** gedeelte van het script of in de **LicenseUri** parameter van de [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+- Description
+- Auteur
+- Een URI met de licentievoorwaarden van het script, hetzij als onderdeel van de **PSScriptInfo** gedeelte van het script of in de **LicenseUri** parameter van de [Publish-Script][] cmdlet.
 
 ## <a name="how-do-i-search"></a>Hoe vind ik?
 
@@ -94,11 +103,11 @@ Dit het geval is, bijvoorbeeld, wanneer u zoekt PowerShellVersion: '2.0' alleen 
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hoe maak ik een goed ingedeelde scriptbestand?
 
-De eenvoudigste manier om een goed ingedeelde scriptbestand maken om uit te voeren is de [ **New-ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet. In PowerShell 5.0, New-ScriptFileInfo genereert een goed ingedeelde scriptbestand met lege velden voor nuttige metagegevens zoals **ProjectUri**, **LicenseUri**, en **Tags** . Gewoon vult u het aantal lege waarden of het gegenereerde scriptbestand gebruiken als een voorbeeld van de juiste indeling.
+De eenvoudigste manier om een goed ingedeelde scriptbestand maken om uit te voeren is de [New-ScriptFileInfo][] cmdlet. In PowerShell 5.0, New-ScriptFileInfo genereert een goed ingedeelde scriptbestand met lege velden voor nuttige metagegevens zoals **ProjectUri**, **LicenseUri**, en **Tags** . Gewoon vult u het aantal lege waarden of het gegenereerde scriptbestand gebruiken als een voorbeeld van de juiste indeling.
 
-Om te controleren of alle vereiste metagegevensvelden correct hebt ingevuld, gebruikt u de [ **Test ScriptFileInfo** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+Om te controleren of alle vereiste metagegevensvelden correct hebt ingevuld, gebruikt u de [Test-ScriptFileInfo][] cmdlet.
 
-Voor het bijwerken van de metagegevensvelden script gebruikt de [ **Update ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+Voor het bijwerken van de metagegevensvelden script gebruikt de [Update-ScriptFileInfo][] cmdlet.
 
 ## <a name="what-other-types-of-powershell-modules-exist"></a>Wat andere typen PowerShell-Modules bestaat?
 
@@ -112,7 +121,10 @@ Alle modules in de galerie modulemanifesten bevatten, en de meeste van deze modu
 
 PackageManagement is een algemene interface voor het werken met een Pakketbeheer. Uiteindelijk, of u bent om met een PowerShell-modules, MSI-bestanden, Ruby gems, NuGet-pakketten of Perl modules, zou het mogelijk gebruik van PackageManagement-opdrachten (Find-pakket en Install-Package) om te zoeken en deze installeren. PackageManagement doet dit door een Pakketprovider voor elke Pakketbeheer PackageManagement aansluit. Providers die dit alles doen het echte werk; Deze inhoud ophalen van opslagplaatsen en de inhoud lokaal installeren. Pakket providers verpakken vaak gewoon rond de bestaande package manager-hulpprogramma's voor een opgegeven pakkettype.
 
-PowerShellGet is het pakketbeheerprogramma voor PowerShell-pakketten. Er is een PSModule pakket-provider die wordt aangegeven dat PackageManagement PowerShellGet-functionaliteit. Als gevolg hiervan kunt u een van beide uitvoeren [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) of Install-Package-Provider PSModule geen module te installeren vanuit de PowerShell Gallery. Bepaalde functionaliteit PowerShellGet, met inbegrip van [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) en [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), kan niet worden geopend via PackageManagement-opdrachten.
+PowerShellGet is het pakketbeheerprogramma voor PowerShell-pakketten.
+Er is een PSModule pakket-provider die wordt aangegeven dat PackageManagement PowerShellGet-functionaliteit.
+Als gevolg hiervan kunt u een van beide uitvoeren [Install-Module][] of Install-Package-Provider PSModule geen module te installeren vanuit de PowerShell Gallery.
+Bepaalde functionaliteit PowerShellGet, met inbegrip van [Update-Module][] en [Publish-Module][], kan niet worden geopend via PackageManagement-opdrachten.
 
 Kortom, is uitsluitend PowerShellGet gericht op het met een premiumervaring voor het beheer van pakket voor de PowerShell-inhoud. PackageManagement is gericht op het blootstellen van alle pakket-management-ervaringen door een algemene set hulpprogramma's. Als u dit antwoord unsatisfying vinden, er is een lange antwoord aan de onderkant van dit document, in de **hoe PackageManagement daadwerkelijk in verband met PowerShellGet?** sectie.
 
@@ -122,7 +134,7 @@ Ga voor meer informatie naar de [PackageManagement-projectpagina](https://oneget
 
 De PowerShell Gallery is een gewijzigde versie van de [NuGet-galerie](https://www.nuget.org/). PowerShellGet maakt gebruik van NuGet-provider om te werken met op basis van NuGet-opslagplaatsen, zoals de PowerShell Gallery.
 
-U kunt PowerShellGet gebruiken op basis van een geldige NuGet opslagplaats of de bestandsshare. U hoeft alleen de opslagplaats toevoegen door het uitvoeren van de [ **Register-PSRepository** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.
+U kunt PowerShellGet gebruiken op basis van een geldige NuGet opslagplaats of de bestandsshare. U hoeft alleen de opslagplaats toevoegen door het uitvoeren van de [Register-PSRepository][] cmdlet.
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Betekent dat ik NuGet.exe kunt gebruiken om te werken met de galerie?
 
@@ -132,7 +144,7 @@ Ja.
 
 Achter de schermen maakt PowerShellGet intensief gebruik van PackageManagement-infrastructuur.
 
-In de PowerShell-cmdlet-laag, [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) is eigenlijk een thin wrapper rond Install-Package-Provider PSModule.
+In de PowerShell-cmdlet-laag, [Install-Module][] is eigenlijk een thin wrapper rond Install-Package-Provider PSModule.
 
 Op de laag van de provider in de PackageManagement-pakket aanroepen de provider van het pakket PSModule daadwerkelijk naar andere providers PackageManagement-pakket. Bijvoorbeeld, wanneer u werkt met NuGet op basis van galerieën (zoals de PowerShell Gallery), de PSModule Pakketprovider gebruikt de NuGet-pakket-Provider om te werken met de opslagplaats.
 
@@ -169,3 +181,16 @@ Bekijk [pakket eigenaars beheren op PowerShellGallery.com](./how-to/publishing-p
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Hoe ik omgaan met de eigenaar van een pakket wie is de licentie van mijn pakket schenden?
 
 U wordt aangeraden de PowerShell-community om te werken samen om het oplossen van eventuele geschillen die mogelijk worden veroorzaakt tussen eigenaren van pakket en de eigenaren van andere pakketten.  We hebben ontworpen een [geschil omzettingsproces](./how-to/getting-support/dispute-resolution.md) die we vragen u moet uitvoeren voordat PowerShellGallery.com beheerders intercede.
+
+[Nieuwe ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
+[Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
+[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
+
+[Install-Module]: /powershell/module/PowershellGet/Install-Module
+[New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
+[Publish-Module]: /powershell/module/PowershellGet/Publish-Module
+[Publish-Script]: /powershell/module/PowershellGet/Publish-Script
+[Register-PSRepository]: /powershell/module/PowershellGet/Register-PSRepository
+[Test-ScriptFileInfo]: /powershell/module/PowershellGet/Test-ScriptFileInfo
+[Update-Module]: /powershell/module/PowershellGet/Update-Module
+[Update-ScriptFileInfo]: /powershell/module/PowershellGet/Update-ScriptFileInfo
