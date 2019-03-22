@@ -2,12 +2,12 @@
 title: Informatie over bestandscodering in VSCode en PowerShell
 description: Bestandscodering in VSCode en PowerShell configureren
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795111"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320401"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Informatie over bestandscodering in VSCode en PowerShell
 
@@ -102,7 +102,7 @@ Stuklijsten zijn optioneel en hun goedkeuring is zo populair zijn in de wereld L
 
 VSCode de standaardcodering is UTF-8 zonder stuklijst.
 
-Om in te stellen [Van VSCode-codering][], gaat u naar de VSCode-instellingen (<kbd>Ctrl<kbd>+</kbd>,</kbd>) en stel de `"files.encoding"` instelling:
+Om in te stellen [VSCode codering van][], gaat u naar de VSCode-instellingen (<kbd>Ctrl<kbd>+</kbd>,</kbd>) en stel de `"files.encoding"` instelling:
 
 ```json
 "files.encoding": "utf8bom"
@@ -194,7 +194,7 @@ Het is niet mogelijk om af te dwingen PowerShell gebruik van een specifieke invo
 
 ### <a name="existing-scripts"></a>Bestaande scripts
 
-Scripts al op het bestandssysteem moet mogelijk opnieuw worden gecodeerd naar uw nieuw gekozen codering. In de onderste balk van VSCode ziet u het label UTF-8. Klik hierop om de actiebalk te openen en selecteer **opslaan met codering**. U kunt nu kiezen om een nieuwe codering voor dat bestand. Zie [Van VSCode-codering][] voor volledige instructies.
+Scripts al op het bestandssysteem moet mogelijk opnieuw worden gecodeerd naar uw nieuw gekozen codering. In de onderste balk van VSCode ziet u het label UTF-8. Klik hierop om de actiebalk te openen en selecteer **opslaan met codering**. U kunt nu kiezen om een nieuwe codering voor dat bestand. Zie [VSCode codering van][] voor volledige instructies.
 
 Als u wilt dat meerdere bestanden opnieuw te coderen, kunt u het volgende script gebruiken:
 
@@ -215,7 +215,7 @@ Houd er rekening mee dat dit worden gehandhaafd tussen startende ondernemingen b
 ### <a name="source-control-software"></a>Software voor bronbeheer
 
 Sommige source control hulpprogramma's, zoals git, negeren coderingen; GIT traceert alleen de bytes.
-Andere resources, zoals TFS of Mercurial, mogelijk niet. Zelfs enkele git-hulpprogramma's zijn, is afhankelijk van de tekst te decoderen.
+Andere resources, zoals Azure DevOps- of Mercurial, mogelijk niet. Zelfs enkele git-hulpprogramma's zijn, is afhankelijk van de tekst te decoderen.
 
 Als dit het geval is, zorg ervoor dat u:
 
@@ -274,4 +274,4 @@ Er zijn een paar andere mooie berichten op codering en codering in PowerShell co
 [byte-volgordemarkering]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
-[Van VSCode-codering]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[VSCode codering van]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
