@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell-cmdlet
 title: Meer informatie over namen voor PowerShell-opdracht
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688936"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623718"
 ---
 # <a name="learning-powershell-command-names"></a>Meer informatie over namen voor PowerShell-opdracht
 
@@ -25,7 +25,7 @@ Ook hebben deze opdrachten onregelmatige parameter specificaties. U kunt geen ge
 Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Voorbeeld: `tasklist /S DC01`.
 
 > [!NOTE]
-> Voorafgaand aan PowerShell v6, `sc` is een alias voor de `Set-Content` cmdlet. Om uit te voeren de **sc.exe** opdracht, moet u de bestandsextensie opnemen.
+> Voorafgaand aan PowerShell v6, `sc` is een alias voor de `Set-Content` cmdlet. Daarom om uit te voeren de **sc.exe** opdracht in een eerdere versie van PowerShell dan v6, moet u de volledige bestandsnaam opnemen **sc.exe** inclusief de bestandsextensie **exe**.
 
 Services en -processen zijn voorbeelden van beheerbare elementen op een computer die goed gedefinieerde levenscyclus hebben. U kan starten of stoppen van services en -processen of een lijst van alle actieve services of processen. Hoewel er belangrijke technische verschillen daartussen zijn, zijn welke acties die u op services en -processen uitvoeren conceptueel gezien hetzelfde. Bovendien, de opties die we voor het aanpassen van een actie door de parameters op te geven mogelijk qua ontwerp vergelijkbaar ook.
 

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Belangrijke wijzigingen voor PowerShell 6.0
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795688"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623922"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Belangrijke wijzigingen voor PowerShell 6.0
 
@@ -61,6 +61,15 @@ In plaats daarvan raden wij aan dat u het gebruik van de CIM (ook wel WMI v2)-cm
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 Vanwege het gebruik van niet-ondersteunde API's, `Microsoft.PowerShell.LocalAccounts` is verwijderd uit de PowerShell Core tot een betere oplossing is gevonden.
+
+### <a name="-computer-cmdlets"></a>`*-Computer`-cmdlets
+
+Vanwege het gebruik van niet-ondersteunde API's, zijn de volgende cmdlets verwijderd uit PowerShell Core tot een betere oplossing is gevonden.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-Computer
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdlets
 

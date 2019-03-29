@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-pull-service
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056767"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623939"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration Pull Service
 
@@ -47,7 +47,7 @@ Functies van de online service die niet op dit moment beschikbaar zijn in de pul
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-pull-service in Windows Server
 
-Het is mogelijk met het configureren van een pull-service uit te voeren op Windows Server.
+Het is mogelijk om een pull-service uit te voeren op Windows Server te configureren.
 Er rekening mee dat de pull-serviceoplossing is opgenomen in Windows Server alleen mogelijkheden bevat van het opslaan van configuraties/modules downloaden en het vastleggen van gegevens in database.
 Deze omvatten geen veel van de mogelijkheden die door de service in Azure en is dus niet een goed hulpmiddel voor het evalueren van hoe de service kan worden gebruikt.
 

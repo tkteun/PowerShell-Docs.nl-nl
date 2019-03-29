@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
 title: Understanding PowerShell-pijplijnen
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686192"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623956"
 ---
 # <a name="understanding-pipelines"></a>Inzicht in pijplijnen
 
@@ -63,6 +63,18 @@ Ook het wisselbestand minder CPU-gebruik omdat verwerking naar overgebracht de `
 
 Hier ziet u het verschil Windows Taakbeheer om CPU en geheugen dat wordt gebruikt door PowerShell te bewaken. Voer de volgende opdracht uit: `Get-ChildItem C:\Windows -Recurse`. Vergelijk de CPU- en geheugengebruik op deze opdracht: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> De **Paging** parameter wordt niet ondersteund door alle PowerShell-hosts. Bijvoorbeeld, wanneer u probeert te gebruiken de **Paging** parameter in de PowerShell ISE, ziet u de volgende fout:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>Objecten in de pijplijn
 
 Wanneer u een cmdlet in PowerShell uitvoert, ziet u tekstuitvoer omdat het is nodig om objecten te vertegenwoordigen als tekst in een consolevenster weergegeven. De tekstuitvoer kan niet alle van de eigenschappen van het object uitvoer wordt weergegeven.
@@ -82,7 +94,7 @@ De tekstuitvoer is een samenvatting van gegevens, niet een volledige weergave va
 Wanneer u de uitvoer doorsluizen naar de `Get-Member` cmdlet krijgt u informatie over het object dat wordt geretourneerd door `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output

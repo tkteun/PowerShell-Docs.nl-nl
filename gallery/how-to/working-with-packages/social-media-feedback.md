@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Feedback geven via sociale media of opmerkingen
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054999"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623888"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Feedback geven via sociale media of opmerkingen
 
@@ -29,6 +29,10 @@ De PowerShell Gallery elke site sociale media voor 'gedeelde' van het pakket wor
 Omdat dit het aantal keren dat er iets is gedeeld geeft, worden geïnterpreteerd van andere gebruikers als 'liking' van het pakket.
 
 ## <a name="comments"></a>Opmerkingen
+
+> [!IMPORTANT]
+> Livefyre-opmerkingen wordt geleverd door een leverancier van derden en wordt niet meer ondersteund.
+> Livefyre-opmerkingen niet langer beschikbaar bij het starten van de PowerShell Gallery 05/01/2019. 
 
 De PowerShell Gallery gebruikt de LiveFyre-service waarmee gebruikers reageren op pakketten.
 Gebruikers die aanbevelingen of feedback hebt, kunnen deze functie gebruiken om feedback die zichtbaar is voor iedereen die de pakketpagina bezoeken te geven.
