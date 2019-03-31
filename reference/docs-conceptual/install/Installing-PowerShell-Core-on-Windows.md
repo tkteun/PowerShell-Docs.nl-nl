@@ -2,18 +2,18 @@
 title: PowerShell Core in Windows installeren
 description: Informatie over PowerShell Core in Windows installeren
 ms.date: 08/06/2018
-ms.openlocfilehash: 7c109c7e1848af2349092c1e70fe4a7a25be54b8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
+ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688054"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58748959"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
 ## <a name="msi"></a>MSI
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases][] pagina.
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases][] pagina.  Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren.  De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
 
 Het MSI-bestand er als volgt uitzien: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -56,7 +56,7 @@ Windows IoT is al wordt geleverd met Windows PowerShell die zullen worden gebrui
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. Verbinding maken met het apparaat en vouw het archief
@@ -64,13 +64,13 @@ Windows IoT is al wordt geleverd met Windows PowerShell die zullen worden gebrui
    ```powershell
    Enter-PSSession $s
    Set-Location u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
+   Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
 4. Instellingen voor externe toegang tot en met 6 voor PowerShell Core
 
    ```powershell
-   Set-Location .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-<version>-win-<os-arch>
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ Windows IoT is al wordt geleverd met Windows PowerShell die zullen worden gebrui
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-nano-server"></a>Implementatie van op Nano Server
