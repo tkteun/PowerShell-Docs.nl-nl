@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849642"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920387"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-programmeurs&#39;s-handleiding
 
@@ -57,7 +57,7 @@ Als u beschikbaar maakt voor een gegevensopslag die de gebruiker toegang nodig h
 
 Windows PowerShell bevat de standaard host toepassing powershell.exe, dit is een consoletoepassing die communiceert met de gebruiker en die als host fungeert voor de Windows PowerShell-runtime met behulp van een consolevenster.
 
-Zelden moet u het schrijven van uw eigen hosttoepassing voor Windows PowerShell, hoewel aanpassing wordt ondersteund. Een situatie waarin u uw eigen toepassing mogelijk is wanneer er een vereiste voor een GUI-interface die uitgebreider dan de interface die is geleverd door de standaard-hosttoepassing. U kunt ook een aangepaste toepassing wanneer u uw GUI zijn gebaseerd op de opdrachtregel. Zie voor meer informatie,[over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Zelden moet u het schrijven van uw eigen hosttoepassing voor Windows PowerShell, hoewel aanpassing wordt ondersteund. Een situatie waarin u uw eigen toepassing mogelijk is wanneer er een vereiste voor een GUI-interface die uitgebreider dan de interface die is geleverd door de standaard-hosttoepassing. U kunt ook een aangepaste toepassing wanneer u uw GUI zijn gebaseerd op de opdrachtregel. Zie voor meer informatie, [over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Runtime
 
@@ -99,10 +99,10 @@ Zie voor meer informatie over het starten van de Windows PowerShell-shell gebrui
 
 |Onderwerp|Definitie|
 |-----------|----------------|
-|[Over het maken van een Windows PowerShell-Provider](./how-to-create-a-windows-powershell-provider.md)|Deze sectie wordt beschreven hoe u een Windows PowerShell-provider voor Windows PowerShell maakt.|
+|[Een Windows PowerShell-provider maken](./how-to-create-a-windows-powershell-provider.md)|Deze sectie wordt beschreven hoe u een Windows PowerShell-provider voor Windows PowerShell maakt.|
 |[Over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Deze sectie wordt beschreven hoe u een hosttoepassing die wordt bewerkt een runspace schrijft en over het schrijven van een host-toepassing die een eigen aangepaste host implementeert.|
-|[Over het maken van een PowerShell-module Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Deze sectie beschrijft het maken van een module die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en over het maken van een aangepaste module.|
-|[Over het maken van een Console-Shell](./how-to-create-a-console-shell.md)|Deze sectie beschrijft het maken van een console-shell die kan niet worden uitgebreid.|
+|[Een Windows PowerShell-module maken](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Deze sectie beschrijft het maken van een module die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en over het maken van een aangepaste module.|
+|[Een console-shell maken](./how-to-create-a-console-shell.md)|Deze sectie beschrijft het maken van een console-shell die kan niet worden uitgebreid.|
 |[Windows PowerShell-concepten](./windows-powershell-concepts.md)|In deze sectie bevat algemene informatie waarmee u inzicht in de Windows PowerShell vanuit het oogpunt van een ontwikkelaar.|
 
 ## <a name="see-also"></a>Zie ook
