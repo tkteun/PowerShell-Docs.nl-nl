@@ -2,43 +2,57 @@
 title: PowerShell Core in Windows installeren
 description: Informatie over PowerShell Core in Windows installeren
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748959"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293007"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
-## <a name="msi"></a>MSI
+Er zijn meerdere manieren voor het installeren van PowerShell Core in Windows.
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases][] pagina.  Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren.  De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
+## <a name="prerequisites"></a>Vereisten
+
+Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende vereisten worden voldaan:
+
+- Installeer de [universeel C-Runtime](https://www.microsoft.com/download/details.aspx?id=50410) op Windows-versies voorafgaand aan Windows 10. Het is beschikbaar via de directe download of Windows Update. Volledig hersteld (inclusief optionele pakketten), heeft ondersteunde systemen al dit geïnstalleerd.
+- Installeer de Windows Management Framework (WMF) 4.0 of hoger op Windows 7 en Windows Server 2008 R2.
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
+
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden van onze GitHub [releases] []. Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren. De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
 
 Het MSI-bestand er als volgt uitzien: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Nadat u hebt gedownload, dubbelklikt u op het installatieprogramma en volg de aanwijzingen.
 
-Er is een snelkoppeling geplaatst in het Menu Start na de installatie.
+Het installatieprogramma wordt een snelkoppeling gemaakt in het Menu Start van Windows.
 
 - Het pakket wordt standaard geïnstalleerd op `$env:ProgramFiles\PowerShell\<version>`
 - U kunt PowerShell via het Menu Start starten of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>Vereisten
+### <a name="administrative-install-from-the-command-line"></a>Administratieve installeren vanaf de opdrachtregel
 
-Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende vereisten worden voldaan:
+MSI-pakketten kunnen worden geïnstalleerd vanaf de opdrachtregel. Hiermee kunnen beheerders het implementeren van pakketten zonder tussenkomst van de gebruiker. Het MSI-pakket voor PowerShell bevat de volgende eigenschappen voor het beheren van de opties voor de installatie:
 
-- Installeer de [universeel C-Runtime](https://www.microsoft.com/download/details.aspx?id=50410) op Windows-versies voorafgaand aan Windows 10.
-  Het is beschikbaar via de directe download of Windows Update.
-  Volledig hersteld (inclusief optionele pakketten), heeft ondersteunde systemen al dit geïnstalleerd.
-- Installeer de Windows Management Framework (WMF) 4.0 of hoger op Windows 7 en Windows Server 2008 R2.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** -bepaalt deze eigenschap de optie voor het toevoegen van de **Open PowerShell** item aan het contextmenu in Windows Verkenner.
+- **ENABLE_PSREMOTING** -bepaalt deze eigenschap de optie voor het inschakelen van externe communicatie van PowerShell tijdens de installatie.
+- **REGISTER_MANIFEST** -bepaalt deze eigenschap de optie voor het registreren van het manifest voor logboekregistratie van Windows-gebeurtenissen.
 
-## <a name="zip"></a>ZIP
+De volgende voorbeelden ziet hoe u PowerShell Core op de achtergrond installeert met alle van de installatieopties ingeschakeld.
 
-PowerShell binaire ZIP-archieven zijn opgegeven voor het inschakelen van geavanceerde implementatiescenario's.
-Worden opgemerkt bij het gebruik van het ZIP-archief, kunt u de controle van vereisten zoals in het MSI-pakket wordt niet ophalen.
-In de volgorde voor externe toegang via WSMan goed werken op Windows-versies voorafgaand aan Windows 10, moet u om te controleren of de [vereisten](#prerequisites) wordt voldaan.
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+Zie voor een volledige lijst met opdrachtregelopties voor Msiexec.exe, [opdrachtregelopties](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Het ZIP-pakket installeren
+
+PowerShell binaire ZIP-archieven zijn opgegeven voor het inschakelen van geavanceerde implementatiescenario's. Worden opgemerkt bij het gebruik van het ZIP-archief, kunt u de controle van vereisten zoals in het MSI-pakket wordt niet ophalen. Zorg ervoor dat u hebt voldaan voor externe toegang via WSMan goed te laten werken, de [vereisten](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Implementeren op Windows IoT
 
@@ -132,28 +146,12 @@ De volgende stappen begeleiden u bij de implementatie van PowerShell Core een ex
 
 - Als u externe toegang op basis van WSMan wilt, volg de instructies voor het maken van een externe toegang-eindpunt met de ["een ander exemplaar techniek"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Instructies voor het maken van een eindpunt voor externe toegang
+## <a name="how-to-create-a-remoting-endpoint"></a>Over het maken van een eindpunt voor externe toegang
 
-PowerShell Core biedt ondersteuning voor de PowerShell Remoting Protocol (PSRP) via WSMan- en SSH.
-Zie voor meer informatie
+PowerShell Core biedt ondersteuning voor de PowerShell Remoting Protocol (PSRP) via WSMan- en SSH. Zie voor meer informatie
 
-- [SSH in PowerShell Core voor externe toegang][ssh-remoting]
-- [Externe communicatie van WSMan in PowerShell Core][wsman-remoting]
-
-## <a name="artifact-installation-instructions"></a>Artefact installatie-instructies
-
-We een archief met CoreCLR bits op elke CI-build met publiceren [AppVeyor][].
-
-PowerShell Core installeren van het artefact CoreCLR:
-
-1. Download ZIP-pakket van **artefacten** tabblad van de specifieke build.
-2. Opheffen van blokkeringen ZIP-bestand: klik met de rechtermuisknop in Verkenner -> Eigenschappen selectievakje deblokkeren box -> toepassen ->
-3. Zip-bestand uitpakken `bin` directory
-4. `./bin/pwsh.exe`
+- [SSH voor externe toegang in PowerShell Core] [ssh-remoting]
+- [WSMan Remoting in PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-
-[releases]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
