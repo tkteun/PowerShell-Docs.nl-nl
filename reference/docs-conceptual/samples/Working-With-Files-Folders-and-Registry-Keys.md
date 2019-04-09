@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met bestanden, mappen en registersleutels werken
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685730"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293092"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en registersleutels
 
 Windows PowerShell maakt gebruik van het zelfstandig naamwoord **Item** om te verwijzen naar items gevonden op een Windows PowerShell-station. Wanneer er sprake is van het bestandssysteem van Windows PowerShell-provider, een **Item** mogelijk een bestand, een map of het Windows PowerShell-station. Lijst van en werken met de volgende items is een kritieke eenvoudige taak in de meeste instellingen voor de administratieve, zodat we willen deze taken in detail bespreken.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Het inventariseren van bestanden, mappen en registersleutels (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Het inventariseren van bestanden, mappen en registersleutels (Get-ChildItem)
 
 Sinds het ophalen van een verzameling items uit een bepaalde locatie is een veelvoorkomende taak, de **Get-ChildItem** cmdlet is speciaal ontworpen om te retourneren van alle items gevonden in een container, zoals een map.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Deze parameters kunnen worden gecombineerd en afgestemd om uitvoer op maat gemaakte te halen.
 
-#### <a name="listing-all-contained-items--recurse"></a>Alle opgenomen objecten te bieden (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Alle opgenomen objecten te bieden (-Recurse)
 
 Als zowel de items in een Windows-map en alle items die zijn opgenomen in de submappen weergeven, gebruikt u de **Recurse** parameter van **Get-ChildItem**. De aanbieding wordt weergegeven dat alles in de Windows-map en de items in submappen. Bijvoorbeeld:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Items met de naam filteren (-naam)
+### <a name="filtering-items-by-name--name"></a>Items met de naam filteren (-naam)
 
 Als u alleen de namen van items weergeven, gebruiken de **naam** parameter van **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Geforceerd verborgen Items weergeven (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Geforceerd verborgen Items weergeven (-Force)
 
 Items die normaal gesproken niet zichtbaar in Verkenner of Cmd.exe zijn worden niet weergegeven in de uitvoer van een **Get-ChildItem** opdracht. Als u verborgen items weergeven, gebruiken de **Force** parameter van **Get-ChildItem**. Bijvoorbeeld:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Deze parameter is met de naam Force omdat u kunt het normale gedrag van geforceerd overschrijven de **Get-ChildItem** opdracht. Force is een veelgebruikte parameter die ervoor zorgt een actie die een cmdlet niet normaal kunt uitvoeren, dat hoewel een actie op die de beveiliging van het systeem wordt aangetast wordt niet uitgevoerd.
 
-#### <a name="matching-item-names-with-wildcards"></a>Overeenkomende itemnamen met jokertekens
+### <a name="matching-item-names-with-wildcards"></a>Overeenkomende itemnamen met jokertekens
 
 **De Get-ChildItem** opdracht jokertekens in het pad van de items om weer te geven.
 
@@ -122,7 +122,7 @@ Zoeken naar alle bestanden waarvan de namen met beginnen **x** of **z**, type:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Items uitsluiten (-uitsluiten)
+### <a name="excluding-items--exclude"></a>Items uitsluiten (-uitsluiten)
 
 U kunt specifieke objecten uitsluiten met behulp van de **uitsluiten** parameter van Get-ChildItem. Hiermee kunt u complexe filteren in één instructie uitvoeren.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Met een combinatie van Parameters voor Get-ChildItem
+### <a name="mixing-get-childitem-parameters"></a>Met een combinatie van Parameters voor Get-ChildItem
 
 U kunt meerdere van de parameters van de **Get-ChildItem** cmdlet in dezelfde opdracht. Voordat u parameters combineren, moet u dat u bekend bent met jokertekens. De volgende opdracht retourneert bijvoorbeeld geen resultaten:
 

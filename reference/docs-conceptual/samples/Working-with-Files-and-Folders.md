@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met bestanden en mappen werken
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403928"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293211"
 ---
 # <a name="working-with-files-and-folders"></a>Met bestanden en mappen werken
 
 Navigeren door Windows PowerShell-stations en de items op deze bewerken is vergelijkbaar met het bewerken van bestanden en mappen op de fysieke schijven Windows. Deze sectie wordt beschreven hoe u omgaat met specifieke bestanden en mappen manipulatie taken-met behulp van PowerShell.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Lijst van alle bestanden en mappen in een map
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Lijst van alle bestanden en mappen in een map
 
 U kunt alle items rechtstreeks in een map ophalen met behulp van **Get-ChildItem**. Voeg de optionele **Force** parameter verborgen weergeven of items van system. Deze opdracht geeft bijvoorbeeld de directe inhoud van Windows PowerShell-station C (dit is hetzelfde als de fysieke Windows-station C):
 
@@ -36,7 +36,7 @@ De volgende opdracht wordt gezocht naar alle uitvoerbare bestanden in de map Pro
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Kopiëren van bestanden en mappen
+## <a name="copying-files-and-folders"></a>Kopiëren van bestanden en mappen
 
 Kopiëren is klaar met **Copy-Item**. De volgende opdracht uit back-ups van C:\\boot.ini naar C:\\boot.bak:
 
@@ -70,7 +70,7 @@ U kunt nog steeds andere hulpprogramma's gebruiken om uit te voeren bestandskopi
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Het maken van bestanden en mappen
+## <a name="creating-files-and-folders"></a>Het maken van bestanden en mappen
 
 Het maken van nieuwe items werkt hetzelfde voor alle Windows PowerShell-providers. Als een Windows PowerShell-provider meer dan één type item heeft, bijvoorbeeld, het bestandssysteem Windows PowerShell-provider wordt onderscheid gemaakt tussen de mappen en bestanden, moet u het itemtype opgeven.
 
@@ -86,7 +86,7 @@ Deze opdracht maakt u een nieuwe lege bestand C:\\temp\\nieuwe map\\bestand.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Alle bestanden en mappen in een map verwijderen
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Alle bestanden en mappen in een map verwijderen
 
 Kunt u de opgenomen items met **Remove-Item**, maar u wordt gevraagd om te bevestigen van de verwijzing wordt verwijderd als het item iets anders bevat. Bijvoorbeeld, als u probeert te verwijderen van de map C:\\temp\\DeleteMe met andere items, Windows PowerShell wordt u gevraagd om bevestiging voordat u verwijdert de map:
 
@@ -107,7 +107,7 @@ Als u niet elk ingesloten item worden gevraagd wilt, geeft u de **Recurse** para
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Toewijzing van een lokale map als een toegankelijke Windows-station
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Toewijzing van een lokale map als een toegankelijke Windows-station
 
 U kunt ook een lokale map toewijzen met behulp van de **subst** opdracht. De volgende opdracht maakt een lokaal station die p: geroot in de lokale map Program Files:
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 Net als bij stations, de stations die zijn toegewezen in met behulp van Windows PowerShell **subst** zijn direct zichtbaar zijn voor de Windows PowerShell-shell.
 
-### <a name="reading-a-text-file-into-an-array"></a>Een tekstbestand lezen in een matrix
+## <a name="reading-a-text-file-into-an-array"></a>Een tekstbestand lezen in een matrix
 
 Een van de meest voorkomende opslagindelingen voor tekstgegevens zich in een bestand met afzonderlijke regels behandeld als afzonderlijke gegevenselementen. De **Get-inhoud** cmdlet kan worden gebruikt om een volledige bestand in één stap te lezen, zoals hier wordt weergegeven:
 

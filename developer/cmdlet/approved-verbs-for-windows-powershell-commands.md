@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852176"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293347"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Goedgekeurde werkwoorden voor PowerShell-opdrachten
 
@@ -94,7 +94,7 @@ De volgende tabel bevat de meeste van de gedefinieerde bewerkingen.
 |[Afsluiten](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (ex)|De huidige omgeving of context wordt ingesteld op de meest recent gebruikte context. Bijvoorbeeld, de `Exit-PSSession` cmdlet wordt de gebruiker in de sessie die is gebruikt om de interactieve sessie te starten. Deze term is gekoppeld aan `Enter`.|Gebruik termen zoals Pop- of uitgeschaald niet voor deze actie.|
 |[Zoek](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Zoekt naar een object in een container die is onbekend, impliciet, optioneel of opgegeven.||
 |[Indeling](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Zorgt ervoor dat objecten in een opgegeven formulier of de lay-out.||
-|[Ophalen](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Hiermee geeft u een actie die een resource opgehaald. Deze term is gekoppeld aan `Set`.|Gebruik termen, zoals lezen, Open, Cat, Type, Dir, verkrijgen, Dump, ophalen, controleren, zoeken of zoeken naar deze actie niet voor deze actie.|
+|[Ophalen](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Hiermee geeft u een actie die een resource opgehaald. Deze term is gekoppeld aan `Set`.|Gebruik termen, zoals lezen, Open, Cat, Type, Dir, verkrijgen, Dump, ophalen, controleren, zoeken of zoeken niet voor deze actie.|
 |[Verbergen](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Maakt een resource kan niet worden getraceerd. Een cmdlet waarvan de naam de term verbergen bevat kan bijvoorbeeld een service verbergen van een gebruiker. Deze term is gekoppeld aan `Show`.|Gebruik een opdracht zoals blok niet voor deze actie.|
 |[Deelnemen aan](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Combineert de resources in één resource. Bijvoorbeeld, de `Join-Path` cmdlet combineert een pad met een van de onderliggende paden te maken van een enkel pad. Deze term is gekoppeld aan `Split`.|Gebruik termen, zoals combineren, Unite, verbinding maken of koppelen niet voor deze actie.|
 |[Lock](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Beveiliging van een resource. Deze term is gekoppeld aan `Unlock`.|Gebruik termen zoals beperken of Secure niet voor deze actie.|
@@ -149,7 +149,7 @@ De volgende tabel bevat de meeste van de gedefinieerde bewerkingen.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|Een primaire type invoer (de cmdlet-zelfstandig naamwoord geeft aan dat de invoer) converteert naar een of meer ondersteunde uitvoertypen.|Gebruik termen, zoals exporteren, uitvoer of Out niet voor deze actie.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|Converteert van een of meer soorten invoer voor een primaire uitvoertype (de cmdlet-zelfstandig naamwoord geeft het uitvoertype).|Voor deze actie gebruik geen werkwoorden zoals importeren, invoer, of In.|
 |[Ontkoppelen](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Hiermee wordt een named entity vanaf een locatie losgekoppeld. Deze term is gekoppeld aan `Mount`.|Gebruik termen zoals ontkoppelen of ontkoppelen niet voor deze actie.|
-|[Bewerken](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Hiermee wijzigt u bestaande gegevens toevoegen of verwijderen van inhoud.|Voor deze actie gebruik geen werkwoorden zoals wijzigen, bijwerken of wijzigen voor deze actie.|
+|[Bewerken](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Hiermee wijzigt u bestaande gegevens toevoegen of verwijderen van inhoud.|Gebruik termen, zoals wijzigen, bijwerken of wijzigen niet voor deze actie.|
 |[Vouw](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|De gegevens van een resource die is gecomprimeerd herstellen naar de oorspronkelijke staat. Deze term is gekoppeld aan `Compress`.|Gebruik termen zoals exploderen of decomprimeren niet voor deze actie.|
 |[Exporteren](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)|De primaire invoer in een permanent gegevensarchief, zoals een bestand of in een indeling voor berichtenuitwisseling ingekapseld. Deze term is gekoppeld aan `Import`.|Gebruik termen, zoals uitpakken of back-up niet voor deze actie.|
 |[Groep](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)|Zorgt ervoor dat of wordt gekoppeld aan een of meer resources.|Voor deze actie niet gebruiken van termen, zoals aggregatie, rangschikken, koppelen of correleren.|
@@ -251,6 +251,6 @@ Maakt gebruik van PowerShell het [System.Management.Automation.VerbsOther](/dotn
 
 [De declaratie van de cmdlet](./cmdlet-class-declaration.md)
 
-[Windows PowerShell-programmeergids](../prog-guide/windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](../prog-guide/windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

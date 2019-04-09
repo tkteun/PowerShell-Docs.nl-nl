@@ -1,14 +1,14 @@
 ---
 ms.date: 3/18/2019
-title: Het maken van Get-WinEvent-query's met FilterHashtable
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+title: Get-WinEvent-query's maken met FilterHashtable
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320486"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293279"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Het maken van Get-WinEvent-query's met FilterHashtable
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
 
 Lezen van de oorspronkelijke juni 3 2014 **Scripting Guy** blog post, Zie [gebruik FilterHashTable naar Filter gebeurtenislogboek met PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Blogberichten over de opsomming
+## <a name="blog-posts-about-enumeration"></a>Blogberichten over de opsomming
 
 In dit artikel bevat informatie over het gebruik van vaste waarden in een hash-tabel. Lees voor meer informatie over opsomming deze **Scripting Guy** blogberichten. Zie voor het maken van een functie waarmee de opsommingswaarden worden geretourneerd, [opsommingen en waarden](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 Zie voor meer informatie de [Scripting Guy blog reeks blogberichten over opsomming](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Hash-tabel sleutel/waarde-paren
+## <a name="hash-table-keyvalue-pairs"></a>Hash-tabel sleutel/waarde-paren
 
 Voor het bouwen van efficiënte query's, gebruikt u de `Get-WinEvent` cmdlet met de **FilterHashtable** parameter.
 **FilterHashtable** accepteert van een hash-tabel als een filter voor specifieke informatie uit Windows-gebeurtenislogboeken. Maakt gebruik van een hash-tabel **sleutel/waarde** paren. Zie voor meer informatie over hashtabellen [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
@@ -62,7 +62,7 @@ De volgende tabel bevat de namen van sleutels, gegevenstypen, en of de jokerteke
 | Gegevens         | `<String[]>`       | Nee  |
 | *            | `<String[]>`       | Nee  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Het bouwen van een query met een hash-tabel
+## <a name="building-a-query-with-a-hash-table"></a>Het bouwen van een query met een hash-tabel
 
 Resultaten controleren en problemen oplossen, is het handig om het bouwen van de hash-tabel een **sleutel/waarde** paar op een tijdstip. De query haalt gegevens uit de **toepassing** log. De hash-tabel is gelijk aan `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Als de query gegevens ophalen uit de gearchiveerde gebeurtenislogboeken moet, gebruikt u de **pad** sleutel. De **pad** waarde geeft het volledige pad naar het logboekbestand. Zie voor meer informatie de **Scripting Guy** blogbericht, [Gebruik PowerShell om te parseren opgeslagen gebeurtenislogboeken voor fouten](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Met behulp van de opsommingswaarden zijn in een hash-tabel
+## <a name="using-enumerated-values-in-a-hash-table"></a>Met behulp van de opsommingswaarden zijn in een hash-tabel
 
 **Trefwoorden** is de volgende sleutel in de hash-tabel. De **trefwoorden** gegevenstype is een matrix met de `[long]` waardetype die een groot aantal bevat. Gebruik de volgende opdracht te vinden van de maximale waarde van `[long]`:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Trefwoorden statische eigenschapswaarde (optioneel)
+### <a name="keywords-static-property-value-optional"></a>Trefwoorden statische eigenschapswaarde (optioneel)
 
 De **trefwoorden** sleutel wordt opgesomd, maar kunt u de naam van een statische eigenschap in de query van hash-tabel.
 In plaats van de tekenreeks wordt geretourneerd, de eigenschapsnaam moet worden geconverteerd naar een waarde met de **Value__** eigenschap.
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Filteren op gebeurtenis-Id
+## <a name="filtering-by-event-id"></a>Filteren op gebeurtenis-Id
 
 Als u gedetailleerdere gegevens, van de query resultaten worden gefilterd op **gebeurtenis-Id**. De **gebeurtenis-Id** wordt verwezen in de hash-tabel als de sleutel **ID** en de waarde is een specifieke **gebeurtenis-Id**. De **Windows logboeken** geeft de **gebeurtenis-Id**. In dit voorbeeld wordt **gebeurtenis-Id 1023**.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Filteren op niveau
+## <a name="filtering-by-level"></a>Filteren op niveau
 
 Om verder te verfijnen van de resultaten en alleen de gebeurtenissen die fouten bevatten, gebruikt u de **niveau** sleutel.
 **Windows-logboeken** geeft de **niveau** als tekenreekswaarden, maar ze zijn opsommingswaarden zijn. In de hashtabel, als u de **niveau** sleutel met een string-waarde, een foutbericht wordt weergegeven.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Statische eigenschap in de opsomming is (optioneel)
+### <a name="level-static-property-in-enumeration-optional"></a>Statische eigenschap in de opsomming is (optioneel)
 
 De **niveau** sleutel wordt opgesomd, maar kunt u de naam van een statische eigenschap in de query van hash-tabel.
 In plaats van de tekenreeks wordt geretourneerd, de eigenschapsnaam moet worden geconverteerd naar een waarde met de **Value__** eigenschap.

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell-stations beheren
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685184"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293245"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Toevoegen van nieuwe Windows PowerShell-stations (nieuwe PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Toevoegen van nieuwe Windows PowerShell-stations (nieuwe PSDrive)
 
 U kunt uw eigen Windows PowerShell-stations toevoegen met behulp van de **New-PSDrive** opdracht. Om op te halen van de syntaxis voor de **New-PSDrive** opdracht, voer de **Get-Command** opdracht met de **syntaxis** parameter:
 
@@ -146,7 +146,7 @@ cvkey:\
 
 De cmdlet New-PsDrive voegt het nieuwe station alleen voor de huidige Windows PowerShell-sessie. Als u de Windows PowerShell-venster sluit, wordt het nieuwe station verloren gaan. Als u wilt opslaan op een Windows PowerShell-station, gebruikt u de cmdlet Export-Console voor het exporteren van de huidige Windows PowerShell-sessie en gebruik vervolgens de PowerShell.exe **PSConsoleFile** parameter om het te importeren. Of het nieuwe station toevoegen aan uw Windows PowerShell-profiel.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Verwijderen van Windows PowerShell-stations (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Verwijderen van Windows PowerShell-stations (Remove-PSDrive)
 
 U kunt stations uit de Windows PowerShell verwijderen met behulp van de **Remove-PSDrive** cmdlet. De **Remove-PSDrive** cmdlet is eenvoudig te gebruiken; als u wilt verwijderen van een specifieke Windows PowerShell-station, u gewoon de naam van de Windows PowerShell-station.
 
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Externe Windows PowerShell-stations toevoegen en verwijderen
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Externe Windows PowerShell-stations toevoegen en verwijderen
 
 Windows PowerShell detecteert bestand systeemstations die worden toegevoegd of verwijderd in Windows, inclusief stations die zijn toegewezen, USB-stations die zijn gekoppeld en stations die zijn verwijderd met behulp van de **netgebruik** opdracht of het  **WScript.NetworkMapNetworkDrive** en **RemoveNetworkDrive** methoden van een script Windows Script Host (WSH).

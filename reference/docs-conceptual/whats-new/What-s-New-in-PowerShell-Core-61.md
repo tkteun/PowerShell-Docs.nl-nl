@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687893"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293313"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
 
@@ -483,7 +483,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Dankzij [ @kvprasoon ](https://github.com/kvprasoon), we hebben nu een parameteralias `-lp` voor alle de ingebouwde PowerShell-cmdlets die u hebt een `-LiteralPath` parameter.
 
-## <a name="breaking-changes"></a>Belangrijke wijzigingen
+## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
 ### <a name="msi-based-installation-paths-on-windows"></a>MSI-gebaseerde installatiepaden op Windows
 
@@ -516,3 +516,10 @@ Visual Basic is die zelden worden gebruikt met `Add-Type`. We hebben verwijderd 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Het gebruik van opgeschoond `CommandTypes.Workflow` en `WorkflowInfoCleaned`
 
 Bekijk voor meer informatie over deze wijzigingen [pull-aanvraag #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Groep-Object wordt nu gesorteerd de groepen
+
+Als onderdeel van de prestaties verbeteren, `Group-Object` nu retourneert een gesorteerde lijst van de groepen.
+Hoewel u niet verstandig de volgorde, kan u worden verdeeld door deze wijziging als u de eerste groep. We besloten dat deze prestatieverbetering waard is om de wijziging is omdat de impact van wordt afhankelijk van het gedrag van het vorige laag is.
+
+Zie voor meer informatie over deze wijziging [probleem #7409](https://github.com/PowerShell/PowerShell/issues/7409).

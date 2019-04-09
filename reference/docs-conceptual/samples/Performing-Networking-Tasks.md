@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Netwerktaken uitvoeren
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688243"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293126"
 ---
 # <a name="performing-networking-tasks"></a>Netwerktaken uitvoeren
 
 Omdat TCP/IP het meest gebruikte protocol is, worden de meeste beheertaken van laag niveau netwerk-protocol TCP/IP. In deze sectie gebruiken we Windows PowerShell en WMI voor deze taken.
 
-### <a name="listing-ip-addresses-for-a-computer"></a>IP-adressen weergeven voor een Computer
+## <a name="listing-ip-addresses-for-a-computer"></a>IP-adressen weergeven voor een Computer
 
 Als u alle IP-adressen in gebruik is op de lokale computer, gebruikt u de volgende opdracht uit:
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 De eigenschap IP-adres voor elke netwerkadapter is eigenlijk een matrix. De accolades in het definitie geven aan dat **IPAddress** is niet een **System.String** waarde, maar een matrix met **System.String** waarden.
 
-### <a name="listing-ip-configuration-data"></a>IP-configuratiegegevens van aanbieding
+## <a name="listing-ip-configuration-data"></a>IP-configuratiegegevens van aanbieding
 
 Als gedetailleerde IP-configuratiegegevens voor elke netwerkadapter weergeven, gebruikt u de volgende opdracht uit:
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Met deze opdracht retourneert gedetailleerde informatie over DHCP, DNS, Routering en andere secundaire IP-configuratie-eigenschappen.
 
-### <a name="pinging-computers"></a>Pingen naar Computers
+## <a name="pinging-computers"></a>Pingen naar Computers
 
 U kunt een eenvoudige ping uit voor een computer met behulp van uitvoeren **Win32_PingStatus**. De volgende opdracht de opdracht ping wordt uitgevoerd, maar retourneert uitgebreide uitvoer:
 
@@ -106,7 +106,7 @@ Houd er rekening mee dat deze techniek voor het genereren van een bereik van adr
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>Bij het ophalen van eigenschappen van netwerkadapter
+## <a name="retrieving-network-adapter-properties"></a>Bij het ophalen van eigenschappen van netwerkadapter
 
 Eerder in deze handleiding, hebben we al gemeld dat u algemene configuratie-eigenschappen ophalen met behulp van kan **Win32_NetworkAdapterConfiguration**. Hoewel dit strikt genomen TCP/IP-informatie, netwerkadapterinformatie, zoals MAC-adressen en typen netwerkadapters kunnen nuttig zijn om te begrijpen wat er gebeurt met een computer zijn. Als u een overzicht van deze informatie, gebruikt u de volgende opdracht uit:
 
@@ -114,7 +114,7 @@ Eerder in deze handleiding, hebben we al gemeld dat u algemene configuratie-eige
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>De DNS-domein toewijzen voor een netwerkadapter
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>De DNS-domein toewijzen voor een netwerkadapter
 
 Als u wilt toewijzen van de DNS-domein voor het omzetten van automatische, gebruikt u de **Win32_NetworkAdapterConfiguration SetDNSDomain** methode. Omdat u de DNS-domein voor de configuratie van elke netwerkadapter afzonderlijk toewijst, moet u een **ForEach-Object** instructie het domein toewijzen aan elke adapter:
 
@@ -130,11 +130,11 @@ U kunt de opdracht filteren met behulp van de **Where-Object** cmdlet, in plaats
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>DHCP-uitvoeren configuratietaken
+## <a name="performing-dhcp-configuration-tasks"></a>DHCP-uitvoeren configuratietaken
 
 Wijzigen van de DHCP-informatie omvat het werken met een set netwerkadapters, net als de DNS-configuratie. Er zijn verschillende afzonderlijke acties die u uitvoeren kunt met behulp van WMI en we enkele van de algemene die gegevensbronnen wordt doorlopen.
 
-#### <a name="determining-dhcp-enabled-adapters"></a>DHCP ingeschakeld Adapters bepalen
+### <a name="determining-dhcp-enabled-adapters"></a>DHCP ingeschakeld Adapters bepalen
 
 Als u zoekt de adapters DHCP-functionaliteit op een computer, gebruik de volgende opdracht:
 
@@ -148,7 +148,7 @@ Als u wilt uitsluiten van netwerkadapters met IP-configuratie oplossen, kunt u a
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>Bij het ophalen van DHCP-eigenschappen
+### <a name="retrieving-dhcp-properties"></a>Bij het ophalen van DHCP-eigenschappen
 
 Omdat DHCP-eigenschappen voor een adapter met algemeen begint met 'DHCP', kunt u de parameter eigenschap van Format-Table kunt gebruiken om alleen de eigenschappen weer te geven:
 
@@ -156,7 +156,7 @@ Omdat DHCP-eigenschappen voor een adapter met algemeen begint met 'DHCP', kunt u
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>DHCP op elke Adapter inschakelen
+### <a name="enabling-dhcp-on-each-adapter"></a>DHCP op elke Adapter inschakelen
 
 Om in te schakelen DHCP op alle netwerkadapters, gebruik de volgende opdracht:
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 U kunt de **Filter** instructie ' IPEnabled = $true en DHCPEnabled $false = "om te voorkomen dat het inschakelen van DHCP waar deze al is ingeschakeld, maar als deze stap niet leiden tot fouten.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Vrijgeven en DHCP-Leases op specifieke netwerkadapters te vernieuwen
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Vrijgeven en DHCP-Leases op specifieke netwerkadapters te vernieuwen
 
 De **Win32_NetworkAdapterConfiguration** klasse heeft **ReleaseDHCPLease** en **RenewDCHPLease** methoden. Beide worden op dezelfde manier gebruikt. In het algemeen deze methoden gebruiken als u alleen wilt vrijgeven of vernieuwen van adressen voor een adapter op een specifiek subnet. De eenvoudigste manier om filter-adapters in een subnet is de adapterconfiguraties die gebruikmaken van de gateway voor dat subnet kiezen. De volgende opdracht worden bijvoorbeeld alle DHCP-leases op netwerkadapters op de lokale computer die zijn het verkrijgen van DHCP-leases van 192.168.1.254 vrijgegeven:
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > Wanneer u deze methoden op een externe computer, er rekening mee dat u kunt geen toegang meer tot het externe systeem als u met het via de adapter met de lease vrijgegeven of vernieuwd verbonden bent.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Vrijgeven en vernieuwen van DHCP-Leases op alle netwerkadapters
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Vrijgeven en vernieuwen van DHCP-Leases op alle netwerkadapters
 
 U kunt globale releases van DHCP-adres of vernieuwingen op alle netwerkadapters uitvoeren met behulp van de **Win32_NetworkAdapterConfiguration** methoden, **ReleaseDHCPLeaseAll** en **RenewDCHPLeaseAll** . Echter, de opdracht moet toepassen op de WMI-klasse, in plaats van een bepaalde adapter, omdat het vrijgeven en leases wereldwijd vernieuwen wordt uitgevoerd op de klasse, niet op een specifieke adapter.
 
@@ -205,7 +205,7 @@ U kunt dezelfde opdrachtindeling gebruiken om aan te roepen de **RenewDCHPLeaseA
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>Het maken van een netwerkshare
+## <a name="creating-a-network-share"></a>Het maken van een netwerkshare
 
 Voor het maken van een netwerkshare bevindt, gebruikt u de **Win32_Share maken** methode:
 
@@ -219,7 +219,7 @@ U kunt ook de share maken met behulp van **net share** in Windows PowerShell:
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>Verwijderen van een netwerkshare
+## <a name="removing-a-network-share"></a>Verwijderen van een netwerkshare
 
 Kunt u een netwerkshare met **Win32_Share**, maar het proces is enigszins afwijken van het maken van een share, omdat u nodig hebt om op te halen van de specifieke share moet worden verwijderd, in plaats van de **Win32_Share** de klasse. De volgende instructie verwijdert u de share 'TempShare':
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>Verbinding maken van een netwerkstation toegankelijk is in Windows
+## <a name="connecting-a-windows-accessible-network-drive"></a>Verbinding maken van een netwerkstation toegankelijk is in Windows
 
 De **New-PSDrive** cmdlets maakt u een Windows PowerShell-station, maar de stations die zijn gemaakt op deze manier zijn alleen beschikbaar voor Windows PowerShell. Een nieuwe netwerk station wilt maken, kunt u de **WScript.Network** COM-object. De volgende opdracht wordt de share toegewezen \\ \\FPS01\\gebruikers naar de lokale schijf B:
 

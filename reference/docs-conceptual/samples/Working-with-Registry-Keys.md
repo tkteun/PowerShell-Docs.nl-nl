@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met registersleutels werken
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686948"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293185"
 ---
 # <a name="working-with-registry-keys"></a>Met registersleutels werken
 
 Omdat registersleutels artikelen op Windows PowerShell-stations zijn, is werken met hen vergelijkbaar met het werken met bestanden en mappen. Een belangrijke verschil is dat elk item in een register op basis van Windows PowerShell-station een container, net als bij een map op een bestandssysteemstation is. Registervermeldingen en de bijbehorende waarden zijn echter eigenschappen van de items, geen afzonderlijke items.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Lijst van alle subsleutels van een registersleutel
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Lijst van alle subsleutels van een registersleutel
 
 U kunt alle items rechtstreeks in een registersleutel weergeven met behulp van **Get-ChildItem**. Voeg de optionele **Force** parameter verborgen weergeven of items van system. Met deze opdracht wordt bijvoorbeeld weergegeven voor items direct in Windows PowerShell-station HKCU:, dat overeenkomt met de registercomponent HKEY_CURRENT_USER:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Kopiëren van sleutels
+## <a name="copying-keys"></a>Kopiëren van sleutels
 
 Kopiëren is klaar met **Copy-Item**. De volgende opdracht kopieert HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion en alle bijbehorende eigenschappen aan HKCU:\\, het maken van een nieuwe sleutel met de naam 'CurrentVersion':
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 U kunt nog steeds andere hulpprogramma's die u al hebt beschikbaar om uit te voeren bestandssysteem kopieën gebruiken. Alle Registerbewerkingsprogramma's, met inbegrip van reg.exe regini.exe en regedit.exe—and COM-objecten die ondersteuning bieden voor bewerken van het register (zoals instantie en de WMI-klasse van StdRegProv) kan worden gebruikt vanuit Windows PowerShell.
 
-### <a name="creating-keys"></a>Het maken van sleutels
+## <a name="creating-keys"></a>Het maken van sleutels
 
 Het maken van nieuwe sleutels in het register is eenvoudiger dan het maken van een nieuw item in een bestandssysteem. Omdat alle registersleutels containers zijn, hoeft u niet om op te geven van het itemtype. u simpelweg een expliciete pad, zoals:
 
@@ -88,7 +88,7 @@ U kunt ook een pad op basis van een provider van een sleutel op te geven:
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Verwijderen van sleutels
+## <a name="deleting-keys"></a>Verwijderen van sleutels
 
 Items verwijderen is in wezen hetzelfde voor alle providers. De volgende opdrachten worden de items op de achtergrond verwijderd:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Alle sleutels onder een specifieke sleutel verwijderen
+## <a name="removing-all-keys-under-a-specific-key"></a>Alle sleutels onder een specifieke sleutel verwijderen
 
 U kunt de opgenomen items verwijderen met behulp van **Remove-Item**, maar u wordt gevraagd om te bevestigen van de verwijzing wordt verwijderd als het item iets anders bevat. Bijvoorbeeld, als we proberen te verwijderen van de HKCU:\\CurrentVersion subsleutel we hebben gemaakt, zien we dit:
 

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: .NET- en COM-objecten Nieuw Object maken
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684127"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293364"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET- en COM-objecten (New-Object) maken
 
 Er zijn softwareonderdelen met .NET Framework en COM-interface waarmee u veel system-beheertaken kunt uitvoeren. Windows PowerShell kunt u deze onderdelen te gebruiken, zodat u niet beperkt tot de taken die kunnen worden uitgevoerd bent met behulp van cmdlets. Veel van de in de eerste release van Windows PowerShell-cmdlets werken niet op basis van externe computers. Er wordt gedemonstreerd hoe u deze beperking omzeilen bij het beheren van gebeurtenislogboeken met behulp van .NET Framework **System.Diagnostics.EventLog** klasse rechtstreeks vanuit Windows PowerShell.
 
-### <a name="using-new-object-for-event-log-access"></a>Met behulp van New-Object voor de Event Log-toegang
+## <a name="using-new-object-for-event-log-access"></a>Met behulp van New-Object voor de Event Log-toegang
 
 De .NET Framework-klassenbibliotheek bevat een klasse met de naam **System.Diagnostics.EventLog** die kunnen worden gebruikt voor het beheren van gebeurtenislogboeken. U kunt een nieuw exemplaar van een .NET Framework-klasse maken met behulp van de **New-Object** cmdlet met de **TypeName** parameter. De volgende opdracht maakt bijvoorbeeld een gebeurtenislogboek-verwijzing:
 
@@ -27,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Hoewel de opdracht een exemplaar van de klasse EventLog gemaakt heeft, wordt het exemplaar geen gegevens bevatten. Dat komt doordat we een bepaald gebeurtenislogboek niet is opgegeven. Hoe ontvang ik een echte gebeurtenislogboek?
 
-#### <a name="using-constructors-with-new-object"></a>Met behulp van Constructors met New-Object
+### <a name="using-constructors-with-new-object"></a>Met behulp van Constructors met New-Object
 
 Om te verwijzen naar een specifiek gebeurtenislogboek, moet u de naam van het logboek op te geven. **New-Object** heeft een **ArgumentList** parameter. De argumenten die u aan deze parameter als waarden doorgeven worden gebruikt door een speciale opstartmethode van het object. De methode wordt aangeroepen een *constructor* omdat deze wordt gebruikt om het object te maken. Bijvoorbeeld, als u een verwijzing naar het toepassingslogboek, geeft u de tekenreeks 'Application' als een argument:
 
@@ -42,7 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > [!NOTE]
 > Omdat de meeste van de .NET Framework core-klassen zijn opgenomen in de naamruimte System, probeert Windows PowerShell automatisch te vinden van de klassen die u in de naamruimte System opgeeft als er een overeenkomst voor de typename die u opgeeft niet kunt vinden. Dit betekent dat u Diagnostics.EventLog in plaats van System.Diagnostics.EventLog kunt opgeven.
 
-#### <a name="storing-objects-in-variables"></a>Opslaan van objecten in de variabelen
+### <a name="storing-objects-in-variables"></a>Opslaan van objecten in de variabelen
 
 Het is raadzaam om op te slaan een verwijzing naar een object, zodat u deze in de huidige shell gebruiken kunt. Hoewel Windows PowerShell u zich veel werk met pijplijnen kunt, vermindering van de noodzaak van variabelen, maakt soms ook verwijzingen naar objecten opslaan in de variabelen het eenvoudiger om deze objecten te bewerken.
 
@@ -62,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een externe gebeurtenislogboek met New-Object
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een externe gebeurtenislogboek met New-Object
 
 De opdrachten in de voorgaande sectie gericht op de lokale computer. de **Get-EventLog** cmdlet kunt dat doen. Voor toegang tot het toepassingslogboek op een externe computer, moet u zowel de naam van het logboek en een computernaam (of IP-adres) opgeven als argumenten.
 
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 
 Nu dat we een verwijzing naar een gebeurtenislogboek die zijn opgeslagen in de variabele $RemoteAppLog hebben, welke taken kunnen we op uitvoeren?
 
-#### <a name="clearing-an-event-log-with-object-methods"></a>Een gebeurtenislogboek dat u met de methoden van het Object uit te schakelen
+### <a name="clearing-an-event-log-with-object-methods"></a>Een gebeurtenislogboek dat u met de methoden van het Object uit te schakelen
 
 Objecten hebben vaak methoden die kunnen worden aangeroepen voor het uitvoeren van taken. U kunt **Get-Member** om de methoden die zijn gekoppeld aan een object weer te geven. De volgende opdracht en de geselecteerde uitvoer tonen enkele de methoden van de klasse gebeurtenislogboek:
 
@@ -118,7 +118,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-new-object"></a>Het maken van de COM-objecten met New-Object
+## <a name="creating-com-objects-with-new-object"></a>Het maken van de COM-objecten met New-Object
 U kunt **New-Object** om te werken met onderdelen van de Component Object Model (COM). Onderdelen van het bereik van de verschillende bibliotheken opgenomen ActiveX-toepassingen, zoals Internet Explorer die zijn geïnstalleerd op de meeste systemen met Windows Script Host (WSH).
 
 **New-Object** maakt gebruik van .NET Framework Runtime aanroepbare Wrappers te maken van COM-objecten, zodat deze dezelfde beperkingen die door .NET Framework worden ondersteund heeft bij het aanroepen van COM-objecten. Voor het maken van een COM-object, moet u opgeven de **ComObject** parameter met de programma-id of *ProgId* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van COM-gebruik en het bepalen van wat programma-id's zijn beschikbaar op een systeem is buiten het bereik van deze handleiding, maar meest bekende objecten uit omgevingen zoals WSH kunnen worden gebruikt in Windows PowerShell.
@@ -134,7 +134,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 Hoewel de meeste van de functionaliteit van deze klassen beschikbaar op andere manieren in Windows PowerShell wordt gemaakt, zijn een paar taken, zoals het maken van snelkoppeling nog steeds gemakkelijker te doen met behulp van de klassen WSH.
 
-### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Het maken van een snelkoppeling op het bureaublad met instantie
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Het maken van een snelkoppeling op het bureaublad met instantie
 
 Een taak die snel kan worden uitgevoerd met een COM-object is een snelkoppeling maken. Stel dat u wilt maken een snelkoppeling op het bureaublad die verwijst naar de basismap voor Windows PowerShell. U moet eerst maken een verwijzing naar **instantie**, waarbij we wordt opgeslagen in een variabele met de naam **$WshShell**:
 
@@ -203,7 +203,7 @@ $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-### <a name="using-internet-explorer-from-windows-powershell"></a>Met behulp van Internet Explorer vanuit Windows PowerShell
+## <a name="using-internet-explorer-from-windows-powershell"></a>Met behulp van Internet Explorer vanuit Windows PowerShell
 
 Veel toepassingen (met inbegrip van de Microsoft Office-familie van toepassingen en Internet Explorer) kunnen worden geautomatiseerd met behulp van COM. Internet Explorer ziet u enkele van de typische technieken en problemen die betrokken zijn bij het werken met COM gebaseerde toepassingen.
 
@@ -262,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > Er is geen algemene standaard voor uitvoerbare bestanden ActiveX afsluiten of blijven werken wanneer u een verwijzing naar een verwijderen. Afhankelijk van de omstandigheden, zoals of de toepassing zichtbaar is, of een bewerkte document wordt uitgevoerd in het en zelfs of Windows PowerShell wordt nog steeds uitgevoerd, wordt de toepassing kan of kan niet afsluiten. Daarom moet u beëindiging gedrag testen voor elk uitvoerbaar bestand dat u wilt gebruiken in Windows PowerShell.
 
-### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen over .NET Framework-verpakt COM-objecten ophalen
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen over .NET Framework-verpakt COM-objecten ophalen
 
 In sommige gevallen mogelijk een COM-object een bijbehorende .NET Framework *Runtime aanroepbare Wrapper* RCW en deze wordt gebruikt door **New-Object**. Omdat het gedrag van de RCW van het gedrag van het normale COM-object afwijken kan, **New-Object** heeft een **strikt** parameter om u te waarschuwen over RCW toegang. Als u opgeeft de **strikt** parameter en maak vervolgens een COM-object dat gebruikmaakt van een RCW, krijgt u een waarschuwingsbericht wordt weergegeven:
 

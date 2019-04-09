@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Huidige locatie beheren
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686507"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293177"
 ---
 # <a name="managing-current-location"></a>Huidige locatie beheren
 
@@ -16,7 +16,7 @@ Bij het navigeren door systemen van de map in Verkenner, hebt u meestal een spec
 
 Windows PowerShell maakt gebruik van het zelfstandig naamwoord **locatie** om te verwijzen naar de werkmap en een reeks cmdlets kunt bekijken en bewerken van uw locatie implementeert.
 
-### <a name="getting-your-current-location-get-location"></a>Ophalen van uw huidige locatie (Get-locatie)
+## <a name="getting-your-current-location-get-location"></a>Ophalen van uw huidige locatie (Get-locatie)
 
 Om te bepalen het pad van uw huidige locatie van de directory, voer de **Get-locatie** opdracht:
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > De cmdlet Get-locatie is vergelijkbaar met de **pwd** opdracht in de BASH-shell. De cmdlet Set-locatie is vergelijkbaar met de **cd** opdracht in Cmd.exe.
 
-### <a name="setting-your-current-location-set-location"></a>Instellen van uw huidige locatie (locatie instellen)
+## <a name="setting-your-current-location-set-location"></a>Instellen van uw huidige locatie (locatie instellen)
 
 De **Get-locatie** opdracht wordt gebruikt met de **locatie instellen** opdracht. De **locatie instellen** opdracht kunt u uw huidige maplocatie opgeven.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Opslaan en terughalen van recente locaties (Push-locatie en Pop-locatie)
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Opslaan en terughalen van recente locaties (Push-locatie en Pop-locatie)
 
 Wanneer u locaties wijzigt, is het handig bijhouden waar u zijn en kunnen worden gebruikt om terug te keren naar de vorige locatie. De **Push-locatie** cmdlet in Windows PowerShell maakt u een geordende geschiedenis (een ' stack') van mappaden waar u zijn, en u kunt stap voor stap terug via de geschiedenis van directory-paden met behulp van de aanvullende  **Pop-locatie** cmdlet.
 

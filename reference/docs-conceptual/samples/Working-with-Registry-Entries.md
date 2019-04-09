@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met registervermeldingen werken
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 8483b6f98739697b24a13055dfffbc7b5bacc2cc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686808"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293075"
 ---
 # <a name="working-with-registry-entries"></a>Met registervermeldingen werken
 
 Omdat de registervermeldingen zijn eigenschappen van sleutels en, als zodanig kunnen niet worden rechtstreeks gebladerd, moet een lichtjes andere benadering nemen bij het werken met hen.
 
-### <a name="listing-registry-entries"></a>Registervermeldingen van aanbieding
+## <a name="listing-registry-entries"></a>Registervermeldingen van aanbieding
 
 Er zijn veel verschillende manieren om te onderzoeken registervermeldingen. De eenvoudigste manier is om op te halen van de namen van eigenschappen die zijn gekoppeld aan een sleutel. Bijvoorbeeld, om te zien van de namen van de vermeldingen in de registersleutel `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, gebruikt u `Get-Item`. Registersleutels hebben een eigenschap met de algemene naam van 'Eigenschap' die een lijst met vermeldingen in de sleutel is.
 De volgende opdracht uit de eigenschap selecteert en de items wordt uitgebreid zodat ze worden weergegeven in een lijst:
@@ -88,7 +88,7 @@ ProgramFilesDir     : C:\Program Files
 
 Pad uitbreiding werkt hetzelfde als in het bestandssysteem, zodat u vanaf deze locatie krijgt u de **ItemProperty** aanbieding voor `HKLM:\SOFTWARE\Microsoft\Windows\Help` met behulp van `Get-ItemProperty -Path ..\Help`.
 
-### <a name="getting-a-single-registry-entry"></a>Een enkel register-item ophalen
+## <a name="getting-a-single-registry-entry"></a>Een enkel register-item ophalen
 
 Als u ophalen van een bepaalde vermelding in een registersleutel wilt, kunt u een van verschillende mogelijke methoden. In dit voorbeeld wordt gezocht naar de waarde van **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
 
@@ -137,7 +137,7 @@ U kunt ook de **WshShell** COM-object ook te vinden van sommige registervermeldi
 %SystemRoot%\inf
 ```
 
-### <a name="setting-a-single-registry-entry"></a>Instellen van een enkel register-item
+## <a name="setting-a-single-registry-entry"></a>Instellen van een enkel register-item
 
 Als u wijzigen van een bepaalde vermelding in een registersleutel wilt, kunt u een van verschillende mogelijke methoden gebruiken. In dit voorbeeld wijzigt de **pad** item onder `HKEY_CURRENT_USER\Environment`. De **pad** vermelding wordt opgegeven waar zich uitvoerbare bestanden.
 
@@ -170,7 +170,7 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-### <a name="creating-new-registry-entries"></a>Het maken van nieuwe registervermeldingen
+## <a name="creating-new-registry-entries"></a>Het maken van nieuwe registervermeldingen
 
 Een nieuwe vermelding met de naam 'PowerShellPath' toevoegen aan de **CurrentVersion** , sleutelgebruik `New-ItemProperty` met het pad naar de sleutel, naam van de vermelding en de waarde van het item. In dit voorbeeld wordt de waarde van de Windows PowerShell-variabele duurt `$PSHome`, waarin het pad naar de installatiemap voor Windows PowerShell wordt opgeslagen.
 
@@ -197,7 +197,7 @@ De **%d{PropertyType/** moet de naam van een **Microsoft.Win32.RegistryValueKind
 |DWord|Een getal dat is een geldige UInt32|
 |ExpandString|Een tekenreeks is die u kunt omgevingsvariabelen die dynamisch worden uitgebreid bevatten|
 |MultiString|Een tekenreeks met meerdere regels|
-|Tekenreeks|Een string-waarde|
+|Tekenreeks|een string-waarde|
 |QWord|8 bytes van binaire gegevens|
 
 > [!NOTE]
@@ -210,7 +210,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
 
 U kunt ook een bestaande vermelding registerwaarde overschrijven door toe te voegen de **Force** parameter aan een `New-ItemProperty` opdracht.
 
-### <a name="renaming-registry-entries"></a>Naam van de registervermeldingen
+## <a name="renaming-registry-entries"></a>Naam van de registervermeldingen
 
 Naam wijzigen van de **PowerShellPath** vermelding "PSHome," Gebruik `Rename-ItemProperty`:
 
@@ -224,7 +224,7 @@ De nieuwe naam als waarde wilt weergeven, toevoegen de **PassThru** parameter aa
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### <a name="deleting-registry-entries"></a>Registervermeldingen verwijderen
+## <a name="deleting-registry-entries"></a>Registervermeldingen verwijderen
 
 Als u wilt de PSHome en PowerShellPath registervermeldingen verwijderen, gebruikt u `Remove-ItemProperty`:
 

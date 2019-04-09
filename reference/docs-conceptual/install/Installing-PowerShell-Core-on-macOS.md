@@ -2,12 +2,12 @@
 title: PowerShell Core in macOS installeren
 description: Informatie over PowerShell Core in macOS installeren
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688481"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293398"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
@@ -84,13 +84,14 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installatie via directe downloaden
 
-Pak het pakket downloaden `powershell-6.1.0-osx-x64.pkg`
+Pak het pakket downloaden
+`powershell-6.2.0-osx-x64.pkg`
 uit de [releases][] pagina naar uw macOS-computer.
 
 U kunt dubbelklikken op het bestand en volg de aanwijzingen of installeren vanaf de terminal:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Installeer [OpenSSL](#install-openssl). OpenSSL is nodig voor externe communicatie van PowerShell en CIM-bewerkingen.
@@ -103,19 +104,19 @@ PowerShell binaire `tar.gz` archieven worden opgegeven voor het macOS-platform o
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Installeer [OpenSSL](#install-openssl). OpenSSL is nodig voor externe communicatie van PowerShell en CIM-bewerkingen.
@@ -174,7 +175,7 @@ Als u wilt verwijderen van de extra PowerShell-paden, verwijzen naar de [paden](
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
 * Gebruikersprofielen worden gelezen in `~/.config/powershell/profile.ps1`
 * Standaardprofielen worden gelezen in `$PSHOME/profile.ps1`
 * Gebruikersmodules worden gelezen in `~/.local/share/powershell/Modules`
@@ -188,7 +189,7 @@ Zodat het standaardprofiel voor de host-specifieke bestaat op `Microsoft.PowerSh
 PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] in macOS.
 
 Omdat Mac OS een afleiding van BSD, het voorvoegsel is `/usr/local` wordt gebruikt in plaats van `/opt`.
-Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, en de symbolische koppeling wordt geplaatst op `/usr/local/bin/pwsh`.
+Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`, en de symbolische koppeling wordt geplaatst op `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
@@ -200,5 +201,5 @@ Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.1.0/`, en de symbolische kop
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[Releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

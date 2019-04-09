@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Items rechtstreeks bewerken
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685191"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293262"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Het maken van nieuwe Items (Nieuw-Item)
+## <a name="creating-new-items-new-item"></a>Het maken van nieuwe Items (Nieuw-Item)
 
 Gebruik voor het maken van een nieuw item in het bestandssysteem de **New Item** cmdlet. Bevatten de **pad** parameter met het pad naar het item en de **ItemType** parameter met de waarde 'file' of 'directory'.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Wanneer u een registerpad, zorg ervoor dat u de dubbele punt (**:**) station in de Windows PowerShell-namen, HKLM: en HKCU:. Zonder de dubbele punt, wordt de naam van de schijf in het pad niet herkend door Windows PowerShell.
 
-### <a name="why-registry-values-are-not-items"></a>Registerwaarden zijn waarom geen Items
+## <a name="why-registry-values-are-not-items"></a>Registerwaarden zijn waarom geen Items
 
 Wanneer u gebruikt de **Get-ChildItem** cmdlet voor het vinden van de items in een registersleutel, wordt nooit werkelijke registervermeldingen en hun waarden weergegeven.
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken (**\\**), als registervermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
 
-### <a name="renaming-existing-items-rename-item"></a>Naam van bestaande Items (naam wijzigen-Item) wijzigen
+## <a name="renaming-existing-items-rename-item"></a>Naam van bestaande Items (naam wijzigen-Item) wijzigen
 
 Als u wilt de naam van een bestand of map wijzigen, gebruikt u de **Rename-Item** cmdlet. De volgende opdracht wijzigt de naam van de **Bestand1.txt** van het bestand in **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Items verplaatsen (Item verplaatsen)
+## <a name="moving-items-move-item"></a>Items verplaatsen (Item verplaatsen)
 
 Als u een bestand of map, gebruikt u de **Item verplaatsen** cmdlet.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Kopiëren van Items (Copy-Item)
+## <a name="copying-items-copy-item"></a>Kopiëren van Items (Copy-Item)
 
 Als u bekend met de kopieerbewerkingen in andere shells bent, vindt u mogelijk het gedrag van de **Copy-Item** cmdlet in Windows PowerShell om te worden ongebruikelijke. Wanneer u een item van de ene locatie naar een andere kopieert, worden Copy-Item de inhoud ervan niet standaard gekopieerd.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Verwijderen van Items (Item verwijderen)
+## <a name="deleting-items-remove-item"></a>Verwijderen van Items (Item verwijderen)
 
 Als u wilt verwijderen van bestanden en mappen, gebruikt u de **Remove-Item** cmdlet. Windows PowerShell-cmdlets, zoals **Remove-Item**, die aanzienlijk kunt maken, niet ongedaan worden gemaakt wijzigingen vaak om bevestiging wordt gevraagd bij het invoeren van de opdrachten. Bijvoorbeeld, als u probeert te verwijderen de **New.Directory** map, wordt u gevraagd om te bevestigen van de opdracht, omdat de map bestanden bevat:
 
@@ -188,7 +188,7 @@ Omdat **Ja** is het standaardantwoord, om te verwijderen van de map en de bestan
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Uitvoeren van Items (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>Uitvoeren van Items (Invoke-Item)
 
 Windows PowerShell gebruikt de **Invoke-Item** cmdlet voor het uitvoeren van een standaardactie voor een bestand of map. Deze standaardactie wordt bepaald door de handler van de toepassing standaard in het register. het effect is hetzelfde als wanneer u dubbelklikt op het item in de Verkenner.
 

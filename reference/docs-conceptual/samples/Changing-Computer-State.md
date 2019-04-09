@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Computerstatus wijzigen
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687389"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293058"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
 
 Als u wilt herstellen op een computer in Windows PowerShell, een standaard opdrachtregelprogramma of een WMI-klasse te gebruiken. Hoewel u Windows PowerShell gebruiken om alleen uit te voeren van het hulpprogramma, leren hoe u kunt de energiestatus van de computer in Windows PowerShell wijzigen ziet u enkele van de belangrijke informatie over het werken met externe hulpprogramma's in Windows PowerShell.
 
-### <a name="locking-a-computer"></a>Vergrendelen van een Computer
+## <a name="locking-a-computer"></a>Vergrendelen van een Computer
 
 De enige manier om het vergrendelen van een computer rechtstreeks met de tools die standaard beschikbaar is om aan te roepen de **LockWorkstation()** werken in **user32.dll**:
 
@@ -28,7 +28,7 @@ Wanneer u vergrendelen een werkstation snelle gebruikerswisseling is ingeschakel
 
 Als u wilt afsluiten bepaalde sessies op een Terminal Server, gebruikt u de **tsshutdn.exe** opdrachtregel-hulpprogramma.
 
-### <a name="logging-off-the-current-session"></a>De huidige sessie afmelden
+## <a name="logging-off-the-current-session"></a>De huidige sessie afmelden
 
 U kunt meerdere verschillende technieken worden afgemeld bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdrachtregelprogramma van extern bureaublad/Terminal Services **logoff.exe** (voor meer informatie bij de Windows PowerShell-prompt, typ **Afmelden /?**). De huidige actieve sessie afmelden, typt u **Afmelden** zonder argumenten.
 
@@ -46,7 +46,7 @@ Een derde optie is het gebruik van WMI. De Win32_OperatingSystem-klasse heeft ee
 
 Zie "Win32Shutdown methode van de Win32_OperatingSystem Class" in MSDN voor meer informatie en andere functies van de methode Win32Shutdown vinden.
 
-### <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een Computer
+## <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een Computer
 
 Afgesloten en opnieuw opstarten van computers worden in het algemeen dezelfde gegevenstypen van de taak. Hulpprogramma's die een computer afsluiten dan in het algemeen start ook, en vice versa. Er zijn twee eenvoudige opties voor opnieuw opstarten van een computer vanuit Windows PowerShell. Tsshutdn.exe of Shutdown.exe gebruiken met de juiste argumenten. Krijgt u gedetailleerde gebruiksinformatie van **tsshutdn.exe /?** of **shutdown.exe /?**.
 

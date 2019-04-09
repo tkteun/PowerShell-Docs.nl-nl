@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met software-installaties werken
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293218"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
 
@@ -17,7 +17,7 @@ Toepassingen die zijn ontworpen voor het gebruik van Windows Installer is toegan
 > [!NOTE]
 > Toepassingen die zijn geïnstalleerd door de toepassingsbestanden zijn gekopieerd naar de computer meestal kunnen niet worden beheerd met behulp van technieken die worden besproken hier. U kunt deze toepassingen als uitvoerbare bestanden en mappen beheren met behulp van de technieken beschreven in de sectie 'Werken met bestanden en mappen'.
 
-### <a name="listing-windows-installer-applications"></a>Windows Installer-toepassingen weergeven
+## <a name="listing-windows-installer-applications"></a>Windows Installer-toepassingen weergeven
 
 Als u de toepassingen zijn geïnstalleerd met de Windows Installer op een lokale of externe systeem, gebruik de volgende eenvoudige WMI-query:
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Hoewel we nu verschillende manieren om te kijken naar toepassingen die het Windows-installatieprogramma voor de installatie gebruikt hebben, hebben we niet beschouwd als andere toepassingen. Omdat de meeste standaard toepassingen registreren hun verwijderprogramma bij Windows, die we kunnen werken met die lokaal door ze te vinden in het Windows-register.
 
-### <a name="listing-all-uninstallable-applications"></a>Lijst van alle toepassingen die kan worden verwijderd
+## <a name="listing-all-uninstallable-applications"></a>Lijst van alle toepassingen die kan worden verwijderd
 
 Hoewel er geen gegarandeerde manier om te vinden van elke toepassing op een systeem is, is het mogelijk om te zoeken van alle programma's met aanbiedingen weergegeven in het dialoogvenster toevoegen of verwijderen van programma's. Toevoegen of verwijderen van programma's vindt deze toepassingen in de volgende registersleutel:
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Installeren van toepassingen
+## <a name="installing-applications"></a>Installeren van toepassingen
 
 U kunt de **Win32_Product** klasse voor het installeren van Windows Installer-pakketten, extern of lokaal.
 
@@ -157,7 +157,7 @@ Bij de installatie op afstand, moet u een netwerkpad Universal Naming Convention
 
 Toepassingen die geen gebruik maken van Windows Installer-technologie hebben toepassingsspecifieke methoden beschikbaar voor automatische implementatie. Raadpleeg de documentatie voor de toepassing om te bepalen of er een methode voor het automatiseren van de implementatie is, of neem contact op ondersteuning van system van de leverancier van de toepassing. In sommige gevallen, zelfs als de leverancier van de toepassing is niet specifiek de toepassing ontwerpen voor installatie-automatisering, de fabrikant van de software installer mogelijk bepaalde technieken voor automation.
 
-### <a name="removing-applications"></a>Toepassingen verwijderen
+## <a name="removing-applications"></a>Toepassingen verwijderen
 
 Verwijderen van een Windows Installer-pakket met behulp van Windows PowerShell werkt op ongeveer dezelfde manier als een pakket installeert. Hier volgt een voorbeeld waarin selecteert het pakket te verwijderen op basis van de naam; in sommige gevallen kan het eenvoudiger om te filteren met zijn de **id-nummer**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Deze tekenreeksen kunnen echter niet worden rechtstreeks vanuit de Windows PowerShell-prompt zonder enige wijziging gebruikt.
 
-### <a name="upgrading-windows-installer-applications"></a>Upgraden van Windows Installer-toepassingen
+## <a name="upgrading-windows-installer-applications"></a>Upgraden van Windows Installer-toepassingen
 
 Als u een toepassing bijwerken, moet u de naam van de toepassing en het pad kennen op het updatepakket van toepassing. Met deze informatie kunt u een toepassing met een enkel Windows PowerShell-opdracht bijwerken:
 

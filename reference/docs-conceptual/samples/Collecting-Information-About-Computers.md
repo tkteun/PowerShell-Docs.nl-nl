@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Informatie over computers verzamelen
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688943"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293160"
 ---
 # <a name="collecting-information-about-computers"></a>Informatie over computers verzamelen
 
@@ -22,7 +22,7 @@ We geven de **ComputerName** parameter met de waarde van de punt (**.**), die st
 U kunt een naam of IP-adres dat is gekoppeld aan elke computer die u via WMI bereiken kan.
 Als u wilt ophalen van informatie over de lokale computer, zou u de **ComputerName** parameter.
 
-### <a name="listing-desktop-settings"></a>Bureaublad-instellingen weergeven
+## <a name="listing-desktop-settings"></a>Bureaublad-instellingen weergeven
 
 We beginnen met met een opdracht die u informatie over de bureaubladen op de lokale computer verzamelt.
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 Als u wilt filteren de metagegevens, gebruikt u een pipeline-operator (|) voor het verzenden van de resultaten van de `Get-CimInstance` opdracht `Select-Object -ExcludeProperty "CIM*"`.
 
-### <a name="listing-bios-information"></a>BIOS-gegevens weergeven
+## <a name="listing-bios-information"></a>BIOS-gegevens weergeven
 
 De WMI **Win32_BIOS** klasse retourneert vrij compact en volledige informatie over het systeem-BIOS op de lokale computer:
 
@@ -52,7 +52,7 @@ De WMI **Win32_BIOS** klasse retourneert vrij compact en volledige informatie ov
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>Processorgegevens van aanbieding
+## <a name="listing-processor-information"></a>Processorgegevens van aanbieding
 
 U kunt algemene processorgegevens ophalen met behulp van WMI **Win32_Processor** klasse, hoewel u wellicht wilt, de gegevens wilt filteren:
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>Aanbieding computerfabrikant en Model
+## <a name="listing-computer-manufacturer-and-model"></a>Aanbieding computerfabrikant en Model
 
 Computergegevens model is ook beschikbaar via **Win32_ComputerSystem**.
 De standaarduitvoer weergegeven hoeft niet alle filters voor OEM-gegevens:
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 De uitvoer van opdrachten, zoals deze, die informatie rechtstreeks uit bepaalde hardware retourneert, is alleen nuttig als de gegevens die u hebt.
 Sommige informatie niet juist is geconfigureerd door hardwarefabrikanten en kan daarom niet beschikbaar.
 
-### <a name="listing-installed-hotfixes"></a>Aanbieding Hotfixes geïnstalleerd
+## <a name="listing-installed-hotfixes"></a>Aanbieding Hotfixes geïnstalleerd
 
 U kunt alle geïnstalleerde hotfixes weergeven met behulp van **Win32_QuickFixEngineering**:
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>Informatie over de versie van besturingssysteem vermelden
+## <a name="listing-operating-system-version-information"></a>Informatie over de versie van besturingssysteem vermelden
 
 De **Win32_OperatingSystem** klasse-eigenschappen ook versie- en service pack.
 U kunt alleen deze eigenschappen voor een versie-informatie van samenvatting expliciet selecteren **Win32_OperatingSystem**:
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>Lokale gebruikers en de eigenaar aanbieding
+## <a name="listing-local-users-and-owner"></a>Lokale gebruikers en de eigenaar aanbieding
 
 Lokale, algemene gebruikersgegevens: aantal gelicentieerde gebruikers, het huidige aantal gebruikers en de naam van de eigenaar, vindt u een selectie van **Win32_OperatingSystem** de klasse-eigenschappen.
 U kunt de eigenschappen weer te geven, zoals dit expliciet selecteren:
@@ -182,7 +182,7 @@ Er is een meer beknopte versie met jokertekens:
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>Beschikbare ruimte op schijf ophalen
+## <a name="getting-available-disk-space"></a>Beschikbare ruimte op schijf ophalen
 
 Als u wilt zien van de schijfruimte en de vrije ruimte voor lokale stations, kunt u de Win32_LogicalDisk WMI-klasse.
 U wilt zien alleen exemplaren met een DriveType van 3: de waarde die WMI gebruikt voor vaste harde schijven.
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>Aanmeldingsgegevens voor de sessie ophalen
+## <a name="getting-logon-session-information"></a>Aanmeldingsgegevens voor de sessie ophalen
 
 U kunt algemene informatie over aanmeldingssessies die zijn gekoppeld aan gebruikers via de **Win32_LogonSession** WMI-klasse:
 
@@ -211,7 +211,7 @@ U kunt algemene informatie over aanmeldingssessies die zijn gekoppeld aan gebrui
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>Ophalen van de gebruiker is aangemeld op een Computer
+## <a name="getting-the-user-logged-on-to-a-computer"></a>Ophalen van de gebruiker is aangemeld op een Computer
 
 U kunt de gebruiker is aangemeld bij een bepaalde computer met behulp van Win32_ComputerSystem weergeven.
 Met deze opdracht retourneert alleen de gebruiker aangemeld op het bureaublad system:
@@ -220,7 +220,7 @@ Met deze opdracht retourneert alleen de gebruiker aangemeld op het bureaublad sy
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>Lokale tijd ophalen van een Computer
+## <a name="getting-local-time-from-a-computer"></a>Lokale tijd ophalen van een Computer
 
 U kunt de huidige lokale tijd op een specifieke computer ophalen met behulp van de **Win32_LocalTime** WMI-klasse.
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>Servicestatus weergeven
+## <a name="displaying-service-status"></a>Servicestatus weergeven
 
 Als u wilt weergeven van de status van alle services op een specifieke computer, u lokaal kunt gebruiken de `Get-Service` cmdlet.
 Voor externe systemen, kunt u de **Win32_Service** WMI-klasse.

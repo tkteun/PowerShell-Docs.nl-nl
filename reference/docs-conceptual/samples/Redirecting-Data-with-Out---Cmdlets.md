@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Gegevens omleiden met Out-cmdlets
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687137"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293296"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Gegevens omleiden met Out-* Cmdlets
 
@@ -68,7 +68,7 @@ Dit geldt voor alle van de **uit** cmdlets. Een **uit** cmdlet moet altijd worde
 > [!NOTE]
 > Alle de **uit** cmdlets uitvoer weergegeven als tekst, met behulp van de opmaak van kracht voor het consolevenster, met inbegrip van regel lengtebeperkingen.
 
-#### <a name="paging-console-output-out-host"></a>Console-uitvoer voor het wisselbestand (uitgaande Host)
+## <a name="paging-console-output-out-host"></a>Console-uitvoer voor het wisselbestand (uitgaande Host)
 
 Standaard Windows PowerShell verzendt gegevens naar het hostvenster, dat precies wat is de uitgaande hosten cmdlet is. Het primaire gebruik voor het hosten van uitgaande cmdlet zijn gepagineerde gegevens zoals we eerder is besproken. De volgende opdracht gebruikt Host bijvoorbeeld uitgaande pagina van de uitvoer van de cmdlet Get-opdracht:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Uitvoer verwijderen (uitgaande Null)
+## <a name="discarding-output-out-null"></a>Uitvoer verwijderen (uitgaande Null)
 
 De **uitgaande Null** cmdlet is ontworpen om onmiddellijk negeren invoer wordt ontvangen. Dit is handig voor het verwijderen van onnodige gegevens die u als een neveneffect krijgt van het uitvoeren van een opdracht. Wanneer Typ de volgende opdracht uit, er iets terug vanaf de opdrachtregel:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Gegevens voor afdrukken (Out-Printer)
+## <a name="printing-data-out-printer"></a>Gegevens voor afdrukken (Out-Printer)
 
 U kunt gegevens afdrukken met behulp van de **Out-Printer** cmdlet. De **Out-Printer** cmdlet wordt de standaardprinter gebruiken als u de naam van een printer niet opgeeft. U kunt een printer op basis van Windows gebruiken door de weergavenaam op te geven. Er is niet nodig voor elk soort printer poorttoewijzing of zelfs een echt fysiek printer. Bijvoorbeeld, als u de Microsoft Office-document replicatiehulpprogramma's geïnstalleerd hebt, kunt u de gegevens verzenden naar een afbeeldingbestand door te typen:
 
@@ -119,7 +119,7 @@ U kunt gegevens afdrukken met behulp van de **Out-Printer** cmdlet. De **Out-Pri
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Opslaan van gegevens (out-File)
+## <a name="saving-data-out-file"></a>Opslaan van gegevens (out-File)
 
 U kunt uitvoer ook verzenden naar een bestand in plaats van het consolevenster met behulp van de **out-File** cmdlet. De volgende opdrachtregel stuurt een lijst van processen naar het bestand **C:\\temp\\processlist.txt**:
 
