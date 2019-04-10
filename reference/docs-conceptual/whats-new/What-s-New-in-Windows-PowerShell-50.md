@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055101"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363527"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
 
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 wordt standaard geïnstalleerd op Windows 8.1 en Windows 
 
 Windows PowerShell 4.0 bevat de volgende nieuwe functies.
 
-### <a name="new-features-in-windows-powershell"></a>Nieuwe functies in Windows PowerShell
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Nieuwe functies in Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) is een nieuw managementsysteem in Windows PowerShell 4.0 waarmee de implementatie en het beheer van configuratiegegevens voor softwareservices en de omgeving waarin de services worden uitgevoerd. Zie voor meer informatie over DSC [aan de slag met Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Help opslaan** nu zorgt voor flinke besparingen help voor modules die op externe computers zijn geïnstalleerd. U kunt Help opslaan naar Help-module downloaden van een internetverbinding client (waarvoor niet alle van de modules waarvoor u hulp wilt worden altijd geïnstalleerd) en kopieer vervolgens de opgeslagen Help voor een externe gedeelde map of een externe computer waarop geen Internet de toegang.
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 bevat de volgende nieuwe functies.
 Windows PowerShell 3.0 bevat de volgende nieuwe functies.
 
 - [Windows PowerShell-werkstroom](#windows-powershell-workflow)
-- [Windows PowerShell-internettoegang](#windows-powershell-web-access)
+- [Windows PowerShell Web Access](#windows-powershell-web-access)
 - [Nieuwe functies van Windows PowerShell ISE](#new-windows-powershell-ise-features)
 - [Ondersteuning voor Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
 - [Ondersteuning voor Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
@@ -308,7 +308,7 @@ Windows PowerShell 3.0 bevat de volgende nieuwe functies.
 - [Verbeterde Tab-aanvulling](#enhanced-tab-completion)
 - [Module automatisch geladen](#module-auto-loading)
 - [Verbeteringen van de module-ervaring](#module-experience-improvements)
-- [Simplified Command Discovery](#simplified-command-discovery)
+- [Vereenvoudigde opdracht detectie](#simplified-command-discovery)
 - [Verbeterde logboekregistratie van diagnostische gegevens en ondersteuning voor groepen van beleid](#improved-logging-diagnostics-and-group-policy-support)
 - [Opmaak- en uitvoer verbeteringen](#formatting-and-output-improvements)
 - [Verbeterde Console Host-ervaring](#enhanced-console-host-experience)
@@ -332,9 +332,9 @@ De volgende zijn de voordelen van Windows PowerShell-werkstroom
 - **Multicomputer management.** Taken als werkstromen tegelijkertijd uitgevoerd op honderden beheerde knooppunten. Windows PowerShell-werkstroom bevat een ingebouwde bibliotheek met algemene Beheerparameters, zoals **PSComputerName**, welke scenario's voor beheer van meerdere computers inschakelen.
 - **Enkele taak uitvoeren van complexe processen.** U kunt gerelateerde scripts die een volledige end-to-end-scenario in een enkele werkstroom implementeren combineren.
 - **Persistentie.** : een werkstroom wordt opgeslagen (of controle-waarnaar wordt verwezen) op specifieke tijdstippen gedefinieerd door de auteur, zodat u de werkstroom van de laatst vastgelegde taak (of controlepunt) hervatten kunt in plaats van de werkstroom vanaf het begin opnieuw te starten.
-- **Robuustheid.** Geautomatiseerd foutherstel. Werkstromen blijven actief na geplande en ongeplande opnieuw wordt opgestart. U kunt werkstroom onderbreekt en hervat u vervolgens de werkstroom vanaf het laatste punt voor persistentie. Werkstroomauteurs kunnen wijzen specifieke activiteiten moet opnieuw worden uitgevoerd bij een storing op een of meer beheerde knooppunten.
+- **Robustness.** Geautomatiseerd foutherstel. Werkstromen blijven actief na geplande en ongeplande opnieuw wordt opgestart. U kunt werkstroom onderbreekt en hervat u vervolgens de werkstroom vanaf het laatste punt voor persistentie. Werkstroomauteurs kunnen wijzen specifieke activiteiten moet opnieuw worden uitgevoerd bij een storing op een of meer beheerde knooppunten.
 - **Mogelijkheid om te verbreken, opnieuw verbinding maken en uitvoeren in niet-verbonden sessies.** Gebruikers kunnen verbinding maken en verbreken van de werkstroomserver, maar de werkstroom wordt continu uitgevoerd. U kunt Meld u af bij de clientcomputer of de clientcomputer opnieuw opstarten en controleren van de werkstroom kan worden uitgevoerd vanaf een andere computer zonder dat de werkstroom wordt onderbroken.
-- **Bij het plannen.** Werkstroomtaken kunnen worden gepland, zoals een Windows PowerShell-cmdlet of script.
+- **Scheduling.** Werkstroomtaken kunnen worden gepland, zoals een Windows PowerShell-cmdlet of script.
 - **Werkstroom en bandbreedtebeperking van verbinding.** Uitvoering en verbindingen met knooppunten kunnen worden beperkt, waardoor scenario's voor schaalbaarheid en hoge beschikbaarheid.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
