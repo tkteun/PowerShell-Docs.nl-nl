@@ -101,7 +101,7 @@ De inhoud van de module-map
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-Contents of PSScriptAnalyzer.psd1 file
+Inhoud van PSScriptAnalyzer.psd1 bestand
 
 ```powershell
 @{
