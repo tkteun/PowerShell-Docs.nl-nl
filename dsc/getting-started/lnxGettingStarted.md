@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Aan de slag met Desired State Configuration (DSC) voor Linux
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686598"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506832"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met Desired State Configuration (DSC) voor Linux
 
@@ -26,7 +26,7 @@ De volgende versies van de Linux-besturingssystemen worden ondersteund voor DSC 
 
 De volgende tabel beschrijft de vereiste pakketafhankelijkheden voor DSC voor Linux.
 
-|  Vereist pakket |  Beschrijving |  Minimale versie |
+|  Vereist pakket |  Description |  Minimale versie |
 |---|---|---|
 | glibc| GNU-bibliotheek| 2…4 – 31.30|
 | python| Python| 2.4 – 3.4|
@@ -115,25 +115,25 @@ De volgende code laat zien hoe een CIMSession maken voor DSC voor Linux.
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > Voor de modus 'Push' moet de referenties van de gebruiker de hoofdgebruiker zijn op de Linux-computer.
 > Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, de `New-CimSession` moet worden gebruikt met de parameter – UseSSL is ingesteld op $true.
 > Het SSL-certificaat gebruikt door OMI (DSC) is opgegeven in het bestand: `/opt/omi/etc/omiserver.conf` met de eigenschappen: pemfile en keyfile.
-> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet op die u kunt kiezen om de validatie van het servercertificaat met de opties CIMSession negeren: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet op die u kunt kiezen om de validatie van het servercertificaat met de opties CIMSession negeren: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Voer de volgende opdracht om de DSC-configuratie tot de Linux-knooppunt.
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>Distribueren van de configuratie met een pull-server
 
@@ -183,7 +183,7 @@ Geldt een Meta-configuratie MOF-bestand voor de computer. Vergelijkbaar met de [
 
 De volgende logboekbestanden worden gegenereerd voor DSC voor Linux-berichten.
 
-|Logboekbestand|Adreslijst|Beschrijving|
+|Logboekbestand|Adreslijst|Description|
 |---|---|---|
 |**omiserver.log**|`/var/opt/omi/log`|Berichten die betrekking hebben op de werking van de OMI-CIM-server.|
 |**dsc.log**|`/var/opt/omi/log`|Berichten die betrekking hebben op de werking van de lokale Configuration Manager (LCM) en DSC-resource-bewerkingen.|
