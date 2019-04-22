@@ -3,10 +3,10 @@ title: PowerShell Core in macOS installeren
 description: Informatie over PowerShell Core in macOS installeren
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293398"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
@@ -84,8 +84,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installatie via directe downloaden
 
-Pak het pakket downloaden
-`powershell-6.2.0-osx-x64.pkg`
+Pak het pakket downloaden `powershell-6.2.0-osx-x64.pkg`
 uit de [releases][] pagina naar uw macOS-computer.
 
 U kunt dubbelklikken op het bestand en volg de aanwijzingen of installeren vanaf de terminal:
@@ -201,5 +200,5 @@ Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`, en de symbolische kop
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[Releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

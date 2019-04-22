@@ -3,10 +3,10 @@ title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293330"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
@@ -75,8 +75,7 @@ Vanaf hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` om bij te we
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installatie via de directe Download - Ubuntu 14.04
 
-Het Debian-pakket downloaden
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
 uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -124,8 +123,7 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via de directe Download - Ubuntu 16.04
 
-Het Debian-pakket downloaden
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
 uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -176,8 +174,7 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via de directe Download - Ubuntu 18.04
 
-Het Debian-pakket downloaden
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
 uit de [releases][] pagina naar de Ubuntu-machine.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -266,8 +263,7 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daar
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installatie via de directe Download - Debian 9
 
-Het Debian-pakket downloaden
-`powershell_6.2.0-1.debian.9_amd64.deb`
+Het Debian-pakket downloaden `powershell_6.2.0-1.debian.9_amd64.deb`
 uit de [releases][] pagina naar de Debian-machine.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -307,8 +303,7 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoef
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via de directe Download - CentOS 7
 
-Met behulp van [CentOS 7][], het RPM-pakket downloaden
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Met behulp van [CentOS 7][], het RPM-pakket downloaden `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 uit de [releases][] pagina op de computer CentOS.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -352,8 +347,7 @@ Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoef
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via de directe Download - Red Hat Enterprise Linux (RHEL) 7
 
-Download het RPM-pakket
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Download het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 uit de [releases][] pagina naar de Red Hat Enterprise Linux-machine.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installatie via de directe Download - Fedora 27, Fedora 28
 
-Download het RPM-pakket
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Download het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 uit de [releases][] pagina op de computer Fedora.
 
 Voer vervolgens het volgende uit in de terminal:
@@ -492,7 +485,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Er is een experimenteel boog ondersteuning.
 
-PowerShell is beschikbaar via de [Arch Linux][] gebruiker opslagplaats (AUR).
+PowerShell is beschikbaar via de [Linux boog][] gebruiker opslagplaats (AUR).
 
 * Het kan worden gecompileerd met de [meest recente versie gemarkeerd][arch-release]
 * Het kan worden gecompileerd uit de [laatste doorvoering naar hoofdniveau][arch-git]
@@ -699,5 +692,5 @@ De profielen respecteren van PowerShell per host-configuratie, zodat de standaar
 
 PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] op Linux.
 
-[Releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

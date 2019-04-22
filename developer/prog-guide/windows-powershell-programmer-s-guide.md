@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920387"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-programmeurs&#39;s-handleiding
@@ -99,10 +99,10 @@ Zie voor meer informatie over het starten van de Windows PowerShell-shell gebrui
 
 |Onderwerp|Definitie|
 |-----------|----------------|
-|[Een Windows PowerShell-provider maken](./how-to-create-a-windows-powershell-provider.md)|Deze sectie wordt beschreven hoe u een Windows PowerShell-provider voor Windows PowerShell maakt.|
+|[Over het maken van een Windows PowerShell-Provider](./how-to-create-a-windows-powershell-provider.md)|Deze sectie wordt beschreven hoe u een Windows PowerShell-provider voor Windows PowerShell maakt.|
 |[Over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Deze sectie wordt beschreven hoe u een hosttoepassing die wordt bewerkt een runspace schrijft en over het schrijven van een host-toepassing die een eigen aangepaste host implementeert.|
-|[Een Windows PowerShell-module maken](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Deze sectie beschrijft het maken van een module die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en over het maken van een aangepaste module.|
-|[Een console-shell maken](./how-to-create-a-console-shell.md)|Deze sectie beschrijft het maken van een console-shell die kan niet worden uitgebreid.|
+|[Over het maken van een PowerShell-module Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Deze sectie beschrijft het maken van een module die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en over het maken van een aangepaste module.|
+|[Over het maken van een Console-Shell](./how-to-create-a-console-shell.md)|Deze sectie beschrijft het maken van een console-shell die kan niet worden uitgebreid.|
 |[Windows PowerShell-concepten](./windows-powershell-concepts.md)|In deze sectie bevat algemene informatie waarmee u inzicht in de Windows PowerShell vanuit het oogpunt van een ontwikkelaar.|
 
 ## <a name="see-also"></a>Zie ook

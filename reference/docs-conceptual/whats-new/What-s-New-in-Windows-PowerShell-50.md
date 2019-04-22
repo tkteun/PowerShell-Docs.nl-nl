@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in Windows PowerShell 5.0
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363527"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows PowerShell 5.0
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 bevat de volgende nieuwe functies.
 Windows PowerShell 3.0 bevat de volgende nieuwe functies.
 
 - [Windows PowerShell-werkstroom](#windows-powershell-workflow)
-- [Windows PowerShell Web Access](#windows-powershell-web-access)
+- [Windows PowerShell-internettoegang](#windows-powershell-web-access)
 - [Nieuwe functies van Windows PowerShell ISE](#new-windows-powershell-ise-features)
 - [Ondersteuning voor Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
 - [Ondersteuning voor Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
@@ -308,7 +308,7 @@ Windows PowerShell 3.0 bevat de volgende nieuwe functies.
 - [Verbeterde Tab-aanvulling](#enhanced-tab-completion)
 - [Module automatisch geladen](#module-auto-loading)
 - [Verbeteringen van de module-ervaring](#module-experience-improvements)
-- [Vereenvoudigde opdracht detectie](#simplified-command-discovery)
+- [Simplified Command Discovery](#simplified-command-discovery)
 - [Verbeterde logboekregistratie van diagnostische gegevens en ondersteuning voor groepen van beleid](#improved-logging-diagnostics-and-group-policy-support)
 - [Opmaak- en uitvoer verbeteringen](#formatting-and-output-improvements)
 - [Verbeterde Console Host-ervaring](#enhanced-console-host-experience)
@@ -332,9 +332,9 @@ De volgende zijn de voordelen van Windows PowerShell-werkstroom
 - **Multicomputer management.** Taken als werkstromen tegelijkertijd uitgevoerd op honderden beheerde knooppunten. Windows PowerShell-werkstroom bevat een ingebouwde bibliotheek met algemene Beheerparameters, zoals **PSComputerName**, welke scenario's voor beheer van meerdere computers inschakelen.
 - **Enkele taak uitvoeren van complexe processen.** U kunt gerelateerde scripts die een volledige end-to-end-scenario in een enkele werkstroom implementeren combineren.
 - **Persistentie.** : een werkstroom wordt opgeslagen (of controle-waarnaar wordt verwezen) op specifieke tijdstippen gedefinieerd door de auteur, zodat u de werkstroom van de laatst vastgelegde taak (of controlepunt) hervatten kunt in plaats van de werkstroom vanaf het begin opnieuw te starten.
-- **Robustness.** Geautomatiseerd foutherstel. Werkstromen blijven actief na geplande en ongeplande opnieuw wordt opgestart. U kunt werkstroom onderbreekt en hervat u vervolgens de werkstroom vanaf het laatste punt voor persistentie. Werkstroomauteurs kunnen wijzen specifieke activiteiten moet opnieuw worden uitgevoerd bij een storing op een of meer beheerde knooppunten.
+- **Robuustheid.** Geautomatiseerd foutherstel. Werkstromen blijven actief na geplande en ongeplande opnieuw wordt opgestart. U kunt werkstroom onderbreekt en hervat u vervolgens de werkstroom vanaf het laatste punt voor persistentie. Werkstroomauteurs kunnen wijzen specifieke activiteiten moet opnieuw worden uitgevoerd bij een storing op een of meer beheerde knooppunten.
 - **Mogelijkheid om te verbreken, opnieuw verbinding maken en uitvoeren in niet-verbonden sessies.** Gebruikers kunnen verbinding maken en verbreken van de werkstroomserver, maar de werkstroom wordt continu uitgevoerd. U kunt Meld u af bij de clientcomputer of de clientcomputer opnieuw opstarten en controleren van de werkstroom kan worden uitgevoerd vanaf een andere computer zonder dat de werkstroom wordt onderbroken.
-- **Scheduling.** Werkstroomtaken kunnen worden gepland, zoals een Windows PowerShell-cmdlet of script.
+- **Bij het plannen.** Werkstroomtaken kunnen worden gepland, zoals een Windows PowerShell-cmdlet of script.
 - **Werkstroom en bandbreedtebeperking van verbinding.** Uitvoering en verbindingen met knooppunten kunnen worden beperkt, waardoor scenario's voor schaalbaarheid en hoge beschikbaarheid.
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
@@ -471,7 +471,7 @@ Er zijn nieuwe cmdlets zijn toegevoegd aan de Windows PowerShell Core-installati
 |Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
-|Get-JobTrigger|Help opslaan|
+|Get-JobTrigger|Save-Help|
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
@@ -482,7 +482,7 @@ Er zijn nieuwe cmdlets zijn toegevoegd aan de Windows PowerShell Core-installati
 |Invoke-WebRequest|Test-PSSessionConfigurationFile|
 |New-CimInstance|Unblock-File|
 |New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Help bijwerken|
+|New-CimSessionOption|Update-Help|
 |Nieuwe IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen voor bestaande essentiële Cmdlets en Providers
