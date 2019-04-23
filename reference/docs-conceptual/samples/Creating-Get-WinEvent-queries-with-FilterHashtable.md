@@ -2,11 +2,11 @@
 ms.date: 3/18/2019
 title: Get-WinEvent-query's maken met FilterHashtable
 ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293279"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984218"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
 
@@ -53,7 +53,7 @@ De volgende tabel bevat de namen van sleutels, gegevenstypen, en of de jokerteke
 | LogName      | `<String[]>`       | Ja |
 | ProviderName | `<String[]>`       | Ja |
 | Pad         | `<String[]>`       | Nee  |
-| Trefwoorden     | `<Long[]>`         | Nee  |
+| trefwoorden     | `<Long[]>`         | Nee  |
 | ID           | `<Int32[]>`        | Nee  |
 | Niveau        | `<Int32[]>`        | Nee  |
 | StartTime    | `<DateTime>`       | Nee  |
@@ -217,7 +217,7 @@ De **niveau** de namen van de sleutel en de opsommingswaarden zijn als volgt:
 
 | Naam           | Waarde |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Uitgebreid        |   5   |
 | Ter informatie  |   4   |
 | Waarschuwing        |   3   |
 | Fout          |   2   |

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: 4e0be34b6f7a56dcf02a4381de4d2a5d08db14df
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
-ms.translationtype: MT
+ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794434"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983895"
 ---
 # <a name="validatecount-attribute-declaration"></a>Declaratie van het kenmerk ValidateCount
 
@@ -31,28 +31,34 @@ Het kenmerk ValidateCount Hiermee geeft u het minimum en maximum aantal argument
 
 #### <a name="parameters"></a>Parameters
 
-`MinLength` ([System.Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het minimale aantal argumenten.
+`MinLength` ([System.Int32][]) vereist. Hiermee geeft u het minimale aantal argumenten.
 
-`MaxLength`([System.Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het maximum aantal argumenten.
+`MaxLength`([System.Int32][]) vereist. Hiermee geeft u het maximum aantal argumenten.
 
 ## <a name="remarks"></a>Opmerkingen
 
-- Zie voor meer informatie over hoe u dit kenmerk declareren [hoe u invoer validatieregels declareren](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).
+- Zie voor meer informatie over hoe u dit kenmerk declareren [het valideren van een aantal argumenten][].
 
 - Als dit kenmerk niet gestart is, kan de bijbehorende cmdlet-parameter een willekeurig aantal argumenten hebben.
 
 - De Windows PowerShell-runtime genereert een fout in de volgende omstandigheden:
 
-    - De `MinLength` en `MaxLength` kenmerk parameters zijn niet van het type [System.Int32](/dotnet/api/System.Int32).
+    - De `MinLength` en `MaxLength` kenmerk parameters zijn niet van het type [System.Int32][].
 
     - De waarde van de `MaxLength` kenmerk parameter kleiner is dan de waarde van de `MinLength` parameter van het kenmerk.
 
-- Het kenmerk ValidateCount wordt gedefinieerd door de [System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount) klasse.
+- Het kenmerk ValidateCount wordt gedefinieerd door de [System.Management.Automation.ValidateCountAttribute][] klasse.
 
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount)
+[System.Management.Automation.ValidateCountAttribute][]
 
-[Hoe u regels voor Invoervalidatie declareren](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
+[Het valideren van een aantal argumenten][]
 
-[Schrijven van een Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Schrijven van een Windows PowerShell-Cmdlet][]
+
+[Het valideren van een aantal argumenten]: how-to-validate-an-argument-count.md
+[Schrijven van een Windows PowerShell-Cmdlet]: writing-a-windows-powershell-cmdlet.md
+
+[System.Int32]: /dotnet/api/System.Int32
+[System.Management.Automation.ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

@@ -1,259 +1,254 @@
-items:
 - name: Overzicht
   href: overview.md
 - name: Installeren
   items:
-  - name: Verschillende versies van PowerShell installeren
-    href: install/installing-powershell.md
-  - name: PowerShell Core
-    items:
-    - name: PowerShell Core in Windows installeren
-      href: install/installing-powershell-core-on-windows.md
-    - name: PowerShell Core in Linux installeren
-      href: install/installing-powershell-core-on-linux.md
-    - name: PowerShell Core in macOS installeren
-      href: install/installing-powershell-core-on-macos.md
-    - name: PowerShell Core in ARM installeren
-      href: install/powershell-core-on-arm.md
-  - name: Windows PowerShell
-    items:
-    - name: Windows PowerShell installeren
-      href: install/installing-windows-powershell.md
-    - name: De Windows PowerShell 2.0-engine installeren
-      href: install/installing-the-windows-powershell-2.0-engine.md
-    - name: Windows PowerShell-systeemvereisten
-      href: install/windows-powershell-system-requirements.md
+    - name: Verschillende versies van PowerShell installeren
+      href: install/installing-powershell.md
+    - name: PowerShell Core
+      items:
+        - name: PowerShell Core in Windows installeren
+          href: install/installing-powershell-core-on-windows.md
+        - name: PowerShell Core in Linux installeren
+          href: install/installing-powershell-core-on-linux.md
+        - name: PowerShell Core in macOS installeren
+          href: install/installing-powershell-core-on-macos.md
+        - name: PowerShell Core in ARM installeren
+          href: install/powershell-core-on-arm.md
+    - name: Windows PowerShell
+      items:
+        - name: Windows PowerShell installeren
+          href: install/installing-windows-powershell.md
+        - name: De Windows PowerShell 2.0-engine installeren
+          href: install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell-systeemvereisten
+          href: install/windows-powershell-system-requirements.md
 - name: Aan de slag
   items:
-  - name: Aan de slag met PowerShell
-    href: getting-started/getting-started-with-windows-powershell.md
-  - name: Windows PowerShell starten
-    href: getting-started/starting-windows-powershell.md
-  - name: De Windows PowerShell 2.0-engine starten
-    href: getting-started/starting-the-windows-powershell-2.0-engine.md
+    - name: Aan de slag met PowerShell
+      href: getting-started/getting-started-with-windows-powershell.md
+    - name: Windows PowerShell starten
+      href: getting-started/starting-windows-powershell.md
+    - name: De Windows PowerShell 2.0-engine starten
+      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Meer informatie over PowerShell
   items:
-  - name: Informatie over belangrijke PowerShell-concepten
-    href: learn/understanding-important-powershell-concepts.md
-  - name: Meer informatie over PowerShell-namen
-    href: learn/learning-powershell-names.md
-  - name: Bekende opdrachtnamen gebruiken
-    href: learn/using-familiar-command-names.md
-  - name: Gedetailleerde Help-informatie verkrijgen
-    href: learn/getting-detailed-help-information.md
-  - name: Informatie over opdrachten verkrijgen
-    href: learn/getting-information-about-commands.md
-  - name: Variabelen gebruiken om objecten op te slaan
-    href: learn/using-variables-to-store-objects.md
-  - name: Informatie over de PowerShell-pijplijn
-    href: learn/understanding-the-powershell-pipeline.md
-  - name: Meer informatie over PowerShell
-    href: learn/more-powershell-learning.md
-  - name: Draagbare modules schrijven
-    href: learn/writing-portable-modules.md
-  - name: Externe communicatie van powershell
-    items:
-    - name: Externe opdrachten uitvoeren
-      href: learn/remoting/running-remote-commands.md
-    - name: Externe communicatie van PowerShell via SSH
-      href: learn/remoting/ssh-remoting-in-powershell-core.md
-    - name: Externe communicatie van WS-Management (WSMan) in PowerShell Core
-      href: learn/remoting/wsman-remoting-in-powershell-core.md
-    - name: WinRM-beveiliging
-      href: learn/remoting/winrmsecurity.md
-    - name: De tweede hop maken voor externe communicatie met PowerShell
-      href: learn/remoting/ps-remoting-second-hop.md
-  - name: Verklarende woordenlijst
-    href: learn/windows-powershell-glossary.md
+    - name: Informatie over belangrijke PowerShell-concepten
+      href: learn/understanding-important-powershell-concepts.md
+    - name: Meer informatie over PowerShell-namen
+      href: learn/learning-powershell-names.md
+    - name: Bekende opdrachtnamen gebruiken
+      href: learn/using-familiar-command-names.md
+    - name: Gedetailleerde Help-informatie verkrijgen
+      href: learn/getting-detailed-help-information.md
+    - name: Informatie over opdrachten verkrijgen
+      href: learn/getting-information-about-commands.md
+    - name: Variabelen gebruiken om objecten op te slaan
+      href: learn/using-variables-to-store-objects.md
+    - name: Informatie over de PowerShell-pijplijn
+      href: learn/understanding-the-powershell-pipeline.md
+    - name: Meer informatie over PowerShell
+      href: learn/more-powershell-learning.md
+    - name: Draagbare modules schrijven
+      href: learn/writing-portable-modules.md
+    - name: Externe communicatie van powershell
+      items:
+        - name: Externe opdrachten uitvoeren
+          href: learn/remoting/running-remote-commands.md
+        - name: Externe communicatie van PowerShell via SSH
+          href: learn/remoting/ssh-remoting-in-powershell-core.md
+        - name: Externe communicatie van WS-Management (WSMan) in PowerShell Core
+          href: learn/remoting/wsman-remoting-in-powershell-core.md
+        - name: WinRM-beveiliging
+          href: learn/remoting/winrmsecurity.md
+        - name: De tweede hop maken voor externe communicatie met PowerShell
+          href: learn/remoting/ps-remoting-second-hop.md
+    - name: Verklarende woordenlijst
+      href: learn/windows-powershell-glossary.md
 - name: Onderdelen
   items:
-  - name: Console
-    items:
-    - name: Help voor de PowerShell.exe-opdrachtregel
-      href: components/console/powershell.exe-command-line-help.md
-    - name: Tabbladuitbreiding gebruiken
-      href: components/console/using-tab-expansion.md
-  - name: ISE
-    items:
-    - name: Kennismaking met Windows PowerShell ISE
-      href: components/ise/introducing-the-windows-powershell-ise.md
-    - name: Windows PowerShell ISE (Integrated Scripting Environment)
-      href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
-    - name: Windows PowerShell ISE gebruiken
+    - name: Console
       items:
-      - name: Kennismaking met Windows PowerShell ISE
-        href: components/ise/exploring-the-windows-powershell-ise.md
-      - name: Een PowerShell-tabblad maken in Windows PowerShell ISE
-        href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-      - name: Fouten opsporen in scripts in Windows PowerShell ISE
-        href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-      - name: Profielen gebruiken in Windows PowerShell ISE
-        href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-      - name: Tab-aanvulling gebruiken in het script- en consolevenster
-        href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-      - name: Het consolevenster gebruiken in Windows PowerShell ISE
-        href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-      - name: Scripts schrijven en uitvoeren in Windows PowerShell ISE
-        href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-      - name: Sneltoetsen voor Windows PowerShell ISE
-        href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-      - name: Toegankelijkheid in Windows PowerShell ISE
-        href: components/ise/accessibility-in-windows-powershell-ise.md
-    - name: Het objectmodel voor ISE-scripts
+        - name: Help voor de PowerShell.exe-opdrachtregel
+          href: components/console/powershell.exe-command-line-help.md
+        - name: Tabbladuitbreiding gebruiken
+          href: components/console/using-tab-expansion.md
+    - name: ISE
       items:
-      - name: Doel van het scriptobjectmodel van Windows PowerShell ISE
-        href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-      - name: De objectmodelhiërarchie van ISE
-        href: components/ise/object-model/the-ise-object-model-hierarchy.md
-      - name: Het ObjectModelRoot-object
-        href: components/ise/object-model/the-objectmodelroot-object.md
-      - name: Het ISEAddOnToolCollection-object
-        href: components/ise/object-model/the-iseaddontoolcollection-object.md
-      - name: Het ISEAddOnTool-object
-        href: components/ise/object-model/the-iseaddontool-object.md
-      - name: Het ISEEditor-object
-        href: components/ise/object-model/the-iseeditor-object.md
-      - name: Het ISEFileCollection-object
-        href: components/ise/object-model/the-isefilecollection-object.md
-      - name: Het ISEFile-object
-        href: components/ise/object-model/the-isefile-object.md
-      - name: Het ISEMenuItemCollection-object
-        href: components/ise/object-model/the-isemenuitemcollection-object.md
-      - name: Het ISEMenuItem-object
-        href: components/ise/object-model/the-isemenuitem-object.md
-      - name: Het ISEOptions-object
-        href: components/ise/object-model/the-iseoptions-object.md
-      - name: Het ISESnippetCollection-object
-        href: components/ise/object-model/the-isesnippetcollection-object.md
-      - name: Het ISESnippet-object
-        href: components/ise/object-model/the-isesnippetobject.md
-      - name: Het PowerShellTabCollection-object
-        href: components/ise/object-model/the-powershelltabcollection-object.md
-      - name: Het PowerShellTab-object
-        href: components/ise/object-model/the-powershelltab-object.md
-  - name: Visual Studio Code
-    items:
-    - name: Visual Studio Code gebruiken
-      href: components/vscode/using-vscode.md
-    - name: De ISE-ervaring in Visual Studio Code repliceren
-      href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-    - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
-      href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-    - name: Informatie over bestandscodering in VSCode en PowerShell
-      href: components/vscode/understanding-file-encoding.md
-  - name: Webtoegang
-    items:
-    - name: Autorisatieregels en beveiligingsfuncties
-      href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-    - name: Installatie
-      href: components/web-access/install-and-use-windows-powershell-web-access.md
-    - name: Toegangsproblemen oplossen
-      href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-    - name: Windows PowerShell-webtoegang verwijderen
-      href: components/web-access/uninstall-windows-powershell-web-access.md
-    - name: De webconsole voor PowerShell gebruiken
-      href: components/web-access/use-the-web-based-windows-powershell-console.md
-  - name: Handleiding voor werkstromen
-    href: components/workflows-guide.md
+        - name: Kennismaking met Windows PowerShell ISE
+          href: components/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell ISE (Integrated Scripting Environment)
+          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Windows PowerShell ISE gebruiken
+          items:
+            - name: Kennismaking met Windows PowerShell ISE
+              href: components/ise/exploring-the-windows-powershell-ise.md
+            - name: Een PowerShell-tabblad maken in Windows PowerShell ISE
+              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Fouten opsporen in scripts in Windows PowerShell ISE
+              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Profielen gebruiken in Windows PowerShell ISE
+              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Tab-aanvulling gebruiken in het script- en consolevenster
+              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Het consolevenster gebruiken in Windows PowerShell ISE
+              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Scripts schrijven en uitvoeren in Windows PowerShell ISE
+              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Sneltoetsen voor Windows PowerShell ISE
+              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Toegankelijkheid in Windows PowerShell ISE
+              href: components/ise/accessibility-in-windows-powershell-ise.md
+        - name: Het objectmodel voor ISE-scripts
+          items:
+            - name: Doel van het scriptobjectmodel van Windows PowerShell ISE
+              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: De objectmodelhiërarchie van ISE
+              href: components/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: Het ObjectModelRoot-object
+              href: components/ise/object-model/the-objectmodelroot-object.md
+            - name: Het ISEAddOnToolCollection-object
+              href: components/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: Het ISEAddOnTool-object
+              href: components/ise/object-model/the-iseaddontool-object.md
+            - name: Het ISEEditor-object
+              href: components/ise/object-model/the-iseeditor-object.md
+            - name: Het ISEFileCollection-object
+              href: components/ise/object-model/the-isefilecollection-object.md
+            - name: Het ISEFile-object
+              href: components/ise/object-model/the-isefile-object.md
+            - name: Het ISEMenuItemCollection-object
+              href: components/ise/object-model/the-isemenuitemcollection-object.md
+            - name: Het ISEMenuItem-object
+              href: components/ise/object-model/the-isemenuitem-object.md
+            - name: Het ISEOptions-object
+              href: components/ise/object-model/the-iseoptions-object.md
+            - name: Het ISESnippetCollection-object
+              href: components/ise/object-model/the-isesnippetcollection-object.md
+            - name: Het ISESnippet-object
+              href: components/ise/object-model/the-isesnippetobject.md
+            - name: Het PowerShellTabCollection-object
+              href: components/ise/object-model/the-powershelltabcollection-object.md
+            - name: Het PowerShellTab-object
+              href: components/ise/object-model/the-powershelltab-object.md
+    - name: Visual Studio Code
+      items:
+        - name: Visual Studio Code gebruiken
+          href: components/vscode/using-vscode.md
+        - name: De ISE-ervaring in Visual Studio Code repliceren
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Informatie over bestandscodering in VSCode en PowerShell
+          href: components/vscode/understanding-file-encoding.md
+    - name: Web Access
+      items:
+        - name: Autorisatieregels en beveiligingsfuncties
+          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+        - name: Installatie
+          href: components/web-access/install-and-use-windows-powershell-web-access.md
+        - name: Toegangsproblemen oplossen
+          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+        - name: Windows PowerShell-webtoegang verwijderen
+          href: components/web-access/uninstall-windows-powershell-web-access.md
+        - name: De webconsole voor PowerShell gebruiken
+          href: components/web-access/use-the-web-based-windows-powershell-console.md
+    - name: Handleiding voor werkstromen
+      href: components/workflows-guide.md
 - name: Wat is nieuw
   items:
-  - name: Wat is er nieuw in PowerShell Core 6.x?
-    items:
-    - name: Wat is er nieuw in PowerShell Core 6.1?
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: Wat is er nieuw in PowerShell Core 6.0?
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: Wijzigingen in PowerShell Core 6.0 die fouten veroorzaken
-      href: whats-new/breaking-changes-ps6.md
-    - name: Bekende problemen in PowerShell Core 6.0
-      href: whats-new/known-issues-ps6.md
-  - name: Wat is er nieuw in PowerShell 5.x?
-    items:
-    - name: Wat is er nieuw in PowerShell 5.0?
-      href: whats-new/what-s-new-with-powershell.md
-    - name: Wat is er nieuw in Windows PowerShell 5.0?
-      href: whats-new/what-s-new-in-windows-powershell-50.md
-    - name: Wat is er nieuw in PowerShell 5.0 ISE?
-      href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: Wat is er nieuw in PowerShell Core 6.x?
+      items:
+        - name: Wat is er nieuw in PowerShell Core 6.2?
+          href: whats-new/what-s-new-in-powershell-core-62.md
+        - name: Wat is er nieuw in PowerShell Core 6.1?
+          href: whats-new/what-s-new-in-powershell-core-61.md
+        - name: Wat is er nieuw in PowerShell Core 6.0?
+          href: whats-new/what-s-new-in-powershell-core-60.md
+        - name: Wijzigingen in PowerShell Core 6.0 die fouten veroorzaken
+          href: whats-new/breaking-changes-ps6.md
+        - name: Bekende problemen in PowerShell Core 6.0
+          href: whats-new/known-issues-ps6.md
+    - name: Wat is er nieuw in PowerShell 5.x?
+      items:
+        - name: Wat is er nieuw in PowerShell 5.0?
+          href: whats-new/what-s-new-with-powershell.md
+        - name: Wat is er nieuw in Windows PowerShell 5.0?
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Wat is er nieuw in PowerShell 5.0 ISE?
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: Levenscyclus voor ondersteuning van PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Voorbeeldscripts
   items:
-  - name: Voorbeeldscripts voor beheer
-    href: samples/sample-scripts-for-administration.md
-  - name: Computerstatus wijzigen
-    href: samples/changing-computer-state.md
-  - name: Informatie over computers verzamelen
-    href: samples/collecting-information-about-computers.md
-  - name: Get-WinEvent-query's maken met FilterHashtable
-    href: samples/creating-get-winEvent-queries-with-filterhashtable.md
-  - name: UI-elementen maken
-    items:
-    - name: Een aangepast invoervak maken
-      href: samples/creating-a-custom-input-box.md
-    - name: Een grafische datumkiezer maken
-      href: samples/creating-a-graphical-date-picker.md
-    - name: Meerdere selectielijstvelden
-      href: samples/multiple-selection-list-boxes.md
-    - name: Items selecteren in een keuzelijst
-      href: samples/selecting-items-from-a-list-box.md
-  - name: Een PowerShell-opdracht decoderen vanuit een actief proces
-    href: samples/decode-powershell-command-from-a-running-process.md
-  - name: Huidige locatie beheren
-    href: samples/managing-current-location.md
-  - name: Processen beheren met proces-cmdlets
-    href: samples/managing-processes-with-process-cmdlets.md
-  - name: Services beheren
-    href: samples/managing-services.md
-  - name: Windows PowerShell-stations beheren
-    href: samples/managing-windows-powershell-drives.md
-  - name: Items rechtstreeks bewerken
-    href: samples/manipulating-items-directly.md
-  - name: Netwerktaken uitvoeren
-    href: samples/performing-networking-tasks.md
-  - name: Gegevens omleiden met Out-*-cmdlets
-    href: samples/redirecting-data-with-out---cmdlets.md
-  - name: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
-    href: samples/using-format-commands-to-change-output-view.md
-  - name: Met bestanden en mappen werken
-    href: samples/working-with-files-and-folders.md
-  - name: Met bestanden, mappen en registersleutels werken
-    href: samples/working-with-files-folders-and-registry-keys.md
-  - name: Met objecten werken
-    items:
-    - name: WMI-objecten ophalen (Get-WmiObject)
-      href: samples/getting-wmi-objects--get-wmiobject-.md
-    - name: .NET- en COM-objecten maken (New-Object)
-      href: samples/creating-.net-and-com-objects--new-object-.md
-    - name: Objecten uit de pijplijn verwijderen (Where-Object)
-      href: samples/removing-objects-from-the-pipeline--where-object-.md
-    - name: Delen van objecten selecteren - Select-Object
-      href: samples/selecting-parts-of-objects--select-object-.md
-    - name: Objecten sorteren
-      href: samples/sorting-objects.md
-    - name: Een taak herhalen voor meerdere objecten (ForEach-Object)
-      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-    - name: Statische klassen en methoden gebruiken
-      href: samples/using-static-classes-and-methods.md
-    - name: Objectstructuur weergeven - Get-Member
-      href: samples/viewing-object-structure--get-member-.md
-  - name: Met printers werken
-    href: samples/working-with-printers.md
-  - name: Met registervermeldingen werken
-    href: samples/working-with-registry-entries.md
-  - name: Met registersleutels werken
-    href: samples/working-with-registry-keys.md
-  - name: Met software-installaties werken
-    href: samples/working-with-software-installations.md
-  - name: Andere nuttige scriptobjecten
-    href: samples/other-useful-scripting-objects.md
-  - name: Bijlage 1 - Compatibiliteitsaliassen
-    href: samples/appendix-1---compatibility-aliases.md
-  - name: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
-    href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920455"
+    - name: Voorbeeldscripts voor beheer
+      href: samples/sample-scripts-for-administration.md
+    - name: Computerstatus wijzigen
+      href: samples/changing-computer-state.md
+    - name: Informatie over computers verzamelen
+      href: samples/collecting-information-about-computers.md
+    - name: Get-WinEvent-query's maken met FilterHashtable
+      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: UI-elementen maken
+      items:
+        - name: Een aangepast invoervak maken
+          href: samples/creating-a-custom-input-box.md
+        - name: Een grafische datumkiezer maken
+          href: samples/creating-a-graphical-date-picker.md
+        - name: Meerdere selectielijstvelden
+          href: samples/multiple-selection-list-boxes.md
+        - name: Items selecteren in een keuzelijst
+          href: samples/selecting-items-from-a-list-box.md
+    - name: Een PowerShell-opdracht decoderen vanuit een actief proces
+      href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Huidige locatie beheren
+      href: samples/managing-current-location.md
+    - name: Processen beheren met proces-cmdlets
+      href: samples/managing-processes-with-process-cmdlets.md
+    - name: Services beheren
+      href: samples/managing-services.md
+    - name: Windows PowerShell-stations beheren
+      href: samples/managing-windows-powershell-drives.md
+    - name: Items rechtstreeks bewerken
+      href: samples/manipulating-items-directly.md
+    - name: Netwerktaken uitvoeren
+      href: samples/performing-networking-tasks.md
+    - name: Gegevens omleiden met Out-*-cmdlets
+      href: samples/redirecting-data-with-out---cmdlets.md
+    - name: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
+      href: samples/using-format-commands-to-change-output-view.md
+    - name: Met bestanden en mappen werken
+      href: samples/working-with-files-and-folders.md
+    - name: 'Met bestanden, mappen en registersleutels werken'
+      href: samples/working-with-files-folders-and-registry-keys.md
+    - name: Met objecten werken
+      items:
+        - name: WMI-objecten ophalen (Get-WmiObject)
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: .NET- en COM-objecten maken (New-Object)
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Objecten uit de pijplijn verwijderen (Where-Object)
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Delen van objecten selecteren - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Objecten sorteren
+          href: samples/sorting-objects.md
+        - name: Een taak herhalen voor meerdere objecten (ForEach-Object)
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Statische klassen en methoden gebruiken
+          href: samples/using-static-classes-and-methods.md
+        - name: Objectstructuur weergeven - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+    - name: Met printers werken
+      href: samples/working-with-printers.md
+    - name: Met registervermeldingen werken
+      href: samples/working-with-registry-entries.md
+    - name: Met registersleutels werken
+      href: samples/working-with-registry-keys.md
+    - name: Met software-installaties werken
+      href: samples/working-with-software-installations.md
+    - name: Andere nuttige scriptobjecten
+      href: samples/other-useful-scripting-objects.md
+    - name: Bijlage 1 - Compatibiliteitsaliassen
+      href: samples/appendix-1---compatibility-aliases.md
+    - name: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
+      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md

@@ -2,12 +2,12 @@
 title: Wat is er nieuw in PowerShell Core 6.1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
-ms.translationtype: MT
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293313"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984507"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
 
@@ -179,8 +179,9 @@ Bekijk voor meer informatie over de werking van deze cmdlets [deze RFC](https://
 
 ## <a name="experimental-feature-flags"></a>Vlaggen voor experimentele functie
 
-Vlaggen voor experimentele functie kunnen gebruikers in te schakelen functies die nog niet is voltooid.
-Deze experimentele functies worden niet ondersteund en fouten kunnen hebben.
+We ondersteuning voor ingeschakeld [experimentele functies][]. Dit kan PowerShell ontwikkelaars nieuwe functies leveren en feedback ontvangen voordat het ontwerp voltooid is. Op deze manier we te voorkomen dat de wijzigingen die fouten veroorzaken zoals later in de ontwerpfase.
+
+Gebruik `Get-ExperimentalFeature` voor een lijst van beschikbare experimentele functies. U kunt inschakelen of uitschakelen van deze functies met `Enable-ExperimentalFeature` en `Disable-ExperimentalFeature`.
 
 U kunt meer informatie over deze functie in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -523,3 +524,6 @@ Als onderdeel van de prestaties verbeteren, `Group-Object` nu retourneert een ge
 Hoewel u niet verstandig de volgorde, kan u worden verdeeld door deze wijziging als u de eerste groep. We besloten dat deze prestatieverbetering waard is om de wijziging is omdat de impact van wordt afhankelijk van het gedrag van het vorige laag is.
 
 Zie voor meer informatie over deze wijziging [probleem #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Experimentele functies]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features
