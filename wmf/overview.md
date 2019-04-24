@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: wmf,powershell,installeren
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MT
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684435"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984306"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -35,26 +35,30 @@ Voor meer informatie over verschillende verbeteringen in PowerShell en andere on
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>WMF beschikbaarheid in Windows-besturingssystemen
 
-|Versie van besturingssysteem  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |Wordt verzonden in box|            |            |             |            |
-|Windows Server 2016       |Wordt verzonden in box|            |            |             |            |
-|Windows 10                |Wordt verzonden in box|Wordt verzonden in box|            |             |            |
-|Windows Server 2012 R2    |Ja         |Ja         |Wordt verzonden in box|             |            |
-|Windows 8.1               |Ja         |Ja         |Wordt verzonden in box|             |            |
-|Windows Server 2012       |Ja         |Ja         |Ja         |Wordt verzonden in box |            |
-|Windows 8                 |            |            |            |Wordt verzonden in box |            |
-|Windows Server 2008 R2 SP1|Ja         |Ja         |Ja         |Ja          |Wordt verzonden in box|
-|Windows 7 SP1             |Ja         |Ja         |Ja         |Ja          |Wordt verzonden in box|
-|Windows Server 2008 SP2   |            |            |            |Ja          |Ja         |
-|Windows Vista             |            |            |            |             |Ja         |
-|Windows Server 2003       |            |            |            |             |Ja         |
-|Windows XP                |            |            |            |Ja          |            |
+|        Versie van besturingssysteem         | [WMF 5.1][]  | WMF 5.0<br>*Buiten-ondersteuning* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | Wordt verzonden in box |                             |              |              |              |
+| Windows Server 2016                     | Wordt verzonden in box |                             |              |              |              |
+| Windows 10                              | Wordt verzonden in box | Wordt verzonden in box                |              |              |              |
+| Windows Server 2012 R2                  | Ja          | Ja                         | Wordt verzonden in box |              |              |
+| Windows 8.1                             | Ja          | Ja                         | Wordt verzonden in box |              |              |
+| Windows Server 2012                     | Ja          | Ja                         | Ja          | Wordt verzonden in box |              |
+| Windows 8<br>*Buiten-ondersteuning*           |              |                             |              | Wordt verzonden in box |              |
+| Windows Server 2008 R2 SP1              | Ja          | Ja                         | Ja          | Ja          | Wordt verzonden in box |
+| Windows 7 SP1                           | Ja          | Ja                         | Ja          | Ja          | Wordt verzonden in box |
+| Windows Server 2008 SP2                 |              |                             |              | Ja          | Ja          |
+| Windows Vista<br>*Buiten-ondersteuning*       |              |                             |              |              | Ja          |
+| Windows Server 2003<br>*Buiten-ondersteuning* |              |                             |              |              | Ja          |
+| Windows XP<br>*Buiten-ondersteuning*          |              |                             |              | Ja          | Ja          |
 
-**Wordt geleverd in het vak**: De functies van de opgegeven versie van WMF zijn verzonden in de opgegeven versie van Windows client- of Windows Server.
+- **Wordt geleverd in het vak**: De functies van de opgegeven versie van WMF zijn verzonden in de opgegeven versie van Windows client- of Windows Server.
+- **Ondersteuning vervalt**: Deze producten zijn niet meer ondersteund door Microsoft. U moet een upgrade uitvoeren naar een nieuwe versie die wordt ondersteund. Zie voor meer informatie de [Microsoft Lifecycle-beleid][] pagina.
 
+> [!NOTE]
+> Het installatieprogramma voor WMF 5.0 is niet langer beschikbaar of wordt ondersteund. Deze is vervangen door WMF 5.1.
+
+[Microsoft Lifecycle-beleid]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download
