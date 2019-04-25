@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082633"
 ---
-# <a name="runspace08-sample"></a><span data-ttu-id="f3228-102">Voorbeeld Runspace08</span><span class="sxs-lookup"><span data-stu-id="f3228-102">Runspace08 Sample</span></span>
+# <a name="runspace08-sample"></a><span data-ttu-id="752cd-102">Voorbeeld Runspace08</span><span class="sxs-lookup"><span data-stu-id="752cd-102">Runspace08 Sample</span></span>
 
-<span data-ttu-id="f3228-103">In dit voorbeeld laat zien hoe u opdrachten en argumenten toevoegen aan de pijplijn met een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object en hoe u de opdrachten synchroon worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="f3228-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
+<span data-ttu-id="752cd-103">In dit voorbeeld laat zien hoe u opdrachten en argumenten toevoegen aan de pijplijn met een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object en hoe u de opdrachten synchroon worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="752cd-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="f3228-104">Vereisten</span><span class="sxs-lookup"><span data-stu-id="f3228-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="752cd-104">Vereisten</span><span class="sxs-lookup"><span data-stu-id="752cd-104">Requirements</span></span>
 
-<span data-ttu-id="f3228-105">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="f3228-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="752cd-105">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="752cd-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f3228-106">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="f3228-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="752cd-106">Ziet u</span><span class="sxs-lookup"><span data-stu-id="752cd-106">Demonstrates</span></span>
 
-<span data-ttu-id="f3228-107">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="f3228-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="752cd-107">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="752cd-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="f3228-108">Het maken van een [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object met behulp van de [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) klasse.</span><span class="sxs-lookup"><span data-stu-id="f3228-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="752cd-108">Het maken van een [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object met behulp van de [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) klasse.</span><span class="sxs-lookup"><span data-stu-id="752cd-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="f3228-109">Het maken van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object dat de runspace gebruikt.</span><span class="sxs-lookup"><span data-stu-id="f3228-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="752cd-109">Het maken van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object dat de runspace gebruikt.</span><span class="sxs-lookup"><span data-stu-id="752cd-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="f3228-110">Cmdlets toe te voegen aan de pijplijn met de [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="f3228-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="752cd-110">Cmdlets toe te voegen aan de pijplijn met de [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="752cd-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="f3228-111">De cmdlets synchroon uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="f3228-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="752cd-111">De cmdlets synchroon uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="752cd-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="f3228-112">Uitpakken van de eigenschappen van de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.</span><span class="sxs-lookup"><span data-stu-id="f3228-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="752cd-112">Uitpakken van de eigenschappen van de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objecten geretourneerd door de opdracht.</span><span class="sxs-lookup"><span data-stu-id="752cd-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f3228-113">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f3228-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="752cd-113">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="752cd-113">Example</span></span>
 
-<span data-ttu-id="f3228-114">In dit voorbeeld wordt uitgevoerd de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets met behulp van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="f3228-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="752cd-114">In dit voorbeeld wordt uitgevoerd de [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets met behulp van een [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span><span class="sxs-lookup"><span data-stu-id="752cd-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -120,6 +120,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f3228-115">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f3228-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="752cd-115">Zie ook</span><span class="sxs-lookup"><span data-stu-id="752cd-115">See Also</span></span>
 
-[<span data-ttu-id="f3228-116">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="f3228-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="752cd-116">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="752cd-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

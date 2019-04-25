@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 6544070f-5549-407f-8603-5df60fe9e013
 caps.latest.revision: 7
 ms.openlocfilehash: 11804db56ec47554e82f04fe6954920ad9577370
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082427"
 ---
-# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="183b4-102">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="183b4-102">HelpInfo XML Sample File</span></span>
+# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="eeac8-102">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="eeac8-102">HelpInfo XML Sample File</span></span>
 
-<span data-ttu-id="183b4-103">In dit onderwerp geeft een voorbeeld van een opgemaakte bij te werken Help-informatie-bestand, bekend als "HelpInfo XML-bestand."</span><span class="sxs-lookup"><span data-stu-id="183b4-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="183b4-104">In dit voorbeeldbestand zijn de cultuur UI-elementen in alfabetische volgorde geordend op cultuurnaam gebruikersinterface.</span><span class="sxs-lookup"><span data-stu-id="183b4-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="183b4-105">Alfabetische volgorde is een aanbevolen procedure, maar dit is niet vereist.</span><span class="sxs-lookup"><span data-stu-id="183b4-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
+<span data-ttu-id="eeac8-103">In dit onderwerp geeft een voorbeeld van een opgemaakte bij te werken Help-informatie-bestand, bekend als "HelpInfo XML-bestand."</span><span class="sxs-lookup"><span data-stu-id="eeac8-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="eeac8-104">In dit voorbeeldbestand zijn de cultuur UI-elementen in alfabetische volgorde geordend op cultuurnaam gebruikersinterface.</span><span class="sxs-lookup"><span data-stu-id="eeac8-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="eeac8-105">Alfabetische volgorde is een aanbevolen procedure, maar dit is niet vereist.</span><span class="sxs-lookup"><span data-stu-id="eeac8-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
 
-## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="183b4-106">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="183b4-106">HelpInfo XML Sample File</span></span>
+## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="eeac8-106">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="eeac8-106">HelpInfo XML Sample File</span></span>
 
 ```xml
 

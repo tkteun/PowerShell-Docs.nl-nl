@@ -5,37 +5,37 @@ ms.topic: conceptual
 contributor: vaibch
 title: Fout Netwerkswitchbeheer-cmdlets
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084977"
 ---
-# <a name="network-switch-manager-cmdlets-failure"></a><span data-ttu-id="b0ade-103">Fout bij Netwerkswitchbeheer-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="b0ade-103">Network Switch Manager Cmdlets Failure</span></span>
+# <a name="network-switch-manager-cmdlets-failure"></a><span data-ttu-id="e5b19-103">Fout bij Netwerkswitchbeheer-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="e5b19-103">Network Switch Manager Cmdlets Failure</span></span>
 
-<span data-ttu-id="b0ade-104">De cmdlets Netwerkswitchbeheer kan worden gebruikt voor het beheren van netwerkswitches via WSMAN.</span><span class="sxs-lookup"><span data-stu-id="b0ade-104">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
-<span data-ttu-id="b0ade-105">Enkele cmdlets van deze module zijn geschikt voor het accepteren van waarden van pijplijnen.</span><span class="sxs-lookup"><span data-stu-id="b0ade-105">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>
-<span data-ttu-id="b0ade-106">WMF 5.1 Preview-versie mislukt de cmdlets die de waarde van de pijplijn kan accepteren om uit te voeren wanneer de waarden niet via pijplijnen doorgegeven worden.</span><span class="sxs-lookup"><span data-stu-id="b0ade-106">In WMF 5.1 Preview, the cmdlets that can accept value from pipeline fail to execute when the values are not passed through pipelines.</span></span>
+<span data-ttu-id="e5b19-104">De cmdlets Netwerkswitchbeheer kan worden gebruikt voor het beheren van netwerkswitches via WSMAN.</span><span class="sxs-lookup"><span data-stu-id="e5b19-104">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
+<span data-ttu-id="e5b19-105">Enkele cmdlets van deze module zijn geschikt voor het accepteren van waarden van pijplijnen.</span><span class="sxs-lookup"><span data-stu-id="e5b19-105">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>
+<span data-ttu-id="e5b19-106">WMF 5.1 Preview-versie mislukt de cmdlets die de waarde van de pijplijn kan accepteren om uit te voeren wanneer de waarden niet via pijplijnen doorgegeven worden.</span><span class="sxs-lookup"><span data-stu-id="e5b19-106">In WMF 5.1 Preview, the cmdlets that can accept value from pipeline fail to execute when the values are not passed through pipelines.</span></span>
 
-<span data-ttu-id="b0ade-107">Als de parameter 'InputObject' niet gebruikt wordt, moet de cmdlet blijven uitvoeren zonder fouten.</span><span class="sxs-lookup"><span data-stu-id="b0ade-107">If "InputObject" parameter is not used, the cmdlet should continue to execute without failures.</span></span>
+<span data-ttu-id="e5b19-107">Als de parameter 'InputObject' niet gebruikt wordt, moet de cmdlet blijven uitvoeren zonder fouten.</span><span class="sxs-lookup"><span data-stu-id="e5b19-107">If "InputObject" parameter is not used, the cmdlet should continue to execute without failures.</span></span>
 
-<span data-ttu-id="b0ade-108">Hier volgt de lijst van betreft de cmdlets dat wil zeggen deze cmdlets kunt accepteren waarde voor parameter 'InputObject' van de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="b0ade-108">Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline.</span></span>
-<span data-ttu-id="b0ade-109">Als deze waarde niet is doorgegeven door de pijplijn mislukt de uitvoering van de cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b0ade-109">If this value is not passed from pipeline the execution of cmdlet will fail.</span></span>
+<span data-ttu-id="e5b19-108">Hier volgt de lijst van betreft de cmdlets dat wil zeggen deze cmdlets kunt accepteren waarde voor parameter 'InputObject' van de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="e5b19-108">Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline.</span></span>
+<span data-ttu-id="e5b19-109">Als deze waarde niet is doorgegeven door de pijplijn mislukt de uitvoering van de cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e5b19-109">If this value is not passed from pipeline the execution of cmdlet will fail.</span></span>
 
-- <span data-ttu-id="b0ade-110">Disable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="b0ade-110">Disable-NetworkSwitchEthernetPort</span></span>
-- <span data-ttu-id="b0ade-111">Enable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="b0ade-111">Enable-NetworkSwitchEthernetPort</span></span>
-- <span data-ttu-id="b0ade-112">Remove-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="b0ade-112">Remove-NetworkSwitchEthernetPortIPAddress</span></span>
-- <span data-ttu-id="b0ade-113">Set-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="b0ade-113">Set-NetworkSwitchEthernetPortIPAddress</span></span>
-- <span data-ttu-id="b0ade-114">Set-NetworkSwitchPortMode</span><span class="sxs-lookup"><span data-stu-id="b0ade-114">Set-NetworkSwitchPortMode</span></span>
-- <span data-ttu-id="b0ade-115">Set-NetworkSwitchPortProperty</span><span class="sxs-lookup"><span data-stu-id="b0ade-115">Set-NetworkSwitchPortProperty</span></span>
-- <span data-ttu-id="b0ade-116">Disable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="b0ade-116">Disable-NetworkSwitchFeature</span></span>
-- <span data-ttu-id="b0ade-117">Enable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="b0ade-117">Enable-NetworkSwitchFeature</span></span>
-- <span data-ttu-id="b0ade-118">Remove-NetworkSwitchVlan</span><span class="sxs-lookup"><span data-stu-id="b0ade-118">Remove-NetworkSwitchVlan</span></span>
-- <span data-ttu-id="b0ade-119">Set-NetworkSwitchVlanProperty</span><span class="sxs-lookup"><span data-stu-id="b0ade-119">Set-NetworkSwitchVlanProperty</span></span>
+- <span data-ttu-id="e5b19-110">Disable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="e5b19-110">Disable-NetworkSwitchEthernetPort</span></span>
+- <span data-ttu-id="e5b19-111">Enable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="e5b19-111">Enable-NetworkSwitchEthernetPort</span></span>
+- <span data-ttu-id="e5b19-112">Remove-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="e5b19-112">Remove-NetworkSwitchEthernetPortIPAddress</span></span>
+- <span data-ttu-id="e5b19-113">Set-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="e5b19-113">Set-NetworkSwitchEthernetPortIPAddress</span></span>
+- <span data-ttu-id="e5b19-114">Set-NetworkSwitchPortMode</span><span class="sxs-lookup"><span data-stu-id="e5b19-114">Set-NetworkSwitchPortMode</span></span>
+- <span data-ttu-id="e5b19-115">Set-NetworkSwitchPortProperty</span><span class="sxs-lookup"><span data-stu-id="e5b19-115">Set-NetworkSwitchPortProperty</span></span>
+- <span data-ttu-id="e5b19-116">Disable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="e5b19-116">Disable-NetworkSwitchFeature</span></span>
+- <span data-ttu-id="e5b19-117">Enable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="e5b19-117">Enable-NetworkSwitchFeature</span></span>
+- <span data-ttu-id="e5b19-118">Remove-NetworkSwitchVlan</span><span class="sxs-lookup"><span data-stu-id="e5b19-118">Remove-NetworkSwitchVlan</span></span>
+- <span data-ttu-id="e5b19-119">Set-NetworkSwitchVlanProperty</span><span class="sxs-lookup"><span data-stu-id="e5b19-119">Set-NetworkSwitchVlanProperty</span></span>
 
-## <a name="resolution"></a><span data-ttu-id="b0ade-120">Oplossing</span><span class="sxs-lookup"><span data-stu-id="b0ade-120">Resolution</span></span>
+## <a name="resolution"></a><span data-ttu-id="e5b19-120">Oplossing</span><span class="sxs-lookup"><span data-stu-id="e5b19-120">Resolution</span></span>
 
-<span data-ttu-id="b0ade-121">De cmdlets werken prima als de waarde van parameter InputObject erin worden doorgegeven via de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="b0ade-121">The cmdlets work fine when the value of InputObject parameter are passed into it through pipeline.</span></span> <span data-ttu-id="b0ade-122">Er zijn enkele voorbeelden die voor de bovenstaande cmdlets werken:</span><span class="sxs-lookup"><span data-stu-id="b0ade-122">A few examples that work for the above cmdlets are:</span></span>
+<span data-ttu-id="e5b19-121">De cmdlets werken prima als de waarde van parameter InputObject erin worden doorgegeven via de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="e5b19-121">The cmdlets work fine when the value of InputObject parameter are passed into it through pipeline.</span></span> <span data-ttu-id="e5b19-122">Er zijn enkele voorbeelden die voor de bovenstaande cmdlets werken:</span><span class="sxs-lookup"><span data-stu-id="e5b19-122">A few examples that work for the above cmdlets are:</span></span>
 
 - `Disable-NetworkSwitchEthernetPort`
 
