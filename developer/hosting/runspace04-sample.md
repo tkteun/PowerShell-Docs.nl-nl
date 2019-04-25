@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
 ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082667"
 ---
 # <a name="runspace04-sample"></a>Voorbeeld Runspace04
 
@@ -23,7 +23,7 @@ In dit voorbeeld laat zien hoe u de [System.Management.Automation.Powershell](/d
 
 In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende.
 

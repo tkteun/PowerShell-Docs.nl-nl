@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 60873d0f-c5f1-4d5b-ade1-49ad0df43245
 caps.latest.revision: 5
 ms.openlocfilehash: e4ab19db16b8137c833f9ef89e69f31f141f9932
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081254"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01-codevoorbeelden
 
@@ -24,7 +24,7 @@ Hier volgt de voorbeeldcode voor het StopProc01 voorbeeld-cmdlet. Dit is de `Sto
 >
 > De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
 
-|Language|Onderwerp|
+|Taal|Onderwerp|
 |--------------|-----------|
 |C#|[StopProc01 (C#) voorbeeldcode](./stopproc01-csharp-sample-code.md)|
 

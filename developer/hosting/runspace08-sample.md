@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082633"
 ---
 # <a name="runspace08-sample"></a>Voorbeeld Runspace08
 
@@ -23,7 +23,7 @@ In dit voorbeeld laat zien hoe u opdrachten en argumenten toevoegen aan de pijpl
 
 In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende.
 

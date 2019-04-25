@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: De Local Configuration Manager configureren
 ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079673"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De Local Configuration Manager configureren
 
@@ -70,19 +70,19 @@ De beschikbare resources zijn:
 Dan het pull-service-eindpunten/paden en gedeeltelijke configuraties op te geven, alle van de eigenschappen van de LCM zijn geconfigureerd in een **instellingen** blokkeren.
 De volgende eigenschappen zijn beschikbaar in een **instellingen** blokkeren.
 
-|  Eigenschap  |  Type  |  Beschrijving   |
+|  Eigenschap  |  Type  |  Description   |
 |----------- |------- |--------------- |
 | ActionAfterReboot| string| Hiermee geeft u op wat gebeurt er na een opnieuw opstarten tijdens de toepassing van een configuratie. De mogelijke waarden zijn __"ContinueConfiguration"__ en __"De StopConfiguration"__. <ul><li> __ContinueConfiguration__: Doorgaan met het toepassen van de huidige configuratie na de computer opnieuw is opgestart. Dit is de standaardwaarde</li><li>__De StopConfiguration__: De huidige configuratie na opnieuw opstarten van machine stoppen.</li></ul>|
-| AllowModuleOverwrite| BOOL| __$TRUE__ als nieuwe configuraties die zijn gedownload van de pull-service zijn toegestaan voor de oude overschrijven op het doelknooppunt. Anders wordt $FALSE.|
+| AllowModuleOverwrite| bool| __$TRUE__ als nieuwe configuraties die zijn gedownload van de pull-service zijn toegestaan voor de oude overschrijven op het doelknooppunt. Anders wordt $FALSE.|
 | CertificateID| string| De vingerafdruk van een certificaat dat wordt gebruikt voor het beveiligen van referenties die zijn doorgegeven in een configuratie. Zie voor meer informatie [wilt voor het beveiligen van referenties in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Opmerking:__ dit automatisch als met behulp van Azure Automation DSC pull-service wordt beheerd.|
 | ConfigurationDownloadManagers| CimInstance[]| Verouderd. Gebruik __ConfigurationRepositoryWeb__ en __ConfigurationRepositoryShare__ blokken voor het definiëren van configuratie pull service-eindpunten.|
 | ConfigurationID| string| Voor achterwaartse compatibiliteit met oudere pull versies service. Een GUID die het configuratiebestand ophalen uit een pull-service identificeert. Het knooppunt wordt configuraties opgehaald van de pull-service als de naam van de configuratie van de MOF ConfigurationID.mof heet.<br> __Opmerking:__ Als u deze eigenschap is ingesteld, registreert u het knooppunt met een pull-service met behulp van __RegistrationKey__ werkt niet. Zie voor meer informatie, [instellen van een pull-client met configuratienamen](../pull-server/pullClientConfigNames.md).|
 | ConfigurationMode| string | Hiermee geeft u op hoe de LCM daadwerkelijk geldt de configuratie voor de doelknooppunten. Mogelijke waarden zijn __"ApplyOnly"__,__"ApplyAndMonitor"__, en __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC geldt de configuratie en doet niets meer, tenzij er een nieuwe configuratie wordt doorgestuurd naar het doelknooppunt of wanneer een nieuwe configuratie wordt opgehaald uit een service. Na de eerste toepassing van een nieuwe configuratie DSC controleert niet op afwijking van een eerder geconfigureerde status. Houd er rekening mee dat de DSC proberen zal om toe te passen van de configuratie totdat hij erin slaagt voordat __ApplyOnly__ wordt van kracht. </li><li> __ApplyAndMonitor__: Dit is de standaardwaarde. De LCM geldt voor alle nieuwe configuraties. Als het doelknooppunt drifts van de gewenste status, rapporteert DSC na de eerste toepassing van een nieuwe configuratie, het verschil in Logboeken. Houd er rekening mee dat de DSC proberen zal om toe te passen van de configuratie totdat hij erin slaagt voordat __ApplyAndMonitor__ wordt van kracht.</li><li>__ApplyAndAutoCorrect__: DSC geldt voor alle nieuwe configuraties. Na de eerste toepassing van een nieuwe configuratie als het doelknooppunt drifts van de gewenste status, DSC rapporteert het verschil in Logboeken en de huidige configuratie vervolgens opnieuw toegepast.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Hoe vaak in minuten, de huidige configuratie is dit selectievakje is ingeschakeld en toegepast. Deze eigenschap wordt genegeerd als de eigenschap ConfigurationMode is ingesteld op ApplyOnly. De standaardwaarde is 15.|
 | DebugMode| string| Mogelijke waarden zijn __geen__, __ForceModuleImport__, en __alle__. <ul><li>Ingesteld op __geen__ gebruik van resources in de cache. Dit is de standaardinstelling en moet worden gebruikt in productiescenario's.</li><li>Als u op __ForceModuleImport__, zorgt ervoor dat de LCM om opnieuw te laden van alle modules DSC-resource, zelfs als ze eerder zijn geladen en opgeslagen in de cache. Dit van invloed op de prestaties van DSC-bewerkingen zoals elke module opnieuw is geladen voor gebruik. Doorgaans gebruikt u deze waarde tijdens het opsporen van fouten in een resource</li><li>In deze release __alle__ is hetzelfde als __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| BOOL| Stel dit in op `$true` om toe te staan van bronnen op te starten op het knooppunt met behulp van de `$global:DSCMachineStatus` vlag. Anders moet u handmatig het knooppunt voor de configuratie die vereist dat het opnieuw opstarten. De standaardwaarde is `$false`. Voor het gebruik van deze instelling als de voorwaarde van een opnieuw opstarten wordt gepubliceerd door iets anders dan DSC (zoals Windows-installatieprogramma), combineert u deze instelling met de [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
+| RebootNodeIfNeeded| bool| Stel dit in op `$true` om toe te staan van bronnen op te starten op het knooppunt met behulp van de `$global:DSCMachineStatus` vlag. Anders moet u handmatig het knooppunt voor de configuratie die vereist dat het opnieuw opstarten. De standaardwaarde is `$false`. Voor het gebruik van deze instelling als de voorwaarde van een opnieuw opstarten wordt gepubliceerd door iets anders dan DSC (zoals Windows-installatieprogramma), combineert u deze instelling met de [xPendingReboot](https://github.com/powershell/xpendingreboot) module.|
 | RefreshMode| string| Hiermee geeft u op hoe de LCM configuraties opgehaald. De mogelijke waarden zijn __"Uitgeschakeld"__, __'Push'__, en __'Pull'__. <ul><li>__Uitgeschakelde__: DSC-configuraties zijn uitgeschakeld voor dit knooppunt.</li><li> __Push-__: Configuraties zijn gestart door het aanroepen van de [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet. De configuratie wordt direct toegepast op het knooppunt. Dit is de standaardwaarde.</li><li>__Haal:__ Het knooppunt is geconfigureerd om te controleren op regelmatig configuraties van een pull-service of een SMB-pad. Als deze eigenschap is ingesteld op __Pull__, moet u een HTTP-(service) of SMB (delen)-pad in een __ConfigurationRepositoryWeb__ of __ConfigurationRepositoryShare__ blokkeren.</li></ul>|
-| RefreshFrequencyMins| Uint32| Het tijdsinterval in minuten, waarmee de LCM controleert of een pull-service om op te halen van bijgewerkte configuraties. Deze waarde wordt genegeerd als de LCM niet is geconfigureerd in de pull-modus. De standaardwaarde is 30.|
+| RefreshFrequencyMins| UInt32| Het tijdsinterval in minuten, waarmee de LCM controleert of een pull-service om op te halen van bijgewerkte configuraties. Deze waarde wordt genegeerd als de LCM niet is geconfigureerd in de pull-modus. De standaardwaarde is 30.|
 | ReportManagers| CimInstance[]| Verouderd. Gebruik __ReportServerWeb__ blokken voor het definiëren van een eindpunt voor het verzenden van gegevens naar een pull-service reporting.|
 | ResourceModuleManagers| CimInstance[]| Verouderd. Gebruik __ResourceRepositoryWeb__ en __ResourceRepositoryShare__ blokken voor het definiëren van pull-service HTTP-eindpunten of SMB-paden, respectievelijk.|
 | PartialConfigurations| CimInstance| Niet geïmplementeerd. Niet gebruiken.|
@@ -114,9 +114,9 @@ Voor meer informatie over pull-service ziet, [Pull-Service Desired State Configu
 Voor het definiëren van een web gebaseerde configuratieserver die u maakt een **ConfigurationRepositoryWeb** blokkeren.
 Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
-|AllowUnsecureConnection|BOOL|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
+|AllowUnsecureConnection|bool|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
 |CertificateID|string|De vingerafdruk van een certificaat dat wordt gebruikt om de server te verifiëren.|
 |ConfigurationNames|String[]|Een matrix met namen van configuraties om te worden opgehaald door het doelknooppunt. Deze worden alleen gebruikt als het knooppunt is geregistreerd bij de pull-service met behulp van een **RegistrationKey**. Zie voor meer informatie, [instellen van een pull-client met configuratienamen](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|string|Een GUID waarmee het knooppunt met de pull-service wordt geregistreerd. Zie voor meer informatie, [instellen van een pull-client met configuratienamen](../pull-server/pullClientConfigNames.md).|
@@ -127,7 +127,7 @@ Zie voor een voorbeeldscript voor het vereenvoudigen van de waarde Configuration
 Voor het definiëren van een configuratie op basis van SMB-server die u maakt een **ConfigurationRepositoryShare** blokkeren.
 Een **ConfigurationRepositoryShare** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
 |Referentie|MSFT_Credential|De referentie die wordt gebruikt om de SMB-share te verifiëren.|
 |SourcePath|string|Het pad van de SMB-share.|
@@ -137,9 +137,9 @@ Een **ConfigurationRepositoryShare** definieert de volgende eigenschappen.
 Voor het definiëren van een resource op het web server, die u maakt een **ResourceRepositoryWeb** blokkeren.
 Een **ResourceRepositoryWeb** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
-|AllowUnsecureConnection|BOOL|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
+|AllowUnsecureConnection|bool|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
 |CertificateID|string|De vingerafdruk van een certificaat dat wordt gebruikt om de server te verifiëren.|
 |RegistrationKey|string|Een GUID waarmee het knooppunt naar de pull-service.|
 |ServerURL|string|De URL van de configuratieserver.|
@@ -149,7 +149,7 @@ Zie voor een voorbeeldscript voor het vereenvoudigen van de waarde ResourceRepos
 Voor het definiëren van een resource op basis van SMB-server die u maakt een **ResourceRepositoryShare** blokkeren.
 **ResourceRepositoryShare** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
 |Referentie|MSFT_Credential|De referentie die wordt gebruikt om de SMB-share te verifiëren. Zie voor een voorbeeld van het doorgeven van referenties, [instellen van een DSC SMB-pull-server](../pull-server/pullServerSMB.md)|
 |SourcePath|string|Het pad van de SMB-share.|
@@ -160,9 +160,9 @@ Voor het definiëren van een rapportserver die u maakt een **ReportServerWeb** b
 De report server-rol is niet compatibel met SMB op basis van pull-service.
 **ReportServerWeb** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
-|AllowUnsecureConnection|BOOL|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
+|AllowUnsecureConnection|bool|Ingesteld op **$TRUE** om verbindingen vanuit het knooppunt zonder verificatie naar de server te staan. Ingesteld op **$FALSE** om verificatie te vereisen.|
 |CertificateID|string|De vingerafdruk van een certificaat dat wordt gebruikt om de server te verifiëren.|
 |RegistrationKey|string|Een GUID waarmee het knooppunt naar de pull-service.|
 |ServerURL|string|De URL van de configuratieserver.|
@@ -175,11 +175,11 @@ Voor het definiëren van een gedeeltelijke configuratie die u maakt een **Partia
 Zie voor meer informatie over gedeeltelijke configuraties [gedeeltelijk DSC-configuraties](../pull-server/partialConfigs.md).
 **PartialConfiguration** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |---|---|---|
 |ConfigurationSource|string[]|Een matrix van namen van de van configuratieservers, dat is gedefinieerd in **ConfigurationRepositoryWeb** en **ConfigurationRepositoryShare** blokken, waarbij de gedeeltelijke configuratie wordt opgehaald uit.|
 |DependsOn|Tekenreeks{}|Een lijst met namen van andere configuraties die moeten worden uitgevoerd voordat deze gedeeltelijke configuratie is toegepast.|
-|Beschrijving|string|Tekst die wordt gebruikt om te beschrijven de gedeeltelijke configuratie.|
+|Description|string|Tekst die wordt gebruikt om te beschrijven de gedeeltelijke configuratie.|
 |ExclusiveResources|string[]|Een matrix van resources die exclusief zijn voor deze gedeeltelijke configuratie.|
 |RefreshMode|string|Hiermee geeft u op hoe deze gedeeltelijke configuratie in de LCM worden opgehaald. De mogelijke waarden zijn __"Uitgeschakeld"__, __'Push'__, en __'Pull'__. <ul><li>__Uitgeschakelde__: Deze gedeeltelijke configuratie is uitgeschakeld.</li><li> __Push-__: De configuratie van de gedeeltelijke wordt doorgestuurd naar het knooppunt door het aanroepen van de [publiceren-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet. Nadat alle gedeeltelijke configuraties voor het knooppunt worden gepusht of opgehaald uit een service, de configuratie kan worden gestart door het aanroepen van `Start-DscConfiguration –UseExisting`. Dit is de standaardwaarde.</li><li>__Haal:__ Het knooppunt is geconfigureerd om te controleren regelmatig of er een gedeeltelijke configuratie van een pull-service. Als deze eigenschap is ingesteld op __Pull__, moet u een pull-service in een __ConfigurationSource__ eigenschap. Zie voor meer informatie over pull-service voor Azure Automation, [overzicht van Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|Een matrix met de namen van resource-servers van waaruit vereiste resources voor deze gedeeltelijke configuratie gedownload. Deze namen moeten verwijzen naar de service-eindpunten die eerder is gedefinieerd in **ResourceRepositoryWeb** en **ResourceRepositoryShare** blokken.|
