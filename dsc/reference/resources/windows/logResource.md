@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Logboekresource
 ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077225"
 ---
-# <a name="dsc-log-resource"></a><span data-ttu-id="a3e73-103">DSC-Logboekresource</span><span class="sxs-lookup"><span data-stu-id="a3e73-103">DSC Log Resource</span></span>
+# <a name="dsc-log-resource"></a><span data-ttu-id="fc932-103">DSC-Logboekresource</span><span class="sxs-lookup"><span data-stu-id="fc932-103">DSC Log Resource</span></span>
 
-> <span data-ttu-id="a3e73-104">_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="a3e73-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
+> <span data-ttu-id="fc932-104">_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="fc932-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
 
-<span data-ttu-id="a3e73-105">De __Log__ resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het schrijven van berichten naar het gebeurtenislogboek van de Microsoft-Windows-Desired State Configuration / analysen.</span><span class="sxs-lookup"><span data-stu-id="a3e73-105">The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
+<span data-ttu-id="fc932-105">De __Log__ resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het schrijven van berichten naar het gebeurtenislogboek van de Microsoft-Windows-Desired State Configuration / analysen.</span><span class="sxs-lookup"><span data-stu-id="fc932-105">The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
 ```
 Syntax
@@ -26,21 +26,21 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> <span data-ttu-id="a3e73-106">Alleen de operationele logboeken voor DSC zijn standaard ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="a3e73-106">By default only the Operational logs for DSC are enabled.</span></span> <span data-ttu-id="a3e73-107">Voordat de analytische logboek beschikbaar of zichtbaar is, moet zijn ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="a3e73-107">Before the Analytic log will be available or visible, it must be enabled.</span></span> <span data-ttu-id="a3e73-108">Zie voor meer informatie, [waar zich de gebeurtenislogboeken DSC?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).</span><span class="sxs-lookup"><span data-stu-id="a3e73-108">For more information, see [Where are DSC Event Logs?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).</span></span>
+> <span data-ttu-id="fc932-106">Alleen de operationele logboeken voor DSC zijn standaard ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="fc932-106">By default only the Operational logs for DSC are enabled.</span></span> <span data-ttu-id="fc932-107">Voordat de analytische logboek beschikbaar of zichtbaar is, moet zijn ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="fc932-107">Before the Analytic log will be available or visible, it must be enabled.</span></span> <span data-ttu-id="fc932-108">Zie voor meer informatie, [waar zich de gebeurtenislogboeken DSC?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).</span><span class="sxs-lookup"><span data-stu-id="fc932-108">For more information, see [Where are DSC Event Logs?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).</span></span>
 
-## <a name="properties"></a><span data-ttu-id="a3e73-109">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="a3e73-109">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="fc932-109">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="fc932-109">Properties</span></span>
 
-| <span data-ttu-id="a3e73-110">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="a3e73-110">Property</span></span> | <span data-ttu-id="a3e73-111">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="a3e73-111">Description</span></span> |
+| <span data-ttu-id="fc932-110">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="fc932-110">Property</span></span> | <span data-ttu-id="fc932-111">Description</span><span class="sxs-lookup"><span data-stu-id="fc932-111">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="a3e73-112">Bericht</span><span class="sxs-lookup"><span data-stu-id="a3e73-112">Message</span></span>| <span data-ttu-id="a3e73-113">Geeft aan dat het bericht dat u wilt schrijven naar het gebeurtenislogboek Microsoft-Windows-Desired staat configuratie/analysen.</span><span class="sxs-lookup"><span data-stu-id="a3e73-113">Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>|
-| <span data-ttu-id="a3e73-114">DependsOn</span><span class="sxs-lookup"><span data-stu-id="a3e73-114">DependsOn</span></span> | <span data-ttu-id="a3e73-115">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze logboekbericht wordt geschreven.</span><span class="sxs-lookup"><span data-stu-id="a3e73-115">Indicates that the configuration of another resource must run before this log message gets written.</span></span> <span data-ttu-id="a3e73-116">Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = '[ResourceType]ResourceName'`.</span><span class="sxs-lookup"><span data-stu-id="a3e73-116">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
+| <span data-ttu-id="fc932-112">Bericht</span><span class="sxs-lookup"><span data-stu-id="fc932-112">Message</span></span>| <span data-ttu-id="fc932-113">Geeft aan dat het bericht dat u wilt schrijven naar het gebeurtenislogboek Microsoft-Windows-Desired staat configuratie/analysen.</span><span class="sxs-lookup"><span data-stu-id="fc932-113">Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>|
+| <span data-ttu-id="fc932-114">DependsOn</span><span class="sxs-lookup"><span data-stu-id="fc932-114">DependsOn</span></span> | <span data-ttu-id="fc932-115">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze logboekbericht wordt geschreven.</span><span class="sxs-lookup"><span data-stu-id="fc932-115">Indicates that the configuration of another resource must run before this log message gets written.</span></span> <span data-ttu-id="fc932-116">Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = '[ResourceType]ResourceName'`.</span><span class="sxs-lookup"><span data-stu-id="fc932-116">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="a3e73-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="a3e73-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="fc932-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="fc932-117">Example</span></span>
 
-<span data-ttu-id="a3e73-118">Het volgende voorbeeld ziet hoe u een bericht opnemen in het gebeurtenislogboek Microsoft-Windows-Desired staat configuratie/analysen.</span><span class="sxs-lookup"><span data-stu-id="a3e73-118">The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
+<span data-ttu-id="fc932-118">Het volgende voorbeeld ziet hoe u een bericht opnemen in het gebeurtenislogboek Microsoft-Windows-Desired staat configuratie/analysen.</span><span class="sxs-lookup"><span data-stu-id="fc932-118">The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a3e73-119">Als u [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) met deze resource geconfigureerd, wordt altijd geretourneerd **$false**.</span><span class="sxs-lookup"><span data-stu-id="a3e73-119">If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.</span></span>
+> <span data-ttu-id="fc932-119">Als u [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) met deze resource geconfigureerd, wordt altijd geretourneerd **$false**.</span><span class="sxs-lookup"><span data-stu-id="fc932-119">If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.</span></span>
 
 ```powershell
 Configuration logResourceTest
