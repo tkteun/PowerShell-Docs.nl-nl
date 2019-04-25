@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
 ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067330"
 ---
 # <a name="stopprocesssample04-sample"></a>Voorbeeld StopProcessSample04
 
@@ -51,7 +51,7 @@ Dit voorbeeld laat zien hoe u een cmdlet die parametersets verklaart, geeft u de
 
 In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende.
 

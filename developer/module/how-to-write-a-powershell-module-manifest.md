@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082291"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Een manifest voor een PowerShell-module schrijven
 
@@ -80,7 +80,7 @@ De volgende tabel beschrijft de elementen die u in een module-manifest hebben ku
 |DotNetFrameworkVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van Microsoft .NET Framework is vereist voor deze module.<br /><br /> Voorbeeld: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Type: tekenreeks|' '|Minimale versie van de common language runtime (CLR) vereist voor deze module.<br /><br /> Voorbeeld: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Type: tekenreeks|' '|Processorarchitectuur (geen, X86, Amd64) vereist voor deze module. Geldige waarden zijn x86, AMD64 IA64, en niets in (onbekend of niet-opgegeven).<br /><br /> Voorbeeld: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Type: [string[]]|@()|Modules die moeten worden geïmporteerd in de globale omgeving vóór het importeren van deze module. Alle modules die worden vermeld, tenzij ze al geladen zijn, dit wordt geladen. (Bijvoorbeeld: sommige modules mogelijk al geladen door een andere module.). Het is ook mogelijk om op te geven van een specifieke versie te laden met behulp van `RequiredVersion` in plaats van `ModuleVersion`. Bij het gebruik van `ModuleVersion` deze de nieuwste versie beschikbaar met een minimum van de opgegeven versie wordt geladen.<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Type: [string[]]|@()|Modules die moeten worden geïmporteerd in de globale omgeving vóór het importeren van deze module. Alle modules die worden vermeld, tenzij ze al geladen zijn, dit wordt geladen. (Bijvoorbeeld: sommige modules mogelijk al geladen door een andere module.). Het is ook mogelijk om op te geven van een specifieke versie te laden met behulp van `RequiredVersion` in plaats van `ModuleVersion`. Bij het gebruik van `ModuleVersion` deze de nieuwste versie beschikbaar met een minimum van de opgegeven versie wordt geladen.<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Voorbeeld: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type: [string[]]|@()|Assembly's die moeten worden geladen vóór het importeren van deze module.<br /><br /> Houd er rekening mee dat in tegenstelling tot RequiredModules, PowerShell laadt de RequiredAssemblies als ze niet al geladen.|
 |ScriptsToProcess<br /><br /> Type: [string[]]|@()|Script (.ps1)-bestanden die worden uitgevoerd in de sessiestatus van de oproepende functie wanneer de module wordt geïmporteerd. Dit wordt mogelijk de globale sessie staat of, voor geneste modules, de status van de sessie van een andere module. U kunt deze scripts gebruiken om voor te bereiden van een omgeving, net zoals u een aanmeldingsscript kunt.<br /><br /> Deze scripts worden uitgevoerd voordat een van de modules die worden vermeld in het manifest worden geladen.|
 |TypesToProcess<br /><br /> Type: [Object []]|@()|Typ bestanden (.ps1xml) moeten worden geladen bij het importeren van deze module.|

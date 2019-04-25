@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Het maken en publiceren van een item
 ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084127"
 ---
 # <a name="creating-and-publishing-an-item"></a>Het maken en publiceren van een item
 

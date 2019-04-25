@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084705"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Pakket manifest waarden die van invloed zijn op de UI van de PowerShell-galerie
 
@@ -51,14 +51,14 @@ De onderstaande tabel bevat de elementen van de PowerShell Gallery-pagina van he
 
 De pagina pakket bewerken van PowerShell-galerie kan uitgevers te wijzigen welke velden worden weergegeven voor een pakket specifiek aantal:
 
-- Title
+- Titel
 - Description
 - Samenvatting
 - Pictrogram-URL
 - URL van startpagina van project
 - Auteurs
 - Copyright
-- Labels
+- Tags
 - Opmerkingen bij de release
 - Licentie vereist
 
@@ -115,7 +115,7 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | Rapportage | Rapportage is een actie, het rapport is een ding |
 | Rapport | Rapport is een ding |
 | WinRM |  |
-| Controle |  |
+| Bewaking |  |
 | VSTS |  |
 | Excel |  |
 | Google |  |
@@ -125,7 +125,7 @@ Ter referentie: Hier vindt u enkele veelgebruikte tags vanaf 14-12-2017. In somm
 | Gitlab |  |
 | Pester |  |
 | AzureAD |  |
-| HTML |  |
+| HTML-CODE |  |
 | Hyper-V | Hyper-v is het minder gebruikelijk als een label |
 | Configuratie |  |
 | ChatOps |  |
