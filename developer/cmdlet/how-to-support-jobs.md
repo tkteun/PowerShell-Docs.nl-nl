@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067957"
 ---
-# <a name="how-to-support-jobs"></a><span data-ttu-id="ccaa0-102">Taken ondersteunen</span><span class="sxs-lookup"><span data-stu-id="ccaa0-102">How to Support Jobs</span></span>
+# <a name="how-to-support-jobs"></a><span data-ttu-id="52601-102">Taken ondersteunen</span><span class="sxs-lookup"><span data-stu-id="52601-102">How to Support Jobs</span></span>
 
-<span data-ttu-id="ccaa0-103">In dit voorbeeld laat zien hoe ter ondersteuning van taken bij het schrijven van cmdlets.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="ccaa0-104">Als u wilt dat gebruikers de cmdlet uitvoeren als achtergrondtaak, moet u de code die wordt beschreven in de volgende procedure opnemen.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="ccaa0-105">Zie voor meer informatie over achtergrondtaken [achtergrondtaken](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="ccaa0-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
+<span data-ttu-id="52601-103">In dit voorbeeld laat zien hoe ter ondersteuning van taken bij het schrijven van cmdlets.</span><span class="sxs-lookup"><span data-stu-id="52601-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="52601-104">Als u wilt dat gebruikers de cmdlet uitvoeren als achtergrondtaak, moet u de code die wordt beschreven in de volgende procedure opnemen.</span><span class="sxs-lookup"><span data-stu-id="52601-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="52601-105">Zie voor meer informatie over achtergrondtaken [achtergrondtaken](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="52601-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
 
-## <a name="to-support-jobs"></a><span data-ttu-id="ccaa0-106">Ter ondersteuning van taken</span><span class="sxs-lookup"><span data-stu-id="ccaa0-106">To support jobs</span></span>
+## <a name="to-support-jobs"></a><span data-ttu-id="52601-106">Ter ondersteuning van taken</span><span class="sxs-lookup"><span data-stu-id="52601-106">To support jobs</span></span>
 
-1. <span data-ttu-id="ccaa0-107">Definieer een `AsJob` overschakelen parameter zodat de gebruiker kunt vervolgens beslissen of de cmdlet uitvoeren als een taak.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
+1. <span data-ttu-id="52601-107">Definieer een `AsJob` overschakelen parameter zodat de gebruiker kunt vervolgens beslissen of de cmdlet uitvoeren als een taak.</span><span class="sxs-lookup"><span data-stu-id="52601-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
 
-    <span data-ttu-id="ccaa0-108">Het volgende voorbeeld bevat een parameterdeclaratie AsJob.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-108">The following example shows an AsJob parameter declaration.</span></span>
+    <span data-ttu-id="52601-108">Het volgende voorbeeld bevat een parameterdeclaratie AsJob.</span><span class="sxs-lookup"><span data-stu-id="52601-108">The following example shows an AsJob parameter declaration.</span></span>
 
     ```csharp
     [Parameter()]
@@ -37,9 +37,9 @@ ms.locfileid: "58058008"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. <span data-ttu-id="ccaa0-109">Maken van een object dat is afgeleid van de [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) klasse.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="ccaa0-110">Dit object is een aangepaste taakobject of een van de taakobjecten van Windows PowerShell, zoals een [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
+2. <span data-ttu-id="52601-109">Maken van een object dat is afgeleid van de [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) klasse.</span><span class="sxs-lookup"><span data-stu-id="52601-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="52601-110">Dit object is een aangepaste taakobject of een van de taakobjecten van Windows PowerShell, zoals een [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span><span class="sxs-lookup"><span data-stu-id="52601-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
 
-    <span data-ttu-id="ccaa0-111">Het volgende voorbeeld ziet een aangepaste taakobject.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-111">The following example shows a custom job object.</span></span>
+    <span data-ttu-id="52601-111">Het volgende voorbeeld ziet een aangepaste taakobject.</span><span class="sxs-lookup"><span data-stu-id="52601-111">The following example shows a custom job object.</span></span>
 
     ```csharp
     private SampleJob job = new SampleJob("Get-ProcAsJob");
@@ -47,7 +47,7 @@ ms.locfileid: "58058008"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. <span data-ttu-id="ccaa0-112">Een verwerkingsmethode voor de van de record, Voeg een `if` instructie om te detecteren of de cmdlet moet worden uitgevoerd als een taak.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="ccaa0-113">De volgende code gebruikt de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
+3. <span data-ttu-id="52601-112">Een verwerkingsmethode voor de van de record, Voeg een `if` instructie om te detecteren of de cmdlet moet worden uitgevoerd als een taak.</span><span class="sxs-lookup"><span data-stu-id="52601-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="52601-113">De volgende code gebruikt de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode.</span><span class="sxs-lookup"><span data-stu-id="52601-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
 
     ```csharp
     protected override void ProcessRecord()
@@ -74,7 +74,7 @@ ms.locfileid: "58058008"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. <span data-ttu-id="ccaa0-114">Voor taakobjecten van de aangepaste, de taakklasse te implementeren.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-114">For custom job objects, implement the job class.</span></span>
+4. <span data-ttu-id="52601-114">Voor taakobjecten van de aangepaste, de taakklasse te implementeren.</span><span class="sxs-lookup"><span data-stu-id="52601-114">For custom job objects, implement the job class.</span></span>
 
     ```csharp
     private class SampleJob : Job
@@ -131,7 +131,7 @@ ms.locfileid: "58058008"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. <span data-ttu-id="ccaa0-115">Als de cmdlet het werk voert, roept de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode om te retourneren van een procesobject aan de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="ccaa0-116">Als het werk wordt uitgevoerd als een taak, kunt u de onderliggende taak toevoegen aan de job.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-116">If the work is performed as a job, add child job to the job.</span></span>
+5. <span data-ttu-id="52601-115">Als de cmdlet het werk voert, roept de [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) methode om te retourneren van een procesobject aan de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="52601-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="52601-116">Als het werk wordt uitgevoerd als een taak, kunt u de onderliggende taak toevoegen aan de job.</span><span class="sxs-lookup"><span data-stu-id="52601-116">If the work is performed as a job, add child job to the job.</span></span>
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -154,9 +154,9 @@ ms.locfileid: "58058008"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06Output](msh_samplesGetProc06#GetProc06Output)]  -->
 
-## <a name="example"></a><span data-ttu-id="ccaa0-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="ccaa0-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="52601-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="52601-117">Example</span></span>
 
-<span data-ttu-id="ccaa0-118">De volgende voorbeeldcode ziet u de code voor een **Get-Proc** cmdlet die intern of met behulp van een achtergrondtaak processen kunt ophalen.</span><span class="sxs-lookup"><span data-stu-id="ccaa0-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
+<span data-ttu-id="52601-118">De volgende voorbeeldcode ziet u de code voor een **Get-Proc** cmdlet die intern of met behulp van een achtergrondtaak processen kunt ophalen.</span><span class="sxs-lookup"><span data-stu-id="52601-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
 
 ```csharp
 using System;
