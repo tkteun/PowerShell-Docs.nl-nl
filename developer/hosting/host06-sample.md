@@ -9,47 +9,47 @@ ms.topic: article
 ms.assetid: 459b6d0f-d596-4269-9113-915a283c1e28
 caps.latest.revision: 10
 ms.openlocfilehash: 8b89d7bf8a69626dc3e6bd566dab7951a4c7c5ab
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082869"
 ---
-# <a name="host06-sample"></a><span data-ttu-id="28006-102">Voorbeeld Host06</span><span class="sxs-lookup"><span data-stu-id="28006-102">Host06 Sample</span></span>
+# <a name="host06-sample"></a><span data-ttu-id="2939f-102">Voorbeeld Host06</span><span class="sxs-lookup"><span data-stu-id="2939f-102">Host06 Sample</span></span>
 
-<span data-ttu-id="28006-103">Dit voorbeeld laat zien hoe u een interactieve console-gebaseerde hosttoepassing bouwt die opdrachten leest vanaf de opdrachtregel, Hiermee voert u de opdrachten en vervolgens de resultaten worden weergegeven in de console.</span><span class="sxs-lookup"><span data-stu-id="28006-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="28006-104">Dit voorbeeld wordt bovendien de Tokenizer-API's gebruikt om op te geven van de kleur van de tekst die is ingevoerd door de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="28006-104">In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.</span></span>
+<span data-ttu-id="2939f-103">Dit voorbeeld laat zien hoe u een interactieve console-gebaseerde hosttoepassing bouwt die opdrachten leest vanaf de opdrachtregel, Hiermee voert u de opdrachten en vervolgens de resultaten worden weergegeven in de console.</span><span class="sxs-lookup"><span data-stu-id="2939f-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="2939f-104">Dit voorbeeld wordt bovendien de Tokenizer-API's gebruikt om op te geven van de kleur van de tekst die is ingevoerd door de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="2939f-104">In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="28006-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="28006-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="2939f-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="2939f-105">Requirements</span></span>
 
-- <span data-ttu-id="28006-106">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="28006-106">This sample requires Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="2939f-106">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="2939f-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-- <span data-ttu-id="28006-107">Deze toepassing moet worden uitgevoerd met verhoogde bevoegdheden (als administrator uitvoeren).</span><span class="sxs-lookup"><span data-stu-id="28006-107">This application must be run in elevated mode (Run as administrator).</span></span>
+- <span data-ttu-id="2939f-107">Deze toepassing moet worden uitgevoerd met verhoogde bevoegdheden (als administrator uitvoeren).</span><span class="sxs-lookup"><span data-stu-id="2939f-107">This application must be run in elevated mode (Run as administrator).</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="28006-108">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="28006-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="2939f-108">Ziet u</span><span class="sxs-lookup"><span data-stu-id="2939f-108">Demonstrates</span></span>
 
-- <span data-ttu-id="28006-109">Het maken van een aangepaste host waarvan klassen die zijn afgeleid van de [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klasse, de [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klasse en de [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klasse.</span><span class="sxs-lookup"><span data-stu-id="28006-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="2939f-109">Het maken van een aangepaste host waarvan klassen die zijn afgeleid van de [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klasse, de [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klasse en de [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klasse.</span><span class="sxs-lookup"><span data-stu-id="2939f-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="28006-110">Deze klassen host een consoletoepassing bouwen die worden gebruikt voor het bouwen van een interactieve Windows PowerShell-shell.</span><span class="sxs-lookup"><span data-stu-id="28006-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="2939f-110">Deze klassen host een consoletoepassing bouwen die worden gebruikt voor het bouwen van een interactieve Windows PowerShell-shell.</span><span class="sxs-lookup"><span data-stu-id="2939f-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-- <span data-ttu-id="28006-111">Het maken van een `$profile` variabele en het laden van de volgende profielen.</span><span class="sxs-lookup"><span data-stu-id="28006-111">Creating a `$profile` variable and loading the following profiles.</span></span>
+- <span data-ttu-id="2939f-111">Het maken van een `$profile` variabele en het laden van de volgende profielen.</span><span class="sxs-lookup"><span data-stu-id="2939f-111">Creating a `$profile` variable and loading the following profiles.</span></span>
 
-  - <span data-ttu-id="28006-112">huidige gebruiker, de huidige host</span><span class="sxs-lookup"><span data-stu-id="28006-112">current user, current host</span></span>
+  - <span data-ttu-id="2939f-112">huidige gebruiker, de huidige host</span><span class="sxs-lookup"><span data-stu-id="2939f-112">current user, current host</span></span>
 
-  - <span data-ttu-id="28006-113">huidige gebruiker, alle hosts</span><span class="sxs-lookup"><span data-stu-id="28006-113">current user, all hosts</span></span>
+  - <span data-ttu-id="2939f-113">huidige gebruiker, alle hosts</span><span class="sxs-lookup"><span data-stu-id="2939f-113">current user, all hosts</span></span>
 
-  - <span data-ttu-id="28006-114">alle gebruikers, de huidige host</span><span class="sxs-lookup"><span data-stu-id="28006-114">all users, current host</span></span>
+  - <span data-ttu-id="2939f-114">alle gebruikers, de huidige host</span><span class="sxs-lookup"><span data-stu-id="2939f-114">all users, current host</span></span>
 
-  - <span data-ttu-id="28006-115">alle gebruikers, alle hosts</span><span class="sxs-lookup"><span data-stu-id="28006-115">all users, all hosts</span></span>
+  - <span data-ttu-id="2939f-115">alle gebruikers, alle hosts</span><span class="sxs-lookup"><span data-stu-id="2939f-115">all users, all hosts</span></span>
 
-- <span data-ttu-id="28006-116">Implementeer de [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span><span class="sxs-lookup"><span data-stu-id="28006-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
+- <span data-ttu-id="2939f-116">Implementeer de [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span><span class="sxs-lookup"><span data-stu-id="2939f-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
 
-- <span data-ttu-id="28006-117">Implementeer de [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface voor de ondersteuning van interactieve voor externe toegang met behulp van de [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) en [ Afsluiten PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span><span class="sxs-lookup"><span data-stu-id="28006-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+- <span data-ttu-id="2939f-117">Implementeer de [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface voor de ondersteuning van interactieve voor externe toegang met behulp van de [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) en [ Afsluiten PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span><span class="sxs-lookup"><span data-stu-id="2939f-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-- <span data-ttu-id="28006-118">De API basisvormen gebruiken voor het inkleuren van de opdrachtregel, terwijl deze wordt getypt.</span><span class="sxs-lookup"><span data-stu-id="28006-118">Use the Tokenize API to colorize the command line as it is typed.</span></span>
+- <span data-ttu-id="2939f-118">De API basisvormen gebruiken voor het inkleuren van de opdrachtregel, terwijl deze wordt getypt.</span><span class="sxs-lookup"><span data-stu-id="2939f-118">Use the Tokenize API to colorize the command line as it is typed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="28006-119">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="28006-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2939f-119">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2939f-119">Example</span></span>
 
- <span data-ttu-id="28006-120">In dit voorbeeld kan de gebruiker voert opdrachten op de opdrachtregel, die opdrachten verwerkt en vervolgens de resultaten worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="28006-120">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="2939f-120">In dit voorbeeld kan de gebruiker voert opdrachten op de opdrachtregel, die opdrachten verwerkt en vervolgens de resultaten worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="2939f-120">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -410,9 +410,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="28006-121">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="28006-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2939f-121">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2939f-121">Example</span></span>
 
- <span data-ttu-id="28006-122">De volgende code is de implementatie van de [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="28006-122">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="28006-123">Deze elementen die niet worden geïmplementeerd een uitzondering of niets retourneren.</span><span class="sxs-lookup"><span data-stu-id="28006-123">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="2939f-122">De volgende code is de implementatie van de [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="2939f-122">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="2939f-123">Deze elementen die niet worden geïmplementeerd een uitzondering of niets retourneren.</span><span class="sxs-lookup"><span data-stu-id="2939f-123">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -634,9 +634,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="28006-124">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="28006-124">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2939f-124">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2939f-124">Example</span></span>
 
- <span data-ttu-id="28006-125">De volgende code is de implementatie van de [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="28006-125">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="2939f-125">De volgende code is de implementatie van de [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="2939f-125">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1152,9 +1152,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="28006-126">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="28006-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2939f-126">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2939f-126">Example</span></span>
 
- <span data-ttu-id="28006-127">De volgende code is de implementatie van de [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="28006-127">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="28006-128">Deze elementen die niet worden geïmplementeerd een uitzondering of niets retourneren.</span><span class="sxs-lookup"><span data-stu-id="28006-128">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="2939f-127">De volgende code is de implementatie van de [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klasse die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="2939f-127">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="2939f-128">Deze elementen die niet worden geïmplementeerd een uitzondering of niets retourneren.</span><span class="sxs-lookup"><span data-stu-id="2939f-128">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1364,9 +1364,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="28006-129">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="28006-129">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2939f-129">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2939f-129">Example</span></span>
 
- <span data-ttu-id="28006-130">De volgende code leest de opdrachtregel en kleuren de tekst worden ingevoerd.</span><span class="sxs-lookup"><span data-stu-id="28006-130">The following code reads the command line and colors the text as it is entered.</span></span> <span data-ttu-id="28006-131">Tokens worden bepaald met behulp van de [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) methode.</span><span class="sxs-lookup"><span data-stu-id="28006-131">Tokens are determined by using the [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) method.</span></span>
+ <span data-ttu-id="2939f-130">De volgende code leest de opdrachtregel en kleuren de tekst worden ingevoerd.</span><span class="sxs-lookup"><span data-stu-id="2939f-130">The following code reads the command line and colors the text as it is entered.</span></span> <span data-ttu-id="2939f-131">Tokens worden bepaald met behulp van de [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) methode.</span><span class="sxs-lookup"><span data-stu-id="2939f-131">Tokens are determined by using the [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) method.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1845,10 +1845,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="28006-132">Zie ook</span><span class="sxs-lookup"><span data-stu-id="28006-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2939f-132">Zie ook</span><span class="sxs-lookup"><span data-stu-id="2939f-132">See Also</span></span>
 
- [<span data-ttu-id="28006-133">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="28006-133">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="2939f-133">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="2939f-133">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="28006-134">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="28006-134">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="2939f-134">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="2939f-134">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="28006-135">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="28006-135">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="2939f-135">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="2939f-135">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
