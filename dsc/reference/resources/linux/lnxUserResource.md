@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxUser-Resource
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077650"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC voor Linux nxUser-Resource
 
@@ -38,8 +38,8 @@ nxUser <string> #ResourceName
 |---|---|
 | UserName| Hiermee geeft u de locatie waar u om te controleren of de status van een bestand of map.|
 | Zorg ervoor dat| Hiermee geeft u op of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| FullName| Een tekenreeks zijn met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
-| Beschrijving| De beschrijving voor het gebruikersaccount.|
+| Volledige naam| Een tekenreeks zijn met de volledige naam moet worden gebruikt voor het gebruikersaccount.|
+| Description| De beschrijving voor het gebruikersaccount.|
 | Wachtwoord| De hash van het wachtwoord van de gebruiker in de juiste vorm voor de Linux-computer. Dit is meestal een gezouten SHA-256, of een hash van SHA-512. Op Debian en Ubuntu Linux, kan deze waarde worden gegenereerd met de opdracht mkpasswd. Voor andere Linux-distributies, kan de crypt-methode van de Python-Crypt-bibliotheek worden gebruikt voor het genereren van de hash.|
 | Uitgeschakeld| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op **$true** om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op **$false** om ervoor te zorgen dat deze is ingeschakeld.|
 | PasswordChangeRequired| Geeft aan of de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op **$true** om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op **$false** zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is **$false**. Deze eigenschap wordt alleen beoordeeld als het gebruikersaccount niet aanwezig waren en wordt gemaakt.|

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Registerresource
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076953"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registerresource
 
@@ -33,9 +33,9 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 | --- | --- |
-| Toets| Geeft het pad van de registersleutel die u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
+| Sleutel| Geeft het pad van de registersleutel die u wilt om te controleren of een specifieke status. Dit pad moet de component bevatten.|
 | ValueName| Geeft de naam van de registerwaarde. Als u wilt toevoegen of verwijderen van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks zonder ValueType of Waardegegevens op te geven. Als u wilt wijzigen of verwijderen van de standaardwaarde van een registersleutel, moet u deze eigenschap opgeven als een lege tekenreeks tijdens het instellen van ook ValueType of Waardegegevens.|
 | Zorg ervoor dat| Geeft aan of de sleutel en waarde bestaan. Om ervoor te zorgen dat ze doen, stelt u deze eigenschap in 'Aanwezig'. Om ervoor te zorgen dat deze niet bestaan, de eigenschap instellen op 'Ontbreekt'. De standaardwaarde is 'Aanwezig'.|
 | Force| Als de opgegeven registersleutel aanwezig is, **Force** overschreven door de nieuwe waarde. Als een registersleutel met subsleutels verwijdert, moet dit **$true** |

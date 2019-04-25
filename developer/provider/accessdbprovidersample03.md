@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
 caps.latest.revision: 10
 ms.openlocfilehash: 57b6cfaa5f29300c60a5a745797111b6beba3133
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081062"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
 In dit voorbeeld laat zien hoe u overschrijven de [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) en [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) methoden voor de ondersteuning van aanroepen naar de `Get-Item` en `Set-Item` cmdlets. De providerklasse in dit voorbeeld is afgeleid van de [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasse.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 > [!IMPORTANT]
 > Uw providerklasse wordt waarschijnlijk zijn afgeleid van een van de volgende klassen en mogelijk andere provider-interfaces te implementeren:

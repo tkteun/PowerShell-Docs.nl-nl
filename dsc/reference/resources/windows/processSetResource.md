@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC ProcessSet-Resource
 ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077106"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-Resource
 
@@ -34,7 +34,7 @@ WindowsProcess [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 | --- | --- |
 | Argumenten| Een tekenreeks met argumenten worden doorgegeven aan de proces-is. Als u meerdere argumenten doorgeven wilt, plaatst u ze allemaal op deze tekenreeks.|
 | Pad| De paden naar het proces uitvoerbare bestanden. Als dit zijn de namen van de uitvoerbare bestanden (geen volledig gekwalificeerde paden), de DSC-resource wordt zoeken in de omgeving **pad** variabele (`$env:Path`) om de bestanden te zoeken. Als de waarden van deze eigenschap volledig gekwalificeerde paden zijn, DSC niet gebruiken de **pad** omgevingsvariabele om de bestanden te zoeken en genereert een fout als een van de paden niet bestaan. Relatieve paden zijn niet toegestaan.|

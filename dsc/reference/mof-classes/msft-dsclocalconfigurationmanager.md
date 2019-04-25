@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: MSFT_DSCLocalConfigurationManager-klasse
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078058"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klasse
 
@@ -34,7 +34,7 @@ De **MSFT_DSCLocalConfigurationManager** klasse heeft de volgende leden:
 
 De **MSFT_DSCLocalConfigurationManager** klasse heeft deze methoden.
 
-|Methode |Beschrijving |
+|Methode |Description |
 |:--- |:---|
 | [De ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Gebruik de configuratie van Agent voor de configuratie die in behandeling is.|
 | [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u foutopsporing van DSC-resource.|

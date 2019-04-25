@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Items selecteren in een keuzelijst
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086065"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Items selecteren in een keuzelijst
 

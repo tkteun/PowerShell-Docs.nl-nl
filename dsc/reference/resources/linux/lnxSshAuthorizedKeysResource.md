@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxSshAuthorizedKeys-Resource
 ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077690"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC voor Linux nxSshAuthorizedKeys-Resource
 
@@ -29,12 +29,12 @@ nxAuthorizedKeys <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | KeyComment| Een unieke Opmerking voor de sleutel. Dit wordt gebruikt voor het aanduiden van sleutels.|
 | Zorg ervoor dat| Hiermee geeft u op of de sleutel is gedefinieerd. Deze eigenschap instellen op 'Ontbreekt' om te controleren of dat de sleutel bestaat niet in het geautoriseerde sleutelsbestand van de gebruiker. Stel deze in op 'Aanwezig' om te controleren of dat de sleutel is gedefinieerd in de gemachtigde sleutelbestand van de gebruiker.|
 | Gebruikersnaam| De gebruikersnaam voor het beheren van ssh-sleutels voor gemachtigd. Als niet is gedefinieerd, is de standaardwaarde 'root'.|
-| Toets| De inhoud van de sleutel. Dit is vereist als **Zorg ervoor dat** is ingesteld op 'Aanwezig'.|
+| Sleutel| De inhoud van de sleutel. Dit is vereist als **Zorg ervoor dat** is ingesteld op 'Aanwezig'.|
 | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Voorbeeld

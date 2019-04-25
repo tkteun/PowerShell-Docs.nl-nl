@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-WindowsFeature-Resource
 ms.openlocfilehash: 7a57f4b2797ab3bb202aea8b2543d1e3f14074e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076698"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-Resource
 
@@ -32,7 +32,7 @@ WindowsFeature [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Naam| Geeft aan dat de naam van de functie of onderdeel dat u wilt ervoor zorgen is toegevoegd of verwijderd. Dit is hetzelfde als de __naam__ eigenschap uit de [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, en niet de weergavenaam van de rol of functie.|
 | Referentie| Geeft aan dat de referenties voor het toevoegen of verwijderen van de rol of functie gebruiken.|

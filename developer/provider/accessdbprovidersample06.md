@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
 ms.openlocfilehash: f020f023f9a379ff8a610edb7d5dcfe207170394
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080982"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
 In dit voorbeeld laat zien hoe u inhoud methoden ter ondersteuning van aanroepen naar overschrijven de `Clear-Content`, `Get-Content`, en `Set-Content` cmdlets. Deze methoden moeten worden uitgevoerd wanneer de gebruiker nodig heeft voor het beheren van de inhoud van de items in het gegevensarchief. De providerklasse in dit voorbeeld is afgeleid van de [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klasse en implementeert de [ System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 > [!IMPORTANT]
 > Uw providerklasse wordt waarschijnlijk zijn afgeleid van een van de volgende klassen en mogelijk andere provider-interfaces te implementeren:

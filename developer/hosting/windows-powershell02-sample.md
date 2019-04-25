@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
 caps.latest.revision: 9
 ms.openlocfilehash: 89ad17257ebac56105a93672317a149515e80d32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082512"
 ---
 # <a name="windows-powershell02-sample"></a>Voorbeeld Windows PowerShell02
 
@@ -23,7 +23,7 @@ In dit voorbeeld laat zien hoe opdrachten asynchroon uitvoeren met behulp van de
 
 - In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende:
 

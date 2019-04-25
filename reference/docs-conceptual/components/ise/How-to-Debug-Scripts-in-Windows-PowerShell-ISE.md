@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Fouten opsporen in scripts in Windows PowerShell ISE
 ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086864"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in scripts in Windows PowerShell ISE
 
@@ -138,7 +138,7 @@ Druk op **SHIFT-F5** of Ga naar de **fouten opsporen in** menu, klikt u op **fou
 
 Stap voor stap is het proces van het uitvoeren van één instructie tegelijkertijd. U kunt stoppen op een regel code, en bekijk de waarden van variabelen en de status van het systeem. De volgende tabel beschrijft de algemene taken voor foutopsporing, zoals stapsgewijs via, schemas en stapsgewijs uit.
 
-| Foutopsporing van taak | Beschrijving | Het doel wordt gerealiseerd wel in PowerShell ISE |
+| Debugging Task | Description | Het doel wordt gerealiseerd wel in PowerShell ISE |
 | --- | --- | --- |
 | **Stap in** | De huidige instructie uitgevoerd en vervolgens bij de volgende instructie wordt gestopt. Als de huidige instructie een functie of scriptaanroep, wordt het foutopsporingsprogramma stappen in deze functie of het script is, anders wordt gestopt bij de volgende instructie. | Druk op **F11** of Ga naar de **fouten opsporen in** menu, klikt u op **stap**, of typ in het consolevenster **S** en druk op **ENTER**. |
 | **Stap Over** | De huidige instructie uitgevoerd en vervolgens bij de volgende instructie wordt gestopt. Als de huidige instructie is een functie of scriptaanroep, wordt het foutopsporingsprogramma voert de gehele functie of het script en wordt gestopt bij de volgende instructie na de aanroep van de functie. | Druk op **F10** of Ga naar de **Debug** menu, klikt u op **stap Over**, of typ in het consolevenster **V** en druk op **ENTER**. |

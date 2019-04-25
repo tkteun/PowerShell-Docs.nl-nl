@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Bekende problemen voor PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085963"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen voor PowerShell 6.0
 
@@ -21,7 +21,7 @@ Opmerking: Vanwege de overeenkomsten van veel onderliggende subsystemen vaak Pow
 
 PowerShell is in het verleden op uniforme wijze niet-hoofdlettergevoelig, met enkele uitzonderingen. Op UNIX-achtige besturingssystemen, het bestandssysteem is voornamelijk hoofdlettergevoelig en PowerShell voldoet aan de standaard van het bestandssysteem. Dit is toegankelijk via een aantal manieren, duidelijk en niet-duidelijk.
 
-#### <a name="directly"></a>Rechtstreeks
+#### <a name="directly"></a>rechtstreeks
 
 - Bij het opgeven van een bestand in PowerShell, kan de juiste aanvraag moet worden gebruikt.
 

@@ -1,4 +1,3 @@
-items:
 - name: Overzicht
   href: overview.md
 - name: PowerShellGet installeren
@@ -7,95 +6,89 @@ items:
   href: getting-started.md
 - name: Instructies
   items:
-  - name: Pakketten zoeken in de galerie
-    items:
-    - name: Zoeken naar pakketten
-      href: how-to/finding-packages/search-syntax.md
-    - name: Zoeken op compatibiliteit
-      href: how-to/finding-packages/searching-by-compatibility.md
-    - name: Zoekresultaten filteren
-      href: how-to/finding-packages/filtering-packages.md
-  - name: Publiceren naar de galerie
-    items:
-    - name: Pakketten maken en publiceren
-      href: how-to/publishing-packages/publishing-a-package.md
-    - name: Een PowerShellGallery-account maken
-      href: how-to/publishing-packages/creating-an-account.md
-    - name: Pakketten uit de catalogus verwijderen
-      href: how-to/publishing-packages/unlisting-packages.md
-    - name: Pakketten verwijderen
-      href: how-to/publishing-packages/deleting-packages.md
-    - name: Pakketeigenaren beheren
-      href: how-to/publishing-packages/managing-package-owners.md
-  - name: Werken met pakketten
-    items:
-    - name: FileList-weergave
-      href: how-to/working-with-packages/filelist-view.md
-    - name: Implementeren naar Azure Automation
-      href: how-to/working-with-packages/deploy-to-azure-automation.md
-    - name: Pakket handmatig downloaden
-      href: how-to/working-with-packages/manual-download.md
-    - name: Pakketten waarvoor acceptatie van de licentie is vereist
-      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Contact opnemen met pakketeigenaren
-      href: how-to/working-with-packages/contacting-package-owners.md
-    - name: Feedback geven via sociale media of opmerkingen
-      href: how-to/working-with-packages/social-media-feedback.md
-  - name: Accountprofielen beheren
-    items:
-    - name: PowerShell Gallery-accountinstellingen
-      href: how-to/managing-profile/managing-account.md
-    - name: API-sleutels beheren
-      href: how-to/managing-profile/creating-apikeys.md
-  - name: Werken met lokale PowerShellGet-opslagplaatsen
-    href: how-to/working-with-local-psrepositories.md
+    - name: Pakketten zoeken in de galerie
+      items:
+        - name: Zoeken naar pakketten
+          href: how-to/finding-packages/search-syntax.md
+        - name: Zoeken op compatibiliteit
+          href: how-to/finding-packages/searching-by-compatibility.md
+        - name: Zoekresultaten filteren
+          href: how-to/finding-packages/filtering-packages.md
+    - name: Publiceren naar de galerie
+      items:
+        - name: Pakketten maken en publiceren
+          href: how-to/publishing-packages/publishing-a-package.md
+        - name: Een PowerShellGallery-account maken
+          href: how-to/publishing-packages/creating-an-account.md
+        - name: Pakketten uit de catalogus verwijderen
+          href: how-to/publishing-packages/unlisting-packages.md
+        - name: Pakketten verwijderen
+          href: how-to/publishing-packages/deleting-packages.md
+        - name: Pakketeigenaren beheren
+          href: how-to/publishing-packages/managing-package-owners.md
+    - name: Werken met pakketten
+      items:
+        - name: FileList-weergave
+          href: how-to/working-with-packages/filelist-view.md
+        - name: Implementeren naar Azure Automation
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
+        - name: Pakket handmatig downloaden
+          href: how-to/working-with-packages/manual-download.md
+        - name: Pakketten waarvoor acceptatie van de licentie is vereist
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
+        - name: Contact opnemen met pakketeigenaren
+          href: how-to/working-with-packages/contacting-package-owners.md
+        - name: Feedback geven via sociale media of opmerkingen
+          href: how-to/working-with-packages/social-media-feedback.md
+    - name: Accountprofielen beheren
+      items:
+        - name: PowerShell Gallery-accountinstellingen
+          href: how-to/managing-profile/managing-account.md
+        - name: API-sleutels beheren
+          href: how-to/managing-profile/creating-apikeys.md
+    - name: Werken met lokale PowerShellGet-opslagplaatsen
+      href: how-to/working-with-local-psrepositories.md
 - name: Concepten
   items:
-  - name: Publicatierichtlijnen en best practices
-    href: concepts/publishing-guidelines.md
-  - name: Pakketmanifest en de galerie-UI
-    href: concepts/package-manifest-affecting-ui.md
-  - name: Specifieke PSEditions vereisen
-    items:
-    - name: Scripts met ondersteuning voor PSEditions schrijven
-      href: concepts/script-psedition-support.md
-    - name: Modules met ondersteuning voor PSEditions schrijven
-      href: concepts/module-psedition-support.md
-  - name: Acceptatie van licentie vereisen
-    items:
-    - name: Acceptatie van licentie vereisen voor scripts
-      href: concepts/script-license-acceptance.md
-    - name: Acceptatie van licentie vereisen voor modules
-      href: concepts/module-license-acceptance.md
-  - name: Pakketten definiëren als voorlopige versie
-    items:
-    - name: Een module definiëren als voorlopige versie
-      href: concepts/module-prerelease-support.md
-    - name: Een script definiëren als voorlopige versie
-      href: concepts/script-prerelease-support.md
-  - name: Regelprofiel voor PSScriptAnalyzer
-    href: concepts/scriptanalyzer-rule-profile.md
+    - name: Publicatierichtlijnen en best practices
+      href: concepts/publishing-guidelines.md
+    - name: Pakketmanifest en de galerie-UI
+      href: concepts/package-manifest-affecting-ui.md
+    - name: Specifieke PSEditions vereisen
+      items:
+        - name: Scripts met ondersteuning voor PSEditions schrijven
+          href: concepts/script-psedition-support.md
+        - name: Modules met ondersteuning voor PSEditions schrijven
+          href: concepts/module-psedition-support.md
+    - name: Acceptatie van licentie vereisen
+      items:
+        - name: Acceptatie van licentie vereisen voor scripts
+          href: concepts/script-license-acceptance.md
+        - name: Acceptatie van licentie vereisen voor modules
+          href: concepts/module-license-acceptance.md
+    - name: Pakketten definiëren als voorlopige versie
+      items:
+        - name: Een module definiëren als voorlopige versie
+          href: concepts/module-prerelease-support.md
+        - name: Een script definiëren als voorlopige versie
+          href: concepts/script-prerelease-support.md
+    - name: Regelprofiel voor PSScriptAnalyzer
+      href: concepts/scriptanalyzer-rule-profile.md
 - name: Ondersteuning krijgen
   items:
-  - name: Misbruik melden
-    href: how-to/getting-support/report-abuse.md
-  - name: Geschillenoplossing
-    href: how-to/getting-support/dispute-resolution.md
-  - name: Contact opnemen met beheerders
-    href: how-to/getting-support/contacting-administrators.md
-  - name: Problemen oplossen
-    href: how-to/getting-support/troubleshooting-cmdlets.md
-  - name: NuGet-provider en NuGet.exe opstarten
-    href: how-to/getting-support/bootstrapping-nuget.md
-  - name: AVG-naleving
-    href: how-to/getting-support/gdpr-dsr-policy.md
+    - name: Misbruik melden
+      href: how-to/getting-support/report-abuse.md
+    - name: Geschillenoplossing
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Contact opnemen met beheerders
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Problemen oplossen
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: NuGet-provider en NuGet.exe opstarten
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: AVG-naleving
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Galerie Veelgestelde vragen
   href: faqs.md
 - name: PowerShellGet-cmdlets
-  href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 8b3d2d121c167f3677d3691c8bc481644b95b204
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655307"
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'

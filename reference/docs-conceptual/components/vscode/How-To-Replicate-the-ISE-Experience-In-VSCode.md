@@ -3,11 +3,11 @@ title: De ISE-ervaring in Visual Studio Code repliceren
 description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058502"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
 
@@ -90,7 +90,7 @@ In de [Command Palette], voer `PowerShell Command Explorer` en druk op <kbd>Ente
 
 Als u uiteindelijk willen openen van een bestand in de ISE toch, kunt u <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
 
-## <a name="other-resources"></a>Andere bronnen
+## <a name="other-resources"></a>Meer informatie
 
 - 4sysops heeft [een geweldige artikel](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) over het configureren van VSCode om meer, zoals de ISE.
 - Mike F Robbins heeft [een goede boeken](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) over het instellen van VSCode.

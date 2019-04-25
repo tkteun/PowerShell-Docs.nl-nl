@@ -3,11 +3,11 @@ ms.date: 08/14/2018
 keywords: PowerShell-cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057413"
 ---
 # <a name="the-windows-powershell-ise"></a>De Windows PowerShell ISE
 
@@ -18,7 +18,7 @@ De Windows PowerShell Integrated Scripting Environment (ISE) is een hosttoepassi
 Het ISE eerst werd geïntroduceerd in Windows PowerShell V2 en is opnieuw ontworpen met PowerShell V3. Het ISE wordt ondersteund in alle ondersteunde versies van Windows PowerShell tot en met Windows PowerShell V5.1. De ISE is echter in de onderhoudsmodus bevindt en geen nieuwe functies zijn waarschijnlijk moet worden toegevoegd.
 Daarnaast is er geen ondersteuning voor ISE met PowerShell v6 en daarbuiten. Gebruikers die een grafisch hulpprogramma voor het beheren van PowerShell-scripts, enzovoort, waarmee rekening moeten houden [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="key-features"></a>Belangrijkste functies
+## <a name="key-features"></a>Belangrijke functies
 
 Belangrijke functies in Windows PowerShell ISE omvatten:
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Samengestelde resources--met behulp van een DSC-configuratie als een resource
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076681"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: Met behulp van een DSC-configuratie als een resource
 

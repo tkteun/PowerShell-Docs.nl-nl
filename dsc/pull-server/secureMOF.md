@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Het MOF-bestand te beveiligen
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079324"
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand te beveiligen
 
@@ -84,7 +84,7 @@ Het volgende voorbeeld:
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>Op het doelknooppunt: maken en exporteren van het certificaat
 
-> Doelknooppunt: WindowsServer 2016 en Windows 10
+> Doelknooppunt: Windows Server 2016 en Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -151,7 +151,7 @@ Het volgende voorbeeld:
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Op het knooppunt ontwerpen: maken en exporteren van het certificaat
 
-> Doelknooppunt: WindowsServer 2016 en Windows 10
+> Doelknooppunt: Windows Server 2016 en Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session

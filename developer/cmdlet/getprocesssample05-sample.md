@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068008"
 ---
 # <a name="getprocesssample05-sample"></a>Voorbeeld GetProcessSample05
 
@@ -53,7 +53,7 @@ In dit voorbeeld ziet u een volledige versie van de cmdlet Get-Proc.
 
 In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende.
 

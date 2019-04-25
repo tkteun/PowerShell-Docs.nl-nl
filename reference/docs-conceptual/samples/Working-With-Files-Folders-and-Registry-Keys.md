@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Met bestanden, mappen en registersleutels werken
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085999"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en registersleutels
 

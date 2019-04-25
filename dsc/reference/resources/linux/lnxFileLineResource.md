@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxFileLine-Resource
 ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077956"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine-Resource
 
@@ -28,7 +28,7 @@ nxFileLine <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | FilePath| Het volledige pad naar het bestand om regels in op het doelknooppunt te beheren.|
 | ContainsLine| Een regel om ervoor te zorgen bestaat in het bestand. Deze regel wordt toegevoegd aan het bestand als deze niet in het bestand bestaat. **ContainsLine** is verplicht, maar kan worden ingesteld op een lege tekenreeks (`ContainsLine = ""`) als deze niet nodig is.|

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: Publiceren naar een Pull-Server met behulp van configuratie-ID's (v4/v5)
 ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079503"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publiceren naar een Pull-Server met behulp van configuratie-ID's (v4/v5)
 
@@ -47,7 +47,7 @@ U moet de naam van uw bestand 'localhost.mof' naar '<GUID>.mof "bestand. U kunt 
 [System.Guid]::NewGuid()
 ```
 
-Voorbeelduitvoer
+Voorbeeld van uitvoer
 
 ```output
 Guid

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Een DSC-pull-client instellen
 ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079639"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Een DSC-pull-client instellen
 

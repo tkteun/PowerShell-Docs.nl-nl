@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2b58fa5-01bc-426c-a043-5c700d6578e9
 caps.latest.revision: 16
 ms.openlocfilehash: 443bf5f693d2ab161668de25a1097347826cb5c2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082025"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>Help voor Windows PowerShell-modules schrijven
 
@@ -89,7 +89,7 @@ In Windows PowerShell 3.0 wordt uitgevoerd vanaf een `Get-Help` opdracht voor ee
 
 Als de module geen help-onderwerpen bevat en er geen help-onderwerpen voor de opdrachten in de module op de computer van de gebruiker zijn, `Get-Help` wordt automatisch gegenereerde help weergegeven. De automatisch gegenereerde help bevat de syntaxis, parameters en invoer- en -typen, maar bevat geen beschrijvingen. De help voor het automatisch gegenereerde bevat tekst waarmee de gebruiker om te proberen te gebruiken de `Update-Help` cmdlet help voor de opdracht downloaden vanaf Internet of een bestandsshare. Dit ook is de aanbevolen met behulp van de **Online** parameter van de `Get-Help` cmdlet om op te halen van de online versie van het help-onderwerp.
 
-## <a name="supporting-updatable-help"></a>Ondersteunende help die kan worden bijgewerkt
+## <a name="supporting-updatable-help"></a>Ondersteunende Help die kan worden bijgewerkt
 
 Gebruikers van Windows PowerShell 3.0 en latere versies van Windows PowerShell kunnen downloaden en installeren van bijgewerkte help-bestanden voor een module van het Internet of vanaf een lokaal bestand-share. De `Update-Help` en `Save-Help` cmdlets verbergen de details van de management van de gebruiker. Gebruikers voeren de `Update-Help` cmdlet en gebruik vervolgens de `Get-Help` cmdlet voor het lezen van de meest recente help-bestanden voor de module bij de opdrachtprompt van Windows PowerShell. Gebruikers hoeven niet opnieuw opstarten van Windows of Windows PowerShell.
 
@@ -99,7 +99,7 @@ Auteurs kunnen help-bestanden opnemen in de module en gebruik bij te werken Help
 
 Zie voor meer informatie over het bij te werken Help [ondersteunende bij te werken Help](./supporting-updatable-help.md).
 
-## <a name="supporting-online-help"></a>Ondersteunende online help
+## <a name="supporting-online-help"></a>Ondersteunende Online Help
 
 Gebruikers die niet of Installeer geen bijgewerkte help-bestanden op hun computers is vaak afhankelijk van de online versie van de module help-onderwerpen zijn. De **Online** parameter van de `Get-Help` cmdlet opent de online versie van een cmdlet of een geavanceerde functie help-onderwerp voor de gebruiker in de standaardbrowser van het Internet.
 

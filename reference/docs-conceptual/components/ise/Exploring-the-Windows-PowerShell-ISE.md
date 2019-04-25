@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086898"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
@@ -35,10 +35,10 @@ De volgende knoppen bevinden zich op de werkbalk.
 |Knop|Functie|
 |----------|------------|
 |**Nieuw**|Hiermee opent u een nieuw script.|
-|**Open**|Hiermee opent u een bestaand script of een bestand.|
+|**openen**|Hiermee opent u een bestaand script of een bestand.|
 |**Opslaan**|Hiermee slaat u een script of een bestand.|
 |**Knippen**|De geselecteerde tekst knippen en vervolgens gekopieerd naar het Klembord.|
-|**Kopiëren**|De geselecteerde tekst naar het Klembord gekopieerd.|
+|**kopiëren**|De geselecteerde tekst naar het Klembord gekopieerd.|
 |**Plakken**|De inhoud van het Klembord op de cursorlocatie geplakt.|
 |**Deelvenster Uitvoer wissen**|Hiermee schakelt u alle inhoud in het deelvenster Uitvoer.|
 |**Ongedaan maken**|De bewerking die zojuist is uitgevoerd, ongedaan maken.|

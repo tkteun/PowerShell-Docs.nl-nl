@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Bron van het DSC-Service
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076887"
 ---
 # <a name="dsc-service-resource"></a>Bron van het DSC-Service
 
@@ -36,7 +36,7 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Naam| Geeft de servicenaam. Houd er rekening mee dat soms dit af van de weergavenaam wijkt. U krijgt een overzicht van de services en de huidige status hiervan met de cmdlet Get-Service.|
 | BuiltInAccount| Geeft aan dat de aanmeldingsaccount gebruiken voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.|
@@ -44,7 +44,7 @@ Service [string] #ResourceName
 | DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
 | StartupType| Geeft aan dat het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**|
 | Status| Geeft de status die u wilt om ervoor te zorgen voor de service.|
-| Beschrijving | Geeft aan dat de beschrijving van de doelservice.|
+| Description | Geeft aan dat de beschrijving van de doelservice.|
 | DisplayName | Geeft de naam van de doelservice.|
 | Zorg ervoor dat | Geeft aan of de doelservice op het systeem bestaat. Deze eigenschap instellen op **afwezig** om ervoor te zorgen dat de doelservice niet bestaat. Instellen op **aanwezig** (de standaardwaarde) zorgt ervoor dat de doelservice bestaat.|
 | Pad | Geeft het pad naar het binaire bestand voor een nieuwe service.|

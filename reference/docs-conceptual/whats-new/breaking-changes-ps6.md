@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Belangrijke wijzigingen voor PowerShell 6.0
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085929"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Belangrijke wijzigingen voor PowerShell 6.0
 
@@ -62,20 +62,20 @@ In plaats daarvan raden wij aan dat u het gebruik van de CIM (ook wel WMI v2)-cm
 
 Vanwege het gebruik van niet-ondersteunde API's, `Microsoft.PowerShell.LocalAccounts` is verwijderd uit de PowerShell Core tot een betere oplossing is gevonden.
 
-### <a name="-computer-cmdlets"></a>`*-Computer`-cmdlets
+### <a name="-computer-cmdlets"></a>`*-Computer` Cmdlets
 
 Vanwege het gebruik van niet-ondersteunde API's, zijn de volgende cmdlets verwijderd uit PowerShell Core tot een betere oplossing is gevonden.
 
-- Add-Computer
+- Computer toevoegen
 - Checkpoint-Computer
 - Remove-Computer
 - Restore-Computer
 
-### <a name="-counter-cmdlets"></a>`*-Counter`-cmdlets
+### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlets
 
 Vanwege het gebruik van niet-ondersteunde API's, de `*-Counter` is verwijderd uit de PowerShell Core tot een betere oplossing is gevonden.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdlets
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlets
 
 Vanwege het gebruik van niet-ondersteunde API's, de `*-EventLog` uit PowerShell Core is verwijderd. tot een betere oplossing is gevonden. `Get-WinEvent` en `Create-WinEvent` zijn beschikbaar om te halen en op Windows-gebeurtenissen maken.
 
