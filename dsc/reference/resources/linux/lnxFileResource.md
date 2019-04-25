@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxFile-Resource
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078024"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile-Resource
 
@@ -37,7 +37,7 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | DestinationPath| Hiermee geeft u de locatie waar u om te controleren of de status van een bestand of map.|
 | SourcePath| Hiermee geeft u het pad van waaruit de resource van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.|

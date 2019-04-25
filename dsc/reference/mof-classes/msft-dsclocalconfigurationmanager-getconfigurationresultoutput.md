@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078638"
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
 

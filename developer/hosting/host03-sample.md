@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
 caps.latest.revision: 12
 ms.openlocfilehash: 202f6ea0521c7c053d5a01314fb44bd1806abab3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082849"
 ---
 # <a name="host03-sample"></a>Voorbeeld Host03
 
@@ -23,7 +23,7 @@ Dit voorbeeld laat zien hoe u een interactieve console-gebaseerde hosttoepassing
 
  In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 - Het maken van een aangepaste host waarvan klassen die zijn afgeleid van de [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) klasse, de [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) klasse en de [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) klasse.
 

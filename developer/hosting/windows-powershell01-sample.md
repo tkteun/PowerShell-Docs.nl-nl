@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
 ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082529"
 ---
 # <a name="windows-powershell01-sample"></a>Voorbeeld Windows PowerShell01
 
@@ -23,7 +23,7 @@ In dit voorbeeld laat zien hoe u een [System.Management.Automation.Runspaces.Ini
 
 In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 In dit voorbeeld ziet u het volgende:
 

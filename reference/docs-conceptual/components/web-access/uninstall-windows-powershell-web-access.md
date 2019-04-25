@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: windows powershell-internettoegang verwijderen
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058136"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell-internettoegang verwijderen
 
@@ -19,7 +19,7 @@ De stappen in dit onderwerp worden de website van Windows PowerShell-webtoegang 
 
 ## <a name="notify-users"></a>Gebruikers een melding ontvangen
 
-Voordat u begint, moet u gebruikers van de webconsole laten weten dat u de website gaat verwijderen.
+Voordat u begint, gebruikers een melding ontvangen van de webconsole dat u de website gaat verwijderen.
 
 Windows PowerShell-webtoegang verwijderen, worden IIS of andere onderdelen die automatisch zijn geïnstalleerd omdat de Windows PowerShell-webtoegang vereist is om uit te voeren niet verwijderd.
 De verwijdering blijven onderdelen geïnstalleerd waarop Windows PowerShell-webtoegang afhankelijke is; indien nodig, kunt u deze functies afzonderlijk verwijderen.
@@ -42,29 +42,29 @@ met behulp van Windows PowerShell-cmdlets.
     -   Op de Windows **Start** scherm, klikt u op **Windows PowerShell**.
 
 2. Type `Uninstall-PswaWebApplication`, en druk vervolgens op **Enter**.
-   1. Als u uw eigen aangepaste websitenaam hebt opgegeven, voegt u de parameter `-WebsiteName` toe aan de opdracht en geeft u de naam van de website op.
+   1. Als u uw eigen, aangepaste Websitenaam hebt opgegeven, voegt u toe de `-WebsiteName` parameter aan de opdracht en geeft u de naam van de website.
 
         `Uninstall-PswaWebApplication -WebsiteName <web-site-name>`
    1. Als u een aangepaste webtoepassing hebt gebruikt (niet de standaardtoepassing, **pswa**, voeg de `-WebApplicationName` parameter aan de opdracht en geeft u de naam van de web-App.
 
         `Uninstall-PswaWebApplication -WebApplicationName <web-application-name>`
-   1. Als u een testcertificaat gebruikt, voegt de parameter `DeleteTestCertificate` toe aan de cmdlet, zoals wordt aangegeven in het volgende voorbeeld.
+   1. Als u een testcertificaat gebruikt, voegt de `DeleteTestCertificate` parameter aan de cmdlet, zoals wordt weergegeven in het volgende voorbeeld.
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Stap 2: Windows PowerShell-internettoegang met behulp van cmdlets verwijderen
 
-1. Doe het volgende om een Windows PowerShell-sessie met verhoogde gebruikersrechten te openen. Als al een sessie is geopend, gaat u naar de volgende stap.
+1. Doe het volgende om een Windows PowerShell-sessie met verhoogde gebruikersrechten te openen. Als een sessie al geopend is, gaat u naar de volgende stap.
 
     -   Het Windows-bureaublad met de rechtermuisknop op **Windows PowerShell** op de taakbalk en klik vervolgens op **als Administrator uitvoeren**.
 
     -   Op de Windows **Start** met de rechtermuisknop op **Windows PowerShell**, en klik vervolgens op **als Administrator uitvoeren**.
 
-1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer_name* vertegenwoordigt een externe server van waaruit u wilt verwijderen van Windows PowerShell-webtoegang. Met de parameter `-Restart` worden de doelservers zo nodig automatisch opnieuw opgestart.
+1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer_name* vertegenwoordigt een externe server van waaruit u wilt verwijderen van Windows PowerShell-webtoegang. De `-Restart` parameter doelservers automatisch opnieuw opgestart als nodig is voor de verwijzing wordt verwijderd.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
-    Als u functies en onderdelen van een offline-VHD wilt verwijderen, voegt u zowel de parameter `-ComputerName` als de parameter `-VHD` toe. De parameter `-ComputerName` bevat de naam van de server waaraan de VHD moet worden gekoppeld en de parameter `-VHD` bevat het pad naar het VHD-bestand op de opgegeven server.
+    Als u wilt verwijderen van functies en onderdelen van een offline-VHD, voegt u zowel de `-ComputerName` parameter en de `-VHD` parameter. De `-ComputerName` parameter bevat de naam van de server waarop u de VHD wilt koppelen en de `-VHD` parameter bevat het pad naar het VHD-bestand op de gespecificeerde server.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
@@ -79,7 +79,7 @@ Procedures in deze sectie kunt u verwijdert u de web-App voor Windows PowerShell
 ### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Stap 1: De web-App met behulp van IIS-beheer verwijderen
 
 
-1. Open de IIS-beheerconsole op een van de volgende manieren. Als de console al is geopend, gaat u naar de volgende stap.
+1. Open de IIS-beheer-console op een van de volgende manieren. Als deze al geopend is, gaat u naar de volgende stap.
 
     -   Start op het bureaublad van Windows Server Manager door te klikken op **Serverbeheer** in de taakbalk van Windows. Op de **extra** menu in Serverbeheer, klikt u op **Internet Information Services (IIS) Manager**.
 
@@ -97,9 +97,9 @@ Procedures in deze sectie kunt u verwijdert u de web-App voor Windows PowerShell
 
 > ![Waarschuwing Opmerking](images/SecurityNote.jpeg)**Opmerking**:
 >
-> Het certificaat wordt hierbij niet verwijderd.
+> Het certificaat is niet verwijderd tijdens verwijdering.
 >
-> Als u een zelfondertekend certificaat hebt gemaakt of een testcertificaat hebt gebruikt en dit wilt verwijderen, verwijdert u het certificaat in IIS-beheer.
+> Als u een zelfondertekend certificaat gemaakt of een testcertificaat gebruikt en wilt verwijderen, verwijdert u het certificaat in IIS-beheer.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Stap 2: Windows PowerShell-internettoegang met behulp van de verwijderen Wizard functies en onderdelen verwijderen
 
@@ -111,7 +111,7 @@ Procedures in deze sectie kunt u verwijdert u de web-App voor Windows PowerShell
 
 1. Op de **beheren** menu, klikt u op **functies en onderdelen verwijderen**.
 
-1. Op de **Selecteer doelserver** pagina, selecteert u de server of offline-VHD waarvan u wilt verwijderen van de functie. Als u een offline-VHD wilt selecteren, kiest u eerst de server waaraan u de VHD wilt koppelen en selecteert u vervolgens het VHD-bestand. Nadat u de doelserver hebt geselecteerd, klikt u op **volgende**.
+1. Op de **Selecteer doelserver** pagina, selecteert u de server of offline-VHD waarvan u wilt verwijderen van de functie. Als u wilt een offline-VHD selecteren, selecteert u eerst de server waarop u de VHD wilt koppelen en selecteer vervolgens het VHD-bestand. Nadat u de doelserver hebt geselecteerd, klikt u op **volgende**.
 
 1. Klik op **volgende** opnieuw om over te slaan naar de **onderdelen verwijderen** pagina.
 

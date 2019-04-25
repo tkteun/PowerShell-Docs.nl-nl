@@ -3,11 +3,11 @@ title: Externe communicatie van WS-Management (WSMan) in PowerShell Core
 description: Externe communicatie in PowerShell Core met behulp van WSMan
 ms.date: 08/06/2018
 ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058876"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Externe communicatie van WS-Management (WSMan) in PowerShell Core
 

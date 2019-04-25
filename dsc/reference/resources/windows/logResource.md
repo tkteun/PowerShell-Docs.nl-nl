@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Logboekresource
 ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077225"
 ---
 # <a name="dsc-log-resource"></a>DSC-Logboekresource
 
@@ -30,7 +30,7 @@ Log [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 | --- | --- |
 | Bericht| Geeft aan dat het bericht dat u wilt schrijven naar het gebeurtenislogboek Microsoft-Windows-Desired staat configuratie/analysen.|
 | DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze logboekbericht wordt geschreven. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = '[ResourceType]ResourceName'`.|

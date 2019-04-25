@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Archiefresource
 ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077548"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Archiefresource
 
@@ -31,7 +31,7 @@ Archive [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Bestemming| Hiermee geeft u de locatie waar u om te controleren of de dat inhoud van het archief worden geëxtraheerd.|
 | Pad| Hiermee geeft u het bronpad van het bestand.|

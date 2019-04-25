@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: De PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078433"
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>De PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
 
@@ -25,7 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 
 *Vlaggen* \[in\] een bitmasker waarmee het type van een consistentiecontrole uit te voeren. De volgende waarden geldig zijn en kunnen worden gecombineerd met behulp van een bitwise **of** bewerking:
 
-|Waarde |Beschrijving |
+|Waarde |Description |
 |:--- |:---|
 |**1** | Een normale consistentiecontrole uit. |
 |**2** | Een voortzetting van een consistentiecontrole uit na het opnieuw opstarten. Deze waarde moet niet worden gecombineerd met andere waarden. |

@@ -1,16 +1,16 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
-title: Verklarende woordenlijst voor Windows PowerShell
+title: Windows PowerShell Glossary
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057334"
 ---
-# <a name="windows-powershell-glossary"></a>Verklarende woordenlijst voor Windows PowerShell
+# <a name="windows-powershell-glossary"></a>Windows PowerShell Glossary
 
 
 |Term|Definitie|
@@ -22,7 +22,7 @@ ms.locfileid: "53404522"
 |dynamische parameter|Een parameter die wordt toegevoegd aan een Windows PowerShell-cmdlet, de functie of het script onder bepaalde omstandigheden. Dynamische parameters kunnen toevoegen door cmdlets, functies, -providers en -scripts.|
 |opmaak van bestand|Een Windows PowerShell-XML-bestand met de. format.ps1xml-extensie en die wordt gedefinieerd hoe een object op basis van het .NET Framework-type worden weergegeven in Windows PowerShell.|
 |globale sessiestatus|De sessiestatus met de gegevens die toegankelijk is voor de gebruiker van een Windows PowerShell-sessie.|
-|Host|De interface die de Windows PowerShell-engine gebruikt om te communiceren met de gebruiker. De host bevat bijvoorbeeld hoe prompts tussen Windows PowerShell en de gebruiker worden verwerkt.|
+|host|De interface die de Windows PowerShell-engine gebruikt om te communiceren met de gebruiker. De host bevat bijvoorbeeld hoe prompts tussen Windows PowerShell en de gebruiker worden verwerkt.|
 |Host-toepassing|Een programma dat de Windows PowerShell-engine in het proces geladen en gebruikt deze bewerkingen uit te voeren.|
 |verwerken van methode invoer|Een methode die een cmdlet gebruiken kunt voor het verwerken van de records die deze ontvangt als invoer. De van invoer-verwerkingsmethoden zijn onder meer de methode BeginProcessing, de methode ProcessRecord de EndProcessing-methode en de methode StopProcessing.|
 |manifest van de module|Een Windows PowerShell-module die een manifest heeft en waarvan de velden RootModule sleutel is leeg.|
@@ -30,21 +30,21 @@ ms.locfileid: "53404522"
 |module-sessiestatus|De sessiestatus met de openbare en persoonlijke gegevens van een Windows PowerShell-module. De persoonlijke gegevens in de sessiestatus van deze is niet beschikbaar voor de gebruiker van een Windows PowerShell-sessie.|
 |niet-afsluitfout|Een fout die niet dat de Windows PowerShell u verdergaat voorkomen wordt met het verwerken van de opdracht.|
 |zelfstandig naamwoord|Het woord die volgt op het koppelteken in de naam van een Windows PowerShell-cmdlet. Het zelfstandig naamwoord beschrijving van de resources waarop de cmdlet fungeert.|
-|parameterset|Een groep van de parameters die kunnen worden gebruikt in dezelfde opdracht een bepaalde actie uit te voeren.|
+|Parameterset|Een groep van de parameters die kunnen worden gebruikt in dezelfde opdracht een bepaalde actie uit te voeren.|
 |pipe|In Windows PowerShell voor het verzenden van de resultaten van de voorgaande opdracht als invoer voor de volgende opdracht in de pijplijn.|
 |Pijplijn|Een reeks opdrachten die zijn verbonden via de pipeline-operators (&#124;) (124 ASCII). Elke pijplijn-operator verzendt de resultaten van de voorgaande opdracht als invoer voor de volgende opdracht.|
 |PSSession|Een type van de Windows PowerShell-sessie die is gemaakt, beheerd en gesloten door de gebruiker.|
 |basismodule|De module die is opgegeven in de velden RootModule-sleutel in een module-manifest.|
-|runspace|In Windows PowerShell, de operationele omgeving waarin elke opdracht in een pijplijn wordt uitgevoerd.|
+|Runspace|In Windows PowerShell, de operationele omgeving waarin elke opdracht in een pijplijn wordt uitgevoerd.|
 |scriptblok|Programmeren taal, een verzameling instructies of expressies die kunnen worden gebruikt als één eenheid in de Windows PowerShell. Een scriptblok kan accepteren argumenten en waarden retourneren.|
 |scriptmodule|Een Windows PowerShell-module waarvan root-module een scriptbestand voor module (.psm1 is). Een scriptmodule kan of kan een module-manifest niet opgenomen.|
 |module-scriptbestand|Een bestand met een Windows PowerShell-script. Het script definieert de leden die de scriptmodule exporteert. Module-scriptbestanden hebben de .psm1-bestandsextensie.|
 |Shell|De opdrachtinterpreter die wordt gebruikt voor opdrachten doorgeven aan het besturingssysteem.|
 |switch-parameter|Een parameter die niet een argument neemt.|
 |afsluitfout|Een fout die voorkomt dat Windows PowerShell voor het verwerken van de opdracht.|
-|transactie|Een atomische eenheid van het werk. Het werk in een transactie moet worden uitgevoerd als een geheel; Als een deel van de transactie is mislukt, wordt de hele transactie mislukt.|
+|Transactie|Een atomische eenheid van het werk. Het werk in een transactie moet worden uitgevoerd als een geheel; Als een deel van de transactie is mislukt, wordt de hele transactie mislukt.|
 |typen bestand|Een Windows PowerShell-XML-bestand dat de extensie .ps1xml heeft en dat de eigenschappen van Microsoft .NET Framework-typen in Windows PowerShell wordt uitgebreid.|
-|Term|Het woord die voorafgaat aan het koppelteken in de naam van een Windows PowerShell-cmdlet. Het werkwoord beschrijft de actie die de cmdlet uitvoert.|
+|term|Het woord die voorafgaat aan het koppelteken in de naam van een Windows PowerShell-cmdlet. Het werkwoord beschrijft de actie die de cmdlet uitvoert.|
 |Windows PowerShell|Een opdrachtregel-shell en taak-scripttechnologie op basis van die voorziet in uitgebreide controle voor IT-beheerders en automatisering van systeem beheertaken.|
 |Windows PowerShell-opdracht|De elementen in een pijplijn die ertoe leiden een actie die dat moet worden uitgevoerd. Windows PowerShell-opdrachten zijn getypt op het toetsenbord of via een programma wordt aangeroepen.|
 |Windows PowerShell-gegevensbestand|Een tekstbestand dat de extensie .psd1 heeft. Windows PowerShell maakt gebruik van gegevensbestanden voor verschillende doeleinden, zoals de module-manifest gegevens opslaan en het opslaan van vertaalde tekenreeksen voor voorkeuren voor internationalisatie script.|

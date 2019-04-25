@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Omgevingsresource
 ms.openlocfilehash: 2bc1600a9df32538d59efa712569b12fa9e3beee
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077531"
 ---
 # <a name="dsc-environment-resource"></a>DSC-Omgevingsresource
 
@@ -29,7 +29,7 @@ Environment [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Naam| Geeft de naam van de omgevingsvariabele waarvoor u wilt om te controleren of een specifieke status.|
 | Zorg ervoor dat| Geeft aan dat er een variabele bestaat. Deze eigenschap instellen op __aanwezig__ te maken van de omgevingsvariabele als deze niet bestaat of om ervoor te zorgen dat de waarde ervan overeenkomt met wat wordt geboden via de __waarde__ eigenschap als de variabele al bestaat. Stel deze in op __afwezig__ verwijderen van de variabele als deze bestaat.|

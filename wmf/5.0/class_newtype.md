@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058366"
 ---
 # <a name="new-language-features-in-powershell-50"></a>Nieuwe taalfuncties in PowerShell 5.0
 
@@ -170,7 +170,7 @@ Verborgen leden openbaar zijn, maar worden niet weergegeven in de uitvoer van Ge
 
 Verborgen leden zijn niet opgenomen wanneer tabblad voltooien of met behulp van Intellisense, tenzij de voltooiing vindt plaats in de klasse voor het definiëren van het verborgen lid.
 
-Een nieuw kenmerk **System.Management.Automation.HiddenAttribute** is toegevoegd zodat C#-code dezelfde semantiek in Windows PowerShell hebben kunt.
+Een nieuw kenmerk **System.Management.Automation.HiddenAttribute** is toegevoegd zodat C# code kan hebben dezelfde semantiek in Windows PowerShell.
 
 ## <a name="return-types"></a>Typen retourneren
 

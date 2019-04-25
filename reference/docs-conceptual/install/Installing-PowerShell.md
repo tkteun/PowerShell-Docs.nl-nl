@@ -3,13 +3,13 @@ ms.date: 08/09/2018
 keywords: install, windows, linux, macOS, ARM, raspbian
 title: PowerShell installeren
 ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059029"
 ---
-# <a name="installing-various-versions-of-powershell"></a>Installeren van verschillende versies van PowerShell
+# <a name="installing-various-versions-of-powershell"></a>Verschillende versies van PowerShell installeren
 
 In de afgelopen jaren zijn er veel versies van PowerShell. Windows PowerShell is in eerste instantie wordt gebaseerd op .NET Framework en werkte alleen op Windows-systemen. PowerShell Core gebruikmaakt van de huidige release van .NET Core 2.x als de runtime. PowerShell Core biedt ondersteuning voor de Windows, macOS en Linux-platforms.
 

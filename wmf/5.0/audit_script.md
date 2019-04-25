@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058077"
 ---
 # <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
@@ -18,10 +18,10 @@ De gebeurtenissen zijn:
 
 | Kanaal | Operational                                 |
 |---------|---------------------------------------------|
-| Niveau   | Verbose                                     |
+| Niveau   | Uitgebreid                                     |
 | Opcode  | Maken                                      |
 | Taak    | CommandStart                                |
-| Trefwoord | runspace                                    |
+| Trefwoord | Runspace                                    |
 | Gebeurtenis-id | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Bericht | Het maken van Scriptblock tekst (%1% 2): </br> %3 </br> ScriptBlock-ID: %4 |
 
@@ -32,10 +32,10 @@ Wanneer u uitgebreide logboekregistratie inschakelt, wordt de functie schrijfbew
 
 | Kanaal | Operational                                            |
 |---------|--------------------------------------------------------|
-| Niveau   | Verbose                                                |
+| Niveau   | Uitgebreid                                                |
 | Opcode  | Open (/ afsluiten)                                         |
 | Taak    | CommandStart (/ CommandStop)                           |
-| Trefwoord | runspace                                               |
+| Trefwoord | Runspace                                               |
 | Gebeurtenis-id | ScriptBlock\_aanroepen\_Start\_details (0x1009 = 4105) / </br> ScriptBlock\_aanroepen\_voltooid\_details (0x100A = 4106) |
 | Bericht | Gestart (/ voltooide) aanroepen van ScriptBlock-ID: %1 </br> Runspace-ID: %2 |
 

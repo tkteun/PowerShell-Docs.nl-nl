@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058978"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Uniforme en consistente status en statusweergave
 
@@ -38,7 +38,7 @@ De onderstaande tabel ziet u de resulterende status en de status eigenschappen m
 
 - S<sub>i</sub>: Een reeks resources die is toegepast
 - F<sub>i</sub>: Een reeks resources die zonder succes toegepast
-- r: Een resource die is vereist opnieuw opstarten
+- R: Een resource die is vereist opnieuw opstarten
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Het PowerShellTab-object
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057669"
 ---
 # <a name="the-powershelltab-object"></a>Het PowerShellTab-object
 
@@ -33,7 +33,7 @@ Het opgegeven script wordt uitgevoerd in de PowerShell-tabblad.
 $psISE.PowerShellTabs[1].Invoke({dir})
 ```
 
-### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( Script \[useNewScope\], millisecondsTimeout \)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( Script, \[useNewScope\], millisecondsTimeout \)
 
 Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
 

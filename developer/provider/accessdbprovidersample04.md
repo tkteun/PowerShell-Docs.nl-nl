@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081016"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 In dit voorbeeld laat zien hoe u containermethoden ter ondersteuning van aanroepen naar overschrijven de `Copy-Item`, `Get-ChildItem`, `New-Item`, en `Remove-Item` cmdlets. Deze methoden moeten worden uitgevoerd wanneer het gegevensarchief bevat items die containers zijn. Een container is een groep van onderliggende items onder een gemeenschappelijk bovenliggend item. De providerklasse in dit voorbeeld is afgeleid van de [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasse.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 > [!IMPORTANT]
 > Uw providerklasse waarschijnlijk wordt afgeleid van de [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)

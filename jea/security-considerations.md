@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Overwegingen bij de beveiliging van JEA
-ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084773"
 ---
 # <a name="jea-security-considerations"></a>Overwegingen bij de beveiliging van JEA
 
@@ -127,7 +127,7 @@ Bijvoorbeeld, houd rekening met de volgende vermelding van de rol-mogelijkheid:
 ```
 
 De mogelijkheid van deze rol kan gebruikers een PowerShell-cmdlet uitvoeren met het zelfstandig naamwoord 'Proces' van de module Microsoft.PowerShell.Management.
-Gebruikers mogelijk toegang tot cmdlets, zoals `Get-Process` om te begrijpen welke toepassingen worden uitgevoerd op het systeem en `Stop-Process` afsluiten een vastgelopen toepassingen.
+Gebruikers mogelijk toegang tot cmdlets, zoals `Get-Process` om te begrijpen welke toepassingen worden uitgevoerd op het systeem en `Stop-Process` afsluiten van alle toepassingen die niet reageren.
 Deze post ook kan echter `Start-Process`, die kan worden gebruikt om een willekeurige programma met volledige beheerdersrechten worden opgestart.
 Het programma niet moet lokaal op het systeem worden geïnstalleerd, zodat een kwaadwillende persoon kan een programma te starten op een bestandsshare waarmee de verbindende gebruiker lokale beheerdersbevoegdheden en schadelijke software wordt uitgevoerd.'
 

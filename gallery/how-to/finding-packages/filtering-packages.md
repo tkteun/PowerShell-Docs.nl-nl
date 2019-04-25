@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Zoekresultaten filteren
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084399"
 ---
 # <a name="filtering-search-results"></a>Zoekresultaten filteren
 
@@ -29,7 +29,7 @@ De selectievakjes onder de vervolgkeuzelijst toestaan dat gebruikers om de resul
 - Pakkettypen
   - Module
   - Script
-- Categorieën
+- Categories
   - Cmdlet
   - DSC Resource
   - Functie

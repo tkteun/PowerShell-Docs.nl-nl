@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxScript Resource
 ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077820"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC voor Linux nxScript Resource
 
@@ -30,7 +30,7 @@ nxScript <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | GetScript| Biedt een script dat wordt uitgevoerd wanneer u aanroepen de [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet. Het script moet beginnen met een shebang, zoals #! / bin/bash.|
 | SetScript| Bevat een script. Wanneer u aanroepen de [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, de **TestScript** als eerste wordt gestart. Als de **TestScript** blok retourneert een afsluitcode dan 0, de **SetScript** blok wordt uitgevoerd. Als de **TestScript** retourneert een afsluitcode 0, de **SetScript** kan niet worden uitgevoerd. Het script moet beginnen met een shebang zoals `#!/bin/bash`.|

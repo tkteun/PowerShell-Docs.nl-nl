@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Help voor de PowerShell.exe-opdrachtregel
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058510"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe Help voor de opdrachtregel
 

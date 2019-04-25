@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057330"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>PowerShellGet-cmdlets voor scriptbeheer
 
-## <a name="find-script-cmdlet"></a>Zoeken naar Script cmdlet
-Zoeken naar Script cmdlet kunt u voor het detecteren van de scriptbestanden met verschillende zoekcriteria zoals naam, label, filter, opdrachtnaam, het bereik van versie, exacte versie, alle versies, inclusief de bijbehorende afhankelijkheden en van bepaalde of alle geregistreerde-opslagplaatsen.
+## <a name="find-script-cmdlet"></a>Find-Script-cmdlet
+Find-Script-cmdlet kunt u de scriptbestanden met verschillende zoekcriteria zoals naam, code, filteren, de opdrachtnaam van de, bereik van de versie, exacte versie, alle versies, met inbegrip van de bijbehorende afhankelijkheden en vanuit opslagplaatsen voor bepaalde of alle geregistreerde detecteren.
 
-Voorbeeld van syntaxis:
+Voorbeeld van gebruik:
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Cmdlet opslaan-Script
-Opslaan Script cmdlet kunt u het scriptbestand bekijken door op een opgegeven locatie op te slaan.
+## <a name="save-script-cmdlet"></a>Save-Script-cmdlet
+Save-Script-cmdlet kunt u om te controleren van het scriptbestand te slaan in een opgegeven locatie.
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -163,9 +163,9 @@ Version Name Author Description
 ```
 
 ## <a name="install-script-and-get-installedscript-cmdlets"></a>Script voor installatie en Get-InstalledScript-cmdlets
-Script voor installatie-cmdlet kunt u een specifiek scriptbestand samen met de bijbehorende afhankelijkheden installeren voor het opgegeven bereik. Scripts zijn standaard geïnstalleerd aan de scope AllUsers. De cmdlet Get-InstalledScript kunt u de lijst met scriptbestanden die zijn geïnstalleerd met de cmdlet Install-Script ophalen.
+De cmdlet Install-Script kunt u een specifiek scriptbestand samen met de bijbehorende afhankelijkheden installeren op het opgegeven bereik. Standaard worden de scripts aan het bereik AllUsers geïnstalleerd. De cmdlet Get-InstalledScript kunt u de lijst van scriptbestanden die zijn geïnstalleerd met behulp van de cmdlet Install-Script te krijgen.
 
-Gebruik Opmerking: als beheer- en scripts zoeken wanneer ze zijn geïnstalleerd, script voor installatie een standaardmap voor het opslaan van scripts op $home\Documents\WindowsPowerShell\Scripts maken en die map toevoegen aan uw omgeving pad. Als het pad wijzigen belangrijk is, moet u opslaan-Script gebruiken in plaats van een Script voor installatie. Get-InstalledScripts en Uninstall-Script kunt werken alleen met behulp van scripts op het systeem met Script voor installatie geplaatst.
+Houd er rekening mee gebruiken: Als u wilt toestaan dat beheer van en zoeken van scripts, nadat ze zijn geïnstalleerd, Install-script maakt een standaardmap voor het opslaan van scripts bij $home\Documents\WindowsPowerShell\Scripts, en die map toevoegen aan uw PATH-omgeving. Als het wijzigen van het pad is een probleem, gebruikt u Save-Script in plaats van een Script voor installatie. Get-InstalledScripts en Uninstall-Script kan uitsluitend worden gebruikt met behulp van scripts die worden geplaatst op het systeem met behulp van Install-Script.
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-U kunt ook de Get-Command – naam &lt;InstalledScriptFileName&gt; downloaden. Installatie op twee locaties worden toegevoegd aan de omgevingsvariabele PATH op het eerste gebruik van een opgegeven bereik.
+U kunt ook Get-opdracht gebruiken: de naam &lt;InstalledScriptFileName&gt; downloaden. Installeren op twee locaties worden toegevoegd aan de omgevingsvariabele PATH op het eerste gebruik van een opgegeven bereik.
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -343,8 +343,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Updatescript cmdlet
-Updatescript cmdlet kunt u in-place bijwerken van de scriptbestanden die zijn geïnstalleerd met de cmdlet Install-Script.
+## <a name="update-script-cmdlet"></a>De cmdlet update-Script
+De cmdlet update-Script kunt u in-place bijwerken van de scriptbestanden die zijn geïnstalleerd met behulp van de cmdlet Install-Script.
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -422,8 +422,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Nieuwe ScriptFileInfo en Test ScriptFileInfo-cmdlets
-Nieuwe ScriptFileInfo cmdlet kunt u een nieuwe scriptbestand maken met metagegevens, zoals versie, Guid, auteur en beschrijving, enzovoort. Test ScriptFileInfo cmdlet kunt u wilt valideren en ophalen van metagegevens van het script bestand.
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Nieuwe ScriptFileInfo en Test-ScriptFileInfo-cmdlets
+Nieuwe ScriptFileInfo cmdlet kunt u voor het maken van een nieuwe scriptbestand met metagegevens, zoals versie, Guid, auteur en beschrijving, enzovoort. De cmdlet test-ScriptFileInfo kunt u om te valideren en ophalen van de metagegevens van scriptbestand.
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -574,8 +574,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>De cmdlet update ScriptFileInfo
-Update ScriptFileInfo cmdlet kunt u de metagegevens van het bestaande script bestand bijwerken.
+## <a name="update-scriptfileinfo-cmdlet"></a>De cmdlet update-ScriptFileInfo
+De cmdlet update-ScriptFileInfo kunt u de bestaande metagegevens van scriptbestand bijwerken.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,7 +585,7 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Register PSRepository en Set-PSRepository cmdlets met script-ondersteuning voor delen
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Register-PSRepository en Set-PSRepository cmdlets met script-ondersteuning voor delen
 Register-PSRepository/Set-PSRepository-cmdlets gebruiken om toe te voegen de **ScriptSourceLocation** en **ScriptPublishLocation** naar de PSRepository.
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
@@ -643,8 +643,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>De cmdlet Publish-Script
-Publiceren Script cmdlet kunt u voor het publiceren van het scriptbestand met geldige metagegevens zoals versie, Guid, auteur en de beschrijving, enzovoort.
+## <a name="publish-script-cmdlet"></a>Publiceren-Script-cmdlet
+Publiceren-Script-cmdlet kunt u voor het publiceren van het scriptbestand met geldige metagegevens, zoals versie, Guid, auteur en beschrijving, enzovoort.
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

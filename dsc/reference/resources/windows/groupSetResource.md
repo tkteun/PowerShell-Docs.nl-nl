@@ -4,11 +4,11 @@ keywords: DSC, powershell, configuratie en installatie
 description: Biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt.
 title: DSC GroupSet-Resource
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077174"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-Resource
 
@@ -34,7 +34,7 @@ Group [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | GroupName| De namen van de groepen waarvoor u wilt om te controleren of een specifieke status.|
 | MembersToExclude| Gebruik deze eigenschap leden verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt er een fout gegenereerd.|

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: 0bc085588190f134c4a687c952509aa256b5f840
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085198"
 ---
 # <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 Just Enough Administration is een nieuwe functie in WMF 5.0 waarmee Rolgebaseerd beheer via externe communicatie van PowerShell.  Deze uitbreiding van de bestaande infrastructuur van beperkte eindpunt doordat niet-beheerders kunnen specifieke opdrachten, scripts en uitvoerbare bestanden uitvoeren als beheerder.  Hiermee kunt u Verminder het aantal volledige beheerders in uw omgeving en uw beveiliging te verbeteren.  JEA werkt voor alles wat die u via PowerShell beheren; Als u iets met PowerShell beheren kunt, kunt u dus veiliger door JEA helpen.  Bekijk voor een gedetailleerde Kijk op Just Enough Administration, de [gids voor gebruikerservaring](http://aka.ms/JEA).

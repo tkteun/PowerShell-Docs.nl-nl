@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: aaf9351e-157f-4d48-8b8f-1fd64855b682
 caps.latest.revision: 10
 ms.openlocfilehash: d291e401bbf3da998735ebb00f1eb35521f9a19c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081051"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
 In dit voorbeeld laat zien hoe u overschrijven de [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) en [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)methoden voor de ondersteuning van aanroepen naar de `New-PSDrive` en `Remove-PSDrive` cmdlets. De providerklasse in dit voorbeeld is afgeleid van de [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klasse.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 > [!IMPORTANT]
 > Uw providerklasse wordt waarschijnlijk zijn afgeleid van een van de volgende klassen en mogelijk andere provider-interfaces te implementeren:

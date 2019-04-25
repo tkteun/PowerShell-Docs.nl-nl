@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: toegangsproblemen in windows powershell-webtoegang oplossen
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086592"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
@@ -101,13 +101,13 @@ ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_group<br/
 
 Parameter | Waarde
 -- | --
-ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
+Computernaam | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
 Parameter | Waarde
 -- | --
-ComputerName | Servernaam
+Computernaam | Servernaam
 
 ### <a name="gateway-credentials"></a>Gatewayreferenties
 

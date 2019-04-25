@@ -3,13 +3,13 @@ ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: installeren en gebruiken van windows powershell-webtoegang
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058561"
 ---
-# <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell-webtoegang installeren en gebruiken
+# <a name="install-and-use-windows-powershell-web-access"></a>Installeren en gebruiken van Windows PowerShell-internettoegang
 
 Bijgewerkt: 5: november 2013 (bewerkt: 23 augustus 2017)
 
@@ -19,7 +19,7 @@ Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell-webtoegang, geïntroduceerd in Windows Server 2012, fungeert als een Windows PowerShell-gateway, die een web-console op basis van Windows PowerShell die is gericht op een externe computer. Hiermee kunnen IT-professionals Windows PowerShell-opdrachten en scripts uitvoeren vanuit een Windows PowerShell-console in een webbrowser, zonder Windows PowerShell, extern beheer van software of door de browser-invoegtoepassing installatie nodig op het clientapparaat. Het enige dat is vereist voor het uitvoeren van de website op basis van Windows PowerShell-console is een goed geconfigureerde Windows PowerShell Web Access-gateway en een browser op het clientapparaat die JavaScript ondersteunt en cookies accepteert.
 
-Voorbeelden van clientapparaten zijn laptops, privé-pc's, geleende computers, tablets, webkiosks, computers zonder Windows-besturingssystemen en browsers op mobiele telefoons. IT-professionals kunnen kritieke beheertaken uitvoeren op externe Windows-servers vanaf apparaten die toegang tot internet bieden en over een webbrowser beschikken.
+Voorbeelden van clientapparaten zijn laptops, personal computers die niet wordt gewerkt, geleende computers, tablets, webkiosks, computers die niet met een Windows-besturingssystemen en browsers op mobiele telefoons. IT-professionals kunnen kritieke beheertaken uitvoeren op externe Windows-servers vanaf apparaten die toegang tot een internetverbinding en een webbrowser hebben.
 
 Nadat de gateway is geïnstalleerd en geconfigureerd, kunnen gebruikers een Windows PowerShell-console openen via een webbrowser. Wanneer gebruikers de beveiligde website van Windows PowerShell-webtoegang opent, kunnen ze een Windows PowerShell web gebaseerde console uitgevoerd na een geslaagde authenticatie.
 
@@ -31,7 +31,7 @@ Windows PowerShell-webtoegang installatie en configuratie is een proces drie sta
 
 Voordat u installeert en Windows PowerShell-webtoegang configureert, wordt aangeraden dat u deze volledige handleiding, inclusief instructies over het installeren, beveiligen en Windows PowerShell-internettoegang verwijderen. De [via de Console Windows PowerShell Web gebaseerde](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11)) onderwerp wordt beschreven hoe gebruikers aanmelden bij de webconsole, en bevat informatie over de beperkingen en verschillen tussen de Windows PowerShell web gebaseerde beheerconsole en de  **PowerShell.exe** console. Eindgebruikers van de webconsole moet lezen [gebruik het Web op basis van Windows PowerShell-Console](use-the-web-based-windows-powershell-console.md), maar hoeft niet te lezen van de rest van deze handleiding.
 
-In dit onderwerp biedt geen gedetailleerde richtlijnen voor IIS-webserver-bewerkingen; alleen de stappen die zijn vereist voor het configureren van de Windows PowerShell Web Access-gateway worden beschreven in dit onderwerp. Zie de IIS-documentatie in de sectie Zie ook voor meer informatie over het configureren en beveiligen van websites in IIS.
+In dit onderwerp biedt geen gedetailleerde richtlijnen voor IIS-webserver-bewerkingen; alleen de stappen die zijn vereist voor het configureren van de Windows PowerShell Web Access-gateway worden beschreven in dit onderwerp. Zie voor meer informatie over het configureren en beveiligen van websites in IIS, de IIS-documentatie in de sectie Zie ook.
 
 Het volgende diagram laat zien hoe Windows PowerShell-webtoegang werkt.
 
@@ -43,10 +43,10 @@ Windows PowerShell-webtoegang vereist webserver (IIS), .NET Framework 4.5 en Win
 
 Windows PowerShell Web Access kunnen externe gebruikers toegang krijgen tot computers in uw organisatie met behulp van Windows PowerShell in een webbrowser. Hoewel Windows PowerShell-webtoegang een handig en krachtige beheerprogramma is, het web gebaseerde toegang beveiligingsrisico met zich meebrengt, en zo veilig mogelijk moet worden geconfigureerd. We raden aan dat beheerders die de Windows PowerShell Web Access-gateway configureren gebruiken beschikbare beveiligingslagen, zowel de cmdlets gebaseerde autorisatieregels opgenomen met Windows PowerShell-webtoegang en beveiliging lagen die beschikbaar in webserver zijn ( IIS) en toepassingen van derden. Deze documentatie bevat zowel onveilige voorbeelden die alleen voor testomgevingen worden aanbevolen, als voorbeelden die worden aanbevolen voor beveiligde implementaties.
 
-## <a name="browser-and-client-device-support"></a>Ondersteuning voor browsers en clientapparaten
+## <a name="browser-and-client-device-support"></a>Ondersteuning voor browsers en clientapparaten apparaten
 
 Windows PowerShell-webtoegang biedt ondersteuning voor de volgende internetbrowsers. Hoewel mobiele browsers officieel niet worden ondersteund, is het mogelijk dat veel kunnen worden uitgevoerd van de website op basis van Windows PowerShell-console.
-Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites kunnen worden uitgevoerd, werken waarschijnlijk wel, maar zijn niet officieel getest.
+Andere browsers die cookies, run JavaScript en HTTPS-websites uitvoeren naar verwachting werken, maar zijn niet officieel getest.
 
 ### <a name="supported-desktop-computer-browsers"></a>Ondersteunde browsers voor desktopcomputers
 
@@ -56,10 +56,10 @@ Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites ku
 - Apple Safari 5.1.2 voor Windows
 - Apple Safari 5.1.2 voor Mac OS
 
-### <a name="minimally-tested-mobile-devices-or-browsers"></a>Mobiele apparaten of browsers die minimaal zijn getest
+### <a name="minimally-tested-mobile-devices-or-browsers"></a>Minimaal zijn getest met mobiele apparaten of browsers
 
 - Windows Phone 7 en 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Google Android via WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari voor iPhone-besturingssysteem 5.0.1
 - Apple Safari voor iPad 2-besturingssysteem 5.0.1
 
@@ -68,8 +68,8 @@ Andere browsers die cookies accepteren en waarop JavaScript en HTTPS-websites ku
 Voor het gebruik van de Windows PowerShell-webtoegang op basis van een web-console, moeten de browsers het volgende doen.
 
 - Cookies van de website van Windows PowerShell Web Access-gateway.
-- HTTPS-pagina's moeten kunnen worden geopend en gelezen.
-- Websites die gebruikmaken van JavaScript, moeten kunnen worden geopend en uitgevoerd.
+- Mogelijk om te openen en HTTPS-pagina's te lezen.
+- Open en voer de websites die gebruikmaken van JavaScript.
 
 ## <a name="recommended-quick-deployment"></a>Aanbevolen snelle implementatie
 
@@ -89,17 +89,17 @@ U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop
    - Op de Windows **Start** met de rechtermuisknop op **Windows PowerShell**, en klik vervolgens op **als Administrator uitvoeren**.
 
    > [!NOTE]
-   > In Windows PowerShell 3.0 en 4.0: Er is niet nodig de module Serverbeheer cmdlet importeren in de Windows PowerShell-sessie voordat u cmdlets die deel van de module uitmaken uitvoert. Een module wordt automatisch geïmporteerd tijdens de eerste keer dat u de cmdlet die deel uitmaakt van de module uitvoert.
+   > In Windows PowerShell 3.0 en 4.0: Er is niet nodig de module Serverbeheer cmdlet importeren in de Windows PowerShell-sessie voordat u cmdlets die deel van de module uitmaken uitvoert. Een module wordt automatisch geïmporteerd de eerste keer dat u een cmdlet die deel uitmaakt van de module uitvoert.
    > Windows PowerShell-cmdlets zijn ook niet hoofdlettergevoelig.
 
-1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer_name* staat voor een externe computer waarop u wilt installeren van Windows PowerShell-webtoegang, indien van toepassing. Met de parameter `-Restart` worden zo nodig de doelservers automatisch opnieuw opgestart.
+1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer_name* staat voor een externe computer waarop u wilt installeren van Windows PowerShell-webtoegang, indien van toepassing. De `-Restart` parameter doelservers automatisch opnieuw opgestart als vereist.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
    > Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets, wordt Web Server (IIS)-beheerhulpprogramma's standaard niet toegevoegd. Als u de beheerhulpprogramma's installeren op dezelfde server als de Windows PowerShell Web Access-gateway wilt, voegt u toe de `-IncludeManagementTools` parameter aan de installatieopdracht (zoals omschreven in deze stap). Als u de Windows PowerShell Web Access-website vanaf een externe computer beheert, installeert u de module IIS-beheer door het installeren van [Remote Server Administration Tools voor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) of [Remote Server Administration Hulpprogramma's voor Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) op de computer van waaruit u wilt beheren van de gateway.
 
-   Als u functies en onderdelen op een offline-VHD wilt installeren, dient u de parameter `-ComputerName` en de parameter `-VHD` toe te voegen. De parameter `-ComputerName` bevat de naam van de server waaraan de VHD moet worden gekoppeld en de parameter `-VHD` bevat het pad naar het VHD-bestand op de opgegeven server.
+   Voor het installeren van functies en onderdelen op een offline-VHD, voegt u zowel de `-ComputerName` parameter en de `-VHD` parameter. De `-ComputerName` parameter bevat de naam van de server waarop u de VHD wilt koppelen en de `-VHD` parameter bevat het pad naar het VHD-bestand op de gespecificeerde server.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
@@ -109,14 +109,14 @@ U kunt de Windows PowerShell Web Access-gateway installeren op een server waarop
 
 ### <a name="configure-the-gateway"></a>De Gateway configureren
 
-De **Install-PswaWebApplication** cmdlet is een snelle manier om Windows PowerShell-webtoegang is geconfigureerd. Hoewel u de parameter `UseTestCertificate` aan de cmdlet `Install-PswaWebApplication` kunt toevoegen om een zelfondertekend SSL-certificaat voor testdoeleinden te installeren, is dit niet veilig. Voor een veilige productieomgeving moet u altijd een geldig SSL-certificaat gebruiken dat door een certificeringsinstantie (CA) is ondertekend. Administrators kunnen het testcertificaat vervangen door een ondertekend certificaat naar keuze met behulp van de IIS-beheerconsole.
+De **Install-PswaWebApplication** cmdlet is een snelle manier om Windows PowerShell-webtoegang is geconfigureerd. Hoewel u kunt toevoegen aan de `UseTestCertificate` parameter voor de `Install-PswaWebApplication` cmdlet voor het installeren van een zelf-ondertekend SSL-certificaat voor test-doeleinden, dit is geen beveiligd; voor een veilige productieomgeving gebruik altijd een geldig SSL-certificaat dat is ondertekend door een certificeringsinstantie (CA). Beheerders kunnen het testcertificaat vervangen met een ondertekend certificaat van hun keuze met behulp van de IIS-beheerconsole.
 
 U kunt Windows PowerShell-webtoegang webtoepassingsconfiguratie door waarop voltooien de `Install-PswaWebApplication` cmdlet of door te voeren op basis van GUI-configuratiestappen in IIS-beheer.
-De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toepassingen, **pswa_pool**) in de **standaardwebsite** container, zoals wordt weergegeven in IIS-beheer; als gewenst is, kunt u opdracht geven de cmdlet om te wijzigen van de standaardcontainer van de site van de web-App. IIS-beheer biedt configuratieopties voor webtoepassingen, zoals opties voor het wijzigen van het poortnummer of het SSL-certificaat (Secure Sockets Layer).
+De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toepassingen, **pswa_pool**) in de **standaardwebsite** container, zoals wordt weergegeven in IIS-beheer; als gewenst is, kunt u opdracht geven de cmdlet om te wijzigen van de standaardcontainer van de site van de web-App. IIS-beheer biedt configuratieopties die beschikbaar voor webtoepassingen zijn, zoals het wijzigen van het poortnummer of het certificaat voor Secure Sockets Layer (SSL).
 
 > **![Opmerking over beveiliging](images/securitynote.jpeg) opmerking over beveiliging** wordt aangeraden dat beheerders de gateway voor het gebruik van een geldig certificaat dat is ondertekend door een CA configureren.
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>De gateway voor Windows PowerShell-webtoegang configureren met een testcertificaat door middel van Install-PswaWebApplication
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Aan de Windows PowerShell Web Access-gateway configureren met een testcertificaat door middel van Install-PswaWebApplication
 
 1. Doe het volgende om een Windows PowerShell-sessie te openen.
 
@@ -127,11 +127,11 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Opmerking over beveiliging](images/securitynote.jpeg) opmerking over beveiliging** de `UseTestCertificate` parameter moet alleen worden gebruikt in een persoonlijke testomgeving. Voor een veilige productieomgeving raden we u aan een geldig certificaat te gebruiken dat is ondertekend door een CA.
+   > **![Opmerking over beveiliging](images/securitynote.jpeg) opmerking over beveiliging** de `UseTestCertificate` parameter moet alleen worden gebruikt in een persoonlijke testomgeving. Voor een veilige productieomgeving, wordt u aangeraden een geldig certificaat dat is ondertekend door een Certificeringsinstantie.
 
-   De cmdlet uit te voeren, installeert de web-App voor Windows PowerShell-webtoegang in de standaardwebsite voor IIS-container. De cmdlet maakt de infrastructuur die is vereist voor het uitvoeren van Windows PowerShell-webtoegang op de standaardwebsite `https://<server_name>/pswa`. Als u de webtoepassing op een andere website wilt installeren, geeft u de websitenaam op door de parameter `WebSiteName` toe te voegen. Als u de naam van de webtoepassing wilt wijzigen (de standaardnaam is `pswa`), voegt u de parameter `WebApplicationName` toe.
+   De cmdlet uit te voeren, installeert de web-App voor Windows PowerShell-webtoegang in de standaardwebsite voor IIS-container. De cmdlet maakt de infrastructuur die is vereist voor het uitvoeren van Windows PowerShell-webtoegang op de standaardwebsite `https://<server_name>/pswa`. Voor het installeren van de web-App in een andere website, bieden u de naam van de website door toe te voegen de `WebSiteName` parameter. De naam van de web-App te wijzigen (de standaardwaarde is `pswa`), voeg de `WebApplicationName` parameter.
 
-   De volgende instellingen worden geconfigureerd door de cmdlet uit te voeren. U kunt deze desgewenst handmatig wijzigen in de IIS-beheerconsole.
+   De volgende instellingen worden geconfigureerd door de cmdlet uit te voeren. Indien gewenst, kunt u deze handmatig op in de console IIS-beheer wijzigen.
 
    - Pad: / pswa
    - ApplicationPool: pswa_pool
@@ -143,9 +143,9 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
    In dit voorbeeld wordt de resulterende website voor Windows PowerShell-webtoegang is `https://<server_name>/myWebApp`.
 
    > [!NOTE]
-   > U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule) en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > U kunt zich niet totdat gebruikers hebben toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule) en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>De gateway voor Windows PowerShell-webtoegang configureren met een geldig certificaat door middel van Install-PswaWebApplication en IIS-beheer
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>De Windows PowerShell Web Access-gateway configureren met een geldig certificaat met behulp van Install-PswaWebApplication en IIS-beheer
 
 1. Doe het volgende om een Windows PowerShell-sessie te openen.
 
@@ -156,14 +156,14 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
 
    `Install-PswaWebApplication`
 
-   De volgende instellingen voor de gateway worden geconfigureerd door de cmdlet uit te voeren. U kunt deze desgewenst handmatig wijzigen in de IIS-beheerconsole. U kunt ook waarden opgeven voor de parameters `WebsiteName` en `WebApplicationName` van de cmdlet `Install-PswaWebApplication`.
+   De volgende gatewayinstellingen worden geconfigureerd door de cmdlet uit te voeren. Indien gewenst, kunt u deze handmatig op in de console IIS-beheer wijzigen. U kunt ook waarden opgeven voor de `WebsiteName` en `WebApplicationName` parameters van de `Install-PswaWebApplication` cmdlet.
 
    - Pad: / pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
    - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
-3. Open de IIS-beheerconsole op een van de volgende manieren.
+3. Open de IIS-beheer-console op een van de volgende manieren.
 
    - Start op het bureaublad van Windows Server Manager door te klikken op **Serverbeheer** in de taakbalk van Windows. Op de **extra** menu in Serverbeheer, klikt u op **Internet Information Services (IIS) Manager**.
    - Op de Windows **Start** scherm, klikt u op **Serverbeheer**.
@@ -185,7 +185,7 @@ De cmdlet installeert standaard de webtoepassing **pswa** (en een groep van toep
    U kunt Windows PowerShell-webtoegang openen door het openen van `https://<server_name>/pswa` in een browservenster.
 
    > [!NOTE]
-   > U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > U kunt zich niet totdat gebruikers hebben toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Configureren van een beperkende autorisatieregel toevoegen
 
@@ -200,7 +200,7 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
    - Het Windows-bureaublad met de rechtermuisknop op **Windows PowerShell** op de taakbalk en klik vervolgens op **als Administrator uitvoeren**.
    - Op de Windows **Start** met de rechtermuisknop op **Windows PowerShell**, en klik vervolgens op **als Administrator uitvoeren**.
 
-2. Optionele stap voor het beperken van gebruikerstoegang met behulp van sessieconfiguraties: Controleer of de sessieconfiguraties die u in uw regels wilt gebruiken al bestaan. Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Optionele stap voor het beperken van toegang voor gebruikers met behulp van sessieconfiguraties: Controleer of de sessieconfiguraties die u wilt gebruiken in uw regels al bestaan. Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Typ het volgende en druk vervolgens op **Enter**.
 
@@ -208,7 +208,7 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
 
    Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op van de gebruiker gemiddelde scripting en cmdlet-behoeften.
 
-   In het volgende voorbeeld krijgt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang om de computer `Contoso_214` te beheren en een sessieconfiguratie genaamd `NewAdminsOnly` te gebruiken.
+   In het volgende voorbeeld wordt een gebruiker met de naam `JSmith` in de `Contoso` domein krijgt toegangsrechten voor het beheren van de computer `Contoso_214`, en gebruikt een sessieconfiguratie genaamd `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -235,11 +235,11 @@ Nadat u Windows PowerShell-webtoegang is geïnstalleerd, kunt u de configuratie 
 3. Op de **installatietype selecteren** pagina, selecteert u **op basis van functie of onderdeel gebaseerde installatie**.
    Klik op **Volgende**.
 
-4. Op de **Selecteer doelserver** pagina, selecteer een server uit de servergroep of Selecteer een offline-VHD. Als u een offline-VHD als de doelserver wilt selecteren, kiest u eerst de server waaraan u de VHD wilt koppelen en selecteert u vervolgens het VHD-bestand. Zie de Help van de Server Manager voor meer informatie over het toevoegen van servers aan uw servergroep. Nadat u de doelserver hebt geselecteerd, klikt u op **volgende**.
+4. Op de **Selecteer doelserver** pagina, selecteer een server uit de servergroep of Selecteer een offline-VHD. Selecteer een offline-VHD als de doelserver, selecteert u eerst de server waarop u de VHD wilt koppelen en selecteer vervolgens het VHD-bestand. Zie de Help van de Server Manager voor meer informatie over het toevoegen van servers aan uw servergroep. Nadat u de doelserver hebt geselecteerd, klikt u op **volgende**.
 
 5. Op de **functies selecteren** pagina van de wizard, vouw **Windows PowerShell**, en selecteer vervolgens **Windows PowerShell-webtoegang**.
 
-6. U wordt gevraagd vereiste onderdelen toe te voegen, zoals .NET Framework 4.5 en functieservices van Webserver (IIS). Voeg de vereiste onderdelen toe en ga door.
+6. Houd er rekening mee dat u wordt gevraagd vereiste onderdelen, zoals .NET Framework 4.5 en functieservices van webserver (IIS) toevoegen. Vereiste onderdelen toevoegen en doorgaan.
 
    > [!NOTE]
    > Windows PowerShell-webtoegang installeren met behulp van de toevoegen Wizard functies en onderdelen installeert ook webserver (IIS), met inbegrip van de module IIS-beheer. De module en andere IIS-beheerhulpprogramma's zijn standaard geïnstalleerd als u de Wizard Functies toevoegen en onderdelen. Als u Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets, zoals beschreven in de volgende procedure, worden standaard niet-beheerhulpprogramma's toegevoegd.
@@ -250,11 +250,11 @@ Nadat u Windows PowerShell-webtoegang is geïnstalleerd, kunt u de configuratie 
 
 ### <a name="configure-the-gateway"></a>De gateway configureren
 
-Instructies in deze sectie zijn voor het installeren van de web-App voor Windows PowerShell-webtoegang in een submap en niet in de hoofdmap van uw website. Deze procedure is het op de grafische interface gebaseerde equivalent van de acties die door de cmdlet `Install-PswaWebApplication` worden uitgevoerd. Deze sectie bevat ook instructies voor het IIS-beheer gebruiken om te configureren van de Windows PowerShell Web Access-gateway als primaire website.
+Instructies in deze sectie zijn voor het installeren van de web-App voor Windows PowerShell-webtoegang in een submap en niet in de hoofdmap van uw website. Deze procedure is de grafische interface gebaseerde equivalent van de acties die worden uitgevoerd door de `Install-PswaWebApplication` cmdlet. Deze sectie bevat ook instructies voor het IIS-beheer gebruiken om te configureren van de Windows PowerShell Web Access-gateway als primaire website.
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS-beheer gebruiken om de gateway te configureren in een bestaande website
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS-beheer gebruiken om te configureren van de gateway in een bestaande website
 
-1. Open de IIS-beheerconsole op een van de volgende manieren.
+1. Open de IIS-beheer-console op een van de volgende manieren.
 
    - Start op het bureaublad van Windows Server Manager door te klikken op **Serverbeheer** in de taakbalk van Windows. Op de **extra** menu in Serverbeheer, klikt u op **Internet Information Services (IIS) Manager**.
    - Op de Windows **Start** scherm, typt u een deel van de naam **Internet Information Services (IIS) Manager**. Klik op de snelkoppeling wanneer deze wordt weergegeven de **Apps** resultaten.
@@ -278,7 +278,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 10. ![](images/SecurityNote.jpeg) Optionele beveiligingsstap:
 
     Dubbelklik op de website is geselecteerd in het structuurdeelvenster, **SSL-instellingen** in het inhoudsvenster.
-    Selecteer **SSL vereisen**, en klik vervolgens in de **acties** deelvenster, klikt u op **toepassen**. (Optioneel) in de **SSL-instellingen** deelvenster kunt u vereisen dat gebruikers verbinding maken met de Windows PowerShell Web Access-website over clientcertificaten beschikken. Aan de hand van een clientcertificaat kan de identiteit van de gebruiker van een clientapparaat worden geverifieerd. Zie voor meer informatie over hoe clientcertificaten de beveiliging van Windows PowerShell Web Access kan verbeteren, [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in deze handleiding.
+    Selecteer **SSL vereisen**, en klik vervolgens in de **acties** deelvenster, klikt u op **toepassen**. (Optioneel) in de **SSL-instellingen** deelvenster kunt u vereisen dat gebruikers verbinding maken met de Windows PowerShell Web Access-website over clientcertificaten beschikken. Clientcertificaten te controleren of de identiteit van de gebruiker van een client-apparaat. Zie voor meer informatie over hoe clientcertificaten de beveiliging van Windows PowerShell Web Access kan verbeteren, [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in deze handleiding.
 
 11. Open een browsersessie op een clientapparaat. Zie voor meer informatie over ondersteunde browsers en apparaten, [Browser en client-apparaat ondersteunt](#browser-and-client-device-support) in dit onderwerp.
 
@@ -287,7 +287,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
     De Windows PowerShell-webtoegang aanmelden pagina van de console moet worden weergegeven in de browser.
 
     > [!NOTE]
-    > U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+    > U kunt zich niet totdat gebruikers hebben toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. In een Windows PowerShell-sessie die is geopend met verhoogde gebruikersrechten (als Administrator uitvoeren) voert u het volgende script uit waarin *application_pool_name* vertegenwoordigt de naam van de groep van toepassingen die u hebt gemaakt in stap 3 de groep van toepassingen toegangsrechten tot het autorisatiebestand geven.
 
@@ -297,15 +297,15 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
     c:\windows\system32\icacls.exe $authorizationFile /grant ('"' + "IIS AppPool\$applicationPoolName" + '":R') > $null
     ```
 
-    Voer de volgende opdracht uit om de bestaande toegangsrechten voor het autorisatiebestand weer te geven:
+    Als u wilt weergeven van bestaande toegangsrechten voor het autorisatiebestand, voer de volgende opdracht:
 
     ```powershell
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>IIS-beheer gebruiken om de gateway te configureren als een primaire website met een testcertificaat
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>IIS-beheer gebruiken om te configureren van de gateway als primaire website met een testcertificaat
 
-1. Open de IIS-beheerconsole op een van de volgende manieren.
+1. Open de IIS-beheer-console op een van de volgende manieren.
 
    - Start op het bureaublad van Windows Server Manager door te klikken op **Serverbeheer** in de taakbalk van Windows. Op de **extra** menu in Serverbeheer, klikt u op **Internet Information Services (IIS) Manager**.
    - Op de Windows **Start** scherm, typt u een deel van de naam **Internet Information Services (IIS) Manager**. Klik op de snelkoppeling wanneer deze wordt weergegeven de **Apps** resultaten.
@@ -316,20 +316,20 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
 
 1. Typ een naam voor de website, zoals **Windows PowerShell-webtoegang**.
 
-1. Er wordt automatisch een groep toepassingen gemaakt voor de nieuwe website. Voor het gebruik van een andere groep van toepassingen, klikt u op **Selecteer** om te selecteren van een groep van toepassingen om te koppelen aan de nieuwe website. Selecteer de alternatieve groep van toepassingen in de **groep van toepassingen selecteren** in het dialoogvenster en klik vervolgens op **OK**.
+1. Een groep van toepassingen wordt automatisch gemaakt voor de nieuwe website. Voor het gebruik van een andere groep van toepassingen, klikt u op **Selecteer** om te selecteren van een groep van toepassingen om te koppelen aan de nieuwe website. Selecteer de alternatieve groep van toepassingen in de **groep van toepassingen selecteren** in het dialoogvenster en klik vervolgens op **OK**.
 
 1. In de **fysiek pad** tekst vak, gaat u naar % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. In de **Type** veld van de **Binding** gedeelte **https**.
 
-1. Wijs aan de website een poortnummer toe dat nog niet wordt gebruikt door een andere site of toepassing.
+1. Een poortnummer toewijzen aan de website die nog niet wordt gebruikt door een andere site of toepassing.
    Openstaande poorten vinden, kunt u uitvoeren de **netstat** opdracht in een opdrachtpromptvenster. Het standaardpoortnummer is 443.
 
-   Wijzig de standaardpoort als een andere website al gebruikmaakt van nummer 443 of als u andere veiligheidsredenen hebt om het poortnummer te wijzigen. Als een andere website die wordt uitgevoerd op de gatewayserver van de geselecteerde poort gebruikmaakt, een waarschuwing wordt weergegeven wanneer u klikt op **OK** in de **Website toevoegen** in het dialoogvenster. U moet een niet-gebruikte poort gebruiken voor het uitvoeren van Windows PowerShell-webtoegang.
+   Als een andere website al gebruikmaakt van 443 of als u andere veiligheidsredenen het poortnummer wijzigen hebt, kunt u de standaardpoort wijzigen. Als een andere website die wordt uitgevoerd op de gatewayserver van de geselecteerde poort gebruikmaakt, een waarschuwing wordt weergegeven wanneer u klikt op **OK** in de **Website toevoegen** in het dialoogvenster. U moet een niet-gebruikte poort gebruiken voor het uitvoeren van Windows PowerShell-webtoegang.
 
 1. (Optioneel) Geef de naam van een host die zinvol is voor uw organisatie en gebruikers, zoals zo nodig voor uw organisatie **`www.contoso.com`**. Klik op **OK**.
 
-1. Voor een veiliger productieomgeving raden we u ten sterkste aan een geldig certificaat op te geven dat is ondertekend door een CA. Omdat gebruikers alleen verbinding met Windows PowerShell-internettoegang via een HTTPS-website maken kunnen, moet u een SSL-certificaat opgeven. Zie [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
+1. Voor een veiliger productieomgeving, wordt aangeraden een geldig certificaat dat is ondertekend door een Certificeringsinstantie bieden. Omdat gebruikers alleen verbinding met Windows PowerShell-internettoegang via een HTTPS-website maken kunnen, moet u een SSL-certificaat opgeven. Zie [het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp voor meer informatie over het verkrijgen van een certificaat.
 
 1. Klik op **OK** sluiten de **Website toevoegen** in het dialoogvenster.
 
@@ -341,7 +341,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
    c:\windows\system32\icacls.exe $authorizationFile /grant ('"' + "IIS AppPool\$applicationPoolName" + '":R') > $null
    ```
 
-   Voer de volgende opdracht uit om de bestaande toegangsrechten voor het autorisatiebestand weer te geven:
+   Als u wilt weergeven van bestaande toegangsrechten voor het autorisatiebestand, voer de volgende opdracht:
 
    ```powershell
    c:\windows\system32\icacls.exe $authorizationFile
@@ -356,7 +356,7 @@ Instructies in deze sectie zijn voor het installeren van de web-App voor Windows
    Omdat de primaire-website naar de map Windows PowerShell-webtoegang verwijst, de aanmeldingspagina van Windows PowerShell-webtoegang in de browser moet worden weergegeven bij het openen van `https://<gateway_server_name>`. U hoeft niet om toe te voegen **/pswa** naar de URL.
 
    > [!NOTE]
-   > U kunt zich pas aanmelden nadat gebruikers toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+   > U kunt zich niet totdat gebruikers hebben toegang tot de website is verleend door autorisatieregels toe te voegen. Zie voor meer informatie, [configureren van een beperkende autorisatieregel](#configure-a-restrictive-authorization-rule), in dit onderwerp en [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Configureren van een beperkende autorisatieregel toevoegen
 
@@ -371,9 +371,9 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
    - Het Windows-bureaublad met de rechtermuisknop op **Windows PowerShell** op de taakbalk en klik vervolgens op **als Administrator uitvoeren**.
    - Op de Windows **Start** met de rechtermuisknop op **Windows PowerShell**, en klik vervolgens op **als Administrator uitvoeren**.
 
-1. ![Opmerking over beveiliging](images/SecurityNote.jpeg) Optionele stap voor het beperken van gebruikerstoegang met behulp van sessieconfiguraties:
+1. ![Opmerking over beveiliging](images/SecurityNote.jpeg) Optionele stap voor het beperken van toegang voor gebruikers met behulp van sessieconfiguraties:
 
-   Controleer of de sessieconfiguraties die u in uw regels wilt gebruiken al bestaan. Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+   Controleer of de sessieconfiguraties die u wilt gebruiken in uw regels al bestaan. Als ze zijn nog geen is gemaakt, gebruikt u instructies voor het maken van sessieconfiguraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Typ het volgende en druk vervolgens op **Enter**.
 
@@ -381,7 +381,7 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
 
    Deze autorisatieregel verleent een bepaalde gebruikerstoegang tot een computer op het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot een bepaalde sessieconfiguratie die is afgestemd op de gebruiker '™ s typische scripting en cmdlet-behoeften.
 
-   In het volgende voorbeeld krijgt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang om de computer `Contoso_214` te beheren en een sessieconfiguratie genaamd `NewAdminsOnly` te gebruiken.
+   In het volgende voorbeeld wordt een gebruiker met de naam `JSmith` in de `Contoso` domein krijgt toegangsrechten voor het beheren van de computer `Contoso_214`, en gebruikt een sessieconfiguratie genaamd `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -393,9 +393,9 @@ Zie voor meer informatie over Windows PowerShell-webtoegang autorisatieregels en
 
 ## <a name="configure-a-genuine-certificate"></a>Een legitiem certificaat configureren
 
-Gebruik voor een veilige productieomgeving altijd een geldig SSL-certificaat dat is ondertekend door een certificeringsinstantie (CA). De procedure in deze sectie beschrijft hoe u een geldig SSL-certificaat van een CA kunt verkrijgen en toepassen.
+Gebruik voor een veilige productieomgeving altijd een geldig SSL-certificaat dat is ondertekend door een certificeringsinstantie (CA). De procedure in deze sectie wordt beschreven hoe u verkrijgen en toepassen van een geldig SSL-certificaat van een CA.
 
-### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>Een SSL-certificaat configureren in IIS-beheer
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>Het configureren van een SSL-certificaat in IIS-beheer
 
 1. Selecteer de server waarop Windows PowerShell-webtoegang is geïnstalleerd in het structuurdeelvenster van IIS-beheer.
 
@@ -404,19 +404,19 @@ Gebruik voor een veilige productieomgeving altijd een geldig SSL-certificaat dat
 1. In de **acties** deelvenster, een van de volgende handelingen uit. Zie voor meer informatie over het configureren van servercertificaten in IIS [Configuring Server Certificates in IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Klik op **importeren** aan een bestaand en geldig certificaat importeren vanaf een locatie op uw netwerk.
-   - Klik op **certificaataanvraag maken** , zoals een certificaat aanvragen bij een Certificeringsinstantie [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), of [GeoTrust](https://www.geotrust.com/). De algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
+   - Klik op **certificaataanvraag maken** , zoals een certificaat aanvragen bij een Certificeringsinstantie [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), of [GeoTrust](https://www.geotrust.com/). Algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
 
      Bijvoorbeeld, als de clientbrowser aanvragen `http://www.contoso.com/`, de algemene naam moet ook `http://www.contoso.com/`. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows PowerShell Web Access-gateway met een certificaat.
 
-   - Klik op **een zelfondertekend certificaat maken** te maken van een certificaat dat u direct gebruiken kunt en later door een CA hebt ondertekend indien gewenst. Geef een beschrijvende naam voor de zelf-ondertekend certificaat, bijvoorbeeld **Windows PowerShell-webtoegang**. Deze optie wordt niet als veilig beschouwd en wordt alleen aanbevolen voor een persoonlijke testomgeving.
+   - Klik op **een zelfondertekend certificaat maken** te maken van een certificaat dat u direct gebruiken kunt en later door een CA hebt ondertekend indien gewenst. Geef een beschrijvende naam voor de zelf-ondertekend certificaat, bijvoorbeeld **Windows PowerShell-webtoegang**. Deze optie is niet als veilig beschouwd en wordt alleen aanbevolen voor een persoonlijke testomgeving.
 
 1. Na het maken of een certificaat aanvragen, selecteert u de website waarop het certificaat wordt toegepast (bijvoorbeeld **Default Web Site**) in de IIS-beheer in het deelvenster met de boomstructuur en klik vervolgens op **bindingen** in de **Acties** deelvenster.
 
-1. In de **sitebinding toevoegen** dialoogvenster vak, toe te voegen een **https** binding voor de site als een nog niet wordt weergegeven. Als u geen zelfondertekend certificaat gebruikt, geeft u de hostnaam op uit stap 3 van deze procedure. Als u een zelfondertekend certificaat gebruikt, is deze stap niet vereist.
+1. In de **sitebinding toevoegen** dialoogvenster vak, toe te voegen een **https** binding voor de site als een nog niet wordt weergegeven. Als u niet een zelfondertekend certificaat gebruikt, geeft u de naam van de host uit stap 3 van deze procedure. Als u een zelfondertekend certificaat gebruikt, is deze stap niet vereist.
 
 1. Selecteer het certificaat dat u hebt gemaakt in stap 3 van deze procedure of verkregen en klik vervolgens op **OK**.
 
-## <a name="using-the-web-based-windows-powershell-console"></a>De Windows PowerShell-webconsole gebruiken
+## <a name="using-the-web-based-windows-powershell-console"></a>Met behulp van de website op basis van Windows PowerShell-console
 
 Nadat u Windows PowerShell-webtoegang is geïnstalleerd en configuratie van de gateway is voltooid zoals beschreven in dit onderwerp, is de Windows PowerShell-webconsole klaar voor gebruik. Zie voor meer informatie over het ophalen van in de webconsole gestart, [via de Console Windows PowerShell Web gebaseerde](use-the-web-based-windows-powershell-console.md).
 

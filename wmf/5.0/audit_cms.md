@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058995"
 ---
 # <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cmdlets voor Cryptographic Message-syntaxis (CMS)
 

@@ -1,16 +1,16 @@
 ---
 ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
-title: Informatie over belangrijke concepten van PowerShell
+title: Informatie over belangrijke PowerShell-concepten
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058587"
 ---
-# <a name="understanding-important-powershell-concepts"></a>Informatie over belangrijke concepten van PowerShell
+# <a name="understanding-important-powershell-concepts"></a>Informatie over belangrijke PowerShell-concepten
 
 Het ontwerp van de PowerShell kan worden geïntegreerd met de concepten van veel verschillende omgevingen. Aantal van de concepten bekend zijn voor mensen met ervaring in de houders of programmeeromgevingen worden. Maar weet weinig mensen over al deze. Kijken naar enkele van deze concepten biedt een handig overzicht van de shell.
 
@@ -38,6 +38,6 @@ Omdat PowerShell automatisch parseert en de opdrachtregel, verwerkt de **-?** pa
 > Als u een grafische toepassing in PowerShell uitvoert, wordt het venster voor de toepassing wordt geopend.
 > PowerShell is opgetreden alleen bij verwerking van de opdrachtregel invoer u levering of de uitvoer van de toepassing die wordt geretourneerd naar het consolevenster. Dit heeft geen invloed op hoe de toepassing intern werkt.
 
-## <a name="powershell-uses-some-c-syntax"></a>Sommige syntaxissen C# maakt gebruik van PowerShell
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell maakt gebruik van sommige C# syntaxis
 
-PowerShell is gebouwd op het .NET Framework. Deze deelt sommige functies van de syntaxis en trefwoorden met de C#-programmeertaal. Leren werken met PowerShell kan veel gemakkelijker voor meer informatie over C#. Als u al bekend met C# bent, maken deze overeenkomsten kunnen leren werken met PowerShell gemakkelijker.
+PowerShell is gebouwd op het .NET Framework. Deze deelt sommige functies van de syntaxis en trefwoorden met de C# programmeertaal. Leren werken met PowerShell kunt u veel gemakkelijker om te leren C#. Als u al bekend met bent C#, deze overeenkomsten leren werken met PowerShell gemakkelijker kunnen maken.

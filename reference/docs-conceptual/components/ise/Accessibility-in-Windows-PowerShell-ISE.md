@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058451"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -62,7 +62,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 
 |Actie|Sneltoetsen|Gebruik in|
 |----------|----------------------|----------|
-|**Kopiëren**|Ctrl + C|Scriptvenster, consolevenster|
+|**kopiëren**|Ctrl + C|Scriptvenster, consolevenster|
 |**Knippen**|CTRL + X|Scriptvenster, consolevenster|
 |**Zoeken in Script**|CTRL+F|Scriptvenster|
 |**Volgende zoeken in Script**|F3|Scriptvenster|
@@ -70,7 +70,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 |**Plakken**|Ctrl + V|Scriptvenster, consolevenster|
 |**Redo**|CTRL + Y|Scriptvenster, consolevenster|
 |**Vervang in Script**|CTRL + H|Scriptvenster|
-|**Opslaan**|CTRL+S|Scriptvenster|
+|**Opslaan**|CTRL + S|Scriptvenster|
 |**Alles selecteren**|Ctrl + A|Scriptvenster, consolevenster|
 |**Ongedaan maken**|CTRL + Z|Scriptvenster, consolevenster|
 
@@ -81,7 +81,7 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het sc
 |Actie|Sneltoets|
 |----------|---------------------|
 |**Nieuw**|CTRL+N|
-|**Open**|CTRL + O|
+|**openen**|CTRL + O|
 |**Uitvoeren**|F5|
 |**Selectie uitvoeren**|F8|
 |**Stop Execution**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst geselecteerd).|
@@ -131,7 +131,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 |**Stap in**|S|Consolevenster bij het opsporen van fouten in een script|
 |**Stap Over**|V|Consolevenster bij het opsporen van fouten in een script|
 |**Stap uit**|O|Consolevenster bij het opsporen van fouten in een script|
-|**Herhaal de laatste opdracht** (voor stap of stap Over)|ENTER|Consolevenster bij het opsporen van fouten in een script|
+|**Herhaal de laatste opdracht** (voor stap of stap Over)|VOER|Consolevenster bij het opsporen van fouten in een script|
 |**Aanroepstack weergeven**|K|Consolevenster bij het opsporen van fouten in een script|
 |**Stop de foutopsporing**|Q|Consolevenster bij het opsporen van fouten in een script|
 |**Overzicht van het Script**|L|Consolevenster bij het opsporen van fouten in een script|
