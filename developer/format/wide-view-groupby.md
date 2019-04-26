@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083651"
 ---
 # <a name="wide-view-groupby"></a>Brede weergave (GroupBy)
 
@@ -30,7 +30,7 @@ Dit voorbeeld laat zien hoe u een brede weergave met beveiligingsgroepen van imp
    > [!WARNING]
    > Deze opmaak bestand definieert de weergave van een object dat al is gedefinieerd door een Windows PowerShell opmaak van bestanden. Moet u de `prependPath` parameter wanneer u de cmdlet uitvoert, en deze opmaak kan niet worden geladen als een module-bestand.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Ziet u
 
 Deze opmaak bestand ziet u de volgende XML-elementen:
 

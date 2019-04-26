@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-Package Management-Resource
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077616"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC-Package Management-Resource
 
@@ -39,7 +39,7 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 | --- | --- |
 | Naam| Hiermee geeft u de naam van het pakket dat moet worden geïnstalleerd of verwijderd.|
 | AdditionalParameters| Specifieke hashtabel van de provider van de parameters die worden doorgegeven aan `Get-Package -AdditionalArguments`. Bijvoorbeeld, kunt u aanvullende parameters, zoals het doelpad doorgeven voor NuGet-provider.|
@@ -55,7 +55,7 @@ PackageManagement [string] #ResourceName
 
 De volgende tabel bevat opties voor de eigenschap AdditionalParameters.
 
-| Parameter | Beschrijving |
+| Parameter | Description |
 | --- | --- |
 | DestinationPath| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee geeft u een locatie waar u het pakket dat moet worden geïnstalleerd.|
 | InstallationPolicy| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee bepaalt u of u het pakket met de bron vertrouwt. Een van: `Untrusted`, `Trusted`.|
