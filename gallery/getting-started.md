@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Aan de slag met de PowerShell Gallery
 ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
-ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52576886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084756"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
 
@@ -20,7 +20,7 @@ De PowerShell Gallery is een pakketopslagplaats met scripts, modules en DSC-reso
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Detectie van pakketten van de PowerShell Gallery
 
-U kunt pakketten in de PowerShell Gallery vinden met behulp van de **zoeken** besturingselement in de PowerShell Gallery [startpagina](https://www.powershellgallery.com), of door te bladeren door de Modules en -Scripts uit de [pakketten pagina ](https://www.powershellgallery.com/packages). U kunt pakketten vanuit de PowerShell Gallery ook vinden door te voeren de [Find-Module][], [sleutelwoorden zoeken-dscresource bieden], en [Find-Script][] cmdlets, afhankelijk van het pakkettype met `-Repository PSGallery`.
+U kunt pakketten in de PowerShell Gallery vinden met behulp van de **zoeken** besturingselement in de PowerShell Gallery [startpagina](https://www.powershellgallery.com), of door te bladeren door de Modules en -Scripts uit de [pakketten pagina ](https://www.powershellgallery.com/packages). U kunt pakketten vanuit de PowerShell Gallery ook vinden door te voeren de [Find-Module][], [Find-DscResource], en [Find-Script][] cmdlets, afhankelijk van het pakkettype met `-Repository PSGallery`.
 
 U kunt de resultaten van de galerie filteren met behulp van de volgende parameters:
 
@@ -28,14 +28,14 @@ U kunt de resultaten van de galerie filteren met behulp van de volgende paramete
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Label
+- Code
 - Bevat
-- Sleutelwoorden voor dscresource bieden
+- DscResource
 - RoleCapability
 - Opdracht
-- Filter
+- Filteren
 
-Als u alleen geïnteresseerd in het detecteren van specifieke DSC-resources in de galerie bent, kunt u uitvoeren de [sleutelwoorden zoeken-dscresource bieden] cmdlet. Zoeken naar sleutelwoorden-dscresource bieden retourneert gegevens van DSC-resources die zijn opgenomen in de galerie.
+Als u alleen geïnteresseerd in het detecteren van specifieke DSC-resources in de galerie bent, kunt u uitvoeren de [Find-DscResource] cmdlet. Zoeken naar sleutelwoorden-dscresource bieden retourneert gegevens van DSC-resources die zijn opgenomen in de galerie.
 Omdat de DSC-resources worden altijd geleverd als onderdeel van een module, moet u nog steeds uitgevoerd [Install-Module][] voor het installeren van de DSC-resources.
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>Meer informatie over pakketten in de PowerShell Gallery
@@ -62,15 +62,15 @@ Als u ontdekt een pakket dat u denkt dat niet is gepubliceerd in goed vertrouwen
 
 ### <a name="install"></a>Installeren
 
-Voor het installeren van een pakket uit de galerie voor gebruik, voer een de [Install-Module][] of [installatiescript][] cmdlet, afhankelijk van het pakkettype.
+Voor het installeren van een pakket uit de galerie voor gebruik, voer een de [Install-Module][] of [Script voor installatie][] cmdlet, afhankelijk van het pakkettype.
 
 [Install-Module][] installeert van de module `$env:ProgramFiles\WindowsPowerShell\Modules` standaard.
 Hiervoor moet een administrator-account. Als u de `-Scope CurrentUser` parameter, de module is geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[installatiescript][] wordt geïnstalleerd met het script `$env:ProgramFiles\WindowsPowerShell\Scripts` standaard.
+[Script voor installatie][] wordt geïnstalleerd met het script `$env:ProgramFiles\WindowsPowerShell\Scripts` standaard.
 Hiervoor moet een administrator-account. Als u de `-Scope CurrentUser` parameter, het script is geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Standaard [Install-Module][] en [installatiescript][] installeert de meest recente versie van een pakket.
+Standaard [Install-Module][] en [Script voor installatie][] installeert de meest recente versie van een pakket.
 Voor het installeren van een oudere versie van het pakket, voeg de `-RequiredVersion` parameter.
 
 ### <a name="deploy"></a>Implementeer
@@ -83,7 +83,7 @@ Zie voor meer informatie over Azure Automation, de [Azure Automation](/azure/aut
 
 Voer de [Update-Module] [] of [updatescript] [] cmdlet voor het bijwerken van pakketten geïnstalleerd vanuit de PowerShell Gallery. Wanneer uitvoert zonder extra parameters, [] [-Update-Module] probeert bij te werken van alle modules die zijn geïnstalleerd door te voeren [Install-Module][]. Als u wilt bijwerken selectief modules, toevoegen de `-Name` parameter. 
 
-Op dezelfde manier als uitvoert zonder extra parameters, [updatescript] [] ook probeert bij te werken alle scripts die zijn geïnstalleerd door te voeren [installatiescript][]. Als u selectief-bijwerken scripts, wilt toevoegen de `-Name` parameter.
+Op dezelfde manier als uitvoert zonder extra parameters, [updatescript] [] ook probeert bij te werken alle scripts die zijn geïnstalleerd door te voeren [Script voor installatie][]. Als u selectief-bijwerken scripts, wilt toevoegen de `-Name` parameter.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Lijst met pakketten die u hebt geïnstalleerd vanuit de PowerShell Gallery
 
@@ -91,13 +91,13 @@ Als u wilt weten welke modules die u hebt geïnstalleerd vanuit de PowerShell Ga
 
 Op dezelfde manier als u wilt weten welke scripts die u hebt geïnstalleerd vanuit de PowerShell Gallery, voer de [Get-InstalledScript][] cmdlet. Met deze opdracht worden alle van de scripts die u hebt op uw systeem en die rechtstreeks vanuit de PowerShell Gallery zijn geïnstalleerd.
 
-[sleutelwoorden zoeken-dscresource bieden]: /powershell/module/powershellget/Find-DscResource
+[Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module
 [Find-Script]: /powershell/module/powershellget/Find-Script
 [Get-InstalledModule]: /powershell/module/powershellget/Get-InstalledModule
 [Get-InstalledScript]: /powershell/module/powershellget/Get-InstalledScript
 [Install-Module]: /powershell/module/powershellget/Install-Module
-[installatiescript]: /powershell/module/powershellget/Install-Script
+[Script voor installatie]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository

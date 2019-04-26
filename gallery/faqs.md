@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galerie, powershell, cmdlet, psgallery
 title: Veelgestelde vragen over de PowerShell Gallery
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084611"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -93,7 +93,7 @@ Elk script dat in de sectie PSScriptInfo, de volgende gegevens bevat kan worden 
 
 Typ wat u zoekt in het tekstvak in. Bijvoorbeeld, als u zoeken van modules die zijn gerelateerd aan Azure SQL wilt, typ 'azure sql'. Onze zoekmachine zoekt naar deze trefwoorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en op alle metagegevens. Vervolgens, op basis van een gewogen kwaliteit score, worden weergegeven de dichtstbijzijnde overeenkomsten. U kunt ook zoeken door specifieke veld veld: 'waarde'-syntaxis in de query voor de volgende velden:
 
-- Labels
+- Tags
 - Functies
 - Cmdlets
 - DscResources

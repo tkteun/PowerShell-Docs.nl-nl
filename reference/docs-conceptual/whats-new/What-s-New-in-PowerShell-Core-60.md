@@ -3,11 +3,11 @@ title: Wat is er nieuw in PowerShell Core 6.0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.0?
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059012"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
@@ -184,7 +184,7 @@ Dit betekent dat alle ingebouwde cmdlets die gebruikmaken van de `-Encoding` par
 De volgende cmdlets worden beïnvloed door deze wijziging:
 
 - Inhoud toevoegen
-- Exporteren-Clixml
+- Export-Clixml
 - Export-Csv
 - Export-PSSession
 - Format-Hex
@@ -233,7 +233,7 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 ## <a name="engine-updates"></a>Engine-updates
 
 - `$PSVersionTable` vier nieuwe eigenschappen heeft:
-  - `PSEdition`: Dit is ingesteld op `Core` op PowerShell Core en `Desktop` op Windows PowerShell
+  - `PSEdition`: Deze optie is ingesteld op `Core` op PowerShell Core en `Desktop` op Windows PowerShell
   - `GitCommitId`: Dit is de Git-doorvoer-ID van de Git-branch of tag waarop PowerShell is gebouwd.
     Bij builds voor vrijgegeven, deze waarschijnlijk zijn hetzelfde als `PSVersion`.
   - `OS`: Dit is een OS-versie-tekenreeks geretourneerd door `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
@@ -274,7 +274,7 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 - Voeg `-SkipHeaderValidation` overschakelen naar de web-cmdlets voor de ondersteuning van headers toe te voegen zonder het valideren van de headerwaarde. (#4085)
 - Web-cmdlets voor het HTTPS-certificaat van de server niet valideren als vereist inschakelen.
 - Verificatieparameters toevoegen aan de web-cmdlets. (#5052) (Bedankt [ @markekraus ](https://github.com/markekraus))
-  - Voeg `-Authentication` waarmee de drie opties: basisverificatie, OAuth en Bearer.
+  - Voeg `-Authentication` waarmee de drie opties: Basic, OAuth en Bearer.
   - Voeg `-Token` ophalen OAuth en Bearer-opties voor het bearer-token.
   - Voeg `-AllowUnencryptedAuthentication` authentication dat is opgegeven voor een transportschema dan HTTPS overslaan.
 - Voeg `-ResponseHeadersVariable` naar `Invoke-RestMethod` waarmee het vastleggen van antwoordheaders. (#4888) (Bedankt [ @markekraus ](https://github.com/markekraus))
@@ -343,12 +343,12 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 - Inschakelen van argument automatisch aanvullen voor `-ExcludeProperty` en `-ExpandProperty` van `Select-Object`. (#3443) (Dank aan [ @iSazonov ](https://github.com/iSazonov)!)
 - Is een fout opgelost in de tab-Aanvulling kunnen `native.exe --<tab>` aanroep in systeemeigen completer mogelijk maakt. (#3633) (Dank aan [ @powercode ](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Belangrijke wijzigingen
+## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
 We hebben een aantal belangrijke wijzigingen in PowerShell Core 6.0 geïntroduceerd.
 Meer informatie over deze in detail zien [belangrijke wijzigingen in PowerShell Core 6.0][breaking-changes].
 
-## <a name="debugging"></a>Foutopsporing
+## <a name="debugging"></a>Debugging
 
 - Ondersteuning voor step-in Foutopsporing op afstand voor `Invoke-Command -ComputerName`. (#3015)
 - Binder logboekregistratie voor foutopsporing in PowerShell Core inschakelen
@@ -394,6 +394,6 @@ U vindt meer informatie over hoe deze worden gebruikt in deze [blogbericht][tele
 [FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview

@@ -3,11 +3,11 @@ title: Informatie over bestandscodering in VSCode en PowerShell
 description: Bestandscodering in VSCode en PowerShell configureren
 ms.date: 02/28/2019
 ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058434"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Informatie over bestandscodering in VSCode en PowerShell
 
