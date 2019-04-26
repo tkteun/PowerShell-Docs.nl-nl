@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxArchive-Resource
 ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078041"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive-Resource
 
@@ -29,9 +29,9 @@ nxArchive <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
-| Bronpad| Hiermee geeft u het bronpad van het bestand. Dit moet een .tar .zip, of..GZ-bestand. |
+| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een .tar .zip, of..GZ-bestand. |
 | DestinationPath| Hiermee geeft u de locatie waar u om te controleren of de dat inhoud van het archief worden geëxtraheerd.|
 | Controlesom| Definieert het type te gebruiken bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime","mtime"of 'md5'. De standaardwaarde is 'md5'.|
 | Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een directory die is niet leeg), een fout leidt. Met behulp van de **Force** eigenschap heeft voorrang op dergelijke fouten. De standaardwaarde is **$false**.|

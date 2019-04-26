@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Wat is er nieuw in PowerShell 5.0
 ms.openlocfilehash: c9a3a360d0143d4b384cec226c36fe6565eb6040
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085912"
 ---
 # <a name="whats-new-with-powershell-50"></a>Wat is er nieuw in PowerShell 5.0
 Windows PowerShell® 5.0 bevat belangrijke nieuwe functies die het gebruik ervan uitbreiden, de bruikbaarheid wordt verbeterd, en kunnen u zelf regelen en beheren van Windows gebaseerde omgevingen gemakkelijker en uitgebreider.  Er zijn de belangrijke verbeteringen op het gebied van Desired State Configuration, beveiliging, prestaties, externe toegang en verbeteringen van de taal.

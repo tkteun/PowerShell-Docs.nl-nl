@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Met behulp van de ontwerpfunctie voor Resource-hulpprogramma
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076664"
 ---
 # <a name="using-the-resource-designer-tool"></a>Met behulp van de ontwerpfunctie voor Resource-hulpprogramma
 
@@ -26,7 +26,7 @@ Naam van de beschrijving
 * **UserName**: Sleuteleigenschap die een unieke identificatie van de gebruiker.
 * **Zorg ervoor dat**: Geeft aan of het gebruikersaccount moet aanwezig zijn of niet aanwezig. Deze parameter heeft slechts twee mogelijke waarden zijn.
 * **DomainCredential**: Het domeinwachtwoord voor de gebruiker.
-* **Wachtwoord**: Het gewenste wachtwoord voor de gebruiker om toe te staan een configuratie van het wachtwoord indien nodig wijzigen.
+* **wachtwoord**: Het gewenste wachtwoord voor de gebruiker om toe te staan een configuratie van het wachtwoord indien nodig wijzigen.
 
 Voor het maken van de eigenschappen, gebruiken we de **New-xDscResourceProperty** cmdlet. De volgende PowerShell-opdrachten maken de eigenschappen die hierboven worden beschreven.
 

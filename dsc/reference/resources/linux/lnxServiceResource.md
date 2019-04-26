@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxService-Resource
 ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077686"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService-Resource
 
@@ -28,7 +28,7 @@ nxService <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-| Eigenschap | Beschrijving |
+| Eigenschap | Description |
 |---|---|
 | Naam| De naam van de service/daemon te configureren.|
 | Controller| Het type servicecontroller te gebruiken bij het configureren van de service.|

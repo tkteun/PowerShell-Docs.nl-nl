@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, resource, galerie, instellen
 title: Installeren van extra DSC-Resources
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080070"
 ---
 # <a name="install-additional-dsc-resources"></a>Installeren van extra DSC-Resources
 
@@ -18,10 +18,10 @@ Dit is een overzicht van de OOB-resources dat is opgenomen in PowerShell 4.0 en 
 > [!NOTE]
 > Dit is een onvolledige lijst, zoals het aantal resources OOB is toegenomen bij elke versie van PowerShell.
 
-|Informatiebron  |Beschrijving  |
+|Informatiebron  |Description  |
 |---------|---------|
 |**File**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **bestemming** en wordt deze bijgewerkt wanneer de **bron** wijzigingen door het vergelijken van datums, controlesommen en hashes.|
-|**Archiveren**|Hiermee wordt de archieven en een opgegeven locatie. Valideert de archieven met een opgegeven **controlesom**.|
+|**Archief**|Hiermee wordt de archieven en een opgegeven locatie. Valideert de archieven met een opgegeven **controlesom**.|
 |**Omgeving**|Hiermee beheert u omgevingsvariabelen.|
 |**Groep**|Lokale groepen worden beheerd en besturingselementen van groepslidmaatschap.|
 |**Log**|Schrijft berichten naar de `Microsoft-Windows-Desired State Configuration/Analytic` gebeurtenislogboek.|

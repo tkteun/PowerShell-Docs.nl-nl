@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie, service, instellen
 title: Een configuratie schrijven, compileren en toepassen
 ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59506815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080010"
 ---
 > Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 

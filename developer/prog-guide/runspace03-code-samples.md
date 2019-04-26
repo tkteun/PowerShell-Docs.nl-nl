@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
 ms.openlocfilehash: 6060c535f07814e4977b72068927205cefe6d012
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081475"
 ---
 # <a name="runspace03-code-samples"></a>Runspace03-codevoorbeelden
 
@@ -26,7 +26,7 @@ Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken v
 
 Volledig voorbeeld van code, Zie de volgende onderwerpen.
 
-|Language|Onderwerp|
+|Taal|Onderwerp|
 |--------------|-----------|
 |C#|[RunSpace03 (C#) codevoorbeeld](./runspace03-csharp-code-sample.md)|
 |VB.NET|[RunSpace03 codevoorbeeld (VB.NET)](./runspace03-vb-net-code-sample.md)|
