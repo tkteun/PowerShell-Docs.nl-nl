@@ -10,83 +10,81 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068484"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Invoerverwerkingsmethoden voor cmdlets
 
-Cmdlets moet een of meer van de verwerking van methoden die worden beschreven in dit onderwerp om hun werk te verrichten invoer overschrijven. Deze methoden kunt de cmdlet uit te voeren vooraf verwerken bewerkingen, invoer verwerkingen en na verwerking van bewerkingen. Deze methoden kunnen u de verwerking van de cmdlet stop.
+Cmdlets moet een of meer van de verwerking van methoden die worden beschreven in dit onderwerp om hun werk te verrichten invoer overschrijven.
+Deze methoden kunt de cmdlet bewerkingen van het vooraf verwerken, verwerking van invoer en nabewerking uit te voeren.
+Deze methoden kunnen u de verwerking van de cmdlet stop.
+Zie voor een uitgebreider voorbeeld over het gebruik van deze methoden, [SelectStr zelfstudie](selectstr-tutorial.md).
 
-## <a name="pre-processing-tasks"></a>Taken vooraf verwerken
+## <a name="pre-processing-operations"></a>Vooraf verwerken bewerkingen
 
-Cmdlets moet worden overschreven de [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) methode om toe te voegen voorverwerking bewerkingen die geldig zijn voor alle records die later worden verwerkt door de cmdlet. Wanneer een opdracht pijplijn wordt verwerkt door Windows PowerShell, aanroepen Windows PowerShell met deze methode eenmaal voor elk exemplaar van de cmdlet in de pijplijn. Zie voor meer informatie over hoe de opdracht-pipeline in Windows PowerShell wordt aangeroepen, [Cmdlet verwerking Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Cmdlets moet worden overschreven de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode om toe te voegen voorverwerking bewerkingen die geldig zijn voor alle records die later worden verwerkt door de cmdlet.
+Wanneer PowerShell een pijplijn opdracht verwerkt, aanroept PowerShell deze methode, eenmaal voor elk exemplaar van de cmdlet in de pijplijn.
+Zie voor meer informatie over hoe PowerShell de opdracht-pipeline roept [Cmdlet verwerking Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
-De volgende code toont een implementatie van de [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) methode.
+De volgende code toont een implementatie van de methode BeginProcessing.
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-Voor een uitgebreider voorbeeld van hoe u de [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) methode, Zie [SelectStr zelfstudie](./selectstr-tutorial.md). In deze zelfstudie de **Selecteer Str** cmdlet gebruikt de [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) methode voor het genereren van de reguliere expressie die wordt gebruikt om te zoeken naar de invoer voor het verwerken van records.
+## <a name="input-processing-operations"></a>Invoer verwerkingen
 
-## <a name="input-processing-tasks"></a>Invoer van verwerkingstaken
+Cmdlets kunt overschrijven de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het verwerken van de invoer die is verzonden naar de cmdlet.
+Wanneer PowerShell een pijplijn opdracht verwerkt, aanroepen PowerShell met deze methode voor elke invoer record dat is verwerkt door de cmdlet.
+Zie voor meer informatie over hoe PowerShell de opdracht-pipeline roept [Cmdlet verwerking Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
-Cmdlets kunt overschrijven de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode voor het verwerken van de invoer die is verzonden naar de cmdlet. Wanneer een opdracht pijplijn wordt verwerkt door Windows PowerShell, aanroepen Windows PowerShell met deze methode voor elke invoer record dat is verwerkt door de cmdlet. Zie voor meer informatie over hoe de opdracht-pipeline in Windows PowerShell wordt aangeroepen, [Cmdlet verwerking Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-De volgende code toont een implementatie van de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode.
+De volgende code toont een implementatie van de methode ProcessRecord.
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-Voor een uitgebreider voorbeeld van hoe u de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode, Zie [SelectStr zelfstudie](./selectstr-tutorial.md).
+## <a name="post-processing-operations"></a>Na verwerking bewerkingen
 
-## <a name="post-processing-tasks"></a>Taken na verwerking
+Cmdlets moet worden overschreven de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode om toe te voegen na verwerking bewerkingen die geldig zijn voor alle records die zijn verwerkt door de cmdlet.
+Bijvoorbeeld, de cmdlet om op te schonen objectvariabelen nadat deze is voltooid mogelijk verwerken.
 
-Cmdlets moet worden overschreven de [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) methode om toe te voegen na verwerking bewerkingen die geldig zijn voor alle records die zijn verwerkt door de cmdlet. Bijvoorbeeld, de cmdlet om op te schonen objectvariabelen nadat deze is voltooid mogelijk verwerken.
+Wanneer PowerShell een pijplijn opdracht verwerkt, aanroept PowerShell deze methode, eenmaal voor elk exemplaar van de cmdlet in de pijplijn.
+Het is echter belangrijk te weten dat de PowerShell-runtime niet de methode EndProcessing roept als de cmdlet halverwege is geannuleerd door de verwerking van invoer of als er een afsluitfout optreedt in een deel van de cmdlet.
+Om deze reden moet een cmdlet die opschonen voor object vereist de volledige implementeren [System.IDisposable](/dotnet/api/System.IDisposable) patroon, waaronder een finalizer, zodat de runtime kan zowel de EndProcessing aanroepen en [ System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking.
+Zie voor meer informatie over hoe PowerShell de opdracht-pipeline roept [Cmdlet verwerking Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
-Wanneer een opdracht pijplijn wordt verwerkt door Windows PowerShell, aanroepen Windows PowerShell met deze methode eenmaal voor elk exemplaar van de cmdlet in de pijplijn. Het is echter belangrijk te weten dat de Windows PowerShell-runtime niet roept de [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) methode als de cmdlet halverwege is geannuleerd door de verwerking van invoer of als een afsluitende fout in een deel van de cmdlet optreedt. Om deze reden moet een cmdlet die opschonen voor object vereist de volledige implementeren [System.IDisposable](/dotnet/api/System.IDisposable) patroon, waaronder een finalizer, zodat de runtime zowel aanroepen kan de [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) en [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) methoden aan het einde van de verwerking. Zie voor meer informatie over hoe de opdracht-pipeline in Windows PowerShell wordt aangeroepen, [Cmdlet verwerking Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-De volgende code toont een implementatie van de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode.
+De volgende code toont een implementatie van de methode EndProcessing.
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-Voor een uitgebreider voorbeeld van hoe u de [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) methode, Zie [SelectStr zelfstudie](./selectstr-tutorial.md).
-
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+
+[SelectStr-zelfstudie](selectstr-tutorial.md)
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 

@@ -4,16 +4,16 @@ keywords: PowerShell-cmdlet
 title: Een PowerShell-opdracht decoderen vanuit een actief proces
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086235"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Een PowerShell-opdracht decoderen vanuit een actief proces
 
 Mogelijk hebt u soms een proces dat wordt uitgevoerd in een grote hoeveelheid is beslag PowerShell.
-Dit proces kan worden uitgevoerd in de context van een [Task Scheduler][] taak of een [SQL ServerAgent][] taak. Wanneer er meerdere PowerShell processen die worden uitgevoerd, kan het lastig zijn om te weten welk proces Hiermee geeft u het probleem. In dit artikel laat zien hoe moet worden gedecodeerd een scriptblok een PowerShell-proces momenteel wordt uitgevoerd.
+Dit proces kan worden uitgevoerd in de context van een [Task Scheduler][] taak of een [SQL Server Agent][] taak. Wanneer er meerdere PowerShell processen die worden uitgevoerd, kan het lastig zijn om te weten welk proces Hiermee geeft u het probleem. In dit artikel laat zien hoe moet worden gedecodeerd een scriptblok een PowerShell-proces momenteel wordt uitgevoerd.
 
 ## <a name="create-a-long-running-process"></a>Een langlopende proces maken
 
@@ -105,6 +105,6 @@ DecodedCommand :
 ```
 
 [Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
-[SQL ServerAgent]: /sql/ssms/agent/sql-server-agent
+[SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
 [opdracht gecodeerd]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

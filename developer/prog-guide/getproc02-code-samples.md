@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
 ms.openlocfilehash: 00b015f1c16623d8ca4cf6f609aa2547c0385402
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081781"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02-codevoorbeelden
 
@@ -26,7 +26,7 @@ Hier volgen de codevoorbeelden voor de GetProc02 voorbeeld-cmdlet. Dit is de `Ge
 
 Volledig voorbeeld van code, Zie de volgende onderwerpen.
 
-|Language|Onderwerp|
+|Taal|Onderwerp|
 |--------------|-----------|
 |C#|[GetProc02 (C#) voorbeeldcode](./getproc02-csharp-sample-code.md)|
 |VB.NET|[GetProc02 voorbeeldcode (VB.NET)](./getproc02-vb-net-sample-code.md)|

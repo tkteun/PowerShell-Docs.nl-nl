@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: PowerShell-cmdlet
 title: Draagbare Modules schrijven
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086405"
 ---
 # <a name="portable-modules"></a>Draagbare Modules
 
@@ -19,17 +19,17 @@ Windows PowerShell is geschreven voor [.NET Framework][] terwijl PowerShell Core
 
 PowerShell SnapIns (PSSnapIn) worden niet ondersteund in PowerShell Core. Het is echter pretje om een PSSnapIn converteren naar een PowerShell-module. De registratiecode PSSnapIn is meestal in een bestand met één bron van een klasse die is afgeleid van [PSSnapIn][]. Dit bestand verwijderen van de build; het niet meer nodig.
 
-Gebruik [New-ModuleManifest][] te maken van een nieuwe modulemanifest dat de registratiecode PSSnapIn meer nodig. Sommige van de waarden uit de PSSnapIn (zoals beschrijving) opnieuw kan worden gebruikt in de module-manifest.
+Gebruik [Nieuwe ModuleManifest][] te maken van een nieuwe modulemanifest dat de registratiecode PSSnapIn meer nodig. Sommige van de waarden uit de PSSnapIn (zoals beschrijving) opnieuw kan worden gebruikt in de module-manifest.
 
 De `RootModule` eigenschap in de module-manifest moet worden ingesteld op de naam van de implementatie van de cmdlets assembly (dll).
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>De .NET draagbaarheid Analyzer (ook wel APIPort)
 
-Poort-modules die zijn geschreven voor Windows PowerShell om te werken met PowerShell Core, te beginnen met de [.NET draagbaarheid Analyzer][]. Dit hulpprogramma uitvoeren op basis van uw gecompileerde assembly om te bepalen of de .NET-API's gebruikt in de module compatibel met .NET Framework, .NET Core en andere runtimes .NET zijn. Het hulpprogramma zijn overeenkomstig alternatieve API's als deze bestaan. U moet anders toevoegen [Runtime-controles][] en beperken de mogelijkheden die niet beschikbaar in bepaalde runtimes.
+Poort-modules die zijn geschreven voor Windows PowerShell om te werken met PowerShell Core, te beginnen met de [.NET Portability Analyzer][]. Dit hulpprogramma uitvoeren op basis van uw gecompileerde assembly om te bepalen of de .NET-API's gebruikt in de module compatibel met .NET Framework, .NET Core en andere runtimes .NET zijn. Het hulpprogramma zijn overeenkomstig alternatieve API's als deze bestaan. U moet anders toevoegen [Runtime-controles][] en beperken de mogelijkheden die niet beschikbaar in bepaalde runtimes.
 
 ## <a name="creating-a-new-module"></a>Het maken van een nieuwe Module
 
-Als u een nieuwe module maakt, wordt de aanbeveling is het gebruik van de [.NET-CLI][].
+Als u een nieuwe module maakt, wordt de aanbeveling is het gebruik van de [.NET CLI][].
 
 ### <a name="installing-the-powershell-standard-module-template"></a>De sjabloon standaard PowerShell-Module installeren
 
@@ -178,7 +178,7 @@ Het is echter niet vereist voor het doel .NET Standard voor een module om te wer
 
 De [PowerShell-standaard][] bibliotheek is een formele specificatie van de PowerShell-APIs beschikbaar in alle versies van PowerShell groter is dan of gelijk zijn aan de versie van die standaard.
 
-Bijvoorbeeld, [Standard PowerShell 5.1][] is compatibel met Windows PowerShell 5.1 en PowerShell Core 6.0 of hoger.
+Bijvoorbeeld, [PowerShell Standard 5.1][] is compatibel met Windows PowerShell 5.1 en PowerShell Core 6.0 of hoger.
 
 Het is raadzaam om eerst te compileren van de module met behulp van PowerShell Standard-bibliotheek. De bibliotheek zorgt ervoor dat de API's zijn beschikbaar en worden geïmplementeerd in Windows PowerShell en PowerShell Core 6.
 PowerShell-standaard is bedoeld om altijd worden doorgestuurd-compatibel. Een module die is gebouwd met behulp van PowerShell Standard-bibliotheek 5.1 wordt altijd compatibel zijn met toekomstige versies van PowerShell.
@@ -199,7 +199,7 @@ Valideer eerst of uw module in Linux en macOS werkt. Vervolgens geven compatibil
 
 In de module-manifest, het `PrivateData` eigenschap heeft een `PSData` onderliggende eigenschap. De optionele `Tags` eigenschap van `PSData` wordt een matrix met waarden die worden weergegeven in de PowerShell Gallery. De PowerShell Gallery ondersteunt de volgende waarden voor de compatibiliteit van:
 
-| Label               | Beschrijving                                |
+| Code               | Description                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Compatibel met PowerShell Core 6          |
 | PSEdition_Desktop | Compatibel met Windows PowerShell         |
@@ -254,15 +254,15 @@ Voorbeeld:
 ```
 
 <!-- reference links -->
-[.NET framework]: /dotnet/framework/
-[.NET core]: /dotnet/core/
+[.NET Framework]: /dotnet/framework/
+[.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
-[New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
+[Nieuwe ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [Runtime-controles]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
-[.NET-CLI]: /dotnet/core/tools/?tabs=netcore2x
+[.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell-standaard]: https://github.com/PowerShell/PowerShellStandard
-[Standard PowerShell 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Gallery]: https://www.powershellgallery.com
-[.NET draagbaarheid Analyzer]: https://github.com/Microsoft/dotnet-apiport
+[.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

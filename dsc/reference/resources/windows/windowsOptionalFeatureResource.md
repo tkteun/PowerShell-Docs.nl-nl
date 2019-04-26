@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC-WindowsOptionalFeature-Resource
 ms.openlocfilehash: 390caefd2ad190afc651b22ed1beb5cf1d604527
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076751"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC-WindowsOptionalFeature-Resource
 
@@ -34,7 +34,7 @@ WindowsOptionalFeature [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Naam| Geeft aan dat de naam van de functie die u wilt ervoor zorgen is ingeschakeld of uitgeschakeld.|
 | Zorg ervoor dat| Hiermee geeft u op of de functie is ingeschakeld. Om ervoor te zorgen dat de functie is ingeschakeld, stel deze eigenschap in op 'Inschakelen' om ervoor te zorgen dat de functie is uitgeschakeld, de eigenschap instellen op 'Uitschakelen'.|
