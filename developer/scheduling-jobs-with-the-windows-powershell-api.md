@@ -3,19 +3,19 @@ title: Taken plannen met de Windows PowerShell-API
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080795"
 ---
-# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="5671e-102">Taken plannen met de Windows PowerShell-API</span><span class="sxs-lookup"><span data-stu-id="5671e-102">Scheduling Jobs with the Windows PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="26c56-102">Taken plannen met de Windows PowerShell-API</span><span class="sxs-lookup"><span data-stu-id="26c56-102">Scheduling Jobs with the Windows PowerShell API</span></span>
 
-<span data-ttu-id="5671e-103">U kunt de objecten die worden weergegeven door de N:Microsoft.PowerShell.ScheduledJob-naamruimte te maken van een geplande taak, definiëren wanneer deze wordt uitgevoerd en resultaten over de voltooide taak ontvangen nadat deze is uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
+<span data-ttu-id="26c56-103">U kunt de objecten die worden weergegeven door de N:Microsoft.PowerShell.ScheduledJob-naamruimte te maken van een geplande taak, definiëren wanneer deze wordt uitgevoerd en resultaten over de voltooide taak ontvangen nadat deze is uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="5671e-104">De taak wordt geactiveerd</span><span class="sxs-lookup"><span data-stu-id="5671e-104">Triggering the Job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="26c56-104">De taak wordt geactiveerd</span><span class="sxs-lookup"><span data-stu-id="26c56-104">Triggering the Job</span></span>
 
-<span data-ttu-id="5671e-105">De eerste stap bij het maken van een geplande taak is op te geven wanneer de taak moet worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="5671e-106">Dit doen door het maken en configureren van een T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-object.</span><span class="sxs-lookup"><span data-stu-id="5671e-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="5671e-107">De volgende code maakt een trigger die een taak één keer in de toekomst 20 seconden wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="26c56-105">De eerste stap bij het maken van een geplande taak is op te geven wanneer de taak moet worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="26c56-106">Dit doen door het maken en configureren van een T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-object.</span><span class="sxs-lookup"><span data-stu-id="26c56-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="26c56-107">De volgende code maakt een trigger die een taak één keer in de toekomst 20 seconden wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -27,20 +27,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
     true);                              // Create trigger enabled
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="5671e-108">De taak definiëren</span><span class="sxs-lookup"><span data-stu-id="5671e-108">Defining the Job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="26c56-108">De taak definiëren</span><span class="sxs-lookup"><span data-stu-id="26c56-108">Defining the Job</span></span>
 
-<span data-ttu-id="5671e-109">Een Windows PowerShell-taak definieert u het maken van een woordenlijst parameter.</span><span class="sxs-lookup"><span data-stu-id="5671e-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="5671e-110">De volgende parameters worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="5671e-110">The following parameters are supported.</span></span>
+<span data-ttu-id="26c56-109">Een Windows PowerShell-taak definieert u het maken van een woordenlijst parameter.</span><span class="sxs-lookup"><span data-stu-id="26c56-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="26c56-110">De volgende parameters worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="26c56-110">The following parameters are supported.</span></span>
 
-|<span data-ttu-id="5671e-111">Parameternaam</span><span class="sxs-lookup"><span data-stu-id="5671e-111">Parameter Name</span></span>|<span data-ttu-id="5671e-112">Description</span><span class="sxs-lookup"><span data-stu-id="5671e-112">Description</span></span>|
+|<span data-ttu-id="26c56-111">Parameternaam</span><span class="sxs-lookup"><span data-stu-id="26c56-111">Parameter Name</span></span>|<span data-ttu-id="26c56-112">Description</span><span class="sxs-lookup"><span data-stu-id="26c56-112">Description</span></span>|
 |---|---|
-|<span data-ttu-id="5671e-113">Naam</span><span class="sxs-lookup"><span data-stu-id="5671e-113">Name</span></span>|<span data-ttu-id="5671e-114">De naam van de taak.</span><span class="sxs-lookup"><span data-stu-id="5671e-114">The name of the job.</span></span>|
-|<span data-ttu-id="5671e-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="5671e-115">ScriptBock</span></span>|<span data-ttu-id="5671e-116">Een blok van de Windows PowerShell-script waarmee wordt aangegeven wat de taak doet.</span><span class="sxs-lookup"><span data-stu-id="5671e-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="5671e-117">FilePath</span><span class="sxs-lookup"><span data-stu-id="5671e-117">FilePath</span></span>|<span data-ttu-id="5671e-118">Een pad naar een bestand met Windows PowerShell-scriptblok waarmee wordt aangegeven wat de taak doet.</span><span class="sxs-lookup"><span data-stu-id="5671e-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="5671e-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="5671e-119">InitializationScript</span></span>|<span data-ttu-id="5671e-120">Een blok van de Windows PowerShell-script waarmee de taak wordt geïnitialiseerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-120">A Windows PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="5671e-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="5671e-121">ArgumentList</span></span>|<span data-ttu-id="5671e-122">Een matrix met objecten die argumenten opgeeft die het duurt de taak uit.</span><span class="sxs-lookup"><span data-stu-id="5671e-122">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="5671e-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="5671e-123">RunAs32</span></span>|<span data-ttu-id="5671e-124">Een Booleaanse waarde waarmee wordt aangegeven of de taak uitvoeren in een 32-bits proces.</span><span class="sxs-lookup"><span data-stu-id="5671e-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="26c56-113">Naam</span><span class="sxs-lookup"><span data-stu-id="26c56-113">Name</span></span>|<span data-ttu-id="26c56-114">De naam van de taak.</span><span class="sxs-lookup"><span data-stu-id="26c56-114">The name of the job.</span></span>|
+|<span data-ttu-id="26c56-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="26c56-115">ScriptBock</span></span>|<span data-ttu-id="26c56-116">Een blok van de Windows PowerShell-script waarmee wordt aangegeven wat de taak doet.</span><span class="sxs-lookup"><span data-stu-id="26c56-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="26c56-117">FilePath</span><span class="sxs-lookup"><span data-stu-id="26c56-117">FilePath</span></span>|<span data-ttu-id="26c56-118">Een pad naar een bestand met Windows PowerShell-scriptblok waarmee wordt aangegeven wat de taak doet.</span><span class="sxs-lookup"><span data-stu-id="26c56-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="26c56-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="26c56-119">InitializationScript</span></span>|<span data-ttu-id="26c56-120">Een blok van de Windows PowerShell-script waarmee de taak wordt geïnitialiseerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-120">A Windows PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="26c56-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="26c56-121">ArgumentList</span></span>|<span data-ttu-id="26c56-122">Een matrix met objecten die argumenten opgeeft die het duurt de taak uit.</span><span class="sxs-lookup"><span data-stu-id="26c56-122">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="26c56-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="26c56-123">RunAs32</span></span>|<span data-ttu-id="26c56-124">Een Booleaanse waarde waarmee wordt aangegeven of de taak uitvoeren in een 32-bits proces.</span><span class="sxs-lookup"><span data-stu-id="26c56-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="5671e-125">De volgende code maakt een parameter dictionary-object en stelt u de naam en ScriptBlock parameters.</span><span class="sxs-lookup"><span data-stu-id="5671e-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
+<span data-ttu-id="26c56-125">De volgende code maakt een parameter dictionary-object en stelt u de naam en ScriptBlock parameters.</span><span class="sxs-lookup"><span data-stu-id="26c56-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -52,9 +52,9 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
                                                    // is required.
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="5671e-126">Het maken van de aanroep en de taak de definitie van objecten</span><span class="sxs-lookup"><span data-stu-id="5671e-126">Creating the Invocation and Job Definition Objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="26c56-126">Het maken van de aanroep en de taak de definitie van objecten</span><span class="sxs-lookup"><span data-stu-id="26c56-126">Creating the Invocation and Job Definition Objects</span></span>
 
-<span data-ttu-id="5671e-127">Vervolgens maakt u ScheduledJobInvocationInfo en ScheduledJobDefinition objecten voor het uitvoeren van de taak.</span><span class="sxs-lookup"><span data-stu-id="5671e-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="5671e-128">De volgende code laat dit zien.</span><span class="sxs-lookup"><span data-stu-id="5671e-128">The following code demonstrates this.</span></span>
+<span data-ttu-id="26c56-127">Vervolgens maakt u ScheduledJobInvocationInfo en ScheduledJobDefinition objecten voor het uitvoeren van de taak.</span><span class="sxs-lookup"><span data-stu-id="26c56-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="26c56-128">De volgende code laat dit zien.</span><span class="sxs-lookup"><span data-stu-id="26c56-128">The following code demonstrates this.</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -69,9 +69,9 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="5671e-129">Registreren van de taak met de Taakplanner</span><span class="sxs-lookup"><span data-stu-id="5671e-129">Registering the Job with the Task Scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="26c56-129">Registreren van de taak met de Taakplanner</span><span class="sxs-lookup"><span data-stu-id="26c56-129">Registering the Job with the Task Scheduler</span></span>
 
-<span data-ttu-id="5671e-130">De volgende code wordt de taak met de Windows Taakplanner geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-130">The following code registers the job with the Windows Task Scheduler.</span></span>
+<span data-ttu-id="26c56-130">De volgende code wordt de taak met de Windows Taakplanner geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-130">The following code registers the job with the Windows Task Scheduler.</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -79,9 +79,9 @@ registrationSucceeded = true;
 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="5671e-131">Voorbeeld van de volledige Code</span><span class="sxs-lookup"><span data-stu-id="5671e-131">Complete Code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="26c56-131">Voorbeeld van de volledige Code</span><span class="sxs-lookup"><span data-stu-id="26c56-131">Complete Code Example</span></span>
 
-<span data-ttu-id="5671e-132">Hier volgt het volledige codevoorbeeld van waaruit de vorige codefragmenten zijn uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="5671e-132">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="26c56-132">Hier volgt het volledige codevoorbeeld van waaruit de vorige codefragmenten zijn uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="26c56-132">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;
