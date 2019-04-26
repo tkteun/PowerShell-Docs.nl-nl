@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxPackage-Resource
 ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077868"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC voor Linux nxPackage-Resource
 
@@ -32,7 +32,7 @@ nxPackage <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | Naam| De naam van het pakket waarvan u wilt om te controleren of een specifieke status.|
 | Zorg ervoor dat| Hiermee bepaalt u of om te controleren of het pakket bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het pakket bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het pakket bestaat niet. De standaardwaarde is 'Aanwezig'.|

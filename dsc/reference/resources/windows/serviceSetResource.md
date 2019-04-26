@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC ServiceSet-Resource
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076824"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-Resource
 
@@ -35,7 +35,7 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Beschrijving   |
+|  Eigenschap  |  Description   |
 |---|---|
 | Naam| Geeft aan dat de servicenamen van de. Houd er rekening mee dat soms dit af van de weergavenamen wijkt. U krijgt een overzicht van de services en de huidige status hiervan met de [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet.|
 | StartupType| Geeft aan dat het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**|

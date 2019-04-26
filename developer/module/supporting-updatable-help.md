@@ -11,13 +11,13 @@ applies_to:
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
 ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082155"
 ---
-# <a name="supporting-updatable-help"></a>Ondersteunende help die kan worden bijgewerkt
+# <a name="supporting-updatable-help"></a>Ondersteunende Help die kan worden bijgewerkt
 
 De *Windows PowerShell bij te werken Help-systeem*, geïntroduceerd in Windows® 8 en Windows Server® 2012, is ontworpen om ervoor te zorgen dat gebruikers altijd de nieuwste help-onderwerpen bij de opdrachtprompt op de lokale computer. Samen met de online help van Windows PowerShell biedt bij te werken Help een volledige help-oplossing voor gebruikers. Deze sectie beschrijft het bij te werken Help-systeem en wordt uitgelegd hoe auteurs kunnen ondersteunen bij te werken Help voor hun modules zo opstellen.
 

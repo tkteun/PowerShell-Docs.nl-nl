@@ -4,11 +4,11 @@ keywords: PowerShell-cmdlet
 title: Een aangepast invoervak maken
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086286"
 ---
 # <a name="creating-a-custom-input-box"></a>Een aangepast invoervak maken
 
@@ -160,5 +160,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Zie ook
 
 - [Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt van WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week:  Een aangepast invoervak maken](https://technet.microsoft.com/library/ff730941.aspx)

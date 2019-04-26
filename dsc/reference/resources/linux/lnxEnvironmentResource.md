@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC voor Linux nxEnvironment-Resource
 ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078007"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-Resource
 
@@ -29,7 +29,7 @@ nxEnvironment <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap |  Beschrijving |
+|  Eigenschap |  Description |
 |---|---|
 | Naam| Geeft de naam van de omgevingsvariabele waarvoor u wilt om te controleren of een specifieke status.|
 | Waarde| De waarde om toe te wijzen aan de omgevingsvariabele.|

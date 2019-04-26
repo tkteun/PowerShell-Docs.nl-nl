@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, resource, galerie, instellen
 title: Parameters toevoegen aan een configuratie
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080251"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Parameters toevoegen aan een configuratie
 
@@ -36,7 +36,7 @@ Configuration TestConfig
 
 In tegenstelling tot een functie echter de [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) kenmerk geen functionaliteit wordt toegevoegd. Naast [algemene Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters), configuraties kunnen ook de volgende parameters, zonder dat u voor het definiëren van deze ingebouwde gebruiken.
 
-|Parameter  |Beschrijving  |
+|Parameter  |Description  |
 |---------|---------|
 |`-InstanceName`|Gebruikt bij het definiëren van [samengestelde configuraties](compositeconfigs.md)|
 |`-DependsOn`|Gebruikt bij het definiëren van [samengestelde configuraties](compositeconfigs.md)|
