@@ -8,52 +8,55 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068127"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229301"
 ---
-# <a name="events01-sample"></a><span data-ttu-id="8a3b1-102">Voorbeeld Events01</span><span class="sxs-lookup"><span data-stu-id="8a3b1-102">Events01 Sample</span></span>
+# <a name="events01-sample"></a><span data-ttu-id="042fa-102">Voorbeeld Events01</span><span class="sxs-lookup"><span data-stu-id="042fa-102">Events01 Sample</span></span>
 
-<span data-ttu-id="8a3b1-103">Dit voorbeeld laat zien over het maken van een cmdlet waarmee de gebruiker om u te registreren voor gebeurtenissen die worden gegenereerd door [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="8a3b1-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="8a3b1-104">Met deze cmdlet, kunnen gebruikers zich registreren een actie om uit te voeren wanneer een bestand wordt gemaakt onder een specifieke map.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="8a3b1-105">In dit voorbeeld is afgeleid van de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basisklasse.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-105">This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
+<span data-ttu-id="042fa-103">Dit voorbeeld laat zien over het maken van een cmdlet waarmee de gebruiker om u te registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="042fa-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span>
+<span data-ttu-id="042fa-104">Met deze cmdlet, kunnen gebruikers zich registreren een actie om uit te voeren wanneer een bestand wordt gemaakt onder een specifieke map.</span><span class="sxs-lookup"><span data-stu-id="042fa-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span>
+<span data-ttu-id="042fa-105">In dit voorbeeld is afgeleid van de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basisklasse.</span><span class="sxs-lookup"><span data-stu-id="042fa-105">This sample derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="8a3b1-106">Over het bouwen van het voorbeeld met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-106">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="042fa-106">Over het bouwen van het voorbeeld met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="042fa-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="8a3b1-107">Met de Windows PowerShell 2.0 SDK is geïnstalleerd, gaat u naar de map Events01.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="8a3b1-108">De standaardlocatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
+1. <span data-ttu-id="042fa-107">Met de Windows PowerShell 2.0 SDK is geïnstalleerd, gaat u naar de map Events01.</span><span class="sxs-lookup"><span data-stu-id="042fa-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span>
+   <span data-ttu-id="042fa-108">De standaardlocatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.</span><span class="sxs-lookup"><span data-stu-id="042fa-108">The default location is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.</span></span>
 
-2. <span data-ttu-id="8a3b1-109">Dubbelklik op het pictogram voor het oplossingsbestand (.sln).</span><span class="sxs-lookup"><span data-stu-id="8a3b1-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="8a3b1-110">Hiermee opent u het voorbeeldproject in Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="042fa-109">Dubbelklik op het pictogram voor het oplossingsbestand (.sln).</span><span class="sxs-lookup"><span data-stu-id="042fa-109">Double-click the icon for the solution (.sln) file.</span></span>
+   <span data-ttu-id="042fa-110">Hiermee opent u het voorbeeldproject in Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="042fa-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="8a3b1-111">In de **bouwen** in het menu **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="042fa-111">In de **bouwen** in het menu **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="042fa-111">In the **Build** menu, select **Build Solution**.</span></span>
+   <span data-ttu-id="042fa-112">De bibliotheek voor het voorbeeld worden samengesteld uit de standaard `\bin` of `\bin\debug` mappen.</span><span class="sxs-lookup"><span data-stu-id="042fa-112">The library for the sample will be built in the default `\bin` or `\bin\debug` folders.</span></span>
 
-    <span data-ttu-id="8a3b1-112">De bibliotheek voor het voorbeeld worden in de standaard \bin of \bin\debug mappen samengesteld.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="042fa-113">Hoe u het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="042fa-113">How to run the sample</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="8a3b1-113">Hoe u het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="8a3b1-113">How to run the sample</span></span>
-
-1. <span data-ttu-id="8a3b1-114">Maak de volgende modulemap:</span><span class="sxs-lookup"><span data-stu-id="8a3b1-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="042fa-114">Maak de volgende modulemap:</span><span class="sxs-lookup"><span data-stu-id="042fa-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/events01`
 
-2. <span data-ttu-id="8a3b1-115">Kopieer het DLL-bestand voor het voorbeeld naar de modulemap.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-115">Copy the library file for the sample to the module folder.</span></span>
+2. <span data-ttu-id="042fa-115">Kopieer het DLL-bestand voor het voorbeeld naar de modulemap.</span><span class="sxs-lookup"><span data-stu-id="042fa-115">Copy the library file for the sample to the module folder.</span></span>
 
-3. <span data-ttu-id="8a3b1-116">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="042fa-116">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="042fa-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="8a3b1-117">Voer de volgende opdracht om het laden van de cmdlet in Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="8a3b1-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
+4. <span data-ttu-id="042fa-117">Voer de volgende opdracht om het laden van de cmdlet in Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="042fa-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
 
     ```powershell
     import-module events01
     ```
 
-5. <span data-ttu-id="8a3b1-118">Gebruik de cmdlet Register-FileSystemEvent voor het registreren van een actie die een bericht wordt geschreven wanneer een bestand wordt gemaakt in de map TEMP.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
+5. <span data-ttu-id="042fa-118">Gebruik de cmdlet Register-FileSystemEvent voor het registreren van een actie die een bericht wordt geschreven wanneer een bestand wordt gemaakt in de map TEMP.</span><span class="sxs-lookup"><span data-stu-id="042fa-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. <span data-ttu-id="8a3b1-119">Maak een bestand in de map TEMP en houd er rekening mee dat de actie wordt uitgevoerd (het bericht wordt weergegeven).</span><span class="sxs-lookup"><span data-stu-id="8a3b1-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
+6. <span data-ttu-id="042fa-119">Maak een bestand in de map TEMP en houd er rekening mee dat de actie wordt uitgevoerd (het bericht wordt weergegeven).</span><span class="sxs-lookup"><span data-stu-id="042fa-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
 
-<span data-ttu-id="8a3b1-120">Dit is een voorbeeld van de uitvoer die het resultaat is door deze stappen te volgen.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-120">This is a sample output that results by following these steps.</span></span>
+<span data-ttu-id="042fa-120">Dit is een voorbeeld van de uitvoer die het resultaat is door deze stappen te volgen.</span><span class="sxs-lookup"><span data-stu-id="042fa-120">This is a sample output that results by following these steps.</span></span>
 
 ```output
 Id              Name            State      HasMoreData     Location             Command
@@ -70,19 +73,22 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a><span data-ttu-id="8a3b1-121">Vereisten</span><span class="sxs-lookup"><span data-stu-id="8a3b1-121">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="042fa-121">Vereisten</span><span class="sxs-lookup"><span data-stu-id="042fa-121">Requirements</span></span>
 
-<span data-ttu-id="8a3b1-122">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-122">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="042fa-122">In dit voorbeeld is Windows PowerShell 2.0 vereist.</span><span class="sxs-lookup"><span data-stu-id="042fa-122">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="8a3b1-123">Ziet u</span><span class="sxs-lookup"><span data-stu-id="8a3b1-123">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="042fa-123">Ziet u</span><span class="sxs-lookup"><span data-stu-id="042fa-123">Demonstrates</span></span>
 
-<span data-ttu-id="8a3b1-124">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-124">This sample demonstrates the following.</span></span>
+<span data-ttu-id="042fa-124">In dit voorbeeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="042fa-124">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="8a3b1-125">Over het schrijven van een cmdlet voor gebeurtenisregistratie.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="8a3b1-126">De cmdlet is afgeleid van de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasse, die ondersteuning voor algemene parameters met de Register biedt-\*-cmdlets gebeurtenis.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="8a3b1-127">Cmdlets die zijn afgeleid van [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) moet alleen de specifieke parameters definiëren en overschrijven de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden.</span><span class="sxs-lookup"><span data-stu-id="8a3b1-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a><span data-ttu-id="042fa-125">Over het schrijven van een cmdlet voor gebeurtenisregistratie</span><span class="sxs-lookup"><span data-stu-id="042fa-125">How to write a cmdlet for event registration</span></span>
 
-## <a name="example"></a><span data-ttu-id="8a3b1-128">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="8a3b1-128">Example</span></span>
+<span data-ttu-id="042fa-126">De cmdlet is afgeleid van de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasse, die ondersteuning biedt voor parameters voor de `Register-*Event` cmdlets.</span><span class="sxs-lookup"><span data-stu-id="042fa-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the `Register-*Event` cmdlets.</span></span>
+<span data-ttu-id="042fa-127">Cmdlets die zijn afgeleid van [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) moet alleen de specifieke parameters definiëren en overschrijven de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden.</span><span class="sxs-lookup"><span data-stu-id="042fa-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
 
-<span data-ttu-id="8a3b1-129">In dit voorbeeld laat zien hoe u zich registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="8a3b1-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
+## <a name="example"></a><span data-ttu-id="042fa-128">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="042fa-128">Example</span></span>
+
+<span data-ttu-id="042fa-129">In dit voorbeeld laat zien hoe u zich registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="042fa-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span>
 
 ```csharp
 namespace Sample
@@ -181,6 +187,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="8a3b1-130">Zie ook</span><span class="sxs-lookup"><span data-stu-id="8a3b1-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="042fa-130">Zie ook</span><span class="sxs-lookup"><span data-stu-id="042fa-130">See Also</span></span>
 
-[<span data-ttu-id="8a3b1-131">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="8a3b1-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="042fa-131">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="042fa-131">Writing a Windows PowerShell Cmdlet</span></span>](writing-a-windows-powershell-cmdlet.md)
