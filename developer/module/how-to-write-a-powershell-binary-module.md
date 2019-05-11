@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082223"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229331"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Een binaire PowerShell-module schrijven
 
@@ -29,7 +29,10 @@ De volgende procedure wordt beschreven hoe u maken en een binaire PowerShell-mod
 
 2. Maak indien nodig de rest van uw oplossing: (andere cmdlets, XML-bestanden, enzovoort) en deze worden beschreven met een module-manifest.
 
-   Naast het met een beschrijving van de cmdlet-assembly's in uw oplossing, kan een module-manifest wordt beschreven hoe u wilt dat uw module geëxporteerd en geïmporteerd, welke cmdlets weergegeven en wat extra bestanden gaat in de module. Zoals eerder gezegd echter, kan PowerShell een binaire cmdlet, zoals een module met geen extra moeite behandelen. Een module-manifest is daarom handig hoofdzakelijk bestemd voor meerdere bestanden combineren in één pakket, of voor het beheren van expliciet publicatie voor een bepaalde assembly. Zie voor meer informatie, [over het schrijven van een PowerShell-Module-Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   Naast het met een beschrijving van de cmdlet-assembly's in uw oplossing, kan een module-manifest wordt beschreven hoe u wilt dat uw module geëxporteerd en geïmporteerd, welke cmdlets weergegeven en wat extra bestanden gaat in de module.
+   Zoals eerder gezegd echter, kan PowerShell een binaire cmdlet, zoals een module met geen extra moeite behandelen.
+   Een module-manifest is daarom handig hoofdzakelijk bestemd voor meerdere bestanden combineren in één pakket, of voor het beheren van expliciet publicatie voor een bepaalde assembly.
+   Zie voor meer informatie, [over het schrijven van een PowerShell-Module-Manifest](how-to-write-a-powershell-module-manifest.md).
 
    De volgende code is een zeer eenvoudige C# codeblok met drie cmdlets in hetzelfde bestand dat kan worden gebruikt als een module.
 
@@ -82,7 +85,9 @@ De volgende procedure wordt beschreven hoe u maken en een binaire PowerShell-mod
 
 De cmdlets en providers die zijn opgenomen in de module-assembly's kunnen worden geladen als binaire modules. Wanneer de module-assembly's geladen als binaire modules zijn, cmdlets en providers in de module zijn beschikbaar voor de gebruiker, maar de klasse-module in de assembly wordt genegeerd en de module is niet geregistreerd. De beschikbare Windows PowerShell cmdlets in het vak-module kan niet als gevolg hiervan de module detecteren zelfs als de cmdlets en providers beschikbaar voor de sessie zijn.
 
-Bovendien kunnen niet alle opmaak of typen bestanden waarnaar wordt verwezen door de module worden geïmporteerd als onderdeel van een binaire module. U moet een module-manifest te maken om de opmaak en typen bestanden te importeren. Zie, [over het schrijven van een PowerShell-Module-Manifest](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+Bovendien kunnen niet alle opmaak of typen bestanden waarnaar wordt verwezen door de module worden geïmporteerd als onderdeel van een binaire module.
+U moet een module-manifest te maken om de opmaak en typen bestanden te importeren.
+Zie, [over het schrijven van een PowerShell-Module-Manifest](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Zie ook
 

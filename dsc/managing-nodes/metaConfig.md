@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, configuratie en installatie
 title: De Local Configuration Manager configureren
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079673"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229492"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De Local Configuration Manager configureren
 
@@ -121,6 +121,10 @@ Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
 |ConfigurationNames|String[]|Een matrix met namen van configuraties om te worden opgehaald door het doelknooppunt. Deze worden alleen gebruikt als het knooppunt is geregistreerd bij de pull-service met behulp van een **RegistrationKey**. Zie voor meer informatie, [instellen van een pull-client met configuratienamen](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|string|Een GUID waarmee het knooppunt met de pull-service wordt geregistreerd. Zie voor meer informatie, [instellen van een pull-client met configuratienamen](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|De URL van de configuration-service.|
+|ProxyURL*|string|De URL van de http-proxy gebruiken bij het communiceren met de configuration-service.|
+|ProxyCredential*|pscredential|Referentie voor de http-proxy.|
+
+>! Houd er rekening mee \* ondersteund in Windows 1809 en hoger.
 
 Zie voor een voorbeeldscript voor het vereenvoudigen van de waarde ConfigurationRepositoryWeb configureren voor on-premises knooppunten zijn beschikbaar: [metaconfigurations DSC genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ Een **ResourceRepositoryWeb** definieert de volgende eigenschappen.
 |CertificateID|string|De vingerafdruk van een certificaat dat wordt gebruikt om de server te verifiëren.|
 |RegistrationKey|string|Een GUID waarmee het knooppunt naar de pull-service.|
 |ServerURL|string|De URL van de configuratieserver.|
+|ProxyURL*|string|De URL van de http-proxy gebruiken bij het communiceren met de configuration-service.|
+|ProxyCredential*|pscredential|Referentie voor de http-proxy.|
+
+>! Houd er rekening mee \* ondersteund in Windows 1809 en hoger.
 
 Zie voor een voorbeeldscript voor het vereenvoudigen van de waarde ResourceRepositoryWeb configureren voor on-premises knooppunten zijn beschikbaar: [metaconfigurations DSC genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ De report server-rol is niet compatibel met SMB op basis van pull-service.
 |CertificateID|string|De vingerafdruk van een certificaat dat wordt gebruikt om de server te verifiëren.|
 |RegistrationKey|string|Een GUID waarmee het knooppunt naar de pull-service.|
 |ServerURL|string|De URL van de configuratieserver.|
+|ProxyURL*|string|De URL van de http-proxy gebruiken bij het communiceren met de configuration-service.|
+|ProxyCredential*|pscredential|Referentie voor de http-proxy.|
+
+>! Houd er rekening mee \* ondersteund in Windows 1809 en hoger.
 
 Zie voor een voorbeeldscript voor het vereenvoudigen van de waarde ReportServerWeb configureren voor on-premises knooppunten zijn beschikbaar: [metaconfigurations DSC genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 

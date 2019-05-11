@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, powershell, beveiliging
 title: Rolmogelijkheden JEA
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084790"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229546"
 ---
 # <a name="jea-role-capabilities"></a>Rolmogelijkheden JEA
 
@@ -183,6 +183,8 @@ Een beperkte cmdlet in een JEA-sessie wordt vertonen hetzelfde gedrag wordt aang
 
 Als u een groot aantal aangepaste functies ontwikkelt, kan het zijn gemakkelijker te plaatsen een [PowerShell-Script-Module](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 U kunt deze functies vervolgens zichtbaar in de JEA-sessie met behulp van het veld VisibleFunctions zoals u zou met ingebouwde en van derden modules doen maken.
+
+Tabblad voltooiing werken alleen goed in JEA sessies de ingebouwde functie moet opnemen `tabexpansion2` in de **VisibleFunctions** lijst.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Rolmogelijkheden plaatsen in een module
 

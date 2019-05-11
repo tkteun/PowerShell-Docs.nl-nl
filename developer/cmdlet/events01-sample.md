@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068127"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229301"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
 
-Dit voorbeeld laat zien over het maken van een cmdlet waarmee de gebruiker om u te registreren voor gebeurtenissen die worden gegenereerd door [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Met deze cmdlet, kunnen gebruikers zich registreren een actie om uit te voeren wanneer een bestand wordt gemaakt onder een specifieke map. In dit voorbeeld is afgeleid van de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basisklasse.
+Dit voorbeeld laat zien over het maken van een cmdlet waarmee de gebruiker om u te registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Met deze cmdlet, kunnen gebruikers zich registreren een actie om uit te voeren wanneer een bestand wordt gemaakt onder een specifieke map.
+In dit voorbeeld is afgeleid van de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) basisklasse.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Over het bouwen van het voorbeeld met behulp van Visual Studio.
 
-1. Met de Windows PowerShell 2.0 SDK is geïnstalleerd, gaat u naar de map Events01. De standaardlocatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. Met de Windows PowerShell 2.0 SDK is geïnstalleerd, gaat u naar de map Events01.
+   De standaardlocatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Dubbelklik op het pictogram voor het oplossingsbestand (.sln). Hiermee opent u het voorbeeldproject in Microsoft Visual Studio.
+2. Dubbelklik op het pictogram voor het oplossingsbestand (.sln).
+   Hiermee opent u het voorbeeldproject in Microsoft Visual Studio.
 
 3. In de **bouwen** in het menu **Build Solution**.
-
-    De bibliotheek voor het voorbeeld worden in de standaard \bin of \bin\debug mappen samengesteld.
+   De bibliotheek voor het voorbeeld worden samengesteld uit de standaard `\bin` of `\bin\debug` mappen.
 
 ### <a name="how-to-run-the-sample"></a>Hoe u het voorbeeld uitvoeren
 
@@ -78,11 +81,14 @@ In dit voorbeeld is Windows PowerShell 2.0 vereist.
 
 In dit voorbeeld ziet u het volgende.
 
-- Over het schrijven van een cmdlet voor gebeurtenisregistratie. De cmdlet is afgeleid van de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasse, die ondersteuning voor algemene parameters met de Register biedt-*-cmdlets gebeurtenis. Cmdlets die zijn afgeleid van [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) moet alleen de specifieke parameters definiëren en overschrijven de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Over het schrijven van een cmdlet voor gebeurtenisregistratie
+
+De cmdlet is afgeleid van de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasse, die ondersteuning biedt voor parameters voor de `Register-*Event` cmdlets.
+Cmdlets die zijn afgeleid van [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) moet alleen de specifieke parameters definiëren en overschrijven de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld laat zien hoe u zich registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+In dit voorbeeld laat zien hoe u zich registreren voor gebeurtenissen die worden gegenereerd door [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Zie ook
 
-[Schrijven van een Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Schrijven van een Windows PowerShell-Cmdlet](writing-a-windows-powershell-cmdlet.md)

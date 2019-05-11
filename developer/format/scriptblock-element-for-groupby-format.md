@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064506"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229314"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>Het element ScriptBlock voor GroupBy (opmaak)
 
@@ -51,14 +51,14 @@ Geef het script dat wordt geëvalueerd.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Windows PowerShell wordt een nieuwe groep gestart wanneer de waarde van dit script wordt gewijzigd.
+PowerShell wordt een nieuwe groep gestart wanneer de waarde van dit script wordt gewijzigd.
 
-Wanneer dit element is opgegeven, wordt u niet opgeven de [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676) element naar een nieuwe groep.
+Wanneer dit element is opgegeven, wordt u niet opgeven de [PropertyName](propertyname-element-for-groupby-format.md) element naar een nieuwe groep.
 
 ## <a name="see-also"></a>Zie ook
 
-[PropertyName-Element voor GroupBy (indeling)](./propertyname-element-for-groupby-format.md)
+[PropertyName-Element voor GroupBy (indeling)](propertyname-element-for-groupby-format.md)
 
-[GroupBy-Element voor weergave (indeling)](./groupby-element-for-view-format.md)
+[GroupBy-Element voor weergave (indeling)](groupby-element-for-view-format.md)
 
-[Schrijven van een bestand opmaak PowerShell](./writing-a-powershell-formatting-file.md)
+[Schrijven van een bestand opmaak PowerShell](writing-a-powershell-formatting-file.md)

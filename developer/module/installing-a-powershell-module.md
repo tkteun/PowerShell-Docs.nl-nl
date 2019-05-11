@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082182"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229452"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
 
-Nadat u uw PowerShell-module hebt gemaakt, wordt u waarschijnlijk wilt voor het installeren van de module op een systeem, zodat u of anderen kunnen deze gebruiken. In het algemeen, bestaat deze gewoon van het kopiëren van de module-bestanden (ie, de .psm1 of de binaire assembly, het module-manifest en andere gekoppelde bestanden) naar een map op die computer. Voor een zeer klein project, kan dit net zo eenvoudig als kopiëren en plakken van de bestanden met Windows Explorer naar een externe computer; echter, voor grotere oplossingen kunt u een meer geavanceerde installatieproces gebruiken. Ongeacht hoe u uw module bij het systeem ophalen, kunt PowerShell een aantal technieken waarmee gebruikers vinden en gebruiken van uw modules kunt gebruiken. (Zie voor meer informatie, [importeren van een PowerShell-Module](./importing-a-powershell-module.md).) Daarom het belangrijkste probleem voor de installatie is ervoor te zorgen dat PowerShell zal kunnen vinden van uw module.
-
-In dit onderwerp bevat de volgende secties:
-
-- Regels voor het installeren van Modules
-
-- WHERE-Modules installeren
-
-- De installatie van meerdere versies van een Module
-
-- Opdrachtnaamconflicten verwerken
+Nadat u uw PowerShell-module hebt gemaakt, wordt u waarschijnlijk wilt voor het installeren van de module op een systeem, zodat u of anderen kunnen deze gebruiken. Dit bestaat in het algemeen, van het kopiëren van de module-bestanden (ie, de .psm1 of de binaire assembly, het module-manifest en andere gekoppelde bestanden) naar een map op die computer. Voor een zeer klein project, kan dit net zo eenvoudig als kopiëren en plakken van de bestanden met Windows Explorer naar een externe computer; echter, voor grotere oplossingen kunt u een meer geavanceerde installatieproces gebruiken. Ongeacht hoe u uw module bij het systeem ophalen, kunt PowerShell een aantal technieken waarmee gebruikers vinden en gebruiken van uw modules kunt gebruiken. Daarom het belangrijkste probleem voor de installatie is ervoor te zorgen dat PowerShell zal kunnen vinden van uw module. Zie voor meer informatie, [importeren van een PowerShell-Module](./importing-a-powershell-module.md).
 
 ## <a name="rules-for-installing-modules"></a>Regels voor het installeren van Modules
 
@@ -41,14 +31,14 @@ De **PSModulePath** omgevingsvariabele ($Env: PSModulePath) bevat de locaties va
 
 Standaard de **PSModulePath** omgevingsvariabele bevat de volgende systeem en directory's van gebruiker-module, maar u kunt toevoegen aan en bewerkt u de waarde.
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > Deze locatie is gereserveerd voor modules die worden geleverd met Windows. Installeer de modules niet naar deze locatie.
 
-- $Home\Documents\WindowsPowerShell\Modules (% UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (% UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- $Env:ProgramFiles\WindowsPowerShell\Modules (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   Om de waarde van de **PSModulePath** omgevingsvariabele, een van de volgende opdrachten gebruiken.
 
@@ -60,7 +50,6 @@ Standaard de **PSModulePath** omgevingsvariabele bevat de volgende systeem en di
   Een modulepad toevoegen aan de waarde van de **PSModulePath** omgevingsvariabele waarde, gebruikt u de volgende opdrachtindeling. Deze indeling maakt gebruik van de **SetEnvironmentVariable** -methode van de **System.Environment** klasse voor het maken van een sessie-onafhankelijke wijziging in de **PSModulePath** omgeving variabele.
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ Standaard de **PSModulePath** omgevingsvariabele bevat de volgende systeem en di
 
 ### <a name="use-the-correct-module-directory-name"></a>Gebruik de naam van de juiste Module-map
 
-Een 'opgemaakte' is een module die is opgeslagen in een map met dezelfde naam als de naam op van ten minste één bestand in de modulemap. Als een module niet grammaticaal correct is, Windows PowerShell niet wordt herkend als een module.
+Een goed ingedeelde is een module die is opgeslagen in een map met dezelfde naam als de naam op van ten minste één bestand in de modulemap. Als een module niet grammaticaal correct is, Windows PowerShell niet wordt herkend als een module.
 
 De 'algemene naam' van een bestand is de naam zonder de extensie. De naam van de map waarin de bestanden van de module moet overeenkomen met de naam op van ten minste één bestand in de module in een goed ingedeelde module.
 
@@ -122,9 +111,7 @@ Deze sectie wordt uitgelegd waar u in het bestandssysteem voor het installeren v
 
 Als u uw eigen module maken of een module ophalen uit een andere partij, zoals de website van een Windows PowerShell-community en u wilt dat de module moet beschikbaar zijn voor uw gebruikersaccount gebruikt, moet u de module installeren in uw directory gebruikersspecifieke-Modules.
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 De gebruiker-specifieke Modules-map wordt toegevoegd aan de waarde van de **PSModulePath** omgevingsvariabele standaard.
 
@@ -132,9 +119,7 @@ De gebruiker-specifieke Modules-map wordt toegevoegd aan de waarde van de **PSMo
 
 Als u een module beschikbaar voor alle gebruikersaccounts op de computer, installeert u de module op de locatie voor programmabestanden.
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > De locatie voor programmabestanden wordt toegevoegd aan de waarde van de omgevingsvariabele PSModulePath standaard in Windows PowerShell 4.0 en hoger. Voor eerdere versies van Windows PowerShell kunt u handmatig de locatie programmabestanden ((%ProgramFiles%\WindowsPowerShell\Modules) maken en dit pad toevoegen aan de omgevingsvariabele PSModulePath zoals hierboven is beschreven.
@@ -160,7 +145,7 @@ Het installatieprogramma van de module Fabrikam voegt om in te schakelen van de 
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Als een module wordt gebruikt door meerdere onderdelen van een product of meerdere versies van een product, moet u de module installeren in een module-specifieke submap van de %ProgramFiles%\Common Files\Modules submap.
 
-In het volgende voorbeeld wordt is de Fabrikam-module geïnstalleerd in een submap Fabrikam van de %ProgramFiles%\Common Files\Modules submap. Houd er rekening mee dat elke module bevindt zich in een eigen submap in de submap Modules.
+In het volgende voorbeeld wordt de Fabrikam-module is geïnstalleerd in een submap Fabrikam van de `%ProgramFiles%\Common Files\Modules` submap. Houd er rekening mee dat elke module bevindt zich in een eigen submap in de submap Modules.
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 Vervolgens het installatieprogramma zorgen voor de waarde van de **PSModulePath** omgevingsvariabele bevat het pad van de algemene bestanden modules submap.
@@ -198,9 +182,7 @@ $p = $q -join ';'
 Gebruik de volgende procedure voor het installeren van meerdere versies van dezelfde module.
 
 1. Maak een map voor elke versie van de module. Neem het versienummer in naam van de map.
-
 2. Maak een module-manifest voor elke versie van de module. In de waarde van de **ModuleVersion** sleutel in het manifest, geef het versienummer van de module. Sla het manifestbestand (.psd1) in de map specifieke versies voor de module.
-
 3. Pad naar de map van de module hoofdmap toevoegen aan de waarde van de **PSModulePath** omgevingsvariabele, zoals wordt weergegeven in de volgende voorbeelden.
 
 Als u wilt importeren in een bepaalde versie van de module, de eindgebruiker kan gebruiken de `MinimumVersion` of `RequiredVersion` parameters van de [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.

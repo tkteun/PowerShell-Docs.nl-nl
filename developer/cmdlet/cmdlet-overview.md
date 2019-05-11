@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068467"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229360"
 ---
 # <a name="cmdlet-overview"></a>Overzicht van cmdlets
 
@@ -38,19 +38,53 @@ U kunt laden van de assembly die de klasse rechtstreeks met behulp van bevat de 
 
 De volgende termen worden vaak gebruikt in de documentatie van Windows PowerShell-cmdlet:
 
-- **Kenmerk van de cmdlet**: Een .NET Framework-kenmerk dat wordt gebruikt om aan te geven van een cmdlet-klasse als een cmdlet. Hoewel Windows PowerShell verschillende andere kenmerken die optioneel zijn gebruikt, is het Cmdlet-kenmerk vereist. Zie voor meer informatie over dit kenmerk [Cmdlet kenmerkdeclaratie](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>Cmdlet-kenmerk
 
-- **Cmdlet-parameter**: De openbare eigenschappen die de parameters gedefinieerd die beschikbaar zijn voor de gebruiker of de toepassing die de cmdlet wordt uitgevoerd. Cmdlets kunt vereiste, met de naam, positionele, en *overschakelen* parameters. Switch-parameters kunnen u parameters definiëren die alleen als de parameters zijn opgegeven in de aanroep van worden geëvalueerd. Zie voor meer informatie over de verschillende typen parameters [Cmdlet-Parameters](./cmdlet-parameters.md).
+Een .NET Framework-kenmerk dat wordt gebruikt om aan te geven van een cmdlet-klasse als een cmdlet.
+Hoewel PowerShell wordt gebruikt voor verschillende andere kenmerken die optioneel zijn, is het Cmdlet-kenmerk vereist.
+Zie voor meer informatie over dit kenmerk [Cmdlet kenmerkdeclaratie](cmdlet-attribute-declaration.md).
 
-- **Parameterset**: Een groep van de parameters die kunnen worden gebruikt in dezelfde opdracht een bepaalde actie uit te voeren. Een cmdlet kunt hebben meerdere parametersets moet, maar elke parameterset ten minste één parameter die uniek is. Goede cmdlet ontwerp raadt dat de unieke parameter ook niet een vereiste parameter. Zie voor meer informatie over parametersets [Cmdlet-Parameter stelt](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Cmdlet-parameter
 
-- **Dynamische parameter**: Een parameter die wordt toegevoegd aan de cmdlet tijdens runtime. Normaal gesproken worden de dynamische parameters toegevoegd aan de cmdlet, wanneer een andere parameter is ingesteld op een specifieke waarde. Zie voor meer informatie over dynamische parameters [dynamische Parameters van de Cmdlet](./cmdlet-dynamic-parameters.md).
+De openbare eigenschappen die de parameters gedefinieerd die beschikbaar zijn voor de gebruiker of de toepassing die de cmdlet wordt uitgevoerd.
+Cmdlets kunt vereiste, met de naam, positionele, en *overschakelen* parameters.
+Switch-parameters kunnen u parameters definiëren die alleen als de parameters zijn opgegeven in de aanroep van worden geëvalueerd.
+Zie voor meer informatie over de verschillende typen parameters [Cmdlet-Parameters](cmdlet-parameters.md).
 
-- **Verwerking invoermethode**: Een methode die een cmdlet gebruiken kunt voor het verwerken van de records die deze ontvangt als invoer. De van invoer-verwerkingsmethoden zijn onder meer de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode, de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, de [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode, en de [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) methode. Wanneer u een cmdlet implementeert, moet u ten minste één van overschrijven de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), en [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methoden. Normaal gesproken de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) is de methode die u overschrijven omdat deze wordt aangeroepen voor elke record die de cmdlet wordt verwerkt. Daarentegen de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode worden één keer aangeroepen om uit te voeren vooraf verwerken of na verwerking van de records. Zie voor meer informatie over deze methoden, [invoer verwerking methoden](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Parameterset
 
-- **De functie shouldprocess wordt overgeslagen**: Windows PowerShell kunt u cmdlets die de gebruiker om feedback vragen voordat de cmdlet een wijziging aan het systeem maakt maken. Deze functie wilt gebruiken, de cmdlet moet worden gedeclareerd dat het ondersteuning biedt voor de functie shouldprocess wordt overgeslagen wanneer u de Cmdlet-kenmerk declareren en moet worden aangeroepen door de cmdlet de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden van binnen een invoer verwerken van methode. Zie voor meer informatie over hoe u ondersteuning voor de functionaliteit shouldprocess wordt overgeslagen [aanvragen bevestiging](./requesting-confirmation-from-cmdlets.md).
+Een groep van de parameters die kunnen worden gebruikt in dezelfde opdracht een bepaalde actie uit te voeren.
+Een cmdlet kunt hebben meerdere parametersets moet, maar elke parameterset ten minste één parameter die uniek is.
+Goede cmdlet ontwerp raadt dat de unieke parameter ook niet een vereiste parameter.
+Zie voor meer informatie over parametersets [Cmdlet-Parameter stelt](cmdlet-parameter-sets.md).
 
-- **Transactie**: Een logische groep opdrachten die worden behandeld als één taak. De taak automatisch wordt uitgevoerd als een opdracht in de groep mislukt en de gebruiker de keuze om te accepteren of weigeren van de acties die worden uitgevoerd binnen de transactie heeft. Om deel te nemen in een transactie, moet de cmdlet declareert dat deze biedt ondersteuning voor transacties wanneer de Cmdlet-kenmerk is gedeclareerd. Ondersteuning voor transacties is geïntroduceerd in Windows PowerShell 2.0. Zie voor meer informatie over transacties [Windows PowerShell-transacties](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>dynamische parameter
+
+Een parameter die wordt toegevoegd aan de cmdlet tijdens runtime.
+Normaal gesproken worden de dynamische parameters toegevoegd aan de cmdlet, wanneer een andere parameter is ingesteld op een specifieke waarde.
+Zie voor meer informatie over dynamische parameters [dynamische Parameters van de Cmdlet](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>verwerken van methode invoer
+
+Een methode die een cmdlet gebruiken kunt voor het verwerken van de records die deze ontvangt als invoer.
+De van invoer-verwerkingsmethoden zijn onder meer de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode, de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, de [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode, en de [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) methode. Wanneer u een cmdlet implementeert, moet u ten minste één van overschrijven de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), en [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methoden.
+Normaal gesproken de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) is de methode die u overschrijven omdat deze wordt aangeroepen voor elke record die de cmdlet wordt verwerkt.
+Daarentegen de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode en de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode worden één keer aangeroepen om uit te voeren vooraf verwerken of na verwerking van de records.
+Zie voor meer informatie over deze methoden, [invoer verwerking methoden](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>De functie shouldprocess wordt overgeslagen
+
+PowerShell kunt u cmdlets die de gebruiker om feedback vragen voordat de cmdlet een wijziging aan het systeem maakt maken.
+Deze functie wilt gebruiken, de cmdlet moet worden gedeclareerd dat het ondersteuning biedt voor de functie shouldprocess wordt overgeslagen wanneer u de Cmdlet-kenmerk declareren en moet worden aangeroepen door de cmdlet de [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methoden van binnen een invoer verwerken van methode.
+Zie voor meer informatie over hoe u ondersteuning voor de functionaliteit shouldprocess wordt overgeslagen [aanvragen bevestiging](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>Transactie
+
+Een logische groep opdrachten die worden behandeld als één taak.
+De taak automatisch wordt uitgevoerd als een opdracht in de groep mislukt en de gebruiker de keuze om te accepteren of weigeren van de acties die worden uitgevoerd binnen de transactie heeft.
+Om deel te nemen in een transactie, moet de cmdlet declareert dat deze biedt ondersteuning voor transacties wanneer de Cmdlet-kenmerk is gedeclareerd.
+Ondersteuning voor transacties is geïntroduceerd in Windows PowerShell 2.0.
+Zie voor meer informatie over transacties [hoe u ondersteuning voor transacties](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Hoe Cmdlets verschillen van opdrachten
 
