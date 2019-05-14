@@ -68,7 +68,7 @@
   items:
     - name: Console
       items:
-        - name: Help voor de PowerShell.exe-opdrachtregel
+        - name: Opdrachtregelopties voor PowerShell
           href: components/console/powershell.exe-command-line-help.md
         - name: Tabbladuitbreiding gebruiken
           href: components/console/using-tab-expansion.md
