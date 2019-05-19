@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
 title: Understanding PowerShell-pijplijnen
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086439"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854349"
 ---
 # <a name="understanding-pipelines"></a>Inzicht in pijplijnen
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 Ook het wisselbestand minder CPU-gebruik omdat verwerking naar overgebracht de `Out-Host` cmdlet wanneer er een volledige pagina Gereed om weer te geven. De cmdlets die worden voorafgegaan door het in de pijplijn onderbreken worden uitgevoerd totdat de volgende pagina van de uitvoer beschikbaar is.
 
-Hier ziet u het verschil Windows Taakbeheer om CPU en geheugen dat wordt gebruikt door PowerShell te bewaken. Voer de volgende opdracht uit: `Get-ChildItem C:\Windows -Recurse`. Vergelijk de CPU- en geheugengebruik op deze opdracht: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+U kunt zien hoe doorsluizen heeft gevolgen voor CPU- en geheugengebruik in Windows Taakbeheer door het vergelijken van de volgende opdrachten:
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > De **Paging** parameter wordt niet ondersteund door alle PowerShell-hosts. Bijvoorbeeld, wanneer u probeert te gebruiken de **Paging** parameter in de PowerShell ISE, ziet u de volgende fout:

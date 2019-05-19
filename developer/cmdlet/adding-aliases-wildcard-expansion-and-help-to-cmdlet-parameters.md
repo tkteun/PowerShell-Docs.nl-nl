@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075253"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854897"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 
 In deze sectie wordt beschreven hoe u aliassen, jokertekens, toevoegen en Help berichten naar de parameters van de cmdlet Stop-Proc (beschreven in [maken van een Cmdlet die Hiermee wijzigt u het systeem](./creating-a-cmdlet-that-modifies-the-system.md)).
 
 Deze cmdlet Stop-Proc probeert te beëindigen van processen die worden opgehaald met de cmdlet Get-Proc (beschreven in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [De Cmdlet definiëren](#Defining-the-Cmdlet)
-
-- [Parameters voor aanpassing van het systeem definiëren](#Defining-Parameters-for-System-Modification)
-
-- [Een Parameteralias definiëren](#Defining-a-Parameter-Alias)
-
-- [Help voor Parameters maken](#Creating-Help-for-Parameters)
-
-- [Invoer verwerken methode te overschrijven](#Overriding-an-Input-Processing-Method)
-
-- [Ondersteunende jokertekens](#Supporting-Wildcard-Expansion)
-
-- [Voorbeeld van code](#Defining-a-Parameter-Alias)
-
-- [Objecttype definiëren en opmaak](#Define-Object-Types-and-Formatting)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>De Cmdlet definiëren
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068348"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854852"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 
@@ -22,24 +22,6 @@ In deze sectie wordt beschreven hoe u een cmdlet die toegang heeft tot opgeslage
 De Select-Str cmdlet die hier worden beschreven kunt vinden en tekenreeksen in een bestand of object selecteren. De patronen die wordt gebruikt voor het identificeren van de tekenreeks kunnen via expliciet worden opgegeven. de `Path` parameter van de cmdlet of impliciet via de `Script` parameter.
 
 De cmdlet is ontworpen voor het gebruik van een Windows PowerShell-provider die is afgeleid van [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). De cmdlet kunt bijvoorbeeld opgeven de bestandssysteem-provider of de provider van de variabele die wordt geleverd door Windows PowerShell. Zie voor meer informatie aboutWindows PowerShell-providers, [het ontwerpen van uw Windows PowerShell-provider](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [De Cmdlet-klasse definiëren](#Defining-the-Cmdlet-Class)
-
-- [Parameters voor toegang tot de gegevens definiëren](#Declaring-the-Path-Parameter)
-
-- [Invoer verwerking van methoden overschrijven](#Overriding-Input-Processing-Methods)
-
-- [Toegang krijgen tot inhoud](#Accessing-Content)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Declaring-Search-Support-Parameters)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>De Cmdlet-klasse definiëren
 
@@ -397,7 +379,7 @@ In dit voorbeeld selecteren Str-cmdlet gebruikt de [System.Management.Automation
 
 ## <a name="code-sample"></a>Voorbeeld van code
 
-De volgende code toont de uitvoering van deze versie van deze cmdlet Selecteer Str. Houd er rekening mee dat deze code bevat de cmdlet-klasse, persoonlijke methoden die worden gebruikt door de cmdlet en de Windows PowerShell-module code die wordt gebruikt voor het registreren van de cmdlet. Zie voor meer informatie over het registreren van de cmdlet [het bouwen van de Cmdlet](#Building-the-Cmdlet).
+De volgende code toont de uitvoering van deze versie van deze cmdlet Selecteer Str. Houd er rekening mee dat deze code bevat de cmdlet-klasse, persoonlijke methoden die worden gebruikt door de cmdlet en de Windows PowerShell-module code die wordt gebruikt voor het registreren van de cmdlet. Zie voor meer informatie over het registreren van de cmdlet [het bouwen van de Cmdlet](#building-the-cmdlet).
 
 ```csharp
 //

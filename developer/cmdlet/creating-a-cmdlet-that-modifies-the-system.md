@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068424"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854919"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Een cmdlet maken waarmee het systeem wordt gewijzigd
 
@@ -42,28 +42,6 @@ De handeling van het "wijzigen van het systeem" verwijst naar een cmdlet die mog
 ## <a name="the-stopproc-cmdlet"></a>De StopProc Cmdlet
 
 In dit onderwerp wordt beschreven hoe een cmdlet Stop-Proc waarmee wordt geprobeerd te beëindigen van processen die worden opgehaald met de cmdlet Get-Proc (beschreven in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [De Cmdlet definiëren](#Defining-the-Cmdlet)
-
-- [Parameters voor aanpassing van het systeem definiëren](#Defining-Parameters-for-System-Modification)
-
-- [Invoer verwerken methode te overschrijven](#Overriding-an-Input-Processing-Method)
-
-- [Aanroepen van de methode shouldprocess wordt overgeslagen](#Calling-the-ShouldProcess-Method)
-
-- [Aanroepen van de methode ShouldContinue](#Calling-the-ShouldContinue-Method)
-
-- [Stoppen verwerking van invoer](#Stopping-Input-Processing)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Defining-Object-Types-and-Formatting)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>De Cmdlet definiëren
 

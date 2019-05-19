@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068756"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854984"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken
 
 Een bron van de invoer voor een cmdlet is een object in de pijplijn die afkomstig van een upstream-cmdlet is. In deze sectie wordt beschreven hoe u een parameter toevoegen aan de cmdlet Get-Proc (beschreven in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)) zodat de cmdlet pijplijnobjecten kan verwerken.
 
 Maakt gebruik van deze cmdlet Get-Proc een `Name` parameter dat invoer van een pijplijn-object accepteert procesinformatie opgehaald uit de lokale computer op basis van de opgegeven namen en vervolgens geeft informatie weer over de processen op de opdrachtregel.
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [De Cmdlet-klasse definiëren](#Defining-the-Cmdlet-Class)
-
-- [Invoer van de pijplijn definiëren](#Defining-Input-from-the-Pipeline)
-
-- [Invoer verwerken methode te overschrijven](#Overriding-an-Input-Processing-Method)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Defining-Object-Types-and-Formatting)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>De Cmdlet-klasse definiëren
 

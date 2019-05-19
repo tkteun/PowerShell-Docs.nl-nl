@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055645"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855210"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Een Windows PowerShell-stationprovider maken
 
 In dit onderwerp wordt beschreven hoe u een Windows PowerShell-station provider waarmee u een manier om een gegevensarchief toegang via een Windows PowerShell-station te maken. Dit type provider is ook Windows PowerShell-station providers genoemd. De Windows PowerShell-stations die worden gebruikt door de provider bieden de mogelijkheid om verbinding maken met het gegevensarchief.
 
 De Windows PowerShell-station-provider die hier worden beschreven, biedt toegang tot een Microsoft Access-database. Voor deze provider, de Windows PowerShell-station de database (dit is mogelijk een willekeurig aantal stations toevoegen aan een station-provider), vertegenwoordigt de containers op het hoogste niveau van het station staan voor de tabellen in de database en de rijen in de items van de containers vertegenwoordigen de tabellen.
-
-Hier volgt een lijst van de secties in dit onderwerp. Als u niet bekend bent met het schrijven van een provider van Windows PowerShell-station, lees deze gedeeltes in de volgorde waarin ze worden weergegeven. Echter, als u bekend bent met het schrijven van de provider van een station, gaat u rechtstreeks naar de informatie die u nodig hebt.
-
-- [De Windows PowerShell-Provider-klasse definiëren](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Basisfunctionaliteit definiëren](#Defining-Base-Functionality)
-
-- [Het maken van informatie over de status van station](#Creating-Drive-State-Information)
-
-- [Het maken van een station](#Creating-a-Drive)
-
-- [Dynamische Parameters te koppelen aan NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Verwijderen van een station](#Removing-a-Drive)
-
-- [Tijdens de initialisatie van standaard stations](#Initializing-Default-Drives)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Testen van de Provider van Windows PowerShell-station](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>De Windows PowerShell-Provider-klasse definiëren
 

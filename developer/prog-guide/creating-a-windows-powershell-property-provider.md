@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081832"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855005"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Een Windows PowerShell-eigenschapsprovider maken
 
@@ -31,26 +31,6 @@ In dit onderwerp wordt beschreven hoe u een provider waarmee de gebruiker voor h
 
 > [!CAUTION]
 > De methoden van de Eigenschappenprovider moeten schrijven alle objecten met behulp van de [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) methode.
-
-De volgende lijst bevat de secties in dit onderwerp. Als u niet bekend bent met het schrijven van een Windows PowerShell-provider voor de eigenschap, leest u deze informatie in de volgorde waarin deze wordt weergegeven. Echter, als u bekend bent met het schrijven van een Windows PowerShell-provider voor de eigenschap, gaat u rechtstreeks naar de informatie die u nodig hebt.
-
-- [De Windows PowerShell-Provider te definiëren](#Defining-the-Windows-PowerShell-provider)
-
-- [Basisfunctionaliteit definiëren](#Defining-Base-Functionality)
-
-- [Bij het ophalen van eigenschappen](#Retrieving-Properties)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Get-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Instellingseigenschappen](#Setting-Properties)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Set-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Een eigenschap wissen](#Clearing-Properties)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Clear-ItemProperty` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Het bouwen van de Windows PowerShell-Provider](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>De Windows PowerShell-provider te definiëren
 

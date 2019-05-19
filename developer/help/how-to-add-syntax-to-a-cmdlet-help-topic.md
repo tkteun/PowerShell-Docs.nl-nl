@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083379"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855136"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
-
-- [Parameter Attributes](#Parameter-Attributes)
-
-- [Parameter Waardekenmerken](#Parameter-Value-Attributes)
-
-- [Verzamelen van informatie over syntaxis](#Gathering-Syntax-Information)
-
-- [Het Syntaxisschema XML-code](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Om te weten over het Syntaxisschema in de Help van Cmdlet
 
 Voordat u begint met de code van het XML-bestand voor het syntaxisschema in de cmdlet Help-bestand, lees deze sectie als u een helder beeld van het type van de gegevens die u moet opgeven, zoals de parameterkenmerken en hoe die gegevens wordt weergegeven in het syntaxisschema...
 
@@ -166,7 +156,7 @@ Normaal gesproken parameterwaarden die tijdelijke aanduidingen zijn zijn vereist
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Het Syntaxisschema XML-code
 
-Het knooppunt van de syntaxis van het XML-bestand begint onmiddellijk na het knooppunt beschrijving, dat eindigt op de \</maml:description > tag. Zie voor meer informatie over het verzamelen van de gegevens die worden gebruikt in het syntaxisschema [verzamelen van informatie over de syntaxis](#Gathering-Syntax-Information).
+Het knooppunt van de syntaxis van het XML-bestand begint onmiddellijk na het knooppunt beschrijving, dat eindigt op de \</maml:description > tag. Zie voor meer informatie over het verzamelen van de gegevens die worden gebruikt in het syntaxisschema [verzamelen van informatie over de syntaxis](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Toevoegen van een knooppunt syntaxis
 
@@ -210,7 +200,7 @@ Het volgende voorbeeld bevat een knooppunt syntaxis met de syntaxis van de item-
 
 Elke parameter toegevoegd aan de syntaxis van de item-knooppunt is opgegeven in een paar \<opdrachtparameter: > tags. U moet een tweetal \<opdrachtparameter: > tags voor elke parameter die is opgenomen in de parameter is ingesteld, met uitzondering van de algemene parameters die worden geleverd door Windows PowerShell?
 
-De kenmerken van het openen \<opdrachtparameter: > tag te bepalen hoe de parameter in het syntaxisschema wordt weergegeven. Zie voor informatie over de parameterkenmerken, [Parameterkenmerken](#Parameter-Attributes).
+De kenmerken van het openen \<opdrachtparameter: > tag te bepalen hoe de parameter in het syntaxisschema wordt weergegeven. Zie voor informatie over de parameterkenmerken, [Parameterkenmerken](#parameter-attributes).
 
 > [!NOTE]
 > De \<opdrachtparameter: > tag ondersteunt een onderliggend element \<maml:description > waarvan de inhoud wordt nooit weergegeven. De beschrijvingen van de parameters zijn opgegeven in de parameterknooppunt van het XML-bestand. Om te voorkomen dat inconsistenties tussen de informatie in de syntaxis van de instanties en de parameterknooppunt, laat de (\<maml:description > of laat het veld leeg.

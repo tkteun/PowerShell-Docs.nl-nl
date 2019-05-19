@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082070"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855068"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen
 
@@ -26,22 +26,6 @@ Zoals eerder vermeld, de basic-provider beschreven hier implementeert methoden v
 
 > [!NOTE]
 > U vindt een voorbeeld van deze provider in het bestand AccessDBSampleProvider01.cs is geleverd door Windows PowerShell.
-
-De secties in dit onderwerp zijn onder andere het volgende:
-
-- [De Windows PowerShell-Provider-klasse definiëren](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Informatie over de status van de Provider-specifieke definiëren](#Defining-Provider-Specific-State-Information)
-
-- [Tijdens de initialisatie van de Provider](#Initializing-the-Provider)
-
-- [Dynamische Parameters starten](#Start-Dynamic-Parameters)
-
-- [De Provider uninitializing](#Uninitializing-the-Provider)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [De Windows PowerShell-Provider testen](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>De Windows PowerShell-Provider-klasse definiëren
 
@@ -77,7 +61,7 @@ Deze methode wordt niet door deze eenvoudige provider worden overschreven. De vo
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-De provider van de status van de provider-specifieke informatie kunt bijhouden, zoals beschreven in [definiëren Provider-specifieke gegevens status](#Defining-Provider-Specific-State-Information). In dit geval uw implementatie moet overschrijven de [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) methode om te retourneren van een exemplaar van de afgeleide klasse.
+De provider van de status van de provider-specifieke informatie kunt bijhouden, zoals beschreven in [definiëren Provider-specifieke gegevens status](#defining-provider-specific-state-information). In dit geval uw implementatie moet overschrijven de [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) methode om te retourneren van een exemplaar van de afgeleide klasse.
 
 ## <a name="start-dynamic-parameters"></a>Dynamische Parameters starten
 

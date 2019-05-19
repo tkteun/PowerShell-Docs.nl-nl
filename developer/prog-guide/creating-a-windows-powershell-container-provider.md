@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081900"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855180"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Een Windows PowerShell-containerprovider maken
 
@@ -35,44 +35,6 @@ De Windows PowerShell-container-provider die hier worden beschreven definieert d
 
 > [!CAUTION]
 > Let erop dat dit ontwerp wordt ervan uitgegaan dat een database waarvoor een veld met de naam-ID en dat het type van het veld LongInteger is.
-
-Hier volgt een lijst van de secties in dit onderwerp. Als u niet bekend bent met het schrijven van een Windows PowerShell-container-provider, leest u deze informatie in de volgorde waarin deze wordt weergegeven. Echter, als u bekend bent met het schrijven van een Windows PowerShell-container-provider, gaat u rechtstreeks naar de informatie die u nodig hebt.
-
-- [Een Windows PowerShell-Container providerklasse definiëren](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Basisfunctionaliteit definiëren](#defining-base-functionality)
-
-- [Bij het ophalen van onderliggende Items](#Retrieving-Child-Items)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Get-ChildItem` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Bij het ophalen van namen van de onderliggende items](#Retrieving-Child-Item-Names)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Get-ChildItem` Cmdlet (naam)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Naam van Items wijzigen](#Renaming-Items)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Rename-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Het maken van nieuwe Items](#Creating-New-Items)
-
-- [Bezig met koppelen van dynamische Parameters voor de `New-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Een Items verwijderen](#Removing-Items)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Remove-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Query's uitvoeren voor de onderliggende Items](#Querying-for-Child-Items)
-
-- [Kopieert Items](#Copying-Items)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Het bouwen van de Windows PowerShell-Provider](#Building-the-Windows-PowerShell-Provider)
-
-- [De Windows PowerShell-Provider testen](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Een Windows PowerShell-Container providerklasse definiëren
 
@@ -398,7 +360,7 @@ De volgende voorwaarden mogelijk van toepassing op de implementatie van [System.
 
 - De implementatie van [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) is verantwoordelijk voor het voorkomen van oneindige recursie wanneer er circulaire koppelingen en dergelijke zijn. Een juiste afsluitende uitzondering moet worden gegenereerd om een voorwaarde weer te geven.
 
-- De implementatie van de [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) methode moet aanroepen [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) en controleer de geretourneerde waarde voordat u wijzigingen aanbrengt aan de gegevensopslag. Na het aanroepen van [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert ' True ', de [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) methode moet aanroepen de [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) methode als een aanvullende controle voor wijzigingen die mogelijk schadelijke system. Zie voor meer informatie over het aanroepen van deze methoden [Items wijzigen](#Renaming-Items).
+- De implementatie van de [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) methode moet aanroepen [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) en controleer de geretourneerde waarde voordat u wijzigingen aanbrengt aan de gegevensopslag. Na het aanroepen van [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert ' True ', de [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) methode moet aanroepen de [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) methode als een aanvullende controle voor wijzigingen die mogelijk schadelijke system. Zie voor meer informatie over het aanroepen van deze methoden [Items wijzigen](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Dynamische Parameters toevoegen aan de Cmdlet Copy-Item
 

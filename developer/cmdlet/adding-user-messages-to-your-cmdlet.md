@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068773"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854925"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Gebruikersberichten toevoegen aan uw cmdlet
 
@@ -51,32 +51,6 @@ Cmdlets kunt schrijven die verschillende soorten berichten die door de Windows P
 - Voortgangsrapport berichten die informatie over hoeveel bevatten werken de cmdlet is voltooid bij het uitvoeren van een bewerking die lange tijd in beslag neemt.
 
 Er zijn geen beperkingen op het aantal berichten dat uw cmdlet kan schrijven of het type berichten die uw cmdlet schrijft. Elk bericht is geschreven door een specifieke aanroep uit binnen de invoer-methode van de cmdlet verwerkt.
-
-## <a name="the-stopproc-cmdlet"></a>De StopProc Cmdlet
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [De Cmdlet definiëren](#Defining-the-Cmdlet)
-
-- [Parameters voor aanpassing van het systeem definiëren](#Defining-Parameters-for-System-Modification)
-
-- [Invoer verwerken methode te overschrijven](#Overriding-an-Input-Processing-Method)
-
-- [Een uitgebreid bericht schrijven](#Writing-a-Verbose-Message)
-
-- [Geen foutopsporingsbericht schrijven](#Writing-a-Debug-Message)
-
-- [Schrijven van een waarschuwingsbericht wordt weergegeven](#Writing-a-Warning-Message)
-
-- [Schrijven van een bericht wordt uitgevoerd](#Writing-a-Progress-Message)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Definieer objecttypen en opmaak](#Define-Object-Types-and-Formatting)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>De Cmdlet definiëren
 

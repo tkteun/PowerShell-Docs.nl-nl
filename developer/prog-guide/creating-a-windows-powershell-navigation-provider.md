@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081849"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855177"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Een Windows PowerShell-navigatieprovider maken
 
@@ -33,34 +33,6 @@ De provider die hier worden beschreven Hiermee kunt u de ingang van de gebruiker
 
 > [!CAUTION]
 > Let erop dat dit ontwerp wordt ervan uitgegaan dat een database waarvoor een veld met de naam-ID en dat het type van het veld LongInteger is.
-
-De volgende lijst bevat secties in dit onderwerp. Als u niet bekend bent met het schrijven van een Windows PowerShell-navigatie-provider, leest u deze informatie in de volgorde waarin deze wordt weergegeven. Echter, als u bekend bent met het schrijven van een Windows PowerShell-navigatie-provider, gaat u rechtstreeks naar de informatie die u nodig hebt.
-
-- [Een klasse PS navigatie Provider definiëren](#Define-the-Windows-PowerShell-provider)
-
-- [Basisfunctionaliteit definiëren](#Defining-Base-Functionality)
-
-- [Het maken van een PS-pad](#Creating-a-Windows-PowerShell-Path)
-
-- [Bij het ophalen van het bovenliggende pad](#Retrieving-the-Parent-Path)
-
-- [Bij het ophalen van de naam van het onderliggende-pad](#Retrieve-the-Child-Path-Name)
-
-- [Als een Item een Container is bepalen](#Determining-if-an-Item-is-a-Container)
-
-- [Een Item verplaatst](#Moving-an-Item)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Een relatief pad normaliseren](#Normalizing-a-Relative-Path)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Defining-Object-Types-and-Formatting)
-
-- [Het bouwen van de Windows PowerShell-Provider](#Building-the-Windows-PowerShell-provider)
-
-- [De Windows PowerShell-Provider testen](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>De Windows PowerShell-provider definiëren
 

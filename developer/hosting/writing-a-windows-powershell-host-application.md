@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082495"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855090"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Een Windows PowerShell-hosttoepassing schrijven
 
 U kunt Windows PowerShell hosten in uw toepassing. De host-toepassing kunt definiëren de runspace waarin opdrachten zijn uitgevoerd, opent u sessies op een lokale of externe computer en aanroepen van de opdrachten die een synchroon of asynchroon op basis van de behoeften van de toepassing.
 
-De volgende onderwerpen wordt uitgelegd hoe u een toepassing maken die als host fungeert
+De volgende onderwerpen wordt uitgelegd hoe u een toepassing maakt die als host fungeert van de Windows PowerShell.
 
 ## <a name="in-this-section"></a>In deze sectie
 

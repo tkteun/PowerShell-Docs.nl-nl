@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081866"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855054"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
@@ -30,44 +30,6 @@ Dit onderwerp beschrijft het maken van een Windows PowerShell-provider die de ge
 > Zie voor meer informatie over andere Windows PowerShell-provider-implementaties, [het ontwerpen van uw Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
 
 De Windows PowerShell-item-provider in dit onderwerp beschreven haalt gegevens uit een Access-database. Een 'item' is in dit geval wordt een tabel in de Access-database of een rij in een tabel.
-
-De volgende lijst bevat de secties in dit onderwerp. Als u niet bekend bent met het schrijven van een Windows PowerShell-item-provider, lees deze gedeeltes in de volgorde waarin ze worden weergegeven. Echter, als u bekend bent met het schrijven van een Windows PowerShell-item-provider, gaat u rechtstreeks naar de informatie die u nodig hebt:
-
-- [De Windows PowerShell-Provider van een itemklasse definiëren](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Basisfunctionaliteit definiëren](#Defining-Base-Functionality)
-
-- [Controleren op pad geldigheid](#Checking-for-Path-Validity)
-
-- [Bepalen of een Item bestaat](#Determining-if-an-Item-Exists)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Bij het ophalen van een Item](#Retrieving-an-Item)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Instellen van een Item](#Setting-an-Item)
-
-- [Bezig met koppelen van dynamische Parameters voor de `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Een Item uit te schakelen](#Clearing-an-Item)
-
-- [Dynamische Parameters toevoegen aan de Cmdlet Clear-Item](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Uitvoeren van een standaardactie voor een Item](#Performing-a-Default-Action-for-an-Item)
-
-- [Bij het ophalen van dynamische Parameters voor InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementatie van Help-methoden en klassen](#Implementing-Helper-Methods-and-Classes)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Defining-Object-Types-and-Formatting)
-
-- [Het bouwen van de Windows PowerShell-Provider](#Building-the-Windows-PowerShell-provider)
-
-- [De Windows PowerShell-Provider testen](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>De Windows PowerShell-Provider van een itemklasse definiëren
 
@@ -223,7 +185,7 @@ Deze methode wordt niet geïmplementeerd door de provider van dit item. De volge
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implementatie van Help-methoden en klassen
 
-Deze provider item verschillende hulpmethoden implementeert en klassen die worden gebruikt door de openbare methoden die zijn gedefinieerd door de Windows PowerShell overschrijven. De code voor deze Help-methoden en -klassen worden weergegeven in de [codevoorbeeld](#Code-Sample) sectie.
+Deze provider item verschillende hulpmethoden implementeert en klassen die worden gebruikt door de openbare methoden die zijn gedefinieerd door de Windows PowerShell overschrijven. De code voor deze Help-methoden en -klassen worden weergegeven in de [codevoorbeeld](#code-sample) sectie.
 
 ### <a name="normalizepath-method"></a>Methode NormalizePath
 

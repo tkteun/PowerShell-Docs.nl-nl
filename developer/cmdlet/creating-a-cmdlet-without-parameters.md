@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068331"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854968"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Een cmdlet maken zonder parameters
 
 In deze sectie wordt beschreven hoe u een cmdlet die wordt informatie opgehaald uit de lokale computer zonder het gebruik van parameters en vervolgens schrijft de informatie in de pijplijn te maken. De cmdlet die hier worden beschreven, is een cmdlet Get-Proc die haalt informatie op over de processen van de lokale computer en vervolgens informatie wordt weergegeven op de opdrachtregel.
-
-Onderwerpen in deze sectie bevatten het volgende:
-
-- [Naamgeving van de Cmdlet](#Naming-the-Cmdlet)
-
-- [De Cmdlet-klasse definiëren](#Defining-the-Cmdlet-Class)
-
-- [Invoer verwerken methode te overschrijven](#Overriding-an-Input-Processing-Method)
-
-- [Voorbeeld van code](#Code-Sample)
-
-- [Objecttype definiëren en opmaak](#Defining-Object-Types-and-Formatting)
-
-- [Het bouwen van de Cmdlet](#Building-the-Cmdlet)
-
-- [Testen van de Cmdlet](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Let erop dat bij het schrijven van cmdlets, de Windows PowerShell®-verwijzingsassembly's worden gedownload naar schijf (standaard op C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Ze zijn niet geïnstalleerd in de Global Assembly Cache (GAC).

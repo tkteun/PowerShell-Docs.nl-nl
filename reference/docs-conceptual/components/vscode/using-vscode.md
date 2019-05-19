@@ -2,12 +2,12 @@
 title: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 description: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086719"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854394"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 U wordt gevraagd met "Wilt u uitvoeren van software van deze niet-vertrouwde uitgever?"
 Type `R` het bestand uit te voeren. Vervolgens opent u Visual Studio Code en controleer of de PowerShell-uitbreiding correct functioneert. Als u nog steeds problemen aan de slag hebt, laat het ons weten op [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Met behulp van een specifieke versie van PowerShell
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Een versie van PowerShell gebruiken met de extensie kiezen
 
-Als u gebruiken van een specifieke installatie van PowerShell met Visual Studio Code wilt, moet u een nieuwe variabele toevoegen aan het bestand met gebruiker instellingen.
+Met PowerShell Core side-by-side installeren met Windows PowerShell, is het nu mogelijk om een bepaalde versie van PowerShell met de extensie van PowerShell. Gebruik de volgende stappen als u wilt de versie kiezen:
 
-1. Klik op **File -> Voorkeuren >-instellingen**
-1. Twee deelvensters van de rapporteditor worden weergegeven.
-   In het deelvenster uiterst rechts (`settings.json`), invoegen van de instelling van de onderstaande geschikt is voor uw besturingssysteem ergens tussen de twee gekrulde haken (`{` en `}`) en vervang **\<versie\>** met de geïnstalleerde versie van PowerShell:
+1. Open het palet opdracht (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> op Windows & Linux, <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> in macOS).
+1. Zoek naar 'Sessie'.
+1. Klik op ' PowerShell: Sessie-Menu weergeven'.
+1. Kies de versie van PowerShell die u wilt gebruiken in de lijst, bijvoorbeeld 'PowerShell Core'.
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Deze functie kijkt naar enkele bekende paden op verschillende besturingssystemen worden uitgevoerd voor het detecteren van locaties van de installatie van PowerShell. Als u PowerShell hebt geïnstalleerd op een niet-standaard locatie, deze mogelijk niet weergegeven in eerste instantie in het Menu van de sessie. U kunt de sessie-menu door uitbreiden [toevoegen van uw eigen aangepaste paden](#adding-your-own-powershell-paths-to-the-session-menu) zoals hieronder wordt beschreven.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> Er is een andere manier om te gaan naar het menu van de sessie. Wanneer een PowerShell-bestand geopend in de editor is, ziet u een groene versienummer in de rechterbenedenhoek. Dit versienummer op te klikken, gaat u naar het menu van de sessie.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Uw eigen PowerShell-paden toe te voegen aan de sessie-menu
 
-1. De instelling vervangen door het pad naar de gewenste uitvoerbare PowerShell
-1. Het bestand met instellingen opslaan en opnieuw opstarten van Visual Studio Code
+U kunt andere uitvoerbare PowerShell-paden toevoegen aan het menu sessie via een instelling voor VS Code.
+
+Een item toevoegen aan de lijst met `powershell.powerShellAdditionalExePaths` of de lijst te maken als deze niet bestaat uw `settings.json`:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Elk item moet beschikken over:
+
+* `exePath`: Het pad naar de `pwsh` of `powershell` uitvoerbaar bestand.
+* `versionName`: De tekst die wordt weergegeven in het menu van de sessie.
+
+U kunt instellen dat de standaardversie van PowerShell gebruiken met behulp van de `powershell.powerShellDefaultVersion` instelling door dit aan in de tekst weergegeven in het menu van de sessie (ook wel de `versionName` in de laatste instelling):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+Als u deze instelling hebt ingesteld, start u Visual Studio Code of gebruik de de "Developer: Venster laden"palet opdrachtactie laden van de huidige vscode-venster.
+
+Als u het menu sessie opent, ziet u nu de aanvullende versies van PowerShell!
+
+> [!NOTE]
+> Als u PowerShell van bron bouwt, is dit een uitstekende manier om het testen van uw lokale build van PowerShell.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Configuratie-instellingen voor Visual Studio Code
 
