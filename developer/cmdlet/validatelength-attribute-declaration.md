@@ -12,47 +12,47 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 3a4c5f279ce8587eeb5d583376ea3d2286210b83
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067158"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855146"
 ---
-# <a name="validatelength-attribute-declaration"></a><span data-ttu-id="9672f-102">Declaratie van het kenmerk ValidateLength</span><span class="sxs-lookup"><span data-stu-id="9672f-102">ValidateLength Attribute Declaration</span></span>
+# <a name="validatelength-attribute-declaration"></a><span data-ttu-id="ab299-102">Declaratie van het kenmerk ValidateLength</span><span class="sxs-lookup"><span data-stu-id="ab299-102">ValidateLength Attribute Declaration</span></span>
 
-<span data-ttu-id="9672f-103">Het kenmerk ValidateLength Hiermee geeft u het minimum en maximum aantal tekens in voor een argument van de cmdlet-parameter.</span><span class="sxs-lookup"><span data-stu-id="9672f-103">The ValidateLength attribute specifies the minimum and maximum number of characters for a cmdlet parameter argument.</span></span> <span data-ttu-id="9672f-104">Dit kenmerk kan ook worden gebruikt door Windows PowerShell-functies.</span><span class="sxs-lookup"><span data-stu-id="9672f-104">This attribute can also be used by Windows PowerShell functions.</span></span>
+<span data-ttu-id="ab299-103">Het kenmerk ValidateLength Hiermee geeft u het minimum en maximum aantal tekens in voor een argument van de cmdlet-parameter.</span><span class="sxs-lookup"><span data-stu-id="ab299-103">The ValidateLength attribute specifies the minimum and maximum number of characters for a cmdlet parameter argument.</span></span> <span data-ttu-id="ab299-104">Dit kenmerk kan ook worden gebruikt door Windows PowerShell-functies.</span><span class="sxs-lookup"><span data-stu-id="ab299-104">This attribute can also be used by Windows PowerShell functions.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9672f-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="9672f-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="ab299-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="ab299-105">Syntax</span></span>
 
 ```csharp
 [ValidateLength(int minLength, int maxlength)]
 ```
 
-#### <a name="parameters"></a><span data-ttu-id="9672f-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="9672f-106">Parameters</span></span>
+#### <a name="parameters"></a><span data-ttu-id="ab299-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="ab299-106">Parameters</span></span>
 
-<span data-ttu-id="9672f-107">`MinLength` ([System.Integer](/dotnet/api/System.Integer)) vereist.</span><span class="sxs-lookup"><span data-stu-id="9672f-107">`MinLength` ([System.Integer](/dotnet/api/System.Integer)) Required.</span></span> <span data-ttu-id="9672f-108">Hiermee geeft u het minimale aantal tekens dat is toegestaan.</span><span class="sxs-lookup"><span data-stu-id="9672f-108">Specifies the minimum number of characters allowed.</span></span>
+<span data-ttu-id="ab299-107">`MinLength` ([System.Integer](/dotnet/api/System.Integer)) vereist.</span><span class="sxs-lookup"><span data-stu-id="ab299-107">`MinLength` ([System.Integer](/dotnet/api/System.Integer)) Required.</span></span> <span data-ttu-id="ab299-108">Hiermee geeft u het minimale aantal tekens dat is toegestaan.</span><span class="sxs-lookup"><span data-stu-id="ab299-108">Specifies the minimum number of characters allowed.</span></span>
 
-<span data-ttu-id="9672f-109">`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) vereist.</span><span class="sxs-lookup"><span data-stu-id="9672f-109">`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) Required.</span></span> <span data-ttu-id="9672f-110">Hiermee geeft u het maximale aantal toegestane tekens.</span><span class="sxs-lookup"><span data-stu-id="9672f-110">Specifies the maximum number of characters allowed.</span></span>
+<span data-ttu-id="ab299-109">`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) vereist.</span><span class="sxs-lookup"><span data-stu-id="ab299-109">`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) Required.</span></span> <span data-ttu-id="ab299-110">Hiermee geeft u het maximale aantal toegestane tekens.</span><span class="sxs-lookup"><span data-stu-id="ab299-110">Specifies the maximum number of characters allowed.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="9672f-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="9672f-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="ab299-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="ab299-111">Remarks</span></span>
 
-- <span data-ttu-id="9672f-112">Zie voor meer informatie over hoe u dit kenmerk declareren [hoe u invoer validatieregels declareren](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).</span><span class="sxs-lookup"><span data-stu-id="9672f-112">For more information about how to declare this attribute, see [How to Declare Input Validation Rules](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).</span></span>
+- <span data-ttu-id="ab299-112">Zie voor meer informatie over hoe u dit kenmerk declareren [hoe u invoer validatieregels declareren](./how-to-validate-parameter-input.md).</span><span class="sxs-lookup"><span data-stu-id="ab299-112">For more information about how to declare this attribute, see [How to Declare Input Validation Rules](./how-to-validate-parameter-input.md).</span></span>
 
-- <span data-ttu-id="9672f-113">Wanneer dit kenmerk niet gebruikt wordt, wordt het bijbehorende parameterargument is van een willekeurige lengte.</span><span class="sxs-lookup"><span data-stu-id="9672f-113">When this attribute is not used, the corresponding parameter argument can be of any length.</span></span>
+- <span data-ttu-id="ab299-113">Wanneer dit kenmerk niet gebruikt wordt, wordt het bijbehorende parameterargument is van een willekeurige lengte.</span><span class="sxs-lookup"><span data-stu-id="ab299-113">When this attribute is not used, the corresponding parameter argument can be of any length.</span></span>
 
-- <span data-ttu-id="9672f-114">De Windows PowerShell-runtime genereert een fout in de volgende omstandigheden:</span><span class="sxs-lookup"><span data-stu-id="9672f-114">The Windows PowerShell runtime throws an error under the following conditions:</span></span>
+- <span data-ttu-id="ab299-114">De Windows PowerShell-runtime genereert een fout in de volgende omstandigheden:</span><span class="sxs-lookup"><span data-stu-id="ab299-114">The Windows PowerShell runtime throws an error under the following conditions:</span></span>
 
-    - <span data-ttu-id="9672f-115">Wanneer de waarde van de `MaxLength` kenmerk parameter kleiner is dan de waarde van de `MinLength` parameter van het kenmerk.</span><span class="sxs-lookup"><span data-stu-id="9672f-115">When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.</span></span>
+    - <span data-ttu-id="ab299-115">Wanneer de waarde van de `MaxLength` kenmerk parameter kleiner is dan de waarde van de `MinLength` parameter van het kenmerk.</span><span class="sxs-lookup"><span data-stu-id="ab299-115">When the value of the `MaxLength` attribute parameter is less than the value of the `MinLength` attribute parameter.</span></span>
 
-    - <span data-ttu-id="9672f-116">Wanneer de `MaxLength` kenmerk parameter is ingesteld op 0.</span><span class="sxs-lookup"><span data-stu-id="9672f-116">When the `MaxLength` attribute parameter is set to 0.</span></span>
+    - <span data-ttu-id="ab299-116">Wanneer de `MaxLength` kenmerk parameter is ingesteld op 0.</span><span class="sxs-lookup"><span data-stu-id="ab299-116">When the `MaxLength` attribute parameter is set to 0.</span></span>
 
-    - <span data-ttu-id="9672f-117">Als het argument is geen tekenreeks.</span><span class="sxs-lookup"><span data-stu-id="9672f-117">When the argument is not a string.</span></span>
+    - <span data-ttu-id="ab299-117">Als het argument is geen tekenreeks.</span><span class="sxs-lookup"><span data-stu-id="ab299-117">When the argument is not a string.</span></span>
 
-- <span data-ttu-id="9672f-118">Het kenmerk ValidateLength wordt gedefinieerd door de [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) klasse.</span><span class="sxs-lookup"><span data-stu-id="9672f-118">The ValidateLength attribute is defined by the [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.</span></span>
+- <span data-ttu-id="ab299-118">Het kenmerk ValidateLength wordt gedefinieerd door de [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) klasse.</span><span class="sxs-lookup"><span data-stu-id="ab299-118">The ValidateLength attribute is defined by the [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9672f-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="9672f-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ab299-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="ab299-119">See Also</span></span>
 
-[<span data-ttu-id="9672f-120">System.Management.Automation.Validatelengthattribute</span><span class="sxs-lookup"><span data-stu-id="9672f-120">System.Management.Automation.Validatelengthattribute</span></span>](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
+[<span data-ttu-id="ab299-120">System.Management.Automation.Validatelengthattribute</span><span class="sxs-lookup"><span data-stu-id="ab299-120">System.Management.Automation.Validatelengthattribute</span></span>](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
 
-[<span data-ttu-id="9672f-121">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="9672f-121">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="ab299-121">Schrijven van een Windows PowerShell-Cmdlet</span><span class="sxs-lookup"><span data-stu-id="ab299-121">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
