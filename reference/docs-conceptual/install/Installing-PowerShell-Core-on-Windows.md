@@ -2,12 +2,12 @@
 title: PowerShell Core in Windows installeren
 description: Informatie over PowerShell Core in Windows installeren
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058026"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854364"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
@@ -18,7 +18,7 @@ Er zijn meerdere manieren voor het installeren van PowerShell Core in Windows.
 Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende vereisten worden voldaan:
 
 - Installeer de [universeel C-Runtime](https://www.microsoft.com/download/details.aspx?id=50410) op Windows-versies voorafgaand aan Windows 10. Het is beschikbaar via de directe download of Windows Update. Volledig hersteld (inclusief optionele pakketten), heeft ondersteunde systemen al dit geïnstalleerd.
-- Installeer de Windows Management Framework (WMF) 4.0 of hoger op Windows 7 en Windows Server 2008 R2.
+- Installeer de Windows Management Framework (WMF) 4.0 of hoger op Windows 7 en Windows Server 2008 R2. Zie voor meer informatie over WMF [WMF overzicht](/powershell/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
