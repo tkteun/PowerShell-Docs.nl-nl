@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleid met betrekking tot ondersteuning voor PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086957"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854383"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
@@ -41,8 +41,6 @@ Bijvoorbeeld, als PowerShell Core 6.1 wordt gepubliceerd op 1 juli 2018, zou u w
 
 Bijvoorbeeld, als u PowerShell Core 6.1 en 6.1.3 is uitgebracht op 19 februari 2019, zou u worden verwacht bij te werken naar PowerShell Core 6.1.3 door 21 maart 2019, die 30 dagen na de release is voor verdere ondersteuning.
 Als er problemen worden gevonden op vereist, worden de oplossingen in de volgende cumulatieve update uitgebracht.
-
-![PowerShell Core vertakking levenscyclus][lifecycle-chart]
 
 De moderne Lifecycle-beleid is ook vereist dat Microsoft biedt klanten 12 maanden kennisgeving voordat beëindigde ondersteuning voor een product (dat wil zeggen, PowerShell Core).
 
@@ -88,7 +86,7 @@ Op basis van [levenscyclus van de PowerShell Core](#lifecycle-of-powershell-core
 |---------|-------------------------------|
 | 6.0     | Op 13 februari 2019             |
 | 6.1     | 28 september 2019            |
-| 6.2     | zes maanden na 6.3-versies   |
+| 6.2     | zes maanden na 7 releases     |
 
 ## <a name="platforms-which-are-out-of-support"></a>Platforms die niet ondersteund worden
 
