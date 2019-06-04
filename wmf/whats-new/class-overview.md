@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Aangepaste typen maken met PowerShell-klassen
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856236"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470933"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Aangepaste typen maken met PowerShell-klassen
 
@@ -21,7 +21,7 @@ PowerShell 5.0 de mogelijkheid voor het definiëren van klassen en andere door d
 - Fouten opsporen in typen met behulp van de PowerShell-taal
 - Genereren en uitzonderingen verwerken met behulp van formele mechanismen en op het juiste niveau
 
-# <a name="declare-base-class"></a>Basisklasse declareren
+## <a name="declare-base-class"></a>Basisklasse declareren
 
 Als een basistype op voor een andere PowerShell-klasse kunt u een PowerShell-klasse declareren.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Klasseconstructor oproepbasis
+### <a name="call-base-class-constructor"></a>Klasseconstructor oproepbasis
 
 Als u wilt een oproepbasis aanroepen vanuit een subklasse, gebruikt u het sleutelwoord **basis**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Klassemethode oproepbasis
+### <a name="call-base-class-method"></a>Klassemethode oproepbasis
 
 U kunt bestaande methoden in subklassen overschrijven. U doet dit door methoden met behulp van dezelfde naam en handtekening te declareren:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Geïmplementeerde interface declareren
+### <a name="declare-implemented-interface"></a>Geïmplementeerde interface declareren
 
 U kunt geïmplementeerde interfaces aangeven na basistypen of onmiddellijk nadat een dubbele punt (:), als er geen basistype dat is opgegeven. Alle namen worden gescheiden door komma's. Het is vergelijkbaar met C# syntaxis.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>Nieuwe taalfuncties in PowerShell 5.0
+## <a name="new-language-features-in-powershell-50"></a>Nieuwe taalfuncties in PowerShell 5.0
 
 PowerShell 5.0 introduceert de volgende nieuwe taalelementen in PowerShell:
 
-## <a name="class-keyword"></a>Klasse trefwoord
+### <a name="class-keyword"></a>Klasse trefwoord
 
 De `class` sleutelwoord definieert een nieuwe klasse. Dit is een echte .NET Framework-type. Klasseleden zijn openbaar, maar alleen openbaar binnen het modulebereik. U mag niet verwijzen naar de naam van het als een tekenreeks (bijvoorbeeld `New-Object` niet werkt), en in deze release kunt u een letterlijke type niet gebruiken (bijvoorbeeld `[MyClass]`) buiten het script of een module-bestand waarin de klasse is gedefinieerd.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum sleutelwoord en opsommingen
+### <a name="enum-keyword-and-enumerations"></a>Enum sleutelwoord en opsommingen
 
 Ondersteuning voor de `enum` sleutelwoord is toegevoegd, waarbij nieuwe regel wordt gebruikt als het scheidingsteken. U kunt geen op dit moment een enumerator voor wat betreft zelf definiëren. U kunt echter een enum-waarde in termen van een andere enum initialiseren, zoals wordt weergegeven in het volgende voorbeeld. Bovendien kan het basistype kan niet worden opgegeven; het is altijd `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Sleutelwoorden import-dscresource bieden
+### <a name="import-dscresource"></a>Sleutelwoorden import-dscresource bieden
 
 `Import-DscResource` is nu een waar dynamische trefwoord. PowerShell parseert basismodule van de opgegeven module, zoeken naar klassen die bevatten de **sleutelwoorden dscresource bieden** kenmerk.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Een nieuw veld **ImplementingAssembly**, is toegevoegd aan **ModuleInfo**. Deze waarde is ingesteld op de dynamische verzameling voor een scriptmodule gemaakt als het script klassen definieert, of de geladen assembly voor binaire modules. Het is niet ingesteld als **ModuleType** is **Manifest**.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Alle leden van de zijn openbaar.
 
-## <a name="constructors-and-instantiation"></a>Constructors en instantiëring
+### <a name="constructors-and-instantiation"></a>Constructors en instantiëring
 
 PowerShell-klassen kunnen constructors hebben. Ze hebben dezelfde naam als de klasse. Constructors kunnen worden overbelast. Statische constructors worden ondersteund. Eigenschappen met expressies voor objectinitialisatie geïnitialiseerd voordat u code uitvoert in een constructor. Statische eigenschappen worden geïnitialiseerd voordat de hoofdtekst van een statische constructor en instantie-eigenschappen zijn geïnitialiseerd voordat de hoofdtekst van de niet-statische-constructor. Er is momenteel geen syntaxis voor het aanroepen van een constructor vanuit een andere constructor (zoals de C\# syntaxis ': this()"). De tijdelijke oplossing is voor het definiëren van een algemene `Init()` methode.
 
-### <a name="creating-instances"></a>Het maken van instanties
+#### <a name="creating-instances"></a>Het maken van instanties
 
 > [!NOTE]
 > In PowerShell 5.0 `New-Object` werkt niet met klassen die zijn gedefinieerd in PowerShell. De naam van het is ook alleen zichtbaar lexicaal, wat betekent dat deze zijn niet zichtbaar is buiten de module of het script dat de klasse definieert. Functies kunnen exemplaren van een klasse is gedefinieerd in PowerShell retourneren. Deze instanties werken buiten de module of het script.
@@ -265,7 +265,7 @@ De pseudo statische methode `new()` werkt met .NET-typen, zoals wordt weergegeve
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Detectie van constructors
+#### <a name="discovering-constructors"></a>Detectie van constructors
 
 U ziet nu de constructor overloads met `Get-Member`, of zoals in dit voorbeeld:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` Geeft een lijst van constructors, zodat u overloads, zoals een andere methode kunt bekijken. De prestaties van deze syntaxis werkt ook aanzienlijk sneller dan `New-Object`.
 
-## <a name="methods"></a>Methoden
+### <a name="methods"></a>Methoden
 
 Een PowerShell-methode de klasse wordt geïmplementeerd als een **ScriptBlock** waarvoor alleen een end-blok. Alle methoden zijn openbaar. De volgende toont een voorbeeld van het definiëren van een methode met de naam **DoeIets**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Overbelaste methoden worden ook ondersteund.
 
-## <a name="properties"></a>Eigenschappen
+### <a name="properties"></a>Eigenschappen
 
 Alle eigenschappen zijn openbaar. Eigenschappen van vereist een nieuwe regel of door puntkomma's. Als er geen objecttype is opgegeven, is het type object.
 
 Eigenschappen die validatie of argument transformatie-kenmerken worden gebruikt (zoals `[ValidateSet("aaa")]`) werkt zoals verwacht.
 
-## <a name="hidden"></a>Verborgen
+### <a name="hidden"></a>Verborgen
 
 Een nieuw sleutelwoord, `Hidden`, is toegevoegd. `Hidden` kan worden toegepast op eigenschappen en methoden (met inbegrip van constructors).
 
-Verborgen leden openbaar zijn, maar worden niet weergegeven in de uitvoer van `Get-Member` , tenzij de - Force parameter is toegevoegd. Verborgen leden zijn niet opgenomen wanneer tabblad voltooien of met behulp van Intellisense, tenzij de voltooiing vindt plaats in de klasse voor het definiëren van het verborgen lid.
+Verborgen leden openbaar zijn, maar worden niet weergegeven in de uitvoer van `Get-Member` , tenzij de `-Force` parameter is toegevoegd. Verborgen leden zijn niet opgenomen wanneer tabblad voltooien of met behulp van Intellisense, tenzij de voltooiing vindt plaats in de klasse voor het definiëren van het verborgen lid.
 
 Een nieuw kenmerk **System.Management.Automation.HiddenAttribute** is toegevoegd, die C\# code kan hebben dezelfde semantiek in PowerShell.
 
-## <a name="return-types"></a>Typen retourneren
+### <a name="return-types"></a>Typen retourneren
 
-Retourtype is een contract. De geretourneerde waarde wordt geconverteerd naar het verwachte type. Als er geen retourtype is opgegeven, wordt het retourtype is **void**. Er is geen streaming-objecten. Bbjects kan niet worden geschreven naar de pijplijn opzettelijk of per ongeluk.
+Retourtype is een contract. De geretourneerde waarde wordt geconverteerd naar het verwachte type. Als er geen retourtype is opgegeven, wordt het retourtype is **void**. Er is geen streaming-objecten. Objecten kunnen niet worden geschreven naar de pijplijn opzettelijk of per ongeluk.
 
-## <a name="attributes"></a>Kenmerken
+### <a name="attributes"></a>Kenmerken
 
 Twee nieuwe kenmerken, **sleutelwoorden dscresource bieden** en **DscProperty** zijn toegevoegd.
 
-## <a name="lexical-scoping-of-variables"></a>Lexicale bereik van variabelen
+### <a name="lexical-scoping-of-variables"></a>Lexicale bereik van variabelen
 
 Hieronder ziet u een voorbeeld van hoe lexicale scoping werken in deze release.
 

@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: PowerShell-cmdlet
 title: Een PowerShell-opdracht decoderen vanuit een actief proces
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086235"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470960"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Een PowerShell-opdracht decoderen vanuit een actief proces
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Het proces weergeven
 
-De hoofdtekst van de opdracht waarmee het uitvoeren van PowerShell wordt opgeslagen in de **CommandLine** eigenschap van de [Win32_Process][] klasse. Als de opdracht is een [opdracht gecodeerd][], wordt de **CommandLine** eigenschap bevat de tekenreeks 'EncodedCommand'. Met deze informatie, zijn de gecodeerde opdracht ongedaan maken via het volgende proces verborgen.
+De hoofdtekst van de opdracht waarmee het uitvoeren van PowerShell wordt opgeslagen in de **CommandLine** eigenschap van de [Win32_Process][] klasse. Als de opdracht een gecodeerde opdracht is, de **CommandLine** eigenschap bevat de tekenreeks 'EncodedCommand'. Met deze informatie, zijn de gecodeerde opdracht ongedaan maken via het volgende proces verborgen.
 
 Start PowerShell als beheerder. Het is essentieel dat PowerShell als beheerder wordt uitgevoerd, anders geen resultaten worden geretourneerd bij het opvragen van de actieve processen.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[opdracht gecodeerd]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

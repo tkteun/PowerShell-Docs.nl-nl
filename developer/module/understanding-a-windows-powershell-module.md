@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082099"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470788"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Inzicht in een Windows PowerShell-module
 
@@ -55,7 +55,7 @@ Een *manifest module* is een module die gebruikmaakt van een manifestbestand voo
 
 ### <a name="dynamic-modules"></a>Dynamische Modules
 
-Een *dynamische module* is een module is niet geladen vanuit of naar een bestand opgeslagen. In plaats daarvan worden dynamisch gemaakt door een script met behulp van de [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. Dit type module kunt een script voor het maken van een module op aanvraag die niet worden geladen of opgeslagen in een permanente opslag nodig heeft. Door de aard, een dynamische module is bedoeld als tijdelijke en daarom kan niet worden geopend door de `Get-Module` cmdlet. Op dezelfde manier, meestal hoeven ze niet modulemanifesten en waarschijnlijk moeten ze permanente mappen voor het opslaan van de bijbehorende assembly's.
+Een *dynamische module* is een module die is niet geladen uit of in een bestand opgeslagen. In plaats daarvan worden dynamisch gemaakt door een script met behulp van de [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. Dit type module kunt een script voor het maken van een module op aanvraag die niet worden geladen of opgeslagen in een permanente opslag nodig heeft. Door de aard, een dynamische module is bedoeld als tijdelijke en daarom kan niet worden geopend door de `Get-Module` cmdlet. Op dezelfde manier, meestal hoeven ze niet modulemanifesten en waarschijnlijk moeten ze permanente mappen voor het opslaan van de bijbehorende assembly's.
 
 ## <a name="module-manifests"></a>Modulemanifesten
 

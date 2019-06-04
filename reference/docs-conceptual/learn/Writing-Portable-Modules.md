@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell-cmdlet
 title: Draagbare Modules schrijven
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086405"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470993"
 ---
 # <a name="portable-modules"></a>Draagbare Modules
 
@@ -17,11 +17,12 @@ Windows PowerShell is geschreven voor [.NET Framework][] terwijl PowerShell Core
 
 ### <a name="porting-a-pssnapin"></a>Een PSSnapIn overzetten
 
-PowerShell SnapIns (PSSnapIn) worden niet ondersteund in PowerShell Core. Het is echter pretje om een PSSnapIn converteren naar een PowerShell-module. De registratiecode PSSnapIn is meestal in een bestand met één bron van een klasse die is afgeleid van [PSSnapIn][]. Dit bestand verwijderen van de build; het niet meer nodig.
+PowerShell [modules](/powershell/developer/cmdlet/modules-and-snap-ins) worden niet ondersteund in PowerShell Core. Het is echter pretje om een PSSnapIn converteren naar een PowerShell-module. De registratiecode PSSnapIn is meestal in een bestand met één bron van een klasse die is afgeleid van [PSSnapIn][].
+Dit bestand verwijderen van de build; het niet meer nodig.
 
-Gebruik [Nieuwe ModuleManifest][] te maken van een nieuwe modulemanifest dat de registratiecode PSSnapIn meer nodig. Sommige van de waarden uit de PSSnapIn (zoals beschrijving) opnieuw kan worden gebruikt in de module-manifest.
+Gebruik [Nieuwe ModuleManifest][] te maken van een nieuwe modulemanifest dat de registratiecode PSSnapIn meer nodig. Sommige van de waarden uit de **PSSnapIn** (zoals **beschrijving**) opnieuw kan worden gebruikt in de module-manifest.
 
-De `RootModule` eigenschap in de module-manifest moet worden ingesteld op de naam van de implementatie van de cmdlets assembly (dll).
+De **velden RootModule** eigenschap in de module-manifest moet worden ingesteld op de naam van de implementatie van de cmdlets assembly (dll).
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>De .NET draagbaarheid Analyzer (ook wel APIPort)
 

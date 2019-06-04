@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: e8b7151538235cdf7183b78aa8df7e596d6bcfd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848914"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470800"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Een PowerShell-scriptmodule schrijven
 
@@ -27,9 +27,9 @@ U maakt een scriptmodule een geldig PowerShell-script opslaan in een psm1-bestan
 
 1. Neemt een bestaande PowerShell-script en sla het script met de extensie .psm1.
 
-   Opslaan van een script met de .psm1 extensie betekent dat u de module-cmdlets, zoals kunt [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), erop. Deze cmdlets bestaat voornamelijk zodat u eenvoudig kunt importeren en exporteren van uw code op systemen van andere gebruikers. (Of de alternatieve oplossing zou worden het laden van uw code op andere systemen en punt-bron in het geheugen is een bijzonder schaalbare oplossing niet actief.) Zie voor meer informatie de **-Module-Cmdlets en variabelen** in sectie [Windows PowerShell-Modules](./understanding-a-windows-powershell-module.md) Houd er rekening mee dat standaard alle functies in uw script is toegankelijk voor gebruikers die uw .psm1 importeren bestand, maar eigenschappen wordt niet.
+   Opslaan van een script met de .psm1 extensie betekent dat u de module-cmdlets, zoals kunt [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), erop. Deze cmdlets bestaat voornamelijk zodat u eenvoudig kunt importeren en exporteren van uw code op systemen van andere gebruikers. (Of de alternatieve oplossing zou worden het laden van uw code op andere systemen en punt-bron in het geheugen is een bijzonder schaalbare oplossing niet actief.) Zie voor meer informatie de **-Module-Cmdlets en variabelen** in sectie [Windows PowerShell-Modules](./understanding-a-windows-powershell-module.md) Houd er rekening mee dat alle functies in uw script zijn standaard toegankelijk voor gebruikers die uw psm1-bestand importeren maar eigenschappen zijn niet.
 
-   Een voorbeeld PowerShell-script, hebben recht Show-agenda, is beschikbaar aan het einde van dit onderwerp.
+   Een voorbeeld PowerShell-script, hebben recht `Show-Calendar`, vindt u aan het einde van dit onderwerp.
 
    ```powershell
    function Show-Calendar {
@@ -45,7 +45,7 @@ U maakt een scriptmodule een geldig PowerShell-script opslaan in een psm1-bestan
    }
    ```
 
-2. Als u beheren van toegang tot bepaalde functies of de eigenschappen voor gebruikers wilt, belt u [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) aan het einde van uw script.
+2. Aanroepen voor het beheren van toegang tot bepaalde functies of de eigenschappen voor gebruikers, [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) aan het einde van uw script.
 
    De voorbeeldcode aan de onderkant van de pagina heeft slechts één functie, die standaard beschikbaar zou worden gemaakt. Het is echter raadzaam dat u expliciet uit welke functies u weergeven aanroepen, wilt zoals beschreven in de volgende code:
 
@@ -65,9 +65,9 @@ U maakt een scriptmodule een geldig PowerShell-script opslaan in een psm1-bestan
    Import-Module GenericModule
    ```
 
-4. Als u wilt om te beschrijven van de module naar het PowerShell-Help-systeem, kunt u dit doen met de standaard help-opmerkingen in het bestand of met een extra Help-bestand.
+4. Om te beschrijven van de module naar het PowerShell-Help-systeem, kunt u gebruiken standaard help opmerkingen in het bestand, of maakt u een extra helpbestand.
 
-   De voorbeeldcode aan de onderkant van dit onderwerp bevat de help-informatie in de opmerkingen. Als u dus kiest, kunt u ook uitgebreide XML-bestanden die extra help-inhoud bevatten schrijven. Zie voor meer informatie, [schrijven Help voor Windows PowerShell-Modules](./writing-help-for-windows-powershell-modules.md).
+   De voorbeeldcode aan de onderkant van dit onderwerp bevat de help-informatie in de opmerkingen. U kunt ook uitgebreide XML-bestanden met extra help-inhoud schrijven. Zie voor meer informatie, [schrijven Help voor Windows PowerShell-Modules](./writing-help-for-windows-powershell-modules.md).
 
 5. Als u aanvullende modules, XML-bestanden of andere inhoud die u wilt verpakken met de module hebt, kunt u dit doen met een module-manifest.
 
@@ -75,15 +75,17 @@ U maakt een scriptmodule een geldig PowerShell-script opslaan in een psm1-bestan
 
 6. Als u wilt installeren en uitvoeren van uw module, slaat u de module aan een van de juiste PowerShell-paden en aanroepen van `Import-Module`.
 
-   De paden waar kunt u uw module bevinden zich in de `$env:PSModulePath` globale variabele. Bijvoorbeeld, een algemeen pad naar het opslaan van een module op een systeem zouden worden `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Zorg ervoor dat een map maken voor uw module bestaat, zelfs als deze alleen een enkel psm1-bestand. Als u de module niet op een van deze paden hebt opgeslagen, moet u om door te geven op de locatie van de module in de aanroep naar `Import-Module`. (Anders PowerShell niet zou kunnen vinden.) Beginnen met PowerShell 3.0, als u uw module hebt geplaatst op een van de PowerShell-modulepaden, u niet hoeft expliciet om deze te importeren: eenvoudigweg hebben van een gebruiker uw functie wordt automatisch geladen. Zie voor meer informatie over de modulepad [importeren van een PowerShell-Module](./importing-a-powershell-module.md) en [PSModulePath omgevingsvariabele](./modifying-the-psmodulepath-installation-path.md).
+   De paden waar kunt u uw module bevinden zich in de `$env:PSModulePath` globale variabele. Bijvoorbeeld, een algemeen pad naar het opslaan van een module op een systeem zouden worden `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Zorg ervoor dat een map maken voor uw module bestaat, zelfs als deze alleen een enkel psm1-bestand. Als u de module niet op een van deze paden hebt opgeslagen, moet u om door te geven op de locatie van de module in de aanroep naar `Import-Module`. (Anders PowerShell niet zou kunnen vinden.) Beginnen met PowerShell 3.0, als u uw module in een van de paden van PowerShell-module hebt geplaatst, hoeft u niet expliciet om deze te importeren. U module wordt automatisch geladen wanneer een gebruiker uw functie aanroept.
+   Zie voor meer informatie over de modulepad [importeren van een PowerShell-Module](./importing-a-powershell-module.md) en [PSModulePath omgevingsvariabele](./modifying-the-psmodulepath-installation-path.md).
 
 7. Als u wilt verwijderen een module van actieve service, maken een aanroep van [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-Houd er rekening mee dat [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) uw module wordt verwijderd uit het geheugen - het wordt niet daadwerkelijk verwijderd uit waar u de module-bestanden hebt opgeslagen.
+   Houd er rekening mee dat [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) uw module wordt verwijderd uit het geheugen - het wordt niet daadwerkelijk verwijderd uit waar u de module-bestanden hebt opgeslagen.
 
 ### <a name="show-calendar-code-example"></a>Codevoorbeeld weergeven-agenda
 
-Het volgende voorbeeld is een eenvoudig script-module met een enkele functie met de naam Show-kalender. Deze functie wordt een visuele representatie van een kalender weergegeven. Daarnaast bevat het voorbeeld de tekenreeksen PowerShell Help voor de samenvatting, beschrijving, parameterwaarden en voorbeeld. Houd er rekening mee dat de laatste regel van code geeft aan dat de functie Show-agenda wordt geëxporteerd als lid van de module wanneer de module wordt geïmporteerd.
+Het volgende voorbeeld wordt een eenvoudig script-module met een enkele functie met de naam `Show-Calendar`.
+Deze functie wordt een visuele representatie van een kalender weergegeven. Daarnaast bevat het voorbeeld de tekenreeksen PowerShell Help voor de samenvatting, beschrijving, parameterwaarden en voorbeeld. Houd er rekening mee dat de laatste regel van code, zorgt ervoor dat de `Show-Calendar` functie wordt geëxporteerd als lid van de module wanneer de module wordt geïmporteerd.
 
 ```powershell
 <#
@@ -217,10 +219,10 @@ while($start -le $end)
     $calendar = $weeks | Format-Table $dayNames -AutoSize | Out-String
 
     ## Add a centered header.
-    $width = ($calendar.Split("'n") | Measure-Object -Maximum Length).Maximum
+    $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
     $header = "{0:MMMM yyyy}" -f $start
     $padding = " " * (($width - $header.Length) / 2)
-    $displayCalendar = " 'n" + $padding + $header + "'n " + $calendar
+    $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.

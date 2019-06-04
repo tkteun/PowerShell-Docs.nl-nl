@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met printers werken
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fce1bc129ada3c509c55941a59a70de230edf68f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058536"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470954"
 ---
 # <a name="working-with-printers"></a>Met printers werken
 
@@ -19,7 +19,7 @@ U kunt Windows PowerShell gebruiken voor het beheren van printers met behulp van
 De eenvoudigste manier om de printers die zijn geïnstalleerd op een computer weer te geven is met de WMI **Win32_Printer** klasse:
 
 ```powershell
-Get-WmiObject -Class Win32_Printer -ComputerName
+Get-WmiObject -Class Win32_Printer
 ```
 
 U kunt ook de printers weergeven met behulp van de **WScript.Network** COM-object dat doorgaans in WSH scripts gebruikt wordt:

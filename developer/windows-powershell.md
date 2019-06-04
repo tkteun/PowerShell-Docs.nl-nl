@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080455"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470820"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Zie voor de algemene informatie die nodig zijn om te beginnen met behulp van Win
 
 ## <a name="windows-powershell-documents-on-msdn"></a>Windows PowerShell-documenten op MSDN
 
-- [De Windows PowerShell SDK installeren](https://msdn.microsoft.com/en-us/library/ff458115.aspx) bevat informatie over het installeren van de Windows PowerShell-SDK.
+- [De Windows PowerShell SDK installeren](./installing-the-windows-powershell-sdk.md) bevat informatie over het installeren van de Windows PowerShell-SDK.
 
 - [Een Windows PowerShell-Module schrijven](./module/writing-a-windows-powershell-module.md) bevat informatie voor beheerders, script-ontwikkelaars en cmdlet-ontwikkelaars die willen Inpakken en distribueren van de Windows PowerShell-oplossingen.
 
