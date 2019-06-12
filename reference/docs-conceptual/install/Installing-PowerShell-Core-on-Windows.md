@@ -2,12 +2,12 @@
 title: PowerShell Core in Windows installeren
 description: Informatie over PowerShell Core in Windows installeren
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471003"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830228"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
@@ -22,7 +22,7 @@ Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden van onze GitHub [releases] []. Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren. De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases] [ releases] pagina. Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren. De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
 
 Het MSI-bestand er als volgt uitzien: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,8 +150,12 @@ De volgende stappen begeleiden u bij de implementatie van PowerShell Core een ex
 
 PowerShell Core biedt ondersteuning voor de PowerShell Remoting Protocol (PSRP) via WSMan- en SSH. Zie voor meer informatie
 
-- [SSH voor externe toegang in PowerShell Core] [ssh-remoting]
-- [WSMan Remoting in PowerShell Core][wsman-remoting]
+- [SSH in PowerShell Core voor externe toegang][ssh-remoting]
+- [Externe communicatie van WSMan in PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

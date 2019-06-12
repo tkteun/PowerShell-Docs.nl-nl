@@ -1,113 +1,125 @@
 ---
-ms.date: 06/05/2017
+ms.date: 06/03/2019
 keywords: PowerShell-cmdlet
 title: Met software-installaties werken
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d2111a332f0e8c1b545186d3d950e936aed1834
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086269"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830291"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
 
-Toepassingen die zijn ontworpen voor het gebruik van Windows Installer is toegankelijk via WMI van **Win32_Product** klasse, maar niet alle toepassingen in gebruik vandaag nog gebruik van het Windows-installatieprogramma. Omdat het installatieprogramma voor Windows de breedste scala aan standard technieken biedt voor het werken met installeerbare toepassingen, we richten ons voornamelijk aan deze toepassingen. Toepassingen die gebruikmaken van routines alternatieve instellen in het algemeen niet beheerd door de Windows-installatieservice. Specifieke technieken voor het werken met deze toepassingen, is afhankelijk van de installer-software en de beslissingen die worden genomen door de ontwikkelaar van de toepassing.
+Toepassingen die zijn ontworpen voor het gebruik van Windows Installer is toegankelijk via WMI van **Win32_Product** klasse, maar niet alle toepassingen in gebruik vandaag nog gebruik van het Windows-installatieprogramma.
+Toepassingen die gebruikmaken van alternatieve installatieprocedure meestal niet worden beheerd door de Windows-installatieservice.
+Specifieke technieken voor het werken met deze toepassingen, is afhankelijk van de installer-software en beslissingen door de ontwikkelaar van de toepassing. Bijvoorbeeld kunnen niet toepassingen zijn geïnstalleerd door de bestanden zijn gekopieerd naar een map op de computer meestal worden beheerd met behulp van technieken die worden besproken hier. U kunt beheren van deze toepassingen als bestanden en mappen met behulp van de technieken beschreven in [werken met bestanden en mappen](Working-with-Files-and-Folders.md).
 
-> [!NOTE]
-> Toepassingen die zijn geïnstalleerd door de toepassingsbestanden zijn gekopieerd naar de computer meestal kunnen niet worden beheerd met behulp van technieken die worden besproken hier. U kunt deze toepassingen als uitvoerbare bestanden en mappen beheren met behulp van de technieken beschreven in de sectie 'Werken met bestanden en mappen'.
+> [!CAUTION]
+> De **Win32_Product** klasse is geen query geoptimaliseerd. Query's die gebruikmaken van jokertekens filters ertoe leiden dat WMI om met het MSI-provider te inventariseren van alle geïnstalleerde producten en parseren van de volledige lijst sequentieel worden verwerkt voor het afhandelen van het filter. Hiermee initieert ook een consistentiecontrole uit van pakketten geïnstalleerd, te controleren en herstellen van de installatie. De validatie is een trage proces en kan leiden tot fouten in de gebeurtenislogboeken. Voor meer informatie zoeken [KB-artikel 974524](https://support.microsoft.com/help/974524).
 
 ## <a name="listing-windows-installer-applications"></a>Windows Installer-toepassingen weergeven
 
 Als u de toepassingen zijn geïnstalleerd met de Windows Installer op een lokale of externe systeem, gebruik de volgende eenvoudige WMI-query:
 
-```
-PS> Get-WmiObject -Class Win32_Product -ComputerName .
-
-IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
-Name              : Microsoft .NET Framework 2.0
-Vendor            : Microsoft Corporation
-Version           : 2.0.50727
-Caption           : Microsoft .NET Framework 2.0
+```powershell
+Get-CimInstance -Class Win32_Product |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)"
 ```
 
-Wilt weergeven alle van de eigenschappen van het object Win32_Product bij het weergeven, gebruikt u de parameter eigenschappen van de opmaak-cmdlets, zoals de cmdlet lijst met een waarde van \* (alle).
-
+```Output
+Name               Caption                     Vendor                 Version      IdentifyingNumber
+----               -------                     ------                 -------      -----------------
+Microsoft .NET ... Microsoft .NET Core Runt... Microsoft Corporation  16.72.26629  {ACC73072-9AD5-416C-94B...
 ```
-PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
 
-Name              : Microsoft .NET Framework 2.0
-Version           : 2.0.50727
-InstallState      : 5
-Caption           : Microsoft .NET Framework 2.0
-Description       : Microsoft .NET Framework 2.0
-IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
-InstallDate       : 20060506
-InstallDate2      : 20060506000000.000000-000
+Om weer te geven van alle eigenschappen van de **Win32_Product** object aan de weergave, gebruik de **eigenschappen** parameter van de opmaak cmdlets, zoals de `Format-List` cmdlet, met een waarde van `*` (alle).
+
+```powershell
+Get-CimInstance -Class Win32_Product |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)" |
+    Format-List -Property *
+```
+
+```Output
+Name                  : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Version               : 16.72.26629
+InstallState          : 5
+Caption               : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Description           : Microsoft .NET Core Runtime - 2.1.2 (x64)
+IdentifyingNumber     : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+SKUNumber             :
+Vendor                : Microsoft Corporation
+AssignmentType        : 1
+HelpLink              :
+HelpTelephone         :
+InstallDate           : 20180816
+InstallDate2          :
+InstallLocation       :
+InstallSource         : C:\ProgramData\Package Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+Language              : 1033
+LocalPackage          : C:\WINDOWS\Installer\414c96e.msi
+PackageCache          : C:\WINDOWS\Installer\414c96e.msi
+PackageCode           : {D20AC783-1EC5-4A58-9277-F452F5EB9AD9}
+PackageName           : dotnet-runtime-2.1.2-win-x64.msi
+ProductID             :
+RegCompany            :
+RegOwner              :
+Transforms            :
+URLInfoAbout          :
+URLUpdateInfo         :
+WordCount             : 0
+PSComputerName        :
+CimClass              : root/cimv2:Win32_Product
+CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+```
+
+Of u kunt de `Get-CimInstance` **Filter** parameter selecteren alleen Microsoft .NET Framework 2.0. De waarde van de **Filter** parameter maakt gebruik van WMI Query Language (WQL)-syntaxis, niet Windows PowerShell-syntaxis. Bijvoorbeeld:
+
+```powershell
+Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+  Format-List -Property *
+```
+
+U kunt alleen de eigenschappen die u interesseren gebruiken de **eigenschap** parameter van de opmaak cmdlets om de gewenste eigenschappen weer te geven.
+
+```powershell
+Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+  Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
+```
+
+```Output
+Name              : Microsoft .NET Core Runtime - 2.1.2 (x64)
+InstallDate       : 20180816
 InstallLocation   :
-PackageCache      : C:\WINDOWS\Installer\619ab2.msi
-SKUNumber         :
+PackageCache      : C:\WINDOWS\Installer\414c96e.msi
 Vendor            : Microsoft Corporation
+Version           : 16.72.26629
+IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 ```
-
-Of u kunt de **Get-WmiObject Filter** parameter selecteren alleen Microsoft .NET Framework 2.0. Omdat het filter gebruikt in deze opdracht een WMI-filter is, wordt de syntaxis van de WMI Query Language (WQL), niet Windows PowerShell-syntaxis. In plaats daarvan:
-
-```powershell
-Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
-```
-
-Houd er rekening mee dat WQL-query's regelmatig gebruik tekens, zoals spaties of gelijktekens, waarvoor een speciale betekenis in Windows PowerShell. Daarom is het verstandig om te altijd de waarde van de filterparameter tussen aanhalingstekens plaatsen. U kunt ook de Windows PowerShell-escape-teken, een backtick (\`), hoewel de leesbaarheid niet kan worden verbeterd. De volgende opdracht is gelijk aan de vorige opdracht en retourneert hetzelfde resultaat, maar de backtick gebruikt als escapeteken voor speciale tekens bevatten, in plaats van de aanhalingstekens voor de hele filtertekenreeks.
-
-```powershell
-Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
-```
-
-Als u alleen de eigenschappen die u interesseren, door de parameter eigenschap van de opmaak-cmdlets te gebruiken om de gewenste eigenschappen weer te geven.
-
-```
-Get-WmiObject -Class Win32_Product -ComputerName . | Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
-...
-Name              : HighMAT Extension to Microsoft Windows XP CD Writing Wizard
-InstallDate       : 20051022
-InstallLocation   : C:\Program Files\HighMAT CD Writing Wizard\
-PackageCache      : C:\WINDOWS\Installer\113b54.msi
-Vendor            : Microsoft Corporation
-Version           : 1.1.1905.1
-IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
-...
-```
-
-Ten slotte, om te zoeken naar alleen de namen van de geïnstalleerde toepassingen, een eenvoudige **indeling hele** instructie vereenvoudigt de uitvoer:
-
-```powershell
-Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
-```
-
-Hoewel we nu verschillende manieren om te kijken naar toepassingen die het Windows-installatieprogramma voor de installatie gebruikt hebben, hebben we niet beschouwd als andere toepassingen. Omdat de meeste standaard toepassingen registreren hun verwijderprogramma bij Windows, die we kunnen werken met die lokaal door ze te vinden in het Windows-register.
 
 ## <a name="listing-all-uninstallable-applications"></a>Lijst van alle toepassingen die kan worden verwijderd
 
-Hoewel er geen gegarandeerde manier om te vinden van elke toepassing op een systeem is, is het mogelijk om te zoeken van alle programma's met aanbiedingen weergegeven in het dialoogvenster toevoegen of verwijderen van programma's. Toevoegen of verwijderen van programma's vindt deze toepassingen in de volgende registersleutel:
+Omdat een verwijderprogramma meest standaard toepassingen bij Windows registreren, die we kunnen werken met die lokaal door ze te vinden in het Windows-register. Er is geen gegarandeerde manier om te vinden van elke toepassing op een systeem. Het is echter mogelijk om te zoeken van alle programma's met aanbiedingen weergegeven in **software**. **Toevoegen of verwijderen van programma's** zoekt naar deze toepassingen in de volgende registersleutel:
 
-**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
+`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
-We kunnen ook naar de deze sleutel om te zoeken naar toepassingen. Als u wilt maken het gemakkelijker om de sleutel verwijderen weer te geven, kunnen we een Windows PowerShell-station worden toegewezen aan deze registerlocatie:
+We kunt deze sleutel om te zoeken naar toepassingen bekijken. Als u wilt maken het gemakkelijker om de sleutel verwijderen weer te geven, kunnen we een PowerShell-station worden toegewezen aan deze registerlocatie:
 
+```powershell
+New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 ```
-PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
+```Output
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
-
-> [!NOTE]
-> De **HKLM:** stationsaanduiding is toegewezen aan de hoofdmap van **HKEY_LOCAL_MACHINE**, zodat we dat station in het pad naar de sleutel verwijderen gebruikt. In plaats van **HKLM:** we kan hebt opgegeven het registerpad met behulp van **HKLM** of **HKEY_LOCAL_MACHINE**. Het voordeel van het gebruik van een bestaand register-station is dat tabvoltooiing kunnen worden gebruikt om in te vullen in de namen van de sleutels, zodat we niet zelf hoeft te geven.
-
-We hebben nu een station met de naam 'Verwijderen', die kan worden gebruikt om snel en gemakkelijk zoeken voor installaties van toepassingen. Er vindt het aantal geïnstalleerde toepassingen door het aantal registersleutels in de verwijdering te tellen: Windows PowerShell-station:
+We hebben nu een station met de naam "verwijderen: ' kunnen worden gebruikt voor een snel en gemakkelijk zoeken voor installaties van toepassingen. Er vindt het aantal geïnstalleerde toepassingen door het aantal registersleutels in de verwijdering te tellen: PowerShell-station:
 
 ```
-PS> (Get-ChildItem -Path Uninstall:).Count
+(Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
@@ -117,29 +129,49 @@ We kunnen deze lijst met toepassingen verder zoeken met behulp van verschillende
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
-> [!NOTE]
-> We gebruiken een langdurige variabelenaam voor de duidelijkheid. Werkelijke gebruikt is er geen reden lange namen te gebruiken. Hoewel u tabvoltooiing voor namen van variabelen gebruiken kunt, kunt u de namen van 1-2-teken voor snelheid ook gebruiken. Langer, beschrijvende namen zijn handig als u code voor hergebruik ontwikkelt.
-
 Als de waarden van de registervermeldingen in de registersleutels onder verwijderen weergeven, gebruikt u de GetValue-methode van de registersleutels. De waarde van de methode is de naam van het register-item.
 
 Bijvoorbeeld, als u zoekt de weergavenamen van toepassingen in de sleutel verwijderen, gebruik de volgende opdracht:
 
 ```powershell
-Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('DisplayName') }
+$UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
 Er is geen garantie dat deze waarden uniek zijn. In het volgende voorbeeld worden twee geïnstalleerde items weergegeven als 'Windows Media Encoder 9 Series':
 
+```powershell
+$UninstallableApplications | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
 ```
-PS> Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
 
-   Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Micros
-oft\Windows\CurrentVersion\Uninstall
-
-SKC  VC Name                           Property
----  -- ----                           --------
-  0   3 Windows Media Encoder 9        {DisplayName, DisplayIcon, UninstallS...
-  0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
+```Output
+Name                           Property
+----                           --------
+{ACC73072-9AD5-416C-94BF-D82DD AuthorizedCDFPrefix :
+CEA0F1B}                       Comments            :
+                               Contact             :
+                               DisplayVersion      : 16.72.26629
+                               HelpLink            :
+                               HelpTelephone       :
+                               InstallDate         : 20180816
+                               InstallLocation     :
+                               InstallSource       : C:\ProgramData\Package
+                               Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+                               ModifyPath          : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               NoModify            : 1
+                               Publisher           : Microsoft Corporation
+                               Readme              :
+                               Size                :
+                               EstimatedSize       : 67156
+                               SystemComponent     : 1
+                               UninstallString     : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               URLInfoAbout        :
+                               URLUpdateInfo       :
+                               VersionMajor        : 16
+                               VersionMinor        : 72
+                               WindowsInstaller    : 1
+                               Version             : 273180677
+                               Language            : 1033
+                               DisplayName         : Microsoft .NET Core Runtime - 2.1.2 (x64)
 ```
 
 ## <a name="installing-applications"></a>Installeren van toepassingen
@@ -147,25 +179,26 @@ SKC  VC Name                           Property
 U kunt de **Win32_Product** klasse voor het installeren van Windows Installer-pakketten, extern of lokaal.
 
 > [!NOTE]
-> Op Windows Vista, Windows Server 2008 en latere versies van Windows, voor het installeren van een toepassing, moet u beginnen Windows PowerShell met de optie "Uitvoeren als administrator".
+> Een toepassing te installeren, moet u PowerShell starten met de optie 'Als administrator uitvoeren'.
 
-Bij de installatie op afstand, moet u een netwerkpad Universal Naming Convention (UNC) gebruiken om op te geven van het pad naar het MSI-pakket, omdat het WMI-subsysteem heeft niet informatie over Windows PowerShell-paden. Bijvoorbeeld, zich in de netwerkshare voor het installeren van het pakket NewPackage.msi \\ \\AppServ\\dsp op de externe computer PC01, typt u de volgende opdracht achter de Windows PowerShell-prompt:
+Bij de installatie op afstand, moet u een netwerkpad Universal Naming Convention (UNC) gebruiken om op te geven van het pad naar het MSI-pakket, omdat het WMI-subsysteem heeft niet informatie over PowerShell paden. Bijvoorbeeld, voor het installeren van het pakket NewPackage.msi zich in de netwerkshare `\\AppServ\dsp` op de externe computer PC01, typt u de volgende opdracht achter de PowerShell-prompt:
 
 ```powershell
-(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq 'Win32_Product'}).Install(\\AppSrv\dsp\NewPackage.msi)
+Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}
 ```
 
-Toepassingen die geen gebruik maken van Windows Installer-technologie hebben toepassingsspecifieke methoden beschikbaar voor automatische implementatie. Raadpleeg de documentatie voor de toepassing om te bepalen of er een methode voor het automatiseren van de implementatie is, of neem contact op ondersteuning van system van de leverancier van de toepassing. In sommige gevallen, zelfs als de leverancier van de toepassing is niet specifiek de toepassing ontwerpen voor installatie-automatisering, de fabrikant van de software installer mogelijk bepaalde technieken voor automation.
+Toepassingen die geen gebruik maken van Windows Installer-technologie hebben toepassingsspecifieke methoden voor automatische implementatie. Raadpleeg de documentatie voor de toepassing of neem contact op ondersteuning van system van de leverancier van de toepassing.
 
 ## <a name="removing-applications"></a>Toepassingen verwijderen
 
-Verwijderen van een Windows Installer-pakket met behulp van Windows PowerShell werkt op ongeveer dezelfde manier als een pakket installeert. Hier volgt een voorbeeld waarin selecteert het pakket te verwijderen op basis van de naam; in sommige gevallen kan het eenvoudiger om te filteren met zijn de **id-nummer**:
+Verwijderen van een Windows Installer-pakket met behulp van PowerShell werkt op ongeveer dezelfde manier als een pakket installeert. Hier volgt een voorbeeld waarin selecteert het pakket te verwijderen op basis van de naam; in sommige gevallen kan het eenvoudiger om te filteren met zijn de **id-nummer**:
 
 ```powershell
-(Get-WmiObject -Class Win32_Product -Filter "Name='ILMerge'" -ComputerName . ).Uninstall()
+Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall
 ```
 
-Verwijderen van andere toepassingen is niet zo eenvoudig, zelfs wanneer lokaal uitgevoerd. We kunnen de opdrachtregel verwijderen tekenreeksen voor deze toepassingen vinden door te extraheren de **UninstallString** eigenschap. Deze methode werkt voor Windows Installer-toepassingen en oudere programma's die wordt weergegeven onder de sleutel verwijderen:
+Verwijderen van andere toepassingen is niet zo eenvoudig, zelfs wanneer lokaal uitgevoerd. We kunnen de opdrachtregel verwijderen tekenreeksen voor deze toepassingen vinden door te extraheren de **UninstallString** eigenschap.
+Deze methode werkt voor Windows Installer-toepassingen en oudere programma's die wordt weergegeven onder de sleutel verwijderen:
 
 ```powershell
 Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
@@ -174,15 +207,18 @@ Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('Uninstal
 U kunt desgewenst de uitvoer filteren op de weergavenaam:
 
 ```powershell
-Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} | ForEach-Object -Process { $_.GetValue('UninstallString') }
+Get-ChildItem -Path Uninstall: |
+    Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} |
+        ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
-Deze tekenreeksen kunnen echter niet worden rechtstreeks vanuit de Windows PowerShell-prompt zonder enige wijziging gebruikt.
+Deze tekenreeksen kunnen echter niet worden rechtstreeks vanuit de PowerShell-prompt zonder enige wijziging gebruikt.
 
 ## <a name="upgrading-windows-installer-applications"></a>Upgraden van Windows Installer-toepassingen
 
-Als u een toepassing bijwerken, moet u de naam van de toepassing en het pad kennen op het updatepakket van toepassing. Met deze informatie kunt u een toepassing met een enkel Windows PowerShell-opdracht bijwerken:
+Als u een toepassing bijwerken, moet u de naam van de toepassing en het pad kennen op het updatepakket van toepassing. Met deze informatie kunt u een toepassing met slechts één PowerShell-opdracht bijwerken:
 
 ```powershell
-(Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
+Get-CimInstance -Class Win32_Product -Filter "Name='OldAppName'" |
+  Invoke-CimMethod -MethodName Upgrade -Arguments @{PackageLocation='\\AppSrv\dsp\OldAppUpgrade.msi'}
 ```
