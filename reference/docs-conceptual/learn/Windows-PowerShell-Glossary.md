@@ -2,18 +2,17 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell Glossary
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057334"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030357"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell Glossary
 
 
-|Term|Definitie|
+|Begrip|Definitie|
 |--------|--------------|
 |binaire-module|Een Windows PowerShell-module waarvan root-module een binaire modulebestand (.dll is). Een binaire module kan mogelijk niet bevatten of een module-manifest.|
 |algemene parameter|Een parameter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werkstromen door de Windows PowerShell-engine.|
@@ -55,4 +54,4 @@ ms.locfileid: "62057334"
 |Windows PowerShell-script|Een script dat is geschreven in de Windows PowerShell-taal.|
 |Windows PowerShell-scriptbestand|Een bestand dat de .ps1 extensie heeft en die een script dat is geschreven in de Windows PowerShell-taal bevat.|
 |Windows PowerShell-module|Een resource die u definieert een reeks cmdlets en providers Microsoft .NET Framework-typen die kunnen worden toegevoegd aan de Windows PowerShell-omgeving.|
-|Windows PowerShell-werkstroom|Een werkstroom is een opeenvolging van geprogrammeerde, met elkaar verbonden stappen waarmee langlopende taken worden uitgevoerd of die de coördinatie vereisen van meerdere stappen op meerdere apparaten of beheerde knooppunten. Windows PowerShell Workflow kunnen IT-professionals en ontwikkelaars ontwerpen met reeksen van activiteiten voor beheer van meerdere apparaten, of één taken binnen een werkstroom als werkstromen. Windows PowerShell-werkstroom kunt u aan te passen en Windows PowerShell-scripts en XAML-bestanden als werkstromen uitvoeren.|
+|Windows PowerShell-werkstroom|Een werkstroom is een opeenvolging van geprogrammeerde, verbonden stappen waarmee langlopende taken wordt uitgevoerd of de coördinatie vereisen van meerdere stappen op meerdere apparaten of beheerde knooppunten. Windows PowerShell Workflow kunnen IT-professionals en ontwikkelaars ontwerpen met reeksen van activiteiten voor beheer van meerdere apparaten, of één taken binnen een werkstroom als werkstromen. Windows PowerShell-werkstroom kunt u aan te passen en Windows PowerShell-scripts en XAML-bestanden als werkstromen uitvoeren.|

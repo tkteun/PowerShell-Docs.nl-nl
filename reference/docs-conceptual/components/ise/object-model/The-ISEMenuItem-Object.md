@@ -2,19 +2,18 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Het ISEMenuItem-object
-ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-ms.openlocfilehash: 556f88117c07100b1734c8ffd8956dce6efe6fb1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059046"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028937"
 ---
 # <a name="the-isemenuitem-object"></a>Het ISEMenuItem-object
 
 Een **ISEMenuItem** object is een exemplaar van de klasse Microsoft.PowerShell.Host.ISE.ISEMenuItem. Alle menu-objecten in de **invoegtoepassingen** menu zijn exemplaren van de **Microsoft.PowerShell.Host.ISE.ISEMenuItem** klasse.
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>Properties
 
 ### <a name="displayname"></a>DisplayName
 
@@ -29,7 +28,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Actie
+### <a name="action"></a>Bewerking
 
 In Windows PowerShell ISE 2.0 en hoger ondersteund.
 

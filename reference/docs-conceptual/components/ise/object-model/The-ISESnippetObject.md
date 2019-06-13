@@ -2,19 +2,18 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Het ISESnippet-object
-ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: f80080f4207cf226fb7466c4842446d08c081347
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057975"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028883"
 ---
 # <a name="the-isesnippetobject"></a>Het ISESnippet-object
 
 Een **ISESnippet** object is een exemplaar van de klasse Microsoft.PowerShell.Host.ISE.ISESnippet. De leden van de **$psISE.CurrentPowerShellTab.Snippets** verzameling zijn alle voorbeelden van **ISESnippet** objecten. De eenvoudigste manier om het maken van een codefragment is met de [New-IseSnippet&#91;PSITPro5_ISE&#93; ](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>Properties
 
 ### <a name="author"></a>Auteur
 

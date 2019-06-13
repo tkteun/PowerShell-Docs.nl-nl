@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Computerstatus wijzigen
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086320"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030277"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
 
@@ -30,7 +29,7 @@ Als u wilt afsluiten bepaalde sessies op een Terminal Server, gebruikt u de **ts
 
 ## <a name="logging-off-the-current-session"></a>De huidige sessie afmelden
 
-U kunt meerdere verschillende technieken worden afgemeld bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdrachtregelprogramma van extern bureaublad/Terminal Services **logoff.exe** (voor meer informatie bij de Windows PowerShell-prompt, typ **Afmelden /?**). De huidige actieve sessie afmelden, typt u **Afmelden** zonder argumenten.
+U kunt meerdere verschillende technieken worden afgemeld bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdrachtregelprogramma van extern bureaublad/Terminal Services **logoff.exe** (voor meer informatie bij de Windows PowerShell-prompt, typ **Afmelden /?** ). De huidige actieve sessie afmelden, typt u **Afmelden** zonder argumenten.
 
 U kunt ook de **shutdown.exe** hulpprogramma met de optie voor afmelden:
 
@@ -48,7 +47,7 @@ Zie "Win32Shutdown methode van de Win32_OperatingSystem Class" in MSDN voor meer
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een Computer
 
-Afgesloten en opnieuw opstarten van computers worden in het algemeen dezelfde gegevenstypen van de taak. Hulpprogramma's die een computer afsluiten dan in het algemeen start ook, en vice versa. Er zijn twee eenvoudige opties voor opnieuw opstarten van een computer vanuit Windows PowerShell. Tsshutdn.exe of Shutdown.exe gebruiken met de juiste argumenten. Krijgt u gedetailleerde gebruiksinformatie van **tsshutdn.exe /?** of **shutdown.exe /?**.
+Afgesloten en opnieuw opstarten van computers worden in het algemeen dezelfde gegevenstypen van de taak. Hulpprogramma's die een computer afsluiten dan in het algemeen start ook, en vice versa. Er zijn twee eenvoudige opties voor opnieuw opstarten van een computer vanuit Windows PowerShell. Tsshutdn.exe of Shutdown.exe gebruiken met de juiste argumenten. Krijgt u gedetailleerde gebruiksinformatie van **tsshutdn.exe /?** of **shutdown.exe /?** .
 
 U kunt ook afsluiten en opnieuw starten van bewerkingen rechtstreeks vanuit Windows PowerShell ook.
 

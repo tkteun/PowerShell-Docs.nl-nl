@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met registervermeldingen werken
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086031"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030732"
 ---
 # <a name="working-with-registry-entries"></a>Met registervermeldingen werken
 
@@ -193,11 +192,11 @@ De **%d{PropertyType/** moet de naam van een **Microsoft.Win32.RegistryValueKind
 
 |%D{PropertyType/ waarde|Betekenis|
 |----------------------|-----------|
-|Binair|Binaire gegevens|
+|Binary|Binaire gegevens|
 |DWord|Een getal dat is een geldige UInt32|
 |ExpandString|Een tekenreeks is die u kunt omgevingsvariabelen die dynamisch worden uitgebreid bevatten|
 |MultiString|Een tekenreeks met meerdere regels|
-|Tekenreeks|een string-waarde|
+|Reeks|een string-waarde|
 |QWord|8 bytes van binaire gegevens|
 
 > [!NOTE]

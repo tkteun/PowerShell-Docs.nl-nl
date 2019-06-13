@@ -2,13 +2,12 @@
 ms.date: 08/24/2018
 keywords: PowerShell-cmdlet
 title: Meer informatie over namen voor PowerShell-opdracht
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086422"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030425"
 ---
 # <a name="learning-powershell-command-names"></a>Meer informatie over namen voor PowerShell-opdracht
 
@@ -22,7 +21,7 @@ Dit lijkt het logisch is voor de namen van opdrachten na elke opdracht een afzon
 De meeste opdrachten zijn gemaakt voor de elementen van het besturingssysteem of toepassingen, zoals services of processen beheren. De opdrachten hebben namen die kunnen of kunnen past niet in een serie. Bijvoorbeeld, op Windows-systemen, kunt u de `net start` en `net stop` opdrachten starten en stoppen van een service. **SC.exe** is een ander hulpprogramma voor service-beheer voor Windows. Deze naam past niet in het naamgevingspatroon voor de **net.exe** opdrachten-service. Windows heeft voor het beheer van bedrijfsprocessen, de **tasklist.exe** opdracht lijst processen en de **taskkill.exe** opdracht voor het beëindigen van processen.
 
 Ook hebben deze opdrachten onregelmatige parameter specificaties. U kunt geen gebruiken de `net start` opdracht voor het starten van een service op een externe computer. De **sc.exe** opdracht kan een service starten op een externe computer. Maar als de externe computer, moet u de naam met een dubbele backslash voorafgaan. Als u wilt de spooler-service op een externe computer met de naam DC01 start, typt u `sc.exe \\DC01 start spooler`.
-Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Voorbeeld: `tasklist /S DC01`.
+Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Bijvoorbeeld `tasklist /S DC01`.
 
 > [!NOTE]
 > Voorafgaand aan PowerShell v6, `sc` is een alias voor de `Set-Content` cmdlet. Daarom om uit te voeren de **sc.exe** opdracht in een eerdere versie van PowerShell dan v6, moet u de volledige bestandsnaam opnemen **sc.exe** inclusief de bestandsextensie **exe**.

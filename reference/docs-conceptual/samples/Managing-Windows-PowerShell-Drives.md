@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell-stations beheren
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057822"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030139"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > In het algemeen zijn paden niet hoofdlettergevoelig.
 
-U verwijst naar het nieuwe Windows PowerShell-station, zoals u dat wel alle Windows PowerShell-stations: door de naam gevolgd door een dubbele punt doet (**:**).
+U verwijst naar het nieuwe Windows PowerShell-station, zoals u dat wel alle Windows PowerShell-stations: door de naam gevolgd door een dubbele punt doet ( **:** ).
 
 Een Windows PowerShell-station kunt vele taken die veel eenvoudiger maken. Sommige van de belangrijkste sleutels in het Windows-register hebben bijvoorbeeld extreem lange paden, zodat ze toegang krijgen tot omslachtig en moeilijk te onthouden. Essentiële configuratie-informatie zich bevindt onder **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Als u wilt weergeven en wijzigen van items in de registersleutel CurrentVersion, kunt u een Windows PowerShell-station die verankerd ligt in deze sleutel maken door te typen:
 

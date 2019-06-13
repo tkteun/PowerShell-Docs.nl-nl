@@ -2,13 +2,12 @@
 ms.date: 08/14/2018
 keywords: PowerShell-cmdlet
 title: Externe opdrachten uitvoeren
-ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058910"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030309"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -133,7 +132,7 @@ Windows PowerShell omvat een WSMan-provider. Hiermee maakt u de provider een `WS
 
 Zie voor meer informatie over de WSMan-provider [WSMan-Provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-Cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ in de Windows PowerShell-console `Get-Help wsman`.
 
-Zie voor meer informatie
+Zie voor meer informatie:
 
 - [Over veelgestelde vragen over externe](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Windows PowerShell starten
-ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058349"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030454"
 ---
 # <a name="starting-windows-powershell"></a>Windows PowerShell starten
 PowerShell is een scripting engine dll die is ingesloten in meerdere hosts.  De meest voorkomende host die u wilt beginnen zijn de interactieve opdrachtregel PowerShell.exe en de interactieve Scripting omgeving PowerShell_ISE.exe.
@@ -83,37 +82,37 @@ Gebruik de volgende procedure om in te schakelen in Windows PowerShell ISE in Wi
 
 ## <a name="starting-the-32-bit-version-of-windows-powershell"></a>De 32-bits versie van Windows PowerShell starten
 
-Wanneer u Windows PowerShell op een 64-bits computer installeert **Windows PowerShell (x86)**, een 32-bits versie van Windows PowerShell is geïnstalleerd naast de 64-bits versie. Wanneer u Windows PowerShell uitvoert, wordt standaard de 64-bits versie uitgevoerd.
+Wanneer u Windows PowerShell op een 64-bits computer installeert **Windows PowerShell (x86)** , een 32-bits versie van Windows PowerShell is geïnstalleerd naast de 64-bits versie. Wanneer u Windows PowerShell uitvoert, wordt standaard de 64-bits versie uitgevoerd.
 
-Moet u mogelijk af en toe om uit te voeren **Windows PowerShell (x86)**, zoals wanneer u van een module gebruikmaakt die de 32-bits versie vereist of als u op afstand verbinding met een 32-bits computer.
+Moet u mogelijk af en toe om uit te voeren **Windows PowerShell (x86)** , zoals wanneer u van een module gebruikmaakt die de 32-bits versie vereist of als u op afstand verbinding met een 32-bits computer.
 
 Gebruik een van de volgende procedures voor het starten van een 32-bits versie van Windows PowerShell.
 
 #### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
-- Op de **Start** scherm, typt u **Windows PowerShell (x86)**. Klik op de **Windows PowerShell x86** tegel.
-- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)**.
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)**.
+- Op de **Start** scherm, typt u **Windows PowerShell (x86)** . Klik op de **Windows PowerShell x86** tegel.
+- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)** .
+- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)** .
 - Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
-- Op de **Start** scherm, typt u **PowerShell** en klik vervolgens op **Windows PowerShell (x86)**.
-- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)**.
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell** en klik vervolgens op **Windows PowerShell (x86)**.
+- Op de **Start** scherm, typt u **PowerShell** en klik vervolgens op **Windows PowerShell (x86)** .
+- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)** .
+- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell** en klik vervolgens op **Windows PowerShell (x86)** .
 - Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-81"></a>In Windows® 8.1
 
-- Op de **Start** scherm, typt u **Windows PowerShell (x86)**. Klik op de **Windows PowerShell x86** tegel.
+- Op de **Start** scherm, typt u **Windows PowerShell (x86)** . Klik op de **Windows PowerShell x86** tegel.
 - Als u werkt met [Remote Server Administration Tools](https://go.microsoft.com/fwlink/?LinkID=304145) voor Windows 8.1, kunt u ook Windows PowerShell x86 vanuit openen de **Server ManagerTools** menu.
-  Selecteer **Windows PowerShell (x86)**.
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)**.
+  Selecteer **Windows PowerShell (x86)** .
+- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)** .
 - Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>In Windows® 8
 
-- Op de **Start** scherm, plaatst u de cursor op de rechter bovenhoek, klikt u op **instellingen**, klikt u op **tegels**, sluiten en verplaatst u de **weergeven Systeembeheer** schuifregelaar op Ja. Typ vervolgens **PowerShell** en klikt u op **Windows PowerShell (x86)**.
-- Als u werkt met [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=28972) voor Windows 8, kunt u ook Windows PowerShell x86 vanuit openen de **Server ManagerTools** menu. Selecteer **Windows PowerShell (x86)**.
-- Op de **Start** scherm of het bureaublad, typt u **PowerShell (x86)** en klik vervolgens op **Windows PowerShell (x86)**.
+- Op de **Start** scherm, plaatst u de cursor op de rechter bovenhoek, klikt u op **instellingen**, klikt u op **tegels**, sluiten en verplaatst u de **weergeven Systeembeheer** schuifregelaar op Ja. Typ vervolgens **PowerShell** en klikt u op **Windows PowerShell (x86)** .
+- Als u werkt met [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=28972) voor Windows 8, kunt u ook Windows PowerShell x86 vanuit openen de **Server ManagerTools** menu. Selecteer **Windows PowerShell (x86)** .
+- Op de **Start** scherm of het bureaublad, typt u **PowerShell (x86)** en klik vervolgens op **Windows PowerShell (x86)** .
 - Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

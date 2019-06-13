@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Informatie over computers verzamelen
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058332"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030852"
 ---
 # <a name="collecting-information-about-computers"></a>Informatie over computers verzamelen
 
@@ -18,7 +17,7 @@ Bovendien worden WMI gegevens behandeld als objecten die in verzamelingen van ee
 Omdat Windows PowerShell ook met objecten werkt en een pijplijn waarmee u één of meerdere objecten op dezelfde manier behandelen heeft, wordt er algemene WMI-toegang kunt u sommige geavanceerde taken met weinig werk uit te voeren.
 
 De volgende voorbeelden laten zien hoe u specifieke informatie verzamelen met behulp van `Get-CimInstance` op basis van een willekeurige computer.
-We geven de **ComputerName** parameter met de waarde van de punt (**.**), die staat voor de lokale computer.
+We geven de **ComputerName** parameter met de waarde van de punt ( **.** ), die staat voor de lokale computer.
 U kunt een naam of IP-adres dat is gekoppeld aan elke computer die u via WMI bereiken kan.
 Als u wilt ophalen van informatie over de lokale computer, zou u de **ComputerName** parameter.
 

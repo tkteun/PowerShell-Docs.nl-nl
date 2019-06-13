@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Met bestanden, mappen en registersleutels werken
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085999"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030758"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en registersleutels
 
@@ -128,7 +127,7 @@ U kunt specifieke objecten uitsluiten met behulp van de **uitsluiten** parameter
 
 Stel bijvoorbeeld dat u wilt het DLL-bestand van Windows Time-Service niet vinden in de map System32 en u kunt meer weet over de dll-naam, is dat het begint met de letter "W" en "32" bevat.
 
-Een expressie, zoals **w\&#42; 32\&#42;. DLL-bestand** vindt u alle dll-bestanden die voldoen aan de voorwaarden, maar het kan ook de Windows 95 en 16-bits Windows-compatibiliteit dll-bestanden die zijn '95' of '16' terug in hun namen. U kunt weglaten bestanden die een van deze getallen in hun namen met behulp van hebben de **uitsluiten** parameter met het patroon  **\&#42;\[ 9516]\&#42;**:
+Een expressie, zoals **w\&#42; 32\&#42;. DLL-bestand** vindt u alle dll-bestanden die voldoen aan de voorwaarden, maar het kan ook de Windows 95 en 16-bits Windows-compatibiliteit dll-bestanden die zijn '95' of '16' terug in hun namen. U kunt weglaten bestanden die een van deze getallen in hun namen met behulp van hebben de **uitsluiten** parameter met het patroon  **\&#42;\[ 9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

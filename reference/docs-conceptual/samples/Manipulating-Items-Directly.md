@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Items rechtstreeks bewerken
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086218"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030127"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Wanneer u een registerpad, zorg ervoor dat u de dubbele punt (**:**) station in de Windows PowerShell-namen, HKLM: en HKCU:. Zonder de dubbele punt, wordt de naam van de schijf in het pad niet herkend door Windows PowerShell.
+Wanneer u een registerpad, zorg ervoor dat u de dubbele punt ( **:** ) station in de Windows PowerShell-namen, HKLM: en HKCU:. Zonder de dubbele punt, wordt de naam van de schijf in het pad niet herkend door Windows PowerShell.
 
 ## <a name="why-registry-values-are-not-items"></a>Registerwaarden zijn waarom geen Items
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken (**\\**), als registervermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
+Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken ( **\\** ), als registervermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
 
 ## <a name="renaming-existing-items-rename-item"></a>Naam van bestaande Items (naam wijzigen-Item) wijzigen
 

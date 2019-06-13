@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Sneltoetsen voor Windows PowerShell ISE
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f71aea16f7a98ff7b6427237dc90104e4ea0db71
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086830"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030924"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Sneltoetsen voor Windows PowerShell ISE
 
@@ -18,7 +17,7 @@ De volgende sneltoetsen gebruiken voor het uitvoeren van acties in Windows Power
 
 U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 
-|Actie|Sneltoetsen|Gebruik in|
+|Bewerking|Sneltoetsen|Gebruik in|
 |----------|----------------------|----------|
 |**Help**|F1|Deelvenster script **belangrijk:** U kunt opgeven dat F1-help afkomstig van de TechNet-bibliotheek op het web is of gedownload Help (Zie de Update-Help). Als u wilt selecteren, klikt u op **extra**, **opties**, klikt u vervolgens op de **algemene instellingen**tabblad, instellen of wissen **lokale help-inhoud gebruiken in plaats van online-inhoud.**|
 |**kopiëren**|Ctrl + C|Scriptvenster, opdracht in het deelvenster Uitvoer deelvenster|
@@ -31,7 +30,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 |**Plakken**|Ctrl + V|Script deelvenster, opdracht|
 |**Redo**|CTRL + Y|Script deelvenster, opdracht|
 |**Vervang in Script**|CTRL + H|Scriptvenster|
-|**Opslaan**|CTRL + S|Scriptvenster|
+|**Opslaan**|CTRL+S|Scriptvenster|
 |**Alles selecteren**|Ctrl + A|Scriptvenster, opdracht in het deelvenster Uitvoer deelvenster|
 |**Fragmenten weergeven**|CTRL + J|Script deelvenster, opdracht|
 |**Ongedaan maken**|CTRL + Z|Script deelvenster, opdracht|
@@ -40,7 +39,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 
 U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het scriptvenster.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Nieuw**|CTRL+N|
 |**openen**|CTRL + O|
@@ -54,7 +53,7 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het sc
 
 U kunt de volgende sneltoetsen gebruiken om aan te passen van de weergave in Windows PowerShell ISE. Ze zijn toegankelijk is vanaf de deelvensters in de toepassing.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Ga naar opdracht (v2)- of -Console (v3 en hoger) deelvenster**|CTRL + D|
 |**Ga naar het deelvenster Uitvoer (alleen v2)**|CTRL + SHIFT + O|
@@ -71,7 +70,7 @@ U kunt de volgende sneltoetsen gebruiken om aan te passen van de weergave in Win
 
 U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
-|Actie|Sneltoets|Gebruik in|
+|Bewerking|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
 |**/ Doorgaan met uitvoeren**|F5|Scriptvenster, bij het opsporen van fouten in een script|
 |**Stap in**|F11|Scriptvenster, bij het opsporen van fouten in een script|
@@ -86,13 +85,13 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 > [!NOTE]
 > U kunt ook de sneltoetsen die is ontworpen voor de Windows PowerShell-console wanneer u fouten opsporen in scripts in Windows PowerShell ISE gebruiken. Voor het gebruik van deze snelkoppelingen, moet u de snelkoppeling naar de typen in het deelvenster van de opdracht en druk op ENTER.
 
-|Actie|Sneltoets|Gebruik in|
+|Bewerking|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
 |**Doorgaan**|C|Consolevenster bij het opsporen van fouten in een script|
 |**Stap in**|S|Consolevenster bij het opsporen van fouten in een script|
 |**Stap Over**|V|Consolevenster bij het opsporen van fouten in een script|
 |**Stap uit**|O|Consolevenster bij het opsporen van fouten in een script|
-|**Herhaal de laatste opdracht** (voor stap of stap Over)|VOER|Consolevenster bij het opsporen van fouten in een script|
+|**Herhaal de laatste opdracht** (voor stap of stap Over)|ENTER|Consolevenster bij het opsporen van fouten in een script|
 |**Aanroepstack weergeven**|K|Consolevenster bij het opsporen van fouten in een script|
 |**Stop de foutopsporing**|Q|Consolevenster bij het opsporen van fouten in een script|
 |**Overzicht van het Script**|L|Consolevenster bij het opsporen van fouten in een script|
@@ -102,7 +101,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**PowerShell-tabblad sluiten**|CTRL + W|
 |**Nieuwe PowerShell-tabblad**|CTRL + T|
@@ -113,7 +112,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 
 U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (PowerShell.exe) te starten of om Windows PowerShell ISE af te sluiten.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Exit**|ALT+F4|
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|

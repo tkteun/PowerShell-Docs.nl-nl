@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: PowerShell-cmdlet
 title: Informatie over belangrijke PowerShell-concepten
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058587"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030980"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Informatie over belangrijke PowerShell-concepten
 
@@ -31,7 +30,7 @@ De systeemeigen in PowerShell-opdrachten worden aangeduid als *cmdlets* (uitgesp
 
 Wanneer u een opdracht hebt getypt, verwerkt PowerShell altijd de opdrachtregel invoer rechtstreeks. De uitvoer die u op het scherm ziet ook de opmaak van PowerShell. Dit verschil is van belang omdat deze het werk dat nodig van elke cmdlet vermindert. Het zorgt ervoor dat u altijd dingen dezelfde manier als met een cmdlet doen kunt. Cmdlet ontwikkelaars hoeft te schrijven van code voor het parseren van de argumenten voor de opdrachtregel of de uitvoer.
 
-Traditionele opdrachtregelprogramma's hebben hun eigen schema's voor het aanvragen en Help-informatie weergeven. Bepaalde opdrachtregelprogramma's gebruiken **/?** voor het activeren van de Help-informatie weergeven; anderen gebruiken **-?**, **/H**, of zelfs **//**. Sommige wordt Help weergegeven in het venster van een GUI, in plaats van in de console weer te geven. Als u de verkeerde parameter gebruikt, kan het hulpprogramma voor wat u hebt getypt en beginnen met het uitvoeren van een taak automatisch negeren.
+Traditionele opdrachtregelprogramma's hebben hun eigen schema's voor het aanvragen en Help-informatie weergeven. Bepaalde opdrachtregelprogramma's gebruiken **/?** voor het activeren van de Help-informatie weergeven; anderen gebruiken **-?** , **/H**, of zelfs **//** . Sommige wordt Help weergegeven in het venster van een GUI, in plaats van in de console weer te geven. Als u de verkeerde parameter gebruikt, kan het hulpprogramma voor wat u hebt getypt en beginnen met het uitvoeren van een taak automatisch negeren.
 Omdat PowerShell automatisch parseert en de opdrachtregel, verwerkt de **-?** parameter betekent altijd 'Toon Help voor deze opdracht'.
 
 > [!NOTE]

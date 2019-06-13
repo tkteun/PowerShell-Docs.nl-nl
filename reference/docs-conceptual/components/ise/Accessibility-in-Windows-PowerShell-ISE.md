@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058451"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030648"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -60,7 +59,7 @@ Voer een van de volgende handelingen uit:
 
 U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 
-|Actie|Sneltoetsen|Gebruik in|
+|Bewerking|Sneltoetsen|Gebruik in|
 |----------|----------------------|----------|
 |**kopiëren**|Ctrl + C|Scriptvenster, consolevenster|
 |**Knippen**|CTRL + X|Scriptvenster, consolevenster|
@@ -70,7 +69,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 |**Plakken**|Ctrl + V|Scriptvenster, consolevenster|
 |**Redo**|CTRL + Y|Scriptvenster, consolevenster|
 |**Vervang in Script**|CTRL + H|Scriptvenster|
-|**Opslaan**|CTRL + S|Scriptvenster|
+|**Opslaan**|CTRL+S|Scriptvenster|
 |**Alles selecteren**|Ctrl + A|Scriptvenster, consolevenster|
 |**Ongedaan maken**|CTRL + Z|Scriptvenster, consolevenster|
 
@@ -78,7 +77,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
 
 U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het scriptvenster.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Nieuw**|CTRL+N|
 |**openen**|CTRL + O|
@@ -92,7 +91,7 @@ U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het sc
 
 U kunt de volgende sneltoetsen gebruiken om aan te passen van de weergave in Windows PowerShell ISE. Ze zijn toegankelijk is vanaf de deelvensters in de toepassing.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Ga naar het consolevenster**|CTRL + D|
 |**Ga naar scriptvenster**|CTRL + I|
@@ -109,7 +108,7 @@ U kunt de volgende sneltoetsen gebruiken om aan te passen van de weergave in Win
 
 U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
-|Actie|Sneltoets|Gebruik in|
+|Bewerking|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
 |**/ Doorgaan met uitvoeren**|F5|Scriptvenster, bij het opsporen van fouten in een script|
 |**Stap in**|F11|Scriptvenster, bij het opsporen van fouten in een script|
@@ -125,13 +124,13 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 >
 > U kunt ook de sneltoetsen die is ontworpen voor de Windows PowerShell-console wanneer u fouten opsporen in scripts in Windows PowerShell ISE gebruiken. Voor het gebruik van deze snelkoppelingen, moet u de snelkoppeling naar de typen in het consolevenster en druk op ENTER.
 
-|Actie|Sneltoets|Gebruik in|
+|Bewerking|Sneltoets|Gebruik in|
 |----------|---------------------|----------|
 |**Doorgaan**|C|Consolevenster bij het opsporen van fouten in een script|
 |**Stap in**|S|Consolevenster bij het opsporen van fouten in een script|
 |**Stap Over**|V|Consolevenster bij het opsporen van fouten in een script|
 |**Stap uit**|O|Consolevenster bij het opsporen van fouten in een script|
-|**Herhaal de laatste opdracht** (voor stap of stap Over)|VOER|Consolevenster bij het opsporen van fouten in een script|
+|**Herhaal de laatste opdracht** (voor stap of stap Over)|ENTER|Consolevenster bij het opsporen van fouten in een script|
 |**Aanroepstack weergeven**|K|Consolevenster bij het opsporen van fouten in een script|
 |**Stop de foutopsporing**|Q|Consolevenster bij het opsporen van fouten in een script|
 |**Overzicht van het Script**|L|Consolevenster bij het opsporen van fouten in een script|
@@ -141,7 +140,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
 
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**PowerShell-tabblad sluiten**|CTRL + W|
 |**Nieuwe PowerShell-tabblad**|CTRL + T|
@@ -152,7 +151,7 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
 
 U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (PowerShell.exe) te starten of om Windows PowerShell ISE af te sluiten.
 
-|Actie|Sneltoets|
+|Bewerking|Sneltoets|
 |----------|---------------------|
 |**Exit**|ALT+F4|
 |**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|

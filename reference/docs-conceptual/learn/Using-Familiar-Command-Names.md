@@ -2,13 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell-cmdlet
 title: Bekende opdrachtnamen gebruiken
-ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057992"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030892"
 ---
 # <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 
@@ -27,8 +26,8 @@ De volgende lijst bevat enkele van de algemene **cmd.exe** en Unix-opdrachten di
 |chdir|Wissen|popd|Slaapstand|
 |wissen|h|ps|Sorteren|
 |CLS|Geschiedenis|pushd|t|
-|kopiëren|KILL-instructie|pwd|Type|
-|del|lp|r|Schrijven|
+|kopiëren|KILL-instructie|pwd|type|
+|del|lp|R|Schrijven|
 |diff|ls|ren||
 
 De `Get-Alias` cmdlet ziet u de echte naam van de systeemeigen PowerShell-opdracht die is gekoppeld aan een alias.
@@ -57,7 +56,7 @@ Voorbeeld van de afkortingen:
 | Ophalen          | g            |
 | Instellen          | s            |
 | Item         | Ik            |
-| Locatie     | l            |
+| Location     | l            |
 | Opdracht      | cm           |
 | Alias        | al           |
 

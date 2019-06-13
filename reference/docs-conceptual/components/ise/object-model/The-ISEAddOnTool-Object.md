@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Het ISEAddOnTool-object
-ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: e091f37601c7a4fdaf5deff8c668b18ee7369e74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086796"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028999"
 ---
 # <a name="the-iseaddontool-object"></a>Het ISEAddOnTool-object
 
@@ -22,7 +21,7 @@ Elk tabblad PowerShell in Windows PowerShell ISE kan een eigen set Add-on-hulppr
 
 Er zijn geen Windows PowerShell ISE-specifieke methoden beschikbaar voor objecten van deze klasse.
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>Properties
 
 ### <a name="control"></a>Beheer
 
@@ -153,7 +152,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Naam
+### <a name="name"></a>Name
 
 Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
 

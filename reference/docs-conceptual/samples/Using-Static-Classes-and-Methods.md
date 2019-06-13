@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell-cmdlet
 title: Statische klassen en methoden gebruiken
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086003"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030747"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 
@@ -47,7 +46,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Zoals we eerder is vermeld, Windows PowerShell automatisch voegt u toe aan elke '**System.**' namen van typen wanneer u **New-Object**. Hetzelfde gebeurt er wanneer u een typenaam die tussen haakjes, zodat u kunt opgeven aan welke  **\[System.Environment]** als  **\[omgeving]**.
+> Zoals we eerder is vermeld, Windows PowerShell automatisch voegt u toe aan elke '**System.** ' namen van typen wanneer u **New-Object**. Hetzelfde gebeurt er wanneer u een typenaam die tussen haakjes, zodat u kunt opgeven aan welke  **\[System.Environment]** als  **\[omgeving]** .
 
 De **System.Environment** klasse bevat algemene informatie over de werkomgeving voor het huidige proces powershell.exe is bij het werken in Windows PowerShell.
 
