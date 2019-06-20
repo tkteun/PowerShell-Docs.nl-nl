@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: d1abdca9ecbb5ab0a13593072e6dcb0d647b0b14
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066988"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263827"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Een Windows PowerShell-cmdlet schrijven
 
@@ -27,7 +27,7 @@ ms.locfileid: "62066988"
 
 [Voorbeelden van Code van de Cmdlet](./examples-of-cmdlet-code.md) in deze sectie bevat voorbeeldcode die u gebruiken kunt om te beginnen met het schrijven van uw eigen cmdlets.
 
-[Voorbeelden van opmaak Cmdlet-uitvoer](https://msdn.microsoft.com/en-us/65829249-124d-47d0-9bf3-8e397dc55855) in deze sectie bevat voorbeelden die laten zien hoe om cmdlet-uitvoer te delen.
+[Opmaak-bestanden schrijven voor Cmdlet-uitvoer](../format/writing-a-powershell-formatting-file.md) in deze sectie wordt beschreven hoe u opmaak bestanden te maken. Opmaak bestanden definiëren hoe objecten in PowerShell wordt weergegeven op de opdrachtregel.
 
 [Zelfstudies voor schrijven Cmdlets](./tutorials-for-writing-cmdlets.md) in deze sectie bevat zelfstudies die u gebruiken kunt voor meer informatie over de basisbegrippen voor de cmdlet-code.
 
