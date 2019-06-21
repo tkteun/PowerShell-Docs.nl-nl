@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f3497546-5b3a-4e29-84ba-cd9747be64b3
 caps.latest.revision: 6
-ms.openlocfilehash: 821d0dd327529614322e446bfb30d128d1b6a7f3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4ec63ed32bd2906f5b027523aa0f253b51a5d873
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081580"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301337"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02-codevoorbeeld (VB.NET)
 
-De volgende code toont de implementatie van een `Get-Process` cmdlet die opdrachtregel invoer accepteert. U ziet dat deze implementatie definieert een `Name` parameter waarmee het opdrachtregelprogramma invoer en gebruikt de [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) methode als de uitvoer mechanisme voor het verzenden van uitvoer objecten aan de pijplijn.
+De volgende code toont de implementatie van een `Get-Process` cmdlet die opdrachtregel invoer accepteert. U ziet dat deze implementatie definieert een `Name` parameter waarmee het opdrachtregelprogramma invoer en gebruikt de [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) methode als de uitvoer-mechanisme voor het verzenden van uitvoer objecten naar de pijplijn.
 
 ## <a name="code-sample"></a>Voorbeeld van code
 

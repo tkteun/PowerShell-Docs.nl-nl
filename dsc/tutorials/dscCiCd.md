@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Het bouwen van een pijplijn voor continue integratie en continue implementatie met DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076464"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301497"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Het bouwen van een pijplijn voor continue integratie en continue implementatie met DSC
 
@@ -22,10 +22,10 @@ Een geautomatiseerde CI/CD-pijplijn helpt u bij het bijwerken van software snell
 
 Als u wilt gebruiken in dit voorbeeld, moet u bekend bent met het volgende:
 
-- CI-CD-concepten. Een goede referentie kunt u vinden op [Model van de Release-pijplijn](http://aka.ms/thereleasepipelinemodelpdf).
+- CI-CD-concepten. Een goede referentie kunt u vinden op [Model van de Release-pijplijn](https://aka.ms/thereleasepipelinemodelpdf).
 - [GIT](https://git-scm.com/) van bronbeheer
 - De [Pester](https://github.com/pester/Pester) testframework
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Wat u nodig hebt
 
@@ -44,7 +44,7 @@ De clientcomputer moet een Windows-computer met het volgende zijn geïnstalleerd
 ### <a name="tfssrv1"></a>TFSSrv1
 
 De computer die als host fungeert voor de TFS-server waar u uw build definieert en release.
-Deze computer moet hebben [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) geïnstalleerd.
+Deze computer moet hebben [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) geïnstalleerd.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Dit vindt alle knooppunten die zijn gedefinieerd als een functie van `DNSServer` in de [configuratiegegevens](../configurations/configData.md), die is gemaakt door de `DevEnv.ps1` script.
 
-U kunt meer lezen over de `Where` methode in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+U kunt meer lezen over de `Where` methode in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Met behulp van de configuratiegegevens voor het definiëren van knooppunten is belangrijk bij het uitvoeren van CI omdat knooppuntgegevens waarschijnlijk tussen omgevingen veranderen zullen en configuratiegegevens, kunt u eenvoudig wijzigingen aanbrengen in knooppunt informatie zonder de configuratiecode te wijzigen.
 
@@ -319,7 +319,7 @@ Het testscript integratie maakt gebruik van een combinatie van [Pester](https://
 
 Nu dat we onze code hebt geüpload naar TFS en bekeken wat het doet, gaan we onze build definiëren.
 
-Hier aan bod de build-stappen die u aan de build toevoegen zult. Zie voor instructies over het maken van een build-definitie in TFS [maken en wachtrij een build-definitie](/azure/devops/pipelines/get-started-designer).
+Hier aan bod de build-stappen die u aan de build toevoegen zult. Zie voor instructies over het maken van een build-definitie in TFS [maken en wachtrij een build-definitie](/azure/devops/pipelines/create-first-pipeline).
 
 Maak een nieuwe build-definitie (Selecteer de **leeg** sjabloon) met de naam 'InfraDNS'.
 Voeg dat de volgende stappen uit voor u build-definitie:
@@ -377,7 +377,7 @@ Nu we een trigger die ervoor zorgt het project stellen dat te bouwen van elk gew
 1. In TFS, klikt u op de **Build & Release** tabblad
 1. Selecteer de `DNS Infra` build-definitie en klikt u op **bewerken**
 1. Klik op de **Triggers** tabblad
-1. Selecteer **continue integratie (CI)**, en selecteer `refs/heads/ci-cd-example` in de vervolgkeuzelijst vertakking
+1. Selecteer **continue integratie (CI)** , en selecteer `refs/heads/ci-cd-example` in de vervolgkeuzelijst vertakking
 1. Klik op **opslaan** en vervolgens **OK**
 
 Nu wijziging een in de TFS-triggers voor git-opslagplaats een geautomatiseerde build.
@@ -388,7 +388,7 @@ Laten we een release-definitie maken zodat het project wordt geïmplementeerd vo
 
 Om dit te doen, Voeg een nieuwe release-definitie die is gekoppeld aan de `InfraDNS` build-definitie die u eerder hebt gemaakt.
 Zorg ervoor dat u selecteert **continue implementatie** zodat een nieuwe versie wordt geactiveerd telkens wanneer een nieuwe build is voltooid.
-([Wat release-pijplijnen zijn? ](/azure/devops/pipelines/release/what-is-release-management)) en configureer deze als volgt:
+([Wat release-pijplijnen zijn? ](/azure/devops/pipelines/release/)) en configureer deze als volgt:
 
 De volgende stappen toevoegen aan de release-definitie:
 

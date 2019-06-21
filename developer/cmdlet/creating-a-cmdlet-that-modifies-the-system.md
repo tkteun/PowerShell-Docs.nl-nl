@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854919"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301390"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Een cmdlet maken waarmee het systeem wordt gewijzigd
 
@@ -59,7 +59,7 @@ Houd er rekening mee dat in de [System.Management.Automation.CmdletAttribute](/d
 
 ### <a name="extremely-destructive-actions"></a>Zeer destructieve acties
 
-Sommige bewerkingen zijn zeer destructieve, zoals het formatteren van de partitie van een actieve vaste schijf. In dergelijke gevallen de cmdlet moet worden ingesteld `ConfirmImpact`  =  `ConfirmImpact.High` bij het melden van de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) kenmerk. Deze instelling zorgt ervoor dat de cmdlet op bevestiging van de gebruiker aanvraag, zelfs wanneer de gebruiker niet opgegeven is. de `Confirm` parameter. Echter cmdlet ontwikkelaars moeten spaarzaam `ConfirmImpact` voor bewerkingen die alleen mogelijk schadelijke zijn, zoals het verwijderen van een gebruikersaccount. Houd er rekening mee dat als `ConfirmImpact` is ingesteld op [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Sommige bewerkingen zijn zeer destructieve, zoals het formatteren van de partitie van een actieve vaste schijf. In dergelijke gevallen de cmdlet moet worden ingesteld `ConfirmImpact`  =  `ConfirmImpact.High` bij het melden van de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) kenmerk. Deze instelling zorgt ervoor dat de cmdlet op bevestiging van de gebruiker aanvraag, zelfs wanneer de gebruiker niet opgegeven is. de `Confirm` parameter. Echter cmdlet ontwikkelaars moeten spaarzaam `ConfirmImpact` voor bewerkingen die alleen mogelijk schadelijke zijn, zoals het verwijderen van een gebruikersaccount. Houd er rekening mee dat als `ConfirmImpact` is ingesteld op [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **hoge**.
 
 Sommige bewerkingen zijn op dezelfde manier waarschijnlijk niet destructieve, hoewel ze in theorie Wijzig de actieve status van een systeem buiten Windows PowerShell. Deze cmdlets kunt instellen `ConfirmImpact` naar [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Dit wordt bevestiging aanvragen waarbij de gebruiker heeft gevraagd om te bevestigen bewerkingen alleen gemiddeld impact en hoge impact overslaan.
 
@@ -278,11 +278,11 @@ Voor de volledige C# voorbeeldcode, Zie [StopProcessSample01 voorbeeld](./stoppr
 
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
-Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .net-objecten. Als gevolg daarvan kan een cmdlet mogelijk nodig hebt voor het definiëren van een eigen type, of de cmdlet moet om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .net-objecten. Als gevolg daarvan kan een cmdlet mogelijk nodig hebt voor het definiëren van een eigen type, of de cmdlet moet om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Het bouwen van de Cmdlet
 
-Na de implementatie van een cmdlet, moet deze met Windows PowerShell worden geregistreerd via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Na de implementatie van een cmdlet, moet deze met Windows PowerShell worden geregistreerd via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testen van de Cmdlet
 
@@ -354,9 +354,9 @@ De volgende uitvoer wordt weergegeven.
 
 [Parameters die opdrachtregel verwerken toe te voegen](./adding-parameters-that-process-command-line-input.md)
 
-[Objecttypen uitbreiden en opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85))
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

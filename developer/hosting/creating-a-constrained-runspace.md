@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
-ms.openlocfilehash: 29f1be6a1215219ddd16367a31f528a4f0dbc2e3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083005"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301381"
 ---
 # <a name="creating-a-constrained-runspace"></a>Een beperkte runspace maken
 
@@ -109,7 +109,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>Opdrachten maken persoonlijk
 
- U kunt een opdracht privé, ook door de instelling voor het maken van [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) eigenschap [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private) . De host-toepassing en andere opdrachten die opdracht kunnen aanroepen, maar de gebruiker van de toepassing niet. In het volgende voorbeeld wordt de [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) opdracht is privé.
+ U kunt een opdracht privé, ook door de instelling voor het maken van [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) eigenschap [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Persoonlijke**. De host-toepassing en andere opdrachten die opdracht kunnen aanroepen, maar de gebruiker van de toepassing niet. In het volgende voorbeeld wordt de [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) opdracht is privé.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

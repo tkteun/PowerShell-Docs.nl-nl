@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854984"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298628"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken
 
@@ -77,7 +77,7 @@ De vorige declaratie stelt de `ValueFromPipeline` trefwoord `true` zodat de Wind
 
 Als de cmdlet voor het afhandelen van de invoer van de pijplijn is, moet de juiste invoer verwerkingsmethoden overschrijven. De van basic input-verwerkingsmethoden zijn geïntroduceerd in [het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter is niets opgegeven door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. U ziet dat binnen [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), de aanroep van [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) is de uitvoer mechanisme voor het verzenden van uitvoer objecten aan de pijplijn. De tweede parameter van deze aanroep `enumerateCollection`, is ingesteld op `true` vertellen dat de Windows PowerShell-runtime voor het inventariseren van de matrix met proces-objecten en een proces op een tijdstip schrijven naar de opdrachtregel.
+Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode voor het afhandelen van de `Name` parameter is niets opgegeven door de gebruiker of een script. Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven. U ziet dat binnen [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), de aanroep van [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) is de uitvoer-mechanisme voor het verzenden van uitvoer-objecten naar de pijplijn. De tweede parameter van deze aanroep `enumerateCollection`, is ingesteld op `true` vertellen dat de Windows PowerShell-runtime voor het inventariseren van de matrix met proces-objecten en een proces op een tijdstip schrijven naar de opdrachtregel.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ Voor de volledige C# voorbeeldcode, Zie [GetProcessSample03 voorbeeld](./getproc
 
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
-Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .net-objecten. Als gevolg daarvan kan een cmdlet mogelijk nodig hebt voor het definiëren van een eigen type, of de cmdlet moet om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .net-objecten. Als gevolg daarvan kan een cmdlet mogelijk nodig hebt voor het definiëren van een eigen type, of de cmdlet moet om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Het bouwen van de Cmdlet
 
-Na de implementatie van een cmdlet moet deze met Windows PowerShell worden geregistreerd via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Na de implementatie van een cmdlet moet deze met Windows PowerShell worden geregistreerd via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testen van de Cmdlet
 
@@ -180,9 +180,9 @@ De volgende uitvoer wordt weergegeven.
 
 [Het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85))
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referentie](../windows-powershell-reference.md)
 
