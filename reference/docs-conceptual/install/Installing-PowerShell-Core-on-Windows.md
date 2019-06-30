@@ -22,7 +22,7 @@ Om in te schakelen PowerShell voor externe toegang via WSMan, moeten de volgende
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
-PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [releases] [ releases] pagina. Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren. De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
+PowerShell installeren op een Windows-client of Windows Server (werkt op Windows 7 SP1, Server 2008 R2 en hoger), het MSI-pakket downloaden in onze GitHub [ releases] pagina. Schuif omlaag naar de **activa** sectie van de versie die u wilt installeren. De sectie activa kan worden samengevouwen, dus misschien moet u klikt u op te geven.
 
 Het MSI-bestand er als volgt uitzien: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
