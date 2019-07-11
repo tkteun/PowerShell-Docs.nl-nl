@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081430"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735010"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="f7821-102">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="f7821-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="3d808-102">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="3d808-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="f7821-103">Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="f7821-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="f7821-104">U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht.</span><span class="sxs-lookup"><span data-stu-id="f7821-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="f7821-105">(Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f7821-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="3d808-103">Hier volgen de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span><span class="sxs-lookup"><span data-stu-id="3d808-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="3d808-104">U doet dit door de toepassing een runspace aanroept en roept vervolgens een opdracht.</span><span class="sxs-lookup"><span data-stu-id="3d808-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="3d808-105">(Houd er rekening mee dat deze toepassing geen informatie over de configuratie van de runspace geeft, noch worden deze expliciet een pijplijn maken.) De opdracht die wordt opgeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3d808-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="f7821-106">Voorbeeld van code</span><span class="sxs-lookup"><span data-stu-id="f7821-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="3d808-106">Voorbeeld van code</span><span class="sxs-lookup"><span data-stu-id="3d808-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="f7821-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f7821-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3d808-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="3d808-107">See Also</span></span>
 
-[<span data-ttu-id="f7821-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="f7821-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="3d808-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="3d808-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
