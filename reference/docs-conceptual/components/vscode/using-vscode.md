@@ -2,19 +2,19 @@
 title: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 description: Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882577"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733874"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio Code gebruiken voor het ontwikkelen van PowerShell
 
 Naast de [PowerShell ISE][ise], PowerShell wordt ook goed ondersteund in Visual Studio Code.
 Bovendien wordt de ISE niet ondersteund met PowerShell Core, terwijl de Visual Studio Code voor PowerShell Core wordt ondersteund op alle platformen (Windows, macOS en Linux)
 
-U kunt Visual Studio Code op Windows met PowerShell versie 5 gebruiken met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) voor downlevel-Windows-OSs (bijvoorbeeld Windows 8.1, enzovoort).
+U kunt Visual Studio Code op Windows met PowerShell versie 5 gebruiken met behulp van Windows 10 of door het installeren van [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) voor downlevel-Windows-OSs (bijvoorbeeld Windows 8.1, enzovoort).
 
 Voordat u begint met het, Controleer of dat PowerShell bestaat op uw systeem.
 Zie voor moderne workloads in Windows, macOS en Linux:
@@ -248,7 +248,7 @@ Er zijn een paar blogs die mogelijk nuttig zijn om aan de slag met PowerShell-ex
 
 - [Extensie van PowerShell][ps-extension]
 - [Schrijf en fouten opsporen in PowerShell-scripts in Visual Studio Code][debug]
-- [Foutopsporing van Visual Studio Code-richtlijnen][vscode-guide]
+- [Debugging Visual Studio Code Guidance][vscode-guide]
 - [Foutopsporing in PowerShell in Visual Studio Code][ps-vscode]
 - [Aan de slag met PowerShell-ontwikkeling in Visual Studio Code][getting-started]
 - [Visual Studio Code bewerken van functies voor het ontwikkelen van PowerShell-deel 1][editing-part1]

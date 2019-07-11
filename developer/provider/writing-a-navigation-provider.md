@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080863"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734724"
 ---
 # <a name="writing-a-navigation-provider"></a>Een navigatieprovider schrijven
 
@@ -25,7 +25,7 @@ Zie voor meer informatie over Windows PowerShell-providers, [overzicht van Windo
 
 ## <a name="implementing-navigation-methods"></a>Navigatiemethoden implementeren
 
-De [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klasse implementeert methoden die ondersteuning bieden voor geneste containers, relatieve paden en items verplaatsen. Zie voor een volledige lijst van deze methoden, [NavigationCmdletProvider methoden](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+De [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klasse implementeert methoden die ondersteuning bieden voor geneste containers, relatieve paden en items verplaatsen. Zie voor een volledige lijst van deze methoden, [NavigationCmdletProvider methoden](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > In dit onderwerp bouwt voort op de informatie in [Quick Start Windows PowerShell-Provider](./windows-powershell-provider-quickstart.md). In dit onderwerp heeft geen betrekking op de basisprincipes van het instellen van een provider-project, of het implementeren van de methoden die zijn overgenomen van de [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klasse die u maakt en schijven verwijderen. In dit onderwerp wordt niet beschreven hoe u voor het implementeren van methoden die worden weergegeven door de [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) of [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klassen. Zie voor een voorbeeld waarin wordt uitgelegd hoe voor het implementeren van de item-cmdlets, [schrijven van een provider item](./writing-an-item-provider.md). Zie voor een voorbeeld waarin wordt uitgelegd hoe voor het implementeren van container-cmdlets, [schrijven van een provider container](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath implementeren
 
-De [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) methode lid wordt van een opgegeven bovenliggende pad en een pad opgegeven onderliggende voor het maken van een provider interne pad (voor informatie over het pad van het type dat providers kan ondersteunen, Zie [overzicht van Windows PowerShell-Provider](./windows-powershell-provider-overview.md). De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) cmdlet.
+De [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) methode lid wordt van een opgegeven bovenliggende pad en een pad opgegeven onderliggende voor het maken van een provider interne pad (voor informatie over het pad van het type dat providers kan ondersteunen, Zie [overzicht van Windows PowerShell-Provider](./windows-powershell-provider-overview.md). De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>MoveItem implementeren
 
-De [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) methode verplaatst u een item uit het opgegeven pad naar het opgegeven doelpad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) cmdlet.
+De [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) methode verplaatst u een item uit het opgegeven pad naar het opgegeven doelpad. De PowerShell-engine roept deze methode wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

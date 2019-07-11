@@ -1,39 +1,36 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea, powershell, beveiliging
 title: Configuraties van JEA registreren
-ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084824"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726625"
 ---
 # <a name="registering-jea-configurations"></a>Configuraties van JEA registreren
 
-> Van toepassing op: Windows PowerShell 5.0
-
-Zodra u hebt uw [rolmogelijkheden](role-capabilities.md) en [sessie configuratiebestand](session-configurations.md) gemaakt, de laatste stap voordat u de JEA kunt gebruiken is de JEA-eindpunt registreren.
-De JEA-eindpunt registreren met het systeem, wordt het eindpunt beschikbaar voor gebruik door gebruikers en automation-engines.
+Zodra u hebt uw [rolmogelijkheden](role-capabilities.md) en [sessie configuratiebestand](session-configurations.md) gemaakt, de laatste stap bestaat uit het registreren van de JEA-eindpunt. De JEA-eindpunt registreren met het systeem, wordt het eindpunt beschikbaar voor gebruik door gebruikers en automation-engines.
 
 ## <a name="single-machine-configuration"></a>De configuratie van één machine
 
-Voor kleine omgevingen, kunt u JEA implementeren door het registreren van de sessie configuratie bestand met de [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
+Voor kleine omgevingen, kunt u JEA implementeren door het registreren van de sessie configuratie bestand met de [Register-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
 
 Voordat u begint, zorg ervoor dat de volgende vereisten wordt voldaan:
-- Een of meer rollen is gemaakt en opgeslagen in de map 'RoleCapabilities' van een geldig PowerShell-module.
-- Een configuratiebestand voor de sessie is gemaakt en getest.
-- De gebruiker die de configuratie van de JEA registreren heeft administrator-rechten op de systemen.
 
-U moet ook een naam voor uw JEA-eindpunt selecteren.
-De naam van de JEA-eindpunt is vereist wanneer gebruikers op het systeem met JEA verbinding wilt maken.
-U kunt de [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet om te controleren of de namen van bestaande eindpunten op het systeem.
-Eindpunten die met 'microsoft beginnen' worden doorgaans geleverd met Windows.
-Het eindpunt 'microsoft.powershell' is de standaardeindpunt dat wordt gebruikt bij het verbinden met een externe PowerShell-eindpunt.
+- Een of meer rollen zijn gemaakt en geplaatst de **RoleCapabilities** map van een PowerShell-module.
+- Een configuratiebestand voor de sessie is gemaakt en getest.
+- De gebruiker die de configuratie van de JEA registreren heeft beheerdersrechten op het systeem.
+- U kunt een naam voor uw JEA-eindpunt hebt geselecteerd.
+
+De naam van de JEA-eindpunt is vereist wanneer gebruikers verbinding maken met het systeem JEA gebruiken. De [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) cmdlet worden de namen van de eindpunten in een systeem. Eindpunten die met beginnen `microsoft` worden doorgaans geleverd met Windows. De `microsoft.powershell` -eindpunt is de standaardeindpunt dat wordt gebruikt bij het verbinden met een externe PowerShell-eindpunt.
 
 ```powershell
-PS C:\> Get-PSSessionConfiguration | Select-Object Name
+Get-PSSessionConfiguration | Select-Object Name
+```
 
+```Output
 Name
 ----
 microsoft.powershell
@@ -41,35 +38,33 @@ microsoft.powershell.workflow
 microsoft.powershell32
 ```
 
-Wanneer u een passende naam voor uw JEA-eindpunt hebt bepaald, voer de volgende opdracht voor het registreren van het eindpunt.
+Voer de volgende opdracht om het registreren van het eindpunt.
 
 ```powershell
 Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' -Force
 ```
 
 > [!WARNING]
-> De bovenstaande opdracht de WinRM-service op het systeem opnieuw is opgestart.
-> Dit wordt beëindigd voor alle externe communicatie van PowerShell-sessies, evenals alle lopende DSC-configuraties.
-> Het is raadzaam dat u een productiemachines offline nemen voordat de opdracht uit om te voorkomen dat zakelijke verstoren.
+> De vorige opdracht de WinRM-service op het systeem opnieuw is opgestart. Dit wordt beëindigd voor alle PowerShell-sessies voor externe toegang en alle lopende DSC-configuraties. Wij raden dat u productiemachines offline nemen voordat de opdracht uit om te voorkomen dat zakelijke verstoren.
 
-Als de registratie is geslaagd, bent u klaar om te [JEA gebruiken](using-jea.md).
-U kunt het configuratiebestand van de sessie op elk gewenst moment; verwijderen het wordt niet gebruikt na de registratie van het eindpunt.
+Na de registratie, kunt u [JEA gebruiken](using-jea.md). U kunt het configuratiebestand van de sessie op elk gewenst moment verwijderen. Het configuratiebestand wordt niet na de registratie van het eindpunt gebruikt.
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuratie met meerdere machines met DSC
 
-Als u JEA op meerdere machines implementeert, wordt het eenvoudigste implementatiemodel is het gebruik van de JEA [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) resource die u wilt snel en consistent JEA implementeren op elke computer.
+Bij het implementeren van JEA op meerdere machines, het eenvoudigste implementatiemodel gebruikmaakt van de JEA [Desired State Configuration (DSC)](/powershell/dsc/overview) resource die u wilt snel en consistent JEA implementeren op elke computer.
 
-Voor het implementeren van JEA met DSC, die u wilt controleren of dat de volgende vereisten wordt voldaan:
-- Een of meer rolmogelijkheden zijn gemaakt en toegevoegd aan een geldig PowerShell-module.
+Voor het implementeren van JEA met DSC, zorg ervoor dat de volgende vereisten wordt voldaan:
+
+- Een of meer rolmogelijkheden zijn gemaakt en toegevoegd aan een PowerShell-module.
 - De PowerShell-module met de rollen die zijn opgeslagen op een toegankelijke (alleen-lezen) bestandsshare elke machine.
-- Instellingen voor de sessieconfiguratie van de zijn vastgesteld. U hoeft niet te maken van een configuratiebestand voor de sessie bij het gebruik van de JEA-DSC-resource.
-- U hebt de referenties waarmee u kunt beheeracties uitvoeren op elke machine of toegang hebben tot een DSC-pull-server gebruikt voor het beheren van de machines.
-- U hebt gedownload de [JEA DSC-resource](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
+- Instellingen voor de sessieconfiguratie van de zijn vastgesteld. U hoeft te maken van een configuratiebestand voor de sessie bij het gebruik van de JEA-DSC-resource.
+- Hebt u referenties waarmee administratieve taken op elke computer of de toegang tot de DSC-pull-server gebruikt voor het beheren van de virtuele machines.
+- U hebt gedownload de [JEA DSC-resource](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource).
 
-Op een doel (of pull-server, als u van een gebruikmaakt), een DSC-configuratie voor de JEA-eindpunt te maken.
-In deze configuratie gebruikt u de JustEnoughAdministration DSC-resource voor het instellen van het configuratiebestand van de sessie en de resource bestand moeten worden gekopieerd van de rolmogelijkheden van de bestandsshare.
+Maak een DSC-configuratie voor de JEA-eindpunt op een computer of een pull-server. In deze configuratie de **JustEnoughAdministration** DSC-resource definieert het configuratiebestand van de sessie en de **bestand** resource kopieert de rolmogelijkheden van de bestandsshare.
 
 De volgende eigenschappen kunnen worden geconfigureerd met behulp van de DSC-resource:
+
 - Roldefinities
 - Virtuele groepen
 - Naam van groep beheerd serviceaccount
@@ -80,10 +75,7 @@ De volgende eigenschappen kunnen worden geconfigureerd met behulp van de DSC-res
 
 De syntaxis voor elk van deze eigenschappen in een DSC-configuratie is consistent met het configuratiebestand van de PowerShell-sessie.
 
-Hieronder volgt een voorbeeld van DSC-configuratie voor een algemene server Onderhoud-module.
-
-Hierbij wordt ervan uitgegaan dat een geldig PowerShell-module met de rolmogelijkheden in een submap 'RoleCapabilities' bevindt zich op de '\\\\myfileshare\\JEA'-bestandsshare.
-
+Hieronder volgt een voorbeeld van DSC-configuratie voor een algemene server Onderhoud-module. Hierbij wordt ervan uitgegaan dat een geldig PowerShell-module met rolmogelijkheden bevindt zich op de `\\myfileshare\JEA` -bestandsshare.
 
 ```powershell
 Configuration JEAMaintenance
@@ -110,16 +102,13 @@ Configuration JEAMaintenance
 }
 ```
 
-Deze configuratie kan vervolgens worden toegepast op een systeem met [rechtstreeks aanroepen van de Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) of bijwerken van de [pull-serverconfiguratie](https://msdn.microsoft.com/powershell/dsc/pullserver).
+Vervolgens de configuratie is toegepast op een systeem door het rechtstreeks aanroepen van de [Local Configuration Manager](/powershell/dsc/managing-nodes/metaConfig) of bijwerken van de [pull-serverconfiguratie](/powershell/dsc/pull-server/pullServer).
 
-De DSC-resources kunt u het standaardeindpunt voor de externe communicatie van Microsoft.PowerShell vervangen.
-Als u dit doet, wordt een back-up onbeperkte eindpunt met de naam 'Microsoft.PowerShell.Restricted' met de standaard-WinRM-ACL (zodat gebruikers van extern beheer- en lokale beheerders groepsleden om deze te openen) automatisch geregistreerd in de resource.
+De DSC-resource ook kunt u de standaard vervangen **Microsoft.PowerShell** eindpunt. Wanneer de vervangen, registreert de resource automatisch een back-eindpunt met de naam **Microsoft.PowerShell.Restricted**. Het eindpunt van de back-up is de standaard-WinRM-ACL waarmee u kunt gebruikers van extern beheer- en lokale beheerders groepsleden om deze te openen.
 
 ## <a name="unregistering-jea-configurations"></a>De registratie JEA-configuraties
 
-Als u wilt een JEA-eindpunt op een systeem verwijderen, gebruikt u de [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet.
-Registratie van een JEA-eindpunt wordt voorkomen dat nieuwe gebruikers van het maken van nieuwe JEA-sessies op het systeem.
-U kunt er ook een JEA-configuratie bijwerken door een bijgewerkte sessie-configuratiebestand met dezelfde naam van het eindpunt opnieuw te registreren.
+De [Unregister-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet een JEA-eindpunt wordt verwijderd. Registratie van een JEA-eindpunt wordt voorkomen dat nieuwe gebruikers van het maken van nieuwe JEA-sessies op het systeem. U kunt er ook een JEA-configuratie bijwerken door een bijgewerkte sessie-configuratiebestand met dezelfde naam van het eindpunt opnieuw te registreren.
 
 ```powershell
 # Unregister the JEA endpoint called "ContosoMaintenance"
@@ -127,10 +116,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> Een JEA registratie eindpunt zorgt ervoor dat de WinRM-service opnieuw te starten.
-> Dit meest externe bewerkingen wordt uitgevoerd, met inbegrip van andere PowerShell-sessies, WMI-aanroepen en sommige beheerprogramma's-interrupts.
-> Alleen de registratie PowerShell eindpunten verwijderen tijdens gepland onderhoud.
+> Een JEA registratie eindpunt zorgt ervoor dat de WinRM-service opnieuw te starten. Dit meest externe bewerkingen wordt uitgevoerd, met inbegrip van andere PowerShell-sessies, WMI-aanroepen en sommige beheerprogramma's-interrupts. Alleen de registratie PowerShell eindpunten verwijderen tijdens gepland onderhoud.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [De JEA-eindpunt testen](using-jea.md)
+[De JEA-eindpunt testen](using-jea.md)

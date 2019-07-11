@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
-title: De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: De GetConfigurationResultOutput-methode
+ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078638"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727128"
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="getconfigurationresultoutput-method"></a>De GetConfigurationResultOutput-methode
 
 Hiermee haalt u de uitvoer van de Configuration-Agent die is gekoppeld aan een specifieke taak.
 

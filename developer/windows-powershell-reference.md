@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080492"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733750"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell
 
@@ -53,4 +53,4 @@ Naast de SDK van Windows PowerShell bevatten de volgende bronnen meer informatie
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) deze naamruimte bevat de basisklassen die worden gebruikt door andere naamruimteklassen. Bijvoorbeeld, de [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klasse is de basisklasse van de [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasse.
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) deze naamruimte bevat de klassen, opsommingen en interfaces die worden gebruikt voor het maken van een Windows PowerShell-runspace. In deze context is de Windows PowerShell-runspace de context waarin een of meer pijplijnen van Windows PowerShell cmdlets aanroepen. Dat wil zeggen, werken cmdlets binnen de context van een Windows PowerShell-runspace. Zie voor meer informatie aboutWindows PowerShell runspaces, [Windows PowerShell Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) deze naamruimte bevat de klassen, opsommingen en interfaces die worden gebruikt voor het maken van een Windows PowerShell-runspace. In deze context is de Windows PowerShell-runspace de context waarin een of meer pijplijnen van Windows PowerShell cmdlets aanroepen. Dat wil zeggen, werken cmdlets binnen de context van een Windows PowerShell-runspace. Zie voor meer informatie aboutWindows PowerShell runspaces, [Windows PowerShell Runspaces](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

@@ -3,12 +3,12 @@ description: Meer informatie over de versiegeschiedenis van de extensie Desired 
 ms.date: 06/21/2018
 keywords: DSC, powershell, azure,-extensie
 title: Versiegeschiedenis van Azure DSC-extensie
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079741"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734657"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versiegeschiedenis van Azure Desired State Configuration-extensie
 
@@ -164,7 +164,7 @@ In dit artikel bevat informatie over elke versie van de Azure DSC VM-extensie we
 - **Omgeving:** Azure
 - **Opmerking:** Deze versie wordt DSC opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturingssystemen, installeert het de [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installeren van WMF opnieuw opstarten vereist).
 - **Nieuwe functies**
-  - Ondersteuning voor WMF 5.1 Preview. Eerst wordt gepubliceerd, deze versie is een optionele upgrade en moest u om op te geven Wmfversion = ' 5.1PP' in Resource Manager-sjablonen voor het installeren van WMF 5.1 preview. Wmfversion = 'latest' nog steeds installeert de [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Zie voor meer informatie over WMF 5.1 preview [deze blog]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Ondersteuning voor WMF 5.1 Preview. Eerst wordt gepubliceerd, deze versie is een optionele upgrade en moest u om op te geven Wmfversion = ' 5.1PP' in Resource Manager-sjablonen voor het installeren van WMF 5.1 preview. Wmfversion = 'latest' nog steeds installeert de [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Zie voor meer informatie over WMF 5.1 preview [deze blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Secundaire van andere oplossingen en verbeteringen zijn toegevoegd.
 
 ### <a name="version--219"></a>Versie 2.19

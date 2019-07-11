@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079197"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727194"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
 Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](pullserver.md#community-solutions-for-pull-service).
+> De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Overzicht: Dit document is bedoeld om op te nemen proces en uitbreidbaarheid voor de ondersteuning van technici die zijn voorbereid voor de oplossing. Details dient aanbevolen procedures aangeduid met de klanten en vervolgens worden gevalideerd door het productteam om te controleren of aanbevelingen toekomstige gericht zijn en als stabiel beschouwd.
 
@@ -50,9 +50,9 @@ Windows PowerShell biedt een set met taaluitbreidingen voor Desired State Config
 Een pull-server voorziet in een gecentraliseerde service voor het opslaan van configuraties die is toegankelijk voor de doelknooppunten.
 
 De functie voor pull-server kan worden geïmplementeerd als een Web Server-exemplaar of een SMB-bestandsshare. De web server-functie bevat een OData-interface en kan de mogelijkheden voor doelknooppunten om te rapporteren terug bevestiging van het slagen of mislukken als configuraties zijn toegepast (optioneel) bevatten. Deze functionaliteit is nuttig in omgevingen waarin er een groot aantal doelknooppunten.
-Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige installatie of als een opnieuw voorkomende taak waardoor ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op schaal. Zie voor meer informatie, [Windows PowerShell Desired State Configuration Pull-Servers](/powershell/dsc/pullServer) en
+Na het configureren van een doelknooppunt (ook wel een client genoemd) om te verwijzen naar de pull-server de configuratie van de meest recente gegevens en alle vereiste scripts gedownload en toegepast. Dit kan gebeuren als een eenmalige installatie of als een opnieuw voorkomende taak waardoor ook de pull-server een belangrijk onderdeel voor het beheren van de wijziging op schaal. Zie voor meer informatie, [Windows PowerShell Desired State Configuration Pull-Servers](/powershell/dsc/pullServer/pullserver) en
 
-[Pushen en ophalen van configuratie-modi](/powershell/dsc/pullServer).
+[Pushen en ophalen van configuratie-modi](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Planning van de configuratie
 

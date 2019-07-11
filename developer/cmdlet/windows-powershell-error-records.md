@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067039"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735073"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-foutrecords
 
@@ -60,9 +60,9 @@ Gebruik de volgende richtlijnen voor het genereren van fout-id's bij het maken v
 
 ## <a name="error-category"></a>Foutcategorie
 
-Wanneer u een foutrecord voor een maakt, geeft u de categorie van de fout met behulp van een van de constanten zijn gedefinieerd door de [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) opsomming. Windows PowerShell maakt gebruik van de Foutcategorie informatie over de fout weergegeven wanneer gebruikers de `$ErrorView` variabele `"CategoryView"`.
+Wanneer u een foutrecord voor een maakt, geeft u de categorie van de fout met behulp van een van de constanten zijn gedefinieerd door de [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) opsomming. Windows PowerShell maakt gebruik van de Foutcategorie informatie over de fout weergegeven wanneer gebruikers de `$ErrorView` variabele `"CategoryView"`.
 
-Vermijd het gebruik van de [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) constante. Als u alle informatie over de fout of de bewerking die de fout heeft veroorzaakt hebt, kiest u de categorie die het beste de fout, of de bewerking beschrijft, zelfs als de categorie niet een perfecte is.
+Vermijd het gebruik van de [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **opgegeven** constante. Als u alle informatie over de fout of de bewerking die de fout heeft veroorzaakt hebt, kiest u de categorie die het beste de fout, of de bewerking beschrijft, zelfs als de categorie niet een perfecte is.
 
 De informatie die wordt weergegeven door Windows PowerShell is de categorie-view-tekenreeks genoemd en wordt samengesteld uit de eigenschappen van de [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) klasse. (Deze klasse wordt geopend via de fout [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) eigenschap.)
 
@@ -72,7 +72,7 @@ De informatie die wordt weergegeven door Windows PowerShell is de categorie-view
 
 De volgende lijst bevat de informatie die wordt weergegeven:
 
-- Categorie: Een Windows PowerShell-gedefinieerd [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) constante.
+- Categorie: Een Windows PowerShell-gedefinieerd [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) constante.
 
 - Doelnaam: Standaard de naam van het object de cmdlet is verwerking wanneer de fout is opgetreden. Of een andere cmdlet gedefinieerde tekenreeks.
 
@@ -88,9 +88,9 @@ Wanneer u een foutrecord met voor een cmdlet ontwikkelt, het standaardfoutberich
 
 Het bericht vervanging wordt geleverd door een [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) object. Gebruik een van de volgende constructoren van dit object omdat ze voorzien in extra lokalisatie-informatie die kan worden gebruikt door Windows PowerShell.
 
-- [ErrorDetails.ErrorDetails (Cmdlet, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Deze constructor gebruiken als de tekenreeks van uw sjabloon is een resourcetekenreeks in dezelfde assembly waarin de cmdlet is geïmplementeerd of als u wilt laden van de sjabloon-tekenreeks met een onderdrukking van de [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) methode.
+- [ErrorDetails (Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Deze constructor gebruiken als de tekenreeks van uw sjabloon is een resourcetekenreeks in dezelfde assembly waarin de cmdlet is geïmplementeerd of als u wilt laden van de sjabloon-tekenreeks met een onderdrukking van de [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) methode.
 
-- [ErrorDetails.ErrorDetails (Assembly, String, String, Object\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Deze constructor gebruiken als de sjabloon-tekenreeks in een ander assembly is en u deze niet via een onderdrukking van laden kan [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails (Assembly, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Deze constructor gebruiken als de sjabloon-tekenreeks in een ander assembly is en u deze niet via een onderdrukking van laden kan [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Het bericht vervanging moet voldoen aan de richtlijnen voor het ontwerpen van .NET Framework voor het schrijven van berichten met een klein verschil uitzondering. De status van de richtlijnen die uitzondering tekstberichten worden geschreven voor ontwikkelaars. Deze vervanging tekstberichten worden geschreven voor de cmdlet-gebruiker.
 
@@ -110,7 +110,7 @@ Wanneer een cmdlet gebruikt [System.Management.Automation.Cmdlet.WriteError](/do
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

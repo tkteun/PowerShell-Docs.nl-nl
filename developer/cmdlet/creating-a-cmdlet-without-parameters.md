@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854968"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733961"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Een cmdlet maken zonder parameters
 
@@ -71,7 +71,7 @@ Windows PowerShell gebruikt de [Microsoft.PowerShell.Commands](/dotnet/api/Micro
 
 ## <a name="overriding-an-input-processing-method"></a>Invoer verwerken methode te overschrijven
 
-De [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasse biedt drie verwerkingsmethoden van de belangrijkste invoer, ten minste een van die de cmdlet moet overschrijven. Zie voor meer informatie over hoe Windows PowerShell records verwerkt [hoe Windows PowerShell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+De [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasse biedt drie verwerkingsmethoden van de belangrijkste invoer, ten minste een van die de cmdlet moet overschrijven. Zie voor meer informatie over hoe Windows PowerShell records verwerkt [hoe Windows PowerShell werkt](/previous-versions//ms714658(v=vs.85)).
 
 Voor alle soorten invoer, de Windows PowerShell-runtime roept [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) om in te schakelen van verwerking. Als de cmdlet sommige voorverwerking of setup uitvoert moet, kunt deze dit doen door deze methode te overschrijven.
 
@@ -135,11 +135,11 @@ Voor de volledige C# voorbeeldcode, Zie [GetProcessSample01 voorbeeld](./getproc
 
 ## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
 
-Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .NET-objecten. Als gevolg daarvan kan een cmdlet mogelijk voor het definiëren van een eigen type of de cmdlet moet mogelijk om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .NET-objecten. Als gevolg daarvan kan een cmdlet mogelijk voor het definiëren van een eigen type of de cmdlet moet mogelijk om uit te breiden van een bestaand type geleverd door een andere cmdlet. Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Het bouwen van de Cmdlet
 
-Na de implementatie van een cmdlet, moet u deze registreren met Windows PowerShell via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Na de implementatie van een cmdlet, moet u deze registreren met Windows PowerShell via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testen van de Cmdlet
 
@@ -260,13 +260,13 @@ Wanneer de cmdlet is geregistreerd met Windows PowerShell, kunt u deze testen do
 
 [Het maken van een Cmdlet voor het verwerken van invoer van de pijplijn](./adding-parameters-that-process-pipeline-input.md)
 
-[Over het maken van een Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Over het maken van een Windows PowerShell-Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Objecttypen uitbreiden en opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objecttypen uitbreiden en opmaak](/previous-versions//ms714665(v=vs.85))
 
-[How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referentie](../windows-powershell-reference.md)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080880"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734856"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snelstartgids voor Windows PowerShell-providers
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>NewDrive implementeren
 
-De [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) methode wordt aangeroepen door de Windows PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)cmdlet op te geven de naam van uw provider. De parameter PSDriveInfo is doorgegeven door de Windows PowerShell-engine en de methode retourneert het nieuwe station met de Windows PowerShell-engine. Deze methode moet worden gedeclareerd in de klasse die eerder is gemaakt.
+De [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) methode wordt aangeroepen door de Windows PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet op te geven de naam van uw provider. De parameter PSDriveInfo is doorgegeven door de Windows PowerShell-engine en de methode retourneert het nieuwe station met de Windows PowerShell-engine. Deze methode moet worden gedeclareerd in de klasse die eerder is gemaakt.
 
 De methode wordt eerst gecontroleerd om ervoor te zorgen dat zowel de hoofdmap van station die zijn doorgegeven als het stationsobject bestaat, retourneert `null` als een van beide niet. Vervolgens wordt een constructor met de interne klasse AccessDBPSDriveInfo gebruikt om een nieuwe station te maken en een verbinding met het station van de Access-database vertegenwoordigt.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>RemoveDrive implementeren
 
-De [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) methode wordt aangeroepen door de Windows PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet. De verbinding met de Access-database van de methode in deze provider wordt gesloten.
+De [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) methode wordt aangeroepen door de Windows PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet. De verbinding met de Access-database van de methode in deze provider wordt gesloten.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

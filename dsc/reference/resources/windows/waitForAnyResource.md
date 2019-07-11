@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC WaitForAny Resource
-ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d15acb3fb34d571eca56ed496eaa9a04b2551ff0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076819"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726855"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny Resource
 
@@ -17,6 +17,9 @@ De **WaitForAny** Desired State Configuration (DSC)-bron kan worden gebruikt bin
 
 Deze resource is geslaagd als de resource die is opgegeven door de **ResourceName** eigenschap bevindt zich in de gewenste status op een doelknooppunten dat is gedefinieerd in de **knooppuntnaam** eigenschap.
 
+> [!NOTE]
+> **WaitForAny** resource maakt gebruik van Windows Remote Management om te controleren of de status van andere knooppunten.
+> Zie voor meer informatie over de poort en beveiligingsvereisten voor WinRM [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Syntaxis
 

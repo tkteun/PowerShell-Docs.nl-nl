@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
-title: De GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: c66ccc4eefaef2d0c3a68fa8a96c5abb9bda6e4c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: De GetConfigurationStatus-methode
+ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078762"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734510"
 ---
-# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>De GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
+# <a name="getconfigurationstatus-method"></a>De GetConfigurationStatus-methode
 
 De geschiedenis van de configuratie-status ophalen.
 

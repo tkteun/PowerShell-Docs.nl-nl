@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: DSC WindowsFeatureSet-Resource
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076783"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726787"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-Resource
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Eigenschap  |  Description   |
 |---|---|
-| Naam| De namen van de functies of onderdelen die u wilt ervoor zorgen worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet, en niet de weergavenaam van de functies of onderdelen.|
+| Naam| De namen van de functies of onderdelen die u wilt ervoor zorgen worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) cmdlet, en niet de weergavenaam van de functies of onderdelen.|
 | Referentie| De referenties voor het toevoegen of verwijderen van de functies of onderdelen.|
 | Zorg ervoor dat| Geeft aan of de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen zijn toegevoegd, stel deze eigenschap in op 'Aanwezig' om ervoor te zorgen dat de functies of onderdelen zijn verwijderd, de eigenschap instellen op 'Ontbreekt'.|
 | IncludeAllSubFeature| Deze eigenschap instellen op **$true** om op te nemen van alle vereiste subonderdelen met van de functies die u met opgeeft de **naam** eigenschap.|

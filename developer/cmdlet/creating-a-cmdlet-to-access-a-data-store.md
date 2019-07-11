@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854852"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733941"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 
@@ -72,7 +72,7 @@ Houd er rekening mee dat deze parameter deel uitmaakt van twee verschillende par
 
 Twee [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) kenmerken verklaren dat de `Path` parameter behoort tot de `ScriptParameterSet` en de `PatternParameterSet`. Zie voor meer informatie over parametersets [parametersets toe te voegen aan een Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-De [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) kenmerk declareert een `PSPath` alias voor de `Path` parameter. Deze alias declareren wordt aanbevolen voor consistentie met andere cmdlets die toegang hebben tot de Windows PowerShell-providers. Zie voor meer informatie aboutWindows PowerShell paden, 'PowerShell pad concepten' in [hoe Windows PowerShell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+De [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) kenmerk declareert een `PSPath` alias voor de `Path` parameter. Deze alias declareren wordt aanbevolen voor consistentie met andere cmdlets die toegang hebben tot de Windows PowerShell-providers. Zie voor meer informatie aboutWindows PowerShell paden, 'PowerShell pad concepten' in [hoe Windows PowerShell werkt](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>De Parameter patroon declareren
 
@@ -379,7 +379,7 @@ In dit voorbeeld selecteren Str-cmdlet gebruikt de [System.Management.Automation
 
 ## <a name="code-sample"></a>Voorbeeld van code
 
-De volgende code toont de uitvoering van deze versie van deze cmdlet Selecteer Str. Houd er rekening mee dat deze code bevat de cmdlet-klasse, persoonlijke methoden die worden gebruikt door de cmdlet en de Windows PowerShell-module code die wordt gebruikt voor het registreren van de cmdlet. Zie voor meer informatie over het registreren van de cmdlet [het bouwen van de Cmdlet](#building-the-cmdlet).
+De volgende code toont de uitvoering van deze versie van deze cmdlet Selecteer Str. Houd er rekening mee dat deze code bevat de cmdlet-klasse, persoonlijke methoden die worden gebruikt door de cmdlet en de Windows PowerShell-module code die wordt gebruikt voor het registreren van de cmdlet. Zie voor meer informatie over het registreren van de cmdlet [het bouwen van de Cmdlet](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Het bouwen van de Cmdlet
 
-Na de implementatie van een cmdlet, moet u deze registreren met Windows PowerShell via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Na de implementatie van een cmdlet, moet u deze registreren met Windows PowerShell via een Windows PowerShell-module. Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testen van de Cmdlet
 
@@ -1214,7 +1214,7 @@ Wanneer de cmdlet is geregistreerd met Windows PowerShell, kunt u deze testen do
 
 ## <a name="see-also"></a>Zie ook
 
-[Over het maken van een Windows PowerShell-Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Over het maken van een Windows PowerShell-Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Wanneer de cmdlet is geregistreerd met Windows PowerShell, kunt u deze testen do
 
 [Ontwerp van uw Windows PowerShell-Provider](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

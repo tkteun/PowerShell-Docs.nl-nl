@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080901"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734859"
 ---
 # <a name="windows-powershell-provider-overview"></a>Overzicht van Windows PowerShell-providers
 
@@ -27,7 +27,7 @@ Wanneer u een provider schrijft, kunt u standaard stations-stations die automati
 
 ## <a name="type-of-providers"></a>Type van de Providers
 
-Er zijn verschillende typen providers, elk met een ander niveau van functionaliteit biedt. Een provider wordt geïmplementeerd als een klasse die is afgeleid van een van de onderliggende objecten van de [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) klasse. Zie voor meer informatie over de verschillende typen providers [providertypen](./provider-types.md).
+Er zijn verschillende typen providers, elk met een ander niveau van functionaliteit biedt. Een provider wordt geïmplementeerd als een klasse die is afgeleid van een van de onderliggende objecten van de [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** klasse. Zie voor meer informatie over de verschillende typen providers [providertypen](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Provider-cmdlets
 
@@ -63,7 +63,7 @@ Providers kunnen dynamische parameters die worden toegevoegd aan een cmdlet prov
 
 ## <a name="provider-capabilities"></a>Provider-mogelijkheden
 
-De [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) opsomming definieert een aantal mogelijkheden die providers kunnen ondersteunen. Hierbij kunnen jokertekens gebruiken, filteritems en ondersteuning voor transacties. Als wilt opgeven mogelijkheden voor een provider, voegt u een lijst met waarden van de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) opsomming, gecombineerd met een logische `OR` bewerking, als de [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) eigenschap (de tweede parameter van het kenmerk) van de [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) kenmerk voor de providerklasse. Bijvoorbeeld, het volgende kenmerk geeft aan dat de provider ondersteunt de [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) en [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) mogelijkheden.
+De [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) opsomming definieert een aantal mogelijkheden die providers kunnen ondersteunen. Hierbij kunnen jokertekens gebruiken, filteritems en ondersteuning voor transacties. Als wilt opgeven mogelijkheden voor een provider, voegt u een lijst met waarden van de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) opsomming, gecombineerd met een logische `OR` bewerking, als de [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) eigenschap (de tweede parameter van het kenmerk) van de [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) kenmerk voor de providerklasse. Bijvoorbeeld, het volgende kenmerk geeft aan dat de provider ondersteunt de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **shouldprocess wordt overgeslagen** en [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transacties** mogelijkheden.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

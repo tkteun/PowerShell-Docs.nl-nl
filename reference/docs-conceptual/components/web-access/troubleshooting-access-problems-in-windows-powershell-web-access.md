@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell-cmdlet
 title: toegangsproblemen in windows powershell-webtoegang oplossen
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086592"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733863"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
@@ -35,7 +35,7 @@ Deze fout kan de volgende oorzaken hebben.
 
   Controleer of extern beheer is ingeschakeld op de computer waarop de gebruiker probeert om verbinding te maken.
 
-  Zie voor meer informatie, [hoe u uw Computer configureren voor externe toegang](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Zie voor meer informatie, [hoe u uw Computer configureren voor externe toegang](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Interne serverfout
 
@@ -101,13 +101,13 @@ ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_group<br/
 
 Parameter | Waarde
 -- | --
-Computernaam | Volledig gekwalificeerde naam van gatewayserver of Localhost
+ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
 Parameter | Waarde
 -- | --
-Computernaam | Servernaam
+ComputerName | Servernaam
 
 ### <a name="gateway-credentials"></a>Gatewayreferenties
 

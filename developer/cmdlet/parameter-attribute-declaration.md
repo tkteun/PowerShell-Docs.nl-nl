@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067549"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735130"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaratie van het kenmerk Parameter
 
@@ -36,7 +36,7 @@ De Parameter-kenmerk geeft aan dat een openbare eigenschap van de cmdlet-klasse 
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) met de naam van parameter optioneel. Hiermee geeft u dat de parameter ingesteld dat deze cmdlet-parameter deel uitmaakt. Als er geen parameterset is opgegeven, wordt de parameter hoort bij alle parametersets.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) met de naam van parameter optioneel. Hiermee geeft u de positie van de parameter in een Windows PowerShell-opdracht.
+`Position` ([System.Int32](/dotnet/api/System.Int32)) met de naam van parameter optioneel. Hiermee geeft u de positie van de parameter in een Windows PowerShell-opdracht.
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) met de naam van parameter optioneel. `True` Geeft aan dat de cmdlet-parameter de waarde van een pijplijn-object heeft. Dit trefwoord opgeven als de cmdlet toegang heeft tot de volledige-object is niet alleen een eigenschap van het object. De standaardwaarde is `false`.
 

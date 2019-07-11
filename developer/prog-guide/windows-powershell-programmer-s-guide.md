@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081084"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734887"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-programmeurs&#39;s-handleiding
 
@@ -37,7 +37,7 @@ U moet bij de ontwikkeling van traditionele opdracht wordt een parameter-parser,
 
 Windows PowerShell definieert verschillende soorten opdrachten die u kunt gebruiken in ontwikkeling. Deze opdrachten zijn: functies, filters, scripts, aliassen en uitvoerbare bestanden (toepassingen). Het belangrijkste opdrachttype besproken in deze handleiding is een eenvoudige, kleine opdracht met de naam van een 'cmdlet'. Windows PowerShell het levert een set cmdlets en biedt volledige ondersteuning voor aanpassing van de cmdlet aan de behoeften van uw omgeving. De Windows PowerShell-runtime verwerkt alle opdrachttypen net als cmdlets, met behulp van pijplijnen.
 
-Windows PowerShell biedt naast opdrachten ondersteuning voor verschillende aanpasbare providers van de Windows PowerShell die beschikbaar op specifieke sets met cmdlets. De shell werkt in de Windows PowerShell-opgegeven hosttoepassing (Windows PowerShell.exe), maar het is even toegankelijk vanuit een aangepaste hosttoepassing die u ontwikkelen kunt om te voldoen aan specifieke vereisten. Zie voor meer informatie, [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Windows PowerShell biedt naast opdrachten ondersteuning voor verschillende aanpasbare providers van de Windows PowerShell die beschikbaar op specifieke sets met cmdlets. De shell werkt in de Windows PowerShell-opgegeven hosttoepassing (Windows PowerShell.exe), maar het is even toegankelijk vanuit een aangepaste hosttoepassing die u ontwikkelen kunt om te voldoen aan specifieke vereisten. Zie voor meer informatie, [hoe Windows PowerShell werkt](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
 
@@ -51,17 +51,17 @@ Bij het uitvoeren van beheertaken, moet de gebruiker mogelijk gegevens die zijn 
 
 Windows PowerShell biedt verschillende standaard Windows PowerShell-providers. De Register-provider ondersteunt bijvoorbeeld navigatie en manipuleren van het Windows-register. Registersleutels worden weergegeven als items en registerwaarden worden behandeld als eigenschappen.
 
-Als u beschikbaar maakt voor een gegevensopslag die de gebruiker toegang nodig hebben, moet u mogelijk het schrijven van uw eigen Windows PowerShell-provider, zoals beschreven in [het maken van Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md). Zie voor meer informatie aboutWindows PowerShell-providers, [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Als u beschikbaar maakt voor een gegevensopslag die de gebruiker toegang nodig hebben, moet u mogelijk het schrijven van uw eigen Windows PowerShell-provider, zoals beschreven in [het maken van Windows PowerShell-Providers](./how-to-create-a-windows-powershell-provider.md). Zie voor meer informatie aboutWindows PowerShell-providers, [hoe Windows PowerShell werkt](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Host-toepassing
 
 Windows PowerShell bevat de standaard host toepassing powershell.exe, dit is een consoletoepassing die communiceert met de gebruiker en die als host fungeert voor de Windows PowerShell-runtime met behulp van een consolevenster.
 
-Zelden moet u het schrijven van uw eigen hosttoepassing voor Windows PowerShell, hoewel aanpassing wordt ondersteund. Een situatie waarin u uw eigen toepassing mogelijk is wanneer er een vereiste voor een GUI-interface die uitgebreider dan de interface die is geleverd door de standaard-hosttoepassing. U kunt ook een aangepaste toepassing wanneer u uw GUI zijn gebaseerd op de opdrachtregel. Zie voor meer informatie, [over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Zelden moet u het schrijven van uw eigen hosttoepassing voor Windows PowerShell, hoewel aanpassing wordt ondersteund. Een situatie waarin u uw eigen toepassing mogelijk is wanneer er een vereiste voor een GUI-interface die uitgebreider dan de interface die is geleverd door de standaard-hosttoepassing. U kunt ook een aangepaste toepassing wanneer u uw GUI zijn gebaseerd op de opdrachtregel. Zie voor meer informatie, [over het maken van een Windows PowerShell-hosttoepassing](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Runtime
 
-De Windows PowerShell-runtime is de engine voor het uitvoeren waarmee de verwerking van de opdracht. Het bevat de klassen die de interface tussen de host-toepassing en Windows PowerShell-opdrachten en -providers bieden. De Windows PowerShell-runtime wordt geïmplementeerd als een runspace-object voor de huidige Windows PowerShell-sessie, dit is de operationele omgeving waarin de shell en de opdrachten worden uitgevoerd. Zie voor operationele details [hoe Windows PowerShell werkt](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+De Windows PowerShell-runtime is de engine voor het uitvoeren waarmee de verwerking van de opdracht. Het bevat de klassen die de interface tussen de host-toepassing en Windows PowerShell-opdrachten en -providers bieden. De Windows PowerShell-runtime wordt geïmplementeerd als een runspace-object voor de huidige Windows PowerShell-sessie, dit is de operationele omgeving waarin de shell en de opdrachten worden uitgevoerd. Zie voor operationele details [hoe Windows PowerShell werkt](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell Language
 
@@ -81,7 +81,7 @@ Windows PowerShell biedt toegang tot tal van andere objecten, zoals .NET en XML-
 
   ETS gebruikt, kunt u nieuwe flexibele 'typen' die compatibel zijn met de Windows PowerShell-taal. Als u een .NET-ontwikkelaar bent, u kunt werken met objecten met dezelfde semantiek als de Windows PowerShell-taal voor het uitvoeren van scripts, bijvoorbeeld geldt, om te bepalen als een object resultaat zijn `true`.
 
-  Zie voor meer informatie over ETS en hoe objecten worden gebruikt door Windows PowerShell, [Windows PowerShell-Object concepten](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Zie voor meer informatie over ETS en hoe objecten worden gebruikt door Windows PowerShell, [Windows PowerShell-Object concepten](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programmeren voor Windows PowerShell
 
@@ -100,7 +100,7 @@ Zie voor meer informatie over het starten van de Windows PowerShell-shell gebrui
 |Onderwerp|Definitie|
 |-----------|----------------|
 |[Over het maken van een Windows PowerShell-Provider](./how-to-create-a-windows-powershell-provider.md)|Deze sectie wordt beschreven hoe u een Windows PowerShell-provider voor Windows PowerShell maakt.|
-|[Over het maken van een Windows PowerShell-hosttoepassing](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Deze sectie wordt beschreven hoe u een hosttoepassing die wordt bewerkt een runspace schrijft en over het schrijven van een host-toepassing die een eigen aangepaste host implementeert.|
+|[Over het maken van een Windows PowerShell-hosttoepassing](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|Deze sectie wordt beschreven hoe u een hosttoepassing die wordt bewerkt een runspace schrijft en over het schrijven van een host-toepassing die een eigen aangepaste host implementeert.|
 |[Over het maken van een PowerShell-module Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Deze sectie beschrijft het maken van een module die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en over het maken van een aangepaste module.|
 |[Over het maken van een Console-Shell](./how-to-create-a-console-shell.md)|Deze sectie beschrijft het maken van een console-shell die kan niet worden uitgebreid.|
 |[Windows PowerShell-concepten](./windows-powershell-concepts.md)|In deze sectie bevat algemene informatie waarmee u inzicht in de Windows PowerShell vanuit het oogpunt van een ontwikkelaar.|

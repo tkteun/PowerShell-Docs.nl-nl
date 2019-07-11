@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, configuratie en installatie
 title: Met behulp van configuratiegegevens
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080217"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727221"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Met behulp van de configuratiegegevens in DSC
 
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC biedt de volgende speciale variabelen die kunnen worden gebruikt in een configuratiescript:
 
-- **$AllNodes** verwijst naar de volledige verzameling van knooppunten die zijn gedefinieerd in **ConfigurationData**. U kunt filteren, de **AllNodes** verzameling met behulp van **. WHERE()** en **. ForEach()**.
+- **$AllNodes** verwijst naar de volledige verzameling van knooppunten die zijn gedefinieerd in **ConfigurationData**. U kunt filteren, de **AllNodes** verzameling met behulp van **. WHERE()** en **. ForEach()** .
 - **ConfigurationData** verwijst naar de volledige hash-tabel die wordt doorgegeven als parameter bij het compileren van een configuratie.
 - **MyTypeName** bevat de [configuratie](configurations.md) de naam van de variabele wordt gebruikt in. Bijvoorbeeld, in de configuratie van de `MyDscConfiguration`, wordt de `$MyTypeName` heeft een waarde van `MyDscConfiguration`.
-- **Knooppunt** verwijst naar een bepaalde vermelding in de **AllNodes** verzameling nadat deze is gefilterd met behulp van **. WHERE()** of **. ForEach()**.
-  - U kunt meer lezen over deze methoden in [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Knooppunt** verwijst naar een bepaalde vermelding in de **AllNodes** verzameling nadat deze is gefilterd met behulp van **. WHERE()** of **. ForEach()** .
+  - U kunt meer lezen over deze methoden in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Met behulp van niet-knooppuntgegevens
 

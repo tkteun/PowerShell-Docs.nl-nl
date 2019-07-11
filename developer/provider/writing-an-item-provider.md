@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080812"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734713"
 ---
 # <a name="writing-an-item-provider"></a>Een itemprovider schrijven
 
@@ -25,7 +25,7 @@ Zie voor meer informatie over Windows PowerShell-providers, [overzicht van Windo
 
 ## <a name="implementing-item-methods"></a>Implementeren van item methoden
 
-De [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasse beschrijft de verschillende methoden die kunnen worden gebruikt voor toegang tot en manipuleren van de items in een gegevensarchief. Zie voor een volledige lijst van deze methoden, [ItemCmdletProvider methoden](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx). In dit voorbeeld zullen we vier van deze methoden implementeren. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) opgehaald van een item in een opgegeven pad. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) stelt de waarde van het opgegeven item. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) wordt gecontroleerd of er een item in het opgegeven pad bestaat. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) controleert of een pad om te zien als het wordt toegewezen aan een locatie in het gegevensarchief.
+De [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasse beschrijft de verschillende methoden die kunnen worden gebruikt voor toegang tot en manipuleren van de items in een gegevensarchief. Zie voor een volledige lijst van deze methoden, [ItemCmdletProvider methoden](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). In dit voorbeeld zullen we vier van deze methoden implementeren. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) opgehaald van een item in een opgegeven pad. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) stelt de waarde van het opgegeven item. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) wordt gecontroleerd of er een item in het opgegeven pad bestaat. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) controleert of een pad om te zien als het wordt toegewezen aan een locatie in het gegevensarchief.
 
 > [!NOTE]
 > In dit onderwerp bouwt voort op de informatie in [Quick Start Windows PowerShell-Provider](./windows-powershell-provider-quickstart.md). In dit onderwerp heeft geen betrekking op de basisprincipes van het instellen van een provider-project, of het implementeren van de methoden die zijn overgenomen van de [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klasse die u maakt en schijven verwijderen.
@@ -46,7 +46,7 @@ Declareer de provider worden afgeleid van de [System.Management.Automation.Provi
 
 ### <a name="implementing-getitem"></a>GetItem implementeren
 
-De [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) door de PowerShell-engine wordt aangeroepen wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.Get-Item](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) cmdlet uit op uw de provider. De methode retourneert het item in het opgegeven pad. In het voorbeeld van de database toegang met de methode gecontroleerd of het item het station zelf, een tabel in de database, of een rij in de database wordt. De methode verzendt het item naar de PowerShell-engine door het aanroepen van de [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) methode.
+De [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) door de PowerShell-engine wordt aangeroepen wanneer een gebruiker roept de [Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) cmdlet op uw provider. De methode retourneert het item in het opgegeven pad. In het voorbeeld van de database toegang met de methode gecontroleerd of het item het station zelf, een tabel in de database, of een rij in de database wordt. De methode verzendt het item naar de PowerShell-engine door het aanroepen van de [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) methode.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>SetItem implementeren
 
-De [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) methode wordt aangeroepen door het aanroepen van de PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.Set-Item](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) cmdlet . De waarde van het item wordt ingesteld op het opgegeven pad.
+De [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) methode wordt aangeroepen door het aanroepen van de PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) de cmdlet. De waarde van het item wordt ingesteld op het opgegeven pad.
 
-In het voorbeeld van de database toegang tot het verstandig om de waarde van een item alleen als dit item een rij is, genereert de methode [NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) wanneer het item is niet een rij.
+In het voorbeeld van de database toegang tot het verstandig om de waarde van een item alleen als dit item een rij is, genereert de methode [NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) wanneer het item is niet een rij.
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>ItemExists implementeren
 
-De [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) methode wordt aangeroepen door de PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) cmdlet. De methode bepaalt of er een item in het opgegeven pad is. Als het item bestaat, de methode geeft deze terug naar de PowerShell-engine door het aanroepen van [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+De [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) methode wordt aangeroepen door de PowerShell-engine als een gebruiker roept de [Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand) de cmdlet. De methode bepaalt of er een item in het opgegeven pad is. Als het item bestaat, de methode geeft deze terug naar de PowerShell-engine door het aanroepen van [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)
