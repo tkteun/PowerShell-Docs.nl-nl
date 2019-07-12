@@ -19,7 +19,10 @@
     - name: Aan de slag gaan met DSC op Azure Virtual Machines
       href: getting-started/azureDSCexthistory.md
 - name: Snelstartgidsen
+  expanded: true
   items:
+    - name: Een configuratie maken van een groepsbeleid
+      href: quickstarts/gpo-quickstart.md
     - name: Een website maken met DSC
       href: quickstarts/website-quickStart.md
 - name: Configuraties
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: Local Configuration Manager (v5) configureren
           href: managing-nodes/metaConfig.md
-        - name: Local Configuration Manager (v4) configureren
+        - name: De LCM configureren in PowerShell 4.0
           href: managing-nodes/metaConfig4.md
         - name: Methoden voor het rechtstreeks aanroepen van DSC-resources
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: Overzicht
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: De ApplyConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: ApplyConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: De DisableDebugConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: DisableDebugConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: De EnableDebugConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: EnableDebugConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: De GetConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: GetConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: De GetConfigurationResultOutput-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: GetConfigurationResultOutput-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: De GetConfigurationStatus-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: GetConfigurationStatus-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: De GetMetaConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: GetMetaConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: De PerformRequiredConfigurationChecks-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: PerformRequiredConfigurationChecks-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: De RemoveConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: RemoveConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: De ResourceGet-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: ResourceGet-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: De ResourceSet-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: ResourceSet-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: De ResourceTest-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: ResourceTest-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: De RollBack-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: RollBack-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: De SendConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: SendConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: De SendConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: SendConfigurationApply-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: De SendConfigurationApplyAsync-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: SendConfigurationApplyAsync-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: De SendMetaConfigurationApply-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: SendMetaConfigurationApply-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: De StopConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: StopConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: De TestConfiguration-methode van de klasse MSFT_DSCLocalConfigurationManager
+        - name: TestConfiguration-methode
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Meer informatie
   items:
