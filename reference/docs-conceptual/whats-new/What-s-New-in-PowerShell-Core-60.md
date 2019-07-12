@@ -2,16 +2,16 @@
 title: Wat is er nieuw in PowerShell Core 6.0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.0?
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059012"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843920"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in PowerShell Core 6.0
 
-[PowerShell Core 6.0] [ github] is een nieuwe versie van PowerShell die cross-platform (Windows, macOS en Linux), open-source en gebouwd voor heterogene omgevingen en de hybride cloud.
+[PowerShell Core 6.0][github] is een nieuwe versie van PowerShell die cross-platform (Windows, macOS en Linux), open-source en gebouwd voor heterogene omgevingen en de hybride cloud.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Verplaatst van .NET Framework naar .NET Core
 
@@ -67,7 +67,7 @@ Andere resources zijn alleen aanwezig of is van toepassing in niet-Windows-insta
 
 ### <a name="logging"></a>Logboekregistratie
 
-Op Mac OS, PowerShell maakt gebruik van de native `os_log` API's om aan te melden van Apple [unified aanmeldingssysteem][os_log].
+Op Mac OS, PowerShell maakt gebruik van de native `os_log` API's om aan te melden van Apple [aanmeldingssysteem unified][os_log].
 Op Linux, PowerShell gebruikt [Syslog][], een oplossing alomtegenwoordige logboekregistratie.
 
 ### <a name="filesystem"></a>Bestandssysteem
@@ -139,7 +139,7 @@ De meeste van de modules die worden geleverd als onderdeel van Windows (bijvoorb
 Het PowerShell-team werkt met deze productgroepen en teams om te valideren en hun bestaande modules voor PowerShell Core-poort.
 Met .NET Standard en [CDXML][], veel van deze traditionele Windows PowerShell-modules lijkt te werken in PowerShell Core, maar ze zijn niet officieel gevalideerd en ze zijn niet officieel ondersteund.
 
-Door het installeren van de [ `WindowsPSModulePath` ] [ windowspsmodulepath] -module, kunt u Windows PowerShell-modules gebruiken door de Windows PowerShell toe te voegen `PSModulePath` aan uw PowerShell Core `PSModulePath`.
+Door het installeren van de [ `WindowsPSModulePath` ][windowspsmodulepath] -module, kunt u Windows PowerShell-modules gebruiken door de Windows PowerShell toe te voegen `PSModulePath` aan uw PowerShell Core `PSModulePath`.
 
 Installeer eerst de `WindowsPSModulePath` module op basis van de PowerShell Gallery:
 
@@ -295,9 +295,10 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 
 ### <a name="csv-cmdlets"></a>CSV-cmdlets
 
+- `Import-Csv` biedt nu ondersteuning voor de W3C Extended Log File Format (#2482) (Bedankt [ @iSazonov ](https://github.com/iSazonov)!)
 - Voeg `PSTypeName` ondersteuning voor `Import-Csv` en `ConvertFrom-Csv`. (#5389) (Bedankt [ @markekraus ](https://github.com/markekraus)!)
 - Controleer `Import-Csv` ondersteunen `CR`, `LF`, en `CRLF` als scheidingstekens regel. (#5363) (Bedankt [ @iSazonov ](https://github.com/iSazonov)!)
-- Controleer `-NoTypeInformation` de standaard op `Export-Csv` en `ConvertTo-Csv`. (#5164) (Bedankt [ @markekraus ](https://github.com/markekraus))
+- Controleer `-NoTypeInformation` de standaard op `Export-Csv` en `ConvertTo-Csv`. (#5164) (Bedankt [ @markekraus ](https://github.com/markekraus)!)
 
 ### <a name="service-cmdlets"></a>Service-cmdlets
 
@@ -348,7 +349,7 @@ Zie voor meer informatie over PowerShell-taken, [about_Jobs](https://msdn.micros
 We hebben een aantal belangrijke wijzigingen in PowerShell Core 6.0 geïntroduceerd.
 Meer informatie over deze in detail zien [belangrijke wijzigingen in PowerShell Core 6.0][breaking-changes].
 
-## <a name="debugging"></a>Debugging
+## <a name="debugging"></a>Foutopsporing
 
 - Ondersteuning voor step-in Foutopsporing op afstand voor `Invoke-Command -ComputerName`. (#3015)
 - Binder logboekregistratie voor foutopsporing in PowerShell Core inschakelen

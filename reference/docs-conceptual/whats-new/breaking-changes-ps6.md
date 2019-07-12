@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, core
 title: Belangrijke wijzigingen voor PowerShell 6.0
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085929"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843945"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Belangrijke wijzigingen voor PowerShell 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085929"
 
 ### <a name="powershell-workflow"></a>PowerShell-werkstroom
 
-[PowerShell-werkstroom] [ workflow] is een functie in Windows PowerShell die voortbouwt op [Windows Workflow Foundation (WF)] [ workflow-foundation] waarmee het maken van robuuste runbooks voor langlopende of geparallelliseerde taken.
+[PowerShell-werkstroom][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] waarmee het maken van robuuste runbooks voor langlopende of geparallelliseerde taken.
 
 Vanwege het ontbreken van ondersteuning voor Windows Workflow Foundation in .NET Core blijven we geen ondersteuning voor PowerShell-werkstroom in PowerShell Core.
 
@@ -26,7 +26,7 @@ In de toekomst, graag willen we systeemeigen parallelle uitvoering/gelijktijdigh
 
 ### <a name="custom-snap-ins"></a>Aangepaste modules
 
-[PowerShell-modules] [ snapin] zijn een voorloper van PowerShell-modules die geen wijdverspreide gebruik in de PowerShell-community.
+[PowerShell-modules][snapin] zijn een voorloper van PowerShell-modules die geen wijdverspreide gebruik in de PowerShell-community.
 
 Vanwege de complexiteit van het ondersteunen van modules en hun weinig gebruikt in de community, we geen ondersteuning meer voor aangepaste modules in PowerShell Core.
 
@@ -113,9 +113,13 @@ Voorheen als `-Verbose` of `-Debug` zijn opgegeven, wordt het gedrag van overrod
 
 Als een API retourneert alleen `null`, Invoke-RestMethod is tijdens het serialiseren van dit als de tekenreeks `"null"` in plaats van `$null`. Deze wijziging wordt de logica in opgelost `Invoke-RestMethod` correct serialiseren geldige enkele waarde JSON `null` letterlijke als `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Verwijder `-ComputerName` van `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Verwijder `-Protocol` van `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Vanwege problemen met RPC voor externe toegang in CoreFX (met name op niet-Windows-platforms) en ervoor te zorgen dat een externe communicatie met consistente ervaring in PowerShell, de `-ComputerName` parameter is verwijderd uit de `\*-Computer` cmdlets. Gebruik `Invoke-Command` in plaats daarvan de manier voor het extern uitvoeren van cmdlets.
+Vanwege problemen met RPC voor externe toegang in CoreFX (met name op niet-Windows-platforms) en ervoor te zorgen dat een externe communicatie met consistente ervaring in PowerShell, de `-Protocol` parameter is verwijderd uit de `\*-Computer` cmdlets. DCOM wordt niet meer ondersteund voor externe toegang. De volgende cmdlets alleen ondersteuning voor externe communicatie van WSMAN:
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Verwijder `-ComputerName` van `*-Service` cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ De volgende onderdelen zijn verwijderd als ze worden niet ondersteund in PowerSh
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Verwijderd `RunspaceConfiguration` ondersteunen [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Voorheen bij het maken van een PowerShell-runspace programmatisch met behulp van de API kunt u de oude [ `RunspaceConfiguration` ] [ runspaceconfig] of de nieuwere [ `InitialSessionState` ] [ iss]. Deze wijziging verwijdert ondersteuning voor `RunspaceConfiguration` en biedt alleen ondersteuning voor `InitialSessionState`.
+Voorheen bij het maken van een PowerShell-runspace programmatisch met behulp van de API kunt u de oude [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Deze wijziging verwijdert ondersteuning voor `RunspaceConfiguration` en biedt alleen ondersteuning voor `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
