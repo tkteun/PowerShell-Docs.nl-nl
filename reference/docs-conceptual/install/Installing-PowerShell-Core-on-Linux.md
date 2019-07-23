@@ -1,27 +1,23 @@
 ---
 title: PowerShell Core in Linux installeren
-description: Informatie over het installeren van PowerShell Core in verschillende Linux-distributies
-ms.date: 08/06/2018
-ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
-ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
+description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
+ms.date: 07/19/2019
+ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829425"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372193"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
-[CentOS 7][cos], [rood Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE Leap 15][opensuse],
-[Fedora 27][fedora], [Fedora 28] [fedora], en [Arch Linux][arch].
+Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9],
+ [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse] , [Fedora 27][fedora], [Fedora 28][Fedora]en [Arch Linux][arch].
 
-Voor Linux-distributies die officieel niet worden ondersteund, kunt u proberen met behulp van de [PowerShell module pakket][snap].
-U kunt ook PowerShell binaire bestanden rechtstreeks met behulp van de Linux implementeren [ `tar.gz` archief][tar], maar dan moet u voor het instellen van de vereiste afhankelijkheden op basis van het besturingssysteem in de afzonderlijke stappen.
+Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks [ `tar.gz` ][tar]te implementeren met behulp van het Linux-archief, maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
 
-Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
-Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
+Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert `pwsh` u uit vanaf een Terminal.
 
-[u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
@@ -36,73 +32,25 @@ Nadat het pakket is geïnstalleerd, voert `pwsh` vanuit een terminal.
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
 
-Bij het installeren van een PowerShell Core Preview-versie voor Linux via een Pakketopslagplaats, naam van het pakket verandert van `powershell` naar `powershell-preview`.
+Wanneer u een Power shell core preview-versie voor Linux installeert via een pakket opslagplaats, wordt de `powershell` naam `powershell-preview`van het pakket gewijzigd van in.
 
-Installeren via de directe download verandert niet, dan de naam van het bestand.
+Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
-Hier volgt een tabel met de opdrachten om de met de verschillende pakketmanagers stabiel en preview-pakketten te installeren:
+De volgende tabel bevat de opdrachten om de stabiele en preview-pakketten te installeren met behulp van de verschillende pakket beheerders:
 
-|Verdeling van|Stabiele opdracht | Preview-opdracht |
+|Distributie (s)|Stabiele opdracht | Opdracht preview |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a>Ubuntu 14.04
-
-### <a name="installation-via-package-repository---ubuntu-1404"></a>Installatie via Pakketopslagplaats - Ubuntu 14.04
-
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
-
-```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-Als beheerder, de Microsoft-opslagplaats te registreren.
-Vanaf hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` om bij te werken van de installatie.
-
-### <a name="installation-via-direct-download---ubuntu-1404"></a>Installatie via de directe Download - Ubuntu 14.04
-
-Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
-uit de [releases][] pagina naar de Ubuntu-machine.
-
-Voer vervolgens het volgende uit in de terminal:
-
-```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> De `dpkg -i` opdracht is mislukt met nog niet vervulde afhankelijkheden.
-> De volgende opdracht, `apt-get install -f` deze problemen worden opgelost en vervolgens klaar is met het PowerShell-pakket configureren.
-
-### <a name="uninstallation---ubuntu-1404"></a>Verwijderen - Ubuntu 14.04
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via Pakketopslagplaats - Ubuntu 16.04
+### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via pakket opslagplaats-Ubuntu 16,04
 
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
+Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+
+De voorkeurs methode is als volgt:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -121,14 +69,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daarna hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` bij te werken.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via de directe Download - Ubuntu 16.04
+### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via direct downloaden-Ubuntu 16,04
 
-Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
-uit de [releases][] pagina naar de Ubuntu-machine.
+Down load het Debian `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` -pakket van de pagina [releases][] op de Ubuntu-computer.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -136,10 +83,9 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i` opdracht is mislukt met nog niet vervulde afhankelijkheden.
-> De volgende opdracht, `apt-get install -f` deze problemen worden opgelost en vervolgens klaar is met het PowerShell-pakket configureren.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht `apt-get install -f` worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
 
-### <a name="uninstallation---ubuntu-1604"></a>Verwijderen - Ubuntu 16.04
+### <a name="uninstallation---ubuntu-1604"></a>Installatie ongedaan maken-Ubuntu 16,04
 
 ```sh
 sudo apt-get remove powershell
@@ -147,10 +93,11 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via Pakketopslagplaats - Ubuntu 18.04
+### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via pakket opslagplaats-Ubuntu 18,04
 
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
+Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+
+De voorkeurs methode is als volgt:
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -172,14 +119,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daarna hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` bij te werken.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via de directe Download - Ubuntu 18.04
+### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via direct downloaden-Ubuntu 18,04
 
-Het Debian-pakket downloaden `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
-uit de [releases][] pagina naar de Ubuntu-machine.
+Down load het Debian `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` -pakket van de pagina [releases][] op de Ubuntu-computer.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -187,28 +133,28 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i` opdracht is mislukt met nog niet vervulde afhankelijkheden.
-> De volgende opdracht, `apt-get install -f` deze problemen worden opgelost en vervolgens klaar is met het PowerShell-pakket configureren.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht `apt-get install -f` worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
 
-### <a name="uninstallation---ubuntu-1804"></a>Verwijderen - Ubuntu 18.04
+### <a name="uninstallation---ubuntu-1804"></a>Installatie ongedaan maken-Ubuntu 18,04
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a>Ubuntu 18.10
+## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
 > [!NOTE]
-> 18.10 is een [tussentijdse release](https://www.ubuntu.com/about/release-cycle), is het alleen [community ondersteund](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+> Omdat 18,10 een [voorlopige versie](https://www.ubuntu.com/about/release-cycle)is, wordt dit alleen [ondersteund](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)door de community.
 
-Installeren op 18.10 wordt ondersteund `snapd`. Zie [module pakket][snap] voor volledige instructies;
+Installeren op 18,10 wordt ondersteund via `snapd`. Zie [snap package][snap] voor volledige instructies;
 
 ## <a name="debian-8"></a>Debian 8
 
-### <a name="installation-via-package-repository---debian-8"></a>Installatie via Pakketopslagplaats - Debian 8
+### <a name="installation-via-package-repository---debian-8"></a>Installatie via pakket opslagplaats-Debian 8
 
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
+Power shell core, voor Linux, wordt gepubliceerd op pakket opslagplaatsen voor eenvoudig installeren en bijwerken.
+
+De voorkeurs methode is als volgt:
 
 ```sh
 # Install system components
@@ -231,14 +177,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daarna hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` bij te werken.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
 
 ## <a name="debian-9"></a>Debian 9
 
-### <a name="installation-via-package-repository---debian-9"></a>Installatie via Pakketopslagplaats - Debian 9
+### <a name="installation-via-package-repository---debian-9"></a>Installatie via pakket opslagplaats-Debian 9
 
-PowerShell Core voor Linux is gepubliceerd op pakket-opslagplaatsen voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
+Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+
+De voorkeurs methode is als volgt:
 
 ```sh
 # Install system components
@@ -261,21 +208,20 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, daarna hoeft u alleen te gebruiken `sudo apt-get upgrade powershell` bij te werken.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
 
-### <a name="installation-via-direct-download---debian-9"></a>Installatie via de directe Download - Debian 9
+### <a name="installation-via-direct-download---debian-9"></a>Installatie via direct downloaden-Debian 9
 
-Het Debian-pakket downloaden `powershell_6.2.0-1.debian.9_amd64.deb`
-uit de [releases][] pagina naar de Debian-machine.
+Down load het Debian `powershell_6.2.0-1.debian.9_amd64.deb` -pakket van de pagina [releases][] op de Debian-computer.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a>Verwijderen - Debian 9
+### <a name="uninstallation---debian-9"></a>Installatie ongedaan maken-Debian 9
 
 ```sh
 sudo apt-get remove powershell
@@ -284,11 +230,11 @@ sudo apt-get remove powershell
 ## <a name="centos-7"></a>CentOS 7
 
 > [!NOTE]
-> Dit pakket werkt ook op Oracle Linux 7.
+> Dit pakket werkt op Oracle Linux 7.
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a>Installatie via (aanbevolen) - Pakketopslagplaats CentOS 7
+### <a name="installation-via-package-repository-preferred---centos-7"></a>Installatie via pakket opslagplaats (voor keur)-CentOS 7
 
-PowerShell Core voor Linux is gepubliceerd naar de officiële Microsoft-opslagplaatsen voor eenvoudige installatie (en -updates).
+Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -301,26 +247,25 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoeft u alleen te gebruiken `sudo yum update powershell` om bij te werken van PowerShell.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo yum update powershell`met.
 
-### <a name="installation-via-direct-download---centos-7"></a>Installatie via de directe Download - CentOS 7
+### <a name="installation-via-direct-download---centos-7"></a>Installatie via direct downloaden-CentOS 7
 
-Met behulp van [CentOS 7][], het RPM-pakket downloaden `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-uit de [releases][] pagina op de computer CentOS.
+Gebruik [CentOS 7][]om het rpm-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm` te downloaden van de pagina [releases][] op de CentOS-computer.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
+U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a>Verwijderen - CentOS 7
+### <a name="uninstallation---centos-7"></a>Installatie ongedaan maken-CentOS 7
 
 ```sh
 sudo yum remove powershell
@@ -330,9 +275,9 @@ sudo yum remove powershell
 
 ## <a name="red-hat-enterprise-linux-rhel-7"></a>Red Hat Enterprise Linux (RHEL) 7
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installatie via (aanbevolen) - Pakketopslagplaats Red Hat Enterprise Linux (RHEL) 7
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installatie via pakket opslagplaats (voor keur)-Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core voor Linux is gepubliceerd naar de officiële Microsoft-opslagplaatsen voor eenvoudige installatie (en -updates).
+Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -345,26 +290,25 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Na het registreren van de Microsoft-bibliotheek eenmaal als supergebruiker, hoeft u alleen te gebruiken `sudo yum update powershell` om bij te werken van PowerShell.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo yum update powershell`met.
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via de directe Download - Red Hat Enterprise Linux (RHEL) 7
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via direct downloaden-Red Hat Enterprise Linux (RHEL) 7
 
-Download het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-uit de [releases][] pagina naar de Red Hat Enterprise Linux-machine.
+Down load het rpm `powershell-6.2.0-1.rhel.7.x86_64.rpm` -pakket van de pagina [releases][] op de Red Hat Enterprise Linux machine.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
+U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Verwijderen - Red Hat Enterprise Linux (RHEL) 7
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Ongedaan maken-Red Hat Enterprise Linux (RHEL) 7
 
 ```sh
 sudo yum remove powershell
@@ -372,7 +316,7 @@ sudo yum remove powershell
 
 ## <a name="opensuse"></a>openSUSE
 
-### <a name="installation---opensuse-423"></a>Installatie - openSUSE 42,3
+### <a name="installation---opensuse-423"></a>Installatie-openSUSE 42,3
 
 ```sh
 # Install dependencies
@@ -397,7 +341,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a>Installatie - openSUSE Leap 15
+### <a name="installation---opensuse-leap-15"></a>Installatie-openSUSE Schrikkel 15
 
 ```sh
 # Install dependencies
@@ -422,7 +366,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>Verwijderen - openSUSE 42,3, openSUSE Leap 15
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>Installatie ongedaan maken-openSUSE 42,3, openSUSE Schrikkel 15
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
@@ -431,11 +375,11 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> Fedora 28 wordt alleen ondersteund in PowerShell Core 6.1 en hoger.
+> Fedora 28 wordt alleen ondersteund in Power shell Core 6,1 en hoger.
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installatie via Pakketopslagplaats (aanbevolen) - 27 Fedora, Fedora 28
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installatie via pakket opslagplaats (voor keur)-Fedora 27, Fedora 28
 
-PowerShell Core voor Linux is gepubliceerd naar de officiële Microsoft-opslagplaatsen voor eenvoudige installatie (en -updates).
+Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft signature key
@@ -457,62 +401,61 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installatie via de directe Download - Fedora 27, Fedora 28
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installatie via directe down load-Fedora 27, Fedora 28
 
-Download het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-uit de [releases][] pagina op de computer Fedora.
+Down load het rpm `powershell-6.2.0-1.rhel.7.x86_64.rpm` -pakket van de pagina [releases][] op de computer Fedora.
 
-Voer vervolgens het volgende uit in de terminal:
+Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-U kunt ook de RPM zonder de tussenliggende stap van het downloaden van het te installeren:
+U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a>Verwijderen - Fedora 27, Fedora 28
+### <a name="uninstallation---fedora-27-fedora-28"></a>Installatie ongedaan maken-Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a>Linux boog
+## <a name="arch-linux"></a>Arch Linux
 
 > [!NOTE]
-> Er is een experimenteel boog ondersteuning.
+> Arch-ondersteuning is experimenteel.
 
-PowerShell is beschikbaar via de [Linux boog][] gebruiker opslagplaats (AUR).
+Power shell is beschikbaar via de [Arch Linux][] -gebruikers OPSLAGPLAATS (Aur).
 
-* Het kan worden gecompileerd met de [meest recente versie gemarkeerd][arch-release]
-* Het kan worden gecompileerd uit de [laatste doorvoering naar hoofdniveau][arch-git]
-* Kan worden geïnstalleerd met behulp van de [binaire de meest recente release][arch-bin]
+* Het kan worden gecompileerd met de [nieuwste gelabelde release][arch-release]
+* Het kan worden gecompileerd vanuit de [laatste door voering naar de hoofd server][arch-git]
+* Het kan worden geïnstalleerd met behulp van de [meest recente versie van het binaire bestand][arch-bin]
 
-Pakketten in de AUR zijn community onderhouden: Er is geen officiële ondersteuning.
+Pakketten in de AUR worden beheerd door de Gemeenschap; Er is geen officiële ondersteuning.
 
-Zie voor meer informatie over het installeren van pakketten van de AUR de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
+Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Linux boog]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="snap-package"></a>Snap-pakket
 
-### <a name="getting-snapd"></a>Snapd ophalen
+### <a name="getting-snapd"></a>Bezig met uitlijnen
 
-`snapd` is vereist voor het uitvoeren van snaps.
-Gebruik [deze instructies](https://docs.snapcraft.io/core/install) om ervoor te zorgen dat u hebt `snapd` geïnstalleerd.
+`snapd`is vereist voor het uitvoeren van snaps. Volg [deze instructies](https://docs.snapcraft.io/core/install) om te controleren of u `snapd` hebt geïnstalleerd.
 
-### <a name="installation-via-snap"></a>Installatie via de module
+### <a name="installation-via-snap"></a>Installatie via snap
 
-PowerShell Core voor Linux is gepubliceerd naar de [module store](https://snapcraft.io/store) voor eenvoudige installatie (en -updates).
-Dit is de voorkeursmethode.
+Power shell core voor Linux wordt gepubliceerd in de [snap Store](https://snapcraft.io/store) voor eenvoudige installatie en updates.
+
+De voorkeurs methode is als volgt:
 
 ```sh
 # Install PowerShell
@@ -522,7 +465,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-Als u installeren van de preview-versie wilt, gebruikt u de volgende methode.
+Als u een preview-versie wilt installeren, gebruikt u de volgende methode:
 
 ```sh
 # Install PowerShell
@@ -532,7 +475,7 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-Nadat de installatie van module, automatisch bijgewerkt, maar u kunt activeren een upgrade uitvoeren met behulp `sudo snap refresh powershell` of `sudo snap refresh powershell-preview`.
+Na de installatie wordt de module automatisch bijgewerkt. U kunt een upgrade activeren met `sudo snap refresh powershell` of `sudo snap refresh powershell-preview`.
 
 ### <a name="uninstallation"></a>Verwijderen
 
@@ -548,7 +491,7 @@ sudo snap remove powershell-preview
 
 ## <a name="kali"></a>Kali
 
-### <a name="installation---kali"></a>Installatie - Kali
+### <a name="installation---kali"></a>Installatie-Kali
 
 ```sh
 # Download & Install prerequisites
@@ -569,7 +512,7 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a>Verwijderen - Kali
+### <a name="uninstallation---kali"></a>Installatie ongedaan maken-Kali
 
 ```sh
 # Uninstall PowerShell package
@@ -579,15 +522,15 @@ apt-get remove -y powershell
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
-> Ondersteuning voor Raspbian is experimenteel.
+> Raspbian-ondersteuning is experimenteel.
 
-PowerShell is momenteel alleen ondersteund op Raspbian Stretch.
+Power shell wordt momenteel alleen ondersteund voor Raspbian stretch.
 
-Ook CoreCLR (en dus PowerShell Core) werkt alleen op apparaten van Pi 2 en Pi 3 als andere apparaten, zoals [Pi nul](https://github.com/dotnet/coreclr/issues/10605), beschikken over een niet-ondersteunde processor.
+CoreCLR en Power shell core werken alleen op pi 2-en Pi 3-apparaten als andere apparaten, zoals [pi nul](https://github.com/dotnet/coreclr/issues/10605), een niet-ondersteunde processor.
 
-Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) en volg de [installatie-instructies](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) zodat deze naar uw Pi.
+Down load [Raspbian stretch](https://www.raspberrypi.org/downloads/raspbian/) en volg de [installatie-instructies](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) om de app te downloaden naar uw pi.
 
-### <a name="installation---raspbian"></a>Installatie - Raspbian
+### <a name="installation---raspbian"></a>Installatie-Raspbian
 
 ```sh
 ###################################
@@ -616,7 +559,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-U kunt eventueel een symbolische koppeling om te kunnen PowerShell starten zonder op te geven pad naar het binaire 'pwsh' maken
+U kunt desgewenst een symbolische koppeling maken om Power shell te starten zonder het pad naar het `pwsh` binaire bestand op te geven.
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -628,7 +571,7 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a>Verwijderen - Raspbian
+### <a name="uninstallation---raspbian"></a>Installatie ongedaan maken-Raspbian
 
 ```sh
 rm -rf ~/powershell
@@ -636,34 +579,31 @@ rm -rf ~/powershell
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-PowerShell binaire `tar.gz` archieven voor Linux-platformen om in te schakelen geavanceerde implementatiescenario's worden geleverd.
+Er zijn `tar.gz` binaire Power shell-archieven beschikbaar voor Linux-platforms om geavanceerde implementatie scenario's mogelijk te maken.
 
-### <a name="dependencies"></a>Afhankelijkheden
+### <a name="dependencies"></a>Elkaar
 
-PowerShell bouwt draagbare binaire bestanden voor alle Linux-distributies.
-Maar .NET Core runtime verschillende afhankelijkheden op verschillende distributies vereist en kan daarom PowerShell hetzelfde effect heeft.
+Power shell bouwt draag bare binaire bestanden voor alle Linux-distributies. .NET core runtime vereist echter andere afhankelijkheden voor verschillende distributies en Power Shell heeft ook.
 
-Het volgende diagram toont de .NET Core 2.0-afhankelijkheden die officieel ondersteund op verschillende Linux-distributies.
+In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel worden ondersteund op verschillende Linux-distributies.
 
-| Besturingssysteem                 | Afhankelijkheden |
+| Besturingssysteem                 | Elkaar |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-bibliotheken, libicu |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
+| Ubuntu 17,10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu52 |
+| Debian 9 (stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.2, libicu57 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | afwikkeling, libkrul, openssl-Bibliotheken, libicu |
 | openSUSE 42,3 | libcurl4, libopenssl1_0_0, libicu52_1 |
-| openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
-| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-bibliotheken, libicu, compat openssl10 |
+| openSUSE Schrikkel 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
+| Fedora 27 <br> Fedora 28 | afwikkeling, libkrul, openssl-Bibliotheken, libicu, compat-openssl10 |
 
-Voor het implementeren van binaire bestanden voor PowerShell op Linux-distributies die officieel niet worden ondersteund, moet u de vereiste afhankelijkheden voor het doelbesturingssysteem installeren in afzonderlijke stappen.
-Bijvoorbeeld, onze [Amazon Linux dockerfile][amazon-dockerfile] afhankelijkheden eerst geïnstalleerd en pakt u vervolgens de Linux `tar.gz` archief.
+Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die niet officieel worden ondersteund, moet u in afzonderlijke stappen de vereiste afhankelijkheden voor het doel besturingssysteem installeren. Bijvoorbeeld, onze [Amazon Linux-dockerfile][amazon-dockerfile] installeert eerst afhankelijkheden en extraheert vervolgens het Linux `tar.gz` -archief.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a>Installatie - binaire archieven
+### <a name="installation---binary-archives"></a>Installatie-binaire archieven
 
 #### <a name="linux"></a>Linux
 
@@ -684,7 +624,7 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a>Verwijderen binaire archieven
+### <a name="uninstalling-binary-archives"></a>Binaire archieven verwijderen
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
@@ -692,17 +632,17 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/opt/microsoft/powershell/6.2.0/`
-* Gebruikersprofielen worden gelezen in `~/.config/powershell/profile.ps1`
-* Standaardprofielen worden gelezen in `$PSHOME/profile.ps1`
-* Gebruikersmodules worden gelezen in `~/.local/share/powershell/Modules`
-* Gedeelde modules worden gelezen in `/usr/local/share/powershell/Modules`
-* Standaardmodules worden gelezen in `$PSHOME/Modules`
-* PSReadline geschiedenis wordt vastgelegd `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME`ontbreekt`/opt/microsoft/powershell/6.2.0/`
+* Gebruikers profielen worden gelezen van`~/.config/powershell/profile.ps1`
+* Standaard profielen worden gelezen uit`$PSHOME/profile.ps1`
+* Gebruikers modules worden gelezen uit`~/.local/share/powershell/Modules`
+* Gedeelde modules worden gelezen van`/usr/local/share/powershell/Modules`
+* Standaard modules worden gelezen van`$PSHOME/Modules`
+* De PSReadline-geschiedenis wordt vastgelegd in`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-De profielen respecteren van PowerShell per host-configuratie, zodat de standaardprofielen voor de host-specifieke bestaat op `Microsoft.PowerShell_profile.ps1` in dezelfde locaties.
+De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` dezelfde locatie bestaan.
 
-PowerShell respecteert de [XDG Base Directory specificatie][xdg-bds] op Linux.
+Power shell respecteert de [XDG base-specificatie][xdg-bds] op Linux.
 
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

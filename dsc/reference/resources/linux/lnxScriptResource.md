@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxScript Resource
-ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxScript-resource
+ms.openlocfilehash: 0ad0530f1de7b86ff48c4eb1f79870f6682894a1
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077820"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372165"
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>DSC voor Linux nxScript Resource
+# <a name="dsc-for-linux-nxscript-resource"></a>DSC voor Linux nxScript-resource
 
-De **nxScript** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het Linux-scripts uitvoeren op een Linux-knooppunt.
+De **nxScript** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het uitvoeren van Linux-scripts op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -32,16 +32,16 @@ nxScript <string> #ResourceName
 
 |  Eigenschap |  Description |
 |---|---|
-| GetScript| Biedt een script dat wordt uitgevoerd wanneer u aanroepen de [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet. Het script moet beginnen met een shebang, zoals #! / bin/bash.|
-| SetScript| Bevat een script. Wanneer u aanroepen de [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, de **TestScript** als eerste wordt gestart. Als de **TestScript** blok retourneert een afsluitcode dan 0, de **SetScript** blok wordt uitgevoerd. Als de **TestScript** retourneert een afsluitcode 0, de **SetScript** kan niet worden uitgevoerd. Het script moet beginnen met een shebang zoals `#!/bin/bash`.|
-| TestScript| Bevat een script. Wanneer u aanroepen de [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet, met dit script wordt uitgevoerd. Als deze een afsluitcode dan 0 retourneert, wordt de SetScript wordt uitgevoerd. Als deze een afsluitcode 0 retourneert, de **SetScript** kan niet worden uitgevoerd. De **TestScript** wordt ook uitgevoerd wanneer u aanroepen de [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet. Echter, in dit geval de **SetScript** niet wordt uitgevoerd, ongeacht welke afsluitcode wordt geretourneerd vanaf de **TestScript**. De **TestScript** moet retourneert een afsluitcode 0 als de feitelijke configuratie komt overeen met de huidige configuratie van gewenste status en een afsluiten code dan 0 als deze niet overeenkomt. (De huidige configuratie van gewenste status is de laatste configuratie van kracht op het knooppunt dat van DSC gebruikmaakt). Het script moet beginnen met een shebang, zoals 1#!/bin/bash.1|
-| Gebruiker| De gebruiker het script als uit te voeren.|
-| Groep| De groep het script als uit te voeren.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+| GetScript| Biedt een script om de huidige status van de machine te retour neren.  Dit script wordt uitgevoerd wanneer u het script [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) aanroept. Het script moet beginnen met een shebang, zoals #!/bin/bash.|
+| SetScript| Bevat een script dat de computer in de juiste status plaatst. Wanneer u het script [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) aanroept, wordt eerst de **TestScript** uitgevoerd. Als het **TestScript** -blok een andere afsluit code dan 0 retourneert, wordt het blok **SetScript** uitgevoerd. Als de **TestScript** de afsluit code 0 retourneert, wordt de **SetScript** niet uitgevoerd. Het script moet beginnen met een shebang, zoals `#!/bin/bash`.|
+| TestScript| Voorziet in een script dat evalueert of het knoop punt momenteel de juiste status heeft. Wanneer u het script [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) aanroept, wordt dit script uitgevoerd. Als het een andere afsluit code dan 0 retourneert, wordt de SetScript uitgevoerd. Als de methode de afsluit code 0 retourneert, wordt de **SetScript** niet uitgevoerd. De **TestScript** wordt ook uitgevoerd wanneer u het script [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) aanroept. In dit geval wordt de **SetScript** echter niet uitgevoerd, ongeacht de afsluit code die wordt geretourneerd door de **TestScript**. De **TestScript** moet inhoud bevatten en moet een afsluit code van 0 retour neren als de werkelijke configuratie overeenkomt met de huidige gewenste status configuratie en een andere afsluit code dan 0 als deze niet overeenkomt. (De huidige gewenste status configuratie is de laatste configuratie die is uitgevaardigd op het knoop punt dat gebruikmaakt van DSC). Het script moet beginnen met een shebang, zoals 1 #!/bin/bash.1|
+| Gebruiker| De gebruiker voor het uitvoeren van het script als.|
+| Groep| De groep waarop het script moet worden uitgevoerd.|
+| DependsOn | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van `DependsOn = "[ResourceType]ResourceName"`deze eigenschap is bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de **naam** **ResourceName** is en het type van de bron **resource is.**|
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld ziet u het gebruik van de **nxScript** resource die u wilt het beheer van aanvullende configuratie uitvoeren.
+In het volgende voor beeld wordt het gebruik van de **nxScript** -resource voor het uitvoeren van extra configuratie beheer gedemonstreerd.
 
 ```
 Import-DSCResource -Module nx
