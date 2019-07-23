@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, configuratie, service, instellen
+keywords: DSC, Power shell, configuratie, service, installatie
 title: Een configuratie schrijven, compileren en toepassen
-ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080010"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372175"
 ---
-> <span data-ttu-id="40040-103">Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="40040-103">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="cee6c-103">Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0</span><span class="sxs-lookup"><span data-stu-id="cee6c-103">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-# <a name="write-compile-and-apply-a-configuration"></a><span data-ttu-id="40040-104">Een configuratie schrijven, compileren en toepassen</span><span class="sxs-lookup"><span data-stu-id="40040-104">Write, Compile, and Apply a Configuration</span></span>
+# <a name="write-compile-and-apply-a-configuration"></a><span data-ttu-id="cee6c-104">Een configuratie schrijven, compileren en toepassen</span><span class="sxs-lookup"><span data-stu-id="cee6c-104">Write, Compile, and Apply a Configuration</span></span>
 
-<span data-ttu-id="40040-105">In deze oefening helpt bij het maken en toepassen van een Desired State Configuration (DSC)-configuratie van begin tot eind.</span><span class="sxs-lookup"><span data-stu-id="40040-105">This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.</span></span>
-<span data-ttu-id="40040-106">In het volgende voorbeeld leert u hoe u kunt schrijven en een zeer eenvoudige configuratie toe te passen.</span><span class="sxs-lookup"><span data-stu-id="40040-106">In the following example, you will learn how to write and apply a very simple Configuration.</span></span> <span data-ttu-id="40040-107">De configuratie zorgt ervoor dat een 'HelloWorld.txt'-bestand bestaat op uw lokale computer.</span><span class="sxs-lookup"><span data-stu-id="40040-107">The Configuration will ensure a "HelloWorld.txt" file exists on your local machine.</span></span> <span data-ttu-id="40040-108">Als u het bestand verwijdert, DSC wordt het opnieuw maken de volgende keer die wordt bijgewerkt.</span><span class="sxs-lookup"><span data-stu-id="40040-108">If you delete the file, DSC will recreate it the next time it updates.</span></span>
+<span data-ttu-id="cee6c-105">In deze oefening wordt uitgelegd hoe u een desired state Configuration (DSC)-configuratie kunt maken en Toep assen van het begin tot het einde.</span><span class="sxs-lookup"><span data-stu-id="cee6c-105">This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.</span></span>
+<span data-ttu-id="cee6c-106">In het volgende voor beeld wordt uitgelegd hoe u een eenvoudige configuratie kunt schrijven en Toep assen.</span><span class="sxs-lookup"><span data-stu-id="cee6c-106">In the following example, you will learn how to write and apply a very simple Configuration.</span></span> <span data-ttu-id="cee6c-107">De configuratie zorgt ervoor dat het bestand HelloWorld. txt bestaat op de lokale computer.</span><span class="sxs-lookup"><span data-stu-id="cee6c-107">The Configuration will ensure a "HelloWorld.txt" file exists on your local machine.</span></span> <span data-ttu-id="cee6c-108">Als u het bestand verwijdert, maakt DSC de volgende keer dat het wordt bijgewerkt opnieuw.</span><span class="sxs-lookup"><span data-stu-id="cee6c-108">If you delete the file, DSC will recreate it the next time it updates.</span></span>
 
-<span data-ttu-id="40040-109">Zie voor een overzicht van wat DSC is en hoe het werkt, [overzicht van Desired State Configuration voor ontwikkelaars](../overview/overview.md).</span><span class="sxs-lookup"><span data-stu-id="40040-109">For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](../overview/overview.md).</span></span>
+<span data-ttu-id="cee6c-109">Voor een overzicht van wat DSC is en hoe het werkt, raadpleegt u [overzicht van desired state Configuration voor ontwikkel aars](../overview/overview.md).</span><span class="sxs-lookup"><span data-stu-id="cee6c-109">For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](../overview/overview.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="40040-110">Vereisten</span><span class="sxs-lookup"><span data-stu-id="40040-110">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="cee6c-110">Vereisten</span><span class="sxs-lookup"><span data-stu-id="cee6c-110">Requirements</span></span>
 
-<span data-ttu-id="40040-111">Als u wilt uitvoeren in het volgende voorbeeld, moet u een computer met PowerShell 4.0 of hoger.</span><span class="sxs-lookup"><span data-stu-id="40040-111">To run this example, you will need a computer running PowerShell 4.0 or later.</span></span>
+<span data-ttu-id="cee6c-111">Als u dit voor beeld wilt uitvoeren, hebt u een computer nodig waarop Power Shell 4,0 of hoger wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="cee6c-111">To run this example, you will need a computer running PowerShell 4.0 or later.</span></span>
 
-## <a name="write-the-configuration"></a><span data-ttu-id="40040-112">Schrijven van de configuratie</span><span class="sxs-lookup"><span data-stu-id="40040-112">Write the configuration</span></span>
+## <a name="write-the-configuration"></a><span data-ttu-id="cee6c-112">De configuratie schrijven</span><span class="sxs-lookup"><span data-stu-id="cee6c-112">Write the configuration</span></span>
 
-<span data-ttu-id="40040-113">Een DSC [configuratie](configurations.md) is een speciale PowerShell-functie die wordt gedefinieerd hoe u wilt configureren van een of meer doelcomputers (knooppunten).</span><span class="sxs-lookup"><span data-stu-id="40040-113">A DSC [Configuration](configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (Nodes).</span></span>
+<span data-ttu-id="cee6c-113">Een DSC- [configuratie](configurations.md) is een speciale Power shell-functie die definieert hoe u een of meer doel computers (knoop punten) wilt configureren.</span><span class="sxs-lookup"><span data-stu-id="cee6c-113">A DSC [Configuration](configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (Nodes).</span></span>
 
-<span data-ttu-id="40040-114">In de PowerShell ISE, of een andere editor PowerShell, typ het volgende:</span><span class="sxs-lookup"><span data-stu-id="40040-114">In the PowerShell ISE, or other PowerShell editor, type the following:</span></span>
+<span data-ttu-id="cee6c-114">In Power shell ISE of een andere Power shell-editor typt u het volgende:</span><span class="sxs-lookup"><span data-stu-id="cee6c-114">In the PowerShell ISE, or other PowerShell editor, type the following:</span></span>
 
 ```powershell
 Configuration HelloWorld {
@@ -47,21 +47,33 @@ Configuration HelloWorld {
 }
 ```
 
-<span data-ttu-id="40040-115">Sla het bestand als 'HelloWorld.ps1'.</span><span class="sxs-lookup"><span data-stu-id="40040-115">Save the file as "HelloWorld.ps1".</span></span>
+> <span data-ttu-id="cee6c-115">! Belang rijk in meer geavanceerde scenario's waarin meerdere modules moeten worden geïmporteerd zodat u met een groot aantal DSC-resources in dezelfde configuratie kunt werken, moet u ervoor zorgen dat elke module op een `Import-DscResource`aparte regel wordt geplaatst met.</span><span class="sxs-lookup"><span data-stu-id="cee6c-115">!Important In more advanced scenarios where multiple modules need to be imported so you can work with many DSC Resources in the same configuration, make sure to put each module in a seperate line using `Import-DscResource`.</span></span>
+> <span data-ttu-id="cee6c-116">Dit is eenvoudiger te onderhouden in broncode beheer en is vereist bij het werken met DSC in azure-status configuratie.</span><span class="sxs-lookup"><span data-stu-id="cee6c-116">This is easier to maintain in source control and required when working with DSC in Azure State Configuration.</span></span>
+>
+> ```powershell
+>  Configuration HelloWorld {
+>
+>   # Import the module that contains the File resource.
+>   Import-DscResource -ModuleName PsDesiredStateConfiguration
+>   Import-DscResource -ModuleName xWebAdministration
+>
+> ```
 
-<span data-ttu-id="40040-116">Voor het definiëren van een configuratie is vergelijkbaar met het definiëren van een functie.</span><span class="sxs-lookup"><span data-stu-id="40040-116">Defining a Configuration is like defining a Function.</span></span> <span data-ttu-id="40040-117">De **knooppunt** blok Hiermee geeft u het doelknooppunt moet worden geconfigureerd en in dit geval `localhost`.</span><span class="sxs-lookup"><span data-stu-id="40040-117">The **Node** block specifies the target node to be configured, in this case `localhost`.</span></span>
+<span data-ttu-id="cee6c-117">Sla het bestand op als ' HelloWorld. ps1 '.</span><span class="sxs-lookup"><span data-stu-id="cee6c-117">Save the file as "HelloWorld.ps1".</span></span>
 
-<span data-ttu-id="40040-118">De configuratie van de roept een [resources](../resources/resources.md), wordt de `File` resource.</span><span class="sxs-lookup"><span data-stu-id="40040-118">The configuration calls one [resources](../resources/resources.md), the `File` resource.</span></span> <span data-ttu-id="40040-119">Resources doen het werk om ervoor te zorgen dat het doelknooppunt gedefinieerd door de configuratie van de status wordt.</span><span class="sxs-lookup"><span data-stu-id="40040-119">Resources do the work of ensuring that the target node is in the state defined by the configuration.</span></span>
+<span data-ttu-id="cee6c-118">Het definiëren van een configuratie is vergelijkbaar met het definiëren van een functie.</span><span class="sxs-lookup"><span data-stu-id="cee6c-118">Defining a Configuration is like defining a Function.</span></span> <span data-ttu-id="cee6c-119">Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. `localhost`in dit geval.</span><span class="sxs-lookup"><span data-stu-id="cee6c-119">The **Node** block specifies the target node to be configured, in this case `localhost`.</span></span>
 
-## <a name="compile-the-configuration"></a><span data-ttu-id="40040-120">De configuratie compileren</span><span class="sxs-lookup"><span data-stu-id="40040-120">Compile the configuration</span></span>
+<span data-ttu-id="cee6c-120">De configuratie roept één [resources](../resources/resources.md)aan, `File` de resource.</span><span class="sxs-lookup"><span data-stu-id="cee6c-120">The configuration calls one [resources](../resources/resources.md), the `File` resource.</span></span> <span data-ttu-id="cee6c-121">Resources maken het werk om ervoor te zorgen dat het doel knooppunt zich in de status bevindt die door de configuratie is gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="cee6c-121">Resources do the work of ensuring that the target node is in the state defined by the configuration.</span></span>
 
-<span data-ttu-id="40040-121">Voor een DSC-configuratie moet worden toegepast op een knooppunt, moet dit eerst worden gecompileerd naar een MOF-bestand.</span><span class="sxs-lookup"><span data-stu-id="40040-121">For a DSC configuration to be applied to a node, it must first be compiled into a MOF file.</span></span>
-<span data-ttu-id="40040-122">Uitvoeren van de configuratie, zoals een functie, wordt één ".mof" bestand gecompileerd voor elk knooppunt dat is gedefinieerd door de `Node` blokkeren.</span><span class="sxs-lookup"><span data-stu-id="40040-122">Running the configuration, like a function, will compile one ".mof" file for every Node defined by the `Node` block.</span></span>
-<span data-ttu-id="40040-123">Als u wilt uitvoeren van de configuratie, moet u *stip bron* uw script 'HelloWorld.ps1' in het huidige bereik.</span><span class="sxs-lookup"><span data-stu-id="40040-123">In order to run the configuration, you need to *dot source* your "HelloWorld.ps1" script into the current scope.</span></span>
-<span data-ttu-id="40040-124">Zie voor meer informatie, [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).</span><span class="sxs-lookup"><span data-stu-id="40040-124">For more information, see [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).</span></span>
+## <a name="compile-the-configuration"></a><span data-ttu-id="cee6c-122">De configuratie compileren</span><span class="sxs-lookup"><span data-stu-id="cee6c-122">Compile the configuration</span></span>
+
+<span data-ttu-id="cee6c-123">Een DSC-configuratie die wordt toegepast op een knoop punt, moet eerst worden gecompileerd in een MOF-bestand.</span><span class="sxs-lookup"><span data-stu-id="cee6c-123">For a DSC configuration to be applied to a node, it must first be compiled into a MOF file.</span></span>
+<span data-ttu-id="cee6c-124">Door de configuratie uit te voeren, zoals een functie, wordt een '. MOF-bestand ' gecompileerd voor elk `Node` knoop punt dat door het blok wordt gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="cee6c-124">Running the configuration, like a function, will compile one ".mof" file for every Node defined by the `Node` block.</span></span>
+<span data-ttu-id="cee6c-125">Als u de configuratie wilt uitvoeren, moet u *het* script ' HelloWorld. ps1 ' in het huidige bereik.</span><span class="sxs-lookup"><span data-stu-id="cee6c-125">In order to run the configuration, you need to *dot source* your "HelloWorld.ps1" script into the current scope.</span></span>
+<span data-ttu-id="cee6c-126">Zie [vragen over scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="cee6c-126">For more information, see [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).</span></span>
 
 <!-- markdownlint-disable MD038 -->
-<span data-ttu-id="40040-125">*Punt bron* uw script 'HelloWorld.ps1' door te typen in het pad waar u deze nadat opgeslagen de `. ` (punt, spatie).</span><span class="sxs-lookup"><span data-stu-id="40040-125">*Dot source* your "HelloWorld.ps1" script by typing in the path where you stored it, after the `. ` (dot, space).</span></span> <span data-ttu-id="40040-126">Vervolgens kunt u uw configuratie uitvoeren door deze als een functie aan te roepen.</span><span class="sxs-lookup"><span data-stu-id="40040-126">You may then, run your configuration by calling it like a Function.</span></span>
+<span data-ttu-id="cee6c-127">*Punt bron* het ' HelloWorld. ps1-script door te typen in het pad waar u het hebt opgeslagen, `. ` na de (punt, spatie).</span><span class="sxs-lookup"><span data-stu-id="cee6c-127">*Dot source* your "HelloWorld.ps1" script by typing in the path where you stored it, after the `. ` (dot, space).</span></span> <span data-ttu-id="cee6c-128">U kunt vervolgens uw configuratie uitvoeren door deze als een functie aan te roepen.</span><span class="sxs-lookup"><span data-stu-id="cee6c-128">You may then, run your configuration by calling it like a Function.</span></span>
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -69,7 +81,7 @@ Configuration HelloWorld {
 HelloWorld
 ```
 
-<span data-ttu-id="40040-127">Hiermee wordt de volgende uitvoer gegenereerd:</span><span class="sxs-lookup"><span data-stu-id="40040-127">This generates the following output:</span></span>
+<span data-ttu-id="cee6c-129">Hiermee wordt de volgende uitvoer gegenereerd:</span><span class="sxs-lookup"><span data-stu-id="cee6c-129">This generates the following output:</span></span>
 
 ```output
 Directory: C:\Scripts\HelloWorld
@@ -80,29 +92,29 @@ Mode                LastWriteTime         Length Name
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
-## <a name="apply-the-configuration"></a><span data-ttu-id="40040-128">De configuratie toepassen</span><span class="sxs-lookup"><span data-stu-id="40040-128">Apply the configuration</span></span>
+## <a name="apply-the-configuration"></a><span data-ttu-id="cee6c-130">De configuratie Toep assen</span><span class="sxs-lookup"><span data-stu-id="cee6c-130">Apply the configuration</span></span>
 
-<span data-ttu-id="40040-129">Nu dat u het gecompileerde MOF hebt, kunt u de configuratie toepassen op het doelknooppunt (in dit geval de lokale computer) door het aanroepen van de [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="40040-129">Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span>
+<span data-ttu-id="cee6c-131">Nu u de gecompileerde MOF hebt, kunt u de configuratie Toep assen op het doel knooppunt (in dit geval de lokale computer) door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.</span><span class="sxs-lookup"><span data-stu-id="cee6c-131">Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span>
 
-<span data-ttu-id="40040-130">De `Start-DscConfiguration` cmdlet geeft de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de DSC, om toe te passen van de configuratie-engine.</span><span class="sxs-lookup"><span data-stu-id="40040-130">The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md), the engine of DSC, to apply the configuration.</span></span>
-<span data-ttu-id="40040-131">De LCM komt het werk van het aanroepen van de DSC-resources voor het toepassen van de configuratie.</span><span class="sxs-lookup"><span data-stu-id="40040-131">The LCM does the work of calling the DSC resources to apply the configuration.</span></span>
+<span data-ttu-id="cee6c-132">De `Start-DscConfiguration` cmdlet vertelt de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de engine van DSC, om de configuratie toe te passen.</span><span class="sxs-lookup"><span data-stu-id="cee6c-132">The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md), the engine of DSC, to apply the configuration.</span></span>
+<span data-ttu-id="cee6c-133">De LCM maakt het mogelijk om de DSC-resources aan te roepen om de configuratie toe te passen.</span><span class="sxs-lookup"><span data-stu-id="cee6c-133">The LCM does the work of calling the DSC resources to apply the configuration.</span></span>
 
-<span data-ttu-id="40040-132">De onderstaande code gebruiken om uit te voeren de `Start-DSCConfiguration` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="40040-132">Use the code below to execute the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="40040-133">Geef het pad waar uw "localhost.mof" is opgeslagen op de `-Path` parameter.</span><span class="sxs-lookup"><span data-stu-id="40040-133">Specify the directory path where your "localhost.mof" is stored to the `-Path` parameter.</span></span> <span data-ttu-id="40040-134">De `Start-DSCConfiguration` cmdlet gezocht in de map die is opgegeven voor een '\<computername\>.mof "bestanden.</span><span class="sxs-lookup"><span data-stu-id="40040-134">The `Start-DSCConfiguration` cmdlet looks through the directory specified for any "\<computername\>.mof" files.</span></span> <span data-ttu-id="40040-135">De `Start-DSCConfiguration` cmdlet probeert toe te passen van elk ".mof" bestand gevonden op de computernaam die is opgegeven door de bestandsnaam ("localhost", "server01", "dc-02", enzovoort).</span><span class="sxs-lookup"><span data-stu-id="40040-135">The `Start-DSCConfiguration` cmdlet attempts to apply each ".mof" file it finds to the computername specified by the filename ("localhost", "server01", "dc-02", etc.).</span></span>
+<span data-ttu-id="cee6c-134">Gebruik de onderstaande code om de `Start-DSCConfiguration` cmdlet uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="cee6c-134">Use the code below to execute the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="cee6c-135">Geef het mappad op waar uw ' localhost. mof ' wordt opgeslagen in de `-Path` para meter.</span><span class="sxs-lookup"><span data-stu-id="cee6c-135">Specify the directory path where your "localhost.mof" is stored to the `-Path` parameter.</span></span> <span data-ttu-id="cee6c-136">De `Start-DSCConfiguration` cmdlet zoekt naar de map die is opgegeven voor\<de bestanden\>computer naam. mof.</span><span class="sxs-lookup"><span data-stu-id="cee6c-136">The `Start-DSCConfiguration` cmdlet looks through the directory specified for any "\<computername\>.mof" files.</span></span> <span data-ttu-id="cee6c-137">De `Start-DSCConfiguration` cmdlet probeert elk bestand '. mof ' toe te passen op de computer naam die is opgegeven door de filename (' localhost ', ' Server01 ', ' DC-02 ', enzovoort).</span><span class="sxs-lookup"><span data-stu-id="cee6c-137">The `Start-DSCConfiguration` cmdlet attempts to apply each ".mof" file it finds to the computername specified by the filename ("localhost", "server01", "dc-02", etc.).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="40040-136">Als de `-Wait` parameter niet wordt opgegeven, `Start-DSCConfiguration` maakt u een achtergrondtaak als de bewerking wilt uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="40040-136">If the `-Wait` parameter is not specified, `Start-DSCConfiguration` creates a background job to perform the operation.</span></span> <span data-ttu-id="40040-137">Op te geven de `-Verbose` parameter kunt u bekijken de **uitgebreid** uitvoer van de bewerking.</span><span class="sxs-lookup"><span data-stu-id="40040-137">Specifying the `-Verbose` parameter allows you to watch the **Verbose** output of the operation.</span></span> <span data-ttu-id="40040-138">`-Wait`, en `-Verbose` beide parameters zijn optioneel.</span><span class="sxs-lookup"><span data-stu-id="40040-138">`-Wait`, and `-Verbose` are both optional parameters.</span></span>
+> <span data-ttu-id="cee6c-138">Als de `-Wait` para meter niet wordt opgegeven `Start-DSCConfiguration` , maakt een achtergrond taak om de bewerking uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="cee6c-138">If the `-Wait` parameter is not specified, `Start-DSCConfiguration` creates a background job to perform the operation.</span></span> <span data-ttu-id="cee6c-139">Door de `-Verbose` para meter op te geven, kunt u de **uitgebreide** uitvoer van de bewerking bekijken.</span><span class="sxs-lookup"><span data-stu-id="cee6c-139">Specifying the `-Verbose` parameter allows you to watch the **Verbose** output of the operation.</span></span> <span data-ttu-id="cee6c-140">`-Wait`en `-Verbose` zijn beide optionele para meters.</span><span class="sxs-lookup"><span data-stu-id="cee6c-140">`-Wait`, and `-Verbose` are both optional parameters.</span></span>
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 ```
 
-## <a name="test-the-configuration"></a><span data-ttu-id="40040-139">De configuratie testen</span><span class="sxs-lookup"><span data-stu-id="40040-139">Test the configuration</span></span>
+## <a name="test-the-configuration"></a><span data-ttu-id="cee6c-141">De configuratie testen</span><span class="sxs-lookup"><span data-stu-id="cee6c-141">Test the configuration</span></span>
 
-<span data-ttu-id="40040-140">Zodra de `Start-DSCConfiguration` cmdlet is voltooid, ziet u een bestand 'HelloWorld.txt' in de opgegeven locatie.</span><span class="sxs-lookup"><span data-stu-id="40040-140">Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified.</span></span> <span data-ttu-id="40040-141">U kunt controleren of de inhoud met de [Get-inhoud](/powershell/module/microsoft.powershell.management/get-content) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="40040-141">You can verify the contents with the [Get-Content](/powershell/module/microsoft.powershell.management/get-content) cmdlet.</span></span>
+<span data-ttu-id="cee6c-142">Zodra de `Start-DSCConfiguration` cmdlet is voltooid, ziet u het bestand HelloWorld. txt op de locatie die u hebt opgegeven.</span><span class="sxs-lookup"><span data-stu-id="cee6c-142">Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified.</span></span> <span data-ttu-id="cee6c-143">U kunt de inhoud controleren met de cmdlet [Get-content](/powershell/module/microsoft.powershell.management/get-content) .</span><span class="sxs-lookup"><span data-stu-id="cee6c-143">You can verify the contents with the [Get-Content](/powershell/module/microsoft.powershell.management/get-content) cmdlet.</span></span>
 
-<span data-ttu-id="40040-142">U kunt ook *testen* de huidige status via [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span><span class="sxs-lookup"><span data-stu-id="40040-142">You can also *test* the current status using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span>
+<span data-ttu-id="cee6c-144">U kunt ook de huidige status *testen* met [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span><span class="sxs-lookup"><span data-stu-id="cee6c-144">You can also *test* the current status using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span>
 
-<span data-ttu-id="40040-143">De uitvoer moet 'True' als het knooppunt momenteel compatibel is met de toegepaste configuratie.</span><span class="sxs-lookup"><span data-stu-id="40040-143">The output should be "True" if the Node is currently compliant with the applied Configuration.</span></span>
+<span data-ttu-id="cee6c-145">De uitvoer moet ' waar ' zijn als het knoop punt momenteel compatibel is met de toegepaste configuratie.</span><span class="sxs-lookup"><span data-stu-id="cee6c-145">The output should be "True" if the Node is currently compliant with the applied Configuration.</span></span>
 
 ```powershell
 Test-DSCConfiguration
@@ -120,16 +132,16 @@ Get-Content -Path C:\Temp\HelloWorld.txt
 Hello World from DSC!
 ```
 
-## <a name="re-applying-the-configuration"></a><span data-ttu-id="40040-144">De configuratie toepassen opnieuw</span><span class="sxs-lookup"><span data-stu-id="40040-144">Re-applying the configuration</span></span>
+## <a name="re-applying-the-configuration"></a><span data-ttu-id="cee6c-146">De configuratie opnieuw Toep assen</span><span class="sxs-lookup"><span data-stu-id="cee6c-146">Re-applying the configuration</span></span>
 
-<span data-ttu-id="40040-145">Als u wilt zien van uw configuratie opnieuw toegepast, kunt u het tekstbestand dat is gemaakt door uw configuratie verwijderen.</span><span class="sxs-lookup"><span data-stu-id="40040-145">To see your configuration get applied again, you can remove the text file created by your Configuration.</span></span> <span data-ttu-id="40040-146">Gebruik de `Start-DSCConfiguration` cmdlet met de `-UseExisting` parameter.</span><span class="sxs-lookup"><span data-stu-id="40040-146">The use the `Start-DSCConfiguration` cmdlet with the `-UseExisting` parameter.</span></span> <span data-ttu-id="40040-147">De `-UseExisting` parameter geeft de opdracht `Start-DSCConfiguration` om toe te passen opnieuw het bestand 'current.mof', die het meest recent zijn vertegenwoordigt configuratie toegepast.</span><span class="sxs-lookup"><span data-stu-id="40040-147">The `-UseExisting` parameter instructs `Start-DSCConfiguration` to re-apply the "current.mof" file, which represents the most recently successfully applied configuration.</span></span>
+<span data-ttu-id="cee6c-147">Als u wilt zien hoe de configuratie Get opnieuw wordt toegepast, kunt u het tekst bestand verwijderen dat door uw configuratie is gemaakt.</span><span class="sxs-lookup"><span data-stu-id="cee6c-147">To see your configuration get applied again, you can remove the text file created by your Configuration.</span></span> <span data-ttu-id="cee6c-148">De `Start-DSCConfiguration` cmdlet gebruiken met de `-UseExisting` para meter.</span><span class="sxs-lookup"><span data-stu-id="cee6c-148">The use the `Start-DSCConfiguration` cmdlet with the `-UseExisting` parameter.</span></span> <span data-ttu-id="cee6c-149">De `-UseExisting` para meter `Start-DSCConfiguration` geeft aan dat het huidige. MOF-bestand opnieuw moet worden toegepast. Dit is de meest recent toegepaste configuratie.</span><span class="sxs-lookup"><span data-stu-id="cee6c-149">The `-UseExisting` parameter instructs `Start-DSCConfiguration` to re-apply the "current.mof" file, which represents the most recently successfully applied configuration.</span></span>
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="40040-148">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="40040-148">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="cee6c-150">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="cee6c-150">Next steps</span></span>
 
-- <span data-ttu-id="40040-149">Meer informatie over DSC-configuraties op [DSC-configuraties](configurations.md).</span><span class="sxs-lookup"><span data-stu-id="40040-149">Find out more about DSC configurations at [DSC configurations](configurations.md).</span></span>
-- <span data-ttu-id="40040-150">Zie welke DSC-resources beschikbaar zijn en over het maken van aangepaste DSC-resources op [DSC-resources](../resources/resources.md).</span><span class="sxs-lookup"><span data-stu-id="40040-150">See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).</span></span>
-- <span data-ttu-id="40040-151">DSC-configuraties en resources in de [PowerShell Gallery](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="40040-151">Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
+- <span data-ttu-id="cee6c-151">Meer informatie over DSC-configuraties vindt u in [DSC-configuraties](configurations.md).</span><span class="sxs-lookup"><span data-stu-id="cee6c-151">Find out more about DSC configurations at [DSC configurations](configurations.md).</span></span>
+- <span data-ttu-id="cee6c-152">Bekijk welke DSC-resources beschikbaar zijn en hoe u aangepaste DSC-resources maakt op [DSC-resources](../resources/resources.md).</span><span class="sxs-lookup"><span data-stu-id="cee6c-152">See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).</span></span>
+- <span data-ttu-id="cee6c-153">DSC-configuraties en-resources zoeken in de [PowerShell Gallery](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="cee6c-153">Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
