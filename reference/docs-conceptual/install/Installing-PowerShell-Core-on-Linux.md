@@ -2,16 +2,16 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372193"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986733"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], en [Arch Linux][arch].
+Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse], [Fedora 27 ][fedora], [Fedora 28][fedora]en [Arch Linux][arch].
 
 Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks [ `tar.gz` ][tar]te implementeren met behulp van het Linux-archief, maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
 
@@ -20,6 +20,7 @@ Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,16 +143,23 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-> [!NOTE]
-> Omdat 18,10 een [voorlopige versie](https://www.ubuntu.com/about/release-cycle)is, wordt dit alleen [ondersteund](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)door de community.
+De installatie wordt ondersteund `snapd`via. Zie [snap package][snap]voor instructies.
 
-Installeren op 18,10 wordt ondersteund via `snapd`. Zie [snap package][snap] voor volledige instructies;
+> [!NOTE]
+> Ubuntu 18,10 is een [voorlopige versie](https://www.ubuntu.com/about/release-cycle) die door de [community wordt ondersteund](../powershell-support-lifecycle.md).
+
+## <a name="ubuntu-1904"></a>Ubuntu 19,04
+
+De installatie wordt ondersteund `snapd`via. Zie [snap package][snap]voor instructies.
+
+> [!NOTE]
+> Ubuntu 19,04 is een [voorlopige versie](https://www.ubuntu.com/about/release-cycle) die door de [community wordt ondersteund](../powershell-support-lifecycle.md).
 
 ## <a name="debian-8"></a>Debian 8
 
 ### <a name="installation-via-package-repository---debian-8"></a>Installatie via pakket opslagplaats-Debian 8
 
-Power shell core, voor Linux, wordt gepubliceerd op pakket opslagplaatsen voor eenvoudig installeren en bijwerken.
+Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 

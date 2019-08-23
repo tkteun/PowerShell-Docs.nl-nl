@@ -1,170 +1,186 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, powershell, cmdlet, psgallery
-description: Richtlijnen voor uitgevers
-title: PowerShell Gallery richtlijnen en aanbevolen procedures publiceren
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+contributor: JKeithB, SydneyhSmith
+keywords: Galerie, Power shell, cmdlet, psgallery
+description: Richt lijnen voor uitgevers
+title: Richt lijnen voor publicatie PowerShell Gallery en aanbevolen procedures
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084654"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986508"
 ---
-# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery richtlijnen en aanbevolen procedures publiceren
+# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Richt lijnen voor publicatie van PowerShellGallery en aanbevolen procedures
 
-Dit onderwerp wordt beschreven aanbevolen stappen die worden gebruikt door Microsoft-teams om te controleren of de pakketten die zijn gepubliceerd naar de PowerShell Gallery algemeen wordt vastgesteld en hoge waarde biedt aan gebruikers, op basis van hoe de PowerShell Gallery manifest gegevens verwerkt en feedback van grote het aantal gebruikers van de PowerShell Gallery.
-Pakketten die zijn gepubliceerd in deze richtlijnen volgt kans om te worden geïnstalleerd, worden vertrouwd, en meer gebruikers aan te trekken.
+In dit onderwerp worden de aanbevolen stappen beschreven die door micro soft-teams worden gebruikt om ervoor te zorgen dat de pakketten die zijn gepubliceerd op de PowerShell Gallery, algemeen worden goedgekeurd en hoge waarde bieden aan gebruikers, op basis van de manier waarop de PowerShell Gallery manifest gegevens en feedback van grote aantal PowerShell Gallery gebruikers.
+Pakketten die worden gepubliceerd na deze richt lijnen zullen waarschijnlijker worden geïnstalleerd, vertrouwd en aantrekken meer gebruikers.
 
-Hieronder volgen richtlijnen voor het waaruit een goede PowerShell Gallery-pakket, welke instellingen zijn optioneel Manifest het belangrijkst zijn, het verbeteren van uw code met feedback van de eerste revisoren en [Powershell-Script Analyzer](https://aka.ms/psscriptanalyzer), versiebeheer uw module, documentatie, tests en voorbeelden voor het gebruik van wat u hebt gedeeld.
-Veel van deze documentatie volgt de richtlijnen voor publicatie [Modules van hoge kwaliteit DSC-Resource](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Hieronder vindt u richt lijnen voor wat een goed PowerShell Gallery pakket is, welke optionele manifest instellingen het belangrijkst zijn, hoe u uw code kunt verbeteren met feedback van de eerste revisoren en [Power shell script Analyzer](https://aka.ms/psscriptanalyzer), versie van uw module, Documentatie, test &-voor beelden voor het gebruik van wat u hebt gedeeld.
+Veel van deze documentatie volgt de richt lijnen voor het publiceren van [DSC-resource modules van hoge kwaliteit](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Zie voor het mechanisme van het publiceren van een pakket naar de PowerShell Gallery, [maken en publiceren van een pakket](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+Zie [een pakket maken en publiceren](/powershell/gallery/how-to/publishing-packages/publishing-a-package)voor de mechanismen voor het publiceren van een pakket naar de PowerShell Gallery.
 
-Feedback over deze richtlijnen wordt verwelkomde. Als u feedback hebt, opent u problemen in onze [Github-opslagplaats voor documentatie](https://github.com/powershell/powershell-docs/issues).
+Feedback over deze richt lijnen is welkom. Als u feedback hebt, kunt u problemen openen in onze [documentatie opslagplaats voor github](https://github.com/powershell/powershell-docs/issues).
 
 ## <a name="best-practices-for-publishing-packages"></a>Aanbevolen procedures voor het publiceren van pakketten
 
-De volgende aanbevolen procedures zijn wat de gebruikers van de items van de PowerShell Gallery zegt is belangrijk en vindt u in de volgorde van prioriteit nominale.
-Pakketten die aan deze richtlijnen voldoet, zijn veel vaker zal worden gedownload en worden vastgesteld door anderen.
+De volgende aanbevolen procedures zijn wat de gebruikers van PowerShell Gallery-items betekenen, en worden vermeld in de volg orde nominale prioriteit.
+Pakketten die voldoen aan deze richt lijnen, worden waarschijnlijk veel vaker gedownload en goedgekeurd door anderen.
 
-- Use PSScriptAnalyzer
-- Documentatie en voorbeelden
+- PSScriptAnalyzer gebruiken
+- Documentatie en voor beelden toevoegen
 - Reageren op feedback
-- Bieden van modules in plaats van scripts
-- Vindt u koppelingen naar de projectsite van een
-- Label van het pakket met de compatibel PSEdition(s) en platforms
-- Tests met uw modules bevatten
-- Opgenomen en/of te koppelen aan licentievoorwaarden
-- Meld u aan uw code
-- Ga als volgt [SemVer](http://semver.org/) richtlijnen voor versiebeheer
-- Gebruik van veelgebruikte tags, zoals beschreven in de galerie voor algemene PowerShell-codes
-- Publiceren met behulp van een lokale opslagplaats testen
+- Geef modules op in plaats van scripts
+- Koppelingen naar een project site opgeven
+- Voorzie uw pakket van de compatibele PSEdition (s) en platforms
+- Testen toevoegen aan uw modules
+- Toevoegen en/of koppelen aan licentie voorwaarden
+- Uw code ondertekenen
+- Volg de [SemVer](http://semver.org/) -richt lijnen voor versie beheer
+- Algemene Tags gebruiken, zoals beschreven in algemene PowerShell Gallery Tags
+- Publicatie testen met een lokale opslag plaats
 - PowerShellGet gebruiken om te publiceren
 
-Elk van deze wordt kort beschreven in de volgende secties.
+Elk van deze wordt kort beschreven in de onderstaande secties.
 
-## <a name="use-psscriptanalyzer"></a>Use PSScriptAnalyzer
+## <a name="use-psscriptanalyzer"></a>PSScriptAnalyzer gebruiken
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) is een hulpmiddel gratis statische code die geschikt is voor PowerShell-code.
-PSScriptAnalyzer identificeert de meest voorkomende problemen die in de PowerShell-code, en vaak een aanbeveling voor het oplossen van het probleem.
-Het hulpprogramma is eenvoudig te gebruiken en de problemen als fouten worden gecategoriseerd (ernstig, moeten worden opgelost), waarschuwing (moet worden gecontroleerd en moet worden opgelost), en informatie (waard voor aanbevolen procedures).
-Alle pakketten die zijn gepubliceerd in PowerShell Gallery, worden gescand met behulp van PSScriptAnalyzer en eventuele fouten worden gerapporteerd aan de eigenaar en moeten worden opgelost.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) is een gratis hulp programma voor statische code analyse dat kan worden uitgevoerd op Power shell-code.
+PSScriptAnalyzer identificeert de meest voorkomende problemen die in Power shell-code worden weer gegeven en vaak een aanbeveling om het probleem op te lossen.
+Het hulp programma is eenvoudig te gebruiken en categoriseert de problemen als fouten (ernstige, moeten worden opgelost), waarschuwing (moet worden beoordeeld & moet worden geadresseerd) en gegevens (voor aanbevolen procedures worden uitgecheckt).
+Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, worden gescand met PSScriptAnalyzer en eventuele fouten worden weer gegeven aan de eigenaar en moeten worden verholpen.
 
-De aanbevolen procedure is om uit te voeren `Invoke-ScriptAnalyzer` met `-Recurse` en `-Severity` waarschuwing.
+Het best practice moet worden uitgevoerd `Invoke-ScriptAnalyzer` met `-Recurse` en `-Severity` er wordt een waarschuwing gegeven.
 
 Bekijk de resultaten en zorg ervoor dat:
 
-- Alle fouten zijn gecorrigeerd of behandeld in de documentatie
-- Alle waarschuwingen worden bekeken en opgelost, indien van toepassing
+- Alle fouten zijn gecorrigeerd of opgelost in uw documentatie
+- Alle waarschuwingen worden beoordeeld en behandeld indien van toepassing
 
-Gebruikers die pakketten vanuit de PowerShell Gallery verkrijgen zijn ten zeerste aangeraden PSScriptAnalyzer uitvoeren en evalueren van alle fouten en waarschuwingen.
-Gebruikers zijn zeer waarschijnlijk contact opnemen met de eigenaren van het pakket als ze zien dat er een fout gemeld door PSScriptAnalyzer is.
-Als er een dwingende redenen voor het pakket te houden van code die is gemarkeerd als een fout, kunt u die gegevens toevoegen aan uw documentatie om te voorkomen dat de dezelfde vraag beantwoorden vaak.
+Gebruikers die pakketten van de PowerShell Gallery verkrijgen, worden nadrukkelijk aangemoedigd om PSScriptAnalyzer uit te voeren en alle fouten en waarschuwingen te evalueren.
+Gebruikers zijn zeer waarschijnlijk contact met pakket eigen aars als ze zien dat er een fout is gemeld door PSScriptAnalyzer.
+Als er een goede reden voor uw pakket is om code te houden die als een fout wordt gemarkeerd, voegt u die informatie toe aan uw documentatie om te voor komen dat u dezelfde vraag meermaals beantwoordt.
 
-## <a name="include-documentation-and-examples"></a>Documentatie en voorbeelden
+## <a name="include-documentation-and-examples"></a>Documentatie en voor beelden toevoegen
 
-Documentatie en voorbeelden zijn de beste manier om te controleren of gebruikers kunnen profiteren van een gedeelde code.
+Documentatie en voor beelden zijn de beste manier om ervoor te zorgen dat gebruikers gebruik kunnen maken van gedeelde code.
 
-Documentatie is het nuttigst wat om op te nemen in pakketten die zijn gepubliceerd naar de PowerShell Gallery.
-Gebruikers wordt in het algemeen-pakketten zonder documentatie, overslaan als het alternatief is om te lezen van de code voor meer informatie over wat het pakket is en het gebruik ervan.
-Er zijn verschillende artikelen over het bieden van documentatie met PowerShell-pakketten, met inbegrip van:
+Documentatie is het nuttigst voor het toevoegen van pakketten die zijn gepubliceerd op de PowerShell Gallery.
+Gebruikers zullen pakketten zonder documentatie overs Laan, omdat het alternatief is om de code te lezen om te begrijpen wat het pakket is en hoe het kan worden gebruikt.
+Er zijn verschillende artikelen beschikbaar over het bieden van documentatie met Power shell-pakketten, waaronder:
 
-- Richtlijnen voor het ontwikkelen van Help-informatie zich in [Cmdlet helpen schrijven](https://go.microsoft.com/fwlink/?LinkID=123415)
-- Het met het maken van de help van de cmdlet, dit is de beste manier om een PowerShell-script, functie of cmdlet.
-  Voor meer informatie over het maken van de help van de cmdlet start met [schrijven Cmdlet helpen](https://go.microsoft.com/fwlink/?LinkID=123415).
-  Zie het Help-informatie in een script toevoegen [over opmerking op basis van Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
-- Veel modules ook documentatie in tekstindeling, zoals MarkDown-bestanden.
-  Dit kan vooral nuttig zijn wanneer er een site in Github, waar Markdown een intensief gebruikte indeling is.
-  De aanbevolen procedure is om te gebruiken [Github-flavored Markdown](https://help.github.com/categories/writing-on-github/)
+- Richt lijnen voor [het schrijven](https://go.microsoft.com/fwlink/?LinkID=123415) van Help voor cmdlets
+- Help voor cmdlets maken: dit is de beste benadering voor elke Power shell-script,-functie of-cmdlet.
+  Voor informatie over het maken van Help voor cmdlets, begint u met [het schrijven van Help voor cmdlets](https://go.microsoft.com/fwlink/?LinkID=123415).
+  Zie [informatie over op opmerkingen gebaseerde Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)als u hulp wilt toevoegen in een script.
+- Veel modules bevatten ook documentatie in tekst indeling, zoals bestanden voor de korting.
+  Dit kan bijzonder nuttig zijn wanneer er sprake is van een project site in github, waarbij prijs verlaging een intensief gebruikte indeling is.
+  Het best practice is om [Githube prijs verlaging](https://help.github.com/categories/writing-on-github/) te gebruiken
 
-Voorbeelden van gebruikers hoe het pakket is bedoeld om te worden gebruikt.
-Veel ontwikkelaars wordt zeggen dat ze voorbeelden voordat u de documentatie bij om te begrijpen hoe u iets bekijken.
-Het aanbevolen type voorbeelden tonen basisgebruik, plus een gesimuleerde realistische use case en de code is goed opmerkingen.
-Voorbeelden voor gepubliceerd naar de PowerShell Gallery-modules moeten zich in een map van de voorbeelden in de hoofdmap van de module.
+Voor beelden laten zien gebruikers hoe het pakket is bedoeld om te worden gebruikt.
+Veel ontwikkel aars zeggen dat ze voor beelden bekijken voordat ze worden gebruikt om te begrijpen hoe ik iets kan gebruiken.
+Het beste type voor beelden is het basis gebruik, plus een gesimuleerde realistische use-case, en de code is goed commentaar.
+Voor beelden van modules die naar het PowerShell Gallery worden gepubliceerd, moeten zich in een map met voor beelden in de module root bevindt.
 
-Een goede patroon voor voorbeelden kunt u vinden in de [PSDscResource module](https://www.powershellgallery.com/packages/PSDscResources) onder de map Examples\RegistryResource.
-Er worden vier voorbeeld gebruikt met een korte beschrijving aan de bovenkant van elk bestand dat is wat wordt aangetoond documenten.
+Een goed patroon voor voor beelden vindt u in de [module PSDscResource](https://www.powershellgallery.com/packages/PSDscResources) in de map Examples\RegistryResource.
+Er zijn vier voorbeeld cases met een korte beschrijving boven aan elk bestand dat documenteert wat wordt aangetoond.
+
+## <a name="manage-dependencies"></a>Afhankelijkheden beheren
+
+Het is belang rijk om modules op te geven waarvan uw module afhankelijk is in het module manifest.
+Hierdoor hoeft de eind gebruiker zich geen zorgen te maken over het installeren van de juiste versies van de modules waarvan u afhankelijk bent.
+Als u afhankelijke modules wilt opgeven, moet u het vereiste module veld gebruiken in het module manifest.
+Hiermee worden alle vermelde modules in de globale omgeving geladen voordat de module wordt geïmporteerd, tenzij ze al zijn geladen. (Sommige modules kunnen bijvoorbeeld al zijn geladen door een andere module.).
+Het is ook mogelijk om een specifieke versie op te geven die moet worden geladen met behulp van het veld RequiredVersion in plaats van het veld ModuleVersion. Wanneer u ModuleVersion gebruikt, wordt de nieuwste versie geladen die beschikbaar is met een minimum van de opgegeven versie.
+Wanneer u het veld RequiredVersion niet gebruikt om een specifieke versie op te geven, is het belang rijk om versie-updates te controleren naar de vereiste module.
+Het is vooral belang rijk dat u op de hoogte bent van eventuele wijzigingen in de gebruikers ervaring met uw module.
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>Reageren op feedback
 
-De waarde van pakket-eigenaren die goed op feedback reageren wordt zeer door de community.
-Gebruikers die feedback geven feitelijke zijn belangrijk om te reageren op, zoals ze geïnteresseerd in het pakket zijn om te helpen verbeteren.
+Pakket eigen aars die op de juiste manier reageren op feedback, zijn zeer waard door de community.
+Gebruikers die feitelijke feedback bieden, zijn belang rijk om te reageren, omdat ze genoeg zijn in het pakket om het te helpen verbeteren.
 
-Er zijn twee methoden voor feedback beschikbaar in de PowerShell Gallery:
+Er zijn twee feedback methoden beschikbaar in de PowerShell Gallery:
 
-- Neem contact op met de eigenaar: Dit kan een gebruiker een e-mailbericht verzenden naar de eigenaar van het pakket. Als de eigenaar van een pakket, is het belangrijk om te controleren van het e-mailadres gebruikt in combinatie met de PowerShell Gallery-pakketten en reageren op problemen die worden gegenereerd. Een nadeel van deze methode is dat alleen de gebruiker en de eigenaar ooit de communicatie, zien zodat de eigenaar van de mogelijk moet u de dezelfde vraag worden beantwoord vaak.
-- Opmerkingen: Pagina is aan de onderkant van het pakket met een opmerkingenveld.
-  Het voordeel van dit systeem is dat andere gebruikers kunnen zien de opmerkingen en -antwoorden, waardoor het aantal keren dat die een enkele vraag moet worden beantwoord.
-  Als de eigenaar van een pakket, is het raadzaam dat u de opmerkingen voor elk pakket volgt.
-Zie [Feedback geven via Socialemedia of opmerkingen](../how-to/working-with-packages/social-media-feedback.md) voor meer informatie over hoe u dat doet.
+- Eigenaar van contact persoon: Hiermee kan een gebruiker een e-mail verzenden naar de pakket eigenaar (s). Als pakket eigenaar is het belang rijk om het e-mail adres dat wordt gebruikt met de PowerShell Gallery-pakketten te controleren en te reageren op problemen die zijn opgetreden. Het enige nadeel van deze methode is dat alleen de gebruiker en de eigenaar ooit de communicatie kunnen zien, zodat de eigenaar mogelijk dezelfde vraag meermaals moet beantwoorden.
+- Aantekeningen Onder aan de pakket pagina bevindt zich een veld met een opmerking.
+  Het voor deel van dit systeem is dat andere gebruikers de opmerkingen en reacties kunnen zien, waardoor het aantal keren dat een enkele vraag moet worden beantwoord, kleiner wordt.
+  Als pakket eigenaar wordt u ten zeerste aangeraden de opmerkingen voor elk pakket te volgen.
+Zie [feedback geven via sociale media of opmerkingen](../how-to/working-with-packages/social-media-feedback.md) voor meer informatie over hoe u dit doet.
 
-Eigenaren die op feedback constructively reageren worden gewaardeerd door de community.
-De mogelijkheid in het rapport wilt aanvragen van meer informatie, indien nodig, bieden een tijdelijke oplossing gebruiken of identificeren als een update wordt een probleem opgelost.
+Eigen aren die reageren op feedback constructively worden door de Community gewaardeerd.
+Gebruik de verkoop kans in het rapport om zo nodig meer informatie aan te vragen, een tijdelijke oplossing te bieden of te identificeren of een update een probleem oplost.
 
-Als er ongepast gedrag waargenomen van één van deze communicatiekanalen, gebruikt u de functie misbruik van de PowerShell Gallery contact opnemen met de galerie-beheerders.
+Als er ongepast gedrag wordt waargenomen vanuit een van deze communicatie kanalen, gebruikt u de functie misbruik melden van de PowerShell Gallery om contact op te nemen met de beheerder van de galerie.
 
-## <a name="modules-versus-scripts"></a>Modules ten opzichte van Scripts
+## <a name="modules-versus-scripts"></a>Modules versus scripts
 
-Een script delen met andere gebruikers is erg handig en biedt andere voorbeelden van hoe ze hebben wellicht problemen op te lossen.
-Het probleem is dat scripts in de PowerShell Gallery enkele bestanden zonder afzonderlijke documentatie, voorbeelden en tests.
+Het delen van een script met andere gebruikers is geweldig en biedt andere voor beelden van het oplossen van problemen die ze kunnen hebben.
+Het probleem is dat scripts in de PowerShell Gallery één bestand zijn zonder afzonderlijke documentatie, voor beelden en tests.
 
-PowerShell-Modules zijn een structuur waarmee u kunt meerdere mappen en bestanden die moeten worden opgenomen in het pakket.
-Structuur van de module kunt u met inbegrip van de andere pakketten die we aanbieden als best practices: cmdlet help, documentatie, voorbeelden en tests.
-Het grootste nadeel is dat een script in een module moet worden weergegeven en als een functie gebruikt.
-Zie voor meer informatie over het maken van een module [schrijven van een Windows PowerShell-Module](http://go.microsoft.com/fwlink/?LinkId=144916).
+Power shell-modules hebben een mapstructuur waarmee meerdere mappen en bestanden kunnen worden opgenomen in het pakket.
+De structuur van de module maakt het mogelijk om de andere pakketten te gebruiken die we als best practices aanbieden: cmdlet Help, Documentatie, voor beelden en tests.
+Het grootste nadeel is dat een script in een module moet worden weer gegeven en gebruikt als een functie.
+Zie [een Windows Power shell-module schrijven](http://go.microsoft.com/fwlink/?LinkId=144916)voor meer informatie over het maken van een module.
 
-Er zijn situaties waarin een script een betere ervaring voor de gebruiker, met name met DSC-configuraties biedt.
-De aanbevolen procedure voor DSC-configuraties is voor het publiceren van de configuratie als een script met een bijbehorende module met de documenten, voorbeelden en tests.
-Het script geeft een lijst van de bijbehorende module met behulp van RequiredModules = @(naam van de Module).
-Deze methode kan worden gebruikt bij elk script.
+Er zijn situaties waarin een script een betere ervaring biedt voor de gebruiker, met name met DSC-configuraties.
+De best practice voor DSC-configuraties is het publiceren van de configuratie als een script met een bijbehorende module die de docs, voor beelden en tests bevat.
+Het script bevat een lijst met de bijbehorende module met RequiredModules = @ (naam van de module).
+Deze aanpak kan worden gebruikt met elk script.
 
-Werkelijke waarde bieden zelfstandige scripts die de aanbevolen procedures volgen aan andere gebruikers.
-Hiervoor bieden op basis van een opmerking documentatie en een koppeling naar de Site van een Project sterk aanbevolen wordt bij het publiceren van een script in PowerShell Gallery.
+Zelfstandige scripts die de andere aanbevolen procedures volgen, bieden echte waarde aan andere gebruikers.
+Het is raadzaam om op opmerkingen gebaseerde documentatie en een koppeling naar een project site te bieden bij het publiceren van een script naar de PowerShell Gallery.
 
-## <a name="provide-a-link-to-a-project-site"></a>Een koppeling naar de projectsite van een
+## <a name="provide-a-link-to-a-project-site"></a>Een koppeling naar een project site opgeven
 
-De Site van een Project is waar een uitgever kan communiceren rechtstreeks met de gebruikers van de PowerShell Gallery-pakketten.
-Gebruikers liever pakketten met dit, aangezien deze voor informatie over het pakket gemakkelijker kunt.
-Groot aantal pakketten in de PowerShell Gallery in GitHub worden ontwikkeld, worden andere door organisaties met een speciale website geleverd.
-Elk van deze kan worden beschouwd als een site.
+Een project site is waar een uitgever rechtstreeks kan communiceren met de gebruikers van hun PowerShell Gallery-pakketten.
+Gebruikers geven de voor keur aan pakketten die dit leveren, omdat ze hiermee gemakkelijker informatie over het pakket kunnen ophalen.
+Veel pakketten in de PowerShell Gallery zijn ontwikkeld in GitHub, maar andere worden door organisaties voorzien van een specifieke webhost.
+Elk van deze kan worden beschouwd als een project site.
 
-Een koppeling toe te voegen, wordt dit gedaan door ProjectURI te nemen in de sectie PSData van het manifest als volgt:
+Het toevoegen van een koppeling wordt uitgevoerd door ProjectURI in het gedeelte PSData van het manifest als volgt op te nemen:
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-Wanneer een ProjectURI is opgegeven, wordt de PowerShell Gallery bevat een koppeling naar de Site van het Project aan de linkerkant van de pakketpagina.
+Wanneer er een ProjectURI wordt gegeven, bevat de PowerShell Gallery een koppeling naar de project site aan de linkerkant van de pakket pagina.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Label van het pakket met de compatibel PSEdition(s) en platforms
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Voorzie uw pakket van de compatibele PSEdition (s) en platforms
 
-De volgende codes gebruiken om te demonstreren aan gebruikers die pakketten goed met hun omgeving werkt:
+Gebruik de volgende tags om te laten zien welke gebruikers pakketten goed kunnen gebruiken met hun omgeving:
 
-- PSEdition_Desktop: Pakketten die compatibel met Windows PowerShell zijn
-- PSEdition_Core: Pakketten die compatibel met PowerShell Core zijn
-- Windows : Pakketten die compatibel zijn met het Windows-besturingssysteem
-- Linux: Pakketten die compatibel zijn met het Linux-besturingssystemen
-- MacOS: Pakketten die compatibel zijn met het Mac-besturingssysteem
+- PSEdition_Desktop : Pakketten die compatibel zijn met Windows Power shell
+- PSEdition_Core : Pakketten die compatibel zijn met Power shell core
+- Windows Pakketten die compatibel zijn met het Windows-besturings systeem
+- Spreek Pakketten die compatibel zijn met Linux-besturings systemen
+- MacOS Pakketten die compatibel zijn met het Mac-besturings systeem
 
-Door het labelen van het pakket met de compatibel platform (s) het opgenomen in de galerie zoekfilters in het linkerdeelvenster van de lijst met zoekresultaten. Als u het pakket op GitHub, host wanneer u het pakket een label, u kunt ook rekening houden met profiteren van onze [PowerShell Gallery compatibele schilden](https://img.shields.io/powershellgallery/p/:packageName.svg) 
-![compatibiliteit shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
+Door uw pakket te labelen met de compatibele platform (s), wordt het opgenomen in de galerie Zoek filters in het linkerdeel venster van de zoek resultaten. Als u uw pakket host op github, kunt u, wanneer u uw pakket labelt, ook profiteren van onze [PowerShell Gallery compion Shields](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![Compatibility Shield](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
-## <a name="include-tests"></a>Tests opnemen
+## <a name="include-tests"></a>Tests toevoegen
 
-Het is belangrijk dat gebruikers, met inbegrip van tests met open-source code als het biedt hen assurance over wat u valideren, en vindt u informatie over de werking van uw code. Ook kunnen gebruikers zodat ze de functionaliteit van uw oorspronkelijke niet defect raken als ze uw code om aan te passen in hun omgeving kunnen wijzigen.
+Het is belang rijk voor gebruikers, met inbegrip van tests met open-source code, dat ze de zekerheid geven over wat u valideert, en biedt informatie over de werking van uw code. Gebruikers kunnen er ook voor zorgen dat ze de oorspronkelijke functionaliteit niet afleiden als ze uw code aanpassen aan hun omgeving.
 
-Het is raadzaam dat tests om te profiteren van het framework voor het testen van Pester, die is ontworpen voor PowerShell worden geschreven.
-Lastige is beschikbaar in [GitHub](https://github.com/Pester/Pester), wordt de [PowerShell Gallery](https://www.powershellgallery.com/packages/Pester/), en wordt geleverd in Windows 10, Windows Server 2016, WMF 5.0 en WMF 5.1.
+Het wordt ten zeerste aanbevolen dat tests worden geschreven om te profiteren van het ziekte-test raamwerk, dat speciaal is ontworpen voor Power shell.
+De ziekte is beschikbaar in [github](https://github.com/Pester/Pester), de [PowerShell Gallery](https://www.powershellgallery.com/packages/Pester/), en wordt geleverd in Windows 10, Windows Server 2016, WMF 5,0 en WMF 5,1.
 
-De [Pester project-site in GitHub](https://github.com/Pester/Pester) goede documentatie over het schrijven van Pester tests, van beginnende gebruikers tot aanbevolen procedures omvat.
+De ondergeschikte [project site in github](https://github.com/Pester/Pester) bevat goede documentatie over het schrijven van ziekte tests, van aan de slag met best practices.
 
-De doelen voor testdekkingsgraad worden specifiek genoemd de [documentatie van hoge kwaliteit Resource Module](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), testen met 70% eenheid code dekking aanbevolen.
+De doelen voor de test dekking worden in de documentatie voor de [resource module met hoge kwaliteit](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md)genoemd, met 70% eenheids test code dekking aanbevolen.
 
-## <a name="include-andor-link-to-license-terms"></a>Opgenomen en/of te koppelen aan licentievoorwaarden
+## <a name="include-andor-link-to-license-terms"></a>Toevoegen en/of koppelen aan licentie voorwaarden
 
-Alle pakketten die zijn gepubliceerd in PowerShell Gallery, moet de licentievoorwaarden opgeven of afhankelijk zijn van de licentie die is opgenomen in de [gebruiksvoorwaarden](https://www.powershellgallery.com/policies/Terms) onder 'Bewijsstuk A'.
-De beste manier voor het opgeven van een andere licentie is een koppeling naar de licentie die met behulp van de LicenseURI in PSData.
-U vindt een voorbeeld in het onderwerp van het Manifest van de velden aanbevolen.
+Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, moeten de licentie voorwaarden opgeven of gebonden zijn aan de licentie die is opgenomen in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms) onder "vertonen A".
+De beste manier om een andere licentie op te geven, is door een koppeling naar de licentie te geven met behulp van de LicenseURI in PSData.
+In het onderwerp Aanbevolen manifest velden vindt u een voor beeld.
 
 ```powershell
 PrivateData = @{
@@ -177,80 +193,80 @@ PrivateData = @{
         LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
 ```
 
-## <a name="sign-your-code"></a>Meld u aan uw code
+## <a name="sign-your-code"></a>Uw code ondertekenen
 
-Ondertekening van programmacode biedt gebruikers met het hoogste niveau van zekerheid voor die het pakket hebt gepubliceerd, en dat de kopie van de code ze verkrijgen is precies wat de uitgever die zijn uitgebracht.
-Zie voor meer informatie over het algemeen voor ondertekening van programmacode, [Inleiding tot de ondertekening van programmacode](http://go.microsoft.com/fwlink/?LinkId=106296).
-PowerShell ondersteunt validatie van via twee primaire methoden voor ondertekening van programmacode:
+Het ondertekenen van programma code biedt gebruikers het hoogste garantie niveau voor wie het pakket heeft gepubliceerd, en dat de kopie van de code die ze verwerven precies overeenkomt met de uitgever.
+Zie [Inleiding tot ondertekening van programma code](http://go.microsoft.com/fwlink/?LinkId=106296)voor meer informatie over het in het algemeen ondertekenen van programma code.
+Power shell ondersteunt validatie van ondertekening van programma code via twee primaire benaderingen:
 
-- Scriptbestanden ondertekenen
-- Een module voor het ondertekenen van catalogus
+- Script bestanden ondertekenen
+- Catalogus ondertekenen van een module
 
-Ondertekening van de PowerShell-bestanden is een gevestigde benadering aan het waarborgen van de code wordt uitgevoerd door een betrouwbare bron is gemaakt, en is niet gewijzigd.
-Meer informatie over het ondertekenen van PowerShell-script-bestanden wordt beschreven in de [over ondertekening](/powershell/module/microsoft.powershell.core/about/about_signing) onderwerp.
-In het overzicht van kan een handtekening worden toegevoegd aan een. Ps1-bestand dat PowerShell valideert wanneer het script wordt geladen.
-PowerShell kan worden beperkt met behulp van de [uitvoeringsbeleid](/powershell/module/microsoft.powershell.core/about/about_execution_policies) cmdlets voor het gebruik van ondertekende scripts.
+Het ondertekenen van Power Shell-bestanden is een goed opgebouwde benadering om ervoor te zorgen dat de code die wordt uitgevoerd, is geproduceerd met een betrouw bare bron en niet is gewijzigd.
+Meer informatie over het ondertekenen van Power shell-script bestanden vindt u in het onderwerp [over ondertekening](/powershell/module/microsoft.powershell.core/about/about_signing) .
+In overzicht kan een hand tekening worden toegevoegd aan elke. PS1-bestand dat door Power shell wordt gevalideerd wanneer het script wordt geladen.
+Power shell kan worden beperkt met behulp van de-cmdlets voor het uitvoeren van het [beleid](/powershell/module/microsoft.powershell.core/about/about_execution_policies) om te zorgen voor het gebruik van ondertekende scripts.
 
-Catalogus modules ondertekening is een functie die wordt toegevoegd aan PowerShell in versie 5.1.
-Het ondertekenen van een module wordt beschreven in de [catalogus-Cmdlets](/powershell/wmf/5.1/catalog-cmdlets) onderwerp.
-In het overzicht van wordt het ondertekenen van de catalogus uitgevoerd door het maken van een catalogusbestand, waarin een hash-waarde voor elk bestand in de module, en vervolgens dat bestand in te schrijven.
-De PowerShellGet publiceren-module, install-module, save-module en update-module-cmdlets wordt controleren van de handtekening om te controleren of dat de parameter is geldig en Bevestig dat de hash-waarde voor elk pakket dat overeenkomt met wat is er in de catalogus.
-Als een eerdere versie van de module is geïnstalleerd op het systeem, wordt er install-module bevestigen dat de instantie voor het ondertekenen van voor de nieuwe versie overeenkomt met wat eerder is geïnstalleerd.
-Ondertekening van de catalogus met werkt, maar is geen vervanging voor ondertekenen scriptbestanden. PowerShell komt niet overeen voor catalogus handtekeningen tijdens het laden van een module.
+Modules voor catalogus ondertekening is een functie die is toegevoegd aan Power shell in versie 5,1.
+Het ondertekenen van een module wordt behandeld in het onderwerp [Catalog](/powershell/wmf/5.1/catalog-cmdlets) -cmdlets.
+In overzicht wordt de ondertekening van de catalogus uitgevoerd door een catalogus bestand te maken dat een hash-waarde voor elk bestand in de module bevat en dat bestand vervolgens te ondertekenen.
+Met de PowerShellGet Publish-module, installatie-module, Save-module en update-module-cmdlets wordt de hand tekening gecontroleerd om te controleren of deze geldig is. Controleer vervolgens of de hash-waarde voor elk pakket overeenkomt met wat er in de catalogus staat.
+Als er een eerdere versie van de module op het systeem is geïnstalleerd, wordt in de installatie-module bevestigd dat de handtekening instantie voor de nieuwe versie overeenkomt met wat eerder is geïnstalleerd.
+Catalogus ondertekening werkt met, maar vervangt geen handtekeningen script bestanden. Power shell valideert catalogus handtekeningen tijdens module laad tijd niet.
 
-## <a name="follow-semver-guidelines-for-versioning"></a>Volg de richtlijnen voor versiebeheer SemVer
+## <a name="follow-semver-guidelines-for-versioning"></a>Volg de SemVer-richt lijnen voor versie beheer
 
-[SemVer](http://semver.org/) is een openbare te gebruiken die wordt beschreven hoe u te structureren en een versie zodat u gemakkelijk te vertalen van de wijzigingen te wijzigen.
-De versie voor het pakket moet worden opgenomen in het manifest gegevens.
+[SemVer](http://semver.org/) is een open bare Conventie die beschrijft hoe een versie moet worden gestructureerd en gewijzigd, zodat de wijzigingen eenvoudig kunnen worden geïnterpreteerd.
+De versie voor uw pakket moet worden opgenomen in de manifest gegevens.
 
-- De versie moet worden gestructureerd als 3 numerieke blokken, gescheiden door punten, zoals in 0.1.1 of 4.11.192
-- Beginnen met "0" versies aangeven dat het pakket nog niet klaar voor productie is en het eerste getal alleen met '0' beginnen mag als dat het enige dat wordt gebruikt
-- Wijzigingen in het eerste getal (1.9.9999-2.0.0) geven belangrijke en belangrijke wijzigingen tussen de versies
-- Wijzigingen in het tweede getal (1.1-1.2) wijzen op niveau van de functie wijzigingen, zoals het toevoegen van nieuwe-cmdlets aan een module
-- Wijzigingen in het derde getal aangeven vaste wijzigingen, zoals de parameters voor nieuwe, bijgewerkte voorbeelden of nieuwe tests
-- Wanneer versies wordt weergegeven, wordt PowerShell de versies gesorteerd als tekenreeksen, zodat 1.01.0 wordt beschouwd als groter dan 1.001.0
+- De versie moet zijn gestructureerd als 3 numerieke blokken, gescheiden door punten, zoals in 0.1.1 of 4.11.192
+- Versies die beginnen met "0" geven aan dat het pakket nog niet gereed is voor productie. het eerste nummer mag alleen beginnen met "0" als dat het enige getal is dat wordt gebruikt
+- Wijzigingen in het eerste getal (1.9.9999-2.0.0) geven belang rijke en laatste wijzigingen aan tussen de versies
+- Wijzigingen in het tweede getal (1,1 tot 1,2) geven wijzigingen op functie niveau aan, zoals het toevoegen van nieuwe cmdlets aan een module
+- Wijzigingen in het derde nummer wijzen op niet-brekende wijzigingen, zoals nieuwe para meters, bijgewerkte voor beelden of nieuwe tests
+- Wanneer versies worden vermeld, sorteert Power shell de versies als teken reeksen, zodat 1.01.0 wordt behandeld als groter dan 1.001.0
 
-PowerShell is gemaakt voordat SemVer is gepubliceerd, zodat het ondersteuning voor de meeste, maar niet alle elementen van SemVer, speciaal biedt:
+Power shell is gemaakt voordat SemVer werd gepubliceerd, waardoor ondersteuning wordt geboden voor de meeste, maar niet alle elementen van SemVer, met name:
 
-- Voorlopige tekenreeksen worden niet ondersteund in versienummers. Dit is handig als een uitgever wil een preview-versie van een nieuwe primaire versie na het opgeven van een versie 1.0.0 leveren. Dit wordt ondersteund in een toekomstige versie van de PowerShell Gallery en PowerShellGet-cmdlets.
-- PowerShell en de PowerShell Gallery kunt versietekenreeksen met 1, 2 en 4 segmenten. Veel vroege modules niet voldeed aan de richtlijnen en versies van het product van Microsoft build informatie zoals een 4e blokkeren van de getallen (bijvoorbeeld 5.1.14393.1066) bevatten. Versiebeheer vanuit het oogpunt, van worden deze verschillen genegeerd.
+- Het biedt geen ondersteuning voor Prerelease-teken reeksen in versie nummers. Dit is handig wanneer een uitgever een preview-versie van een nieuwe primaire versie wil leveren na het opgeven van een versie 1.0.0. Dit wordt in een toekomstige versie van de PowerShell Gallery-en PowerShellGet-cmdlets ondersteund.
+- Power shell en de PowerShell Gallery versie teken reeksen met 1, 2 en 4 segmenten toestaan. Veel vroege modules voldoen niet aan de richt lijnen en de product releases van micro soft bevatten bouw gegevens als een 4e blok cijfers (bijvoorbeeld 5.1.14393.1066). Vanuit een oogpunt van versie beheer worden deze verschillen genegeerd.
 
-## <a name="test-using-a-local-repository"></a>Test met behulp van een lokale opslagplaats
+## <a name="test-using-a-local-repository"></a>Testen met een lokale opslag plaats
 
-De PowerShell Gallery is niet ontworpen om te worden van een doel voor het testen van het publicatieproces.
-De beste manier om te testen de end-to-end-proces van publiceren naar de PowerShell Gallery is het instellen en gebruiken van uw eigen lokale opslagplaats.
-Dit kan worden gedaan in een aantal manieren, met inbegrip van:
+De PowerShell Gallery is niet ontworpen om een doel te zijn voor het testen van het publicatie proces.
+De beste manier om het end-to-end proces van publiceren naar het PowerShell Gallery te testen, is door uw eigen lokale opslag plaats in te stellen en te gebruiken.
+Dit kan op verschillende manieren worden gedaan, waaronder:
 
-- Instellen van een lokaal exemplaar van de PowerShell Gallery, met behulp van de [PS particuliere galerie project](https://github.com/PowerShell/PSPrivateGallery) in Github. Dit project preview kunt u een exemplaar van de PowerShell-galerie die u kunt beheren en het gebruik voor de tests uitgevoerd.
-- Instellen van een [interne Nuget opslagplaats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Dit is vereist meer werk om in te stellen, maar heeft het voordeel van de validatie van enkele meer van de vereisten, met name valideren gebruik van een API-sleutel en -of afhankelijkheden aanwezig zijn in de doel-wanneer u publiceert.
-- Een bestandsshare instellen als de test 'opslagplaats'. Dit is eenvoudig om in te stellen, maar omdat dit een bestandsshare, de hierboven aangegeven validaties wordt niet plaatsvinden. Een mogelijke voordeel is in dit geval dat de bestandsshare controleert niet of de API-sleutel (vereist), zodat u kunt dezelfde sleutel u wilt publiceren naar de PowerShell Gallery.
+- Stel een lokale PowerShell Gallery-instantie in met behulp van het PS-project in de [persoonlijke galerie](https://github.com/PowerShell/PSPrivateGallery) in github. Dit preview-project helpt u bij het instellen van een exemplaar van de PowerShell Gallery dat u kunt beheren en gebruiken voor uw tests.
+- Stel een [interne Nuget-opslag plaats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)in. Hiervoor moet meer werk worden ingesteld, maar heeft het voor deel dat er een aantal meer vereisten wordt gevalideerd, met name het gebruik van een API-sleutel en of er afhankelijkheden in het doel aanwezig zijn wanneer u publiceert.
+- Stel een bestands share in als de test opslagplaats. Dit is eenvoudig te configureren, maar omdat het een bestands share is, zullen de hierboven vermelde validaties niet worden uitgevoerd. Een potentiële voor deel in dit geval is dat de bestands share de API-sleutel (vereist) niet controleert, zodat u dezelfde sleutel kunt gebruiken die u naar de PowerShell Gallery zou publiceren.
 
-Met een van deze oplossingen, Register-PSRepository te gebruiken voor het definiëren van een nieuwe '-opslagplaats', die u in de - eigenschap van de opslagplaats voor Publish-Module.
+Met een van deze oplossingen gebruikt u REGI ster-PSRepository voor het definiëren van een nieuwe opslag plaats, die u gebruikt in de eigenschap-repository voor publicatie-module.
 
-Één aanvullende punt over test publiceren: een pakket dat u naar de PowerShell Gallery publiceert kan niet worden verwijderd zonder hulp van het operationele team, die bevestigen zal dat er niets is afhankelijk van het pakket dat u wilt publiceren.
-Om die reden we bieden geen ondersteuning voor de PowerShell Gallery als een doel voor testen en neemt contact met een willekeurige uitgever die doet.
+Een extra punt over het testen van publicaties: elk pakket dat u naar de PowerShell Gallery publiceert, kan niet worden verwijderd zonder hulp van het operations-team, dat ervoor zorgt dat niets afhankelijk is van het pakket dat u wilt publiceren.
+Daarom bieden we geen ondersteuning voor de PowerShell Gallery als test doel en nemen ze contact op met elke uitgever.
 
 ## <a name="use-powershellget-to-publish"></a>PowerShellGet gebruiken om te publiceren
 
-Het is raadzaam dat uitgevers de cmdlets Publish-Module en Publish-Script gebruiken bij het werken met de PowerShell Gallery.
-PowerShellGet is gemaakt om te voorkomen dat belangrijke informatie over het installeren van en publiceren naar de PowerShell Gallery onthouden.
-Soms kunnen hebt uitgevers PowerShellGet overslaan en de NuGet-client of PackageManagement-cmdlets gebruiken in plaats van publiceren-Module.
-Er zijn een aantal aspecten die eenvoudig gemist worden, wat tot een verscheidenheid aan aanvragen voor ondersteuning leidt.
+Het wordt ten zeerste aanbevolen dat uitgevers de cmdlets Publish-module en Publish-script gebruiken wanneer ze met de PowerShell Gallery werken.
+PowerShellGet is gemaakt om u te helpen voor komen dat u belang rijke informatie over de installatie van en publiceert op de PowerShell Gallery.
+In sommige gevallen hebben uitgevers ervoor gekozen om PowerShellGet over te slaan en de NuGet-client of Package Management-cmdlets te gebruiken, in plaats van Publish-module.
+Er zijn een aantal details die eenvoudig worden gemist, wat leidt tot een aantal ondersteunings aanvragen.
 
-Als er een reden is dat u Publish-Module of Publish-Script niet gebruiken, laat het ons weten.
-Bestand is een probleem in de PowerShellGet-GitHub-opslagplaats en geef de details die ertoe leiden dat u om NuGet of PackageManagement te kiezen.
+Als er een reden is dat u de publicatie-module of het publicatie-script niet kunt gebruiken, laat het ons dan weten.
+Verstrek een probleem in de PowerShellGet GitHub opslag plaats en geef de details op die ervoor zorgen dat u NuGet of Package Management kunt kiezen.
 
-## <a name="recommended-workflow"></a>Aanbevolen workflow
+## <a name="recommended-workflow"></a>Aanbevolen werk stroom
 
-De meest succesvolle benadering die we hebben gevonden voor pakketten die zijn gepubliceerd naar de PowerShell Gallery is als volgt:
+De meest succes volle aanpak voor pakketten die zijn gepubliceerd op de PowerShell Gallery, is als volgt:
 
-- Eerste-ontwikkeling in moet een de site van een open source-project. Het PowerShell-Team maakt gebruik van Github.
-- Gebruik van feedback van de revisoren en [Powershell-Script Analyzer](https://aka.ms/psscriptanalyzer) om op te halen van de code naar een stabiele status
-- Documentatie, bevatten, zodat anderen weten hoe u uw werk
-- Test de publishing actie uitgevoerd met een lokale opslagplaats.
-- Een stabiele of Alpha-release publiceren naar de PowerShell Gallery, zorg ervoor dat u de documentatie en een koppeling naar de projectsite van uw
-- Verzamelen van feedback en herhalen op de code in uw project-site en vervolgens stabiel updates publiceren naar de PowerShell Gallery
-- Voorbeelden en Pester tests in de module en uw project toevoegen
-- Beslissen of u om code te wilt ondertekenen van uw pakket
-- Als u denkt het project is klaar dat voor gebruik in een productieomgeving, publiceert u een 1.0.0 versie naar de PowerShell Gallery
-- Doorgaan met het verzamelen van feedback en herhalen op uw code op basis van de invoer van de gebruiker
+- Doe de eerste ontwikkeling in een open-source project site. Het Power shell-team maakt gebruik van github.
+- Feedback van revisoren en [Power shell script Analyzer](https://aka.ms/psscriptanalyzer) gebruiken om de code naar stabiele status te verkrijgen
+- Documentatie toevoegen, zodat anderen weten hoe u uw werk kunt gebruiken
+- Test de publicatie actie met een lokale opslag plaats.
+- Publiceer een stabiele of alpha-versie naar de PowerShell Gallery en zorg ervoor dat u de documentatie toevoegt en een koppeling maakt naar de project site
+- Verzamel feedback en herhaal de code in uw project site en publiceer stabiele updates naar de PowerShell Gallery
+- Voor beelden en Ziekteloze tests toevoegen in uw project en uw module
+- Bepaal of u uw pakket wilt ondertekenen met code
+- Wanneer u denkt dat het project gereed is voor gebruik in een productie omgeving, kunt u een 1.0.0-versie publiceren naar de PowerShell Gallery
+- Blijf feedback verzamelen en herhaal uw code op basis van gebruikers invoer

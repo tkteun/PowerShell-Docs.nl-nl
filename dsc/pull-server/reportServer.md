@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC-rapportserver gebruiken
-ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079231"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986554"
 ---
 # <a name="using-a-dsc-report-server"></a>Een DSC-rapportserver gebruiken
 
-Van toepassing op: Windows PowerShell 5.0
+Van toepassing op: Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](pullserver.md#community-solutions-for-pull-service).
+> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) [](pullserver.md#community-solutions-for-pull-service)of een van de hieronder vermelde Community-oplossingen.
 >
 > [!NOTE]
-> De rapportserver die in dit onderwerp is niet beschikbaar in PowerShell 4.0.
+> De rapport server die in dit onderwerp wordt beschreven, is niet beschikbaar in Power Shell 4,0.
 
-De lokale Configuration Manager (LCM) van een knooppunt kan worden geconfigureerd voor het verzenden van rapporten over de status van de configuratie met een pull-server, die vervolgens kan worden opgevraagd die gegevens op te halen. Telkens wanneer het knooppunt wordt gecontroleerd en van toepassing is een configuratie, stuurt deze een rapport op de rapportserver. Deze rapporten worden opgeslagen in een database op de server en kunnen worden opgehaald door het aanroepen van de reporting webservice. Elk rapport bevat informatie zoals welke configuraties zijn toegepast en of deze is voltooid, de resources gebruikt, eventuele fouten die zijn gegenereerd, en begin- en eindtijden.
+De lokale Configuration Manager (LCM) van een knoop punt kan worden geconfigureerd voor het verzenden van rapporten over de configuratie status naar een pull-server, die vervolgens kan worden opgevraagd om die gegevens op te halen. Telkens wanneer het knoop punt een configuratie controleert en toepast, wordt een rapport verzonden naar de rapport server. Deze rapporten worden opgeslagen in een Data Base op de server en kunnen worden opgehaald door de webservice voor rapporten aan te roepen. Elk rapport bevat informatie zoals de configuraties die zijn toegepast en of ze zijn geslaagd, de gebruikte resources, fouten die zijn opgetreden, en begin-en eind tijden.
 
-## <a name="configuring-a-node-to-send-reports"></a>Configureren van een knooppunt voor het verzenden van rapporten
+## <a name="configuring-a-node-to-send-reports"></a>Een knoop punt configureren voor het verzenden van rapporten
 
-U zien dat een knooppunt om rapporten te verzenden naar een server met behulp van een **ReportServerWeb** blokkeren in de knooppuntconfiguratie LCM (Zie voor meer informatie over het configureren van de LCM [de Local Configuration Manager configureren](../managing-nodes/metaConfig.md) ). De server waarop het knooppunt worden rapporten verzonden moet worden ingesteld als een web-pull-server (u kunt geen rapporten verzenden naar een SMB-share). Zie voor meer informatie over het instellen van een pull-server [instellen van een DSC-pull-endwebserver](pullServer.md). De rapportserver kan dezelfde service waarvan het knooppunt haalt configuraties en -resources ophaalt, of een andere service kan zijn.
+U geeft een knoop punt de opdracht om rapporten naar een server te verzenden met behulp van een **ReportServerWeb** -blok in de LCM-configuratie van het knoop punt (Zie [Configuring the local Configuration Manager](../managing-nodes/metaConfig.md)) voor meer informatie over het configureren van de LCM. De server waarnaar het knoop punt rapporten verzendt, moet worden ingesteld als een webpull-server (u kunt geen rapporten verzenden naar een SMB-share). Zie [een DSC Web-pull-server instellen](pullServer.md)voor meer informatie over het instellen van een pull-server. De rapport server kan dezelfde service zijn als waaruit het knoop punt configuraties ophaalt en resources ophaalt, of het kan een andere service zijn.
 
-In de **ReportServerWeb** blok, u de URL van de pull-service en een registratiesleutel die bekend is met de server opgeven.
+In het **ReportServerWeb** -blok geeft u de URL van de pull-service en een registratie sleutel op die bekend is bij de-server.
 
-De volgende configuratie wordt een knooppunt geconfigureerd voor pull-configuraties van de ene service en rapporten verzenden naar een service op een andere server.
+Met de volgende configuratie configureert u een knoop punt voor het ophalen van configuraties van één service, en verzendt u rapporten naar een service op een andere server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ configuration ReportClientConfig
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCPullServer.svc'
             RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }
@@ -61,7 +61,7 @@ configuration ReportClientConfig
 ReportClientConfig
 ```
 
-De volgende configuratie configureert u een knooppunt voor het gebruik van één server voor configuraties, resources en rapportage.
+Met de volgende configuratie configureert u een knoop punt voor het gebruik van één server voor configuraties, resources en rapportage.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -94,16 +94,16 @@ PullClientConfig
 ```
 
 > [!NOTE]
-> U kunt de webservice naam wat u wilt dat bij het instellen van een pull-server, maar de **ServerURL** eigenschap moet overeenkomen met de naam van de service.
+> U kunt de webservice een naam, wat u wilt wanneer u een pull-server instelt, maar de **ServerURL** -eigenschap moet overeenkomen met de service naam.
 
-## <a name="getting-report-data"></a>Ophalen van rapportgegevens
+## <a name="getting-report-data"></a>Rapport gegevens ophalen
 
-Rapporten die worden verzonden naar de pull-server worden ingevoerd in een database op de server. De rapporten zijn beschikbaar via aanroepen naar de webservice. Om op te halen rapporten voor een bepaald knooppunt, door een HTTP-aanvraag te verzenden naar de webservice rapport in de volgende notatie: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-waar `MyNodeAgentId` is de AgentId van het knooppunt waarvan u wilt ophalen van rapporten. U kunt de AgentID voor een knooppunt krijgen door het aanroepen van [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) op dat knooppunt.
+Rapporten die worden verzonden naar de pull-server, worden ingevoerd in een Data Base op de server. De rapporten zijn beschikbaar via aanroepen van de webservice. Als u rapporten wilt ophalen voor een specifiek knoop punt, verzendt u een HTTP-aanvraag naar de webservice voor rapporten in de volgende vorm:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+waarbij `MyNodeAgentId` de AgentId is van het knoop punt waarvoor u rapporten wilt ophalen. U kunt de AgentID voor een knoop punt ophalen door [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) op dat knoop punt aan te roepen.
 
-De rapporten worden geretourneerd als een matrix met JSON-objecten.
+De rapporten worden geretourneerd als een matrix van JSON-objecten.
 
-Het volgende script retourneert de rapporten voor het knooppunt waarop deze wordt uitgevoerd:
+Het volgende script retourneert de rapporten voor het knoop punt waarop het wordt uitgevoerd:
 
 ```powershell
 function GetReport
@@ -123,9 +123,9 @@ function GetReport
 }
 ```
 
-## <a name="viewing-report-data"></a>Rapportgegevens weergeven
+## <a name="viewing-report-data"></a>Rapport gegevens weer geven
 
-Als u een variabele op het resultaat van instellen de **GetReport** functie, kunt u de afzonderlijke velden weergeven in een element van de matrix die is geretourneerd:
+Als u een variabele instelt op het resultaat van de functie **GetReport** , kunt u de afzonderlijke velden weer geven in een element van de geretourneerde matrix:
 
 ```powershell
 $reports = GetReport
@@ -166,14 +166,14 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-De rapporten worden standaard gesorteerd op **JobID**. Als u de meest recente rapport, kunt u de rapporten sorteren op Aflopend **StartTime** eigenschap en get het eerste element van de matrix:
+Standaard worden de rapporten gesorteerd op **JobID**. Als u het meest recente rapport wilt ophalen, kunt u de rapporten sorteren op aflopende eigenschap **StartTime** en vervolgens het eerste element van de matrix ophalen:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-U ziet dat de **StatusData** eigenschap is een object met een aantal eigenschappen. Dit is waar veel van de rapportagegegevens. Bekijk de afzonderlijke velden van de **StatusData** eigenschap voor de meest recente rapport:
+U ziet dat de eigenschap **StatusData** een object met een aantal eigenschappen bevat. Dit is het gedeelte van de rapport gegevens. Laten we eens kijken naar de afzonderlijke velden van de eigenschap **StatusData** voor het meest recente rapport:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -213,7 +213,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Onder andere ziet dat de meest recente configuratie met de naam twee resources, en dat een van beide in de gewenste status is en een van deze niet is. Krijgt u een beter leesbare uitvoer van alleen de **ResourcesNotInDesiredState** eigenschap:
+Dit laat onder andere zien dat de meest recente configuratie twee resources heet en dat een van de onderdelen de gewenste status heeft, en dat een van beide is. U kunt een lees bare uitvoer van alleen de eigenschap **ResourcesNotInDesiredState** verkrijgen:
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -233,12 +233,12 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Houd er rekening mee dat deze voorbeelden zijn bedoeld om aan te geven u een idee van wat u met de rapportgegevens doen kunt. Zie voor een inleiding over het werken met JSON in PowerShell [spelen met JSON- en PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Deze voor beelden zijn bedoeld om u een idee te geven van wat u met rapport gegevens kunt doen. Zie voor een inleiding over het werken met JSON in Power shell [afspelen met JSON en Power shell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Zie ook
 
-[De Local Configuration Manager configureren](../managing-nodes/metaConfig.md)
+[De lokale Configuration Manager configureren](../managing-nodes/metaConfig.md)
 
-[Instellen van een DSC-pull-endwebserver](pullServer.md)
+[Een DSC Web-pull-server instellen](pullServer.md)
 
 [Een pull-client instellen met behulp van configuratienamen](pullClientConfigNames.md)

@@ -1,5 +1,5 @@
 ---
-title: Cmdlet die fouten rapporteren | Microsoft Docs
+title: Fout rapportage voor cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068586"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986312"
 ---
-# <a name="cmdlet-error-reporting"></a>Foutrapportage voor cmdlets
+# <a name="cmdlet-error-reporting"></a>Fout rapportage voor cmdlets
 
-Cmdlets wilt laten rapporteren fouten anders, afhankelijk van of de fouten fouten wordt beëindigd of afsluitfouten. Afsluitende fouten zijn fouten die ertoe leiden dat de pijplijn moet onmiddellijk worden beëindigd of fouten die zich voordoen als er geen reden om door te gaan met de verwerking. Afsluitfouten zijn die fouten die een huidige fout rapporteren, maar de cmdlet kunt doorgaan met het verwerken van invoer objecten. De gebruiker is doorgaans op de hoogte gesteld van het probleem met afsluitfouten, maar de cmdlet voor het verwerken van de volgende invoerobject blijft.
+Cmdlets moeten fouten anders rapporteren, afhankelijk van het feit of fouten of niet-afsluit fouten worden afgesloten. Afsluit fouten zijn fouten die ervoor zorgen dat de pijp lijn onmiddellijk wordt beëindigd of fouten die optreden wanneer er geen reden is om de verwerking voort te zetten. Niet-afsluit fouten zijn die fouten die een actuele fout hebben gerapporteerd, maar de cmdlet kan invoer objecten blijven verwerken. Bij niet-afsluit fouten wordt de gebruiker doorgaans op de hoogte gesteld van het probleem, maar de cmdlet blijft het volgende invoer object verwerken.
 
-## <a name="terminating-and-nonterminating-errors"></a>Afsluitfouten als Nonterminating
+## <a name="terminating-and-nonterminating-errors"></a>Fout bij beëindigen en niet afsluiten
 
-De volgende richtlijnen kunnen worden gebruikt om te bepalen of een fout wordt er een afsluitfout of een nonterminating-fout.
+De volgende richt lijnen kunnen worden gebruikt om te bepalen of een fout een afsluit fout of een niet-afsluit fout is.
 
-- Het probleem voorkomt dat uw cmdlet verwerken, is geen verdere invoer objecten? Als dit het geval is, is dit een afsluitfout.
+- Wordt de fout voor komen dat uw cmdlet verdere invoer objecten verwerkt? Als dit het geval is, is dit een afsluit fout.
 
-- Is het probleem met betrekking tot een specifiek object van de invoer of een subset van invoer objecten? Als dit het geval is, is dit een nonterminating fout.
+- Is de fout voorwaarde gerelateerd aan een specifiek invoer object of een subset van invoer objecten? Als dit het geval is, is dit een niet-afsluit fout.
 
-- Accepteert de cmdlet meerdere invoer-objecten, zoals dat verwerking mogelijk wel op een andere invoerobject? Als dit het geval is, is dit een nonterminating fout.
+- Accepteert de cmdlet meerdere invoer objecten, zodat de verwerking kan slagen voor een ander invoer object? Als dit het geval is, is dit een niet-afsluit fout.
 
-- Cmdlets die meerdere invoer objecten kunt accepteren moet kiezen tussen wat wordt beëindigd en afsluitfouten, zelfs wanneer een bepaalde situatie is van toepassing op slechts één invoer-object.
+- Cmdlets die meerdere invoer objecten kunnen accepteren, moeten bepalen wat er moet worden beëindigd en niet-afsluit fouten, zelfs wanneer een bepaalde situatie alleen van toepassing is op één invoer object.
 
-- Cmdlets kan een willekeurig aantal invoer objecten ontvangen en verzenden van een willekeurig aantal objecten voltooid of fout voordat u die een afsluitende uitzondering veroorzaakt. Er is geen relatie tussen het aantal invoer ontvangen van objecten en het aantal succes- en objecten die zijn verzonden.
+- Cmdlets kunnen elk wille keurig aantal invoer objecten ontvangen en een wille keurig aantal geslaagde of fout objecten verzenden voordat een afsluitende uitzonde ring wordt gegenereerd. Er is geen relatie tussen het aantal ontvangen invoer objecten en het aantal geslaagde en fout objecten dat is verzonden.
 
-- Cmdlets kan accepteren alleen 0-1 invoer objecten en alleen 0-1 genereren uitvoer van objecten moeten fouten behandelen als fouten wordt beëindigd en wordt beëindigd uitzonderingen genereren.
+- Cmdlets die slechts 0-1 invoer objecten kunnen accepteren en alleen uitvoer objecten van 0-1 genereren, moeten fouten behandelen als afsluit fouten en het genereren van afsluit uitzonderingen.
 
-## <a name="reporting-nonterminating-errors"></a>Rapportage afsluitfouten
+## <a name="reporting-nonterminating-errors"></a>Niet-afsluit fouten rapporteren
 
-De rapportage van een nonterminating fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet van de [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode, de [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) methode, of de [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) methode. Dergelijke fouten worden gerapporteerd door het aanroepen van de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) methode die op zijn beurt een foutrecord worden verzonden naar de foutstroom.
+De rapportage van een niet-afsluit fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de methode [System. Management. Automation](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . cmdlet. ProcessRecord of de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Deze typen fouten worden gerapporteerd door het aanroepen van de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) die op zijn beurt een fout record naar de fout stroom verzendt.
 
-## <a name="reporting-terminating-errors"></a>Rapportage van fouten wordt beëindigd
+## <a name="reporting-terminating-errors"></a>Fout bij het rapporteren van het rapport
 
-Afsluitende fouten worden gerapporteerd door uitzonderingen of door het aanroepen van de [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) methode. Let erop dat cmdlets ook ontdekken en uitzonderingen, zoals OutOfMemory opnieuw genereert, maar ze zijn niet verplicht om opnieuw uitzonderingen genereren als de Windows PowerShell-runtime ze ook worden catch.
+Afsluit fouten worden gerapporteerd door uitzonde ringen te genereren of door het aanroepen van de methode [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Houd er rekening mee dat cmdlets ook uitzonde ringen kunnen ondervangen en genereren, zoals **OutOfMemory**, maar ze zijn niet vereist voor het opnieuw genereren van uitzonde ringen omdat de Power shell-runtime deze ook kan onderscheppen.
 
-U kunt ook uw eigen uitzonderingen definiëren voor problemen die specifiek zijn voor uw situatie of aanvullende informatie toevoegen aan een bestaande uitzondering met behulp van de foutrecord.
+U kunt ook uw eigen uitzonde ringen definiëren voor problemen die specifiek zijn voor uw situatie, of extra informatie toevoegen aan een bestaande uitzonde ring met behulp van de fout record.
 
-## <a name="error-records"></a>Foutrecords
+## <a name="error-records"></a>Fout records
 
-Windows PowerShell beschrijft een nonterminating fout via het gebruik van [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objecten. Elke [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) object biedt foutinformatie categorie, een optionele doelobject en meer informatie over het probleem.
+In Power shell wordt een niet-afsluit fout beschreven met [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -objecten. Elk object bevat informatie over de fout categorie, een optioneel doel object en Details over de fout voorwaarde.
 
-### <a name="error-identifiers"></a>Fout-id 's
+### <a name="error-identifiers"></a>Fout-id's
 
-De fout-id is een eenvoudige tekenreeks die de fout in de cmdlet aanduidt. Windows PowerShell combineert deze met een cmdlet-id voor het maken van een volledig gekwalificeerde fout-id die later kan worden gebruikt bij het filteren van foutstromen of logboekregistratie van fouten, reageren op specifieke fouten, of met andere activiteiten voor specifieke gebruikers-id.
+De fout-id is een eenvoudige teken reeks waarmee de fout voorwaarde binnen de cmdlet wordt geïdentificeerd.
+Power shell combineert deze id met een cmdlet-id om een volledig gekwalificeerde fout-id te maken die later kan worden gebruikt bij het filteren van fout stromen of logboek registratie fouten, wanneer deze reageert op specifieke fouten of met andere gebruikersspecifieke activiteiten.
 
-De volgende richtlijnen moeten worden gevolgd als fout-id's op te geven.
+De volgende richt lijnen moeten worden gevolgd wanneer fout-id's worden opgegeven:
 
-- Andere, zeer specifieke fout-id's toewijzen aan andere codepaden. Elk codepad die worden aangeroepen [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) zijn eigen fout-id moet hebben.
+- Verschillende, zeer specifieke fout-id's toewijzen aan verschillende code paden. Elk codepad dat [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) aanroept, moet een eigen fout-id hebben.
 
-- Fout-id's moeten uniek zijn voor CLR-uitzonderingstypen voor zowel afsluitfouten als nonterminating.
+- Fout-id's moeten uniek zijn voor uitzonderings typen van common language runtime (CLR) voor zowel afsluit-als niet-afsluit fouten.
 
-- De semantiek van een fout-id tussen versies van de cmdlet of Windows PowerShell-provider niet wijzigen. Wanneer de semantiek van een fout-id is ingesteld, moet deze ongewijzigd blijft gedurende de levenscyclus van de cmdlet.
+- Wijzig niet de semantiek van een fout-id tussen versies van uw cmdlet of Power shell-provider. Nadat de semantiek van een fout-id tot stand is gebracht, moet deze gedurende de levens cyclus van de cmdlet constant blijven.
 
-- Gebruik een unieke fout-id voor een bepaald type van de CLR-uitzondering voor de afsluitende fouten. Als het uitzonderingstype wordt gewijzigd, gebruikt u een nieuwe fout-id.
+- Gebruik voor het beëindigen van fouten een unieke fout-id voor een bepaald CLR-uitzonderings type. Als het type uitzonde ring wordt gewijzigd, gebruikt u een nieuwe fout-id.
 
-- Voor afsluitfouten, gebruikt u een specifieke fout-id voor een specifiek object van de invoer.
+- Gebruik voor niet-afsluit fouten een specifieke fout-id voor een specifiek invoer object.
 
-- Kies tekst voor de id die tersely komt overeen met de fout wordt gerapporteerd. Gebruik geen spaties of leestekens.
+- Kies tekst voor de id die tersely overeenkomt met de fout die wordt gerapporteerd. Gebruik geen spaties of lees tekens.
 
-- Geen fout-id's die niet reproduceerbaar worden gegenereerd. Bijvoorbeeld, id's die een proces-id niet genereren. Fout-id's zijn handig alleen als ze overeenkomen met de id's die zijn zichtbaar voor andere gebruikers die hetzelfde probleem ondervindt.
+- Genereer geen fout-id's die niet reproduceerbaar zijn. Genereer bijvoorbeeld geen id's die een proces-id bevatten. Fout-id's zijn alleen nuttig wanneer ze overeenkomen met id's die worden gezien door andere gebruikers die hetzelfde probleem ondervinden.
 
-### <a name="error-categories"></a>Foutcategorieën
+### <a name="error-categories"></a>Fout Categorieën
 
-Foutcategorieën worden gebruikt voor het groeperen van fouten voor de eindgebruiker. Windows PowerShell definieert deze categorieën en -cmdlets en providers van Windows PowerShell moeten kiezen tussen deze bij het genereren van de foutrecord.
+Fout categorieën worden gebruikt om fouten te groeperen voor de gebruiker. In Power shell worden deze categorieën en cmdlets en Power shell-providers gedefinieerd om te kiezen bij het genereren van de fout record.
 
-Zie voor een beschrijving van de foutcategorieën die beschikbaar zijn, de [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) opsomming. In het algemeen Vermijd het gebruik van NoError UndefinedError en GenericError indien mogelijk.
+Zie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -inventarisatie voor een beschrijving van de fout categorieën die beschikbaar zijn. Over het algemeen moet u voor komendat u, indien mogelijk, **UndefinedError**en **algemene fout** gebruiken.
 
-Gebruikers kunnen fouten op basis van categorie wanneer ze ingesteld bekijken '`$ErrorView`' naar 'CategoryView'.
+Gebruikers kunnen fouten weer geven op basis van categorie wanneer `$ErrorView` ze zijn ingesteld op **CategoryView**.
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell-Cmdlets](./cmdlet-overview.md)
+[Overzicht van de cmdlet](./cmdlet-overview.md)
 
-[Cmdlet-uitvoer](./types-of-cmdlet-output.md)
+[Typen cmdlet-uitvoer](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Naslag informatie voor Windows Power shell](../windows-powershell-reference.md)

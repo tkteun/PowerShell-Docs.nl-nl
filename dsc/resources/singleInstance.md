@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC-resource met één instantie schrijven (aanbevolen)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076562"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986521"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Een DSC-resource met één instantie schrijven (aanbevolen)
 
->**Opmerking:** Dit onderwerp beschrijft een aanbevolen procedure voor het definiëren van een DSC-resource waarmee slechts één exemplaar in een configuratie. Er is momenteel geen ingebouwde DSC-functie om dit te doen. Dat kan worden gewijzigd in de toekomst.
+>**Opmerking:** Dit onderwerp beschrijft een best practice voor het definiëren van een DSC-resource waarmee slechts één exemplaar in een configuratie kan worden gedefinieerd. Er is momenteel geen ingebouwde DSC-functie om dit te doen. Dit kan in de toekomst worden gewijzigd.
 
-Er zijn situaties waar u niet toestaan dat een resource wilt aan meerdere keren worden gebruikt in een configuratie. Bijvoorbeeld, in een eerdere implementatie van de [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, een configuratie kan aanroepen de bron meerdere keren, de tijdzone instellen op een andere instelling in elk blok resource:
+Er zijn situaties waarin u niet wilt toestaan dat een resource meerdere keren in een configuratie wordt gebruikt. Zo kan een configuratie in een eerdere implementatie van de [xTimeZone](https://github.com/PowerShell/xTimeZone) -resource meerdere keren aanroepen, waarbij de tijd zone wordt ingesteld op een andere instelling in elk resource blok:
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-Dit is vanwege de manier waarop sleutels voor DSC-resource werken. Een bron moet ten minste één sleuteleigenschap hebben. Een exemplaar van de resource wordt beschouwd als uniek als de combinatie van de waarden van alle van de sleuteleigenschappen uniek is. In de vorige implementatie, de [xTimeZone](https://github.com/PowerShell/xTimeZone) resource heeft slechts één eigenschap--**tijdzone**, die een sleutel is vereist. Als gevolg hiervan, zou een configuratie, zoals hierboven compileren en uitvoeren zonder waarschuwing. Elk van de **xTimeZone** resource blokken wordt beschouwd als uniek. Hierdoor zou de configuratie van meerdere keren worden toegepast op het knooppunt, functioneert de tijdzone heen en weer.
+Dit komt door de manier waarop DSC-resource sleutels werken. Een resource moet ten minste één sleutel eigenschap hebben. Een bron exemplaar wordt als uniek beschouwd als de combi natie van de waarden van alle sleutel eigenschappen uniek is. In de vorige implementatie heeft de [xTimeZone](https://github.com/PowerShell/xTimeZone) -resource slechts één eigenschap--**time zone**, die vereist is om een sleutel te zijn. Als gevolg hiervan zou een configuratie zoals die hierboven zou worden gecompileerd en uitgevoerd zonder waarschuwing. Elk van de **xTimeZone** -resource blokken wordt als uniek beschouwd. Hierdoor wordt de configuratie herhaaldelijk toegepast op het knoop punt, en wordt de tijd zone terug en weer gegeven.
 
-Om ervoor te zorgen dat een configuratie met de tijdzone voor een doelknooppunt kan ingesteld alleen één keer, de resource is bijgewerkt om toe te voegen een tweede eigenschap **IsSingleInstance**, die de sleuteleigenschap is geworden.
-De **IsSingleInstance** is beperkt tot één waarde, "Ja" met behulp van een **ValueMap**. Het oude MOF-schema voor de resource is:
+Om ervoor te zorgen dat een configuratie de tijd zone voor een doel knooppunt slechts eenmaal kan instellen, is de resource bijgewerkt om een tweede eigenschap toe te voegen, **IsSingleInstance**, die de sleutel eigenschap werd geworden.
+De **IsSingleInstance** is beperkt tot één waarde, ' Yes ' door een **ValueMap**te gebruiken. Het oude MOF-schema voor de resource is:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-De resource-script is tevens bijgewerkt voor het gebruik van de nieuwe parameter. Dit is de oude resource-script:
+Het bron script is ook bijgewerkt voor gebruik van de nieuwe para meter. Hier ziet u hoe het bron script is gewijzigd:
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-U ziet dat de **tijdzone** eigenschap is niet langer een sleutel. Als een configuratie met twee keer de tijdzone instellen probeert nu (met behulp van twee verschillende **xTimeZone** blokken met verschillende **tijdzone** waarden), probeert de configuratie compileren, wordt een fout veroorzaken:
+U ziet dat de eigenschap **time zone** niet langer een sleutel is. Als een configuratie nu twee keer probeert om de tijd zone in te stellen (door gebruik te maken van twee verschillende **xTimeZone** -blokken met verschillende **Tijdzone** waarden), treedt er een fout op:
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and

@@ -1,5 +1,5 @@
 ---
-title: Cmdlet dynamische Parameters | Microsoft Docs
+title: Cmdlet dynamische para meters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068535"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986243"
 ---
-# <a name="cmdlet-dynamic-parameters"></a>Dynamische cmdlet-parameters
+# <a name="cmdlet-dynamic-parameters"></a>Cmdlet dynamische para meters
 
-Cmdlets kunt parameters definiëren die beschikbaar voor de gebruiker in speciale omstandigheden zijn, zoals wanneer het argument van een andere parameter is voor een specifieke waarde. Deze parameters worden toegevoegd tijdens runtime en worden aangeduid als *dynamische parameters* omdat ze worden toegevoegd wanneer ze wel nodig zijn. U kunt bijvoorbeeld een cmdlet die door verschillende parameters worden toegevoegd als een specifieke switch-parameter is opgegeven ontwerpen.
+Met cmdlets kunt u para meters definiëren die beschikbaar zijn voor de gebruiker onder speciale omstandigheden, zoals wanneer het argument van een andere para meter een specifieke waarde is. Deze para meters worden toegevoegd tijdens runtime en worden aangeduid als dynamische para meters, omdat ze alleen worden toegevoegd wanneer dit nodig is. U kunt bijvoorbeeld een cmdlet ontwerpen waarmee meerdere para meters worden toegevoegd wanneer een specifieke switch parameter wordt opgegeven.
 
 > [!NOTE]
-> Providers en -functies van Windows PowerShell kunnen u ook dynamische parameters definiëren.
+> Providers en Power shell-functies kunnen ook dynamische para meters definiëren.
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>Dynamische Parameters in Windows PowerShell-Cmdlets
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>Dynamische para meters in Power shell-cmdlets
 
-Windows PowerShell maakt gebruik van dynamische parameters in een aantal van de provider-cmdlets. Bijvoorbeeld, de `Get-Item` en `Get-ChildItem` cmdlets toevoegen een `CodeSigningCert` parameter tijdens runtime wanneer de `Path` parameter van de cmdlet geeft u het pad naar de provider van het certificaat. Als de `Path` parameter van de cmdlet geeft u het pad voor een andere provider de `CodeSigningCert` parameter is niet beschikbaar.
+Power shell gebruikt dynamische para meters in verschillende provider-cmdlets. De `Get-Item` `Get-ChildItem` cmdlets en voegen bijvoorbeeld tijdens runtime een **CodeSigningCert** -para meter toe wanneer de para meter **Path** het pad naar de **certificaat** provider specificeert. Als met de para meter **Path** een pad voor een andere provider wordt opgegeven, is de para meter **CodeSigningCert** niet beschikbaar.
 
-De volgende voorbeelden ziet u hoe de `CodeSigningCert` parameter tijdens runtime wordt toegevoegd wanneer de `Get-Item` cmdlet wordt uitgevoerd.
+In de volgende voor beelden ziet u hoe de para meter **CodeSigningCert** wordt `Get-Item` toegevoegd tijdens runtime wanneer wordt uitgevoerd.
 
-In het eerste voorbeeld, de Windows PowerShell-runtime is toegevoegd met de parameter en de cmdlet is voltooid.
+In dit voor beeld heeft de Power shell-runtime de para meter toegevoegd en is de cmdlet geslaagd.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-Een bestandssysteem-station is opgegeven in het tweede voorbeeld, en wordt een fout geretourneerd. Het foutbericht geeft aan dat de `CodeSigningCert` parameter kan niet worden gevonden.
+In dit voor beeld wordt een bestandssysteem station opgegeven en wordt er een fout geretourneerd. Het fout bericht geeft aan dat de para meter **CodeSigningCert** niet kan worden gevonden.
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -54,19 +54,25 @@ At line:1 char:37
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 ```
 
-## <a name="support-for-dynamic-parameters"></a>Ondersteuning voor dynamische Parameters
+## <a name="support-for-dynamic-parameters"></a>Ondersteuning voor dynamische para meters
 
-Ter ondersteuning van dynamische parameters, moet de cmdlet-code de volgende elementen bevatten.
+Voor het ondersteunen van dynamische para meters moeten de volgende elementen worden opgenomen in de cmdlet-code.
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) deze interface biedt de methode waarmee de dynamische parameters worden opgehaald.
+### <a name="interface"></a>Interface
 
-Voorbeeld:
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
+Deze interface biedt de methode waarmee de dynamische para meters worden opgehaald.
+
+Bijvoorbeeld:
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) deze methode haalt het object dat de definities van de dynamische parameter bevat.
+### <a name="method"></a>Methode
 
-Voorbeeld:
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
+Deze methode haalt het object op dat de dynamische parameter definities bevat.
+
+Bijvoorbeeld:
 
 ```csharp
  public object GetDynamicParameters()
@@ -81,9 +87,11 @@ Voorbeeld:
 private SendGreetingCommandDynamicParameters context;
 ```
 
-Dynamische Parameter-klasse deze klasse definieert de parameters moeten worden toegevoegd. Deze klasse moet een parameterkenmerk voor elke parameter en een optionele Alias en validatie aan de kenmerken die nodig zijn door de cmdlet bevatten.
+### <a name="class"></a>Klasse
 
-Voorbeeld:
+Een klasse die de dynamische para meters definieert die moeten worden toegevoegd. Deze klasse moet een **parameter** kenmerk voor elke para meter en eventuele optionele **alias** -en **validatie** kenmerken bevatten die nodig zijn voor de cmdlet.
+
+Bijvoorbeeld:
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -99,14 +107,14 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-Zie voor een compleet voorbeeld van een cmdlet die ondersteuning biedt voor dynamische parameters, [hoe u dynamische Parameters declareren](./how-to-declare-dynamic-parameters.md).
+Zie [dynamische para meters declareren](./how-to-declare-dynamic-parameters.md)voor een volledig voor beeld van een cmdlet die dynamische para meters ondersteunt.
 
 ## <a name="see-also"></a>Zie ook
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Hoe u dynamische Parameters declareren](./how-to-declare-dynamic-parameters.md)
+[Dynamische para meters declareren](./how-to-declare-dynamic-parameters.md)
 
-[Schrijven van een Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
