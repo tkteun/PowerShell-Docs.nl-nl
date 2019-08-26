@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: Externe communicatie van powershell
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: Overzicht
+              href: learn/remoting/jea/overview.md
+            - name: Vereisten
+              href: learn/remoting/jea/prerequisites.md
+            - name: Rolmogelijkheden
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Sessieconfiguraties
+              href: learn/remoting/jea/session-configurations.md
+            - name: JEA registreren
+              href: learn/remoting/jea/register-jea.md
+            - name: JEA gebruiken
+              href: learn/remoting/jea/using-jea.md
+            - name: Beveiligingsoverwegingen
+              href: learn/remoting/jea/security-considerations.md
+            - name: Controle en rapportage van JEA
+              href: learn/remoting/jea/audit-and-report.md
         - name: Externe opdrachten uitvoeren
           href: learn/remoting/running-remote-commands.md
         - name: Externe communicatie van PowerShell via SSH
