@@ -12,6 +12,8 @@
   items:
     - name: Aan de slag gaan met DSC voor Linux
       href: getting-started/lnxGettingStarted.md
+    - name: Aan de slag gaan met DSC voor Windows
+      href: getting-started/winGettingStarted.md
     - name: Aan de slag gaan met DSC op Nano
       href: getting-started/nanoDSC.md
     - name: Aan de slag gaan met DSC in Azure Automation
