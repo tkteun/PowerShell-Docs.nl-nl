@@ -1,73 +1,83 @@
 ---
-title: Ondersteuning van jokertekens in de Cmdlet-Parameters | Microsoft Docs
+title: Ondersteuning voor jokertekens in de cmdlet-parameters
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067396"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104447"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ondersteuning voor jokertekens in de cmdlet-parameters
 
-U moet vaak ontwerpen van een cmdlet uit te voeren op basis van een groep resources in plaats van op basis van één resource. Bijvoorbeeld, moet een cmdlet mogelijk Zoek alle bestanden in een gegevensarchief met dezelfde naam of -extensie. U moet ondersteuning bieden voor jokertekens bij het ontwerpen van een cmdlet die wordt uitgevoerd op basis van een groep resources.
+Vaak moet u een cmdlet ontwerpen om uit te voeren op basis van een groep resources en niet op basis van één resource. Een cmdlet kan bijvoorbeeld alle bestanden in een gegevens archief met dezelfde naam of extensie moeten zoeken. U moet ondersteuning bieden voor joker tekens wanneer u een cmdlet ontwerpt die wordt uitgevoerd voor een groep resources.
 
 > [!NOTE]
-> Met jokertekens wordt soms aangeduid als *bij globbing*.
+> Het gebruik van joker tekens wordt soms ook wel *globbing*genoemd.
 
-## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows PowerShell-Cmdlets die gebruikmaken van jokertekens
+## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows Power shell-cmdlets die gebruikmaken van joker tekens
 
- Veel Windows PowerShell-cmdlets voor ondersteuning voor jokertekens voor hun parameterwaarden. Bijna elke cmdlet die heeft bijvoorbeeld een `Name` of `Path` parameter ondersteunt jokertekens voor deze parameters. (Hoewel de meeste cmdlets die beschikken over een `Path` parameter hebben ook een `LiteralPath` parameter die geen ondersteuning biedt voor jokertekens bevatten.) De volgende opdracht laat zien hoe een jokerteken wordt gebruikt voor het retourneren van alle cmdlets in de huidige sessie waarvan de naam van de Get-bewerking bevat.
+ Veel Windows Power shell-cmdlets ondersteunen joker tekens voor hun parameter waarden. Bijna elke cmdlet met een `Name` or `Path` -para meter ondersteunt bijvoorbeeld joker tekens voor deze para meters. (Hoewel de meeste cmdlets die een `Path` para meter hebben ook `LiteralPath` een para meter hebben die geen joker tekens ondersteunt.) De volgende opdracht laat zien hoe een Joker teken wordt gebruikt om alle cmdlets in de huidige sessie te retour neren waarvan de naam de bewerking Get bevat.
 
- **PS > get-opdracht get -\***
+ `Get-Command get-*`
 
-## <a name="supported-wildcard-characters"></a>Ondersteunde jokertekens
+## <a name="supported-wildcard-characters"></a>Ondersteunde joker tekens
 
-Windows PowerShell ondersteunt de volgende jokertekens bevatten.
+Windows Power shell ondersteunt de volgende joker tekens.
 
-|Jokerteken|Description|Voorbeeld|Overeenkomsten|Komt niet overeen met|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|Komt overeen met nul of meer tekens, vanaf de opgegeven positie|a*|Een, ag, Apple||
-|?|Komt overeen met anycharacter op de opgegeven positie|? n|Een in het geval is, op|is uitgevoerd|
-|[ ]|Komt overeen met een bereik met tekens|[a-l]ook|het adresboek, Cookeilanden, zoekt u naar|duurde|
-|[ ]|Komt overeen met de opgegeven tekens|[bc]ook|boek, Cookeilanden|zoeken|
+| Vervanging |                             Description                             |  Voorbeeld   |     Overeenkomsten      | Komt niet overeen met |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Komt overeen met nul of meer tekens, beginnend bij de opgegeven positie | `a*`       | A, AG, Apple     |                |
+| ?        | Komt overeen met een teken op de opgegeven positie                     | `?n`       | Een, in, op       | uitgevoerd            |
+| [ ]      | Komt overeen met een reeks tekens                                       | `[a-l]ook` | Book, Cook, zoeken | Nook, geduurde     |
+| [ ]      | Komt overeen met de opgegeven tekens                                    | `[bn]ook`  | Book, Nook       | Cook, zoeken     |
 
-Bij het ontwerpen van cmdlets die ondersteuning bieden voor jokertekens bevatten, kunt u voor combinaties van jokertekens bevatten. Bijvoorbeeld, de volgende opdracht maakt gebruik van de `Get-ChildItem` cmdlet voor het ophalen van alle txt-bestanden die zijn opgenomen in de map c:\Techdocs en die beginnen met de letter 'a"via 'l'.
+Wanneer u cmdlets ontwerpt die ondersteuning bieden voor joker tekens, toestaan combi Naties van joker tekens. De volgende opdracht gebruikt de `Get-ChildItem` cmdlet bijvoorbeeld om alle txt-bestanden op te halen die zich in de map c:\Techdocs bevinden en die beginnen met de letters ' a ' tot en met ' l '.
 
-**get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-De vorige opdracht maakt gebruik van het jokerteken bereik **[a-l]** om op te geven dat de naam moet beginnen met de tekens 'a"via 'l'. Vervolgens gebruikt de opdracht de * jokerteken als tijdelijke aanduiding voor alle tekens tussen de eerste letter van de bestandsnaam en de extensie .txt.
+In de vorige opdracht wordt het bereik `[a-l]` Joker teken gebruikt om op te geven dat de bestands naam moet beginnen met de tekens ' a ' tot en `*` met ' l ' en het Joker teken als tijdelijke aanduiding gebruikt voor tekens tussen de eerste letter van de bestands naam en de extensie **. txt** .
 
-Het volgende voorbeeld wordt een bereik wildcard-patroon dat niet van toepassing op de letter "d", maar bevat alle andere letters uit 'a"via 'f'.
+In het volgende voor beeld wordt een Joker teken voor een bereik gebruikt dat de letter ' d ' uitsluit, maar alle andere letters van ' a ' tot en met ' f ' bevat.
 
-**get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Afhandeling van letterlijke tekens in jokertekenpatronen
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Letterlijke tekens afhandelen in Joker teken patronen
 
-Als het jokerteken-patroon dat u opgeeft letterlijke tekens bevat, gebruikt u het backtick-teken (') als een escape-teken. Wanneer u via een programma letterlijke tekens opgeeft, gebruikt u een enkele backtick. Wanneer u letterlijke tekens bij de opdrachtprompt opgeeft, gebruikt u twee graves. Het volgende patroon bevat bijvoorbeeld twee haakjes letterlijk moeten worden genomen.
+Als het Joker teken dat u opgeeft letterlijke tekens bevat die niet mogen worden interpretted als joker tekens, gebruikt u het`` ` ``apostroffen-teken () als escape-teken. Wanneer u letterlijke tekens int de Power shell-API opgeeft, gebruikt u één apostroffen. Wanneer u letterlijke tekens opgeeft bij de Power shell-opdracht prompt, gebruikt u twee accents graves.
 
-' John Smith \`[*'] ' (opgegeven via een programma)
+Het volgende patroon bevat bijvoorbeeld twee haken die letterlijk moeten worden uitgevoerd.
 
-' John Smith \` \`[*\`'] ' (opgegeven bij de opdrachtprompt)
+Bij gebruik in de API voor Power shell:
 
-Dit patroon komt overeen met 'John Smith [Marketing]' of 'John Smith [ontwikkeling]'.
+- "John Smith \`[* ']"
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet-uitvoer en jokertekens
+Bij gebruik van de Power shell-opdracht prompt:
 
-Als parameters van de cmdlet jokertekens ondersteunt, genereert een cmdlet-bewerking gewoonlijk de matrixuitvoer van een. Soms kan zinvol het geen ter ondersteuning van een matrix uitgevoerd omdat de gebruiker kan slechts één item tegelijk gebruiken. Bijvoorbeeld, de `Set-Location` cmdlet biedt ondersteuning voor een matrix uitgevoerd omdat de gebruiker wordt ingesteld alleen één locatie. In dit geval de cmdlet nog steeds jokertekens worden ondersteund, maar het zorgt ervoor dat het probleem zou moeten op één locatie.
+- "John Smith \` \`[*\`']"
+
+Dit patroon komt overeen met ' John Smith [marketing] ' of ' John Smith [development] '. Bijvoorbeeld:
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Uitvoer van de cmdlet en Joker tekens
+
+Wanneer cmdlet-para meters ondersteuning bieden voor joker tekens, genereert de bewerking meestal een matrix uitvoer.
+In sommige gevallen is het niet zinvol om een matrix uitvoer te ondersteunen, omdat de gebruiker slechts één item kan gebruiken. De `Set-Location` cmdlet biedt bijvoorbeeld geen ondersteuning voor matrix uitvoer omdat de gebruiker slechts één locatie instelt. In dit geval ondersteunt de cmdlet nog steeds joker tekens, maar worden oplossingen op één locatie afgedwongen.
 
 ## <a name="see-also"></a>Zie ook
 
-[Schrijven van een Windows PowerShell-Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
 
-[WildcardPattern klasse](/dotnet/api/system.management.automation.wildcardpattern)
+[Klasse WildcardPattern](/dotnet/api/system.management.automation.wildcardpattern)
