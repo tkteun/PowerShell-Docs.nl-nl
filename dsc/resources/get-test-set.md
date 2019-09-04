@@ -1,23 +1,23 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, configuratie en installatie
-title: Get-Test-Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+keywords: DSC, Power shell, configuratie, installatie
+title: Get-test-set
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229515"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215421"
 ---
-# <a name="get-test-set"></a>Get-Test-Set
+# <a name="get-test-set"></a>Get-test-set
 
->Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-![Ophalen, testen en instellen](/media/get-test-set.png)
+![Ophalen, testen en instellen](../media/get-test-set.png)
 
-PowerShell Desired State Configuration is opgebouwd rond een **ophalen**, **Test**, en **ingesteld** proces. DSC [resources](resources.md) elk bevat methoden voor het voltooien van elk van deze bewerkingen. In een [configuratie](../configurations/configurations.md), definieert u de resource-blokken in te vullen in sleutels die parameters voor een resource worden **ophalen**, **Test**, en **instellen** methoden.
+De gewenste status configuratie van Power shell is geconstrueerd rond een **Get**-, **test**-en **set** -proces. DSC- [resources](resources.md) bevatten elk methoden voor het volt ooien van elk van deze bewerkingen. In een [configuratie](../configurations/configurations.md)definieert u resource blokken om sleutels in te vullen die para meters voor de **Get**-, **test**-en **set** -methoden van een resource worden.
 
-Dit is de syntaxis voor een **Service** resource blokkeren. De **Service** resource configureert Windows-services.
+Dit is de syntaxis voor een **service** bron blok. De **service** resource configureert Windows-Services.
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-De **ophalen**, **Test**, en **ingesteld** methoden van de **Service** resource heeft parameterblokken die deze waarden accepteren.
+De methoden **Get**, **test**en **set** van de **service** Resource hebben parameter blokken die deze waarden accepteren.
 
 ```powershell
     param
@@ -86,9 +86,9 @@ De **ophalen**, **Test**, en **ingesteld** methoden van de **Service** resource 
 ```
 
 > [!NOTE]
-> De taal en de methode die wordt gebruikt voor het definiëren van de resource wordt bepaald hoe de **ophalen**, **Test**, en **ingesteld** methoden worden gedefinieerd.
+> De taal en methode waarmee de resource is gedefinieerd, bepalen hoe de methoden **ophalen**, **testen**en **instellen** worden gedefinieerd.
 
-Omdat de **Service** resource heeft slechts één sleutel (`Name`), een **Service** blok resource kan worden net zo eenvoudig als dit:
+Omdat de **service** bron slechts één vereiste sleutel (`Name`) heeft, kan een **service** blok bron zo eenvoudig zijn als:
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-Wanneer u de bovenstaande configuratie compileren, worden de waarden die u voor een sleutel opgeeft worden opgeslagen in het bestand '.mof' die wordt gegenereerd. Zie voor meer informatie, [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+Wanneer u de configuratie hierboven compileert, worden de waarden die u opgeeft voor een sleutel opgeslagen in het MOF-bestand dat wordt gegenereerd. Zie voor meer informatie [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-Wanneer toegepast, de [Local Configuration Manager](../managing-nodes/metaConfig.md) (LCM) wordt de waarde 'Spooler' lezen uit het bestand '.mof' en doorgegeven aan de `-Name` parameter van de **ophalen**, **Test**, en **ingesteld** methoden voor het exemplaar 'MyService' van de **Service** resource.
+Als de [lokale Configuration Manager](../managing-nodes/metaConfig.md) (LCM) wordt toegepast, wordt de waarde ' spooler ' in het bestand '. mof ' gelezen en door gegeven aan de `-Name` para meter van de methoden **Get**, **test**en **set** voor het exemplaar ' MyService ' van de  **Service** resource.
 
 ## <a name="get"></a>Ophalen
 
-De **ophalen** methode van een resource, wordt de status van de resource die is geconfigureerd op de doel-knooppunt. Deze status wordt geretourneerd als een [hashtabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables). De sleutels van de **hashtabel** zal worden de waarden kunnen worden geconfigureerd of de parameters, accepteert de resource.
+De **Get** -methode van een resource haalt de status van de resource op zoals deze is geconfigureerd op het doel knooppunt. Deze status wordt geretourneerd als [hash](/powershell/module/microsoft.powershell.core/about/about_hash_tables)-tabel. De sleutels van de **hashtabel** zijn de Configureer bare waarden, of para meters, die door de resource worden geaccepteerd.
 
-De **ophalen** methode wijst rechtstreeks naar de [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet. Als u aanroept `Get-DSCConfiguration`, de LCM wordt uitgevoerd de **ophalen** methode van elke resource in de configuratie van dat momenteel wordt toegepast. De LCM maakt gebruik van de sleutelwaarden die zijn opgeslagen in het bestand '.mof' als parameters voor elke bijbehorende resource-instantie.
+De **Get** -methode wijst rechtstreeks toe aan de cmdlet [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) . Wanneer u aanroept `Get-DSCConfiguration`, wordt de **Get** -methode van elke bron uitgevoerd in de huidige toegepaste configuratie. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.
 
-Dit voorbeeld van uitvoer van is een **Service** resource waarmee de service 'Spooler' worden geconfigureerd.
+Dit is een voor beeld van uitvoer van een **service** resource waarmee de Spooler-service wordt geconfigureerd.
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-De uitvoer ziet u de huidige waarde-eigenschappen kunnen worden geconfigureerd door de **Service** resource.
+In de uitvoer ziet u de eigenschappen van de huidige waarde die kunnen worden geconfigureerd door de **service** resource.
 
 ```syntax
 Service [String] #ResourceName
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Test
 
-De **Test** methode van een resource wordt bepaald of het doelknooppunt momenteel compatibel zijn met de resource is *desired state*. De **Test** methode retourneert `$True` of `$False` alleen om aan te geven of het knooppunt dat compatibel is.
-Als u aanroept [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), aanroepen van de LCM de **Test** methode van elke resource in de configuratie van dat momenteel wordt toegepast. De LCM maakt gebruik van de sleutelwaarden die zijn opgeslagen in het bestand '.mof' als parameters voor elke bijbehorende resource-instantie.
+De **test** methode van een bron bepaalt of het doel knooppunt momenteel compatibel is met de *gewenste status*van de resource. De **test** methode retourneert `$True` of `$False` alleen om aan te geven of het knoop punt compatibel is.
+Wanneer u [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)aanroept, roept de LCM de **test** methode van elke bron in de huidige toegepaste configuratie aan. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.
 
-Als het resultaat van een afzonderlijke resource **Test** is `$False`, `Test-DSCConfiguration` retourneert `$False` die aangeeft dat het knooppunt niet compatibel is. Als alle resource **Test** methoden retourneren `$True`, `Test-DSCConfiguration` retourneert `$True` om aan te geven dat het knooppunt compatibel is.
+Als het resultaat van de **test** van een afzonderlijke resource `$False`is `Test-DSCConfiguration` , `$False` wordt hiermee aangegeven dat het knoop punt niet aan het beleid voldoet. Als de **test** methode `$True`van alle resources retourneert `Test-DSCConfiguration` , `$True` wordt geretourneerd om aan te geven dat het knoop punt compatibel is.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-PowerShell 5.0, vanaf de `-Detailed` parameter is toegevoegd. Op te geven `-Detailed` zorgt ervoor dat `Test-DSCConfiguration` als resultaat een object met verzamelingen van resultaten voor compatibele en niet-compatibele resources.
+Vanaf Power shell 5,0 is de `-Detailed` para meter toegevoegd. Opgeven `-Detailed` van `Test-DSCConfiguration` oorzaken voor het retour neren van een object met verzamelingen resultaten voor compatibele en niet-compatibele resources.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-Zie voor meer informatie, [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+Zie [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) voor meer informatie.
 
 ## <a name="set"></a>Instellen
 
-De **ingesteld** methode van een resource wordt geprobeerd om af te dwingen van het knooppunt om te voldoen aan de resource *desired state*. De **ingesteld** methode is bedoeld om te worden **idempotent**, dit houdt in dat **ingesteld** kan worden meerdere keren uitvoeren en altijd kunnen genieten van hetzelfde resultaat zonder fouten.  Bij het uitvoeren van [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), de LCM bladeren door elke resource in de configuratie van dat momenteel wordt toegepast. De LCM sleutelwaarden voor het huidige exemplaar van de resource opgehaald uit het bestand '.mof' en deze gebruikt als parameters voor de **Test** methode. Als de **Test** methode retourneert `$True`, het knooppunt is compatibel zijn met de huidige resource en de **ingesteld** methode is overgeslagen. Als de **Test** retourneert `$False`, het knooppunt is niet-compatibel.  De LCM geeft de bron van de instantie sleutelwaarden als parameters aan van de resource **ingesteld** methode, het knooppunt voor de naleving te herstellen.
+De methode **set** van een resource probeert het knoop punt af te dwingen te voldoen aan de *gewenste status*van de resource. De **set** -methode is bedoeld om te worden **idempotent**. Dit betekent dat de **set** kan worden uitgevoerd meerdere keren en dat altijd hetzelfde resultaat oplevert zonder fouten.  Wanneer u [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)uitvoert, wordt door de LCM elke bron in de huidige toegepaste configuratie door lopen. De LCM haalt sleutel waarden voor het huidige bron exemplaar op uit het MOF-bestand en gebruikt deze als para meters voor de **test** methode. Als de **test** methode retourneert `$True`, is het knoop punt compatibel met de huidige resource en wordt de methode **set** overgeslagen. Als de **test** retourneert `$False`, is het knoop punt niet compatibel.  De LCM geeft de sleutel waarden van het resource-exemplaar als para meters door aan de **ingestelde** methode van de resource. het knoop punt wordt teruggezet op naleving.
 
-Door op te geven de `-Verbose` en `-Wait` parameters, u kunt controleren of de voortgang van de `Start-DSCConfiguration` cmdlet. In dit voorbeeld is het knooppunt al conform. De `Verbose` uitvoer geeft aan dat de **ingesteld** methode is overgeslagen.
+Als u de `-Verbose` para `-Wait` meters en opgeeft, kunt u de voortgang `Start-DSCConfiguration` van de cmdlet bekijken. In dit voor beeld is het knoop punt al compatibel. De `Verbose` uitvoer geeft aan dat de **ingestelde** methode is overgeslagen.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -238,5 +238,5 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 ## <a name="see-also"></a>Zie ook
 
 - [Overzicht van Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
-- [Instellen van een SMB-pull-server](../pull-server/pullServerSMB.md)
+- [Een SMB-pull-server instellen](../pull-server/pullServerSMB.md)
 - [Een pull-client configureren](../pull-server/pullClientConfigID.md)

@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080098"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215401"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
-`Import-DScResource` is een dynamische sleutelwoord, die alleen kan worden gebruikt in een configuratie-scriptblok. De `Import-DSCResource` trefwoord dat u wilt importeren van alle resources die nodig zijn in uw configuratie. Resources onder `$pshome` automatisch worden geïmporteerd, maar het is nog steeds beschouwd als aanbevolen procedure voor het expliciet importeren van alle resources die worden gebruikt uw [configuratie](Configurations.md).
+`Import-DScResource`is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok. Het `Import-DSCResource` sleutel woord voor het importeren van alle resources die nodig zijn in uw configuratie. Resources onder `$pshome` worden automatisch geïmporteerd, maar worden nog steeds beschouwd als best practice voor het expliciet importeren van alle resources die worden gebruikt in uw [configuratie](Configurations.md).
 
-De syntaxis voor `Import-DSCResource` wordt hieronder weergegeven.  Bij het opgeven van modules met de naam, is het een vereiste om elk op een nieuwe regel weer te geven.
+De syntaxis voor `Import-DSCResource` wordt hieronder weer gegeven.  Wanneer u modules op naam opgeeft, is het een vereiste om elk op een nieuwe regel te vermelden.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parameter  |Description  |
 |---------|---------|
-|`-Name`|De namen van de DSC-resource die u moet importeren. Als de naam van de module is opgegeven, de opdracht wordt gezocht naar deze DSC-resources binnen deze module. de opdracht zoekt anders de DSC-resources in alle paden voor DSC-resource. Jokertekens worden ondersteund.|
-|`-ModuleName`|De modulenaam of het module-specificatie.  Als u resources te importeren vanuit een module opgeeft, wordt de opdracht wordt geprobeerd enkel de resources te importeren. Als u de module alleen opgeeft, wordt met de opdracht de DSC-resources in de module geïmporteerd.|
+|`-Name`|De DSC-resource naam (s) die u moet importeren. Als de module naam is opgegeven, zoekt de opdracht naar deze DSC-resources in deze module; anders wordt met de opdracht gezocht in de DSC-resources in alle DSC-resource paden. Joker tekens worden ondersteund.|
+|`-ModuleName`|De module naam of module specificatie.  Als u resources opgeeft om te importeren uit een module, probeert de opdracht alleen die resources te importeren. Als u alleen de module opgeeft, worden alle DSC-resources in de module geïmporteerd met de opdracht.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Voorbeeld: Sleutelwoorden Import-dscresource bieden in een configuratie gebruiken
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Voorbeeld: Import-Dscresource bieden binnen een configuratie gebruiken
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,45 +52,45 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Meerdere waarden voor de namen van de Resource en modules in dezelfde opdracht op te geven, worden niet ondersteund. Het kan gedrag van niet-deterministisch over welke resource moet worden geladen vanaf welke module in het geval dezelfde resource in meerdere modules bestaat hebben. Onderstaande opdracht resulteert in fout tijdens de compilatie.
+> Het opgeven van meerdere waarden voor de namen van resource namen en modules in dezelfde opdracht wordt niet ondersteund. Het kan een niet-deterministisch gedrag hebben over welke resource moet worden geladen, voor het geval dezelfde resource in meerdere modules bestaat. De onderstaande opdracht resulteert in een fout tijdens de compilatie.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Dingen om te overwegen bij het gebruik van alleen de parameter Name:
+Overwegingen bij het gebruik van alleen de para meter name:
 
-- Dit is een resource-intensieve bewerking afhankelijk van het aantal modules die zijn geïnstalleerd op de machine.
-- Het wordt geladen door de eerste resource gevonden met de opgegeven naam. In het geval wanneer er meer dan één resource met dezelfde naam geïnstalleerd is, de juiste resource kan worden geladen.
+- Het is een resource-intensieve bewerking, afhankelijk van het aantal modules dat op de computer is geïnstalleerd.
+- Hiermee wordt de eerste resource geladen die met de opgegeven naam is gevonden. Als er meer dan één resource met dezelfde naam is geïnstalleerd, kan de verkeerde resource worden geladen.
 
-De aanbevolen methode is om op te geven `–ModuleName` met de `-Name` parameter, zoals hieronder wordt beschreven.
+Het aanbevolen gebruik moet worden opgegeven `–ModuleName` met de `-Name` para meter, zoals hieronder wordt beschreven.
 
-Dit gebruik heeft de volgende voordelen:
+Dit gebruik heeft de volgende voor delen:
 
-- Dit vermindert de prestatiegevolgen door het beperken van het zoekbereik voor de opgegeven resource.
-- Hiermee worden de module definiëren van de resource, ervoor te zorgen dat de juiste resource wordt geladen expliciet gedefinieerd.
-
-> [!NOTE]
-> In PowerShell 5.0, DSC-resources kunnen er meerdere versies en versies kunnen worden geïnstalleerd op een computer side-by-side. Dit is geïmplementeerd door meerdere versies van een resource-module die zijn opgenomen in de modulemap met dezelfde.
-> Zie voor meer informatie, [resources met meerdere versies gebruiken](sxsresource.md).
-
-## <a name="intellisense-with-import-dscresource"></a>IntelliSense met sleutelwoorden Import-dscresource bieden
-
-Bij het ontwerpen van de DSC-configuratie in ISE biedt PowerShell IntelliSence voor resources en resource-eigenschappen. Resourcedefinities onder de `$pshome` modulepad worden automatisch geladen. Wanneer het importeren van resources met behulp van de `Import-DSCResource` trefwoord, de opgegeven resource-definities zijn toegevoegd en Intellisense om op te nemen van de geïmporteerde resource-schema is uitgevouwen.
-
-![Resource Intellisense](/media/resource-intellisense.png)
+- Het vermindert de invloed op de prestaties doordat het zoek bereik voor de opgegeven resource wordt beperkt.
+- Hiermee wordt expliciet de module gedefinieerd waarmee de resource wordt gedefinieerd, zodat de juiste resource wordt geladen.
 
 > [!NOTE]
-> Begin in PowerShell 5.0, is tab-Aanvulling toegevoegd aan de ISE voor DSC-resources en hun eigenschappen. Zie voor meer informatie, [Resources](../resources/resources.md).
+> In Power shell 5,0 kunnen DSC-resources meerdere versies hebben en kunnen versies worden geïnstalleerd op een computer naast elkaar. Dit wordt geïmplementeerd door meerdere versies van een resource module te hebben die zich in dezelfde module map bevinden.
+> Zie [resources met meerdere versies gebruiken](sxsresource.md)voor meer informatie.
 
-Bij het compileren van de configuratie van de PowerShell maakt gebruik van de geïmporteerde resourcedefinities alle resource blokken in de configuratie valideren.
-Elk blok van de resource is gevalideerd, met behulp van de resource-schemadefinitie, voor de volgende regels.
+## <a name="intellisense-with-import-dscresource"></a>IntelliSense met import-Dscresource bieden
 
-- Alleen de eigenschappen die zijn gedefinieerd in het schema worden gebruikt.
-- De gegevenstypen voor elke eigenschap zijn correct.
-- Eigenschappen van de sleutels worden opgegeven.
-- Er is geen alleen-lezen eigenschap wordt gebruikt.
-- Validatie van waarde toegewezen typen.
+Bij het ontwerpen van de DSC-configuratie in ISE biedt Power shell IntelliSence voor resources en resource-eigenschappen. Bron definities onder het `$pshome` pad naar de module worden automatisch geladen. Wanneer u resources importeert met behulp van het `Import-DSCResource` tref woord, worden de opgegeven resource definities toegevoegd en wordt IntelliSense uitgebreid met het schema van de geïmporteerde resource.
+
+![Resource IntelliSense](../media/resource-intellisense.png)
+
+> [!NOTE]
+> Vanaf Power shell 5,0 is het tabblad voltooiings punt toegevoegd aan de ISE voor DSC-resources en de bijbehorende eigenschappen. Zie [resources](../resources/resources.md)voor meer informatie.
+
+Bij het compileren van de configuratie gebruikt Power shell de geïmporteerde resource definities om alle resource blokken in de configuratie te valideren.
+Elk resource blok wordt gevalideerd, met behulp van de schema definitie van de resource, voor de volgende regels.
+
+- Alleen de eigenschappen die in het schema zijn gedefinieerd, worden gebruikt.
+- De gegevens typen voor elke eigenschap zijn juist.
+- De eigenschappen van de sleutels zijn opgegeven.
+- Er wordt geen alleen-lezen-eigenschap gebruikt.
+- Validatie van typen van de waarde-toewijzingen.
 
 Houd rekening met de volgende configuratie:
 
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Compileren van deze configuratie leidt tot een fout.
+Het compileren van deze configuratie resulteert in een fout.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-Validatie van IntelliSense en het schema kunt u meer runbookauteur fouten worden gedetecteerd tijdens het parseren en compilatie tijd complicaties vermijden tijdens de uitvoering.
+Met IntelliSense en schema validatie kunt u meer fouten tijdens de parsering-en compilatie tijd ondervangen, waardoor complicaties tijdens de uitvoering worden voor komen.
 
 > [!NOTE]
-> Elke DSC-resource kan hebben een naam en een **FriendlyName** gedefinieerd door de resource-schema. Hieronder vindt u de eerste twee regels van 'MSFT_ServiceResource.shema.mof'.
+> Elke DSC-resource kan een naam hebben en een **FriendlyName** die is gedefinieerd in het schema van de resource. Hieronder vindt u de eerste twee regels van ' MSFT_ServiceResource. Shema. mof '.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Wanneer u deze resource in een configuratie gebruikt, kunt u **MSFT_ServiceResource** of **Service**.
+> Wanneer u deze bron in een configuratie gebruikt, kunt u **MSFT_ServiceResource** of **service**opgeven.
 
-## <a name="powershell-v4-and-v5-differences"></a>Verschillen in PowerShell v4 en versie 5
+## <a name="powershell-v4-and-v5-differences"></a>Verschillen Power shell v4 en V5
 
-Er zijn meerdere verschillen u ziet bij het ontwerpen van configuraties in PowerShell 4.0 Visual Studio. PowerShell 5.0 en hoger. In deze sectie worden de verschillen die u ziet dat relevant is voor dit artikel.
+Er zijn meerdere verschillen die u ziet tijdens het ontwerpen van configuraties in Power Shell 4,0 vs. Power shell 5,0 en hoger. In deze sectie worden de verschillen gemarkeerd die relevant zijn voor dit artikel.
 
-### <a name="multiple-resource-versions"></a>Meerdere versies van de Resource
+### <a name="multiple-resource-versions"></a>Meerdere resource versies
 
-Installeren en gebruiken van meerdere versies van resources naast elkaar wordt niet ondersteund in PowerShell 4.0. Als u problemen met het importeren van resources in uw configuratie ziet, zorg ervoor dat u slechts één versie van de resource geïnstalleerd hebben.
+Het installeren en gebruiken van meerdere versies van resources naast elkaar werd niet ondersteund in Power Shell 4,0. Als u problemen ondervindt bij het importeren van resources in uw configuratie, moet u ervoor zorgen dat er slechts één versie van de bron is geïnstalleerd.
 
-In de afbeelding hieronder, twee versies van de **xPSDesiredStateConfiguration** module zijn geïnstalleerd.
+In de onderstaande afbeelding zijn twee versies van de module **xPSDesiredStateConfiguration** geïnstalleerd.
 
-![Meerdere Resource-versies opgelost](/media/multiple-resource-versions-broken.md)
+![Er zijn meerdere resource versies opgelost](../media/multiple-resource-versions-broken.png)
 
-Kopieer de inhoud van uw moduleversie van de gewenste naar het hoogste niveau van de modulemap.
+Kopieer de inhoud van de gewenste module versie naar het hoogste niveau van de module directory.
 
-![Meerdere Resource-versies opgelost](/media/multiple-resource-versions-fixed.md)
+![Er zijn meerdere resource versies opgelost](../media/multiple-resource-versions-fixed.png)
 
-### <a name="resource-location"></a>Resourcelocatie
+### <a name="resource-location"></a>Resource locatie
 
-Bij het ontwerpen en -configuraties compileren, uw resources kunnen worden opgeslagen in een map die is opgegeven door uw [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). In PowerShell 4.0, vereist de LCM alle DSC-resource-modules worden opgeslagen onder 'Programma Files\WindowsPowerShell\Modules' of `$pshome\Modules`. Begin in PowerShell 5.0, deze vereiste is verwijderd en resource-modules kunnen worden opgeslagen in een map die is opgegeven door `PSModulePath`.
+Bij het ontwerpen en compileren van configuraties kunnen uw resources worden opgeslagen in een map die is opgegeven door uw [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). In Power Shell 4,0 moeten alle DSC-resource modules zijn opgeslagen onder Program Files\WindowsPowerShell\Modules of `$pshome\Modules`. Vanaf Power shell 5,0 is deze vereiste verwijderd en kunnen resource modules worden opgeslagen in een map die is opgegeven door `PSModulePath`.
 
 ## <a name="see-also"></a>Zie ook
 

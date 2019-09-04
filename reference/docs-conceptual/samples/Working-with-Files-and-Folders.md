@@ -1,35 +1,35 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Met bestanden en mappen werken
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030688"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215532"
 ---
 # <a name="working-with-files-and-folders"></a>Met bestanden en mappen werken
 
-Navigeren door Windows PowerShell-stations en de items op deze bewerken is vergelijkbaar met het bewerken van bestanden en mappen op de fysieke schijven Windows. Deze sectie wordt beschreven hoe u omgaat met specifieke bestanden en mappen manipulatie taken-met behulp van PowerShell.
+Het navigeren door Windows Power Shell-stations en het bewerken van de items hierop is vergelijkbaar met het bewerken van bestanden en mappen op fysieke Windows-schijf stations. In deze sectie wordt beschreven hoe u specifieke bewerkingen voor het bewerken van bestanden en mappen kunt uitvoeren met behulp van Power shell.
 
-## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Lijst van alle bestanden en mappen in een map
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Alle bestanden en mappen in een map weer geven
 
-U kunt alle items rechtstreeks in een map ophalen met behulp van **Get-ChildItem**. Voeg de optionele **Force** parameter verborgen weergeven of items van system. Deze opdracht geeft bijvoorbeeld de directe inhoud van Windows PowerShell-station C (dit is hetzelfde als de fysieke Windows-station C):
+U kunt alle items rechtstreeks in een map ophalen met behulp van **Get-Child item**. Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht wordt bijvoorbeeld de directe inhoud van Windows Power Shell-station C weer gegeven (dit is hetzelfde als de fysieke schijf met Windows C):
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
 ```
 
-De opdracht bevat alleen de rechtstreeks opgenomen items, net als met behulp van Cmd.exe **DIR** opdracht of **ls** in een UNIX-shell. Als u wilt de opgenomen items weergeven, moet u opgeven de **-Recurse** ook de parameter. (Dit kan een extreem lange tijd in beslag nemen.) Overzicht van alles op de C-station:
+De opdracht bevat alleen de items die rechtstreeks zijn opgenomen, zoals het gebruik van de **dir** opdracht van cmd. exe of **ls** in een Unix-shell. Als u opgenomen items wilt weer geven, moet u ook de para meter **-recursief** opgeven. (Dit kan een zeer lange tijd duren.) Alles op station C weer geven:
 
 ```powershell
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-**Get-ChildItem** items kunt filteren op de **pad**, **Filter**, **opnemen**, en **uitsluiten** parameters, maar deze zijn Normaal gesproken alleen gebaseerd op de naam. U kunt uitvoeren met het complex filteren op basis van andere eigenschappen van items met behulp van **Where-Object**.
+**Get-Child item** kan items filteren met de para meters **Path**, **filter**, **include**en **exclude** , maar deze zijn meestal alleen gebaseerd op naam. U kunt complexe filtering op basis van andere eigenschappen van items uitvoeren met behulp van **where-object**.
 
-De volgende opdracht wordt gezocht naar alle uitvoerbare bestanden in de map Program Files die het laatst zijn gewijzigd na 1 oktober 2005 die wel en niet kleiner zijn dan 1 MB of groter is dan 10 MB:
+Met de volgende opdracht worden alle uitvoer bare bestanden in de map Program Files gevonden die voor het laatst zijn gewijzigd na 1 oktober 2005 en die kleiner zijn dan 1 MB of groter dan 10 MB:
 
 ```powershell
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
@@ -37,49 +37,49 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Kopiëren van bestanden en mappen
 
-Kopiëren is klaar met **Copy-Item**. De volgende opdracht uit back-ups van C:\\boot.ini naar C:\\boot.bak:
+Kopiëren is voltooid met **copy-item**. Met de volgende opdracht maakt u een back\\-up van c: boot\\. ini naar c: boot. bak:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Als het doelbestand al bestaat, mislukt die poging kopiëren. Als u wilt overschrijven van een reeds bestaande bestemming, gebruikt u de **Force** parameter:
+Als het doel bestand al bestaat, mislukt de poging tot kopiëren. Als u een bestaande bestemming wilt overschrijven, gebruikt u de para meter **Force** :
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
-Met deze opdracht werkt zelfs als de bestemming alleen-lezen is.
+Deze opdracht werkt zelfs als de bestemming alleen-lezen is.
 
-Map kopiëren werkt op dezelfde manier. Deze opdracht wordt de map C:\\temp\\test1 naar de nieuwe map C:\\temp\\DeleteMe recursief:
+Kopiëren van mappen werkt op dezelfde manier. Met deze opdracht kopieert u de map\\c\\: Temp test1 naar de nieuwe map\\c\\: Temp DeleteMe recursief:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-U kunt ook een selectie van items kopiëren. De volgende opdracht kopieert alle txt-bestanden die deel uitmaken van een willekeurige plaats c:\\gegevens naar c:\\temp\\tekst:
+U kunt ook een selectie van items kopiëren. De volgende opdracht kopieert alle txt-bestanden ergens in c:\\gegevens naar c:\\tijdelijke\\tekst:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-U kunt nog steeds andere hulpprogramma's gebruiken om uit te voeren bestandskopie van het systeem. XCOPY en ROBOCOPY COM-objecten, zoals de **Scripting.FileSystemObject,** alle werken in Windows PowerShell. Bijvoorbeeld, kunt u de Windows Script Host **Scripting.FileSystem COM** klasse back-up C:\\boot.ini naar C:\\boot.bak:
+U kunt nog steeds andere hulpprogram ma's gebruiken om bestandssysteem kopieën uit te voeren. XCOPY-, ROBOCOPY-en COM-objecten, zoals **Scripting. File System object,** werken allemaal in Windows Power shell. U kunt bijvoorbeeld de Windows Script Host **Scripting. File System-com-** klasse gebruiken om een back-\\up te maken van c:\\boot. ini naar c: boot. bak:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-## <a name="creating-files-and-folders"></a>Het maken van bestanden en mappen
+## <a name="creating-files-and-folders"></a>Bestanden en mappen maken
 
-Het maken van nieuwe items werkt hetzelfde voor alle Windows PowerShell-providers. Als een Windows PowerShell-provider meer dan één type item heeft, bijvoorbeeld, het bestandssysteem Windows PowerShell-provider wordt onderscheid gemaakt tussen de mappen en bestanden, moet u het itemtype opgeven.
+Het maken van nieuwe items werkt hetzelfde op alle Windows Power shell-providers. Als een Windows Power shell-provider meer dan één type item heeft, bijvoorbeeld het bestands systeem van de Windows Power shell-provider onderscheidt tussen mappen en bestanden, moet u het item type opgeven.
 
-Deze opdracht maakt u een nieuwe map C:\\temp\\nieuwe map:
+Met deze opdracht maakt u een nieuwe map\\C\\: temp nieuwe map:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Deze opdracht maakt u een nieuwe lege bestand C:\\temp\\nieuwe map\\bestand.txt
+Met deze opdracht maakt u een nieuw leeg bestand\\C\\: Temp\\nieuwe map bestand. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
@@ -87,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 
 ## <a name="removing-all-files-and-folders-within-a-folder"></a>Alle bestanden en mappen in een map verwijderen
 
-Kunt u de opgenomen items met **Remove-Item**, maar u wordt gevraagd om te bevestigen van de verwijzing wordt verwijderd als het item iets anders bevat. Bijvoorbeeld, als u probeert te verwijderen van de map C:\\temp\\DeleteMe met andere items, Windows PowerShell wordt u gevraagd om bevestiging voordat u verwijdert de map:
+U kunt opgenomen items verwijderen met behulp van **Remove-item**, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als u bijvoorbeeld probeert de map C:\\Temp\\DeleteMe te verwijderen die andere items bevat, vraagt Windows Power shell u om bevestiging voordat de map wordt verwijderd:
 
 ```
 Remove-Item -Path C:\temp\DeleteMe
@@ -100,25 +100,27 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-Als u niet elk ingesloten item worden gevraagd wilt, geeft u de **Recurse** parameter:
+Als u niet voor elk opgenomen item wilt worden gevraagd, geeft u de para meter **recursief** op:
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Toewijzing van een lokale map als een toegankelijke Windows-station
+## <a name="mapping-a-local-folder-as-a-drive"></a>Een lokale map toewijzen als een station
 
-U kunt ook een lokale map toewijzen met behulp van de **subst** opdracht. De volgende opdracht maakt een lokaal station die p: geroot in de lokale map Program Files:
+U kunt ook een lokale map toewijzen met behulp van de opdracht **New-PSDrive** . Met de volgende opdracht maakt u een lokaal station P: geroot in de lokale map Program Files, alleen zichtbaar vanuit de Power shell-sessie:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Net als bij stations, de stations die zijn toegewezen in met behulp van Windows PowerShell **subst** zijn direct zichtbaar zijn voor de Windows PowerShell-shell.
+Net als bij netwerk stations zijn stations die zijn toegewezen in Windows Power shell, direct zichtbaar voor de Windows Power shell-shell.
+Voor het maken van een toegewezen station dat zichtbaar is vanuit Verkenner, is de para meter **persistent** . Er kunnen echter alleen externe paden worden gebruikt met persistent.
 
-## <a name="reading-a-text-file-into-an-array"></a>Een tekstbestand lezen in een matrix
 
-Een van de meest voorkomende opslagindelingen voor tekstgegevens zich in een bestand met afzonderlijke regels behandeld als afzonderlijke gegevenselementen. De **Get-inhoud** cmdlet kan worden gebruikt om een volledige bestand in één stap te lezen, zoals hier wordt weergegeven:
+## <a name="reading-a-text-file-into-an-array"></a>Een tekst bestand in een matrix lezen
+
+Een van de meest voorkomende opslag indelingen voor tekst gegevens bevindt zich in een bestand met afzonderlijke regels behandeld als afzonderlijke gegevens elementen. De cmdlet **Get-content** kan worden gebruikt om een volledig bestand in één stap te lezen, zoals hier wordt weer gegeven:
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -132,17 +134,17 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-inhoud** al behandelt de gegevens lezen uit het bestand als een matrix, met één element per regel van de inhoud van bestand. U kunt dit bevestigen door het controleren van de **lengte** van de geretourneerde inhoud:
+**Get-content** behandelt al de gegevens die uit het bestand zijn gelezen als een matrix, met één element per regel van het bestand. U kunt dit controleren door de **lengte** van de geretourneerde inhoud te controleren:
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Met deze opdracht is vooral nuttig zijn voor het ophalen van lijsten met gegevens in Windows PowerShell direct. U kunt bijvoorbeeld een lijst van computernamen of IP-adressen opslaan in een bestand C:\\temp\\domainMembers.txt, met een naam op elke regel van het bestand. U kunt **Get-inhoud** voor het ophalen van inhoud van het bestand en plaats u ze in de variabele **$Computers**:
+Deze opdracht is vooral handig voor het rechtstreeks ophalen van lijsten met gegevens in Windows Power shell. U kunt bijvoorbeeld een lijst met computer namen of IP-adressen opslaan in een bestand C:\\Temp\\domainMembers. txt, met één naam op elke regel van het bestand. U kunt **Get-content** gebruiken om de bestands inhoud op te halen en deze in de variabele **$computers**te plaatsen:
 
 ```powershell
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
-**$Computers** is nu een matrix met de naam van een computer in elk element.
+**$Computers** is nu een matrix met een computer naam in elk-element.

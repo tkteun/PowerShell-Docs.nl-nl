@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Windows PowerShell-stations beheren
-ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030139"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215506"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
 
-Een *Windows PowerShell-station* is een locatie voor het opslaan van gegevens waartoe u toegang hebt, zoals een station bestand system in Windows PowerShell. De Windows PowerShell-providers maken bepaalde stations, zoals het bestandssysteem stations (inclusief C: en D:), het register stations (HKCU: en HKLM:), en het station van het certificaat (Cert:), en kunt u uw eigen Windows PowerShell-stations. Deze stations zijn zeer nuttig, maar ze zijn alleen beschikbaar in Windows PowerShell. U geen toegang tot deze met behulp van andere Windows-hulpprogramma's, zoals Verkenner of Cmd.exe.
+Een *Windows Power Shell-station* is een gegevens opslag locatie die u kunt openen als een bestandssysteem station in Windows Power shell. De Windows Power shell-providers maken enkele stations voor u, zoals de bestandssysteem stations (inclusief C: en D:), de register stations (HKCU: en HKLM:) en het certificaat station (CERT:), en u kunt uw eigen Windows Power Shell-stations maken. Deze stations zijn erg nuttig, maar ze zijn alleen beschikbaar in Windows Power shell. U kunt ze niet openen met andere Windows-hulpprogram ma's, zoals bestanden Verkenner of Cmd. exe.
 
-Windows PowerShell maakt gebruik van het zelfstandig naamwoord, **PSDrive**, voor de opdrachten die met Windows PowerShell werken-stations. Voor een lijst van de Windows PowerShell-stations in uw Windows PowerShell-sessie, gebruikt u de **Get-PSDrive** cmdlet.
+Windows Power Shell maakt gebruik van het zelfstandige naam woord, **PSDrive**, voor opdrachten die werken met Windows Power Shell-stations. Voor een lijst met Windows Power Shell-stations in uw Windows Power shell-sessie gebruikt u de cmdlet **Get-PSDrive** .
 
 ```
 PS> Get-PSDrive
@@ -32,11 +32,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Hoewel de stations in de weergave met de stations op uw systeem variëren, de aanbieding zal er ongeveer als volgt de uitvoer van de **Get-PSDrive** opdracht hierboven wordt weergegeven.
+Hoewel de stations in de weer gave afhankelijk zijn van de stations op het systeem, ziet de vermelding er ongeveer uit als de uitvoer van de opdracht **Get-PSDrive** die hierboven wordt weer gegeven.
 
-Bestand systeemstations vormen een subset van de Windows PowerShell-stations. U kunt de systeemstations bestand door het bestandssysteem item in de kolom Provider kunt identificeren. (De stations bestand system in Windows PowerShell worden ondersteund door het bestandssysteem van Windows PowerShell-provider.)
+Bestandssysteem stations zijn een subset van de Windows Power Shell-stations. U kunt de bestandssysteem stations identificeren met de vermelding bestands systeem in de kolom provider. (De bestandssysteem stations in Windows Power shell worden ondersteund door de Windows Power shell-systeem provider.)
 
-Om te zien van de syntaxis van de **Get-PSDrive** cmdlet, typ een **Get-Command** opdracht met de **syntaxis** parameter:
+Als u de syntaxis van de cmdlet **Get-PSDrive** wilt weer geven, typt u een **Get-opdracht** opdracht met de **syntaxis** parameter:
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -46,7 +46,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-De **PSProvider** parameter kunt u alleen de Windows PowerShell-stations die worden weergegeven door een bepaalde provider worden ondersteund. Bijvoorbeeld, als de Windows PowerShell-stations die worden ondersteund door het bestandssysteem van Windows PowerShell-provider, typt u een **Get-PSDrive** opdracht met de **PSProvider** parameter en de  **Bestandssysteem** waarde:
+Met de para meter **PSProvider** kunt u alleen de Windows Power Shell-stations weer geven die door een bepaalde provider worden ondersteund. Als u bijvoorbeeld alleen de Windows Power Shell-stations wilt weer geven die worden ondersteund door de Windows Power shell-bestandssysteem provider, typt u de opdracht **Get-PSDrive** met de para meter **PSProvider** en de waarde van het **Bestands systeem** :
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -58,7 +58,7 @@ C          FileSystem    C:\                           ...nd Settings\PowerUser
 D          FileSystem    D:\
 ```
 
-Als u de Windows PowerShell-stations die registeronderdelen vertegenwoordigen, gebruikt u de **PSProvider** parameter om weer te geven alleen de Windows PowerShell-stations die worden ondersteund door het register van Windows PowerShell-provider:
+Als u de Windows Power Shell-stations wilt weer geven die register onderdelen vertegenwoordigen, gebruikt u de para meter **PSProvider** om alleen de Windows Power Shell-stations weer te geven die worden ondersteund door de Windows Power shell-register provider:
 
 ```
 PS> Get-PSDrive -PSProvider Registry
@@ -69,7 +69,7 @@ HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 ```
 
-U kunt ook de standaard locatie-cmdlets gebruiken met de Windows PowerShell-stations:
+U kunt ook de standaard locatie-cmdlets gebruiken met de Windows Power Shell-stations:
 
 ```
 PS> Set-Location HKLM:\SOFTWARE
@@ -81,9 +81,9 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Toevoegen van nieuwe Windows PowerShell-stations (nieuwe PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Nieuwe Windows Power Shell-stations toevoegen (New-PSDrive)
 
-U kunt uw eigen Windows PowerShell-stations toevoegen met behulp van de **New-PSDrive** opdracht. Om op te halen van de syntaxis voor de **New-PSDrive** opdracht, voer de **Get-Command** opdracht met de **syntaxis** parameter:
+U kunt uw eigen Windows Power Shell-stations toevoegen met behulp van de opdracht **New-PSDrive** . Als u de syntaxis voor de opdracht **New-PSDrive** wilt ophalen, voert u de opdracht **Get-opdracht** in met de **syntaxis** parameter:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -94,19 +94,18 @@ ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 ```
 
-Een nieuwe Windows PowerShell-station wilt maken, moet u drie parameters opgeven:
+Als u een nieuw Windows Power Shell-station wilt maken, moet u drie para meters opgeven:
 
-- Een naam op voor het station (u kunt een geldige naam voor de Windows PowerShell)
+- Een naam voor het station (u kunt elke geldige Windows Power shell-naam gebruiken)
 
-- De PSProvider (gebruik "Bestandssysteem" voor bestand systeemlocaties en '-register voor registerlocaties)
+- De PSProvider (gebruik ' File System ' voor bestandssysteem locaties en ' Registry ' voor register locaties)
 
-- De hoofdmap, dat wil zeggen, het pad naar de hoofdmap van het nieuwe station
+- De basis, dat wil zeggen, het pad naar de hoofdmap van het nieuwe station
 
-Bijvoorbeeld, kunt u een station met de naam 'Office' die is gekoppeld aan de map met de Microsoft Office-toepassingen op uw computer, zoals **C:\\Program Files\\Microsoft Office\\OFFICE11**. Het station wilt maken, typt u de volgende opdracht:
+U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\Program\\files\\Microsoft Office Office11**. Typ de volgende opdracht om het station te maken:
 
 ```
-PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
-osoft Office\OFFICE11"
+PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -114,24 +113,25 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
 > [!NOTE]
-> In het algemeen zijn paden niet hoofdlettergevoelig.
+> In het algemeen zijn paden niet hoofdletter gevoelig.
 
-U verwijst naar het nieuwe Windows PowerShell-station, zoals u dat wel alle Windows PowerShell-stations: door de naam gevolgd door een dubbele punt doet ( **:** ).
+U verwijst naar het nieuwe Windows Power Shell-station, net zoals u alle Windows Power Shell-stations gebruikt, door de naam gevolgd door een dubbele punt ( **:** ).
 
-Een Windows PowerShell-station kunt vele taken die veel eenvoudiger maken. Sommige van de belangrijkste sleutels in het Windows-register hebben bijvoorbeeld extreem lange paden, zodat ze toegang krijgen tot omslachtig en moeilijk te onthouden. Essentiële configuratie-informatie zich bevindt onder **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Als u wilt weergeven en wijzigen van items in de registersleutel CurrentVersion, kunt u een Windows PowerShell-station die verankerd ligt in deze sleutel maken door te typen:
+Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\-software\\micro\\Soft Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
 
 ```
-PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-U kunt vervolgens Wijzig de locatie in de **cvkey:** station net als elk ander station:''
+U kunt de locatie wijzigen in de **cvkey:** station, net zoals u dat zou doen met een ander station:
 
-`PS> cd cvkey:`
+```
+PS> cd cvkey:
+```
 
 of:
 
@@ -143,25 +143,25 @@ Path
 cvkey:\
 ```
 
-De cmdlet New-PsDrive voegt het nieuwe station alleen voor de huidige Windows PowerShell-sessie. Als u de Windows PowerShell-venster sluit, wordt het nieuwe station verloren gaan. Als u wilt opslaan op een Windows PowerShell-station, gebruikt u de cmdlet Export-Console voor het exporteren van de huidige Windows PowerShell-sessie en gebruik vervolgens de PowerShell.exe **PSConsoleFile** parameter om het te importeren. Of het nieuwe station toevoegen aan uw Windows PowerShell-profiel.
+Met de cmdlet New-PsDrive wordt het nieuwe station alleen toegevoegd aan de huidige Windows Power shell-sessie. Als u het Windows Power shell-venster sluit, gaat het nieuwe station verloren. Als u een Windows Power Shell-station wilt opslaan, gebruikt u de cmdlet Export-console om de huidige Windows Power shell-sessie te exporteren. vervolgens gebruikt u de para meter **PSConsoleFile** van Power shell. exe om deze te importeren. U kunt ook het nieuwe station toevoegen aan uw Windows Power shell-profiel.
 
-## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Verwijderen van Windows PowerShell-stations (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows Power Shell-stations verwijderen (Remove-PSDrive)
 
-U kunt stations uit de Windows PowerShell verwijderen met behulp van de **Remove-PSDrive** cmdlet. De **Remove-PSDrive** cmdlet is eenvoudig te gebruiken; als u wilt verwijderen van een specifieke Windows PowerShell-station, u gewoon de naam van de Windows PowerShell-station.
+U kunt stations verwijderen uit Windows Power shell met behulp van de cmdlet **Remove-PSDrive** . De cmdlet **Remove-PSDrive** is eenvoudig te gebruiken. Als u een specifiek Windows Power Shell-station wilt verwijderen, geeft u gewoon de naam van het Windows Power Shell-station op.
 
-Bijvoorbeeld, als u hebt toegevoegd de **Office:** Windows PowerShell-station, zoals wordt weergegeven in de **New-PSDrive** onderwerp, kunt u deze verwijderen door te typen:
+Als u bijvoorbeeld het Office hebt toegevoegd **:** Windows Power Shell-station, zoals wordt weer gegeven in het onderwerp **New-PSDrive** , kunt u het verwijderen door het volgende te typen:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-Verwijderen van de **cvkey:** Windows PowerShell station, ook weergegeven in de **New-PSDrive** onderwerp, gebruikt u de volgende opdracht:
+De cvkey verwijderen **:** Windows Power Shell-station, dat ook wordt weer gegeven in het onderwerp **New-PSDrive** , gebruikt u de volgende opdracht:
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Het is eenvoudig te verwijderen van een Windows PowerShell-station, maar u kunt deze niet verwijderen wanneer u zich in het station. Bijvoorbeeld:
+Het is eenvoudig om een Windows Power Shell-station te verwijderen, maar u kunt het niet verwijderen terwijl u zich in het station bevindt. Bijvoorbeeld:
 
 ```
 PS> cd office:
@@ -171,6 +171,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Externe Windows PowerShell-stations toevoegen en verwijderen
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Stations toevoegen en verwijderen buiten Windows Power shell
 
-Windows PowerShell detecteert bestand systeemstations die worden toegevoegd of verwijderd in Windows, inclusief stations die zijn toegewezen, USB-stations die zijn gekoppeld en stations die zijn verwijderd met behulp van de **netgebruik** opdracht of het  **WScript.NetworkMapNetworkDrive** en **RemoveNetworkDrive** methoden van een script Windows Script Host (WSH).
+Windows Power shell detecteert bestandssysteem stations die worden toegevoegd of verwijderd in Windows, met inbegrip van netwerk stations die zijn toegewezen, USB-stations die zijn aangesloten en stations die worden verwijderd met behulp van de opdracht **net use** of de  **De methoden WScript. NetworkMapNetworkDrive** en **RemoveNetworkDrive** van een Windows Script Host (WSH)-script.
