@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Voorbeeld scripts voor systeem beheer
+summary: Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.
+metadata:
+  title: Voorbeeld scripts voor systeem beheer
+  description: Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392635"
+landingContent:
+- title: Met objecten werken
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Object structuur weer geven
+      url: ./viewing-object-structure--get-member-.md
+    - text: Delen van een object selecteren
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Objecten filteren in de pijp lijn
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Objecten sorteren
+      url: ./sorting-objects.md
+    - text: Een taak herhalen voor meerdere objecten
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: .NET-en COM-objecten maken
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Statische klassen en methoden gebruiken
+      url: ./using-static-classes-and-methods.md
+    - text: WMI-objecten ophalen (Get-WmiObject)
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Computers beheren
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Computerstatus wijzigen
+      url: ./changing-computer-state.md
+    - text: Informatie over computers verzamelen
+      url: ./collecting-information-about-computers.md
+    - text: Get-WinEvent-query's maken met FilterHashtable
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Processen & Services beheren
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Processen beheren met proces-cmdlets
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Services beheren
+      url: ./managing-services.md
+    - text: Windows PowerShell-stations beheren
+      url: ./managing-windows-powershell-drives.md
+    - text: Met printers werken
+      url: ./working-with-printers.md
+    - text: Netwerktaken uitvoeren
+      url: ./performing-networking-tasks.md
+    - text: Met software-installaties werken
+      url: ./working-with-software-installations.md
+    - text: Een PowerShell-opdracht decoderen vanuit een actief proces
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Werken met uitvoer
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Gegevens omleiden met Out-*-cmdlets
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
+      url: ./using-format-commands-to-change-output-view.md
+- title: Stations & bestanden beheren
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Huidige locatie beheren
+      url: ./managing-current-location.md
+    - text: Met bestanden en mappen werken
+      url: ./working-with-files-and-folders.md
+    - text: Met bestanden, mappen en registersleutels werken
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Met registervermeldingen werken
+      url: ./working-with-registry-entries.md
+    - text: Met registersleutels werken
+      url: ./working-with-registry-keys.md
+- title: UI-elementen maken
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Een aangepast invoervak maken
+      url: ./creating-a-custom-input-box.md
+    - text: Een grafische datumkiezer maken
+      url: ./creating-a-graphical-date-picker.md
+    - text: Meerdere selectielijstvelden
+      url: ./multiple-selection-list-boxes.md
+    - text: Items selecteren in een keuzelijst
+      url: ./selecting-items-from-a-list-box.md

@@ -1,69 +1,75 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Computerstatus wijzigen
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030277"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386287"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
 
-Als u wilt herstellen op een computer in Windows PowerShell, een standaard opdrachtregelprogramma of een WMI-klasse te gebruiken. Hoewel u Windows PowerShell gebruiken om alleen uit te voeren van het hulpprogramma, leren hoe u kunt de energiestatus van de computer in Windows PowerShell wijzigen ziet u enkele van de belangrijke informatie over het werken met externe hulpprogramma's in Windows PowerShell.
+Als u een computer opnieuw wilt instellen in Windows Power shell, gebruikt u een standaard opdracht regel programma, WMI of CIM-klasse. Hoewel u Windows Power shell alleen gebruikt om het-hulp programma uit te voeren, leert u hoe u de energie status van een computer in Windows Power shell kunt wijzigen om een deel van de belang rijke informatie te zien over het werken met externe hulpprogram ma's in Windows Power shell.
 
-## <a name="locking-a-computer"></a>Vergrendelen van een Computer
+## <a name="locking-a-computer"></a>Een computer vergren delen
 
-De enige manier om het vergrendelen van een computer rechtstreeks met de tools die standaard beschikbaar is om aan te roepen de **LockWorkstation()** werken in **user32.dll**:
+De enige manier om een computer rechtstreeks te vergren delen met de standaard beschik bare hulpprogram ma's is het aanroepen van de functie **LockWorkStation ()** in **user32. dll**:
 
 ```
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-Met deze opdracht wordt onmiddellijk vergrendeld voor het werkstation. Hierbij *rundll32.exe*, die wordt uitgevoerd Windows dll-bestanden (en slaat de bibliotheken voor herhaalde gebruik) om uit te voeren user32.dll, een bibliotheek met functies voor het beheer van Windows.
+Met deze opdracht wordt het werk station onmiddellijk vergrendeld. Er wordt gebruik gemaakt van *rundll32. exe*, dat Windows-dll's uitvoert (en de bibliotheken opslaat voor herhaalde gebruik) om user32. dll uit te voeren, een bibliotheek met Windows-beheer functies.
 
-Wanneer u vergrendelen een werkstation snelle gebruikerswisseling is ingeschakeld, zoals op Windows XP, toont de computer het aanmeldingsscherm van de gebruiker in plaats van vanaf de screensaver van de huidige gebruiker.
+Wanneer u een werk station vergrendelt terwijl snelle gebruikers wisseling is ingeschakeld, zoals op Windows XP, wordt in de computer het aanmeldings scherm van de gebruiker weer gegeven in plaats van de scherm beveiliging van de huidige gebruiker.
 
-Als u wilt afsluiten bepaalde sessies op een Terminal Server, gebruikt u de **tsshutdn.exe** opdrachtregel-hulpprogramma.
+Als u bepaalde sessies op een Terminal Server wilt afsluiten, gebruikt u het opdracht regel programma **tsshutdn. exe** .
 
 ## <a name="logging-off-the-current-session"></a>De huidige sessie afmelden
 
-U kunt meerdere verschillende technieken worden afgemeld bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdrachtregelprogramma van extern bureaublad/Terminal Services **logoff.exe** (voor meer informatie bij de Windows PowerShell-prompt, typ **Afmelden /?** ). De huidige actieve sessie afmelden, typt u **Afmelden** zonder argumenten.
+U kunt verschillende technieken gebruiken om u af te melden bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdracht regel programma Extern bureaublad/Terminal Services, **Afmelden. exe** (voor meer informatie, typt u bij de Windows Power shell-prompt **Afmelden/?** ). Als u de huidige actieve sessie wilt afmelden, typt u **Afmelden** zonder argumenten.
 
-U kunt ook de **shutdown.exe** hulpprogramma met de optie voor afmelden:
+U kunt ook het hulp programma **shutdown. exe** gebruiken met de optie voor afmelden:
 
 ```
 shutdown.exe -l
 ```
 
-Een derde optie is het gebruik van WMI. De Win32_OperatingSystem-klasse heeft een methode Win32Shutdown. Aanroepen van de methode met de vlag 0 initieert afmelden:
+Een andere optie is om WMI te gebruiken. De Win32_OperatingSystem-klasse heeft een Win32Shutdown-methode. Als de methode wordt aangeroepen met de vlag 0, wordt de afmelding gestart:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Zie "Win32Shutdown methode van de Win32_OperatingSystem Class" in MSDN voor meer informatie en andere functies van de methode Win32Shutdown vinden.
+Zie ' methode Win32Shutdown van de Win32_OperatingSystem-klasse ' in MSDN voor meer informatie en om andere functies van de Win32Shutdown-methode te vinden.
 
-## <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een Computer
+Ten slotte kunt u CIM gebruiken met dezelfde Win32_OperatingSystem-klasse als hierboven beschreven in de WMI-methode.
 
-Afgesloten en opnieuw opstarten van computers worden in het algemeen dezelfde gegevenstypen van de taak. Hulpprogramma's die een computer afsluiten dan in het algemeen start ook, en vice versa. Er zijn twee eenvoudige opties voor opnieuw opstarten van een computer vanuit Windows PowerShell. Tsshutdn.exe of Shutdown.exe gebruiken met de juiste argumenten. Krijgt u gedetailleerde gebruiksinformatie van **tsshutdn.exe /?** of **shutdown.exe /?** .
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
-U kunt ook afsluiten en opnieuw starten van bewerkingen rechtstreeks vanuit Windows PowerShell ook.
+## <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een computer
 
-Als u wilt afsluiten de computer, gebruikt u de opdracht Stop-Computer
+Het afsluiten en opnieuw opstarten van computers zijn over het algemeen hetzelfde type taak. Hulpprogram ma's die een computer afsluiten, zullen deze doorgaans ook opnieuw starten en vice versa. Er zijn twee eenvoudige opties voor het opnieuw opstarten van een computer vanuit Windows Power shell. Gebruik de juiste argumenten van tsshutdn. exe of Shutdown. exe. U kunt gedetailleerde gebruiks gegevens verkrijgen van **tsshutdn. exe/?** of **shutdown. exe/?** .
+
+U kunt ook de bewerkingen voor afsluiten en opnieuw opstarten rechtstreeks vanuit Windows Power shell uitvoeren.
+
+Gebruik de opdracht stop-computer om de computer af te sluiten.
 
 ```powershell
 Stop-Computer
 ```
 
-Als u wilt het besturingssysteem opnieuw hebt opgestart, gebruikt u de opdracht Computer opnieuw opstarten
+Gebruik de opdracht Restart-computer om het besturings systeem opnieuw op te starten
 
 ```powershell
 Restart-Computer
 ```
 
-Als u wilt afdwingen dat een onmiddellijk opnieuw opstarten van de computer, gebruikt u de parameter - Force.
+Als u de computer direct opnieuw wilt opstarten, gebruikt u de para meter-Force.
 
 ```powershell
 Restart-Computer -Force
