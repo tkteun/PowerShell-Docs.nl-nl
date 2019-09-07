@@ -1,5 +1,5 @@
 ---
-title: Dynamische Parameters toevoegen aan een Help-onderwerp Provider | Microsoft Docs
+title: Dynamische para meters toevoegen aan het Help-onderwerp van een provider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737589"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Dynamische parameters toevoegen aan een Help-onderwerp over providers
 
-In deze sectie wordt uitgelegd hoe u voor het vullen van de **dynamische PARAMETERS** gedeelte van een provider help-onderwerp.
+In deze sectie wordt uitgelegd hoe u de sectie **dynamische para meters** van een Help-onderwerp van een provider vult.
 
-*Dynamische parameters* parameters van een cmdlet of functie die beschikbaar zijn alleen onder de opgegeven voorwaarden.
+*Dynamische para meters* zijn para meters van een cmdlet of functie die alleen beschikbaar zijn onder opgegeven voor waarden.
 
-De dynamische parameters die worden beschreven in een provider help-onderwerp zijn de dynamische parameters waarmee de provider wordt toegevoegd aan de cmdlet of functie wanneer de cmdlet of de functie wordt gebruikt in het station van de provider.
+De dynamische para meters die zijn gedocumenteerd in het Help-onderwerp van de provider zijn de dynamische para meters die de provider toevoegt aan de cmdlet of functie wanneer de cmdlet of functie wordt gebruikt in het provider station.
 
-Dynamische parameters kunnen ook worden beschreven in de aangepaste cmdlet help voor een provider. Bij het schrijven van zowel provider help en aangepaste cmdlet help voor een provider, moet u de documentatie van de dynamische parameter opnemen in beide documenten. Zie voor meer informatie over aangepaste cmdlet help [schrijven Windows PowerShell aangepaste Cmdlet Help voor Providers](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dynamische para meters kunnen ook worden gedocumenteerd in de Help voor aangepaste cmdlets voor een provider. Wanneer u de Help van de provider en aangepaste cmdlet-Help voor een provider schrijft, neemt u de dynamische parameter documentatie op in beide documenten. Zie [Windows Power shell-Help voor aangepaste cmdlets schrijven voor providers](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)voor meer informatie over de Help voor aangepaste cmdlets.
 
-Als een provider wordt niet geïmplementeerd voor dynamische parameters, de provider help-onderwerp bevat een lege `DynamicParameters` element.
+Als een provider geen dynamische para meters implementeert, bevat het Help-onderwerp van `DynamicParameters` de provider een leeg element.
 
-### <a name="to-add-dynamic-parameters"></a>Dynamische Parameters toevoegen
+### <a name="to-add-dynamic-parameters"></a>Dynamische para meters toevoegen
 
-1. In de *AssemblyName*.dll-help.xml-bestand, vanuit de `providerHelp` element toevoegen een `DynamicParameters` element. De `DynamicParameters` element moet worden weergegeven na de `Tasks` element en voordat de `RelatedLinks` element.
+1. Voeg in het bestand *assemblyname*. dll-Help. XML binnen het `providerHelp` -element een `DynamicParameters` -element toe. Het `DynamicParameters` element moet na het `Tasks` element en vóór het `RelatedLinks` element worden weer gegeven.
 
    Bijvoorbeeld:
 
@@ -44,9 +44,9 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
     </providerHelp>
     ```
 
-   Als de provider wordt niet geïmplementeerd voor dynamische parameters, de `DynamicParameters` element kan niet leeg zijn.
+   Als de provider geen dynamische para meters implementeert, `DynamicParameters` mag het element leeg zijn.
 
-2. Binnen de `DynamicParameters` -element voor elk dynamische parameter toevoegen een `DynamicParameter` element.
+2. In het `DynamicParameters` -element voegt u voor elke dynamische para meter `DynamicParameter` een-element toe.
 
    Bijvoorbeeld:
 
@@ -57,14 +57,14 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
     </DynamicParameters>
     ```
 
-3. In elk `DynamicParameter` -element, Voeg een `Name` en `CmdletSupported` element.
+3. Voeg in `DynamicParameter` elk-element een `Name` - `CmdletSupported` element en toe.
 
    |Naam van element|Description|
    |------------------|-----------------|
-   |Naam|Hiermee geeft u de parameternaam van de.|
-   |CmdletSupported|Hiermee geeft u de cmdlets waarbij de parameter geldig is. Typ een door komma's gescheiden lijst met namen van de cmdlets.|
+   |Naam|Hiermee geeft u de parameter naam.|
+   |CmdletSupported|Hiermee geeft u de cmdlets op waarin de para meter geldig is. Typ een door komma's gescheiden lijst met cmdlet-namen.|
 
-   Bijvoorbeeld, de volgende XML-documenten de `Encoding` dynamische parameter waarmee het bestandssysteem van Windows PowerShell-provider wordt toegevoegd aan de `Add-Content`, `Get-Content`, `Set-Content` cmdlets.
+   Met de volgende XML-code wordt bijvoorbeeld `Encoding` de dynamische para meter gedocumenteerd die de Windows Power shell- `Add-Content` `Get-Content` `Set-Content` bestandssysteem provider toevoegt aan de cmdlets.
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
 
     ```
 
-4. In elk `DynamicParameter` -element, Voeg een `Type` element. De `Type` element is een container voor de `Name` element waarin het .NET-type van de waarde van de dynamische parameter.
+4. Voeg in `DynamicParameter` elk element een `Type` -element toe. Het `Type` element is een container voor het `Name` element dat het .net-type van de waarde van de dynamische para meter bevat.
 
-   Bijvoorbeeld, het volgende XML-bestand ziet u dat het .NET-type van de `Encoding` dynamische parameter wordt de [Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) opsomming.
+   De volgende XML laat bijvoorbeeld zien dat het .net-type van de `Encoding` dynamische para meter de [micro soft. Power shell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) -inventarisatie.
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
     </DynamicParameters>
     ```
 
-5. Voeg de `Description` -element een korte beschrijving van de dynamische parameter bevat. Bij het samenstellen van de beschrijving, gebruikt u de richtlijnen voor alle cmdlet-parameters in voorgeschreven [over het toevoegen van parameterinformatie](./how-to-add-parameter-information.md).
+5. Voeg het `Description` element toe, dat een korte beschrijving van de dynamische para meter bevat. Gebruik bij het samen stellen van de beschrijving de richt lijnen die zijn vastgelegd voor alle cmdlet-para meters bij [het toevoegen van parameter informatie](./how-to-add-parameter-information.md).
 
-   Het volgende XML-bestand bevat bijvoorbeeld de beschrijving van de `Encoding` dynamische parameter.
+   De volgende XML bevat bijvoorbeeld de beschrijving van de `Encoding` dynamische para meter.
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
     </DynamicParameters>
     ```
 
-6. Voeg de `PossibleValues` -element en de onderliggende elementen. Deze elementen beschrijven samen de waarden van de dynamische parameter. Dit element is ontworpen voor opsommingswaarden zijn. Als de dynamische parameter neemt een waarde, zoals het geval is bij een switch-parameter is of de waarden kunnen niet worden geïnventariseerd, toevoegen van een lege `PossibleValues` element.
+6. Voeg het `PossibleValues` element en de onderliggende elementen toe. Samen beschrijven deze elementen de waarden van de dynamische para meter. Dit element is ontworpen voor opsommings waarden. Als de dynamische para meter geen waarde heeft, zoals het geval is met een switch parameter, of als de waarden niet kunnen worden geïnventariseerd, voegt u een leeg `PossibleValues` element toe.
 
-   De volgende tabel geeft een lijst van en beschrijft de `PossibleValues` -element en de onderliggende elementen.
+   In de volgende tabel worden het `PossibleValues` element en de onderliggende elementen ervan beschreven.
 
    |Naam van element|Description|
    |------------------|-----------------|
-   |PossibleValues|Dit element is een container. De onderliggende elementen worden hieronder beschreven. Voeg een `PossibleValues` element elke provider help-onderwerp. Het element kan niet leeg zijn.|
-   |PossibleValue|Dit element is een container. De onderliggende elementen worden hieronder beschreven. Voeg een `PossibleValue` -element voor elke waarde van de dynamische parameter.|
-   |Waarde|Hiermee geeft u de naam van de.|
-   |Description|Dit element bevat een `Para` element. De tekst in de `Para` element wordt aangegeven wat de meerwaarde met de naam in de `Value` element.|
+   |PossibleValues|Dit element is een container. De onderliggende elementen worden hieronder beschreven. Voeg één `PossibleValues` element toe aan elk provider Help-onderwerp. Het element mag leeg zijn.|
+   |PossibleValue|Dit element is een container. De onderliggende elementen worden hieronder beschreven. Voeg één `PossibleValue` element toe voor elke waarde van de dynamische para meter.|
+   |Waarde|Hiermee geeft u de naam van de waarde.|
+   |Description|Dit element bevat een `Para` -element. De tekst in het `Para` element beschrijft de waarde die in het `Value` element wordt genoemd.|
 
-   Het volgende XML-bestand ziet u bijvoorbeeld een `PossibleValue` element van de `Encoding` dynamische parameter.
+   De volgende XML-code bevat bijvoorbeeld één `PossibleValue` element van de `Encoding` dynamische para meter.
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ Als een provider wordt niet geïmplementeerd voor dynamische parameters, de prov
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld wordt de `DynamicParameters` element van de `Encoding` dynamische parameter.
+In het volgende voor beeld `DynamicParameters` wordt het element `Encoding` van de dynamische para meter weer gegeven.
 
 ```xml
 <DynamicParameters/>
