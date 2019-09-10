@@ -887,39 +887,13 @@
         - name: Help voor Windows PowerShell-cmdlets schrijven
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: Help voor Windows PowerShell-providers schrijven
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: Een Help-onderwerp over providers maken
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: De providernaam toevoegen
-              href: ./help/how-to-add-the-provider-name.md
-            - name: De providerstations toevoegen
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: Het provideroverzicht toevoegen
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: Een providerbeschrijving toevoegen
-              href: ./help/how-to-add-a-provider-description.md
-            - name: Mogelijkheden toevoegen
-              href: ./help/how-to-add-capabilities.md
-            - name: Taken toevoegen aan een Help-onderwerp over providers
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: Dynamische parameters toevoegen aan een Help-onderwerp over providers
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: Notities toevoegen aan een Help-onderwerp over providers
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Help voor Windows PowerShell-scripts en -functies schrijven
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: Help-onderwerpen op basis van XML voor scripts en functies schrijven
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: Help voor Windows PowerShell-modules schrijven
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: Help voor Windows PowerShell-providers voor aangepaste cmdlets schrijven
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: Over-Help voor Windows PowerShell schrijven
-          href: ./help/writing-windows-powershell-about-help.md
         - name: Help-onderwerpen op basis van opmerkingen schrijven
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: Voorbeelden van de Help op basis van opmerkingen
               href: ./help/examples-of-comment-based-help.md
         - name: Help-onderwerpen op basis van XML voor opdrachten schrijven
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: Het Help-bestand voor cmdlets maken
               href: ./help/how-to-create-the-cmdlet-help-file.md
