@@ -1,5 +1,5 @@
 ---
-title: Schrijfhulp voor PowerShell-Scripts en -functies | Microsoft Docs
+title: Hulp voor het schrijven van Power shell-scripts en-functies | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083107"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848100"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>Schrijfhulp voor PowerShell-Scripts en functies
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>Hulp voor het schrijven van Power shell-scripts en-functies
 
-PowerShell-scripts en functies moeten worden volledig gedocumenteerd wanneer ze worden gedeeld met anderen.
-De `Get-Help` cmdlet geeft de help-onderwerpen van het script en de functie weer in dezelfde indeling als de help voor cmdlets en alle worden weergegeven de `Get-Help` parameters werken op script en de functie help-onderwerpen.
+Power shell-scripts en-functies moeten volledig worden gedocumenteerd wanneer ze met anderen worden gedeeld.
+De `Get-Help` cmdlet geeft de Help-onderwerpen script en functie weer in dezelfde indeling als de Help voor cmdlets wordt weer gegeven. alle `Get-Help` para meters werken in de Help-onderwerpen over scripts en functies.
 
-PowerShell-scripts kunnen opnemen een help-onderwerp over het script en help-onderwerpen over alle functies in het script.
-Functies die worden gedeeld onafhankelijk van scripts kunnen hun eigen help-onderwerpen bevatten.
+Power shell-scripts kunnen een Help-onderwerp bevatten over het script en Help-onderwerpen over de functies in het script.
+Functies die onafhankelijk van scripts worden gedeeld, kunnen hun eigen Help-onderwerpen bevatten.
 
-Dit document wordt uitgelegd voor de indeling en de juiste plaatsing van de help-onderwerpen en er wordt verwezen naar richtlijnen voor de inhoud.
+In dit document worden de indeling en de juiste plaatsing van de Help-onderwerpen uitgelegd en worden richt lijnen voor de inhoud voorgesteld.
 
-## <a name="types-of-script-and-function-help"></a>Typen van Script en de functie Help
+## <a name="types-of-script-and-function-help"></a>Typen script en functie Help
 
-### <a name="comment-based-help"></a>Help op basis van een opmerking
-Het help-onderwerp waarin wordt beschreven van een script of functie kan worden geïmplementeerd als een set van opmerkingen in het script of functie.
-Bij het schrijven van help voor een script en functies op basis van een opmerking in een script, betaalt u zorgvuldige aandacht aan de regels voor het plaatsen van de help op basis van een opmerking.
-De plaatsing wordt bepaald of de `Get-Help` cmdlet het helponderwerp wordt gekoppeld aan het script of een functie.
-Zie voor meer informatie over het schrijven van help-onderwerpen op basis van een opmerking [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+### <a name="comment-based-help"></a>Help op basis van opmerkingen
+Het Help-onderwerp waarin een script of functie wordt beschreven, kan worden geïmplementeerd als een set opmerkingen binnen het script of de functie.
+Wanneer u op opmerkingen gebaseerde Help voor een script en voor functies in een script schrijft, moet u zorgvuldig letten op de regels voor het plaatsen van de op opmerkingen gebaseerde Help.
+De plaatsing bepaalt of `Get-Help` de cmdlet het Help-onderwerp koppelt aan het script of een functie.
+Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)voor meer informatie over het schrijven van Help-onderwerpen over opmerkingen.
 
-### <a name="xml-based-command-help"></a>Help bij op basis van een XML-opdracht
-Het help-onderwerp waarin wordt beschreven van een script of functie kan worden geïmplementeerd in een XML-bestand die gebruikmaakt van de opdracht help-schema.
-Als u wilt koppelen aan het script of functie het XML-bestand, gebruik de `ExternalHelp` Opmerking trefwoord gevolgd door het pad en de naam van het XML-bestand.
+### <a name="xml-based-command-help"></a>Help voor op XML gebaseerde opdracht
+Het Help-onderwerp waarin een script of functie wordt beschreven, kan worden geïmplementeerd in een XML-bestand dat gebruikmaakt van het opdracht Help-schema.
+Als u het script of de functie wilt koppelen aan het XML- `ExternalHelp` bestand, gebruikt u het sleutel woord opmerking, gevolgd door het pad en de naam van het XML-bestand.
 
-Wanneer de `ExternalHelp` sleutelwoord aanwezig is, heeft deze prioriteit boven help op basis van een opmerking opmerking, zelfs wanneer `Get-Help` niet vinden een help-bestand dat overeenkomt met de waarde van de `ExternalHelp` trefwoord.
+Wanneer het `ExternalHelp` tref woord opmerking aanwezig is, heeft dit een hogere prioriteit dan de Help op basis `Get-Help` van opmerkingen, zelfs wanneer er geen Help-bestand wordt `ExternalHelp` gevonden dat overeenkomt met de waarde van het sleutel woord.
 
 ### <a name="online-help"></a>Online-Help
-U kunt de help-onderwerpen op het Internet te plaatsen en vervolgens direct `Get-Help` te openen in de onderwerpen.
-Zie voor meer informatie over het schrijven van help-onderwerpen op basis van een opmerking [ondersteunende Online Help](../module/supporting-online-help.md).
+U kunt de Help-onderwerpen op Internet plaatsen en vervolgens rechtstreeks `Get-Help` naar de onderwerpen openen.
+Zie [ondersteuning voor online-Help](../module/supporting-online-help.md)voor meer informatie over het schrijven van Help-onderwerpen over opmerkingen.
 
-Er is geen tot stand gebrachte methode voor schrijven conceptuele ('About'),-onderwerpen voor scripts en functies.
-Echter, u kunt boeken conceptuele onderwerpen in de lijst met Internet de onderwerpen en de URL's in de sectie Verwante koppelingen van een opdracht help-onderwerp.
+Er is geen vastgelegde methode voor het schrijven van conceptuele (' about ') onderwerpen voor scripts en functies.
+U kunt de onderwerpen en de bijbehorende Url's echter op de Internet lijst plaatsen in het gedeelte Verwante koppelingen van een opdracht Help-onderwerp.
 
-## <a name="content-considerations-for-script-and-function-help"></a>Help-inhoud overwegingen voor het Script en de functie
+## <a name="content-considerations-for-script-and-function-help"></a>Inhouds overwegingen voor Help van script en functie
 
-- Als u een zeer korte help-onderwerp met slechts enkele van de secties van de Help-informatie beschikbaar opdracht schrijft, zorg er dan voor dat zijn duidelijk beschrijvingen van de parameters-script of functie. Ook één of twee Voorbeeldopdrachten bevatten in de sectie voorbeelden, zelfs als u besluit voorbeeld beschrijvingen weglaten.
+- Als u een zeer korte Help-onderwerp schrijft met slechts enkele van de beschik bare Help-secties van de opdracht, moet u ervoor zorgen dat u duidelijke beschrijvingen van de script-of function-para meters opneemt. Neem ook een of twee voorbeeld opdrachten op in de sectie voor beelden, zelfs als u besluit om voorbeeld beschrijvingen weg te laten.
 
-- In alle beschrijvingen, verwijzen naar de opdracht als een script of functie. Deze informatie helpt de gebruiker om te begrijpen en beheren van de opdracht.
+- In alle beschrijvingen, raadpleegt u de opdracht als een script of functie. Deze informatie helpt de gebruiker om de opdracht te begrijpen en te beheren.
 
-  Bijvoorbeeld, geeft de volgende gedetailleerde beschrijving aan dat de opdracht New-onderwerp een script. Deze herinnering gebruikers die ze nodig hebben om op te geven van het pad en de volledige naam wanneer ze het uitvoert.
+  Met de volgende gedetailleerde beschrijving wordt bijvoorbeeld aangegeven dat de opdracht New-Topic een script is. Dit herinnert gebruikers dat ze het pad en de volledige naam moeten opgeven wanneer ze dit uitvoeren.
 
-  > 'Het script New-onderwerp maakt een lege conceptueel onderwerp voor de naam van elk onderwerp in het invoerbestand...'
+  > "Met het script New-Topic maakt u een leeg conceptueel onderwerp voor elke onderwerpnaam in het invoer bestand..."
 
-  De volgende uitvoerige beschrijving vermeld dat `Disable-PSRemoting` is een functie. Deze informatie is met name handig voor gebruikers wanneer de sessie meerdere opdrachten met dezelfde naam bevat, waarvan sommige mogelijk worden verborgen door een opdracht met een hogere prioriteit.
+  In de volgende gedetailleerde beschrijving `Disable-PSRemoting` staat een functie. Deze informatie is vooral nuttig voor gebruikers wanneer de sessie meerdere opdrachten met dezelfde naam bevat, waarvan sommige worden verborgen met een opdracht met een hogere prioriteit.
 
-  > De `Disable-PSRemoting` functie alle sessieconfiguraties op de lokale computer wordt uitgeschakeld...
+  > Met `Disable-PSRemoting` de functie worden alle sessie configuraties uitgeschakeld op de lokale computer...
 
-- In een script help-onderwerp wordt uitgelegd hoe u het script te gebruiken als geheel. Als u ook help-onderwerpen voor functies in het script schrijft, vermeld de functies in uw script help-onderwerp en bevatten verwijzingen naar de functie help-onderwerpen in de sectie Verwante koppelingen van het script help-onderwerp. Daarentegen als een functie onderdeel van een script is, wordt uitgelegd in de functie help-onderwerp de rol die de functie speelt in het script en hoe deze onafhankelijk van elkaar kan worden gebruikt. Vervolgens een lijst voor het script help-onderwerp in de sectie Verwante koppelingen van de functie help-onderwerp.
+- In een Help-onderwerp in een script wordt uitgelegd hoe u het script als geheel kunt gebruiken. Als u de Help-onderwerpen over functies in het script ook schrijft, noteert u de functies in het Help-onderwerp van het script en neemt u verwijzingen op naar de Help-onderwerpen over functies in het gedeelte Verwante koppelingen van het Help-onderwerp van het script. Als een functie daarentegen deel uitmaakt van een script, wordt in het Help-onderwerp van de functie uitgelegd dat de functie in het script wordt afgespeeld en hoe deze onafhankelijk kan worden gebruikt. Vervolgens wordt het Help-onderwerp van het script weer geven in het gedeelte Verwante koppelingen van het Help-onderwerp van de functie.
 
-- Bij het schrijven van voorbeelden voor een script help-onderwerp, moet u het pad naar het scriptbestand in het voorbeeld opnemen. Deze herinnering gebruikers dat ze het pad expliciet, geeft moeten zelfs wanneer het script in de huidige map is.
+- Bij het schrijven van voor beelden voor een Help-onderwerp in een script moet u het pad naar het script bestand in de voor beeld-opdracht toevoegen. Dit herinnert gebruikers dat ze het pad expliciet moeten opgeven, zelfs wanneer het script zich in de huidige map bevindt.
 
-- In een functie help-onderwerp Herinner de gebruikers die de functie alleen aanwezig is in de huidige sessie en, als u wilt gebruiken in andere sessies, moeten ze toe te voegen of deze een PowerShell-profiel toevoegen.
+- In het Help-onderwerp van een functie herinnert u gebruikers dat de functie alleen bestaat in de huidige sessie en om deze te gebruiken in andere sessies, ze moeten deze toevoegen of een Power shell-profiel toevoegen.
 
-- `Get-Help` Geeft de help-onderwerp voor een script of functie alleen wanneer het scriptbestand en help-Onderwerpbestanden worden opgeslagen in de juiste locaties. Het is daarom niet nuttig om instructies voor het installeren van PowerShell, of opslaan of installeren van het script of functie in een script of functie help-onderwerp. In plaats daarvan de installatie-instructies in het document dat u gebruikt voor het distribueren van het script of functie opnemen.
+- `Get-Help`Hiermee wordt het Help-onderwerp voor een script of functie alleen weer gegeven wanneer het script bestand en Help-onderwerp bestanden worden opgeslagen op de juiste locaties. Daarom is het niet handig instructies voor het installeren van Power shell op te geven, of het script of de functie in een Help-onderwerp in een script of functie op te slaan of te installeren. Neem in plaats daarvan installatie-instructies op in het document dat u gebruikt om het script of de functie te distribueren.
 
 ## <a name="see-also"></a>Zie ook
 
- [Schrijven van Help-onderwerpen op basis van XML voor Scripts en functies](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [Schrijven van Help-onderwerpen op basis van XML voor opdrachten](./writing-xml-based-help-topics-for-commands.md)
-
- [Schrijven van Help-onderwerpen op basis van een opmerking](./writing-comment-based-help-topics.md)
+[Help-onderwerpen over opmerkingen schrijven](./writing-comment-based-help-topics.md)

@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 codevoorbeeld (VB.NET) | Microsoft Docs
+title: RunSpace03 (VB.NET)-code voorbeeld | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734979"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848012"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Runspace03-codevoorbeeld (VB.NET)
 
-Hier volgt de broncode VB.NET voor de consoletoepassing die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een Script opgegeven](fd). In dit voorbeeld wordt de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse voor het uitvoeren van een script dat haalt de verwerking van gegevens voor een lijst van procesnamen die zijn doorgegeven aan het script. Deze leest hoe gebruikersinvoer objecten doorgeven aan een script en foutobjecten, evenals de uitvoer-objecten ophalen.
+Dit is de VB.NET-bron code voor de console toepassing die wordt beschreven in een console toepassing maken die een opgegeven script uitvoert. In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om een script uit te voeren waarmee proces gegevens worden opgehaald voor de lijst met proces namen die zijn door gegeven aan het script. Hierin ziet u hoe invoer objecten worden door gegeven aan een script en hoe fout objecten worden opgehaald, evenals de uitvoer objecten.
 
 > [!NOTE]
-> U kunt het bronbestand VB.NET (runspace03.vb) voor dit voorbeeld downloaden met behulp van Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
+> U kunt het VB.NET-bron bestand (runspace03. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> De gedownloade bron bestanden zijn beschikbaar in de  **\<Power shell-voor beelden >** Directory.
 
-## <a name="code-sample"></a>Voorbeeld van code
+## <a name="code-sample"></a>Code voorbeeld
 
 ```vb
 Imports System
@@ -108,6 +107,6 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell-programmeergids](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: Inzicht krijgen in een Windows PowerShell-Module | Microsoft Docs
+title: Informatie over een Windows Power shell-module | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,115 +8,115 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470788"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848059"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Inzicht in een Windows PowerShell-module
 
-Een *module* is een set van gerelateerde Windows PowerShell-functies, gegroepeerd als een handige eenheid (meestal opgeslagen in één map). Bevat een reeks van verwante scriptbestanden, assembly's en gerelateerde resources als een module, kunt u verwijzen naar, laden, behouden en deel uw code veel eenvoudiger dan u anders zouden doen.
+Een *module* is een set verwante Windows Power shell-functies, gegroepeerd als een handige eenheid (meestal opgeslagen in één map). Als u een reeks gerelateerde script bestanden, verzamelingen en gerelateerde resources als een module definieert, kunt u de code op een andere manier gebruiken, laden, persistent maken en delen.
 
-Het belangrijkste doel van een module is om toe te staan de modulevorming (ie, opnieuw gebruiken en abstractie) van Windows PowerShell-code. Bijvoorbeeld, is de eenvoudigste manier voor het maken van een module gewoon een Windows PowerShell-script opslaan als een psm1-bestand. Als dit dus kunt u bepalen (ie, zorg openbaar of privé) de functies en variabelen die zijn opgenomen in het script. Het script op te slaan als een psm1-bestand kunt u voor het beheren van het bereik van bepaalde variabelen. Ten slotte, u kunt ook gebruik cmdlets zoals [Install-Module](/powershell/module/PowershellGet/Install-Module) om te organiseren, installeren en gebruiken van uw script als bouwstenen voor grotere oplossingen.
+Het belangrijkste doel van een module is het toestaan van de modularization (IE, hergebruik en abstractie) van Windows Power shell-code. De meest eenvoudige manier om een module te maken, is om eenvoudigweg een Windows Power shell-script op te slaan als een. psm1-bestand. Als u dit doet, kunt u de functies en variabelen in het script beheren (IE, openbaar of privé maken). Als u het script opslaat als een. psm1-bestand, kunt u ook het bereik van bepaalde variabelen beheren. Ten slotte kunt u ook cmdlets zoals [install-module](/powershell/module/PowershellGet/Install-Module) gebruiken om uw script te organiseren, te installeren en te gebruiken als bouw stenen voor grotere oplossingen.
 
-## <a name="module-components-and-types"></a>Module-onderdelen en typen
+## <a name="module-components-and-types"></a>Module onderdelen en typen
 
-Een module bestaat uit vier algemene onderdelen:
+Een module bestaat uit vier basis onderdelen:
 
-1. Sommige sorteren van codebestand - meestal een PowerShell-script of een beheerde cmdlet-assembly.
+1. Een bepaalde soort code bestand: doorgaans een Power shell-script of een beheerde cmdlet-assembly.
 
-2. Zaken die het bovenstaande codebestand mogelijk nodig, zoals extra assembly's, hulp-bestanden of scripts.
+2. Alles wat het bovenstaande code bestand mogelijk nodig heeft, zoals extra assembly's, Help-bestanden of scripts.
 
-3. Een manifestbestand waarin de bovenstaande bestanden worden beschreven, evenals metadada, zoals informatie over de auteur en versiebeheer worden opgeslagen...
+3. Een manifest bestand waarin de bovenstaande bestanden worden beschreven, evenals de meta gegevens van de auteur en versie van deze gegevens worden opgeslagen.
 
-4. Een map bevat alle van de bovenstaande inhoud en bevindt zich waar PowerShell redelijkerwijs deze kan vinden.
+4. Een map die alle bovenstaande inhoud bevat en die zich bevindt in Power shell die redelijkerwijs kan worden gevonden.
 
-   Houd er rekening mee dat geen van deze onderdelen op zichzelf, daadwerkelijk nodig zijn. Een module mag bijvoorbeeld technisch alleen scripts die zijn opgeslagen in een psm1-bestand. U kunt ook een module die is niets, maar een manifestbestand hoofdzakelijk voor organisatie-toepassing gebruikt wordt hebben. U kunt ook een script dat dynamisch maakt een module en daarom niet daadwerkelijk moet een map voor het opslaan van alles in schrijven. De volgende secties wordt beschreven welke typen modules die u krijgen kunt door een combinatie van en die overeenkomt met de verschillende mogelijk onderdelen van een module samen.
+   Houd er rekening mee dat geen van deze onderdelen zelf echt nood zakelijk is. Een module kan bijvoorbeeld technisch alleen een script zijn dat is opgeslagen in een. psm1-bestand. U kunt ook een module hebben die niets maar een manifest bestand is, dat hoofd zakelijk wordt gebruikt voor organisatie doeleinden. U kunt ook een script schrijven dat dynamisch een module maakt en als zodanig geen Directory nodig heeft voor het opslaan van items in. In de volgende secties worden de typen modules beschreven die u kunt verkrijgen door de verschillende mogelijke onderdelen van een module samen te mengen en te vergelijken.
 
-### <a name="script-modules"></a>Scriptmodules
+### <a name="script-modules"></a>Script modules
 
-Als de naam al aangeeft, een *scriptmodule* is een bestand (.psm1) met een geldige Windows PowerShell-code. Script ontwikkelaars en beheerders kunnen dit type module gebruiken om te maken van modules waarvan de leden functies, variabelen en meer bevatten. Kern is een scriptmodule gewoon een Windows PowerShell-script met een andere extensie, waarmee beheerders import, export, en beheerfuncties op het gebruik.
+Zoals de naam al aangeeft, is een *script module* een bestand (. psm1) dat een geldige Windows Power shell-code bevat. Ontwikkel aars van scripts en beheerders kunnen dit type module gebruiken om modules te maken waarvan de leden functies, variabelen en meer bevatten. In het hart is een script module gewoon een Windows Power shell-script met een andere extensie, waarmee beheerders import-, export-en beheer functies kunnen gebruiken.
 
-U kunt bovendien een manifestbestand gebruiken om op te nemen van andere bronnen in uw module, zoals bestanden, andere afhankelijke modules of runtime-scripts. Manifest-bestanden zijn ook nuttig voor het bijhouden van metagegevens, zoals informatie over ontwerpen en versiebeheer.
+Daarnaast kunt u een manifest bestand gebruiken om andere resources in uw module op te treffen, zoals gegevens bestanden, andere afhankelijke modules of runtime-scripts. Manifest bestanden zijn ook handig voor het volgen van meta gegevens, zoals ontwerpen en versie-informatie.
 
-Ten slotte moet een scriptmodule, net als elke andere module dat dynamisch wordt niet gemaakt, worden opgeslagen in een map die PowerShell redelijkerwijs kan detecteren. Meestal is dit op het pad van de PowerShell-module; maar indien nodig kunt u expliciet aangeven waar uw module is geïnstalleerd. Zie voor meer informatie, [over het schrijven van een PowerShell-Script-Module](./how-to-write-a-powershell-script-module.md).
+Ten slotte moet een script module, zoals elke andere module die niet dynamisch wordt gemaakt, worden opgeslagen in een map die in Power shell redelijkerwijs kan worden gedetecteerd. Normaal gesp roken bevindt dit zich op het pad van de Power shell-module. maar als dat nodig is, kunt u expliciet beschrijven waar de module is geïnstalleerd. Zie [een Power shell-script module schrijven](./how-to-write-a-powershell-script-module.md)voor meer informatie.
 
-### <a name="binary-modules"></a>Binaire Modules
+### <a name="binary-modules"></a>Binaire modules
 
-Een *binaire module* is een .NET Framework-assembly (dll) waarin gecompileerde code, zoals C#. Cmdlet-ontwikkelaars kunnen dit type module gebruiken voor het delen van cmdlets en providers. (Bestaande-modules kan ook worden gebruikt als binaire modules.) Een binaire module vergeleken met een scriptmodule, kunt u cmdlets die zijn sneller of functies maken (zoals multithreading) die niet zijn net zo gemakkelijk om te coderen in Windows PowerShell-scripts.
+Een *binaire module* is een .NET Framework-assembly (. dll) die gecompileerde code bevat C#, zoals. Cmdlet-ontwikkel aars kunnen dit type module gebruiken om cmdlets, providers en meer te delen. (Bestaande modules kunnen ook worden gebruikt als binaire modules.) In vergelijking met een script module kunt u met een binaire module cmdlets maken die sneller zijn of gebruikmaken van functies (zoals multi threading) die niet zo gemakkelijk zijn te coderen in Windows Power shell-scripts.
 
-Als met scriptmodules, kunt u een manifestbestand om te beschrijven aanvullende bronnen die gebruikmaakt van de module en om bij te houden van metagegevens over uw module opnemen. Op dezelfde manier moet waarschijnlijk u uw binaire module in een map ergens op het pad van de module PowerShell. Zie voor meer informatie over het [over het schrijven van een PowerShell-Module voor binaire](./how-to-write-a-powershell-binary-module.md).
+Net als bij script modules kunt u een manifest bestand toevoegen om aanvullende resources te beschrijven die door de module worden gebruikt en om meta gegevens over uw module bij te houden. Op dezelfde manier moet u waarschijnlijk uw binaire module in een map ergens naast het pad van de Power shell-module installeren. Zie How to [Write a Power shell binary module](./how-to-write-a-powershell-binary-module.md)(Engelstalig) voor meer informatie.
 
-### <a name="manifest-modules"></a>Manifest Modules
+### <a name="manifest-modules"></a>Manifest modules
 
-Een *manifest module* is een module die gebruikmaakt van een manifestbestand voor het beschrijven van alle onderdelen, maar beschikt niet over een of andere vorm van core assembly of het script. (Voorheen, een manifest module verlaat de `ModuleToProcess` of `RootModule` element van het manifest leeg zijn.) U kunt echter nog steeds andere functies van een module, zoals de mogelijkheid om te laden van afhankelijke assembly's of automatisch uitvoeren van bepaalde vooraf verwerken scripts gebruiken. U kunt ook een manifest module gebruiken als een handige manier om de resources die andere modules, zoals geneste modules, assembly's, typen en indelingen gebruiken wilt verpakken. Zie voor meer informatie, [over het schrijven van een PowerShell-Module-Manifest](./how-to-write-a-powershell-module-manifest.md).
+Een *manifest module* is een module die gebruikmaakt van een manifest bestand om alle onderdelen ervan te beschrijven, maar heeft geen sortering van de kern assemblage of het script. (Formeel, een manifest module laat het `ModuleToProcess` element `RootModule` of van het manifest leeg.) U kunt echter nog steeds gebruikmaken van de andere functies van een module, zoals de mogelijkheid om afhankelijke assembly's te laden of om automatisch bepaalde pre-verwerkings scripts uit te voeren. U kunt ook een manifest module gebruiken als een handige manier om resources te verpakken die andere modules gebruiken, zoals geneste modules, assembly's, typen of indelingen. Zie [een Power shell-module manifest schrijven](./how-to-write-a-powershell-module-manifest.md)voor meer informatie.
 
-### <a name="dynamic-modules"></a>Dynamische Modules
+### <a name="dynamic-modules"></a>Dynamische modules
 
-Een *dynamische module* is een module die is niet geladen uit of in een bestand opgeslagen. In plaats daarvan worden dynamisch gemaakt door een script met behulp van de [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet. Dit type module kunt een script voor het maken van een module op aanvraag die niet worden geladen of opgeslagen in een permanente opslag nodig heeft. Door de aard, een dynamische module is bedoeld als tijdelijke en daarom kan niet worden geopend door de `Get-Module` cmdlet. Op dezelfde manier, meestal hoeven ze niet modulemanifesten en waarschijnlijk moeten ze permanente mappen voor het opslaan van de bijbehorende assembly's.
+Een *dynamische module* is een module die niet is geladen vanuit of opgeslagen in een bestand. In plaats daarvan worden ze dynamisch gemaakt door een script met behulp van de cmdlet [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Met dit type module kan een script een module op aanvraag maken die niet hoeft te worden geladen of opgeslagen in permanente opslag. Een dynamische module is door zijn aard bedoeld om kort te worden bewaard en kan daarom niet worden gebruikt door de `Get-Module` cmdlet. Normaal gesp roken hebben ze doorgaans geen module manifesten nodig en hebben ze waarschijnlijk permanente mappen nodig om hun gerelateerde assembly's op te slaan.
 
-## <a name="module-manifests"></a>Modulemanifesten
+## <a name="module-manifests"></a>Module manifesten
 
-Een *module-manifest* is een .psd1-bestand met een hash-tabel. De sleutels en waarden in de hash-tabel kunt u het volgende doen:
+Een *module manifest* is een. psd1-bestand dat een hash-tabel bevat. De sleutels en waarden in de hash-tabel doen het volgende:
 
-- Beschrijf de inhoud en de kenmerken van de module.
+- Beschrijf de inhoud en kenmerken van de module.
 
-- De vereisten definiëren.
+- Definieer de vereisten.
 
-- Bepalen hoe de onderdelen worden verwerkt.
+- Bepaal hoe de onderdelen worden verwerkt.
 
-  Manifesten zijn niet vereist voor een module. Modules kunnen verwijzen naar scriptbestanden (.ps1), module-bestanden (.psm1), manifestbestand (.psd1), opmaak script en typt u bestanden (.ps1xml), -cmdlet en provider assembly's (.dll), bestanden, Help-bestanden, lokalisatie bestanden of een ander type bestand of de resource die wordt geleverd als onderdeel van de module. De modulemap bevat ook een set catalogusbestanden voor een geïnternationaliseerde script. Als u een manifestbestand aan de modulemap toevoegt, u kunt verwijzen naar meerdere bestanden als één eenheid door te verwijzen naar het manifest.
+  Er zijn geen manifesten vereist voor een module. Modules kunnen verwijzen naar script bestanden (. ps1), script module bestanden (. psm1), manifest bestanden (. psd1), opmaak en type bestanden (. ps1xml), cmdlet-en provider-assembly's (. dll), resource bestanden, Help-bestanden, lokalisatie bestanden of andere typen bestanden of bronnen die is gebundeld als onderdeel van de module. Voor een internationaal script bevat de map module ook een set bericht catalogus bestanden. Als u een manifest bestand aan de module map toevoegt, kunt u verwijzen naar de meerdere bestanden als één eenheid door te verwijzen naar het manifest.
 
-  Het manifest zelf beschrijft de volgende categorieën van informatie:
+  In het manifest zelf worden de volgende categorieën informatie beschreven:
 
-- De metagegevens van de module, zoals het versienummer van de module, de auteur en de beschrijving.
+- Meta gegevens over de module, zoals het versie nummer van de module, de auteur en de beschrijving.
 
-- Vereiste onderdelen die nodig zijn om de module, zoals de Windows PowerShell-versie, de common language runtime (CLR)-versie en de vereiste modules te importeren.
+- De vereisten die nodig zijn voor het importeren van de module, zoals de Windows Power shell-versie, de versie van de Common Language Runtime (CLR) en de vereiste modules.
 
-- Verwerking richtlijnen, zoals scripts, indelingen en typen om te verwerken.
+- Het verwerken van instructies, zoals de scripts, indelingen en typen die moeten worden verwerkt.
 
-- Beperkingen voor de leden van de module te exporteren, zoals de aliassen, functies, variabelen en cmdlets voor het exporteren.
+- Beperkingen voor de leden van de module die u wilt exporteren, zoals de aliassen, functies, variabelen en cmdlets die moeten worden geëxporteerd.
 
-  Zie voor meer informatie, [over het schrijven van een PowerShell-Module-Manifest](./how-to-write-a-powershell-module-manifest.md).
+  Zie [een Power shell-module manifest schrijven](./how-to-write-a-powershell-module-manifest.md)voor meer informatie.
 
-## <a name="storing-and-installing-a-module"></a>Opslaan en installeren van een Module
+## <a name="storing-and-installing-a-module"></a>Een module opslaan en installeren
 
-Als u een script, binair of manifest module hebt gemaakt, kunt u uw werk opslaan op een locatie die anderen hiertoe toegang hebben is. De module kan bijvoorbeeld worden opgeslagen in de map waar Windows PowerShell is geïnstalleerd, of deze kan worden opgeslagen in de map van een gebruiker.
+Zodra u een script-, binaire of manifest-module hebt gemaakt, kunt u uw werk opslaan op een locatie waar anderen toegang toe hebben. Uw module kan bijvoorbeeld worden opgeslagen in de systeemmap waarin Windows Power shell is geïnstalleerd, maar kan ook worden opgeslagen in een gebruikers map.
 
-In het algemeen kunt u bepalen waar u de module moet installeren met behulp van een van de paden die zijn opgeslagen in de `$ENV:PSModulePath` variabele. Met behulp van een van deze paden betekent dat PowerShell automatisch kunt vinden en uw module geladen wanneer een gebruiker Hiermee wordt een aanroep toe in de code. Als u uw module ergens anders opslaan, kunt u expliciet laten weten door te geven op de locatie van uw module als een parameter bij het aanroepen van PowerShell `Install-Module`.
+Over het algemeen kunt u bepalen waar u uw module moet installeren met behulp van een van de paden die `$ENV:PSModulePath` zijn opgeslagen in de variabele. Als u een van deze paden gebruikt, kan Power shell automatisch uw module vinden en laden wanneer een gebruiker deze in hun code aanroept. Als u uw module ergens anders opslaat, kunt u de Power shell expliciet laten weten door de locatie van uw module op te geven als een para `Install-Module`meter wanneer u aanroept.
 
-Ongeacht het pad van de map wordt aangeduid als de *basis* van de module (ModuleBase) en de naam van het script, binair of manifest module-bestand moet hetzelfde zijn als de naam van de module map met de volgende uitzonderingen:
+Ongeacht het pad van de map wordt de *basis* van de module (erft type) genoemd, en de naam van het script-, binair-of manifest module bestand moet hetzelfde zijn als de naam van de module-map, met de volgende uitzonde ringen:
 
-- Dynamische modules die zijn gemaakt door de `New-Module` cmdlet kan worden met de naam met behulp van de `Name` parameter van de cmdlet.
+- Dynamische modules die door de `New-Module` cmdlet worden gemaakt, kunnen worden benoemd met behulp van de `Name` para meter van de cmdlet.
 
-- Modules die zijn geïmporteerd uit assembly objecten op basis van de  **`Import-Module` -Assembly** opdracht zijn met de naam op basis van de volgende syntaxis: `"dynamic_code_module_" + assembly.GetName()`.
+- Modules die worden geïmporteerd uit assembly-objecten met de  **`Import-Module` -assembly-** opdracht worden benoemd `"dynamic_code_module_" + assembly.GetName()`volgens de volgende syntaxis:.
 
-  Zie voor meer informatie, [een PowerShell-Module installeren](./installing-a-powershell-module.md) en [wijzigen van het installatiepad PSModulePath](./modifying-the-psmodulepath-installation-path.md).
+  Zie [een Power shell-module installeren](./installing-a-powershell-module.md) en het installatiepad voor [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md)voor meer informatie.
 
-## <a name="module-cmdlets-and-variables"></a>Module-Cmdlets en -variabelen
+## <a name="module-cmdlets-and-variables"></a>Module-cmdlets en-variabelen
 
-De volgende cmdlets en -variabelen worden geleverd door Windows PowerShell voor het maken en beheren van de modules.
+De volgende cmdlets en variabelen worden verzorgd door Windows Power shell voor het maken en beheren van modules.
 
-[Nieuwe Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet met deze cmdlet maakt een nieuwe dynamische module die bestaat alleen in het geheugen. De module vanuit een scriptblok wordt gemaakt en de geëxporteerde leden, zoals de functies en variabelen, zijn onmiddellijk beschikbaar in de sessie en beschikbaar blijven totdat de sessie wordt gesloten.
+Cmdlet [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) met deze cmdlet wordt een nieuwe dynamische module gemaakt die alleen in het geheugen bestaat. De module wordt gemaakt op basis van een script blok en de geëxporteerde leden, zoals de functies en variabelen, zijn onmiddellijk beschikbaar in de sessie en blijven beschikbaar totdat de sessie wordt gesloten.
 
-[Nieuwe ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet met deze cmdlet maakt een nieuw bestand van de module-manifest (.psd1), vult u de waarden ervan en slaat u de manifest-bestand voor het opgegeven pad. Deze cmdlet kan ook worden gebruikt om te maken van een module-manifest sjabloon die handmatig kan worden ingevuld.
+Cmdlet [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) deze cmdlet maakt een nieuw module manifest bestand (. psd1), vult de waarden in en slaat het manifest bestand op in het opgegeven pad. Deze cmdlet kan ook worden gebruikt voor het maken van een module manifest sjabloon die hand matig kan worden ingevuld.
 
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet met deze cmdlet wordt een of meer modules toegevoegd aan de huidige sessie.
+[Import-module-](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet deze cmdlet voegt een of meer modules toe aan de huidige sessie.
 
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet met deze cmdlet wordt informatie opgehaald over de modules die zijn of die kunnen worden geïmporteerd in de huidige sessie.
+[Get-module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet deze cmdlet haalt informatie op over de modules die zijn of die in de huidige sessie kunnen worden geïmporteerd.
 
-[Exporteren-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet met deze cmdlet Hiermee geeft u de module leden (zoals cmdlets, functies, variabelen en aliassen) die zijn geëxporteerd uit een scriptbestand voor module (.psm1) of van een dynamische module gemaakt met behulp van de `New-Module` cmdlet.
+De cmdlet [export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) met deze cmdlet worden de module leden (zoals cmdlets, functies, variabelen en aliassen) opgegeven die worden geëxporteerd uit een script module bestand (. psm1) of van een dynamische module die is gemaakt `New-Module` met behulp van de cmdlet.
 
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet deze cmdlet wordt modules verwijderd uit de huidige sessie.
+Cmdlet [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) met deze cmdlet worden modules uit de huidige sessie verwijderd.
 
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet met deze cmdlet wordt gecontroleerd of een module-manifest nauwkeurig de onderdelen van een module beschrijft door te controleren dat de bestanden die worden vermeld in de module manifestbestand (.psd1) werkelijk bestaan in de opgegeven paden.
+Cmdlet [test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) met deze cmdlet wordt gecontroleerd of een module manifest de onderdelen van een module nauw keurig beschrijft door te controleren of de bestanden die worden vermeld in het manifest bestand van de module (. psd1) werkelijk aanwezig zijn in de opgegeven paden.
 
-$PSScriptRoot deze variabele bevat de map van waaruit de scriptmodule wordt uitgevoerd. Hiermee kunt scripts gebruikmaken van het modulepad voor toegang tot andere resources.
+$PSScriptRoot deze variabele bevat de map van waaruit de script module wordt uitgevoerd. Hiermee kunnen scripts het pad naar de module gebruiken om toegang te krijgen tot andere resources.
 
-$env: PSModulePath deze omgevingsvariabele bevat een overzicht van de mappen in welke Windows PowerShell modules worden opgeslagen. Windows PowerShell maakt gebruik van de waarde van deze variabele bij het automatisch importeren van modules en Help-onderwerpen voor modules bijwerken.
+$env:P SModulePath deze omgevings variabele bevat een lijst met de directory's waarin Windows Power shell-modules zijn opgeslagen. Windows Power shell gebruikt de waarde van deze variabele bij het automatisch importeren van modules en het bijwerken van Help-onderwerpen voor modules.
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows PowerShell-Module schrijven](./writing-a-windows-powershell-module.md)
+[Een Windows Power shell-module schrijven](./writing-a-windows-powershell-module.md)

@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell-voorbeeldcode | Microsoft Docs
+title: Voorbeeld code voor Windows Power shell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,50 +8,51 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
-ms.openlocfilehash: 4154aeb22b5dde7806f3af133559d471e82bb981
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733771"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70847993"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-voorbeeldcode
 
-Windows PowerShell® voorbeelden zijn beschikbaar via de Windows-SDK. In deze sectie bevat de voorbeeldcode die is opgenomen in de Windows SDK-voorbeelden.
+Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sectie bevat de voorbeeld code die is opgenomen in de Windows SDK-voor beelden.
 
 > [!NOTE]
-> Wanneer de Windows-SDK is geïnstalleerd, een **voorbeelden** map wordt gemaakt waarin alle Windows PowerShell-voorbeelden beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Start Windows PowerShell en typ **"cd Samples\SysMgmt\PowerShell"** op zoek naar de map Windows PowerShell-voorbeelden. In dit document, de Windows PowerShell-voorbeelden-map wordt aangeduid als  **\<voorbeelden van PowerShell >** .
+> Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**.
+> Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map Windows Power shell-voor beelden wordt aangeduid als  **\<Power shell**-voor beelden >.
 
-## <a name="sample-code-listing"></a>Voorbeeld van een vermelding van de Code
+## <a name="sample-code-listing"></a>Voorbeeld code weer geven
 
 |Voorbeeldcode|Description|
 |-----------------|-----------------|
-|[Codevoorbeeld AccessDbProviderSample01](./accessdbprovidersample01-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een eenvoudige Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).|
-|[Codevoorbeeld AccessDbProviderSample02](./accessdbprovidersample02-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een Windows PowerShell station Provider](./creating-a-windows-powershell-drive-provider.md).|
-|[Codevoorbeeld AccessDbProviderSample03](./accessdbprovidersample03-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een Windows PowerShell-Provider Item](./creating-a-windows-powershell-item-provider.md).|
-|[Codevoorbeeld AccessDbProviderSample04](./accessdbprovidersample04-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een Windows PowerShell-Provider Container](./creating-a-windows-powershell-container-provider.md).|
-|[Codevoorbeeld AccessDbProviderSample05](./accessdbprovidersample05-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een Windows PowerShell-Provider navigatie](./creating-a-windows-powershell-navigation-provider.md).|
-|[Codevoorbeeld AccessDbProviderSample06](./accessdbprovidersample06-code-sample.md)|Dit is de provider die wordt beschreven in [het maken van een Windows PowerShell-inhoudsprovider](./creating-a-windows-powershell-content-provider.md).|
-|[GetProc01-codevoorbeelden](./getproc01-code-samples.md)|Dit is de basis `Get-Process` cmdlet-voorbeeld wordt beschreven in [het maken van uw eerste Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md).|
-|[GetProc02-codevoorbeelden](./getproc02-code-samples.md)|Dit is de `Get-Process` cmdlet-voorbeeld wordt beschreven in [Parameters die invoer van de opdrachtregel proces toe te voegen](../cmdlet/adding-parameters-that-process-command-line-input.md).|
-|[GetProc03-codevoorbeelden](./getproc03-code-samples.md)|Dit is de `Get-Process` cmdlet-voorbeeld wordt beschreven in [Parameters die invoer van de pijplijn proces toe te voegen](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
-|[GetProc04-codevoorbeelden](./getproc04-code-samples.md)|Dit is de `Get-Process` cmdlet-voorbeeld wordt beschreven in [toe te voegen Nonterminating foutrapportage aan uw Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[GetProc05-codevoorbeelden](./getproc05-code-samples.md)|Dit `Get-Process` cmdlet is vergelijkbaar met de cmdlet die wordt beschreven in [toe te voegen Nonterminating foutrapportage aan uw Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[StopProc01-codevoorbeelden](./stopproc01-code-samples.md)|Dit is de `Stop-Process` cmdlet-voorbeeld wordt beschreven in [maken van een Cmdlet dat Hiermee wijzigt u het systeem](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[StopProcessSample04-codevoorbeelden](./stopprocesssample04-code-samples.md)|Dit is de `Stop-Process` cmdlet-voorbeeld wordt beschreven in [parametersets toe te voegen aan een Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
-|[Runspace01-codevoorbeelden](./runspace01-code-samples.md)|Dit zijn de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een opgegeven opdracht](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
-|[Runspace02-codevoorbeelden](./runspace02-code-samples.md)|In dit voorbeeld wordt de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse om uit te voeren de `Get-Process` cmdlet synchroon.|
-|[RunSpace03-codevoorbeelden](./runspace03-code-samples.md)|Dit zijn de codevoorbeelden voor de runspace die zijn beschreven [het maken van een Console-toepassing die wordt uitgevoerd een Script opgegeven](fd).|
-|[RunSpace04-codevoorbeelden](./runspace04-code-samples.md)|Dit is een codevoorbeeld voor een runspace die gebruikmaakt van de [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasse voor het uitvoeren van een script dat wordt een afsluitende fout gegenereerd.|
-|[Codevoorbeeld RunSpace05](./runspace05-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace05 beschreven in [configureren van een Runspace met behulp van RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
-|[Codevoorbeeld RunSpace06](./runspace06-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace06 beschreven in [configureren van een Runspace met behulp van een Windows PowerShell-Snap-in](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
-|[Codevoorbeeld RunSpace07](./runspace07-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace07 beschreven in [het maken van een toepassing die wordt toegevoegd consoleopdrachten voor een pijplijn](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
-|[Codevoorbeeld RunSpace08](./runspace08-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace08 beschreven in [het maken van een toepassing die wordt toegevoegd Consoleparameters aan een opdracht](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
-|[Codevoorbeeld RunSpace09](./runspace09-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace09 beschreven in [het maken van een Console-toepassing die roept een pijplijn asynchroon](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
-|[Codevoorbeeld RunSpace10](./runspace10-code-sample.md)|Dit is de broncode voor het voorbeeld Runspace10, die wordt toegevoegd een cmdlet voor het [System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) en gebruikt vervolgens de gewijzigde configuratie-informatie voor het maken van de runspace.|
+|[Voor beeld van AccessDbProviderSample01-code](./accessdbprovidersample01-code-sample.md)|Dit is de provider die wordt beschreven in [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md).|
+|[Voor beeld van AccessDbProviderSample02-code](./accessdbprovidersample02-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md).|
+|[Voor beeld van AccessDbProviderSample03-code](./accessdbprovidersample03-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md).|
+|[Voor beeld van AccessDbProviderSample04-code](./accessdbprovidersample04-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md).|
+|[Voor beeld van AccessDbProviderSample05-code](./accessdbprovidersample05-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-navigatie provider maken](./creating-a-windows-powershell-navigation-provider.md).|
+|[Voor beeld van AccessDbProviderSample06-code](./accessdbprovidersample06-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-inhouds provider maken](./creating-a-windows-powershell-content-provider.md).|
+|[Voor beelden van GetProc01-code](./getproc01-code-samples.md)|Dit is het basis `Get-Process` voorbeeld van de cmdlet die wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md).|
+|[Voor beelden van GetProc02-code](./getproc02-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md).|
+|[Voor beelden van GetProc03-code](./getproc03-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
+|[Voor beelden van GetProc04-code](./getproc04-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[Voor beelden van GetProc05-code](./getproc05-code-samples.md)|Deze `Get-Process` cmdlet is vergelijkbaar met de cmdlet die wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[Voor beelden van StopProc01-code](./stopproc01-code-samples.md)|Dit is het `Stop-Process` cmdlet-voor beeld dat wordt beschreven in [het maken van een cmdlet waarmee het systeem wordt gewijzigd](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
+|[Voor beelden van StopProcessSample04-code](./stopprocesssample04-code-samples.md)|Dit is het `Stop-Process` cmdlet-voor beeld dat wordt beschreven in het [toevoegen van parameter sets aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[Voor beelden van Runspace01-code](./runspace01-code-samples.md)|Dit zijn de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
+|[Voor beelden van Runspace02-code](./runspace02-code-samples.md)|In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om de `Get-Process` cmdlet synchroon uit te voeren.|
+|[Voor beelden van RunSpace03-code](./runspace03-code-samples.md)|Dit zijn de code voorbeelden voor de runs Pace die wordt beschreven in een console toepassing maken die een opgegeven script uitvoert.|
+|[Voor beelden van RunSpace04-code](./runspace04-code-samples.md)|Dit is een code voorbeeld voor een runs Pace die gebruikmaakt van de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) om een script uit te voeren dat een afsluit fout genereert.|
+|[Voor beeld van RunSpace05-code](./runspace05-code-sample.md)|Dit is de bron code voor het Runspace05-voor beeld dat wordt beschreven in [een runs Pace configureren met behulp van RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
+|[Voor beeld van RunSpace06-code](./runspace06-code-sample.md)|Dit is de bron code voor het Runspace06-voor beeld dat wordt beschreven in [een runs Pace configureren met een Windows Power shell-module](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
+|[Voor beeld van RunSpace07-code](./runspace07-code-sample.md)|Dit is de bron code voor het Runspace07-voor beeld dat wordt beschreven in [een console toepassing maken waarmee opdrachten worden toegevoegd aan een pijp lijn](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
+|[Voor beeld van RunSpace08-code](./runspace08-code-sample.md)|Dit is de bron code voor het Runspace08-voor beeld dat wordt beschreven in [een console toepassing maken die para meters toevoegt aan een opdracht](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
+|[Voor beeld van RunSpace09-code](./runspace09-code-sample.md)|Dit is de bron code voor het Runspace09-voor beeld dat wordt beschreven in [een console toepassing maken die een pijp lijn asynchroon aanroept](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
+|[Voor beeld van RunSpace10-code](./runspace10-code-sample.md)|Dit is de bron code voor het Runspace10-voor beeld, waarmee een cmdlet wordt toegevoegd aan [System. Management. Automation. Runspaces. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) en vervolgens de gewijzigde configuratie-informatie gebruikt om de runs Pace te maken.|
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell-programmeergids](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

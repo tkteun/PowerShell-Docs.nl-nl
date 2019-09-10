@@ -1,5 +1,5 @@
 ---
-title: Ondersteunende Online Help | Microsoft Docs
+title: Ondersteuning voor online-Help | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082138"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848089"
 ---
-# <a name="supporting-online-help"></a>Ondersteunende Online Help
+# <a name="supporting-online-help"></a>Ondersteunende online help
 
-Vanaf Windows PowerShell 3.0, er zijn twee manieren voor de ondersteuning van de `Get-Help` Online-functie voor Windows PowerShell-opdrachten. In dit onderwerp wordt uitgelegd hoe u deze functie voor verschillende opdrachttypen implementeren.
+Vanaf Windows Power Shell 3,0 zijn er twee manieren om de `Get-Help` online functie voor Windows Power shell-opdrachten te ondersteunen. In dit onderwerp wordt uitgelegd hoe u deze functie implementeert voor verschillende opdracht typen.
 
-## <a name="about-online-help"></a>Informatie over Online Help
+## <a name="about-online-help"></a>Online-Help
 
-Online-help is altijd een essentieel onderdeel van Windows PowerShell. Hoewel de `Get-Help` cmdlet geeft help-onderwerpen bij de opdrachtprompt, die veel gebruikers de voorkeur geeft aan de ervaring voor het lezen van online, met inbegrip van kleurcodering, hyperlinks en delen ideeën in Community-inhoud en documenten op basis van een wiki. Voordat u de opkomst van bij te werken Help opgegeven online-help belangrijker nog, de meest recente versie van de help-bestanden.
+Online-Help is altijd een essentieel onderdeel van Windows Power shell. Hoewel met `Get-Help` de cmdlet Help-onderwerpen worden weer gegeven bij de opdracht prompt, hebben veel gebruikers de voor keur aan het online lezen, met inbegrip van kleur codering, hyper links en het delen van ideeën in Community-inhoud en documenten op basis van wiki. In de online Help werd de meest recente versie van de Help-bestanden het belangrijkst, vóór de komst van de Help-informatie die kan worden bijgewerkt.
 
-Met de komst van bij te werken Help in Windows PowerShell 3.0, in online-help nog steeds een belangrijke rol speelt. Naast de flexibele gebruikerservaring biedt online-help help voor gebruikers die niet of niet bij te werken Help voor het downloaden van help-onderwerpen gebruiken.
+Met de komst van de bijwerk bare Help in Windows Power Shell 3,0 speelt de online Help nog steeds een belang rijke rol af. Naast de flexibele gebruikers ervaring biedt de online Help hulp bij gebruikers die geen Bewerk bare Help kunnen gebruiken om Help-onderwerpen te downloaden.
 
-## <a name="how-get-help--online-works"></a>Hoe Get-Help-Online werkt
+## <a name="how-get-help--online-works"></a>Help-online werken
 
-Om u te helpen bij het zoeken van de online help-onderwerpen voor opdrachten de `Get-Help` opdracht heeft een Online-parameter die de online versie van help-onderwerp voor een opdracht in de standaardinternetbrowser van de gebruiker wordt geopend.
+Om gebruikers te helpen de online-Help-onderwerpen voor- `Get-Help` opdrachten te vinden, heeft de opdracht een online-para meter waarmee de online versie van het Help-onderwerp voor een opdracht in de standaard browser van de gebruiker wordt geopend.
 
-Bijvoorbeeld, de volgende opdracht wordt geopend met de online help-onderwerp voor de `Invoke-Command` cmdlet.
+Met de volgende opdracht wordt bijvoorbeeld het online-Help-onderwerp voor `Invoke-Command` de cmdlet geopend.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Voor het implementeren van `Get-Help` -Online, de `Get-Help` cmdlet ziet er uit voor een Uniform Resource Identifier (URI) voor de versie van de online help-onderwerp in de volgende locaties.
+Om- `Get-Help` online te implementeren, `Get-Help` zoekt de cmdlet naar een Uniform Resource Identifier (URI) voor het Help-onderwerp online versie op de volgende locaties.
 
-- De eerste koppeling in de sectie Verwante koppelingen van het help-onderwerp voor de opdracht. Het help-onderwerp moet worden geïnstalleerd op de computer van de gebruiker. Deze functie is geïntroduceerd in Windows PowerShell 2.0.
+- De eerste koppeling in het gedeelte Verwante koppelingen van het Help-onderwerp voor de opdracht. Het Help-onderwerp moet worden geïnstalleerd op de computer van de gebruiker. Deze functie is geïntroduceerd in Windows Power Shell 2,0.
 
-- De eigenschap HelpUri van een opdracht. De eigenschap HelpUri is toegankelijk is, zelfs wanneer het help-onderwerp voor de opdracht is niet geïnstalleerd op de computer van de gebruiker. Deze functie is geïntroduceerd in Windows PowerShell 3.0.
+- De eigenschap HelpUri van een wille keurige opdracht. De eigenschap HelpUri is toegankelijk, zelfs wanneer het Help-onderwerp voor de opdracht niet is geïnstalleerd op de computer van de gebruiker. Deze functie is geïntroduceerd in Windows Power Shell 3,0.
 
-  `Get-Help` zoekt naar een URI zijn die in de eerste vermelding in het gedeelte Verwante koppelingen alvorens de waarde van de eigenschap HelpUri. Als de eigenschapswaarde onjuist is of is gewijzigd, kunt u deze overschrijven door te voeren van een andere waarde in de eerste gerelateerde koppeling. De eerste gerelateerde koppeling werkt echter alleen wanneer de help-onderwerpen op de computer van de gebruiker zijn geïnstalleerd.
+  `Get-Help`zoekt naar een URI in de eerste vermelding in de sectie verwante koppelingen voordat u de waarde van de eigenschap HelpUri ophaalt. Als de waarde van de eigenschap onjuist is of is gewijzigd, kunt u deze overschrijven door een andere waarde in te voeren in de eerste gerelateerde koppeling. De eerste gerelateerde koppeling werkt echter alleen als de Help-onderwerpen zijn geïnstalleerd op de computer van de gebruiker.
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Een URI toe te voegen aan de eerste gerelateerde koppeling van een opdracht help-onderwerp
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Een URI toevoegen aan de eerste gerelateerde koppeling van een Help-onderwerp van een opdracht
 
-U kunt ondersteunen `Get-Help` -Online voor elke opdracht door een geldige URI toe te voegen aan het eerste item in de sectie Verwante koppelingen van het help-onderwerp op basis van XML voor de opdracht. Deze optie is alleen geldig in de help-onderwerpen op basis van XML en werkt alleen als het help-onderwerp is geïnstalleerd op de computer van de gebruiker. Wanneer het help-onderwerp is geïnstalleerd en de URI is gevuld, deze waarde heeft voorrang op de **HelpUri** eigenschap van de opdracht. Zie voor meer informatie over het help-onderwerpen op basis van XML voor opdrachten [Writing XML-Based Help-onderwerpen voor opdrachten](../help/writing-xml-based-help-topics-for-commands.md).
+U kunt online `Get-Help` een wille keurige opdracht ondersteunen door een geldige URI toe te voegen aan de eerste vermelding in de sectie verwante koppelingen van het Help-onderwerp op basis van XML voor de opdracht. Deze optie is alleen geldig in Help-onderwerpen op basis van XML en werkt alleen wanneer het Help-onderwerp op de computer van de gebruiker is geïnstalleerd. Wanneer het Help-onderwerp is geïnstalleerd en de URI is gevuld, heeft deze waarde voor rang op de eigenschap **HelpUri** van de opdracht.
 
-Ter ondersteuning van deze functie, moet de URI worden weergegeven de `maml:uri` element onder de eerste `maml:relatedLinks/maml:navigationLink` -element in de `maml:relatedLinks` element.
+Ter ondersteuning van deze functie moet de URI worden weer gegeven `maml:uri` in het-element `maml:relatedLinks/maml:navigationLink` onder het eerste `maml:relatedLinks` element in het-element.
 
-Het volgende XML-bestand ziet u de juiste plaatsing van de URI. De ' onlineversie: "tekst in de `maml:linkText` element is een aanbevolen procedure, maar dit is niet vereist.
+In het volgende XML-bestand wordt de juiste plaatsing van de URI weer gegeven. De tekst ' Online version: ' in het `maml:linkText` element is een Best Practice, maar dit is niet vereist.
 
 ```xml
 
@@ -65,25 +65,25 @@ Het volgende XML-bestand ziet u de juiste plaatsing van de URI. De ' onlineversi
 </maml:relatedLinks>
 ```
 
-## <a name="adding-the-helpuri-property-to-a-command"></a>De eigenschap HelpUri aan een opdracht toe te voegen
+## <a name="adding-the-helpuri-property-to-a-command"></a>De eigenschap HelpUri toevoegen aan een opdracht
 
-Deze sectie wordt beschreven hoe u de eigenschap HelpUri toevoegen aan de opdrachten van verschillende typen.
+In deze sectie wordt uitgelegd hoe u de eigenschap HelpUri kunt toevoegen aan opdrachten van verschillende typen.
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Een eigenschap HelpUri toe te voegen aan een Cmdlet
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Een HelpUri-eigenschap toevoegen aan een cmdlet
 
-Voor cmdlets die zijn geschreven in C#, Voeg een **HelpUri** kenmerk aan de Cmdlet-klasse. De waarde van het kenmerk moet een URI die met 'http' of 'https begint'.
+Voor cmdlets die zijn C#geschreven in, voegt u een **HelpUri** -kenmerk toe aan de klasse cmdlet. De waarde van het kenmerk moet een URI zijn die begint met http of https.
 
-De volgende code toont het kenmerk HelpUri van de `Get-History` cmdlet-klasse.
+Met de volgende code wordt het kenmerk HelpUri van `Get-History` de klasse cmdlet weer gegeven.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Een eigenschap HelpUri toe te voegen aan een geavanceerde functie
+### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Een eigenschap HelpUri toevoegen aan een geavanceerde functie
 
-Voor geavanceerde functies, voegt u toe een **HelpUri** eigenschap in op de **CmdletBinding** kenmerk. De waarde van de eigenschap moet een URI die met 'http' of 'https begint'.
+Voor geavanceerde functies voegt u een eigenschap **HelpUri** toe aan het kenmerk **CmdletBinding** . De waarde van de eigenschap moet een URI zijn die begint met http of https.
 
-De volgende code toont het kenmerk HelpUri van de functie New-agenda
+De volgende code toont het kenmerk HelpUri van de functie New-Calendar
 
 ```powershell
 
@@ -92,24 +92,24 @@ function New-Calendar {
     HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Een kenmerk HelpUri toe te voegen aan een CIM-opdracht
+### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Een HelpUri-kenmerk toevoegen aan een CIM-opdracht
 
-Voor de CIM-opdrachten, voegt u toe een **HelpUri** kenmerk aan de **CmdletMetadata** element in het bestand CDXML. De waarde van het kenmerk moet een URI die met 'http' of 'https begint'.
+Voor CIM-opdrachten voegt u een **HelpUri** -kenmerk toe aan het **CmdletMetadata** -element in het CDXML-bestand. De waarde van het kenmerk moet een URI zijn die begint met http of https.
 
-De volgende code toont het kenmerk HelpUri van de begin-Debug CIM-opdracht
+De volgende code toont het kenmerk HelpUri van de CIM-opdracht start-debug
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Een kenmerk HelpUri toe te voegen aan een werkstroom
+### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Een HelpUri-kenmerk toevoegen aan een werk stroom
 
-Voor werkstromen die zijn geschreven in de Windows PowerShell-taal, voegt u toe een **. ExternalHelp** Opmerking-richtlijn voor de werkstroomcode. De waarde van de richtlijn moet een URI die met 'http' of 'https begint'.
+Voor werk stromen die in de Windows Power shell-taal zijn geschreven, voegt u een toe **. ExternalHelp** van de opmerkings richtlijn naar de werk stroom code. De waarde van de instructie moet een URI zijn die begint met http of https.
 
 > [!NOTE]
-> De eigenschap HelpUri wordt niet ondersteund voor werkstromen op basis van XAML in Windows PowerShell.
+> De eigenschap HelpUri wordt niet ondersteund voor op XAML gebaseerde werk stromen in Windows Power shell.
 
-De volgende code toont de. ExternalHelp richtlijn in een werkstroombestand.
+De volgende code toont de. ExternalHelp-instructie in een werk stroom bestand.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"
