@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="91461-101">Voorbeeld scripts voor systeem beheer</span><span class="sxs-lookup"><span data-stu-id="91461-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="91461-102">Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.</span><span class="sxs-lookup"><span data-stu-id="91461-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+title: Voorbeeld scripts voor systeem beheer
+summary: Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.
 metadata:
-  title: <span data-ttu-id="91461-103">Voorbeeld scripts voor systeem beheer</span><span class="sxs-lookup"><span data-stu-id="91461-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="91461-104">Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.</span><span class="sxs-lookup"><span data-stu-id="91461-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  title: Voorbeeld scripts voor systeem beheer
+  description: Een verzameling voor beelden gaat over scenario's voor het beheren van systemen met Power shell.
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
@@ -15,85 +15,85 @@ metadata:
   ms.lasthandoff: 09/05/2019
   ms.locfileid: "70392635"
 landingContent:
-- title: <span data-ttu-id="91461-105">Met objecten werken</span><span class="sxs-lookup"><span data-stu-id="91461-105">Working with objects</span></span>
+- title: Met objecten werken
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="91461-106">Object structuur weer geven</span><span class="sxs-lookup"><span data-stu-id="91461-106">Viewing object structure</span></span>
+    - text: Object structuur weer geven
       url: ./viewing-object-structure--get-member-.md
-    - text: <span data-ttu-id="91461-107">Delen van een object selecteren</span><span class="sxs-lookup"><span data-stu-id="91461-107">Selecting parts of object</span></span>
+    - text: Delen van een object selecteren
       url: ./selecting-parts-of-objects--select-object-.md
-    - text: <span data-ttu-id="91461-108">Objecten filteren in de pijp lijn</span><span class="sxs-lookup"><span data-stu-id="91461-108">Filtering objects in the pipeline</span></span>
+    - text: Objecten filteren in de pijp lijn
       url: ./removing-objects-from-the-pipeline--where-object-.md
-    - text: <span data-ttu-id="91461-109">Objecten sorteren</span><span class="sxs-lookup"><span data-stu-id="91461-109">Sorting objects</span></span>
+    - text: Objecten sorteren
       url: ./sorting-objects.md
-    - text: <span data-ttu-id="91461-110">Een taak herhalen voor meerdere objecten</span><span class="sxs-lookup"><span data-stu-id="91461-110">Repeating a task for multiple objects</span></span>
+    - text: Een taak herhalen voor meerdere objecten
       url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-    - text: <span data-ttu-id="91461-111">.NET-en COM-objecten maken</span><span class="sxs-lookup"><span data-stu-id="91461-111">Creating .NET and COM objects</span></span>
+    - text: .NET-en COM-objecten maken
       url: ./creating-.net-and-com-objects--new-object-.md
-    - text: <span data-ttu-id="91461-112">Statische klassen en methoden gebruiken</span><span class="sxs-lookup"><span data-stu-id="91461-112">Using static classes and methods</span></span>
+    - text: Statische klassen en methoden gebruiken
       url: ./using-static-classes-and-methods.md
-    - text: <span data-ttu-id="91461-113">WMI-objecten ophalen (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="91461-113">Getting WMI objects - Get-WmiObject</span></span>
+    - text: WMI-objecten ophalen (Get-WmiObject)
       url: ./getting-wmi-objects--get-wmiobject-.md
-- title: <span data-ttu-id="91461-114">Computers beheren</span><span class="sxs-lookup"><span data-stu-id="91461-114">Managing computers</span></span>
+- title: Computers beheren
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="91461-115">Computerstatus wijzigen</span><span class="sxs-lookup"><span data-stu-id="91461-115">Changing computer state</span></span>
+    - text: Computerstatus wijzigen
       url: ./changing-computer-state.md
-    - text: <span data-ttu-id="91461-116">Informatie over computers verzamelen</span><span class="sxs-lookup"><span data-stu-id="91461-116">Collecting information about computers</span></span>
+    - text: Informatie over computers verzamelen
       url: ./collecting-information-about-computers.md
-    - text: <span data-ttu-id="91461-117">Get-WinEvent-query's maken met FilterHashtable</span><span class="sxs-lookup"><span data-stu-id="91461-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+    - text: Get-WinEvent-query's maken met FilterHashtable
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: <span data-ttu-id="91461-118">Processen & Services beheren</span><span class="sxs-lookup"><span data-stu-id="91461-118">Managing processes & services</span></span>
+- title: Processen & Services beheren
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="91461-119">Processen beheren met proces-cmdlets</span><span class="sxs-lookup"><span data-stu-id="91461-119">Managing processes with process cmdlets</span></span>
+    - text: Processen beheren met proces-cmdlets
       url: ./managing-processes-with-process-cmdlets.md
-    - text: <span data-ttu-id="91461-120">Services beheren</span><span class="sxs-lookup"><span data-stu-id="91461-120">Managing services</span></span>
+    - text: Services beheren
       url: ./managing-services.md
-    - text: <span data-ttu-id="91461-121">Windows PowerShell-stations beheren</span><span class="sxs-lookup"><span data-stu-id="91461-121">Managing Windows PowerShell drives</span></span>
+    - text: Windows PowerShell-stations beheren
       url: ./managing-windows-powershell-drives.md
-    - text: <span data-ttu-id="91461-122">Met printers werken</span><span class="sxs-lookup"><span data-stu-id="91461-122">Working with printers</span></span>
+    - text: Met printers werken
       url: ./working-with-printers.md
-    - text: <span data-ttu-id="91461-123">Netwerktaken uitvoeren</span><span class="sxs-lookup"><span data-stu-id="91461-123">Performing networking tasks</span></span>
+    - text: Netwerktaken uitvoeren
       url: ./performing-networking-tasks.md
-    - text: <span data-ttu-id="91461-124">Met software-installaties werken</span><span class="sxs-lookup"><span data-stu-id="91461-124">Working with software installations</span></span>
+    - text: Met software-installaties werken
       url: ./working-with-software-installations.md
-    - text: <span data-ttu-id="91461-125">Een PowerShell-opdracht decoderen vanuit een actief proces</span><span class="sxs-lookup"><span data-stu-id="91461-125">Decode a PowerShell command from a running process</span></span>
+    - text: Een PowerShell-opdracht decoderen vanuit een actief proces
       url: ./decode-powershell-command-from-a-running-process.md
-- title: <span data-ttu-id="91461-126">Werken met uitvoer</span><span class="sxs-lookup"><span data-stu-id="91461-126">Working with output</span></span>
+- title: Werken met uitvoer
   linkLists:
   - linkListType: concept
     links:
-    - text: <span data-ttu-id="91461-127">Gegevens omleiden met Out-\*-cmdlets</span><span class="sxs-lookup"><span data-stu-id="91461-127">Redirecting data with Out-\* cmdlets</span></span>
+    - text: Gegevens omleiden met Out-*-cmdlets
       url: ./redirecting-data-with-out---cmdlets.md
-    - text: <span data-ttu-id="91461-128">Format-opdrachten gebruiken om de uitvoerweergave te wijzigen</span><span class="sxs-lookup"><span data-stu-id="91461-128">Using format commands to change output view</span></span>
+    - text: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
       url: ./using-format-commands-to-change-output-view.md
-- title: <span data-ttu-id="91461-129">Stations & bestanden beheren</span><span class="sxs-lookup"><span data-stu-id="91461-129">Managing drives & files</span></span>
+- title: Stations & bestanden beheren
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="91461-130">Huidige locatie beheren</span><span class="sxs-lookup"><span data-stu-id="91461-130">Managing current location</span></span>
+    - text: Huidige locatie beheren
       url: ./managing-current-location.md
-    - text: <span data-ttu-id="91461-131">Met bestanden en mappen werken</span><span class="sxs-lookup"><span data-stu-id="91461-131">Working with files and folders</span></span>
+    - text: Met bestanden en mappen werken
       url: ./working-with-files-and-folders.md
-    - text: <span data-ttu-id="91461-132">Met bestanden, mappen en registersleutels werken</span><span class="sxs-lookup"><span data-stu-id="91461-132">Working with files folders and registry keys</span></span>
+    - text: Met bestanden, mappen en registersleutels werken
       url: ./working-with-files-folders-and-registry-keys.md
-    - text: <span data-ttu-id="91461-133">Met registervermeldingen werken</span><span class="sxs-lookup"><span data-stu-id="91461-133">Working with registry entries</span></span>
+    - text: Met registervermeldingen werken
       url: ./working-with-registry-entries.md
-    - text: <span data-ttu-id="91461-134">Met registersleutels werken</span><span class="sxs-lookup"><span data-stu-id="91461-134">Working with registry keys</span></span>
+    - text: Met registersleutels werken
       url: ./working-with-registry-keys.md
-- title: <span data-ttu-id="91461-135">UI-elementen maken</span><span class="sxs-lookup"><span data-stu-id="91461-135">Creating UI elements</span></span>
+- title: UI-elementen maken
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="91461-136">Een aangepast invoervak maken</span><span class="sxs-lookup"><span data-stu-id="91461-136">Creating a custom input box</span></span>
+    - text: Een aangepast invoervak maken
       url: ./creating-a-custom-input-box.md
-    - text: <span data-ttu-id="91461-137">Een grafische datumkiezer maken</span><span class="sxs-lookup"><span data-stu-id="91461-137">Creating a graphical date picker</span></span>
+    - text: Een grafische datumkiezer maken
       url: ./creating-a-graphical-date-picker.md
-    - text: <span data-ttu-id="91461-138">Meerdere selectielijstvelden</span><span class="sxs-lookup"><span data-stu-id="91461-138">Multiple selection list boxes</span></span>
+    - text: Meerdere selectielijstvelden
       url: ./multiple-selection-list-boxes.md
-    - text: <span data-ttu-id="91461-139">Items selecteren in een keuzelijst</span><span class="sxs-lookup"><span data-stu-id="91461-139">Selecting items from a list box</span></span>
+    - text: Items selecteren in een keuzelijst
       url: ./selecting-items-from-a-list-box.md
