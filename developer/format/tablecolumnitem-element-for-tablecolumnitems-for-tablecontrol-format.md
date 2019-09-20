@@ -1,5 +1,5 @@
 ---
-title: TableColumnItem-Element voor TableColumnItems voor TableControl (indeling) | Microsoft Docs
+title: TableColumnItem-element voor TableColumnItems voor TableControl (indeling) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
-ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e6cffc7476ef01124d95ecbf287d9788b0324c9
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62063935"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143585"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>Het element TableColumnItem voor TableColumnItems voor TableControl (opmaak)
 
-Hiermee definieert de eigenschap of het script waarvan de waarde wordt weergegeven in de kolom van de rij.
+Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in de kolom van de rij.
 
-Configuratie van Element (indeling) ViewDefinitions-Element (indeling) weergave Element (indeling) TableControl-Element (indeling) TableRowEntries Element voor TableControl (indeling) TableRowEntry-Element voor TableRowEntries voor TableControl (indeling) TableColumnItems-Element voor TableControlEntry voor TableControl (indeling) TableColumnItem Element voor TableColumnItems voor TableControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableRowEntries element voor TableControl (Format) TableRowEntry-element voor TableRowEntries voor TableControl (indeling) TableColumnItems-element voor TableControlEntry voor TableControl (Format) TableColumnItem element voor TableColumnItems voor TableControl (indeling)
 
 ## <a name="syntax"></a>Syntaxis
 
 ```xml
 <TableColumnItem>
   <Alignment>Left, Right, or Center</Alignment>
+  <FormatString>FormatPattern</FormatString>
   <PropertyName>Nameof.NetProperty</PropertyName>
   <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </TableColumnItem>
@@ -33,7 +34,7 @@ Configuratie van Element (indeling) ViewDefinitions-Element (indeling) weergave 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-De volgende secties worden de kenmerken, de onderliggende elementen en het bovenliggende element van de `TableColumnItem` element.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van `TableColumnItem` het element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,26 +44,26 @@ Geen.
 
 |Element|Description|
 |-------------|-----------------|
-|[Uitlijning-Element voor TableColumnItem voor TableControl (indeling)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee definieert u hoe de gegevens in een kolom van de rij worden weergegeven.|
-|[FormatString-Element voor TableColumnItem voor TableControl (indeling)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|Hiermee geeft u een indeling-patroon dat wordt gebruikt om de opmaak van de gegevens in de kolom van de rij.|
-|[PropertyName-Element voor TableColumnItem voor TableControl (indeling)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam van de eigenschap waarvan de waarde wordt weergegeven.|
-|[ScriptBlock-Element voor TableColumnItem voor TableControl (indeling)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script waarvan de waarde wordt weergegeven in de kolom van een rij.|
+|[Alignment-element voor TableColumnItem voor TableControl (indeling)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Bepaalt hoe de gegevens in een kolom van de rij worden weer gegeven.|
+|[Element formats Tring voor TableColumnItem voor TableControl (indeling)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|Geeft een indelings patroon aan dat wordt gebruikt om de gegevens in de kolom van de rij op te maken.|
+|[Het element PropertyName voor TableColumnItem voor TableControl (indeling)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam op van de eigenschap waarvan de waarde wordt weer gegeven.|
+|[Script block-element voor TableColumnItem voor TableControl (indeling)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarvan de waarde wordt weer gegeven in de kolom van een rij.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Description|
 |-------------|-----------------|
-|[TableColumnItems-Element voor TableControlEntry voor TableControl (indeling)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Definieert de eigenschappen of scripts waarvan de waarden worden weergegeven in de rij.|
+|[TableColumnItems-element voor TableControlEntry voor TableControl (indeling)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|Hiermee worden de eigenschappen of scripts gedefinieerd waarvan de waarden worden weer gegeven in de rij.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-U kunt een eigenschap van een object of een script opgeven in elke kolom van de rij. Als er geen onderliggende elementen zijn opgegeven, wordt het item is een tijdelijke aanduiding en worden geen gegevens weergegeven.
+U kunt een eigenschap van een object of een script in elke kolom van de rij opgeven. Als er geen onderliggende elementen zijn opgegeven, is het item een tijdelijke aanduiding en worden er geen gegevens weer gegeven.
 
-Zie voor meer informatie over de onderdelen van een tabelweergave [het maken van een tabelweergave](./creating-a-table-view.md).
+Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld ziet u een `TableColumnItem` element waarin de waarde van de `Status` eigenschap van de [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object.
+In dit voor beeld `TableColumnItem` ziet u een-element dat de `Status` waarde van de eigenschap van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) weergeeft.
 
 ```xml
 <TableColumnItem>
@@ -74,16 +75,16 @@ In dit voorbeeld ziet u een `TableColumnItem` element waarin de waarde van de `S
 
 ## <a name="see-also"></a>Zie ook
 
-[Het maken van een tabelweergave](./creating-a-table-view.md)
+[Een tabel weergave maken](./creating-a-table-view.md)
 
-[Uitlijning-Element voor TableColumnItem voor TableControl (indeling)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Alignment-element voor TableColumnItem voor TableControl (indeling)](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[TableColumnItems-Element (indeling)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+[TableColumnItems-element (indeling)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[FormatString-Element voor TableColumnItem voor TableControl (indeling)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Element formats Tring voor TableColumnItem voor TableControl (indeling)](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[PropertyName-Element voor TableColumnItem voor TableControl (indeling)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Het element PropertyName voor TableColumnItem voor TableControl (indeling)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[ScriptBlock-Element voor TableColumnItem voor TableControl (indeling)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
+[Script block-element voor TableColumnItem voor TableControl (indeling)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)
 
-[Schrijven van een bestand opmaak PowerShell](./writing-a-powershell-formatting-file.md)
+[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
