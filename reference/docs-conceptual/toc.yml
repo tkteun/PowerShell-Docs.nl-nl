@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: Levenscyclus voor ondersteuning van PowerShell Core
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: Overzicht
+      href: wmf/overview.md
+    - name: Installatie
+      items:
+        - name: WMF 5.1 installeren en configureren
+          href: wmf/setup/install-configure.md
+        - name: WMF 5.0 verwijderen
+          href: wmf/setup/uninstall.md
+    - name: Wat is nieuw
+      expanded: true
+      items:
+        - name: Opmerkingen bij de WMF 5.x-release
+          href: wmf/whats-new/release-notes.md
+        - name: Oplossingen voor bugs in WMF 5.1
+          href: wmf/whats-new/bugfixes.md
+        - name: Nieuwe en bijgewerkte cmdlets
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: Aangepaste typen maken met PowerShell-klassen
+          href: wmf/whats-new/class-overview.md
+        - name: Verbeteringen van de console in WMF 5.1
+          href: wmf/whats-new/console-improvements.md
+        - name: Verbeteringen in foutopsporing voor PowerShell-scripts
+          href: wmf/whats-new/debug-overview.md
+        - name: Tracering en logboekregistratie voor scripts
+          href: wmf/whats-new/script-logging.md
+        - name: Verbeteringen van DSC in WMF 5.1
+          href: wmf/whats-new/DSC-improvements.md
+        - name: Verbeteringen van PowerShell-engine in WMF 5.1
+          href: wmf/whats-new/engine-improvements.md
+        - name: Gegevensstroom
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Verbeteringen van Just Enough Administration (JEA)
+          href: wmf/whats-new/jea-improvements.md
+        - name: Verbeteringen van pakketbeheer in WMF 5.1
+          href: wmf/whats-new/package-management-improvements.md
+        - name: Registratie van software-inventaris (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: Productcompatibiliteitsstatus
+          href: wmf/whats-new/compatibility.md
+    - name: Bekende problemen
+      items:
+        - name: Bekende problemen in WMF 5.0
+          href: wmf/known-issues/known-issues-50.md
+        - name: Bekende problemen in WMF 5.1
+          href: wmf/known-issues/known-issues-51.md
+        - name: Bekende problemen en beperkingen in DSC
+          href: wmf/known-issues/known-issues-dsc.md
 - name: Voorbeeldscripts
   items:
     - name: Voorbeeldscripts voor beheer
