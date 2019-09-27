@@ -1,3 +1,5 @@
+- name: Deze documentatie gebruiken
+  href: how-to-use-docs.md
 - name: Overzicht
   href: overview.md
 - name: Installeren
@@ -170,6 +172,100 @@
           href: components/web-access/use-the-web-based-windows-powershell-console.md
     - name: Handleiding voor werkstromen
       href: components/workflows-guide.md
+- name: PowerShell Gallery
+  items:
+    - name: Overzicht
+      href: gallery/overview.md
+    - name: PowerShellGet installeren
+      href: gallery/installing-psget.md
+    - name: Aan de slag
+      href: gallery/getting-started.md
+    - name: Instructies
+      items:
+        - name: Pakketten zoeken in de galerie
+          items:
+            - name: Zoeken naar pakketten
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: Zoeken op compatibiliteit
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: Zoekresultaten filteren
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: Publiceren naar de galerie
+          items:
+            - name: Pakketten maken en publiceren
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: Een PowerShellGallery-account maken
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: Pakketten uit de catalogus verwijderen
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: Pakketten verwijderen
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: Pakketeigenaren beheren
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: Werken met pakketten
+          items:
+            - name: FileList-weergave
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Implementeren naar Azure Automation
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: Pakket handmatig downloaden
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: Pakketten waarvoor acceptatie van de licentie is vereist
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: Contact opnemen met pakketeigenaren
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: Feedback geven via sociale media of opmerkingen
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: Accountprofielen beheren
+          items:
+            - name: PowerShell Gallery-accountinstellingen
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: API-sleutels beheren
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: Werken met lokale PowerShellGet-opslagplaatsen
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: Concepten
+      items:
+        - name: Publicatierichtlijnen en best practices
+          href: gallery/concepts/publishing-guidelines.md
+        - name: Pakketmanifest en de galerie-UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: Specifieke PSEditions vereisen
+          items:
+            - name: Scripts met ondersteuning voor PSEditions schrijven
+              href: gallery/concepts/script-psedition-support.md
+            - name: Modules met ondersteuning voor PSEditions schrijven
+              href: gallery/concepts/module-psedition-support.md
+        - name: Acceptatie van licentie vereisen
+          items:
+            - name: Acceptatie van licentie vereisen voor scripts
+              href: gallery/concepts/script-license-acceptance.md
+            - name: Acceptatie van licentie vereisen voor modules
+              href: gallery/concepts/module-license-acceptance.md
+        - name: Pakketten definiëren als voorlopige versie
+          items:
+            - name: Een module definiëren als voorlopige versie
+              href: gallery/concepts/module-prerelease-support.md
+            - name: Een script definiëren als voorlopige versie
+              href: gallery/concepts/script-prerelease-support.md
+        - name: Regelprofiel voor PSScriptAnalyzer
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: Ondersteuning krijgen
+      items:
+        - name: Misbruik melden
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: Geschillenoplossing
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: Contact opnemen met beheerders
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: Problemen oplossen
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: NuGet-provider en NuGet.exe opstarten
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: AVG-naleving
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: Galerie Veelgestelde vragen
+      href: gallery/faqs.md
 - name: Wat is nieuw
   items:
     - name: Wat is er nieuw in PowerShell Core 6.x?
