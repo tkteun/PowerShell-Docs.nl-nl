@@ -1,55 +1,64 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Bron van het DSC-Service
-ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-Service Resource
+ms.openlocfilehash: 0bef6aa6d3526c9d8d92187c1e738d5c46b5665a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324146"
 ---
-# <a name="dsc-service-resource"></a><span data-ttu-id="ac63b-103">Bron van het DSC-Service</span><span class="sxs-lookup"><span data-stu-id="ac63b-103">DSC Service Resource</span></span>
+# <a name="dsc-service-resource"></a><span data-ttu-id="8bb27-103">DSC-Service Resource</span><span class="sxs-lookup"><span data-stu-id="8bb27-103">DSC Service Resource</span></span>
 
-> <span data-ttu-id="ac63b-104">Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ac63b-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="8bb27-104">Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x</span><span class="sxs-lookup"><span data-stu-id="8bb27-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
+<span data-ttu-id="8bb27-105">De **service** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op het doel knooppunt.</span><span class="sxs-lookup"><span data-stu-id="8bb27-105">The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.</span></span>
 
-<span data-ttu-id="ac63b-105">De **Service** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van services op het doelknooppunt.</span><span class="sxs-lookup"><span data-stu-id="ac63b-105">The **Service** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage services on the target node.</span></span>
+## <a name="syntax"></a><span data-ttu-id="8bb27-106">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="8bb27-106">Syntax</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="ac63b-106">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="ac63b-106">Syntax</span></span>
-
-```
+```Syntax
 Service [string] #ResourceName
 {
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ DependsOn = [string[]] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Running | Stopped }  ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
-    [ Ensure = [string] { Absent | Present } ]
     [ Path = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="ac63b-107">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="ac63b-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="8bb27-107">properties</span><span class="sxs-lookup"><span data-stu-id="8bb27-107">Properties</span></span>
 
-|  <span data-ttu-id="ac63b-108">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="ac63b-108">Property</span></span>  |  <span data-ttu-id="ac63b-109">Description</span><span class="sxs-lookup"><span data-stu-id="ac63b-109">Description</span></span>   |
+|<span data-ttu-id="8bb27-108">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="8bb27-108">Property</span></span> |<span data-ttu-id="8bb27-109">Description</span><span class="sxs-lookup"><span data-stu-id="8bb27-109">Description</span></span> |
 |---|---|
-| <span data-ttu-id="ac63b-110">Naam</span><span class="sxs-lookup"><span data-stu-id="ac63b-110">Name</span></span>| <span data-ttu-id="ac63b-111">Geeft de servicenaam.</span><span class="sxs-lookup"><span data-stu-id="ac63b-111">Indicates the service name.</span></span> <span data-ttu-id="ac63b-112">Houd er rekening mee dat soms dit af van de weergavenaam wijkt.</span><span class="sxs-lookup"><span data-stu-id="ac63b-112">Note that sometimes this is different from the display name.</span></span> <span data-ttu-id="ac63b-113">U krijgt een overzicht van de services en de huidige status hiervan met de cmdlet Get-Service.</span><span class="sxs-lookup"><span data-stu-id="ac63b-113">You can get a list of the services and their current state with the Get-Service cmdlet.</span></span>|
-| <span data-ttu-id="ac63b-114">BuiltInAccount</span><span class="sxs-lookup"><span data-stu-id="ac63b-114">BuiltInAccount</span></span>| <span data-ttu-id="ac63b-115">Geeft aan dat de aanmeldingsaccount gebruiken voor de service.</span><span class="sxs-lookup"><span data-stu-id="ac63b-115">Indicates the sign-in account to use for the service.</span></span> <span data-ttu-id="ac63b-116">De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.</span><span class="sxs-lookup"><span data-stu-id="ac63b-116">The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.</span></span>|
-| <span data-ttu-id="ac63b-117">Referentie</span><span class="sxs-lookup"><span data-stu-id="ac63b-117">Credential</span></span>| <span data-ttu-id="ac63b-118">Geeft aan dat referenties voor het account waaronder de service wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="ac63b-118">Indicates credentials for the account that the service will run under.</span></span> <span data-ttu-id="ac63b-119">Deze eigenschap en de __BuiltinAccount__ eigenschap samen kan worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="ac63b-119">This property and the __BuiltinAccount__ property cannot be used together.</span></span>|
-| <span data-ttu-id="ac63b-120">DependsOn</span><span class="sxs-lookup"><span data-stu-id="ac63b-120">DependsOn</span></span>| <span data-ttu-id="ac63b-121">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="ac63b-121">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="ac63b-122">Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="ac63b-122">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
-| <span data-ttu-id="ac63b-123">StartupType</span><span class="sxs-lookup"><span data-stu-id="ac63b-123">StartupType</span></span>| <span data-ttu-id="ac63b-124">Geeft aan dat het opstarttype voor de service.</span><span class="sxs-lookup"><span data-stu-id="ac63b-124">Indicates the startup type for the service.</span></span> <span data-ttu-id="ac63b-125">De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**</span><span class="sxs-lookup"><span data-stu-id="ac63b-125">The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**</span></span>|
-| <span data-ttu-id="ac63b-126">Status</span><span class="sxs-lookup"><span data-stu-id="ac63b-126">State</span></span>| <span data-ttu-id="ac63b-127">Geeft de status die u wilt om ervoor te zorgen voor de service.</span><span class="sxs-lookup"><span data-stu-id="ac63b-127">Indicates the state you want to ensure for the service.</span></span>|
-| <span data-ttu-id="ac63b-128">Description</span><span class="sxs-lookup"><span data-stu-id="ac63b-128">Description</span></span> | <span data-ttu-id="ac63b-129">Geeft aan dat de beschrijving van de doelservice.</span><span class="sxs-lookup"><span data-stu-id="ac63b-129">Indicates the description of the target service.</span></span>|
-| <span data-ttu-id="ac63b-130">DisplayName</span><span class="sxs-lookup"><span data-stu-id="ac63b-130">DisplayName</span></span> | <span data-ttu-id="ac63b-131">Geeft de naam van de doelservice.</span><span class="sxs-lookup"><span data-stu-id="ac63b-131">Indicates the display name of the target service.</span></span>|
-| <span data-ttu-id="ac63b-132">Zorg ervoor dat</span><span class="sxs-lookup"><span data-stu-id="ac63b-132">Ensure</span></span> | <span data-ttu-id="ac63b-133">Geeft aan of de doelservice op het systeem bestaat.</span><span class="sxs-lookup"><span data-stu-id="ac63b-133">Indicates whether the target service exists on the system.</span></span> <span data-ttu-id="ac63b-134">Deze eigenschap instellen op **afwezig** om ervoor te zorgen dat de doelservice niet bestaat.</span><span class="sxs-lookup"><span data-stu-id="ac63b-134">Set this property to **Absent** to ensure that the target service does not exist.</span></span> <span data-ttu-id="ac63b-135">Instellen op **aanwezig** (de standaardwaarde) zorgt ervoor dat de doelservice bestaat.</span><span class="sxs-lookup"><span data-stu-id="ac63b-135">Setting it to **Present** (the default value) ensures that target service exists.</span></span>|
-| <span data-ttu-id="ac63b-136">Pad</span><span class="sxs-lookup"><span data-stu-id="ac63b-136">Path</span></span> | <span data-ttu-id="ac63b-137">Geeft het pad naar het binaire bestand voor een nieuwe service.</span><span class="sxs-lookup"><span data-stu-id="ac63b-137">Indicates the path to the binary file for a new service.</span></span>|
+|<span data-ttu-id="8bb27-110">Name</span><span class="sxs-lookup"><span data-stu-id="8bb27-110">Name</span></span> |<span data-ttu-id="8bb27-111">Hiermee wordt de service naam aangegeven.</span><span class="sxs-lookup"><span data-stu-id="8bb27-111">Indicates the service name.</span></span> <span data-ttu-id="8bb27-112">Houd er rekening mee dat dit verschilt van de weergave naam.</span><span class="sxs-lookup"><span data-stu-id="8bb27-112">Note that sometimes this is different from the display name.</span></span> <span data-ttu-id="8bb27-113">U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen.</span><span class="sxs-lookup"><span data-stu-id="8bb27-113">You can get a list of the services and their current state with the `Get-Service` cmdlet.</span></span> |
+|<span data-ttu-id="8bb27-114">BuiltInAccount</span><span class="sxs-lookup"><span data-stu-id="8bb27-114">BuiltInAccount</span></span> |<span data-ttu-id="8bb27-115">Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service.</span><span class="sxs-lookup"><span data-stu-id="8bb27-115">Indicates the sign-in account to use for the service.</span></span> <span data-ttu-id="8bb27-116">De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**en **Network Service**.</span><span class="sxs-lookup"><span data-stu-id="8bb27-116">The values that are allowed for this property are: **LocalService**, **LocalSystem**, and **NetworkService**.</span></span> |
+|<span data-ttu-id="8bb27-117">Referentie</span><span class="sxs-lookup"><span data-stu-id="8bb27-117">Credential</span></span> |<span data-ttu-id="8bb27-118">Hiermee geeft u de referenties op voor het account waaronder de service wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="8bb27-118">Indicates credentials for the account that the service will run under.</span></span> <span data-ttu-id="8bb27-119">Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="8bb27-119">This property and the **BuiltinAccount** property cannot be used together.</span></span> |
+|<span data-ttu-id="8bb27-120">Opstart type</span><span class="sxs-lookup"><span data-stu-id="8bb27-120">StartupType</span></span> |<span data-ttu-id="8bb27-121">Hiermee geeft u het opstart type voor de service.</span><span class="sxs-lookup"><span data-stu-id="8bb27-121">Indicates the startup type for the service.</span></span> <span data-ttu-id="8bb27-122">De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatisch**, **uitgeschakeld**en **hand matig**.</span><span class="sxs-lookup"><span data-stu-id="8bb27-122">The values that are allowed for this property are: **Automatic**, **Disabled**, and **Manual**.</span></span> |
+|<span data-ttu-id="8bb27-123">State</span><span class="sxs-lookup"><span data-stu-id="8bb27-123">State</span></span> |<span data-ttu-id="8bb27-124">Hiermee wordt de status aangegeven die u voor de service wilt controleren.</span><span class="sxs-lookup"><span data-stu-id="8bb27-124">Indicates the state you want to ensure for the service.</span></span> <span data-ttu-id="8bb27-125">De waarden zijn: **Wordt uitgevoerd** of **gestopt**.</span><span class="sxs-lookup"><span data-stu-id="8bb27-125">The values are: **Running** or **Stopped**.</span></span> |
+|<span data-ttu-id="8bb27-126">Description</span><span class="sxs-lookup"><span data-stu-id="8bb27-126">Description</span></span> |<span data-ttu-id="8bb27-127">Hiermee wordt de beschrijving van de doel service aangegeven.</span><span class="sxs-lookup"><span data-stu-id="8bb27-127">Indicates the description of the target service.</span></span> |
+|<span data-ttu-id="8bb27-128">DisplayName</span><span class="sxs-lookup"><span data-stu-id="8bb27-128">DisplayName</span></span> |<span data-ttu-id="8bb27-129">Hiermee wordt de weergave naam van de doel service aangegeven.</span><span class="sxs-lookup"><span data-stu-id="8bb27-129">Indicates the display name of the target service.</span></span> |
+|<span data-ttu-id="8bb27-130">Path</span><span class="sxs-lookup"><span data-stu-id="8bb27-130">Path</span></span> |<span data-ttu-id="8bb27-131">Hiermee wordt het pad naar het binaire bestand voor een nieuwe service aangegeven.</span><span class="sxs-lookup"><span data-stu-id="8bb27-131">Indicates the path to the binary file for a new service.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="ac63b-138">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="ac63b-138">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="8bb27-132">Algemene eigenschappen</span><span class="sxs-lookup"><span data-stu-id="8bb27-132">Common properties</span></span>
+
+|<span data-ttu-id="8bb27-133">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="8bb27-133">Property</span></span> |<span data-ttu-id="8bb27-134">Description</span><span class="sxs-lookup"><span data-stu-id="8bb27-134">Description</span></span> |
+|---|---|
+|<span data-ttu-id="8bb27-135">DependsOn</span><span class="sxs-lookup"><span data-stu-id="8bb27-135">DependsOn</span></span> |<span data-ttu-id="8bb27-136">Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="8bb27-136">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="8bb27-137">De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is.</span><span class="sxs-lookup"><span data-stu-id="8bb27-137">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="8bb27-138">Zo</span><span class="sxs-lookup"><span data-stu-id="8bb27-138">Ensure</span></span> |<span data-ttu-id="8bb27-139">Hiermee geeft u op of de doel service op het systeem bestaat.</span><span class="sxs-lookup"><span data-stu-id="8bb27-139">Indicates whether the target service exists on the system.</span></span> <span data-ttu-id="8bb27-140">Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de doel service niet bestaat.</span><span class="sxs-lookup"><span data-stu-id="8bb27-140">Set this property to **Absent** to ensure that the target service does not exist.</span></span> <span data-ttu-id="8bb27-141">**Als u** deze instelling inschakelt, zorgt u ervoor dat de doel service bestaat.</span><span class="sxs-lookup"><span data-stu-id="8bb27-141">Setting it to **Present** ensures that target service exists.</span></span> <span data-ttu-id="8bb27-142">De standaard waarde is **aanwezig**.</span><span class="sxs-lookup"><span data-stu-id="8bb27-142">The default value is **Present**.</span></span> |
+|<span data-ttu-id="8bb27-143">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="8bb27-143">PsDscRunAsCredential</span></span> |<span data-ttu-id="8bb27-144">Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als.</span><span class="sxs-lookup"><span data-stu-id="8bb27-144">Sets the credential for running the entire resource as.</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="8bb27-145">De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan.</span><span class="sxs-lookup"><span data-stu-id="8bb27-145">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="8bb27-146">Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="8bb27-146">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>
+
+## <a name="example"></a><span data-ttu-id="8bb27-147">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="8bb27-147">Example</span></span>
 
 ```powershell
 configuration ServiceTest

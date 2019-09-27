@@ -1,56 +1,61 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxSshAuthorizedKeys-Resource
-ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxSshAuthorizedKeys-resource
+ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077690"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324664"
 ---
-# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a><span data-ttu-id="a005a-103">DSC voor Linux nxSshAuthorizedKeys-Resource</span><span class="sxs-lookup"><span data-stu-id="a005a-103">DSC for Linux nxSshAuthorizedKeys Resource</span></span>
+# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a><span data-ttu-id="552d7-103">DSC voor Linux nxSshAuthorizedKeys-resource</span><span class="sxs-lookup"><span data-stu-id="552d7-103">DSC for Linux nxSshAuthorizedKeys Resource</span></span>
 
-<span data-ttu-id="a005a-104">De **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van geautoriseerde ssh-sleutels voor een opgegeven gebruiker.</span><span class="sxs-lookup"><span data-stu-id="a005a-104">The **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.</span></span>
+<span data-ttu-id="552d7-104">De **nxAuthorizedKeys** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van geautoriseerde SSH-sleutels voor een opgegeven gebruiker.</span><span class="sxs-lookup"><span data-stu-id="552d7-104">The **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a005a-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="a005a-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="552d7-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="552d7-105">Syntax</span></span>
 
-```
+```Syntax
 nxAuthorizedKeys <string> #ResourceName
 {
     KeyComment = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ Username = <string> ]
     [ Key = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="a005a-106">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="a005a-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="552d7-106">properties</span><span class="sxs-lookup"><span data-stu-id="552d7-106">Properties</span></span>
 
-|  <span data-ttu-id="a005a-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="a005a-107">Property</span></span> |  <span data-ttu-id="a005a-108">Description</span><span class="sxs-lookup"><span data-stu-id="a005a-108">Description</span></span> |
+|<span data-ttu-id="552d7-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="552d7-107">Property</span></span> |<span data-ttu-id="552d7-108">Description</span><span class="sxs-lookup"><span data-stu-id="552d7-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="a005a-109">KeyComment</span><span class="sxs-lookup"><span data-stu-id="a005a-109">KeyComment</span></span>| <span data-ttu-id="a005a-110">Een unieke Opmerking voor de sleutel.</span><span class="sxs-lookup"><span data-stu-id="a005a-110">A unique comment for the key.</span></span> <span data-ttu-id="a005a-111">Dit wordt gebruikt voor het aanduiden van sleutels.</span><span class="sxs-lookup"><span data-stu-id="a005a-111">This is used to uniquely identify keys.</span></span>|
-| <span data-ttu-id="a005a-112">Zorg ervoor dat</span><span class="sxs-lookup"><span data-stu-id="a005a-112">Ensure</span></span>| <span data-ttu-id="a005a-113">Hiermee geeft u op of de sleutel is gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="a005a-113">Specifies whether the key is defined.</span></span> <span data-ttu-id="a005a-114">Deze eigenschap instellen op 'Ontbreekt' om te controleren of dat de sleutel bestaat niet in het geautoriseerde sleutelsbestand van de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="a005a-114">Set this property to "Absent" to ensure the key does not exist in the user’s authorized keys file.</span></span> <span data-ttu-id="a005a-115">Stel deze in op 'Aanwezig' om te controleren of dat de sleutel is gedefinieerd in de gemachtigde sleutelbestand van de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="a005a-115">Set it to "Present" to ensure the key is defined in the user’s authorized key file.</span></span>|
-| <span data-ttu-id="a005a-116">Gebruikersnaam</span><span class="sxs-lookup"><span data-stu-id="a005a-116">Username</span></span>| <span data-ttu-id="a005a-117">De gebruikersnaam voor het beheren van ssh-sleutels voor gemachtigd.</span><span class="sxs-lookup"><span data-stu-id="a005a-117">The username to manage ssh authorized keys for.</span></span> <span data-ttu-id="a005a-118">Als niet is gedefinieerd, is de standaardwaarde 'root'.</span><span class="sxs-lookup"><span data-stu-id="a005a-118">If not defined, the default user is "root".</span></span>|
-| <span data-ttu-id="a005a-119">Sleutel</span><span class="sxs-lookup"><span data-stu-id="a005a-119">Key</span></span>| <span data-ttu-id="a005a-120">De inhoud van de sleutel.</span><span class="sxs-lookup"><span data-stu-id="a005a-120">The contents of the key.</span></span> <span data-ttu-id="a005a-121">Dit is vereist als **Zorg ervoor dat** is ingesteld op 'Aanwezig'.</span><span class="sxs-lookup"><span data-stu-id="a005a-121">This is required if **Ensure** is set to "Present".</span></span>|
-| <span data-ttu-id="a005a-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="a005a-122">DependsOn</span></span> | <span data-ttu-id="a005a-123">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="a005a-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="a005a-124">Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="a005a-124">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="552d7-109">Opmerkingaanwijzer</span><span class="sxs-lookup"><span data-stu-id="552d7-109">KeyComment</span></span> |<span data-ttu-id="552d7-110">Een unieke opmerking voor de sleutel.</span><span class="sxs-lookup"><span data-stu-id="552d7-110">A unique comment for the key.</span></span> <span data-ttu-id="552d7-111">Dit wordt gebruikt om sleutels uniek te identificeren.</span><span class="sxs-lookup"><span data-stu-id="552d7-111">This is used to uniquely identify keys.</span></span> |
+|<span data-ttu-id="552d7-112">Gebruikersnaam</span><span class="sxs-lookup"><span data-stu-id="552d7-112">Username</span></span> |<span data-ttu-id="552d7-113">De gebruikers naam voor het beheren van geautoriseerde SSH-sleutels voor.</span><span class="sxs-lookup"><span data-stu-id="552d7-113">The username to manage ssh authorized keys for.</span></span> <span data-ttu-id="552d7-114">Als dit niet is gedefinieerd, is de standaard gebruiker **root**.</span><span class="sxs-lookup"><span data-stu-id="552d7-114">If not defined, the default user is **root**.</span></span> |
+|<span data-ttu-id="552d7-115">Sleutel</span><span class="sxs-lookup"><span data-stu-id="552d7-115">Key</span></span> |<span data-ttu-id="552d7-116">De inhoud van de sleutel.</span><span class="sxs-lookup"><span data-stu-id="552d7-116">The contents of the key.</span></span> <span data-ttu-id="552d7-117">Dit is vereist als **dat** is ingesteld op **aanwezig**.</span><span class="sxs-lookup"><span data-stu-id="552d7-117">This is required if **Ensure** is set to **Present**.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="a005a-125">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="a005a-125">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="552d7-118">Algemene eigenschappen</span><span class="sxs-lookup"><span data-stu-id="552d7-118">Common properties</span></span>
 
-<span data-ttu-id="a005a-126">Het volgende voorbeeld definieert een openbare ssh gemachtigd voor de gebruiker 'monuser'.</span><span class="sxs-lookup"><span data-stu-id="a005a-126">The following example defines a public ssh authorized key for the user "monuser".</span></span>
+|<span data-ttu-id="552d7-119">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="552d7-119">Property</span></span> |<span data-ttu-id="552d7-120">Description</span><span class="sxs-lookup"><span data-stu-id="552d7-120">Description</span></span> |
+|---|---|
+|<span data-ttu-id="552d7-121">DependsOn</span><span class="sxs-lookup"><span data-stu-id="552d7-121">DependsOn</span></span> |<span data-ttu-id="552d7-122">Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="552d7-122">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="552d7-123">De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is.</span><span class="sxs-lookup"><span data-stu-id="552d7-123">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="552d7-124">Zo</span><span class="sxs-lookup"><span data-stu-id="552d7-124">Ensure</span></span> |<span data-ttu-id="552d7-125">Hiermee wordt aangegeven of de sleutel is gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="552d7-125">Specifies whether the key is defined.</span></span> <span data-ttu-id="552d7-126">Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de sleutel niet bestaat in het geautoriseerde sleutel bestand van de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="552d7-126">Set this property to **Absent** to ensure the key does not exist in the user's authorized keys file.</span></span> <span data-ttu-id="552d7-127">Stel deze in op **aanwezig** om te controleren of de sleutel is gedefinieerd in het geautoriseerde sleutel bestand van de gebruiker.</span><span class="sxs-lookup"><span data-stu-id="552d7-127">Set it to **Present** to ensure the key is defined in the user's authorized key file.</span></span> |
 
-```
+## <a name="example"></a><span data-ttu-id="552d7-128">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="552d7-128">Example</span></span>
+
+<span data-ttu-id="552d7-129">In het volgende voor beeld wordt een open bare SSH-sleutel gedefinieerd voor de gebruiker ' monuser '.</span><span class="sxs-lookup"><span data-stu-id="552d7-129">The following example defines a public ssh authorized key for the user "monuser".</span></span>
+
+```powershell
 Import-DSCResource -Module nx
 
-Node $node {
-
-nxSshAuthorizedKeys myKey{
-   KeyComment = "myKey"
-   Ensure = "Present"
-   Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
-   UserName = "monuser"
-}
+Node $node
+{
+    nxSshAuthorizedKeys myKey
+    {
+        KeyComment = "myKey"
+        Ensure = "Present"
+        Key = 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA0b+0xSd07QXRifm3FXj7Pn/DblA6QI5VAkDm6OivFzj3U6qGD1VJ6AAxWPCyMl/qhtpRtxZJDu/TxD8AyZNgc8aN2CljN1hOMbBRvH2q5QPf/nCnnJRaGsrxIqZjyZdYo9ZEEzjZUuMDM5HI1LA9B99k/K6PK2Bc1NLivpu7nbtVG2tLOQs+GefsnHuetsRMwo/+c3LtwYm9M0XfkGjYVCLO4CoFuSQpvX6AB3TedUy6NZ0iuxC0kRGg1rIQTwSRcw+McLhslF0drs33fw6tYdzlLBnnzimShMuiDWiT37WqCRovRGYrGCaEFGTG2e0CN8Co8nryXkyWc6NSDNpMzw== rsa-key-20150401'
+        UserName = "monuser"
+    }
 }
 ```

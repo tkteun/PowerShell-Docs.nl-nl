@@ -1,23 +1,23 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC-Pakketresource
-ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-pakket resource
+ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077191"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324297"
 ---
-# <a name="dsc-package-resource"></a><span data-ttu-id="46dd7-103">DSC-Pakketresource</span><span class="sxs-lookup"><span data-stu-id="46dd7-103">DSC Package Resource</span></span>
+# <a name="dsc-package-resource"></a><span data-ttu-id="665d5-103">DSC-pakket resource</span><span class="sxs-lookup"><span data-stu-id="665d5-103">DSC Package Resource</span></span>
 
-<span data-ttu-id="46dd7-104">_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="46dd7-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
+> <span data-ttu-id="665d5-104">Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x</span><span class="sxs-lookup"><span data-stu-id="665d5-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-<span data-ttu-id="46dd7-105">De **pakket** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van pakketten, zoals Windows Installer en setup.exe pakketten, op een doelknooppunt.</span><span class="sxs-lookup"><span data-stu-id="46dd7-105">The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.</span></span>
+<span data-ttu-id="665d5-105">De **pakket** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakketten, zoals Windows Installer en Setup. exe-pakketten, op een doel knooppunt.</span><span class="sxs-lookup"><span data-stu-id="665d5-105">The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="46dd7-106">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="46dd7-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="665d5-106">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="665d5-106">Syntax</span></span>
 
-```
+```Syntax
 Package [string] #ResourceName
 {
     Name = [string]
@@ -25,30 +25,40 @@ Package [string] #ResourceName
     ProductId = [string]
     [ Arguments = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ ReturnCode = [UInt32[]] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="46dd7-107">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="46dd7-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="665d5-107">properties</span><span class="sxs-lookup"><span data-stu-id="665d5-107">Properties</span></span>
 
-| <span data-ttu-id="46dd7-108">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="46dd7-108">Property</span></span> | <span data-ttu-id="46dd7-109">Description</span><span class="sxs-lookup"><span data-stu-id="46dd7-109">Description</span></span> |
-| --- | --- |
-| <span data-ttu-id="46dd7-110">Naam</span><span class="sxs-lookup"><span data-stu-id="46dd7-110">Name</span></span>| <span data-ttu-id="46dd7-111">Geeft de naam van het pakket waarvan u wilt om te controleren of een specifieke status.</span><span class="sxs-lookup"><span data-stu-id="46dd7-111">Indicates the name of the package for which you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="46dd7-112">Pad</span><span class="sxs-lookup"><span data-stu-id="46dd7-112">Path</span></span>| <span data-ttu-id="46dd7-113">Geeft het pad waar het pakket zich bevindt.</span><span class="sxs-lookup"><span data-stu-id="46dd7-113">Indicates the path where the package resides.</span></span>|
-| <span data-ttu-id="46dd7-114">ProductId</span><span class="sxs-lookup"><span data-stu-id="46dd7-114">ProductId</span></span>| <span data-ttu-id="46dd7-115">Geeft de product-ID die een unieke identificatie van het pakket.</span><span class="sxs-lookup"><span data-stu-id="46dd7-115">Indicates the product ID that uniquely identifies the package.</span></span>|
-| <span data-ttu-id="46dd7-116">Argumenten</span><span class="sxs-lookup"><span data-stu-id="46dd7-116">Arguments</span></span>| <span data-ttu-id="46dd7-117">Geeft een lijst van een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies hetzelfde als de opgegeven.</span><span class="sxs-lookup"><span data-stu-id="46dd7-117">Lists a string of arguments that will be passed to the package exactly as provided.</span></span>|
-| <span data-ttu-id="46dd7-118">Referentie</span><span class="sxs-lookup"><span data-stu-id="46dd7-118">Credential</span></span>| <span data-ttu-id="46dd7-119">Biedt toegang tot het pakket op een externe bron.</span><span class="sxs-lookup"><span data-stu-id="46dd7-119">Provides access to the package on a remote source.</span></span> <span data-ttu-id="46dd7-120">Deze eigenschap wordt niet gebruikt om het pakket te installeren.</span><span class="sxs-lookup"><span data-stu-id="46dd7-120">This property is not used to install the package.</span></span> <span data-ttu-id="46dd7-121">Het pakket is altijd geïnstalleerd op het lokale systeem.</span><span class="sxs-lookup"><span data-stu-id="46dd7-121">The package is always installed on the local system.</span></span>|
-| <span data-ttu-id="46dd7-122">Zorg ervoor dat</span><span class="sxs-lookup"><span data-stu-id="46dd7-122">Ensure</span></span>| <span data-ttu-id="46dd7-123">Geeft aan of het pakket is geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="46dd7-123">Indicates if the package is installed.</span></span> <span data-ttu-id="46dd7-124">Deze eigenschap instellen op 'Afwezig"Controleer of dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd).</span><span class="sxs-lookup"><span data-stu-id="46dd7-124">Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="46dd7-125">Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="46dd7-125">Set it to "Present" (the default value) to ensure the package is installed.</span></span>|
-| <span data-ttu-id="46dd7-126">Logboekpad</span><span class="sxs-lookup"><span data-stu-id="46dd7-126">LogPath</span></span>| <span data-ttu-id="46dd7-127">Geeft het volledige pad waar u wilt dat de provider een logboekbestand om te installeren of verwijderen van het pakket op te slaan.</span><span class="sxs-lookup"><span data-stu-id="46dd7-127">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span>|
-| <span data-ttu-id="46dd7-128">DependsOn</span><span class="sxs-lookup"><span data-stu-id="46dd7-128">DependsOn</span></span> | <span data-ttu-id="46dd7-129">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="46dd7-129">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="46dd7-130">Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="46dd7-130">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
-| <span data-ttu-id="46dd7-131">ReturnCode</span><span class="sxs-lookup"><span data-stu-id="46dd7-131">ReturnCode</span></span>| <span data-ttu-id="46dd7-132">Geeft aan dat de verwachte retourcode.</span><span class="sxs-lookup"><span data-stu-id="46dd7-132">Indicates the expected return code.</span></span> <span data-ttu-id="46dd7-133">Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde die hier beschikbaar zijn, dat de configuratie wordt een fout geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="46dd7-133">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span>|
+|<span data-ttu-id="665d5-108">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="665d5-108">Property</span></span> |<span data-ttu-id="665d5-109">Description</span><span class="sxs-lookup"><span data-stu-id="665d5-109">Description</span></span> |
+|---|---|
+|<span data-ttu-id="665d5-110">Name</span><span class="sxs-lookup"><span data-stu-id="665d5-110">Name</span></span> |<span data-ttu-id="665d5-111">Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren.</span><span class="sxs-lookup"><span data-stu-id="665d5-111">Indicates the name of the package for which you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="665d5-112">Path</span><span class="sxs-lookup"><span data-stu-id="665d5-112">Path</span></span> |<span data-ttu-id="665d5-113">Hiermee wordt het pad aangegeven waar het pakket zich bevindt.</span><span class="sxs-lookup"><span data-stu-id="665d5-113">Indicates the path where the package resides.</span></span> |
+|<span data-ttu-id="665d5-114">ProductId</span><span class="sxs-lookup"><span data-stu-id="665d5-114">ProductId</span></span> |<span data-ttu-id="665d5-115">Hiermee wordt de product-ID aangegeven waarmee het pakket uniek wordt geïdentificeerd.</span><span class="sxs-lookup"><span data-stu-id="665d5-115">Indicates the product ID that uniquely identifies the package.</span></span> |
+|<span data-ttu-id="665d5-116">Argumenten</span><span class="sxs-lookup"><span data-stu-id="665d5-116">Arguments</span></span> |<span data-ttu-id="665d5-117">Een lijst met argumenten die precies zo worden door gegeven aan het pakket.</span><span class="sxs-lookup"><span data-stu-id="665d5-117">Lists a string of arguments that will be passed to the package exactly as provided.</span></span> |
+|<span data-ttu-id="665d5-118">Referentie</span><span class="sxs-lookup"><span data-stu-id="665d5-118">Credential</span></span> |<span data-ttu-id="665d5-119">Biedt toegang tot het pakket op een externe bron.</span><span class="sxs-lookup"><span data-stu-id="665d5-119">Provides access to the package on a remote source.</span></span> <span data-ttu-id="665d5-120">Deze eigenschap wordt niet gebruikt om het pakket te installeren.</span><span class="sxs-lookup"><span data-stu-id="665d5-120">This property is not used to install the package.</span></span> <span data-ttu-id="665d5-121">Het pakket wordt altijd op het lokale systeem geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="665d5-121">The package is always installed on the local system.</span></span> |
+|<span data-ttu-id="665d5-122">Logboekpad</span><span class="sxs-lookup"><span data-stu-id="665d5-122">LogPath</span></span> |<span data-ttu-id="665d5-123">Hiermee wordt het volledige pad aangegeven waar u wilt dat de provider een logboek bestand opslaat om het pakket te installeren of te verwijderen.</span><span class="sxs-lookup"><span data-stu-id="665d5-123">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span> |
+|<span data-ttu-id="665d5-124">Return code</span><span class="sxs-lookup"><span data-stu-id="665d5-124">ReturnCode</span></span> |<span data-ttu-id="665d5-125">Geeft de verwachte retour code aan.</span><span class="sxs-lookup"><span data-stu-id="665d5-125">Indicates the expected return code.</span></span> <span data-ttu-id="665d5-126">Als de daad werkelijke retour code niet overeenkomt met de verwachte waarde die hier wordt opgegeven, wordt er een fout geretourneerd door de configuratie.</span><span class="sxs-lookup"><span data-stu-id="665d5-126">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="46dd7-134">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="46dd7-134">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="665d5-127">Algemene eigenschappen</span><span class="sxs-lookup"><span data-stu-id="665d5-127">Common properties</span></span>
 
-<span data-ttu-id="46dd7-135">Het volgende voorbeeld wordt het MSI-installatieprogramma dat zich bevindt in het opgegeven pad en de opgegeven product-id heeft.</span><span class="sxs-lookup"><span data-stu-id="46dd7-135">This example runs the .msi installer that is located at the specified path and has the specified product ID.</span></span>
+|<span data-ttu-id="665d5-128">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="665d5-128">Property</span></span> |<span data-ttu-id="665d5-129">Description</span><span class="sxs-lookup"><span data-stu-id="665d5-129">Description</span></span> |
+|---|---|
+|<span data-ttu-id="665d5-130">DependsOn</span><span class="sxs-lookup"><span data-stu-id="665d5-130">DependsOn</span></span> |<span data-ttu-id="665d5-131">Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="665d5-131">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="665d5-132">De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is.</span><span class="sxs-lookup"><span data-stu-id="665d5-132">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="665d5-133">Zo</span><span class="sxs-lookup"><span data-stu-id="665d5-133">Ensure</span></span> |<span data-ttu-id="665d5-134">Hiermee wordt aangegeven of het pakket is geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="665d5-134">Indicates if the package is installed.</span></span> <span data-ttu-id="665d5-135">Stel deze eigenschap in op **afwezig** om te controleren of het pakket niet is geïnstalleerd (of verwijder het pakket als dit is geïnstalleerd).</span><span class="sxs-lookup"><span data-stu-id="665d5-135">Set this property to **Absent** to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="665d5-136">Stel deze in op **aanwezig** om te controleren of het pakket is geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="665d5-136">Set it to **Present** to ensure the package is installed.</span></span> <span data-ttu-id="665d5-137">De standaard waarde is **aanwezig**.</span><span class="sxs-lookup"><span data-stu-id="665d5-137">The default value is **Present**.</span></span> |
+|<span data-ttu-id="665d5-138">PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="665d5-138">PsDscRunAsCredential</span></span> |<span data-ttu-id="665d5-139">Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als.</span><span class="sxs-lookup"><span data-stu-id="665d5-139">Sets the credential for running the entire resource as.</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="665d5-140">De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan.</span><span class="sxs-lookup"><span data-stu-id="665d5-140">The **PsDscRunAsCredential** common property was added in WMF 5.0 to allow running any DSC resource in the context of other credentials.</span></span> <span data-ttu-id="665d5-141">Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="665d5-141">For more information, see [Use Credentials with DSC Resources](../../../configurations/runasuser.md).</span></span>
+
+## <a name="example"></a><span data-ttu-id="665d5-142">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="665d5-142">Example</span></span>
+
+<span data-ttu-id="665d5-143">In dit voor beeld wordt het MSI-installatie programma uitgevoerd dat zich bevindt in het opgegeven pad en heeft de opgegeven product-ID.</span><span class="sxs-lookup"><span data-stu-id="665d5-143">This example runs the .msi installer that is located at the specified path and has the specified product ID.</span></span>
 
 ```powershell
 Configuration PackageTest

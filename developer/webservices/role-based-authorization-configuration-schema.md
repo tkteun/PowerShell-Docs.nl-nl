@@ -1,5 +1,5 @@
 ---
-title: Het Schema van autorisatie op basis van rollen | Microsoft Docs
+title: Schema voor autorisatie configuratie op basis van rollen | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080540"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323040"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="7b4e7-102">Configuratieschema voor autorisatie op basis van rollen</span><span class="sxs-lookup"><span data-stu-id="7b4e7-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="33b6d-102">Configuratieschema voor autorisatie op basis van rollen</span><span class="sxs-lookup"><span data-stu-id="33b6d-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="7b4e7-103">De [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) voorbeeld maakt gebruik van XML-bestanden naar het verificatiebeleid configureren.</span><span class="sxs-lookup"><span data-stu-id="7b4e7-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="7b4e7-104">De volgende XSD definieert het schema voor deze bestanden.</span><span class="sxs-lookup"><span data-stu-id="7b4e7-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="33b6d-103">Het [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) -voor beeld maakt gebruik van XML-bestanden voor het configureren van het autorisatie beleid.</span><span class="sxs-lookup"><span data-stu-id="33b6d-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="33b6d-104">De volgende XSD definieert het schema dat wordt gebruikt voor deze bestanden.</span><span class="sxs-lookup"><span data-stu-id="33b6d-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>

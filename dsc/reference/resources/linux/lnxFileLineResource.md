@@ -1,50 +1,54 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxFileLine-Resource
-ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxFileLine-resource
+ms.openlocfilehash: 2e94bab318b5db65df88d268a88585079bab89bf
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077956"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324792"
 ---
-# <a name="dsc-for-linux-nxfileline-resource"></a><span data-ttu-id="f7df9-103">DSC voor Linux nxFileLine-Resource</span><span class="sxs-lookup"><span data-stu-id="f7df9-103">DSC for Linux nxFileLine Resource</span></span>
+# <a name="dsc-for-linux-nxfileline-resource"></a><span data-ttu-id="99dd2-103">DSC voor Linux nxFileLine-resource</span><span class="sxs-lookup"><span data-stu-id="99dd2-103">DSC for Linux nxFileLine Resource</span></span>
 
-<span data-ttu-id="f7df9-104">De **nxFileLine** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van de regels in een configuratiebestand op een Linux-knooppunt.</span><span class="sxs-lookup"><span data-stu-id="f7df9-104">The **nxFileLine** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage lines within a configuration file on a Linux node.</span></span>
+<span data-ttu-id="99dd2-104">De **nxFileLine** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van regels in een configuratie bestand op een Linux-knoop punt.</span><span class="sxs-lookup"><span data-stu-id="99dd2-104">The **nxFileLine** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage lines within a configuration file on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="f7df9-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="f7df9-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="99dd2-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="99dd2-105">Syntax</span></span>
 
-```
+```Syntax
 nxFileLine <string> #ResourceName
 {
     FilePath = <string>
     ContainsLine = <string>
     [ DoesNotContainPattern = <string> ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="f7df9-106">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="f7df9-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="99dd2-106">properties</span><span class="sxs-lookup"><span data-stu-id="99dd2-106">Properties</span></span>
 
-|  <span data-ttu-id="f7df9-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="f7df9-107">Property</span></span> |  <span data-ttu-id="f7df9-108">Description</span><span class="sxs-lookup"><span data-stu-id="f7df9-108">Description</span></span> |
+|<span data-ttu-id="99dd2-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="99dd2-107">Property</span></span> |<span data-ttu-id="99dd2-108">Description</span><span class="sxs-lookup"><span data-stu-id="99dd2-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="f7df9-109">FilePath</span><span class="sxs-lookup"><span data-stu-id="f7df9-109">FilePath</span></span>| <span data-ttu-id="f7df9-110">Het volledige pad naar het bestand om regels in op het doelknooppunt te beheren.</span><span class="sxs-lookup"><span data-stu-id="f7df9-110">The full path to the file to manage lines in on the target node.</span></span>|
-| <span data-ttu-id="f7df9-111">ContainsLine</span><span class="sxs-lookup"><span data-stu-id="f7df9-111">ContainsLine</span></span>| <span data-ttu-id="f7df9-112">Een regel om ervoor te zorgen bestaat in het bestand.</span><span class="sxs-lookup"><span data-stu-id="f7df9-112">A line to ensure exists in the file.</span></span> <span data-ttu-id="f7df9-113">Deze regel wordt toegevoegd aan het bestand als deze niet in het bestand bestaat.</span><span class="sxs-lookup"><span data-stu-id="f7df9-113">This line will be appended to the file if it does not exist in the file.</span></span> <span data-ttu-id="f7df9-114">**ContainsLine** is verplicht, maar kan worden ingesteld op een lege tekenreeks (`ContainsLine = ""`) als deze niet nodig is.</span><span class="sxs-lookup"><span data-stu-id="f7df9-114">**ContainsLine** is mandatory, but can be set to an empty string (`ContainsLine = ""`) if it is not needed.</span></span>|
-| <span data-ttu-id="f7df9-115">DoesNotContainPattern</span><span class="sxs-lookup"><span data-stu-id="f7df9-115">DoesNotContainPattern</span></span>| <span data-ttu-id="f7df9-116">Een reguliere-expressiepatroon voor regels die niet in het bestand moet bestaan.</span><span class="sxs-lookup"><span data-stu-id="f7df9-116">A regular expression pattern for lines that should not exist in the file.</span></span> <span data-ttu-id="f7df9-117">Voor alle regels die zijn opgenomen in het bestand die overeenkomen met deze reguliere expressie, wordt de regel wordt verwijderd uit het bestand.</span><span class="sxs-lookup"><span data-stu-id="f7df9-117">For any lines that exist in the file that match this regular expression, the line will be removed from the file.</span></span>|
-| <span data-ttu-id="f7df9-118">DependsOn</span><span class="sxs-lookup"><span data-stu-id="f7df9-118">DependsOn</span></span> | <span data-ttu-id="f7df9-119">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="f7df9-119">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="f7df9-120">Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="f7df9-120">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="99dd2-109">Bestandspad</span><span class="sxs-lookup"><span data-stu-id="99dd2-109">FilePath</span></span> |<span data-ttu-id="99dd2-110">Het volledige pad naar het bestand voor het beheren van de regels in het doel knooppunt.</span><span class="sxs-lookup"><span data-stu-id="99dd2-110">The full path to the file to manage lines in on the target node.</span></span> |
+|<span data-ttu-id="99dd2-111">ContainsLine</span><span class="sxs-lookup"><span data-stu-id="99dd2-111">ContainsLine</span></span> |<span data-ttu-id="99dd2-112">Een regel om ervoor te zorgen dat het bestand bestaat.</span><span class="sxs-lookup"><span data-stu-id="99dd2-112">A line to ensure exists in the file.</span></span> <span data-ttu-id="99dd2-113">Deze regel wordt toegevoegd aan het bestand als het niet in het bestand voor komt.</span><span class="sxs-lookup"><span data-stu-id="99dd2-113">This line will be appended to the file if it does not exist in the file.</span></span> <span data-ttu-id="99dd2-114">**ContainsLine** is verplicht, maar kan worden ingesteld op een lege teken reeks`ContainsLine = ""`() als dit niet nodig is.</span><span class="sxs-lookup"><span data-stu-id="99dd2-114">**ContainsLine** is mandatory, but can be set to an empty string (`ContainsLine = ""`) if it is not needed.</span></span> |
+|<span data-ttu-id="99dd2-115">DoesNotContainPattern</span><span class="sxs-lookup"><span data-stu-id="99dd2-115">DoesNotContainPattern</span></span> |<span data-ttu-id="99dd2-116">Een reguliere-expressie patroon voor lijnen die niet in het bestand moeten voor komen.</span><span class="sxs-lookup"><span data-stu-id="99dd2-116">A regular expression pattern for lines that should not exist in the file.</span></span> <span data-ttu-id="99dd2-117">Voor alle regels die voor komen in het bestand die overeenkomen met deze reguliere expressie, wordt de regel uit het bestand verwijderd.</span><span class="sxs-lookup"><span data-stu-id="99dd2-117">For any lines that exist in the file that match this regular expression, the line will be removed from the file.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="f7df9-121">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f7df9-121">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="99dd2-118">Algemene eigenschappen</span><span class="sxs-lookup"><span data-stu-id="99dd2-118">Common properties</span></span>
 
-<span data-ttu-id="f7df9-122">In dit voorbeeld wordt met behulp van de **nxFileLine** resource die u wilt configureren van de `/etc/sudoers` -bestand, ervoor zorgen dat de gebruiker: monuser is geconfigureerd voor het niet requiretty.</span><span class="sxs-lookup"><span data-stu-id="f7df9-122">This example demonstrates using the **nxFileLine** resource to configure the `/etc/sudoers` file, ensuring that the user: monuser is configured to not requiretty.</span></span>
+|<span data-ttu-id="99dd2-119">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="99dd2-119">Property</span></span> |<span data-ttu-id="99dd2-120">Description</span><span class="sxs-lookup"><span data-stu-id="99dd2-120">Description</span></span> |
+|---|---|
+|<span data-ttu-id="99dd2-121">DependsOn</span><span class="sxs-lookup"><span data-stu-id="99dd2-121">DependsOn</span></span> |<span data-ttu-id="99dd2-122">Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="99dd2-122">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="99dd2-123">De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is.</span><span class="sxs-lookup"><span data-stu-id="99dd2-123">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+
+## <a name="example"></a><span data-ttu-id="99dd2-124">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="99dd2-124">Example</span></span>
+
+<span data-ttu-id="99dd2-125">In dit voor beeld ziet u hoe u de **nxFileLine** - `/etc/sudoers` resource gebruikt om het bestand te configureren, zodat de gebruiker: monuser is geconfigureerd om niet requiretty.</span><span class="sxs-lookup"><span data-stu-id="99dd2-125">This example demonstrates using the **nxFileLine** resource to configure the `/etc/sudoers` file, ensuring that the user: monuser is configured to not requiretty.</span></span>
 
 ```powershell
 Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
-   FilePath = “/etc/sudoers”
+   FilePath = "/etc/sudoers"
    ContainsLine = 'Defaults:monuser !requiretty'
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
 }

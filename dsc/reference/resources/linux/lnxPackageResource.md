@@ -1,61 +1,66 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxPackage-Resource
-ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxPackage-resource
+ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077868"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324751"
 ---
-# <a name="dsc-for-linux-nxpackage-resource"></a><span data-ttu-id="eac6a-103">DSC voor Linux nxPackage-Resource</span><span class="sxs-lookup"><span data-stu-id="eac6a-103">DSC for Linux nxPackage Resource</span></span>
+# <a name="dsc-for-linux-nxpackage-resource"></a><span data-ttu-id="00ad2-103">DSC voor Linux nxPackage-resource</span><span class="sxs-lookup"><span data-stu-id="00ad2-103">DSC for Linux nxPackage Resource</span></span>
 
-<span data-ttu-id="eac6a-104">De **nxPackage** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van pakketten op een Linux-knooppunt.</span><span class="sxs-lookup"><span data-stu-id="eac6a-104">The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.</span></span>
+<span data-ttu-id="00ad2-104">De **nxPackage** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van pakketten op een Linux-knoop punt.</span><span class="sxs-lookup"><span data-stu-id="00ad2-104">The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="eac6a-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="eac6a-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="00ad2-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="00ad2-105">Syntax</span></span>
 
-```
+```Syntax
 nxPackage <string> #ResourceName
 {
     Name = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ PackageManager = <string> { Yum | Apt | Zypper } ]
     [ PackageGroup = <bool>]
     [ Arguments = <string> ]
     [ ReturnCode = <uint32> ]
-    [ LogPath = <string> ]
+    [ FilePath = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="eac6a-106">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="eac6a-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="00ad2-106">properties</span><span class="sxs-lookup"><span data-stu-id="00ad2-106">Properties</span></span>
 
-|  <span data-ttu-id="eac6a-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="eac6a-107">Property</span></span> |  <span data-ttu-id="eac6a-108">Description</span><span class="sxs-lookup"><span data-stu-id="eac6a-108">Description</span></span> |
+|<span data-ttu-id="00ad2-107">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="00ad2-107">Property</span></span> |<span data-ttu-id="00ad2-108">Description</span><span class="sxs-lookup"><span data-stu-id="00ad2-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="eac6a-109">Naam</span><span class="sxs-lookup"><span data-stu-id="eac6a-109">Name</span></span>| <span data-ttu-id="eac6a-110">De naam van het pakket waarvan u wilt om te controleren of een specifieke status.</span><span class="sxs-lookup"><span data-stu-id="eac6a-110">The name of the package for which you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="eac6a-111">Zorg ervoor dat</span><span class="sxs-lookup"><span data-stu-id="eac6a-111">Ensure</span></span>| <span data-ttu-id="eac6a-112">Hiermee bepaalt u of om te controleren of het pakket bestaat.</span><span class="sxs-lookup"><span data-stu-id="eac6a-112">Determines whether to check if the package exists.</span></span> <span data-ttu-id="eac6a-113">Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het pakket bestaat.</span><span class="sxs-lookup"><span data-stu-id="eac6a-113">Set this property to "Present" to ensure the package exists.</span></span> <span data-ttu-id="eac6a-114">Stel deze in op 'Ontbreekt' om te controleren of dat het pakket bestaat niet.</span><span class="sxs-lookup"><span data-stu-id="eac6a-114">Set it to "Absent" to ensure the package does not exist.</span></span> <span data-ttu-id="eac6a-115">De standaardwaarde is 'Aanwezig'.</span><span class="sxs-lookup"><span data-stu-id="eac6a-115">The default value is "Present".</span></span>|
-| <span data-ttu-id="eac6a-116">PackageManager</span><span class="sxs-lookup"><span data-stu-id="eac6a-116">PackageManager</span></span>| <span data-ttu-id="eac6a-117">Ondersteunde waarden zijn "yum", 'apt' en 'zypper'.</span><span class="sxs-lookup"><span data-stu-id="eac6a-117">Supported values are "yum", "apt", and "zypper".</span></span> <span data-ttu-id="eac6a-118">Hiermee geeft u de package manager te gebruiken bij het installeren van pakketten.</span><span class="sxs-lookup"><span data-stu-id="eac6a-118">Specifies the package manager to use when installing packages.</span></span> <span data-ttu-id="eac6a-119">Als **FilePath** is opgegeven, wordt het opgegeven pad wordt gebruikt om het pakket te installeren.</span><span class="sxs-lookup"><span data-stu-id="eac6a-119">If **FilePath** is specified, the provided path will be used to install the package.</span></span> <span data-ttu-id="eac6a-120">Anders wordt het pakket installeren vanuit een vooraf geconfigureerde opslagplaats Pakketbeheer gebruikt.</span><span class="sxs-lookup"><span data-stu-id="eac6a-120">Otherwise, a Package Manager will be used to install the package from a pre-configured repository.</span></span> <span data-ttu-id="eac6a-121">Als geen van beide **PackageManager** noch **FilePath** zijn opgegeven, de standaard package manager voor het systeem wordt gebruikt.</span><span class="sxs-lookup"><span data-stu-id="eac6a-121">If neither **PackageManager** nor **FilePath** are provided, the default package manager for the system will be used.</span></span>|
-| <span data-ttu-id="eac6a-122">FilePath</span><span class="sxs-lookup"><span data-stu-id="eac6a-122">FilePath</span></span>| <span data-ttu-id="eac6a-123">Het pad waar het pakket zich bevindt</span><span class="sxs-lookup"><span data-stu-id="eac6a-123">The file path where the package resides</span></span>|
-| <span data-ttu-id="eac6a-124">PackageGroup</span><span class="sxs-lookup"><span data-stu-id="eac6a-124">PackageGroup</span></span>| <span data-ttu-id="eac6a-125">Als **$true**, wordt de **naam** wordt verwacht dat de naam van de groep van een pakket voor gebruik met een **PackageManager**.</span><span class="sxs-lookup"><span data-stu-id="eac6a-125">If **$true**, the **Name** is expected to be the name of a package group for use with a **PackageManager**.</span></span> <span data-ttu-id="eac6a-126">**PacakgeGroup** is niet geldig bij het opgeven van een **FilePath**.</span><span class="sxs-lookup"><span data-stu-id="eac6a-126">**PacakgeGroup** is not valid when providing a **FilePath**.</span></span>|
-| <span data-ttu-id="eac6a-127">Argumenten</span><span class="sxs-lookup"><span data-stu-id="eac6a-127">Arguments</span></span>| <span data-ttu-id="eac6a-128">Een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies hetzelfde als de opgegeven.</span><span class="sxs-lookup"><span data-stu-id="eac6a-128">A string of arguments that will be passed to the package exactly as provided.</span></span>|
-| <span data-ttu-id="eac6a-129">ReturnCode</span><span class="sxs-lookup"><span data-stu-id="eac6a-129">ReturnCode</span></span>| <span data-ttu-id="eac6a-130">De verwachte retourcode.</span><span class="sxs-lookup"><span data-stu-id="eac6a-130">The expected return code.</span></span> <span data-ttu-id="eac6a-131">Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde die hier beschikbaar zijn, dat de configuratie wordt een fout geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="eac6a-131">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span>|
-| <span data-ttu-id="eac6a-132">DependsOn</span><span class="sxs-lookup"><span data-stu-id="eac6a-132">DependsOn</span></span> | <span data-ttu-id="eac6a-133">Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="eac6a-133">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="eac6a-134">Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="eac6a-134">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|<span data-ttu-id="00ad2-109">Name</span><span class="sxs-lookup"><span data-stu-id="00ad2-109">Name</span></span> |<span data-ttu-id="00ad2-110">De naam van het pakket waarvoor u een specifieke status wilt controleren.</span><span class="sxs-lookup"><span data-stu-id="00ad2-110">The name of the package for which you want to ensure a specific state.</span></span> |
+|<span data-ttu-id="00ad2-111">PackageManager</span><span class="sxs-lookup"><span data-stu-id="00ad2-111">PackageManager</span></span> |<span data-ttu-id="00ad2-112">Ondersteunde waarden zijn **yum**, **apt**en **Zypper**.</span><span class="sxs-lookup"><span data-stu-id="00ad2-112">Supported values are **yum**, **apt**, and **zypper**.</span></span> <span data-ttu-id="00ad2-113">Hiermee geeft u op welke pakket beheer moet worden gebruikt bij het installeren van pakketten.</span><span class="sxs-lookup"><span data-stu-id="00ad2-113">Specifies the package manager to use when installing packages.</span></span> <span data-ttu-id="00ad2-114">Als **filepath** is opgegeven, wordt het opgegeven pad gebruikt om het pakket te installeren.</span><span class="sxs-lookup"><span data-stu-id="00ad2-114">If **FilePath** is specified, the provided path will be used to install the package.</span></span> <span data-ttu-id="00ad2-115">Anders wordt een pakket beheer gebruikt om het pakket te installeren vanuit een vooraf geconfigureerde opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="00ad2-115">Otherwise, a Package Manager will be used to install the package from a pre-configured repository.</span></span> <span data-ttu-id="00ad2-116">Als geen van beide **PackageManager** of **filepath** wordt gegeven, wordt de standaard pakket beheerder voor het systeem gebruikt.</span><span class="sxs-lookup"><span data-stu-id="00ad2-116">If neither **PackageManager** nor **FilePath** are provided, the default package manager for the system will be used.</span></span> |
+|<span data-ttu-id="00ad2-117">PackageGroup</span><span class="sxs-lookup"><span data-stu-id="00ad2-117">PackageGroup</span></span> |<span data-ttu-id="00ad2-118">Als `$true`de **naam** naar verwachting de naam van een pakket groep is voor gebruik met een **PackageManager**.</span><span class="sxs-lookup"><span data-stu-id="00ad2-118">If `$true`, the **Name** is expected to be the name of a package group for use with a **PackageManager**.</span></span> <span data-ttu-id="00ad2-119">**PackageGroup** is niet geldig voor het opgeven van een **bestandspad**.</span><span class="sxs-lookup"><span data-stu-id="00ad2-119">**PackageGroup** is not valid when providing a **FilePath**.</span></span> |
+|<span data-ttu-id="00ad2-120">Argumenten</span><span class="sxs-lookup"><span data-stu-id="00ad2-120">Arguments</span></span> |<span data-ttu-id="00ad2-121">Een teken reeks argumenten die exact als opgegeven worden door gegeven aan het pakket.</span><span class="sxs-lookup"><span data-stu-id="00ad2-121">A string of arguments that will be passed to the package exactly as provided.</span></span> |
+|<span data-ttu-id="00ad2-122">Return code</span><span class="sxs-lookup"><span data-stu-id="00ad2-122">ReturnCode</span></span> |<span data-ttu-id="00ad2-123">De verwachte retour code.</span><span class="sxs-lookup"><span data-stu-id="00ad2-123">The expected return code.</span></span> <span data-ttu-id="00ad2-124">Als de daad werkelijke retour code niet overeenkomt met de verwachte waarde die hier wordt opgegeven, wordt er een fout geretourneerd door de configuratie.</span><span class="sxs-lookup"><span data-stu-id="00ad2-124">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span> |
+|<span data-ttu-id="00ad2-125">Bestandspad</span><span class="sxs-lookup"><span data-stu-id="00ad2-125">FilePath</span></span> |<span data-ttu-id="00ad2-126">Het bestandspad waar het pakket zich bevindt.</span><span class="sxs-lookup"><span data-stu-id="00ad2-126">The file path where the package resides.</span></span> |
 
-## <a name="example"></a><span data-ttu-id="eac6a-135">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="eac6a-135">Example</span></span>
+## <a name="common-properties"></a><span data-ttu-id="00ad2-127">Algemene eigenschappen</span><span class="sxs-lookup"><span data-stu-id="00ad2-127">Common properties</span></span>
 
-<span data-ttu-id="eac6a-136">Het volgende voorbeeld zorgt ervoor dat het pakket met de naam 'httpd' is geïnstalleerd op een Linux-computer, met behulp van de 'Yum' package manager.</span><span class="sxs-lookup"><span data-stu-id="eac6a-136">The following example ensures that the package named "httpd" is installed on a Linux computer, using the “Yum” package manager.</span></span>
+|<span data-ttu-id="00ad2-128">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="00ad2-128">Property</span></span> |<span data-ttu-id="00ad2-129">Description</span><span class="sxs-lookup"><span data-stu-id="00ad2-129">Description</span></span> |
+|---|---|
+|<span data-ttu-id="00ad2-130">DependsOn</span><span class="sxs-lookup"><span data-stu-id="00ad2-130">DependsOn</span></span> |<span data-ttu-id="00ad2-131">Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd.</span><span class="sxs-lookup"><span data-stu-id="00ad2-131">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="00ad2-132">De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is.</span><span class="sxs-lookup"><span data-stu-id="00ad2-132">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is ResourceType, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span> |
+|<span data-ttu-id="00ad2-133">Zo</span><span class="sxs-lookup"><span data-stu-id="00ad2-133">Ensure</span></span> |<span data-ttu-id="00ad2-134">Hiermee wordt bepaald of er wordt gecontroleerd of het pakket bestaat.</span><span class="sxs-lookup"><span data-stu-id="00ad2-134">Determines whether to check if the package exists.</span></span> <span data-ttu-id="00ad2-135">Stel deze eigenschap in op **aanwezig** om te controleren of het pakket bestaat.</span><span class="sxs-lookup"><span data-stu-id="00ad2-135">Set this property to **Present** to ensure the package exists.</span></span> <span data-ttu-id="00ad2-136">Stel deze in op **afwezig** om ervoor te zorgen dat het pakket niet bestaat.</span><span class="sxs-lookup"><span data-stu-id="00ad2-136">Set it to **Absent** to ensure the package does not exist.</span></span> <span data-ttu-id="00ad2-137">De standaard waarde is **aanwezig**.</span><span class="sxs-lookup"><span data-stu-id="00ad2-137">The default value is **Present**.</span></span> |
 
-```
+## <a name="example"></a><span data-ttu-id="00ad2-138">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="00ad2-138">Example</span></span>
+
+<span data-ttu-id="00ad2-139">In het volgende voor beeld wordt ervoor gezorgd dat het pakket met de naam ' httpd ' is geïnstalleerd op een Linux-computer met behulp van het pakket beheer ' yum '.</span><span class="sxs-lookup"><span data-stu-id="00ad2-139">The following example ensures that the package named "httpd" is installed on a Linux computer, using the "Yum" package manager.</span></span>
+
+```powershell
 Import-DSCResource -Module nx
 
-Node $node {
-nxPackage httpd
+Node $node
 {
-    Name = "httpd"
-    Ensure = "Present"
-    PackageManager = "Yum"
-}
+    nxPackage httpd
+    {
+        Name = "httpd"
+        Ensure = "Present"
+        PackageManager = "Yum"
+    }
 }
 ```
