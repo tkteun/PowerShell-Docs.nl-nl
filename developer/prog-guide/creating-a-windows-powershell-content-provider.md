@@ -1,5 +1,5 @@
 ---
-title: Het maken van een Provider van Windows PowerShell-inhoud | Microsoft Docs
+title: Een Windows Power shell-inhouds provider maken | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,63 +11,63 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: a897ba29835e6f04ccacf3c4d7d8a1d43cedb91e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855025"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323214"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Een Windows PowerShell-inhoudsprovider maken
 
-In dit onderwerp wordt beschreven hoe u een Windows PowerShell-provider waarmee de gebruiker voor het bewerken van de inhoud van de items in een gegevensarchief maken. Als gevolg hiervan wordt een provider die u kunt de inhoud van items bewerken aangeduid als een Windows PowerShell-inhoudsprovider.
+In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de inhoud van de items in een gegevens archief kan bewerken. Als gevolg hiervan wordt een provider die de inhoud van items kan bewerken, een Windows Power shell-inhouds provider genoemd.
 
 > [!NOTE]
-> U kunt downloaden de C# bronbestand (AccessDBSampleProvider06.cs) voor deze provider met behulp van de Microsoft Windows Software Development Kit voor Windows Vista en .NET Framework 3.0 Runtime-onderdelen. Zie voor instructies voor het downloaden [hoe u Windows PowerShell installeren en Download de Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> U kunt het C# bron bestand (AccessDBSampleProvider06.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> De bronbestanden van de gedownloade zijn beschikbaar in de  **\<voorbeelden van PowerShell >** directory.
+> De gedownloade bron bestanden zijn beschikbaar in de  **\<Power shell-voor beelden >** Directory.
 >
-> Zie voor meer informatie over andere Windows PowerShell-provider-implementaties, [het ontwerpen van uw Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md).
+> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
-## <a name="define-the-windows-powershell-content-provider-class"></a>De klasse-Provider van Windows PowerShell-inhoud definiëren
+## <a name="define-the-windows-powershell-content-provider-class"></a>De Windows Power shell-inhouds provider klasse definiëren
 
-Een Windows PowerShell-inhoudsprovider moet maakt u een .NET-klasse die ondersteuning biedt voor de [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface. Hier volgt de definitie van de klasse voor de item-provider in deze sectie beschreven.
+Een Windows Power shell-inhouds provider moet een .NET-klasse maken die ondersteuning biedt voor de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) . Hier volgt de klassedefinitie voor de item provider die in deze sectie wordt beschreven.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
 
-Houd er rekening mee dat in deze klassedefinitie, de [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) kenmerk bevat twee parameters. De eerste parameter geeft u een gebruiksvriendelijke naam voor de provider die wordt gebruikt door Windows PowerShell. De tweede parameter geeft u de Windows PowerShell-specifieke mogelijkheden die de provider wordt aangegeven in de Windows PowerShell-runtime tijdens de verwerking van de opdracht. Er zijn geen extra specifieke mogelijkheden van Windows PowerShell voor deze provider.
+Houd er rekening mee dat in deze klassedefinitie het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) twee para meters bevat. De eerste para meter geeft u een beschrijvende naam op voor de provider die wordt gebruikt door Windows Power shell. Met de tweede para meter geeft u de specifieke Windows Power shell-mogelijkheden op die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens het verwerken van opdrachten. Voor deze provider zijn er geen specifieke Windows Power shell-functies toegevoegd.
 
-## <a name="define-functionality-of-base-class"></a>Functionaliteit van de basisklasse definiëren
+## <a name="define-functionality-of-base-class"></a>Functionaliteit van basis klasse definiëren
 
-Zoals beschreven in [ontwerp van uw Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md), wordt de [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klasse is afgeleid van diverse andere klassen die opgegeven functionaliteit van de andere provider. Een Windows PowerShell-inhoudsprovider, daarom doorgaans worden alle gedefinieerd van de functionaliteit van de bovenliggende klassen.
+Zoals beschreven in het [ontwerp van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) afgeleid van verschillende andere klassen die een andere provider functionaliteit hebben verschaft. Een Windows Power shell-inhouds provider definieert daarom doorgaans alle functionaliteiten die door deze klassen worden verschaft.
 
-Zie voor meer informatie over het implementeren van de functionaliteit voor het toevoegen van informatie over de initialisatie van de sessie-specifieke en voor het vrijgeven van resources die worden gebruikt door de provider [het maken van een eenvoudige Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md). De meeste providers, met inbegrip van de provider hier beschreven, kunnen echter de standaardimplementatie van deze functionaliteit die wordt geleverd door Windows PowerShell gebruiken.
+Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor meer informatie over het implementeren van functionaliteit voor het toevoegen van sessie-specifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers, met inbegrip van de hier beschreven provider, kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit van Windows Power shell.
 
-Voor toegang tot het gegevensarchief, moet de provider de methoden voor het implementeren van de [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) basisklasse. Zie voor meer informatie over het implementeren van deze methoden [het maken van een Windows PowerShell station Provider](./creating-a-windows-powershell-drive-provider.md).
+Voor toegang tot het gegevens archief moet de provider de methoden van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) implementeren. Zie [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-Als u wilt bewerken van de items van een gegevensarchief, zoals ophalen, instellen en items wissen, de provider van de methoden die door moet implementeren de [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) basisklasse. Zie voor meer informatie over het implementeren van deze methoden [het maken van een Windows PowerShell-Provider Item](./creating-a-windows-powershell-item-provider.md).
+Voor het bewerken van de items van een gegevens archief, zoals het ophalen, instellen en wissen van items, moet de provider de methoden implementeren die worden verschaft door de basis klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Zie [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-Als u wilt werken met meerdere lagen gegevensarchieven, moet u de provider de methoden die door implementeren de [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) basisklasse. Zie voor meer informatie over het implementeren van deze methoden [het maken van een Windows PowerShell-Provider Container](./creating-a-windows-powershell-container-provider.md).
+Voor het werken met gegevens archieven met meerdere lagen moet de provider de methoden implementeren die worden verschaft door de basis klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Zie [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-Ter ondersteuning van recursieve opdrachten, geneste containers en relatieve paden, de provider moet implementeren de [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) basisklasse. Deze Windows PowerShell-inhoudsprovider kunnen bovendien wordt [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) interface met de [ System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) basisklasse en de methoden die door deze klasse moet daarom worden geïmplementeerd. Zie voor meer informatie, uitvoering van deze methoden, Zie [implementeren van een Windows PowerShell-Provider van navigatie](./creating-a-windows-powershell-navigation-provider.md).
+Voor ondersteuning van recursieve opdrachten, geneste containers en relatieve paden moet de provider de basis klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implementeren. Deze Windows Power shell-inhouds provider kan bovendien de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) koppelen aan de basis klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) en moeten daarom de methoden implementeren die door deze klasse worden verschaft. Zie de implementatie van deze methoden voor meer informatie. Zie [een navigatie van een Windows Power shell-provider implementeren](./creating-a-windows-powershell-navigation-provider.md).
 
-## <a name="implementing-a-content-reader"></a>Implementatie van een Content-lezer
+## <a name="implementing-a-content-reader"></a>Een inhouds lezer implementeren
 
-Als u wilt lezen inhoud van een item, een provider moet worden geïmplementeerd een inhoud reader-klasse die is afgeleid van [System.Management.Automation.Provider.Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader). De inhoud lezer voor deze provider biedt toegang tot de inhoud van een rij in een tabel met gegevens. De inhoud reader-klasse definieert een **lezen** methode die de gegevens worden opgehaald uit de opgegeven rij en retourneert een lijst die gegevens vertegenwoordigt een **zoeken** methode die wordt verplaatst van de inhoud lezer, een  **Sluiten** methode waarmee de inhoud lezer wordt gesloten en een **buitengebruikstelling** methode.
+Voor het lezen van inhoud van een item moet een provider een inhouds lezer-klasse implementeren die is afgeleid van [System. Management. Automation. provider. Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader). De inhouds lezer voor deze provider biedt toegang tot de inhoud van een rij in een gegevens tabel. De klasse inhouds lezer definieert een **Lees** methode voor het ophalen van de gegevens uit de aangegeven rij en retourneert een lijst die die gegevens vertegenwoordigt, een **Zoek** methode waarmee de inhouds lezer wordt verplaatst, een **Close** -methode die de inhouds lezer sluit en een  **Methode Dispose** .
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
 
-## <a name="implementing-a-content-writer"></a>Implementatie van een Content-schrijver
+## <a name="implementing-a-content-writer"></a>Een inhouds schrijver implementeren
 
-Als u wilt schrijf er inhoud naar een artikel, een provider een inhoud moet implementeren schrijver klasse is afgeleid van [System.Management.Automation.Provider.Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter). De klasse inhoud schrijver definieert een **schrijven** methode die de inhoud van de opgegeven rij, schrijft een **zoeken** methode die wordt verplaatst van de inhoud schrijver een **sluiten** methode die wordt gesloten de schrijver van inhoud, en een **buitengebruikstelling** methode.
+Als u inhoud naar een item wilt schrijven, moet een provider een klasse Content Writer implementeren die is afgeleid van [System. Management. Automation. provider. Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter). De klasse Content Writer definieert een **Schrijf** methode voor het schrijven van de opgegeven rij-inhoud, een **Zoek** methode waarmee de schrijver van de inhoud wordt verplaatst, een **Close** **-methode die** de schrijver van de inhoud sluit en een verwerkings methode.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
-## <a name="retrieving-the-content-reader"></a>Bij het ophalen van de inhoud lezer
+## <a name="retrieving-the-content-reader"></a>De inhouds lezer wordt opgehaald
 
-Als u de inhoud van een item, de provider moet implementeren de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) ter ondersteuning van de `Get-Content` cmdlet. Deze methode retourneert de inhoud lezer voor het item dat zich bevindt in het opgegeven pad. De reader-object kan vervolgens worden geopend om te lezen van de inhoud.
+Als u inhoud van een item wilt ophalen, moet de provider [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) implementeren ter `Get-Content` ondersteuning van de cmdlet. Deze methode retourneert de inhouds lezer voor het item dat zich op het opgegeven pad bevindt. Het lezerobject kan vervolgens worden geopend om de inhoud te lezen.
 
-Hier volgt de implementatie van [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) voor deze methode voor deze provider.
+Hier volgt de implementatie van [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) voor deze methode voor deze provider.
 
 ```csharp
 public IContentReader GetContentReader(string path)
@@ -92,19 +92,19 @@ public IContentReader GetContentReader(string path)
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1829-L1846 "AccessDBProviderSample06.cs")]
 
-#### <a name="things-to-remember-about-implementing-getcontentreader"></a>Om te onthouden over het implementeren van GetContentReader
+#### <a name="things-to-remember-about-implementing-getcontentreader"></a>Wat u moet weten over implementatie van GetContentReader
 
-De volgende voorwaarden mogelijk van toepassing op een implementatie van [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader):
+De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader):
 
-- Bij het definiëren van de providerklasse, een Windows PowerShell-inhoudsprovider provider mogelijkheden van ExpandWildcards, Filter, opnemen of uitsluiten, mogelijk declareren van de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)opsomming. In dergelijke gevallen de uitvoering van de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) methode moet ervoor zorgen dat het pad dat is doorgegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. U doet dit door de methode moet toegang tot de juiste eigenschap, bijvoorbeeld, de [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) eigenschappen.
+- Bij het definiëren van de provider klasse kan een Windows Power shell-inhouds provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- Standaard onderdrukkingen van deze methode moeten niet ophalen van een lezer voor objecten die door de gebruiker worden verborgen, tenzij de [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) eigenschap is ingesteld op `true`. Een fout moet worden geschreven als het pad staat voor een item dat is verborgen voor de gebruiker en [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- Standaard moeten onderdrukkingen van deze methode geen lezer ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is `false`ingesteld op.
 
-## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Dynamische Parameters toevoegen aan de Cmdlet Get-inhoud
+## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Dynamische para meters aan de cmdlet Get-Content koppelen
 
-De `Get-Content` cmdlet mogelijk extra parameters die dynamisch zijn opgegeven tijdens runtime. Voor deze dynamische parameters, de provider van de Windows PowerShell-inhoud moet worden geïmplementeerd de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) methode. Deze methode haalt dynamische parameters voor het item in het opgegeven pad op en retourneert een object met eigenschappen en velden met het parseren van kenmerken die vergelijkbaar is met een cmdlet-klasse of een [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows PowerShell-runtime maakt gebruik van het geretourneerde object de parameters toevoegen aan de cmdlet.
+Voor `Get-Content` de cmdlet zijn mogelijk aanvullende para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) implementeren. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlet.
 
-Deze Windows PowerShell-container-provider wordt niet geïmplementeerd voor deze methode. De volgende code is echter de standaardimplementatie van deze methode.
+Deze methode wordt niet door deze Windows Power shell-container provider geïmplementeerd. De volgende code is echter de standaard implementatie van deze methode.
 
 ```csharp
 public object GetContentReaderDynamicParameters(string path)
@@ -115,11 +115,11 @@ public object GetContentReaderDynamicParameters(string path)
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1853-L1856 "AccessDBProviderSample06.cs")]
 
-## <a name="retrieving-the-content-writer"></a>Bij het ophalen van de schrijver van inhoud
+## <a name="retrieving-the-content-writer"></a>De inhouds schrijver wordt opgehaald
 
-Als u wilt schrijf er inhoud naar een artikel, de provider moet implementeren de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) ter ondersteuning van de `Set-Content` en `Add-Content` cmdlets. Deze methode retourneert de inhoud-schrijver van het item dat zich bevindt in het opgegeven pad.
+Als u inhoud naar een item wilt schrijven, moet de provider [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) implementeren om `Set-Content` de `Add-Content` cmdlets en te ondersteunen. Deze methode retourneert de schrijver van inhoud voor het item dat zich op het opgegeven pad bevindt.
 
-Hier volgt de implementatie van [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) voor deze methode.
+Hier volgt de implementatie van [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) voor deze methode.
 
 ```csharp
 public IContentWriter GetContentWriter(string path)
@@ -144,47 +144,47 @@ public IContentWriter GetContentWriter(string path)
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1863-L1880 "AccessDBProviderSample06.cs")]
 
-#### <a name="things-to-remember-about-implementing-getcontentwriter"></a>Om te onthouden over het implementeren van GetContentWriter
+#### <a name="things-to-remember-about-implementing-getcontentwriter"></a>Wat u moet weten over implementatie van GetContentWriter
 
-De volgende voorwaarden mogelijk van toepassing op de implementatie van [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter):
+De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter):
 
-- Bij het definiëren van de providerklasse, een Windows PowerShell-inhoudsprovider provider mogelijkheden van ExpandWildcards, Filter, opnemen of uitsluiten, mogelijk declareren van de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)opsomming. In dergelijke gevallen de uitvoering van de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) methode moet ervoor zorgen dat het pad dat is doorgegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. U doet dit door de methode moet toegang tot de juiste eigenschap, bijvoorbeeld, de [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) eigenschappen.
+- Bij het definiëren van de provider klasse kan een Windows Power shell-inhouds provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- Standaard onderdrukkingen van deze methode moeten niet ophalen van een schrijver voor objecten die door de gebruiker worden verborgen, tenzij de [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) eigenschap is ingesteld op `true`. Een fout moet worden geschreven als het pad staat voor een item dat is verborgen voor de gebruiker en [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- Standaard moeten onderdrukkingen van deze methode geen schrijver ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is `false`ingesteld op.
 
-## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>Dynamische Parameters te koppelen aan de Cmdlets toevoegen-inhoud en Set-inhoud
+## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>Dynamische para meters koppelen aan de cmdlets Add-content en set-content
 
-De `Add-Content` en `Set-Content` cmdlets mogelijk extra dynamische parameters die een runtime worden toegevoegd. Voor deze dynamische parameters, de provider van de Windows PowerShell-inhoud moet worden geïmplementeerd de [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriterdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) methode voor het afhandelen van deze de parameters. Deze methode haalt dynamische parameters voor het item in het opgegeven pad op en retourneert een object met eigenschappen en velden met het parseren van kenmerken die vergelijkbaar is met een cmdlet-klasse of een [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows PowerShell-runtime maakt gebruik van het geretourneerde object de parameters toevoegen aan de cmdlets.
+Voor `Add-Content` de `Set-Content` cmdlets en zijn mogelijk extra dynamische para meters vereist die een runtime toevoegen. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlets.
 
-Deze Windows PowerShell-container-provider wordt niet geïmplementeerd voor deze methode. De volgende code is echter de standaardimplementatie van deze methode.
+Deze methode wordt niet door deze Windows Power shell-container provider geïmplementeerd. De volgende code is echter de standaard implementatie van deze methode.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1887-L1890 "AccessDBProviderSample06.cs")]
 
 ## <a name="clearing-content"></a>Inhoud wissen
 
-Uw inhoudsprovider implementeert de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) methode ter ondersteuning van de `Clear-Content` cmdlet. Deze methode wordt verwijderd van de inhoud van het item in het opgegeven pad, maar het item intact blijft.
+Uw inhouds provider implementeert de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) ter ondersteuning van `Clear-Content` de cmdlet. Met deze methode wordt de inhoud van het item op het opgegeven pad verwijderd, maar blijft het item intact.
 
-Hier volgt de implementatie van de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) methode voor deze provider.
+Hier volgt de implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) voor deze provider.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1775-L1812 "AccessDBProviderSample06.cs")]
 
-#### <a name="things-to-remember-about-implementing-clearcontent"></a>Om te onthouden over het implementeren van ClearContent
+#### <a name="things-to-remember-about-implementing-clearcontent"></a>Wat u moet weten over implementatie van ClearContent
 
-De volgende voorwaarden mogelijk van toepassing op een implementatie van [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent):
+De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent):
 
-- Bij het definiëren van de providerklasse, een Windows PowerShell-inhoudsprovider provider mogelijkheden van ExpandWildcards, Filter, opnemen of uitsluiten, mogelijk declareren van de [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)opsomming. In dergelijke gevallen de uitvoering van de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) methode moet ervoor zorgen dat het pad dat is doorgegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. U doet dit door de methode moet toegang tot de juiste eigenschap, bijvoorbeeld, de [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [ System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) eigenschappen.
+- Bij het definiëren van de provider klasse kan een Windows Power shell-inhouds provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- Standaard schakelt onderdrukkingen van deze methode moeten niet de inhoud van objecten die door de gebruiker worden verborgen, tenzij de [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) eigenschap is ingesteld op `true`. Een fout moet worden geschreven als het pad staat voor een item dat is verborgen voor de gebruiker en [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- Standaard moeten onderdrukkingen van deze methode de inhoud niet wissen van objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is `false`ingesteld op.
 
-- De implementatie van de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) methode moet aanroepen [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) en controleer of de geretourneerde waarde voordat u wijzigingen aanbrengt aan de gegevensopslag. Deze methode wordt gebruikt om te bevestigen van de uitvoering van een bewerking wanneer een wijziging wordt aangebracht in het gegevensarchief, zoals het wissen van inhoud. De [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) methode worden verzonden, de naam van de resource moet worden gewijzigd voor de gebruiker met de Windows PowerShell-runtime verwerking opdrachtregel instellingen of voorkeur de variabelen bij het bepalen van wat moet worden weergegeven.
+- Uw implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde ervan controleren voordat u wijzigingen aanbrengt in het gegevens archief. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in het gegevens archief, zoals het wissen van inhoud. De methode [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, waarbij de Windows Power shell-runtime alle opdracht regel instellingen of voorkeurs variabelen in bepalen wat er moet worden weer gegeven.
 
-  Na het aanroepen van [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, wordt de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) methode moet aanroepen de [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) methode. Deze methode verzendt een bericht naar de gebruiker om toe te staan van feedback om te controleren of als de bewerking moet worden voortgezet. De aanroep van [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) kunt u een extra controle voor wijzigingen die mogelijk schadelijke system.
+  Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, moet de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) worden aangeroepen [ Methode System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om te controleren of de bewerking moet worden voortgezet. De aanroep van [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) biedt een extra controle op mogelijk schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dynamische Parameters toevoegen aan de Cmdlet Clear-inhoud
+## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dynamische para meters aan de cmdlet voor het wissen van inhoud koppelen
 
-De `Clear-Content` cmdlet mogelijk extra dynamische parameters die worden toegevoegd tijdens runtime. Voor deze dynamische parameters, de provider van de Windows PowerShell-inhoud moet worden geïmplementeerd de [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontentdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) methode voor het afhandelen van deze de parameters. Deze methode haalt de parameters voor het item in het opgegeven pad. Deze methode haalt dynamische parameters voor het item in het opgegeven pad op en retourneert een object met eigenschappen en velden met het parseren van kenmerken die vergelijkbaar is met een cmdlet-klasse of een [ System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows PowerShell-runtime maakt gebruik van het geretourneerde object de parameters toevoegen aan de cmdlet.
+Voor `Clear-Content` de cmdlet zijn mogelijk extra dynamische para meters vereist die tijdens runtime worden toegevoegd. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden de para meters voor het item op het aangegeven pad opgehaald. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlet.
 
-Deze Windows PowerShell-container-provider wordt niet geïmplementeerd voor deze methode. De volgende code is echter de standaardimplementatie van deze methode.
+Deze methode wordt niet door deze Windows Power shell-container provider geïmplementeerd. De volgende code is echter de standaard implementatie van deze methode.
 
 ```csharp
 public object ClearContentDynamicParameters(string path)
@@ -195,23 +195,23 @@ public object ClearContentDynamicParameters(string path)
 
 [!code-csharp[AccessDBProviderSample06.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
 
-## <a name="code-sample"></a>Voorbeeld van code
+## <a name="code-sample"></a>Code voorbeeld
 
-Zie voor een compleet voorbeeld van code, [AccessDbProviderSample06 codevoorbeeld](./accessdbprovidersample06-code-sample.md).
+Zie [AccessDbProviderSample06 code sample](./accessdbprovidersample06-code-sample.md)voor een volledige voorbeeld code.
 
-## <a name="defining-object-types-and-formatting"></a>Objecttype definiëren en opmaak
+## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
-Bij het schrijven van een provider, is het mogelijk dat het nodig zijn voor leden toevoegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit wordt gedaan, moet u een typen-bestand dat Windows PowerShell gebruiken om de leden van het object te identificeren en een indelingsbestand waarmee wordt gedefinieerd hoe het object wordt weergegeven. Zie voor meer informatie, [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit is gebeurd, moet u een bestands typen bestand maken dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie [object typen en opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)voor meer informatie.
 
-## <a name="building-the-windows-powershell-provider"></a>Het bouwen van de Windows PowerShell-Provider
+## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 
-Zie [over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-windows-powershell-provider"></a>De Windows PowerShell-Provider testen
+## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
 
-Als uw Windows PowerShell-provider is geregistreerd met Windows PowerShell, kunt u deze testen door het uitvoeren van de ondersteunde cmdlets op de opdrachtregel. Bijvoorbeeld, de voorbeeld-inhoudsprovider testen.
+Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell, kunt u deze testen door de ondersteunde cmdlets uit te voeren op de opdracht regel. Test bijvoorbeeld de voor beeld-inhouds provider.
 
-Gebruik de `Get-Content` cmdlet voor het ophalen van de inhoud van het opgegeven item in de database-tabel in het pad dat is opgegeven door de `Path` parameter. De `ReadCount` parameter geeft u het aantal items voor de gedefinieerde inhoud lezer te lezen (standaard 1). Met de volgende vermelding van de opdracht wordt de cmdlet worden twee rijen (objecten) opgehaald uit de tabel en hun inhoud wordt weergegeven. Houd er rekening mee dat de volgende voorbeelduitvoer wordt gebruikt een fictieve Access-database.
+Gebruik de `Get-Content` cmdlet om de inhoud van het opgegeven item in de database tabel op te halen in het pad `Path` dat is opgegeven door de para meter. Met `ReadCount` de para meter wordt het aantal items voor de gedefinieerde inhouds lezer opgegeven dat moet worden gelezen (standaard 1). Met de volgende opdracht wordt de cmdlet twee rijen (items) opgehaald uit de tabel en wordt de inhoud ervan weer gegeven. Houd er rekening mee dat in de volgende voorbeeld uitvoer een fictieve Access-Data Base wordt gebruikt.
 
 ```powershell
 Get-Content -Path mydb:\Customers -ReadCount 2
@@ -246,16 +246,16 @@ Country   : USA
 
 ## <a name="see-also"></a>Zie ook
 
-[Het maken van Windows PowerShell-providers](./how-to-create-a-windows-powershell-provider.md)
+[Windows Power shell-providers maken](./how-to-create-a-windows-powershell-provider.md)
 
-[Ontwerp uw Windows PowerShell-provider](./designing-your-windows-powershell-provider.md)
+[Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Implementatie van een navigatie Windows PowerShell-provider](./creating-a-windows-powershell-navigation-provider.md)
+[Een Windows Power shell-provider voor navigatie implementeren](./creating-a-windows-powershell-navigation-provider.md)
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell-programmeergids](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)

@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Configuratie- en omgevingsgegevens scheiden
-ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080030"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323250"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Configuratie- en omgevingsgegevens scheiden
 
->Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-Kan het nuttig zijn voor het scheiden van de gegevens die worden gebruikt in een DSC-configuratie van de configuratie zelf met behulp van configuratiegegevens.
-Op deze manier kunt kunt u een configuratie voor één gebruiken voor meerdere omgevingen.
+Het kan handig zijn om de gegevens die in een DSC-configuratie worden gebruikt, te scheiden van de configuratie zelf met behulp van configuratie gegevens.
+Als u dit doet, kunt u één configuratie voor meerdere omgevingen gebruiken.
 
-Bijvoorbeeld, als u een toepassing ontwikkelt, kunt u één configuratie gebruiken voor zowel ontwikkeling als productie-omgevingen, en configuratiegegevens om op te geven van de gegevens voor elke omgeving.
+Als u bijvoorbeeld een toepassing ontwikkelt, kunt u een configuratie gebruiken voor zowel ontwikkel-als productie omgevingen en configuratie gegevens gebruiken om gegevens op te geven voor elke omgeving.
 
-## <a name="what-is-configuration-data"></a>Wat is configuratiegegevens?
+## <a name="what-is-configuration-data"></a>Wat zijn configuratie gegevens?
 
-Configuratiegegevens zijn gegevens die is gedefinieerd in een hash-tabel en doorgegeven aan een DSC-configuratie wanneer u deze configuratie compileren.
+Configuratie gegevens zijn gegevens die zijn gedefinieerd in een hashtabel en door gegeven aan een DSC-configuratie wanneer u die configuratie compileert.
 
-Voor een gedetailleerde beschrijving van de **ConfigurationData** hashtabel, Zie [met behulp van configuratiegegevens](configData.md).
+Zie [configuratie gegevens gebruiken](configData.md)voor een gedetailleerde beschrijving van de **ConfigurationData** hashtabel.
 
-## <a name="a-simple-example"></a>Een eenvoudig voorbeeld
+## <a name="a-simple-example"></a>Een eenvoudig voor beeld
 
-Bekijk het voorbeeld van een zeer eenvoudig om te zien hoe dit werkt.
-We maken een configuratie voor één die ervoor dat zorgt **IIS** aanwezig is op het aantal knooppunten, en dat **Hyper-V** aanwezig is op andere:
+Laten we eens kijken naar een zeer eenvoudig voor beeld om te zien hoe dit werkt.
+Er wordt één configuratie gemaakt die ervoor zorgt dat **IIS** op sommige knoop punten aanwezig is en dat **Hyper-V** aanwezig is voor anderen:
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -68,9 +68,9 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-De laatste regel van dit script wordt de configuratie, doorgeven gecompileerd `$MyData` als de waarde **ConfigurationData** parameter.
+De laatste regel in dit script compileert de configuratie, waarbij `$MyData` de para meter value **ConfigurationData** wordt door gegeven.
 
-Het resultaat is dat twee MOF-bestanden worden gemaakt:
+Het resultaat is dat er twee MOF-bestanden worden gemaakt:
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
@@ -82,15 +82,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` Hiermee geeft u twee verschillende knooppunten, met elk een eigen `NodeName` en `Role`. Dynamisch zorgt voor de configuratie van de **knooppunt** blokken aan de hand van de verzameling van knooppunten van krijgt `$MyData` (met name `$AllNodes`) en filters die verzameling op basis van de `Role` eigenschap...
+`$MyData`Hiermee geeft u twee verschillende knoop punten, elk `NodeName` met `Role`een eigen en. Met de configuratie worden dynamische **knooppunt** blokken gemaakt door de verzameling knoop punten te nemen `$MyData` die worden opgehaald `$AllNodes`(met name) en de verzameling `Role` wordt gefilterd op basis van de eigenschap.
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Met behulp van de configuratiegegevens voor het definiëren van ontwikkeling en productie-omgevingen
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Configuratie gegevens gebruiken voor het definiëren van ontwikkel-en productie omgevingen
 
-Bekijk een compleet voorbeeld die gebruikmaakt van een configuratie voor één voor het instellen van zowel ontwikkeling als productie-omgevingen van een website. Zowel IIS en SQL Server in de ontwikkelomgeving zijn geïnstalleerd op een afzonderlijke knooppunten. In de productieomgeving, zijn IIS en SQL Server geïnstalleerd op afzonderlijke knooppunten. Gebruiken we een bestand met configuratiegegevens .psd1 om op te geven van de gegevens voor de twee verschillende omgevingen.
+Laten we eens kijken naar een volledig voor beeld dat één configuratie gebruikt voor het instellen van de ontwikkel-en productie omgeving van een website. In de ontwikkel omgeving worden zowel IIS als SQL Server geïnstalleerd op één knoop punt. In de productie omgeving worden IIS en SQL Server op afzonderlijke knoop punten geïnstalleerd. We gebruiken een configuratie gegevens. psd1-bestand om de gegevens voor de twee verschillende omgevingen op te geven.
 
-### <a name="configuration-data-file"></a>Bestand met configuratiegegevens
+### <a name="configuration-data-file"></a>Bestand met configuratie gegevens
 
-Definiëren we de ontwikkeling en productie-omgeving-gegevens in een bestand met de naam `DevProdEnvData.psd1` als volgt:
+De gegevens voor de ontwikkelings-en productie omgeving worden gedefinieerd in `DevProdEnvData.psd1` een bestand met de volgende naam:
 
 ```powershell
 @{
@@ -127,17 +127,17 @@ Definiëren we de ontwikkeling en productie-omgeving-gegevens in een bestand met
 }
 ```
 
-### <a name="configuration-script-file"></a>Configuratie van scriptbestand
+### <a name="configuration-script-file"></a>Configuratie script bestand
 
-Nu in de configuratie die is gedefinieerd in een `.ps1` bestand filteren we de knooppunten die we hebben gedefinieerd in `DevProdEnvData.psd1` door hun rol (`MSSQL`, `Dev`, of beide), en deze dienovereenkomstig configureren.
-De ontwikkelomgeving heeft de SQL-Server en IIS op één knooppunt, terwijl de productie-omgeving ze op twee verschillende knooppunten heeft.
-De site-inhoud is ook verschillend zijn, zoals opgegeven door de `SiteContents` eigenschappen.
+Nu worden in de configuratie, `.ps1` die in een bestand is gedefinieerd, de knoop punten gefilterd die we in `DevProdEnvData.psd1` hun rol hebben `Dev`gedefinieerd (`MSSQL`, of beide) en worden ze dienovereenkomstig geconfigureerd.
+De ontwikkel omgeving heeft zowel de SQL Server als IIS op één knoop punt, terwijl de productie omgeving ze op twee verschillende knoop punten heeft.
+De site-inhoud is ook anders, zoals opgegeven door `SiteContents` de eigenschappen.
 
-Aan het einde van het configuratiescript, noemen we de configuratie (dit compileren in een MOF-document), waarbij `DevProdEnvData.psd1` als de `$ConfigurationData` parameter.
+Aan het einde van het configuratie script noemen we de configuratie (Compileer deze in een MOF-document), waarbij `DevProdEnvData.psd1` de `$ConfigurationData` para meter wordt door gegeven.
 
->**Opmerking:** Deze configuratie moet de modules `xSqlPs` en `xWebAdministration` worden geïnstalleerd op het doelknooppunt.
+>**Opmerking:** Voor deze configuratie moeten de `xSqlPs` modules `xWebAdministration` en worden geïnstalleerd op het doel knooppunt.
 
-Laten we de configuratie wordt gedefinieerd in een bestand met de naam `MyWebApp.ps1`:
+Laten we de configuratie definiëren in een bestand met `MyWebApp.ps1`de naam:
 
 ```powershell
 Configuration MyWebApp
@@ -229,7 +229,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-Wanneer u deze configuratie uitvoert, drie MOF-bestanden worden gemaakt (één voor elke vermelding in met de naam de **AllNodes** matrix):
+Wanneer u deze configuratie uitvoert, worden er drie MOF-bestanden gemaakt (één voor elke benoemde vermelding in de **AllNodes** -matrix):
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -242,21 +242,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a>Met behulp van niet-knooppuntgegevens
+## <a name="using-non-node-data"></a>Niet-knooppunt gegevens gebruiken
 
-U kunt aanvullende sleutels toevoegen de **ConfigurationData** hashtabel voor gegevens die niet specifiek zijn voor een knooppunt.
-De volgende configuratie zorgt ervoor dat de aanwezigheid van twee websites.
-Gegevens voor elke website zijn gedefinieerd in de **AllNodes** matrix.
-Het bestand `Config.xml` wordt gebruikt voor beide websites, zodat we de gegevens in een extra sleutel met de naam definiëren `NonNodeData`.
-Houd er rekening mee dat u zoveel extra sleutels als u wilt en u kunt deze de naam elke gewenste kan hebben.
-`NonNodeData` is niet een gereserveerd woord is net wat we besloten om de naam van de extra sleutel.
+U kunt extra sleutels toevoegen aan de **ConfigurationData** hashtabel voor gegevens die niet specifiek voor een knoop punt zijn.
+De volgende configuratie zorgt ervoor dat er twee websites aanwezig zijn.
+De gegevens voor elke website worden gedefinieerd in de **AllNodes** -matrix.
+Het bestand `Config.xml` wordt gebruikt voor beide websites, dus we definiëren het in een extra sleutel met de naam `NonNodeData`.
+Houd er rekening mee dat u zoveel extra sleutels kunt hebben als u wilt, en u kunt ze elke gewenste naam geven.
+`NonNodeData`is geen gereserveerd woord. het is precies wat we hebben besloten om de extra sleutel een naam te bieden.
 
-U toegang tot aanvullende sleutels met behulp van de speciale variabele **$ConfigurationData**.
-In dit voorbeeld `ConfigFileContents` wordt geopend met de regel:
+U hebt toegang tot extra sleutels met behulp van de speciale variabele **$ConfigurationData**.
+In dit voor beeld `ConfigFileContents` wordt toegang verkregen met de regel:
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- in de `File` resource blokkeren.
+ in het `File` resource blok.
 
 
 ```powershell
@@ -265,21 +265,21 @@ $MyData =
     AllNodes =
     @(
         @{
-            NodeName           = “*”
-            LogPath            = “C:\Logs”
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
         },
 
         @{
-            NodeName = “VM-1”
-            SiteContents = “C:\Site1”
-            SiteName = “Website1”
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
         },
 
 
         @{
-            NodeName = “VM-2”;
-            SiteContents = “C:\Site2”
-            SiteName = “Website2”
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
         }
     );
 
@@ -299,12 +299,12 @@ configuration WebsiteConfig
         {
             Name         = $Node.SiteName
             PhysicalPath = $Node.SiteContents
-            Ensure       = “Present”
+            Ensure       = "Present"
         }
 
         File ConfigFile
         {
-            DestinationPath = $Node.SiteContents + “\\config.xml”
+            DestinationPath = $Node.SiteContents + "\\config.xml"
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
@@ -313,6 +313,6 @@ configuration WebsiteConfig
 
 
 ## <a name="see-also"></a>Zie ook
-- [Met behulp van configuratiegegevens](configData.md)
-- [Referentieopties in de configuratiegegevens](configDataCredentials.md)
+- [Configuratie gegevens gebruiken](configData.md)
+- [Referenties opties in configuratie gegevens](configDataCredentials.md)
 - [DSC-configuraties](configurations.md)

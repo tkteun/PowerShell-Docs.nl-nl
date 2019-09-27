@@ -1,53 +1,62 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Bron van het DSC-Service
-ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-Service Resource
+ms.openlocfilehash: 0bef6aa6d3526c9d8d92187c1e738d5c46b5665a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324146"
 ---
-# <a name="dsc-service-resource"></a>Bron van het DSC-Service
+# <a name="dsc-service-resource"></a>DSC-Service Resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-
-De **Service** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van services op het doelknooppunt.
+De **service** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op het doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 Service [string] #ResourceName
 {
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ DependsOn = [string[]] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Running | Stopped }  ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
-    [ Ensure = [string] { Absent | Present } ]
     [ Path = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| Naam| Geeft de servicenaam. Houd er rekening mee dat soms dit af van de weergavenaam wijkt. U krijgt een overzicht van de services en de huidige status hiervan met de cmdlet Get-Service.|
-| BuiltInAccount| Geeft aan dat de aanmeldingsaccount gebruiken voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**, en **NetworkService**.|
-| Referentie| Geeft aan dat referenties voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de __BuiltinAccount__ eigenschap samen kan worden gebruikt.|
-| DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| StartupType| Geeft aan dat het opstarttype voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatische**, **uitgeschakelde**, en **handmatig**|
-| Status| Geeft de status die u wilt om ervoor te zorgen voor de service.|
-| Description | Geeft aan dat de beschrijving van de doelservice.|
-| DisplayName | Geeft de naam van de doelservice.|
-| Zorg ervoor dat | Geeft aan of de doelservice op het systeem bestaat. Deze eigenschap instellen op **afwezig** om ervoor te zorgen dat de doelservice niet bestaat. Instellen op **aanwezig** (de standaardwaarde) zorgt ervoor dat de doelservice bestaat.|
-| Pad | Geeft het pad naar het binaire bestand voor een nieuwe service.|
+|Name |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
+|BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**en **Network Service**. |
+|Referentie |Hiermee geeft u de referenties op voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt. |
+|Opstart type |Hiermee geeft u het opstart type voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **Automatisch**, **uitgeschakeld**en **hand matig**. |
+|State |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **Wordt uitgevoerd** of **gestopt**. |
+|Description |Hiermee wordt de beschrijving van de doel service aangegeven. |
+|DisplayName |Hiermee wordt de weergave naam van de doel service aangegeven. |
+|Path |Hiermee wordt het pad naar het binaire bestand voor een nieuwe service aangegeven. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee geeft u op of de doel service op het systeem bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de doel service niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de doel service bestaat. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 

@@ -1,68 +1,76 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Groep van de DSC-Resource
-ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-groeps resource
+ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077344"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324432"
 ---
-# <a name="dsc-group-resource"></a>Groep van de DSC-Resource
+# <a name="dsc-group-resource"></a>DSC-groeps resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De bron van gebruikersgroep in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt.
+De **groeps** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 Group [string] #ResourceName
 {
-    GroupName          = [string]
-    [ Credential       = [PSCredential] ]
-    [ Description      = [string[]] ]
-    [ Ensure           = [string] { Absent | Present }  ]
-    [ Members          = [string[]] ]
+    GroupName = [string]
+    [ Credential = [PSCredential] ]
+    [ Description = [string[]] ]
+    [ Members = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ MembersToInclude = [string[]] ]
-    [ DependsOn        = [string[]] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| GroupName| De naam van de groep waarvan u wilt om te controleren of een specifieke status.|
-| Referentie| De referenties die zijn vereist voor toegang tot externe bronnen. **Houd er rekening mee**: Dit account moet hebben tot de juiste Active Directory-machtigingen voor alle niet-lokale accounts toevoegen aan de groep. anders treedt een fout op wanneer de configuratie wordt uitgevoerd op het doelknooppunt.
-| Description| De beschrijving van de groep.|
-| Zorg ervoor dat| Geeft aan of de groep bestaat. Deze eigenschap instellen op 'Ontbreekt' om ervoor te zorgen dat de groep niet bestaat. Instellen om "" (de standaardwaarde), zorgt u ervoor dat de groep bestaat.|
-| Leden| Gebruik deze eigenschap om het lidmaatschap van de huidige vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, mag niet een gebruiken de **MembersToExclude** of **MembersToInclude** eigenschap. In dat geval wordt een fout gegenereerd.|
-| MembersToExclude| Gebruik deze eigenschap leden verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt een fout gegenereerd.|
-| MembersToInclude| Gebruik deze eigenschap leden toevoegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt er een fout gegenereerd.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = "[ ResourceType] ResourceName"''.|
+|GroupName |De naam van de groep waarvoor u een specifieke status wilt controleren. |
+|Referentie |De referenties die nodig zijn voor toegang tot externe bronnen. Dit account moet over de juiste Active Directory machtigingen beschikken om alle niet-lokale accounts aan de groep toe te voegen. anders treedt er een fout op wanneer de configuratie wordt uitgevoerd op het doel knooppunt.
+|Description |De beschrijving van de groep. |
+|Members |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
 
-## <a name="example-1"></a>Voorbeeld 1
+## <a name="common-properties"></a>Algemene eigenschappen
 
-Het volgende voorbeeld ziet hoe u om ervoor te zorgen dat een groep met de naam "Testgroep" afwezig is.
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of de groep bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groep niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groep bestaat. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
+
+## <a name="example-1-ensure-group-is-not-present"></a>Voorbeeld 1: Zorg ervoor dat de groep niet aanwezig is
+
+In het volgende voor beeld ziet u hoe u ervoor kunt zorgen dat een groep met de naam ' TestGroup ' ontbreekt.
 
 ```powershell
 Group GroupExample
 {
     # This removes TestGroup, if present
-    # To create a new group, set Ensure to "Present“
+    # To create a new group, set Ensure to "Present"
     Ensure = "Absent"
     GroupName = "TestGroup"
 }
 ```
 
-## <a name="example-2"></a>Voorbeeld 2
+## <a name="example-2-add-domain-user-to-local-group"></a>Voor beeld 2: Domein gebruiker toevoegen aan lokale groep
 
-Het volgende voorbeeld laat zien hoe een Active Directory-gebruiker toevoegen aan de lokale groep administrators als onderdeel van een Machine met meerdere Lab-build waar u al een PSCredential worden gebruikt voor het lokale Administrator-account.
-Als dit wordt ook gebruikt voor het beheeraccount van het domein (na de promotie van domein), moeten we vervolgens deze bestaande PSCredential omzetten in een domein beschrijvende referentie.
-We kunnen vervolgens de gebruiker van een domein toevoegen aan de lokale groep Administrators op de lidserver.
+In het volgende voor beeld ziet u hoe u een Active Directory gebruiker toevoegt aan de lokale groep Administrators als onderdeel van een test omgeving voor meerdere machines waar u al een PSCredential gebruikt voor het lokale beheerders account. Aangezien dit ook wordt gebruikt voor het domein beheerders account (na domein promotie), moeten we deze bestaande PSCredential converteren naar een gebruiks vriendelijke domein referentie. Vervolgens kunnen we een domein gebruiker toevoegen aan de lokale groep Administrators op de lidserver.
 
 ```powershell
 @{
@@ -92,18 +100,18 @@ Group AddADUserToLocalAdminGroup {
 
 ## <a name="example-3"></a>Voorbeeld 3
 
-Het volgende voorbeeld laat zien hoe om te controleren of een lokale groep, TigerTeamAdmins, op de server TigerTeamSource.Contoso.Com bevat niet de account van een bepaald domein, Contoso\JerryG.
+In het volgende voor beeld ziet u hoe u ervoor zorgt dat een lokale groep TigerTeamAdmins op de server TigerTeamSource.Contoso.Com geen bepaald domein account bevat Contoso\JerryG.
 
 ```powershell
 Configuration SecureTigerTeamSource {
-  Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
-  Node TigerTeamSource.Contoso.Com {
-    Group TigerTeamAdmins {
-       GroupName        = 'TigerTeamAdmins'
-       Ensure           = 'Present'
-       MembersToExclude = "Contoso\JerryG"
+    Node TigerTeamSource.Contoso.Com {
+        Group TigerTeamAdmins {
+            GroupName        = 'TigerTeamAdmins'
+            Ensure           = 'Present'
+            MembersToExclude = "Contoso\JerryG"
+        }
     }
-  }
 }
 ```

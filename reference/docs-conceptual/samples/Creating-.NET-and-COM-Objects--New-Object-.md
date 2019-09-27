@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: .NET- en COM-objecten Nieuw Object maken
-ms.openlocfilehash: 8bb0326d350be634a50897bdcd432e13ec93450c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+keywords: Power shell, cmdlet
+title: .NET-en COM-objecten maken nieuw object
+ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030266"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325172"
 ---
-# <a name="creating-net-and-com-objects-new-object"></a>.NET- en COM-objecten (New-Object) maken
+# <a name="creating-net-and-com-objects-new-object"></a>.NET-en COM-objecten maken (nieuw-object)
 
-Er zijn softwareonderdelen met .NET Framework en COM-interface waarmee u veel system-beheertaken kunt uitvoeren. Windows PowerShell kunt u deze onderdelen te gebruiken, zodat u niet beperkt tot de taken die kunnen worden uitgevoerd bent met behulp van cmdlets. Veel van de in de eerste release van Windows PowerShell-cmdlets werken niet op basis van externe computers. Er wordt gedemonstreerd hoe u deze beperking omzeilen bij het beheren van gebeurtenislogboeken met behulp van .NET Framework **System.Diagnostics.EventLog** klasse rechtstreeks vanuit Windows PowerShell.
+Er zijn software onderdelen met .NET Framework en COM-interfaces waarmee u veel systeem beheer taken kunt uitvoeren. Met Windows Power shell kunt u deze onderdelen gebruiken, zodat u niet beperkt bent tot de taken die kunnen worden uitgevoerd met behulp van-cmdlets. Veel van de cmdlets in de eerste versie van Windows Power shell werken niet op externe computers. Er wordt gedemonstreerd hoe u deze beperking omzeilt bij het beheer van gebeurtenis logboeken met behulp van de klasse .NET Framework **System. Diagnostics. Eventlog** rechtstreeks vanuit Windows Power shell.
 
-## <a name="using-new-object-for-event-log-access"></a>Met behulp van New-Object voor de Event Log-toegang
+## <a name="using-new-object-for-event-log-access"></a>Nieuwe objecten gebruiken voor toegang tot gebeurtenis logboeken
 
-De .NET Framework-klassenbibliotheek bevat een klasse met de naam **System.Diagnostics.EventLog** die kunnen worden gebruikt voor het beheren van gebeurtenislogboeken. U kunt een nieuw exemplaar van een .NET Framework-klasse maken met behulp van de **New-Object** cmdlet met de **TypeName** parameter. De volgende opdracht maakt bijvoorbeeld een gebeurtenislogboek-verwijzing:
+De .NET Framework Class-bibliotheek bevat een klasse met de naam **System. Diagnostics. Eventlog** die kan worden gebruikt om gebeurtenis logboeken te beheren. U kunt een nieuw exemplaar van een .NET Framework klasse maken met behulp van de cmdlet **New-object** met de para meter **TypeName** . Met de volgende opdracht maakt u bijvoorbeeld een verwijzing naar gebeurtenis logboek:
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog
@@ -24,11 +24,11 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
   ------ ------ --------------        ------- ----
 ```
 
-Hoewel de opdracht een exemplaar van de klasse EventLog gemaakt heeft, wordt het exemplaar geen gegevens bevatten. Dat komt doordat we een bepaald gebeurtenislogboek niet is opgegeven. Hoe ontvang ik een echte gebeurtenislogboek?
+Hoewel de opdracht een exemplaar van de klasse Event Class heeft gemaakt, bevat het exemplaar geen gegevens. Dat komt omdat er geen specifiek gebeurtenis logboek is opgegeven. Hoe krijg ik een echt gebeurtenis logboek?
 
-### <a name="using-constructors-with-new-object"></a>Met behulp van Constructors met New-Object
+### <a name="using-constructors-with-new-object"></a>Constructors gebruiken met New-object
 
-Om te verwijzen naar een specifiek gebeurtenislogboek, moet u de naam van het logboek op te geven. **New-Object** heeft een **ArgumentList** parameter. De argumenten die u aan deze parameter als waarden doorgeven worden gebruikt door een speciale opstartmethode van het object. De methode wordt aangeroepen een *constructor* omdat deze wordt gebruikt om het object te maken. Bijvoorbeeld, als u een verwijzing naar het toepassingslogboek, geeft u de tekenreeks 'Application' als een argument:
+Als u naar een specifiek gebeurtenis logboek wilt verwijzen, moet u de naam van het logboek opgeven. **New-object** heeft een **argument List** -para meter. De argumenten die u doorgeeft als waarden voor deze para meter worden gebruikt door een speciale opstart methode van het object. De methode wordt een *constructor* genoemd, omdat deze wordt gebruikt om het object samen te stellen. Als u bijvoorbeeld een verwijzing naar het toepassings logboek wilt ophalen, geeft u de teken reeks ' Application ' op als een argument:
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
@@ -39,19 +39,19 @@ Max(K) Retain OverflowAction        Entries Name
 ```
 
 > [!NOTE]
-> Omdat de meeste van de .NET Framework core-klassen zijn opgenomen in de naamruimte System, probeert Windows PowerShell automatisch te vinden van de klassen die u in de naamruimte System opgeeft als er een overeenkomst voor de typename die u opgeeft niet kunt vinden. Dit betekent dat u Diagnostics.EventLog in plaats van System.Diagnostics.EventLog kunt opgeven.
+> Aangezien de meeste van de .NET Framework kern klassen zich in de systeem naam ruimte bevinden, probeert Windows Power shell automatisch klassen te zoeken die u opgeeft in de naam ruimte van het systeem als er geen overeenkomst kan worden gevonden voor de door u opgegeven TypeName. Dit betekent dat u Diagnostische gegevens. EventLog in plaats van System. Diagnostics. EventLog kunt opgeven.
 
-### <a name="storing-objects-in-variables"></a>Opslaan van objecten in de variabelen
+### <a name="storing-objects-in-variables"></a>Objecten in variabelen opslaan
 
-Het is raadzaam om op te slaan een verwijzing naar een object, zodat u deze in de huidige shell gebruiken kunt. Hoewel Windows PowerShell u zich veel werk met pijplijnen kunt, vermindering van de noodzaak van variabelen, maakt soms ook verwijzingen naar objecten opslaan in de variabelen het eenvoudiger om deze objecten te bewerken.
+Mogelijk wilt u een verwijzing naar een object opslaan, zodat u deze in de huidige shell kunt gebruiken. Hoewel u met Windows Power shell veel werk met pijp lijnen kunt maken, is het niet meer nodig om variabelen op te slaan naar objecten in variabelen, waardoor het handiger is om deze objecten te manipuleren.
 
-Windows PowerShell kunt u variabelen maken die in feite objecten benoemde zijn. De uitvoer van een geldige Windows PowerShell-opdracht kan worden opgeslagen in een variabele. Namen van variabelen begint altijd met $. Als u wilt de toepassing-logboek: naslag opslaan in een variabele met de naam $AppLog, typ de naam van wordt de variabele, gevolgd door een gelijkteken en typ vervolgens de opdracht die wordt gebruikt voor het maken van het toepassingsobject logboek:
+Met Windows Power shell kunt u variabelen maken die hoofd objecten worden genoemd. De uitvoer van een geldige Windows Power shell-opdracht kan worden opgeslagen in een variabele. Namen van variabelen beginnen altijd met $. Als u de verwijzing naar het toepassings logboek wilt opslaan in een variabele met de naam $AppLog, typt u de naam van de variabele, gevolgd door een gelijkteken en typt u vervolgens de opdracht die wordt gebruikt om het toepassings logboek object te maken:
 
 ```
 PS> $AppLog = New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
 ```
 
-Als u vervolgens $AppLog typt, ziet u dat deze het toepassingslogboek bevat:
+Als u vervolgens $AppLog typt, ziet u dat deze het toepassings logboek bevat:
 
 ```
 PS> $AppLog
@@ -61,9 +61,9 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een externe gebeurtenislogboek met New-Object
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een extern gebeurtenis logboek met New-object
 
-De opdrachten in de voorgaande sectie gericht op de lokale computer. de **Get-EventLog** cmdlet kunt dat doen. Voor toegang tot het toepassingslogboek op een externe computer, moet u zowel de naam van het logboek en een computernaam (of IP-adres) opgeven als argumenten.
+De opdrachten die in de voor gaande sectie worden gebruikt, zijn gericht op de lokale computer. de cmdlet **get-eventlog** kan dat doen. Als u toegang wilt krijgen tot het toepassings logboek op een externe computer, moet u de naam van het logboek en een computer naam (of IP-adres) als argumenten opgeven.
 
 ```
 PS> $RemoteAppLog = New-Object -TypeName System.Diagnostics.EventLog Application,192.168.1.81
@@ -74,11 +74,11 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder            262 Application
 ```
 
-Nu dat we een verwijzing naar een gebeurtenislogboek die zijn opgeslagen in de variabele $RemoteAppLog hebben, welke taken kunnen we op uitvoeren?
+Nu hebben we een verwijzing naar een gebeurtenis logboek dat is opgeslagen in de variabele $RemoteAppLog, welke taken kunnen we uitvoeren?
 
-### <a name="clearing-an-event-log-with-object-methods"></a>Een gebeurtenislogboek dat u met de methoden van het Object uit te schakelen
+### <a name="clearing-an-event-log-with-object-methods"></a>Een gebeurtenis logboek wissen met object methoden
 
-Objecten hebben vaak methoden die kunnen worden aangeroepen voor het uitvoeren van taken. U kunt **Get-Member** om de methoden die zijn gekoppeld aan een object weer te geven. De volgende opdracht en de geselecteerde uitvoer tonen enkele de methoden van de klasse gebeurtenislogboek:
+Objecten bevatten vaak methoden die kunnen worden aangeroepen om taken uit te voeren. U kunt **Get-member** gebruiken om de methoden weer te geven die zijn gekoppeld aan een object. De volgende opdracht en de geselecteerde uitvoer tonen een aantal methoden van de klasse Event Class:
 
 ```
 PS> $RemoteAppLog | Get-Member -MemberType Method
@@ -101,13 +101,13 @@ WriteEntry                Method     System.Void WriteEntry(String message),...
 WriteEvent                Method     System.Void WriteEvent(EventInstance in...
 ```
 
-De **Clear()** methode kan worden gebruikt om te wissen van het gebeurtenislogboek wordt geschreven. Bij het aanroepen van een methode, moet u altijd de methodenaam door haakjes, volgen, zelfs als de methode geen argumenten vereist. Hiermee kunt Windows PowerShell onderscheid maken tussen de methoden en een mogelijke eigenschappen met dezelfde naam. Typ het volgende om aan te roepen de **wissen** methode:
+De methode **Clear ()** kan worden gebruikt om het gebeurtenis logboek te wissen. Wanneer u een methode aanroept, moet u altijd de naam van de methode door haakjes volgen, zelfs als de methode geen argumenten vereist. Hiermee kan Windows Power shell onderscheid maken tussen de methode en een mogelijke eigenschap met dezelfde naam. Typ het volgende om de methode **Clear** aan te roepen:
 
 ```
 PS> $RemoteAppLog.Clear()
 ```
 
-Typ het volgende om het logboek weer te geven. U ziet dat het gebeurtenislogboek is gewist en nu 0 items in plaats van 262 is:
+Typ het volgende om het logboek weer te geven. U ziet dat het gebeurtenis logboek is gewist en nu 0 vermeldingen bevat in plaats van 262:
 
 ```
 PS> $RemoteAppLog
@@ -117,12 +117,12 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-## <a name="creating-com-objects-with-new-object"></a>Het maken van de COM-objecten met New-Object
-U kunt **New-Object** om te werken met onderdelen van de Component Object Model (COM). Onderdelen van het bereik van de verschillende bibliotheken opgenomen ActiveX-toepassingen, zoals Internet Explorer die zijn geïnstalleerd op de meeste systemen met Windows Script Host (WSH).
+## <a name="creating-com-objects-with-new-object"></a>COM-objecten maken met New-object
+U kunt **New-object** gebruiken om te werken met component object model-onderdelen (com). Onderdelen variëren van de verschillende bibliotheken die zijn opgenomen in Windows Script Host (WSH) tot ActiveX-toepassingen, zoals Internet Explorer, die op de meeste systemen zijn geïnstalleerd.
 
-**New-Object** maakt gebruik van .NET Framework Runtime aanroepbare Wrappers te maken van COM-objecten, zodat deze dezelfde beperkingen die door .NET Framework worden ondersteund heeft bij het aanroepen van COM-objecten. Voor het maken van een COM-object, moet u opgeven de **ComObject** parameter met de programma-id of *ProgId* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van COM-gebruik en het bepalen van wat programma-id's zijn beschikbaar op een systeem is buiten het bereik van deze handleiding, maar meest bekende objecten uit omgevingen zoals WSH kunnen worden gebruikt in Windows PowerShell.
+**New-object** maakt gebruik van .NET Framework runtime-aanroep bare wrappers om COM-objecten te maken, zodat deze dezelfde beperkingen heeft als .NET Framework bij het aanroepen van COM-objecten. Als u een COM-object wilt maken, moet u de para meter **ComObject** opgeven met de programmatische id of *ProgID* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van het COM-gebruik en het bepalen van de beschik bare Progid's op een systeem valt buiten het bereik van deze gebruikers handleiding, maar de meeste bekende objecten van omgevingen zoals WSH kunnen worden gebruikt in Windows Power shell.
 
-U kunt de WSH-objecten maken door op te geven deze ProgID: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary**, and **Scripting.FileSystemObject**. De volgende opdrachten maakt deze objecten:
+U kunt de WSH-objecten maken door deze progid's op te geven: **WScript. shell**, **WScript. Network**, **Scripting. Dictionary**en **Scripting. File System object**. Met de volgende opdrachten maakt u deze objecten:
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -131,17 +131,17 @@ New-Object -ComObject Scripting.Dictionary
 New-Object -ComObject Scripting.FileSystemObject
 ```
 
-Hoewel de meeste van de functionaliteit van deze klassen beschikbaar op andere manieren in Windows PowerShell wordt gemaakt, zijn een paar taken, zoals het maken van snelkoppeling nog steeds gemakkelijker te doen met behulp van de klassen WSH.
+Hoewel de meeste functies van deze klassen op andere manieren beschikbaar worden gesteld in Windows Power shell, zijn een aantal taken, zoals het maken van snelkoppelingen, nog eenvoudiger te gebruiken met de WSH-klassen.
 
-## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Het maken van een snelkoppeling op het bureaublad met instantie
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Een snelkoppeling op het bureau blad maken met WScript. shell
 
-Een taak die snel kan worden uitgevoerd met een COM-object is een snelkoppeling maken. Stel dat u wilt maken een snelkoppeling op het bureaublad die verwijst naar de basismap voor Windows PowerShell. U moet eerst maken een verwijzing naar **instantie**, waarbij we wordt opgeslagen in een variabele met de naam **$WshShell**:
+Een taak die snel kan worden uitgevoerd met een COM-object, is het maken van een snelkoppeling. Stel dat u een snelkoppeling op het bureau blad wilt maken die is gekoppeld aan de basismap voor Windows Power shell. Eerst moet u een verwijzing naar **WScript. shell**maken, die we in een variabele met de naam **$WshShell**opslaan:
 
 ```powershell
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
-Get-Member werkt met COM-objecten, zodat u de leden van het object door te typen verkennen kunt:
+Get-member werkt met COM-objecten, zodat u de leden van het object kunt verkennen door het volgende te typen:
 
 ```
 PS> $WshShell | Get-Member
@@ -155,7 +155,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** is een optionele **InputObject** parameter die u in plaats van doorsluizen gebruiken kunt voor invoer naar **Get-Member**. U krijgt dezelfde uitvoer zoals hierboven als u in plaats daarvan de opdracht gebruikt **Get-Member - InputObject $WshShell**. Als u **InputObject**, worden behandeld als het argument als één item. Dit betekent dat als er meerdere objecten in een variabele, **Get-Member** wordt deze beschouwd als een matrix met objecten. Bijvoorbeeld:
+**Get-member** heeft een optionele **input object** -para meter die u kunt gebruiken in plaats van sluizen om invoer te leveren voor **Get-member**. U krijgt dezelfde uitvoer zoals hierboven wordt weer gegeven als u in plaats daarvan de opdracht **Get-member-input object $WshShell**hebt gebruikt. Als u **input object**gebruikt, wordt het argument als één item beschouwd. Dit betekent dat als u meerdere objecten in een variabele hebt, **Get-member** ze als een matrix met objecten behandelt. Bijvoorbeeld:
 
 ```
 PS> $a = 1,2,"three"
@@ -167,13 +167,13 @@ Count              AliasProperty Count = Length
 ...
 ```
 
-De **instantie CreateShortcut** methode accepteert één argument, het pad naar het snelkoppelingsbestand te maken. We typen in het volledige pad naar het bureaublad, maar er is een eenvoudigere manier. Het bureaublad wordt normaal gesproken vertegenwoordigd door een map met de naam Desktop in de basismap van de huidige gebruiker. Windows PowerShell is een variabele **$Home** die het pad naar deze map bevat. We kunnen het pad naar de basismap opgeven met behulp van deze variabele en voeg de naam van de map op het bureaublad en de naam van de snelkoppeling maken door te typen:
+De **WScript. shell CreateShortcut** -methode accepteert één argument, het pad naar het snelkoppelings bestand dat moet worden gemaakt. We kunnen het volledige pad naar het bureau blad typen, maar er is een eenvoudiger manier. Het bureau blad wordt gewoonlijk vertegenwoordigd door een map met de naam bureau blad in de basismap van de huidige gebruiker. Windows Power Shell heeft een variabele **$Home** die het pad naar deze map bevat. We kunnen het pad naar de basismap opgeven met behulp van deze variabele, en vervolgens de naam van de map Bureau blad en de naam voor de snelkoppeling toevoegen door te typen:
 
 ```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
 ```
 
-Wanneer u iets dat lijkt op de naam van een variabele tussen dubbele aanhalingstekens gebruikt, wordt Windows PowerShell probeert te vervangen door een overeenkomende waarde. Als u enkele aanhalingstekens gebruikt, probeert Windows PowerShell niet vervangen door de variabele waarde. Probeer bijvoorbeeld de volgende opdrachten te typen:
+Wanneer u iets gebruikt dat lijkt op een naam van een variabele binnen dubbele aanhalings tekens, probeert Windows Power shell een overeenkomende waarde te vervangen. Als u gebruikmaakt van enkele aanhalings tekens, wordt de waarde van de variabele niet vervangen door Windows Power shell. Typ bijvoorbeeld de volgende opdrachten:
 
 ```
 PS> "$Home\Desktop\PSHome.lnk"
@@ -182,7 +182,7 @@ PS> '$Home\Desktop\PSHome.lnk'
 $Home\Desktop\PSHome.lnk
 ```
 
-We hebben nu een variabele met de naam **$lnk** die een nieuwe snelkoppeling verwijzing bevat. Als u zien van de leden ervan wilt, kunt u het doorgeven aan **Get-Member**. De onderstaande uitvoer ziet u de leden moeten we onze snelkoppeling gebruiken:
+We hebben nu een variabele met de naam **$lnk** die een nieuwe snelkoppeling referentie bevat. Als u de leden wilt zien, kunt u deze door sluizen naar **Get-lid**. De onderstaande uitvoer toont de leden die we nodig hebben om het maken van de snelkoppeling te volt ooien:
 
 ```
 PS> $lnk | Get-Member
@@ -195,53 +195,53 @@ Save             Method       void Save ()
 TargetPath       Property     string TargetPath () {get} {set}
 ```
 
-We moeten om op te geven de **TargetPath**, dit is de toepassingsmap voor Windows PowerShell en sla de snelkoppeling naar de **$lnk** door het aanroepen van de **opslaan** methode. Het pad van de Windows PowerShell-toepassing is opgeslagen in de variabele **$PSHome**, zodat we dit door te typen doen kunnen:
+We moeten het **TargetPath**opgeven, de toepassingsmap voor Windows Power shell, en vervolgens de snelkoppeling opslaan **$lnk** door de methode **Save** aan te roepen. Het pad naar de map van de Windows Power shell-toepassing wordt opgeslagen in de variabele **$PSHome**, dus we kunnen dit doen door het volgende te typen:
 
 ```powershell
 $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-## <a name="using-internet-explorer-from-windows-powershell"></a>Met behulp van Internet Explorer vanuit Windows PowerShell
+## <a name="using-internet-explorer-from-windows-powershell"></a>Internet Explorer gebruiken vanuit Windows Power shell
 
-Veel toepassingen (met inbegrip van de Microsoft Office-familie van toepassingen en Internet Explorer) kunnen worden geautomatiseerd met behulp van COM. Internet Explorer ziet u enkele van de typische technieken en problemen die betrokken zijn bij het werken met COM gebaseerde toepassingen.
+Veel toepassingen (met inbegrip van de Microsoft Office-familie van toepassingen en Internet Explorer) kunnen worden geautomatiseerd met behulp van COM. Internet Explorer illustreert enkele van de typische technieken en problemen die betrekking hebben op het werken met op COM gebaseerde toepassingen.
 
-Maken van een Internet Explorer-instantie door op te geven de Internet Explorer ProgId, **InternetExplorer.Application**:
+U maakt een Internet Explorer-exemplaar door de Internet Explorer ProgId, **InternetExplorer. toepassing**, op te geven:
 
 ```powershell
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
-Met deze opdracht Internet Explorer te starten, maar wordt deze niet zichtbaar. Als u Get-Process typt, ziet u dat een proces met de naam iexplore wordt uitgevoerd. Als u Windows PowerShell sluit, wordt in feite het proces om uit te voeren blijven. U moet de computer opnieuw opstarten of gebruik een hulpprogramma zoals Taakbeheer om de iexplore-proces te beëindigen.
+Met deze opdracht start u Internet Explorer, maar wordt het niet weer gegeven. Als u Get-process typt, ziet u dat er een proces met de naam Iexplore wordt uitgevoerd. Als u Windows Power shell afsluit, wordt het proces nog steeds uitgevoerd. U moet de computer opnieuw opstarten of een hulp programma als taak beheer gebruiken om het Iexplore-proces te beëindigen.
 
 > [!NOTE]
-> COM-objecten die worden gestart als afzonderlijke processen, doorgaans aangeduid *uitvoerbare bestanden ActiveX*, kan of kunnen niet een gebruikersinterface-venster weergeven wanneer ze worden opgestart. Als ze geen venster maken, maar kunnen deze niet zichtbaar, zoals Internet Explorer, de focus in het algemeen wordt verplaatst naar het Windows-bureaublad en moet u het venster om te communiceren met het zichtbaar maken.
+> COM-objecten die als afzonderlijke processen worden gestart, ook wel *ActiveX-uitvoer bare bestanden*genoemd, kunnen een gebruikers interface venster niet weer geven wanneer ze worden opgestart. Als ze een venster maken, maar dit niet zichtbaar maken, zoals Internet Explorer, wordt de focus meestal verplaatst naar het Windows-bureau blad en moet u het venster zichtbaar maken om ermee te communiceren.
 
-Door te typen **$ie | Get-Member**, kunt u eigenschappen en methoden voor Internet Explorer weergeven. Als u wilt de Internet Explorer-venster wordt weergegeven, moet u de zichtbaar eigenschap instellen op $true door te typen:
+Door $ie te typen **| Get-lid**, u kunt eigenschappen en methoden voor Internet Explorer weer geven. Als u het venster Internet Explorer wilt weer geven, stelt u de eigenschap Visible in op $true door het volgende te typen:
 
 ```powershell
 $ie.Visible = $true
 ```
 
-U kunt vervolgens met behulp van de methode navigeren naar een specifieke webadres navigeren:
+U kunt vervolgens naar een specifiek webadres navigeren met behulp van de methode Navigate:
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
-Met andere leden van het objectmodel van Internet Explorer, is het mogelijk om op te halen van de tekstinhoud van de webpagina. De volgende opdracht wordt de HTML-tekst weergeven in de hoofdtekst van de huidige webpagina wordt weergegeven:
+Met andere leden van het object model van Internet Explorer kunt u tekst inhoud ophalen van de webpagina. Met de volgende opdracht wordt de HTML-tekst in de hoofd tekst van de huidige webpagina weer gegeven:
 
 ```powershell
 $ie.Document.Body.InnerText
 ```
 
-Om Internet Explorer uit in PowerShell sluit, moet u de Quit()-methode aanroept:
+Als u Internet Explorer wilt sluiten in Power shell, roept u de methode Quit () aan:
 
 ```powershell
 $ie.Quit()
 ```
 
-Dit wordt gedwongen om te sluiten. De ie variabele $ bevat niet langer een geldige verwijzing zelfs als deze nog steeds wordt weergegeven om te worden van een COM-object. Als u probeert om het te gebruiken, ontvangt u een automatiseringsfout:
+Hiermee wordt het sluiten afgedwongen. De variabele $ie heeft geen geldige verwijzing meer, zelfs als deze nog steeds een COM-object is. Als u dit probeert te gebruiken, wordt er een automatiserings fout weer geven:
 
 ```
 PS> $ie | Get-Member
@@ -252,18 +252,18 @@ At line:1 char:16
 + $ie | Get-Member <<<<
 ```
 
-U kunt een verwijderen de resterende verwijzen met een opdracht zoals $ie = $null of verwijder de variabele door te typen:
+U kunt de resterende verwijzing verwijderen met een opdracht als $ie = $null of de variabele volledig verwijderen door het volgende te typen:
 
 ```powershell
 Remove-Variable ie
 ```
 
 > [!NOTE]
-> Er is geen algemene standaard voor uitvoerbare bestanden ActiveX afsluiten of blijven werken wanneer u een verwijzing naar een verwijderen. Afhankelijk van de omstandigheden, zoals of de toepassing zichtbaar is, of een bewerkte document wordt uitgevoerd in het en zelfs of Windows PowerShell wordt nog steeds uitgevoerd, wordt de toepassing kan of kan niet afsluiten. Daarom moet u beëindiging gedrag testen voor elk uitvoerbaar bestand dat u wilt gebruiken in Windows PowerShell.
+> Er is geen algemene standaard voor of ActiveX-uitvoer bare bestanden worden afgesloten of blijven worden uitgevoerd wanneer u een verwijzing naar een verwijdert. Afhankelijk van de omstandigheden zoals of de toepassing zichtbaar is, of er een bewerkte document wordt uitgevoerd en zelfs of Windows Power shell nog steeds wordt uitgevoerd, wordt de toepassing mogelijk niet afgesloten. Daarom moet u het beëindigings gedrag testen voor elk ActiveX-uitvoerbaar bestand dat u wilt gebruiken in Windows Power shell.
 
-## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen over .NET Framework-verpakt COM-objecten ophalen
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen ontvangen over door .NET Framework verpakte COM-objecten
 
-In sommige gevallen mogelijk een COM-object een bijbehorende .NET Framework *Runtime aanroepbare Wrapper* RCW en deze wordt gebruikt door **New-Object**. Omdat het gedrag van de RCW van het gedrag van het normale COM-object afwijken kan, **New-Object** heeft een **strikt** parameter om u te waarschuwen over RCW toegang. Als u opgeeft de **strikt** parameter en maak vervolgens een COM-object dat gebruikmaakt van een RCW, krijgt u een waarschuwingsbericht wordt weergegeven:
+In sommige gevallen kan een COM-object zijn gekoppeld aan een .NET Framework *runtime-aanroep bare wrapper* of RCW. dit wordt gebruikt door **Nieuw-object**. Aangezien het gedrag van de RCW kan afwijken van het gedrag van het normale COM-object, heeft **New-object** een **strikte** para meter om u te waarschuwen over RCW-toegang. Als u de **strikte** para meter opgeeft en vervolgens een COM-object maakt dat gebruikmaakt van een RCW, wordt er een waarschuwings bericht weer gegeven:
 
 ```
 PS> $xl = New-Object -ComObject Excel.Application -Strict
@@ -276,4 +276,4 @@ At line:1 char:17
 + $xl = New-Object  <<<< -ComObject Excel.Application -Strict
 ```
 
-Hoewel het object nog steeds gemaakt is, wordt u gewaarschuwd dat het niet standaard COM-object is.
+Hoewel het object nog wordt gemaakt, wordt u gewaarschuwd dat het geen standaard-COM-object is.

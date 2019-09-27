@@ -1,51 +1,60 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC WaitForAll Resource
-ms.openlocfilehash: c1125b7c5b68b9b520ed052800b6a2abf4e53b85
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC WaitForAll-resource
+ms.openlocfilehash: 1bdaa63812766cfe5ec0778ef07689109683b994
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726876"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324099"
 ---
-# <a name="dsc-waitforall-resource"></a>DSC WaitForAll Resource
+# <a name="dsc-waitforall-resource"></a>DSC WaitForAll-resource
 
-> Van toepassing op: Windows PowerShell 5.0 en hoger
+> Van toepassing op: Windows Power shell 5. x
 
-De **WaitForAll** Desired State Configuration (DSC)-bron kan worden gebruikt binnen een blok knooppunt in een [DSC-configuratie](../../../configurations/configurations.md) afhankelijkheden opgeven voor configuraties op andere knooppunten.
+De resource van de desired state Configuration (DSC) **WaitForAll** kan worden gebruikt binnen een knooppunt blok in een [DSC-configuratie](../../../configurations/configurations.md) om afhankelijkheden op te geven voor de configuraties op andere knoop punten.
 
-Deze resource is geslaagd als de resource die is opgegeven door de **ResourceName** eigenschap bevindt zich in de gewenste status van alle doelknooppunten gedefinieerd in de **knooppuntnaam** eigenschap.
+Deze resource slaagt als de resource die is opgegeven door de eigenschap **ResourceName** de gewenste status heeft voor alle doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
 
 > [!NOTE]
-> **WaitForAll** resource maakt gebruik van Windows Remote Management om te controleren of de status van andere knooppunten.
-> Zie voor meer informatie over de poort en beveiligingsvereisten voor WinRM [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> **WaitForAll** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 WaitForAll [string] #ResourceName
 {
     ResourceName = [string]
-    NodeName = [string]
+    NodeName = [string[]]
     [ RetryIntervalSec = [Uint64] ]
     [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| ResourceName| De naam van de resource afhankelijk. Als deze resource tot een andere configuratie behoort, maakt u de naam op als ' [__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
-| NodeName| De doelknooppunten van de resource afhankelijk.|
-| RetryIntervalSec| Het aantal seconden alvorens het opnieuw te proberen. Minimumwaarde is 1.|
-| RetryCount| Het maximale aantal nieuwe pogingen.|
-| ThrottleLimit| Het aantal machines tegelijk verbinding kunnen maken. Standaard is de nieuwe-cimsession standaard.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|ResourceName |De resource naam waarvan afhankelijk is. Als deze resource deel uitmaakt van een andere configuratie, moet u `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`de naam indelen als. |
+|NodeName |De doel knooppunten van de resource waarvan afhankelijk is. |
+|RetryIntervalSec |Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1. |
+|retryCount |Het maximum aantal keren dat opnieuw moet worden geprobeerd. |
+|ThrottleLimit |Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 
-Zie voor een voorbeeld van het gebruik van deze resource [afhankelijkheden van meerdere knooppunten opgeven](../../../configurations/crossNodeDependencies.md)
+Zie [afhankelijkheden van meerdere knoop punten opgeven](../../../configurations/crossNodeDependencies.md) voor een voor beeld van het gebruik van deze bron.

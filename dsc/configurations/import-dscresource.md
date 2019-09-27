@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
-ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.openlocfilehash: 735b2c2b4ae5101ded333768f00b46cb54d541b0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70215401"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323015"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
@@ -104,8 +104,8 @@ Configuration SchemaValidationInCorrectEnumValue
     {
         WindowsFeature ROLE1
         {
-            Name = “Telnet-Client”
-            Ensure = “Invalid”
+            Name = "Telnet-Client"
+            Ensure = "Invalid"
         }
     }
 }
@@ -114,7 +114,7 @@ Configuration SchemaValidationInCorrectEnumValue
 Het compileren van deze configuratie resulteert in een fout.
 
 ```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
 ```
 
 Met IntelliSense en schema validatie kunt u meer fouten tijdens de parsering-en compilatie tijd ondervangen, waardoor complicaties tijdens de uitvoering worden voor komen.

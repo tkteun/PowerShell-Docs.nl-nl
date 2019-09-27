@@ -1,43 +1,43 @@
 ---
 ms.date: 04/11/2018
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC SMB-pull-server instellen
-ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 25705d9ae06b3ce8daa352142cc0b84793ab6359
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079282"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324864"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Een DSC SMB-pull-server instellen
 
-Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De Pull-Server (Windows-functie *DSC-Service*) is een ondersteunde onderdeel van Windows Server maar er zijn geen plannen om nieuwe functies en mogelijkheden bieden. Het verdient aanbeveling om te beginnen met het overstappen clients beheerd [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies dan Pull-Server op Windows Server) of een van de community-oplossingen die zijn opgenomen [hier](pullserver.md#community-solutions-for-pull-service).
+> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
-Een DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) pull-server is een computer die als host fungeert voor SMB-bestandsshares die DSC-configuratiebestanden en DSC-resources beschikbaar zijn voor doelknooppunten maken wanneer deze knooppunten om ze vragen.
+Een DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) -pull-server is een computer die als host fungeert voor de SMB-bestands shares die DSC-configuratie bestanden en DSC-resources beschikbaar maken voor doel knooppunten wanneer deze knoop punten hen vragen.
 
-Voor het gebruik van een SMB-pull-server voor DSC, hebt u naar:
+Als u een SMB-pull-server voor DSC wilt gebruiken, moet u het volgende doen:
 
-- Instellen van een SMB-bestandsshare op een server met PowerShell 4.0 of hoger
-- Een client met PowerShell 4.0 of hoger om op te halen uit dat SMB-share configureren
+- Een SMB-bestands share instellen op een server waarop Power Shell 4,0 of hoger wordt uitgevoerd
+- Een client met Power Shell 4,0 of hoger configureren om deze SMB-share op te halen
 
-## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>Een SMB-bestandsshare maken met behulp van de resource xSmbShare
+## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>De xSmbShare-Resource gebruiken voor het maken van een SMB-bestands share
 
-Er zijn een aantal manieren om een SMB-bestandsshare instellen, maar laten we kijken hoe u dit doen kunt met behulp van DSC.
+Er zijn een aantal manieren om een SMB-bestands share in te stellen, maar we bekijken hoe u dit kunt doen met behulp van DSC.
 
-### <a name="install-the-xsmbshare-resource"></a>De resource xSmbShare installeren
+### <a name="install-the-xsmbshare-resource"></a>De xSmbShare-resource installeren
 
-Roep de [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet voor het installeren van de **xSmbShare** module.
+Roep de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) aan om de **xSmbShare** -module te installeren.
 
 > [!NOTE]
-> `Install-Module` is opgenomen in de **PowerShellGet** module die is opgenomen in PowerShell 5.0. U kunt downloaden de **PowerShellGet** -module voor PowerShell 3.0 en 4.0 op [PackageManagement PowerShell-Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-> De **xSmbShare** bevat de DSC-resource **xSmbShare**, die kan worden gebruikt om een SMB-bestandsshare te maken.
+> `Install-Module`is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+> De **xSmbShare** bevat de DSC-resource **xSmbShare**, die kan worden gebruikt voor het maken van een SMB-bestands share.
 
-### <a name="create-the-directory-and-file-share"></a>Maak de map- en -share
+### <a name="create-the-directory-and-file-share"></a>De map en bestands share maken
 
-De volgende configuratie maakt gebruik van de **bestand** resource die u wilt maken van de map voor de share en de **xSmbShare** resource voor het instellen van de SMB-share:
+De volgende configuratie maakt gebruik van de **Bestands** resource voor het maken van de map voor de share en de **xSmbShare** -resource om de SMB-share in te stellen:
 
 ```powershell
 Configuration SmbShare
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-De configuratie maakt de map `C:\DscSmbShare`, als deze nog niet bestaat, en vervolgens die map als een SMB-bestandsshare gebruikt. **FullAccess** moet worden gegeven aan een account dat moet schrijven of verwijderen van de bestandsshare. **ReadAccess** moet krijgen tot alle client-knooppunten die configuraties en/of DSC-resources uit de share ophalen.
+De-configuratie maakt de `C:\DscSmbShare`map, als deze nog niet bestaat, en gebruikt deze map als een SMB-bestands share. **FullAccess** moet worden opgegeven voor alle accounts die moeten worden geschreven of verwijderd uit de bestands share. **ReadAccess** moet worden toegewezen aan alle client knooppunten die configuraties en/of DSC-resources van de share ophalen.
 
 > [!NOTE]
-> DSC wordt uitgevoerd als het systeem-account standaard, zodat de computer zelf toegang tot de share hebben moet.
+> DSC wordt standaard uitgevoerd als het systeem account, zodat de computer zelf toegang moet hebben tot de share.
 
-### <a name="give-file-system-access-to-the-pull-client"></a>Geeft toegang tot bestandssysteem naar de pull-client
+### <a name="give-file-system-access-to-the-pull-client"></a>Bestands systeem toegang verlenen tot de pull-client
 
-Geeft **ReadAccess** naar een client kan knooppunt dat knooppunt toegang tot de SMB-share, maar niet aan de bestanden of mappen in die share. U moet expliciet client knooppunten toegang verlenen tot de SMB-share-map en submappen. We kunnen dit doen met DSC door toe te voegen met behulp van de **cNtfsPermissionEntry** -resource, die is opgenomen in de [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) module. De volgende configuratie voegt een **cNtfsPermissionEntry** blok dat ReadAndExecute toegang wordt verleend aan de pull-client:
+Door **ReadAccess** aan een client knooppunt toe te wijzen, kan dat knoop punt toegang krijgen tot de SMB-share, maar niet op bestanden of mappen binnen die share. U moet expliciet client knooppunten toegang verlenen tot de SMB share-map en de submappen. We kunnen dit doen met DSC door toe te voegen met behulp van de **cNtfsPermissionEntry** -resource, die is opgenomen in de [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) -module. De volgende configuratie voegt een **cNtfsPermissionEntry** -blok toe dat ReadAndExecute toegang verleent aan de pull-client:
 
 ```powershell
 Configuration DSCSMB
@@ -126,46 +126,46 @@ Configuration DSCSMB
 }
 ```
 
-## <a name="placing-configurations-and-resources"></a>Het plaatsen van configuraties en resources
+## <a name="placing-configurations-and-resources"></a>Configuraties en resources plaatsen
 
-Sla configuratie MOF-bestanden en/of DSC-resources die u wilt dat knooppunten van de client om op te halen in de SMB-share-map.
+Sla de configuratie-MOF-bestanden en/of DSC-resources op die door client knooppunten moeten worden opgehaald in de map SMB share.
 
-Een MOF-configuratiebestand moet de naam *ConfigurationID*.mof, waar *ConfigurationID* is de waarde van de **ConfigurationID** eigenschap van het doelknooppunt LCM. Zie voor meer informatie over het instellen van pull-clients [instellen van een pull-client met behulp van configuratie-ID](pullClientConfigID.md).
-
-> [!NOTE]
-> Als u een SMB-pull-server, moet u configuratie-ID's gebruiken. Namen worden niet ondersteund voor SMB.
-
-Elke resource-module moet worden ingepakt en met de naam op basis van het volgende patroon `{Module Name}_{Module Version}.zip`. Bijvoorbeeld, een module met de naam xWebAdminstration met de moduleversie van een van 3.1.2.0 zou worden met de naam 'xWebAdministration_3.2.1.0.zip'. Elke versie van een module moet worden opgenomen in een enkel zip-bestand. Verschillende versies van een module in een zip-bestand worden niet ondersteund. Voordat verpakking van DSC-resource-modules voor gebruik met pull-server moet u een kleine wijziging aanbrengen in de mapstructuur.
-
-De standaardnotatie van modules met DSC-resource in WMF 5.0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-
-Pakketten voor de pull-server te verwijderen en daarna de `{Module version}` map, zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Met deze wijziging, zip-de map, zoals hierboven beschreven en plaatst deze zip-bestanden op de SMB-share-map.
-
-## <a name="creating-the-mof-checksum"></a>Het maken van de controlesom MOF
-
-Een MOF-configuratiebestand moet worden gekoppeld aan een bestand controlesom zodat een LCM op een doelknooppunt kan de configuratie valideren.
-Aanroepen voor het maken van een controlesom, de [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet. De cmdlet voert een `Path` parameter waarmee de map waarin de configuratie van de MOF zich bevindt. De cmdlet maakt een controlesom-bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` is de naam van de mof-configuratiebestand.
-Als er meer dan één configuratie MOF-bestanden in de opgegeven map, wordt een controlesom gemaakt voor elke configuratie in de map.
-
-Het bestand controlesom moet aanwezig zijn in dezelfde map als het MOF-configuratiebestand (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` standaard), en hebben dezelfde naam als de `.checksum` extensie toegevoegd.
+Elk configuratie MOF-bestand moet de naam *ConfigurationID*. MOF hebben, waarbij *ConfigurationID* de waarde is van de eigenschap **ConfigurationID** van de LCM van het doel knooppunt. Zie [een pull-client instellen met behulp van de configuratie-ID](pullClientConfigID.md)voor meer informatie over het instellen van pull-clients.
 
 > [!NOTE]
-> Als u het MOF-configuratiebestand op geen enkele manier wijzigt, moet u ook het bestand controlesom opnieuw maken.
+> U moet configuratie-Id's gebruiken als u een SMB-pull-server gebruikt. Configuratie namen worden niet ondersteund voor SMB.
 
-## <a name="setting-up-a-pull-client-for-smb"></a>Instellen van een pull-client voor SMB
+Elke resource module moet een gezipte en een naam hebben op basis van `{Module Name}_{Module Version}.zip`het volgende patroon. Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 zou bijvoorbeeld ' xWebAdministration_ 3.2.1.0. zip ' worden genoemd. Elke versie van een module moet zich in één ZIP-bestand bevinden. Afzonderlijke versies van een module in een zip-bestand worden niet ondersteund. Voordat u DSC-resource modules inpakt voor gebruik met een pull-server, moet u een kleine wijziging aanbrengen in de mapstructuur.
 
-Als u een client die wordt opgehaald van configuraties en/of bronnen van een SMB-share instelt, configureert u van de client lokaal Configuration Manager (LCM) met **ConfigurationRepositoryShare** en **ResourceRepositoryShare** blokken die de share van die voor het ophalen van configuraties en DSC-resources opgeven.
+De standaard indeling van modules met DSC-resource in WMF 5,0 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`is.
 
-Zie voor meer informatie over het configureren van de LCM [instellen van een pull-client met behulp van configuratie-ID](pullClientConfigID.md).
+Voordat u de pull-server kunt inpakken, `{Module version}` verwijdert u gewoon de map `{Module Folder}\DscResources\{DSC Resource Folder}\`, zodat het pad wordt gewijzigd. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map SMB share.
+
+## <a name="creating-the-mof-checksum"></a>De MOF-controlesom maken
+
+Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren.
+Als u een controlesom wilt maken, roept u de cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een `Path` para meter op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand `ConfigurationMOFName.mof.checksum`met de naam, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand.
+Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map.
+
+Het controlesom bestand moet zich in dezelfde map bevinden als het MOF-bestand van`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` de configuratie (standaard) en dezelfde naam hebben als de `.checksum` extensie is toegevoegd.
 
 > [!NOTE]
-> Voor het gemak in dit voorbeeld wordt de **PSDscAllowPlainTextPassword** om toe te staan een wachtwoord als leesbare tekst aan te geven de **referentie** parameter. Zie voor meer informatie over het doorgeven van referenties veiliger [Referentieopties in de configuratiegegevens](../configurations/configDataCredentials.md).
+> Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.
+
+## <a name="setting-up-a-pull-client-for-smb"></a>Een pull-client voor SMB instellen
+
+Als u een client wilt instellen die configuraties en/of resources van een SMB-share ophaalt, configureert u de lokale Configuration Manager (LCM) van de client met **ConfigurationRepositoryShare** -en **ResourceRepositoryShare** -blokken waarmee de share wordt opgegeven voor het ophalen van configuraties en DSC-resources.
+
+Zie [een pull-client instellen met behulp van de configuratie-ID](pullClientConfigID.md)voor meer informatie over het configureren van de LCM.
+
+> [!NOTE]
+> Voor het gemak gebruikt dit voor beeld de **PSDscAllowPlainTextPassword** om het wacht woord voor een lees bare tekst door te geven aan de para meter **Credential** . Zie voor informatie over het veiliger door geven van referenties de [Opties voor referenties in configuratie gegevens](../configurations/configDataCredentials.md).
 >
-> U **moet** geven een **ConfigurationID** in de **instellingen** blokkeren van een metaconfiguration voor een SMB-pull-server, zelfs als u alleen binnenhalen van resources.
+> U **moet** een **ConfigurationID** opgeven in het **instellingen** blok van een-configuratie voor een SMB-pull-server, zelfs als u alleen resources ophaalt.
 
 ```powershell
-$secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
-$mycreds = New-Object System.Management.Automation.PSCredential (“TestUser”, $secpasswd)
+$secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("TestUser", $secpasswd)
 
 [DSCLocalConfigurationManager()]
 configuration SmbCredTest
@@ -207,14 +207,14 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>Bevestigingen
 
-Speciale dankzij de volgende personen:
+Speciale dank aan de volgende personen:
 
-- Mike F. Robbins, waarvan berichten over het gebruik van SMB voor DSC geholpen informeren over de inhoud in dit onderwerp. Zijn blog loopt [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, auteur van de **cNtfsAccessControl** module. De bron voor deze module is op [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
+- Mike F. Robbins, wier berichten over het gebruik van SMB voor DSC hebben bijgedragen aan de inhoud in dit onderwerp. Zijn blog bevindt zich op [Mike F Robbins](http://mikefrobbins.com/).
+- Serge Nikalaichyk, die de **cNtfsAccessControl** -module heeft gemaakt. De bron voor deze module bevindt zich op [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell Desired State Configuration-overzicht](../overview/overview.md)
+[Overzicht van desired state Configuration voor Windows Power shell](../overview/overview.md)
 
 [Configuraties doorvoeren](enactingConfigurations.md)
 

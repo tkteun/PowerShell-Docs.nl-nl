@@ -1,59 +1,63 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxEnvironment-Resource
-ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxEnvironment-resource
+ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078007"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324822"
 ---
-# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-Resource
+# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-resource
 
-De **nxEnvironment** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van omgevingsvariabelen op een Linux-knooppunt.
+De **nxEnvironment** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van systeem omgevingsvariabelen op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxEnvironment <string> #ResourceName
 {
     Name = <string>
     [ Value = <string>
-    [ Ensure = <string> { Absent | Present }  ]
     [ Path = <bool> }
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap |  Description |
+|Eigenschap |Description |
 |---|---|
-| Naam| Geeft de naam van de omgevingsvariabele waarvoor u wilt om te controleren of een specifieke status.|
-| Waarde| De waarde om toe te wijzen aan de omgevingsvariabele.|
-| Zorg ervoor dat| Hiermee bepaalt u of om te controleren of de variabele bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de variabele bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat de variabele niet bestaat. De standaardwaarde is 'Aanwezig'.|
-| Pad| Hiermee definieert u de omgevingsvariabele die wordt geconfigureerd. Deze eigenschap instellen op **$true** als de variabele de **pad** variabele, anders wordt deze ingesteld op **$false**. De standaardwaarde is **$false**. Als de variabele die wordt geconfigureerd is de **pad** variabele, de waarde wordt opgegeven via de **waarde** eigenschap toegevoegd aan de bestaande waarde.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|Name |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
+|Value |De waarde die moet worden toegewezen aan de omgevings variabele. |
+|Path |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in `$true` op **als de variabele een padvariabele** is. anders stelt u deze in `$false`op. De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de variabele bestaat. Stel deze eigenschap in op **presen teren** om ervoor te zorgen dat de variabele bestaat. Stel deze in op **afwezig** om te controleren of de variabele niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="additional-information"></a>Als u meer informatie
 
-* Als **pad** ontbreekt of is ingesteld op **$false**, omgevingsvariabelen worden beheerd in `/etc/environment`. Uw programma's of scripts mogelijk configuratie vereist voor bron de `/etc/environment` bestand voor toegang tot de beheerde omgevingsvariabelen.
-* Als **pad** is ingesteld op **$true**, de omgevingsvariabele wordt beheerd in het bestand `/etc/profile.d/DSCenvironment.sh`. Als deze niet bestaat, wordt dit bestand worden aangemaakt. Als **Zorg ervoor dat** is ingesteld op 'Ontbreekt' en **pad** is ingesteld op **$true**, een bestaande omgevingsvariabele wordt alleen verwijderd uit `/etc/profile.d/DSCenvironment.sh` en niet vanuit andere bestanden.
+- Als het **pad** ontbreekt of is ingesteld `$false`op, worden omgevings variabelen `/etc/environment`beheerd in.
+  Uw Program ma's of scripts kunnen de configuratie van het `/etc/environment` bestand vereisen om toegang te krijgen tot de variabelen van de beheerde omgeving.
+- Als **Path** is ingesteld op `$true`, wordt de omgevings variabele in het bestand `/etc/profile.d/DSCenvironment.sh`beheerd. Dit bestand wordt gemaakt als het niet bestaat. Als **het** is ingesteld op **afwezig** en **pad** is ingesteld op `$true`, wordt een bestaande omgevings variabele alleen uit `/etc/profile.d/DSCenvironment.sh` andere bestanden verwijderd.
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld ziet u hoe u de **nxEnvironment** resource om ervoor te zorgen dat **TestEnvironmentVariable** aanwezig is en de waarde 'Test-waarde'. Als **TestEnvironmentVariable** is niet aanwezig is, wordt deze gemaakt.
+In het volgende voor beeld ziet u hoe u de **nxEnvironment** -resource gebruikt om ervoor te zorgen dat **TestEnvironmentVariable** aanwezig is en de waarde test-value heeft. Als **TestEnvironmentVariable** niet aanwezig is, wordt deze gemaakt.
 
-```
+```powershell
 Import-DSCResource -Module nx
-
 
 nxEnvironment EnvironmentExample
 {
-    Ensure = “Present”
-    Name = “TestEnvironmentVariable”
-    Value = “TestValue”
+    Ensure = "Present"
+    Name = "TestEnvironmentVariable"
+    Value = "TestValue"
 }
 ```

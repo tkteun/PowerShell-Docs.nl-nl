@@ -1,5 +1,5 @@
 ---
-title: Toevoegen van niet-afsluitfouten die fouten rapporteren aan uw Cmdlet | Microsoft Docs
+title: Niet-beëindigde fout rapportage toevoegen aan uw cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 3741982f81efa04d8fe7ab448fba5f2fdf4b0c01
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068857"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322875"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
 
-Cmdlets afsluitfouten kunt melden door het aanroepen van de [System.Management.Automation.Cmdlet.WriteError][] methode en nog steeds kan functioneren op het huidige invoerobject of verdere inkomende pipeline-objecten.
-In deze sectie wordt uitgelegd hoe u een cmdlet die afsluitfouten uit de invoer verwerkingsmethoden rapporten maken.
+Cmdlets kunnen niet-afsluit fouten rapporteren door de methode [System. Management. Automation. cmdlet. WriteError][] aan te roepen en nog steeds te blijven werken op het huidige invoer object of op verdere inkomende pijplijn objecten.
+In deze sectie wordt uitgelegd hoe u een cmdlet maakt die niet-afsluit fouten in de invoer methoden van het proces rapporteert.
 
-Voor afsluitfouten (evenals afsluitende fouten), de cmdlet moet slagen voor een [System.Management.Automation.ErrorRecord][] object identificeren van de fout.
-Elke foutrecord wordt aangeduid met een unieke tekenreeks van de 'fout-id' genoemd.
-Naast de-id, de categorie van elke fout die is opgegeven door de constanten zijn gedefinieerd door een [System.Management.Automation.ErrorCategory][] opsomming.
-De gebruiker kan zien fouten op basis van hun categorie door in te stellen de `$ErrorView` variabele 'CategoryView'.
+Voor niet-afsluit fouten (en het beëindigen van fouten) moet de cmdlet een [System. Management. Automation. ErrorRecord][] -object door geven om de fout te identificeren.
+Elke fout record wordt geïdentificeerd door een unieke teken reeks met de naam ' fout-id '.
+Naast de id wordt de categorie van elke fout opgegeven door constanten die zijn gedefinieerd door een [System. Management. Automation. ErrorCategory][] -inventarisatie.
+De gebruiker kan fouten op basis van hun categorie weer geven door `$ErrorView` de variabele in te stellen op ' CategoryView '.
 
-Zie voor meer informatie over foutrecords [Windows PowerShell-foutrecords](./windows-powershell-error-records.md).
+Zie [Windows Power Shell-fout records](./windows-powershell-error-records.md)voor meer informatie over fout records.
 
-## <a name="defining-the-cmdlet"></a>De Cmdlet definiëren
+## <a name="defining-the-cmdlet"></a>De cmdlet definiëren
 
-De eerste stap bij het maken van de cmdlet is altijd naamgeving van de cmdlet en de .NET-klasse die de cmdlet declareren.
-Dit smdlet haalt procesinformatie, dus de hier gekozen naam van de term 'Ophalen'.
-(Bijna elk soort cmdlet waarmee het ophalen van gegevens kan opdrachtregel invoer verwerken). Zie voor meer informatie over goedgekeurde werkwoorden [namen van de term cmdlets](approved-verbs-for-windows-powershell-commands.md).
+De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert.
+Met deze cmdlet worden proces gegevens opgehaald, zodat de naam van de term ' Get ' is.
+(Bijna elk soort cmdlet waarmee informatie kan worden opgehaald, kan opdracht regel invoer verwerken.) Zie [cmdlet verb names](approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-Hier volgt de definitie voor deze cmdlet Get-Proc.
-Details van deze definitie zijn vermeld in [het maken van uw eerste Cmdlet](creating-a-cmdlet-without-parameters.md).
+Hier volgt de definitie voor deze Get-proc-cmdlet.
+Details van deze definitie vindt u in [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -47,12 +47,12 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-## <a name="defining-parameters"></a>Parameters definiëren
+## <a name="defining-parameters"></a>Para meters definiëren
 
-Indien nodig, moet de cmdlet-parameters voor het verwerken van invoer definiëren.
-Deze cmdlet Get-Proc definieert een **naam** parameter zoals beschreven in [Parameters die invoer van de opdrachtregel proces toe te voegen](adding-parameters-that-process-command-line-input.md).
+Als dat nodig is, moet uw cmdlet para meters definiëren voor het verwerken van invoer.
+Deze Get-proc-cmdlet definieert een **naam** parameter zoals beschreven in [para meters toevoegen die opdracht regel invoer verwerken](adding-parameters-that-process-command-line-input.md).
 
-Hier is de parameterdeclaratie voor de **naam** parameter van deze cmdlet Get-Proc.
+Hier volgt de parameter declaratie voor de para meter **name** van deze Get-proc-cmdlet.
 
 ```csharp
 [Parameter(
@@ -84,63 +84,63 @@ Public Property Name() As String()
 End Property
 ```
 
-## <a name="overriding-input-processing-methods"></a>Invoer verwerking van methoden overschrijven
+## <a name="overriding-input-processing-methods"></a>Invoer verwerkings methoden overschrijven
 
-Alle cmdlets moet ten minste één van de invoer voor het verwerken van methoden die door overschrijven de [System.Management.Automation.Cmdlet][] klasse.
-Deze methoden worden besproken in [het maken van uw eerste Cmdlet](creating-a-cmdlet-without-parameters.md).
+Alle cmdlets moeten ten minste één van de invoer verwerkings methoden van de klasse [System. Management. Automation. cmdlet][] overschrijven.
+Deze methoden worden besproken bij [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
 
 > [!NOTE]
-> De cmdlet moet onafhankelijk mogelijk elke record verwerken.
+> De cmdlet moet elke record zo onafhankelijk mogelijk verwerken.
 
-Deze cmdlet Get-Proc overschrijft de [System.Management.Automation.Cmdlet.ProcessRecord][] methode voor het afhandelen van de **naam** parameter voor invoer geleverd door de gebruiker of een script.
-Deze methode krijgt de processen voor elke gewenste procesnaam of alle processen als er geen naam is opgegeven.
-Details van deze overschrijving worden vermeld in [het maken van uw eerste Cmdlet](creating-a-cmdlet-without-parameters.md).
+Deze Get-proc-cmdlet onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord][] om de para meter **name** te verwerken voor de invoer van de gebruiker of een script.
+Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven.
+Details van deze onderdrukking zijn gegeven bij [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
 
-### <a name="things-to-remember-when-reporting-errors"></a>Om te onthouden wanneer die fouten rapporteren
+### <a name="things-to-remember-when-reporting-errors"></a>Dingen die u moet onthouden bij het rapporteren van fouten
 
-De [System.Management.Automation.ErrorRecord][] -object dat de cmdlet wordt doorgegeven tijdens het schrijven van een fout is een uitzondering in de kern vereist.
-Volg de richtlijnen voor .NET bij het bepalen van de uitzondering te gebruiken.
-In feite, als de fout semantisch gelijk zijn aan een bestaande uitzondering is, de cmdlet moet gebruiken of afgeleid van de uitzondering.
-Anders moet afleiden een nieuwe uitzondering of uitzonderingen hiërarchie rechtstreeks vanuit de [System.Exception][] klasse.
+Het object [System. Management. Automation. ErrorRecord][] dat door de cmdlet wordt door gegeven tijdens het schrijven van een fout, vereist een uitzonde ring op de kern.
+Volg de .NET-richt lijnen bij het bepalen van de uitzonde ring die moet worden gebruikt.
+Als de fout semantisch hetzelfde is als een bestaande uitzonde ring, moet de cmdlet deze uitzonde ring gebruiken of afleiden.
+Anders moet het een nieuwe uitzonde ring of uitzonderings hiërarchie rechtstreeks vanuit de klasse [System. Exception][] worden afgeleid.
 
-Houd er rekening mee met het volgende bij het maken van fout-id's (toegankelijk via de eigenschap FullyQualifiedErrorId van de klasse ErrorRecord).
+Houd bij het maken van fout-id's (toegankelijk via de eigenschap FullyQualifiedErrorId van de klasse ErrorRecord) het volgende in acht.
 
-- Gebruik tekenreeksen die zijn bedoeld voor diagnostische doeleinden zodat bij de inspectie van de volledig gekwalificeerde id kunt u bepalen wat de fout is en waar de fout die afkomstig zijn uit.
+- Gebruik teken reeksen die zijn gericht op diagnostische doel einden, zodat u bij het controleren van de volledig gekwalificeerde id kunt bepalen wat de fout is en waar de fout vandaan komt.
 
-- Als volgt kan een juist opgemaakte volledig gekwalificeerde fout-id zijn.
+- Een goed gevormde, volledig gekwalificeerde fout-id kan er als volgt uitzien.
 
 `CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand`
 
-U ziet dat in het vorige voorbeeld wordt de fout-id (de eerste token) Hiermee wordt aangegeven wat de fout is en het resterende deel geeft aan waar de fout afkomstig zijn uit.
+In het vorige voor beeld wordt met de fout-id (het eerste token) aangegeven wat de fout is en het resterende deel geeft aan waar de fout vandaan komt.
 
-- Voor complexere scenario's, kan de fout-id een punt van elkaar gescheiden-token dat kan worden geparseerd voor controle zijn.
-  Hiermee kunt dat u ook op de onderdelen van de fout-id, evenals de fout-id en de fout categorie vertakking.
+- Voor complexere scenario's kan de fout-id een token gescheiden door een punt zijn dat bij inspectie kan worden geparseerd.
+  Hierdoor kunt u de onderdelen van de fout-id en de fout-id en fout categorie als vertakking hebben.
 
-De cmdlet moet specifieke fout-id's toewijzen aan andere codepaden.
-Houd er rekening mee voor de toewijzing van fout-id's de volgende informatie:
+De cmdlet moet specifieke fout-id's toewijzen aan verschillende code paden.
+Houd de volgende informatie in acht voor het toewijzen van fout-id's:
 
-- Een fout-id moet ongewijzigd blijft gedurende de levenscyclus van de cmdlet.
-  De semantiek van een fout-id tussen versies van de cmdlet niet wijzigen.
+- Een fout-id moet constant blijven gedurende de levens cyclus van de cmdlet.
+  Wijzig de semantiek van een fout-id tussen de cmdlet-versies niet.
 
-- Gebruik de tekst voor een fout-id die tersely overeenkomt met de fout wordt gerapporteerd.
-  Gebruik geen spaties of leestekens.
+- Gebruik tekst voor een fout-id die tersely overeenkomt met de fout die wordt gerapporteerd.
+  Gebruik geen spaties of lees tekens.
 
-- De cmdlet genereert alleen fout-id's die kunnen worden gereproduceerd hebben.
-  Er moet een id die een proces-id bevat bijvoorbeeld niet gegenereerd.
-  Fout-id's zijn handig om een gebruiker alleen als ze overeenkomen met de id's die zijn zichtbaar voor andere gebruikers hetzelfde probleem ondervindt.
+- Laat uw cmdlet alleen fout-id's genereren die kunnen worden gereproduceerd.
+  Er mag bijvoorbeeld geen id worden gegenereerd die een proces-id bevat.
+  Fout-id's zijn alleen nuttig voor gebruikers wanneer ze overeenkomen met id's die worden gezien door andere gebruikers die hetzelfde probleem ondervinden.
 
-Niet-verwerkte uitzonderingen zijn niet opgepikt door PowerShell in de volgende voorwaarden:
+Niet-verwerkte uitzonde ringen worden niet in de volgende omstandigheden door Power shell gedetecteerd:
 
-- Als een cmdlet maakt een nieuwe thread en code die wordt uitgevoerd in deze thread een niet-verwerkte uitzondering genereert, wordt PowerShell wordt de fout niet onderscheppen en wordt het proces is beëindigd.
+- Als een cmdlet een nieuwe thread maakt en de code die in die thread wordt uitgevoerd, een onverwerkte uitzonde ring genereert, wordt de fout niet onderschept door Power shell en wordt het proces beëindigd.
 
-- Als een object heeft de code in de destructor of Dispose methoden die ervoor zorgt een niet-verwerkte uitzondering dat, worden de PowerShell wordt de fout niet onderscheppen en wordt het proces is beëindigd.
+- Als een object code bevat in de Destruct-of Dispose-methoden die een niet-verwerkte uitzonde ring veroorzaakt, wordt de fout niet onderschept door Power shell en wordt het proces beëindigd.
 
-## <a name="reporting-nonterminating-errors"></a>Rapportage afsluitfouten
+## <a name="reporting-nonterminating-errors"></a>Niet-afsluit fouten rapporteren
 
-Een van de invoer verwerkingsmethoden kan een nonterminating fout rapporteren aan de uitvoer stream met de [System.Management.Automation.Cmdlet.WriteError][] methode.
+Een van de invoer verwerkings methoden kan een niet-afsluit fout melden aan de uitvoer stroom met behulp van de methode [System. Management. Automation. cmdlet. WriteError][] .
 
-Hier volgt een voorbeeld van deze cmdlet Get-procedure die laat zien van de aanroep van [System.Management.Automation.Cmdlet.WriteError][] uit binnen de onderdrukking van de [System.Management.Automation.Cmdlet.ProcessRecord][] methode.
-In dit geval wordt de aanroep uitgevoerd als de cmdlet kan een proces voor een opgegeven proces-id niet vinden.
+Hier volgt een code voorbeeld van deze Get-proc-cmdlet die de aanroep van [System. Management. Automation. cmdlet. WriteError][] in de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord][] illustreert.
+In dit geval wordt de aanroep gedaan als de cmdlet geen proces voor een opgegeven proces-id kan vinden.
 
 ```csharp
 protected override void ProcessRecord()
@@ -180,44 +180,44 @@ protected override void ProcessRecord()
   }
 ```
 
-### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Om te onthouden over het schrijven van afsluitfouten
+### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Wat u moet weten over het schrijven van niet-afsluit fouten
 
-Voor een nonterminating fout, moet de cmdlet een specifieke fout-id voor elke specifieke invoerobject genereren.
+Voor een niet-afsluit fout moet de cmdlet een specifieke fout-id genereren voor elk specifiek invoer object.
 
-Een cmdlet moet vaak wijzigen van de PowerShell-actie die wordt geproduceerd door een nonterminating fout.
-Dit kan worden gedaan door te definiëren de `ErrorAction` en `ErrorVariable` parameters.
-Als u definieert de `ErrorAction` parameter, de cmdlet geeft de gebruikersopties [System.Management.Automation.ActionPreference][], u kunt ook rechtstreeks van invloed zijn op de actie door in te stellen de `$ErrorActionPreference` variabele.
+Een cmdlet moet regel matig de Power shell-actie wijzigen die is geproduceerd door een niet-afsluit fout.
+U kunt dit doen door de `ErrorAction` para meters en te `ErrorVariable` definiëren.
+Bij het definiëren `ErrorAction` van de para meter geeft de cmdlet de gebruikers opties [System. Management. Automation. ActionPreference][], kunt u ook rechtstreeks van invloed zijn `$ErrorActionPreference` op de actie door de variabele in te stellen.
 
-De cmdlet afsluitfouten kunt opslaan naar een variabele met de `ErrorVariable` parameter, die wordt niet beïnvloed door de instelling van `ErrorAction`.
-Fouten kunnen worden toegevoegd aan een bestaande variabele van de fout door een plusteken (+) toe te voegen aan het begin van de naam van de variabele.
+Met de-cmdlet kunnen niet-afsluit fouten worden opgeslagen in een `ErrorVariable` variabele met behulp van de para meter, die `ErrorAction`niet wordt beïnvloed door de instelling van.
+Fouten kunnen worden toegevoegd aan een bestaande fout variabele door een plus teken (+) toe te voegen aan het begin van de naam van de variabele.
 
-## <a name="code-sample"></a>Voorbeeld van code
+## <a name="code-sample"></a>Code voorbeeld
 
-Voor de volledige C# voorbeeldcode, Zie [GetProcessSample04 voorbeeld](./getprocesssample04-sample.md).
+Zie GetProcessSample04- C# voor [beeld](./getprocesssample04-sample.md)voor de volledige voorbeeld code.
 
-## <a name="define-object-types-and-formatting"></a>Definieer objecttypen en opmaak
+## <a name="define-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
-PowerShell wordt informatie doorgegeven tussen cmdlets met behulp van .NET-objecten.
-Als gevolg daarvan kan een cmdlet mogelijk voor het definiëren van een eigen type of de cmdlet moet mogelijk om uit te breiden van een bestaand type geleverd door een andere cmdlet.
-Zie voor meer informatie over het definiëren van nieuwe typen of uitbreiden van bestaande typen [objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Power shell geeft informatie door over cmdlets met behulp van .NET-objecten.
+Daarom moet een cmdlet een eigen type kunnen definiëren, of moet de cmdlet een bestaand type uitbreiden dat door een andere cmdlet wordt verschaft.
+Zie [object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)voor meer informatie over het definiëren van nieuwe typen of het uitbreiden van bestaande typen.
 
-## <a name="building-the-cmdlet"></a>Het bouwen van de Cmdlet
+## <a name="building-the-cmdlet"></a>De cmdlet bouwen
 
-Na de implementatie van een cmdlet, moet u deze registreren met Windows PowerShell via een Windows PowerShell-module.
-Zie voor meer informatie over het registreren van cmdlets [hoe u Cmdlets registreren, Providers en hosting van toepassingen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell registreren via een Windows Power shell-module.
+Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)voor meer informatie over het registreren van cmdlets.
 
-## <a name="testing-the-cmdlet"></a>Testen van de Cmdlet
+## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Wanneer de cmdlet is geregistreerd met PowerShell, kunt u deze testen door te voeren op de opdrachtregel.
-We gaan de voorbeeld-cmdlet Get-Proc om te zien of er een fout gemeld testen:
+Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel.
+We gaan de voor beeld van de cmdlet Get-proc testen om te zien of er een fout melding wordt weer gegeven:
 
-- Start PowerShell en gebruik de cmdlet Get-procedure voor het ophalen van de processen met de naam 'TEST'.
+- Start Power shell en gebruik de cmdlet Get-proc om de processen met de naam TEST op te halen.
 
     ```powershell
     PS> get-proc -name test
     ```
 
-De volgende uitvoer wordt weergegeven.
+De volgende uitvoer wordt weer gegeven.
 
     ```
     get-proc : Operation is not valid due to the current state of the object.
@@ -227,24 +227,24 @@ De volgende uitvoer wordt weergegeven.
 
 ## <a name="see-also"></a>Zie ook
 
-[Parameters die proces Pipeline ingevoerd toe te voegen](./adding-parameters-that-process-pipeline-input.md)
+[Para meters toevoegen die de invoer van de pijp lijn verwerken](./adding-parameters-that-process-pipeline-input.md)
 
-[Parameters die opdrachtregel verwerken toe te voegen](./adding-parameters-that-process-command-line-input.md)
+[Para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md)
 
-[Het maken van uw eerste Cmdlet](./creating-a-cmdlet-without-parameters.md)
+[Uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)
 
-[Objecttypen uitbreiden en opmaak](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell-referentie](../windows-powershell-reference.md)
+[Naslag informatie voor Windows Power shell](../windows-powershell-reference.md)
 
-[Cmdlet-voorbeelden](./cmdlet-samples.md)
+[Voor beelden van cmdlets](./cmdlet-samples.md)
 
-[System.Exception]: /dotnet/api/System.Exception
-[System.Management.Automation.ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
-[System.Management.Automation.Cmdlet.ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
-[System.Management.Automation.Cmdlet.WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
-[System.Management.Automation.Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
-[System.Management.Automation.ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
-[System.Management.Automation.ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
+[System. Exception]: /dotnet/api/System.Exception
+[System. Management. Automation. ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
+[System. Management. Automation. cmdlet. ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
+[System. Management. Automation. cmdlet. WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[System. Management. Automation. cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
+[System. Management. Automation. ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
+[System. Management. Automation. ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord

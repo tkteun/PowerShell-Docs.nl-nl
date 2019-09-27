@@ -1,48 +1,59 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC-WindowsFeature-Resource
-ms.openlocfilehash: 7a57f4b2797ab3bb202aea8b2543d1e3f14074e9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-WindowsFeature-resource
+ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076698"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323811"
 ---
-# <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-Resource
+# <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat functies en onderdelen worden toegevoegd of verwijderd op een doelknooppunt.
+De resource **WindowsFeature** in Windows Power shell desired state Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat rollen en functies worden toegevoegd aan of verwijderd uit een doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 WindowsFeature [string] #ResourceName
 {
     Name = [string]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ Source = [string] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| Naam| Geeft aan dat de naam van de functie of onderdeel dat u wilt ervoor zorgen is toegevoegd of verwijderd. Dit is hetzelfde als de __naam__ eigenschap uit de [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, en niet de weergavenaam van de rol of functie.|
-| Referentie| Geeft aan dat de referenties voor het toevoegen of verwijderen van de rol of functie gebruiken.|
-| Zorg ervoor dat| Hiermee wordt aangegeven als de functie of onderdeel is toegevoegd. Om ervoor te zorgen dat de rol of functie is toegevoegd, stel deze eigenschap in op 'Aanwezig' om ervoor te zorgen dat de rol of functie wordt verwijderd, de eigenschap instellen op 'Ontbreekt'.|
-| IncludeAllSubFeature| Deze eigenschap instellen op __$true__ om te controleren of de status van alle vereiste subonderdelen met de status van de functie die u met opgeeft de __naam__ eigenschap.|
-| Logboekpad| Geeft het pad naar een logboekbestand waar u de resourceprovider voor aanmelding van de bewerking.|
-| DependsOn| Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| Bron| Geeft de locatie van het bronbestand moet worden gebruikt voor installatie, indien nodig.|
+|Name |Hiermee wordt de naam aangegeven van de functie of het onderdeel dat u wilt garanderen, wordt toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) en niet de weergave naam van de functie of het onderdeel. |
+|Referentie |Hiermee geeft u de referenties op die moeten worden gebruikt om de functie of het onderdeel toe te voegen of te verwijderen. |
+|IncludeAllSubFeature |Stel deze eigenschap in `$true` op om de status van alle vereiste subonderdelen met de status van de functie die u opgeeft met de eigenschap **name** te controleren. |
+|Logboekpad |Hiermee geeft u het pad naar een logboek bestand op waar de resource provider de bewerking moet registreren. |
+|Source |Hiermee wordt de locatie aangegeven van het bron bestand dat moet worden gebruikt voor installatie, indien nodig. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of de functie of het onderdeel is toegevoegd. Stel deze eigenschap in op **aanwezig**om te controleren of de functie of het onderdeel is toegevoegd. Om ervoor te zorgen dat de functie of het onderdeel wordt verwijderd, stelt u de eigenschap in op **afwezig**. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
+
 ```powershell
 WindowsFeature RoleExample
 {

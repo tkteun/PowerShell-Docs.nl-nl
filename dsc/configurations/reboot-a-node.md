@@ -1,38 +1,38 @@
 ---
 ms.date: 01/17/2019
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Een knooppunt opnieuw opstarten
-ms.openlocfilehash: 106fa1e7b0e3aaf3070ec05548d51140fe9a7725
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470741"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322922"
 ---
 # <a name="reboot-a-node"></a>Een knooppunt opnieuw opstarten
 
 > [!NOTE]
-> In dit onderwerp wordt besproken hoe u een knooppunt opnieuw opstarten. In de volgorde voor het opnieuw opstarten om succesvol te zijn de **ActionAfterReboot** en **RebootNodeIfNeeded** LCM instellingen moeten correct worden geconfigureerd.
-> Zie voor meer informatie over de lokale Configuration Manager-instellingen, [de Local Configuration Manager configureren](../managing-nodes/metaConfig.md), of [configureren de Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).
+> In dit onderwerp vindt u informatie over het opnieuw opstarten van een knoop punt. Als u de computer opnieuw wilt opstarten, moeten de instellingen voor **ActionAfterReboot** en **RebootNodeIfNeeded** LCM correct worden geconfigureerd.
+> Zie [de lokale Configuration Manager configureren](../managing-nodes/metaConfig.md)of [de lokale Configuration Manager (v4) configureren](../managing-nodes/metaConfig4.md)voor meer informatie over de instellingen van lokale Configuration Manager.
 
-Knooppunten kunnen opnieuw worden opgestart vanaf binnen een resource, met behulp van de `$global:DSCMachineStatus` vlag. Als deze vlag instelt op `1` in de `Set-TargetResource` functie zorgt ervoor dat de LCM om het knooppunt rechtstreeks na opnieuw opstarten de **ingesteld** methode van de huidige resourcegroep. Met deze markering de **xPendingReboot** resource wordt gedetecteerd of een opnieuw opstarten in behandeling is buiten DSC.
+Knoop punten kunnen opnieuw worden opgestart vanuit een resource met behulp van de `$global:DSCMachineStatus` vlag. Als u deze vlag `1` instelt op `Set-TargetResource` in de functie, dwingt de LCM het knoop punt rechtstreeks opnieuw op te starten na de **set** -methode van de huidige resource. Als u deze vlag gebruikt, detecteert de **PendingReboot** -resource in de DSC-resource module van [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) dat een herstart in behandeling is buiten DSC.
 
-Uw [configuraties](configurations.md) voeren stappen waarvoor het knooppunt opnieuw op te starten. Dit kan bijvoorbeeld dingen omvatten:
+Uw [configuraties](configurations.md) kunnen stappen uitvoeren waarvoor het knoop punt opnieuw moet worden opgestart. Dit kan bijvoorbeeld de volgende oorzaken hebben:
 
 - Windows-updates
 - Software-installatie
-- De naam van bestand wijzigen
-- Computer wijzigen
+- Hernoemingen van bestanden
+- Computer naam wijzigen
 
-De **xPendingReboot** resource controleert locaties van de specifieke computer om te bepalen of een opnieuw opstarten in behandeling is. Als het knooppunt opnieuw worden opgestart buiten DSC moet, de **xPendingReboot** resource stelt de `$global:DSCMachineStatus` markering `1` forceren van opnieuw opstarten en het oplossen van de voorwaarde in behandeling.
+De **PendingReboot** -resource controleert specifieke computer locaties om te bepalen of opnieuw opstarten in behandeling is. Als het knoop punt opnieuw moet worden opgestart buiten DSC, wordt met de PendingReboot `$global:DSCMachineStatus` -resource `1` de vlag ingesteld voor het afdwingen van een herstart en het oplossen van de voor waarde in behandeling.
 
 > [!NOTE]
-> Een DSC-resource kan de opdracht geven de LCM om het knooppunt opnieuw opstarten met deze markering instellen de `Set-TargetResource` functie. Zie voor meer informatie, [schrijven van een aangepaste DSC-resource met MOF](../resources/authoringResourceMOF.md).
+> Een DSC-resource kan de LCM de opdracht geven het knoop punt opnieuw op te starten `Set-TargetResource` door deze vlag in de functie in te stellen. Zie [een aangepaste DSC-resource schrijven met MOF](../resources/authoringResourceMOF.md)voor meer informatie.
 
 ## <a name="syntax"></a>Syntaxis
 
 ```
-xPendingReboot [String] #ResourceName
+PendingReboot [String] #ResourceName
 {
     Name = [string]
     [DependsOn = [string[]]]
@@ -45,26 +45,26 @@ xPendingReboot [String] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
 | Eigenschap | Description |
 | --- | --- |
-| Naam| De vereiste parameter moet uniek zijn per exemplaar van de resource in een configuratie.|
-| SkipComponentBasedServicing | Overslaan opnieuw wordt opgestart door het onderdeel Component-Based Servicing geactiveerd. |
-| SkipWindowsUpdate | Overslaan opnieuw wordt opgestart geactiveerd door Windows Update.|
-| SkipPendingFileRename | Opnieuw opstarten in behandeling zijnde-naam overslaan. |
-| SkipCcmClientSDK | Overslaan opnieuw wordt opgestart geactiveerd door de ConfigMgr-client. |
-| SkipComputerRename | Overslaan opnieuw wordt opgestart door de naam van de Computer geactiveerd. |
-| PSDSCRunAsCredential | Ondersteund in versie 5. De resource als de opgegeven gebruiker uitgevoerd. |
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`. Zie voor meer informatie, [DependsOn gebruiken](resource-depends-on.md)|
+| Name| De vereiste para meter die uniek moet zijn per exemplaar van de resource in een configuratie.|
+| SkipComponentBasedServicing | Overs Laan keer opnieuw opstarten geactiveerd door het onderdeel op basis van onderhoud. |
+| SkipWindowsUpdate | Overs Laan keer opnieuw opstarten geactiveerd door Windows Update.|
+| SkipPendingFileRename | Overs Laan herstart van bestand in behandeling. |
+| SkipCcmClientSDK | Sla opnieuw opstarten dat door de Configuration Manager-client wordt geactiveerd. |
+| SkipComputerRename | Overs Laan keer opnieuw opstarten geactiveerd door het wijzigen van de naam van de computer. |
+| PSDSCRunAsCredential | Ondersteund in V5. Hiermee wordt de resource uitgevoerd als de opgegeven gebruiker. |
+| DependsOn | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam **ResourceName** is en het type van de bron resource is. Zie [using DependsOn](resource-depends-on.md) voor meer informatie.|
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld installeert met behulp van Microsoft Exchange de [xExchange](https://github.com/PowerShell/xExchange) resource.
-Tijdens de installatie de **xPendingReboot** bron wordt gebruikt om het knooppunt opnieuw opstarten.
+In het volgende voor beeld wordt micro soft Exchange geïnstalleerd met behulp van de [xExchange](https://github.com/PowerShell/xExchange) -resource.
+Tijdens de installatie wordt de **PendingReboot** -resource gebruikt om het knoop punt opnieuw op te starten.
 
 > [!NOTE]
-> In dit voorbeeld is de referentie van een account met machtigingen voor het toevoegen van een Exchange-server aan het forest vereist. Zie voor meer informatie over het gebruik van referenties in DSC [verwerken van de referenties in DSC](../configurations/configDataCredentials.md)
+> In dit voor beeld is de referentie vereist van een account met rechten voor het toevoegen van een Exchange-server aan het forest. Zie [referenties afhandelen in DSC](../configurations/configDataCredentials.md) voor meer informatie over het gebruik van referenties in DSC
 
 ```powershell
 $ConfigurationData = @{
@@ -89,7 +89,7 @@ Configuration Example
     )
 
     Import-DscResource -Module xExchange
-    Import-DscResource -Module xPendingReboot
+    Import-DscResource -Module ComputerManagementDsc
 
     Node $AllNodes.NodeName
     {
@@ -104,7 +104,7 @@ Configuration Example
         }
 
         # Check if a reboot is needed before installing Exchange
-        xPendingReboot BeforeExchangeInstall
+        PendingReboot BeforeExchangeInstall
         {
             Name       = 'BeforeExchangeInstall'
             DependsOn  = '[File]ExchangeBinaries'
@@ -116,11 +116,11 @@ Configuration Example
             Path       = 'C:\Binaries\E15CU6\Setup.exe'
             Arguments  = '/mode:Install /role:Mailbox /Iacceptexchangeserverlicenseterms'
             Credential = $ExchangeAdminCredential
-            DependsOn  = '[xPendingReboot]BeforeExchangeInstall'
+            DependsOn  = '[PendingReboot]BeforeExchangeInstall'
         }
 
         # See if a reboot is required after installing Exchange
-        xPendingReboot AfterExchangeInstall
+        PendingReboot AfterExchangeInstall
         {
             Name      = 'AfterExchangeInstall'
             DependsOn = '[xExchInstall]InstallExchange'
@@ -130,11 +130,11 @@ Configuration Example
 ```
 
 > [!NOTE]
-> In dit voorbeeld wordt ervan uitgegaan dat u de Local Configuration Manager als u wilt toestaan dat opnieuw wordt opgestart en doorgaan met de configuratie na het opnieuw opstarten hebt geconfigureerd.
+> In dit voor beeld wordt ervan uitgegaan dat u de lokale Configuration Manager zo hebt geconfigureerd dat deze opnieuw wordt opgestart en de configuratie kan worden voortgezet nadat de computer opnieuw is opgestart.
 
-## <a name="where-to-download"></a>Het downloaden
+## <a name="where-to-download"></a>Waar downloaden?
 
-U kunt de resources die worden gebruikt in dit onderwerp op de volgende locaties of met behulp van de PowerShell gallery downloaden.
+U kunt de resources downloaden die in dit onderwerp worden gebruikt op de volgende locaties of met behulp van de Power shell-galerie.
 
-- [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
+- [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc)
 - [xExchange](https://github.com/PowerShell/xExchange)

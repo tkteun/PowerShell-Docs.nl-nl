@@ -1,23 +1,23 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC-Bestandsresource
-ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-bestands resource
+ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077327"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324502"
 ---
-# <a name="dsc-file-resource"></a>DSC-Bestandsresource
+# <a name="dsc-file-resource"></a>DSC-bestands resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De resource van het bestand in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op het doelknooppunt. De **doelpad** en **bronpad** moeten beide toegankelijk zijn via het doel-knooppunt.
+De bron van het **bestand** in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op het doel knooppunt. **Doelpad** en **bronpad** moeten beide toegankelijk zijn voor het doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 File [string] #ResourceName
 {
     DestinationPath = [string]
@@ -25,60 +25,60 @@ File [string] #ResourceName
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
     [ Contents = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present } ]
     [ Force = [bool] ]
     [ Recurse = [bool] ]
-    [ DependsOn = [string[]] ]
     [ SourcePath = [string] ]
     [ Type = [string] { Directory | File } ]
     [ MatchSource = [bool] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|Eigenschap       |Description                                                                   |Vereist|Standaard|
-|---------------|------------------------------------------------------------------------------|--------|-------|
-|DestinationPath|De locatie op het doelknooppunt die u wilt ervoor zorgen is `Present` of `Absent`.|Ja|Nee|
-|Kenmerken     |De gewenste status van de kenmerken voor het betreffende bestand of map. Geldige waarden zijn **archief**, **verborgen**, **ReadOnly**, en **System**.|Nee|Geen|
-|Controlesom      |Het type van de controlesom te gebruiken bij het bepalen of twee bestanden hetzelfde zijn. Geldige waarden zijn: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|Nee|Alleen de naam van bestand of map wordt vergeleken.|
-|Inhoud       |Alleen geldig in combinatie met `File` type. Hiermee geeft u de inhoud naar Zorg ervoor dat zijn `Present` of `Absent` van het doelbestand. |Nee|Geen|
-|Referentie     |De referenties die vereist voor toegang tot resources, zoals de bronbestanden zijn.|Nee|Het computeraccount van het doelknooppunt. (*Zie Opmerking*)|
-|Zorg ervoor dat         |De gewenste status van het doelbestand of map. |Nee|**Aanwezig**|
-|Force          |Bewerkingen voor gegevenstoegang die in een fout resulteren zouden (zoals een bestand te overschrijven of verwijderen van een directory die is niet leeg) vervangt.|Nee|`$false`|
-|Recurse        |Alleen geldig in combinatie met `Directory` type. Voert de recursief status bewerking op alle submappen.|Nee|`$false`|
-|DependsOn      |Hiermee stelt u een afhankelijkheid op de opgegeven resource (s). Deze bron wordt alleen uitgevoerd na voltooiing van uitvoering van alle afhankelijke resources. U kunt opgeven dat afhankelijke resources met behulp van de syntaxis van de `"[ResourceType]ResourceName"`. Zie [about_DependsOn](../../../configurations/resource-depends-on.md)|Nee|Geen|
-|SourcePath     |Het pad van waaruit de resource van het bestand of map kopiëren.|Nee|Geen|
-|Type           |Het type resource wordt geconfigureerd. Geldige waarden zijn `Directory` en `File`.|Nee|`File`|
-|MatchSource    |Hiermee bepaalt u als de resource voor nieuwe bestanden die zijn toegevoegd aan de bronmap na de eerste kopie controleren moet. Een waarde van `$true` geeft aan dat na de eerste kopie een nieuwe bronbestanden moeten worden gekopieerd naar de bestemming. Indien ingesteld op `$False`, de resource in de cache opgeslagen inhoud van de bronmap en negeert alle bestanden die zijn toegevoegd na de eerste kopie.|Nee|`$false`|
+|Eigenschap |Description |
+|---|---|
+|DestinationPath |De locatie, op het doel knooppunt, wilt **ervoor zorgen dat** **deze aanwezig** is of **ontbreekt** . |
+|Kenmerken |De gewenste status van de kenmerken voor het betreffende bestand of de doel directory. Geldige waarden zijn _Archief_, _verborgen_, _alleen-lezen_en _systeem_. |
+|Controlesom |Het type controlesom dat moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Geldige waarden zijn: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
+|Inhoud |Alleen geldig als deze wordt gebruikt met het **type** **bestand**. Hiermee wordt **aangegeven dat de** inhoud **aanwezig** is of **ontbreekt** in het doel bestand. |
+|Referentie |De referenties die nodig zijn voor toegang tot bronnen, zoals bron bestanden. |
+|Force |Onderdrukt de toegangs bewerkingen die resulteren in een fout (bijvoorbeeld het overschrijven van een bestand of het verwijderen van een niet-lege map). De standaard waarde `$false`is. |
+|Recurse |Alleen geldig als deze wordt gebruikt met het **type** **Directory**. Voert de status bewerking recursief uit op alle submappen. De standaard waarde `$false`is. |
+|Bronpad |Het pad waaruit de bron van het bestand of de map moet worden gekopieerd. |
+|type |Het type resource dat wordt geconfigureerd. Geldige waarden zijn **map** en **bestand**. De standaard waarde is een **bestand**. |
+|MatchSource |Hiermee wordt bepaald of de resource moet controleren op nieuwe bestanden die worden toegevoegd aan de bron directory na de eerste kopie. Een waarde van `$true` geeft aan dat na de eerste kopie nieuwe bron bestanden moeten worden gekopieerd naar de bestemming. Als deze is `$false`ingesteld op, wordt de inhoud van de bronmap in cache opgeslagen en worden alle bestanden die na de eerste kopie worden toegevoegd, genegeerd. De standaard waarde `$false`is. |
 
 > [!WARNING]
-> Als u een waarde op voor geen opgeeft `Credential` of `PSRunAsCredential` (PS V.5), de bron wordt het computeraccount van het doelknooppunt gebruiken voor toegang tot de `SourcePath`.  Wanneer de `SourcePath` is een UNC-share, kan dit leiden tot een fout "Toegang geweigerd". Zorg ervoor dat uw machtigingen zijn ingesteld, of gebruik de `Credential` of `PSRunAsCredential` eigenschappen opgeven voor het account dat moet worden gebruikt.
+> Als u geen waarde opgeeft voor **referentie** -of **PSRunAsCredential**, gebruikt de resource het computer account van het doel knooppunt om toegang te krijgen tot het **bronpad**. Wanneer het **bronpad** een UNC-share is, kan dit resulteren in een fout ' toegang geweigerd '. Zorg ervoor dat uw machtigingen dienovereenkomstig zijn ingesteld, of gebruik de eigenschappen **Credential** of **PSRunAsCredential** om het account op te geven dat moet worden gebruikt.
 
-## <a name="present-vs-absent"></a>Aanwezig vs. Absent
+## <a name="common-properties"></a>Algemene eigenschappen
 
-Elke DSC-resource voert verschillende bewerkingen op basis van de waarde die u opgeeft voor de `Ensure` eigenschap. De waarden die u opgeeft voor de bovenstaande eigenschappen bepaalt de status-bewerking is uitgevoerd.
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of het bestand en de **inhoud** op de **bestemming** bestaan of niet. Stel deze eigenschap in op **presen teren** om te controleren of het bestand bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
-### <a name="existence"></a>Bestaan
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
-Wanneer u alleen opgeeft een `DestinationPath`, de bron zorgt ervoor dat het pad bestaat (`Present`) of bestaat niet (`Absent`).
+### <a name="additional-information"></a>Aanvullende informatie
 
-### <a name="copy-operations"></a>Kopieerbewerkingen
-
-Bij het opgeven van een `SourcePath` en een `DestinationPath` met een `Type` waarde van **Directory**, de bronmap resource-exemplaren naar het doelpad. De eigenschappen `Recurse`, `Force`, en `MatchSource` Wijzig het type van de kopieerbewerking uitgevoerd, terwijl `Credential` bepaalt welk account moet worden gebruikt voor toegang tot de bronmap.
-
-### <a name="limitations"></a>Beperkingen
-
-Als u een waarde van de opgegeven `ReadOnly` voor de `Attributes` eigenschap naast een `DestinationPath`, `Ensure = "Present"` maakt het pad dat is opgegeven, terwijl `Contents` stelt u de inhoud van het bestand.  Een `Absent` bewerking van de status wilt negeren de `Attributes` eigenschap volledig, en verwijderen van elk bestand in het opgegeven pad.
+- Wanneer u alleen een **doelpad**opgeeft, zorgt de bron ervoor dat het pad bestaat, indien het **aanwezig** is of niet bestaat als het **ontbreekt**.
+- Wanneer u een **bronpad** en een **doelpad** met de **type** waarde **Directory**opgeeft, wordt de bron Directory gekopieerd naar het doelpad. Met de **Eigenschappen wordt**het type Kopieer bewerking dat wordt uitgevoerd, gewijzigd, **geforceerd**en **MatchSource** , terwijl de **referentie** bepaalt welk account moet worden gebruikt om toegang te krijgen tot de bron directory.
+- Als u voor de eigenschap **Attributes** naast een **doelpad**de waarde **ReadOnly** hebt opgegeven **, moet u** **ervoor zorgen dat** het opgegeven pad wordt gemaakt, terwijl de **inhoud** van het bestand is ingesteld. Als u **ervoor zorgt dat** de instelling niet **aanwezig** is, wordt de eigenschap **Attributes** volledig genegeerd en worden alle bestanden verwijderd uit het opgegeven pad.
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld wordt een map en submappen van een pull-server naar een doelknooppunt met behulp van de Resource-bestand. Als de bewerking is geslaagd, schrijft de logboekresource een bevestigingsbericht wordt weergegeven in het gebeurtenislogboek.
+In het volgende voor beeld wordt een map en de bijbehorende submappen gekopieerd van een pull-server naar een doel knooppunt met behulp van de bestands resource. Als de bewerking is geslaagd, schrijft de logboek bron een bevestigings bericht naar het gebeurtenis logboek.
 
-De bronmap is een UNC-pad (`\\PullServer\DemoSource`) gedeeld van de Pull-Server. De `Recurse` eigenschap zorgt ervoor dat alle submappen ook worden gekopieerd.
+De bron directory is een UNC-pad`\\PullServer\DemoSource`() dat wordt gedeeld vanaf de pull-server. Met de **recursieve** eigenschap zorgt u ervoor dat alle submappen ook worden gekopieerd.
 
 > [!IMPORTANT]
-> De LCM op de doel-knooppunt wordt uitgevoerd in de context van het lokale systeemaccount gebruikt standaard. Toegang verlenen tot de **bronpad**, het doelknooppunt computeraccount geschikte machtigingen geven. De **referentie** en **PSDSCRunAsCredential** (v5) beide wijzigen van de context de LCM gebruikt voor toegang tot de **bronpad**. U moet nog steeds toegang verlenen tot het account dat wordt gebruikt voor toegang tot de **bronpad**.
+> De LCM op het doel knooppunt wordt standaard uitgevoerd in de context van het lokale systeem account. Als u toegang wilt verlenen tot het **bronpad**, geeft u het computer account van het doel knooppunt de juiste machtigingen. De **referentie** -en **PSDSCRunAsCredential** wijzigen de context die de LCM gebruikt om toegang te krijgen tot het **bronpad**. U moet nog steeds toegang verlenen tot het account dat wordt gebruikt voor toegang tot het **bronpad**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -104,4 +104,4 @@ Configuration FileResourceDemo
 }
 ```
 
-Voor het gebruik van meer op **referenties** in DSC Zie [uitvoeren als gebruiker](../../../configurations/runAsUser.md) of [Config gegevens referenties](../../../configurations/configDataCredentials.md).
+Zie [uitvoeren als gebruiker](../../../configurations/runAsUser.md) of [configuratie gegevens referenties](../../../configurations/configDataCredentials.md)voor meer informatie over het gebruik van **referenties** in DSC.

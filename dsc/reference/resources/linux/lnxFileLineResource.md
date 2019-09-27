@@ -1,50 +1,54 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxFileLine-Resource
-ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxFileLine-resource
+ms.openlocfilehash: 2e94bab318b5db65df88d268a88585079bab89bf
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077956"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324792"
 ---
-# <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine-Resource
+# <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine-resource
 
-De **nxFileLine** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van de regels in een configuratiebestand op een Linux-knooppunt.
+De **nxFileLine** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van regels in een configuratie bestand op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxFileLine <string> #ResourceName
 {
     FilePath = <string>
     ContainsLine = <string>
     [ DoesNotContainPattern = <string> ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap |  Description |
+|Eigenschap |Description |
 |---|---|
-| FilePath| Het volledige pad naar het bestand om regels in op het doelknooppunt te beheren.|
-| ContainsLine| Een regel om ervoor te zorgen bestaat in het bestand. Deze regel wordt toegevoegd aan het bestand als deze niet in het bestand bestaat. **ContainsLine** is verplicht, maar kan worden ingesteld op een lege tekenreeks (`ContainsLine = ""`) als deze niet nodig is.|
-| DoesNotContainPattern| Een reguliere-expressiepatroon voor regels die niet in het bestand moet bestaan. Voor alle regels die zijn opgenomen in het bestand die overeenkomen met deze reguliere expressie, wordt de regel wordt verwijderd uit het bestand.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|Bestandspad |Het volledige pad naar het bestand voor het beheren van de regels in het doel knooppunt. |
+|ContainsLine |Een regel om ervoor te zorgen dat het bestand bestaat. Deze regel wordt toegevoegd aan het bestand als het niet in het bestand voor komt. **ContainsLine** is verplicht, maar kan worden ingesteld op een lege teken reeks`ContainsLine = ""`() als dit niet nodig is. |
+|DoesNotContainPattern |Een reguliere-expressie patroon voor lijnen die niet in het bestand moeten voor komen. Voor alle regels die voor komen in het bestand die overeenkomen met deze reguliere expressie, wordt de regel uit het bestand verwijderd. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld wordt met behulp van de **nxFileLine** resource die u wilt configureren van de `/etc/sudoers` -bestand, ervoor zorgen dat de gebruiker: monuser is geconfigureerd voor het niet requiretty.
+In dit voor beeld ziet u hoe u de **nxFileLine** - `/etc/sudoers` resource gebruikt om het bestand te configureren, zodat de gebruiker: monuser is geconfigureerd om niet requiretty.
 
 ```powershell
 Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
-   FilePath = “/etc/sudoers”
+   FilePath = "/etc/sudoers"
    ContainsLine = 'Defaults:monuser !requiretty'
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
 }

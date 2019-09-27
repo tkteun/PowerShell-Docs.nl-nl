@@ -1,21 +1,21 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxArchive-Resource
-ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxArchive-resource
+ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078041"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324851"
 ---
-# <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive-Resource
+# <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive-resource
 
-De **nxArchive** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het uitpakken van bestanden te archiveren (.tar, .zip) op een specifiek pad op een Linux-knooppunt.
+De **nxArchive** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het uitpakken van archief bestanden (. tar,. zip) op een specifiek pad op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxArchive <string> #ResourceName
 {
     SourcePath = <string>
@@ -27,37 +27,42 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap |  Description |
+|Eigenschap |Description |
 |---|---|
-| SourcePath| Hiermee geeft u het bronpad van het bestand. Dit moet een .tar .zip, of..GZ-bestand. |
-| DestinationPath| Hiermee geeft u de locatie waar u om te controleren of de dat inhoud van het archief worden geëxtraheerd.|
-| Controlesom| Definieert het type te gebruiken bij het bepalen of de bron-archief is bijgewerkt. Waarden zijn: 'ctime","mtime"of 'md5'. De standaardwaarde is 'md5'.|
-| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een directory die is niet leeg), een fout leidt. Met behulp van de **Force** eigenschap heeft voorrang op dergelijke fouten. De standaardwaarde is **$false**.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| Zorg ervoor dat| Hiermee bepaalt u of om te controleren of de inhoud van het archief bestaat op de **bestemming**. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de inhoud bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat ze bestaan niet. De standaardwaarde is 'Aanwezig'.|
+|Bronpad |Hiermee geeft u het bronpad van het archief bestand. Dit moet een. tar-,. zip-of. tar. gz-bestand zijn. |
+|DestinationPath |Hiermee geeft u de locatie op waar de archief inhoud moet worden uitgepakt. |
+|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of het bron archief is bijgewerkt. Waarden zijn: **ctime**, **mtime**of **MD5**. De standaard waarde is **MD5**. |
+|Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaardwaarde is `$false`. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming**. Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld ziet u hoe u de **nxArchive** resource om ervoor te zorgen dat de inhoud van een archiefbestand genoemd `website.tar` bestaan en op een bepaalde bestemming worden geëxtraheerd.
+In het volgende voor beeld ziet u hoe u de **nxArchive** -resource kunt gebruiken om ervoor te zorgen dat `website.tar` de inhoud van een archief bestand met de naam exists wordt geëxtraheerd op een bepaalde bestemming.
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 nxFile SyncArchiveFromWeb
 {
    Ensure = "Present"
-   SourcePath = “http://release.contoso.com/releases/website.tar”
+   SourcePath = "http://release.contoso.com/releases/website.tar"
    DestinationPath = "/usr/release/staging/website.tar"
    Type = "File"
-   Checksum = “mtime”
+   Checksum = "mtime"
 }
 
 nxArchive SyncWebDir
 {
-   SourcePath = “/usr/release/staging/website.tar”
-   DestinationPath = “/usr/local/apache2/htdocs/”
+   SourcePath = "/usr/release/staging/website.tar"
+   DestinationPath = "/usr/local/apache2/htdocs/"
    Force = $false
    DependsOn = "[nxFile]SyncArchiveFromWeb"
 }

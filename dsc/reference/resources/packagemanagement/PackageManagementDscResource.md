@@ -1,68 +1,78 @@
 ---
-ms.date: 06/20/2018
-keywords: DSC, powershell, configuratie en installatie
-title: DSC-Package Management-Resource
-ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC Package Management-resource
+ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077616"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324611"
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC-Package Management-Resource
+# <a name="dsc-packagemanagement-resource"></a>DSC Package Management-resource
 
-Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
+Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0, Windows Power shell 5,1
 
-De **PackageManagement** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van Package Management-pakketten op een doelknooppunt. Deze resource is vereist de **PackageManagement** -module, beschikbaar is via [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
+De **Package Management** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakket beheer pakketten op een doel knooppunt. Deze bron vereist de module **Package Management** , die beschikbaar [http://PowerShellGallery.com](https://PowerShellGallery.com)is via.
 
 > [!IMPORTANT]
-> De **PackageManagement** module moet ten minste versie 1.1.7.0 voor de volgende eigenschapsinformatie juist te zijn.
+> De **Package Management** -module moet ten minste versie 1.1.7.0 zijn voor de volgende eigenschaps gegevens die u wilt corrigeren.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 PackageManagement [string] #ResourceName
 {
     Name = [string]
-    [AdditionalParameters = [HashTable]]
-    [DependsOn = [string[]]]
-    [Ensure = [string]{ Absent | Present }]
-    [MaximumVersion = [string]]
-    [MinimumVersion = [string]]
-    [ProviderName = [string]]
-    [PsDscRunAsCredential = [PSCredential]]
-    [RequiredVersion = [string]]
-    [Source = [string]]
-    [SourceCredential = [PSCredential]]
+    [ AdditionalParameters = [HashTable] ]
+    [ MaximumVersion = [string] ]
+    [ MinimumVersion = [string] ]
+    [ ProviderName = [string] ]
+    [ RequiredVersion = [string] ]
+    [ Source = [string] ]
+    [ SourceCredential = [PSCredential] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-| Eigenschap | Description |
-| --- | --- |
-| Naam| Hiermee geeft u de naam van het pakket dat moet worden geïnstalleerd of verwijderd.|
-| AdditionalParameters| Specifieke hashtabel van de provider van de parameters die worden doorgegeven aan `Get-Package -AdditionalArguments`. Bijvoorbeeld, kunt u aanvullende parameters, zoals het doelpad doorgeven voor NuGet-provider.|
-| Zorg ervoor dat| Bepaalt of het pakket moet worden geïnstalleerd of verwijderd.|
-| MaximumVersion|Hiermee geeft u de maximaal toegestane versie van het pakket dat u wilt zoeken. Als u deze parameter niet toevoegt, zoekt de resource is de hoogste versie van het pakket.|
-| MinimumVersion|Hiermee geeft u de minimaal toegestane versie van het pakket dat u wilt zoeken. Als u deze parameter niet toevoegt, de bron zoekt naar de hoogste versie van het pakket dat ook voldoet aan alle maximale opgegeven versie van het opgegeven door de _MaximumVersion_ parameter.|
-| ProviderName| Hiermee geeft u de naam van een pakket provider waarnaar u wilt uw zoekopdracht pakket beperken. Krijgt u provider-pakketnamen door het uitvoeren van de `Get-PackageProvider` cmdlet.|
-| RequiredVersion| Hiermee geeft u de exacte versie van het pakket dat u wilt installeren. Als u deze parameter niet opgeeft, deze DSC-resource wordt geïnstalleerd voor de nieuwste beschikbare versie van het pakket dat ook voldoet aan een maximale versie van het opgegeven door de _MaximumVersion_ parameter.|
-| Bron| Hiermee geeft u de naam van de pakketbron waar het pakket kan worden gevonden. Dit kan een URI of een bron die is geregistreerd bij `Register-PackageSource` of PackageManagementSource DSC-resource.|
-| SourceCredential | Hiermee geeft u een gebruikersaccount met rechten voor het installeren van een pakket voor een opgegeven pakket-provider of de bron.|
+|Eigenschap |Description |
+|---|---|
+|Name |Hiermee geeft u de naam op van het pakket dat moet worden geïnstalleerd of verwijderd. |
+|AdditionalParameters |Providerspecifieke hashtabel van para meters die worden door gegeven `Get-Package -AdditionalArguments`aan. U kunt bijvoorbeeld voor NuGet-provider aanvullende para meters door geven zoals doelpad. |
+|MaximumVersion |Hiermee geeft u de Maxi maal toegestane versie van het pakket dat u wilt zoeken. Als u deze para meter niet toevoegt, vindt de resource de hoogste beschik bare versie van het pakket. |
+|MinimumVersion |Hiermee geeft u de mini maal toegestane versie van het pakket dat u wilt zoeken. Als u deze para meter niet toevoegt, zoekt de resource de hoogste beschik bare versie van het pakket die ook voldoet aan de maximum opgegeven versie die is opgegeven door de para meter **MaximumVersion** . |
+|ProviderName |Hiermee geeft u de naam van een pakket provider op waarmee u de pakket zoekopdracht wilt bereiken. U kunt pakket provider namen ophalen door de `Get-PackageProvider` cmdlet uit te voeren. |
+|RequiredVersion |Hiermee geeft u de exacte versie van het pakket op dat u wilt installeren. Als u deze para meter niet opgeeft, installeert deze DSC-resource de nieuwste beschik bare versie van het pakket die ook voldoet aan de maximum versie die is opgegeven door de para meter **MaximumVersion** . |
+|Source |Hiermee geeft u de naam van de pakket bron op waarin het pakket kan worden gevonden. Dit kan een URI zijn of een bron die is geregistreerd `Register-PackageSource` bij of PackageManagementSource DSC-resource. |
+|SourceCredential |Hiermee geeft u een gebruikers account op dat rechten heeft om een pakket te installeren voor een opgegeven pakket provider of bron. |
 
-## <a name="additional-parameters"></a>Extra Parameters
+## <a name="additional-parameters"></a>Aanvullende para meters
 
-De volgende tabel bevat opties voor de eigenschap AdditionalParameters.
+De volgende tabel bevat de opties voor de eigenschap AdditionalParameters.
 
-| Parameter | Description |
-| --- | --- |
-| DestinationPath| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee geeft u een locatie waar u het pakket dat moet worden geïnstalleerd.|
-| InstallationPolicy| Gebruikt door providers, zoals de geïntegreerde Nuget-Provider. Hiermee bepaalt u of u het pakket met de bron vertrouwt. Een van: `Untrusted`, `Trusted`.|
+|Parameter |Description |
+|---|---|
+|DestinationPath |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee geeft u een bestands locatie op waar het pakket moet worden geïnstalleerd. |
+|InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van de volgende opties: **Niet-vertrouwd** of **vertrouwd**. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of het pakket moet worden geïnstalleerd of verwijderd. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld installeert de **JQuery** NuGet-pakket en **GistProvider** PowerShell module met behulp van de **PackageManagement** DSC-resource. In dit voorbeeld eerst zorgt ervoor dat de bronnen vereist pakket beschikbaar zijn en vervolgens definieert de verwachte status van de **JQuery** en **GistProvider** pakketten (NuGet en PowerShell, respectievelijk).
+In dit voor beeld wordt het **jQuery** NuGet-pakket en de **GistProvider** Power shell-module geïnstalleerd met behulp van de **Package Management** DSC-resource. In dit voor beeld wordt eerst gegarandeerd dat de vereiste pakket bronnen beschikbaar zijn en definieert vervolgens de verwachte status van de **jQuery** -en **GistProvider** -pakketten (respectievelijk NuGet en Power shell).
 
 ```powershell
 Configuration PackageTest
@@ -81,7 +91,7 @@ Configuration PackageTest
         Ensure      = "Present"
         Name        = "psgallery"
         ProviderName= "PowerShellGet"
-        SourceLocation   = "https://www.powershellgallery.com/api/v2/"
+        SourceLocation   = "https://www.powershellgallery.com/api/v2"
         InstallationPolicy ="Trusted"
     }
 

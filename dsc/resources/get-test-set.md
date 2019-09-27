@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Get-test-set
-ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70215421"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323627"
 ---
 # <a name="get-test-set"></a>Get-test-set
 
@@ -143,7 +143,7 @@ BuiltInAccount       : LocalSystem
 Credential           :
 Dependencies         : {RPCSS, http}
 Description          : This service spools print jobs and handles interaction with the printer.  If you turn off
-                       this service, you won’t be able to print or see your printers.
+                       this service, you won't be able to print or see your printers.
 DisplayName          : Print Spooler
 Ensure               :
 Name                 : Spooler
@@ -175,7 +175,7 @@ Service [String] #ResourceName
 }
 ```
 
-## <a name="test"></a>Test
+## <a name="test"></a>Testen
 
 De **test** methode van een bron bepaalt of het doel knooppunt momenteel compatibel is met de *gewenste status*van de resource. De **test** methode retourneert `$True` of `$False` alleen om aan te geven of het knoop punt compatibel is.
 Wanneer u [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)aanroept, roept de LCM de **test** methode van elke bron in de huidige toegepaste configuratie aan. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.

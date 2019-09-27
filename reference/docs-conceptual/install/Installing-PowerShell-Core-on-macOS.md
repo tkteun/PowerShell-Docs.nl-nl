@@ -1,43 +1,43 @@
 ---
 title: PowerShell Core in macOS installeren
-description: Informatie over PowerShell Core in macOS installeren
+description: Informatie over het installeren van Power shell core in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229732"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325267"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
-PowerShell Core biedt ondersteuning voor macOS 10.12 en hoger.
-Alle pakketten zijn beschikbaar op onze GitHub [releases][] pagina.
-Nadat het pakket is geïnstalleerd, voert u `pwsh` vanuit een terminal.
+Power shell core ondersteunt macOS 10,12 en hoger.
+Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] .
+Nadat het pakket is geïnstalleerd, voert `pwsh` u uit vanaf een Terminal.
 
-## <a name="about-brew"></a>Over Homebrew
+## <a name="about-brew"></a>Over Brew
 
-[Homebrew] [ brew] is het gewenste pakketbeheerprogramma voor Mac OS.
-Als de `brew` opdracht is niet gevonden, moet u de volgende Homebrew installeren [hun instructies][brew].
-Anders kunt u PowerShell via hebt geïnstalleerd [rechtstreeks downloaden](#installation-via-direct-download) of [binaire archieven](#binary-archives).
+[Homebrew][brew] is de voorkeurs pakket beheerder voor macOS.
+Als de `brew` opdracht niet wordt gevonden, moet u homebrew installeren volgens [de instructies][brew].
+Anders kunt u Power Shell installeren via [direct downloaden](#installation-via-direct-download) of vanuit [binaire archieven](#binary-archives).
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de nieuwste stabiele versie via Homebrew in macOS 10.12 of hoger
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de laatste stabiele release via homebrew op macOS 10,12 of hoger
 
-Zie [over Brew](#about-brew) voor informatie over Homebrew.
+Zie [about Brew](#about-brew) voor informatie over Brew.
 
-Nu kunt u PowerShell hebt geïnstalleerd:
+U kunt nu Power Shell installeren:
 
 ```sh
 brew cask install powershell
 ```
 
-Controleer ten slotte of het installeren van uw correct werkt:
+Controleer ten slotte of uw installatie goed werkt:
 
 ```sh
 pwsh
 ```
 
-Wanneer er nieuwe versies van PowerShell worden uitgebracht, de Homebrew-formule bijwerken en PowerShell een upgrade uitvoert:
+Wanneer er nieuwe versies van Power shell worden uitgebracht, werkt u de Power shell-formule voor homebrew en upgrade bij:
 
 ```sh
 brew update
@@ -45,34 +45,34 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw gestart om de upgrade is voltooid en vernieuwen van de waarden in `$PSVersionTable`.
+> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een Power shell-host (pwsh), maar vervolgens moet de Power shell-shell worden afgesloten en opnieuw worden gestart om de upgrade te volt ooien `$PSVersionTable`en de waarden die worden weer gegeven in te vernieuwen.
 
-[brew]: http://brew.sh/
+[brew]: https://brew.sh/
 
-## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de meest recente preview release via Homebrew in macOS 10.12 of hoger
+## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de nieuwste preview-versie via homebrew op macOS 10,12 of hoger
 
-Zie [over Brew](#about-brew) voor informatie over Homebrew.
+Zie [about Brew](#about-brew) voor informatie over Brew.
 
-Nadat u Homebrew hebt geïnstalleerd, kunt u PowerShell installeren.
-Installeer eerst de [Cask-versies] [ cask-versions] pakket waarmee u alternatieve versies van cask pakketten installeren:
+Nadat u homebrew hebt geïnstalleerd, kunt u Power Shell installeren.
+Installeer eerst het pakket met [Cask versies][cask-versions] waarmee u alternatieve versies van Cask-pakketten kunt installeren:
 
 ```sh
 brew tap homebrew/cask-versions
 ```
 
-Nu kunt u PowerShell hebt geïnstalleerd:
+U kunt nu Power Shell installeren:
 
 ```sh
 brew cask install powershell-preview
 ```
 
-Controleer ten slotte of het installeren van uw correct werkt:
+Controleer ten slotte of uw installatie goed werkt:
 
 ```sh
 pwsh-preview
 ```
 
-Wanneer er nieuwe versies van PowerShell worden uitgebracht, de Homebrew-formule bijwerken en PowerShell een upgrade uitvoert:
+Wanneer er nieuwe versies van Power shell worden uitgebracht, werkt u de Power shell-formule voor homebrew en upgrade bij:
 
 ```sh
 brew update
@@ -80,27 +80,27 @@ brew cask upgrade powershell-preview
 ```
 
 > [!NOTE]
-> De bovenstaande opdrachten kunnen worden opgeroepen binnen een host PowerShell (pwsh), maar vervolgens de shell van PowerShell moet worden afgesloten en opnieuw worden opgestart om de upgrade te voltooien.
-> en vernieuw de waarden in `$PSVersionTable`.
+> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een Power shell-host (pwsh), maar vervolgens moet de Power shell-shell worden afgesloten en opnieuw worden gestart om de upgrade te volt ooien.
+> en vernieuw de waarden die worden `$PSVersionTable`weer gegeven in.
 
-## <a name="installation-via-direct-download"></a>Installatie via directe downloaden
+## <a name="installation-via-direct-download"></a>Installatie via direct downloaden
 
-Pak het pakket downloaden `powershell-6.2.0-osx-x64.pkg`
-uit de [releases][] pagina naar uw macOS-computer.
+Pakket downloaden`powershell-6.2.0-osx-x64.pkg`
+van de pagina [releases][] op uw macOS-computer.
 
-U kunt dubbelklikken op het bestand en volg de aanwijzingen of installeren vanaf de terminal:
+U kunt dubbel klikken op het bestand en de prompts volgen of installeren vanaf de terminal:
 
 ```sh
 sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
-Installeer [OpenSSL](#install-openssl). OpenSSL is nodig voor externe communicatie van PowerShell en CIM-bewerkingen.
+Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-PowerShell binaire `tar.gz` archieven worden opgegeven voor het macOS-platform om in te schakelen geavanceerde implementatiescenario's.
+Er zijn `tar.gz` binaire Power shell-archieven beschikbaar voor het macOS-platform om geavanceerde implementatie scenario's mogelijk te maken.
 
-### <a name="installing-binary-archives-on-macos"></a>Installeren van de binaire archieven in macOS
+### <a name="installing-binary-archives-on-macos"></a>Binaire archieven installeren op macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -119,11 +119,11 @@ sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
-Installeer [OpenSSL](#install-openssl). OpenSSL is nodig voor externe communicatie van PowerShell en CIM-bewerkingen.
+Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
 
-## <a name="installing-dependencies"></a>Installatie van afhankelijkheden
+## <a name="installing-dependencies"></a>Afhankelijkheden installeren
 
-### <a name="install-xcode-command-line-tools"></a>Opdrachtregelprogramma's van XCode installeren
+### <a name="install-xcode-command-line-tools"></a>Opdracht regel Programma's voor XCode installeren
 
 ```sh
 xcode-select --install
@@ -131,70 +131,70 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>OpenSSL installeren
 
-OpenSSL is nodig voor externe communicatie van PowerShell en CIM-bewerkingen. U kunt installeren via MacPorts of Homebrew.
+OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen. U kunt installeren via MacPorts of Brew.
 
-#### <a name="install-openssl-via-brew"></a>OpenSSL via Homebrew installeren
+#### <a name="install-openssl-via-brew"></a>OpenSSL installeren via Brew
 
-Zie [over Brew](#about-brew) voor informatie over Homebrew.
+Zie [about Brew](#about-brew) voor informatie over Brew.
 
-Voer voor het installeren van OpenSSL `brew install openssl`.
+Voer uit `brew install openssl`om openssl te installeren.
 
-#### <a name="install-openssl-via-macports"></a>OpenSSL via MacPorts installeren
+#### <a name="install-openssl-via-macports"></a>OpenSSL installeren via MacPorts
 
-1. Installeer de [XCode vanaf de opdrachtregel-hulpprogramma's](#install-xcode-command-line-tools).
-1. MacPorts installeren.
-   Als u instructies nodig hebt, raadpleegt u de [installatiehandleiding](https://guide.macports.org/chunked/installing.macports.html).
-1. MacPorts bijwerken door te voeren `sudo port selfupdate`.
-1. Upgradepakketten voor besturings MacPorts door uit te voeren `sudo port upgrade outdated`.
-1. OpenSSL installeren door te voeren `sudo port install openssl`.
-1. Koppel de bibliotheken om deze beschikbaar maken voor PowerShell:
+1. Installeer de [Xcode-opdracht regel Programma's](#install-xcode-command-line-tools).
+1. Installeer MacPorts.
+   Raadpleeg de [installatie handleiding](https://guide.macports.org/chunked/installing.macports.html)als u instructies nodig hebt.
+1. Werk MacPorts bij door `sudo port selfupdate`uit te voeren.
+1. Upgrade MacPorts packages door `sudo port upgrade outdated`uit te voeren.
+1. Installeer OpenSSL door uit `sudo port install openssl`te voeren.
+1. Koppel de bibliotheken om ze beschikbaar te maken voor Power shell:
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## <a name="uninstalling-powershell-core"></a>PowerShell Core verwijderen
+## <a name="uninstalling-powershell-core"></a>Power shell core verwijderen
 
-Als u PowerShell hebt geïnstalleerd met Homebrew, gebruikt u de volgende opdracht uit om te verwijderen:
+Als u Power shell hebt geïnstalleerd met Homebrew, gebruikt u de volgende opdracht om te verwijderen:
 
 ```sh
 brew cask uninstall powershell
 ```
 
-Als u PowerShell hebt geïnstalleerd via de directe download, moet PowerShell handmatig worden verwijderd:
+Als u Power shell hebt geïnstalleerd via direct downloaden, moet Power shell hand matig worden verwijderd:
 
 ```sh
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Als u wilt verwijderen van de extra PowerShell-paden, verwijzen naar de [paden](#paths) sectie in dit document en verwijder de paden met behulp van `sudo rm`.
+Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden](#paths) in dit document `sudo rm`en verwijdert u de paden met.
 
 > [!NOTE]
-> Dit is niet nodig als u met Homebrew hebt geïnstalleerd.
+> Dit is niet nodig als u hebt geïnstalleerd met homebrew.
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
-* Gebruikersprofielen worden gelezen in `~/.config/powershell/profile.ps1`
-* Standaardprofielen worden gelezen in `$PSHOME/profile.ps1`
-* Gebruikersmodules worden gelezen in `~/.local/share/powershell/Modules`
-* Gedeelde modules worden gelezen in `/usr/local/share/powershell/Modules`
-* Standaardmodules worden gelezen in `$PSHOME/Modules`
-* PSReadline geschiedenis wordt vastgelegd `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME`ontbreekt`/usr/local/microsoft/powershell/6.2.0/`
+* Gebruikers profielen worden gelezen van`~/.config/powershell/profile.ps1`
+* Standaard profielen worden gelezen uit`$PSHOME/profile.ps1`
+* Gebruikers modules worden gelezen uit`~/.local/share/powershell/Modules`
+* Gedeelde modules worden gelezen van`/usr/local/share/powershell/Modules`
+* Standaard modules worden gelezen van`$PSHOME/Modules`
+* De PSReadline-geschiedenis wordt vastgelegd in`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-De profielen met inachtneming van de PowerShell-per-host-configuratie.
-Zodat het standaardprofiel voor de host-specifieke bestaat op `Microsoft.PowerShell_profile.ps1` in dezelfde locaties.
+De profielen respecteren de configuratie van de Power shell per host.
+Het standaard-host-profiel bestaat dus op `Microsoft.PowerShell_profile.ps1` dezelfde locatie.
 
-PowerShell respecteert de [XDG Base Directory specificatie] [ xdg-bds] in macOS.
+Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 
-Omdat Mac OS een afleiding van BSD, het voorvoegsel is `/usr/local` wordt gebruikt in plaats van `/opt`.
-Dus `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`, en de symbolische koppeling wordt geplaatst op `/usr/local/bin/pwsh`.
+Omdat macOS een afleiding van BSD is, wordt `/usr/local` het voor voegsel gebruikt `/opt`in plaats van.
+Dat wil zeggen `/usr/local/microsoft/powershell/6.2.0/`, en de symbolische koppeling wordt geplaatst `/usr/local/bin/pwsh`op. `$PSHOME`
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-* [Homebrew Web][brew]
-* [Homebrew Github-opslagplaats][GitHub]
+* [Homebrew-Web][brew]
+* [Homebrew github-opslag plaats][GitHub]
 * [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/

@@ -1,49 +1,57 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC WindowsOptionalFeatureSet-Resource
-ms.openlocfilehash: c27d026e01bbb443a82112e37f1d199fb3482e49
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC WindowsOptionalFeatureSet-resource
+ms.openlocfilehash: f378006a6c362ee9890d70dd76fb552dd262a544
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076970"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323842"
 ---
-# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-Resource
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resource
 
-> Van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows Power shell 5. x
 
-De **WindowsOptionalFeatureSet** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat de optionele functies zijn ingeschakeld op een doelknooppunt.
-Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die roept de [WindowsOptionalFeature-resource](windowsOptionalFeatureResource.md) voor elke functie die is opgegeven in de `Name` eigenschap.
+De **WindowsOptionalFeatureSet** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat optionele functies zijn ingeschakeld op een doel knooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die de [WindowsOptionalFeature-resource](windowsOptionalFeatureResource.md) aanroept voor elk onderdeel dat is opgegeven in de eigenschap **name** .
 
-Gebruik deze resource als u wilt configureren van een aantal optionele functies van Windows naar dezelfde toestand.
+Gebruik deze resource als u een aantal optionele Windows-functies wilt configureren in dezelfde status.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
-WindowsOptionalFeature [string] #ResourceName
+```Syntax
+WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
     [ DependsOn = [string[]] ]
-
+    [ Ensure = [string] { Enable | Disable }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| Naam| Geeft aan dat de naam van de functies die u wilt ervoor zorgen zijn ingeschakeld of uitgeschakeld.|
-| Zorg ervoor dat| Hiermee geeft u op of de functies zijn ingeschakeld. Om ervoor te zorgen dat de functies zijn ingeschakeld en stel deze eigenschap in op 'Inschakelen' om ervoor te zorgen dat de functies zijn uitgeschakeld, de eigenschap instellen op 'Uitschakelen'.|
-| Bron| Niet geïmplementeerd.|
-| NoWindowsUpdateCheck| Hiermee geeft u op of DISM neemt contact op met Windows Update (WU) bij het zoeken naar de bronbestanden voor de functies inschakelen. Als $true, DISM geen contact opnemen met WU.|
-| RemoveFilesOnDisable| Ingesteld op **$true** te verwijderen van alle bestanden die zijn gekoppeld aan de functies wanneer ze worden uitgeschakeld (dat wil zeggen, wanneer **Zorg ervoor dat** is ingesteld op 'Ontbreekt').|
-| Logniveau| Het maximale uitvoerniveau op dat wordt weergegeven in de logboeken. De toegestane waarden zijn: "ErrorsOnly' (alleen fouten worden vastgelegd), 'ErrorsAndWarning' (fouten en waarschuwingen worden geregistreerd), en 'ErrorsAndWarningAndInformation' (fouten, waarschuwingen en gegevens voor foutopsporing worden geregistreerd).|
-| Logboekpad| Het pad naar een logboekbestand waar u de resourceprovider voor aanmelding van de bewerking.|
-| DependsOn| Hiermee geeft u op dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|Name |Hiermee geeft u de naam op van de functies die u wilt inschakelen, worden in-of uitgeschakeld. |
+|Source |Niet geïmplementeerd. |
+|NoWindowsUpdateCheck |Hiermee geeft u op of DISM-contact personen Windows Update (WU) bij het zoeken naar de bron bestanden om functies in te scha kelen. Als `$true`kan DISM geen contact opnemen met Wu. |
+|RemoveFilesOnDisable |Stel deze waarde in omallebestandenteverwijderendiezijngekoppeldaandefunctieswanneerhetisingesteldop`$true` afwezig. |
+|Logniveau |Het maximale uitvoer niveau dat wordt weer gegeven in de logboeken. De geaccepteerde waarden zijn: **ErrorsOnly**, **ErrorsAndWarning**en **ErrorsAndWarningAndInformation**. |
+|Logboekpad |Het pad naar een logboek bestand waar de resource provider de bewerking moet registreren. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of de functies zijn ingeschakeld. Stel deze eigenschap in op **inschakelen**om ervoor te zorgen dat de functies zijn ingeschakeld. Stel de eigenschap in op **uitschakelen**om ervoor te zorgen dat de functies zijn uitgeschakeld. De standaard waarde is **ingeschakeld**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.

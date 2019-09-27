@@ -1,52 +1,65 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-description: Biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt.
-title: DSC GroupSet-Resource
-ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+description: Biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt.
+title: DSC-groeps resource
+ms.openlocfilehash: d36274741b2c96a0852f384ccf5d187ac8d27131
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077174"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324403"
 ---
-# <a name="dsc-groupset-resource"></a>DSC GroupSet-Resource
+# <a name="dsc-groupset-resource"></a>DSC-groeps resource
 
-> Van toepassing op: Windows PowerShell 5.0
+> Van toepassing op: Windows Power shell 5. x
 
-De **GroupSet** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doelknooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die roept de [groep resource](groupResource.md) voor elke groep die is opgegeven in de `GroupName` parameter.
+De **groeps** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die de [groeps bron](groupResource.md) aanroept voor elke groep die `GroupName` in de para meter is opgegeven.
 
-Gebruik deze resource als u wilt toevoegen en/of verwijderen van de dezelfde lijst met leden aan meer dan één groep, meer dan één groep te verwijderen of toevoegen van meer dan één groep met dezelfde lijst met leden.
+Gebruik deze resource als u dezelfde lijst met leden wilt toevoegen aan of verwijderen uit meer dan één groep, als u meer dan één groep wilt verwijderen of meer dan één groep met dezelfde lijst met leden wilt toevoegen.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Members = [string[]] ]
+    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| GroupName| De namen van de groepen waarvoor u wilt om te controleren of een specifieke status.|
-| MembersToExclude| Gebruik deze eigenschap leden verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt er een fout gegenereerd.|
-| Referentie| De referenties die zijn vereist voor toegang tot externe bronnen. **Houd er rekening mee**: Dit account moet hebben tot de juiste Active Directory-machtigingen voor alle niet-lokale accounts toevoegen aan de groep. anders wordt er een fout op.
-| Zorg ervoor dat| Geeft aan of de groepen zijn. Deze eigenschap instellen op 'Ontbreekt' om ervoor te zorgen dat de groepen niet bestaan. Instellen om "" (de standaardwaarde), zorgt u ervoor dat de groepen bestaan.|
-| Leden| Gebruik deze eigenschap om het lidmaatschap van de huidige vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, mag niet een gebruiken de **MembersToExclude** of **MembersToInclude** eigenschap. In dat geval wordt er een fout gegenereerd.|
-| MembersToInclude| Gebruik deze eigenschap leden toevoegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met tekenreeksen van het formulier *domein*\\*gebruikersnaam*. Als u deze eigenschap in een configuratie hebt ingesteld, gebruik niet de **leden** eigenschap. In dat geval wordt er een fout gegenereerd.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = "[ ResourceType] ResourceName"''.|
+|GroupName |De namen van de groepen waarvoor u een specifieke status wilt controleren. |
+|Members |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|Description |De beschrijving van de groep. |
+|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|Referentie |De referenties die nodig zijn voor toegang tot externe bronnen. Dit account moet over de juiste Active Directory machtigingen beschikken om alle niet-lokale accounts aan de groep toe te voegen. anders treedt er een fout op. |
 
-## <a name="example-1-ensuring-groups-are-present"></a>Voorbeeld 1: Ervoor zorgen dat groepen zijn aanwezig
+## <a name="common-properties"></a>Algemene eigenschappen
 
-Het volgende voorbeeld ziet hoe u om ervoor te zorgen dat er twee groepen met de naam "myGroup" en "myOtherGroup" aanwezig zijn.
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of de groepen bestaan. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groepen niet bestaan. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groepen bestaan. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
+
+## <a name="example-1-ensuring-groups-are-present"></a>Voorbeeld 1: Controleren of er groepen aanwezig zijn
+
+In het volgende voor beeld ziet u hoe u ervoor kunt zorgen dat twee groepen met de naam ' myGroup ' en ' myOtherGroup ' aanwezig zijn.
 
 ```powershell
 configuration GroupSetTest
@@ -78,4 +91,4 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> In dit voorbeeld maakt gebruik van referenties zonder gecodeerde tekst voor het gemak. Zie voor meer informatie over het versleutelen van de referenties in het MOF-configuratiebestand [beveiligen van het MOF-bestand](../../../pull-server/secureMOF.md).
+> In dit voor beeld worden Lees bare referenties gebruikt voor eenvoud. Zie [het MOF-bestand beveiligen](../../../pull-server/secureMOF.md)voor meer informatie over het versleutelen van referenties in het MOF-configuratie bestand.

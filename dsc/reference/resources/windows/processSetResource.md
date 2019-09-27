@@ -1,47 +1,55 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC ProcessSet-Resource
-ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-Processet-resource
+ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324249"
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-Resource
+# <a name="dsc-processset-resource"></a>DSC-Processet-resource
 
-_Van toepassing op: Windows PowerShell 5.0_
+> Van toepassing op: Windows Power shell 5. x
 
-De **ProcessSet** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het configureren van processen op een doelknooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die roept de [WindowsProcess-resource](windowsProcessResource.md) voor elke groep die is opgegeven in de `GroupName` parameter.
+De **processet** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het configureren van processen op een doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
-WindowsProcess [string] #ResourceName
+```Syntax
+ProcessSet [string] #ResourceName
 {
-    Arguments = [string]
     Path = [string]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ StandardOutputPath = [string] ]
     [ StandardErrorPath = [string] ]
     [ StandardInputPath = [string] ]
     [ WorkingDirectory = [string] ]
     [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-| Eigenschap | Description |
-| --- | --- |
-| Argumenten| Een tekenreeks met argumenten worden doorgegeven aan de proces-is. Als u meerdere argumenten doorgeven wilt, plaatst u ze allemaal op deze tekenreeks.|
-| Pad| De paden naar het proces uitvoerbare bestanden. Als dit zijn de namen van de uitvoerbare bestanden (geen volledig gekwalificeerde paden), de DSC-resource wordt zoeken in de omgeving **pad** variabele (`$env:Path`) om de bestanden te zoeken. Als de waarden van deze eigenschap volledig gekwalificeerde paden zijn, DSC niet gebruiken de **pad** omgevingsvariabele om de bestanden te zoeken en genereert een fout als een van de paden niet bestaan. Relatieve paden zijn niet toegestaan.|
-| Referentie| Geeft aan dat de referenties voor het starten van het proces.|
-| Zorg ervoor dat| Hiermee geeft u op of de processen bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het proces bestaat. Anders wordt deze ingesteld op 'Ontbreekt'. De standaardwaarde is 'Aanwezig'.|
-| StandardErrorPath| Het pad waarnaar de processen standaardfout schrijven. Er een bestaand bestand wordt overschreven.|
-| StandardInputPath| De stroom van waaruit het proces standaard invoer ontvangt.|
-| StandardOutputPath| Het pad van het bestand waarnaar de processen standaarduitvoer schrijven. Er een bestaand bestand wordt overschreven.|
-| WorkingDirectory| De locatie die wordt gebruikt als de huidige werkmap voor de processen.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **_ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"` .|
+|Eigenschap |Description |
+|---|---|
+|Path |Het pad naar het uitvoer bare proces bestand. Als dit de namen zijn van de uitvoer bare bestanden (niet volledig gekwalificeerde paden), zal de DSC-resource de `$env:Path` omgevings variabele doorzoeken om de bestanden te vinden. Als de waarden van deze eigenschap volledig gekwalificeerde paden zijn, wordt de `$env:Path` omgevings variabele niet gebruikt om de bestanden te vinden en wordt er een fout gegenereerd als een van de paden niet bestaat. Relatieve paden zijn niet toegestaan. |
+|Referentie |Geeft de referenties voor het starten van het proces aan. |
+|StandardErrorPath |Het pad naar de standaard fout voor het schrijven van processen. Eventuele bestaande bestanden worden overschreven. |
+|StandardInputPath |De stroom van waaruit het proces standaard invoer ontvangt. |
+|StandardOutputPath |Het pad van het bestand waarnaar de standaard uitvoer van de processen wordt geschreven. Eventuele bestaande bestanden worden overschreven. |
+|Variabele workingdirectory |De locatie die wordt gebruikt als de huidige werkmap voor de processen. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee geeft u op of de processen bestaan. Stel deze eigenschap in op **aanwezig** om te zorgen dat het proces bestaat. Als dat niet het geval is, stelt u deze in op **afwezig**. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.

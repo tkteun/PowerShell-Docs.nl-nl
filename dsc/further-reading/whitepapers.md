@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
+keywords: DSC, Power shell, configuratie, installatie
 title: Whitepapers
-ms.openlocfilehash: 645378802e1ab592857e442db5bc86ac33817e5e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d89f5410786e2b2889946cd8171d34667701b8b7
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079758"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322912"
 ---
 # <a name="whitepapers"></a>Whitepapers
 
-De volgende technische documenten zijn gepubliceerd voor aanvullende informatie over onderwerpen die betrekking hebben op PowerShell Desired State Configuration.
+De volgende White papers zijn gepubliceerd om aanvullende informatie te geven over onderwerpen met betrekking tot Power shell desired state Configuration.
 
-## <a name="the-release-pipeline-model"></a>Het Model Release-pijplijn
-Er zijn voordelen op wanneer patronen en procedures op basis van de developer-technieken worden toegepast op bewerkingen. Met name, een volledig geautomatiseerde oplossing waarbij de infrastructuur als code wordt beheerd en alle wijzigingen automatisch worden gevalideerd voordat productie wordt bereikt. Dit is een proces shift die tussen de bedrijfstak innovators wordt herkend. Voor organisaties die al gebruik te maken van deze processen, moet duidelijk hoe u Microsoft-platforms. Voor organisaties die niet bekend bent met het onderwerp, moet duidelijk hoe dit proces voor uw omgeving te bieden en wat het betekent als uw organisatie cultuur. Dit document vindt u de onderdelen van een Release-pijplijn voor configuratie als code, de waarde voor bewerkingen en -oplossingen die worden gebruikt bij het ontwerpen van een nieuwe Release-pijplijn-architectuur.
+## <a name="the-release-pipeline-model"></a>Het model van de release pijplijn
+Er zijn voor delen die u moet opdoen wanneer patronen en prak tijken van ontwikkelaars technieken worden toegepast op bewerkingen. Met name een volledig geautomatiseerde oplossing waarbij de infra structuur wordt beheerd als code en alle wijzigingen worden automatisch gevalideerd voordat de productie wordt bereikt. Dit is een proces verschuiving die wordt herkend door toonaangevende vernieuwingen. Voor organisaties die al gebruikmaken van deze processen, moet duidelijk worden hoe micro soft-platformen kunnen worden gebruikt. Voor organisaties die geen ervaring hebben met het onderwerp, moet het duidelijk zijn hoe u dit proces naar uw omgeving brengt en wat het betekent voor uw organisatie-cultuur. Dit document bevat informatie over de onderdelen van een release pijplijn voor configuratie als code, de waarde voor bewerkingen en oplossingen die worden gebruikt bij het ontwerpen van een nieuwe release pijplijn architectuur.
 
-**[PDF-bestand downloaden](http://aka.ms/thereleasepipelinemodelpdf)**
+**[PDF downloaden](https://aka.ms/thereleasepipelinemodelpdf)**

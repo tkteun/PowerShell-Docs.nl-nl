@@ -1,5 +1,5 @@
 ---
-title: Schrijven van een PowerShell-module Windows | Microsoft Docs
+title: Een Windows Power shell-module schrijven | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -10,50 +10,50 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066954"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322944"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module schrijven
 
-In dit voorbeeld laat zien hoe het schrijven van een Windows PowerShell-module die kan worden gebruikt voor het registreren van de cmdlets en providers van Windows PowerShell in een assembly.
+In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft die kan worden gebruikt voor het registreren van alle cmdlets en Windows Power shell-providers in een assembly.
 
-Met dit type-module kan selecteert u niet welke cmdlets en providers die u wilt registreren. Zie voor het schrijven van een module die kunt u selecteren wat is geregistreerd, [schrijven van een aangepaste Windows PowerShell-Snap-in](./writing-a-custom-windows-powershell-snap-in.md).
+Met dit type module selecteert u niet welke cmdlets en providers u wilt registreren. Zie [een aangepaste Windows Power shell-module schrijven](./writing-a-custom-windows-powershell-snap-in.md)voor informatie over het schrijven van een module waarmee u kunt selecteren wat er is geregistreerd.
 
 ### <a name="writing-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module schrijven
 
-1. Het kenmerk RunInstallerAttribute toevoegen.
+1. Voeg het kenmerk RunInstallerAttribute toe.
 
-2. Maak een openbare klasse die is afgeleid van de [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) klasse.
+2. Maak een open bare klasse die is afgeleid van de klasse [System. Management. Automation. PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) .
 
-    In dit voorbeeld is de naam van de klasse 'GetProcPSSnapIn01'.
+    In dit voor beeld is de naam van de klasse ' GetProcPSSnapIn01 '.
 
-3. Toevoegen van een openbare eigenschap voor de naam van de module (vereist). Als naming-modules, gebruik dan niet een van de volgende tekens bevatten: #. , ( ) { } [ ] & - /\ $ ; : " ' \< > ; ? @ ` *
+3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: #. , () {} [] &-/\ $; : "' \< >;? @ ` *
 
-    In dit voorbeeld is de naam van de module 'GetProcPSSnapIn01'.
+    In dit voor beeld is de naam van de module ' GetProcPSSnapIn01 '.
 
-4. Voeg een openbare eigenschap toe voor de leverancier van de module (vereist).
+4. Voeg een open bare eigenschap toe voor de leverancier van de module (vereist).
 
-    In dit voorbeeld wordt is de leverancier 'Microsoft'.
+    In dit voor beeld is de leverancier ' micro soft '.
 
-5. Toevoegen van een openbare eigenschap van de bron van de leverancier van de module (optioneel).
+5. Een open bare eigenschap voor de leveranciers resource van de module toevoegen (optioneel).
 
-    In dit voorbeeld is de leverancierresource 'GetProcPSSnapIn01, Microsoft'.
+    In dit voor beeld is de resource van de leverancier "GetProcPSSnapIn01, micro soft".
 
-6. Toevoegen van een openbare eigenschap voor de beschrijving van de module (vereist).
+6. Voeg een open bare eigenschap toe voor de beschrijving van de module (vereist).
 
-    In dit voorbeeld wordt is de beschrijving "Dit is een Windows PowerShell-module die de cmdlet get-proc registreert".
+    In dit voor beeld is de beschrijving "Dit is een Windows Power shell-module die de cmdlet Get-proc" registreert.
 
-7. Toevoegen van een openbare eigenschap van de bron van de beschrijving van de module (optioneel).
+7. Voeg een open bare eigenschap voor de beschrijvings resource van de module toe (optioneel).
 
-    In dit voorbeeld is de leverancierresource "GetProcPSSnapIn01, dit is een Windows PowerShell-module die de cmdlet get-proc registreert".
+    In dit voor beeld is de resource van de leverancier ' GetProcPSSnapIn01, dit is een Windows Power shell-module die de Get-proc-cmdlet registreert '.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voorbeeld laat zien hoe het schrijven van een Windows PowerShell-module die kan worden gebruikt voor het registreren van de cmdlet Get-procedure in de Windows PowerShell-shell. Let erop dat in dit voorbeeld wordt de volledige assembly alleen de GetProcPSSnapIn01-module-klasse en de cmdlet Get-Proc klasse bevatten zou.
+In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft die kan worden gebruikt om de cmdlet Get-proc te registreren in de Windows Power shell-shell. Houd er rekening mee dat in dit voor beeld de volledige assembly alleen de module GetProcPSSnapIn01 en de klasse Get-proc cmdlet bevat.
 
 ```csharp
 [RunInstaller(true)]
@@ -128,6 +128,6 @@ public class GetProcPSSnapIn01 : PSSnapIn
 
 ## <a name="see-also"></a>Zie ook
 
-[Over het registreren van Providers,-Cmdlets en -toepassingen hosten](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows Power shell shell SDK](../windows-powershell-reference.md)

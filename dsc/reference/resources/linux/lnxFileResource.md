@@ -1,159 +1,159 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxFile-Resource
-ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxFile-resource
+ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078024"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324805"
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile-Resource
+# <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile-resource
 
-De **nxFile** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op een Linux-knooppunt.
+De **nxFile** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxFile <string> #ResourceName
 {
     DestinationPath = <string>
     [ SourcePath = <string> ]
-    [ Ensure = <string> { Absent | Present }  ]
     [ Type = <string> { directory | file | link } ]
     [ Contents = <string> ]
     [ Checksum = <string> { ctime | mtime | md5 }  ]
     [ Recurse = <bool> ]
     [ Force = <bool> ]
-    [ Links = <string> { follow | manage } ]
+    [ Links = <string> { follow | manage | ignore } ]
     [ Group = <string> ]
     [ Mode = <string> ]
     [ Owner = <string> ]
     [ DependsOn = <string[]> ]
-
+    [ Ensure = <string> { Absent | Present }  ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap |  Description |
+|Eigenschap |Description |
 |---|---|
-| DestinationPath| Hiermee geeft u de locatie waar u om te controleren of de status van een bestand of map.|
-| SourcePath| Hiermee geeft u het pad van waaruit de resource van het bestand of map kopiëren. Dit pad is mogelijk een lokaal pad of een `http/https/ftp` URL. Externe `http/https/ftp` URL's worden alleen ondersteund wanneer de waarde van de **Type** eigenschap bestand is.|
-| Zorg ervoor dat| Hiermee bepaalt u of om te controleren of het bestand bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat het bestand bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat het bestand bestaat niet. De standaardwaarde is 'Aanwezig'.|
-| Type| Hiermee geeft u op of de resource wordt geconfigureerd een map of een bestand is. Deze eigenschap instellen op 'directory' om aan te geven dat de resource een map is. Stelt u deze naar het 'bestand' om aan te geven dat de resource een bestand is. De standaardwaarde is 'file'|
-| Inhoud| Hiermee geeft u de inhoud van een bestand, zoals een bepaalde tekenreeks.|
-| Controlesom| Definieert het type te gebruiken bij het bepalen of twee bestanden hetzelfde zijn. Als **controlesom** niet is opgegeven, alleen de naam van bestand of map wordt gebruikt voor de vergelijking. Waarden zijn: 'ctime","mtime"of 'md5'.|
-| Recurse| Hiermee wordt aangegeven als submappen opgenomen worden. Deze eigenschap instellen op **$true** om aan te geven dat u wilt dat de submappen moeten worden opgenomen. De standaardwaarde is **$false**. **Opmerking:** Deze eigenschap is alleen geldig wanneer de **Type** eigenschap is ingesteld op de directory.|
-| Force| Bepaalde bestandsbewerkingen (zoals een bestand te overschrijven of verwijderen van een directory die is niet leeg), een fout leidt. Met behulp van de **Force** eigenschap heeft voorrang op dergelijke fouten. De standaardwaarde is **$false**.|
-| Koppelingen| Hiermee geeft u het gewenste gedrag voor symbolische koppelingen. Deze eigenschap instellen op 'volgen' symbolische koppelingen volgen en reageren op de doel-koppelingen (bijvoorbeeld. Kopieer het bestand in plaats van de koppeling). Deze eigenschap instellen op 'beheren' om te reageren op de koppeling (bijvoorbeeld. Kopieer de koppeling zelf). Deze eigenschap instellen op 'negeren' symbolische koppelingen worden genegeerd.|
-| Groep| De naam van de **groep** eigenaar van het bestand of map.|
-| Modus| Hiermee geeft u de gewenste machtigingen voor de resource in de octale of symbolische-notatie. (bijvoorbeeld 777 of rwxrwxrwx). Als u de symbolische notatie, bieden het eerste teken waarmee wordt aangegeven van de map of het bestand.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|DestinationPath |Hiermee geeft u de locatie op waar u de status van een bestand of map wilt controleren. |
+|Bronpad |Hiermee geeft u het pad op waaruit het bestand of de bron van de map moet worden gekopieerd. Dit pad mag een lokaal pad of een `http/https/ftp` URL zijn. Externe `http/https/ftp` url's worden alleen ondersteund wanneer de waarde van de eigenschap **type** **File**is. |
+|type |Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Stel deze eigenschap in op **Directory** om aan te geven dat de resource een directory is. Stel deze in op **bestand** om aan te geven dat de resource een bestand is. De standaard waarde is **File**. |
+|Inhoud |Hiermee geeft u de inhoud van een bestand, zoals een bepaalde teken reeks. |
+|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Waarden zijn: **ctime**, **mtime**of **MD5**. |
+|Recurse |Hiermee wordt aangegeven of submappen zijn opgenomen. Stel deze eigenschap in `$true` op om aan te geven dat u submappen wilt opnemen. De standaardwaarde is `$false`. Deze eigenschap is alleen geldig wanneer de eigenschap **type** is ingesteld op **Directory**. |
+|Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaardwaarde is `$false`. |
+|koppelen |Hiermee geeft u het gewenste gedrag voor symbolische koppelingen op. Stel deze eigenschap in op **volgen** van symbolische koppelingen volgen en reageren op het doel van de koppelingen. Kopieer bijvoorbeeld het bestand in plaats van de koppeling. Stel deze eigenschap in op **beheren** om op de koppeling te reageren. Kopieer bijvoorbeeld de koppeling zelf. Stel deze eigenschap in op **negeren** om symbolische koppelingen te negeren. |
+|Groep |De naam van de **groep** die machtigingen voor het bestand of de map moet hebben. |
+|Modus |Hiermee geeft u de gewenste machtigingen voor de resource op in een octale of symbolische notatie. Bijvoorbeeld **777** of **rwxrwxrwx**. Als u de symbolische notatie gebruikt, geeft u niet het eerste teken op dat map of bestand aangeeft. |
+|Eigenaar |De naam van de groep die eigenaar is van het bestand of de map. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of het bestand al bestaat. Stel deze eigenschap in op **presen teren** om te controleren of het bestand bestaat. Stel deze in op **afwezig** om te controleren of het bestand niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="additional-information"></a>Als u meer informatie
 
+Linux en Windows gebruiken standaard andere regel-afbreek tekens in tekst bestanden. Dit kan leiden tot onverwachte resultaten bij het configureren van een aantal bestanden op een Linux-computer met **nxFile**. Er zijn meerdere manieren om de inhoud van een Linux-bestand te beheren, terwijl er problemen ontstaan die worden veroorzaakt door onverwachte regel einde tekens:
 
-Linux- en Windows gebruik van verschillende regeleindetekens in tekstbestanden standaard en dit kan leiden tot onverwachte resultaten bij het configureren van bepaalde bestanden op een Linux-computer met __nxFile__. Er zijn meerdere manieren voor het beheren van de inhoud van een Linux-bestand zonder problemen veroorzaakt door onverwachte regeleindetekens:
+1. Het bestand kopiëren van een externe bron (http, https of FTP)
 
-Stap 1: Kopieer het bestand vanaf een externe bron (http, https of ftp): Maak een bestand op Linux met de gewenste inhoud, en de knooppunten die u configureert Faseren op een webserver of FTP-server toegankelijk is. Definieer de __bronpad__ eigenschap in de __nxFile__ resource met de web- of FTP-URL naar het bestand.
+   Maak een bestand op Linux met de gewenste inhoud en werk het op een web-of FTP-server toegankelijk voor de knoop punten die u wilt configureren. Definieer de eigenschap **SourcePath** in de **nxFile** -resource met de web-of FTP-URL voor het bestand.
 
-```
-Import-DSCResource -Module nx
-Node $Node
-{
-nxFile resolvConf
-{
-    SourcePath = "http://10.185.85.11/conf/resolv.conf"
-    DestinationPath = "/etc/resolv.conf"
-    Mode = "644"
-    Type = "file"
+   ```powershell
+   Import-DSCResource -Module nx
 
-}
+   Node $Node
+   {
+      nxFile resolvConf
+      {
+         SourcePath = "http://10.185.85.11/conf/resolv.conf"
+         DestinationPath = "/etc/resolv.conf"
+         Mode = "644"
+         Type = "file"
+      }
+   }
+   ```
 
-}
-```
+1. Lees de bestands inhoud in het Power shell-script met [Get-content](https://technet.microsoft.com/library/hh849787.aspx) nadat u de eigenschap **$OFS** hebt ingesteld op het gebruik van het Linux-regel scheidings teken.
 
+   ```powershell
+   Import-DSCResource -Module nx
 
-Stap 2: Lezen van de inhoud van het bestand in het PowerShell-script met [Get-inhoud](https://technet.microsoft.com/library/hh849787.aspx) nadat u de __$OFS__ eigenschap om de Linux-regeleinde teken te gebruiken.
+   Node $Node
+   {
+      $OFS = "`n"
+      $Contents = Get-Content C:\temp\resolv.conf
 
+      nxFile resolvConf
+      {
+         DestinationPath = "/etc/resolv.conf"
+         Mode = "644"
+         Type = "file"
+         Contents = "$Contents"
+      }
+   }
+   ```
 
-```
-Import-DSCResource -Module nx
-Node $Node
-{
-$OFS = "`n"
-$Contents = Get-Content C:\temp\resolv.conf
+1. Gebruik een Power shell-functie om Windows-regel einden te vervangen door Linux-regel einde tekens.
 
-nxFile resolvConf
-{
-    DestinationPath = "/etc/resolv.conf"
-    Mode = "644"
-    Type = "file"
-    Contents = "$Contents"
-}
+   ```powershell
+   Function LinuxString($inputStr){
+      $outputStr = $inputStr.Replace("`r`n","`n")
+      $outputStr += "`n"
+      Return $outputStr
+   }
 
-}
-```
+   Import-DSCResource -Module nx
 
+   Node $Node
+   {
+      $Contents = @'
+   search contoso.com
+   domain contoso.com
+   nameserver 10.185.85.11
+   '@
+       $Contents = LinuxString $Contents
 
-Stap 3: Een PowerShell-functie gebruiken om te vervangen door Windows met Linux regeleinde tekens regeleinden.
-
-```
-Function LinuxString($inputStr){
-    $outputStr = $inputStr.Replace("`r`n","`n")
-    $ouputStr += "`n"
-    Return $outputStr
-}
-
-Import-DSCResource -Module nx
-Node $Node
-{
-
-$Contents = @'
-search contoso.com
-domain contoso.com
-nameserver 10.185.85.11
-'@
-
-$Contents = LinuxString $Contents
-
-nxFile resolvConf
-{
-    DestinationPath = "/etc/resolv.conf"
-    Mode = "644"
-    Type = "file"
-    Contents = $Contents
-
-}
-}
-```
+      nxFile resolvConf
+      {
+         DestinationPath = "/etc/resolv.conf"
+         Mode = "644"
+         Type = "file"
+         Contents = $Contents
+      }
+   }
+   ```
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld zorgt ervoor dat de map `/opt/mydir` bestaat, en dat een bestand met de opgegeven inhoud deze map bestaat.
+In het volgende voor beeld wordt ervoor `/opt/mydir` gezorgd dat de map bestaat en dat er voor een bestand met de opgegeven inhoud deze map bestaat.
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
-nxFile DirectoryExample
-{
-   Ensure = "Present"
-   DestinationPath = "/opt/mydir"
-   Type = "Directory"
-}
+    nxFile DirectoryExample
+    {
+        Ensure = "Present"
+        DestinationPath = "/opt/mydir"
+        Type = "Directory"
+    }
 
-nxFile FileExample
-{
-    Ensure = "Present"
-    Destinationpath = "/opt/mydir/myfile"
-    Contents=@"
+    nxFile FileExample
+    {
+        Ensure = "Present"
+        Destinationpath = "/opt/mydir/myfile"
+        Contents=@"
 #!/bin/bash`necho "hello world"`n
 "@
-    Mode = “755”
-    DependsOn = "[nxFile]DirectoryExample"
-}
+        Mode = "755"
+        DependsOn = "[nxFile]DirectoryExample"
+    }
 }
 ```

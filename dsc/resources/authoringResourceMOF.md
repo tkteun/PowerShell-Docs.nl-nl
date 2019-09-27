@@ -1,27 +1,27 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Een aangepaste DSC-resource met MOF schrijven
-ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, Power shell, configuratie, installatie
+title: Een aangepaste DSC-resource schrijven met MOF
+ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076732"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323776"
 ---
-# <a name="writing-a-custom-dsc-resource-with-mof"></a>Een aangepaste DSC-resource met MOF schrijven
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>Een aangepaste DSC-resource schrijven met MOF
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In dit onderwerp, we het schema voor een aangepaste Windows PowerShell Desired State Configuration (DSC)-bron in een MOF-bestand definiëren en implementeren van de resource in een Windows PowerShell-scriptbestand. Deze aangepaste resource is voor het maken en onderhouden van een website.
+In dit onderwerp definiëren we het schema voor een aangepaste Windows Power shell-resource voor desired state Configuration (DSC) in een MOF-bestand en implementeert u de bron in een Windows Power shell-script bestand. Deze aangepaste resource is voor het maken en onderhouden van een website.
 
-## <a name="creating-the-mof-schema"></a>Het maken van het MOF-schema
+## <a name="creating-the-mof-schema"></a>Het MOF-schema maken
 
-Het schema bepaalt de eigenschappen van de resource die kunnen worden geconfigureerd door een script voor DSC-configuratie.
+Het schema definieert de eigenschappen van uw resource die kunnen worden geconfigureerd met een DSC-configuratie script.
 
-### <a name="folder-structure-for-a-mof-resource"></a>Mapstructuur voor een MOF-resource
+### <a name="folder-structure-for-a-mof-resource"></a>Mapstructuur voor een MOF-bron
 
-Voor het implementeren van een aangepaste DSC-resource met een MOF-schema, maken de volgende mapstructuur. Het MOF-schema is gedefinieerd in het bestand Demo_IISWebsite.schema.mof en het resource-script is gedefinieerd in Demo_IISWebsite.psm1. U kunt eventueel een module-manifest (psd1)-bestand maken.
+Als u een aangepaste DSC-resource met een MOF-schema wilt implementeren, maakt u de volgende mapstructuur. Het MOF-schema wordt gedefinieerd in het bestand Demo_IISWebsite. schema. mof en het bron script is gedefinieerd in Demo_IISWebsite. psm1. U kunt desgewenst een psd1-bestand (module manifest) maken.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -33,11 +33,11 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
                 |- Demo_IISWebsite.schema.mof (file, required)
 ```
 
-Houd er rekening mee dat het nodig zijn om te maken van een map met de naam DSCResources onder de map op het hoogste niveau is, en dat de map voor elke resource moet dezelfde naam als de resource.
+Houd er rekening mee dat u een map met de naam DSCResources maakt in de map op het hoogste niveau en dat de map voor elke resource dezelfde naam moet hebben als de resource.
 
 ### <a name="the-contents-of-the-mof-file"></a>De inhoud van het MOF-bestand
 
-Hieronder volgt een voorbeeld van de MOF-bestand dat kan worden gebruikt voor de resource van een aangepaste website. Als u wilt volgen in het volgende voorbeeld, dit schema in een bestand opslaan en aanroepen van het bestand *Demo_IISWebsite.schema.mof*.
+Hier volgt een voor beeld van een MOF-bestand dat kan worden gebruikt voor een aangepaste website bron. Als u dit voor beeld wilt volgen, slaat u dit schema op in een bestand en roept u het bestand *Demo_IISWebsite. schema. MOF*aan.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")]
@@ -54,25 +54,25 @@ class Demo_IISWebsite : OMI_BaseResource
 };
 ```
 
-Houd rekening met de volgende met betrekking tot de vorige code:
+Let op het volgende voor gaande code:
 
-* `FriendlyName` bepaalt de naam die u gebruiken kunt om te verwijzen naar deze aangepaste resource in scripts voor DSC-configuratie. In dit voorbeeld `Website` is gelijk aan de beschrijvende naam `Archive` voor de ingebouwde archiefresource.
-* De klasse die u definieert voor uw aangepaste resource moet zijn afgeleid van `OMI_BaseResource`.
-* De kwalificatie type `[Key]`op een eigenschap geeft aan dat deze eigenschap unieke identificatie van de resource-instantie. Ten minste één `[Key]` eigenschap is vereist.
-* De `[Required]` kwalificatie geeft aan dat de eigenschap vereist is (er moet een waarde worden opgegeven in een script voor de configuratie die gebruikmaakt van deze resource).
-* De `[write]` kwalificatie geeft aan dat deze eigenschap optioneel is bij het gebruik van de aangepaste resource in een configuratiescript. De `[read]` kwalificatie geeft aan dat een eigenschap kan niet worden ingesteld door een configuratie, en is alleen voor rapportagedoeleinden.
-* `Values` beperkt de waarden die kunnen worden toegewezen aan de eigenschap aan de lijst met waarden die zijn gedefinieerd `ValueMap`. Zie voor meer informatie, [ValueMap en waarde kwalificaties](/windows/desktop/WmiSdk/value-map).
-* Met inbegrip van een eigenschap met de naam `Ensure` met waarden `Present` en `Absent` in de bron wordt aanbevolen als een manier voor het onderhouden van een consistente stijl met ingebouwde DSC-resources.
-* Noem het schemabestand voor uw aangepaste resources als volgt: `classname.schema.mof`, waarbij `classname` is de id die volgt op de `class` sleutelwoord in uw schemadefinitie.
+* `FriendlyName`Hiermee definieert u de naam die u kunt gebruiken om te verwijzen naar deze aangepaste resource in de DSC-configuratie scripts. In dit voor beeld `Website` is gelijk aan de beschrijvende naam `Archive` voor de ingebouwde archief bron.
+* De klasse die u definieert voor uw aangepaste resource moet zijn afgeleid `OMI_BaseResource`van.
+* De type kwalificatie `[Key]`,, op een eigenschap geeft aan dat deze eigenschap het bron exemplaar uniek identificeert. Er is ten `[Key]` minste één eigenschap vereist.
+* De `[Required]` kwalificatie geeft aan dat de eigenschap vereist is (er moet een waarde worden opgegeven in een configuratie script dat gebruikmaakt van deze bron).
+* De `[write]` kwalificatie geeft aan dat deze eigenschap optioneel is wanneer u de aangepaste resource in een configuratie script gebruikt. De `[read]` kwalificatie geeft aan dat een eigenschap niet kan worden ingesteld met een configuratie en alleen voor rapportage doeleinden.
+* `Values`Hiermee worden de waarden die kunnen worden toegewezen aan de eigenschap, beperkt tot de lijst met waarden die `ValueMap`zijn gedefinieerd in. Zie voor meer informatie [ValueMap en waarde-kwalificaties](/windows/desktop/WmiSdk/value-map).
+* Het toevoegen van een `Ensure` eigenschap met `Present` de `Absent` naam waarden en in uw resource wordt aanbevolen als een manier om een consistente stijl met ingebouwde DSC-resources te onderhouden.
+* Noem het schema bestand voor uw aangepaste resource als volgt: `classname.schema.mof`, waarbij `classname` de id is gevolgd door het `class` sleutel woord in uw schema definitie.
 
-### <a name="writing-the-resource-script"></a>Schrijven van de resource-scripts
+### <a name="writing-the-resource-script"></a>Het resource script wordt geschreven
 
-De resource-script implementeert de logica van de resource. In deze module, moet u drie functies met de naam opnemen **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource**. Alle drie de functies neemt een parameterset die identiek is aan de set eigenschappen die zijn gedefinieerd in het MOF-schema dat u hebt gemaakt voor uw resource. In dit document, wordt deze reeks eigenschappen aangeduid als het "resource-eigenschappen." Deze drie functies in een bestand met de naam Store <ResourceName>.psm1. In het volgende voorbeeld worden de functies worden opgeslagen in een bestand met de naam Demo_IISWebsite.psm1.
+Het bron script implementeert de logica van de resource. In deze module moet u drie functies gebruiken met de naam **Get-TargetResource**, **set-TargetResource**en **test-TargetResource**. Alle drie de functies moeten een parameterset hebben die identiek is aan de set eigenschappen die zijn gedefinieerd in het MOF-schema dat u voor uw resource hebt gemaakt. In dit document wordt deze set eigenschappen aangeduid als de ' resource-eigenschappen '. Sla deze drie functies op in een bestand <ResourceName>met de naam. psm1. In het volgende voor beeld worden de functies opgeslagen in een bestand met de naam Demo_IISWebsite. psm1.
 
 > [!NOTE]
-> Wanneer u de dezelfde configuratiescript voor uw resource meer dan één keer uitvoert, ontvangt u geen fouten en de resource moet blijven in dezelfde staat als het script is één keer uitgevoerd. U doet dit door ervoor te zorgen dat uw **Get-TargetResource** en **Test TargetResource** functies laat de bron niet gewijzigd en deze aan te roepen de **Set-TargetResource**werken meer dan één keer in een reeks met dezelfde parameter waarden is altijd gelijk is aan één keer aanroepen.
+> Wanneer u hetzelfde configuratie script voor uw resource meer dan één keer uitvoert, worden er geen fouten weer gegeven en moet de resource dezelfde status blijven als het script eenmaal uit te voeren. Om dit te bewerkstelligen, moet u ervoor zorgen dat de functies **Get-TargetResource** en **test-TargetResource** de resource ongewijzigd laten en dat de functie **set-TargetResource** meerdere keren wordt aangeroepen in een reeks met dezelfde para meter waarden zijn altijd hetzelfde als het aanroepen van de waarde.
 
-In de **Get-TargetResource** functie-implementatie, de belangrijkste resource eigenschapswaarden die zijn opgegeven als parameters gebruiken om te controleren of de status van de opgegeven resource-exemplaar. Deze functie moet een hash-tabel met een lijst met alle resource-eigenschappen als sleutels en de werkelijke waarden van deze eigenschappen als de bijbehorende waarden retourneren. De volgende code geeft een voorbeeld.
+Gebruik in de implementatie **Get-TargetResource** functie de belangrijkste eigenschaps waarden van de bron die zijn opgegeven als para meters om de status van het opgegeven bron exemplaar te controleren. Deze functie moet een hash-tabel retour neren met een lijst van alle bron eigenschappen als sleutels en de werkelijke waarden van deze eigenschappen als de bijbehorende waarden. De volgende code bevat een voor beeld.
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
@@ -123,13 +123,13 @@ function Get-TargetResource
 }
 ```
 
-Afhankelijk van de waarden die zijn opgegeven voor de resource-eigenschappen in het configuratiescript van de **Set TargetResource** moet een van de volgende handelingen uit:
+Afhankelijk van de waarden die zijn opgegeven voor de bron eigenschappen in het configuratie script, moet de **set-TargetResource** een van de volgende handelingen uitvoeren:
 
 * Een nieuwe website maken
 * Een bestaande website bijwerken
 * Een bestaande website verwijderen
 
-Het volgende voorbeeld ziet u dit.
+In het volgende voor beeld ziet u dit.
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine.
@@ -166,9 +166,9 @@ function Set-TargetResource
 }
 ```
 
-Ten slotte de **Test TargetResource** functie moet rekening houden met de dezelfde parameter is ingesteld als **Get-TargetResource** en **Set TargetResource**. Bij de implementatie van **Test TargetResource**, Controleer de status van de resource-exemplaar dat is opgegeven in de belangrijke parameters. Als de huidige status van het exemplaar van de resource komt niet overeen met de opgegeven waarden in de parameter is ingesteld, retourneren **$false**. Anders **$true**.
+Ten slotte moet de functie **test-TargetResource** dezelfde para meter instellen als **Get-TargetResource** en **set-TargetResource**. Controleer in uw implementatie van **test-TargetResource**de status van het bron exemplaar dat is opgegeven in de sleutel parameters. Als de werkelijke status van het bron exemplaar niet overeenkomt met de waarden die zijn opgegeven in de parameterset, retourneert **$False**. Als dat niet het geval is, retourneert u **$True**.
 
-De volgende code implementeert de **Test TargetResource** functie.
+Met de volgende code wordt de functie **test-TargetResource** geïmplementeerd.
 
 ```powershell
 function Test-TargetResource
@@ -215,13 +215,13 @@ $result
 }
 ```
 
-**Houd er rekening mee**: Voor eenvoudiger foutopsporing, gebruikt u de **Write-Verbose** cmdlet in uw implementatie van de vorige drie functies.
->Deze cmdlet schrijft tekst naar de uitgebreide berichtenstroom.
->Standaard wordt de uitgebreide berichtenstroom niet weergegeven, maar u kunt deze weergeven door het wijzigen van de waarde van de **$VerbosePreference** variabele of met behulp van de **uitgebreid** parameter in de DSC-cmdlets = nieuw.
+**Opmerking**: Voor eenvoudiger fout opsporing gebruikt u de cmdlet **Write-verbose** in uw implementatie van de vorige drie functies.
+>Met deze cmdlet wordt tekst naar de uitgebreide berichten stroom geschreven.
+>De uitgebreide berichten stroom wordt standaard niet weer gegeven, maar u kunt deze weer geven door de waarde van de **$VerbosePreference** variabele te wijzigen of door de **uitgebreide** para meter in de DSC-cmdlets = New te gebruiken.
 
-### <a name="creating-the-module-manifest"></a>Het maken van de module-manifest
+### <a name="creating-the-module-manifest"></a>Het module manifest maken
 
-Gebruik tot slot de **New-ModuleManifest** cmdlet voor het definiëren van een <ResourceName>.psd1-bestand voor uw aangepaste resource-module. Als u deze cmdlet aanroepen, verwijst naar het scriptbestand voor module (.psm1) die worden beschreven in de vorige sectie. Opnemen **Get-TargetResource**, **Set TargetResource**, en **Test TargetResource** in de lijst met functies om te exporteren. Hieronder volgt een voorbeeld van de manifest-bestand.
+Gebruik ten slotte de cmdlet **New-ModuleManifest** om een <ResourceName>psd1-bestand voor uw aangepaste resource module te definiëren. Wanneer u deze cmdlet aanroept, verwijst u naar het script module bestand (. psm1) dat wordt beschreven in de vorige sectie. Neem **Get-TargetResource**, **set-TargetResource**en **test-TargetResource** op in de lijst met functies die moeten worden geëxporteerd. Hier volgt een voor beeld van een manifest bestand.
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -275,16 +275,16 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a>Ondersteunende PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential ondersteunen
 
->**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in PowerShell 5.0 en hoger.
+>**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in power shell 5,0 en hoger.
 
-De **PsDscRunAsCredential** eigenschap kan worden gebruikt [DSC-configuraties](../configurations/configurations.md) resource blokkeren om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
-Zie voor meer informatie, [DSC uitvoeren met gebruikersreferenties](../configurations/runAsUser.md).
+De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie](../configurations/configurations.md) bron blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
+Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md)voor meer informatie.
 
-U kunt de automatische variabele gebruiken voor toegang tot de gebruikerscontext uit binnen een aangepaste resource, `$PsDscContext`.
+Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$PsDscContext`gebruiken.
 
-Bijvoorbeeld schrijft de volgende code de gebruikerscontext waarmee de resource wordt uitgevoerd naar de stroom uitgebreide uitvoer:
+Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -292,15 +292,15 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="rebooting-the-node"></a>Het knooppunt opnieuw wordt opgestart
+## <a name="rebooting-the-node"></a>Het knoop punt opnieuw opstarten
 
-Als de acties die zijn uitgevoerd in uw `Set-TargetResource` functie moeten worden opgestart, kunt u een globale vlag u vertelt de LCM om het knooppunt opnieuw opstarten. Deze opnieuw worden opgestart plaatsvindt direct na de `Set-TargetResource` functie is voltooid.
+Als voor de acties die in `Set-TargetResource` de functie worden uitgevoerd, opnieuw moet worden opgestart, kunt u een globale vlag gebruiken om te geven dat de LCM het knoop punt opnieuw moet opstarten. Het opnieuw opstarten vindt direct nadat `Set-TargetResource` de functie is voltooid.
 
-Binnen uw `Set-TargetResource` functie, voeg de volgende coderegel toe.
+Voeg in `Set-TargetResource` de functie de volgende regel code toe.
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-De LCM om het knooppunt opnieuw opstarten zodat de **RebootNodeIfNeeded** markering moet worden ingesteld op `$true`. De **ActionAfterReboot** instelling moet ook worden ingesteld op **ContinueConfiguration**, dit is de standaardinstelling. Zie voor meer informatie over het configureren van de LCM [de Local Configuration Manager configureren](../managing-nodes/metaConfig.md), of [Local Configuration Manager (v4) configureren](../managing-nodes/metaConfig4.md).
+Om het knoop punt opnieuw op te starten, moet de **RebootNodeIfNeeded** -vlag worden ingesteld op `$true`. De **ActionAfterReboot** -instelling moet ook worden ingesteld op **ContinueConfiguration**. Dit is de standaard waarde. Zie [de lokale Configuration Manager configureren](../managing-nodes/metaConfig.md)of [de lokale Configuration Manager configureren (v4)](../managing-nodes/metaConfig4.md)voor meer informatie over het configureren van de LCM.

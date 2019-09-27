@@ -1,121 +1,121 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Informatie over de DSC-rol in een CI/CD-pijplijn
-ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, Power shell, configuratie, installatie
+title: Informatie over de rol van DSC in een CI/CD-pijp lijn
+ms.openlocfilehash: a8e2e6ef4634216ae7468384b8e1f4d849bb997a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079798"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324968"
 ---
-# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de DSC-rol in een CI/CD-pijplijn
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
 
-Dit artikel beschrijft de soorten methoden voor het combineren van configuraties en resources.
-Het doel voor elk scenario is hetzelfde, te verminderen van complexiteit wanneer meerdere configuraties voorkeur een server end Implementatiestatus bereiken.
-Een voorbeeld hiervan is meerdere teams die bijdragen aan het resultaat van een server-implementatie, zoals de eigenaar van een toepassing status van de toepassing en een centraal team brengt wijzigingen aan basisbeveiliging gehandhaafd blijft.
-De aspecten van elke methode met inbegrip van de voordelen en risico's, worden hier beschreven.
+In dit artikel worden de soorten benaderingen beschreven die beschikbaar zijn voor het combi neren van configuraties en resources.
+Het doel van elk scenario is hetzelfde, om de complexiteit te reduceren wanneer meerdere configuraties de voor keur hebben om de eind status van de server implementatie te bereiken.
+Een voor beeld hiervan is dat meerdere teams bijdragen aan het resultaat van een server implementatie, zoals een toepassings eigenaar die de toepassings status bijhoudt en een centraal team wijzigingen in de beveiligings basislijnen aanbrengt.
+De nuances van elke benadering, met inbegrip van de voor delen en risico's, worden hier beschreven.
 
 ![Pijplijn](../images/Pipeline.jpg)
 
-## <a name="types-of-collaborative-authoring-techniques"></a>Typen gezamenlijke Authoring technieken
+## <a name="types-of-collaborative-authoring-techniques"></a>Typen technieken voor gezamenlijk ontwerpen
 
-Er zijn twee oplossingen die zijn ingebouwd in Local Configuration Manager zodat dit concept:
+Er zijn twee oplossingen ingebouwd in lokale Configuration Manager om dit concept in te scha kelen:
 
 | Concept | Gedetailleerde informatie
 |-|-
 | Gedeeltelijke configuraties | [Documentatie](../pull-server/partialConfigs.md)
-| Samengestelde Resources | [Documentatie](../resources/authoringResourceComposite.md)
+| Samengestelde resources | [Documentatie](../resources/authoringResourceComposite.md)
 
-## <a name="understanding-the-impact-of-each-approach"></a>De invloed van elke methode
+## <a name="understanding-the-impact-of-each-approach"></a>Het effect van elke benadering
 
-Een van deze oplossingen kan worden gebruikt voor het beheren van de uitkomst van een server-implementatie.
-Er is echter aanzienlijk verschil zijn in de gevolgen van het gebruik van elke methode.
+Een van deze oplossingen kan worden gebruikt om het resultaat van een server implementatie te beheren.
+Er is echter een aanzienlijk verschil in de impact van het gebruik van elke benadering.
 
 ## <a name="partial-configurations"></a>Gedeeltelijke configuraties
 
-Bij het gebruik van gedeeltelijke configuraties worden Local Configuration Manager is geconfigureerd voor het beheren van configuraties met meerdere onafhankelijk van elkaar.
-Configuraties worden gecompileerd onafhankelijk en vervolgens toegewezen aan het knooppunt.
-Dit vereist LCM vooraf worden geconfigureerd met de naam van elke configuratie.
+Bij het gebruik van gedeeltelijke configuraties is lokale Configuration Manager geconfigureerd om meerdere configuraties onafhankelijk te beheren.
+Configuraties worden onafhankelijk gecompileerd en vervolgens toegewezen aan het knoop punt.
+Hiervoor moet LCM vooraf worden geconfigureerd met de naam van elke configuratie.
 
 ![PartialConfiguration](../images/PartialConfiguration.jpg)
 
-Gedeeltelijke configuraties bieden twee of meer teams volledige controle over configuratie van een server, vaak zonder het voordeel van de communicatieservices of samenwerkingsservices.
+Gedeeltelijke configuraties bieden twee of meer teams die de configuratie van een server volledig kunnen beheren, vaak zonder het voor deel van communicatie of samen werking.
 
-Feedback die dit tot bronconflicten, onbedoelde onderdrukkingen en uiteindelijk verlies van true Configuratiebeheer van de activa leiden kan van klanten hebt gegeven.
+Klanten hebben feedback gegeven die dit kan leiden tot bron conflicten, onbedoelde onderdrukkingen en uiteindelijk verlies van echte configuratie beheer van de Asset.
 
-Bovendien hebben klanten feedback dat wanneer u dit model, elke beheren teams configuratiewijzigingen waarschijnlijk niet volledig worden getest via een release-pijplijn, die leiden tot onverwachte resultaten in de productieomgeving.
+Daarnaast hebben klanten feedback gegeven die bij het gebruik van dit model de configuratie wijzigingen van teams beheert waarschijnlijk niet volledig worden getest via een release pijplijn, waardoor onverwachte resultaten ontstaan bij de productie.
 
-**Het is essentieel dat één pijplijn worden gebruikt voor het evalueren van alle wijzigingen release op servers.**
+**Het is essentieel dat één pijp lijn wordt gebruikt om alle wijzigingen te evalueren die aan servers worden vrijgegeven.**
 
-In de onderstaande afbeelding Team B hun Team A. Team een gedeeltelijke configuratie worden vrijgegeven en vervolgens wordt de tests uitgevoerd op een server met beide configuraties toegepast.
-In dit model is slechts één instantie gemachtigd wijzigingen aanbrengen in de productieomgeving.
+In de onderstaande afbeelding heeft Team B hun gedeeltelijke configuratie vrijgegeven aan team A. team A voert vervolgens hun tests uit op een server waarop beide configuraties zijn toegepast.
+In dit model is slechts één instantie gemachtigd om wijzigingen aan te brengen in de productie.
 
 ![PartialSinglePipeline](../images/PartialSinglePipeline.jpg)
 
-Wanneer er wijzigingen nodig uit de B-Team zijn, dienen ze een Pull-aanvragen op basis van Team van een besturingselement bronomgeving.
-Team een zou vervolgens Bekijk de wijzigingen met behulp van test automation en vrijgeven naar productie wanneer er vertrouwen te geven dat de wijzigingen niet leiden fouten in de toepassingen of services die worden gehost door de server tot.
+Als er wijzigingen zijn vereist van Team B, moeten ze een pull-aanvraag indienen bij de bron beheer omgeving van team A.
+Team A bekijkt vervolgens de wijzigingen met behulp van test automatisering en release to Production wanneer er betrouw baarheid is dat de wijzigingen geen fouten veroorzaken in de toepassingen of services die door de server worden gehost.
 
-## <a name="composite-resources"></a>Samengestelde Resources
+## <a name="composite-resources"></a>Samengestelde resources
 
-Een samengestelde resource is gewoon een DSC-configuratie die zijn verpakt als een resource.
-Er zijn geen speciale vereisten voor het configureren van LCM samengestelde resources accepteren.
-De resources worden gebruikt in een nieuwe configuratie en een enkele compilatie resulteert in een MOF-bestand.
+Een samengestelde resource is een DSC-configuratie die is verpakt als een resource.
+Er zijn geen speciale vereisten voor het configureren van LCM om samengestelde resources te accepteren.
+De resources worden gebruikt binnen een nieuwe configuratie en een enkele compilatie resulteert in één MOF-bestand.
 
 ![CompositeResource](../images/CompositeResource.jpg)
 
-Er zijn twee algemene scenario's voor samengestelde resources.
-De eerste is complex en abstracte unieke concepten te verminderen.
-De tweede is om toe te staan basislijnen om te worden verpakt voor een team van toepassing voor het veilig implementeren via hun release-pijplijn naar productie nadat alle tests zijn geslaagd.
+Er zijn twee veelvoorkomende scenario's voor samengestelde resources.
+De eerste is om complexiteit en abstracte unieke concepten te reduceren.
+De tweede is om toe te staan dat basis lijnen worden verpakt zodat een toepassings team veilig kan worden geïmplementeerd via hun release pijplijn tot productie nadat alle tests zijn geslaagd.
 
 ```PowerShell
 Configuration Name
 {
   File 1
   {
-    Ensure = “Present”
-    Path = “c:\inetpub\file1.zip”
-    Source = “http://uri/file1.zip”
+    Ensure = "Present"
+    Path = "c:\inetpub\file1.zip"
+    Source = "http://uri/file1.zip"
   }
   Service A
   {
-    Ensure = “Present”
-    Name = “ServiceA”
-    Status = “Running”
+    Ensure = "Present"
+    Name = "ServiceA"
+    Status = "Running"
   }
   SecurityBaseline Settings
   {
-    Ensure = “Present”
-    Datacenter = “NorthAmerica”
+    Ensure = "Present"
+    Datacenter = "NorthAmerica"
   }
 }
 ```
 
-Samengestelde resources bevordering van zowel de samenstelling en de samenwerking met behulp van een pijplijn tijdens het maken van operationele vervaldatum
+Samengestelde resources bevorderen zowel samen stelling als samen werking met behulp van een pijp lijn tijdens het bouwen van een operationele rijpheid
 
-U mogelijk al gebruikt samengestelde resources gerust.
-Een voorbeeld is **ServiceSet**.
-Deze resource beheert de status van meerdere Windows-Services zonder dat ze afzonderlijk.
-De eigenschap Name accepteert een matrix met tekenreeksen met de naam van elke service op te geven.
-Wanneer de configuratie wordt gecompileerd, bevat het MOF voor elk van de namen die is doorgegeven aan ServiceSet een unieke Service-sectie.
+Mogelijk maakt u al gebruik van samengestelde resources zonder deze te realiseren.
+Een voor beeld is **serviceset**.
+Deze resource beheert de status van meerdere Windows-Services zonder deze afzonderlijk te hoeven aanbieden.
+De eigenschap name accepteert een matrix met teken reeksen om de naam van elke service op te geven.
+Wanneer de configuratie is gecompileerd, bevat de MOF een unieke service sectie voor elk van de namen die worden door gegeven aan serviceset.
 
-Organisaties mogelijk 'agents' of 'middleware' die moet worden geïnstalleerd op elke server.
-Een samengestelde resource is het beste antwoord voor het beheren van de afhankelijkheden, instellingen en configuratie van deze hulpprogramma's en hulpprogramma's.
+Organisaties kunnen "agents" of "middleware" hebben die op elke server moeten worden geïnstalleerd.
+Een samengestelde resource is het beste antwoord op het beheren van de afhankelijkheden, het instellen en configureren van dergelijke hulpprogram ma's en hulpprogram ma's.
 
-De persoon die of het team dat verantwoordelijk is voor oplossingen waarbij meerdere servers omvatten ontwikkelt een configuratie met de vereisten.
-Vervolgens zou de configuratie worden geleverd als een samengestelde resource met behulp van instructies hiervoor vindt u in de documentatie van samengestelde resource.
-Ten slotte de nieuwe samengestelde resource moet worden gepubliceerd naar een locatie zoals een bestandsshare of NuGet feed toepassingsteams waar deze kan gebruiken in hun configuraties.
+De persoon of het team dat verantwoordelijk is voor oplossingen die meerdere servers beslaan, is een configuratie met hun vereisten.
+Vervolgens wordt de configuratie gebundeld als een samengestelde resource met behulp van de instructies in de documentatie voor de samengestelde resource.
+Ten slotte moet de nieuwe samengestelde resource worden gepubliceerd op een locatie zoals een bestands share of NuGet feed waar toepassings teams deze kunnen gebruiken in hun configuraties.
 
-Telkens wanneer die het team een nieuwe versie geeft, zouden ze Verhoog het versienummer in de module-manifest voor de samengestelde resource.
-De App-teams omvatten de samengestelde resource in de configuratie die ze zelf voor het beheren van afhankelijkheden voor toepassingen.
-Wanneer de Operations-/ beveiligingsteams een nieuwe versie van de resource kennis ze de App-teams van een nieuwe wijziging.
+Telkens wanneer het team een nieuwe versie loslaat, wordt het versie nummer in het module manifest voor de samengestelde resource verhoogd.
+De toepassings teams bevatten de samengestelde resource in de configuratie die ze ontwerpen voor het beheren van toepassings afhankelijkheden.
+Wanneer de operations/Security-teams een nieuwe versie van hun resource vrijgeven, melden ze de toepassings teams van een nieuwe wijziging.
 
-De App-teams mogelijk een release naar productie waarop de enige wijziging basislijnen wordt geactiveerd.
-Dit biedt echter een kans om te evalueren van invloed op toepassingen voordat het risico van een serviceonderbreking.
+De toepassings teams kunnen een vrijgave voor productie activeren waarbij alleen de basis lijnen worden gewijzigd.
+Dit biedt echter een kans om de impact op toepassingen te evalueren voordat het risico op een service storing optreedt.
 
-Houd er rekening mee - Feedback over het gebruik van samengestelde resources is kritiek dat u wijzigingen vereist compileren en het vrijgeven van een nieuwe MOF opgenomen.
+Opmerking: feedback over het gebruik van samengestelde resources bevat criticism die wijzigingen aanbrengen vereist het compileren en uitgeven van een nieuwe MOF.
 Dit vindt standaard plaats.
-Elke nieuwe versie van de configuratie van een statische verwijzing naar een specifieke versie van elke resource moet bevatten en moet worden gevalideerd door testen alvorens productie serverknooppunten.
-Het proces van het testen en brengt wijzigingen vanuit broncodebeheer Hiermee maakt u een veilige omgeving voor het vrijgeven van de wijziging in kleine, maar vaak batches.
+Elke nieuwe configuratie release moet een statische verwijzing naar een specifieke versie van elke resource bevatten en moet worden gevalideerd door tests voordat productie server knooppunten worden bereikt.
+Het proces van het testen en vrijgeven van wijzigingen van broncode beheer maakt een veilige omgeving voor het vrijgeven van wijzigingen in kleine, maar veelvuldige batches.
 
-Zie het technische document voor meer informatie over het gebruik van de release-pijplijnen voor het beheren van infrastructuur: [Het Model van de pijplijn Release](../further-reading/whitepapers.md).
+Zie het technisch document voor meer informatie over het gebruik van release pijplijnen voor het beheren van de basis infrastructuur: [Het model van de release pijplijn](../further-reading/whitepapers.md).

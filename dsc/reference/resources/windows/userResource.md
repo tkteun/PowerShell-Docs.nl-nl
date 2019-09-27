@@ -1,52 +1,62 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Gebruiker van de DSC-Resource
-ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-gebruikers resource
+ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076891"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324056"
 ---
-# <a name="dsc-user-resource"></a>Gebruiker van de DSC-Resource
+# <a name="dsc-user-resource"></a>DSC-gebruikers resource
 
-Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De **gebruiker** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale gebruikersaccounts op het doelknooppunt.
+De **gebruikers** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale gebruikers accounts op het doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 User [string] #ResourceName
 {
     UserName = [string]
     [ Description = [string] ]
     [ Disabled = [bool] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ FullName = [string] ]
     [ Password = [PSCredential] ]
     [ PasswordChangeNotAllowed = [bool] ]
     [ PasswordChangeRequired = [bool] ]
     [ PasswordNeverExpires = [bool] ]
     [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| UserName| Geeft de accountnaam waarvan u wilt om te controleren of een specifieke status.|
-| Description| Geeft aan dat de beschrijving die u wilt gebruiken voor het gebruikersaccount.|
-| Uitgeschakeld| Geeft aan of het account is ingeschakeld. Deze eigenschap instellen op `$true` om ervoor te zorgen dat dit account is uitgeschakeld, en stel deze in op `$false` om ervoor te zorgen dat deze is ingeschakeld.|
-| Zorg ervoor dat| Geeft aan of het account bestaat. Deze eigenschap instellen op 'Aanwezig' om ervoor te zorgen dat het account bestaat en stel deze in op 'Ontbreekt' om ervoor te zorgen dat het account niet bestaat.|
-| Volledige naam| Hiermee geeft u een tekenreeks zijn met de volledige naam die u wilt gebruiken voor het gebruikersaccount.|
-| Wachtwoord| Geeft het wachtwoord die u wilt gebruiken voor dit account. |
-| PasswordChangeNotAllowed| Hiermee wordt aangegeven als de gebruiker het wachtwoord kunt wijzigen. Deze eigenschap instellen op `$true` om ervoor te zorgen dat de gebruiker kan niet het wachtwoord wijzigen en stel deze in op `$false` zodat de gebruiker het wachtwoord te wijzigen. De standaardwaarde is `$false`.|
-| PasswordChangeRequired| Hiermee wordt aangegeven als de gebruiker het wachtwoord bij de volgende aanmelding moet wijzigen. Deze eigenschap instellen op `$true` als de gebruiker het wachtwoord moet wijzigen. De standaardwaarde is `$true`.|
-| PasswordNeverExpires| Hiermee wordt aangegeven als het wachtwoord verloopt. Om ervoor te zorgen dat het wachtwoord voor dit account nooit verloopt, deze eigenschap instellen op `$true`, en stel deze in op `$false` als het wachtwoord verloopt. De standaardwaarde is `$false`.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|UserName |Hiermee wordt de account naam aangegeven waarvoor u een specifieke status wilt waarborgen. |
+|Description |Hiermee geeft u de beschrijving op die u wilt gebruiken voor het gebruikers account. |
+|Uitgeschakeld |Hiermee wordt aangegeven of het account is ingeschakeld. Stel deze eigenschap in `$true` op om ervoor te zorgen dat dit account is uitgeschakeld en stel `$false` dit in op om ervoor te zorgen dat deze is ingeschakeld. |
+|Volledige naam |Hiermee geeft u een teken reeks met de volledige naam die u wilt gebruiken voor het gebruikers account. |
+|Wachtwoord |Hiermee geeft u het wacht woord op dat u wilt gebruiken voor dit account. |
+|PasswordChangeNotAllowed |Hiermee wordt aangegeven of de gebruiker het wacht woord kan wijzigen. Stel deze eigenschap in `$true` op om ervoor te zorgen dat de gebruiker het wacht woord niet kan wijzigen `$false` en stel in om de gebruiker in staat te stellen het wacht woord te wijzigen. De standaardwaarde is `$false`. |
+|PasswordChangeRequired |Hiermee wordt aangegeven of de gebruiker het wacht woord moet wijzigen bij de volgende aanmelding. Stel deze eigenschap in `$true` op als de gebruiker het wacht woord moet wijzigen. De standaardwaarde is `$true`. |
+|PasswordNeverExpires |Hiermee wordt aangegeven of het wacht woord verloopt. Stel deze eigenschap in `$true`op om ervoor te zorgen dat het wacht woord voor dit account nooit verloopt. Stel deze waarde `$false` in op als het wacht woord verloopt. De standaardwaarde is `$false`. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of het account bestaat. Stel deze eigenschap in op aanwezig om er zeker van te **zijn** dat het account bestaat en stel het in op **afwezig** om ervoor te zorgen dat het account niet bestaat. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 

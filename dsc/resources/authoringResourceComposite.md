@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Samengestelde resources--met behulp van een DSC-configuratie als een resource
-ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, Power shell, configuratie, installatie
+title: 'Samengestelde resources: met behulp van een DSC-configuratie als resource'
+ms.openlocfilehash: ef8d5665e552da01977c2f21a43246c72bb7155f
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076681"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323787"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: Met behulp van een DSC-configuratie als een resource
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: Een DSC-configuratie gebruiken als resource
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In praktijksituaties, worden de configuraties kunnen worden lange en complexe, aanroepen van veel verschillende bronnen en het instellen van een groot aantal eigenschappen. Om te helpen deze complexe adres, kunt u een Windows PowerShell Desired State Configuration (DSC)-configuratie als een resource voor andere configuraties. We noemen dit een samengestelde resource. Een samengestelde resource is een DSC-configuratie die parameters zijn vereist. De parameters van de configuratie van de fungeren als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met een **. schema.psm1** -extensie en wordt de locatie van de MOF-schema- en de resource een script in een typische DSC-resource (Zie voor meer informatie over DSC-resources [Windows PowerShell Desired State Configuration Resources](resources.md).
+In praktijk situaties kunnen configuraties lang en complex worden, waardoor veel verschillende bronnen worden aangeroepen en een groot aantal eigenschappen kan worden ingesteld. U kunt deze complexiteit helpen aanpakken door een Windows Power shell desired state Configuration (DSC)-configuratie te gebruiken als een resource voor andere configuraties. Dit is een samengestelde resource. Een samengestelde resource is een DSC-configuratie waarvoor para meters worden gebruikt. De para meters van de configuratie Act als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met de extensie **. schema. psm1** en neemt de plaats van zowel het MOF-schema als het bron script op in een typische DSC-resource (Zie de [gewenste status van Windows Power shell voor meer informatie over DSC-resources Configuratie resources](resources.md).
 
-## <a name="creating-the-composite-resource"></a>Het maken van de samengestelde resource
+## <a name="creating-the-composite-resource"></a>De samengestelde resource maken
 
-In ons voorbeeld maken we een configuratie die een aantal bestaande resources voor het configureren van virtuele machines aanroept. In plaats van de waarden worden ingesteld in blokken van de configuratie op te geven, wordt de configuratie van een aantal parameters die worden gebruikt in de configuratie-blokken.
+In ons voor beeld maken we een configuratie die een aantal bestaande resources aanroept om virtuele machines te configureren. In plaats van de waarden op te geven die moeten worden ingesteld in configuratie blokken, neemt de configuratie een aantal para meters die vervolgens worden gebruikt in de configuratie blokken.
 
 ```powershell
 Configuration xVirtualMachine
@@ -133,13 +133,13 @@ Configuration xVirtualMachine
 
 ### <a name="saving-the-configuration-as-a-composite-resource"></a>De configuratie opslaan als een samengestelde resource
 
-Voor het gebruik van de configuratie van de parameters als een DSC-resource, opslaan in een directory-structuur, zoals die van een andere op basis van MOF bron en deze met de naam een **. schema.psm1** extensie. In dit voorbeeld wordt het bestand naam **xVirtualMachine.schema.psm1**. U moet ook maken van een manifestbestand met de naam **xVirtualMachine.psd1** die de volgende regel bevat. Let op: dit is een aanvulling op **MyDscResources.psd1**, de module-manifest voor alle resources onder de **MyDscResources** map.
+Als u de geparametriseerde configuratie wilt gebruiken als een DSC-resource, slaat u deze op in een directory structuur, zoals die van een andere op MOF gebaseerde resource, en geef deze de naam met de extensie **. schema. psm1** . In dit voor beeld noemen we het bestand **xVirtualMachine. schema. psm1**. U moet ook een manifest maken met de naam **xVirtualMachine. psd1** die de volgende regel bevat. Houd er rekening mee dat dit een aanvulling is op **MyDscResources. psd1**, het module manifest voor alle resources in de map **MyDscResources** .
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
-Wanneer u klaar bent, moet de mapstructuur als volgt.
+Wanneer u klaar bent, moet de mapstructuur de volgende zijn.
 
 ```
 $env: psmodulepath
@@ -151,11 +151,11 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-De resource kan nu worden gedetecteerd met behulp van de cmdlet Get-sleutelwoorden dscresource bieden en de eigenschappen kunnen worden gevonden door een van beide die cmdlet of met behulp van **Ctrl + spatie** automatisch aanvullen in de Windows PowerShell ISE.
+De resource kan nu worden gedetecteerd met behulp van de cmdlet Get-Dscresource bieden en de bijbehorende eigenschappen kunnen worden gedetecteerd door die cmdlet of door het automatisch volt ooien van **Ctrl + spatie balk** te gebruiken in de Windows PowerShell ISE.
 
-## <a name="using-the-composite-resource"></a>Met behulp van de samengestelde resource
+## <a name="using-the-composite-resource"></a>De samengestelde Resource gebruiken
 
-Vervolgens maken we een configuratie die de samengestelde resource aanroept. Deze configuratie roept de xVirtualMachine samengestelde resource voor het maken van een virtuele machine en roept vervolgens de **xComputer** resource te wijzigen.
+Vervolgens maken we een configuratie die de samengestelde resource aanroept. Deze configuratie roept de xVirtualMachine-samengestelde bron op om een virtuele machine te maken en roept vervolgens de **xComputer** -resource aan om de naam ervan te wijzigen.
 
 ```powershell
 
@@ -188,16 +188,16 @@ configuration RenameVM
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a>Ondersteunende PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential ondersteunen
 
->**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in PowerShell 5.0 en hoger.
+>**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in power shell 5,0 en hoger.
 
-De **PsDscRunAsCredential** eigenschap kan worden gebruikt [DSC-configuraties](../configurations/configurations.md) resource blokkeren om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
-Zie voor meer informatie, [DSC uitvoeren met gebruikersreferenties](../configurations/runAsUser.md).
+De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie](../configurations/configurations.md) bron blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
+Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md)voor meer informatie.
 
-U kunt de automatische variabele gebruiken voor toegang tot de gebruikerscontext uit binnen een aangepaste resource, `$PsDscContext`.
+Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$PsDscContext`gebruiken.
 
-Bijvoorbeeld schrijft de volgende code de gebruikerscontext waarmee de resource wordt uitgevoerd naar de stroom uitgebreide uitvoer:
+Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -207,5 +207,5 @@ if ($PsDscContext.RunAsUser) {
 
 ## <a name="see-also"></a>Zie ook
 ### <a name="concepts"></a>Concepten
-* [Een aangepaste DSC-resource met MOF schrijven](authoringResourceMOF.md)
-* [Aan de slag met Windows PowerShell Desired State Configuration](../overview/overview.md)
+* [Een aangepaste DSC-resource schrijven met MOF](authoringResourceMOF.md)
+* [Aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)

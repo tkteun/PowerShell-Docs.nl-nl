@@ -1,5 +1,5 @@
 ---
-title: Schrijven van een Windows PowerShell-hosttoepassing | Microsoft Docs
+title: Een Windows Power shell-hosttoepassing schrijven | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855090"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323502"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Een Windows PowerShell-hosttoepassing schrijven
 
-U kunt Windows PowerShell hosten in uw toepassing. De host-toepassing kunt definiëren de runspace waarin opdrachten zijn uitgevoerd, opent u sessies op een lokale of externe computer en aanroepen van de opdrachten die een synchroon of asynchroon op basis van de behoeften van de toepassing.
+U kunt Windows Power shell in uw toepassing hosten. De hosttoepassing kan de runs Pace definiëren waar opdrachten worden uitgevoerd, sessies openen op een lokale of externe computer en de opdrachten synchroon of asynchroon aanroepen op basis van de behoeften van de toepassing.
 
-De volgende onderwerpen wordt uitgelegd hoe u een toepassing maakt die als host fungeert van de Windows PowerShell.
+In de volgende onderwerpen wordt uitgelegd hoe u een toepassing maakt die als host fungeert voor Windows Power shell.
 
 ## <a name="in-this-section"></a>In deze sectie
 
-[Quick Start Windows PowerShell-Host](./windows-powershell-host-quickstart.md) bevat instructies en voorbeelden van code om u te helpen aan de slag hosting van toepassingen maken.
+[Snelstartgids voor Windows Power shell-host](./windows-powershell-host-quickstart.md) Biedt instructies en code voorbeelden om u te helpen bij het maken van hosttoepassingen.
 
-[Het maken van Runspaces](./creating-runspaces.md) een set onderwerpen waarin wordt uitgelegd hoe u runspaces voor het uitvoeren van Windows PowerShell-opdracht in een host-toepassing maken.
+[Runspaces maken](./creating-runspaces.md) Een reeks onderwerpen waarin wordt uitgelegd hoe u runspaces maakt om Windows Power shell-opdracht uit te voeren in een hosttoepassing.
 
-[Toe te voegen en aan te roepen opdrachten](./adding-and-invoking-commands.md) wordt uitgelegd hoe u maken en uitvoeren van een pijplijn opdracht in uw hosttoepassing...
+[Opdrachten toevoegen en aanroepen](./adding-and-invoking-commands.md) Hierin wordt uitgelegd hoe u een opdracht pijplijn maakt en uitvoert in uw host-toepassing.
 
-[Het maken van externe runspaces](./creating-remote-runspaces.md) wordt uitgelegd hoe u een runspace verbinden met een externe computer.
+[Externe Runspaces maken](./creating-remote-runspaces.md) Hierin wordt uitgelegd hoe u een runs Pace verbindt met een externe computer.
 
-[Het maken van een aangepaste gebruikersinterface](./creating-a-custom-user-interface.md) Introduces aangepaste gebruiker interfaces en vindt u koppelingen naar voorbeelden.
+[Een aangepaste gebruikers interface maken](./creating-a-custom-user-interface.md) Hierin worden aangepaste gebruikers interfaces geïntroduceerd en vindt u koppelingen naar voor beelden.
 
-[Voorbeelden van gebruikerstoepassingen hosten](./host-application-samples.md) in deze sectie bevat voorbeelden van volledige hosting van toepassingen.
+Voor [beelden van hosttoepassingen](./host-application-samples.md) Deze sectie bevat voor beelden van complete host-toepassingen.
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)

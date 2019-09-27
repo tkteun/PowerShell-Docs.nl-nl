@@ -1,23 +1,23 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC-Pakketresource
-ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC-pakket resource
+ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077191"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324297"
 ---
-# <a name="dsc-package-resource"></a>DSC-Pakketresource
+# <a name="dsc-package-resource"></a>DSC-pakket resource
 
-_Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De **pakket** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van pakketten, zoals Windows Installer en setup.exe pakketten, op een doelknooppunt.
+De **pakket** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakketten, zoals Windows Installer en Setup. exe-pakketten, op een doel knooppunt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 Package [string] #ResourceName
 {
     Name = [string]
@@ -25,30 +25,40 @@ Package [string] #ResourceName
     ProductId = [string]
     [ Arguments = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present }  ]
     [ LogPath = [string] ]
-    [ DependsOn = [string[]] ]
     [ ReturnCode = [UInt32[]] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-| Eigenschap | Description |
-| --- | --- |
-| Naam| Geeft de naam van het pakket waarvan u wilt om te controleren of een specifieke status.|
-| Pad| Geeft het pad waar het pakket zich bevindt.|
-| ProductId| Geeft de product-ID die een unieke identificatie van het pakket.|
-| Argumenten| Geeft een lijst van een tekenreeks van de argumenten die worden doorgegeven aan het pakket precies hetzelfde als de opgegeven.|
-| Referentie| Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket is altijd geïnstalleerd op het lokale systeem.|
-| Zorg ervoor dat| Geeft aan of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig"Controleer of dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.|
-| Logboekpad| Geeft het volledige pad waar u wilt dat de provider een logboekbestand om te installeren of verwijderen van het pakket op te slaan.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| ReturnCode| Geeft aan dat de verwachte retourcode. Als de werkelijke retourcode komt niet overeen met die zijn de verwachte waarde die hier beschikbaar zijn, dat de configuratie wordt een fout geretourneerd.|
+|Eigenschap |Description |
+|---|---|
+|Name |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
+|Path |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
+|ProductId |Hiermee wordt de product-ID aangegeven waarmee het pakket uniek wordt geïdentificeerd. |
+|Argumenten |Een lijst met argumenten die precies zo worden door gegeven aan het pakket. |
+|Referentie |Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket wordt altijd op het lokale systeem geïnstalleerd. |
+|Logboekpad |Hiermee wordt het volledige pad aangegeven waar u wilt dat de provider een logboek bestand opslaat om het pakket te installeren of te verwijderen. |
+|Return code |Geeft de verwachte retour code aan. Als de daad werkelijke retour code niet overeenkomt met de verwachte waarde die hier wordt opgegeven, wordt er een fout geretourneerd door de configuratie. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of het pakket is geïnstalleerd. Stel deze eigenschap in op **afwezig** om te controleren of het pakket niet is geïnstalleerd (of verwijder het pakket als dit is geïnstalleerd). Stel deze in op **aanwezig** om te controleren of het pakket is geïnstalleerd. De standaard waarde is **aanwezig**. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld wordt het MSI-installatieprogramma dat zich bevindt in het opgegeven pad en de opgegeven product-id heeft.
+In dit voor beeld wordt het MSI-installatie programma uitgevoerd dat zich bevindt in het opgegeven pad en heeft de opgegeven product-ID.
 
 ```powershell
 Configuration PackageTest

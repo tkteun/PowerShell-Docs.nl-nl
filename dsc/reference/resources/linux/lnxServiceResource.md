@@ -1,21 +1,21 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxService-Resource
-ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxService-resource
+ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324644"
 ---
-# <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService-Resource
+# <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService-resource
 
-De **nxService** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van services op een Linux-knooppunt.
+De **nxService** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxService <string> #ResourceName
 {
     Name = <string>
@@ -26,28 +26,34 @@ nxService <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-| Eigenschap | Description |
+|Eigenschap |Description |
 |---|---|
-| Naam| De naam van de service/daemon te configureren.|
-| Controller| Het type servicecontroller te gebruiken bij het configureren van de service.|
-| Ingeschakeld| Geeft aan of de service wordt gestart bij het opstarten.|
-| Status| Geeft aan of de service wordt uitgevoerd. Deze eigenschap instellen op 'Stopped' om ervoor te zorgen dat de service niet wordt uitgevoerd. Stel deze in op "Uitvoeren" om ervoor te zorgen dat de service niet wordt uitgevoerd.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
+|Name |De naam van de service/daemon die moet worden geconfigureerd. |
+|Regelaar |Het type service controller dat moet worden gebruikt bij het configureren van de service. |
+|Enabled |Hiermee wordt aangegeven of de service wordt gestart bij het opstarten. |
+|State |Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap in op **gestopt** om er zeker van te zijn dat de service niet wordt uitgevoerd. Stel deze in op **wordt uitgevoerd** om ervoor te zorgen dat de service wordt uitgevoerd. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
 
 ## <a name="additional-information"></a>Als u meer informatie
 
-De **nxService** resource niet maakt u een servicedefinitie of het script voor de service als deze niet bestaat. U kunt de PowerShell Desired State Configuration **nxFile** Resource resource voor het beheren van de aanwezigheid of de inhoud van het servicedefinitiebestand of script.
+Met de **nxService** -resource wordt geen service definitie of script voor de service gemaakt als deze niet bestaat. U kunt de Power shell desired state Configuration **nxFile** resource Resource gebruiken om het bestaan of de inhoud van het service definitie bestand of-script te beheren.
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld ziet u configuratie van de service 'httpd' (voor Apache HTTP Server), geregistreerd bij de **SystemD** servicecontroller.
+In het volgende voor beeld ziet u de configuratie van de ' httpd-service (voor Apache HTTP-server) die is geregistreerd bij de **Gesystemde** service controller.
 
 ```powershell
 Import-DSCResource -Module nx
 
-Node $node {
+Node $node
+{
     #Apache Service
     nxService ApacheService {
         Name = 'httpd'

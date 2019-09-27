@@ -1,5 +1,5 @@
 ---
-title: Plannen van taken met de Windows PowerShell-API | Microsoft Docs
+title: Taken plannen met de Windows Power shell-API | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080353"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322960"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a>Plannen van taken met de PowerShell-API
+# <a name="scheduling-jobs-with-the-powershell-api"></a>Taken plannen met de Power shell-API
 
-U kunt de objecten die worden weergegeven door de **Microsoft.PowerShell.ScheduledJob** naamruimte om het volgende te doen:
+U kunt de objecten die worden weer gegeven door de naam ruimte **micro soft. Power shell. ScheduledJob** gebruiken om het volgende te doen:
 
 - Een geplande taak maken.
-- Bepalen wanneer de taak wordt uitgevoerd.
-- Resultaten van over de voltooide taak ophalen.
+- Definiëren wanneer de taak wordt uitgevoerd.
+- Resultaten van de voltooide taak ophalen.
 
-## <a name="triggering-the-job"></a>De taak wordt geactiveerd
+## <a name="triggering-the-job"></a>De taak activeren
 
-De eerste stap bij het maken van een geplande taak is op te geven wanneer de taak moet worden uitgevoerd. Dit doen door het maken en configureren van een **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object. De volgende code maakt een trigger die een taak één keer in de toekomst 20 seconden wordt uitgevoerd.
+De eerste stap bij het maken van een geplande taak wordt opgegeven wanneer de taak moet worden uitgevoerd. Doe dit door een **micro soft. Power shell. ScheduledJob. ScheduledJobTrigger** -object te maken en te configureren. Met de volgende code wordt een trigger gemaakt waarmee een taak wordt gepland om één keer 20 seconden in de toekomst uit te voeren.
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -40,18 +40,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>De taak definiëren
 
-Een PowerShell-taak definieert u het maken van een woordenlijst parameter. De volgende parameters worden ondersteund:
+U definieert een Power shell-taak door een parameter woordenlijst te maken. De volgende para meters worden ondersteund:
 
-|Parameternaam|Description|
+|Parameter naam|Description|
 |--------------------|-----------------|
-|**Naam**|De naam van de taak.|
-|**ScriptBock**|Een blok van de PowerShell-script waarmee wordt aangegeven wat de taak doet.|
-|**FilePath**|Pad naar een bestand met een PowerShell-scriptblok om op te geven wat de taak doet.|
-|**InitializationScript**|Een blok van de PowerShell-script waarmee de taak wordt geïnitialiseerd.|
-|**ArgumentList**|Een matrix met objecten die argumenten opgeeft die het duurt de taak uit.|
-|**RunAs32**|Een Booleaanse waarde waarmee wordt aangegeven of de taak uitvoeren in een 32-bits proces.|
+|**Name**|De naam van de taak.|
+|**ScriptBock**|Een Power shell-script blok dat aangeeft wat de taak doet.|
+|**Bestandspad**|Pad naar een bestand dat een Power shell-script blok bevat om op te geven wat de taak doet.|
+|**InitializationScript**|Een Power shell-script blok dat de taak initialiseert.|
+|**Argument List**|Een matrix met objecten die argumenten opgeven die de taak in beslag neemt.|
+|**RunAs32**|Een Booleaanse waarde die aangeeft of de taak moet worden uitgevoerd in een 32-bits proces.|
 
-De volgende code maakt een parameter dictionary-object en stelt de **naam** en **ScriptBlock** parameters.
+Met de volgende code wordt een parameter woordenboek object gemaakt en worden de **naam** -en **script Block** -para meters ingesteld.
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>De aanroep en -taak maken definitie objecten
+## <a name="creating-the-invocation-and-job-definition-objects"></a>De aanroep-en taak definitie objecten maken
 
-Vervolgens maakt u `ScheduledJobInvocationInfo` en `ScheduledJobDefinition` objecten voor het uitvoeren van de taak, zoals wordt weergegeven in het volgende voorbeeld:
+Vervolgens maakt `ScheduledJobInvocationInfo` u en `ScheduledJobDefinition` objecten om de taak uit te voeren, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>Registreren van de taak met de Taakplanner
+## <a name="registering-the-job-with-the-task-scheduler"></a>De taak registreren bij de taak planner
 
-De volgende code wordt geregistreerd voor de taak met de [Windows Taakplanner](http://go.microsoft.com/fwlink/?LinkId=251817).
+Met de volgende code wordt de taak geregistreerd bij de [Windows-taak planner](https://go.microsoft.com/fwlink/?LinkId=251817).
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a>Volledige code voorbeeld
+## <a name="complete-code-example"></a>Volledig code voorbeeld
 
-Hier volgt het volledige codevoorbeeld van waaruit de vorige codefragmenten zijn uitgevoerd.
+Hieronder ziet u het volledige code voorbeeld van waaruit de vorige fragmenten zijn gemaakt.
 
 ```csharp
 using System;

@@ -1,55 +1,62 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC WaitForSome Resource
-ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC WaitForSome-resource
+ms.openlocfilehash: 91589c84518a2bd0f4816d11aa011dec1d5305e1
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324017"
 ---
-# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome Resource
+# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resource
 
-> Van toepassing op: Windows PowerShell 5.0 en hoger
+> Van toepassing op: Windows Power shell 5. x
 
-De **WaitForSome** Desired State Configuration (DSC)-bron kan worden gebruikt binnen een blok knooppunt in een [DSC-configuratie](../../../configurations/configurations.md) afhankelijkheden opgeven voor configuraties op andere knooppunten.
+De resource van de desired state Configuration (DSC) **WaitForSome** kan worden gebruikt binnen een knooppunt blok in een [DSC-configuratie](../../../configurations/configurations.md) om afhankelijkheden op te geven voor de configuraties op andere knoop punten.
 
-Deze resource is geslaagd als de resource die is opgegeven door de **ResourceName** eigenschap bevindt zich in de gewenste status op een minimum aantal knooppunten (opgegeven door **NodeCount**) gedefinieerd door de **knooppuntnaam**  eigenschap.
+Deze resource slaagt als de resource die is opgegeven door de eigenschap **ResourceName** de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount**) dat is gedefinieerd door de eigenschap **nodenaam** .
 
 > [!NOTE]
-> **WaitForSome** resource maakt gebruik van Windows Remote Management om te controleren of de status van andere knooppunten.
-> Zie voor meer informatie over de poort en beveiligingsvereisten voor WinRM [PowerShell Remoting Security Considerations](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> **WaitForSome** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 WaitForSome [String] #ResourceName
 {
     NodeCount = [UInt32]
     NodeName = [string[]]
     ResourceName = [string]
-    [DependsOn = [string[]]]
-    [PsDscRunAsCredential = [PSCredential]]
-    [RetryCount = [UInt32]]
-    [RetryIntervalSec = [UInt64]]
-    [ThrottleLimit = [UInt32]]
+    [ RetryCount = [UInt32] ]
+    [ RetryIntervalSec = [UInt64] ]
+    [ ThrottleLimit = [UInt32] ]
+    [ DependsOn = [string[]] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| NodeCount| Het minimum aantal knooppunten dat in de gewenste status voor deze resource worden moet te voltooien.|
-| NodeName| De doelknooppunten van de resource afhankelijk.|
-| ResourceName| De naam van de resource afhankelijk. Als deze resource tot een andere configuratie behoort, maakt u de naam op als ' [__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
-| RetryIntervalSec| Het aantal seconden alvorens het opnieuw te proberen. Minimumwaarde is 1.|
-| RetryCount| Het maximale aantal nieuwe pogingen.|
-| ThrottleLimit| Het aantal machines tegelijk verbinding kunnen maken. Standaard is de nieuwe-cimsession standaard.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is __ResourceName__ en het type __ResourceType__, de syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | Zie [DSC gebruiken met de referenties van gebruiker](https://docs.microsoft.com/powershell/dsc/runasuser) |
+|NodeCount |Het minimum aantal knoop punten dat in de gewenste status voor deze resource moet worden uitgevoerd. |
+|NodeName |De doel knooppunten van de resource waarvan afhankelijk is. |
+|ResourceName |De resource naam waarvan afhankelijk is. Als deze resource deel uitmaakt van een andere configuratie, moet u `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`de naam indelen als. |
+|RetryIntervalSec |Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1. |
+|retryCount |Het maximum aantal keren dat opnieuw moet worden geprobeerd. |
+|ThrottleLimit |Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+
+> [!NOTE]
+> De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
 ## <a name="example"></a>Voorbeeld
 
-Zie voor een voorbeeld van het gebruik van deze resource [afhankelijkheden van meerdere knooppunten opgeven](../../../configurations/crossNodeDependencies.md)
+Zie [afhankelijkheden van meerdere knoop punten opgeven](../../../configurations/crossNodeDependencies.md) voor een voor beeld van het gebruik van deze bron.

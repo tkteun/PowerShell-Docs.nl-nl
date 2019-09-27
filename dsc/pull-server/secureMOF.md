@@ -1,90 +1,90 @@
 ---
 ms.date: 10/31/2017
-keywords: DSC, powershell, configuratie en installatie
-title: Het MOF-bestand te beveiligen
-ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, Power shell, configuratie, installatie
+title: Het MOF-bestand beveiligen
+ms.openlocfilehash: 4ca540303cb740ac602bce181e0e446efcd16b6e
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079324"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324886"
 ---
-# <a name="securing-the-mof-file"></a>Het MOF-bestand te beveiligen
+# <a name="securing-the-mof-file"></a>Het MOF-bestand beveiligen
 
-> Van toepassing op: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-DSC wordt de configuratie van server-knooppunten beheerd door toe te passen die zijn opgeslagen in een MOF-bestand, waarbij de lokale Configuration Manager (LCM) de status van de gewenste end implementeert.
-Omdat dit bestand de details van de configuratie bevat, is het belangrijk om veilig te houden.
-In dit onderwerp wordt beschreven hoe om te controleren of het doelknooppunt het bestand is versleuteld.
+DSC beheert de configuratie van server knooppunten door gegevens die zijn opgeslagen in een MOF-bestand toe te passen, waarbij de lokale Configuration Manager (LCM) de gewenste eind status implementeert.
+Omdat dit bestand de details van de configuratie bevat, is het belang rijk om het beveiligd te blijven.
+In dit onderwerp wordt beschreven hoe u ervoor zorgt dat het bestand is versleuteld met het doel knooppunt.
 
-Beginnen met de PowerShell-versie 5.0, het gehele MOF-bestand is standaard versleuteld wanneer deze wordt toegepast op het knooppunt met behulp van de `Start-DSCConfiguration` cmdlet.
-De procedure beschreven in dit artikel is vereist alleen bij het implementeren van een oplossing met behulp van de pull-service-protocol als certificaten niet worden beheerd, om te controleren of de configuraties die zijn gedownload door het doelknooppunt kunnen worden ontsleuteld en worden gelezen door het systeem voordat ze worden toegepast (bijvoorbeeld de pull-service beschikbaar is in Windows Server).
-Knooppunten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) automatisch certificaten geïnstalleerd en beheerd door de service met geen administratieve overhead vereist.
+Vanaf Power shell versie 5,0 wordt het volledige MOF-bestand standaard versleuteld wanneer het wordt toegepast op het knoop punt `Start-DSCConfiguration` met behulp van de-cmdlet.
+Het proces dat in dit artikel wordt beschreven, is alleen vereist bij het implementeren van een oplossing met het pull-service protocol als certificaten niet worden beheerd, om ervoor te zorgen dat de configuraties die door het doel knooppunt worden gedownload, kunnen worden ontsleuteld en gelezen voordat ze worden toegepast. (bijvoorbeeld de pull-service die beschikbaar is in Windows Server).
+Knoop punten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) , hebben automatisch certificaten geïnstalleerd en beheerd door de service zonder dat er administratieve overhead nodig is.
 
 > [!NOTE]
-> In dit onderwerp worden de certificaten die worden gebruikt voor versleuteling.
-> Voor versleuteling, wordt een zelfondertekend certificaat voldoende is, omdat de persoonlijke sleutel wordt altijd bewaard geheim en versleuteling impliceert geen vertrouwen in het document.
-> Zelfondertekende certificaten moeten *niet* worden gebruikt voor verificatiedoeleinden wordt gebruikt.
-> U moet een certificaat van een vertrouwde certificeringsinstantie (CA) gebruiken voor verificatiedoeleinden.
+> In dit onderwerp worden de certificaten beschreven die worden gebruikt voor versleuteling.
+> Voor versleuteling is een zelfondertekend certificaat voldoende, omdat de persoonlijke sleutel altijd geheim is en versleuteling niet het vertrouwen van het document impliceert.
+> Zelfondertekende certificaten mogen *niet* worden gebruikt voor verificatie doeleinden.
+> U moet een certificaat van een vertrouwde certificerings instantie (CA) gebruiken voor verificatie doeleinden.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor het versleutelen is van de referenties die worden gebruikt voor het beveiligen van een DSC-configuratie, zorg ervoor dat u het volgende:
+Zorg ervoor dat u over het volgende beschikt om de referenties te versleutelen die worden gebruikt voor het beveiligen van een DSC-configuratie:
 
-- **Een manier van uitgeven en distribueren van certificaten**. In dit onderwerp en de voorbeelden wordt ervan uitgegaan dat u gebruikmaakt van Active Directory-certificeringsinstantie. Zie voor meer achtergrondinformatie over Active Directory Certificate Services, [overzicht van Active Directory Certificate Services](https://technet.microsoft.com/library/hh831740.aspx) en [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
-- **Beheerderstoegang tot het doelknooppunt of knooppunten**.
-- **Elk doelknooppunt heeft een versleuteling geschikt certificaat opgeslagen van de persoonlijke Store**. In Windows PowerShell is het pad naar de store Cert: \LocalMachine\My. De voorbeelden in dit onderwerp gebruikt u de sjabloon "verificatie van werkstation" die u (samen met andere certificaatsjablonen vinden kunt) op [standaardcertificaatsjablonen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
-- Als u deze configuratie op een andere computer dan het doelknooppunt uitvoert **Exporteer de openbare sleutel van het certificaat**, en vervolgens importeren naar de computer die u de configuratie wordt uitgevoerd. Zorg ervoor dat u alleen exporteert de **openbare** sleutel; de persoonlijke sleutel te beveiligen.
+- **Een aantal manieren om certificaten te verlenen en te distribueren**. In dit onderwerp en de voor beelden wordt ervan uitgegaan dat u Active Directory certificerings instantie gebruikt. Zie [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx)(Engelstalig) voor meer achtergrond informatie over Active Directory Certificate Services.
+- **Beheerders toegang tot het doel knooppunt of de knoop punten**.
+- **Elk doel knooppunt heeft een persoonlijk archief dat geschikt is voor versleuteling**. Het pad naar de Store van Windows Power shell is certificaat: \ LocalMachine\My. In de voor beelden in dit onderwerp wordt gebruikgemaakt van de sjabloon voor verificatie van werk station, die u kunt vinden (samen met andere certificaat sjablonen) op [standaard certificaat sjablonen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+- Als u deze configuratie op een andere computer dan het doel knooppunt wilt uitvoeren, **exporteert u de open bare sleutel van het certificaat**en importeert u het vervolgens naar de computer waarop u de configuratie wilt uitvoeren. Zorg ervoor dat u alleen de **open bare** sleutel exporteert. Zorg ervoor dat de persoonlijke sleutel is beveiligd.
 
-## <a name="overall-process"></a>Algehele proces
+## <a name="overall-process"></a>Algemeen proces
 
- 1. Instellen van de certificaten, sleutels en vingerafdrukken, ervoor te zorgen dat elk doelknooppunt kopieën van het certificaat heeft en de configuratie-computer de openbare sleutel en de vingerafdruk heeft.
- 2. Maak een configuratie-gegevensblokken die het pad en de vingerafdruk van de openbare sleutel bevat.
- 3. Maakt een configuratiescript die definieert de gewenste configuratie op voor het doelknooppunt en decodering van de doelknooppunten ingesteld door de lokale configuratie appautonomie manager om de van configuratiegegevens met behulp van het certificaat en de vingerafdruk te ontsleutelen.
- 4. Voer de configuratie, waardoor de Local Configuration Manager-instellingen en start de DSC-configuratie.
+ 1. Stel de certificaten, sleutels en vinger afdrukken in om ervoor te zorgen dat elk doel knooppunt kopieën van het certificaat heeft en de configuratie computer de open bare sleutel en vinger afdruk heeft.
+ 2. Maak een blok met configuratie gegevens dat het pad en de vinger afdruk van de open bare sleutel bevat.
+ 3. Maak een configuratie script dat uw gewenste configuratie definieert voor het doel knooppunt en stelt ontsleuteling in voor de doel knooppunten door de lokale Configuration Manager te gebruiken om de configuratie gegevens te ontsleutelen met behulp van het certificaat en de vinger afdruk.
+ 4. Voer de configuratie uit, waarmee de lokale Configuration Manager instellingen worden ingesteld en de DSC-configuratie wordt gestart.
 
 ![Diagram1](../images/CredentialEncryptionDiagram1.png)
 
-## <a name="certificate-requirements"></a>Vereisten voor certificaten
+## <a name="certificate-requirements"></a>Certificaat vereisten
 
-Als u wilt gerapporteerd versleuteling van referenties, een openbare-sleutelcertificaat moet beschikbaar zijn op de _doelknooppunt_ dat wil zeggen **vertrouwde** door de computer die wordt gebruikt voor het maken van de DSC-configuratie.
-Deze openbare-sleutelcertificaat dat heeft specifieke vereisten voor de oplossing worden gebruikt voor versleuteling van de DSC-referenties:
+Als u referentie versleuteling wilt instellen, moet er een certificaat met een open bare sleutel beschikbaar zijn op het _doel knooppunt_ dat wordt **vertrouwd** door de computer die wordt gebruikt voor het ontwerpen van de DSC-configuratie.
+Aan deze open bare-sleutel certificaat kunnen specifieke vereisten worden gebruikt voor het versleutelen van DSC-referenties:
 
-1. **Sleutelgebruik**:
-   - Moet bevatten: 'Keyencipherment-bit' en 'DataEncipherment'.
-   - Moet _niet_ bevatten: 'De digitale handtekening'.
-2. **Enhanced Key Usage**:
-   - Moet bevatten: Document-versleuteling (1.3.6.1.4.1.311.80.1).
-   - Moet _niet_ bevatten: Clientverificatie (1.3.6.1.5.5.7.3.2) en serververificatie (1.3.6.1.5.5.7.3.1).
-3. De persoonlijke sleutel voor het certificaat is beschikbaar op de * Node_ doel.
-4. De **Provider** voor het certificaat moet 'Microsoft RSA SChannel Cryptographic Provider'.
+1. **Sleutel gebruik**:
+   - Moet bevatten: ' KeyEncipherment ' en ' DataEncipherment '.
+   - Mag _niet_ bevatten: Digitale hand tekening.
+2. **Uitgebreid sleutel gebruik**:
+   - Moet bevatten: Document Encryption (1.3.6.1.4.1.311.80.1).
+   - Mag _niet_ bevatten: Client verificatie (1.3.6.1.5.5.7.3.2) en Server verificatie (1.3.6.1.5.5.7.3.1).
+3. De persoonlijke sleutel voor het certificaat is beschikbaar op de * doel-Node_.
+4. De **provider** van het certificaat moet micro soft RSA SChannel Cryptographic Provider zijn.
 
 > [!IMPORTANT]
-> Maar u een certificaat gebruiken kunt met die van een Sleutelgebruik 'Digitale handtekening' of een van de clientverificatie-EKU, schakelt Hiermee u de versleutelingssleutel moet eenvoudiger misbruik en kwetsbaar voor aanvallen. Het is dus aanbevolen procedure om een certificaat gemaakt voor de beveiliging van de DSC-referenties die worden weggelaten deze sleutelgebruik en EKU's te gebruiken.
+> Hoewel u een certificaat met een sleutel gebruik van digitale hand tekening of een van de EKU voor authenticatie kunt gebruiken, is het mogelijk dat de versleutelings sleutel eenvoudiger te gebruiken is en kwetsbaar is voor aanvallen. Het is dus best practice een certificaat te gebruiken dat specifiek is gemaakt voor het beveiligen van DSC-referenties die deze sleutel gebruik en Eku's weglaten.
 
-Alle bestaande certificaten op de _doelknooppunt_ dat voldoet aan deze criteria kunnen worden gebruikt voor beveiligde DSC-referenties.
+Elk bestaand certificaat op het _doel knooppunt_ dat voldoet aan deze criteria kan worden gebruikt voor het beveiligen van DSC-referenties.
 
-## <a name="certificate-creation"></a>Het maken van certificaten
+## <a name="certificate-creation"></a>Certificaat maken
 
-Er zijn twee manieren om te maken en gebruiken van het vereiste certificaat voor versleuteling (openbaar / persoonlijk sleutelpaar).
+Er zijn twee benaderingen die u kunt nemen om het vereiste versleutelings certificaat (openbaar-persoonlijk sleutel paar) te maken en te gebruiken.
 
-1. Maken door op de **doelknooppunt** en exporteren van de openbare sleutel voor de **knooppunt ontwerpen**
-2. Maken door op de **ontwerpen knooppunt** en exporteren van het gehele sleutelpaar aan de **doelknooppunt**
+1. Maken op het **doel knooppunt** en alleen de open bare sleutel exporteren naar het **ontwerp knooppunt**
+2. Maken op het **ontwerp knooppunt** en het volledige sleutel paar exporteren naar het **doel knooppunt**
 
-Methode 1 wordt aanbevolen omdat de persoonlijke sleutel voor het ontsleutelen van de referenties in het MOF op het doelknooppunt te allen tijde blijft.
+Methode 1 wordt aanbevolen omdat de persoonlijke sleutel die wordt gebruikt voor het ontsleutelen van referenties in de MOF te allen tijde op het doel knooppunt blijft.
 
-### <a name="creating-the-certificate-on-the-target-node"></a>Het maken van het certificaat op het doelknooppunt
+### <a name="creating-the-certificate-on-the-target-node"></a>Het certificaat maken op het doel knooppunt
 
-De privésleutel geheim moet blijven, omdat wordt gebruikt voor het ontsleutelen van de MOF op de **doelknooppunt** de eenvoudigste manier om dat te doen is om te maken van het certificaat met persoonlijke sleutel op de **doelknooppunt**, en kopieer de  **openbare-sleutelcertificaat** op de computer die wordt gebruikt voor het maken van de DSC-configuratie naar een MOF-bestand.
-Het volgende voorbeeld:
+De persoonlijke sleutel moet geheim blijven, omdat deze wordt gebruikt voor het ontsleutelen van de MOF op het **doel knooppunt** de eenvoudigste manier om dat te doen, is door het certificaat voor de persoonlijke sleutel te maken op het **doel knooppunt**en het certificaat van de **open bare sleutel** te kopiëren naar de computer die wordt gebruikt om de DSC-configuratie in een MOF-bestand schrijven.
+Het volgende voor beeld:
 
-1. Hiermee maakt u een certificaat op de **doelknooppunt**
-2. Hiermee exporteert u de openbare-sleutelcertificaat dat op de **doelknooppunt**.
-3. de invoer van de openbare-sleutelcertificaat dat in de **mijn** certificaatarchief op de **ontwerpen knooppunt**.
+1. Hiermee maakt u een certificaat op het **doel knooppunt**
+2. exporteert het certificaat van de open bare sleutel op het **doel knooppunt**.
+3. Hiermee wordt het certificaat van de open bare sleutel in **het certificaat archief van het** **ontwerp knooppunt**geïmporteerd.
 
-#### <a name="on-the-target-node-create-and-export-the-certificate"></a>Op het doelknooppunt: maken en exporteren van het certificaat
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a>Op het doel knooppunt: het certificaat maken en exporteren
 
-> Doelknooppunt: Windows Server 2016 en Windows 10
+> Doel knooppunt: Windows Server 2016 en Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -93,15 +93,15 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Eenmaal hebt geëxporteerd, de `DscPublicKey.cer` moet worden gekopieerd naar de **ontwerpen knooppunt**.
+Na het exporteren moet `DscPublicKey.cer` de worden gekopieerd naar het **ontwerp knooppunt**.
 
-> Doelknooppunt: Windows Server 2012 R2/Windows 8.1 en oudere versies
+> Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 > [!WARNING]
-> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturingssystemen vóór Windows 10 en Windows Server 2016 bieden geen ondersteuning voor de **Type** parameter, een alternatieve methode voor het maken van dit certificaat is vereist op deze besturingssystemen.
+> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen.
 >
-> In dit geval kunt u `makecert.exe` of `certutil.exe` om het certificaat te maken.
+> In dit geval kunt u of `makecert.exe` `certutil.exe` gebruiken om het certificaat te maken.
 >
->Is een alternatieve methode [het script New-SelfSignedCertificateEx.ps1 downloaden vanaf Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en voor het maken van het certificaat in plaats daarvan het:
+>Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -127,31 +127,31 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Eenmaal hebt geëxporteerd, de ```DscPublicKey.cer``` moet worden gekopieerd naar de **ontwerpen knooppunt**.
+Na het exporteren moet ```DscPublicKey.cer``` de worden gekopieerd naar het **ontwerp knooppunt**.
 
-#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>Op het knooppunt ontwerpen: de openbare sleutel van het certificaat importeren
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>Op het ontwerp knooppunt: de open bare sleutel van het certificaat importeren
 
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### <a name="creating-the-certificate-on-the-authoring-node"></a>Het maken van het certificaat op het knooppunt ontwerpen
+### <a name="creating-the-certificate-on-the-authoring-node"></a>Het certificaat maken op het ontwerp knooppunt
 
-U kunt ook het versleutelingscertificaat dat kan worden gemaakt op de **ontwerpen knooppunt**, geëxporteerd met de **privésleutel** als een PFX-bestand en vervolgens worden geïmporteerd op de **doelknooppunt**.
-Dit is de huidige methode voor het implementeren van DSC-referentieversleuteling op _Nano Server_.
-Hoewel de PFX is beveiligd met een wachtwoord moet het worden gehouden beveiligd tijdens de overdracht.
-Het volgende voorbeeld:
+Het versleutelings certificaat kan ook worden gemaakt op het **ontwerp knooppunt**, met de **persoonlijke sleutel** geëxporteerd als een pfx-bestand en vervolgens worden geïmporteerd op het **doel knooppunt**.
+Dit is de huidige methode voor het implementeren van DSC-referentie versleuteling op _nano server_.
+Hoewel de PFX met een wacht woord is beveiligd, moet deze tijdens de overdracht veilig worden bewaard.
+Het volgende voor beeld:
 
-1. Hiermee maakt u een certificaat op de **ontwerpen knooppunt**.
-2. Hiermee exporteert u het certificaat met inbegrip van de persoonlijke sleutel op de **ontwerpen knooppunt**.
-3. Hiermee verwijdert u de persoonlijke sleutel van de **ontwerpen knooppunt**, maar houdt u de openbare-sleutelcertificaat dat de **mijn** opslaan.
-4. het certificaat met persoonlijke sleutel wordt geïmporteerd in het certificaatarchief My(Personal) op de **doelknooppunt**.
-   - Deze moet worden toegevoegd aan het basisarchief zodat deze worden vertrouwd door de **doelknooppunt**.
+1. Hiermee maakt u een certificaat op het **ontwerp knooppunt**.
+2. exporteert het certificaat inclusief de persoonlijke sleutel op het **ontwerp knooppunt**.
+3. Hiermee verwijdert u de persoonlijke sleutel van het **ontwerp knooppunt**, maar behoudt u het certificaat voor de open bare sleutel in de **mijn** Store.
+4. importeert het certificaat van de persoonlijke sleutel in het certificaat archief mijn (persoonlijk) op het **doel knooppunt**.
+   - het moet worden toegevoegd aan het hoofd archief zodat het wordt vertrouwd door het **doel knooppunt**.
 
-#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Op het knooppunt ontwerpen: maken en exporteren van het certificaat
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Op het ontwerp knooppunt: het certificaat maken en exporteren
 
-> Doelknooppunt: Windows Server 2016 en Windows 10
+> Doel knooppunt: Windows Server 2016 en Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -165,15 +165,15 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-Eenmaal hebt geëxporteerd, de `DscPrivateKey.pfx` moet worden gekopieerd naar de **doelknooppunt**.
+Na het exporteren moet `DscPrivateKey.pfx` de worden gekopieerd naar het **doel knooppunt**.
 
-> Doelknooppunt: Windows Server 2012 R2/Windows 8.1 en oudere versies
+> Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 > [!WARNING]
-> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturingssystemen vóór Windows 10 en Windows Server 2016 bieden geen ondersteuning voor de **Type** parameter, een alternatieve methode voor het maken van dit certificaat is vereist op deze besturingssystemen.
+> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen.
 >
-> In dit geval kunt u `makecert.exe` of `certutil.exe` om het certificaat te maken.
+> In dit geval kunt u of `makecert.exe` `certutil.exe` gebruiken om het certificaat te maken.
 >
-> Is een alternatieve methode [het script New-SelfSignedCertificateEx.ps1 downloaden vanaf Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en voor het maken van het certificaat in plaats daarvan het:
+> Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -204,7 +204,7 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>Op het doelknooppunt: de persoonlijke sleutel van het certificaat als een vertrouwd basiscertificaat importeren
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>Op het doel knooppunt: de persoonlijke sleutel van het certificaat importeren als een vertrouwde basis
 
 ```powershell
 # Import to the root store so that it is trusted
@@ -214,16 +214,16 @@ Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation
 
 ## <a name="configuration-data"></a>Configuratiegegevens
 
-Het gegevensblok configuratie definieert welke doelknooppunten bewerkingen uitvoeren, of of niet voor het versleutelen van de referenties, de wijze van versleuteling en andere informatie. Zie voor meer informatie over het gegevensblok configuratie [scheiden van configuratie- en omgevingsgegevens](../configurations/configData.md).
+In het configuratie gegevens blok worden de doel knooppunten gedefinieerd waarop moet worden toegepast, ongeacht of de referenties, de wijze van versleuteling en andere gegevens moeten worden versleuteld. Zie de [configuratie-en omgevings gegevens scheiden](../configurations/configData.md)voor meer informatie over het gegevens blok van de configuratie.
 
-De elementen die kunnen worden geconfigureerd voor elk knooppunt die gerelateerd zijn aan de versleuteling van referenties zijn:
+De volgende elementen kunnen worden geconfigureerd voor elk knoop punt dat is gerelateerd aan referentie versleuteling:
 
-- **Knooppuntnaam** -de naam van het doelknooppunt die voor de versleuteling van referenties wordt geconfigureerd.
-- **PsDscAllowPlainTextPassword** - of niet-versleutelde referenties worden doorgegeven aan dit knooppunt kunnen worden. Dit is **niet aanbevolen**.
-- **Vingerafdruk** -de vingerafdruk van het certificaat dat wordt gebruikt voor het ontsleutelen van de referenties in de DSC-configuratie op de _doelknooppunt_. **Dit certificaat moet zich in het certificaatarchief van lokale computer op het doelknooppunt.**
-- **CertificateFile** - het certificaatbestand (met alleen de openbare sleutel) die moet worden gebruikt voor het versleutelen van de referenties voor de _doelknooppunt_. Dit moet ofwel een DER encoded binary X.509 of Base-64 gecodeerde x.509-certificaat indelingsbestand.
+- **Nodenaam** : de naam van het doel knooppunt waarvoor de referentie versleuteling wordt geconfigureerd.
+- **PsDscAllowPlainTextPassword** : Hiermee wordt aangegeven of niet-versleutelde referenties mogen worden door gegeven aan dit knoop punt. Dit wordt **niet aanbevolen**.
+- **Vinger afdruk** : de vinger afdruk van het certificaat dat wordt gebruikt voor het ontsleutelen van de referenties in de DSC-configuratie op het _doel knooppunt_. **Dit certificaat moet aanwezig zijn in het certificaat archief van de lokale computer op het doel knooppunt.**
+- **CertificateFile** : het certificaat bestand (alleen de open bare sleutel) dat moet worden gebruikt om de referenties voor het _doel knooppunt_te versleutelen. Dit moet een DER Encoded Binary X. 509 of base-64 Encoded X. 509-indeling certificaat bestand.
 
-Dit voorbeeld toont een configuratie-gegevensblokken die Hiermee geeft u een doelknooppunt om te reageren op met de naam targetNode, het pad naar het openbare-sleutelcertificaat dat bestand (met de naam targetNode.cer) en de vingerafdruk voor de openbare sleutel.
+In dit voor beeld wordt een blok van een configuratie gegevens weer gegeven waarin een doel knooppunt wordt opgegeven voor het uitvoeren van de naam targetNode, het pad naar het certificaat bestand met de open bare sleutel (met de naam targetNode. CER) en de vinger afdruk voor de open bare sleutel.
 
 ```powershell
 $ConfigData= @{
@@ -246,9 +246,9 @@ $ConfigData= @{
     }
 ```
 
-## <a name="configuration-script"></a>Het script voor configuratie
+## <a name="configuration-script"></a>Configuratie script
 
-In het configuratiescript zelf, gebruikt u de `PsCredential` parameter om ervoor te zorgen dat de referenties voor de kortst mogelijke tijd worden opgeslagen. Wanneer u het opgegeven voorbeeld uitvoert, wordt DSC u gevraagd om referenties en deze vervolgens versleutelen het MOF-bestand met behulp van de CertificateFile die is gekoppeld aan het doelknooppunt in het gegevensblok configuratie. Dit codevoorbeeld wordt een bestand gekopieerd van een share die wordt beveiligd voor een gebruiker.
+In het configuratie script zelf gebruikt u de `PsCredential` para meter om ervoor te zorgen dat referenties voor de kortst mogelijke tijd worden opgeslagen. Wanneer u het opgegeven voor beeld uitvoert, wordt u gevraagd referenties op te vragen en vervolgens het MOF-bestand te versleutelen met behulp van de CertificateFile die is gekoppeld aan het doel knooppunt in het configuratie gegevens blok. In dit code voorbeeld wordt een bestand gekopieerd van een share die is beveiligd met een gebruiker.
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -272,9 +272,9 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="setting-up-decryption"></a>Instellen van ontsleuteling
+## <a name="setting-up-decryption"></a>Ontsleuteling instellen
 
-Voordat u [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) kunt werken, hebt u vertelt de Local Configuration Manager op elk doelknooppunt welk certificaat moet worden gebruikt voor het decoderen van de referenties met behulp van de resource CertificateID om te controleren of de vingerafdruk van het certificaat. Deze voorbeeldfunctie vindt u de juiste lokale certificaatarchief (mogelijk moet u deze aanpassen, dus het exacte certificaat dat u wilt gebruiken):
+Voordat [`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) u kunt werken, moet u de lokale Configuration Manager op elk doel knooppunt vertellen welk certificaat moet worden gebruikt om de referenties te ontsleutelen, met behulp van de CertificateID-resource om de vinger afdruk van het certificaat te verifiëren. In dit voor beeld wordt het juiste lokale certificaat gevonden (mogelijk moet u het aanpassen zodat het exacte certificaat wordt gevonden dat u wilt gebruiken):
 
 ```powershell
 # Get the certificate that works for encryption
@@ -290,7 +290,7 @@ function Get-LocalEncryptionCertificateThumbprint
 }
 ```
 
-Met het certificaat dat wordt geïdentificeerd door de vingerafdruk, kan het configuratiescript worden bijgewerkt om de waarde te gebruiken:
+Met het certificaat dat is geïdentificeerd door de vinger afdruk, kan het configuratie script worden bijgewerkt om de waarde te gebruiken:
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -321,12 +321,12 @@ configuration CredentialEncryptionExample
 
 ## <a name="running-the-configuration"></a>De configuratie wordt uitgevoerd
 
-Op dit moment kunt u de configuratie, die wordt uitgevoerd twee bestanden uitvoeren:
+Op dit moment kunt u de configuratie uitvoeren, waardoor twee bestanden worden uitgevoerd:
 
-- Een *. meta.mof-bestand dat Hiermee configureert u de Local Configuration Manager voor het ontsleutelen van de referenties met behulp van het certificaat dat is opgeslagen in het archief van de lokale computer en die worden vermeld op basis van de miniatuur. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) van toepassing is de *. meta.mof-bestand.
-- Een MOF-bestand dat de configuratie geldt. Start-DscConfiguration geldt de configuratie.
+- Een meta. MOF-bestand waarmee de lokale Configuration Manager worden geconfigureerd om de referenties te ontsleutelen met behulp van het certificaat dat is opgeslagen in het archief van de lokale computer en wordt geïdentificeerd door de vinger afdruk. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)Hiermee past u het bestand *. meta. MOF toe.
+- Een MOF-bestand dat de configuratie werkelijk toepast. Start-DscConfiguration past de configuratie toe.
 
-Deze opdrachten wordt deze stappen uitvoeren:
+Met deze opdrachten voert u de volgende stappen uit:
 
 ```powershell
 Write-Host "Generate DSC Configuration..."
@@ -339,14 +339,14 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-In dit voorbeeld zou de DSC-configuratie om het doelknooppunt te pushen.
-De DSC-configuratie kan ook worden toegepast met behulp van een DSC-Pull-Server als deze beschikbaar is.
+In dit voor beeld wordt de DSC-configuratie naar het doel knooppunt gepusht.
+De DSC-configuratie kan ook worden toegepast met behulp van een DSC-pull-server, als er een beschikbaar is.
 
-Zie [instellen van een DSC-pull-client](pullClient.md) voor meer informatie over het toepassen van DSC-configuraties met behulp van een DSC-Pull-Server.
+Zie [een DSC-pull-client instellen](pullClient.md) voor meer informatie over het Toep assen van DSC-configuraties met behulp van een DSC-pull-server.
 
-## <a name="credential-encryption-module-example"></a>Voorbeeld van de Module referentie-codering
+## <a name="credential-encryption-module-example"></a>Voor beeld van referentie versleutelings module
 
-Hier volgt een compleet voorbeeld waarin al deze stappen, plus een helper-cmdlet die worden geëxporteerd en de openbare sleutels worden gekopieerd:
+Hier volgt een volledig voor beeld waarin al deze stappen zijn opgenomen, plus een helper-cmdlet waarmee de open bare sleutels worden geëxporteerd en gekopieerd:
 
 ```powershell
 # A simple example of using credentials

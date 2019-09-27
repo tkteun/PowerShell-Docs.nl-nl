@@ -1,48 +1,54 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC WindowsPackageCab-Resource
-ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC WindowsPackageCab-resource
+ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076936"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323823"
 ---
-# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab-Resource
+# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab-resource
 
-> Van toepassing op: Windows PowerShell 5.1 of hoger
+> Van toepassing op: Windows Power shell 5,1
 
-De **WindowsPackageCab** resource in Windows PowerShell Desired State Configuration (DSC) biedt een mechanisme om te installeren of verwijderen van Windows CAB-pakketten op een doelknooppunt.
+De **WindowsPackageCab** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van Windows CAB-pakketten (CAB) op een doel knooppunt.
 
-Het doelknooppunt moet de DISM-PowerShell-module geïnstalleerd hebben. Zie voor meer informatie, [DISM gebruiken in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).
-
+Op het doel knooppunt moet de Power shell-module DISM zijn geïnstalleerd. Zie [DISM gebruiken in Windows Power shell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)voor meer informatie.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 {
     Name = [string]
-    Ensure = [string] { Absent | Present }
     SourcePath = [string]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
+    Ensure = [string] { Absent | Present }
+    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap  |  Description   |
+|Eigenschap |Description |
 |---|---|
-| Naam| Geeft de naam van het pakket voor u wilt om te controleren of een specifieke status.|
-| Zorg ervoor dat| Geeft aan of het pakket is geïnstalleerd. Deze eigenschap instellen op 'Afwezig"Controleer of dat het pakket niet is geïnstalleerd (of het pakket verwijderen als deze is geïnstalleerd). Instellen om "" (de standaardwaarde) om te controleren of dat het pakket is geïnstalleerd.|
-| Pad| Geeft het pad waar het pakket zich bevindt.|
-| Logboekpad| Geeft het volledige pad waar u wilt dat de provider een logboekbestand om te installeren of verwijderen van het pakket op te slaan.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de ID van de resourceconfiguratie scriptblok die u wilt uitvoeren eerst is **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van deze eigenschap is ' DependsOn = "[ ResourceType] ResourceName"''.|
+|Name |Hiermee wordt de naam van het pakket aangegeven dat u een specifieke status wilt bieden. |
+|Bronpad |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
+|Logboekpad |Hiermee wordt het volledige pad aangegeven waar u wilt dat de provider een logboek bestand opslaat om het pakket te installeren of te verwijderen. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt aangegeven of het pakket is geïnstalleerd. Stel deze eigenschap in op **afwezig** om te controleren of het pakket niet is geïnstalleerd (of verwijder het pakket als dit is geïnstalleerd). Stel deze in op **aanwezig** om te controleren of het pakket is geïnstalleerd. **Zorg ervoor dat** de eigenschap vereist is voor de **WindowsPackageCab** -resource. |
+|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 ## <a name="example"></a>Voorbeeld
 
-De volgende voorbeeldconfiguratie parameters nodig heeft, en zorgt ervoor dat het CAB-bestand opgegeven door de `$Name` parameter is geïnstalleerd.
+De volgende voorbeeld configuratie haalt invoer parameters op en zorgt ervoor dat het CAB-bestand dat is `$Name` opgegeven met de para meter, wordt geïnstalleerd.
 
 ```powershell
 Configuration Sample_WindowsPackageCab

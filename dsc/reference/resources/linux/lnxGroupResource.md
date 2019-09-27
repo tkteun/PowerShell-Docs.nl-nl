@@ -1,52 +1,59 @@
 ---
-ms.date: 06/12/2017
-keywords: DSC, powershell, configuratie en installatie
-title: DSC voor Linux nxGroup-Resource
-ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 09/20/2019
+keywords: DSC, Power shell, configuratie, installatie
+title: DSC voor Linux nxGroup-resource
+ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077855"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324776"
 ---
-# <a name="dsc-for-linux-nxgroup-resource"></a>DSC voor Linux nxGroup-Resource
+# <a name="dsc-for-linux-nxgroup-resource"></a>DSC voor Linux nxGroup-resource
 
-De **nxGroup** resource in PowerShell Desired State Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op een Linux-knooppunt.
+De **nxGroup** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op een Linux-knoop punt.
 
 ## <a name="syntax"></a>Syntaxis
 
-```
+```Syntax
 nxGroup <string> #ResourceName
 {
     GroupName = <string>
-    [ Ensure = <string> { Absent | Present } ]
     [ Members = <string[]> ]
     [ MembersToInclude = <string[]> ]
     [ MembersToExclude = <string[]> ]
+    [ PreferredGroupID = <string> ]
     [ DependsOn = <string[]> ]
+    [ Ensure = <string> { Absent | Present } ]
 }
 ```
 
-## <a name="properties"></a>Eigenschappen
+## <a name="properties"></a>properties
 
-|  Eigenschap |  Description |
+|Eigenschap |Description |
 |---|---|
-| GroupName| Hiermee geeft u de naam van de groep waarvan u wilt om te controleren of een specifieke status.|
-| Zorg ervoor dat| Hiermee bepaalt u of om te controleren of de groep bestaat. Deze eigenschap instellen op 'Aanwezig' om te controleren of dat de groep bestaat. Stel deze in op 'Ontbreekt' om te controleren of dat de groep bestaat niet. De standaardwaarde is 'Aanwezig'.|
-| Leden| Hiermee geeft u de leden die de groep.|
-| MembersToInclude| Hiermee geeft u de gebruikers die u wilt ervoor zorgen zijn leden van de groep.|
-| MembersToExclude| Hiermee geeft u de gebruikers die u wilt ervoor zorgen geen lid van de groep zijn.|
-| PreferredGroupID| Wordt indien mogelijk de groeps-id ingesteld op de opgegeven waarde. Als de groeps-id momenteel gebruikt wordt, worden de volgende beschikbare groeps-id wordt gebruikt.|
-| DependsOn | Geeft aan dat de configuratie van een andere resource uitvoeren moet voordat deze resource is geconfigureerd. Bijvoorbeeld, als de **ID** van de resource is scriptblok configuratie die u wilt uitvoeren eerst **ResourceName** en het type **ResourceType**, de syntaxis voor het gebruik van dit de eigenschap is `DependsOn = '[ResourceType]ResourceName'`.|
+|GroupName |Hiermee geeft u de naam van de groep waarvoor u een specifieke status wilt waarborgen. |
+|Members |Hiermee geeft u de leden op die de groep vormen. |
+|MembersToInclude |Hiermee geeft u de gebruikers die u wilt controleren, lid zijn van de groep. |
+|MembersToExclude |Hiermee geeft u de gebruikers die u wilt controleren, geen lid zijn van de groep. |
+|PreferredGroupID |Hiermee stelt u de groeps-id in op de gegeven waarde, indien mogelijk. Als de groeps-id momenteel in gebruik is, wordt de volgende beschik bare groeps-id gebruikt. |
+
+## <a name="common-properties"></a>Algemene eigenschappen
+
+|Eigenschap |Description |
+|---|---|
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de groep bestaat. Stel deze eigenschap in op **presen teren** om te controleren of de groep bestaat. Stel deze in op **afwezig** om te controleren of de groep niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="example"></a>Voorbeeld
 
-Het volgende voorbeeld zorgt ervoor dat de gebruiker monuser bestaat en lid van de groep 'DBusers is'.
+In het volgende voor beeld wordt ervoor gezorgd dat de gebruiker ' monuser ' bestaat en lid is van de groep ' DBusers '.
 
 ```powershell
 Import-DSCResource -Module nx
 
-Node $node {
+Node $node
+{
     nxUser UserExample {
        UserName = 'monuser'
        Description = 'Monitoring user'
