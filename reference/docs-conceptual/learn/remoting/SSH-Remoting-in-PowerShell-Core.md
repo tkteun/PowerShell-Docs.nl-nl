@@ -1,13 +1,13 @@
 ---
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
-ms.date: 08/14/2018
-ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.date: 09/30/2019
+ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372149"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692170"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -15,7 +15,7 @@ ms.locfileid: "68372149"
 
 Externe communicatie van Power Shell maakt normaal gesp roken gebruik van WinRM voor verbindings onderhandeling en gegevens overdracht. SSH is nu beschikbaar voor Linux-en Windows-platforms en biedt echte externe communicatie van Power shell op meerdere platforms.
 
-WinRM biedt een robuust hosting model voor externe Power shell-sessies. Op SSH gebaseerde externe toegang biedt momenteel geen ondersteuning voor externe eindpunt configuratie en JEA (net genoeg beheer).
+WinRM biedt een robuust hosting model voor externe Power shell-sessies. Op SSH gebaseerde externe toegang biedt momenteel geen ondersteuning voor externe eindpunt configuratie en voldoende beheer (JEA).
 
 Met SSH-externe communicatie kunt u een eenvoudige Power shell-sessie tussen Windows-en Linux-computers uitvoeren. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Uiteindelijk implementeren we een algemeen hosting model, vergelijkbaar met WinRM, ter ondersteuning van de eindpunt configuratie en JEA.
 
@@ -25,154 +25,166 @@ De `New-PSSession`cmdlets `Enter-PSSession`, `Invoke-Command` en hebben nu een n
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer `HostName` op met de para meter en geeft `UserName`u de gebruikers naam op bij. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke- `KeyFilePath` sleutel bestand met de para meter.
+Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter `HostName` en geeft u de gebruikers naam op met `UserName`. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke- `KeyFilePath` sleutel bestand met de para meter.
 
 ## <a name="general-setup-information"></a>Algemene informatie over de installatie
 
-SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client`ssh.exe`() als de`sshd.exe`server (), zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [OpenSSH voor Windows](/windows-server/administration/openssh/openssh_overview)voor meer informatie. Installeer voor Linux SSH (inclusief sshd-server) die geschikt is voor uw platform. U moet ook Power shell Core van GitHub installeren om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. U moet ook inschakelen van wacht woord of op sleutel gebaseerde verificatie configureren.
+Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client (`ssh.exe`) als de server (`sshd.exe`) zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)(Engelstalig) voor meer informatie. Voor Linux installeert u SSH, met inbegrip van de sshd-server, die geschikt is voor uw platform. U moet Power shell ook installeren vanaf GitHub om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. En u moet verificatie **op basis van** **wacht woord** of sleutel inschakelen.
 
-## <a name="set-up-on-windows-machine"></a>Instellen op Windows-machine
+## <a name="set-up-on-a-windows-computer"></a>Instellen op een Windows-computer
 
-1. Installeer de nieuwste versie van [Power shell core voor Windows](../../install/installing-powershell-core-on-windows.md#msi)
+1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
-   - U kunt zien of het de SSH-ondersteuning voor externe toegang heeft door te kijken naar de parameter sets voor`New-PSSession`
+   U kunt controleren of Power Shell ondersteuning biedt voor externe SSH door de para meters voor de `New-PSSession` op te geven. U ziet dat er namen van parameter sets zijn die beginnen met **SSH**. Deze parameter sets bevatten **SSH** -para meters.
 
    ```powershell
-   Get-Command New-PSSession -syntax
+   (Get-Command New-PSSession).ParameterSets.Name
    ```
 
-   ```output
-   New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+   ```Output
+   Name
+   ----
+   SSHHost
+   SSHHostHashParam
    ```
 
-2. Installeer de meest recente Win32-OpenSSH. Zie [installatie van OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)voor installatie-instructies.
-3. Bewerk het `sshd_config` bestand dat zich `$env:ProgramData\ssh`bevindt in.
+1. Installeer de meest recente Win32-OpenSSH. Zie aan de slag [met OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)voor installatie-instructies.
 
-   - Controleer of wachtwoord verificatie is ingeschakeld
+   > [!NOTE]
+   > Als u Power shell wilt instellen als de standaard shell voor OpenSSH, raadpleegt u [Windows configureren voor OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).
 
-     ```
-     PasswordAuthentication yes
-     ```
+1. Bewerk het `sshd_config` bestand dat zich `$env:ProgramData\ssh`bevindt in.
 
-     ```
-     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
-     ```
+   Controleer of wachtwoord verificatie is ingeschakeld:
 
-     > [!NOTE]
-     > Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie [Dit github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   ```
+   PasswordAuthentication yes
+   ```
 
-     Eén oplossing is het maken van een symlink in de Power shell-installatie directory die geen spaties heeft:
+   Maak het SSH-subsysteem dat als host fungeert voor een Power Shell-proces op de externe computer:
 
-     ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
-     ```
+   ```
+   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   ```
 
-     en voer deze in het subsysteem in:
+   > [!NOTE]
+   > Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie dit [github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     ```
-     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-     ```
+   Een oplossing is het maken van een symbolische koppeling naar de installatie directory van Power shell die geen spaties bevat:
 
-   - Optioneel sleutel verificatie inschakelen
+   ```powershell
+   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
+   ```
 
-     ```
-     PubkeyAuthentication yes
-     ```
+   Gebruik het symbolische koppeling naar het uitvoer bare Power shell-bestand in het subsysteem:
 
-4. De sshd-service opnieuw starten
+   ```
+   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
+   ```
+
+   Schakel eventueel sleutel verificatie in:
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   Zie [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement)(Engelstalig) voor meer informatie.
+
+1. Start de **sshd** -service opnieuw.
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Voorbeeld: `C:\Program Files\OpenSSH\`. Met deze vermelding kan ssh. exe worden gevonden.
+1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Bijvoorbeeld `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
 
-## <a name="set-up-on-linux-ubuntu-1604-machine"></a>Instellen op een Linux-machine (Ubuntu 16,04)
+## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Instellen op een Ubuntu 16,04 Linux-computer
 
-1. De nieuwste versie van [Power shell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) van github installeren
-2. Installeer [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) indien nodig
+1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren op Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604).
+1. Installeer de [Ubuntu openssh-server](https://help.ubuntu.com/lts/serverguide/openssh-server.html).
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Bewerk het sshd_config-bestand op locatie/etc/ssh
+1. Bewerk het bestand @no__t 0 op locatie `/etc/ssh`.
 
-   - Controleer of wachtwoord verificatie is ingeschakeld
+   Controleer of wachtwoord verificatie is ingeschakeld:
 
    ```
    PasswordAuthentication yes
    ```
 
-   - Een vermelding voor een Power shell-subsysteem toevoegen
+   Een vermelding voor een Power shell-subsysteem toevoegen:
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - Optioneel sleutel verificatie inschakelen
+   Schakel eventueel sleutel verificatie in:
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. De sshd-service opnieuw starten
+1. Start de **sshd** -service opnieuw.
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-macos-machine"></a>Instellen op MacOS-computer
+## <a name="set-up-on-a-macos-computer"></a>Instellen op een macOS-computer
 
-1. Installeer de nieuwste [Power shell core voor MacOS](../../install/installing-powershell-core-on-macos.md) build
+1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren op macOS](../../install/installing-powershell-core-on-macos.md).
 
-   - Zorg ervoor dat externe SSH-communicatie is ingeschakeld door de volgende stappen te volgen:
-     - Staan`System Preferences`
-     - Klik op`Sharing`
-     - Controleren `Remote Login` -moet zeggen`Remote Login: On`
-     - Toegang tot de juiste gebruikers toestaan
+   Zorg ervoor dat externe SSH-communicatie is ingeschakeld door de volgende stappen te volgen:
 
-2. Het `sshd_config` bestand op locatie bewerken`/private/etc/ssh/sshd_config`
+   1. Open `System Preferences`.
+   1. Klik op `Sharing`.
+   1. Controleer `Remote Login` om `Remote Login: On` in te stellen.
+   1. Toegang tot de juiste gebruikers toestaan.
 
-   - Uw favoriete editor gebruiken of
+1. Bewerk het bestand @no__t 0 op locatie `/private/etc/ssh/sshd_config`.
 
-     ```bash
-     sudo nano /private/etc/ssh/sshd_config
-     ```
+   Gebruik een tekst editor zoals **nano**:
 
-   - Controleer of wachtwoord verificatie is ingeschakeld
+   ```bash
+   sudo nano /private/etc/ssh/sshd_config
+   ```
 
-     ```
-     PasswordAuthentication yes
-     ```
+   Controleer of wachtwoord verificatie is ingeschakeld:
 
-   - Een vermelding voor een Power shell-subsysteem toevoegen
+   ```
+   PasswordAuthentication yes
+   ```
 
-     ```
-     Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
-     ```
+   Een vermelding voor een Power shell-subsysteem toevoegen:
 
-   - Optioneel sleutel verificatie inschakelen
+   ```
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   ```
 
-     ```
-     PubkeyAuthentication yes
-     ```
+   Schakel eventueel sleutel verificatie in:
 
-3. De sshd-service opnieuw starten
+   ```
+   PubkeyAuthentication yes
+   ```
+
+1. Start de **sshd** -service opnieuw.
 
    ```bash
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Verificatie
+## <a name="authentication"></a>Authentication
 
-Externe communicatie van Power shell is afhankelijk van de verificatie uitwisseling tussen de SSH-client en de SSH-service en implementeert geen verificatie schema's zelf. Dit betekent dat alle geconfigureerde verificatie schema's, waaronder multi-factor Authentication, worden verwerkt door SSH en onafhankelijk van Power shell. U kunt bijvoorbeeld de SSH-service zo configureren dat de verificatie van de open bare sleutel is vereist, evenals een eenmalig wacht woord voor extra beveiliging. Configuratie van multi-factor Authentication valt buiten het bereik van deze documentatie. Raadpleeg de documentatie voor SSH over het correct configureren van multi-factor Authentication en het valideren van de oplossing werkt buiten Power shell voordat u deze probeert te gebruiken met externe communicatie met Power shell.
+Externe communicatie van Power shell is afhankelijk van de verificatie uitwisseling tussen de SSH-client en de SSH-service en implementeert geen verificatie schema's zelf. Het resultaat is dat alle geconfigureerde verificatie schema's, waaronder multi-factor Authentication, worden afgehandeld door SSH en onafhankelijk van Power shell. U kunt bijvoorbeeld de SSH-service zo configureren dat verificatie met een open bare sleutel en een eenmalig wacht woord voor extra beveiliging zijn vereist. Configuratie van multi-factor Authentication valt buiten het bereik van deze documentatie. Raadpleeg de documentatie voor SSH over het correct configureren van multi-factor Authentication en het valideren van de oplossing werkt buiten Power shell voordat u deze probeert te gebruiken met externe communicatie met Power shell.
 
 ## <a name="powershell-remoting-example"></a>Externe Power shell-voor beeld
 
-De eenvoudigste manier om externe communicatie te testen is door deze te proberen op één computer. In dit voor beeld maken we een externe sessie terug naar dezelfde Linux-computer. Power shell-cmdlets worden interactief gebruikt, dus er worden prompts van SSH weer gegeven waarin wordt gevraagd om de hostcomputer te controleren en te vragen om een wacht woord. U kunt hetzelfde doen op een Windows-computer om ervoor te zorgen dat externe toegang werkt. Vervolgens op afstand tussen computers door de naam van de host te wijzigen.
+De eenvoudigste manier om externe communicatie te testen is door deze te proberen op één computer. In dit voor beeld maken we een externe sessie terug naar dezelfde Linux-computer. Power shell-cmdlets worden interactief gebruikt, dus er worden prompts van SSH weer gegeven waarin wordt gevraagd om de hostcomputer te controleren en te vragen om een wacht woord. U kunt hetzelfde doen op een Windows-computer om ervoor te zorgen dat externe toegang werkt. Vervolgens op afstand tussen computers door de hostnaam te wijzigen.
 
 ```powershell
 #
@@ -181,7 +193,7 @@ De eenvoudigste manier om externe communicatie te testen is door deze te probere
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
 ```
 
-```output
+```Output
 The authenticity of host 'UbuntuVM1 (9.129.17.107)' cannot be established.
 ECDSA key fingerprint is SHA256:2kCbnhT2dUE6WCGgVJ8Hyfu1z2wE4lifaJXLO7QJy0Y.
 Are you sure you want to continue connecting (yes/no)?
@@ -192,7 +204,7 @@ TestUser@UbuntuVM1s password:
 $session
 ```
 
-```output
+```Output
  Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
  -- ----   ------------    ------------    -----    -----------------     ------------
   1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
@@ -202,7 +214,7 @@ $session
 Enter-PSSession $session
 ```
 
-```output
+```Output
 [UbuntuVM1]: PS /home/TestUser> uname -a
 Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -213,7 +225,7 @@ Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22
 Invoke-Command $session -ScriptBlock { Get-Process powershell }
 ```
 
-```output
+```Output
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                    PSComputerName
 -------  ------    -----      -----     ------     --  -- -----------                    --------------
       0       0        0         19       3.23  10635 635 powershell                     UbuntuVM1
@@ -228,7 +240,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```output
+```Output
 PTestName@WinVM1s password:
 ```
 
@@ -236,7 +248,7 @@ PTestName@WinVM1s password:
 [WinVM1]: PS C:\Users\PTestName\Documents> cmd /c ver
 ```
 
-```output
+```Output
 Microsoft Windows [Version 10.0.10586]
 ```
 
@@ -247,7 +259,7 @@ Microsoft Windows [Version 10.0.10586]
 C:\Users\PSUser\Documents>pwsh.exe
 ```
 
-```output
+```Output
 PowerShell
 Copyright (c) Microsoft Corporation. All rights reserved.
 ```
@@ -256,7 +268,7 @@ Copyright (c) Microsoft Corporation. All rights reserved.
 $session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
 ```
 
-```output
+```Output
 The authenticity of host 'WinVM2 (10.13.37.3)' can't be established.
 ECDSA key fingerprint is SHA256:kSU6slAROyQVMEynVIXAdxSiZpwDBigpAF/TXjjWjmw.
 Are you sure you want to continue connecting (yes/no)?
@@ -268,7 +280,7 @@ PSRemoteUser@WinVM2's password:
 $session
 ```
 
-```output
+```Output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            WinVM2          RemoteMachine   Opened        DefaultShell             Available
@@ -278,7 +290,7 @@ $session
 Enter-PSSession -Session $session
 ```
 
-```output
+```Output
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents> $PSVersionTable
 
 Name                           Value
@@ -299,16 +311,18 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>Bekende problemen
 
-De opdracht sudo werkt niet in de externe sessie met de Linux-machine.
+De opdracht **sudo** werkt niet in een externe sessie met een Linux-computer.
 
 ## <a name="see-also"></a>Zie ook
 
-[Power shell core voor Windows](../../install/installing-powershell-core-on-windows.md#msi)
+[Power shell Core installeren in Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
-[Power shell core voor Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
+[Power shell core in macOS installeren](../../install/installing-powershell-core-on-macos.md)
 
-[Power shell core voor MacOS](../../install/installing-powershell-core-on-macos.md)
+[Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[OpenSSH voor Windows](/windows-server/administration/openssh/openssh_overview)
+[Windows beheren met OpenSSH](/windows-server/administration/openssh/openssh_overview)
+
+[OpenSSH-sleutels beheren](/windows-server/administration/openssh/openssh_keymanagement)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

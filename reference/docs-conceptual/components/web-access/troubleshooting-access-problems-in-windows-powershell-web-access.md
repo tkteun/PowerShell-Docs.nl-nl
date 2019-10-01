@@ -1,21 +1,21 @@
 ---
 ms.date: 08/23/2017
-keywords: PowerShell-cmdlet
-title: toegangsproblemen in windows powershell-webtoegang oplossen
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+keywords: Power shell, cmdlet
+title: toegangs problemen in Windows Power shell-Internet toegang oplossen
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733863"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692241"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
-Bijgewerkt: Juni 24 2013 (herziene versie van 23 augustus 2017)
+Vernieuwd 24 juni 2013 (herziene versie van 23 augustus 2017)
 
 Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
-De volgende secties enkele veelvoorkomende problemen identificeren tijdens het verbinding maken met een externe computer met Windows PowerShell-webtoegang en de tabel bevat suggesties voor het oplossen van problemen.
+In de volgende secties worden enkele veelvoorkomende problemen beschreven bij het maken van verbinding met een externe computer met Windows Power shell-webtoegang, en vindt u suggesties voor het oplossen van de problemen.
 
 ## <a name="sign-in-failure"></a>Aanmelding mislukt
 
@@ -23,23 +23,23 @@ Deze fout kan de volgende oorzaken hebben.
 
 - Een autorisatieregel die de gebruiker toegang verleent tot de computer of een bepaalde sessieconfiguratie op de externe computer bestaat niet.
 
-  Beveiliging van Windows PowerShell-webtoegang is beperkend; gebruikers moet expliciet toegang tot externe computers worden verleend via autorisatieregels.
+  Beveiliging van Windows Power shell-Internet toegang is beperkend; gebruikers moeten expliciet toegang tot externe computers worden verleend via autorisatie regels.
 
-  Zie voor meer informatie over het maken van autorisatieregels [autorisatieregels en beveiliging functies van Windows PowerShell-webtoegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
+  Zie [autorisatie regels en beveiligings functies van Windows Power shell-Internet toegang](authorization-rules-and-security-features-of-windows-powershell-web-access.md)voor meer informatie over het maken van autorisatie regels.
 
 - De gebruiker heeft geen geautoriseerde toegang tot de doelcomputer. Dit wordt bepaald door toegangsbeheerlijsten (ACL's).
 
-  Zie voor meer informatie, [aanmelden bij Windows PowerShell-webtoegang](use-the-web-based-windows-powershell-console.md#signing-in-to-windows-powershell-web-access), of de Windows PowerShell Team Blog.
+  Zie [Aanmelden bij Windows Power shell-webtoegang](use-the-web-based-windows-powershell-console.md#signing-in-to-windows-powershell-web-access)of het Windows Power shell-team blog voor meer informatie.
 
-- Extern beheer van Windows PowerShell kan niet worden ingeschakeld op de doelcomputer.
+- Extern beheer van Windows Power shell wordt mogelijk niet ingeschakeld op de doel computer.
 
-  Controleer of extern beheer is ingeschakeld op de computer waarop de gebruiker probeert om verbinding te maken.
+  Controleer of extern beheer is ingeschakeld op de computer waarmee de gebruiker verbinding probeert te maken.
 
-  Zie voor meer informatie, [hoe u uw Computer configureren voor externe toegang](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Zie [How to configure your computer voor externe toegang](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)voor meer informatie.
 
-## <a name="internal-server-error"></a>Interne serverfout
+## <a name="internal-server-error"></a>Interne server fout
 
-Wanneer gebruikers proberen zich aanmeldt bij Windows PowerShell-webtoegang in een venster van Internet Explorer, worden ze weergegeven een **interne serverfout** pagina of *Internet Explorer* reageert niet meer.
+Wanneer gebruikers zich proberen aan te melden bij Windows Power shell-webtoegang in een Internet Explorer-venster, wordt een **interne server fout** pagina weer gegeven of reageert *Internet Explorer* niet meer.
 
 Dit probleem is specifiek voor Internet Explorer.
 
@@ -49,94 +49,94 @@ Dit probleem kan optreden bij gebruikers die zijn aangemeld met een domeinnaam d
 
 #### <a name="workaround"></a>Tijdelijke oplossing
 
-1. [Installeren en uitvoeren van Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
-1. Wijzigen van Internet Explorer **documentmodus** instelt op *IE10* standaarden.
-   1. Druk op **F12** openen van de console ontwikkelhulpprogramma's
-   1. Klik in Internet Explorer 10 op **Browsermodus**, en selecteer vervolgens *Internet Explorer 10*.
-   1. Klik op **documentmodus**, en klik vervolgens op *IE10* standaarden.
-   1. Druk op **F12** opnieuw uit te sluiten van de console ontwikkelhulpprogramma's.
-1. Schakel automatische proxyconfiguratie in Internet Explorer 10.
-   1. Klik op **extra**, en klik vervolgens op **Internetopties**.
-   1. In de **Internetopties** dialoogvenster op de **verbindingen** tabblad **LAN-instellingen**.
-   1. Schakel de **-instellingen automatisch detecteren** selectievakje. Klik op **OK**, en klik vervolgens op **OK** opnieuw uit te sluiten de *Internetopties* in het dialoogvenster.
+1. Internet Explorer 10 installeren en uitvoeren
+1. Wijzig de instelling voor de **document modus** van Internet Explorer in *IE10* -standaarden.
+   1. Druk op **F12** om de Ontwikkelhulpprogramma's-console te openen
+   1. Klik in Internet Explorer 10 op **browser modus**en selecteer vervolgens *Internet Explorer 10*.
+   1. Klik op **document modus**en klik vervolgens op *IE10* -standaarden.
+   1. Druk nogmaals op **F12** om de Ontwikkelhulpprogramma's-console te sluiten.
+1. Schakel automatische proxy configuratie uit in Internet Explorer 10.
+   1. Klik op **extra**en klik vervolgens op **Internet opties**.
+   1. Klik in het dialoog venster **Internet opties** op het tabblad **verbindingen** op **LAN-instellingen**.
+   1. Schakel het selectie vakje **instellingen automatisch detecteren** uit. Klik op **OK**en klik nogmaals op **OK** om het dialoog venster *Internet opties* te sluiten.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Kan geen verbinding maken met een externe werkgroepcomputer
 
-Als de doelcomputer lid is van een werkgroep, gebruikt u de volgende syntaxis om te bieden uw gebruikersnaam en meld u aan bij de computer: `<workgroup_name>\<user_name>`
+Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis om uw gebruikers naam op te geven en zich aan te melden bij de computer: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Kan de beheerhulpprogramma's voor Webserver (IIS) niet vinden ook al is de functie geïnstalleerd
 
-Als u Windows PowerShell-webtoegang geïnstalleerd met behulp van de `Install-WindowsFeature` cmdlet, management-hulpprogramma's zijn niet geïnstalleerd, tenzij de `-IncludeManagementTools` parameter is toegevoegd aan de cmdlet.
+Als u Windows Power shell-webtoegang hebt geïnstalleerd met behulp van de cmdlet `Install-WindowsFeature`, worden beheer hulpprogramma's niet geïnstalleerd, tenzij de para meter `-IncludeManagementTools` wordt toegevoegd aan de cmdlet.
 
-Zie voor een voorbeeld [Windows PowerShell-webtoegang installeren met behulp van Windows PowerShell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
+Zie [Windows Power shell-webtoegang installeren met behulp van Windows Power shell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)voor een voor beeld.
 
-U kunt de IIS Manager-console toevoegen en andere IIS-beheerprogramma's die u nodig hebt, selecteert u de hulpprogramma's in een **functies Wizard Functies toevoegen en** sessie die is gericht op de gateway-server.
-De toevoegen Wizard functies en onderdelen wordt geopend vanuit binnen Server Manager.
+U kunt de IIS-beheer console en andere IIS-beheer hulpprogramma's die u nodig hebt, toevoegen door de hulpprogram ma's te selecteren in de **wizard functies en onderdelen toevoegen** die is gericht op de gateway server.
+De wizard functies en onderdelen toevoegen wordt geopend vanuit Serverbeheer.
 
-## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows PowerShell Web Access-website is niet toegankelijk
+## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows Power shell Web Access-website is niet toegankelijk
 
-Als Verbeterde beveiliging is ingeschakeld in Internet Explorer (IE ESC), kunt u de Windows PowerShell Web Access-website toevoegen aan de lijst met vertrouwde sites.
+Als verbeterde beveiliging is ingeschakeld in Internet Explorer (IE ESC), kunt u de website Windows Power shell Web Access toevoegen aan de lijst met vertrouwde sites.
 
-Een minder aanbevolen benadering, vanwege een beveiligingsrisico's, is het IE ESC uitschakelen.
-U kunt IE ESC uitschakelen in de tegel eigenschappen op de lokale Server-pagina in Serverbeheer.
+Een minder aanbevolen aanpak door beveiligings Risico's is het uitschakelen van Internet Explorer ESC.
+U kunt IE ESC uitschakelen op de tegel eigenschappen op de pagina lokale server in Serverbeheer.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een Autorisatiefout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doelcomputer.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doelcomputer.
 
-De bovenstaande foutbericht wordt weergegeven tijdens het verbinding maken wanneer de gatewayserver de doelcomputer is en ook in een werkgroep is.
+Het bovenstaande fout bericht wordt weer gegeven wanneer u verbinding probeert te maken wanneer de gateway server de doel computer is en zich ook in een werk groep bevindt.
 
-Wanneer de gatewayserver ook de doelserver is en deel uitmaakt van een werkgroep, geeft u de gebruikersnaam, computernaam en naam van de gebruikersgroep.
-Gebruik een punt (.) niet op zichzelf voor de computernaam van de.
+Wanneer de gateway server ook de doel server is en deze zich in een werk groep bevindt, geeft u de gebruikers naam, de computer naam en de naam van de gebruikers groep op.
+Gebruik niet een punt (.) om de computer naam weer te geven.
 
 ### <a name="scenarios-and-proper-values"></a>Scenario's en de juiste waarden
 
-#### <a name="all-cases"></a>Alle aanvragen
+#### <a name="all-cases"></a>Alle cases
 
-Parameter | Waarde
+Parameter | Value
 -- | --
-UserName | Server\_naam\\gebruiker\_naam<br/>Localhost\\gebruiker\_naam<br/>. \\gebruiker\_naam
-Gebruikersgroep | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruiker\_groep<br/>.\\user\_group
-ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_group<br/>.\\computer\_group
+UserName | Server @ no__t-0name @ no__t-1user @ no__t-2name<br/>Localhost @ no__t-0user @ no__t-1name<br/>. \\user @ no__t-1name
+UserGroup | Server @ no__t-0name @ no__t-1user @ no__t-2group<br/>Localhost @ no__t-0user @ no__t-1group<br/>. \\user @ no__t-1group
+ComputerGroup | Server @ no__t-0name @ no__t-1computer @ no__t-2group<br/>Localhost @ no__t-0computer @ no__t-1group<br/>. \\computer @ no__t-1group
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
-Parameter | Waarde
+Parameter | Value
 -- | --
-ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
+Computernaam | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
-Parameter | Waarde
+Parameter | Value
 -- | --
-ComputerName | Servernaam
+Computernaam | Servernaam
 
-### <a name="gateway-credentials"></a>Gatewayreferenties
+### <a name="gateway-credentials"></a>Gateway referenties
 
 Meld u aan bij een gatewayserver als doelcomputer met referenties die de volgende indeling hebben.
 
-- Server\_naam\\gebruiker\_naam
-- Localhost\\gebruiker\_naam
-- . \\gebruiker\_naam
+- Server @ no__t-0name @ no__t-1user @ no__t-2name
+- Localhost @ no__t-0user @ no__t-1name
+- . \\user @ no__t-1name
 
-## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Een beveiligings-id (SID) wordt weergegeven in een autorisatieregel
+## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel
 
-Een beveiligings-id (SID) wordt weergegeven in een autorisatieregel in plaats van de syntaxis van de gebruiker\_naam en de computer\_naam.
+Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis gebruiker @ no__t-0name/computer @ no__t-1name.
 
 De regel is niet meer geldig of de Active Directory Domain Services-query is mislukt.
-Een autorisatieregel is doorgaans niet geldig in scenario's waarin de gatewayserver is in één keer in een werkgroep, maar later is toegevoegd aan een domein
+Een autorisatie regel is doorgaans niet geldig in scenario's waarin de gateway server zich in één keer in een werk groep bevond, maar later is toegevoegd aan een domein
 
-## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Zich niet aanmelden met regel als een IPv6-adres met een domein
+## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Kan niet aanmelden met een regel als een IPv6-adres met een domein
 
 Kan niet aanmelden bij een doelcomputer die is opgegeven in autorisatieregels als een IPv6-adres met een domein.
 
 Autorisatieregels ondersteunen geen IPv6-adressen in de vorm van een domeinnaam.
 
 Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel.
-Zowel het domein als numerieke (met dubbele punten) IPv6-adressen worden ondersteund als naam van de doelcomputer op de aanmeldingspagina van Windows PowerShell-webtoegang, maar niet in autorisatieregels.
+Zowel domein-als numerieke IPv6-adressen (met dubbele punten) worden ondersteund als de naam van de doel computer op de aanmeldings pagina van de Windows Power shell-webtoegang, maar niet in autorisatie regels.
 
-Zie voor meer informatie over IPv6-adressen, [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
+Zie [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)(Engelstalig) voor meer informatie over IPv6-adressen.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [De webgebaseerde Windows PowerShell-Console gebruiken](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+- [Autorisatie regels en beveiligings functies van Windows Power shell-Internet toegang](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
+- [De Windows Power shell-console van het web gebruiken](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
 - [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

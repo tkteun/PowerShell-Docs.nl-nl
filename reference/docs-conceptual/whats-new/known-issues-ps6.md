@@ -1,114 +1,114 @@
 ---
 ms.date: 05/17/2018
-keywords: PowerShell, core
-title: Bekende problemen voor PowerShell 6.0
-ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+keywords: Power shell, kern
+title: Bekende problemen met Power shell 6,0
+ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733824"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692226"
 ---
-# <a name="known-issues-for-powershell-60"></a>Bekende problemen voor PowerShell 6.0
+# <a name="known-issues-for-powershell-60"></a>Bekende problemen met Power shell 6,0
 
-## <a name="known-issues-for-powershell-on-non-windows-platforms"></a>Bekende problemen voor PowerShell op niet-Windows-Platforms
+## <a name="known-issues-for-powershell-on-non-windows-platforms"></a>Bekende problemen met Power shell op niet-Windows-platforms
 
-Alpha versies van PowerShell in Linux en macOS zijn voornamelijk functioneel maar wel enkele belangrijke beperkingen en problemen betreffende de bruikbaarheid. Bètaversies. ook van PowerShell in Linux en macOS functionele en stabieler dan alpha releases, maar nog steeds kunnen worden zonder een reeks functies en kan bevatten fouten. In sommige gevallen kan zijn deze problemen gewoon bugs die nog niet zijn opgelost. In andere gevallen (net als bij de standaardaliassen voor ls, cp, enzovoort), we op zoek zijn naar feedback van de community met betrekking tot de opties die we.
+Alfa releases van Power shell op Linux en macOS zijn voornamelijk functioneel, maar hebben wel enkele belang rijke beperkingen en problemen met de bruikbaarheid. Bèta releases van Power shell op Linux en macOS zijn meer functioneel en stabieler dan Alpha-Releases, maar kunnen nog steeds een aantal functies hebben en kunnen fouten bevatten. In sommige gevallen zijn deze problemen gewoon fouten die nog niet zijn opgelost. In andere gevallen (net als bij de standaard aliassen voor LS, CP, etc.) kijken we naar feedback van de community over de keuzes die we maken.
 
-Opmerking: Vanwege de overeenkomsten van veel onderliggende subsystemen vaak PowerShell op Linux en Mac OS delen dezelfde mate van rijpheid op fouten en functies. Behalve zoals hieronder aangegeven, worden de problemen in deze sectie wordt toegepast op beide besturingssystemen.
+Opmerking: Als gevolg van de overeenkomsten van een groot aantal onderliggende subsystemen, is Power shell op Linux en macOS vaak hetzelfde niveau van de verval datum in zowel de functies als de bugs te delen. Behalve zoals hieronder vermeld, zijn de problemen in deze sectie van toepassing op beide besturings systemen.
 
-### <a name="case-sensitivity-in-powershell"></a>Hoofdlettergevoeligheid in PowerShell
+### <a name="case-sensitivity-in-powershell"></a>Hoofdletter gevoeligheid in Power shell
 
-PowerShell is in het verleden op uniforme wijze niet-hoofdlettergevoelig, met enkele uitzonderingen. Op UNIX-achtige besturingssystemen, het bestandssysteem is voornamelijk hoofdlettergevoelig en PowerShell voldoet aan de standaard van het bestandssysteem. Dit is toegankelijk via een aantal manieren, duidelijk en niet-duidelijk.
+In het verleden is Power shell uniform niet hoofdletter gevoelig, met enkele uitzonde ringen. Op UNIX-achtige besturings systemen is het bestands systeem voornamelijk hoofdletter gevoelig en wordt Power shell gevolgd door de standaard van het bestands systeem. Dit wordt weer gegeven op een aantal manieren, duidelijk en niet duidelijk.
 
 #### <a name="directly"></a>rechtstreeks
 
-- Bij het opgeven van een bestand in PowerShell, kan de juiste aanvraag moet worden gebruikt.
+- Wanneer u een bestand opgeeft in Power shell, moet u de juiste Case gebruiken.
 
-#### <a name="indirectly"></a>Indirectly
+#### <a name="indirectly"></a>Indirect
 
-- Als een script probeert te laden van een module en de naam van de module is niet correct, indeling, mislukt de laden van de module. Dit kan een probleem is met bestaande scripts veroorzaken als de naam waarmee de module waarnaar wordt verwezen, komt niet overeen met de werkelijke bestandsnaam.
-- Tabvoltooiing wordt niet automatisch aanvullen als de aanvraag van de naam van bestand onjuist is. Het fragment om te voltooien moet juist worden geïntegreerd. (Voltooiing is niet hoofdlettergevoelig voor naam en type lid voltooiingen.)
+- Als een script probeert een module te laden en de module naam niet correct is, zal de module laden mislukken. Dit kan een probleem met bestaande scripts veroorzaken als de naam waarmee de module wordt verwezen, niet overeenkomt met de werkelijke bestands naam.
+- Het volt ooien van het tabblad wordt niet automatisch voltooid als het probleem met de bestands naam onjuist is. Het uit te voeren fragment moet correct zijn. (De voltooiing is hoofdletter gevoelig voor de type naam en de voltooiing van het type lid.)
 
-### <a name="ps1-file-extensions"></a>. Ps1 Bestandsextensies
+### <a name="ps1-file-extensions"></a>. PS1-bestands extensies
 
-PowerShell-scripts moeten eindigen op `.ps1` voor de interpreter om te begrijpen hoe u laadt en voer ze uit in het huidige proces. Scripts uitvoeren in het huidige proces is de gebruikelijke normaal voor PowerShell. De `#!` magische getal kunnen worden toegevoegd aan een script waarmee u beschikt niet over een `.ps1` uitbreiding, maar dit zorgt ervoor dat het script moet worden uitgevoerd in een nieuwe PowerShell-sessie zo wordt voorkomen dat het script werken goed bij het uitwisselen van objecten. (Opmerking: dit kan het wenselijk gedrag worden bij het uitvoeren van een PowerShell-script uit `bash` of een andere shell.)
+Power shell-scripts moeten eindigen op `.ps1` voor de interpreter om te begrijpen hoe ze in het huidige proces moeten worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het Magic-nummer van de `#!` kan worden toegevoegd aan een script dat geen uitbrei ding voor `.ps1` heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar, waardoor niet naar behoren werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell-script van `bash` of een andere shell.)
 
-### <a name="missing-command-aliases"></a>Ontbrekende Opdrachtaliassen
+### <a name="missing-command-aliases"></a>Ontbrekende opdracht aliassen
 
-Op Linux/macOS, de 'gemak aliassen' voor de basisopdrachten `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` zijn verwijderd. PowerShell biedt op Windows, een set aliassen die zijn toegewezen aan de namen van de Linux-opdrachten voor het gebruiksgemak. Deze aliassen zijn verwijderd uit de standaard PowerShell op Linux/macOS-distributies, zodat de systeemeigen uitvoerbare bestand dat moet worden uitgevoerd zonder een pad op te geven.
+In Linux/macOS worden de ' gebruiks vriendelijke aliassen ' voor de basis opdrachten `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
 
-Er zijn voor- en nadelen op deze manier. Verwijderen van de aliassen wordt aangegeven dat de ervaring van de systeemeigen opdracht naar de PowerShell-gebruiker, maar verlaagt u functionaliteit in de shell omdat de systeemeigen opdrachten tekenreeksen in plaats van objecten retourneren.
+Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen opdracht-ervaring voor de Power shell-gebruiker beschikbaar, maar vermindert de functionaliteit in de shell omdat de systeem eigen opdrachten teken reeksen retour neren in plaats van objecten.
 
 > [!NOTE]
-> Dit is een gebied waar het PowerShell-team is op zoek naar feedback.
-> Wat is de beste oplossing? We laat dit zo is, of het gemak aliassen weer toevoegen? Zie [uitgeven #929](https://github.com/PowerShell/PowerShell/issues/929).
+> Dit is een gebied waar het Power shell-team op zoek is naar feedback.
+> Wat is de voor keur oplossing? Moeten we het blijven of de alias voor het gemak toevoegen? Zie [probleem #929](https://github.com/PowerShell/PowerShell/issues/929).
 
-### <a name="missing-wildcard-globbing-support"></a>Jokertekens (Bij globbing) ondersteuning ontbreekt
+### <a name="missing-wildcard-globbing-support"></a>Ondersteuning voor joker tekens ontbreekt (globbing)
 
-Op dit moment voert PowerShell alleen jokertekens (Bij globbing) voor ingebouwde cmdlets in Windows en voor externe opdrachten of binaire bestanden, evenals op Linux-cmdlets. Dit betekent dat een opdracht zoals `ls
-*.txt` mislukken omdat het sterretje zal niet worden uitgebreid zodat deze overeenkomt met de namen van bestanden. U kunt dit oplossen door op deze manier kunt werken `ls (gci *.txt | % name)` of eenvoudiger gezegd, `gci *.txt` met behulp van de ingebouwde PowerShell-equivalent aan `ls`.
+Op dit moment voert Power shell alleen Joker uitbrei ding (globbing) uit voor ingebouwde cmdlets in Windows, en voor externe opdrachten of binaire bestanden, evenals cmdlets op Linux. Dit betekent dat een opdracht als `ls
+*.txt` mislukt, omdat het sterretje niet kan worden uitgevouwen om te voldoen aan de bestands namen. U kunt dit omzeilen door `ls (gci *.txt | % name)` of, meer gewoon `gci *.txt` te gebruiken met behulp van de ingebouwde Power shell-equivalent van `ls`.
 
-Zie [#954](https://github.com/PowerShell/PowerShell/issues/954) feedback wilt geven over het verbeteren van de ervaring bij globbing op Linux/macOS.
+Zie [#954](https://github.com/PowerShell/PowerShell/issues/954) om ons feedback te geven over het verbeteren van de globbing-ervaring op Linux/macOS.
 
-### <a name="net-framework-vs-net-core-framework"></a>.NET framework en .NET Core Framework
+### <a name="net-framework-vs-net-core-framework"></a>.NET Framework vs .NET core Framework
 
-PowerShell op Linux/macOS maakt gebruik van .NET Core is een subset van het volledige .NET Framework op Microsoft Windows. Dit is van belang omdat PowerShell directe toegang tot de onderliggende framework-typen, methoden, enzovoort biedt. Als gevolg hiervan scripts die worden uitgevoerd op Windows mogelijk niet worden uitgevoerd op niet-Windows-platforms vanwege de verschillen in de frameworks. Zie voor meer informatie over .NET Core Framework. <https://dotnetfoundation.org/net-core>
+Power shell op Linux/macOS gebruikt .NET core, een subset van de volledige .NET Framework in micro soft Windows. Dit is belang rijk omdat Power shell direct toegang biedt tot de onderliggende Framework typen, methoden, enzovoort. Als gevolg hiervan kunnen scripts die worden uitgevoerd op Windows niet worden uitgevoerd op niet-Windows-platforms vanwege de verschillen in de frameworks. Zie [dotnetfoundation.org](https://dotnetfoundation.org/)voor meer informatie over .net core Framework.
 
-Met de komst van [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 gaat back veel van de traditionele typen en methoden die aanwezig in het volledige .NET Framework zijn. Dit betekent dat PowerShell Core kan veel traditionele Windows PowerShell-modules zonder wijzigingen aan te laden. U kunt ons .NET Standard 2.0 gerelateerde werk volgen [hier](https://github.com/PowerShell/PowerShell/projects/4).
+Met de komst van [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/)brengt .net Core 2,0 een groot aantal van de traditionele typen en methoden die aanwezig zijn in de volledige .NET Framework. Dit betekent dat Power shell core veel traditionele Windows Power shell-modules zonder wijzigingen kan laden. U kunt [hier](https://github.com/PowerShell/PowerShell/projects/4)het gerelateerde .net Standard 2,0-werk volgen.
 
-### <a name="redirection-issues"></a>Omleiding van problemen
+### <a name="redirection-issues"></a>Problemen met omleiding
 
-Invoer-omleiding wordt niet ondersteund in PowerShell op elk platform.
+Invoer omleiding wordt niet ondersteund in Power shell op een platform.
 [Probleem #1629](https://github.com/PowerShell/PowerShell/issues/1629)
 
-Gebruik `Get-Content` schrijven van de inhoud van een bestand in de pijplijn.
+Gebruik `Get-Content` om de inhoud van een bestand naar de pijp lijn te schrijven.
 
-Omgeleide uitvoer bevat byte-volgordemarkering voor Unicode (BOM) als de standaard UTF-8-codering wordt gebruikt. De stuklijst wordt problemen veroorzaken bij het werken met hulpprogramma's die niet verwachten of wanneer u toevoegt aan een bestand. Gebruik `-Encoding Ascii` ASCII-tekst (die niet wordt Unicode, heeft geen een stuklijst) te schrijven.
+Omgeleide uitvoer bevat de Unicode-byte order mark (BOM) wanneer de standaard UTF-8-code ring wordt gebruikt. De stuk lijst zorgt voor problemen bij het werken met hulpprogram ma's die deze niet verwachten of wanneer ze worden toegevoegd aan een bestand. Gebruik `-Encoding Ascii` voor het schrijven van ASCII-tekst (die geen Unicode is, geen stuk lijst).
 
 > [!Note]
-> Zie [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) om ons feedback over het verbeteren van de ervaring van de codering voor PowerShell Core voor alle platformen. We werken aan ondersteuning voor UTF-8 zonder een stuklijst en wijzigen van de codering standaardwaarden voor verschillende cmdlets mogelijk verschillende platforms.
+> Zie [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) om ons feedback te geven over het verbeteren van de coderings ervaring voor Power shell Core op alle platforms. We werken met de ondersteuning van UTF-8 zonder een stuk lijst en kunnen de standaard waarden voor de code ring wijzigen voor verschillende cmdlets op verschillende platforms.
 
-### <a name="job-control"></a>Controle van de taak
+### <a name="job-control"></a>Taak beheer
 
-Er is geen taak-control-ondersteuning in PowerShell op Linux/macOS.
-De `fg` en `bg` opdrachten zijn niet beschikbaar.
+Er is geen taak beheer ondersteuning in Power shell op Linux/macOS.
+De opdrachten `fg` en `bg` zijn niet beschikbaar.
 
-U kunt gebruiken voor de tijd die [PowerShell-taken](/powershell/module/microsoft.powershell.core/about/about_jobs) die werken voor alle platformen.
+Voor deze tijd kunt u [Power shell-taken](/powershell/module/microsoft.powershell.core/about/about_jobs) gebruiken die op alle platforms werken.
 
-### <a name="remoting-support"></a>Ondersteuning voor externe toegang
+### <a name="remoting-support"></a>Ondersteuning voor externe communicatie
 
-Op dit moment ondersteunt PowerShell Core PowerShell Remoting (PSRP) via WSMan met basisverificatie in macOS en Linux, en met NTLM-verificatie op Linux. (Op basis van een Kerberos-verificatie wordt niet ondersteund.)
+Momenteel ondersteunt Power shell core Power shell Remoting (PSRP) via WSMan met basis verificatie voor macOS en Linux, en met NTLM-verificatie op Linux. (Verificatie op basis van Kerberos wordt niet ondersteund.)
 
-Het werk voor externe toegang op basis van WSMan is ingesteld in de [psl-omi-provider](https://github.com/PowerShell/psl-omi-provider) opslagplaats.
+Het werk voor externe toegang op basis van WSMan wordt uitgevoerd in de [PSL-Omi-provider](https://github.com/PowerShell/psl-omi-provider) opslag plaats.
 
-PowerShell Core ondersteunt ook PowerShell Remoting (PSRP) via SSH op alle platformen (Windows, macOS en Linux). Terwijl dit wordt momenteel niet ondersteund in de productieomgeving, kunt u meer informatie over het instellen van deze van [hier](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
+Power shell core biedt ook ondersteuning voor externe communicatie van Power shell (PSRP) via SSH op alle platformen (Windows, macOS en Linux). Hoewel dit momenteel niet wordt ondersteund in de productie, kunt u [hier](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md)meer informatie vinden over het instellen hiervan.
 
-### <a name="just-enough-administration-jea-support"></a>Ondersteuning voor Just Enough-beheer (JEA)
+### <a name="just-enough-administration-jea-support"></a>Just-voldoende beheer (JEA)-ondersteuning
 
-De mogelijkheid beperkte administration (JEA) voor externe toegang om eindpunten te maken is momenteel niet beschikbaar in PowerShell op Linux/macOS. Deze functie is momenteel niet binnen het bereik van 6.0 en iets zullen wij beschouwen als post 6.0 omdat hiervoor belangrijke ontwerp.
+De mogelijkheid om JEA-eind punten (congebonden beheer) te maken, is momenteel niet beschikbaar in Power shell op Linux/macOS. Deze functie is momenteel niet beschikbaar in het bereik van 6,0 en iets wat we als een aanzienlijk ontwerp moeten 6,0 beschouwen.
 
-### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, en PowerShell
+### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` en Power shell
 
-Omdat PowerShell wordt uitgevoerd voor de meeste opdrachten in het geheugen (zoals Python of Ruby), kunt u sudo niet rechtstreeks met PowerShell dient te worden gebruiken. (U kunt natuurlijk uitvoeren `pwsh` van sudo.) Indien nodig een PowerShell-cmdlet uit in PowerShell ook uitvoeren met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, en vervolgens u zou doen `sudo pwsh Set-Date 8/18/2016`. Evenzo, kunt u niet exec een ingebouwde PowerShell direct. In plaats daarvan moet u zou doen `exec pwsh item_to_exec`.
+Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde invoeg toepassingen. (U kunt natuurlijk `pwsh` uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, moet u `sudo pwsh Set-Date 8/18/2016`. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan moet u `exec pwsh item_to_exec`.
 
-Dit probleem op dit moment worden bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
+Dit probleem wordt momenteel bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
-### <a name="missing-cmdlets"></a>Ontbrekende Cmdlets
+### <a name="missing-cmdlets"></a>Ontbrekende cmdlets
 
-Een groot aantal van de opdrachten (cmdlets) die doorgaans beschikbaar zijn in PowerShell zijn niet beschikbaar in Linux/macOS. In veel gevallen zinvol deze opdrachten zijn niet op deze platforms (bijvoorbeeld Windows-specifieke kenmerken, zoals het register). Andere opdrachten, zoals de opdrachten voor de service-beheer (Get/Start/Stop-Service) aanwezig zijn, maar niet in werking. Toekomstige versies zullen deze problemen, bepaling van de verbroken cmdlets en de nieuwe toevoegt na verloop van tijd te corrigeren.
+Een groot aantal opdrachten (cmdlets) die normaal gesp roken beschikbaar zijn in Power shell zijn niet beschikbaar in Linux/macOS. In veel gevallen hebben deze opdrachten geen zin op deze platformen (bijvoorbeeld Windows-specifieke functies zoals het REGI ster). Andere opdrachten als service besturings opdrachten (Get/start/stop-service) zijn aanwezig, maar niet functioneel. In toekomstige releases worden deze problemen verholpen, worden de gebroken cmdlets gecorrigeerd en worden nieuwe berichten in de loop van de tijd toegevoegd.
 
-### <a name="command-availability"></a>Beschikbaarheid van de opdracht
+### <a name="command-availability"></a>Beschik baarheid van opdracht
 
-De volgende tabel bevat opdrachten die bekend zijn niet te werken in PowerShell op Linux/macOS.
+De volgende tabel bevat opdrachten die bekend zijn in Power shell op Linux/macOS.
 
 |Opdrachten|Operationele status|Opmerkingen|
 |--------|-----------------|-----|
-|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
-|`Get-Acl`, `Set-Acl`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
-|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niet beschikbaar.|Deze opdrachten wordt niet herkend. Dit moet worden opgelost in een toekomstige release.|
-|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld `Start-Process gvim -PassThru | Wait-Process` werkt niet; deze moet worden gewacht op het proces is mislukt.|
-|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Beschikbare maar werkt niet.|Schrijft een foutbericht met de mededeling dat de opdrachten niet werkt. Deze moeten worden opgelost in een toekomstige release.|
-|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenisbronnen zijn beschikbaar.|De PowerShell-opdrachten eventing aanwezig zijn, maar de meeste van de bronnen van gebeurtenissen die worden gebruikt met de opdrachten (zoals System.Timers.Timer) zijn niet beschikbaar in Linux maken van de opdrachten die niet kan worden gebruikt in de Alpha-release.|
-|`Set-ExecutionPolicy`|Beschikbare maar werkt niet.|Retourneert een bericht weergegeven dat niet wordt ondersteund op dit platform. Uitvoeringsbeleid is een gebruiker gerichte "veiligheid belt" die voorkomt dat de gebruiker van het maken van dure fouten. Het is niet een beveiligingsgrens.|
-|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbare maar `New-PSSession` werkt niet.|`New-PSSessionOption` en `New-PSTransportOption` niet op dit moment zijn geverifieerd om te werken nu die `New-PSSession` werkt.|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
+|`Get-Acl`, `Set-Acl`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
+|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
+|`Wait-Process`|Beschikbaar, werkt niet goed. |@No__t-0 werkt bijvoorbeeld niet; Er kan niet worden gewacht op het proces.|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Beschikbaar, maar werkt niet.|Schrijft een fout bericht dat aangeeft dat de opdrachten niet werken. Deze moeten worden opgelost in een toekomstige release.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenis bronnen beschikbaar.|De opdrachten voor het uitvoeren van Power shell-gebeurtenissen zijn aanwezig, maar de meeste gebeurtenis bronnen die worden gebruikt met de opdrachten (zoals System. time-out. timer) zijn niet beschikbaar in Linux, waardoor de opdrachten overbodig zijn in de alpha-release.|
+|`Set-ExecutionPolicy`|Beschikbaar, maar werkt niet.|Retourneert een bericht dat niet wordt ondersteund op dit platform. Uitvoerings beleid is een gebruikers gerichte "veiligheids gordel" waarmee wordt voor komen dat de gebruiker kost bare fouten kan maken. Het is geen beveiligings grens.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, maar `New-PSSession` werkt niet.|`New-PSSessionOption` en `New-PSTransportOption` worden momenteel niet geverifieerd om nu te werken dat `New-PSSession` werkt.|

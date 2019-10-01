@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
-ms.openlocfilehash: 47c1de362108096f26c0420d6135a9d9028a0302
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 4de295db539b95d0f4ddef297df5e9523892bffc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71145080"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692297"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
@@ -353,4 +353,4 @@ Een configuratie die wordt geleverd met behulp van push kan worden geknoeid met 
 
 - Probeer het ondertekende MOF-bestand te pushen.
 
-  ![SignMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
