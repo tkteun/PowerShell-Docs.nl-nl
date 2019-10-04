@@ -1,0 +1,224 @@
+---
+ms.date: 12/12/2018
+keywords: DSC, Power shell, configuratie, installatie
+title: Configuraties voor een knooppunt toepassen, ophalen en testen
+ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
+ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71941864"
+---
+# <a name="apply-get-and-test-configurations-on-a-node"></a>Configuraties voor een knooppunt toepassen, ophalen en testen
+
+In deze hand leiding wordt uitgelegd hoe u kunt werken met configuraties op een doel knooppunt. Deze hand leiding is opgesplitst in de volgende stappen:
+
+## <a name="apply-a-configuration"></a>Een configuratie Toep assen
+
+Om een configuratie toe te passen en te beheren, moeten we een '. MOF-bestand ' genereren. De volgende code geeft een eenvoudige configuratie weer die in deze hand leiding wordt gebruikt.
+
+```powershell
+Configuration Sample
+{
+    # This will generate two .mof files, a localhost.mof, and a server02.mof
+    Node localhost, server02
+    {
+        File SampleFile
+        {
+            DestinationPath = 'C:\Temp\temp.txt'
+            Contents = 'This is a simple resource to show Configuration functionality on a Node.'
+        }
+    }
+}
+
+# The -OutputPath parameter is built into every Configuration automatically.
+# The value of -OutputPath determines where the .mof file should be stored, once compiled.
+Sample -OutputPath "C:\Temp\"
+```
+
+Bij het compileren van deze configuratie worden twee '. MOF-bestanden ' geoogst.
+
+```output
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a----       11/27/2018   7:29 AM     2.13KB localhost.mof
+-a----       11/27/2018   7:29 AM     2.13KB server02.mof
+```
+
+Gebruik de cmdlet [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) om een configuratie toe te passen. De para meter `-Path` geeft u een map op waarin '. mof '-bestanden zich bevinden. Als er geen `-Computername` is opgegeven, wordt door `Start-DSCConfiguration` geprobeerd elke configuratie toe te passen op de computer naam die is opgegeven met de naam van het MOF-bestand (@no__t -2computername\>.mof). Geef `-Verbose` op `Start-DSCConfiguration` als u meer uitgebreide uitvoer wilt weer geven.
+
+```powershell
+Start-DSCConfiguration -Path C:\Temp\ -Verbose
+```
+
+Als `-Wait` niet is opgegeven, ziet u een taak die is gemaakt. De gemaakte taak heeft één **ChildJob** voor elk bestand '. mof ' dat is verwerkt door `Start-DSCConfiguration`.
+
+```output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
+```
+
+Als een configuratie lange tijd in beslag neemt en u deze wilt stoppen, kunt u [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) gebruiken om de toepassing op het lokale knoop punt te stoppen.
+
+```powershell
+Stop-DSCConfiguration -Force
+```
+
+Zodra het proces is voltooid, kunt u de status van de taken weer geven via het taak object dat wordt geretourneerd door [Get-job](/powershell/module/microsoft.powershell.core/get-job).
+
+```powershell
+$job = Get-Job
+$job.ChildJobs
+```
+
+```output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+49     Job49           Configuratio... Completed     True            localhost            Start-DSCConfiguration...
+50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
+```
+
+Als u de **uitgebreide** uitvoer wilt zien, gebruikt u de volgende opdrachten om de **uitgebreide** stroom voor elke **ChildJob**weer te geven. Zie [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)voor meer informatie over Power shell-taken.
+
+```powershell
+# View the verbose output of the localhost job using array indexing.
+$job.ChildJobs[0].Verbose
+```
+
+```output
+Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
+An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-124525095-708259637-1543119021-1282804.
+[SERVER01]: LCM:  [ Start  Set      ]
+[SERVER01]: LCM:  [ Start  Resource ]  [[File]SampleFile]
+[SERVER01]: LCM:  [ Start  Test     ]  [[File]SampleFile]
+[SERVER01]:                            [[File]SampleFile] The destination object was found and no action is required.
+[SERVER01]: LCM:  [ End    Test     ]  [[File]SampleFile]  in 0.0370 seconds.
+[SERVER01]: LCM:  [ Skip   Set      ]  [[File]SampleFile]
+[SERVER01]: LCM:  [ End    Resource ]  [[File]SampleFile]
+[SERVER01]: LCM:  [ End    Set      ]
+[SERVER01]: LCM:  [ End    Set      ]    in  0.2400 seconds.
+Operation 'Invoke CimMethod' complete.
+```
+
+Vanaf Power shell 5,0 is de para meter `-UseExisting` toegevoegd aan `Start-DSCConfiguration`. Door `-UseExisting` op te geven, geeft u de cmdlet de opdracht om de bestaande toegepaste configuratie te gebruiken in plaats van een opgegeven door de para meter `-Path`.
+
+```powershell
+Start-DSCConfiguration -UseExisting -Verbose -Wait
+```
+
+## <a name="test-a-configuration"></a>Een configuratie testen
+
+U kunt een momenteel toegepaste configuratie testen met [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` retourneert `True` als het knoop punt compatibel is en `False` als dat niet het geval is.
+
+```powershell
+Test-DSCConfiguration
+```
+
+Vanaf Power shell 5,0 is de para meter `-Detailed` toegevoegd waarmee een object wordt geretourneerd met verzamelingen voor **ResourcesInDesiredState** en **ResourcesNotInDesiredState**
+
+```powershell
+Test-DSCConfiguration -Detailed
+```
+
+Vanaf Power shell 5,0 kunt u een configuratie testen zonder deze toe te passen. De para meter `-ReferenceConfiguration` accepteert het pad van een MOF-bestand om het knoop punt te testen. Er worden geen **set** -acties uitgevoerd op het knoop punt. In Power Shell 4,0 zijn er tijdelijke oplossingen voor het testen van een configuratie zonder deze toe te passen, maar ze worden hier niet besproken.
+
+## <a name="get-configuration-values"></a>Configuratie waarden ophalen
+
+De cmdlet [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) retourneert de huidige waarden voor alle geconfigureerde resources in de momenteel toegepaste configuratie.
+
+```powershell
+Get-DSCConfiguration
+```
+
+De uitvoer van de voorbeeld configuratie zou er als volgt uitzien als ze zijn toegepast.
+
+```output
+ConfigurationName    : Sample
+DependsOn            :
+ModuleName           : PSDesiredStateConfiguration
+ModuleVersion        :
+PsDscRunAsCredential :
+ResourceId           : [File]SampleFile
+SourceInfo           :
+Attributes           : {archive}
+Checksum             :
+Contents             :
+CreatedDate          : 11/27/2018 7:16:06 AM
+Credential           :
+DestinationPath      : C:\Temp\temp.txt
+Ensure               : present
+Force                :
+MatchSource          :
+ModifiedDate         : 11/27/2018 7:16:06 AM
+Recurse              :
+Size                 : 75
+SourcePath           :
+SubItems             :
+Type                 : file
+PSComputerName       :
+CimClassName         : MSFT_FileDirectoryConfiguration
+```
+
+## <a name="get-configuration-status"></a>Configuratie status ophalen
+
+Vanaf Power shell 5,0 kunt u met de cmdlet [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) de geschiedenis van toegepaste configuraties weer geven in het knoop punt. Power shell DSC houdt de laatste {{N}} configuraties bij die in de **Push** -of **pull** -modus worden toegepast. Dit omvat alle *consistentie* controles die door de LCM worden uitgevoerd. @No__t-0 toont standaard alleen de laatste geschiedenis vermelding.
+
+```powershell
+Get-DSCConfigurationStatus
+```
+
+```output
+Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
+------     ---------                 ----            ----  ---------------      -----------------
+Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
+```
+
+Gebruik de para meter `-All` om alle geschiedenis van de configuratie status weer te geven.
+
+> [!NOTE]
+> De uitvoer wordt afgekapt voor het boogere.
+
+```powershell
+Get-DSCConfigurationStatus -All
+```
+
+```output
+Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
+------     ---------                 ----            ----  ---------------      -----------------
+Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
+Success    11/27/2018 7:16:06 AM     Initial         PUSH  False                1
+Success    11/27/2018 7:04:53 AM     Initial         PUSH  False                1
+Success    11/27/2018 7:03:45 AM     Consistency     PUSH  False                2
+Success    11/27/2018 7:03:40 AM     Consistency     PUSH  False                2
+Success    11/27/2018 6:48:40 AM     Consistency     PUSH  False                2
+Success    11/27/2018 6:33:44 AM     Consistency     PUSH  False                2
+Success    11/27/2018 6:33:40 AM     Consistency     PUSH  False                2
+Success    11/27/2018 6:18:40 AM     Consistency     PUSH  False                2
+Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                2
+```
+
+## <a name="manage-configuration-documents"></a>Configuratie documenten beheren
+
+De LCM beheert de configuratie van het knoop punt door te werken met **configuratie documenten**. Deze MOF-bestanden bevinden zich in de map ' C:\Windows\System32\Configuration '.
+
+Vanaf Power shell 5,0 kunt u met de [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) de '. MOF-bestanden verwijderen om toekomstige consistentie controles te stoppen of een configuratie met fouten verwijderen als deze wordt toegepast. Met de para meter `-Stage` kunt u opgeven welk MOF-bestand u wilt verwijderen.
+
+```powershell
+Remove-DSCConfigurationDocument -Stage Current
+```
+
+> [!NOTE]
+> In Power Shell 4,0 kunt u deze '. MOF-bestanden nog steeds rechtstreeks verwijderen met behulp van [Remove-item](/powershell/module/microsoft.powershell.management/remove-item).
+
+## <a name="publish-configurations"></a>Configuraties publiceren
+
+Vanaf Power shell 5,0 is de cmdlet [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) toegevoegd. Met deze cmdlet kunt u een '. MOF-bestand publiceren naar externe computers, zonder het toe te passen.
+
+```powershell
+Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
+```
+
+## <a name="see-also"></a>Zie ook
+
+- [Ophalen, testen en instellen](../resources/get-test-set.md)
