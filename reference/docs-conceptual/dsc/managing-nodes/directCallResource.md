@@ -1,0 +1,57 @@
+---
+ms.date: 06/12/2017
+keywords: DSC, Power shell, configuratie, installatie
+title: Methoden voor het rechtstreeks aanroepen van DSC-resources
+ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
+ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71942249"
+---
+# <a name="calling-dsc-resource-methods-directly"></a><span data-ttu-id="a395d-103">Methoden voor het rechtstreeks aanroepen van DSC-resources</span><span class="sxs-lookup"><span data-stu-id="a395d-103">Calling DSC resource methods directly</span></span>
+
+><span data-ttu-id="a395d-104">Van toepassing op: Windows Power shell 5,0</span><span class="sxs-lookup"><span data-stu-id="a395d-104">Applies To: Windows PowerShell 5.0</span></span>
+
+<span data-ttu-id="a395d-105">U kunt de cmdlet [invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) gebruiken om de functies of methoden van een DSC-resource rechtstreeks aan te roepen (de functies **Get-TargetResource**, **set-TargetResource**en **test-TargetResource** van een op MOF gebaseerde resource, of deMethoden van een op een klasse gebaseerde resource ophalen, **instellen**en **testen** .</span><span class="sxs-lookup"><span data-stu-id="a395d-105">You can use the [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) cmdlet to directly call the functions or methods of a DSC resource (The **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions of a MOF-based resource, or the **Get**, **Set**, and **Test** methods of a class-based resource).</span></span>
+<span data-ttu-id="a395d-106">Dit kan worden gebruikt door derden die DSC-resources willen gebruiken of als handig hulp middel bij het ontwikkelen van resources.</span><span class="sxs-lookup"><span data-stu-id="a395d-106">This can be used by third-parties that want to use DSC resources, or as a helpful tool while developing resources.</span></span>
+
+<span data-ttu-id="a395d-107">Deze cmdlet wordt doorgaans gebruikt in combi natie met de @no__t eigenschap **refreshMode** -0, maar kan ook worden gebruikt, ongeacht waar het is ingesteld.</span><span class="sxs-lookup"><span data-stu-id="a395d-107">This cmdlet is typically used in combination with a metaconfiguration property `refreshMode = 'Disabled'`, but it can be used no matter what **refreshMode** is set to.</span></span>
+
+<span data-ttu-id="a395d-108">Wanneer u de cmdlet **invoke-dscresource bieden** aanroept, geeft u op welke methode of functie u wilt aanroepen met behulp van de **methode** parameter.</span><span class="sxs-lookup"><span data-stu-id="a395d-108">When calling the **Invoke-DscResource** cmdlet, you specify which method or function to call by using the **Method** parameter.</span></span> <span data-ttu-id="a395d-109">U geeft de eigenschappen van de resource op door een hashtabel door te geven als de waarde van de **eigenschaps** parameter.</span><span class="sxs-lookup"><span data-stu-id="a395d-109">You specify the properties of the resource by passing a hashtable as the value of the **Property** parameter.</span></span>
+
+<span data-ttu-id="a395d-110">Hier volgen enkele voor beelden van het rechtstreeks aanroepen van resource methoden:</span><span class="sxs-lookup"><span data-stu-id="a395d-110">The following are examples of directly calling resource methods:</span></span>
+
+## <a name="ensure-a-file-is-present"></a><span data-ttu-id="a395d-111">Controleren of een bestand aanwezig is</span><span class="sxs-lookup"><span data-stu-id="a395d-111">Ensure a file is present</span></span>
+
+```powershell
+$result = Invoke-DscResource -Name File -Method Set -Property @{
+                            DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
+                            Contents = 'This file is create by Invoke-DscResource'} -Verbose
+$result | fl
+```
+
+## <a name="test-that-a-file-is-present"></a><span data-ttu-id="a395d-112">Testen of een bestand aanwezig is</span><span class="sxs-lookup"><span data-stu-id="a395d-112">Test that a file is present</span></span>
+
+```powershell
+$result = Invoke-DscResource -Name File -Method Test -Property @{
+                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+                            Contents='This file is create by Invoke-DscResource'} -Verbose
+$result | fl
+```
+
+## <a name="get-the-contents-of-file"></a><span data-ttu-id="a395d-113">De inhoud van het bestand ophalen</span><span class="sxs-lookup"><span data-stu-id="a395d-113">Get the contents of file</span></span>
+
+```powershell
+$result = Invoke-DscResource -Name File -Method Get -Property @{
+                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+                            Contents='This file is create by Invoke-DscResource'} -Verbose
+$result.ItemValue | fl
+```
+
+><span data-ttu-id="a395d-114">**Opmerking:** Het rechtstreeks aanroepen van samengestelde resource methoden wordt niet ondersteund.</span><span class="sxs-lookup"><span data-stu-id="a395d-114">**Note:** Directly calling composite resource methods is not supported.</span></span> <span data-ttu-id="a395d-115">In plaats daarvan roept u de methoden van de onderliggende resources aan waaruit de samengestelde resource is samengesteld.</span><span class="sxs-lookup"><span data-stu-id="a395d-115">Instead, call the methods of the underlying resources that make up the composite resource.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="a395d-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="a395d-116">See Also</span></span>
+- [<span data-ttu-id="a395d-117">Een aangepaste DSC-resource schrijven met MOF</span><span class="sxs-lookup"><span data-stu-id="a395d-117">Writing a custom DSC resource with MOF</span></span>](../resources/authoringResourceMOF.md)
+- [<span data-ttu-id="a395d-118">Een aangepaste DSC-resource schrijven met Power shell-klassen</span><span class="sxs-lookup"><span data-stu-id="a395d-118">Writing a custom DSC resource with PowerShell classes</span></span>](../resources/authoringResourceClass.md)
+- [<span data-ttu-id="a395d-119">Foutopsporing voor DSC-resources</span><span class="sxs-lookup"><span data-stu-id="a395d-119">Debugging DSC resources</span></span>](../troubleshooting/debugResource.md)

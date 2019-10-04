@@ -339,6 +339,299 @@
           href: wmf/known-issues/known-issues-51.md
         - name: Bekende problemen en beperkingen in DSC
           href: wmf/known-issues/known-issues-dsc.md
+- name: Desired State Configuration (DSC)
+  items:
+    - name: Overzicht
+      items:
+        - name: Overzicht Desired State Configuration voor ontwikkelaars
+          href: dsc/overview/overview.md
+        - name: Overzicht Desired State Configuration voor besluitvormers
+          href: dsc/overview/decisionMaker.md
+        - name: Overzicht Desired State Configuration voor technici
+          href: dsc/overview/DscForEngineers.md
+        - name: Informatie over de rol van DSC in een CI/CD-pijplijn
+          href: dsc/overview/authoringAdvanced.md
+    - name: Aan de slag
+      items:
+        - name: Aan de slag gaan met DSC voor Linux
+          href: dsc/getting-started/lnxGettingStarted.md
+        - name: Aan de slag gaan met DSC voor Windows
+          href: dsc/getting-started/winGettingStarted.md
+        - name: Aan de slag gaan met DSC op Nano
+          href: dsc/getting-started/nanoDSC.md
+        - name: Aan de slag gaan met DSC in Azure Automation
+          href: dsc/getting-started/azureDSC.md
+        - name: Aan de slag gaan met DSC op Azure Virtual Machines
+          href: dsc/getting-started/azureDSCexthistory.md
+    - name: Snelstartgidsen
+      expanded: true
+      items:
+        - name: Een configuratie maken van een groepsbeleid
+          href: dsc/quickstarts/gpo-quickstart.md
+        - name: Een website maken met DSC
+          href: dsc/quickstarts/website-quickStart.md
+    - name: Configuraties
+      items:
+        - name: Concepten
+          items:
+            - name: Wat is een configuratie?
+              href: dsc/configurations/configurations.md
+        - name: Instructiegidsen
+          items:
+            - name: 'Een configuratie schrijven, compileren en toepassen'
+              href: dsc/configurations/write-compile-apply-configuration.md
+            - name: Werken met resources in configuraties
+              items:
+                - name: Import-DSCResource gebruiken
+                  href: dsc/configurations/import-dscresource.md
+                - name: Aanvullende DSC-resources installeren
+                  href: dsc/configurations/install-additional-dsc-resources.md
+                - name: Een specifieke versie van een geïnstalleerde resource importeren
+                  href: dsc/configurations/sxsResource.md
+                - name: Referenties gebruiken met DSC-resources
+                  href: dsc/configurations/runAsUser.md
+            - name: Dynamische configuraties schrijven
+              items:
+                - name: Parameters toevoegen aan een configuratie
+                  href: dsc/configurations/add-parameters-to-a-configuration.md
+                - name: Voorwaardelijke instructies en lussen in configuraties
+                  href: dsc/configurations/flow-control-in-configurations.md
+                - name: Help schrijven voor DSC-configuraties
+                  href: dsc/configurations/configHelp.md
+                - name: Configuraties nesten
+                  href: dsc/configurations/compositeconfigs.md
+            - name: Configuratiegegevens
+              items:
+                - name: Configuratiegegevens van configuraties scheiden
+                  href: dsc/configurations/configData.md
+                - name: Configuratie- en omgevingsgegevens scheiden (psd1)
+                  href: dsc/configurations/separatingEnvData.md
+                - name: Referentieopties in de configuratiegegevens
+                  href: dsc/configurations/configDataCredentials.md
+            - name: Afhankelijkheden in configuraties
+              items:
+                - name: Resourceafhankelijkheden met behulp van DependsOn
+                  href: dsc/configurations/resource-depends-on.md
+                - name: Afhankelijkheden van meerdere knooppunten
+                  href: dsc/configurations/crossNodeDependencies.md
+                - name: Een knooppunt opnieuw opstarten
+                  href: dsc/configurations/reboot-a-node.md
+    - name: Bronnen
+      items:
+        - name: Concepten
+          items:
+            - name: Wat zijn resources?
+              href: dsc/resources/resources.md
+            - name: 'Ophalen, testen en instellen'
+              href: dsc/resources/get-test-set.md
+            - name: Aangepaste resources
+              href: dsc/resources/authoringresource.md
+            - name: Een DSC-resource met één instantie schrijven (aanbevolen)
+              href: dsc/resources/singleInstance.md
+            - name: Controlelijst voor het ontwerpen van resource
+              href: dsc/resources/resourceAuthoringChecklist.md
+        - name: Instructiegidsen
+          items:
+            - name: Op MOF gebaseerde resources schrijven in PowerShell
+              href: dsc/resources/authoringResourceMOF.md
+            - name: Op klassen gebaseerde resources schrijven in PowerShell
+              href: dsc/resources/authoringResourceClass.md
+            - name: Samengestelde resources schrijven in PowerShell
+              href: dsc/resources/authoringResourceComposite.md
+            - name: 'Op MOF gebaseerde resources schrijven in C#'
+              href: dsc/resources/authoringResourceMofCS.md
+            - name: Resource Designer Tool gebruiken
+              href: dsc/resources/authoringResourceMofDesigner.md
+    - name: Knooppunten beheren
+      items:
+        - name: Instructiegidsen
+          items:
+            - name: 'Configuraties voor een knooppunt toepassen, ophalen en testen'
+              href: dsc/managing-nodes/apply-get-test.md
+            - name: Local Configuration Manager (v5) configureren
+              href: dsc/managing-nodes/metaConfig.md
+            - name: De LCM configureren in PowerShell 4.0
+              href: dsc/managing-nodes/metaConfig4.md
+            - name: Methoden voor het rechtstreeks aanroepen van DSC-resources
+              href: dsc/managing-nodes/directCallResource.md
+    - name: Pull-server
+      items:
+        - name: Concepten
+          items:
+            - name: Push/pull-model
+              href: dsc/pull-server/enactingConfigurations.md
+        - name: Instructiegidsen
+          items:
+            - name: Een pull-server instellen
+              items:
+                - name: Een DSC SMB-pull-server instellen
+                  href: dsc/pull-server/pullServerSMB.md
+                - name: Een DSC HTTP-pull-server instellen
+                  href: dsc/pull-server/pullServer.md
+            - name: Een knooppunt registreren met een pull-server
+              items:
+                - name: Een DSC-pull-client instellen
+                  href: dsc/pull-server/pullClient.md
+                - name: Een pull-client instellen met behulp van configuratienamen (v5)
+                  href: dsc/pull-server/pullClientConfigNames.md
+                - name: Een pull-client instellen met behulp van configuratie-id's (v5)
+                  href: dsc/pull-server/pullClientConfigID.md
+                - name: Een pull-client instellen met behulp van configuratie-id's (v4)
+                  href: dsc/pull-server/pullClientConfigID4.md
+                - name: Gedeeltelijke configuraties
+                  href: dsc/pull-server/partialconfigs.md
+            - name: Configuraties implementeren met een pull-server
+              items:
+                - name: Configuraties publiceren naar een pull-server (v4/v5)
+                  href: dsc/pull-server/publishConfigs.md
+                - name: Resources verpakken en uploaden naar een pull-server (v4)
+                  href: dsc/pull-server/package-upload-resources.md
+                - name: Knooppunten bijwerken vanaf een pull-server
+                  href: dsc/pull-server/update-nodes-manually.md
+                - name: Een DSC-rapportserver gebruiken
+                  href: dsc/pull-server/reportServer.md
+            - name: De pull-server beveiligen
+              items:
+                - name: Beveiliging van de pull-server
+                  href: dsc/pull-server/secureServer.md
+                - name: MOF-bestanden beveiligen met certificaten
+                  href: dsc/pull-server/secureMOF.md
+    - name: Zelfstudies
+      items:
+        - name: 'Een CI/CD-pijplijn met DSC, Pester en Visual Studio Team Services bouwen'
+          href: dsc/tutorials/dscCiCd.md
+        - name: Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
+          href: dsc/tutorials/bootstrapDsc.md
+        - name: De registersleutel DSCAutomationHostEnabled configureren
+          href: dsc/tutorials/DSCAutomationHostEnabled.md
+    - name: Problemen oplossen
+      items:
+        - name: Bekende problemen
+          href: dsc/troubleshooting/troubleshooting.md
+        - name: Foutopsporing voor DSC-resources
+          href: dsc/troubleshooting/debugResource.md
+    - name: Verwijzing
+      items:
+        - name: Ingebouwde Windows-resources
+          items:
+            - name: Archiefresource
+              href: dsc/reference/resources/windows/archiveResource.md
+            - name: Omgevingsresource
+              href: dsc/reference/resources/windows/environmentResource.md
+            - name: Bestandsresource
+              href: dsc/reference/resources/windows/fileResource.md
+            - name: Groepsresource
+              href: dsc/reference/resources/windows/groupResource.md
+            - name: GroupSet-resource
+              href: dsc/reference/resources/windows/groupSetResource.md
+            - name: Logboekresource
+              href: dsc/reference/resources/windows/logResource.md
+            - name: Pakketresource
+              href: dsc/reference/resources/windows/packageResource.md
+            - name: ProcessSet-resource
+              href: dsc/reference/resources/windows/processSetResource.md
+            - name: Registerresource
+              href: dsc/reference/resources/windows/registryResource.md
+            - name: Scriptresource
+              href: dsc/reference/resources/windows/scriptResource.md
+            - name: Serviceresource
+              href: dsc/reference/resources/windows/serviceResource.md
+            - name: ServiceSet-resource
+              href: dsc/reference/resources/windows/serviceSetResource.md
+            - name: Gebruikersresource
+              href: dsc/reference/resources/windows/userResource.md
+            - name: WaitForAllResource
+              href: dsc/reference/resources/windows/waitForAllResource.md
+            - name: WaitForAnyResource
+              href: dsc/reference/resources/windows/waitForAnyResource.md
+            - name: WaitForSomeResource
+              href: dsc/reference/resources/windows/waitForSomeResource.md
+            - name: WindowsFeature-resource
+              href: dsc/reference/resources/windows/windowsfeatureResource.md
+            - name: WindowsFeatureSet-resource
+              href: dsc/reference/resources/windows/windowsFeatureSetResource.md
+            - name: WindowsOptionalFeature-resource
+              href: dsc/reference/resources/windows/windowsOptionalFeatureResource.md
+            - name: WindowsOptionalFeatureSet-resource
+              href: dsc/reference/resources/windows/windowsOptionalFeatureSetResource.md
+            - name: WindowsPackageCab-resource
+              href: dsc/reference/resources/windows/windowsPackageCabResource.md
+            - name: WindowsProcess-resource
+              href: dsc/reference/resources/windows/windowsProcessResource.md
+        - name: Ingebouwde Linux-resources
+          items:
+            - name: nxArchive-resource
+              href: dsc/reference/resources/linux/lnxArchiveResource.md
+            - name: nxEnvironment-resource
+              href: dsc/reference/resources/linux/lnxEnvironmentResource.md
+            - name: nxFile-resource
+              href: dsc/reference/resources/linux/lnxFileResource.md
+            - name: nxFileLine-resource
+              href: dsc/reference/resources/linux/lnxFileLineResource.md
+            - name: nxGroup-resource
+              href: dsc/reference/resources/linux/lnxGroupResource.md
+            - name: nxPackage-resource
+              href: dsc/reference/resources/linux/lnxPackageResource.md
+            - name: nxScript-resource
+              href: dsc/reference/resources/linux/lnxScriptResource.md
+            - name: nxService-resource
+              href: dsc/reference/resources/linux/lnxServiceResource.md
+            - name: nxSshAuthorizedKeys-resource
+              href: dsc/reference/resources/linux/lnxSshAuthorizedKeysResource.md
+            - name: nxUser-resource
+              href: dsc/reference/resources/linux/lnxUserResource.md
+        - name: Ingebouwde PackageManagement-resources
+          items:
+            - name: PackageManagementDsc-resource
+              href: dsc/reference/resources/packagemanagement/PackageManagementDscResource.md
+            - name: PackageManagementSourceDsc-resource
+              href: dsc/reference/resources/packagemanagement/PackageManagementSourceDscResource.md
+        - name: MSFT_DSCLocalConfigurationManager-klasse
+          items:
+            - name: Overzicht
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager.md
+            - name: ApplyConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
+            - name: DisableDebugConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+            - name: EnableDebugConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+            - name: GetConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
+            - name: GetConfigurationResultOutput-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+            - name: GetConfigurationStatus-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+            - name: GetMetaConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+            - name: PerformRequiredConfigurationChecks-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+            - name: RemoveConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
+            - name: ResourceGet-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
+            - name: ResourceSet-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
+            - name: ResourceTest-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
+            - name: RollBack-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
+            - name: SendConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
+            - name: SendConfigurationApply-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+            - name: SendConfigurationApplyAsync-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+            - name: SendMetaConfigurationApply-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+            - name: StopConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
+            - name: TestConfiguration-methode
+              href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
+    - name: Meer informatie
+      items:
+        - name: Whitepapers
+          href: dsc/further-reading/whitepapers.md
 - name: Voorbeeldscripts
   items:
     - name: Voorbeeldscripts voor beheer

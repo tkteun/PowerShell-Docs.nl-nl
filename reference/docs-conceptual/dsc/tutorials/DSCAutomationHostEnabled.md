@@ -1,0 +1,27 @@
+---
+ms.date: 06/12/2017
+keywords: DSC, Power shell, configuratie, installatie
+title: De registersleutel DSCAutomationHostEnabled
+ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
+ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71942165"
+---
+><span data-ttu-id="ab0ea-103">Van toepassing op: Windows Power shell 5,0</span><span class="sxs-lookup"><span data-stu-id="ab0ea-103">Applies to: Windows PowerShell 5.0</span></span>
+
+# <a name="dscautomationhostenabled-registry-key"></a><span data-ttu-id="ab0ea-104">De registersleutel DSCAutomationHostEnabled</span><span class="sxs-lookup"><span data-stu-id="ab0ea-104">DSCAutomationHostEnabled registry key</span></span>
+
+<span data-ttu-id="ab0ea-105">DSC maakt gebruik van de register sleutel **DSCAutomationHostEnabled** onder **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** om de configuratie van de machine bij de eerste keer opstarten in te scha kelen.</span><span class="sxs-lookup"><span data-stu-id="ab0ea-105">DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** to enable configuration of the machine at initial boot-up.</span></span>
+<span data-ttu-id="ab0ea-106">**DSCAutomationHostEnabled** ondersteunt drie modi:</span><span class="sxs-lookup"><span data-stu-id="ab0ea-106">**DSCAutomationHostEnabled** supports three modes:</span></span>
+
+|  <span data-ttu-id="ab0ea-107">Waarde DSCAutomationHostEnabled</span><span class="sxs-lookup"><span data-stu-id="ab0ea-107">DSCAutomationHostEnabled Value</span></span>  |  <span data-ttu-id="ab0ea-108">Description</span><span class="sxs-lookup"><span data-stu-id="ab0ea-108">Description</span></span>   |
+|---|---|
+<span data-ttu-id="ab0ea-109">0</span><span class="sxs-lookup"><span data-stu-id="ab0ea-109">0</span></span> | <span data-ttu-id="ab0ea-110">Het configureren van de machine bij het opstarten uitschakelen.</span><span class="sxs-lookup"><span data-stu-id="ab0ea-110">Disable configuring the machine at boot-up.</span></span> |
+<span data-ttu-id="ab0ea-111">1</span><span class="sxs-lookup"><span data-stu-id="ab0ea-111">1</span></span> | <span data-ttu-id="ab0ea-112">Het configureren van de machine bij het opstarten inschakelen.</span><span class="sxs-lookup"><span data-stu-id="ab0ea-112">Enable configuring the machine at boot-up.</span></span> |
+<span data-ttu-id="ab0ea-113">2</span><span class="sxs-lookup"><span data-stu-id="ab0ea-113">2</span></span> | <span data-ttu-id="ab0ea-114">Schakel het configureren van de computer alleen in als DSC de status in behandeling of actueel heeft.</span><span class="sxs-lookup"><span data-stu-id="ab0ea-114">Enable configuring the machine only if DSC is in pending or current state.</span></span> <span data-ttu-id="ab0ea-115">Dit is de standaardwaarde.</span><span class="sxs-lookup"><span data-stu-id="ab0ea-115">This is the default value.</span></span> |
+
+## <a name="see-also"></a><span data-ttu-id="ab0ea-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="ab0ea-116">See Also</span></span>
+
+<span data-ttu-id="ab0ea-117">Voor een voor beeld van hoe u deze functie kunt gebruiken om configuraties uit te voeren bij de eerste keer opstarten, raadpleegt u [een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC](bootstrapDsc.md).</span><span class="sxs-lookup"><span data-stu-id="ab0ea-117">For an example of how to use this feature to run configurations at initial boot-up, see [Configure a virtual machines at initial boot-up by using DSC](bootstrapDsc.md).</span></span>
