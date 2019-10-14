@@ -2,12 +2,12 @@
 ms.date: 09/25/2019
 keywords: Power shell, cmdlet
 title: De Power shell-documentatie gebruiken
-ms.openlocfilehash: 403cb155dcd18560267fd360a9277004a5e2510d
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e3d5828d6bdb4ef14701994f146354a041efaea
+ms.sourcegitcommit: a80bb79b85deab8ae3c21de56d1ee432fdd92628
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328747"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281653"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>De Power shell-documentatie gebruiken
 
@@ -27,6 +27,18 @@ Deze site geeft standaard documentatie weer voor de meest recente versie van Pow
 Gebruik de versie kiezer boven aan de pagina om de gewenste versie van Power shell te selecteren.
 
 ![versie kiezer](images/how-to-use-docs/picker-vall.gif)
+
+U kunt controleren welke versie van Power shell u gebruikt door de waarde voor de `$PSversionTable.PSVersion` te controleren. In het volgende voor beeld ziet u de uitvoer voor Windows Power shell v 5.1.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      18362  145
+```
 
 ## <a name="searching-for-articles"></a>Zoeken naar artikelen
 
