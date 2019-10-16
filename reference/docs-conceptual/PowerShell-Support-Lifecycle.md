@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
-ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986750"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72351798"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
@@ -25,7 +25,7 @@ U kunt ook hulp van andere leden van de Community vinden op de algemene [micro s
 
 Power shell core stelt het [micro soft moderne levenscyclus beleid][modern]vast. Deze ondersteunings levenscyclus is bedoeld om klanten up-to-date te houden met de meest recente versies.
 
-De vertakking versie 6. x van Power shell core wordt ongeveer eenmaal per zes maanden bijgewerkt (voor beelden: 6,0, 6,1, 6,2, etc.)
+De vertakking versie 6. x van Power shell core wordt ongeveer eenmaal per zes maanden bijgewerkt (bijvoorbeeld: 6,0, 6,1, 6,2, etc.)
 
 > [!IMPORTANT]
 > U moet binnen zes maanden na de release van elke nieuwe secundaire versie een update voor het ontvangen van ondersteuning door lopen.
@@ -47,30 +47,37 @@ Raadpleeg de volgende tabel om te controleren of uw platform en versie van Power
 
 Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze worden niet officieel ondersteund. Deze pakketten zijn gemarkeerd als `Community` in de tabel.
 
-Platforms die worden `Experimental` vermeld als niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
+Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
-| Platform                                          | 6.1         | 6.2         |
-|---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8,1 en 10                            | Ondersteund   | Ondersteund   |
-| Windows Server 2008 R2, 2012 R2, 2016             | Ondersteund   | Ondersteund   |
-| [Windows Server Semi-Annual-kanaal][semi-annual] | Ondersteund   | Ondersteund   |
-| Ubuntu 16,04 en 18,04                            | Ondersteund   | Ondersteund   |
-| Ubuntu 18,10 (via snap package)                   | Community   | Community   |
-| Ubuntu 19,04 (via snap package)                   | Community   | Community   |
-| Debian 9                                          | Ondersteund   | Ondersteund   |
-| CentOS 7                                          | Ondersteund   | Ondersteund   |
-| Red Hat Enterprise Linux 7                        | Ondersteund   | Ondersteund   |
-| openSUSE 42,3                                     | Ondersteund   | Ondersteund   |
-| Fedora 28                                         | Ondersteund   | Ondersteund   |
-| macOS 10.12+                                      | Ondersteund   | Ondersteund   |
-| Arch                                              | Community   | Community   |
-| Raspbian                                          | Community   | Community   |
-| Kali                                              | Community   | Community   |
-| AppImage (werkt op meerdere Linux-platforms)      | Community   | Community   |
-| [Snap-pakket](https://snapcraft.io/powershell)   | Zie opmerking    | Zie opmerking    |
+| Platform                                          |      6.2      |    7,0    |
+|---------------------------------------------------|:-------------:|:---------:|
+| Windows 7, 8,1 en 10                            |   Ondersteund   | Ondersteund |
+| Windows Server 2008 R2, 2012 R2, 2016             |   Ondersteund   | Ondersteund |
+| [Windows Server Semi-Annual-kanaal][semi-annual] |   Ondersteund   | Ondersteund |
+| Ubuntu 16,04 en 18,04                            |   Ondersteund   | Ondersteund |
+| Ubuntu 18,10 (via snap package)                   |   Community   | Community |
+| Ubuntu 19,04 (via snap package)                   |   Community   | Community |
+| Debian 9                                          |   Ondersteund   | Ondersteund |
+| Debian 10                                         | Niet ondersteund | Ondersteund |
+| CentOS 7                                          |   Ondersteund   | Ondersteund |
+| Red Hat Enterprise Linux 7                        |   Ondersteund   | Ondersteund |
+| openSUSE 42,3                                     |   Ondersteund   | Ondersteund |
+| Fedora 28                                         |   Ondersteund   | Ondersteund |
+| Fedora 29, 30                                     | Niet ondersteund | Ondersteund |
+| Alpine 3,8                                        |   Zie opmerking    | Zie opmerking  |
+| Alpine 3,9 en 3,10                               | Niet ondersteund | Zie opmerking  |
+| macOS 10.12+                                      |   Ondersteund   | Ondersteund |
+| Arch                                              |   Community   | Community |
+| Raspbian                                          |   Community   | Community |
+| Kali                                              |   Community   | Community |
+| AppImage (werkt op meerdere Linux-platforms)      |   Community   | Community |
+| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking    | Zie opmerking  |
 
 > [!NOTE]
 > Snap-pakketten worden hetzelfde ondersteund als de distributie waarmee u het pakket uitvoert.
+
+> [!NOTE]
+> CIM, externe communicatie van Power shell en DSC worden niet ondersteund in Alpine.
 
 ## <a name="powershell-releases-end-of-life"></a>Levens duur van Power shell-releases
 
@@ -93,14 +100,14 @@ De distributie-eigen aren hebben daarom de volgende versies gestopt en worden ni
 | Fedora   | 24      | [2017 augustus](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| openSUSE | 42,1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
 | openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16,10   | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
 | Ubuntu   | 17,10   | [2018 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 | Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
+| Ubuntu   | 14,04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
 
 ## <a name="notes-on-licensing"></a>Opmerkingen over licenties
 
@@ -108,18 +115,18 @@ Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licenti
 
 ## <a name="windows-powershell-module"></a>Windows Power shell-module
 
-Ondersteuning voor Power shell Core bevat geen product modules, tenzij deze modules expliciet Power shell core ondersteunen. Bijvoorbeeld: het gebruik van `ActiveDirectory` de module die als onderdeel van Windows Server wordt geleverd, is een niet-ondersteund scenario.
+Ondersteuning voor Power shell Core bevat geen product modules, tenzij deze modules expliciet Power shell core ondersteunen. Als u bijvoorbeeld de module `ActiveDirectory` gebruikt die wordt geleverd als onderdeel van Windows Server, is dit een niet-ondersteund scenario.
 
-Modules die Power shell Core niet expliciet ondersteunen, kunnen in sommige gevallen ook compatibel zijn. Door de [`WindowsPSModulePath`][] module te installeren, kunt u de Windows Power `PSModulePath` shell toevoegen aan uw `PSModulePath`Power shell-kern.
+Modules die Power shell Core niet expliciet ondersteunen, kunnen in sommige gevallen ook compatibel zijn. Door de [`WindowsPSModulePath`-][] module te installeren, kunt u de Windows Power shell-`PSModulePath` toevoegen aan uw Power shell Core-`PSModulePath`.
 
-Installeer eerst de `WindowsPSModulePath` module vanaf de PowerShell Gallery:
+Installeer eerst de module `WindowsPSModulePath` vanuit de PowerShell Gallery:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-Na de installatie van deze module voert `Add-WindowsPSModulePath` u de cmdlet uit om de `PSModulePath` Windows Power shell toe te voegen aan Power shell core:
+Na de installatie van deze module voert u de `Add-WindowsPSModulePath`-cmdlet uit om de Windows Power shell-`PSModulePath` toe te voegen aan Power shell core:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
