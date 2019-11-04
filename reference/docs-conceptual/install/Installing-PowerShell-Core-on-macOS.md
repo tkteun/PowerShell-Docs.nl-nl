@@ -2,18 +2,25 @@
 title: PowerShell Core in macOS installeren
 description: Informatie over het installeren van Power shell core in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325267"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444439"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
 Power shell core ondersteunt macOS 10,12 en hoger.
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] .
-Nadat het pakket is geïnstalleerd, voert `pwsh` u uit vanaf een Terminal.
+Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal.
+
+> [!TIP]
+> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="about-brew"></a>Over Brew
 
@@ -45,7 +52,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een Power shell-host (pwsh), maar vervolgens moet de Power shell-shell worden afgesloten en opnieuw worden gestart om de upgrade te volt ooien `$PSVersionTable`en de waarden die worden weer gegeven in te vernieuwen.
+> De bovenstaande opdrachten kunnen worden aangeroepen vanuit een Power shell-host (pwsh), maar vervolgens moet de Power shell-shell worden afgesloten en opnieuw worden gestart om de upgrade te volt ooien en de waarden te vernieuwen die worden weer gegeven in `$PSVersionTable`.
 
 [brew]: https://brew.sh/
 
@@ -81,11 +88,11 @@ brew cask upgrade powershell-preview
 
 > [!NOTE]
 > De bovenstaande opdrachten kunnen worden aangeroepen vanuit een Power shell-host (pwsh), maar vervolgens moet de Power shell-shell worden afgesloten en opnieuw worden gestart om de upgrade te volt ooien.
-> en vernieuw de waarden die worden `$PSVersionTable`weer gegeven in.
+> en de waarden vernieuwen die worden weer gegeven in `$PSVersionTable`.
 
 ## <a name="installation-via-direct-download"></a>Installatie via direct downloaden
 
-Pakket downloaden`powershell-6.2.0-osx-x64.pkg`
+Down load het pakket package `powershell-6.2.0-osx-x64.pkg`
 van de pagina [releases][] op uw macOS-computer.
 
 U kunt dubbel klikken op het bestand en de prompts volgen of installeren vanaf de terminal:
@@ -98,7 +105,7 @@ Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communic
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-Er zijn `tar.gz` binaire Power shell-archieven beschikbaar voor het macOS-platform om geavanceerde implementatie scenario's mogelijk te maken.
+Er zijn binaire Power shell-`tar.gz` archieven beschikbaar voor het macOS-platform om geavanceerde implementatie scenario's mogelijk te maken.
 
 ### <a name="installing-binary-archives-on-macos"></a>Binaire archieven installeren op macOS
 
@@ -137,7 +144,7 @@ OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
 
 Zie [about Brew](#about-brew) voor informatie over Brew.
 
-Voer uit `brew install openssl`om openssl te installeren.
+Voer `brew install openssl`uit om OpenSSL te installeren.
 
 #### <a name="install-openssl-via-macports"></a>OpenSSL installeren via MacPorts
 
@@ -145,8 +152,8 @@ Voer uit `brew install openssl`om openssl te installeren.
 1. Installeer MacPorts.
    Raadpleeg de [installatie handleiding](https://guide.macports.org/chunked/installing.macports.html)als u instructies nodig hebt.
 1. Werk MacPorts bij door `sudo port selfupdate`uit te voeren.
-1. Upgrade MacPorts packages door `sudo port upgrade outdated`uit te voeren.
-1. Installeer OpenSSL door uit `sudo port install openssl`te voeren.
+1. Upgrade MacPorts-pakketten door `sudo port upgrade outdated`uit te voeren.
+1. Installeer OpenSSL door `sudo port install openssl`uit te voeren.
 1. Koppel de bibliotheken om ze beschikbaar te maken voor Power shell:
 
 ```sh
@@ -168,28 +175,28 @@ Als u Power shell hebt geïnstalleerd via direct downloaden, moet Power shell ha
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden](#paths) in dit document `sudo rm`en verwijdert u de paden met.
+Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden](#paths) in dit document en verwijdert u de paden met behulp van `sudo rm`.
 
 > [!NOTE]
 > Dit is niet nodig als u hebt geïnstalleerd met homebrew.
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME`ontbreekt`/usr/local/microsoft/powershell/6.2.0/`
-* Gebruikers profielen worden gelezen van`~/.config/powershell/profile.ps1`
-* Standaard profielen worden gelezen uit`$PSHOME/profile.ps1`
-* Gebruikers modules worden gelezen uit`~/.local/share/powershell/Modules`
-* Gedeelde modules worden gelezen van`/usr/local/share/powershell/Modules`
-* Standaard modules worden gelezen van`$PSHOME/Modules`
-* De PSReadline-geschiedenis wordt vastgelegd in`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
+* Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
+* Standaard profielen worden gelezen van `$PSHOME/profile.ps1`
+* Gebruikers modules worden gelezen van `~/.local/share/powershell/Modules`
+* Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
+* Standaard modules worden gelezen van `$PSHOME/Modules`
+* De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie van de Power shell per host.
-Het standaard-host-profiel bestaat dus op `Microsoft.PowerShell_profile.ps1` dezelfde locatie.
+Het standaard-host-profiel bestaat dus op `Microsoft.PowerShell_profile.ps1` op dezelfde locatie.
 
 Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 
-Omdat macOS een afleiding van BSD is, wordt `/usr/local` het voor voegsel gebruikt `/opt`in plaats van.
-Dat wil zeggen `/usr/local/microsoft/powershell/6.2.0/`, en de symbolische koppeling wordt geplaatst `/usr/local/bin/pwsh`op. `$PSHOME`
+Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt`.
+`$PSHOME` is dus `/usr/local/microsoft/powershell/6.2.0/`en de symbolische koppeling wordt in `/usr/local/bin/pwsh`geplaatst.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 

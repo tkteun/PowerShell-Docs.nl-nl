@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Gedeeltelijke configuraties van de desired state Configuration van Power shell
-ms.openlocfilehash: b2b17e35597707eb97ecdcea9dda4466deeab0cb
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: f25bdec54e0a028e94b8c7d7b623e53ff3e3c666
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942809"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444519"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Gedeeltelijke configuraties van de desired state Configuration van Power shell
 
-_Applies: Windows Power shell 5,0 en hoger._
+_Van toepassing op: Windows Power shell 5,0 en hoger._
 
 In Power shell 5,0 kunnen configuraties met desired state Configuration (DSC) worden geleverd in fragmenten en uit meerdere bronnen. De lokale Configuration Manager (LCM) op het doel knooppunt plaatst de fragmenten samen voordat ze als één configuratie worden toegepast. Met deze functie kunt u het beheer van de configuratie tussen teams of individuen delen. Als bijvoorbeeld twee of meer teams van ontwikkel aars samen werken aan een service, kunnen ze elk een configuratie maken om hun onderdeel van de service te beheren. Elk van deze configuraties kan worden opgehaald van verschillende pull-servers en ze kunnen worden toegevoegd tijdens verschillende ontwikkelings fasen. Gedeeltelijke configuraties staan ook toe dat verschillende personen of teams verschillende aspecten van het configureren van knoop punten beheren zonder dat ze het bewerken van één configuratie document hoeven te coördineren. Het is bijvoorbeeld mogelijk dat een team verantwoordelijk is voor de implementatie van een virtuele machine en een besturings systeem, terwijl een ander team mogelijk andere toepassingen en services op die virtuele machine implementeert. Met gedeeltelijke configuraties kan elk team een eigen configuratie maken, zonder dat ze onnodig ingewikkeld zijn.
 
@@ -51,11 +51,11 @@ PartialConfigDemo
 De **RefreshMode** voor elke gedeeltelijke configuratie is ingesteld op push. De namen van de **PartialConfiguration** -blokken (in dit geval ' ServiceAccountConfig ' en ' SharePointConfig ') moeten exact overeenkomen met de namen van de configuraties die naar het doel knooppunt worden gepusht.
 
 > [!Note]
-> De naam van elk **PartialConfiguration** -blok moet overeenkomen met de werkelijke naam van de configuratie zoals die is opgegeven in het configuratie script, niet de naam van het MOF-bestand. dit moet de naam van het doel knooppunt of `localhost` zijn.
+> De naam van elk **PartialConfiguration** -blok moet overeenkomen met de werkelijke naam van de configuratie zoals die is opgegeven in het configuratie script, niet de naam van het MOF-bestand. dit moet de naam van het doel knooppunt of `localhost`zijn.
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Gedeeltelijke configuraties van push-modus publiceren en starten
 
-Vervolgens roept u [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aan voor elke configuratie, waarbij de mappen die de configuratie documenten bevatten worden door gegeven als de para meters voor het **pad** . `Publish-DSCConfiguration`places de configuratie-MOF-bestanden naar de doel knooppunten. Nadat beide configuraties zijn gepubliceerd, kunt u `Start-DSCConfiguration –UseExisting` aanroepen op het doel knooppunt.
+Vervolgens roept u [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aan voor elke configuratie, waarbij de mappen die de configuratie documenten bevatten worden door gegeven als de para meters voor het **pad** . `Publish-DSCConfiguration`plaatst de configuratie-MOF-bestanden naar de doel knooppunten. Na het publiceren van beide configuraties kunt u `Start-DSCConfiguration –UseExisting` aanroepen op het doel knooppunt.
 
 Als u bijvoorbeeld de volgende configuratie-MOF-documenten hebt gecompileerd op het knoop punt voor ontwerpen:
 
@@ -77,7 +77,7 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 -a----        8/11/2016   2:02 PM           2034 TestVM.mof
 
-    Directory: C:\DscTests\SharePointConfig
+    Directory: C:\PartialConfigTest\SharePointConfig
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -198,7 +198,7 @@ Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Naamgeving van configuratie documenten op de pull-server in Power shell 5,1
 
-Als u slechts één gedeeltelijke configuratie van een afzonderlijke pull-server haalt, kan het configuratie document een wille keurige naam hebben. Als u meer dan één gedeeltelijke configuratie haalt van een pull-server, kan het configuratie document een naam hebben van `<ConfigurationName>.mof`, waarbij *configuratiepad* de naam van de gedeeltelijke configuratie is, of `<ConfigurationName>.<NodeName>.mof`, waarbij *configuratiepad* de de naam van de gedeeltelijke configuratie en de naam van het *knoop* punt. Hierdoor kunt u configuraties van Azure Automation DSC-pull-server ophalen.
+Als u slechts één gedeeltelijke configuratie van een afzonderlijke pull-server haalt, kan het configuratie document een wille keurige naam hebben. Als u meer dan één gedeeltelijke configuratie haalt van een pull-server, kan het configuratie document een naam hebben `<ConfigurationName>.mof`, waarbij *configuratiepad* de naam is van de gedeeltelijke configuratie, of `<ConfigurationName>.<NodeName>.mof`, waarbij *configuratiepad* is de naam van de gedeeltelijke configuratie is de naam van het *doel knooppunt.* Hierdoor kunt u configuraties van Azure Automation DSC-pull-server ophalen.
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Naamgeving van configuratie documenten op de pull-server in Power shell 5,0
 
@@ -213,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Naamgeving en plaatsen van de configuratie documenten op de pull-server (ConfigurationID)
 
-De gedeeltelijke configuratie documenten moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in het `web.config`-bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratie documenten moeten de volgende naam hebben: `<ConfigurationName>.<ConfigurationID>.mof`, waarbij _configuratiepad_ de naam van de gedeeltelijke configuratie is en _ConfigurationID_ is de configuratie-id die is gedefinieerd in de LCM op het doel knooppunt. In ons voor beeld moeten de configuratie documenten de volgende naam hebben:
+De gedeeltelijke configuratie documenten moeten worden geplaatst in de map die is opgegeven als de **ConfigurationPath** in het `web.config`-bestand voor de pull-server (meestal `C:\Program Files\WindowsPowerShell\DscService\Configuration`). De configuratie documenten moeten de volgende naam hebben: `<ConfigurationName>.<ConfigurationID>.mof`, waarbij _configuratiepad_ de naam is van de gedeeltelijke configuratie en _ConfigurationID_ is de configuratie-id die is gedefinieerd in de LCM op het doel knooppunt. In ons voor beeld moeten de configuratie documenten de volgende naam hebben:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -228,7 +228,7 @@ Nadat de LCM op het doel knooppunt is geconfigureerd en de configuratie document
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Gedeeltelijke configuraties in gemengde push-en pull-modi
 
-U kunt ook push-en pull-modi combi neren voor gedeeltelijke configuraties. Dat wil zeggen dat u één gedeeltelijke configuratie kunt hebben die wordt opgehaald van een pull-server, terwijl een andere gedeeltelijke configuratie wordt gepusht. Geef de vernieuwings modus voor elke gedeeltelijke configuratie op, zoals beschreven in de vorige secties. De volgende meta configuratie bevat bijvoorbeeld hetzelfde voor beeld, met de gedeeltelijke configuratie van `ServiceAccountConfig` in de pull-modus en de `SharePointConfig`-gedeeltelijke configuratie in de push-modus.
+U kunt ook push-en pull-modi combi neren voor gedeeltelijke configuraties. Dat wil zeggen dat u één gedeeltelijke configuratie kunt hebben die wordt opgehaald van een pull-server, terwijl een andere gedeeltelijke configuratie wordt gepusht. Geef de vernieuwings modus voor elke gedeeltelijke configuratie op, zoals beschreven in de vorige secties. De volgende meta configuratie bevat bijvoorbeeld hetzelfde voor beeld, met de `ServiceAccountConfig` gedeeltelijke configuratie in de pull-modus en de `SharePointConfig` gedeeltelijke configuratie in de push-modus.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Gemengde push-en pull-modi met ConfigurationNames
 
@@ -307,10 +307,10 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-Houd er rekening mee dat de **RefreshMode** die zijn opgegeven in het instellingen blok pull is, maar dat de **RefreshMode** voor de `SharePointConfig`-gedeeltelijke configuratie ' push ' is.
+Houd er rekening mee dat de **RefreshMode** die zijn opgegeven in het instellingen blok pull is, maar dat de **RefreshMode** voor de `SharePointConfig` gedeeltelijke configuratie ' push ' is.
 
 Naam en zoek de MOF-bestanden van de configuratie zoals hierboven wordt beschreven voor de respectieve vernieuwings modi.
-Roep `Publish-DSCConfiguration` aan om de `SharePointConfig`-gedeeltelijke configuratie te publiceren en wacht totdat de `ServiceAccountConfig`-configuratie van de pull-server wordt opgehaald of dwing een vernieuwing af door [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)aan te roepen.
+Roep `Publish-DSCConfiguration` aan om de `SharePointConfig` gedeeltelijke configuratie te publiceren en wacht totdat de `ServiceAccountConfig` configuratie wordt opgehaald van de pull-server of dwing een vernieuwing af door [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)aan te roepen.
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Voor beeld van een gedeeltelijke configuratie van ServiceAccountConfig
 

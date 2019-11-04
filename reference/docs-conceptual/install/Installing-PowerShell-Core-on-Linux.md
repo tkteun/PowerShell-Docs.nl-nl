@@ -2,12 +2,12 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
 ms.date: 07/19/2019
-ms.openlocfilehash: fc5a278f0fc10733a0d60fb856d0400332ba2719
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 3159de2d64d9c473e00b58c9f9c52b6d1c7779af
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72350197"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444397"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
@@ -30,6 +30,13 @@ Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat 
 [arch]: #arch-linux
 [snap]: #snap-package
 [tar]: #binary-archives
+
+> [!TIP]
+> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
 
@@ -356,7 +363,7 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via direct downloaden-CentOS 7
 
-Gebruik [CentOS 7][]om het rpm-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm` te downloaden van de pagina [releases][] op de CentOS-computer.
+Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-6.2.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -511,7 +518,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installatie via direct downloaden-Fedora 28, 29 en 30
 
-Down load het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Fedora-machine.
+Down load het RPM-pakket `powershell-6.2.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de computer Fedora.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -536,7 +543,7 @@ sudo dnf remove powershell
 ## <a name="arch-linux"></a>Arch Linux
 
 > [!NOTE]
-> Arch-ondersteuning is experimenteel.
+> Arch-ondersteuning wordt niet officieel ondersteund door micro soft en wordt beheerd door de community.
 
 Power shell is beschikbaar via de [Arch Linux][] -gebruikers OPSLAGPLAATS (Aur).
 
@@ -598,6 +605,9 @@ sudo snap remove powershell-preview
 ```
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Kali-ondersteuning wordt niet officieel ondersteund door micro soft en wordt beheerd door de community.
 
 ### <a name="installation---kali"></a>Installatie-Kali
 
@@ -748,7 +758,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 * Standaard modules worden gelezen van `$PSHOME/Modules`
 * De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen bestaan op `Microsoft.PowerShell_profile.ps1` op dezelfde locatie.
+De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` op dezelfde locatie bestaan.
 
 Power shell respecteert de [XDG base-specificatie][xdg-bds] op Linux.
 

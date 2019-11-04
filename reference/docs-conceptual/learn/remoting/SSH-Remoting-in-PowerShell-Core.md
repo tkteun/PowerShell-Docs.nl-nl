@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692170"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444378"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -19,13 +19,13 @@ WinRM biedt een robuust hosting model voor externe Power shell-sessies. Op SSH g
 
 Met SSH-externe communicatie kunt u een eenvoudige Power shell-sessie tussen Windows-en Linux-computers uitvoeren. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Uiteindelijk implementeren we een algemeen hosting model, vergelijkbaar met WinRM, ter ondersteuning van de eindpunt configuratie en JEA.
 
-De `New-PSSession`cmdlets `Enter-PSSession`, `Invoke-Command` en hebben nu een nieuwe para meter die is ingesteld voor de ondersteuning van deze nieuwe externe verbinding.
+De cmdlets `New-PSSession`, `Enter-PSSession`en `Invoke-Command` hebben nu een nieuwe para meter ingesteld ter ondersteuning van deze nieuwe externe verbinding.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter `HostName` en geeft u de gebruikers naam op met `UserName`. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke- `KeyFilePath` sleutel bestand met de para meter.
+Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter `HostName` en geeft u de gebruikers naam op met `UserName`. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke-sleutel bestand met de para meter `KeyFilePath`.
 
 ## <a name="general-setup-information"></a>Algemene informatie over de installatie
 
@@ -35,7 +35,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
 1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
-   U kunt controleren of Power Shell ondersteuning biedt voor externe SSH door de para meters voor de `New-PSSession` op te geven. U ziet dat er namen van parameter sets zijn die beginnen met **SSH**. Deze parameter sets bevatten **SSH** -para meters.
+   U kunt controleren of Power Shell ondersteuning biedt voor externe SSH door de `New-PSSession` parameter sets op te geven. U ziet dat er namen van parameter sets zijn die beginnen met **SSH**. Deze parameter sets bevatten **SSH** -para meters.
 
    ```powershell
    (Get-Command New-PSSession).ParameterSets.Name
@@ -53,7 +53,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    > [!NOTE]
    > Als u Power shell wilt instellen als de standaard shell voor OpenSSH, raadpleegt u [Windows configureren voor OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).
 
-1. Bewerk het `sshd_config` bestand dat zich `$env:ProgramData\ssh`bevindt in.
+1. Bewerk het `sshd_config`-bestand dat zich op `$env:ProgramData\ssh`bevindt.
 
    Controleer of wachtwoord verificatie is ingeschakeld:
 
@@ -64,23 +64,24 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Maak het SSH-subsysteem dat als host fungeert voor een Power Shell-proces op de externe computer:
 
    ```
-   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie dit [github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
-
-   Een oplossing is het maken van een symbolische koppeling naar de installatie directory van Power shell die geen spaties bevat:
-
-   ```powershell
-   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
-   ```
-
-   Gebruik het symbolische koppeling naar het uitvoer bare Power shell-bestand in het subsysteem:
-
-   ```
-   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+   > U moet de korte naam van 8,3 gebruiken voor bestands paden die spaties bevatten. Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie dit [github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   >
+   > De korte naam van 8,3 voor de map `Program Files` in Windows is doorgaans `Progra~1`. U kunt echter de volgende opdracht gebruiken om ervoor te zorgen:
+   >
+   > ```powershell
+   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+   >   Select-Object EightDotThreeFileName
+   > ```
+   >
+   > ```Output
+   > EightDotThreeFileName
+   > ---------------------
+   > c:\progra~1
+   > ```
 
    Schakel eventueel sleutel verificatie in:
 
@@ -96,7 +97,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Restart-Service sshd
    ```
 
-1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Bijvoorbeeld `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
+1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Voorbeeld: `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Instellen op een Ubuntu 16,04 Linux-computer
 
@@ -108,7 +109,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    sudo apt install openssh-server
    ```
 
-1. Bewerk het bestand @no__t 0 op locatie `/etc/ssh`.
+1. Bewerk het `sshd_config` bestand op locatie `/etc/ssh`.
 
    Controleer of wachtwoord verificatie is ingeschakeld:
 
@@ -142,10 +143,10 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
    1. Open `System Preferences`.
    1. Klik op `Sharing`.
-   1. Controleer `Remote Login` om `Remote Login: On` in te stellen.
+   1. Controleer `Remote Login` om `Remote Login: On`in te stellen.
    1. Toegang tot de juiste gebruikers toestaan.
 
-1. Bewerk het bestand @no__t 0 op locatie `/private/etc/ssh/sshd_config`.
+1. Bewerk het `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config`.
 
    Gebruik een tekst editor zoals **nano**:
 
@@ -178,7 +179,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Verificatie
 
 Externe communicatie van Power shell is afhankelijk van de verificatie uitwisseling tussen de SSH-client en de SSH-service en implementeert geen verificatie schema's zelf. Het resultaat is dat alle geconfigureerde verificatie schema's, waaronder multi-factor Authentication, worden afgehandeld door SSH en onafhankelijk van Power shell. U kunt bijvoorbeeld de SSH-service zo configureren dat verificatie met een open bare sleutel en een eenmalig wacht woord voor extra beveiliging zijn vereist. Configuratie van multi-factor Authentication valt buiten het bereik van deze documentatie. Raadpleeg de documentatie voor SSH over het correct configureren van multi-factor Authentication en het valideren van de oplossing werkt buiten Power shell voordat u deze probeert te gebruiken met externe communicatie met Power shell.
 

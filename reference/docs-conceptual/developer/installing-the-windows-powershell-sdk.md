@@ -2,12 +2,12 @@
 title: De Windows PowerShell SDK installeren
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357510"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444506"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>De Windows PowerShell SDK installeren
 
@@ -17,24 +17,21 @@ In het volgende onderwerp wordt beschreven hoe u de Power shell SDK installeert 
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows Power Shell 3,0 SDK voor Windows 8 en Windows Server 2012 installeren
 
-Windows Power Shell 3,0 wordt automatisch geïnstalleerd met Windows 8 en Windows Server 2012. Daarnaast kunt u de referentie-assembly's voor Windows Power Shell 3,0 downloaden en installeren als onderdeel van de SDK van Windows 8. Met deze assembly's kunt u cmdlets, providers en host-Program ma's schrijven voor Windows Power Shell 3,0. Wanneer u de Windows SDK voor Windows 8 installeert, worden de Windows Power shell-assembly's automatisch geïnstalleerd in de map referentie-assembly, in \Program Files (x86) \Reference Assemblies\Microsoft\WindowsPowerShell\3.0. Zie de download site voor Windows 8 SDK voor meer informatie. Voor beelden van Windows Power shell-code zijn ook beschikbaar in het ontwikkel centrum.
-Zie voor meer informatie de pagina voor beeld van het bureau blad-code op de site van het ontwikkelaars centrum.
-
-Daarnaast is Windows Power Shell 3,0 achterwaarts compatibel met de Windows Power Shell 2,0 SDK, die een aantal code voorbeelden bevat. Zie hieronder voor meer informatie over het downloaden van de SDK voor Windows Power Shell 2,0. (Houd er rekening mee dat de 2,0-code voorbeelden compatibel zijn met Windows 8 en Windows Power Shell 3,0. u kunt Windows Power Shell 2,0 niet installeren op een Windows 8-platform.)
+Windows Power Shell 3,0 wordt automatisch geïnstalleerd met Windows 8 en Windows Server 2012. Daarnaast kunt u de referentie-assembly's voor Windows Power Shell 3,0 downloaden en installeren als onderdeel van de SDK van Windows 8. Met deze assembly's kunt u cmdlets, providers en host-Program ma's schrijven voor Windows Power Shell 3,0. Wanneer u de Windows SDK voor Windows 8 installeert, worden de Windows Power shell-assembly's automatisch geïnstalleerd in de map Reference assembly, in `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Zie de download site voor Windows 8 SDK voor meer informatie. Voor beelden van Windows Power shell-code zijn ook beschikbaar in het Development Center op het [Windows Power shell 3,0 SDK-voorbeeld pakket](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows Power Shell 3,0 SDK installeren voor Windows 7 en Windows Server 2008 R2
 
-In Windows 7 en Windows Server 2008 R2 is Power Shell 2,0 automatisch geïnstalleerd. Daarnaast kunt u Power Shell 3,0 installeren op deze systemen. (Zie Installing Windows Power shell (Engelstalig) voor meer informatie.) Zoals hierboven beschreven, kunt u ook de Windows 8 SDK installeren op Windows 7 en Windows Server 2008 R2.
+In Windows 7 en Windows Server 2008 R2 is Power Shell 2,0 automatisch geïnstalleerd. Daarnaast kunt u Power Shell 3,0 installeren op deze systemen. U kunt ook de Windows 8 SDK installeren op Windows 7 en Windows Server 2008 R2, zoals hierboven wordt beschreven.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Windows Power Shell 2,0 SDK installeren voor Windows 7, Vista, XP, Server 2003 en Server 2008
 
-De Windows Power Shell 2,0 SDK bevat de referentie assemblages die nodig zijn voor het schrijven van cmdlets, providers en hosting C# toepassingen, en biedt voorbeeld code die kan worden gebruikt als uitgangs punt wanneer u code gaat schrijven.
-
-Zie Windows Power Shell 2,0 SDK voor informatie over het installeren van deze SDK.
+De Windows Power Shell 2,0 SDK bevat de referentie assemblages die nodig zijn voor het schrijven van cmdlets, providers en hosting C# toepassingen, en biedt voorbeeld code die kan worden gebruikt als uitgangs punt wanneer u code gaat schrijven. U kunt de code voorbeelden downloaden van [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
 
 ### <a name="reference-assemblies"></a>Referentie-assembly's
 
-Referentie-assembly's worden standaard geïnstalleerd op de volgende locatie: c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0.
+Referentie-assembly's worden standaard geïnstalleerd op de volgende locatie: `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -43,14 +40,15 @@ Referentie-assembly's worden standaard geïnstalleerd op de volgende locatie: c:
 
 ### <a name="samples"></a>Voorbeelden
 
-Code voorbeelden worden standaard geïnstalleerd op de volgende locatie: C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. In de volgende secties vindt u een korte beschrijving van wat elk voor beeld doet.
+Code voorbeelden worden standaard op de volgende locatie geïnstalleerd: `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. In de volgende secties vindt u een korte beschrijving van wat elk voor beeld doet.
 
 #### <a name="cmdlet-samples"></a>Voor beelden van cmdlets
 
 - GetProcessSample01: hier wordt beschreven hoe u een eenvoudige cmdlet schrijft waarmee alle processen op de lokale computer worden opgehaald.
 - GetProcessSample02: hier ziet u hoe u para meters toevoegt aan de cmdlet. De cmdlet accepteert een of meer proces namen en retourneert de overeenkomende processen.
 - GetProcessSample03: hier ziet u hoe u para meters toevoegt die invoer van de pijp lijn accepteren.
-- GetProcessSample04: laat zien hoe u niet-afsluit fouten kunt afhandelen.
+- GetProcessSample04: laat zien hoe u niet-afsluit fouten kunt verwerken.
 - GetProcessSample05: hier ziet u hoe u een lijst met opgegeven processen weergeeft.
 - Select object: laat zien hoe u een filter kunt schrijven om alleen bepaalde objecten te selecteren.
 - SelectString: hier wordt weer gegeven hoe u bestanden zoekt voor opgegeven patronen.
