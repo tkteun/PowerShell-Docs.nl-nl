@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Samengestelde resources: met behulp van een DSC-configuratie als resource'
-ms.openlocfilehash: ef8d5665e552da01977c2f21a43246c72bb7155f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
+ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942221"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933828"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: Een DSC-configuratie gebruiken als resource
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: het gebruik van een DSC-configuratie als een resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In praktijk situaties kunnen configuraties lang en complex worden, waardoor veel verschillende bronnen worden aangeroepen en een groot aantal eigenschappen kan worden ingesteld. U kunt deze complexiteit helpen aanpakken door een Windows Power shell desired state Configuration (DSC)-configuratie te gebruiken als een resource voor andere configuraties. Dit is een samengestelde resource. Een samengestelde resource is een DSC-configuratie waarvoor para meters worden gebruikt. De para meters van de configuratie Act als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met de extensie **. schema. psm1** en neemt de plaats van zowel het MOF-schema als het bron script op in een typische DSC-resource (Zie de [gewenste status van Windows Power shell voor meer informatie over DSC-resources Configuratie resources](resources.md).
+In praktijk situaties kunnen configuraties lang en complex worden, waardoor veel verschillende bronnen worden aangeroepen en een groot aantal eigenschappen kan worden ingesteld. U kunt deze complexiteit helpen aanpakken door een Windows Power shell desired state Configuration (DSC)-configuratie te gebruiken als een resource voor andere configuraties. Dit is een samengestelde resource. Een samengestelde resource is een DSC-configuratie waarvoor para meters worden gebruikt. De para meters van de configuratie Act als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met de extensie **. schema. psm1** en neemt de plaats van zowel het MOF-schema als het bron script op in een typische DSC-resource (Zie [Windows Power shell desired state Configuration resources](resources.md)(Engelstalig) voor meer informatie over DSC-resources.
 
 ## <a name="creating-the-composite-resource"></a>De samengestelde resource maken
 
@@ -158,10 +158,8 @@ De resource kan nu worden gedetecteerd met behulp van de cmdlet Get-Dscresource 
 Vervolgens maken we een configuratie die de samengestelde resource aanroept. Deze configuratie roept de xVirtualMachine-samengestelde bron op om een virtuele machine te maken en roept vervolgens de **xComputer** -resource aan om de naam ervan te wijzigen.
 
 ```powershell
-
 configuration RenameVM
 {
-
     Import-DscResource -Module xVirtualMachine
     Node localhost
     {
@@ -188,14 +186,37 @@ configuration RenameVM
 }
 ```
 
+U kunt deze resource ook gebruiken om meerdere Vm's te maken door een matrix van VM-namen door te geven aan de xVirtualMachine-resource.
+
+```PowerShell
+Configuration MultipleVms
+{
+    Import-DscResource -Module xVirtualMachine
+    Node localhost
+    {
+        xVirtualMachine VMs
+        {
+            VMName = "IIS01", "SQL01", "SQL02"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+}
+```
+
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential ondersteunen
 
->**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in power shell 5,0 en hoger.
+> [!NOTE]
+> **PsDscRunAsCredential** wordt ondersteund in power shell 5,0 en hoger.
 
 De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie](../configurations/configurations.md) bron blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
 Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md)voor meer informatie.
 
-Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$PsDscContext`gebruiken.
+Als u toegang wilt krijgen tot de gebruikers context vanuit een aangepaste resource, kunt u de automatische variabele `$PsDscContext`gebruiken.
 
 Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 
