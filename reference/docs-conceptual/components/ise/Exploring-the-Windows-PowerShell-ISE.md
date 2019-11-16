@@ -1,86 +1,86 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Kennismaking met Windows PowerShell ISE
-ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031025"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117452"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
-U kunt de Windows PowerShell® Integrated Scripting Environment (ISE) gebruiken om te maken, uitvoeren en fouten opsporen in opdrachten en scripts. De Windows PowerShell ISE bestaat uit de in de menubalk, Windows PowerShell-tabbladen, de werkbalk, script tabbladen, een scriptvenster, een consolevenster, een statusbalk, een schuifregelaar tekst-grootte en contextgevoelige Help.
+U kunt de Windows Power shell® Integrated Scripting Environment (ISE) gebruiken om opdrachten en scripts te maken, uit te voeren en fouten op te sporen. De Windows PowerShell ISE bestaat uit de menu balk, Windows Power shell-tabbladen, de werk balk, script tabbladen, een script paneel, een console venster, een status balk, een schuif regelaar voor tekst formaat en context gevoelige Help.
 
 > [!NOTE]
-> Beginnen met Windows PowerShell ISE 3.0, de opdracht en de uitvoer deelvensters zijn gecombineerd in één Console-venster.
+> Vanaf Windows PowerShell ISE 3,0 worden de opdracht-en uitvoer deel Vensters gecombineerd in één console venster.
 
-## <a name="menu-bar"></a>In de menubalk
+## <a name="menu-bar"></a>Menu balk
 
-De menubalk bevat de **bestand**, **bewerken**, **weergave**, **extra**, **Debug**,  **Invoegtoepassingen**, en **Help** menu's. De knoppen op de menu's kunnen u taken met betrekking tot scripts schrijven en actieve en actieve opdrachten in de Windows PowerShell ISE uit te voeren. Bovendien een [invoegtoepassing hulpprogramma](../../core-powershell/ise/The-ISEAddOnTool-Object.md) mag worden geplaatst op de menubalk, door het uitvoeren van scripts die gebruikmaken van de [de objectmodelhiërarchie van ISE](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**, **fout opsporing**, **invoeg toepassingen**en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
-> In Windows PowerShell ISE 2.0, de **extra** en **invoegtoepassingen** menu's zijn niet aanwezig.
+> In Windows PowerShell ISE 2,0 zijn de menu's **tools** en **invoeg toepassingen** niet aanwezig.
 
-## <a name="windows-powershell-tabs"></a>Windows PowerShell tabbladen
+## <a name="windows-powershell-tabs"></a>Windows Power shell-tabbladen
 
-Een Windows PowerShell-tabblad is de omgeving waarin een Windows PowerShell-script wordt uitgevoerd. U kunt nieuwe Windows PowerShell-tabbladen openen in de Windows PowerShell ISE op afzonderlijke omgevingen maken op uw lokale computer of op externe computers. Er kunnen maximaal acht PowerShell tabbladen tegelijkertijd openen.
+Een Windows Power shell-tabblad is de omgeving waarin een Windows Power shell-script wordt uitgevoerd. U kunt nieuwe Windows Power shell-tabbladen in de Windows PowerShell ISE openen om afzonderlijke omgevingen op uw lokale computer of op externe computers te maken. U kunt Maxi maal acht Power shell-tabbladen tegelijkertijd openen.
 
-## <a name="toolbar"></a>Werkbalk
+## <a name="toolbar"></a>Werk balk
 
-De volgende knoppen bevinden zich op de werkbalk.
+De volgende knoppen bevinden zich op de werk balk.
 
-|Knop|Function|
+|Toets|Functie|
 |----------|------------|
 |**Nieuw**|Hiermee opent u een nieuw script.|
-|**openen**|Hiermee opent u een bestaand script of een bestand.|
-|**Opslaan**|Hiermee slaat u een script of een bestand.|
-|**Knippen**|De geselecteerde tekst knippen en vervolgens gekopieerd naar het Klembord.|
-|**kopiëren**|De geselecteerde tekst naar het Klembord gekopieerd.|
-|**Plakken**|De inhoud van het Klembord op de cursorlocatie geplakt.|
-|**Deelvenster Uitvoer wissen**|Hiermee schakelt u alle inhoud in het deelvenster Uitvoer.|
-|**Ongedaan maken**|De bewerking die zojuist is uitgevoerd, ongedaan maken.|
-|**Redo**|Voert de actie die alleen ongedaan is gemaakt.|
-|**Script uitvoeren**|Een script wordt uitgevoerd.|
-|**Selectie uitvoeren**|Een geselecteerde gedeelte van een script wordt uitgevoerd.|
-|**Stop Execution**|Hiermee stopt u een script dat wordt uitgevoerd.|
-|**Nieuwe externe PowerShell-tabblad**|Hiermee maakt u een nieuwe PowerShell-tabblad waarmee een sessie op een externe computer. Een dialoogvenster wordt weergegeven en vraagt u om in te voeren van gegevens die zijn vereist om de externe verbinding te maken.|
-|**Start PowerShell.exe**|Hiermee opent een PowerShell-Console.|
-|**Script deelvenster-bovenaan weergeven**|Het scriptvenster verplaatst naar de bovenkant in de weergave.|
-|**Scriptvenster rechts weergeven**|Het scriptvenster verplaatst naar rechts in de weergave.|
-|**Gemaximaliseerd scriptvenster weergeven**|Het scriptvenster maximaliseert.|
+|**Staan**|Hiermee opent u een bestaand script of bestand.|
+|**Opslaan**|Hiermee slaat u een script of bestand op.|
+|**Verminderen**|Hiermee knipt u de geselecteerde tekst en kopieert u deze naar het klem bord.|
+|**Kopieer**|Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.|
+|**Plakken**|Hiermee wordt de inhoud van het klem bord op de cursor locatie geplakt.|
+|**Uitvoer venster wissen**|Hiermee wordt alle inhoud in het deel venster Uitvoer gewist.|
+|**Opdracht**|Hiermee wordt de zojuist uitgevoerde actie omgedraaid.|
+|**Redo**|Voert de actie uit die zojuist ongedaan is gemaakt.|
+|**Script uitvoeren**|Voert een script uit.|
+|**Selectie uitvoeren**|Hiermee voert u een geselecteerd deel van een script uit.|
+|**Uitvoering stoppen**|Hiermee stopt u een script dat wordt uitgevoerd.|
+|**Nieuwe externe Power shell-tabblad**|Hiermee maakt u een nieuw Power shell-tabblad dat een sessie op een externe computer tot stand brengt. Er wordt een dialoog venster weer gegeven waarin wordt gevraagd om de gegevens op te geven die nodig zijn om de externe verbinding tot stand te brengen.|
+|**Power shell. exe starten**|Hiermee opent u een Power shell-console.|
+|**Script paneel bovenaan weer geven**|Hiermee verplaatst u het Script venster naar de bovenkant in de weer gave.|
+|**Script venster rechts weer geven**|Het deel venster script naar rechts in de weer gave verplaatsen.|
+|**Gemaximaliseerd Script venster weer geven**|Maximaliseert het Script-venster.|
 
-## <a name="script-tab"></a>Script Tab
+## <a name="script-tab"></a>Script tabblad
 
-Geeft de naam van het script dat u wilt bewerken. U kunt klikken op een tabblad script om te selecteren van het script dat u wilt bewerken.
+Hier wordt de naam weer gegeven van het script dat u wilt bewerken. U kunt klikken op een script tabblad om het script te selecteren dat u wilt bewerken.
 
-Wanneer u naar het tabblad script verwijzen, wordt het volledig gekwalificeerde pad naar het scriptbestand in een tooltip weergegeven.
+Wanneer u het tabblad script aanwijst, wordt het volledig gekwalificeerde pad naar het script bestand weer gegeven in de knop info.
 
-## <a name="script-pane"></a>Scriptvenster
+## <a name="script-pane"></a>Script venster
 
-Hiermee kunt u scripts maken en uitvoeren. U kunt openen, bewerken en bestaande scripts uitvoeren in het scriptvenster.
+Hiermee kunt u scripts maken en uitvoeren. U kunt bestaande scripts openen, bewerken en uitvoeren in het Script-venster.
 
-## <a name="output-pane"></a>Deelvenster Uitvoer
+## <a name="output-pane"></a>Deel venster uitvoer
 
-Geeft de resultaten van de opdrachten en scripts die u hebt uitgevoerd. U kunt ook kopiëren en schakelt u de inhoud in het deelvenster Uitvoer.
+Hier worden de resultaten weer gegeven van de opdrachten en scripts die u hebt uitgevoerd. U kunt ook de inhoud kopiëren en wissen in het deel venster uitvoer.
 
-## <a name="command-pane"></a>Deelvenster van de opdracht
+## <a name="command-pane"></a>Opdracht venster
 
-Kunt u het schrijven van opdrachten. U kunt een opdracht een regel of een met meerdere regels in het deelvenster opdracht uitvoeren. Druk op SHIFT + ENTER drukken om elke regel van een met meerdere regels opdracht en druk op ENTER na de laatste regel voor het uitvoeren van de opdracht met meerdere regels. De prompt weergegeven boven op het opdrachtvenster ziet u het pad naar de huidige werkmap.
+Hiermee kunt u opdrachten schrijven. U kunt een opdracht met één regel of een opdracht voor meerdere regels uitvoeren in het opdracht venster. Druk op SHIFT + ENTER om elke regel van een opdracht voor meerdere regels op te geven en druk op ENTER na de laatste regel om de opdracht voor meerdere regels uit te voeren. In de prompt boven in het opdracht venster wordt het pad naar de huidige werkmap weer gegeven.
 
-## <a name="status-bar"></a>Statusbalk
+## <a name="status-bar"></a>Status balk
 
-Hiermee kunt u zien of de opdrachten en scripts die u uitvoert voltooid zijn. De statusbalk is zeer onder aan de weergave. Geselecteerde gedeelten van foutberichten worden weergegeven op de statusbalk.
+Met kunt u zien of de opdrachten en scripts die u uitvoert, zijn voltooid. De status balk bevindt zich aan de onderkant van de weer gave. Geselecteerde delen van fout berichten worden weer gegeven op de status balk.
 
-## <a name="text-size-slider"></a>Tekengrootte: schuifregelaar
+## <a name="text-size-slider"></a>Schuif regelaar voor tekst grootte
 
-Vergroot of verkleint u de grootte van de tekst op het scherm.
+Hiermee wordt de grootte van de tekst op het scherm verg root of verkleind.
 
 ## <a name="help"></a>Help
 
-Help voor Windows PowerShell ISE is beschikbaar in de TechNet-bibliotheek op het Web. U kunt de Help openen door te klikken op **Help van Windows PowerShell ISE** op de **Help** menu of druk op F1 drukt overal, behalve wanneer de cursor op de cmdletnaam van een in het scriptvenster of in het consolevenster. Uit de **Help** menu kunt u ook uitvoeren de cmdlet Update-Help, en het opdrachtvenster die u helpt bij het maken van opdrachten door alle parameters voor een cmdlet weergegeven en u in de parameters in te vullen in te schakelen weer een formulier kunt u eenvoudig te gebruiken.
+Help voor Windows PowerShell ISE is beschikbaar op internet in de TechNet-bibliotheek. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de F1-toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster. Vanuit het menu **Help** kunt u ook de cmdlet Update-Help uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Maak kennis met de Windows PowerShell ISE](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Introductie van de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

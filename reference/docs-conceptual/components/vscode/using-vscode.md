@@ -2,12 +2,12 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: b083388174dbae4a50da73156d2fce41412613a7
-ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
+ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73933888"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117401"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
@@ -239,10 +239,10 @@ Er zijn enkele blogs die handig kunnen zijn om aan de slag te gaan met Power she
 - [Fout opsporing voor Power shell-script in Visual Studio code – deel 2][debugging-part2]
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
-[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
-[install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
-[install-winps]: ../../setup/Installing-Windows-PowerShell.md
+[install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../install/Installing-PowerShell-Core-on-macOS.md
+[install-pscore-windows]: ../../install/Installing-PowerShell-Core-on-Windows.md
+[install-winps]: ../../install/Installing-Windows-PowerShell.md
 [ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
 [debug]: https://devblogs.microsoft.com/powershell/announcing-powershell-language-support-for-visual-studio-code-and-more/
 [vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
