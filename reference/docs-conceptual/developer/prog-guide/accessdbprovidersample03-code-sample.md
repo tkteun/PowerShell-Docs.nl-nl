@@ -1,5 +1,5 @@
 ---
-title: Voor beeld van AccessDbProviderSample03-code | Microsoft Docs
+title: AccessDbProviderSample03 Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,25 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: a0493fc73efc77d8a80eaf21f78737ff8db9ddd4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357321"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417524"
 ---
-# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="3bc2f-102">AccessDBProviderSample03-codevoorbeeld</span><span class="sxs-lookup"><span data-stu-id="3bc2f-102">AccessDbProviderSample03 Code Sample</span></span>
+# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="fd00d-102">AccessDBProviderSample03-codevoorbeeld</span><span class="sxs-lookup"><span data-stu-id="fd00d-102">AccessDbProviderSample03 Code Sample</span></span>
 
-<span data-ttu-id="3bc2f-103">De volgende code toont de implementatie van de Windows Power shell-provider die wordt beschreven in [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md).</span><span class="sxs-lookup"><span data-stu-id="3bc2f-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span> <span data-ttu-id="3bc2f-104">Deze provider die de gegevens kan bewerken in een gegevens archief.</span><span class="sxs-lookup"><span data-stu-id="3bc2f-104">This provider that can manipulate the data in a data store.</span></span>
+<span data-ttu-id="fd00d-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span><span class="sxs-lookup"><span data-stu-id="fd00d-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span> <span data-ttu-id="fd00d-104">This provider that can manipulate the data in a data store.</span><span class="sxs-lookup"><span data-stu-id="fd00d-104">This provider that can manipulate the data in a data store.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3bc2f-105">U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen.</span><span class="sxs-lookup"><span data-stu-id="3bc2f-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="3bc2f-106">Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.</span><span class="sxs-lookup"><span data-stu-id="3bc2f-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="fd00d-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="fd00d-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="fd00d-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="fd00d-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="3bc2f-107">De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.</span><span class="sxs-lookup"><span data-stu-id="3bc2f-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="fd00d-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span><span class="sxs-lookup"><span data-stu-id="fd00d-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 >
-> <span data-ttu-id="3bc2f-108">Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.</span><span class="sxs-lookup"><span data-stu-id="3bc2f-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
+> <span data-ttu-id="fd00d-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span><span class="sxs-lookup"><span data-stu-id="fd00d-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="3bc2f-109">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="3bc2f-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="fd00d-109">Code Sample</span><span class="sxs-lookup"><span data-stu-id="fd00d-109">Code Sample</span></span>
 
 ```csharp
 using System;
@@ -999,8 +999,8 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
 
-## <a name="see-also"></a><span data-ttu-id="3bc2f-110">Zie ook</span><span class="sxs-lookup"><span data-stu-id="3bc2f-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fd00d-110">Zie ook</span><span class="sxs-lookup"><span data-stu-id="fd00d-110">See Also</span></span>
 
-[<span data-ttu-id="3bc2f-111">Hand leiding voor Windows Power shell-programmeurs</span><span class="sxs-lookup"><span data-stu-id="3bc2f-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="fd00d-111">Windows PowerShell Programmer's Guide</span><span class="sxs-lookup"><span data-stu-id="fd00d-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="3bc2f-112">Windows Power shell SDK</span><span class="sxs-lookup"><span data-stu-id="3bc2f-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="fd00d-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="fd00d-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

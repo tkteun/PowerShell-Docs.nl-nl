@@ -1,26 +1,26 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, Power shell, configuratie, installatie
-title: Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
-ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+keywords: dsc,powershell,configuration,setup
+title: Publish to a Pull Server using Configuration IDs (v4/v5)
+ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71941696"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417249"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a><span data-ttu-id="67f9b-103">Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)</span><span class="sxs-lookup"><span data-stu-id="67f9b-103">Publish to a Pull Server using Configuration IDs (v4/v5)</span></span>
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a><span data-ttu-id="9e23a-103">Publish to a Pull Server using Configuration IDs (v4/v5)</span><span class="sxs-lookup"><span data-stu-id="9e23a-103">Publish to a Pull Server using Configuration IDs (v4/v5)</span></span>
 
-<span data-ttu-id="67f9b-104">In de volgende secties wordt ervan uitgegaan dat u al een pull-server hebt ingesteld.</span><span class="sxs-lookup"><span data-stu-id="67f9b-104">The sections below assume that you have already set up a Pull Server.</span></span> <span data-ttu-id="67f9b-105">Als u uw pull-server nog niet hebt ingesteld, kunt u de volgende hand leidingen gebruiken:</span><span class="sxs-lookup"><span data-stu-id="67f9b-105">If you haven't set up your Pull Server, you can use the following guides:</span></span>
+<span data-ttu-id="9e23a-104">The sections below assume that you have already set up a Pull Server.</span><span class="sxs-lookup"><span data-stu-id="9e23a-104">The sections below assume that you have already set up a Pull Server.</span></span> <span data-ttu-id="9e23a-105">If you haven't set up your Pull Server, you can use the following guides:</span><span class="sxs-lookup"><span data-stu-id="9e23a-105">If you haven't set up your Pull Server, you can use the following guides:</span></span>
 
-- [<span data-ttu-id="67f9b-106">Een DSC SMB-pull-server instellen</span><span class="sxs-lookup"><span data-stu-id="67f9b-106">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
-- [<span data-ttu-id="67f9b-107">Een DSC HTTP-pull-server instellen</span><span class="sxs-lookup"><span data-stu-id="67f9b-107">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
+- [<span data-ttu-id="9e23a-106">Set up a DSC SMB Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-106">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
+- [<span data-ttu-id="9e23a-107">Set up a DSC HTTP Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-107">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
 
-<span data-ttu-id="67f9b-108">Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources en zelfs het rapporteren van de status ervan.</span><span class="sxs-lookup"><span data-stu-id="67f9b-108">Each target node can be configured to download configurations, resources, and even report its status.</span></span> <span data-ttu-id="67f9b-109">In dit artikel wordt beschreven hoe u bronnen uploadt, zodat deze beschikbaar zijn om te worden gedownload en clients configureren voor het automatisch downloaden van resources.</span><span class="sxs-lookup"><span data-stu-id="67f9b-109">This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources.</span></span> <span data-ttu-id="67f9b-110">Wanneer het knoop punt een toegewezen configuratie ontvangt via **pull** of **Push** (V5), worden de resources die vereist zijn voor de configuratie automatisch gedownload van de locatie die is opgegeven in de lokale Configuration Manager (LCM).</span><span class="sxs-lookup"><span data-stu-id="67f9b-110">When the node receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the Local Configuration Manager (LCM).</span></span>
+<span data-ttu-id="9e23a-108">Each target node can be configured to download configurations, resources, and even report its status.</span><span class="sxs-lookup"><span data-stu-id="9e23a-108">Each target node can be configured to download configurations, resources, and even report its status.</span></span> <span data-ttu-id="9e23a-109">This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources.</span><span class="sxs-lookup"><span data-stu-id="9e23a-109">This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources.</span></span> <span data-ttu-id="9e23a-110">When the node receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the Local Configuration Manager (LCM).</span><span class="sxs-lookup"><span data-stu-id="9e23a-110">When the node receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the Local Configuration Manager (LCM).</span></span>
 
-## <a name="compile-configurations"></a><span data-ttu-id="67f9b-111">Configuraties compileren</span><span class="sxs-lookup"><span data-stu-id="67f9b-111">Compile configurations</span></span>
+## <a name="compile-configurations"></a><span data-ttu-id="9e23a-111">Compile configurations</span><span class="sxs-lookup"><span data-stu-id="9e23a-111">Compile configurations</span></span>
 
-<span data-ttu-id="67f9b-112">De eerste stap voor het opslaan van [configuraties](../configurations/configurations.md) op een pull-server is het compileren van deze in `.mof`-bestanden.</span><span class="sxs-lookup"><span data-stu-id="67f9b-112">The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into `.mof` files.</span></span> <span data-ttu-id="67f9b-113">Als u een algemene configuratie wilt maken en van toepassing is op meer clients, gebruikt u `localhost` in uw knooppunt blok.</span><span class="sxs-lookup"><span data-stu-id="67f9b-113">To make a configuration generic, and applicable to more clients, use `localhost` in your Node block.</span></span> <span data-ttu-id="67f9b-114">In het onderstaande voor beeld ziet u een configuratie shell die gebruikmaakt van `localhost` in plaats van een specifieke client naam.</span><span class="sxs-lookup"><span data-stu-id="67f9b-114">The example below shows a Configuration shell that uses `localhost` instead of a specific client name.</span></span>
+<span data-ttu-id="9e23a-112">The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into `.mof` files.</span><span class="sxs-lookup"><span data-stu-id="9e23a-112">The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into `.mof` files.</span></span> <span data-ttu-id="9e23a-113">To make a configuration generic, and applicable to more clients, use `localhost` in your Node block.</span><span class="sxs-lookup"><span data-stu-id="9e23a-113">To make a configuration generic, and applicable to more clients, use `localhost` in your Node block.</span></span> <span data-ttu-id="9e23a-114">The example below shows a Configuration shell that uses `localhost` instead of a specific client name.</span><span class="sxs-lookup"><span data-stu-id="9e23a-114">The example below shows a Configuration shell that uses `localhost` instead of a specific client name.</span></span>
 
 ```powershell
 Configuration GenericConfig
@@ -33,21 +33,21 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-<span data-ttu-id="67f9b-115">Wanneer u de algemene configuratie hebt gecompileerd, moet u een bestand van `localhost.mof` hebben.</span><span class="sxs-lookup"><span data-stu-id="67f9b-115">Once you've compiled your generic configuration, you should have a `localhost.mof` file.</span></span>
+<span data-ttu-id="9e23a-115">Once you've compiled your generic configuration, you should have a `localhost.mof` file.</span><span class="sxs-lookup"><span data-stu-id="9e23a-115">Once you've compiled your generic configuration, you should have a `localhost.mof` file.</span></span>
 
-## <a name="renaming-the-mof-file"></a><span data-ttu-id="67f9b-116">De naam van het MOF-bestand wijzigen</span><span class="sxs-lookup"><span data-stu-id="67f9b-116">Renaming the MOF file</span></span>
+## <a name="renaming-the-mof-file"></a><span data-ttu-id="9e23a-116">Renaming the MOF file</span><span class="sxs-lookup"><span data-stu-id="9e23a-116">Renaming the MOF file</span></span>
 
-<span data-ttu-id="67f9b-117">U kunt configuratie-@no__t 0-bestanden opslaan op een pull-server via **configuratiepad** of **ConfigurationID**.</span><span class="sxs-lookup"><span data-stu-id="67f9b-117">You can store Configuration `.mof` files on a Pull Server by **ConfigurationName** or **ConfigurationID**.</span></span> <span data-ttu-id="67f9b-118">Afhankelijk van hoe u uw pull-clients wilt instellen, kunt u een van de onderstaande secties kiezen om de naam van uw gecompileerde `.mof`-bestanden goed te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="67f9b-118">Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled `.mof` files.</span></span>
+<span data-ttu-id="9e23a-117">You can store Configuration `.mof` files on a Pull Server by **ConfigurationName** or **ConfigurationID**.</span><span class="sxs-lookup"><span data-stu-id="9e23a-117">You can store Configuration `.mof` files on a Pull Server by **ConfigurationName** or **ConfigurationID**.</span></span> <span data-ttu-id="9e23a-118">Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled `.mof` files.</span><span class="sxs-lookup"><span data-stu-id="9e23a-118">Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled `.mof` files.</span></span>
 
-### <a name="configuration-ids-guid"></a><span data-ttu-id="67f9b-119">Configuratie-Id's (GUID)</span><span class="sxs-lookup"><span data-stu-id="67f9b-119">Configuration IDs (GUID)</span></span>
+### <a name="configuration-ids-guid"></a><span data-ttu-id="9e23a-119">Configuration IDs (GUID)</span><span class="sxs-lookup"><span data-stu-id="9e23a-119">Configuration IDs (GUID)</span></span>
 
-<span data-ttu-id="67f9b-120">U moet de naam van uw `localhost.mof`-bestand wijzigen in `<GUID>.mof`-bestand.</span><span class="sxs-lookup"><span data-stu-id="67f9b-120">You'll need to rename your `localhost.mof` file to `<GUID>.mof` file.</span></span> <span data-ttu-id="67f9b-121">U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .</span><span class="sxs-lookup"><span data-stu-id="67f9b-121">You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.</span></span>
+<span data-ttu-id="9e23a-120">You'll need to rename your `localhost.mof` file to `<GUID>.mof` file.</span><span class="sxs-lookup"><span data-stu-id="9e23a-120">You'll need to rename your `localhost.mof` file to `<GUID>.mof` file.</span></span> <span data-ttu-id="9e23a-121">You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9e23a-121">You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.</span></span>
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-<span data-ttu-id="67f9b-122">Voorbeeld uitvoer</span><span class="sxs-lookup"><span data-stu-id="67f9b-122">Sample Output</span></span>
+<span data-ttu-id="9e23a-122">Sample Output</span><span class="sxs-lookup"><span data-stu-id="9e23a-122">Sample Output</span></span>
 
 ```Output
 Guid
@@ -55,41 +55,41 @@ Guid
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-<span data-ttu-id="67f9b-123">U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen.</span><span class="sxs-lookup"><span data-stu-id="67f9b-123">You can then rename your `.mof` file using any acceptable method.</span></span> <span data-ttu-id="67f9b-124">In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.</span><span class="sxs-lookup"><span data-stu-id="67f9b-124">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span></span>
+<span data-ttu-id="9e23a-123">You can then rename your `.mof` file using any acceptable method.</span><span class="sxs-lookup"><span data-stu-id="9e23a-123">You can then rename your `.mof` file using any acceptable method.</span></span> <span data-ttu-id="9e23a-124">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9e23a-124">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span></span>
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-<span data-ttu-id="67f9b-125">Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](/powershell/dsc/secureserver#guids).</span><span class="sxs-lookup"><span data-stu-id="67f9b-125">For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/dsc/secureserver#guids).</span></span>
+<span data-ttu-id="9e23a-125">For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).</span><span class="sxs-lookup"><span data-stu-id="9e23a-125">For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).</span></span>
 
-### <a name="configuration-names"></a><span data-ttu-id="67f9b-126">Configuratie namen</span><span class="sxs-lookup"><span data-stu-id="67f9b-126">Configuration names</span></span>
+### <a name="configuration-names"></a><span data-ttu-id="9e23a-126">Configuration names</span><span class="sxs-lookup"><span data-stu-id="9e23a-126">Configuration names</span></span>
 
-<span data-ttu-id="67f9b-127">U moet de naam van uw `localhost.mof`-bestand wijzigen in `<Configuration Name>.mof`-bestand.</span><span class="sxs-lookup"><span data-stu-id="67f9b-127">You'll need to rename your `localhost.mof` file to `<Configuration Name>.mof` file.</span></span> <span data-ttu-id="67f9b-128">In het volgende voor beeld wordt de naam van de configuratie uit de vorige sectie gebruikt.</span><span class="sxs-lookup"><span data-stu-id="67f9b-128">In the following example, the configuration name from the previous section is used.</span></span> <span data-ttu-id="67f9b-129">U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen.</span><span class="sxs-lookup"><span data-stu-id="67f9b-129">You can then rename your `.mof` file using any acceptable method.</span></span> <span data-ttu-id="67f9b-130">In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.</span><span class="sxs-lookup"><span data-stu-id="67f9b-130">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span></span>
+<span data-ttu-id="9e23a-127">You'll need to rename your `localhost.mof` file to `<Configuration Name>.mof` file.</span><span class="sxs-lookup"><span data-stu-id="9e23a-127">You'll need to rename your `localhost.mof` file to `<Configuration Name>.mof` file.</span></span> <span data-ttu-id="9e23a-128">In the following example, the configuration name from the previous section is used.</span><span class="sxs-lookup"><span data-stu-id="9e23a-128">In the following example, the configuration name from the previous section is used.</span></span> <span data-ttu-id="9e23a-129">You can then rename your `.mof` file using any acceptable method.</span><span class="sxs-lookup"><span data-stu-id="9e23a-129">You can then rename your `.mof` file using any acceptable method.</span></span> <span data-ttu-id="9e23a-130">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9e23a-130">The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.</span></span>
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 ```
 
-## <a name="create-the-checksum"></a><span data-ttu-id="67f9b-131">De controlesom maken</span><span class="sxs-lookup"><span data-stu-id="67f9b-131">Create the checkSum</span></span>
+## <a name="create-the-checksum"></a><span data-ttu-id="9e23a-131">Create the checkSum</span><span class="sxs-lookup"><span data-stu-id="9e23a-131">Create the checkSum</span></span>
 
-<span data-ttu-id="67f9b-132">Elk `.mof`-bestand dat is opgeslagen op een pull-server of aan de SMB-share moet een `.checksum`-bestand zijn gekoppeld.</span><span class="sxs-lookup"><span data-stu-id="67f9b-132">Each `.mof` file stored on a Pull Server, or SMB share needs to have an associated `.checksum` file.</span></span>
-<span data-ttu-id="67f9b-133">Met dit bestand kunnen clients weten wanneer het bijbehorende `.mof`-bestand is gewijzigd en het opnieuw moet worden gedownload.</span><span class="sxs-lookup"><span data-stu-id="67f9b-133">This file lets clients know when the associated `.mof` file has changed and should be downloaded again.</span></span>
+<span data-ttu-id="9e23a-132">Each `.mof` file stored on a Pull Server, or SMB share needs to have an associated `.checksum` file.</span><span class="sxs-lookup"><span data-stu-id="9e23a-132">Each `.mof` file stored on a Pull Server, or SMB share needs to have an associated `.checksum` file.</span></span>
+<span data-ttu-id="9e23a-133">This file lets clients know when the associated `.mof` file has changed and should be downloaded again.</span><span class="sxs-lookup"><span data-stu-id="9e23a-133">This file lets clients know when the associated `.mof` file has changed and should be downloaded again.</span></span>
 
-<span data-ttu-id="67f9b-134">U kunt een **controlesom** maken met de cmdlet [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) .</span><span class="sxs-lookup"><span data-stu-id="67f9b-134">You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet.</span></span> <span data-ttu-id="67f9b-135">U kunt ook `New-DSCCheckSum` uitvoeren voor een map met bestanden met behulp van de para meter `-Path`.</span><span class="sxs-lookup"><span data-stu-id="67f9b-135">You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.</span></span>
-<span data-ttu-id="67f9b-136">Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`.</span><span class="sxs-lookup"><span data-stu-id="67f9b-136">If a checksum already exists, you can force it to be re-created with the `-Force` parameter.</span></span> <span data-ttu-id="67f9b-137">In het volgende voor beeld is een map opgegeven met het `.mof`-bestand uit de vorige sectie en wordt de para meter `-Force` gebruikt.</span><span class="sxs-lookup"><span data-stu-id="67f9b-137">The following example specified a directory containing the `.mof` file from the previous section, and uses the `-Force` parameter.</span></span>
+<span data-ttu-id="9e23a-134">You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9e23a-134">You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet.</span></span> <span data-ttu-id="9e23a-135">You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.</span><span class="sxs-lookup"><span data-stu-id="9e23a-135">You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.</span></span>
+<span data-ttu-id="9e23a-136">If a checksum already exists, you can force it to be re-created with the `-Force` parameter.</span><span class="sxs-lookup"><span data-stu-id="9e23a-136">If a checksum already exists, you can force it to be re-created with the `-Force` parameter.</span></span> <span data-ttu-id="9e23a-137">The following example specified a directory containing the `.mof` file from the previous section, and uses the `-Force` parameter.</span><span class="sxs-lookup"><span data-stu-id="9e23a-137">The following example specified a directory containing the `.mof` file from the previous section, and uses the `-Force` parameter.</span></span>
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-<span data-ttu-id="67f9b-138">Er wordt geen uitvoer weer gegeven, maar u ziet nu een `<GUID or Configuration Name>.mof.checksum`-bestand.</span><span class="sxs-lookup"><span data-stu-id="67f9b-138">No output will be shown, but you should now see a `<GUID or Configuration Name>.mof.checksum` file.</span></span>
+<span data-ttu-id="9e23a-138">No output will be shown, but you should now see a `<GUID or Configuration Name>.mof.checksum` file.</span><span class="sxs-lookup"><span data-stu-id="9e23a-138">No output will be shown, but you should now see a `<GUID or Configuration Name>.mof.checksum` file.</span></span>
 
-## <a name="where-to-store-mof-files-and-checksums"></a><span data-ttu-id="67f9b-139">Waar u MOF-bestanden en controle sommen opslaat</span><span class="sxs-lookup"><span data-stu-id="67f9b-139">Where to store MOF files and checkSums</span></span>
+## <a name="where-to-store-mof-files-and-checksums"></a><span data-ttu-id="9e23a-139">Where to store MOF files and checkSums</span><span class="sxs-lookup"><span data-stu-id="9e23a-139">Where to store MOF files and checkSums</span></span>
 
-### <a name="on-a-dsc-http-pull-server"></a><span data-ttu-id="67f9b-140">Op een DSC HTTP-pull-server</span><span class="sxs-lookup"><span data-stu-id="67f9b-140">On a DSC HTTP Pull Server</span></span>
+### <a name="on-a-dsc-http-pull-server"></a><span data-ttu-id="9e23a-140">On a DSC HTTP Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-140">On a DSC HTTP Pull Server</span></span>
 
-<span data-ttu-id="67f9b-141">Wanneer u de HTTP-pull-server instelt, zoals wordt uitgelegd in [een DSC HTTP-pull-server instellen](pullServer.md), geeft u directory's op voor de sleutels **para modulepath in** en **ConfigurationPath** .</span><span class="sxs-lookup"><span data-stu-id="67f9b-141">When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys.</span></span> <span data-ttu-id="67f9b-142">De **para modulepath in** -sleutel geeft aan waar de verpakte `.zip`-bestanden van een module moeten worden opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="67f9b-142">The **ModulePath** key indicates where a module's packaged `.zip` files should be stored.</span></span> <span data-ttu-id="67f9b-143">De **ConfigurationPath** geeft aan waar elke `.mof`-bestanden en `.checksum`-bestanden moeten worden opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="67f9b-143">The **ConfigurationPath** indicates where any `.mof` files and `.checksum` files should be stored.</span></span>
+<span data-ttu-id="9e23a-141">When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys.</span><span class="sxs-lookup"><span data-stu-id="9e23a-141">When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys.</span></span> <span data-ttu-id="9e23a-142">The **ModulePath** key indicates where a module's packaged `.zip` files should be stored.</span><span class="sxs-lookup"><span data-stu-id="9e23a-142">The **ModulePath** key indicates where a module's packaged `.zip` files should be stored.</span></span> <span data-ttu-id="9e23a-143">The **ConfigurationPath** indicates where any `.mof` files and `.checksum` files should be stored.</span><span class="sxs-lookup"><span data-stu-id="9e23a-143">The **ConfigurationPath** indicates where any `.mof` files and `.checksum` files should be stored.</span></span>
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,10 +102,10 @@ New-DscChecksum -Path '.\' -Force
 
 ```
 
-### <a name="on-an-smb-share"></a><span data-ttu-id="67f9b-144">Op een SMB-share</span><span class="sxs-lookup"><span data-stu-id="67f9b-144">On an SMB share</span></span>
+### <a name="on-an-smb-share"></a><span data-ttu-id="9e23a-144">On an SMB share</span><span class="sxs-lookup"><span data-stu-id="9e23a-144">On an SMB share</span></span>
 
-<span data-ttu-id="67f9b-145">Wanneer u een pull-client instelt voor het gebruik van een SMB-share, geeft u een **ConfigurationRepositoryShare**op.</span><span class="sxs-lookup"><span data-stu-id="67f9b-145">When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**.</span></span>
-<span data-ttu-id="67f9b-146">Alle `.mof`-bestanden en `.checksum`-bestanden moeten worden opgeslagen in de map **SourcePath** van het **ConfigurationRepositoryShare** -blok.</span><span class="sxs-lookup"><span data-stu-id="67f9b-146">All `.mof` files and `.checksum` files should be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.</span></span>
+<span data-ttu-id="9e23a-145">When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**.</span><span class="sxs-lookup"><span data-stu-id="9e23a-145">When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**.</span></span>
+<span data-ttu-id="9e23a-146">All `.mof` files and `.checksum` files should be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.</span><span class="sxs-lookup"><span data-stu-id="9e23a-146">All `.mof` files and `.checksum` files should be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.</span></span>
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -114,16 +114,16 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="67f9b-147">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="67f9b-147">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="9e23a-147">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="9e23a-147">Next steps</span></span>
 
-<span data-ttu-id="67f9b-148">Vervolgens moet u pull-clients configureren voor het ophalen van de opgegeven configuratie.</span><span class="sxs-lookup"><span data-stu-id="67f9b-148">Next, you'll want to configure Pull Clients to pull the specified configuration.</span></span> <span data-ttu-id="67f9b-149">Zie een van de volgende hand leidingen voor meer informatie:</span><span class="sxs-lookup"><span data-stu-id="67f9b-149">For more information, see one of the following guides:</span></span>
+<span data-ttu-id="9e23a-148">Next, you'll want to configure Pull Clients to pull the specified configuration.</span><span class="sxs-lookup"><span data-stu-id="9e23a-148">Next, you'll want to configure Pull Clients to pull the specified configuration.</span></span> <span data-ttu-id="9e23a-149">For more information, see one of the following guides:</span><span class="sxs-lookup"><span data-stu-id="9e23a-149">For more information, see one of the following guides:</span></span>
 
-- [<span data-ttu-id="67f9b-150">Een pull-client instellen met behulp van configuratie-Id's (v4)</span><span class="sxs-lookup"><span data-stu-id="67f9b-150">Set up a Pull Client using Configuration IDs (v4)</span></span>](pullClientConfigId4.md)
-- [<span data-ttu-id="67f9b-151">Een pull-client instellen met behulp van configuratie-Id's (V5)</span><span class="sxs-lookup"><span data-stu-id="67f9b-151">Set up a Pull Client using Configuration IDs (v5)</span></span>](pullClientConfigId.md)
-- [<span data-ttu-id="67f9b-152">Een pull-client instellen met behulp van configuratie namen (V5)</span><span class="sxs-lookup"><span data-stu-id="67f9b-152">Set up a Pull Client using Configuration Names (v5)</span></span>](pullClientConfigNames.md)
+- [<span data-ttu-id="9e23a-150">Set up a Pull Client using Configuration IDs (v4)</span><span class="sxs-lookup"><span data-stu-id="9e23a-150">Set up a Pull Client using Configuration IDs (v4)</span></span>](pullClientConfigId4.md)
+- [<span data-ttu-id="9e23a-151">Set up a Pull Client using Configuration IDs (v5)</span><span class="sxs-lookup"><span data-stu-id="9e23a-151">Set up a Pull Client using Configuration IDs (v5)</span></span>](pullClientConfigId.md)
+- [<span data-ttu-id="9e23a-152">Set up a Pull Client using Configuration Names (v5)</span><span class="sxs-lookup"><span data-stu-id="9e23a-152">Set up a Pull Client using Configuration Names (v5)</span></span>](pullClientConfigNames.md)
 
-## <a name="see-also"></a><span data-ttu-id="67f9b-153">Zie ook</span><span class="sxs-lookup"><span data-stu-id="67f9b-153">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9e23a-153">Zie ook</span><span class="sxs-lookup"><span data-stu-id="9e23a-153">See also</span></span>
 
-- [<span data-ttu-id="67f9b-154">Een DSC SMB-pull-server instellen</span><span class="sxs-lookup"><span data-stu-id="67f9b-154">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
-- [<span data-ttu-id="67f9b-155">Een DSC HTTP-pull-server instellen</span><span class="sxs-lookup"><span data-stu-id="67f9b-155">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
-- [<span data-ttu-id="67f9b-156">Resources verpakken en uploaden naar een pull-server</span><span class="sxs-lookup"><span data-stu-id="67f9b-156">Package and Upload Resources to a Pull Server</span></span>](package-upload-resources.md)
+- [<span data-ttu-id="9e23a-154">Set up a DSC SMB Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-154">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
+- [<span data-ttu-id="9e23a-155">Set up a DSC HTTP Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-155">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
+- [<span data-ttu-id="9e23a-156">Package and Upload Resources to a Pull Server</span><span class="sxs-lookup"><span data-stu-id="9e23a-156">Package and Upload Resources to a Pull Server</span></span>](package-upload-resources.md)

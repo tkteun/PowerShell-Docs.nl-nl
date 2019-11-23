@@ -1,5 +1,5 @@
 ---
-title: StopProcessSample04 (C#) voorbeeld code | Microsoft Docs
+title: StopProcessSample04 (C#) Sample Code | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 778ce1a2-e16d-4af5-b15b-77ca4326bdc4
 caps.latest.revision: 5
-ms.openlocfilehash: 52c0cedf237d05e874780d08887f91a87bf13ffd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: df5591e351790d18bf2a5b5554d792ab8175dcc6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72356943"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416040"
 ---
-# <a name="stopprocesssample04-c-sample-code"></a><span data-ttu-id="3cdd4-102">StopProcessSample04-codevoorbeeld (C#)</span><span class="sxs-lookup"><span data-stu-id="3cdd4-102">StopProcessSample04 (C#) Sample Code</span></span>
+# <a name="stopprocesssample04-c-sample-code"></a><span data-ttu-id="f6a44-102">StopProcessSample04-codevoorbeeld (C#)</span><span class="sxs-lookup"><span data-stu-id="f6a44-102">StopProcessSample04 (C#) Sample Code</span></span>
 
-<span data-ttu-id="3cdd4-103">Hier volgt de volledige C# voorbeeld code voor de voor beeld-cmdlet StopProc04.</span><span class="sxs-lookup"><span data-stu-id="3cdd4-103">Here is the complete C# sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="3cdd4-104">Dit is de code voor de cmdlet `Stop-Process` die wordt beschreven in [parameter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="3cdd4-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="3cdd4-105">De `Stop-Process` cmdlet is ontworpen voor het stoppen van processen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="3cdd4-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
+<span data-ttu-id="f6a44-103">Here is the complete C# sample code for the StopProc04 sample cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f6a44-103">Here is the complete C# sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="f6a44-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span><span class="sxs-lookup"><span data-stu-id="f6a44-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="f6a44-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span><span class="sxs-lookup"><span data-stu-id="f6a44-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3cdd4-106">U kunt het C# bron bestand (stopprocesssample04.cs) voor deze stop-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen.</span><span class="sxs-lookup"><span data-stu-id="3cdd4-106">You can download the C# (stopprocesssample04.cs) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="3cdd4-107">Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.</span><span class="sxs-lookup"><span data-stu-id="3cdd4-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="f6a44-106">You can download the C# (stopprocesssample04.cs) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="f6a44-106">You can download the C# (stopprocesssample04.cs) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="f6a44-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="f6a44-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="3cdd4-108">De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.</span><span class="sxs-lookup"><span data-stu-id="3cdd4-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="f6a44-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span><span class="sxs-lookup"><span data-stu-id="f6a44-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
 [!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L11-L435 "StopProcessSample04.cs")]
 
-## <a name="see-also"></a><span data-ttu-id="3cdd4-109">Zie ook</span><span class="sxs-lookup"><span data-stu-id="3cdd4-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f6a44-109">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f6a44-109">See Also</span></span>
 
-[<span data-ttu-id="3cdd4-110">Hand leiding voor Windows Power shell-programmeurs</span><span class="sxs-lookup"><span data-stu-id="3cdd4-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="f6a44-110">Windows PowerShell Programmer's Guide</span><span class="sxs-lookup"><span data-stu-id="f6a44-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="3cdd4-111">Windows Power shell SDK</span><span class="sxs-lookup"><span data-stu-id="3cdd4-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="f6a44-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="f6a44-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
