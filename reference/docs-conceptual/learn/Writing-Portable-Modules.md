@@ -1,43 +1,43 @@
 ---
 ms.date: 12/14/2018
-keywords: PowerShell-cmdlet
-title: Draagbare Modules schrijven
-ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+keywords: powershell,cmdlet
+title: Writing Portable Modules
+ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470993"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417646"
 ---
-# <a name="portable-modules"></a>Draagbare Modules
+# <a name="portable-modules"></a>Portable Modules
 
-Windows PowerShell is geschreven voor [.NET Framework][] terwijl PowerShell Core is geschreven voor [.NET Core][]. Draagbare modules worden modules die in Windows PowerShell en PowerShell Core werken. .NET Framework en .NET Core zijn zeer compatibel is, zijn er verschillen in de beschikbare API's tussen de twee. Er zijn ook verschillen in de API's beschikbaar in Windows PowerShell en PowerShell Core. Modules die zijn bedoeld om te worden gebruikt in beide omgevingen moeten rekening houden met deze verschillen.
+Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][]. Portable modules are modules that work in both Windows PowerShell and PowerShell Core. While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two. There are also differences in the APIs available in Windows PowerShell and PowerShell Core. Modules intended to be used in both environments need to be aware of these differences.
 
-## <a name="porting-an-existing-module"></a>Overzetten van een bestaande Module
+## <a name="porting-an-existing-module"></a>Porting an Existing Module
 
-### <a name="porting-a-pssnapin"></a>Een PSSnapIn overzetten
+### <a name="porting-a-pssnapin"></a>Porting a PSSnapIn
 
-PowerShell [modules](/powershell/developer/cmdlet/modules-and-snap-ins) worden niet ondersteund in PowerShell Core. Het is echter pretje om een PSSnapIn converteren naar een PowerShell-module. De registratiecode PSSnapIn is meestal in een bestand met één bron van een klasse die is afgeleid van [PSSnapIn][].
-Dit bestand verwijderen van de build; het niet meer nodig.
+PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in PowerShell Core. However, it's trivial to convert a PSSnapIn to a PowerShell module. Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].
+Remove this source file from the build; it's no longer needed.
 
-Gebruik [Nieuwe ModuleManifest][] te maken van een nieuwe modulemanifest dat de registratiecode PSSnapIn meer nodig. Sommige van de waarden uit de **PSSnapIn** (zoals **beschrijving**) opnieuw kan worden gebruikt in de module-manifest.
+Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code. Some of the values from the **PSSnapIn** (such as **Description**) can be reused within the module manifest.
 
-De **velden RootModule** eigenschap in de module-manifest moet worden ingesteld op de naam van de implementatie van de cmdlets assembly (dll).
+The **RootModule** property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.
 
-### <a name="the-net-portability-analyzer-aka-apiport"></a>De .NET draagbaarheid Analyzer (ook wel APIPort)
+### <a name="the-net-portability-analyzer-aka-apiport"></a>The .NET Portability Analyzer (aka APIPort)
 
-Poort-modules die zijn geschreven voor Windows PowerShell om te werken met PowerShell Core, te beginnen met de [.NET Portability Analyzer][]. Dit hulpprogramma uitvoeren op basis van uw gecompileerde assembly om te bepalen of de .NET-API's gebruikt in de module compatibel met .NET Framework, .NET Core en andere runtimes .NET zijn. Het hulpprogramma zijn overeenkomstig alternatieve API's als deze bestaan. U moet anders toevoegen [Runtime-controles][] en beperken de mogelijkheden die niet beschikbaar in bepaalde runtimes.
+To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][]. Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes. The tool suggests alternate APIs if they exist. Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.
 
-## <a name="creating-a-new-module"></a>Het maken van een nieuwe Module
+## <a name="creating-a-new-module"></a>Creating a New Module
 
-Als u een nieuwe module maakt, wordt de aanbeveling is het gebruik van de [.NET CLI][].
+If creating a new module, the recommendation is to use the [.NET CLI][].
 
-### <a name="installing-the-powershell-standard-module-template"></a>De sjabloon standaard PowerShell-Module installeren
+### <a name="installing-the-powershell-standard-module-template"></a>Installing the PowerShell Standard Module Template
 
-Nadat de .NET-CLI is geïnstalleerd, installeert u een bibliotheek voor sjablonen voor het genereren van een eenvoudige PowerShell-module.
-De module is compatibel met Windows PowerShell, PowerShell Core, Windows, Linux en macOS.
+Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.
+The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.
 
-Het volgende voorbeeld laat zien hoe de sjabloon wilt installeren:
+The following example shows how to install the template:
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -73,9 +73,9 @@ PowerShell Standard Module                        psmodule           [C#]       
 ...
 ```
 
-### <a name="creating-a-new-module-project"></a>Het maken van een nieuw Project in de Module
+### <a name="creating-a-new-module-project"></a>Creating a New Module Project
 
-Nadat de sjabloon is geïnstalleerd, kunt u een nieuw PowerShell-module-project met deze sjabloon kunt maken. In dit voorbeeld wordt de voorbeeldmodule 'myModule' genoemd.
+After the template is installed, you can create a new PowerShell module project using that template. In this example, the sample module is called 'myModule'.
 
 ```
 PS> mkdir myModule
@@ -102,9 +102,9 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### <a name="building-the-module"></a>Het bouwen van de Module
+### <a name="building-the-module"></a>Building the Module
 
-Standaard .NET-CLI-opdrachten gebruiken om het project te bouwen.
+Use standard .NET CLI commands to build the project.
 
 ```powershell
 dotnet build
@@ -125,9 +125,9 @@ Build succeeded.
 Time Elapsed 00:00:05.40
 ```
 
-### <a name="testing-the-module"></a>De Module testen
+### <a name="testing-the-module"></a>Testing the Module
 
-U kunt na het maken van de module importeren en uitvoeren van de voorbeeld-cmdlet.
+After building the module, you can import it and execute the sample cmdlet.
 
 ```powershell
 ipmo .\bin\Debug\netstandard2.0\myModule.dll
@@ -161,52 +161,52 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
-De volgende secties wordt beschreven in detail van de technologieën die worden gebruikt door deze sjabloon.
+The following sections describe in detail some of the technologies used by this template.
 
-## <a name="net-standard-library"></a>Standaard .NET-bibliotheek
+## <a name="net-standard-library"></a>.NET Standard Library
 
-[.NET standard][] is een formele specificatie van .NET-API's die beschikbaar in alle .NET-implementaties zijn. Beheerde code die gericht is op .NET Standard werkt met de .NET Framework en .NET Core-versies die compatibel met die versie van .NET Standard zijn.
-
-> [!NOTE]
-> Hoewel een API in .NET Standard bestaat mogelijk, de implementatie van de API in .NET Core kan veroorzaken een `PlatformNotSupportedException` tijdens runtime, dus als u wilt controleren van compatibiliteit met Windows PowerShell en PowerShell Core, de aanbevolen procedure is om uit te voeren tests voor de module in beide omgevingen.
-> Ook tests uitvoeren op Linux en Mac OS, als uw module is bedoeld voor meerdere platforms.
-
-Die gericht is op .NET Standard, zorgt ervoor dat, als de module zich verder ontwikkelt, niet-compatibele API's niet per ongeluk in de module introduceren. Compatibiliteitsproblemen zijn gedetecteerd bij het compileren in plaats van de runtime.
-
-Het is echter niet vereist voor het doel .NET Standard voor een module om te werken met Windows PowerShell en PowerShell Core, zolang u compatibele API's gebruiken. De tussenliggende taal (IL) is tussen de twee runtimes compatibel. U kunt .NET Framework 4.6.1 installeert, doelgroep die compatibel is met .NET Standard 2.0. Als u API's buiten .NET Standard 2.0 niet gebruikt, klikt u vervolgens werkt de module met PowerShell Core 6 zonder hercompilatie.
-
-## <a name="powershell-standard-library"></a>PowerShell-Standard-bibliotheek
-
-De [PowerShell-standaard][] bibliotheek is een formele specificatie van de PowerShell-APIs beschikbaar in alle versies van PowerShell groter is dan of gelijk zijn aan de versie van die standaard.
-
-Bijvoorbeeld, [PowerShell Standard 5.1][] is compatibel met Windows PowerShell 5.1 en PowerShell Core 6.0 of hoger.
-
-Het is raadzaam om eerst te compileren van de module met behulp van PowerShell Standard-bibliotheek. De bibliotheek zorgt ervoor dat de API's zijn beschikbaar en worden geïmplementeerd in Windows PowerShell en PowerShell Core 6.
-PowerShell-standaard is bedoeld om altijd worden doorgestuurd-compatibel. Een module die is gebouwd met behulp van PowerShell Standard-bibliotheek 5.1 wordt altijd compatibel zijn met toekomstige versies van PowerShell.
-
-## <a name="module-manifest"></a>Module-Manifest
-
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Compatibiliteit met Windows PowerShell en PowerShell Core die aangeeft
-
-Nadat is gevalideerd dat de module met Windows PowerShell en PowerShell Core werkt, de module-manifest moet expliciet aangeven compatibiliteit met behulp van de [CompatiblePSEditions][] eigenschap. Een waarde van `Desktop` betekent dat de module compatibel met Windows PowerShell, terwijl een waarde van is `Core` betekent dat de module compatibel met PowerShell Core is. Zowel `Desktop` en `Core` betekent dat de module compatibel met Windows PowerShell en PowerShell Core is.
+[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations. Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.
 
 > [!NOTE]
-> `Core` automatisch betekent niet dat de module compatibel met Windows, Linux en macOS is.
-> De **CompatiblePSEditions** eigenschap werd geïntroduceerd in PowerShell versie 5. Module manifesten die gebruikmaken van de **CompatiblePSEditions** eigenschap niet worden geladen in versies voorafgaand aan PowerShell-versie 5.
+> Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.
+> Also run tests on Linux and macOS if your module is intended to be cross-platform.
 
-### <a name="indicating-os-compatibility"></a>Compatibiliteit met besturingssystemen die aangeeft
+Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module. Incompatibilities are discovered at compile time instead of runtime.
 
-Valideer eerst of uw module in Linux en macOS werkt. Vervolgens geven compatibiliteit met deze besturingssystemen in de module-manifest. Dit maakt het gemakkelijker voor gebruikers van uw module vinden voor hun besturingssysteem wanneer gepubliceerd naar de [PowerShell Gallery][].
+However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs. The Intermediate Language (IL) is compatible between the two runtimes. You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0. If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.
 
-In de module-manifest, het `PrivateData` eigenschap heeft een `PSData` onderliggende eigenschap. De optionele `Tags` eigenschap van `PSData` wordt een matrix met waarden die worden weergegeven in de PowerShell Gallery. De PowerShell Gallery ondersteunt de volgende waarden voor de compatibiliteit van:
+## <a name="powershell-standard-library"></a>PowerShell Standard Library
 
-| Code               | Description                                |
+The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.
+
+For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.
+
+We recommend you compile your module using PowerShell Standard Library. The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.
+PowerShell Standard is intended to always be forwards-compatible. A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.
+
+## <a name="module-manifest"></a>Module Manifest
+
+### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Indicating Compatibility With Windows PowerShell and PowerShell Core
+
+After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property. A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core. Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.
+
+> [!NOTE]
+> `Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.
+> The **CompatiblePSEditions** property was introduced in PowerShell v5. Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.
+
+### <a name="indicating-os-compatibility"></a>Indicating OS Compatibility
+
+First, validate that your module works on Linux and macOS. Next, indicate compatibility with those operating systems in the module manifest. This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].
+
+Within the module manifest, the `PrivateData` property has a `PSData` sub-property. The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery. The PowerShell Gallery supports the following compatibility values:
+
+| Tag               | Beschrijving                                |
 |-------------------|--------------------------------------------|
-| PSEdition_Core    | Compatibel met PowerShell Core 6          |
-| PSEdition_Desktop | Compatibel met Windows PowerShell         |
-| Windows           | Compatibel met Windows                    |
-| Linux             | Compatibel met Linux (Er zijn geen specifieke distributie) |
-| macOS             | Compatibel met macOS                      |
+| PSEdition_Core    | Compatible with PowerShell Core 6          |
+| PSEdition_Desktop | Compatible with Windows PowerShell         |
+| Windows           | Compatible with Windows                    |
+| Linux             | Compatible with Linux (no specific distro) |
+| macOS             | Compatible with macOS                      |
 
 Voorbeeld:
 
@@ -258,12 +258,12 @@ Voorbeeld:
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
-[Nieuwe ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
-[Runtime-controles]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
+[New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
+[runtime checks]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
-[PowerShell-standaard]: https://github.com/PowerShell/PowerShellStandard
+[PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
-[CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
+[CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support

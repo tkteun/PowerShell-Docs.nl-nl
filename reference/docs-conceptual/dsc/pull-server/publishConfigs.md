@@ -1,26 +1,26 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, Power shell, configuratie, installatie
-title: Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
-ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+keywords: dsc,powershell,configuration,setup
+title: Publish to a Pull Server using Configuration IDs (v4/v5)
+ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71941696"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417249"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publish to a Pull Server using Configuration IDs (v4/v5)
 
-In de volgende secties wordt ervan uitgegaan dat u al een pull-server hebt ingesteld. Als u uw pull-server nog niet hebt ingesteld, kunt u de volgende hand leidingen gebruiken:
+The sections below assume that you have already set up a Pull Server. If you haven't set up your Pull Server, you can use the following guides:
 
-- [Een DSC SMB-pull-server instellen](pullServerSmb.md)
-- [Een DSC HTTP-pull-server instellen](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources en zelfs het rapporteren van de status ervan. In dit artikel wordt beschreven hoe u bronnen uploadt, zodat deze beschikbaar zijn om te worden gedownload en clients configureren voor het automatisch downloaden van resources. Wanneer het knoop punt een toegewezen configuratie ontvangt via **pull** of **Push** (V5), worden de resources die vereist zijn voor de configuratie automatisch gedownload van de locatie die is opgegeven in de lokale Configuration Manager (LCM).
+Each target node can be configured to download configurations, resources, and even report its status. This article shows you how to upload resources so they're available to be downloaded, and configure clients to automatically download resources. When the node receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the Local Configuration Manager (LCM).
 
-## <a name="compile-configurations"></a>Configuraties compileren
+## <a name="compile-configurations"></a>Compile configurations
 
-De eerste stap voor het opslaan van [configuraties](../configurations/configurations.md) op een pull-server is het compileren van deze in `.mof`-bestanden. Als u een algemene configuratie wilt maken en van toepassing is op meer clients, gebruikt u `localhost` in uw knooppunt blok. In het onderstaande voor beeld ziet u een configuratie shell die gebruikmaakt van `localhost` in plaats van een specifieke client naam.
+The first step to storing [Configurations](../configurations/configurations.md) on a Pull Server, is to compile them into `.mof` files. To make a configuration generic, and applicable to more clients, use `localhost` in your Node block. The example below shows a Configuration shell that uses `localhost` instead of a specific client name.
 
 ```powershell
 Configuration GenericConfig
@@ -33,21 +33,21 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Wanneer u de algemene configuratie hebt gecompileerd, moet u een bestand van `localhost.mof` hebben.
+Once you've compiled your generic configuration, you should have a `localhost.mof` file.
 
-## <a name="renaming-the-mof-file"></a>De naam van het MOF-bestand wijzigen
+## <a name="renaming-the-mof-file"></a>Renaming the MOF file
 
-U kunt configuratie-@no__t 0-bestanden opslaan op een pull-server via **configuratiepad** of **ConfigurationID**. Afhankelijk van hoe u uw pull-clients wilt instellen, kunt u een van de onderstaande secties kiezen om de naam van uw gecompileerde `.mof`-bestanden goed te wijzigen.
+You can store Configuration `.mof` files on a Pull Server by **ConfigurationName** or **ConfigurationID**. Depending on how you plan to set up your pull clients, you can choose a section below to properly rename your compiled `.mof` files.
 
-### <a name="configuration-ids-guid"></a>Configuratie-Id's (GUID)
+### <a name="configuration-ids-guid"></a>Configuration IDs (GUID)
 
-U moet de naam van uw `localhost.mof`-bestand wijzigen in `<GUID>.mof`-bestand. U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
+You'll need to rename your `localhost.mof` file to `<GUID>.mof` file. You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-Voorbeeld uitvoer
+Sample Output
 
 ```Output
 Guid
@@ -55,41 +55,41 @@ Guid
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
+You can then rename your `.mof` file using any acceptable method. The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](/powershell/dsc/secureserver#guids).
+For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).
 
-### <a name="configuration-names"></a>Configuratie namen
+### <a name="configuration-names"></a>Configuration names
 
-U moet de naam van uw `localhost.mof`-bestand wijzigen in `<Configuration Name>.mof`-bestand. In het volgende voor beeld wordt de naam van de configuratie uit de vorige sectie gebruikt. U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
+You'll need to rename your `localhost.mof` file to `<Configuration Name>.mof` file. In the following example, the configuration name from the previous section is used. You can then rename your `.mof` file using any acceptable method. The example below, uses the [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) cmdlet.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 ```
 
-## <a name="create-the-checksum"></a>De controlesom maken
+## <a name="create-the-checksum"></a>Create the checkSum
 
-Elk `.mof`-bestand dat is opgeslagen op een pull-server of aan de SMB-share moet een `.checksum`-bestand zijn gekoppeld.
-Met dit bestand kunnen clients weten wanneer het bijbehorende `.mof`-bestand is gewijzigd en het opnieuw moet worden gedownload.
+Each `.mof` file stored on a Pull Server, or SMB share needs to have an associated `.checksum` file.
+This file lets clients know when the associated `.mof` file has changed and should be downloaded again.
 
-U kunt een **controlesom** maken met de cmdlet [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) . U kunt ook `New-DSCCheckSum` uitvoeren voor een map met bestanden met behulp van de para meter `-Path`.
-Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`. In het volgende voor beeld is een map opgegeven met het `.mof`-bestand uit de vorige sectie en wordt de para meter `-Force` gebruikt.
+You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) cmdlet. You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.
+If a checksum already exists, you can force it to be re-created with the `-Force` parameter. The following example specified a directory containing the `.mof` file from the previous section, and uses the `-Force` parameter.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-Er wordt geen uitvoer weer gegeven, maar u ziet nu een `<GUID or Configuration Name>.mof.checksum`-bestand.
+No output will be shown, but you should now see a `<GUID or Configuration Name>.mof.checksum` file.
 
-## <a name="where-to-store-mof-files-and-checksums"></a>Waar u MOF-bestanden en controle sommen opslaat
+## <a name="where-to-store-mof-files-and-checksums"></a>Where to store MOF files and checkSums
 
-### <a name="on-a-dsc-http-pull-server"></a>Op een DSC HTTP-pull-server
+### <a name="on-a-dsc-http-pull-server"></a>On a DSC HTTP Pull Server
 
-Wanneer u de HTTP-pull-server instelt, zoals wordt uitgelegd in [een DSC HTTP-pull-server instellen](pullServer.md), geeft u directory's op voor de sleutels **para modulepath in** en **ConfigurationPath** . De **para modulepath in** -sleutel geeft aan waar de verpakte `.zip`-bestanden van een module moeten worden opgeslagen. De **ConfigurationPath** geeft aan waar elke `.mof`-bestanden en `.checksum`-bestanden moeten worden opgeslagen.
+When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys. The **ModulePath** key indicates where a module's packaged `.zip` files should be stored. The **ConfigurationPath** indicates where any `.mof` files and `.checksum` files should be stored.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,10 +102,10 @@ Wanneer u de HTTP-pull-server instelt, zoals wordt uitgelegd in [een DSC HTTP-pu
 
 ```
 
-### <a name="on-an-smb-share"></a>Op een SMB-share
+### <a name="on-an-smb-share"></a>On an SMB share
 
-Wanneer u een pull-client instelt voor het gebruik van een SMB-share, geeft u een **ConfigurationRepositoryShare**op.
-Alle `.mof`-bestanden en `.checksum`-bestanden moeten worden opgeslagen in de map **SourcePath** van het **ConfigurationRepositoryShare** -blok.
+When you set up a Pull Client to use an SMB share, you specify a **ConfigurationRepositoryShare**.
+All `.mof` files and `.checksum` files should be stored in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -116,14 +116,14 @@ ConfigurationRepositoryShare SMBPullServer
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Vervolgens moet u pull-clients configureren voor het ophalen van de opgegeven configuratie. Zie een van de volgende hand leidingen voor meer informatie:
+Next, you'll want to configure Pull Clients to pull the specified configuration. For more information, see one of the following guides:
 
-- [Een pull-client instellen met behulp van configuratie-Id's (v4)](pullClientConfigId4.md)
-- [Een pull-client instellen met behulp van configuratie-Id's (V5)](pullClientConfigId.md)
-- [Een pull-client instellen met behulp van configuratie namen (V5)](pullClientConfigNames.md)
+- [Set up a Pull Client using Configuration IDs (v4)](pullClientConfigId4.md)
+- [Set up a Pull Client using Configuration IDs (v5)](pullClientConfigId.md)
+- [Set up a Pull Client using Configuration Names (v5)](pullClientConfigNames.md)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Een DSC SMB-pull-server instellen](pullServerSmb.md)
-- [Een DSC HTTP-pull-server instellen](pullServer.md)
-- [Resources verpakken en uploaden naar een pull-server](package-upload-resources.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
+- [Package and Upload Resources to a Pull Server](package-upload-resources.md)

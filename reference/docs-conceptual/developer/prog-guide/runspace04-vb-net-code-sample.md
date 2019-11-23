@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 (VB.NET)-code voorbeeld | Microsoft Docs
+title: RunSpace04  (VB.NET) Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: a0c04adb64ab5f2a9fd42fa7dee3977638d3b535
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72356971"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417944"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>Runspace04-codevoorbeeld (VB.NET)
 
-Dit is de VB.NET-bron code voor het Runspace04-voor beeld. In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om een script uit te voeren waarmee een afsluit fout wordt gegenereerd. De hosttoepassing is verantwoordelijk voor het afvangen van de fout en het interpreteren van de fout record.
+Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
 
 > [!NOTE]
-> U kunt het VB.NET-bron bestand (runspace02. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>Code voorbeeld
+## <a name="code-sample"></a>Code Sample
 
 ```vb
 Imports System
@@ -117,6 +117,6 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: Parameter sets toevoegen aan een cmdlet | Microsoft Docs
+title: Adding Parameter Sets to a Cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -10,33 +10,33 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: 59db96cf03ff7086e8c89fb45bc96fd805078ac8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72355634"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416322"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Parametersets toevoegen aan een cmdlet
 
-## <a name="things-to-know-about-parameter-sets"></a>Wat u moet weten over parameter sets
+## <a name="things-to-know-about-parameter-sets"></a>Things to Know About Parameter Sets
 
-Windows Power shell definieert een para meter die is ingesteld als een groep para meters die samen werken. Als u de para meters van een cmdlet groepeert, kunt u een enkele cmdlet maken die de functionaliteit ervan kan wijzigen op basis van de groep para meters die de gebruiker opgeeft.
+Windows PowerShell defines a parameter set as a group of parameters that operate together. By grouping the parameters of a cmdlet, you can create a single cmdlet that can change its functionality based on what group of parameters the user specifies.
 
-Een voor beeld van een cmdlet die gebruikmaakt van twee parameters sets voor het definiëren van verschillende functies is de `Get-EventLog`-cmdlet die wordt meegeleverd met Windows Power shell. Met deze cmdlet wordt een andere informatie geretourneerd als de gebruiker de para meter `List` of `LogName` opgeeft. Als de para meter `LogName` is opgegeven, retourneert de cmdlet informatie over de gebeurtenissen in een bepaald gebeurtenis logboek. Als de para meter `List` is opgegeven, retourneert de cmdlet informatie over de logboek bestanden zelf (niet de gebeurtenis gegevens die ze bevatten). In dit geval identificeren de para meters `List` en `LogName` twee afzonderlijke parameter sets.
+An example of a cmdlet that uses two parameter sets to define different functionalities is the `Get-EventLog` cmdlet that is provided by Windows PowerShell. This cmdlet returns different information when the user specifies the `List` or `LogName` parameter. If the `LogName` parameter is specified, the cmdlet returns information about the events in a given event log. If the `List` parameter is specified, the cmdlet returns information about the log files themselves (not the event information they contain). In this case, the `List` and `LogName` parameters identify two separate parameter sets.
 
-Twee belang rijke zaken die u moet onthouden over parameter sets is dat de Windows Power shell-runtime slechts één para meterset voor een bepaalde invoer gebruikt en dat elke parameterset ten minste één para meter moet hebben die uniek is voor de ingestelde para meter.
+Two important things to remember about parameter sets is that the Windows PowerShell runtime uses only one parameter set for a particular input, and that each parameter set must have at least one parameter that is unique for that parameter set.
 
-Ter illustratie van dat laatste punt gebruikt deze stop-proc-cmdlet drie parameter sets: `ProcessName`, `ProcessId` en `InputObject`. Elk van deze parameter sets heeft één para meter die zich niet in de andere parameter sets bevindt. De parameter sets kunnen andere para meters delen, maar de cmdlet gebruikt de unieke para meters `ProcessName`, `ProcessId` en `InputObject` om te bepalen welke set para meters moet worden gebruikt door de Windows Power shell-runtime.
+To illustrate that last point, this Stop-Proc cmdlet uses three parameter sets: `ProcessName`, `ProcessId`, and `InputObject`. Each of these parameter sets has one parameter that is not in the other parameter sets. The parameter sets could share other parameters, but the cmdlet uses the unique parameters `ProcessName`, `ProcessId`, and `InputObject` to identify which set of parameters that the Windows PowerShell runtime should use.
 
-## <a name="declaring-the-cmdlet-class"></a>De cmdlet-klasse declareren
+## <a name="declaring-the-cmdlet-class"></a>Declaring the Cmdlet Class
 
-De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Voor deze cmdlet wordt de levens cyclus term ' Stop ' gebruikt omdat de cmdlet systeem processen stopt. De naam van het zelfstandige zelfstandig proces wordt gebruikt omdat de cmdlet werkt voor processen. Houd er rekening mee dat het cmdlet-werk woord en de naam van het zelfstandigen worden weer gegeven in de naam van de cmdlet-klasse.
+The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. For this cmdlet, the life-cycle verb "Stop" is used because the cmdlet stops system processes. The noun name "Proc" is used because the cmdlet works on processes. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class.
 
 > [!NOTE]
-> Zie voor meer informatie over de namen van goedgekeurde cmdlet- [verbs](./approved-verbs-for-windows-powershell-commands.md).
+> For more information about approved cmdlet verb names, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-De volgende code is de klassedefinitie voor deze stop-proc-cmdlet.
+The following code is the class definition for this Stop-Proc cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "Proc",
@@ -52,13 +52,13 @@ Public Class StopProcCommand
     Inherits PSCmdlet
 ```
 
-## <a name="declaring-the-parameters-of-the-cmdlet"></a>De para meters van de cmdlet declareren
+## <a name="declaring-the-parameters-of-the-cmdlet"></a>Declaring the Parameters of the Cmdlet
 
-Met deze cmdlet worden drie para meters gedefinieerd die nodig zijn als invoer voor de cmdlet (deze para meters definiëren ook de parameter sets), evenals een `Force` para meter waarmee wordt beheerd wat de cmdlet doet en een para meter `PassThru` die bepaalt of de cmdlet een uitvoer object verzendt via de pijp lijn. Met deze cmdlet wordt standaard geen object door gegeven via de pijp lijn. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze laatste twee para meters.
+This cmdlet defines three parameters needed as input to the cmdlet (these parameters also define the parameter sets), as well as a `Force` parameter that manages what the cmdlet does and a `PassThru` parameter that determines whether the cmdlet sends an output object through the pipeline. By default, this cmdlet does not pass an object through the pipeline. For more information about these last two parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-### <a name="declaring-the-name-parameter"></a>De para meter name declareren
+### <a name="declaring-the-name-parameter"></a>Declaring the Name Parameter
 
-Met deze invoer parameter kan de gebruiker de namen opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter `ProcessName` bevat die voor deze para meter is ingesteld.
+This input parameter allows the user to specify the names of the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `ProcessName` parameter set for this parameter.
 
 [!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
 
@@ -80,11 +80,11 @@ End Property
 Private processNames() As String
 ```
 
-Houd er rekening mee dat de alias ' procesnaam ' wordt gegeven aan deze para meter.
+Note also that the alias "ProcessName" is given to this parameter.
 
-### <a name="declaring-the-id-parameter"></a>Declareren van de id-para meter
+### <a name="declaring-the-id-parameter"></a>Declaring the Id Parameter
 
-Met deze invoer parameter kan de gebruiker de id's opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter set `ProcessId` bevat.
+This input parameter allows the user to specify the identifiers of the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `ProcessId` parameter set.
 
 ```csharp
 [Parameter(
@@ -118,11 +118,11 @@ End Property
 Private processIds() As Integer
 ```
 
-Houd er rekening mee dat de alias ' ProcessId ' wordt opgegeven voor deze para meter.
+Note also that the alias "ProcessId" is given to this parameter.
 
-### <a name="declaring-the-inputobject-parameter"></a>Declareren van de para meter input object
+### <a name="declaring-the-inputobject-parameter"></a>Declaring the InputObject Parameter
 
-Met deze invoer parameter kan de gebruiker een invoer object opgeven dat informatie bevat over de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter `InputObject` bevat die voor deze para meter is ingesteld.
+This input parameter allows the user to specify an input object that contains information about the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `InputObject` parameter set for this parameter.
 
 ```csharp
 [Parameter(
@@ -151,15 +151,15 @@ End Property
 Private myInputObject() As Process
 ```
 
-Houd er rekening mee dat deze para meter geen alias heeft.
+Note also that this parameter has no alias.
 
-### <a name="declaring-parameters-in-multiple-parameter-sets"></a>Para meters declareren in meerdere parameter sets
+### <a name="declaring-parameters-in-multiple-parameter-sets"></a>Declaring Parameters in Multiple Parameter Sets
 
-Hoewel er een unieke para meter moet zijn voor elke parameterset, kunnen para meters deel uitmaken van meer dan één parameterset. In dergelijke gevallen geeft u de gedeelde para meter een [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) kenmerk declaratie voor elke set waarvan de para meter deel uitmaakt. Als een para meter zich in alle parameter sets bevindt, hoeft u alleen maar één keer het parameter kenmerk te declareren en hoeft u de naam van de parameter set niet op te geven.
+Although there must be a unique parameter for each parameter set, parameters can belong to more than one parameter set. In these cases, give the shared parameter a [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration for each set to which that the parameter belongs. If a parameter is in all parameter sets, you only have to declare the parameter attribute once and do not need to specify the parameter set name.
 
-## <a name="overriding-an-input-processing-method"></a>Een invoer verwerkings methode overschrijven
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-Elke cmdlet moet een invoer verwerkings methode overschrijven, meestal is dit de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . In deze cmdlet wordt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) genegeerd, zodat de cmdlet elk wille keurig aantal processen kan verwerken. Het bevat een SELECT-instructie die een andere methode aanroept op basis van de para meter die de gebruiker heeft opgegeven.
+Every cmdlet must override an input processing method, most often this will be the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this cmdlet, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is overridden so that the cmdlet can process any number of processes. It contains a Select statement that calls a different method based on which parameter set the user has specified.
 
 ```csharp
 protected override void ProcessRecord()
@@ -209,25 +209,25 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord ' ProcessRecord
 ```
 
-De Help-methoden die worden aangeroepen door de SELECT-instructie worden hier niet beschreven, maar u kunt de implementatie ervan bekijken in het voor beeld van de volledige code in de volgende sectie.
+The Helper methods called by the Select statement are not described here, but you can see their implementation in the complete code sample in the next section.
 
-## <a name="code-sample"></a>Code voorbeeld
+## <a name="code-sample"></a>Code Sample
 
-Zie StopProcessSample04- C# voor [beeld](./stopprocesssample04-sample.md)voor de volledige voorbeeld code.
+For the complete C# sample code, see [StopProcessSample04 Sample](./stopprocesssample04-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Windows Power shell geeft informatie door over cmdlets met behulp van .NET-objecten. Daarom moet een cmdlet een eigen type kunnen definiëren, of moet de cmdlet een bestaand type uitbreiden dat door een andere cmdlet wordt verschaft. Zie [object typen en-opmaak uitbreiden](/previous-versions//ms714665(v=vs.85))voor meer informatie over het definiëren van nieuwe typen of het uitbreiden van bestaande typen.
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>De cmdlet bouwen
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell registreren via een Windows Power shell-module. Zie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))voor meer informatie over het registreren van cmdlets.
+After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>De cmdlet testen
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. Hier volgen enkele tests die laten zien hoe de para meters `ProcessId` en `InputObject` kunnen worden gebruikt om de parameter sets te testen om een proces te stoppen.
+When your cmdlet has been registered with Windows PowerShell, test it by running it on the command line. Here are some tests that show how the `ProcessId` and `InputObject` parameters can be used to test their parameter sets to stop a process.
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `ProcessId` om een proces te stoppen op basis van de id. In dit geval gebruikt de cmdlet de para meter `ProcessId` die is ingesteld om het proces te stoppen.
+- With Windows PowerShell started, run the Stop-Proc cmdlet with the `ProcessId` parameter set to stop a process based on its identifier. In this case, the cmdlet is using the `ProcessId` parameter set to stop the process.
 
     ```
     PS> stop-proc -Id 444
@@ -237,7 +237,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `InputObject` ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald met de opdracht `Get-Process`.
+- With Windows PowerShell started, run the Stop-Proc cmdlet with the `InputObject` parameter set to stop processes on the Notepad object retrieved by the `Get-Process` command.
 
     ```
     PS> get-process notepad | stop-proc
@@ -249,12 +249,12 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
 
 ## <a name="see-also"></a>Zie ook
 
-[Een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)
+[Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Een Windows Power shell-cmdlet maken](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Object typen en-opmaak uitbreiden](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

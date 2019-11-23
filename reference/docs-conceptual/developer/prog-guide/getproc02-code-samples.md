@@ -1,5 +1,5 @@
 ---
-title: Voor beelden van GetProc02-code | Microsoft Docs
+title: GetProc02 Code Samples | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,31 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
-ms.openlocfilehash: 00b015f1c16623d8ca4cf6f609aa2547c0385402
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 381011ffd9bd4a46dcfcdbebaa0164d03378abe6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357174"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416187"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02-codevoorbeelden
 
-Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc02. Dit is het `Get-Process`-cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md). Met deze `Get-Process`-cmdlet worden processen opgehaald op basis van hun naam en wordt vervolgens informatie weer gegeven over de processen op de opdracht regel.
+Here are the code samples for the GetProc02 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md). This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.
 
 > [!NOTE]
-> U kunt het C# bron bestand (getproc02.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-Zie de volgende onderwerpen voor een volledige voorbeeld code.
+For complete sample code, see the following topics.
 
 |Taal|Onderwerp|
 |--------------|-----------|
-|C#|[GetProc02 (C#) voorbeeld code](./getproc02-csharp-sample-code.md)|
-|VB.NET|[Voorbeeld code voor GetProc02 (VB.NET)](./getproc02-vb-net-sample-code.md)|
+|C#|[GetProc02 (C#) Sample Code](./getproc02-csharp-sample-code.md)|
+|VB.NET|[GetProc02 (VB.NET) Sample Code](./getproc02-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

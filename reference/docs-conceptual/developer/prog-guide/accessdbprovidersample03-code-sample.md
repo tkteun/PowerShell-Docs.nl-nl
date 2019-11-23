@@ -1,5 +1,5 @@
 ---
-title: Voor beeld van AccessDbProviderSample03-code | Microsoft Docs
+title: AccessDbProviderSample03 Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,25 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: a0493fc73efc77d8a80eaf21f78737ff8db9ddd4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72357321"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417524"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDBProviderSample03-codevoorbeeld
 
-De volgende code toont de implementatie van de Windows Power shell-provider die wordt beschreven in [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md). Deze provider die de gegevens kan bewerken in een gegevens archief.
+The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md). This provider that can manipulate the data in a data store.
 
 > [!NOTE]
-> U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-## <a name="code-sample"></a>Code voorbeeld
+## <a name="code-sample"></a>Code Sample
 
 ```csharp
 using System;
@@ -1001,6 +1001,6 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

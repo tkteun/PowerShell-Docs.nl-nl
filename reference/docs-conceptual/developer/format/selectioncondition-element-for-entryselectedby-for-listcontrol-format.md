@@ -1,5 +1,5 @@
 ---
-title: SelectionCondition-element voor EntrySelectedBy voor ListControl (indeling) | Microsoft Docs
+title: SelectionCondition Element for EntrySelectedBy for ListControl (Format) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72355795"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417533"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
 
-Hiermee definieert u de voor waarde die moet bestaan om deze definitie van de lijst weergave te gebruiken. Er is geen limiet voor het aantal selectie omstandigheden dat kan worden opgegeven voor een lijst definitie.
+Defines the condition that must exist to use this definition of the list view. There is no limit to the number of selection conditions that can be specified for a list definition.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling) item type-element (indeling) EntrySelectedBy element (Format) voor List entry (Format) SelectionCondition element voor EntrySelectedBy voor List entry (indeling)
+Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element (Format) ListEntry Element (Format) EntrySelectedBy Element for ListEntry (Format) SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
 
 ## <a name="syntax"></a>Syntaxis
 
@@ -34,7 +34,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven.
+The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,39 +44,39 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor List entry (indeling)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd.|
-|[Script block-element voor SelectionCondition voor EntrySelectedBy voor List entry (indeling)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd.|
-|[SelectionSetName-element voor SelectionCondition voor EntrySelectedBy voor List entry (indeling)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de set .NET-typen op waarmee de voor waarde wordt geactiveerd.|
-|[TypeName-element voor SelectionCondition voor EntrySelectedBy voor List entry (indeling)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op waarmee de voor waarde wordt geactiveerd.|
+|[PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
+|[ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that trigger the condition.|
+|[TypeName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EntrySelectedBy-element voor TableRowEntry (indeling)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze tabel vermelding of de voor waarde die moet bestaan voor het gebruik van deze vermelding.|
+|[EntrySelectedBy Element for TableRowEntry (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET types that use this table entry or the condition that must exist for this entry to be used.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-lWhen u een selectie voorwaarde definieert, gelden de volgende vereisten:
+lWhen you are defining a selection condition, the following requirements apply:
 
-- De selectie voorwaarde moet ten minste één eigenschaps naam of een script blok opgeven, maar kan niet beide opgeven.
+- The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- Met de selectie voorwaarde kan een wille keurig aantal .NET-typen of-selectie sets worden opgegeven, maar kan niet beide worden opgegeven.
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
-Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)voor meer informatie over het gebruik van selectie voorwaarden.
+For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
-Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie over andere onderdelen van een lijst weergave.
+For more information about other components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Creating a List View](./creating-a-list-view.md)
 
-[Voor waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 
-[Element List entry (indeling)](./listentry-element-for-listcontrol-format.md)
+[ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[SelectionSetName-element voor EntrySelectedBy voor List entry (indeling)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[TypeName-element voor EntrySelectedBy voor List entry (indeling)](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
+[TypeName Element for EntrySelectedBy for ListEntry (Format)](/powershell/scripting/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

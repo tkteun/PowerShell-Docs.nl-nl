@@ -1,34 +1,34 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, Power shell, configuratie, installatie
+keywords: dsc,powershell,configuration,setup
 title: Knooppunten bijwerken vanaf een pull-server
-ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 516e50b0c39e4747a123307cb3f5e25259ac7ce5
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71942746"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417710"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>Knooppunten bijwerken vanaf een pull-server
 
-In de volgende secties wordt ervan uitgegaan dat u al een pull-server hebt ingesteld. Als u uw pull-server niet hebt ingesteld, kunt u de volgende hand leidingen gebruiken:
+The sections below assume that you have already set up a Pull Server. If you have not set up your Pull Server, you can use the following guides:
 
-- [Een DSC SMB-pull-server instellen](pullServerSmb.md)
-- [Een DSC HTTP-pull-server instellen](pullServer.md)
+- [Set up a DSC SMB Pull Server](pullServerSmb.md)
+- [Set up a DSC HTTP Pull Server](pullServer.md)
 
-Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources en zelfs het rapporteren van de status ervan. In dit artikel wordt uitgelegd hoe u bronnen uploadt, zodat ze beschikbaar zijn om te worden gedownload en clients zodanig configureren dat bronnen automatisch worden gedownload. Wanneer het knoop punt een toegewezen configuratie ontvangt via **pull** -of **Push** (V5), downloadt het automatisch alle resources die vereist zijn voor de configuratie van de locatie die is opgegeven in de LCM.
+Each target node can be configured to download configurations, resources, and even report its status. This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically. When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the LCM.
 
-## <a name="using-the-update-dscconfiguration-cmdlet"></a>De cmdlet Update-DSCConfiguration gebruiken
+## <a name="using-the-update-dscconfiguration-cmdlet"></a>Using the Update-DSCConfiguration cmdlet
 
-Vanaf Power shell 5,0, de cmdlet [Update-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration) , wordt een knoop punt gedwongen de configuratie bij te werken van de pull-server die is geconfigureerd in de LCM.
+Beginning in PowerShell 5.0, the [Update-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration) cmdlet, forces a Node to update its configuration from the Pull Server configured in the LCM.
 
 ```powershell
 Update-DSCConfiguration -ComputerName "Server01"
 ```
 
-## <a name="using-invoke-cimmethod"></a>Invoke-CIMMethod gebruiken
+## <a name="using-invoke-cimmethod"></a>Using Invoke-CIMMethod
 
-In Power Shell 4,0 kunt u nog steeds hand matig een pull-client afdwingen om de configuratie bij te werken met [invoke-CIMMethod](/powershell/module/cimcmdlets/invoke-cimmethod). In het volgende voor beeld wordt een CIM-sessie met opgegeven referenties gemaakt, wordt de juiste CIM-methode aangeroepen en wordt de sessie verwijderd.
+In PowerShell 4.0, you can still manually force a Pull Client to update its Configuration using [Invoke-CIMMethod](/powershell/module/cimcmdlets/invoke-cimmethod). The following example creates a CIM session with specified credentials, invokes the appropriate CIM method, and removes the session.
 
 ```powershell
 $cimSession = New-CimSession -ComputerName "Server01" -Credential $(Get-Credential)
@@ -38,4 +38,4 @@ $cimSession | Remove-CimSession
 
 ## <a name="see-also"></a>Zie ook
 
-[De performrequiredconfigurationchecks](/powershell/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks)
+[PerformRequiredConfigurationChecks](/powershell/scripting/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks)

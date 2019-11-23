@@ -1,5 +1,5 @@
 ---
-title: Voor beelden van GetProc03-code | Microsoft Docs
+title: GetProc03 Code Samples | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,31 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad39c7d-2f64-49d1-9be0-d2295e4302b3
 caps.latest.revision: 5
-ms.openlocfilehash: 833ff1c37ee025e9cd9d2760bc63695534dd69ff
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: bd6d26cb830bcd6706c88548956e5358b2fddf41
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72352680"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416150"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03-codevoorbeelden
 
-Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc03. Dit is het `Get-Process`-cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md). Deze `Get-Process`-cmdlet maakt gebruik van een para meter `Name` die invoer van een pijplijn object accepteert, proces informatie ophaalt van de lokale computer op basis van de opgegeven namen en geeft vervolgens informatie weer over de processen op de opdracht regel.
+Here are the code samples for the GetProc03 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Pipeline Input](../cmdlet/adding-parameters-that-process-pipeline-input.md). This `Get-Process` cmdlet uses a `Name` parameter that accepts input from a pipeline object, retrieves process information from the local computer based on the supplied names, and then displays information about the processes at the command line.
 
 > [!NOTE]
-> U kunt het C# bron bestand (getprov03.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-Zie de volgende onderwerpen voor een volledige voorbeeld code.
+For complete sample code, see the following topics.
 
 |Taal|Onderwerp|
 |--------------|-----------|
-|C#|[GetProc03 (C#) voorbeeld code](./getproc03-csharp-sample-code.md)|
-|VB.NET|[Voorbeeld code voor GetProc03 (VB.NET)](./getproc03-vb-net-sample-code.md)|
+|C#|[GetProc03 (C#) Sample Code](./getproc03-csharp-sample-code.md)|
+|VB.NET|[GetProc03 (VB.NET) Sample Code](./getproc03-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

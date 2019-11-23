@@ -1,383 +1,383 @@
 ---
-title: Wat is er nieuw in Power shell Core 6,0
-description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,0
+title: What's New in PowerShell Core 6.0
+description: New features and changes released in PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: c70fcffc2e6225d3fc6a18b5728e063e5ca22f1d
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117529"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416753"
 ---
-# <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in Power shell Core 6,0
+# <a name="whats-new-in-powershell-core-60"></a>What's New in PowerShell Core 6.0
 
-[Power shell Core 6,0][github] is een nieuwe editie van Power shell met meerdere platformen (Windows, MacOS en Linux), open source en gebouwd voor heterogene omgevingen en de hybride Cloud.
+[PowerShell Core 6.0][github] is a new edition of PowerShell that is cross-platform (Windows, macOS, and Linux), open-source, and built for heterogeneous environments and the hybrid cloud.
 
-## <a name="moved-from-net-framework-to-net-core"></a>Verplaatst van .NET Framework naar .NET core
+## <a name="moved-from-net-framework-to-net-core"></a>Moved from .NET Framework to .NET Core
 
-Power shell core maakt gebruik van [.NET Core 2.0][] als runtime.
-Met .NET Core 2,0 kan Power shell Core op meerdere platformen (Windows, macOS en Linux) worden uitgevoerd.
-Power shell core geeft ook de API weer die wordt aangeboden door .NET Core 2,0 voor gebruik in Power shell-cmdlets en-scripts.
+PowerShell Core uses [.NET Core 2.0][] as its runtime.
+.NET Core 2.0 enables PowerShell Core to work on multiple platforms (Windows, macOS, and Linux).
+PowerShell Core also exposes the API set offered by .NET Core 2.0 to be used in PowerShell cmdlets and scripts.
 
-Windows Power Shell heeft de .NET Framework-runtime gebruikt voor het hosten van de Power shell-engine.
-Dit betekent dat Windows Power shell de API beschikbaar stelt die door .NET Framework wordt aangeboden.
+Windows PowerShell used the .NET Framework runtime to host the PowerShell engine.
+This means that Windows PowerShell exposes the API set offered by .NET Framework.
 
-De Api's die worden gedeeld tussen .NET core en .NET Framework worden gedefinieerd als onderdeel van [.NET Standard][].
+The APIs shared between .NET Core and .NET Framework are defined as part of [.NET Standard][].
 
-Zie [achterwaartse compatibiliteit met Windows Power shell](#backwards-compatibility-with-windows-powershell)(Engelstalig) voor meer informatie over de wijze waarop dit van invloed is op module-en script compatibiliteit tussen Power shell core en Windows Power shell.
+For more information on how this affects module/script compatibility between PowerShell Core and Windows PowerShell, see [Backwards compatibility with Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
-## <a name="support-for-macos-and-linux"></a>Ondersteuning voor macOS en Linux
+## <a name="support-for-macos-and-linux"></a>Support for macOS and Linux
 
-Power shell biedt nu officieel ondersteuning voor macOS en Linux, waaronder:
+PowerShell now officially supports macOS and Linux, including:
 
-- Windows 7, 8,1 en 10
+- Windows 7, 8.1, and 10
 - Windows Server 2008 R2, 2012 R2, 2016
-- [Windows Server Semi-Annual-kanaal][semi-annual]
-- Ubuntu 14,04, 16,04 en 17,04
-- Debian 8,7 + en 9
+- [Windows Server Semi-Annual Channel][semi-annual]
+- Ubuntu 14.04, 16.04, and 17.04
+- Debian 8.7+, and 9
 - CentOS 7
 - Red Hat Enterprise Linux 7
-- OpenSUSE 42,2
+- OpenSUSE 42.2
 - Fedora 25, 26
 - macOS 10.12+
 
-Onze community heeft ook pakketten bijgedragen voor de volgende platforms, maar ze worden niet officieel ondersteund:
+Our community has also contributed packages for the following platforms, but they are not officially supported:
 
 - Arch Linux
 - Kali Linux
-- AppImage (werkt op meerdere Linux-platforms)
+- AppImage (works on multiple Linux platforms)
 
-Er zijn ook experimentele (niet-ondersteunde) releases voor de volgende platforms:
+We also have experimental (unsupported) releases for the following platforms:
 
-- Windows op ARM32/ARM64
-- Raspbian (stretch)
+- Windows on ARM32/ARM64
+- Raspbian (Stretch)
 
-Er zijn een aantal wijzigingen aangebracht in Power shell Core 6,0, waardoor het beter werkt op niet-Windows-systemen.
-Sommige hiervan zijn belang rijke wijzigingen, die ook van invloed zijn op Windows.
-Andere zijn alleen aanwezig of van toepassing op niet-Windows-installaties van Power shell core.
+A number of changes were made to in PowerShell Core 6.0 to make it work better on non-Windows systems.
+Some of these are breaking changes, which also affect Windows.
+Others are only present or applicable in non-Windows installations of PowerShell Core.
 
-- Er is ondersteuning toegevoegd voor de systeem eigen opdracht globbing op UNIX-platforms.
-- De functionaliteit van `more` respecteert de Linux-`$PAGER` en de standaard waarden voor `less`.
-  Dit betekent dat u nu Joker tekens kunt gebruiken met systeem eigen binaire bestanden/opdrachten (bijvoorbeeld `ls *.txt`). (#3463)
-- Afsluitende back slash wordt automatisch voorafgegaan tijdens het omgaan met systeem eigen opdracht argumenten. (#4965)
-- De `-ExecutionPolicy` switch negeren bij het uitvoeren van Power shell op niet-Windows-platforms, omdat het ondertekenen van scripts momenteel niet wordt ondersteund. (#3481)
-- Vaste ConsoleHost om te voldoen aan de `NoEcho` op UNIX-platforms. (#3801)
-- Vaste `Get-Help` voor ondersteuning van niet-hoofdletter gevoelige patroon matching op UNIX-platforms. (#3852)
-- `powershell` man-pagina die is toegevoegd aan het pakket
+- Added support for native command globbing on Unix platforms.
+- The `more` functionality respects the Linux `$PAGER` and defaults to `less`.
+  This means you can now use wildcards with native binaries/commands (for example, `ls *.txt`). (#3463)
+- Trailing backslash is automatically escaped when dealing with native command arguments. (#4965)
+- Ignore the `-ExecutionPolicy` switch when running PowerShell on non-Windows platforms because script signing is not currently supported. (#3481)
+- Fixed ConsoleHost to honor `NoEcho` on Unix platforms. (#3801)
+- Fixed `Get-Help` to support case insensitive pattern matching on Unix platforms. (#3852)
+- `powershell` man-page added to package
 
 ### <a name="logging"></a>Logboekregistratie
 
-Bij macOS gebruikt Power shell de systeem eigen `os_log`-Api's om zich aan te melden bij het [Unified logging-systeem][os_log]van Apple.
-In Linux maakt Power shell gebruik van [syslog][], een alomtegenwoordige-logboek oplossing.
+On macOS, PowerShell uses the native `os_log` APIs to log to Apple's [unified logging system][os_log].
+On Linux, PowerShell uses [Syslog][], a ubiquitous logging solution.
 
-### <a name="filesystem"></a>System
+### <a name="filesystem"></a>Filesystem
 
-Er zijn een aantal wijzigingen aangebracht in macOS en Linux ter ondersteuning van bestands namen die niet traditioneel worden ondersteund in Windows:
+A number of changes have been made on macOS and Linux to support filename characters not traditionally supported on Windows:
 
-- Paden die aan cmdlets worden gegeven, zijn nu slash-neutraal (zowel/als \ werk als mappen scheidings teken)
-- XDG basis directory-specificatie wordt nu gerespecteerd en standaard gebruikt:
-  - Het pad naar het Linux/macOS-profiel bevindt zich op `~/.config/powershell/profile.ps1`
-  - Het pad voor het opslaan van de geschiedenis bevindt zich op `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Het pad naar de gebruikers module bevindt zich op `~/.local/share/powershell/Modules`
-- Ondersteuning voor bestands-en mapnamen met de dubbele punt op UNIX. (#4959)
-- Ondersteuning voor script namen of volledige paden met komma's. (#4136) (Bedankt voor [@TimCurwick](https://github.com/TimCurwick)!)
-- Detecteren wanneer `-LiteralPath` wordt gebruikt om het uitbreiden van het Joker teken voor navigatie-cmdlets te onderdrukken. (#5038)
-- `Get-ChildItem` bijgewerkt om meer te doen, zoals de * nix `ls -R` en de Windows `DIR /S` systeem eigen opdrachten.
-  `Get-ChildItem` retourneert nu de symbolische koppelingen die zijn opgetreden tijdens een recursieve zoek opdracht en doorzoekt niet de mappen die de koppelingen doel hebben. (#3780)
+- Paths given to cmdlets are now slash-agnostic (both / and \ work as directory separator)
+- XDG Base Directory Specification is now respected and used by default:
+  - The Linux/macOS profile path is located at `~/.config/powershell/profile.ps1`
+  - The history save path is located at `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - The user module path is located at `~/.local/share/powershell/Modules`
+- Support for file and folder names containing the colon character on Unix. (#4959)
+- Support for script names or full paths that have commas. (#4136) (Thanks to [@TimCurwick](https://github.com/TimCurwick)!)
+- Detect when `-LiteralPath` is used to suppress wildcard expansion for navigation cmdlets. (#5038)
+- Updated `Get-ChildItem` to work more like the *nix `ls -R` and the Windows `DIR /S` native commands.
+  `Get-ChildItem` now returns the symbolic links encountered during a recursive search and does not search the directories that those links target. (#3780)
 
-### <a name="case-sensitivity"></a>Hoofdletter gevoeligheid
+### <a name="case-sensitivity"></a>Case sensitivity
 
-Linux en macOS zijn in het algemeen hoofdletter gevoelig terwijl Windows hoofdletter gevoelig is.
-In het algemeen is Power shell niet hoofdletter gevoelig.
+Linux and macOS tend to be case-sensitive while Windows is case-insensitive while preserving case.
+In general, PowerShell is case insensitive.
 
-Zo zijn omgevings variabelen hoofdletter gevoelig in macOS en Linux, zodat de behuizing van de `PSModulePath` omgevings variabele is gestandaardiseerd. (#3255) `Import-Module` is hoofdletter gevoelig wanneer een bestandspad wordt gebruikt om de naam van de module te bepalen. (#5097)
+For example, environment variables are case-sensitive on macOS and Linux, so the casing of the `PSModulePath` environment variable has been standardized. (#3255) `Import-Module` is case insensitive when it's using a file path to determine the module's name. (#5097)
 
-## <a name="support-for-side-by-side-installations"></a>Ondersteuning voor side-by-side-installaties
+## <a name="support-for-side-by-side-installations"></a>Support for side-by-side installations
 
-Power shell Core is geïnstalleerd, geconfigureerd en wordt afzonderlijk uitgevoerd vanuit Windows Power shell.
-Power shell Core heeft een ' draagbaar ' ZIP-pakket.
-Met behulp van het ZIP-pakket kunt u overal op schijf een wille keurig aantal versies installeren, met inbegrip van lokale toegang tot een toepassing die Power shell als afhankelijkheid gebruikt.
-Met de side-by-side-installatie kunt u gemakkelijker nieuwe versies van Power shell testen en bestaande scripts na verloop van tijd migreren.
-Naast elkaar is achterwaartse compatibiliteit mogelijk, omdat scripts kunnen worden vastgemaakt aan specifieke versies die ze nodig hebben.
+PowerShell Core is installed, configured, and executed separately from Windows PowerShell.
+PowerShell Core has a "portable" ZIP package.
+Using the ZIP package, you can install any number of versions anywhere on disk, including local to an application that takes PowerShell as a dependency.
+Side-by-side installation makes it easier to test new versions of PowerShell and migrating existing scripts over time.
+Side-by-side also enables backwards compatibility as scripts can be pinned to specific versions that they require.
 
 > [!NOTE]
-> Het MSI-gebaseerde installatie programma in Windows voert standaard een installatie met update uit.
+> By default, the MSI-based installer on Windows does an in-place update install.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>De naam van `powershell(.exe)` gewijzigd in `pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Renamed `powershell(.exe)` to `pwsh(.exe)`
 
-De binaire naam voor Power shell Core is gewijzigd van `powershell(.exe)` naar `pwsh(.exe)`.
-Deze wijziging biedt gebruikers een deterministische manier om Power shell Core op computers uit te voeren voor ondersteuning van Side-by-side Windows Power shell-en Power shell Core-installaties.
-`pwsh` is ook veel korter en eenvoudiger te typen.
+The binary name for PowerShell Core has been changed from `powershell(.exe)` to `pwsh(.exe)`.
+This change provides a deterministic way for users to run PowerShell Core on machines to support side-by-side Windows PowerShell and PowerShell Core installations.
+`pwsh` is also much shorter and easier to type.
 
-Aanvullende wijzigingen in `pwsh(.exe)` van `powershell.exe`:
+Additional changes to `pwsh(.exe)` from `powershell.exe`:
 
-- De eerste positie parameter is gewijzigd van `-Command` naar `-File`.
-  Deze wijziging corrigeert het gebruik van `#!` (ook wel als shebang) in Power shell-scripts die worden uitgevoerd vanuit niet-Power shell-shells op niet-Windows-platforms.
-  Dit betekent ook dat u opdrachten als `pwsh foo.ps1` of `pwsh fooScript` kunt uitvoeren zonder `-File`op te geven.
-  Deze wijziging vereist echter dat u `-c` of `-Command` expliciet opgeeft bij het uitvoeren van opdrachten als `pwsh.exe -Command Get-Command`. (#4019)
-- Power shell core accepteert de `-i` (of `-Interactive`) om een interactieve shell aan te duiden. (#3558) Hierdoor kan Power shell worden gebruikt als een standaard shell op UNIX-platforms.
-- De para meters `-importsystemmodules` en `-psconsoleFile` zijn verwijderd uit `pwsh.exe`. (#4995)
-- `pwsh -version` en ingebouwde Help voor `pwsh.exe` is gewijzigd om te worden uitgelijnd met andere systeem eigen hulpprogram ma's. (#4958 & #4931) (Bedankt [@iSazonov](https://github.com/iSazonov))
-- Ongeldige argument fout berichten voor `-File` en `-Command` en afsluit codes die consistent zijn met UNIX-standaarden (#4573)
-- `-WindowStyle` para meter toegevoegd aan Windows. (#4573) Op deze manier worden updates op basis van pakket installaties op niet-Windows-platforms geïmplementeerd.
+- Changed the first positional parameter from `-Command` to `-File`.
+  This change fixes the usage of `#!` (aka as a shebang) in PowerShell scripts that are being executed from non-PowerShell shells on non-Windows platforms.
+  It also means that you can run commands like `pwsh foo.ps1` or `pwsh fooScript` without specifying `-File`.
+  However, this change requires that you explicitly specify `-c` or `-Command` when trying to run commands like `pwsh.exe -Command Get-Command`. (#4019)
+- PowerShell Core accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell. (#3558) This allows PowerShell to be used as a default shell on Unix platforms.
+- Removed parameters `-importsystemmodules` and `-psconsoleFile` from `pwsh.exe`. (#4995)
+- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools. (#4958 & #4931) (Thanks [@iSazonov](https://github.com/iSazonov))
+- Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix standards (#4573)
+- Added `-WindowStyle` parameter on Windows. (#4573) Similarly, package-based installations updates on non-Windows platforms are in-place updates.
 
-## <a name="backwards-compatibility-with-windows-powershell"></a>Achterwaartse compatibiliteit met Windows Power shell
+## <a name="backwards-compatibility-with-windows-powershell"></a>Backwards compatibility with Windows PowerShell
 
-Het doel van Power shell Core is om zo compatibel mogelijk te blijven met Windows Power shell.
-Power shell core maakt gebruik van [.NET Standard][] 2,0 om binaire compatibiliteit met bestaande .net-assembly's te bieden.
-Veel Power shell-modules zijn afhankelijk van deze assembly's (vaak als dll-bestanden), zodat deze door .NET Standard kunnen blijven werken met .NET core.
-Power shell Core bevat ook een heuristiek voor het zoeken naar bekende mappen, zoals waar de globale assembly-cache zich doorgaans op schijf bevindt om .NET Framework DLL-afhankelijkheden te vinden.
+The goal of PowerShell Core is to remain as compatible as possible with Windows PowerShell.
+PowerShell Core uses [.NET Standard][] 2.0 to provide binary compatibility with existing .NET assemblies.
+Many PowerShell modules depend on these assemblies (often times DLLs), so .NET Standard allows them to continue working with .NET Core.
+PowerShell Core also includes a heuristic to look in well-known folders--like where the Global Assembly Cache typically resides on disk--to find .NET Framework DLL dependencies.
 
-Meer informatie over .NET Standard vindt u in de [.NET Blog][], in deze [YouTube][] -video en via deze [FAQ][] over github.
+You can learn more about .NET Standard on the [.NET Blog][], in this [YouTube][] video, and via this [FAQ][] on GitHub.
 
-Er zijn beste inspanningen gedaan om ervoor te zorgen dat de Power shell-taal en ingebouwde modules (zoals `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`enzovoort) hetzelfde werken als in Windows Power shell.
-In veel gevallen hebben we met de Help van de Community nieuwe mogelijkheden en oplossingen voor fouten toegevoegd aan deze cmdlets.
-In sommige gevallen, vanwege een ontbrekende afhankelijkheid in onderliggende .NET-lagen, is de functionaliteit verwijderd of is deze niet beschikbaar.
+Best efforts have been made to ensure that the PowerShell language and "built-in" modules (like `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`, etc.) work the same as they do in Windows PowerShell.
+In many cases, with the help of the community, we've added new capabilities and bug fixes to those cmdlets.
+In some cases, due to a missing dependency in underlying .NET layers, functionality was removed or is unavailable.
 
-De meeste modules die worden geleverd als onderdeel van Windows (bijvoorbeeld `DnsClient`, `Hyper-V`, `NetTCPIP`, `Storage`enzovoort) en andere micro soft-producten, waaronder Azure en Office, zijn nog niet *expliciet* naar .net core gestuurd.
-Het Power shell-team werkt met deze product groepen en teams om hun bestaande modules te valideren en te poorten naar Power shell core.
-Met .NET Standard en [CDXML][]lijken veel van deze traditionele Windows Power shell-modules in Power shell core te werken, maar ze zijn niet formeel gevalideerd en ze worden niet formeel ondersteund.
+Most of the modules that ship as part of Windows (for example, `DnsClient`, `Hyper-V`, `NetTCPIP`, `Storage`, etc.) and other Microsoft products including Azure and Office have not been *explicitly* ported to .NET Core yet.
+The PowerShell team is working with these product groups and teams to validate and port their existing modules to PowerShell Core.
+With .NET Standard and [CDXML][], many of these traditional Windows PowerShell modules do seem to work in PowerShell Core, but they have not been formally validated, and they are not formally supported.
 
-Door de [`WindowsPSModulePath`][windowspsmodulepath] -module te installeren, kunt u Windows Power shell-modules gebruiken door de Windows Power shell-`PSModulePath` toe te voegen aan uw Power shell Core-`PSModulePath`.
+By installing the [`WindowsPSModulePath`][windowspsmodulepath] module, you can use Windows PowerShell modules by appending the Windows PowerShell `PSModulePath` to your PowerShell Core `PSModulePath`.
 
-Installeer eerst de module `WindowsPSModulePath` vanuit de PowerShell Gallery:
+First, install the `WindowsPSModulePath` module from the PowerShell Gallery:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-Na de installatie van deze module voert u de `Add-WindowsPSModulePath`-cmdlet uit om de Windows Power shell-`PSModulePath` toe te voegen aan Power shell core:
+After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add the Windows PowerShell `PSModulePath` to PowerShell Core:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
 Add-WindowsPSModulePath
 ```
 
-## <a name="docker-support"></a>Docker-ondersteuning
+## <a name="docker-support"></a>Docker support
 
-Power shell core voegt ondersteuning toe voor docker-containers voor alle belang rijke platforms die we ondersteunen (inclusief meerdere Linux-distributies, Windows Server Core en nano server).
+PowerShell Core adds support for Docker containers for all the major platforms we support (including multiple Linux distros, Windows Server Core, and Nano Server).
 
-Bekijk de labels op [`microsoft/powershell` op docker hub][docker-hub]voor een volledige lijst.
-Zie [docker][] op github voor meer informatie over docker en Power shell core.
+For a complete list, check out the tags on [`microsoft/powershell` on Docker Hub][docker-hub].
+For more information on Docker and PowerShell Core, see [Docker][] on GitHub.
 
-## <a name="ssh-based-powershell-remoting"></a>Externe toegang tot Power shell op basis van SSH
+## <a name="ssh-based-powershell-remoting"></a>SSH-based PowerShell Remoting
 
-Het Power shell Remoting Protocol (PSRP) werkt nu met het SSH-protocol (Secure Shell) naast de traditionele op WinRM gebaseerde PSRP.
+The PowerShell Remoting Protocol (PSRP) now works with the Secure Shell (SSH) protocol in addition to the traditional WinRM-based PSRP.
 
-Dit betekent dat u cmdlets zoals `Enter-PSSession` en `New-PSSession` kunt gebruiken en verifiëren met behulp van SSH.
-Alles wat u moet doen, is Power shell registreren als subsysteem met een op OpenSSH gebaseerde SSH-server en u kunt uw bestaande op SSH gebaseerde authenticatie mechanismen (zoals wacht woorden of persoonlijke sleutels) gebruiken met de traditionele `PSSession` semantiek.
+This means that you can use cmdlets like `Enter-PSSession` and `New-PSSession` and authenticate using SSH.
+All you have to do is register PowerShell as a subsystem with an OpenSSH-based SSH server, and you can use your existing SSH-based authenticate mechanisms (like passwords or private keys) with the traditional `PSSession` semantics.
 
-Zie voor meer informatie over het configureren en gebruiken van op SSH gebaseerde externe communicatie [Power shell voor externe toegang via SSH][ssh-remoting].
+For more information on configuring and using SSH-based remoting, see [PowerShell Remoting over SSH][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standaard codering is UTF-8 zonder een stuk lijst, met uitzonde ring van New-ModuleManifest
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Default encoding is UTF-8 without a BOM except for New-ModuleManifest
 
-In het verleden hebben Windows Power shell-cmdlets, zoals `Get-Content`, `Set-Content` verschillende code ringen gebruikt, zoals ASCII en UTF-16.
-Bij het combi neren van cmdlets worden er problemen met de variantie in de standaard waarden gegenereerd zonder dat er een code ring wordt opgegeven.
+In the past, Windows PowerShell cmdlets like `Get-Content`, `Set-Content` used different encodings, such as ASCII and UTF-16.
+The variance in encoding defaults created problems when mixing cmdlets without specifying an encoding.
 
-Niet-Windows-platforms gebruiken traditioneel UTF-8 zonder een byte order Mark (BOM) als de standaard codering voor tekst bestanden.
-Meer Windows-toepassingen en-hulpprogram ma's worden verwijderd van UTF-16 en naar een stuk lijst zonder UTF-8-code ring.
-Power shell core wijzigt de standaard codering zodat deze voldoet aan de bredere ecosystemen.
+Non-Windows platforms traditionally use UTF-8 without a Byte Order Mark (BOM) as the default encoding for text files.
+More Windows applications and tools are moving away from UTF-16 and towards BOM-less UTF-8 encoding.
+PowerShell Core changes the default encoding to conform with the broader ecosystems.
 
-Dit betekent dat alle ingebouwde cmdlets die gebruikmaken van de para meter `-Encoding` standaard de `UTF8NoBOM` waarde gebruiken.
-De volgende cmdlets worden beïnvloed door deze wijziging:
+This means that all built-in cmdlets that use the `-Encoding` parameter use the `UTF8NoBOM` value by default.
+The following cmdlets are affected by this change:
 
-- Add-content
-- Exporteren-Clixml
+- Add-Content
+- Export-Clixml
 - Export-Csv
-- Exporteren-PSSession
+- Export-PSSession
 - Format-Hex
 - Get-Content
 - Import-Csv
-- Out-file
-- Selecteer teken reeks
-- Bericht verzenden
+- Out-File
+- Select-String
+- Send-MailMessage
 - Set-Content
 
-Deze cmdlets zijn ook bijgewerkt zodat de para meter `-Encoding` universele `System.Text.Encoding`accepteert.
+These cmdlets have also been updated so that the `-Encoding` parameter universally accepts `System.Text.Encoding`.
 
-De standaard waarde van `$OutputEncoding` is ook gewijzigd in UTF-8.
+The default value of `$OutputEncoding` has also been changed to UTF-8.
 
-Als best practice moet u de para meters voor het maken van code ringen in scripts expliciet instellen met behulp van de `-Encoding` parameter.
+As a best practice, you should explicitly set encodings in scripts using the `-Encoding` parameter to produce deterministic behavior across platforms.
 
-`New-ModuleManifest`-cmdlet heeft geen **Encoding** -para meter. De code ring van het module manifest bestand (. psd1) dat is gemaakt met `New-ModuleManifest` cmdlet is afhankelijk van de omgeving: als de Power shell-kern op Linux wordt uitgevoerd, wordt de code ring UTF-8 (geen stuk lijst). anders is de code ring UTF-16 (met stuk lijst). (#3940)
+`New-ModuleManifest` cmdlet does not have **Encoding** parameter. The encoding of the module manifest (.psd1) file created with `New-ModuleManifest` cmdlet depends on environment: if it is PowerShell Core running on Linux then encoding is UTF-8 (no BOM); otherwise encoding is UTF-16 (with BOM). (#3940)
 
-## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Ondersteuning voor achtergronding van pijp lijnen met en-teken (`&`) (#3360)
+## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Support backgrounding of pipelines with ampersand (`&`) (#3360)
 
-Als u `&` aan het einde van een pijp lijn plaatst, wordt de pijp lijn uitgevoerd als een Power shell-taak.
-Wanneer een pijp lijn wordt geachtergrondd, wordt een taak object geretourneerd.
-Zodra de pijp lijn als een taak wordt uitgevoerd, kunnen alle standaard `*-Job`-cmdlets worden gebruikt om de taak te beheren.
-Variabelen (proces-specifieke variabelen worden genegeerd) die in de pijp lijn worden gebruikt, worden automatisch naar de taak gekopieerd, zodat `Copy-Item $foo $bar &` gewoon werkt.
-De taak wordt ook uitgevoerd in de huidige map in plaats van de basismap van de gebruiker.
-Zie [about_Jobs](https://msdn.microsoft.com/powershell/reference/6/about/about_jobs)voor meer informatie over Power shell-taken.
+Putting `&` at the end of a pipeline causes the pipeline to be run as a PowerShell job.
+When a pipeline is backgrounded, a job object is returned.
+Once the pipeline is running as a job, all of the standard `*-Job` cmdlets can be used to manage the job.
+Variables (ignoring process-specific variables) used in the pipeline are automatically copied to the job so `Copy-Item $foo $bar &` just works.
+The job is also run in the current directory instead of the user's home directory.
+For more information about PowerShell jobs, see [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
-## <a name="semantic-versioning"></a>Semantische versie beheer
+## <a name="semantic-versioning"></a>Semantic versioning
 
-- `SemanticVersion` compatibel zijn gemaakt met `SemVer 2.0`. (#5037) (Bedankt [@iSazonov](https://github.com/iSazonov)!)
-- De standaard `ModuleVersion` in `New-ModuleManifest` is gewijzigd in `0.0.1` om te worden uitgelijnd met SemVer. (#4842) (Bedankt [@LDSpits](https://github.com/LDSpits))
-- `semver` toegevoegd als type Accelerator voor `System.Management.Automation.SemanticVersion`. (#4142) (Bedankt voor [@oising](https://github.com/oising)!)
-- Ingeschakelde vergelijking tussen een `SemanticVersion` exemplaar en een `Version`-exemplaar dat alleen is gebouwd met `Major` en `Minor` versie waarden.
+- Made `SemanticVersion` compatible with `SemVer 2.0`. (#5037) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Changed default `ModuleVersion` in `New-ModuleManifest` to `0.0.1` to align with SemVer. (#4842) (Thanks [@LDSpits](https://github.com/LDSpits))
+- Added `semver` as a type accelerator for `System.Management.Automation.SemanticVersion`. (#4142) (Thanks to [@oising](https://github.com/oising)!)
+- Enabled comparison between a `SemanticVersion` instance and a `Version` instance that is constructed only with `Major` and `Minor` version values.
 
-## <a name="language-updates"></a>Taal updates
+## <a name="language-updates"></a>Language updates
 
-- Implementeer het parseren van Unicode-Escapes zodat gebruikers Unicode-tekens kunnen gebruiken als argumenten, teken reeksen of namen van variabelen. (#3958) (Bedankt voor [@rkeithhill](https://github.com/rkeithhill)!)
-- Nieuw escape teken toegevoegd voor ESC: `` `e``
-- Er is ondersteuning toegevoegd voor het converteren van enums naar String (#4318) (bedankt [@KirkMunro](https://github.com/KirkMunro))
-- Vaste casting van een enkele element matrix naar een algemene verzameling. (#3170)
-- De overbelasting van het teken bereik is toegevoegd aan de operator `..`, dus `'a'..'z'` retourneert tekens van ' a ' naar ' z '. (#5026) (Bedankt [@IISResetMe](https://github.com/IISResetMe)!)
-- Vaste variabele toewijzing om alleen-lezen variabelen te overschrijven
-- Lokale pushes van automatische variabelen naar ' DottedScopes ' verzenden als u script-cmdlets (#4709) wilt gebruiken
-- Gebruik van de optie ' modus singleline, meerdere regels ' inschakelen in de operator Split (#4721) (bedankt [@iSazonov](https://github.com/iSazonov))
+- Implement Unicode escape parsing so that users can use Unicode characters as arguments, strings, or variable names. (#3958) (Thanks to [@rkeithhill](https://github.com/rkeithhill)!)
+- Added new escape character for ESC: `` `e``
+- Added support for converting enums to string (#4318) (Thanks [@KirkMunro](https://github.com/KirkMunro))
+- Fixed casting single element array to a generic collection. (#3170)
+- Added character range overload to the `..` operator, so `'a'..'z'` returns characters from 'a' to 'z'. (#5026) (Thanks [@IISResetMe](https://github.com/IISResetMe)!)
+- Fixed variable assignment to not overwrite read-only variables
+- Push locals of automatic variables to 'DottedScopes' when dotting script cmdlets (#4709)
+- Enable use of 'Singleline, Multiline' option in split operator (#4721) (Thanks [@iSazonov](https://github.com/iSazonov))
 
-## <a name="engine-updates"></a>Engine-updates
+## <a name="engine-updates"></a>Engine updates
 
-- `$PSVersionTable` heeft vier nieuwe eigenschappen:
-  - `PSEdition`: dit is ingesteld op `Core` op Power shell core en `Desktop` in Windows Power shell
-  - `GitCommitId`: dit is de Git-doorvoer-ID van de Git-vertakking of tag waarin Power shell is gebouwd.
-    Op vrijgegeven builds is dit waarschijnlijk hetzelfde als `PSVersion`.
-  - `OS`: dit is een teken reeks voor de besturingssysteem versie die wordt geretourneerd door `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform`: dit wordt geretourneerd door `[System.Environment]::OSVersion.Platform` deze is ingesteld op `Win32NT` in Windows, `Unix` in macOS en `Unix` op Linux.
-- De eigenschap `BuildVersion` van `$PSVersionTable`is verwijderd.
-  Deze eigenschap is sterk verbonden met de Windows-build-versie.
-  In plaats daarvan raden we u aan `GitCommitId` te gebruiken om de exacte build-versie van Power shell Core op te halen. (#3877) (Bedankt voor [@iSazonov](https://github.com/iSazonov)!)
-- Verwijder de eigenschap `ClrVersion` van `$PSVersionTable`.
-  Deze eigenschap is niet relevant voor .NET core en is alleen behouden in .NET core voor specifieke oudere doel einden die niet van toepassing zijn op Power shell.
-- Er zijn drie nieuwe automatische variabelen toegevoegd om te bepalen of Power shell wordt uitgevoerd in een bepaald besturings systeem: `$IsWindows`, `$IsMacOs`en `$IsLinux`.
-- `GitCommitId` toevoegen aan banner van Power shell-kern.
-  U hoeft de `$PSVersionTable` nu niet uit te voeren zodra u Power shell start om de versie op te halen. (#3916) (Bedankt voor [@iSazonov](https://github.com/iSazonov)!)
-- Voeg een JSON-configuratie bestand met de naam `powershell.config.json` in `$PSHome` toe om sommige instellingen op te slaan die vereist zijn voor de opstart tijd (bijvoorbeeld `ExecutionPolicy`).
-- Pijp lijn niet blok keren bij het uitvoeren van Windows EXE
-- De inventarisatie van COM-verzamelingen is ingeschakeld. (#4553)
+- `$PSVersionTable` has four new properties:
+  - `PSEdition`: This is set to `Core` on PowerShell Core and `Desktop` on Windows PowerShell
+  - `GitCommitId`: This is the Git commit ID of the Git branch or tag where PowerShell was built.
+    On released builds, it will likely be the same as `PSVersion`.
+  - `OS`: This is an OS version string returned by `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `Platform`: This is returned by `[System.Environment]::OSVersion.Platform` It is set to `Win32NT` on Windows, `Unix` on macOS, and `Unix` on Linux.
+- Removed the `BuildVersion` property from `$PSVersionTable`.
+  This property was strongly tied to the Windows build version.
+  Instead, we recommend that you use `GitCommitId` to retrieve the exact build version of PowerShell Core. (#3877) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Remove `ClrVersion` property from `$PSVersionTable`.
+  This property is irrelevant for .NET Core, and was only preserved in .NET Core for specific legacy purposes that are inapplicable to PowerShell.
+- Added three new automatic variables to determine whether PowerShell is running in a given OS: `$IsWindows`, `$IsMacOs`, and `$IsLinux`.
+- Add `GitCommitId` to PowerShell Core banner.
+  Now you don't have to run `$PSVersionTable` as soon as you start PowerShell to get the version! (#3916) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Add a JSON config file called `powershell.config.json` in `$PSHome` to store some settings required before startup time (e.g. `ExecutionPolicy`).
+- Don't block pipeline when running Windows EXE's
+- Enabled enumeration of COM collections. (#4553)
 
-## <a name="cmdlet-updates"></a>Cmdlet-updates
+## <a name="cmdlet-updates"></a>Cmdlet updates
 
-### <a name="new-cmdlets"></a>Nieuwe cmdlets
+### <a name="new-cmdlets"></a>New cmdlets
 
-- Voeg `Get-Uptime` toe aan `Microsoft.PowerShell.Utility`.
-- `Remove-Alias` opdracht toevoegen. (#5143) (Bedankt [@PowershellNinja](https://github.com/PowershellNinja)!)
-- Voeg `Remove-Service` toe aan de beheer module. (#4858) (Bedankt [@joandrsn](https://github.com/joandrsn)!)
+- Add `Get-Uptime` to `Microsoft.PowerShell.Utility`.
+- Add `Remove-Alias` Command. (#5143) (Thanks [@PowershellNinja](https://github.com/PowershellNinja)!)
+- Add `Remove-Service` to Management module. (#4858) (Thanks [@joandrsn](https://github.com/joandrsn)!)
 
-### <a name="web-cmdlets"></a>Web-cmdlets
+### <a name="web-cmdlets"></a>Web cmdlets
 
-- Ondersteuning voor certificaat verificatie voor web-cmdlets toevoegen. (#4646) (Bedankt [@markekraus](https://github.com/markekraus))
-- Voeg ondersteuning toe voor inhouds headers voor web-cmdlets. (#4494 & #4640) (Bedankt [@markekraus](https://github.com/markekraus))
-- Ondersteuning voor meerdere koppelings koppen toevoegen aan Web-cmdlets. (#5265) (Bedankt [@markekraus](https://github.com/markekraus)!)
-- Koppelings header paginering in Web-cmdlets (#3828) ondersteunen
-  - Voor `Invoke-WebRequest`, wanneer het antwoord een koppelings header bevat, maken we een RelationLink-eigenschap als een woorden lijst die de Url's en `rel` kenmerken vertegenwoordigt, en zorgt u ervoor dat de Url's absoluut zijn zodat de ontwikkelaar deze gemakkelijker kan gebruiken.
-  - Voor `Invoke-RestMethod`, wanneer het antwoord een koppelings header bevat, wordt er een `-FollowRelLink` schakelaar weer gegeven waarmee `next` `rel` koppelingen automatisch worden gevolgd totdat deze niet meer bestaan of wanneer de optionele waarde voor `-MaximumFollowRelLink` para meter is bereikt.
-- Voeg `-CustomMethod`-para meter toe aan Web-cmdlets voor het toestaan van niet-standaard methode werk woorden. (#3142) (Bedankt voor [@Lee303](https://github.com/Lee303)!)
-- Voeg `SslProtocol` ondersteuning toe aan Web-cmdlets. (#5329) (Bedankt [@markekraus](https://github.com/markekraus)!)
-- Voeg meerdelige ondersteuning toe aan Web-cmdlets. (#4782) (Bedankt [@markekraus](https://github.com/markekraus))
-- Voeg `-NoProxy` toe aan Web-cmdlets zodat ze de systeem-brede proxy instelling negeren. (#3447) (Bedankt voor [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)!)
-- Gebruikers agent van web-cmdlets rapporteert nu het OS-platform (#4937) (bedankt [@LDSpits](https://github.com/LDSpits))
-- Voeg `-SkipHeaderValidation` switch toe aan Web-cmdlets om het toevoegen van headers te ondersteunen zonder de header waarde te valideren. (#4085)
-- Schakel Web-cmdlets in om het HTTPS-certificaat van de server, indien nodig, niet te valideren.
-- Voeg verificatie parameters toe aan Web-cmdlets. (#5052) (Bedankt [@markekraus](https://github.com/markekraus))
-  - Voeg `-Authentication` toe die drie opties biedt: Basic, OAuth en Bearer.
-  - Voeg `-Token` toe om het Bearer-token voor OAuth-en Bearer-opties te verkrijgen.
-  - Voeg `-AllowUnencryptedAuthentication` toe voor het overs laan van verificatie voor andere transport schema's dan HTTPS.
-- Voeg `-ResponseHeadersVariable` toe aan `Invoke-RestMethod` om het vastleggen van antwoord headers in te scha kelen. (#4888) (Bedankt [@markekraus](https://github.com/markekraus))
-- Herstel Web-cmdlets om het HTTP-antwoord in de uitzonde ring op te halen wanneer de status code van de reactie niet is geslaagd. (#3201)
-- Web-cmdlets `UserAgent` wijzigen van `WindowsPowerShell` in `PowerShell`. (#4914) (Bedankt [@markekraus](https://github.com/markekraus))
-- Expliciete detectie van `ContentType` toevoegen aan `Invoke-RestMethod` (#4692)
-- Herstel Web-cmdlets `-SkipHeaderValidation` om met niet-standaard headers voor de gebruikers agent te werken. (#4479 & #4512) (Bedankt [@markekraus](https://github.com/markekraus))
+- Add certificate authentication support for web cmdlets. (#4646) (Thanks [@markekraus](https://github.com/markekraus))
+- Add support for content headers to web cmdlets. (#4494 & #4640) (Thanks [@markekraus](https://github.com/markekraus))
+- Add multiple link header support to Web Cmdlets. (#5265) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Support Link header pagination in web cmdlets (#3828)
+  - For `Invoke-WebRequest`, when the response includes a Link header we create a RelationLink property as a Dictionary representing the URLs and `rel` attributes and ensure the URLs are absolute to make it easier for the developer to use.
+  - For `Invoke-RestMethod`, when the response includes a Link header we expose a `-FollowRelLink` switch to automatically follow `next` `rel` links until they no longer exist or once we hit the optional `-MaximumFollowRelLink` parameter value.
+- Add `-CustomMethod` parameter to web cmdlets to allow for non-standard method verbs. (#3142) (Thanks to [@Lee303](https://github.com/Lee303)!)
+- Add `SslProtocol` support to Web Cmdlets. (#5329) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Add Multipart support to web cmdlets. (#4782) (Thanks [@markekraus](https://github.com/markekraus))
+- Add `-NoProxy` to web cmdlets so that they ignore the system-wide proxy setting. (#3447) (Thanks to [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)!)
+- User Agent of Web Cmdlets now reports the OS platform (#4937) (Thanks [@LDSpits](https://github.com/LDSpits))
+- Add `-SkipHeaderValidation` switch to web cmdlets to support adding headers without validating the header value. (#4085)
+- Enable web cmdlets to not validate the HTTPS certificate of the server if required.
+- Add authentication parameters to web cmdlets. (#5052) (Thanks [@markekraus](https://github.com/markekraus))
+  - Add `-Authentication` that provides three options: Basic, OAuth, and Bearer.
+  - Add `-Token` to get the bearer token for OAuth and Bearer options.
+  - Add `-AllowUnencryptedAuthentication` to bypass authentication that is provided for any transport scheme other than HTTPS.
+- Add `-ResponseHeadersVariable` to `Invoke-RestMethod` to enable the capture of response headers. (#4888) (Thanks [@markekraus](https://github.com/markekraus))
+- Fix web cmdlets to include the HTTP response in the exception when the response status code is not success. (#3201)
+- Change web cmdlets `UserAgent` from `WindowsPowerShell` to `PowerShell`. (#4914) (Thanks [@markekraus](https://github.com/markekraus))
+- Add explicit `ContentType` detection to `Invoke-RestMethod` (#4692)
+- Fix web cmdlets `-SkipHeaderValidation` to work with non-standard User-Agent headers. (#4479 & #4512) (Thanks [@markekraus](https://github.com/markekraus))
 
-### <a name="json-cmdlets"></a>JSON-cmdlets
+### <a name="json-cmdlets"></a>JSON cmdlets
 
-- Voeg `-AsHashtable` toe aan `ConvertFrom-Json` om in plaats daarvan een `Hashtable` te retour neren. (#5043) (Bedankt [@bergmeister](https://github.com/bergmeister)!)
-- Gebruik prettier formatter met `ConvertTo-Json` uitvoer. (#2787) (Bedankt voor @kittholland!)
-- Voeg `Jobject` serialisatie-ondersteuning toe aan `ConvertTo-Json`. (#5141)
-- Herstel `ConvertFrom-Json` om een matrix met teken reeksen uit de pijp lijn te deserialiseren die samen een volledige JSON-teken reeks bouwt.
-  Dit corrigeert enkele gevallen waarin de JSON-parsering door een nieuwe regel wordt verbroken. (#3823)
-- Verwijder de `AliasProperty "Count"` die is gedefinieerd voor `System.Array`.
-  Hiermee verwijdert u de eigenschap van het externe `Count` van sommige `ConvertFrom-Json` uitvoer. (#3231) (Bedankt voor [@PetSerAl](https://github.com/PetSerAl)!)
+- Add `-AsHashtable` to `ConvertFrom-Json` to return a `Hashtable` instead. (#5043) (Thanks [@bergmeister](https://github.com/bergmeister)!)
+- Use prettier formatter with `ConvertTo-Json` output. (#2787) (Thanks to @kittholland!)
+- Add `Jobject` serialization support to `ConvertTo-Json`. (#5141)
+- Fix `ConvertFrom-Json` to deserialize an array of strings from the pipeline that together construct a complete JSON string.
+  This fixes some cases where newlines would break JSON parsing. (#3823)
+- Remove the `AliasProperty "Count"` defined for `System.Array`.
+  This removes the extraneous `Count` property on some `ConvertFrom-Json` output. (#3231) (Thanks to [@PetSerAl](https://github.com/PetSerAl)!)
 
-### <a name="csv-cmdlets"></a>CSV-cmdlets
+### <a name="csv-cmdlets"></a>CSV cmdlets
 
-- `Import-Csv` ondersteunt nu de uitgebreide W3C-indeling van logboek bestand (#2482) (bedankt [@iSazonov](https://github.com/iSazonov)!)
-- Voeg `PSTypeName` ondersteuning toe voor `Import-Csv` en `ConvertFrom-Csv`. (#5389) (Bedankt [@markekraus](https://github.com/markekraus)!)
-- Zorg `Import-Csv` ondersteuning `CR`, `LF`en `CRLF` als regel scheidings tekens. (#5363) (Bedankt [@iSazonov](https://github.com/iSazonov)!)
-- Maak `-NoTypeInformation` de standaard waarde op `Export-Csv` en `ConvertTo-Csv`. (#5164) (Bedankt [@markekraus](https://github.com/markekraus)!)
+- `Import-Csv` now supports the W3C Extended Log File Format (#2482) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Add `PSTypeName` Support for `Import-Csv` and `ConvertFrom-Csv`. (#5389) (Thanks [@markekraus](https://github.com/markekraus)!)
+- Make `Import-Csv` support `CR`, `LF`, and `CRLF` as line delimiters. (#5363) (Thanks [@iSazonov](https://github.com/iSazonov)!)
+- Make `-NoTypeInformation` the default on `Export-Csv` and `ConvertTo-Csv`. (#5164) (Thanks [@markekraus](https://github.com/markekraus)!)
 
-### <a name="service-cmdlets"></a>Service-cmdlets
+### <a name="service-cmdlets"></a>Service cmdlets
 
-- Eigenschappen `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`en `StartupType` toevoegen aan de `ServiceController` objecten die door `Get-Service`worden geretourneerd. (#4907) (Bedankt [@joandrsn](https://github.com/joandrsn))
-- Voeg functionaliteit toe om referenties in te stellen voor `Set-Service` opdracht. (#4844) (Bedankt [@joandrsn](https://github.com/joandrsn))
+- Add properties `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, and `StartupType` to the `ServiceController` objects returned by `Get-Service`. (#4907) (Thanks [@joandrsn](https://github.com/joandrsn))
+- Add functionality to set credentials on `Set-Service` command. (#4844) (Thanks [@joandrsn](https://github.com/joandrsn))
 
-### <a name="other-cmdlets"></a>Andere cmdlets
+### <a name="other-cmdlets"></a>Other cmdlets
 
-- Voeg een para meter toe aan `Get-ChildItem` met de naam `-FollowSymlink` die symlinks op aanvraag doorloopt, met controles voor koppelings lussen. (#4020)
-- Update `Add-Type` om `CSharpVersion7`te ondersteunen. (#3933) (Bedankt voor [@iSazonov](https://github.com/iSazonov))
-- Verwijder de module `Microsoft.PowerShell.LocalAccounts` als gevolg van het gebruik van niet-ondersteunde Api's tot een betere oplossing is gevonden. (#4302)
-- Verwijder de `*-Counter`-cmdlets in `Microsoft.PowerShell.Diagnostics` vanwege het gebruik van niet-ondersteunde Api's totdat er een betere oplossing wordt gevonden. (#4303)
-- Voeg ondersteuning toe voor `Invoke-Item -Path <folder>`. (#4262)
-- Voeg `-Extension`-en `-LeafBase`-switches toe aan `Split-Path` zodat u paden kunt splitsen tussen de bestandsnaam extensie en de rest van de bestands naam. (#2721) (Bedankt voor [@powercode](https://github.com/powercode)!)
-- Para meters `-Top` en `-Bottom` toevoegen aan `Sort-Object` voor de bovenste/onderste x-Sorteer bewerking
-- Maak een bovenliggend proces van het proces door de `CodeProperty "Parent"` toe te voegen aan `System.Diagnostics.Process`. (#2850) (Bedankt voor [@powercode](https://github.com/powercode)!)
-- MB gebruiken in plaats van KB voor geheugen kolommen van `Get-Process`
-- `-NoNewLine` switch toevoegen voor `Out-String`. (#5056) (Bedankt [@raghav710](https://github.com/raghav710))
-- `Move-Item`-cmdlet voldoet aan de para meters `-Include`, `-Exclude`en `-Filter`. (#3878)
-- Toestaan dat `*` worden gebruikt in het registerpad voor `Remove-Item`. (#4866)
-- Voeg `-Title` toe aan `Get-Credential` en verdeel de prompt ervaring op verschillende platforms.
-- Voeg de para meter `-TimeOut` toe aan `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`-cmdlets kunnen nu tijds tempel voor bestands handtekeningen ophalen. (#4061)
-- Verwijder de niet-ondersteunde `-ShowWindow` switch van `Get-Help`. (#4903)
-- Corrigeer `Get-Content -Delimiter` zonder het scheidings teken in de geretourneerde matrix elementen (#3706) (bedankt [@mklement0](https://github.com/mklement0)) te gebruiken
-- `Meta`-, `Charset`-en `Transitional`-para meters toevoegen aan `ConvertTo-HTML` (#4184) (bedankt [@ergo3114](https://github.com/ergo3114))
-- `WindowsUBR`-en `WindowsVersion` eigenschappen toevoegen aan `Get-ComputerInfo` resultaat
-- `-Group` para meter toevoegen aan `Get-Verb`
-- Voeg `ShouldProcess` ondersteuning toe aan `New-FileCatalog` en `Test-FileCatalog` (oplossingen `-WhatIf` en `-Confirm`). (#3074) (Bedankt voor [@iSazonov](https://github.com/iSazonov)!)
-- `-WhatIf` switch toevoegen aan `Start-Process`-cmdlet (#4735) (bedankt [@sarithsutha](https://github.com/sarithsutha))
-- Voeg `ValidateNotNullOrEmpty` te veel bestaande para meters toe.
+- Add a parameter to `Get-ChildItem` called `-FollowSymlink` that traverses symlinks on demand, with checks for link loops. (#4020)
+- Update `Add-Type` to support `CSharpVersion7`. (#3933) (Thanks to [@iSazonov](https://github.com/iSazonov))
+- Remove the `Microsoft.PowerShell.LocalAccounts` module due to the use of unsupported APIs until a better solution is found. (#4302)
+- Remove the `*-Counter` cmdlets in `Microsoft.PowerShell.Diagnostics` due to the use of unsupported APIs until a better solution is found. (#4303)
+- Add support for `Invoke-Item -Path <folder>`. (#4262)
+- Add `-Extension` and `-LeafBase` switches to `Split-Path` so that you can split paths between the filename extension and the rest of the filename. (#2721) (Thanks to [@powercode](https://github.com/powercode)!)
+- Add parameters `-Top` and `-Bottom` to `Sort-Object` for Top/Bottom N sort
+- Expose a process' parent process by adding the `CodeProperty "Parent"` to `System.Diagnostics.Process`. (#2850) (Thanks to [@powercode](https://github.com/powercode)!)
+- Use MB instead of KB for memory columns of `Get-Process`
+- Add `-NoNewLine` switch for `Out-String`. (#5056) (Thanks [@raghav710](https://github.com/raghav710))
+- `Move-Item` cmdlet honors `-Include`, `-Exclude`, and `-Filter` parameters. (#3878)
+- Allow `*` to be used in registry path for `Remove-Item`. (#4866)
+- Add `-Title` to `Get-Credential` and unify the prompt experience across platforms.
+- Add the `-TimeOut` parameter to `Test-Connection`. (#2492)
+- `Get-AuthenticodeSignature` cmdlets can now get file signature timestamp. (#4061)
+- Remove unsupported `-ShowWindow` switch from `Get-Help`. (#4903)
+- Fix `Get-Content -Delimiter` to not include the delimiter in the array elements returned (#3706) (Thanks [@mklement0](https://github.com/mklement0))
+- Add `Meta`, `Charset`, and `Transitional` parameters to `ConvertTo-HTML` (#4184) (Thanks [@ergo3114](https://github.com/ergo3114))
+- Add `WindowsUBR` and `WindowsVersion` properties to `Get-ComputerInfo` result
+- Add `-Group` parameter to `Get-Verb`
+- Add `ShouldProcess` support to `New-FileCatalog` and `Test-FileCatalog` (fixes `-WhatIf` and `-Confirm`). (#3074) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Add `-WhatIf` switch to `Start-Process` cmdlet (#4735) (Thanks [@sarithsutha](https://github.com/sarithsutha))
+- Add `ValidateNotNullOrEmpty` too many existing parameters.
 
-## <a name="tab-completion"></a>Tabblad voltooiing
+## <a name="tab-completion"></a>Tab completion
 
-- Verbeterd het type afleiding in het tabblad voltooiing op basis van waarden van runtime variabelen. (#2744) (Bedankt voor [@powercode](https://github.com/powercode)!) Op die manier kan het tabblad worden aangevuld in situaties als:
+- Enhanced the type inference in tab completion based on runtime variable values. (#2744) (Thanks to [@powercode](https://github.com/powercode)!) This enables tab completion in situations like:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Aanvulling op het tabblad hashtabel toevoegen voor `-Property` van `Select-Object`. (#3625) (Bedankt voor [@powercode](https://github.com/powercode))
-- Automatisch aanvullen van argumenten inschakelen voor `-ExcludeProperty` en `-ExpandProperty` van `Select-Object`. (#3443) (Bedankt voor [@iSazonov](https://github.com/iSazonov)!)
-- Een bug in tab volt ooien om de systeem eigen volledige versie van `native.exe --<tab>` aan te roepen. (#3633) (Bedankt voor [@powercode](https://github.com/powercode)!)
+- Add Hashtable tab completion for `-Property` of `Select-Object`. (#3625) (Thanks to [@powercode](https://github.com/powercode))
+- Enable argument auto-completion for `-ExcludeProperty` and `-ExpandProperty` of `Select-Object`. (#3443) (Thanks to [@iSazonov](https://github.com/iSazonov)!)
+- Fix a bug in tab completion to make `native.exe --<tab>` call into native completer. (#3633) (Thanks to [@powercode](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Wijzigingen afbreken
+## <a name="breaking-changes"></a>Breaking changes
 
-We hebben een aantal belang rijke wijzigingen geïntroduceerd in Power shell Core 6,0.
-Zie [belang rijke wijzigingen in Power shell Core 6,0][breaking-changes]voor meer informatie over deze details.
+We've introduced a number of breaking changes in PowerShell Core 6.0.
+To read more about them in detail, see [Breaking Changes in PowerShell Core 6.0][breaking-changes].
 
 ## <a name="debugging"></a>Foutopsporing
 
-- Ondersteuning voor externe stap fout opsporing voor `Invoke-Command -ComputerName`. (#3015)
-- Logboek registratie voor fout opsporing van Binder inschakelen in Power shell core
+- Support for remote step-in debugging for `Invoke-Command -ComputerName`. (#3015)
+- Enable binder debug logging in PowerShell Core
 
-## <a name="filesystem-updates"></a>Bestandssysteem updates
+## <a name="filesystem-updates"></a>Filesystem updates
 
-- Het gebruik van de bestandssysteem provider vanaf een UNC-pad inschakelen. ($4998)
-- `Split-Path` werkt nu met UNC-hoofd mappen
-- `cd` zonder argumenten gedraagt zich nu als `cd ~`
-- Vaste Power shell core om gebruik te maken van paden die meer dan 260 tekens lang zijn. (#3960)
+- Enable usage of the Filesystem provider from a UNC path. ($4998)
+- `Split-Path` now works with UNC roots
+- `cd` with no arguments now behaves as `cd ~`
+- Fixed PowerShell Core to allow use of paths that are more than 260 characters long. (#3960)
 
-## <a name="bug-fixes-and-performance-improvements"></a>Problemen met oplossingen en prestatie verbeteringen
+## <a name="bug-fixes-and-performance-improvements"></a>Bug fixes and performance improvements
 
-We hebben een *groot aantal* verbeteringen aangebracht in de prestaties van Power shell, inclusief de opstart tijd, verschillende ingebouwde cmdlets en interactie met systeem eigen binaire bestanden.
+We've made *many* improvements to performance across PowerShell, including in startup time, various built-in cmdlets, and interaction with native binaries.
 
-Daarnaast hebben we een aantal bugs in Power shell core opgelost.
-Bekijk onze [wijzigingen logboek][] op github voor een volledige lijst met oplossingen en wijzigingen.
+We've also fixed a number of bugs within PowerShell Core.
+For a complete list of fixes and changes, check out our [changelog][] on GitHub.
 
 ## <a name="telemetry"></a>Telemetrie
 
-- Power shell Core 6,0 heeft telemetrie aan de console-host toegevoegd om twee waarden te rapporteren (#3620):
-  - het OS-platform (`$PSVersionTable.OSDescription`)
-  - de exacte versie van Power shell (`$PSVersionTable.GitCommitId`)
+- PowerShell Core 6.0 added telemetry to the console host to report two values (#3620):
+  - the OS platform (`$PSVersionTable.OSDescription`)
+  - the exact version of PowerShell (`$PSVersionTable.GitCommitId`)
 
-Als u deze telemetrie wilt afmelden, maakt u `POWERSHELL_TELEMETRY_OPTOUT` omgevings variabele met een van de volgende waarden: `true`, `1` of `yes`.
-Het maken van de variabele omzeilt alle telemetrie, zelfs vóór de eerste uitvoering van Power shell.
-We zijn ook van plan om deze telemetriegegevens en de inzichten die we beschikken van de telemetrie in het [dash board][community-dashboard]van de community beschikbaar te stellen.
-Meer informatie over hoe we deze gegevens in dit [blog bericht][telemetry-blog]gebruiken, vindt u hier.
+If you want to opt-out of this telemetry, simply create `POWERSHELL_TELEMETRY_OPTOUT` environment variable with one of the following values: `true`, `1` or `yes`.
+Creating the variable bypasses all telemetry even before the first run of PowerShell.
+We also plan on exposing this telemetry data and the insights we glean from the telemetry in the [community dashboard][community-dashboard].
+You can find out more about how we use this data in this [blog post][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
@@ -386,14 +386,14 @@ Meer informatie over hoe we deze gegevens in dit [blog bericht][telemetry-blog]g
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[wijzigingen logboek]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
-[telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
+[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
+[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

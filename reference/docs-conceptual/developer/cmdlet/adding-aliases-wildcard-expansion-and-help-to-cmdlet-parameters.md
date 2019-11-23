@@ -1,5 +1,5 @@
 ---
-title: Aliassen, uitbrei ding van joker tekens en Help voor cmdlet-para meters toevoegen | Microsoft Docs
+title: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359507"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415652"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 
-In deze sectie wordt beschreven hoe u aliassen, uitbrei ding van joker tekens en Help-berichten toevoegt aan de para meters van de cmdlet stop-proc (beschreven in [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)).
+This section describes how to add aliases, wildcard expansion, and Help messages to the parameters of the Stop-Proc cmdlet (described in [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-Deze Stop-proc-cmdlet probeert processen te stoppen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)).
+This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
-## <a name="defining-the-cmdlet"></a>De cmdlet definiëren
+## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
 
-De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Omdat u een cmdlet schrijft om het systeem te wijzigen, moet dit dienovereenkomstig een naam hebben. Omdat met deze cmdlet systeem processen worden gestopt, wordt de term ' Stop ' gebruikt, die door de [System. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) -klasse is gedefinieerd, met het zelfstandig naam woord ' proc ' om het proces aan te geven. Zie [cmdlet verb names](./approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
+The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. Because this cmdlet stops system processes, it uses the verb "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate process. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-De volgende code is de klassedefinitie voor deze stop-proc-cmdlet.
+The following code is the class definition for this Stop-Proc cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -33,15 +33,15 @@ De volgende code is de klassedefinitie voor deze stop-proc-cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>Para meters definiëren voor systeem wijziging
+## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
 
-Uw cmdlet moet para meters definiëren die systeem wijzigingen en gebruikers feedback ondersteunen. De cmdlet moet een `Name`-para meter of een gelijkwaardige waarde definiëren, zodat de cmdlet het systeem kan wijzigen door een bepaalde soort id. Daarnaast moet de cmdlet de para meters `Force` en `PassThru` definiëren. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze para meters.
+Your cmdlet needs to define parameters that support system modifications and user feedback. The cmdlet should define a `Name` parameter or equivalent so that the cmdlet will be able to modify the system by some sort of identifier. In addition, the cmdlet should define the `Force` and `PassThru` parameters. For more information about these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="defining-a-parameter-alias"></a>Een parameter alias definiëren
+## <a name="defining-a-parameter-alias"></a>Defining a Parameter Alias
 
-Een parameter alias kan een alternatieve naam of een goed gedefinieerde korte naam van één of twee letters zijn voor een cmdlet-para meter. In beide gevallen is het doel van het gebruik van aliassen om de gebruikers vermelding te vereenvoudigen vanaf de opdracht regel. Windows Power shell ondersteunt parameter aliassen via het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) , dat gebruikmaakt van de declaratie syntaxis [alias ()].
+A parameter alias can be an alternate name or a well-defined 1-letter or 2-letter short name for a cmdlet parameter. In both cases, the goal of using aliases is to simplify user entry from the command line. Windows PowerShell supports parameter aliases through the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, which uses the declaration syntax [Alias()].
 
-De volgende code laat zien hoe een alias wordt toegevoegd aan de para meter `Name`.
+The following code shows how an alias is added to the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Naast het gebruik van het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) voert de Windows Power shell-runtime gedeeltelijke naam aanpassing uit, zelfs als er geen aliassen zijn opgegeven. Als uw cmdlet bijvoorbeeld een `FileName`-para meter heeft en de enige para meter is die begint met `F`, kan de gebruiker `Filename`, `Filenam`, `File`, `Fi` of `F` invoeren en de vermelding toch herkennen als de para meter `FileName`.
+In addition to using the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, the Windows PowerShell runtime performs partial name matching, even if no aliases are specified. For example, if your cmdlet has a `FileName` parameter and that is the only parameter that starts with `F`, the user could enter `Filename`, `Filenam`, `File`, `Fi`, or `F` and still recognize the entry as the `FileName` parameter.
 
-## <a name="creating-help-for-parameters"></a>Help voor para meters maken
+## <a name="creating-help-for-parameters"></a>Creating Help for Parameters
 
-Met Windows Power shell kunt u Help maken voor cmdlet-para meters. Doe dit voor alle para meters die worden gebruikt voor systeem wijzigingen en gebruikers feedback. Voor elke para meter om hulp te ondersteunen, kunt u het sleutel woord `HelpMessage` instellen in de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Dit sleutel woord definieert de tekst die voor de gebruiker moet worden weer gegeven voor hulp bij het gebruik van de para meter. U kunt ook het sleutel woord `HelpMessageBaseName` instellen om de basis naam te bepalen van een resource die moet worden gebruikt voor het bericht. Als u dit tref woord hebt ingesteld, moet u ook het sleutel woord `HelpMessageResourceId` instellen om de resource-id op te geven.
+Windows PowerShell allows you to create Help for cmdlet parameters. Do this for any parameter used for system modification and user feedback. For each parameter to support Help, you can set the `HelpMessage` attribute keyword in the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration. This keyword defines the text to display to the user for assistance in using the parameter. You can also set the `HelpMessageBaseName` keyword to identify the base name of a resource to use for the message. If you set this keyword, you must also set the `HelpMessageResourceId` keyword to specify the resource identifier.
 
-Met de volgende code uit deze stop-proc-cmdlet wordt het sleutel woord `HelpMessage` gedefinieerd voor de para meter `Name`.
+The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribute keyword for the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -86,32 +86,32 @@ Met de volgende code uit deze stop-proc-cmdlet wordt het sleutel woord `HelpMess
 )]
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Een invoer verwerkings methode overschrijven
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-De cmdlet moet een invoer verwerkings methode overschrijven. Dit is meestal [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Bij het wijzigen van het systeem moet de cmdlet de methoden [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) gebruiken om de gebruiker feedback te geven voordat een wijziging wordt aangebracht. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze methoden.
+Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="supporting-wildcard-expansion"></a>Ondersteuning voor het uitbreiden van joker tekens
+## <a name="supporting-wildcard-expansion"></a>Supporting Wildcard Expansion
 
-Als u wilt toestaan dat meerdere objecten worden geselecteerd, kan uw cmdlet de klassen [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) en [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) gebruiken om ondersteuning voor joker tekens te bieden voor de invoer van para meters. Voor beelden van Joker teken patronen zijn LSA *, @no__t -0. txt en [a-c] \*. Gebruik het back-quote teken (') als escape-teken wanneer het patroon een teken bevat dat letterlijk moet worden gebruikt.
+To allow the selection of multiple objects, your cmdlet can use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) and [System.Management.Automation.Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) classes to provide wildcard expansion support for parameter input. Examples of wildcard patterns are lsa*, \*.txt, and [a-c]\*. Use the back-quote character (`) as an escape character when the pattern contains a character that should be used literally.
 
-Een Joker teken uitbreiding van bestands-en padnamen zijn voor beelden van veelvoorkomende scenario's waarbij de cmdlet mogelijk ondersteuning biedt voor invoer van paden wanneer de selectie van meerdere objecten is vereist. Een veelvoorkomend geval is in het bestands systeem, waarbij een gebruiker alle bestanden in de huidige map wil weer geven.
+Wildcard expansions of file and path names are examples of common scenarios where the cmdlet may want to allow support for path inputs when the selection of multiple objects is required. A common case is in the file system, where a user wants to see all files residing in the current folder.
 
-U moet een aangepaste implementatie van Joker teken patronen die slechts zelden overeenkomen, hebben. In dit geval moet uw cmdlet de volledige POSIX 1003,2, 3,13 specificatie voor de uitbrei ding van het Joker teken of de volgende vereenvoudigde subset ondersteunen:
+You should need a customized wildcard pattern matching implementation only rarely. In this case, your cmdlet should support either the full POSIX 1003.2, 3.13 specification for wildcard expansion or the following simplified subset:
 
-- **Vraag teken (?).** Komt overeen met een teken op de opgegeven locatie.
+- **Question mark (?).** Matches any character at the specified location.
 
-- **Asterisk (\*).** Komt overeen met nul of meer tekens, te beginnen bij de opgegeven locatie.
+- **Asterisk (\*).** Matches zero or more characters starting at the specified location.
 
-- **Haakje openen ([).** Introduceert een patroon rechte haak expressie die tekens of een reeks tekens kan bevatten. Als een bereik vereist is, wordt een koppel teken (-) gebruikt om het bereik aan te geven.
+- **Open bracket ([).** Introduces a pattern bracket expression that can contain characters or a range of characters. If a range is required, a hyphen (-) is used to indicate the range.
 
-- **Haakje sluiten (]).** Hiermee wordt een expressie voor een patroon haak afgesloten.
+- **Close bracket (]).** Ends a pattern bracket expression.
 
-- **Escape teken voor back-quote (').** Geeft aan dat het volgende teken letterlijk moet worden genomen. Houd er rekening mee dat wanneer u het nummer van de back-quote opgeeft vanaf de opdracht regel (in plaats van het programma op te geven), het escape-teken voor de back-quote twee keer moet worden opgegeven.
+- **Back-quote escape character (`).** Indicates that the next character should be taken literally. Be aware that when specifying the back-quote character from the command line (as opposed to specifying it programmatically), the back-quote escape character must be specified twice.
 
 > [!NOTE]
-> Zie [ondersteuning voor joker tekens in cmdlet-para meters](./supporting-wildcard-characters-in-cmdlet-parameters.md)voor meer informatie over Joker teken patronen.
+> For more information about wildcard patterns, see [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md).
 
-De volgende code laat zien hoe u opties voor joker tekens instelt en het Joker teken definieert dat wordt gebruikt voor het omzetten van de para meter `Name` voor deze cmdlet.
+The following code shows how to set wildcard options and define the wildcard pattern used for resolving the `Name` parameter for this cmdlet.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -119,7 +119,7 @@ WildcardOptions options = WildcardOptions.IgnoreCase |
 WildcardPattern wildcard = new WildcardPattern(name,options);
 ```
 
-De volgende code laat zien hoe u kunt testen of de proces naam overeenkomt met het gedefinieerde Joker teken patroon. In dit geval, als de proces naam niet overeenkomt met het patroon, blijft de cmdlet de volgende proces naam ophalen.
+The following code shows how to test whether the process name matches the defined wildcard pattern. Notice that, in this case, if the process name does not match the pattern, the cmdlet continues on to get the next process name.
 
 ```csharp
 if (!wildcard.IsMatch(processName))
@@ -128,29 +128,29 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>Code voorbeeld
+## <a name="code-sample"></a>Code Sample
 
-Zie StopProcessSample03- C# voor [beeld](./stopprocesssample03-sample.md)voor de volledige voorbeeld code.
+For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
-## <a name="define-object-types-and-formatting"></a>Object typen en-opmaak definiëren
+## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
 
-Windows Power shell geeft informatie door over cmdlets met behulp van .net-objecten. Daarom moet een cmdlet een eigen type kunnen definiëren, of moet de cmdlet een bestaand type uitbreiden dat door een andere cmdlet wordt verschaft. Zie [object typen en-opmaak uitbreiden](/previous-versions//ms714665(v=vs.85))voor meer informatie over het definiëren van nieuwe typen of het uitbreiden van bestaande typen.
+Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>De cmdlet bouwen
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-Na de implementatie van een cmdlet moet deze met Windows Power shell zijn geregistreerd via een Windows Power shell-module. Zie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))voor meer informatie over het registreren van cmdlets.
+After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>De cmdlet testen
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld van de cmdlet stop-proc testen. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Start Windows Power shell en gebruik stop-proc om een proces te stoppen met behulp van de verwerkings alias voor de para meter `Name`.
+- Start Windows PowerShell and use Stop-Proc to stop a process using the ProcessName alias for the `Name` parameter.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-De volgende uitvoer wordt weer gegeven.
+The following output appears.
 
     ```
     Confirm
@@ -159,13 +159,13 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- Maak de volgende vermelding op de opdracht regel. Omdat de para meter name verplicht is, wordt u gevraagd. Invoeren van "!?" Hiermee wordt de Help-tekst voor de para meter geopend.
+- Make the following entry on the command line. Because the Name parameter is mandatory, you are prompted for it. Entering "!?" brings up the help text associated with the parameter.
 
     ```powershell
     PS> stop-proc
     ```
 
-De volgende uitvoer wordt weer gegeven.
+The following output appears.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ De volgende uitvoer wordt weer gegeven.
     Name[0]: notepad
     ```
 
-- Maak nu de volgende vermelding om alle processen te stoppen die overeenkomen met het Joker teken * Note @ no__t-0. U wordt gevraagd om elk proces dat overeenkomt met het patroon te stoppen.
+- Now make the following entry to stop all processes that match the wildcard pattern "*note\*". You are prompted before stopping each process that matches the pattern.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-De volgende uitvoer wordt weer gegeven.
+The following output appears.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-De volgende uitvoer wordt weer gegeven.
+The following output appears.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-De volgende uitvoer wordt weer gegeven.
+The following output appears.
 
     ```
     Confirm
@@ -211,14 +211,14 @@ De volgende uitvoer wordt weer gegeven.
 
 ## <a name="see-also"></a>Zie ook
 
-[Een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)
+[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Een Windows Power shell-cmdlet maken](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Object typen en-opmaak uitbreiden](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
-[Ondersteuning voor joker tekens in cmdlet-para meters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
+[Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

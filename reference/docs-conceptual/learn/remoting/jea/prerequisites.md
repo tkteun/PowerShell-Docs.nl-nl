@@ -1,22 +1,22 @@
 ---
 ms.date: 07/10/2019
-keywords: JEA, Power shell, beveiliging
-title: Vereisten voor JEA
-ms.openlocfilehash: 8fca5c068412e86acfdb8bed400699f721b76191
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+keywords: jea,powershell,security
+title: JEA Prerequisites
+ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017935"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416724"
 ---
 # <a name="prerequisites"></a>Vereisten
 
-Net genoeg beheer is een functie die is opgenomen in Power shell 5,0 en hoger. In dit artikel worden de vereisten beschreven waaraan moet worden voldaan om JEA te kunnen gebruiken.
+Just Enough Administration is a feature included in PowerShell 5.0 and higher. This article describes the prerequisites that must be satisfied to start using JEA.
 
 
-## <a name="check-which-version-of-powershell-is-installed"></a>Controleren welke versie van Power shell is geïnstalleerd
+## <a name="check-which-version-of-powershell-is-installed"></a>Check which version of PowerShell is installed
 
-Als u wilt controleren welke versie van Power shell op uw systeem is geïnstalleerd `$PSVersionTable` , controleert u de variabele in een Windows Power shell-prompt.
+To check which version of PowerShell is installed on your system, check the `$PSVersionTable` variable in a Windows PowerShell prompt.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -28,82 +28,82 @@ Major  Minor  Build  Revision
 5      1      14393  1000
 ```
 
-JEA is beschikbaar met Power shell 5,0 en hoger. Voor volledige functionaliteit is het raadzaam om de meest recente versie van Power shell te installeren die beschikbaar is voor uw systeem. In de volgende tabel wordt de beschik baarheid van JEA op Windows Server beschreven:
+JEA is available with PowerShell 5.0 and higher. For full functionality, it's recommended that you install the latest version of PowerShell available for your system. The following table describes JEA's availability on Windows Server:
 
-| Server-besturings systeem |                JEA-Beschik baarheid                |
+| Server Operating System |                JEA Availability                |
 | ----------------------- | ---------------------------------------------- |
-| Windows Server 2016 +    | Vooraf geïnstalleerd                                   |
-| Windows Server 2012 R2  | Volledige functionaliteit met WMF 5,1                |
-| Windows Server 2012     | Volledige functionaliteit met WMF 5,1                |
-| Windows Server 2008 R2  | Verminderde functionaliteit<sup>1</sup> met WMF 5,1 |
+| Windows Server 2016+    | Preinstalled                                   |
+| Windows Server 2012 R2  | Full functionality with WMF 5.1                |
+| Windows Server 2012     | Full functionality with WMF 5.1                |
+| Windows Server 2008 R2  | Reduced functionality<sup>1</sup> with WMF 5.1 |
 
-U kunt JEA ook gebruiken op uw computer thuis of op het werk:
+You can also use JEA on your home or work computer:
 
-| Besturings systeem van client |                   JEA-Beschik baarheid                   |
+| Client Operating System |                   JEA Availability                   |
 | ----------------------- | ---------------------------------------------------- |
-| Windows 10 1607+        | Vooraf geïnstalleerd                                         |
-| Windows 10 1603, 1511   | Vooraf geïnstalleerd, met beperkte functionaliteit<sup>2</sup> |
+| Windows 10 1607+        | Preinstalled                                         |
+| Windows 10 1603, 1511   | Preinstalled, with reduced functionality<sup>2</sup> |
 | Windows 10 1507         | Niet beschikbaar                                        |
-| Windows 8, 8.1          | Volledige functionaliteit met WMF 5,1                      |
-| Windows 7               | Verminderde functionaliteit<sup>1</sup> met WMF 5,1       |
+| Windows 8, 8.1          | Full functionality with WMF 5.1                      |
+| Windows 7               | Reduced functionality<sup>1</sup> with WMF 5.1       |
 
-- <sup>1</sup> JEA kan niet worden geconfigureerd voor het gebruik van door groepen beheerde service accounts in windows server 2008 R2 of Windows 7. Virtuele accounts en andere JEA-functies *worden* ondersteund.
+- <sup>1</sup> JEA can't be configured to use group-managed service accounts on Windows Server 2008 R2 or Windows 7. Virtual accounts and other JEA features *are* supported.
 
-- <sup>2</sup> de volgende JEA-functies worden niet ondersteund in Windows 10 versie 1511 en 1603:
+- <sup>2</sup> The following JEA features aren't supported on Windows 10 versions 1511 and 1603:
 
-  - Uitvoeren als een door een groep beheerd service account
-  - Regels voor voorwaardelijke toegang in sessie configuraties
-  - Het gebruikers station
-  - Toegang verlenen tot lokale gebruikers accounts
+  - Running as a group-managed service account
+  - Conditional access rules in session configurations
+  - The user drive
+  - Granting access to local user accounts
 
-  Als u ondersteuning voor deze functies wilt, werkt u Windows bij naar versie 1607 (jubileum update) of hoger.
+  To get support for these features, update Windows to version 1607 (Anniversary Update) or higher.
 
-### <a name="install-windows-management-framework"></a>Windows Management Framework installeren
+### <a name="install-windows-management-framework"></a>Install Windows Management Framework
 
-Als u een oudere versie van Power shell gebruikt, moet u mogelijk uw systeem bijwerken met de meest recente Windows Management Framework (WMF)-update. Raadpleeg de [WMF-documentatie](/powershell/wmf/overview)voor meer informatie.
+If you're running an older version of PowerShell, you may need to update your system with the latest Windows Management Framework (WMF) update. For more information, see the [WMF documentation](/powershell/scripting/wmf/overview).
 
-Het is raadzaam om de compatibiliteit van uw werk belasting met WMF te testen voordat u de upgrade van alle servers uitvoert.
+It's recommended that you test your workload's compatibility with WMF before upgrading all of your servers.
 
-Windows 10-gebruikers moeten de nieuwste functie-updates installeren om de huidige versie van Windows Power shell te verkrijgen.
+Windows 10 users should install the latest feature updates to obtain the current version of Windows PowerShell.
 
-## <a name="enable-powershell-remoting"></a>Externe communicatie met Power shell inschakelen
+## <a name="enable-powershell-remoting"></a>Enable PowerShell Remoting
 
-Externe communicatie met Power shell biedt de basis waarop JEA is gebouwd. Het is nood zakelijk om ervoor te zorgen dat externe communicatie van Power shell is ingeschakeld en goed wordt beveiligd voordat u JEA kunt gebruiken. Zie [WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity)(Engelstalig) voor meer informatie.
+PowerShell Remoting provides the foundation on which JEA is built. It's necessary to ensure PowerShell Remoting is enabled and properly secured before you can use JEA. For more information, see [WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity).
 
-Externe communicatie van Power shell is standaard ingeschakeld op Windows Server 2012, 2012 R2 en 2016. U kunt externe communicatie van Power shell inschakelen door de volgende opdracht uit te voeren in een Power shell-venster met verhoogde bevoegdheden.
+PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016. You can enable PowerShell Remoting by running the following command in an elevated PowerShell window.
 
 ```powershell
 Enable-PSRemoting
 ```
 
-## <a name="enable-powershell-module-and-script-block-logging-optional"></a>Power shell-module en logboek registratie van script blokken inschakelen (optioneel)
+## <a name="enable-powershell-module-and-script-block-logging-optional"></a>Enable PowerShell module and script block logging (optional)
 
-Met de volgende stappen kunt u logboek registratie inschakelen voor alle Power shell-acties op uw systeem. Logboek registratie van de Power shell-module is niet vereist voor JEA, maar het is raadzaam om logboek registratie in te scha kelen om ervoor te zorgen dat de opdrachten die gebruikers uitvoeren, worden geregistreerd op een centrale locatie.
+The following steps enable logging for all PowerShell actions on your system. PowerShell Module Logging isn't required for JEA, however it's recommended you turn on logging to ensure the commands users run are logged in a central location.
 
-U kunt het beleid voor logboek registratie van Power shell-modules configureren met behulp van groepsbeleid.
+You can configure the PowerShell Module Logging policy using Group Policy.
 
-1. Open de Lokale groepsbeleidsobjecteditor op een werk station of een groepsbeleid-object in de console Groepsbeleidbeheer op een Active Directory-domein controller
-2. Navigeren naar **computer configuratie\\Beheersjablonen\\Windows-\\onderdelen Windows Power shell**
-3. Dubbel klik op **inschakelen logboek registratie** van de module
-4. Klik op **ingeschakeld**
-5. Klik in de sectie opties op **weer geven** naast module namen
-6. Typ `*` in het pop-upvenster om opdrachten van alle modules te registreren.
-7. Klik op **OK** om het beleid in te stellen
-8. Dubbel klik op **inschakelen logboek registratie van Power shell-script blokken**
-9. Klik op **ingeschakeld**
-10. Klik op **OK** om het beleid in te stellen
-11. (Alleen op computers die lid zijn van een domein) Uitvoeren `gpupdate` of wachten tot Groepsbeleid het bijgewerkte beleid verwerkt en de instellingen toepast
+1. Open the Local Group Policy Editor on a workstation or a Group Policy Object in the Group Policy Management Console on an Active Directory Domain Controller
+2. Navigate to **Computer Configuration\\Administrative Templates\\Windows Components\\Windows PowerShell**
+3. Double-click on **Turn on Module Logging**
+4. Click **Enabled**
+5. In the Options section, click on **Show** next to Module Names
+6. Type `*` in the pop-up window to log commands from all modules.
+7. Click **OK** to set the policy
+8. Double-click on **Turn on PowerShell Script Block Logging**
+9. Click **Enabled**
+10. Click **OK** to set the policy
+11. (On domain-joined machines only) Run `gpupdate` or wait for Group Policy to process the updated policy and apply the settings
 
-U kunt ook de systeembrede Power shell-transcriptie inschakelen via groepsbeleid.
+You can also enable system-wide PowerShell transcription through Group Policy.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Een functie-mogelijkheidsprofiel maken](role-capabilities.md)
+[Create a role capability file](role-capabilities.md)
 
-[Een configuratie bestand voor de sessie maken](session-configurations.md)
+[Create a session configuration file](session-configurations.md)
 
 ## <a name="see-also"></a>Zie ook
 
-[WinRM-beveiliging](/powershell/scripting/learn/remoting/winrmsecurity)
+[WinRM Security](/powershell/scripting/learn/remoting/winrmsecurity)
 
-[Power shell ♥ het blauwe team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

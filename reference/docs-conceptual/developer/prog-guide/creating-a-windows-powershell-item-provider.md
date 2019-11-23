@@ -1,5 +1,5 @@
 ---
-title: Een Windows Power shell-item provider maken | Microsoft Docs
+title: Creating a Windows PowerShell Item Provider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,246 +11,246 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a2d0f2b435b4b56ac491804f3af695641449e17a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72352764"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417486"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
-In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee u de gegevens in een gegevens archief kunt bewerken. In dit onderwerp worden de elementen van de gegevens in de Store aangeduid als de "items" van het gegevens archief. Als gevolg hiervan wordt een provider die de gegevens in de Store kan bewerken, een Windows Power shell-item provider genoemd.
+This topic describes how to create a Windows PowerShell provider that can manipulate the data in a data store. In this topic, the elements of data in the store are referred to as the "items" of the data store. As a consequence, a provider that can manipulate the data in the store is referred to as a Windows PowerShell item provider.
 
 > [!NOTE]
-> U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<PowerShell-voor beelden >** map.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-De Windows Power shell-item provider die in dit onderwerp wordt beschreven, haalt gegevens op uit een Access-Data Base. In dit geval is een ' item ' een tabel in de Access-Data Base of een rij in een tabel.
+The Windows PowerShell item provider described in this topic gets items of data from an Access database. In this case, an "item" is either a table in the Access database or a row in a table.
 
-## <a name="defining-the-windows-powershell-item-provider-class"></a>De klasse van de Windows Power shell-item provider definiëren
+## <a name="defining-the-windows-powershell-item-provider-class"></a>Defining the Windows PowerShell Item Provider Class
 
-Een Windows Power shell-item provider moet een .NET-klasse definiëren die is afgeleid van de basis klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Hier volgt de klassedefinitie voor de item provider die in deze sectie wordt beschreven.
+A Windows PowerShell item provider must define a .NET class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. The following is the class definition for the item provider described in this section.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
 
-Houd er rekening mee dat in deze klassedefinitie het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) twee para meters bevat. De eerste para meter geeft u een beschrijvende naam op voor de provider die wordt gebruikt door Windows Power shell. Met de tweede para meter geeft u de specifieke Windows Power shell-mogelijkheden op die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens het verwerken van opdrachten. Voor deze provider zijn er geen specifieke Windows Power shell-functies toegevoegd.
+Note that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no added Windows PowerShell specific capabilities.
 
-## <a name="defining-base-functionality"></a>Basis functionaliteit definiëren
+## <a name="defining-base-functionality"></a>Defining Base Functionality
 
-Zoals beschreven in het [ontwerp van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) afgeleid van verschillende andere klassen die een andere provider functionaliteit hebben verschaft. Een Windows Power shell-item provider moet daarom alle functionaliteit definiëren die door deze klassen wordt opgegeven.
+As described in [Design Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class derives from several other classes that provided different provider functionality. A Windows PowerShell item provider, therefore, must define all of the functionality provided by those classes.
 
-Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor meer informatie over het implementeren van functionaliteit voor het toevoegen van sessie-specifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers, met inbegrip van de hier beschreven provider, kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit van Windows Power shell.
+For more information about how to implement functionality for adding session-specific initialization information and for releasing resources used by the provider, see [Creating a Basic Windows PowerShell Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers, including the provider described here, can use the default implementation of this functionality that is provided by Windows PowerShell.
 
-Voordat de Windows Power shell-item provider de items in de Store kan bewerken, moeten de methoden van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) worden geïmplementeerd om toegang te krijgen tot het gegevens archief. Zie [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)voor meer informatie over het implementeren van deze klasse.
+Before the Windows PowerShell item provider can manipulate the items in the store, it must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class to access to the data store. For more information about implementing this class, see [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
-## <a name="checking-for-path-validity"></a>Geldigheid van pad controleren
+## <a name="checking-for-path-validity"></a>Checking for Path Validity
 
-Wanneer u op zoek bent naar een gegevens item, verzorgt de Windows Power shell-runtime een Windows Power shell-pad naar de provider, zoals gedefinieerd in de sectie ' PSPath-concepten ' van de werking van [Windows Power shell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Een Windows Power shell-item provider moet de syntaxis en de semantische geldigheid van alle door gegeven paden controleren door de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Deze methode retourneert `true` als het pad geldig is en `false` anders. Houd er rekening mee dat de implementatie van deze methode het bestaan van het item op het pad niet mag controleren, maar alleen dat het pad syntactisch en correct is.
+When looking for an item of data, the Windows PowerShell runtime furnishes a Windows PowerShell path to the provider, as defined in the "PSPath Concepts" section of [How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). An Windows PowerShell item provider must verify the syntactic and semantic validity of any path passed to it by implementing the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method. This method returns `true` if the path is valid, and `false` otherwise. Be aware that the implementation of this method should not verify the existence of the item at the path, but only that the path is syntactically and semantically correct.
 
-Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) voor deze provider. Houd er rekening mee dat deze implementatie een NormalizePath-hulp methode aanroept om alle scheidings tekens in het pad naar een uniforme te converteren.
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method for this provider. Note that this implementation calls a NormalizePath helper method to convert all separators in the path to a uniform one.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
 
-## <a name="determining-if-an-item-exists"></a>Bepalen of een item bestaat
+## <a name="determining-if-an-item-exists"></a>Determining if an Item Exists
 
-Nadat het pad is geverifieerd, moet de Windows Power shell-runtime bepalen of er een gegevens item op dat pad bestaat. Ter ondersteuning van dit type query implementeert de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) . Deze methode retourneert `true` een item is gevonden op het opgegeven pad en `false` (standaard).
+After verifying the path, the Windows PowerShell runtime must determine if an item of data exists at that path. To support this type of query, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method. This method returns `true` an item is found at the specified path and `false` (default) otherwise.
 
-Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) voor deze provider. Houd er rekening mee dat deze methode de PathIsDrive-, ChunkPath-en getter-helper-methoden aanroept en gebruikmaakt van een door de provider gedefinieerd DatabaseTableInfo-object.
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method for this provider. Note that this method calls the PathIsDrive, ChunkPath, and GetTable helper methods, and uses a provider defined DatabaseTableInfo object.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-itemexists"></a>Wat u moet weten over implementatie van ItemExists
+#### <a name="things-to-remember-about-implementing-itemexists"></a>Things to Remember About Implementing ItemExists
 
-De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
 
-- Bij het definiëren van de provider klasse kan een Windows Power shell-item provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method must ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- De implementatie van deze methode moet elke vorm van toegang tot het item afhandelen waardoor het item zichtbaar voor de gebruiker kan worden gemaakt. Bijvoorbeeld, als een gebruiker schrijf toegang heeft tot een bestand via de bestandssysteem provider (geleverd door Windows Power shell), maar geen lees toegang, het bestand nog bestaat en [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) retourneert @no__ t-1. Voor uw implementatie moet mogelijk een bovenliggend item worden gecontroleerd om te zien of het onderliggende item kan worden geïnventariseerd.
+- The implementation of this method should handle any form of access to the item that might make the item visible to the user. For example, if a user has write access to a file through the FileSystem provider (supplied by Windows PowerShell), but not read access, the file still exists and [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) returns `true`. Your implementation might require checking a parent item to see if the child item can be enumerated.
 
-## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Dynamische para meters aan de cmdlet test-Path koppelen
+## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Attaching Dynamic Parameters to the Test-Path Cmdlet
 
-Soms is het `Test-Path`-cmdlet dat [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) aanroept, extra para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexistsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Test-Path`-cmdlet.
+Sometimes the `Test-Path` cmdlet that calls [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Test-Path` cmdlet.
 
-Deze Windows Power shell-item provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This Windows PowerShell item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovideritemexistdynamicparameters](Msh_samplestestcmdlets#testprovideritemexistdynamicparameters)]  -->
 
-## <a name="retrieving-an-item"></a>Een item ophalen
+## <a name="retrieving-an-item"></a>Retrieving an Item
 
-Voor het ophalen van een item moet de provider van Windows Power shell-items [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) overschrijven om aanroepen van de cmdlet `Get-Item` te ondersteunen. Met deze methode schrijft u het item met behulp van de methode [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .
+To retrieve an item, the Windows PowerShell item provider must override [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method to support calls from the `Get-Item` cmdlet. This method writes the item using the [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method.
 
-Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) voor deze provider. Houd er rekening mee dat met deze methode de methoden Gette en GetRow worden gebruikt voor het ophalen van items die bestaan uit tabellen in de Access-Data Base of rijen in een gegevens tabel.
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for this provider. Note that this method uses the GetTable and GetRow helper methods to retrieve items that are either tables in the Access database or rows in a data table.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-getitem"></a>Wat u moet weten over implementatie van GetItem
+#### <a name="things-to-remember-about-implementing-getitem"></a>Things to Remember About Implementing GetItem
 
-De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
 
-- Bij het definiëren van de provider klasse kan een Windows Power shell-item provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan deze vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- Standaard moeten onderdrukkingen van deze methode geen objecten ophalen die doorgaans verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Bijvoorbeeld, de methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) voor de File System-Provider controleert de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) voordat deze probeert aan te roepen [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) voor verborgen of systeem bestanden.
+- By default, overrides of this method should not retrieve objects that are generally hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for the FileSystem provider checks the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property before it attempts to call [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) for hidden or system files.
 
-## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Dynamische para meters aan de Get-item-cmdlet koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Attaching Dynamic Parameters to the Get-Item Cmdlet
 
-Soms vereist de `Get-Item`-cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Get-Item`-cmdlet.
+Sometimes the `Get-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Get-Item` cmdlet.
 
-Deze provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetitemdynamicparameters](Msh_samplestestcmdlets#testprovidergetitemdynamicparameters)]  -->
 
-## <a name="setting-an-item"></a>Een item instellen
+## <a name="setting-an-item"></a>Setting an Item
 
-Voor het instellen van een item moet de provider van Windows Power shell-items de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) overschrijven om aanroepen van de cmdlet `Set-Item` te ondersteunen. Met deze methode wordt de waarde van het item ingesteld op het opgegeven pad.
+To set an item, the Windows PowerShell item provider must override the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method to support calls from the `Set-Item` cmdlet. This method sets the value of the item at the specified path.
 
-Deze provider biedt geen onderdrukking voor de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) . Het volgende is echter de standaard implementatie van deze methode.
+This provider does not provide an override for the  [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method. However, the following is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-setitem"></a>Wat u moet weten over implementatie van SetItem
+#### <a name="things-to-remember-about-implementing-setitem"></a>Things to Remember About Implementing SetItem
 
-De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
 
-- Bij het definiëren van de provider klasse kan een Windows Power shell-item provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan deze vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- Standaard moeten onderdrukkingen van deze methode geen objecten instellen of schrijven die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden verzonden naar de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) als het pad een verborgen item en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents a hidden item and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Uw implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat u eventuele wijzigingen in het gegevens archief. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in het gegevens archief, bijvoorbeeld het verwijderen van bestanden. De methode [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen in bepalen wat er moet worden weer gegeven.
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command-line settings or preference variables in determining what should be displayed.
 
-  Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, moet de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) worden aangeroepen [ Methode System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om te controleren of de bewerking moet worden voortgezet. De aanroep van [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) biedt een extra controle op mogelijk schadelijke systeem wijzigingen.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
-## <a name="retrieving-dynamic-parameters-for-setitem"></a>Dynamische para meters ophalen voor SetItem
+## <a name="retrieving-dynamic-parameters-for-setitem"></a>Retrieving Dynamic Parameters for SetItem
 
-Soms vereist de `Set-Item`-cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Set-Item`-cmdlet.
+Sometimes the `Set-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Set-Item` cmdlet.
 
-Deze provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitemdynamicparameters](Msh_samplestestcmdlets#testprovidersetitemdynamicparameters)]  -->
 
-## <a name="clearing-an-item"></a>Een item wissen
+## <a name="clearing-an-item"></a>Clearing an Item
 
-Als u een item wilt wissen, implementeert de provider van Windows Power shell-items de methode [System. Management. Automation. provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) ter ondersteuning van aanroepen van de cmdlet `Clear-Item`. Met deze methode wordt het gegevens item op het opgegeven pad gewist.
+To clear an item, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) method to support calls from the `Clear-Item` cmdlet. This method erases the data item at the specified path.
 
-Deze provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitem](Msh_samplestestcmdlets#testproviderclearitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-clearitem"></a>Wat u moet weten over implementatie van ClearItem
+#### <a name="things-to-remember-about-implementing-clearitem"></a>Things to Remember About Implementing ClearItem
 
-De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
 
-- Bij het definiëren van de provider klasse kan een Windows Power shell-item provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van [System. Management. Automation. provider. Itemcmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan deze vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- Standaard moeten onderdrukkingen van deze methode geen objecten instellen of schrijven die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden verzonden naar de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) als het pad een item vertegenwoordigt dat verborgen is voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- Uw implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat u eventuele wijzigingen in het gegevens archief. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in het gegevens archief, bijvoorbeeld het verwijderen van bestanden. De methode [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime en verwerkt alle opdracht regel instellingen of voorkeurs variabelen in bepalen wat er moet worden weer gegeven.
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handle any command-line settings or preference variables in determining what should be displayed.
 
-  Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, moet de methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) worden aangeroepen [ Methode System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om te controleren of de bewerking moet worden voortgezet. De aanroep van [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) biedt een extra controle op mogelijk schadelijke systeem wijzigingen.
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
-## <a name="retrieve-dynamic-parameters-for-clearitem"></a>Dynamische para meters ophalen voor ClearItem
+## <a name="retrieve-dynamic-parameters-for-clearitem"></a>Retrieve Dynamic Parameters for ClearItem
 
-Soms vereist de `Clear-Item`-cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Clear-Item`-cmdlet.
+Sometimes the `Clear-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Clear-Item` cmdlet.
 
-Deze item provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitemdynamicparameters](Msh_samplestestcmdlets#testproviderclearitemdynamicparameters)]  -->
 
-## <a name="performing-a-default-action-for-an-item"></a>Een standaard actie voor een item uitvoeren
+## <a name="performing-a-default-action-for-an-item"></a>Performing a Default Action for an Item
 
-Een Windows Power shell-item provider kan de methode [System. Management. Automation. provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) implementeren ter ondersteuning van aanroepen van de cmdlet `Invoke-Item`, waardoor de provider een standaard actie kan uitvoeren voor de item op het opgegeven pad. De File System Provider kan deze methode bijvoorbeeld gebruiken om ShellExecute aan te roepen voor een specifiek item.
+A Windows PowerShell item provider can implement the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) method to support calls from the `Invoke-Item` cmdlet, which allows the provider to perform a default action for the item at the specified path. For example, the FileSystem provider might use this method to call ShellExecute for a specific item.
 
-Deze provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultaction](Msh_samplestestcmdlets#testproviderinvokedefaultaction)]  -->
 
-#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>Wat u moet weten over implementatie van InvokeDefaultAction
+#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>Things to Remember About Implementing InvokeDefaultAction
 
-De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
 
-- Bij het definiëren van de provider klasse kan een Windows Power shell-item provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van [System. Management. Automation. provider. Itemcmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan deze vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- Standaard moeten onderdrukkingen van deze methode geen objecten instellen of schrijven die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden verzonden naar de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) als het pad een item vertegenwoordigt dat verborgen is voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
+- By default, overrides of this method should not set or write objects hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>Dynamische para meters ophalen voor InvokeDefaultAction
+## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>Retrieve Dynamic Parameters for InvokeDefaultAction
 
-Soms vereist de `Invoke-Item`-cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of [System. Management. Automation. Runtimedefinedparameterdictionary ](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)object. Windows Power shell runtime maakt gebruik van het geretourneerde object om de dynamische para meters toe te voegen aan de `Invoke-Item`-cmdlet.
+Sometimes the `Invoke-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the dynamic parameters to the `Invoke-Item` cmdlet.
 
-Deze item provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van deze methode.
+This item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters](Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters)]  -->
 
-## <a name="implementing-helper-methods-and-classes"></a>Hulp methoden en klassen implementeren
+## <a name="implementing-helper-methods-and-classes"></a>Implementing Helper Methods and Classes
 
-Deze item provider implementeert diverse hulp methoden en klassen die worden gebruikt door de open bare onderdrukkings methoden die zijn gedefinieerd door Windows Power shell. De code voor deze Help-methoden en-klassen wordt weer gegeven in de sectie voor [beeld van code](#code-sample) .
+This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#code-sample) section.
 
-### <a name="normalizepath-method"></a>Methode NormalizePath
+### <a name="normalizepath-method"></a>NormalizePath Method
 
-Deze item provider implementeert een NormalizePath-hulp methode om ervoor te zorgen dat het pad een consistente indeling heeft. De opgegeven notatie maakt gebruik van een back slash (@no__t 0) als scheidings teken.
+This item provider implements a NormalizePath helper method to ensure that the path has a consistent format. The format specified uses a backslash (\\) as a separator.
 
-### <a name="pathisdrive-method"></a>Methode PathIsDrive
+### <a name="pathisdrive-method"></a>PathIsDrive Method
 
-Deze item provider implementeert een PathIsDrive-hulp methode om te bepalen of het opgegeven pad in feite de naam van het station is.
+This item provider implements a PathIsDrive helper method to determine if the specified path is actually the drive name.
 
-### <a name="chunkpath-method"></a>Methode ChunkPath
+### <a name="chunkpath-method"></a>ChunkPath Method
 
-Deze item provider implementeert een ChunkPath-hulp methode die het opgegeven pad opsplitst, zodat de provider de afzonderlijke elementen kan identificeren. Er wordt een matrix geretourneerd die bestaat uit de elementen Path.
+This item provider implements a ChunkPath helper method that breaks up the specified path so that the provider can identify its individual elements. It returns an array composed of the path elements.
 
-### <a name="gettable-method"></a>GetTable-methode
+### <a name="gettable-method"></a>GetTable Method
 
-Deze item provider implementeert de GetTables-hulp methode die een DatabaseTableInfo-object retourneert dat informatie bevat over de tabel die is opgegeven in de aanroep.
+This item provider implements the GetTables helper method that returns a DatabaseTableInfo object that represents information about the table specified in the call.
 
-### <a name="getrow-method"></a>Methode GetRow
+### <a name="getrow-method"></a>GetRow Method
 
-De methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) van deze item provider roept de GetRows-helper-methode aan. Deze helper-methode haalt een DatabaseRowInfo-object op dat informatie bevat over de opgegeven rij in de tabel.
+The [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method of this item provider calls the GetRows helper method. This helper method retrieves a DatabaseRowInfo object that represents information about the specified row in the table.
 
-### <a name="databasetableinfo-class"></a>Klasse DatabaseTableInfo
+### <a name="databasetableinfo-class"></a>DatabaseTableInfo Class
 
-Deze item provider definieert een DatabaseTableInfo-klasse die een verzameling gegevens in een gegevens tabel in de data base vertegenwoordigt. Deze klasse is vergelijkbaar met de klasse [System. io. Directoryinfo](/dotnet/api/System.IO.DirectoryInfo) .
+This item provider defines a DatabaseTableInfo class that represents a collection of information in a data table in the database. This class is similar to the [System.IO.Directoryinfo](/dotnet/api/System.IO.DirectoryInfo) class.
 
-De provider van het voorbeeld item definieert een DatabaseTableInfo. GetTables-methode die een verzameling tabel gegevens objecten retourneert die de tabellen in de data base definiëren. Deze methode bevat een try/catch-blok om ervoor te zorgen dat een database fout wordt weer gegeven als een rij met nul vermeldingen.
+The sample item provider defines a DatabaseTableInfo.GetTables method that returns a collection of table information objects defining the tables in the database. This method includes a try/catch block to ensure that any database error shows up as a row with zero entries.
 
-### <a name="databaserowinfo-class"></a>Klasse DatabaseRowInfo
+### <a name="databaserowinfo-class"></a>DatabaseRowInfo Class
 
-Deze item provider definieert de DatabaseRowInfo helper-klasse die een rij in een tabel van de data base vertegenwoordigt. Deze klasse is vergelijkbaar met de klasse [System. io. file info](/dotnet/api/System.IO.FileInfo) .
+This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) class.
 
-De voorbeeld provider definieert een DatabaseRowInfo. GetRows-methode voor het retour neren van een verzameling rij-informatie objecten voor de opgegeven tabel. Deze methode bevat een try/catch-blok om uitzonde ringen te onderscheppen. Eventuele fouten leiden tot geen informatie over de rij.
+The sample provider defines a DatabaseRowInfo.GetRows method to return a collection of row information objects for the specified table. This method includes a try/catch block to trap exceptions. Any errors will result in no row information.
 
-## <a name="code-sample"></a>Code voorbeeld
+## <a name="code-sample"></a>Code Sample
 
-Zie [AccessDbProviderSample03 code sample](./accessdbprovidersample03-code-sample.md)voor een volledige voorbeeld code.
+For complete sample code, see [AccessDbProviderSample03 Code Sample](./accessdbprovidersample03-code-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer u klaar bent, maakt u een bestands typen bestand dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie voor meer informatie over het [uitbreiden van object typen en-opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+When writing a provider, it may be necessary to add members to existing objects or define new objects. When finished, create a Types file that Windows PowerShell can use to identify the members of the object and a Format file that defines how the object is displayed. For more information about , see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
+## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
 
-Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
+## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell provider
 
-Wanneer deze Windows Power shell-item provider is geregistreerd bij Windows Power shell, kunt u alleen de basis-en schijf functionaliteit van de provider testen. Als u de bewerking van items wilt testen, moet u ook de container functionaliteit implementeren die wordt beschreven in [een container Windows Power shell-provider implementeren](./creating-a-windows-powershell-container-provider.md).
+When this Windows PowerShell item provider is registered with Windows PowerShell, you can only test the basic and drive functionality of the provider. To test the manipulation of items, you must also implement container functionality described in [Implementing a Container Windows PowerShell Provider](./creating-a-windows-powershell-container-provider.md).
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell-providers maken](./how-to-create-a-windows-powershell-provider.md)
+[Creating Windows PowerShell Providers](./how-to-create-a-windows-powershell-provider.md)
 
-[Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
+[Designing Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Hoe Windows Power shell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
-[Een container Windows Power shell-provider maken](./creating-a-windows-powershell-container-provider.md)
+[Creating a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
 
-[Een Windows Power shell-provider station maken](./creating-a-windows-powershell-drive-provider.md)
+[Creating a Drive Windows PowerShell provider](./creating-a-windows-powershell-drive-provider.md)
 
-[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
