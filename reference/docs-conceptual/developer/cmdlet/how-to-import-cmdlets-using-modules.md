@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u cmdlets importeert in een Power shell-sess
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. Zorg ervoor dat de omgevings variabele @no__t 0 het pad naar de nieuwe module map bevat. Standaard is de systeemmap al toegevoegd aan de omgevings variabele `PSModulePath`. Als u de `PSModulePath` wilt weer geven, typt u: `$env:PSModulePath`.
+1. Zorg ervoor dat de variabele `PSModulePath` omgeving het pad naar de nieuwe module map bevat. Standaard wordt de systeemmap al toegevoegd aan de omgevings variabele `PSModulePath`. Als u de `PSModulePath`wilt weer geven, typt u: `$env:PSModulePath`.
 
 1. Kopieer de cmdlet-assembly naar de module map.
 

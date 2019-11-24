@@ -37,7 +37,7 @@ Voordat u begint met het coderen van de XML voor het syntaxis diagram in het Hel
 
   - Indien waar (ByValue), kunt u invoer door sluizen naar de para meter. De invoer is gekoppeld aan (' gebonden aan ') de para meter, zelfs als de naam van de eigenschap en het object type niet overeenkomen met het verwachte type. De Windows Power shell? onderdelen voor parameter binding proberen de invoer te converteren naar het juiste type en de opdracht wordt alleen uitgevoerd als het type niet kan worden geconverteerd. Er kan slechts één para meter in een parameterset worden gekoppeld door een waarde.
 
-  - Indien waar (ByPropertyName), kunt u invoer door sluizen naar de para meter. De invoer wordt echter alleen gekoppeld aan de para meter als de parameter naam overeenkomt met de naam van een eigenschap van het invoer object. Als de parameter naam bijvoorbeeld `Path` is, worden objecten die naar de cmdlet zijn geleid, alleen aan die para meter gekoppeld wanneer het object een eigenschap met de naam pad heeft.
+  - Indien waar (ByPropertyName), kunt u invoer door sluizen naar de para meter. De invoer wordt echter alleen gekoppeld aan de para meter als de parameter naam overeenkomt met de naam van een eigenschap van het invoer object. Als de parameter naam bijvoorbeeld is `Path`, worden objecten die naar de cmdlet zijn geleid, alleen aan die para meter gekoppeld wanneer het object een eigenschap met de naam pad heeft.
 
   - Indien waar (ByValue, ByPropertyName), kunt u de invoer van een pipe naar de para meter door geven door de naam van de eigenschap of de waarde. Er kan slechts één para meter in een parameterset worden gekoppeld door een waarde.
 
@@ -90,7 +90,7 @@ Normaal gesp roken zijn parameter waarden die tijdelijke aanduidingen zijn verei
 
    Zorg ervoor dat u de WhatIf en de para meters bevestigt als de cmdlet ShouldProcess ondersteunt.
 
-   Vermeld de algemene para meters (zoals uitgebreid, fout opsporing en error Action) niet in uw syntaxis diagram. De `Get-Help`-cmdlet voegt deze informatie voor u toe wanneer het Help-onderwerp wordt weer gegeven.
+   Vermeld de algemene para meters (zoals uitgebreid, fout opsporing en error Action) niet in uw syntaxis diagram. Met de cmdlet `Get-Help` wordt deze informatie voor u toegevoegd wanneer het Help-onderwerp wordt weer gegeven.
 
 3. Voeg de parameter waarden toe. In Windows Power shell? worden parameter waarden vertegenwoordigd door hun .NET-type. De type naam kan echter worden afgekort, zoals "teken reeks" voor System. String.
 
@@ -156,11 +156,11 @@ Normaal gesp roken zijn parameter waarden die tijdelijke aanduidingen zijn verei
 
 ## <a name="coding-the-syntax-diagram-xml"></a>De XML van het syntaxis diagram coderen
 
-Het syntaxis knooppunt van de XML begint direct na het knoop punt beschrijving, dat eindigt op de \<-maml: Description > tag. Zie voor meer informatie over het verzamelen van de gegevens die worden gebruikt in het syntaxis diagram [syntaxis gegevens verzamelen](#gathering-syntax-information).
+Het syntaxis knooppunt van de XML begint direct na het knoop punt beschrijving, dat eindigt op de \</maml: Description > tag. Zie voor meer informatie over het verzamelen van de gegevens die worden gebruikt in het syntaxis diagram [syntaxis gegevens verzamelen](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Een syntaxis knooppunt toevoegen
 
-Het syntaxis diagram dat in het Help-onderwerp van de cmdlet wordt weer gegeven, wordt gegenereerd op basis van de gegevens in het syntaxis knooppunt van de XML. Het syntaxis knooppunt bevindt zich in een paar als \<command: syntaxis > Tags. Met elke parameterset van de cmdlet, Inge sloten in een paar \<command: syntaxitem >-Tags. Er is geen limiet voor het aantal \<command: syntaxitem >-Tags dat u kunt toevoegen.
+Het syntaxis diagram dat in het Help-onderwerp van de cmdlet wordt weer gegeven, wordt gegenereerd op basis van de gegevens in het syntaxis knooppunt van de XML. Het syntaxis knooppunt bevindt zich in een paar als \<opdracht: syntaxis > Tags. Met elk van de para meters van de cmdlet, Inge sloten in een paar \<opdracht: syntaxitem > Tags. Er is geen limiet voor het aantal \<opdracht: syntaxitem > Tags die u kunt toevoegen.
 
 In het volgende voor beeld ziet u een syntaxis knooppunt met syntaxis item knooppunten voor twee parameter sets.
 
@@ -198,12 +198,12 @@ Het volgende voor beeld bevat een syntaxis knooppunt met syntaxis item knooppunt
 
 ### <a name="adding-parameters"></a>Para meters toevoegen
 
-Elke para meter die wordt toegevoegd aan het knoop punt syntaxis item, wordt opgegeven in een paar \<command: para meter > Tags. U hebt een paar \<command: para meter > Tags nodig voor elke para meter die is opgenomen in de parameterset, met uitzonde ring van de algemene para meters die worden geleverd door Windows Power shell?.
+Elke para meter die wordt toegevoegd aan het knoop punt syntaxis item, wordt opgegeven in een paar \<opdracht: para meter > Tags. U hebt een combi natie van \<opdracht: para meter > Tags voor elke para meter die is opgenomen in de parameterset, met uitzonde ring van de algemene para meters die worden geleverd door Windows Power shell?.
 
-De kenmerken van de 0command-code voor het openen van @no__t: para meter > bepalen hoe de para meter wordt weer gegeven in het syntaxis diagram. Zie [para meter Attributes](#parameter-attributes)(Engelstalig) voor meer informatie over parameter kenmerken.
+De kenmerken van de opdracht voor het openen van \<: para meter > tag bepalen hoe de para meter wordt weer gegeven in het syntaxis diagram. Zie [para meter Attributes](#parameter-attributes)(Engelstalig) voor meer informatie over parameter kenmerken.
 
 > [!NOTE]
-> De \<command: para meter >-tag ondersteunt een onderliggend element \<maml: Description > waarvan de inhoud nooit wordt weer gegeven. De parameter beschrijvingen worden opgegeven in het parameter knooppunt van de XML. Als u wilt voor komen dat de gegevens in het syntaxis-item bodes en het parameter knooppunt inconsistenties, laat u de (\<maml: Beschrijving > weg of laat u het leeg.
+> De \<opdracht: para meter > tag ondersteunt een onderliggend element \<maml: Beschrijving > waarvan de inhoud nooit wordt weer gegeven. De parameter beschrijvingen worden opgegeven in het parameter knooppunt van de XML. Als u inconsistenties wilt voor komen tussen de gegevens in het syntaxis-item bodes en het parameter knooppunt, laat u de (\<maml: Beschrijving > weg, of laat u het leeg.
 
 Het volgende voor beeld bevat een syntaxis item-knoop punt voor een parameterset met twee para meters.
 

@@ -38,13 +38,13 @@ class PswsTest_Process
 
 Elke eigenschaps naam wordt voorafgegaan door een gegevens type. De gegevens typen in dit voor beeld komen overeen met primitieve CLR-gegevens typen in de .NET Frameworks, maar eigenschappen kunnen ook verwijzingen naar andere bronnen of complexe typen zijn, die beide later worden beschreven.
 
-De kwalificatie `Key` geeft aan dat een eigenschap wordt gebruikt om een bron exemplaar uniek te identificeren. Een resource kan meer dan één sleutel hebben.
+De `Key` kwalificatie geeft aan dat een eigenschap wordt gebruikt om een resource-exemplaar uniek te identificeren. Een resource kan meer dan één sleutel hebben.
 
-De kwalificatie `Required` geeft aan dat de eigenschap vereist is. Als een eigenschap is gelabeld met de kwalificatie `Key`, wordt aangenomen dat deze vereist is en is de kwalificatie van het `Required` niet nodig.
+De `Required` kwalificatie geeft aan dat de eigenschap vereist is. Als een eigenschap is gelabeld met de `Key` kwalificatie, wordt aangenomen dat deze vereist is en is de `Required`-kwalificatie niet nodig.
 
 ### <a name="complex-data-types"></a>Complexe gegevens typen
 
-Eigenschappen van entiteiten kunnen complexe gegevens typen hebben. Complexe gegevens typen zijn typen die bestaan uit andere typen, vergelijkbaar met structs in de programmeer taal C. Een complex type wordt in het MOF-bestand gedeclareerd als een klasse met de kwalificatie `ComplexType`, zoals in het volgende voor beeld.
+Eigenschappen van entiteiten kunnen complexe gegevens typen hebben. Complexe gegevens typen zijn typen die bestaan uit andere typen, vergelijkbaar met structs in de programmeer taal C. Een complex type wordt in het MOF-bestand gedeclareerd als een klasse met de `ComplexType` kwalificatie, zoals in het volgende voor beeld.
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Als u een entiteit eigenschap wilt declareren als een complex type, declareert u deze als een `string`-type met de `EmbeddedInstance`-kwalificatie, met inbegrip van de naam van het complexe type. In het volgende voor beeld ziet u de declaratie van een eigenschap van het type @no__t 0 dat in het vorige voor beeld is gedeclareerd.
+Als u een entiteits eigenschap wilt declareren als een complex type, declareert u deze als een `string` type met de `EmbeddedInstance` kwalificatie, met inbegrip van de naam van het complexe type. In het volgende voor beeld ziet u de declaratie van een eigenschap van het `PswsTest_ProcessModule` type dat in het vorige voor beeld is gedeclareerd.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

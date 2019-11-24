@@ -29,7 +29,7 @@ Het Help-bestand voor C# een cmdlet moet een naam hebben voor de assembly waarin
 
 De indeling van de assembly naam is vereist, zelfs wanneer de assembly een geneste module is.
 
-Bijvoorbeeld, de [Get-Wine vent; PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is gedefinieerd in de assembly micro soft. Power shell. Diagnostics. dll. De `Get-Help`-cmdlet zoekt alleen naar een Help-onderwerp voor de cmdlet `Get-WinEvent` in het bestand micro soft. Power shell. Diagnostics. dll-Help. XML in de module directory.
+Bijvoorbeeld, de [Get-Wine vent; PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) cmdlet is gedefinieerd in de assembly micro soft. Power shell. Diagnostics. dll. De cmdlet `Get-Help` zoekt alleen naar een Help-onderwerp voor de cmdlet `Get-WinEvent` in het bestand micro soft. Power shell. Diagnostics. dll-Help. XML in de module directory.
 
 ## <a name="provider-help-files"></a>Help-bestanden voor providers
 
@@ -45,7 +45,7 @@ De certificaat provider wordt bijvoorbeeld gedefinieerd in de assembly micro sof
 
 ## <a name="function-help-files"></a>Help-bestanden voor functies
 
-Functies kunnen worden gedocumenteerd met behulp van [Help op basis van opmerkingen](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) of gedocumenteerd in een XML-Help-bestand. Wanneer de functie is gedocumenteerd in een XML-bestand, moet de functie een sleutel woord `.ExternalHelp` hebben dat de functie koppelt aan het XML-bestand. Anders kan de `Get-Help`-cmdlet het Help-bestand niet vinden.
+Functies kunnen worden gedocumenteerd met behulp van [Help op basis van opmerkingen](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) of gedocumenteerd in een XML-Help-bestand. Wanneer de functie is gedocumenteerd in een XML-bestand, moet de functie een `.ExternalHelp` Opmerking-tref woord hebben dat de functie koppelt aan het XML-bestand. Anders kan het Help-bestand niet worden gevonden met de `Get-Help`-cmdlet.
 
 Er zijn geen technische vereisten voor de naam van een functie Help-bestand. Een best practice heeft echter de naam van het Help-bestand voor de script module waarin de functie is gedefinieerd. De volgende functie wordt bijvoorbeeld gedefinieerd in het bestand MyModule. psm1.
 
@@ -62,7 +62,7 @@ Het Help-bestand voor een CIM-opdracht moet een naam hebben voor het CDXML-besta
 <FileName>.cdxml-help.xml
 ```
 
-CIM-opdrachten worden gedefinieerd in CDXML-bestanden die kunnen worden opgenomen in modules als geneste modules. Wanneer de CIM-opdracht in de sessie als een functie wordt geïmporteerd, wordt in Windows Power shell een sleutel woord met de @no__t 0 toegevoegd aan de functie definitie die de functie koppelt aan een XML-Help-bestand met de naam van het CDXML-bestand waarin de CIM-opdracht is gedefinieerd.
+CIM-opdrachten worden gedefinieerd in CDXML-bestanden die kunnen worden opgenomen in modules als geneste modules. Wanneer de CIM-opdracht in de sessie als een functie wordt geïmporteerd, wordt in Windows Power shell een `.ExternalHelp` opmerking toegevoegd als tref woord aan de functie definitie die de functie koppelt aan een XML Help-bestand met de naam van het CDXML-bestand waarin de CIM-opdracht is gedefinieerd.
 
 ## <a name="script-workflow-help-files"></a>Help-bestanden voor de script werk stroom
 
@@ -72,6 +72,6 @@ Script werk stromen die zijn opgenomen in modules kunnen worden gedocumenteerd i
 <ScriptModule>.psm1-help.xml
 ```
 
-In tegens telling tot andere script opdrachten, is voor script werk stromen geen sleutel woord `.ExternalHelp` vereist om ze te koppelen aan een Help-bestand. In plaats daarvan zoekt Windows Power shell de specifieke submappen voor de gebruikers interface van de module directory voor Help-bestanden op basis van XML en zoekt de hulp voor de script werk stroom in alle bestanden. het tref woord `.ExternalHelp` opmerking wordt genegeerd.
+In tegens telling tot andere script opdrachten, is voor script werk stromen geen sleutel woord voor `.ExternalHelp` opmerking vereist om ze te koppelen aan een Help-bestand. In plaats daarvan zoekt Windows Power shell de specifieke submappen voor de gebruikers interface van de module directory voor Help-bestanden op basis van XML en zoekt de hulp voor de script werk stroom in alle bestanden. het tref woord `.ExternalHelp` opmerking wordt genegeerd.
 
-Omdat het sleutel woord `.ExternalHelp` wordt genegeerd, kan de cmdlet `Get-Help` alleen hulp voor script werk stromen vinden als deze in modules zijn opgenomen.
+Omdat het sleutel woord `.ExternalHelp` opmerking wordt genegeerd, kan de cmdlet `Get-Help` alleen hulp voor script werk stromen vinden als ze zijn opgenomen in modules.

@@ -67,12 +67,12 @@ Op de computer moet [Windows Server 2016](https://www.microsoft.com/en-us/evalce
 ## <a name="add-the-code-to-tfs"></a>De code toevoegen aan TFS
 
 We beginnen met het maken van een Git-opslag plaats in TFS en het importeren van de code uit de lokale opslag plaats op de client computer.
-Als u de Demo_CI-opslag plaats nog niet hebt gekloond op uw client computer, doet u dat nu door de volgende Git-opdracht uit te voeren:
+Als u de Demo_CI opslag plaats nog niet hebt gekloond op uw client computer, doet u dat nu door de volgende Git-opdracht uit te voeren:
 
 `git clone https://github.com/PowerShell/Demo_CI`
 
 1. Ga op de client computer naar uw TFS-server in een webbrowser.
-1. Maak in TFS [een nieuw team project](/azure/devops/organizations/projects/create-project) met de naam Demo_CI.
+1. Maak in TFS [een nieuw team project met de](/azure/devops/organizations/projects/create-project) naam Demo_CI.
 
    Zorg ervoor dat **versie beheer** is ingesteld op **Git**.
 1. Voeg op de client computer een extern onderdeel toe aan de opslag plaats die u zojuist hebt gemaakt in TFS met de volgende opdracht:
@@ -88,7 +88,7 @@ Als u de Demo_CI-opslag plaats nog niet hebt gekloond op uw client computer, doe
 1. De TFS-opslag plaats wordt gevuld met de Demo_CI-code.
 
 > [!NOTE]
-> In dit voor beeld wordt de code in de vertakking `ci-cd-example` van het git-opslag plaats gebruikt.
+> In dit voor beeld wordt de code in de `ci-cd-example` vertakking van het git-opslag plaats gebruikt.
 > Zorg ervoor dat u deze vertakking opgeeft als de standaard vertakking in uw TFS-project en voor de CI/CD-triggers die u maakt.
 
 ## <a name="understanding-the-code"></a>Uitleg over de code
@@ -98,7 +98,7 @@ Open uw favoriete tekst editor op de client computer en ga naar de hoofdmap van 
 
 ### <a name="the-dsc-configuration"></a>De DSC-configuratie
 
-Open het bestand `DNSServer.ps1` (in de hoofdmap van de lokale Demo_CI-opslag plaats, `./InfraDNS/Configs/DNSServer.ps1`).
+Open de bestands `DNSServer.ps1` (in de hoofdmap van de lokale Demo_CI opslag plaats `./InfraDNS/Configs/DNSServer.ps1`).
 
 Dit bestand bevat de DSC-configuratie waarmee de DNS-server wordt ingesteld. Hier is het een volledige oplossing:
 
@@ -155,21 +155,21 @@ Let op de `Node`-instructie:
 Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
-Hiermee worden knoop punten gevonden die zijn gedefinieerd als een rol van `DNSServer` in de [configuratie gegevens](../configurations/configData.md), die wordt gemaakt door het `DevEnv.ps1`-script.
+Hiermee worden knoop punten gevonden die zijn gedefinieerd als een rol van `DNSServer` in de [configuratie gegevens](../configurations/configData.md), die door het `DevEnv.ps1` script wordt gemaakt.
 
-Meer informatie over de methode `Where` vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
+Meer informatie over de `Where` methode vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Het gebruik van configuratie gegevens voor het definiëren van knoop punten is belang rijk bij het uitvoeren van CI omdat knooppunt informatie waarschijnlijk wordt gewijzigd tussen omgevingen en u met configuratie gegevens eenvoudig wijzigingen kunt aanbrengen in knooppunt gegevens zonder de configuratie code te wijzigen.
 
 In het eerste bron blok roept de configuratie de **WindowsFeature** aan om ervoor te zorgen dat de DNS-functie is ingeschakeld.
 De resource blokken die volgen resources aanroepen vanuit de [xDnsServer](https://github.com/PowerShell/xDnsServer) -module om de primaire zone en DNS-records te configureren.
 
-U ziet dat de twee `xDnsRecord` blokken worden verpakt in `foreach` lussen die door matrices in de configuratie gegevens worden herhaald.
-Opnieuw worden de configuratie gegevens gemaakt door het script `DevEnv.ps1`, dat we nu eens bekijken.
+U ziet dat de twee `xDnsRecord` blokken worden ingepakt in `foreach` lussen die door matrices in de configuratie gegevens worden herhaald.
+Opnieuw worden de configuratie gegevens gemaakt door het `DevEnv.ps1` script, dat we nu bekijken.
 
 ### <a name="configuration-data"></a>Configuratiegegevens
 
-Het `DevEnv.ps1`-bestand (in de hoofdmap van de lokale Demo_CI-opslag plaats, `./InfraDNS/DevEnv.ps1`) geeft de omgeving-specifieke configuratie gegevens in een hashtabel op en geeft die hashtabel door aan een aanroep van de functie `New-DscConfigurationDataDocument`, die is gedefinieerd in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).
+Het `DevEnv.ps1` bestand (in de hoofdmap van de lokale Demo_CI opslag plaats, `./InfraDNS/DevEnv.ps1`) geeft de omgeving-specifieke configuratie gegevens in een hashtabel op en geeft die hashtabel door aan een aanroep van de functie `New-DscConfigurationDataDocument`, die is gedefinieerd in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).
 
 Het `DevEnv.ps1`-bestand:
 
@@ -198,26 +198,26 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-Met de functie `New-DscConfigurationDataDocument` (gedefinieerd in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) kunt u via programma code een document met configuratie gegevens maken op basis van de hashtabel (knooppunt gegevens) en matrix (niet-knooppunt gegevens) die worden door gegeven als de para meters voor `RawEnvData` en `OtherEnvData`.
+Met de functie `New-DscConfigurationDataDocument` (gedefinieerd in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) kunt u programmatisch een document met configuratie gegevens maken op basis van de hashtabel (knooppunt gegevens) en de matrix (niet-knooppunt gegevens) die worden door gegeven als de para meters `RawEnvData` en `OtherEnvData`.
 
 In ons geval wordt alleen de para meter `RawEnvData` gebruikt.
 
 ### <a name="the-psake-build-script"></a>Het psake-bouw script
 
-Het [psake](https://github.com/psake/psake) -opbouw script dat is gedefinieerd in `Build.ps1` (vanuit de hoofdmap van de Demo_CI-opslag plaats, `./InfraDNS/Build.ps1`) definieert de taken die deel uitmaken van de build.
+Het [psake](https://github.com/psake/psake) -bouw script dat in `Build.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Build.ps1`) definieert de taken die deel uitmaken van de build.
 Er wordt ook gedefinieerd voor welke andere taken elke taak afhankelijk is.
-Als dit wordt aangeroepen, zorgt het psake-script ervoor dat de opgegeven taak (of de taak met de naam `Default` als er geen is opgegeven) wordt uitgevoerd en dat alle afhankelijkheden ook worden uitgevoerd (dit is recursief, zodat afhankelijkheden van het uitvoeren van afhankelijkheden, enzovoort).
+Wanneer het psake-script wordt aangeroepen, wordt de opgegeven taak (of de taak met de naam `Default` als er geen is opgegeven) uitgevoerd en worden alle afhankelijkheden ook uitgevoerd (dit is recursief, zodat afhankelijkheden van de afhankelijkheden worden uitgevoerd, enzovoort).
 
-In dit voor beeld wordt de taak `Default` gedefinieerd als:
+In dit voor beeld wordt de `Default` taak gedefinieerd als:
 
 ```powershell
 Task Default -depends UnitTests
 ```
 
-De taak `Default` heeft geen implementatie zelf, maar heeft een afhankelijkheid van de `CompileConfigs` taak.
+De `Default` taak heeft geen implementatie zelf, maar heeft een afhankelijkheid van de `CompileConfigs` taak.
 De resulterende keten van taak afhankelijkheden zorgt ervoor dat alle taken in het build-script worden uitgevoerd.
 
-In dit voor beeld wordt het psake-script aangeroepen door een aanroep van `Invoke-PSake` in het bestand `Initiate.ps1` (bevindt zich in de hoofdmap van de Demo_CI-opslag plaats):
+In dit voor beeld wordt het psake-script aangeroepen door een aanroep van `Invoke-PSake` in het `Initiate.ps1`-bestand (dat zich in de hoofdmap van de Demo_CI opslag plaats bevindt):
 
 ```powershell
 param(
@@ -238,13 +238,13 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 #>
 ```
 
-Wanneer we de build-definitie voor ons voor beeld in TFS maken, leveren we ons psake-script bestand op als de para meter `fileName` voor dit script.
+Wanneer we de build-definitie voor het voor beeld in TFS maken, leveren we ons psake-script bestand als de para meter `fileName` voor dit script.
 
 Het build-script definieert de volgende taken:
 
 #### <a name="generateenvironmentfiles"></a>GenerateEnvironmentFiles
 
-Voert `DevEnv.ps1` uit, waardoor het bestand met configuratie gegevens wordt gegenereerd.
+Voert `DevEnv.ps1`uit, waardoor het bestand met configuratie gegevens wordt gegenereerd.
 
 #### <a name="installmodules"></a>InstallModules
 
@@ -268,7 +268,7 @@ Hiermee maakt u de mappen die worden gebruikt voor het voor beeld en worden alle
 
 ### <a name="the-psake-deploy-script"></a>Het psake-implementatie script
 
-Het [psake](https://github.com/psake/psake) -implementatie script dat is gedefinieerd in `Deploy.ps1` (in de hoofdmap van de Demo_CI-opslag plaats, `./InfraDNS/Deploy.ps1`) definieert taken die de configuratie implementeren en uitvoeren.
+Het [psake](https://github.com/psake/psake) -implementatie script dat in `Deploy.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Deploy.ps1`) definieert taken waarmee de configuratie wordt geïmplementeerd en uitgevoerd.
 
 `Deploy.ps1` definieert de volgende taken:
 
@@ -278,7 +278,7 @@ Start een Power shell-sessie op `TestAgent1` en installeert de modules met de DS
 
 #### <a name="deployconfigs"></a>DeployConfigs
 
-Roept de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) op om de configuratie uit te voeren op `TestAgent1`.
+Roept de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) op om de configuratie op `TestAgent1`uit te voeren.
 
 #### <a name="integrationtests"></a>IntegrationTests
 
@@ -294,7 +294,7 @@ Hiermee verwijdert u alle modules die zijn geïnstalleerd in eerdere uitvoeringe
 
 ### <a name="test-scripts"></a>Test scripts
 
-Acceptatie, integratie en eenheids tests worden gedefinieerd in scripts in de map `Tests` (van de hoofdmap van de Demo_CI-opslag plaats, `./InfraDNS/Tests`), elk in bestanden met de naam `DNSServer.tests.ps1` in hun respectieve mappen.
+Acceptatie, integratie en eenheids tests worden gedefinieerd in scripts in de map `Tests` (in de hoofdmap van de Demo_CI opslag plaats `./InfraDNS/Tests`), elk in bestanden met de naam `DNSServer.tests.ps1` in hun respectieve mappen.
 
 De test scripts gebruiken de syntaxis van [parasieten](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) .
 
@@ -335,7 +335,7 @@ Nadat u deze build-stappen hebt toegevoegd, bewerkt u de eigenschappen van elke 
 
 1. Stel de eigenschap **type** in op `File Path`.
 1. Stel de eigenschap **script pad** in op `initiate.ps1`.
-1. Voeg `-fileName build` toe aan de eigenschap **Arguments** .
+1. `-fileName build` toevoegen aan de eigenschap **Arguments** .
 
 Met deze build-stap wordt het `initiate.ps1`-bestand uitgevoerd, dat het psake-build-script aanroept.
 
@@ -359,13 +359,13 @@ Met deze build-stap worden de eenheids tests uitgevoerd in het schadelijke scrip
    **\Integration\**
    ```
 
-1. Stel **TargetFolder** in op `$(Build.ArtifactStagingDirectory)\`
+1. **TargetFolder** instellen op `$(Build.ArtifactStagingDirectory)\`
 
 Met deze stap worden de build-en test scripts gekopieerd naar de staging-directory, zodat de volgende stap kan worden gepubliceerd als constructie-artefacten.
 
 ### <a name="publish-artifact"></a>Artefact publiceren
 
-1. **Pad instellen om** naar @no__t te publiceren-1
+1. **Pad instellen om** naar `$(Build.ArtifactStagingDirectory)\` te publiceren
 1. **Artefact naam** instellen op `Deploy`
 1. **Type artefact** instellen op `Server`
 1. Selecteer `Enabled` in de **besturings opties**
@@ -375,7 +375,7 @@ Met deze stap worden de build-en test scripts gekopieerd naar de staging-directo
 Nu gaan we een trigger instellen die ervoor zorgt dat het project op elk gewenst moment een wijziging in de vertakking `ci-cd-example` van de Git-opslag plaats wordt ingecheckt.
 
 1. Klik in TFS op het tabblad **Build & release**
-1. Selecteer de definitie van de `DNS Infra`-build en klik op **bewerken** .
+1. Selecteer de definitie van de `DNS Infra` build en klik op **bewerken**
 1. Klik op het tabblad **Triggers**
 1. Selecteer **doorlopende integratie (CI)** en selecteer `refs/heads/ci-cd-example` in de vervolg keuzelijst vertakking
 1. Klik op **Opslaan** en vervolgens op **OK**
@@ -386,7 +386,7 @@ Elke wijziging in de TFS Git-opslag plaats activeert nu een geautomatiseerde bui
 
 We gaan een release definitie maken zodat het project wordt geïmplementeerd in de ontwikkel omgeving met elke code inchecken.
 
-Als u dit wilt doen, voegt u een nieuwe release definitie toe die is gekoppeld aan de build-definitie van `InfraDNS` die u eerder hebt gemaakt.
+Als u dit wilt doen, voegt u een nieuwe release definitie toe aan de `InfraDNS` build-definitie die u eerder hebt gemaakt.
 Zorg ervoor dat u **doorlopende implementatie** selecteert zodat een nieuwe release wordt geactiveerd wanneer een nieuwe build wordt voltooid.
 ([Wat zijn release pijplijnen?](/azure/devops/pipelines/release/)) en configureer deze als volgt:
 
@@ -405,27 +405,27 @@ Bewerk de stappen als volgt:
 
 ### <a name="first-publish-test-results"></a>Eerste publicatie Testresultaten
 
-1. Selecteer `NUnit` voor het veld **test resultaat notatie**
+1. `NUnit` selecteren voor het veld met de indeling van het **test resultaat**
 1. Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Stel de **titel van de test uitvoering** in op `Integration`
+1. De titel van de **test uitvoering** instellen op `Integration`
 1. Schakel onder **controle opties de optie** **altijd uitvoeren**
 
 ### <a name="second-publish-test-results"></a>Tweede publicatie Testresultaten
 
-1. Selecteer `NUnit` voor het veld **test resultaat notatie**
+1. `NUnit` selecteren voor het veld met de indeling van het **test resultaat**
 1. Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Stel de **titel van de test uitvoering** in op `Acceptance`
+1. De titel van de **test uitvoering** instellen op `Acceptance`
 1. Schakel onder **controle opties de optie** **altijd uitvoeren**
 
 ## <a name="verify-your-results"></a>Uw resultaten controleren
 
-Telkens wanneer u wijzigingen in de `ci-cd-example`-vertakking naar TFS pusht, wordt een nieuwe build gestart.
+Telkens wanneer u wijzigingen in de `ci-cd-example` vertakking naar TFS pusht, wordt een nieuwe build gestart.
 Als de build is voltooid, wordt er een nieuwe implementatie geactiveerd.
 
 U kunt het resultaat van de implementatie controleren door een browser te openen op de client computer en te navigeren naar `www.contoso.com`.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit voor beeld wordt de DNS-server `TestAgent1` zodanig geconfigureerd dat de URL `www.contoso.com` wordt omgezet in `TestAgent2`, maar er wordt niet daad werkelijk een website geïmplementeerd.
-Het skelet hiervoor is opgenomen in de opslag plaats in de map `WebApp`.
+In dit voor beeld wordt de DNS-server zo geconfigureerd `TestAgent1` dat de URL `www.contoso.com` omgezet in `TestAgent2`, maar dat er geen website wordt geïmplementeerd.
+Het skelet hiervoor is te zien in de opslag plaats onder de map `WebApp`.
 U kunt de beschik bare stubs gebruiken voor het maken van psake-scripts, ziekte tests en DSC-configuraties om uw eigen website te implementeren.

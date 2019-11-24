@@ -23,7 +23,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 ### <a name="setting-up-the-project"></a>Het project instellen
 
-1. Volg de procedure in [Windows Power shell-activiteiten toevoegen aan de Visual Studio-werkset](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) om een werk stroom project te maken en de activiteiten toe te voegen vanuit de [Microsoft. Power shell. activities](/dotnet/api/Microsoft.PowerShell.Activities) en [micro soft. Power shell. Management. activities ](/dotnet/api/Microsoft.PowerShell.Management.Activities)assembly's in de werkset.
+1. Volg de procedure in [Windows Power shell-activiteiten toevoegen aan de Visual Studio Toolbox](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) om een werk stroom project te maken en voeg de activiteiten toe vanuit de [micro soft. Power shell. activities](/dotnet/api/Microsoft.PowerShell.Activities) en [micro soft. Power shell. Management. activities](/dotnet/api/Microsoft.PowerShell.Management.Activities) -assembly's in de werkset.
 
 2. Voeg System. Management. Automation, micro soft. Power shell. activities, System. Management, micro soft. Power shell. Management. activities en micro soft. Power shell. commands. Management toe aan het project als referentie verzamelingen.
 
@@ -37,7 +37,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 4. Maak een argument met de naam `MachineCred` van het type [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument vertegenwoordigt de referenties van een beheerder op de computers om te controleren en samen te voegen.
 
-5. Voeg een **ParallelForEach** -activiteit toe binnen de **reeks** activiteit. Voer `comp` en `ComputerName` in de tekst vakken in, zodat de lus door de elementen van de matrix `ComputerName` doorloopt.
+5. Voeg een **ParallelForEach** -activiteit toe binnen de **reeks** activiteit. Voer `comp` in en `ComputerName` in de tekst vakken zodat de lus door de elementen van de `ComputerName` matrix doorloopt.
 
 6. Voeg een **sequentie** activiteit toe aan de hoofd tekst van de **ParallelForEach** -activiteit. Stel de eigenschap **DisplayName** van de reeks in op `JoinDomain`.
 
@@ -45,7 +45,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 8. Bewerk de eigenschappen van de **GetWmiObject** -activiteit als volgt.
 
-   |Eigenschap|Value|
+   |Eigenschap|Waarde|
    |--------------|-----------|
    |**Klasse**|"Win32_ComputerSystem"|
    |**PSComputerName**|Comp|
@@ -55,7 +55,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 10. Bewerk de eigenschappen van de **AddComputer** -activiteit als volgt.
 
-    |Eigenschap|Value|
+    |Eigenschap|Waarde|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**DomainCredential**|DomainCred|
@@ -64,12 +64,12 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 12. Bewerk de eigenschappen van de **RestartComputer** -activiteit als volgt.
 
-    |Eigenschap|Value|
+    |Eigenschap|Waarde|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**Referentie**|MachineCred|
     |**Zo**|Micro soft. Power shell. commands. WaitForServiceTypes. Power shell|
-    |**Verkopers**|True|
+    |**Force**|True|
     |Bewerking|True|
     |PSComputerName|{""}|
 
@@ -77,4 +77,5 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
     Wanneer u de procedures hebt voltooid, ziet het werk stroom ontwerp venster er als volgt uit.
 
-    ![JoinDomain XAML in Workflow Designer @ no__t-1![JOINDOMAIN XAML in Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML in Workflow Designer](../media/joindomainworkflow.png)
+    ![XAML in Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")

@@ -23,7 +23,7 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-Meta *configuratie* \[out @ no__t-2 bij Return bevat een Inge sloten instantie van de klasse **MSFT_DSCMetaConfiguration** die de instellingen definieert.
+Meta *configuratie* \[out\] als resultaat, bevat een Inge sloten instantie van de **MSFT_DSCMetaConfiguration** -klasse die de instellingen definieert.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -35,7 +35,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

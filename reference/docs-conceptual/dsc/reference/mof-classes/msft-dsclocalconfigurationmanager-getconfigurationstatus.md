@@ -24,9 +24,9 @@ uint32 GetConfigurationStatus(
 
 ## <a name="parameters"></a>Parameters
 
-*Alle* \[in @ no__t-2 **waar** als deze methode informatie moet retour neren over alle configuratie runs op de computer, met inbegrip van de configuratie toepassing en de consistentie controle.
+*Alle* \[in\] **waar** als deze methode informatie moet retour neren over alle configuratie runs op de computer, met inbegrip van de configuratie toepassing en de consistentie controle.
 
-*configurationStatus* \[out @ no__t-2 bij Return bevat een Inge sloten instantie van de klasse **MSFT_DSCConfigurationStatus** waarmee de instellingen worden gedefinieerd.
+*configurationStatus* \[out\] als resultaat, bevat een Inge sloten instantie van de **MSFT_DSCConfigurationStatus** -klasse die de instellingen definieert.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -38,7 +38,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

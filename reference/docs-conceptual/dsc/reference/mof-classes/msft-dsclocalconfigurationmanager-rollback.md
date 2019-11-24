@@ -23,7 +23,7 @@ uint32 RollBack(
 
 ## <a name="parameters"></a>Parameters
 
-*configurationNumber* \[in @ no__t-2 geeft de aangevraagde configuratie aan.
+*configurationNumber* \[in\] geeft de aangevraagde configuratie aan.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -35,7 +35,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

@@ -11,9 +11,9 @@ ms.locfileid: "71692254"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows Power shell-webtoegang installeren en gebruiken
 
-Vernieuwd 5 november 2013 (bewerkt: 23 augustus 2017)
+Bijgewerkt: 5 november 2013 (bewerkt: 23 augustus 2017)
 
-Van toepassing op: Windows Server 2012 R2, Windows Server 2012
+Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
 
 ## <a name="introduction"></a>Inleiding
 
@@ -92,29 +92,29 @@ U kunt de Windows Power shell Web Access-gateway installeren op een server met W
    > In Windows Power Shell 3,0 en 4,0 is het niet nodig om de Serverbeheer cmdlet-module te importeren in de Windows Power shell-sessie voordat u cmdlets uitvoert die deel uitmaken van de module. Een module wordt automatisch geïmporteerd tijdens de eerste keer dat u de cmdlet die deel uitmaakt van de module uitvoert.
    > Ook zijn Windows Power shell-cmdlets niet hoofdletter gevoelig.
 
-1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer naam* staat voor een externe computer waarop u Windows Power shell-Internet toegang wilt installeren, indien van toepassing. Met de para meter `-Restart` worden de doel servers automatisch opnieuw opgestart als dat nodig is.
+1. Typ het volgende en druk vervolgens op **Enter**, waarbij *computer_name* staat voor een externe computer waarop u Windows Power shell-Internet toegang wilt installeren, indien van toepassing. Met de para meter `-Restart` worden doel servers automatisch opnieuw opgestart als dat nodig is.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Als u Windows Power shell-webtoegang met Windows Power shell-cmdlets installeert, worden standaard geen beheer hulpprogramma's voor webserver (IIS) toegevoegd. Als u de beheer hulpprogramma's wilt installeren op dezelfde server als de Windows Power shell Web Access-Gateway, voegt u de para meter `-IncludeManagementTools` toe aan de installatie opdracht (zoals in deze stap is aangegeven). Als u de website van Windows Power shell Web Access beheert vanaf een externe computer, installeert u de module IIS-beheer door [Remote Server Administration Tools voor windows 8,1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) of [Remote Server Administration Tools voor Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) te installeren op de pagina de computer van waaruit u de gateway wilt beheren.
+   > Als u Windows Power shell-webtoegang met Windows Power shell-cmdlets installeert, worden standaard geen beheer hulpprogramma's voor webserver (IIS) toegevoegd. Als u de beheer hulpprogramma's wilt installeren op dezelfde server als de Windows Power shell Web Access-Gateway, voegt u de para meter `-IncludeManagementTools` toe aan de installatie opdracht (zoals in deze stap is aangegeven). Als u de website van Windows Power shell Web Access beheert vanaf een externe computer, installeert u de module IIS-beheer door [Remote Server Administration Tools voor windows 8,1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) of [Remote Server Administration Tools voor Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) te installeren op de computer van waaruit u de gateway wilt beheren.
 
    Als u functies en onderdelen op een offline-VHD wilt installeren, moet u zowel de para meter `-ComputerName` als de para meter `-VHD` toevoegen. De parameter `-ComputerName` bevat de naam van de server waaraan de VHD moet worden gekoppeld en de parameter `-VHD` bevat het pad naar het VHD-bestand op de opgegeven server.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
-1. Als de installatie is voltooid, controleert u of Windows Power shell Web Access is geïnstalleerd op de doel servers door de cmdlet `Get-WindowsFeature` op een doel server uit te voeren in een Windows Power shell-console die is geopend met verhoogde gebruikers rechten. U kunt ook controleren of Windows Power shell Web Access is geïnstalleerd in de Serverbeheer-console door een doel server te selecteren op de pagina **alle servers** en vervolgens de tegel **functies en onderdelen** voor de geselecteerde server weer te geven. U kunt ook het Leesmij-bestand voor Windows Power shell-Internet toegang weer geven.
+1. Als de installatie is voltooid, controleert u of Windows Power shell Web Access is geïnstalleerd op de doel servers door de cmdlet `Get-WindowsFeature` uit te voeren op een doel server, in een Windows Power shell-console die is geopend met verhoogde gebruikers rechten. U kunt ook controleren of Windows Power shell Web Access is geïnstalleerd in de Serverbeheer-console door een doel server te selecteren op de pagina **alle servers** en vervolgens de tegel **functies en onderdelen** voor de geselecteerde server weer te geven. U kunt ook het Leesmij-bestand voor Windows Power shell-Internet toegang weer geven.
 
 1. Nadat Windows Power shell-webtoegang is geïnstalleerd, wordt u gevraagd het Leesmij-bestand te controleren, dat basis vereiste installatie-instructies voor de gateway bevat. Deze installatie-instructies bevinden zich ook in de volgende sectie: [Configureer de gateway](#configure-the-gateway). Het pad naar het Leesmij-bestand is `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`.
 
 ### <a name="configure-the-gateway"></a>De gateway configureren
 
-De cmdlet **install-PswaWebApplication** is een snelle manier om Windows Power shell-webtoegang te laten configureren. Hoewel u de para meter `UseTestCertificate` kunt toevoegen aan de cmdlet `Install-PswaWebApplication` om een zelfondertekend SSL-certificaat te installeren voor test doeleinden, is dit niet veilig. gebruik voor een veilige productie omgeving altijd een geldig SSL-certificaat dat is ondertekend door een certificerings instantie (CA). Beheerders kunnen het test certificaat vervangen door een ondertekend certificaat van hun keuze met behulp van de IIS-beheer console.
+De cmdlet **install-PswaWebApplication** is een snelle manier om Windows Power shell-webtoegang te laten configureren. Hoewel u de para meter `UseTestCertificate` kunt toevoegen aan de `Install-PswaWebApplication`-cmdlet om een zelfondertekend SSL-certificaat te installeren voor test doeleinden, is dit niet veilig. gebruik voor een veilige productie omgeving altijd een geldig SSL-certificaat dat is ondertekend door een certificerings instantie (CA). Beheerders kunnen het test certificaat vervangen door een ondertekend certificaat van hun keuze met behulp van de IIS-beheer console.
 
-U kunt de configuratie van webtoepassingen voor Windows Power shell Web Access volt ooien door de cmdlet `Install-PswaWebApplication` uit te voeren of door op GUI gebaseerde configuratie stappen in IIS-beheer uit te voeren.
-De cmdlet installeert standaard de webtoepassing, **pswa** (en een groep van toepassingen voor de toepassing, **pswa_pool**) in de **standaard** website container, zoals weer gegeven in IIS-beheer. Desgewenst kunt u de cmdlet opdracht geven de standaard site container van de webtoepassing te wijzigen. IIS-beheer biedt configuratie opties die beschikbaar zijn voor webtoepassingen, zoals het wijzigen van het poort nummer of het certificaat van de Secure Sockets Layer (SSL).
+U kunt de configuratie van webtoepassingen voor Windows Power shell-webtoegang volt ooien door de `Install-PswaWebApplication`-cmdlet uit te voeren of door op GUI gebaseerde configuratie stappen in IIS-beheer uit te voeren.
+De cmdlet installeert standaard de webtoepassing, **pswa** (en een groep van toepassingen voor de toepassing, **pswa_pool**), in de **standaard** website container, zoals weer gegeven in IIS-beheer. Desgewenst kunt u de cmdlet opdracht geven de standaard site container van de webtoepassing te wijzigen. IIS-beheer biedt configuratie opties die beschikbaar zijn voor webtoepassingen, zoals het wijzigen van het poort nummer of het certificaat van de Secure Sockets Layer (SSL).
 
-> **![Security Opmerking @ no__t-2-beveiligings notitie** Het wordt ten zeerste aangeraden dat beheerders de gateway configureren voor het gebruik van een geldig certificaat dat is ondertekend door een CA.
+> **![beveiligings opmerking](images/securitynote.jpeg) beveiligings Opmerking** Het wordt ten zeerste aangeraden dat beheerders de gateway configureren voor het gebruik van een geldig certificaat dat is ondertekend door een CA.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>De gateway voor Windows Power shell-webtoegang configureren met een test certificaat met behulp van install-PswaWebApplication
 
@@ -127,9 +127,9 @@ De cmdlet installeert standaard de webtoepassing, **pswa** (en een groep van toe
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Security Opmerking @ no__t-2-beveiligings notitie** De para meter `UseTestCertificate` mag alleen worden gebruikt in een persoonlijke test omgeving. Voor een veilige productie omgeving kunt u het beste een geldig certificaat gebruiken dat is ondertekend door een certificerings instantie.
+   > **![beveiligings opmerking](images/securitynote.jpeg) beveiligings Opmerking** De para meter `UseTestCertificate` mag alleen worden gebruikt in een persoonlijke test omgeving. Voor een veilige productie omgeving kunt u het beste een geldig certificaat gebruiken dat is ondertekend door een certificerings instantie.
 
-   Als u de cmdlet uitvoert, wordt de Windows Power shell Web Access-webtoepassing in de standaard website van de IIS-website geïnstalleerd. De cmdlet maakt de infra structuur die vereist is voor het uitvoeren van Windows Power shell-Internet toegang op de standaard website, `https://<server_name>/pswa`. Als u de webtoepassing in een andere website wilt installeren, geeft u de naam van de website op door de para meter `WebSiteName` toe te voegen. Als u de naam van de webtoepassing wilt wijzigen (de standaard waarde is `pswa`), voegt u de para meter `WebApplicationName` toe.
+   Als u de cmdlet uitvoert, wordt de Windows Power shell Web Access-webtoepassing in de standaard website van de IIS-website geïnstalleerd. De cmdlet maakt de infra structuur die vereist is voor het uitvoeren van Windows Power shell-Internet toegang op de standaard website `https://<server_name>/pswa`. Als u de webtoepassing in een andere website wilt installeren, geeft u de naam van de website op door de para meter `WebSiteName` toe te voegen. Als u de naam van de webtoepassing wilt wijzigen (de standaard waarde is `pswa`), voegt u de para meter `WebApplicationName` toe.
 
    De volgende instellingen worden geconfigureerd door de cmdlet uit te voeren. U kunt deze desgewenst hand matig wijzigen in de IIS-beheer console.
 
@@ -156,7 +156,7 @@ De cmdlet installeert standaard de webtoepassing, **pswa** (en een groep van toe
 
    `Install-PswaWebApplication`
 
-   De volgende gateway-instellingen worden geconfigureerd door de cmdlet uit te voeren. U kunt deze desgewenst hand matig wijzigen in de IIS-beheer console. U kunt ook waarden opgeven voor de para meters `WebsiteName` en `WebApplicationName` van de cmdlet `Install-PswaWebApplication`.
+   De volgende gateway-instellingen worden geconfigureerd door de cmdlet uit te voeren. U kunt deze desgewenst hand matig wijzigen in de IIS-beheer console. U kunt ook waarden voor de para meters `WebsiteName` en `WebApplicationName` van de cmdlet `Install-PswaWebApplication` opgeven.
 
    - Pad:/pswa
    - Application Pool: pswa_pool
@@ -182,7 +182,7 @@ De cmdlet installeert standaard de webtoepassing, **pswa** (en een groep van toe
 
    De webtoepassing voor Windows Power shell Web Access is nu geconfigureerd voor het gebruik van uw ondertekend SSL-certificaat.
 
-   U kunt toegang krijgen tot Windows Power shell-Internet toegang door `https://<server_name>/pswa` in een browser venster te openen.
+   U kunt toegang krijgen tot Windows Power shell-Internet toegang door `https://<server_name>/pswa` te openen in een browser venster.
 
    > [!NOTE]
    > U kunt zich pas aanmelden nadat gebruikers toegang tot de website hebben gekregen door autorisatie regels toe te voegen. Zie [Configure a beperkend Authorization Rule](#configure-a-restrictive-authorization-rule)(in dit onderwerp) en [autorisatie regels en beveiligings functies van Windows Power shell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md)voor meer informatie.
@@ -208,13 +208,13 @@ Zie [autorisatie regels en beveiligings functies van Windows Power shell-webtoeg
 
    Met deze autorisatie regel kan een specifieke gebruiker toegang hebben tot één computer in het netwerk waartoe deze doorgaans toegang hebben, met toegang tot een specifieke sessie configuratie die wordt afgestemd op de typische scripting-en cmdlet-vereisten van de gebruiker.
 
-   In het volgende voor beeld wordt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang verleend voor het beheren van de computer `Contoso_214` en een sessie configuratie met de naam `NewAdminsOnly`.
+   In het volgende voor beeld wordt aan een gebruiker met de naam `JSmith` in het `Contoso` domein toegang verleend om de computer `Contoso_214`te beheren en een sessie configuratie met de naam `NewAdminsOnly`te gebruiken.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-4. Controleer of de regel is gemaakt door de cmdlet `Get-PswaAuthorizationRule` of `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>` uit te voeren
+4. Controleer of de regel is gemaakt door de cmdlet `Get-PswaAuthorizationRule` uit te voeren of `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
 
-   Bijvoorbeeld `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
+   Voorbeeld: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
 Nadat u een autorisatie regel hebt geconfigureerd, bent u er klaar voor dat geautoriseerde gebruikers zich kunnen aanmelden bij de webconsole en gebruikmaken van Windows Power shell-webtoegang.
 
@@ -244,13 +244,13 @@ Nadat Windows Power shell Web Access is geïnstalleerd, kunt u de configuratie v
    > [!NOTE]
    > Windows Power shell-webtoegang installeren met behulp van de wizard functies en onderdelen toevoegen installeert ook webserver (IIS), met inbegrip van de module IIS-beheer. De module en andere IIS-beheer hulpprogramma's worden standaard geïnstalleerd als u de wizard functies en onderdelen toevoegen gebruikt. Als u Windows Power shell-Internet toegang installeert met behulp van Windows Power shell-cmdlets, zoals beschreven in de volgende procedure, worden er geen beheer hulpprogramma's standaard toegevoegd.
 
-7. Als de onderdeel bestanden voor Windows Power shell-webtoegang op de pagina **installatie selecties bevestigen** niet zijn opgeslagen op de doel server die u hebt geselecteerd in stap 4, klikt u op **een alternatief bronpad opgeven**en geeft u het pad naar de functie op. logbestanden. Klik anders op **installeren**.
+7. Als de onderdeel bestanden voor Windows Power shell-webtoegang op de pagina **installatie selecties bevestigen** niet zijn opgeslagen op de doel server die u hebt geselecteerd in stap 4, klikt u op **een alternatief bronpad opgeven**en geeft u het pad op naar de onderdeel bestanden. Klik anders op **installeren**.
 
 8. Nadat u op **installeren**hebt geklikt, toont de pagina **installatie voortgang** de voortgang van de installatie, resultaten en berichten, zoals waarschuwingen, fouten of configuratie stappen na de installatie die vereist zijn voor Windows Power shell-Internet toegang. Nadat Windows Power shell-webtoegang is geïnstalleerd, wordt u gevraagd het Leesmij-bestand te controleren, dat basis vereiste installatie-instructies voor de gateway bevat. Deze instructies zijn ook opgenomen in dit onderwerp. Het pad naar het Leesmij-bestand is `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`.
 
 ### <a name="configure-the-gateway"></a>De gateway configureren
 
-De instructies in deze sectie zijn voor het installeren van de Windows Power shell Web Access-webtoepassing in een submap en niet in de hoofdmap van uw website. Deze procedure is de op GUI gebaseerde equivalent van de acties die worden uitgevoerd door de cmdlet `Install-PswaWebApplication`. Deze sectie bevat ook instructies voor het gebruik van IIS-beheer voor het configureren van de Windows Power shell Web Access-Gateway als een basis website.
+De instructies in deze sectie zijn voor het installeren van de Windows Power shell Web Access-webtoepassing in een submap en niet in de hoofdmap van uw website. Deze procedure is de op GUI gebaseerde equivalent van de acties die worden uitgevoerd door de `Install-PswaWebApplication`-cmdlet. Deze sectie bevat ook instructies voor het gebruik van IIS-beheer voor het configureren van de Windows Power shell Web Access-Gateway als een basis website.
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS-beheer gebruiken om de gateway te configureren in een bestaande website
 
@@ -271,7 +271,7 @@ De instructies in deze sectie zijn voor het installeren van de Windows Power she
 
 7. Selecteer in het veld **groep van toepassingen** de groep van toepassingen die u in stap 3 hebt gemaakt.
 
-8. Blader in het veld **fysiek pad** naar de locatie van de toepassing. U kunt de standaard locatie `$env:windir/Web/PowerShellWebAccess/wwwroot` gebruiken. Klik op **OK**.
+8. Blader in het veld **fysiek pad** naar de locatie van de toepassing. U kunt de standaard locatie `$env:windir/Web/PowerShellWebAccess/wwwroot`gebruiken. Klik op **OK**.
 
 9. Volg de stappen in de procedure [voor het configureren van een SSL-certificaat in IIS-beheer](#to-configure-an-ssl-certificate-in-iis-manager) in dit onderwerp.
 
@@ -282,14 +282,14 @@ De instructies in deze sectie zijn voor het installeren van de Windows Power she
 
 11. Open een browser sessie op een client apparaat. Zie voor meer informatie over ondersteunde browsers en apparaten [ondersteuning voor browsers en client apparaten](#browser-and-client-device-support) in dit onderwerp.
 
-12. Open de nieuwe Windows Power shell Web Access-website, **https://\<*Gateway-server naam*\>/pswa**.
+12. Open de nieuwe Windows Power shell Web Access-website, **https://\<*Gateway-server-name*\>/pswa**.
 
     De browser moet de aanmeldings pagina van Windows Power shell Web Access-console weer geven.
 
     > [!NOTE]
     > U kunt zich pas aanmelden nadat gebruikers toegang tot de website hebben gekregen door autorisatie regels toe te voegen. Zie [Configure a beperkend Authorization Rule](#configure-a-restrictive-authorization-rule)(in dit onderwerp) en [autorisatie regels en beveiligings functies van Windows Power shell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md)voor meer informatie.
 
-13. In een Windows Power shell-sessie die is geopend met verhoogde gebruikers rechten (als administrator uitvoeren) voert u het volgende script uit, waarin *application_pool_name* staat voor de naam van de groep van toepassingen die u in stap 3 hebt gemaakt, om de toepassing te geven groeps toegangs rechten voor het autorisatie bestand.
+13. In een Windows Power shell-sessie die is geopend met verhoogde gebruikers rechten (als administrator uitvoeren) voert u het volgende script uit, waarin *application_pool_name* staat voor de naam van de groep van toepassingen die u in stap 3 hebt gemaakt, om de groep toepassingen toegangs rechten tot het autorisatie bestand te geven.
 
     ```powershell
     $applicationPoolName = "<application_pool_name>"
@@ -333,7 +333,7 @@ De instructies in deze sectie zijn voor het installeren van de Windows Power she
 
 1. Klik op **OK** om het dialoog venster **website toevoegen** te sluiten.
 
-1. In een Windows Power shell-sessie die is geopend met verhoogde gebruikers rechten (als administrator uitvoeren) voert u het volgende script uit, waarin _application_pool_name_ staat voor de naam van de groep van toepassingen die u in stap 4 hebt gemaakt, om de toepassing te geven groeps toegangs rechten voor het autorisatie bestand.
+1. In een Windows Power shell-sessie die is geopend met verhoogde gebruikers rechten (als administrator uitvoeren) voert u het volgende script uit, waarin _application_pool_name_ staat voor de naam van de groep van toepassingen die u in stap 4 hebt gemaakt, om de groep toepassingen toegangs rechten tot het autorisatie bestand te geven.
 
    ```powershell
    $applicationPoolName = "<application_pool_name>"
@@ -353,7 +353,7 @@ De instructies in deze sectie zijn voor het installeren van de Windows Power she
 
 1. Open de nieuwe Windows Power shell-website voor webtoegang.
 
-   Omdat de hoofd website naar de map Windows Power shell Web Access verwijst, moet de browser de aanmeldings pagina voor Windows Power shell-webtoegang weer geven wanneer u `https://<gateway_server_name>` opent. Het is niet nodig om **/pswa** toe te voegen aan de URL.
+   Omdat de hoofd website naar de map Windows Power shell Web Access verwijst, moet de browser de aanmeldings pagina voor Windows Power shell-webtoegang weer geven wanneer u `https://<gateway_server_name>`opent. Het is niet nodig om **/pswa** toe te voegen aan de URL.
 
    > [!NOTE]
    > U kunt zich pas aanmelden nadat gebruikers toegang tot de website hebben gekregen door autorisatie regels toe te voegen. Zie [Configure a beperkend Authorization Rule](#configure-a-restrictive-authorization-rule)(in dit onderwerp) en [autorisatie regels en beveiligings functies van Windows Power shell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md)voor meer informatie.
@@ -381,13 +381,13 @@ Zie [autorisatie regels en beveiligings functies van Windows Power shell-webtoeg
 
    Met deze autorisatie regel kan een specifieke gebruiker toegang hebben tot één computer in het netwerk waartoe deze doorgaans toegang hebben, met toegang tot een specifieke sessie configuratie die wordt toegewezen aan de gebruiker™ s typische scripting-en cmdlet-behoeften.
 
-   In het volgende voor beeld wordt een gebruiker met de naam `JSmith` in het domein `Contoso` toegang verleend voor het beheren van de computer `Contoso_214` en een sessie configuratie met de naam `NewAdminsOnly`.
+   In het volgende voor beeld wordt aan een gebruiker met de naam `JSmith` in het `Contoso` domein toegang verleend om de computer `Contoso_214`te beheren en een sessie configuratie met de naam `NewAdminsOnly`te gebruiken.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-1. Controleer of de regel is gemaakt door de cmdlet `Get-PswaAuthorizationRule` of `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` uit te voeren.
+1. Controleer of de regel is gemaakt door de cmdlet `Get-PswaAuthorizationRule` of `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`uit te voeren.
 
-   Bijvoorbeeld `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
+   Voorbeeld: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
    Nadat u een autorisatie regel hebt geconfigureerd, bent u er klaar voor dat geautoriseerde gebruikers zich kunnen aanmelden bij de webconsole en gebruikmaken van Windows Power shell-webtoegang.
 
@@ -406,7 +406,7 @@ Gebruik voor een veilige productie omgeving altijd een geldig SSL-certificaat da
    - Klik op **importeren** om een bestaand, geldig certificaat te importeren van een locatie in uw netwerk.
    - Klik op **certificaat aanvraag maken** om een certificaat aan te vragen bij een certificerings instantie zoals [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/)of [GeoTrust](https://www.geotrust.com/). De algemene naam van het certificaat moet overeenkomen met de host-header in de aanvraag.
 
-     Als de client browser bijvoorbeeld `http://www.contoso.com/` aanvraagt, moet de algemene naam ook `http://www.contoso.com/` zijn. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows Power shell Web Access-gateway met een certificaat.
+     Als de client browser bijvoorbeeld `http://www.contoso.com/`verzoekt, moet de algemene naam ook `http://www.contoso.com/`zijn. Dit is de veiligste en aanbevolen optie voor het leveren van de Windows Power shell Web Access-gateway met een certificaat.
 
    - Klik op **een zelfondertekend certificaat maken** om een certificaat te maken dat u onmiddellijk kunt gebruiken en dat u later door een CA hebt ondertekend, indien gewenst. Geef een beschrijvende naam op voor het zelfondertekende certificaat, zoals **Windows Power shell-webtoegang**. Deze optie wordt niet als veilig beschouwd en wordt alleen aanbevolen voor een persoonlijke test omgeving.
 

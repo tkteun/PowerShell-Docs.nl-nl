@@ -20,13 +20,13 @@ ms.locfileid: "72355536"
 Wanneer u .NET Framework objecten uitbreidt, kunt u alias eigenschappen, code-eigenschappen, notitie-eigenschappen, script eigenschappen en eigenschappen sets aan de objecten toevoegen. De XML die deze eigenschappen definieert, wordt in de volgende secties beschreven.
 
 > [!NOTE]
-> De voor beelden in de volgende secties zijn afkomstig uit het standaard bestand `Types.ps1xml`-typen in de installatie directory van Power shell (`$PSHOME`). Zie [about types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)voor meer informatie.
+> De voor beelden in de volgende secties zijn afkomstig uit het standaard `Types.ps1xml` typen bestand in de Power shell-installatiemap (`$PSHOME`). Zie [about types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)voor meer informatie.
 
 ## <a name="alias-properties"></a>Alias eigenschappen
 
 Een alias eigenschap definieert een nieuwe naam voor een bestaande eigenschap.
 
-In het volgende voor beeld wordt de eigenschap **Count** toegevoegd aan het type [System. array](/dotnet/api/System.Array) . Het [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) -element definieert de eigenschap Extended als een alias eigenschap. Het [naam](/dotnet/api/system.management.automation.psmemberinfo.name) element geeft de nieuwe naam op. En het element [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) geeft de bestaande eigenschap op waarnaar wordt verwezen door de alias. U kunt ook het element `AliasProperty` toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
+In het volgende voor beeld wordt de eigenschap **Count** toegevoegd aan het type [System. array](/dotnet/api/System.Array) . Het [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) -element definieert de eigenschap Extended als een alias eigenschap. Het [naam](/dotnet/api/system.management.automation.psmemberinfo.name) element geeft de nieuwe naam op. En het element [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) geeft de bestaande eigenschap op waarnaar wordt verwezen door de alias. U kunt ook het `AliasProperty`-element toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -44,7 +44,7 @@ In het volgende voor beeld wordt de eigenschap **Count** toegevoegd aan het type
 
 Een code-eigenschap verwijst naar een statische eigenschap van een .NET Framework-object.
 
-In het volgende voor beeld wordt de eigenschap **mode** toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) -element definieert de eigenschap Extended als een code-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. En, het [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) -element, definieert de statische methode waarnaar wordt verwezen door de uitgebreide eigenschap. U kunt ook het element `CodeProperty` toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
+In het volgende voor beeld wordt de eigenschap **mode** toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) -element definieert de eigenschap Extended als een code-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. En, het [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) -element, definieert de statische methode waarnaar wordt verwezen door de uitgebreide eigenschap. U kunt ook het `CodeProperty`-element toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -65,7 +65,7 @@ In het volgende voor beeld wordt de eigenschap **mode** toegevoegd aan het type 
 
 Een eigenschap Note definieert een eigenschap die een statische waarde heeft.
 
-In het volgende voor beeld wordt de eigenschap **status** , waarvan de waarde altijd is **geslaagd**, toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -element definieert de eigenschap Extended als een notitie-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. Met het element [Value](/dotnet/api/system.management.automation.psnoteproperty.value) wordt de statische waarde van de uitgebreide eigenschap opgegeven. Het element `NoteProperty` kan ook worden toegevoegd aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
+In het volgende voor beeld wordt de eigenschap **status** , waarvan de waarde altijd is **geslaagd**, toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -element definieert de eigenschap Extended als een notitie-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. Met het element [Value](/dotnet/api/system.management.automation.psnoteproperty.value) wordt de statische waarde van de uitgebreide eigenschap opgegeven. Het `NoteProperty`-element kan ook worden toegevoegd aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -83,7 +83,7 @@ In het volgende voor beeld wordt de eigenschap **status** , waarvan de waarde al
 
 Een script eigenschap definieert een eigenschap waarvan de waarde de uitvoer van een script is.
 
-In het volgende voor beeld wordt de eigenschap **VersionInfo** toegevoegd aan het type [System. io. file info](/dotnet/api/System.IO.FileInfo) . Het [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) -element definieert de eigenschap Extended als script eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. En het element [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) geeft het script op waarmee de waarde van de eigenschap wordt gegenereerd. U kunt ook het element `ScriptProperty` toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
+In het volgende voor beeld wordt de eigenschap **VersionInfo** toegevoegd aan het type [System. io. file info](/dotnet/api/System.IO.FileInfo) . Het [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) -element definieert de eigenschap Extended als script eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. En het element [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) geeft het script op waarmee de waarde van de eigenschap wordt gegenereerd. U kunt ook het `ScriptProperty`-element toevoegen aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -102,12 +102,12 @@ In het volgende voor beeld wordt de eigenschap **VersionInfo** toegevoegd aan he
 ## <a name="property-sets"></a>Eigenschappen sets
 
 Een verzameling eigenschappen definieert een groep uitgebreide eigenschappen waarnaar kan worden verwezen door de naam van de set.
-De [notatie](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)para meter 
- kan bijvoorbeeld een**specifieke eigenschappenset** opgeven die moet worden weer gegeven. Wanneer een eigenschappenset is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weer gegeven.
+De [notatie-tabel](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+**eigenschaps** parameter kan bijvoorbeeld een specifieke eigenschappenset opgeven die moet worden weer gegeven. Wanneer een eigenschappenset is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weer gegeven.
 
-Er is geen beperking voor het aantal eigenschappen sets dat kan worden gedefinieerd voor een object. De eigenschappen sets die worden gebruikt om de standaard eigenschappen voor de weer gave van een object te definiëren, moeten echter worden opgegeven in de ledenset **PSStandardMembers** . In het bestand met het type `Types.ps1xml` zijn de standaard namen van eigenschappen sets **DefaultDisplayProperty**, **DefaultDisplayPropertySet**en **DefaultKeyPropertySet**. Eventuele extra eigenschappen sets die u aan de ledenset **PSStandardMembers** toevoegt, worden genegeerd.
+Er is geen beperking voor het aantal eigenschappen sets dat kan worden gedefinieerd voor een object. De eigenschappen sets die worden gebruikt om de standaard eigenschappen voor de weer gave van een object te definiëren, moeten echter worden opgegeven in de ledenset **PSStandardMembers** . In het bestand `Types.ps1xml` typen zijn de standaard namen van eigenschappen sets **DefaultDisplayProperty**, **DefaultDisplayPropertySet**en **DefaultKeyPropertySet**. Eventuele extra eigenschappen sets die u aan de ledenset **PSStandardMembers** toevoegt, worden genegeerd.
 
-In het volgende voor beeld wordt de eigenschap **DefaultDisplayPropertySet** toegevoegd aan de ledenset **PSStandardMembers** van het type [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) . Het [eigenschappenset](/dotnet/api/system.management.automation.pspropertyset) -element definieert de groep eigenschappen. Het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) specificeert de naam van de eigenschappenset. En de eigenschappen van de set worden opgegeven met het element [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) . U kunt ook het element `PropertySet` toevoegen aan de leden van het element [type](/dotnet/api/system.management.automation.pstypename) .
+In het volgende voor beeld wordt de eigenschap **DefaultDisplayPropertySet** toegevoegd aan de ledenset **PSStandardMembers** van het type [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) . Het [eigenschappenset](/dotnet/api/system.management.automation.pspropertyset) -element definieert de groep eigenschappen. Het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) specificeert de naam van de eigenschappenset. En de eigenschappen van de set worden opgegeven met het element [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) . U kunt ook het `PropertySet`-element toevoegen aan de leden van het [type](/dotnet/api/system.management.automation.pstypename) element.
 
 ```xml
 <Type>

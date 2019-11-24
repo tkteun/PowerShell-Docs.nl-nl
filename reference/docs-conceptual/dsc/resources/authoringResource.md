@@ -22,5 +22,5 @@ Een DSC-resource is een Windows Power shell-module. De module bevat zowel het sc
 * [Een aangepaste DSC-resource schrijven met MOF](authoringResourceMOF.md)
 * [Een DSC-resource implementeren inC#](authoringResourceMofCS.md)
 * [Een aangepaste DSC-resource schrijven met Power shell-klassen](authoringResourceClass.md)
-* [Composite resources: Een DSC-configuratie gebruiken als resource @ no__t-0
+* [Samengestelde resources: het gebruik van een DSC-configuratie als een resource](authoringResourceComposite.md)
 * [Het hulp programma resource Designer gebruiken](authoringResourceMofDesigner.md)

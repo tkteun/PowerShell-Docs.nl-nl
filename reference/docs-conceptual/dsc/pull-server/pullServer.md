@@ -87,10 +87,10 @@ In de volgende stappen wordt uitgelegd hoe u de bron gebruikt in een configurati
    > [!NOTE]
    > **Install-module** is opgenomen in de **PowerShellGet** -module, die is opgenomen in Power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 2. Een SSL-certificaat voor de DSC-pull-server ophalen van een vertrouwde certificerings instantie, binnen uw organisatie of een open bare instantie. Het certificaat dat is ontvangen van de certificerings instantie is meestal in de PFX-indeling.
-3. Installeer het certificaat op het knoop punt dat als DSC-pull-server wordt ingesteld op de standaard locatie. dit moet `CERT:\LocalMachine\My` zijn.
+3. Installeer het certificaat op het knoop punt dat de DSC-pull-server wordt op de standaard locatie, dat moet worden `CERT:\LocalMachine\My`.
    - Noteer de vinger afdruk van het certificaat.
-4. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, typt u het volgende bij de PS-prompt en drukt u op ENTER: `[guid]::newGuid()` of `New-Guid`. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
-5. Begin in het Power shell-ISE (F5) het volgende configuratie script (dat is opgenomen in de map met voor beelden van de **xPSDesiredStateConfiguration** -module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script wordt de pull-server ingesteld.
+4. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, voert u het volgende in bij de PS-prompt en drukt u op ENTER: `[guid]::newGuid()` of `New-Guid`. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
+5. In het Power shell-ISE start (F5) het volgende configuratie script (dat is opgenomen in de map met voor beelden van de **xPSDesiredStateConfiguration** -module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script wordt de pull-server ingesteld.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -167,7 +167,7 @@ Als u client knooppunten wilt toestaan om te registreren bij de server, zodat ze
 > [!NOTE]
 > Registratie sleutels worden niet ondersteund in Power Shell 4,0.
 
-Als u een knoop punt wilt configureren voor verificatie met de pull-server, moet de registratie sleutel zich in de-configuratie voor elk doel knooppunt bevindt dat wordt geregistreerd bij deze pull-server. Houd er rekening mee dat de **RegistrationKey** in de onderstaande meta configuratie wordt verwijderd nadat de doel computer is geregistreerd en dat de waarde moet overeenkomen met de waarde die is opgeslagen in het `RegistrationKeys.txt`-bestand op de pull-server (' 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' voor dit voor beeld). De registratie sleutel waarde altijd veilig behandelen, omdat een doel machine kan worden geregistreerd bij de pull-server.
+Als u een knoop punt wilt configureren voor verificatie met de pull-server, moet de registratie sleutel zich in de-configuratie voor elk doel knooppunt bevindt dat wordt geregistreerd bij deze pull-server. Houd er rekening mee dat de **RegistrationKey** in de onderstaande meta configuratie wordt verwijderd nadat de doel computer is geregistreerd en dat de waarde moet overeenkomen met de waarde die is opgeslagen in het `RegistrationKeys.txt` bestand op de pull-server (' 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' voor dit voor beeld). De registratie sleutel waarde altijd veilig behandelen, omdat een doel machine kan worden geregistreerd bij de pull-server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -226,13 +226,13 @@ Deze bestanden moeten een specifieke indeling hebben zodat de pull-server deze o
 
 ### <a name="dsc-resource-module-package-format"></a>Pakket indeling voor DSC-resource module
 
-Elke resource module moet een gezipte en een naam hebben op basis van `{Module Name}_{Module Version}.zip`het volgende patroon.
+Elke resource module moet een gezipte en een naam hebben volgens het volgende patroon `{Module Name}_{Module Version}.zip`.
 
-Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 zou bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip` hebben.
+Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`.
 Elke versie van een module moet zich in één ZIP-bestand bevinden.
 Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund.
 Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht.
-De standaard indeling van modules met DSC-resource in WMF 5,0 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`is.
+De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
 Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`.
 Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
 
@@ -243,7 +243,7 @@ Gebruik `New-DscChecksum {module zip file}` om een controlesom bestand te maken 
 Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren.
 Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) aan.
 De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt.
-De cmdlet maakt een controlesom bestand `ConfigurationMOFName.mof.checksum`met de naam, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand.
+De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand.
 Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map.
 Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
 
@@ -290,5 +290,5 @@ In de volgende onderwerpen wordt beschreven hoe u pull-clients in detail instelt
 - [Overzicht van desired state Configuration voor Windows Power shell](../overview/overview.md)
 - [Configuraties doorvoeren](enactingConfigurations.md)
 - [Een DSC-rapportserver gebruiken](reportServer.md)
-- [ [MS-DSCPM]: Gewenst status configuratie pull model protocol @ no__t-0
-- [ [MS-DSCPM]: Desired state Configuration pull model protocol errata @ no__t-0
+- [[MS-DSCPM]: gewenst status configuratie pull model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: desired state Configuration pull model protocol errata](https://msdn.microsoft.com/library/mt612824.aspx)

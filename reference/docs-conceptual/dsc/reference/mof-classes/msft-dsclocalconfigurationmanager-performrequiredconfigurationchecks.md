@@ -23,9 +23,9 @@ uint32 PerformRequiredConfigurationChecks(
 
 ## <a name="parameters"></a>Parameters
 
-*Flags* \[in @ no__t-2 een bitmasker dat het type consistentie controle opgeeft dat moet worden uitgevoerd. De volgende waarden zijn geldig en kunnen worden gecombineerd met behulp van een bitsgewijze **or** -bewerking:
+*Markeert* \[in\] een bitmasker dat het type consistentie controle opgeeft dat moet worden uitgevoerd. De volgende waarden zijn geldig en kunnen worden gecombineerd met behulp van een bitsgewijze **or** -bewerking:
 
-|Value |Description |
+|Waarde |Beschrijving |
 |:--- |:---|
 |**1** | Een normale consistentie controle. |
 |**2** | Een voortzetting van een consistentie controle na het opnieuw opstarten. Deze waarde mag niet worden gecombineerd met andere waarden. |
@@ -42,7 +42,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

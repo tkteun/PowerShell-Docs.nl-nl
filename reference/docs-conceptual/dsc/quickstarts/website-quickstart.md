@@ -14,7 +14,7 @@ ms.locfileid: "71942725"
 # <a name="quickstart---create-a-website-with-dsc"></a>Quick Start: een website maken met DSC
 
 In deze oefening wordt uitgelegd hoe u een desired state Configuration (DSC)-configuratie kunt maken en Toep assen van het begin tot het einde.
-In het voor beeld dat we gebruiken, zorgt u ervoor dat de functie `Web-Server` (IIS) is ingeschakeld op een server en dat de inhoud voor een eenvoudige website ' Hallo wereld ' aanwezig is in de map `inetpub\wwwroot` van die server.
+In het voor beeld dat we gebruiken, zorgt u ervoor dat de functie `Web-Server` (IIS) is ingeschakeld op een server en dat de inhoud voor een eenvoudige website ' Hallo wereld ' aanwezig is in de `inetpub\wwwroot` map van die server.
 
 Voor een overzicht van wat DSC is en hoe het werkt, raadpleegt [u overzicht van desired state Configuration voor besluit vormers](../overview/decisionMaker.md).
 
@@ -26,7 +26,7 @@ Als u dit voor beeld wilt uitvoeren, hebt u een computer met Windows Server 2012
 
 Eerst maken we het HTML-bestand dat we als website-inhoud gaan gebruiken.
 
-Maak een map met de naam `test` in de hoofdmap.
+Maak in de hoofdmap een map met de naam `test`.
 
 Typ de volgende tekst in een tekst editor:
 
@@ -37,7 +37,7 @@ Typ de volgende tekst in een tekst editor:
 </body>
 ```
 
-Sla dit op als `index.htm` in de `test`-map die u eerder hebt gemaakt.
+Sla dit op als `index.htm` in de `test` map die u eerder hebt gemaakt.
 
 ## <a name="write-the-configuration"></a>De configuratie schrijven
 
@@ -70,11 +70,11 @@ Configuration WebsiteTest {
 }
 ```
 
-Sla het bestand op `WebsiteTest.ps1`als.
+Sla het bestand op als `WebsiteTest.ps1`.
 
 U ziet dat deze eruitziet als een Power shell-functie, met toevoeging van de trefwoord **configuratie** die wordt gebruikt voor de naam van de functie.
 
-Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. `localhost`in dit geval.
+Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. in dit geval `localhost`.
 
 De configuratie roept twee [resources](../resources/resources.md), **WindowsFeature** en **File**aan.
 Resources maken het werk om ervoor te zorgen dat het doel knooppunt zich in de status bevindt die door de configuratie is gedefinieerd.
@@ -104,7 +104,7 @@ Mode                LastWriteTime         Length Name
 De eerste regel maakt de configuratie functie beschikbaar in de-console.
 De tweede regel voert de configuratie uit.
 Het resultaat is dat een nieuwe map met de naam `WebsiteTest` wordt gemaakt als een submap van de huidige map.
-De map @no__t 0 bevat een bestand met de naam `localhost.mof`.
+De map `WebsiteTest` bevat een bestand met de naam `localhost.mof`.
 Dit bestand kan vervolgens worden toegepast op het doel knooppunt.
 
 ## <a name="apply-the-configuration"></a>De configuratie Toep assen

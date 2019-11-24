@@ -24,9 +24,9 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*configurationData* \[in @ no__t-2 geeft aan welke configuratie gegevens moeten worden verzonden.
+*configurationData* \[in\] geeft aan welke configuratie gegevens moeten worden verzonden.
 
-*configuraties* \[out @ no__t-2 bij Return, bevat een Inge sloten instantie van de configuraties.
+*configuraties* \[out\] als resultaat, bevat een Inge sloten exemplaar van de configuraties.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -38,7 +38,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

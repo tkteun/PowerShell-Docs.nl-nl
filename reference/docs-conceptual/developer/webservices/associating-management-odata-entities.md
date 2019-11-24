@@ -17,7 +17,7 @@ ms.locfileid: "72352281"
 ---
 # <a name="associating-management-odata-entities"></a>Management OData-entiteiten koppelen
 
-Het is vaak handig om een koppeling tussen twee verschillende beheer-OData-entiteiten te maken. Een management OData-service kan bijvoorbeeld entiteiten hebben die een catalogus van producten beheren die zijn ingedeeld in categorieën en de entiteiten definiëren `Product` en `Category`. Door deze twee entiteiten te koppelen, kan een client informatie ophalen over alle producten in een categorie met één aanvraag voor de webservice.
+Het is vaak handig om een koppeling tussen twee verschillende beheer-OData-entiteiten te maken. Een OData-beheer service kan bijvoorbeeld entiteiten hebben die een catalogus van producten beheren die zijn ingedeeld in categorieën en de entiteiten `Product` en `Category`definiëren. Door deze twee entiteiten te koppelen, kan een client informatie ophalen over alle producten in een categorie met één aanvraag voor de webservice.
 
 Een voor beeld dat laat zien hoe u koppelingen tussen entiteiten kunt maken, kan worden gedownload bij [koppelings voorbeeld](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e).
 
@@ -45,7 +45,7 @@ string Products[];
 
 De klasse `Category` definieert een eigenschap die een matrix is van de namen van de producten die bij die categorie horen.
 
-Als u twee entiteiten wilt koppelen, moet u een klasse met het kenmerk `Association` definiëren in het MOF-bestand van het resource schema voor de service. De klasse moet de twee entiteiten definiëren die moeten worden gekoppeld, met de naam `ends` van de koppeling. In het volgende voor beeld ziet u een definitie van een klasse die een koppeling tussen de entiteiten categorie en Products definieert.
+Als u twee entiteiten wilt koppelen, moet u een klasse met het kenmerk `Association` definiëren in het MOF-bestand van het resource schema voor de service. De klasse moet de twee entiteiten definiëren die moeten worden gekoppeld, de zogenaamde `ends` van de koppeling. In het volgende voor beeld ziet u een definitie van een klasse die een koppeling tussen de entiteiten categorie en Products definieert.
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-U moet ook de declaratie van de eigenschap Products in de klasse categorie wijzigen. U kunt het sleutel woord `AssociationClass` gebruiken om op te geven dat de eigenschap zich op één uiteinde van de koppeling bevindt. De eigenschap moet ook worden gedefinieerd als een verwijzing naar een afzonderlijke entiteit, in plaats van een matrix met teken reeksen. U kunt dit doen met behulp van het sleutel woord `ref`. In het volgende voor beeld ziet u de eigenschaps definitie voor de koppeling.
+U moet ook de declaratie van de eigenschap Products in de klasse categorie wijzigen. U gebruikt het sleutel woord `AssociationClass` om op te geven dat de eigenschap zich op één uiteinde van de koppeling bevindt. De eigenschap moet ook worden gedefinieerd als een verwijzing naar een afzonderlijke entiteit, in plaats van een matrix met teken reeksen. U kunt dit doen met behulp van het sleutel woord `ref`. In het volgende voor beeld ziet u de eigenschaps definitie voor de koppeling.
 
 ```csharp
 class Sample_Category {
@@ -94,7 +94,7 @@ Er zijn drie verschillende gevallen waarin u rekening moet houden wanneer u een 
 
 - Als de navigatie-eigenschap aanwezig is in de onderliggende. .NET Framework type en die eigenschap refererende sleutels bevat, hoeft geen expliciete toewijzing te worden toegewezen.
 
-- Als de navigatie-eigenschap niet bestaat in het onderliggende .NET Framework type, moet u een cmdlet opgeven waarmee de lijst met sleutels van de gekoppelde exemplaren wordt opgehaald. U doet dit door een element `Association` toe te voegen dat is genest onder het element `CmdletImplementation`, volgens de elementen die de `cmdlets` definiëren voor de andere ruwe opdrachten.
+- Als de navigatie-eigenschap niet bestaat in het onderliggende .NET Framework type, moet u een cmdlet opgeven waarmee de lijst met sleutels van de gekoppelde exemplaren wordt opgehaald. U doet dit door een `Association` element toe te voegen dat is genest onder het element `CmdletImplementation`, door de elementen te volgen waarmee de `cmdlets` voor de andere ruwe opdrachten worden gedefinieerd.
 
   ```xml
   Class Name=" Category">
@@ -177,7 +177,7 @@ De client kan een lijst met de exemplaren die aan een entiteit zijn gekoppeld, o
 
 #### <a name="constructing-queries-for-associated-entities"></a>Query's maken voor gekoppelde entiteiten
 
-- Een client kan de details van een categorie opvragen zonder de bijbehorende producten op te halen. Met de volgende aanvraag worden bijvoorbeeld details van de categorie @no__t 0 opgehaald.
+- Een client kan de details van een categorie opvragen zonder de bijbehorende producten op te halen. Met de volgende aanvraag worden bijvoorbeeld details van de categorie `food` opgehaald.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')
@@ -189,13 +189,13 @@ De client kan een lijst met de exemplaren die aan een entiteit zijn gekoppeld, o
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/AssociatedProducts
   ```
 
-- Als u alleen Url's van de producten wilt ophalen, gebruikt u de kwalificatie `$links` in de aanvraag.
+- Als u alleen Url's van de producten wilt ophalen, gebruikt u de `$links` kwalificatie in de aanvraag.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- De client kan de categorie gegevens en de bijbehorende producten ophalen met behulp van de kwalificatie `$expand`.
+- De client kan de categorie gegevens en de bijbehorende producten ophalen met behulp van de `$expand` kwalificatie.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts

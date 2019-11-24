@@ -31,9 +31,9 @@ Met het kenmerk ValidateRange worden de minimum-en maximum waarden (het bereik) 
 
 #### <a name="parameters"></a>Parameters
 
-`MinRange` ([System. object](/dotnet/api/system.object)) is vereist. Hiermee geeft u de toegestane minimum waarde.
+`MinRange` ([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane minimum waarde.
 
-`MaxRange` ([System. object](/dotnet/api/system.object)) is vereist. Hiermee geeft u de toegestane maximum waarde.
+`MaxRange` ([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane maximum waarde.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -41,9 +41,9 @@ Met het kenmerk ValidateRange worden de minimum-en maximum waarden (het bereik) 
 
 - De Windows Power shell-runtime genereert een validatie fout in de volgende situaties:
 
-    - Wanneer de waarde van het argument kleiner is dan de limiet van @no__t 0 of groter is dan de limiet van `MaxRange`.
+    - Wanneer de waarde van het argument kleiner is dan de `MinRange` limiet of groter is dan de limiet van `MaxRange`.
 
-    - Wanneer het argument niet van hetzelfde type is als de `MinRange` en de para meters `MaxRange`.
+    - Wanneer het argument niet van hetzelfde type is als de `MinRange` en de `MaxRange`-para meters.
 
 - Het kenmerk ValidateRange wordt gedefinieerd door de klasse [System. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) .
 

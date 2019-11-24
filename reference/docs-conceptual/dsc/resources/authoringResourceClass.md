@@ -64,10 +64,10 @@ Het DSC-resource schema is gedefinieerd als eigenschappen van de klasse. We decl
 
 U ziet dat de eigenschappen zijn gewijzigd op basis van kenmerken. De betekenis van de kenmerken is als volgt:
 
-- **DscProperty (sleutel)** : De eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die als sleutels zijn gemarkeerd, moeten combi neren om een bron exemplaar binnen een configuratie uniek te identificeren.
-- **DscProperty (verplicht)** : De eigenschap is vereist.
-- **DscProperty (NotConfigurable)** : De eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk, kunnen niet worden ingesteld met een configuratie, maar worden gevuld door de methode **Get ()** wanneer deze aanwezig is.
-- **DscProperty ()** : De eigenschap kan worden geconfigureerd, maar dit is niet vereist.
+- **DscProperty (sleutel)** : de eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die als sleutels zijn gemarkeerd, moeten combi neren om een bron exemplaar binnen een configuratie uniek te identificeren.
+- **DscProperty (verplicht)** : de eigenschap is vereist.
+- **DscProperty (NotConfigurable)** : de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk, kunnen niet worden ingesteld met een configuratie, maar worden gevuld door de methode **Get ()** wanneer deze aanwezig is.
+- **DscProperty ()** : de eigenschap kan worden geconfigureerd, maar dit is niet vereist.
 
 De eigenschappen **$Path** en **$SourcePath** zijn beide teken reeksen. De **$CreationTime** is een [datum/tijd](/dotnet/api/system.datetime) -eigenschap. De eigenschap **$ensure** is een opsommings type dat als volgt is gedefinieerd.
 
@@ -454,7 +454,7 @@ PowerShellVersion = '5.0'
 
 ## <a name="test-the-resource"></a>De resource testen
 
-Nadat u de klasse en de manifest bestanden in de mappen structuur hebt opgeslagen zoals eerder beschreven, kunt u een configuratie maken die gebruikmaakt van de nieuwe resource. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [configuraties](../pull-server/enactingConfigurations.md). Met de volgende configuratie wordt gecontroleerd of het bestand op `c:\test\test.txt` bestaat en, als dat niet het geval is, kopieert u het bestand uit `c:\test.txt` (u moet eerst `c:\test.txt` maken voordat u de configuratie uitvoert).
+Nadat u de klasse en de manifest bestanden in de mappen structuur hebt opgeslagen zoals eerder beschreven, kunt u een configuratie maken die gebruikmaakt van de nieuwe resource. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [configuraties](../pull-server/enactingConfigurations.md). Met de volgende configuratie wordt gecontroleerd of het bestand op `c:\test\test.txt` bestaat, en, als dat niet het geval is, kopieert u het bestand van `c:\test.txt` (u moet `c:\test.txt` maken voordat u de configuratie uitvoert).
 
 ```powershell
 Configuration Test
@@ -473,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential ondersteunen
 
->**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in power shell 5,0 en hoger.
+>**Opmerking:** **PsDscRunAsCredential** wordt ondersteund in Power shell 5,0 en hoger.
 
 De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie](../configurations/configurations.md) bron blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties.
 Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md)voor meer informatie.
@@ -484,7 +484,7 @@ Het kenmerk **dscresource bieden ()** gebruikt een optionele para meter **RunAsC
 Deze para meter heeft een van de drie volgende waarden:
 
 - `Optional` **PsDscRunAsCredential** is optioneel voor configuraties die deze bron aanroepen. Dit is de standaardwaarde.
-- `Mandatory`- **PsDscRunAsCredential** moet worden gebruikt voor elke configuratie die deze bron aanroept.
+- `Mandatory` **PsDscRunAsCredential** moet worden gebruikt voor elke configuratie die deze bron aanroept.
 - `NotSupported` configuraties die deze resource aanroepen, kunnen **PsDscRunAsCredential**niet gebruiken.
 - `Default` hetzelfde als `Optional`.
 
@@ -500,7 +500,7 @@ class FileResource {
 
 Een module kan meerdere DSC-resources op basis van klassen definiëren. U kunt de mapstructuur op de volgende manieren maken:
 
-1. Definieer de eerste resource in het bestand ' @no__t -0. psm1 ' en de volgende resources onder de map **DSCResources** .
+1. Definieer de eerste resource in het bestand '<ModuleName>. psm1 ' en de volgende resources in de map **DSCResources** .
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -528,7 +528,7 @@ Een module kan meerdere DSC-resources op basis van klassen definiëren. U kunt d
 
 ### <a name="access-the-user-context"></a>De gebruikers context openen
 
-Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$global:PsDscContext`gebruiken.
+Als u toegang wilt krijgen tot de gebruikers context vanuit een aangepaste resource, kunt u de automatische variabele `$global:PsDscContext`gebruiken.
 
 Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 

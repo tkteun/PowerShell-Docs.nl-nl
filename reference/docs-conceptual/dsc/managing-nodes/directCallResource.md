@@ -13,10 +13,10 @@ ms.locfileid: "71942249"
 
 >Van toepassing op: Windows Power shell 5,0
 
-U kunt de cmdlet [invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) gebruiken om de functies of methoden van een DSC-resource rechtstreeks aan te roepen (de functies **Get-TargetResource**, **set-TargetResource**en **test-TargetResource** van een op MOF gebaseerde resource, of deMethoden van een op een klasse gebaseerde resource ophalen, **instellen**en **testen** .
+U kunt de cmdlet [invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) gebruiken om de functies of methoden van een DSC-resource rechtstreeks aan te roepen (de functies **Get-TargetResource**, **set-TargetResource**en **test-TargetResource** van een op een MOF gebaseerde resource, of de methoden **Get**, **set**en **test** van een op een klasse gebaseerde bron).
 Dit kan worden gebruikt door derden die DSC-resources willen gebruiken of als handig hulp middel bij het ontwikkelen van resources.
 
-Deze cmdlet wordt doorgaans gebruikt in combi natie met de @no__t eigenschap **refreshMode** -0, maar kan ook worden gebruikt, ongeacht waar het is ingesteld.
+Deze cmdlet wordt doorgaans gebruikt in combi natie met een `refreshMode = 'Disabled'`eigenschap voor de **refreshMode** , maar kan worden gebruikt, ongeacht de waarde die is ingesteld op.
 
 Wanneer u de cmdlet **invoke-dscresource bieden** aanroept, geeft u op welke methode of functie u wilt aanroepen met behulp van de **methode** parameter. U geeft de eigenschappen van de resource op door een hashtabel door te geven als de waarde van de **eigenschaps** parameter.
 

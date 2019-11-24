@@ -51,7 +51,7 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-U moet een of meer elementen van het @no__t 0 opgeven voor de tabel weergave. Er is geen maximum limiet voor het aantal `TableRowEntry`-elementen dat kan worden toegevoegd, en de volg orde is belang rijk.
+U moet een of meer `TableRowEntry` elementen voor de tabel weergave opgeven. Er is geen maximum limiet voor het aantal `TableRowEntry` elementen dat kan worden toegevoegd, en de volg orde hiervan is aanzienlijk.
 
 Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 

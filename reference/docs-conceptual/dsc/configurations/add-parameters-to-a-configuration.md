@@ -36,13 +36,13 @@ Configuration TestConfig
 
 In tegens telling tot een functie, voegt het kenmerk [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) geen functionaliteit toe. Naast de [algemene para meters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kunnen configuraties ook gebruikmaken van de volgende ingebouwde para meters, zonder dat u ze hoeft te definiëren.
 
-|Parameter  |Description  |
+|Parameter  |Beschrijving  |
 |---------|---------|
 |`-InstanceName`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
 |`-DependsOn`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
 |`-PSDSCRunAsCredential`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
 |`-ConfigurationData`|Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie.|
-|`-OutputPath`|Wordt gebruikt om op te geven waar uw ' @no__t -0computername\>.mof-bestand wordt gecompileerd|
+|`-OutputPath`|Wordt gebruikt om op te geven waar uw '\<computer naam\>. MOF-bestand wordt gecompileerd|
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Uw eigen para meters aan configuraties toevoegen
 
@@ -59,7 +59,7 @@ Configuration TestConfig
 
 ### <a name="add-a-computername-parameter"></a>Een ComputerName-para meter toevoegen
 
-De eerste para meter die u kunt toevoegen is een `-Computername` para meter, zodat u dynamisch een '. MOF-bestand ' kunt compileren voor elke `-Computername` die u aan uw configuratie doorgeeft. Net als functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde geeft voor `-ComputerName`
+De eerste para meter die u kunt toevoegen is een `-Computername` para meter, zodat u dynamisch een '. MOF-bestand ' kunt compileren voor alle `-Computername` die u aan uw configuratie doorgeeft. Net als bij functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde voor `-ComputerName` geeft.
 
 ```powershell
 param
@@ -69,7 +69,7 @@ param
 )
 ```
 
-Binnen uw configuratie kunt u de para meter `-ComputerName` opgeven wanneer u het knooppunt blok wilt definiëren.
+Binnen uw configuratie kunt u vervolgens uw `-ComputerName`-para meter opgeven wanneer u het knooppunt blok wilt definiëren.
 
 ```powershell
 Node $ComputerName
@@ -117,7 +117,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Geavanceerde para meters in configuraties
 
-Naast een `-ComputerName`-para meter kunnen we para meters voor de service naam en-status toevoegen. In het volgende voor beeld wordt een parameter blok met een `-ServiceName`-para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State`-para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
+Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen. In het volgende voor beeld wordt een parameter blok met een `-ServiceName`-para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State`-para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
 
 ```powershell
 Configuration TestConfig
@@ -158,9 +158,9 @@ De voorbeeld configuratie heeft nu een dynamische `$ServiceName`, maar als er ge
 $ServiceName="Spooler"
 ```
 
-In dit geval is het beter om de gebruiker te dwingen een waarde voor de para meter `$ServiceName` op te geven. Met het kenmerk `parameter` kunt u verdere validatie-en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.
+In dit geval is het beter om de gebruiker te dwingen een waarde op te geven voor de para meter `$ServiceName`. Met het kenmerk `parameter` kunt u verdere validatie-en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.
 
-Voeg boven een parameter declaratie het `parameter`-kenmerk blok toe, zoals in het onderstaande voor beeld.
+Voeg boven een parameter declaratie het `parameter` kenmerk blok toe, zoals in het onderstaande voor beeld.
 
 ```powershell
 [parameter()]
@@ -168,7 +168,7 @@ Voeg boven een parameter declaratie het `parameter`-kenmerk blok toe, zoals in h
 $ServiceName
 ```
 
-U kunt argumenten voor elk kenmerk `parameter` opgeven om de aspecten van de gedefinieerde para meter te beheren. In het volgende voor beeld wordt de `$ServiceName` een **verplichte** para meter.
+U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefinieerde para meter te beheren. In het volgende voor beeld wordt de `$ServiceName` een **verplichte** para meter.
 
 ```powershell
 [parameter(Mandatory)]
@@ -176,7 +176,7 @@ U kunt argumenten voor elk kenmerk `parameter` opgeven om de aspecten van de ged
 $ServiceName
 ```
 
-Voor de para meter `$State` willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). de `ValidationSet*`attribute zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). In het volgende voor beeld wordt het kenmerk `ValidationSet` toegevoegd aan de para meter `$State`. Omdat we de `$State`-para meter niet **verplicht**moeten maken, moeten we een standaard waarde voor het veld toevoegen.
+Voor de para meter `$State` willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). het kenmerk `ValidationSet*`zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). In het volgende voor beeld wordt het kenmerk `ValidationSet` toegevoegd aan de para meter `$State`. Omdat we de `$State`-para meter niet **verplicht**moeten maken, moeten we een standaard waarde voor het veld toevoegen.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -185,13 +185,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> U hoeft geen `parameter`-kenmerk op te geven wanneer u een `validation`-kenmerk gebruikt.
+> U hoeft geen `parameter` kenmerk op te geven wanneer u een `validation` kenmerk gebruikt.
 
 Meer informatie over de `parameter` en validatie kenmerken vindt u in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>Volledig geparametriseerde configuratie
 
-We hebben nu een configuratie met para meters waarmee de gebruiker wordt gedwongen een `-InstanceName`, `-ServiceName` op te geven en de para meter `-State` te valideren.
+We hebben nu een configuratie met para meters waarmee de gebruiker een `-InstanceName`, `-ServiceName`en validatie van de `-State`-para meter kunt opgeven.
 
 ```powershell
 Configuration TestConfig

@@ -24,15 +24,15 @@ uint32 RemoveConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*Fase* \[in @ no__t-2 geeft aan welk configuratie document moet worden verwijderd. De volgende waarden zijn geldig:
+*Fase* \[in\] geeft aan welk configuratie document moet worden verwijderd. De volgende waarden zijn geldig:
 
-|Value |Description |
+|Waarde |Beschrijving |
 |:--- |:---|
 |**1** | Het **huidige** configuratie document (huidige. MOF). |
 |**2** | Het **in behandeling zijnde** configuratie document (in behandeling. MOF).  |
 |**4** | Het **vorige** configuratie document (vorige. MOF). |
 
-*Force* \[in @ no__t-2 **True** om het verwijderen van de configuratie af te dwingen.
+*Dwing* \[in\] **waar** om het verwijderen van de configuratie af te dwingen.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -44,7 +44,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

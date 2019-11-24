@@ -23,7 +23,7 @@ In dit voor beeld ziet u hoe u een basis lijst weergave implementeert waarin [Sy
 
 1. Kopieer de XML uit de sectie voor beeld van dit onderwerp naar een tekst bestand.
 
-2. Sla het tekst bestand op. Zorg ervoor dat u de extensie @no__t 0 toevoegt aan het bestand om het te identificeren als een opmaak bestand.
+2. Sla het tekst bestand op. Zorg ervoor dat u de extensie `format.ps1xml` toevoegt aan het bestand om het te identificeren als een opmaak bestand.
 
 3. Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile`.
 

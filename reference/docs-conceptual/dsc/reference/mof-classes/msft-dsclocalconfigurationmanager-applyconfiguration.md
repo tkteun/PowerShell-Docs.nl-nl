@@ -25,7 +25,7 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*force* \[in @ no__t-2 als dit **waar**is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
+\[*afdwingen* in\] als dit **waar**is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -37,7 +37,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

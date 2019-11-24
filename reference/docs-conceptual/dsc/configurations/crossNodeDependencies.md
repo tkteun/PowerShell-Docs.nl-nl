@@ -15,13 +15,13 @@ ms.locfileid: "71942053"
 
 DSC biedt speciale resources, **WaitForAll**, **WaitForAny**en **WaitForSome** die in configuraties kunnen worden gebruikt om afhankelijkheden op te geven voor configuraties op andere knoop punten. Het gedrag van deze resources is als volgt:
 
-- **WaitForAll**: Slaagt als de opgegeven resource de gewenste status heeft op alle doel knooppunten die zijn gedefinieerd in de eigenschap van het **knoop punt** .
-- **WaitForAny**: Slaagt als de opgegeven resource de gewenste status heeft op ten minste één van de doel knooppunten die zijn gedefinieerd in de eigenschap van het **knoop punt** .
+- **WaitForAll**: slaagt als de opgegeven resource de gewenste status heeft op alle doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
+- **WaitForAny**: slaagt als de opgegeven resource de gewenste status heeft op ten minste één van de doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
 - **WaitForSome**: Hiermee geeft u een eigenschap **NodeCount** op in aanvulling op de eigenschap **nodenaam** . De resource slaagt als de resource de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount**) dat is gedefinieerd door de eigenschap **nodenaam** .
 
 ## <a name="syntax"></a>Syntaxis
 
-De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang \<ResourceType @ no__t-1 in het onderstaande voor beeld met een **WaitForAny** of **WaitForAll**.
+De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang \<resource type\> in het onderstaande voor beeld met een **WaitForAny** of **WaitForAll**.
 Net als het sleutel woord **DependsOn** moet u de naam als ' [resource type] ResourceName ' Format teren. Als de resource deel uitmaakt van een afzonderlijke [configuratie](configurations.md), neemt u de **configuratiepad** op in de opgemaakte teken reeks ' [resource type] ResourceName:: [configuratiepad]:: [configuratiepad] '. De **knooppunt** naam is de computer of het knoop punt waarop de huidige resource moet wachten.
 
 ```
@@ -55,11 +55,11 @@ WaitForSome [String] #ResourceName
 
 Alle **WaitForXXXX** delen de volgende syntaxis sleutels.
 
-|Eigenschap|  Description   |
+|Eigenschap|  Beschrijving   |
 |---------|---------------------|
 | RetryIntervalSec| Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1.|
-| retryCount| Het maximum aantal keren dat opnieuw moet worden geprobeerd.|
-| ThrottleLimit| Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard.|
+| RetryCount| Het maximum aantal keren dat opnieuw moet worden geprobeerd.|
+| ThrottleLimit| Aantal machines om tegelijkertijd verbinding te maken. De standaard instelling is `New-CimSession` standaard waarde.|
 | DependsOn | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Zie [DependsOn](resource-depends-on.md) voor meer informatie.|
 | PsDscRunAsCredential | Zie [DSC gebruiken met gebruikers referenties](./runAsUser.md) |
 

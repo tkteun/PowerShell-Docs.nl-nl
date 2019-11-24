@@ -22,7 +22,7 @@ Vaak moet u een cmdlet ontwerpen om uit te voeren op basis van een groep resourc
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows Power shell-cmdlets die gebruikmaken van joker tekens
 
- Veel Windows Power shell-cmdlets ondersteunen joker tekens voor hun parameter waarden. Bijna elke cmdlet met de para meter `Name` of `Path` ondersteunt bijvoorbeeld joker tekens voor deze para meters. (Hoewel de meeste cmdlets die een para meter `Path` hebben ook een para meter `LiteralPath` hebben die geen joker tekens ondersteunt.) De volgende opdracht laat zien hoe een Joker teken wordt gebruikt om alle cmdlets in de huidige sessie te retour neren waarvan de naam de bewerking Get bevat.
+ Veel Windows Power shell-cmdlets ondersteunen joker tekens voor hun parameter waarden. Bijna elke cmdlet met de para meter `Name` of `Path` ondersteunt bijvoorbeeld joker tekens voor deze para meters. (Hoewel de meeste cmdlets die een `Path` para meter hebben ook een `LiteralPath` para meter hebben die geen joker tekens ondersteunt.) De volgende opdracht laat zien hoe een Joker teken wordt gebruikt om alle cmdlets in de huidige sessie te retour neren waarvan de naam de bewerking Get bevat.
 
  `Get-Command get-*`
 
@@ -37,11 +37,11 @@ Windows Power shell ondersteunt de volgende joker tekens.
 | [ ]      | Komt overeen met een reeks tekens                                       | `[a-l]ook` | Book, Cook, zoeken | Nook, geduurde     |
 | [ ]      | Komt overeen met de opgegeven tekens                                    | `[bn]ook`  | Book, Nook       | Cook, zoeken     |
 
-Wanneer u cmdlets ontwerpt die ondersteuning bieden voor joker tekens, toestaan combi Naties van joker tekens. De volgende opdracht gebruikt bijvoorbeeld de cmdlet `Get-ChildItem` om alle txt-bestanden op te halen die zich in de map c:\Techdocs bevinden en die beginnen met de letters ' a ' tot en met ' l '.
+Wanneer u cmdlets ontwerpt die ondersteuning bieden voor joker tekens, toestaan combi Naties van joker tekens. De volgende opdracht gebruikt bijvoorbeeld de cmdlet `Get-ChildItem` om alle txt-bestanden in de map c:\Techdocs op te halen en die beginnen met de letters ' a ' tot en met ' l '.
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-In de vorige opdracht wordt het bereik Joker teken `[a-l]` gebruikt om op te geven dat de bestands naam moet beginnen met de tekens ' a ' tot en met ' l ' en het Joker teken `*` als tijdelijke aanduiding gebruikt voor tekens tussen de eerste letter van de bestands naam en het txt-bestand **.** extensie.
+In de vorige opdracht wordt gebruikgemaakt van het Joker teken `[a-l]` om op te geven dat de bestands naam moet beginnen met de tekens ' a ' tot en met ' l ' en gebruikt het `*` joker tekens als tijdelijke aanduiding voor tekens tussen de eerste letter van de bestands naam en de extensie **. txt** .
 
 In het volgende voor beeld wordt een Joker teken voor een bereik gebruikt dat de letter ' d ' uitsluit, maar alle andere letters van ' a ' tot en met ' f ' bevat.
 
@@ -55,11 +55,11 @@ Het volgende patroon bevat bijvoorbeeld twee haken die letterlijk moeten worden 
 
 Bij gebruik in de API voor Power shell:
 
-- "John Smith \` [* ']"
+- "John Smith \`[* ']"
 
 Bij gebruik van de Power shell-opdracht prompt:
 
-- "John Smith \` @ no__t-1 [* \`]"
+- "John Smith \`\`[*\`']"
 
 Dit patroon komt overeen met ' John Smith [marketing] ' of ' John Smith [development] '. Bijvoorbeeld:
 

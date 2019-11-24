@@ -23,7 +23,7 @@ uint32 EnableDebugConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*BreakAll* \[in @ no__t-2 stelt een onderbrekings punt in op elke regel in het bron script.
+*BreakAll* \[in\] stelt een onderbrekings punt in op elke regel in het bron script.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -35,7 +35,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

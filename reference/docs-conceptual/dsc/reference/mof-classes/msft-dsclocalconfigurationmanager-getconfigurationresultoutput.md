@@ -25,11 +25,11 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>Parameters
 
-*jobId* \[in @ no__t-2 de id van de taak waarvoor uitvoer gegevens moeten worden opgehaald.
+*jobId* \[in\] de id van de taak waarvoor uitvoer gegevens moeten worden opgehaald.
 
-*resumeOutputBookmark* \[in @ no__t-2 geeft aan dat de uitvoer een voortzetting van een vorige blad wijzer moet zijn.
+*resumeOutputBookmark* \[in\] geeft aan dat de uitvoer een voortzetting van een vorige blad wijzer moet zijn.
 
-*uitvoer* \[out @ no__t-2 de uitvoer voor de opgegeven taak.
+*uitvoer* \[\] de uitvoer voor de opgegeven taak.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -41,7 +41,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

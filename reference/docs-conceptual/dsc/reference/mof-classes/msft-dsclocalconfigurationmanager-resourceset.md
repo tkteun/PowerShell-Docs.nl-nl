@@ -26,13 +26,13 @@ uint32 ResourceSet(
 
 ## <a name="parameters"></a>Parameters
 
-Resource *type* \[in @ no__t-2 de naam van de resource die moet worden aangeroepen.
+Resource *type* -\[in\] de naam van de resource die moet worden aangeroepen.
 
-*Module* naam \[in @ no__t-2 de name van de module die de resource bevat die moet worden aangeroepen.
+*Module* \[in\] de naam van de module die de resource bevat die moet worden aangeroepen.
 
-*resource property* \[in @ no__t-2 geeft de naam van de bron eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
+*resource property* \[in\] geeft de naam van de resource eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
 
-*RebootRequired* \[out @ no__t-2 bij Return wordt deze eigenschap ingesteld op **True** als het doel knooppunt opnieuw moet worden opgestart.
+*RebootRequired* \[\] als resultaat, wordt deze eigenschap ingesteld op **True** als het doel knooppunt opnieuw moet worden opgestart.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -44,7 +44,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

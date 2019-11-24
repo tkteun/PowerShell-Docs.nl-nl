@@ -26,5 +26,5 @@ Als de module die wordt geïmplementeerd op Azure Automation vereist acceptatie 
 
 ## <a name="more-details"></a>Meer Details
 
-[Acceptatie van de licentie vereisen in de PowerShellGet](../../concepts/module-license-acceptance.md)
-[Azure Automation-website](/azure/automation)
+[Acceptatie van de licentie in de PowerShellGet](../../concepts/module-license-acceptance.md)
+[Azure Automation-website](/azure/automation) vereisen

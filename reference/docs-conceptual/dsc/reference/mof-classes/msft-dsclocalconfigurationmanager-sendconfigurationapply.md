@@ -24,9 +24,9 @@ uint32 SendConfigurationApply(
 
 ## <a name="parameters"></a>Parameters
 
-*ConfigurationData* \[in @ no__t-2 de omgevings gegevens voor de configuratie.
+*ConfigurationData* \[in\] de omgevings gegevens voor de configuratie.
 
-*force* \[in @ no__t-2 **True** om te voor komen dat de configuratie wordt gestopt.
+*dwing* \[in\] **waar** om te voor komen dat de configuratie wordt gestopt.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -38,7 +38,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

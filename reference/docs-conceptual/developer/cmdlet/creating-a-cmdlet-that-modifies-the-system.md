@@ -30,7 +30,7 @@ Ter ondersteuning van de bevestiging moet een cmdlet twee dingen doen.
 
 - Roep [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aan tijdens het uitvoeren van de cmdlet (zoals weer gegeven in het volgende voor beeld).
 
-Met een ondersteunende bevestiging geeft een cmdlet de `Confirm`-en `WhatIf`-para meters die worden verstrekt door Windows Power shell en voldoet aan de ontwikkel richtlijnen voor cmdlets (Zie cmdlet voor meer informatie over richt lijnen voor de implementatie van de cmdlet). [ Ontwikkel richtlijnen](./cmdlet-development-guidelines.md).).
+Met een ondersteunende bevestiging geeft een cmdlet de `Confirm`-en `WhatIf`-para meters die worden verstrekt door Windows Power shell en voldoet ook aan de ontwikkel richtlijnen voor cmdlets (Zie [richt lijnen](./cmdlet-development-guidelines.md)voor de ontwikkeling van de cmdlet voor meer informatie over richt lijnen voor de ontwikkeling van de cmdlet.)
 
 ## <a name="changing-the-system"></a>Het systeem wijzigen
 
@@ -55,11 +55,11 @@ Hier volgt de klassedefinitie voor deze stop-proc-cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-Houd er rekening mee dat het sleutel woord `SupportsShouldProcess`-kenmerk in de declaratie [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) is ingesteld op `true`, zodat de cmdlet aanroepen kan uitvoeren naar [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [ System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Zonder dit tref woord is ingesteld, zijn de para meters `Confirm` en `WhatIf` niet beschikbaar voor de gebruiker.
+Houd er rekening mee dat het sleutel woord `SupportsShouldProcess` kenmerk in de declaratie [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) is ingesteld op `true` om de cmdlet in te scha kelen voor het aanroepen van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System. Management.](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)Automation. cmdlet. ShouldContinue. Zonder dit tref woord is ingesteld, zijn de para meters `Confirm` en `WhatIf` niet beschikbaar voor de gebruiker.
 
 ### <a name="extremely-destructive-actions"></a>Extreem destructieve acties
 
-Sommige bewerkingen zijn zeer destructief, zoals het opnieuw Format teren van een actieve vasteschijfpartitie. In deze gevallen moet de cmdlet `ConfirmImpact` @ no__t-1 @ no__t-2 instellen bij het declareren van het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Met deze instelling wordt de cmdlet gedwongen om een gebruikers bevestiging te vragen, zelfs wanneer de gebruiker de para meter `Confirm` niet heeft opgegeven. Cmdlet-ontwikkel aars moeten echter voor komen dat `ConfirmImpact` worden gebruikt voor bewerkingen die alleen mogelijk destructief zijn, zoals het verwijderen van een gebruikers account. Houd er rekening mee dat als `ConfirmImpact` is ingesteld op [System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**.
+Sommige bewerkingen zijn zeer destructief, zoals het opnieuw Format teren van een actieve vasteschijfpartitie. In deze gevallen moet de cmdlet `ConfirmImpact` = instellen `ConfirmImpact.High` bij het declareren van het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Met deze instelling wordt de cmdlet gedwongen om een gebruikers bevestiging te vragen, zelfs wanneer de gebruiker de para meter `Confirm` niet heeft opgegeven. Cmdlet-ontwikkel aars moeten echter voor komen dat `ConfirmImpact` worden gebruikt voor bewerkingen die alleen mogelijk destructief zijn, zoals het verwijderen van een gebruikers account. Houd er rekening mee dat als `ConfirmImpact` is ingesteld op [System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**.
 
 Op dezelfde manier zijn sommige bewerkingen waarschijnlijk niet destructief, hoewel ze in theorie de uitvoerings status van een systeem buiten Windows Power shell wijzigen. Met deze cmdlets kan `ConfirmImpact` worden ingesteld op [System. Management. Automation. Confirmimpact. low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Hiermee worden bevestigings aanvragen overs Laan waarbij de gebruiker heeft gevraagd om alleen bewerkingen met een gemiddelde impact en hoge impact te bevestigen.
 
@@ -67,11 +67,11 @@ Op dezelfde manier zijn sommige bewerkingen waarschijnlijk niet destructief, hoe
 
 In deze sectie wordt beschreven hoe u de cmdlet-para meters definieert, inclusief die die nodig zijn om systeem wijzigingen te ondersteunen. Zie [para meters toevoegen waarmee de commandline-invoer wordt verwerkt](./adding-parameters-that-process-command-line-input.md) als u algemene informatie nodig hebt over het definiëren van para meters.
 
-De cmdlet stop-proc definieert drie para meters: `Name`, `Force` en `PassThru`.
+De cmdlet stop-proc definieert drie para meters: `Name`, `Force`en `PassThru`.
 
 De para meter `Name` komt overeen met de eigenschap `Name` van het invoer object voor processen. Houd er rekening mee dat de para meter `Name` in dit voor beeld verplicht is, omdat de cmdlet mislukt als deze geen benoemd proces heeft om te stoppen.
 
-Met de para meter `Force` kan de gebruiker aanroepen voor [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)negeren. Alle cmdlets die [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moeten de para meter `Force` hebben zodat wanneer `Force` is opgegeven, de cmdlet de aanroep naar [System. Management. Automation. cmdlet. ShouldContinue.](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en gaat verder met de bewerking. Houd er rekening mee dat dit geen invloed heeft op de aanroepen van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+Met de para meter `Force` kan de gebruiker aanroepen van [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)negeren. Alle cmdlets die [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moeten een `Force` para meter hebben zodat wanneer `Force` is opgegeven, de cmdlet de aanroep naar [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) overneemt en de bewerking verkrijgt. Houd er rekening mee dat dit geen invloed heeft op de aanroepen van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
 
 Met de para meter `PassThru` kan de gebruiker aangeven of met de cmdlet een uitvoer object door de pijp lijn wordt door gegeven, in dit geval nadat een proces is gestopt. Houd er rekening mee dat deze para meter is gekoppeld aan de cmdlet zelf in plaats van op een eigenschap van het invoer object.
 
@@ -229,7 +229,7 @@ De invoer verwerkings methode van uw cmdlet moet de methode [System. Management.
 > [!NOTE]
 > Als een door het systeem ondersteunde cmdlet moet worden verwerkt en niet kan worden uitgevoerd, wordt de aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) mogelijk onverwacht gewijzigd.
 
-De aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat moet worden weer gegeven voor de gebruiker.
+De aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven voor de gebruiker.
 
 In het volgende voor beeld ziet u de aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) uit de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) in de voor beeld van de cmdlet stop-proc.
 
@@ -243,7 +243,7 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>De ShouldContinue-methode aanroepen
 
-De aanroep van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) verzendt een secundair bericht naar de gebruiker. Deze aanroep wordt uitgevoerd na de aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourneert `true` en als de para meter `Force` niet is ingesteld op `true`. De gebruiker kan vervolgens feedback geven om te zeggen of de bewerking moet worden voortgezet. De cmdlet roept [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aan als een extra controle op mogelijk schadelijke systeem wijzigingen of wanneer u Ja-naar-alle-en geen-alle opties voor de gebruiker wilt bieden.
+De aanroep van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) verzendt een secundair bericht naar de gebruiker. Deze aanroep wordt uitgevoerd nadat de aanroep van [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourneert `true` en of de para meter `Force` niet is ingesteld op `true`. De gebruiker kan vervolgens feedback geven om te zeggen of de bewerking moet worden voortgezet. De cmdlet roept [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aan als een extra controle op mogelijk schadelijke systeem wijzigingen of wanneer u Ja-naar-alle-en geen-alle opties voor de gebruiker wilt bieden.
 
 In het volgende voor beeld ziet u de aanroep van [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) uit de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) in de voor beeld van de cmdlet stop-proc.
 
@@ -270,7 +270,7 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>Invoer verwerking stoppen
 
-De invoer verwerkings methode van een cmdlet die systeem wijzigingen aanbrengt, moet een manier bieden om de verwerking van de invoer te stoppen. In het geval van deze stop-proc cmdlet wordt een aanroep uitgevoerd vanuit de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) aan de methode [System. Diagnostics. process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Omdat de para meter `PassThru` is ingesteld op `true`, [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ook [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroept om het proces object naar de pijp lijn te verzenden.
+De invoer verwerkings methode van een cmdlet die systeem wijzigingen aanbrengt, moet een manier bieden om de verwerking van de invoer te stoppen. In het geval van deze stop-proc cmdlet wordt een aanroep uitgevoerd vanuit de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) aan de methode [System. Diagnostics. process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) . De para meter `PassThru` is ingesteld op `true`, [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) roept ook [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aan om het proces object naar de pijp lijn te verzenden.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -288,7 +288,7 @@ Na de implementatie van een cmdlet moet deze met Windows Power shell zijn geregi
 
 Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. Hier volgen enkele tests die de cmdlet stop-proc testen. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
 
-- Start Windows Power shell en gebruik de cmdlet stop-proc om de verwerking te stoppen, zoals hieronder wordt weer gegeven. Omdat de cmdlet de para meter `Name` opgeeft als verplicht, wordt de cmdlet query's voor de para meter.
+- Start Windows Power shell en gebruik de cmdlet stop-proc om de verwerking te stoppen, zoals hieronder wordt weer gegeven. Omdat met de cmdlet de para meter `Name` als verplicht wordt opgegeven, vraagt de cmdlet naar de para meter.
 
     ```powershell
     PS> stop-proc
@@ -335,7 +335,7 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-- We gaan nu proberen het WINLOGON-proces te stoppen zonder een waarschuwing te ontvangen. Houd er rekening mee dat met deze opdracht vermelding de para meter `Force` wordt gebruikt om de waarschuwing te negeren.
+- We gaan nu proberen het WINLOGON-proces te stoppen zonder een waarschuwing te ontvangen. Houd er rekening mee dat deze opdracht invoer gebruikmaakt van de para meter `Force` om de waarschuwing te onderdrukken.
 
     ```powershell
     PS> stop-proc -Name winlogon -Force

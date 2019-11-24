@@ -26,13 +26,13 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*configurationData* \[in @ no__t-2-omgevings gegevens voor de confuguration.
+*configurationData* \[in\] omgevings gegevens voor de confuguration.
 
-*InDesiredState* \[out @ no__t-2 bij Return geeft aan of het beheerde knoop punt zich in de staat bevindt die is opgegeven in het configuratie document.
+*InDesiredState* \[\] als resultaat, geeft aan of het beheerde knoop punt zich in de staat bevindt die is opgegeven in het configuratie document.
 
-*ResourcesInDesiredState* \[out @ no__t-2 bij Return bevat een Inge sloten instantie van de klasse **MSFT_ResourceInDesiredState** waarmee resources worden opgegeven die de gewenste status hebben.
+*ResourcesInDesiredState* \[out\] als resultaat, bevat een Inge sloten instantie van de **MSFT_ResourceInDesiredState** -klasse waarmee resources worden opgegeven die de gewenste status hebben.
 
-*ResourcesNotInDesiredState* \[out @ no__t-2 bij Return bevat een Inge sloten instantie van de klasse **MSFT_ResourceNotInDesiredState** waarmee resources worden opgegeven die niet de gewenste status hebben.
+*ResourcesNotInDesiredState* \[out\] als resultaat, bevat een Inge sloten instantie van de **MSFT_ResourceNotInDesiredState** -klasse waarmee resources worden opgegeven die niet de gewenste status hebben.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -44,7 +44,7 @@ Dit is een statische methode.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
 

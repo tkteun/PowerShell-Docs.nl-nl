@@ -11,9 +11,9 @@ ms.locfileid: "71692241"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
-Vernieuwd 24 juni 2013 (herziene versie van 23 augustus 2017)
+Bijgewerkt: 24 juni 2013 (herziene versie van 23 augustus 2017)
 
-Van toepassing op: Windows Server 2012 R2, Windows Server 2012
+Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
 
 In de volgende secties worden enkele veelvoorkomende problemen beschreven bij het maken van verbinding met een externe computer met Windows Power shell-webtoegang, en vindt u suggesties voor het oplossen van de problemen.
 
@@ -52,17 +52,17 @@ Dit probleem kan optreden bij gebruikers die zijn aangemeld met een domeinnaam d
 1. Internet Explorer 10 installeren en uitvoeren
 1. Wijzig de instelling voor de **document modus** van Internet Explorer in *IE10* -standaarden.
    1. Druk op **F12** om de Ontwikkelhulpprogramma's-console te openen
-   1. Klik in Internet Explorer 10 op **browser modus**en selecteer vervolgens *Internet Explorer 10*.
+   1. Klik in Internet Explorer 10 op **Browsermodus** en selecteer vervolgens *Internet Explorer 10*.
    1. Klik op **document modus**en klik vervolgens op *IE10* -standaarden.
-   1. Druk nogmaals op **F12** om de Ontwikkelhulpprogramma's-console te sluiten.
+   1. Druk nogmaals op **F12** om de console Ontwikkelhulpprogramma’s te sluiten.
 1. Schakel automatische proxy configuratie uit in Internet Explorer 10.
    1. Klik op **extra**en klik vervolgens op **Internet opties**.
-   1. Klik in het dialoog venster **Internet opties** op het tabblad **verbindingen** op **LAN-instellingen**.
-   1. Schakel het selectie vakje **instellingen automatisch detecteren** uit. Klik op **OK**en klik nogmaals op **OK** om het dialoog venster *Internet opties* te sluiten.
+   1. Klik in het dialoogvenster **Internetopties** op het tabblad **Verbindingen** op **LAN-instellingen**.
+   1. Schakel het selectievakje **Instellingen automatisch detecteren** uit. Klik op **OK** en klik vervolgens nogmaals op **OK** om het dialoogvenster *Internetopties* te sluiten.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Kan geen verbinding maken met een externe werkgroepcomputer
 
-Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis om uw gebruikers naam op te geven en zich aan te melden bij de computer: `<workgroup_name>\<user_name>`
+Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis om uw gebruikers naam op te geven en u aan te melden bij de computer: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Kan de beheerhulpprogramma's voor Webserver (IIS) niet vinden ook al is de functie geïnstalleerd
 
@@ -80,7 +80,7 @@ Als verbeterde beveiliging is ingeschakeld in Internet Explorer (IE ESC), kunt u
 Een minder aanbevolen aanpak door beveiligings Risico's is het uitschakelen van Internet Explorer ESC.
 U kunt IE ESC uitschakelen op de tegel eigenschappen op de pagina lokale server in Serverbeheer.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doelcomputer.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doel computer.
 
 Het bovenstaande fout bericht wordt weer gegeven wanneer u verbinding probeert te maken wanneer de gateway server de doel computer is en zich ook in een werk groep bevindt.
 
@@ -91,21 +91,21 @@ Gebruik niet een punt (.) om de computer naam weer te geven.
 
 #### <a name="all-cases"></a>Alle cases
 
-Parameter | Value
+Parameter | Waarde
 -- | --
-UserName | Server @ no__t-0name @ no__t-1user @ no__t-2name<br/>Localhost @ no__t-0user @ no__t-1name<br/>. \\user @ no__t-1name
-UserGroup | Server @ no__t-0name @ no__t-1user @ no__t-2group<br/>Localhost @ no__t-0user @ no__t-1group<br/>. \\user @ no__t-1group
-ComputerGroup | Server @ no__t-0name @ no__t-1computer @ no__t-2group<br/>Localhost @ no__t-0computer @ no__t-1group<br/>. \\computer @ no__t-1group
+UserName | Server\_naam\\naam van de gebruikers\_<br/>Localhost\\gebruikers\_naam<br/>. gebruikers\_naam\\
+UserGroup | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruikers\_groep<br/>. gebruikers\_groep\\
+ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_groep<br/>. computer\_groep\\
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
-Parameter | Value
+Parameter | Waarde
 -- | --
 Computernaam | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
-Parameter | Value
+Parameter | Waarde
 -- | --
 Computernaam | Servernaam
 
@@ -113,13 +113,13 @@ Computernaam | Servernaam
 
 Meld u aan bij een gatewayserver als doelcomputer met referenties die de volgende indeling hebben.
 
-- Server @ no__t-0name @ no__t-1user @ no__t-2name
-- Localhost @ no__t-0user @ no__t-1name
-- . \\user @ no__t-1name
+- Server\_naam\\naam van de gebruikers\_
+- Localhost\\gebruikers\_naam
+- . gebruikers\_naam\\
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel
 
-Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis gebruiker @ no__t-0name/computer @ no__t-1name.
+Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis gebruiker\_naam/computer\_naam.
 
 De regel is niet meer geldig of de Active Directory Domain Services-query is mislukt.
 Een autorisatie regel is doorgaans niet geldig in scenario's waarin de gateway server zich in één keer in een werk groep bevond, maar later is toegevoegd aan een domein

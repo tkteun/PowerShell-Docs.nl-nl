@@ -19,9 +19,9 @@ Een resource kan een model als algemeen hebben als een bestand of als een IIS-se
 
 Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het gebruik van de bron in een [configuratie](../configurations/configurations.md). Het schema van een resource kan op de volgende manieren worden gedefinieerd:
 
-- Bestand van het **schema. MOF** : De meeste resources definiëren hun *schema* in een ' schema. mof '-bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **' \<Resource naam @ no__t-2. schema. psm1 '** bestand: [Samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een ' @no__t -2. schema. psm1-bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **' \<Resource naam @ no__t-2. psm1 '** bestand: DSC-resources op basis van klassen definiëren hun *schema* in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
+- **' Schema. mof '** File: de meeste resources definiëren hun *schema* in een schema. MOF-bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- **'\<resource naam\>. schema. psm1 '** bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een<ResourceName>. schema. psm1-bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- **'\<Resource Name\>. psm1 '** File: DSC-resources op basis van klassen definiëren hun *schema* in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
 
 Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de para meter `-Syntax`. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de para meter `-Syntax` om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
 
@@ -101,7 +101,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u \<TAB @ no__t-1 en \<Ctrl + Space @ no__t-3 gebruiken om sleutel namen automatisch te volt ooien.
+> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u \<tabblad\> en \<Ctrl + spatie\> om automatisch volledige sleutel namen te maken.
 
 ![Voltooiing van resource tabblad](../media/resource-tabcompletion.png)
 

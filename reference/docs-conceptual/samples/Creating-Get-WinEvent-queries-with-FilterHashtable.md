@@ -39,7 +39,7 @@ Zie de [Scripting Guy-serie blog berichten over inventarisatie](https://devblogs
 ## <a name="hash-table-key-value-pairs"></a>Hash-tabel sleutel-waardeparen
 
 Voor het bouwen van efficiënte query's gebruikt u de cmdlet `Get-WinEvent` met de para meter **FilterHashtable** .
-**FilterHashtable** accepteert een hash-tabel als een filter voor het ophalen van specifieke informatie uit Windows-gebeurtenis Logboeken. Een hash-tabel gebruikt **sleutel-** waardeparen. Zie [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)voor meer informatie over hash-tabellen.
+**FilterHashtable** accepteert een hash-tabel als een filter voor het ophalen van specifieke informatie uit Windows-gebeurtenis Logboeken. Een hash-tabel gebruikt **sleutel-** waardeparen. Zie voor meer informatie over hashtabellen [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Als de **sleutel-** waardeparen zich op dezelfde regel bevinden, moeten ze worden gescheiden door een punt komma. Als elk **sleutel/waarde-** paar zich op een afzonderlijke regel bevindt, hoeft u geen punt komma te koppelen. Dit artikel plaatst bijvoorbeeld **sleutel-** waardeparen op afzonderlijke regels en maakt geen gebruik van punt komma's.
 
@@ -54,13 +54,13 @@ De volgende tabel geeft de sleutel namen, gegevens typen en of joker tekens word
 | -------------- | --------------- | ---------------------------- |
 | LogName        | `<String[]>`    | Ja                          |
 | ProviderName   | `<String[]>`    | Ja                          |
-| Pad           | `<String[]>`    | Nee                           |
+| `Path`           | `<String[]>`    | Nee                           |
 | Trefwoorden       | `<Long[]>`      | Nee                           |
-| ID             | `<Int32[]>`     | Nee                           |
+| Id             | `<Int32[]>`     | Nee                           |
 | Niveau          | `<Int32[]>`     | Nee                           |
 | StartTime      | `<DateTime>`    | Nee                           |
 | Tijd        | `<DateTime>`    | Nee                           |
-| Naam         | `<SID>`         | Nee                           |
+| Gebruikers-id         | `<SID>`         | Nee                           |
 | Gegevens           | `<String[]>`    | Nee                           |
 | `<named-data>` | `<String[]>`    | Nee                           |
 
@@ -155,7 +155,7 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **tref woorden** en opgesomde waarden zijn als volgt:
 
-| Naam             |  Value            |
+| Name             |  Waarde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -182,7 +182,7 @@ Get-WinEvent -FilterHashtable @{
 De sleutel **tref woorden** wordt opgesomd, maar u kunt een statische eigenschaps naam gebruiken in de hash-tabel query.
 In plaats van de geretourneerde teken reeks te gebruiken, moet de naam van de eigenschap worden geconverteerd naar een waarde met de eigenschap **Value__** .
 
-Het volgende script maakt bijvoorbeeld gebruik van de **Value__** -eigenschap.
+Het volgende script maakt bijvoorbeeld gebruik van de eigenschap **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
@@ -236,13 +236,13 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **niveau** sleutel en opgesomde waarden zijn als volgt:
 
-| Naam           | Value |
+| Name           | Waarde |
 | -------------- | ----- |
 | Verbose        |   5   |
 | Ter informatie  |   4   |
 | Waarschuwing        |   3   |
 | Fout          |   2   |
-| Kritieke       |   1   |
+| Kritiek       |   1   |
 | LogAlways      |   0   |
 
 De hash-tabel voor de voltooide query bevat de sleutel, het **niveau**en de waarde **2**.
@@ -262,7 +262,7 @@ Get-WinEvent -FilterHashtable @{
 De **niveau** sleutel wordt opgesomd, maar u kunt een statische eigenschaps naam in de hash-tabel query gebruiken.
 In plaats van de geretourneerde teken reeks te gebruiken, moet de naam van de eigenschap worden geconverteerd naar een waarde met de eigenschap **Value__** .
 
-Het volgende script maakt bijvoorbeeld gebruik van de **Value__** -eigenschap.
+Het volgende script maakt bijvoorbeeld gebruik van de eigenschap **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational
