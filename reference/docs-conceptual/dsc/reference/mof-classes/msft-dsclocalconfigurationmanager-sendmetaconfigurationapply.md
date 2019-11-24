@@ -9,11 +9,11 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 10/04/2019
 ms.locfileid: "71942592"
 ---
-# <a name="sendmetaconfigurationapply-method"></a><span data-ttu-id="c8db0-103">SendMetaConfigurationApply-methode</span><span class="sxs-lookup"><span data-stu-id="c8db0-103">SendMetaConfigurationApply method</span></span>
+# <a name="sendmetaconfigurationapply-method"></a><span data-ttu-id="fb8aa-103">SendMetaConfigurationApply-methode</span><span class="sxs-lookup"><span data-stu-id="fb8aa-103">SendMetaConfigurationApply method</span></span>
 
-<span data-ttu-id="c8db0-104">Hiermee stelt u de lokale Configuration Manager-instellingen in die worden gebruikt voor het beheren van de configuratie agent.</span><span class="sxs-lookup"><span data-stu-id="c8db0-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
+<span data-ttu-id="fb8aa-104">Hiermee stelt u de lokale Configuration Manager-instellingen in die worden gebruikt voor het beheren van de configuratie agent.</span><span class="sxs-lookup"><span data-stu-id="fb8aa-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="c8db0-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="c8db0-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="fb8aa-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="fb8aa-105">Syntax</span></span>
 
 ```mof
 uint32 SendMetaConfigurationApply(
@@ -22,26 +22,26 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="c8db0-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="c8db0-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="fb8aa-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="fb8aa-106">Parameters</span></span>
 
-<span data-ttu-id="c8db0-107">*ConfigurationData* \[in @ no__t-2 de omgevings gegevens voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="c8db0-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
+<span data-ttu-id="fb8aa-107">*ConfigurationData* \[in\] de omgevings gegevens voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="fb8aa-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="c8db0-108">*force* \[in @ no__t-2 **True** om te voor komen dat de configuratie wordt gestopt.</span><span class="sxs-lookup"><span data-stu-id="c8db0-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="fb8aa-108">*dwing* \[in\] **waar** om te voor komen dat de configuratie wordt gestopt.</span><span class="sxs-lookup"><span data-stu-id="fb8aa-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="c8db0-109">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="c8db0-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="fb8aa-109">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="fb8aa-109">Return value</span></span>
 
-<span data-ttu-id="c8db0-110">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="c8db0-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="fb8aa-110">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="fb8aa-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="c8db0-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="c8db0-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="fb8aa-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="fb8aa-111">Remarks</span></span>
 
-<span data-ttu-id="c8db0-112">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="c8db0-112">This is a static method.</span></span>
+<span data-ttu-id="fb8aa-112">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="fb8aa-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c8db0-113">Vereisten</span><span class="sxs-lookup"><span data-stu-id="c8db0-113">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="fb8aa-113">Vereisten</span><span class="sxs-lookup"><span data-stu-id="fb8aa-113">Requirements</span></span>
 
-<span data-ttu-id="c8db0-114">**MANAGE** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="c8db0-114">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="fb8aa-114">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="fb8aa-114">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="c8db0-115">**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="c8db0-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="fb8aa-115">**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="fb8aa-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c8db0-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="c8db0-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fb8aa-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="fb8aa-116">See also</span></span>
 
-[<span data-ttu-id="c8db0-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="c8db0-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="fb8aa-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="fb8aa-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
