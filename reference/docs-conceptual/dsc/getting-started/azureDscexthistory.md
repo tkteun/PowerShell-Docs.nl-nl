@@ -1,8 +1,8 @@
 ---
-description: Learn about the version history for the Desired State Configuration (DSC) extension in Azure.
+description: Meer informatie over de versie geschiedenis van de uitbrei ding desired state Configuration (DSC) in Azure.
 ms.date: 06/21/2018
-keywords: dsc, powershell, azure, extension
-title: Azure DSC Extension Version History
+keywords: DSC, Power shell, azure, uitbrei ding
+title: Versie geschiedenis van Azure DSC-extensie
 ms.openlocfilehash: 7a89037d62cb2c8580141d2b177fdded5db654eb
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -10,52 +10,52 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417291"
 ---
-# <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration extension version history
+# <a name="azure-desired-state-configuration-extension-version-history"></a>Versie geschiedenis van de desired state Configuration-extensie voor Azure
 
-The Azure Desired State Configuration (DSC) VM Extension is updated as-needed to support enhancements and new capabilities delivered by Azure, Windows Server, and the Windows Management Framework (WMF) that includes Windows PowerShell.
+De Azure desired state Configuration (DSC) VM-extensie wordt bijgewerkt als nodig ter ondersteuning van verbeteringen en nieuwe mogelijkheden die worden geleverd door Azure, Windows Server en het Windows Management Framework (WMF) dat Windows Power shell bevat.
 
-This article will provide information about each version of the Azure DSC VM Extension, what environments it supports, and comments and remarks on new features or changes.
+In dit artikel vindt u informatie over elke versie van de Azure DSC VM-extensie, de omgevingen waarin deze worden ondersteund, en opmerkingen en opmerkingen over nieuwe functies of wijzigingen.
 
-## <a name="latest-version"></a>Latest Version
+## <a name="latest-version"></a>Nieuwste versie
 
-### <a name="version-276"></a>Version 2.76
+### <a name="version-276"></a>Versie 2,76
 
-- **Release date:**
-  - May 9, 2018 (Azure) | June 21, 2018 (Azure China, Azure Government)
-- **OS support:**
+- **Release datum:**
+  - 9 mei 2018 (Azure) | 21 juni 2018 (Azure China, Azure Government)
+- **Ondersteuning voor besturings systeem:**
   - Windows Server 2016
   - Windows Server 2012 R2
   - Windows Server 2012
   - Windows Server 2008 R2 SP1
-  - Windows Client 7/8.1/10
+  - Windows-client 7/8.1/10
   - Nano Server
-- **WMF support:**
+- **WMF-ondersteuning:**
   - WMF 5.1
-  - WMF 5.0 RTM
-  - WMF 4.0 Update
+  - WMF 5,0 RTM
+  - WMF 4,0-update
   - WMF 4.0
-- **Environment:**
+- **Variabelen**
   - Azure
   - Azure China
   - Azure Government
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Improvement in extension metadata for substatus and other minor bug fixes.
+  - Verbetering van de uitbrei ding van meta gegevens voor Substatussen en andere kleine oplossingen.
 
-## <a name="supported-versions"></a>Supported Versions
+## <a name="supported-versions"></a>Ondersteunde versies
 
 > [!WARNING]
-> Versions 2.4 through 2.13 use WMF 5.0 Public Preview whose signing certificates expired in August 2016.  For more information about this issue, see [blog post](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+> Versie 2,4 t/m 2,13 gebruik WMF 5,0 open bare preview waarvan de handtekening certificaten zijn verlopen in augustus 2016.  Zie [blog post](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/)voor meer informatie over dit probleem.
 
-### <a name="version-275"></a>Version 2.75
+### <a name="version-275"></a>Versie 2,75
 
-- **Release date:** March 5, 2018
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 5 maart 2018
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows-client 7/8.1/10, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - After GitHub's recent move to TLS 1.2, you can't onboard a VM to Azure Automation DSC using DIY Resource Manager templates available on Azure Marketplace or use DSC extension to get any config hosted on GitHub. You will see an error similar to the following while deploying the extension:
+  - Nadat GitHub recent is verplaatst naar TLS 1,2, kunt u geen virtuele machine onboarden naar Azure Automation DSC met behulp van zelf-Resource Manager-sjablonen die beschikbaar zijn op Azure Marketplace of gebruikmaken van de DSC-extensie om een configuratie op te halen die wordt gehost op GitHub. Er wordt een fout weer gegeven die vergelijkbaar is met het volgende tijdens het implementeren van de extensie:
 
     ```json
     {
@@ -82,164 +82,164 @@ This article will provide information about each version of the Azure DSC VM Ext
     }
     ```
 
-  - In the new extension version, TLS 1.2 is now enforced. While deploying the extension if you already had the AutoUpgradeMinorVersion = true in the Resource Manager template, then the extension will get autoupgraded to 2.75. For manual updates, specify `TypeHandlerVersion = 2.75` in your Resource Manager template.
+  - In de nieuwe extensie versie wordt TLS 1,2 nu afgedwongen. Bij het implementeren van de uitbrei ding als u al de AutoUpgradeMinorVersion = True had in de Resource Manager-sjabloon, krijgt de uitbrei ding automatisch een upgrade naar 2,75. Geef `TypeHandlerVersion = 2.75` op in uw Resource Manager-sjabloon voor hand matige updates.
 
-### <a name="version-270---272"></a>Version 2.70 - 2.72
+### <a name="version-270---272"></a>Versie 2,70-2,72
 
-- **Release date:** November 13, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 13 november 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows-client 7/8.1/10, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Bug fixes & improvements that simplifies using DSC Azure Automation through the portal UI as well as Resource Manager template.  For more information, see [Default Configuration Script](/azure/virtual-machines/extensions/dsc-overview) in the DSC Extension documentation.
+  - Met bug worden & verbeteringen opgelost waarmee het gebruik van DSC Azure Automation via de portal-gebruikers interface en de Resource Manager-sjabloon wordt vereenvoudigd.  Zie het [standaard configuratie script](/azure/virtual-machines/extensions/dsc-overview) in de DSC-extensie documentatie voor meer informatie.
 
-### <a name="version-226"></a>Version 2.26
+### <a name="version-226"></a>Versie 2,26
 
-- **Release date:** June 9, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 9 juni 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows-client 7/8.1/10, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Telemetry improvements.
+  - Verbeteringen voor telemetrie.
 
-### <a name="version-225"></a>Version 2.25
+### <a name="version-225"></a>Versie 2,25
 
-- **Release date:** June 2, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows Client 7/8.1/10, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 2 juni 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows-client 7/8.1/10, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Several bug fixes and other minor improvements were added.
+  - Er zijn verschillende fout oplossingen en andere kleine verbeteringen toegevoegd.
 
-### <a name="version-224"></a>Version 2.24
+### <a name="version-224"></a>Versie 2,24
 
-- **Release date:** April 13, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 13 april 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Exposes VM UUID & DSC Agent ID as extension metadata. Other minor improvements were added.
+  - Beschrijft de VM-UUID & DSC-agent-ID als extensie-meta gegevens. Er zijn andere kleine verbeteringen toegevoegd.
 
-### <a name="version-223"></a>Version 2.23
+### <a name="version-223"></a>Versie 2,23
 
-- **Release date:** March 15, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 15 maart 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - Lots of bug fixes and other improvements were added.
+  - Er zijn veel fout oplossingen en andere verbeteringen toegevoegd.
 
-### <a name="version-222"></a>Version 2.22
+### <a name="version-222"></a>Versie 2,22
 
-- **Release date:** February 8, 2017
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
-- **WMF support:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 8 februari 2017
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, nano server
+- **WMF-ondersteuning:** WMF 5,1, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen wordt het [Windows Management Framework 5,1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (voor de installatie van WMF moet opnieuw worden opgestart) geïnstalleerd. Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - The DSC Extension now has support for WMF 5.1.
-  - Minor other improvements were added.
+  - De DSC-extensie biedt nu ondersteuning voor WMF 5,1.
+  - Er zijn kleine andere verbeteringen toegevoegd.
 
-### <a name="version-221"></a>Version 2.21
+### <a name="version-221"></a>Versie 2,21
 
-- **Release date:** December 2, 2016
-- **OS support:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
-- **WMF support:** WMF 5.1 Preview, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot). For Nano Server, DSC role is installed on the VM.
+- **Release datum:** 2 december 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, nano server
+- **WMF-ondersteuning:** WMF 5,1 Preview, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016. voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart). Voor nano server is de DSC-rol geïnstalleerd op de virtuele machine.
 - **Nieuwe functies**
-  - The DSC Extension is now available on Nano Server. This version primarily contains code changes for running the Extension on Nano Server.
-  - Minor other improvements were added.
+  - De DSC-uitbrei ding is nu beschikbaar op nano server. Deze versie bevat voornamelijk code wijzigingen voor het uitvoeren van de uitbrei ding op nano server.
+  - Er zijn kleine andere verbeteringen toegevoegd.
 
-### <a name="version-220"></a>Version 2.20
+### <a name="version-220"></a>Versie 2,20
 
-- **Release date:** August 2, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.1 Preview, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 2 augustus 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,1 Preview, WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - Support for WMF 5.1 Preview. When first published, this version was an optional upgrade and you had to specify Wmfversion = '5.1PP' in Resource Manager templates to install WMF 5.1 preview. Wmfversion = 'latest' still installs the [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). For more information on WMF 5.1 preview, see [this blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
-  - Minor other fixes and improvements were added.
+  - Ondersteuning voor de preview-versie van WMF 5,1. Bij de eerste publicatie was deze versie een optionele upgrade en moest u Wmfversion = ' 5.1 PP ' opgeven in Resource Manager-sjablonen om de WMF 5,1-Preview te installeren. Wmfversion = ' laatste ' installeert nog steeds de [WMF 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Zie [deze blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)voor meer informatie over de preview-versie van WMF 5,1.
+  - Er zijn secundaire andere oplossingen en verbeteringen toegevoegd.
 
-### <a name="version--219"></a>Version  2.19
+### <a name="version--219"></a>Versie 2,19
 
-- **Release date:** June 3, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure, Azure China, Azure Government
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 3 juni 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure, Azure China, Azure Government
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - The DSC Extension is now onboarded to Azure China. This version primarily contains fixes for running the Extension on Azure China.
+  - De DSC-uitbrei ding is nu onboarding naar Azure China. Deze versie bevat voornamelijk oplossingen voor het uitvoeren van de uitbrei ding in azure China.
 
-### <a name="version-218"></a>Version 2.18
+### <a name="version-218"></a>Versie 2,18
 
-- **Release date:** June 3, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 3 juni 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - Make telemetry non-blocking when an error occurs during telemetry hotfix download (known Azure DNS issue) or during install.
-  - Fix for the intermittent issue where extension stops processing configuration after a reboot. This was causing the DSC Extension to remain in 'transitioning' state.
-  - Minor other fixes and improvements were added.
+  - Maak telemetrie niet-blokkerend wanneer er een fout optreedt tijdens het downloaden van de telemetrie-hotfix (bekend Azure DNS probleem) of tijdens de installatie.
+  - Oplossing voor het tijdelijke probleem waarbij de uitbrei ding de verwerking van de configuratie stopt nadat de computer opnieuw is opgestart. Hierdoor blijft de DSC-extensie in de status ' overgangen ' staan.
+  - Er zijn secundaire andere oplossingen en verbeteringen toegevoegd.
 
-### <a name="version-217"></a>Version 2.17
+### <a name="version-217"></a>Versie 2,17
 
-- **Release date:** April 26, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 26 april 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0 update, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - Support for WMF 4.0 Update. For more information on WMF 4.0 Update, see [this blog](https://blogs.msdn.microsoft.com/powershell/2016/01/19/windows-management-framework-wmf-4-0-update-now-available-for-windows-server-2012-windows-server-2008-r2-sp1-and-windows-7-sp1/).
-  - Retry logic on errors that occur during the DSC Extension install or while applying a DSC configuration post extension install. As a part of this change, the extension will retry the installation if a previous install failed or re-enact a DSC configuration that had previously failed, for a maximum three times until it reaches the completion state (Success/Error) or if a new request comes. If the extension fails due to invalid user settings/user input, it does not retry. In this case, the extension needs to be invoked again with a new request and correct user settings. Note: The DSC Extension is dependent on the Azure VM agent for the retries. Azure VM agent invokes the extension with the last failed request until it reaches a success or error state.
+  - Ondersteuning voor WMF 4,0-update. Zie [deze blog](https://blogs.msdn.microsoft.com/powershell/2016/01/19/windows-management-framework-wmf-4-0-update-now-available-for-windows-server-2012-windows-server-2008-r2-sp1-and-windows-7-sp1/)voor meer informatie over de WMF 4,0-update.
+  - Voer de logica opnieuw uit op fouten die zich voordoen tijdens de installatie van de DSC-uitbrei ding of tijdens het Toep assen van een DSC-configuratie post uitbreiding Als onderdeel van deze wijziging voert de uitbrei ding de installatie opnieuw uit als een eerdere installatie is mislukt of een DSC-configuratie opnieuw heeft ingesteld die eerder is mislukt, gedurende een maximum periode van drie keer tot de voltooiings status (geslaagd/fout) is bereikt of als er een nieuwe aanvraag is ontvangen. Als de extensie mislukt als gevolg van ongeldige gebruikers instellingen/gebruikers invoer, wordt er geen nieuwe poging gedaan. In dit geval moet de uitbrei ding opnieuw worden aangeroepen met een nieuwe aanvraag en de juiste gebruikers instellingen. Opmerking: de DSC-extensie is afhankelijk van de Azure VM-agent voor de nieuwe pogingen. De Azure VM-agent roept de uitbrei ding aan met de laatste mislukte aanvraag totdat de status is geslaagd of mislukt.
 
-### <a name="version-216"></a>Version 2.16
+### <a name="version-216"></a>Versie 2,16
 
-- **Release date:** April 21, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 21 april 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - Improvement in error handling and other minor bug fixes.
-  - New property in DSC Extension settings. 'ForcePullAndApply' in AdvancedOptions is added to enable the DSC Extension enact DSC configurations when the refresh mode is Pull (as opposed to the default Push mode). For more information, please refer to [this blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/) to get more information on the DSC Extension settings.
+  - Verbetering van het afhandelen van fouten en andere kleine oplossingen.
+  - Nieuwe eigenschap in de DSC-extensie-instellingen. ' ForcePullAndApply ' in AdvancedOptions is toegevoegd om de DSC-uitbrei ding DSC-configuraties in te scha kelen wanneer de vernieuwings modus pull is (in plaats van de standaard push modus). Raadpleeg [deze blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/) voor meer informatie over de instellingen van de DSC-extensie.
 
-### <a name="version-215"></a>Version 2.15
+### <a name="version-215"></a>Versie 2,15
 
-- **Release date:** March 14, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 14 maart 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - In extension version 2.14, changes to install WMF RTM were included. While upgrading from extension version 2.13.2.0 to 2.14.0.0, you may notice that some DSC cmdlets fail or your configuration fails with an error – 'No Instance found with given property values'. For more information, see the [DSC release notes](/powershell/scripting/wmf/known-issues/known-issues-dsc). The workarounds for these issues have been added in 2.15 version.
-  - Unfortunately, if you have already installed version 2.14 and are running into one of the above two issues, you will need to perform these steps manually.  In an elevated PowerShell session:
+  - In extensie versie 2,14 zijn wijzigingen in de installatie van WMF RTM opgenomen. Tijdens de upgrade van extensie versie 2.13.2.0 naar 2.14.0.0, zult u merken dat sommige DSC-cmdlets mislukken of uw configuratie mislukt met een fout: ' er is geen exemplaar gevonden met de opgegeven eigenschaps waarden '. Zie de opmerkingen bij de [release van DSC](/powershell/scripting/wmf/known-issues/known-issues-dsc)voor meer informatie. De oplossingen voor deze problemen zijn toegevoegd in 2,15-versie.
+  - Als u versie 2,14 al hebt geïnstalleerd en een van de bovenstaande twee problemen hebt, moet u deze stappen hand matig uitvoeren.  In een Power shell-sessie met verhoogde bevoegdheden:
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`
 
-### <a name="version-214"></a>Version 2.14
+### <a name="version-214"></a>Versie 2,14
 
-- **Release date:** February 25, 2016
-- **OS support:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
-- **WMF support:** WMF 5.0 RTM, WMF 4.0
-- **Environment:** Azure
-- **Remarks:** This version uses DSC as included in Windows Server 2016 Technical Preview; for other Windows OSes, it installs the [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installing WMF requires a reboot).
+- **Release datum:** 25 februari 2016
+- **Ondersteuning voor besturings systeem:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **WMF-ondersteuning:** WMF 5,0 RTM, WMF 4,0
+- **Omgeving:** Azure
+- **Opmerkingen:** Deze versie maakt gebruik van DSC zoals opgenomen in Windows Server 2016 Technical Preview; voor andere Windows-besturings systemen installeert het [Windows Management Framework 5,0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (installatie van WMF moet opnieuw worden opgestart).
 - **Nieuwe functies**
-  - Uses WMF RTM.
-  - Enables data collection in order to improve the quality of the DSC Extension. For more information, see [the blog](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/).
-  - Provides an updated settings format for the extension in a Resource Manager template. For more information, see [the blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/).
-  - Bug fixes and other enhancements.
+  - Maakt gebruik van WMF RTM.
+  - Hiermee schakelt u het verzamelen van gegevens in om de kwaliteit van de DSC-uitbrei ding te verbeteren. Zie [de blog](https://blogs.msdn.microsoft.com/powershell/2016/02/02/azure-dsc-extension-data-collection-2/)voor meer informatie.
+  - Voorziet in een bijgewerkte instellingen indeling voor de extensie in een resource manager-sjabloon. Zie [de blog](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/)voor meer informatie.
+  - Oplossingen voor fouten en andere verbeteringen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- For more information about PowerShell DSC, go to the [PowerShell documentation center](../overview/overview.md).
-- Examine the [Resource Manager template for the DSC extension](/azure/virtual-machines/extensions/dsc-template).
-- For more functionality that you can manage by using PowerShell DSC, and for more DSC resources, browse the [PowerShell gallery](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
-- For details about passing sensitive parameters into configurations, see [Manage credentials securely with the DSC extension handler](/azure/virtual-machines/extensions/dsc-credentials).
+- Voor meer informatie over Power shell DSC gaat u naar het [Power shell-documentatie centrum](../overview/overview.md).
+- Bekijk de [Resource Manager-sjabloon voor de DSC-extensie](/azure/virtual-machines/extensions/dsc-template).
+- Voor meer functionaliteit die u kunt beheren met Power shell DSC, en voor meer DSC-resources, gaat u naar de [Power shell Gallery](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
+- Zie voor meer informatie over het door geven van gevoelige para meters in configuraties [veilig beheer referenties met de DSC-extensie-handler](/azure/virtual-machines/extensions/dsc-credentials).

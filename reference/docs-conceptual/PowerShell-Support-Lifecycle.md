@@ -1,6 +1,6 @@
 ---
 title: Levenscyclus voor ondersteuning van PowerShell Core
-description: Policies governing support for PowerShell Core
+description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
 ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -11,142 +11,142 @@ ms.locfileid: "74416303"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
-PowerShell Core is a distinct set of tools and components that is shipped, installed, and configured separately from Windows PowerShell. So, PowerShell Core isn't included in the Windows 7/8.1/10 or Windows Server licensing agreements.
+Power shell Core is een afzonderlijke set hulpprogram ma's en onderdelen die los van Windows Power shell worden geleverd, geïnstalleerd en geconfigureerd. Power shell Core is dus niet opgenomen in de licentie overeenkomsten voor Windows 7/8.1/10 of Windows Server.
 
-However, PowerShell Core is supported under traditional Microsoft support agreements, including [Premier][], [Microsoft Enterprise Agreements][enterprise-agreement], and [Microsoft Software Assurance][assurance].
-You can also pay for [assisted support][] for PowerShell Core by filing a support request for your problem.
+Power shell core wordt echter ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [Premium][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
+U kunt ook betalen voor [ondersteuning][] voor Power shell core door een ondersteunings aanvraag voor uw probleem te archiveren.
 
-## <a name="community-support"></a>Community Support
+## <a name="community-support"></a>Community-ondersteuning
 
-We also offer [community support][] on GitHub where you can file an issue, bug, or feature request.
-Also, you may find help from other members of the community in the Microsoft [PowerShell Tech Community][] or any of the forums listed in the community section of [PowerShell][pshub] hub page. We offer no guarantee there that the community will address or resolve your issue in a timely manner. If you have a problem that requires immediate attention, you should use the traditional, paid support options.
+We bieden ook [Community-ondersteuning][] op github waar u een probleem, een fout of een functie aanvraag kunt indienen.
+U kunt ook hulp van andere leden van de Community vinden in de micro soft [Technische community van Power shell][] of een van de forums die worden vermeld in het gedeelte community van de pagina [Power shell][pshub] hub. We bieden geen garantie dat de Community tijdig het probleem zal verhelpen of oplossen. Als u een probleem ondervindt dat onmiddellijke aandacht vereist, moet u de traditionele, betaalde ondersteunings opties gebruiken.
 
-## <a name="lifecycle-of-powershell-core"></a>Lifecycle of PowerShell Core
+## <a name="lifecycle-of-powershell-core"></a>Levens cyclus van Power shell core
 
-PowerShell Core is adopting the [Microsoft Modern Lifecycle Policy][modern]. This support lifecycle is intended to keep customers up-to-date with the latest versions.
+Power shell core stelt het [micro soft moderne levenscyclus beleid][modern]vast. Deze ondersteunings levenscyclus is bedoeld om klanten up-to-date te houden met de meest recente versies.
 
-The version 6.x branch of PowerShell Core will be updated approximately once every six months (examples: 6.0, 6.1, 6.2, etc.)
-
-> [!IMPORTANT]
-> You must update within six months after each new minor version release to continue receiving support.
-
-For example, if PowerShell Core 6.1 is released on July 1, 2018, you would be expected to update to PowerShell Core 6.1 by January 1, 2019 to maintain support.
+De vertakking versie 6. x van Power shell core wordt ongeveer eenmaal per zes maanden bijgewerkt (bijvoorbeeld: 6,0, 6,1, 6,2, etc.)
 
 > [!IMPORTANT]
-> You must update within 30 days after each new patch version release to continue receiving support.
+> U moet binnen zes maanden na de release van elke nieuwe secundaire versie een update voor het ontvangen van ondersteuning door lopen.
 
-For example, If you're running PowerShell Core 6.1 and 6.1.3 was released on February 19, 2019, you would be expected to update to PowerShell Core 6.1.3 by March 21, 2019, which is 30 days after the release to maintain support. If any fixes are found to be required, the fixes will be released in our next cumulative update.
+Als Power shell Core 6,1 bijvoorbeeld is uitgebracht op 1 juli 2018, wordt u naar verwachting naar Power shell Core 6,1 bijgewerkt op 1 januari 2019 om ondersteuning te onderhouden.
 
-The Modern Lifecycle Policy also requires that Microsoft give customers 12 months notice before discontinuing support for a product (that is, PowerShell Core).
+> [!IMPORTANT]
+> U moet binnen 30 dagen na elke nieuwe versie van de patch een update uitvoeren om ondersteuning te blijven ontvangen.
 
-Eventually, we expect PowerShell Core will adopt the long-term servicing approach. In this servicing approach, we would require only servicing and security updates to stay in support on a specific branch/version of 6.x.
+Als u bijvoorbeeld Power shell Core 6,1 uitvoert en 6.1.3 is uitgebracht op 19 februari 2019, zou u op 21 maart 2019 naar verwachting moeten bijwerken naar Power shell Core 6.1.3. Dit is 30 dagen na de release voor het onderhouden van de ondersteuning. Als er oplossingen worden gevonden die vereist zijn, worden de oplossingen vrijgegeven in de volgende cumulatieve update.
+
+Voor het beleid voor moderne levens cyclus moet micro soft klanten 12 maanden vertellen voordat de ondersteuning voor een product (dat wil zeggen Power shell core) wordt beëindigd.
+
+Uiteindelijk wordt verwacht dat Power shell Core de aanpak van de lange termijn voor onderhoud aanneemt. In deze onderhouds benadering moeten alleen onderhouds-en beveiligings updates worden ondersteund voor een specifieke vertakking/versie van 6. x.
 
 ## <a name="supported-platforms"></a>Ondersteunde platformen
 
-To confirm if your platform and version of PowerShell Core are officially supported, see the following table.
+Raadpleeg de volgende tabel om te controleren of uw platform en versie van Power shell core officieel worden ondersteund.
 
-Our community has also contributed packages for some platforms, but they aren't officially supported. These packages are marked as `Community` in the table.
+Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze worden niet officieel ondersteund. Deze pakketten zijn gemarkeerd als `Community` in de tabel.
 
-Platforms listed as `Experimental` aren't officially supported, but are available for experimentation and feedback.
+Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteund, maar zijn beschikbaar voor experimenteren en feedback.
 
 | Platform                                          |      6.2      |    7.0    |
 |---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8.1, and 10                            |   Ondersteund   | Ondersteund |
+| Windows 7, 8,1 en 10                            |   Ondersteund   | Ondersteund |
 | Windows Server 2008 R2, 2012 R2, 2016             |   Ondersteund   | Ondersteund |
-| [Windows Server Semi-Annual Channel][semi-annual] |   Ondersteund   | Ondersteund |
-| Ubuntu 16.04 and 18.04                            |   Ondersteund   | Ondersteund |
-| Ubuntu 18.10 (via Snap Package)                   |   Community   | Community |
-| Ubuntu 19.04 (via Snap Package)                   |   Community   | Community |
+| [Windows Server Semi-Annual-kanaal][semi-annual] |   Ondersteund   | Ondersteund |
+| Ubuntu 16,04 en 18,04                            |   Ondersteund   | Ondersteund |
+| Ubuntu 18,10 (via snap package)                   |   Community   | Community |
+| Ubuntu 19,04 (via snap package)                   |   Community   | Community |
 | Debian 9                                          |   Ondersteund   | Ondersteund |
-| Debian 10                                         | Not Supported | Ondersteund |
+| Debian 10                                         | Niet ondersteund | Ondersteund |
 | CentOS 7                                          |   Ondersteund   | Ondersteund |
 | Red Hat Enterprise Linux 7                        |   Ondersteund   | Ondersteund |
-| openSUSE 42.3                                     |   Ondersteund   | Ondersteund |
+| openSUSE 42,3                                     |   Ondersteund   | Ondersteund |
 | Fedora 28                                         |   Ondersteund   | Ondersteund |
-| Fedora 29, 30                                     | Not Supported | Ondersteund |
-| Alpine 3.8                                        |   See Note    | See Note  |
-| Alpine 3.9 and 3.10                               | Not Supported | See Note  |
+| Fedora 29, 30                                     | Niet ondersteund | Ondersteund |
+| Alpine 3,8                                        |   Zie opmerking    | Zie opmerking  |
+| Alpine 3,9 en 3,10                               | Niet ondersteund | Zie opmerking  |
 | macOS 10.12+                                      |   Ondersteund   | Ondersteund |
 | Arch                                              |   Community   | Community |
 | Raspbian                                          |   Community   | Community |
 | Kali                                              |   Community   | Community |
-| AppImage (works on multiple Linux platforms)      |   Community   | Community |
-| [Snap Package](https://snapcraft.io/powershell)   |   See note    | See note  |
+| AppImage (werkt op meerdere Linux-platforms)      |   Community   | Community |
+| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking    | Zie opmerking  |
 
 > [!NOTE]
-> Snap packages are supported the same as the distribution you're running the package on.
+> Snap-pakketten worden hetzelfde ondersteund als de distributie waarmee u het pakket uitvoert.
 
 > [!NOTE]
-> CIM, PowerShell Remoting, and DSC are not supported on Alpine.
+> CIM, externe communicatie van Power shell en DSC worden niet ondersteund in Alpine.
 
-## <a name="powershell-releases-end-of-life"></a>PowerShell releases end-of-life
+## <a name="powershell-releases-end-of-life"></a>Levens duur van Power shell-releases
 
-Based on [Lifecycle of PowerShell Core](#lifecycle-of-powershell-core), the following table lists the dates when various releases will no longer be supported.
+Op basis van de [levens cyclus van de Power shell-kern](#lifecycle-of-powershell-core), worden in de volgende tabel de datums weer gegeven wanneer verschillende releases niet meer worden ondersteund.
 
-| Versie | End-of-life                   |
+| Versie | Einde van de levens duur                   |
 |---------|-------------------------------|
-| 6.0     | February 13, 2019             |
-| 6.1     | September 28, 2019            |
-| 6.2     | 6 months after 7 releases     |
+| 6.0     | 13 februari 2019             |
+| 6.1     | 28 september 2019            |
+| 6.2     | 6 maanden na 7 releases     |
 
-## <a name="unsupported-platforms"></a>Unsupported platforms
+## <a name="unsupported-platforms"></a>Niet-ondersteunde platforms
 
-When a platform version reaches end-of-life as defined by the platform owner, PowerShell Core will also cease to support that platform version. Previously released packages will remain available for customers needing access but formal support and updates of any kind will no longer be provided.
+Wanneer een platform versie het einde van de levens duur bereikt zoals gedefinieerd door de platform eigenaar, zal Power shell core ook niet langer ondersteuning bieden voor die platform versie. Eerder vrijgegeven pakketten blijven beschikbaar voor klanten die toegang nodig hebben, maar formele ondersteuning en updates van welke aard dan ook niet meer.
 
-So, the distribution owners ended support for the following versions and aren't supported.
+De distributie-eigen aren hebben daarom de volgende versies gestopt en worden niet ondersteund.
 
-| Platform | Versie | End of Life                                                                                 |
+| Platform | Versie | Einde van de levens duur                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 24      | [2017 augustus](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [May 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [May 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [January 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [July 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [January 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [July 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [June 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Fedora   | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| openSUSE | 42.1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Ubuntu   | 16,10   | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17,10   | [2018 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
 
-## <a name="notes-on-licensing"></a>Notes on licensing
+## <a name="notes-on-licensing"></a>Opmerkingen over licenties
 
-PowerShell Core is released under the [MIT license][]. Under this license, and without a paid support agreement, users are limited to [community support][]. With community support, Microsoft makes no guarantees of responsiveness or fixes.
+Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licentie en zonder een betaalde ondersteunings overeenkomst zijn gebruikers beperkt tot [Community-ondersteuning][]van de community. Met ondersteuning van de Community biedt micro soft geen garanties voor reactie tijd of oplossingen.
 
-## <a name="windows-powershell-module"></a>Windows PowerShell Module
+## <a name="windows-powershell-module"></a>Windows Power shell-module
 
-Support for PowerShell Core doesn't include product modules, unless those modules explicitly support PowerShell Core. For example, using the `ActiveDirectory` module that ships as part of Windows Server is an unsupported scenario.
+Ondersteuning voor Power shell Core bevat geen product modules, tenzij deze modules expliciet Power shell core ondersteunen. Als u bijvoorbeeld de module `ActiveDirectory` gebruikt die wordt geleverd als onderdeel van Windows Server, is dit een niet-ondersteund scenario.
 
-However, modules that don't explicitly support PowerShell Core may be compatible in some cases. By installing the [WindowsPSModulePath][] module, you can add the Windows PowerShell `PSModulePath` to your PowerShell Core `PSModulePath`.
+Modules die Power shell Core niet expliciet ondersteunen, kunnen in sommige gevallen ook compatibel zijn. Als u de [WindowsPSModulePath][] -module installeert, kunt u de Windows Power shell-`PSModulePath` toevoegen aan uw Power shell Core-`PSModulePath`.
 
-First, install the **WindowsPSModulePath** module from the PowerShell Gallery:
+Installeer eerst de **WindowsPSModulePath** -module van de PowerShell Gallery:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-After installing this module, run the `Add-WindowsPSModulePath` cmdlet to add the Windows PowerShell `PSModulePath` to PowerShell Core:
+Na de installatie van deze module voert u de `Add-WindowsPSModulePath`-cmdlet uit om de Windows Power shell-`PSModulePath` toe te voegen aan Power shell core:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
 Add-WindowsPSModulePath
 ```
 
-## <a name="experimental-features"></a>Experimental features
+## <a name="experimental-features"></a>Experimentele functies
 
-[Experimental features][] are limited to [community support](#community-support).
+[Experimentele functies][] zijn beperkt tot [ondersteuning](#community-support)van de community.
 
-[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Premium]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[community support]: https://github.com/powershell/powershell/issues
+[Community-ondersteuning]: https://github.com/powershell/powershell/issues
 [pshub]: https://docs.microsoft.com/powershell
-[PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[assisted support]: https://support.microsoft.com/assistedsupportproducts
+[Technische community van Power shell]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[ondersteuning]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[MIT license]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[MIT-licentie]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[Experimental features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
+[Experimentele functies]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

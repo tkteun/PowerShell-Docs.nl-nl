@@ -1,5 +1,5 @@
 ---
-title: GetProc03 Code Samples | Microsoft Docs
+title: Voor beelden van GetProc03-code | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416150"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03-codevoorbeelden
 
-Here are the code samples for the GetProc03 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Pipeline Input](../cmdlet/adding-parameters-that-process-pipeline-input.md). This `Get-Process` cmdlet uses a `Name` parameter that accepts input from a pipeline object, retrieves process information from the local computer based on the supplied names, and then displays information about the processes at the command line.
+Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc03. Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md). Deze `Get-Process` cmdlet gebruikt een `Name`-para meter die invoer van een pijplijn object accepteert, proces informatie ophaalt van de lokale computer op basis van de opgegeven namen en vervolgens informatie over de processen op de opdracht regel weergeeft.
 
 > [!NOTE]
-> You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> U kunt het C# bron bestand (getprov03.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 
-For complete sample code, see the following topics.
+Zie de volgende onderwerpen voor een volledige voorbeeld code.
 
 |Taal|Onderwerp|
 |--------------|-----------|
-|C#|[GetProc03 (C#) Sample Code](./getproc03-csharp-sample-code.md)|
-|VB.NET|[GetProc03 (VB.NET) Sample Code](./getproc03-vb-net-sample-code.md)|
+|C#|[GetProc03 (C#) voorbeeld code](./getproc03-csharp-sample-code.md)|
+|VB.NET|[Voorbeeld code voor GetProc03 (VB.NET)](./getproc03-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

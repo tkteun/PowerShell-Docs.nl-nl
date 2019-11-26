@@ -1,6 +1,6 @@
 ---
 ms.date: 06/18/2019
-keywords: powershell,cmdlet
+keywords: Power shell, cmdlet
 title: Meer informatie over PowerShell
 ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -11,34 +11,34 @@ ms.locfileid: "74416742"
 ---
 # <a name="more-powershell-learning"></a>Meer informatie over PowerShell
 
-Other sources to learn PowerShell
+Andere bronnen voor informatie over Power shell
 
-## <a name="resources-for-powershell-users"></a>Resources for PowerShell users
+## <a name="resources-for-powershell-users"></a>Resources voor Power shell-gebruikers
 
-In addition to the Help available at the command line, the following resources provide more information for users who want to run PowerShell.
+Naast de Help die beschikbaar is op de opdracht regel, bieden de volgende bronnen meer informatie over gebruikers die Power shell willen uitvoeren.
 
-- [PowerShell Team Blog](https://devblogs.microsoft.com/powershell/). The best resource for learning directly from the PowerShell product team.
-- [The Hey, Scripting Guy! Blog](https://devblogs.microsoft.com/scripting/) articles are scenario-driven, and written in an engaging and lively manner.
-- Have questions about using PowerShell? Connect with hundreds of other people who have similar interests in one of the many community forums listed on the [PowerShell Community](/powershell/#pivot=main&panel=community) page.
+- [Power shell-team blog](https://devblogs.microsoft.com/powershell/). De beste resource voor het rechtstreeks leren van het Power shell-product team.
+- [De hey, Scripting Guy! Blog](https://devblogs.microsoft.com/scripting/) artikelen worden gebaseerd op scenario's en op een aantrekkelijke en levendige manier geschreven.
+- Hebt u vragen over het gebruik van Power shell? Maak verbinding met honderden mensen die vergelijk bare belangen hebben in een van de vele community-forums die worden vermeld op de pagina [Power shell Community](/powershell/#pivot=main&panel=community) .
 
-## <a name="channel-9-videos"></a>Channel 9 videos
+## <a name="channel-9-videos"></a>Channel 9-Video's
 
-Channel 9 is our video publishing platform. There are hundreds of videos about PowerShell available. [Search for "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) to see what videos are available.
+Channel 9 is ons video publicatie platform. Er zijn honderden Video's over Power shell beschikbaar. [Zoek naar Power shell](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) om te zien welke Video's er beschikbaar zijn.
 
-### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
+### <a name="microsoft-virtual-academy"></a>Micro soft Virtual Academy
 
-The Microsoft Virtual Academy videos have been moved to Channel 9.
+De Video's van de micro soft Virtual Academy zijn verplaatst naar Channel 9.
 
-- [Getting Started with Microsoft PowerShell](https://channel9.msdn.com/Series/Getting-Started-with-Microsoft-PowerShell)
-- [Advanced Tools & Scripting with PowerShell 3.0 Jump Start](https://channel9.msdn.com/Series/Advanced-Tools-and-Scripting-with-PowerShell-3.0-Jump-Start)
-- [Testing PowerShell with Pester](https://channel9.msdn.com/Series/Testing-PowerShell-with-Pester)
-- [Getting Started with PowerShell Desired State Configuration (DSC)](https://channel9.msdn.com/Series/Getting-Started-with-PowerShell-DSC)
-- [Advanced PowerShell DSC and Custom Resources](https://channel9.msdn.com/Series/Advanced-PowerShell-DSC-and-Custom-Resources)
-- [SharePoint Automation with DSC](https://channel9.msdn.com/Series/SharePoint-Automation-with-DSC)
+- [Aan de slag met micro soft power shell](https://channel9.msdn.com/Series/Getting-Started-with-Microsoft-PowerShell)
+- [Geavanceerde hulp middelen & scripting met Power Shell 3,0 Jump Start](https://channel9.msdn.com/Series/Advanced-Tools-and-Scripting-with-PowerShell-3.0-Jump-Start)
+- [Power shell testen met ziekte](https://channel9.msdn.com/Series/Testing-PowerShell-with-Pester)
+- [Aan de slag met Power shell desired state Configuration (DSC)](https://channel9.msdn.com/Series/Getting-Started-with-PowerShell-DSC)
+- [Geavanceerde Power shell DSC-en aangepaste resources](https://channel9.msdn.com/Series/Advanced-PowerShell-DSC-and-Custom-Resources)
+- [Share point Automation met DSC](https://channel9.msdn.com/Series/SharePoint-Automation-with-DSC)
 
-## <a name="resources-for-powershell-developers"></a>Resources for PowerShell Developers
+## <a name="resources-for-powershell-developers"></a>Resources voor Power shell-ontwikkel aars
 
-The following resources provide resources to help developers create their own PowerShell modules, functions, cmdlets, providers, and hosting applications.
+De volgende bronnen bevatten bronnen waarmee ontwikkel aars hun eigen Power shell-modules,-functies,-cmdlets,-providers en hosting toepassingen kunnen maken.
 
-- [PowerShell SDK](/powershell/scripting/developer/windows-powershell)
-- [PowerShell SDK API Browser](/dotnet/api/system.management.automation)
+- [Power shell SDK](/powershell/scripting/developer/windows-powershell)
+- [Power shell SDK API-browser](/dotnet/api/system.management.automation)

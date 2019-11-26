@@ -1,5 +1,5 @@
 ---
-title: Creating a Windows PowerShell Navigation Provider | Microsoft Docs
+title: Een Windows Power shell-navigatie provider maken | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -20,159 +20,159 @@ ms.locfileid: "74416192"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Een Windows PowerShell-navigatieprovider maken
 
-This topic describes how to create a Windows PowerShell navigation provider that can navigate the data store. This type of provider supports recursive commands, nested containers, and relative paths.
+In dit onderwerp wordt beschreven hoe u een Windows Power shell-navigatie provider maakt waarmee kan worden genavigeerd naar het gegevens archief. Dit type provider ondersteunt recursieve opdrachten, geneste containers en relatieve paden.
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> U kunt het C# bron bestand (AccessDBSampleProvider05.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
-The provider described here enables the user handle an Access database as a drive so that the user can navigate to the data tables in the database. When creating your own navigation provider, you can implement methods that can make drive-qualified paths required for navigation, normalize relative paths, move items of the data store, as well as methods that get child names, get the parent path of an item, and test to identify if an item is a container.
+De provider die hier wordt beschreven, kan de gebruiker een Access-Data Base als een station afhandelen zodat de gebruiker naar de gegevens tabellen in de data base kan navigeren. Wanneer u uw eigen navigatie provider maakt, kunt u methoden implementeren die Stationspaden kunnen maken die geschikt zijn voor navigatie, relatieve paden normaliseren, items van het gegevens archief verplaatsen, evenals methoden die onderliggende namen ophalen, het bovenliggende pad van een item ophalen en testen om te bepalen of een item een container is.
 
 > [!CAUTION]
-> Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
+> Houd er rekening mee dat in dit ontwerp wordt uitgegaan van een Data Base met een veld met de naam-ID en dat het type van het veld LongInteger is.
 
-## <a name="define-the-windows-powershell-provider"></a>Define the Windows PowerShell provider
+## <a name="define-the-windows-powershell-provider"></a>De Windows Power shell-provider definiëren
 
-A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
+Een Windows Power shell-navigatie provider moet een .NET-klasse maken die is afgeleid van de basis klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) . Hier volgt de klassedefinitie voor de navigatie provider die in deze sectie wordt beschreven.
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
-Note that in this provider, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
+Houd er rekening mee dat in deze provider het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) twee para meters bevat. De eerste para meter geeft u een beschrijvende naam op voor de provider die wordt gebruikt door Windows Power shell. Met de tweede para meter geeft u de specifieke Windows Power shell-mogelijkheden op die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens het verwerken van opdrachten. Voor deze provider zijn er geen specifieke Windows Power shell-functies die worden toegevoegd.
 
-## <a name="defining-base-functionality"></a>Defining Base Functionality
+## <a name="defining-base-functionality"></a>Basis functionaliteit definiëren
 
-As described in [Design Your PS Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class derives from several other classes that provided different provider functionality. A Windows PowerShell navigation provider, therefore, must define all of the functionality provided by those classes.
+Zoals beschreven in het [ontwerp van uw PS-provider](./designing-your-windows-powershell-provider.md), is de basis klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) afgeleid van verschillende andere klassen die een andere provider functionaliteit hebben gekregen. Voor een Windows Power shell-navigatie provider moet daarom alle functionaliteit worden gedefinieerd die door deze klassen wordt opgegeven.
 
-To implement functionality for adding session-specific initialization information and for releasing resources that are used by the provider, see [Creating a Basic PS Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers (including the provider described here) can use the default implementation of this functionality provided by Windows PowerShell.
+Zie [een eenvoudige PS-provider maken](./creating-a-basic-windows-powershell-provider.md)voor informatie over het implementeren van de functionaliteit voor het toevoegen van toepassingsspecifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit van Windows Power shell.
 
-To get access to the data store through a Windows PowerShell drive, you must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
+Als u toegang wilt krijgen tot het gegevens archief via een Windows Power Shell-station, moet u de methoden van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) implementeren. Zie [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-To manipulate the items of a data store, such as getting, setting, and clearing items, the provider must implement the methods provided by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+Voor het bewerken van de items van een gegevens archief, zoals het ophalen, instellen en wissen van items, moet de provider de methoden implementeren die worden verschaft door de basis klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Zie [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-To get to the child items, or their names, of the data store, as well as methods that create, copy, rename, and remove items, you must implement the methods provided by the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Container Provider](./creating-a-windows-powershell-container-provider.md).
+Als u de onderliggende items, of hun namen, van het gegevens archief wilt weer geven, evenals methoden waarmee items worden gemaakt, gekopieerd, hernoemd en verwijderd, moet u de methoden implementeren die zijn opgenomen in de basis klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Zie [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md)voor meer informatie over het implementeren van deze methoden.
 
-## <a name="creating-a-windows-powershell-path"></a>Creating a Windows PowerShell Path
+## <a name="creating-a-windows-powershell-path"></a>Een Windows Power shell-pad maken
 
-Windows PowerShell navigation provider use a provider-internal Windows PowerShell path to navigate the items of the data store. To create a provider-internal path the provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method to supports calls from the Combine-Path cmdlet. This method combines a parent and child path into a provider-internal path, using a provider-specific path separator between the parent and child paths.
+Windows Power shell-navigatie provider gebruiken een provider: intern Windows Power shell-pad om door de items van het gegevens archief te navigeren. Als u een provider-intern pad wilt maken, moet de provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) implementeren om aanroepen van de cmdlet combine-pad te kunnen ondersteunen. Met deze methode wordt een bovenliggend en onderliggend pad gecombineerd in een provider-intern pad, met een providerspecifieke padscheidingsteken tussen de bovenliggende en onderliggende paden.
 
-The default implementation takes paths with "/" or "\\" as the path separator, normalizes the path separator to "\\", combines the parent and child path parts with the separator between them, and then returns a string that contains the combined paths.
+De standaard implementatie heeft paden met '/' of '\\' als padscheidingsteken, normaliseert het padscheidingsteken op '\\', combineert het bovenliggende en onderliggende pad met het scheidings teken ertussen en retourneert een teken reeks die de gecombineerde paden bevat.
 
-This navigation provider does not implement this method. However, the following code is the default implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
+Deze navigatie provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van de methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) .
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermakepath](Msh_samplestestcmdlets#testprovidermakepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-makepath"></a>Things to Remember About Implementing MakePath
+#### <a name="things-to-remember-about-implementing-makepath"></a>Wat u moet weten over implementatie van MakePath
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
+De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
 
-- Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method should not validate the path as a legal fully-qualified path in the provider namespace. Be aware that each parameter can only represent a part of a path, and the combined parts might not generate a fully-qualified path. For example, the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method for the filesystem provider might receive "windows\system32" in the `parent` parameter and "abc.dll" in the `child` parameter. The method joins these values with the "\\" separator and returns "windows\system32\abc.dll", which is not a fully-qualified file system path.
+- Uw implementatie van de methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) moet het pad niet valideren als een juridisch volledig pad in de naam ruimte van de provider. Houd er rekening mee dat elke para meter alleen een deel van een pad kan vertegenwoordigen en dat de gecombineerde onderdelen geen volledig pad genereren. De methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) voor de File System Provider kan bijvoorbeeld ' Windows\System32 ' in de para meter `parent` en ' ABC. dll ' in de para meter `child` ontvangen. De methode voegt deze waarden samen met het scheidings teken '\\' en retourneert ' windows\system32\abc.dll '. Dit is geen volledig gekwalificeerde bestandssysteempad.
 
   > [!IMPORTANT]
-  > The path parts provided in the call to [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) might contain characters not allowed in the provider namespace. These characters are most likely used for wildcard expansion and the implementation of this method should not remove them.
+  > De pad-onderdelen die zijn opgenomen in de aanroep van [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) bevatten mogelijk tekens die niet zijn toegestaan in de naam ruimte van de provider. Deze tekens worden meestal gebruikt voor het uitbreiden van het Joker teken en de implementatie van deze methode mag ze niet verwijderen.
 
-## <a name="retrieving-the-parent-path"></a>Retrieving the Parent Path
+## <a name="retrieving-the-parent-path"></a>Het bovenliggende pad ophalen
 
-Windows PowerShell navigation providers implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method to retrieve the parent part of the indicated full or partial provider-specific path. The method removes the child part of the path and returns the parent path part. The `root` parameter specifies the fully-qualified path to the root of a drive. This parameter can be null or empty if a mounted drive is not in use for the retrieval operation. If a root is specified, the method must return a path to a container in the same tree as the root.
+Windows Power shell-navigatie providers implementeren de methode [System. Management. Automation. provider. Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) om het bovenliggende deel van het aangegeven volledige of gedeeltelijke providerspecifieke pad op te halen. De methode verwijdert het onderliggende deel van het pad en retourneert het bovenliggende pad. Met de para meter `root` geeft u het volledige pad naar de hoofdmap van een station op. Deze para meter kan null of leeg zijn als een gekoppeld station niet in gebruik is voor de ophaal bewerking. Als er een root is opgegeven, moet de methode een pad retour neren naar een container in dezelfde boom structuur als de hoofdmap.
 
-The sample navigation provider does not override this method, but uses the default implementation. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the parent path.
+De voor beeld-navigatie provider overschrijft deze methode niet, maar gebruikt de standaard implementatie. Het accepteert paden die zowel '/'-als '\\' als padscheidingsteken gebruiken. Het pad wordt eerst genormaliseerd om alleen '\\' scheidings tekens te hebben, waarna het bovenliggende pad wordt gesplitst bij de laatste '\\' en het bovenliggende pad wordt geretourneerd.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
-#### <a name="to-remember-about-implementing-getparentpath"></a>To Remember About Implementing GetParentPath
+#### <a name="to-remember-about-implementing-getparentpath"></a>Meer informatie over het implementeren van GetParentPath
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method should split the path lexically on the path separator for the provider namespace. For example, the filesystem provider uses this method to look for the last "\\" and returns everything to the left of the separator.
+Uw implementatie van de methode [System. Management. Automation. provider. Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) moet het pad op een lexicale wijze splitsen op het padscheidingsteken voor de naam ruimte van de provider. De File System Provider gebruikt deze methode bijvoorbeeld om te zoeken naar de laatste '\\' en retourneert alles aan de linkerkant van het scheidings teken.
 
-## <a name="retrieve-the-child-path-name"></a>Retrieve the Child Path Name
+## <a name="retrieve-the-child-path-name"></a>De naam van het onderliggende pad ophalen
 
-Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method to retrieve the name (leaf element) of the child of the item located at the indicated full or partial provider-specific path.
+Uw navigatie provider implementeert de methode [System. Management. Automation. provider. Navigationcmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) om de naam (Leaf-element) van het onderliggende item op te halen dat zich bevindt in het opgegeven volledige of gedeeltelijke providerspecifieke pad.
 
-The sample navigation provider does not override this method. The default implementation is shown below. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the name of the child path part.
+De voor beeld-navigatie provider overschrijft deze methode niet. De standaard implementatie wordt hieronder weer gegeven. Het accepteert paden die zowel '/'-als '\\' als padscheidingsteken gebruiken. Eerst wordt het pad genormaliseerd om alleen "\\" scheidings tekens te hebben, waarna het bovenliggende pad wordt gesplitst bij de laatste "\\" en wordt de naam van het onderliggende padcomponent geretourneerd.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildname](Msh_samplestestcmdlets#testprovidergetchildname)]  -->
 
-#### <a name="things-to-remember-about-implementing-getchildname"></a>Things to Remember About Implementing GetChildName
+#### <a name="things-to-remember-about-implementing-getchildname"></a>Wat u moet weten over implementatie van GetChildName
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method should split the path lexically on the path separator. If the supplied path contains no path separators, the method should return the path unmodified.
+Uw implementatie van de methode [System. Management. Automation. provider. Navigationcmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) moet het pad op een lexicale wijze splitsen op het padscheidingsteken. Als het opgegeven pad geen padscheidingsteken bevat, zou de methode het pad moeten retour neren ongewijzigd.
 
 > [!IMPORTANT]
-> The path provided in the call to this method might contain characters that are illegal in the provider namespace. These characters are most likely used for wildcard expansion or regular expression matching, and the implementation of this method should not remove them.
+> Het pad dat in de aanroep van deze methode is gegeven, kan tekens bevatten die ongeldig zijn in de naam ruimte van de provider. Deze tekens worden meestal gebruikt voor het vergelijken van joker tekens of reguliere expressies en de implementatie van deze methode mag deze niet verwijderen.
 
-## <a name="determining-if-an-item-is-a-container"></a>Determining if an Item is a Container
+## <a name="determining-if-an-item-is-a-container"></a>Bepalen of een item een container is
 
-The navigation provider can implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method to determine if the specified path indicates a container. It returns true if the path represents a container, and false otherwise. The user needs this method to be able to use the `Test-Path` cmdlet for the supplied path.
+De navigatie provider kan de methode [System. Management. Automation. provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementeren om te bepalen of het opgegeven pad een container aangeeft. Retourneert waar als het pad een container vertegenwoordigt en ONWAAR, anders false. De gebruiker heeft deze methode nodig om de `Test-Path`-cmdlet voor het opgegeven pad te kunnen gebruiken.
 
-The following code shows the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementation in our sample navigation provider. The method verifies that  the specified path is correct and if the table exists, and returns true if the path indicates a container.
+De volgende code toont de implementatie [System. Management. Automation. provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) in onze voor beeld-navigatie provider. De methode controleert of het opgegeven pad juist is en of de tabel bestaat en retourneert waar als het pad een container aangeeft.
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
 
-#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Things to Remember About Implementing IsItemContainer
+#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Wat u moet weten over implementatie van IsItemContainer
 
-Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) needs to ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) property.
+De .NET-klasse van uw navigatie provider declareert mogelijk provider mogelijkheden van ExpandWildcards, filter, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In dit geval moet de implementatie van [System. Management. Automation. provider. Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) ervoor zorgen dat het opgegeven pad voldoet aan de vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschap [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .
 
-## <a name="moving-an-item"></a>Moving an Item
+## <a name="moving-an-item"></a>Een item verplaatsen
 
-In support of the `Move-Item` cmdlet, your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. This method moves the item specified by the `path` parameter to the container at the path supplied in the `destination` parameter.
+Ter ondersteuning van de `Move-Item` cmdlet implementeert uw navigatie provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) . Deze methode verplaatst het item dat is opgegeven door de para meter `path` naar de container op het pad dat is opgegeven in de para meter `destination`.
 
-The sample navigation provider does not override the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. The following is the default implementation.
+De voor beeld-navigatie provider overschrijft de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) niet. Hier volgt de standaard implementatie.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitem](Msh_samplestestcmdlets#testprovidermoveitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-moveitem"></a>Things to Remember About Implementing MoveItem
+#### <a name="things-to-remember-about-implementing-moveitem"></a>Wat u moet weten over implementatie van MoveItem
 
-Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) must ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the **CmdletProvider.Exclude** property.
+De .NET-klasse van uw navigatie provider declareert mogelijk provider mogelijkheden van ExpandWildcards, filter, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In dit geval moet de implementatie van [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ervoor zorgen dat het opgegeven pad voldoet aan de vereisten. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschap **CmdletProvider. exclude** .
 
-By default, overrides of this method should not move objects over existing objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the filesystem provider will not copy c:\temp\abc.txt over an existing c:\bar.txt file unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. If the path specified in the `destination` parameter exists and is a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required. In this case, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) should move the item indicated by the `path` parameter to the container indicated by the `destination` parameter as a child.
+Standaard moeten onderdrukkingen van deze methode geen objecten verplaatsen over bestaande objecten tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. De File System Provider kopieert bijvoorbeeld geen c:\temp\abc.txt over een bestaand c:\bar.txt-bestand, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Als het pad dat is opgegeven in de para meter `destination` bestaat en een container is, is de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) niet vereist. In dit geval moet [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) het item dat door de para meter `path` wordt aangegeven, verplaatsen naar de container die wordt aangegeven door de para meter `destination` als onderliggend element.
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, deleting files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed to the user.
+Uw implementatie van de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in de systeem status, bijvoorbeeld het verwijderen van bestanden. [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven voor de gebruiker.
 
-After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to say if the operation should be continued. Your provider should call [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
+Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, moet de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) worden aangeroepen de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om feedback te geven als de bewerking moet worden voortgezet. Uw provider moet [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen als extra controle op mogelijk schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Attaching Dynamic Parameters to the Move-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Dynamische para meters aan de cmdlet Move-item koppelen
 
-Sometimes the `Move-Item` cmdlet requires additional parameters that are provided dynamically at runtime. To provide these dynamic parameters, the navigation provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) method to get the required parameter values from the item at the indicated path, and return an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object.
+Soms vereist de `Move-Item` cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de navigatie provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) implementeren om de vereiste parameter waarden van het item op het aangegeven pad op te halen en een object retour neren met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
 
-This navigation provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
+Deze navigatie provider implementeert deze methode niet. De volgende code is echter de standaard implementatie van [System. Management. Automation. provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters](Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters)]  -->
 
-## <a name="normalizing-a-relative-path"></a>Normalizing a Relative Path
+## <a name="normalizing-a-relative-path"></a>Een relatief pad normaliseren
 
-Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method to normalize the fully-qualified path indicated in the `path` parameter as being relative to the path specified by the `basePath` parameter. The method returns a string representation of the normalized path. It writes an error if the `path` parameter specifies a nonexistent path.
+Uw navigatie provider implementeert de methode [System. Management. Automation. provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) om het volledig gekwalificeerde pad dat wordt aangegeven in de para meter `path`, te normaliseren als relatief aan het pad dat is opgegeven door de para meter `basePath`. De methode retourneert een teken reeks weergave van het gestandaardiseerde pad. Er wordt een fout bericht geschreven als de para meter `path` een niet-bestaand pad opgeeft.
 
-The sample navigation provider does not override this method. The following is the default implementation.
+De voor beeld-navigatie provider overschrijft deze methode niet. Hier volgt de standaard implementatie.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernormalizepath](Msh_samplestestcmdlets#testprovidernormalizepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>Things to Remember About Implementing NormalizeRelativePath
+#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>Wat u moet weten over implementatie van NormalizeRelativePath
 
-Your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) should parse the `path` parameter, but it does not have to use purely syntactical parsing. You are encouraged to design this method to use the path to look up the path information in the data store and create a path that matches the casing and standardized path syntax.
+Voor de implementatie van [System. Management. Automation. provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) moet de para meter `path` worden geparseerd, maar het is niet nodig om uitsluitend syntactische parsering te gebruiken. U wordt aangeraden deze methode te ontwerpen om het pad op te zoeken in de gegevens opslag en een pad te maken dat overeenkomt met het hoofdletter gebruik en de syntaxis van het gestandaardiseerde pad.
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>Code voorbeeld
 
-For complete sample code, see [AccessDbProviderSample05 Code Sample](./accessdbprovidersample05-code-sample.md).
+Zie [AccessDbProviderSample05 code sample](./accessdbprovidersample05-code-sample.md)voor een volledige voorbeeld code.
 
-## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
+## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
-It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Een provider kan leden toevoegen aan bestaande objecten of nieuwe objecten definiëren. Zie[object typen en opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)voor meer informatie.
 
-## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
+## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 
-For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Zie voor meer informatie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell provider
+## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
 
-When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line, including cmdlets made available by derivation. This example will test the sample navigation provider.
+Als uw Windows Power shell-provider is geregistreerd bij Windows Power shell, kunt u deze testen door de ondersteunde cmdlets uit te voeren op de opdracht regel, inclusief de cmdlets die beschikbaar zijn gemaakt door afleiding. In dit voor beeld wordt de voor beeld-navigatie provider getest.
 
-1. Run your new shell and use the `Set-Location` cmdlet to set the path to indicate the Access database.
+1. Voer uw nieuwe shell uit en gebruik de cmdlet `Set-Location` om het pad in te stellen om de Access-data base aan te geven.
 
    ```powershell
    Set-Location mydb:
    ```
 
-2. Now run the `Get-Childitem` cmdlet to retrieve a list of the database items, which are the available database tables. For each table, this cmdlet also retrieves the number of table rows.
+2. Voer nu de `Get-Childitem` cmdlet uit om een lijst op te halen van de database-items, die de beschik bare database tabellen zijn. Voor elke tabel haalt deze cmdlet ook het aantal tabel rijen op.
 
    ```powershell
    Get-ChildItem | Format-Table rowcount,name -AutoSize
@@ -199,13 +199,13 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
          29   Suppliers
    ```
 
-3. Use the `Set-Location` cmdlet again to set the location of the Employees data table.
+3. Gebruik de `Set-Location` cmdlet opnieuw om de locatie van de gegevens tabel werk nemers in te stellen.
 
    ```powershell
    Set-Location Employees
    ```
 
-4. Let's now use the `Get-Location` cmdlet to retrieve the path to the Employees table.
+4. We gaan nu de cmdlet `Get-Location` gebruiken om het pad naar de tabel Employees op te halen.
 
    ```powershell
    Get-Location
@@ -217,7 +217,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    mydb:\Employees
    ```
 
-5. Now use the `Get-Childitem` cmdlet piped to the `Format-Table` cmdlet. This set of cmdlets retrieves the items for the Employees data table, which are the table rows. They are formatted as specified by the `Format-Table` cmdlet.
+5. Gebruik nu de `Get-Childitem`-cmdlet pipet naar de `Format-Table`-cmdlet. Met deze set cmdlets worden de items opgehaald voor de gegevens tabel werk nemers, die de tabel rijen zijn. Ze zijn ingedeeld zoals opgegeven door de cmdlet `Format-Table`.
 
    ```powershell
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
@@ -237,7 +237,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    8           False            System.Data.DataRow
    ```
 
-6. You can now run the `Get-Item` cmdlet to retrieve the items for row 0 of the Employees data table.
+6. U kunt nu de `Get-Item` cmdlet uitvoeren om de items voor rij 0 van de gegevens tabel werk nemers op te halen.
 
    ```powershell
    Get-Item 0
@@ -254,7 +254,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    RowNumber      : 0
    ```
 
-7. Use the `Get-Item` cmdlet again to retrieve the employee data for the items in row 0.
+7. Gebruik de `Get-Item` cmdlet opnieuw om de werknemers gegevens voor de items in rij 0 op te halen.
 
    ```powershell
    (Get-Item 0).data
@@ -286,16 +286,16 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
 
 ## <a name="see-also"></a>Zie ook
 
-[Creating Windows PowerShell providers](./how-to-create-a-windows-powershell-provider.md)
+[Windows Power shell-providers maken](./how-to-create-a-windows-powershell-provider.md)
 
-[Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
+[Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Implement a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
+[Een container Windows Power shell-provider implementeren](./creating-a-windows-powershell-container-provider.md)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

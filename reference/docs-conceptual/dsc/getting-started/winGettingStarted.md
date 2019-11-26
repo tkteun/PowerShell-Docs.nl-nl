@@ -1,7 +1,7 @@
 ---
 ms.date: 08/15/2019
-keywords: dsc,powershell,configuration,setup
-title: Get started with Desired State Configuration (DSC) for Windows
+keywords: DSC, Power shell, configuratie, installatie
+title: Aan de slag met de desired state Configuration (DSC) voor Windows
 ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,14 +9,14 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417763"
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Get started with Desired State Configuration (DSC) for Windows
+# <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Aan de slag met de desired state Configuration (DSC) voor Windows
 
-This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Windows.
-For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md).
+In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Windows.
+Zie [aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)(Engelstalig) voor algemene informatie over DSC.
 
-## <a name="supported-windows-operation-system-versions"></a>Supported Windows operation system versions
+## <a name="supported-windows-operation-system-versions"></a>Ondersteunde versies van Windows-besturings systeem
 
-The following versions are supported:
+De volgende versies worden ondersteund:
 
 - Windows Server 2019
 - Windows Server 2016
@@ -27,27 +27,27 @@ The following versions are supported:
 - Windows 8.1
 - Windows 7
 
-The [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) standalone product sku does not contain an implementation of Desired State Configuraion so it cannot be managed by PowerShell DSC or Azure Automation State Configuration.
+De zelfstandige product-SKU van [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) bevat geen implementatie van de gewenste status cumuleren zodat deze niet kan worden beheerd met Power shell DSC of Azure Automation State Configuration.
 
-## <a name="installing-dsc"></a>Installing DSC
+## <a name="installing-dsc"></a>DSC installeren
 
-PowerShell Desired State Configuration is included in Windows and updated through Windows Management Framework.
-The latest version is [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+De gewenste status configuratie van Power shell is opgenomen in Windows en bijgewerkt via Windows Management Framework.
+De nieuwste versie is [Windows Management Framework 5,1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 
 > [!NOTE]
-> You do not need to enable the Windows Server feature 'DSC-Service' to manage a machine using DSC.
-> That feature is only needed when building a Windows Pull Server instance.
+> U hoeft de Windows Server-functie DSC-service niet in te scha kelen om een machine te beheren met behulp van DSC.
+> Deze functie is alleen nodig bij het bouwen van een Windows pull-Server exemplaar.
 
-## <a name="using-dsc-for-windows"></a>Using DSC for Windows
+## <a name="using-dsc-for-windows"></a>DSC voor Windows gebruiken
 
-The following sections explain how to create and run DSC configurations on Windows computers.
+In de volgende secties wordt uitgelegd hoe u DSC-configuraties maakt en uitvoert op Windows-computers.
 
-### <a name="creating-a-configuration-mof-document"></a>Creating a configuration MOF document
+### <a name="creating-a-configuration-mof-document"></a>Een configuratie-MOF-document maken
 
-The Windows PowerShell Configuration keyword is used to create a configuration.
-The following steps describe the creation of a configuration document using Windows PowerShell.
+Het sleutel woord configuratie van Windows Power shell wordt gebruikt om een configuratie te maken.
+De volgende stappen beschrijven het maken van een configuratie document met behulp van Windows Power shell.
 
-#### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Define a configuration and generate the configuration document:
+#### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Definieer een configuratie en Genereer het configuratie document:
 
 ```powershell
 Configuration EnvironmentVariable_Path
@@ -71,43 +71,43 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
-#### <a name="install-a-module-containing-dsc-resources"></a>Install a module containing DSC resources
+#### <a name="install-a-module-containing-dsc-resources"></a>Een module met DSC-resources installeren
 
-Windows PowerShell Desired State Configuration includes built-in modules containing DSC resources.
-You can also load modules from external sources such as the PowerShell Gallery, using the PowerShellGet cmdlets.
+Windows Power shell desired state Configuration bevat ingebouwde modules met DSC-resources.
+U kunt ook modules laden vanuit externe bronnen, zoals de PowerShell Gallery, met behulp van de PowerShellGet-cmdlets.
 
 `Install-Module 'PSDscResources' -Verbose`
 
-#### <a name="apply-the-configuration-to-the-machine"></a>Apply the configuration to the machine
+#### <a name="apply-the-configuration-to-the-machine"></a>De configuratie Toep assen op de computer
 
-Configuration documents (MOF files) can be applied to the machine using the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.
+Configuratie documenten (MOF-bestanden) kunnen worden toegepast op de computer met behulp van de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
 `Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
 
-#### <a name="get-the-current-state-of-the-configuration"></a>Get the current state of the configuration
+#### <a name="get-the-current-state-of-the-configuration"></a>De huidige status van de configuratie ophalen
 
-The [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet queries the current status of the machine and returns the current values for the configuration.
+De cmdlet [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) voert een query uit op de huidige status van de machine en retourneert de huidige waarden voor de configuratie.
 
 `Get-DscConfiguration`
 
-The [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) cmdlet returns the current meta-configuration applied to the machine.
+De cmdlet [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) retourneert de huidige meta-configuratie die is toegepast op de computer.
 
 `Get-DscLocalConfigurationManager`
 
-#### <a name="remove-the-current-configuration-from-a-machine"></a>Remove the current configuration from a machine
+#### <a name="remove-the-current-configuration-from-a-machine"></a>De huidige configuratie van een machine verwijderen
 
-The [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
+De [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
 `Remove-DscConfigurationDocument -Stage Current -Verbose`
 
-#### <a name="configure-settings-in-local-configuration-manager"></a>Configure settings in Local Configuration Manager
+#### <a name="configure-settings-in-local-configuration-manager"></a>Instellingen in lokale Configuration Manager configureren
 
-Apply a Meta Configuration MOF file to the machine using the [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) cmdlet.
-Requires the path to the Meta Configuration MOF.
+Pas een MOF-bestand met de meta configuratie toe met de cmdlet [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) .
+Vereist het pad naar de meta configuratie-MOF.
 
 `Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
 
-## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration log files
+## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows Power shell desired state Configuration-logboek bestanden
 
-Logs for DSC are written to Windows Event Log in the path `Microsoft-Windows-Dsc/Operational`.
-Additional logs for debugging purposes can be enabled following the steps in [Where Are DSC Event Logs](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
+Logboeken voor DSC worden naar het Windows-gebeurtenis logboek geschreven in het pad `Microsoft-Windows-Dsc/Operational`.
+Aanvullende logboeken voor fout opsporing kunnen worden ingeschakeld Volg de stappen in [waar vindt u de logboeken van DSC-gebeurtenissen](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

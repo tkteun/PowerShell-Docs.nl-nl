@@ -10,32 +10,32 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416499"
 ---
-# <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x Release Notes
+# <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
 
-## <a name="wmf-50-changes"></a>WMF 5.0 Changes
+## <a name="wmf-50-changes"></a>WMF 5,0-wijzigingen
 
-- PowerShell 5.0 adds a new structured **Information** stream
-- Improvements to DSC including four new DSC resources:
+- Power shell 5,0 voegt een nieuwe gestructureerde **informatie** stroom toe
+- Verbeteringen in DSC, met inbegrip van vier nieuwe DSC-resources:
   - WindowsFeatureSet
   - WindowsOptionalFeatureSet
   - ServiceSet
   - ProcessSet
-- Added Just Enough Administration to enable role-based administration through PowerShell remoting
-- PowerShell 5.0 extends the language to include user-defined classes and enumerations
-- Improved debugging features in PowerShell ISE and added remote debugging
-- Added the PowerShellGet and PackageManagement modules
-- Enhanced PowerShell script logging and transcripts
-- Add Cryptographic Message Syntax cmdlets
-- WMF 5.0 includes the NetworkSwitchManager module for Windows
-- Added the Microsoft.PowerShell.ODataUtils module
-- Added support for Software Inventory Logging (SIL)
-- Sever new or update cmdlets in response to user requests and issues
+- Er is net genoeg beheer toegevoegd om op rollen gebaseerd beheer via externe communicatie van Power shell in te scha kelen
+- Power shell 5,0 breidt de taal uit voor het toevoegen van door de gebruiker gedefinieerde klassen en inventarisaties
+- Verbeterde functies voor fout opsporing in Power shell ISE en het toevoegen van externe fout opsporing
+- De modules PowerShellGet en Package Management zijn toegevoegd
+- Verbeterde logboek registratie en transcripten van Power shell-scripts
+- Syntaxis-cmdlets voor cryptografische berichten toevoegen
+- WMF 5,0 bevat de NetworkSwitchManager-module voor Windows
+- De module micro soft. Power shell. ODataUtils is toegevoegd
+- Er is ondersteuning toegevoegd voor logboek registratie van software-inventaris (SIL)
+- Nieuwe of update-cmdlets in reactie op gebruikers aanvragen en problemen
 
-## <a name="wmf-51-changes"></a>WMF 5.1 Changes
+## <a name="wmf-51-changes"></a>WMF 5,1-wijzigingen
 
-WMF 5.1 includes the PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016. WMF 5.1 can be installed on Windows 7, Windows 8.1, Windows Server 2008 R2, 2012, and 2012 R2, and provides several improvements over WMF 5.0 including:
+WMF 5,1 bevat de onderdelen van Power shell, WMI, WinRM en Software Inventory logging (SIL) die zijn uitgebracht met Windows Server 2016. WMF 5,1 kan worden geïnstalleerd op Windows 7, Windows 8,1, Windows Server 2008 R2, 2012 en 2012 R2, en biedt verschillende verbeteringen ten opzichte van WMF-5,0, waaronder:
 
-- New cmdlets
+- Nieuwe cmdlets
 - PowerShellGet-verbeteringen, waaronder het afdwingen van ondertekende modules en het installeren van JEA-modules
 - Ondersteuning in PackageManagement toegevoegd voor Containers, CBS Setup, EXE-installatie en CAB-pakketten
 - Verbeteringen in foutopsporing voor DSC- en PowerShell-klassen
@@ -43,66 +43,66 @@ WMF 5.1 includes the PowerShell, WMI, WinRM, and Software Inventory Logging (SIL
 - Antwoorden op een aantal gebruikersaanvragen en -problemen
 
 > [!IMPORTANT]
-> Before you install WMF 5.1 on Windows Server 2008 or Windows 7, confirm that WMF 3.0 isn't installed. For more information, see [WMF 5.1 Prerequisites for Windows Server 2008 R2 SP1 and Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
+> Voordat u WMF 5,1 installeert op Windows Server 2008 of Windows 7, controleert u of WMF 3,0 niet is geïnstalleerd. Zie voor meer informatie [WMF 5,1-vereisten voor Windows Server 2008 R2 SP1 en Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
 ## <a name="powershell-editions"></a>PowerShell-edities
 
-Starting with version 5.1, PowerShell is available in different editions that denote varying feature sets and platform compatibility.
+Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin verschillende functie sets en platform compatibiliteit worden aangegeven.
 
 - **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
 - **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
-### <a name="learn-more-about-using-powershell-editions"></a>Learn more about using PowerShell Editions
+### <a name="learn-more-about-using-powershell-editions"></a>Meer informatie over het gebruik van Power shell-edities
 
-- [Determine running edition of PowerShell using $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
-- [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter](/powershell/module/microsoft.powershell.core/get-module)
-- [Prevent script execution unless run on a compatible edition of PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
-- [Declare a module's compatibility to specific PowerShell versions](/powershell/scripting/gallery/concepts/module-psedition-support)
+- [De actieve editie van Power shell bepalen met behulp van $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Get-module resultaten filteren op CompatiblePSEditions met behulp van de PSEdition-para meter](/powershell/module/microsoft.powershell.core/get-module)
+- [Uitvoering van scripts voor komen tenzij uitgevoerd op een compatibele editie van Power shell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [De compatibiliteit van een module met specifieke Power shell-versies declareren](/powershell/scripting/gallery/concepts/module-psedition-support)
 
-## <a name="module-analysis-cache"></a>Module Analysis Cache
+## <a name="module-analysis-cache"></a>Module analyse cache
 
-Starting with WMF 5.1, PowerShell provides control over the file that is used to cache data about a module, such as the commands it exports.
+Vanaf WMF 5,1 biedt Power shell controle over het bestand dat wordt gebruikt voor het opslaan van gegevens over een module, zoals de opdrachten die worden geëxporteerd.
 
-By default, this cache is stored in the file `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. The cache is typically read at startup while searching for a command and is written on a background thread sometime after a module is imported.
+Deze cache wordt standaard opgeslagen in het bestand `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. De cache wordt doorgaans tijdens het opstarten gelezen tijdens het zoeken naar een opdracht en wordt ergens op een achtergrond thread geschreven nadat een module is geïmporteerd.
 
-To change the default location of the cache, set the `$env:PSModuleAnalysisCachePath` environment variable before starting PowerShell. Changes to this environment variable will only affect children processes. The value should name a full path (including filename) that PowerShell has permission to create and write files. To disable the file cache, set this value to an invalid location, for example:
+Als u de standaard locatie van de cache wilt wijzigen, moet u de omgevings variabele `$env:PSModuleAnalysisCachePath` instellen voordat u Power shell start. Wijzigingen aan deze omgevings variabele worden alleen toegepast op onderliggende processen. De waarde moet een volledig pad (inclusief bestands naam) zijn dat Power shell toestemming heeft om bestanden te maken en te schrijven. Als u de bestands cache wilt uitschakelen, stelt u deze waarde in op een ongeldige locatie, bijvoorbeeld:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-This sets the path to an invalid device. If PowerShell can't write to the path, no error is returned, but you can see error reporting by using a tracer:
+Hiermee stelt u het pad naar een ongeldig apparaat in. Als Power shell het pad niet kan schrijven, wordt er geen fout geretourneerd, maar u kunt fout rapportage zien met behulp van een tracering:
 
 ```powershell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
 ```
 
-When writing out the cache, PowerShell will check for modules that no longer exist to avoid an unnecessarily large cache. Sometimes these checks are not desirable, in which case you can turn them off by setting:
+Wanneer u de cache afschrijft, controleert Power shell op modules die niet meer bestaan om een onnodig grote cache te voor komen. Soms zijn deze controles niet gewenst, in welk geval u ze kunt uitschakelen door het volgende in te stellen:
 
 ```powershell
 $env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
-Setting this environment variable will take effect immediately in the current process.
+Het instellen van deze omgevings variabele wordt direct van kracht in het huidige proces.
 
-## <a name="specifying-module-version"></a>Specifying module version
+## <a name="specifying-module-version"></a>Module versie opgeven
 
-In WMF 5.1, `using module` behaves the same way as other module-related constructions in PowerShell.
-Previously, you had no way to specify a particular module version; if there were multiple versions present, this resulted in an error.
+In WMF 5,1 werkt `using module` op dezelfde manier als andere modules-gerelateerde constructies in Power shell.
+U had eerder geen manier om een bepaalde module versie op te geven. Als er meerdere versies aanwezig zijn, resulteert dit in een fout.
 
-In WMF 5.1:
+In WMF 5,1:
 
-- You can use [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+- U kunt de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)gebruiken.
 
-  This hash table has the same format as `Get-Module -FullyQualifiedName`.
+  Deze hash-tabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
-  **Example:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+  **Voor beeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- If there are multiple versions of the module, PowerShell uses the **same resolution logic** as `Import-Module` and doesn't return an error--the same behavior as `Import-Module` and `Import-DscResource`.
+- Als er meerdere versies van de module zijn, maakt Power shell gebruik van **dezelfde oplossings logica** als `Import-Module` en retourneert deze geen fout--hetzelfde gedrag als `Import-Module` en `Import-DscResource`.
 
-## <a name="improvements-to-pester"></a>Improvements to Pester
+## <a name="improvements-to-pester"></a>Verbeteringen aan de ziekte
 
-In WMF 5.1, the version of Pester that ships with PowerShell has been updated from 3.3.5 to 3.4.0.
-This update enables better behavior for Pester on Nano Server.
+In WMF 5,1 is de versie van de ziekte die wordt geleverd met Power shell, bijgewerkt van 3.3.5 naar 3.4.0.
+Deze update zorgt voor een betere werking van een ziekte op nano server.
 
-You can review the changes in Pest by inspecting the [ChangeLog](https://github.com/pester/Pester/blob/master/CHANGELOG.md) in the GitHub repository.
+U kunt de wijzigingen in parasiet controleren door de [wijzigingen logboek](https://github.com/pester/Pester/blob/master/CHANGELOG.md) in de GitHub-opslag plaats te controleren.

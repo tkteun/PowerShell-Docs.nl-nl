@@ -1,6 +1,6 @@
 ---
 ms.date: 08/14/2018
-keywords: powershell,cmdlet
+keywords: Power shell, cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -9,35 +9,35 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416283"
 ---
-# <a name="the-windows-powershell-ise"></a>The Windows PowerShell ISE
+# <a name="the-windows-powershell-ise"></a>De Windows PowerShell ISE
 
-The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows PowerShell. In the ISE, you can run commands and write, test, and debug scripts in a single Windows-based graphic user interface. The ISE provides multiline editing, tab completion, syntax coloring, selective execution, context-sensitive help, and support for right-to-left languages. Menu items and keyboard shortcuts are mapped to many of the same tasks that you would do in the Windows PowerShell console. For example, when you debug a script in the ISE, you can right-click on a line of code in the edit pane to set a breakpoint.
+De Windows Power shell Integrated Scripting Environment (ISE) is een hosttoepassing voor Windows Power shell. In de ISE kunt u-opdrachten uitvoeren en scripts schrijven, testen en fouten opsporen in één op Windows gebaseerde grafische gebruikers interface. De ISE biedt bewerkingen op meerdere regels, tabblad voltooiing, syntaxis kleuren, selectief uitvoeren, context gevoelige Help en ondersteuning voor talen die van rechts naar links worden geschreven. Menu opdrachten en sneltoetsen worden toegewezen aan veel van de taken die u in de Windows Power shell-console zou uitvoeren. Wanneer u bijvoorbeeld fouten opspoort in een script in de ISE, kunt u met de rechter muisknop op een regel code in het deel venster bewerken klikken om een onderbrekings punt in te stellen.
 
 ## <a name="support"></a>Ondersteuning
 
-The ISE was first introduced with Windows PowerShell V2 and was re-designed with PowerShell V3. The ISE is supported in all supported versions of Windows PowerShell up to and including Windows PowerShell V5.1.
+De ISE is voor het eerst geïntroduceerd in Windows Power shell v2 en is opnieuw ontworpen met Power Shell v3. De ISE wordt ondersteund in alle ondersteunde versies van Windows Power shell tot en met Windows Power shell V 5.1.
 
 > [!NOTE]
-> The PowerShell ISE is no longer in active feature development. As a shipping component of Windows, it continues to be officially supported for security and high-priority servicing fixes.
-> We currently have no plans to remove the ISE from Windows.
+> De Power shell-ISE is niet langer beschikbaar voor het ontwikkelen van actieve functies. Als onderdeel van Windows-verzen ding wordt het officieel ondersteund voor beveiligings updates en onderhoud met hoge prioriteit.
+> Er zijn momenteel geen abonnementen om de ISE van Windows te verwijderen.
 >
-> There is no support for the ISE in PowerShell v6 and beyond. Users looking for replacement for the ISE should use [Visual Studio Code](https://code.visualstudio.com/) with the [PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
+> Er is geen ondersteuning voor de ISE in Power shell V6 en verder. Gebruikers die op zoek zijn naar vervanging voor ISE, moeten [Visual Studio code](https://code.visualstudio.com/) gebruiken met de [Power shell-extensie](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## <a name="key-features"></a>Belangrijkste functies
 
-Key features in Windows PowerShell ISE include:
+De belangrijkste functies in Windows PowerShell ISE zijn onder andere:
 
-- Multiline editing: To insert a blank line under the current line in the Command pane, press <kbd>SHIFT</kbd>+<kbd>ENTER</kbd>.
-- Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button. Or, press <kbd>F5</kbd>.
-- Context-sensitive help: Type `Invoke-Item`, and then press <kbd>F1</kbd>. The Help file opens to the article for the `Invoke-Item` cmdlet.
+- Meerdere regels bewerken: als u een lege regel wilt invoegen onder de huidige regel in het opdracht venster, drukt u op <kbd>SHIFT</kbd>+<kbd>Enter</kbd>.
+- Selectief uitvoeren: als u een gedeelte van een script wilt uitvoeren, selecteert u de tekst die u wilt uitvoeren en klikt u vervolgens op de knop **script uitvoeren** . Of druk op <kbd>F5</kbd>.
+- Context gevoelige Help: Typ `Invoke-Item`en druk vervolgens op <kbd>F1</kbd>. Het Help-bestand wordt geopend in het artikel voor de cmdlet `Invoke-Item`.
 
-The Windows PowerShell ISE lets you customize some aspects of its appearance. It also has its own Windows PowerShell profile script.
+Met de Windows PowerShell ISE kunt u bepaalde aspecten van het uiterlijk aanpassen. Het bevat ook een eigen Windows Power shell-profiel script.
 
-## <a name="to-start-the-windows-powershell-ise"></a>To start the Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>De Windows PowerShell ISE starten
 
-Click **Start**, select **Windows PowerShell**, and then click **Windows PowerShell ISE**.
-Alternately, you can type `powershell_ise.exe` in any command shell or in the Run box.
+Klik op **Start**, selecteer **Windows Power shell**en klik vervolgens op **Windows PowerShell ISE**.
+U kunt ook `powershell_ise.exe` typen in een wille keurige opdracht shell of in het vak uitvoeren.
 
-## <a name="to-get-help-in-the-windows-powershell-ise"></a>To get Help in the Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Als u hulp wilt krijgen in de Windows PowerShell ISE
 
-On the **Help** menu, click **Windows PowerShell Help**. Or, press <kbd>F1</kbd>. The file that opens describes Windows PowerShell ISE and Windows PowerShell, including all the help available from the `Get-Help` cmdlet.
+Klik in het menu **Help** op **Help van Windows Power shell**. Of druk op <kbd>F1</kbd>. In het bestand dat wordt geopend, worden Windows PowerShell ISE en Windows Power shell beschreven, inclusief alle Help-informatie die beschikbaar is via de `Get-Help`-cmdlet.

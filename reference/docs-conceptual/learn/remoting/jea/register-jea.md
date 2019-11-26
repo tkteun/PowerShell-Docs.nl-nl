@@ -1,7 +1,7 @@
 ---
 ms.date: 07/10/2019
-keywords: jea,powershell,security
-title: Registering JEA Configurations
+keywords: JEA, Power shell, beveiliging
+title: JEA-configuraties registreren
 ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,22 +9,22 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417615"
 ---
-# <a name="registering-jea-configurations"></a>Registering JEA Configurations
+# <a name="registering-jea-configurations"></a>JEA-configuraties registreren
 
-Once you have your [role capabilities](role-capabilities.md) and [session configuration file](session-configurations.md) created, the last step is to register the JEA endpoint. Registering the JEA endpoint with the system makes the endpoint available for use by users and automation engines.
+Zodra u uw [functie mogelijkheden](role-capabilities.md) en [sessie configuratie bestand](session-configurations.md) hebt gemaakt, is de laatste stap het JEA-eind punt te registreren. Als het JEA-eind punt wordt geregistreerd bij het systeem, wordt het eind punt beschikbaar voor gebruik door gebruikers en automatiserings engines.
 
-## <a name="single-machine-configuration"></a>Single machine configuration
+## <a name="single-machine-configuration"></a>Configuratie van één computer
 
-For small environments, you can deploy JEA by registering the session configuration file using the [Register-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/register-pssessionconfiguration) cmdlet.
+Voor kleine omgevingen kunt u JEA implementeren door het sessie configuratie bestand te registreren met de cmdlet [REGI ster-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/register-pssessionconfiguration) .
 
-Before you begin, ensure that the following prerequisites have been met:
+Voordat u begint, moet u ervoor zorgen dat aan de volgende vereisten is voldaan:
 
-- One or more roles has been created and placed in the **RoleCapabilities** folder of a PowerShell module.
-- A session configuration file has been created and tested.
-- The user registering the JEA configuration has administrator rights on the system.
-- You've selected a name for your JEA endpoint.
+- Een of meer rollen zijn gemaakt en geplaatst in de map **RoleCapabilities** van een Power shell-module.
+- Er is een sessie configuratie bestand gemaakt en getest.
+- De gebruiker die de JEA-configuratie registreert, heeft beheerders rechten op het systeem.
+- U hebt een naam geselecteerd voor uw JEA-eind punt.
 
-The name of the JEA endpoint is required when users connect to the system using JEA. The [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) cmdlet lists the names of the endpoints on a system. Endpoints that start with `microsoft` are typically shipped with Windows. The `microsoft.powershell` endpoint is the default endpoint used when connecting to a remote PowerShell endpoint.
+De naam van het JEA-eind punt is vereist wanneer gebruikers verbinding maken met het systeem met behulp van JEA. De cmdlet [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) geeft de namen van de eind punten op een systeem weer. Eind punten die beginnen met `microsoft` worden doorgaans geleverd met Windows. Het `microsoft.powershell`-eind punt is het standaard eindpunt dat wordt gebruikt om verbinding te maken met een extern Power shell-eind punt.
 
 ```powershell
 Get-PSSessionConfiguration | Select-Object Name
@@ -38,44 +38,44 @@ microsoft.powershell.workflow
 microsoft.powershell32
 ```
 
-Run the following command to register the endpoint.
+Voer de volgende opdracht uit om het eind punt te registreren.
 
 ```powershell
 Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' -Force
 ```
 
 > [!WARNING]
-> The previous command restarts the WinRM service on the system. This terminates all PowerShell remoting sessions and any ongoing DSC configurations. We recommended you take production machines offline before running the command to avoid disrupting business operations.
+> Met de vorige opdracht wordt de WinRM-service opnieuw gestart op het systeem. Hiermee worden alle externe sessies met Power shell en alle doorlopende DSC-configuraties beëindigd. We raden u aan productie machines offline te zetten voordat u de opdracht uitvoert om te voor komen dat zakelijke activiteiten worden verstoord.
 
-After registration, you're ready to [use JEA](using-jea.md). You may delete the session configuration file at any time. The configuration file isn't used after registration of the endpoint.
+Na de registratie bent u klaar om [JEA te gebruiken](using-jea.md). U kunt het sessie configuratie bestand op elk gewenst moment verwijderen. Het configuratie bestand wordt niet gebruikt na de registratie van het eind punt.
 
-## <a name="multi-machine-configuration-with-dsc"></a>Multi-machine configuration with DSC
+## <a name="multi-machine-configuration-with-dsc"></a>Configuratie van meerdere machines met DSC
 
-When deploying JEA on multiple machines, the simplest deployment model uses the JEA [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) resource to quickly and consistently deploy JEA on each machine.
+Bij het implementeren van JEA op meerdere computers, gebruikt het eenvoudigste implementatie model de JEA [desired state Configuration (DSC)-](/powershell/scripting/dsc/overview) resource om snel en consistent JEA op elke computer te implementeren.
 
-To deploy JEA with DSC, ensure the following prerequisites are met:
+Als u JEA wilt implementeren met DSC, controleert u of aan de volgende vereisten wordt voldaan:
 
-- One or more role capabilities have been authored and added to a PowerShell module.
-- The PowerShell module containing the roles is stored on a (read-only) file share accessible by each machine.
-- Settings for the session configuration have been determined. You don't need to create a session configuration file when using the JEA DSC resource.
-- You have credentials that allow administrative actions on each machine or access to the DSC pull server used to manage the machines.
-- You've downloaded the [JEA DSC resource](https://github.com/powershell/JEA/tree/master/DSC%20Resource).
+- Een of meer functie mogelijkheden zijn gemaakt en toegevoegd aan een Power shell-module.
+- De Power shell-module die de rollen bevat, wordt opgeslagen op een bestands share (alleen-lezen) die toegankelijk is voor elke computer.
+- De instellingen voor de sessie configuratie zijn bepaald. U hoeft geen sessie configuratie bestand te maken wanneer u de JEA DSC-resource gebruikt.
+- U hebt referenties waarmee beheer acties op elke computer of toegang tot de DSC-pull-server die wordt gebruikt voor het beheren van de computers worden toegestaan.
+- U hebt de [JEA DSC-resource](https://github.com/powershell/JEA/tree/master/DSC%20Resource)gedownload.
 
-Create a DSC configuration for your JEA endpoint on a target machine or pull server. In this configuration, the **JustEnoughAdministration** DSC resource defines the session configuration file and the **File** resource copies the role capabilities from the file share.
+Een DSC-configuratie voor uw JEA-eind punt maken op een doel computer of pull-server. In deze configuratie definieert de **JustEnoughAdministration** DSC-resource het sessie configuratie bestand en de **Bestands** resource kopieert de functie mogelijkheden van de bestands share.
 
-The following properties are configurable using the DSC resource:
+De volgende eigenschappen kunnen worden geconfigureerd met behulp van de DSC-resource:
 
-- Role Definitions
-- Virtual account groups
-- Group-managed service account name
-- Transcript directory
-- User drive
-- Conditional access rules
-- Startup scripts for the JEA session
+- Roldefinities
+- Virtuele-account groepen
+- Naam van door groep beheerde service account
+- Transcript Directory
+- Gebruikers station
+- Regels voor voorwaardelijke toegang
+- Opstart scripts voor de JEA-sessie
 
-The syntax for each of these properties in a DSC configuration is consistent with the PowerShell session configuration file.
+De syntaxis voor elk van deze eigenschappen in een DSC-configuratie is consistent met het configuratie bestand van de Power shell-sessie.
 
-Below is a sample DSC configuration for a general server maintenance module. It assumes that a valid PowerShell module containing role capabilities is located on the `\\myfileshare\JEA` file share.
+Hieronder vindt u een voor beeld van een DSC-configuratie voor een algemene server onderhoud module. Hierbij wordt ervan uitgegaan dat een geldige Power shell-module met functie mogelijkheden zich op de `\\myfileshare\JEA` bestands share bevindt.
 
 ```powershell
 Configuration JEAMaintenance
@@ -102,13 +102,13 @@ Configuration JEAMaintenance
 }
 ```
 
-Next, the configuration is applied on a system by directly invoking the [Local Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaConfig) or updating the [pull server configuration](/powershell/scripting/dsc/pull-server/pullServer).
+Vervolgens wordt de configuratie op een systeem toegepast door de [lokale Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaConfig) rechtstreeks aan te roepen of de configuratie van de [Pull-server](/powershell/scripting/dsc/pull-server/pullServer)bij te werken.
 
-The DSC resource also allows you to replace the default **Microsoft.PowerShell** endpoint. When replaced, the resource automatically registers a backup endpoint named **Microsoft.PowerShell.Restricted**. The backup endpoint has the default WinRM ACL that allows Remote Management Users and local Administrators group members to access it.
+Met de DSC-resource kunt u ook het standaard eindpunt van **micro soft. Power shell** vervangen. Wanneer deze is vervangen, registreert de resource automatisch een back-upeindpunt met de naam **micro soft. Power shell. restricted**. Het back-upeindpunt heeft de standaard-WinRM-ACL waarmee gebruikers van extern beheer en lokale beheerders groeps leden toegang kunnen krijgen.
 
-## <a name="unregistering-jea-configurations"></a>Unregistering JEA configurations
+## <a name="unregistering-jea-configurations"></a>Registratie van JEA-configuraties ongedaan maken
 
-The [Unregister-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet removes a JEA endpoint. Unregistering a JEA endpoint prevents new users from creating new JEA sessions on the system. It also allows you to update a JEA configuration by re-registering an updated session configuration file using the same endpoint name.
+Met de cmdlet [unregister-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/Unregister-PSSessionConfiguration) wordt een JEA-eind punt verwijderd. Wanneer u de registratie van een JEA-eind punt ongedaan maakt, kunnen nieuwe gebruikers geen nieuwe JEA-sessies op het systeem maken. U kunt hiermee ook een JEA-configuratie bijwerken door een bijgewerkt sessie configuratie bestand opnieuw te registreren met dezelfde naam voor het eind punt.
 
 ```powershell
 # Unregister the JEA endpoint called "ContosoMaintenance"
@@ -116,8 +116,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> Unregistering a JEA endpoint causes the WinRM service to restart. This interrupts most remote management operations in progress, including other PowerShell sessions, WMI invocations, and some management tools. Only unregister PowerShell endpoints during planned maintenance windows.
+> Bij het ongedaan maken van de registratie van een JEA-eind punt wordt de WinRM-service opnieuw gestart. Hiermee worden de meeste beheer bewerkingen van het externe Management onderbroken, waaronder andere Power shell-sessies, WMI-aanroepen en bepaalde beheer hulpprogramma's. Registreer Power shell-eind punten alleen tijdens geplande onderhouds Vensters.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Test the JEA endpoint](using-jea.md)
+[Het JEA-eind punt testen](using-jea.md)

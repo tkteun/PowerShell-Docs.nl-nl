@@ -1,7 +1,7 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
-title: Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
+keywords: DSC, Power shell, configuratie, installatie
+title: Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
 ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,52 +9,52 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417236"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Set up a Pull Client using Configuration IDs in PowerShell 5.0 and later
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
 
-> Applies To: Windows PowerShell 5.0
+> Van toepassing op: Windows Power shell 5,0
 
 > [!IMPORTANT]
-> The Pull Server (Windows Feature *DSC-Service*) is a supported component of Windows Server however there are no plans to offer new features or capabilities. It is recommended to begin transitioning managed clients to [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (includes features beyond Pull Server on Windows Server) or one of the community solutions listed [here](pullserver.md#community-solutions-for-pull-service).
+> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
-Before setting up a pull client, you should set up a pull server. Though this order is not required, it helps with troubleshooting, and helps you ensure that the registration was successful. To set up a pull server, you can use the following guides:
+Voordat u een pull-client instelt, moet u een pull-server instellen. Deze volg orde is niet vereist, maar helpt bij het oplossen van problemen en helpt u ervoor te zorgen dat de registratie is geslaagd. U kunt de volgende hand leidingen gebruiken om een pull-server in te stellen:
 
-- [Set up a DSC SMB Pull Server](pullServerSmb.md)
-- [Set up a DSC HTTP Pull Server](pullServer.md)
+- [Een DSC SMB-pull-server instellen](pullServerSmb.md)
+- [Een DSC HTTP-pull-server instellen](pullServer.md)
 
-Each target node can be configured to download configurations, resources, and even report its status. The sections below show you how to configure a pull client with an SMB share or HTTP DSC Pull Server. When the Node's LCM refreshes, it will reach out to the configured location to download any assigned configurations. If any required resources do not exist on the Node, it will automatically download them from the configured location. If the Node is configured with a [Report Server](reportServer.md), it will then report the status of the operation.
+Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources en zelfs het rapporteren van de status ervan. In de volgende secties ziet u hoe u een pull-client kunt configureren met een SMB-share of een HTTP DSC-pull-server. Wanneer de LCM van het knoop punt wordt vernieuwd, neemt het contact op met de geconfigureerde locatie voor het downloaden van toegewezen configuraties. Als er vereiste bronnen niet aanwezig zijn op het knoop punt, worden deze automatisch gedownload vanaf de geconfigureerde locatie. Als het knoop punt is geconfigureerd met een [rapport server](reportServer.md), wordt de status van de bewerking gerapporteerd.
 
 > [!NOTE]
-> This topic applies to PowerShell 5.0. For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)
+> Dit onderwerp is van toepassing op Power shell 5,0. Zie [een pull-client instellen met configuratie-ID in Power shell 4,0](pullClientConfigID4.md) voor informatie over het instellen van een pull-client in power Shell 4,0
 
-## <a name="configure-the-pull-client-lcm"></a>Configure the pull client LCM
+## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
-Executing any of the examples below creates a new output folder named **PullClientConfigID** and puts a metaconfiguration MOF file there. In this case, the metaconfiguration MOF file will be named `localhost.meta.mof`.
+Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigID** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie aangeduid met de naam `localhost.meta.mof`.
 
-To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path** set to the location of the metaconfiguration MOF file. Bijvoorbeeld:
+Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigurationManager** aan, waarbij het **pad** is ingesteld op de locatie van het MOF-bestand met de meta configuratie. Bijvoorbeeld:
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
 ```
 
-## <a name="configuration-id"></a>Configuration ID
+## <a name="configuration-id"></a>Configuratie-ID
 
-The examples below sets the **ConfigurationID** property of the LCM to a **Guid** that had been previously created for this purpose. The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server. The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM. For more information see [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md).
+In de onderstaande voor beelden wordt de eigenschap **ConfigurationID** van de LCM ingesteld op een **GUID** die eerder is gemaakt voor dit doel. De **ConfigurationID** is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet zijn benoemd `ConfigurationID.mof`, waarbij *ConfigurationID* de waarde is van de eigenschap **CONFIGURATIONID** van de LCM van het doel knooppunt. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
 
-You can create a random **Guid** using the example below, or by using the [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet.
+U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-For more information about using **Guids** in your environment, see [Plan for Guids](/powershell/scripting/dsc/secureserver#guids).
+Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](/powershell/scripting/dsc/secureserver#guids).
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>Set up a Pull Client to download Configurations
+## <a name="set-up-a-pull-client-to-download-configurations"></a>Een pull-client instellen om configuraties te downloaden
 
-Each client must be configured in **Pull** mode and given the pull server url where its configuration is stored. To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information. To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute. For more information about configuring the LCM, see [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md).
+Elke client moet worden geconfigureerd in de **pull** -modus en krijgt de URL van de pull-server waar de configuratie is opgeslagen. Hiervoor moet u de lokale Configuration Manager (LCM) configureren met de benodigde gegevens. Als u de LCM wilt configureren, maakt u een speciaal type configuratie, gedecoreerd met het kenmerk **DSCLocalConfigurationManager** . Zie [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md)(Engelstalig) voor meer informatie over het configureren van de LCM.
 
-### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC-pull-server
 
-The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".
+Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configuraties van een server met de naam ' CONTOSO-PullSrv '.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -80,11 +80,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-In the script, the **ConfigurationRepositoryWeb** block defines the pull server. The **ServerUrl** specifies the url of the DSC Pull
+In het script definieert de pull-server in het **ConfigurationRepositoryWeb** -blok. De **ServerUrl** Hiermee wordt de URL van de DSC-pull opgegeven
 
-### <a name="smb-share"></a>SMB Share
+### <a name="smb-share"></a>SMB-share
 
-The following script configures the LCM to pull configurations from the SMB Share `\\SMBPullServer\Pull`.
+Met het volgende script wordt de LCM geconfigureerd om configuraties te halen uit de SMB-share `\\SMBPullServer\Pull`.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -109,18 +109,18 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-In the script, the **ConfigurationRepositoryShare** block defines the pull server, which in this case, is just an SMB share.
+In het script definieert het **ConfigurationRepositoryShare** -blok de pull-server, in dit geval alleen een SMB-share.
 
-## <a name="set-up-a-pull-client-to-download-resources"></a>Set up a Pull Client to download Resources
+## <a name="set-up-a-pull-client-to-download-resources"></a>Een pull-client instellen om resources te downloaden
 
-If you specify only the **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous examples), the pull client will pull resources from the same location it retrieves its configurations. You can also specify separate locations for resources. To specify a resource location as a separate server, use the **ResourceRepositoryWeb** block. To specify a resource location as an SMB share, use the **ResourceRepositoryShare** block.
+Als u alleen het **ConfigurationRepositoryWeb** -of **ConfigurationRepositoryShare** -blok in uw LCM-configuratie opgeeft (zoals in de voor gaande voor beelden), haalt de pull-client resources op dezelfde locatie op die de configuraties ervan ophaalt. U kunt ook afzonderlijke locaties voor bronnen opgeven. Gebruik het **ResourceRepositoryWeb** -blok om een resource locatie als een afzonderlijke server op te geven. Als u een resource locatie als SMB-share wilt opgeven, gebruikt u het **ResourceRepositoryShare** -blok.
 
 > [!NOTE]
-> You can combine **ConfigurationRepositoryWeb** with **ResourceRepositoryShare** or **ConfigurationRepositoryShare** with **ResourceRepositoryWeb**. Examples of this are not shown below.
+> U kunt **ConfigurationRepositoryWeb** combi neren met **ResourceRepositoryShare** of **ConfigurationRepositoryShare** met **ResourceRepositoryWeb**. Voor beelden hiervan worden hieronder niet weer gegeven.
 
-### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC-pull-server
 
-The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**.
+Met de volgende configuratie wordt een pull-client geconfigureerd voor het ophalen van de configuraties van **Contoso-PullSrv** en de bijbehorende resources van **Contoso-ResourceSrv**.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -151,9 +151,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-### <a name="smb-share"></a>SMB Share
+### <a name="smb-share"></a>SMB-share
 
-The following example shows a metaconfiguration that sets up a client to pull configurations from the SMB share `\\SMBPullServer\Configurations`, and resources from the SMB share `\\SMBPullServer\Resources`.
+In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van configuraties uit de SMB-share `\\SMBPullServer\Configurations`en bronnen van de SMB-share `\\SMBPullServer\Resources`.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -183,9 +183,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-#### <a name="automatically-download-resources-in-push-mode"></a>Automatically download Resources in Push Mode
+#### <a name="automatically-download-resources-in-push-mode"></a>Automatisch bronnen in de push-modus downloaden
 
-Beginning in PowerShell 5.0, your pull clients can download modules from an SMB share, even when they are configured for **Push** mode. This is especially useful in scenarios where you do not want to set up a Pull Server. The **ResourceRepositoryShare** block can be used without specifying a **ConfigurationRepositoryShare**. The following example shows a metaconfiguration that sets up a client to pull resources from an SMB Share `\\SMBPullServer\Resources`. When the Node is **PUSHED** a configuration, it will automatically download any required resources, from the share specified.
+Vanaf Power shell 5,0 kunnen uw pull-clients modules downloaden van een SMB-share, zelfs wanneer ze zijn geconfigureerd voor de **Push** -modus. Dit is vooral handig in scenario's waarin u geen pull-server wilt instellen. Het **ResourceRepositoryShare** -blok kan worden gebruikt zonder een **ConfigurationRepositoryShare**op te geven. In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van resources van een SMB-share `\\SMBPullServer\Resources`. Wanneer het knoop punt een configuratie heeft **gepusht** , worden de vereiste resources automatisch gedownload van de opgegeven share.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -208,13 +208,13 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## <a name="set-up-a-pull-client-to-report-status"></a>Set up a Pull Client to report status
+## <a name="set-up-a-pull-client-to-report-status"></a>Een pull-client instellen om de status te rapporteren
 
-By default, Nodes will not send reports to a configured Pull Server. You can use a single pull server for configurations, resources, and reporting, but you have to create a **ReportRepositoryWeb** block to set up reporting.
+Standaard worden door knoop punten geen rapporten naar een geconfigureerde pull-server verzonden. U kunt één pull-server gebruiken voor configuraties, resources en rapporten, maar u moet een **ReportRepositoryWeb** -blok maken om rapportage in te stellen.
 
-### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
+### <a name="http-dsc-pull-server"></a>HTTP DSC-pull-server
 
-The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single pull server.
+In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van configuraties en resources, en het verzenden van rapportage gegevens naar één pull-server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -244,8 +244,8 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-To specify a report server, you use a **ReportRepositoryWeb** block. A report server cannot be an SMB server.
-The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:
+Als u een rapport server wilt opgeven, gebruikt u een **ReportRepositoryWeb** -blok. Een rapport server kan geen SMB-server zijn.
+Met de volgende configuratie wordt een pull-client geconfigureerd voor het ophalen van de configuraties van **Contoso-PullSrv** en de bijbehorende resources van **Contoso-ResourceSrv**, en het verzenden van status rapporten naar **CONTOSO-ReportSrv**:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -281,17 +281,17 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-### <a name="smb-share"></a>SMB Share
+### <a name="smb-share"></a>SMB-share
 
-A report server cannot be an SMB share.
+Een rapport server kan geen SMB-share zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Once the pull client has been configured, you can use the following guides to perform the next steps:
+Zodra de pull-client is geconfigureerd, kunt u de volgende hand leidingen gebruiken om de volgende stappen uit te voeren:
 
-- [Publish Configurations to a Pull Server (v4/v5)](publishConfigs.md)
-- [Package and Upload Resources to a Pull Server (v4)](package-upload-resources.md)
+- [Configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)
+- [Resources verpakken en uploaden naar een pull-server (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Zie ook
 
-* [Setting up a pull client with configuration names](pullClientConfigNames.md)
+* [Een pull-client met configuratie namen instellen](pullClientConfigNames.md)

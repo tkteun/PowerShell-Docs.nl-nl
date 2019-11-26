@@ -1,7 +1,7 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
-title: Desired State Configuration (DSC) Known Issues and Limitations
+title: Bekende problemen en beperkingen voor desired state Configuration (DSC)
 ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
@@ -9,17 +9,17 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416605"
 ---
-# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) Known Issues and Limitations
+# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Bekende problemen en beperkingen voor desired state Configuration (DSC)
 
-## <a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Breaking Change: Certificates used to encrypt/decrypt passwords in DSC configurations may not work after installing WMF 5.0 RTM
+## <a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Belang rijke wijziging: certificaten die worden gebruikt voor het versleutelen/ontsleutelen van wacht woorden in DSC-configuraties, werken mogelijk niet na installatie van WMF 5,0
 
-In WMF 4.0 and WMF 5.0 Preview releases, DSC would not allow passwords in the configuration to be of length more than 121 characters. DSC was forcing to use short passwords even if lengthy and strong password was desired. This breaking change allows passwords to be of arbitrary length in the DSC configuration.
+In de Preview-versies van WMF 4,0 en WMF 5,0 staat DSC niet toe dat wacht woorden in de configuratie langer zijn dan 121 tekens. DSC afdwingt het gebruik van korte wacht woorden, zelfs als de lengte en het sterke wacht woord gewenst zijn. Met deze breuk wijziging kunnen wacht woorden een wille keurige lengte hebben in de DSC-configuratie.
 
-**Resolution:** Re-create the certificate with Data Encipherment or Key Encipherment Key usage, and Document Encryption Enhanced Key usage (1.3.6.1.4.1.311.80.1). For more information, see [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage).
+**Oplossing:** Maak het certificaat opnieuw met gegevens codering of sleutel codering sleutel gebruik en document versleuteling uitgebreid sleutel gebruik (1.3.6.1.4.1.311.80.1). Zie [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)voor meer informatie.
 
-## <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC cmdlets may fail after installing WMF 5.0 RTM
+## <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC-cmdlets kunnen mislukken na de installatie van WMF 5,0 RTM
 
-`Start-DscConfiguration` and other DSC cmdlets may fail after installing WMF 5.0 RTM with the following error:
+`Start-DscConfiguration` en andere DSC-cmdlets kunnen mislukken na de installatie van WMF 5,0 RTM met de volgende fout:
 
 ```Output
 LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
@@ -28,61 +28,61 @@ LCM failed to retrieve the property PendingJobStep from the object of class dscI
 + PSComputerName : localhost
 ```
 
-**Resolution:** Delete DSCEngineCache.mof by running the following command in an elevated PowerShell session (Run as Administrator):
+**Oplossing:** Verwijder DSCEngineCache. MOF door de volgende opdracht uit te voeren in een Power shell-sessie met verhoogde bevoegdheden (als administrator uitvoeren):
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
-## <a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>DSC cmdlets may not work if WMF 5.0 RTM is installed on top of WMF 5.0 Production Preview
+## <a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>DSC-cmdlets werken mogelijk niet als WMF 5,0 RTM boven op de WMF-5,0-productie preview is geïnstalleerd
 
-**Resolution:** Run the following command in an elevated PowerShell session (run as administrator):
+**Oplossing:** Voer de volgende opdracht uit in een Power shell-sessie met verhoogde bevoegdheden (als administrator uitvoeren):
 
 ```powershell
 mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
-## <a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM can go into an unstable state while using Get-DscConfiguration in DebugMode
+## <a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM kan de status Insta Biel maken terwijl Get-DscConfiguration in DebugMode wordt gebruikt
 
-If LCM is in DebugMode, pressing CTRL+C to stop the processing of `Get-DscConfiguration` can cause LCM to go into an unstable state such that majority of DSC cmdlets won’t work.
+Als LCM zich in DebugMode bevindt, drukt u op CTRL + C om te stoppen met het verwerken van `Get-DscConfiguration` kan LCM de status Insta Biel hebben, waardoor de meeste DSC-cmdlets niet werken.
 
-**Resolution:** Don’t press CTRL+C while debugging `Get-DscConfiguration` cmdlet.
+**Oplossing:** Druk niet op CTRL + C tijdens het opsporen van fouten `Get-DscConfiguration`-cmdlet.
 
-## <a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration may not respond in DebugMode
+## <a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration reageert mogelijk niet in DebugMode
 
-If LCM is in DebugMode, `Stop-DscConfiguration` may not respond while trying to stop an operation started by `Get-DscConfiguration`
+Als LCM zich in DebugMode bevindt, reageert `Stop-DscConfiguration` mogelijk niet tijdens het stoppen van een bewerking die is gestart door `Get-DscConfiguration`
 
-**Resolution:** Finish the debugging of the operation started by `Get-DscConfiguration` as outlined in [Debugging DSC resources](/powershell/scripting/dsc/troubleshooting/debugResource).
+**Oplossing:** Voltooi de fout opsporing van de bewerking die is gestart door `Get-DscConfiguration`, zoals beschreven in [DSC-resources voor fout opsporing](/powershell/scripting/dsc/troubleshooting/debugResource).
 
-## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>No Verbose Error Messages are shown in DebugMode
+## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Er worden geen uitgebreide fout berichten weer gegeven in DebugMode
 
-If LCM is in **DebugMode**, no verbose error messages are displayed from DSC Resources.
+Als LCM zich in **DebugMode**bevindt, worden er geen uitgebreide fout berichten weer gegeven uit DSC-resources.
 
-**Resolution:** Disable **DebugMode** to see verbose messages from the resource
+**Oplossing:** **DebugMode** uitschakelen om uitgebreide berichten van de resource weer te geven
 
-## <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource operations cannot be retrieved by Get-DscConfigurationStatus cmdlet
+## <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-Dscresource bieden-bewerkingen kunnen niet worden opgehaald met de cmdlet Get-DscConfigurationStatus
 
-After using `Invoke-DscResource` cmdlet to directly invoke any resource’s methods, the records of such operation cannot be retrieved through `Get-DscConfigurationStatus`.
+Na gebruik van `Invoke-DscResource` cmdlet om alle methoden van een resource rechtstreeks aan te roepen, kunnen de records van een dergelijke bewerking niet via `Get-DscConfigurationStatus`worden opgehaald.
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus returns pull cycle operations as type **Consistency**
+## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus retourneert pull-cyclus bewerkingen als type **consistentie**
 
-When a node is set to PULL refresh mode, for each pull operation performed, `Get-DscConfigurationStatus` cmdlet reports the operation type as **Consistency** instead of *Initial*
+Wanneer een knoop punt is ingesteld op PULL-vernieuwings modus, wordt voor elke uitgevoerde pull-bewerking het bewerkings type in `Get-DscConfigurationStatus`-cmdlet gerapporteerd als **consistentie** in plaats van de *eerste*
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource cmdlet does not return message in the order they were produced
+## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>De cmdlet invoke-Dscresource bieden retourneert geen bericht in de volg orde waarin ze zijn gemaakt
 
-The `Invoke-DscResource` cmdlet does not return verbose, warning, and error messages in the order they were produced by LCM or the DSC resource.
+De cmdlet `Invoke-DscResource` retourneert geen uitgebreide, waarschuwings-en fout berichten in de volg orde waarin ze zijn gemaakt door LCM of de DSC-resource.
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC Resources cannot be debugged easily when used with Invoke-DscResource
+## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC-resources kunnen niet eenvoudig worden opgespoord wanneer ze worden gebruikt met invoke-Dscresource bieden
 
-When LCM is running in debug mode, `Invoke-DscResource` cmdlet does not give information about runspace to connect to for debugging. For more information, see [Debugging DSC resources](/powershell/scripting/dsc/troubleshooting/debugResource).
+Als LCM wordt uitgevoerd in de foutopsporingsmodus, geeft `Invoke-DscResource`-cmdlet geen informatie over runs Pace om verbinding te maken met voor fout opsporing. Zie [fout opsporing voor DSC-resources](/powershell/scripting/dsc/troubleshooting/debugResource)voor meer informatie.
 
-**Resolution:** Discover and attach to the runspace using cmdlets `Get-PSHostProcessInfo`, `Enter-PSHostProcess` , `Get-Runspace` and `Debug-Runspace` to debug the DSC resource.
+**Oplossing:** U kunt de runs Pace detecteren en koppelen met behulp van cmdlets `Get-PSHostProcessInfo`, `Enter-PSHostProcess`, `Get-Runspace` en `Debug-Runspace` om fouten op te sporen in de DSC-resource.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -109,64 +109,64 @@ Id Name       ComputerName Type  State  Availability
 Debug-Runspace -Id 2
 ```
 
-## <a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Various Partial Configuration documents for same node cannot have identical resource names
+## <a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Verschillende gedeeltelijke configuratie documenten voor hetzelfde knoop punt kunnen geen identieke resource namen hebben
 
-For several partial configurations that are deployed onto a single node, identical names of resources cause run time error.
+Voor verschillende gedeeltelijke configuraties die worden geïmplementeerd op één knoop punt, hebben identieke namen van resources een fout tijdens de uitvoering.
 
-**Resolution:** Use different names for even same resources in different partial configurations.
+**Oplossing:** Gebruik verschillende namen voor zelfs dezelfde resources in verschillende gedeeltelijke configuraties.
 
-## <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting does not work with -Credential
+## <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration – UseExisting werkt niet met-referentie
 
-When using `Start-DscConfiguration` with **UseExisting** parameter, the **Credential** parameter is ignored. DSC uses default process identity to proceed the operation. This causes error when a different credential is needed to proceed on remote node.
+Bij gebruik van `Start-DscConfiguration` met de para meter **UseExisting** wordt de para meter **Credential** genegeerd. DSC maakt gebruik van de standaard proces identiteit om de bewerking voort te zetten. Dit veroorzaakt een fout wanneer er een andere referentie nodig is om door te gaan op het externe knoop punt.
 
-**Resolution:** Use CIM session for remote DSC operations:
+**Oplossing:** CIM-sessie gebruiken voor externe DSC-bewerkingen:
 
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
 ```
 
-## <a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>IPv6 Addresses as Node Names in DSC configurations
+## <a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>IPv6-adressen als knooppunt namen in DSC-configuraties
 
-IPv6 addresses as node names in DSC configuration scripts are not supported in this release.
+IPv6-adressen als knooppunt namen in DSC-configuratie scripts worden niet ondersteund in deze release.
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="debugging-of-class-based-dsc-resources"></a>Debugging of `Class-Based` DSC Resources
+## <a name="debugging-of-class-based-dsc-resources"></a>Fout opsporing van `Class-Based` DSC-resources
 
-Debugging of class-based DSC Resources is not supported in this release.
+Fout opsporing van DSC-resources op basis van klassen wordt niet ondersteund in deze release.
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variables and functions defined in $script scope in DSC Class-Based Resource are not preserved across multiple calls to a DSC Resource
+## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variabelen en functies die zijn gedefinieerd in $script bereik in DSC-klasse-resources blijven niet behouden in meerdere aanroepen naar een DSC-resource
 
-Multiple consecutive calls to `Start-DSCConfiguration` fails if the configuration is using any class-based resource which has variables or functions defined in `$script` scope.
+Meerdere opeenvolgende aanroepen naar `Start-DSCConfiguration` mislukken als de configuratie gebruikmaakt van een op klassen gebaseerde resource met variabelen of functies die in `$script` bereik zijn gedefinieerd.
 
-**Resolution:** Define all variables and functions in DSC Resource class itself. No `$script` scope variables/functions.
+**Oplossing:** Definieer alle variabelen en functies in de DSC-resource klasse zelf. Geen `$script` bereik variabelen/-functies.
 
-## <a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>DSC Resource Debugging when a resource is using PSDscRunAsCredential
+## <a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>Fout opsporing voor DSC-resources wanneer een resource gebruikmaakt van PSDscRunAsCredential
 
-DSC Resource debugging when a resource is using the **PSDscRunAsCredential** property in the configuration is not supported in this release.
+Fout opsporing voor DSC-resources wanneer een resource de eigenschap **PSDscRunAsCredential** in de configuratie gebruikt, wordt niet ondersteund in deze release.
 
-**Resolution:** None.
+**Oplossing:** Geen.
 
-## <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential is not supported for DSC Composite Resources
+## <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential wordt niet ondersteund voor DSC-samengestelde resources
 
-**Resolution:** Use Credential property if available. Example ServiceSet and WindowsFeatureSet
+**Oplossing:** Gebruik de eigenschap Credential als deze beschikbaar is. Voor beeld van serviceset en WindowsFeatureSet
 
-## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-DscResource -Syntax does not reflect PsDscRunAsCredential correctly
+## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-Dscresource bieden-syntaxis geeft niet de juiste PsDscRunAsCredential weer
 
-The **Syntax** parameter does not reflect **PsDscRunAsCredential** correctly when resource marks it as mandatory or does not support it.
+De **syntaxis** parameter geeft **PsDscRunAsCredential** niet op de juiste wijze weer wanneer de bron deze markeert als verplicht of niet ondersteunt.
 
-**Resolution:** None. However, authoring configuration in ISE reflects correct metadata about **PsDscRunAsCredential** property when using IntelliSense.
+**Oplossing:** Geen. Het ontwerpen van configuratie in ISE weerspiegelt echter de juiste meta gegevens over de eigenschap **PsDscRunAsCredential** wanneer IntelliSense wordt gebruikt.
 
-## <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature is not available in Windows 7
+## <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature is niet beschikbaar in Windows 7
 
-The **WindowsOptionalFeature** DSC resource is not available in Windows 7. This resource requires the DISM module, and DISM cmdlets that are available starting in Windows 8 and newer releases of the Windows operating system.
+De **WindowsOptionalFeature** DSC-resource is niet beschikbaar in Windows 7. Voor deze resource zijn de DISM-module en DISM-cmdlets vereist die vanaf Windows 8 en nieuwere versies van het Windows-besturings systeem beschikbaar zijn.
 
-## <a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>For Class-based DSC resources, Import-DscResource -ModuleVersion may not work as expected
+## <a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Voor DSC-resources op basis van een klasse werkt import-Dscresource bieden-ModuleVersion mogelijk niet zoals verwacht
 
-If the compilation node has multiple versions of a class-based DSC resource module, `Import-DscResource -ModuleVersion` does not pick the specified version and results in following compilation error.
+Als het compilatie knooppunt meerdere versies van een DSC-resource module op basis van een klasse bevat, wordt door `Import-DscResource -ModuleVersion` niet de opgegeven versie gekozen en worden de volgende compilatie fouten weer gegeven.
 
 ```Output
 ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s):
@@ -178,21 +178,21 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Resolution:** Import the required version by defining the **ModuleSpecification** object to the **ModuleName** parameter with **RequiredVersion** key specified as follows:
+**Oplossing:** Importeer de vereiste versie door het **ModuleSpecification** -object te definiëren voor de para meter **module** met de **RequiredVersion** -sleutel die als volgt is opgegeven:
 
 ```powershell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
 
-## <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Some DSC resources like registry resource may start to take a long time to process the request.
+## <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Het kan even duren voordat sommige DSC-resources zoals een register resource lang duurt om de aanvraag te verwerken.
 
-**Resolution 1:** Create a schedule task that cleans up the following folder periodically.
+**Oplossing 1:** Maak een plannings taak waarmee regel matig de volgende map wordt opgeschoond.
 
 ```powershell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Resolution 2:** Change the DSC configuration to clean up the *CommandAnalysis* folder at the end of the configuration.
+**Oplossing 2:** Wijzig de DSC-configuratie om de map *CommandAnalysis* op het einde van de configuratie op te schonen.
 
 ```powershell
 Configuration $configName

@@ -1,6 +1,6 @@
 ---
 ms.date: 08/27/2018
-keywords: powershell,cmdlet
+keywords: Power shell, cmdlet
 title: Gedetailleerde Help-informatie verkrijgen
 ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -11,13 +11,13 @@ ms.locfileid: "74417657"
 ---
 # <a name="getting-detailed-help-information"></a>Gedetailleerde Help-informatie verkrijgen
 
-PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language. There are also Help articles for each cmdlet and provider and for many functions and scripts.
+Power shell bevat gedetailleerde Help-artikelen waarin Power shell-concepten en de Power shell-taal worden uitgelegd. Er zijn ook Help-artikelen voor elke cmdlet en provider en voor veel functies en scripts.
 
-You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/overview) documentation online.
+U kunt deze Help-artikelen weer geven via de opdracht prompt of de meest recent bijgewerkte versies van deze artikelen weer geven in de [Power shell](/powershell/scripting/overview) -documentatie online.
 
-## <a name="getting-help-for-cmdlets"></a>Getting help for cmdlets
+## <a name="getting-help-for-cmdlets"></a>Hulp krijgen voor cmdlets
 
-To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet. For example, to get Help for the `Get-ChildItem` cmdlet, type:
+Gebruik de cmdlet [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) voor meer informatie over Power shell-cmdlets. Als u bijvoorbeeld hulp wilt krijgen voor de cmdlet `Get-ChildItem`, typt u:
 
 ```powershell
 Get-Help Get-ChildItem
@@ -29,20 +29,20 @@ of
 Get-ChildItem -?
 ```
 
-You can even get Help about the Get-Help cmdlet. Bijvoorbeeld:
+U kunt zelfs hulp krijgen bij de cmdlet Get-Help. Bijvoorbeeld:
 
 ```powershell
 Get-Help Get-Help
 ```
 
-To get a list of all the cmdlet Help articles in your session, type:
+Als u een lijst wilt weer geven met alle Help-artikelen over cmdlets in uw sessie, typt u:
 
 ```powershell
 Get-Help -Category Cmdlet
 ```
 
-To display one page of each Help article at a time, use the `help` function or its alias `man`.
-For example, to display Help for the `Get-ChildItem` cmdlet, type
+Als u per keer één pagina van elk Help-artikel wilt weer geven, gebruikt u de functie `help` of de alias `man`.
+Als u bijvoorbeeld de Help voor de cmdlet `Get-ChildItem` wilt weer geven, typt u
 
 ```powershell
 man Get-ChildItem
@@ -54,124 +54,124 @@ of
 help Get-ChildItem
 ```
 
-To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet. For example, to get detailed information about the `Get-ChildItem` cmdlet, type:
+Als u gedetailleerde informatie wilt weer geven, gebruikt u de para meter **Details** van de cmdlet `Get-Help`. Als u bijvoorbeeld gedetailleerde informatie over de cmdlet `Get-ChildItem` wilt ophalen, typt u:
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet. For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:
+Als u alle inhoud in het Help-artikel wilt weer geven, gebruikt u de **volledige** para meter van de cmdlet `Get-Help`. Als u bijvoorbeeld alle inhoud wilt weer geven in het Help-artikel voor de cmdlet `Get-ChildItem`, typt u:
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet. For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:
+Voor gedetailleerde informatie over de para meters van een cmdlet gebruikt u de para meter **parameter** van de cmdlet `Get-Help`. Als u bijvoorbeeld gedetailleerde Help wilt ophalen voor alle para meters van de cmdlet `Get-ChildItem`, typt u:
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.
-For example, to display only the examples in the Help article for the `Get-ChildItem` cmdlet, type:
+Als u alleen de voor beelden in een Help-artikel wilt weer geven, gebruikt u de para meter **voor beelden** van de `Get-Help`.
+Als u bijvoorbeeld alleen de voor beelden in het Help-artikel voor de cmdlet `Get-ChildItem` wilt weer geven, typt u:
 
 ```powershell
 Get-Help Get-ChildItem -Examples
 ```
 
-For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
+Zie de [Help bij cmdlet schrijven](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)voor meer informatie over het schrijven van Help-artikelen voor de cmdlets die u schrijft.
 
-## <a name="getting-conceptual-help"></a>Getting conceptual help
+## <a name="getting-conceptual-help"></a>Conceptuele hulp krijgen
 
-The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language. Conceptual Help articles begin with the "about_" prefix, such as about_line_editing. (The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)
+De cmdlet `Get-Help` bevat ook informatie over conceptuele artikelen in Power shell, inclusief artikelen over de Power shell-taal. Conceptuele Help-artikelen beginnen met het voor voegsel ' about_ ', zoals about_line_editing. (De naam van het conceptuele artikel moet worden ingevoerd in het Engels, zelfs op niet-Engelse versies van Power shell.)
 
-To display a list of conceptual articles, type:
+Als u een lijst met conceptuele artikelen wilt weer geven, typt u:
 
 ```powershell
 Get-Help about_*
 ```
 
-To display a particular Help article, type the article name, for example:
+Als u een bepaald Help-artikel wilt weer geven, typt u de artikel naam, bijvoorbeeld:
 
 ```powershell
 Get-Help about_command_syntax
 ```
 
-The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.
+De para meters van `Get-Help`, zoals **gedetailleerde**, **para meters**en **voor beelden**, hebben geen effect op de weer gave van conceptuele Help-artikelen.
 
-## <a name="getting-help-about-providers"></a>Getting help about providers
+## <a name="getting-help-about-providers"></a>Hulp krijgen bij providers
 
-The `Get-Help` cmdlet displays information about PowerShell providers. To get Help for a provider, type `Get-Help` followed by the provider name. For example, to get Help for the Registry provider, type:
+De cmdlet `Get-Help` geeft informatie weer over Power shell-providers. Als u hulp wilt krijgen voor een provider, typt u `Get-Help` gevolgd door de naam van de provider. Als u bijvoorbeeld hulp wilt krijgen voor de register provider, typt u:
 
 ```powershell
 Get-Help registry
 ```
 
-To get a list of all the provider Help articles in your session, type
+Als u een lijst wilt weer geven met alle Help-artikelen van de provider in uw sessie, typt u
 
 ```powershell
 Get-Help -Category provider
 ```
 
-The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.
+De para meters van `Get-Help`, zoals **gedetailleerde**, **para meters**en **voor beelden**, hebben geen invloed op de weer gave van de Help-artikelen van de provider.
 
-## <a name="getting-help-about-scripts-and-functions"></a>Getting help about scripts and functions
+## <a name="getting-help-about-scripts-and-functions"></a>Hulp krijgen over scripts en functies
 
-Many scripts and functions in PowerShell have Help articles. Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.
+Veel scripts en functies in Power Shell hebben Help-artikelen. Gebruik de cmdlet `Get-Help` om de Help-artikelen voor scripts en functies weer te geven.
 
-To display the Help for a function, type `Get-Help` followed by the function name. For example, to get Help for the `Disable-PSRemoting` function, type:
+Als u de Help voor een functie wilt weer geven, typt u `Get-Help` gevolgd door de naam van de functie. Als u bijvoorbeeld hulp wilt krijgen voor de functie `Disable-PSRemoting`, typt u:
 
 ```powershell
 Get-Help Disable-PSRemoting
 ```
 
-To display the Help for a script, type the path to the script file. If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.
+Als u de Help voor een script wilt weer geven, typt u het pad naar het script bestand. Als het script zich niet bevindt in een pad dat wordt vermeld in de omgevings variabele PATH, moet u het volledig gekwalificeerde pad gebruiken.
 
-For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:
+Als u bijvoorbeeld een script met de naam ' TestScript. ps1 ' in de map C:\\PS-test, om het Help-artikel voor het script weer te geven, typt u:
 
 ```powershell
 Get-Help c:\ps-test\TestScript.ps1
 ```
 
-The parameters that are designed for displaying cmdlet Help work for script and function Help, too. However, help for functions and scripts is not shown when you run `Get-Help *`.
+De para meters die zijn ontworpen voor het weer geven van cmdlet Help, werken ook voor de Help van script en functie. Help voor functies en scripts wordt echter niet weer gegeven wanneer u `Get-Help *`uitvoert.
 
-For information about writing Help articles for your functions and scripts, see the following articles:
+Raadpleeg de volgende artikelen voor informatie over het schrijven van Help-artikelen voor uw functies en scripts:
 
 - [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
 - [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
 - [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
-## <a name="getting-help-online"></a>Getting help online
+## <a name="getting-help-online"></a>Online hulp krijgen
 
-Viewing the Help articles online is one of the best ways to get help. Online articles are easier to update and provide the most current content.
+De Help-artikelen online bekijken is een van de beste manieren om hulp te krijgen. Online artikelen kunnen gemakkelijker worden bijgewerkt en bieden de meest actuele inhoud.
 
-To get Help online, use the **Online** parameter of the `Get-Help` cmdlet. All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.
+Gebruik de para meter **online** van de cmdlet `Get-Help` om online hulp te krijgen. Alle Help-artikelen die worden geleverd met Power shell, inclusief Help-artikelen voor de provider Help en conceptuele informatie, zijn online beschikbaar in de [Power shell](/powershell/scripting/powershell-scripting) -documentatie.
 
 > [!NOTE]
-> You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.
-> Online help is optional, so it does not work for every cmdlet, function, or script.
+> U kunt de para meter **online** niet gebruiken met de conceptuele (about_\*) of de Help-artikelen van de provider.
+> Online-Help is optioneel en werkt daarom niet voor elke cmdlet, functie of script.
 
-For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:
+Als u bijvoorbeeld de online versie van het Help-artikel over de cmdlet `Get-ChildItem` wilt ophalen, typt u:
 
 ```powershell
 Get-Help Get-ChildItem -Online
 ```
 
-PowerShell opens the article in your default browser. If online Help is supported for a Help article, you can also view the URL of the Help article. The URL appears in the Related Links section of a Help article.
+Power shell opent het artikel in de standaard browser. Als online-Help wordt ondersteund voor een Help-artikel, kunt u ook de URL van het Help-artikel weer geven. De URL wordt weer gegeven in de sectie verwante koppelingen van een Help-artikel.
 
-For example, to see the URL for the online version of the Add-Computer cmdlet, type:
+Als u bijvoorbeeld de URL voor de online versie van de cmdlet Add-computer wilt weer geven, typt u:
 
 ```powershell
 Get-Help Add-Computer
 ```
 
-The first line in the Related Links section of the article is shown below.
+De eerste regel in de sectie verwante koppelingen van het artikel wordt hieronder weer gegeven.
 
 ```Output
 Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
-For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)voor meer informatie over het bieden van online ondersteuning voor uw Help-artikelen.
 
 ## <a name="see-also"></a>Zie ook
 

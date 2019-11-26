@@ -1,5 +1,5 @@
 ---
-title: GetProc04 Code Samples | Microsoft Docs
+title: Voor beelden van GetProc04-code | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74417455"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04-codevoorbeelden
 
-Here are the code samples for the GetProc04 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Nonterminating Error Reporting to Your Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). This `Get-Process` cmdlet calls the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method whenever an invalid operation exception is thrown while retrieving process information.
+Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc04. Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Met deze `Get-Process` cmdlet wordt de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aangeroepen wanneer er een ongeldige bewerkings uitzondering optreedt tijdens het ophalen van proces gegevens.
 
 > [!NOTE]
-> You can download the C# source file (getprov04.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> U kunt het C# bron bestand (getprov04.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 
-For complete sample code, see the following topics.
+Zie de volgende onderwerpen voor een volledige voorbeeld code.
 
 |Taal|Onderwerp|
 |--------------|-----------|
-|C#|[GetProc04 (C#) Sample Code](./getproc04-csharp-sample-code.md)|
-|VB.NET|[GetProc04 (VB.NET) Sample Code](./getproc04-vb-net-sample-code.md)|
+|C#|[GetProc04 (C#) voorbeeld code](./getproc04-csharp-sample-code.md)|
+|VB.NET|[Voorbeeld code voor GetProc04 (VB.NET)](./getproc04-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

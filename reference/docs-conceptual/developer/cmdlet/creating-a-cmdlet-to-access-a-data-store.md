@@ -15,37 +15,37 @@ ms.locfileid: "74415713"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 
-This section describes how to create a cmdlet that accesses stored data by way of a Windows PowerShell provider. This type of cmdlet uses the Windows PowerShell provider infrastructure of the Windows PowerShell runtime and, therefore, the cmdlet class must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class.
+In deze sectie wordt beschreven hoe u een cmdlet maakt waarmee u opgeslagen gegevens kunt openen via een Windows Power shell-provider. Dit type cmdlet maakt gebruik van de Windows Power shell-provider infrastructuur van de Windows Power shell-runtime en de cmdlet-klasse moet daarom worden afgeleid van de basis klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-The Select-Str cmdlet described here can locate and select strings in a file or object. The patterns used to identify the string can be specified explicitly through the `Path` parameter of the cmdlet or implicitly through the `Script` parameter.
+De cmdlet Select-Str die hier wordt beschreven, kan teken reeksen in een bestand of object zoeken en selecteren. De patronen die worden gebruikt om de teken reeks te identificeren, kunnen expliciet worden opgegeven via de para meter `Path` van de cmdlet of impliciet via de para meter `Script`.
 
-The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell. For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).
+De cmdlet is ontworpen voor het gebruik van een Windows Power shell-provider die is afgeleid van [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Met de cmdlet kan bijvoorbeeld de bestandssysteem provider worden opgegeven of de provider van de variabele die wordt verschaft door Windows Power shell. Zie [uw Windows Power shell-provider ontwerpen](../prog-guide/designing-your-windows-powershell-provider.md)voor meer informatie AboutWindows Power shell-providers.
 
-## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
+## <a name="defining-the-cmdlet-class"></a>De cmdlet-klasse definiëren
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class. The noun name "Str" is used because the cmdlet acts upon strings. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Deze cmdlet detecteert bepaalde teken reeksen, dus de naam van de term die u hier kiest, is ' Select ', gedefinieerd door de klasse [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) . De naam van het zelfstandige zelfstandig woord "str" wordt gebruikt omdat de cmdlet op teken reeksen reageert. Houd er rekening mee dat het cmdlet-werk woord en de naam van het zelfstandigen worden weer gegeven in de naam van de cmdlet-klasse. Zie [cmdlet verb names](./approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-The .NET class for this cmdlet must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class, because it provides the support needed by the Windows PowerShell runtime to expose the Windows PowerShell provider infrastructure. Note that this cmdlet also makes use of the .NET Framework regular expressions classes, such as [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+De .NET-klasse voor deze cmdlet moet worden afgeleid van de basis klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) , omdat deze de ondersteuning biedt die nodig is voor de Windows Power shell-runtime om de infra structuur van de Windows Power shell-provider beschikbaar te maken. Houd er rekening mee dat deze cmdlet ook gebruikmaakt van de .NET Framework reguliere expressies klassen, zoals [System. Text. RegularExpressions. regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
-The following code is the class definition for this Select-Str cmdlet.
+De volgende code is de klassen definitie voor deze cmdlet Select-Str.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-This cmdlet defines a default parameter set by adding the `DefaultParameterSetName` attribute keyword to the class declaration. The default parameter set `PatternParameterSet` is used when the `Script` parameter is not specified. For more information about this parameter set, see the `Pattern` and `Script` parameter discussion in the following section.
+Met deze cmdlet wordt een standaard parameterset gedefinieerd door het sleutel woord `DefaultParameterSetName` kenmerk toe te voegen aan de klassen declaratie. De standaard parameterset `PatternParameterSet` wordt gebruikt wanneer de para meter `Script` niet is opgegeven. Zie voor meer informatie over deze para meter instellen de discussie `Pattern` en `Script` para meter in de volgende sectie.
 
-## <a name="defining-parameters-for-data-access"></a>Defining Parameters for Data Access
+## <a name="defining-parameters-for-data-access"></a>Para meters definiëren voor gegevens toegang
 
-This cmdlet defines several parameters that allow the user to access and examine stored data. These parameters include a `Path` parameter that indicates the location of the data store, a `Pattern` parameter that specifies the pattern to be used in the search, and several other parameters that support how the search is performed.
+Met deze cmdlet worden verschillende para meters gedefinieerd waarmee de gebruiker opgeslagen gegevens kan openen en onderzoeken. Deze para meters bevatten een `Path` para meter waarmee de locatie van het gegevens archief wordt aangegeven, een `Pattern`-para meter die het patroon opgeeft dat moet worden gebruikt in de zoek opdracht, en verschillende andere para meters die ondersteuning bieden voor de manier waarop de zoek opdracht wordt uitgevoerd.
 
 > [!NOTE]
-> For more information about the basics of defining parameters, see [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
+> Zie [para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md)voor meer informatie over de basis principes van het definiëren van para meters.
 
-### <a name="declaring-the-path-parameter"></a>Declaring the Path Parameter
+### <a name="declaring-the-path-parameter"></a>De para meter Path declareren
 
-To locate the data store, this cmdlet must use a Windows PowerShell path to identify the Windows PowerShell provider that is designed to access the data store. Therefore, it defines a `Path` parameter of type string array to indicate the location of the provider.
+Voor het zoeken naar het gegevens archief moet deze cmdlet een Windows Power shell-pad gebruiken om de Windows Power shell-provider te identificeren die is ontworpen voor toegang tot het gegevens archief. Daarom definieert het een `Path` para meter van het type teken reeks matrix om de locatie van de provider aan te geven.
 
 ```csharp
 [Parameter(
@@ -66,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Note that this parameter belongs to two different parameter sets and that it has an alias.
+Houd er rekening mee dat deze para meter deel uitmaakt van twee verschillende parameter sets en dat deze een alias heeft.
 
-Two [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributes declare that the `Path` parameter belongs to the `ScriptParameterSet` and the `PatternParameterSet`. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Twee [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -kenmerken declareren dat de para meter `Path` hoort bij de `ScriptParameterSet` en de `PatternParameterSet`. Zie [para meter sets toevoegen aan een cmdlet](./adding-parameter-sets-to-a-cmdlet.md)voor meer informatie over parameter sets.
 
-The [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute declares a `PSPath` alias for the `Path` parameter. Declaring this alias is strongly recommended for consistency with other cmdlets that access Windows PowerShell providers. For more information aboutWindows PowerShell paths, see "PowerShell Path Concepts" in [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
+Het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) declareert een `PSPath` alias voor de `Path`-para meter. Het declareren van deze alias wordt sterk aanbevolen voor consistentie met andere cmdlets die toegang hebben tot Windows Power shell-providers. Zie voor meer informatie aboutWindows Power shell-paden ' Power shell Path-concepten ' in de werking van [Windows Power shell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="declaring-the-pattern-parameter"></a>Declaring the Pattern Parameter
+### <a name="declaring-the-pattern-parameter"></a>De para meter pattern declareren
 
-To specify the patterns to search for, this cmdlet declares a `Pattern` parameter that is an array of strings. A positive result is returned when any of the patterns are found in the data store. Note that these patterns can be compiled into an array of compiled regular expressions or an array of wildcard patterns used for literal searches.
+Voor het opgeven van de patronen die moeten worden gezocht, declareert deze cmdlet een `Pattern` para meter die een matrix met teken reeksen is. Er wordt een positief resultaat geretourneerd wanneer een van de patronen in de gegevens opslag is gevonden. Houd er rekening mee dat deze patronen kunnen worden gecompileerd in een matrix met gecompileerde reguliere expressies of een matrix met Joker teken patronen die worden gebruikt voor letterlijke Zoek opdrachten.
 
 ```csharp
 [Parameter(
@@ -91,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-When this parameter is specified, the cmdlet uses the default parameter set `PatternParameterSet`. In this case, the cmdlet uses the patterns specified here to select strings. In contrast, the `Script` parameter could also be used to provide a script that contains the patterns. The `Script` and `Pattern` parameters define two separate parameter sets, so they are mutually exclusive.
+Als deze para meter is opgegeven, gebruikt de cmdlet de standaard parameterset `PatternParameterSet`. In dit geval gebruikt de cmdlet de patronen die u hier opgeeft om teken reeksen te selecteren. De para meter `Script` kan daarentegen ook worden gebruikt om een script op te geven dat de patronen bevat. Met de para meters `Script` en `Pattern` worden twee afzonderlijke parameter sets gedefinieerd, zodat ze elkaar wederzijds uitsluiten.
 
-### <a name="declaring-search-support-parameters"></a>Declaring Search Support Parameters
+### <a name="declaring-search-support-parameters"></a>Zoeken naar ondersteunings parameters declareren
 
-This cmdlet defines the following support parameters that can be used to modify the search capabilities of the cmdlet.
+Deze cmdlet definieert de volgende ondersteunings parameters die kunnen worden gebruikt om de zoek mogelijkheden van de cmdlet te wijzigen.
 
-The `Script` parameter specifies a script block that can be used to provide an alternate search mechanism for the cmdlet. The script must contain the patterns used for matching and return a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object. Note that this parameter is also the unique parameter that identifies the `ScriptParameterSet` parameter set. When the Windows PowerShell runtime sees this parameter, it uses only parameters that belong to the `ScriptParameterSet` parameter set.
+Met de para meter `Script` wordt een script blok opgegeven dat kan worden gebruikt om een alternatief zoek mechanisme voor de cmdlet op te geven. Het script moet de patronen bevatten die worden gebruikt voor het vergelijken en retour neren van een [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -object. Houd er rekening mee dat deze para meter ook de unieke para meter is waarmee de `ScriptParameterSet` parameterset wordt aangeduid. Wanneer de Windows Power shell-runtime deze para meter ziet, worden alleen para meters gebruikt die horen bij de ingestelde para meter `ScriptParameterSet`.
 
 ```csharp
 [Parameter(
@@ -112,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly match the patterns as they are supplied. When the user specifies the parameter at the command line (`true`), the cmdlet uses the patterns as they are supplied. If the parameter is not specified (`false`), the cmdlet uses regular expressions. The default for this parameter is `false`.
+De para meter `SimpleMatch` is een para meter switch die aangeeft of de cmdlet expliciet overeenkomt met de patronen die worden verstrekt. Wanneer de gebruiker de para meter opgeeft op de opdracht regel (`true`), gebruikt de cmdlet de patronen zoals ze worden opgegeven. Als de para meter niet is opgegeven (`false`), gebruikt de cmdlet reguliere expressies. De standaard waarde voor deze para meter is `false`.
 
 ```csharp
 [Parameter]
@@ -124,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search is performed. When the user specifies the parameter at the command line (`true`), the cmdlet checks for the uppercase and lowercase of characters when comparing patterns. If the parameter is not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase. For example "MyFile" and "myfile" would both be returned as positive hits. The default for this parameter is `false`.
+De para meter `CaseSensitive` is een para meter switch die aangeeft of een hoofdletter gevoelige zoek opdracht wordt uitgevoerd. Wanneer de gebruiker de para meter opgeeft op de opdracht regel (`true`), controleert de cmdlet op de hoofd letters en kleine letters van de tekens bij het vergelijken van patronen. Als de para meter niet is opgegeven (`false`), maakt de cmdlet geen onderscheid tussen hoofd letters en kleine letters. Bijvoorbeeld "MijnBestand" en "myfile" worden beide geretourneerd als positieve treffers. De standaard waarde voor deze para meter is `false`.
 
 ```csharp
 [Parameter]
@@ -136,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-The `Exclude` and `Include` parameters identify items that are explicitly excluded from or included in the search. By default, the cmdlet will search all items in the data store. However, to limit the search performed by the cmdlet, these parameters can be used to explicitly indicate items to be included in the search or omitted.
+Met de para meters `Exclude` en `Include` worden items geïdentificeerd die expliciet worden uitgesloten van of opgenomen in de zoek opdracht. Standaard doorzoekt de cmdlet alle items in het gegevens archief. Als u echter de zoek opdracht wilt beperken die door de cmdlet wordt uitgevoerd, kunt u deze para meters gebruiken om expliciet items te geven die moeten worden opgenomen in de zoek opdracht of worden wegge laten.
 
 ```csharp
 [Parameter]
@@ -173,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Declaring Parameter Sets
+### <a name="declaring-parameter-sets"></a>Parameter sets declareren
 
-This cmdlet uses two parameter sets (`ScriptParameterSet` and `PatternParameterSet`, which is the default) as the names of two parameter sets used in data access. `PatternParameterSet` is the default parameter set and is used when the `Pattern` parameter is specified. `ScriptParameterSet` is used when the user specifies an alternate search mechanism through the `Script` parameter. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Deze cmdlet gebruikt twee parameter sets (`ScriptParameterSet` en `PatternParameterSet`, de standaard instelling) als de namen van twee parameter sets die worden gebruikt in gegevens toegang. `PatternParameterSet` is de standaard parameterset en wordt gebruikt wanneer de para meter `Pattern` is opgegeven. `ScriptParameterSet` wordt gebruikt wanneer de gebruiker een alternatief zoek mechanisme opgeeft via de para meter `Script`. Zie [para meter sets toevoegen aan een cmdlet](./adding-parameter-sets-to-a-cmdlet.md)voor meer informatie over parameter sets.
 
-## <a name="overriding-input-processing-methods"></a>Overriding Input Processing Methods
+## <a name="overriding-input-processing-methods"></a>Invoer verwerkings methoden overschrijven
 
-Cmdlets must override one or more of the input processing methods for the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class. For more information about the input processing methods, see [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Cmdlets moeten een of meer van de invoer verwerkings methoden voor de klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) overschrijven. Zie [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)voor meer informatie over de invoer methoden.
 
-This cmdlet overrides the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to build an array of compiled regular expressions at startup. This increases performance during searches that do not use simple matching.
+Deze cmdlet overschrijft de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) om tijdens het opstarten een matrix van gecompileerde reguliere expressies te maken. Dit verhoogt de prestaties tijdens Zoek opdrachten die geen gebruik maken van eenvoudige overeenkomsten.
 
 ```csharp
 protected override void BeginProcessing()
@@ -260,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-This cmdlet also overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line. It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.
+Deze cmdlet overschrijft ook de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de teken reeks selecties te verwerken die de gebruiker op de opdracht regel maakt. De resultaten van de teken reeks selectie in de vorm van een aangepast object worden geschreven door een persoonlijke **MatchString** -methode aan te roepen.
 
 ```csharp
 protected override void ProcessRecord()
@@ -369,15 +369,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a>Accessing Content
+## <a name="accessing-content"></a>Toegang tot inhoud
 
-Your cmdlet must open the provider indicated by the Windows PowerShell path so that it can access the data. The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object for the runspace is used for access to the provider, while the [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) property of the cmdlet is used to open the provider. Access to content is provided by retrieval of the [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) object for the provider opened.
+Uw cmdlet moet de provider openen die is aangegeven door het Windows Power shell-pad, zodat deze toegang heeft tot de gegevens. Het object [System. Management. Automation. sessionState](/dotnet/api/System.Management.Automation.SessionState) voor de runs Pace wordt gebruikt voor toegang tot de provider, terwijl de eigenschap [System. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) van de cmdlet wordt gebruikt om de provider te openen. Toegang tot inhoud wordt gegeven door het ophalen van het [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) -object voor de provider die is geopend.
 
-This sample Select-Str cmdlet uses the [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) property to expose the content to scan. It can then call the [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) method, passing the required Windows PowerShell path.
+Deze voor beeld-cmdlet Select-Str maakt gebruik van de eigenschap [System. Management. Automation. Providerintrinsics. content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) om de inhoud weer te geven die u wilt scannen. Vervolgens kan de methode [System. Management. Automation. Contentcmdletproviderintrinsics. getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) worden aangeroepen, waarbij het vereiste Windows Power shell-pad wordt door gegeven.
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>Code voorbeeld
 
-The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#defining-the-cmdlet-class).
+De volgende code toont de implementatie van deze versie van deze Select-Str-cmdlet. Houd er rekening mee dat deze code de klasse cmdlet, de persoonlijke methoden die worden gebruikt door de cmdlet en de Windows Power shell-module code die wordt gebruikt voor het registreren van de cmdlet. Zie [buil ding the cmdlet](#defining-the-cmdlet-class)(Engelstalig) voor meer informatie over het registreren van de cmdlet.
 
 ```csharp
 //
@@ -1086,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>De cmdlet bouwen
 
-After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell registreren via een Windows Power shell-module. Zie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))voor meer informatie over het registreren van cmdlets.
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The following procedure can be used to test the sample Select-Str cmdlet.
+Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. De volgende procedure kan worden gebruikt om de voor beeld-cmdlet Select-Str te testen.
 
-1. Start Windows PowerShell, and search the Notes file for occurrences of lines with the expression ".NET". Note that the quotation marks around the name of the path are required only if the path consists of more than one word.
+1. Start Windows Power shell en zoek in het notitie bestand naar exemplaren van regels met de expressie ".NET". Houd er rekening mee dat de aanhalings tekens rond de naam van het pad alleen vereist zijn als het pad uit meer dan één woord bestaat.
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : True
@@ -1115,13 +1115,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : .NET
     ```
 
-2. Search the Notes file for occurrences of lines with the word "over", followed by any other text. The `SimpleMatch` parameter is using the default value of `false`. The search is case-insensitive because the `CaseSensitive` parameter is set to `false`.
+2. Zoek in het notitie bestand naar exemplaren van regels met het woord ' boven ', gevolgd door andere tekst. De para meter `SimpleMatch` gebruikt de standaard waarde van `false`. De zoek opdracht is hoofdletter gevoelig omdat de para meter `CaseSensitive` is ingesteld op `false`.
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : True
@@ -1136,13 +1136,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : over*
     ```
 
-3. Search the Notes file using a regular expression as the pattern. The cmdlet searches for alphabetical characters and blank spaces enclosed in parentheses.
+3. Zoek in het notitie bestand een reguliere expressie als het patroon. De cmdlet zoekt naar alfabetische tekens en spaties tussen haakjes.
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : True
@@ -1157,13 +1157,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. Perform a case-sensitive search of the Notes file for occurrences of the word "Parameter".
+4. Voer een hoofdletter gevoelige zoek opdracht uit voor het notitie bestand voor exemplaren van het woord "para meter".
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : False
@@ -1178,13 +1178,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : Parameter
     ```
 
-5. Search the variable provider shipped with Windows PowerShell for variables that have numerical values from 0 through 9.
+5. Zoek de variabele provider die is geleverd met Windows Power shell voor variabelen met numerieke waarden van 0 tot en met 9.
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : True
@@ -1194,13 +1194,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : [0-9]
     ```
 
-6. Use a script block to search the file SelectStrCommandSample.cs for the string "Pos". The **cmatch** function for the script performs a case-insensitive pattern match.
+6. Gebruik een script blok om in het bestand SelectStrCommandSample.cs te zoeken naar de teken reeks ' pos '. De functie **cmatch** voor het script voert een niet-hoofdletter gevoelige patroon overeenkomst uit.
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    The following output appears.
+    De volgende uitvoer wordt weer gegeven.
 
     ```output
     IgnoreCase   : True
@@ -1212,16 +1212,16 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 
 ## <a name="see-also"></a>Zie ook
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Een Windows Power shell-cmdlet maken](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
+[Uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)
 
-[Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[Een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Design Your Windows PowerShell Provider](../prog-guide/designing-your-windows-powershell-provider.md)
+[Uw Windows Power shell-provider ontwerpen](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
+[Hoe Windows Power shell werkt](/previous-versions//ms714658(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)

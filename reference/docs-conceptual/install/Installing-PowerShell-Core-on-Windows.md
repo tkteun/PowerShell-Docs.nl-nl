@@ -1,6 +1,6 @@
 ---
 title: PowerShell Core in Windows installeren
-description: Information about installing PowerShell Core on Windows
+description: Informatie over het installeren van Power shell core in Windows
 ms.date: 08/06/2018
 ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
 ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
@@ -11,10 +11,10 @@ ms.locfileid: "74416784"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
-There are multiple ways to install PowerShell Core in Windows.
+Er zijn meerdere manieren om Power shell core in Windows te installeren.
 
 > [!TIP]
-> If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it’s easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).
+> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
 >
 > ```
 > dotnet tool install --global PowerShell
@@ -22,68 +22,68 @@ There are multiple ways to install PowerShell Core in Windows.
 
 ## <a name="prerequisites"></a>Vereisten
 
-To enable PowerShell remoting over WSMan, the following prerequisites need to be met:
+Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aan de volgende vereisten worden voldaan:
 
-- Install the [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) on Windows versions prior to Windows 10. It is available via direct download or Windows Update. Fully patched (including optional packages), supported systems will already have this installed.
-- Install the Windows Management Framework (WMF) 4.0 or newer on Windows 7 and Windows Server 2008 R2. For more information about WMF, see [WMF Overview](/powershell/scripting/wmf/overview).
+- Installeer de [Universal C runtime](https://www.microsoft.com/download/details.aspx?id=50410) op Windows-versies ouder dan Windows 10. Het is beschikbaar via direct downloaden of Windows Update. Volledige patches (inclusief optionele pakketten), de ondersteunde systemen hebben dit al geïnstalleerd.
+- Installeer Windows Management Framework (WMF) 4,0 of nieuwer op Windows 7 en Windows Server 2008 R2. Zie [overzicht van WMF](/powershell/scripting/wmf/overview)voor meer informatie over WMF.
 
-## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installing the MSI package
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />het MSI-pakket niet installeren
 
-To install PowerShell on a Windows client or Windows Server (works on Windows 7 SP1, Server 2008 R2, and later), download the MSI package from our GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to install. The Assets section may be collapsed, so you may need to click to expand it.
+Als u Power shell wilt installeren op een Windows-client of Windows-Server (werkt met Windows 7 SP1, Server 2008 R2 en hoger), downloadt u het MSI-pakket van onze pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msi`
+Het MSI-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
-Once downloaded, double-click the installer and follow the prompts.
+Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwijzingen.
 
-The installer creates a shortcut in the Windows Start Menu.
+Het installatie programma maakt een snelkoppeling in het menu Start van Windows.
 
-- By default the package is installed to `$env:ProgramFiles\PowerShell\<version>`
-- You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Standaard wordt het pakket geïnstalleerd op `$env:ProgramFiles\PowerShell\<version>`
+- U kunt Power shell starten via het menu Start of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="administrative-install-from-the-command-line"></a>Administrative install from the command line
+### <a name="administrative-install-from-the-command-line"></a>Beheerders installatie vanaf de opdracht regel
 
-MSI packages can be installed from the command line. This allows administrators to deploy packages without user interaction. The MSI package for PowerShell includes the following properties to control the installation options:
+MSI-pakketten kunnen worden geïnstalleerd vanaf de opdracht regel. Hiermee kunnen beheerders pakketten implementeren zonder tussen komst van de gebruiker. Het MSI-pakket voor Power shell bevat de volgende eigenschappen voor het beheren van de installatie opties:
 
-- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - This property controls the option for adding the **Open PowerShell** item to the context menu in Windows Explorer.
-- **ENABLE_PSREMOTING** - This property controls the option for enabling PowerShell remoting during installation.
-- **REGISTER_MANIFEST** - This property controls the option for registering the Windows Event Logging manifest.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** : met deze eigenschap bepaalt u de optie voor het toevoegen van het **geopende Power shell** -item aan het context menu in Windows Verkenner.
+- **ENABLE_PSREMOTING** : deze eigenschap bepaalt de optie voor het inschakelen van externe communicatie van Power shell tijdens de installatie.
+- **REGISTER_MANIFEST** -met deze eigenschap bepaalt u de optie voor het registreren van het Windows-logboek voor gebeurtenis logboek registratie.
 
-The following examples shows how to silently install PowerShell Core with all the install options enabled.
+In de volgende voor beelden ziet u hoe u Power shell Core op de achtergrond installeert met alle installatie opties ingeschakeld.
 
 ```powershell
 msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-For a full list of command line options for Msiexec.exe, see [Command line options](/windows/desktop/Msi/command-line-options).
+Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor Msiexec. exe.
 
-## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />Installing the MSIX package
+## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />het MSIX-pakket niet installeren
 
-To manually install the MSIX package on a Windows 10 client, download the MSIX package from our GitHub [releases][releases] page. Scroll down to the **Assets** section of the Release you want to install. The Assets section may be collapsed, so you may need to click to expand it.
+Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van de pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
-The MSI file looks like this - `PowerShell-<version>-win-<os-arch>.msix`
+Het MSI-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
 
-Once downloaded, you cannot simply double-click on the installer as this package requires use of un-virtualized resources.  To install, you must use the `Add-AppxPackage` cmdlet:
+Nadat u het installatie programma hebt gedownload, kunt u het niet gewoon dubbel klikken. dit pakket vereist het gebruik van niet-gevirtualiseerde resources.  Als u wilt installeren, moet u de cmdlet `Add-AppxPackage` gebruiken:
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
-## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Installing the ZIP package
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />het ZIP-pakket niet installeren
 
-PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Be noted that when using the ZIP archive, you won't get the prerequisites check as in the MSI package. For remoting over WSMan to work properly, ensure that you have met the [prerequisites](#prerequisites).
+Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Wanneer u het ZIP-archief gebruikt, wordt de controle van vereisten niet weer gegeven als in het MSI-pakket. Zorg ervoor dat u aan de [vereisten](#prerequisites)hebt voldaan voor externe communicatie via WSMan.
 
-## <a name="deploying-on-windows-iot"></a>Deploying on Windows IoT
+## <a name="deploying-on-windows-iot"></a>Implementeren op Windows IoT
 
-Windows IoT already comes with Windows PowerShell which we will use to deploy PowerShell Core 6.
+Windows IoT wordt al geleverd met Windows Power shell en wordt gebruikt voor het implementeren van Power shell Core 6.
 
-1. Create `PSSession` to target device
+1. `PSSession` maken op doel apparaat
 
    ```powershell
    $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. Copy the ZIP package to the device
+2. Het ZIP-pakket kopiëren naar het apparaat
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -92,7 +92,7 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
    Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. Connect to the device and expand the archive
+3. Verbinding maken met het apparaat en het archief uitvouwen
 
    ```powershell
    Enter-PSSession $s
@@ -100,7 +100,7 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. Setup remoting to PowerShell Core 6
+4. Externe toegang tot Power shell Core 6 instellen
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -110,67 +110,67 @@ Windows IoT already comes with Windows PowerShell which we will use to deploy Po
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Connect to PowerShell Core 6 endpoint on device
+5. Verbinding maken met het Power shell Core 6-eind punt op het apparaat
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
-## <a name="deploying-on-nano-server"></a>Deploying on Nano Server
+## <a name="deploying-on-nano-server"></a>Implementeren op nano server
 
-These instructions assume that a version of PowerShell is already running on the Nano Server image and that it has been generated by the [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server is a "headless" OS. Core binaries can be deploy using two different methods.
+Bij deze instructies wordt ervan uitgegaan dat er al een versie van Power shell wordt uitgevoerd op de nano server-installatie kopie en dat deze is gegenereerd door de [Image Builder-installatie kopie van nano server](/windows-server/get-started/deploy-nano-server).
+Nano server is een ' headless ' besturings systeem. Kern-binaire bestanden kunnen worden geïmplementeerd met twee verschillende methoden.
 
-1. Offline - Mount the Nano Server VHD and unzip the contents of the zip file to your chosen location within the mounted image.
-2. Online - Transfer the zip file over a PowerShell Session and unzip it in your chosen location.
+1. De nano server-VHD offline koppelen en de inhoud van het zip-bestand uitpakken naar de gekozen locatie in de gekoppelde installatie kopie.
+2. Online: zet het zip-bestand over een Power shell-sessie over en pak het uit op uw gekozen locatie.
 
-In both cases, you will need the Windows 10 x64 ZIP release package and will need to run the commands within an "Administrator" PowerShell instance.
+In beide gevallen hebt u het Windows 10 x64 ZIP-release pakket nodig en moet u de opdrachten uitvoeren in het Power shell-exemplaar ' Administrator '.
 
-### <a name="offline-deployment-of-powershell-core"></a>Offline Deployment of PowerShell Core
+### <a name="offline-deployment-of-powershell-core"></a>Offline-implementatie van Power shell core
 
-1. Use your favorite zip utility to unzip the package to a directory within the mounted Nano Server image.
-2. Unmount the image and boot it.
-3. Connect to the inbox instance of Windows PowerShell.
-4. Follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Gebruik uw favoriete zip-hulp programma om het pakket uit te pakken naar een map in de gekoppelde nano server-installatie kopie.
+2. Ontkoppel de installatie kopie en start deze op.
+3. Verbinding maken met het postvak in van Windows Power shell.
+4. Volg de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### <a name="online-deployment-of-powershell-core"></a>Online Deployment of PowerShell Core
+### <a name="online-deployment-of-powershell-core"></a>Online implementatie van Power shell core
 
-The following steps guide you through the deployment of PowerShell Core to a running instance of Nano Server and the configuration of its remote endpoint.
+De volgende stappen begeleiden u bij de implementatie van Power shell core naar een actief exemplaar van nano server en de configuratie van het externe eind punt.
 
-- Connect to the inbox instance of Windows PowerShell
+- Verbinding maken met het postvak in van Windows Power shell
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
   ```
 
-- Copy the file to the Nano Server instance
+- Kopieer het bestand naar het Nano Server-exemplaar
 
   ```powershell
   Copy-Item <local PS Core download location>\powershell-<version>-win-x64.zip c:\ -ToSession $session
   ```
 
-- Enter the session
+- De sessie invoeren
 
   ```powershell
   Enter-PSSession $session
   ```
 
-- Extract the ZIP file
+- Het ZIP-bestand uitpakken
 
   ```powershell
   # Insert the appropriate version.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
   ```
 
-- If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the ["another instance technique"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Als u externe toegang op basis van WSMan wilt gebruiken, volgt u de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="how-to-create-a-remoting-endpoint"></a>How to create a remoting endpoint
+## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 
-PowerShell Core supports the PowerShell Remoting Protocol (PSRP) over both WSMan and SSH. Zie voor meer informatie
+Power shell core ondersteunt het PSRP (Power shell Remoting Protocol) voor zowel WSMan als SSH. Zie voor meer informatie:
 
-- [SSH Remoting in PowerShell Core][ssh-remoting]
-- [WSMan Remoting in PowerShell Core][wsman-remoting]
+- [Externe SSH-communicatie in Power shell core][ssh-remoting]
+- [Externe WSMan-communicatie in Power shell core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
 

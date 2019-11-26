@@ -10,33 +10,33 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416670"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Improvements in Desired State Configuration (DSC) in WMF 5.1
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
-## <a name="dsc-class-resource-improvements"></a>DSC class resource improvements
+## <a name="dsc-class-resource-improvements"></a>Verbeteringen DSC-klasse resource
 
-In WMF 5.1, we have fixed the following known issues:
+In WMF 5,1 hebben we de volgende bekende problemen opgelost:
 
-- Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.
-- Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.
-- Class-based resource cannot be used in a composite configuration.
-- Start-DscConfiguration hangs if class-based resource has a property of its own type.
-- Class-based resource cannot be used as an exclusive resource.
+- Get-DscConfiguration kan lege waarden (null) of fouten retour neren als een complex/hash-tabel type wordt geretourneerd door de functie Get () van een DSC-resource op basis van een klasse.
+- Get-DscConfiguration retourneert een fout als de RunAs-referentie wordt gebruikt in de DSC-configuratie.
+- Op klassen gebaseerde resource kan niet worden gebruikt in een samengestelde configuratie.
+- Start-DscConfiguration loopt vast als op de klasse gebaseerde resource een eigenschap van een eigen type heeft.
+- Bron op basis van een klasse kan niet worden gebruikt als exclusieve resource.
 
-## <a name="dsc-resource-debugging-improvements"></a>DSC resource debugging improvements
+## <a name="dsc-resource-debugging-improvements"></a>Verbeteringen in DSC-bron fout opsporing
 
-In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly. In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.
+In WMF 5,0 is het Power Shell-fout opsporingsprogramma niet gestopt bij de op klassen gebaseerde resource methode (Get/set/test) direct. In WMF 5,1 stopt het fout opsporingsprogramma bij de op klassen gebaseerde resource methode op dezelfde manier als voor op MOF gebaseerde bronnen methoden.
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC pull client supports TLS 1.1 and TLS 1.2
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>De DSC pull-client ondersteunt TLS 1,1 en TLS 1,2
 
-Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections. When forced to use more secure protocols, the pull client would stop functioning. In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for the more secure TLS 1.1 and TLS 1.2 protocols.
+Voorheen werd de DSC pull-client alleen ondersteund SSL 3.0 en TLS 1.0 via HTTPS-verbindingen. Wanneer er meer beveiligde protocollen worden gebruikt, werkt de pull-client niet meer. De DSC pull-client in WMF 5,1 biedt geen ondersteuning meer voor SSL 3,0 en voegt ondersteuning toe voor de meer beveiligde TLS 1,1-en TLS 1,2-protocollen.
 
-## <a name="improved-pull-server-registration"></a>Improved pull server registration
+## <a name="improved-pull-server-registration"></a>Verbeterde registratie van de pull-server
 
-In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report. In such cases, the event logs on the pull server has the error "Instance Name already in use." This was caused by an incorrect pattern being used to access the ESENT database in a multi-threaded scenario. In WMF 5.1, this issue has been fixed. Concurrent registrations or reporting (involving ESENT database) works fine in WMF 5.1. This issue is applicable only to the ESENT database and does not apply to the OLEDB database.
+In eerdere versies van WMF zouden gelijktijdige registraties/rapporten naar een DSC-pull-server tijdens het gebruik van de ESENT-data base ertoe leiden dat de LCM niet kan worden geregistreerd en/of gerapporteerd. In dergelijke gevallen heeft de gebeurtenis logboeken op de pull-server de fout ' exemplaar naam al in gebruik '. Dit wordt veroorzaakt door een onjuist patroon dat wordt gebruikt voor toegang tot de ESENT-data base in een scenario met meerdere threads. Dit probleem is opgelost in WMF 5,1. Gelijktijdige registraties of rapporten (met behulp van ESENT-data base) werken prima in WMF 5,1. Dit probleem is alleen van toepassing op de ESENT-data base en is niet van toepassing op de OLEDB-data base.
 
-## <a name="enable-circular-log-on-esent-database-instance"></a>Enable Circular log on ESENT database instance
+## <a name="enable-circular-log-on-esent-database-instance"></a>Circulair data base-exemplaar van het logboek inschakelen.
 
-In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging. In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver. By default CircularLogging is set to TRUE.
+In de eariler-versie van DSC-PullServer werden de logboek bestanden van de ESENT-data base gevuld met de schijf ruimte van de PullServer becouse het data base-exemplaar werd gemaakt zonder circulaire logboek registratie. In deze release hebt u de mogelijkheid om de circulaire logboek registratie van het exemplaar te beheren met de web. config van de pullserver. CircularLogging is standaard ingesteld op TRUE.
 
 ```xml
 <appSettings>
@@ -47,48 +47,21 @@ In eariler version of DSC-PullServer, the ESENT database log files were filling 
   </appSettings>
 ```
 
-## <a name="wow64-support-for-configuration-keyword"></a>WOW64 support for Configuration Keyword
+## <a name="wow64-support-for-configuration-keyword"></a>WOW64-ondersteuning voor configuratie sleutelwoord
 
-The `Configuration` keyword is now supported in WOW64 on a 64-bit computer. This means that a DSC configuration can be defined and compiled within a 32-bit process such as Windows PowerShell ISE (x86) running on a 64-bit computer.
+Het sleutel woord `Configuration` wordt nu ondersteund in WOW64 op een 64-bits computer. Dit betekent dat een DSC-configuratie kan worden gedefinieerd en gecompileerd binnen een 32-bits proces, zoals Windows PowerShell ISE (x86) dat wordt uitgevoerd op een 64-bits computer.
 
-## <a name="pull-partial-configuration-naming-convention"></a>Pull partial configuration naming convention
+## <a name="pull-partial-configuration-naming-convention"></a>Naamgevings Conventie voor gedeeltelijke configuratie pullen
 
-In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file.
+In de vorige versie is de naam Conventie voor een gedeeltelijke configuratie het MOF-bestand in de pull-Server/service moet overeenkomen met de gedeeltelijke configuratie naam opgegeven in de lokale Configuration Manager-instellingen die op zijn beurt moeten overeenkomen met de configuratie naam die in het MOF-bestand is inge sloten.
 
-See the snapshots below:
+Bekijk de onderstaande moment opnamen:
 
-- Local configuration settings which defines a partial configuration that a node is allowed to receive.
+- Lokale configuratie-instellingen waarmee een gedeeltelijke configuratie wordt gedefinieerd die een knoop punt mag ontvangen.
 
-  ![Sample metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Voor beeld van een automatische configuratie](../images/DSC-improvements/MetaConfigPartialOne.png)
 
-- Sample partial configuration definition
-
-  ```powershell
-  Configuration PartialOne
-  {
-      Node('localhost')
-      {
-          File test
-          {
-              DestinationPath = "$env:TEMP\partialconfigexample.txt"
-              Contents = 'Partial Config Example'
-          }
-      }
-  }
-  PartialOne
-  ```
-
-- 'ConfigurationName' embedded in the generated MOF file.
-
-  ![Sample generated mof file](../images/DSC-improvements/PartialGeneratedMof.png)
-
-- FileName in the pull configuration repository
-
-  ![FileName in Configuration Repository](../images/DSC-improvements/PartialInConfigRepository.png)
-
-  Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`. So the configuration below compiles to PartialOne.localhost.mof.
-
-  This made it impossible to pull one of your partial configuration from Azure Automation service.
+- Voor beeld van gedeeltelijke configuratie definitie
 
   ```powershell
   Configuration PartialOne
@@ -105,9 +78,36 @@ See the snapshots below:
   PartialOne
   ```
 
-  In WMF 5.1, a partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`. Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name. This naming flexibility allows you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and with a partial configuration that you manage locally.
+- Configuratiepad is inge sloten in het gegenereerde MOF-bestand.
 
-  The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.
+  ![Voor beeld van gegenereerd MOF-bestand](../images/DSC-improvements/PartialGeneratedMof.png)
+
+- Bestands naam in de opslag plaats voor pull-configuratie
+
+  ![Bestands naam in configuratie opslagplaats](../images/DSC-improvements/PartialInConfigRepository.png)
+
+  Azure Automation door de service naam gegenereerde MOF-bestanden als `<ConfigurationName>.<NodeName>.mof`. De onderstaande configuratie compileert daarom met PartialOne. localhost. mof.
+
+  Hierdoor is het onmogelijk om een van uw gedeeltelijke configuratie van Azure Automation-Service te verzamelen.
+
+  ```powershell
+  Configuration PartialOne
+  {
+      Node('localhost')
+      {
+          File test
+          {
+              DestinationPath = "$env:TEMP\partialconfigexample.txt"
+              Contents = 'Partial Config Example'
+          }
+      }
+  }
+  PartialOne
+  ```
+
+  In WMF 5,1 kan een gedeeltelijke configuratie in de pull-Server/-service een naam hebben als `<ConfigurationName>.<NodeName>.mof`. Bovendien, als een machine een configuratie van een pull-Server/-service haalt, kan het configuratie bestand in de opslag plaats van de pull-server een wille keurige bestands naam hebben. Deze naam flexibiliteit biedt u de mogelijkheid om uw knoop punten gedeeltelijk te beheren door Azure Automation Service, waarbij bepaalde configuraties voor uw knoop punt afkomstig zijn van Azure Automation DSC en met een gedeeltelijke configuratie die u lokaal beheert.
+
+  De onderstaande configuratie stelt een knoop punt in dat zowel lokaal als door Azure Automation Service moet worden beheerd.
 
   ```powershell
   [DscLocalConfigurationManager()]
@@ -145,13 +145,13 @@ See the snapshots below:
   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
   ```
 
-## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Using PsDscRunAsCredential with DSC composite resources
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential gebruiken met DSC-samengestelde resources
 
-We have added support for using [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) with DSC [Composite](/powershell/scripting/dsc/authoringresourcecomposite) resources.
+Er is ondersteuning toegevoegd voor het gebruik van [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) met DSC- [samengestelde](/powershell/scripting/dsc/authoringresourcecomposite) resources.
 
-You can now specify a value for **PsDscRunAsCredential** when using composite resources inside configurations. When specified, all resources run inside a composite resource as a RunAs user. If a composite resource calls another composite resource, all those resources are also executed as RunAs user. RunAs credentials are propagated to any level of the composite resource hierarchy. If any resource inside a composite resource specifies its own value for **PsDscRunAsCredential**, a merge error results during configuration compilation.
+U kunt nu een waarde opgeven voor **PsDscRunAsCredential** bij het gebruik van samengestelde resources binnen configuraties. Als u deze opgeeft, worden alle resources in een samengestelde resource uitgevoerd als een runas-gebruiker. Als een samengestelde resource een andere samengestelde resource aanroept, worden alle resources ook uitgevoerd als runas-gebruiker. Runas-referenties worden door gegeven aan elk niveau van de samengestelde resource hiërarchie. Als een resource in een samengestelde resource een eigen waarde voor **PsDscRunAsCredential**opgeeft, wordt er tijdens het compileren van de configuratie een samenvoeg fout veroorzaakt.
 
-This example shows usage with the [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) composite resource included in PSDesiredStateConfiguration module.
+In dit voor beeld ziet u het gebruik van de [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) -samengestelde resource die is opgenomen in de PSDesiredStateConfiguration-module.
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -184,9 +184,9 @@ $configData = @{
 InstallWindowsFeature -ConfigurationData $configData
 ```
 
-## <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Allowing for Identical Duplicate Resources in a Configuration
+## <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Identieke dubbele resources in een configuratie toestaan
 
-DSC does not allow or handle conflicting resource definitions within a configuration. Instead of trying to resolve the conflict, it simply fails. As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often. When conflicting resource definitions are identical, DSC should be smart and allow this. With this release, we support having multiple resource instances that have identical definitions:
+DSC staat geen conflicterende resource definities binnen een configuratie toe of verwerkt deze. In plaats van het conflict op te lossen, mislukt dit gewoon. Naarmate het opnieuw gebruiken van de configuratie wordt gebruikt door samengestelde resources, enzovoort, worden er vaker conflicten optreden. Wanneer conflicterende resource definities identiek zijn, moet DSC slim zijn en dit toestaan. In deze release ondersteunen we meerdere bron instanties met identieke definities:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -227,29 +227,29 @@ Configuration WebApplication
 }
 ```
 
-In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed. Notice that *all* of the properties that are being configured are identical in these two configurations. Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.
+In eerdere releases zou het resultaat een mislukte compilatie zijn vanwege een conflict tussen de WindowsFeature-FE_IIS en de WindowsFeature-Worker_IIS exemplaren die proberen te controleren of de functie web-server is geïnstalleerd. U ziet dat *alle* eigenschappen die worden geconfigureerd, identiek zijn in deze twee configuraties. Omdat *alle* eigenschappen in deze twee resources identiek zijn, resulteert dit in een succes volle compilatie.
 
-If any of the properties are different between the two resources, they will not be considered identical and compilation will fail.
+Als een van de eigenschappen verschilt tussen de twee resources, worden ze niet beschouwd als identiek en mislukt het compileren.
 
-## <a name="dsc-module-and-configuration-signing-validations"></a>DSC module and configuration signing validations
+## <a name="dsc-module-and-configuration-signing-validations"></a>Validatie van de DSC-module en configuratie-ondertekening
 
-In DSC, configurations and modules are distributed to managed computers from the pull server. If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes.
+In DSC worden configuraties en modules gedistribueerd naar beheerde computers vanaf de pull-server. Als de pull-server is aangetast, kan een aanvaller de configuraties en modules op de pull-server mogelijk wijzigen en deze naar alle beheerde knoop punten distribueren.
 
-In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files. This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.
+In WMF 5,1 ondersteunt DSC het valideren van digitale hand tekeningen in Catalog en configuratie (. MOF-bestanden). Deze functie voor komt dat knoop punten configuraties of module bestanden uitvoeren die niet zijn ondertekend door een vertrouwde ondertekenaar of waarvan is geknoeid nadat deze zijn ondertekend door een vertrouwde ondertekenaar.
 
-### <a name="how-to-sign-configuration-and-module"></a>How to sign configuration and module
+### <a name="how-to-sign-configuration-and-module"></a>Configuratie en module ondertekenen
 
-- Configuration Files (.MOFs): The existing PowerShell cmdlet [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) is extended to support signing of MOF files.
-- Modules: Signing of modules is done by signing the corresponding module catalog using the following steps:
-  1. Create a catalog file: A catalog file contains a collection of cryptographic hashes or thumbprints. Each thumbprint corresponds to a file that is included in the module. The new cmdlet [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog), has been added to enable users to create a catalog file for their module.
-  2. Sign the catalog file: Use [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) to sign the catalog file.
-  3. Place the catalog file inside the module folder. By convention, module catalog file should be placed under the module folder with the same name as the module.
+- Configuratie bestanden (. Mof's): de bestaande Power shell [-cmdlet Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) wordt uitgebreid ter ondersteuning van het ondertekenen van MOF-bestanden.
+- Modules: ondertekening van modules wordt uitgevoerd door de bijbehorende module catalogus te ondertekenen met behulp van de volgende stappen:
+  1. Een catalogus bestand maken: een catalogus bestand bevat een verzameling cryptografische hashes of vinger afdrukken. Elke vinger afdruk komt overeen met een bestand dat is opgenomen in de module. De nieuwe cmdlet [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog)is toegevoegd om gebruikers in staat te stellen een catalogus bestand voor hun module te maken.
+  2. Het catalogus bestand ondertekenen: gebruik [set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) om het catalogus bestand te ondertekenen.
+  3. Plaats het catalogus bestand in de map module. Per Conventie moet het module catalogus bestand onder de module map met dezelfde naam als de module worden geplaatst.
 
-### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager settings to enable signing validations
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager-instellingen voor het inschakelen van validaties van ondertekening
 
 #### <a name="pull"></a>Pull
 
-The LocalConfigurationManager of a node performs signing validation of modules and configurations based on its current settings. By default, signature validation is disabled. Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:
+De LocalConfigurationManager van een knoop punt voert de validatie van modules en configuraties op basis van de huidige instellingen uit. Validatie van hand tekeningen is standaard uitgeschakeld. Handtekening validatie kan worden ingeschakeld door het blok ' SignatureValidation ' toe te voegen aan de meta-configuratie definitie van het knoop punt, zoals hieronder wordt weer gegeven:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -277,33 +277,33 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules. The Local Configuration Manager performs the following steps to verify the digital signatures.
+Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt handtekening validatie op gedownloade configuraties en modules ingeschakeld. De lokale Configuration Manager voert de volgende stappen uit om de digitale hand tekeningen te controleren.
 
-1. Verify the signature on a configuration file (.MOF) is valid using the `Get-AuthenticodeSignature` cmdlet.
-2. Verify the certificate authority that authorized the signer is trusted.
-3. Download module/resource dependencies of the configuration to a temp location.
-4. Verify the signature of the catalog included inside the module.
-   - Find a `<moduleName>.cat` file and verify its signature using `Get-AuthenticodeSignature`.
-   - Verify the certification authority that authenticated the signer is trusted.
-   - Verify the content of the modules has not been tampered using the new cmdlet `Test-FileCatalog`.
-5. `Install-Module` to `$env:ProgramFiles\WindowsPowerShell\Modules\`
-6. Process configuration
+1. Controleer de hand tekening op een configuratie bestand (. MOF) is geldig met behulp van de cmdlet `Get-AuthenticodeSignature`.
+2. Controleer of de certificerings instantie die de ondertekenaar heeft geautoriseerd, vertrouwd is.
+3. Down load module/Resource-afhankelijkheden van de configuratie naar een tijdelijke locatie.
+4. Controleer de hand tekening van de catalogus die is opgenomen in de module.
+   - Zoek een `<moduleName>.cat`-bestand en controleer de hand tekening met behulp van `Get-AuthenticodeSignature`.
+   - Controleer of de certificerings instantie die de ondertekenaar heeft geverifieerd, vertrouwd is.
+   - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe cmdlet `Test-FileCatalog`.
+5. `Install-Module` `$env:ProgramFiles\WindowsPowerShell\Modules\`
+6. Proces configuratie
 
 > [!NOTE]
-> Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed.
-> Consistency runs do not validate the signature of Current.mof or its module dependencies. If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration terminates with the error shown below and all temporary files are deleted.
+> Handtekening validatie voor module-Catalog en configuratie wordt alleen uitgevoerd wanneer de configuratie voor de eerste keer wordt toegepast op het systeem of wanneer de module wordt gedownload en geïnstalleerd.
+> Met consistentie runs wordt de hand tekening van huidige. MOF of de bijbehorende module-afhankelijkheden niet gevalideerd. Als de verificatie is mislukt in elk stadium, bijvoorbeeld als de configuratie die is opgehaald van de pull-server niet is ondertekend, wordt de verwerking van de configuratie beëindigd met de fout die hieronder wordt weer gegeven en worden alle tijdelijke bestanden verwijderd.
 
-![Sample Error Output Configuration](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Configuratie van voorbeeld fout uitvoer](../images/DSC-improvements/PullUnsignedConfigFail.png)
 
-Similarly, pulling a module whose catalog is not signed results in the following error:
+Op dezelfde manier wordt het ophalen van een module waarvan de catalogus niet is ondertekend met de volgende fout:
 
-![Sample Error Output Module](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Uitvoer module voor voorbeeld fout](../images/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Push
 
-A configuration delivered by using push might be tampered with at its source before it delivered to the node. The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s). Below is a complete example of signature validation for push.
+Een configuratie die wordt geleverd met behulp van push kan worden geknoeid met de bron voordat deze wordt afgeleverd bij het knoop punt. De lokale Configuration Manager voert vergelijk bare handtekening validatie stappen uit voor gepushte of gepubliceerde configuratie (s). Hieronder vindt u een volledig voor beeld van handtekening validatie voor push.
 
-- Enable signature validation on the node.
+- Schakel handtekening validatie in op het knoop punt.
 
   ```powershell
   [DSCLocalConfigurationManager()]
@@ -323,7 +323,7 @@ A configuration delivered by using push might be tampered with at its source bef
   Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   ```
 
-- Create a sample configuration file.
+- Maak een voor beeld van een configuratie bestand.
 
   ```powershell
   # Sample configuration
@@ -339,7 +339,7 @@ A configuration delivered by using push might be tampered with at its source bef
   Test
   ```
 
-- Try pushing the unsigned configuration file in to the node.
+- Probeer het niet-ondertekende configuratie bestand naar het knoop punt te pushen.
 
   ```powershell
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
@@ -347,10 +347,10 @@ A configuration delivered by using push might be tampered with at its source bef
 
   ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
 
-- Sign the configuration file using code-signing certificate.
+- Onderteken het configuratie bestand met het certificaat voor ondertekening van programma code.
 
   ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
 
-- Try pushing the signed MOF file.
+- Probeer het ondertekende MOF-bestand te pushen.
 
   ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)

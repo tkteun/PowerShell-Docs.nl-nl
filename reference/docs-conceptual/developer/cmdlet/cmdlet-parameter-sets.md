@@ -1,5 +1,5 @@
 ---
-title: Cmdlet Parameter Sets | Microsoft Docs
+title: Cmdlet-parameter sets | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,49 +15,49 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74415688"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
+# <a name="cmdlet-parameter-sets"></a>Cmdlet-parameter sets
 
-PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
+Power shell gebruikt parameter sets om een enkele cmdlet te schrijven die verschillende acties voor verschillende scenario's kan uitvoeren. Met parameter sets kunt u verschillende para meters voor de gebruiker beschikbaar maken. En om andere informatie te retour neren op basis van de para meters die door de gebruiker zijn opgegeven.
 
-## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
+## <a name="examples-of-parameter-sets"></a>Voor beelden van parameter sets
 
-For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
+De Power shell-`Get-EventLog` cmdlet retourneert bijvoorbeeld verschillende informatie, afhankelijk van of de gebruiker de **lijst** -of **LogName** -para meter opgeeft. Als de **List** -para meter is opgegeven, retourneert de cmdlet informatie over de logboek bestanden zelf, maar niet de gebeurtenis gegevens die ze bevatten. Als de para meter **LogName** is opgegeven, retourneert de cmdlet informatie over de gebeurtenissen in een specifiek gebeurtenis logboek. De para meters **List** en **LogName** identificeren twee afzonderlijke parameter sets.
 
-## <a name="unique-parameter"></a>Unique parameter
+## <a name="unique-parameter"></a>Unieke para meter
 
-Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
+Elke parameterset moet een unieke para meter hebben die door de Power shell-runtime wordt gebruikt om de juiste parameterset beschikbaar te stellen. Indien mogelijk moet de unieke para meter een verplichte para meter zijn. Als een para meter verplicht is, moet de gebruiker de para meter opgeven en gebruikt de Power shell-runtime die para meter om de parameterset te identificeren. De unieke para meter kan niet verplicht zijn als uw cmdlet is ontworpen om te worden uitgevoerd zonder para meters op te geven.
 
-## <a name="multiple-parameter-sets"></a>Multiple parameter sets
+## <a name="multiple-parameter-sets"></a>Meerdere parameter sets
 
-In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
+In de volgende afbeelding ziet u in de linkerkolom drie geldige parameter sets. **Para meter A** is uniek voor de eerste parameterset, **para meter B** is uniek voor de tweede parameterset en **para meter C** is uniek voor de derde parameterset. In de rechter kolom hebben de parameters sets geen unieke para meter.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>Parameter set requirements
+## <a name="parameter-set-requirements"></a>Vereisten voor de parameterset
 
-The following requirements apply to all parameter sets.
+De volgende vereisten zijn van toepassing op alle parameter sets.
 
-- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
+- Elke parameterset moet ten minste één unieke para meter hebben. Indien mogelijk moet u voor deze para meter een verplichte para meter opgeven.
 
-- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
+- Een parameterset met meerdere positionele para meters moet unieke posities definiëren voor elke para meter. Er kunnen niet twee positionele para meters dezelfde positie opgeven.
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
-  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
+- Slechts één para meter in een set kan het sleutel woord `ValueFromPipeline` declareren met de waarde `true`.
+  Meerdere para meters kunnen het sleutel woord `ValueFromPipelineByPropertyName` definiëren met de waarde `true`.
 
-- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
+- Als er geen parameterset voor een para meter is opgegeven, hoort de para meter bij alle parameter sets.
 
 > [!NOTE]
-> For a cmdlet or function, there is a limit of 32 parameter sets.
+> Voor een cmdlet of functie geldt een limiet van 32 parameter sets.
 
-## <a name="default-parameter-sets"></a>Default parameter sets
+## <a name="default-parameter-sets"></a>Standaard parameters sets
 
-When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
+Wanneer er meerdere parameter sets zijn gedefinieerd, kunt u het sleutel woord `DefaultParameterSetName` van het **cmdlet** -kenmerk gebruiken om de standaard parameterset op te geven. Power shell gebruikt de standaard parameterset als de ingestelde para meter niet kan worden bepaald op basis van de informatie die wordt verstrekt door de opdracht. Zie voor meer informatie over het **cmdlet** -kenmerk de [cmdlet-kenmerk declaratie](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>Declaring parameter sets
+## <a name="declaring-parameter-sets"></a>Parameter sets declareren
 
-To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
+Als u een parameterset wilt maken, moet u het sleutel woord `ParameterSetName` opgeven wanneer u het **parameter** kenmerk declareert voor elke para meter in de parameterset. Voor para meters die bij meerdere parameter sets horen, voegt u een **parameter** kenmerk toe voor elke parameterset. Met dit kenmerk kunt u de para meter op verschillende manieren definiëren voor elke parameterset. U kunt bijvoorbeeld een para meter definiëren als verplicht in de ene set en optioneel in een andere. Elke parameterset moet echter één unieke para meter bevatten. Zie [para meter kenmerk declaratie](parameter-attribute-declaration.md)voor meer informatie.
 
-In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
+In het volgende voor beeld is de para meter **username** de unieke para meter van de para meter set `Test01` en de para meter **ComputerName** is de unieke para meter van de para meter set `Test02`. De para meter **SharedParam** behoort tot beide sets en is verplicht voor de para meter set `Test01`, maar is optioneel voor de para meter set `Test02`.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]
