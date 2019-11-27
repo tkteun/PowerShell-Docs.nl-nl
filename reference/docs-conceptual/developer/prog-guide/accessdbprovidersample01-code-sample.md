@@ -1,5 +1,5 @@
 ---
-title: AccessDbProviderSample01 Code Sample | Microsoft Docs
+title: Voor beeld van AccessDbProviderSample01-code | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74418001"
 ---
 # <a name="accessdbprovidersample01-code-sample"></a>AccessDbProviderSample01-codevoorbeeld
 
-The following code shows the implementation of the Windows PowerShell provider described in [Creating a Basic Windows PowerShell Provider](./creating-a-basic-windows-powershell-provider.md). This implementation provides methods for starting and stopping the provider, and although it does not provide a means to access a data store or to get or set the data in the data store, it does provide the basic functionality that is required by all providers.
+De volgende code toont de implementatie van de Windows Power shell-provider die wordt beschreven in [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md). Deze implementatie biedt methoden voor het starten en stoppen van de provider, en hoewel het geen manier biedt om toegang te krijgen tot een gegevens archief of om gegevens op te halen of in te stellen in het gegevens archief, beschikt u over de basis functionaliteit die is vereist voor alle providers.
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider01.cs) for this provider by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> U kunt het C# bron bestand (AccessDBSampleProvider01.cs) voor deze provider downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>Code voorbeeld
 
 [!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L11-L30 "AccessDBProviderSample01.cs")]
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows Power shell SDK](../windows-powershell-reference.md)
