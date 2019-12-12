@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359327"
 ---
 # <a name="extending-output-objects"></a>Uitvoerobjecten uitbreiden
@@ -21,7 +21,7 @@ U kunt de .NET Framework-objecten die worden geretourneerd door cmdlets, functie
 
 ## <a name="extending-the-systemarray-object"></a>Het object System. array uitbreiden
 
-In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het bestand types. ps1xml. [Systeem. array](/dotnet/api/System.Array) -objecten hebben standaard een eigenschap `Length` waarmee het aantal objecten in de matrix wordt weer gegeven. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de alias eigenschap `Count` toe, die dezelfde waarde als de eigenschap `Length` weergeeft. De volgende XML voegt de eigenschap `Count` toe aan het type [System. array](/dotnet/api/System.Array) .
+In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het bestand types. ps1xml. [Systeem. matrix](/dotnet/api/System.Array) -objecten hebben standaard een `Length`-eigenschap die het aantal objecten in de matrix vermeldt. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de `Count` alias eigenschap toe, die dezelfde waarde als de eigenschap `Length` weergeeft. De volgende XML voegt de eigenschap `Count` toe aan het type [System. array](/dotnet/api/System.Array) .
 
 ```xml
 <Type>
@@ -75,7 +75,7 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>Aangepaste bestands typen
 
-Als u een bestand met aangepaste typen wilt maken, moet u eerst een bestaand type bestand kopiëren. Het nieuwe bestand kan een wille keurige naam hebben, maar het moet de bestands extensie. ps1xml hebben. Wanneer u het bestand kopieert, kunt u het nieuwe bestand in een map plaatsen die toegankelijk is voor Windows Power shell, maar het is handig om de bestanden in de installatie directory van Windows Power shell (`$pshome`) of in een submap van de installatiemap te plaatsen.
+Als u een bestand met aangepaste typen wilt maken, moet u eerst een bestaand type bestand kopiëren. Het nieuwe bestand kan een wille keurige naam hebben, maar het moet de bestands extensie. ps1xml hebben. Wanneer u het bestand kopieert, kunt u het nieuwe bestand plaatsen in elke map die toegankelijk is voor Windows Power shell, maar het is handig om de bestanden in de installatie directory van Windows Power shell (`$pshome`) of in een submap van de installatiemap te plaatsen.
 
 Om uw eigen uitgebreide typen aan het bestand toe te voegen, voegt u een-element types toe voor elk object dat u wilt uitbreiden. De volgende onderwerpen bevatten voor beelden.
 

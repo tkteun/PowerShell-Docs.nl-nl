@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359223"
 ---
 # <a name="stopprocesssample02-sample"></a>Voorbeeld StopProcessSample02
@@ -31,7 +31,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die de berichten debug (Write
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Maak de volgende module map:
 
@@ -53,7 +53,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die de berichten debug (Write
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 
@@ -69,7 +69,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-Dit voor beeld laat zien hoe u fout opsporing, uitgebreide en waarschuwings berichten schrijft met behulp van de methoden `WriteDebug`, `WriteVerbose` en `WriteWarning`.
+Dit voor beeld laat zien hoe u fout opsporing, uitgebreide en waarschuwings berichten schrijft met behulp van de methoden `WriteDebug`, `WriteVerbose`en `WriteWarning`.
 
 ```csharp
 using System;
