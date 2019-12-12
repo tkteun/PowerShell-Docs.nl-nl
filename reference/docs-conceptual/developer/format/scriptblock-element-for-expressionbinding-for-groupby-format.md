@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e022ec4-8531-468e-96ff-77607755ec92
 caps.latest.revision: 6
 ms.openlocfilehash: 9afa53e1c7d1edabdbff56c4e59fcef0cf1647e3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353940"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-groupby-format"></a>Het element ScriptBlock voor ExpressionBinding voor GroupBy (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[ExpressionBinding-element voor CustomItem voor GroupBy (indeling)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het script op waarvan de waarde wordt weer gegeven door het besturings element.
 

@@ -1,57 +1,57 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Een PowerShell-tabblad maken in Windows PowerShell ISE
 ms.openlocfilehash: 7baf9a4051a196045d53eebf8ce5260bdc1bc55a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030586"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Een PowerShell-tabblad maken in Windows PowerShell ISE
 
-Tabbladen in de Windows PowerShell Integrated Scripting Environment (ISE) kunnen u tegelijkertijd maken en gebruiken van verschillende omgevingen binnen dezelfde toepassing.
-Elk tabblad PowerShell overeenkomt met een afzonderlijke uitvoeringsomgeving of -sessie.
+Met de tabbladen in Windows Power shell Integrated Scripting Environment (ISE) kunt u gelijktijdig verschillende uitvoerings omgevingen maken en gebruiken in dezelfde toepassing.
+Elk Power shell-tabblad komt overeen met een afzonderlijke uitvoerings omgeving of-sessie.
 
 > [!NOTE]
-> Variabelen, functies en -aliassen die u op een tabblad maakt doen niet meegenomen naar een andere. Ze zijn andere Windows PowerShell-sessies.
+> Variabelen, functies en aliassen die u op één tabblad maakt, worden niet overgedragen naar een andere. Dit zijn verschillende Windows Power shell-sessies.
 
-Gebruik de volgende stappen uit om te openen of sluiten van een tabblad in Windows PowerShell.
-Wijzig de naam van een tabblad, stel de [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) eigenschap op het Windows PowerShell-tabblad scripting-object.
+Gebruik de volgende stappen om een tabblad in Windows Power shell te openen of sluiten.
+Als u de naam van een tabblad wilt wijzigen, stelt u de eigenschap [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) op het script object Windows Power shell-tabblad in.
 
-## <a name="to-create-and-use-a-new-powershell-tab"></a>Het maken en gebruiken van een nieuwe PowerShell-tabblad
+## <a name="to-create-and-use-a-new-powershell-tab"></a>Een nieuw Power shell-tabblad maken en gebruiken
 
-Op de **bestand** menu, klikt u op **nieuwe PowerShell-tabblad**. De nieuwe PowerShell-tabblad is altijd wordt geopend als het actieve venster.
-PowerShell-tabbladen zijn incrementeel genummerd in de volgorde waarin ze worden geopend.
-Elk tabblad is gekoppeld aan een eigen Windows PowerShell-consolevenster.
-Er kunnen maximaal 32 PowerShell tabbladen met hun eigen sessie openen op een tijdstip (dit is beperkt tot 8 in Windows PowerShell ISE 2.0).
+Klik in het menu **bestand** op **Nieuw Power shell-tabblad**. Het nieuwe Power shell-tabblad wordt altijd geopend als het actieve venster.
+Power shell-tabbladen worden stapsgewijs genummerd in de volg orde waarin ze zijn geopend.
+Elk tabblad is gekoppeld aan een eigen Windows Power shell-console venster.
+U kunt Maxi maal 32 Power shell-tabbladen met een eigen sessie tegelijk openen (dit is beperkt tot 8 op Windows PowerShell ISE 2,0.)
 
-Houd er rekening mee dat te klikken op de **nieuw** of **Open** pictogrammen op de werkbalk maakt geen een nieuw tabblad met een aparte-sessie.
-Deze knoppen openen in plaats daarvan een nieuw of bestaand scriptbestand op het actieve tabblad met een sessie.
-U kunt meerdere bestanden worden geopend met elk tabblad en sessie-script hebben.
-De tabbladen van het script voor een sessie wordt alleen weergegeven onder de tabbladen sessie wanneer de bijbehorende sessie actief is.
+Houd er rekening mee dat door te klikken op de pictogrammen **Nieuw** of **openen** op de werk balk geen nieuw tabblad met een afzonderlijke sessie wordt gemaakt.
+In plaats daarvan openen deze knoppen een nieuw of bestaand script bestand op het huidige actieve tabblad met een sessie.
+U kunt meerdere script bestanden openen met elk tabblad en elke sessie.
+De script tabbladen voor een sessie worden alleen onder de sessie tabbladen weer gegeven wanneer de bijbehorende sessie actief is.
 
-Als u wilt een PowerShell-tabblad activeren, klikt u op het tabblad. Selecteren uit alle PowerShell-tabbladen die zijn geopend op de **weergave** menu, klikt u op de PowerShell-tabblad dat u wilt gebruiken.
+Als u een Power shell-tabblad actief wilt maken, klikt u op het tabblad. Als u wilt selecteren uit alle Power shell-tabbladen die zijn geopend, klikt u in het menu **weer gave** op het Power shell-tabblad dat u wilt gebruiken.
 
-## <a name="to-create-and-use-a-new-remote-powershell-tab"></a>Het maken en gebruiken van een nieuwe externe PowerShell-tabblad
+## <a name="to-create-and-use-a-new-remote-powershell-tab"></a>Een nieuw externe Power shell-tabblad maken en gebruiken
 
-Op de **bestand** menu, klikt u op **nieuwe externe PowerShell-tabblad** tot stand brengen van een sessie op een externe computer.
-Een dialoogvenster wordt weergegeven en vraagt u om in te voeren van gegevens die zijn vereist om de externe verbinding te maken.
-De functies van het tabblad Extern net als bij een lokale PowerShell-tabblad, maar de opdrachten en scripts die worden uitgevoerd op de externe computer.
+Klik in het menu **bestand** op **Nieuw externe Power shell-tabblad** om een sessie op een externe computer tot stand te brengen.
+Er wordt een dialoog venster weer gegeven waarin wordt gevraagd om de gegevens op te geven die nodig zijn om de externe verbinding tot stand te brengen.
+Het tabblad Extern werkt net als een lokale Power shell-tabblad, maar de opdrachten en scripts worden uitgevoerd op de externe computer.
 
-## <a name="to-close-a-powershell-tab"></a>Om een PowerShell-tabblad te sluiten
+## <a name="to-close-a-powershell-tab"></a>Een Power shell-tabblad sluiten
 
-Als u wilt een tabblad sluit, kunt u een van de volgende technieken gebruiken:
+Als u een tabblad wilt sluiten, kunt u een van de volgende technieken gebruiken:
 
 - Klik op het tabblad dat u wilt sluiten.
 
-- Op de **bestand** menu, klikt u op **PowerShell-tabblad sluit**, of klik op de knop Sluiten (**X**) op een actieve tabblad om het tabblad te sluiten.
+- Klik in het menu **bestand** op **Power shell-tabblad sluiten**of klik op de knop Sluiten (**X**) op een actief tabblad om het tabblad te sluiten.
 
-Als u hebt niet-opgeslagen bestanden worden geopend in de PowerShell-tabblad dat u wilt sluiten, wordt u gevraagd op te slaan of ze negeren.
-Zie voor meer informatie over het opslaan van een script [hoe u een Script opslaan](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).
+Als u niet-opgeslagen bestanden hebt geopend op het Power shell-tabblad dat u wilt sluiten, wordt u gevraagd of u deze wilt opslaan of negeren.
+Zie [How to Save a script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script)(Engelstalig) voor meer informatie over het opslaan van een script.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Maak kennis met de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
-- [Het consolevenster gebruiken in de Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [Introductie van de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+- [Het gebruik van het console venster in de Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)

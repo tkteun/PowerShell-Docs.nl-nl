@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pakket resource
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941381"
 ---
 # <a name="dsc-package-resource"></a>DSC-pakket resource
@@ -33,12 +33,12 @@ Package [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
-|Path |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
+|Naam |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
+|Pad |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
 |ProductId |Hiermee wordt de product-ID aangegeven waarmee het pakket uniek wordt geïdentificeerd. |
 |Argumenten |Een lijst met argumenten die precies zo worden door gegeven aan het pakket. |
 |Referentie |Biedt toegang tot het pakket op een externe bron. Deze eigenschap wordt niet gebruikt om het pakket te installeren. Het pakket wordt altijd op het lokale systeem geïnstalleerd. |
@@ -47,9 +47,9 @@ Package [string] #ResourceName
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
 |Zo |Hiermee wordt aangegeven of het pakket is geïnstalleerd. Stel deze eigenschap in op **afwezig** om te controleren of het pakket niet is geïnstalleerd (of verwijder het pakket als dit is geïnstalleerd). Stel deze in op **aanwezig** om te controleren of het pakket is geïnstalleerd. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

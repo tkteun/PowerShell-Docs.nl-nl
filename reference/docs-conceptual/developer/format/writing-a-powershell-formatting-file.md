@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353408"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>Een PowerShell-opmaakbestand schrijven
@@ -21,7 +21,7 @@ ms.locfileid: "72353408"
 
 ## <a name="in-this-section"></a>In deze sectie
 
-[Overzicht van het format teren van bestanden](./formatting-file-overview.md) Beschrijft wat een indelings bestand is en de algemene onderdelen van een opmaak bestand, met inbegrip van algemene functies die in het bestand kunnen worden gedefinieerd, de verschillende typen opmaak weergaven die kunnen worden gedefinieerd voor .NET-objecten en een vereenvoudigd voor beeld van de XML die wordt gebruikt voor het definiëren van een tabel v Details.
+[Overzicht van het format teren van bestanden](./formatting-file-overview.md) Beschrijft wat een indelings bestand is en de algemene onderdelen van een opmaak bestand, met inbegrip van algemene functies die in het bestand kunnen worden gedefinieerd, de verschillende typen opmaak weergaven die kunnen worden gedefinieerd voor .NET-objecten en een vereenvoudigd voor beeld van de XML die wordt gebruikt voor het definiëren van een tabel weergave.
 
 [Bestands concepten opmaken](./formatting-file-concepts.md) Bevat informatie die u mogelijk moet kennen bij het maken van uw eigen indelings bestanden, zoals de verschillende typen weer gaven die u kunt definiëren en speciale onderdelen van deze weer gaven.
 

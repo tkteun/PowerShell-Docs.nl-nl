@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356411"
 ---
 # <a name="getprocesssample05-sample"></a>Voorbeeld GetProcessSample05
@@ -31,7 +31,7 @@ In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven
 
    De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin en \bin\debug.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Maak de volgende module map:
 
@@ -53,7 +53,7 @@ In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 

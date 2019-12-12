@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Aan de slag met de PowerShell Gallery
 ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329160"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
@@ -23,11 +23,11 @@ U kunt pakketten vinden in de PowerShell Gallery met behulp van het besturings e
 
 U kunt de resultaten van de galerie filteren met behulp van de volgende para meters:
 
-- Name
+- Naam
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Label
+- Tag
 - Bevat
 - Dscresource bieden
 - RoleCapability
@@ -42,13 +42,13 @@ Zodra u een pakket hebt geïdentificeerd waarin u bent geïnteresseerd, kunt u m
 
 Als u een pakket detecteert waarvan u denkt dat het niet goed trouw is gepubliceerd, klikt u op **misbruik melden** op de pagina van het pakket.
 
-Als u [Find-Module][] of [Zoeken-script][]uitvoert, kunt u deze gegevens weer geven in het geretourneerde PSGetModuleInfo-object. Als u bijvoorbeeld uitvoert `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` , worden gegevens in de PSReadLine-module in de galerie geretourneerd.
+Als u [Find-Module][] of [Zoeken-script][]uitvoert, kunt u deze gegevens weer geven in het geretourneerde PSGetModuleInfo-object. Bijvoorbeeld: het uitvoeren van `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` retourneert gegevens in de PSReadLine-module in de galerie.
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>Pakketten downloaden van de PowerShell Gallery
 
 We raden het volgende proces aan bij het downloaden van pakketten van de PowerShell Gallery:
 
-### <a name="inspect"></a>controleert
+### <a name="inspect"></a>Controleren
 
 Als u een pakket wilt downloaden uit de galerie voor inspectie, voert u de cmdlet [Save-module][] of [Save-script][] uit, afhankelijk van het type pakket. Zo kunt u het pakket lokaal opslaan zonder het te installeren en de inhoud van het pakket controleren. Vergeet niet om het opgeslagen pakket hand matig te verwijderen.
 
@@ -60,15 +60,15 @@ Als u een pakket detecteert waarvan u denkt dat het niet goed trouw is gepublice
 
 Als u een pakket wilt installeren uit de galerie, voert u de [installatie-module][] of de cmdlet [install-script][] uit, afhankelijk van het type pakket.
 
-[Installatie-module][] installeert standaard de module `$env:ProgramFiles\WindowsPowerShell\Modules` .
-Hiervoor is een beheerders account vereist. Als u de `-Scope CurrentUser` para meter toevoegt, wordt de module geïnstalleerd `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` in.
+[Installatie-module][] installeert standaard de Module naar `$env:ProgramFiles\WindowsPowerShell\Modules`.
+Hiervoor is een beheerders account vereist. Als u de para meter `-Scope CurrentUser` toevoegt, wordt de module geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`.
 
-Met`$env:ProgramFiles\WindowsPowerShell\Scripts` [install-script][] wordt het script standaard geïnstalleerd.
-Hiervoor is een beheerders account vereist. Als u de `-Scope CurrentUser` para meter toevoegt, wordt het script geïnstalleerd `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` in.
+Met [install-script][] wordt het script standaard geïnstalleerd op `$env:ProgramFiles\WindowsPowerShell\Scripts`.
+Hiervoor is een beheerders account vereist. Als u de para meter `-Scope CurrentUser` toevoegt, wordt het script geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`.
 
-Standaard installeert [Installatie-module][] en [install-script][] de meest recente versie van een pakket. Als u een oudere versie van het pakket wilt installeren, `-RequiredVersion` voegt u de para meter toe.
+Standaard installeert [Installatie-module][] en [install-script][] de meest recente versie van een pakket. Als u een oudere versie van het pakket wilt installeren, voegt u de para meter `-RequiredVersion` toe.
 
-### <a name="deploy"></a>Implementeren
+### <a name="deploy"></a>Implementatie
 
 Als u een pakket wilt implementeren vanuit het PowerShell Gallery naar Azure Automation, klikt u op **Azure Automation**en klikt u vervolgens op **implementeren in azure Automation** op de pagina pakket Details. U wordt omgeleid naar de Azure-Beheerportal waar u zich aanmeldt met behulp van de referenties van uw Azure-account. Houd er rekening mee dat het implementeren van pakketten met afhankelijkheden alle afhankelijkheden van Azure Automation implementeert. De knop implementeren naar Azure Automation kan worden uitgeschakeld door het label **AzureAutomationNotSupported** toe te voegen aan de meta gegevens van uw pakket.
 
@@ -76,9 +76,9 @@ Raadpleeg de [Azure Automation](/azure/automation) -documentatie voor meer infor
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>De pakketten van de PowerShell Gallery worden bijgewerkt
 
-Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module] [] of [update-script] [] uit. Wanneer u zonder aanvullende para meters, [Update-module] [] probeert alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt `-Name` bijwerken, voegt u de para meter toe.
+Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module] [] of [update-script] [] uit. Wanneer u zonder aanvullende para meters, [Update-module] [] probeert alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt bijwerken, voegt u de para meter `-Name` toe.
 
-En wanneer wordt uitgevoerd zonder aanvullende para meters, wordt met [update-script] [] ook geprobeerd alle scripts bij te werken die zijn geïnstalleerd door [install-script][]uit te voeren. Als u scripts selectief wilt bijwerken `-Name` , voegt u de para meter toe.
+En wanneer wordt uitgevoerd zonder aanvullende para meters, wordt met [update-script] [] ook geprobeerd alle scripts bij te werken die zijn geïnstalleerd door [install-script][]uit te voeren. Als u scripts selectief wilt bijwerken, voegt u de para meter `-Name` toe.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Pakketten weer geven die u hebt geïnstalleerd via de PowerShell Gallery
 

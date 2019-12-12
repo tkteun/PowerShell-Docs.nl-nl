@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: Power shell, kern
 title: Bekende problemen met Power shell 6,0
 ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71692226"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen met Power shell 6,0
@@ -15,7 +15,7 @@ ms.locfileid: "71692226"
 
 Alfa releases van Power shell op Linux en macOS zijn voornamelijk functioneel, maar hebben wel enkele belang rijke beperkingen en problemen met de bruikbaarheid. Bèta releases van Power shell op Linux en macOS zijn meer functioneel en stabieler dan Alpha-Releases, maar kunnen nog steeds een aantal functies hebben en kunnen fouten bevatten. In sommige gevallen zijn deze problemen gewoon fouten die nog niet zijn opgelost. In andere gevallen (net als bij de standaard aliassen voor LS, CP, etc.) kijken we naar feedback van de community over de keuzes die we maken.
 
-Opmerking: Als gevolg van de overeenkomsten van een groot aantal onderliggende subsystemen, is Power shell op Linux en macOS vaak hetzelfde niveau van de verval datum in zowel de functies als de bugs te delen. Behalve zoals hieronder vermeld, zijn de problemen in deze sectie van toepassing op beide besturings systemen.
+Opmerking: als gevolg van de overeenkomsten van een groot aantal onderliggende subsystemen biedt Power shell in Linux en macOS meestal hetzelfde niveau van de verval datum in zowel de functies als de bugs. Behalve zoals hieronder vermeld, zijn de problemen in deze sectie van toepassing op beide besturings systemen.
 
 ### <a name="case-sensitivity-in-powershell"></a>Hoofdletter gevoeligheid in Power shell
 
@@ -32,11 +32,11 @@ In het verleden is Power shell uniform niet hoofdletter gevoelig, met enkele uit
 
 ### <a name="ps1-file-extensions"></a>. PS1-bestands extensies
 
-Power shell-scripts moeten eindigen op `.ps1` voor de interpreter om te begrijpen hoe ze in het huidige proces moeten worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het Magic-nummer van de `#!` kan worden toegevoegd aan een script dat geen uitbrei ding voor `.ps1` heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar, waardoor niet naar behoren werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell-script van `bash` of een andere shell.)
+Power shell-scripts moeten eindigen op `.ps1` voor de interpreter om te begrijpen hoe ze in het huidige proces kunnen worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het `#!` Magic-nummer kan worden toegevoegd aan een script dat geen `.ps1` extensie heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar zodat het script niet goed werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell-script van `bash` of een andere shell.)
 
 ### <a name="missing-command-aliases"></a>Ontbrekende opdracht aliassen
 
-In Linux/macOS worden de ' gebruiks vriendelijke aliassen ' voor de basis opdrachten `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
+In Linux/macOS zijn de ' gebruiks vriendelijke aliassen ' voor de basis opdrachten `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
 
 Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen opdracht-ervaring voor de Power shell-gebruiker beschikbaar, maar vermindert de functionaliteit in de shell omdat de systeem eigen opdrachten teken reeksen retour neren in plaats van objecten.
 
@@ -47,7 +47,7 @@ Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen op
 ### <a name="missing-wildcard-globbing-support"></a>Ondersteuning voor joker tekens ontbreekt (globbing)
 
 Op dit moment voert Power shell alleen Joker uitbrei ding (globbing) uit voor ingebouwde cmdlets in Windows, en voor externe opdrachten of binaire bestanden, evenals cmdlets op Linux. Dit betekent dat een opdracht als `ls
-*.txt` mislukt, omdat het sterretje niet kan worden uitgevouwen om te voldoen aan de bestands namen. U kunt dit omzeilen door `ls (gci *.txt | % name)` of, meer gewoon `gci *.txt` te gebruiken met behulp van de ingebouwde Power shell-equivalent van `ls`.
+*.txt` mislukt, omdat het sterretje niet kan worden uitgevouwen om te voldoen aan de bestands namen. U kunt dit probleem omzeilen door `ls (gci *.txt | % name)` of, meer te doen `gci *.txt` met behulp van de ingebouwde Power shell-equivalent voor `ls`.
 
 Zie [#954](https://github.com/PowerShell/PowerShell/issues/954) om ons feedback te geven over het verbeteren van de globbing-ervaring op Linux/macOS.
 
@@ -88,9 +88,9 @@ Power shell core biedt ook ondersteuning voor externe communicatie van Power she
 
 De mogelijkheid om JEA-eind punten (congebonden beheer) te maken, is momenteel niet beschikbaar in Power shell op Linux/macOS. Deze functie is momenteel niet beschikbaar in het bereik van 6,0 en iets wat we als een aanzienlijk ontwerp moeten 6,0 beschouwen.
 
-### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` en Power shell
+### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`en Power shell
 
-Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde invoeg toepassingen. (U kunt natuurlijk `pwsh` uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, moet u `sudo pwsh Set-Date 8/18/2016`. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan moet u `exec pwsh item_to_exec`.
+Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde modules. (u kunt natuurlijk `pwsh` uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, kunt u `sudo pwsh Set-Date 8/18/2016`. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan moet u `exec pwsh item_to_exec`doen.
 
 Dit probleem wordt momenteel bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
@@ -102,13 +102,13 @@ Een groot aantal opdrachten (cmdlets) die normaal gesp roken beschikbaar zijn in
 
 De volgende tabel bevat opdrachten die bekend zijn in Power shell op Linux/macOS.
 
-|Opdrachten|Operationele status|Opmerkingen|
+|Opdrachten|Operationele status|Notities|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-Acl`, `Set-Acl`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
-|`Wait-Process`|Beschikbaar, werkt niet goed. |@No__t-0 werkt bijvoorbeeld niet; Er kan niet worden gewacht op het proces.|
+|`Wait-Process`|Beschikbaar, werkt niet goed. |`Start-Process gvim -PassThru | Wait-Process` werkt bijvoorbeeld niet; Er kan niet worden gewacht op het proces.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Beschikbaar, maar werkt niet.|Schrijft een fout bericht dat aangeeft dat de opdrachten niet werken. Deze moeten worden opgelost in een toekomstige release.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenis bronnen beschikbaar.|De opdrachten voor het uitvoeren van Power shell-gebeurtenissen zijn aanwezig, maar de meeste gebeurtenis bronnen die worden gebruikt met de opdrachten (zoals System. time-out. timer) zijn niet beschikbaar in Linux, waardoor de opdrachten overbodig zijn in de alpha-release.|
 |`Set-ExecutionPolicy`|Beschikbaar, maar werkt niet.|Retourneert een bericht dat niet wordt ondersteund op dit platform. Uitvoerings beleid is een gebruikers gerichte "veiligheids gordel" waarmee wordt voor komen dat de gebruiker kost bare fouten kan maken. Het is geen beveiligings grens.|
-|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, maar `New-PSSession` werkt niet.|`New-PSSessionOption` en `New-PSTransportOption` worden momenteel niet geverifieerd om nu te werken dat `New-PSSession` werkt.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, maar `New-PSSession` werken niet.|`New-PSSessionOption` en `New-PSTransportOption` momenteel niet worden gecontroleerd om `New-PSSession` nu te werken.|

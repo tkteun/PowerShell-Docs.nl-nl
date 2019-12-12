@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Wat is er nieuw in Windows Power shell 5,0
 ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417582"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows Power shell 5,0
@@ -313,7 +313,7 @@ Windows Power Shell 3,0 bevat de volgende nieuwe functies.
 - [Verbeteringen in de opmaak en uitvoer](#formatting-and-output-improvements)
 - [Verbeterde beleving van de console-host](#enhanced-console-host-experience)
 - [Nieuwe cmdlet-en hosting-Api's](#new-cmdlet-and-hosting-apis)
-- [Prestatie verbeteringen](#performance-improvements)
+- [Prestatieverbeteringen](#performance-improvements)
 - [Ondersteuning voor runas en gedeelde host](#runas-and-shared-host-support)
 - [Verbeteringen voor speciale teken verwerking](#special-character-handling-improvements)
 
@@ -459,7 +459,7 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows Power shell Core-installatie, i
 |Add-JobTrigger|New-JobTrigger|
 |Connect-PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom-JSON|New-PSTransportOption|
-|ConvertTo-JSON|New-New psworkflowexecutionoption|
+|ConvertTo-Json|New-New psworkflowexecutionoption|
 |Disable-JobTrigger|New-PSWorkflowSession|
 |Disable-ScheduledJob|New-ScheduledJobOption|
 |Verbinding verbreken-PSSession|New-Wine vent|
@@ -471,7 +471,7 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows Power shell Core-installatie, i
 |Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Naam wijzigen-computer|
 |Get-IseSnippet|Resume-job|
-|Get-JobTrigger|Opslaan-Help|
+|Get-JobTrigger|Help opslaan|
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
@@ -482,7 +482,7 @@ Er zijn nieuwe cmdlets toegevoegd aan de Windows Power shell Core-installatie, i
 |Invoke-WebRequest|Test-PSSessionConfigurationFile|
 |New-CimInstance|Blok kering van bestand opheffen|
 |New-CimSession|Registratie ongedaan maken-ScheduledJob|
-|New-CimSessionOption|Update-Help|
+|New-CimSessionOption|Help bijwerken|
 |New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen aan bestaande kern-cmdlets en-providers
@@ -551,7 +551,7 @@ Zie [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-e
 
 De nieuwe cmdlet-API en hosting-API omvatten open bare geavanceerde syntaxis structuur (AST) Api's en Api's voor het pagineren van pijp lijnen, geneste pijp lijnen, het tabblad voltooiing van runs Pace, Windows RT, het verouderde cmdlet-kenmerk en de verb-en zelfstandige eigenschappen van het object FunctionInfo.
 
-### <a name="performance-improvements"></a>Prestatie verbeteringen
+### <a name="performance-improvements"></a>Verbeterde prestaties
 
 Belang rijke prestatie verbeteringen in Windows Power shell zijn afkomstig van de nieuwe taal-parser, die is gebouwd op dynamische runtime Language (DLR) in .NET Framework 4. samen met compilatie van het runtime-script, verbeteringen van de prestaties van de engine en wijzigingen in het algoritme van de [Get-Child item](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) die de prestatie verbeteren, met name bij het zoeken naar netwerk shares.
 
@@ -570,4 +570,4 @@ Voor het verbeteren van de mogelijkheden van Windows Power Shell 3,0 het interpr
 ## <a name="see-also"></a>Zie ook
 
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows Power shell](https://go.microsoft.com/fwlink/?LinkID=107116)
+- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)

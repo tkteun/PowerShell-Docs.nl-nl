@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353149"
 ---
 # <a name="host01-sample"></a>Voorbeeld Host01
@@ -25,7 +25,7 @@ In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaak
 
  Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 - Er wordt een aangepaste host-klasse gemaakt die is afgeleid van de [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) -klasse.
 

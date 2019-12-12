@@ -1,47 +1,47 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISESnippet-object
 ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028883"
 ---
 # <a name="the-isesnippetobject"></a>Het ISESnippet-object
 
-Een **ISESnippet** object is een exemplaar van de klasse Microsoft.PowerShell.Host.ISE.ISESnippet. De leden van de **$psISE.CurrentPowerShellTab.Snippets** verzameling zijn alle voorbeelden van **ISESnippet** objecten. De eenvoudigste manier om het maken van een codefragment is met de [New-IseSnippet&#91;PSITPro5_ISE&#93; ](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.
+Een **ISESnippet** -object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISESnippet. De leden van de verzameling **$psISE. CurrentPowerShellTab. fragmentes** zijn alle voor beelden van **ISESnippet** -objecten. De eenvoudigste manier om een fragment te maken, is door de cmdlet [New&#91;-&#93; IseSnippet PSITPro5_ISE](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) te gebruiken.
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Eigenschappen
 
 ### <a name="author"></a>Auteur
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap die haalt u de naam van de auteur van het codefragment.
+De alleen-lezen eigenschap waarmee de naam van de auteur van het fragment wordt opgehaald.
 
 ```powershell
 # Get the author of the first snippet item
 $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
-### <a name="codefragment"></a>CodeFragment
+### <a name="codefragment"></a>Cofragmentatie
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap waarmee het codefragment moet worden ingevoegd in de editor worden opgehaald.
+De alleen-lezen eigenschap waarmee het code fragment wordt opgehaald dat in de editor moet worden ingevoegd.
 
 ```powershell
 # Get the code fragment associated with the first snippet item.
 $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
-### <a name="shortcut"></a>Snelkoppeling
+### <a name="shortcut"></a>Shortcutdimensie
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap die opgehaald van de Windows sneltoets voor de menuopdracht.
+De alleen-lezen eigenschap waarmee de Windows-sneltoets wordt opgehaald voor de menu opdracht.
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -52,6 +52,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 
 ## <a name="see-also"></a>Zie ook
 
-- [Het ISESnippetCollection-Object](The-ISESnippetCollection-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [Het ISESnippetCollection-object](The-ISESnippetCollection-Object.md)
+- [Doel van het Windows PowerShell ISE scripting object model](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

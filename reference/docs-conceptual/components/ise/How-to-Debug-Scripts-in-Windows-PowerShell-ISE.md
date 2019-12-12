@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Fouten opsporen in scripts in Windows PowerShell ISE
 ms.openlocfilehash: 99d6fbcb805e3fe31f95eafd4daf272cf41fd845
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117427"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in scripts in Windows PowerShell ISE
@@ -27,7 +27,7 @@ U kunt drie typen onderbrekings punten instellen in de Windows Power shell-omgev
 
 Van deze opties kunt u in de omgeving Windows PowerShell ISE fout opsporing alleen regel onderbrekingen instellen met behulp van het menu of de sneltoetsen. De andere twee typen onderbrekings punten kunnen worden ingesteld, maar ze worden ingesteld vanuit het console venster met behulp van de cmdlet [set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) . In deze sectie wordt beschreven hoe u fout opsporing in Windows PowerShell ISE kunt uitvoeren met behulp van de menu's die beschikbaar zijn, en voert u een breder scala van opdrachten uit vanuit het console venster met behulp van scripts.
 
-### <a name="to-set-a-breakpoint"></a>Een onderbrekings punt instellen
+### <a name="to-set-a-breakpoint"></a>Een onderbrekingspunt instellen
 
 Een onderbrekings punt kan alleen in een script worden ingesteld nadat het is opgeslagen. Klik met de rechter muisknop op de regel waar u een regel onderbrekings punt wilt instellen en klik vervolgens op **onderbrekings punt in**-en uitschakelen. Of klik op de regel waar u een regel onderbrekings punt wilt instellen en druk op **F9** of Klik in het menu **fout opsporing** op **onderbrekings punt in**-en uitschakelen.
 
@@ -151,7 +151,7 @@ U kunt de huidige waarden van variabelen in het script weer geven tijdens het do
 
 ### <a name="to-display-the-values-of-standard-variables"></a>De waarden van standaard variabelen weer geven
 
-Gebruik een van de volgende methoden:
+Hanteer één van de volgende methoden:
 
 - Beweeg de muis aanwijzer over de variabele in het deel venster script om de waarde weer te geven als knop info.
 

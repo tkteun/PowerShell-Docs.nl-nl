@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-logboek resource
 ms.openlocfilehash: a1b7bf44fbaf36a3adaf0666e9f0a754fa3f6ee1
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942445"
 ---
 # <a name="dsc-log-resource"></a>DSC-logboek resource
@@ -29,17 +29,17 @@ Log [string] #ResourceName
 > [!NOTE]
 > Standaard zijn alleen de operationele logboeken voor DSC ingeschakeld. Voordat het analytische logboek beschikbaar of zichtbaar is, moet het worden ingeschakeld. Zie voor meer informatie [waar zijn DSC-gebeurtenis logboeken?](../../../troubleshooting/troubleshooting.md#where-are-dsc-event-logs).
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|Message |Hiermee wordt het bericht aangegeven dat u wilt schrijven naar het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic. |
+|Bericht |Hiermee wordt het bericht aangegeven dat u wilt schrijven naar het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
 ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356537"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet-voorbeelden
@@ -31,7 +31,7 @@ In deze sectie wordt de voorbeeld code beschreven die is opgenomen in de Windows
 
 [GetProcessSample05](./getprocesssample05-sample.md) -voor beeld In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven.
 
-[StopProcessSample01](./stopprocesssample01-sample.md) -voor beeld Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een para meter `PassThru` implementeert die aangeeft dat de gebruiker de cmdlet een object wil laten retour neren.
+[StopProcessSample01](./stopprocesssample01-sample.md) -voor beeld Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een `PassThru` para meter implementeert die aangeeft dat de gebruiker de cmdlet een object wil laten retour neren.
 
 [StopProcessSample02](./stopprocesssample02-sample.md) -voor beeld In dit voor beeld ziet u hoe u een cmdlet schrijft waarmee fout opsporing, uitgebreide en waarschuwings berichten worden geschreven terwijl processen op de lokale computer worden gestopt.
 

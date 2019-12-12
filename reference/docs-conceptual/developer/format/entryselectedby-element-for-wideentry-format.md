@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
 caps.latest.revision: 9
 ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354752"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>Het element EntrySelectedBy voor WideEntry (opmaak)
@@ -57,7 +57,7 @@ Geen.
 
 U moet ten minste één type, selectieset of selectie voorwaarde opgeven voor een brede weergave definitie. Er is geen maximum limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
 
-Selectie voorwaarden worden gebruikt voor het definiëren van een voor waarde die voor de definitie moet bestaan, zoals wanneer een object een specifieke eigenschap heeft of een bepaalde eigenschaps waarde of script waarde resulteert in `true`. Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
+De selectie voorwaarden worden gebruikt voor het definiëren van een voor waarde die voor de definitie moet bestaan, zoals wanneer een object een specifieke eigenschap heeft of een bepaalde eigenschaps waarde of script waarde `true`wordt geëvalueerd. Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
 
 Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie over andere onderdelen van een brede weer gave.
 

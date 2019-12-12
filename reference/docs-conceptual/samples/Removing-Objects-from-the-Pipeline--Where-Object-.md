@@ -1,43 +1,43 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: Objecten uit de pijplijn verwijderen Where-Object
+keywords: Power shell, cmdlet
+title: Objecten verwijderen uit de pijp lijn waarbij het object
 ms.openlocfilehash: c47efd38e2ff40ce3b7bf50b161cc38de922c5da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030877"
 ---
-# <a name="removing-objects-from-the-pipeline-where-object"></a>Objecten verwijderen uit de pijplijn (Where-Object)
+# <a name="removing-objects-from-the-pipeline-where-object"></a>Objecten uit de pijp lijn verwijderen (where-object)
 
-In Windows PowerShell kunt u vaak genereren en geven meer objecten voor een pijplijn dan u wilt. Kunt u de eigenschappen van bepaalde objecten om weer te geven met behulp van de **indeling** cmdlets, maar dit niet helpt met het probleem van het gehele objecten verwijderen uit de weergave. U wilt filteren objecten vóór het einde van een pijplijn, zodat u acties op slechts een subset van de objecten in eerste instantie gegenereerd uitvoeren kunt.
+In Windows Power shell genereert u vaak meerdere objecten naar een pijp lijn dan u wilt. U kunt de eigenschappen van bepaalde objecten opgeven die moeten worden weer gegeven met de **Format** -cmdlets, maar dit biedt geen ondersteuning voor het probleem van het verwijderen van volledige objecten uit de weer gave. Misschien wilt u objecten filteren vóór het einde van een pijp lijn, zodat u alleen acties kunt uitvoeren op een subset van de eerste gegenereerde objecten.
 
-Windows PowerShell bevat een `Where-Object` u elk object in de pijplijn testen en alleen langs de pijplijn te doorgeven kunt als deze voldoet aan de voorwaarde van een bepaalde test-cmdlet. Objecten die niet door de test worden verwijderd uit de pijplijn. U de testvoorwaarde opgeven als de waarde van de `Where-Object` **FilterScript** parameter.
+Windows Power shell bevat een `Where-Object`-cmdlet waarmee u elk object in de pijp lijn kunt testen en dit alleen door geven aan de pijp lijn als het voldoet aan een bepaalde test voorwaarde. Objecten die de test niet door lopen, worden uit de pijp lijn verwijderd. U geeft de test voorwaarde op als de waarde van de para meter `Where-Object` **FilterScript** .
 
-## <a name="performing-simple-tests-with-where-object"></a>Uitvoeren van eenvoudige tests uit met het Where-Object
+## <a name="performing-simple-tests-with-where-object"></a>Eenvoudige tests uitvoeren met where-object
 
-De waarde van **FilterScript** is een *scriptblok* -een of meer Windows PowerShell-opdrachten omgeven door accolades {} -die wordt geëvalueerd op waar of ONWAAR. Deze scriptblokken kunnen zeer eenvoudig, maar ze worden gemaakt moet weten over andere Windows PowerShell-concept, vergelijkingsoperators. Een vergelijkingsoperator vergelijkt de items die worden weergegeven voor elke zijde van het. Vergelijkingsoperators beginnen met een '-' teken en worden gevolgd door een naam. Basic vergelijkingsoperators werken op vrijwel elk soort object. De meer geavanceerde vergelijkingsoperators kunnen uitsluitend worden gebruikt voor tekst- of -matrices.
+De waarde van **FilterScript** is een *script blok* : een of meer Windows Power shell-opdrachten omgeven door accolades {}-dat resulteert in waar of onwaar. Deze script blokken kunnen zeer eenvoudig zijn, maar het maken ervan vereist dat u weet wat een ander Windows Power shell-concept, vergelijkings operators is. Een vergelijkings operator vergelijkt de items die aan elkaar worden weer gegeven. Vergelijkings operatoren beginnen met een '-'-teken en worden gevolgd door een naam. Eenvoudige vergelijkings operators werken aan bijna elk soort object. De geavanceerde vergelijkings operators kunnen alleen werken met tekst of matrices.
 
 > [!NOTE]
-> Windows PowerShell-vergelijkingsoperators zijn standaard bij het werken met tekst, niet hoofdlettergevoelig.
+> Wanneer u werkt met tekst, zijn Windows Power shell-vergelijkings operatoren standaard niet hoofdletter gevoelig.
 
-Vanwege het parseren van overwegingen, symbolen zoals <>, en = niet als vergelijkingsoperators worden gebruikt. In plaats daarvan vergelijkingsoperators bestaan uit letters. De basic vergelijkingsoperators worden weergegeven in de volgende tabel.
+Als gevolg van het parseren van overwegingen, zoals <, > en =, worden niet gebruikt als vergelijkings operators. In plaats daarvan bestaan vergelijkings operatoren uit letters. De basis-vergelijkings operatoren worden weer gegeven in de volgende tabel.
 
-|Vergelijkingsoperator|Betekenis|Voorbeeld (retourneert ' True ')|
+|Vergelijkingsoperator|Betekenis|Voor beeld (retourneert waar)|
 |-----------------------|-----------|--------------------------|
-|-eq|is gelijk aan|1 -eq 1|
-|-ne|Is niet gelijk aan|1 - ne 2|
-|-lt|Is kleiner dan|1 - lt 2|
-|-le|is kleiner dan of gelijk aan|1 - le 2|
-|-gt|Is groter dan|2 - gt 1|
-|-ge|is groter dan of gelijk zijn aan|2 -ge 1|
-|-like|Is vergelijkbaar met (vergelijking van jokertekens voor tekst)|"bestand.doc"-, zoals ' f\*basisbedrijfstoepassingen? "|
-|-notlike zijn|Is niet als (vergelijking van jokertekens voor tekst)|"bestand.doc"-notlike zijn "p\*.doc"|
-|-bevat|bevat|1,2,3 - 1 bevat|
-|-notcontains|Bevat niet|1,2,3 -notcontains 4|
+|-eq|is gelijk aan|1-EQ 1|
+|-ne|Is niet gelijk aan|1-ne 2|
+|-lt|Is kleiner dan|1-lt 2|
+|-Le|is kleiner dan of gelijk aan|1-Le 2|
+|-gt|Is groter dan|2-gt 1|
+|-ge|is groter dan of gelijk zijn aan|2-ge 1|
+|-like|Is vergelijkbaar (vergelijking van joker tekens voor tekst)|"file. doc"-like "f\*. do?"|
+|-notlike|Is niet hetzelfde (vergelijking van joker tekens voor tekst)|"file. doc"-notlike "p\*. doc"|
+|-bevat|bevat|1, 2, 3-bevat 1|
+|-notcontains|Bevat niet|1, 2, 3-notcontains 4|
 
-WHERE-Object-scriptblokken de speciale variabele gebruiken `$_` om te verwijzen naar het huidige object in de pijplijn. Hier volgt een voorbeeld van hoe het werkt. Als u een lijst met getallen hebben en alleen wilt retourneren die minder dan 3 zijn, kunt u Where-Object voor het filteren van de getallen door te typen:
+Where-object-script blokken gebruiken de speciale variabele `$_` om te verwijzen naar het huidige object in de pijp lijn. Hier volgt een voor beeld van hoe het werkt. Als u een lijst met getallen hebt en alleen de waarden wilt retour neren die kleiner zijn dan 3, kunt u WHERE-object gebruiken om de getallen te filteren door het volgende te typen:
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -45,17 +45,17 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-## <a name="filtering-based-on-object-properties"></a>Filteren op basis van eigenschappen van het Object
+## <a name="filtering-based-on-object-properties"></a>Filteren op basis van object eigenschappen
 
-Aangezien `$_` verwijst naar de huidige pipeline-object, hebben we toegang tot de eigenschappen voor onze tests.
+Omdat `$_` naar het huidige pijplijn object verwijst, hebben we toegang tot de eigenschappen van de tests.
 
-Als u bijvoorbeeld kunt kijken we de klasse Win32_SystemDriver in WMI. Er zijn mogelijk honderden stuurprogramma's op een bepaald systeem, maar u alleen mogelijk ook geïnteresseerd in een bepaalde set de systeem-stuurprogramma's, zoals die momenteel worden uitgevoerd. Als u een Get-Member kunt Win32_SystemDriver leden weergeven (**Get-WmiObject-klasse Win32_SystemDriver | De eigenschap Get-Member - MemberType**) ziet u dat de relevante eigenschap status is en dat er een waarde van het 'Uitvoeren' als het stuurprogramma wordt uitgevoerd. U kunt de stuurprogramma's, filteren selecteren alleen de actieve door door te typen:
+U kunt bijvoorbeeld de klasse Win32_SystemDriver in WMI bekijken. Er zijn mogelijk honderden systeem Stuur Programma's op een bepaald systeem, maar u bent mogelijk alleen geïnteresseerd in een bepaalde set van de systeem Stuur Programma's, zoals die op dit moment worden uitgevoerd. Als u Get-member gebruikt om Win32_SystemDriver leden te bekijken (**Get-WmiObject-Class Win32_SystemDriver | Get-member-member type-eigenschap**) u ziet dat de relevante eigenschap status is en dat deze de waarde ' running ' heeft wanneer het stuur programma wordt uitgevoerd. U kunt de systeem Stuur Programma's filteren en alleen de actieve items selecteren door het volgende te typen:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq 'Running'}
 ```
 
-Dit levert nog steeds een lange lijst. U wilt filteren zodat alleen de stuurprogramma's automatisch worden gestart door de waarde van StartMode ook testen selecteren:
+Er wordt nog steeds een lange lijst gegenereerd. U kunt filteren op alleen de ingestelde Stuur Programma's selecteren om automatisch te starten door de start modus-waarde te testen:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Auto"}
@@ -73,7 +73,7 @@ Status      : OK
 Started     : True
 ```
 
-Dit biedt ons een grote hoeveelheid informatie die we niet langer nodig hebt omdat we weten dat de stuurprogramma's worden uitgevoerd. De enige informatie die we waarschijnlijk nodig hebt op dit moment zijn in feite de naam en de weergavenaam. De volgende opdracht bevat alleen deze twee eigenschappen, wat resulteert in veel eenvoudiger uitvoer:
+Dit biedt ons veel informatie die we niet meer nodig hebben omdat we weten dat de Stuur Programma's worden uitgevoerd. De enige informatie die we waarschijnlijk op dit moment nodig hebben, zijn de naam en de weergave naam. De volgende opdracht bevat alleen die twee eigenschappen, wat resulteert in veel eenvoudiger uitvoer:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Manual"} | Format-Table -Property Name,DisplayName
@@ -90,17 +90,17 @@ MRxDAV                                  WebDav Client Redirector
 mssmbios                                Microsoft System Management BIOS Driver
 ```
 
-Er zijn twee Where-Object-elementen in de bovenstaande opdracht, maar ze kunnen worden uitgedrukt in één element Where-Object met behulp van de - en de logische operator, als volgt:
+Er zijn twee where-object elementen in de bovenstaande opdracht, maar ze kunnen worden uitgedrukt in één where-object-element met behulp van de-en logische operator, zoals:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State -eq 'Running') -and ($_.StartMode -eq 'Manual') } | Format-Table -Property Name,DisplayName
 ```
 
-De standaard logische operators worden weergegeven in de volgende tabel.
+De standaard logische Opera tors worden weer gegeven in de volgende tabel.
 
-|Logische Operator|Betekenis|Voorbeeld (retourneert ' True ')|
+|Logische operator|Betekenis|Voor beeld (retourneert waar)|
 |--------------------|-----------|--------------------------|
-|- en|Logische en; ' True ' als beide kanten ' True ' zijn|(1 - eq 1) - en (2 - eq 2).|
-|- of|Logische of; ' True ' als beide kanten ingesteld op true is|(1 - eq 1) - of (1 - eq 2).|
-|-niet|Logische not; keert de waarde true en false|-geen (1 - eq 2)|
-|\!|Logische not; keert de waarde true en false|\!(1 - eq 2)|
+|-en|Logische en; waar als beide zijden waar zijn|(1-EQ 1)-en (2-EQ 2)|
+|-of|Logische of; waar als een van beide zijden waar is|(1-EQ 1)-of (1-EQ 2)|
+|-niet|Logische niet; keert waar en ONWAAR om|-niet (1-EQ 2)|
+|\!|Logische niet; keert waar en ONWAAR om|\!(1-EQ 2)|

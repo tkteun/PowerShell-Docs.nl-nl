@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
 ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416670"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
@@ -286,7 +286,7 @@ Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt
    - Zoek een `<moduleName>.cat`-bestand en controleer de hand tekening met behulp van `Get-AuthenticodeSignature`.
    - Controleer of de certificerings instantie die de ondertekenaar heeft geverifieerd, vertrouwd is.
    - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe cmdlet `Test-FileCatalog`.
-5. `Install-Module` `$env:ProgramFiles\WindowsPowerShell\Modules\`
+5. `Install-Module` tot `$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Proces configuratie
 
 > [!NOTE]

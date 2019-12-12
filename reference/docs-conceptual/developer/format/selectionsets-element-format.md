@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353730"
 ---
 # <a name="selectionsets-element-format"></a>Het element SelectionSets (opmaak)
@@ -53,7 +53,7 @@ Geen.
 
 U kunt selectie sets gebruiken wanneer u een set verwante objecten hebt waarnaar u wilt verwijzen met behulp van één naam, zoals een set objecten die zijn gerelateerd aan overname. Wanneer u uw weer gaven definieert, kunt u de set met objecten opgeven door de naam van de selectieset te gebruiken in plaats van alle objecten in elke weer gave te vermelden.
 
-Algemene selectie sets worden opgegeven met hun naam bij het definiëren van de weer gaven van het opmaak bestand of de definities van de weer gaven. In dergelijke gevallen wordt in het onderliggende `SelectionSetName`-element van de `ViewSelectedBy`-en `EntrySelectedBy`-elementen de set opgegeven die moet worden gebruikt. Zie [sets van objecten definiëren](./defining-selection-sets.md)voor meer informatie over selectie sets.
+Algemene selectie sets worden opgegeven met hun naam bij het definiëren van de weer gaven van het opmaak bestand of de definities van de weer gaven. In dergelijke gevallen specificeert het `SelectionSetName` onderliggende element van de `ViewSelectedBy` en `EntrySelectedBy` elementen de set die moet worden gebruikt. Zie [sets van objecten definiëren](./defining-selection-sets.md)voor meer informatie over selectie sets.
 
 ## <a name="see-also"></a>Zie ook
 

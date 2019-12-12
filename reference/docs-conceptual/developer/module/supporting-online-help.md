@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352876"
 ---
 # <a name="supporting-online-help"></a>Ondersteunende online help
@@ -21,13 +21,13 @@ Vanaf Windows Power Shell 3,0 zijn er twee manieren om de `Get-Help` online-func
 
 ## <a name="about-online-help"></a>Online-Help
 
-Online-Help is altijd een essentieel onderdeel van Windows Power shell. Hoewel in de cmdlet `Get-Help` Help-onderwerpen worden weer gegeven bij de opdracht prompt, hebben veel gebruikers de voor keur aan het online lezen, met inbegrip van kleur codering, hyper links en het delen van ideeën in Community-inhoud en documenten op basis van wiki. In de online Help werd de meest recente versie van de Help-bestanden het belangrijkst, vóór de komst van de Help-informatie die kan worden bijgewerkt.
+Online-Help is altijd een essentieel onderdeel van Windows Power shell. Hoewel met de cmdlet `Get-Help` Help-onderwerpen worden weer gegeven bij de opdracht prompt, hebben veel gebruikers de voor keur aan het online lezen, met inbegrip van kleur codering, hyper links en het delen van ideeën in Community-inhoud en documenten op basis van wiki. In de online Help werd de meest recente versie van de Help-bestanden het belangrijkst, vóór de komst van de Help-informatie die kan worden bijgewerkt.
 
 Met de komst van de bijwerk bare Help in Windows Power Shell 3,0 speelt de online Help nog steeds een belang rijke rol af. Naast de flexibele gebruikers ervaring biedt de online Help hulp bij gebruikers die geen Bewerk bare Help kunnen gebruiken om Help-onderwerpen te downloaden.
 
 ## <a name="how-get-help--online-works"></a>Help-online werken
 
-Om gebruikers te helpen de online Help-onderwerpen voor-opdrachten te vinden, heeft de `Get-Help`-opdracht een online-para meter waarmee de online versie van Help wordt geopend voor een opdracht in de standaard Internet browser van de gebruiker.
+Om gebruikers te helpen de online Help-onderwerpen voor-opdrachten te vinden, heeft de `Get-Help`-opdracht een online-para meter waarmee de online versie van het Help-onderwerp voor een opdracht in de standaard browser van de gebruiker wordt geopend.
 
 Met de volgende opdracht wordt bijvoorbeeld het online-Help-onderwerp voor de cmdlet `Invoke-Command` geopend.
 
@@ -35,7 +35,7 @@ Met de volgende opdracht wordt bijvoorbeeld het online-Help-onderwerp voor de cm
 Get-Help Invoke-Command -Online
 ```
 
-Als u `Get-Help`-online wilt implementeren, zoekt de `Get-Help`-cmdlet naar een Uniform Resource Identifier (URI) voor het Help-onderwerp online versie op de volgende locaties.
+Voor de implementatie van `Get-Help`-online zoekt de `Get-Help`-cmdlet naar een Uniform Resource Identifier (URI) voor het Help-onderwerp online versie op de volgende locaties.
 
 - De eerste koppeling in het gedeelte Verwante koppelingen van het Help-onderwerp voor de opdracht. Het Help-onderwerp moet worden geïnstalleerd op de computer van de gebruiker. Deze functie is geïntroduceerd in Windows Power Shell 2,0.
 
@@ -45,11 +45,11 @@ Als u `Get-Help`-online wilt implementeren, zoekt de `Get-Help`-cmdlet naar een 
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Een URI toevoegen aan de eerste gerelateerde koppeling van een Help-onderwerp van een opdracht
 
-U kunt `Get-Help`-online ondersteunen voor elke opdracht door een geldige URI toe te voegen aan de eerste vermelding in de sectie verwante koppelingen van het Help-onderwerp over XML voor de opdracht. Deze optie is alleen geldig in Help-onderwerpen op basis van XML en werkt alleen wanneer het Help-onderwerp op de computer van de gebruiker is geïnstalleerd. Wanneer het Help-onderwerp is geïnstalleerd en de URI is gevuld, heeft deze waarde voor rang op de eigenschap **HelpUri** van de opdracht.
+U kunt `Get-Help`-online voor elke opdracht ondersteunen door een geldige URI toe te voegen aan de eerste vermelding in de sectie verwante koppelingen van het Help-onderwerp op basis van XML voor de opdracht. Deze optie is alleen geldig in Help-onderwerpen op basis van XML en werkt alleen wanneer het Help-onderwerp op de computer van de gebruiker is geïnstalleerd. Wanneer het Help-onderwerp is geïnstalleerd en de URI is gevuld, heeft deze waarde voor rang op de eigenschap **HelpUri** van de opdracht.
 
-Ter ondersteuning van deze functie moet de URI worden weer gegeven in het element `maml:uri` onder het eerste element `maml:relatedLinks/maml:navigationLink` in het element `maml:relatedLinks`.
+Ter ondersteuning van deze functie moet de URI worden weer gegeven in het `maml:uri`-element onder het eerste `maml:relatedLinks/maml:navigationLink`-element in het `maml:relatedLinks`-element.
 
-In het volgende XML-bestand wordt de juiste plaatsing van de URI weer gegeven. De tekst ' Online version: ' in het element `maml:linkText` is een best practice, maar dit is niet vereist.
+In het volgende XML-bestand wordt de juiste plaatsing van de URI weer gegeven. De tekst ' Online version: ' in het `maml:linkText`-element is een best practice, maar dit is niet vereist.
 
 ```xml
 

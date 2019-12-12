@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: toegangs problemen in Windows Power shell-Internet toegang oplossen
 ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71692241"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
@@ -52,13 +52,13 @@ Dit probleem kan optreden bij gebruikers die zijn aangemeld met een domeinnaam d
 1. Internet Explorer 10 installeren en uitvoeren
 1. Wijzig de instelling voor de **document modus** van Internet Explorer in *IE10* -standaarden.
    1. Druk op **F12** om de Ontwikkelhulpprogramma's-console te openen
-   1. Klik in Internet Explorer 10 op **Browsermodus** en selecteer vervolgens *Internet Explorer 10*.
+   1. Klik in Internet Explorer 10 op **browser modus**en selecteer vervolgens *Internet Explorer 10*.
    1. Klik op **document modus**en klik vervolgens op *IE10* -standaarden.
-   1. Druk nogmaals op **F12** om de console Ontwikkelhulpprogramma’s te sluiten.
+   1. Druk nogmaals op **F12** om de Ontwikkelhulpprogramma's-console te sluiten.
 1. Schakel automatische proxy configuratie uit in Internet Explorer 10.
    1. Klik op **extra**en klik vervolgens op **Internet opties**.
-   1. Klik in het dialoogvenster **Internetopties** op het tabblad **Verbindingen** op **LAN-instellingen**.
-   1. Schakel het selectievakje **Instellingen automatisch detecteren** uit. Klik op **OK** en klik vervolgens nogmaals op **OK** om het dialoogvenster *Internetopties* te sluiten.
+   1. Klik in het dialoog venster **Internet opties** op het tabblad **verbindingen** op **LAN-instellingen**.
+   1. Schakel het selectie vakje **instellingen automatisch detecteren** uit. Klik op **OK**en klik nogmaals op **OK** om het dialoog venster *Internet opties* te sluiten.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Kan geen verbinding maken met een externe werkgroepcomputer
 
@@ -80,7 +80,7 @@ Als verbeterde beveiliging is ingeschakeld in Internet Explorer (IE ESC), kunt u
 Een minder aanbevolen aanpak door beveiligings Risico's is het uitschakelen van Internet Explorer ESC.
 U kunt IE ESC uitschakelen op de tegel eigenschappen op de pagina lokale server in Serverbeheer.
 
-## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doel computer.
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doelcomputer.
 
 Het bovenstaande fout bericht wordt weer gegeven wanneer u verbinding probeert te maken wanneer de gateway server de doel computer is en zich ook in een werk groep bevindt.
 
@@ -91,7 +91,7 @@ Gebruik niet een punt (.) om de computer naam weer te geven.
 
 #### <a name="all-cases"></a>Alle cases
 
-Parameter | Waarde
+Parameter | Value
 -- | --
 UserName | Server\_naam\\naam van de gebruikers\_<br/>Localhost\\gebruikers\_naam<br/>. gebruikers\_naam\\
 UserGroup | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruikers\_groep<br/>. gebruikers\_groep\\
@@ -99,15 +99,15 @@ ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_groep<br/
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
-Parameter | Waarde
+Parameter | Value
 -- | --
-Computernaam | Volledig gekwalificeerde naam van gatewayserver of Localhost
+ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
-Parameter | Waarde
+Parameter | Value
 -- | --
-Computernaam | Servernaam
+ComputerName | Servernaam
 
 ### <a name="gateway-credentials"></a>Gateway referenties
 

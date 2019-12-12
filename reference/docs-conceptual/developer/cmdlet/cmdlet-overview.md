@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356544"
 ---
 # <a name="cmdlet-overview"></a>Overzicht van cmdlets
@@ -67,7 +67,7 @@ Zie [cmdlet Dynamic para meters](cmdlet-dynamic-parameters.md)voor meer informat
 ### <a name="input-processing-method"></a>Invoer verwerkings methode
 
 Een methode die een cmdlet kan gebruiken voor het verwerken van de records die worden ontvangen als invoer.
-De invoer methoden zijn onder andere de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , de [ Methode System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en de methode [System. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Wanneer u een cmdlet implementeert, moet u ten minste één van de [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). cmdlet. ProcessRecord [en Methoden System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
+De volgende invoer methoden zijn onder andere de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de methode System. Management. Automation. cmdlet [. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , de methode [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . un@ en de methode System. Management. Automation. [cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Wanneer u een cmdlet implementeert, moet u ten minste één van de methoden [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Automation. cmdlet. ProcessRecord en [System. Management](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Automation. cmdlet.
 Normaal gesp roken is de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de methode die u overschrijft, omdat deze wordt aangeroepen voor elke record die door de cmdlet wordt verwerkt.
 De methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) en [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) worden daarentegen één keer aangeroepen voor het uitvoeren van vóór verwerking of na verwerking van de records.
 Zie [invoer verwerkings methoden](cmdlet-input-processing-methods.md)voor meer informatie over deze methoden.
@@ -75,10 +75,10 @@ Zie [invoer verwerkings methoden](cmdlet-input-processing-methods.md)voor meer i
 ### <a name="shouldprocess-feature"></a>Functie ShouldProcess
 
 Met Power shell kunt u cmdlets maken waarmee de gebruiker wordt gevraagd om feedback voordat de cmdlet een wijziging in het systeem aanbrengt.
-Als u deze functie wilt gebruiken, moet de cmdlet declareren dat deze de functie ShouldProcess ondersteunt wanneer u het cmdlet-kenmerk declareert en de cmdlet [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) moet aanroepen en [ Methoden System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) vanuit een invoer verwerkings methode.
+Als u deze functie wilt gebruiken, moet de cmdlet declareren dat deze de functie ShouldProcess ondersteunt wanneer u het cmdlet-kenmerk declareert. de cmdlet moet de methoden [System. Management.](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Automation. cmdlet. ShouldProcess en [System. beheer. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroepen vanuit een invoer verwerkings methode.
 Zie [bevestiging aanvragen](requesting-confirmation-from-cmdlets.md)voor meer informatie over het ondersteunen van de ShouldProcess-functionaliteit.
 
-### <a name="transaction"></a>trans actie
+### <a name="transaction"></a>Transactie
 
 Een logische groep opdrachten die worden behandeld als één taak.
 De taak mislukt automatisch als een opdracht in de groep mislukt en de gebruiker de mogelijkheid heeft om de acties die in de trans actie worden uitgevoerd, te accepteren of af te wijzen.
@@ -130,7 +130,7 @@ Windows Power shell definieert diverse .NET Framework kenmerken die worden gebru
 
 ## <a name="cmdlet-names"></a>Namen van cmdlets
 
-Windows Power shell gebruikt een combi natie van term en zelfstandig naam woord om naam-cmdlets te gebruiken. De `Get-Command`-cmdlet die is opgenomen in Windows Power shell wordt bijvoorbeeld gebruikt om alle cmdlets op te halen die zijn geregistreerd in de opdracht shell. De opdracht geeft de actie aan die door de cmdlet wordt uitgevoerd en het zelfstandig naam woord identificeert de resource waarop de cmdlet de actie uitvoert.
+Windows Power shell gebruikt een combi natie van term en zelfstandig naam woord om naam-cmdlets te gebruiken. Zo wordt de `Get-Command`-cmdlet opgenomen in Windows Power shell gebruikt om alle cmdlets op te halen die zijn geregistreerd in de opdracht shell. De opdracht geeft de actie aan die door de cmdlet wordt uitgevoerd en het zelfstandig naam woord identificeert de resource waarop de cmdlet de actie uitvoert.
 
 Deze namen worden opgegeven wanneer de klasse .NET Framework als een cmdlet wordt gedeclareerd. Zie [cmdlet-kenmerk declaratie](./cmdlet-class-declaration.md)voor meer informatie over het declareren van een .NET Framework klasse als een cmdlet.
 

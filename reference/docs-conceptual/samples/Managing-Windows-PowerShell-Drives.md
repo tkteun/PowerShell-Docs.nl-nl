@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Windows PowerShell-stations beheren
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70215506"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
@@ -102,7 +102,7 @@ Als u een nieuw Windows Power Shell-station wilt maken, moet u drie para meters 
 
 - De basis, dat wil zeggen, het pad naar de hoofdmap van het nieuwe station
 
-U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\Program\\files\\Microsoft Office Office11**. Typ de volgende opdracht om het station te maken:
+U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\programma bestanden\\Microsoft Office\\Office11**. Typ de volgende opdracht om het station te maken:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -117,7 +117,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 U verwijst naar het nieuwe Windows Power Shell-station, net zoals u alle Windows Power Shell-stations gebruikt, door de naam gevolgd door een dubbele punt ( **:** ).
 
-Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\-software\\micro\\Soft Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
+Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\SOFTWARE\\micro soft\\Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
 
 ```
 PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
@@ -149,13 +149,13 @@ Met de cmdlet New-PsDrive wordt het nieuwe station alleen toegevoegd aan de huid
 
 U kunt stations verwijderen uit Windows Power shell met behulp van de cmdlet **Remove-PSDrive** . De cmdlet **Remove-PSDrive** is eenvoudig te gebruiken. Als u een specifiek Windows Power Shell-station wilt verwijderen, geeft u gewoon de naam van het Windows Power Shell-station op.
 
-Als u bijvoorbeeld het Office hebt toegevoegd **:** Windows Power Shell-station, zoals wordt weer gegeven in het onderwerp **New-PSDrive** , kunt u het verwijderen door het volgende te typen:
+Als u bijvoorbeeld het **Office:** Windows Power Shell-station hebt toegevoegd, zoals wordt weer gegeven in het onderwerp **New-PSDrive** , kunt u het verwijderen door het volgende te typen:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-De cvkey verwijderen **:** Windows Power Shell-station, dat ook wordt weer gegeven in het onderwerp **New-PSDrive** , gebruikt u de volgende opdracht:
+Als u het **cvkey:** Windows Power Shell-station, dat ook wordt weer gegeven in het onderwerp **New-PSDrive** , wilt verwijderen, gebruikt u de volgende opdracht:
 
 ```powershell
 Remove-PSDrive -Name cvkey
@@ -173,4 +173,4 @@ At line:1 char:15
 
 ## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Stations toevoegen en verwijderen buiten Windows Power shell
 
-Windows Power shell detecteert bestandssysteem stations die worden toegevoegd of verwijderd in Windows, met inbegrip van netwerk stations die zijn toegewezen, USB-stations die zijn aangesloten en stations die worden verwijderd met behulp van de opdracht **net use** of de  **De methoden WScript. NetworkMapNetworkDrive** en **RemoveNetworkDrive** van een Windows Script Host (WSH)-script.
+Windows Power shell detecteert bestandssysteem stations die worden toegevoegd of verwijderd in Windows, met inbegrip van netwerk stations die zijn toegewezen, USB-stations die zijn aangesloten en stations die worden verwijderd met behulp van de opdracht **net use** of de methoden **WScript. NetworkMapNetworkDrive** en **RemoveNetworkDrive** van een Windows Script Host (WSH)-script.

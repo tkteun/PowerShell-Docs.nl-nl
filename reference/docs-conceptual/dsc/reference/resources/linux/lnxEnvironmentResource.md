@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxEnvironment-resource
 ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941437"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-resource
@@ -26,26 +26,26 @@ nxEnvironment <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
+|Naam |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
 |Value |De waarde die moet worden toegewezen aan de omgevings variabele. |
-|Path |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in `$true` op **als de variabele een padvariabele** is. anders stelt u deze in `$false`op. De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
+|Pad |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in op `$true` **als de variabele een padvariabele** is; Stel deze in andere gevallen in op `$false`. De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
 |Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de variabele bestaat. Stel deze eigenschap in op **presen teren** om ervoor te zorgen dat de variabele bestaat. Stel deze in op **afwezig** om te controleren of de variabele niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="additional-information"></a>Als u meer informatie
 
-- Als het **pad** ontbreekt of is ingesteld `$false`op, worden omgevings variabelen `/etc/environment`beheerd in.
-  Uw Program ma's of scripts kunnen de configuratie van het `/etc/environment` bestand vereisen om toegang te krijgen tot de variabelen van de beheerde omgeving.
-- Als **Path** is ingesteld op `$true`, wordt de omgevings variabele in het bestand `/etc/profile.d/DSCenvironment.sh`beheerd. Dit bestand wordt gemaakt als het niet bestaat. Als **het** is ingesteld op **afwezig** en **pad** is ingesteld op `$true`, wordt een bestaande omgevings variabele alleen uit `/etc/profile.d/DSCenvironment.sh` andere bestanden verwijderd.
+- Als het **pad** ontbreekt of is ingesteld op `$false`, worden omgevings variabelen in `/etc/environment`beheerd.
+  Uw Program ma's of scripts kunnen configuratie nodig hebben om het `/etc/environment`-bestand te bron om toegang te krijgen tot de variabelen van de beheerde omgeving.
+- Als **pad** is ingesteld op `$true`, wordt de omgevings variabele beheerd in het bestand `/etc/profile.d/DSCenvironment.sh`. Dit bestand wordt gemaakt als het niet bestaat. Als **dat** is ingesteld op **afwezig** en het **pad** is ingesteld op `$true`, wordt een bestaande omgevings variabele alleen verwijderd uit `/etc/profile.d/DSCenvironment.sh` en niet uit andere bestanden.
 
 ## <a name="example"></a>Voorbeeld
 

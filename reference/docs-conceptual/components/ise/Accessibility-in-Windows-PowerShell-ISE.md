@@ -1,161 +1,161 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030648"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
-Dit onderwerp beschrijft de toegankelijkheidsfuncties van Windows PowerShell Integrated Scripting Environment (ISE) die handig zijn wellicht.
+Dit onderwerp bevat een beschrijving van de toegankelijkheids functies van Windows Power shell Integrated Scripting Environment (ISE) die u mogelijk nuttig vindt.
 
-* [Het wijzigen van de grootte en locatie van de Console en het Script deelvensters](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [De grootte en locatie van de console en script deel vensters wijzigen](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
 * [Sneltoetsen voor het bewerken van tekst](#keyboard-shortcuts-for-editing-text)
 * [Sneltoetsen voor het uitvoeren van scripts](#keyboard-shortcuts-for-running-scripts)
-* [Sneltoetsen voor het aanpassen van de weergave](#keyboard-shortcuts-for-customizing-the-view)
-* [Sneltoetsen voor fouten opsporen in scripts](#keyboard-shortcuts-for-debugging-scripts)
-* [Sneltoetsen voor Windows PowerShell-tabbladen](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [Sneltoetsen voor het aanpassen van de weer gave](#keyboard-shortcuts-for-customizing-the-view)
+* [Sneltoetsen voor fout opsporing in scripts](#keyboard-shortcuts-for-debugging-scripts)
+* [Sneltoetsen voor Windows Power shell-tabbladen](#keyboard-shortcuts-for-windows-powershell-tabs)
 * [Sneltoetsen voor het starten en afsluiten](#keyboard-shortcuts-for-starting-and-exiting)
 
-Microsoft streeft ernaar om zijn producten en diensten gebruiksvriendelijker te maken voor iedereen. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE beter toegankelijk voor mensen met beperkingen.
+Microsoft streeft ernaar om zijn producten en diensten gebruiksvriendelijker te maken voor iedereen. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE toegankelijker maken voor mensen met een handicap.
 
-Hoog contrast biedt ondersteuning voor Windows PowerShell ISE. Voor de slechtzienden onderbrekingspunt informatie is beschikbaar via de cmdlets voor het beheren van onderbrekingspunten, zoals [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) en [Set PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Zie voor meer informatie. 'Over het beheren van onderbrekingspunten' in [How to Debug Scripts in de Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Naast de toegankelijkheidsfuncties en hulpprogramma's in Microsoft Windows maken maken de volgende functies van Windows PowerShell ISE toegankelijker voor mensen met een handicap:
+Windows PowerShell ISE ondersteunt de modus Hoog contrast. Voor visueel gehandicapten is informatie over onderbrekings punten beschikbaar via de cmdlets voor het beheren van onderbrekings punten, zoals [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) en [set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Zie voor meer informatie ' onderbrekings punten beheren ' in [de Windows PowerShell ISE fouten opsporen in scripts](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Naast de toegankelijkheids functies en-hulpprogram ma's in micro soft Windows maken de volgende functies Windows PowerShell ISE meer toegankelijk voor mensen met een handicap:
 
 - Sneltoetsen
 
-- Syntaxis kleur tabel en de mogelijkheid om verschillende andere om kleurinstellingen te wijzigen met behulp van de [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting-object.
+- De syntaxis kleur tabel en de mogelijkheid om verschillende andere kleur instellingen te wijzigen met behulp van het script object [$psISE. options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) .
 
-- Grootte wijzigen van tekst
+- Teken grootte wijzigen
 
-## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Het wijzigen van de grootte en locatie van de Console en het Script deelvensters
+## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>De grootte en locatie van de console en script deel vensters wijzigen
 
-De volgende stappen kunt u de locatie van het consolevenster en het scriptvenster en de grootte wijzigen. Wanneer u de Windows PowerShell ISE opnieuw opent, wordt de grootte en locatie aangebrachte wijzigingen worden bewaard.
+U kunt de volgende stappen gebruiken om de grootte en locatie van het console venster en het Script venster te wijzigen. Wanneer u de Windows PowerShell ISE opnieuw opent, blijven de grootte-en locatie wijzigingen die u hebt aangebracht bewaard.
 
-### <a name="to-resize-the-script-pane-and-console-pane"></a>Formaat van het scriptvenster en consolevenster
+### <a name="to-resize-the-script-pane-and-console-pane"></a>Het formaat van het Script venster en het console venster wijzigen
 
-1. De muisaanwijzer op de regel splitsen tussen het scriptvenster en consolevenster onderbreken.
+1. Houd de muis aanwijzer stil op de gesplitste lijn tussen het Script venster en het console venster.
 
-2. Wanneer de muisaanwijzer in een dubbele pijl verandert, Sleep de rand om de grootte van het deelvenster te wijzigen.
+2. Wanneer de muis aanwijzer verandert in een twee puntige pijl, sleept u de rand om de grootte van het deel venster te wijzigen.
 
-### <a name="to-move-the-script-pane-and-console-pane"></a>Het scriptvenster en consolevenster verplaatsen
+### <a name="to-move-the-script-pane-and-console-pane"></a>Het Script venster en het console venster verplaatsen
 
 Voer een van de volgende handelingen uit:
 
-- Voor het verplaatsen van het scriptvenster boven het consolevenster, drukt u op **CTRL + 1** of klik op de werkbalk op de **Script deelvenster-bovenaan weergeven** pictogram, of in de **weergave** menu, klikt u op **weergeven Deelvenster boven script**.
+- Als u het Script venster boven het console venster wilt verplaatsen, drukt u op **CTRL + 1** of klikt u op de werk balk op het bovenste pictogram van het **Script venster weer geven** of klikt u in het menu **weer gave** op **Script venster bovenaan weer geven**.
 
-- Voor het verplaatsen van het scriptvenster aan de rechterkant van het consolevenster, drukt u op **CTRL + 2** of klik op de werkbalk op de **weergeven Script deelvenster rechts** pictogram, of in de **weergave** in het menu klikt u op **Geven scriptvenster**.
+- Als u het Script venster naar de rechter kant van het console venster wilt verplaatsen, drukt u op **CTRL + 2** of klikt u op de werk balk op het pictogram **Script venster rechts tonen** of in het menu **weer gave** op **Script venster rechts weer geven**.
 
-- Voor maximale het scriptvenster, drukt u op **CTRL + 3** of klik op de werkbalk op de **weergeven Script deelvenster gemaximaliseerd** pictogram, of in de **weergave** menu, klikt u op **Script weergeven Deelvenster gemaximaliseerd**.
+- Om het deel venster script te maximaliseren, drukt u op **CTRL + 3** of klikt u op de werk balk op het **deel venster script weer geven pictogram gemaximaliseerd** , of klikt u in het menu **weer gave** op **Script venster gemaximaliseerd weer geven**.
 
-- Als u wilt het consolevenster te maximaliseren en verbergen van het scriptvenster, aan de rechterkant rand van de rij met tabs, klikt u op de **scriptvenster verbergen** pictogram in de **weergave** menu, klikt u op te heffen de **scriptvenster weergeven** menu-optie.
+- Als u het console venster wilt maximaliseren en het deel venster script wilt verbergen, klikt u op het **deel venster script verbergen** in het menu **weer gave** en schakelt u de optie **script paneel weer geven** uit.
 
-- Als u wilt het scriptvenster weergeven wanneer het consolevenster is gemaximaliseerd, klikt u op de rand uiterst rechts van de rij met tabs, klikt u op de **scriptvenster weergeven** pictogram, of in de **weergave** menu, klik op de **Script weergeven Deelvenster** menu-optie.
+- Als u het Script venster wilt weer geven wanneer het console venster is gemaximaliseerd, klikt u aan de rechter kant van de rij met tabbladen op het **deel venster script weer geven** of in het menu **weer gave** op de menu optie **script deel venster weer** geven te selecteren.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Sneltoetsen voor het bewerken van tekst
 
-U kunt de volgende sneltoetsen gebruiken wanneer u tekst kunt bewerken.
+U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
-|Bewerking|Sneltoetsen|Gebruik in|
+|Actie|Sneltoetsen|Gebruiken in|
 |----------|----------------------|----------|
-|**kopiëren**|Ctrl + C|Scriptvenster, consolevenster|
-|**Knippen**|CTRL + X|Scriptvenster, consolevenster|
-|**Zoeken in Script**|CTRL+F|Scriptvenster|
-|**Volgende zoeken in Script**|F3|Scriptvenster|
-|**Vorige in Script zoeken**|SHIFT + F3|Scriptvenster|
-|**Plakken**|Ctrl + V|Scriptvenster, consolevenster|
-|**Redo**|CTRL + Y|Scriptvenster, consolevenster|
-|**Vervang in Script**|CTRL + H|Scriptvenster|
-|**Opslaan**|CTRL+S|Scriptvenster|
-|**Alles selecteren**|Ctrl + A|Scriptvenster, consolevenster|
-|**Ongedaan maken**|CTRL + Z|Scriptvenster, consolevenster|
+|**Copy**|Ctrl + C|Script venster, console venster|
+|**Verminderen**|CTRL + X|Script venster, console venster|
+|**Zoeken in script**|CTRL+F|Script venster|
+|**Volgende zoeken in script**|F3|Script venster|
+|**Vorige zoeken in script**|SHIFT + F3|Script venster|
+|**Plakken**|Ctrl + V|Script venster, console venster|
+|**Redo**|CTRL + Y|Script venster, console venster|
+|**Vervangen in script**|CTRL + H|Script venster|
+|**Opslaan**|CTRL+S|Script venster|
+|**Alles selecteren**|Ctrl + A|Script venster, console venster|
+|**Opdracht**|CTRL + Z|Script venster, console venster|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 
-U kunt de volgende sneltoetsen gebruiken bij het uitvoeren van scripts in het scriptvenster.
+U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het Script-venster.
 
-|Bewerking|Sneltoets|
+|Actie|Sneltoets|
 |----------|---------------------|
-|**Nieuw**|CTRL+N|
-|**openen**|CTRL + O|
+|**Nieuw**|CTRL + N|
+|**Lopend**|CTRL + O|
 |**Uitvoeren**|F5|
 |**Selectie uitvoeren**|F8|
-|**Stop Execution**|CTRL + BREAK. CTRL + C kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst geselecteerd).|
-|**Tabblad** (naar het volgende script)|CTRL + TAB **Opmerking:** Tabblad naar het volgende script werkt alleen wanneer u een eenmalige PowerShell-tabblad openen, of als u meer dan één PowerShell-tabblad openen, maar de focus zich in het scriptvenster.|
-|**Tabblad** (naar het vorige script)|CTRL + SHIFT + TAB **Opmerking:** Tabblad naar het vorige script werkt wanneer u slechts één PowerShell-tabblad openen, of als er meer dan één PowerShell-tabblad openen en de focus zich in het scriptvenster.|
+|**Uitvoering stoppen**|CTRL + onderbreken. CTRL + C kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).|
+|**Tabblad** (naar volgend script)|CTRL + TAB **Note:** tab naar volgende script werkt alleen wanneer er één Power shell-tabblad is geopend of als u meer dan één Power shell-tabblad hebt geopend, maar de focus is in het Script-venster.|
+|**Tab** (naar het vorige script)|CTRL + SHIFT + TAB **Opmerking:** tab naar vorig script werkt wanneer er slechts één Power shell-tabblad is geopend, of als u meer dan één Power shell-tabblad hebt geopend en de focus in het Script-venster wordt weer geven.|
 
-## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Sneltoetsen voor het aanpassen van de weergave
+## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Sneltoetsen voor het aanpassen van de weer gave
 
-U kunt de volgende sneltoetsen gebruiken om aan te passen van de weergave in Windows PowerShell ISE. Ze zijn toegankelijk is vanaf de deelvensters in de toepassing.
+U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell ISE aan te passen. Ze zijn toegankelijk vanuit alle deel Vensters in de toepassing.
 
-|Bewerking|Sneltoets|
+|Actie|Sneltoets|
 |----------|---------------------|
-|**Ga naar het consolevenster**|CTRL + D|
-|**Ga naar scriptvenster**|CTRL + I|
-|**Het scriptvenster weergeven**|CTRL + R|
-|**Scriptvenster verbergen**|CTRL + R|
+|**Naar het console venster gaan**|CTRL+D|
+|**Naar het Script venster gaan**|CTRL + I|
+|**Script venster weer geven**|CTRL + R|
+|**Script venster verbergen**|CTRL + R|
 ||
-|**Scriptvenster omhoog verplaatsen**|CTRL + 1|
-|**Naar rechts verplaatsen scriptvenster**|CTRL + 2|
-|**Scriptvenster maximaliseren**|CTRL + 3|
-|**Inzoomen**|CTRL + PLUSTEKEN (+)|
+|**Script paneel omhoog verplaatsen**|CTRL+1|
+|**Script venster naar rechts verplaatsen**|CTRL+2|
+|**Script venster maximaliseren**|CTRL+3|
+|**Inzoomen**|CTRL + PLUS TEKEN|
 |**Uitzoomen**|CTRL + MINTEKEN|
 
-## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Sneltoetsen voor fouten opsporen in scripts
+## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Sneltoetsen voor fout opsporing in scripts
 
-U kunt de volgende sneltoetsen gebruiken wanneer u fouten opsporen in scripts.
+U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
-|Bewerking|Sneltoets|Gebruik in|
+|Actie|Sneltoets|Gebruiken in|
 |----------|---------------------|----------|
-|**/ Doorgaan met uitvoeren**|F5|Scriptvenster, bij het opsporen van fouten in een script|
-|**Stap in**|F11|Scriptvenster, bij het opsporen van fouten in een script|
-|**Stap Over**|F10|Scriptvenster, bij het opsporen van fouten in een script|
-|**Stap uit**|SHIFT + F11|Scriptvenster, bij het opsporen van fouten in een script|
-|**Aanroepstack weergeven**|CTRL + SHIFT + D|Scriptvenster, bij het opsporen van fouten in een script|
-|**Lijst met onderbrekingspunten**|CTRL + SHIFT + L|Scriptvenster, bij het opsporen van fouten in een script|
-|**Onderbrekingspunt in-/ uitschakelen**|F9|Scriptvenster, bij het opsporen van fouten in een script|
-|**Verwijder alle onderbrekingspunten**|CTRL + SHIFT + F9|Scriptvenster, bij het opsporen van fouten in een script|
-|**Stop Debugger**|SHIFT + F5|Scriptvenster, bij het opsporen van fouten in een script|
+|**Uitvoeren/door gaan**|F5|Script-deel venster bij fout opsporing van een script|
+|**Stap in**|F11|Script-deel venster bij fout opsporing van een script|
+|**Stap over**|F10|Script-deel venster bij fout opsporing van een script|
+|**Stap uit**|SHIFT + F11|Script-deel venster bij fout opsporing van een script|
+|**Aanroep stack weer geven**|CTRL + SHIFT + D|Script-deel venster bij fout opsporing van een script|
+|**Onderbrekings punten weer geven**|CTRL + SHIFT + L|Script-deel venster bij fout opsporing van een script|
+|**Onderbrekings punt in-/uitschakelen**|F9|Script-deel venster bij fout opsporing van een script|
+|**Alle onderbrekings punten verwijderen**|CTRL + SHIFT + F9|Script-deel venster bij fout opsporing van een script|
+|**Fout opsporing stoppen**|SHIFT + F5|Script-deel venster bij fout opsporing van een script|
 
 > [!NOTE]
 >
-> U kunt ook de sneltoetsen die is ontworpen voor de Windows PowerShell-console wanneer u fouten opsporen in scripts in Windows PowerShell ISE gebruiken. Voor het gebruik van deze snelkoppelingen, moet u de snelkoppeling naar de typen in het consolevenster en druk op ENTER.
+> U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het console venster typen en op ENTER drukken.
 
-|Bewerking|Sneltoets|Gebruik in|
+|Actie|Sneltoets|Gebruiken in|
 |----------|---------------------|----------|
-|**Doorgaan**|C|Consolevenster bij het opsporen van fouten in een script|
-|**Stap in**|S|Consolevenster bij het opsporen van fouten in een script|
-|**Stap Over**|V|Consolevenster bij het opsporen van fouten in een script|
-|**Stap uit**|O|Consolevenster bij het opsporen van fouten in een script|
-|**Herhaal de laatste opdracht** (voor stap of stap Over)|ENTER|Consolevenster bij het opsporen van fouten in een script|
-|**Aanroepstack weergeven**|K|Consolevenster bij het opsporen van fouten in een script|
-|**Stop de foutopsporing**|Q|Consolevenster bij het opsporen van fouten in een script|
-|**Overzicht van het Script**|L|Consolevenster bij het opsporen van fouten in een script|
-|**Console Debug-opdrachten weergeven**|H of?|Consolevenster bij het opsporen van fouten in een script|
+|**Doen**|C|Console venster, bij fout opsporing van een script|
+|**Stap in**|S|Console venster, bij fout opsporing van een script|
+|**Stap over**|V|Console venster, bij fout opsporing van een script|
+|**Stap uit**|O|Console venster, bij fout opsporing van een script|
+|**Laatste opdracht herhalen** (voor stap in of stap voor)|ENTER|Console venster, bij fout opsporing van een script|
+|**Aanroep stack weer geven**|K|Console venster, bij fout opsporing van een script|
+|**Fout opsporing stoppen**|Q|Console venster, bij fout opsporing van een script|
+|**Het script weer geven**|L|Console venster, bij fout opsporing van een script|
+|**Opties voor fout opsporing in console weer geven**|H of?|Console venster, bij fout opsporing van een script|
 
-## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Sneltoetsen voor Windows PowerShell-tabbladen
+## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Sneltoetsen voor Windows Power shell-tabbladen
 
-U kunt de volgende sneltoetsen gebruiken wanneer u Windows PowerShell-tabbladen.
+U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen gebruikt.
 
-|Bewerking|Sneltoets|
+|Actie|Sneltoets|
 |----------|---------------------|
-|**PowerShell-tabblad sluiten**|CTRL + W|
-|**Nieuwe PowerShell-tabblad**|CTRL + T|
-|**Vorige PowerShell-tabblad**|CTRL + SHIFT + TAB. Met deze snelkoppeling werkt alleen als er geen bestanden geopend op een PowerShell-tabblad zijn.|
-|**Volgende Windows PowerShell-tabblad**|CTRL + TAB. Met deze snelkoppeling werkt alleen als er geen bestanden geopend op een PowerShell-tabblad zijn.|
+|**Tabblad Power shell sluiten**|CTRL + W|
+|**Nieuw Power shell-tabblad**|CTRL+T|
+|**Vorig Power shell-tabblad**|CTRL + SHIFT + TAB. Deze snelkoppeling werkt alleen als er geen bestanden zijn geopend op een Power shell-tabblad.|
+|**Volgende Windows Power shell-tabblad**|CTRL + TAB. Deze snelkoppeling werkt alleen als er geen bestanden zijn geopend op een Power shell-tabblad.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
 
-U kunt de volgende sneltoetsen gebruiken om de Windows PowerShell-console (PowerShell.exe) te starten of om Windows PowerShell ISE af te sluiten.
+U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (Power shell. exe) te starten of Windows PowerShell ISE af te sluiten.
 
-|Bewerking|Sneltoets|
+|Actie|Sneltoets|
 |----------|---------------------|
-|**Exit**|ALT+F4|
-|**Start PowerShell.exe** (Windows PowerShell-console)|CTRL + SHIFT + P|
+|**Afsluiten**|ALT+F4|
+|**Power shell. exe starten** (Windows Power shell-console)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>Zie ook
 
-[Maak kennis met de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+[Introductie van de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

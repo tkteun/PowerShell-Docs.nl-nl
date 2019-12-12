@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357202"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Een Windows PowerShell-stationprovider maken
@@ -31,11 +31,11 @@ De provider van het station moet een .NET-klasse definiëren die is afgeleid van
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-In dit voor beeld geeft het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) een beschrijvende naam op voor de provider en de specifieke Windows Power shell-mogelijkheden die de provider beschikbaar maakt voor de Windows Power shell runtime tijdens het verwerken van opdrachten. De mogelijke waarden voor de provider mogelijkheden worden gedefinieerd door de inventarisatie [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Deze schijf provider biedt geen ondersteuning voor een van deze mogelijkheden.
+In dit voor beeld geeft het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) een beschrijvende naam op voor de provider en de specifieke Windows Power shell-mogelijkheden die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens de verwerking van de opdracht. De mogelijke waarden voor de provider mogelijkheden worden gedefinieerd door de inventarisatie [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Deze schijf provider biedt geen ondersteuning voor een van deze mogelijkheden.
 
 ## <a name="defining-base-functionality"></a>Basis functionaliteit definiëren
 
-Zoals beschreven in het [ontwerp van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) afgeleid van de basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . Hiermee worden de methoden gedefinieerd die nodig zijn voor het initialiseren en ongedaan maakt van de initialisatie van de provider. Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor informatie over het implementeren van de functionaliteit voor het toevoegen van toepassingsspecifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit die wordt verschaft door Windows Power shell.
+Zoals beschreven in het [ontwerp van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) afgeleid van de basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) die de methoden definieert die nodig zijn voor het initialiseren en ongedaan maakt van de initialisatie van de provider. Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor informatie over het implementeren van de functionaliteit voor het toevoegen van toepassingsspecifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit die wordt verschaft door Windows Power shell.
 
 ## <a name="creating-drive-state-information"></a>Informatie over de status van stations maken
 
@@ -61,13 +61,13 @@ Uw onderdrukking van deze methode moet het volgende doen:
 
 - Wijzig het [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station beschrijft met de vereiste prestaties of betrouw baarheid, of geef extra gegevens op voor aanroepers met behulp van het station.
 
-- Los fouten op met behulp van de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) en retour neer `null`.
+- Fout bij het verwerken van de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) en retour `null`.
 
   Deze methode retourneert de stationsgegevens die zijn door gegeven aan de methode of een providerspecifieke versie van de schijf.
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Dynamische para meters aan NewDrive koppelen
 
-Voor de cmdlet `New-PSDrive` die wordt ondersteund door de provider van uw schijf, zijn mogelijk extra para meters vereist. Om deze dynamische para meters aan de cmdlet te koppelen, implementeert de provider de methode [System. Management. Automation. provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
+De `New-PSDrive`-cmdlet die wordt ondersteund door de provider van uw schijf, vereist mogelijk extra para meters. Om deze dynamische para meters aan de cmdlet te koppelen, implementeert de provider de methode [System. Management. Automation. provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
 
 Deze schijf provider overschrijft deze methode niet. De volgende code toont echter de standaard implementatie van deze methode:
 
@@ -81,7 +81,7 @@ De volgende code toont de implementatie van de methode [System. Management. Auto
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
 
-Als het station kan worden verwijderd, moet de methode de informatie retour neren die wordt door gegeven aan de methode via de para meter `drive`. Als het station niet kan worden verwijderd, moet de methode een uitzonde ring schrijven en vervolgens `null` retour neren. Als uw provider deze methode niet overschrijft, retourneert de standaard implementatie van deze methode alleen de stationsgegevens die zijn door gegeven als invoer.
+Als het station kan worden verwijderd, moet de methode de informatie retour neren die wordt door gegeven aan de methode via de para meter `drive`. Als het station niet kan worden verwijderd, moet de methode een uitzonde ring schrijven en vervolgens `null`retour neren. Als uw provider deze methode niet overschrijft, retourneert de standaard implementatie van deze methode alleen de stationsgegevens die zijn door gegeven als invoer.
 
 ## <a name="initializing-default-drives"></a>Standaard stations initialiseren
 
@@ -95,7 +95,7 @@ Deze stations-provider overschrijft de methode [System. Management. Automation. 
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Wat u moet weten over implementatie van InitializeDefaultDrives
 
-Alle providers van stations moeten een basis station koppelen om de gebruiker te helpen met vind baarheid. In het hoofd station kunnen locaties worden weer geven die fungeren als Roots voor andere gekoppelde schijven. Zo kan de Active Directory provider een station maken met een lijst met de naamgevings contexten die zijn gevonden in de kenmerken van de `namingContext` op de DSE (root Distributed System Environment). Dit helpt gebruikers bij het detecteren van koppel punten voor andere stations.
+Alle providers van stations moeten een basis station koppelen om de gebruiker te helpen met vind baarheid. In het hoofd station kunnen locaties worden weer geven die fungeren als Roots voor andere gekoppelde schijven. Zo kan de Active Directory provider een station maken met een lijst met de naamgevings contexten die zijn gevonden in de `namingContext` kenmerken van de basis gedistribueerde systeem omgeving (DSE). Dit helpt gebruikers bij het detecteren van koppel punten voor andere stations.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -105,7 +105,7 @@ Zie [AccessDbProviderSample02 code sample](./accessdbprovidersample02-code-sampl
 
 Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell, kunt u deze testen door de ondersteunde cmdlets uit te voeren op de opdracht regel, inclusief alle cmdlets die beschikbaar zijn gemaakt door afleiding. We gaan de provider van het voorbeeld station testen.
 
-1. Voer de cmdlet `Get-PSProvider` uit om de lijst met providers op te halen om ervoor te zorgen dat de AccessDB-schijf provider aanwezig is:
+1. Voer de `Get-PSProvider` cmdlet uit om de lijst met providers op te halen om ervoor te zorgen dat de AccessDB-schijf provider aanwezig is:
 
    **PS > `Get-PSProvider`**
 

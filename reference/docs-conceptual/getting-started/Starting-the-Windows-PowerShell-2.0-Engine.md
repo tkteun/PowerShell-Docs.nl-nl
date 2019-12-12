@@ -1,74 +1,74 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: De Windows PowerShell 2.0-engine starten
 ms.openlocfilehash: 824077008d2dcfd707e977d2112f0882d07a8aca
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030439"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-engine starten
 
-In deze sectie wordt uitgelegd hoe u de Windows PowerShell 2.0-Engine op Windows 8.1, Windows Server 2012 R2, Windows 8 en Windows Server 2012, waaronder de Windows PowerShell 2.0-Engine, en op andere systemen op welke Windows PowerShell 2.0, Windows PowerShell starten 3.0 en Windows PowerShell 4.0 zijn geïnstalleerd.
+In deze sectie wordt uitgelegd hoe u de Windows Power Shell 2,0-Engine start op Windows 8,1, Windows Server 2012 R2, Windows 8 en Windows Server 2012, waaronder de Windows Power Shell 2,0-engine, en op andere systemen waarop Windows Power Shell 2,0, Windows Power shell 3,0 en Windows Power Shell 4,0 zijn geïnstalleerd.
 
-Windows PowerShell 4.0 en Windows PowerShell 3.0 zijn ontworpen voor achterwaartse compatibiliteit met Windows PowerShell 2.0. -Cmdlets, providers, -modules, modules en scripts die zijn geschreven voor Windows PowerShell 2.0 uitvoeren in Windows PowerShell 4.0 en Windows PowerShell 3.0 ongewijzigd. Echter, vanwege een wijziging in het beleid van de runtime-activering in Microsoft .NET Framework 4, Windows PowerShell-host-programma's die zijn geschreven voor Windows PowerShell 2.0 en gecompileerd met Common Language Runtime (CLR) 2.0 kunnen niet worden uitgevoerd zonder aanpassingen in Windows PowerShell 3.0 of Windows PowerShell 4.0, die met CLR-4.0 worden gecompileerd. De Windows PowerShell 2.0-Engine moet worden gebruikt alleen wanneer een bestaand script is bedoeld of hostprogramma kan niet worden uitgevoerd omdat deze niet compatibel met Windows PowerShell 4.0, Windows PowerShell 3.0 of Microsoft .NET Framework 4 is. Dergelijke gevallen wordt wordt een zeldzaam verwacht.
+Windows Power Shell 4,0 en Windows Power Shell 3,0 zijn ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0, worden ongewijzigd uitgevoerd in Windows Power Shell 4,0 en Windows Power Shell 3,0. Als gevolg van een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4, Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 kunnen niet zonder aanpassing worden uitgevoerd in Windows Power Shell 3,0 of Windows Power Shell 4,0, die zijn gecompileerd met CLR 4,0. De Windows Power Shell 2,0-engine is alleen bedoeld voor gebruik wanneer een bestaand script of hostprogramma niet kan worden uitgevoerd omdat het niet compatibel is met Windows Power Shell 4,0, Windows Power Shell 3,0 of Microsoft .NET Framework 4. Dergelijke gevallen worden naar verwachting zeldzaam.
 
-Veel programma's waarvoor de Windows PowerShell 2.0-Engine wordt automatisch gestart. Deze instructies zijn opgenomen voor de zeldzame gevallen waarin u moet de engine om handmatig te starten.
+Veel Program ma's die de Windows Power Shell 2,0-engine nodig hebben, worden automatisch gestart. Deze instructies zijn opgenomen in zeldzame gevallen waarin u de engine hand matig moet starten.
 
-## <a name="installing-and-enabling-required-programs"></a>Installeren en inschakelen van vereiste programma 's
+## <a name="installing-and-enabling-required-programs"></a>Vereiste Program Ma's installeren en inschakelen
 
-Voordat u begint met de Windows PowerShell 2.0-Engine, moet u de Windows PowerShell 2.0-Engine en Microsoft .NET Framework 3.5 met Service Pack 1 inschakelen. Zie voor instructies [Windows PowerShell installeren](../install/Installing-Windows-PowerShell.md).
+Voordat u de Windows Power Shell 2,0-Engine start, schakelt u de Windows Power Shell 2,0-engine in en Microsoft .NET Framework 3,5 met Service Pack 1. Zie [Windows Power Shell installeren](../install/Installing-Windows-PowerShell.md)voor instructies.
 
-Systemen hebben alle vereiste onderdelen op welke Windows Management Framework 4.0 of Windows Management Framework 3.0 zijn geïnstalleerd. Er is geen verdere configuratie nodig. Voor informatie over het installeren van [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) of Windows Management Framework 3.0, Zie [Windows PowerShell installeren](../install/Installing-Windows-PowerShell.md).
+Systemen waarop Windows Management Framework 4,0 of Windows Management Framework 3,0 zijn geïnstalleerd, hebben alle vereiste onderdelen. U hoeft verder niets te configureren. Zie [Windows Power Shell installeren](../install/Installing-Windows-PowerShell.md)voor meer informatie over het installeren van [windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkID=293881) of Windows Management Framework 3,0.
 
-## <a name="how-to-start-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-Engine starten
+## <a name="how-to-start-the-windows-powershell-20-engine"></a>De Windows Power Shell 2,0-engine starten
 
-Wanneer u Windows PowerShell Start wordt standaard de nieuwste versie gestart. Voor het starten van Windows PowerShell met de Windows PowerShell 2.0-Engine, moet u de versie-parameter van PowerShell.exe gebruiken. U kunt de opdracht uitvoeren bij een opdrachtprompt, met inbegrip van Windows PowerShell en Cmd.exe.
+Wanneer u Windows Power shell start, wordt standaard de nieuwste versie gestart. Als u Windows Power shell met de Windows Power Shell 2,0-engine wilt starten, gebruikt u de versie parameter van Power shell. exe. U kunt de opdracht uitvoeren vanaf een opdracht prompt, waaronder Windows Power shell en cmd. exe.
 
 ```
 PowerShell.exe -Version 2
 ```
 
-## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Een externe sessie starten met de Windows PowerShell 2.0-Engine
+## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Een externe sessie starten met de Windows Power Shell 2,0-engine
 
-Voor het uitvoeren van de Windows PowerShell 2.0-Engine in een externe sessie, maakt u een sessieconfiguratie (ook wel bekend als een ' eindpunt') op de externe computer waarop de Windows PowerShell 2.0-Engine wordt geladen. De sessieconfiguratie van de wordt opgeslagen op de externe computer en kan worden gebruikt door een geautoriseerde gebruiker maken sessies die gebruikmaken van de Windows PowerShell 2.0-Engine.
+Als u de Windows Power Shell 2,0-engine wilt uitvoeren in een externe sessie, maakt u een sessie configuratie (ook wel een ' eind punt ' genoemd) op de externe computer die de Windows Power Shell 2,0-engine laadt. De sessie configuratie wordt opgeslagen op de externe computer en kan worden gebruikt door een geautoriseerde gebruiker om sessies te maken die gebruikmaken van de Windows Power Shell 2,0-engine.
 
-Dit is een geavanceerde taak die wordt doorgaans uitgevoerd door een systeembeheerder.
+Dit is een geavanceerde taak die meestal wordt uitgevoerd door een systeem beheerder.
 
-De volgende procedure maakt gebruik van de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet voor het maken van een sessieconfiguratie die gebruikmaakt van de Windows PowerShell 2.0-Engine. U kunt ook de **PowerShellVersion** parameter van de [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet voor het maken van een sessie-configuratiebestand voor een sessie die de Windows PowerShell 2.0-Engine wordt geladen en u kunt de **PSVersion** parameter van de [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parameter voor het wijzigen van de sessieconfiguratie van een voor het gebruik van de Windows PowerShell 2.0-Engine.
+In de volgende procedure wordt de para meter **PSVersion** van de cmdlet [REGI ster-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) gebruikt om een sessie configuratie te maken die gebruikmaakt van de Windows Power Shell 2,0-engine. U kunt ook de para meter **PowerShellVersion** van de cmdlet [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) gebruiken om een sessie configuratie bestand te maken voor een sessie die de Windows Power Shell 2,0-engine laadt en u kunt de **PSVersion** -para meter van de para meter [set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) gebruiken om een sessie configuratie te wijzigen voor het gebruik van de Windows Power Shell 2,0-engine.
 
-Zie voor meer informatie over de sessie-configuratiebestanden, [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Zie voor meer informatie over sessieconfiguraties, met inbegrip van setup en beveiliging, [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+Zie [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)voor meer informatie over sessie configuratie bestanden. Zie [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab)voor meer informatie over de configuratie van sessies, met inbegrip van Setup en beveiliging.
 
-#### <a name="to-start-a-remote-windows-powershell-20-session"></a>Een externe Windows PowerShell 2.0-sessie te starten
+#### <a name="to-start-a-remote-windows-powershell-20-session"></a>Een externe Windows Power Shell 2,0-sessie starten
 
-1. Voor het maken van een sessieconfiguratie waarvoor de Windows PowerShell 2.0-Engine gebruikt de **PSVersion** parameter van de [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet met de waarde '2.0'. Deze opdracht uitvoeren op de computer op het 'server-side' of de ontvangende kant van de verbinding.
+1. Als u een sessie configuratie wilt maken waarvoor de Windows Power Shell 2,0-engine is vereist, gebruikt u de para meter **PSVersion** van de cmdlet [REGI ster-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) met de waarde "2,0". Voer deze opdracht uit op de computer aan de server zijde of het ontvangende einde van de verbinding.
 
-   De volgende voorbeeldopdracht wordt de configuratie van de PS2-sessie op de computer Server01 gemaakt. Als u wilt deze opdracht uitvoert, start u Windows PowerShell 4.0 of Windows PowerShell 3.0 met de **als administrator uitvoeren** optie.
+   Met de volgende voorbeeld opdracht wordt de PS2-sessie configuratie op de Server01-computer gemaakt. Als u deze opdracht wilt uitvoeren, start u Windows Power Shell 4,0 of Windows Power Shell 3,0 met de optie **als administrator uitvoeren** .
 
    ```powershell
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. Gebruik voor het maken van een sessie op de computer Server01 die gebruikmaakt van de sessieconfiguratie PS2 de **ConfigurationName** parameter van cmdlets die het maken van een externe sessie, zoals de [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet.
+2. Als u een sessie op de Server01-computer wilt maken die gebruikmaakt van de PS2-sessie configuratie, gebruikt u de para meter **configuratiepad** van cmdlets die een externe sessie maken, zoals de cmdlet [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) .
 
-   Wanneer een sessie die gebruikmaakt van de sessieconfiguratie van de wordt gestart, wordt de Windows PowerShell 2.0-Engine wordt automatisch geladen in de sessie.
+   Wanneer een sessie die gebruikmaakt van de sessie configuratie wordt gestart, wordt de Windows Power Shell 2,0-engine automatisch in de sessie geladen.
 
-   De volgende opdracht start een sessie op de computer Server01 die gebruikmaakt van de configuratie van de PS2-sessie. De opdracht wordt de sessie opgeslagen in de variabele $s.
+   Met de volgende opdracht wordt een sessie gestart op de Server01-computer die gebruikmaakt van de PS2-sessie configuratie. Met de opdracht wordt de sessie opgeslagen in de variabele $s.
 
    ```powershell
    $s = New-PSSession -ComputerName Server01 -ConfigurationName PS2
    ```
 
-## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Een achtergrondtaak te starten met de Windows PowerShell 2.0-Engine
+## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Een achtergrond taak starten met de Windows Power Shell 2,0-engine
 
-Gebruiken om een achtergrondtaak starten met de Windows PowerShell 2.0-Engine, het **PSVersion** parameter van de [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet.
+Als u een achtergrond taak wilt starten met de Windows Power Shell 2,0-engine, gebruikt u de para meter **PSVersion** van de cmdlet [Start-job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) .
 
-De volgende opdracht start een achtergrondtaak met de Windows PowerShell 2.0-Engine
+Met de volgende opdracht wordt een achtergrond taak gestart met de Windows Power Shell 2,0-engine
 
 ```powershell
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-Zie voor meer informatie over achtergrondtaken [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Zie [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)voor meer informatie over achtergrond taken.

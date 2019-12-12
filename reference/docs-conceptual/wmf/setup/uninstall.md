@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: WMF 5.0 verwijderen
 ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145213"
 ---
 # <a name="uninstallation-instructions"></a>Instructies voor verwijderen

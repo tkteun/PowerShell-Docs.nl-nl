@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356635"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>Taken plannen met de Power shell-API
@@ -42,9 +42,9 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 U definieert een Power shell-taak door een parameter woordenlijst te maken. De volgende para meters worden ondersteund:
 
-|Parameter naam|Beschrijving|
+|Parameternaam|Beschrijving|
 |--------------------|-----------------|
-|**Naam**|De naam van de taak.|
+|**Name**|De naam van de taak.|
 |**ScriptBock**|Een Power shell-script blok dat aangeeft wat de taak doet.|
 |**Bestandspad**|Pad naar een bestand dat een Power shell-script blok bevat om op te geven wat de taak doet.|
 |**InitializationScript**|Een Power shell-script blok dat de taak initialiseert.|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>De aanroep-en taak definitie objecten maken
 
-Vervolgens maakt u `ScheduledJobInvocationInfo`-en `ScheduledJobDefinition`-objecten om de taak uit te voeren, zoals wordt weer gegeven in het volgende voor beeld:
+Vervolgens maakt u `ScheduledJobInvocationInfo` en `ScheduledJobDefinition` objecten om de taak uit te voeren, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355648"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
@@ -23,7 +23,7 @@ In deze sectie wordt uitgelegd hoe u een cmdlet maakt die niet-afsluit fouten in
 Voor niet-afsluit fouten (en het beëindigen van fouten) moet de cmdlet een [System. Management. Automation. ErrorRecord][] -object door geven om de fout te identificeren.
 Elke fout record wordt geïdentificeerd door een unieke teken reeks met de naam ' fout-id '.
 Naast de id wordt de categorie van elke fout opgegeven door constanten die zijn gedefinieerd door een [System. Management. Automation. ErrorCategory][] -inventarisatie.
-De gebruiker kan fouten op basis van hun categorie weer geven door de `$ErrorView`-variabele in te stellen op ' CategoryView '.
+De gebruiker kan fouten op basis van hun categorie weer geven door de `$ErrorView` variabele in te stellen op ' CategoryView '.
 
 Zie [Windows Power Shell-fout records](./windows-powershell-error-records.md)voor meer informatie over fout records.
 
@@ -185,8 +185,8 @@ protected override void ProcessRecord()
 Voor een niet-afsluit fout moet de cmdlet een specifieke fout-id genereren voor elk specifiek invoer object.
 
 Een cmdlet moet regel matig de Power shell-actie wijzigen die is geproduceerd door een niet-afsluit fout.
-U kunt dit doen door de para meters `ErrorAction` en `ErrorVariable` te definiëren.
-Als u de para meter `ErrorAction` definieert, presenteert de cmdlet de gebruikers opties [System. Management. Automation. ActionPreference][], kunt u ook rechtstreeks van invloed zijn op de actie door de `$ErrorActionPreference`-variabele in te stellen.
+U kunt dit doen door de `ErrorAction`-en `ErrorVariable`-para meters te definiëren.
+Als u de para meter `ErrorAction` definieert, geeft de cmdlet de gebruikers opties [System. Management. Automation. ActionPreference][]. u kunt ook rechtstreeks van invloed zijn op de actie door de `$ErrorActionPreference`-variabele in te stellen.
 
 Met de cmdlet kunnen niet-afsluit fouten worden opgeslagen in een variabele met behulp van de para meter `ErrorVariable`, die niet wordt beïnvloed door de instelling van `ErrorAction`.
 Fouten kunnen worden toegevoegd aan een bestaande fout variabele door een plus teken (+) toe te voegen aan het begin van de naam van de variabele.

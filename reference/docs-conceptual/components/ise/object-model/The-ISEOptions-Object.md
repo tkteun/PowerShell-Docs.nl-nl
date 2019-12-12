@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEOptions-object
 ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028919"
 ---
 # <a name="the-iseoptions-object"></a>Het ISEOptions-object
 
-De **ISEOptions** object vertegenwoordigt diverse instellingen voor Windows PowerShell ISE. Het is een exemplaar van de **Microsoft.PowerShell.Host.ISE.ISEOptions** klasse.
+Het **ISEOptions** -object vertegenwoordigt verschillende instellingen voor Windows PowerShell ISE. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEOptions** .
 
-De **ISEOptions** object biedt de volgende eigenschappen en methoden.
+Het **ISEOptions** -object biedt de volgende methoden en eigenschappen.
 
 ## <a name="methods"></a>Methoden
 
 ### <a name="restoredefaultconsoletokencolors"></a>RestoreDefaultConsoleTokenColors\(\)
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee herstelt u de standaardwaarden van de token kleuren in het consolevenster.
+Hiermee herstelt u de standaard waarden van de token kleuren in het console venster.
 
 ```powershell
 # Changes the color of the commands in the Console pane to red and then restores it to its default value.
@@ -31,9 +31,9 @@ $psISE.Options.RestoreDefaultConsoleTokenColors()
 
 ### <a name="restoredefaults"></a>RestoreDefaults\(\)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee herstelt u de standaardwaarden van alle instellingen in het consolevenster. Het stelt ook het gedrag van verschillende waarschuwingsberichten waarmee u het selectievakje standaard om te voorkomen dat het bericht opnieuw wordt weergegeven.
+Hiermee herstelt u de standaard waarden van alle opties instellingen in het console venster. Ook wordt het gedrag van verschillende waarschuwings berichten die het standaard selectie vakje bieden, opnieuw ingesteld om te voor komen dat het bericht opnieuw wordt weer gegeven.
 
 ```powershell
 # Changes the background color in the Console pane and then restores it to its default value.
@@ -43,9 +43,9 @@ $psISE.Options.RestoreDefaults()
 
 ### <a name="restoredefaulttokencolors"></a>RestoreDefaultTokenColors\(\)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee herstelt u de standaardwaarden van de token kleuren in het scriptvenster.
+Hiermee worden de standaard waarden van de token kleuren in het Script-venster hersteld.
 
 ```powershell
 # Changes the color of the comments in the Script pane to red and then restores it to its default value.
@@ -55,9 +55,9 @@ $psISE.Options.RestoreDefaultTokenColors()
 
 ### <a name="restoredefaultxmltokencolors"></a>RestoreDefaultXmlTokenColors\(\)
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee herstelt u de standaardwaarden van de token kleuren voor XML-elementen die worden weergegeven in Windows PowerShell ISE. Zie ook [XmlTokenColors](#xmltokencolors).
+Hiermee herstelt u de standaard waarden van de token kleuren voor XML-elementen die worden weer gegeven in Windows PowerShell ISE. Zie ook [XmlTokenColors](#xmltokencolors).
 
 ```powershell
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -65,13 +65,13 @@ $psISE.Options.XmlTokenColors["Comment"] = 'red'
 $psISE.Options.RestoreDefaultXmlTokenColors()
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Eigenschappen
 
 ### <a name="autosaveminuteinterval"></a>AutoSaveMinuteInterval
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u het aantal minuten tussen bewerkingen automatisch opslaan van uw bestanden in Windows PowerShell ISE. De standaardwaarde is 2 minuten. De waarde is een geheel getal zijn.
+Hiermee geeft u het aantal minuten op tussen de automatische opslag bewerkingen van uw bestanden door Windows PowerShell ISE. De standaard waarde is 2 minuten. De waarde is een geheel getal.
 
 ```powershell
 # Changes the number of minutes between automatic save operations to every 3 minutes.
@@ -80,9 +80,9 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 
 ### <a name="commandpanebackgroundcolor"></a>CommandPaneBackgroundColor
 
-Deze functie is is aanwezig in Windows PowerShell ISE 2.0, maar verwijderd of hernoemd in latere versies van de ISE.  Zie voor latere versies [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.  Zie voor latere versies [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
-Hiermee geeft u de achtergrondkleur voor het opdrachtvenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de achtergrond kleur voor het opdracht venster op. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color of the Command pane to orange.
@@ -91,9 +91,9 @@ $psISE.Options.CommandPaneBackgroundColor = 'orange'
 
 ### <a name="commandpaneup"></a>CommandPaneUp
 
-Deze functie is is aanwezig in Windows PowerShell ISE 2.0, maar verwijderd of hernoemd in latere versies van de ISE.
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.
 
-Hiermee geeft u op of het deelvenster van de opdracht bevindt zich boven het deelvenster Uitvoer.
+Hiermee wordt aangegeven of het opdracht venster zich boven het deel venster uitvoer bevindt.
 
 ```powershell
 # Moves the Command pane to the top of the screen.
@@ -102,9 +102,9 @@ $psISE.Options.CommandPaneUp  = $true
 
 ### <a name="consolepanebackgroundcolor"></a>ConsolePaneBackgroundColor
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u de achtergrondkleur van het consolevenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de achtergrond kleur voor het console venster. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color of the Console pane to red.
@@ -113,9 +113,9 @@ $psISE.Options.ConsolePaneBackgroundColor = 'red'
 
 ### <a name="consolepaneforegroundcolor"></a>ConsolePaneForegroundColor
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u de voorgrondkleur van de tekst in het consolevenster.
+Hiermee geeft u de voorgrond kleur van de tekst in het console venster.
 
 ```powershell
 # Changes the foreground color of the text in the Console pane to yellow.
@@ -124,9 +124,9 @@ $psISE.Options.ConsolePaneForegroundColor  = 'yellow'
 
 ### <a name="consolepanetextbackgroundcolor"></a>ConsolePaneTextBackgroundColor
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u de achtergrondkleur van de tekst in het consolevenster.
+Hiermee geeft u de achtergrond kleur van de tekst in het console venster.
 
 ```powershell
 # Changes the background color of the Console pane text to pink.
@@ -135,9 +135,9 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 ### <a name="consoletokencolors"></a>ConsoleTokenColors
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u de kleuren van de tokens IntelliSense in het deelvenster met Windows PowerShell ISE-Console. Deze eigenschap is een dictionary-object met de naam/waarde-paren van de typen tokens en kleuren voor het consolevenster. Zie het wijzigen van de kleuren van de tokens IntelliSense in het scriptvenster [TokenColors](#tokencolors). Als u de kleuren op de standaardwaarden herstellen, Zie [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors). Token kleuren kunnen worden ingesteld voor het volgende: Kenmerk, opdracht, CommandArgument, CommandParameter, opmerking, GroupEnd, GroupStart, sleutelwoord, LineContinuation, LoopLabel, lid, nieuwe regel, getal, Operator, positie, StatementSeparator, String, Type, onbekend, variabele.
+Hiermee geeft u de kleuren van de IntelliSense-tokens in het deel venster Windows PowerShell ISE console. Deze eigenschap is een woordenlijst object dat naam/waarde-paren van token typen en kleuren voor het console venster bevat. Zie [TokenColors](#tokencolors)voor informatie over het wijzigen van de kleuren van de IntelliSense-tokens in het Script-venster. Zie [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)als u de kleuren opnieuw wilt instellen op de standaard waarden. Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele.
 
 ```powershell
 # Sets the color of commands to green.
@@ -148,9 +148,9 @@ $psISE.Options.ConsoleTokenColors["Keyword"] = 'magenta'
 
 ### <a name="debugbackgroundcolor"></a>DebugBackgroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de achtergrondkleur voor de foutopsporing tekst die wordt weergegeven in het consolevenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de achtergrond kleur voor de tekst van de fout opsporing die wordt weer gegeven in het console venster. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color for the debug text that appears in the Console pane to blue.
@@ -159,9 +159,9 @@ $psISE.Options.DebugBackgroundColor = '#0000FF'
 
 ### <a name="debugforegroundcolor"></a>DebugForegroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de voorgrondkleur aan voor de foutopsporing tekst die wordt weergegeven in het consolevenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de voorgrond kleur voor de tekst van de fout opsporing die wordt weer gegeven in het console venster. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the foreground color for the debug text that appears in the Console pane to yellow.
@@ -170,9 +170,9 @@ $psISE.Options.DebugForegroundColor = 'yellow'
 
 ### <a name="defaultoptions"></a>DefaultOptions
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Een verzameling eigenschappen die de standaardwaarden worden gebruikt wanneer het opnieuw instellen-methoden worden gebruikt.
+Een verzameling eigenschappen waarmee de standaard waarden worden opgegeven die moeten worden gebruikt wanneer de methoden voor opnieuw instellen worden gebruikt.
 
 ```powershell
 # Displays the name of the default options. This example is from ISE 4.0.
@@ -217,9 +217,9 @@ IntellisenseTimeoutInSeconds              : 3
 
 ### <a name="errorbackgroundcolor"></a>ErrorBackgroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de achtergrondkleur voor de tekst van de fout die wordt weergegeven in het consolevenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de achtergrond kleur voor de fout tekst op die wordt weer gegeven in het console venster. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color for the error text that appears in the Console pane to black.
@@ -228,9 +228,9 @@ $psISE.Options.ErrorBackgroundColor = 'black'
 
 ### <a name="errorforegroundcolor"></a>ErrorForegroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de voorgrondkleur aan voor de tekst van de fout die wordt weergegeven in het consolevenster. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+Hiermee geeft u de voorgrond kleur voor de fout tekst op die wordt weer gegeven in het console venster. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the foreground color for the error text that appears in the console pane to green.
@@ -239,9 +239,9 @@ $psISE.Options.ErrorForegroundColor = 'green'
 
 ### <a name="fontname"></a>FontName
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de naam van het lettertype in momenteel wordt gebruikt in het scriptvenster en het consolevenster.
+Hiermee geeft u de naam van het letter type op dat momenteel wordt gebruikt in het Script venster en het console venster.
 
 ```powershell
 # Changes the font used in both panes.
@@ -250,9 +250,9 @@ $psISE.Options.FontName = 'Courier New'
 
 ### <a name="fontsize"></a>FontSize
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de tekengrootte als een geheel getal zijn. Het wordt gebruikt in het scriptvenster, het opdrachtvenster en het deelvenster Uitvoer. Het geldige waardenbereik is 8 tot en met 32.
+Geeft de teken grootte als een geheel getal aan. Het wordt gebruikt in het Script venster, in het opdracht venster en in het deel venster uitvoer. Het geldige waarden bereik is 8 tot en met 32.
 
 ```powershell
 # Changes the font size in all panes.
@@ -261,9 +261,9 @@ $psISE.Options.FontSize = 20
 
 ### <a name="intellisensetimeoutinseconds"></a>IntellisenseTimeoutInSeconds
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u het aantal seconden dat IntelliSense wordt gebruikt om op te lossen van de momenteel getypte tekst. Na dit aantal seconden, IntelliSense een time-out optreedt en kunt u verder kunt typen. De standaardwaarde is 3 seconden. De waarde is een geheel getal zijn.
+Hiermee geeft u het aantal seconden op dat door IntelliSense wordt gebruikt om de momenteel getypte tekst op te lossen. Na dit aantal seconden loopt IntelliSense een time-out en kunt u door gaan met typen. De standaard waarde is 3 seconden. De waarde is een geheel getal.
 
 ```powershell
 # Changes the number of seconds for IntelliSense syntax recognition to 5.
@@ -272,9 +272,9 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 
 ### <a name="mrucount"></a>MruCount
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u het aantal onlangs geopende bestanden met Windows PowerShell ISE worden bijgehouden en worden weergegeven aan de onderkant van de **bestand openen** menu. De standaardwaarde is 10. De waarde is een geheel getal zijn.
+Hiermee geeft u het aantal onlangs geopende bestanden op dat Windows PowerShell ISE gevolgd en onder aan het menu **bestand openen** wordt weer gegeven. De standaard waarde is 10. De waarde is een geheel getal.
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.
@@ -283,9 +283,9 @@ $psISE.Options.MruCount = 5
 
 ### <a name="outputpanebackgroundcolor"></a>OutputPaneBackgroundColor
 
-Deze functie is is aanwezig in Windows PowerShell ISE 2.0, maar verwijderd of hernoemd in latere versies van de ISE.  Zie voor latere versies [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.  Zie voor latere versies [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
-De lezen/schrijven-eigenschap die opgehaald of ingesteld van de achtergrondkleur van het deelvenster Uitvoer zelf. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+De eigenschap lezen/schrijven waarmee de achtergrond kleur voor het deel venster uitvoer wordt opgehaald of ingesteld. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color of the Output pane to gold.
@@ -294,9 +294,9 @@ $psISE.Options.OutputPaneForegroundColor = 'gold'
 
 ### <a name="outputpanetextforegroundcolor"></a>OutputPaneTextForegroundColor
 
-Deze functie is is aanwezig in Windows PowerShell ISE 2.0, maar verwijderd of hernoemd in latere versies van de ISE.  Zie voor latere versies [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.  Zie voor latere versies [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
 
-De lezen/schrijven-eigenschap die de voorgrondkleur van de tekst in het deelvenster Uitvoer in Windows PowerShell ISE 2.0 wordt gewijzigd.
+De eigenschap lezen/schrijven waarmee de voorgrond kleur van de tekst in het deel venster uitvoer van Windows PowerShell ISE 2,0 wordt gewijzigd.
 
 ```powershell
 # Changes the foreground color of the text in the Output Pane to blue.
@@ -305,9 +305,9 @@ $psISE.Options.OutputPaneTextForegroundColor  = 'blue'
 
 ### <a name="outputpanetextbackgroundcolor"></a>OutputPaneTextBackgroundColor
 
-Deze functie is is aanwezig in Windows PowerShell ISE 2.0, maar verwijderd of hernoemd in latere versies van de ISE.  Zie voor latere versies [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.  Zie voor latere versies [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
 
-De lezen/schrijven-eigenschap die de achtergrondkleur van de tekst in het deelvenster Uitvoer wordt gewijzigd.
+De eigenschap lezen/schrijven waarmee de achtergrond kleur van de tekst in het deel venster uitvoer wordt gewijzigd.
 
 ```powershell
 # Changes the background color of the Output pane text to pink.
@@ -316,9 +316,9 @@ $psISE.Options.OutputPaneTextBackgroundColor = 'pink'
 
 ### <a name="scriptpanebackgroundcolor"></a>ScriptPaneBackgroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De lezen/schrijven-eigenschap die opgehaald of ingesteld van de achtergrondkleur voor bestanden. Het is een exemplaar van de **System.Windows.Media.Color** klasse.
+De eigenschap lezen/schrijven waarmee de achtergrond kleur voor bestanden wordt opgehaald of ingesteld. Het is een instantie van de klasse **System. Windows. media. Color** .
 
 ```powershell
 # Sets the color of the script pane background to yellow.
@@ -327,10 +327,10 @@ $psISE.Options.ScriptPaneBackgroundColor = 'yellow'
 
 ### <a name="scriptpaneforegroundcolor"></a>ScriptPaneForegroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De lezen/schrijven-eigenschap die opgehaald of ingesteld van de voorgrondkleur voor niet-scriptbestanden in het scriptvenster.
-Als u wilt de voorgrondkleur voor scriptbestanden, gebruikt de [TokenColors](#tokencolors).
+De eigenschap lezen/schrijven waarmee de voorgrond kleur voor niet-script bestanden in het Script-venster wordt opgehaald of ingesteld.
+Als u de voorgrond kleur voor script bestanden wilt instellen, gebruikt u de [TokenColors](#tokencolors).
 
 ```powershell
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -339,9 +339,9 @@ $psISE.Options.ScriptPaneBackgroundColor = 'green'
 
 ### <a name="selectedscriptpanestate"></a>SelectedScriptPaneState
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De lezen/schrijven-eigenschap die opgehaald of ingesteld van de positie van het scriptvenster op het scherm. De tekenreeks mag 'Gemaximaliseerd', 'Top' of 'Chterkant'.
+De eigenschap lezen/schrijven waarmee de positie van het Script venster op de weer gave wordt opgehaald of ingesteld. De teken reeks kan ' Maximized ', ' top ' of ' right ' zijn.
 
 ```powershell
 # Moves the Script Pane to the top.
@@ -354,9 +354,9 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 ### <a name="showdefaultsnippets"></a>ShowDefaultSnippets
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of de **CTRL + J** lijst met fragmenten bevat de set met starter die is opgenomen in Windows PowerShell. Als de waarde **$false**, alleen door de gebruiker gedefinieerde fragmenten worden weergegeven in de **CTRL + J** lijst. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of de lijst met code fragmenten van **CTRL + J** de starter set bevat die is opgenomen in Windows Power shell. Als deze functie is ingesteld op **$False**, worden alleen door de gebruiker gedefinieerde fragmenten weer gegeven in de lijst met **CTRL + J** . De standaard waarde is **$True**.
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
@@ -365,9 +365,9 @@ $psISE.Options.ShowDefaultSnippets = $false
 
 ### <a name="showintellisenseinconsolepane"></a>ShowIntellisenseInConsolePane
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of IntelliSense syntaxis van de parameter en waarde suggesties in het consolevenster biedt. De standaardwaarde is **$true**.
+Hiermee geeft u op of IntelliSense syntaxis, para meters en waarde Suggestions biedt in het console venster. De standaard waarde is **$True**.
 
 ```powershell
 # Turn off IntelliSense in the console pane.
@@ -376,9 +376,9 @@ $psISE.Options.ShowIntellisenseInConsolePane = $false
 
 ### <a name="showintellisenseinscriptpane"></a>ShowIntellisenseInScriptPane
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of IntelliSense syntaxis van de parameter en waarde suggesties in het scriptvenster biedt. De standaardwaarde is **$true**.
+Hiermee geeft u op of IntelliSense syntaxis, para meters en waarde Suggestions biedt in het Script-venster. De standaard waarde is **$True**.
 
 ```powershell
 # Turn off IntelliSense in the Script pane.
@@ -387,9 +387,9 @@ $psISE.Options.ShowIntellisenseInScriptPane = $false
 
 ### <a name="showlinenumbers"></a>ShowLineNumbers
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of het scriptvenster regelnummers in de linkermarge weergeeft. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of in het deel venster script regel nummers in de linkermarge worden weer gegeven. De standaard waarde is **$True**.
 
 ```powershell
 # Turn off line numbers in the Script pane.
@@ -398,20 +398,20 @@ $psISE.Options.ShowLineNumbers = $false
 
 ### <a name="showoutlining"></a>ShowOutlining
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of het scriptvenster worden uitgevouwen en samengevouwen tussen haakjes naast de gedeelten van de code in de linkermarge weergegeven. Wanneer ze worden weergegeven, kunt u het minteken \( - \) pictogrammen naast een blok tekst wilt samenvouwen of klik op het plusteken \( + \) pictogram om uit te breiden van een blok tekst. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of het deel venster script uitbreid bare en samengevouwen haakjes naast de secties met de code in de linkermarge worden weer gegeven. Wanneer deze worden weer gegeven, kunt u klikken op de minknop \(-\) pictogrammen naast een tekst blok om deze samen te vouwen, of op het plus teken \(+\) pictogram klikken om een blok tekst uit te vouwen. De standaard waarde is **$True**.
 
 ```powershell
 # Turn off outlining in the Script pane.
 $psISE.Options.ShowOutlining = $false
 ```
 
-### <a name="showtoolbar"></a>ShowToolBar
+### <a name="showtoolbar"></a>Weer
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u op of de ISE-werkbalk aan de bovenkant van de Windows PowerShell ISE-venster wordt weergegeven. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of de ISE-werk balk boven aan het Windows PowerShell ISE-venster wordt weer gegeven. De standaard waarde is **$True**.
 
 ```powershell
 # Show the toolbar.
@@ -420,9 +420,9 @@ $psISE.Options.ShowToolBar = $true
 
 ### <a name="showwarningbeforesavingonrun"></a>ShowWarningBeforeSavingOnRun
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u op of er een waarschuwingsbericht wordt weergegeven wanneer een script automatisch opgeslagen wordt voordat deze wordt uitgevoerd. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of een waarschuwings bericht wordt weer gegeven wanneer een script automatisch wordt opgeslagen voordat het wordt uitgevoerd. De standaard waarde is **$True**.
 
 ```powershell
 # Enable the warning message when an attempt
@@ -432,9 +432,9 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 ### <a name="showwarningforduplicatefiles"></a>ShowWarningForDuplicateFiles
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u op of een waarschuwing wordt weergegeven als hetzelfde bestand wordt geopend in de verschillende tabbladen van PowerShell. Indien ingesteld op **$true**, hetzelfde bestand openen in meerdere tabbladen toont dit bericht: "Een kopie van dit bestand is geopend in een andere Windows PowerShell-tabblad. Wijzigingen in dit bestand heeft invloed op alle geopende exemplaren." De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of een waarschuwing wordt weer gegeven wanneer hetzelfde bestand wordt geopend in verschillende Power shell-tabbladen. Als de instelling is ingesteld op **$True**, wordt in het volgende bericht weer gegeven: ' een kopie van dit bestand is geopend op een ander Windows Power shell-tabblad. wijzigingen in dit bestand zijn van invloed op alle geopende exemplaren. ' De standaard waarde is **$True**.
 
 ```powershell
 # Enable the warning message when a file is
@@ -444,9 +444,9 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 ### <a name="tokencolors"></a>TokenColors
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de kleuren van de tokens IntelliSense in het deelvenster met Windows PowerShell ISE-Script. Deze eigenschap is een dictionary-object met de naam/waarde-paren van de typen tokens en kleuren voor het scriptvenster. Zie het wijzigen van de kleuren van de tokens IntelliSense in het consolevenster [ConsoleTokenColors](#consoletokencolors). Als u de kleuren op de standaardwaarden herstellen, Zie [RestoreDefaultTokenColors](#restoredefaulttokencolors). Token kleuren kunnen worden ingesteld voor het volgende: Kenmerk, opdracht, CommandArgument, CommandParameter, opmerking, GroupEnd, GroupStart, sleutelwoord, LineContinuation, LoopLabel, lid, nieuwe regel, getal, Operator, positie, StatementSeparator, String, Type, onbekend, variabele.
+Hiermee geeft u de kleuren van de IntelliSense-tokens in het deel venster Windows PowerShell ISE script. Deze eigenschap is een woordenlijst object dat naam/waarde-paren van token typen en kleuren voor het Script-venster bevat. Zie [ConsoleTokenColors](#consoletokencolors)voor informatie over het wijzigen van de kleuren van de IntelliSense-tokens in het console venster. Zie [RestoreDefaultTokenColors](#restoredefaulttokencolors)als u de kleuren opnieuw wilt instellen op de standaard waarden. Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele.
 
 ```powershell
 # Sets the color of commands to green.
@@ -457,9 +457,9 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 
 ### <a name="useentertoselectinconsolepaneintellisense"></a>UseEnterToSelectInConsolePaneIntellisense
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of u de Enter-toets gebruiken kunt om te selecteren van een opgegeven optie in het consolevenster IntelliSense. De standaardwaarde is **$true**.
+Hiermee wordt aangegeven of u de Enter-toets kunt gebruiken om een optie te selecteren die IntelliSense in het console venster is opgegeven. De standaard waarde is **$True**.
 
 ```powershell
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
@@ -468,9 +468,9 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $false
 
 ### <a name="useentertoselectinscriptpaneintellisense"></a>UseEnterToSelectInScriptPaneIntellisense
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of u de Enter-toets gebruiken kunt om een IntelliSense-opgegeven optie in het scriptvenster. De standaardwaarde is **$true**.
+Hiermee geeft u op of u de Enter-toets kunt gebruiken om een door IntelliSense opgegeven optie te selecteren in het Script-venster. De standaard waarde is **$True**.
 
 ```powershell
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -479,9 +479,9 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 ### <a name="uselocalhelp"></a>UseLocalHelp
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of de lokaal geïnstalleerde Help of de online Help van TechNet-bibliotheek wordt weergegeven wanneer u de cursor in een trefwoord op F1 drukt. Indien ingesteld op **$true**, en vervolgens een pop-upvenster uit de lokaal geïnstalleerde Help-inhoud bevat. U kunt de Help-bestanden installeren door het uitvoeren van de `Update-Help` opdracht. Indien ingesteld op **$false**, en vervolgens uw browser wordt geopend op een pagina in de TechNet-bibliotheek.
+Hiermee geeft u op of de lokaal geïnstalleerde Help of de Help van de online TechNet-bibliotheek wordt weer gegeven wanneer u op F1 drukt met de cursor in een tref woord. Als deze is ingesteld op **$True**, wordt in een pop-upvenster inhoud weer gegeven van de lokaal geïnstalleerde Help. U kunt de Help-bestanden installeren door de `Update-Help` opdracht uit te voeren. Als deze is ingesteld op **$False**, wordt uw browser geopend met een pagina in de TechNet-bibliotheek.
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -492,9 +492,9 @@ $psISE.Options.UseLocalHelp = $true
 
 ### <a name="verbosebackgroundcolor"></a>VerboseBackgroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de achtergrondkleur voor uitgebreide tekst die wordt weergegeven in het consolevenster. Het is een **System.Windows.Media.Color** object.
+Hiermee geeft u de achtergrond kleur voor uitgebreide tekst op die wordt weer gegeven in het console venster. Het is een object **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color for verbose text to blue.
@@ -503,9 +503,9 @@ $psISE.Options.VerboseBackgroundColor ='#0000FF'
 
 ### <a name="verboseforegroundcolor"></a>VerboseForegroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de voorgrondkleur voor uitgebreide tekst die wordt weergegeven in het consolevenster. Het is een **System.Windows.Media.Color** object.
+Hiermee geeft u de voorgrond kleur voor uitgebreide tekst op die wordt weer gegeven in het console venster. Het is een object **System. Windows. media. Color** .
 
 ```powershell
 # Changes the foreground color for verbose text to yellow.
@@ -514,9 +514,9 @@ $psISE.Options.VerboseForegroundColor = 'yellow'
 
 ### <a name="warningbackgroundcolor"></a>WarningBackgroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de achtergrondkleur voor waarschuwingstekst die wordt weergegeven in het consolevenster. Het is een **System.Windows.Media.Color** object.
+Hiermee geeft u de achtergrond kleur voor waarschuwings tekst op die wordt weer gegeven in het console venster. Het is een object **System. Windows. media. Color** .
 
 ```powershell
 # Changes the background color for warning text to blue.
@@ -525,9 +525,9 @@ $psISE.Options.WarningBackgroundColor = '#0000FF'
 
 ### <a name="warningforegroundcolor"></a>WarningForegroundColor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee geeft u de voorgrondkleur voor waarschuwingstekst die wordt weergegeven in het deelvenster Uitvoer. Het is een **System.Windows.Media.Color** object.
+Hiermee geeft u de voorgrond kleur op voor waarschuwings tekst die wordt weer gegeven in het deel venster uitvoer. Het is een object **System. Windows. media. Color** .
 
 ```powershell
 # Changes the foreground color for warning text to yellow.
@@ -536,9 +536,9 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 ### <a name="xmltokencolors"></a>XmlTokenColors
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u een dictionary-object met de naam/waarde-paren van de typen tokens en kleuren voor XML-inhoud die wordt weergegeven in Windows PowerShell ISE. Token kleuren kunnen worden ingesteld voor het volgende: Kenmerk, opdracht, CommandArgument, CommandParameter, opmerking, GroupEnd, GroupStart, sleutelwoord, LineContinuation, LoopLabel, lid, nieuwe regel, getal, Operator, positie, StatementSeparator, String, Type, onbekend, variabele. Zie ook [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
+Hiermee geeft u een woordenlijst object op dat naam/waarde-paren van token typen en kleuren bevat voor XML-inhoud die wordt weer gegeven in Windows PowerShell ISE. Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele. Zie ook [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
 
 ```powershell
 # Sets the color of XML element names to green.
@@ -547,11 +547,11 @@ $psISE.Options.XmlTokenColors["ElementName"] = 'green'
 $psISE.Options.XmlTokenColors["Comment"] = 'magenta'
 ```
 
-### <a name="zoom"></a>Uitzoomen
+### <a name="zoom"></a>Zoom
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u de relatieve grootte van de tekst in de Console en het Script deelvensters. De standaardwaarde is 100. Lagere waarden ertoe leiden dat de tekst in Windows PowerShell ISE kleinere weergegeven terwijl groot ertoe leiden dat de tekst groter worden weergegeven. De waarde is een geheel getal met een bereik van 20 tot 400.
+Hiermee geeft u de relatieve grootte van de tekst in de console-en script deel Vensters. De standaardwaarde is 100. Bij kleinere waarden wordt de tekst in Windows PowerShell ISE kleiner weer gegeven, terwijl grotere getallen de tekst groter worden weer gegeven. De waarde is een geheel getal tussen 20 en 400.
 
 ```powershell
 # Changes the text in the Windows PowerShell ISE to be double its normal size.
@@ -560,5 +560,5 @@ $psISE.Options.Zoom = 200
 
 ## <a name="see-also"></a>Zie ook
 
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

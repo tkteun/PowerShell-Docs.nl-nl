@@ -3,10 +3,10 @@ title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
 ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117401"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
@@ -17,8 +17,8 @@ U kunt VSCode in Windows met Power shell versie 5 gebruiken met behulp van Windo
 
 Controleer voordat u begint of Power shell op het systeem bestaat. Raadpleeg de volgende koppelingen voor moderne werk belastingen op Windows, macOS en Linux:
 
-- [Power shell Core installeren in Linux][install-pscore-linux]
-- [Power shell core in macOS installeren][install-pscore-macos]
+- [Installing PowerShell Core on Linux][install-pscore-linux] (PowerShell Core installeren in Linux)
+- [Installing PowerShell Core on macOS][install-pscore-macos] (PowerShell Core installeren in macOS)
 - [Power shell Core installeren in Windows][install-pscore-windows]
 
 Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads van Windows Power shell.

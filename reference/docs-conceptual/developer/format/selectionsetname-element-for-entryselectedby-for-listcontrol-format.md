@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cff7763c-5ce0-49c1-a480-1249c9f57a13
 caps.latest.revision: 11
 ms.openlocfilehash: 7fd431b4b1ddecd3a7358c2bf97f299b97162b34
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353821"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>Het element SelectionSetName voor EntrySelectedBy voor ListControl (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSetName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSetName` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Element EntrySelectedBy voor List entry (indeling)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze lijst vermelding of de voor waarde die moet bestaan voor het gebruik van deze vermelding.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de selectieset.
 

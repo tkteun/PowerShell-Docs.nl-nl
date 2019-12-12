@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359118"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-foutrecords
@@ -38,7 +38,7 @@ Als de cmdlet geen uitzonde ring heeft ondervangen, moet deze een nieuwe uitzond
 
 - Optionele aanroep informatie over de cmdlet die de fout heeft veroorzaakt. Deze informatie wordt opgegeven door Windows Power shell (Zie aanroep bericht).
 
-- Het doel object dat werd verwerkt toen de fout optrad. Dit kan het invoer object zijn of een ander object dat door de cmdlet werd verwerkt. Voor de opdracht `remove-item -recurse c:\somedirectory` kan de fout bijvoorbeeld een exemplaar zijn van een file info-object voor ' c:\somedirectory\lockedfile '. De gegevens van het doel object zijn optioneel.
+- Het doel object dat werd verwerkt toen de fout optrad. Dit kan het invoer object zijn of een ander object dat door de cmdlet werd verwerkt. Voor de opdracht `remove-item -recurse c:\somedirectory`kan de fout bijvoorbeeld een exemplaar zijn van een file info-object voor ' c:\somedirectory\lockedfile '. De gegevens van het doel object zijn optioneel.
 
 ## <a name="error-identifier"></a>Fout-id
 
@@ -58,7 +58,7 @@ Gebruik de volgende richt lijnen om fout-id's te genereren wanneer u fout record
 
 - Genereer niet dynamisch fout-id's op een niet-reproduceer bare manier. Neem bijvoorbeeld geen fout gegevens op zoals een proces-ID. Fout-id's zijn alleen nuttig als ze overeenkomen met de fout-id's die worden weer gegeven door andere gebruikers die dezelfde fout situatie ondervinden.
 
-## <a name="error-category"></a>Fout categorie
+## <a name="error-category"></a>Foutcategorie
 
 Wanneer u een fout record maakt, geeft u de categorie van de fout op met behulp van een van de constanten die zijn gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows Power shell gebruikt de fout categorie om fout gegevens weer te geven wanneer gebruikers de variabele `$ErrorView` instellen op `"CategoryView"`.
 
@@ -88,7 +88,7 @@ Wanneer u een fout record voor een cmdlet ontwikkelt, wordt het standaard fout b
 
 Het vervangende bericht wordt gegeven door een [System. Management. Automation. error Details](/dotnet/api/System.Management.Automation.ErrorDetails) -object. Gebruik een van de volgende constructors van dit object omdat deze aanvullende lokalisatie gegevens bieden die kunnen worden gebruikt door Windows Power shell.
 
-- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de [ Methode System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de methode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
 - [Error Details (assembly, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): gebruik deze constructor als de sjabloon teken reeks zich in een andere assembly bevindt en u deze niet laadt via een onderdrukking van [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
@@ -102,7 +102,7 @@ Het object [System. Management. Automation. error Details](/dotnet/api/System.Ma
 
 ## <a name="invocation-information"></a>Aanroep gegevens
 
-Wanneer een cmdlet [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) gebruikt om een fout record te melden, voegt Windows Power shell automatisch informatie toe met een beschrijving van de opdracht die is aangeroepen toen de fout optrad. Deze informatie wordt verstrekt door een [System. Management. Automation. Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) -object dat de naam bevat van de cmdlet die is aangeroepen door de opdracht, de opdracht zelf en informatie over de pijp lijn of het script. Deze eigenschap is alleen-lezen.
+Wanneer een cmdlet [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) of [System. Management. Automation](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . cmdlet. Throwterminatingerror * gebruikt om een fout record te melden, voegt Windows Power shell automatisch informatie toe met een beschrijving van de opdracht die werd aangeroepen toen de fout optrad. Deze informatie wordt verstrekt door een [System. Management. Automation. Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) -object dat de naam bevat van de cmdlet die is aangeroepen door de opdracht, de opdracht zelf en informatie over de pijp lijn of het script. Deze eigenschap is alleen-lezen.
 
 ## <a name="see-also"></a>Zie ook
 

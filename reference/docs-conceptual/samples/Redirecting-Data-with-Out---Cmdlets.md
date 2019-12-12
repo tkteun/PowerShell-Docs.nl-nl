@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Gegevens omleiden met Out-cmdlets
 ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030076"
 ---
-# <a name="redirecting-data-with-out--cmdlets"></a>Gegevens omleiden met Out-* Cmdlets
+# <a name="redirecting-data-with-out--cmdlets"></a>Gegevens omleiden met out-*-cmdlets
 
-Windows PowerShell biedt verschillende cmdlets waarmee die u gegevens rechtstreeks uitvoer beheren. Deze cmdlets delen twee belangrijke kenmerken.
+Windows Power shell biedt verschillende cmdlets waarmee u gegevens uitvoer rechtstreeks kunt beheren. Deze cmdlets delen twee belang rijke kenmerken.
 
-Eerst, ze algemeen gegevens transformeren naar een vorm van tekst. Ze doen dit omdat ze de gegevens naar de onderdelen van het systeem waarvoor tekstinvoer uitvoer. Dit betekent dat ze nodig hebben om weer te geven van de objecten als tekst. De tekst is daarom opgemaakt als u deze in de Windows PowerShell-consolevenster bekijken.
+Eerst transformeren ze gegevens naar een vorm van tekst. Ze doen dit omdat ze de gegevens uitvoeren naar systeem onderdelen waarvoor tekst invoer is vereist. Dit betekent dat de objecten als tekst moeten worden aangeduid. Daarom wordt de tekst opgemaakt zoals deze wordt weer gegeven in het Windows Power shell-console venster.
 
-Deze cmdlets gebruik vervolgens de Windows PowerShell-opdracht **uit** omdat ze gegevens vanuit Windows PowerShell op een andere locatie verzenden. De **uitgaande hosten** cmdlet vormt daar geen uitzondering: de weergave in de host is buiten Windows PowerShell. Dit is belangrijk omdat wanneer gegevens uit de Windows PowerShell wordt verzonden, wordt deze daadwerkelijk verwijderd. U kunt dit zien als u probeert te maken van een pijplijn die gegevens van de pagina's naar het hostvenster van de, en vervolgens probeert om deze als een lijst, zoals hier wordt weergegeven:
+Ten tweede gebruiken deze cmdlets het Windows Power shell-werk woord **uit** , omdat ze informatie vanuit Windows Power shell naar een andere locatie verzenden. De cmdlet **out-host** is geen uitzonde ring: het venster host wordt weer gegeven buiten Windows Power shell. Dit is belang rijk omdat wanneer gegevens vanuit Windows Power shell worden verzonden, ze daad werkelijk worden verwijderd. U kunt dit zien als u probeert een pijp lijn te maken die pagina's met gegevens naar het venster host en vervolgens probeert te Format teren als een lijst, zoals hier wordt weer gegeven:
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
 ```
 
-U kunt de opdracht voor het weergeven van pagina's van de procesinformatie in lijstindeling had verwacht. In plaats daarvan wordt de lijst in tabelvorm met weergegeven:
+U kunt de opdracht voor het weer geven van pagina's met proces gegevens in de lijst indeling verwachten. In plaats daarvan wordt de standaard lijst in tabel vorm weer gegeven:
 
 ```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -35,9 +35,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-De **uitgaande hosten** cmdlet verzendt die gegevens rechtstreeks naar de console, zodat de **lijst indeling** opdracht ontvangt nooit iets te formatteren.
+De cmdlet **out-host** verzendt de gegevens rechtstreeks naar de-console, waardoor de opdracht voor het **Format teren** van de lijst nooit wordt ontvangen.
 
-De juiste manier te structureren met deze opdracht is te plaatsen de **uitgaande hosten** cmdlet aan het einde van de pijplijn, zoals hieronder weergegeven. Dit zorgt ervoor dat de gegevens verwerken is opgemaakt in een lijst voordat deze wordt gewisseld en weergegeven.
+De juiste manier om deze opdracht te structureren, is door de cmdlet **out-host** aan het einde van de pijp lijn te plaatsen, zoals hieronder wordt weer gegeven. Dit zorgt ervoor dat de proces gegevens in een lijst worden opgemaakt voordat ze worden gewisseld en weer gegeven.
 
 ```
 PS> Get-Process | Format-List | Out-Host -Paging
@@ -62,26 +62,26 @@ Name    : explorer
 ...
 ```
 
-Dit geldt voor alle van de **uit** cmdlets. Een **uit** cmdlet moet altijd worden weergegeven aan het einde van de pijplijn.
+Dit geldt voor alle **out** -cmdlets. Een **out** -cmdlet moet altijd aan het einde van de pijp lijn worden weer gegeven.
 
 > [!NOTE]
-> Alle de **uit** cmdlets uitvoer weergegeven als tekst, met behulp van de opmaak van kracht voor het consolevenster, met inbegrip van regel lengtebeperkingen.
+> Alle **out** -cmdlets genereren uitvoer als tekst, met behulp van de opmaak van het console venster, met inbegrip van de limieten voor de regel lengte.
 
-## <a name="paging-console-output-out-host"></a>Console-uitvoer voor het wisselbestand (uitgaande Host)
+## <a name="paging-console-output-out-host"></a>Uitvoer van de console pagineren (out-host)
 
-Standaard Windows PowerShell verzendt gegevens naar het hostvenster, dat precies wat is de uitgaande hosten cmdlet is. Het primaire gebruik voor het hosten van uitgaande cmdlet zijn gepagineerde gegevens zoals we eerder is besproken. De volgende opdracht gebruikt Host bijvoorbeeld uitgaande pagina van de uitvoer van de cmdlet Get-opdracht:
+Standaard worden gegevens door Windows Power shell naar het venster host verzonden. Dit is precies wat de out-host-cmdlet doet. Het primaire gebruik voor de out-host-cmdlet is het pagineren van gegevens zoals eerder is beschreven. De volgende opdracht gebruikt bijvoorbeeld out-host om de uitvoer van de cmdlet Get-opdracht uit te voeren:
 
 ```powershell
 Get-Command | Out-Host -Paging
 ```
 
-U kunt ook de **meer** functie waarmee u kunt paginagegevens. In Windows PowerShell, **meer** is een functie die worden aangeroepen **uitgaande Host-Wisselgeheugengebruik**. De volgende opdracht ziet u hoe de **meer** functie op de pagina van de uitvoer van Get-opdracht:
+U kunt ook de functie **meer** gebruiken voor pagina gegevens. In Windows Power shell is **meer** een functie waarmee u **out-host-paging**aanroept. De volgende opdracht laat zien hoe u met behulp van de functie **meer** op pagina de uitvoer van Get-opdracht kunt gebruiken:
 
 ```powershell
 Get-Command | more
 ```
 
-Als u een of meer namen van bestanden als argumenten voor de functie meer opgeeft, wordt de functie de opgegeven bestanden lezen en pagina van de inhoud ervan op de host:
+Als u een of meer bestands namen als argumenten voor de functie meer opneemt, worden de opgegeven bestanden en de inhoud van de functie naar de host gelezen:
 
 ```
 PS> more c:\boot.ini
@@ -92,15 +92,15 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-## <a name="discarding-output-out-null"></a>Uitvoer verwijderen (uitgaande Null)
+## <a name="discarding-output-out-null"></a>Uitvoer verwijderen (out-null)
 
-De **uitgaande Null** cmdlet is ontworpen om onmiddellijk negeren invoer wordt ontvangen. Dit is handig voor het verwijderen van onnodige gegevens die u als een neveneffect krijgt van het uitvoeren van een opdracht. Wanneer Typ de volgende opdracht uit, er iets terug vanaf de opdrachtregel:
+De **out-null-** cmdlet is ontworpen voor het direct negeren van de invoer die wordt ontvangen. Dit is handig voor het verwijderen van overbodige gegevens die u krijgt als een neven effect van het uitvoeren van een opdracht. Wanneer u de volgende opdracht typt, haalt u niets terug van de opdracht:
 
 ```powershell
 Get-Command | Out-Null
 ```
 
-De **uitgaande Null** cmdlet foutuitvoer komt niet te verwijderen. Bijvoorbeeld, als u de volgende opdracht invoert, een bericht weergegeven waarin wordt gemeld dat Windows PowerShell-Is-NotACommand' wordt niet herkend:
+De uitzonderings **-Null** -cmdlet verwijdert geen fout uitvoer. Als u bijvoorbeeld de volgende opdracht opgeeft, wordt er een bericht weer gegeven waarin wordt gemeld dat Windows Power shell ' is-NotACommand ' niet herkent:
 
 ```
 PS> Get-Command Is-NotACommand | Out-Null
@@ -110,37 +110,37 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-## <a name="printing-data-out-printer"></a>Gegevens voor afdrukken (Out-Printer)
+## <a name="printing-data-out-printer"></a>Gegevens afdrukken (niet-printer)
 
-U kunt gegevens afdrukken met behulp van de **Out-Printer** cmdlet. De **Out-Printer** cmdlet wordt de standaardprinter gebruiken als u de naam van een printer niet opgeeft. U kunt een printer op basis van Windows gebruiken door de weergavenaam op te geven. Er is niet nodig voor elk soort printer poorttoewijzing of zelfs een echt fysiek printer. Bijvoorbeeld, als u de Microsoft Office-document replicatiehulpprogramma's geïnstalleerd hebt, kunt u de gegevens verzenden naar een afbeeldingbestand door te typen:
+U kunt gegevens afdrukken met behulp van de **out-printer-** cmdlet. De **out-printer** cmdlet gebruikt uw standaard printer als u geen printer naam opgeeft. U kunt elke op Windows gebaseerde printer gebruiken door de bijbehorende weergave naam op te geven. Er is geen soort printer poort toewijzing nodig of zelfs een echte fysieke printer. Als u bijvoorbeeld de Microsoft Office document imaging-hulpprogram ma's hebt geïnstalleerd, kunt u de gegevens naar een afbeeldings bestand verzenden door het volgende te typen:
 
 ```powershell
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-## <a name="saving-data-out-file"></a>Opslaan van gegevens (out-File)
+## <a name="saving-data-out-file"></a>Gegevens opslaan (out-file)
 
-U kunt uitvoer ook verzenden naar een bestand in plaats van het consolevenster met behulp van de **out-File** cmdlet. De volgende opdrachtregel stuurt een lijst van processen naar het bestand **C:\\temp\\processlist.txt**:
+U kunt uitvoer naar een bestand verzenden in plaats van via het console venster met de **out-file-** cmdlet. De volgende opdracht regel verzendt een lijst met processen naar het bestand **C:\\temp\\processlist. txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-De resultaten van het gebruik van de **out-File** cmdlet mogelijk niet wat u verwacht als u worden gebruikt voor omleiding van traditionele uitvoer. Voor meer informatie over het gedrag, moet u op de hoogte van de context waarin de **out-File** cmdlet werkt.
+De resultaten van het gebruik van de **out-file** cmdlet zijn mogelijk niet wat u verwacht als u gebruikt voor traditionele uitvoer omleiding. Om het gedrag ervan te begrijpen, moet u rekening houden met de context waarin de **out-file-** cmdlet werkt.
 
-Standaard de **out-File** met de cmdlet maakt een Unicode-bestand. Dit is de aanbevolen standaardwaarde op de lange termijn, maar dit betekent dat hulpprogramma's die u kunt ASCII-bestanden verwachten niet goed met de indeling van de standaard-uitvoer werken wordt. U kunt de standaarduitvoerindeling op ASCII wijzigen met behulp van de **Encoding** parameter:
+Standaard maakt de cmdlet **out-file** een Unicode-bestand. Dit is de beste standaard waarde in de lange uitvoering, maar dit betekent dat de hulpprogram ma's die ASCII-bestanden verwachten, niet goed werken met de standaard uitvoer indeling. U kunt de standaard uitvoer indeling wijzigen in ASCII met behulp van de para meter **Encoding** :
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
 ```
 
-**Out-File** indelingen bestandsinhoud zodat het eruitziet als console-uitvoer. Dit zorgt ervoor dat de uitvoer moet worden afgekapt, net zoals het in een consolevenster weergegeven in de meeste gevallen. Bijvoorbeeld, als u de volgende opdracht uitvoeren:
+**Out-bestands** indelingen bestands inhoud die eruitziet als console-uitvoer. Dit zorgt ervoor dat de uitvoer wordt afgekapt net zoals deze in de meeste omstandigheden in een console venster wordt uitgevoerd. Als u bijvoorbeeld de volgende opdracht uitvoert:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt
 ```
 
-De uitvoer ziet er als volgt:
+De uitvoer ziet er als volgt uit:
 
 ```output
 CommandType     Name                            Definition
@@ -150,10 +150,10 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-Als u uitvoer die niet regel terugloopt hoeft zodat deze overeenkomen met de schermbreedte, kunt u de **breedte** parameter opgeven voor lijnbreedte. Omdat **breedte** is een 32-bits geheel getal-parameter, de maximale waarde kan hebben is 2147483647. Typ het volgende om in te stellen van de breedte van de aan deze maximumwaarde:
+U kunt de para meter **width** gebruiken om de lijn breedte op te geven om de uitvoer op te halen die niet voldoet aan de scherm breedte. Omdat **width** een 32-bits integer-para meter is, kan de maximum waarde zijn 2147483647. Typ het volgende om de lijn breedte in te stellen op deze maximum waarde:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
-De **out-File** cmdlet is vooral nuttig zijn wanneer u opslaan uitvoer wilt zoals deze zou hebben weergegeven in de console. Voor betere controle over de indeling van uitvoer moet u meer geavanceerde hulpprogramma's. We kijken die in het volgende hoofdstuk, samen met details over het bewerken van het object.
+De **out-file** cmdlet is het handigst wanneer u de uitvoer wilt opslaan zoals deze zou worden weer gegeven op de-console. Voor een nauw keurige controle over de indeling van de uitvoer hebt u meer geavanceerde hulp middelen nodig. We kijken naar die in het volgende hoofd stuk, samen met enkele details over het bewerken van objecten.

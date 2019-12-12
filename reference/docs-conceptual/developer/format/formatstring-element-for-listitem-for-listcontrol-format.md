@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fd2cac66-88bb-449f-9d47-bd2cd4fe1801
 caps.latest.revision: 13
 ms.openlocfilehash: e6024ec4f7fc490c92408047c8c15c775e45bf9d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354535"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>Het element FormatString voor ListItem voor ListControl (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Lijst item-element (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het patroon op dat wordt gebruikt om de gegevens op te maken. U kunt dit patroon bijvoorbeeld gebruiken om de waarde van een eigenschap van het type [System. time span](/dotnet/api/System.TimeSpan): {0: mmm} {0: dd} {0: uu}: {0: mm} in te delen.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
 caps.latest.revision: 15
 ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358743"
 ---
 # <a name="types-element-for-selectionset-format"></a>Het element Typen voor SelectionSet (opmaak)
@@ -56,7 +56,7 @@ De objecten die door dit element worden gedefinieerd, vormen een selectie reeks 
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u een `SelectionSet`-element dat vier .NET-typen definieert.
+Dit voor beeld toont een `SelectionSet`-element waarmee vier .NET-typen worden gedefinieerd.
 
 ```xml
 <SelectionSets>

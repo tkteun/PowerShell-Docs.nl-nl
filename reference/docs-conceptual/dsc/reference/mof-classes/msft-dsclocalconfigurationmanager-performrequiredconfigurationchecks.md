@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: PerformRequiredConfigurationChecks-methode
 ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942683"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks-methode
@@ -25,7 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 
 *Markeert* \[in\] een bitmasker dat het type consistentie controle opgeeft dat moet worden uitgevoerd. De volgende waarden zijn geldig en kunnen worden gecombineerd met behulp van een bitsgewijze **or** -bewerking:
 
-|Waarde |Beschrijving |
+|Value |Beschrijving |
 |:--- |:---|
 |**1** | Een normale consistentie controle. |
 |**2** | Een voortzetting van een consistentie controle na het opnieuw opstarten. Deze waarde mag niet worden gecombineerd met andere waarden. |

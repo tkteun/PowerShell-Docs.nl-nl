@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
 ms.openlocfilehash: dc1ae92af8a57d6197b595db8e098256ac444b78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352414"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 In dit voor beeld ziet u hoe u een provider klasse declareert die rechtstreeks is afgeleid van de klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . Deze is alleen opgenomen voor volledigheid.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 > [!IMPORTANT]
 > Uw provider klasse is hoogstwaarschijnlijk afgeleid van een van de volgende klassen en implementeert mogelijk andere provider interfaces:
@@ -32,13 +32,13 @@ In dit voor beeld ziet u hoe u een provider klasse declareert die rechtstreeks i
 
 In dit voor beeld ziet u het volgende:
 
-- Het kenmerk `CmdletProvider` declareren.
+- Declareer het `CmdletProvider` kenmerk.
 
 - Een provider klasse definiëren die rechtstreeks is afgeleid van de klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u hoe u een provider klasse definieert en hoe u het kenmerk `CmdletProvider` declareert.
+In dit voor beeld ziet u hoe u een provider klasse definieert en hoe u het `CmdletProvider` kenmerk declareert.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359009"
 ---
 # <a name="defining-selection-sets"></a>Selectiereeksen definiëren
 
-Wanneer u meerdere weer gaven en besturings elementen maakt, kunt u sets van objecten definiëren die worden aangeduid als selectie sets. Met een selectieset kunt u de objecten één keer definiëren, zonder dat u ze herhaaldelijk hoeft te definiëren voor elke weer gave of elk besturings element. Selectie sets worden meestal gebruikt wanneer u een set gerelateerde .NET-objecten hebt. Bijvoorbeeld, het indelings bestand van de `FileSystem` (bestands systeem. Format. ps1xml) definieert een selectieset van de bestandssysteem typen die door verschillende weer gaven worden gebruikt.
+Wanneer u meerdere weer gaven en besturings elementen maakt, kunt u sets van objecten definiëren die worden aangeduid als selectie sets. Met een selectieset kunt u de objecten één keer definiëren, zonder dat u ze herhaaldelijk hoeft te definiëren voor elke weer gave of elk besturings element. Selectie sets worden meestal gebruikt wanneer u een set gerelateerde .NET-objecten hebt. Bijvoorbeeld, het `FileSystem` opmaak bestand (File System. Format. ps1xml) definieert een selectie reeks van de bestandssysteem typen die door verschillende weer gaven worden gebruikt.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Waar worden selectie sets gedefinieerd en waarnaar wordt verwezen
 
@@ -35,15 +35,15 @@ U definieert selectie sets als onderdeel van de algemene gegevens die kunnen wor
 
 U kunt op de volgende manieren naar een selectie sets verwijzen:
 
-- Elke weer gave bevat een `ViewSelectedBy`-element waarmee wordt gedefinieerd welke objecten worden weer gegeven met behulp van de weer gave. Het element `ViewSelectedBy` heeft een onderliggend `SelectionSetName`-element dat de selectieset specificeert die alle definities van de weer gave gebruiken. Er is geen beperking voor het aantal selectie sets waarnaar u kunt verwijzen vanuit een weer gave.
+- Elke weer gave heeft een `ViewSelectedBy`-element waarmee wordt gedefinieerd welke objecten worden weer gegeven met behulp van de weer gave. Het `ViewSelectedBy`-element heeft een `SelectionSetName` onderliggend element waarmee de selectie reeks wordt opgegeven die alle definities van de weer gave gebruiken. Er is geen beperking voor het aantal selectie sets waarnaar u kunt verwijzen vanuit een weer gave.
 
-- In elke definitie van een weer gave of besturings element definieert het element `EntrySelectedBy` welke objecten worden weer gegeven met behulp van de definitie. Normaal gesp roken bevat een weer gave of besturings element slechts één definitie, zodat de objecten worden gedefinieerd door het element `ViewSelectedBy`. Het element `EntrySelectedBy` van de definitie bevat een onderliggend `SelectionSetName`-element waarmee de selectieset wordt opgegeven. Als u de selectie sets voor een definitie opgeeft, kunt u geen van de andere onderliggende elementen van het element `EntrySelectedBy` opgeven.
+- In elke definitie van een weer gave of besturings element definieert het `EntrySelectedBy`-element welke objecten worden weer gegeven met behulp van de definitie. Normaal gesp roken bevat een weer gave of besturings element slechts één definitie, zodat de objecten worden gedefinieerd door het `ViewSelectedBy` element. Het `EntrySelectedBy` element van de definitie heeft een `SelectionSetName` onderliggend element waarmee de selectieset wordt opgegeven. Als u de selectie set voor een definitie opgeeft, kunt u geen van de andere onderliggende elementen van het `EntrySelectedBy`-element opgeven.
 
-- In elke definitie van een weer gave of besturings element kan het element `SelectionCondition` worden gebruikt om een voor waarde op te geven voor het gebruik van de definitie. Het element `SelectionCondition` heeft een onderliggend `SelectionSetName`-element dat de selectieset specificeert die de voor waarde activeert. De voor waarde wordt geactiveerd wanneer een van de objecten die in de selectieset zijn gedefinieerd, worden weer gegeven. Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)voor meer informatie over het instellen van deze voor waarden.
+- In elke definitie van een weer gave of besturings element kan het `SelectionCondition`-element worden gebruikt om een voor waarde op te geven voor het gebruik van de definitie. Het `SelectionCondition`-element heeft een `SelectionSetName` onderliggend element dat de selectieset specificeert die de voor waarde activeert. De voor waarde wordt geactiveerd wanneer een van de objecten die in de selectieset zijn gedefinieerd, worden weer gegeven. Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)voor meer informatie over het instellen van deze voor waarden.
 
 ## <a name="selection-set-example"></a>Voor beeld van selectie sets
 
-In het volgende voor beeld ziet u een selectie reeks die rechtstreeks wordt opgehaald uit het `FileSystem`-indelings bestand dat wordt meegeleverd met Windows Power shell. Zie [Windows Power shell-indelings bestanden](./powershell-formatting-files.md)voor meer informatie over andere Windows Power shell-indelings bestanden.
+In het volgende voor beeld ziet u een selectie reeks die rechtstreeks afkomstig is uit het `FileSystem` opmaak bestand dat wordt meegeleverd met Windows Power shell. Zie [Windows Power shell-indelings bestanden](./powershell-formatting-files.md)voor meer informatie over andere Windows Power shell-indelings bestanden.
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ In het volgende voor beeld ziet u een selectie reeks die rechtstreeks wordt opge
 </SelectionSets>
 ```
 
-Er wordt naar de vorige selectieset verwezen in het element `ViewSelectedBy` van een tabel weergave.
+Er wordt naar de vorige selectieset verwezen in het `ViewSelectedBy`-element van een tabel weergave.
 
 ```xml
 <ViewDefinitions>
@@ -138,7 +138,7 @@ Er wordt naar de vorige selectieset verwezen in het element `ViewSelectedBy` van
 
 [Selectieset](./selectionset-element-format.md)
 
-[Naam](./name-element-for-selectionset-format.md)
+[Name](./name-element-for-selectionset-format.md)
 
 [Dergelijke](./types-element-for-selectionset-format.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
 ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352323"
 ---
 # <a name="writing-a-navigation-provider"></a>Een navigatieprovider schrijven
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath implementeren
 
-De methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) wordt toegevoegd aan een opgegeven bovenliggend pad en een opgegeven onderliggend pad voor het maken van een provider-intern pad (Zie voor informatie over typen paden die providers kunnen ondersteunen [Overzicht van Windows Power shell-provider](./windows-powershell-provider-overview.md). De Power shell-engine roept deze methode aan wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) aanroept.
+De methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) wordt toegevoegd aan een opgegeven bovenliggend pad en een opgegeven onderliggend pad om een provider-intern pad te maken (Zie [overzicht van Windows Power shell-providers](./windows-powershell-provider-overview.md)voor informatie over padtype die providers kunnen ondersteunen. De Power shell-engine roept deze methode aan wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) aanroept.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>NormalizeRelativePath implementeren
 
-De methode [System. Management. Automation. provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) neemt `path`-en `basepath`-para meters en retourneert een genormaliseerd pad dat gelijk is aan de `path` para meter en ten opzichte van de `basepath` bepaalde.
+De methode [System. Management. Automation. provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) neemt `path`-en `basepath`-para meters en retourneert een genormaliseerd pad dat gelijk is aan de `path` para meter en ten opzichte van de `basepath` para meter.
 
 ```csharp
 protected override string NormalizeRelativePath(string path,

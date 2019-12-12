@@ -1,48 +1,48 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell-cmdlet
-title: PowerShell-scripts
+keywords: Power shell, cmdlet
+title: Power shell-scripts
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058485"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell is een taakgebaseerde opdrachtregel-shell en scripttaal die is gebouwd op .NET.
-PowerShell helpt beheerders en Hoofdgebruikers snel automatiseren van taken die besturingssystemen (Linux, macOS en Windows) en processen te beheren.
+Power shell is een op taken gebaseerde opdracht regel shell en script taal die is gebaseerd op .NET.
+Power shell helpt systeem beheerders en hoofd gebruikers om snel taken te automatiseren die besturings systemen (Linux, macOS en Windows) en processen beheren.
 
-PowerShell-opdrachten kunnen u computers beheren vanaf de opdrachtregel. PowerShell-providers, kunt u toegang tot gegevensarchieven, zoals het register en het certificaatarchief, net zo gemakkelijk als u toegang het bestandssysteem tot. PowerShell bevat een parser voor uitgebreide expressies en een volledig ontwikkelde scripttaal.
+Met Power shell-opdrachten kunt u computers beheren vanaf de opdracht regel. Met Power shell-providers kunt u toegang krijgen tot gegevens archieven, zoals het REGI ster en het certificaat archief, net zo eenvoudig als u toegang hebt tot het bestands systeem. Power shell bevat een uitgebreide expressie-parser en een volledig ontwikkelde script taal.
 
-## <a name="powershell-is-open-source"></a>PowerShell is open source
+## <a name="powershell-is-open-source"></a>Power shell is open source
 
-PowerShell-basis broncode is nu beschikbaar is in GitHub en geopend zodat u kunt bijdragen van de community.
-Zie [PowerShell source op GitHub](https://github.com/powershell/powershell).
+Power shell-basis bron code is nu beschikbaar in GitHub en open voor bijdragen van de community.
+Zie [Power shell-bron op github](https://github.com/powershell/powershell).
 
-U kunt beginnen met de bits die u nodig hebt in [ophalen PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
-Of misschien met een korte Tour langs op [aan de slag](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
+U kunt beginnen met de bits die u nodig hebt om [Power shell](https://github.com/PowerShell/PowerShell#get-powershell)op te halen.
+Of, misschien, met een korte rond leiding om aan de [slag](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)te gaan.
 
-## <a name="powershell-design-goals"></a>Ontwerpdoelstellingen van PowerShell
+## <a name="powershell-design-goals"></a>Power shell-ontwerp doelen
 
-PowerShell is ontworpen voor het verbeteren van de opdrachtregel en scripting-omgeving door langdurige problemen en nieuwe functies toe te voegen.
+Power shell is ontworpen voor het verbeteren van de opdracht regel-en script omgeving door langdurige problemen te elimineren en nieuwe functies toe te voegen.
 
-### <a name="discoverability"></a>Zichtbaarheid
+### <a name="discoverability"></a>Detectie
 
-PowerShell kunt gemakkelijk detecteren van de functies ervan. Bijvoorbeeld, als u zoekt een lijst met cmdlets die bekijken en wijzigen van de Windows-services, typt u:
+Power Shell maakt het eenvoudig om de functies te ontdekken. Als u bijvoorbeeld een lijst met cmdlets wilt vinden waarmee Windows-Services worden weer gegeven en gewijzigd, typt u:
 
 ```powershell
 Get-Command *-Service
 ```
 
-Nadat u ontdekte welke cmdlet voert een taak, u kunt meer informatie over de cmdlet met behulp van de `Get-Help` cmdlet. Als u bijvoorbeeld op het Help-informatie weergeven over de `Get-Service` cmdlet, type:
+Nadat u hebt gedetecteerd welke cmdlet een taak uitvoert, kunt u meer informatie over de cmdlet vinden met behulp van de cmdlet `Get-Help`. Als u bijvoorbeeld Help over de cmdlet `Get-Service` wilt weer geven, typt u:
 
 ```powershell
 Get-Help Get-Service
 ```
 
-De meeste cmdlets geretourneerde objecten die kunnen worden bewerkt en vervolgens weergegeven als tekst om weer te geven. Voor volledig inzicht in de uitvoer van een cmdlet, de uitvoer doorsluizen naar de `Get-Member` cmdlet. Bijvoorbeeld, de volgende opdracht geeft informatie weer over de leden van de uitvoer van object met de `Get-Service` cmdlet.
+De meeste cmdlets retour neren objecten die kunnen worden gemanipuleerd en vervolgens weer gegeven als tekst voor weer gave. Als u de uitvoer van een cmdlet volledig wilt begrijpen, pipet u de uitvoer naar de cmdlet `Get-Member`. Met de volgende opdracht wordt bijvoorbeeld informatie weer gegeven over de leden van de object uitvoer door de cmdlet `Get-Service`.
 
 ```powershell
 Get-Service | Get-Member
@@ -50,24 +50,24 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-Systemen beheren, kan een complexe taak zijn. Hulpprogramma's die een consistente interface Help-informatie voor het beheren van de inherente complexiteit. Helaas, opdrachtregelprogramma's en Scriptobjecten Component Object Model (COM) worden niet bekend zijn voor hun consistentie.
+Het beheren van systemen kan een complexe taak zijn. Hulpprogram ma's die een consistente interface hebben, helpen de inherente complexiteit te beheren. Helaas zijn opdracht regel Programma's en COM-objecten (scriptable Component Object Model) niet bekend voor hun consistentie.
 
-De consistentie van PowerShell is een van de primaire activa. Als u informatie over het gebruik bijvoorbeeld de `Sort-Object` cmdlet, kunt u deze kennis gebruiken om te sorteren van de uitvoer van een cmdlet. U hebt geen voor meer informatie over de verschillende sorteren routines van elke cmdlet.
+De consistentie van Power shell is een van de primaire activa. Als u bijvoorbeeld informatie wilt over het gebruik van de cmdlet `Sort-Object`, kunt u die kennis gebruiken om de uitvoer van een cmdlet te sorteren. U hoeft niet meer te weten te komen over de verschillende sorteer routines van elke cmdlet.
 
-Bovendien hoeft cmdlet ontwikkelaars te ontwerpen sorteren functies voor de cmdlets. PowerShell biedt een raamwerk met de belangrijkste functies die ervoor zorgt consistentie dat. Het framework wordt voorkomen dat bepaalde opties die voor de ontwikkelaar worden geplaatst. Maar hierna wordt de ontwikkeling van cmdlets veel eenvoudiger.
+Daarnaast hoeven cmdlet-ontwikkel aars geen sorteer functies te ontwerpen voor hun cmdlets. Power shell biedt een Framework met de basis functies die consistentie afdwingt. Het Framework elimineert enkele keuzes die resteren voor de ontwikkelaar. Maar als resultaat wordt de ontwikkeling van cmdlets veel eenvoudiger.
 
-### <a name="interactive-and-scripting-environments"></a>Interactieve en scripting-omgevingen
+### <a name="interactive-and-scripting-environments"></a>Interactieve en script omgevingen
 
-De opdrachtprompt van Windows biedt een interactieve shell met toegang tot de opdrachtregelprogramma's en eenvoudige scripts worden uitgevoerd. Windows Script Host (WSH) scriptbare opdrachtregelprogramma's en COM automation-objecten heeft, maar biedt geen een interactieve shell.
+De opdracht prompt van Windows biedt een interactieve shell met toegang tot opdracht regel Programma's en basis scripts. Windows Script Host (WSH) heeft script bare opdracht regel Programma's en COM Automation-objecten, maar biedt geen interactieve shell.
 
-PowerShell combineert een interactieve shell en scripts. PowerShell kan toegang krijgen tot de opdrachtregelprogramma's, COM-objecten en .NET-klassebibliotheken. Dankzij deze combinatie van functies breidt de mogelijkheden van de interactieve gebruiker schrijver van het script en de systeembeheerder.
+Power shell combineert een interactieve shell en een script omgeving. Power shell kan toegang krijgen tot opdracht regel Programma's, COM-objecten en .NET-klassen bibliotheken. Deze combi natie van functies breidt de mogelijkheden van de interactieve gebruiker, de script schrijver en de systeem beheerder uit.
 
-### <a name="object-orientation"></a>Object-richting
+### <a name="object-orientation"></a>Object stand
 
-PowerShell is gebaseerd op het object niet als tekst. De uitvoer van een opdracht is een object. U kunt de uitvoerobject via de pijplijn verzenden naar een andere opdracht als invoer.
+Power shell is gebaseerd op object niet tekst. De uitvoer van een opdracht is een object. U kunt het uitvoer object, via de pijp lijn, naar een andere opdracht verzenden als invoer.
 
-Deze pijplijn biedt een vertrouwde-interface voor mensen met andere shells ervaren. Dit concept uitbreidt PowerShell door te sturen van objecten in plaats van tekst.
+Deze pijp lijn biedt een bekende interface voor personen die ervaring hebben met andere shells. Power shell breidt dit concept uit door objecten te verzenden in plaats van tekst.
 
-### <a name="easy-transition-to-scripting"></a>Eenvoudig overgang naar het uitvoeren van scripts
+### <a name="easy-transition-to-scripting"></a>Eenvoudige overgang naar scripts
 
-PowerShell van opdracht vindbaarheid maakt eenvoudig overgang van het typen van opdrachten interactief te maken en uitvoeren van scripts. Transcripten van PowerShell en de geschiedenis van eenvoudig opdrachten kopiëren naar een bestand voor gebruik als een script.
+Met de opdracht detectie van Power shell kunt u eenvoudig een migratie uitvoeren van opdrachten die interactief worden getypt om scripts te maken en uit te voeren. Met Power shell-transcripten en-geschiedenis kunt u eenvoudig opdrachten kopiëren naar een bestand voor gebruik als een script.

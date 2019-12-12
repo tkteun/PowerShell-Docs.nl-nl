@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3a31010d-1db9-44ae-a7f3-6ed32cb641cb
 caps.latest.revision: 16
 ms.openlocfilehash: 097d20cb6a04635124d1f96823248df6095ca1af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354269"
 ---
 # <a name="name-element-for-view-format"></a>Het element Naam voor Weergave (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element (inde
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Name` beschreven. Voor elke weer gave is slechts één `Name`-element toegestaan.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Name` beschreven. Voor elke weer gave is slechts één `Name` element toegestaan.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer .NET-objecten weer te geven.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef een unieke beschrijvende naam op voor de weer gave. Deze naam kan een verwijzing bevatten naar het type weer gave (zoals een tabel weergave of lijst weergave), welk object of welke verzameling objecten de weer gave gebruiken, welke opdracht de objecten retourneert of een combi natie hiervan.
 

@@ -1,36 +1,36 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Bekende opdrachtnamen gebruiken
 ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030892"
 ---
 # <a name="using-familiar-command-names"></a>Bekende opdrachtnamen gebruiken
 
-PowerShell ondersteunt om te verwijzen naar opdrachten met alternatieve namen-aliassen. Aliasing kan gebruikers met ervaring in andere schalen met namen van algemene opdrachten die ze al kennen voor vergelijkbare bewerkingen in PowerShell.
+Power shell ondersteunt aliassen om te verwijzen naar opdrachten op alternatieve namen. Met aliasing kunnen gebruikers ervaring hebben met andere shells om algemene opdracht namen te gebruiken die ze al kennen voor vergelijk bare bewerkingen in Power shell.
 
-Een nieuwe naam koppelt aliasing aan een andere opdracht. PowerShell heeft bijvoorbeeld een interne functie met de naam `Clear-Host` die het uitvoervenster worden gewist. U kunt beide typen de `cls` of `clear` alias achter de opdrachtprompt. PowerShell wordt deze aliassen wordt geïnterpreteerd en wordt uitgevoerd de `Clear-Host` functie.
+Met aliasing wordt een nieuwe naam gekoppeld aan een andere opdracht. Power Shell heeft bijvoorbeeld een interne functie met de naam `Clear-Host` waarmee het uitvoer venster wordt gewist. U kunt de `cls` of `clear` alias typen bij een opdracht prompt. Power shell interpreteert deze aliassen en voert de `Clear-Host` functie uit.
 
-Deze functie helpt gebruikers voor meer informatie over PowerShell. Eerste, meest **cmd.exe** en Unix-gebruikers hebben een grote statusprovider van opdrachten die gebruikers al bekend met de naam. De PowerShell-equivalenten kunnen niet dezelfde resultaten opleveren. De resultaten zijn echter sluiten voldoende die gebruikers kunnen werken zonder te weten de naam van de PowerShell-opdracht. 'Finger geheugen' is een andere belangrijke bron van frustraties wanneer een nieuwe opdrachtshell learning. Als u hebt gebruikt **cmd.exe** jaar reflexively Typ bijvoorbeeld de `cls` opdracht voor het wissen van het scherm. Zonder de alias voor `Clear-Host`, u een foutbericht ontvangt en weet niet wat u moet doen om te wissen van de uitvoer.
+Deze functie helpt gebruikers bij het leren van Power shell. Ten eerste hebben de meeste **cmd. exe** -en UNIX-gebruikers een grote aanbod opdrachten die gebruikers al op naam kennen. De Power shell-equivalenten kunnen geen identieke resultaten opleveren. De resultaten zijn echter bijna genoeg dat gebruikers kunnen werken zonder de naam van de Power shell-opdracht te weten. Finger Memory is een andere belang rijke bron van frustraties bij het leren van een nieuwe opdracht shell. Als u **cmd. exe** hebt gebruikt voor jaren, kunt u de `cls` opdracht om het scherm te wissen, reflexively typen. Zonder de alias voor `Clear-Host`ontvangt u een fout bericht en weet u niet wat u kunt doen om de uitvoer te wissen.
 
-De volgende lijst bevat enkele van de algemene **cmd.exe** en Unix-opdrachten die u in PowerShell gebruiken kunt:
+De volgende lijst bevat enkele van de algemene **cmd. exe** -en UNIX-opdrachten die u kunt gebruiken in Power shell:
 
 |||||
 |-|-|-|-|
-|CAT|dir|Koppelen|rm|
-|cd|echo|Verplaatsen|rmdir|
-|chdir|Wissen|popd|Slaapstand|
-|wissen|h|ps|Sorteren|
-|CLS|Geschiedenis|pushd|t|
-|kopiëren|KILL-instructie|pwd|type|
-|del|lp|R|Schrijven|
-|diff|ls|ren||
+|Cat5|dir|zachte|RM|
+|cd|echo|verplaatsen|rmdir|
+|ziet|wissen|popd|dwars|
+|wissen|h|ps|sorteren|
+|compatibiliteit|Geschiedenis|pushd|Tee|
+|Kopieer|verwijderen|pwd|Type|
+|drukt|snelheid|r|schrijven|
+|verschillende|1|Outlook||
 
-De `Get-Alias` cmdlet ziet u de echte naam van de systeemeigen PowerShell-opdracht die is gekoppeld aan een alias.
+De cmdlet `Get-Alias` toont u de werkelijke naam van de systeem eigen Power shell-opdracht die aan een alias is gekoppeld.
 
 ```powershell
 PS> Get-Alias cls
@@ -42,40 +42,40 @@ CommandType     Name                               Version    Source
 Alias           cls -> Clear-Host
 ```
 
-## <a name="interpreting-standard-aliases"></a>Standard aliassen interpreteren
+## <a name="interpreting-standard-aliases"></a>Standaard aliassen interpreteren
 
-De aliassen die we eerder beschreven, zijn ontworpen voor de naam van compatibiliteit met andere opdrachtshells.
-De meeste aliassen die zijn ingebouwd in PowerShell zijn ontworpen voor kort te houden. Kortere namen zijn gemakkelijker te type, maar zijn moeilijk te lezen als u niet wat ze verwijzen weet naar.
+De aliassen die eerder zijn beschreven, zijn ontworpen voor naam compatibiliteit met andere opdracht shells.
+De meeste aliassen die in Power shell zijn ingebouwd, zijn ontworpen voor de boog. Kortere namen zijn gemakkelijker te typen, maar zijn moeilijk te lezen als u niet weet waar ze naar verwijzen.
 
-PowerShell-aliassen proberen te manipuleren tussen duidelijkheid en beknopt te houden. PowerShell maakt gebruik van een standaardset aliassen voor veelvoorkomende woorden en bewerkingen.
+Power shell-aliassen proberen te knoeien tussen duidelijkheid en beknoptheid. Power shell gebruikt een standaardset aliassen voor veelvoorkomende naam woorden en termen.
 
-Voorbeeld van de afkortingen:
+Voor beelden van afkortingen:
 
-| Zelfstandig naamwoord of term | Afkorting |
+| Zelfstandig naam woord of werk woord | Afkorting |
 |--------------|--------------|
 | Ophalen          | g            |
 | Instellen          | s            |
 | Item         | Ik            |
-| Location     | l            |
-| Opdracht      | cm           |
+| Locatie     | l            |
+| Opdracht      | bedraagt           |
 | Alias        | al           |
 
-Deze aliassen zijn opgebouwd uit overzichtelijke als u weet dat de stenonaam.
+Deze aliassen zijn begrijpelijk wanneer u de korte namen kent.
 
 | Naam van cmdlet    | Alias |
 |----------------|-------|
-| `Get-Item`     | gi    |
+| `Get-Item`     | GI    |
 | `Set-Item`     | si    |
-| `Get-Location` | GB    |
-| `Set-Location` | SL    |
-| `Get-Command`  | gcm   |
-| `Get-Alias`    | GAL   |
+| `Get-Location` | boekhoud    |
+| `Set-Location` | lineaire    |
+| `Get-Command`  | GCM   |
+| `Get-Alias`    | Gal   |
 
-Als u bekend met PowerShell aliasing bent, is het gemakkelijk te raden dat de **sal** alias verwijst naar `Set-Alias`.
+Wanneer u bekend bent met het uitvoeren van Power shell-aliasing, kunt u gemakkelijk achterhalen dat de alias **Sal** naar `Set-Alias`verwijst.
 
-## <a name="creating-new-aliases"></a>Het maken van nieuwe aliassen
+## <a name="creating-new-aliases"></a>Nieuwe aliassen maken
 
-Kunt u uw eigen aliassen met behulp van de `Set-Alias` cmdlet. Bijvoorbeeld, maken de volgende instructies uit de standaard-cmdlet-aliassen die eerder werd besproken:
+U kunt uw eigen aliassen maken met behulp van de cmdlet `Set-Alias`. Met de volgende instructies worden bijvoorbeeld de standaard-cmdlet-aliassen gemaakt die eerder zijn besproken:
 
 ```powershell
 Set-Alias -Name gi -Value Get-Item
@@ -85,8 +85,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Intern, PowerShell maakt gebruik van vergelijkbare opdrachten tijdens het opstarten, maar deze aliassen zijn niet mag worden gewijzigd.
-Als u probeert uit te voeren op een van deze opdrachten, krijgt u een foutbericht waarin wordt uitgelegd dat de alias kan niet worden gewijzigd. Bijvoorbeeld:
+Intern gebruikt Power shell vergelijk bare opdrachten tijdens het opstarten, maar deze aliassen kunnen niet worden gewijzigd.
+Als u probeert een van deze opdrachten uit te voeren, krijgt u een fout melding waarin wordt uitgelegd dat de alias niet kan worden gewijzigd. Bijvoorbeeld:
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item

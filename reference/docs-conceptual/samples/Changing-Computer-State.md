@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Computerstatus wijzigen
 ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
-ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70386287"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
@@ -37,15 +37,15 @@ U kunt ook het hulp programma **shutdown. exe** gebruiken met de optie voor afme
 shutdown.exe -l
 ```
 
-Een andere optie is om WMI te gebruiken. De Win32_OperatingSystem-klasse heeft een Win32Shutdown-methode. Als de methode wordt aangeroepen met de vlag 0, wordt de afmelding gestart:
+Een andere optie is om WMI te gebruiken. De klasse Win32_OperatingSystem heeft een Win32Shutdown-methode. Als de methode wordt aangeroepen met de vlag 0, wordt de afmelding gestart:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Zie ' methode Win32Shutdown van de Win32_OperatingSystem-klasse ' in MSDN voor meer informatie en om andere functies van de Win32Shutdown-methode te vinden.
+Voor meer informatie en om andere functies van de methode Win32Shutdown te vinden, raadpleegt u de methode Win32Shutdown van de klasse Win32_OperatingSystem in MSDN.
 
-Ten slotte kunt u CIM gebruiken met dezelfde Win32_OperatingSystem-klasse als hierboven beschreven in de WMI-methode.
+Ten slotte kunt u CIM gebruiken met dezelfde Win32_OperatingSystem-klasse zoals hierboven wordt beschreven in de WMI-methode.
 
 ```powershell
 Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown

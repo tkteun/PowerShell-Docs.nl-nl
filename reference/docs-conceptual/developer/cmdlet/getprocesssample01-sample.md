@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359314"
 ---
 # <a name="getprocesssample01-sample"></a>Voorbeeld GetProcessSample01
@@ -29,7 +29,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Open een opdrachtpromptvenster.
 
@@ -68,7 +68,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 Voor dit voor beeld is Windows Power shell 1,0 of hoger vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 

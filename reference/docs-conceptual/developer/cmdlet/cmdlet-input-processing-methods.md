@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359477"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Invoerverwerkingsmethoden voor cmdlets
@@ -63,7 +63,7 @@ Stel dat uw cmdlet object variabelen moet opschonen nadat de verwerking is volto
 
 Wanneer Power shell een opdracht pijplijn verwerkt, roept Power shell deze methode één keer aan voor elk exemplaar van de cmdlet in de pijp lijn.
 Het is echter belang rijk te weten dat de methode EndProcessing niet wordt aangeroepen door de Power shell-runtime als de cmdlet halverwege wordt geannuleerd door de invoer verwerking of als er een afsluit fout optreedt in een deel van de cmdlet.
-Daarom moet een cmdlet die het opruimen van objecten vereist, het volledige [System. IDisposable](/dotnet/api/System.IDisposable) -patroon implementeren, met inbegrip van een FINALIZE, zodat de runtime zowel de methoden EndProcessing als [System. IDisposable. Dispose](/dotnet/api/System.IDisposable.Dispose) aan het einde van bezig.
+Daarom moet een cmdlet die het opruimen van objecten vereist, het volledige [System. IDisposable](/dotnet/api/System.IDisposable) -patroon implementeren, met inbegrip van een FINALIZE, zodat de runtime zowel de methoden EndProcessing als [System. IDisposable. Dispose](/dotnet/api/System.IDisposable.Dispose) aan het einde van de verwerking kan aanroepen.
 Zie [cmdlet processing Lifecycle](/previous-versions/ms714429(v=vs.85))voor meer informatie over hoe Power shell de opdracht pijplijn aanroept.
 
 De volgende code toont een implementatie van de methode EndProcessing.

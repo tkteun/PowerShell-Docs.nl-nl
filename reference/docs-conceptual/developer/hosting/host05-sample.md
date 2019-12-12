@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
 ms.openlocfilehash: 98271f5f439d10b6d29fd0a6422b5b9b4ab55716
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357643"
 ---
 # <a name="host05-sample"></a>Voorbeeld Host05
@@ -25,13 +25,13 @@ Dit voor beeld laat zien hoe u een interactieve op een console gebaseerde host-t
 
 - Deze toepassing moet worden uitgevoerd in de modus met verhoogde bevoegdheden (als administrator uitvoeren).
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
-- Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de [ System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) -klasse.
+- Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Het bouwen van een console toepassing die gebruikmaakt van deze host klassen om een interactieve Windows Power shell-shell te bouwen.
 
-- Een `$profile`-variabele maken en de volgende profielen laden.
+- Een `$profile` variabele maken en de volgende profielen laden.
 
   - huidige gebruiker, huidige host
 

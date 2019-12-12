@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Items rechtstreeks bewerken
 ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030127"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
 
-De elementen die u in Windows PowerShell-stations, zoals de bestanden en mappen in het bestand system-stations en de registersleutels in de Windows PowerShell-register-stations ziet, heten *items* in Windows PowerShell. De cmdlets voor het werken met hen item hebben het zelfstandig naamwoord **Item** in hun namen.
+De elementen die u ziet in Windows Power Shell-stations, zoals de bestanden en mappen in de bestandssysteem stations en de register sleutels in de Windows Power shell-register stations, worden *items* genoemd in Windows Power shell. De cmdlets voor het werken met deze items hebben het zelfstandige naam **item** .
 
-De uitvoer van de **Get-Command - zelfstandig naamwoord Item** -opdracht laat zien dat er negen item Windows PowerShell-cmdlets zijn.
+De uitvoer van de opdracht **Get-opdracht-item** van het zelfstandig naam woord laat zien dat er negen Windows Power shell-cmdlets voor items zijn.
 
 ```
 PS> Get-Command -Noun Item
@@ -31,11 +31,11 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-## <a name="creating-new-items-new-item"></a>Het maken van nieuwe Items (Nieuw-Item)
+## <a name="creating-new-items-new-item"></a>Nieuwe items maken (nieuw item)
 
-Gebruik voor het maken van een nieuw item in het bestandssysteem de **New Item** cmdlet. Bevatten de **pad** parameter met het pad naar het item en de **ItemType** parameter met de waarde 'file' of 'directory'.
+Gebruik de cmdlet **New-item** om een nieuw item in het bestands systeem te maken. Neem de para meter **Path** op met het pad naar het item en de **item** type-para meter met de waarde "file" of "directory".
 
-Bijvoorbeeld, een nieuwe map wilt maken met de naam ' New.Directory"in C:\\Temp-map, type:
+Als u bijvoorbeeld een nieuwe map met de naam ' New. Directory ' wilt maken in de map C:\\Temp, typt u:
 
 ```
 PS> New-Item -Path c:\temp\New.Directory -ItemType Directory
@@ -47,7 +47,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  11:29 AM            New.Directory
 ```
 
-Voor het maken van een bestand, wijzig de waarde van de **ItemType** parameter 'file'. Bijvoorbeeld, voor het maken van een bestand met de naam 'bestand1.txt' in de map New.Directory, typt u:
+Als u een bestand wilt maken, wijzigt u de waarde van de para meter **item** type in "bestand". Als u bijvoorbeeld een bestand met de naam ' bestand1. txt ' in de nieuwe map wilt maken, typt u:
 
 ```
 PS> New-Item -Path C:\temp\New.Directory\file1.txt -ItemType file
@@ -59,7 +59,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-U kunt dezelfde techniek gebruiken om een nieuwe registersleutel te maken. Er is in feite een registersleutel gemakkelijker te maken, omdat het enige itemtype in het Windows-register een sleutel is. (Artikel worden de registervermeldingen *eigenschappen*.) Bijvoorbeeld, voor het maken van een sleutel met de naam '_testen' in de subsleutel CurrentVersion, typt u:
+U kunt dezelfde techniek gebruiken om een nieuwe register sleutel te maken. Een register sleutel is eigenlijk eenvoudiger te maken, omdat het enige item type in het Windows-REGI ster een sleutel is. (Register vermeldingen zijn item *Eigenschappen*.) Als u bijvoorbeeld een sleutel met de naam ' _Test ' wilt maken in de subsleutel CurrentVersion, typt u:
 
 ```
 PS> New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion_Test
@@ -72,15 +72,15 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Wanneer u een registerpad, zorg ervoor dat u de dubbele punt ( **:** ) station in de Windows PowerShell-namen, HKLM: en HKCU:. Zonder de dubbele punt, wordt de naam van de schijf in het pad niet herkend door Windows PowerShell.
+Wanneer u een registerpad typt, moet u de dubbele punt ( **:** ) in de namen van Windows Power Shell-stations, HKLM: en HKCU: toevoegen. Zonder de dubbele punt herkent Windows Power shell de naam van het station niet in het pad.
 
-## <a name="why-registry-values-are-not-items"></a>Registerwaarden zijn waarom geen Items
+## <a name="why-registry-values-are-not-items"></a>Waarom register waarden geen items zijn
 
-Wanneer u gebruikt de **Get-ChildItem** cmdlet voor het vinden van de items in een registersleutel, wordt nooit werkelijke registervermeldingen en hun waarden weergegeven.
+Wanneer u de cmdlet **Get-Child item** gebruikt om de items in een register sleutel te vinden, zult u nooit de werkelijke Register vermeldingen of hun waarden zien.
 
-Bijvoorbeeld, de registersleutel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\uitvoeren** bevat meestal verschillende registervermeldingen die staan voor toepassingen die worden uitgevoerd wanneer het systeem wordt gestart.
+De register sleutel **HKEY_LOCAL_MACHINE\\Software\\micro soft\\Windows\\CurrentVersion\\run** bevat doorgaans diverse register vermeldingen die toepassingen vertegenwoordigen die worden uitgevoerd wanneer het systeem wordt gestart.
 
-Echter, wanneer u **Get-ChildItem** om te zoeken naar onderliggende items in de sleutel, wordt alle ziet u de **voor OptionalComponents** subsleutel van de sleutel:
+Als u echter **Get-Child item** gebruikt om te zoeken naar onderliggende items in de sleutel, ziet u de subsleutel **OptionalComponents** van de sleutel:
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
@@ -92,17 +92,17 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Hoewel het normaal zou zijn handig is dat de registervermeldingen behandelen als items, kunt u een pad naar een register-item niet opgeven op een manier die ervoor zorgt dat deze uniek is. De notatie van het pad wordt geen onderscheid gemaakt tussen de subsleutel in het register met de naam **uitvoeren** en de **(standaard)** register-item in de **uitvoeren** subsleutel. Bovendien, omdat het register vermelding namen mogen de backslash-teken ( **\\** ), als registervermeldingen items, zou u kan niet de pad-notatie gebruiken om u te onderscheiden van een registervermelding met de naam  **Windows\\CurrentVersion\\uitvoeren** van de subsleutel die zich in het opgegeven pad.
+Hoewel het handig is om Register vermeldingen als items te behandelen, kunt u geen pad naar een register vermelding opgeven op een manier die ervoor zorgt dat deze uniek is. De pad-notatie maakt geen onderscheid tussen de registersubsleutel **Run** en de **(standaard)** register vermelding in de **Run** -subsleutel. Omdat Register vermeldingen echter de back slash-teken ( **\\** ) kunnen bevatten, kunt u, als register items items zijn, de pad-notatie niet gebruiken om onderscheid te maken tussen een register vermelding met de naam **Windows\\CurrentVersion\\worden uitgevoerd** vanuit de subsleutel die zich in dat pad bevindt.
 
-## <a name="renaming-existing-items-rename-item"></a>Naam van bestaande Items (naam wijzigen-Item) wijzigen
+## <a name="renaming-existing-items-rename-item"></a>De naam van bestaande items wijzigen (naam wijzigen-item)
 
-Als u wilt de naam van een bestand of map wijzigen, gebruikt u de **Rename-Item** cmdlet. De volgende opdracht wijzigt de naam van de **Bestand1.txt** van het bestand in **fileOne.txt**.
+Als u de naam van een bestand of map wilt wijzigen, gebruikt u de cmdlet **Rename-item** . Met de volgende opdracht wordt de naam van het bestand **bestand1. txt** gewijzigd in **fileOne. txt**.
 
 ```powershell
 Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
-De **Rename-Item** cmdlet kan de naam van een bestand of map wijzigen, maar het kan een item niet verplaatsen. De volgende opdracht mislukt, omdat deze probeert te verplaatsen van het bestand uit de map New.Directory naar de map Temp.
+De cmdlet **Rename-item** kan de naam van een bestand of map wijzigen, maar een item kan niet worden verplaatst. De volgende opdracht mislukt omdat er wordt geprobeerd het bestand te verplaatsen van de nieuwe map. Directory naar de map Temp.
 
 ```
 PS> Rename-Item -Path C:\temp\New.Directory\fileOne.txt c:\temp\fileOne.txt
@@ -111,11 +111,11 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-## <a name="moving-items-move-item"></a>Items verplaatsen (Item verplaatsen)
+## <a name="moving-items-move-item"></a>Items verplaatsen (verplaatsen-item)
 
-Als u een bestand of map, gebruikt u de **Item verplaatsen** cmdlet.
+Als u een bestand of map wilt verplaatsen, gebruikt u de cmdlet **Move-item** .
 
-Bijvoorbeeld, de volgende opdracht uit de map New.Directory verplaatst van de C:\\tijdelijke map in de hoofdmap van station. Om te controleren dat het item is verplaatst, bevatten de **PassThru** parameter van de **Item verplaatsen** cmdlet. Zonder **Passthru**, wordt de **Item verplaatsen** cmdlet geen resultaten weergegeven.
+Met de volgende opdracht wordt bijvoorbeeld de nieuwe Directory Directory verplaatst van de map C:\\Temp naar de hoofdmap van station C:. Als u wilt controleren of het item is verplaatst, neemt u de para meter **PassThru** van de cmdlet **Move-item** op. Zonder **PassThru**worden met de cmdlet **Move-item** geen resultaten weer gegeven.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -127,28 +127,28 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-## <a name="copying-items-copy-item"></a>Kopiëren van Items (Copy-Item)
+## <a name="copying-items-copy-item"></a>Items kopiëren (kopiëren-item)
 
-Als u bekend met de kopieerbewerkingen in andere shells bent, vindt u mogelijk het gedrag van de **Copy-Item** cmdlet in Windows PowerShell om te worden ongebruikelijke. Wanneer u een item van de ene locatie naar een andere kopieert, worden Copy-Item de inhoud ervan niet standaard gekopieerd.
+Als u bekend bent met de Kopieer bewerkingen in andere shells, kunt u het gedrag van de cmdlet **copy-item** in Windows Power shell ongebruikelijk vinden. Wanneer u een item van de ene locatie naar een andere kopieert, wordt de inhoud niet standaard gekopieerd.
 
-Bijvoorbeeld, als u kopieert de **New.Directory** Active directory van het station naar station C:\\tijdelijke map de opdracht is geslaagd, maar de bestanden in de map New.Directory zijn niet gekopieerd.
+Als u bijvoorbeeld de map **New. Directory** van station c: kopieert naar de map c:\\Temp, is de opdracht geslaagd, maar de bestanden in de nieuwe directory-map worden niet gekopieerd.
 
 ```powershell
 Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Als u de inhoud van weergeeft **C:\\temp\\New.Directory**, ziet u dat deze geen bestanden bevat:
+Als u de inhoud van **C:\\temp\\New. Directory**weergeeft, ziet u dat deze geen bestanden bevat:
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
 PS>
 ```
 
-Waarom niet de **Copy-Item** cmdlet Kopieer de inhoud naar de nieuwe locatie?
+Waarom kopieert de cmdlet **copy-item** de inhoud niet naar de nieuwe locatie?
 
-De **Copy-Item** cmdlet is ontworpen om te worden algemene; het is niet alleen voor het kopiëren van bestanden en mappen. Ook, zelfs bij het kopiëren van bestanden en mappen, kunt u alleen de container en niet op de items in het te kopiëren.
+De cmdlet **copy-item** is ontworpen als algemeen; het is niet alleen bedoeld voor het kopiëren van bestanden en mappen. Ook als u bestanden en mappen kopieert, wilt u misschien alleen de container kopiëren en niet de items hierin.
 
-Alle van de inhoud van een map wilt kopiëren, bevatten de **Recurse** parameter van de **Copy-Item** cmdlet in de opdracht. Als u de map zonder de inhoud al hebt gekopieerd, voegt u toe de **Force** parameter, zodat u kunt het overschrijven van de lege map.
+Als u alle inhoud van een map wilt kopiëren, neemt u de para meter **recursieve** van de cmdlet **copy-item** op in de opdracht. Als u de map al hebt gekopieerd zonder de inhoud, voegt u de para meter **Force** toe, waarmee u de lege map kunt overschrijven.
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
@@ -166,9 +166,9 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-## <a name="deleting-items-remove-item"></a>Verwijderen van Items (Item verwijderen)
+## <a name="deleting-items-remove-item"></a>Items verwijderen (verwijderen-item)
 
-Als u wilt verwijderen van bestanden en mappen, gebruikt u de **Remove-Item** cmdlet. Windows PowerShell-cmdlets, zoals **Remove-Item**, die aanzienlijk kunt maken, niet ongedaan worden gemaakt wijzigingen vaak om bevestiging wordt gevraagd bij het invoeren van de opdrachten. Bijvoorbeeld, als u probeert te verwijderen de **New.Directory** map, wordt u gevraagd om te bevestigen van de opdracht, omdat de map bestanden bevat:
+Als u bestanden en mappen wilt verwijderen, gebruikt u de cmdlet **Remove-item** . Windows Power shell-cmdlets, zoals **Remove-item**, die aanzienlijke, onherstelbare wijzigingen kunnen aanbrengen, worden vaak gevraagd om bevestiging wanneer u de opdrachten opgeeft. Als u bijvoorbeeld probeert de **nieuwe map.** map te verwijderen, wordt u gevraagd om de opdracht te bevestigen, omdat de map bestanden bevat:
 
 ```
 PS> Remove-Item C:\New.Directory
@@ -181,28 +181,28 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-Omdat **Ja** is het standaardantwoord, om te verwijderen van de map en de bestanden, drukt u op de **Enter** sleutel. U kunt de map zonder bevestiging verwijderen met de **-Recurse** parameter.
+Omdat **Ja** de standaard reactie is, kunt u de map en de bijbehorende bestanden verwijderen door op **Enter** te drukken. Als u de map wilt verwijderen zonder te bevestigen, gebruikt u de para meter **-recursief** .
 
 ```powershell
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-## <a name="executing-items-invoke-item"></a>Uitvoeren van Items (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>Items uitvoeren (invoke-item)
 
-Windows PowerShell gebruikt de **Invoke-Item** cmdlet voor het uitvoeren van een standaardactie voor een bestand of map. Deze standaardactie wordt bepaald door de handler van de toepassing standaard in het register. het effect is hetzelfde als wanneer u dubbelklikt op het item in de Verkenner.
+Windows Power shell gebruikt de cmdlet **invoke-item** om een standaard actie uit te voeren voor een bestand of map. Deze standaard actie wordt bepaald door de standaard toepassings-handler in het REGI ster. het effect is hetzelfde als wanneer u dubbelklikt op het item in Verkenner.
 
-Stel bijvoorbeeld dat u de volgende opdracht uitvoeren:
+Stel bijvoorbeeld dat u de volgende opdracht uitvoert:
 
 ```powershell
 Invoke-Item C:\WINDOWS
 ```
 
-Een Explorer-venster dat in C: bevindt zich\\Windows wordt weergegeven, net als de C: had dubbelklikken\\Windows-map.
+Een Verkenner-venster dat zich bevindt in C:\\Windows wordt weer gegeven, net zoals als u op de map C:\\Windows hebt gedubbelklikt.
 
-Als u de **Boot.ini** bestand op een systeem voorafgaand aan Windows Vista:
+Als u het bestand **boot. ini** aanroept op een systeem vóór Windows Vista:
 
 ```powershell
 Invoke-Item C:\boot.ini
 ```
 
-Als het type INI-bestand gekoppeld aan Kladblok is, is het boot.ini-bestand wordt geopend in Kladblok.
+Als het ini-bestands type is gekoppeld aan Klad blok, wordt het bestand Boot. ini geopend in Klad blok.

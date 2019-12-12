@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Resources verpakken en uploaden naar een pull-server
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942242"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Resources verpakken en uploaden naar een pull-server
@@ -37,7 +37,7 @@ Het bron archief moet een naam hebben met de volgende indeling:
 {ModuleName}_{Version}.zip
 ```
 
-In het bovenstaande voor beeld moet ' xPSDesiredStateConfiguration. zip ' de naam ' xPSDesiredStateConfiguration_ 8.4.4.0. zip ' hebben.
+In het bovenstaande voor beeld moet ' xPSDesiredStateConfiguration. zip ' de naam ' xPSDesiredStateConfiguration_8.4.4.0. zip ' hebben.
 
 ### <a name="create-checksums"></a>Controle sommen maken
 
@@ -47,7 +47,7 @@ Zodra de resource module is gecomprimeerd en de naam ervan is gewijzigd, moet u 
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Er wordt geen uitvoer weer gegeven, maar u ziet nu een ' xPSDesiredStateConfiguration_ 8.4.4.0. zip. checksum '. U kunt ook `New-DSCCheckSum` uitvoeren voor een map met bestanden met behulp van de para meter `-Path`. Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`.
+Er wordt geen uitvoer weer gegeven, maar u ziet nu een ' xPSDesiredStateConfiguration_8.4.4.0. zip. checksum '. U kunt `New-DSCCheckSum` ook uitvoeren op een map met bestanden met behulp van de para meter `-Path`. Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`.
 
 ### <a name="where-to-store-resource-archives"></a>Locatie voor het opslaan van resource archieven
 

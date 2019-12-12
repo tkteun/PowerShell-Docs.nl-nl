@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WindowsFeatureSet-resource
 ms.openlocfilehash: 1758d248dde4fdee57bd01c157a3f9a8340d6194
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941248"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-resource
@@ -33,21 +33,21 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Eigenschappen
 
-|  Eigenschap  |  Description   |
+|  Eigenschap  |  Beschrijving   |
 |---|---|
-|Name |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) en niet de weergave naam van de functies of onderdelen. |
-|Source |Hiermee wordt de locatie aangegeven van het bron bestand dat moet worden gebruikt voor installatie, indien nodig. |
-|IncludeAllSubFeature |Stel deze eigenschap in `$true` op om alle vereiste subonderdelen toe te voegen met de functies die u opgeeft met de eigenschap **naam** . |
+|Naam |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) en niet de weergave naam van de functies of onderdelen. |
+|Bron |Hiermee wordt de locatie aangegeven van het bron bestand dat moet worden gebruikt voor installatie, indien nodig. |
+|IncludeAllSubFeature |Stel deze eigenschap in op `$true` om alle vereiste subonderdelen toe te voegen met de functies die u opgeeft met de eigenschap **naam** . |
 |Referentie |De referenties die moeten worden gebruikt om de functies of onderdelen toe te voegen of te verwijderen. |
 |Logboekpad |Het pad naar een logboek bestand waar de resource provider de bewerking moet registreren. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
 |Zo |Hiermee wordt aangegeven of de functies of onderdelen worden toegevoegd. Stel deze eigenschap in op **presen teren**om ervoor te zorgen dat de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen worden verwijderd, stelt u de eigenschap in op **afwezig**. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

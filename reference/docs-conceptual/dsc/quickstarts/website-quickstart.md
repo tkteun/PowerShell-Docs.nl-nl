@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Quick Start: een website maken met DSC'
 ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942725"
 ---
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358733"
 ---
 # <a name="viewselectedby-element-format"></a>Het element ViewSelectedBy (opmaak)
@@ -32,7 +32,7 @@ ViewDefinitions element (indeling) element weer geven (indeling) ViewSelectedBy-
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ViewSelectedBy` beschreven. Dit element moet ten minste één `TypeName`-of `SelectionSetName`-onderliggend element bevatten. Er is geen limiet voor het aantal onderliggende elementen dat kan worden opgegeven, en de volg orde hiervan is aanzienlijk.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ViewSelectedBy` beschreven. Dit element moet ten minste één `TypeName` of `SelectionSetName` onderliggend element bevatten. Er is geen limiet voor het aantal onderliggende elementen dat kan worden opgegeven, en de volg orde hiervan is aanzienlijk.
 
 ### <a name="attributes"></a>Kenmerken
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
 ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354885"
 ---
 # <a name="cmdlet-class-declaration"></a>Declaratie van cmdlet-klassen
@@ -25,7 +25,7 @@ Een Microsoft .NET Framework-klasse wordt gedeclareerd als een cmdlet door het *
 > [!NOTE]
 > Het **cmdlet** -kenmerk wordt gedefinieerd door de klasse [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . De eigenschappen van deze klasse komen overeen met de declaratie parameters die worden gebruikt bij het declareren van het kenmerk.
 
-## <a name="nouns"></a>Woorden
+## <a name="nouns"></a>Zelfstandige naamwoorden
 
 Het zelfstandige naam woord van de cmdlet specificeert de resources waarop de cmdlet optreedt. Het zelfstandig naam woord onderscheidt uw cmdlets van andere cmdlets.
 
@@ -53,7 +53,7 @@ De volgende code is de definitie voor een GetProc-cmdlet-klasse. U ziet dat Pasc
 
 ## <a name="pascal-casing"></a>Pascal-behuizing
 
-Wanneer u een naam wilt voor cmdlets, gebruikt u het hoofdletter gebruik. De cmdlets `Get-Item` en `Get-ItemProperty` geven bijvoorbeeld de juiste manier om hoofdletter gebruik te gebruiken wanneer u de naamgeving van cmdlets gebruikt.
+Wanneer u een naam wilt voor cmdlets, gebruikt u het hoofdletter gebruik. De cmdlets `Get-Item` en `Get-ItemProperty` tonen bijvoorbeeld de juiste manier om hoofdletter gebruik te gebruiken wanneer u de naamgeving van cmdlets gebruikt.
 
 ## <a name="see-also"></a>Zie ook
 

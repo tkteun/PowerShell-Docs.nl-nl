@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Voorwaardelijke instructies en lussen in configuraties
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942032"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Voorwaardelijke instructies en lussen in configuraties
@@ -37,7 +37,7 @@ Configuration ServiceState
 }
 ```
 
-Daarnaast kunt u een **service** blok resource maken voor elke service op de huidige machine, met behulp van een `foreach`-lus.
+Daarnaast kunt u een **service** blok resource maken voor elke service op de huidige computer met behulp van een `foreach`-lus.
 
 ```powershell
 Configuration ServiceState
@@ -103,7 +103,7 @@ Dit omvat zaken als:
 - Externe communicatie
 - WMI en CIM
 - Active Directory-objecten
-- en nog veel meer...
+- en meer...
 
 Elke Power shell-code die in een configuratie is gedefinieerd, wordt een compilatie tijd geëvalueerd, maar u kunt ook code in het script plaatsen dat uw configuratie bevat. Code buiten het configuratie blok wordt uitgevoerd wanneer u de configuratie importeert.
 

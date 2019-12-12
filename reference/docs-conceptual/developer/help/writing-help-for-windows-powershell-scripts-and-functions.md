@@ -9,16 +9,16 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357804"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Hulp voor het schrijven van Power shell-scripts en-functies
 
 Power shell-scripts en-functies moeten volledig worden gedocumenteerd wanneer ze met anderen worden gedeeld.
-De `Get-Help`-cmdlet geeft het script en de functie Help-onderwerpen weer in dezelfde indeling als de Help voor cmdlets wordt weer gegeven. alle para meters van de `Get-Help` werken aan de Help-onderwerpen over scripts en functies.
+Met de cmdlet `Get-Help` worden de script-en functie Help-onderwerpen weer gegeven in dezelfde indeling als de Help voor cmdlets wordt weer gegeven. alle para meters van `Get-Help` werken met de Help-onderwerpen over scripts en functies.
 
 Power shell-scripts kunnen een Help-onderwerp bevatten over het script en Help-onderwerpen over de functies in het script.
 Functies die onafhankelijk van scripts worden gedeeld, kunnen hun eigen Help-onderwerpen bevatten.
@@ -37,10 +37,10 @@ Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/abou
 Het Help-onderwerp waarin een script of functie wordt beschreven, kan worden geïmplementeerd in een XML-bestand dat gebruikmaakt van het opdracht Help-schema.
 Als u het script of de functie wilt koppelen aan het XML-bestand, gebruikt u het sleutel woord `ExternalHelp` opmerking, gevolgd door het pad en de naam van het XML-bestand.
 
-Wanneer het sleutel woord `ExternalHelp` aanwezig is, heeft het een hogere prioriteit dan de Help op basis van opmerkingen, zelfs wanneer `Get-Help` geen Help-bestand kan vinden dat overeenkomt met de waarde van het sleutel woord `ExternalHelp`.
+Wanneer het tref woord `ExternalHelp` opmerking aanwezig is, heeft het een hogere prioriteit dan een op opmerkingen gebaseerde Help, zelfs wanneer `Get-Help` geen Help-bestand kunt vinden dat overeenkomt met de waarde van het sleutel `ExternalHelp`.
 
 ### <a name="online-help"></a>Online-Help
-U kunt de Help-onderwerpen op Internet plaatsen en vervolgens direct `Get-Help` gebruiken om de onderwerpen te openen.
+U kunt de Help-onderwerpen op Internet plaatsen en vervolgens direct `Get-Help` om de onderwerpen te openen.
 Zie [ondersteuning voor online-Help](../module/supporting-online-help.md)voor meer informatie over het schrijven van Help-onderwerpen over opmerkingen.
 
 Er is geen vastgelegde methode voor het schrijven van conceptuele (' about ') onderwerpen voor scripts en functies.
@@ -66,7 +66,7 @@ U kunt de onderwerpen en de bijbehorende Url's echter op de Internet lijst plaat
 
 - In het Help-onderwerp van een functie herinnert u gebruikers dat de functie alleen bestaat in de huidige sessie en om deze te gebruiken in andere sessies, ze moeten deze toevoegen of een Power shell-profiel toevoegen.
 
-- met `Get-Help` wordt het Help-onderwerp voor een script of functie alleen weer gegeven wanneer het script bestand en Help-onderwerp bestanden worden opgeslagen op de juiste locaties. Daarom is het niet handig instructies voor het installeren van Power shell op te geven, of het script of de functie in een Help-onderwerp in een script of functie op te slaan of te installeren. Neem in plaats daarvan installatie-instructies op in het document dat u gebruikt om het script of de functie te distribueren.
+- `Get-Help` wordt het Help-onderwerp voor een script of functie alleen weer gegeven wanneer het script bestand en Help-onderwerp bestanden worden opgeslagen op de juiste locaties. Daarom is het niet handig instructies voor het installeren van Power shell op te geven, of het script of de functie in een Help-onderwerp in een script of functie op te slaan of te installeren. Neem in plaats daarvan installatie-instructies op in het document dat u gebruikt om het script of de functie te distribueren.
 
 ## <a name="see-also"></a>Zie ook
 

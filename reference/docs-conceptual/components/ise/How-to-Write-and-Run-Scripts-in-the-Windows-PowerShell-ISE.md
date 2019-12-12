@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: Power shell, cmdlet
 title: Scripts schrijven en uitvoeren in Windows PowerShell ISE
 ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117568"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Scripts schrijven en uitvoeren in Windows PowerShell ISE
@@ -116,7 +116,7 @@ Druk op **CTRL + S** of klik op de werk balk op het pictogram **Opslaan** of Kli
 
 ### <a name="to-save-and-name-a-script"></a>Een script opslaan en een naam schrijven
 
-1. Klik in het menu **bestand** op **Opslaan als**. Het dialoog venster **Opslaan als** wordt weer gegeven.
+1. Klik in het menu **Bestand** op **Opslaan als**. Het dialoog venster **Opslaan als** wordt weer gegeven.
 2. Voer in het vak **Bestands naam** een naam in voor het bestand.
 3. Selecteer een bestands type in het vak **Opslaan als type** . Selecteer bijvoorbeeld Power shell-scripts (\*. ps1) in het vak **Opslaan als** .
 4. Klik op **Opslaan**.

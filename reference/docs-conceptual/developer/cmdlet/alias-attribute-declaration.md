@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: d0df3a46-b1cc-42b9-beb1-e16bce254007
 caps.latest.revision: 10
 ms.openlocfilehash: 4d20672c5181c994c1b53624f6c42a301db11f26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359484"
 ---
 # <a name="alias-attribute-declaration"></a>Declaratie van het kenmerk Alias
@@ -31,7 +31,7 @@ Met het alias kenmerk kan de gebruiker verschillende namen opgeven voor een cmdl
 
 #### <a name="parameters"></a>Parameters
 
-`aliasName` (teken reeks []) is vereist. Hiermee geeft u een set met door komma's gescheiden alias namen op voor de cmdlet-para meter.
+`aliasName` (string []) vereist. Hiermee geeft u een set met door komma's gescheiden alias namen op voor de cmdlet-para meter.
 
 ## <a name="remarks"></a>Opmerkingen
 

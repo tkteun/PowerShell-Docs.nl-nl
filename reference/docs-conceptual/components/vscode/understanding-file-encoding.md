@@ -3,10 +3,10 @@ title: Informatie over bestandscodering in VSCode en PowerShell
 description: Bestands codering configureren in VSCode en Power shell
 ms.date: 02/28/2019
 ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117403"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Informatie over bestandscodering in VSCode en PowerShell
@@ -57,11 +57,11 @@ Wanneer deze bytes worden gedecodeerd als Windows-1252, worden ze geïnterpretee
 U kunt onder andere de volgende vreemde teken reeksen zien:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` in plaats van `–`
-- `â€”` in plaats van `—`
-- `Ã„2` in plaats van `Ä`
+- `â€“` In plaats van `–`
+- `â€”` In plaats van `—`
+- `Ã„2` In plaats van `Ä`
 - `Â` in plaats van ` ` (een vaste spatie)
-- `Ã©` in plaats van `é`
+- `Ã©` In plaats van `é`
 <!-- markdownlint-enable MD038 -->
 
 Deze handige [Naslag informatie](https://www.i18nqa.com/debug/utf8-debug.html) bevat de algemene patronen die duiden op een UTF-8-of Windows-1252-coderings probleem.
@@ -183,7 +183,7 @@ finally
 }
 ```
 
-Het is mogelijk om Power shell te configureren voor het gebruik van een bepaalde code ring, met behulp van profiel instellingen. Raadpleeg de volgende artikelen:
+Het is mogelijk om Power shell te configureren voor het gebruik van een bepaalde code ring, met behulp van profiel instellingen. Zie de volgende artikelen:
 
 - [@mklement0] [antwoord over Power shell-code ring op stack overflow](https://stackoverflow.com/a/40098904).
 - het blog bericht van [@rkeithhill] [over het afhandelen van een stuk lijst zonder UTF-8-invoer in Power shell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
@@ -232,14 +232,14 @@ Zorg ervoor dat uw samen werkers op bestanden die u deelt geen instellingen hebb
 
 Elk ander programma dat een Power shell-script leest of schrijft, kan het opnieuw versleutelen.
 
-Enkele voor beelden zijn:
+Enkele voorbeelden:
 
 - Het klem bord gebruiken om een script te kopiëren en te plakken. Dit is gebruikelijk in scenario's zoals:
   - Een script naar een VM kopiëren
   - Een script uit een e-mail bericht of webpagina kopiëren
   - Een script kopiëren naar of van een micro soft Word-of Power Point-document
 - Andere tekst editors, zoals:
-  - Notitie
+  - Kladblok
   - vim
   - Een andere Power shell-script editor
 - Hulpprogram ma's voor tekst bewerking, zoals:

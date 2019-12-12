@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353114"
 ---
 # <a name="runspace-samples"></a>Voorbeelden van runspaces
@@ -42,7 +42,7 @@ Deze sectie bevat voorbeeld code die laat zien hoe u verschillende soorten runsp
 
  [Runspace09](./runspace09-sample.md) -voor beeld In dit voor beeld ziet u hoe u een script toevoegt aan de pijp lijn van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object en hoe het script asynchroon kan worden uitgevoerd. Gebeurtenissen worden gebruikt voor het afhandelen van de uitvoer van het script.
 
- [Runspace10](./runspace10-sample.md) -voor beeld Dit voor beeld laat zien hoe u een standaard begin sessie status kunt maken, hoe u een cmdlet kunt toevoegen aan [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hoe u een runs Pace maakt die de oorspronkelijke sessie status gebruikt en hoe u de opdracht uitvoert met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+ [Runspace10](./runspace10-sample.md) -voor beeld Dit voor beeld laat zien hoe u een standaard begin sessie status kunt maken, hoe u een cmdlet kunt toevoegen aan [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hoe u een runs Pace maakt die de oorspronkelijke sessie status gebruikt en hoe u de opdracht uitvoert met behulp van een object [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) .
 
  [Runspace11](./runspace11-sample.md) -voor beeld Hier ziet u hoe u de klasse [System. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) gebruikt voor het maken van een proxy opdracht die een bestaande cmdlet aanroept, maar de set beschik bare para meters beperkt. De proxy opdracht wordt vervolgens toegevoegd aan een initiële sessie status die wordt gebruikt om een beperkte runs Pace te maken. Dit betekent dat de gebruiker alleen via de proxy opdracht toegang kan krijgen tot de functionaliteit van de cmdlet.
 

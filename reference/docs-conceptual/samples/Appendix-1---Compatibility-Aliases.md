@@ -3,10 +3,10 @@ ms.date: 09/09/2019
 keywords: Power shell, cmdlet
 title: Bijlage 1 - Compatibiliteitsaliassen
 ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
-ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70848161"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bijlage 1-compatibiliteits aliassen
@@ -16,7 +16,7 @@ De opdrachten en hun bijbehorende Power shell-cmdlet-en Power shell-alias worden
 
 |opdracht cmd. exe|UNIX-opdracht|Power shell-cmdlet|Power shell-alias|
 |---------------|----------------|--------------|------------|
-|**compatibiliteit**|**Maak**|`Clear-Host`functieassembly|`cls`|
+|**compatibiliteit**|**Maak**|`Clear-Host` (functie)|`cls`|
 |**Kopieer**|**p**|`Copy-Item`|`cpi`|
 |**dir**|**1**|`Get-ChildItem`|`gci`|
 |**type**|**cat**|`Get-Content`|`gc`|

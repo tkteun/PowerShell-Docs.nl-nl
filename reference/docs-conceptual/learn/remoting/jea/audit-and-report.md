@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: Controleren en rapporteren op JEA
 ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017921"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Controleren en rapporteren op JEA
@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Beschik bare functies op de computer zoeken
 
-JEA haalt de functie mogelijkheden van `.psrc` de bestanden die zijn opgeslagen in de map **RoleCapabilities** binnen een Power shell-module. Met de volgende functie vindt u alle functie mogelijkheden die beschikbaar zijn op een computer.
+JEA haalt de functie mogelijkheden van de `.psrc`-bestanden die zijn opgeslagen in de map **RoleCapabilities** binnen een Power shell-module. Met de volgende functie vindt u alle functie mogelijkheden die beschikbaar zijn op een computer.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -73,7 +73,7 @@ function Find-LocalRoleCapability {
 ## <a name="check-effective-rights-for-a-specific-user"></a>De juiste rechten voor een specifieke gebruiker controleren
 
 De cmdlet [Get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) inventariseert alle opdrachten die beschikbaar zijn op een JEA-eind punt op basis van de groepslid maatschappen van een gebruiker.
-De uitvoer van `Get-PSSessionCapability` is identiek aan die van de opgegeven gebruiker die `Get-Command -CommandType All` in een JEA-sessie wordt uitgevoerd.
+De uitvoer van `Get-PSSessionCapability` is identiek aan die van de opgegeven gebruiker die `Get-Command -CommandType All` in een JEA-sessie uitvoert.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
@@ -120,7 +120,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-De hoofd tekst van de transcriptie bevat informatie over elke opdracht die de gebruiker heeft aangeroepen. De exacte syntaxis van de gebruikte opdracht is niet beschikbaar in JEA-sessies vanwege de manier waarop opdrachten worden getransformeerd voor externe communicatie met Power shell. U kunt echter nog steeds de daad werkelijke opdracht bepalen die is uitgevoerd. Hieronder vindt u een voor beeld van een transcript fragment `Get-Service Dns` van een gebruiker die wordt uitgevoerd in een JEA-sessie:
+De hoofd tekst van de transcriptie bevat informatie over elke opdracht die de gebruiker heeft aangeroepen. De exacte syntaxis van de gebruikte opdracht is niet beschikbaar in JEA-sessies vanwege de manier waarop opdrachten worden getransformeerd voor externe communicatie met Power shell. U kunt echter nog steeds de daad werkelijke opdracht bepalen die is uitgevoerd. Hieronder vindt u een voor beeld van een transcript fragment van een gebruiker met `Get-Service Dns` in een JEA-sessie:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -131,9 +131,9 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Er wordt een **CommandInvocation** -regel geschreven voor elke opdracht die door een gebruiker wordt uitgevoerd. **ParameterBindings** registreert elke para meter en waarde die is opgegeven met de opdracht. In het vorige voor beeld ziet u dat de parameter **naam** is opgegeven met de waarde **DNS** voor de `Get-Service` cmdlet.
+Er wordt een **CommandInvocation** -regel geschreven voor elke opdracht die door een gebruiker wordt uitgevoerd. **ParameterBindings** registreert elke para meter en waarde die is opgegeven met de opdracht. In het vorige voor beeld ziet u dat de parameter **naam** is opgegeven met de waarde **DNS** voor de cmdlet `Get-Service`.
 
-Met de uitvoer van elke opdracht wordt ook een **CommandInvocation**geactiveerd, `Out-Default`meestal naar. De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
+Met de uitvoer van elke opdracht wordt ook een **CommandInvocation**geactiveerd, meestal om `Out-Default`. De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
 
 ## <a name="see-also"></a>Zie ook
 

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359309"
 ---
 # <a name="getprocesssample03-sample"></a>Voorbeeld GetProcessSample03
 
-In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Het biedt een `Name`-para meter die een object van de pijp lijn kan accepteren of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de parameter naam. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Het biedt een `Name` para meter waarmee een object kan worden geaccepteerd van de pijp lijn of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de parameter naam. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet van Windows Power Shell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Het voor beeld maken met Visual Studio.
 
@@ -29,7 +29,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Maak de volgende module map:
 
@@ -51,7 +51,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 
@@ -67,7 +67,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u een implementatie van de cmdlet Get-proc die een `Name`-para meter bevat waarmee invoer van de pijp lijn wordt geaccepteerd.
+In dit voor beeld ziet u een implementatie van de cmdlet Get-proc die een `Name` para meter bevat waarmee invoer van de pijp lijn wordt geaccepteerd.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352190"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Aangepaste autorisatie implementeren voor een Management OData-webservice
@@ -21,7 +21,7 @@ Het gebruik van de Windows Power shell-webservice vereist dat een derde partij d
 
 ## <a name="pass-through-authorization"></a>Pass-Through-autorisatie
 
-De eenvoudigste manier om de interface [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) te implementeren is een Pass-Through-implementatie waarmee alle gebruikers worden geautoriseerd. Dit voor beeld biedt geen beveiliging en s die alleen worden verstrekt als illustratie van het implementeren van de interface. Een implementatie van de interface [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) moet twee methoden overschrijven: [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [ Micro soft. Management. Odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In dit voor beeld retourneert de [Microsoft. Management. Odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) altijd het object **System. Security. Principal. WindowsIdentity** dat is gekoppeld aan de huidige gebruiker.
+De eenvoudigste manier om de interface [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) te implementeren is een Pass-Through-implementatie waarmee alle gebruikers worden geautoriseerd. Dit voor beeld biedt geen beveiliging en s die alleen worden verstrekt als illustratie van het implementeren van de interface. Een implementatie van de interface [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) moet twee methoden overschrijven: [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [micro soft. Management. odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In dit voor beeld retourneert de [Microsoft. Management. Odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) altijd het object **System. Security. Principal. WindowsIdentity** dat is gekoppeld aan de huidige gebruiker.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Op rollen gebaseerde autorisatie
 
-In het volgende voor beeld wordt een op rollen gebaseerd autorisatie beleid geïmplementeerd. Het beleid wordt gedefinieerd in een XML-bestand dat zich in de hoofdmap van de toepassing bevindt met de schema bestanden Web. config en MOF en XML-toewijzing. Zie [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md)voor meer informatie over het configureren van het autorisatie schema bestand. In het eerste deel van het voor beeld worden de methoden [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [micro soft. Management. odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) geïmplementeerd. In dit geval roept de interface methoden methoden aan in de klasse `RbacSystem` (hieronder gedefinieerd) die het werkelijke werk van de machtigingen voor de gebruiker controleren.
+In het volgende voor beeld wordt een op rollen gebaseerd autorisatie beleid geïmplementeerd. Het beleid wordt gedefinieerd in een XML-bestand dat zich in de hoofdmap van de toepassing bevindt met de schema bestanden Web. config en MOF en XML-toewijzing. Zie [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md)voor meer informatie over het configureren van het autorisatie schema bestand. In het eerste deel van het voor beeld worden de methoden [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [micro soft. Management. odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) geïmplementeerd. In dit geval roept de interface methoden methoden aan in de `RbacSystem` klasse (hieronder gedefinieerd) die het werkelijke werk van de machtigingen voor de gebruiker controleren.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Ten slotte implementeert de klasse RbacSystem methoden die het werk doen om de machtigingen voor de gebruiker te controleren en de autorisatie status te retour neren naar de methoden die zijn gedefinieerd in de implementatie van [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Interface.
+Ten slotte implementeert de klasse RbacSystem de methoden die het werk doen om de machtigingen voor de gebruiker te controleren en de autorisatie status te retour neren naar de methoden die zijn gedefinieerd in de implementatie van de interface [micro soft. Management. Odata. CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) .

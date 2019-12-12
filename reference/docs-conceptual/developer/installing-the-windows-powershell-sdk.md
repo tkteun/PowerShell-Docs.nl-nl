@@ -3,10 +3,10 @@ title: De Windows PowerShell SDK installeren
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444506"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>De Windows PowerShell SDK installeren
@@ -74,7 +74,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. In de volgende secties vi
 
 - Runspace01: laat zien hoe u de Power shell-klasse kunt gebruiken om de `Get-Process`-cmdlet synchroon uit te voeren.
 De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer.
-- Runspace02: laat zien hoe u de Power shell-klasse kunt gebruiken om de `Get-Process`-en `Sort-Object`-cmdlets synchroon uit te voeren. De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` sorteert de objecten op basis van hun id-eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een DataGridView-besturings element.
+- Runspace02: laat zien hoe u de Power shell-klasse kunt gebruiken om de `Get-Process`-en `Sort-Object`-cmdlets synchroon uit te voeren. De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer, en de `Sort-Object` sorteert de objecten op basis van hun id-eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een DataGridView-besturings element.
 - Runspace03: laat zien hoe u de Power shell-klasse kunt gebruiken om een script synchroon uit te voeren en om niet-afsluit fouten te verwerken. Het script ontvangt een lijst met proces namen en haalt deze processen vervolgens op. De resultaten van het script, met inbegrip van eventuele niet-afsluit fouten die zijn gegenereerd bij het uitvoeren van het script, worden weer gegeven in een console venster.
 - Runspace04: toont hoe u de Power shell-klasse gebruikt om opdrachten uit te voeren en hoe u afsluit fouten kunt opvangen die worden gegenereerd bij het uitvoeren van de opdrachten. Er worden twee opdrachten uitgevoerd en de laatste opdracht is een ongeldig parameter argument door gegeven. Als gevolg hiervan worden er geen objecten geretourneerd en wordt er een afsluit fout gegenereerd.
 - Runspace05: laat zien hoe u een module kunt toevoegen aan een InitialSessionState-object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample01-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
@@ -90,7 +90,7 @@ De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt ui
 #### <a name="host-samples"></a>Host-voor beelden
 
 - Host01: laat zien hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host. In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host, waarna de Power shell-API wordt gebruikt om een script uit te voeren dat "Exit" aanroept. De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.
-- Host02: laat zien hoe u een hosttoepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host. Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de cmdlet `Get-Process` uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.
+- Host02: laat zien hoe u een hosttoepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host. Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de `Get-Process`-cmdlet uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.
 - Host03: hier ziet u hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console.
 - Host04: hier ziet u hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console. Deze hosttoepassing biedt ook ondersteuning voor het weer geven van prompts waarmee de gebruiker meerdere keuzes kan opgeven.
 - Host05: hier ziet u hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console. Deze hosttoepassing ondersteunt ook aanroepen naar externe computers met behulp van de cmdlets `Enter-PsSession` en `Exit-PsSession`.
@@ -104,8 +104,8 @@ De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt ui
 
 - AccessDBProviderSample03: laat zien hoe u de GetItem-en SetItem-methoden overschrijft ter ondersteuning van aanroepen naar de `Get-Item`-en `Set-Item`-cmdlets. De provider klasse in dit voor beeld is afgeleid van de ItemCmdletProvider-klasse.
 
-- AccessDBProviderSample04: hier wordt beschreven hoe u container methoden overschrijft ter ondersteuning van aanroepen naar de `Copy-Item`, `Get-ChildItem`, `New-Item` en `Remove-Item`-cmdlets. Deze methoden moeten worden geïmplementeerd wanneer het gegevens archief items bevat die containers zijn. Een container is een groep onderliggende items onder een gemeen schappelijk bovenliggend item. De provider klasse in dit voor beeld is afgeleid van de ItemCmdletProvider-klasse.
+- AccessDBProviderSample04: hier wordt beschreven hoe u container methoden overschrijft om aanroepen naar de `Copy-Item`, `Get-ChildItem`, `New-Item`en `Remove-Item`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer het gegevens archief items bevat die containers zijn. Een container is een groep onderliggende items onder een gemeen schappelijk bovenliggend item. De provider klasse in dit voor beeld is afgeleid van de ItemCmdletProvider-klasse.
 
-- AccessDBProviderSample05: hier wordt beschreven hoe u container methoden overschrijft om aanroepen naar de `Move-Item`-en `Join-Path`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker items in een container moet verplaatsen en als het gegevens archief geneste containers bevat. De provider klasse in dit voor beeld is afgeleid van de NavigationCmdletProvider-klasse.
+- AccessDBProviderSample05: hier wordt beschreven hoe u container methoden overschrijft voor ondersteuning van aanroepen naar de `Move-Item`-en `Join-Path`-cmdlets. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker items in een container moet verplaatsen en als het gegevens archief geneste containers bevat. De provider klasse in dit voor beeld is afgeleid van de NavigationCmdletProvider-klasse.
 
-- AccessDBProviderSample06: laat zien hoe inhouds methoden worden overschreven om aanroepen naar de `Clear-Content`, `Get-Content`-en `Set-Content`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker de inhoud van de items in het gegevens archief moet beheren. De provider klasse in dit voor beeld is afgeleid van de NavigationCmdletProvider-klasse en implementeert de IContentCmdletProvider-interface.
+- AccessDBProviderSample06: laat zien hoe u inhouds methoden overschrijft om aanroepen naar de `Clear-Content`, `Get-Content`en `Set-Content`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker de inhoud van de items in het gegevens archief moet beheren. De provider klasse in dit voor beeld is afgeleid van de NavigationCmdletProvider-klasse en implementeert de IContentCmdletProvider-interface.

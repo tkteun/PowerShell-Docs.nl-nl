@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357370"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
@@ -62,7 +62,7 @@ De waarde van de omgevings variabele **PSModulePath** bevat standaard de volgend
   ```
 
   > [!IMPORTANT]
-  > Zodra u het pad naar **PSModulePath**hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** -bericht verzenden met `lParam` ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath**heeft bijgewerkt.
+  > Zodra u het pad naar **PSModulePath**hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** bericht verzenden met `lParam` ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath**heeft bijgewerkt.
 
 ### <a name="use-the-correct-module-directory-name"></a>De juiste naam voor de module directory gebruiken
 
@@ -89,7 +89,7 @@ Als de module niet de juiste indeling heeft en de locatie ervan niet is opgenome
 
 - Met de functie voor het automatisch laden van de module kan de module niet automatisch worden geïmporteerd.
 
-- De `ListAvailable`-para meter van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan de module niet vinden.
+- Met de para meter `ListAvailable` van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan de module niet worden gevonden.
 
 - De module voor [importeren-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) kan niet worden gevonden. Als u de module wilt importeren, moet u het volledige pad naar het hoofd module bestand of het manifest bestand van de module opgeven.
 
@@ -101,7 +101,7 @@ Als de module niet de juiste indeling heeft en de locatie ervan niet is opgenome
 
 - Met de cmdlet [show-command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) kunnen de opdrachten in de module niet worden gevonden en weer gegeven.
 
-  De opdrachten in de module ontbreken in het venster `Show-Command` in Windows Power shell Integrated Scripting Environment (ISE).
+  De opdrachten in de module ontbreken in het `Show-Command` venster in Windows Power shell Integrated Scripting Environment (ISE).
 
 ## <a name="where-to-install-modules"></a>Waar modules worden geïnstalleerd?
 
@@ -153,7 +153,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Als een module door meerdere onderdelen van een product of meerdere versies van een product wordt gebruikt, installeert u de module in een module-specifieke submap van de map%ProgramFiles%\Common Files\Modules.
 
-In het volgende voor beeld wordt de module fabrikam geïnstalleerd in een submap van Fabrikam van de submap `%ProgramFiles%\Common Files\Modules`. Elke module bevindt zich in een eigen submap in de submap modules.
+In het volgende voor beeld wordt de module fabrikam geïnstalleerd in een submap fabrikam van de submap `%ProgramFiles%\Common Files\Modules`. Elke module bevindt zich in een eigen submap in de submap modules.
 
 ```
 C:\Program Files

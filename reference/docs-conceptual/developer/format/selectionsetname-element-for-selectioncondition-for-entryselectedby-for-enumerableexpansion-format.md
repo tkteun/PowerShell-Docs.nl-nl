@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7b7af0b2-68e6-43c3-adcc-7c58007fced8
 caps.latest.revision: 13
 ms.openlocfilehash: 6f7c8d9af3c1c2fbda0208148b0088161701fdbe
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353814"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>Het element SelectionSetName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element DefaultSettings element (Format) EnumerableExpansions eleme
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSetName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSetName` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor EnumerableExpansion (indeling)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Hiermee definieert u de voor waarde die moet bestaan om de verzamelings objecten van deze definitie uit te breiden.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de selectieset.
 

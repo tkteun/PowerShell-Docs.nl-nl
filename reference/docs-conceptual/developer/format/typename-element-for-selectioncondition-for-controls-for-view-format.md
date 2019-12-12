@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7141aefc-6656-4c52-8a9c-c2bfc9c87be9
 caps.latest.revision: 6
 ms.openlocfilehash: 7a697c286ec9efe750930739cdfa2580003365dd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353541"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-view-format"></a>Het element TypeName voor SelectionCondition voor Besturingselementen voor Weergave (opmaak)
@@ -46,9 +46,9 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor besturings elementen voor weer gave (indeling)](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|Hiermee definieert u een voor waarde die moet bestaan voor het gebruik van de controle definitie.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, bijvoorbeeld `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
 
 ## <a name="remarks"></a>Opmerkingen
 

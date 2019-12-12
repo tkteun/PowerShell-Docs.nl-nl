@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
 ms.openlocfilehash: 9c00ec6de987729fec42dc57245a949d11e31f4b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356852"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
-In dit voor beeld ziet u hoe inhouds methoden worden overschreven om aanroepen naar de `Clear-Content`, `Get-Content`-en `Set-Content`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker de inhoud van de items in het gegevens archief moet beheren. De provider klasse in dit voor beeld is afgeleid van de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) en implementeert de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) .
+In dit voor beeld ziet u hoe u inhouds methoden overschrijft om aanroepen naar de `Clear-Content`, `Get-Content`en `Set-Content`-cmdlets te ondersteunen. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker de inhoud van de items in het gegevens archief moet beheren. De provider klasse in dit voor beeld is afgeleid van de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) en implementeert de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) .
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 > [!IMPORTANT]
 > Uw provider klasse is hoogstwaarschijnlijk afgeleid van een van de volgende klassen en implementeert mogelijk andere provider interfaces:
@@ -32,15 +32,15 @@ In dit voor beeld ziet u hoe inhouds methoden worden overschreven om aanroepen n
 
 In dit voor beeld ziet u het volgende:
 
-- Het kenmerk `CmdletProvider` declareren.
+- Declareer het `CmdletProvider` kenmerk.
 
 - Het definiëren van een provider klasse die is afgeleid van de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) en die de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) declareert.
 
-- De methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) wordt overschreven om het gedrag van de cmdlet `Clear-Content` te wijzigen, waardoor de gebruiker de inhoud van een item kan verwijderen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Clear-Content`-cmdlet.)
+- De methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) wordt overschreven om het gedrag van de cmdlet `Clear-Content` te wijzigen, waardoor de gebruiker de inhoud van een item kan verwijderen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Clear-Content` cmdlet.)
 
-- De methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) wordt overschreven om het gedrag van de cmdlet `Get-Content` te wijzigen, waardoor de gebruiker de inhoud van een item kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Content`-cmdlet.)
+- De methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) wordt overschreven om het gedrag van de cmdlet `Get-Content` te wijzigen, waardoor de gebruiker de inhoud van een item kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Content` cmdlet.).
 
-- Het overschrijven van de methode [micro soft. Power shell. commands. Filesystemprovider. Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) om het gedrag van de cmdlet `Set-Content` te wijzigen, waardoor de gebruiker de inhoud van een item kan bijwerken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Set-Content`-cmdlet.)
+- Het overschrijven van de methode [micro soft. Power shell. commands. Filesystemprovider. Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) om het gedrag van de cmdlet `Set-Content` te wijzigen, zodat de gebruiker de inhoud van een item kan bijwerken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Set-Content` cmdlet.)
 
 ## <a name="example"></a>Voorbeeld
 

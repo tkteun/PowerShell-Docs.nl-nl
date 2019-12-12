@@ -1,31 +1,31 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEFile-object
 ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028959"
 ---
 # <a name="the-isefile-object"></a>Het ISEFile-object
 
-Een **ISEFile** object vertegenwoordigt een bestand in Windows PowerShell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse Microsoft.PowerShell.Host.ISE.ISEFile. In dit onderwerp bevat de methoden en lideigenschappen. De **$psISE.CurrentFile** en de bestanden in de verzameling bestanden in een PowerShell-tabblad zijn alle exemplaren van de klasse Microsoft.PowerShell.Host.ISE.ISEFile.
+Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEFile. In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De **$psISE. CurrentFile** en de bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse micro soft. Power shell. host. ISE. ISEFile.
 
 ## <a name="methods"></a>Methoden
 
-### <a name="save-saveencoding-"></a>Sla\( \[saveEncoding\] \)
+### <a name="save-saveencoding-"></a>\( \[saveEncoding\] opslaan \)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Hiermee slaat u het bestand op schijf.
 
-**\[saveEncoding\]**  - optioneel [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optioneel teken codering parameter moet worden gebruikt voor het opgeslagen bestand. De standaardwaarde is **UTF8**.
+**\[saveEncoding\]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
-- **System.IO.IOException**: Het bestand kan niet worden opgeslagen.
+- **System. io. IOException**: het bestand kan niet worden opgeslagen.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -39,21 +39,21 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>Opslaan\(filename, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>SaveAs\(filename, \[saveEncoding\]\)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee slaat u het bestand met de opgegeven bestandsnaam en de codering.
+Hiermee slaat u het bestand op met de opgegeven bestands naam en-code ring.
 
-**FileName** -tekenreeks van de naam moet worden gebruikt om op te slaan van het bestand.
+**Bestands naam** : de naam van de teken reeks die moet worden gebruikt om het bestand op te slaan.
 
-**\[saveEncoding\]**  - optioneel [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optioneel teken codering parameter moet worden gebruikt voor het opgeslagen bestand. De standaardwaarde is **UTF8**.
+**\[saveEncoding\]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
-- **System.ArgumentNullException**: De **filename** -parameter is null.
-- **System.ArgumentException**: De **filename** parameter is leeg.
-- **System.IO.IOException**: Het bestand kan niet worden opgeslagen.
+- **System. ArgumentNullException**: de **filename** -para meter is null.
+- **System. ArgumentException**: de **filename** -para meter is leeg.
+- **System. io. IOException**: het bestand kan niet worden opgeslagen.
 
 ```powershell
 # Save the file with a full path and name.
@@ -63,13 +63,13 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Eigenschappen
 
 ### <a name="displayname"></a>DisplayName
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die de tekenreeks zijn met de naam van dit bestand opgehaald. De naam wordt weergegeven op de **bestand** tabblad aan de bovenkant van de editor. De aanwezigheid van een sterretje \( \* \) aan het einde van de naam van de geeft aan dat het bestand heeft die niet zijn opgeslagen.
+De alleen-lezen eigenschap waarmee de teken reeks wordt opgehaald die de weergave naam van dit bestand bevat. De naam wordt weer gegeven op het tabblad **bestand** boven aan de editor. De aanwezigheid van een asterisk \(\*\) aan het einde van de naam geeft aan dat het bestand wijzigingen bevat die niet zijn opgeslagen.
 
 ```powershell
 # Shows the display name of the file.
@@ -78,9 +78,9 @@ $psISE.CurrentFile.DisplayName
 
 ### <a name="editor"></a>Editor
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die krijgt de [editor-object](The-ISEEditor-Object.md) die wordt gebruikt voor het opgegeven bestand.
+De alleen-lezen eigenschap waarmee het [object editor](The-ISEEditor-Object.md) wordt opgehaald dat voor het opgegeven bestand wordt gebruikt.
 
 ```powershell
 # Gets the editor and the text.
@@ -89,20 +89,20 @@ $psISE.CurrentFile.Editor.Text
 
 ### <a name="encoding"></a>Encoding
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die de oorspronkelijke bestandscodering opgehaald. Dit is een **System.Text.Encoding** object.
+De alleen-lezen eigenschap waarmee de oorspronkelijke bestands codering wordt opgehaald. Dit is een **System. Text. encoding** -object.
 
 ```powershell
 # Shows the encoding for the file.
 $psISE.CurrentFile.Encoding
 ```
 
-### <a name="fullpath"></a>FullPath
+### <a name="fullpath"></a>Pad
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die de tekenreeks die Hiermee geeft u het volledige pad van het geopende bestand opgehaald.
+De alleen-lezen eigenschap waarmee de teken reeks wordt opgehaald die het volledige pad van het geopende bestand opgeeft.
 
 ```powershell
 # Shows the full path for the file.
@@ -111,9 +111,9 @@ $psISE.CurrentFile.FullPath
 
 ### <a name="issaved"></a>IsSaved
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen Booleaanse eigenschap waarmee wordt geretourneerd **$true** als het bestand is opgeslagen nadat het laatst is gewijzigd.
+De alleen-lezen Booleaanse eigenschap die **$True** retourneert als het bestand is opgeslagen nadat het voor het laatst is gewijzigd.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -123,9 +123,9 @@ $myfile.IsSaved
 
 ### <a name="isuntitled"></a>IsUntitled
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die retourneert **$true** als het bestand nooit een titel ontvangen heeft.
+De alleen-lezen eigenschap die **$True** retourneert als er nooit een titel is opgegeven voor het bestand.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -137,5 +137,5 @@ $psISE.CurrentFile.IsUntitled
 ## <a name="see-also"></a>Zie ook
 
 - [De ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

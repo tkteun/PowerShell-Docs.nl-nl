@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ms.openlocfilehash: efb20c3f2077547e6eb3cb28240512b444f9c481
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355144"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Weergave (opmaak)
@@ -33,7 +33,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EntrySelectedBy` beschreven. U moet ten minste één type, selectieset of selectie voorwaarde voor een definitie opgeven. Er is geen maximum limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `EntrySelectedBy` beschreven. U moet ten minste één type, selectieset of selectie voorwaarde voor een definitie opgeven. Er is geen maximum limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
 
 ### <a name="attributes"></a>Kenmerken
 

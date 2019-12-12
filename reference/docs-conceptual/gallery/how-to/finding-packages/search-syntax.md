@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Galerie Zoek syntaxis
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329153"
 ---
 # <a name="gallery-search-syntax"></a>Galerie Zoek syntaxis
@@ -26,7 +26,7 @@ Zoek pogingen om relevante documenten te vinden met alle drie tref woorden en re
     "azure sql" deployment
 
 Als u een woord groep tussen aanhalings tekens ("") invoert, wijzigt u de zoek opdracht om te zoeken naar de specifieke woord groep in plaats van afzonderlijke tref woorden.
-Overeenkomende documenten moeten doorgaans de exacte woord groep ' Azure SQL ' bevatten, met inbegrip van variaties op kapitalisatie, zoals ' Azure SQL ' en bevatten meestal het woord ' implementatie '.
+Overeenkomende documenten moeten doorgaans de exacte woord groep ' Azure SQL ' bevatten, met inbegrip van variaties op kapitalisatie zoals ' Azure SQL ', en bevatten meestal het woord ' implementatie '.
 
 ## <a name="filtering-on-fields"></a>Velden filteren
 

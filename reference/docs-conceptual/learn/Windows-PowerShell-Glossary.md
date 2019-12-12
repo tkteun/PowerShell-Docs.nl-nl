@@ -1,57 +1,57 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: Windows PowerShell Glossary
+keywords: Power shell, cmdlet
+title: Windows Power shell-woorden lijst
 ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030357"
 ---
-# <a name="windows-powershell-glossary"></a>Windows PowerShell Glossary
+# <a name="windows-powershell-glossary"></a>Windows Power shell-woorden lijst
 
 
-|Begrip|Definitie|
+|Term|De definitie van|
 |--------|--------------|
-|binaire-module|Een Windows PowerShell-module waarvan root-module een binaire modulebestand (.dll is). Een binaire module kan mogelijk niet bevatten of een module-manifest.|
-|algemene parameter|Een parameter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werkstromen door de Windows PowerShell-engine.|
-|punt-bron|In Windows PowerShell, om te beginnen een opdracht door een punt en een spatie vóór de opdracht te typen. Opdrachten die stip afkomstig zijn uitgevoerd in de huidige scope in plaats van in een nieuwe scope. Eventuele variabelen, aliassen, functies of stations die opdracht maakt u in het huidige bereik zijn gemaakt en zijn beschikbaar voor gebruikers wanneer de opdracht is voltooid.|
-|dynamische module|Een module die alleen in het geheugen bestaat. De cmdlets New-Module en Import-PSSession maken dynamische modules.|
-|dynamische parameter|Een parameter die wordt toegevoegd aan een Windows PowerShell-cmdlet, de functie of het script onder bepaalde omstandigheden. Dynamische parameters kunnen toevoegen door cmdlets, functies, -providers en -scripts.|
-|opmaak van bestand|Een Windows PowerShell-XML-bestand met de. format.ps1xml-extensie en die wordt gedefinieerd hoe een object op basis van het .NET Framework-type worden weergegeven in Windows PowerShell.|
-|globale sessiestatus|De sessiestatus met de gegevens die toegankelijk is voor de gebruiker van een Windows PowerShell-sessie.|
-|host|De interface die de Windows PowerShell-engine gebruikt om te communiceren met de gebruiker. De host bevat bijvoorbeeld hoe prompts tussen Windows PowerShell en de gebruiker worden verwerkt.|
-|Host-toepassing|Een programma dat de Windows PowerShell-engine in het proces geladen en gebruikt deze bewerkingen uit te voeren.|
-|verwerken van methode invoer|Een methode die een cmdlet gebruiken kunt voor het verwerken van de records die deze ontvangt als invoer. De van invoer-verwerkingsmethoden zijn onder meer de methode BeginProcessing, de methode ProcessRecord de EndProcessing-methode en de methode StopProcessing.|
-|manifest van de module|Een Windows PowerShell-module die een manifest heeft en waarvan de velden RootModule sleutel is leeg.|
-|module-manifest|Een Windows PowerShell gegevensbestand (.psd1) met de beschrijving van de inhoud van een module en die bepaalt hoe een module worden verwerkt.|
-|module-sessiestatus|De sessiestatus met de openbare en persoonlijke gegevens van een Windows PowerShell-module. De persoonlijke gegevens in de sessiestatus van deze is niet beschikbaar voor de gebruiker van een Windows PowerShell-sessie.|
-|niet-afsluitfout|Een fout die niet dat de Windows PowerShell u verdergaat voorkomen wordt met het verwerken van de opdracht.|
-|zelfstandig naamwoord|Het woord die volgt op het koppelteken in de naam van een Windows PowerShell-cmdlet. Het zelfstandig naamwoord beschrijving van de resources waarop de cmdlet fungeert.|
-|Parameterset|Een groep van de parameters die kunnen worden gebruikt in dezelfde opdracht een bepaalde actie uit te voeren.|
-|pipe|In Windows PowerShell voor het verzenden van de resultaten van de voorgaande opdracht als invoer voor de volgende opdracht in de pijplijn.|
-|Pijplijn|Een reeks opdrachten die zijn verbonden via de pipeline-operators (&#124;) (124 ASCII). Elke pijplijn-operator verzendt de resultaten van de voorgaande opdracht als invoer voor de volgende opdracht.|
-|PSSession|Een type van de Windows PowerShell-sessie die is gemaakt, beheerd en gesloten door de gebruiker.|
-|basismodule|De module die is opgegeven in de velden RootModule-sleutel in een module-manifest.|
-|Runspace|In Windows PowerShell, de operationele omgeving waarin elke opdracht in een pijplijn wordt uitgevoerd.|
-|scriptblok|Programmeren taal, een verzameling instructies of expressies die kunnen worden gebruikt als één eenheid in de Windows PowerShell. Een scriptblok kan accepteren argumenten en waarden retourneren.|
-|scriptmodule|Een Windows PowerShell-module waarvan root-module een scriptbestand voor module (.psm1 is). Een scriptmodule kan of kan een module-manifest niet opgenomen.|
-|module-scriptbestand|Een bestand met een Windows PowerShell-script. Het script definieert de leden die de scriptmodule exporteert. Module-scriptbestanden hebben de .psm1-bestandsextensie.|
-|Shell|De opdrachtinterpreter die wordt gebruikt voor opdrachten doorgeven aan het besturingssysteem.|
-|switch-parameter|Een parameter die niet een argument neemt.|
-|afsluitfout|Een fout die voorkomt dat Windows PowerShell voor het verwerken van de opdracht.|
-|Transactie|Een atomische eenheid van het werk. Het werk in een transactie moet worden uitgevoerd als een geheel; Als een deel van de transactie is mislukt, wordt de hele transactie mislukt.|
-|typen bestand|Een Windows PowerShell-XML-bestand dat de extensie .ps1xml heeft en dat de eigenschappen van Microsoft .NET Framework-typen in Windows PowerShell wordt uitgebreid.|
-|term|Het woord die voorafgaat aan het koppelteken in de naam van een Windows PowerShell-cmdlet. Het werkwoord beschrijft de actie die de cmdlet uitvoert.|
-|Windows PowerShell|Een opdrachtregel-shell en taak-scripttechnologie op basis van die voorziet in uitgebreide controle voor IT-beheerders en automatisering van systeem beheertaken.|
-|Windows PowerShell-opdracht|De elementen in een pijplijn die ertoe leiden een actie die dat moet worden uitgevoerd. Windows PowerShell-opdrachten zijn getypt op het toetsenbord of via een programma wordt aangeroepen.|
-|Windows PowerShell-gegevensbestand|Een tekstbestand dat de extensie .psd1 heeft. Windows PowerShell maakt gebruik van gegevensbestanden voor verschillende doeleinden, zoals de module-manifest gegevens opslaan en het opslaan van vertaalde tekenreeksen voor voorkeuren voor internationalisatie script.|
-|Windows PowerShell-station|Een virtuele schijf die rechtstreekse toegang tot een gegevensarchief biedt. Het kan worden gedefinieerd door een Windows PowerShell-provider of gemaakt op de opdrachtregel. Stations die zijn gemaakt op de opdrachtregel zijn sessie-specifieke stations en gaan verloren wanneer de sessie is gesloten.|
-|Windows PowerShell ISE (Integrated Scripting Environment)|Een Windows PowerShell-hosttoepassing waarmee u opdrachten uit te voeren en te schrijven, testen en fouten opsporen in scripts in een gebruiksvriendelijke, syntaxis kleur, compatibel is met Unicode-omgeving.|
-|Windows PowerShell-module|Een op zichzelf staand herbruikbare eenheid waarmee u partitioneren, organiseren en uw Windows PowerShell-code als abstract. Een module kan bevatten cmdlets, providers, functies, variabelen en andere typen resources die kunnen worden geïmporteerd als één eenheid.|
-|Windows PowerShell-provider|Een Microsoft .NET Framework-programma waarin de gegevens in een gespecialiseerde gegevensarchief beschikbaar zijn in Windows PowerShell zodat u kunt weergeven en beheren.|
-|Windows PowerShell-script|Een script dat is geschreven in de Windows PowerShell-taal.|
-|Windows PowerShell-scriptbestand|Een bestand dat de .ps1 extensie heeft en die een script dat is geschreven in de Windows PowerShell-taal bevat.|
-|Windows PowerShell-module|Een resource die u definieert een reeks cmdlets en providers Microsoft .NET Framework-typen die kunnen worden toegevoegd aan de Windows PowerShell-omgeving.|
-|Windows PowerShell-werkstroom|Een werkstroom is een opeenvolging van geprogrammeerde, verbonden stappen waarmee langlopende taken wordt uitgevoerd of de coördinatie vereisen van meerdere stappen op meerdere apparaten of beheerde knooppunten. Windows PowerShell Workflow kunnen IT-professionals en ontwikkelaars ontwerpen met reeksen van activiteiten voor beheer van meerdere apparaten, of één taken binnen een werkstroom als werkstromen. Windows PowerShell-werkstroom kunt u aan te passen en Windows PowerShell-scripts en XAML-bestanden als werkstromen uitvoeren.|
+|binaire module|Een Windows Power shell-module met een binaire module bestand (. dll). Een binaire module kan een module manifest bevatten.|
+|algemene para meter|Een para meter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werk stromen door de Windows Power shell-engine.|
+|punt bron|In Windows Power shell kunt u een opdracht starten door een punt en een spatie voor de opdracht te typen. Opdrachten die met een punt zijn genoteerd, worden uitgevoerd in de huidige scope in plaats van in een nieuwe scope. Alle variabelen, aliassen, functies of stations die door de opdracht worden gemaakt, worden gemaakt in het huidige bereik en zijn beschikbaar voor gebruikers wanneer de opdracht is voltooid.|
+|dynamische module|Een module die alleen bestaat in het geheugen. Met de cmdlets New-module en import-PSSession worden dynamische modules gemaakt.|
+|Dynamische para meter|Een para meter die wordt toegevoegd aan een Windows Power shell-cmdlet,-functie of-script onder bepaalde voor waarden. Cmdlets, functies, providers en scripts kunnen dynamische para meters toevoegen.|
+|Opmaak bestand|Een Windows Power shell XML-bestand met de extensie. Format. ps1xml dat bepaalt hoe Windows Power shell een object weergeeft op basis van het .NET Framework type.|
+|algemene sessie status|De sessie status die de gegevens bevat die toegankelijk is voor de gebruiker van een Windows Power shell-sessie.|
+|host|De interface die door de Windows Power shell-engine wordt gebruikt om met de gebruiker te communiceren. De host geeft bijvoorbeeld op hoe prompts worden afgehandeld tussen Windows Power shell en de gebruiker.|
+|hosttoepassing|Een programma dat de Windows Power shell-engine in het proces laadt en gebruikt om bewerkingen uit te voeren.|
+|Invoer verwerkings methode|Een methode die een cmdlet kan gebruiken voor het verwerken van de records die worden ontvangen als invoer. De invoer methoden omvatten de methode BeginProcessing, de methode ProcessRecord, de methode EndProcessing en de methode StopProcessing.|
+|Manifest module|Een Windows Power shell-module met een manifest en waarvan de RootModule-sleutel leeg is.|
+|module manifest|Een Windows Power shell-gegevens bestand (. psd1) waarmee de inhoud van een module wordt beschreven en waarmee wordt bepaald hoe een module wordt verwerkt.|
+|sessie status van de module|De sessie status die de open bare en persoonlijke gegevens van een Windows Power shell-module bevat. De persoonlijke gegevens in deze sessie status zijn niet beschikbaar voor de gebruiker van een Windows Power shell-sessie.|
+|niet-afsluit fout|Er is een fout opgetreden die Windows Power shell niet stopt met het verwerken van de opdracht.|
+|zelfstandig|Het woord dat volgt op het afbreek streepje in de naam van een Windows Power shell-cmdlet. In het zelfstandig naam woord worden de resources beschreven waarop de cmdlet optreedt.|
+|Parameterset|Een groep para meters die in dezelfde opdracht kunnen worden gebruikt om een specifieke actie uit te voeren.|
+|teer|In Windows Power shell om de resultaten van de voor gaande opdracht als invoer naar de volgende opdracht in de pijp lijn te verzenden.|
+|pijp lijn|Een reeks opdrachten die zijn verbonden door pijplijn operators&#124;() (ASCII 124). Elke pijplijn operator verzendt de resultaten van de voor gaande opdracht als invoer voor de volgende opdracht.|
+|PSSession|Een type Windows Power shell-sessie dat door de gebruiker wordt gemaakt, beheerd en gesloten.|
+|hoofd module|De module die is opgegeven in de sleutel RootModule in een module manifest.|
+|runs|In Windows Power shell wordt de besturings omgeving waarin elke opdracht in een pijp lijn wordt uitgevoerd.|
+|script blok|In de programmeer taal Windows Power shell, een verzameling instructies of expressies die kunnen worden gebruikt als één eenheid. Een script blok kan argumenten en retour waarden accepteren.|
+|script module|Een Windows Power shell-module waarvan de hoofd module een script module bestand is (. psm1). Een script module kan een module manifest bevatten.|
+|script module bestand|Een bestand dat een Windows Power shell-script bevat. Het script definieert de leden die de script module exporteert. Script module bestanden hebben de bestandsnaam extensie. psm1.|
+|shell|De opdrachtinterpreter die wordt gebruikt voor het door geven van opdrachten aan het besturings systeem.|
+|switch parameter|Een para meter die geen argument gebruikt.|
+|fout bij beëindigen|Er is een fout opgetreden bij het verwerken van de opdracht door Windows Power shell.|
+|trans actie|Een Atomic-werk eenheid. Het werk in een trans actie moet als geheel worden voltooid. Als een deel van de trans actie mislukt, mislukt de hele trans actie.|
+|bestands typen|Een Windows Power shell XML-bestand met de extensie. ps1xml, dat de eigenschappen van Microsoft .NET Framework-typen in Windows Power shell uitbreidt.|
+|term|Het woord dat voorafgaat aan het afbreek streepje in de naam van een Windows Power shell-cmdlet. De bewerking beschrijft de actie die de cmdlet uitvoert.|
+|Windows PowerShell|Een opdracht regel-shell en script technologie op basis van taken waarmee IT-beheerders uitgebreide controle en automatisering van systeembeheer taken bieden.|
+|Windows Power shell-opdracht|De elementen in een pijp lijn die ervoor zorgen dat een actie wordt uitgevoerd. Windows Power shell-opdrachten kunnen worden getypt op het toetsen bord of worden aangeroepen door een programma.|
+|Windows Power shell-gegevens bestand|Een tekst bestand met de bestandsnaam extensie. psd1. Windows Power shell gebruikt gegevens bestanden voor verschillende doel einden, zoals het opslaan van module manifest gegevens en het opslaan van vertaalde teken reeksen voor script-intertalen.|
+|Windows Power Shell-station|Een virtuele schijf die rechtstreekse toegang biedt tot een gegevens archief. Het kan worden gedefinieerd door een Windows Power shell-provider of worden gemaakt op de opdracht regel. Stations die zijn gemaakt op de opdracht regel, zijn sessie-specifieke stations en gaan verloren wanneer de sessie wordt gesloten.|
+|Windows PowerShell ISE (Integrated Scripting Environment)|Een Windows Power shell-hosttoepassing waarmee u opdrachten kunt uitvoeren en scripts kunt schrijven, testen en opsporen in een beschrijvende, Unicode-compatibele omgeving.|
+|Windows PowerShell-module|Een onafhankelijke herbruikbare eenheid waarmee u uw Windows Power shell-code kunt partitioneren, organiseren en samen voegen. Een module kan cmdlets, providers, functies, variabelen en andere typen resources bevatten die als één eenheid kunnen worden geïmporteerd.|
+|Windows PowerShell-provider|Een op Microsoft .NET Framework gebaseerd programma dat de gegevens in een gespecialiseerd gegevens archief beschikbaar maakt in Windows Power shell, zodat u het kunt weer geven en beheren.|
+|Windows Power shell-script|Een script dat is geschreven in de Windows Power shell-taal.|
+|Windows Power shell-script bestand|Een bestand met de extensie. ps1 en dat een script bevat dat is geschreven in de Windows Power shell-taal.|
+|Windows Power shell-module|Een resource die een set cmdlets, providers en Microsoft .NET Framework-typen definieert die kunnen worden toegevoegd aan de Windows Power shell-omgeving.|
+|Windows Power shell-werk stroom|Een werkstroom is een opeenvolging van geprogrammeerde, met elkaar verbonden stappen waarmee langlopende taken worden uitgevoerd of die de coördinatie vereisen van meerdere stappen op meerdere apparaten of beheerde knooppunten. De Windows Power shell-werk stroom stelt IT-professionals en ontwikkel aars in staat om reeksen van beheer activiteiten voor meerdere apparaten of afzonderlijke taken binnen een werk stroom te schrijven als werk stromen. Met Windows Power shell-werk stroom kunt u zowel Windows Power shell-scripts als XAML-bestanden aanpassen en uitvoeren als werk stromen.|

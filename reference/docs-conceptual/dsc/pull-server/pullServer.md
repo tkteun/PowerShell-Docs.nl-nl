@@ -3,10 +3,10 @@ ms.date: 03/04/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
 ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942767"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration

@@ -3,10 +3,10 @@ title: PowerShell Core in Windows installeren
 description: Informatie over het installeren van Power shell core in Windows
 ms.date: 08/06/2018
 ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416784"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
@@ -167,7 +167,7 @@ De volgende stappen begeleiden u bij de implementatie van Power shell core naar 
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 
-Power shell core ondersteunt het PSRP (Power shell Remoting Protocol) voor zowel WSMan als SSH. Zie voor meer informatie:
+Power shell core ondersteunt het PSRP (Power shell Remoting Protocol) voor zowel WSMan als SSH. Zie voor meer informatie
 
 - [Externe SSH-communicatie in Power shell core][ssh-remoting]
 - [Externe WSMan-communicatie in Power shell core][wsman-remoting]

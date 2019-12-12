@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een specifieke versie van een geïnstalleerde resource importeren
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941969"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>Een specifieke versie van een geïnstalleerde resource importeren
@@ -38,7 +38,7 @@ Als u een specifieke versie van een module wilt installeren, geeft u een **Requi
 PS> Install-Module xFailOverCluster -RequiredVersion 1.1
 ```
 
-Nu ziet u beide versies van de module die wordt weer gegeven wanneer u `Get-DSCResource` gebruikt.
+Nu ziet u beide versies van de module die wordt weer gegeven wanneer u `Get-DSCResource`gebruikt.
 
 ```powershell
 PS> Get-DscResource xCluster
@@ -74,7 +74,7 @@ configuration VersionTest
 }
 ```
 
->Opmerking: De ModuleVersion-para meter van import-Dscresource bieden is niet beschikbaar in Power Shell 4,0. In Power Shell 4,0 kunt u een module versie opgeven door een module specificatie object door te geven aan de para meter module van import-Dscresource bieden. Een module-specificatie object is een hash-tabel die module-en RequiredVersion-sleutels bevat. Bijvoorbeeld:
+>Opmerking: de para meter ModuleVersion van import-Dscresource bieden is niet beschikbaar in Power Shell 4,0. In Power Shell 4,0 kunt u een module versie opgeven door een module specificatie object door te geven aan de para meter module van import-Dscresource bieden. Een module-specificatie object is een hash-tabel die module-en RequiredVersion-sleutels bevat. Bijvoorbeeld:
 
 ```powershell
 configuration VersionTest

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
 ms.openlocfilehash: 4aa6c020cf0e82a4ffcad6f6c7540688d3369aa6
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72561291"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Een Power shell-module manifest schrijven
@@ -64,7 +64,7 @@ In de volgende tabel worden de elementen beschreven die u kunt toevoegen in een 
 |**RootModule**<br /> Type: `String`|`<empty string>`|Script module of binair module bestand dat is gekoppeld aan dit manifest. In eerdere versies van Power shell heet dit element de **ModuleToProcess**.<br /> Mogelijke typen voor de hoofd module kunnen leeg zijn, waardoor een **manifest** module, de naam van een script module (`.psm1`) of de naam van een binaire module (`.exe` of `.dll`) wordt gemaakt. Als u de naam van een module manifest (`.psd1`) of een script bestand (`.ps1`) in dit element plaatst, treedt er een fout op. <br /> Voorbeeld: `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> Type: `Version`|`'0.0.1'`|Het versie nummer van deze module. Als er geen waarde is opgegeven, gebruikt `New-ModuleManifest` de standaard instelling. De teken reeks moet kunnen worden geconverteerd naar het type `Version` bijvoorbeeld `#.#.#.#.#`. `Import-Module` laadt de eerste module die wordt gevonden op de **$PSModulePath** die overeenkomt met de naam en heeft ten minste als hoge a **ModuleVersion**, als de para meter **MinimumVersion** . Als u een specifieke versie wilt importeren, gebruikt u de para meter **RequiredVersion** van de `Import-Module`-cmdlet.<br /> Voorbeeld: `ModuleVersion = '1.0'`|
 |**GPT**<br /> Type: `GUID`|`'<GUID>'`|ID die wordt gebruikt om deze module uniek te identificeren. Als er geen waarde is opgegeven, `New-ModuleManifest` automatisch de waarde genereren. U kunt op dit moment geen module importeren op **GUID**. <br /> Voorbeeld: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
-|**Lijsten**<br /> Type: `String`|`'<Current user>'`|Auteur van deze module. Als er geen waarde is opgegeven, maakt `New-ModuleManifest` gebruik van de huidige gebruiker. <br /> Voorbeeld: `Author = 'AuthorNameHere'`|
+|**Auteur**<br /> Type: `String`|`'<Current user>'`|Auteur van deze module. Als er geen waarde is opgegeven, maakt `New-ModuleManifest` gebruik van de huidige gebruiker. <br /> Voorbeeld: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> Type: `String`|`'Unknown'`|Bedrijf of leverancier van deze module. Als er geen waarde is opgegeven, gebruikt `New-ModuleManifest` de standaard instelling.<br /> Voorbeeld: `CompanyName = 'Fabrikam'`|
 |**Gegevens**<br /> Type: `String`|`'(c) <Author>. All rights reserved.'`| Copyright verklaring voor deze module. Als er geen waarde is opgegeven, gebruikt `New-ModuleManifest` de standaard instelling voor de huidige gebruiker als de `<Author>`. Als u een auteur wilt opgeven, gebruikt u de para meter **Auteur** . <br /> Voorbeeld: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Beschrijving**<br /> Type: `String`|`<empty string>`|Beschrijving van de functionaliteit van deze module.<br /> Voorbeeld: `Description = 'This is the module's description.'`|
@@ -87,7 +87,7 @@ In de volgende tabel worden de elementen beschreven die u kunt toevoegen in een 
 |**DscResourcesToExport**<br /> Type: `String[]`|`@()`|Hiermee geeft u DSC-resources op die vanuit deze module moeten worden geëxporteerd. Joker tekens zijn toegestaan. <br /> Voorbeeld: `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
 |**ModuleList**<br /> Type: `Object[]`|`@()`|Hiermee geeft u alle modules op die zijn verpakt met deze module. Deze modules kunnen worden ingevoerd op naam, met behulp van een door komma's gescheiden teken reeks of als een hash-tabel met de sleutels **module** en **GUID** . De hash-tabel kan ook een optionele **ModuleVersion** -sleutel hebben. De **ModuleList** -sleutel is ontworpen om te fungeren als een module-inventarisatie. Deze modules worden niet automatisch verwerkt. <br /> Voorbeeld: `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**File List**<br /> Type: `String[]`|`@()`|Een lijst met alle bestanden die bij deze module zijn verpakt. Net als bij **ModuleList**is **File List** een inventarisatie lijst en wordt niet anderszins verwerkt. <br /> Voorbeeld: `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> Type: `Object`|`@{...}`|Hiermee geeft u alle persoonlijke gegevens op die moeten worden door gegeven aan de hoofd module die is opgegeven door de **RootModule** -sleutel (alias: **ModuleToProcess**). **PrivateData** is een hash-tabel die verschillende elementen omvat **: Tags**, **LicenseUri**, **ProjectURI**, **IconUri**, **ReleaseNotes**, **Prerelease**, **RequireLicenseAcceptance**en  **ExternalModuleDependencies**. |
+|**PrivateData**<br /> Type: `Object`|`@{...}`|Hiermee geeft u alle persoonlijke gegevens op die moeten worden door gegeven aan de hoofd module die is opgegeven door de **RootModule** -sleutel (alias: **ModuleToProcess**). **PrivateData** is een hash-tabel die verschillende elementen omvat **: Tags**, **LicenseUri**, **ProjectURI**, **IconUri**, **ReleaseNotes**, **Prerelease**, **RequireLicenseAcceptance**en **ExternalModuleDependencies**. |
 |**Tags** <br /> Type: `String[]` |`@()`| Tags helpen bij het detecteren van modules in online galerieën. <br /> Voorbeeld: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> Type: `Uri` |`<empty string>`| Een URL naar de licentie voor deze module. <br /> Voorbeeld: `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> Type: `Uri` |`<empty string>`| Een URL naar de hoofd website voor dit project. <br /> Voorbeeld: `ProjectUri = 'https://www.contoso.com/project'`|

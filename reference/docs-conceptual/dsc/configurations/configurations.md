@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-configuraties
 ms.openlocfilehash: d7749ec88f9cca3e29c6b38d61fb73776af7ceb4
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942326"
 ---
 # <a name="dsc-configurations"></a>DSC-configuraties
@@ -32,9 +32,9 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Sla het script op als `.ps1` een bestand.
+Sla het script op als een `.ps1` bestand.
 
-## <a name="configuration-syntax"></a>Configuratie syntaxis
+## <a name="configuration-syntax"></a>Configuratiesyntaxis
 
 Een configuratie script bestaat uit de volgende onderdelen:
 
@@ -73,7 +73,7 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-Het **knooppunt** blok kan ook meerdere computer namen accepteren. In het bovenstaande voor beeld kunt u de `-ComputerName` para meter gebruiken of een door komma's gescheiden lijst met computers rechtstreeks aan het **knooppunt** blok door geven.
+Het **knooppunt** blok kan ook meerdere computer namen accepteren. In het bovenstaande voor beeld kunt u de para meter `-ComputerName` gebruiken of een door komma's gescheiden lijst met computers rechtstreeks aan het **knooppunt** blok door geven.
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
@@ -112,7 +112,7 @@ De laatste regel van het voor beeld met alleen de naam van de configuratie roept
 > [!NOTE]
 > Voor het aanroepen van een configuratie moet de functie zich in een globaal bereik bevinden (net als bij een andere Power shell-functie).
 > U kunt dit doen door het script of door het-configuratie script uit te voeren met F5 of door te klikken op de knop **script uitvoeren** in het ISE.
-> Als u het script wilt punt, voert u de `. .\myConfig.ps1` opdracht `myConfig.ps1` uit, waarbij de naam is van het script bestand dat uw configuratie bevat.
+> Als u het script wilt punt, voert u de opdracht uit `. .\myConfig.ps1` waarbij `myConfig.ps1` de naam is van het script bestand dat de configuratie bevat.
 
 Wanneer u de configuratie aanroept, doet u het volgende:
 
@@ -159,7 +159,7 @@ Als u de voor gaande voor beelden hebt uitgevoerd, bent u mogelijk opgevallen da
 In de PSDesiredStateConfiguration-module van DSC worden er nu 12 resources geleverd.
 
 De cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), kan worden gebruikt om te bepalen welke resources op het systeem zijn geïnstalleerd en beschikbaar zijn voor gebruik door de LCM.
-Zodra deze modules zijn geplaatst `$env:PSModulePath` en op de juiste wijze worden herkend door [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), moeten ze nog steeds worden geladen in uw configuratie.
+Zodra deze modules in `$env:PSModulePath` zijn geplaatst en op de juiste wijze worden herkend door [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), moeten ze nog steeds worden geladen in uw configuratie.
 
 **Import-dscresource bieden** is een dynamisch tref woord dat alleen kan worden herkend binnen een **configuratie** blok en dat het geen cmdlet is.
 **Import-dscresource bieden** ondersteunt twee para meters:
@@ -167,7 +167,7 @@ Zodra deze modules zijn geplaatst `$env:PSModulePath` en op de juiste wijze word
 - **Module** naam is de aanbevolen methode voor het gebruik van **import-dscresource bieden**. De naam van de module die de resources bevat die moeten worden geïmporteerd (en een teken reeks matrix van module namen), wordt geaccepteerd.
 - **Naam** is de naam van de resource die u wilt importeren. Dit is niet de beschrijvende naam die wordt geretourneerd als ' name ' door [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), maar de naam van de klasse die wordt gebruikt bij het definiëren van het resource schema (geretourneerd als **resource type** op [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)).
 
-Zie `Import-DSCResource` [using import-dscresource bieden](import-dscresource.md) voor meer informatie over het gebruik van.
+Zie [using import-dscresource bieden](import-dscresource.md) voor meer informatie over het gebruik van `Import-DSCResource`.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Verschillen Power shell v4 en V5
 

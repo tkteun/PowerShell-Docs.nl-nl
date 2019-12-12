@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
 caps.latest.revision: 11
 ms.openlocfilehash: 76b600256af3f957f7fe0578f9fef810262aa5d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355788"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>Het element ScriptBlock voor ListItem voor ListControl (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Lijst item-element (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het script op waarvan de waarde wordt weer gegeven in de rij.
 

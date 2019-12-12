@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354290"
 ---
 # <a name="name-element-for-selectionset-format"></a>Het element Naam voor SelectionSet (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Selectie verzamelings element (indeling)](./selectionset-element-format.md)|Hiermee wordt één set .NET-objecten gedefinieerd waarnaar kan worden verwezen met de naam van de set.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op om te verwijzen naar de selectieset. Er zijn geen beperkingen met betrekking tot welke tekens kunnen worden gebruikt.
 
@@ -55,7 +55,7 @@ De naam die u hier opgeeft, wordt gebruikt in het element `SelectionSetName`. De
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u een `SelectionSet`-element dat vier .NET-typen definieert. De naam van de selectieset is ' FileSystemTypes '.
+Dit voor beeld toont een `SelectionSet`-element waarmee vier .NET-typen worden gedefinieerd. De naam van de selectieset is ' FileSystemTypes '.
 
 ```xml
 <SelectionSets>

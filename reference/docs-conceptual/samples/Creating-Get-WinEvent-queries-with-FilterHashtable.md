@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: Get-WinEvent-query's maken met FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444385"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
@@ -54,12 +54,12 @@ De volgende tabel geeft de sleutel namen, gegevens typen en of joker tekens word
 | -------------- | --------------- | ---------------------------- |
 | LogName        | `<String[]>`    | Ja                          |
 | ProviderName   | `<String[]>`    | Ja                          |
-| `Path`           | `<String[]>`    | Nee                           |
+| Pad           | `<String[]>`    | Nee                           |
 | Trefwoorden       | `<Long[]>`      | Nee                           |
-| Id             | `<Int32[]>`     | Nee                           |
+| ID             | `<Int32[]>`     | Nee                           |
 | Niveau          | `<Int32[]>`     | Nee                           |
 | StartTime      | `<DateTime>`    | Nee                           |
-| Tijd        | `<DateTime>`    | Nee                           |
+| EndTime        | `<DateTime>`    | Nee                           |
 | Gebruikers-id         | `<SID>`         | Nee                           |
 | Gegevens           | `<String[]>`    | Nee                           |
 | `<named-data>` | `<String[]>`    | Nee                           |
@@ -155,7 +155,7 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **tref woorden** en opgesomde waarden zijn als volgt:
 
-| Name             |  Waarde            |
+| Naam             |  Value            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -236,13 +236,13 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **niveau** sleutel en opgesomde waarden zijn als volgt:
 
-| Name           | Waarde |
+| Naam           | Value |
 | -------------- | ----- |
 | Verbose        |   5   |
 | Ter informatie  |   4   |
 | Waarschuwing        |   3   |
 | Fout          |   2   |
-| Kritiek       |   1   |
+| Kritieke       |   1   |
 | LogAlways      |   0   |
 
 De hash-tabel voor de voltooide query bevat de sleutel, het **niveau**en de waarde **2**.

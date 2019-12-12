@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117452"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
@@ -16,7 +16,7 @@ U kunt de Windows Power shell® Integrated Scripting Environment (ISE) gebruiken
 > [!NOTE]
 > Vanaf Windows PowerShell ISE 3,0 worden de opdracht-en uitvoer deel Vensters gecombineerd in één console venster.
 
-## <a name="menu-bar"></a>Menu balk
+## <a name="menu-bar"></a>Menubalk
 
 De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**, **fout opsporing**, **invoeg toepassingen**en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
@@ -27,17 +27,17 @@ De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**
 
 Een Windows Power shell-tabblad is de omgeving waarin een Windows Power shell-script wordt uitgevoerd. U kunt nieuwe Windows Power shell-tabbladen in de Windows PowerShell ISE openen om afzonderlijke omgevingen op uw lokale computer of op externe computers te maken. U kunt Maxi maal acht Power shell-tabbladen tegelijkertijd openen.
 
-## <a name="toolbar"></a>Werk balk
+## <a name="toolbar"></a>Werkbalk
 
 De volgende knoppen bevinden zich op de werk balk.
 
-|Toets|Functie|
+|Knop|Functie|
 |----------|------------|
 |**Nieuw**|Hiermee opent u een nieuw script.|
-|**Staan**|Hiermee opent u een bestaand script of bestand.|
+|**Lopend**|Hiermee opent u een bestaand script of bestand.|
 |**Opslaan**|Hiermee slaat u een script of bestand op.|
 |**Verminderen**|Hiermee knipt u de geselecteerde tekst en kopieert u deze naar het klem bord.|
-|**Kopieer**|Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.|
+|**Copy**|Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.|
 |**Plakken**|Hiermee wordt de inhoud van het klem bord op de cursor locatie geplakt.|
 |**Uitvoer venster wissen**|Hiermee wordt alle inhoud in het deel venster Uitvoer gewist.|
 |**Opdracht**|Hiermee wordt de zojuist uitgevoerde actie omgedraaid.|

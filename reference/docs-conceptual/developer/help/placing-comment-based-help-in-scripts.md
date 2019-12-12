@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
 ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353247"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Help op basis van opmerkingen in scripts plaatsen
 
-In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een script kunt plaatsen zodat de cmdlet `Get-Help` het Help-onderwerp op basis van opmerkingen koppelt aan scripts en niet met functies die mogelijk in het script zijn.
+In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een script kunt plaatsen zodat de cmdlet `Get-Help` het Help-onderwerp op basis van opmerkingen koppelt aan scripts en niet met functies die zich in het script bevindt.
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Waar kunt u op opmerkingen gebaseerde hulp voor een script plaatsen
 

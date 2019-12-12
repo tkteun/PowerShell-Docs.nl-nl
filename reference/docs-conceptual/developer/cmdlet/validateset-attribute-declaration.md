@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
 caps.latest.revision: 12
 ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355417"
 ---
 # <a name="validateset-attribute-declaration"></a>Declaratie van het kenmerk ValidateSet
@@ -34,14 +34,14 @@ Als dit kenmerk is opgegeven, bepaalt de Windows Power shell-runtime of het opge
 
 #### <a name="parameters"></a>Parameters
 
-`ValidValues` ([System. String](/dotnet/api/System.String)) is vereist. Hiermee geeft u de geldige parameter element waarden op. Het volgende voor beeld laat zien hoe u één element of meerdere elementen kunt opgeven.
+`ValidValues` ([System. String](/dotnet/api/System.String)) vereist. Hiermee geeft u de geldige parameter element waarden op. Het volgende voor beeld laat zien hoe u één element of meerdere elementen kunt opgeven.
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. De standaard waarde van `true` geeft aan dat het geval wordt genegeerd. Met de waarde `false` wordt de cmdlet hoofdletter gevoelig gemaakt.
+`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. De standaard waarde van `true` geeft aan dat het geval wordt genegeerd. Met een waarde van `false` wordt de cmdlet hoofdletter gevoelig gemaakt.
 
 ## <a name="remarks"></a>Opmerkingen
 

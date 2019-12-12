@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417774"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Hand leiding voor&#39;Windows Power shell-programmeurs
@@ -97,7 +97,7 @@ Zie voor meer informatie over het gebruik van de Windows Power shell-shell [aan 
 
 ## <a name="contents-of-this-guide"></a>Inhoud van deze hand leiding
 
-|Onderwerp|Definitie|
+|Onderwerp|De definitie van|
 |-----------|----------------|
 |[Een Windows Power shell-provider maken](./how-to-create-a-windows-powershell-provider.md)|In deze sectie wordt beschreven hoe u een Windows Power shell-provider voor Windows Power shell bouwt.|
 |[Een Windows Power shell-hosttoepassing maken](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|In deze sectie wordt beschreven hoe u een hosttoepassing schrijft die een runs Pace bewerkt en hoe u een hosttoepassing schrijft die zijn eigen aangepaste host implementeert.|

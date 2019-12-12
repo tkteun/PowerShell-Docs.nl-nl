@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353415"
 ---
 # <a name="viewdefinitions-element-format"></a>Het element ViewDefinitions (opmaak)
@@ -64,7 +64,7 @@ Zie de volgende onderwerpen voor meer informatie over de onderdelen van de versc
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een element `ViewDefinitions` weer gegeven dat de bovenliggende elementen voor een tabel weergave en een lijst weergave bevat.
+In dit voor beeld wordt een `ViewDefinitions`-element weer gegeven dat de bovenliggende elementen voor een tabel weergave en een lijst weergave bevat.
 
 ```xml
 <Configuration>

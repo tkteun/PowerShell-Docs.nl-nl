@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 2b11fbcf-3426-48ae-9319-2c847969f723
 caps.latest.revision: 10
 ms.openlocfilehash: 7afc834e68ef332bee1e23da782fb5c5527fcf54
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358917"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
 
-Hiermee geeft u het script blok op waarmee de voor waarde wordt geactiveerd. Wanneer dit script wordt geëvalueerd als `true`, wordt aan de voor waarde voldaan en wordt het tabel item gebruikt.
+Hiermee geeft u het script blok op waarmee de voor waarde wordt geactiveerd. Wanneer dit script wordt geëvalueerd om `true`, wordt aan de voor waarde voldaan en wordt het tabel item gebruikt.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) EntrySelectedBy-element voor TableRowEntry (indeling) SelectionCondition-element voor EntrySelectedBy voor TableRowEntry (Format) script block element voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (indeling)
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor TableRowEntry (indeling)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit tabel item.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het script op dat wordt geëvalueerd.
 

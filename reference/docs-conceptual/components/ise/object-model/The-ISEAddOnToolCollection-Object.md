@@ -1,31 +1,31 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEAddOnToolCollection-object
 ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030620"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Het ISEAddOnToolCollection-object
 
-De **ISEAddOnToolCollection** object is een verzameling van **ISEAddOnTool** objecten. Een voorbeeld is de **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.
+Het **ISEAddOnToolCollection** -object is een verzameling **ISEAddOnTool** -objecten. Een voor beeld is het object **$psISE. CurrentPowerShellTab. VerticalAddOnTools** .
 
 ## <a name="methods"></a>Methoden
 
-### <a name="add-name-controltype-isvisible-"></a>Voeg\( naam, het besturingselementtype, \[IsVisible\] \)
+### <a name="add-name-controltype-isvisible-"></a>\( name, ControlType, \[IsVisible\] \) toevoegen
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Voegt een nieuw hulpprogramma voor de invoegtoepassing toe aan de verzameling. Retourneert het zojuist toegevoegde invoegtoepassing-hulpprogramma. Voordat u deze opdracht uitvoert, moet u het hulpprogramma invoegtoepassing installeren op de lokale computer en de assembly niet laden.
+Hiermee voegt u een nieuw hulp programma toe aan de verzameling. Hiermee wordt het zojuist toegevoegde hulp programma voor toevoegen geretourneerd. Voordat u deze opdracht uitvoert, moet u het hulp programma voor toevoegen installeren op de lokale computer en de assembly laden.
 
-**Naam** -tekenreeks geeft de weergavenaam van het hulpprogramma invoegtoepassing die wordt toegevoegd aan Windows PowerShell ISE.
+**Naam** -teken reeks Hiermee geeft u de weergave naam op van het hulp programma voor toevoegen dat wordt toegevoegd aan Windows PowerShell ISE.
 
-**Besturingselementtype** -Type wordt opgegeven in het besturingselement dat wordt toegevoegd.
+**ControlType** -type Hiermee geeft u het besturings element op dat wordt toegevoegd.
 
-**\[IsVisible\]**  -optionele Booleaanse als ingesteld op **$true**, het hulpprogramma invoegtoepassing is meteen zichtbaar in het deelvenster van de bijbehorende hulpprogramma.
+**\[IsVisible\]** -optionele Booleaanse waarde als deze is ingesteld op **$True**, wordt het hulp programma voor toevoegen direct weer gegeven in het bijbehorende deel venster.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -33,13 +33,13 @@ Voegt een nieuw hulpprogramma voor de invoegtoepassing toe aan de verzameling. R
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="remove-item-"></a>Verwijder\( Item \)
+### <a name="remove-item-"></a>\( item verwijderen \)
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee verwijdert u het hulpprogramma opgegeven invoegtoepassing uit de verzameling.
+Hiermee verwijdert u het opgegeven hulp programma voor invoeg toepassingen uit de verzameling.
 
-**Item** -Microsoft.PowerShell.Host.ISE.ISEAddOnTool Hiermee geeft u het object worden verwijderd uit de Windows PowerShell ISE.
+**Item** -Microsoft. Power shell. host. ISE. ISEAddOnTool geeft het object op dat uit Windows PowerShell ISE moet worden verwijderd.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -49,11 +49,11 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
 ### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab \)
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Selecteert het PowerShell-tabblad die de **psTab** parameter specificeert.
+Hiermee selecteert u het Power shell-tabblad waarop de para meter **psTab** is opgegeven.
 
-**psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab de PowerShell-tabblad om te selecteren.
+**psTab** : micro soft. Power shell. host. ISE. PowerShellTab het Power shell-tabblad om te selecteren.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -61,13 +61,13 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="remove-pstab-"></a>Verwijder\( psTab \)
+### <a name="remove-pstab-"></a>\( psTab \) verwijderen
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee verwijdert u de PowerShell-tabblad die de **psTab** parameter specificeert.
+Hiermee verwijdert u het Power shell-tabblad waarop de para meter **psTab** is opgegeven.
 
-**psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab de PowerShell-tabblad om te verwijderen.
+**psTab** : micro soft. Power shell. host. ISE. PowerShellTab het Power shell-tabblad dat u wilt verwijderen.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -79,6 +79,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 ## <a name="see-also"></a>Zie ook
 
-- [The PowerShellTab Object](The-PowerShellTab-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Het PowerShellTab-object](The-PowerShellTab-Object.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

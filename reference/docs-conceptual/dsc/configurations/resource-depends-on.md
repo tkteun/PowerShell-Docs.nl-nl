@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Resourceafhankelijkheden met behulp van DependsOn
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942312"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Resourceafhankelijkheden met behulp van DependsOn
 
-Wanneer u [configuraties](configurations.md)schrijft, voegt u [resource blokken](../resources/resources.md) toe om aspecten van een doel knooppunt te configureren. Als u nog steeds resource blokken toevoegt, kunnen uw configuraties zeer groot en lastig groeien om te beheren. Een dergelijke uitdaging is de toegepaste volg orde van uw resource blokken. Normaal gesp roken worden resources toegepast in de volg orde waarin ze in de configuratie zijn gedefinieerd. Naarmate uw configuratie groter en complexer wordt, kunt u de `DependsOn`-sleutel gebruiken om de toegepaste volg orde van uw resources te wijzigen door op te geven dat een resource afhankelijk is van een andere bron.
+Wanneer u [configuraties](configurations.md)schrijft, voegt u [resource blokken](../resources/resources.md) toe om aspecten van een doel knooppunt te configureren. Als u nog steeds resource blokken toevoegt, kunnen uw configuraties zeer groot en lastig groeien om te beheren. Een dergelijke uitdaging is de toegepaste volg orde van uw resource blokken. Normaal gesp roken worden resources toegepast in de volg orde waarin ze in de configuratie zijn gedefinieerd. Naarmate uw configuratie groter en complexer wordt, kunt u de `DependsOn`-sleutel gebruiken om de toegepaste volg orde van uw resources te wijzigen door op te geven dat een resource afhankelijk is van een andere resource.
 
-De `DependsOn`-sleutel kan worden gebruikt in elk resource blok. Deze is gedefinieerd met hetzelfde sleutel/waarde-mechanisme als andere bron sleutels. De `DependsOn`-sleutel verwacht een matrix met teken reeksen met de volgende syntaxis.
+De `DependsOn` sleutel kan worden gebruikt in elk resource blok. Deze is gedefinieerd met hetzelfde sleutel/waarde-mechanisme als andere bron sleutels. De `DependsOn` sleutel verwacht een matrix met teken reeksen met de volgende syntaxis.
 
 ```
 DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
@@ -118,7 +118,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-Dit zorgt er ook voor dat als de **FirewallProfile** -resource om een bepaalde reden mislukt, het blok van de **firewall** niet wordt uitgevoerd, zelfs niet als het eerst is gedefinieerd. De `DependsOn`-sleutel maakt meer flexibiliteit bij het groeperen van resource blokken en zorgt ervoor dat afhankelijkheden worden opgelost voordat een resource wordt uitgevoerd.
+Dit zorgt er ook voor dat als de **FirewallProfile** -resource om een bepaalde reden mislukt, het blok van de **firewall** niet wordt uitgevoerd, zelfs niet als het eerst is gedefinieerd. De `DependsOn` sleutel biedt meer flexibiliteit bij het groeperen van resource blokken en zorgt ervoor dat afhankelijkheden worden opgelost voordat een resource wordt uitgevoerd.
 
 In meer geavanceerde configuraties kunt u ook gebruikmaken van een [interforest-afhankelijkheid](crossNodeDependencies.md) om nog nauw keurigere controle toe te staan (bijvoorbeeld om te zorgen dat een domein controller is geconfigureerd voordat een client aan het domein wordt toegevoegd).
 

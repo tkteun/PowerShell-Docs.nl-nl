@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355515"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Dynamische parameters declareren
 
-In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijdens runtime worden toegevoegd aan de cmdlet. In dit voor beeld wordt de para meter `Department` toegevoegd aan de cmdlet wanneer de gebruiker de para meter `Employee`-switch opgeeft. Zie [cmdlet Dynamic para meters](./cmdlet-dynamic-parameters.md)voor meer informatie over dynamische para meters.
+In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijdens runtime worden toegevoegd aan de cmdlet. In dit voor beeld wordt de para meter `Department` toegevoegd aan de cmdlet wanneer de gebruiker de para meter `Employee` switch opgeeft. Zie [cmdlet Dynamic para meters](./cmdlet-dynamic-parameters.md)voor meer informatie over dynamische para meters.
 
 ## <a name="to-define-dynamic-parameters"></a>Dynamische para meters definiëren
 
@@ -60,7 +60,7 @@ In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijde
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt de para meter `Department` toegevoegd wanneer de gebruiker de para meter `Employee` opgeeft. De para meter `Department` is een optionele para meter en het kenmerk validate wordt gebruikt om de toegestane argumenten op te geven.
+In dit voor beeld wordt de para meter `Department` toegevoegd wanneer de gebruiker de `Employee`-para meter opgeeft. De para meter `Department` is een optionele para meter en het kenmerk validate wordt gebruikt om de toegestane argumenten op te geven.
 
 ```csharp
 using System;

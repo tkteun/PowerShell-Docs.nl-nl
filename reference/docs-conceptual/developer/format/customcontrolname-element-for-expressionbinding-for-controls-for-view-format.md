@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4b6ee11e-9086-41d2-afd3-42fb9f24da69
 caps.latest.revision: 7
 ms.openlocfilehash: bf1d57447f9018f1535af14466427aaeabc048f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359051"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-view-format"></a>Het element CustomControlName voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[ExpressionBinding-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam van het besturings element op.
 

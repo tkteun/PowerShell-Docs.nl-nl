@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Services beheren
 ms.openlocfilehash: d9e17b2d91ae01d7d4d6d573348289fa68dc9c56
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030163"
 ---
 # <a name="managing-services"></a>Services beheren
 
-Er zijn acht core-Service-cmdlets, ontworpen voor een breed scala aan service-taken. We kijken alleen weergeven en wijzigen van de status voor services actief, maar krijgt u een lijst van Service-cmdlets met behulp van `Get-Help \*-Service`, en vindt u informatie over elke cmdlet Service met behulp van `Get-Help <Cmdlet-Name>`, zoals `Get-Help New-Service`.
+Er zijn acht core service-cmdlets, ontworpen voor een breed scala aan service taken. We kijken alleen naar het aanbieden en wijzigen van de actieve status voor services, maar u kunt een lijst met Service-cmdlets ophalen met behulp van `Get-Help \*-Service`en u kunt informatie over elke service-cmdlet vinden met behulp van `Get-Help <Cmdlet-Name>`, zoals `Get-Help New-Service`.
 
-## <a name="getting-services"></a>Ophalen van Services
+## <a name="getting-services"></a>Services ophalen
 
-U kunt de services krijgen bij een lokale of externe computer met behulp van de `Get-Service` cmdlet. Net als bij `Get-Process`, met de `Get-Service` opdracht zonder parameters, retourneert alle services. U kunt filteren op naam, zelfs met een sterretje als jokerteken:
+U kunt de services op een lokale of externe computer ophalen met behulp van de cmdlet `Get-Service`. Net als bij `Get-Process`, met behulp van de `Get-Service` opdracht zonder para meters worden alle services geretourneerd. U kunt filteren op naam, zelfs met een sterretje als Joker teken:
 
 ```powershell
 PS> Get-Service -Name se*
@@ -27,7 +27,7 @@ Running  SENS               System Event Notification
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-Omdat het is niet altijd duidelijk wat de echte naam van de service is, merkt u misschien moet u services vinden op weergavenaam. U kunt dit doen met de specifieke naam, gebruik van jokertekens of met behulp van een lijst met weergavenamen:
+Omdat het niet altijd duidelijk is wat de werkelijke naam voor de service is, kunt u de services op weergave naam zoeken. U kunt dit doen op basis van een specifieke naam, met behulp van joker tekens of met een lijst met weergave namen:
 
 ```powershell
 PS> Get-Service -DisplayName se*
@@ -48,19 +48,19 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-U kunt de parameter ComputerName van de cmdlet Get-Service gebruiken om op te halen van de services op externe computers. De parameter ComputerName accepteert meerdere waarden en jokertekens bevatten, zodat u kunt de services op meerdere computers met slechts één opdracht. De volgende opdracht wordt bijvoorbeeld de services op de externe computer Server01.
+U kunt de para meter ComputerName van de cmdlet Get-service gebruiken om de services op externe computers op te halen. De para meter ComputerName accepteert meerdere waarden en Joker tekens, zodat u de services op meerdere computers met één opdracht kunt ophalen. Met de volgende opdracht worden bijvoorbeeld de services op de externe computer Server01 opgehaald.
 
 ```powershell
 Get-Service -ComputerName Server01
 ```
 
-## <a name="getting-required-and-dependent-services"></a>Ophalen van vereist en afhankelijke Services
+## <a name="getting-required-and-dependent-services"></a>Vereiste en afhankelijke services ophalen
 
-De cmdlet Get-Service heeft twee parameters die zeer nuttig zijn in Servicebeheer zijn. De parameter DependentServices services die afhankelijk van de service zijn opgehaald. De parameter RequiredServices haalt services waarvan deze service afhankelijk is.
+De cmdlet Get-service heeft twee para meters die erg nuttig zijn in Service beheer. De para meter DependentServices haalt Services op die afhankelijk zijn van de service. De para meter RequiredServices haalt Services op waarvan deze service afhankelijk is.
 
-Deze parameters worden alleen de waarden van de DependentServices en ServicesDependedOn weergeven (alias = RequiredServices) eigenschappen van het object System.ServiceProcess.ServiceController Get-Service retourneert, maar deze eenvoudige opdrachten en breng ophalen Deze informatie is veel eenvoudiger.
+Met deze para meters worden alleen de waarden van de eigenschappen DependentServices en ServicesDependedOn (alias = RequiredServices) van het object System. ServiceProcess. ServiceController weer gegeven dat de Get-service retourneert, maar de opdrachten worden vereenvoudigd en krijgen deze gegevens zijn veel eenvoudiger.
 
-De volgende opdracht wordt de services die de LanmanWorkstation-service is vereist.
+Met de volgende opdracht worden de services opgehaald die de LanmanWorkstation-service nodig heeft.
 
 ```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
@@ -73,7 +73,7 @@ Running  MRxSmb10           SMB 1.x MiniRedirector
 Running  NSI                Network Store Interface Service
 ```
 
-De volgende opdracht wordt de services waarvoor de LanmanWorkstation-service.
+Met de volgende opdracht worden de services opgehaald waarvoor de LanmanWorkstation-service is vereist.
 
 ```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
@@ -86,33 +86,33 @@ Stopped  Browser            Computer Browser
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-Ook krijgt u alle services die afhankelijkheden hebben. De volgende opdracht precies dat doet en vervolgens de cmdlet Format-Table wordt gebruikt om de Status, de naam, RequiredServices en DependentServices eigenschappen van de services op de computer weer te geven.
+U kunt zelfs alle services ophalen die afhankelijkheden hebben. De volgende opdracht is alleen dat, en vervolgens wordt de cmdlet Format-Table gebruikt om de eigenschappen status, naam, RequiredServices en DependentServices van de services op de computer weer te geven.
 
 ```powershell
 Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## <a name="stopping-starting-suspending-and-restarting-services"></a>Stoppen, starten, onderbreken en opnieuw starten van Services
+## <a name="stopping-starting-suspending-and-restarting-services"></a>Services stoppen, starten, onderbreken en opnieuw starten
 
-Het alle Service-cmdlets hebben de dezelfde algemene vorm. Services kunnen worden opgegeven met common name of display name en lijsten en jokertekens als waarden. Als u wilt de afdruk-spooler stoppen, gebruikt u:
+De service-cmdlets hebben allemaal hetzelfde algemene formulier. Services kunnen worden opgegeven met een algemene naam of weergave naam en lijsten en Joker tekens worden als waarden. Als u de afdrukspooler wilt stoppen, gebruikt u:
 
 ```powershell
 Stop-Service -Name spooler
 ```
 
-Als u wilt de afdruk-spooler starten nadat deze is gestopt, gebruikt u:
+Als u de afdrukspooler wilt starten nadat deze is gestopt, gebruikt u:
 
 ```powershell
 Start-Service -Name spooler
 ```
 
-Als u wilt onderbreken de afdruk-spooler, gebruikt u:
+Als u de afdrukspooler wilt onderbreken, gebruikt u:
 
 ```powershell
 Suspend-Service -Name spooler
 ```
 
-De `Restart-Service` cmdlet werkt op dezelfde manier als de andere Service-cmdlets, maar we enkele complexere voorbeelden tonen voor deze. Geef de naam van de service in het eenvoudigste gebruik:
+De cmdlet `Restart-Service` werkt op dezelfde manier als de andere service-cmdlets, maar er worden een aantal complexere voor beelden weer gegeven. In het eenvoudigste gebruik geeft u de naam van de service op:
 
 ```powershell
 PS> Restart-Service -Name spooler
@@ -122,9 +122,9 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 PS>
 ```
 
-U zult merken dat u krijgt een herhaalde waarschuwing over de afdrukspooler gestart. Als u de bewerking van een service die het duurt enige tijd uitvoert, ontvangt Windows PowerShell u dat deze nog steeds probeert de taak uit te voeren.
+U ziet dat er een herhaalde waarschuwing wordt weer gegeven over het starten van de afdrukspooler. Wanneer u een service bewerking uitvoert die enige tijd in beslag neemt, wordt u door Windows Power shell op de hoogte gesteld dat er nog steeds wordt geprobeerd om de taak uit te voeren.
 
-Als u wilt dat meerdere services opnieuw starten, kunt u een lijst met services, filteren en voert u het opnieuw opstarten:
+Als u meerdere services opnieuw wilt starten, kunt u een lijst met services ophalen, deze filteren en vervolgens het opnieuw opstarten uitvoeren:
 
 ```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
@@ -139,24 +139,24 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 ```
 
-Deze cmdlets Service nog geen een ComputerName-parameter, maar u kunt ze op een externe computer uitvoeren met behulp van de cmdlet Invoke-Command. Bijvoorbeeld, dat de volgende opdracht de Spooler-service op de externe computer Server01 wordt opnieuw opgestart.
+Deze service-cmdlets hebben geen ComputerName-para meter, maar u kunt ze uitvoeren op een externe computer met behulp van de cmdlet invoke-opdracht. Met de volgende opdracht wordt bijvoorbeeld de Spooler-service opnieuw gestart op de externe computer Server01.
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## <a name="setting-service-properties"></a>Service-Instellingseigenschappen
+## <a name="setting-service-properties"></a>Service-eigenschappen instellen
 
-De `Set-Service` cmdlet worden de eigenschappen van een service op een lokale of externe computer gewijzigd. Omdat de status van de service is een eigenschap, kunt u deze cmdlet te starten, stoppen en onderbreken van een service.
-De cmdlet Set-Service heeft ook een opstarttype van parameter waarmee u het opstarttype service wijzigen.
+Met de cmdlet `Set-Service` worden de eigenschappen van een service op een lokale of externe computer gewijzigd. Omdat de status van de service een eigenschap is, kunt u deze cmdlet gebruiken om een service te starten, te stoppen en te onderbreken.
+De cmdlet Set-service heeft ook een opstart type-para meter waarmee u het opstart type voor de service kunt wijzigen.
 
-Gebruik `Set-Service` in Windows Vista en latere versies van Windows, opent u Windows PowerShell met de optie 'Als administrator uitvoeren'.
+Als u `Set-Service` wilt gebruiken in Windows Vista en latere versies van Windows, opent u Windows Power shell met de optie als administrator uitvoeren.
 
-Zie voor meer informatie, [-Service instellen [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Zie [set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3) voor meer informatie
 
 ## <a name="see-also"></a>Zie ook
 
-- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Get-service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+- [Set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Restart-service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)

@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: handleiding voor werkstromen
+keywords: Power shell, cmdlet
+title: hand leiding voor werk stromen
 ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058944"
 ---
-# <a name="psworkflow-module"></a>PSWorkflow-Module
+# <a name="psworkflow-module"></a>PSWorkflow-module
 
-In deze sectie bevat de help-onderwerpen voor de **PSWorkflow** module, deze bevat cmdlets die ondersteuning bieden voor de Windows PowerShell Workflow-functie. De **PSWorkflow** -module is geïnstalleerd met Windows PowerShell.
+Deze sectie bevat de Help-onderwerpen voor de **PSWorkflow** -module, die cmdlets bevat die ondersteuning bieden voor de werk stroom functie van Windows Power shell. De **PSWorkflow** -module wordt geïnstalleerd met Windows Power shell.
 
 ## <a name="help-topics"></a>Help-onderwerpen
 
-[Werkstroom-Cmdlets](https://go.microsoft.com/fwlink/?LinkID=245865)
+[Werk stroom-cmdlets](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
@@ -35,4 +35,4 @@ In deze sectie bevat de help-onderwerpen voor de **PSWorkflow** module, deze bev
 
 [about_Suspend-Workflow](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
-[Hulpprogramma voor Cmdlets voor PowerShell-werkstroom](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
+[Cmdlets voor Power shell workflow Utility](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)

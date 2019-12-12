@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352155"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Een werkstroom maken met Windows PowerShell-activiteiten
@@ -45,7 +45,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 8. Bewerk de eigenschappen van de **GetWmiObject** -activiteit als volgt.
 
-   |Eigenschap|Waarde|
+   |Eigenschap|Value|
    |--------------|-----------|
    |**Klasse**|"Win32_ComputerSystem"|
    |**PSComputerName**|Comp|
@@ -55,7 +55,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 10. Bewerk de eigenschappen van de **AddComputer** -activiteit als volgt.
 
-    |Eigenschap|Waarde|
+    |Eigenschap|Value|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**DomainCredential**|DomainCred|
@@ -64,13 +64,13 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 12. Bewerk de eigenschappen van de **RestartComputer** -activiteit als volgt.
 
-    |Eigenschap|Waarde|
+    |Eigenschap|Value|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**Referentie**|MachineCred|
     |**Zo**|Micro soft. Power shell. commands. WaitForServiceTypes. Power shell|
     |**Force**|True|
-    |Bewerking|True|
+    |Wachten|True|
     |PSComputerName|{""}|
 
 13. Voeg een **GetWmiObject** -activiteit toe aan de **JoinDomain** -reeks na de activiteit **RestartComputer** . Bewerk de eigenschappen zodanig dat deze hetzelfde zijn als de vorige **GetWmiObject** -activiteit.

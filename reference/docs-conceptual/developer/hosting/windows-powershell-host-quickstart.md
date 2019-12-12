@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
 ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352988"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snelstartgids voor Windows PowerShell-hosts
@@ -58,7 +58,7 @@ Als u niet wilt dat het resultaat van een vorige opdracht naar een opdracht word
 
 In het vorige voor beeld wordt één opdracht zonder para meters uitgevoerd.
 U kunt para meters toevoegen aan de opdracht met behulp van de methode [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) .
-Met de volgende code wordt bijvoorbeeld een lijst opgehaald van alle processen met de naam `PowerShell` die op de computer wordt uitgevoerd.
+Met de volgende code wordt bijvoorbeeld een lijst opgehaald van alle processen met de naam `PowerShell` uitgevoerd op de computer.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie wordt toegevoegd aan het einde van de pijp lijn.
-Met de volgende code wordt een lijst met actieve processen met de naam `PowerShell` opgehaald en wordt vervolgens de lijst met actieve services opgehaald.
+Met de volgende code wordt een lijst met actieve processen met de naam `PowerShell`opgehaald en wordt vervolgens de lijst met actieve services opgehaald.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,14 +104,14 @@ ps.Invoke();
 
 U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen.
 In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd.
-In dit voor beeld wordt ervan uitgegaan dat er al een script met de naam `MyScript.ps1` is in een map met de naam `D:\PSScripts`.
+In dit voor beeld wordt ervan uitgegaan dat er al een script met de naam `MyScript.ps1` in een map met de naam `D:\PSScripts`is.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Er is ook een versie van de methode AddScript die een Boole-para meter met de naam `useLocalScope` gebruikt.
+Er is ook een versie van de methode AddScript die een Boole-para meter met de naam `useLocalScope`heeft.
 Als deze para meter is ingesteld op `true`, wordt het script uitgevoerd in het lokale bereik.
 Met de volgende code wordt het script uitgevoerd in het lokale bereik.
 
@@ -151,7 +151,7 @@ Als u een meer beperkte runs Pace wilt maken, moet u een leeg InitialSessionStat
 Het gebruik van een runs Pace waarmee alleen de door u opgegeven opdrachten worden geladen, levert aanzienlijk betere prestaties.
 
 U gebruikt de methoden van de klasse [System. Management. Automation. Runspaces. SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) om cmdlets te definiëren voor de oorspronkelijke sessie status.
-In het volgende voor beeld wordt een lege begin sessie status gemaakt. vervolgens worden de opdrachten `Get-Command` en `Import-Module` gedefinieerd en toegevoegd aan de eerste sessie status.
+In het volgende voor beeld wordt een lege begin sessie status gemaakt. vervolgens worden de `Get-Command`-en `Import-Module`-opdrachten voor de eerste sessie status gedefinieerd en toegevoegd.
 Vervolgens maken we een runs Pace die is beperkt door de eerste sessie status en voert u de opdrachten in die runs Pace uit.
 
 Maak de eerste sessie status.

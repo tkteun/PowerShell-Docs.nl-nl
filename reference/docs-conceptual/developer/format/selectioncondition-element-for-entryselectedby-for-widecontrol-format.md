@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
 caps.latest.revision: 11
 ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355767"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
@@ -34,7 +34,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven. U moet één `PropertyName`-of `ScriptBlock`-element opgeven. De elementen `SelectionSetName` en `TypeName` zijn optioneel. U kunt een van beide elementen opgeven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven. U moet één `PropertyName` of `ScriptBlock` element opgeven. De elementen `SelectionSetName` en `TypeName` zijn optioneel. U kunt een van beide elementen opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 

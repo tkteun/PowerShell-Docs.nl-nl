@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355242"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Het element CustomItem voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
@@ -57,13 +57,13 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Wanneer u de onderliggende elementen van het element `CustomItem` opgeeft, houdt u het volgende in acht:
+Houd bij het opgeven van de onderliggende elementen van het element `CustomItem` het volgende in acht:
 
-- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde: `ExpressionBinding`, `NewLine`, `Text` en `Frame`.
+- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde: `ExpressionBinding`, `NewLine`, `Text`en `Frame`.
 
 - Er is geen maximum limiet voor het aantal reeksen dat u kunt opgeven.
 
-- In elke reeks is er geen maximum limiet voor het aantal `ExpressionBinding`-elementen dat u kunt gebruiken.
+- In elke reeks is er geen maximum limiet voor het aantal `ExpressionBinding` elementen dat u kunt gebruiken.
 
 ## <a name="see-also"></a>Zie ook
 

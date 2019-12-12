@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Modules met compatibele Power shell-edities
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329188"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibele Power shell-edities
@@ -79,7 +79,7 @@ Ontwerpers van modules kunnen één module richten op een of beide Power shell-e
 
 Eén module kan zowel op bureau blad-als op kern-edities worden uitgevoerd. in die module auteur moet de vereiste logica worden toegevoegd in RootModule of in het manifest module met $PSEdition variabele. Modules kunnen twee sets gecompileerde Dll's hebben die zijn gericht op zowel CoreCLR als FullCLR. Hier vindt u een aantal opties voor het inpakken van uw module met logica voor het laden van de juiste dll's.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Optie 1: Een module verpakken voor het richten op meerdere versies en meerdere versies van Power shell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Optie 1: een module verpakken voor het richten op meerdere versies en meerdere versies van Power shell
 
 Inhoud van module map
 
@@ -157,12 +157,12 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Optie 2: Gebruik $PSEdition variabele in het PSD1-bestand om de juiste Dll's en geneste/vereiste modules te laden
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Optie 2: gebruik $PSEdition variabele in het PSD1-bestand om de juiste Dll's en geneste/vereiste modules te laden
 
 In PS 5,1 of hoger is $PSEdition globale variabele toegestaan in het manifest bestand van de module. Met deze variabele kan module Author de voorwaardelijke waarden opgeven in het manifest bestand van de module. Naar $PSEdition-variabele kan worden verwezen in de modus voor beperkte talen of in een gegevens gedeelte.
 
 > [!NOTE]
-> Zodra een module manifest is opgegeven met de sleutel CompatiblePSEditions of de `$PSEdition` variabele gebruikt, kan het niet worden geïmporteerd in lagere versies van Power shell.
+> Zodra een module manifest is opgegeven met de CompatiblePSEditions-sleutel of `$PSEdition` variabele gebruikt, kan het niet worden geïmporteerd in lagere versies van Power shell.
 
 Voor beeld van module manifest bestand met CompatiblePSEditions-sleutel
 
@@ -227,9 +227,9 @@ Mode           LastWriteTime   Length Name
 -a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
 ```
 
-PowerShell Gallery gebruikers kunnen de lijst met modules die worden ondersteund in een specifieke Power shell-editie vinden met behulp van de labels PSEdition_Desktop en PSEdition_Core.
+PowerShell Gallery gebruikers kunnen de lijst met modules die worden ondersteund in een specifieke Power shell-editie vinden met behulp van labels PSEdition_Desktop en PSEdition_Core.
 
-Modules zonder PSEdition_Desktop-en PSEdition_Core-Tags worden beschouwd als goed op Power shell-Desktop-edities.
+Modules zonder PSEdition_Desktop en PSEdition_Core-Tags worden beschouwd als goed op Power shell-Desktop-edities.
 
 ```powershell
 # Find modules supported on PowerShell Desktop edition
@@ -239,7 +239,7 @@ Find-Module -Tag PSEdition_Desktop
 Find-Module -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a>Meer Details
+## <a name="more-details"></a>Meer details
 
 [Scripts met PSEditions](script-psedition-support.md)
 

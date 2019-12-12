@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
 ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354955"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Een opmaakbestand (.format.ps1xml) maken
@@ -36,11 +36,11 @@ In dit onderwerp wordt beschreven hoe u een opmaak bestand (. Format. ps1xml) ma
    </Configuration>
    ```
 
-   - Met de \<Configuration > \</Configuration > Tags wordt het hoofd knooppunt `Configuration` gedefinieerd. Alle extra XML-tags worden inge sloten binnen dit knoop punt.
+   - Met de \<Configuration >\</configuratie > Tags wordt het hoofd knooppunt `Configuration` gedefinieerd. Alle extra XML-tags worden inge sloten binnen dit knoop punt.
 
-   - De <ViewDefinitions></ViewDefinitions> Tags definiëren het knoop punt `ViewDefinitions`. Alle weer gaven worden binnen dit knoop punt gedefinieerd.
+   - De <ViewDefinitions></ViewDefinitions> labels definiëren het `ViewDefinitions` knoop punt. Alle weer gaven worden binnen dit knoop punt gedefinieerd.
 
-3. Sla het bestand op naar de installatiemap van Windows Power shell, naar de map module, of naar een submap van de map module. Gebruik de volgende naam indeling wanneer u het bestand opslaat: `MyFile.format.ps1xml`. Het format teren van bestanden moet de uitbrei ding `.format.ps1xml` gebruiken.
+3. Sla het bestand op naar de installatiemap van Windows Power shell, naar de map module, of naar een submap van de map module. Gebruik de volgende naam indeling wanneer u het bestand opslaat: `MyFile.format.ps1xml`. Het format teren van bestanden moet de extensie `.format.ps1xml` gebruiken.
 
    U bent nu klaar om weer gaven toe te voegen aan het opmaak bestand. Er is geen limiet voor het aantal weer gaven dat kan worden gedefinieerd in een opmaak bestand. U kunt één weer gave voor elk object, meerdere weer gaven voor hetzelfde object of één weer gave die wordt gebruikt door meerdere objecten toevoegen.
 

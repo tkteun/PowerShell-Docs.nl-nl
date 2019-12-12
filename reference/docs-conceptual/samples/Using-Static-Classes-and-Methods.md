@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Statische klassen en methoden gebruiken
 ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030747"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 
-Niet alle .NET Framework-klassen kunnen worden gemaakt met behulp van **New-Object**. Bijvoorbeeld, als u probeert te maken een **System.Environment** of een **System.Math** object met **New-Object**, krijgt u de volgende foutberichten:
+Niet alle .NET Framework klassen kunnen worden gemaakt met behulp van **New-object**. Als u bijvoorbeeld probeert een **System. Environment** -of **System. math** -object te maken met **Nieuw-object**, worden de volgende fout berichten weer geven:
 
 ```
 PS> New-Object System.Environment
@@ -27,15 +27,15 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-Deze fouten zich voordoen als er geen manier om te maken van een nieuw object van deze klassen. Deze klassen zijn naslagbibliotheken methoden en eigenschappen die de status niet wijzigen. U hoeft te maken, u deze gewoon gebruiken. Klassen en methoden, zoals deze heten *statische klassen* omdat ze niet worden gemaakt, verwijderd of gewijzigd. We bieden voorbeelden die statische klassen gebruiken om dit te wissen.
+Deze fouten treden op omdat er geen manier is om een nieuw object te maken op basis van deze klassen. Deze klassen zijn referentie bibliotheken met methoden en eigenschappen die de status niet wijzigen. U hoeft deze niet te maken, maar u kunt ze gewoon gebruiken. Klassen en methoden zoals deze worden *statische klassen* genoemd, omdat ze niet zijn gemaakt, vernietigd of gewijzigd. Om dit duidelijk te maken, bieden we voor beelden die gebruikmaken van statische klassen.
 
-## <a name="getting-environment-data-with-systemenvironment"></a>Ophalen van omgevingsgegevens met System.Environment
+## <a name="getting-environment-data-with-systemenvironment"></a>Omgevings gegevens ophalen met System. Environment
 
-De eerste stap bij het werken met een object in Windows PowerShell is meestal, Get-Member gebruiken om erachter te komen welke leden bevat. Door statische klassen is het proces enigszins anders, omdat de werkelijke klasse niet een object is.
+Normaal gesp roken wordt de eerste stap bij het werken met een object in Windows Power shell gebruikt om erachter te komen welke leden de app bevat. Bij statische klassen is het proces iets anders omdat de daad werkelijke klasse geen object is.
 
-### <a name="referring-to-the-static-systemenvironment-class"></a>Verwijst naar de statische System.Environment-klasse
+### <a name="referring-to-the-static-systemenvironment-class"></a>Verwijzen naar de klasse static System. Environment
 
-U kunt verwijzen naar een statische klasse door de naam van de klasse tussen vierkante haken staan. Bijvoorbeeld, u kunt verwijzen naar **System.Environment** door de naam tussen vierkante haken te typen. Hiermee geeft u enkele algemene informatie over:
+U kunt naar een statische klasse verwijzen door de naam van de klasse te omgeven door rechte haken. U kunt bijvoorbeeld verwijzen naar **System. Environment** door de naam tussen vier Kante haken te typen. Dit geeft een aantal algemene type gegevens weer:
 
 ```
 PS> [System.Environment]
@@ -46,11 +46,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Zoals we eerder is vermeld, Windows PowerShell automatisch voegt u toe aan elke '**System.** ' namen van typen wanneer u **New-Object**. Hetzelfde gebeurt er wanneer u een typenaam die tussen haakjes, zodat u kunt opgeven aan welke  **\[System.Environment]** als  **\[omgeving]** .
+> Zoals eerder vermeld, voegt Windows Power shell automatisch '**System.** ' toe. Als u namen wilt typen wanneer u **Nieuw-object**gebruikt. Hetzelfde gebeurt wanneer u een type naam tussen haakjes gebruikt, zodat u **\[System. Environment]** kunt opgeven als **\[omgeving]** .
 
-De **System.Environment** klasse bevat algemene informatie over de werkomgeving voor het huidige proces powershell.exe is bij het werken in Windows PowerShell.
+De klasse **System. Environment** bevat algemene informatie over de werk omgeving voor het huidige proces, Power shell. exe wanneer u werkt in Windows Power shell.
 
-Als u probeert details van deze klasse bekijken door te typen  **\[System.Environment] | Get-Member**, het objecttype wordt gerapporteerd als zijnde **System.RuntimeType** , niet **System.Environment**:
+Als u probeert Details van deze klasse weer te geven, typt u **\[System. Environment] | Get-member**, het object type wordt gerapporteerd als **System. RuntimeType** , niet **System. Environment**:
 
 ```
 PS> [System.Environment] | Get-Member
@@ -58,7 +58,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-Als u statische leden met Get-Member, geef de **statische** parameter:
+Als u statische leden wilt weer geven met Get-member, geeft u de **statische** para meter op:
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -89,18 +89,18 @@ WorkingSet                 Property   static System.Int64 WorkingSet {get;}
 TickCount                               ExitCode
 ```
 
-We kunnen nu eigenschappen om weer te geven van System.Environment selecteren.
+U kunt nu eigenschappen selecteren om uit System. Environment weer te geven.
 
-### <a name="displaying-static-properties-of-systemenvironment"></a>Statische eigenschappen van System.Environment weergeven
+### <a name="displaying-static-properties-of-systemenvironment"></a>Statische eigenschappen van System. Environment weer geven
 
-De eigenschappen van System.Environment ook statisch zijn en moeten worden opgegeven in een andere manier dan normaal eigenschappen. We gebruiken **::** om aan te geven aan de Windows PowerShell die we willen werken met een statische methode of eigenschap. Als u wilt zien van de opdracht die is gebruikt voor het starten van Windows PowerShell, controleren we de **CommandLine** eigenschap door te typen:
+De eigenschappen van System. Environment zijn ook statisch en moeten op een andere manier worden opgegeven dan de normale eigenschappen. We gebruiken **::** om aan te geven dat Windows Power shell moet werken met een statische methode of eigenschap. Als u de opdracht wilt zien die is gebruikt om Windows Power shell te starten, wordt de eigenschap **commandline** gecontroleerd door het volgende te typen:
 
 ```
 PS> [System.Environment]::Commandline
 "C:\Program Files\Windows PowerShell\v1.0\powershell.exe"
 ```
 
-Om te controleren of de versie van het besturingssysteem, de eigenschap OSVersion wordt weergegeven door te typen:
+Als u de versie van het besturings systeem wilt controleren, geeft u de eigenschap onproperty weer door het volgende te typen:
 
 ```
 PS> [System.Environment]::OSVersion
@@ -110,21 +110,21 @@ PS> [System.Environment]::OSVersion
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
 ```
 
-Kunnen we uiteraard controleren of de computer wordt afgesloten door weer te geven de **HasShutdownStarted** eigenschap:
+We kunnen controleren of de computer bezig is met afsluiten door de eigenschap **HasShutdownStarted** weer te geven:
 
 ```
 PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-## <a name="doing-math-with-systemmath"></a>Math met System.Math doen
+## <a name="doing-math-with-systemmath"></a>Wiskunde uitvoeren met System. math
 
-De statische klasse System.Math is handig voor het uitvoeren van enkele wiskundige bewerkingen. De belangrijke leden van **System.Math** zijn voornamelijk methoden, die we weergeven met behulp van kunnen **Get-Member**.
+De statische klasse System. Math is handig voor het uitvoeren van een aantal reken kundige bewerkingen. De belang rijke leden van **System. math** worden voornamelijk beschreven, die kunnen worden weer gegeven met behulp van **Get-member**.
 
 > [!NOTE]
-> System.Math verschillende methoden met dezelfde naam heeft, maar ze worden onderscheiden door het type van de bijbehorende parameters.
+> System. math heeft verschillende methoden met dezelfde naam, maar ze worden onderscheiden door het type van de bijbehorende para meters.
 
-Typ de volgende opdracht om een lijst van de methoden van de **System.Math** klasse.
+Typ de volgende opdracht om de methoden van de klasse **System. math** weer te geven.
 
 ```
 PS> [System.Math] | Get-Member -Static -MemberType Methods
@@ -163,7 +163,7 @@ Tanh            Method     static System.Double Tanh(Double value)
 Truncate        Method     static System.Decimal Truncate(Decimal d), static...
 ```
 
-U ziet nu verschillende wiskundige methoden. Hier volgt een lijst met opdrachten die laten zien hoe sommige van de algemene methoden werken:
+Er worden verschillende Mathematische methoden weer gegeven. Hier volgt een lijst met opdrachten die laten zien hoe sommige algemene methoden werken:
 
 ```
 PS> [System.Math]::Sqrt(9)

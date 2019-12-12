@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353716"
 ---
 # <a name="tablecolumnheader-element-format"></a>Het element TableColumnHeader (opmaak)
@@ -55,15 +55,15 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Geef een koptekst op voor elke kolom van de tabel. De kolommen worden weer gegeven in de volg orde waarin de `TableColumnHeader`-elementen zijn gedefinieerd.
+Geef een koptekst op voor elke kolom van de tabel. De kolommen worden weer gegeven in de volg orde waarin de `TableColumnHeader` elementen zijn gedefinieerd.
 
-Een tabel moet hetzelfde aantal elementen `TableColumnHeader` hebben als `TableRowEntry`-elementen. De kolomkop geeft aan hoe de tekst boven aan de tabel wordt weer gegeven. De rij-items bepalen welke gegevens in de rijen van de tabel worden weer gegeven.
+Een tabel moet hetzelfde aantal `TableColumnHeader` elementen als `TableRowEntry` elementen hebben. De kolomkop geeft aan hoe de tekst boven aan de tabel wordt weer gegeven. De rij-items bepalen welke gegevens in de rijen van de tabel worden weer gegeven.
 
 Zie [tabel weergave](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld worden twee `TableColumnHeader`-elementen weer gegeven. Het eerste element definieert een kolom waarvan het label kolom 1, een breedte van 16 tekens en waarvan het label aan de linkerkant wordt uitgelijnd. Het tweede element definieert een kolom waarvan het label kolom 2 is, heeft een breedte van 10 tekens en waarvan het label in de kolom is gecentreerd.
+In het volgende voor beeld ziet u twee `TableColumnHeader` elementen. Het eerste element definieert een kolom waarvan het label kolom 1, een breedte van 16 tekens en waarvan het label aan de linkerkant wordt uitgelijnd. Het tweede element definieert een kolom waarvan het label kolom 2 is, heeft een breedte van 10 tekens en waarvan het label in de kolom is gecentreerd.
 
 ```xml
 <TableHeaders>

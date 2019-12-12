@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352904"
 ---
 # <a name="importing-a-powershell-module"></a>Een PowerShell-module importeren
 
-Zodra u een module op een systeem hebt geïnstalleerd, wilt u waarschijnlijk de module importeren. Importeren is het proces waarmee de module wordt geladen in actief geheugen, zodat een gebruiker toegang heeft tot die module in hun Power shell-sessie. In Power Shell 2,0 kunt u een nieuw geïnstalleerde Power shell-module importeren met een aanroep van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . In Power Shell 3,0 kan Power shell een module impliciet importeren als een van de functies of cmdlets in de module wordt aangeroepen door een gebruiker. Houd er rekening mee dat beide versies ervan uitgaan dat u de module installeert op een locatie waar Power shell deze kan vinden. Zie [een Power shell-module installeren](./installing-a-powershell-module.md)voor meer informatie. U kunt een module manifest gebruiken om te beperken welke onderdelen van uw module worden geëxporteerd en u kunt para meters van de aanroep `Import-Module` gebruiken om te beperken welke onderdelen worden geïmporteerd.
+Zodra u een module op een systeem hebt geïnstalleerd, wilt u waarschijnlijk de module importeren. Importeren is het proces waarmee de module wordt geladen in actief geheugen, zodat een gebruiker toegang heeft tot die module in hun Power shell-sessie. In Power Shell 2,0 kunt u een nieuw geïnstalleerde Power shell-module importeren met een aanroep van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . In Power Shell 3,0 kan Power shell een module impliciet importeren als een van de functies of cmdlets in de module wordt aangeroepen door een gebruiker. Houd er rekening mee dat beide versies ervan uitgaan dat u de module installeert op een locatie waar Power shell deze kan vinden. Zie [een Power shell-module installeren](./installing-a-powershell-module.md)voor meer informatie. U kunt een module manifest gebruiken om te beperken welke delen van uw module worden geëxporteerd en u kunt para meters van de `Import-Module`-aanroep gebruiken om te beperken welke onderdelen worden geïmporteerd.
 
 ## <a name="importing-a-snap-in-powershell-10"></a>Een module importeren (Power shell 1,0)
 
@@ -25,19 +25,19 @@ Modules zijn niet aanwezig in Power shell 1,0: in plaats daarvan moest u de modu
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>Een module importeren met import-module (Power Shell 2,0)
 
-Power Shell 2,0 maakt gebruik van de juiste benoemde cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) voor het importeren van modules. Wanneer deze cmdlet wordt uitgevoerd, zoekt Windows Power shell naar de opgegeven module in de mappen die zijn opgegeven in de variabele `PSModulePath`. Wanneer de opgegeven map wordt gevonden, zoekt Windows Power shell naar bestanden in de volgende volg orde: module manifest bestanden (. psd1), script module bestanden (. psm1), binaire module bestanden (. dll). Zie voor meer informatie over het toevoegen van mappen aan de zoek opdracht het installatiepad van [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md). De volgende code beschrijft hoe een module moet worden geïmporteerd:
+Power Shell 2,0 maakt gebruik van de juiste benoemde cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) voor het importeren van modules. Wanneer deze cmdlet wordt uitgevoerd, zoekt Windows Power shell naar de opgegeven module in de mappen die zijn opgegeven in de `PSModulePath` variabele. Wanneer de opgegeven map wordt gevonden, zoekt Windows Power shell naar bestanden in de volgende volg orde: module manifest bestanden (. psd1), script module bestanden (. psm1), binaire module bestanden (. dll). Zie voor meer informatie over het toevoegen van mappen aan de zoek opdracht het installatiepad van [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md). De volgende code beschrijft hoe een module moet worden geïmporteerd:
 
 ```powershell
 Import-Module myModule
 ```
 
-Ervan uitgaande dat myModule zich bevindt in de `PSModulePath`, laadt Power shell myModule in het actieve geheugen. Als myModule zich niet op een `PSModulePath`-pad bevindt, kunt u Power shell nog steeds expliciet aanwijzen waar u deze kunt vinden:
+Ervan uitgaande dat myModule zich in het `PSModulePath`bevindt, laadt Power shell myModule in het actieve geheugen. Als myModule zich niet op een `PSModulePath` pad bevindt, kunt u Power shell nog steeds expliciet aanwijzen waar u deze kunt vinden:
 
 ```powershell
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-U kunt ook de-verbose para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen beheerd door de aanroep `Import-Module`. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd**.
+U kunt ook de-verbose para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen bepaald door de aanroep van de `Import-Module`. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd**.
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Een module impliciet importeren (Power Shell 3,0)
 
@@ -45,11 +45,11 @@ Vanaf Windows Power Shell 3,0 worden modules automatisch geïmporteerd wanneer e
 
 Met de volgende acties wordt het automatisch importeren van een module geactiveerd, ook wel ' module automatisch laden ' genoemd.
 
-- Een cmdlet gebruiken in een opdracht. Als u bijvoorbeeld `Get-ExecutionPolicy` invoert, wordt de module micro soft. Power shell. Security met de `Get-ExecutionPolicy`-cmdlet geïmporteerd.
+- Een cmdlet gebruiken in een opdracht. Als u bijvoorbeeld `Get-ExecutionPolicy` importeert, wordt de module micro soft. Power shell. Security met de `Get-ExecutionPolicy`-cmdlet geïmporteerd.
 
-- Gebruik de [Get-opdracht](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet om de opdracht op te halen.  Als u bijvoorbeeld `Get-Command Get-JobTrigger` invoert, wordt de **PSScheduledJob** -module met de `Get-JobTrigger`-cmdlet geïmporteerd. Een `Get-Command`-opdracht die joker tekens bevat, wordt beschouwd als detectie en het importeren van een module wordt niet geactiveerd.
+- Gebruik de [Get-opdracht](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet om de opdracht op te halen.  Als u bijvoorbeeld `Get-Command Get-JobTrigger` importeert, wordt de **PSScheduledJob** -module met de `Get-JobTrigger`-cmdlet geïmporteerd. Een `Get-Command` opdracht die joker tekens bevat, wordt beschouwd als detectie en het importeren van een module wordt niet geactiveerd.
 
-- Met de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) kunt u hulp krijgen bij een cmdlet. Als u bijvoorbeeld `Get-Help Get-WinEvent` invoert, wordt de module micro soft. Power shell. Diagnostics met de `Get-WinEvent`-cmdlet geïmporteerd.
+- Met de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) kunt u hulp krijgen bij een cmdlet. Als u bijvoorbeeld `Get-Help Get-WinEvent` importeert, wordt de module micro soft. Power shell. Diagnostics met de `Get-WinEvent`-cmdlet geïmporteerd.
 
 Ter ondersteuning van het automatisch importeren van modules, worden met de cmdlet `Get-Command` alle cmdlets en functies in alle geïnstalleerde modules opgehaald, zelfs als de module niet in de sessie is geïmporteerd. Zie het Help-onderwerp voor de cmdlet [Get-opdracht](/powershell/module/Microsoft.PowerShell.Core/Get-Command) voor meer informatie.
 
@@ -72,9 +72,9 @@ Wanneer een module wordt geïmporteerd met behulp van de cmdlet [import-module](
 
 - `Cmdlet`: deze para meter beperkt de cmdlets die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel CmdletsToExport.)
 
-- `Variable`: met deze para meter worden de variabelen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
+- `Variable`: deze para meter beperkt de variabelen die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
 
-- `Alias`: met deze para meter worden de aliassen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
+- `Alias`: deze para meter beperkt de aliassen die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
 
 ## <a name="see-also"></a>Zie ook
 

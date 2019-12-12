@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352288"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Resources toevoegen aan een Management OData-webservice
@@ -55,13 +55,13 @@ De eerste stap is het importeren van het schema van het bestaande Management ODa
 
 5. In dit voor beeld worden alleen de opdrachten Get en DELETE met cmdlets gebonden. Schakel de selectie vakjes **maken** en **bijwerken** uit en zorg ervoor dat de selectie vakjes **ophalen** en **verwijderen** zijn ingeschakeld. Zorg ervoor dat de cmdlet `Get-VM` is geselecteerd voor **Get**en dat de cmdlet `Remove-VM` is geselecteerd voor **verwijderen**.
 
-6. Omdat de meta gegevens voor de VM-cmdlets geen uitvoer type opgeven, moet u de cmdlet uitvoeren om het uitvoer type op te geven. Selecteer **uitvoer type opgeven** en klik op **cmdlet uitvoeren**. Het dialoog venster **cmdlet uitvoeren** wordt weer gegeven. Klik op **uitvoeren**. Het vak **CLR-type** is ingevuld met het `VirtualMachine`-type. Klik op **OK**en vervolgens op **volgende**.
+6. Omdat de meta gegevens voor de VM-cmdlets geen uitvoer type opgeven, moet u de cmdlet uitvoeren om het uitvoer type op te geven. Selecteer **uitvoer type opgeven** en klik op **cmdlet uitvoeren**. Het dialoog venster **cmdlet uitvoeren** wordt weer gegeven. Klik op **Run**. Het vak **CLR-type** is ingevuld met het `VirtualMachine` type. Klik op **OK**en vervolgens op **volgende**.
 
 7. Standaard zijn alle eigenschappen van het object VirtualMachine geselecteerd. U kunt alle eigenschappen wissen die u niet wilt als onderdeel van de gegevens die worden geretourneerd wanneer u deze bron aanvraagt bij de webservice. Klik op **Volgende**.
 
 8. U moet ten minste één eigenschap selecteren die moet worden gebruikt als sleutel. Selecteer **naam** in de lijst en klik op **volgende**.
 
-9. In het volgende venster kunt u eigenschappen van de Management OData-resource toewijzen aan eigenschappen van de onderliggende cmdlets. De wizard wijst standaard eigenschappen met identieke namen toe. Bijvoorbeeld, de eigenschap `ComputerName` van de resource wordt toegewezen aan de eigenschap `ComputerName` van de cmdlets.  Hiermee kunt u de eigenschap `ComputerName` opgeven in een aanvraag voor de webservice en de waarde die u opgeeft, door geven aan de cmdlet `Get-VM`. `Id` en `Name` worden standaard ook toegewezen.
+9. In het volgende venster kunt u eigenschappen van de Management OData-resource toewijzen aan eigenschappen van de onderliggende cmdlets. De wizard wijst standaard eigenschappen met identieke namen toe. Bijvoorbeeld, de eigenschap `ComputerName` van de resource wordt toegewezen aan de eigenschap `ComputerName` van de cmdlets.  Zo kunt u de eigenschap `ComputerName` opgeven in een aanvraag voor de webservice en de waarde die u opgeeft, door geven aan de `Get-VM`-cmdlet. `Id` en `Name` worden standaard ook toegewezen.
 
    10. Klik op **volgende**en vervolgens op **volt ooien**.
 
@@ -77,4 +77,4 @@ De eerste stap is het importeren van het schema van het bestaande Management ODa
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voordat u toegang krijgt tot de nieuwe VM-resource van de Management OData-webservice, moet u het RbacConfiguration. XML-bestand bijwerken om toegang te geven tot de Hyper-V Windows Power shell-module, zoals beschreven in [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md). u kunt ook de webservice moet opnieuw worden gestart.
+Voordat u toegang krijgt tot de nieuwe VM-resource van de Management OData-webservice, moet u het RbacConfiguration. XML-bestand bijwerken om toegang te geven tot de Hyper-V Windows Power shell-module, zoals beschreven in [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md). u moet ook de webservice opnieuw opstarten.

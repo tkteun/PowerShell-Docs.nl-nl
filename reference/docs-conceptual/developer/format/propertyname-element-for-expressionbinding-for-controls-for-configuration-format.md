@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f4da7f70-acfb-4cae-9dc9-e15d8fe19d63
 caps.latest.revision: 6
 ms.openlocfilehash: 93389adbfa13e2404354f1081ac545d967589e4b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355900"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-configuration-format"></a>Het element PropertyName voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de .NET-eigenschap waarvan de waarde wordt weer gegeven door het besturings element.
 

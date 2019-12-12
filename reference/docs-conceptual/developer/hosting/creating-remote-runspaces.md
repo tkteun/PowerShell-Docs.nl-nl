@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
 ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357776"
 ---
 # <a name="creating-remote-runspaces"></a>Externe runspaces maken
@@ -21,7 +21,7 @@ Power shell-opdrachten met de para meter **ComputerName** kunnen worden uitgevoe
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>Een WSManConnection gebruiken om een externe runs Pace te maken
 
- Als u een runs Pace wilt maken die verbinding maakt met een externe computer, maakt u een [System. Management. Automation. Runspaces. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object. U geeft het doel eindpunt voor de verbinding op door de eigenschap [System. Management. Automation. Runspaces. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) van het object in te stellen. Vervolgens maakt u een runs Pace door de methode [System. Management. Automation. Runspaces. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) aan te roepen, waarbij u het object [System. Management. Automation. Runspaces. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) opgeeft als `connectionInfo` bepaalde.
+ Als u een runs Pace wilt maken die verbinding maakt met een externe computer, maakt u een [System. Management. Automation. Runspaces. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object. U geeft het doel eindpunt voor de verbinding op door de eigenschap [System. Management. Automation. Runspaces. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) van het object in te stellen. Vervolgens maakt u een runs Pace door de methode [System. Management. Automation. Runspaces. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) aan te roepen, waarbij u het object [System. Management. Automation. Runspaces. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) opgeeft als de para meter `connectionInfo`.
 
  In het volgende voor beeld ziet u hoe u een runs Pace maakt die verbinding maakt met een externe computer. In het voor beeld wordt `RemoteComputerUri` gebruikt als tijdelijke aanduiding voor de daad werkelijke URI van een externe computer.
 

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357188"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Uw Windows PowerShell-provider ontwerpen
@@ -33,15 +33,15 @@ Als u wilt dat de gebruiker toegang kan krijgen tot gegevens die zich op een fys
 
 ### <a name="defining-a-provider-qualified-path"></a>Een pad naar een provider definiëren
 
-Om ervoor te zorgen dat de Windows Power shell-runtime de provider kan initialiseren en ongedaan maken, moet uw Windows Power shell-provider een door de provider gekwalificeerd pad ondersteunen. Bijvoorbeeld bestands systeem:: \\ \ uncshare\abc\bar is het door de provider gekwalificeerde pad voor de bestandssysteem provider die is geleverd door Windows Power shell.
+Om ervoor te zorgen dat de Windows Power shell-runtime de provider kan initialiseren en ongedaan maken, moet uw Windows Power shell-provider een door de provider gekwalificeerd pad ondersteunen. Bestands systeem::\\\uncshare\abc\bar is bijvoorbeeld het door de provider gekwalificeerde pad voor de bestandssysteem provider die is geleverd door Windows Power shell.
 
 ### <a name="defining-a-provider-direct-path"></a>Een provider-direct pad definiëren
 
-Als u externe toegang tot uw Windows Power shell-provider wilt toestaan, moet het een provider-direct-pad ondersteunen om rechtstreeks door te geven aan de Windows Power shell-provider voor de huidige locatie. De Windows Power shell-provider van het REGI ster kan bijvoorbeeld \\ \ server\regkeypath gebruiken als een provider-direct pad.
+Als u externe toegang tot uw Windows Power shell-provider wilt toestaan, moet het een provider-direct-pad ondersteunen om rechtstreeks door te geven aan de Windows Power shell-provider voor de huidige locatie. De Windows Power shell-provider van het REGI ster kan bijvoorbeeld \\\server\regkeypath als een provider-direct pad gebruiken.
 
 ### <a name="defining-a-provider-internal-path"></a>Een provider definiëren-intern pad
 
-Uw Windows Power shell-provider moet een provider-intern pad ondersteunen om de provider-cmdlet toegang te geven tot gegevens met behulp van niet-Windows Power shell-Api's (Application Programming Interfaces). Dit pad wordt aangegeven na ':: ' in het provider-pad. Bijvoorbeeld: het interne pad van de provider voor de Windows Power shell-provider van het bestands systeem is \\ \ uncshare\abc\bar.
+Uw Windows Power shell-provider moet een provider-intern pad ondersteunen om de provider-cmdlet toegang te geven tot gegevens met behulp van niet-Windows Power shell-Api's (Application Programming Interfaces). Dit pad wordt aangegeven na ':: ' in het provider-pad. Bijvoorbeeld: het pad naar de provider-intern voor de Windows Power shell-provider van het bestands systeem is \\\uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Opgeslagen gegevens wijzigen
 
@@ -53,7 +53,7 @@ Windows Power shell biedt een aantal basis klassen die u kunt gebruiken voor het
 
 Elke basis klasse van een Windows Power shell-provider maakt een set cmdlets beschikbaar. In deze sectie worden de cmdlets beschreven, maar worden de para meters niet beschreven.
 
-Met de sessie status maakt de Windows Power shell-runtime verschillende locatie-cmdlets beschikbaar voor bepaalde Windows Power shell-providers, zoals de `Get-Location`, `Set-Location`, `Pop-Location` en `Push-Location`-cmdlets. U kunt de cmdlet `Get-Help` gebruiken om informatie over deze locatie-cmdlets te verkrijgen.
+Met de sessie status maakt de Windows Power shell-runtime verschillende locatie-cmdlets beschikbaar voor bepaalde Windows Power shell-providers, zoals de `Get-Location`, `Set-Location`, `Pop-Location`en `Push-Location`-cmdlets. U kunt de cmdlet `Get-Help` gebruiken om informatie over deze locatie-cmdlets te verkrijgen.
 
 ### <a name="cmdletprovider-base-class"></a>Basis klasse CmdletProvider
 
@@ -84,7 +84,7 @@ De klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet
 |`Invoke-Item`|Hiermee wordt de standaard actie voor het item op het opgegeven pad aangeroepen.|
 |`Set-Item`|Hiermee stelt u een item op de opgegeven locatie met de opgegeven waarde. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
 |`Resolve-Path`|Hiermee worden de joker tekens voor een Windows Power shell-pad en gegevens van het pad streamen omgezet.|
-|`Test-Path`|Tests voor het opgegeven pad en retourneert `true` als dit bestaat en `false` anders. Deze cmdlet wordt geïmplementeerd ter ondersteuning van de para meter `IsContainer` voor de methode [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|`Test-Path`|Tests voor het opgegeven pad en retourneert `true` als dit bestaat en `false` anderszins. Deze cmdlet wordt geïmplementeerd ter ondersteuning van de para meter `IsContainer` voor de methode [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
 
 ### <a name="containercmdletprovider-base-class"></a>Basis klasse ContainerCmdletProvider
 
@@ -109,7 +109,7 @@ De klasse [System. Management. Automation. provider. Navigationcmdletprovider](/
 |Combine-pad|Combineert twee paden in één pad, met behulp van een provider-specifiek scheidings teken tussen paden. Deze cmdlet streamt teken reeksen.|
 |`Move-Item`|Hiermee verplaatst u items naar de opgegeven locatie. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
 
-Een gerelateerde cmdlet is de elementaire parser-pad-cmdlet die wordt geleverd door Windows Power shell. Deze cmdlet kan worden gebruikt voor het parseren van een Windows Power shell-pad om de para meter `Parent` te ondersteunen. Hiermee wordt de teken reeks voor het bovenliggende pad gestreamd.
+Een gerelateerde cmdlet is de elementaire parser-pad-cmdlet die wordt geleverd door Windows Power shell. Deze cmdlet kan worden gebruikt voor het parseren van een Windows Power shell-pad voor de ondersteuning van de para meter `Parent`. Hiermee wordt de teken reeks voor het bovenliggende pad gestreamd.
 
 ## <a name="select-provider-interfaces-to-support"></a>Provider interfaces selecteren voor ondersteuning
 
@@ -131,7 +131,7 @@ De interface [System. Management. Automation. provider. Icontentcmdletprovider](
 De interface [System. Management. Automation. provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) definieert een eigenschap Windows Power shell-provider waarmee bewerkingen worden uitgevoerd op de eigenschappen van items in het gegevens archief. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
 
 > [!NOTE]
-> De para meter `Path` in deze cmdlets geeft een pad naar een item aan in plaats van een eigenschap te identificeren.
+> Met de para meter `Path` voor deze cmdlets wordt een pad naar een item aangeduid in plaats van een eigenschap te identificeren.
 
 |De cmdlet|De definitie van|
 |------------|----------------|
@@ -141,7 +141,7 @@ De interface [System. Management. Automation. provider. Ipropertycmdletprovider]
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-De interface [System. Management. Automation. provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , die is afgeleid van [System. Management. Automation. provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definieert een provider die dynamische para meters voor de ondersteunde cmdlets. Dit type provider verwerkt bewerkingen waarvoor eigenschappen tijdens runtime kunnen worden gedefinieerd, bijvoorbeeld een nieuwe eigenschaps bewerking. Dergelijke bewerkingen zijn niet mogelijk voor items die statisch gedefinieerde eigenschappen hebben. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
+De interface [System. Management. Automation. provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , die is afgeleid van [System. Management. Automation. provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definieert een provider die dynamische para meters voor de ondersteunde cmdlets opgeeft. Dit type provider verwerkt bewerkingen waarvoor eigenschappen tijdens runtime kunnen worden gedefinieerd, bijvoorbeeld een nieuwe eigenschaps bewerking. Dergelijke bewerkingen zijn niet mogelijk voor items die statisch gedefinieerde eigenschappen hebben. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
 
 |De cmdlet|De definitie van|
 |------------|----------------|

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353681"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>Het element TableRowEntry voor TableRowEntries voor TableControl (opmaak)
@@ -33,7 +33,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `TableRowEntry` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `TableRowEntry` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -55,7 +55,7 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Er moet een element `TableColumnItems` en één `EntrySelectedBy`-element worden opgegeven.
+Er moet een `TableColumnItems` element en één `EntrySelectedBy` element worden opgegeven.
 
 Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 

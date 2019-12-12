@@ -1,102 +1,102 @@
 ---
-title: Wat is er nieuw in PowerShell Core 6.1
-description: Nieuwe functies en wijzigingen die zijn uitgebracht in PowerShell Core 6.1
+title: Wat is er nieuw in Power shell Core 6,1
+description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
 ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086107"
 ---
-# <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in PowerShell Core 6.1
+# <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
-Hieronder ziet u een selectie van een aantal van de belangrijkste nieuwe functies en wijzigingen die zijn geïntroduceerd in PowerShell Core 6.1.
+Hieronder vindt u een selectie van een aantal belang rijke nieuwe functies en wijzigingen die zijn geïntroduceerd in Power shell Core 6,1.
 
-Er is ook **ton** van "fijne" waardoor PowerShell sneller en stabieler (plus veel en veel fouten opgelost).
-Voor een volledige lijst van wijzigingen, Bekijk onze [changelog op GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).
+Er **zijn ook talloze** ' saaie dingen ' die Power shell sneller en stabieler maken (plus veel problemen met oplossingen).
+Bekijk onze [wijzigingen logboek op github](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)voor een volledige lijst met wijzigingen.
 
-En hoewel we noemen enkele onderstaande namen, Hartelijk dank aan [alle van de community-inzenders](https://github.com/PowerShell/PowerShell/graphs/contributors) die deze versie mogelijk gemaakt.
+En we noemen we een aantal van de onderstaande namen, hartelijk dank voor [alle mede werkers van de Community](https://github.com/PowerShell/PowerShell/graphs/contributors) die deze release hebben gemaakt.
 
-## <a name="net-core-21"></a>.NET core 2.1
+## <a name="net-core-21"></a>.NET Core 2.1
 
-PowerShell Core 6.1 verplaatst naar .NET Core 2.1 nadat deze is [die zijn uitgebracht in mei](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), wat resulteert in een aantal verbeteringen in PowerShell, met inbegrip van:
+Power shell Core 6,1 is verplaatst naar .NET Core 2,1 nadat deze is [uitgebracht in mei](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), wat resulteert in een aantal verbeteringen in Power shell, met inbegrip van:
 
-- Verbeterde prestaties (Zie [hieronder](#performance-improvements))
-- Alpine Linux-ondersteuning (preview)
-- [Ondersteuning voor .NET-algemeen hulpmiddel](/dotnet/core/tools/global-tools) - komende snel naar PowerShell
+- prestatie verbeteringen (Zie [hieronder](#performance-improvements))
+- Ondersteuning voor Alpine Linux (preview-versie)
+- [Ondersteuning voor algemeen hulp programma van .net](/dotnet/core/tools/global-tools) -binnenkort beschikbaar in Power shell
 - [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
 
-## <a name="windows-compatibility-pack-for-net-core"></a>Windows-compatibiliteitspakket voor .NET Core
+## <a name="windows-compatibility-pack-for-net-core"></a>Windows-compatibiliteits pakket voor .NET core
 
-Op Windows, het team van .NET verzonden de [Windows-compatibiliteitspakket voor .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), een set met assembly's die een aantal toevoegen verwijderd API's terug naar .NET Core in Windows.
+In Windows leverde het .NET-team het [Windows-compatibiliteits pakket voor .net core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), een set assembly's die een aantal verwijderde api's toevoegen aan .net core in Windows.
 
-We hebben het Windows-compatibiliteitspakket naar PowerShell Core 6.1 release toegevoegd zodat alle modules of scripts die gebruikmaken van deze API's kunnen erop vertrouwen dat ze beschikbaar worden gesteld.
+We hebben het Windows-compatibiliteits pakket toegevoegd aan Power shell Core 6,1-release, zodat alle modules of scripts die gebruikmaken van deze Api's, kunnen worden gebruikt om ze beschikbaar te stellen.
 
-De Windows-compatibiliteitspakket kunt u PowerShell Core gebruiken **meer dan 1900 cmdlets die worden geleverd met Windows 10 oktober 2018 Update en Windows Server 2019**.
+Met het Windows-compatibiliteits pakket kan Power shell core gebruikmaken **van meer dan 1900 cmdlets die worden geleverd met Windows 10 oktober 2018 update en Windows Server 2019**.
 
-## <a name="support-for-application-whitelisting"></a>Ondersteuning voor opname in de Whitelist
+## <a name="support-for-application-whitelisting"></a>Ondersteuning voor White List van toepassingen
 
-PowerShell Core 6.1 heeft pariteit met de ondersteuning van Windows PowerShell 5.1 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) opname in de whitelist.
-Opname in de whitelist kunt gedetailleerde controle over welke binaire bestanden mogen worden uitgevoerd gebruikt in combinatie met PowerShell [beperkte taalmodus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en de Application white list van [device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) .
+Met Application white list kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd met de [modus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)voor de beperkte Power shell-taal.
 
 ## <a name="performance-improvements"></a>Verbeterde prestaties
 
-Enkele belangrijke prestatieverbeteringen doorgevoerd in PowerShell Core 6.0.
-PowerShell Core 6.1 blijft voor het verbeteren van de snelheid van bepaalde bewerkingen.
+Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebracht.
+Power shell Core 6,1 blijft de snelheid van bepaalde bewerkingen verbeteren.
 
-Bijvoorbeeld, `Group-Object` met 66% van heeft zijn sped:
+`Group-Object` is bijvoorbeeld sped 66%:
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tijd (sec)   | 25.178                 | 19.653              | 6.641               |
-| Versnellen (%) | N.v.t.                    | 21.9%               | 66.2%               |
+| Tijd (sec.)   | 25,178                 | 19,653              | 6,641               |
+| Versnellen (%) | N.v.t.                    | 21,9%               | 66,2%               |
 
-Op deze manier zijn sorteren scenario's zoals deze verbeterd door meer dan 15%:
+Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met meer dan 15%:
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tijd (sec)   | 12.170                 | 8.493               | 7.08                |
-| Versnellen (%) | N.v.t.                    | 30.2%               | 16.6%               |
+| Tijd (sec.)   | 12,170                 | 8,493               | 7,08                |
+| Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
 
-`Import-Csv` heeft ook zijn sped van aanzienlijk na een regressie vanuit Windows PowerShell.
-Het volgende voorbeeld wordt een test CSV met 26,616 rijen en zes kolommen:
+`Import-Csv` is ook aanzienlijk sped na een regressie van Windows Power shell.
+In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kolommen gebruikt:
 
 ```powershell
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tijd (sec)   | 0.441                  | 1.069               | 0.268                  |
-| Versnellen (%) | N.v.t.                    | -142.4%             | 74.9% (% 39.2 van WPS) |
+| Tijd (sec.)   | 0,441                  | 1,069               | 0,268                  |
+| Versnellen (%) | N.v.t.                    | -142,4%             | 74,9% (39,2% van WPS) |
 
-Ten slotte de conversie van JSON in `PSObject` up heeft zijn sped met meer dan 50% sinds Windows PowerShell.
-Het volgende voorbeeld wordt een ~ 2MB test JSON-bestand:
+Ten slotte is de conversie van JSON naar `PSObject` sped van meer dan 50% sinds Windows Power shell.
+In het volgende voor beeld wordt een JSON-test bestand van ~ 2 MB gebruikt:
 
 ```powershell
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tijd (sec)   | 0.259                  | 0.577               | 0.125                  |
-| Versnellen (%) | N.v.t.                    | -122.8%             | 78,3% (% 51.7 van WPS) |
+| Tijd (sec.)   | 0,259                  | 0,577               | 0,125                  |
+| Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
 
-## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleer `system32` voor compatibel inbox-modules op Windows
+## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleer `system32` op compatibele modules in Windows
 
-In de Windows 10 1809 update en Windows Server 2019, we hebben een aantal vak in PowerShell-modules om ze te markeren als zijnde compatibel met PowerShell Core bijgewerkt.
+In de Windows 10 1809-update en Windows Server 2019 hebben we een aantal Power shell-modules bijgewerkt om ze te markeren als compatibel met Power shell core.
 
-Wanneer PowerShell Core 6.1 wordt gestart, wordt deze automatisch bevatten `$windir\System32` als onderdeel van de `PSModulePath` omgevingsvariabele.
-Echter het toont alleen modules `Get-Module` en `Import-Module` als de `CompatiblePSEdition` is gemarkeerd als compatibel met `Core`.
+Wanneer Power shell Core 6,1 wordt gestart, wordt `$windir\System32` automatisch opgenomen als onderdeel van de `PSModulePath` omgevings variabele.
+Er worden echter alleen modules `Get-Module` en `Import-Module` als de `CompatiblePSEdition` is gemarkeerd als compatibel met `Core`.
 
 
 ```powershell
@@ -104,7 +104,7 @@ Get-Module -ListAvailable
 ```
 
 > [!NOTE]
-> Mogelijk ziet u andere beschikbare modules, afhankelijk van welke functies en onderdelen zijn geïnstalleerd.
+> U ziet mogelijk verschillende beschik bare modules, afhankelijk van de functies en onderdelen die zijn geïnstalleerd.
 
 ```Output
 ...
@@ -130,8 +130,8 @@ Manifest   2.0.0.0    TrustedPlatformModule               Core,Desk {Get-Tpm, In
 ...
 ```
 
-U kunt dit gedrag om weer te geven van alle modules met behulp van overschrijven de `-SkipEditionCheck` parameter overschakelen.
-We hebben ook hebt toegevoegd een `PSEdition` eigenschap aan de tabeluitvoer.
+U kunt dit gedrag negeren om alle modules weer te geven met behulp van de para meter `-SkipEditionCheck` switch.
+Er is ook een `PSEdition`-eigenschap toegevoegd aan de tabel uitvoer.
 
 ```powershell
 Get-Module Net* -ListAvailable -SkipEditionCheck
@@ -158,77 +158,77 @@ Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Bekijk voor meer informatie over dit gedrag [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
+Raadpleeg [Power shell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md)voor meer informatie over dit gedrag.
 
-## <a name="markdown-cmdlets-and-rendering"></a>Markdown-cmdlets en -rendering
+## <a name="markdown-cmdlets-and-rendering"></a>Cmdlets en rendering weer geven
 
-Markdown is een standaard voor het maken van documenten in leesbare tekst zonder opmaak met eenvoudige opmaak die kan worden gerenderd in HTML.
+Prijs verlaging is een standaard voor het maken van Lees bare tekst documenten met basis opmaak die in HTML kan worden weer gegeven.
 
-We hebben enkele cmdlets toegevoegd in 6.1 waarmee u kunt converteren en Markdown-documenten in de console weergegeven met inbegrip van:
+Er zijn enkele cmdlets toegevoegd in 6,1 waarmee u de verkortings documenten kunt converteren en weer geven in de-console, met inbegrip van:
 
 - `ConvertFrom-Markdown`
 - `Get-MarkdownOption`
 - `Set-MarkdownOption`
 - `Show-Markdown`
 
-Bijvoorbeeld, `Show-Markdown` een Markdown-bestand in de console wordt weergegeven:
+`Show-Markdown` geeft bijvoorbeeld een bestand voor korting weer in de-console:
 
-![Show-Markdown-voorbeeld](./images/markdown_example.png)
+![Voor beeld van korting weer geven](./images/markdown_example.png)
 
-Bekijk voor meer informatie over de werking van deze cmdlets [deze RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
+Bekijk [deze rfc's](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md)voor meer informatie over de werking van deze cmdlets.
 
-## <a name="experimental-feature-flags"></a>Vlaggen voor experimentele functie
+## <a name="experimental-feature-flags"></a>Experimentele functie vlaggen
 
-We ondersteuning voor ingeschakeld [experimentele functies][]. Dit kan PowerShell ontwikkelaars nieuwe functies leveren en feedback ontvangen voordat het ontwerp voltooid is. Op deze manier we te voorkomen dat de wijzigingen die fouten veroorzaken zoals later in de ontwerpfase.
+We hebben ondersteuning voor [experimentele functies][]ingeschakeld. Hierdoor kunnen Power shell-ontwikkel aars nieuwe functies leveren en feedback ontvangen voordat het ontwerp is voltooid. Op deze manier wordt voor komen dat wijzigingen worden aangebracht naarmate het ontwerp wordt ontwikkeld.
 
-Gebruik `Get-ExperimentalFeature` voor een lijst van beschikbare experimentele functies. U kunt inschakelen of uitschakelen van deze functies met `Enable-ExperimentalFeature` en `Disable-ExperimentalFeature`.
+Gebruik `Get-ExperimentalFeature` om een lijst met beschik bare experimentele functies op te halen. U kunt deze functies in-of uitschakelen met `Enable-ExperimentalFeature` en `Disable-ExperimentalFeature`.
 
-U kunt meer informatie over deze functie in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
+Meer informatie over deze functie vindt u in [Power shell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
-## <a name="web-cmdlet-improvements"></a>Verbeteringen voor web-cmdlet
+## <a name="web-cmdlet-improvements"></a>Verbeteringen voor web-cmdlets
 
-Dankzij [ @markekraus ](https://github.com/markekraus), heel veel verbeteringen zijn aangebracht aan onze web-cmdlets: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-en [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
+Hartelijk dank voor het [@markekraus](https://github.com/markekraus)van onze web-cmdlets is een volledig Slew van verbeteringen aangebracht: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+en [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
-- [Pull-aanvraag #6109](https://github.com/PowerShell/PowerShell/pull/6109) -codering is ingesteld op UTF-8 voor standaard `application-json` antwoorden
-- [Pull-aanvraag #6018](https://github.com/PowerShell/PowerShell/pull/6018)  -  `-SkipHeaderValidation` parameter om toe te staan `Content-Type` kopteksten die niet compatibel zijn met standaarden
-- [Pull-aanvraag #5972](https://github.com/PowerShell/PowerShell/pull/5972)  -  `Form` parameter voor de ondersteuning van vereenvoudigd `multipart/form-data` ondersteunen
-- [Pull-aanvraag #6338](https://github.com/PowerShell/PowerShell/pull/6338) - compatibele, niet-hoofdlettergevoelige verwerken van relatie-sleutels
-- [Pull-aanvraag #6447](https://github.com/PowerShell/PowerShell/pull/6447) -toevoegen `-Resume` parameter voor cmdlets voor web
+- [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) : standaard codering ingesteld op UTF-8 voor `application-json` reacties
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` para meter waarmee `Content-Type` headers die niet voldoen aan de normen worden toegestaan
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` para meter ter ondersteuning van vereenvoudigd `multipart/form-data` ondersteuning
+- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) -compatibele, hoofdletter gevoelige verwerking van relatie sleutels
+- [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) -`-Resume`-para meter toevoegen voor web-cmdlets
 
-## <a name="remoting-improvements"></a>Verbeteringen voor externe toegang
+## <a name="remoting-improvements"></a>Externe verbeteringen
 
-### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct for Containers probeert eerst te gebruiken PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>Power shell direct voor containers probeert eerst Power shell core te gebruiken
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van PowerShell en Hyper-V, waarmee u verbinding maken met een Hyper-V virtuele machine of de Container zonder netwerkverbinding of andere services extern beheer.
+[Power shell direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van Power shell en hyper-v waarmee u verbinding kunt maken met een hyper-v-VM of-container zonder netwerk verbinding of andere services voor extern beheer.
 
-In het verleden verbonden PowerShell Direct met behulp van het postvak in Windows PowerShell-exemplaar voor de Container.
-Nu, PowerShell Direct eerst verbinding probeert te maken met behulp van de beschikbare `pwsh.exe` op de `PATH` omgevingsvariabele.
-Als `pwsh.exe` is niet beschikbaar is, PowerShell Direct terugvalt voor het gebruik van `powershell.exe`.
+In het verleden is Power shell direct verbonden via de Windows Power shell-instantie postvak in in de container.
+Nu probeert Power shell direct eerst verbinding te maken met behulp van een beschik bare `pwsh.exe` op de `PATH` omgevings variabele.
+Als `pwsh.exe` niet beschikbaar is, valt Power shell direct terug op het gebruik van `powershell.exe`.
 
-### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` nu maakt u afzonderlijke externe eindpunten voor de preview-versies
+### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` maakt nu afzonderlijke externe eind punten voor Preview-versies
 
-`Enable-PSRemoting` u maakt nu twee externe communicatie van sessieconfiguraties:
+`Enable-PSRemoting` maakt nu twee externe sessie configuraties:
 
-- Een voor de belangrijkste versie van PowerShell. Voorbeeld: `PowerShell.6`. Dit eindpunt dat kan worden gebruikt voor updates van de secundaire versie als de sessieconfiguratie 'systeembrede' PowerShell 6
-- Een specifieke versies sessieconfiguratie, bijvoorbeeld: `PowerShell.6.1.0`
+- Een voor de primaire versie van Power shell. Voorbeeld: `PowerShell.6`. Dit eind punt dat kan worden verzorgd voor alle secundaire versie-updates als de ' systeembrede ' configuratie van de Power shell 6-sessie
+- Een versie-specifieke sessie configuratie, bijvoorbeeld: `PowerShell.6.1.0`
 
-Dit gedrag is handig als u wilt dat meerdere versies van PowerShell 6 geïnstalleerd en toegankelijk is op dezelfde computer.
+Dit is handig als u wilt dat er meerdere Power shell 6-versies op dezelfde computer zijn geïnstalleerd en toegankelijk zijn.
 
-Bovendien preview-versies van PowerShell nu toegang tot hun eigen remoting sessieconfiguraties nadat de `Enable-PSRemoting` cmdlet:
+Daarnaast krijgen Preview-versies van Power shell nu hun eigen externe sessie configuraties na het uitvoeren van de `Enable-PSRemoting`-cmdlet:
 
 ```powershell
 C:\WINDOWS\system32> Enable-PSRemoting
 ```
 
-De uitvoer kan afwijken als u WinRM voordat u dit nog niet hebt ingesteld.
+Uw uitvoer kan verschillen als u WinRM nog niet hebt ingesteld.
 
 ```Output
 WinRM is already set up to receive requests on this computer.
 WinRM is already set up for remote management on this computer.
 ```
 
-Vervolgens ziet u afzonderlijke PowerShell-sessie-configuraties voor de Preview-versie en stabiel builds van PowerShell 6, en voor elke specifieke versie.
+Vervolgens kunt u afzonderlijke Power shell-sessie configuraties bekijken voor de preview-versie en stabiele builds van Power shell 6, en voor elke specifieke versies.
 
 ```powershell
 Get-PSSessionConfiguration
@@ -260,28 +260,28 @@ RunAsUser     :
 Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed, BUILTIN\Remote Management Users AccessAllowed
 ```
 
-### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port` syntaxis die worden ondersteund voor SSH
+### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port` syntaxis ondersteund voor SSH
 
-SSH clients ondersteunen meestal een verbindingsreeks in de indeling `user@host:port`.
-Met de toevoeging van SSH als protocol voor externe communicatie van PowerShell, is er ondersteuning toegevoegd voor deze indeling van de verbindingsreeks:
+SSH-clients ondersteunen doorgaans een connection string in de indeling `user@host:port`.
+Met het toevoegen van SSH als protocol voor externe communicatie met Power Shell hebben we ondersteuning toegevoegd voor deze indeling van connection string:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
-## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>MSI-optie voor het toevoegen van contextmenu explorer-shell op Windows
+## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>MSI-optie om het context menu van de Explorer-Shell toe te voegen in Windows
 
-Dankzij [ @bergmeister ](https://github.com/bergmeister), nu u in het contextmenu op Windows kunt. U kunt nu uw systeembrede-installatie van PowerShell 6.1 openen vanuit een willekeurige map in Windows Explorer:
+Bedankt voor het [@bergmeister](https://github.com/bergmeister)u kunt nu een context menu inschakelen in Windows. U kunt nu de systeembrede installatie van Power shell 6,1 openen vanuit een wille keurige map in Windows Verkenner:
 
-![Shell-contextmenu voor PowerShell 6](./images/shell_context_menu.png)
+![Context menu van shell voor Power shell 6](./images/shell_context_menu.png)
 
 ## <a name="goodies"></a>Goodies
 
-### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>"Als Administrator uitvoeren' in de lijst met Windows snelkoppeling naar de landingspagina
+### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>"Als administrator uitvoeren" in de Jump List van Windows-snelkoppelingen
 
-Dankzij [ @bergmeister ](https://github.com/bergmeister), van de snelkoppeling van de PowerShell Core jump lijst bevat nu 'Als Administrator uitvoeren':
+Bedankt voor het [@bergmeister](https://github.com/bergmeister)de Jump List van de Power shell core-snelkoppeling bevat nu "als administrator uitvoeren":
 
-![Uitvoeren als administrator in de lijst met PowerShell 6 landingspagina](./images/jumplist.png)
+![Als administrator uitvoeren in de Power shell 6 Jump List](./images/jumplist.png)
 
-### <a name="cd---returns-to-previous-directory"></a>`cd -` terug naar de vorige map
+### <a name="cd---returns-to-previous-directory"></a>`cd -` keert terug naar de vorige map
 
 ```powershell
 C:\Windows\System32> cd C:\
@@ -297,21 +297,21 @@ PS /usr/bin> cd -
 PS /etc>
 ```
 
-Bovendien `cd` en `cd --` wijzigen in `$HOME`.
+`cd` en `cd --` worden ook gewijzigd in `$HOME`.
 
 ### `Test-Connection`
 
-Dankzij [ @iSazonov ](https://github.com/iSazonov), wordt de [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) cmdlet heeft zijn overgezet naar PowerShell Core.
+Dankzij [@iSazonov](https://github.com/iSazonov)is de [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) -cmdlet naar Power shell core geporteerd.
 
-### <a name="update-help-as-non-admin"></a>`Update-Help` Als niet-beheerder
+### <a name="update-help-as-non-admin"></a>`Update-Help` als niet-beheerder
 
-Op veler verzoek `Update-Help` langer moet worden uitgevoerd als beheerder.
-`Update-Help` opslaan van Help-informatie naar een map binnen het bereik van gebruiker is nu standaard.
+Op de populaire vraag moet `Update-Help` niet meer worden uitgevoerd als beheerder.
+`Update-Help` nu de standaard instelling voor het opslaan van Help naar een map die door een gebruiker is bereik.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nieuwe methoden/eigenschappen op `PSCustomObject`
 
-Dankzij [ @iSazonov ](https://github.com/iSazonov), hebben we nieuwe methoden en eigenschappen die moeten toegevoegd `PSCustomObject`.
-`PSCustomObject` bevat nu een `Count` / `Length` eigenschap net als andere objecten.
+Dankzij [@iSazonov](https://github.com/iSazonov)zijn nieuwe methoden en eigenschappen toegevoegd aan `PSCustomObject`.
+`PSCustomObject` bevat nu een `Count`eigenschap /`Length`, zoals andere objecten.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -331,7 +331,7 @@ $PSCustomObject.Count
 1
 ```
 
-Deze taak bevat ook `ForEach` en `Where` methoden waarmee u kunt werken en te filteren op `PSCustomObject` items:
+Dit werk bevat ook `ForEach`-en `Where`-methoden waarmee u `PSCustomObject` items kunt gebruiken en filteren:
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -353,23 +353,23 @@ foo
 
 ### `Where-Object -Not`
 
-Dankzij @SimonWahlin, hebben we toegevoegd aan de `-Not` parameter `Where-Object`.
-U kunt nu een object in de pijplijn voor de niet-aanwezigheid van een eigenschap of een eigenschapswaarde van null/leeg filteren.
+Bedankt voor het @SimonWahlinhebben we de `-Not`-para meter toegevoegd aan `Where-Object`.
+U kunt nu een object filteren in de pijp lijn voor het niet bestaan van een eigenschap, of een eigenschaps waarde van Null/empty.
 
-Met deze opdracht retourneert bijvoorbeeld alle services die niet geen afhankelijke services gedefinieerd zijn:
+Met deze opdracht worden bijvoorbeeld alle services geretourneerd waarvoor geen afhankelijke services zijn gedefinieerd:
 
 ```powershell
 Get-Service | Where-Object -Not DependentServices
 ```
 
-### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest` Hiermee maakt u een stuklijst zonder UTF-8-document
+### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest` maakt een stuk lijst van minder dan UTF-8-document
 
-Opgegeven onze verplaatsen naar stuklijst zonder UTF-8 in PowerShell 6.0, we hebben bijgewerkt de `New-ModuleManifest` cmdlet om een document stuklijst zonder UTF-8 in plaats van een UTF-16 een te maken.
+Gezien onze overgang naar een stuk lijst-minder UTF-8 in Power shell 6,0, hebben we de `New-ModuleManifest`-cmdlet bijgewerkt om een stuk lijst zonder UTF-8-document te maken in plaats van een UTF-16 1.
 
-### <a name="conversions-from-psmethod-to-delegate"></a>Conversies van PSMethod gemachtigde
+### <a name="conversions-from-psmethod-to-delegate"></a>Conversies van PSMethod die moeten worden gedelegeerd
 
-Dankzij [ @powercode ](https://github.com/powercode), we ondersteunen nu de conversie van een `PSMethod` in een gemachtigde.
-Hiermee kunt u voor handelingen zoals doorgeven `PSMethod` `[M]::DoubleStrLen` als de waarde van een gemachtigde in `[M]::AggregateString`:
+Dankzij [@powercode](https://github.com/powercode)wordt de conversie van een `PSMethod` naar een gemachtigde ondersteund.
+Op die manier kunt u bijvoorbeeld `PSMethod` `[M]::DoubleStrLen` als een gemachtigde waarde in `[M]::AggregateString`door geven:
 
 ```powershell
 class M {
@@ -387,11 +387,11 @@ class M {
 [M]::AggregateString((gci).Name, [M]::DoubleStrLen)
 ```
 
-Bekijk voor meer informatie over deze wijziging [pull-aanvraag #5287](https://github.com/PowerShell/PowerShell/pull/5287).
+Bekijk [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287)voor meer informatie over deze wijziging.
 
-### <a name="standard-deviation-in-measure-object"></a>Standaarddeviatie in `Measure-Object`
+### <a name="standard-deviation-in-measure-object"></a>Standaard deviatie in `Measure-Object`
 
-Dankzij [ @CloudyDino ](https://github.com/CloudyDino), hebben we toegevoegd aan een `StandardDeviation` eigenschap `Measure-Object`:
+Hartelijk dank voor [@CloudyDino](https://github.com/CloudyDino)hebben we een `StandardDeviation` eigenschap toegevoegd aan `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -409,7 +409,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Dankzij [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` heeft nu de `Password` parameter, waarbij een `SecureString`. Hiermee kunt u niet-interactief gebruiken:
+Dankzij [@maybe-hello-world](https://github.com/maybe-hello-world)heeft `Get-PfxCertificate` nu de `Password` para meter, die een `SecureString`maakt. Hierdoor kunt u het niet-interactief gebruiken:
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -418,22 +418,22 @@ $certPass = Read-Host -AsSecureString -Prompt 'Enter the password for certificat
 $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).ThumbPrint
 ```
 
-### <a name="removal-of-the-more-function"></a>Het verwijderen van de `more` functie
+### <a name="removal-of-the-more-function"></a>De functie `more` verwijderen
 
-In het verleden PowerShell een functie in Windows met de naam verzonden `more` die verpakt `more.com`.
+In het verleden heeft Power shell een functie geleverd in Windows met de naam `more` die `more.com`verpakt.
 Deze functie is nu verwijderd.
 
-Ook de `help` functie gewijzigd in het gebruik van `more.com` op Windows of van het systeem standaard pager is opgegeven door `$env:PAGER` op niet-Windows-platforms.
+Daarnaast is de functie `help` gewijzigd in het gebruik van `more.com` in Windows of de standaard paginering van het systeem die is opgegeven door `$env:PAGER` op niet-Windows-platforms.
 
-### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` retourneert nu gebruikers aan de huidige werkmap op het desbetreffende station
+### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` retourneert nu gebruikers naar de huidige werkmap in dat station
 
-Eerder, met behulp van `Set-Location` of `cd` om terug te keren naar een PSDrive gebruikers verzonden naar de standaardlocatie voor dat station.
+Voorheen gebruik `Set-Location` of `cd` om terug te gaan naar een PSDrive die gebruikers naar de standaard locatie voor dat station kan sturen.
 
-Dankzij [ @mcbobke ](https://github.com/mcbobke), gebruikers worden nu verzonden naar de laatste bekende huidige werkmap voor deze sessie.
+Dankzij [@mcbobke](https://github.com/mcbobke)worden gebruikers nu verzonden naar de laatst bekende huidige werkmap voor die sessie.
 
-### <a name="windows-powershell-type-accelerators"></a>Windows PowerShell type accelerators
+### <a name="windows-powershell-type-accelerators"></a>Windows Power shell-type Accelerators
 
-In Windows PowerShell, hebben we het volgende type accelerators zodat het eenvoudiger om te werken met hun respectieve gegevenstypen opgenomen:
+In Windows Power shell zijn de volgende typen Accelerators opgenomen om gemakkelijker te kunnen werken met hun respectieve typen:
 
 - `[adsi]`: `System.DirectoryServices.DirectoryEntry`
 - `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
@@ -441,17 +441,17 @@ In Windows PowerShell, hebben we het volgende type accelerators zodat het eenvou
 - `[wmiclass]`: `System.Management.ManagementClass`
 - `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
-Deze accelerators type niet zijn opgenomen in PowerShell 6, maar zijn toegevoegd aan die wordt uitgevoerd op Windows PowerShell-6.1.
+Deze typen Accelerators zijn niet opgenomen in Power shell 6, maar zijn toegevoegd aan Power shell 6,1 uitgevoerd in Windows.
 
-Deze typen zijn nuttig bij het maken van eenvoudig AD en WMI-objecten.
+Deze typen zijn handig om eenvoudig AD-en WMI-objecten te maken.
 
-U kunt bijvoorbeeld een query met behulp van LDAP:
+U kunt bijvoorbeeld query's uitvoeren met behulp van LDAP:
 
 ```powershell
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-In het volgende voorbeeld wordt een Win32_OperatingSystem CIM-object gemaakt:
+In het volgende voor beeld wordt een Win32_OperatingSystem CIM-object gemaakt:
 
 ```powershell
 [wmi]"Win32_OperatingSystem=@"
@@ -466,7 +466,7 @@ SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
 ```
 
-In dit voorbeeld retourneert een object ManagementClass voor Win32_OperatingSystem-klasse.
+In dit voor beeld wordt een ManagementClass-object voor Win32_OperatingSystem-klasse geretourneerd.
 
 ```powershell
 [wmiclass]"Win32_OperatingSystem"
@@ -480,50 +480,50 @@ Name                                Methods              Properties
 Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
-### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp` alias voor alle `-LiteralPath` parameters
+### <a name="-lp-alias-for-all--literalpath-parameters"></a>alias `-lp` voor alle `-LiteralPath`-para meters
 
-Dankzij [ @kvprasoon ](https://github.com/kvprasoon), we hebben nu een parameteralias `-lp` voor alle de ingebouwde PowerShell-cmdlets die u hebt een `-LiteralPath` parameter.
+Dank u voor [@kvprasoon](https://github.com/kvprasoon)hebben we nu een parameter alias `-lp` voor alle ingebouwde Power shell-cmdlets die een `-LiteralPath`-para meter hebben.
 
 ## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
-### <a name="msi-based-installation-paths-on-windows"></a>MSI-gebaseerde installatiepaden op Windows
+### <a name="msi-based-installation-paths-on-windows"></a>MSI-gebaseerde installatie paden in Windows
 
-Op Windows, is het MSI-pakket nu wordt geïnstalleerd in het volgende pad:
+In Windows wordt het MSI-pakket nu geïnstalleerd op het volgende pad:
 
-- `$env:ProgramFiles\PowerShell\6\` voor de installatie van de stabiele van 6.x
-- `$env:ProgramFiles\PowerShell\6-preview\` voor de installatie van de Preview-versie van 6.x
+- `$env:ProgramFiles\PowerShell\6\` voor de stabiele installatie van 6. x
+- `$env:ProgramFiles\PowerShell\6-preview\` voor de preview-installatie van 6. x
 
-Deze wijziging zorgt ervoor dat PowerShell Core bijgewerkt/afgehandeld door de Microsoft Update worden kunnen.
+Met deze wijziging wordt ervoor gezorgd dat Power shell core kan worden bijgewerkt/onderhouden door Microsoft Update.
 
-Bekijk voor meer informatie, [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).
+Raadpleeg [Power shell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md)voor meer informatie.
 
-### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a>Telemetrie kan alleen worden uitgeschakeld met een omgevingsvariabele
+### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a>Telemetrie kan alleen worden uitgeschakeld met een omgevings variabele
 
-PowerShell Core worden standaard telemetriegegevens naar Microsoft verzonden wanneer deze wordt gestart. De gegevens bevatten de naam van besturingssysteem, de versie van het besturingssysteem en de PowerShell-versie. Deze gegevens kan we meer inzicht in de omgevingen waar PowerShell wordt gebruikt en kan we nieuwe functies en oplossingen prioriteren.
+Power shell core verzendt elementaire telemetriegegevens naar micro soft wanneer deze wordt gestart. De gegevens bevatten de naam van het besturings systeem, de versie van het besturings systeem en de Power shell-versie. Met deze gegevens kunnen we beter inzicht krijgen in de omgevingen waarin Power shell wordt gebruikt en kunnen we de prioriteit van nieuwe functies en oplossingen bepalen.
 
-Als u wilt zich afmelden deze telemetrische gegevens, stel de omgevingsvariabele `POWERSHELL_TELEMETRY_OPTOUT` naar `true`, `yes`, of `1`. We bieden geen ondersteuning voor het verwijderen van het bestand `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` telemetrie uitschakelen.
+Als u deze telemetrie wilt afmelden, stelt u de omgevings variabele `POWERSHELL_TELEMETRY_OPTOUT` in op `true`, `yes`of `1`. Het verwijderen van het bestand `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` voor het uitschakelen van telemetrie wordt niet meer ondersteund.
 
-### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a>Basisverificatie toegestaan via HTTP in PowerShell voor externe toegang voor Unix-platforms
+### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a>Niet toegestaan basis verificatie via HTTP in externe communicatie met Power shell op UNIX-platforms
 
-Om te voorkomen dat het gebruik van niet-versleuteld verkeer, nu vereist gebruik van NTLM/Negotiate- of HTTPS PowerShell voor externe toegang op Unix-platforms.
+Om te voor komen dat niet-versleuteld verkeer wordt gebruikt, is het gebruik van NTLM/Negotiate of HTTPS vereist voor externe communicatie van Power shell op UNIX-platforms.
 
-Bekijk voor meer informatie over deze wijzigingen [probleem #6779](https://github.com/PowerShell/PowerShell/issues/6779).
+Voor meer informatie over deze wijzigingen raadpleegt u [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
-### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Verwijderd `VisualBasic` als een ondersteunde taal in Add-Type
+### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>`VisualBasic` verwijderd als ondersteunde taal in add-type
 
-In het verleden kon u compileren Visual Basic met behulp van code de `Add-Type` cmdlet.
-Visual Basic is die zelden worden gebruikt met `Add-Type`. We hebben verwijderd deze functie om de grootte van PowerShell te verkleinen.
+In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type`-cmdlet.
+Visual Basic wordt zelden gebruikt met `Add-Type`. Deze functie is verwijderd om de grootte van Power shell te reduceren.
 
-### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Het gebruik van opgeschoond `CommandTypes.Workflow` en `WorkflowInfoCleaned`
+### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Opschonen van het gebruik van `CommandTypes.Workflow` en `WorkflowInfoCleaned`
 
-Bekijk voor meer informatie over deze wijzigingen [pull-aanvraag #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+Zie [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708)voor meer informatie over deze wijzigingen.
 
-### <a name="group-object-now-sorts-the-groups"></a>Groep-Object wordt nu gesorteerd de groepen
+### <a name="group-object-now-sorts-the-groups"></a>Groep-object sorteert nu de groepen
 
-Als onderdeel van de prestaties verbeteren, `Group-Object` nu retourneert een gesorteerde lijst van de groepen.
-Hoewel u niet verstandig de volgorde, kan u worden verdeeld door deze wijziging als u de eerste groep. We besloten dat deze prestatieverbetering waard is om de wijziging is omdat de impact van wordt afhankelijk van het gedrag van het vorige laag is.
+Als onderdeel van de prestatie verbetering retourneert `Group-Object` nu een gesorteerde lijst van de groepen.
+Hoewel het niet nodig is om de volg orde te gebruiken, kunt u deze wijziging door lopen als u de eerste groep wilt gebruiken. We hebben besloten dat deze verbetering van de prestaties de verandering waard was, omdat de impact van de afhankelijkheid van het vorige gedrag laag is.
 
-Zie voor meer informatie over deze wijziging [probleem #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+Zie [Issue #7409](https://github.com/PowerShell/PowerShell/issues/7409)voor meer informatie over deze wijziging.
 
 <!-- URL references -->
 [Experimentele functies]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
 caps.latest.revision: 19
 ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355487"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)|Hiermee definieert u een label, de breedte en de uitlijning van de gegevens voor een kolom van de tabel.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef een van de volgende waarden op. Deze waarden zijn niet hoofdletter gevoelig.
 
@@ -61,7 +61,7 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een element `TableColumnHeader` weer gegeven waarvan de gegevens aan de linkerkant worden uitgelijnd.
+In dit voor beeld ziet u een `TableColumnHeader` element waarvan de gegevens aan de linkerkant worden uitgelijnd.
 
 ```xml
 <TableColumnHeader>

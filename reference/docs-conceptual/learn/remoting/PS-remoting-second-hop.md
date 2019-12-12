@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: De tweede hop maken voor externe communicatie met PowerShell
 ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417625"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken voor externe communicatie met PowerShell
@@ -30,7 +30,7 @@ Zie voor meer informatie over aanvallen op het weglaten van referentie dief stal
 
 Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe communicatie met Power shell raadpleegt [u CredSSP gebruiken om het probleem met de tweede hop op te lossen](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Het werkt voor alle servers met Windows Server 2008 of hoger.
 
@@ -45,7 +45,7 @@ U kunt ook Kerberos-onbeperkte overdracht gebruiken om de tweede hop te maken. D
 
 >**Opmerking:** Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Vereist geen speciale code ring.
 
@@ -61,7 +61,7 @@ U kunt verouderde, beperkte delegering (niet op basis van bronnen) gebruiken om 
 > [!NOTE]
 > Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Vereist geen speciale code ring
 
@@ -79,7 +79,7 @@ In het tweede hop-scenario dat hierboven wordt beschreven, configureert u _Serve
 
 >**Opmerking:** Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - De referenties zijn niet opgeslagen.
 - Relatief eenvoudig te configureren met behulp van Power shell-cmdlets--geen speciale code ring vereist.
@@ -225,7 +225,7 @@ U kunt een sessie configuratie op _ServerB_ maken en de para meter **RunAsCreden
 
 Voor informatie over het gebruik van PSSessionConfiguration en Runas om het probleem met de tweede hop op te lossen, raadpleegt [u een andere oplossing voor externe communicatie met Power shell voor multi-hop](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Werkt met een wille keurige server met WMF 3,0 of hoger.
 
@@ -240,7 +240,7 @@ Met JEA kunt u de opdrachten die een beheerder tijdens een Power shell-sessie ka
 
 Zie [net genoeg beheer](/powershell/scripting/learn/remoting/jea/overview)voor meer informatie over jea.
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Geen wachtwoord onderhoud wanneer een virtueel account wordt gebruikt.
 
@@ -253,7 +253,7 @@ Zie [net genoeg beheer](/powershell/scripting/learn/remoting/jea/overview)voor m
 
 U kunt referenties door geven binnen de para meter **script Block** van een aanroep naar de cmdlet [invoke-opdracht](/powershell/module/microsoft.powershell.core/invoke-command) .
 
-### <a name="pros"></a>Professionals
+### <a name="pros"></a>Voordelen
 
 - Vereist geen speciale server configuratie.
 - Werkt op elke server waarop WMF 2,0 of hoger wordt uitgevoerd.

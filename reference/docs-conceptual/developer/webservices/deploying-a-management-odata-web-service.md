@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356747"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Een Management OData-webservice implementeren
@@ -23,7 +23,7 @@ Nadat u alle stappen hebt voltooid die nodig zijn om een management OData-webser
 
 Voer de volgende stappen uit om de Management OData-webservice te implementeren.
 
-1. Maak een map voor uw webtoepassing in de map IIS `WWWRoot`.
+1. Maak een map voor uw webtoepassing in de IIS-`WWWRoot` Directory.
 
 2. Kopieer het MOF-schema bestand, het XML-schema bestand, de Dll's die de [micro soft. Management. Odata. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -en [System. Management. Automation. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -interfaces en het web. config-bestand exporteren naar de toepassingsmap.
 

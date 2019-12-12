@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Met registersleutels werken
 ms.openlocfilehash: 18daeaea2ee8917a709fef421d2b316f46bf7f4c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030653"
 ---
 # <a name="working-with-registry-keys"></a>Met registersleutels werken
 
-Omdat registersleutels artikelen op Windows PowerShell-stations zijn, is werken met hen vergelijkbaar met het werken met bestanden en mappen. Een belangrijke verschil is dat elk item in een register op basis van Windows PowerShell-station een container, net als bij een map op een bestandssysteemstation is. Registervermeldingen en de bijbehorende waarden zijn echter eigenschappen van de items, geen afzonderlijke items.
+Omdat register sleutels items zijn op Windows Power Shell-stations, is het samen werken met bestanden en mappen vergelijkbaar. Een belang rijk verschil is dat elk item op een op het REGI ster gebaseerd Windows Power Shell-station een container is, net als een map op een bestandssysteem station. Register vermeldingen en de bijbehorende waarden zijn echter eigenschappen van de items, niet de afzonderlijke items.
 
-## <a name="listing-all-subkeys-of-a-registry-key"></a>Lijst van alle subsleutels van een registersleutel
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Alle subsleutels van een register sleutel weer geven
 
-U kunt alle items rechtstreeks in een registersleutel weergeven met behulp van **Get-ChildItem**. Voeg de optionele **Force** parameter verborgen weergeven of items van system. Met deze opdracht wordt bijvoorbeeld weergegeven voor items direct in Windows PowerShell-station HKCU:, dat overeenkomt met de registercomponent HKEY_CURRENT_USER:
+U kunt alle items rechtstreeks in een register sleutel weer geven met behulp van **Get-Child item**. Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht worden bijvoorbeeld de items rechtstreeks in Windows Power Shell-station HKCU:, dat overeenkomt met de HKEY_CURRENT_USER register component:
 
 ```
 PS> Get-ChildItem -Path hkcu:\
@@ -33,9 +33,9 @@ SKC  VC Name                           Property
 ...
 ```
 
-Dit zijn de op het hoogste niveau sleutels zichtbaar onder HKEY_CURRENT_USER in de Register-Editor (Regedit.exe).
+Dit zijn de sleutels op het hoogste niveau die zichtbaar zijn onder HKEY_CURRENT_USER in de REGI ster-editor (Regedit. exe).
 
-U kunt ook deze registerpad opgeven door op te geven de naam van de registerprovider, gevolgd door ' **::** '. De volledige naam van de registerprovider is **Microsoft.PowerShell.Core\\register**, maar dit kan worden ingekort om just **register**. Een van de volgende opdrachten wordt een lijst van de inhoud rechtstreeks onder HKCU:
+U kunt dit registerpad ook opgeven door de naam van de register provider op te geven, gevolgd door ' **::** '. De volledige naam van de register provider is **micro soft. Power shell. Core\\Registry**, maar dit kan worden inge kort tot alleen het **REGI ster**. Met een van de volgende opdrachten wordt de inhoud direct onder HKCU weer geven:
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -45,60 +45,60 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Deze opdrachten worden alleen de rechtstreeks opgenomen items, net als met behulp van Cmd.exe **DIR** opdracht of **ls** in een UNIX-shell. Als u de opgenomen items weergeven, moet u opgeven de **Recurse** parameter. Als u alle registersleutels in HKCU, gebruik de volgende opdracht uit (deze bewerking kan een extreem lange tijd duren.):
+Met deze opdrachten worden alleen de direct opgenomen items weer geven, vergelijkbaar met het gebruik van de **dir** opdracht van cmd. exe of **ls** in een Unix-shell. Als u opgenomen items wilt weer geven, moet u de para meter **recursief** opgeven. Als u alle register sleutels in HKCU wilt weer geven, gebruikt u de volgende opdracht (deze bewerking kan erg lang duren):
 
 ```powershell
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** kunt uitvoeren van complexe filters gebruiken om mogelijkheden via de **pad**, **Filter**, **opnemen**, en **uitsluiten**parameters, maar deze parameters zijn doorgaans alleen gebaseerd op naam. U kunt uitvoeren met het complex filteren op basis van andere eigenschappen van items met behulp van de **Where-Object** cmdlet. De volgende opdracht worden alle sleutels in HKCU gevonden:\\Software die niet meer dan één subsleutel en beschikt ook over exact vier waarden hebben:
+**Get-Child item** kan complexe filter mogelijkheden uitvoeren met de para meters **Path**, **filter**, **include**en **exclude** , maar die para meters zijn doorgaans alleen gebaseerd op naam. U kunt complexe filtering op basis van andere eigenschappen van items uitvoeren met de cmdlet **where-object** . Met de volgende opdracht worden alle sleutels in HKCU gevonden:\\software die niet meer dan één subsleutel heeft en die ook precies vier waarden heeft:
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-## <a name="copying-keys"></a>Kopiëren van sleutels
+## <a name="copying-keys"></a>Sleutels kopiëren
 
-Kopiëren is klaar met **Copy-Item**. De volgende opdracht kopieert HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion en alle bijbehorende eigenschappen aan HKCU:\\, het maken van een nieuwe sleutel met de naam 'CurrentVersion':
+Kopiëren is voltooid met **copy-item**. De volgende opdracht kopieert HKLM:\\SOFTWARE\\micro soft\\Windows\\CurrentVersion en alle bijbehorende eigenschappen naar HKCU:\\, waarbij een nieuwe sleutel met de naam ' CurrentVersion ' wordt gemaakt:
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu:
 ```
 
-Als u deze nieuwe sleutel in de Register-editor of met behulp van controleert **Get-ChildItem**, zult u merken dat u geen exemplaren van de ingesloten subsleutels in de nieuwe locatie. Als u wilt alle van de inhoud van een container hebt gekopieerd, moet u opgeven de **Recurse** parameter. Als u de voorgaande opdracht recursieve voor kopiëren, gebruikt u deze opdracht:
+Als u deze nieuwe sleutel bekijkt in de REGI ster-editor of met behulp van **Get-Child item**, zult u merken dat u geen kopieën van de subsleutels in de nieuwe locatie hebt. Als u de gehele inhoud van een container wilt kopiëren, moet u de para meter **recursief** opgeven. Als u de voor gaande Kopieer opdracht recursief wilt maken, gebruikt u deze opdracht:
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu: -Recurse
 ```
 
-U kunt nog steeds andere hulpprogramma's die u al hebt beschikbaar om uit te voeren bestandssysteem kopieën gebruiken. Alle Registerbewerkingsprogramma's, met inbegrip van reg.exe regini.exe en regedit.exe—and COM-objecten die ondersteuning bieden voor bewerken van het register (zoals instantie en de WMI-klasse van StdRegProv) kan worden gebruikt vanuit Windows PowerShell.
+U kunt nog steeds gebruikmaken van andere hulpprogram ma's die u al beschikbaar hebt voor het uitvoeren van bestandssysteem kopieën. Alle register bewerkings Programma's, waaronder reg. exe, regini. exe en Regedit. exe, en COM-objecten die ondersteuning bieden voor het bewerken van registers (zoals WScript. shell en WMI-klasse StdRegProv) kunnen worden gebruikt vanuit Windows Power shell.
 
-## <a name="creating-keys"></a>Het maken van sleutels
+## <a name="creating-keys"></a>Sleutels maken
 
-Het maken van nieuwe sleutels in het register is eenvoudiger dan het maken van een nieuw item in een bestandssysteem. Omdat alle registersleutels containers zijn, hoeft u niet om op te geven van het itemtype. u simpelweg een expliciete pad, zoals:
+Het maken van nieuwe sleutels in het REGI ster is eenvoudiger dan het maken van een nieuw item in een bestands systeem. Omdat alle register sleutels containers zijn, hoeft u het item type niet op te geven. u hoeft alleen maar een expliciet pad op te geven, zoals:
 
 ```powershell
 New-Item -Path hkcu:\software_DeleteMe
 ```
 
-U kunt ook een pad op basis van een provider van een sleutel op te geven:
+U kunt ook een op een provider gebaseerd pad gebruiken om een sleutel op te geven:
 
 ```powershell
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-## <a name="deleting-keys"></a>Verwijderen van sleutels
+## <a name="deleting-keys"></a>Sleutels verwijderen
 
-Items verwijderen is in wezen hetzelfde voor alle providers. De volgende opdrachten worden de items op de achtergrond verwijderd:
+Het verwijderen van items is in wezen hetzelfde voor alle providers. Met de volgende opdrachten worden items op de achtergrond verwijderd:
 
 ```powershell
 Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-## <a name="removing-all-keys-under-a-specific-key"></a>Alle sleutels onder een specifieke sleutel verwijderen
+## <a name="removing-all-keys-under-a-specific-key"></a>Verwijderen van alle sleutels onder een bepaalde sleutel
 
-U kunt de opgenomen items verwijderen met behulp van **Remove-Item**, maar u wordt gevraagd om te bevestigen van de verwijzing wordt verwijderd als het item iets anders bevat. Bijvoorbeeld, als we proberen te verwijderen van de HKCU:\\CurrentVersion subsleutel we hebben gemaakt, zien we dit:
+U kunt opgenomen items verwijderen met behulp van **Remove-item**, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als we bijvoorbeeld proberen de HKCU:\\CurrentVersion-subsleutel te verwijderen, zien we het volgende:
 
 ```
 Remove-Item -Path hkcu:\CurrentVersion
@@ -111,13 +111,13 @@ parameter was not specified. If you continue, all children will be removed with
 (default is "Y"):
 ```
 
-Ingesloten om items te verwijderen zonder dat u wordt gevraagd, geeft de **-Recurse** parameter:
+Als u opgenomen items zonder vragen wilt verwijderen, geeft u de para meter **-recursief** op:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 
-Als u wilt verwijderen van alle items in HKCU:\\CurrentVersion, maar niet HKCU:\\CurrentVersion zelf, die u in plaats daarvan kunt gebruiken:
+Als u alle items in HKCU wilt verwijderen:\\CurrentVersion, maar niet HKCU:\\CurrentVersion zelf, kunt u in plaats daarvan het volgende gebruiken:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse

@@ -1,25 +1,25 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEMenuItem-object
 ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028937"
 ---
 # <a name="the-isemenuitem-object"></a>Het ISEMenuItem-object
 
-Een **ISEMenuItem** object is een exemplaar van de klasse Microsoft.PowerShell.Host.ISE.ISEMenuItem. Alle menu-objecten in de **invoegtoepassingen** menu zijn exemplaren van de **Microsoft.PowerShell.Host.ISE.ISEMenuItem** klasse.
+Een **ISEMenuItem** -object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEMenuItem. Alle menu-objecten in het menu **met invoeg toepassingen** zijn exemplaren van de klasse **micro soft. Power shell. host. ISE. ISEMenuItem** .
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Eigenschappen
 
 ### <a name="displayname"></a>DisplayName
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die de weergavenaam van het menu-item opgehaald.
+De alleen-lezen eigenschap waarmee de weergave naam van de menu opdracht wordt opgehaald.
 
 ```powershell
 # Get the display name of the Add-ons menu item
@@ -28,11 +28,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Bewerking
+### <a name="action"></a>Actie
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap waarmee het scriptblok worden opgehaald. Deze roept de actie wanneer u klikt op het menu-item.
+De alleen-lezen eigenschap waarmee het script blok wordt opgehaald. De actie wordt geactiveerd wanneer u op de menu opdracht klikt.
 
 ```powershell
 # Get the action associated with the first submenu item.
@@ -44,11 +44,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a>Snelkoppeling
+### <a name="shortcut"></a>Shortcutdimensie
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die opgehaald van de Windows invoer sneltoets voor de menuopdracht.
+De alleen-lezen eigenschap waarmee de Windows-invoer toetsenbord snel wordt opgehaald voor de menu opdracht.
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -57,11 +57,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-### <a name="submenus"></a>Submenu 's
+### <a name="submenus"></a>Submenu's
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die krijgt de [lijst submenu](The-ISEMenuItemCollection-Object.md) van het menu-item.
+De alleen-lezen eigenschap waarmee de [lijst met](The-ISEMenuItemCollection-Object.md) submenu's van de menu opdracht wordt opgehaald.
 
 ```powershell
 # List the submenus of the Add-ons menu
@@ -70,9 +70,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## <a name="scripting-example"></a>Voorbeeld van het uitvoeren van scripts
+## <a name="scripting-example"></a>Script voorbeeld
 
-Lees voor meer informatie over het gebruik van het menu invoegtoepassingen en de bijbehorende scripts eigenschappen, het volgende voorbeeld voor het uitvoeren van scripts.
+Lees het volgende script voorbeeld voor meer informatie over het gebruik van het menu add-ins en de eigenschappen van het script.
 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
@@ -89,6 +89,6 @@ $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 
 ## <a name="see-also"></a>Zie ook
 
-- [Het ISEMenuItemCollection-Object](The-ISEMenuItemCollection-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Het ISEMenuItemCollection-object](The-ISEMenuItemCollection-Object.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

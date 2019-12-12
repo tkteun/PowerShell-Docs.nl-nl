@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Verbeteringen in foutopsporing voor PowerShell-scripts
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145178"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Verbeteringen in foutopsporing voor PowerShell-scripts
@@ -17,9 +17,9 @@ Power shell 5,0 bevat verschillende verbeteringen voor het verbeteren van de fou
 
 Met de Power shell-console en Power shell ISE kunt u nu opdelen in het fout opsporingsprogramma voor het uitvoeren van scripts. Dit werkt in zowel lokale als externe sessies.
 
-Druk op <kbd>CTRL</kbd>+-<kbd>afbreek</kbd>punt in de-console.
+Druk in de-console op <kbd>Ctrl</kbd>+<kbd>onderbreken</kbd>.
 
-Druk in ISE op <kbd>CTRL</kbd>+<kbd>B</kbd>, of gebruik de opdracht **debug-> Restore all** menu.
+Druk in ISE op <kbd>Ctrl</kbd>+<kbd>B</kbd>, of gebruik de opdracht **debug-> alles onderbreken** .
 
 ## <a name="remote-debugging-and-remote-file-editing-in-powershell-ise"></a>Externe fout opsporing en externe bestands bewerking in Power shell ISE
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
 caps.latest.revision: 17
 ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352848"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Een Windows PowerShell-module schrijven
@@ -23,7 +23,7 @@ Met Windows Power shell-modules kunt u uw Windows Power shell-code partitioneren
 
 Windows Power shell behandelt op zijn meest eenvoudige wijze alle geldige Windows Power shell-script code die is opgeslagen in een. psm1-bestand als een module. Power shell behandelt ook automatisch een binaire cmdlet-assembly als een module. U kunt echter ook een module (of specifiek een module manifest) gebruiken om een volledige oplossing samen te bundelen. In de volgende scenario's worden veelvoorkomende toepassingen voor Windows Power shell-modules beschreven.
 
-### <a name="libraries"></a>Library
+### <a name="libraries"></a>Bibliotheken
 
 Modules kunnen worden gebruikt voor het inpakken en distribueren van samenhangende bibliotheken met functies die algemene taken uitvoeren. De namen van deze functies delen meestal een of meer zelfstandige naam woorden die overeenkomen met de algemene taak waarvoor ze worden gebruikt. Deze functies kunnen ook vergelijkbaar zijn met .NET Framework klassen, zodat ze open bare en privé-leden kunnen hebben. Een bibliotheek kan bijvoorbeeld een set met functies voor bestands overdrachten bevatten. In dit geval kan het zelfstandige naam woord dat de algemene taak weerspiegelt ' file ' zijn.
 

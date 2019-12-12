@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC gebruiken op Nano Server
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941878"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC gebruiken op Nano Server
@@ -50,7 +50,7 @@ Zowel push-als pull-modi
 
 - Configuraties compileren (Zie [DSC-configuraties](../configurations/configurations.md))
 
-  **Name** Wachtwoord versleuteling (Zie [het MOF-bestand beveiligen](../pull-server/secureMOF.md)) tijdens de compilatie van de configuratie werkt niet.
+  **Probleem:** Wachtwoord versleuteling (Zie [het MOF-bestand beveiligen](../pull-server/secureMOF.md)) tijdens de compilatie van de configuratie werkt niet.
 
 - Bezig met het compileren van de-configuratie (Zie [de lokale Configuration Manager configureren](../managing-nodes/metaConfig.md))
 
@@ -60,7 +60,7 @@ Zowel push-als pull-modi
 
 - Fout opsporing voor DSC-resources (Zie [fout opsporing voor DSC-resources](../troubleshooting/debugResource.md))
 
-  **Name** Werkt niet als een resource gebruikmaakt van PsDscRunAsCredential (Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md))
+  **Probleem:** Werkt niet als een resource gebruikmaakt van PsDscRunAsCredential (Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md))
 
 - [Afhankelijkheden van meerdere knooppunten opgeven](../configurations/crossNodeDependencies.md)
 
@@ -81,12 +81,12 @@ Zowel push-als pull-modi
 - Volledig functionele bronnen
 
 - **Archief**
-- **Variabelen**
+- **Omgeving**
 - **File**
 - **Log**
 - **ProcessSet**
 - **Registersubsleutel**
-- **Schriften**
+- **Script**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
@@ -97,12 +97,12 @@ Zowel push-als pull-modi
 - **Groep**
 - **GroupSet**
 
-  **Name** De bovenstaande bronnen mislukken als een specifiek exemplaar twee maal wordt aangeroepen (twee keer dezelfde configuratie uitvoeren)
+  **Probleem:** De bovenstaande bronnen mislukken als een specifiek exemplaar twee maal wordt aangeroepen (twee keer dezelfde configuratie uitvoeren)
 
 - **Service**
 - **ServiceSet**
 
-  **Name** Werkt alleen voor starten/stoppen (status)-service. Mislukt als er wordt geprobeerd andere service kenmerken te wijzigen, zoals opstart type, referenties, Description, enzovoort. De fout die wordt gegenereerd, is vergelijkbaar met:
+  **Probleem:** Werkt alleen voor starten/stoppen (status)-service. Mislukt als er wordt geprobeerd andere service kenmerken te wijzigen, zoals opstart type, referenties, Description, enzovoort. De fout die wordt gegenereerd, is vergelijkbaar met:
 
   *Kan type [management. managementobject] niet vinden: Controleer of de assembly met dit type is geladen.*
 

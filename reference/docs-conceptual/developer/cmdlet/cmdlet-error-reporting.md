@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356565"
 ---
 # <a name="cmdlet-error-reporting"></a>Fout rapportage voor cmdlets
@@ -43,7 +43,7 @@ De volgende richt lijnen kunnen worden gebruikt om te bepalen of een fout een af
 
 ## <a name="reporting-nonterminating-errors"></a>Niet-afsluit fouten rapporteren
 
-De rapportage van een niet-afsluit fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de methode [System. Management. Automation](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . cmdlet. ProcessRecord of de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Deze typen fouten worden gerapporteerd door het aanroepen van de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) die op zijn beurt een fout record naar de fout stroom verzendt.
+De rapportage van een niet-afsluitende fout moet altijd worden uitgevoerd binnen de implementatie van de cmdlet [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de methode [System. Management.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Automation. cmdlet. ProcessRecord, of met de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Deze typen fouten worden gerapporteerd door het aanroepen van de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) die op zijn beurt een fout record naar de fout stroom verzendt.
 
 ## <a name="reporting-terminating-errors"></a>Fout bij het rapporteren van het rapport
 

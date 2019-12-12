@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356572"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parameters
 
-Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden*) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties en de gegevens die de cmdlet retourneert naar de pijp lijn.
+Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden*) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties moet uitvoeren en de gegevens die de cmdlet retourneert naar de pijp lijn.
 
 ## <a name="in-this-section"></a>In deze sectie
 
@@ -47,7 +47,7 @@ Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan acceptere
 
 [Parameter invoer valideren](./validating-parameter-input.md) Hierin wordt beschreven hoe Windows Power shell de argumenten valideert die worden door gegeven aan cmdlet-para meters.
 
-[Invoer filter parameters](./input-filter-parameters.md) Hierin worden de para meters voor `Filter`, `Include` en `Exclude` beschreven waarmee de set invoer objecten wordt gefilterd die door de cmdlet worden beïnvloed.
+[Invoer filter parameters](./input-filter-parameters.md) Hierin worden de para meters `Filter`, `Include`en `Exclude` beschreven waarmee de set invoer objecten wordt gefilterd waarop de cmdlet van invloed is.
 
 ## <a name="related-sections"></a>Gerelateerde secties
 

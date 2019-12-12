@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eae67e47-6c60-4741-8430-78d2cb6067b1
 caps.latest.revision: 10
 ms.openlocfilehash: ccfc0b772ad3b2d1979c7c832a5153de870035d7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358830"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format"></a>Het element SelectionSetName voor SelectionCondition voor EntrySelectedBy voor ListEntry (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor List entry (indeling)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan om deze definitie van de lijst weergave te gebruiken.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de selectieset.
 

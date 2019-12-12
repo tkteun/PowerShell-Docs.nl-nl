@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353695"
 ---
 # <a name="tableheaders-element-format"></a>Het element TableHeaders (opmaak)
@@ -56,7 +56,7 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een element `TableHeaders` weer gegeven dat twee kolom koppen definieert.
+In dit voor beeld ziet u een `TableHeaders`-element waarmee twee kolom koppen worden gedefinieerd.
 
 ```xml
 <TableHeaders>

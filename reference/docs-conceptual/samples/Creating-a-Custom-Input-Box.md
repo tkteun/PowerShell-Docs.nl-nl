@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Een aangepast invoervak maken
 ms.openlocfilehash: 9c1c3c72482157e849c0259e7d2e25ed969a4aab
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030240"
 ---
 # <a name="creating-a-custom-input-box"></a>Een aangepast invoervak maken
 
-Script voor een grafische aangepast invoervak met behulp van Microsoft .NET Framework bouwen van een formulier functies in Windows PowerShell 3.0 en latere versies.
+Een grafisch aangepast invoervak in een script maken met behulp van Microsoft .NET Framework-formulier: functies bouwen in Windows Power Shell 3,0 en latere versies.
 
-## <a name="create-a-custom-graphical-input-box"></a>Een aangepaste, grafische invoervak maken
+## <a name="create-a-custom-graphical-input-box"></a>Een aangepast, grafisch invoervak maken
 
-Kopieer en plak het volgende in Windows PowerShell ISE en vervolgens opslaan als een Windows PowerShell-script (.ps1).
+Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -65,19 +65,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Het script begint met het laden van twee .NET Framework-klassen: **System.Drawing** en **System.Windows.Forms**. Vervolgens start u een nieuw exemplaar van de .NET Framework-klasse **System.Windows.Forms.Form**; die zorgt voor een leeg formulier of Hiermee bepaalt u venster waaraan u kunt beginnen met het toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-Nadat u een exemplaar van de klasse van het formulier hebt gemaakt, kunt u de waarden toewijzen aan drie eigenschappen van deze klasse.
+Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe aan drie eigenschappen van deze klasse.
 
-- **De tekst.** Hiermee wordt de titel van het venster.
+- **SMS.** Dit wordt de titel van het venster.
 
-- **De grootte.** Dit is de grootte van het formulier, in pixels. Dit script maakt u een formulier is 300 pixels breed met 200 pixels hoog.
+- **Size.** Dit is de grootte van het formulier, in pixels. Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.
 
-- **StartingPosition.** Deze optionele eigenschap is ingesteld op **CenterScreen** in het vorige script. Als u deze eigenschap niet toevoegt, wordt in Windows een locatie geselecteerd als het formulier wordt geopend. Door in te stellen de **StartingPosition** naar **CenterScreen**, u bent automatisch weergeven van het formulier in het midden van het scherm telkens worden geladen.
+- **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script. Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -85,7 +85,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Maak vervolgens een **OK** knop voor het formulier. Geef de grootte en het gedrag van de **OK** knop. In dit voorbeeld is de positie van de knop 120 pixels vanaf de bovenkant van het formulier, en 75 pixels vanaf de linkerkant. De hoogte van de knop is 23 pixels, terwijl de lengte van de knop 75 pixels is. Het script maakt gebruik van vooraf gedefinieerde Windows Forms-typen om te bepalen het gedrag van de knop.
+Maak vervolgens een knop **OK** voor uw formulier. Geef de grootte en het gedrag op van de knop **OK** . In dit voor beeld is de knop positie 120 pixels van de bovenrand van het formulier en 75 pixels vanaf de linkerrand. De knop hoogte is 23 pixels en de knop lengte is 75 pixels. Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -97,7 +97,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Op deze manier maakt u een **annuleren** knop. De **annuleren** knop is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.
+Op dezelfde manier maakt u een knop **Annuleren** . De knop **Annuleren** is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -109,7 +109,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Geef vervolgens de labeltekst op uw venster dat wordt beschreven welke informatie die u wilt dat gebruikers om te bieden.
+Geef vervolgens label tekst op in het venster waarin de informatie wordt beschreven die gebruikers moeten opgeven.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -119,7 +119,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-Het besturingselement (in dit geval een tekstvak) waarmee gebruikers kunnen de gegevens hebt die worden beschreven in uw labeltekst toevoegen. Er zijn veel andere besturingselementen die kunt u naast tekstvakken; toepassen Zie voor meer besturingselementen [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN.
+Voeg het besturings element (in dit geval een tekstvak) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN voor meer besturings elementen.
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -128,25 +128,25 @@ $textBox.Size = New-Object System.Drawing.Size(260,20)
 $form.Controls.Add($textBox)
 ```
 
-Stel de **Topmost** eigenschap **$true** om af te dwingen van het venster te openen op een andere openstaande vensters en dialoogvensters.
+Stel de eigenschap **bovenste** in op **$True** om ervoor te zorgen dat het venster hierop andere open vensters en dialoog vensters opent.
 
 ```powershell
 $form.Topmost = $true
 ```
 
-Vervolgens deze regel met code voor het activeren van het formulier toevoegen en de focus ingesteld op het tekstvak dat u hebt gemaakt.
+Voeg vervolgens deze regel code toe om het formulier te activeren en stel de focus in op het tekstvak dat u hebt gemaakt.
 
 ```powershell
 $form.Add_Shown({$textBox.Select()})
 ```
 
-Voeg de volgende regel code om weer te geven van het formulier in Windows.
+Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Ten slotte de code binnen de **als** blok geeft Windows wat te doen met het formulier nadat gebruikers tekst in het tekstvak in en klik vervolgens op de **OK** of drukt u op de **Enter** de sleutel.
+Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden gedaan met het formulier nadat gebruikers tekst hebben opgegeven in het tekstvak en klik vervolgens op de knop **OK** of druk op **Enter** .
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -158,6 +158,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Een aangepast invoervak maken](https://technet.microsoft.com/library/ff730941.aspx)
+- [Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: de WinFormsExampleUpdates van Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows Power shell-Tip van de week: een aangepast invoervak maken](https://technet.microsoft.com/library/ff730941.aspx)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
 caps.latest.revision: 6
 ms.openlocfilehash: 08db1f2d89c3fe6c1e9a5a522de3071425042c3f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355095"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `FirstLineHanging` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `FirstLineHanging` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Frame-element voor CustomItem voor GroupBy (indeling)](./frame-element-for-customitem-for-groupby-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het aantal tekens op waarmee u de eerste regel van de gegevens wilt verschuiven.
 

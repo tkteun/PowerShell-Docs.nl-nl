@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
 caps.latest.revision: 8
 ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355375"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>Het element ColumnNumber voor WideControl (opmaak)
@@ -45,13 +45,13 @@ Geen.
 |-------------|-----------------|
 |[WideControl-element (indeling)](./widecontrol-element-format.md)|Hiermee wordt een brede lijst indeling (enkelvoudige waarde) gedefinieerd voor de weer gave.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef een positief geheel getal op.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Bij het definiëren van een brede weer gave kunt u het element `AutoSize` of het element `ColumnNumber` toevoegen, maar u kunt niet beide toevoegen.
+Bij het definiëren van een brede weer gave kunt u het `AutoSize`-element of het `ColumnNumber`-element toevoegen, maar u kunt niet beide toevoegen.
 
 Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie over de onderdelen van een brede weer gave.
 

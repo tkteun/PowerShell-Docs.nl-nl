@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Andere nuttige scriptobjecten
 ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71325144"
 ---
 # <a name="other-useful-scripting-objects"></a>Andere nuttige scriptobjecten
@@ -32,7 +32,7 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die `$psLocalHelp`zijn opgenomen in.
+Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die zijn opgenomen in `$psLocalHelp`.
 
 ```powershell
 # See the local help map

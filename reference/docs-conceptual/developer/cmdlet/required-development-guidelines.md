@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359295"
 ---
 # <a name="required-development-guidelines"></a>Vereiste richtlijnen voor de ontwikkeling
@@ -21,7 +21,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 ## <a name="in-this-topic"></a>In dit onderwerp
 
-### <a name="design-guidelines"></a>Ontwerp richtlijnen
+### <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 - [Alleen goedgekeurde werk woorden gebruiken (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +51,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 - [Een Windows Power shell-module gebruiken voor het implementeren van uw cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -85,29 +85,29 @@ Wanneer u een naam voor cmdlets gebruikt, mag u de volgende speciale tekens niet
 |---------------|----------|
 |#|nummer teken|
 |,|Geplaatst|
-|()|Haakjes|
+|()|haakjes|
 |{}|accolades|
 |[]|haken|
-|&|Operator|
+|&|operator|
 |-|afbreek streepje **:** het koppel teken kan worden gebruikt om de term van het zelfstandig naam woord te scheiden, maar kan niet worden gebruikt binnen het zelfstandige zelfstandig of in de term.|
-|/|Slash-teken|
-|\\ | back slash|
-|$|dollar teken|
-|^|verplaatsen|
+|/|slash-teken|
+|\\| back slash|
+|$|dollarteken|
+|^|caret|
 |;|dubbele|
-|:|Punt|
+|:|punt|
 |"|dubbel aanhalings teken|
 |'|enkel aanhalings teken|
 |<>|punt haken|
 |&#124;|verticale balk|
-|?|vraag teken|
+|?|vraagteken|
 |@|at-teken|
 |`|schuine streep (accent grave)|
-|*|spaken|
+|*|sterretje|
 |%|procent teken|
-|+|Plus teken|
+|+|plus teken|
 |=|gelijkteken|
-|~|Tilde|
+|~|tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Parameter namen die niet kunnen worden gebruikt (RD03)
 
@@ -115,14 +115,14 @@ Windows Power shell biedt een gemeen schappelijke set para meters voor alle cmdl
 
 ### <a name="support-confirmation-requests-rd04"></a>Ondersteunings bevestigings aanvragen (RD04)
 
-Voor cmdlets die een bewerking uitvoeren waardoor het systeem wordt gewijzigd, moeten ze de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen om een bevestiging aan te vragen. in speciale gevallen roept u de [ Methode System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (De methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) moet alleen worden aangeroepen nadat de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) is aangeroepen.)
+Voor cmdlets die een bewerking uitvoeren waardoor het systeem wordt gewijzigd, moeten ze de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aanroepen om een bevestiging aan te vragen. in speciale gevallen wordt de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aangeroepen. (De methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) moet alleen worden aangeroepen nadat de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) is aangeroepen.)
 
-Als u deze aanroepen wilt maken, moet de cmdlet opgeven dat deze bevestigings aanvragen ondersteunt door het sleutel woord `SupportsShouldProcess` van het cmdlet-kenmerk in te stellen. Zie [cmdlet kenmerk declaratie](./cmdlet-attribute-declaration.md)voor meer informatie over het instellen van dit kenmerk.
+Als u deze aanroepen wilt maken, moet de cmdlet opgeven dat deze bevestigings aanvragen ondersteunt door het `SupportsShouldProcess` sleutel woord van het cmdlet-kenmerk in te stellen. Zie [cmdlet kenmerk declaratie](./cmdlet-attribute-declaration.md)voor meer informatie over het instellen van dit kenmerk.
 
 > [!NOTE]
-> Als het cmdlet-kenmerk van de klasse cmdlet aangeeft dat de cmdlet aanroepen ondersteunt naar de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en de cmdlet de aanroep niet kan uitvoeren naar de [ Methode System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) kan de gebruiker het systeem onverwacht wijzigen.
+> Als het cmdlet-kenmerk van de klasse cmdlet aangeeft dat de cmdlet aanroepen ondersteunt naar de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en de cmdlet de aanroep naar de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) niet kan aanroepen, kan de gebruiker het systeem onverwacht wijzigen.
 
-Gebruik de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) voor elke wijziging van het systeem. Een gebruikers voorkeur en de para meter `WhatIf` bepalen de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . De aanroep [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) voert daarentegen een extra controle uit op mogelijke schadelijke wijzigingen. Deze methode wordt niet beheerd door een gebruikers voorkeur of de para meter `WhatIf`. Als uw cmdlet de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moet deze de para meter `Force` hebben die de aanroepen naar deze twee methoden omzeilt en die de bewerking doorloopt. Dit is belang rijk omdat de cmdlet kan worden gebruikt in niet-interactieve scripts en hosts.
+Gebruik de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) voor elke wijziging van het systeem. Een gebruikers voorkeur en de `WhatIf` para meter bepalen de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . De aanroep [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) voert daarentegen een extra controle uit op mogelijke schadelijke wijzigingen. Deze methode wordt niet beheerd door een gebruikers voorkeur of de para meter `WhatIf`. Als uw cmdlet de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moet deze een `Force` para meter hebben die de aanroepen naar deze twee methoden omzeilt en die de bewerking doorloopt. Dit is belang rijk omdat de cmdlet kan worden gebruikt in niet-interactieve scripts en hosts.
 
 Als uw cmdlets ondersteuning bieden voor deze aanroepen, kan de gebruiker bepalen of de actie daad werkelijk moet worden uitgevoerd. De cmdlet [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) roept bijvoorbeeld de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aan voordat een set kritieke processen wordt gestopt, met inbegrip van de systeem-, Winlogon-en Spoolsv-processen.
 
@@ -196,9 +196,9 @@ Een beheer omgeving detecteert en brengt belang rijke wijzigingen aan in het sys
 
 - Als een fout verhindert dat een cmdlet meer records verwerkt, is het een afsluit fout. De cmdlet moet de methode [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) aanroepen die verwijst naar een [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object. Als een uitzonde ring niet wordt onderschept door de cmdlet, genereert de Windows Power shell-runtime zelf een afsluit fout die minder informatie bevat.
 
-- Voor een niet-afsluit fout die geen bewerking stopt voor het volgende record dat afkomstig is van de pijp lijn (bijvoorbeeld een record die wordt geproduceerd door een ander proces), moet de cmdlet de methode [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen. verwijst naar een [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object. Een voor beeld van een niet-afsluit fout is de fout die optreedt als een bepaald proces niet kan worden gestopt. Door de methode [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aan te roepen, kan de gebruiker consistent de gevraagde acties uitvoeren en de informatie bewaren voor bepaalde acties die mislukken. De cmdlet moet elke record zo onafhankelijk mogelijk verwerken.
+- Voor een niet-afsluit fout die geen bewerking stopt voor het volgende record dat afkomstig is van de pijp lijn (bijvoorbeeld een record die wordt geproduceerd door een ander proces), moet de cmdlet de methode [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen die verwijst naar een [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object. Een voor beeld van een niet-afsluit fout is de fout die optreedt als een bepaald proces niet kan worden gestopt. Door de methode [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aan te roepen, kan de gebruiker consistent de gevraagde acties uitvoeren en de informatie bewaren voor bepaalde acties die mislukken. De cmdlet moet elke record zo onafhankelijk mogelijk verwerken.
 
-- Voor het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) waarnaar wordt verwezen door de methoden [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) en [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) is een uitzonde ring op de kern. Volg de .NET Framework ontwerp richtlijnen wanneer u de uitzonde ring bepaalt die moet worden gebruikt. Als de fout semantisch gelijk is aan die van een bestaande uitzonde ring, moet u die uitzonde ring gebruiken of afleiden van die uitzonde ring. Anders moet u een nieuwe uitzonde ring of uitzonderings hiërarchie rechtstreeks van het type [System. Exception](/dotnet/api/System.Exception) afleiden.
+- Het [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object waarnaar wordt verwezen door de methoden [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) en [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) , vereist een uitzonde ring op de kern. Volg de .NET Framework ontwerp richtlijnen wanneer u de uitzonde ring bepaalt die moet worden gebruikt. Als de fout semantisch gelijk is aan die van een bestaande uitzonde ring, moet u die uitzonde ring gebruiken of afleiden van die uitzonde ring. Anders moet u een nieuwe uitzonde ring of uitzonderings hiërarchie rechtstreeks van het type [System. Exception](/dotnet/api/System.Exception) afleiden.
 
 Voor een object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) is ook een fout categorie vereist waarin fouten voor de gebruiker worden gegroepeerd. De gebruiker kan fouten weer geven op basis van de categorie door de waarde van de `$ErrorView`-shell variabele in te stellen op CategoryView. De mogelijke categorieën worden gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
 

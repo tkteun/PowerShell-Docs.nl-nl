@@ -3,10 +3,10 @@ ms.date: 06/18/2019
 keywords: Power shell, cmdlet
 title: Meer informatie over PowerShell
 ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416742"
 ---
 # <a name="more-powershell-learning"></a>Meer informatie over PowerShell
@@ -21,11 +21,11 @@ Naast de Help die beschikbaar is op de opdracht regel, bieden de volgende bronne
 - [De hey, Scripting Guy! Blog](https://devblogs.microsoft.com/scripting/) artikelen worden gebaseerd op scenario's en op een aantrekkelijke en levendige manier geschreven.
 - Hebt u vragen over het gebruik van Power shell? Maak verbinding met honderden mensen die vergelijk bare belangen hebben in een van de vele community-forums die worden vermeld op de pagina [Power shell Community](/powershell/#pivot=main&panel=community) .
 
-## <a name="channel-9-videos"></a>Channel 9-Video's
+## <a name="channel-9-videos"></a>Channel 9-video's
 
 Channel 9 is ons video publicatie platform. Er zijn honderden Video's over Power shell beschikbaar. [Zoek naar Power shell](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) om te zien welke Video's er beschikbaar zijn.
 
-### <a name="microsoft-virtual-academy"></a>Micro soft Virtual Academy
+### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 
 De Video's van de micro soft Virtual Academy zijn verplaatst naar Channel 9.
 

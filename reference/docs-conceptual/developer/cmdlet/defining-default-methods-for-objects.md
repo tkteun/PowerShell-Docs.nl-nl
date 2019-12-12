@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
 ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356404"
 ---
 # <a name="defining-default-methods-for-objects"></a>Standaardmethoden voor objecten definiëren
@@ -21,7 +21,7 @@ Wanneer u .NET Framework objecten uitbreidt, kunt u code methoden en script meth
 De XML die wordt gebruikt voor het definiëren van deze methoden, wordt beschreven in de volgende secties.
 
 > [!NOTE]
-> De voor beelden in de volgende secties zijn afkomstig uit het bestand `Types.ps1xml` in de installatiemap van Windows Power shell (`$PSHOME`). Zie [about types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)voor meer informatie.
+> De voor beelden in de volgende secties zijn afkomstig uit het `Types.ps1xml` typen bestand in de installatiemap van Windows Power shell (`$PSHOME`). Zie [about types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)voor meer informatie.
 
 ## <a name="code-methods"></a>Code methoden
 

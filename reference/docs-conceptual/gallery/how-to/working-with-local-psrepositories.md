@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: Werken met lokale PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328831"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Werken met lokale PowerShellGet-opslag plaatsen
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u een lokale Power shell-opslag plaats inste
 
 ## <a name="local-repository-types"></a>Typen lokale opslag plaats
 
-Er zijn twee manieren om een lokale PSRepository te maken: NuGet-server of bestands share. Elk type heeft voor-en nadelen:
+Er zijn twee manieren om een lokale PSRepository: NuGet-server of-bestands share te maken. Elk type heeft voor-en nadelen:
 
 NuGet-server
 
@@ -31,10 +31,10 @@ NuGet-server
 | --- | --- |
 | PowerShellGallery-functionaliteit nauw keurig nabootsen | Voor een app met meerdere lagen is ondersteuning van Operations-Planning & |
 | NuGet kan worden geïntegreerd met Visual Studio, andere hulpprogram ma's | Het verificatie model en het NuGet-account beheer zijn vereist |
-| NuGet biedt ondersteuning voor `.Nupkg` meta gegevens in pakketten | Voor publiceren is API-sleutel beheer & onderhoud vereist |
+| NuGet biedt ondersteuning voor meta gegevens in `.Nupkg`-pakketten | Voor publiceren is API-sleutel beheer & onderhoud vereist |
 | Biedt zoeken, pakket beheer, enzovoort. | |
 
-Bestands share
+Bestandsshare
 
 | Voordelen| Nadelen |
 | --- | --- |
@@ -60,7 +60,7 @@ Zorg ervoor dat uw gebruikers machtigingen hebben voor toegang tot de bestands s
 
 ## <a name="registering-a-local-repository"></a>Een lokale opslag plaats registreren
 
-Voordat een opslag plaats kan worden gebruikt, moet deze worden geregistreerd met `Register-PSRepository` behulp van de opdracht.
+Voordat een opslag plaats kan worden gebruikt, moet deze worden geregistreerd met behulp van de `Register-PSRepository` opdracht.
 In de onderstaande voor beelden wordt de **InstallationPolicy** ingesteld op *vertrouwd*, op de veronderstelling dat u uw eigen opslag plaats vertrouwt.
 
 ```powershell
@@ -94,11 +94,11 @@ Zodra u de lokale PSRepository hebt geregistreerd, kunt u publiceren naar uw lok
 
 ### <a name="publishing-a-module-you-authored"></a>Een module publiceren die u hebt gemaakt
 
-Gebruik `Publish-Module` en`Publish-Script` om uw module te publiceren op uw lokale PSRepository op dezelfde manier als voor de PowerShell Gallery.
+Gebruik `Publish-Module` en `Publish-Script` voor het publiceren van uw module naar uw lokale PSRepository op dezelfde manier als voor de PowerShell Gallery.
 
 - De locatie voor de code opgeven
 - Een API-sleutel opgeven
-- Geef de naam van de opslag plaats op. Bijvoorbeeld: `-PSRepository LocalPSRepo`
+- Geef de naam van de opslag plaats op. bijvoorbeeld `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > U moet een account maken op de NuGet-server en u vervolgens aanmelden om de API-sleutel te genereren en op te slaan.
@@ -144,11 +144,11 @@ Het implementeren van PowerShellGet is moeilijk in omgevingen waarin de verbindi
 Als u een offline-implementatie wilt Boots trappen, moet u het volgende doen:
 
 - Down load en installeer de OfflinePowerShellGetDeploy uw systeem met Internet verbinding en uw niet-verbonden systemen
-- PowerShellGet en de bijbehorende afhankelijkheden downloaden op het met internet verbonden systeem `Save-PowerShellGetForOffline` met behulp van de cmdlet
+- PowerShellGet en de bijbehorende afhankelijkheden downloaden op het met internet verbonden systeem met behulp van de cmdlet `Save-PowerShellGetForOffline`
 - PowerShellGet en de bijbehorende afhankelijkheden kopiëren van het systeem dat is verbonden met internet naar het niet-verbonden systeem
 - Gebruik de `Install-PowerShellGetOffline` op het niet-verbonden systeem om PowerShellGet en de bijbehorende afhankelijkheden in de juiste mappen te plaatsen
 
-De volgende opdrachten gebruiken `Save-PowerShellGetForOffline` om alle onderdelen in een map te plaatsen`f:\OfflinePowerShellGet`
+De volgende opdrachten gebruiken `Save-PowerShellGetForOffline` om alle onderdelen in een map te plaatsen `f:\OfflinePowerShellGet`
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -161,7 +161,7 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Save-PowerShellGetForOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-Op dit moment moet u de inhoud van `F:\OfflinePowerShellGet` beschikbaar maken voor uw niet-verbonden systemen. Voer de `Install-PowerShellGetOffline` cmdlet uit om PowerShellGet op het niet-verbonden systeem te installeren.
+Op dit moment moet u de inhoud van `F:\OfflinePowerShellGet` beschikbaar maken voor uw niet-verbonden systemen. Voer de `Install-PowerShellGetOffline`-cmdlet uit om PowerShellGet op het niet-verbonden systeem te installeren.
 
 > [!NOTE]
 > Het is belang rijk dat u PowerShellGet in de Power shell-sessie niet uitvoert voordat u deze opdrachten uitvoert. Zodra PowerShellGet in de sessie is geladen, kunnen de onderdelen niet worden bijgewerkt. Als u PowerShellGet per ongeluk start, sluit u Power shell af en start u het opnieuw.

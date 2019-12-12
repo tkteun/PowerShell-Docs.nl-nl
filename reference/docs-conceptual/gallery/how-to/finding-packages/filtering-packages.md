@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Zoek resultaten filteren
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328866"
 ---
 # <a name="filtering-search-results"></a>Zoek resultaten filteren
@@ -30,9 +30,9 @@ Met de selectie vakjes in de vervolg keuzelijst kunnen gebruikers de resultaten 
   - Module
   - Script
 - Categories
-  - Cmdlet
+  - De cmdlet
   - DSC-resource
-  - Function
+  - Functie
   - Functie mogelijkheid
   - Werkstroom
 
@@ -41,7 +41,7 @@ Als u alleen scripts wilt weer geven in de PowerShell Gallery, controleert u het
 
 > [!NOTE]
 > Filters zijn inclusief.
-> Voorbeeld: Er wordt een pakket met cmdlets en functies weer gegeven als de cmdlet of functie (of beide) is ingeschakeld.
+> Voor beeld: een pakket met cmdlets en functies wordt weer gegeven als de cmdlet of functie (of beide) is ingeschakeld.
 > Als geen van beide is geselecteerd, wordt het pakket niet weer gegeven.
 > Als alle categorieën zijn geselecteerd, worden alleen pakketten met een van deze categorieën weer gegeven.
 > **Pakketten die geen deel uitmaken van een van deze categorieën, worden niet weer gegeven.**

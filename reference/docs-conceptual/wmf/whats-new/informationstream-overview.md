@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Gegevensstroom
 ms.openlocfilehash: c54603cf0dd4f0b69f8147620130f9f29bc3e5ec
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145038"
 ---
 # <a name="information-stream"></a>Gegevensstroom
 
-Power shell 5,0 voegt een nieuwe gestructureerde **informatie** stroom toe voor het verzenden van gestructureerde gegevens tussen een script en de host. `Write-Host`is ook bijgewerkt met het verzenden van de uitvoer naar de **informatie** stroom waar u deze nu kunt vastleggen of stilte. De nieuwe `Write-Information` cmdlet die wordt gebruikt met de algemene para meters **InformationVariable** en **Information Action** biedt meer flexibiliteit en meer mogelijkheden.
+Power shell 5,0 voegt een nieuwe gestructureerde **informatie** stroom toe voor het verzenden van gestructureerde gegevens tussen een script en de host. `Write-Host` is ook bijgewerkt met het verzenden van de uitvoer naar de **informatie** stroom waar u deze nu kunt vastleggen of dempen. De nieuwe `Write-Information`-cmdlet die wordt gebruikt met de algemene para meters **InformationVariable** en **Information Action** , biedt meer flexibiliteit en mogelijkheden.
 
 De volgende functie maakt gebruik van cmdlets die gebruikmaken van de nieuwe **informatie** stroom.
 
@@ -53,14 +53,14 @@ I <3 Output
 SCRIPT COMPLETE!!
 ```
 
-De variabele heeft de proces informatie vastgelegd in de script variabele `$p`. `$r`
+De `$r`-variabele heeft de proces informatie vastgelegd in de script variabele `$p`.
 
 ```powershell
 $r.Id
 4008
 ```
 
-In tegens `Write-Host` telling tot de cmdlet kunt u met `Write-Information` de para meter **InformationVariable** van de uitvoer vastleggen in een variabele. Met behulp van de- **tag**kunt u afzonderlijke kanalen maken voor het bericht dat naar de **informatie** stroom wordt verzonden.
+In tegens telling tot de cmdlet `Write-Host`, kunt u met de para meter **InformationVariable** van `Write-Information` de uitvoer in een variabele vastleggen. Met behulp van de- **tag**kunt u afzonderlijke kanalen maken voor het bericht dat naar de **informatie** stroom wordt verzonden.
 
 ```powershell
 $r = OutputGusher -InformationVariable iv

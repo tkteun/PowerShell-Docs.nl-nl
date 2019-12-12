@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuraties doorvoeren
 ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941731"
 ---
 # <a name="enacting-configurations"></a>Configuraties doorvoeren
@@ -15,20 +15,20 @@ ms.locfileid: "71941731"
 
 Er zijn twee manieren om de configuraties van desired state Configuration (DSC) van Power shell te nemen: push-modus en pull-modus.
 
-## <a name="push-mode"></a>Push modus
+## <a name="push-mode"></a>Push-modus
 
-![Push modus]de werking van de(../images/pushModel.png "push modus")
+![Push modus](../images/pushModel.png "De werking van de push modus")
 
 De push modus verwijst naar een gebruiker die actief een configuratie toepast op een doel knooppunt door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.
 
 Nadat u een configuratie hebt gemaakt en gecompileerd, kunt u deze in de push-modus Toep assen door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen en de para meter-Path van de cmdlet in te stellen op het pad waar de configuratie-MOF zich bevindt.
 Als de configuratie-MOF zich bijvoorbeeld bevindt op `C:\DSC\Configurations\localhost.mof`, past u deze toe op de lokale computer met de volgende opdracht: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __Opmerking__: DSC voert een configuratie standaard uit als achtergrond taak. Als u de configuratie interactief wilt uitvoeren, roept u [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan met de __-wait__ -para meter.
+> __Opmerking__: standaard voert DSC een configuratie uit als achtergrond taak. Als u de configuratie interactief wilt uitvoeren, roept u [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan met de __-wait__ -para meter.
 
 ## <a name="pull-mode"></a>Pull-modus
 
-![PULL-modus]met de werking van de(../images/pullModel.png "PULL-modus")
+![Pull-modus](../images/pullModel.png "Hoe werkt de pull-modus?")
 
 Pull-clients worden in de pull-modus geconfigureerd om de gewenste status configuraties te verkrijgen van een externe pull-service.
 Op dezelfde manier is de pull-service ingesteld voor het hosten van de DSC-service en is deze ingericht met de configuraties en resources die vereist zijn voor de pull-clients.

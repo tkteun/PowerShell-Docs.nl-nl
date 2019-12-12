@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: wmf,powershell,installeren
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71145248"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -16,7 +16,7 @@ Windows Management Framework (WMF) biedt een consistente beheer interface voor W
 WMF-installatie voegt de volgende functies toe en/of werkt deze bij:
 
 - Windows PowerShell
-- Windows Power shell desired state Configuration (DSC)
+- Windows PowerShell Desired State Configuration (DSC)
 - Windows Power shell Integrated Scripting Environment (ISE)
 - Windows Remote Management (WinRM)
 - Windows Management Instrumentation (WMI)
@@ -51,8 +51,8 @@ Raadpleeg de onderstaande koppelingen voor meer informatie over verschillende ui
 | Windows Server 2003<br>*Geen ondersteuning meer* |              |                             |              |              | Ja          |
 | Windows XP<br>*Geen ondersteuning meer*          |              |                             |              | Ja          | Ja          |
 
-- **Verzonden in doos**: De functies van de opgegeven versie van WMF zijn verzonden in de aangegeven versie van Windows-client of Windows Server.
-- **Niet meer ondersteund**: Deze producten worden niet meer ondersteund door micro soft. U moet een upgrade uitvoeren naar een nieuwe versie die wordt ondersteund. Zie de pagina [micro soft Lifecycle-beleid][] voor meer informatie.
+- Wordt **meegeleverd in box**: de functies van de opgegeven versie van WMF zijn verzonden in de aangegeven versie van Windows-client of Windows Server.
+- **Niet meer beschikbaar: deze**producten worden niet meer ondersteund door micro soft. U moet een upgrade uitvoeren naar een nieuwe versie die wordt ondersteund. Zie de pagina [micro soft Lifecycle-beleid][] voor meer informatie.
 
 > [!NOTE]
 > Het installatie programma voor WMF 5,0 is niet meer beschikbaar of wordt niet ondersteund. Het is vervangen door WMF 5,1.

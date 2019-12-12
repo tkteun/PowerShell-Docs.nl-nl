@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352358"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snelstartgids voor Windows PowerShell-providers
@@ -21,7 +21,7 @@ In dit onderwerp wordt uitgelegd hoe u een Windows Power shell-provider maakt me
 
 ## <a name="writing-a-basic-provider"></a>Een Basic-provider schrijven
 
-De belangrijkste functionaliteit van een Windows Power shell-provider is het maken en verwijderen van stations. In dit voor beeld implementeren we de methoden [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) en [System. Management. Automation. provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) van de [ Klasse System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . U zult ook zien hoe u een provider klasse declareert.
+De belangrijkste functionaliteit van een Windows Power shell-provider is het maken en verwijderen van stations. In dit voor beeld implementeren we de methoden [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) en [System. Management. Automation. provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) van de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . U zult ook zien hoe u een provider klasse declareert.
 
 Wanneer u een provider schrijft, kunt u standaard stations opgeven die automatisch worden gemaakt wanneer de provider beschikbaar is. U definieert ook een methode voor het maken van nieuwe stations die gebruikmaken van deze provider.
 
@@ -35,7 +35,7 @@ Maak in Visual Studio een Class Library-project met de naam AccessDBProviderSamp
 
 1. Voeg de assembly System. Management. Automation toe als referentie voor uw project.
 
-2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing**. Klik in **Start project**op **extern programma starten**en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\windows\system32\windowspowershell\ v1.0\\.powershell.exe).
+2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing**. Klik in **Start project**op **extern programma starten**en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\Windows\System32\WindowsPowerShell\v1.0\\. Power shell. exe).
 
 3. Onder **Start opties**typt u het volgende in het vak **opdracht regel argumenten** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -43,7 +43,7 @@ Maak in Visual Studio een Class Library-project met de naam AccessDBProviderSamp
 
 Onze provider is afgeleid van de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . De meeste providers die echte functionaliteit bieden (het openen en bewerken van items, het navigeren door het gegevens archief en het ophalen en instellen van de inhoud van items), zijn afgeleid van de [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -klasse.
 
-Naast het opgeven dat de klasse is afgeleid van [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), moet u deze versie verf Raaien met [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) , zoals weer gegeven in het voor beeld .
+Naast het opgeven dat de klasse is afgeleid van [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), moet u deze versie verf Raaien met [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) , zoals weer gegeven in het voor beeld.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -67,9 +67,9 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>NewDrive implementeren
 
-De methode [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) wordt aangeroepen door de Windows Power shell-engine wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) aanroept, waarbij de naam van uw providers. De para meter PSDriveInfo wordt door gegeven door de Windows Power shell-engine en de methode retourneert het nieuwe station naar de Windows Power shell-engine. Deze methode moet worden gedeclareerd in de hierboven gemaakte klasse.
+De methode [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) wordt aangeroepen door de Windows Power shell-engine wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) aanroept en de naam van uw provider opgeeft. De para meter PSDriveInfo wordt door gegeven door de Windows Power shell-engine en de methode retourneert het nieuwe station naar de Windows Power shell-engine. Deze methode moet worden gedeclareerd in de hierboven gemaakte klasse.
 
-De methode controleert eerst of zowel het object drive als de hoofdmap van het station die zijn door gegeven, bestaat en `null` retour neren als dat niet het geval is. Vervolgens wordt een constructor van de interne klasse AccessDBPSDriveInfo gebruikt voor het maken van een nieuwe schijf en een verbinding met de Access-Data Base die op het station staat.
+Met de methode wordt eerst gecontroleerd of zowel het object station als de hoofdmap van het station die zijn door gegeven, bestaan, `null` retour neren als een van beide. Vervolgens wordt een constructor van de interne klasse AccessDBPSDriveInfo gebruikt voor het maken van een nieuwe schijf en een verbinding met de Access-Data Base die op het station staat.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

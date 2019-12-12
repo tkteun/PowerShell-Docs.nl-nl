@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
 caps.latest.revision: 11
 ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355277"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>Het element CustomEntries voor CustomControl voor Weergave (opmaak)
@@ -51,7 +51,7 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-In de meeste gevallen heeft een besturings element slechts één definitie, die is gedefinieerd in één `CustomEntry`-element. Het is echter mogelijk om meerdere definities te hebben als u hetzelfde besturings element wilt gebruiken om verschillende .NET-objecten weer te geven. In dergelijke gevallen kunt u een `CustomEntry`-element definiëren voor elk object of set met objecten.
+In de meeste gevallen heeft een besturings element slechts één definitie, die in één `CustomEntry` element is gedefinieerd. Het is echter mogelijk om meerdere definities te hebben als u hetzelfde besturings element wilt gebruiken om verschillende .NET-objecten weer te geven. In dergelijke gevallen kunt u een `CustomEntry` element definiëren voor elk object of set met objecten.
 
 ## <a name="see-also"></a>Zie ook
 

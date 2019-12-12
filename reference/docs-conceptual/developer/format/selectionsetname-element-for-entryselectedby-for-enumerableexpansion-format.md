@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
 caps.latest.revision: 8
 ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358857"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>Het element SelectionSetName voor EntrySelectedBy voor EnumerableExpansion (opmaak)
@@ -46,7 +46,7 @@ Geen.
 |-------------|-----------------|
 |[EntrySelectedBy-element voor EnumerableExpansion (indeling)](./entryselectedby-element-for-enumerableexpansion-format.md)|Hiermee definieert u de .NET-verzamelings objecten die door deze definitie worden uitgevouwen.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de selectieset.
 

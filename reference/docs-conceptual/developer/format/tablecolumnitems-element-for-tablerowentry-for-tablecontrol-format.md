@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
 ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353688"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>Het element TableColumnItems voor TableRowEntry voor TableControl (opmaak)
@@ -51,13 +51,13 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Voor elke kolom van de rij is een `TableColumnItem`-element vereist. De eerste vermelding wordt weer gegeven in de eerste kolom, de tweede vermelding in de tweede kolom, enzovoort.
+Een `TableColumnItem`-element is vereist voor elke kolom van de rij. De eerste vermelding wordt weer gegeven in de eerste kolom, de tweede vermelding in de tweede kolom, enzovoort.
 
 Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `TableColumnItems`-element dat drie eigenschappen van het [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -object definieert.
+In het volgende voor beeld ziet u een `TableColumnItems`-element dat drie eigenschappen van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) definieert.
 
 ```xml
 <TableColumnItems>

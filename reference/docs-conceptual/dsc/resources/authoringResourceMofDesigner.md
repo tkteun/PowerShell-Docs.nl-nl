@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Het hulp programma resource Designer gebruiken
 ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941178"
 ---
 # <a name="using-the-resource-designer-tool"></a>Het hulp programma resource Designer gebruiken
@@ -17,16 +17,16 @@ Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven d
 In dit onderwerp gaan we een DSC-resource maken die Active Directory gebruikers beheert.
 Gebruik de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) om de **xDscResourceDesigner** -module te installeren.
 
->**Opmerking**: **Install-module** is opgenomen in de **PowerShellGet** -module, die is opgenomen in Power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+>**Opmerking**: **install-module** is opgenomen in de **PowerShellGet** -module, die is opgenomen in Power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 
 ## <a name="creating-resource-properties"></a>Resource-eigenschappen maken
 Het eerste wat u moet doen, is beslissen over eigenschappen die de resource beschikbaar maakt. In dit voor beeld wordt een Active Directory gebruiker gedefinieerd met de volgende eigenschappen.
 
 Parameter naam beschrijving
-* **Gebruikers naam**: Een sleutel eigenschap waarmee een gebruiker uniek wordt aangeduid.
-* **Zorg ervoor dat**: Hiermee geeft u op of het gebruikers account aanwezig of afwezig moet zijn. Deze para meter heeft slechts twee mogelijke waarden.
-* **DomainCredential**: Het domein wachtwoord voor de gebruiker.
-* **Wacht woord**: Het gewenste wacht woord voor de gebruiker, zodat een configuratie het gebruikers wachtwoord zo nodig kan wijzigen.
+* **Gebruikers naam**: sleutel eigenschap die een unieke identificatie vormt van een gebruiker.
+* **Zorg ervoor**: Hiermee geeft u op of het gebruikers account aanwezig of afwezig moet zijn. Deze para meter heeft slechts twee mogelijke waarden.
+* **DomainCredential**: het domein wachtwoord voor de gebruiker.
+* **Wacht woord**: het gewenste wacht woord voor de gebruiker, zodat een configuratie het gebruikers wachtwoord zo nodig kan wijzigen.
 
 We gebruiken de cmdlet **New-xDscResourceProperty** om de eigenschappen te maken. De volgende Power shell-opdrachten maken de eigenschappen die hierboven worden beschreven.
 
@@ -47,7 +47,7 @@ New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCred
 
 Met de cmdlet **New-xDscResource** maakt u het MOF-schema, een skelet bron script, de vereiste Directory structuur voor uw nieuwe bron en een manifest voor de module die de nieuwe resource beschikbaar stelt.
 
-Het MOF-schema bestand bevindt zich in **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.MOF**en de inhoud is als volgt.
+Het MOF-schema bestand bevindt zich in **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. schema. MOF**en de inhoud ervan.
 
 ```
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
@@ -60,7 +60,7 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Het bron script bevindt zich in **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**. Het bevat niet de werkelijke logica voor het implementeren van de resource, die u zelf moet toevoegen. De inhoud van het skelet script is als volgt.
+Het bron script bevindt zich in **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. psm1**. Het bevat niet de werkelijke logica voor het implementeren van de resource, die u zelf moet toevoegen. De inhoud van het skelet script is als volgt.
 
 ```powershell
 function Get-TargetResource

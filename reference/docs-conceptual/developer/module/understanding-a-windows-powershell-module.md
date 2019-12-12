@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352862"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Inzicht in een Windows PowerShell-module
@@ -51,11 +51,11 @@ Net als bij script modules kunt u een manifest bestand toevoegen om aanvullende 
 
 ### <a name="manifest-modules"></a>Manifest modules
 
-Een *manifest module* is een module die gebruikmaakt van een manifest bestand om alle onderdelen ervan te beschrijven, maar heeft geen sortering van de kern assemblage of het script. (Formeel, een manifest module laat het `ModuleToProcess`-of `RootModule`-element van het manifest leeg.) U kunt echter nog steeds gebruikmaken van de andere functies van een module, zoals de mogelijkheid om afhankelijke assembly's te laden of om automatisch bepaalde pre-verwerkings scripts uit te voeren. U kunt ook een manifest module gebruiken als een handige manier om resources te verpakken die andere modules gebruiken, zoals geneste modules, assembly's, typen of indelingen. Zie [een Power shell-module manifest schrijven](./how-to-write-a-powershell-module-manifest.md)voor meer informatie.
+Een *manifest module* is een module die gebruikmaakt van een manifest bestand om alle onderdelen ervan te beschrijven, maar heeft geen sortering van de kern assemblage of het script. (Formeel, een manifest module laat het `ModuleToProcess`-of `RootModule` element van het manifest leeg.) U kunt echter nog steeds gebruikmaken van de andere functies van een module, zoals de mogelijkheid om afhankelijke assembly's te laden of om automatisch bepaalde pre-verwerkings scripts uit te voeren. U kunt ook een manifest module gebruiken als een handige manier om resources te verpakken die andere modules gebruiken, zoals geneste modules, assembly's, typen of indelingen. Zie [een Power shell-module manifest schrijven](./how-to-write-a-powershell-module-manifest.md)voor meer informatie.
 
 ### <a name="dynamic-modules"></a>Dynamische modules
 
-Een *dynamische module* is een module die niet is geladen vanuit of opgeslagen in een bestand. In plaats daarvan worden ze dynamisch gemaakt door een script met behulp van de cmdlet [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Met dit type module kan een script een module op aanvraag maken die niet hoeft te worden geladen of opgeslagen in permanente opslag. Een dynamische module is door zijn aard bedoeld om kort te worden bewaard en kan daarom niet worden gebruikt door de cmdlet `Get-Module`. Normaal gesp roken hebben ze doorgaans geen module manifesten nodig en hebben ze waarschijnlijk permanente mappen nodig om hun gerelateerde assembly's op te slaan.
+Een *dynamische module* is een module die niet is geladen vanuit of opgeslagen in een bestand. In plaats daarvan worden ze dynamisch gemaakt door een script met behulp van de cmdlet [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Met dit type module kan een script een module op aanvraag maken die niet hoeft te worden geladen of opgeslagen in permanente opslag. Een dynamische module is door zijn aard bedoeld om kort te worden bewaard en is daarom niet toegankelijk via de cmdlet `Get-Module`. Normaal gesp roken hebben ze doorgaans geen module manifesten nodig en hebben ze waarschijnlijk permanente mappen nodig om hun gerelateerde assembly's op te slaan.
 
 ## <a name="module-manifests"></a>Module manifesten
 
@@ -85,13 +85,13 @@ Een *module manifest* is een. psd1-bestand dat een hash-tabel bevat. De sleutels
 
 Zodra u een script-, binaire of manifest-module hebt gemaakt, kunt u uw werk opslaan op een locatie waar anderen toegang toe hebben. Uw module kan bijvoorbeeld worden opgeslagen in de systeemmap waarin Windows Power shell is geïnstalleerd, maar kan ook worden opgeslagen in een gebruikers map.
 
-Over het algemeen kunt u bepalen waar u uw module moet installeren met behulp van een van de paden die zijn opgeslagen in de variabele `$ENV:PSModulePath`. Als u een van deze paden gebruikt, kan Power shell automatisch uw module vinden en laden wanneer een gebruiker deze in hun code aanroept. Als u uw module ergens anders opslaat, kunt u de Power shell expliciet laten weten door de locatie van uw module als een para meter door te geven wanneer u `Install-Module` aanroept.
+Over het algemeen kunt u bepalen waar u uw module moet installeren met behulp van een van de paden die zijn opgeslagen in de variabele `$ENV:PSModulePath`. Als u een van deze paden gebruikt, kan Power shell automatisch uw module vinden en laden wanneer een gebruiker deze in hun code aanroept. Als u uw module ergens anders opslaat, kunt u de Power shell expliciet laten weten door de locatie van uw module als een para meter door te geven wanneer u `Install-Module`aanroept.
 
 Ongeacht het pad van de map wordt de *basis* van de module (erft type) genoemd, en de naam van het script-, binair-of manifest module bestand moet hetzelfde zijn als de naam van de module-map, met de volgende uitzonde ringen:
 
-- Dynamische modules die worden gemaakt door de cmdlet `New-Module` kunnen worden benoemd met de para meter `Name` van de cmdlet.
+- Dynamische modules die door de cmdlet `New-Module` worden gemaakt, kunnen worden benoemd met de para meter `Name` van de cmdlet.
 
-- Modules die worden geïmporteerd uit assembly-objecten met de **`Import-Module`-assembly** -opdracht worden benoemd volgens de volgende syntaxis: `"dynamic_code_module_" + assembly.GetName()`.
+- Modules die worden geïmporteerd uit assembly-objecten door de **`Import-Module`-assembly-** opdracht worden benoemd volgens de volgende syntaxis: `"dynamic_code_module_" + assembly.GetName()`.
 
   Zie [een Power shell-module installeren](./installing-a-powershell-module.md) en het installatiepad voor [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md)voor meer informatie.
 

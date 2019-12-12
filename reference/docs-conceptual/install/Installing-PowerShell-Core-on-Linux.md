@@ -2,18 +2,18 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
 ms.date: 07/19/2019
-ms.openlocfilehash: 3159de2d64d9c473e00b58c9f9c52b6d1c7779af
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 9e92958eb6d9c7a6a76331103f42ecadeab978c1
+ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444397"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953803"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
-Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15 ][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]en [Arch Linux][arch].
+Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]en [Arch Linux][arch].
 
-Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks te implementeren met behulp van het Linux [`tar.gz`-archief][tar], maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
+Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks te implementeren met behulp van het Linux [`tar.gz` Archive][tar], maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
 
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal. Voer `pwsh-preview` uit als u een [Preview-versie](#installing-preview-releases)hebt geïnstalleerd.
 
@@ -23,6 +23,7 @@ Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat 
 [u1904]: #ubuntu-1904
 [deb8]: #debian-8
 [deb9]: #debian-9
+[deb10]: #debian-10
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
@@ -46,13 +47,13 @@ Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
 De volgende tabel bevat de opdrachten om de stabiele en preview-pakketten te installeren met behulp van de verschillende pakket beheerders:
 
-|Distributie (s)|Stabiele opdracht | Opdracht preview |
+|Distributie(s)|Stabiele opdracht | Opdracht preview |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1604"></a>Ubuntu 16,04
+## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via pakket opslagplaats-Ubuntu 16,04
 
@@ -91,7 +92,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i`-opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht, `apt-get install -f`, worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht, `apt-get install -f` deze problemen op te lossen, wordt de configuratie van het Power shell-pakket voltooid.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Installatie ongedaan maken-Ubuntu 16,04
 
@@ -99,7 +100,7 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1804"></a>Ubuntu 18,04
+## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via pakket opslagplaats-Ubuntu 18,04
 
@@ -141,7 +142,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i`-opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht, `apt-get install -f`, worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht, `apt-get install -f` deze problemen op te lossen, wordt de configuratie van het Power shell-pakket voltooid.
 
 ### <a name="uninstallation---ubuntu-1804"></a>Installatie ongedaan maken-Ubuntu 18,04
 
@@ -564,7 +565,7 @@ Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u 
 
 ### <a name="getting-snapd"></a>Bezig met uitlijnen
 
-`snapd` is vereist voor het uitvoeren van snaps. Gebruik [deze instructies](https://docs.snapcraft.io/core/install) om ervoor te zorgen dat `snapd` is geïnstalleerd.
+`snapd` is vereist voor het uitvoeren van snaps. Gebruik [deze instructies](https://docs.snapcraft.io/core/install) om er zeker van te zijn dat `snapd` is geïnstalleerd.
 
 ### <a name="installation-via-snap"></a>Installatie via snap
 
@@ -592,7 +593,7 @@ pwsh-preview
 
 Na de installatie wordt de module automatisch bijgewerkt. U kunt een upgrade activeren met behulp van `sudo snap refresh powershell` of `sudo snap refresh powershell-preview`.
 
-### <a name="uninstallation"></a>Verwijderen
+### <a name="uninstallation"></a>Installatie ongedaan maken
 
 ```sh
 sudo snap remove powershell
@@ -677,7 +678,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-U kunt desgewenst een symbolische koppeling maken om Power shell te starten zonder het pad naar het binaire `pwsh` op te geven.
+U kunt desgewenst een symbolische koppeling maken om Power shell te starten zonder het pad naar de `pwsh` binaire waarde op te geven.
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -697,19 +698,19 @@ rm -rf ~/powershell
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-Voor Linux-platforms zijn binaire Power shell-`tar.gz`-archieven beschikbaar om geavanceerde implementatie scenario's mogelijk te maken.
+Er zijn binaire Power shell-`tar.gz` archieven beschikbaar voor Linux-platforms om geavanceerde implementatie scenario's mogelijk te maken.
 
-### <a name="dependencies"></a>Elkaar
+### <a name="dependencies"></a>Afhankelijkheden
 
 Power shell bouwt draag bare binaire bestanden voor alle Linux-distributies. .NET core runtime vereist echter andere afhankelijkheden voor verschillende distributies en Power Shell heeft ook.
 
 In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel worden ondersteund op verschillende Linux-distributies.
 
-| Besturingssysteem                 | Elkaar |
+| Besturingssysteem                 | Afhankelijkheden |
 | ------------------ | ------------ |
-| Ubuntu 16,04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
 | Ubuntu 17,10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |
-| Ubuntu 18,04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu60 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu52 |
 | Debian 9 (stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | afwikkeling, libkrul, openssl-Bibliotheken, libicu |
@@ -717,7 +718,7 @@ In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel w
 | openSUSE Schrikkel 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | afwikkeling, libkrul, openssl-Bibliotheken, libicu, compat-openssl10 |
 
-Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die niet officieel worden ondersteund, moet u in afzonderlijke stappen de vereiste afhankelijkheden voor het doel besturingssysteem installeren. Zo installeert onze [Amazon Linux dockerfile][amazon-dockerfile] eerst afhankelijkheden en extraheert vervolgens het archief Linux `tar.gz`.
+Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die niet officieel worden ondersteund, moet u in afzonderlijke stappen de vereiste afhankelijkheden voor het doel besturingssysteem installeren. Zo installeert onze [Amazon Linux dockerfile][amazon-dockerfile] eerst afhankelijkheden en extraheert vervolgens het Linux `tar.gz`-archief.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -752,10 +753,10 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 * `$PSHOME` is `/opt/microsoft/powershell/6.2.0/`
 * Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
-* Standaard profielen worden gelezen van `$PSHOME/profile.ps1`
-* Gebruikers modules worden gelezen van `~/.local/share/powershell/Modules`
+* Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
+* Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
 * Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
-* Standaard modules worden gelezen van `$PSHOME/Modules`
+* Standaard modules worden gelezen uit `$PSHOME/Modules`
 * De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` op dezelfde locatie bestaan.

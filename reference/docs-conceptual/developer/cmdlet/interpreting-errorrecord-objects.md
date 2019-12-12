@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356215"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord-objecten interpreteren
 
 In de meeste gevallen vertegenwoordigt het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) een niet-afsluit bare fout die is gegenereerd door een opdracht of script. Bij het beëindigen van fouten kunt u ook de aanvullende gegevens in een ErrorRecord opgeven via de interface [System. Management. Automation. Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) .
 
-Als u een foutafhandelingsroutine in uw script of een host wilt schrijven voor het verwerken van specifieke fouten die optreden tijdens het uitvoeren van de opdracht of het script, moet u het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) interpreteren om te bepalen of het de klasse van bevat de fout die u wilt verwerken.
+Als u een foutafhandelingsroutine in uw script of een host wilt schrijven voor het verwerken van specifieke fouten die optreden tijdens het uitvoeren van de opdracht of het script, moet u het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) interpreteren om te bepalen of het de fout klasse vertegenwoordigt die u wilt verwerken.
 
 Wanneer een cmdlet een afsluitende of niet-afsluit fout tegen komt, moet er een fout record worden gemaakt waarin de fout voorwaarde wordt beschreven. De hosttoepassing moet deze fout records onderzoeken en elke actie uitvoeren die de fout vermindert. De hosttoepassing moet ook fout records onderzoeken voor niet-afsluit fouten waarvoor een record niet kan worden verwerkt, maar wel kunnen door gaan, en er moeten fout records worden onderzocht voor afsluit fouten waardoor de pijp lijn is gestopt.
 

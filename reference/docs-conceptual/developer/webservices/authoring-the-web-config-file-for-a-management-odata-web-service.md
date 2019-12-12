@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352267"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Het Web.config-bestand maken voor een Management OData-webservice
 
-Voordat u de Management OData-webservice kunt implementeren, moet u het bestand Web. config configureren om te verwijzen naar de XML-schema bestanden en de Dll's die de [micro soft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) implementeren en [ System. Management. Automation. Remoting. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -interfaces.
+Voordat u de Management OData-webservice kunt implementeren, moet u het bestand Web. config zodanig configureren dat deze verwijst naar de XML-schema bestanden en de Dll's die de [micro soft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -en [System. Management. Automation. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -interfaces implementeren.
 
 ## <a name="sample-config-file"></a>Voorbeeld configuratie bestand
 

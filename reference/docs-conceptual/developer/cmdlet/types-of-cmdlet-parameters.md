@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
 ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359178"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typen cmdlet-parameters
@@ -23,7 +23,7 @@ In dit onderwerp worden de verschillende typen para meters beschreven die u in c
 
 Alle cmdlet-para meters hebben de naam of positionele para meters. Voor een benoemde para meter moet u de parameter naam en het argument typen bij het aanroepen van de cmdlet. Een positionele para meter vereist alleen dat u de argumenten in relatieve volg orde typt. Het systeem wijst vervolgens het eerste ongenoemde argument toe aan de eerste positie parameter. Het systeem wijst het tweede ongenoemde argument toe aan de tweede niet-genaamde para meter, enzovoort. Standaard zijn alle cmdlet-para meters benoemde para meters.
 
-Als u een benoemde para meter wilt definiëren, laat u het sleutel woord `Position` in de declaratie van het **parameter** kenmerk weg, zoals wordt weer gegeven in de volgende parameter declaratie.
+Als u een benoemde para meter wilt definiëren, laat u het sleutel woord `Position` weg in de declaratie van het **parameter** kenmerk, zoals wordt weer gegeven in de volgende parameter declaratie.
 
 ```csharp
 [Parameter(ValueFromPipeline=true)]
@@ -35,7 +35,7 @@ public string UserName
 private string userName;
 ```
 
-Als u een positionele para meter wilt definiëren, voegt u het sleutel woord `Position` toe aan de declaratie van het parameter kenmerk en geeft u een positie op. In het volgende voor beeld wordt de para meter `UserName` gedeclareerd als een positionele para meter met positie 0. Dit betekent dat het eerste argument van de aanroep automatisch wordt gebonden aan deze para meter.
+Als u een positionele para meter wilt definiëren, voegt u het sleutel woord `Position` toe aan de declaratie van het parameter kenmerk en geeft u een positie op. In het volgende voor beeld wordt de para meter `UserName` gedeclareerd als positionele para meter met positie 0. Dit betekent dat het eerste argument van de aanroep automatisch wordt gebonden aan deze para meter.
 
 ```csharp
 [Parameter(Position = 0)]
@@ -52,7 +52,7 @@ private string userName;
 
 Positionele en benoemde para meters accepteren enkelvoudige argumenten of meerdere argumenten, gescheiden door komma's. Meerdere argumenten zijn alleen toegestaan als de para meter een verzameling accepteert, zoals een matrix met teken reeksen. U kunt positionele en benoemde para meters in dezelfde cmdlet combi neren. In dit geval haalt het systeem eerst de benoemde argumenten op en probeert vervolgens de resterende niet-benoemde argumenten toe te wijzen aan de positionele para meters.
 
-De volgende opdrachten tonen de verschillende manieren waarop u één en meerdere argumenten kunt opgeven voor de para meters van de cmdlet `Get-Command`. U ziet dat in de laatste twee voor beelden, **-name** , niet moet worden opgegeven omdat de para meter `Name` als positionele para meter is gedefinieerd.
+De volgende opdrachten tonen de verschillende manieren waarop u één en meerdere argumenten kunt opgeven voor de para meters van de cmdlet `Get-Command`. U ziet dat in de laatste twee voor beelden **-name** niet moet worden opgegeven omdat de para meter `Name` is gedefinieerd als een positionele para meter.
 
 ```powershell
 Get-Command -Name get-service
@@ -77,7 +77,7 @@ public string UserName
 private string userName;
 ```
 
-Als u een optionele para meter wilt definiëren, laat u het sleutel woord `Mandatory` in de declaratie van het **parameter** kenmerk weg, zoals wordt weer gegeven in de volgende parameter declaratie.
+Als u een optionele para meter wilt definiëren, laat u het sleutel woord `Mandatory` weg in de declaratie van het **parameter** kenmerk, zoals wordt weer gegeven in de volgende parameter declaratie.
 
 ```csharp
 [Parameter(Position = 0)]
@@ -93,9 +93,9 @@ private string userName;
 
 Windows Power shell biedt een [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) -type waarmee u een para meter kunt definiëren waarvan de waarde automatisch wordt ingesteld op `false` als de para meter niet wordt opgegeven wanneer de cmdlet wordt aangeroepen. Als dat mogelijk is, gebruikt u switch-para meters in plaats van Boole-para meters.
 
-Bekijk het volgende voor beeld. Verschillende Windows Power shell-cmdlets geven standaard geen uitvoer object omlaag in de pijp lijn. Deze cmdlets hebben echter een para meter `PassThru` die het standaard gedrag overschrijft. Als de para meter `PassThru` wordt opgegeven wanneer deze cmdlets worden aangeroepen, retourneert de cmdlet een uitvoer object naar de pijp lijn.
+Bekijk het volgende voor beeld. Verschillende Windows Power shell-cmdlets geven standaard geen uitvoer object omlaag in de pijp lijn. Deze cmdlets hebben echter een `PassThru` switch parameter die het standaard gedrag overschrijft. Als de para meter `PassThru` wordt opgegeven wanneer deze cmdlets worden aangeroepen, retourneert de cmdlet een uitvoer object naar de pijp lijn.
 
-Als u wilt dat de para meter de standaard waarde `true` heeft wanneer de para meter niet is opgegeven in de aanroep, overweeg dan om de gevoel van de para meter te omkeren. Voor het voor beeld moet u in plaats van het parameter kenmerk in te stellen op een Booleaanse waarde van `true`, de eigenschap declareren als het type [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) en vervolgens de standaard waarde van de para meter instellen op `false`.
+Als u de para meter nodig hebt om een standaard waarde van `true` te hebben wanneer de para meter niet is opgegeven in de aanroep, overweeg dan om de gevoel van de para meter te omkeren. Voor het voor beeld moet u in plaats van het parameter kenmerk in te stellen op een Booleaanse waarde van `true`, de eigenschap declareren als het type [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) en vervolgens de standaard waarde van de para meter instellen op `false`.
 
 Als u een para meter switch wilt definiëren, declareert u de eigenschap als het type [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) , zoals wordt weer gegeven in het volgende voor beeld.
 

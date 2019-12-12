@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356915"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-voorbeeldcode
@@ -21,11 +21,11 @@ Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sec
 
 > [!NOTE]
 > Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**.
-> Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map met voor beelden van Windows Power shell wordt aangeduid als **\<PowerShell-voor beelden >** .
+> Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map Windows Power shell-voor beelden wordt aangeduid als **\<Power shell-voor beelden >** .
 
 ## <a name="sample-code-listing"></a>Voorbeeld code weer geven
 
-|Voorbeeld code|Beschrijving|
+|Voorbeeldcode|Beschrijving|
 |-----------------|-----------------|
 |[Voor beeld van AccessDbProviderSample01-code](./accessdbprovidersample01-code-sample.md)|Dit is de provider die wordt beschreven in [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md).|
 |[Voor beeld van AccessDbProviderSample02-code](./accessdbprovidersample02-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md).|
@@ -33,13 +33,13 @@ Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sec
 |[Voor beeld van AccessDbProviderSample04-code](./accessdbprovidersample04-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md).|
 |[Voor beeld van AccessDbProviderSample05-code](./accessdbprovidersample05-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-navigatie provider maken](./creating-a-windows-powershell-navigation-provider.md).|
 |[Voor beeld van AccessDbProviderSample06-code](./accessdbprovidersample06-code-sample.md)|Dit is de provider die wordt beschreven in [een Windows Power shell-inhouds provider maken](./creating-a-windows-powershell-content-provider.md).|
-|[Voor beelden van GetProc01-code](./getproc01-code-samples.md)|Dit is het basis voorbeeld van het `Get-Process`-cmdlet dat wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md).|
-|[Voor beelden van GetProc02-code](./getproc02-code-samples.md)|Dit is het `Get-Process`-cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md).|
-|[Voor beelden van GetProc03-code](./getproc03-code-samples.md)|Dit is het `Get-Process`-cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
-|[Voor beelden van GetProc04-code](./getproc04-code-samples.md)|Dit is het `Get-Process`-cmdlet-voor beeld dat wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
+|[Voor beelden van GetProc01-code](./getproc01-code-samples.md)|Dit is het basis voorbeeld van `Get-Process` cmdlet dat wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md).|
+|[Voor beelden van GetProc02-code](./getproc02-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md).|
+|[Voor beelden van GetProc03-code](./getproc03-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
+|[Voor beelden van GetProc04-code](./getproc04-code-samples.md)|Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
 |[Voor beelden van GetProc05-code](./getproc05-code-samples.md)|Deze `Get-Process`-cmdlet is vergelijkbaar met de cmdlet die wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[Voor beelden van StopProc01-code](./stopproc01-code-samples.md)|Dit is het `Stop-Process`-cmdlet-voor beeld dat wordt beschreven in [een cmdlet maken die het systeem wijzigt](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[Voor beelden van StopProcessSample04-code](./stopprocesssample04-code-samples.md)|Dit is het `Stop-Process`-cmdlet-voor beeld dat wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[Voor beelden van StopProc01-code](./stopproc01-code-samples.md)|Dit is het `Stop-Process` cmdlet-voor beeld dat wordt beschreven in [een cmdlet maken die het systeem wijzigt](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
+|[Voor beelden van StopProcessSample04-code](./stopprocesssample04-code-samples.md)|Dit is het `Stop-Process` cmdlet-voor beeld dat wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
 |[Voor beelden van Runspace01-code](./runspace01-code-samples.md)|Dit zijn de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
 |[Voor beelden van Runspace02-code](./runspace02-code-samples.md)|In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om de `Get-Process`-cmdlet synchroon uit te voeren.|
 |[Voor beelden van RunSpace03-code](./runspace03-code-samples.md)|Dit zijn de code voorbeelden voor de runs Pace die wordt beschreven in een console toepassing maken die een opgegeven script uitvoert.|

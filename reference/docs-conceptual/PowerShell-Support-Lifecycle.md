@@ -3,17 +3,17 @@ title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
 ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416303"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
 Power shell Core is een afzonderlijke set hulpprogram ma's en onderdelen die los van Windows Power shell worden geleverd, geïnstalleerd en geconfigureerd. Power shell Core is dus niet opgenomen in de licentie overeenkomsten voor Windows 7/8.1/10 of Windows Server.
 
-Power shell core wordt echter ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [Premium][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
+Power shell core wordt echter ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [premier][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
 U kunt ook betalen voor [ondersteuning][] voor Power shell core door een ondersteunings aanvraag voor uw probleem te archiveren.
 
 ## <a name="community-support"></a>Community-ondersteuning
@@ -104,7 +104,7 @@ De distributie-eigen aren hebben daarom de volgende versies gestopt en worden ni
 | openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16,10   | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17,10   | [2018 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Ubuntu   | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 | Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
@@ -113,7 +113,7 @@ De distributie-eigen aren hebben daarom de volgende versies gestopt en worden ni
 
 Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licentie en zonder een betaalde ondersteunings overeenkomst zijn gebruikers beperkt tot [Community-ondersteuning][]van de community. Met ondersteuning van de Community biedt micro soft geen garanties voor reactie tijd of oplossingen.
 
-## <a name="windows-powershell-module"></a>Windows Power shell-module
+## <a name="windows-powershell-module"></a>Windows PowerShell Module
 
 Ondersteuning voor Power shell Core bevat geen product modules, tenzij deze modules expliciet Power shell core ondersteunen. Als u bijvoorbeeld de module `ActiveDirectory` gebruikt die wordt geleverd als onderdeel van Windows Server, is dit een niet-ondersteund scenario.
 
@@ -137,7 +137,7 @@ Add-WindowsPSModulePath
 
 [Experimentele functies][] zijn beperkt tot [ondersteuning](#community-support)van de community.
 
-[Premium]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [Community-ondersteuning]: https://github.com/powershell/powershell/issues

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een continue integratie en een pijp lijn voor continue implementatie bouwen met DSC
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942144"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Een continue integratie en een pijp lijn voor continue implementatie bouwen met DSC
@@ -91,7 +91,7 @@ Als u de Demo_CI opslag plaats nog niet hebt gekloond op uw client computer, doe
 > In dit voor beeld wordt de code in de `ci-cd-example` vertakking van het git-opslag plaats gebruikt.
 > Zorg ervoor dat u deze vertakking opgeeft als de standaard vertakking in uw TFS-project en voor de CI/CD-triggers die u maakt.
 
-## <a name="understanding-the-code"></a>Uitleg over de code
+## <a name="understanding-the-code"></a>De code begrijpen
 
 Voordat we de builds-en implementatie pijplijnen maken, kijken we naar een aantal code om te begrijpen wat er gebeurt.
 Open uw favoriete tekst editor op de client computer en ga naar de hoofdmap van uw Demo_CI Git-opslag plaats.

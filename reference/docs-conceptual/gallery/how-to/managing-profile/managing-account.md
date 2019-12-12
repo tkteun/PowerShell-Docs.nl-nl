@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328859"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
-Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-id, `user@hotmail.com` zoals `user@outlook.com`of of een Aad-account (Azure Active Directory).
+Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-ID, zoals `user@hotmail.com` of `user@outlook.com`, of een account van het soort Azure Active Directory (AAD).
 
 De PowerShell Gallery biedt de volgende account instellingen:
 
@@ -29,7 +29,7 @@ Het e-mail adres is het doel voor PowerShell Gallery meldingen. Het hoeft niet o
 
 Wanneer u een nieuw e-mail adres invoert, stuurt de PowerShell Gallery een verificatie bericht naar dat adres. De e-mail verificatie bevat een koppeling terug naar de PowerShell Gallery om het wijzigings proces te volt ooien. Totdat u het verificatie proces hebt voltooid, worden alle meldingen naar het vorige adres verzonden.
 
-## <a name="email-notifications"></a>E-mail meldingen
+## <a name="email-notifications"></a>E-mailmeldingen
 
 PowerShell Gallery biedt de volgende meldings opties:
 
@@ -81,6 +81,6 @@ Wanneer twee ledige is ingeschakeld, moet u zich bij het PowerShell Gallery veri
 > [!IMPORTANT]
 > Als u twee ledige verificatie voor de PowerShell Gallery-site inschakelt, hoeft u twee ledige niet in te scha kelen voor het gebruik van uw aanmeldings account. Zie [about verificatie in twee stappen](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)voor meer informatie.
 
-## <a name="change-your-profile-picture"></a>Uw profiel afbeelding wijzigen
+## <a name="change-your-profile-picture"></a>Uw profielfoto wijzigen
 
 De PowerShell Gallery is afhankelijk van Gravatar om de afbeelding op te slaan en weer te geven die aan uw profiel is gekoppeld. Ga naar [Gravatar.com](http://www.gravatar.com/)om de profiel afbeelding bij te werken.

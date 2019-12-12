@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355151"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Voorwaarden voor het weergeven van gegevens definiëren
@@ -21,9 +21,9 @@ Wanneer u definieert welke gegevens door een weer gave of een besturings element
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>Een selectie voorwaarde voor een definitie opgeven
 
-Wanneer u een definitie voor een weer gave of besturings element maakt, wordt het element `EntrySelectedBy` gebruikt om op te geven welke objecten de definitie gebruiken of welke voor waarde moet bestaan om de definitie te gebruiken. De voor waarde wordt opgegeven door het element `SelectionCondition`.
+Wanneer u een definitie voor een weer gave of besturings element maakt, wordt het `EntrySelectedBy`-element gebruikt om op te geven welke objecten de definitie zullen gebruiken of welke voor waarde moet bestaan om de definitie te gebruiken. De voor waarde wordt opgegeven door het `SelectionCondition`-element.
 
-In het volgende voor beeld wordt een selectie voorwaarde opgegeven voor een definitie van een tabel weergave. In dit voor beeld wordt de definitie alleen gebruikt wanneer het opgegeven script wordt geëvalueerd als `true`.
+In het volgende voor beeld wordt een selectie voorwaarde opgegeven voor een definitie van een tabel weergave. In dit voor beeld wordt de definitie alleen gebruikt wanneer het opgegeven script wordt geëvalueerd om `true`.
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ Er is geen limiet voor het aantal selectie omstandigheden dat u kunt opgeven voo
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>Een selectie voorwaarde voor een item opgeven
 
-U kunt ook opgeven wanneer een item van een lijst weergave of besturings element wordt gebruikt door het element `ItemSelectionCondition` in de definitie van het item op te nemen. In het volgende voor beeld wordt een selectie voorwaarde opgegeven voor een item van een lijst weergave. In dit voor beeld wordt het item alleen gebruikt wanneer het script wordt geëvalueerd als `true`.
+U kunt ook opgeven wanneer een item van een lijst weergave of besturings element wordt gebruikt door het `ItemSelectionCondition` element op te nemen in de definitie van het item. In het volgende voor beeld wordt een selectie voorwaarde opgegeven voor een item van een lijst weergave. In dit voor beeld wordt het item alleen gebruikt wanneer het script wordt geëvalueerd om `true`.
 
 ```xml
 <ListItem>

@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Schrijfhulp voor DSC-configuraties
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942074"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Schrijfhulp voor DSC-configuraties
 
 >Van toepassing op: Windows Power shell 5,0
 
-U kunt op opmerkingen gebaseerde hulp gebruiken in DSC-configuraties. Gebruikers kunnen toegang krijgen tot de Help door de **configuratie** aan te roepen met `-?` of door de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) te gebruiken. Plaats de Help op basis van opmerkingen direct boven het sleutel woord `Configuration`.
+U kunt op opmerkingen gebaseerde hulp gebruiken in DSC-configuraties. Gebruikers kunnen toegang krijgen tot de Help door de **configuratie** aan te roepen met `-?`of door de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) te gebruiken. Plaats de Help op basis van opmerkingen direct boven het tref woord `Configuration`.
 U kunt de Help van de para meter in-line plaatsen met uw commentaar blok, direct boven de parameter declaratie of beide zoals in het onderstaande voor beeld.
 
 Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)voor meer informatie over Help op basis van een opmerking.

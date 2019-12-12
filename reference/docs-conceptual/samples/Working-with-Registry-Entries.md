@@ -1,22 +1,22 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Met registervermeldingen werken
 ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030732"
 ---
 # <a name="working-with-registry-entries"></a>Met registervermeldingen werken
 
-Omdat de registervermeldingen zijn eigenschappen van sleutels en, als zodanig kunnen niet worden rechtstreeks gebladerd, moet een lichtjes andere benadering nemen bij het werken met hen.
+Omdat Register vermeldingen eigenschappen van sleutels zijn en, als zodanig, niet rechtstreeks kunnen worden doorzocht, moeten we een iets andere benadering nemen wanneer ze ermee werken.
 
-## <a name="listing-registry-entries"></a>Registervermeldingen van aanbieding
+## <a name="listing-registry-entries"></a>Register vermeldingen weer geven
 
-Er zijn veel verschillende manieren om te onderzoeken registervermeldingen. De eenvoudigste manier is om op te halen van de namen van eigenschappen die zijn gekoppeld aan een sleutel. Bijvoorbeeld, om te zien van de namen van de vermeldingen in de registersleutel `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, gebruikt u `Get-Item`. Registersleutels hebben een eigenschap met de algemene naam van 'Eigenschap' die een lijst met vermeldingen in de sleutel is.
-De volgende opdracht uit de eigenschap selecteert en de items wordt uitgebreid zodat ze worden weergegeven in een lijst:
+Er zijn veel verschillende manieren om Register vermeldingen te controleren. De eenvoudigste manier is om de namen van de eigenschappen van een sleutel op te halen. Als u bijvoorbeeld de namen van de vermeldingen in de register sleutel `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`wilt zien, gebruikt u `Get-Item`. Register sleutels hebben een eigenschap met de algemene naam ' Property ' die een lijst met Register vermeldingen in de sleutel is.
+Met de volgende opdracht wordt de eigenschap Property geselecteerd en worden de items uitgevouwen zodat deze in een lijst worden weer gegeven:
 
 ```powershell
 Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion |
@@ -31,7 +31,7 @@ CommonFilesDir
 ProductId
 ```
 
-U kunt de registervermeldingen weergeven in een beter leesbare vorm, met `Get-ItemProperty`:
+Als u de Register vermeldingen in een meer Lees bare vorm wilt weer geven, gebruikt u `Get-ItemProperty`:
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -57,21 +57,21 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-De Windows PowerShell-eigenschappen voor de sleutel worden alle voorafgegaan door 'PS', zoals **PSPath**, **PSParentPath**, **PSChildName**, en **PSProvider** .
+De Windows Power shell-gerelateerde eigenschappen voor de sleutel worden allemaal voorafgegaan door "PS", zoals **PSPath**, **PSParentPath**, **PSChildName**en **PSProvider**.
 
-U kunt de `*.*` notatie voor verwijzen naar de huidige locatie. U kunt `Set-Location` wijzigen in de **CurrentVersion** container registry eerste:
+U kunt de `*.*` notatie gebruiken om te verwijzen naar de huidige locatie. U kunt `Set-Location` gebruiken om eerst naar de **CurrentVersion** -register container te overschakelen:
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-U kunt ook kunt u de ingebouwde HKLM PSDrive met `Set-Location`:
+U kunt ook het ingebouwde HKLM-PSDrive gebruiken met `Set-Location`:
 
 ```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-Vervolgens kunt u de `*.*` notatie voor de huidige locatie om de eigenschappen zonder op te geven van een volledig pad:
+U kunt vervolgens de `*.*` notatie voor de huidige locatie gebruiken om de eigenschappen weer te geven zonder een volledig pad op te gave:
 
 ```powershell
 Get-ItemProperty -Path .
@@ -85,13 +85,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-Pad uitbreiding werkt hetzelfde als in het bestandssysteem, zodat u vanaf deze locatie krijgt u de **ItemProperty** aanbieding voor `HKLM:\SOFTWARE\Microsoft\Windows\Help` met behulp van `Get-ItemProperty -Path ..\Help`.
+Pad-uitbrei ding werkt op dezelfde manier als in het bestands systeem, dus vanaf deze locatie kunt u de **item Property** -vermelding voor `HKLM:\SOFTWARE\Microsoft\Windows\Help` ophalen met behulp van `Get-ItemProperty -Path ..\Help`.
 
-## <a name="getting-a-single-registry-entry"></a>Een enkel register-item ophalen
+## <a name="getting-a-single-registry-entry"></a>Eén register vermelding ophalen
 
-Als u ophalen van een bepaalde vermelding in een registersleutel wilt, kunt u een van verschillende mogelijke methoden. In dit voorbeeld wordt gezocht naar de waarde van **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
+Als u een specifieke vermelding in een register sleutel wilt ophalen, kunt u een van de verschillende mogelijke benaderingen gebruiken. In dit voor beeld wordt de waarde van **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`gezocht.
 
-Met behulp van `Get-ItemProperty`, gebruikt u de **pad** parameter opgeven voor de naam van de sleutel en de **naam** parameter opgeven voor de naam van de **DevicePath** vermelding.
+Gebruik `Get-ItemProperty`met behulp van de para meter **Path** om de naam van de sleutel op te geven en de para meter **name** om de naam van het item **DevicePath** op te geven.
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -108,12 +108,12 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 DevicePath   : C:\WINDOWS\inf
 ```
 
-Met deze opdracht retourneert de standaardeigenschappen van Windows PowerShell, evenals de **DevicePath** eigenschap.
+Met deze opdracht worden de standaard eigenschappen van Windows Power shell en de eigenschap **DevicePath** geretourneerd.
 
 > [!NOTE]
-> Hoewel `Get-ItemProperty` heeft **Filter**, **opnemen**, en **uitsluiten** parameters, ze om te filteren op naam van de eigenschap kunnen niet worden gebruikt. Deze parameters verwijzen naar registersleutels, item paden en geen vermeldingen in het register. De registervermeldingen die eigenschappen van het item.
+> Hoewel `Get-ItemProperty` de para meters **filter**, **include**en **exclude** heeft, kunnen ze niet worden gebruikt om te filteren op naam van eigenschap. Deze para meters verwijzen naar register sleutels, die item paden zijn en geen register vermeldingen. Register vermeldingen die item eigenschappen zijn.
 
-Een andere optie is het gebruik van het hulpprogramma Reg.exe vanaf de opdrachtregel. Typ voor help met reg.exe `reg.exe /?` achter de opdrachtprompt. Als u de vermelding DevicePath zoekt, gebruikt u reg.exe zoals wordt weergegeven in de volgende opdracht uit:
+Een andere optie is het opdracht regel programma reg. exe te gebruiken. Voor hulp bij reg. exe typt u `reg.exe /?` bij een opdracht prompt. Als u de vermelding DevicePath wilt vinden, gebruikt u reg. exe, zoals wordt weer gegeven in de volgende opdracht:
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -126,7 +126,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-U kunt ook de **WshShell** COM-object ook te vinden van sommige registervermeldingen, hoewel deze methode niet werkt met grote binaire gegevens of met de namen van de Register-vermeldingen die tekens zoals bevatten '\\'). Naam van de eigenschap toevoegen aan het pad van het item met een \\ scheidingsteken:
+U kunt ook het COM-object **WshShell** gebruiken om enkele register vermeldingen te vinden, hoewel deze methode niet werkt met grote binaire gegevens of met de namen van Register vermeldingen die tekens bevatten zoals "\\"). Voeg de naam van de eigenschap toe aan het pad naar het item met een \\ scheidings teken:
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -136,13 +136,13 @@ U kunt ook de **WshShell** COM-object ook te vinden van sommige registervermeldi
 %SystemRoot%\inf
 ```
 
-## <a name="setting-a-single-registry-entry"></a>Instellen van een enkel register-item
+## <a name="setting-a-single-registry-entry"></a>Eén register vermelding instellen
 
-Als u wijzigen van een bepaalde vermelding in een registersleutel wilt, kunt u een van verschillende mogelijke methoden gebruiken. In dit voorbeeld wijzigt de **pad** item onder `HKEY_CURRENT_USER\Environment`. De **pad** vermelding wordt opgegeven waar zich uitvoerbare bestanden.
+Als u een specifieke vermelding in een register sleutel wilt wijzigen, kunt u een van de verschillende mogelijke benaderingen gebruiken. In dit voor beeld wordt de invoer van het **pad** onder `HKEY_CURRENT_USER\Environment`gewijzigd. De **pad** -vermelding geeft aan waar uitvoer bare bestanden moeten worden gevonden.
 
-1. Ophalen van de huidige waarde van de **pad** met behulp van vermelding `Get-ItemProperty`.
-2. Voeg de nieuwe waarde, scheiden met een `;`.
-3. Gebruik `Set-ItemProperty` met de opgegeven sleutel, naam en waarde te wijzigen van het register-item.
+1. Haal de huidige waarde van de **padregel** op met behulp van `Get-ItemProperty`.
+2. Voeg de nieuwe waarde toe en scheid deze met een `;`.
+3. Gebruik `Set-ItemProperty` met de opgegeven sleutel, vermeldings naam en waarde om de register vermelding te wijzigen.
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -151,13 +151,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> Hoewel `Set-ItemProperty` heeft **Filter**, **opnemen**, en **uitsluiten** parameters, ze om te filteren op naam van de eigenschap kunnen niet worden gebruikt. Deze parameters verwijzen naar registersleutels: item paden zijn, en niet de registervermeldingen: welke eigenschappen van het item zijn.
+> Hoewel `Set-ItemProperty` de para meters **filter**, **include**en **exclude** heeft, kunnen ze niet worden gebruikt om te filteren op naam van eigenschap. Deze para meters verwijzen naar register sleutels, die item paden zijn, en geen register vermeldingen, die item eigenschappen zijn.
 
-Een andere optie is het gebruik van het hulpprogramma Reg.exe vanaf de opdrachtregel. Typ voor help met reg.exe **reg.exe /?**
+Een andere optie is het opdracht regel programma reg. exe te gebruiken. Voor hulp bij reg. exe typt u **reg. exe/?**
 bij een opdrachtprompt.
 
-Het volgende voorbeeld van de wijzigingen de **pad** vermelding door het verwijderen van het pad dat is toegevoegd in het bovenstaande voorbeeld.
-`Get-ItemProperty` nog steeds wordt gebruikt om op te halen van de huidige waarde om te voorkomen dat de tekenreeks die is geretourneerd door parseren `reg query`. De **subtekenreeks** en **LastIndexOf** methoden worden gebruikt voor het ophalen van het laatste pad toegevoegd aan de **pad** vermelding.
+In het volgende voor beeld wordt de invoer van het **pad** gewijzigd door het pad dat in bovenstaand voor beeld is toegevoegd, te verwijderen.
+`Get-ItemProperty` wordt nog steeds gebruikt om de huidige waarde op te halen om te voor komen dat de teken reeks die wordt geretourneerd door `reg query`wordt geparseerd. De **subtekenreeks** -en **LastIndexOf** -methoden worden gebruikt voor het ophalen van het laatste pad dat is toegevoegd aan het **pad** .
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -169,11 +169,11 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-## <a name="creating-new-registry-entries"></a>Het maken van nieuwe registervermeldingen
+## <a name="creating-new-registry-entries"></a>Nieuwe register vermeldingen maken
 
-Een nieuwe vermelding met de naam 'PowerShellPath' toevoegen aan de **CurrentVersion** , sleutelgebruik `New-ItemProperty` met het pad naar de sleutel, naam van de vermelding en de waarde van het item. In dit voorbeeld wordt de waarde van de Windows PowerShell-variabele duurt `$PSHome`, waarin het pad naar de installatiemap voor Windows PowerShell wordt opgeslagen.
+Als u een nieuwe vermelding met de naam "PowerShellPath" wilt toevoegen aan de **CurrentVersion** -sleutel, gebruikt u `New-ItemProperty` met het pad naar de sleutel, de naam van de vermelding en de waarde van de vermelding. In dit voor beeld nemen we de waarde van de Windows Power shell-variabele `$PSHome`, waarmee het pad naar de installatiemap voor Windows Power shell wordt opgeslagen.
 
-U kunt het nieuwe item toevoegen aan de sleutel met behulp van de volgende opdracht en de opdracht retourneert ook informatie over het nieuwe item:
+U kunt de nieuwe vermelding toevoegen aan de sleutel met behulp van de volgende opdracht, en de opdracht retourneert ook informatie over de nieuwe vermelding:
 
 ```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -188,44 +188,44 @@ PSProvider     : Microsoft.PowerShell.Core\Registry
 PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 ```
 
-De **%d{PropertyType/** moet de naam van een **Microsoft.Win32.RegistryValueKind** lid van de opsomming van de volgende tabel:
+De **Property type** moet de naam zijn van een **micro soft. Win32. RegistryValueKind** -opsommings element uit de volgende tabel:
 
-|%D{PropertyType/ waarde|Betekenis|
+|Waarde Property type|Betekenis|
 |----------------------|-----------|
-|Binary|Binaire gegevens|
-|DWord|Een getal dat is een geldige UInt32|
-|ExpandString|Een tekenreeks is die u kunt omgevingsvariabelen die dynamisch worden uitgebreid bevatten|
-|MultiString|Een tekenreeks met meerdere regels|
-|Reeks|een string-waarde|
-|QWord|8 bytes van binaire gegevens|
+|Binair|Binaire gegevens|
+|32|Een getal dat een geldige UInt32 is|
+|ExpandString|Een teken reeks die omgevings variabelen kan bevatten die dynamisch worden uitgevouwen|
+|Fixedlength|Een teken reeks met meerdere regels|
+|Tekenreeks|Wille keurige teken reeks waarde|
+|QWord|8 bytes aan binaire gegevens|
 
 > [!NOTE]
-> U kunt een registervermelding toevoegen aan meerdere locaties door te geven van een matrix met waarden voor de **pad** parameter:
+> U kunt een register vermelding toevoegen aan meerdere locaties door een matrix met waarden op te geven voor de para meter **Path** :
 
 ```powershell
 New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-U kunt ook een bestaande vermelding registerwaarde overschrijven door toe te voegen de **Force** parameter aan een `New-ItemProperty` opdracht.
+U kunt ook een vooraf bestaande register vermelding overschrijven door de para meter **Force** toe te voegen aan een `New-ItemProperty` opdracht.
 
-## <a name="renaming-registry-entries"></a>Naam van de registervermeldingen
+## <a name="renaming-registry-entries"></a>Naam wijzigen van Register vermeldingen
 
-Naam wijzigen van de **PowerShellPath** vermelding "PSHome," Gebruik `Rename-ItemProperty`:
+Als u de naam van de **PowerShellPath** -vermelding wilt wijzigen in ' PSHome ', gebruikt u `Rename-ItemProperty`:
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
-De nieuwe naam als waarde wilt weergeven, toevoegen de **PassThru** parameter aan de opdracht.
+Als u de hernoemde waarde wilt weer geven, voegt u de para meter **PassThru** toe aan de opdracht.
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-## <a name="deleting-registry-entries"></a>Registervermeldingen verwijderen
+## <a name="deleting-registry-entries"></a>Register vermeldingen verwijderen
 
-Als u wilt de PSHome en PowerShellPath registervermeldingen verwijderen, gebruikt u `Remove-ItemProperty`:
+Als u de Register vermeldingen PSHome en PowerShellPath wilt verwijderen, gebruikt u `Remove-ItemProperty`:
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome

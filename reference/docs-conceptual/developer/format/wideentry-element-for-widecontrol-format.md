@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353156"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>Het element WideEntry voor WideControl (opmaak)
@@ -32,7 +32,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `WideEntry` beschreven. U moet één onderliggend `WideItem`-element opgeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `WideEntry` beschreven. U moet één onder`WideItem` onderliggend element opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -57,7 +57,7 @@ Een brede weer gave is een lijst indeling waarin één eigenschaps waarde of scr
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `WideEntry`-element dat één `WideItem`-element definieert. Het element `WideItem` definieert de eigenschap waarvan de waarde wordt weer gegeven in de weer gave.
+In het volgende voor beeld ziet u een `WideEntry`-element waarmee één `WideItem` element wordt gedefinieerd. Het element `WideItem` definieert de eigenschap waarvan de waarde wordt weer gegeven in de weer gave.
 
 ```xml
 <WideEntries>

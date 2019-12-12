@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
 caps.latest.revision: 10
 ms.openlocfilehash: aa67bb605f90c1ea40323b4583766069ff1226fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352407"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) en [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) overschrijft voor het ondersteunen van aanroepen naar de `Get-Item` en @no__ t-3-cmdlets. De provider klasse in dit voor beeld is afgeleid van de klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
+In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) en [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) overschrijft om aanroepen naar de `Get-Item`-en `Set-Item`-cmdlets te ondersteunen. De provider klasse in dit voor beeld is afgeleid van de klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 > [!IMPORTANT]
 > Uw provider klasse is hoogstwaarschijnlijk afgeleid van een van de volgende klassen en implementeert mogelijk andere provider interfaces:
@@ -32,19 +32,19 @@ In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. prov
 
 In dit voor beeld ziet u het volgende:
 
-- Het kenmerk `CmdletProvider` declareren.
+- Declareer het `CmdletProvider` kenmerk.
 
 - Een provider klasse definiëren die is afgeleid van de klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .
 
-- De methode [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) wordt overschreven om het gedrag van de cmdlet `New-PSDrive` te wijzigen, waardoor de gebruiker nieuwe stations kan maken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `New-PSDrive`-cmdlet.)
+- De methode [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) wordt overschreven om het gedrag van de cmdlet `New-PSDrive` te wijzigen, waardoor de gebruiker nieuwe stations kan maken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `New-PSDrive` cmdlet.)
 
 - De methode [System. Management. Automation. provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) wordt overschreven om het verwijderen van bestaande stations te ondersteunen.
 
-- De methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) wordt overschreven om het gedrag van de cmdlet `Get-Item` te wijzigen, waardoor de gebruiker items uit het gegevens archief kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Item`-cmdlet.)
+- De methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) wordt overschreven om het gedrag van de cmdlet `Get-Item` te wijzigen, waardoor de gebruiker items uit het gegevens archief kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Item` cmdlet.)
 
-- De methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) wordt overschreven om het gedrag van de cmdlet `Set-Item` te wijzigen, waardoor de gebruiker de items in het gegevens archief kan bijwerken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Item`-cmdlet.)
+- De methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) wordt overschreven om het gedrag van de cmdlet `Set-Item` te wijzigen, waardoor de gebruiker de items in het gegevens archief kan bijwerken. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Get-Item` cmdlet.)
 
-- De methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) wordt overschreven om het gedrag van de cmdlet `Test-Path` te wijzigen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Test-Path`-cmdlet.)
+- De methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) wordt overschreven om het gedrag van de cmdlet `Test-Path` te wijzigen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Test-Path` cmdlet.)
 
 - De methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) wordt overschreven om te bepalen of het gegeven pad geldig is.
 

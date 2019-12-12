@@ -1,26 +1,26 @@
 ---
 ms.date: 06/03/2019
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Met software-installaties werken
 ms.openlocfilehash: 6d2111a332f0e8c1b545186d3d950e936aed1834
-ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66830291"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
 
-Toepassingen die zijn ontworpen voor het gebruik van Windows Installer is toegankelijk via WMI van **Win32_Product** klasse, maar niet alle toepassingen in gebruik vandaag nog gebruik van het Windows-installatieprogramma.
-Toepassingen die gebruikmaken van alternatieve installatieprocedure meestal niet worden beheerd door de Windows-installatieservice.
-Specifieke technieken voor het werken met deze toepassingen, is afhankelijk van de installer-software en beslissingen door de ontwikkelaar van de toepassing. Bijvoorbeeld kunnen niet toepassingen zijn geïnstalleerd door de bestanden zijn gekopieerd naar een map op de computer meestal worden beheerd met behulp van technieken die worden besproken hier. U kunt beheren van deze toepassingen als bestanden en mappen met behulp van de technieken beschreven in [werken met bestanden en mappen](Working-with-Files-and-Folders.md).
+Toepassingen die zijn ontworpen om Windows Installer te gebruiken, zijn toegankelijk via de **Win32_Product** klasse van WMI, maar niet alle toepassingen die tegenwoordig gebruiken, gebruiken de Windows Installer.
+Toepassingen die alternatieve installatie routines gebruiken, worden doorgaans niet beheerd door de Windows Installer.
+Specifieke technieken voor het werken met deze toepassingen zijn afhankelijk van de installatie software en beslissingen van de ontwikkelaar van de toepassing. Toepassingen die zijn geïnstalleerd door het kopiëren van de bestanden naar een map op de computer, kunnen bijvoorbeeld doorgaans niet worden beheerd met behulp van technieken die hier worden beschreven. U kunt deze toepassingen beheren als bestanden en mappen met behulp van de technieken die worden beschreven in [werken met bestanden en mappen](Working-with-Files-and-Folders.md).
 
 > [!CAUTION]
-> De **Win32_Product** klasse is geen query geoptimaliseerd. Query's die gebruikmaken van jokertekens filters ertoe leiden dat WMI om met het MSI-provider te inventariseren van alle geïnstalleerde producten en parseren van de volledige lijst sequentieel worden verwerkt voor het afhandelen van het filter. Hiermee initieert ook een consistentiecontrole uit van pakketten geïnstalleerd, te controleren en herstellen van de installatie. De validatie is een trage proces en kan leiden tot fouten in de gebeurtenislogboeken. Voor meer informatie zoeken [KB-artikel 974524](https://support.microsoft.com/help/974524).
+> Er is geen query geoptimaliseerd voor de **Win32_Product** klasse. Query's die gebruikmaken van Joker filters, veroorzaken WMI de MSI-provider voor het inventariseren van alle geïnstalleerde producten en vervolgens de volledige lijst opeenvolgend parseren om het filter af te handelen. Dit initieert ook een consistentie controle van de geïnstalleerde pakketten, het verifiëren en herstellen van de installatie. De validatie is een traag proces en kan leiden tot fouten in de gebeurtenis Logboeken. Zoek [KB-artikel 974524](https://support.microsoft.com/help/974524)voor meer informatie.
 
-## <a name="listing-windows-installer-applications"></a>Windows Installer-toepassingen weergeven
+## <a name="listing-windows-installer-applications"></a>Windows Installer-toepassingen weer geven
 
-Als u de toepassingen zijn geïnstalleerd met de Windows Installer op een lokale of externe systeem, gebruik de volgende eenvoudige WMI-query:
+Als u de toepassingen wilt weer geven die zijn geïnstalleerd met de Windows Installer op een lokaal of extern systeem, gebruikt u de volgende eenvoudige WMI-query:
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -33,7 +33,7 @@ Name               Caption                     Vendor                 Version   
 Microsoft .NET ... Microsoft .NET Core Runt... Microsoft Corporation  16.72.26629  {ACC73072-9AD5-416C-94B...
 ```
 
-Om weer te geven van alle eigenschappen van de **Win32_Product** object aan de weergave, gebruik de **eigenschappen** parameter van de opmaak cmdlets, zoals de `Format-List` cmdlet, met een waarde van `*` (alle).
+Als u alle eigenschappen van het **Win32_Product** -object wilt weer geven in de weer gave, gebruikt u de para meter **Eigenschappen** van de opmaak-cmdlets, zoals de `Format-List` cmdlet, met de waarde `*` (alle).
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -75,14 +75,14 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-Of u kunt de `Get-CimInstance` **Filter** parameter selecteren alleen Microsoft .NET Framework 2.0. De waarde van de **Filter** parameter maakt gebruik van WMI Query Language (WQL)-syntaxis, niet Windows PowerShell-syntaxis. Bijvoorbeeld:
+U kunt ook de para meter `Get-CimInstance` **filter** gebruiken om alleen Microsoft .NET Framework 2,0 te selecteren. De waarde van de **filter** parameter maakt gebruik van de syntaxis WMI Query Language (WQL), geen Windows Power shell-syntaxis. Bijvoorbeeld:
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
   Format-List -Property *
 ```
 
-U kunt alleen de eigenschappen die u interesseren gebruiken de **eigenschap** parameter van de opmaak cmdlets om de gewenste eigenschappen weer te geven.
+Als u alleen de eigenschappen wilt weer geven die u interesseren, gebruikt u de para meter **Property** van de Format-cmdlets om de gewenste eigenschappen weer te geven.
 
 ```powershell
 Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
@@ -99,13 +99,13 @@ Version           : 16.72.26629
 IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 ```
 
-## <a name="listing-all-uninstallable-applications"></a>Lijst van alle toepassingen die kan worden verwijderd
+## <a name="listing-all-uninstallable-applications"></a>Alle toepassingen weer geven die niet worden geïnstalleerd
 
-Omdat een verwijderprogramma meest standaard toepassingen bij Windows registreren, die we kunnen werken met die lokaal door ze te vinden in het Windows-register. Er is geen gegarandeerde manier om te vinden van elke toepassing op een systeem. Het is echter mogelijk om te zoeken van alle programma's met aanbiedingen weergegeven in **software**. **Toevoegen of verwijderen van programma's** zoekt naar deze toepassingen in de volgende registersleutel:
+Omdat de meeste standaard toepassingen een verwijderer bij Windows registreren, kunnen we deze lokaal samen met hen door vinden in het Windows-REGI ster. Er is geen gegarandeerde manier om elke toepassing op een systeem te vinden. Het is echter mogelijk om alle Program ma's te vinden met vermeldingen die worden weer gegeven in het **onderdeel Software**. In **Program Ma's toevoegen of verwijderen** vindt u deze toepassingen in de volgende register sleutel:
 
 `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
-We kunt deze sleutel om te zoeken naar toepassingen bekijken. Als u wilt maken het gemakkelijker om de sleutel verwijderen weer te geven, kunnen we een PowerShell-station worden toegewezen aan deze registerlocatie:
+We kunnen deze sleutel onderzoeken om toepassingen te vinden. Om het weer geven van de verwijderings sleutel gemakkelijker te maken, kunnen we een Power Shell-station toewijzen aan deze register locatie:
 
 ```powershell
 New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
@@ -116,28 +116,28 @@ Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
-We hebben nu een station met de naam "verwijderen: ' kunnen worden gebruikt voor een snel en gemakkelijk zoeken voor installaties van toepassingen. Er vindt het aantal geïnstalleerde toepassingen door het aantal registersleutels in de verwijdering te tellen: PowerShell-station:
+We hebben nu een station met de naam ' uninstall: ' dat kan worden gebruikt om snel en eenvoudig te zoeken naar toepassings installaties. We kunnen het aantal geïnstalleerde toepassingen vinden door het aantal register sleutels in het verwijderen te tellen: Power Shell-station:
 
 ```
 (Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
-We kunnen deze lijst met toepassingen verder zoeken met behulp van verschillende technieken, beginnen met **Get-ChildItem**. Voor het ophalen van een lijst met toepassingen en slaat u ze in de **$UninstallableApplications** variabele, gebruikt u de volgende opdracht:
+We kunnen deze lijst met toepassingen verder doorzoeken door gebruik te maken van verschillende technieken, beginnend met **Get-Child item**. Gebruik de volgende opdracht om een lijst met toepassingen op te halen en deze op te slaan in de variabele **$UninstallableApplications** :
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
-Als de waarden van de registervermeldingen in de registersleutels onder verwijderen weergeven, gebruikt u de GetValue-methode van de registersleutels. De waarde van de methode is de naam van het register-item.
+Als u de waarden van de Register vermeldingen in de register sleutels onder verwijderen wilt weer geven, gebruikt u de methode GetValue van de register sleutels. De waarde van de methode is de naam van de register vermelding.
 
-Bijvoorbeeld, als u zoekt de weergavenamen van toepassingen in de sleutel verwijderen, gebruik de volgende opdracht:
+Gebruik bijvoorbeeld de volgende opdracht om de weergave namen van de toepassingen in de uninstall-sleutel te vinden:
 
 ```powershell
 $UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
-Er is geen garantie dat deze waarden uniek zijn. In het volgende voorbeeld worden twee geïnstalleerde items weergegeven als 'Windows Media Encoder 9 Series':
+Er is geen garantie dat deze waarden uniek zijn. In het volgende voor beeld worden twee geïnstalleerde items weer gegeven als ' Windows Media Encoder 9 Series ':
 
 ```powershell
 $UninstallableApplications | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
@@ -174,37 +174,37 @@ CEA0F1B}                       Comments            :
                                DisplayName         : Microsoft .NET Core Runtime - 2.1.2 (x64)
 ```
 
-## <a name="installing-applications"></a>Installeren van toepassingen
+## <a name="installing-applications"></a>Toepassingen installeren
 
-U kunt de **Win32_Product** klasse voor het installeren van Windows Installer-pakketten, extern of lokaal.
+U kunt de klasse **Win32_Product** gebruiken om Windows Installer pakketten extern of lokaal te installeren.
 
 > [!NOTE]
-> Een toepassing te installeren, moet u PowerShell starten met de optie 'Als administrator uitvoeren'.
+> Als u een toepassing wilt installeren, moet u Power shell starten met de optie als administrator uitvoeren.
 
-Bij de installatie op afstand, moet u een netwerkpad Universal Naming Convention (UNC) gebruiken om op te geven van het pad naar het MSI-pakket, omdat het WMI-subsysteem heeft niet informatie over PowerShell paden. Bijvoorbeeld, voor het installeren van het pakket NewPackage.msi zich in de netwerkshare `\\AppServ\dsp` op de externe computer PC01, typt u de volgende opdracht achter de PowerShell-prompt:
+Wanneer u extern installeert, gebruikt u een UNC-netwerkpad (Universal Naming Convention) om het pad naar het MSI-pakket op te geven, omdat het WMI-subsysteem geen Power shell-paden begrijpt. Als u bijvoorbeeld het pakket NewPackage. msi wilt installeren dat zich bevindt in de netwerk share `\\AppServ\dsp` op de externe computer PC01, typt u de volgende opdracht achter de Power shell-prompt:
 
 ```powershell
 Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}
 ```
 
-Toepassingen die geen gebruik maken van Windows Installer-technologie hebben toepassingsspecifieke methoden voor automatische implementatie. Raadpleeg de documentatie voor de toepassing of neem contact op ondersteuning van system van de leverancier van de toepassing.
+Toepassingen die geen gebruik maken van Windows Installer technologie, kunnen toepassingsspecifieke methoden hebben voor automatische implementatie. Raadpleeg de documentatie bij de toepassing of Raadpleeg het ondersteunings systeem van de leverancier van de toepassing.
 
 ## <a name="removing-applications"></a>Toepassingen verwijderen
 
-Verwijderen van een Windows Installer-pakket met behulp van PowerShell werkt op ongeveer dezelfde manier als een pakket installeert. Hier volgt een voorbeeld waarin selecteert het pakket te verwijderen op basis van de naam; in sommige gevallen kan het eenvoudiger om te filteren met zijn de **id-nummer**:
+Het verwijderen van een Windows Installer-pakket met behulp van Power shell werkt op ongeveer dezelfde manier als het installeren van een pakket. Hier volgt een voor beeld van het selecteren van het pakket dat moet worden verwijderd op basis van de naam. in sommige gevallen kan het gemakkelijker worden gefilterd met de **nummer**:
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall
 ```
 
-Verwijderen van andere toepassingen is niet zo eenvoudig, zelfs wanneer lokaal uitgevoerd. We kunnen de opdrachtregel verwijderen tekenreeksen voor deze toepassingen vinden door te extraheren de **UninstallString** eigenschap.
-Deze methode werkt voor Windows Installer-toepassingen en oudere programma's die wordt weergegeven onder de sleutel verwijderen:
+Het verwijderen van andere toepassingen is niet helemaal eenvoudig, zelfs wanneer deze lokaal worden uitgevoerd. U kunt de opdracht regel verwijderings teken reeksen voor deze toepassingen vinden door de eigenschap **UninstallString** uit te pakken.
+Deze methode werkt voor Windows Installer toepassingen en voor oudere Program ma's die worden weer gegeven onder de sleutel Uninstall:
 
 ```powershell
 Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
-U kunt desgewenst de uitvoer filteren op de weergavenaam:
+U kunt de uitvoer filteren op de weergave naam, indien gewenst:
 
 ```powershell
 Get-ChildItem -Path Uninstall: |
@@ -212,11 +212,11 @@ Get-ChildItem -Path Uninstall: |
         ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
-Deze tekenreeksen kunnen echter niet worden rechtstreeks vanuit de PowerShell-prompt zonder enige wijziging gebruikt.
+Deze teken reeksen kunnen echter niet rechtstreeks worden gebruikt vanuit de Power shell-prompt zonder enige aanpassing.
 
-## <a name="upgrading-windows-installer-applications"></a>Upgraden van Windows Installer-toepassingen
+## <a name="upgrading-windows-installer-applications"></a>Windows Installer-toepassingen bijwerken
 
-Als u een toepassing bijwerken, moet u de naam van de toepassing en het pad kennen op het updatepakket van toepassing. Met deze informatie kunt u een toepassing met slechts één PowerShell-opdracht bijwerken:
+Als u een toepassing wilt bijwerken, moet u de naam van de toepassing en het pad voor het upgrade pakket van de toepassing weten. Met deze informatie kunt u een toepassing bijwerken met één Power shell-opdracht:
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='OldAppName'" |

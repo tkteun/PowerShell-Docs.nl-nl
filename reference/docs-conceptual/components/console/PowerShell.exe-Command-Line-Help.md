@@ -1,20 +1,20 @@
 ---
 ms.date: 05/02/2019
-keywords: PowerShell-cmdlet
-title: PowerShell opdrachtregel-opties
+keywords: Power shell, cmdlet
+title: Opdrachtregelopties voor PowerShell
 ms.openlocfilehash: c7cd96344ce3686fa33725320f86a9c86ac6a68b
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65229780"
 ---
-# <a name="powershell-command-line-options"></a>PowerShell opdrachtregel-opties
+# <a name="powershell-command-line-options"></a>Opdrachtregelopties voor PowerShell
 
-U kunt opdrachtregelopties gebruiken voor het uitvoeren van PowerShell in vanaf de opdrachtregel van een ander hulpprogramma, zoals **Cmd.exe** of **bash**, of op de PowerShell-opdrachtregel gebruiken om een nieuwe sessie te starten.
+U kunt opdracht regel opties gebruiken om Power shell uit te voeren vanaf de opdracht regel van een ander hulp programma, zoals **cmd. exe** of **bash**, of het gebruiken op de Power shell-opdracht regel om een nieuwe sessie te starten.
 
-De opdrachtregelopties kunnen u de configuratie van de PowerShell-sessie aanpassen en beheren van de invoer.
+Met de opdracht regel opties kunt u de configuratie van de Power shell-sessie aanpassen en de invoer beheren.
 
-Zie voor een volledige lijst met opties voor Windows PowerShell (powershell.exe), [about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
+Zie [about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe)voor een volledige lijst met opties voor Windows Power shell (Power shell. exe).
 
-Zie voor een volledige lijst met opties voor PowerShell Core (pwsh), [about_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh).
+Zie [about_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh)voor een volledige lijst met opties voor Power shell core (pwsh).

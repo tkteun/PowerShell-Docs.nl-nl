@@ -1,25 +1,25 @@
 ---
 ms.date: 08/23/2018
-keywords: PowerShell-cmdlet
-title: Understanding PowerShell-pijplijnen
+keywords: Power shell, cmdlet
+title: Informatie over Power shell-pijp lijnen
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030391"
 ---
-# <a name="understanding-pipelines"></a>Inzicht in pijplijnen
+# <a name="understanding-pipelines"></a>Pijp lijnen
 
-Pijplijnen fungeert als een reeks verbonden segmenten van de pipe. Items verplaatsen langs de pijplijn doorgegeven via elk segment. Voor het maken van een pijplijn in PowerShell, u opdrachten, samen met de operator pipe verbinding maken ' | '. De uitvoer van elke opdracht wordt gebruikt als invoer voor de volgende opdracht.
+Pijp lijnen fungeren als een reeks verbonden segmenten van pipes. Items die langs de pijp lijn worden verplaatst, passeren elk segment. Als u een pijp lijn in Power shell wilt maken, verbindt u opdrachten samen met de pipe-operator |. De uitvoer van elke opdracht wordt gebruikt als invoer voor de volgende opdracht.
 
-De notatie die wordt gebruikt voor pijplijnen is vergelijkbaar met de notatie die wordt gebruikt in andere shells. Op het eerste gezicht deze mogelijk niet duidelijk hoe pijplijnen verschillen in PowerShell. Hoewel u tekst op het scherm ziet, geeft de PowerShell-objecten, geen tekst tussen opdrachten.
+De notatie die wordt gebruikt voor pijp lijnen, is vergelijkbaar met de notatie die wordt gebruikt in andere schalen. In eerste instantie is het mogelijk niet duidelijk hoe pijp lijnen anders zijn in Power shell. Hoewel er tekst op het scherm wordt weer gegeven, Power shell pipes-objecten, geen tekst, tussen opdrachten.
 
-## <a name="the-powershell-pipeline"></a>De PowerShell-pijplijn
+## <a name="the-powershell-pipeline"></a>De Power shell-pijp lijn
 
-Pijplijnen zijn weliswaar de meest waardevolle concept gebruikt in opdrachtregelinterfaces. Wanneer u goed gebruikt, wordt pijplijnen minder moeite van het gebruik van complexe opdrachten en maken het gemakkelijker om te zien van de werkstroom voor de opdrachten. Elke opdracht in een pijplijn (ook wel een pipeline-element genoemd) wordt de uitvoer doorgegeven aan de volgende opdracht in de pijplijn per item. Opdrachten hebben voor het afhandelen van meer dan één item per keer niet. Het resultaat is verlaagd resourceverbruik en de mogelijkheid om te beginnen met de uitvoer onmiddellijk aan.
+Pijp lijnen zijn weliswaar het meest waardevolle concept dat wordt gebruikt in opdracht regel interfaces. Wanneer u correct gebruikt, kunnen pijp lijnen de moeite van het gebruik van complexe opdrachten verminderen en is het eenvoudiger om de werk stroom voor de opdrachten te zien. Elke opdracht in een pijp lijn (een pijplijn element genoemd) geeft de uitvoer door aan de volgende opdracht in de pijp lijn, item-per-item. Opdrachten hoeven niet meer dan één item tegelijk te verwerken. Het resultaat is een gereduceerd Resource verbruik en de mogelijkheid om de uitvoer onmiddellijk te verkrijgen.
 
-Als u bijvoorbeeld de `Out-Host` cmdlet om af te dwingen van per pagina weergegeven in een uitvoer van een andere opdracht, de uitvoer er ongeveer zo uitziet net zoals de normale tekst die wordt weergegeven op het scherm, opgedeeld in pagina's:
+Als u bijvoorbeeld de cmdlet `Out-Host` gebruikt om een pagina-op-pagina weer te geven van uitvoer van een andere opdracht, ziet de uitvoer er net zo uit als de normale tekst die op het scherm wordt weer gegeven, onderverdeeld in pagina's:
 
 ```powershell
 Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -58,15 +58,15 @@ d-----        8/23/2018   5:07 PM                catroot2
 ...
 ```
 
-Ook het wisselbestand minder CPU-gebruik omdat verwerking naar overgebracht de `Out-Host` cmdlet wanneer er een volledige pagina Gereed om weer te geven. De cmdlets die worden voorafgegaan door het in de pijplijn onderbreken worden uitgevoerd totdat de volgende pagina van de uitvoer beschikbaar is.
+Paginering vermindert ook het CPU-gebruik omdat de verwerking van de `Out-Host`-cmdlet wordt uitgevoerd wanneer er een volledige pagina gereed is om weer te geven. De cmdlets die voorafgaan aan de pijp lijn worden uitgevoerd, totdat de volgende pagina van uitvoer beschikbaar is.
 
-U kunt zien hoe doorsluizen heeft gevolgen voor CPU- en geheugengebruik in Windows Taakbeheer door het vergelijken van de volgende opdrachten:
+U kunt zien hoe pijpleidingen het CPU-en geheugen gebruik in Windows taak beheer beïnvloedt door de volgende opdrachten te vergelijken:
 
 - `Get-ChildItem C:\Windows -Recurse`
 - `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
-> De **Paging** parameter wordt niet ondersteund door alle PowerShell-hosts. Bijvoorbeeld, wanneer u probeert te gebruiken de **Paging** parameter in de PowerShell ISE, ziet u de volgende fout:
+> De **paginerings** parameter wordt niet ondersteund door alle Power shell-hosts. Wanneer u bijvoorbeeld probeert de para meter **paging** te gebruiken in Power shell ISE, ziet u de volgende fout:
 >
 > ```Output
 > out-lineoutput : The method or operation is not implemented.
@@ -77,11 +77,11 @@ U kunt zien hoe doorsluizen heeft gevolgen voor CPU- en geheugengebruik in Windo
 >     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
 > ```
 
-## <a name="objects-in-the-pipeline"></a>Objecten in de pijplijn
+## <a name="objects-in-the-pipeline"></a>Objecten in de pijp lijn
 
-Wanneer u een cmdlet in PowerShell uitvoert, ziet u tekstuitvoer omdat het is nodig om objecten te vertegenwoordigen als tekst in een consolevenster weergegeven. De tekstuitvoer kan niet alle van de eigenschappen van het object uitvoer wordt weergegeven.
+Wanneer u een cmdlet in Power shell uitvoert, wordt tekst uitvoer weer gegeven, omdat het nodig is om objecten als tekst in een console venster aan te duiden. In de tekst uitvoer worden mogelijk niet alle eigenschappen weer gegeven van het object dat wordt uitgevoerd.
 
-Neem bijvoorbeeld de `Get-Location` cmdlet. Als u `Get-Location` terwijl uw huidige locatie, de hoofdmap van station C is, ziet u de volgende uitvoer:
+Denk bijvoorbeeld aan de `Get-Location`-cmdlet. Als u `Get-Location` uitvoert terwijl uw huidige locatie de hoofdmap van station C is, ziet u de volgende uitvoer:
 
 ```
 PS> Get-Location
@@ -91,9 +91,9 @@ Path
 C:\
 ```
 
-De tekstuitvoer is een samenvatting van gegevens, niet een volledige weergave van het object dat wordt geretourneerd door `Get-Location`. De kop in de uitvoer is toegevoegd door het proces dat de gegevens voor weergave op het scherm wordt opgemaakt.
+De tekst uitvoer is een samen vatting van informatie, niet een volledige weer gave van het object dat wordt geretourneerd door `Get-Location`. De kop in de uitvoer wordt toegevoegd door het proces waarmee de gegevens voor het scherm worden opgemaakt.
 
-Wanneer u de uitvoer doorsluizen naar de `Get-Member` cmdlet krijgt u informatie over het object dat wordt geretourneerd door `Get-Location`.
+Wanneer u de uitvoer naar de `Get-Member`-cmdlet Pipet, krijgt u informatie over het object dat door `Get-Location`wordt geretourneerd.
 
 ```powershell
 Get-Location | Get-Member

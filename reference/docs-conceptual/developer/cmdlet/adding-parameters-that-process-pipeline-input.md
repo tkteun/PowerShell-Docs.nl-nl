@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
 ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355641"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken
 
 Eén invoer bron voor een cmdlet is een object in de pijp lijn dat afkomstig is uit een upstream-cmdlet. In deze sectie wordt beschreven hoe u een para meter kunt toevoegen aan de cmdlet Get-proc (die wordt beschreven in [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)), zodat de cmdlet pijplijn objecten kan verwerken.
 
-Deze Get-proc-cmdlet gebruikt een `Name`-para meter die invoer van een pijplijn object accepteert, proces informatie ophaalt van de lokale computer op basis van de opgegeven namen en vervolgens informatie over de processen op de opdracht regel weergeeft.
+In deze Get-proc cmdlet wordt een `Name` para meter gebruikt die invoer van een pijplijn object accepteert, proces informatie ophaalt van de lokale computer op basis van de opgegeven namen en vervolgens informatie over de processen op de opdracht regel weergeeft.
 
 ## <a name="defining-the-cmdlet-class"></a>De cmdlet-klasse definiëren
 
@@ -45,7 +45,7 @@ Public Class GetProcCommand
 
 In deze sectie wordt beschreven hoe u de invoer van de pijp lijn voor een cmdlet definieert. Deze Get-proc-cmdlet definieert een eigenschap die de para meter `Name` vertegenwoordigt, zoals wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md). (Zie het onderwerp voor algemene informatie over het declareren van para meters.)
 
-Wanneer een cmdlet echter de invoer van de pijp lijn moet verwerken, moeten de para meters zijn gekoppeld aan invoer waarden door de Windows Power shell-runtime. Als u dit wilt doen, moet u het sleutel woord `ValueFromPipeline` toevoegen of het sleutel woord `ValueFromPipelineByProperty` toevoegen aan de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Geef het sleutel woord `ValueFromPipeline` op als met de cmdlet het volledige invoer object wordt geopend. Geef de `ValueFromPipelineByProperty` op als met de cmdlet alleen een eigenschap van het object wordt geopend.
+Wanneer een cmdlet echter de invoer van de pijp lijn moet verwerken, moeten de para meters zijn gekoppeld aan invoer waarden door de Windows Power shell-runtime. Als u dit wilt doen, moet u het sleutel woord `ValueFromPipeline` toevoegen of het sleutel woord `ValueFromPipelineByProperty` toevoegen aan de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Geef het `ValueFromPipeline` tref woord op als de cmdlet het volledige invoer object opent. Geef de `ValueFromPipelineByProperty` op als de cmdlet alleen een eigenschap van het object opent.
 
 Hier volgt de parameter declaratie voor de para meter `Name` van deze Get-proc-cmdlet die pijplijn invoer accepteert.
 
@@ -68,16 +68,16 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-In de vorige verklaring wordt het sleutel woord `ValueFromPipeline` ingesteld op `true` zodat de Windows Power shell-runtime de para meter aan het inkomende object koppelt als het object van hetzelfde type is als de para meter, of als het kan worden gedwongen naar hetzelfde type. Het sleutel woord `ValueFromPipelineByPropertyName` wordt ook ingesteld op `true` zodat de Windows Power shell-runtime het inkomende object controleert op een eigenschap `Name`. Als het inkomende object een dergelijke eigenschap heeft, wordt de para meter `Name` door de runtime gebonden aan de eigenschap `Name` van het inkomende object.
+In de vorige verklaring wordt het sleutel woord `ValueFromPipeline` ingesteld op `true`, zodat de Windows Power shell-runtime de para meter aan het inkomende object koppelt als het object van hetzelfde type is als de para meter, of als het kan worden gedwongen naar hetzelfde type. Het sleutel woord `ValueFromPipelineByPropertyName` wordt ook ingesteld op `true`, zodat het inkomende object door Windows Power shell-runtime wordt gecontroleerd op een `Name` eigenschap. Als het inkomende object een dergelijke eigenschap heeft, wordt de para meter `Name` door de runtime gebonden aan de eigenschap `Name` van het binnenkomende object.
 
 > [!NOTE]
-> De instelling van het sleutel woord `ValueFromPipeline`-kenmerk voor een para meter krijgt voor rang op de instelling voor het sleutel woord `ValueFromPipelineByPropertyName`.
+> De instelling van het sleutel woord `ValueFromPipeline` kenmerk voor een para meter krijgt voor rang op de instelling voor het sleutel woord `ValueFromPipelineByPropertyName`.
 
 ## <a name="overriding-an-input-processing-method"></a>Een invoer verwerkings methode overschrijven
 
 Als uw cmdlet de invoer van de pijp lijn moet afhandelen, moet de juiste invoer methoden worden overschreven. De basis methoden voor invoer verwerking zijn geïntroduceerd bij het [maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Deze Get-proc-cmdlet overschrijft de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` parameter invoer te verwerken die door de gebruiker of een script is opgegeven. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection`, wordt ingesteld op `true` om aan te geven dat de Windows Power shell-runtime de matrix van proces objecten moet opsommen en één proces per keer naar de opdracht regel moet schrijven.
+Deze Get-proc-cmdlet onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` parameter invoer te verwerken die door de gebruiker of een script is opgegeven. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection`, wordt ingesteld op `true` om de Windows Power shell-runtime te laten opsommen van de matrix van proces objecten en een proces per keer naar de opdracht regel te schrijven.
 
 ```csharp
 protected override void ProcessRecord()
@@ -157,7 +157,7 @@ De volgende uitvoer wordt weer gegeven.
        3927      62  71836   26984    467  195.19  1848  OUTLOOK
     ```
 
-- Voer de volgende regels in om de proces objecten op te halen die een `Name`-eigenschap van de processen met de naam "IEXPLORE" hebben. In dit voor beeld wordt de cmdlet `Get-Process` (meegeleverd door Windows Power shell) gebruikt als een upstream-opdracht om de "IEXPLORE"-processen op te halen.
+- Voer de volgende regels in om de proces objecten op te halen met een `Name`-eigenschap van de processen met de naam ' IEXPLORE '. In dit voor beeld wordt de `Get-Process`-cmdlet (door Windows Power shell) gebruikt als een upstream-opdracht voor het ophalen van de "IEXPLORE"-processen.
 
     ```powershell
     PS> get-process iexplore | get-proc

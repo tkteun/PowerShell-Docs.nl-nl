@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b594a064-746f-4900-99e4-7be7bf5aa5a2
 caps.latest.revision: 7
 ms.openlocfilehash: d540c99707f4e0796b2d408f2161a9208257ab32
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358866"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-view-format"></a>Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Weergave (opmaak)
@@ -46,7 +46,7 @@ Geen.
 |-------------|-----------------|
 |[EntrySelectedBy-element voor CustomEntry voor besturings elementen voor weer gave (indeling)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de selectieset.
 

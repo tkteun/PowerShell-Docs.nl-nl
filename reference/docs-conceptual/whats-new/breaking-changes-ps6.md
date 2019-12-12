@@ -3,10 +3,10 @@ ms.date: 11/15/2019
 keywords: Power shell, kern
 title: Belang rijke wijzigingen voor Power shell 6,0
 ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417553"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Belang rijke wijzigingen voor Power shell 6. x
@@ -68,9 +68,9 @@ Als gevolg van het gebruik van niet-ondersteunde Api's, is `Microsoft.PowerShell
 
 Als gevolg van het gebruik van niet-ondersteunde Api's, zijn de volgende cmdlets uit Power shell core verwijderd totdat er een betere oplossing is gevonden.
 
-- Add-computer
+- Add-Computer
 - Checkpoint-Computer
-- Verwijderen-computer
+- Remove-Computer
 - Herstellen-computer
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdlets
@@ -120,7 +120,7 @@ Wanneer een API wordt geretourneerd alleen `null`, werd invoke-RestMethod als te
 Als gevolg van problemen met RPC-externe toegang in CoreFX (met name op niet-Windows-platforms) en het garanderen van een consistente externe ervaring in Power shell, is de para meter `-Protocol` verwijderd uit de `\*-Computer`-cmdlets. DCOM wordt niet meer ondersteund voor externe communicatie. De volgende cmdlets bieden alleen ondersteuning voor externe WSMAN-communicatie:
 
 - Naam wijzigen-computer
-- Opnieuw opstarten-computer
+- Restart-Computer
 - Stop-computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>`-ComputerName` verwijderen uit `*-Service`-cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)

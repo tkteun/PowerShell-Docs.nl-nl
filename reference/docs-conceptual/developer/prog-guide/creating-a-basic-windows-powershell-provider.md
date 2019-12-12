@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352778"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen

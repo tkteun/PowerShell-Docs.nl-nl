@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ms.openlocfilehash: e7176f9f6ef67116ea7c07a46797fb0ba84f915d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72358998"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>Het element EntrySelectedBy voor CustomEntry voor CustomControl voor Weergave (opmaak)
@@ -57,7 +57,7 @@ Geen.
 
 U moet ten minste één type, selectieset of selectie voorwaarde voor een vermelding opgeven. Er is geen maximum limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
 
-Selectie omstandigheden worden gebruikt voor het definiëren van een voor waarde die moet bestaan voor het gebruik van de vermelding, zoals wanneer een object een specifieke eigenschap heeft of wanneer een specifieke eigenschaps waarde of script wordt geëvalueerd als `true`. Zie voor [waarden definiëren voor het gebruik van een weergave vermelding of-item](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
+De selectie voorwaarden worden gebruikt voor het definiëren van een voor waarde die moet bestaan voor het gebruik van de vermelding, zoals wanneer een object een specifieke eigenschap heeft of wanneer een specifieke eigenschaps waarde of script `true`. Zie voor [waarden definiëren voor het gebruik van een weergave vermelding of-item](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
 
 Zie [aangepaste besturings elementen weer geven](./creating-custom-controls.md)voor meer informatie over de onderdelen van een aangepaste beheer weergave.
 

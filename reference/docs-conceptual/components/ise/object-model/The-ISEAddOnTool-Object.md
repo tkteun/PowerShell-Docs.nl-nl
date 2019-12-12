@@ -1,33 +1,33 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEAddOnTool-object
 ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028999"
 ---
 # <a name="the-iseaddontool-object"></a>Het ISEAddOnTool-object
 
-Een **ISEAddonTool** object vertegenwoordigt een geïnstalleerde invoegtoepassingen-hulpprogramma dat aanvullende functionaliteit voor Windows PowerShell ISE biedt. Een voorbeeld is de **opdrachten** hulpprogramma die u kunt weergeven door te klikken op **weergave**, klikt u vervolgens **weergeven opdracht invoegtoepassing**. Dit hulpprogramma is vervolgens toegankelijk is voor u door het bewerken van de verschillende beschikbare **ISEAddOnTool** objecten.
+Een **ISEAddonTool** -object vertegenwoordigt een geïnstalleerd add-on hulp programma dat extra functionaliteit biedt ToWindows Power shell ISE. Een voor beeld is het hulp programma **opdrachten** dat u kunt weer geven door te klikken op **weer geven**en vervolgens **op invoeg toepassing opdracht weer geven**. Dit hulp programma is vervolgens toegankelijk voor u door de verschillende beschik bare **ISEAddOnTool** -objecten te bewerken.
 
-Elk hulpprogramma invoegtoepassing kan worden gekoppeld aan het deelvenster met verticale of horizontale deelvenster. De verticale deelvenster is gekoppeld aan de rechterkant van de Windows PowerShell ISE. De horizontale deelvenster is gekoppeld aan de onderkant.
+Elk hulp programma voor invoeg toepassingen kan worden gekoppeld aan het verticale deel venster of het horizontale deel venster. Het verticale deel venster is gedokt aan de rechter kant van Windows PowerShell ISE. Het horizontale deel venster is gedokt aan de onderkant.
 
-Elk tabblad PowerShell in Windows PowerShell ISE kan een eigen set Add-on-hulpprogramma's geïnstalleerd hebben. Zie [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) en [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) voor toegang tot de verzameling van hulpprogramma's die beschikbaar zijn voor het geselecteerde tabblad of de dezelfde eigenschappen op een van de **PowerShellTab** objecten in de [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) verzamelingsobject.
+Op elk Power shell-tabblad in Windows PowerShell ISE kan een eigen set hulpprogram ma's voor toevoegen zijn geïnstalleerd. Zie [$psISE. CurrentPowerShellTab. HorizontalAddOnTools](The-PowerShellTab-Object.md) en [$psISE. CurrentPowerShellTab. VerticalAddOnTools](The-PowerShellTab-Object.md) om toegang te krijgen tot de verzameling hulpprogram ma's die beschikbaar is op het geselecteerde tabblad of op dezelfde eigenschappen van een van de **PowerShellTab** -objecten in het verzamelings object [$psISE. PowerShellTabs](The-PowerShellTabCollection-Object.md) .
 
 ## <a name="methods"></a>Methoden
 
 Er zijn geen Windows PowerShell ISE-specifieke methoden beschikbaar voor objecten van deze klasse.
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Eigenschappen
 
 ### <a name="control"></a>Beheer
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De **besturingselement** eigenschap hebt u leestoegang tot veel van de details van het hulpprogramma van de invoegtoepassing opdrachten.
+De eigenschap **Control** biedt Lees toegang tot veel van de details van het hulp programma opdrachten toevoegen.
 
 ```powershell
 # View the properties of the Commands add-on tool.
@@ -141,9 +141,9 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ### <a name="isvisible"></a>IsVisible
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De Booleaanse eigenschap die aangeeft of het hulpprogramma invoegtoepassing momenteel weergegeven in het deelvenster met toegewezen wordt. Als het zichtbaar is, kunt u instellen de **IsVisible** eigenschap **$false** instellen of verbergen van het hulpprogramma de **IsVisible** eigenschap **$true** om te maken een invoegtoepassing hulpprogramma zichtbaar in de PowerShell-tabblad. Houd er rekening mee dat als een invoegtoepassing hulpprogramma verborgen is, niet meer toegankelijk zijn via is de **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** objecten en daarom kan niet worden zichtbaar gemaakt met behulp van Deze eigenschap voor dat object.
+De eigenschap Boolean die aangeeft of het invoeg programma momenteel zichtbaar is in het toegewezen deel venster. Als deze zichtbaar is, kunt u de eigenschap **IsVisible** instellen op **$False** om het hulp programma te verbergen of de eigenschap **IsVisible** instellen op **$True** om een invoeg toepassing zichtbaar te maken op het Power shell-tabblad. Houd er rekening mee dat na het verbergen van een invoeg toepassing niet meer toegankelijk is via de objecten **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** en daarom niet zichtbaar kan worden gemaakt met behulp van deze eigenschap voor dat object.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -152,11 +152,11 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Name
+### <a name="name"></a>Naam
 
-Ondersteund in Windows PowerShell ISE 3.0 en hoger, en niet aanwezig zijn in eerdere versies.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap die haalt u de naam van de invoegtoepassing-hulpprogramma.
+De alleen-lezen eigenschap waarmee de naam van het hulp programma voor toevoegen wordt opgehaald.
 
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
@@ -166,6 +166,6 @@ Commands
 
 ## <a name="see-also"></a>Zie ook
 
-- [Het ISEAddOnToolCollection-Object](The-ISEAddOnToolCollection-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Het ISEAddOnToolCollection-object](The-ISEAddOnToolCollection-Object.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352274"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Het XML-schemabestand maken voor een Management OData-webservice
 
-Nadat u de resources hebt gedefinieerd die uw webservice beschikbaar maakt (Zie [het MOF-schema bestand voor een management OData-webservice](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)maken), wijst u deze resources toe aan de onderliggende Windows Power shell-cmdlets die de ondersteunde bewerkingen voor elke service implementeren bron door een XML-bestand te maken dat voldoet aan het [schema voor bron toewijzing](./resource-mapping-schema.md). In het XML-bestand worden ook de Url's opgegeven die door de client worden gebruikt om toegang te krijgen tot de resources.
+Nadat u de resources hebt gedefinieerd die uw webservice beschikbaar maakt (Zie [het MOF-schema bestand voor een management OData-webservice](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), wijst u deze resources toe aan de onderliggende Windows Power shell-cmdlets die de ondersteunde bewerkingen voor elke resource implementeren door een XML-bestand te maken dat voldoet aan het [schema voor bron toewijzing](./resource-mapping-schema.md). In het XML-bestand worden ook de Url's opgegeven die door de client worden gebruikt om toegang te krijgen tot de resources.
 
 ## <a name="mappng-resources-to-urls"></a>Mappng bronnen naar Url's
 
@@ -47,11 +47,11 @@ Vervolgens geeft u de cmdlets op die overeenkomen met de ruwe (maken, lezen, bij
 |RUWE opdracht|XML-element|
 |------------------|-----------------|
 |Maken|Maken|
-|Lezen|ophalen|
+|Lezen|Query’s uitvoeren|
 |Bijwerken|Bijwerken|
 |Verwijderen|Verwijderen|
 
-In het volgende voor beeld ziet u de toewijzingen voor de bewerkingen Create, Read en update op de resource `Service`.
+In het volgende voor beeld ziet u de toewijzingen voor de bewerkingen Create, Read en update op de `Service` resource.
 
 ```xml
 <ClassImplementations>

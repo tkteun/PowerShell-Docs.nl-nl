@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359288"
 ---
 # <a name="how-to-support-jobs"></a>Taken ondersteunen
@@ -21,7 +21,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
 ## <a name="to-support-jobs"></a>Om taken te ondersteunen
 
-1. Definieer een para meter `AsJob`, zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als een taak.
+1. Definieer een `AsJob` switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als een taak.
 
     In het volgende voor beeld wordt een AsJob-parameter declaratie weer gegeven.
 
@@ -47,7 +47,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Voeg in een methode voor het verwerken van records een instructie `if` toe om te detecteren of de cmdlet als een taak moet worden uitgevoerd. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+3. Voeg in een methode voor het verwerken van records een `if`-instructie toe om te detecteren of de cmdlet als een taak moet worden uitgevoerd. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()

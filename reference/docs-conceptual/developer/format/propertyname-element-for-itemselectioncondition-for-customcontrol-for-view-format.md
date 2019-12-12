@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: f2b12006-8d52-486b-91a3-e6224ca80e56
 caps.latest.revision: 6
 ms.openlocfilehash: 52d0b0816eaef6752220e0c3b1249e5a0e44a3ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354129"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>Het element PropertyName voor ItemSelectionCondition voor CustomControl voor Weergave (opmaak)
 
-Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd. Als deze eigenschap aanwezig is of als deze wordt geëvalueerd als `true`, wordt aan de voor waarde voldaan en wordt het besturings element gebruikt. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
+Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd. Wanneer deze eigenschap aanwezig is of wordt geëvalueerd als `true`, wordt aan de voor waarde voldaan en wordt het besturings element gebruikt. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) CustomControl-element (indeling) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (Format) ExpressionBinding-element voor CustomItem voor CustomControl voor weer gave (indeling) ItemSelectionCondition element voor expressie binding voor een CustomControl-element voor de eigenschap voor weer gave (Format) voor ItemSelectionCondition voor CustomControl voor weer gave (notatie
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[ItemSelectionCondition-element voor expressie binding voor CustomControl voor weer gave (indeling)](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit besturings element.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de .NET-eigenschap waarmee de voor waarde wordt geactiveerd.
 

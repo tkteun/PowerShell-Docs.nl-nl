@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d9100ab7-fbdc-4c0d-bb56-57669ef42b95
 caps.latest.revision: 9
 ms.openlocfilehash: 316e54d11647aedc1552a0bb74b943de7e4e3588
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353527"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>Het element TypeName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
@@ -45,9 +45,9 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor EnumerableExpansion (indeling)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Hiermee definieert u de voor waarde die moet bestaan om de verzamelings objecten van deze definitie uit te breiden.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, bijvoorbeeld `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
 
 ## <a name="remarks"></a>Opmerkingen
 

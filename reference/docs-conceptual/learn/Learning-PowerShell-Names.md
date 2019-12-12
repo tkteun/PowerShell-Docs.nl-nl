@@ -1,47 +1,47 @@
 ---
 ms.date: 08/24/2018
-keywords: PowerShell-cmdlet
-title: Meer informatie over namen voor PowerShell-opdracht
+keywords: Power shell, cmdlet
+title: Power shell-opdracht namen leren
 ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030425"
 ---
-# <a name="learning-powershell-command-names"></a>Meer informatie over namen voor PowerShell-opdracht
+# <a name="learning-powershell-command-names"></a>Power shell-opdracht namen leren
 
-Meer informatie over de namen van opdrachten en parameters vereist een aanzienlijke tijd-investering met de meeste opdrachtregelinterfaces. Het probleem is dat er enkele patronen zijn. Te onthouden is de enige manier om meer informatie over de opdrachten en parameters die u wilt een regelmatig gebruikt.
+Voor het leren van namen van opdrachten en para meters is een aanzienlijke investering met de meeste opdracht regel interfaces vereist. Het probleem is dat er weinig patronen zijn. Het is de enige manier om de opdrachten en para meters te leren die u regel matig moet gebruiken.
 
-Wanneer u met een nieuwe opdracht of een parameter werkt, u niet altijd gebruiken wat u al kent. U hebt om erachter te komen van een nieuwe naam. Traditioneel opdrachtregelinterfaces beginnen met een kleine set hulpprogramma's en laten groeien met incrementele toevoegingen. Het is gemakkelijk om te zien waarom er geen standaard-structuur is.
-Dit lijkt het logisch is voor de namen van opdrachten na elke opdracht een afzonderlijk hulpprogramma wordt. PowerShell is een betere manier voor het afhandelen van namen van opdrachten.
+Wanneer u met een nieuwe opdracht of para meter werkt, kunt u niet altijd gebruiken wat u al kent. U moet een nieuwe naam zoeken en leren. Normaal gesp roken beginnen opdracht regel interfaces met een kleine set hulpprogram ma's en groeien met incrementele toevoegingen. Het is eenvoudig om te zien waarom er geen standaard structuur is.
+Dit lijkt logisch voor opdracht namen, aangezien elke opdracht een afzonderlijk hulp programma is. Power Shell heeft een betere manier om opdracht namen af te handelen.
 
-## <a name="learning-command-names-in-traditional-shells"></a>Meer informatie over opdrachtnamen in traditionele shells
+## <a name="learning-command-names-in-traditional-shells"></a>Opdracht namen leren in traditionele schalen
 
-De meeste opdrachten zijn gemaakt voor de elementen van het besturingssysteem of toepassingen, zoals services of processen beheren. De opdrachten hebben namen die kunnen of kunnen past niet in een serie. Bijvoorbeeld, op Windows-systemen, kunt u de `net start` en `net stop` opdrachten starten en stoppen van een service. **SC.exe** is een ander hulpprogramma voor service-beheer voor Windows. Deze naam past niet in het naamgevingspatroon voor de **net.exe** opdrachten-service. Windows heeft voor het beheer van bedrijfsprocessen, de **tasklist.exe** opdracht lijst processen en de **taskkill.exe** opdracht voor het beëindigen van processen.
+De meeste opdrachten zijn gebouwd om elementen van het besturings systeem of toepassingen, zoals services of processen, te beheren. De opdrachten hebben namen die al dan niet in een familie passen. U kunt bijvoorbeeld op Windows-systemen de opdrachten `net start` en `net stop` gebruiken om een service te starten en te stoppen. **Sc. exe** is een ander Service beheer programma voor Windows. Deze naam past niet bij het naamgevings patroon voor de **net. exe** -service opdrachten. Voor proces beheer heeft Windows de opdracht **tasklist. exe** voor het weer geven van processen en de opdracht **taskkill. exe** om processen af te breken.
 
-Ook hebben deze opdrachten onregelmatige parameter specificaties. U kunt geen gebruiken de `net start` opdracht voor het starten van een service op een externe computer. De **sc.exe** opdracht kan een service starten op een externe computer. Maar als de externe computer, moet u de naam met een dubbele backslash voorafgaan. Als u wilt de spooler-service op een externe computer met de naam DC01 start, typt u `sc.exe \\DC01 start spooler`.
-Aan de lijst met taken die worden uitgevoerd op DC01, gebruikt u de **/S** parameter en de naam van de computer zonder backslash-tekens. Bijvoorbeeld `tasklist /S DC01`.
+Deze opdrachten hebben ook onregelmatige parameter specificaties. U kunt de opdracht `net start` niet gebruiken om een service op een externe computer te starten. Met de opdracht **sc. exe** kunt u een service op een externe computer starten. Maar om de externe computer op te geven, moet u een voor voegsel van de naam met een dubbele back slash opgeven. Als u de Spooler-service wilt starten op een externe computer met de naam DC01, typt u `sc.exe \\DC01 start spooler`.
+Als u taken wilt weer geven die worden uitgevoerd op DC01, gebruikt u de **/s** para meter en de computer naam zonder backslashes. Voorbeeld: `tasklist /S DC01`.
 
 > [!NOTE]
-> Voorafgaand aan PowerShell v6, `sc` is een alias voor de `Set-Content` cmdlet. Daarom om uit te voeren de **sc.exe** opdracht in een eerdere versie van PowerShell dan v6, moet u de volledige bestandsnaam opnemen **sc.exe** inclusief de bestandsextensie **exe**.
+> Vóór Power shell V6 was `sc` een alias voor de `Set-Content`-cmdlet. Daarom moet u, om de **sc. exe** -opdracht uit te voeren in een versie van Power shell vóór V6, de volledige bestands naam **sc. exe** opnemen, inclusief de bestands extensie **exe**.
 
-Services en -processen zijn voorbeelden van beheerbare elementen op een computer die goed gedefinieerde levenscyclus hebben. U kan starten of stoppen van services en -processen of een lijst van alle actieve services of processen. Hoewel er belangrijke technische verschillen daartussen zijn, zijn welke acties die u op services en -processen uitvoeren conceptueel gezien hetzelfde. Bovendien, de opties die we voor het aanpassen van een actie door de parameters op te geven mogelijk qua ontwerp vergelijkbaar ook.
+Services en processen zijn voor beelden van beheer bare elementen op een computer met goed gedefinieerde levens cycli. U kunt Services en processen starten of stoppen of een lijst ophalen van alle services of processen die momenteel worden uitgevoerd. Hoewel er belang rijke technische verschillen tussen hen zijn, zijn de acties die u uitvoert op Services en processen conceptueel gezien hetzelfde. Bovendien is het mogelijk om een actie aan te passen door para meters op te geven. Dit kan ook conceptueel zijn.
 
-PowerShell misbruik maakt van deze overeenkomsten om het aantal afzonderlijke namen die u moet weten om te begrijpen en gebruiken van cmdlets te verminderen.
+Power Shell maakt gebruik van deze overeenkomsten om het aantal afzonderlijke namen te beperken dat u moet weten om te begrijpen en cmdlets te gebruiken.
 
-## <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>Cmdlets werkwoord-zelfstandig naamwoord namen gebruiken om te beperken van de opdracht te onthouden
+## <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>Cmdlets maken gebruik van termen van naam woorden uit de werk woorden om het onthouden van de opdracht te verminderen
 
-PowerShell maakt gebruik van een systeem voor de naamgeving 'werkwoord-zelfstandig naamwoord'. De cmdletnaam van elke bestaat van een standard bewerking afgebroken met een specifieke zelfstandig naamwoord. PowerShell-werkwoorden zijn niet altijd Engels termen, maar ze specifieke acties in PowerShell express. Zelfstandige naamwoorden zijn erg veel lijkt op zelfstandige naamwoorden in elke taal. Ze beschrijven bepaalde soorten objecten die belangrijk in Systeembeheer zijn. Het is gemakkelijk om te laten zien hoe deze namen tweedelige Vereenvoudig learning door te kijken naar enkele voorbeelden.
+Power Shell maakt gebruik van een naamgevings systeem voor werk woorden. Elke cmdlet-naam bestaat uit een standaard woord dat is afgebroken met een specifieke naam. Power shell-werk woorden zijn niet altijd Engels, maar ze drukken specifieke acties uit in Power shell. Zelfstandige naam woorden zijn veel hetzelfde als zelfstandige naam woorden in elke taal. Hierin worden specifieke typen objecten beschreven die belang rijk zijn in systeem beheer. Het is eenvoudig om te laten zien hoe deze twee deel namen de leer inspanningen verminderen door enkele voor beelden te bekijken.
 
-PowerShell is een aanbevolen set van standaardbewerkingen. Zelfstandige naamwoorden zijn minder beperkt, maar altijd wordt beschreven wat de term reageert. PowerShell heeft opdrachten zoals `Get-Process`, `Stop-Process`, `Get-Service`, en `Stop-Service`.
+Power Shell heeft een aanbevolen set standaard woorden. Zelfstandige naam woorden zijn minder beperkt, maar geven altijd aan waar de term op reageert. Power Shell heeft opdrachten als `Get-Process`, `Stop-Process`, `Get-Service`en `Stop-Service`.
 
-Voor dit voorbeeld van twee zelfstandige naamwoorden en werkwoorden vereenvoudigen consistentie niet weten dat veel eenvoudiger. Breid uit die lijst op een gestandaardiseerde verzameling 10 woorden en 10 woorden. Nu hoeft u slechts 20 woorden om te begrijpen.
-Maar deze woorden kunnen worden gecombineerd tot 100 namen van afzonderlijke opdrachten formulier.
+Voor dit voor beeld van twee zelfstandige naam woorden en termen is consistentie niet vereenvoudigd. Breid deze lijst uit naar een gestandaardiseerde set van 10 werk woorden en tien zelfstandige naam woorden. Nu hebt u slechts twintig woorden om te begrijpen.
+Deze woorden kunnen echter worden gecombineerd om 100 afzonderlijke opdracht namen te maken.
 
-Het is gemakkelijk te begrijpen wat een PowerShell-opdracht door te lezen van de naam doet. De opdracht voor het afsluiten van een computer is `Stop-Computer`. De opdracht om een lijst van alle computers in een netwerk is `Get-Computer`. De opdracht voor het ophalen van de systeemdatum is `Get-Date`.
+Het is eenvoudig om te begrijpen wat een Power shell-opdracht doet door de naam ervan te lezen. De opdracht voor het afsluiten van een computer is `Stop-Computer`. De opdracht voor het weer geven van alle computers in een netwerk is `Get-Computer`. De opdracht voor het ophalen van de systeem datum is `Get-Date`.
 
-U kunt alle opdrachten die een bepaalde bewerking met bevatten een lijst de **term** parameter voor `Get-Command`. Bijvoorbeeld, om te zien van alle cmdlets die gebruikmaken van de term `Get`, type:
+U kunt alle opdrachten weer geven die een bepaalde term bevatten met de para meter **Verb** voor `Get-Command`. Als u bijvoorbeeld alle cmdlets wilt zien die gebruikmaken van de term `Get`, typt u:
 
 ```
 PS> Get-Command -Verb Get
@@ -55,7 +55,7 @@ Cmdlet          Get-ChildItem                   Get-ChildItem [[-Path] <Stri...
 ...
 ```
 
-Gebruik de **zelfstandig naamwoord** parameter om te zien van een reeks opdrachten die invloed hebben op hetzelfde type object. Bijvoorbeeld, voer de volgende opdracht om te zien van de opdrachten die beschikbaar zijn voor het beheren van services:
+Gebruik de para meter van het **zelfstandig naam woord** om een reeks opdrachten te bekijken die van invloed zijn op hetzelfde type object. Voer bijvoorbeeld de volgende opdracht uit om de opdrachten weer te geven die beschikbaar zijn voor het beheren van services:
 
 ```
 PS> Get-Command -Noun Service
@@ -73,33 +73,33 @@ Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
-## <a name="cmdlets-use-standard-parameters"></a>Cmdlets standaard parameters gebruiken
+## <a name="cmdlets-use-standard-parameters"></a>Cmdlets gebruiken standaard parameters
 
-Zoals eerder opgemerkt, hebt geen opdrachten die worden gebruikt in traditionele opdrachtregelinterfaces altijd consistent parameternamen. Parameters zijn vaak één teken of afgekort woorden die eenvoudig te typen, maar worden niet door nieuwe gebruikers gemakkelijk te begrijpen.
+Zoals eerder is opgemerkt, hebben opdrachten die worden gebruikt in traditionele opdracht regel interfaces niet altijd consistente parameter namen. Para meters zijn vaak enkelvoudige of korte woorden die eenvoudig kunnen worden getypt, maar niet eenvoudig kunnen worden begrepen door nieuwe gebruikers.
 
-In tegenstelling tot de meeste andere traditionele opdrachtregelinterfaces PowerShell verwerkt parameters rechtstreeks en deze direct toegang tot de parameters en richtlijnen voor ontwikkelaars om te standaardiseren parameternamen wordt gebruikt. In deze richtlijnen worden gebruikers aangemoedigd maar is geen garantie dat elke cmdlet aan de norm voldoet.
+In tegens telling tot de meeste andere traditionele opdracht regel interfaces, worden para meters rechtstreeks door Power shell verwerkt en wordt deze rechtstreekse toegang tot de para meters, samen met de richt lijnen voor ontwikkel aars, gebruikt om parameter namen te standaardiseren. Deze richt lijnen moedigen aan, maar garandeert niet dat elke cmdlet voldoet aan de standaard.
 
-PowerShell standaardiseert ook de parameter-scheidingsteken. Namen van parameters hebben altijd een '-' aan hen voorafgegaan door een PowerShell-opdracht. Houd rekening met het volgende voorbeeld:
+Power Shell standaard het scheidings teken voor para meters. Voor parameter namen wordt altijd een '-' voorafgegaan door een Power shell-opdracht. Kijk eens naar het volgende voorbeeld:
 
 ```powershell
 Get-Command -Name Clear-Host
 ```
 
-De naam van de parameter is **naam**, maar deze wordt getypt als `-Name` wanneer op de opdrachtregel gebruikt als parameter.
+De naam van de para meter is **naam**, maar wordt getypt als `-Name` wanneer deze wordt gebruikt op de opdracht regel als een para meter.
 
-Hier volgen enkele van de algemene kenmerken van de standaard parameternamen en het gebruik.
+Hier volgen enkele van de algemene kenmerken van de standaard parameter namen en-gebruik.
 
-### <a name="the-help-parameter-"></a>De Help-parameter (?)
+### <a name="the-help-parameter-"></a>De Help-para meter (?)
 
-Wanneer u opgeeft de `-?` parameter in een PowerShell-cmdlet geeft de help voor de cmdlet weer.
+Wanneer u de para meter `-?` opgeeft voor een cmdlet, wordt in Power shell Help voor de cmdlet weer gegeven.
 De cmdlet wordt niet uitgevoerd.
 
-### <a name="common-parameters"></a>Algemene parameters
+### <a name="common-parameters"></a>Algemene para meters
 
-PowerShell heeft diverse *algemene parameters*. Deze parameters worden bepaald door de PowerShell-engine. Algemene parameters gedrag altijd hetzelfde. De algemene parameters zijn **WhatIf**, **bevestigen**, **uitgebreid**, **Debug**, **waarschuwen**, **ErrorAction**, **ErrorVariable**, **OutVariable**, en **OutBuffer**.
+Power Shell heeft verschillende *algemene para meters*. Deze para meters worden bepaald door de Power shell-engine. Algemene para meters gedragen zich altijd op dezelfde manier. De algemene para meters zijn **WhatIf**, **confirm**, **uitgebreidheids**, **debug**, **Warning**, **Error Action**, **ErrorVariable**, **outvariable**en **outbuffer**.
 
-### <a name="recommended-parameter-names"></a>Aanbevolen parameternamen
+### <a name="recommended-parameter-names"></a>Aanbevolen parameter namen
 
-De PowerShell core-cmdlets gebruiken standaard namen voor gelijksoortige parameters. Het gebruik van deze standaard namen niet wordt afgedwongen, maar er expliciete richtlijnen om aan te moedigen standaardisatie is.
+De Power shell core-cmdlets gebruiken standaard namen voor vergelijk bare para meters. Het gebruik van deze standaard namen wordt niet afgedwongen, maar er is expliciete richt lijnen om standaardisatie te stimuleren.
 
-Bijvoorbeeld, de naam van de aanbevolen voor een parameter die naar een computer verwijst is **ComputerName**, in plaats van de Server, Host, systeem, knooppunt of enkele andere algemene alternatief. De namen van andere belangrijke aanbevolen taakparameters zijn **Force**, **uitsluiten**, **opnemen**, **PassThru**, **pad**, en **CaseSensitive**.
+De aanbevolen naam voor een para meter die verwijst naar een computer is **computer naam**in plaats van server, host, systeem, knoop punt of een ander algemeen alternatief. Andere belang rijke aanbevolen parameter namen zijn **Force**, **exclude**, **include**, **PassThru**, **Path**en **CaseSensitive**.

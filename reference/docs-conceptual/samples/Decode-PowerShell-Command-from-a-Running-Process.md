@@ -1,23 +1,23 @@
 ---
 ms.date: 11/13/2018
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Een PowerShell-opdracht decoderen vanuit een actief proces
 author: randomnote1
 ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66470960"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Een PowerShell-opdracht decoderen vanuit een actief proces
 
-Mogelijk hebt u soms een proces dat wordt uitgevoerd in een grote hoeveelheid is beslag PowerShell.
-Dit proces kan worden uitgevoerd in de context van een [Task Scheduler][] taak of een [SQL Server Agent][] taak. Wanneer er meerdere PowerShell processen die worden uitgevoerd, kan het lastig zijn om te weten welk proces Hiermee geeft u het probleem. In dit artikel laat zien hoe moet worden gedecodeerd een scriptblok een PowerShell-proces momenteel wordt uitgevoerd.
+Op het moment dat er een Power Shell-proces wordt uitgevoerd dat een grote hoeveelheid resources in beslag neemt.
+Dit proces kan worden uitgevoerd in de context van een [taak planner][] of een [SQL Server Agent][] taak. Als er meerdere Power shell-processen worden uitgevoerd, kan het lastig zijn om te weten welk proces het probleem vertegenwoordigt. In dit artikel wordt beschreven hoe u een script blok decodeert dat op dit moment wordt uitgevoerd voor een Power Shell-proces.
 
-## <a name="create-a-long-running-process"></a>Een langlopende proces maken
+## <a name="create-a-long-running-process"></a>Een langlopend proces maken
 
-Om te demonstreren in dit scenario, opent u een nieuwe PowerShell-venster en voer de volgende code uit. Het uitvoeren van een PowerShell-opdracht die een getal elke minuut gedurende tien minuten uitvoert.
+Open een nieuw Power shell-venster en voer de volgende code uit om dit scenario te demonstreren. Er wordt een Power shell-opdracht uitgevoerd die elke minuut gedurende tien minuten een getal uitvoert.
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a>Het proces weergeven
+## <a name="view-the-process"></a>Het proces weer geven
 
-De hoofdtekst van de opdracht waarmee het uitvoeren van PowerShell wordt opgeslagen in de **CommandLine** eigenschap van de [Win32_Process][] klasse. Als de opdracht een gecodeerde opdracht is, de **CommandLine** eigenschap bevat de tekenreeks 'EncodedCommand'. Met deze informatie, zijn de gecodeerde opdracht ongedaan maken via het volgende proces verborgen.
+De hoofd tekst van de opdracht die Power shell uitvoert, wordt opgeslagen in de eigenschap **commandline** van de klasse [Win32_Process][] . Als de opdracht een gecodeerde opdracht is, bevat de eigenschap **commandline** de teken reeks "EncodedCommand". Met deze informatie kunt u de gecodeerde opdracht decoderen via het volgende proces.
 
-Start PowerShell als beheerder. Het is essentieel dat PowerShell als beheerder wordt uitgevoerd, anders geen resultaten worden geretourneerd bij het opvragen van de actieve processen.
+Start Power shell als Administrator. Het is essentieel dat Power shell wordt uitgevoerd als Administrator, anders worden er geen resultaten geretourneerd tijdens het uitvoeren van query's op de actieve processen.
 
-Voer de volgende opdracht uit om de PowerShell-processen met een gecodeerde-opdracht uit:
+Voer de volgende opdracht uit om alle Power shell-processen met een gecodeerde opdracht op te halen:
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-De volgende opdracht maakt u een aangepaste PowerShell-object dat de proces-ID en de gecodeerde opdracht bevat.
+Met de volgende opdracht maakt u een aangepast Power shell-object dat de proces-ID en de versleutelde opdracht bevat.
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-Nu kan de gecodeerde opdracht worden gedecodeerd. Het volgende codefragment doorloopt over het object command details, de gecodeerde opdracht decodeert en voegt de gedecodeerde opdracht terug naar het object voor verder onderzoek.
+De gecodeerde opdracht kan nu worden gedecodeerd. Het volgende code fragment loopt over het object opdracht Details, decodeert de gecodeerde opdracht en voegt de gedecodeerde opdracht weer toe aan het object voor verdere onderzoek.
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-De gedecodeerde opdracht kan nu worden gecontroleerd door het selecteren van de eigenschap gedecodeerde command.
+De gedecodeerde opdracht kan nu worden gecontroleerd door de gedecodeerde opdracht eigenschap te selecteren.
 
 ```output
 ProcessId      : 8752
@@ -104,6 +104,6 @@ DecodedCommand :
                      }
 ```
 
-[Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
+[Taak planner]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process

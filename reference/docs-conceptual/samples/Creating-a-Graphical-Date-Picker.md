@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Een grafische datumkiezer maken
 ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030249"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Een grafische datumkiezer maken
 
-Gebruik Windows PowerShell 3.0 en latere versies naar een formulier maken met een grafische, agenda-stijl-besturingselement waarmee gebruikers een dag van de maand selecteren.
+Gebruik Windows Power Shell 3,0 en latere versies om een formulier te maken met een grafisch besturings element voor de kalender stijl waarmee gebruikers een dag van de maand kunnen selecteren.
 
-## <a name="create-a-graphical-date-picker-control"></a>Een grafische datumkiezer maken
+## <a name="create-a-graphical-date-picker-control"></a>Een besturings element voor een grafische datum kiezer maken
 
-Kopieer en plak het volgende in Windows PowerShell ISE en vervolgens opslaan als een Windows PowerShell-script (.ps1).
+Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -60,8 +60,8 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-Het script begint met het laden van twee .NET Framework-klassen: **System.Drawing** en **System.Windows.Forms**.
-Vervolgens start u een nieuw exemplaar van de .NET Framework-klasse **Windows.Forms.Form**; die zorgt voor een leeg formulier of Hiermee bepaalt u venster waaraan u kunt beginnen met het toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**.
+Vervolgens start u een nieuwe instantie van de .NET Framework klasse **Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -72,21 +72,21 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-In dit voorbeeld waarden aan vier eigenschappen van deze klasse worden toegewezen met behulp van de **eigenschap** eigenschap en hash-tabel.
+In dit voor beeld worden waarden toegewezen aan vier eigenschappen van deze klasse met behulp van de **eigenschap** Property en de hashtabel.
 
-1. **StartPosition zijn**: Als u deze eigenschap niet toevoegt, wordt in Windows een locatie geselecteerd als het formulier wordt geopend.
-   Als deze eigenschap instelt op **CenterScreen**, u bent automatisch weergeven van het formulier in het midden van het scherm telkens worden geladen.
+1. **Waarde gelijk**: als u deze eigenschap niet toevoegt, wordt door Windows een locatie geselecteerd wanneer het formulier wordt geopend.
+   Als u deze eigenschap instelt op **CenterScreen**, wordt het formulier in het midden van het scherm telkens weer gegeven wanneer het wordt geladen.
 
-2. **Grootte**: Dit is de grootte van het formulier, in pixels.
-   Dit script maakt u een formulier 243 pixels breed 230 pixels hoog is.
+2. **Grootte**: dit is de grootte van het formulier, in pixels.
+   Met het voor gaande script maakt u een formulier dat 243 pixels breed is en 230 pixels hoog.
 
-3. **Tekst**: Hiermee wordt de titel van het venster.
+3. **Tekst**: dit wordt de titel van het venster.
 
-4. **Bovenste**: Als deze eigenschap instelt op `$true`, u kunt afdwingen dat het venster te openen op een andere openstaande vensters en dialoogvensters.
+4. **Bovenste**: door deze eigenschap in te stellen op `$true`, kunt u het venster dwingen hierop andere open vensters en dialoog vensters te openen.
 
-Vervolgens maken en voeg een kalenderbesturingselement in het formulier.
-In dit voorbeeld wordt de huidige dag niet gemarkeerd of omcirkeld.
-Gebruikers kunnen slechts één dag in de kalender in één keer selecteren.
+Vervolgens maakt en voegt u vervolgens een besturings element kalender toe aan het formulier.
+In dit voor beeld wordt de huidige dag niet gemarkeerd of omcirkeld.
+Gebruikers kunnen per keer slechts één dag selecteren in de agenda.
 
 ```powershell
 $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
@@ -96,11 +96,11 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-Maak vervolgens een **OK** knop voor het formulier.
-Geef de grootte en het gedrag van de **OK** knop.
-In dit voorbeeld is de positie van de knop 165 pixels vanaf de bovenkant van het formulier en 38 pixels vanaf de linkerkant.
-De hoogte van de knop is 23 pixels, terwijl de lengte van de knop 75 pixels is.
-Het script maakt gebruik van vooraf gedefinieerde Windows Forms-typen om te bepalen het gedrag van de knop.
+Maak vervolgens een knop **OK** voor uw formulier.
+Geef de grootte en het gedrag op van de knop **OK** .
+In dit voor beeld is de knop positie 165 pixels van de bovenrand van het formulier en 38 pixels vanaf de linkerrand.
+De knop hoogte is 23 pixels en de knop lengte is 75 pixels.
+Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.
 
 ```powershell
 $OKButton = New-Object Windows.Forms.Button -Property @{
@@ -113,8 +113,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Op deze manier maakt u een **annuleren** knop.
-De **annuleren** knop is 165 pixels vanaf de bovenkant, maar 113 pixels vanaf de linkerrand van het venster.
+Op dezelfde manier maakt u een knop **Annuleren** .
+De knop **Annuleren** is 165 pixels vanaf de bovenkant, maar 113 pixels vanaf de linkerrand van het venster.
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -127,14 +127,14 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Voeg de volgende regel code om weer te geven van het formulier in Windows.
+Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Ten slotte de code binnen de `if` blok geeft Windows wat te doen met het formulier wanneer gebruikers een dag in de kalender selecteren en klik vervolgens op de **OK** of drukt u op de **Enter** sleutel.
-Windows PowerShell wordt de geselecteerde datum weergegeven voor gebruikers.
+Ten slotte geeft de code binnen het `if`-blok aan dat Windows wat er moet gebeuren met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op **Enter** .
+De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -145,6 +145,6 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>Zie ook
 
-- [Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Een grafische datumkiezer maken](https://technet.microsoft.com/library/ff730942.aspx)
+- [Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: de WinFormsExampleUpdates van Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows Power shell-Tip van de week: een grafische datum kiezer maken](https://technet.microsoft.com/library/ff730942.aspx)

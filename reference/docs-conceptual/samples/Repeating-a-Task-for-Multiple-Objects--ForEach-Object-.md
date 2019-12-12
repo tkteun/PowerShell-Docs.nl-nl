@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: Een taak herhalen voor meerdere objecten-ForEach-Object
+keywords: Power shell, cmdlet
+title: Een taak herhalen voor meerdere objecten ForEach-object
 ms.openlocfilehash: 1442507c4213476f65df3401c1021f8d0fc31956
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030816"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Een taak herhalen voor meerdere objecten (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Een taak herhalen voor meerdere objecten (ForEach-object)
 
-De **ForEach-Object** cmdlet scriptblokken gebruikt en de `$_` descriptor voor de huidige pijplijn-object dat u een opdracht uitvoeren op elk object in de pijplijn. Dit kan worden gebruikt om uit te voeren sommige complexe taken.
+De **foreach-object-** cmdlet gebruikt script blokken en de `$_` descriptor voor het huidige pijplijn object, zodat u een opdracht kunt uitvoeren op elk object in de pijp lijn. Dit kan worden gebruikt voor het uitvoeren van enkele gecompliceerde taken.
 
-Een situatie waarin dit kan nuttig zijn met het bewerken van de gegevens zodat deze nuttiger zijn. De WMI-klasse Win32_LogicalDisk kunt bijvoorbeeld worden gebruikt om gegevens van de vrije ruimte voor elke lokale schijf te retourneren. De gegevens worden geretourneerd in termen van bytes, waardoor het moeilijk te lezen:
+Een situatie waarin dit nuttig kan zijn, is om het handiger te maken om de gegevens te bewerken. Bijvoorbeeld, de klasse Win32_LogicalDisk van WMI kan worden gebruikt om informatie over de beschik bare ruimte voor elke lokale schijf te retour neren. De gegevens worden weer gegeven in termen van bytes, waardoor het moeilijk te lezen is:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -26,20 +26,20 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-We kunnen de waarde FreeSpace omzetten naar megabytes door elke waarde te delen door 1024 tweemaal te gebruiken. na de eerste afdeling, de gegevens zich in kilobytes en na het tweede getal is in megabytes. U kunt dat doen in een scriptblok ForEach-Object door te typen:
+De vrije ruimte-waarde kan worden geconverteerd naar mega bytes door elke 1024 waarde twee keer te delen. na de eerste deling bevindt de gegevens zich in kilo bytes en na de tweede deling is dit mega bytes. U kunt dit doen in een script blok voor ForEach-objecten door het volgende te typen:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-De uitvoer is nu gegevens met geen bijbehorende label. Omdat WMI-eigenschappen zoals deze alleen-lezen zijn, kunt u niet rechtstreeks FreeSpace converteren. Als u deze typt:
+Helaas is de uitvoer nu gegevens zonder bijbehorend label. Omdat WMI-eigenschappen zoals dit alleen-lezen zijn, kunt u niet rechtstreeks vrije ruimte converteren. Als u dit typt:
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Krijgt u een foutbericht weergegeven:
+Er wordt een fout bericht weer gegeven:
 
 ```output
 "FreeSpace" is a ReadOnly property.
@@ -48,4 +48,4 @@ At line:1 char:70
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-U kunt de gegevens opnieuw indelen met behulp van sommige geavanceerde technieken, maar het eenvoudiger is een nieuw object maken met behulp van **Select-Object**.
+U kunt de gegevens opnieuw indelen met een aantal geavanceerde technieken, maar een eenvoudigere benadering is het maken van een nieuw object met behulp van **Select-object**.

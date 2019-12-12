@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakket eigenaren beheren
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71329020"
 ---
 # <a name="managing-package-owners"></a>Pakket eigenaren beheren
@@ -34,7 +34,7 @@ Wanneer een pakket is gepubliceerd naar de PowerShell Gallery, is het eenvoudig 
 5. Er wordt een e-mail bericht verzonden naar de nieuwe mede-eigenaar, als een uitnodiging om eigenaar te worden van een pakket.
 6. Zodra de gebruiker op de koppeling klikt, is deze een volledige mede-eigenaar met volledige controle over een pakket, inclusief de mogelijkheid om andere gebruikers als eigen aren te verwijderen.
 
-**OPMERKING**: Totdat de nieuwe eigenaar het eigendom bevestigt, *wordt deze niet* vermeld als een eigenaar van een pakket.
+**Opmerking**: totdat de nieuwe eigenaar het eigendom bevestigt, *wordt deze niet* vermeld als een eigenaar van een pakket.
 Wanneer u de pagina **eigen aars beheren** bekijkt, ziet u de vermelding ' goed keuring in behandeling ' in de huidige eigen aars.
 Deze uitnodiging kan worden verwijderd. net zoals andere eigen aren kunnen worden verwijderd.
 Dit proces van uitnodigingen voor komt dat gebruikers onterecht andere gebruikers toevoegen als eigen aren van hun pakketten.

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
 caps.latest.revision: 10
 ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353828"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>Het element SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
@@ -34,7 +34,7 @@ Configuratie-element (indeling) DefaultSettings element (indeling) EnumerableExp
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven. U moet één `PropertyName`-of `ScriptBlock`-element opgeven. De elementen `SelectionSetName` en `TypeName` zijn optioneel. U kunt een van beide elementen opgeven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven. U moet één `PropertyName` of `ScriptBlock` element opgeven. De elementen `SelectionSetName` en `TypeName` zijn optioneel. U kunt een van beide elementen opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 

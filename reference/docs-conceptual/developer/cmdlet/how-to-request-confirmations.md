@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359338"
 ---
 # <a name="how-to-request-confirmations"></a>Bevestigingen aanvragen
@@ -31,7 +31,7 @@ In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. cmdl
             SupportsShouldProcess = true)]
     ```
 
-2. Voeg een para meter `Force` toe aan uw cmdlet, zodat de gebruiker een bevestigings aanvraag kan onderdrukken.
+2. Voeg een `Force`-para meter toe aan de cmdlet, zodat de gebruiker een bevestigings aanvraag kan onderdrukken.
 
     ```csharp
     [Parameter()]
@@ -43,13 +43,13 @@ In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. cmdl
     private bool force;
     ```
 
-3. Voeg een instructie `if` toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) om te bepalen of de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wordt aangeroepen.
+3. Voeg een `if`-instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) om te bepalen of de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wordt aangeroepen.
 
 4. Voeg een tweede `if`-instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en de waarde van de para meter `Force` om te bepalen of de bewerking moet worden uitgevoerd.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende code voorbeeld worden de methoden [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aangeroepen in de onderdrukking van de [ Methode System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . U kunt deze methoden echter ook aanroepen vanuit de andere invoer verwerkings methoden.
+In het volgende code voorbeeld worden de methoden [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aangeroepen in de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . U kunt deze methoden echter ook aanroepen vanuit de andere invoer verwerkings methoden.
 
 ```csharp
 protected override void ProcessRecord()

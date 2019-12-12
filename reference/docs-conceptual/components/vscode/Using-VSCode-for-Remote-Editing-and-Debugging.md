@@ -3,90 +3,90 @@ title: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 description: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 ms.date: 06/13/2019
 ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67264025"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 
-Bedoeld voor degenen die bekend met de ISE zijn misschien herinnert u zich dat u kunt uitvoeren `psedit file.ps1` rechtstreeks vanuit de geïntegreerde console bestanden - lokale of externe - te openen in de ISE.
+Voor degenen die bekend zijn met de ISE, kunt u intrekken dat u `psedit file.ps1` kunt uitvoeren vanuit de geïntegreerde console om bestanden te openen-lokaal of extern-rechts in de ISE.
 
-Deze functie is ook beschikbaar in de PowerShell-extensie voor VSCode. Deze handleiding wordt beschreven hoe u dit doet.
+Deze functie is ook beschikbaar in de Power shell-uitbrei ding voor VSCode. In deze hand leiding wordt uitgelegd hoe u dit kunt doen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Deze handleiding wordt ervan uitgegaan dat u hebt:
+In deze hand leiding wordt ervan uitgegaan dat u het volgende hebt:
 
-- een externe bron (bijvoorbeeld: een virtuele machine, een container) dat u toegang tot hebt
-- PowerShell die worden uitgevoerd op deze en de hostcomputer
-- VSCode en de PowerShell-extensie voor VSCode
+- Een externe bron (bijvoorbeeld: een VM, een container) waartoe u toegang hebt
+- Power shell wordt uitgevoerd op deze computer en de hostmachine
+- VSCode en de Power shell-extensie voor VSCode
 
-Deze functie werkt op Windows PowerShell en PowerShell Core.
+Deze functie werkt in Windows Power shell en Power shell core.
 
-Deze functie werkt ook bij het verbinden met een externe computer via WinRM, PowerShell Direct of SSH. Als u wilt gebruiken van SSH, maar met behulp van Windows, bekijk dan de [Win32-versie van SSH](https://github.com/PowerShell/Win32-OpenSSH)!
+Deze functie werkt ook wanneer u verbinding maakt met een externe computer via WinRM, Power shell direct of SSH. Als u SSH wilt gebruiken, maar Windows gebruikt, raadpleegt u de [Win32-versie van SSH](https://github.com/PowerShell/Win32-OpenSSH)!
 
 > [!IMPORTANT]
-> De `Open-EditorFile` en `psedit` opdrachten alleen werken in de **PowerShell geïntegreerde Console** gemaakt door de PowerShell-extensie voor VSCode.
+> De opdrachten `Open-EditorFile` en `psedit` werken alleen in de **Power shell-geïntegreerde console** die is gemaakt met de Power shell-uitbrei ding voor VSCode.
 
-## <a name="usage-examples"></a>Voorbeelden van het gebruik
+## <a name="usage-examples"></a>Gebruiks voorbeelden
 
-Deze voorbeelden tonen externe bewerken en foutopsporing via een MacBook Pro op een Ubuntu-VM die wordt uitgevoerd in Azure. Het proces is vrijwel identiek in Windows.
+In deze voor beelden ziet u het op afstand bewerken en fout opsporing van een MacBook Pro naar een Ubuntu VM die in azure wordt uitgevoerd. Het proces is identiek in Windows.
 
-### <a name="local-file-editing-with-open-editorfile"></a>Lokaal bestand bewerken met Open-EditorFile
+### <a name="local-file-editing-with-open-editorfile"></a>Lokaal bestand bewerken met open-EditorFile
 
-Met de PowerShell-extensie voor VSCode gestart en de geïntegreerde PowerShell-Console hebt geopend, kunnen we typen `Open-EditorFile foo.ps1` of `psedit foo.ps1` lokale foo.ps1 bestand rechts in de editor te openen.
+Met de Power shell-extensie voor VSCode gestart en de Power shell-geïntegreerde console geopend, kunnen we `Open-EditorFile foo.ps1`-of `psedit foo.ps1` om het lokale bestand foo. ps1 rechtstreeks in de editor te openen.
 
-![Open-EditorFile foo.ps1 werkt lokaal](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo. ps1 werkt lokaal](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
-> Het bestand `foo.ps1` moet al bestaan.
+> De bestands `foo.ps1` moet al bestaan.
 
-Van daaruit kunnen we:
+Vanaf daar kunnen we het volgende doen:
 
-- Onderbrekingspunten toevoegen aan de tussenruimte
+- Onderbrekings punten toevoegen aan de rugmarge
 
-  ![onderbrekingspunt naar rugmarge toevoegen](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![onderbrekings punt toevoegen aan rugmarge](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
-- Druk op F5 om op te sporen in het PowerShell-script.
+- Druk op F5 om fouten op te sporen in het Power shell-script.
 
-  ![het lokale PowerShell-script-foutopsporing](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![fout opsporing van het lokale Power shell-script](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
-Tijdens het opsporen van fouten, kunt u communiceren met de console voor foutopsporing, bekijk de variabelen in het bereik aan de linkerkant en alle andere standard hulpmiddelen voor foutopsporing.
+Tijdens het opsporen van fouten kunt u communiceren met de console fout opsporing, de variabelen in het bereik aan de linkerkant bekijken en alle andere standaardfout opsporingsprogramma's.
 
-### <a name="remote-file-editing-with-open-editorfile"></a>Extern bestand bewerken met Open-EditorFile
+### <a name="remote-file-editing-with-open-editorfile"></a>Externe bestands bewerking met open-EditorFile
 
-Nu gaan we krijgen tot externe bestand bewerken en het opsporen van fouten. De stappen zijn vrijwel hetzelfde, wordt er slechts één wat die we moeten eerst doen - opgeven van onze PowerShell-sessie met de externe server.
+Nu gaan we externe bestanden bewerken en fouten opsporen. De stappen zijn bijna hetzelfde, maar u moet eerst onze Power shell-sessie uitvoeren op de externe server.
 
-Er is een cmdlet voor om dit te doen. Dit heet `Enter-PSSession`.
+Er is een cmdlet voor om dit te doen. Het wordt `Enter-PSSession`genoemd.
 
-De watered omlaag uitleg van de cmdlet is:
+De niet-bevochtigde uitleg van de cmdlet is:
 
-- `Enter-PSSession -ComputerName foo` Hiermee wordt een sessie via WinRM gestart
-- `Enter-PSSession -ContainerId foo` en `Enter-PSSession -VmId foo` een sessie via PowerShell Direct starten
-- `Enter-PSSession -HostName foo` Hiermee wordt een sessie via SSH gestart
+- `Enter-PSSession -ComputerName foo` start een sessie via WinRM
+- een sessie `Enter-PSSession -ContainerId foo` en `Enter-PSSession -VmId foo` via Power shell direct
+- `Enter-PSSession -HostName foo` start een sessie via SSH
 
-Zie voor meer informatie de documentatie voor [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
+Zie de documentatie voor [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)voor meer informatie.
 
-Daar gaan we in Mac OS een Ubuntu-VM in Azure, we SSH gebruiken voor externe toegang.
+Omdat we vanuit macOS naar een Ubuntu-VM in azure gaan, gebruiken we SSH voor externe communicatie.
 
-Voer eerst in de geïntegreerde Console `Enter-PSSession`. U bent verbonden met de externe sessie wanneer `[<hostname>]` geeft tot aan de linkerkant van de opdrachtprompt.
+Voer eerst in de geïntegreerde console het `Enter-PSSession`uit. U bent verbonden met de externe sessie wanneer `[<hostname>]` links van uw prompt wordt weer gegeven.
 
-![De aanroep naar de Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Het aanroepen van ENTER-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
-We kunnen nu dezelfde stappen doen als we een lokale-script bewerkt.
+Nu kunnen we dezelfde stappen uitvoeren als voor het bewerken van een lokaal script.
 
-1. Voer `Open-EditorFile test.ps1` of `psedit test.ps1` openen van de externe `test.ps1` bestand
+1. Voer `Open-EditorFile test.ps1` of `psedit test.ps1` uit om het externe `test.ps1`-bestand te openen
 
-  ![Het bestand test.ps1 Open-EditorFile](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile het bestand test. ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
-1. Het bestand/set-onderbrekingspunten bewerken
+1. Het bestand of de set onderbrekings punten bewerken
 
-   ![bewerken en onderbrekingspunten instellen](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![onderbrekings punten bewerken en instellen](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
-1. Foutopsporing (F5) het externe bestand starten
+1. Fout opsporing starten (F5) het externe bestand
 
-   ![foutopsporing van het externe bestand](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![fout opsporing van het externe bestand](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
-Als u problemen hebt, kunt u problemen in openen de [GitHub-opslagplaats](https://github.com/powershell/vscode-powershell).
+Als u problemen hebt, kunt u problemen openen in de [github-opslag plaats](https://github.com/powershell/vscode-powershell).

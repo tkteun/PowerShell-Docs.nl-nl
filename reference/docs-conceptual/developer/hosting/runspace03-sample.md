@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
 ms.openlocfilehash: 39495f7813aecf5d0210866fc11f94557fdb0cd9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353058"
 ---
 # <a name="runspace03-sample"></a>Voorbeeld Runspace03
@@ -23,7 +23,7 @@ In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power 
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 

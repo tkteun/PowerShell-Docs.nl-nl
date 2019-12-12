@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 679c8bcb-b49d-4bb4-91f5-ea1af6c217e3
 caps.latest.revision: 8
 ms.openlocfilehash: 4553f95e48a2b1440c00b4951bea56376b00628a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354640"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-configuration-format"></a>Het element FirstLineHanging voor Frame voor Besturingselementen voor Configuratie (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `FirstLineHanging` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `FirstLineHanging` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,13 +45,13 @@ Geen.
 |-------------|-----------------|
 |[Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het aantal tekens op waarmee u de eerste regel van de gegevens wilt verschuiven.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Als dit element is opgegeven, kunt u het element `FirstLineIndent` niet opgeven.
+Als dit element is opgegeven, kunt u het `FirstLineIndent`-element niet opgeven.
 
 ## <a name="see-also"></a>Zie ook
 

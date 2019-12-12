@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
 ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357846"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Help op basis van opmerkingen in functies plaatsen
@@ -25,7 +25,7 @@ In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een 
 
 - Aan het einde van de hoofd tekst van de functie.
 
-- Vóór het sleutel woord `Function`. Wanneer de functie zich in een script of script module bevindt, kan er niet meer dan één lege regel tussen de laatste regel van de op opmerkingen gebaseerde Help en het sleutel woord `Function` zijn. Anders wordt de Help door `Get-Help` gekoppeld aan het script, niet met de functie.
+- Vóór het sleutel woord `Function`. Wanneer de functie zich in een script of script module bevindt, kan er niet meer dan één lege regel zijn tussen de laatste regel van de op opmerkingen gebaseerde Help en het sleutel woord `Function`. Anders wordt de Help door `Get-Help` gekoppeld aan het script, niet met de functie.
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Voor beelden van de plaatsing van een Help in een functie
 

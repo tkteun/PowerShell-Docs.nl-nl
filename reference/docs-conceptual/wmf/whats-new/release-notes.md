@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Opmerkingen bij de WMF 5.x-release
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416499"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
@@ -35,7 +35,7 @@ ms.locfileid: "74416499"
 
 WMF 5,1 bevat de onderdelen van Power shell, WMI, WinRM en Software Inventory logging (SIL) die zijn uitgebracht met Windows Server 2016. WMF 5,1 kan worden geïnstalleerd op Windows 7, Windows 8,1, Windows Server 2008 R2, 2012 en 2012 R2, en biedt verschillende verbeteringen ten opzichte van WMF-5,0, waaronder:
 
-- Nieuwe cmdlets
+- Nieuwe cmdLets
 - PowerShellGet-verbeteringen, waaronder het afdwingen van ondertekende modules en het installeren van JEA-modules
 - Ondersteuning in PackageManagement toegevoegd voor Containers, CBS Setup, EXE-installatie en CAB-pakketten
 - Verbeteringen in foutopsporing voor DSC- en PowerShell-klassen

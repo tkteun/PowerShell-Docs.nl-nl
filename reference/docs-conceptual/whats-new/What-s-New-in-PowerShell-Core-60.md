@@ -3,10 +3,10 @@ title: Wat is er nieuw in Power shell Core 6,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,0
 ms.date: 08/06/2018
 ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416753"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in Power shell Core 6,0
@@ -104,7 +104,7 @@ Naast elkaar is achterwaartse compatibiliteit mogelijk, omdat scripts kunnen wor
 > Het MSI-gebaseerde installatie programma in Windows voert standaard een installatie met update uit.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>De naam van `powershell(.exe)` gewijzigd in `pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Naam van `powershell(.exe)` gewijzigd in `pwsh(.exe)`
 
 De binaire naam voor Power shell Core is gewijzigd van `powershell(.exe)` naar `pwsh(.exe)`.
 Deze wijziging biedt gebruikers een deterministische manier om Power shell Core op computers uit te voeren voor ondersteuning van Side-by-side Windows Power shell-en Power shell Core-installaties.
@@ -129,7 +129,7 @@ Power shell core maakt gebruik van [.NET Standard][] 2,0 om binaire compatibilit
 Veel Power shell-modules zijn afhankelijk van deze assembly's (vaak als dll-bestanden), zodat deze door .NET Standard kunnen blijven werken met .NET core.
 Power shell Core bevat ook een heuristiek voor het zoeken naar bekende mappen, zoals waar de globale assembly-cache zich doorgaans op schijf bevindt om .NET Framework DLL-afhankelijkheden te vinden.
 
-Meer informatie over .NET Standard vindt u in de [.NET Blog][], in deze [YouTube][] -video en via deze [FAQ][] over github.
+Meer informatie over .NET Standard vindt u in de [.NET Blog][], in deze [YouTube][] -video en via deze [Veelgestelde vragen][] over github.
 
 Er zijn beste inspanningen gedaan om ervoor te zorgen dat de Power shell-taal en ingebouwde modules (zoals `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`enzovoort) hetzelfde werken als in Windows Power shell.
 In veel gevallen hebben we met de Help van de Community nieuwe mogelijkheden en oplossingen voor fouten toegevoegd aan deze cmdlets.
@@ -252,7 +252,7 @@ Zie [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)v
 
 ## <a name="cmdlet-updates"></a>Cmdlet-updates
 
-### <a name="new-cmdlets"></a>Nieuwe cmdlets
+### <a name="new-cmdlets"></a>Nieuwe cmdLets
 
 - Voeg `Get-Uptime` toe aan `Microsoft.PowerShell.Utility`.
 - `Remove-Alias` opdracht toevoegen. (#5143) (Bedankt [@PowershellNinja](https://github.com/PowershellNinja)!)
@@ -392,7 +392,7 @@ Meer informatie over hoe we deze gegevens in dit [blog bericht][telemetry-blog]g
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[Veelgestelde vragen]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker

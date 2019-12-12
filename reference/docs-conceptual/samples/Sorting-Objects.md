@@ -1,22 +1,22 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Objecten sorteren
 ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030780"
 ---
 # <a name="sorting-objects"></a>Objecten sorteren
 
-We kunt indelen weergegeven gegevens zodat u gemakkelijk te scannen met behulp van de `Sort-Object` cmdlet. `Sort-Object` de naam van een of meer eigenschappen om te sorteren op neemt, en gegevens gesorteerd op basis van de waarden van deze eigenschappen worden geretourneerd.
+We kunnen weer gegeven gegevens ordenen om het scannen gemakkelijker te maken met behulp van de cmdlet `Sort-Object`. `Sort-Object` neemt de naam van een of meer eigenschappen op waarop moet worden gesorteerd, en retourneert gegevens gesorteerd op basis van de waarden van die eigenschappen.
 
-## <a name="basic-sorting"></a>Basic sorteren
+## <a name="basic-sorting"></a>Basis sortering
 
-Houd rekening met het probleem van de aanbieding submappen en bestanden in de huidige map.
-Als we sorteren willen op **LastWriteTime** en vervolgens op **naam**, kunnen we doen door te typen:
+Bekijk het probleem van het vermelden van submappen en bestanden in de huidige map.
+Als we willen sorteren op **LastWriteTime** en vervolgens op **naam**, kunnen we dit doen door het volgende te typen:
 
 ```powershell
 Get-ChildItem |
@@ -39,7 +39,7 @@ LastWriteTime          Name
 ...
 ```
 
-U kunt de objecten ook in omgekeerde volgorde sorteren door op te geven de **aflopend** parameter overschakelen.
+U kunt de objecten ook in omgekeerde volg orde sorteren door de para meter **aflopende** switch op te geven.
 
 ```powershell
 Get-ChildItem |
@@ -64,14 +64,14 @@ LastWriteTime          Name
 11/6/2017 10:10:11 AM  .localization-config
 ```
 
-## <a name="using-hash-tables"></a>Met behulp van hash-tabellen
+## <a name="using-hash-tables"></a>Hash-tabellen gebruiken
 
-U kunt verschillende eigenschappen op verschillende plekken sorteren met behulp van hash-tabellen in een matrix.
-Elke hash-tabel maakt gebruik van een **expressie** sleutel om op te geven van de naam van de eigenschap als tekenreeks en een **oplopend** of **aflopend** sleutel om op te geven van de sorteervolgorde door `$true` of `$false`.
+U kunt verschillende eigenschappen in verschillende orders sorteren door hash-tabellen in een matrix te gebruiken.
+Elke hash-tabel gebruikt een **expressie** sleutel om de naam van de eigenschap op te geven als teken reeks en een **oplopende** of **aflopende** toets om de sorteer volgorde op te geven `$true` of `$false`.
 De **expressie** sleutel is verplicht.
-De **oplopend** of **aflopend** sleutel is optioneel.
+De **oplopende** of **aflopende** toets is optioneel.
 
-Het volgende voorbeeld worden objecten in aflopende volgorde gesorteerd **LastWriteTime** volgorde en oplopend **naam** volgorde.
+In het volgende voor beeld worden objecten in aflopende volg orde **LastWriteTime** en oplopende **volg orde gesorteerd** .
 
 ```powershell
 Get-ChildItem |
@@ -91,10 +91,10 @@ LastWriteTime          Name
 ...
 ```
 
-U kunt ook een scriptblock instellen op de **expressie** sleutel.
-Bij het uitvoeren van de `Sort-Object` cmdlet, de scriptblock wordt uitgevoerd en het resultaat wordt gebruikt voor het sorteren.
+U kunt ook een script Block instellen op de **expressie** sleutel.
+Bij het uitvoeren van de `Sort-Object` cmdlet wordt de script Block uitgevoerd en wordt het resultaat gebruikt voor het sorteren.
 
-Het volgende voorbeeld worden gesorteerd van objecten in aflopende volgorde van de tijdsduur tussen **CreationTime** en **LastWriteTime**.
+In het volgende voor beeld worden objecten in aflopende volg orde gesorteerd op basis van de tijds Panne tussen **CreationTime** en **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -118,27 +118,27 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>Tips
 
-U kunt weglaten de **eigenschap** parameternaam als volgt:
+U kunt de naam van de **eigenschap** para meter als volgt weglaten:
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-Daarnaast kunt u verwijzen naar `Sort-Object` door de ingebouwde alias `sort`:
+U kunt niet alleen verwijzen naar `Sort-Object` door de ingebouwde alias `sort`:
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-De sleutels in de hashtabellen voor het sorteren van kunnen worden afgekort als volgt:
+De sleutels in de hash-tabellen voor het sorteren kunnen als volgt worden afgekort:
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-In dit voorbeeld wordt de **e** staat voor **expressie**, wordt de **d** staat voor **aflopend**, en de **een** staat voor **oplopend**.
+In dit voor beeld is **het e** staat voor **expressie**, **de d** staat voor **Aflopend**en de **een** staat voor **Oplopend**.
 
-Voor een betere leesbaarheid, plaatst u de hashtabellen in een afzonderlijke variabele:
+Om de Lees baarheid te verbeteren, kunt u de hash-tabellen in een afzonderlijke variabele plaatsen:
 
 ```powershell
 $order = @(

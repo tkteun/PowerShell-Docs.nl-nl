@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
 ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356005"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Opmaakgegevens laden en exporteren
@@ -59,4 +59,4 @@ Er is geen vereiste voor het opslaan van uw indelings bestanden op schijf. Het w
 
 ## <a name="exporting-format-data"></a>Indelings gegevens exporteren
 
-Voeg hier de hoofd tekst van de sectie in.
+Voeg hier het hoofdgedeelte van de sectie in.

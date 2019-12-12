@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353401"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>Het element WideItem voor WideControl (opmaak)
@@ -33,7 +33,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `WideItem` beschreven. Het element `FormatString` is optioneel. U moet echter een `PropertyName`-of `ScriptBlock`-element opgeven, maar u kunt niet beide opgeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `WideItem` beschreven. Het `FormatString`-element is optioneel. U moet echter een `PropertyName`-of `ScriptBlock`-element opgeven, maar u kunt niet beide opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -59,7 +59,7 @@ Zie [brede weer gave](./creating-a-wide-view.md)voor meer informatie over de ond
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `WideEntry`-element dat één `WideItem`-element definieert. Het element `WideItem` definieert de eigenschap of het script waarvan de waarde wordt weer gegeven in de weer gave.
+In het volgende voor beeld ziet u een `WideEntry`-element waarmee één `WideItem` element wordt gedefinieerd. Het element `WideItem` definieert de eigenschap of het script waarvan de waarde wordt weer gegeven in de weer gave.
 
 ```xml
 <WideEntry>

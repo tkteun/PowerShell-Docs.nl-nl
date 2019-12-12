@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352393"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 In dit voor beeld ziet u hoe u container methoden overschrijft ter ondersteuning van aanroepen naar de `Move-Item`-en `Join-Path`-cmdlets. Deze methoden moeten worden geïmplementeerd wanneer de gebruiker items in een container moet verplaatsen en als het gegevens archief geneste containers bevat. De provider klasse in dit voor beeld is afgeleid van de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 > [!IMPORTANT]
 > Uw provider klasse is hoogstwaarschijnlijk afgeleid van een van de volgende klassen en implementeert mogelijk andere provider interfaces:
@@ -32,11 +32,11 @@ In dit voor beeld ziet u hoe u container methoden overschrijft ter ondersteuning
 
 In dit voor beeld ziet u het volgende:
 
-- Het kenmerk `CmdletProvider` declareren.
+- Declareer het `CmdletProvider` kenmerk.
 
 - Een provider klasse definiëren die is afgeleid van de klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-- De methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) wordt overschreven om het gedrag van de cmdlet `Move-Item` te wijzigen, waardoor de gebruiker items van de ene locatie naar de andere kan verplaatsen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Move-Item`-cmdlet.)
+- De methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) wordt overschreven om het gedrag van de cmdlet `Move-Item` te wijzigen, waardoor de gebruiker items van de ene locatie naar de andere kan verplaatsen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de `Move-Item` cmdlet.)
 
 - De methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) wordt overschreven om het gedrag van de cmdlet `Join-Path` te wijzigen.
 

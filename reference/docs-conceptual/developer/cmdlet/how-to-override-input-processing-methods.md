@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
 ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355550"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Invoerverwerkingsmethoden negeren
@@ -29,7 +29,7 @@ In deze voor beelden ziet u hoe u de invoer verwerkings methoden binnen een cmdl
 
 - Declareer een beveiligde onderdrukking van de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) .
 
-Met de volgende klasse wordt een voorbeeld bericht afgedrukt. Als u deze klasse wilt gebruiken, wijzigt u de werk woord en zelfstandig naam woord in het cmdlet-kenmerk, wijzigt u de namen van de klasse zodat deze overeenkomen met de nieuwe term en zelfstandig onderdeel. vervolgens voegt u de functionaliteit toe die u nodig hebt voor het overschrijven van [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) methode.
+Met de volgende klasse wordt een voorbeeld bericht afgedrukt. Als u deze klasse wilt gebruiken, wijzigt u de werk woord en zelfstandig naam woord in het cmdlet-kenmerk, wijzigt u de namen van de klasse zodanig dat ze overeenkomen met de nieuwe term en zelfstandig gebruik. vervolgens voegt u de functionaliteit toe die u nodig hebt voor het overschrijven van de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) .
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]

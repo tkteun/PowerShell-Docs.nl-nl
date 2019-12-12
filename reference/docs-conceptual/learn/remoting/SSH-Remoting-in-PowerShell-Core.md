@@ -3,10 +3,10 @@ title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444378"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
@@ -91,7 +91,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
    Zie [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement)(Engelstalig) voor meer informatie.
 
-1. Start de **sshd** -service opnieuw.
+1. Start de service **sshd** opnieuw.
 
    ```powershell
    Restart-Service sshd
@@ -129,7 +129,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    PubkeyAuthentication yes
    ```
 
-1. Start de **sshd** -service opnieuw.
+1. Start de service **sshd** opnieuw.
 
    ```bash
    sudo service sshd restart
@@ -172,7 +172,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    PubkeyAuthentication yes
    ```
 
-1. Start de **sshd** -service opnieuw.
+1. Start de service **sshd** opnieuw.
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -316,9 +316,9 @@ De opdracht **sudo** werkt niet in een externe sessie met een Linux-computer.
 
 ## <a name="see-also"></a>Zie ook
 
-[Power shell Core installeren in Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
+[Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) (PowerShell Core installeren in Linux)
 
-[Power shell core in macOS installeren](../../install/installing-powershell-core-on-macos.md)
+[Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md) (PowerShell Core installeren in macOS)
 
 [Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi)
 

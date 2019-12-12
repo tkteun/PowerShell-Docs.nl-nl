@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Foutopsporing voor DSC-resources
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942158"
 ---
 # <a name="debugging-dsc-resources"></a>Foutopsporing voor DSC-resources
@@ -91,7 +91,7 @@ In de laatste drie regels in de uitvoer ziet u hoe u aan het proces kunt koppele
 ## <a name="debugging-the-resource-script"></a>Fout opsporing van het resource script
 
 Start een nieuw exemplaar van de Power shell-ISE.
-Voer in het deel venster console de laatste drie regels uitvoer van de uitvoer van `Start-DscConfiguration` in als opdrachten en vervang `<credentials>` door geldige gebruikers referenties.
+Voer in het console venster de laatste drie regels uitvoer van de `Start-DscConfiguration` uitvoer als opdrachten in, waarbij `<credentials>` wordt vervangen door geldige gebruikers referenties.
 Er wordt nu een prompt weer gegeven die er ongeveer als volgt uitziet:
 
 ```powershell

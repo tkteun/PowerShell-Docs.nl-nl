@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356740"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Het MOF-schemabestand maken voor een Management OData-webservice
@@ -23,7 +23,7 @@ U definieert de resources die de Management OData-webservice beschikbaar maakt d
 
 Het volgende bestand definieert service-en proces bronnen. Elk van deze resources komt overeen met een-object dat kan worden beheerd door een set Windows Power shell-cmdlets. De eigenschappen komen overeen met para meters die door deze cmdlets worden gebruikt.
 
-Elk van de twee resources bevat eigenschappen van een complex type. De complexe typen worden gedefinieerd als klassen die zijn gewijzigd met de kwalificatie `ComplexType`.
+Elk van de twee resources bevat eigenschappen van een complex type. De complexe typen worden gedefinieerd als klassen die zijn gewijzigd met de `ComplexType` kwalificatie.
 
 ```csharp
 

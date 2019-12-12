@@ -3,10 +3,10 @@ title: PowerShell Core in macOS installeren
 description: Informatie over het installeren van Power shell core in macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444439"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
@@ -184,10 +184,10 @@ Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden
 
 * `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
 * Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
-* Standaard profielen worden gelezen van `$PSHOME/profile.ps1`
-* Gebruikers modules worden gelezen van `~/.local/share/powershell/Modules`
+* Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
+* Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
 * Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
-* Standaard modules worden gelezen van `$PSHOME/Modules`
+* Standaard modules worden gelezen uit `$PSHOME/Modules`
 * De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie van de Power shell per host.

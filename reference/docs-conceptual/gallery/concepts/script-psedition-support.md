@@ -4,19 +4,19 @@ contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Script met compatibele Power shell-edities
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328880"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele Power shell-edities
 
 Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
 
-- **Desktop Edition:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een volledige footprint, zoals Server Core en Windows Desktop.
+- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
 
-- **Core-editie:** Gebaseerd op .NET core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een verminderde footprint, zoals nano server en Windows IoT.
+- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
 De actieve editie van PowerShell wordt weergegeven in de eigenschap PSEdition van $PSVersionTable.
 
@@ -35,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Auteurs van het script kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele editie van Power shell met `#requires` behulp van de para meter PSEdition in een-instructie.
+Script auteurs kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele versie van Power shell met behulp van de para meter PSEdition in een `#requires`-instructie.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
@@ -64,7 +64,7 @@ Find-Script -Tag PSEdition_Desktop
 Find-Script -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a>Meer Details
+## <a name="more-details"></a>Meer details
 
 - [Modules met PSEditions](module-psedition-support.md)
 - [PSEditions-ondersteuning op PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)

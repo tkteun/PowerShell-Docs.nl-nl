@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356131"
 ---
 # <a name="stopprocesssample01-sample"></a>Voorbeeld StopProcessSample01
 
-Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een para meter `PassThru` implementeert die aangeeft dat de gebruiker de cmdlet een object wil laten retour neren. Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.
+Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een `PassThru` para meter implementeert die aangeeft dat de gebruiker de cmdlet een object wil laten retour neren. Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
@@ -29,7 +29,7 @@ Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Maak de volgende module map:
 
@@ -51,7 +51,7 @@ Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 
@@ -61,11 +61,11 @@ In dit voor beeld ziet u het volgende.
 
 - De methode ShouldProcess wordt aangeroepen om een bevestiging aan te vragen.
 
-- Implementatie van een para meter `PassThru` waarmee wordt aangegeven of de gebruiker wil dat de cmdlet een object retourneert. Deze cmdlet retourneert standaard geen object naar de pijp lijn.
+- Implementatie van een `PassThru` para meter die aangeeft of de gebruiker wil dat de cmdlet een object retourneert. Deze cmdlet retourneert standaard geen object naar de pijp lijn.
 
 ## <a name="example"></a>Voorbeeld
 
-Dit voor beeld laat zien hoe u een para meter `PassThru` implementeert die aangeeft dat de gebruiker wil dat de cmdlet een object retourneert en hoe gebruikers feedback kan aanvragen door aanroepen naar de `ShouldProcess`-en `ShouldContinue`-methoden.
+Dit voor beeld laat zien hoe u een `PassThru` para meter implementeert die aangeeft dat de gebruiker wil dat de cmdlet een object retourneert en hoe gebruikers feedback kan aanvragen door aanroepen naar de `ShouldProcess`-en `ShouldContinue`-methoden.
 
 ```csharp
 using System;

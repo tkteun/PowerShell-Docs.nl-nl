@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
 ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357552"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>CAB-bestanden maken en uploaden
@@ -25,7 +25,7 @@ U kunt de Help-functie die kan worden bijgewerkt gebruiken om nieuwe of bijgewer
 
 1. De Help-bestanden voor de module indelen door UI-cultuur. Elk CAB-bestand dat kan worden bijgewerkt bevat de Help-bestanden voor één module in één UI-cultuur. U kunt meerdere CAB-bestanden voor de Help leveren voor de module, elk voor een andere GEBRUIKERSINTERFACE cultuur.
 
-2. Controleer of de Help-bestanden alleen de bestands typen bevatten die zijn toegestaan voor Help bij te werken en deze valideren op basis van een Help-bestands schema. Als de `Update-Help`-cmdlet een bestand tegen komt dat ongeldig is of niet het toegestane type heeft, wordt het ongeldige bestand niet geïnstalleerd en stopt het installeren van bestanden van het CAB. Voor een lijst met toegestane bestands typen raadpleegt u [Bestands typen die zijn toegestaan in een CAB-bestand](./file-types-permitted-in-an-updatable-help-cab-file.md)dat kan worden bijgewerkt.
+2. Controleer of de Help-bestanden alleen de bestands typen bevatten die zijn toegestaan voor Help bij te werken en deze valideren op basis van een Help-bestands schema. Als de `Update-Help`-cmdlet een bestand tegen komt dat ongeldig is of niet het toegestane type heeft, wordt het ongeldige bestand niet geïnstalleerd en worden de installatie bestanden van de CAB gestopt. Voor een lijst met toegestane bestands typen raadpleegt u [Bestands typen die zijn toegestaan in een CAB-bestand](./file-types-permitted-in-an-updatable-help-cab-file.md)dat kan worden bijgewerkt.
 
 3. De Help-bestanden digitaal ondertekenen. Digitale hand tekeningen zijn niet vereist, maar ze zijn een best practice.
 

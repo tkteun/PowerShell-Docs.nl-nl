@@ -1,36 +1,36 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Variabelen gebruiken om objecten op te slaan
 ms.openlocfilehash: 2d20d84e48d3f68cab5c1ffa05d689b46415ebc8
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030369"
 ---
 # <a name="using-variables-to-store-objects"></a>Variabelen gebruiken om objecten op te slaan
 
-PowerShell in combinatie met objecten. PowerShell kunt u benoemde objecten bekend als variabelen maken.
-Namen van variabelen kunnen het onderstrepingsteken en een alfanumerieke tekens bevatten. Wanneer gebruikt in PowerShell, een variabele altijd is opgegeven met behulp van de \$ gevolgd door de naam van variabele.
+Power shell werkt met objecten. Met Power shell kunt u benoemde objecten maken die variabelen worden genoemd.
+Namen van variabelen kunnen het onderstrepings teken en alfanumerieke tekens bevatten. Bij gebruik in Power shell wordt altijd een variabele opgegeven met behulp van het \$ teken gevolgd door de naam van de variabele.
 
-## <a name="creating-a-variable"></a>Het maken van een variabele
+## <a name="creating-a-variable"></a>Een variabele maken
 
-U kunt een variabele maken met een geldige variabele naam te typen:
+U kunt een variabele maken door de naam van een geldige variabele te typen:
 
 ```
 PS> $loc
 PS>
 ```
 
-In dit voorbeeld retourneert geen resultaat omdat `$loc` heeft geen waarde. U kunt een variabele maken en hieraan een waarde in één stap. De variabele PowerShell alleen gemaakt als deze niet bestaat.
-Anders wordt de opgegeven waarde toegewezen aan de bestaande variabele. Het volgende voorbeeld wordt de huidige locatie opgeslagen in de variabele `$loc`:
+In dit voor beeld wordt geen resultaat weer gegeven omdat `$loc` geen waarde heeft. U kunt een variabele maken en deze in dezelfde stap aan een waarde toewijzen. Power Shell maakt de variabele alleen als deze niet bestaat.
+Anders wordt de opgegeven waarde toegewezen aan de bestaande variabele. In het volgende voor beeld wordt de huidige locatie opgeslagen in de variabele `$loc`:
 
 ```powershell
 $loc = Get-Location
 ```
 
-Er is geen uitvoer wordt weergegeven wanneer u deze opdracht in PowerShell. PowerShell stuurt de uitvoer van Get-locatie naar `$loc`. Gegevens die niet is toegewezen of omgeleid is in PowerShell verzonden naar het scherm. Typen `$loc` ziet u uw huidige locatie:
+Power shell geeft geen uitvoer weer wanneer u deze opdracht typt. Power shell verzendt de uitvoer van ' Get-location ' naar `$loc`. In Power shell worden gegevens die niet zijn toegewezen of omgeleid naar het scherm verzonden. Wanneer u `$loc` typt, wordt uw huidige locatie weer gegeven:
 
 ```
 PS> $loc
@@ -40,7 +40,7 @@ Path
 C:\temp
 ```
 
-U kunt `Get-Member` om informatie over de inhoud van variabelen weer te geven. `Get-Member` ziet u dat `$loc` is een **PathInfo** object, net als de uitvoer van `Get-Location`:
+U kunt `Get-Member` gebruiken om informatie weer te geven over de inhoud van variabelen. `Get-Member` ziet u dat `$loc` een **PathInfo** -object is, net als bij de uitvoer van `Get-Location`:
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property
@@ -57,45 +57,45 @@ ProviderPath Property   System.String ProviderPath {get;}
 
 ## <a name="manipulating-variables"></a>Variabelen bewerken
 
-PowerShell biedt diverse opdrachten voor het bewerken van variabelen. U kunt een volledige lijst in een leesbare vorm zien door te typen:
+Power shell biedt verschillende opdrachten voor het bewerken van variabelen. U kunt een volledige lijst weer geven in een lees bare vorm door het volgende te typen:
 
 ```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-PowerShell maakt ook verschillende systeem gedefinieerde variabelen. U kunt de `Remove-Variable` cmdlet voor het verwijderen van variabelen, die niet worden beheerd met PowerShell, uit de huidige sessie. Typ de volgende opdracht om te wissen van alle variabelen:
+Power Shell maakt ook diverse door het systeem gedefinieerde variabelen. U kunt de cmdlet `Remove-Variable` gebruiken om variabelen te verwijderen die niet worden beheerd door Power shell, vanuit de huidige sessie. Typ de volgende opdracht om alle variabelen te wissen:
 
 ```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-Na het uitvoeren van de vorige opdracht, de `Get-Variable` cmdlet ziet u de PowerShell-systeemvariabelen.
+Nadat u de vorige opdracht hebt uitgevoerd, worden in de cmdlet `Get-Variable` de systeem variabelen van Power shell weer gegeven.
 
-PowerShell maakt ook een variabele station. Gebruik het volgende voorbeeld om alle PowerShell-variabelen met behulp van de variabele station weer te geven:
+Power Shell maakt ook een variabele station. Gebruik het volgende voor beeld om alle Power shell-variabelen weer te geven met behulp van het variabele station:
 
 ```powershell
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a>Cmd.exe variabelen gebruiken
+## <a name="using-cmdexe-variables"></a>Cmd. exe-variabelen gebruiken
 
-PowerShell kunt gebruiken de dezelfde omgevingsvariabelen die beschikbaar zijn voor alle Windows-proces, inclusief **cmd.exe**. Deze variabelen worden weergegeven via een station met de naam `env:`. U kunt deze variabelen weergeven door de volgende opdracht te typen:
+Power shell kan gebruikmaken van dezelfde omgevings variabelen die beschikbaar zijn voor elk Windows-proces, inclusief **cmd. exe**. Deze variabelen worden weer gegeven via een station met de naam `env:`. U kunt deze variabelen weer geven door de volgende opdracht te typen:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-De standaard `*-Variable` cmdlets zijn niet ontworpen voor gebruik met omgevingsvariabelen. Omgevingsvariabelen worden geopend met behulp van de `env:` stationsvoorvoegsel. Bijvoorbeeld, de **% SystemRoot %** variabele in **cmd.exe** bevat de naam van de map hoofdmap van het besturingssysteem. In PowerShell, gebruikt u `$env:SystemRoot` voor toegang tot dezelfde waarde.
+De standaard `*-Variable`-cmdlets zijn niet ontworpen om te werken met omgevings variabelen. U krijgt toegang tot omgevings variabelen met behulp van het voor voegsel `env:` station. De variabele **% System root%** in **cmd. exe** bevat bijvoorbeeld de naam van de hoofdmap van het besturings systeem. In Power shell gebruikt u `$env:SystemRoot` om toegang te krijgen tot dezelfde waarde.
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-U kunt ook maken en wijzigen van omgevingsvariabelen uit in PowerShell. Omgevingsvariabelen in PowerShell volgt dezelfde regels gelden voor omgevingsvariabelen die elders in het besturingssysteem worden gebruikt. Het volgende voorbeeld wordt een nieuwe omgevingsvariabele:
+U kunt ook omgevings variabelen maken en wijzigen in Power shell. Omgevings variabelen in Power shell volgen dezelfde regels voor omgevings variabelen die elders in het besturings systeem worden gebruikt. In het volgende voor beeld wordt een nieuwe omgevings variabele gemaakt:
 
 ```powershell
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-Hoewel dit niet vereist, is het gebruikelijk voor namen van omgevingsvariabelen gebruiken alle hoofdletters.
+Hoewel dit niet vereist is, is het gebruikelijk om alle hoofd letters te gebruiken voor de namen van omgevings variabelen.

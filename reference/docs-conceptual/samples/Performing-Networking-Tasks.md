@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Netwerktaken uitvoeren
 ms.openlocfilehash: e581296b4b7609b374f206c447c4f797e3e2c400
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030855"
 ---
 # <a name="performing-networking-tasks"></a>Netwerktaken uitvoeren
 
-Omdat TCP/IP het meest gebruikte protocol is, worden de meeste beheertaken van laag niveau netwerk-protocol TCP/IP. In deze sectie gebruiken we Windows PowerShell en WMI voor deze taken.
+Omdat TCP/IP het meest gebruikte netwerk protocol is, zijn voor de meeste netwerk protocol beheer taken op laag niveau TCP/IP vereist. In deze sectie gebruiken we Windows Power shell en WMI om deze taken uit te voeren.
 
-## <a name="listing-ip-addresses-for-a-computer"></a>IP-adressen weergeven voor een Computer
+## <a name="listing-ip-addresses-for-a-computer"></a>IP-adressen voor een computer weer geven
 
-Als u alle IP-adressen in gebruik is op de lokale computer, gebruikt u de volgende opdracht uit:
+Als u alle IP-adressen die in gebruik zijn op de lokale computer wilt ophalen, gebruikt u de volgende opdracht:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Format-Table -Property IPAddress
 ```
 
-De uitvoer van deze opdracht wijkt af van de meeste lijsten met zoekeigenschappen omdat waarden zijn tussen accolades:
+De uitvoer van deze opdracht wijkt af van de meeste eigenschappen lijsten, omdat waarden tussen accolades worden geplaatst:
 
 ```output
 IPAddress
@@ -32,7 +32,7 @@ IPAddress
 {0.0.0.0}
 ```
 
-Om te begrijpen waarom de accolades worden weergegeven, gebruikt u de cmdlet Get-Member het onderzoeken van de **IPAddress** eigenschap:
+Als u wilt weten waarom de accolades worden weer gegeven, gebruikt u de cmdlet Get-member om de eigenschap **IPAddress** te controleren:
 
 ```
 PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Get-Member -Name IPAddress
@@ -45,35 +45,35 @@ Name      MemberType Definition
 IPAddress Property   System.String[] IPAddress {get;}
 ```
 
-De eigenschap IP-adres voor elke netwerkadapter is eigenlijk een matrix. De accolades in het definitie geven aan dat **IPAddress** is niet een **System.String** waarde, maar een matrix met **System.String** waarden.
+De eigenschap IPAddress voor elke netwerk adapter is in feite een matrix. De accolades in de definitie geven aan dat **IPAddress** geen **System. String** -waarde, maar een matrix van **System. String** -waarden is.
 
-## <a name="listing-ip-configuration-data"></a>IP-configuratiegegevens van aanbieding
+## <a name="listing-ip-configuration-data"></a>IP-configuratie gegevens weer geven
 
-Als gedetailleerde IP-configuratiegegevens voor elke netwerkadapter weergeven, gebruikt u de volgende opdracht uit:
+Als u gedetailleerde IP-configuratie gegevens voor elke netwerk adapter wilt weer geven, gebruikt u de volgende opdracht:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName .
 ```
 
-De standaardweergave voor het object network adapter configuratie is een zeer beperkte set van de beschikbare informatie. Gebruik voor uitgebreide controle en probleemoplossing, Select-Object of een opmaak cmdlet, zoals indeling-lijst om op te geven van de eigenschappen die moeten worden weergegeven.
+De standaard weergave voor het configuratie object voor de netwerk adapter is een zeer kleinere set beschik bare informatie. Voor uitgebreide inspectie en probleem oplossing gebruikt u select-object of een opmaak-cmdlet, zoals notatie-lijst, om de eigenschappen op te geven die moeten worden weer gegeven.
 
-Als u niet geïnteresseerd in de eigenschappen van IPX- of WINS bent, waarschijnlijk het geval in een moderne TCP/IP-netwerk, kunt u de parameter ExcludeProperty van Select-Object te verbergen eigenschappen met namen die met "WINS beginnen" of "IPX:"
+Als u niet geïnteresseerd bent in IPX-of WINS-eigenschappen, waarschijnlijk in een modern TCP/IP-netwerk, kunt u de para meter ExcludeProperty van Select-object gebruiken om eigenschappen te verbergen met namen die beginnen met ' WINS ' of ' IPX: '
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | Select-Object -Property [a-z]* -ExcludeProperty IPX*,WINS*
 ```
 
-Met deze opdracht retourneert gedetailleerde informatie over DHCP, DNS, Routering en andere secundaire IP-configuratie-eigenschappen.
+Met deze opdracht wordt gedetailleerde informatie geretourneerd over DHCP, DNS, route ring en andere eigenschappen van een secundaire IP-configuratie.
 
-## <a name="pinging-computers"></a>Pingen naar Computers
+## <a name="pinging-computers"></a>Computers pingen
 
-U kunt een eenvoudige ping uit voor een computer met behulp van uitvoeren **Win32_PingStatus**. De volgende opdracht de opdracht ping wordt uitgevoerd, maar retourneert uitgebreide uitvoer:
+U kunt een eenvoudige ping uitvoeren op een computer met behulp van **Win32_PingStatus**. De volgende opdracht voert de ping uit, maar retourneert een langdurige uitvoer:
 
 ```powershell
 Get-WmiObject -Class Win32_PingStatus -Filter "Address='127.0.0.1'" -ComputerName .
 ```
 
-Nog meer nuttige formulier samenvattende informatie weergegeven in een van de eigenschappen van het adres, de responstijd en de StatusCode, zoals die worden gegenereerd door de volgende opdracht uit. De parameter Autosize van Format-Table vergroot/verkleint de kolommen in de tabel zodat ze goed worden weergegeven in Windows PowerShell.
+Een handiger formulier voor samen vattingen geeft een weer gave van de eigenschappen Address, respons tijd en status code, zoals wordt gegenereerd door de volgende opdracht. Met de para meter AutoSize van de indeling tabel wordt de grootte van de tabel kolommen aangepast zodat deze correct worden weer gegeven in Windows Power shell.
 
 ```
 PS> Get-WmiObject -Class Win32_PingStatus -Filter "Address='127.0.0.1'" -ComputerName . | Format-Table -Property Address,ResponseTime,StatusCode -Autosize
@@ -83,150 +83,150 @@ Address   ResponseTime StatusCode
 127.0.0.1            0          0
 ```
 
-Een StatusCode van 0 geeft aan dat een geslaagde ping.
+Een status code van 0 geeft aan dat de ping is geslaagd.
 
-Een matrix kunt u meerdere computers met slechts één opdracht ping. Omdat er meer dan één adres, gebruiken de **ForEach-Object** afzonderlijk pingt u elk adres:
+U kunt een matrix gebruiken om meerdere computers te pingen met één opdracht. Omdat er meer dan één adres is, gebruikt u het **foreach-object** om elk adres afzonderlijk te pingen:
 
 ```powershell
 '127.0.0.1','localhost','research.microsoft.com' | ForEach-Object -Process {Get-WmiObject -Class Win32_PingStatus -Filter ("Address='" + $_ + "'") -ComputerName .} | Select-Object -Property Address,ResponseTime,StatusCode
 ```
 
-U kunt de opdrachtindeling van dezelfde gebruiken om te pingen alle computers in een subnet, zoals een particulier netwerk die gebruikmaakt van nummer 192.168.1.0 van het netwerk en een standaard-klasse C-subnetmasker (255.255.255.0)., worden alleen de adressen binnen het bereik van 192.168.1.1 via 192.168.1.254 goedaardige lokale adressen (0 is altijd gereserveerd voor het nummer van het netwerk en 255 is een subnet broadcast-adres).
+U kunt dezelfde opdracht indeling gebruiken voor het pingen van alle computers in een subnet, zoals een particulier netwerk dat gebruikmaakt van netwerk nummer 192.168.1.0 en een standaard klasse C-subnetmasker (255.255.255.0). alleen adressen in het bereik van 192.168.1.1 tot en met 192.168.1.254 zijn rechtmatige lokale adressen (0 is altijd gereserveerd voor het netwerk nummer en 255 is een subnet-broadcast adres).
 
-Om weer te geven een matrix van de getallen van 1 tot 254 in Windows PowerShell, gebruikt u de instructie **1..254.** Een ping voltooid subnet kan worden uitgevoerd door het genereren van de matrix en vervolgens de waarden naar een gedeeltelijke adres toe te voegen in de ping-instructie:
+Als u een matrix van de getallen 1 tot en met 254 in Windows Power shell wilt weer geven, gebruikt u de instructie **1.. 254.** Een volledige ping van het subnet kan worden uitgevoerd door de matrix te genereren en vervolgens de waarden toe te voegen aan een gedeeltelijk adres in de instructie ping:
 
 ```powershell
 1..254| ForEach-Object -Process {Get-WmiObject -Class Win32_PingStatus -Filter ("Address='192.168.1." + $_ + "'") -ComputerName .} | Select-Object -Property Address,ResponseTime,StatusCode
 ```
 
-Houd er rekening mee dat deze techniek voor het genereren van een bereik van adressen elders kan worden gebruikt. Op deze manier kunt u een volledige set adressen genereren:
+Houd er rekening mee dat deze techniek voor het genereren van een bereik van adressen ook elders kan worden gebruikt. Op deze manier kunt u een volledige set adressen genereren:
 
 ```powershell
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-## <a name="retrieving-network-adapter-properties"></a>Bij het ophalen van eigenschappen van netwerkadapter
+## <a name="retrieving-network-adapter-properties"></a>Eigenschappen van de netwerk adapter ophalen
 
-Eerder in deze handleiding, hebben we al gemeld dat u algemene configuratie-eigenschappen ophalen met behulp van kan **Win32_NetworkAdapterConfiguration**. Hoewel dit strikt genomen TCP/IP-informatie, netwerkadapterinformatie, zoals MAC-adressen en typen netwerkadapters kunnen nuttig zijn om te begrijpen wat er gebeurt met een computer zijn. Als u een overzicht van deze informatie, gebruikt u de volgende opdracht uit:
+Eerder in deze gebruikers handleiding hebben we vermeld dat u algemene configuratie-eigenschappen kunt ophalen met behulp van **Win32_NetworkAdapterConfiguration**. Hoewel dit geen strikte TCP/IP-informatie is, kunnen gegevens van netwerk adapters, zoals MAC-adressen en adapter typen, handig zijn om te zien wat er gebeurt met een computer. Gebruik de volgende opdracht om een overzicht van deze informatie te krijgen:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>De DNS-domein toewijzen voor een netwerkadapter
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Toewijzing van het DNS-domein voor een netwerk adapter
 
-Als u wilt toewijzen van de DNS-domein voor het omzetten van automatische, gebruikt u de **Win32_NetworkAdapterConfiguration SetDNSDomain** methode. Omdat u de DNS-domein voor de configuratie van elke netwerkadapter afzonderlijk toewijst, moet u een **ForEach-Object** instructie het domein toewijzen aan elke adapter:
+Als u het DNS-domein voor automatische naam omzetting wilt toewijzen, gebruikt u de **Win32_NetworkAdapterConfiguration methode SetDNSDomain** . Omdat u het DNS-domein voor elke configuratie van de netwerk adapter afzonderlijk toewijst, moet u een **foreach-object** instructie gebruiken om het domein toe te wijzen aan elke adapter:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | ForEach-Object -Process { $_. SetDNSDomain('fabrikam.com') }
 ```
 
-De instructie filteren ' IPEnabled $true = "is nodig omdat zelfs op een netwerk dat gebruikmaakt van alleen TCP/IP, verschillende configuraties van de netwerkadapters op een computer niet TCP/IP-adapters, ' True '; Deze algemene software-elementen ter ondersteuning van RAS, PPTP, QoS en andere services voor alle adapters zijn en dus niet een adres van hun eigen over.
+De filter instructie ' IPEnabled = $true ' is nodig, omdat zelfs in een netwerk dat alleen TCP/IP gebruikt, een aantal netwerk adapter configuraties op een computer niet waar TCP/IP-adapters zijn. Dit zijn algemene software-elementen die RAS-, PPTP-, QoS-en andere services ondersteunen voor alle adapters, en dus geen eigen adres hebben.
 
-U kunt de opdracht filteren met behulp van de **Where-Object** cmdlet, in plaats van de **Get-WmiObject** filter.
+U kunt de opdracht filteren met behulp van de **where-object-** cmdlet, in plaats van met het filter **Get-WmiObject** .
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-## <a name="performing-dhcp-configuration-tasks"></a>DHCP-uitvoeren configuratietaken
+## <a name="performing-dhcp-configuration-tasks"></a>DHCP-configuratie taken uitvoeren
 
-Wijzigen van de DHCP-informatie omvat het werken met een set netwerkadapters, net als de DNS-configuratie. Er zijn verschillende afzonderlijke acties die u uitvoeren kunt met behulp van WMI en we enkele van de algemene die gegevensbronnen wordt doorlopen.
+Bij het wijzigen van DHCP-details moet u werken met een set netwerk adapters, net zoals de DNS-configuratie. Er zijn verschillende acties die u kunt uitvoeren met behulp van WMI, en we gaan door een aantal van de gemeen schappelijke stappen.
 
-### <a name="determining-dhcp-enabled-adapters"></a>DHCP ingeschakeld Adapters bepalen
+### <a name="determining-dhcp-enabled-adapters"></a>Adapters voor DHCP-ondersteuning bepalen
 
-Als u zoekt de adapters DHCP-functionaliteit op een computer, gebruik de volgende opdracht:
+Als u de DHCP-adapters op een computer wilt zoeken, gebruikt u de volgende opdracht:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName .
 ```
 
-Als u wilt uitsluiten van netwerkadapters met IP-configuratie oplossen, kunt u alleen IP-functionaliteit adapters ophalen:
+Als u adapters wilt uitsluiten met IP-configuratie problemen, kunt u alleen adapters met IP-functionaliteit ophalen:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-### <a name="retrieving-dhcp-properties"></a>Bij het ophalen van DHCP-eigenschappen
+### <a name="retrieving-dhcp-properties"></a>DHCP-eigenschappen ophalen
 
-Omdat DHCP-eigenschappen voor een adapter met algemeen begint met 'DHCP', kunt u de parameter eigenschap van Format-Table kunt gebruiken om alleen de eigenschappen weer te geven:
+Omdat DHCP-gerelateerde eigenschappen voor een adapter doorgaans met ' DHCP ' beginnen, kunt u de eigenschaps parameter van de indeling-tabel gebruiken om alleen die eigenschappen weer te geven:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-### <a name="enabling-dhcp-on-each-adapter"></a>DHCP op elke Adapter inschakelen
+### <a name="enabling-dhcp-on-each-adapter"></a>DHCP inschakelen op elke adapter
 
-Om in te schakelen DHCP op alle netwerkadapters, gebruik de volgende opdracht:
+Als u DHCP op alle adapters wilt inschakelen, gebruikt u de volgende opdracht:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-U kunt de **Filter** instructie ' IPEnabled = $true en DHCPEnabled $false = "om te voorkomen dat het inschakelen van DHCP waar deze al is ingeschakeld, maar als deze stap niet leiden tot fouten.
+U kunt de **filter** -instructie ' IPEnabled = $True en DHCPEnabled = $false ' gebruiken om te voor komen dat DHCP wordt ingeschakeld, maar als deze stap wordt wegge laten, worden er geen fouten veroorzaakt.
 
-### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Vrijgeven en DHCP-Leases op specifieke netwerkadapters te vernieuwen
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>DHCP-leases op specifieke adapters vrijgeven en vernieuwen
 
-De **Win32_NetworkAdapterConfiguration** klasse heeft **ReleaseDHCPLease** en **RenewDCHPLease** methoden. Beide worden op dezelfde manier gebruikt. In het algemeen deze methoden gebruiken als u alleen wilt vrijgeven of vernieuwen van adressen voor een adapter op een specifiek subnet. De eenvoudigste manier om filter-adapters in een subnet is de adapterconfiguraties die gebruikmaken van de gateway voor dat subnet kiezen. De volgende opdracht worden bijvoorbeeld alle DHCP-leases op netwerkadapters op de lokale computer die zijn het verkrijgen van DHCP-leases van 192.168.1.254 vrijgegeven:
+De klasse **Win32_NetworkAdapterConfiguration** heeft **ReleaseDHCPLease** -en **RenewDHCPLease** -methoden. Beide worden op dezelfde manier gebruikt. In het algemeen gebruikt u deze methoden als u alleen adressen voor een adapter op een specifiek subnet hoeft vrij te geven of te vernieuwen. De eenvoudigste manier om adapters op een subnet te filteren, is door alleen de adapter configuraties te kiezen die gebruikmaken van de gateway voor dat subnet. Met de volgende opdracht worden bijvoorbeeld alle DHCP-leases vrijgegeven op adapters op de lokale computer die DHCP-leases verkrijgen van 192.168.1.254:
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains '192.168.1.254'} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-De enige wijziging voor het vernieuwen van een DHCP-lease is het gebruik van de **RenewDCHPLease** methode in plaats van de **ReleaseDHCPLease** methode:
+De enige wijziging voor het vernieuwen van een DHCP-lease is het gebruik van de methode **RenewDHCPLease** in plaats van de methode **ReleaseDHCPLease** :
 
 ```powershell
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains '192.168.1.254'} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
 > [!NOTE]
-> Wanneer u deze methoden op een externe computer, er rekening mee dat u kunt geen toegang meer tot het externe systeem als u met het via de adapter met de lease vrijgegeven of vernieuwd verbonden bent.
+> Wanneer u deze methoden op een externe computer gebruikt, moet u er rekening mee houden dat u de toegang tot het externe systeem kunt verliezen als u er met de adapter met de uitgebrachte of verlengde lease mee verbonden bent.
 
-### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Vrijgeven en vernieuwen van DHCP-Leases op alle netwerkadapters
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>DHCP-leases op alle adapters vrijgeven en vernieuwen
 
-U kunt globale releases van DHCP-adres of vernieuwingen op alle netwerkadapters uitvoeren met behulp van de **Win32_NetworkAdapterConfiguration** methoden, **ReleaseDHCPLeaseAll** en **RenewDCHPLeaseAll** . Echter, de opdracht moet toepassen op de WMI-klasse, in plaats van een bepaalde adapter, omdat het vrijgeven en leases wereldwijd vernieuwen wordt uitgevoerd op de klasse, niet op een specifieke adapter.
+U kunt algemene DHCP-adres releases of-vernieuwingen uitvoeren op alle adapters met behulp van de **Win32_NetworkAdapterConfiguration** methoden **ReleaseDHCPLeaseAll** en **RenewDHCPLeaseAll**. De opdracht moet echter wel van toepassing zijn op de WMI-klasse in plaats van een bepaalde adapter, omdat leases die wereld wijd worden vrijgegeven en vernieuwen, worden uitgevoerd op de klasse, niet op een specifieke adapter.
 
-Een verwijzing naar een WMI-klasse, in plaats van de klasse-instanties, krijgt u alle WMI-klassen weergeven en selecteert u alleen de gewenste klasse met de naam. De volgende opdracht geeft bijvoorbeeld de Win32_NetworkAdapterConfiguration-klasse:
+U kunt een verwijzing naar een WMI-klasse verkrijgen in plaats van klasse-instanties door alle WMI-klassen weer te geven en vervolgens alleen de gewenste klasse op naam te selecteren. Met de volgende opdracht wordt bijvoorbeeld de Win32_NetworkAdapterConfiguration-klasse geretourneerd:
 
 ```powershell
 Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
 ```
 
-U kunt de volledige opdracht behandelen als de klasse en vervolgens de **ReleaseDHCPAdapterLease** methode. In de volgende opdracht, de haakjes de **Get-WmiObject** en **Where-Object** Pijplijnelementen direct Windows PowerShell moeten worden eerst geëvalueerd:
+U kunt de volledige opdracht beschouwen als de klasse en vervolgens de **ReleaseDHCPAdapterLease** -methode aanroepen. In de volgende opdracht worden de haakjes rond de **Get-WmiObject** en **where-object-** pijp lijn elementen direct Windows Power shell om deze eerst te evalueren:
 
 ```powershell
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).ReleaseDHCPLeaseAll()
 ```
 
-U kunt dezelfde opdrachtindeling gebruiken om aan te roepen de **RenewDCHPLeaseAll** methode:
+U kunt dezelfde opdracht indeling gebruiken om de **RenewDHCPLeaseAll** -methode aan te roepen:
 
 ```powershell
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-## <a name="creating-a-network-share"></a>Het maken van een netwerkshare
+## <a name="creating-a-network-share"></a>Een netwerk share maken
 
-Voor het maken van een netwerkshare bevindt, gebruikt u de **Win32_Share maken** methode:
+Als u een netwerk share wilt maken, gebruikt u de methode **Win32_Share Create** :
 
 ```powershell
 (Get-WmiObject -List -ComputerName . | Where-Object -FilterScript {$_.Name -eq 'Win32_Share'}).Create('C:\temp','TempShare',0,25,'test share of the temp folder')
 ```
 
-U kunt ook de share maken met behulp van **net share** in Windows PowerShell:
+U kunt de share ook maken met behulp van **net share** in Windows Power shell:
 
 ```powershell
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-## <a name="removing-a-network-share"></a>Verwijderen van een netwerkshare
+## <a name="removing-a-network-share"></a>Een netwerk share verwijderen
 
-Kunt u een netwerkshare met **Win32_Share**, maar het proces is enigszins afwijken van het maken van een share, omdat u nodig hebt om op te halen van de specifieke share moet worden verwijderd, in plaats van de **Win32_Share** de klasse. De volgende instructie verwijdert u de share 'TempShare':
+U kunt een netwerk share met **Win32_Share**verwijderen, maar het proces wijkt enigszins af van het maken van een share, omdat u de specifieke share moet ophalen die moet worden verwijderd, in plaats van de **Win32_Share** klasse. Met de volgende instructie wordt de share "TempShare" verwijderd:
 
 ```powershell
 (Get-WmiObject -Class Win32_Share -ComputerName . -Filter "Name='TempShare'").Delete()
 ```
 
-**Net share** zo goed werkt:
+**Net share** werkt ook als volgt:
 
 ```
 PS> net share tempshare /delete
@@ -234,18 +234,18 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-## <a name="connecting-a-windows-accessible-network-drive"></a>Verbinding maken van een netwerkstation toegankelijk is in Windows
+## <a name="connecting-a-windows-accessible-network-drive"></a>Verbinding maken met een met Windows toegankelijk netwerk station
 
-De **New-PSDrive** cmdlets maakt u een Windows PowerShell-station, maar de stations die zijn gemaakt op deze manier zijn alleen beschikbaar voor Windows PowerShell. Een nieuwe netwerk station wilt maken, kunt u de **WScript.Network** COM-object. De volgende opdracht wordt de share toegewezen \\ \\FPS01\\gebruikers naar de lokale schijf B:
+De cmdlets **New-PSDrive** maken een Windows Power Shell-station, maar stations die op deze manier zijn gemaakt, zijn alleen beschikbaar voor Windows Power shell. Als u een nieuw netwerk station wilt maken, kunt u het object **WScript. Network** com gebruiken. Met de volgende opdracht wordt de share \\\\FPS01\\gebruikers toegewezen aan lokaal station B:
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')
 ```
 
-De **netgebruik** opdracht werkt ook:
+De opdracht **net use** werkt ook als volgt:
 
 ```powershell
 net use B: \\FPS01\users
 ```
 
-In beide gevallen toegewezen stations **WScript.Network** of netgebruik zijn onmiddellijk beschikbaar voor Windows PowerShell.
+Stations die zijn toegewezen met **WScript. Network** of net use zijn onmiddellijk beschikbaar voor Windows Power shell.

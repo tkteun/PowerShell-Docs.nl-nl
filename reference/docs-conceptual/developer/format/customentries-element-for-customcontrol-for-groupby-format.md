@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355284"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>Het element CustomEntries voor CustomControl voor GroupBy (opmaak)
@@ -51,7 +51,7 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-In de meeste gevallen heeft een besturings element slechts één definitie, die is opgegeven in één `CustomEntry`-element. Het is echter mogelijk om meerdere definities op te geven als u hetzelfde besturings element wilt gebruiken om verschillende groepen weer te geven. In dergelijke gevallen kunt u een `CustomEntry`-element definiëren voor een groep.
+In de meeste gevallen heeft een besturings element slechts één definitie, die is opgegeven in één `CustomEntry` element. Het is echter mogelijk om meerdere definities op te geven als u hetzelfde besturings element wilt gebruiken om verschillende groepen weer te geven. In dergelijke gevallen kunt u een `CustomEntry`-element definiëren voor een groep.
 
 ## <a name="see-also"></a>Zie ook
 

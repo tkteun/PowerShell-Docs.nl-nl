@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
 caps.latest.revision: 6
 ms.openlocfilehash: a4036b1e9de85da7e0029e02cca9e0eaed462f70
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353457"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>Het element TypeName voor SelectionCondition voor GroupBy (opmaak)
@@ -46,13 +46,13 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor GroupBy (indeling)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Hiermee definieert u een voor waarde die moet bestaan voor het gebruik van de controle definitie.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, bijvoorbeeld `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Als dit element is opgegeven, kunt u het element `SelectionSetName` niet opgeven. Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over het definiëren van selectie voorwaarden.
+Als dit element is opgegeven, kunt u het `SelectionSetName`-element niet opgeven. Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over het definiëren van selectie voorwaarden.
 
 ## <a name="see-also"></a>Zie ook
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a2e66c86-83a7-4148-8575-c28d6d429d4f
 caps.latest.revision: 6
 ms.openlocfilehash: c178c4a48f9595001bcc249d5f55886fa54bb9f2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356019"
 ---
 # <a name="list-view-groupby"></a>Lijstweergave (GroupBy)
@@ -23,14 +23,14 @@ In dit voor beeld ziet u hoe u een lijst weergave implementeert waarmee de rijen
 
 1. Kopieer de XML uit de sectie voor beeld van dit onderwerp naar een tekst bestand.
 
-2. Sla het tekst bestand op. Zorg ervoor dat u de extensie `format.ps1xml` toevoegt aan het bestand om het te identificeren als een opmaak bestand.
+2. Sla het tekstbestand op. Zorg ervoor dat u de extensie `format.ps1xml` toevoegt aan het bestand om het te identificeren als een opmaak bestand.
 
 3. Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile`.
 
    > [!WARNING]
    > Dit opmaak bestand definieert de weer gave van een object dat al is gedefinieerd door een Windows Power shell-indelings bestand. U moet de para meter `prependPath` gebruiken wanneer u de cmdlet uitvoert. u kunt dit indelings bestand niet laden als een module.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit opmaak bestand worden de volgende XML-elementen gedemonstreerd:
 

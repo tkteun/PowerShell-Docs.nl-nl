@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
 ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356306"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Een cmdlet aanroepen vanuit een cmdlet
 
-In dit voor beeld ziet u hoe u een cmdlet aanroept vanuit een andere cmdlet, waarmee u de functionaliteit van de aangeroepen cmdlet kunt toevoegen aan de cmdlet die u ontwikkelt. In dit voor beeld wordt de cmdlet `Get-Process` aangeroepen om de processen op te halen die worden uitgevoerd op de lokale computer. De aanroep van de cmdlet `Get-Process` is gelijk aan de volgende opdracht. Met deze opdracht worden alle processen opgehaald waarvan de namen beginnen met de tekens a tot en met t.
+In dit voor beeld ziet u hoe u een cmdlet aanroept vanuit een andere cmdlet, waarmee u de functionaliteit van de aangeroepen cmdlet kunt toevoegen aan de cmdlet die u ontwikkelt. In dit voor beeld wordt de cmdlet `Get-Process` aangeroepen om de processen te verkrijgen die worden uitgevoerd op de lokale computer. De aanroep van de `Get-Process`-cmdlet is gelijk aan de volgende opdracht. Met deze opdracht worden alle processen opgehaald waarvan de namen beginnen met de tekens a tot en met t.
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +28,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Een cmdlet aanroepen vanuit een cmdlet
 
-1. Controleer of er wordt verwezen naar de assembly die de cmdlet definieert die moet worden aangeroepen en dat de juiste `using`-instructie is toegevoegd. In dit voor beeld worden de volgende naam ruimten toegevoegd.
+1. Controleer of er wordt verwezen naar de assembly die de cmdlet definieert die moet worden aangeroepen en dat de juiste `using` instructie is toegevoegd. In dit voor beeld worden de volgende naam ruimten toegevoegd.
 
     ```csharp
     using System.Diagnostics;

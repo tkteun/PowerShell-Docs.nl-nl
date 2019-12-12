@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Informatie over de rol van DSC in een CI/CD-pijp lijn
 ms.openlocfilehash: a8e2e6ef4634216ae7468384b8e1f4d849bb997a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941822"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
@@ -22,7 +22,7 @@ De nuances van elke benadering, met inbegrip van de voor delen en risico's, word
 
 Er zijn twee oplossingen ingebouwd in lokale Configuration Manager om dit concept in te scha kelen:
 
-| Concept | Gedetailleerde informatie
+| Concept | Gedetailleerde gegevens
 |-|-
 | Gedeeltelijke configuraties | [Documentatie](../pull-server/partialConfigs.md)
 | Samengestelde resources | [Documentatie](../resources/authoringResourceComposite.md)
@@ -118,4 +118,4 @@ Dit vindt standaard plaats.
 Elke nieuwe configuratie release moet een statische verwijzing naar een specifieke versie van elke resource bevatten en moet worden gevalideerd door tests voordat productie server knooppunten worden bereikt.
 Het proces van het testen en vrijgeven van wijzigingen van broncode beheer maakt een veilige omgeving voor het vrijgeven van wijzigingen in kleine, maar veelvuldige batches.
 
-Zie het technisch document voor meer informatie over het gebruik van release pijplijnen voor het beheren van de basis infrastructuur: [Het model van de release pijplijn](../further-reading/whitepapers.md).
+Meer informatie over het gebruik van release pijplijnen voor het beheren van de basis infrastructuur vindt u in het Witboek: [het pipeline-model voor de release](../further-reading/whitepapers.md).

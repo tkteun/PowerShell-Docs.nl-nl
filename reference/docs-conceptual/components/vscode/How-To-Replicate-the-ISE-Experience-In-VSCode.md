@@ -3,10 +3,10 @@ title: De ISE-ervaring in Visual Studio Code repliceren
 description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
 ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117474"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
@@ -84,7 +84,7 @@ Als u nieuwe/naamloze bestanden wilt maken, moet u zich standaard als Power shel
 "files.defaultLanguage": "powershell",
 ```
 
-## <a name="color-scheme"></a>Kleuren schema
+## <a name="color-scheme"></a>Kleurenschema
 
 Er zijn een aantal ISE-Thema's beschikbaar voor VSCode, waardoor de editor veel meer lijkt op de ISE.
 
@@ -107,7 +107,7 @@ Voer in het [opdracht palet]`PowerShell Command Explorer` in en druk op <kbd>Ent
 
 Als u uiteindelijk wilt dat een bestand in de ISE toch opent, kunt u <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>gebruiken.
 
-## <a name="other-resources"></a>Andere resources
+## <a name="other-resources"></a>Meer informatie
 
 - 4sysops heeft [een geweldig artikel](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) over het configureren van VSCode als de ISE.
 - Mike F Robbins heeft [een geweldig bericht over het](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) instellen van VSCode.

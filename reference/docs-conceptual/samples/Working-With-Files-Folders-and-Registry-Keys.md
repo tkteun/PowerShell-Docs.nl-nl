@@ -1,23 +1,23 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Met bestanden, mappen en registersleutels werken
 ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030758"
 ---
-# <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en registersleutels
+# <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en register sleutels
 
-Windows PowerShell maakt gebruik van het zelfstandig naamwoord **Item** om te verwijzen naar items gevonden op een Windows PowerShell-station. Wanneer er sprake is van het bestandssysteem van Windows PowerShell-provider, een **Item** mogelijk een bestand, een map of het Windows PowerShell-station. Lijst van en werken met de volgende items is een kritieke eenvoudige taak in de meeste instellingen voor de administratieve, zodat we willen deze taken in detail bespreken.
+Windows Power shell gebruikt het **item** van de zelfstandig naam om te verwijzen naar items die op een Windows Power Shell-station zijn gevonden. Bij de verwerking van de Windows Power shell-bestandssysteem provider kan een **item** een bestand, een map of het Windows Power Shell-station zijn. Het weer geven en werken met deze items is een kritieke basis taak in de meeste beheer instellingen, dus we willen deze taken in detail bespreken.
 
-## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Het inventariseren van bestanden, mappen en registersleutels (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Bestanden, mappen en register sleutels opsommen (Get-Child item)
 
-Sinds het ophalen van een verzameling items uit een bepaalde locatie is een veelvoorkomende taak, de **Get-ChildItem** cmdlet is speciaal ontworpen om te retourneren van alle items gevonden in een container, zoals een map.
+Omdat het ophalen van een verzameling items van een bepaalde locatie een veelvoorkomende taak is, is de cmdlet **Get-Child item** specifiek ontworpen om alle items te retour neren die zijn gevonden in een container, zoals een map.
 
-Als u wilt retourneren van alle bestanden en mappen die zich rechtstreeks in de map C:\\Windows, type:
+Als u alle bestanden en mappen wilt retour neren die zich rechtstreeks in de map C bevinden:\\Windows, typt u:
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -31,19 +31,19 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-De aanbieding lijkt op wat u zien wilt bij het invoeren van de **dir** opdracht in **Cmd.exe**, of de **ls** opdracht in een UNIX-opdrachtshell.
+De vermelding lijkt op wat u ziet wanneer u de opdracht **dir** in **cmd. exe**of de **ls** -opdracht in een UNIX-opdracht shell opgeeft.
 
-U kunt zeer complex aanbiedingen uitvoeren met behulp van parameters van de **Get-ChildItem** cmdlet. We kijken we enkele scenario's vervolgens. U kunt zien dat de syntaxis van de **Get-ChildItem** cmdlet door te typen:
+U kunt zeer complexe vermeldingen uitvoeren met behulp van para meters van de cmdlet **Get-Child item** . We gaan nu een paar scenario's bekijken. U kunt de syntaxis van de cmdlet **Get-Child item** zien door het volgende te typen:
 
 ```powershell
 Get-Command -Name Get-ChildItem -Syntax
 ```
 
-Deze parameters kunnen worden gecombineerd en afgestemd om uitvoer op maat gemaakte te halen.
+Deze para meters kunnen worden gecombineerd en overeenkomen om een zeer aangepaste uitvoer te krijgen.
 
-### <a name="listing-all-contained-items--recurse"></a>Alle opgenomen objecten te bieden (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Alle opgenomen items weer geven (-recursief)
 
-Als zowel de items in een Windows-map en alle items die zijn opgenomen in de submappen weergeven, gebruikt u de **Recurse** parameter van **Get-ChildItem**. De aanbieding wordt weergegeven dat alles in de Windows-map en de items in submappen. Bijvoorbeeld:
+Als u beide items in een Windows-map en alle items in de submappen wilt weer geven, gebruikt u de para meter **recursieve** van **Get-Child item**. De vermelding bevat alles in de Windows-map en de items in de submappen. Bijvoorbeeld:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -56,9 +56,9 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-### <a name="filtering-items-by-name--name"></a>Items met de naam filteren (-naam)
+### <a name="filtering-items-by-name--name"></a>Items filteren op naam (-naam)
 
-Als u alleen de namen van items weergeven, gebruiken de **naam** parameter van **Get-Childitem**:
+Als u alleen de namen van items wilt weer geven, gebruikt u de para meter **name** van **Get-Child item**:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Name
@@ -68,31 +68,31 @@ assembly
 ...
 ```
 
-### <a name="forcibly-listing-hidden-items--force"></a>Geforceerd verborgen Items weergeven (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Geforceerde vermelding van verborgen items (-Force)
 
-Items die normaal gesproken niet zichtbaar in Verkenner of Cmd.exe zijn worden niet weergegeven in de uitvoer van een **Get-ChildItem** opdracht. Als u verborgen items weergeven, gebruiken de **Force** parameter van **Get-ChildItem**. Bijvoorbeeld:
+Items die normaal gesp roken onzichtbaar zijn in Verkenner of Cmd. exe worden niet weer gegeven in de uitvoer van de opdracht **Get-Child item** . Als u verborgen items wilt weer geven, gebruikt u de para meter **Forces** van **Get-Child item**. Bijvoorbeeld:
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
-Deze parameter is met de naam Force omdat u kunt het normale gedrag van geforceerd overschrijven de **Get-ChildItem** opdracht. Force is een veelgebruikte parameter die ervoor zorgt een actie die een cmdlet niet normaal kunt uitvoeren, dat hoewel een actie op die de beveiliging van het systeem wordt aangetast wordt niet uitgevoerd.
+Deze para meter heeft de naam Force omdat u het normale gedrag van de opdracht **Get-Child item** kunt negeren. Force is een veelgebruikte para meter die een actie afdwingt die een cmdlet normaal gesp roken niet zou uitvoeren, hoewel er geen actie wordt uitgevoerd die de beveiliging van het systeem in de hand brengt.
 
-### <a name="matching-item-names-with-wildcards"></a>Overeenkomende itemnamen met jokertekens
+### <a name="matching-item-names-with-wildcards"></a>Overeenkomende item namen met Joker tekens
 
-**De Get-ChildItem** opdracht jokertekens in het pad van de items om weer te geven.
+**De opdracht Get-Child item** accepteert joker tekens in het pad van de items die moeten worden weer geven.
 
-Omdat jokertekens worden verwerkt door de Windows PowerShell-engine, worden alle cmdlets die jokertekens gebruiken de dezelfde notatie en hebben hetzelfde gedrag overeenkomende. De notatie van de Windows PowerShell-jokertekens bevat:
+Omdat het vergelijken van het Joker teken wordt verwerkt door de Windows Power shell-engine, gebruiken alle cmdlets die joker tekens accepteren, dezelfde notatie en hebben hetzelfde overeenkomstige gedrag. De Windows Power shell-Joker teken notatie bevat:
 
-- Sterretje (\*) komt overeen met nul of meer exemplaren van een willekeurig teken.
+- Asterisk (\*) komt overeen met nul of meer exemplaren van elk wille keurig teken.
 
-- Vraagteken (?) komt overeen met precies één teken.
+- Vraag teken (?) komt overeen met één teken.
 
-- Haakje openen (\[) en teken rechte haak sluiten (]) rondom een reeks tekens worden vergeleken.
+- Teken voor haakje links (\[) en haakje (]) rond een reeks tekens die moeten worden vergeleken.
 
-Hier volgen enkele voorbeelden van de werking van jokertekens-specificatie.
+Hier volgen enkele voor beelden van de werking van joker tekens.
 
-Zoeken naar alle bestanden in de Windows-map met het achtervoegsel **.log** en exact vijf tekens in de naam van de basis, voer de volgende opdracht:
+Als u alle bestanden in de Windows-map wilt zoeken met het achtervoegsel **. log** en precies vijf tekens in de basis naam, voert u de volgende opdracht in:
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -109,25 +109,25 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-Zoeken naar alle bestanden die met de letter beginnen **x** in de Windows-map, typ:
+Als u alle bestanden wilt vinden die beginnen met de letter **x** in de map Windows, typt u:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
-Zoeken naar alle bestanden waarvan de namen met beginnen **x** of **z**, type:
+Als u wilt zoeken naar alle bestanden waarvan de naam begint met **x** of **z**, typt u:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-### <a name="excluding-items--exclude"></a>Items uitsluiten (-uitsluiten)
+### <a name="excluding-items--exclude"></a>Uitsluiten van items (-uitsluiten)
 
-U kunt specifieke objecten uitsluiten met behulp van de **uitsluiten** parameter van Get-ChildItem. Hiermee kunt u complexe filteren in één instructie uitvoeren.
+U kunt specifieke items uitsluiten met behulp van de **exclude** -para meter van Get-Child item. Zo kunt u complexe filters uitvoeren in één instructie.
 
-Stel bijvoorbeeld dat u wilt het DLL-bestand van Windows Time-Service niet vinden in de map System32 en u kunt meer weet over de dll-naam, is dat het begint met de letter "W" en "32" bevat.
+Stel dat u de Windows Time-service-DLL wilt vinden in de map System32 en dat u meer weet over de DLL-naam dat deze begint met ' W ' en dat deze ' 32 ' bevat.
 
-Een expressie, zoals **w\&#42; 32\&#42;. DLL-bestand** vindt u alle dll-bestanden die voldoen aan de voorwaarden, maar het kan ook de Windows 95 en 16-bits Windows-compatibiliteit dll-bestanden die zijn '95' of '16' terug in hun namen. U kunt weglaten bestanden die een van deze getallen in hun namen met behulp van hebben de **uitsluiten** parameter met het patroon  **\&#42;\[ 9516]\&#42;** :
+Een expressie zoals **w\&#42; 32\&#42;. het dll** -bestand bevat alle dll-bestanden die voldoen aan de voor waarden, maar deze kunnen ook de Windows-compatibiliteits-dll's (95 en 16-bits) retour neren die "95" of "16" in hun namen bevatten. U kunt bestanden met een van deze getallen in hun namen weglaten met de **exclude** -para meter met het patroon **\&#42;\[9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
@@ -146,19 +146,19 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-### <a name="mixing-get-childitem-parameters"></a>Met een combinatie van Parameters voor Get-ChildItem
+### <a name="mixing-get-childitem-parameters"></a>Get-Child item-para meters combi neren
 
-U kunt meerdere van de parameters van de **Get-ChildItem** cmdlet in dezelfde opdracht. Voordat u parameters combineren, moet u dat u bekend bent met jokertekens. De volgende opdracht retourneert bijvoorbeeld geen resultaten:
+U kunt verschillende para meters van de cmdlet **Get-Child item** in dezelfde opdracht gebruiken. Voordat u para meters gaat mengen, moet u ervoor zorgen dat u begrijpt dat er joker tekens overeenkomen. De volgende opdracht retourneert bijvoorbeeld geen resultaten:
 
 ```powershell
 Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
-Er zijn geen resultaten, zelfs als er zijn twee dll-bestanden die met de letter 'z' in de Windows-map beginnen.
+Er zijn geen resultaten, hoewel er twee Dll's zijn die beginnen met de letter ' z ' in de map Windows.
 
-Er zijn geen resultaten geretourneerd omdat we het jokerteken is opgegeven als onderdeel van het pad. Hoewel de opdracht recursieve, is de **Get-ChildItem** cmdlet beperkt de items die zich in de Windows-map met namen die eindigen op '.dll'.
+Er zijn geen resultaten geretourneerd omdat het Joker teken is opgegeven als onderdeel van het pad. Hoewel de opdracht recursief is, heeft de cmdlet **Get-Child item** de items beperkt tot die in de Windows-map met namen die eindigen op '. dll '.
 
-Als u wilt een recursieve zoekopdracht voor bestanden waarvan de namen overeenkomen met een speciale patroon opgeven, gebruikt u de **-opnemen** parameter.
+Als u een recursieve zoek opdracht wilt opgeven voor bestanden waarvan de namen overeenkomen met een speciaal patroon, gebruikt u de para meter **-include** .
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll

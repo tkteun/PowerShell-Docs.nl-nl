@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357405"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Een binaire PowerShell-module schrijven
@@ -73,9 +73,9 @@ In de volgende procedure wordt beschreven hoe u een binaire Power shell-module m
 
 3. Verpak uw oplossing en sla het pakket ergens op in het pad van de Power shell-module.
 
-   De `PSModulePath` globale omgevings variabele beschrijft de standaard paden die door Power shell worden gebruikt voor het zoeken naar uw module. Een gemeen schappelijk pad om een module op een systeem op te slaan, zou bijvoorbeeld `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>` zijn. Als u de standaard paden niet gebruikt, moet u de locatie van de module tijdens de installatie expliciet aangeven. Zorg ervoor dat u een map maakt om uw module op te slaan in, omdat u de map mogelijk nodig hebt om meerdere assembly's en bestanden voor uw oplossing op te slaan.
+   Met de variabele `PSModulePath` globale omgeving worden de standaard paden beschreven die Power shell gebruikt om uw module te zoeken. Zo wordt een gemeen schappelijk pad voor het opslaan van een module op een systeem `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Als u de standaard paden niet gebruikt, moet u de locatie van de module tijdens de installatie expliciet aangeven. Zorg ervoor dat u een map maakt om uw module op te slaan in, omdat u de map mogelijk nodig hebt om meerdere assembly's en bestanden voor uw oplossing op te slaan.
 
-   Houd er rekening mee dat u uw module niet hoeft te installeren op de `PSModulePath`. Dit zijn gewoon de standaard locaties die Power shell zoekt naar uw module. Het wordt echter wel best practice om dit te doen, tenzij u een goede reden hebt om uw module ergens anders op te slaan. Zie [een Power shell-module installeren](./installing-a-powershell-module.md) en het installatiepad van [de Power shell-module aanpassen](./modifying-the-psmodulepath-installation-path.md)voor meer informatie.
+   Houd er rekening mee dat u uw module niet overal op de `PSModulePath` hoeft te installeren. Dit zijn gewoon de standaard locaties die Power shell zoekt naar uw module. Het wordt echter wel best practice om dit te doen, tenzij u een goede reden hebt om uw module ergens anders op te slaan. Zie [een Power shell-module installeren](./installing-a-powershell-module.md) en het installatiepad van [de Power shell-module aanpassen](./modifying-the-psmodulepath-installation-path.md)voor meer informatie.
 
 4. Importeer uw module in Power shell met een aanroep van [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
 

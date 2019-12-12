@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 468dabd6-bfeb-448d-8e09-0996db516edd
 caps.latest.revision: 8
 ms.openlocfilehash: 5f804756e0e3e867832f15f50967fd6987f160a5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359270"
 ---
 # <a name="non-terminating-errors"></a>Fouten waarbij de functie of bewerking niet wordt beëindigd
@@ -21,7 +21,7 @@ In dit onderwerp wordt de methode beschreven die wordt gebruikt om niet-afsluit 
 
 Als er een fout optreedt die niet wordt afgesloten, moet de cmdlet deze fout rapporteren door de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aan te roepen. Wanneer de cmdlet een niet-afsluit fout rapporteert, kan de cmdlet blijven werken op dit invoer object en op verdere inkomende pijplijn objecten. Als de cmdlet de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroept, kan de cmdlet een fout record schrijven met een beschrijving van de voor waarde die de niet-afsluit bare fout heeft veroorzaakt. Zie [Windows Power Shell-fout records](./windows-powershell-error-records.md)voor meer informatie over fout records.
 
-Cmdlets kunnen [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen vanuit hun invoer methoden. Met-cmdlets kan [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) echter alleen worden aangeroepen vanuit de thread met de naam [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. ~. ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)of [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -invoer methode. Roep [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) niet aan vanuit een andere thread. Communiceert in plaats daarvan fouten terug naar de hoofd thread.
+Cmdlets kunnen [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen vanuit hun invoer methoden. Met cmdlets kan [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) echter alleen worden aangeroepen vanuit de thread met de naam [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Automation. cmdlet. ProcessRecord of [System. Management.](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Automation. cmdlet. EndProcessing-invoer methode. Roep [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) niet aan vanuit een andere thread. Communiceert in plaats daarvan fouten terug naar de hoofd thread.
 
 ## <a name="see-also"></a>Zie ook
 

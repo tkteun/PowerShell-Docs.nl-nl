@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Items selecteren in een keuzelijst
 ms.openlocfilehash: 55bc9409b0e330a2080781bfd4c586109896258f
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030828"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Items selecteren in een keuzelijst
 
-Gebruik Windows PowerShell 3.0 en latere versies te maken van een dialoogvenster Hiermee kunnen gebruikers items uit een besturingselement voor een lijst selecteren.
+Gebruik Windows Power Shell 3,0 en latere versies om een dialoog venster te maken waarmee gebruikers items kunnen selecteren in een besturings element keuze lijst.
 
-## <a name="create-a-list-box-control-and-select-items-from-it"></a>Een besturingselement voor een lijst maken en items selecteren
+## <a name="create-a-list-box-control-and-select-items-from-it"></a>Een besturings element keuze lijst maken en items hiervan selecteren
 
-Kopieer en plak het volgende in Windows PowerShell ISE en vervolgens opslaan als een Windows PowerShell-script (.ps1).
+Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -74,20 +74,20 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Het script begint met het laden van twee .NET Framework-klassen: **System.Drawing** en **System.Windows.Forms**. Vervolgens start u een nieuw exemplaar van de .NET Framework-klasse **System.Windows.Forms.Form**; die zorgt voor een leeg formulier of Hiermee bepaalt u venster waaraan u kunt beginnen met het toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 ```
 
-Nadat u een exemplaar van de klasse van het formulier hebt gemaakt, kunt u de waarden toewijzen aan drie eigenschappen van deze klasse.
+Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe aan drie eigenschappen van deze klasse.
 
-- **De tekst.** Hiermee wordt de titel van het venster.
+- **SMS.** Dit wordt de titel van het venster.
 
-- **De grootte.** Dit is de grootte van het formulier, in pixels. Dit script maakt u een formulier is 300 pixels breed met 200 pixels hoog.
+- **Size.** Dit is de grootte van het formulier, in pixels. Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.
 
-- **StartingPosition.** Deze optionele eigenschap is ingesteld op **CenterScreen** in het vorige script. Als u deze eigenschap niet toevoegt, wordt in Windows een locatie geselecteerd als het formulier wordt geopend. Door in te stellen de **StartingPosition** naar **CenterScreen**, u bent automatisch weergeven van het formulier in het midden van het scherm telkens worden geladen.
+- **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script. Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -95,7 +95,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Maak vervolgens een **OK** knop voor het formulier. Geef de grootte en het gedrag van de **OK** knop. In dit voorbeeld is de positie van de knop 120 pixels vanaf de bovenkant van het formulier, en 75 pixels vanaf de linkerkant. De hoogte van de knop is 23 pixels, terwijl de lengte van de knop 75 pixels is. Het script maakt gebruik van vooraf gedefinieerde Windows Forms-typen om te bepalen het gedrag van de knop.
+Maak vervolgens een knop **OK** voor uw formulier. Geef de grootte en het gedrag op van de knop **OK** . In dit voor beeld is de knop positie 120 pixels van de bovenrand van het formulier en 75 pixels vanaf de linkerrand. De knop hoogte is 23 pixels en de knop lengte is 75 pixels. Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -107,7 +107,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Op deze manier maakt u een **annuleren** knop. De **annuleren** knop is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.
+Op dezelfde manier maakt u een knop **Annuleren** . De knop **Annuleren** is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -119,7 +119,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Geef vervolgens de labeltekst op uw venster dat wordt beschreven welke informatie die u wilt dat gebruikers om te bieden. In dit geval wilt u dat gebruikers om een computer te selecteren.
+Geef vervolgens label tekst op in het venster waarin de informatie wordt beschreven die gebruikers moeten opgeven. In dit geval wilt u dat gebruikers een computer selecteren.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -129,7 +129,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Het besturingselement (in dit geval een keuzelijst) waarmee gebruikers kunnen de gegevens hebt die worden beschreven in uw labeltekst toevoegen. Er zijn veel andere besturingselementen die u naast keuzelijsten toepassen kunt. Zie voor meer besturingselementen [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN.
+Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast keuze lijsten. Zie [System. Windows. Forms naam ruimte](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN voor meer besturings elementen.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -138,10 +138,10 @@ $listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 80
 ```
 
-In de volgende sectie geeft u de waarden die u wilt dat de keuzelijst met invoervak om weer te geven aan gebruikers.
+In de volgende sectie geeft u de waarden op die u in de keuze lijst wilt weer geven voor gebruikers.
 
 > [!NOTE]
-> De keuzelijst met dit script gemaakte kan slechts één selectie. Voor het maken van een keuzelijst waarmee meerdere selecties, Geef een waarde op voor de **SelectionMode** eigenschap, vergelijkbaar met het volgende: `$listBox.SelectionMode = 'MultiExtended'`. Zie voor meer informatie, [meervoudige selectie keuzelijsten](Multiple-selection-List-Boxes.md).
+> In de keuze lijst die door dit script wordt gemaakt, is slechts één selectie toegestaan. Als u een besturings element keuze lijst wilt maken dat meerdere selecties toestaat, geeft u een waarde op voor de eigenschap **SelectionMode** , op de volgende manier: `$listBox.SelectionMode = 'MultiExtended'`. Zie [keuze lijsten met meerdere keuze mogelijkheden](Multiple-selection-List-Boxes.md)voor meer informatie.
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -153,20 +153,20 @@ In de volgende sectie geeft u de waarden die u wilt dat de keuzelijst met invoer
 [void] $listBox.Items.Add('atl-dc-007')
 ```
 
-Het besturingselement keuzelijst toevoegen aan uw formulier en vertelt u Windows het formulier op andere windows- en dialoogvensters openen wanneer deze wordt geopend.
+Voeg het besturings element keuze lijst aan het formulier toe en geef Windows opdracht om het formulier te openen hierop andere vensters en dialoog vensters wanneer deze wordt geopend.
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-Voeg de volgende regel code om weer te geven van het formulier in Windows.
+Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Ten slotte de code binnen de **als** blok geeft Windows wat te doen met het formulier wanneer gebruikers een optie in de lijst selecteren en klik vervolgens op de **OK** of drukt u op de **Enter**sleutel.
+Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden gedaan met het formulier nadat gebruikers een optie in de keuze lijst hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op de **Enter** -toets.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -178,6 +178,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:  Items selecteren in een keuzelijst](https://technet.microsoft.com/library/ff730949.aspx)
+- [Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: de WinFormsExampleUpdates van Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows Power shell-Tip van de week: items selecteren in een keuze lijst](https://technet.microsoft.com/library/ff730949.aspx)

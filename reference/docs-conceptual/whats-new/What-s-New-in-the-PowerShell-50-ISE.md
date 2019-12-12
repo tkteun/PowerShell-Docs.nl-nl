@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: Power shell, cmdlet
 title: Wat is er nieuw in de Power shell 5,0 ISE
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416645"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Wat is er nieuw in de Windows Power shell 5,0 ISE
@@ -42,7 +42,7 @@ Met het toevoegen van IntelliSense, is het eenvoudiger om cmdlets en syntaxis te
 
 Wanneer u cmdlets in de Windows PowerShell ISE typt, wordt een schuif bare menu venster weer gegeven, zodat u de juiste opdrachten kunt door bladeren en selecteren.
 
-## <a name="snippets"></a>fragmenten
+## <a name="snippets"></a>Fragmenten
 
 > Toegevoegd in ISE 3,0
 

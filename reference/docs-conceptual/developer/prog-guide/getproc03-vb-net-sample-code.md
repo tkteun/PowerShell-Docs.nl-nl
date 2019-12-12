@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: ff94c452-d4ec-4492-ac20-61ad52f8ae8c
 caps.latest.revision: 7
 ms.openlocfilehash: a0a88ca517347a94fc81534caace6efa0f13fdd7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352631"
 ---
 # <a name="getproc03-vbnet-sample-code"></a>GetProc03-codevoorbeeld (VB.NET)
 
-De volgende code toont de implementatie van een `Get-Process`-cmdlet waarmee de invoer van een pijp lijn kan worden geaccepteerd. Met deze implementatie wordt een para meter `Name` gedefinieerd die de invoer van de pijp lijn accepteert, worden proces gegevens van de lokale computer opgehaald op basis van de opgegeven namen, en wordt de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) gebruikt als uitvoer mechanisme voor het verzenden van objecten naar de pijp lijn.
+De volgende code toont de implementatie van een `Get-Process`-cmdlet waarmee de invoer van een pijp lijn kan worden geaccepteerd. Deze implementatie definieert een `Name` para meter die de invoer van de pijp lijn accepteert, haalt proces gegevens van de lokale computer op op basis van de opgegeven namen, en gebruikt vervolgens de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) als uitvoer mechanisme voor het verzenden van objecten naar de pijp lijn.
 
 ## <a name="code-sample"></a>Code voorbeeld
 

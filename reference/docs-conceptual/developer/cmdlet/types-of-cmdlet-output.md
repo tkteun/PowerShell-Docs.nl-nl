@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359187"
 ---
 # <a name="types-of-cmdlet-output"></a>Typen cmdlet-uitvoer
@@ -54,7 +54,7 @@ Standaard worden fout opsporings berichten niet weer gegeven. U kunt de para met
 
 Met cmdlets kunt u waarschuwings berichten weer geven door de methode [System. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) aan te roepen.
 
-Standaard worden waarschuwings berichten weer gegeven. U kunt echter waarschuwings berichten configureren met behulp van de variabele `$WarningPreference` of met behulp van de para meters **uitgebreid** en **fout opsporing** wanneer de cmdlet wordt aangeroepen.
+Standaard worden waarschuwings berichten weer gegeven. U kunt echter waarschuwings berichten configureren met behulp van de variabele `$WarningPreference` of door de para meters **uitgebreid** en **fout opsporing** te gebruiken wanneer de cmdlet wordt aangeroepen.
 
 ## <a name="displaying-output"></a>Uitvoer weer geven
 
@@ -62,7 +62,7 @@ Voor alle aanroepen van write-methoden wordt de inhoud weer gegeven door specifi
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>Toegang tot de uitvoer functionaliteit van een hosttoepassing
 
-U kunt ook een cmdlet ontwerpen om rechtstreeks toegang te krijgen tot de uitvoer functionaliteit van een host-toepassing via de Power shell-runtime. Het gebruik van de host-Api's van Power shell in plaats van [System. console](/dotnet/api/System.Console) -of [System. Windows. Forms](/dotnet/api/System.Windows.Forms) zorgt ervoor dat uw cmdlet werkt met diverse hosts. Bijvoorbeeld: de host van de **Power shell. exe** -console, de grafische **powershell_ise. exe** -host, de Power shell Remoting host en hosts van derden.
+U kunt ook een cmdlet ontwerpen om rechtstreeks toegang te krijgen tot de uitvoer functionaliteit van een host-toepassing via de Power shell-runtime. Het gebruik van de host-Api's van Power shell in plaats van [System. console](/dotnet/api/System.Console) -of [System. Windows. Forms](/dotnet/api/System.Windows.Forms) zorgt ervoor dat uw cmdlet werkt met diverse hosts. Bijvoorbeeld: de host van de **Power shell. exe** -console, de grafische host van **powershell_ise. exe** , de Power shell Remoting host en hosts van derden.
 
 ## <a name="see-also"></a>Zie ook
 

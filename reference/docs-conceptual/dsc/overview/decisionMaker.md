@@ -3,10 +3,10 @@ ms.date: 10/11/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: Overzicht Desired State Configuration voor besluitvormers
 ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352124"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Overzicht van desired state Configuration voor besluit vormers

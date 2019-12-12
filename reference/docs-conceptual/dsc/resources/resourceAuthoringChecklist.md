@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Controlelijst voor het ontwerpen van resource
 ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941192"
 ---
 # <a name="resource-authoring-checklist"></a>Controlelijst voor het ontwerpen van resource
@@ -15,7 +15,7 @@ Deze controle lijst bevat de aanbevolen procedures voor het ontwerpen van een ni
 
 ## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>De resource module bevat het. psd1-bestand en het schema. MOF voor elke resource
 
-Controleer of de resource de juiste structuur heeft en alle vereiste bestanden bevat. Elke resource module moet een. psd1-bestand bevatten en elke niet-samengestelde resource moet het bestand schema. MOF hebben. Resources die geen schema bevatten, worden niet weer gegeven door `Get-DscResource` en gebruikers kunnen de IntelliSense niet gebruiken bij het schrijven van code voor die modules in ISE.
+Controleer of de resource de juiste structuur heeft en alle vereiste bestanden bevat. Elke resource module moet een. psd1-bestand bevatten en elke niet-samengestelde resource moet het bestand schema. MOF hebben. Resources die geen schema bevatten, worden niet weer gegeven door `Get-DscResource` en gebruikers kunnen IntelliSense niet gebruiken bij het schrijven van code voor deze modules in ISE.
 De directory-structuur voor de resource xRemoteFile, die deel uitmaakt van de [xPSDesiredStateConfiguration-resource module](https://github.com/PowerShell/xPSDesiredStateConfiguration), ziet er als volgt uit:
 
 ```
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>De resource en het schema zijn juist
 
 Controleer het resource schema-bestand (*. schema. MOF). U kunt de [DSC resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) gebruiken om uw schema te ontwikkelen en te testen.
-Zorg ervoor dat:
+Vereisten:
 
 - Eigenschaps typen zijn juist (bijvoorbeeld: geen teken reeks gebruiken voor eigenschappen die numerieke waarden accepteren, moet u in plaats daarvan UInt32 of andere numerieke typen gebruiken)
 - Eigenschaps kenmerken zijn correct opgegeven als: ([sleutel], [vereist], [schrijven], [lezen])
@@ -73,7 +73,7 @@ Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ## <a name="resource-loads-without-errors"></a>Resource belasting zonder fouten
 
 Controleer of de resource module kan worden geladen.
-Dit kan hand matig worden bereikt door uit `Import-Module <resource_module> -force` te voeren en te bevestigen dat er geen fouten zijn opgetreden of door test Automation te schrijven. In het geval van de laatste kunt u deze structuur in uw test case volgen:
+Dit kan hand matig worden bereikt door `Import-Module <resource_module> -force` uit te voeren en te bevestigen dat er geen fouten zijn opgetreden of door Test Automatisering te schrijven. In het geval van de laatste kunt u deze structuur in uw test case volgen:
 
 ```powershell
 $error = $null
@@ -94,29 +94,29 @@ File file {
 }
 ```
 
-Nadat het voor de eerste keer is toegepast, moet het bestand test. txt `C:\test` worden weer gegeven in de map. Volgende uitvoeringen van dezelfde configuratie mogen echter niet de status van de machine wijzigen (bijvoorbeeld, er moeten geen kopieën van `test.txt` het bestand worden gemaakt).
-Om ervoor te zorgen dat een resource idempotent is, `Set-TargetResource` kunt u herhaaldelijk aanroepen wanneer u de `Start-DscConfiguration` resource rechtstreeks test of meerdere keren aanroept wanneer u de test beëindigt. Het resultaat moet hetzelfde zijn na elke uitvoering.
+Nadat het voor de eerste keer is toegepast, moet het bestand test. txt worden weer gegeven in `C:\test` map. Volgende uitvoeringen van dezelfde configuratie mogen echter niet de status van de machine wijzigen (bijvoorbeeld, er moeten geen kopieën van het `test.txt` bestand worden gemaakt).
+Als u er zeker van wilt zijn dat een resource idempotent is, kunt u `Set-TargetResource` herhaaldelijk aanroepen bij het rechtstreeks testen van de resource, of `Start-DscConfiguration` meerdere keren aanroepen wanneer u de test beëindigt. Het resultaat moet hetzelfde zijn na elke uitvoering.
 
 ## <a name="test-user-modification-scenario"></a>Scenario voor het aanpassen van gebruikers testen
 
-Door de status van de machine te wijzigen en DSC opnieuw uit te voeren, kunt u `Set-TargetResource` controleren `Test-TargetResource` of en goed functioneren. Hier volgen de stappen die u moet uitvoeren:
+Door de status van de machine te wijzigen en DSC opnieuw uit te voeren, kunt u controleren of `Set-TargetResource` en `Test-TargetResource` goed functioneren. Hier volgen de stappen die u moet uitvoeren:
 
 1. Begin met de resource en niet de gewenste status.
 2. Configuratie uitvoeren met uw resource
-3. Verify `Test-DscConfiguration` retourneert True
+3. Controleren of `Test-DscConfiguration` retourneert waar
 4. Wijzig het geconfigureerde item in de gewenste status
-5. Verify `Test-DscConfiguration` retourneert False
+5. Controleren `Test-DscConfiguration` retourneert onwaar
 
 Hier volgt een meer concrete voor beeld van het gebruik van een register resource:
 
 1. Beginnen met de register sleutel heeft niet de gewenste status
 2. Voer `Start-DscConfiguration` uit met een configuratie om deze in de gewenste staat te zetten en controleer of deze wordt door gegeven.
-3. Uitvoeren `Test-DscConfiguration` en controleren of het resultaat True retourneert
+3. Voer `Test-DscConfiguration` uit en controleer of het resultaat True is
 4. Wijzig de waarde van de sleutel zodat deze niet de gewenste status heeft
-5. Uitvoeren `Test-DscConfiguration` en controleren of retourneert False
-6. `Get-TargetResource`de functionaliteit is geverifieerd met`Get-DscConfiguration`
+5. Voer `Test-DscConfiguration` uit en controleer of False is geretourneerd
+6. de `Get-TargetResource` functionaliteit is geverifieerd met behulp van `Get-DscConfiguration`
 
-`Get-TargetResource`de details van de huidige status van de resource moeten worden geretourneerd. Zorg ervoor dat u deze test door `Get-DscConfiguration` aan te roepen nadat u de configuratie hebt toegepast en controleer of de uitvoer correct overeenkomt met de huidige status van de machine. Het is belang rijk om deze afzonderlijk te testen, omdat eventuele problemen in dit gebied niet worden `Start-DscConfiguration`weer gegeven wanneer u aanroept.
+`Get-TargetResource` moet Details van de huidige status van de resource retour neren. Zorg ervoor dat u deze test door `Get-DscConfiguration` aan te roepen nadat u de configuratie hebt toegepast en te controleren of de uitvoer correct wordt weer gegeven in de huidige status van de machine. Het is belang rijk om deze afzonderlijk te testen omdat er geen problemen in dit gebied worden weer gegeven bij het aanroepen van `Start-DscConfiguration`.
 
 ## <a name="call-getsettest-targetresource-functions-directly"></a>**Get/set/test-TargetResource-** functies rechtstreeks aanroepen
 
@@ -124,11 +124,11 @@ Test de functies **Get/set/test-TargetResource** die in uw resource zijn geïmpl
 
 ## <a name="verify-end-to-end-using-start-dscconfiguration"></a>End-to-end controleren met **Start-DscConfiguration**
 
-Het testen van de functies **Get/set/test-TargetResource** door deze rechtstreeks aan te roepen, is belang rijk, maar niet alle problemen worden op deze manier gedetecteerd. Het is belang rijk dat u zich richt op het `Start-DscConfiguration` gebruik of de pull-server. Dit is in feite hoe gebruikers de resource gaan gebruiken, dus te laag inschatten de significantie van dit type tests niet op.
+Het testen van de functies **Get/set/test-TargetResource** door deze rechtstreeks aan te roepen, is belang rijk, maar niet alle problemen worden op deze manier gedetecteerd. Het is belang rijk dat u zich richt op het gebruik van `Start-DscConfiguration` of de pull-server. Dit is in feite hoe gebruikers de resource gaan gebruiken, dus te laag inschatten de significantie van dit type tests niet op.
 Mogelijke typen problemen:
 
 - Referentie/sessie kan anders werken omdat de DSC-agent wordt uitgevoerd als een service.  Zorg ervoor dat u alle functies hier kunt testen.
-- Het resultaat van `Start-DscConfiguration` de uitvoer door kan afwijken van de fouten die `Set-TargetResource` worden weer gegeven wanneer u de functie rechtstreeks aanroept.
+- Fouten die worden uitgevoerd door `Start-DscConfiguration` kunnen afwijken van de uitvoer die wordt weer gegeven wanneer de `Set-TargetResource`-functie rechtstreeks aanroept.
 
 ## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Compatibiliteit testen op alle door DSC ondersteunde platforms
 
@@ -140,7 +140,7 @@ Een zeer veelvoorkomende test hiaat is het verifiëren van de bron alleen op Ser
 
 ## <a name="get-dscresource-lists-the-resource"></a>Get-Dscresource bieden geeft de resource weer
 
-Nadat u de module hebt geïmplementeerd `Get-DscResource` , moet u de resource onder andere aanroepen als gevolg van een lijst. Als u uw resource niet kunt vinden in de lijst, moet u ervoor zorgen dat het schema. MOF-bestand voor die bron bestaat.
+Wanneer u de module hebt geïmplementeerd, moet u bij het aanroepen van `Get-DscResource` de resource onder andere weer geven als resultaat. Als u uw resource niet kunt vinden in de lijst, moet u ervoor zorgen dat het schema. MOF-bestand voor die bron bestaat.
 
 ## <a name="resource-module-contains-examples"></a>Resource module bevat voor beelden
 
@@ -190,7 +190,7 @@ Het maken van kwaliteits voorbeelden waarmee anderen inzicht krijgen in hoe u de
 - Het is een goed idee om een voor beeld van een invoeging van de configuratie met de werkelijke waarden aan het einde van het voorbeeld script uit te voeren.
   Zo is in de configuratie hierboven niet nood zakelijk duidelijk dat de beste manier om agents op te geven:
 
-  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`In dat geval kan een opmerking de beoogde uitvoering van de configuratie verduidelijken:
+  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` in welk geval een opmerking de beoogde uitvoering van de configuratie kan verduidelijken:
 
   ```powershell
   <#
@@ -210,19 +210,19 @@ Het maken van kwaliteits voorbeelden waarmee anderen inzicht krijgen in hoe u de
 
 Goede fout berichten moeten zijn:
 
-- Kent Het grootste probleem met fout berichten is dat ze vaak niet bestaan, dus zorg ervoor dat ze daar zijn.
-- Eenvoudig te begrijpen: Menselijk leesbaar, geen onduidelijke fout codes
-- Precis Beschrijven wat het probleem precies is
-- Feitelijke Advies over het oplossen van het probleem
-- Geforceerde afsluit proces Liggen niet aan de gebruiker of zorg ervoor dat ze slecht zijn
+- Er is sprake van het grootste probleem met fout berichten dat ze vaak niet bestaan, dus zorg ervoor dat ze daar zijn.
+- Eenvoudig te begrijpen: menselijk leesbaar, geen onduidelijke fout codes
+- Nauw keurig: beschrijven wat het probleem precies is
+- Feitelijke: advies over het oplossen van het probleem
+- Vermoeden: liggen niet op de gebruiker of zorg ervoor dat ze slecht zijn
 
-Controleer of u fouten in end-to-end-scenario's `Start-DscConfiguration`controleert (met), omdat deze kunnen verschillen van de waarden die worden geretourneerd bij het rechtstreeks uitvoeren van resource functies.
+Zorg ervoor dat u fouten in end-to-end-scenario's controleert (met behulp van `Start-DscConfiguration`), omdat deze kunnen verschillen van de waarden die worden geretourneerd bij het rechtstreeks uitvoeren van resource functies.
 
 ## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Logboek berichten zijn eenvoudig te begrijpen en info (inclusief – uitgebreid, fouten opsporen en ETW-Logboeken)
 
 Zorg ervoor dat de logboeken die zijn gegenereerd door de resource eenvoudig te begrijpen zijn en waarde aan de gebruiker kunnen geven. Resources moeten alle informatie uitvoeren die nuttig kan zijn voor de gebruiker, maar meer logboeken zijn niet altijd beter. Vermijd het gebruik van redundantie en het uitvoeren van gegevens die geen extra waarde bieden: laat iemand niet meer dan honderden logboek vermeldingen bezoeken om te vinden wat ze zoeken. Uiteraard is er geen logboeken die een geschikte oplossing voor dit probleem zijn.
 
-Bij het testen moet u ook uitgebreide logboeken en fouten opsporen analyseren ( `Start-DscConfiguration` door `–Verbose` op `–Debug` de juiste wijze uit te voeren en te scha kelen), evenals etw-Logboeken. Als u DSC ETW-logboeken wilt weer geven, gaat u naar Logboeken en opent u de volgende map: Toepassingen en services: micro soft-Windows-desired state Configuration.  Standaard zal er een operationeel kanaal zijn, maar zorg ervoor dat u analytische en probleemoplossings kanalen inschakelt voordat u de configuratie uitvoert.
+Bij het testen moet u ook uitgebreide logboeken en fouten opsporen analyseren (door `Start-DscConfiguration` met `–Verbose` en `–Debug` switches op de juiste wijze uit te voeren), evenals ETW-Logboeken. Als u DSC ETW-logboeken wilt weer geven, gaat u naar Logboeken en opent u de volgende map: toepassingen en services-micro soft-Windows-desired state Configuration.  Standaard zal er een operationeel kanaal zijn, maar zorg ervoor dat u analytische en probleemoplossings kanalen inschakelt voordat u de configuratie uitvoert.
 Als u kanalen voor analyse en fout opsporing wilt inschakelen, kunt u hieronder een script uitvoeren:
 
 ```powershell
@@ -277,26 +277,26 @@ Als de resource een referentie als para meter heeft:
 
 ## <a name="resource-does-not-require-interactive-input"></a>Voor de resource is geen interactieve invoer vereist
 
-**Get/set/test-TargetResource-** functies moeten automatisch worden uitgevoerd en mogen niet wachten op invoer van de gebruiker tijdens een fase van de uitvoering (bijvoorbeeld omdat u `Get-Credential` niet in deze functies moet worden gebruikt). Als u de invoer van de gebruiker moet opgeven, moet u deze door geven aan de configuratie als para meter tijdens de compilatie fase.
+**Get/set/test-TargetResource-** functies moeten automatisch worden uitgevoerd en mogen niet wachten op invoer van de gebruiker in elke fase van de uitvoering (bijvoorbeeld: u moet `Get-Credential` in deze functies niet gebruiken). Als u de invoer van de gebruiker moet opgeven, moet u deze door geven aan de configuratie als para meter tijdens de compilatie fase.
 
 ## <a name="resource-functionality-was-thoroughly-tested"></a>De resource functionaliteit is uitgebreid getest
 
 Deze controle lijst bevat items die belang rijk zijn om te worden getest en/of vaak ontbreekt. Er is een aantal tests, voornamelijk functionele functies die specifiek zijn voor de resource die u wilt testen en die hier niet worden vermeld. Vergeet niet om te zien wat negatieve test cases zijn.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Aanbevolen procedure: De resource module bevat de map tests met het script ResourceDesignerTests. ps1
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Best practice: de resource module bevat de map tests met het script ResourceDesignerTests. ps1
 
-Het is een goed idee om de map ' tests ' te maken in de resource `ResourceDesignerTests.ps1` module, het bestand te maken en tests toe te voegen met **test-xDscResource** en **test-xDscSchema** voor alle resources in de betreffende module.
+Het is een goed idee om de map ' tests ' te maken in de resource module, `ResourceDesignerTests.ps1`-bestand te maken en tests toe te voegen met behulp van **test-xDscResource** en **test-xDscSchema** voor alle resources in de betreffende module.
 Op deze manier kunt u snel schema's valideren van alle resources uit de opgegeven modules en een Sanity controleren voordat u publiceert.
-Voor xRemoteFile `ResourceTests.ps1` kan het er zo eenvoudig uitzien als:
+`ResourceTests.ps1` kan in xRemoteFile er als volgt uitzien:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Aanbevolen procedure: De map Resource bevat het script voor het genereren van schema
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Best practice: de map Resource bevat het script van de resource ontwerper voor het genereren van het schema
 
-Elke resource moet een resource Designer-script bevatten waarmee een MOF-schema van de resource wordt gegenereerd. Dit bestand moet worden geplaatst in `<ResourceName>\ResourceDesignerScripts` en de naam generate genereren `<ResourceName>Schema.ps1` voor xRemoteFile. dit bestand zou `GenerateXRemoteFileSchema.ps1` worden opgeroepen en bevatten:
+Elke resource moet een resource Designer-script bevatten waarmee een MOF-schema van de resource wordt gegenereerd. Dit bestand moet in `<ResourceName>\ResourceDesignerScripts` worden geplaatst en de naam generate `<ResourceName>Schema.ps1` for xRemoteFile resource. dit bestand zou `GenerateXRemoteFileSchema.ps1` worden genoemd en het volgende bevatten:
 
 ```powershell
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
@@ -312,9 +312,9 @@ New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Hea
 
 ## <a name="best-practice-resource-supports--whatif"></a>Aanbevolen procedure: Resource ondersteunt-WhatIf
 
-Als uw resource ' gevaarlijk ' bewerkingen uitvoert, is het een goed idee om functionaliteit te `-WhatIf` implementeren. Nadat de bewerking is uitgevoerd, moet u `-WhatIf` ervoor zorgen dat uitvoer op de juiste wijze bewerkingen beschrijft die zouden `-WhatIf` gebeuren als de opdracht zonder switch is voltooid.
-Controleer ook of de bewerkingen niet worden uitgevoerd (er worden geen wijzigingen aangebracht in de status van het knoop `–WhatIf` punt) wanneer switch aanwezig is.
-Stel dat we de bestands resource testen. Hieronder vindt u eenvoudige configuratie waarmee bestanden `test.txt` met de inhoud ' test ' worden gemaakt:
+Als uw resource ' gevaarlijk ' bewerkingen uitvoert, is het een goed idee om `-WhatIf` functionaliteit te implementeren. Nadat de bewerking is uitgevoerd, moet u ervoor zorgen dat `-WhatIf` uitvoer op de juiste wijze bewerkingen beschrijft die zouden gebeuren als de opdracht is uitgevoerd zonder `-WhatIf` switch.
+Controleer ook of bewerkingen niet worden uitgevoerd (er worden geen wijzigingen aangebracht in de status van het knoop punt) wanneer `–WhatIf` switch aanwezig is.
+Stel dat we de bestands resource testen. Hieronder vindt u eenvoudige configuratie waarmee bestands `test.txt` worden gemaakt met de inhoud ' test ':
 
 ```powershell
 configuration config
@@ -331,7 +331,7 @@ configuration config
 config
 ```
 
-Als we de configuratie met de `-WhatIf` switch compileren en vervolgens uitvoeren, vertelt de uitvoer precies wat er zou gebeuren wanneer de configuratie wordt uitgevoerd. De configuratie zelf is echter niet uitgevoerd (`test.txt` het bestand is niet gemaakt).
+Als we de configuratie compileren en vervolgens uitvoeren met de `-WhatIf` switch, vertelt de uitvoer precies wat er zou gebeuren wanneer de configuratie wordt uitgevoerd. De configuratie zelf is echter niet uitgevoerd (`test.txt` bestand niet is gemaakt).
 
 ```powershell
 Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf

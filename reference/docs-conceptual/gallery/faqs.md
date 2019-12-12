@@ -4,19 +4,19 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328873"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-## <a name="what-is-a-powershell-module"></a>Wat is een Power shell-module?
+## <a name="what-is-a-powershell-module"></a>Wat is een PowerShell-module?
 
 Een Power shell-module is een herbruikbaar pakket met een Power shell-functionaliteit. Alles in Power shell (functies, variabelen, DSC-resources, enz.) kan worden verpakt in modules. Doorgaans zijn modules mappen met specifieke typen bestanden die zijn opgeslagen op een specifiek pad. Er zijn een aantal verschillende typen Power shell-modules.
 
-## <a name="what-is-a-powershell-script"></a>Wat is een Power shell-script?
+## <a name="what-is-a-powershell-script"></a>Wat is een PowerShell-script?
 
 Een Power shell-script is een reeks opdrachten die zijn opgeslagen in een. ps1-bestand om het opnieuw gebruiken en delen mogelijk te maken. Power shell-werk stromen zijn ook Power shell-scripts, die een overzicht maken van een reeks taken en het bepalen van sequentiëren voor deze taken. Ga voor meer informatie naar [aan de slag met Power shell-werk stroom](https://technet.microsoft.com/library/jj134242.aspx).
 
@@ -36,14 +36,14 @@ Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad
 
 **U hoeft zich niet te registreren of u aan te melden bij de galerie om pakketten te installeren of op te slaan.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat moet dat betekenen?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat houdt dat in?
 
 Deze fout kan de volgende oorzaken hebben:
 
 - **De opgegeven API-sleutel is ongeldig.**
      Zorg ervoor dat u de geldige API-sleutel hebt opgegeven in uw account. Als u uw API-sleutel wilt ophalen, bekijkt u de profiel pagina.
 - **De opgegeven pakket naam is geen eigendom van u.**
-     Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de `https://www.powershellgallery.com/packages/<packageName>`pagina Details van het pakket:. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` de pagina met details van de ziekte gaat gaan, kunt u deze niet meer weer geven. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
+     Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de pagina Details van het pakket: `https://www.powershellgallery.com/packages/<packageName>`. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` navigeert, gaat u naar de pagina Details van de ondertekenaar, of deze niet is vermeld of niet. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
     - Selecteer een andere naam voor het pakket.
     - Neem contact op met de eigen aren van het bestaande pakket.
 
@@ -63,8 +63,8 @@ Deze informatie wordt gelezen als onderdeel van het publicatie proces van het *m
 Alle modules die naar de galerie worden gepubliceerd, moeten module manifesten hebben.
 Alle modules die de volgende informatie bevatten in het manifest, kunnen worden gepubliceerd in de galerie:
 
-- Version
-- Description
+- Versie
+- Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van de module, hetzij als onderdeel van de sectie **PrivateData** van het manifest, of in de para meter **LicenseUri** van de cmdlet [Publish-module][] .
 
@@ -84,8 +84,8 @@ Deze informatie wordt gelezen als onderdeel van het publicatie proces van de sec
 Alle scripts die naar de galerie worden gepubliceerd, moeten meta gegevens bevatten.
 Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worden gepubliceerd in de galerie:
 
-- Version
-- Description
+- Versie
+- Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van het script, hetzij als onderdeel van de sectie **PSScriptInfo** van het script, of in de para meter **LicenseUri** van de cmdlet [Publish-script][] .
 
@@ -93,7 +93,7 @@ Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worde
 
 Typ wat u zoekt in het tekstvak. Als u bijvoorbeeld modules wilt zoeken die verwant zijn aan Azure SQL, typt u ' Azure SQL '. Onze zoek machine zoekt naar deze tref woorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en andere meta gegevens. Op basis van een score met een gewogen kwaliteit worden de meest overeenkomende resultaten weer gegeven. U kunt ook zoeken op specifiek veld met de syntaxis Field: ' value ' in de zoek query voor de volgende velden:
 
-- Tags
+- Labels
 - Functies
 - Cmdlets
 - DscResources
@@ -156,9 +156,9 @@ Afbeelding 1: PowerShellGet-architectuur
 
 In het algemeen raden wij aan de meest recente versie van de PowerShellGet-module te kiezen (Houd er rekening mee dat .NET 4,5 is vereist).
 
-**Power shell 3,0 of hoger**is vereist voor de **PowerShellGet** -module.
+Voor de **PowerShellGet**-module is **PowerShell 3.0 of hoger** vereist.
 
-Daarom is voor **PowerShellGet** een van de volgende besturings systemen vereist:
+Daarom vereist **PowerShellGet** een van de volgende besturingssystemen:
 
 - Windows 10
 - Windows 8.1 Pro
@@ -168,7 +168,7 @@ Daarom is voor **PowerShellGet** een van de volgende besturings systemen vereist
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** vereist ook .NET Framework 4,5 of hoger. U kunt .NET Framework 4,5 of hoger [installeren.](https://msdn.microsoft.com/library/5a4x27ek.aspx)
+Voor **PowerShellGet** is ook .NET Framework 4.5 of hoger vereist. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Is het mogelijk namen te reserveren voor pakketten die in de toekomst zullen worden gepubliceerd?
 

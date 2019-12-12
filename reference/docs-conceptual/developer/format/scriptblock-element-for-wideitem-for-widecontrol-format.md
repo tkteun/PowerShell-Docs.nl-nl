@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
 caps.latest.revision: 8
 ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353842"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>Het element ScriptBlock voor WideItem voor WideControl (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[WideItem-element (indeling)](./wideitem-element-for-widecontrol-format.md)|Hiermee wordt de eigenschap of het script blok gedefinieerd waarvan de waarde wordt weer gegeven in de brede weer gave.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het script op waarvan de waarde wordt weer gegeven.
 
@@ -55,7 +55,7 @@ Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een element `WideItem` weer gegeven dat een script definieert waarvan de waarde in de weer gave wordt weer gegeven.
+In dit voor beeld ziet u een `WideItem`-element dat een script definieert waarvan de waarde in de weer gave wordt weer gegeven.
 
 ```xml
 <WideItem>

@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352253"
 ---
 # <a name="configuring-role-based-authorization"></a>Autorisatie op basis van rollen configureren
 
-In dit onderwerp wordt uitgelegd hoe u het op rollen gebaseerde autorisatie beleid configureert voor de voorbeeld implementatie van de interface [micro soft. Management. Odata. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) die wordt beschreven in [aangepaste autorisatie implementeren voor beheer OData IIS-extensie](./implementing-custom-authorization-for-a-management-odata-web-service.md).
+In dit onderwerp wordt beschreven hoe u het op rollen gebaseerde autorisatie beleid configureert voor de voor beeld-implementatie van de [micro soft. Management. Odata. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -interface die in de [implementatie van aangepaste autorisatie voor management Odata IIS-extensie](./implementing-custom-authorization-for-a-management-odata-web-service.md)wordt genoemd.
 
 In dit voor beeld configureert u een XML-bestand dat wordt gebruikt door de voor beeld-OData-toepassing om het autorisatie beleid te definiëren. U kunt twee rollen maken en verschillende Windows Power shell-modules koppelen die werk stromen met die rollen bevatten. Het schema dat het XML-bestand definieert, wordt vermeld op [basis van op rollen gebaseerd verificatie configuratie schema](./role-based-authorization-configuration-schema.md).
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Het bestand RBacConfiguration. xml wijzigen
 
-Dit bestand definieert het autorisatie beleid voor de toepassing. Rollen worden gedefinieerd door middel van `Group`-knoop punten. Een `Group`-knoop punt definieert de Windows Power shell-opdrachten die gebruikers die zijn toegewezen aan die groep kunnen uitvoeren. Gebruikers worden toegewezen aan groepen door gebruik te maken van `User`-knoop punten.
+Dit bestand definieert het autorisatie beleid voor de toepassing. Rollen worden gedefinieerd met behulp van `Group` knooppunten. Een `Group` knoop punt definieert de Windows Power shell-opdrachten die gebruikers die zijn toegewezen aan die groep kunnen uitvoeren. Gebruikers worden toegewezen aan groepen met behulp van `User` knooppunten.
 
 In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `Group` en een gebruiker toevoegen aan elke groep.
 
@@ -85,9 +85,9 @@ In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `G
    </RbacConfiguration>
    ```
 
-2. Het bestand bevat twee `Group`-knoop punten. Dit zijn de twee rollen die in dit voor beeld worden gebruikt, de `NonAdminGroup` en de `AdminGroup`-rollen.
+2. Het bestand bevat twee `Group` knoop punten. Dit zijn de twee rollen die in dit voor beeld worden gebruikt, de `NonAdminGroup` en de `AdminGroup` rollen.
 
-   Voeg in het eerste `Group`-knoop punt direct na het sluiten van de tag `Cmdlets` de volgende XML toe:
+   Voeg het volgende XML-bestand toe aan de label `Cmdlets` sluiten in het eerste `Group` knooppunt:
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `G
 
 #### <a name="adding-a-user-to-a-group-node"></a>Een gebruiker toevoegen aan een groeps knooppunt
 
-1. Open het bestand **RBacConfiguration. XML** in een tekst editor. Dit bestand bevindt zich in de map C: \\ \ inetpub\wwwroot\Modata als u de naam van het eind punt niet hebt gewijzigd vóór de installatie.
+1. Open het bestand **RBacConfiguration. XML** in een tekst editor. Dit bestand bevindt zich in de map C:\\\inetpub\wwwroot\Modata als u de naam van het eind punt niet hebt gewijzigd vóór de installatie.
 
-2. Voeg de volgende XML toe aan het knoop punt `Users`, direct na het afsluitende label:
+2. Voeg in het knoop punt `Users` de volgende XML-code toe:
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

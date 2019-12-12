@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-groeps resource
 ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942438"
 ---
 # <a name="dsc-group-resource"></a>DSC-groeps resource
@@ -32,29 +32,29 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|GroupName |De naam van de groep waarvoor u een specifieke status wilt controleren. |
+|groupName |De naam van de groep waarvoor u een specifieke status wilt controleren. |
 |Referentie |De referenties die nodig zijn voor toegang tot externe bronnen. Dit account moet over de juiste Active Directory machtigingen beschikken om alle niet-lokale accounts aan de groep toe te voegen. anders treedt er een fout op wanneer de configuratie wordt uitgevoerd op het doel knooppunt.
-|Description |De beschrijving van de groep. |
-|Members |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
-|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
-|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|Beschrijving |De beschrijving van de groep. |
+|Leden |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName`. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName`. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName`. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Description |
+|Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
 |Zo |Hiermee wordt aangegeven of de groep bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groep niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groep bestaat. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]
 > De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
-## <a name="example-1-ensure-group-is-not-present"></a>Voorbeeld 1: Zorg ervoor dat de groep niet aanwezig is
+## <a name="example-1-ensure-group-is-not-present"></a>Voor beeld 1: ervoor zorgen dat groep niet aanwezig is
 
 In het volgende voor beeld ziet u hoe u ervoor kunt zorgen dat een groep met de naam ' TestGroup ' ontbreekt.
 
@@ -68,7 +68,7 @@ Group GroupExample
 }
 ```
 
-## <a name="example-2-add-domain-user-to-local-group"></a>Voor beeld 2: Domein gebruiker toevoegen aan lokale groep
+## <a name="example-2-add-domain-user-to-local-group"></a>Voor beeld 2: domein gebruiker toevoegen aan lokale groep
 
 In het volgende voor beeld ziet u hoe u een Active Directory gebruiker toevoegt aan de lokale groep Administrators als onderdeel van een test omgeving voor meerdere machines waar u al een PSCredential gebruikt voor het lokale beheerders account. Aangezien dit ook wordt gebruikt voor het domein beheerders account (na domein promotie), moeten we deze bestaande PSCredential converteren naar een gebruiks vriendelijke domein referentie. Vervolgens kunnen we een domein gebruiker toevoegen aan de lokale groep Administrators op de lidserver.
 

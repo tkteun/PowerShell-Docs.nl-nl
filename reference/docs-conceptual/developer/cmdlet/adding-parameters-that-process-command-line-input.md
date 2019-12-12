@@ -16,10 +16,10 @@ helpviewer_keywords:
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
 ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355662"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Parameters toevoegen die opdrachtregelinvoer verwerken
@@ -45,9 +45,9 @@ Public Class GetProcCommand
 
 ## <a name="declaring-parameters"></a>Para meters declareren
 
-Met een cmdlet-para meter kan de gebruiker invoer opgeven voor de cmdlet. In het volgende voor beeld zijn **Get-proc** en `Get-Member` de namen van pijplijn-cmdlets, en is `MemberType` een para meter voor de `Get-Member`-cmdlet. De para meter heeft het argument ' Property '.
+Met een cmdlet-para meter kan de gebruiker invoer opgeven voor de cmdlet. In het volgende voor beeld zijn **Get-proc** en `Get-Member` de namen van pijplijn-cmdlets. `MemberType` is een para meter voor de `Get-Member`-cmdlet. De para meter heeft het argument ' Property '.
 
-**PS > Get-proc; `get-member`-member type eigenschap**
+**PS > Get-proc; `get-member`-member type-eigenschap**
 
 Als u para meters voor een cmdlet wilt declareren, moet u eerst de eigenschappen definiëren die de para meters vertegenwoordigen. In de cmdlet **Get-proc** is de enige para meter `Name`, in dit geval de naam van het .NET Framework proces object dat moet worden opgehaald. Daarom definieert de klasse cmdlet een eigenschap van het type teken reeks om een matrix met namen te accepteren.
 
@@ -92,9 +92,9 @@ Deze cmdlet gebruikt een matrix met teken reeksen voor de para meter `Name`. Als
 
 #### <a name="things-to-remember-about-parameter-definitions"></a>Wat u moet weten over parameter definities
 
-- Vooraf gedefinieerde namen van Windows Power shell-para meters en gegevens typen moeten zo veel mogelijk worden hergebruikt om ervoor te zorgen dat uw cmdlet compatibel is met Windows Power shell-cmdlets. Als alle cmdlets bijvoorbeeld de vooraf gedefinieerde para meter naam `Id` gebruiken om een resource te identificeren, is de gebruiker eenvoudig inzicht in de betekenis van de para meter, ongeacht welke cmdlet ze gebruiken. In principe volgen de namen van para meters dezelfde regels als die worden gebruikt voor variabelenamen in de Common Language Runtime (CLR). Zie [cmdlet para meter names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)(Engelstalig) voor meer informatie over de naamgeving van para meters.
+- Vooraf gedefinieerde namen van Windows Power shell-para meters en gegevens typen moeten zo veel mogelijk worden hergebruikt om ervoor te zorgen dat uw cmdlet compatibel is met Windows Power shell-cmdlets. Als alle cmdlets bijvoorbeeld de naam van de vooraf gedefinieerde `Id`-para meter gebruiken om een resource te identificeren, kan de gebruiker eenvoudig inzicht krijgen in de betekenis van de para meter, ongeacht welke cmdlet ze gebruiken. In principe volgen de namen van para meters dezelfde regels als die worden gebruikt voor variabelenamen in de Common Language Runtime (CLR). Zie [cmdlet para meter names](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)(Engelstalig) voor meer informatie over de naamgeving van para meters.
 
-- Windows Power Shell heeft enkele parameter namen gereserveerd om een consistente gebruikers ervaring te bieden. Gebruik deze parameter namen niet: `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable` en `OutBuffer`. Daarnaast zijn de volgende aliassen voor deze parameter namen gereserveerd: `vb`, `db`, `ea`, `ev`, `ov` en `ob`.
+- Windows Power Shell heeft enkele parameter namen gereserveerd om een consistente gebruikers ervaring te bieden. Gebruik deze parameter namen niet: `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable`en `OutBuffer`. Daarnaast zijn de volgende aliassen voor deze parameter namen gereserveerd: `vb`, `db`, `ea`, `ev`, `ov`en `ob`.
 
 - `Name` is een eenvoudige en algemene parameter naam, aanbevolen voor gebruik in uw cmdlets. Het is beter om een parameter naam te kiezen, zoals deze, een complexe naam die uniek is voor een specifieke cmdlet en moeilijk te onthouden is.
 
@@ -106,14 +106,14 @@ Deze cmdlet gebruikt een matrix met teken reeksen voor de para meter `Name`. Als
 
 Voor een cmdlet moet elke para meter worden ingesteld als een positie of para meter met de naam. Beide soorten para meters accepteren enkele argumenten, meerdere argumenten gescheiden door komma's en Booleaanse instellingen. Een Booleaanse para meter, ook wel een *Switch*genoemd, verwerkt alleen Boole-instellingen. De switch wordt gebruikt om de aanwezigheid van de para meter te bepalen. De aanbevolen standaard waarde is `false`.
 
-De voor beeld-cmdlet **Get-proc** definieert de para meter `Name` als positionele para meter met positie 0. Dit betekent dat het eerste argument dat de gebruiker invoert op de opdracht regel automatisch wordt ingevoegd voor deze para meter. Als u een benoemde para meter wilt definiëren waarvoor de gebruiker de parameter naam moet opgeven vanaf de opdracht regel, blijft de `Position` sleutel woord uit de kenmerk declaratie.
+De voor beeld **-cmdlet Get-proc** definieert de `Name` para meter als positionele para meter met positie 0. Dit betekent dat het eerste argument dat de gebruiker invoert op de opdracht regel automatisch wordt ingevoegd voor deze para meter. Als u een benoemde para meter wilt definiëren waarvoor de gebruiker de parameter naam moet opgeven vanaf de opdracht regel, blijft de `Position` sleutel woord uit de kenmerk declaratie.
 
 > [!NOTE]
 > Tenzij para meters moeten worden benoemd, wordt u aangeraden de meest gebruikte para meters positioneel te maken zodat gebruikers de parameter naam niet hoeven in te voeren.
 
 ## <a name="declaring-parameters-as-mandatory-or-optional"></a>Para meters declareren als verplicht of optioneel
 
-Een cmdlet moet elke para meter instellen als een optionele of een verplichte para meter. In de voor beeld-cmdlet **Get-proc** wordt de para meter `Name` gedefinieerd als optioneel, omdat het sleutel woord `Mandatory` niet is ingesteld in de kenmerk declaratie.
+Een cmdlet moet elke para meter instellen als een optionele of een verplichte para meter. In de voor beeld **-cmdlet Get-proc** wordt de para meter `Name` als optioneel gedefinieerd, omdat het sleutel woord `Mandatory` niet is ingesteld in de kenmerk declaratie.
 
 ## <a name="supporting-parameter-validation"></a>Ondersteuning voor parameter validatie
 
@@ -129,7 +129,7 @@ public string[] Name
 
 Als uw cmdlet opdracht regel invoer verwerkt, moet deze de juiste invoer methoden onderdrukken. De basis methoden voor invoer verwerking zijn geïntroduceerd bij het [maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-De cmdlet **Get-proc** onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` para meter-invoer te verwerken die door de gebruiker of een script is opgegeven. Met deze methode worden de processen voor elke aangevraagde proces naam en alle voor processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [System. Management. Automation. cmdlet. WriteObject% 28System. object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection`, wordt ingesteld op `true` om de Windows Power shell-runtime op de hoogte te stellen van de uitvoer matrix van proces objecten en het ene proces per keer naar de opdracht regel te schrijven.
+De cmdlet **Get-proc** onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` parameter invoer te verwerken die door de gebruiker of een script is opgegeven. Met deze methode worden de processen voor elke aangevraagde proces naam en alle voor processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [System. Management. Automation. cmdlet. WriteObject% 28System. object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection`, wordt ingesteld op `true` om de Windows Power shell-runtime op de hoogte te stellen van de uitvoer matrix van proces objecten en een proces per keer naar de opdracht regel te schrijven.
 
 ```csharp
 protected override void ProcessRecord()

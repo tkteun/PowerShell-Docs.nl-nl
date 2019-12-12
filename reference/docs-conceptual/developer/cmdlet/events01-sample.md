@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359360"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
@@ -30,9 +30,9 @@ Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. command
    Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
 3. Selecteer in het menu **Build** de optie **Build Solution**.
-   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen `\bin` of `\bin\debug`.
+   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard `\bin` of `\bin\debug` mappen.
 
-### <a name="how-to-run-the-sample"></a>Het voor beeld uitvoeren
+### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Maak de volgende module map:
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Laat zien
+## <a name="demonstrates"></a>Hier ziet u
 
 In dit voor beeld ziet u het volgende.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Een cmdlet schrijven voor gebeurtenis registratie
 
-De cmdlet wordt afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor algemene para meters voor de `Register-*Event`-cmdlets.
-Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject`-en `GetSourceObjectEventName`-abstracte methoden te overschrijven.
+De cmdlet is afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor algemene para meters voor de `Register-*Event`-cmdlets.
+Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden te overschrijven.
 
 ## <a name="example"></a>Voorbeeld
 

@@ -1,27 +1,27 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het ISEFileCollection-object
 ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030516"
 ---
 # <a name="the-isefilecollection-object"></a>Het ISEFileCollection-object
 
-De **ISEFileCollection** object is een verzameling van **ISEFile** objecten. Een voorbeeld is de verzameling $psISE.CurrentPowerShellTab.Files.
+Het **ISEFileCollection** -object is een verzameling **ISEFile** -objecten. Een voor beeld is de verzameling $psISE. CurrentPowerShellTab. files.
 
 ## <a name="methods"></a>Methoden
 
-### <a name="add-fullpath-"></a>Voeg\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>\( \[fullPath\] \) toevoegen
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Maakt en retourneert een nieuwe naamloos bestand en toegevoegd aan de verzameling. De **IsUntitled** eigenschap van het zojuist gemaakte bestand is **$true**.
+Maakt en retourneert een nieuw naamloos bestand en voegt het toe aan de verzameling. De eigenschap **IsUntitled** van het zojuist gemaakte bestand is **$True**.
 
-**\[fullPath\]**  - optioneel het volledig opgegeven pad van het bestand de tekenreeks. Een uitzondering wordt gegenereerd als u de **fullPath** parameter en een relatief pad, of als u een bestandsnaam in plaats van het volledige pad gebruiken.
+**\[fullPath\]** -optionele teken reeks het volledig opgegeven pad van het bestand. Er wordt een uitzonde ring gegenereerd als u de para meter **fullPath** en een relatief pad opneemt, of als u een bestands naam gebruikt in plaats van het volledige pad.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -31,15 +31,15 @@ $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
-### <a name="remove-file-force-"></a>Verwijder\( bestand \[forceren\] \)
+### <a name="remove-file-force-"></a>\(-bestand verwijderen \[forceren\] \)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee verwijdert u een opgegeven bestand van het huidige PowerShell-tabblad.
+Hiermee verwijdert u een opgegeven bestand van het huidige Power shell-tabblad.
 
-**Bestand** -tekenreeks het ISEFile-bestand dat u wilt verwijderen uit de verzameling. Als het bestand niet is opgeslagen, wordt met deze methode een uitzondering genereert. Gebruik de **forceren** overschakelen van de parameter als u wilt afdwingen dat het verwijderen van een niet-opgeslagen bestand.
+**File** -teken reeks het ISEFile-bestand dat u wilt verwijderen uit de verzameling. Als het bestand niet is opgeslagen, genereert deze methode een uitzonde ring. Gebruik de para meter **forceren** om het verwijderen van een niet-opgeslagen bestand af te dwingen.
 
-**\[Force\]**  -optionele Booleaanse als ingesteld op **$true**, een machtiging verleend voor het verwijderen van het bestand, zelfs als deze niet na het laatst hebt gebruikt opgeslagen is. De standaardwaarde is **$false**.
+**\[dwing\]** -optionele Booleaanse waarde toe als deze is ingesteld op **$True**, geeft toestemming voor het verwijderen van het bestand, zelfs als het niet is opgeslagen na het laatst gebruikt. De standaard waarde is **$False**.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -54,11 +54,11 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 ### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile \)
 
-In Windows PowerShell ISE 2.0 en hoger ondersteund.
+Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee selecteert u het bestand dat is opgegeven door de **selectedFile** parameter.
+Hiermee selecteert u het bestand dat is opgegeven door de para meter **selectedFile** .
 
-**selectedFile** -Microsoft.PowerShell.Host.ISE.ISEFile het ISEFile-bestand dat u wilt selecteren.
+**selectedFile** : micro soft. Power shell. host. ISE. ISEFile het ISEFile-bestand dat u wilt selecteren.
 
 ```powershell
 # Selects the specified file.
@@ -68,6 +68,6 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Het ISEFile-Object](The-ISEFile-Object.md)
-- [Doel van de Scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Het ISEFile-object](The-ISEFile-Object.md)
+- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)

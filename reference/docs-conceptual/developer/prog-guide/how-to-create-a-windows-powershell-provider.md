@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
 ms.openlocfilehash: ffbf8028ba2b52e77d8e22c061baa9b8b67f6da3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357076"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Een Windows PowerShell-provider maken
@@ -29,7 +29,7 @@ Voor de ontwikkelaar is de Windows Power shell-provider de interface tussen de g
 
 Windows Power shell biedt verschillende providers (zoals de bestandssysteem provider, register provider en alias provider) die worden gebruikt voor toegang tot bekende gegevens archieven. Voor meer informatie over de providers die worden geleverd door Windows Power shell, gebruikt u de volgende opdracht om de online-Help te openen:
 
-**PS > Get-Help about_providers**
+**> Get-Help van PS-about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Toegang tot de opgeslagen gegevens met behulp van Windows Power shell-paden
 

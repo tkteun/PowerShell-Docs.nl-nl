@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: Vereisten voor JEA
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416724"
 ---
 # <a name="prerequisites"></a>Vereisten
@@ -30,7 +30,7 @@ Major  Minor  Build  Revision
 
 JEA is beschikbaar met Power shell 5,0 en hoger. Voor volledige functionaliteit is het raadzaam om de meest recente versie van Power shell te installeren die beschikbaar is voor uw systeem. In de volgende tabel wordt de beschik baarheid van JEA op Windows Server beschreven:
 
-| Server-besturings systeem |                JEA-Beschik baarheid                |
+| Serverbesturingssysteem |                JEA-Beschik baarheid                |
 | ----------------------- | ---------------------------------------------- |
 | Windows Server 2016 +    | Vooraf geïnstalleerd                                   |
 | Windows Server 2012 R2  | Volledige functionaliteit met WMF 5,1                |
@@ -39,7 +39,7 @@ JEA is beschikbaar met Power shell 5,0 en hoger. Voor volledige functionaliteit 
 
 U kunt JEA ook gebruiken op uw computer thuis of op het werk:
 
-| Besturings systeem van client |                   JEA-Beschik baarheid                   |
+| Clientbesturingssysteem |                   JEA-Beschik baarheid                   |
 | ----------------------- | ---------------------------------------------------- |
 | Windows 10 1607+        | Vooraf geïnstalleerd                                         |
 | Windows 10 1603, 1511   | Vooraf geïnstalleerd, met beperkte functionaliteit<sup>2</sup> |

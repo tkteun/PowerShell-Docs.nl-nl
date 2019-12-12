@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72354913"
 ---
 # <a name="background-jobs"></a>Achtergrondtaken
@@ -35,11 +35,11 @@ Zie het volgende voor meer informatie over de manier waarop achtergrond taken wo
 
 Als u een cmdlet wilt schrijven die als achtergrond taak kan worden uitgevoerd, moet u de volgende taken uitvoeren:
 
-- Definieer een para meter `asJob`, zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als achtergrond taak.
+- Definieer een `asJob` switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als achtergrond taak.
 
 - Maak een-object dat is afgeleid van de klasse [System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) . Dit object kan een aangepast taak object zijn of een taak object dat wordt meegeleverd met Windows Power shell, zoals een [System. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -object.
 
-- Voeg in een methode voor het verwerken van records een instructie `if` toe die detecteert of de cmdlet moet worden uitgevoerd als een achtergrond taak.
+- Voeg in een methode voor het verwerken van records een `if`-instructie toe die detecteert of de cmdlet moet worden uitgevoerd als een achtergrond taak.
 
 - Implementeer voor aangepaste taak objecten de taak klasse.
 
@@ -85,7 +85,7 @@ Start een Windows Power shell-achtergrond taak.
 
 Hiermee stopt u een Windows Power shell-achtergrond taak.
 
-[Wachten-taak](/powershell/module/Microsoft.PowerShell.Core/Wait-Job)
+[Wait-Job](/powershell/module/Microsoft.PowerShell.Core/Wait-Job)
 
 Onderdrukt de opdracht prompt totdat een of alle Windows Power shell-achtergrond taken die in de sessie worden uitgevoerd, zijn voltooid.
 

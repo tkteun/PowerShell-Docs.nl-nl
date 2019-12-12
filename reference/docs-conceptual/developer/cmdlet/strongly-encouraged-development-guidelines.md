@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359191"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Zeer aangeraden richtlijnen voor de ontwikkeling
 
 In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmdlets schrijft. Ze zijn onderverdeeld in richt lijnen voor het ontwerpen van cmdlets en richt lijnen voor het schrijven van uw cmdlet-code. Het kan voor komen dat deze richt lijnen niet van toepassing zijn op elk scenario. Als ze echter wel van toepassing zijn en u deze richt lijnen niet volgt, hebben uw gebruikers mogelijk een slechte ervaring wanneer ze uw cmdlets gebruiken.
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 - [Een specifiek zelfstandig naam woord gebruiken voor een Cmdletnaam (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +41,7 @@ In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmd
 
 - [Cmdlets hoofdletter gevoelig maken en case-behoud (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -53,7 +53,7 @@ Als u de gebruikers ervaring wilt verbeteren, moet u een zelfstandig naam woord 
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Pascal-cases gebruiken voor cmdlet-namen (SD02)
 
-Gebruik Pascal cases voor parameter namen. Met andere woorden, de eerste letter van de term en alle termen die worden gebruikt in het zelfstandig naam woord. Bijvoorbeeld "`Clear-ItemProperty`".
+Gebruik Pascal cases voor parameter namen. Met andere woorden, de eerste letter van de term en alle termen die worden gebruikt in het zelfstandig naam woord. Bijvoorbeeld `Clear-ItemProperty`.
 
 ### <a name="parameter-design-guidelines-sd03"></a>Richt lijnen voor het ontwerpen van para meters (SD03)
 

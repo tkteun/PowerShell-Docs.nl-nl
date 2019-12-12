@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb26d72c-2f77-4801-badf-0537ccc55e31
 caps.latest.revision: 10
 ms.openlocfilehash: 6e86b6a0874b385703121802bc8108a0410442cd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353996"
 ---
 # <a name="propertyname-element-for-tablecolumnitem-for-tablecontrol-format"></a>Het element PropertyName voor TableColumnItem voor TableControl (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `PropertyName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `PropertyName` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[TableColumnItem-element (indeling)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in de kolom van de rij.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef de naam op van de eigenschap waarvan de waarde wordt weer gegeven.
 
@@ -55,7 +55,7 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een element `TableColumnItem` weer gegeven waarin de eigenschap `Status` van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) wordt opgegeven.
+Dit voor beeld toont een `TableColumnItem`-element waarmee de eigenschap `Status` van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) wordt opgegeven.
 
 ```xml
 <TableColumnItem>

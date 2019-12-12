@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuraties nesten
 ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942368"
 ---
 # <a name="nesting-dsc-configurations"></a>DSC-configuraties nesten
@@ -51,9 +51,9 @@ Configuration NestedFileConfig
 }
 ```
 
-In dit voor beeld neemt `FileConfig` twee verplichte para meters, **CopyFrom** en **CopyTo**, die worden gebruikt als de waarden voor de eigenschappen **SourcePath** en **doelpad** in het `File`-Resource blok.
-De `NestedConfig`-configuratie roept `FileConfig` alsof het een resource is.
-De eigenschappen in het `NestedConfig`-Resource blok (**CopyFrom** en **CopyTo**) zijn de para meters van de configuratie van de `FileConfig`.
+In dit voor beeld neemt `FileConfig` twee verplichte para meters, **CopyFrom** en **CopyTo**, die worden gebruikt als de waarden voor de eigenschappen **SourcePath** en **doelpad** in het resource blok `File`.
+De `NestedConfig` configuratie roept `FileConfig` alsof het een resource is.
+De eigenschappen in het `NestedConfig` resource blok (**CopyFrom** en **CopyTo**) zijn de para meters van de `FileConfig` configuratie.
 
 ## <a name="see-also"></a>Zie ook
 

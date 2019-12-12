@@ -1,30 +1,30 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Het consolevenster gebruiken in Windows PowerShell ISE
 ms.openlocfilehash: 114be19b86d98d829620a3718649bc3a3256cb07
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030578"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Het consolevenster gebruiken in Windows PowerShell ISE
 
-Het consolevenster in de Windows PowerShell Integrated Scripting Environment (ISE) functioneert precies hetzelfde als de zelfstandige Windows PowerShell ISE-console-venster.
+Het console venster in de Windows Power shell Integrated Scripting Environment (ISE) werkt precies hetzelfde als het zelfstandige Windows PowerShell ISE-console venster.
 
-Voert u een opdracht in het consolevenster, typt u een opdracht en druk op ENTER. Meerdere opdrachten die u wilt uitvoeren in de reeks, typt u SHIFT + ENTER tussen opdrachten. Zie [hoe u de Tab-aanvulling gebruiken in het scriptvenster en consolevenster](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) voor hulp bij het typen van opdrachten.
+Als u een opdracht wilt uitvoeren in het console venster, typt u een opdracht en drukt u vervolgens op ENTER. Als u meerdere opdrachten wilt opgeven die u in de reeks wilt uitvoeren, typt u SHIFT + ENTER tussen de opdrachten. Zie [Tab-aanvulling gebruiken in het Script venster en console venster](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) voor meer informatie over het typen van opdrachten.
 
-Als u wilt een opdracht op de werkbalk stoppen, klikt u op **stoppen bewerking**, of druk op CTRL + BREAK. U kunt ook CTRL + C om te stoppen van een opdracht als de context ondubbelzinnige gebruiken. Bijvoorbeeld, als deel van de tekst is geselecteerd in het huidige deelvenster, klikt u vervolgens CTRL + C toegewezen aan de kopieerbewerking.
+Als u een opdracht wilt stoppen, klikt u op de werk balk op **bewerking stoppen**of drukt u op CTRL + einde. U kunt ook CTRL + C gebruiken om een opdracht te stoppen als de context ondubbelzinnig is. Als er bijvoorbeeld tekst in het huidige deel venster is geselecteerd, wordt de Kopieer bewerking door CTRL + C toegewezen.
 
-Vanaf Windows PowerShell v3, het deelvenster Uitvoer gecombineerd met het consolevenster. Dit heeft het voordeel van het gedrag als de zelfstandige Windows PowerShell-console en de verschillen in de procedures die zijn nodig wanneer ze afzonderlijke zijn elimineert. U kunt:
+Vanaf Windows Power Shell v3 is het deel venster uitvoer gecombineerd met het console venster. Dit heeft als voor deel dat u werkt als de zelfstandige Windows Power shell-console en elimineert de verschillen in procedures die nodig waren toen ze gescheiden werden. U kunt het volgende doen:
 
-- Selecteer en kopieer de tekst van het consolevenster naar het Klembord plakken in een ander venster. Klik op om tekst te selecteren, en houd de muis in het deelvenster Uitvoer terwijl u sleept de muis over de tekst die u wilt vastleggen. U kunt ook de pijltoetsen tijdens het bedrijf **SHIFT** om tekst te selecteren. CTRL + C drukt u op of klik op de **kopie** pictogram op de werkbalk.
+- Selecteer en Kopieer tekst vanuit het console venster naar het klem bord om te plakken in een ander venster. Als u tekst wilt selecteren, klikt u in het deel venster uitvoer op de muis en houdt u de muis aanwijzer over de tekst die u wilt vastleggen. U kunt ook de pijl toetsen van de cursor gebruiken terwijl u **SHIFT** ingedrukt houdt om tekst te selecteren. Druk vervolgens op CTRL + C of klik op het pictogram **kopiëren** op de werk balk.
 
-- Plak de geselecteerde tekst op de huidige cursorpositie. Klik op de **plakken** pictogram op de werkbalk.
+- De geselecteerde tekst op de huidige cursor positie plakken. Klik op het pictogram **Plakken** op de werk balk.
 
-- Wis alle tekst in het consolevenster. Schakel het consolevenster, klikt u op de **consolevenster wissen** pictogram op de werkbalk of Voer de opdracht **Clear-Host** of de alias **cls**.
+- Alle tekst in het console venster wissen. Als u het console venster wilt **wissen, klikt**u op het pictogram **console venster wissen** op de werk balk of voert u de opdracht **Clear-host** of de bijbehorende alias uit.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Maak kennis met de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+- [Introductie van de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)

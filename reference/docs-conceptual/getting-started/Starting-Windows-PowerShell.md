@@ -1,56 +1,74 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+ms.date: 12/05/2019
+keywords: Power shell, cmdlet
 title: Windows PowerShell starten
-ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 97b15a4cd79c77a391451ba917f985f9d99db3f5
+ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030454"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953820"
 ---
 # <a name="starting-windows-powershell"></a>Windows PowerShell starten
-PowerShell is een scripting engine dll die is ingesloten in meerdere hosts.  De meest voorkomende host die u wilt beginnen zijn de interactieve opdrachtregel PowerShell.exe en de interactieve Scripting omgeving PowerShell_ISE.exe.
 
-Zie voor informatie over het starten van Windows PowerShell® op Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 en Windows 8 [Common Management Tasks and Navigation](https://technet.microsoft.com/library/hh831491.aspx).
+Windows Power shell is een script engine `.DLL` die is inge sloten in meerdere hosts. De meest voorkomende hosts die u start, zijn de interactieve opdracht regel **Power shell. exe** en de interactieve script omgeving **powershell_ise. exe**.
 
-## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>Starten van Windows PowerShell op oudere versies van Windows
+Als u Windows Power shell® wilt starten op Windows Server® 2012 R2, Windows® 8,1, Windows Server 2012 en Windows 8, raadpleegt u [algemene beheer taken en navigatie in Windows](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831491(v=ws.11)).
 
-In deze sectie wordt uitgelegd hoe u start Windows PowerShell en Windows PowerShell Integrated Scripting Environment (ISE) op Windows® 7, Windows Server® 2008 R2 en Windows Server® 2008. Hierin wordt ook uitgelegd hoe u de optionele functie inschakelt voor Windows PowerShell ISE in Windows PowerShell 2.0 op Windows Server® 2008 R2 en Windows Server® 2008.
+## <a name="powershell-core-has-renamed-binary"></a>De naam van de Power shell Core is gewijzigd in binary
 
-Een van de volgende methoden gebruiken om te beginnen de geïnstalleerde versie van Windows PowerShell 3.0 of 4.0 voor Windows PowerShell, indien van toepassing.
+Power shell core, aangeduid als Power shell, is versie 6 en hoger van de open source en maakt gebruik van .NET core. Ondersteunde versies zijn beschikbaar in Windows, macOS en Linux.
 
-#### <a name="from-the-start-menu"></a>Vanuit het startmenu
+Vanaf Power shell 6 heette het binaire bestand van Power shell **pwsh. exe** voor Windows en **pwsh** voor macOS en Linux. U kunt Power shell Preview-versies starten met behulp van **pwsh-preview**. Zie [What's New in Power shell Core 6,0](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60#renamed-powershellexe-to-pwshexe) en [about pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7)(Engelstalig) voor meer informatie.
 
-- Klik op **Start**, type **PowerShell**, en klik vervolgens op **Windows PowerShell**.
-- Uit de **Start** menu, klikt u op **Start**, klikt u op **alle programma's**, klikt u op **accessoires**, klikt u op de **Windows PowerShell**  map en klik vervolgens op **Windows PowerShell**.
+Gebruik de volgende koppelingen om de cmdlet-Naslag informatie en de installatie documentatie voor Power shell 7 te vinden:
 
-#### <a name="at-the-command-prompt"></a>Bij de opdrachtprompt
+| Document | Koppeling |
+| ----- | ----- |
+| Cmdlet-naslaginformatie | [Browser van de Power shell-module](/powershell/module/?view=powershell-7) |
+| Windows-installatie | [Power shell Core installeren in Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
+| macOS-installatie | [Installing PowerShell Core on macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) (PowerShell Core installeren in macOS) |
+| Linux-installatie | [Installing PowerShell Core on Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) (PowerShell Core installeren in Linux) |
 
-In Cmd.exe, de Windows PowerShell of Windows PowerShell ISE, voor het starten van Windows PowerShell, typt u:
+Zie [de Power shell-documentatie gebruiken](../how-to-use-docs.md)om inhoud voor andere Power shell-versies weer te geven.
+
+## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>Windows Power shell starten op eerdere versies van Windows
+
+In deze sectie wordt uitgelegd hoe u Windows Power shell en Windows Power shell Integrated Scripting Environment (ISE) start op Windows® 7, Windows Server® 2008 R2 en Windows Server® 2008. Ook wordt uitgelegd hoe u de optionele functie inschakelt voor Windows PowerShell ISE in Windows Power Shell 2,0 op Windows Server® 2008 R2 en Windows Server® 2008.
+
+Gebruik een van de volgende methoden om de geïnstalleerde versie van Windows Power Shell 3,0 of Windows Power Shell 4,0 te starten, indien van toepassing.
+
+#### <a name="from-the-start-menu"></a>Vanuit het menu Start
+
+- Klik op **Start**, typ **Power shell**en klik vervolgens op **Windows Power shell**.
+- Klik in het menu **Start** op **Start**, klik op **alle Program ma's**, klik op **accessoires**, klik op de **Windows Power shell** -map en klik vervolgens op **Windows Power shell**.
+
+#### <a name="at-the-command-prompt"></a>Bij de opdracht prompt
+
+In **cmd. exe**, Windows Power shell of Windows PowerShell ISE om Windows Power shell te starten, typt u:
 
 ```
 PowerShell
 ```
 
-U kunt de parameters van het programma PowerShell.exe ook gebruiken om aan te passen van de sessie. Zie voor meer informatie, [PowerShell.exe-opdrachtregel Help](../core-powershell/console/PowerShell.exe-Command-Line-Help.md).
+U kunt ook de para meters van het programma **Power shell. exe** gebruiken om de sessie aan te passen. Zie de [Help bij de opdracht regel van Power shell. exe](../core-powershell/console/PowerShell.exe-Command-Line-Help.md)voor meer informatie.
 
-#### <a name="with-administrative-privileges-run-as-administrator"></a>Met Administrative bevoegdheden ('als administrator uitvoeren")
+#### <a name="with-administrative-privileges-run-as-administrator"></a>Met beheerders bevoegdheden (als administrator uitvoeren)
 
-Klik op **Start**, type **PowerShell**, met de rechtermuisknop op **Windows PowerShell**, en klik vervolgens op **als administrator uitvoeren**.
+Klik op **Start**, typ **Power shell**, klik met de rechter muisknop op **Windows Power shell**en klik vervolgens op **als administrator uitvoeren**.
 
 ## <a name="how-to-start-windows-powershell-ise-on-earlier-releases-of-windows"></a>Windows PowerShell ISE starten op eerdere versies van Windows
 
-Gebruik een van de volgende methoden om te starten van Windows PowerShell ISE.
+Gebruik een van de volgende methoden om Windows PowerShell ISE te starten.
 
-#### <a name="from-the-start-menu"></a>Vanuit het startmenu
+#### <a name="from-the-start-menu"></a>Vanuit het menu Start
 
-- Klik op **Start**, type **ISE**, en klik vervolgens op **Windows PowerShell ISE**.
-- Uit de **Start** menu, klikt u op **Start**, klikt u op **alle programma's**, klikt u op **accessoires**, klikt u op de **Windows PowerShell**  map en klik vervolgens op **Windows PowerShell ISE**.
+- Klik op **Start**, typ **ISE**en klik vervolgens op **Windows PowerShell ISE**.
+- Klik in het menu **Start** op **Start**, klik op **alle Program ma's**, klik op **accessoires**, klik op de **Windows Power shell** -map en klik vervolgens op **Windows PowerShell ISE**.
 
-#### <a name="at-the-command-prompt"></a>Bij de opdrachtprompt
+#### <a name="at-the-command-prompt"></a>Bij de opdracht prompt
 
-In Cmd.exe, de Windows PowerShell of Windows PowerShell ISE, voor het starten van Windows PowerShell, typt u:
+In **cmd. exe**, Windows Power shell of Windows PowerShell ISE om Windows Power shell te starten, typt u:
 
 ```
 PowerShell_ISE
@@ -62,57 +80,56 @@ of
 ISE
 ```
 
-#### <a name="with-administrative-privileges-run-as-administrator"></a>Met Administrative bevoegdheden ('als administrator uitvoeren")
+#### <a name="with-administrative-privileges-run-as-administrator"></a>Met beheerders bevoegdheden (als administrator uitvoeren)
 
-Klik op **Start**, type **ISE**, met de rechtermuisknop op **Windows PowerShell ISE**, en klik vervolgens op **als administrator uitvoeren**.
+Klik op **Start**, typ **ISE**, klik met de rechter muisknop op **Windows PowerShell ISE**en klik vervolgens op **als administrator uitvoeren**.
 
-## <a name="how-to-enable-windows-powershell-ise-on-earlier-releases-of-windows"></a>Windows PowerShell ISE op eerdere versies van Windows inschakelen
+## <a name="how-to-enable-windows-powershell-ise-on-earlier-releases-of-windows"></a>Windows PowerShell ISE inschakelen op eerdere versies van Windows
 
-In Windows PowerShell 4.0 en Windows PowerShell 3.0, is Windows PowerShell ISE standaard ingeschakeld op alle versies van Windows. Als deze nog niet is ingeschakeld, Windows Management Framework 4.0 of Windows Management Framework 3.0 ingeschakeld.
+In Windows Power Shell 4,0 en Windows Power Shell 3,0 is Windows PowerShell ISE standaard ingeschakeld in alle versies van Windows. Als dit nog niet is ingeschakeld, wordt het door Windows Management Framework 4,0 of Windows Management Framework 3,0 ingeschakeld.
 
-In Windows PowerShell 2.0, is Windows PowerShell ISE standaard ingeschakeld op Windows 7. Op Windows Server 2008 R2 en Windows Server 2008 is het echter een optionele functie.
+In Windows Power Shell 2,0 is Windows PowerShell ISE standaard ingeschakeld in Windows 7. In Windows Server 2008 R2 en Windows Server 2008 is het echter een optionele functie.
 
-Gebruik de volgende procedure om in te schakelen in Windows PowerShell ISE in Windows PowerShell 2.0 op Windows Server 2008 R2 of Windows Server 2008.
+Gebruik de volgende procedure om Windows PowerShell ISE in te scha kelen in Windows Power Shell 2,0 op Windows Server 2008 R2 of Windows Server 2008.
 
-#### <a name="to-enable-windows-powershell-integrated-scripting-environment-ise"></a>Om in te schakelen van Windows PowerShell Integrated Scripting Environment (ISE)
+#### <a name="to-enable-windows-powershell-integrated-scripting-environment-ise"></a>Windows Power shell Integrated Scripting Environment (ISE) inschakelen
 
 1. Start Serverbeheer.
 2. Klik op **functies** en klik vervolgens op **onderdelen toevoegen**.
-3. Klik in onderdelen selecteren op de Windows PowerShell Integrated Scripting Environment (ISE).
+3. In functies selecteren klikt u op Windows Power shell Integrated Scripting Environment (ISE).
 
-## <a name="starting-the-32-bit-version-of-windows-powershell"></a>De 32-bits versie van Windows PowerShell starten
+## <a name="starting-the-32-bit-version-of-windows-powershell"></a>De 32-bits versie van Windows Power shell starten
 
-Wanneer u Windows PowerShell op een 64-bits computer installeert **Windows PowerShell (x86)** , een 32-bits versie van Windows PowerShell is geïnstalleerd naast de 64-bits versie. Wanneer u Windows PowerShell uitvoert, wordt standaard de 64-bits versie uitgevoerd.
+Wanneer u Windows Power shell installeert op een 64-bits computer, wordt **Windows Power shell (x86)** , een 32-bits versie van Windows Power shell, naast de 64-bits versie geïnstalleerd. Wanneer u Windows Power shell uitvoert, wordt standaard de 64-bits versie uitgevoerd.
 
-Moet u mogelijk af en toe om uit te voeren **Windows PowerShell (x86)** , zoals wanneer u van een module gebruikmaakt die de 32-bits versie vereist of als u op afstand verbinding met een 32-bits computer.
+Het kan echter ook voor komen dat u **Windows Power shell (x86)** moet uitvoeren, bijvoorbeeld wanneer u een module gebruikt waarvoor de 32-bits versie vereist is of wanneer u extern verbinding maakt met een 32-bits computer.
 
-Gebruik een van de volgende procedures voor het starten van een 32-bits versie van Windows PowerShell.
+Als u een 32-bits versie van Windows Power shell wilt starten, gebruikt u een van de volgende procedures.
 
 #### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
-- Op de **Start** scherm, typt u **Windows PowerShell (x86)** . Klik op de **Windows PowerShell x86** tegel.
-- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)** .
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)** .
-- Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- Typ **Windows Power shell (x86)** in het **Start** scherm. Klik op de tegel **Windows Power shell x86** .
+- In **Serverbeheer**, in het menu **extra** , selecteert u **Windows Power shell (x86)** .
+- Verplaats de cursor op het bureau blad naar de rechter bovenhoek, klik op **zoeken**, typ **Power shell x86** en klik vervolgens op **Windows Power shell (x86)** .
+- Via de opdracht regel voert u het volgende in: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
-- Op de **Start** scherm, typt u **PowerShell** en klik vervolgens op **Windows PowerShell (x86)** .
-- In **Serverbeheer**, uit de **extra** in het menu **Windows PowerShell (x86)** .
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell** en klik vervolgens op **Windows PowerShell (x86)** .
-- Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- Typ **Power shell** in het **Start** scherm en klik vervolgens op **Windows Power shell (x86)** .
+- In **Serverbeheer**, in het menu **extra** , selecteert u **Windows Power shell (x86)** .
+- Verplaats de cursor op het bureau blad naar de rechter bovenhoek, klik op **zoeken**, typ **Power shell** en klik vervolgens op **Windows Power shell (x86)** .
+- Via de opdracht regel voert u het volgende in: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-81"></a>In Windows® 8.1
 
-- Op de **Start** scherm, typt u **Windows PowerShell (x86)** . Klik op de **Windows PowerShell x86** tegel.
-- Als u werkt met [Remote Server Administration Tools](https://go.microsoft.com/fwlink/?LinkID=304145) voor Windows 8.1, kunt u ook Windows PowerShell x86 vanuit openen de **Server ManagerTools** menu.
-  Selecteer **Windows PowerShell (x86)** .
-- Op het bureaublad van de cursor verplaatsen naar de rechterbovenhoek, klikt u op **zoeken**, type **PowerShell x86** en klik vervolgens op **Windows PowerShell (x86)** .
-- Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- Typ **Windows Power shell (x86)** in het **Start** scherm. Klik op de tegel **Windows Power shell x86** .
+- Als u [Remote Server Administration Tools](https://go.microsoft.com/fwlink/?LinkID=304145) uitvoert voor Windows 8,1, kunt u ook Windows Power shell x86 openen vanuit het menu van **Server beheer** . Selecteer **Windows Power shell (x86)** .
+- Verplaats de cursor op het bureau blad naar de rechter bovenhoek, klik op **zoeken**, typ **Power shell x86** en klik vervolgens op **Windows Power shell (x86)** .
+- Via de opdracht regel voert u het volgende in: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>In Windows® 8
 
-- Op de **Start** scherm, plaatst u de cursor op de rechter bovenhoek, klikt u op **instellingen**, klikt u op **tegels**, sluiten en verplaatst u de **weergeven Systeembeheer** schuifregelaar op Ja. Typ vervolgens **PowerShell** en klikt u op **Windows PowerShell (x86)** .
-- Als u werkt met [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=28972) voor Windows 8, kunt u ook Windows PowerShell x86 vanuit openen de **Server ManagerTools** menu. Selecteer **Windows PowerShell (x86)** .
-- Op de **Start** scherm of het bureaublad, typt u **PowerShell (x86)** en klik vervolgens op **Windows PowerShell (x86)** .
-- Via de opdrachtregel, typ: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- Verplaats de cursor in het **Start** scherm naar de rechter bovenhoek, klik op **instellingen**, klik op **tegels**en verplaats de schuif regelaar **systeem beheer weer geven** naar **Ja**. Vervolgens typt u **Power shell** en klikt u op **Windows Power shell (x86)** .
+- Als u [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=28972) voor Windows 8 uitvoert, kunt u ook Windows Power shell x86 openen vanuit het menu van **Server beheer** . Selecteer **Windows Power shell (x86)** .
+- Typ **Power shell (x86)** op het **Start** scherm of op het bureau blad en klik vervolgens op **Windows Power shell (x86)** .
+- Via de opdracht regel voert u het volgende in: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

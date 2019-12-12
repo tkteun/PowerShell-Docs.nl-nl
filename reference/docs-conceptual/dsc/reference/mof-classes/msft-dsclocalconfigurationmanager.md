@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: MSFT_DSCLocalConfigurationManager-klasse
 ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71941465"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klasse
@@ -24,7 +24,7 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>Leden
 
 De klasse **MSFT_DSCLocalConfigurationManager** heeft de volgende leden:
 
@@ -34,7 +34,7 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft de volgende leden:
 
 De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 
-|Methode |Description |
+|Methode |Beschrijving |
 |:--- |:---|
 | [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Maakt gebruik van de configuratie agent om de in behandeling zijnde configuratie toe te passen.|
 | [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources uit.|
@@ -58,6 +58,6 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 
 ## <a name="requirements"></a>Vereisten
 
-**MANAGE** DscCore. MOF
+**MOF:** DscCore. MOF
 
 **Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d52d020c-3271-40d5-b4bb-7a5ef0caec8f
 caps.latest.revision: 6
 ms.openlocfilehash: 9f5f188b006c5dfac1d04ef4d5aa5606935db9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72355858"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format"></a>Het element ScriptBlock voor ExpressionBinding voor CustomControl voor Weergave (opmaak)
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[ExpressionBinding-element voor CustomItem voor CustomControl voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het script op waarvan de waarde wordt weer gegeven door het besturings element.
 

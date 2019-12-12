@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
 ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353961"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>Het element RightIndent voor Frame voor CustomControl voor Weergave (opmaak)
@@ -29,7 +29,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `RightIndent` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `RightIndent` beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +45,7 @@ Geen.
 |-------------|-----------------|
 |[Frame-element voor CustomItem voor CustomControl voor weer gave (indeling)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
-## <a name="text-value"></a>Tekst waarde
+## <a name="text-value"></a>Tekstwaarde
 
 Geef het aantal tekens op waarmee u de gegevens naar rechts wilt verplaatsen.
 

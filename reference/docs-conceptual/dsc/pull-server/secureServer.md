@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
 ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417725"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
@@ -33,13 +33,13 @@ Aangezien DSC wordt verwacht te ontwikkelen in de Cloud uitgebracht, wordt de on
 De twee belangrijkste secties van dit document:
 
 - Configuratie planning
-- Installatie handleiding
+- Installatiehandleiding
 
 ### <a name="versions-of-the-windows-management-framework"></a>Versies van het Windows Management Framework
 
 De informatie in dit document is bedoeld voor toepassing op Windows Management Framework 5,0. Hoewel WMF 5,0 niet is vereist voor het implementeren en gebruiken van een pull-server, is versie 5,0 de focus van dit document.
 
-### <a name="windows-powershell-desired-state-configuration"></a>Windows Power shell desired state Configuration
+### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
 
 Desired state Configuration (DSC) is een beheer platform waarmee configuratie gegevens kunnen worden geïmplementeerd en beheerd met behulp van een industrie syntaxis met de naam de Managed Object Format (MOF) om de Common Information Model (CIM) te beschrijven. Een open-source project, open Management Infrastructure (OMI), bestaat uit het verder ontwikkelen van deze standaarden op verschillende platforms, waaronder Linux en netwerkhardware. Zie voor meer informatie de [DMTF-pagina koppelen aan MOF-specificaties](https://www.dmtf.org/standards/cim)en [Omi-documenten en-bron](https://collaboration.opengroup.org/omi/documents.php).
 
@@ -132,7 +132,7 @@ Een CNAME kan u helpen de client configuratie te isoleren zodat wijzigingen in d
 Houd bij het kiezen van een naam voor de DNS-record de oplossings architectuur in acht.
 Als taak verdeling wordt gebruikt, moet het certificaat dat wordt gebruikt voor het beveiligen van verkeer via HTTPS dezelfde naam hebben als de DNS-record.
 
-Scenario |Aanbevolen procedure
+Scenario |Best Practice
 :---|:---
 Testomgeving |Reproduceer, indien mogelijk, de geplande productie omgeving. Een hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres worden gebruikt in plaats van een hostnaam.|
 Implementatie met één knoop punt |Maak een DNS CNAME-record die verwijst naar de hostnaam van de server.|
@@ -235,7 +235,7 @@ Automatiseert u het proces van het kopiëren van configuraties naar de server en
 Hoe wijst u Guid's toe aan servers of rollen en waar wordt deze opgeslagen?|
 Wat gaat u gebruiken als een proces voor het configureren van client computers en hoe wordt het geïntegreerd met uw proces voor het maken en opslaan van configuratie-Guid's?|
 
-## <a name="installation-guide"></a>Installatie handleiding
+## <a name="installation-guide"></a>Installatiehandleiding
 
 *De in dit document gegeven scripts zijn stabiele voor beelden. Controleer altijd de scripts zorgvuldig voordat u ze in een productie omgeving uitvoert.*
 

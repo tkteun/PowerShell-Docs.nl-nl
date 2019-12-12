@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Met bestanden en mappen werken
 ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70215532"
 ---
 # <a name="working-with-files-and-folders"></a>Met bestanden en mappen werken
@@ -37,7 +37,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Kopiëren van bestanden en mappen
 
-Kopiëren is voltooid met **copy-item**. Met de volgende opdracht maakt u een back\\-up van c: boot\\. ini naar c: boot. bak:
+Kopiëren is voltooid met **copy-item**. Met de volgende opdracht maakt u een back-up van C:\\boot. ini naar C:\\boot. bak:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
@@ -51,19 +51,19 @@ Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 
 Deze opdracht werkt zelfs als de bestemming alleen-lezen is.
 
-Kopiëren van mappen werkt op dezelfde manier. Met deze opdracht kopieert u de map\\c\\: Temp test1 naar de nieuwe map\\c\\: Temp DeleteMe recursief:
+Kopiëren van mappen werkt op dezelfde manier. Met deze opdracht kopieert u de map C:\\Temp\\test1 naar de nieuwe map C:\\Temp\\DeleteMe recursief:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-U kunt ook een selectie van items kopiëren. De volgende opdracht kopieert alle txt-bestanden ergens in c:\\gegevens naar c:\\tijdelijke\\tekst:
+U kunt ook een selectie van items kopiëren. Met de volgende opdracht kopieert u alle txt-bestanden die zich overal in c bevinden:\\gegevens naar c:\\tijdelijke\\tekst:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-U kunt nog steeds andere hulpprogram ma's gebruiken om bestandssysteem kopieën uit te voeren. XCOPY-, ROBOCOPY-en COM-objecten, zoals **Scripting. File System object,** werken allemaal in Windows Power shell. U kunt bijvoorbeeld de Windows Script Host **Scripting. File System-com-** klasse gebruiken om een back-\\up te maken van c:\\boot. ini naar c: boot. bak:
+U kunt nog steeds andere hulpprogram ma's gebruiken om bestandssysteem kopieën uit te voeren. XCOPY-, ROBOCOPY-en COM-objecten, zoals **Scripting. File System object,** werken allemaal in Windows Power shell. U kunt bijvoorbeeld de Windows Script Host **Scripting. File System-COM-** klasse gebruiken om een back-up te maken van c:\\boot. ini naar C:\\boot. bak:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -73,13 +73,13 @@ U kunt nog steeds andere hulpprogram ma's gebruiken om bestandssysteem kopieën 
 
 Het maken van nieuwe items werkt hetzelfde op alle Windows Power shell-providers. Als een Windows Power shell-provider meer dan één type item heeft, bijvoorbeeld het bestands systeem van de Windows Power shell-provider onderscheidt tussen mappen en bestanden, moet u het item type opgeven.
 
-Met deze opdracht maakt u een nieuwe map\\C\\: temp nieuwe map:
+Met deze opdracht maakt u een nieuwe map C:\\Temp\\nieuwe map:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Met deze opdracht maakt u een nieuw leeg bestand\\C\\: Temp\\nieuwe map bestand. txt
+Met deze opdracht maakt u een nieuw leeg bestand C:\\Temp\\nieuwe map\\bestand. txt
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
@@ -87,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 
 ## <a name="removing-all-files-and-folders-within-a-folder"></a>Alle bestanden en mappen in een map verwijderen
 
-U kunt opgenomen items verwijderen met behulp van **Remove-item**, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als u bijvoorbeeld probeert de map C:\\Temp\\DeleteMe te verwijderen die andere items bevat, vraagt Windows Power shell u om bevestiging voordat de map wordt verwijderd:
+U kunt opgenomen items verwijderen met behulp van **Remove-item**, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als u bijvoorbeeld probeert om de map C:\\Temp\\DeleteMe te verwijderen die andere items bevat, vraagt Windows Power shell u om bevestiging voordat de map wordt verwijderd:
 
 ```
 Remove-Item -Path C:\temp\DeleteMe

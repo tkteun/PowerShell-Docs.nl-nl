@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA-sessie configuraties
 ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017879"
 ---
 # <a name="jea-session-configurations"></a>JEA-sessie configuraties
@@ -22,7 +22,7 @@ Als u een JEA-eind punt wilt registreren, moet u opgeven hoe dat eind punt is ge
 - Welke identiteits JEA worden gebruikt onder de kaften
 - De naam van het JEA-eind punt
 
-Deze opties worden gedefinieerd in een Power shell-gegevens bestand `.pssc` met een extensie die een Power shell-sessie configuratie bestand wordt genoemd. Het configuratie bestand van de sessie kan worden bewerkt met behulp van een tekst editor.
+Deze opties worden gedefinieerd in een Power shell-gegevens bestand met een `.pssc` extensie die een Power shell-sessie configuratie bestand wordt genoemd. Het configuratie bestand van de sessie kan worden bewerkt met behulp van een tekst editor.
 
 Voer de volgende opdracht uit om een leeg sjabloon configuratie bestand te maken.
 
@@ -31,9 +31,9 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 ```
 
 > [!TIP]
-> Alleen de meest voorkomende configuratie opties zijn standaard opgenomen in het sjabloon bestand. Gebruik de `-Full` Schakel optie voor het toevoegen van alle toepasselijke instellingen in het gegenereerde PSSC.
+> Alleen de meest voorkomende configuratie opties zijn standaard opgenomen in het sjabloon bestand. Gebruik de `-Full` switch om alle toepasselijke instellingen in het gegenereerde PSSC op te genomen.
 
-In `-SessionType RestrictedRemoteServer` het veld wordt aangegeven dat de sessie configuratie wordt gebruikt door JEA voor beveiligd beheer. Sessies van dit type worden in de modus exclusief **taal** uitgevoerd en hebben alleen toegang tot de volgende standaard opdrachten (en aliassen):
+Het veld `-SessionType RestrictedRemoteServer` geeft aan dat de sessie configuratie wordt gebruikt door JEA voor beveiligd beheer. Sessies van dit type worden in de modus exclusief **taal** uitgevoerd en hebben alleen toegang tot de volgende standaard opdrachten (en aliassen):
 
 - Clear-host (CLS, Clear)
 - Afsluiten-PSSession (exsn, afsluiten)
@@ -56,7 +56,7 @@ U definieert welke identiteit JEA in het sessie configuratie bestand gebruikt.
 #### <a name="local-virtual-account"></a>Lokaal virtueel account
 
 Lokale virtuele accounts zijn handig wanneer alle rollen die zijn gedefinieerd voor het JEA-eind punt worden gebruikt voor het beheren van de lokale computer en een lokaal Administrator-account voldoende is om de opdrachten te kunnen uitvoeren.
-Virtuele accounts zijn tijdelijke accounts die uniek zijn voor een specifieke gebruiker en alleen voor de duur van de Power shell-sessie. Op een lidserver of werk station behoren virtuele accounts tot de groep Administrators van de lokale computer. Op een Active Directory-domein controller behoren virtuele accounts tot de groep **domein Administrators** van het domein.
+Virtuele accounts zijn tijdelijke accounts die uniek zijn voor een specifieke gebruiker en alleen voor de duur van de Power shell-sessie. Op een lidserver of werk station behoren virtuele accounts tot de groep **Administrators** van de lokale computer. Op een Active Directory-domein controller behoren virtuele accounts tot de groep **domein Administrators** van het domein.
 
 ```powershell
 # Setting the session to use a virtual account
@@ -135,7 +135,7 @@ Zie [Power Shell-stations beheren](/powershell/scripting/samples/managing-window
 ### <a name="role-definitions"></a>Roldefinities
 
 Roldefinities in een sessie configuratie bestand definiëren de toewijzing van **gebruikers** aan **rollen**. Elke gebruiker of groep die in dit veld is opgenomen, krijgt toegang tot het JEA-eind punt wanneer het is geregistreerd.
-Elke gebruiker of groep kan slechts eenmaal als sleutel in de hashtabel worden opgenomen, maar kan meerdere rollen krijgen. De naam van de functie mogelijkheid moet de naam zijn van het functie-Capability-bestand `.psrc` , zonder de extensie.
+Elke gebruiker of groep kan slechts eenmaal als sleutel in de hashtabel worden opgenomen, maar kan meerdere rollen krijgen. De naam van de functie mogelijkheid moet de naam zijn van het functie-mogelijkheidsprofiel, zonder de extensie `.psrc`.
 
 ```powershell
 RoleDefinitions = @{
@@ -147,7 +147,7 @@ RoleDefinitions = @{
 
 Als een gebruiker deel uitmaakt van meer dan één groep in de roldefinitie, krijgen ze toegang tot de rollen van elk. Wanneer twee rollen toegang verlenen tot dezelfde cmdlets, wordt de meest strikte parameterset verleend aan de gebruiker.
 
-Wanneer u lokale gebruikers of groepen in het veld roldefinities opgeeft, moet u ervoor zorgen dat u de computer naam, niet **localhost** of joker tekens, gebruikt. U kunt de naam van de computer controleren door de `$env:COMPUTERNAME` variabele te controleren.
+Wanneer u lokale gebruikers of groepen in het veld roldefinities opgeeft, moet u ervoor zorgen dat u de computer naam, niet **localhost** of joker tekens, gebruikt. U kunt de naam van de computer controleren door de variabele `$env:COMPUTERNAME` te controleren.
 
 ```powershell
 RoleDefinitions = @{
@@ -159,7 +159,7 @@ RoleDefinitions = @{
 
 Zoals u in het bovenstaande voor beeld kunt zien, wordt naar de functie functionaliteit verwezen met de basis naam van het functie-Capability-bestand. De basis naam van een bestand is de bestands naam zonder extensie. Als er meerdere functie mogelijkheden beschikbaar zijn op het systeem met dezelfde naam, gebruikt Power shell de impliciete Zoek volgorde van de functie om het juiste bestandsbeheer bestand te selecteren. JEA geeft **geen** toegang tot alle functie-Capability-bestanden met dezelfde naam.
 
-JEA maakt gebruik `$env:PSModulePath` van de omgevings variabele om te bepalen welke paden moeten worden gescand op functie-Capability-bestanden. In elk van deze paden zoekt JEA naar geldige Power shell-modules die een submap ' RoleCapabilities ' bevatten. Net als bij het importeren van modules, geven JEA de voor keur aan functie mogelijkheden die worden geleverd met Windows naar aangepaste functie mogelijkheden met dezelfde naam.
+JEA maakt gebruik van de omgevings variabele `$env:PSModulePath` om te bepalen welke paden moeten worden gescand op functie-Capability-bestanden. In elk van deze paden zoekt JEA naar geldige Power shell-modules die een submap ' RoleCapabilities ' bevatten. Net als bij het importeren van modules, geven JEA de voor keur aan functie mogelijkheden die worden geleverd met Windows naar aangepaste functie mogelijkheden met dezelfde naam.
 
 Voor alle andere naam conflicten wordt de prioriteit bepaald aan de hand van de volg orde waarin Windows de bestanden in de map inventariseert. De bestelling is niet gegarandeerd in alfabetische volg orde. Het eerste functie-mogelijkheidsprofiel gevonden dat overeenkomt met de opgegeven naam wordt gebruikt voor de gebruiker die verbinding maakt. Omdat de zoek volgorde van de functie mogelijkheden niet deterministisch is, wordt het **ten zeerste aanbevolen** om functie mogelijkheden unieke bestands namen te bieden.
 
@@ -188,7 +188,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ### <a name="other-properties"></a>Andere eigenschappen
 
 Sessie configuratie bestanden kunnen ook alles doen wat een functie-mogelijkheidsprofiel kan doen, alleen zonder de mogelijkheid om verbinding te maken tussen gebruikers en andere opdrachten. Als u alle gebruikers toegang wilt geven tot specifieke cmdlets, functies of providers, kunt u dit rechtstreeks doen in het configuratie bestand voor de sessie.
-Voer uit `Get-Help New-PSSessionConfigurationFile -Full`voor een volledige lijst met ondersteunde eigenschappen in het configuratie bestand voor de sessie.
+Voer `Get-Help New-PSSessionConfigurationFile -Full`uit voor een volledige lijst met ondersteunde eigenschappen in het configuratie bestand voor de sessie.
 
 ## <a name="testing-a-session-configuration-file"></a>Een configuratie bestand voor een sessie testen
 
@@ -196,7 +196,7 @@ U kunt een sessie configuratie testen met de cmdlet [test-PSSessionConfiguration
 
 ## <a name="sample-session-configuration-file"></a>Configuratie bestand voor voorbeeld sessie
 
-In het volgende voor beeld ziet u hoe u een sessie configuratie voor JEA maakt en valideert. De roldefinities worden gemaakt en opgeslagen in de `$roles` variabele voor gemak en lees baarheid. Dit is geen vereiste.
+In het volgende voor beeld ziet u hoe u een sessie configuratie voor JEA maakt en valideert. De roldefinities worden gemaakt en opgeslagen in de variabele `$roles` voor gemak en lees baarheid. Dit is geen vereiste.
 
 ```powershell
 $roles = @{

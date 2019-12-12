@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuratie gegevens gebruiken
 ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942109"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Configuratie gegevens gebruiken in DSC
@@ -29,7 +29,7 @@ De para meter **ConfigurationData** is een hashtabel die ten minste één sleute
 Het kan ook een of meer andere sleutels hebben.
 
 > [!NOTE]
-> In de voor beelden in dit onderwerp wordt gebruikgemaakt van een enkele extra sleutel (met uitzonde ring van de benoemde **AllNodes** -sleutel) met de naam `NonNodeData`, maar u kunt een wille keurig aantal extra sleutels toevoegen en deze een naam geven wat u wilt.
+> In de voor beelden in dit onderwerp wordt gebruikgemaakt van een enkele extra sleutel (met uitzonde ring van de benoemde **AllNodes** -sleutel) met de naam `NonNodeData`, maar u kunt een wille keurig aantal extra sleutels toevoegen en deze een andere naam geven.
 
 ```powershell
 $MyData =
@@ -94,8 +94,8 @@ $MyData =
 }
 ```
 
-Als u een eigenschap wilt Toep assen op alle knoop punten, kunt u een lid maken van de **AllNodes** -matrix met de **knooppunt** naam `*`.
-U kunt bijvoorbeeld het volgende doen om elk knoop punt een `LogPath`-eigenschap te geven:
+Als u een eigenschap wilt Toep assen op alle knoop punten, kunt u een lid maken van de **AllNodes** -matrix met een **knooppunt** naam van `*`.
+U kunt bijvoorbeeld het volgende doen om elk knoop punt een `LogPath` eigenschap te geven:
 
 ```powershell
 $MyData =
@@ -132,11 +132,11 @@ $MyData =
 }
 ```
 
-Dit is het equivalent van het toevoegen van een eigenschap met de naam `LogPath` met de waarde `"C:\Logs"` voor elk van de andere blokken (`VM-1`, `VM-2` en `VM-3`).
+Dit is het equivalent van het toevoegen van een eigenschap met de naam `LogPath` met de waarde `"C:\Logs"` voor elk van de andere blokken (`VM-1`, `VM-2`en `VM-3`).
 
 ## <a name="defining-the-configurationdata-hashtable"></a>De ConfigurationData hashtabel definiëren
 
-U kunt **ConfigurationData** definiëren als een variabele binnen hetzelfde script bestand als een configuratie (zoals in de voor gaande voor beelden) of in een afzonderlijk `.psd1`-bestand.
+U kunt **ConfigurationData** definiëren als een variabele binnen hetzelfde script bestand als een configuratie (zoals in de voor gaande voor beelden) of in een afzonderlijk `.psd1` bestand.
 Als u **ConfigurationData** wilt definiëren in een `.psd1`-bestand, maakt u een bestand dat alleen de hashtabel bevat die de configuratie gegevens vertegenwoordigt.
 
 U kunt bijvoorbeeld een bestand met de naam `MyData.psd1` maken met de volgende inhoud:
@@ -165,11 +165,11 @@ Als u een configuratie wilt compileren waarvoor u configuratie gegevens hebt ged
 Hiermee maakt u een MOF-bestand voor elke vermelding in de **AllNodes** -matrix.
 Elk MOF-bestand krijgt de naam van de eigenschap `NodeName` van de bijbehorende matrix vermelding.
 
-Als u bijvoorbeeld configuratie gegevens definieert als in het bestand `MyData.psd1` hierboven, worden door het compileren van een configuratie zowel `VM-1.mof`-als `VM-2.mof`-bestanden gemaakt.
+Als u bijvoorbeeld configuratie gegevens definieert zoals in het bovenstaande `MyData.psd1` bestand, worden door het compileren van een configuratie zowel `VM-1.mof` als `VM-2.mof` bestanden gemaakt.
 
 ### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a>Een configuratie met configuratie gegevens compileren met behulp van een variabele
 
-Als u configuratie gegevens wilt gebruiken die als een variabele zijn gedefinieerd in hetzelfde `.ps1`-bestand als de configuratie, geeft u de naam van de variabele door als de waarde van de **ConfigurationData** -para meter bij het compileren van de configuratie:
+Als u configuratie gegevens wilt gebruiken die als een variabele zijn gedefinieerd in hetzelfde `.ps1`-bestand als de configuratie, geeft u de naam van de variabele door als de waarde van de para meter **ConfigurationData** bij het compileren van de configuratie:
 
 ```powershell
 MyDscConfiguration -ConfigurationData $MyData
@@ -189,7 +189,7 @@ DSC biedt de volgende speciale variabelen die kunnen worden gebruikt in een conf
 
 - **$AllNodes** verwijst naar de volledige verzameling knoop punten die in **ConfigurationData**zijn gedefinieerd. U kunt de **AllNodes** -verzameling filteren met behulp van **. WHERE ()** en **. ForEach ()** .
 - **ConfigurationData** verwijst naar de volledige hash-tabel die wordt door gegeven als de para meter bij het compileren van een configuratie.
-- **MyTypeName** bevat de [configuratie](configurations.md) naam waarin de variabele wordt gebruikt. In de configuratie `MyDscConfiguration` is de `$MyTypeName` bijvoorbeeld de waarde `MyDscConfiguration`.
+- **MyTypeName** bevat de [configuratie](configurations.md) naam waarin de variabele wordt gebruikt. In de configuratie `MyDscConfiguration`bijvoorbeeld de `$MyTypeName` de waarde `MyDscConfiguration`heeft.
 - Het **knoop punt** verwijst naar een bepaalde vermelding in de **AllNodes** -verzameling nadat deze is gefilterd met behulp van **. WHERE ()** of **. ForEach ()** .
   - Meer informatie over deze methoden vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 

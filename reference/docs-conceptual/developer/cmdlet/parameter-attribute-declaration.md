@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
 ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356173"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaratie van het kenmerk Parameter
@@ -40,7 +40,7 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
 `ValueFromPipeline` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter de waarde ervan uit een pijplijn object haalt. Geef dit tref woord op als de cmdlet toegang heeft tot het volledige object, niet alleen een eigenschap van het object. De standaardwaarde is `false`.
 
-`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter de waarde van een eigenschap van een pijplijn object met dezelfde naam of dezelfde alias als deze para meter heeft. Als de cmdlet bijvoorbeeld een `Name`-para meter heeft en het pijplijn object ook een eigenschap `Name` heeft, wordt de waarde van de eigenschap `Name` toegewezen aan de para meter `Name` van de cmdlet. De standaardwaarde is `false`.
+`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de para meter cmdlet de waarde van een eigenschap van een pijplijn object met dezelfde naam of dezelfde alias als deze para meter heeft. Als de cmdlet bijvoorbeeld een `Name` para meter heeft en het pijplijn object ook een eigenschap `Name` heeft, wordt de waarde van de eigenschap `Name` toegewezen aan de para meter `Name` van de cmdlet. De standaardwaarde is `false`.
 
 `ValueFromRemainingArguments` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter alle resterende argumenten accepteert die worden door gegeven aan de cmdlet. De standaardwaarde is `false`.
 
@@ -68,9 +68,9 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
     - Geen enkele parameterset mag meer dan één positionele para meter met dezelfde positie bevatten.
 
-    - Er mag slechts één para meter in een parameterset `ValueFromPipeline = true` declareren. Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true` definiëren.
+    - Er mag slechts één para meter in een parameterset `ValueFromPipeline = true`declareren. Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true`definiëren.
 
-    - Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true` definiëren.
+    - Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true`definiëren.
 
 - Zie [cmdlet para meter names](standard-cmdlet-parameter-names-and-types.md)(Engelstalig) voor meer informatie over de richt lijnen voor parameter namen.
 

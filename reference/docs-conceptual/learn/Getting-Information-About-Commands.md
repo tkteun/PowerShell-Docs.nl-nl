@@ -1,18 +1,18 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030938"
 ---
 # <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
 
-De PowerShell `Get-Command` geeft opdrachten die beschikbaar in uw huidige sessie zijn.
-Bij het uitvoeren van de `Get-Command` cmdlet, ziet u iets die vergelijkbaar is met de volgende uitvoer:
+De Power shell-`Get-Command` bevat opdrachten die beschikbaar zijn in uw huidige sessie.
+Wanneer u de `Get-Command` cmdlet uitvoert, ziet u iets zoals in de volgende uitvoer:
 
 ```output
 CommandType     Name                    Version    Source
@@ -28,9 +28,9 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Dit ziet er veel uitvoer als in het Help-informatie van **cmd.exe**: een tabellaire overzicht van interne opdrachten. In het fragment van het `Get-Command` opdracht uitvoer hierboven, elke opdracht die wordt weergegeven een CommandType Cmdlet heeft. Een cmdlet is van PowerShell intrinsieke opdrachttype. Dit type komt overeen met ongeveer naar opdrachten zoals `dir` en `cd` in **cmd.exe** of de ingebouwde opdrachten van de Unix-houders zoals bash.
+Deze uitvoer lijkt veel op de Help-uitvoer van **cmd. exe**: een samen vatting van interne opdrachten in tabel vorm. In het fragment van de `Get-Command` opdracht uitvoer die hierboven wordt weer gegeven, heeft elke opdracht die wordt weer gegeven een CommandType van cmdlet. Een cmdlet is het intrinsieke opdracht type van Power shell. Dit type komt ongeveer overeen met opdrachten als `dir` en `cd` in **cmd. exe** of de ingebouwde opdrachten van UNIX-shells zoals bash.
 
-De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet retourneert. Het volgende voorbeeld laat zien hoe de syntaxis van de `Get-Help` cmdlet:
+De cmdlet `Get-Command` heeft een **syntaxis** parameter waarmee de syntaxis van elke cmdlet wordt geretourneerd. In het volgende voor beeld ziet u hoe u de syntaxis van de `Get-Help`-cmdlet kunt ophalen:
 
 ```powershell
 Get-Command Get-Help -Syntax
@@ -50,44 +50,44 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-## <a name="displaying-available-command-by-type"></a>Beschikbare opdracht weergeven per type
+## <a name="displaying-available-command-by-type"></a>De beschik bare opdracht wordt weer gegeven op type
 
-De `Get-Command` opdracht geeft alleen de cmdlets in de huidige sessie. PowerShell ondersteunt daadwerkelijk diverse andere soorten opdrachten:
+De `Get-Command` opdracht bevat alleen de cmdlets in de huidige sessie. Power shell ondersteunt diverse andere soorten opdrachten:
 
 - Aliassen
 - Functies
 - Scripts
 
-Externe uitvoerbare bestanden of bestanden waarvoor een geregistreerde type handler, zijn ook geclassificeerd als opdrachten.
+Externe uitvoer bare bestanden of bestanden met een geregistreerde bestands type-handler worden ook als opdrachten geclassificeerd.
 
-Als alle opdrachten in de sessie, typt u:
+Als u alle opdrachten in de sessie wilt ophalen, typt u:
 
 ```powershell
 Get-Command *
 ```
 
-Deze lijst bevat externe opdrachten in het pad voor de zoekopdracht, zodat deze duizenden items kan bevatten.
-Dit is meer handig om te kijken naar een lagere reeks opdrachten.
+Deze lijst bevat externe opdrachten in uw zoekpad, zodat deze duizenden items kan bevatten.
+Het is handiger om een gereduceerde reeks opdrachten te bekijken.
 
 > [!NOTE]
-> Het sterretje (\*) wordt gebruikt voor vergelijking in PowerShell opdrachtargumenten met jokertekens. De \* betekent 'overeenkomstig met een of meer van de tekens'. U kunt typen `Get-Command a*` vinden alle opdrachten die met de letter beginnen "a". In tegenstelling tot jokertekens **cmd.exe**, van PowerShell jokerteken wordt ook overeenkomen met een punt.
+> Het sterretje (\*) wordt gebruikt voor het vergelijken van joker tekens in Power shell-opdracht argumenten. Het \* betekent een of meer wille keurige tekens. U kunt `Get-Command a*` typen om alle opdrachten te vinden die beginnen met de letter ' a '. In tegens telling tot joker tekens in **cmd. exe**komt het Joker teken van Power shell ook overeen met een punt.
 
-Gebruik de **CommandType** parameter van `Get-Command` om op te halen van systeemeigen opdrachten van andere typen.
+Gebruik de **CommandType** -para meter van `Get-Command` om systeem eigen opdrachten van andere typen op te halen.
 cmdlet.
 
-Als Opdrachtaliassen, die de toegewezen bijnamen van opdrachten, typt u:
+Om opdracht aliassen te verkrijgen, zoals de toegewezen bijnamen van opdrachten, typt u:
 
 ```powershell
 Get-Command -CommandType Alias
 ```
 
-Als u de functies in de huidige sessie, typt u:
+Als u de functies in de huidige sessie wilt ophalen, typt u:
 
 ```powershell
 Get-Command -CommandType Function
 ```
 
-Als scripts in de PowerShell-zoekpad weergeven, typt u:
+Als u scripts wilt weer geven in het zoekpad van Power shell, typt u:
 
 ```powershell
 Get-Command -CommandType Script
