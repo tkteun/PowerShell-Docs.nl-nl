@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
-title: Een taak herhalen voor meerdere objecten-ForEach-Object
+keywords: Power shell, cmdlet
+title: Een taak herhalen voor meerdere objecten ForEach-object
 ms.openlocfilehash: 1442507c4213476f65df3401c1021f8d0fc31956
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030816"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="56aa8-103">Een taak herhalen voor meerdere objecten (ForEach-Object)</span><span class="sxs-lookup"><span data-stu-id="56aa8-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="fcc5d-103">Een taak herhalen voor meerdere objecten (ForEach-object)</span><span class="sxs-lookup"><span data-stu-id="fcc5d-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
 
-<span data-ttu-id="56aa8-104">De **ForEach-Object** cmdlet scriptblokken gebruikt en de `$_` descriptor voor de huidige pijplijn-object dat u een opdracht uitvoeren op elk object in de pijplijn.</span><span class="sxs-lookup"><span data-stu-id="56aa8-104">The **ForEach-Object** cmdlet uses script blocks and the `$_` descriptor for the current pipeline object to let you run a command on each object in the pipeline.</span></span> <span data-ttu-id="56aa8-105">Dit kan worden gebruikt om uit te voeren sommige complexe taken.</span><span class="sxs-lookup"><span data-stu-id="56aa8-105">This can be used to perform some complicated tasks.</span></span>
+<span data-ttu-id="fcc5d-104">De **foreach-object-** cmdlet gebruikt script blokken en de `$_` descriptor voor het huidige pijplijn object, zodat u een opdracht kunt uitvoeren op elk object in de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-104">The **ForEach-Object** cmdlet uses script blocks and the `$_` descriptor for the current pipeline object to let you run a command on each object in the pipeline.</span></span> <span data-ttu-id="fcc5d-105">Dit kan worden gebruikt voor het uitvoeren van enkele gecompliceerde taken.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-105">This can be used to perform some complicated tasks.</span></span>
 
-<span data-ttu-id="56aa8-106">Een situatie waarin dit kan nuttig zijn met het bewerken van de gegevens zodat deze nuttiger zijn.</span><span class="sxs-lookup"><span data-stu-id="56aa8-106">One situation where this can be useful is manipulating data to make it more useful.</span></span> <span data-ttu-id="56aa8-107">De WMI-klasse Win32_LogicalDisk kunt bijvoorbeeld worden gebruikt om gegevens van de vrije ruimte voor elke lokale schijf te retourneren.</span><span class="sxs-lookup"><span data-stu-id="56aa8-107">For example, the Win32_LogicalDisk class from WMI can be used to return free space information for each local disk.</span></span> <span data-ttu-id="56aa8-108">De gegevens worden geretourneerd in termen van bytes, waardoor het moeilijk te lezen:</span><span class="sxs-lookup"><span data-stu-id="56aa8-108">The data is returned in terms of bytes, however, which makes it difficult to read:</span></span>
+<span data-ttu-id="fcc5d-106">Een situatie waarin dit nuttig kan zijn, is om het handiger te maken om de gegevens te bewerken.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-106">One situation where this can be useful is manipulating data to make it more useful.</span></span> <span data-ttu-id="fcc5d-107">Bijvoorbeeld, de klasse Win32_LogicalDisk van WMI kan worden gebruikt om informatie over de beschik bare ruimte voor elke lokale schijf te retour neren.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-107">For example, the Win32_LogicalDisk class from WMI can be used to return free space information for each local disk.</span></span> <span data-ttu-id="fcc5d-108">De gegevens worden weer gegeven in termen van bytes, waardoor het moeilijk te lezen is:</span><span class="sxs-lookup"><span data-stu-id="fcc5d-108">The data is returned in terms of bytes, however, which makes it difficult to read:</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -26,20 +26,20 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-<span data-ttu-id="56aa8-109">We kunnen de waarde FreeSpace omzetten naar megabytes door elke waarde te delen door 1024 tweemaal te gebruiken. na de eerste afdeling, de gegevens zich in kilobytes en na het tweede getal is in megabytes.</span><span class="sxs-lookup"><span data-stu-id="56aa8-109">We can convert the FreeSpace value to megabytes by dividing each value by 1024 twice; after the first division, the data is in kilobytes, and after the second division it is megabytes.</span></span> <span data-ttu-id="56aa8-110">U kunt dat doen in een scriptblok ForEach-Object door te typen:</span><span class="sxs-lookup"><span data-stu-id="56aa8-110">You can do that in a ForEach-Object script block by typing:</span></span>
+<span data-ttu-id="fcc5d-109">De vrije ruimte-waarde kan worden geconverteerd naar mega bytes door elke 1024 waarde twee keer te delen. na de eerste deling bevindt de gegevens zich in kilo bytes en na de tweede deling is dit mega bytes.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-109">We can convert the FreeSpace value to megabytes by dividing each value by 1024 twice; after the first division, the data is in kilobytes, and after the second division it is megabytes.</span></span> <span data-ttu-id="fcc5d-110">U kunt dit doen in een script blok voor ForEach-objecten door het volgende te typen:</span><span class="sxs-lookup"><span data-stu-id="fcc5d-110">You can do that in a ForEach-Object script block by typing:</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-<span data-ttu-id="56aa8-111">De uitvoer is nu gegevens met geen bijbehorende label.</span><span class="sxs-lookup"><span data-stu-id="56aa8-111">Unfortunately, the output is now data with no associated label.</span></span> <span data-ttu-id="56aa8-112">Omdat WMI-eigenschappen zoals deze alleen-lezen zijn, kunt u niet rechtstreeks FreeSpace converteren.</span><span class="sxs-lookup"><span data-stu-id="56aa8-112">Because WMI properties such as this are read-only, you cannot directly convert FreeSpace.</span></span> <span data-ttu-id="56aa8-113">Als u deze typt:</span><span class="sxs-lookup"><span data-stu-id="56aa8-113">If you type this:</span></span>
+<span data-ttu-id="fcc5d-111">Helaas is de uitvoer nu gegevens zonder bijbehorend label.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-111">Unfortunately, the output is now data with no associated label.</span></span> <span data-ttu-id="fcc5d-112">Omdat WMI-eigenschappen zoals dit alleen-lezen zijn, kunt u niet rechtstreeks vrije ruimte converteren.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-112">Because WMI properties such as this are read-only, you cannot directly convert FreeSpace.</span></span> <span data-ttu-id="fcc5d-113">Als u dit typt:</span><span class="sxs-lookup"><span data-stu-id="fcc5d-113">If you type this:</span></span>
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-<span data-ttu-id="56aa8-114">Krijgt u een foutbericht weergegeven:</span><span class="sxs-lookup"><span data-stu-id="56aa8-114">You get an error message:</span></span>
+<span data-ttu-id="fcc5d-114">Er wordt een fout bericht weer gegeven:</span><span class="sxs-lookup"><span data-stu-id="fcc5d-114">You get an error message:</span></span>
 
 ```output
 "FreeSpace" is a ReadOnly property.
@@ -48,4 +48,4 @@ At line:1 char:70
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-<span data-ttu-id="56aa8-115">U kunt de gegevens opnieuw indelen met behulp van sommige geavanceerde technieken, maar het eenvoudiger is een nieuw object maken met behulp van **Select-Object**.</span><span class="sxs-lookup"><span data-stu-id="56aa8-115">You could reorganize the data by using some advanced techniques, but a simpler approach is to create a new object, by using **Select-Object**.</span></span>
+<span data-ttu-id="fcc5d-115">U kunt de gegevens opnieuw indelen met een aantal geavanceerde technieken, maar een eenvoudigere benadering is het maken van een nieuw object met behulp van **Select-object**.</span><span class="sxs-lookup"><span data-stu-id="fcc5d-115">You could reorganize the data by using some advanced techniques, but a simpler approach is to create a new object, by using **Select-Object**.</span></span>

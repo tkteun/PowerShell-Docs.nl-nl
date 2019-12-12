@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell-cmdlet
+keywords: Power shell, cmdlet
 title: Een grafische datumkiezer maken
 ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030249"
 ---
-# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="d37f7-103">Een grafische datumkiezer maken</span><span class="sxs-lookup"><span data-stu-id="d37f7-103">Creating a Graphical Date Picker</span></span>
+# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="8cbfc-103">Een grafische datumkiezer maken</span><span class="sxs-lookup"><span data-stu-id="8cbfc-103">Creating a Graphical Date Picker</span></span>
 
-<span data-ttu-id="d37f7-104">Gebruik Windows PowerShell 3.0 en latere versies naar een formulier maken met een grafische, agenda-stijl-besturingselement waarmee gebruikers een dag van de maand selecteren.</span><span class="sxs-lookup"><span data-stu-id="d37f7-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
+<span data-ttu-id="8cbfc-104">Gebruik Windows Power Shell 3,0 en latere versies om een formulier te maken met een grafisch besturings element voor de kalender stijl waarmee gebruikers een dag van de maand kunnen selecteren.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
 
-## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="d37f7-105">Een grafische datumkiezer maken</span><span class="sxs-lookup"><span data-stu-id="d37f7-105">Create a graphical date-picker control</span></span>
+## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="8cbfc-105">Een besturings element voor een grafische datum kiezer maken</span><span class="sxs-lookup"><span data-stu-id="8cbfc-105">Create a graphical date-picker control</span></span>
 
-<span data-ttu-id="d37f7-106">Kopieer en plak het volgende in Windows PowerShell ISE en vervolgens opslaan als een Windows PowerShell-script (.ps1).</span><span class="sxs-lookup"><span data-stu-id="d37f7-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="8cbfc-106">Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).</span><span class="sxs-lookup"><span data-stu-id="8cbfc-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -60,8 +60,8 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-<span data-ttu-id="d37f7-107">Het script begint met het laden van twee .NET Framework-klassen: **System.Drawing** en **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="d37f7-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span>
-<span data-ttu-id="d37f7-108">Vervolgens start u een nieuw exemplaar van de .NET Framework-klasse **Windows.Forms.Form**; die zorgt voor een leeg formulier of Hiermee bepaalt u venster waaraan u kunt beginnen met het toevoegen.</span><span class="sxs-lookup"><span data-stu-id="d37f7-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="8cbfc-107">Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span>
+<span data-ttu-id="8cbfc-108">Vervolgens start u een nieuwe instantie van de .NET Framework klasse **Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -72,21 +72,21 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-<span data-ttu-id="d37f7-109">In dit voorbeeld waarden aan vier eigenschappen van deze klasse worden toegewezen met behulp van de **eigenschap** eigenschap en hash-tabel.</span><span class="sxs-lookup"><span data-stu-id="d37f7-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
+<span data-ttu-id="8cbfc-109">In dit voor beeld worden waarden toegewezen aan vier eigenschappen van deze klasse met behulp van de **eigenschap** Property en de hashtabel.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
 
-1. <span data-ttu-id="d37f7-110">**StartPosition zijn**: Als u deze eigenschap niet toevoegt, wordt in Windows een locatie geselecteerd als het formulier wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="d37f7-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span>
-   <span data-ttu-id="d37f7-111">Als deze eigenschap instelt op **CenterScreen**, u bent automatisch weergeven van het formulier in het midden van het scherm telkens worden geladen.</span><span class="sxs-lookup"><span data-stu-id="d37f7-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+1. <span data-ttu-id="8cbfc-110">**Waarde gelijk**: als u deze eigenschap niet toevoegt, wordt door Windows een locatie geselecteerd wanneer het formulier wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span>
+   <span data-ttu-id="8cbfc-111">Als u deze eigenschap instelt op **CenterScreen**, wordt het formulier in het midden van het scherm telkens weer gegeven wanneer het wordt geladen.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
-2. <span data-ttu-id="d37f7-112">**Grootte**: Dit is de grootte van het formulier, in pixels.</span><span class="sxs-lookup"><span data-stu-id="d37f7-112">**Size**: This is the size of the form, in pixels.</span></span>
-   <span data-ttu-id="d37f7-113">Dit script maakt u een formulier 243 pixels breed 230 pixels hoog is.</span><span class="sxs-lookup"><span data-stu-id="d37f7-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
+2. <span data-ttu-id="8cbfc-112">**Grootte**: dit is de grootte van het formulier, in pixels.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-112">**Size**: This is the size of the form, in pixels.</span></span>
+   <span data-ttu-id="8cbfc-113">Met het voor gaande script maakt u een formulier dat 243 pixels breed is en 230 pixels hoog.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
 
-3. <span data-ttu-id="d37f7-114">**Tekst**: Hiermee wordt de titel van het venster.</span><span class="sxs-lookup"><span data-stu-id="d37f7-114">**Text**: This becomes the title of the window.</span></span>
+3. <span data-ttu-id="8cbfc-114">**Tekst**: dit wordt de titel van het venster.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-114">**Text**: This becomes the title of the window.</span></span>
 
-4. <span data-ttu-id="d37f7-115">**Bovenste**: Als deze eigenschap instelt op `$true`, u kunt afdwingen dat het venster te openen op een andere openstaande vensters en dialoogvensters.</span><span class="sxs-lookup"><span data-stu-id="d37f7-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
+4. <span data-ttu-id="8cbfc-115">**Bovenste**: door deze eigenschap in te stellen op `$true`, kunt u het venster dwingen hierop andere open vensters en dialoog vensters te openen.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
 
-<span data-ttu-id="d37f7-116">Vervolgens maken en voeg een kalenderbesturingselement in het formulier.</span><span class="sxs-lookup"><span data-stu-id="d37f7-116">Next, create and then add a calendar control in your form.</span></span>
-<span data-ttu-id="d37f7-117">In dit voorbeeld wordt de huidige dag niet gemarkeerd of omcirkeld.</span><span class="sxs-lookup"><span data-stu-id="d37f7-117">In this example, the current day is not highlighted or circled.</span></span>
-<span data-ttu-id="d37f7-118">Gebruikers kunnen slechts één dag in de kalender in één keer selecteren.</span><span class="sxs-lookup"><span data-stu-id="d37f7-118">Users can select only one day on the calendar at one time.</span></span>
+<span data-ttu-id="8cbfc-116">Vervolgens maakt en voegt u vervolgens een besturings element kalender toe aan het formulier.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-116">Next, create and then add a calendar control in your form.</span></span>
+<span data-ttu-id="8cbfc-117">In dit voor beeld wordt de huidige dag niet gemarkeerd of omcirkeld.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-117">In this example, the current day is not highlighted or circled.</span></span>
+<span data-ttu-id="8cbfc-118">Gebruikers kunnen per keer slechts één dag selecteren in de agenda.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-118">Users can select only one day on the calendar at one time.</span></span>
 
 ```powershell
 $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
@@ -96,11 +96,11 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-<span data-ttu-id="d37f7-119">Maak vervolgens een **OK** knop voor het formulier.</span><span class="sxs-lookup"><span data-stu-id="d37f7-119">Next, create an **OK** button for your form.</span></span>
-<span data-ttu-id="d37f7-120">Geef de grootte en het gedrag van de **OK** knop.</span><span class="sxs-lookup"><span data-stu-id="d37f7-120">Specify the size and behavior of the **OK** button.</span></span>
-<span data-ttu-id="d37f7-121">In dit voorbeeld is de positie van de knop 165 pixels vanaf de bovenkant van het formulier en 38 pixels vanaf de linkerkant.</span><span class="sxs-lookup"><span data-stu-id="d37f7-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span>
-<span data-ttu-id="d37f7-122">De hoogte van de knop is 23 pixels, terwijl de lengte van de knop 75 pixels is.</span><span class="sxs-lookup"><span data-stu-id="d37f7-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span>
-<span data-ttu-id="d37f7-123">Het script maakt gebruik van vooraf gedefinieerde Windows Forms-typen om te bepalen het gedrag van de knop.</span><span class="sxs-lookup"><span data-stu-id="d37f7-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="8cbfc-119">Maak vervolgens een knop **OK** voor uw formulier.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-119">Next, create an **OK** button for your form.</span></span>
+<span data-ttu-id="8cbfc-120">Geef de grootte en het gedrag op van de knop **OK** .</span><span class="sxs-lookup"><span data-stu-id="8cbfc-120">Specify the size and behavior of the **OK** button.</span></span>
+<span data-ttu-id="8cbfc-121">In dit voor beeld is de knop positie 165 pixels van de bovenrand van het formulier en 38 pixels vanaf de linkerrand.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span>
+<span data-ttu-id="8cbfc-122">De knop hoogte is 23 pixels en de knop lengte is 75 pixels.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span>
+<span data-ttu-id="8cbfc-123">Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
 $OKButton = New-Object Windows.Forms.Button -Property @{
@@ -113,8 +113,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-<span data-ttu-id="d37f7-124">Op deze manier maakt u een **annuleren** knop.</span><span class="sxs-lookup"><span data-stu-id="d37f7-124">Similarly, you create a **Cancel** button.</span></span>
-<span data-ttu-id="d37f7-125">De **annuleren** knop is 165 pixels vanaf de bovenkant, maar 113 pixels vanaf de linkerrand van het venster.</span><span class="sxs-lookup"><span data-stu-id="d37f7-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="8cbfc-124">Op dezelfde manier maakt u een knop **Annuleren** .</span><span class="sxs-lookup"><span data-stu-id="8cbfc-124">Similarly, you create a **Cancel** button.</span></span>
+<span data-ttu-id="8cbfc-125">De knop **Annuleren** is 165 pixels vanaf de bovenkant, maar 113 pixels vanaf de linkerrand van het venster.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -127,14 +127,14 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-<span data-ttu-id="d37f7-126">Voeg de volgende regel code om weer te geven van het formulier in Windows.</span><span class="sxs-lookup"><span data-stu-id="d37f7-126">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="8cbfc-126">Voeg de volgende regel code toe om het formulier in Windows weer te geven.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-126">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="d37f7-127">Ten slotte de code binnen de `if` blok geeft Windows wat te doen met het formulier wanneer gebruikers een dag in de kalender selecteren en klik vervolgens op de **OK** of drukt u op de **Enter** sleutel.</span><span class="sxs-lookup"><span data-stu-id="d37f7-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span>
-<span data-ttu-id="d37f7-128">Windows PowerShell wordt de geselecteerde datum weergegeven voor gebruikers.</span><span class="sxs-lookup"><span data-stu-id="d37f7-128">Windows PowerShell displays the selected date to users.</span></span>
+<span data-ttu-id="8cbfc-127">Ten slotte geeft de code binnen het `if`-blok aan dat Windows wat er moet gebeuren met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op **Enter** .</span><span class="sxs-lookup"><span data-stu-id="8cbfc-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span>
+<span data-ttu-id="8cbfc-128">De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="8cbfc-128">Windows PowerShell displays the selected date to users.</span></span>
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -143,8 +143,8 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d37f7-129">Zie ook</span><span class="sxs-lookup"><span data-stu-id="d37f7-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8cbfc-129">Zie ook</span><span class="sxs-lookup"><span data-stu-id="8cbfc-129">See Also</span></span>
 
-- [<span data-ttu-id="d37f7-130">Hey Scripting Guy:  Waarom werken de voorbeelden van deze PowerShell-GUI niet?</span><span class="sxs-lookup"><span data-stu-id="d37f7-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="d37f7-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="d37f7-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="d37f7-132">Windows PowerShell Tip of the Week:  Een grafische datumkiezer maken</span><span class="sxs-lookup"><span data-stu-id="d37f7-132">Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker</span></span>](https://technet.microsoft.com/library/ff730942.aspx)
+- [<span data-ttu-id="8cbfc-130">Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?</span><span class="sxs-lookup"><span data-stu-id="8cbfc-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [<span data-ttu-id="8cbfc-131">GitHub: de WinFormsExampleUpdates van Dave Wyatt</span><span class="sxs-lookup"><span data-stu-id="8cbfc-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [<span data-ttu-id="8cbfc-132">Windows Power shell-Tip van de week: een grafische datum kiezer maken</span><span class="sxs-lookup"><span data-stu-id="8cbfc-132">Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker</span></span>](https://technet.microsoft.com/library/ff730942.aspx)

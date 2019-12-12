@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
 ms.openlocfilehash: f213605dda0132051d983f8608515325e815c455
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353289"
 ---
-# <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a><span data-ttu-id="ee7de-102">Invoertypen toevoegen aan een Help-onderwerp voor cmdlets</span><span class="sxs-lookup"><span data-stu-id="ee7de-102">How to Add Input Types to a Cmdlet Help Topic</span></span>
+# <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a><span data-ttu-id="7389b-102">Invoertypen toevoegen aan een Help-onderwerp voor cmdlets</span><span class="sxs-lookup"><span data-stu-id="7389b-102">How to Add Input Types to a Cmdlet Help Topic</span></span>
 
-<span data-ttu-id="ee7de-103">In deze sectie wordt beschreven hoe u een invoer sectie toevoegt aan een Help-onderwerp voor Windows Power shell®-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ee7de-103">This section describes how to add an INPUTS section to a Windows PowerShell® cmdlet Help topic.</span></span> <span data-ttu-id="ee7de-104">De sectie invoer geeft een lijst van de .NET-klassen van objecten die de cmdlet accepteert als invoer van de pijp lijn, hetzij op waarde hetzij op basis van eigenschaps naam.</span><span class="sxs-lookup"><span data-stu-id="ee7de-104">The INPUTS section lists the .NET classes of objects that the cmdlet accepts as input from the pipeline, either by value or by property name.</span></span>
+<span data-ttu-id="7389b-103">In deze sectie wordt beschreven hoe u een invoer sectie toevoegt aan een Help-onderwerp voor Windows Power shell®-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7389b-103">This section describes how to add an INPUTS section to a Windows PowerShell® cmdlet Help topic.</span></span> <span data-ttu-id="7389b-104">De sectie invoer geeft een lijst van de .NET-klassen van objecten die de cmdlet accepteert als invoer van de pijp lijn, hetzij op waarde hetzij op basis van eigenschaps naam.</span><span class="sxs-lookup"><span data-stu-id="7389b-104">The INPUTS section lists the .NET classes of objects that the cmdlet accepts as input from the pipeline, either by value or by property name.</span></span>
 
-<span data-ttu-id="ee7de-105">Er is geen limiet voor het aantal klassen dat u kunt toevoegen aan een invoer sectie.</span><span class="sxs-lookup"><span data-stu-id="ee7de-105">There is no limit to the number of classes that you can add to an INPUTS section.</span></span> <span data-ttu-id="ee7de-106">De invoer typen bevinden zich in een \<command: inputTypes > knoop punt, waarbij elke klasse wordt Inge sloten in een \<command: input type >-element.</span><span class="sxs-lookup"><span data-stu-id="ee7de-106">The input types are enclosed in a \<command:inputTypes> node, with each class enclosed in a  \<command:inputType> element.</span></span>
+<span data-ttu-id="7389b-105">Er is geen limiet voor het aantal klassen dat u kunt toevoegen aan een invoer sectie.</span><span class="sxs-lookup"><span data-stu-id="7389b-105">There is no limit to the number of classes that you can add to an INPUTS section.</span></span> <span data-ttu-id="7389b-106">De invoer typen bevinden zich in een \<opdracht: inputTypes > knoop punt, waarbij elke klasse wordt Inge sloten in een \<opdracht: input type > element.</span><span class="sxs-lookup"><span data-stu-id="7389b-106">The input types are enclosed in a \<command:inputTypes> node, with each class enclosed in a  \<command:inputType> element.</span></span>
 
-<span data-ttu-id="ee7de-107">Het schema bevat twee \<maml: Description >-elementen in elk element \<command: input type >.</span><span class="sxs-lookup"><span data-stu-id="ee7de-107">The schema includes two \<maml:description> elements in each \<command:inputType> element.</span></span> <span data-ttu-id="ee7de-108">De `Get-Help`-cmdlet geeft echter alleen de inhoud weer van het element \<command: input type >/\<maml: Description >).</span><span class="sxs-lookup"><span data-stu-id="ee7de-108">However, the `Get-Help` cmdlet displays only the content of the \<command:inputType>/\<maml:description>) element.</span></span>
+<span data-ttu-id="7389b-107">Het schema bevat twee \<maml: Beschrijving > elementen in elke \<opdracht: input type > element.</span><span class="sxs-lookup"><span data-stu-id="7389b-107">The schema includes two \<maml:description> elements in each \<command:inputType> element.</span></span> <span data-ttu-id="7389b-108">Met de cmdlet `Get-Help` wordt echter alleen de inhoud van de \<opdracht weer gegeven: input type >/\<maml: Description >-element.</span><span class="sxs-lookup"><span data-stu-id="7389b-108">However, the `Get-Help` cmdlet displays only the content of the \<command:inputType>/\<maml:description>) element.</span></span>
 
-<span data-ttu-id="ee7de-109">Vanaf Windows Power Shell 3,0 geeft de cmdlet `Get-Help` de inhoud van het \<maml: URI >-element weer.</span><span class="sxs-lookup"><span data-stu-id="ee7de-109">Beginning in Windows PowerShell 3.0, the `Get-Help` cmdlet displays the content of the \<maml:uri> element.</span></span> <span data-ttu-id="ee7de-110">Met dit element kunt u gebruikers omleiden naar onderwerpen waarin de .NET-klasse wordt beschreven.</span><span class="sxs-lookup"><span data-stu-id="ee7de-110">This element lets you direct users to topics that describe the .NET class.</span></span>
+<span data-ttu-id="7389b-109">Vanaf Windows Power Shell 3,0 wordt met de cmdlet `Get-Help` de inhoud van het element \<maml: URI > weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="7389b-109">Beginning in Windows PowerShell 3.0, the `Get-Help` cmdlet displays the content of the \<maml:uri> element.</span></span> <span data-ttu-id="7389b-110">Met dit element kunt u gebruikers omleiden naar onderwerpen waarin de .NET-klasse wordt beschreven.</span><span class="sxs-lookup"><span data-stu-id="7389b-110">This element lets you direct users to topics that describe the .NET class.</span></span>
 
-<span data-ttu-id="ee7de-111">Het volgende XML-bestand bevat het \<maml: inputTypes >-knoop punt.</span><span class="sxs-lookup"><span data-stu-id="ee7de-111">The following XML shows the \<maml:inputTypes> node.</span></span>
+<span data-ttu-id="7389b-111">Het volgende XML-bestand bevat het \<maml: inputTypes >-knoop punt.</span><span class="sxs-lookup"><span data-stu-id="7389b-111">The following XML shows the \<maml:inputTypes> node.</span></span>
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ ms.locfileid: "72353289"
 </command:inputTypes>
 ```
 
-<span data-ttu-id="ee7de-112">In het volgende XML-bestand ziet u een voor beeld van het gebruik van het knoop punt \<maml: inputTypes > om een invoer type te documenteren.</span><span class="sxs-lookup"><span data-stu-id="ee7de-112">The following XML shows an example of using the \<maml:inputTypes> node to document an input type.</span></span>
+<span data-ttu-id="7389b-112">In het volgende XML-bestand ziet u een voor beeld van het gebruik van het knoop punt \<maml: inputTypes > om een invoer type te documenteren.</span><span class="sxs-lookup"><span data-stu-id="7389b-112">The following XML shows an example of using the \<maml:inputTypes> node to document an input type.</span></span>
 
 ```xml
 <command:inputTypes>

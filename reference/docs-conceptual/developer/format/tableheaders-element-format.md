@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72353695"
 ---
-# <a name="tableheaders-element-format"></a><span data-ttu-id="e8a10-102">Het element TableHeaders (opmaak)</span><span class="sxs-lookup"><span data-stu-id="e8a10-102">TableHeaders Element (Format)</span></span>
+# <a name="tableheaders-element-format"></a><span data-ttu-id="c304b-102">Het element TableHeaders (opmaak)</span><span class="sxs-lookup"><span data-stu-id="c304b-102">TableHeaders Element (Format)</span></span>
 
-<span data-ttu-id="e8a10-103">Hiermee worden de kopteksten van de kolommen van een tabel gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="e8a10-103">Defines the headers for the columns of a table.</span></span>
+<span data-ttu-id="c304b-103">Hiermee worden de kopteksten van de kolommen van een tabel gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="c304b-103">Defines the headers for the columns of a table.</span></span>
 
-<span data-ttu-id="e8a10-104">ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableHeaders element voor TableControl (indeling)</span><span class="sxs-lookup"><span data-stu-id="e8a10-104">ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format)</span></span>
+<span data-ttu-id="c304b-104">ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableHeaders element voor TableControl (indeling)</span><span class="sxs-lookup"><span data-stu-id="c304b-104">ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="e8a10-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="e8a10-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="c304b-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="c304b-105">Syntax</span></span>
 
 ```xml
 <TableHeaders>
@@ -30,33 +30,33 @@ ms.locfileid: "72353695"
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="e8a10-106">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="e8a10-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="c304b-106">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="c304b-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="e8a10-107">In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het element `TableHeaders` beschreven.</span><span class="sxs-lookup"><span data-stu-id="e8a10-107">The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element.</span></span> <span data-ttu-id="e8a10-108">Er moet een onderliggend element zijn voor elke eigenschap van het object dat moet worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="e8a10-108">There must be a child element for each property of the object that is to be displayed.</span></span> <span data-ttu-id="e8a10-109">De informatie in de kolomkop wordt weer gegeven in de volg orde waarin de onderliggende elementen zijn opgegeven.</span><span class="sxs-lookup"><span data-stu-id="e8a10-109">The column header information is displayed in the order that the child elements are specified.</span></span>
+<span data-ttu-id="c304b-107">In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het element `TableHeaders` beschreven.</span><span class="sxs-lookup"><span data-stu-id="c304b-107">The following sections describe the attributes, child elements, and parent elements of the `TableHeaders` element.</span></span> <span data-ttu-id="c304b-108">Er moet een onderliggend element zijn voor elke eigenschap van het object dat moet worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="c304b-108">There must be a child element for each property of the object that is to be displayed.</span></span> <span data-ttu-id="c304b-109">De informatie in de kolomkop wordt weer gegeven in de volg orde waarin de onderliggende elementen zijn opgegeven.</span><span class="sxs-lookup"><span data-stu-id="c304b-109">The column header information is displayed in the order that the child elements are specified.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="e8a10-110">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="e8a10-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="c304b-110">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="c304b-110">Attributes</span></span>
 
-<span data-ttu-id="e8a10-111">Geen.</span><span class="sxs-lookup"><span data-stu-id="e8a10-111">None.</span></span>
+<span data-ttu-id="c304b-111">Geen.</span><span class="sxs-lookup"><span data-stu-id="c304b-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="e8a10-112">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="e8a10-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="c304b-112">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="c304b-112">Child Elements</span></span>
 
-|<span data-ttu-id="e8a10-113">Element</span><span class="sxs-lookup"><span data-stu-id="e8a10-113">Element</span></span>|<span data-ttu-id="e8a10-114">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="e8a10-114">Description</span></span>|
+|<span data-ttu-id="c304b-113">Element</span><span class="sxs-lookup"><span data-stu-id="c304b-113">Element</span></span>|<span data-ttu-id="c304b-114">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="c304b-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="e8a10-115">TableColumnHeader-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="e8a10-115">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)|<span data-ttu-id="e8a10-116">Optioneel element.</span><span class="sxs-lookup"><span data-stu-id="e8a10-116">Optional element.</span></span><br /><br /> <span data-ttu-id="e8a10-117">Hiermee definieert u het label, de breedte en de uitlijning van de gegevens voor een kolom van een tabel weergave.</span><span class="sxs-lookup"><span data-stu-id="e8a10-117">Defines the label, the width, and the alignment of the data for a column of a table view.</span></span>|
+|[<span data-ttu-id="c304b-115">TableColumnHeader-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="c304b-115">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)|<span data-ttu-id="c304b-116">Optioneel element.</span><span class="sxs-lookup"><span data-stu-id="c304b-116">Optional element.</span></span><br /><br /> <span data-ttu-id="c304b-117">Hiermee definieert u het label, de breedte en de uitlijning van de gegevens voor een kolom van een tabel weergave.</span><span class="sxs-lookup"><span data-stu-id="c304b-117">Defines the label, the width, and the alignment of the data for a column of a table view.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="e8a10-118">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="e8a10-118">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="c304b-118">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="c304b-118">Parent Elements</span></span>
 
-|<span data-ttu-id="e8a10-119">Element</span><span class="sxs-lookup"><span data-stu-id="e8a10-119">Element</span></span>|<span data-ttu-id="e8a10-120">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="e8a10-120">Description</span></span>|
+|<span data-ttu-id="c304b-119">Element</span><span class="sxs-lookup"><span data-stu-id="c304b-119">Element</span></span>|<span data-ttu-id="c304b-120">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="c304b-120">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="e8a10-121">TableControl-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="e8a10-121">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)|<span data-ttu-id="e8a10-122">Definieert een tabel indeling voor een weer gave.</span><span class="sxs-lookup"><span data-stu-id="e8a10-122">Defines a table format for a view.</span></span>|
+|[<span data-ttu-id="c304b-121">TableControl-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="c304b-121">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)|<span data-ttu-id="c304b-122">Definieert een tabel indeling voor een weer gave.</span><span class="sxs-lookup"><span data-stu-id="c304b-122">Defines a table format for a view.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="e8a10-123">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="e8a10-123">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="c304b-123">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="c304b-123">Remarks</span></span>
 
-<span data-ttu-id="e8a10-124">Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.</span><span class="sxs-lookup"><span data-stu-id="e8a10-124">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="c304b-124">Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.</span><span class="sxs-lookup"><span data-stu-id="c304b-124">For more information about the components of a table view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="e8a10-125">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="e8a10-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c304b-125">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="c304b-125">Example</span></span>
 
-<span data-ttu-id="e8a10-126">In dit voor beeld wordt een element `TableHeaders` weer gegeven dat twee kolom koppen definieert.</span><span class="sxs-lookup"><span data-stu-id="e8a10-126">This example shows a `TableHeaders` element that defines two column headers.</span></span>
+<span data-ttu-id="c304b-126">In dit voor beeld ziet u een `TableHeaders`-element waarmee twee kolom koppen worden gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="c304b-126">This example shows a `TableHeaders` element that defines two column headers.</span></span>
 
 ```xml
 <TableHeaders>
@@ -73,12 +73,12 @@ ms.locfileid: "72353695"
 </TableHeaders>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e8a10-127">Zie ook</span><span class="sxs-lookup"><span data-stu-id="e8a10-127">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c304b-127">Zie ook</span><span class="sxs-lookup"><span data-stu-id="c304b-127">See Also</span></span>
 
-[<span data-ttu-id="e8a10-128">Een tabel weergave maken</span><span class="sxs-lookup"><span data-stu-id="e8a10-128">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="c304b-128">Een tabel weergave maken</span><span class="sxs-lookup"><span data-stu-id="c304b-128">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="e8a10-129">TableColumnHeader-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="e8a10-129">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)
+[<span data-ttu-id="c304b-129">TableColumnHeader-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="c304b-129">TableColumnHeader Element (Format)</span></span>](./tablecolumnheader-element-format.md)
 
-[<span data-ttu-id="e8a10-130">TableControl-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="e8a10-130">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)
+[<span data-ttu-id="c304b-130">TableControl-element (indeling)</span><span class="sxs-lookup"><span data-stu-id="c304b-130">TableControl Element (Format)</span></span>](./tablecontrol-element-format.md)
 
-[<span data-ttu-id="e8a10-131">Een Power shell-indelings bestand schrijven</span><span class="sxs-lookup"><span data-stu-id="e8a10-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="c304b-131">Een Power shell-indelings bestand schrijven</span><span class="sxs-lookup"><span data-stu-id="c304b-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

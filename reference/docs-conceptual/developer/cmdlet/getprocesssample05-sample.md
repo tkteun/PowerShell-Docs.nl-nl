@@ -9,71 +9,71 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72356411"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="41281-102">Voorbeeld GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="41281-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="daf50-102">Voorbeeld GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="daf50-102">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="41281-103">In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="41281-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="daf50-103">In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="daf50-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="41281-104">Het voor beeld maken met Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="41281-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="daf50-104">Het voor beeld maken met Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="daf50-104">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="41281-105">Open Windows Verkenner en navigeer naar de map GetProcessSample05 in de map Samples.</span><span class="sxs-lookup"><span data-stu-id="41281-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="daf50-105">Open Windows Verkenner en navigeer naar de map GetProcessSample05 in de map Samples.</span><span class="sxs-lookup"><span data-stu-id="daf50-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="41281-106">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="41281-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="41281-107">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="41281-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="daf50-106">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="daf50-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="daf50-107">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="daf50-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="41281-108">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="41281-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="41281-109">Hiermee opent u het voorbeeld project in Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="41281-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="daf50-108">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="daf50-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="daf50-109">Hiermee opent u het voorbeeld project in Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="daf50-109">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="41281-110">Selecteer in het menu **Build** de optie **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="41281-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="daf50-110">Selecteer in het menu **Build** de optie **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="daf50-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="41281-111">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin en \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="41281-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="daf50-111">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin en \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="daf50-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="41281-112">Het voor beeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="41281-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="daf50-112">Het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="daf50-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="41281-113">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="41281-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="daf50-113">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="daf50-113">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="41281-114">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="41281-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="daf50-114">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="daf50-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="41281-115">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="41281-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="daf50-115">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="daf50-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="41281-116">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="41281-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="daf50-116">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="daf50-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="41281-117">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="41281-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="daf50-117">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="daf50-117">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="41281-118">Vereisten</span><span class="sxs-lookup"><span data-stu-id="41281-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="daf50-118">Vereisten</span><span class="sxs-lookup"><span data-stu-id="daf50-118">Requirements</span></span>
 
-<span data-ttu-id="41281-119">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="41281-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="daf50-119">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="daf50-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="41281-120">Laat zien</span><span class="sxs-lookup"><span data-stu-id="41281-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="daf50-120">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="daf50-120">Demonstrates</span></span>
 
-<span data-ttu-id="41281-121">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="41281-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="daf50-121">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="daf50-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="41281-122">Het declareren van een cmdlet-klasse met het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="41281-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="daf50-122">Het declareren van een cmdlet-klasse met het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="daf50-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="41281-123">Declareer een cmdlet-para meter met het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="41281-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="daf50-123">Declareer een cmdlet-para meter met het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="daf50-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="41281-124">Posities opgeven voor para meters.</span><span class="sxs-lookup"><span data-stu-id="41281-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="daf50-124">Posities opgeven voor para meters.</span><span class="sxs-lookup"><span data-stu-id="daf50-124">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="41281-125">Opgeven dat para meters invoer van de pijp lijn kan overnemen.</span><span class="sxs-lookup"><span data-stu-id="41281-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="41281-126">De invoer kan worden gemaakt op basis van een object of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de naam van de para meter.</span><span class="sxs-lookup"><span data-stu-id="41281-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="daf50-125">Opgeven dat para meters invoer van de pijp lijn kan overnemen.</span><span class="sxs-lookup"><span data-stu-id="daf50-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="daf50-126">De invoer kan worden gemaakt op basis van een object of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de naam van de para meter.</span><span class="sxs-lookup"><span data-stu-id="daf50-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="41281-127">Het declareren van een validatie kenmerk voor de parameter invoer.</span><span class="sxs-lookup"><span data-stu-id="41281-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="daf50-127">Het declareren van een validatie kenmerk voor de parameter invoer.</span><span class="sxs-lookup"><span data-stu-id="daf50-127">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="41281-128">Het afhandelen van fouten en uitzonde ringen.</span><span class="sxs-lookup"><span data-stu-id="41281-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="daf50-128">Het afhandelen van fouten en uitzonde ringen.</span><span class="sxs-lookup"><span data-stu-id="daf50-128">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="41281-129">Fout bij het schrijven van berichten.</span><span class="sxs-lookup"><span data-stu-id="41281-129">Writing debug messages.</span></span>
+- <span data-ttu-id="daf50-129">Fout bij het schrijven van berichten.</span><span class="sxs-lookup"><span data-stu-id="daf50-129">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="41281-130">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="41281-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="daf50-130">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="daf50-130">Example</span></span>
 
-<span data-ttu-id="41281-131">In dit voor beeld ziet u hoe u een cmdlet maakt waarmee een lijst met opgegeven processen wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="41281-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="daf50-131">In dit voor beeld ziet u hoe u een cmdlet maakt waarmee een lijst met opgegeven processen wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="daf50-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -479,6 +479,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="41281-132">Zie ook</span><span class="sxs-lookup"><span data-stu-id="41281-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="daf50-132">Zie ook</span><span class="sxs-lookup"><span data-stu-id="daf50-132">See Also</span></span>
 
-[<span data-ttu-id="41281-133">Een Windows Power shell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="41281-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="daf50-133">Een Windows Power shell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="daf50-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

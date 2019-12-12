@@ -3,104 +3,104 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een continue integratie en een pijp lijn voor continue implementatie bouwen met DSC
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71942144"
 ---
-# <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a><span data-ttu-id="d39c2-103">Een continue integratie en een pijp lijn voor continue implementatie bouwen met DSC</span><span class="sxs-lookup"><span data-stu-id="d39c2-103">Building a Continuous Integration and Continuous Deployment pipeline with DSC</span></span>
+# <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a><span data-ttu-id="18129-103">Een continue integratie en een pijp lijn voor continue implementatie bouwen met DSC</span><span class="sxs-lookup"><span data-stu-id="18129-103">Building a Continuous Integration and Continuous Deployment pipeline with DSC</span></span>
 
-<span data-ttu-id="d39c2-104">Dit voor beeld laat zien hoe u met behulp van Power shell, DSC, pester en Visual Studio Team Foundation Server (TFS) een continue integratie/CD-pijp lijn kunt maken.</span><span class="sxs-lookup"><span data-stu-id="d39c2-104">This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell, DSC, Pester, and Visual Studio Team Foundation Server (TFS).</span></span>
+<span data-ttu-id="18129-104">Dit voor beeld laat zien hoe u met behulp van Power shell, DSC, pester en Visual Studio Team Foundation Server (TFS) een continue integratie/CD-pijp lijn kunt maken.</span><span class="sxs-lookup"><span data-stu-id="18129-104">This example demonstrates how to build a Continuous Integration/Continuous Deployment (CI/CD) pipeline by using PowerShell, DSC, Pester, and Visual Studio Team Foundation Server (TFS).</span></span>
 
-<span data-ttu-id="d39c2-105">Nadat de pijp lijn is gebouwd en geconfigureerd, kunt u deze gebruiken om een DNS-server en bijbehorende host-records volledig te implementeren, te configureren en te testen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-105">After the pipeline is built and configured, you can use it to fully deploy, configure and test a DNS server and associated host records.</span></span>
-<span data-ttu-id="d39c2-106">Dit proces simuleert het eerste deel van een pijp lijn dat in een ontwikkel omgeving zou worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-106">This process simulates the first part of a pipeline that would be used in a development environment.</span></span>
+<span data-ttu-id="18129-105">Nadat de pijp lijn is gebouwd en geconfigureerd, kunt u deze gebruiken om een DNS-server en bijbehorende host-records volledig te implementeren, te configureren en te testen.</span><span class="sxs-lookup"><span data-stu-id="18129-105">After the pipeline is built and configured, you can use it to fully deploy, configure and test a DNS server and associated host records.</span></span>
+<span data-ttu-id="18129-106">Dit proces simuleert het eerste deel van een pijp lijn dat in een ontwikkel omgeving zou worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="18129-106">This process simulates the first part of a pipeline that would be used in a development environment.</span></span>
 
-<span data-ttu-id="d39c2-107">Een geautomatiseerde CI/CD-pijp lijn helpt u software sneller en betrouwbaarder bij te werken, zodat alle code wordt getest en dat de huidige versie van uw code altijd beschikbaar is.</span><span class="sxs-lookup"><span data-stu-id="d39c2-107">An automated CI/CD pipeline helps you update software faster and more reliably, ensuring that all code is tested, and that a current build of your code is available at all times.</span></span>
+<span data-ttu-id="18129-107">Een geautomatiseerde CI/CD-pijp lijn helpt u software sneller en betrouwbaarder bij te werken, zodat alle code wordt getest en dat de huidige versie van uw code altijd beschikbaar is.</span><span class="sxs-lookup"><span data-stu-id="18129-107">An automated CI/CD pipeline helps you update software faster and more reliably, ensuring that all code is tested, and that a current build of your code is available at all times.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="d39c2-108">Vereisten</span><span class="sxs-lookup"><span data-stu-id="d39c2-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="18129-108">Vereisten</span><span class="sxs-lookup"><span data-stu-id="18129-108">Prerequisites</span></span>
 
-<span data-ttu-id="d39c2-109">Als u dit voor beeld wilt gebruiken, moet u vertrouwd zijn met het volgende:</span><span class="sxs-lookup"><span data-stu-id="d39c2-109">To use this example, you should be familiar with the following:</span></span>
+<span data-ttu-id="18129-109">Als u dit voor beeld wilt gebruiken, moet u vertrouwd zijn met het volgende:</span><span class="sxs-lookup"><span data-stu-id="18129-109">To use this example, you should be familiar with the following:</span></span>
 
-- <span data-ttu-id="d39c2-110">CI-CD-concepten.</span><span class="sxs-lookup"><span data-stu-id="d39c2-110">CI-CD concepts.</span></span> <span data-ttu-id="d39c2-111">Een goede verwijzing vindt u in [het model van de release pijplijn](https://aka.ms/thereleasepipelinemodelpdf).</span><span class="sxs-lookup"><span data-stu-id="d39c2-111">A good reference can be found at [The Release Pipeline Model](https://aka.ms/thereleasepipelinemodelpdf).</span></span>
-- <span data-ttu-id="d39c2-112">[Git](https://git-scm.com/) -bron beheer</span><span class="sxs-lookup"><span data-stu-id="d39c2-112">[Git](https://git-scm.com/) source control</span></span>
-- <span data-ttu-id="d39c2-113">Het [ziekte](https://github.com/pester/Pester) test-framework</span><span class="sxs-lookup"><span data-stu-id="d39c2-113">The [Pester](https://github.com/pester/Pester) testing framework</span></span>
-- [<span data-ttu-id="d39c2-114">Team Foundation Server</span><span class="sxs-lookup"><span data-stu-id="d39c2-114">Team Foundation Server</span></span>](https://visualstudio.microsoft.com/tfs/)
+- <span data-ttu-id="18129-110">CI-CD-concepten.</span><span class="sxs-lookup"><span data-stu-id="18129-110">CI-CD concepts.</span></span> <span data-ttu-id="18129-111">Een goede verwijzing vindt u in [het model van de release pijplijn](https://aka.ms/thereleasepipelinemodelpdf).</span><span class="sxs-lookup"><span data-stu-id="18129-111">A good reference can be found at [The Release Pipeline Model](https://aka.ms/thereleasepipelinemodelpdf).</span></span>
+- <span data-ttu-id="18129-112">[Git](https://git-scm.com/) -bron beheer</span><span class="sxs-lookup"><span data-stu-id="18129-112">[Git](https://git-scm.com/) source control</span></span>
+- <span data-ttu-id="18129-113">Het [ziekte](https://github.com/pester/Pester) test-framework</span><span class="sxs-lookup"><span data-stu-id="18129-113">The [Pester](https://github.com/pester/Pester) testing framework</span></span>
+- [<span data-ttu-id="18129-114">Team Foundation Server</span><span class="sxs-lookup"><span data-stu-id="18129-114">Team Foundation Server</span></span>](https://visualstudio.microsoft.com/tfs/)
 
-## <a name="what-you-will-need"></a><span data-ttu-id="d39c2-115">Wat u nodig hebt</span><span class="sxs-lookup"><span data-stu-id="d39c2-115">What you will need</span></span>
+## <a name="what-you-will-need"></a><span data-ttu-id="18129-115">Wat u nodig hebt</span><span class="sxs-lookup"><span data-stu-id="18129-115">What you will need</span></span>
 
-<span data-ttu-id="d39c2-116">Als u dit voor beeld wilt bouwen en uitvoeren, hebt u een omgeving met meerdere computers en/of virtuele machines nodig.</span><span class="sxs-lookup"><span data-stu-id="d39c2-116">To build and run this example, you will need an environment with several computers and/or virtual machines.</span></span>
+<span data-ttu-id="18129-116">Als u dit voor beeld wilt bouwen en uitvoeren, hebt u een omgeving met meerdere computers en/of virtuele machines nodig.</span><span class="sxs-lookup"><span data-stu-id="18129-116">To build and run this example, you will need an environment with several computers and/or virtual machines.</span></span>
 
-### <a name="client"></a><span data-ttu-id="d39c2-117">Client</span><span class="sxs-lookup"><span data-stu-id="d39c2-117">Client</span></span>
+### <a name="client"></a><span data-ttu-id="18129-117">Client</span><span class="sxs-lookup"><span data-stu-id="18129-117">Client</span></span>
 
-<span data-ttu-id="d39c2-118">Dit is de computer waarop u alle werk instellingen gaat uitvoeren en het voor beeld uitvoert.</span><span class="sxs-lookup"><span data-stu-id="d39c2-118">This is the computer where you'll do all of the work setting up and running the example.</span></span>
+<span data-ttu-id="18129-118">Dit is de computer waarop u alle werk instellingen gaat uitvoeren en het voor beeld uitvoert.</span><span class="sxs-lookup"><span data-stu-id="18129-118">This is the computer where you'll do all of the work setting up and running the example.</span></span>
 
-<span data-ttu-id="d39c2-119">De client computer moet een Windows-computer zijn waarop het volgende is geïnstalleerd:</span><span class="sxs-lookup"><span data-stu-id="d39c2-119">The client computer must be a Windows computer with the following installed:</span></span>
+<span data-ttu-id="18129-119">De client computer moet een Windows-computer zijn waarop het volgende is geïnstalleerd:</span><span class="sxs-lookup"><span data-stu-id="18129-119">The client computer must be a Windows computer with the following installed:</span></span>
 
-- [<span data-ttu-id="d39c2-120">Git</span><span class="sxs-lookup"><span data-stu-id="d39c2-120">Git</span></span>](https://git-scm.com/)
-- <span data-ttu-id="d39c2-121">een lokale Git-opslag plaats die is gekloond van https://github.com/PowerShell/Demo_CI</span><span class="sxs-lookup"><span data-stu-id="d39c2-121">a local git repo cloned from https://github.com/PowerShell/Demo_CI</span></span>
-- <span data-ttu-id="d39c2-122">een tekst editor, zoals [Visual Studio code](https://code.visualstudio.com/)</span><span class="sxs-lookup"><span data-stu-id="d39c2-122">a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)</span></span>
+- [<span data-ttu-id="18129-120">Git</span><span class="sxs-lookup"><span data-stu-id="18129-120">Git</span></span>](https://git-scm.com/)
+- <span data-ttu-id="18129-121">een lokale Git-opslag plaats die is gekloond van https://github.com/PowerShell/Demo_CI</span><span class="sxs-lookup"><span data-stu-id="18129-121">a local git repo cloned from https://github.com/PowerShell/Demo_CI</span></span>
+- <span data-ttu-id="18129-122">een tekst editor, zoals [Visual Studio code](https://code.visualstudio.com/)</span><span class="sxs-lookup"><span data-stu-id="18129-122">a text editor, such as [Visual Studio Code](https://code.visualstudio.com/)</span></span>
 
-### <a name="tfssrv1"></a><span data-ttu-id="d39c2-123">TFSSrv1</span><span class="sxs-lookup"><span data-stu-id="d39c2-123">TFSSrv1</span></span>
+### <a name="tfssrv1"></a><span data-ttu-id="18129-123">TFSSrv1</span><span class="sxs-lookup"><span data-stu-id="18129-123">TFSSrv1</span></span>
 
-<span data-ttu-id="d39c2-124">De computer die als host fungeert voor de TFS-server waarop u uw build en release wilt definiëren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-124">The computer that hosts the TFS server where you will define your build and release.</span></span>
-<span data-ttu-id="d39c2-125">Op deze computer moet [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) zijn geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-125">This computer must have [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) installed.</span></span>
+<span data-ttu-id="18129-124">De computer die als host fungeert voor de TFS-server waarop u uw build en release wilt definiëren.</span><span class="sxs-lookup"><span data-stu-id="18129-124">The computer that hosts the TFS server where you will define your build and release.</span></span>
+<span data-ttu-id="18129-125">Op deze computer moet [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) zijn geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="18129-125">This computer must have [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) installed.</span></span>
 
-### <a name="buildagent"></a><span data-ttu-id="d39c2-126">BuildAgent</span><span class="sxs-lookup"><span data-stu-id="d39c2-126">BuildAgent</span></span>
+### <a name="buildagent"></a><span data-ttu-id="18129-126">BuildAgent</span><span class="sxs-lookup"><span data-stu-id="18129-126">BuildAgent</span></span>
 
-<span data-ttu-id="d39c2-127">De computer waarop de Windows Build-agent wordt uitgevoerd, die het project bouwt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-127">The computer that runs the Windows build agent that builds the project.</span></span>
-<span data-ttu-id="d39c2-128">Op deze computer moet een Windows-Build-agent zijn geïnstalleerd en worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-128">This computer must have a Windows build agent installed and running.</span></span>
-<span data-ttu-id="d39c2-129">Zie [een agent implementeren in Windows](/azure/devops/pipelines/agents/v2-windows) voor instructies over het installeren en uitvoeren van een Windows Build-agent.</span><span class="sxs-lookup"><span data-stu-id="d39c2-129">See [Deploy an agent on Windows](/azure/devops/pipelines/agents/v2-windows) for instructions on how to install and run a Windows build agent.</span></span>
+<span data-ttu-id="18129-127">De computer waarop de Windows Build-agent wordt uitgevoerd, die het project bouwt.</span><span class="sxs-lookup"><span data-stu-id="18129-127">The computer that runs the Windows build agent that builds the project.</span></span>
+<span data-ttu-id="18129-128">Op deze computer moet een Windows-Build-agent zijn geïnstalleerd en worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-128">This computer must have a Windows build agent installed and running.</span></span>
+<span data-ttu-id="18129-129">Zie [een agent implementeren in Windows](/azure/devops/pipelines/agents/v2-windows) voor instructies over het installeren en uitvoeren van een Windows Build-agent.</span><span class="sxs-lookup"><span data-stu-id="18129-129">See [Deploy an agent on Windows](/azure/devops/pipelines/agents/v2-windows) for instructions on how to install and run a Windows build agent.</span></span>
 
-<span data-ttu-id="d39c2-130">U moet ook de `xDnsServer`-en `xNetworking` DSC-modules op deze computer installeren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-130">You also need to install both the `xDnsServer` and `xNetworking` DSC modules on this computer.</span></span>
+<span data-ttu-id="18129-130">U moet ook de `xDnsServer`-en `xNetworking` DSC-modules op deze computer installeren.</span><span class="sxs-lookup"><span data-stu-id="18129-130">You also need to install both the `xDnsServer` and `xNetworking` DSC modules on this computer.</span></span>
 
-### <a name="testagent1"></a><span data-ttu-id="d39c2-131">TestAgent1</span><span class="sxs-lookup"><span data-stu-id="d39c2-131">TestAgent1</span></span>
+### <a name="testagent1"></a><span data-ttu-id="18129-131">TestAgent1</span><span class="sxs-lookup"><span data-stu-id="18129-131">TestAgent1</span></span>
 
-<span data-ttu-id="d39c2-132">Dit is de computer die is geconfigureerd als een DNS-server door de DSC-configuratie in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="d39c2-132">This is the computer that is configured as a DNS server by the DSC configuration in this example.</span></span>
-<span data-ttu-id="d39c2-133">Op de computer moet [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-133">The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).</span></span>
+<span data-ttu-id="18129-132">Dit is de computer die is geconfigureerd als een DNS-server door de DSC-configuratie in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="18129-132">This is the computer that is configured as a DNS server by the DSC configuration in this example.</span></span>
+<span data-ttu-id="18129-133">Op de computer moet [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-133">The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).</span></span>
 
-### <a name="testagent2"></a><span data-ttu-id="d39c2-134">TestAgent2</span><span class="sxs-lookup"><span data-stu-id="d39c2-134">TestAgent2</span></span>
+### <a name="testagent2"></a><span data-ttu-id="18129-134">TestAgent2</span><span class="sxs-lookup"><span data-stu-id="18129-134">TestAgent2</span></span>
 
-<span data-ttu-id="d39c2-135">Dit is de computer die als host fungeert voor de website in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="d39c2-135">This is the computer that hosts the website this example configures.</span></span>
-<span data-ttu-id="d39c2-136">Op de computer moet [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-136">The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).</span></span>
+<span data-ttu-id="18129-135">Dit is de computer die als host fungeert voor de website in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="18129-135">This is the computer that hosts the website this example configures.</span></span>
+<span data-ttu-id="18129-136">Op de computer moet [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-136">The computer must be running [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).</span></span>
 
-## <a name="add-the-code-to-tfs"></a><span data-ttu-id="d39c2-137">De code toevoegen aan TFS</span><span class="sxs-lookup"><span data-stu-id="d39c2-137">Add the code to TFS</span></span>
+## <a name="add-the-code-to-tfs"></a><span data-ttu-id="18129-137">De code toevoegen aan TFS</span><span class="sxs-lookup"><span data-stu-id="18129-137">Add the code to TFS</span></span>
 
-<span data-ttu-id="d39c2-138">We beginnen met het maken van een Git-opslag plaats in TFS en het importeren van de code uit de lokale opslag plaats op de client computer.</span><span class="sxs-lookup"><span data-stu-id="d39c2-138">We'll start out by creating a Git repository in TFS, and importing the code from your local repository on the client computer.</span></span>
-<span data-ttu-id="d39c2-139">Als u de Demo_CI opslag plaats nog niet hebt gekloond op uw client computer, doet u dat nu door de volgende Git-opdracht uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="d39c2-139">If you have not already cloned the Demo_CI repository to your client computer, do so now by running the following git command:</span></span>
+<span data-ttu-id="18129-138">We beginnen met het maken van een Git-opslag plaats in TFS en het importeren van de code uit de lokale opslag plaats op de client computer.</span><span class="sxs-lookup"><span data-stu-id="18129-138">We'll start out by creating a Git repository in TFS, and importing the code from your local repository on the client computer.</span></span>
+<span data-ttu-id="18129-139">Als u de Demo_CI opslag plaats nog niet hebt gekloond op uw client computer, doet u dat nu door de volgende Git-opdracht uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="18129-139">If you have not already cloned the Demo_CI repository to your client computer, do so now by running the following git command:</span></span>
 
 `git clone https://github.com/PowerShell/Demo_CI`
 
-1. <span data-ttu-id="d39c2-140">Ga op de client computer naar uw TFS-server in een webbrowser.</span><span class="sxs-lookup"><span data-stu-id="d39c2-140">On your client computer, navigate to your TFS server in a web browser.</span></span>
-1. <span data-ttu-id="d39c2-141">Maak in TFS [een nieuw team project met de](/azure/devops/organizations/projects/create-project) naam Demo_CI.</span><span class="sxs-lookup"><span data-stu-id="d39c2-141">In TFS, [Create a new team project](/azure/devops/organizations/projects/create-project) named Demo_CI.</span></span>
+1. <span data-ttu-id="18129-140">Ga op de client computer naar uw TFS-server in een webbrowser.</span><span class="sxs-lookup"><span data-stu-id="18129-140">On your client computer, navigate to your TFS server in a web browser.</span></span>
+1. <span data-ttu-id="18129-141">Maak in TFS [een nieuw team project met de](/azure/devops/organizations/projects/create-project) naam Demo_CI.</span><span class="sxs-lookup"><span data-stu-id="18129-141">In TFS, [Create a new team project](/azure/devops/organizations/projects/create-project) named Demo_CI.</span></span>
 
-   <span data-ttu-id="d39c2-142">Zorg ervoor dat **versie beheer** is ingesteld op **Git**.</span><span class="sxs-lookup"><span data-stu-id="d39c2-142">Make sure that **Version control** is set to **Git**.</span></span>
-1. <span data-ttu-id="d39c2-143">Voeg op de client computer een extern onderdeel toe aan de opslag plaats die u zojuist hebt gemaakt in TFS met de volgende opdracht:</span><span class="sxs-lookup"><span data-stu-id="d39c2-143">On your client computer, add a remote to the repository you just created in TFS with the following command:</span></span>
+   <span data-ttu-id="18129-142">Zorg ervoor dat **versie beheer** is ingesteld op **Git**.</span><span class="sxs-lookup"><span data-stu-id="18129-142">Make sure that **Version control** is set to **Git**.</span></span>
+1. <span data-ttu-id="18129-143">Voeg op de client computer een extern onderdeel toe aan de opslag plaats die u zojuist hebt gemaakt in TFS met de volgende opdracht:</span><span class="sxs-lookup"><span data-stu-id="18129-143">On your client computer, add a remote to the repository you just created in TFS with the following command:</span></span>
 
    `git remote add tfs <YourTFSRepoURL>`
 
-   <span data-ttu-id="d39c2-144">Waarbij `<YourTFSRepoURL>` de kloon-URL is van de TFS-opslag plaats die u in de vorige stap hebt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-144">Where `<YourTFSRepoURL>` is the clone URL to the TFS repository you created in the previous step.</span></span>
+   <span data-ttu-id="18129-144">Waarbij `<YourTFSRepoURL>` de kloon-URL is van de TFS-opslag plaats die u in de vorige stap hebt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="18129-144">Where `<YourTFSRepoURL>` is the clone URL to the TFS repository you created in the previous step.</span></span>
 
-   <span data-ttu-id="d39c2-145">Zie [een bestaand Git-opslag plaats klonen](/azure/devops/repos/git/clone)als u niet weet waar u deze URL kunt vinden.</span><span class="sxs-lookup"><span data-stu-id="d39c2-145">If you don't know where to find this URL, see [Clone an existing Git repo](/azure/devops/repos/git/clone).</span></span>
-1. <span data-ttu-id="d39c2-146">Push de code van uw lokale opslag plaats naar uw TFS-opslag plaats met de volgende opdracht:</span><span class="sxs-lookup"><span data-stu-id="d39c2-146">Push the code from your local repository to your TFS repository with the following command:</span></span>
+   <span data-ttu-id="18129-145">Zie [een bestaand Git-opslag plaats klonen](/azure/devops/repos/git/clone)als u niet weet waar u deze URL kunt vinden.</span><span class="sxs-lookup"><span data-stu-id="18129-145">If you don't know where to find this URL, see [Clone an existing Git repo](/azure/devops/repos/git/clone).</span></span>
+1. <span data-ttu-id="18129-146">Push de code van uw lokale opslag plaats naar uw TFS-opslag plaats met de volgende opdracht:</span><span class="sxs-lookup"><span data-stu-id="18129-146">Push the code from your local repository to your TFS repository with the following command:</span></span>
 
    `git push tfs --all`
-1. <span data-ttu-id="d39c2-147">De TFS-opslag plaats wordt gevuld met de Demo_CI-code.</span><span class="sxs-lookup"><span data-stu-id="d39c2-147">The TFS repository will be populated with the Demo_CI code.</span></span>
+1. <span data-ttu-id="18129-147">De TFS-opslag plaats wordt gevuld met de Demo_CI-code.</span><span class="sxs-lookup"><span data-stu-id="18129-147">The TFS repository will be populated with the Demo_CI code.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d39c2-148">In dit voor beeld wordt de code in de `ci-cd-example` vertakking van het git-opslag plaats gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-148">This example uses the code in the `ci-cd-example` branch of the Git repo.</span></span>
-> <span data-ttu-id="d39c2-149">Zorg ervoor dat u deze vertakking opgeeft als de standaard vertakking in uw TFS-project en voor de CI/CD-triggers die u maakt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-149">Be sure to specify this branch as the default branch in your TFS project, and for the CI/CD triggers you create.</span></span>
+> <span data-ttu-id="18129-148">In dit voor beeld wordt de code in de `ci-cd-example` vertakking van het git-opslag plaats gebruikt.</span><span class="sxs-lookup"><span data-stu-id="18129-148">This example uses the code in the `ci-cd-example` branch of the Git repo.</span></span>
+> <span data-ttu-id="18129-149">Zorg ervoor dat u deze vertakking opgeeft als de standaard vertakking in uw TFS-project en voor de CI/CD-triggers die u maakt.</span><span class="sxs-lookup"><span data-stu-id="18129-149">Be sure to specify this branch as the default branch in your TFS project, and for the CI/CD triggers you create.</span></span>
 
-## <a name="understanding-the-code"></a><span data-ttu-id="d39c2-150">Uitleg over de code</span><span class="sxs-lookup"><span data-stu-id="d39c2-150">Understanding the code</span></span>
+## <a name="understanding-the-code"></a><span data-ttu-id="18129-150">De code begrijpen</span><span class="sxs-lookup"><span data-stu-id="18129-150">Understanding the code</span></span>
 
-<span data-ttu-id="d39c2-151">Voordat we de builds-en implementatie pijplijnen maken, kijken we naar een aantal code om te begrijpen wat er gebeurt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-151">Before we create the build and deployment pipelines, let's look at some of the code to understand what is going on.</span></span>
-<span data-ttu-id="d39c2-152">Open uw favoriete tekst editor op de client computer en ga naar de hoofdmap van uw Demo_CI Git-opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="d39c2-152">On your client computer, open your favorite text editor and navigate to the root of your Demo_CI Git repository.</span></span>
+<span data-ttu-id="18129-151">Voordat we de builds-en implementatie pijplijnen maken, kijken we naar een aantal code om te begrijpen wat er gebeurt.</span><span class="sxs-lookup"><span data-stu-id="18129-151">Before we create the build and deployment pipelines, let's look at some of the code to understand what is going on.</span></span>
+<span data-ttu-id="18129-152">Open uw favoriete tekst editor op de client computer en ga naar de hoofdmap van uw Demo_CI Git-opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="18129-152">On your client computer, open your favorite text editor and navigate to the root of your Demo_CI Git repository.</span></span>
 
-### <a name="the-dsc-configuration"></a><span data-ttu-id="d39c2-153">De DSC-configuratie</span><span class="sxs-lookup"><span data-stu-id="d39c2-153">The DSC configuration</span></span>
+### <a name="the-dsc-configuration"></a><span data-ttu-id="18129-153">De DSC-configuratie</span><span class="sxs-lookup"><span data-stu-id="18129-153">The DSC configuration</span></span>
 
-<span data-ttu-id="d39c2-154">Open de bestands `DNSServer.ps1` (in de hoofdmap van de lokale Demo_CI opslag plaats `./InfraDNS/Configs/DNSServer.ps1`).</span><span class="sxs-lookup"><span data-stu-id="d39c2-154">Open the file `DNSServer.ps1` (from the root of the local Demo_CI repository, `./InfraDNS/Configs/DNSServer.ps1`).</span></span>
+<span data-ttu-id="18129-154">Open de bestands `DNSServer.ps1` (in de hoofdmap van de lokale Demo_CI opslag plaats `./InfraDNS/Configs/DNSServer.ps1`).</span><span class="sxs-lookup"><span data-stu-id="18129-154">Open the file `DNSServer.ps1` (from the root of the local Demo_CI repository, `./InfraDNS/Configs/DNSServer.ps1`).</span></span>
 
-<span data-ttu-id="d39c2-155">Dit bestand bevat de DSC-configuratie waarmee de DNS-server wordt ingesteld.</span><span class="sxs-lookup"><span data-stu-id="d39c2-155">This file contains the DSC configuration that sets up the DNS server.</span></span> <span data-ttu-id="d39c2-156">Hier is het een volledige oplossing:</span><span class="sxs-lookup"><span data-stu-id="d39c2-156">Here it is in its entirety:</span></span>
+<span data-ttu-id="18129-155">Dit bestand bevat de DSC-configuratie waarmee de DNS-server wordt ingesteld.</span><span class="sxs-lookup"><span data-stu-id="18129-155">This file contains the DSC configuration that sets up the DNS server.</span></span> <span data-ttu-id="18129-156">Hier is het een volledige oplossing:</span><span class="sxs-lookup"><span data-stu-id="18129-156">Here it is in its entirety:</span></span>
 
 ```powershell
 configuration DNSServer
@@ -149,29 +149,29 @@ configuration DNSServer
 }
 ```
 
-<span data-ttu-id="d39c2-157">Let op de `Node`-instructie:</span><span class="sxs-lookup"><span data-stu-id="d39c2-157">Notice the `Node` statement:</span></span>
+<span data-ttu-id="18129-157">Let op de `Node`-instructie:</span><span class="sxs-lookup"><span data-stu-id="18129-157">Notice the `Node` statement:</span></span>
 
 ```powershell
 Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
-<span data-ttu-id="d39c2-158">Hiermee worden knoop punten gevonden die zijn gedefinieerd als een rol van `DNSServer` in de [configuratie gegevens](../configurations/configData.md), die door het `DevEnv.ps1` script wordt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-158">This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](../configurations/configData.md), which is created by the `DevEnv.ps1` script.</span></span>
+<span data-ttu-id="18129-158">Hiermee worden knoop punten gevonden die zijn gedefinieerd als een rol van `DNSServer` in de [configuratie gegevens](../configurations/configData.md), die door het `DevEnv.ps1` script wordt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="18129-158">This finds any nodes that were defined as having a role of `DNSServer` in the [configuration data](../configurations/configData.md), which is created by the `DevEnv.ps1` script.</span></span>
 
-<span data-ttu-id="d39c2-159">Meer informatie over de `Where` methode vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span><span class="sxs-lookup"><span data-stu-id="d39c2-159">You can read more about the `Where` method in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span></span>
+<span data-ttu-id="18129-159">Meer informatie over de `Where` methode vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span><span class="sxs-lookup"><span data-stu-id="18129-159">You can read more about the `Where` method in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span></span>
 
-<span data-ttu-id="d39c2-160">Het gebruik van configuratie gegevens voor het definiëren van knoop punten is belang rijk bij het uitvoeren van CI omdat knooppunt informatie waarschijnlijk wordt gewijzigd tussen omgevingen en u met configuratie gegevens eenvoudig wijzigingen kunt aanbrengen in knooppunt gegevens zonder de configuratie code te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-160">Using configuration data to define nodes is important when doing CI because node information will likely change between environments, and using configuration data allows you to easily make changes to node information without changing the configuration code.</span></span>
+<span data-ttu-id="18129-160">Het gebruik van configuratie gegevens voor het definiëren van knoop punten is belang rijk bij het uitvoeren van CI omdat knooppunt informatie waarschijnlijk wordt gewijzigd tussen omgevingen en u met configuratie gegevens eenvoudig wijzigingen kunt aanbrengen in knooppunt gegevens zonder de configuratie code te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="18129-160">Using configuration data to define nodes is important when doing CI because node information will likely change between environments, and using configuration data allows you to easily make changes to node information without changing the configuration code.</span></span>
 
-<span data-ttu-id="d39c2-161">In het eerste bron blok roept de configuratie de **WindowsFeature** aan om ervoor te zorgen dat de DNS-functie is ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="d39c2-161">In the first resource block, the configuration calls the **WindowsFeature** to ensure that the DNS feature is enabled.</span></span>
-<span data-ttu-id="d39c2-162">De resource blokken die volgen resources aanroepen vanuit de [xDnsServer](https://github.com/PowerShell/xDnsServer) -module om de primaire zone en DNS-records te configureren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-162">The resource blocks that follow call resources from the [xDnsServer](https://github.com/PowerShell/xDnsServer) module to configure the primary zone and DNS records.</span></span>
+<span data-ttu-id="18129-161">In het eerste bron blok roept de configuratie de **WindowsFeature** aan om ervoor te zorgen dat de DNS-functie is ingeschakeld.</span><span class="sxs-lookup"><span data-stu-id="18129-161">In the first resource block, the configuration calls the **WindowsFeature** to ensure that the DNS feature is enabled.</span></span>
+<span data-ttu-id="18129-162">De resource blokken die volgen resources aanroepen vanuit de [xDnsServer](https://github.com/PowerShell/xDnsServer) -module om de primaire zone en DNS-records te configureren.</span><span class="sxs-lookup"><span data-stu-id="18129-162">The resource blocks that follow call resources from the [xDnsServer](https://github.com/PowerShell/xDnsServer) module to configure the primary zone and DNS records.</span></span>
 
-<span data-ttu-id="d39c2-163">U ziet dat de twee `xDnsRecord` blokken worden ingepakt in `foreach` lussen die door matrices in de configuratie gegevens worden herhaald.</span><span class="sxs-lookup"><span data-stu-id="d39c2-163">Notice that the two `xDnsRecord` blocks are wrapped in `foreach` loops that iterate through arrays in the configuration data.</span></span>
-<span data-ttu-id="d39c2-164">Opnieuw worden de configuratie gegevens gemaakt door het `DevEnv.ps1` script, dat we nu bekijken.</span><span class="sxs-lookup"><span data-stu-id="d39c2-164">Again, the configuration data is created by the `DevEnv.ps1` script, which we'll look at next.</span></span>
+<span data-ttu-id="18129-163">U ziet dat de twee `xDnsRecord` blokken worden ingepakt in `foreach` lussen die door matrices in de configuratie gegevens worden herhaald.</span><span class="sxs-lookup"><span data-stu-id="18129-163">Notice that the two `xDnsRecord` blocks are wrapped in `foreach` loops that iterate through arrays in the configuration data.</span></span>
+<span data-ttu-id="18129-164">Opnieuw worden de configuratie gegevens gemaakt door het `DevEnv.ps1` script, dat we nu bekijken.</span><span class="sxs-lookup"><span data-stu-id="18129-164">Again, the configuration data is created by the `DevEnv.ps1` script, which we'll look at next.</span></span>
 
-### <a name="configuration-data"></a><span data-ttu-id="d39c2-165">Configuratiegegevens</span><span class="sxs-lookup"><span data-stu-id="d39c2-165">Configuration data</span></span>
+### <a name="configuration-data"></a><span data-ttu-id="18129-165">Configuratiegegevens</span><span class="sxs-lookup"><span data-stu-id="18129-165">Configuration data</span></span>
 
-<span data-ttu-id="d39c2-166">Het `DevEnv.ps1` bestand (in de hoofdmap van de lokale Demo_CI opslag plaats, `./InfraDNS/DevEnv.ps1`) geeft de omgeving-specifieke configuratie gegevens in een hashtabel op en geeft die hashtabel door aan een aanroep van de functie `New-DscConfigurationDataDocument`, die is gedefinieerd in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).</span><span class="sxs-lookup"><span data-stu-id="d39c2-166">The `DevEnv.ps1` file (from the root of the local Demo_CI repository, `./InfraDNS/DevEnv.ps1`) specifies the environment-specific configuration data in a hashtable, and then passes that hashtable to a call to the `New-DscConfigurationDataDocument` function, which is defined in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).</span></span>
+<span data-ttu-id="18129-166">Het `DevEnv.ps1` bestand (in de hoofdmap van de lokale Demo_CI opslag plaats, `./InfraDNS/DevEnv.ps1`) geeft de omgeving-specifieke configuratie gegevens in een hashtabel op en geeft die hashtabel door aan een aanroep van de functie `New-DscConfigurationDataDocument`, die is gedefinieerd in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).</span><span class="sxs-lookup"><span data-stu-id="18129-166">The `DevEnv.ps1` file (from the root of the local Demo_CI repository, `./InfraDNS/DevEnv.ps1`) specifies the environment-specific configuration data in a hashtable, and then passes that hashtable to a call to the `New-DscConfigurationDataDocument` function, which is defined in `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`).</span></span>
 
-<span data-ttu-id="d39c2-167">Het `DevEnv.ps1`-bestand:</span><span class="sxs-lookup"><span data-stu-id="d39c2-167">The `DevEnv.ps1` file:</span></span>
+<span data-ttu-id="18129-167">Het `DevEnv.ps1`-bestand:</span><span class="sxs-lookup"><span data-stu-id="18129-167">The `DevEnv.ps1` file:</span></span>
 
 ```powershell
 param(
@@ -198,26 +198,26 @@ $DevEnvironment = @{
 Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath $OutputPath
 ```
 
-<span data-ttu-id="d39c2-168">Met de functie `New-DscConfigurationDataDocument` (gedefinieerd in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) kunt u programmatisch een document met configuratie gegevens maken op basis van de hashtabel (knooppunt gegevens) en de matrix (niet-knooppunt gegevens) die worden door gegeven als de para meters `RawEnvData` en `OtherEnvData`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-168">The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) programmatically creates a configuration data document from the hashtable (node data) and array (non-node data) that are passed as the `RawEnvData` and `OtherEnvData` parameters.</span></span>
+<span data-ttu-id="18129-168">Met de functie `New-DscConfigurationDataDocument` (gedefinieerd in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) kunt u programmatisch een document met configuratie gegevens maken op basis van de hashtabel (knooppunt gegevens) en de matrix (niet-knooppunt gegevens) die worden door gegeven als de para meters `RawEnvData` en `OtherEnvData`.</span><span class="sxs-lookup"><span data-stu-id="18129-168">The `New-DscConfigurationDataDocument` function (defined in `\Assets\DscPipelineTools\DscPipelineTools.psm1`) programmatically creates a configuration data document from the hashtable (node data) and array (non-node data) that are passed as the `RawEnvData` and `OtherEnvData` parameters.</span></span>
 
-<span data-ttu-id="d39c2-169">In ons geval wordt alleen de para meter `RawEnvData` gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-169">In our case, only the `RawEnvData` parameter is used.</span></span>
+<span data-ttu-id="18129-169">In ons geval wordt alleen de para meter `RawEnvData` gebruikt.</span><span class="sxs-lookup"><span data-stu-id="18129-169">In our case, only the `RawEnvData` parameter is used.</span></span>
 
-### <a name="the-psake-build-script"></a><span data-ttu-id="d39c2-170">Het psake-bouw script</span><span class="sxs-lookup"><span data-stu-id="d39c2-170">The psake build script</span></span>
+### <a name="the-psake-build-script"></a><span data-ttu-id="18129-170">Het psake-bouw script</span><span class="sxs-lookup"><span data-stu-id="18129-170">The psake build script</span></span>
 
-<span data-ttu-id="d39c2-171">Het [psake](https://github.com/psake/psake) -bouw script dat in `Build.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Build.ps1`) definieert de taken die deel uitmaken van de build.</span><span class="sxs-lookup"><span data-stu-id="d39c2-171">The [psake](https://github.com/psake/psake) build script defined in `Build.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Build.ps1`) defines tasks that are part of the build.</span></span>
-<span data-ttu-id="d39c2-172">Er wordt ook gedefinieerd voor welke andere taken elke taak afhankelijk is.</span><span class="sxs-lookup"><span data-stu-id="d39c2-172">It also defines which other tasks each task depends on.</span></span>
-<span data-ttu-id="d39c2-173">Wanneer het psake-script wordt aangeroepen, wordt de opgegeven taak (of de taak met de naam `Default` als er geen is opgegeven) uitgevoerd en worden alle afhankelijkheden ook uitgevoerd (dit is recursief, zodat afhankelijkheden van de afhankelijkheden worden uitgevoerd, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="d39c2-173">When invoked, the psake script ensures that the specified task (or the task named `Default` if none is specified) runs, and that all dependencies also run (this is recursive, so that dependencies of dependencies run, and so on).</span></span>
+<span data-ttu-id="18129-171">Het [psake](https://github.com/psake/psake) -bouw script dat in `Build.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Build.ps1`) definieert de taken die deel uitmaken van de build.</span><span class="sxs-lookup"><span data-stu-id="18129-171">The [psake](https://github.com/psake/psake) build script defined in `Build.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Build.ps1`) defines tasks that are part of the build.</span></span>
+<span data-ttu-id="18129-172">Er wordt ook gedefinieerd voor welke andere taken elke taak afhankelijk is.</span><span class="sxs-lookup"><span data-stu-id="18129-172">It also defines which other tasks each task depends on.</span></span>
+<span data-ttu-id="18129-173">Wanneer het psake-script wordt aangeroepen, wordt de opgegeven taak (of de taak met de naam `Default` als er geen is opgegeven) uitgevoerd en worden alle afhankelijkheden ook uitgevoerd (dit is recursief, zodat afhankelijkheden van de afhankelijkheden worden uitgevoerd, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="18129-173">When invoked, the psake script ensures that the specified task (or the task named `Default` if none is specified) runs, and that all dependencies also run (this is recursive, so that dependencies of dependencies run, and so on).</span></span>
 
-<span data-ttu-id="d39c2-174">In dit voor beeld wordt de `Default` taak gedefinieerd als:</span><span class="sxs-lookup"><span data-stu-id="d39c2-174">In this example, the `Default` task is defined as:</span></span>
+<span data-ttu-id="18129-174">In dit voor beeld wordt de `Default` taak gedefinieerd als:</span><span class="sxs-lookup"><span data-stu-id="18129-174">In this example, the `Default` task is defined as:</span></span>
 
 ```powershell
 Task Default -depends UnitTests
 ```
 
-<span data-ttu-id="d39c2-175">De `Default` taak heeft geen implementatie zelf, maar heeft een afhankelijkheid van de `CompileConfigs` taak.</span><span class="sxs-lookup"><span data-stu-id="d39c2-175">The `Default` task has no implementation itself, but has a dependency on the `CompileConfigs` task.</span></span>
-<span data-ttu-id="d39c2-176">De resulterende keten van taak afhankelijkheden zorgt ervoor dat alle taken in het build-script worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-176">The resulting chain of task dependencies ensures that all tasks in the build script are run.</span></span>
+<span data-ttu-id="18129-175">De `Default` taak heeft geen implementatie zelf, maar heeft een afhankelijkheid van de `CompileConfigs` taak.</span><span class="sxs-lookup"><span data-stu-id="18129-175">The `Default` task has no implementation itself, but has a dependency on the `CompileConfigs` task.</span></span>
+<span data-ttu-id="18129-176">De resulterende keten van taak afhankelijkheden zorgt ervoor dat alle taken in het build-script worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-176">The resulting chain of task dependencies ensures that all tasks in the build script are run.</span></span>
 
-<span data-ttu-id="d39c2-177">In dit voor beeld wordt het psake-script aangeroepen door een aanroep van `Invoke-PSake` in het `Initiate.ps1`-bestand (dat zich in de hoofdmap van de Demo_CI opslag plaats bevindt):</span><span class="sxs-lookup"><span data-stu-id="d39c2-177">In this example, the psake script is invoked by a call to `Invoke-PSake` in the `Initiate.ps1` file (located at the root of the Demo_CI repository):</span></span>
+<span data-ttu-id="18129-177">In dit voor beeld wordt het psake-script aangeroepen door een aanroep van `Invoke-PSake` in het `Initiate.ps1`-bestand (dat zich in de hoofdmap van de Demo_CI opslag plaats bevindt):</span><span class="sxs-lookup"><span data-stu-id="18129-177">In this example, the psake script is invoked by a call to `Invoke-PSake` in the `Initiate.ps1` file (located at the root of the Demo_CI repository):</span></span>
 
 ```powershell
 param(
@@ -238,119 +238,119 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 #>
 ```
 
-<span data-ttu-id="d39c2-178">Wanneer we de build-definitie voor het voor beeld in TFS maken, leveren we ons psake-script bestand als de para meter `fileName` voor dit script.</span><span class="sxs-lookup"><span data-stu-id="d39c2-178">When we create the build definition for our example in TFS, we will supply our psake script file as the `fileName` parameter for this script.</span></span>
+<span data-ttu-id="18129-178">Wanneer we de build-definitie voor het voor beeld in TFS maken, leveren we ons psake-script bestand als de para meter `fileName` voor dit script.</span><span class="sxs-lookup"><span data-stu-id="18129-178">When we create the build definition for our example in TFS, we will supply our psake script file as the `fileName` parameter for this script.</span></span>
 
-<span data-ttu-id="d39c2-179">Het build-script definieert de volgende taken:</span><span class="sxs-lookup"><span data-stu-id="d39c2-179">The build script defines the following tasks:</span></span>
+<span data-ttu-id="18129-179">Het build-script definieert de volgende taken:</span><span class="sxs-lookup"><span data-stu-id="18129-179">The build script defines the following tasks:</span></span>
 
-#### <a name="generateenvironmentfiles"></a><span data-ttu-id="d39c2-180">GenerateEnvironmentFiles</span><span class="sxs-lookup"><span data-stu-id="d39c2-180">GenerateEnvironmentFiles</span></span>
+#### <a name="generateenvironmentfiles"></a><span data-ttu-id="18129-180">GenerateEnvironmentFiles</span><span class="sxs-lookup"><span data-stu-id="18129-180">GenerateEnvironmentFiles</span></span>
 
-<span data-ttu-id="d39c2-181">Voert `DevEnv.ps1`uit, waardoor het bestand met configuratie gegevens wordt gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-181">Runs `DevEnv.ps1`, which generates the configuration data file.</span></span>
+<span data-ttu-id="18129-181">Voert `DevEnv.ps1`uit, waardoor het bestand met configuratie gegevens wordt gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="18129-181">Runs `DevEnv.ps1`, which generates the configuration data file.</span></span>
 
-#### <a name="installmodules"></a><span data-ttu-id="d39c2-182">InstallModules</span><span class="sxs-lookup"><span data-stu-id="d39c2-182">InstallModules</span></span>
+#### <a name="installmodules"></a><span data-ttu-id="18129-182">InstallModules</span><span class="sxs-lookup"><span data-stu-id="18129-182">InstallModules</span></span>
 
-<span data-ttu-id="d39c2-183">Installeert de modules die vereist zijn voor de configuratie `DNSServer.ps1`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-183">Installs the modules required by the configuration `DNSServer.ps1`.</span></span>
+<span data-ttu-id="18129-183">Installeert de modules die vereist zijn voor de configuratie `DNSServer.ps1`.</span><span class="sxs-lookup"><span data-stu-id="18129-183">Installs the modules required by the configuration `DNSServer.ps1`.</span></span>
 
-#### <a name="scriptanalysis"></a><span data-ttu-id="d39c2-184">ScriptAnalysis</span><span class="sxs-lookup"><span data-stu-id="d39c2-184">ScriptAnalysis</span></span>
+#### <a name="scriptanalysis"></a><span data-ttu-id="18129-184">ScriptAnalysis</span><span class="sxs-lookup"><span data-stu-id="18129-184">ScriptAnalysis</span></span>
 
-<span data-ttu-id="d39c2-185">Hiermee wordt de [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)aangeroepen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-185">Calls the [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer).</span></span>
+<span data-ttu-id="18129-185">Hiermee wordt de [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)aangeroepen.</span><span class="sxs-lookup"><span data-stu-id="18129-185">Calls the [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer).</span></span>
 
-#### <a name="unittests"></a><span data-ttu-id="d39c2-186">Unit tests</span><span class="sxs-lookup"><span data-stu-id="d39c2-186">UnitTests</span></span>
+#### <a name="unittests"></a><span data-ttu-id="18129-186">Unit tests</span><span class="sxs-lookup"><span data-stu-id="18129-186">UnitTests</span></span>
 
-<span data-ttu-id="d39c2-187">Voert de tests voor de ziekte van de [Inpest](https://github.com/pester/Pester/wiki) -eenheid uit.</span><span class="sxs-lookup"><span data-stu-id="d39c2-187">Runs the [Pester](https://github.com/pester/Pester/wiki) unit tests.</span></span>
+<span data-ttu-id="18129-187">Voert de tests voor de ziekte van de [Inpest](https://github.com/pester/Pester/wiki) -eenheid uit.</span><span class="sxs-lookup"><span data-stu-id="18129-187">Runs the [Pester](https://github.com/pester/Pester/wiki) unit tests.</span></span>
 
-#### <a name="compileconfigs"></a><span data-ttu-id="d39c2-188">CompileConfigs</span><span class="sxs-lookup"><span data-stu-id="d39c2-188">CompileConfigs</span></span>
+#### <a name="compileconfigs"></a><span data-ttu-id="18129-188">CompileConfigs</span><span class="sxs-lookup"><span data-stu-id="18129-188">CompileConfigs</span></span>
 
-<span data-ttu-id="d39c2-189">Compileert de configuratie (`DNSServer.ps1`) in een MOF-bestand met behulp van de configuratie gegevens die door de `GenerateEnvironmentFiles` taak zijn gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-189">Compiles the configuration (`DNSServer.ps1`) into a MOF file, using the configuration data generated by the `GenerateEnvironmentFiles` task.</span></span>
+<span data-ttu-id="18129-189">Compileert de configuratie (`DNSServer.ps1`) in een MOF-bestand met behulp van de configuratie gegevens die door de `GenerateEnvironmentFiles` taak zijn gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="18129-189">Compiles the configuration (`DNSServer.ps1`) into a MOF file, using the configuration data generated by the `GenerateEnvironmentFiles` task.</span></span>
 
-#### <a name="clean"></a><span data-ttu-id="d39c2-190">Opruimen</span><span class="sxs-lookup"><span data-stu-id="d39c2-190">Clean</span></span>
+#### <a name="clean"></a><span data-ttu-id="18129-190">Opruimen</span><span class="sxs-lookup"><span data-stu-id="18129-190">Clean</span></span>
 
-<span data-ttu-id="d39c2-191">Hiermee maakt u de mappen die worden gebruikt voor het voor beeld en worden alle test resultaten, configuratie gegevensbestand en modules uit eerdere uitvoeringen verwijderd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-191">Creates the folders used for the example, and removes any test results, configuration data files, and modules from previous runs.</span></span>
+<span data-ttu-id="18129-191">Hiermee maakt u de mappen die worden gebruikt voor het voor beeld en worden alle test resultaten, configuratie gegevensbestand en modules uit eerdere uitvoeringen verwijderd.</span><span class="sxs-lookup"><span data-stu-id="18129-191">Creates the folders used for the example, and removes any test results, configuration data files, and modules from previous runs.</span></span>
 
-### <a name="the-psake-deploy-script"></a><span data-ttu-id="d39c2-192">Het psake-implementatie script</span><span class="sxs-lookup"><span data-stu-id="d39c2-192">The psake deploy script</span></span>
+### <a name="the-psake-deploy-script"></a><span data-ttu-id="18129-192">Het psake-implementatie script</span><span class="sxs-lookup"><span data-stu-id="18129-192">The psake deploy script</span></span>
 
-<span data-ttu-id="d39c2-193">Het [psake](https://github.com/psake/psake) -implementatie script dat in `Deploy.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Deploy.ps1`) definieert taken waarmee de configuratie wordt geïmplementeerd en uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-193">The [psake](https://github.com/psake/psake) deployment script defined in `Deploy.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Deploy.ps1`) defines tasks that deploy and run the configuration.</span></span>
+<span data-ttu-id="18129-193">Het [psake](https://github.com/psake/psake) -implementatie script dat in `Deploy.ps1` is gedefinieerd (in de hoofdmap van de Demo_CI opslag plaats, `./InfraDNS/Deploy.ps1`) definieert taken waarmee de configuratie wordt geïmplementeerd en uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-193">The [psake](https://github.com/psake/psake) deployment script defined in `Deploy.ps1` (from the root of the Demo_CI repository, `./InfraDNS/Deploy.ps1`) defines tasks that deploy and run the configuration.</span></span>
 
-<span data-ttu-id="d39c2-194">`Deploy.ps1` definieert de volgende taken:</span><span class="sxs-lookup"><span data-stu-id="d39c2-194">`Deploy.ps1` defines the following tasks:</span></span>
+<span data-ttu-id="18129-194">`Deploy.ps1` definieert de volgende taken:</span><span class="sxs-lookup"><span data-stu-id="18129-194">`Deploy.ps1` defines the following tasks:</span></span>
 
-#### <a name="deploymodules"></a><span data-ttu-id="d39c2-195">DeployModules</span><span class="sxs-lookup"><span data-stu-id="d39c2-195">DeployModules</span></span>
+#### <a name="deploymodules"></a><span data-ttu-id="18129-195">DeployModules</span><span class="sxs-lookup"><span data-stu-id="18129-195">DeployModules</span></span>
 
-<span data-ttu-id="d39c2-196">Start een Power shell-sessie op `TestAgent1` en installeert de modules met de DSC-resources die vereist zijn voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="d39c2-196">Starts a PowerShell session on `TestAgent1` and installs the modules containing the DSC resources required for the configuration.</span></span>
+<span data-ttu-id="18129-196">Start een Power shell-sessie op `TestAgent1` en installeert de modules met de DSC-resources die vereist zijn voor de configuratie.</span><span class="sxs-lookup"><span data-stu-id="18129-196">Starts a PowerShell session on `TestAgent1` and installs the modules containing the DSC resources required for the configuration.</span></span>
 
-#### <a name="deployconfigs"></a><span data-ttu-id="d39c2-197">DeployConfigs</span><span class="sxs-lookup"><span data-stu-id="d39c2-197">DeployConfigs</span></span>
+#### <a name="deployconfigs"></a><span data-ttu-id="18129-197">DeployConfigs</span><span class="sxs-lookup"><span data-stu-id="18129-197">DeployConfigs</span></span>
 
-<span data-ttu-id="d39c2-198">Roept de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) op om de configuratie op `TestAgent1`uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-198">Calls the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet to run the configuration on `TestAgent1`.</span></span>
+<span data-ttu-id="18129-198">Roept de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) op om de configuratie op `TestAgent1`uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="18129-198">Calls the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet to run the configuration on `TestAgent1`.</span></span>
 
-#### <a name="integrationtests"></a><span data-ttu-id="d39c2-199">IntegrationTests</span><span class="sxs-lookup"><span data-stu-id="d39c2-199">IntegrationTests</span></span>
+#### <a name="integrationtests"></a><span data-ttu-id="18129-199">IntegrationTests</span><span class="sxs-lookup"><span data-stu-id="18129-199">IntegrationTests</span></span>
 
-<span data-ttu-id="d39c2-200">Voert de tests voor de integratie van de [ziekte](https://github.com/pester/Pester/wiki) uit.</span><span class="sxs-lookup"><span data-stu-id="d39c2-200">Runs the [Pester](https://github.com/pester/Pester/wiki) integration tests.</span></span>
+<span data-ttu-id="18129-200">Voert de tests voor de integratie van de [ziekte](https://github.com/pester/Pester/wiki) uit.</span><span class="sxs-lookup"><span data-stu-id="18129-200">Runs the [Pester](https://github.com/pester/Pester/wiki) integration tests.</span></span>
 
-#### <a name="acceptancetests"></a><span data-ttu-id="d39c2-201">AcceptanceTests</span><span class="sxs-lookup"><span data-stu-id="d39c2-201">AcceptanceTests</span></span>
+#### <a name="acceptancetests"></a><span data-ttu-id="18129-201">AcceptanceTests</span><span class="sxs-lookup"><span data-stu-id="18129-201">AcceptanceTests</span></span>
 
-<span data-ttu-id="d39c2-202">Voert de acceptatie tests van de [ziekte](https://github.com/pester/Pester/wiki) uit.</span><span class="sxs-lookup"><span data-stu-id="d39c2-202">Runs the [Pester](https://github.com/pester/Pester/wiki) acceptance tests.</span></span>
+<span data-ttu-id="18129-202">Voert de acceptatie tests van de [ziekte](https://github.com/pester/Pester/wiki) uit.</span><span class="sxs-lookup"><span data-stu-id="18129-202">Runs the [Pester](https://github.com/pester/Pester/wiki) acceptance tests.</span></span>
 
-#### <a name="clean"></a><span data-ttu-id="d39c2-203">Opruimen</span><span class="sxs-lookup"><span data-stu-id="d39c2-203">Clean</span></span>
+#### <a name="clean"></a><span data-ttu-id="18129-203">Opruimen</span><span class="sxs-lookup"><span data-stu-id="18129-203">Clean</span></span>
 
-<span data-ttu-id="d39c2-204">Hiermee verwijdert u alle modules die zijn geïnstalleerd in eerdere uitvoeringen en zorgt u ervoor dat de map test resultaat bestaat.</span><span class="sxs-lookup"><span data-stu-id="d39c2-204">Removes any modules installed in previous runs, and ensures that the test result folder exists.</span></span>
+<span data-ttu-id="18129-204">Hiermee verwijdert u alle modules die zijn geïnstalleerd in eerdere uitvoeringen en zorgt u ervoor dat de map test resultaat bestaat.</span><span class="sxs-lookup"><span data-stu-id="18129-204">Removes any modules installed in previous runs, and ensures that the test result folder exists.</span></span>
 
-### <a name="test-scripts"></a><span data-ttu-id="d39c2-205">Test scripts</span><span class="sxs-lookup"><span data-stu-id="d39c2-205">Test scripts</span></span>
+### <a name="test-scripts"></a><span data-ttu-id="18129-205">Test scripts</span><span class="sxs-lookup"><span data-stu-id="18129-205">Test scripts</span></span>
 
-<span data-ttu-id="d39c2-206">Acceptatie, integratie en eenheids tests worden gedefinieerd in scripts in de map `Tests` (in de hoofdmap van de Demo_CI opslag plaats `./InfraDNS/Tests`), elk in bestanden met de naam `DNSServer.tests.ps1` in hun respectieve mappen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-206">Acceptance, Integration, and Unit tests are defined in scripts in the `Tests` folder (from the root of the Demo_CI repository, `./InfraDNS/Tests`), each in files named `DNSServer.tests.ps1` in their respective folders.</span></span>
+<span data-ttu-id="18129-206">Acceptatie, integratie en eenheids tests worden gedefinieerd in scripts in de map `Tests` (in de hoofdmap van de Demo_CI opslag plaats `./InfraDNS/Tests`), elk in bestanden met de naam `DNSServer.tests.ps1` in hun respectieve mappen.</span><span class="sxs-lookup"><span data-stu-id="18129-206">Acceptance, Integration, and Unit tests are defined in scripts in the `Tests` folder (from the root of the Demo_CI repository, `./InfraDNS/Tests`), each in files named `DNSServer.tests.ps1` in their respective folders.</span></span>
 
-<span data-ttu-id="d39c2-207">De test scripts gebruiken de syntaxis van [parasieten](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) .</span><span class="sxs-lookup"><span data-stu-id="d39c2-207">The test scripts use [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
+<span data-ttu-id="18129-207">De test scripts gebruiken de syntaxis van [parasieten](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) .</span><span class="sxs-lookup"><span data-stu-id="18129-207">The test scripts use [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
 
-#### <a name="unit-tests"></a><span data-ttu-id="d39c2-208">Eenheids tests</span><span class="sxs-lookup"><span data-stu-id="d39c2-208">Unit tests</span></span>
+#### <a name="unit-tests"></a><span data-ttu-id="18129-208">Eenheids tests</span><span class="sxs-lookup"><span data-stu-id="18129-208">Unit tests</span></span>
 
-<span data-ttu-id="d39c2-209">De eenheids tests testen de DSC-configuraties zelf om ervoor te zorgen dat de configuraties te maken krijgen met wat er wordt verwacht wanneer ze worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-209">The unit tests test the DSC configurations themselves to ensure that the configurations will do what is expected when they run.</span></span>
-<span data-ttu-id="d39c2-210">Het test script voor de eenheid maakt gebruik van [parasieten](https://github.com/pester/Pester/wiki).</span><span class="sxs-lookup"><span data-stu-id="d39c2-210">The unit test script uses [Pester](https://github.com/pester/Pester/wiki).</span></span>
+<span data-ttu-id="18129-209">De eenheids tests testen de DSC-configuraties zelf om ervoor te zorgen dat de configuraties te maken krijgen met wat er wordt verwacht wanneer ze worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-209">The unit tests test the DSC configurations themselves to ensure that the configurations will do what is expected when they run.</span></span>
+<span data-ttu-id="18129-210">Het test script voor de eenheid maakt gebruik van [parasieten](https://github.com/pester/Pester/wiki).</span><span class="sxs-lookup"><span data-stu-id="18129-210">The unit test script uses [Pester](https://github.com/pester/Pester/wiki).</span></span>
 
-#### <a name="integration-tests"></a><span data-ttu-id="d39c2-211">Integratie tests</span><span class="sxs-lookup"><span data-stu-id="d39c2-211">Integration tests</span></span>
+#### <a name="integration-tests"></a><span data-ttu-id="18129-211">Integratie tests</span><span class="sxs-lookup"><span data-stu-id="18129-211">Integration tests</span></span>
 
-<span data-ttu-id="d39c2-212">De integratie tests testen de configuratie van het systeem om ervoor te zorgen dat het systeem zoals verwacht is geconfigureerd wanneer het is geïntegreerd met andere onderdelen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-212">The integration tests test the configuration of the system to ensure that when integrated with other components, the system is configured as expected.</span></span> <span data-ttu-id="d39c2-213">Deze tests worden uitgevoerd op het doel knooppunt nadat het is geconfigureerd met DSC.</span><span class="sxs-lookup"><span data-stu-id="d39c2-213">These tests run on the target node after it has been configured with DSC.</span></span>
-<span data-ttu-id="d39c2-214">Het integratie test script maakt gebruik van een combi natie van [ziekteloze](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) -syntaxis.</span><span class="sxs-lookup"><span data-stu-id="d39c2-214">The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
+<span data-ttu-id="18129-212">De integratie tests testen de configuratie van het systeem om ervoor te zorgen dat het systeem zoals verwacht is geconfigureerd wanneer het is geïntegreerd met andere onderdelen.</span><span class="sxs-lookup"><span data-stu-id="18129-212">The integration tests test the configuration of the system to ensure that when integrated with other components, the system is configured as expected.</span></span> <span data-ttu-id="18129-213">Deze tests worden uitgevoerd op het doel knooppunt nadat het is geconfigureerd met DSC.</span><span class="sxs-lookup"><span data-stu-id="18129-213">These tests run on the target node after it has been configured with DSC.</span></span>
+<span data-ttu-id="18129-214">Het integratie test script maakt gebruik van een combi natie van [ziekteloze](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) -syntaxis.</span><span class="sxs-lookup"><span data-stu-id="18129-214">The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
 
-#### <a name="acceptance-tests"></a><span data-ttu-id="d39c2-215">Acceptatie tests</span><span class="sxs-lookup"><span data-stu-id="d39c2-215">Acceptance tests</span></span>
+#### <a name="acceptance-tests"></a><span data-ttu-id="18129-215">Acceptatie tests</span><span class="sxs-lookup"><span data-stu-id="18129-215">Acceptance tests</span></span>
 
-<span data-ttu-id="d39c2-216">Acceptatie tests testen het systeem om ervoor te zorgen dat deze naar verwachting werkt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-216">Acceptance tests test the system to ensure that it behaves as expected.</span></span>
-<span data-ttu-id="d39c2-217">Zo wordt bijvoorbeeld getest of een webpagina de juiste informatie retourneert wanneer er een query wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-217">For example, it tests to ensure a web page returns the right information when queried.</span></span>
-<span data-ttu-id="d39c2-218">Deze tests worden op afstand uitgevoerd vanaf het doel knooppunt om praktijk scenario's te testen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-218">These tests run remotely from the target node in order to test real world scenarios.</span></span>
-<span data-ttu-id="d39c2-219">Het integratie test script maakt gebruik van een combi natie van [ziekteloze](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) -syntaxis.</span><span class="sxs-lookup"><span data-stu-id="d39c2-219">The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
+<span data-ttu-id="18129-216">Acceptatie tests testen het systeem om ervoor te zorgen dat deze naar verwachting werkt.</span><span class="sxs-lookup"><span data-stu-id="18129-216">Acceptance tests test the system to ensure that it behaves as expected.</span></span>
+<span data-ttu-id="18129-217">Zo wordt bijvoorbeeld getest of een webpagina de juiste informatie retourneert wanneer er een query wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="18129-217">For example, it tests to ensure a web page returns the right information when queried.</span></span>
+<span data-ttu-id="18129-218">Deze tests worden op afstand uitgevoerd vanaf het doel knooppunt om praktijk scenario's te testen.</span><span class="sxs-lookup"><span data-stu-id="18129-218">These tests run remotely from the target node in order to test real world scenarios.</span></span>
+<span data-ttu-id="18129-219">Het integratie test script maakt gebruik van een combi natie van [ziekteloze](https://github.com/pester/Pester/wiki) en [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) -syntaxis.</span><span class="sxs-lookup"><span data-stu-id="18129-219">The integration test script uses a mixture of [Pester](https://github.com/pester/Pester/wiki) and [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) syntax.</span></span>
 
-## <a name="define-the-build"></a><span data-ttu-id="d39c2-220">De build definiëren</span><span class="sxs-lookup"><span data-stu-id="d39c2-220">Define the build</span></span>
+## <a name="define-the-build"></a><span data-ttu-id="18129-220">De build definiëren</span><span class="sxs-lookup"><span data-stu-id="18129-220">Define the build</span></span>
 
-<span data-ttu-id="d39c2-221">Nu onze code is geüpload naar TFS en u hebt bekeken wat er gebeurt, gaan we onze build definiëren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-221">Now that we've uploaded our code to TFS and looked at what it does, let's define our build.</span></span>
+<span data-ttu-id="18129-221">Nu onze code is geüpload naar TFS en u hebt bekeken wat er gebeurt, gaan we onze build definiëren.</span><span class="sxs-lookup"><span data-stu-id="18129-221">Now that we've uploaded our code to TFS and looked at what it does, let's define our build.</span></span>
 
-<span data-ttu-id="d39c2-222">Hier worden alleen de build-stappen besproken die u aan de build gaat toevoegen.</span><span class="sxs-lookup"><span data-stu-id="d39c2-222">Here, we'll cover only the build steps that you'll add to the build.</span></span> <span data-ttu-id="d39c2-223">Zie [een build-definitie maken en in de wachtrij plaatsen](/azure/devops/pipelines/create-first-pipeline)voor instructies over het maken van een build-definitie in tFS.</span><span class="sxs-lookup"><span data-stu-id="d39c2-223">For instructions on how to create a build definition in TFS, see [Create and queue a build definition](/azure/devops/pipelines/create-first-pipeline).</span></span>
+<span data-ttu-id="18129-222">Hier worden alleen de build-stappen besproken die u aan de build gaat toevoegen.</span><span class="sxs-lookup"><span data-stu-id="18129-222">Here, we'll cover only the build steps that you'll add to the build.</span></span> <span data-ttu-id="18129-223">Zie [een build-definitie maken en in de wachtrij plaatsen](/azure/devops/pipelines/create-first-pipeline)voor instructies over het maken van een build-definitie in tFS.</span><span class="sxs-lookup"><span data-stu-id="18129-223">For instructions on how to create a build definition in TFS, see [Create and queue a build definition](/azure/devops/pipelines/create-first-pipeline).</span></span>
 
-<span data-ttu-id="d39c2-224">Maak een nieuwe build-definitie (Selecteer de **lege** sjabloon) met de naam ' InfraDNS '.</span><span class="sxs-lookup"><span data-stu-id="d39c2-224">Create a new build definition (select the **Empty** template) named "InfraDNS".</span></span>
-<span data-ttu-id="d39c2-225">Voeg de volgende stappen toe om de definitie te bouwen:</span><span class="sxs-lookup"><span data-stu-id="d39c2-225">Add the following steps to you build definition:</span></span>
+<span data-ttu-id="18129-224">Maak een nieuwe build-definitie (Selecteer de **lege** sjabloon) met de naam ' InfraDNS '.</span><span class="sxs-lookup"><span data-stu-id="18129-224">Create a new build definition (select the **Empty** template) named "InfraDNS".</span></span>
+<span data-ttu-id="18129-225">Voeg de volgende stappen toe om de definitie te bouwen:</span><span class="sxs-lookup"><span data-stu-id="18129-225">Add the following steps to you build definition:</span></span>
 
-- <span data-ttu-id="d39c2-226">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="d39c2-226">PowerShell Script</span></span>
-- <span data-ttu-id="d39c2-227">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-227">Publish Test Results</span></span>
-- <span data-ttu-id="d39c2-228">Bestanden kopiëren</span><span class="sxs-lookup"><span data-stu-id="d39c2-228">Copy Files</span></span>
-- <span data-ttu-id="d39c2-229">Artefact publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-229">Publish Artifact</span></span>
+- <span data-ttu-id="18129-226">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="18129-226">PowerShell Script</span></span>
+- <span data-ttu-id="18129-227">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-227">Publish Test Results</span></span>
+- <span data-ttu-id="18129-228">Bestanden kopiëren</span><span class="sxs-lookup"><span data-stu-id="18129-228">Copy Files</span></span>
+- <span data-ttu-id="18129-229">Artefact publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-229">Publish Artifact</span></span>
 
-<span data-ttu-id="d39c2-230">Nadat u deze build-stappen hebt toegevoegd, bewerkt u de eigenschappen van elke stap als volgt:</span><span class="sxs-lookup"><span data-stu-id="d39c2-230">After adding these build steps, edit the properties of each step as follows:</span></span>
+<span data-ttu-id="18129-230">Nadat u deze build-stappen hebt toegevoegd, bewerkt u de eigenschappen van elke stap als volgt:</span><span class="sxs-lookup"><span data-stu-id="18129-230">After adding these build steps, edit the properties of each step as follows:</span></span>
 
-### <a name="powershell-script"></a><span data-ttu-id="d39c2-231">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="d39c2-231">PowerShell Script</span></span>
+### <a name="powershell-script"></a><span data-ttu-id="18129-231">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="18129-231">PowerShell Script</span></span>
 
-1. <span data-ttu-id="d39c2-232">Stel de eigenschap **type** in op `File Path`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-232">Set the **Type** property to `File Path`.</span></span>
-1. <span data-ttu-id="d39c2-233">Stel de eigenschap **script pad** in op `initiate.ps1`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-233">Set the **Script Path** property to `initiate.ps1`.</span></span>
-1. <span data-ttu-id="d39c2-234">`-fileName build` toevoegen aan de eigenschap **Arguments** .</span><span class="sxs-lookup"><span data-stu-id="d39c2-234">Add `-fileName build` to the **Arguments** property.</span></span>
+1. <span data-ttu-id="18129-232">Stel de eigenschap **type** in op `File Path`.</span><span class="sxs-lookup"><span data-stu-id="18129-232">Set the **Type** property to `File Path`.</span></span>
+1. <span data-ttu-id="18129-233">Stel de eigenschap **script pad** in op `initiate.ps1`.</span><span class="sxs-lookup"><span data-stu-id="18129-233">Set the **Script Path** property to `initiate.ps1`.</span></span>
+1. <span data-ttu-id="18129-234">`-fileName build` toevoegen aan de eigenschap **Arguments** .</span><span class="sxs-lookup"><span data-stu-id="18129-234">Add `-fileName build` to the **Arguments** property.</span></span>
 
-<span data-ttu-id="d39c2-235">Met deze build-stap wordt het `initiate.ps1`-bestand uitgevoerd, dat het psake-build-script aanroept.</span><span class="sxs-lookup"><span data-stu-id="d39c2-235">This build step runs the `initiate.ps1` file, which calls the psake build script.</span></span>
+<span data-ttu-id="18129-235">Met deze build-stap wordt het `initiate.ps1`-bestand uitgevoerd, dat het psake-build-script aanroept.</span><span class="sxs-lookup"><span data-stu-id="18129-235">This build step runs the `initiate.ps1` file, which calls the psake build script.</span></span>
 
-### <a name="publish-test-results"></a><span data-ttu-id="d39c2-236">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-236">Publish Test Results</span></span>
+### <a name="publish-test-results"></a><span data-ttu-id="18129-236">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-236">Publish Test Results</span></span>
 
-1. <span data-ttu-id="d39c2-237">De **indeling van het test resultaat** instellen op `NUnit`</span><span class="sxs-lookup"><span data-stu-id="d39c2-237">Set **Test Result Format** to `NUnit`</span></span>
-1. <span data-ttu-id="d39c2-238">**Testresultaten-bestanden** instellen op `InfraDNS/Tests/Results/*.xml`</span><span class="sxs-lookup"><span data-stu-id="d39c2-238">Set **Test Results Files** to `InfraDNS/Tests/Results/*.xml`</span></span>
-1. <span data-ttu-id="d39c2-239">Stel de titel van de **test uitvoering** in op `Unit`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-239">Set **Test Run Title** to `Unit`.</span></span>
-1. <span data-ttu-id="d39c2-240">Zorg ervoor dat de **optie opties** **ingeschakeld** en **altijd uitvoeren** zijn geselecteerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-240">Make sure **Control Options** **Enabled** and **Always run** are both selected.</span></span>
+1. <span data-ttu-id="18129-237">De **indeling van het test resultaat** instellen op `NUnit`</span><span class="sxs-lookup"><span data-stu-id="18129-237">Set **Test Result Format** to `NUnit`</span></span>
+1. <span data-ttu-id="18129-238">**Testresultaten-bestanden** instellen op `InfraDNS/Tests/Results/*.xml`</span><span class="sxs-lookup"><span data-stu-id="18129-238">Set **Test Results Files** to `InfraDNS/Tests/Results/*.xml`</span></span>
+1. <span data-ttu-id="18129-239">Stel de titel van de **test uitvoering** in op `Unit`.</span><span class="sxs-lookup"><span data-stu-id="18129-239">Set **Test Run Title** to `Unit`.</span></span>
+1. <span data-ttu-id="18129-240">Zorg ervoor dat de **optie opties** **ingeschakeld** en **altijd uitvoeren** zijn geselecteerd.</span><span class="sxs-lookup"><span data-stu-id="18129-240">Make sure **Control Options** **Enabled** and **Always run** are both selected.</span></span>
 
-<span data-ttu-id="d39c2-241">Met deze build-stap worden de eenheids tests uitgevoerd in het schadelijke script dat we eerder hebben bekeken en worden de resultaten opgeslagen in de map `InfraDNS/Tests/Results/*.xml`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-241">This build step runs the unit tests in the Pester script we looked at earlier, and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.</span></span>
+<span data-ttu-id="18129-241">Met deze build-stap worden de eenheids tests uitgevoerd in het schadelijke script dat we eerder hebben bekeken en worden de resultaten opgeslagen in de map `InfraDNS/Tests/Results/*.xml`.</span><span class="sxs-lookup"><span data-stu-id="18129-241">This build step runs the unit tests in the Pester script we looked at earlier, and stores the results in the `InfraDNS/Tests/Results/*.xml` folder.</span></span>
 
-### <a name="copy-files"></a><span data-ttu-id="d39c2-242">Bestanden kopiëren</span><span class="sxs-lookup"><span data-stu-id="d39c2-242">Copy Files</span></span>
+### <a name="copy-files"></a><span data-ttu-id="18129-242">Bestanden kopiëren</span><span class="sxs-lookup"><span data-stu-id="18129-242">Copy Files</span></span>
 
-1. <span data-ttu-id="d39c2-243">Voeg de volgende regels toe aan de **inhoud**:</span><span class="sxs-lookup"><span data-stu-id="d39c2-243">Add each of the following lines to **Contents**:</span></span>
+1. <span data-ttu-id="18129-243">Voeg de volgende regels toe aan de **inhoud**:</span><span class="sxs-lookup"><span data-stu-id="18129-243">Add each of the following lines to **Contents**:</span></span>
 
    ```
    initiate.ps1
@@ -359,73 +359,73 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
    **\Integration\**
    ```
 
-1. <span data-ttu-id="d39c2-244">**TargetFolder** instellen op `$(Build.ArtifactStagingDirectory)\`</span><span class="sxs-lookup"><span data-stu-id="d39c2-244">Set **TargetFolder** to `$(Build.ArtifactStagingDirectory)\`</span></span>
+1. <span data-ttu-id="18129-244">**TargetFolder** instellen op `$(Build.ArtifactStagingDirectory)\`</span><span class="sxs-lookup"><span data-stu-id="18129-244">Set **TargetFolder** to `$(Build.ArtifactStagingDirectory)\`</span></span>
 
-<span data-ttu-id="d39c2-245">Met deze stap worden de build-en test scripts gekopieerd naar de staging-directory, zodat de volgende stap kan worden gepubliceerd als constructie-artefacten.</span><span class="sxs-lookup"><span data-stu-id="d39c2-245">This step copies the build and test scripts to the staging directory so that the can be published as build artifacts by the next step.</span></span>
+<span data-ttu-id="18129-245">Met deze stap worden de build-en test scripts gekopieerd naar de staging-directory, zodat de volgende stap kan worden gepubliceerd als constructie-artefacten.</span><span class="sxs-lookup"><span data-stu-id="18129-245">This step copies the build and test scripts to the staging directory so that the can be published as build artifacts by the next step.</span></span>
 
-### <a name="publish-artifact"></a><span data-ttu-id="d39c2-246">Artefact publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-246">Publish Artifact</span></span>
+### <a name="publish-artifact"></a><span data-ttu-id="18129-246">Artefact publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-246">Publish Artifact</span></span>
 
-1. <span data-ttu-id="d39c2-247">**Pad instellen om** naar `$(Build.ArtifactStagingDirectory)\` te publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-247">Set **Path to Publish** to `$(Build.ArtifactStagingDirectory)\`</span></span>
-1. <span data-ttu-id="d39c2-248">**Artefact naam** instellen op `Deploy`</span><span class="sxs-lookup"><span data-stu-id="d39c2-248">Set **Artifact Name** to `Deploy`</span></span>
-1. <span data-ttu-id="d39c2-249">**Type artefact** instellen op `Server`</span><span class="sxs-lookup"><span data-stu-id="d39c2-249">Set **Artifact Type** to `Server`</span></span>
-1. <span data-ttu-id="d39c2-250">Selecteer `Enabled` in de **besturings opties**</span><span class="sxs-lookup"><span data-stu-id="d39c2-250">Select `Enabled` in **Control Options**</span></span>
+1. <span data-ttu-id="18129-247">**Pad instellen om** naar `$(Build.ArtifactStagingDirectory)\` te publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-247">Set **Path to Publish** to `$(Build.ArtifactStagingDirectory)\`</span></span>
+1. <span data-ttu-id="18129-248">**Artefact naam** instellen op `Deploy`</span><span class="sxs-lookup"><span data-stu-id="18129-248">Set **Artifact Name** to `Deploy`</span></span>
+1. <span data-ttu-id="18129-249">**Type artefact** instellen op `Server`</span><span class="sxs-lookup"><span data-stu-id="18129-249">Set **Artifact Type** to `Server`</span></span>
+1. <span data-ttu-id="18129-250">Selecteer `Enabled` in de **besturings opties**</span><span class="sxs-lookup"><span data-stu-id="18129-250">Select `Enabled` in **Control Options**</span></span>
 
-## <a name="enable-continuous-integration"></a><span data-ttu-id="d39c2-251">Continue integratie inschakelen</span><span class="sxs-lookup"><span data-stu-id="d39c2-251">Enable continuous integration</span></span>
+## <a name="enable-continuous-integration"></a><span data-ttu-id="18129-251">Continue integratie inschakelen</span><span class="sxs-lookup"><span data-stu-id="18129-251">Enable continuous integration</span></span>
 
-<span data-ttu-id="d39c2-252">Nu gaan we een trigger instellen die ervoor zorgt dat het project op elk gewenst moment een wijziging in de vertakking `ci-cd-example` van de Git-opslag plaats wordt ingecheckt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-252">Now we'll set up a trigger that causes the project to build any time a change is checked in to the `ci-cd-example` branch of the git repository.</span></span>
+<span data-ttu-id="18129-252">Nu gaan we een trigger instellen die ervoor zorgt dat het project op elk gewenst moment een wijziging in de vertakking `ci-cd-example` van de Git-opslag plaats wordt ingecheckt.</span><span class="sxs-lookup"><span data-stu-id="18129-252">Now we'll set up a trigger that causes the project to build any time a change is checked in to the `ci-cd-example` branch of the git repository.</span></span>
 
-1. <span data-ttu-id="d39c2-253">Klik in TFS op het tabblad **Build & release**</span><span class="sxs-lookup"><span data-stu-id="d39c2-253">In TFS, click the **Build & Release** tab</span></span>
-1. <span data-ttu-id="d39c2-254">Selecteer de definitie van de `DNS Infra` build en klik op **bewerken**</span><span class="sxs-lookup"><span data-stu-id="d39c2-254">Select the `DNS Infra` build definition, and click **Edit**</span></span>
-1. <span data-ttu-id="d39c2-255">Klik op het tabblad **Triggers**</span><span class="sxs-lookup"><span data-stu-id="d39c2-255">Click the **Triggers** tab</span></span>
-1. <span data-ttu-id="d39c2-256">Selecteer **doorlopende integratie (CI)** en selecteer `refs/heads/ci-cd-example` in de vervolg keuzelijst vertakking</span><span class="sxs-lookup"><span data-stu-id="d39c2-256">Select **Continuous integration (CI)**, and select `refs/heads/ci-cd-example` in the branch drop-down list</span></span>
-1. <span data-ttu-id="d39c2-257">Klik op **Opslaan** en vervolgens op **OK**</span><span class="sxs-lookup"><span data-stu-id="d39c2-257">Click **Save** and then **OK**</span></span>
+1. <span data-ttu-id="18129-253">Klik in TFS op het tabblad **Build & release**</span><span class="sxs-lookup"><span data-stu-id="18129-253">In TFS, click the **Build & Release** tab</span></span>
+1. <span data-ttu-id="18129-254">Selecteer de definitie van de `DNS Infra` build en klik op **bewerken**</span><span class="sxs-lookup"><span data-stu-id="18129-254">Select the `DNS Infra` build definition, and click **Edit**</span></span>
+1. <span data-ttu-id="18129-255">Klik op het tabblad **Triggers**</span><span class="sxs-lookup"><span data-stu-id="18129-255">Click the **Triggers** tab</span></span>
+1. <span data-ttu-id="18129-256">Selecteer **doorlopende integratie (CI)** en selecteer `refs/heads/ci-cd-example` in de vervolg keuzelijst vertakking</span><span class="sxs-lookup"><span data-stu-id="18129-256">Select **Continuous integration (CI)**, and select `refs/heads/ci-cd-example` in the branch drop-down list</span></span>
+1. <span data-ttu-id="18129-257">Klik op **Opslaan** en vervolgens op **OK**</span><span class="sxs-lookup"><span data-stu-id="18129-257">Click **Save** and then **OK**</span></span>
 
-<span data-ttu-id="d39c2-258">Elke wijziging in de TFS Git-opslag plaats activeert nu een geautomatiseerde build.</span><span class="sxs-lookup"><span data-stu-id="d39c2-258">Now any change in the TFS git repository triggers an automated build.</span></span>
+<span data-ttu-id="18129-258">Elke wijziging in de TFS Git-opslag plaats activeert nu een geautomatiseerde build.</span><span class="sxs-lookup"><span data-stu-id="18129-258">Now any change in the TFS git repository triggers an automated build.</span></span>
 
-## <a name="create-the-release-definition"></a><span data-ttu-id="d39c2-259">De release definitie maken</span><span class="sxs-lookup"><span data-stu-id="d39c2-259">Create the release definition</span></span>
+## <a name="create-the-release-definition"></a><span data-ttu-id="18129-259">De release definitie maken</span><span class="sxs-lookup"><span data-stu-id="18129-259">Create the release definition</span></span>
 
-<span data-ttu-id="d39c2-260">We gaan een release definitie maken zodat het project wordt geïmplementeerd in de ontwikkel omgeving met elke code inchecken.</span><span class="sxs-lookup"><span data-stu-id="d39c2-260">Let's create a release definition so that the project is deployed to the development environment with every code check-in.</span></span>
+<span data-ttu-id="18129-260">We gaan een release definitie maken zodat het project wordt geïmplementeerd in de ontwikkel omgeving met elke code inchecken.</span><span class="sxs-lookup"><span data-stu-id="18129-260">Let's create a release definition so that the project is deployed to the development environment with every code check-in.</span></span>
 
-<span data-ttu-id="d39c2-261">Als u dit wilt doen, voegt u een nieuwe release definitie toe aan de `InfraDNS` build-definitie die u eerder hebt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="d39c2-261">To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.</span></span>
-<span data-ttu-id="d39c2-262">Zorg ervoor dat u **doorlopende implementatie** selecteert zodat een nieuwe release wordt geactiveerd wanneer een nieuwe build wordt voltooid.</span><span class="sxs-lookup"><span data-stu-id="d39c2-262">Be sure to select **Continuous deployment** so that a new release will be triggered any time a new build is completed.</span></span>
-<span data-ttu-id="d39c2-263">([Wat zijn release pijplijnen?](/azure/devops/pipelines/release/)) en configureer deze als volgt:</span><span class="sxs-lookup"><span data-stu-id="d39c2-263">([What are release pipelines?](/azure/devops/pipelines/release/)) and configure it as follows:</span></span>
+<span data-ttu-id="18129-261">Als u dit wilt doen, voegt u een nieuwe release definitie toe aan de `InfraDNS` build-definitie die u eerder hebt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="18129-261">To do this, add a new release definition associated with the `InfraDNS` build definition you created previously.</span></span>
+<span data-ttu-id="18129-262">Zorg ervoor dat u **doorlopende implementatie** selecteert zodat een nieuwe release wordt geactiveerd wanneer een nieuwe build wordt voltooid.</span><span class="sxs-lookup"><span data-stu-id="18129-262">Be sure to select **Continuous deployment** so that a new release will be triggered any time a new build is completed.</span></span>
+<span data-ttu-id="18129-263">([Wat zijn release pijplijnen?](/azure/devops/pipelines/release/)) en configureer deze als volgt:</span><span class="sxs-lookup"><span data-stu-id="18129-263">([What are release pipelines?](/azure/devops/pipelines/release/)) and configure it as follows:</span></span>
 
-<span data-ttu-id="d39c2-264">Voeg de volgende stappen toe aan de release definitie:</span><span class="sxs-lookup"><span data-stu-id="d39c2-264">Add the following steps to the release definition:</span></span>
+<span data-ttu-id="18129-264">Voeg de volgende stappen toe aan de release definitie:</span><span class="sxs-lookup"><span data-stu-id="18129-264">Add the following steps to the release definition:</span></span>
 
-- <span data-ttu-id="d39c2-265">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="d39c2-265">PowerShell Script</span></span>
-- <span data-ttu-id="d39c2-266">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-266">Publish Test Results</span></span>
-- <span data-ttu-id="d39c2-267">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="d39c2-267">Publish Test Results</span></span>
+- <span data-ttu-id="18129-265">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="18129-265">PowerShell Script</span></span>
+- <span data-ttu-id="18129-266">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-266">Publish Test Results</span></span>
+- <span data-ttu-id="18129-267">Testresultaten publiceren</span><span class="sxs-lookup"><span data-stu-id="18129-267">Publish Test Results</span></span>
 
-<span data-ttu-id="d39c2-268">Bewerk de stappen als volgt:</span><span class="sxs-lookup"><span data-stu-id="d39c2-268">Edit the steps as follows:</span></span>
+<span data-ttu-id="18129-268">Bewerk de stappen als volgt:</span><span class="sxs-lookup"><span data-stu-id="18129-268">Edit the steps as follows:</span></span>
 
-### <a name="powershell-script"></a><span data-ttu-id="d39c2-269">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="d39c2-269">PowerShell Script</span></span>
+### <a name="powershell-script"></a><span data-ttu-id="18129-269">Power shell-script</span><span class="sxs-lookup"><span data-stu-id="18129-269">PowerShell Script</span></span>
 
-1. <span data-ttu-id="d39c2-270">Stel het veld **scriptpad** in op `$(Build.DefinitionName)\Deploy\initiate.ps1"`</span><span class="sxs-lookup"><span data-stu-id="d39c2-270">Set the **Script Path** field to `$(Build.DefinitionName)\Deploy\initiate.ps1"`</span></span>
-1. <span data-ttu-id="d39c2-271">Stel het veld **Arguments** in op `-fileName Deploy`</span><span class="sxs-lookup"><span data-stu-id="d39c2-271">Set the **Arguments** field to `-fileName Deploy`</span></span>
+1. <span data-ttu-id="18129-270">Stel het veld **scriptpad** in op `$(Build.DefinitionName)\Deploy\initiate.ps1"`</span><span class="sxs-lookup"><span data-stu-id="18129-270">Set the **Script Path** field to `$(Build.DefinitionName)\Deploy\initiate.ps1"`</span></span>
+1. <span data-ttu-id="18129-271">Stel het veld **Arguments** in op `-fileName Deploy`</span><span class="sxs-lookup"><span data-stu-id="18129-271">Set the **Arguments** field to `-fileName Deploy`</span></span>
 
-### <a name="first-publish-test-results"></a><span data-ttu-id="d39c2-272">Eerste publicatie Testresultaten</span><span class="sxs-lookup"><span data-stu-id="d39c2-272">First Publish Test Results</span></span>
+### <a name="first-publish-test-results"></a><span data-ttu-id="18129-272">Eerste publicatie Testresultaten</span><span class="sxs-lookup"><span data-stu-id="18129-272">First Publish Test Results</span></span>
 
-1. <span data-ttu-id="d39c2-273">`NUnit` selecteren voor het veld met de indeling van het **test resultaat**</span><span class="sxs-lookup"><span data-stu-id="d39c2-273">Select `NUnit` for the **Test Result Format** field</span></span>
-1. <span data-ttu-id="d39c2-274">Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`</span><span class="sxs-lookup"><span data-stu-id="d39c2-274">Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`</span></span>
-1. <span data-ttu-id="d39c2-275">De titel van de **test uitvoering** instellen op `Integration`</span><span class="sxs-lookup"><span data-stu-id="d39c2-275">Set the **Test Run Title** to `Integration`</span></span>
-1. <span data-ttu-id="d39c2-276">Schakel onder **controle opties de optie** **altijd uitvoeren**</span><span class="sxs-lookup"><span data-stu-id="d39c2-276">Under **Control Options**, check **Always run**</span></span>
+1. <span data-ttu-id="18129-273">`NUnit` selecteren voor het veld met de indeling van het **test resultaat**</span><span class="sxs-lookup"><span data-stu-id="18129-273">Select `NUnit` for the **Test Result Format** field</span></span>
+1. <span data-ttu-id="18129-274">Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`</span><span class="sxs-lookup"><span data-stu-id="18129-274">Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`</span></span>
+1. <span data-ttu-id="18129-275">De titel van de **test uitvoering** instellen op `Integration`</span><span class="sxs-lookup"><span data-stu-id="18129-275">Set the **Test Run Title** to `Integration`</span></span>
+1. <span data-ttu-id="18129-276">Schakel onder **controle opties de optie** **altijd uitvoeren**</span><span class="sxs-lookup"><span data-stu-id="18129-276">Under **Control Options**, check **Always run**</span></span>
 
-### <a name="second-publish-test-results"></a><span data-ttu-id="d39c2-277">Tweede publicatie Testresultaten</span><span class="sxs-lookup"><span data-stu-id="d39c2-277">Second Publish Test Results</span></span>
+### <a name="second-publish-test-results"></a><span data-ttu-id="18129-277">Tweede publicatie Testresultaten</span><span class="sxs-lookup"><span data-stu-id="18129-277">Second Publish Test Results</span></span>
 
-1. <span data-ttu-id="d39c2-278">`NUnit` selecteren voor het veld met de indeling van het **test resultaat**</span><span class="sxs-lookup"><span data-stu-id="d39c2-278">Select `NUnit` for the **Test Result Format** field</span></span>
-1. <span data-ttu-id="d39c2-279">Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`</span><span class="sxs-lookup"><span data-stu-id="d39c2-279">Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`</span></span>
-1. <span data-ttu-id="d39c2-280">De titel van de **test uitvoering** instellen op `Acceptance`</span><span class="sxs-lookup"><span data-stu-id="d39c2-280">Set the **Test Run Title** to `Acceptance`</span></span>
-1. <span data-ttu-id="d39c2-281">Schakel onder **controle opties de optie** **altijd uitvoeren**</span><span class="sxs-lookup"><span data-stu-id="d39c2-281">Under **Control Options**, check **Always run**</span></span>
+1. <span data-ttu-id="18129-278">`NUnit` selecteren voor het veld met de indeling van het **test resultaat**</span><span class="sxs-lookup"><span data-stu-id="18129-278">Select `NUnit` for the **Test Result Format** field</span></span>
+1. <span data-ttu-id="18129-279">Stel het veld **test resultaat bestanden** in op `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`</span><span class="sxs-lookup"><span data-stu-id="18129-279">Set the **Test Result Files** field to `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`</span></span>
+1. <span data-ttu-id="18129-280">De titel van de **test uitvoering** instellen op `Acceptance`</span><span class="sxs-lookup"><span data-stu-id="18129-280">Set the **Test Run Title** to `Acceptance`</span></span>
+1. <span data-ttu-id="18129-281">Schakel onder **controle opties de optie** **altijd uitvoeren**</span><span class="sxs-lookup"><span data-stu-id="18129-281">Under **Control Options**, check **Always run**</span></span>
 
-## <a name="verify-your-results"></a><span data-ttu-id="d39c2-282">Uw resultaten controleren</span><span class="sxs-lookup"><span data-stu-id="d39c2-282">Verify your results</span></span>
+## <a name="verify-your-results"></a><span data-ttu-id="18129-282">Uw resultaten controleren</span><span class="sxs-lookup"><span data-stu-id="18129-282">Verify your results</span></span>
 
-<span data-ttu-id="d39c2-283">Telkens wanneer u wijzigingen in de `ci-cd-example` vertakking naar TFS pusht, wordt een nieuwe build gestart.</span><span class="sxs-lookup"><span data-stu-id="d39c2-283">Now, any time you push changes in the `ci-cd-example` branch to TFS, a new build will start.</span></span>
-<span data-ttu-id="d39c2-284">Als de build is voltooid, wordt er een nieuwe implementatie geactiveerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-284">If the build completes successfully, a new deployment is triggered.</span></span>
+<span data-ttu-id="18129-283">Telkens wanneer u wijzigingen in de `ci-cd-example` vertakking naar TFS pusht, wordt een nieuwe build gestart.</span><span class="sxs-lookup"><span data-stu-id="18129-283">Now, any time you push changes in the `ci-cd-example` branch to TFS, a new build will start.</span></span>
+<span data-ttu-id="18129-284">Als de build is voltooid, wordt er een nieuwe implementatie geactiveerd.</span><span class="sxs-lookup"><span data-stu-id="18129-284">If the build completes successfully, a new deployment is triggered.</span></span>
 
-<span data-ttu-id="d39c2-285">U kunt het resultaat van de implementatie controleren door een browser te openen op de client computer en te navigeren naar `www.contoso.com`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-285">You can check the result of the deployment by opening a browser on the client machine and navigating to `www.contoso.com`.</span></span>
+<span data-ttu-id="18129-285">U kunt het resultaat van de implementatie controleren door een browser te openen op de client computer en te navigeren naar `www.contoso.com`.</span><span class="sxs-lookup"><span data-stu-id="18129-285">You can check the result of the deployment by opening a browser on the client machine and navigating to `www.contoso.com`.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="d39c2-286">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="d39c2-286">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="18129-286">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="18129-286">Next steps</span></span>
 
-<span data-ttu-id="d39c2-287">In dit voor beeld wordt de DNS-server zo geconfigureerd `TestAgent1` dat de URL `www.contoso.com` omgezet in `TestAgent2`, maar dat er geen website wordt geïmplementeerd.</span><span class="sxs-lookup"><span data-stu-id="d39c2-287">This example configures the DNS server `TestAgent1` so that the URL `www.contoso.com` resolves to `TestAgent2`, but it does not actually deploy a website.</span></span>
-<span data-ttu-id="d39c2-288">Het skelet hiervoor is te zien in de opslag plaats onder de map `WebApp`.</span><span class="sxs-lookup"><span data-stu-id="d39c2-288">The skeleton for doing so is provided in the repo under the `WebApp` folder.</span></span>
-<span data-ttu-id="d39c2-289">U kunt de beschik bare stubs gebruiken voor het maken van psake-scripts, ziekte tests en DSC-configuraties om uw eigen website te implementeren.</span><span class="sxs-lookup"><span data-stu-id="d39c2-289">You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own website.</span></span>
+<span data-ttu-id="18129-287">In dit voor beeld wordt de DNS-server zo geconfigureerd `TestAgent1` dat de URL `www.contoso.com` omgezet in `TestAgent2`, maar dat er geen website wordt geïmplementeerd.</span><span class="sxs-lookup"><span data-stu-id="18129-287">This example configures the DNS server `TestAgent1` so that the URL `www.contoso.com` resolves to `TestAgent2`, but it does not actually deploy a website.</span></span>
+<span data-ttu-id="18129-288">Het skelet hiervoor is te zien in de opslag plaats onder de map `WebApp`.</span><span class="sxs-lookup"><span data-stu-id="18129-288">The skeleton for doing so is provided in the repo under the `WebApp` folder.</span></span>
+<span data-ttu-id="18129-289">U kunt de beschik bare stubs gebruiken voor het maken van psake-scripts, ziekte tests en DSC-configuraties om uw eigen website te implementeren.</span><span class="sxs-lookup"><span data-stu-id="18129-289">You can use the stubs provided to create psake scripts, Pester tests, and DSC configurations to deploy your own website.</span></span>

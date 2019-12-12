@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 8dfc0f66-65ec-4141-9088-68e47dbe3908
 caps.latest.revision: 6
 ms.openlocfilehash: de0e7de6b02f62770126350d0c09df6c7909464e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72357083"
 ---
-# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="bc72c-102">GetProc05-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="bc72c-102">GetProc05 (VB.NET) Sample Code</span></span>
+# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="150a0-102">GetProc05-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="150a0-102">GetProc05 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="bc72c-103">Dit is de volledige VB.NET-code voor de voor beeld-cmdlet GetProc05.</span><span class="sxs-lookup"><span data-stu-id="bc72c-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
+<span data-ttu-id="150a0-103">Dit is de volledige VB.NET-code voor de voor beeld-cmdlet GetProc05.</span><span class="sxs-lookup"><span data-stu-id="150a0-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
 
 ```vb
 Imports System
@@ -434,6 +434,6 @@ End Namespace
 
 <!-- TODO!!!:  [!code-csharp[GetProcessSample01.vb](../../powershell-sdk-samples/SDK-2.0/vb/GetProcessSample01/GetProcessSample01.vb#L10-L419 "GetProcessSample01.cs")] -->
 
-## <a name="see-also"></a><span data-ttu-id="bc72c-104">Zie ook</span><span class="sxs-lookup"><span data-stu-id="bc72c-104">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="150a0-104">Zie ook</span><span class="sxs-lookup"><span data-stu-id="150a0-104">See Also</span></span>
 
-[<span data-ttu-id="bc72c-105">Windows Power shell SDK</span><span class="sxs-lookup"><span data-stu-id="bc72c-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="150a0-105">Windows Power shell SDK</span><span class="sxs-lookup"><span data-stu-id="150a0-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
