@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: Werken met lokale PSRepositories
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328831"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415822"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>Werken met lokale PowerShellGet-opslag plaatsen
+# <a name="working-with-private-powershellget-repositories"></a>Werken met persoonlijke PowerShellGet-opslag plaatsen
 
 De PowerShellGet-module ondersteunt andere opslag plaatsen dan de PowerShell Gallery.
 Met deze cmdlets kunnen de volgende scenario's worden ingeschakeld:
@@ -18,6 +18,7 @@ Met deze cmdlets kunnen de volgende scenario's worden ingeschakeld:
 - Ondersteuning voor een vertrouwde, vooraf gevalideerde set Power shell-modules voor gebruik in uw omgeving
 - Een CI/CD-pijp lijn testen die Power shell-modules of-scripts bouwt
 - Power shell-scripts en-modules leveren aan systemen die geen toegang tot internet hebben
+- Power shell-scripts en-modules bieden die alleen beschikbaar zijn voor uw organisatie
 
 In dit artikel wordt beschreven hoe u een lokale Power shell-opslag plaats instelt. Het artikel heeft ook betrekking op de [OfflinePowerShellGetDeploy][] -module die beschikbaar is via de PowerShell Gallery. Deze module bevat cmdlets voor het installeren van de meest recente versie van PowerShellGet in uw lokale opslag plaats.
 
@@ -25,7 +26,7 @@ In dit artikel wordt beschreven hoe u een lokale Power shell-opslag plaats inste
 
 Er zijn twee manieren om een lokale PSRepository: NuGet-server of-bestands share te maken. Elk type heeft voor-en nadelen:
 
-NuGet-server
+### <a name="nuget-server"></a>NuGet-server
 
 | Voordelen| Nadelen |
 | --- | --- |
@@ -34,7 +35,7 @@ NuGet-server
 | NuGet biedt ondersteuning voor meta gegevens in `.Nupkg`-pakketten | Voor publiceren is API-sleutel beheer & onderhoud vereist |
 | Biedt zoeken, pakket beheer, enzovoort. | |
 
-Bestandsshare
+### <a name="file-share"></a>Bestandsshare
 
 | Voordelen| Nadelen |
 | --- | --- |
@@ -109,7 +110,9 @@ Voorbeelden:
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Voorbeeld:
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 Als uw lokale PSRepository is gebaseerd op het web, is er een extra stap nodig die gebruikmaakt van nuget. exe om te publiceren.
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Verpakkings oplossingen gebruiken voor het hosten van PowerShellGet-opslag plaatsen
+
+U kunt ook verpakkings oplossingen zoals Azure-artefacten gebruiken om een persoonlijke of open bare PowerShellGet-opslag plaats te hosten. Zie de [documentatie van Azure artefacten](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library)voor meer informatie en instructies.
 
 > [!IMPORTANT]
 > Om de beveiliging te waarborgen, moeten API-sleutels niet in scripts worden vastgelegd. Gebruik een systeem voor beveiligd sleutel beheer.

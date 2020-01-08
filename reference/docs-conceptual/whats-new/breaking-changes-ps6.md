@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: Power shell, kern
 title: Belang rijke wijzigingen voor Power shell 6,0
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417553"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415698"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Belang rijke wijzigingen voor Power shell 6. x
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417553"
 
 [Power shell workflow][workflow] is een functie in Windows Power shell die is gebaseerd op [Windows Workflow Foundation (WF)][workflow-foundation] waarmee robuuste runbooks kunnen worden gemaakt voor langdurige of geparalleleerde taken.
 
-Vanwege het ontbreken van ondersteuning voor Windows Workflow Foundation in .NET core, zullen we de Power shell-werk stroom niet blijven ondersteunen in Power shell core.
+Vanwege het ontbreken van ondersteuning voor Windows Workflow Foundation in .NET core, bieden we geen ondersteuning voor Power shell-werk stroom in Power shell core.
 
 In de toekomst willen we native parallellisme/gelijktijdigheid inschakelen in de Power shell-taal zonder dat Power shell-werk stroom nodig is.
 
@@ -63,6 +63,10 @@ In plaats daarvan wordt u aangeraden de CIM-cmdlets (ook wel WMI v2) te gebruike
 ### <a name="microsoftpowershelllocalaccounts"></a>Micro soft. Power shell. LocalAccounts
 
 Als gevolg van het gebruik van niet-ondersteunde Api's, is `Microsoft.PowerShell.LocalAccounts` verwijderd uit Power shell core totdat er een betere oplossing is gevonden.
+
+### <a name="new-webserviceproxy-cmdlet-removed"></a>`New-WebServiceProxy`-cmdlet verwijderd
+
+.NET core biedt geen ondersteuning voor het Windows Communication Framework, dat services biedt voor het gebruik van het SOAP-protocol. Deze cmdlet is verwijderd omdat SOAP is vereist.
 
 ### <a name="-computer-cmdlets"></a>`*-Computer`-cmdlets
 

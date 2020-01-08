@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Quick Start: een website maken met DSC'
-ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942725"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416134"
 ---
-> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
+# <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>Quick Start: een website maken met desired state Configuration (DSC)
 
-# <a name="quickstart---create-a-website-with-dsc"></a>Quick Start: een website maken met DSC
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 In deze oefening wordt uitgelegd hoe u een desired state Configuration (DSC)-configuratie kunt maken en Toep assen van het begin tot het einde.
 In het voor beeld dat we gebruiken, zorgt u ervoor dat de functie `Web-Server` (IIS) is ingeschakeld op een server en dat de inhoud voor een eenvoudige website ' Hallo wereld ' aanwezig is in de `inetpub\wwwroot` map van die server.
@@ -74,7 +74,7 @@ Sla het bestand op als `WebsiteTest.ps1`.
 
 U ziet dat deze eruitziet als een Power shell-functie, met toevoeging van de trefwoord **configuratie** die wordt gebruikt voor de naam van de functie.
 
-Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. in dit geval `localhost`.
+Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. In dit geval `localhost`.
 
 De configuratie roept twee [resources](../resources/resources.md), **WindowsFeature** en **File**aan.
 Resources maken het werk om ervoor te zorgen dat het doel knooppunt zich in de status bevindt die door de configuratie is gedefinieerd.
@@ -105,7 +105,7 @@ De eerste regel maakt de configuratie functie beschikbaar in de-console.
 De tweede regel voert de configuratie uit.
 Het resultaat is dat een nieuwe map met de naam `WebsiteTest` wordt gemaakt als een submap van de huidige map.
 De map `WebsiteTest` bevat een bestand met de naam `localhost.mof`.
-Dit bestand kan vervolgens worden toegepast op het doel knooppunt.
+Dit is het bestand dat vervolgens kan worden toegepast op het doel knooppunt.
 
 ## <a name="apply-the-configuration"></a>De configuratie Toep assen
 
@@ -113,6 +113,9 @@ Nu u de gecompileerde MOF hebt, kunt u de configuratie Toep assen op het doel kn
 
 De cmdlet `Start-DscConfiguration` vertelt de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de engine van DSC, om de configuratie toe te passen.
 De LCM maakt het mogelijk om de DSC-resources aan te roepen om de configuratie toe te passen.
+
+> [!NOTE]
+> Om DSC te kunnen uitvoeren, moet Windows worden geconfigureerd voor het ontvangen van externe Power shell-opdrachten, zelfs wanneer u een `localhost` configuratie uitvoert. Als u uw omgeving eenvoudig wilt configureren, voert u `Set-WsManQuickConfig -Force` uit in een Power shell-terminal met verhoogde bevoegdheden.
 
 In een Power shell-console gaat u naar de map waar u de configuratie hebt opgeslagen en voert u de volgende opdracht uit:
 
