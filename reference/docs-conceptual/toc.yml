@@ -82,7 +82,7 @@
           href: learn/remoting/winrmsecurity.md
         - name: De tweede hop maken voor externe communicatie met PowerShell
           href: learn/remoting/ps-remoting-second-hop.md
-    - name: Verklarende woordenlijst
+    - name: Woordenlijst
       href: learn/windows-powershell-glossary.md
 - name: Onderdelen
   items:
@@ -180,7 +180,7 @@
       href: gallery/installing-psget.md
     - name: Aan de slag
       href: gallery/getting-started.md
-    - name: Instructies
+    - name: 'Uitleg:'
       items:
         - name: Pakketten zoeken in de galerie
           items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: API-sleutels beheren
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Werken met lokale PowerShellGet-opslagplaatsen
+        - name: Werken met PowerShellGet-privé-opslagplaatsen
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: Concepten
       items:
@@ -266,7 +266,7 @@
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: Galerie Veelgestelde vragen
       href: gallery/faqs.md
-- name: Wat is nieuw
+- name: Nieuwe functies
   items:
     - name: Wat is er nieuw in PowerShell Core 6.x?
       items:
@@ -300,7 +300,7 @@
           href: wmf/setup/install-configure.md
         - name: WMF 5.0 verwijderen
           href: wmf/setup/uninstall.md
-    - name: Wat is nieuw
+    - name: Nieuwe functies
       expanded: true
       items:
         - name: Opmerkingen bij de WMF 5.x-release
@@ -416,7 +416,7 @@
                   href: dsc/configurations/crossNodeDependencies.md
                 - name: Een knooppunt opnieuw opstarten
                   href: dsc/configurations/reboot-a-node.md
-    - name: Bronnen
+    - name: Resources
       items:
         - name: Concepten
           items:
@@ -510,7 +510,7 @@
           href: dsc/troubleshooting/troubleshooting.md
         - name: Foutopsporing voor DSC-resources
           href: dsc/troubleshooting/debugResource.md
-    - name: Verwijzing
+    - name: Naslaginformatie
       items:
         - name: Ingebouwde Windows-resources
           items:
@@ -1830,5 +1830,5 @@
     - name: Naslaginformatie over Windows PowerShell
       href: developer/windows-powershell-reference.md
       items:
-        - name: Wat is nieuw
+        - name: Nieuwe functies
           href: developer/windows-powershell-reference-whats-new.md
