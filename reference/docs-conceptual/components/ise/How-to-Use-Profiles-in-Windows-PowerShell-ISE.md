@@ -1,22 +1,25 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: Power shell, cmdlet
 title: Profielen gebruiken in Windows PowerShell ISE
-ms.openlocfilehash: 28354f39aaaa577cec69c1b3f62cfe16ef091218
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030598"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736246"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Profielen gebruiken in Windows PowerShell ISE
 
-In dit onderwerp wordt uitgelegd hoe u profielen gebruikt in Windows Power shell® Integrated Scripting Environment (ISE). We raden u aan om voordat u de taken in deze sectie uitvoert, [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)te controleren, of in het deel venster console, typt u `Get-Help about_Profiles` en drukt u op **Enter**.
+In dit onderwerp wordt uitgelegd hoe u profielen gebruikt in Windows Power shell® Integrated Scripting Environment (ISE). We raden u aan om voordat u de taken in deze sectie uitvoert, [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)te controleren, of in het deel venster console, typt u `Get-Help about_Profiles` en drukt u op <kbd>Enter</kbd>.
 
-Een profiel is een Windows PowerShell ISE script dat automatisch wordt uitgevoerd wanneer u een nieuwe sessie start.  U kunt een of meer Windows Power shell-profielen voor Windows PowerShell ISE maken en gebruiken om de Windows Power shell-of Windows PowerShell ISE-omgeving configureren toe te voegen, zodat deze wordt voor bereid voor uw gebruik, met variabelen, aliassen, functies en kleur en letter type voor keuren die u wilt weer beschikbaar. Een profiel is van invloed op elke Windows PowerShell ISE-sessie die u start.
+Een profiel is een Windows PowerShell ISE script dat automatisch wordt uitgevoerd wanneer u een nieuwe sessie start.
+U kunt een of meer Windows Power shell-profielen voor Windows PowerShell ISE maken en gebruiken om de Windows Power shell-of Windows PowerShell ISE-omgeving configureren toe te voegen, zodat deze wordt voor bereid voor uw gebruik, met variabelen, aliassen, functies en kleur en letter type voor keuren die u wilt weer beschikbaar. Een profiel is van invloed op elke Windows PowerShell ISE-sessie die u start.
 
 > [!NOTE]
-> Het Windows Power shell-uitvoerings beleid bepaalt of u scripts kunt uitvoeren en een profiel laden. Het standaard uitvoerings beleid, ' beperkt ', voor komt dat alle scripts worden uitgevoerd, met inbegrip van profielen. Als u het beleid ' beperkt ' gebruikt, kan het profiel niet worden geladen. Zie [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)voor meer informatie over het uitvoerings beleid.
+> Het Windows Power shell-uitvoerings beleid bepaalt of u scripts kunt uitvoeren en een profiel laden.
+> Het standaard uitvoerings beleid, ' beperkt ', voor komt dat alle scripts worden uitgevoerd, met inbegrip van profielen.
+> Als u het beleid ' beperkt ' gebruikt, kan het profiel niet worden geladen. Zie [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)voor meer informatie over het uitvoerings beleid.
 
 ## <a name="selecting-a-profile-to-use-in-the-windows-powershell-ise"></a>Een profiel selecteren dat u wilt gebruiken in de Windows PowerShell ISE
 
@@ -24,18 +27,18 @@ Windows PowerShell ISE ondersteunt profielen voor de huidige gebruiker en alle g
 
 Het profiel dat u gebruikt, wordt bepaald door de manier waarop u Windows Power shell en Windows PowerShell ISE gebruikt.
 
-- Als u alleen Windows PowerShell ISE gebruikt om Windows Power shell uit te voeren, slaat u al uw items op in een van de ISE profielen, zoals het profiel CurrentUserCurrentHost voor Windows PowerShell ISE of het AllUsersCurrentHost-profiel voor Windows PowerShell ISE.
+- Als u alleen Windows PowerShell ISE gebruikt om Windows Power shell uit te voeren, slaat u al uw items op in een van de ISE profielen, zoals het profiel **CurrentUserCurrentHost** voor Windows PowerShell ISE of het **AllUsersCurrentHost** -profiel voor Windows PowerShell ISE.
 
-- Als u meerdere host-Program ma's gebruikt om Windows Power shell uit te voeren, slaat u uw functies, aliassen, variabelen en opdrachten op in een profiel dat van invloed is op alle host-Program ma's, zoals het CurrentUserAllHosts-of AllUsersAllHosts-profiel, en hoe u ISE-specifieke functies opslaat, zoals aanpassing van kleuren en letter typen in het CurrentUserCurrentHost profiel voor Windows PowerShell ISE profiel of het AllUsersCurrentHost-profiel voor Windows PowerShell ISE.
+- Als u meerdere hostgroepen gebruikt om Windows Power shell uit te voeren, slaat u uw functies, aliassen, variabelen en opdrachten op in een profiel dat van invloed is op alle host-Program ma's, zoals de CurrentUserAllHosts of het profiel **AllUsersAllHosts** , en hoe u ISE-specifieke functies, zoals kleur en letter type aanpassing in het profiel **CurrentUserCurrentHost** voor Windows PowerShell ISE profiel of het **AllUsersCurrentHost** -profiel voor Windows PowerShell ISE, opslaat.
 
 Hieronder vindt u de profielen die kunnen worden gemaakt en gebruikt in Windows PowerShell ISE. Elk profiel wordt opgeslagen in een eigen specifiek pad.
 
-| Profieltype | Pad naar profiel |
-| --- | --- |
-| **Huidige gebruiker, Power shell-ISE**| `$PROFILE.CurrentUserCurrentHost` of `$PROFILE` |
-| **Alle gebruikers, Power shell ISE**| `$PROFILE.AllUsersCurrentHost` |
-| **Huidige gebruiker, alle hosts**| `$PROFILE.CurrentUserAllHosts` |
-| **Alle gebruikers, alle hosts** | `$PROFILE.AllUsersAllHosts` |
+|           Profieltype           |                   Pad naar profiel                   |
+| -------------------------------- | ------------------------------------------------ |
+| **Huidige gebruiker, Power shell-ISE** | `$PROFILE.CurrentUserCurrentHost` of `$PROFILE` |
+| **Alle gebruikers, Power shell ISE**    | `$PROFILE.AllUsersCurrentHost`                   |
+| **Huidige gebruiker, alle hosts**      | `$PROFILE.CurrentUserAllHosts`                   |
+| **Alle gebruikers, alle hosts**         | `$PROFILE.AllUsersAllHosts`                      |
 
 ## <a name="to-create-a-new-profile"></a>Een nieuw profiel maken
 
@@ -69,11 +72,11 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>Een profiel bewerken
 
-1. Als u het profiel wilt openen, voert u de opdracht psedit uit met de variabele die het profiel aangeeft dat u wilt bewerken. Als u bijvoorbeeld het profiel ' huidige gebruiker, Windows PowerShell ISE ' wilt openen, typt u: `psEdit $PROFILE`
+1. Als u het profiel wilt openen, voert u de opdracht `psEdit` uit met de variabele die het profiel aangeeft dat u wilt bewerken. Als u bijvoorbeeld het profiel ' huidige gebruiker, Windows PowerShell ISE ' wilt openen, typt u: `psEdit $PROFILE`
 
 2. Voeg enkele items toe aan uw profiel. Hier volgen enkele voor beelden om aan de slag te gaan:
 
-   - Als u de standaard achtergrond kleur van het console venster wilt wijzigen in blauw, in het profiel bestands type: `$psISE.Options.OutputPaneBackground = 'blue'`. Zie [Windows PowerShell ISE object model-verwijzing](object-model/The-ISE-Object-Model-Hierarchy.md)voor meer informatie over de variabele $psISE.
+   - Als u de standaard achtergrond kleur van het console venster wilt wijzigen in blauw, in het profiel bestands type: `$psISE.Options.OutputPaneBackground = 'blue'`. Zie [Windows PowerShell ISE object model-verwijzing](object-model/The-ISE-Object-Model-Hierarchy.md)voor meer informatie over de variabele `$psISE`.
 
    - Als u de teken grootte wilt wijzigen in 20, in het profiel bestands type: `$psISE.Options.FontSize =20`
 

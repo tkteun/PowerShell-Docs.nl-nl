@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het ISEAddOnTool-object
-ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028999"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736127"
 ---
 # <a name="the-iseaddontool-object"></a>Het ISEAddOnTool-object
 
@@ -33,6 +33,9 @@ De eigenschap **Control** biedt Lees toegang tot veel van de details van het hul
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -143,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De eigenschap Boolean die aangeeft of het invoeg programma momenteel zichtbaar is in het toegewezen deel venster. Als deze zichtbaar is, kunt u de eigenschap **IsVisible** instellen op **$False** om het hulp programma te verbergen of de eigenschap **IsVisible** instellen op **$True** om een invoeg toepassing zichtbaar te maken op het Power shell-tabblad. Houd er rekening mee dat na het verbergen van een invoeg toepassing niet meer toegankelijk is via de objecten **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** en daarom niet zichtbaar kan worden gemaakt met behulp van deze eigenschap voor dat object.
+De eigenschap Boolean die aangeeft of het invoeg programma momenteel zichtbaar is in het toegewezen deel venster. Als deze zichtbaar is, kunt u de eigenschap **IsVisible** instellen op `$false` om het hulp programma te verbergen of de eigenschap **isvisible** instellen op `$true` om een invoeg toepassing zichtbaar te maken op het Power shell-tabblad. Houd er rekening mee dat na het verbergen van een invoeg toepassing niet meer toegankelijk is via de objecten **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** en daarom niet zichtbaar kan worden gemaakt met behulp van deze eigenschap voor dat object.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -152,7 +155,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Naam
+### <a name="name"></a>Name
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
@@ -161,6 +164,9 @@ De alleen-lezen eigenschap waarmee de naam van het hulp programma voor toevoegen
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het PowerShellTab-object
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028901"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736927"
 ---
 # <a name="the-powershelltab-object"></a>Het PowerShellTab-object
 
@@ -43,7 +43,7 @@ Voert het opgegeven script uit op het Power shell-tabblad.
 
 **Script** -System. Management. Automation. script block of teken reeks het uit te voeren script blok.
 
-**\[useNewScope\]** : een optionele Booleaanse waarde die standaard wordt **$True** als deze is ingesteld op **$True**, wordt een nieuwe scope gemaakt waarin de opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
+**\[useNewScope\]** : een optionele Booleaanse waarde die standaard wordt `$true` als deze is ingesteld op `$true`, wordt een nieuwe scope gemaakt waarin de opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
 
 **\[millisecondsTimeout\]** -optioneel geheel getal dat standaard wordt ingesteld op **500**.
 Als de opdracht niet binnen de opgegeven tijd wordt voltooid, wordt door de opdracht een **TimeoutException** gegenereerd met het bericht ' er is een time-out van de bewerking opgetreden. '
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen Booleaanse eigenschap die een **$True** waarde retourneert als een script kan worden aangeroepen met de methode [Invoke (script)](#invoke-script-) .
+De alleen-lezen Booleaanse eigenschap die een `$true` waarde retourneert als een script kan worden aangeroepen met de methode [Invoke (script)](#invoke-script-) .
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.  In Windows PowerShell ISE 2,0 heeft dit de naam **CommandPane**.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies. In Windows PowerShell ISE 2,0 heeft dit de naam **CommandPane**.
 
 De alleen-lezen eigenschap waarmee het console venster [Editor](The-ISEEditor-Object.md) -object wordt opgehaald.
 
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>Uitvoer
 
-Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd.  In latere versies van Windows PowerShell ISE kunt u het **ConsolePane** -object voor dezelfde doel einden gebruiken.
+Deze functie is aanwezig in Windows PowerShell ISE 2,0, maar is in latere versies van de ISE verwijderd of de naam ervan is gewijzigd. In latere versies van Windows PowerShell ISE kunt u het **ConsolePane** -object voor dezelfde doel einden gebruiken.
 
 De alleen-lezen eigenschap waarmee het uitvoer deel venster van de huidige [Editor](The-ISEEditor-Object.md)wordt opgehaald.
 

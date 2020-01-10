@@ -1,13 +1,13 @@
 ---
-ms.date: 08/14/2018
+ms.date: 01/02/2020
 keywords: Power shell, cmdlet
 title: Scripts schrijven en uitvoeren in Windows PowerShell ISE
-ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2e3122a3b436ba878d2c5f9d72d4f9e024d4d031
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117568"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737063"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Scripts schrijven en uitvoeren in Windows PowerShell ISE
 
@@ -15,14 +15,14 @@ In dit artikel wordt beschreven hoe u scripts maakt, bewerkt, uitvoert en opslaa
 
 ## <a name="how-to-create-and-run-scripts"></a>Scripts maken en uitvoeren
 
-U kunt Windows Power Shell-bestanden openen en bewerken in het Script-venster. Specifieke bestands typen die van belang zijn in Windows Power shell zijn script bestanden (. ps1), script gegevensbestand (. psd1) en script module bestanden (. psm1). Deze bestands typen zijn syntaxis gekleurd in de Script-Editor. Andere algemene bestands typen die u kunt openen in het deel venster script zijn configuratie bestanden (. ps1xml), XML-bestanden en tekst bestanden.
+U kunt Windows Power Shell-bestanden openen en bewerken in het Script-venster. Specifieke bestands typen die van belang zijn in Windows Power shell zijn script bestanden (`.ps1`), script-gegevens bestanden (`.psd1`) en script module bestanden (`.psm1`). Deze bestands typen zijn syntaxis gekleurd in de Script-Editor. Andere algemene bestands typen die u kunt openen in het deel venster script zijn configuratie bestanden (`.ps1xml`), XML-bestanden en tekst bestanden.
 
 > [!NOTE]
 > Het Windows Power shell-uitvoerings beleid bepaalt of u scripts kunt uitvoeren en Windows Power shell-profielen en-configuratie bestanden kan laden. Het standaard uitvoerings beleid, beperkt, voor komt dat alle scripts worden uitgevoerd en voor komt het laden van profielen. Zie [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) en [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing)om het uitvoerings beleid te wijzigen zodat de profielen kunnen worden geladen en gebruikt.
 
 ### <a name="to-create-a-new-script-file"></a>Een nieuw script bestand maken
 
-Klik op de werk balk op **Nieuw**of Klik in het menu **bestand** op **Nieuw**. Het gemaakte bestand wordt weer gegeven op het tabblad nieuw bestand onder het huidige Power shell-tabblad. Houd er rekening mee dat de Power shell-tabbladen alleen zichtbaar zijn wanneer er meer dan één. Standaard wordt een bestand van het type script (. ps1) gemaakt, maar het kan worden opgeslagen met een nieuwe naam en extensie. Meerdere script bestanden kunnen worden gemaakt op hetzelfde Power shell-tabblad.
+Klik op de werk balk op **Nieuw**of Klik in het menu **bestand** op **Nieuw**. Het gemaakte bestand wordt weer gegeven op het tabblad nieuw bestand onder het huidige Power shell-tabblad. Houd er rekening mee dat de Power shell-tabbladen alleen zichtbaar zijn wanneer er meer dan één. Standaard wordt een bestand met het type script (`.ps1`) gemaakt, maar dit kan worden opgeslagen met een nieuwe naam en extensie. Meerdere script bestanden kunnen worden gemaakt op hetzelfde Power shell-tabblad.
 
 ### <a name="to-open-an-existing-script"></a>Een bestaand script openen
 
@@ -30,7 +30,7 @@ Klik op de werk balk op **openen**of Klik in het menu **bestand** op **openen**.
 
 ### <a name="to-close-a-script-tab"></a>Het tabblad Script sluiten
 
-Klik op het pictogram **sluiten** (X) van het tabblad bestand dat u wilt sluiten of selecteer het menu **bestand** en klik op **sluiten**.
+Klik op het pictogram **sluiten** (**X**) van het tabblad bestand dat u wilt sluiten of selecteer het menu **bestand** en klik op **sluiten**.
 
 Als het bestand sinds de laatste keer dat het is opgeslagen, is gewijzigd, wordt u gevraagd dit op te slaan of te negeren.
 
@@ -52,10 +52,10 @@ Klik op de werk balk op **script uitvoeren**of Klik in het menu **bestand** op *
 Er zijn verschillende manieren om een actief script te stoppen.
 
 - Klik op **Stop bewerking** op de werk balk
-- Druk op CTRL + onderbreken
+- Druk op <kbd>CTRL</kbd>+<kbd>afbreek</kbd> punt
 - Selecteer het menu **bestand** en klik op **bewerking stoppen**.
 
-Als u op **CTRL + c** drukt, werkt ook, tenzij er een tekst is geselecteerd. in dat geval wordt **CTRL + c** toegewezen aan de kopieer functie voor de geselecteerde tekst.
+Het is ook mogelijk om op <kbd>ctrl</kbd>+<kbd>c</kbd> te drukken, tenzij er al een tekst is geselecteerd. in dat geval wordt <kbd>CTRL</kbd>+<kbd>C</kbd> toegewezen aan de kopieer functie voor de geselecteerde tekst.
 
 ## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Tekst schrijven en bewerken in het Script-venster
 
@@ -69,17 +69,17 @@ U kunt tekst kopiëren, knippen, plakken, zoeken en vervangen in het Script-vens
 
 ### <a name="to-find-text-in-the-script-pane"></a>Tekst in het Script-venster zoeken
 
-1. Als u tekst overal wilt zoeken, drukt u op **CTRL + F** of klikt u in het menu **bewerken** op **Zoeken in script**.
-2. Als u tekst na de cursor wilt zoeken, drukt u op **F3** of klikt u in het menu **bewerken** op **Volgende zoeken in script**.
-3. Als u tekst wilt zoeken vóór de cursor, drukt u op **SHIFT + F3** of klikt u in het menu **bewerken** op **Vorige zoeken in script**.
+1. Als u tekst overal wilt zoeken, drukt u op <kbd>CTRL</kbd>+<kbd>F</kbd> of klikt u in het menu **bewerken** op **Zoeken in script**.
+2. Als u tekst na de cursor wilt zoeken, drukt u op <kbd>F3</kbd> of klikt u in het menu **bewerken** op **Volgende zoeken in script**.
+3. Als u tekst wilt zoeken vóór de cursor, drukt u op <kbd>SHIFT</kbd>+<kbd>F3</kbd> of klikt u in het menu **bewerken** op **Vorige zoeken in script**.
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>Tekst in het Script-venster zoeken en vervangen
 
-Druk op **CTRL + H** of Klik in het menu **bewerken** op **vervangen in script**. Voer de tekst in die u wilt zoeken en de vervangende tekst en druk vervolgens op **Enter**.
+Druk op <kbd>CTRL</kbd>+<kbd>H</kbd> of Klik in het menu **bewerken** op **vervangen in script**. Voer de tekst in die u wilt zoeken en de vervangende tekst en druk vervolgens op <kbd>Enter</kbd>.
 
 ### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Naar een bepaalde tekst regel in het Script-venster gaan
 
-1. Druk in het deel venster script op **CTRL + G** of Klik in het menu **bewerken** op **Ga naar regel**.
+1. Druk in het deel venster script op <kbd>CTRL</kbd>+<kbd>G</kbd> of Klik in het menu **bewerken** op **Ga naar regel**.
 
 2. Voer een regel nummer in.
 
@@ -87,24 +87,24 @@ Druk op **CTRL + H** of Klik in het menu **bewerken** op **vervangen in script**
 
 1. Selecteer in het deel venster script de tekst die u wilt kopiëren.
 
-2. Druk op **CTRL + C** of Klik in de werk balk op het pictogram **kopiëren** of Klik in het menu **bewerken** op **kopiëren**.
+2. Druk op <kbd>CTRL</kbd>+<kbd>C</kbd> of klik op de werk balk op het pictogram **kopiëren** of Klik in het menu **bewerken** op **kopiëren**.
 
 ### <a name="to-cut-text-in-the-script-pane"></a>Tekst in het Script-venster knippen
 
 1. Selecteer in het deel venster script de tekst die u wilt knippen.
-2. Druk op **CTRL + X** of Klik in de werk balk op het pictogram voor **knippen** of Klik in het menu **bewerken** op **knippen**.
+2. Druk op <kbd>CTRL</kbd>+<kbd>X</kbd> of Klik in de werk balk op het pictogram voor **knippen** of Klik in het menu **bewerken** op **knippen**.
 
 ### <a name="to-paste-text-into-the-script-pane"></a>Tekst in het Script-venster plakken
 
-Druk op **CTRL + V** of Klik in de werk balk op het pictogram **Plakken** of Klik in het menu **bewerken** op **Plakken**.
+Druk op <kbd>CTRL</kbd>+<kbd>V</kbd> of klik op de werk balk op het pictogram **Plakken** of Klik in het menu **bewerken** op **Plakken**.
 
 ### <a name="to-undo-an-action-in-the-script-pane"></a>Een actie in het Script venster ongedaan maken
 
-Druk op **CTRL + Z** of klik op de werk balk op het pictogram **ongedaan maken** of Klik in het menu **bewerken** op **ongedaan maken**.
+Druk op <kbd>CTRL</kbd>+<kbd>Z</kbd> of klik op de werk balk op het pictogram **ongedaan maken** of Klik in het menu **bewerken** op **ongedaan maken**.
 
 ### <a name="to-redo-an-action-in-the-script-pane"></a>Een actie opnieuw uitvoeren in het deel venster script
 
-Druk op **CTRL + Y** of Klik in de werk balk op het pictogram **opnieuw** , of Klik in het menu **bewerken** op **opnieuw**.
+Druk op <kbd>CTRL</kbd>+<kbd>Y</kbd> of klik op de werk balk op het pictogram **opnieuw uitvoeren** of Klik in het menu **bewerken** op **opnieuw**.
 
 ## <a name="how-to-save-a-script"></a>Een script opslaan
 
@@ -112,18 +112,18 @@ Er wordt een sterretje naast de naam van het script weer gegeven om een bestand 
 
 ### <a name="to-save-a-script"></a>Een script opslaan
 
-Druk op **CTRL + S** of klik op de werk balk op het pictogram **Opslaan** of Klik in het menu **bestand** op **Opslaan**.
+Druk op <kbd>CTRL</kbd>+<kbd>S</kbd> of klik op de werk balk op het pictogram **Opslaan** of Klik in het menu **bestand** op **Opslaan**.
 
 ### <a name="to-save-and-name-a-script"></a>Een script opslaan en een naam schrijven
 
 1. Klik in het menu **Bestand** op **Opslaan als**. Het dialoog venster **Opslaan als** wordt weer gegeven.
 2. Voer in het vak **Bestands naam** een naam in voor het bestand.
-3. Selecteer een bestands type in het vak **Opslaan als type** . Selecteer bijvoorbeeld Power shell-scripts (\*. ps1) in het vak **Opslaan als** .
+3. Selecteer een bestands type in het vak **Opslaan als type** . Selecteer bijvoorbeeld Power shell-scripts (`*.ps1`) in het vak **Opslaan als type** .
 4. Klik op **Opslaan**.
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>Een script in ASCII-code ring opslaan
 
-Windows PowerShell ISE worden standaard nieuwe script bestanden (. ps1), script gegevensbestand (. psd1) en script module bestanden (. psm1) standaard opgeslagen als Unicode (BigEndianUnicode). Â Als u een script in een andere code ring wilt opslaan, zoals ASCII (ANSI), gebruikt u de methoden **Save** of **SaveAs** in het object [$psISE. CurrentFile](object-model/the-ise-object-model-hierarchy.md) .
+Windows PowerShell ISE slaat standaard nieuwe script bestanden (`.ps1`), script gegevensbestand (`.psd1`) en script module bestanden (`.psm1`) standaard op als Unicode (BigEndianUnicode). Als u een script wilt opslaan in een andere code ring, zoals ASCII (ANSI), gebruikt u de methoden **Save** of **SaveAs** in het object [$psISE. CurrentFile](object-model/the-ise-object-model-hierarchy.md) .
 
 Met de volgende opdracht wordt een nieuw script opgeslagen als MyScript. ps1 met ASCII-code ring.
 

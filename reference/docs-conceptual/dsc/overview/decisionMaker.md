@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: Overzicht Desired State Configuration voor besluitvormers
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352124"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737250"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Overzicht van desired state Configuration voor besluit vormers
 
@@ -31,7 +31,7 @@ Configuraties kunnen worden gedeeld via de [PowerShell Gallery](https://powershe
 
 ## <a name="dsc-and-devops"></a>DSC en DevOps
 
-DSC is ontworpen met het oog op [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) . Een combi natie van personen, processen en hulpprogram ma's waarmee een snelle implementatie en iteratie kan worden gericht op het leveren van waarde aan eind gebruikers, ongeacht of deze intern of extern zijn. Een configuratie die een omgeving definieert, houdt in dat ontwikkel aars hun vereisten kunnen coderen in een configuratie en controleren of de configuratie broncode beheer is. Operations-teams kunnen vervolgens code implementeren zonder de fout gevoelige hand matige processen te door lopen.
+DSC is ontworpen met het oog op [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) . Een combi natie van personen, processen en hulpprogram ma's waarmee een snelle implementatie en iteratie kan worden gericht op het leveren van waarde aan eind gebruikers, ongeacht of deze intern of extern zijn. Een configuratie die een omgeving definieert, houdt in dat ontwikkel aars hun vereisten kunnen coderen in een configuratie en controleren of de configuratie broncode beheer is. Operations-teams kunnen vervolgens code implementeren zonder de fout gevoelige hand matige processen te door lopen.
 
 Configuraties worden [gegevensgestuurd](../configurations/configData.md). De gedefinieerde gegevens maken het gemakkelijker voor bewerkingen om omgevingen te identificeren en te wijzigen zonder tussen komst van de ontwikkelaar.
 

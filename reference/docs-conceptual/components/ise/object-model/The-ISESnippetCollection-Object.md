@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISESnippetCollection-object
-ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030512"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736042"
 ---
 # <a name="the-isesnippetcollection-object"></a>Het ISESnippetCollection-object
 
-Het **ISESnippetCollection** -object is een verzameling **ISESnippet** -objecten. De verzameling bestanden die is gekoppeld aan een **PowerShellTab** -object, is een lid van deze klasse. Een voor beeld is de verzameling **$psISE. CurrentPowerShellTab. files** .
+Het **ISESnippetCollection** -object is een verzameling **ISESnippet** -objecten. De verzameling bestanden die is gekoppeld aan een **PowerShellTab** -object, is een lid van deze klasse. Een voor beeld is de verzameling `$psISE.CurrentPowerShellTab.Files`.
 
 ## <a name="methods"></a>Methoden
 
@@ -19,7 +19,7 @@ Het **ISESnippetCollection** -object is een verzameling **ISESnippet** -objecten
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee wordt een. fragmenten. ps1xml-bestand geladen dat door de gebruiker gedefinieerde fragmenten bevat. De eenvoudigste manier om fragmenten te maken, is met behulp van de cmdlet New-IseSnippet, die deze automatisch opslaat in de profielmap, zodat ze elke keer dat u begint Windows PowerShell ISE worden geladen.
+Hiermee wordt een `.snippets.ps1xml`-bestand geladen dat door de gebruiker gedefinieerde fragmenten bevat. De eenvoudigste manier om fragmenten te maken, is met behulp van de cmdlet `New-IseSnippet`, die deze automatisch opslaat in de profielmap, zodat deze elke keer dat u begint Windows PowerShell ISE wordt geladen.
 
 **Filepath** -teken reeks het pad en de bestands naam naar een. fragmenten. ps1xml-bestand dat fragment definities bevat.
 

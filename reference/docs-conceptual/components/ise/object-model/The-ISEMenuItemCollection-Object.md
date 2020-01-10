@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEMenuItemCollection-object
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030537"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736169"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Het ISEMenuItemCollection-object
 
-Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEMenuItemCollection. Een voor beeld is het object **$psISE. CurrentPowerShellTab. AddOnsMenu. submenu's** dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows Power shell® Integrated Scripting Environment (ISE).
+Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItemCollection** . Een voor beeld is het `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`-object dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows power shell® Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Methode
 
@@ -27,7 +27,7 @@ Hiermee wordt een menu opdracht toegevoegd aan de verzameling.
 
 **Snelkoppeling** De sneltoets voor de actie.
 
-**Retourneert** Het ISEMenuItem-object dat zojuist is toegevoegd.
+**Retourneert** Het **ISEMenuItem** -object dat zojuist is toegevoegd.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

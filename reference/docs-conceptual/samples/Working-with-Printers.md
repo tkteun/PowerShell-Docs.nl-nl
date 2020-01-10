@@ -1,24 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: Power shell, cmdlet
 title: Met printers werken
-ms.openlocfilehash: 816388325cc3155f1dbd1bc15fc1736155216092
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030677"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736859"
 ---
-# <a name="working-with-printers"></a>Met printers werken
+# <a name="working-with-printers-in-windows"></a>Werken met printers in Windows
 
-U kunt Windows Power shell gebruiken voor het beheren van printers met behulp van WMI en het object WScript. Network COM van WSH. We gebruiken een combi natie van beide hulpprogram ma's voor het demonstreren van specifieke taken.
+U kunt Power shell gebruiken voor het beheren van printers met behulp van WMI en het object **WScript. Network** com van WSH. We gebruiken een combi natie van beide hulpprogram ma's voor het demonstreren van specifieke taken.
 
 ## <a name="listing-printer-connections"></a>Printer verbindingen weer geven
 
 De eenvoudigste manier om de printers weer te geven die op een computer zijn geïnstalleerd, is door de WMI- **Win32_Printer** klasse te gebruiken:
 
 ```powershell
-Get-WmiObject -Class Win32_Printer
+Get-CimInstance -Class Win32_Printer
 ```
 
 U kunt ook de printers weer geven met behulp van het object **WScript. Network** com dat doorgaans wordt gebruikt in WSH-scripts:
@@ -42,7 +42,7 @@ Als u een nieuwe netwerk printer wilt toevoegen, gebruikt u **WScript. Network**
 Als u WMI wilt gebruiken om de standaard printer in te stellen, zoekt u de printer op in de verzameling **Win32_Printer** en roept u de methode **SetDefaultPrinter** aan:
 
 ```powershell
-(Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
 ```
 
 **WScript. Network** is iets eenvoudiger te gebruiken, omdat het een **SetDefaultPrinter** -methode heeft waarbij alleen de printer naam als argument wordt gebruikt:

@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEFile-object
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028959"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736995"
 ---
 # <a name="the-isefile-object"></a>Het ISEFile-object
 
-Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEFile. In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De **$psISE. CurrentFile** en de bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse micro soft. Power shell. host. ISE. ISEFile.
+Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` en de bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Methoden
 
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap waarmee de teken reeks wordt opgehaald die de weergave naam van dit bestand bevat. De naam wordt weer gegeven op het tabblad **bestand** boven aan de editor. De aanwezigheid van een asterisk \(\*\) aan het einde van de naam geeft aan dat het bestand wijzigingen bevat die niet zijn opgeslagen.
+De alleen-lezen eigenschap waarmee de teken reeks wordt opgehaald die de weergave naam van dit bestand bevat. De naam wordt weer gegeven op het tabblad **bestand** boven aan de editor. De aanwezigheid van een sterretje `(*)` aan het einde van de naam geeft aan dat het bestand wijzigingen bevat die niet zijn opgeslagen.
 
 ```powershell
 # Shows the display name of the file.
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen Booleaanse eigenschap die **$True** retourneert als het bestand is opgeslagen nadat het voor het laatst is gewijzigd.
+De alleen-lezen Booleaanse eigenschap die `$true` retourneert als het bestand is opgeslagen nadat het voor het laatst is gewijzigd.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die **$True** retourneert als er nooit een titel is opgegeven voor het bestand.
+De alleen-lezen eigenschap die `$true` retourneert als er nooit een titel is opgegeven voor het bestand.
 
 ```powershell
 # Determines whether the file has never been given a title.

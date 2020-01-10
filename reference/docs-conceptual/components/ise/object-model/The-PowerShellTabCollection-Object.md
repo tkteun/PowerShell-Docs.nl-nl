@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het PowerShellTabCollection-object
-ms.openlocfilehash: 5a1318534ddce19c2f5faa0d2013e2b38d8b79e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030483"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736110"
 ---
 # <a name="the-powershelltabcollection-object"></a>Het PowerShellTabCollection-object
 
-Het **PowerShellTab** -verzamelings object is een verzameling **PowerShellTab** -objecten. Elk **PowerShellTab** -object fungeert als een afzonderlijke runtime-omgeving. Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. PowerShellTabs. Een voor beeld is het **$psISE. PowerShellTabs** -object.
+Het **PowerShellTab** -verzamelings object is een verzameling **PowerShellTab** -objecten. Elk **PowerShellTab** -object fungeert als een afzonderlijke runtime-omgeving. Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. PowerShellTabs. Een voor beeld is het `$psISE.PowerShellTabs`-object.
 
 ## <a name="methods"></a>Methoden
 

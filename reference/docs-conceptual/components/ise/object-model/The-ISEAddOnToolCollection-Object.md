@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEAddOnToolCollection-object
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030620"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737012"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Het ISEAddOnToolCollection-object
 
-Het **ISEAddOnToolCollection** -object is een verzameling **ISEAddOnTool** -objecten. Een voor beeld is het object **$psISE. CurrentPowerShellTab. VerticalAddOnTools** .
+Het **ISEAddOnToolCollection** -object is een verzameling **ISEAddOnTool** -objecten. Een voor beeld is het `$psISE.CurrentPowerShellTab.VerticalAddOnTools`-object.
 
 ## <a name="methods"></a>Methoden
 
@@ -25,7 +25,7 @@ Hiermee voegt u een nieuw hulp programma toe aan de verzameling. Hiermee wordt h
 
 **ControlType** -type Hiermee geeft u het besturings element op dat wordt toegevoegd.
 
-**\[IsVisible\]** -optionele Booleaanse waarde als deze is ingesteld op **$True**, wordt het hulp programma voor toevoegen direct weer gegeven in het bijbehorende deel venster.
+**\[IsVisible\]** -optionele Booleaanse waarde als deze is ingesteld op `$true`, wordt het hulp programma voor toevoegen direct weer gegeven in het bijbehorende deel venster.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

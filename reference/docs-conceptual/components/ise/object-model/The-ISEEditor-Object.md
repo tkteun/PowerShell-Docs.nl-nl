@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEEditor-object
-ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086762"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736186"
 ---
 # <a name="the-iseeditor-object"></a>Het ISEEditor-object
 
@@ -69,7 +69,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee verplaatst u het caret naar het overeenkomende teken als de eigenschap **CanGoToMatch** van het object editor is **$True**. dit gebeurt wanneer het caret direct vóór een haakje openen, een haakje of een accolade \(,\[, {-of direct na een haakje sluiten, een haakje of een accolade \),\]}.  Het caret wordt geplaatst vóór een openings teken of na een afsluitend teken. Als de eigenschap **CanGoToMatch** is **$False**, heeft deze methode niets.
+Hiermee verplaatst u het caret naar het overeenkomende teken als de eigenschap **CanGoToMatch** van het object editor is `$true`. dit gebeurt wanneer het caret direct vóór een haakje openen, een haakje of een accolade `(`,`[`,`{` of direct na een haakje sluiten, `)`,`]`. Het caret wordt geplaatst vóór een openings teken of na een afsluitend teken. Als de eigenschap **CanGoToMatch** is `$false`, heeft deze methode niets.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -147,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen Booleaanse eigenschap om aan te geven of het caret naast een haakje, een haakje of een accolade \(\)\[\]{}. Als het caret direct vóór het begin teken of direct na het afsluitende teken van een paar staat, wordt deze eigenschaps waarde **$True**. Zo niet, dan is het **$False**.
+De alleen-lezen Booleaanse eigenschap om aan te geven of het caret naast een haakje, een haakje of een accolade `()`, `[]``{}`. Als het caret direct vóór het begin teken of direct na het afsluitende teken van een paar staat, wordt deze eigenschaps waarde `$true`. Zo niet, dan is het `$false`.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
