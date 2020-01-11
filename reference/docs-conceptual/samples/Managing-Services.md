@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Services beheren
-ms.openlocfilehash: d9e17b2d91ae01d7d4d6d573348289fa68dc9c56
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030163"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870520"
 ---
 # <a name="managing-services"></a>Services beheren
 
@@ -89,7 +89,8 @@ Running  BITS               Background Intelligent Transfer Ser...
 U kunt zelfs alle services ophalen die afhankelijkheden hebben. De volgende opdracht is alleen dat, en vervolgens wordt de cmdlet Format-Table gebruikt om de eigenschappen status, naam, RequiredServices en DependentServices van de services op de computer weer te geven.
 
 ```powershell
-Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} |
+  Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Services stoppen, starten, onderbreken en opnieuw starten
@@ -152,11 +153,11 @@ De cmdlet Set-service heeft ook een opstart type-para meter waarmee u het opstar
 
 Als u `Set-Service` wilt gebruiken in Windows Vista en latere versies van Windows, opent u Windows Power shell met de optie als administrator uitvoeren.
 
-Zie [set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3) voor meer informatie
+Zie [set-service](/powershell/module/Microsoft.PowerShell.Management/set-service) voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Get-service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Restart-service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Suspend-service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
+- [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
+- [Restart-service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
+- [Suspend-service](/powershell/module/Microsoft.PowerShell.Management/suspend-service)

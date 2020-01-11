@@ -1,24 +1,20 @@
 ---
-ms.date: 03/04/2019
+ms.date: 01/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
-ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942767"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870809"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration
 
 > [!IMPORTANT]
 > De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
-Lokale Configuration Manager kunnen centraal worden beheerd door een pull-service oplossing.
-Wanneer u deze methode gebruikt, wordt het knoop punt dat wordt beheerd, geregistreerd bij een service en een configuratie toegewezen in de instellingen van de LCM.
-De configuratie en alle DSC-resources die nodig zijn als afhankelijkheden voor de configuratie, worden gedownload naar de computer en gebruikt door LCM voor het beheren van de configuratie.
-Informatie over de status van de computer die wordt beheerd, wordt geüpload naar de service voor rapportage.
-Dit concept wordt ' pull-service ' genoemd.
+Local Configuration Manager (LCM) kan centraal worden beheerd door een pull-service oplossing. Wanneer u deze methode gebruikt, wordt het knoop punt dat wordt beheerd, geregistreerd bij een service en een configuratie toegewezen in de instellingen van de LCM. De configuratie en alle DSC-resources die nodig zijn als afhankelijkheden voor de configuratie, worden gedownload naar de computer en gebruikt door LCM voor het beheren van de configuratie. Informatie over de status van de computer die wordt beheerd, wordt geüpload naar de service voor rapportage. Dit concept wordt ' pull-service ' genoemd.
 
 De huidige opties voor de pull-service zijn onder andere:
 
@@ -29,8 +25,7 @@ De huidige opties voor de pull-service zijn onder andere:
 
 **De aanbevolen oplossing**en de optie met de meeste beschik bare functies is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-Met de Azure-service kunt u knoop punten on-premises beheren in particuliere data centers of in open bare Clouds, zoals Azure en AWS.
-Voor particuliere omgevingen waarbij servers niet rechtstreeks verbinding kunnen maken met internet, kunt u overwegen om uitgaand verkeer alleen te beperken tot het gepubliceerde Azure IP-bereik (Zie [IP-bereiken van Azure-data centers](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
+Met de Azure-service kunt u knoop punten on-premises beheren in particuliere data centers of in open bare Clouds, zoals Azure en AWS. Voor particuliere omgevingen waarbij servers niet rechtstreeks verbinding kunnen maken met internet, kunt u overwegen om uitgaand verkeer alleen te beperken tot het gepubliceerde Azure IP-bereik (Zie [IP-bereiken van Azure-data centers](https://www.microsoft.com/download/details.aspx?id=41653)).
 
 De functies van de online service die momenteel niet beschikbaar zijn in de pull-service op Windows Server zijn:
 
@@ -47,9 +42,7 @@ De functies van de online service die momenteel niet beschikbaar zijn in de pull
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-pull-service in Windows Server
 
-Het is mogelijk om een pull-service te configureren om te worden uitgevoerd op Windows Server.
-U wordt aangeraden dat de pull-service oplossing die is opgenomen in Windows Server, alleen mogelijkheden heeft voor het opslaan van configuraties/modules voor het downloaden en vastleggen van rapport gegevens in de data base.
-Het bevat niet veel van de mogelijkheden die de service in Azure biedt en is dus geen goed hulp middel om te evalueren hoe de service zou worden gebruikt.
+Het is mogelijk om een pull-service te configureren om te worden uitgevoerd op Windows Server. U wordt aangeraden dat de pull-service oplossing die is opgenomen in Windows Server, alleen mogelijkheden heeft voor het opslaan van configuraties/modules voor het downloaden en vastleggen van rapport gegevens in de data base. Het bevat niet veel van de mogelijkheden die de service in Azure biedt, en is dus geen goed hulp programma voor het evalueren van de manier waarop de service wordt gebruikt.
 
 De pull-service in Windows Server is een webservice in IIS die gebruikmaakt van een OData-interface om DSC-configuratie bestanden beschikbaar te maken voor doel knooppunten wanneer deze knoop punten hen vragen.
 
@@ -61,36 +54,36 @@ Vereisten voor het gebruik van een pull-server:
   - DSC Service
 - In het ideale geval wordt een certificaat gegenereerd voor het beveiligen van referenties die worden door gegeven aan de lokale Configuration Manager (LCM) op doel knooppunten
 
-De beste manier om Windows Server te configureren voor het hosten van pull-service is het gebruik van een DSC-configuratie.
-Hieronder vindt u een voorbeeld script.
+De beste manier om Windows Server te configureren voor het hosten van pull-service is het gebruik van een DSC-configuratie. Hieronder vindt u een voorbeeld script.
 
 ### <a name="supported-database-systems"></a>Ondersteunde database systemen
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5,1 (Windows Server Insider preview 17090)|
-|---------|---------|---------|---------|
-|EXTENSIE     |ESENT (standaard), MDB |ESENT (standaard), MDB|ESENT (standaard), SQL Server, MDB
+| WMF 4.0 |       WMF 5.0        |       WMF 5.1        | WMF 5,1 (Windows Server Insider preview 17090) |
+| ------- | -------------------- | -------------------- | ---------------------------------------------- |
+| EXTENSIE     | ESENT (standaard), MDB | ESENT (standaard), MDB | ESENT (standaard), SQL Server, MDB               |
 
-Vanaf release 17090 van [Windows Server Insider preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)is SQL Server een ondersteunde optie voor de pull-service (Windows-functie *DSC-service*). Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Vanaf release 17090 van [Windows Server Insider preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)is SQL Server een ondersteunde optie voor de pull-service (Windows-functie *DSC-service*). Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > SQL Server ondersteuning wordt niet toegevoegd aan eerdere versies van WMF 5,1 (of eerder) en is alleen beschikbaar op Windows Server-versies die groter zijn dan of gelijk zijn aan 17090.
 
 Als u de pull-server wilt configureren voor het gebruik van SQL Server, stelt u **SqlProvider** in op `$true` en **SqlConnectionString** op een geldige SQL Server verbindings reeks. Zie voor meer informatie [SqlClient-verbindings reeksen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-Voor een voor beeld van SQL Server configuratie met **xDscWebService**, lees dan eerst [met behulp van de xDscWebService-resource](#using-the-xdscwebservice-resource) en controleer vervolgens [Sample_xDscWebServiceRegistration_UseSQLProvider. ps1 op github](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+Voor een voor beeld van SQL Server configuratie met **xDscWebService**, lees dan eerst [met behulp van de xDscWebService-resource](#using-the-xdscwebservice-resource) en controleer vervolgens [Sample_xDscWebServiceRegistration_UseSQLProvider. ps1 op github](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>De xDscWebService-Resource gebruiken
 
-De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te maken van de **xDscWebService** -resource die is opgenomen in de **xPSDesiredStateConfiguration** -module.
-In de volgende stappen wordt uitgelegd hoe u de bron gebruikt in een configuratie waarmee de webservice wordt ingesteld.
+De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te maken van de **xDscWebService** -resource die is opgenomen in de **xPSDesiredStateConfiguration** -module. In de volgende stappen wordt uitgelegd hoe u de resource gebruikt in een `Configuration` waarmee de webservice wordt ingesteld.
 
-1. Roep de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) aan om de **xPSDesiredStateConfiguration** -module te installeren.
+1. Roep de cmdlet [install-module](/reference/6/PowerShellGet/Install-Module.md) aan om de **xPSDesiredStateConfiguration** -module te installeren.
+
    > [!NOTE]
-   > **Install-module** is opgenomen in de **PowerShellGet** -module, die is opgenomen in Power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-2. Een SSL-certificaat voor de DSC-pull-server ophalen van een vertrouwde certificerings instantie, binnen uw organisatie of een open bare instantie. Het certificaat dat is ontvangen van de certificerings instantie is meestal in de PFX-indeling.
-3. Installeer het certificaat op het knoop punt dat de DSC-pull-server wordt op de standaard locatie, dat moet worden `CERT:\LocalMachine\My`.
+   > `Install-Module` is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0 en hoger.
+
+1. Een SSL-certificaat voor de DSC-pull-server ophalen van een vertrouwde certificerings instantie, binnen uw organisatie of een open bare instantie. Het certificaat dat is ontvangen van de certificerings instantie is meestal in de PFX-indeling.
+1. Installeer het certificaat op het knoop punt dat de DSC-pull-server wordt op de standaard locatie, dat moet worden `CERT:\LocalMachine\My`.
    - Noteer de vinger afdruk van het certificaat.
-4. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, voert u het volgende in bij de PS-prompt en drukt u op ENTER: `[guid]::newGuid()` of `New-Guid`. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
-5. In het Power shell-ISE start (F5) het volgende configuratie script (dat is opgenomen in de map met voor beelden van de **xPSDesiredStateConfiguration** -module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script wordt de pull-server ingesteld.
+1. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, voert u het volgende in bij de PS-prompt en drukt u op ENTER: `[guid]::newGuid()` of `New-Guid`. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
+1. In het Power shell-ISE start (<kbd>F5</kbd>) het volgende configuratie script (opgenomen in de map van de **xPSDesiredStateConfiguration** -module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script wordt de pull-server ingesteld.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -146,7 +139,7 @@ In de volgende stappen wordt uitgelegd hoe u de bron gebruikt in een configurati
     }
     ```
 
-6. Voer de configuratie uit, waarbij de vinger afdruk van het SSL-certificaat wordt door gegeven als de para meter **certificateThumbPrint** en een GUID-registratie sleutel als de para meter **RegistrationKey** :
+1. Voer de configuratie uit, waarbij de vinger afdruk van het SSL-certificaat wordt door gegeven als de para meter **certificateThumbPrint** en een GUID-registratie sleutel als de para meter **RegistrationKey** :
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -213,39 +206,27 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 > [!NOTE]
 > Met de sectie **ReportServerWeb** kunnen rapport gegevens naar de pull-server worden verzonden.
 
-Het ontbreken van de eigenschap **ConfigurationID** in het meta configuratie bestand betekent impliciet dat de pull-server de v2-versie van het pull-server protocol ondersteunt, zodat er een eerste registratie nodig is.
-De aanwezigheid van een **ConfigurationID** betekent echter wel dat de V1-versie van het pull-server protocol wordt gebruikt en dat er geen registratie verwerking is.
+Het ontbreken van de eigenschap **ConfigurationID** in het meta configuratie bestand betekent impliciet dat de pull-server de v2-versie van het pull-server protocol ondersteunt, zodat er een eerste registratie nodig is. De aanwezigheid van een **ConfigurationID** betekent echter wel dat de V1-versie van het pull-server protocol wordt gebruikt en dat er geen registratie verwerking is.
 
 > [!NOTE]
 > In een PUSH scenario bestaat er een fout in de huidige release waardoor het nodig is om een eigenschap ConfigurationID te definiëren in het meta configuratie bestand voor knoop punten die nooit zijn geregistreerd bij een pull-server. Hiermee wordt het v1 pull server-protocol geforceerd en kunnen er geen registratie fout berichten worden geregistreerd.
 
 ## <a name="placing-configurations-and-resources"></a>Configuraties en resources plaatsen
 
-Nadat de installatie van de pull-server is voltooid, worden in de mappen die zijn gedefinieerd door de eigenschappen **ConfigurationPath** en **para modulepath in** in de configuratie van de pull-server, de modules en configuraties geplaatst die beschikbaar zijn voor doel knooppunten die kunnen worden opgehaald.
-Deze bestanden moeten een specifieke indeling hebben zodat de pull-server deze op de juiste wijze kan verwerken.
+Nadat de installatie van de pull-server is voltooid, worden in de mappen die zijn gedefinieerd door de eigenschappen **ConfigurationPath** en **para modulepath in** in de configuratie van de pull-server, de modules en configuraties geplaatst die beschikbaar zijn voor doel knooppunten die kunnen worden opgehaald. Deze bestanden moeten een specifieke indeling hebben zodat de pull-server deze op de juiste wijze kan verwerken.
 
 ### <a name="dsc-resource-module-package-format"></a>Pakket indeling voor DSC-resource module
 
 Elke resource module moet een gezipte en een naam hebben volgens het volgende patroon `{Module Name}_{Module Version}.zip`.
 
-Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`.
-Elke versie van een module moet zich in één ZIP-bestand bevinden.
-Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund.
-Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht.
-De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`.
-Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
+Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`. Elke versie van een module moet zich in één ZIP-bestand bevinden.
+Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund. Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht. De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
 
 Gebruik `New-DscChecksum {module zip file}` om een controlesom bestand te maken voor de zojuist toegevoegde module.
 
 ### <a name="configuration-mof-format"></a>MOF-indeling voor configuratie
 
-Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren.
-Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) aan.
-De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt.
-De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand.
-Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map.
-Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
+Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) aan. De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map. Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
 
 > [!NOTE]
 > Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.
@@ -255,7 +236,7 @@ Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **Con
 De volgende hulpprogram ma's zijn opgenomen in de meest recente versie van de xPSDesiredStateConfiguration-module, zodat het instellen, valideren en beheren van de pull-server eenvoudiger wordt.
 
 1. Een module die u helpt bij het inpakken van DSC-resource modules en configuratie bestanden die op de pull-server kunnen worden gebruikt.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
    Voor beelden:
 
     ```powershell
@@ -267,12 +248,11 @@ De volgende hulpprogram ma's zijn opgenomen in de meest recente versie van de xP
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Een script dat de pull-server valideert, is op de juiste wijze geconfigureerd. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. Een script dat de pull-server valideert, is op de juiste wijze geconfigureerd. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Community-oplossingen voor pull-service
 
-De DSC-Community heeft meerdere oplossingen ontworpen om het pull-service protocol te implementeren.
-Voor on-premises omgevingen bieden deze pull-service mogelijkheden en een kans om een bijdrage te leveren aan de community met incrementele uitbrei dingen.
+De DSC-Community heeft meerdere oplossingen ontworpen om het pull-service protocol te implementeren. Voor on-premises omgevingen bieden deze pull-service mogelijkheden en een kans om een bijdrage te leveren aan de community met incrementele uitbrei dingen.
 
 - [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
@@ -290,5 +270,5 @@ In de volgende onderwerpen wordt beschreven hoe u pull-clients in detail instelt
 - [Overzicht van desired state Configuration voor Windows Power shell](../overview/overview.md)
 - [Configuraties doorvoeren](enactingConfigurations.md)
 - [Een DSC-rapportserver gebruiken](reportServer.md)
-- [[MS-DSCPM]: gewenst status configuratie pull model Protocol](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: desired state Configuration pull model protocol errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: gewenst status configuratie pull model Protocol](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: desired state Configuration pull model protocol errata](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)

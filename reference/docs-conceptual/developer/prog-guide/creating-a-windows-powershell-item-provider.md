@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417486"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870707"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
@@ -24,10 +24,7 @@ In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt w
 
 > [!NOTE]
 > U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
->
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
 De Windows Power shell-item provider die in dit onderwerp wordt beschreven, haalt gegevens op uit een Access-Data Base. In dit geval is een ' item ' een tabel in de Access-Data Base of een rij in een tabel.
 
@@ -43,13 +40,15 @@ Houd er rekening mee dat in deze klassedefinitie het kenmerk [System. Management
 
 Zoals beschreven in het [ontwerp van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) afgeleid van verschillende andere klassen die een andere provider functionaliteit hebben verschaft. Een Windows Power shell-item provider moet daarom alle functionaliteit definiëren die door deze klassen wordt opgegeven.
 
-Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor meer informatie over het implementeren van functionaliteit voor het toevoegen van sessie-specifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers, met inbegrip van de hier beschreven provider, kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit van Windows Power shell.
+Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor meer informatie over het implementeren van functionaliteit voor het toevoegen van sessie-specifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider.
+De meeste providers, met inbegrip van de hier beschreven provider, kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit van Windows Power shell.
 
 Voordat de Windows Power shell-item provider de items in de Store kan bewerken, moeten de methoden van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) worden geïmplementeerd om toegang te krijgen tot het gegevens archief. Zie [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)voor meer informatie over het implementeren van deze klasse.
 
 ## <a name="checking-for-path-validity"></a>Geldigheid van pad controleren
 
-Wanneer u op zoek bent naar een gegevens item, verzorgt de Windows Power shell-runtime een Windows Power shell-pad naar de provider, zoals gedefinieerd in de sectie ' PSPath-concepten ' van de werking van [Windows Power shell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Een Windows Power shell-item provider moet de syntaxis en de semantische geldigheid van alle door gegeven paden controleren door de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Deze methode retourneert `true` als het pad geldig is en `false` anderszins. Houd er rekening mee dat de implementatie van deze methode het bestaan van het item op het pad niet mag controleren, maar alleen dat het pad syntactisch en correct is.
+Wanneer u op zoek bent naar een gegevens item, verzorgt de Windows Power shell-runtime een Windows Power shell-pad naar de provider, zoals gedefinieerd in de sectie ' PSPath-concepten ' van de werking van [Windows Power shell](/previous-versions/ms714658(v=vs.85)).
+Een Windows Power shell-item provider moet de syntaxis en de semantische geldigheid van alle door gegeven paden controleren door de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) . Deze methode retourneert `true` als het pad geldig is en `false` anderszins. Houd er rekening mee dat de implementatie van deze methode het bestaan van het item op het pad niet mag controleren, maar alleen dat het pad syntactisch en correct is.
 
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) voor deze provider. Houd er rekening mee dat deze implementatie een NormalizePath-hulp methode aanroept om alle scheidings tekens in het pad naar een uniforme te converteren.
 
@@ -225,11 +224,11 @@ Zie [AccessDbProviderSample03 code sample](./accessdbprovidersample03-code-sampl
 
 ## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
-Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer u klaar bent, maakt u een bestands typen bestand dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie voor meer informatie over het [uitbreiden van object typen en-opmaak](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer u klaar bent, maakt u een bestands typen bestand dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie voor meer informatie over het [uitbreiden van object typen en-opmaak](/previous-versions/ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 
-Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Zie [cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
 
@@ -245,12 +244,12 @@ Wanneer deze Windows Power shell-item provider is geregistreerd bij Windows Powe
 
 [Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
 
-[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Object typen en-opmaak uitbreiden](/previous-versions/ms714665(v=vs.85))
 
-[Hoe Windows Power shell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Hoe Windows Power shell werkt](/previous-versions/ms714658(v=vs.85))
 
 [Een container Windows Power shell-provider maken](./creating-a-windows-powershell-container-provider.md)
 
 [Een Windows Power shell-provider station maken](./creating-a-windows-powershell-drive-provider.md)
 
-[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))

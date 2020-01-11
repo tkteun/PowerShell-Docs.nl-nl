@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356817"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870860"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell
 
@@ -37,7 +37,8 @@ Naast de Windows Power shell SDK bevatten de volgende bronnen meer informatie.
 
 [Een Windows Power shell-cmdlet schrijven](./cmdlet/writing-a-windows-powershell-cmdlet.md) Bevat informatie en code voorbeelden voor programma managers die cmdlets ontwerpen en voor ontwikkel aars die cmdlet-code implementeren.
 
-[Windows Power shell-team blog](https://blogs.msdn.microsoft.com/PowerShell/) De beste resource voor het leren van en samen werken met andere Windows Power shell-gebruikers. Lees de blog van het Windows Power shell-team en Word lid van het Windows Power shell-gebruikers Forum (micro soft. public. Windows. Power shell). Gebruik Windows Live Search om andere Windows Power shell-blogs en-bronnen te vinden. Wanneer u uw expertise ontwikkelt, kunt u uw ideeën dan vrij bijdragen.
+[Windows Power shell-team blog](https://blogs.msdn.microsoft.com/PowerShell/) De beste resource voor het leren van en samen werken met andere Windows Power shell-gebruikers. Lees de blog van het Windows Power shell-team en Word lid van het Windows Power shell-gebruikers Forum (micro soft. public. Windows. Power shell).
+Gebruik Windows Live Search om andere Windows Power shell-blogs en-bronnen te vinden. Wanneer u uw expertise ontwikkelt, kunt u uw ideeën dan vrij bijdragen.
 
 [Browser van de Power shell-module](/powershell/module/) Bevat de meest recente versies van de Help-onderwerpen voor de opdracht regel.
 
@@ -53,4 +54,4 @@ Naast de Windows Power shell SDK bevatten de volgende bronnen meer informatie.
 
 [System. Management. Automation. Internal](/dotnet/api/System.Management.Automation.Internal) deze naam ruimte bevat de basis klassen die door andere naam ruimte klassen worden gebruikt. De klasse [System. Management. Automation. internal. Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) is bijvoorbeeld de basis klasse voor de klasse [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .
 
-[System. Management. Automation. Runspaces](/dotnet/api/System.Management.Automation.Runspaces) deze naam ruimte bevat de klassen, opsommingen en interfaces die worden gebruikt voor het maken van een Windows Power shell-runs Pace. In deze context is de Windows Power shell-runs Pace de context waarin een of meer Windows Power shell-pijp lijnen cmdlets aanroepen. Dat wil zeggen dat cmdlets werken in de context van een Windows Power shell-runs Pace. Zie [Windows Power shell runspaces](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)voor meer informatie AboutWindows Power shell runspaces.
+[System. Management. Automation. Runspaces](/dotnet/api/System.Management.Automation.Runspaces) deze naam ruimte bevat de klassen, opsommingen en interfaces die worden gebruikt voor het maken van een Windows Power shell-runs Pace. In deze context is de Windows Power shell-runs Pace de context waarin een of meer Windows Power shell-pijp lijnen cmdlets aanroepen. Dat wil zeggen dat cmdlets werken in de context van een Windows Power shell-runs Pace. Zie [Windows Power shell runspaces](hosting/creating-runspaces.md)voor meer informatie AboutWindows Power shell runspaces.

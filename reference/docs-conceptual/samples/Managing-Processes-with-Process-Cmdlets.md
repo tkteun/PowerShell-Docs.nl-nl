@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Processen beheren met proces-cmdlets
-ms.openlocfilehash: 0962290327a02141f582acdf168143dee14ac60a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030189"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870741"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Processen beheren met proces-cmdlets
 
@@ -78,7 +78,8 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 De computer namen zijn niet duidelijk in deze weer gave, maar ze worden opgeslagen in de eigenschap MachineName van de proces objecten die ophalen-process retourneert. De volgende opdracht maakt gebruik van de indeling-tabel-cmdlet om de eigenschappen proces-ID, naam van de proces naam en MachineName (ComputerName) van de proces objecten weer te geven.
 
 ```
-PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
+PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
+  Format-Table -Property ID, ProcessName, MachineName
 
   Id ProcessName MachineName
   -- ----------- -----------
@@ -179,9 +180,9 @@ Windows Power shell wordt ook geleverd met cmdlets om een proces te starten (of 
 
 ## <a name="see-also"></a>Zie ook
 
-- [Get-process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
-- [Stoppen-proces [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
-- [Start-process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
-- [Wacht proces](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
-- [Debug-proces](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
-- [Invoke-opdracht](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
+- [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)
+- [Stoppen-proces](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)
+- [Start-process](/powershell/module/Microsoft.PowerShell.Management/Start-Process)
+- [Wacht proces](/powershell/module/Microsoft.PowerShell.Management/Wait-Process)
+- [Debug-proces](/powershell/module/Microsoft.PowerShell.Management/Debug-Process)
+- [Invoke-opdracht](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)

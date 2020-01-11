@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357188"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870656"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Uw Windows PowerShell-provider ontwerpen
 
@@ -57,7 +57,9 @@ Met de sessie status maakt de Windows Power shell-runtime verschillende locatie-
 
 ### <a name="cmdletprovider-base-class"></a>Basis klasse CmdletProvider
 
-De klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) definieert een basis provider van Windows Power shell. Deze klasse ondersteunt de provider declaratie en levert een aantal eigenschappen en methoden die beschikbaar zijn voor alle Windows Power shell-providers. De klasse wordt aangeroepen door de cmdlet `Get-PSProvider` om alle beschik bare providers voor een sessie weer te geven. De implementatie van deze cmdlet wordt geleverd door de sessie status.
+De klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) definieert een basis provider van Windows Power shell. Deze klasse ondersteunt de provider declaratie en levert een aantal eigenschappen en methoden die beschikbaar zijn voor alle Windows Power shell-providers.
+De klasse wordt aangeroepen door de cmdlet `Get-PSProvider` om alle beschik bare providers voor een sessie weer te geven.
+De implementatie van deze cmdlet wordt geleverd door de sessie status.
 
 > [!NOTE]
 > Windows Power shell-providers zijn beschikbaar voor alle Windows Power shell-taal bereik.
@@ -68,23 +70,23 @@ De klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotne
 
 Deze klasse is afgeleid van de basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . De volgende tabel geeft een lijst van de cmdlets die door deze klasse worden weer gegeven. Naast de vermelde items is de cmdlet `Get-PSDrive` (weer gegeven door sessie status) een gerelateerde cmdlet die wordt gebruikt voor het ophalen van beschik bare stations.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`New-PSDrive`|Hiermee maakt u een nieuw station voor de sessie en streamt u stationgegevens.|
-|`Remove-PSDrive`|Hiermee verwijdert u een station uit de sessie.|
+|      De cmdlet      |                             De definitie van                              |
+| ---------------- | ------------------------------------------------------------------- |
+| `New-PSDrive`    | Hiermee maakt u een nieuw station voor de sessie en streamt u stationgegevens. |
+| `Remove-PSDrive` | Hiermee verwijdert u een station uit de sessie.                                   |
 
 ### <a name="itemcmdletprovider-base-class"></a>Basis klasse ItemCmdletProvider
 
 De klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) definieert een Windows Power shell-item provider waarmee bewerkingen worden uitgevoerd op de afzonderlijke items van het gegevens archief en er worden geen containers of navigatie mogelijkheden door gegeven. Deze klasse is afgeleid van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . De volgende tabel geeft een lijst van de cmdlets die door deze klasse worden weer gegeven.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Clear-Item`|Hiermee wordt de huidige inhoud van items op de opgegeven locatie gewist en vervangen door de waarde ' Clear ' die is opgegeven door de provider. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Get-Item`|Hiermee worden items opgehaald van de opgegeven locatie en worden de resulterende objecten gestreamd.|
-|`Invoke-Item`|Hiermee wordt de standaard actie voor het item op het opgegeven pad aangeroepen.|
-|`Set-Item`|Hiermee stelt u een item op de opgegeven locatie met de opgegeven waarde. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Resolve-Path`|Hiermee worden de joker tekens voor een Windows Power shell-pad en gegevens van het pad streamen omgezet.|
-|`Test-Path`|Tests voor het opgegeven pad en retourneert `true` als dit bestaat en `false` anderszins. Deze cmdlet wordt geïmplementeerd ter ondersteuning van de para meter `IsContainer` voor de methode [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|     De cmdlet     |                                                                                                                                                            De definitie van                                                                                                                                                            |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-Item`   | Hiermee wordt de huidige inhoud van items op de opgegeven locatie gewist en vervangen door de waarde ' Clear ' die is opgegeven door de provider. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.                                                                                   |
+| `Get-Item`     | Hiermee worden items opgehaald van de opgegeven locatie en worden de resulterende objecten gestreamd.                                                                                                                                                                                                                                                  |
+| `Invoke-Item`  | Hiermee wordt de standaard actie voor het item op het opgegeven pad aangeroepen.                                                                                                                                                                                                                                                                   |
+| `Set-Item`     | Hiermee stelt u een item op de opgegeven locatie met de opgegeven waarde. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.                                                                                                                                                   |
+| `Resolve-Path` | Hiermee worden de joker tekens voor een Windows Power shell-pad en gegevens van het pad streamen omgezet.                                                                                                                                                                                                                                              |
+| `Test-Path`    | Tests voor het opgegeven pad en retourneert `true` als dit bestaat en `false` anderszins. Deze cmdlet wordt geïmplementeerd ter ondersteuning van de para meter `IsContainer` voor de methode [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
 
 ### <a name="containercmdletprovider-base-class"></a>Basis klasse ContainerCmdletProvider
 
@@ -92,22 +94,22 @@ De klasse [System. Management. Automation. provider. Containercmdletprovider](/d
 
 Deze klasse is afgeleid van de basis klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . In de volgende tabel worden de cmdlets gedefinieerd die door deze klasse worden geïmplementeerd.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Copy-Item`|Hiermee worden items van de ene locatie naar de andere gekopieerd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Get-Childitem`|Hiermee worden de onderliggende items op de opgegeven locatie opgehaald en als objecten gestreamd.|
-|`New-Item`|Hiermee worden nieuwe items gemaakt op de opgegeven locatie en wordt het resulterende object gestreamd.|
-|`Remove-Item`|Hiermee verwijdert u items van de opgegeven locatie.|
-|`Rename-Item`|De naam van een item op de opgegeven locatie wordt gewijzigd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
+|     De cmdlet      |                                                                        De definitie van                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Copy-Item`     | Hiermee worden items van de ene locatie naar de andere gekopieerd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
+| `Get-Childitem` | Hiermee worden de onderliggende items op de opgegeven locatie opgehaald en als objecten gestreamd.                                                                        |
+| `New-Item`      | Hiermee worden nieuwe items gemaakt op de opgegeven locatie en wordt het resulterende object gestreamd.                                                                           |
+| `Remove-Item`   | Hiermee verwijdert u items van de opgegeven locatie.                                                                                                               |
+| `Rename-Item`   | De naam van een item op de opgegeven locatie wordt gewijzigd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
 
 ### <a name="navigationcmdletprovider-base-class"></a>Basis klasse NavigationCmdletProvider
 
 De klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) definieert een Windows Power shell-navigatie provider waarmee bewerkingen worden uitgevoerd voor items die gebruikmaken van meer dan één container. Deze klasse is afgeleid van de basis klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . De volgende tabel vermeldt de cmdlets die door deze klasse worden weer gegeven.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|Combine-pad|Combineert twee paden in één pad, met behulp van een provider-specifiek scheidings teken tussen paden. Deze cmdlet streamt teken reeksen.|
-|`Move-Item`|Hiermee verplaatst u items naar de opgegeven locatie. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
+|    De cmdlet    |                                                                      De definitie van                                                                      |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Combine-pad | Combineert twee paden in één pad, met behulp van een provider-specifiek scheidings teken tussen paden. Deze cmdlet streamt teken reeksen.                               |
+| `Move-Item`  | Hiermee verplaatst u items naar de opgegeven locatie. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
 
 Een gerelateerde cmdlet is de elementaire parser-pad-cmdlet die wordt geleverd door Windows Power shell. Deze cmdlet kan worden gebruikt voor het parseren van een Windows Power shell-pad voor de ondersteuning van de para meter `Parent`. Hiermee wordt de teken reeks voor het bovenliggende pad gestreamd.
 
@@ -119,12 +121,12 @@ Naast het afleiden van een van de Windows Power shell-basis klassen kan uw Windo
 
 De interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) definieert een inhouds provider die bewerkingen uitvoert op de inhoud van een gegevens item. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Add-Content`|Hiermee worden de opgegeven lengten van waarden toegevoegd aan de inhoud van het opgegeven item. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Clear-Content`|Hiermee stelt u de inhoud van het opgegeven item in op de waarde ' Clear '. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Get-Content`|Hiermee wordt de inhoud van de opgegeven items opgehaald en worden de resulterende objecten gestreamd.|
-|`Set-Content`|Vervangt de bestaande inhoud voor de opgegeven items. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
+|     De cmdlet      |                                                                                        De definitie van                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Add-Content`   | Hiermee worden de opgegeven lengten van waarden toegevoegd aan de inhoud van het opgegeven item. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
+| `Clear-Content` | Hiermee stelt u de inhoud van het opgegeven item in op de waarde ' Clear '. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.               |
+| `Get-Content`   | Hiermee wordt de inhoud van de opgegeven items opgehaald en worden de resulterende objecten gestreamd.                                                                                                         |
+| `Set-Content`   | Vervangt de bestaande inhoud voor de opgegeven items. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
@@ -133,37 +135,38 @@ De interface [System. Management. Automation. provider. Ipropertycmdletprovider]
 > [!NOTE]
 > Met de para meter `Path` voor deze cmdlets wordt een pad naar een item aangeduid in plaats van een eigenschap te identificeren.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Clear-ItemProperty`|Hiermee stelt u de eigenschappen van de opgegeven items in op de waarde wissen. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Get-ItemProperty`|Hiermee worden eigenschappen opgehaald uit de opgegeven items en worden de resulterende objecten gestreamd.|
-|`Set-ItemProperty`|Hiermee stelt u de eigenschappen in van de opgegeven items met de aangegeven waarden. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
+|        De cmdlet        |                                                                                   De definitie van                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-ItemProperty` | Hiermee stelt u de eigenschappen van de opgegeven items in op de waarde wissen. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.      |
+| `Get-ItemProperty`   | Hiermee worden eigenschappen opgehaald uit de opgegeven items en worden de resulterende objecten gestreamd.                                                                                                |
+| `Set-ItemProperty`   | Hiermee stelt u de eigenschappen in van de opgegeven items met de aangegeven waarden. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-De interface [System. Management. Automation. provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , die is afgeleid van [System. Management. Automation. provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definieert een provider die dynamische para meters voor de ondersteunde cmdlets opgeeft. Dit type provider verwerkt bewerkingen waarvoor eigenschappen tijdens runtime kunnen worden gedefinieerd, bijvoorbeeld een nieuwe eigenschaps bewerking. Dergelijke bewerkingen zijn niet mogelijk voor items die statisch gedefinieerde eigenschappen hebben. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
+De interface [System. Management. Automation. provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , die is afgeleid van [System. Management. Automation. provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), definieert een provider die dynamische para meters voor de ondersteunde cmdlets opgeeft. Dit type provider verwerkt bewerkingen waarvoor eigenschappen tijdens runtime kunnen worden gedefinieerd, bijvoorbeeld een nieuwe eigenschaps bewerking. Dergelijke bewerkingen zijn niet mogelijk voor items die statisch gedefinieerde eigenschappen hebben.
+De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Copy-ItemProperty`|Hiermee wordt een eigenschap van het opgegeven item naar een ander item gekopieerd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`Move-ItemProperty`|Hiermee wordt een eigenschap van het opgegeven item verplaatst naar een ander item. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
-|`New-ItemProperty`|Hiermee maakt u een eigenschap voor de opgegeven items en worden de resulterende objecten gestreamd.|
-|`Remove-ItemProperty`|Hiermee verwijdert u een eigenschap voor de opgegeven items.|
-|`Rename-ItemProperty`|De naam van een eigenschap van de opgegeven items wordt gewijzigd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.|
+|        De cmdlet         |                                                                                De definitie van                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Copy-ItemProperty`   | Hiermee wordt een eigenschap van het opgegeven item naar een ander item gekopieerd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven. |
+| `Move-ItemProperty`   | Hiermee wordt een eigenschap van het opgegeven item verplaatst naar een ander item. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.  |
+| `New-ItemProperty`    | Hiermee maakt u een eigenschap voor de opgegeven items en worden de resulterende objecten gestreamd.                                                                                             |
+| `Remove-ItemProperty` | Hiermee verwijdert u een eigenschap voor de opgegeven items.                                                                                                                              |
+| `Rename-ItemProperty` | De naam van een eigenschap van de opgegeven items wordt gewijzigd. Met deze cmdlet wordt geen uitvoer object door gegeven via de pijp lijn, tenzij de para meter `PassThru` is opgegeven.                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 
 De interface [System. Management. Automation. provider. Isecuritydescriptorcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider) voegt security descriptor functionaliteit aan een provider toe. Met deze interface kan de gebruiker security descriptor informatie ophalen en instellen voor een item in het gegevens archief. De volgende tabel geeft een lijst van de cmdlets die door deze interface worden weer gegeven.
 
-|De cmdlet|De definitie van|
-|------------|----------------|
-|`Get-Acl`|Hiermee haalt u de gegevens op die zijn opgenomen in een toegangs beheer lijst (ACL), die deel uitmaakt van een security descriptor die wordt gebruikt voor het beveiligen van besturingssysteem bronnen, bijvoorbeeld een bestand of een object.|
-|`Set-Acl`|Hiermee stelt u de gegevens voor een ACL in. Het is in de vorm van een exemplaar van [System. Security. accesscontrol. objectsecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) op de item (s) die zijn toegewezen voor het opgegeven pad. Met deze cmdlet kunt u informatie instellen over bestanden, sleutels en subsleutels in het REGI ster, of een ander provider item, als de Windows Power shell-provider de instelling van beveiligings informatie ondersteunt.|
+|  De cmdlet   |                                                                                                                                                                                                          De definitie van                                                                                                                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Get-Acl` | Hiermee haalt u de gegevens op die zijn opgenomen in een toegangs beheer lijst (ACL), die deel uitmaakt van een security descriptor die wordt gebruikt voor het beveiligen van besturingssysteem bronnen, bijvoorbeeld een bestand of een object.                                                                                                                                                                                                                                      |
+| `Set-Acl` | Hiermee stelt u de gegevens voor een ACL in. Het is in de vorm van een exemplaar van [System. Security. accesscontrol. objectsecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) op de item (s) die zijn toegewezen voor het opgegeven pad. Met deze cmdlet kunt u informatie instellen over bestanden, sleutels en subsleutels in het REGI ster, of een ander provider item, als de Windows Power shell-provider de instelling van beveiligings informatie ondersteunt. |
 
 ## <a name="see-also"></a>Zie ook
 
 [Windows Power shell-providers maken](./how-to-create-a-windows-powershell-provider.md)
 
-[Hoe Windows Power shell werkt](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Hoe Windows Power shell werkt](/previous-versions/ms714658(v=vs.85))
 
 [Windows Power shell SDK](../windows-powershell-reference.md)

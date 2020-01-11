@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-logboek resource
-ms.openlocfilehash: a1b7bf44fbaf36a3adaf0666e9f0a754fa3f6ee1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942445"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870758"
 ---
 # <a name="dsc-log-resource"></a>DSC-logboek resource
 
@@ -31,16 +31,16 @@ Log [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschappen
 
-|Eigenschap |Beschrijving |
-|---|---|
-|Bericht |Hiermee wordt het bericht aangegeven dat u wilt schrijven naar het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic. |
+| Eigenschap |                                                   Beschrijving                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------- |
+| Bericht  | Hiermee wordt het bericht aangegeven dat u wilt schrijven naar het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
-|Eigenschap |Beschrijving |
-|---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
-|PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
+|       Eigenschap       |                                                                                                                                                          Beschrijving                                                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| DependsOn            | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
+| PsDscRunAsCredential | Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als.                                                                                                                                                                                                                                                                        |
 
 > [!NOTE]
 > De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
@@ -50,7 +50,7 @@ Log [string] #ResourceName
 In het volgende voor beeld ziet u hoe u een bericht opneemt in het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic.
 
 > [!NOTE]
-> Als u [test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) uitvoert met deze bron geconfigureerd, wordt er altijd **$False**geretourneerd.
+> Als u [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) uitvoert met deze bron geconfigureerd, wordt er altijd **$False**geretourneerd.
 
 ```powershell
 Configuration logResourceTest

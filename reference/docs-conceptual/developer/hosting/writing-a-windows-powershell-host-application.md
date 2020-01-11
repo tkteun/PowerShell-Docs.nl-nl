@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fe0393634a1e5bb1a3d4a98ccf245e199beb0f16
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357517"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75869908"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Een Windows PowerShell-hosttoepassing schrijven
 
@@ -34,7 +34,3 @@ In de volgende onderwerpen wordt uitgelegd hoe u een toepassing maakt die als ho
 [Een aangepaste gebruikers interface maken](./creating-a-custom-user-interface.md) Hierin worden aangepaste gebruikers interfaces geïntroduceerd en vindt u koppelingen naar voor beelden.
 
 Voor [beelden van hosttoepassingen](./host-application-samples.md) Deze sectie bevat voor beelden van complete host-toepassingen.
-
-## <a name="see-also"></a>Zie ook
-
-[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)

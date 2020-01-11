@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416210"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870775"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Een Windows PowerShell-containerprovider maken
 
@@ -26,10 +26,7 @@ Providers die kunnen werken op gegevens archieven met meerdere niveaus worden aa
 
 > [!NOTE]
 > U kunt het C# bron bestand (AccessDBSampleProvider04.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
->
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
 De Windows Power shell-container provider die hier wordt beschreven, definieert de Data Base als één container, waarbij de tabellen en rijen van de Data Base zijn gedefinieerd als items van de container.
 
@@ -41,8 +38,8 @@ De Windows Power shell-container provider die hier wordt beschreven, definieert 
 Een Windows Power shell-container provider moet een .NET-klasse definiëren die is afgeleid van de basis klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Hier volgt de klassedefinitie voor de Windows Power shell-container provider die in deze sectie wordt beschreven.
 
 ```csharp
-   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-   public class AccessDBProvider : ContainerCmdletProvider
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : ContainerCmdletProvider
 ```
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
@@ -53,7 +50,8 @@ Merk op dat in deze klassedefinitie, het kenmerk [System. Management. Automation
 
 Zoals beschreven in het [ontwerpen van uw Windows Power shell-provider](./designing-your-windows-powershell-provider.md), is de klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) afgeleid van verschillende andere klassen die een andere provider functionaliteit hebben verschaft. Voor een Windows Power shell-container provider moet daarom alle functionaliteit worden gedefinieerd die door deze klassen wordt opgegeven.
 
-Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor informatie over het implementeren van de functionaliteit voor het toevoegen van toepassingsspecifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider. De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit die wordt verschaft door Windows Power shell.
+Zie [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)voor informatie over het implementeren van de functionaliteit voor het toevoegen van toepassingsspecifieke initialisatie gegevens en voor het vrijgeven van resources die worden gebruikt door de provider.
+De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter gebruikmaken van de standaard implementatie van deze functionaliteit die wordt verschaft door Windows Power shell.
 
 Om toegang te krijgen tot het gegevens archief, moet de provider de methoden van de basis klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) implementeren. Zie [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)voor meer informatie over het implementeren van deze methoden.
 
@@ -231,11 +229,13 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Bij het definiëren van de provider klasse kan een Windows Power shell-container provider provider mogelijkheden van ExpandWildcards declareren, filteren, opnemen of uitsluiten van de inventarisatie van [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . In deze gevallen moet de implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) ervoor zorgen dat het pad dat wordt door gegeven aan de methode voldoet aan de vereisten van de opgegeven mogelijkheden. Hiervoor moet de methode toegang krijgen tot de juiste eigenschap, bijvoorbeeld de eigenschappen [System. Management. Automation. provider. Cmdletprovider. exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) en [System. Management. Automation. provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- De methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) is bedoeld voor het wijzigen van de naam van een item en niet voor move-bewerkingen. In uw implementatie van de methode moet een fout worden geschreven als de para meter `newName` paden bevat, of als de bovenliggende locatie van het item anders kan worden gewijzigd.
+- De methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) is bedoeld voor het wijzigen van de naam van een item en niet voor move-bewerkingen.
+  In uw implementatie van de methode moet een fout worden geschreven als de para meter `newName` paden bevat, of als de bovenliggende locatie van het item anders kan worden gewijzigd.
 
 - Standaard moeten onderdrukkingen van deze methode de naam van objecten alleen wijzigen als de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is opgegeven. Als het opgegeven pad een container aangeeft, is de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) niet vereist.
 
-- Uw implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in de systeem status, bijvoorbeeld het wijzigen van de naam van bestanden. [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
+- Uw implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in de systeem status, bijvoorbeeld het wijzigen van de naam van bestanden.
+  [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
 
   Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`, moet de methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) worden aangeroepen de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht met een bevestigings bericht verzonden naar de gebruiker om extra feedback te geven om te zeggen dat de bewerking moet worden voortgezet. Een provider moet [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen als extra controle op mogelijk schadelijke systeem wijzigingen.
 
@@ -254,8 +254,7 @@ Als u nieuwe items wilt maken, moet een container provider de methode [System. M
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) voor deze provider.
 
 ```csharp
-protected override void NewItem( string path, string type,
-                                 object newItemValue )
+protected override void NewItem( string path, string type, object newItemValue )
 {
     // Create the new item here after
     // performing necessary validations
@@ -279,7 +278,8 @@ protected override void NewItem( string path, string type,
 
 De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
 
-- De methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) moet een niet-hoofdletter gevoelige vergelijking uitvoeren van de teken reeks die wordt door gegeven in de para meter `type`. Het moet ook ten minste ambigue overeenkomsten toestaan. Voor de typen ' bestand ' en ' Directory ' is alleen de eerste letter vereist voor dubbel zinnigheid. Als de para meter `type` een type aangeeft dat uw provider niet kan maken, moet de methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) een ArgumentException schrijven met een bericht dat aangeeft welke typen de provider kan maken.
+- De methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) moet een niet-hoofdletter gevoelige vergelijking uitvoeren van de teken reeks die wordt door gegeven in de para meter `type`.
+  Het moet ook ten minste ambigue overeenkomsten toestaan. Voor de typen ' bestand ' en ' Directory ' is alleen de eerste letter vereist voor dubbel zinnigheid. Als de para meter `type` een type aangeeft dat uw provider niet kan maken, moet de methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) een ArgumentException schrijven met een bericht dat aangeeft welke typen de provider kan maken.
 
 - Voor de para meter `newItemValue` wordt de implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) aanbevolen om teken reeksen ten minste te accepteren. Ook moet het type object dat wordt opgehaald door de methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) worden geaccepteerd voor hetzelfde pad. De methode System. [Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) kan de methode [System. Management. Automation. Languageprimitives. ConvertTo *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) gebruiken om typen te converteren naar het gewenste type.
 
@@ -376,7 +376,7 @@ Zie [AccessDbProviderSample04 code sample](./accessdbprovidersample04-code-sampl
 
 ## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 
-Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Zie [cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
 
@@ -456,7 +456,8 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
    Fax          : (425) 555-0101
    ```
 
-5. Gebruik nu de `New-Item` cmdlet om een rij toe te voegen aan een bestaande tabel. Met de para meter `Path` geeft u het volledige pad naar de rij op en moet u een rijnummer opgeven dat groter is dan het bestaande aantal rijen in de tabel. De para meter `Type` geeft aan dat het type item dat moet worden toegevoegd moet worden opgegeven. Ten slotte specificeert de para meter `Value` een door komma's gescheiden lijst met kolom waarden voor de rij.
+5. Gebruik nu de `New-Item` cmdlet om een rij toe te voegen aan een bestaande tabel. Met de para meter `Path` geeft u het volledige pad naar de rij op en moet u een rijnummer opgeven dat groter is dan het bestaande aantal rijen in de tabel. De para meter `Type` geeft aan dat het type item dat moet worden toegevoegd moet worden opgegeven.
+   Ten slotte specificeert de para meter `Value` een door komma's gescheiden lijst met kolom waarden voor de rij.
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
@@ -496,7 +497,7 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
 
 [Een Windows Power shell-provider voor navigatie implementeren](./creating-a-windows-powershell-navigation-provider.md)
 
-[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))
 
 [Windows Power shell SDK](../windows-powershell-reference.md)
 

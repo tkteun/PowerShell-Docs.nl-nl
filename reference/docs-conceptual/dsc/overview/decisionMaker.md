@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: Overzicht Desired State Configuration voor besluitvormers
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737250"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870792"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Overzicht van desired state Configuration voor besluit vormers
 
@@ -38,7 +38,7 @@ Configuraties worden [gegevensgestuurd](../configurations/configData.md). De ged
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC on-premises en off-premises
 
 DSC kan on-premises en off-premises implementaties beheren. Voor on-premises oplossingen heeft DSC een [Pull-server](../pull-server/pullServer.md) die wordt gebruikt om het beheer van machines te centraliseren en te rapporteren over hun status. Voor on-premises cloud oplossingen kan DSC op elke plek waar Windows wordt gebruikt, worden gebruikt.
-Er zijn specifieke aanbiedingen van Azure gebaseerd op DSC, zoals [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), die DSC-rapportage centraliseren.
+Er zijn specifieke aanbiedingen van Azure gebaseerd op DSC, zoals [Azure Automation](/azure/automation), die DSC-rapportage centraliseren.
 
 ## <a name="dsc-and-compatibility"></a>DSC en compatibiliteit
 

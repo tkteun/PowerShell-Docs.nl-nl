@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d6c84c3b23439cd3fd6205a2c1d480e0c063d09c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417480"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870673"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Een Windows PowerShell-eigenschapsprovider maken
 
@@ -24,10 +24,7 @@ In dit onderwerp wordt beschreven hoe u een provider maakt waarmee de gebruiker 
 
 > [!NOTE]
 > Windows Power shell biedt een sjabloon bestand dat u kunt gebruiken voor het ontwikkelen van een Windows Power shell-provider. Het TemplateProvider.cs-bestand is beschikbaar op de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
-> De gedownloade sjabloon is beschikbaar in de **\<Power shell-voor beelden >** map. U moet een kopie van dit bestand maken en de kopie voor het maken van een nieuwe Windows Power shell-provider gebruiken, waarbij u alle functionaliteit verwijdert die u niet nodig hebt.
->
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> De gedownloade sjabloon is beschikbaar in de **\<Power shell-voor beelden >** map. U moet een kopie van dit bestand maken en de kopie voor het maken van een nieuwe Windows Power shell-provider gebruiken, waarbij u alle functionaliteit verwijdert die u niet nodig hebt. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
 > [!CAUTION]
 > De methoden van uw eigendoms provider moeten objecten schrijven met behulp van de methode [System. Management. Automation. provider. Cmdletprovider. Writepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) .
@@ -72,7 +69,8 @@ Dit is de standaard implementatie van [System. Management. Automation. provider.
 
 ## <a name="setting-properties"></a>Eigenschappen instellen
 
-Voor het instellen van eigenschappen moet de Windows Power shell-eigenschap provider [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) implementeren om aanroepen van de `Set-ItemProperty`-cmdlet te ondersteunen. Met deze methode worden een of meer eigenschappen van het item op het opgegeven pad ingesteld en worden de opgegeven eigenschappen als vereist overschreven. [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) schrijft ook een exemplaar van een [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -object dat een eigenschappen verzameling van de bijgewerkte eigenschappen vertegenwoordigt.
+Voor het instellen van eigenschappen moet de Windows Power shell-eigenschap provider [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) implementeren om aanroepen van de `Set-ItemProperty`-cmdlet te ondersteunen. Met deze methode worden een of meer eigenschappen van het item op het opgegeven pad ingesteld en worden de opgegeven eigenschappen als vereist overschreven.
+[System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) schrijft ook een exemplaar van een [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -object dat een eigenschappen verzameling van de bijgewerkte eigenschappen vertegenwoordigt.
 
 Dit is de standaard implementatie van [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) van het TemplateProvider.CS-bestand dat wordt meegeleverd met Windows Power shell.
 
@@ -86,7 +84,8 @@ De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [
 
 - Standaard moeten onderdrukkingen van deze methode geen lezer ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
 
-- Uw implementatie van de methode [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in de systeem status, bijvoorbeeld het wijzigen van de naam van bestanden. [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime en het verwerken van opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
+- Uw implementatie van de methode [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen wanneer een wijziging wordt aangebracht in de systeem status, bijvoorbeeld het wijzigen van de naam van bestanden.
+  [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime en het verwerken van opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
 
   Na het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`als mogelijk gevaarlijke systeem wijzigingen kunnen worden aangebracht, de methode [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) moet de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen. Met deze methode wordt een bevestigings bericht naar de gebruiker verzonden zodat er extra feedback kan worden gegeven om aan te geven dat de bewerking moet worden voortgezet.
 
@@ -114,7 +113,8 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Standaard moeten onderdrukkingen van deze methode geen lezer ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true`. Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false`.
 
-- Uw implementatie van de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen voordat een wijziging wordt aangebracht in de systeem status, zoals het wissen van inhoud. [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
+- Uw implementatie van de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde verifiëren voordat wijzigingen in het gegevens archief worden aangebracht. Deze methode wordt gebruikt om de uitvoering van een bewerking te bevestigen voordat een wijziging wordt aangebracht in de systeem status, zoals het wissen van inhoud.
+  [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) verzendt de naam van de resource die moet worden gewijzigd naar de gebruiker, met de Windows Power shell-runtime, waarbij rekening wordt gehouden met alle opdracht regel instellingen of voorkeurs variabelen bij het bepalen van wat er moet worden weer gegeven.
 
   Na het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourneert `true`als mogelijk gevaarlijke wijzigingen in het systeem kunnen worden aangebracht, de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) moet de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen. Met deze methode wordt een bevestigings bericht naar de gebruiker verzonden zodat er extra feedback kan worden gegeven om aan te geven dat de potentieel gevaarlijke bewerking moet worden voortgezet.
 
@@ -128,7 +128,7 @@ Dit is de standaard implementatie van [System. Management. Automation. provider.
 
 ## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 
-Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Zie ook
 
@@ -136,6 +136,6 @@ Zie [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.
 
 [Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
 
-[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Object typen en-opmaak uitbreiden](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355396"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870486"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Een aangepaste Windows PowerShell-module schrijven
 
@@ -27,12 +27,11 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Een Windows Power shell-module schrijven waarin specifieke cmdlets worden geregistreerd.
 
 1. Voeg het kenmerk RunInstallerAttribute toe.
-
 2. Maak een open bare klasse die is afgeleid van de klasse [System. Management. Automation. Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .
 
    In dit voor beeld is de naam van de klasse ' CustomPSSnapinTest '.
 
-3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: #. , () {} [] &-/\ $; : "' \< > &#124; ? @ ` *
+3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ```*`
 
    In dit voor beeld is de naam van de module ' CustomPSSnapInTest '.
 
@@ -46,13 +45,15 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
 6. Voeg een open bare eigenschap toe voor de beschrijving van de module (vereist).
 
-   In dit voor beeld is de beschrijving: "Dit is een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.
+   In dit voor beeld is de beschrijving: "Dit is een aangepaste Windows Power shell-module die de `Test-HelloWorld` en `Test-CustomSnapinTest`-cmdlets bevat.
 
 7. Voeg een open bare eigenschap voor de beschrijvings resource van de module toe (optioneel).
 
-   In dit voor beeld is de resource van de leverancier ' CustomPSSnapInTest, dit is een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.
+   In dit voor beeld is de resource van de leverancier:
 
-8. Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet de naam. dll-Help. XML zijn).
+   > CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.
+
+8. Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet` name.dll-help.xml`zijn).
 
    In dit voor beeld worden de cmdlets test-HelloWorld en TestCustomSnapinTest toegevoegd.
 
@@ -70,7 +71,7 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de cmdlets test-HelloWorld en test-CustomSnapinTest te registreren. Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.
+In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de `Test-HelloWorld`-en `Test-CustomSnapinTest`-cmdlets te registreren. Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.
 
 ```csharp
 [RunInstaller(true)]
@@ -213,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-Zie voor meer informatie over het registreren van modules [cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c) in de [hand leiding voor Windows Power shell-programmeurs](../prog-guide/windows-powershell-programmer-s-guide.md).
+Zie voor meer informatie over het registreren van modules [cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85)) in de [hand leiding voor Windows Power shell-programmeurs](../prog-guide/windows-powershell-programmer-s-guide.md).
 
 ## <a name="see-also"></a>Zie ook
 
-[Cmdlets, providers en hosttoepassingen registreren](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))
 
 [Windows Power shell shell SDK](../windows-powershell-reference.md)

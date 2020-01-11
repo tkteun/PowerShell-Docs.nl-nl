@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: toegangs problemen in Windows Power shell-Internet toegang oplossen
-ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692241"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870180"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
 
@@ -66,63 +66,59 @@ Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis 
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Kan de beheerhulpprogramma's voor Webserver (IIS) niet vinden ook al is de functie geïnstalleerd
 
-Als u Windows Power shell-webtoegang hebt geïnstalleerd met behulp van de cmdlet `Install-WindowsFeature`, worden beheer hulpprogramma's niet geïnstalleerd, tenzij de para meter `-IncludeManagementTools` wordt toegevoegd aan de cmdlet.
+Als u Windows Power shell-webtoegang hebt geïnstalleerd met behulp van de cmdlet `Install-WindowsFeature`, worden beheer hulpprogramma's niet geïnstalleerd, tenzij de para meter **IncludeManagementTools** wordt toegevoegd aan de cmdlet.
 
 Zie [Windows Power shell-webtoegang installeren met behulp van Windows Power shell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)voor een voor beeld.
 
-U kunt de IIS-beheer console en andere IIS-beheer hulpprogramma's die u nodig hebt, toevoegen door de hulpprogram ma's te selecteren in de **wizard functies en onderdelen toevoegen** die is gericht op de gateway server.
-De wizard functies en onderdelen toevoegen wordt geopend vanuit Serverbeheer.
+U kunt de IIS-beheer console en andere IIS-beheer hulpprogramma's die u nodig hebt, toevoegen door de hulpprogram ma's te selecteren in de **wizard functies en onderdelen toevoegen** die is gericht op de gateway server. De wizard functies en onderdelen toevoegen wordt geopend vanuit Serverbeheer.
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows Power shell Web Access-website is niet toegankelijk
 
 Als verbeterde beveiliging is ingeschakeld in Internet Explorer (IE ESC), kunt u de website Windows Power shell Web Access toevoegen aan de lijst met vertrouwde sites.
 
-Een minder aanbevolen aanpak door beveiligings Risico's is het uitschakelen van Internet Explorer ESC.
-U kunt IE ESC uitschakelen op de tegel eigenschappen op de pagina lokale server in Serverbeheer.
+Een minder aanbevolen aanpak door beveiligings Risico's is het uitschakelen van Internet Explorer ESC. U kunt IE ESC uitschakelen op de tegel eigenschappen op de pagina lokale server in Serverbeheer.
 
 ## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Er is een autorisatie fout opgetreden. Controleer of u gemachtigd bent om verbinding te maken met de doelcomputer.
 
 Het bovenstaande fout bericht wordt weer gegeven wanneer u verbinding probeert te maken wanneer de gateway server de doel computer is en zich ook in een werk groep bevindt.
 
-Wanneer de gateway server ook de doel server is en deze zich in een werk groep bevindt, geeft u de gebruikers naam, de computer naam en de naam van de gebruikers groep op.
-Gebruik niet een punt (.) om de computer naam weer te geven.
+Wanneer de gateway server ook de doel server is en deze zich in een werk groep bevindt, geeft u de gebruikers naam, de computer naam en de naam van de gebruikers groep op. Gebruik niet een punt (.) om de computer naam weer te geven.
 
 ### <a name="scenarios-and-proper-values"></a>Scenario's en de juiste waarden
 
 #### <a name="all-cases"></a>Alle cases
 
-Parameter | Value
--- | --
-UserName | Server\_naam\\naam van de gebruikers\_<br/>Localhost\\gebruikers\_naam<br/>. gebruikers\_naam\\
-UserGroup | Server\_naam\\gebruiker\_groep<br/>Localhost\\gebruikers\_groep<br/>. gebruikers\_groep\\
-ComputerGroup | Server\_naam\\computer\_groep<br/>Localhost\\computer\_groep<br/>. computer\_groep\\
+  Parameter   |                                        Value
+------------- | -----------------------------------------------------------------------------------
+UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
+UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
+ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>`.\computer_group`
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
-Parameter | Value
--- | --
+ Parameter   |                        Value
+------------ | ----------------------------------------------------
 ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
-Parameter | Value
--- | --
+ Parameter   |    Value
+------------ | -----------
 ComputerName | Servernaam
 
 ### <a name="gateway-credentials"></a>Gateway referenties
 
 Meld u aan bij een gatewayserver als doelcomputer met referenties die de volgende indeling hebben.
 
-- Server\_naam\\naam van de gebruikers\_
-- Localhost\\gebruikers\_naam
-- . gebruikers\_naam\\
+- `Server_name\user_name`
+- `Localhost\user_name`
+- `.\user_name`
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel
 
-Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis gebruiker\_naam/computer\_naam.
+Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis `user_name/computer_name`.
 
-De regel is niet meer geldig of de Active Directory Domain Services-query is mislukt.
-Een autorisatie regel is doorgaans niet geldig in scenario's waarin de gateway server zich in één keer in een werk groep bevond, maar later is toegevoegd aan een domein
+De regel is niet meer geldig of de Active Directory Domain Services-query is mislukt. Een autorisatie regel is doorgaans niet geldig in scenario's waarin de gateway server zich in één keer in een werk groep bevond, maar later is toegevoegd aan een domein
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Kan niet aanmelden met een regel als een IPv6-adres met een domein
 
@@ -130,13 +126,12 @@ Kan niet aanmelden bij een doelcomputer die is opgegeven in autorisatieregels al
 
 Autorisatieregels ondersteunen geen IPv6-adressen in de vorm van een domeinnaam.
 
-Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel.
-Zowel domein-als numerieke IPv6-adressen (met dubbele punten) worden ondersteund als de naam van de doel computer op de aanmeldings pagina van de Windows Power shell-webtoegang, maar niet in autorisatie regels.
+Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel. Zowel domein-als numerieke IPv6-adressen (met dubbele punten) worden ondersteund als de naam van de doel computer op de aanmeldings pagina van de Windows Power shell-webtoegang, maar niet in autorisatie regels.
 
-Zie [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)(Engelstalig) voor meer informatie over IPv6-adressen.
+Zie [How IPv6 Works](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))(Engelstalig) voor meer informatie over IPv6-adressen.
 
 ## <a name="see-also"></a>Zie ook
 
-- [Autorisatie regels en beveiligings functies van Windows Power shell-Internet toegang](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [De Windows Power shell-console van het web gebruiken](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [Autorisatie regels en beveiligings functies van Windows Power shell-Internet toegang](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282394(v=ws.11))
+- [De Windows Power shell-console van het web gebruiken](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11))
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

@@ -2,40 +2,32 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Referenties opties in configuratie gegevens
-ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942354"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870554"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referenties opties in configuratie gegevens
 
->Van toepassing op: Windows Power shell 5,0
+> Van toepassing op: Windows Power shell 5,0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Wacht woorden voor tekst zonder opmaak en domein gebruikers
 
-DSC-configuraties met een referentie zonder versleuteling genereren een fout bericht over wacht woorden met tekst zonder opmaak.
-Daarnaast genereert DSC een waarschuwing wanneer domein referenties worden gebruikt.
-Als u deze fout-en waarschuwings berichten wilt onderdrukken, gebruikt u de sleutel woorden DSC-configuratie gegevens:
+DSC-configuraties met een referentie zonder versleuteling genereren een fout bericht over wacht woorden met tekst zonder opmaak. Daarnaast genereert DSC een waarschuwing wanneer domein referenties worden gebruikt. Als u deze fout-en waarschuwings berichten wilt onderdrukken, gebruikt u de sleutel woorden DSC-configuratie gegevens:
 
 - **PsDscAllowPlainTextPassword**
 - **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Het opslaan/verzenden van Lees bare wacht woorden die niet zijn versleuteld, is doorgaans niet veilig. Het is raadzaam om referenties te beveiligen met behulp van de technieken die verderop in dit onderwerp worden besproken.
-> Met de Azure Automation DSC-service kunt u de referenties die in configuraties worden gecompileerd, centraal beheren en veilig opslaan.
-> Zie voor meer informatie: [DSC-configuraties compileren/referentie-assets](/azure/automation/automation-dsc-compile#credential-assets)
+> Het opslaan/verzenden van Lees bare wacht woorden die niet zijn versleuteld, is doorgaans niet veilig. Het is raadzaam om referenties te beveiligen met behulp van de technieken die verderop in dit onderwerp worden besproken. Met de Azure Automation DSC-service kunt u de referenties die in configuraties worden gecompileerd, centraal beheren en veilig opslaan. Zie voor meer informatie: [DSC-configuraties compileren/referentie-assets](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>Referenties verwerken in DSC
 
-DSC-configuratie resources worden standaard uitgevoerd als `Local System`.
-Sommige resources hebben echter een referentie nodig, bijvoorbeeld wanneer de `Package` resource software moet installeren onder een specifiek gebruikers account.
+DSC-configuratie resources worden standaard uitgevoerd als `Local System`. Sommige resources hebben echter een referentie nodig, bijvoorbeeld wanneer de `Package` resource software moet installeren onder een specifiek gebruikers account.
 
-In eerdere bronnen is een hardcoded `Credential` eigenschaps naam gebruikt om dit te verwerken.
-WMF 5,0 heeft een automatische `PsDscRunAsCredential`-eigenschap toegevoegd voor alle resources.
-Zie [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over het gebruik van `PsDscRunAsCredential`.
-Nieuwe resources en aangepaste resources kunnen deze automatische eigenschap gebruiken in plaats van een eigen eigenschap voor referenties te maken.
+In eerdere bronnen is een hardcoded `Credential` eigenschaps naam gebruikt om dit te verwerken. WMF 5,0 heeft een automatische `PsDscRunAsCredential`-eigenschap toegevoegd voor alle resources. Zie [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over het gebruik van `PsDscRunAsCredential`. Nieuwe resources en aangepaste resources kunnen deze automatische eigenschap gebruiken in plaats van een eigen eigenschap voor referenties te maken.
 
 > [!NOTE]
 > Het ontwerp van sommige resources is om een specifieke reden om meerdere referenties te gebruiken, en ze hebben hun eigen referentie-eigenschappen.
@@ -43,7 +35,10 @@ Nieuwe resources en aangepaste resources kunnen deze automatische eigenschap geb
 Als u de beschik bare referentie-eigenschappen voor een resource wilt zoeken, gebruikt u `Get-DscResource -Name ResourceName -Syntax` of IntelliSense in het ISE (`CTRL+SPACE`).
 
 ```powershell
-PS C:\> Get-DscResource -Name Group -Syntax
+Get-DscResource -Name Group -Syntax
+```
+
+```Output
 Group [String] #ResourceName
 {
     GroupName = [string]
@@ -58,22 +53,15 @@ Group [String] #ResourceName
 }
 ```
 
-In dit voor beeld wordt een [groeps](../resources/resources.md) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource module gebruikt.
-Hiermee kunnen lokale groepen worden gemaakt en leden worden toegevoegd of verwijderd.
-Zowel de eigenschap `Credential` als de eigenschap Automatic `PsDscRunAsCredential` wordt geaccepteerd.
-De resource maakt echter alleen gebruik van de eigenschap `Credential`.
+In dit voor beeld wordt een [groeps](../resources/resources.md) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource module gebruikt. Hiermee kunnen lokale groepen worden gemaakt en leden worden toegevoegd of verwijderd. Zowel de eigenschap `Credential` als de eigenschap Automatic `PsDscRunAsCredential` wordt geaccepteerd. De resource maakt echter alleen gebruik van de eigenschap `Credential`.
 
 Zie [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over de eigenschap `PsDscRunAsCredential`.
 
 ## <a name="example-the-group-resource-credential-property"></a>Voor beeld: de eigenschap groeps bron referentie
 
-DSC wordt uitgevoerd onder `Local System`, zodat het al machtigingen heeft voor het wijzigen van lokale gebruikers en groepen.
-Als het toegevoegde lid een lokaal account is, is er geen referentie nood zakelijk.
-Als de `Group` resource een domein account aan de lokale groep toevoegt, is een referentie vereist.
+DSC wordt uitgevoerd onder `Local System`, zodat het al machtigingen heeft voor het wijzigen van lokale gebruikers en groepen. Als het toegevoegde lid een lokaal account is, is er geen referentie nood zakelijk. Als de `Group` resource een domein account aan de lokale groep toevoegt, is een referentie vereist.
 
-Anonieme query's voor Active Directory zijn niet toegestaan.
-De eigenschap `Credential` van de `Group` resource is het domein account dat wordt gebruikt voor het opvragen van Active Directory.
-In de meeste gevallen kan dit een Gene riek gebruikers account zijn, omdat standaard gebruikers de meeste objecten in Active Directory kunnen *lezen* .
+Anonieme query's voor Active Directory zijn niet toegestaan. De eigenschap `Credential` van de `Group` resource is het domein account dat wordt gebruikt voor het opvragen van Active Directory. In de meeste gevallen kan dit een Gene riek gebruikers account zijn, omdat standaard gebruikers de meeste objecten in Active Directory kunnen *lezen* .
 
 ## <a name="example-configuration"></a>Voorbeeld configuratie
 
@@ -141,9 +129,7 @@ De vlaggen **PSDSCAllowPlainTextPassword** en **PSDSCAllowDomainUser** onderdruk
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
-Het eerste fout bericht heeft een URL met documentatie.
-In deze koppeling wordt uitgelegd hoe u wacht woorden versleutelt met behulp van een [ConfigurationData](./configData.md) -structuur en een certificaat.
-[Lees dit bericht](https://aka.ms/certs4dsc)voor meer informatie over certificaten en DSC.
+Het eerste fout bericht heeft een URL met documentatie. In deze koppeling wordt uitgelegd hoe u wacht woorden versleutelt met behulp van een [ConfigurationData](./configData.md) -structuur en een certificaat. [Lees dit bericht](https://aka.ms/certs4dsc)voor meer informatie over certificaten en DSC.
 
 Voor het afdwingen van een wacht woord voor tekst zonder opmaak vereist de resource het sleutel woord `PsDscAllowPlainTextPassword` in de sectie configuratie gegevens als volgt:
 
@@ -218,12 +204,11 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>Referenties bij overdracht en in rust
 
-- Met de vlag **PSDscAllowPlainTextPassword** wordt het compileren van MOF-bestanden met wacht woorden in Lees bare tekst toegestaan.
-  Houd voorzorgsmaatregelen bij het opslaan van MOF-bestanden met wacht woorden met een lees bare tekst.
+- Met de vlag **PSDscAllowPlainTextPassword** wordt het compileren van MOF-bestanden met wacht woorden in Lees bare tekst toegestaan. Houd voorzorgsmaatregelen bij het opslaan van MOF-bestanden met wacht woorden met een lees bare tekst.
 - Wanneer het MOF-bestand wordt geleverd aan een knoop punt in de **Push** -modus, versleutelt WinRM de communicatie om het wacht woord voor lees bare tekst te beveiligen tenzij u de standaard instelling overschrijft met de para meter **AllowUnencrypted** .
   - Het versleutelen van de MOF met een certificaat beschermt het MOF-bestand op rest voordat het op een knoop punt is toegepast.
 - In de **pull** -modus kunt u Windows pull server configureren voor het gebruik van HTTPS voor het versleutelen van verkeer met het protocol dat is opgegeven in Internet Information Server. Zie de artikelen [een DSC-pull-client instellen](../pull-server/pullclient.md) en [MOF-bestanden beveiligen met certificaten](../pull-server/secureMOF.md)voor meer informatie.
-  - Pull-verkeer in de [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) -service wordt altijd versleuteld.
+  - Pull-verkeer in de [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) -service wordt altijd versleuteld.
 - Op het knoop punt worden MOF-bestanden op rest versleuteld vanaf Power shell 5,0.
   - De MOF-bestanden van Power Shell 4,0 zijn niet-versleuteld in rust, tenzij ze zijn versleuteld met een certificaat wanneer ze naar het knoop punt zijn gepusht of worden opgehaald.
 
@@ -231,18 +216,15 @@ ModuleVersion = "1.0";
 
 ## <a name="domain-credentials"></a>Domein referenties
 
-Wanneer het voorbeeld configuratie script opnieuw wordt uitgevoerd (met of zonder versleuteling), genereert nog steeds de waarschuwing dat het gebruik van een domein account voor een referentie wordt afgeraden.
-Door gebruik te maken van een lokaal account, elimineert u mogelijke bloot stelling van domein referenties die op andere servers kunnen worden gebruikt.
+Wanneer het voorbeeld configuratie script opnieuw wordt uitgevoerd (met of zonder versleuteling), genereert nog steeds de waarschuwing dat het gebruik van een domein account voor een referentie wordt afgeraden. Door gebruik te maken van een lokaal account, elimineert u mogelijke bloot stelling van domein referenties die op andere servers kunnen worden gebruikt.
 
 **Wanneer u referenties gebruikt met DSC-resources, moet u, indien mogelijk, een lokaal account via een domein account gebruiken.**
 
-Als de eigenschap `Username` van de referentie een '\\' of '\@' bevat, wordt deze door DSC als een domein account behandeld.
-Er is een uitzonde ring voor ' localhost ', ' 127.0.0.1 ' en ':: 1 ' in het domein gedeelte van de gebruikers naam.
+Als de eigenschap `Username` van de referentie een '\\' of '\@' bevat, wordt deze door DSC als een domein account behandeld. Er is een uitzonde ring voor ' localhost ', ' 127.0.0.1 ' en ':: 1 ' in het domein gedeelte van de gebruikers naam.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-In het bovenstaande voor beeld van DSC `Group`-resource is een domein account *vereist* voor het uitvoeren van een query op een Active Directory-domein.
-In dit geval voegt u de eigenschap `PSDscAllowDomainUser` als volgt toe aan het blok `ConfigurationData`:
+In het bovenstaande voor beeld van DSC `Group`-resource is een domein account *vereist* voor het uitvoeren van een query op een Active Directory-domein. In dit geval voegt u de eigenschap `PSDscAllowDomainUser` als volgt toe aan het blok `ConfigurationData`:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
