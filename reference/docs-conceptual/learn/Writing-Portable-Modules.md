@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 01/10/2020
 keywords: Power shell, cmdlet
 title: Draag bare modules schrijven
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417646"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022239"
 ---
 # <a name="portable-modules"></a>Draag bare modules
 
@@ -254,6 +254,45 @@ Voorbeeld:
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>Afhankelijkheid van systeem eigen bibliotheken
+
+Modules die bedoeld zijn voor gebruik in verschillende besturings systemen of processor architecturen kunnen afhankelijk zijn van een beheerde bibliotheek die zelf afhankelijk is van sommige systeem eigen bibliotheken.
+
+Voorafgaand aan Power shell 7 zou een aangepaste code moeten hebben om de juiste systeem eigen dll te laden, zodat de beheerde bibliotheek deze correct kan vinden.
+
+Met Power shell 7 worden systeem eigen binaire bestanden die worden geladen in submappen in de locatie van de beheerde bibliotheek doorzocht na een subset van de [.net Rid-catalogus][] notatie.
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ Voorbeeld:
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET-portabiliteit Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID-catalogus]: https://docs.microsoft.com/dotnet/core/rid-catalog

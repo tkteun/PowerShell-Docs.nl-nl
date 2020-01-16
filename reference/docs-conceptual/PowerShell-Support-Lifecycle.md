@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416303"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022227"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
@@ -60,7 +60,9 @@ Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteu
 | Debian 9                                          |   Ondersteund   | Ondersteund |
 | Debian 10                                         | Niet ondersteund | Ondersteund |
 | CentOS 7                                          |   Ondersteund   | Ondersteund |
+| CentOS 8                                          | Niet ondersteund | Ondersteund |
 | Red Hat Enterprise Linux 7                        |   Ondersteund   | Ondersteund |
+| Red Hat Enterprise Linux 8                        | Niet ondersteund | Ondersteund |
 | openSUSE 42,3                                     |   Ondersteund   | Ondersteund |
 | Fedora 28                                         |   Ondersteund   | Ondersteund |
 | Fedora 29, 30                                     | Niet ondersteund | Ondersteund |
