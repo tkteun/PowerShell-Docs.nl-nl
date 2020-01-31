@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, service, installatie
 title: Een configuratie schrijven, compileren en toepassen
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941976"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818155"
 ---
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 

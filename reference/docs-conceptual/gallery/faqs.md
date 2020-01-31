@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328873"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818121"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-## <a name="what-is-a-powershell-module"></a>Wat is een PowerShell-module?
+## <a name="what-is-a-powershell-module"></a>Wat is een Power shell-module?
 
 Een Power shell-module is een herbruikbaar pakket met een Power shell-functionaliteit. Alles in Power shell (functies, variabelen, DSC-resources, enz.) kan worden verpakt in modules. Doorgaans zijn modules mappen met specifieke typen bestanden die zijn opgeslagen op een specifiek pad. Er zijn een aantal verschillende typen Power shell-modules.
 
-## <a name="what-is-a-powershell-script"></a>Wat is een PowerShell-script?
+## <a name="what-is-a-powershell-script"></a>Wat is een Power shell-script?
 
 Een Power shell-script is een reeks opdrachten die zijn opgeslagen in een. ps1-bestand om het opnieuw gebruiken en delen mogelijk te maken. Power shell-werk stromen zijn ook Power shell-scripts, die een overzicht maken van een reeks taken en het bepalen van sequentiëren voor deze taken. Ga voor meer informatie naar [aan de slag met Power shell-werk stroom](https://technet.microsoft.com/library/jj134242.aspx).
 
@@ -36,7 +36,7 @@ Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad
 
 **U hoeft zich niet te registreren of u aan te melden bij de galerie om pakketten te installeren of op te slaan.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat houdt dat in?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat moet dat betekenen?
 
 Deze fout kan de volgende oorzaken hebben:
 
@@ -94,7 +94,7 @@ Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worde
 Typ wat u zoekt in het tekstvak. Als u bijvoorbeeld modules wilt zoeken die verwant zijn aan Azure SQL, typt u ' Azure SQL '. Onze zoek machine zoekt naar deze tref woorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en andere meta gegevens. Op basis van een score met een gewogen kwaliteit worden de meest overeenkomende resultaten weer gegeven. U kunt ook zoeken op specifiek veld met de syntaxis Field: ' value ' in de zoek query voor de volgende velden:
 
 - Labels
-- Functies
+- Functions
 - Cmdlets
 - DscResources
 - PowerShellVersion

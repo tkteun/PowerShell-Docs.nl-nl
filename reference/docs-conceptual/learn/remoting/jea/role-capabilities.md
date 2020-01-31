@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416801"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818172"
 ---
 # <a name="jea-role-capabilities"></a>JEA
 
@@ -34,7 +34,7 @@ Een zorgvuldige selectie van opdrachten is belang rijk om ervoor te zorgen dat h
 
 De volgende tabel bevat voor beelden van opdrachten die schadelijk kunnen worden gebruikt als deze zijn toegestaan in een onbeperkte status. Dit is geen limitatieve lijst en mag alleen worden gebruikt als een voorzichtig uitgangs punt.
 
-|                                            Risico 's                                            |                                Voorbeeld                                |                                                                              Gerelateerde opdrachten                                                                              |
+|                                            Risico                                            |                                Voorbeeld                                |                                                                              Gerelateerde opdrachten                                                                              |
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | De gebruikers beheerders rechten verlenen om JEA over te slaan                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`                                                                                                        |
 | Wille keurige code uitvoeren, zoals malware, cracks of aangepaste scripts om beveiligingen over te slaan | `Start-Process -FilePath '\\san\share\malware.exe'`                   | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob` |
@@ -157,9 +157,11 @@ Als u verschillende aangepaste functies schrijft, is het handiger om ze in een P
 
 Voor een juiste werking van de tabtoets in JEA-sessies moet u de ingebouwde functie `tabexpansion2` opnemen in de **VisibleFunctions** -lijst.
 
-## <a name="place-role-capabilities-in-a-module"></a>Functie mogelijkheden in een module plaatsen
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>De functie mogelijkheden beschikbaar maken voor een configuratie
 
-Power shell kan alleen een functie gegevensbestand vinden als het is opgeslagen in een **RoleCapabilities** -map in een Power shell-module. De module kan worden opgeslagen in een map die is opgenomen in de omgevings variabele `$env:PSModulePath`, maar moet u deze niet in system32 of een map plaatsen waar de niet-vertrouwde, gebruikers die verbinding maken de bestanden kunnen wijzigen. Hieronder ziet u een voor beeld van het maken van een eenvoudige Power shell-script module met de naam **ContosoJEA** in het pad `$env:ProgramFiles`.
+Vóór Power shell 6, voor Power shell om een functie bestand te vinden, moet het worden opgeslagen in een **RoleCapabilities** -map in een Power shell-module. De module kan worden opgeslagen in een map die is opgenomen in de omgevings variabele `$env:PSModulePath`, maar mag niet worden geplaatst in `$env:SystemRoot\System32` of een map waarin niet-vertrouwde gebruikers de bestanden kunnen wijzigen.
+
+In het volgende voor beeld wordt een Power shell-script module met de naam **ContosoJEA** in het pad `$env:ProgramFiles` gemaakt om het bestand met functie mogelijkheden te hosten.
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 Zie [Wat is een Power shell-module](/powershell/scripting/developer/windows-powershell)? voor meer informatie over Power shell-modules.
+
+Vanaf Power shell 6 is de eigenschap **RoleDefinitions** toegevoegd aan het configuratie bestand van de sessie. Met deze eigenschap kunt u de locatie van een functie configuratie bestand opgeven voor de roldefinitie. Zie de voor beelden in [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## <a name="updating-role-capabilities"></a>De functie mogelijkheden worden bijgewerkt
 

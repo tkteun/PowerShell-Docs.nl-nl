@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870809"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885384"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration
 
@@ -22,6 +22,14 @@ De huidige opties voor de pull-service zijn onder andere:
 - Een pull-service die wordt uitgevoerd op Windows Server
 - Door de Community beheerde open-source-oplossingen
 - Een SMB-share
+
+De aanbevolen schaal voor elke oplossing is als volgt:
+
+|                   Oplossing                   |              Client knooppunten              |
+| -------------------------------------------- | -------------------------------------- |
+| Windows pull-server met MDB/ESENT-data base | Maxi maal 500 knoop punten                        |
+| Windows pull-server met SQL database       | Maxi maal 1000 knoop punten                       |
+| Azure Automation DSC                         | Scenario's met meer dan 1000 knoop punten |
 
 **De aanbevolen oplossing**en de optie met de meeste beschik bare functies is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -42,7 +50,7 @@ De functies van de online service die momenteel niet beschikbaar zijn in de pull
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-pull-service in Windows Server
 
-Het is mogelijk om een pull-service te configureren om te worden uitgevoerd op Windows Server. U wordt aangeraden dat de pull-service oplossing die is opgenomen in Windows Server, alleen mogelijkheden heeft voor het opslaan van configuraties/modules voor het downloaden en vastleggen van rapport gegevens in de data base. Het bevat niet veel van de mogelijkheden die de service in Azure biedt, en is dus geen goed hulp programma voor het evalueren van de manier waarop de service wordt gebruikt.
+Het is mogelijk om een pull-service te configureren om te worden uitgevoerd op Windows Server. U wordt aangeraden dat de pull-service oplossing die is opgenomen in Windows Server, alleen mogelijkheden bevat voor het opslaan van configuraties/modules voor het downloaden en vastleggen van rapport gegevens in een Data Base. Het bevat niet veel van de mogelijkheden die de service in Azure biedt, en is dus geen goed hulp programma voor het evalueren van de manier waarop de service wordt gebruikt.
 
 De pull-service in Windows Server is een webservice in IIS die gebruikmaakt van een OData-interface om DSC-configuratie bestanden beschikbaar te maken voor doel knooppunten wanneer deze knoop punten hen vragen.
 
@@ -219,7 +227,7 @@ Nadat de installatie van de pull-server is voltooid, worden in de mappen die zij
 
 Elke resource module moet een gezipte en een naam hebben volgens het volgende patroon `{Module Name}_{Module Version}.zip`.
 
-Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`. Elke versie van een module moet zich in één ZIP-bestand bevinden.
+Een module met de naam **xWebAdminstration** met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`. Elke versie van een module moet zich in één ZIP-bestand bevinden.
 Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund. Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht. De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
 
 Gebruik `New-DscChecksum {module zip file}` om een controlesom bestand te maken voor de zojuist toegevoegde module.

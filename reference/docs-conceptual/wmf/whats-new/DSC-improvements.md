@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
-ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416670"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818104"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
@@ -36,7 +36,7 @@ In eerdere versies van WMF zouden gelijktijdige registraties/rapporten naar een 
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Circulair data base-exemplaar van het logboek inschakelen.
 
-In de eariler-versie van DSC-PullServer werden de logboek bestanden van de ESENT-data base gevuld met de schijf ruimte van de PullServer becouse het data base-exemplaar werd gemaakt zonder circulaire logboek registratie. In deze release hebt u de mogelijkheid om de circulaire logboek registratie van het exemplaar te beheren met de web. config van de pullserver. CircularLogging is standaard ingesteld op TRUE.
+In de eariler-versie van DSC-PullServer werden de ESENT-database logboek bestanden de schijf ruimte van de PullServer opgevuld omdat het data base-exemplaar werd gemaakt zonder circulaire logboek registratie. In deze release hebt u de mogelijkheid om de circulaire logboek registratie van het exemplaar te beheren met de web. config van de pullserver. CircularLogging is standaard ingesteld op TRUE.
 
 ```xml
 <appSettings>
@@ -286,7 +286,7 @@ Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt
    - Zoek een `<moduleName>.cat`-bestand en controleer de hand tekening met behulp van `Get-AuthenticodeSignature`.
    - Controleer of de certificerings instantie die de ondertekenaar heeft geverifieerd, vertrouwd is.
    - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe cmdlet `Test-FileCatalog`.
-5. `Install-Module` tot `$env:ProgramFiles\WindowsPowerShell\Modules\`
+5. `Install-Module` `$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Proces configuratie
 
 > [!NOTE]

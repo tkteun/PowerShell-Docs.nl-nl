@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Controlelijst voor het ontwerpen van resource
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941192"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818138"
 ---
 # <a name="resource-authoring-checklist"></a>Controlelijst voor het ontwerpen van resource
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>De resource en het schema zijn juist
 
 Controleer het resource schema-bestand (*. schema. MOF). U kunt de [DSC resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) gebruiken om uw schema te ontwikkelen en te testen.
-Vereisten:
+Zorg ervoor dat:
 
 - Eigenschaps typen zijn juist (bijvoorbeeld: geen teken reeks gebruiken voor eigenschappen die numerieke waarden accepteren, moet u in plaats daarvan UInt32 of andere numerieke typen gebruiken)
 - Eigenschaps kenmerken zijn correct opgegeven als: ([sleutel], [vereist], [schrijven], [lezen])
@@ -130,7 +130,7 @@ Mogelijke typen problemen:
 - Referentie/sessie kan anders werken omdat de DSC-agent wordt uitgevoerd als een service.  Zorg ervoor dat u alle functies hier kunt testen.
 - Fouten die worden uitgevoerd door `Start-DscConfiguration` kunnen afwijken van de uitvoer die wordt weer gegeven wanneer de `Set-TargetResource`-functie rechtstreeks aanroept.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Compatibiliteit testen op alle door DSC ondersteunde platforms
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Test compatibiliteit op alle door DSC ondersteunde platforms
 
 De resource moet werken op alle door DSC ondersteunde platforms (Windows Server 2008 R2 en nieuwer). Installeer de meest recente WMF (Windows Management Framework) in uw besturings systeem om de meest recente versie van DSC op te halen. Als uw resource niet op een aantal van deze platformen werkt, is het mogelijk dat er een specifiek fout bericht wordt geretourneerd. Zorg er ook voor dat uw resource controleert of cmdlets die u aanroept, aanwezig zijn op een bepaalde computer. Windows Server 2012 heeft een groot aantal nieuwe cmdlets toegevoegd die niet beschikbaar zijn in Windows Server 2008R2, zelfs niet als WMF is geïnstalleerd.
 
