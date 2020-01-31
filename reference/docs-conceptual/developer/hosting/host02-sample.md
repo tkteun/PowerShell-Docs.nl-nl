@@ -8,34 +8,34 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: 34918f32a86718ce82987c029cb4dfa09b4359bd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb21a4dd9bbc9ccd0f93ae6f7ecbc09cd89c29d3
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357657"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818087"
 ---
-# <a name="host02-sample"></a><span data-ttu-id="77ec0-102">Voorbeeld Host02</span><span class="sxs-lookup"><span data-stu-id="77ec0-102">Host02 Sample</span></span>
+# <a name="host02-sample"></a><span data-ttu-id="122d5-102">Voorbeeld Host02</span><span class="sxs-lookup"><span data-stu-id="122d5-102">Host02 Sample</span></span>
 
-<span data-ttu-id="77ec0-103">In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host.</span><span class="sxs-lookup"><span data-stu-id="77ec0-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="77ec0-104">Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="77ec0-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
+<span data-ttu-id="122d5-103">In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host.</span><span class="sxs-lookup"><span data-stu-id="122d5-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="122d5-104">Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="122d5-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="77ec0-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="77ec0-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="122d5-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="122d5-105">Requirements</span></span>
 
- <span data-ttu-id="77ec0-106">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="77ec0-106">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="122d5-106">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="122d5-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="77ec0-107">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="77ec0-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="122d5-107">Laat zien</span><span class="sxs-lookup"><span data-stu-id="122d5-107">Demonstrates</span></span>
 
-- <span data-ttu-id="77ec0-108">Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .</span><span class="sxs-lookup"><span data-stu-id="77ec0-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="122d5-108">Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .</span><span class="sxs-lookup"><span data-stu-id="122d5-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="77ec0-109">Een runs Pace maken die gebruikmaakt van de aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="77ec0-109">Creating a runspace that uses the custom host.</span></span>
+- <span data-ttu-id="122d5-109">Een runs Pace maken die gebruikmaakt van de aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="122d5-109">Creating a runspace that uses the custom host.</span></span>
 
-- <span data-ttu-id="77ec0-110">De host-cultuur wordt ingesteld op Duits.</span><span class="sxs-lookup"><span data-stu-id="77ec0-110">Setting the host culture to German.</span></span>
+- <span data-ttu-id="122d5-110">De host-cultuur wordt ingesteld op Duits.</span><span class="sxs-lookup"><span data-stu-id="122d5-110">Setting the host culture to German.</span></span>
 
-- <span data-ttu-id="77ec0-111">Het maken van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object dat een script uitvoert om de processen op te halen en te sorteren, haalt de huidige datum op die in het Duits wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="77ec0-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
+- <span data-ttu-id="122d5-111">Het maken van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object dat een script uitvoert om de processen op te halen en te sorteren, haalt de huidige datum op die in het Duits wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="122d5-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
 
-## <a name="example"></a><span data-ttu-id="77ec0-112">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="77ec0-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="122d5-112">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="122d5-112">Example</span></span>
 
- <span data-ttu-id="77ec0-113">De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van de aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="77ec0-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
+ <span data-ttu-id="122d5-113">De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van de aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="122d5-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="77ec0-114">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="77ec0-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="122d5-114">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="122d5-114">Example</span></span>
 
- <span data-ttu-id="77ec0-115">De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="77ec0-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="77ec0-116">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="77ec0-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="122d5-115">De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="122d5-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="122d5-116">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="122d5-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -314,9 +314,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="77ec0-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="77ec0-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="122d5-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="122d5-117">Example</span></span>
 
- <span data-ttu-id="77ec0-118">De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="77ec0-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="122d5-118">De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="122d5-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -565,9 +565,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="77ec0-119">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="77ec0-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="122d5-119">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="122d5-119">Example</span></span>
 
- <span data-ttu-id="77ec0-120">De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="77ec0-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="77ec0-121">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="77ec0-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="122d5-120">De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="122d5-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="122d5-121">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="122d5-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -659,7 +659,7 @@ namespace Microsoft.Samples.PowerShell.Host
     }
 
     /// <summary>
-    /// Gets the dimentions of the largest window size that can be
+    /// Gets the dimensions of the largest window size that can be
     /// displayed. This example uses the Console.LargestWindowWidth and
     /// console.LargestWindowHeight properties to determine the returned
     /// value of this property.
@@ -784,12 +784,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="77ec0-122">Zie ook</span><span class="sxs-lookup"><span data-stu-id="77ec0-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="122d5-122">Zie ook</span><span class="sxs-lookup"><span data-stu-id="122d5-122">See Also</span></span>
 
- [<span data-ttu-id="77ec0-123">System. Management. Automation. Power shell</span><span class="sxs-lookup"><span data-stu-id="77ec0-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
+ [<span data-ttu-id="122d5-123">System. Management. Automation. Power shell</span><span class="sxs-lookup"><span data-stu-id="122d5-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
 
- [<span data-ttu-id="77ec0-124">System. Management. Automation. host. PSHost</span><span class="sxs-lookup"><span data-stu-id="77ec0-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="122d5-124">System. Management. Automation. host. PSHost</span><span class="sxs-lookup"><span data-stu-id="122d5-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="77ec0-125">System. Management. Automation. host. Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="77ec0-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="122d5-125">System. Management. Automation. host. Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="122d5-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="77ec0-126">System. Management. Automation. host. Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="77ec0-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="122d5-126">System. Management. Automation. host. Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="122d5-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
