@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6544070f-5549-407f-8603-5df60fe9e013
 caps.latest.revision: 7
-ms.openlocfilehash: 11804db56ec47554e82f04fe6954920ad9577370
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 448cfbce4b387c31ea07fdd31376711f74f5d80c
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352981"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995910"
 ---
-# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="e8b76-102">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="e8b76-102">HelpInfo XML Sample File</span></span>
+# <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="089b5-102">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="089b5-102">HelpInfo XML Sample File</span></span>
 
-<span data-ttu-id="e8b76-103">In dit onderwerp wordt een voor beeld weer gegeven van een juist opgemaakt bestand met Help-informatie, algemeen bekend als ' HelpInfo XML-bestand '.</span><span class="sxs-lookup"><span data-stu-id="e8b76-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="e8b76-104">In dit voorbeeld bestand worden de UI-cultuur-elementen in alfabetische volg orde gerangschikt op naam van de UI-cultuur.</span><span class="sxs-lookup"><span data-stu-id="e8b76-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="e8b76-105">Alfabetische volg orde is een best practice, maar dit is niet vereist.</span><span class="sxs-lookup"><span data-stu-id="e8b76-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
+<span data-ttu-id="089b5-103">In dit onderwerp wordt een voor beeld weer gegeven van een juist opgemaakt bestand met Help-informatie, algemeen bekend als ' HelpInfo XML-bestand '.</span><span class="sxs-lookup"><span data-stu-id="089b5-103">This topic displays a sample of a well-formed Updatable Help Information file, commonly known as "HelpInfo XML file."</span></span> <span data-ttu-id="089b5-104">In dit voorbeeld bestand worden de UI-cultuur-elementen in alfabetische volg orde gerangschikt op naam van de UI-cultuur.</span><span class="sxs-lookup"><span data-stu-id="089b5-104">In this sample file, the UI culture elements are arranged in alphabetical order by UI culture name.</span></span> <span data-ttu-id="089b5-105">Alfabetische volg orde is een best practice, maar dit is niet vereist.</span><span class="sxs-lookup"><span data-stu-id="089b5-105">Alphabetical ordering is a best practice, but it is not required.</span></span>
 
-## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="e8b76-106">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="e8b76-106">HelpInfo XML Sample File</span></span>
+## <a name="helpinfo-xml-sample-file"></a><span data-ttu-id="089b5-106">HelpInfo-XML-voorbeeldbestand</span><span class="sxs-lookup"><span data-stu-id="089b5-106">HelpInfo XML Sample File</span></span>
 
 ```xml
 
 <?xml version="1.0" encoding="utf-8"?>
-<HelpInfo xmlns="http://schemas.microsoft.com/powershell/help/2010/05">
-   <HelpContentURI>http://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
+<HelpInfo xmlns="https://schemas.microsoft.com/powershell/help/2010/05">
+   <HelpContentURI>https://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
    <SupportedUICultures>
     <UICulture>
       <UICultureName>de-DE</UICultureName>
