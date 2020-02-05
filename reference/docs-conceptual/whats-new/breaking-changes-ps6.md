@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Belang rijke wijzigingen voor Power shell 6,0
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415698"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995451"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Belang rijke wijzigingen voor Power shell 6. x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Functies die niet meer beschikbaar zijn in Power shell core
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>Modules die niet zijn verzonden voor Power shell 6. x
+
+De volgende modules zijn niet voor verschillende compatibiliteits redenen opgenomen in Power shell 6.
+
+- ISE
+- Micro soft. Power shell. LocalAccounts
+- Micro soft. Power shell. ODataUtils
+- Micro soft. Power shell. Operation. validatie
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>PowerShell-werkstroom
 
@@ -40,10 +52,11 @@ Nu worden de `ActiveDirectory`-en `DnsClient`-modules in Windows en Windows Serv
 
 Vanwege de complexiteit van het ondersteunen van twee sets WMI-modules, hebben we de WMI v1-cmdlets uit Power shell core verwijderd:
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 In plaats daarvan wordt u aangeraden de CIM-cmdlets (ook wel WMI v2) te gebruiken die dezelfde functionaliteit bieden als nieuwe functionaliteit en een opnieuw ontworpen syntaxis:
 
@@ -68,14 +81,51 @@ Als gevolg van het gebruik van niet-ondersteunde Api's, is `Microsoft.PowerShell
 
 .NET core biedt geen ondersteuning voor het Windows Communication Framework, dat services biedt voor het gebruik van het SOAP-protocol. Deze cmdlet is verwijderd omdat SOAP is vereist.
 
-### <a name="-computer-cmdlets"></a>`*-Computer`-cmdlets
+### <a name="-transaction-cmdlets-removed"></a>`*-Transaction` cmdlets verwijderd
+
+Deze cmdlets hebben een zeer beperkt gebruik. De beslissing is genomen om de ondersteuning voor hen te stoppen.
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>Beveiligings-cmdlets die niet beschikbaar zijn op niet-Windows-platforms
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer`en andere Windows-specifieke cmdlets
 
 Als gevolg van het gebruik van niet-ondersteunde Api's, zijn de volgende cmdlets uit Power shell core verwijderd totdat er een betere oplossing is gevonden.
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Herstellen-computer
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>`*-Counter`-cmdlets
 
@@ -84,6 +134,31 @@ Als gevolg van het gebruik van niet-ondersteunde Api's, is het `*-Counter` verwi
 ### <a name="-eventlog-cmdlets"></a>`*-EventLog`-cmdlets
 
 Als gevolg van het gebruik van niet-ondersteunde Api's, is het `*-EventLog` verwijderd uit Power shell core. totdat er een betere oplossing is gevonden. `Get-WinEvent` en `Create-WinEvent` zijn beschikbaar voor het ophalen en maken van gebeurtenissen in Windows.
+
+### <a name="cmdlets-that-use-wpf-removed"></a>Cmdlets die gebruikmaken van WPF verwijderd
+
+Het Windows Presentation Framework wordt niet ondersteund op CoreCLR. De volgende cmdlets worden beïnvloed:
+
+- `Show-Command`
+- `Out-GridView`
+- De **ShowWindow** -para meter van `Get-Help`
+
+### <a name="some-dsc-cmdlets-removed"></a>Sommige DSC-cmdlets zijn verwijderd
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>Wijzigingen in de engine/taal
 
@@ -124,7 +199,7 @@ Wanneer een API wordt geretourneerd alleen `null`, werd invoke-RestMethod als te
 Als gevolg van problemen met RPC-externe toegang in CoreFX (met name op niet-Windows-platforms) en het garanderen van een consistente externe ervaring in Power shell, is de para meter `-Protocol` verwijderd uit de `\*-Computer`-cmdlets. DCOM wordt niet meer ondersteund voor externe communicatie. De volgende cmdlets bieden alleen ondersteuning voor externe WSMAN-communicatie:
 
 - Naam wijzigen-computer
-- Restart-Computer
+- Opnieuw opstarten-computer
 - Stop-computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>`-ComputerName` verwijderen uit `*-Service`-cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)

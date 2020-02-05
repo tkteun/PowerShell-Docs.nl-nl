@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352274"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996077"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Het XML-schemabestand maken voor een Management OData-webservice
 
@@ -25,7 +25,7 @@ Het eerste deel van het XML-bestand wijst de resources die zijn gedefinieerd in 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ResourceMetadata xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09">
+<ResourceMetadata xmlns="https://schemas.microsoft.com/powershell-web-services/2010/09">
     <SchemaNamespace>PswsTest</SchemaNamespace>
     <ContainerName>PSWSEntityContainer</ContainerName>
     <Resources>
@@ -48,7 +48,7 @@ Vervolgens geeft u de cmdlets op die overeenkomen met de ruwe (maken, lezen, bij
 |------------------|-----------------|
 |Maken|Maken|
 |Lezen|Query’s uitvoeren|
-|Bijwerken|Bijwerken|
+|Update|Update|
 |Verwijderen|Verwijderen|
 
 In het volgende voor beeld ziet u de toewijzingen voor de bewerkingen Create, Read en update op de `Service` resource.

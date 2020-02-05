@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Aan de slag met de PowerShell Gallery
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329160"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995878"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
 
@@ -23,7 +23,7 @@ U kunt pakketten vinden in de PowerShell Gallery met behulp van het besturings e
 
 U kunt de resultaten van de galerie filteren met behulp van de volgende para meters:
 
-- Naam
+- Name
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -48,7 +48,7 @@ Als u [Find-Module][] of [Zoeken-script][]uitvoert, kunt u deze gegevens weer ge
 
 We raden het volgende proces aan bij het downloaden van pakketten van de PowerShell Gallery:
 
-### <a name="inspect"></a>Controleren
+### <a name="inspect"></a>Controleert
 
 Als u een pakket wilt downloaden uit de galerie voor inspectie, voert u de cmdlet [Save-module][] of [Save-script][] uit, afhankelijk van het type pakket. Zo kunt u het pakket lokaal opslaan zonder het te installeren en de inhoud van het pakket controleren. Vergeet niet om het opgeslagen pakket hand matig te verwijderen.
 
@@ -76,9 +76,9 @@ Raadpleeg de [Azure Automation](/azure/automation) -documentatie voor meer infor
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>De pakketten van de PowerShell Gallery worden bijgewerkt
 
-Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module] [] of [update-script] [] uit. Wanneer u zonder aanvullende para meters, [Update-module] [] probeert alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt bijwerken, voegt u de para meter `-Name` toe.
+Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module][] of [update-script][] uit. Wanneer u zonder aanvullende para meters uitvoert, probeert [Update-Module][] alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt bijwerken, voegt u de para meter `-Name` toe.
 
-En wanneer wordt uitgevoerd zonder aanvullende para meters, wordt met [update-script] [] ook geprobeerd alle scripts bij te werken die zijn geïnstalleerd door [install-script][]uit te voeren. Als u scripts selectief wilt bijwerken, voegt u de para meter `-Name` toe.
+Op dezelfde manier wordt bij het uitvoeren van een [Update-script][] ook geprobeerd alle scripts die zijn geïnstalleerd door het [Install-script][]uit te voeren, wanneer u uitvoert zonder aanvullende para meters. Als u scripts selectief wilt bijwerken, voegt u de para meter `-Name` toe.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Pakketten weer geven die u hebt geïnstalleerd via de PowerShell Gallery
 
@@ -98,3 +98,5 @@ Voer de cmdlet [Get-InstalledScript][] uit om erachter te komen welke scripts zi
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-script]: /powershell/module/powershellget/Update-Script

@@ -2,19 +2,18 @@
 title: Wat is er nieuw in Power shell Core 6,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086107"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995502"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
 Hieronder vindt u een selectie van een aantal belang rijke nieuwe functies en wijzigingen die zijn geïntroduceerd in Power shell Core 6,1.
 
-Er **zijn ook talloze** ' saaie dingen ' die Power shell sneller en stabieler maken (plus veel problemen met oplossingen).
-Bekijk onze [wijzigingen logboek op github](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)voor een volledige lijst met wijzigingen.
+Er **zijn ook talloze** ' saaie dingen ' die Power shell sneller en stabieler maken (plus veel problemen met oplossingen). Bekijk onze [wijzigingen logboek op github](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)voor een volledige lijst met wijzigingen.
 
 En we noemen we een aantal van de onderstaande namen, hartelijk dank voor [alle mede werkers van de Community](https://github.com/PowerShell/PowerShell/graphs/contributors) die deze release hebben gemaakt.
 
@@ -37,13 +36,11 @@ Met het Windows-compatibiliteits pakket kan Power shell core gebruikmaken **van 
 
 ## <a name="support-for-application-whitelisting"></a>Ondersteuning voor White List van toepassingen
 
-Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en de Application white list van [device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) .
-Met Application white list kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd met de [modus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)voor de beperkte Power shell-taal.
+Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en de Application white list van [device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) . Met Application white list kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd met de [modus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)voor de beperkte Power shell-taal.
 
 ## <a name="performance-improvements"></a>Verbeterde prestaties
 
-Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebracht.
-Power shell Core 6,1 blijft de snelheid van bepaalde bewerkingen verbeteren.
+Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebracht. Power shell Core 6,1 blijft de snelheid van bepaalde bewerkingen verbeteren.
 
 `Group-Object` is bijvoorbeeld sped 66%:
 
@@ -51,9 +48,9 @@ Power shell Core 6,1 blijft de snelheid van bepaalde bewerkingen verbeteren.
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tijd (sec.)   | 25,178                 | 19,653              | 6,641               |
+| Tijd (SEC)   | 25,178                 | 19,653              | 6,641               |
 | Versnellen (%) | N.v.t.                    | 21,9%               | 66,2%               |
 
 Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met meer dan 15%:
@@ -62,9 +59,9 @@ Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met 
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
-| Tijd (sec.)   | 12,170                 | 8,493               | 7,08                |
+| Tijd (SEC)   | 12,170                 | 8,493               | 7,08                |
 | Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
 
 `Import-Csv` is ook aanzienlijk sped na een regressie van Windows Power shell.
@@ -74,9 +71,9 @@ In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kol
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1    |
+|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tijd (sec.)   | 0,441                  | 1,069               | 0,268                  |
+| Tijd (SEC)   | 0,441                  | 1,069               | 0,268                  |
 | Versnellen (%) | N.v.t.                    | -142,4%             | 74,9% (39,2% van WPS) |
 
 Ten slotte is de conversie van JSON naar `PSObject` sped van meer dan 50% sinds Windows Power shell.
@@ -86,17 +83,16 @@ In het volgende voor beeld wordt een JSON-test bestand van ~ 2 MB gebruikt:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1    |
+|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
-| Tijd (sec.)   | 0,259                  | 0,577               | 0,125                  |
+| Tijd (SEC)   | 0,259                  | 0,577               | 0,125                  |
 | Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleer `system32` op compatibele modules in Windows
 
 In de Windows 10 1809-update en Windows Server 2019 hebben we een aantal Power shell-modules bijgewerkt om ze te markeren als compatibel met Power shell core.
 
-Wanneer Power shell Core 6,1 wordt gestart, wordt `$windir\System32` automatisch opgenomen als onderdeel van de `PSModulePath` omgevings variabele.
-Er worden echter alleen modules `Get-Module` en `Import-Module` als de `CompatiblePSEdition` is gemarkeerd als compatibel met `Core`.
+Wanneer Power shell Core 6,1 wordt gestart, wordt `$windir\System32` automatisch opgenomen als onderdeel van de `PSModulePath` omgevings variabele. Er worden echter alleen modules `Get-Module` en `Import-Module` als de `CompatiblePSEdition` is gemarkeerd als compatibel met `Core`.
 
 
 ```powershell
@@ -202,9 +198,7 @@ en [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-
 
 [Power shell direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van Power shell en hyper-v waarmee u verbinding kunt maken met een hyper-v-VM of-container zonder netwerk verbinding of andere services voor extern beheer.
 
-In het verleden is Power shell direct verbonden via de Windows Power shell-instantie postvak in in de container.
-Nu probeert Power shell direct eerst verbinding te maken met behulp van een beschik bare `pwsh.exe` op de `PATH` omgevings variabele.
-Als `pwsh.exe` niet beschikbaar is, valt Power shell direct terug op het gebruik van `powershell.exe`.
+In het verleden is Power shell direct verbonden via de Windows Power shell-instantie postvak in in de container. Nu probeert Power shell direct eerst verbinding te maken met behulp van een beschik bare `pwsh.exe` op de `PATH` omgevings variabele. Als `pwsh.exe` niet beschikbaar is, valt Power shell direct terug op het gebruik van `powershell.exe`.
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` maakt nu afzonderlijke externe eind punten voor Preview-versies
 
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port` syntaxis ondersteund voor SSH
 
-SSH-clients ondersteunen doorgaans een connection string in de indeling `user@host:port`.
-Met het toevoegen van SSH als protocol voor externe communicatie met Power Shell hebben we ondersteuning toegevoegd voor deze indeling van connection string:
+SSH-clients ondersteunen doorgaans een connection string in de indeling `user@host:port`. Met het toevoegen van SSH als protocol voor externe communicatie met Power Shell hebben we ondersteuning toegevoegd voor deze indeling van connection string:
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ Dankzij [@iSazonov](https://github.com/iSazonov)is de [`Test-Connection`](/power
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` als niet-beheerder
 
-Op de populaire vraag moet `Update-Help` niet meer worden uitgevoerd als beheerder.
-`Update-Help` nu de standaard instelling voor het opslaan van Help naar een map die door een gebruiker is bereik.
+Op de populaire vraag moet `Update-Help` niet meer worden uitgevoerd als beheerder. `Update-Help` nu de standaard instelling voor het opslaan van Help naar een map die door een gebruiker is bereik.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nieuwe methoden/eigenschappen op `PSCustomObject`
 
-Dankzij [@iSazonov](https://github.com/iSazonov)zijn nieuwe methoden en eigenschappen toegevoegd aan `PSCustomObject`.
-`PSCustomObject` bevat nu een `Count`eigenschap /`Length`, zoals andere objecten.
+Dankzij [@iSazonov](https://github.com/iSazonov)zijn nieuwe methoden en eigenschappen toegevoegd aan `PSCustomObject`. `PSCustomObject` bevat nu een `Count`eigenschap /`Length`, zoals andere objecten.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-Bedankt voor het @SimonWahlinhebben we de `-Not`-para meter toegevoegd aan `Where-Object`.
-U kunt nu een object filteren in de pijp lijn voor het niet bestaan van een eigenschap, of een eigenschaps waarde van Null/empty.
+Bedankt voor het @SimonWahlinhebben we de `-Not`-para meter toegevoegd aan `Where-Object`. U kunt nu een object filteren in de pijp lijn voor het niet bestaan van een eigenschap, of een eigenschaps waarde van Null/empty.
 
 Met deze opdracht worden bijvoorbeeld alle services geretourneerd waarvoor geen afhankelijke services zijn gedefinieerd:
 
@@ -368,8 +358,7 @@ Gezien onze overgang naar een stuk lijst-minder UTF-8 in Power shell 6,0, hebben
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>Conversies van PSMethod die moeten worden gedelegeerd
 
-Dankzij [@powercode](https://github.com/powercode)wordt de conversie van een `PSMethod` naar een gemachtigde ondersteund.
-Op die manier kunt u bijvoorbeeld `PSMethod` `[M]::DoubleStrLen` als een gemachtigde waarde in `[M]::AggregateString`door geven:
+Dankzij [@powercode](https://github.com/powercode)wordt de conversie van een `PSMethod` naar een gemachtigde ondersteund. Op die manier kunt u bijvoorbeeld `PSMethod` `[M]::DoubleStrLen` als een gemachtigde waarde in `[M]::AggregateString`door geven:
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>De functie `more` verwijderen
 
-In het verleden heeft Power shell een functie geleverd in Windows met de naam `more` die `more.com`verpakt.
-Deze functie is nu verwijderd.
+In het verleden heeft Power shell een functie geleverd in Windows met de naam `more` die `more.com`verpakt. Deze functie is nu verwijderd.
 
 Daarnaast is de functie `help` gewijzigd in het gebruik van `more.com` in Windows of de standaard paginering van het systeem die is opgegeven door `$env:PAGER` op niet-Windows-platforms.
 
@@ -511,8 +499,7 @@ Voor meer informatie over deze wijzigingen raadpleegt u [Issue #6779](https://gi
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>`VisualBasic` verwijderd als ondersteunde taal in add-type
 
-In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type`-cmdlet.
-Visual Basic wordt zelden gebruikt met `Add-Type`. Deze functie is verwijderd om de grootte van Power shell te reduceren.
+In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type`-cmdlet. Visual Basic wordt zelden gebruikt met `Add-Type`. Deze functie is verwijderd om de grootte van Power shell te reduceren.
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Opschonen van het gebruik van `CommandTypes.Workflow` en `WorkflowInfoCleaned`
 
