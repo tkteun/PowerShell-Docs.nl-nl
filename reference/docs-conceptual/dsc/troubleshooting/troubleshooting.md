@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Problemen met DSC oplossen
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942410"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478782"
 ---
 # <a name="troubleshooting-dsc"></a>Problemen met DSC oplossen
 
@@ -643,12 +643,22 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 Dit kan gebeuren wanneer het certificaat dat op de server wordt gebruikt voor het versleutelen van verkeer, een algemene naam (CN) heeft die afwijkt van de DNS-naam die door het knoop punt wordt gebruikt om de URL op te lossen.
 Werk het Windows pull Server-exemplaar bij om een certificaat met een herstelde naam te gebruiken.
 
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Fout bij het uitvoeren van Sysprep na het Toep assen van een DSC-configuratie
+
+Wanneer u probeert Sysprep uit te voeren om een Windows Server te generaliseren na het Toep assen van een DSC-configuratie, kan de volgende fout optreden.
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+Het generaliseren van een server nadat deze is geconfigureerd met behulp van de desired state Configuration van Windows Power shell is geen ondersteund scenario.  Pas in plaats daarvan configuraties toe op Windows nadat de fase specialize van Windows Setup is voltooid.
+
 ## <a name="see-also"></a>Zie ook
 
 ### <a name="concepts"></a>Concepten
 
 - [Aangepaste Windows Power shell-configuratie bronnen voor desired state bouwen](../resources/authoringResource.md)
 
-### <a name="other-resources"></a>Andere bronnen
+### <a name="other-resources"></a>Meer informatie
 
 - [Windows Power shell desired state Configuration-cmdlets](/powershell/module/psdesiredstateconfiguration/)

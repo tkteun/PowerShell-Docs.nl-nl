@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
-ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022227"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478799"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
@@ -41,7 +41,7 @@ Voor het beleid voor moderne levens cyclus moet micro soft klanten 12 maanden ve
 
 Uiteindelijk wordt verwacht dat Power shell Core de aanpak van de lange termijn voor onderhoud aanneemt. In deze onderhouds benadering moeten alleen onderhouds-en beveiligings updates worden ondersteund voor een specifieke vertakking/versie van 6. x.
 
-## <a name="supported-platforms"></a>Ondersteunde platformen
+## <a name="supported-platforms"></a>Ondersteunde platforms
 
 Raadpleeg de volgende tabel om te controleren of uw platform en versie van Power shell core officieel worden ondersteund.
 
@@ -50,22 +50,20 @@ Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze w
 Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteund, maar zijn beschikbaar voor experimenteren en feedback.
 
 | Platform                                          |      6.2      |    7.0    |
-|---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8,1 en 10                            |   Ondersteund   | Ondersteund |
-| Windows Server 2008 R2, 2012 R2, 2016             |   Ondersteund   | Ondersteund |
+| ------------------------------------------------- | :-----------: | :-------: |
+| Windows 8,1 en 10                               |   Ondersteund   | Ondersteund |
+| Windows Server 2012 R2, 2016                      |   Ondersteund   | Ondersteund |
 | [Windows Server Semi-Annual-kanaal][semi-annual] |   Ondersteund   | Ondersteund |
 | Ubuntu 16,04 en 18,04                            |   Ondersteund   | Ondersteund |
-| Ubuntu 18,10 (via snap package)                   |   Community   | Community |
-| Ubuntu 19,04 (via snap package)                   |   Community   | Community |
+| Ubuntu 19,10 (via snap package)                   |   Community   | Community |
+| Ubuntu 20,04 (via snap package)                   |   Community   | Community |
 | Debian 9                                          |   Ondersteund   | Ondersteund |
 | Debian 10                                         | Niet ondersteund | Ondersteund |
 | CentOS 7                                          |   Ondersteund   | Ondersteund |
 | CentOS 8                                          | Niet ondersteund | Ondersteund |
 | Red Hat Enterprise Linux 7                        |   Ondersteund   | Ondersteund |
 | Red Hat Enterprise Linux 8                        | Niet ondersteund | Ondersteund |
-| openSUSE 42,3                                     |   Ondersteund   | Ondersteund |
-| Fedora 28                                         |   Ondersteund   | Ondersteund |
-| Fedora 29, 30                                     | Niet ondersteund | Ondersteund |
+| Fedora 30                                         | Niet ondersteund | Ondersteund |
 | Alpine 3,8                                        |   Zie opmerking    | Zie opmerking  |
 | Alpine 3,9 en 3,10                               | Niet ondersteund | Zie opmerking  |
 | macOS 10.12+                                      |   Ondersteund   | Ondersteund |
@@ -85,7 +83,7 @@ Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteu
 
 Op basis van de [levens cyclus van de Power shell-kern](#lifecycle-of-powershell-core), worden in de volgende tabel de datums weer gegeven wanneer verschillende releases niet meer worden ondersteund.
 
-| Versie | Einde van de levens duur                   |
+| Version | Einde van de levens duur                   |
 |---------|-------------------------------|
 | 6.0     | 13 februari 2019             |
 | 6.1     | 28 september 2019            |
@@ -97,25 +95,29 @@ Wanneer een platform versie het einde van de levens duur bereikt zoals gedefinie
 
 De distributie-eigen aren hebben daarom de volgende versies gestopt en worden niet ondersteund.
 
-| Platform | Versie | Einde van de levens duur                                                                                 |
-|----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [2017 augustus](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16,10   | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17,10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                              |
+| Platform       | Version | Einde van de levens duur                                                                                                                        |
+| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Debian         | 8       | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                                  |
+| Fedora         | 24      | [2017 augustus](https://fedoramagazine.org/fedora-24-eol/)                                                                           |
+| Fedora         | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                                    |
+| Fedora         | 26      | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                         |
+| Fedora         | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                                 |
+| Fedora         | 28      | [Mei 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                      |
+| openSUSE       | 42.1    | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                            |
+| openSUSE       | 42,2    | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                        |
+| openSUSE       | 42,3    | [2019 juli](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                           |
+| Ubuntu         | 14.04   | [April 2019](https://wiki.ubuntu.com/Releases)                                                                                     |
+| Ubuntu         | 16,10   | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                               |
+| Ubuntu         | 17,04   | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                                 |
+| Ubuntu         | 17,10   | [2018 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                               |
+| Windows        | 7       | [Januari 2020](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
+| Windows Server | 2008 R2 | [Januari 2020](https://support.microsoft.com/en-us/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## <a name="notes-on-licensing"></a>Opmerkingen over licenties
 
 Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licentie en zonder een betaalde ondersteunings overeenkomst zijn gebruikers beperkt tot [Community-ondersteuning][]van de community. Met ondersteuning van de Community biedt micro soft geen garanties voor reactie tijd of oplossingen.
 
-## <a name="windows-powershell-module"></a>Windows PowerShell Module
+## <a name="windows-powershell-module"></a>Windows Power shell-module
 
 Ondersteuning voor Power shell Core bevat geen product modules, tenzij deze modules expliciet Power shell core ondersteunen. Als u bijvoorbeeld de module `ActiveDirectory` gebruikt die wordt geleverd als onderdeel van Windows Server, is dit een niet-ondersteund scenario.
 
