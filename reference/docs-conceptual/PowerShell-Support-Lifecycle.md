@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 08/06/2018
-ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
-ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
+ms.openlocfilehash: 8cf8a0ac6140d28e55b065bf711763ba1c681d63
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478799"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706254"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Levenscyclus voor ondersteuning van PowerShell Core
 
@@ -141,6 +141,22 @@ Add-WindowsPSModulePath
 
 [Experimentele functies][] zijn beperkt tot [ondersteuning](#community-support)van de community.
 
+## <a name="release-history"></a>Release geschiedenis
+
+De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power shell. Deze tabel wordt vermeld voor historische Naslag informatie. Het is niet bedoeld voor gebruik om de ondersteunings levenscyclus te bepalen.
+
+|       Version        | Releasedatum |                                                                     Opmerking                                                                      |
+| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Power shell 7,0 (LTS) |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
+| Power shell 6,0       |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |
+| PowerShell 5.1       |   Aug-2016   | Uitgebracht in Windows 10 jubileum update en Windows Server 2016                                                                             |
+| Power shell 5,0       |   Feb-2016   | Uitgebracht in Windows Management Framework (WMF) 5,0                                                                                            |
+| Power Shell 4,0       |   Okt-2013   | Geïntegreerd in Windows 8,1 en met Windows Server 2012 R2. Installeerbaar op Windows 7 SP1, Windows Server 2008 R2 SP1 en Windows Server 2012. |
+| Power Shell 3,0       |   Okt-2012   | Geïntegreerd in Windows 8 en Windows Server 2012. Installeerbaar op Windows 7 SP1, Windows Server 2008 SP1 en Windows Server 2008 R2 SP1.  |
+| Power Shell 2,0       |   Jul-2009   | Geïntegreerd in Windows 7 en Windows Server 2008 R2. Installeerbaar op Windows XP SP3, Windows Server 2003 SP2 en Windows Vista SP1.            |
+| Power shell 1,0       |   Nov-2006   | Installeerbaar op Windows XP SP2, Windows Server 2003 SP1 en Windows Vista. Optioneel onderdeel van Windows Server 2008.                          |
+
+<!-- hyperlink references -->
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx

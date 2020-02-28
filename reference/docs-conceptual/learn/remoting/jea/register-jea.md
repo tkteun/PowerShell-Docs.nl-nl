@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA-configuraties registreren
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417615"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706203"
 ---
 # <a name="registering-jea-configurations"></a>JEA-configuraties registreren
 
@@ -51,7 +51,7 @@ Na de registratie bent u klaar om [JEA te gebruiken](using-jea.md). U kunt het s
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuratie van meerdere machines met DSC
 
-Bij het implementeren van JEA op meerdere computers, gebruikt het eenvoudigste implementatie model de JEA [desired state Configuration (DSC)-](/powershell/scripting/dsc/overview) resource om snel en consistent JEA op elke computer te implementeren.
+Bij het implementeren van JEA op meerdere computers, gebruikt het eenvoudigste implementatie model de JEA [desired state Configuration (DSC)-](../../../dsc/overview/overview.md) resource om snel en consistent JEA op elke computer te implementeren.
 
 Als u JEA wilt implementeren met DSC, controleert u of aan de volgende vereisten wordt voldaan:
 

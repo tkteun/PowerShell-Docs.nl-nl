@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Een grafische datumkiezer maken
-ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030249"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706122"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Een grafische datumkiezer maken
 
@@ -34,23 +34,23 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 }
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $result = $form.ShowDialog()
 
@@ -60,8 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**.
-Vervolgens start u een nieuwe instantie van de .NET Framework klasse **Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuwe instantie van de .NET Framework klasse **Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -74,8 +73,7 @@ $form = New-Object Windows.Forms.Form -Property @{
 
 In dit voor beeld worden waarden toegewezen aan vier eigenschappen van deze klasse met behulp van de **eigenschap** Property en de hashtabel.
 
-1. **Waarde gelijk**: als u deze eigenschap niet toevoegt, wordt door Windows een locatie geselecteerd wanneer het formulier wordt geopend.
-   Als u deze eigenschap instelt op **CenterScreen**, wordt het formulier in het midden van het scherm telkens weer gegeven wanneer het wordt geladen.
+1. **Waarde gelijk**: als u deze eigenschap niet toevoegt, wordt door Windows een locatie geselecteerd wanneer het formulier wordt geopend. Als u deze eigenschap instelt op **CenterScreen**, wordt het formulier in het midden van het scherm telkens weer gegeven wanneer het wordt geladen.
 
 2. **Grootte**: dit is de grootte van het formulier, in pixels.
    Met het voor gaande script maakt u een formulier dat 243 pixels breed is en 230 pixels hoog.
@@ -96,35 +94,31 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-Maak vervolgens een knop **OK** voor uw formulier.
-Geef de grootte en het gedrag op van de knop **OK** .
-In dit voor beeld is de knop positie 165 pixels van de bovenrand van het formulier en 38 pixels vanaf de linkerrand.
-De knop hoogte is 23 pixels en de knop lengte is 75 pixels.
-Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.
+Maak vervolgens een knop **OK** voor uw formulier. Geef de grootte en het gedrag op van de knop **OK** . In dit voor beeld is de knop positie 165 pixels van de bovenrand van het formulier en 38 pixels vanaf de linkerrand. De knop hoogte is 23 pixels en de knop lengte is 75 pixels. Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.
 
 ```powershell
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
 Op dezelfde manier maakt u een knop **Annuleren** .
 De knop **Annuleren** is 165 pixels vanaf de bovenkant, maar 113 pixels vanaf de linkerrand van het venster.
 
 ```powershell
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
 Voeg de volgende regel code toe om het formulier in Windows weer te geven.
@@ -133,8 +127,7 @@ Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 $result = $form.ShowDialog()
 ```
 
-Ten slotte geeft de code binnen het `if`-blok aan dat Windows wat er moet gebeuren met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op **Enter** .
-De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
+Ten slotte geeft de code binnen het `if`-blok aan dat Windows wat er moet gebeuren met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op **Enter** . De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -145,6 +138,5 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>Zie ook
 
-- [Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: de WinFormsExampleUpdates van Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows Power shell-Tip van de week: een grafische datum kiezer maken](https://technet.microsoft.com/library/ff730942.aspx)
+- [Windows Power shell-Tip van de week: een grafische datum kiezer maken](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))

@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Release geschiedenis van modules en cmdlets
-ms.openlocfilehash: e421201d74da2cc74b1bd57529fb3c3e5245ecae
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995445"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706123"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Release geschiedenis van modules en cmdlets
 
@@ -30,7 +30,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Micro soft. Power shell. Archive              | &check; | &check; | &check; | &check; |              |
 | Microsoft.PowerShell.Core                 | &check; | &check; | &check; | &check; |              |
 | Microsoft.PowerShell.Diagnostics          | &check; | &check; | &check; | &check; | Alleen Windows |
-| Micro soft. Power shell. host                 | &check; | &check; | &check; | &check; |              |
+| Microsoft.PowerShell.Host                 | &check; | &check; | &check; | &check; |              |
 | Micro soft. Power shell. LocalAccounts        | &check; |         |         |         | Alleen Windows |
 | Microsoft.PowerShell.Management           | &check; | &check; | &check; | &check; |              |
 | Micro soft. Power shell. ODataUtils           | &check; |         |         |         | Alleen Windows |
@@ -47,7 +47,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | PSScheduledJob                            | &check; |         |         |         | Alleen Windows |
 | PSWorkflow                                | &check; |         |         |         | Alleen Windows |
 | PSWorkflowUtility                         | &check; |         |         |         | Alleen Windows |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | Kan worden geïnstalleerd in Power shell 5,1 |
 
 ## <a name="cmdlet-release-history"></a>Release geschiedenis van de cmdlet
 
@@ -55,7 +55,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 |         Naam van cmdlet         |   5,1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Exporteren-BinaryMiLog          | &check; | &check; | &check; | &check; | Alleen Windows |
+| Export-BinaryMiLog          | &check; | &check; | &check; | &check; | Alleen Windows |
 | Get-CimAssociatedInstance   | &check; | &check; | &check; | &check; | Alleen Windows |
 | Get-CimClass                | &check; | &check; | &check; | &check; | Alleen Windows |
 | Get-CimInstance             | &check; | &check; | &check; | &check; | Alleen Windows |
@@ -90,9 +90,9 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 |            Naam van cmdlet            |   5,1   |   6.x   |   7.0   |   7.1   |            Opmerking            |
 | --------------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------- |
-| Toevoegen-geschiedenis                       | &check; | &check; | &check; | &check; |                            |
+| Add-History                       | &check; | &check; | &check; | &check; |                            |
 | Add-PSSnapin                      | &check; |         |         |         | Alleen Windows               |
-| Wissen-geschiedenis                     | &check; | &check; | &check; | &check; |                            |
+| Clear-History                     | &check; | &check; | &check; | &check; |                            |
 | Wissen-host                        | &check; | &check; | &check; | &check; |                            |
 | Connect-PSSession                 | &check; | &check; | &check; | &check; | Alleen Windows               |
 | Fout opsporing-taak                         | &check; | &check; | &check; | &check; |                            |
@@ -106,14 +106,14 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Enter-PSHostProcess               | &check; | &check; | &check; | &check; | Toegevoegde Linux-ondersteuning in 6,2 |
 | Enter-PSSession                   | &check; | &check; | &check; | &check; |                            |
 | Afsluiten-PSHostProcess                | &check; | &check; | &check; | &check; | Toegevoegde Linux-ondersteuning in 6,2 |
-| Afsluiten-PSSession                    | &check; | &check; | &check; | &check; |                            |
-| Exporteren-console                    | &check; |         |         |         | Alleen Windows               |
+| Exit-PSSession                    | &check; | &check; | &check; | &check; |                            |
+| Export-Console                    | &check; |         |         |         | Alleen Windows               |
 | Exporteren-ModuleMember               | &check; | &check; | &check; | &check; |                            |
 | ForEach-object                    | &check; | &check; | &check; | &check; |                            |
 | Get-Command                       | &check; | &check; | &check; | &check; |                            |
 | Get-ExperimentalFeature           |         |   6.2   | &check; | &check; |                            |
-| Get-Help                          | &check; | &check; | &check; | &check; |                            |
-| Get-geschiedenis                       | &check; | &check; | &check; | &check; |                            |
+| Help ontvangen                          | &check; | &check; | &check; | &check; |                            |
+| Get-History                       | &check; | &check; | &check; | &check; |                            |
 | Get-job                           | &check; | &check; | &check; | &check; |                            |
 | Get-module                        | &check; | &check; | &check; | &check; |                            |
 | Get-PSHostProcessInfo             | &check; | &check; | &check; | &check; | Toegevoegde Linux-ondersteuning in 6,2 |
@@ -121,10 +121,10 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | Alleen Windows               |
-| Get-term                          | &check; |         |         |         | Alleen Windows               |
+| Get-term                          | &check; |         |         |         | Verplaatst naar micro soft. Power shell. Utility 6.0 + |
 | Import-module                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-opdracht                    | &check; | &check; | &check; | &check; |                            |
-| Invoke-geschiedenis                    | &check; | &check; | &check; | &check; |                            |
+| Invoke-History                    | &check; | &check; | &check; | &check; |                            |
 | New-module                        | &check; | &check; | &check; | &check; |                            |
 | New-ModuleManifest                | &check; | &check; | &check; | &check; |                            |
 | New-PSRoleCapabilityFile          | &check; | &check; | &check; | &check; |                            |
@@ -144,7 +144,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Remove-PSSession                  | &check; | &check; | &check; | &check; |                            |
 | Remove-PSSnapin                   | &check; |         |         |         | Alleen Windows               |
 | Resume-job                        | &check; |         |         |         |                            |
-| Opslaan-Help                         | &check; | &check; | &check; | &check; |                            |
+| Help opslaan                         | &check; | &check; | &check; | &check; |                            |
 | Set-PSDebug                       | &check; | &check; | &check; | &check; |                            |
 | Set-PSSessionConfiguration        | &check; | &check; | &check; | &check; | Alleen Windows               |
 | Set-StrictMode                    | &check; | &check; | &check; | &check; |                            |
@@ -154,7 +154,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Test-ModuleManifest               | &check; | &check; | &check; | &check; |                            |
 | Test-PSSessionConfigurationFile   | &check; | &check; | &check; | &check; | Alleen Windows               |
 | Registratie ongedaan maken-PSSessionConfiguration | &check; | &check; | &check; | &check; | Alleen Windows               |
-| Update-Help                       | &check; | &check; | &check; | &check; |                            |
+| Help bijwerken                       | &check; | &check; | &check; | &check; |                            |
 | Wait-Job                          | &check; | &check; | &check; | &check; |                            |
 | Where-object                      | &check; | &check; | &check; | &check; |                            |
 
@@ -168,12 +168,12 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Import teller | &check; |         |         |         | Alleen Windows |
 | New-Wine vent   | &check; | &check; | &check; | &check; | Alleen Windows |
 
-### <a name="microsoftpowershellhost"></a>Micro soft. Power shell. host
+### <a name="microsoftpowershellhost"></a>Microsoft.PowerShell.Host
 
 |   Naam van cmdlet    |   5,1   |   6.x   |   7.0   |   7.1   | Opmerking |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
-| Start-transcript | &check; | &check; | &check; | &check; |      |
-| Stoppen-transcriptie  | &check; | &check; | &check; | &check; |      |
+| Start-Transcript | &check; | &check; | &check; | &check; |      |
+| Stop-Transcript  | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershelllocalaccounts"></a>Micro soft. Power shell. LocalAccounts
 
@@ -199,19 +199,19 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 |          Naam van cmdlet          |   5,1   |   6.x   |   7.0   |   7.1   |               Opmerking               |
 | ----------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------------- |
-| Add-computer                  | &check; |         |         |         | Alleen Windows                     |
+| Add-Computer                  | &check; |         |         |         | Alleen Windows                     |
 | Add-content                   | &check; | &check; | &check; | &check; |                                  |
-| Checkpoint-Computer           | &check; |         |         |         | Alleen Windows                     |
+| Controle punt-computer           | &check; |         |         |         | Alleen Windows                     |
 | Wissen-inhoud                 | &check; | &check; | &check; | &check; |                                  |
-| Wissen-EventLog                | &check; |         |         |         | Alleen Windows                     |
+| Clear-EventLog                | &check; |         |         |         | Alleen Windows                     |
 | Wissen-item                    | &check; | &check; | &check; | &check; |                                  |
 | Wissen-item Property            | &check; | &check; | &check; | &check; |                                  |
 | Clear-RecycleBin              | &check; |         | &check; | &check; | Alleen Windows                     |
-| Volt ooien-trans actie          | &check; |         |         |         | Alleen Windows                     |
+| Complete-Transaction          | &check; |         |         |         | Alleen Windows                     |
 | Convert-pad                  | &check; | &check; | &check; | &check; |                                  |
 | Kopie-item                     | &check; | &check; | &check; | &check; |                                  |
 | Kopiëren-item Property             | &check; | &check; | &check; | &check; |                                  |
-| Debug-proces                 | &check; | &check; | &check; | &check; |                                  |
+| Debug-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Disable-ComputerRestore       | &check; |         |         |         | Alleen Windows                     |
 | Enable-ComputerRestore        | &check; |         |         |         | Alleen Windows                     |
 | Get-Child item                 | &check; | &check; | &check; | &check; |                                  |
@@ -229,9 +229,9 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Ophalen-proces                   | &check; | &check; | &check; | &check; |                                  |
 | Get-PSDrive                   | &check; | &check; | &check; | &check; |                                  |
 | Get-PSProvider                | &check; | &check; | &check; | &check; |                                  |
-| Get-Service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Get-service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | Get-time zone                  | &check; | &check; | &check; | &check; |                                  |
-| Get-trans actie               | &check; |         |         |         | Alleen Windows                     |
+| Get-Transaction               | &check; |         |         |         | Alleen Windows                     |
 | Get-WmiObject                 | &check; |         |         |         | Alleen Windows                     |
 | Invoke-item                   | &check; | &check; | &check; | &check; |                                  |
 | Invoke-WmiMethod              | &check; |         |         |         | Alleen Windows                     |
@@ -239,16 +239,16 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Limit-EventLog                | &check; |         |         |         | Alleen Windows                     |
 | Item verplaatsen                     | &check; | &check; | &check; | &check; |                                  |
 | Verplaatsen-item Property             | &check; | &check; | &check; | &check; |                                  |
-| Nieuw-gebeurtenis logboek                  | &check; |         |         |         | Alleen Windows                     |
+| New-EventLog                  | &check; |         |         |         | Alleen Windows                     |
 | Nieuw-item                      | &check; | &check; | &check; | &check; |                                  |
 | Nieuw-item Property              | &check; | &check; | &check; | &check; |                                  |
 | New-PSDrive                   | &check; | &check; | &check; | &check; |                                  |
-| New-Service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Nieuwe service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | New-WebServiceProxy           | &check; |         |         |         | Alleen Windows                     |
 | Pop-locatie                  | &check; | &check; | &check; | &check; |                                  |
 | Push-locatie                 | &check; | &check; | &check; | &check; |                                  |
 | REGI ster-WmiEvent             | &check; |         |         |         | Alleen Windows                     |
-| Verwijderen-computer               | &check; |         |         |         | Alleen Windows                     |
+| Remove-Computer               | &check; |         |         |         | Alleen Windows                     |
 | Remove-EventLog               | &check; |         |         |         | Alleen Windows                     |
 | Verwijderen-item                   | &check; | &check; | &check; | &check; |                                  |
 | Verwijderen-item Property           | &check; | &check; | &check; | &check; |                                  |
@@ -260,33 +260,33 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Naam wijzigen-item Property           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Alleen Windows                     |
 | Oplossen-pad                  | &check; | &check; | &check; | &check; |                                  |
-| Opnieuw opstarten-computer              | &check; | &check; | &check; | &check; |                                  |
-| Restart-Service               | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-service               | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | Herstellen-computer              | &check; |         |         |         | Alleen Windows                     |
-| Resume-Service                | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Hervatten-service                | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | Set-klem bord                 | &check; |         | &check; | &check; |                                  |
 | Set-Content                   | &check; | &check; | &check; | &check; |                                  |
 | Set-item                      | &check; | &check; | &check; | &check; |                                  |
 | Set-item Property              | &check; | &check; | &check; | &check; |                                  |
 | Set-Location                  | &check; | &check; | &check; | &check; |                                  |
-| Set-Service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Set-service                   | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | Set-tijd zone                  | &check; | &check; | &check; | &check; |                                  |
 | Set-WmiInstance               | &check; |         |         |         | Alleen Windows                     |
 | Show-ControlPanelItem         | &check; |         |         |         | Alleen Windows                     |
-| Weer geven-EventLog                 | &check; |         |         |         | Alleen Windows                     |
+| Show-EventLog                 | &check; |         |         |         | Alleen Windows                     |
 | Split-pad                    | &check; | &check; | &check; | &check; |                                  |
 | Start-process                 | &check; | &check; | &check; | &check; |                                  |
-| Start-Service                 | &check; | &check; | &check; | &check; | Alleen Windows                     |
-| Start-trans actie             | &check; |         |         |         | Alleen Windows                     |
+| Start-service                 | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Start-Transaction             | &check; |         |         |         | Alleen Windows                     |
 | Stop-computer                 | &check; | &check; | &check; | &check; | Toegevoegde ondersteuning voor Linux/macOS in 7,0 |
 | Stoppen-proces                  | &check; | &check; | &check; | &check; |                                  |
-| Stop-Service                  | &check; | &check; | &check; | &check; | Alleen Windows                     |
-| Suspend-Service               | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Stoppen-service                  | &check; | &check; | &check; | &check; | Alleen Windows                     |
+| Suspend-service               | &check; | &check; | &check; | &check; | Alleen Windows                     |
 | Test-ComputerSecureChannel    | &check; |         |         |         | Alleen Windows                     |
-| Test-Connection               | &check; | &check; | &check; | &check; |                                  |
+| Testen: verbinding               | &check; | &check; | &check; | &check; |                                  |
 | Test-pad                     | &check; | &check; | &check; | &check; |                                  |
-| Ongedaan maken-trans actie              | &check; |         |         |         | Alleen Windows                     |
-| Gebruik-trans actie               | &check; |         |         |         | Alleen Windows                     |
+| Undo-Transaction              | &check; |         |         |         | Alleen Windows                     |
+| Use-Transaction               | &check; |         |         |         | Alleen Windows                     |
 | Wacht proces                  | &check; | &check; | &check; | &check; | Werkt niet in Linux/macOS     |
 | Write-EventLog                | &check; |         |         |         | Alleen Windows                     |
 
@@ -309,12 +309,12 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | --------------------------------------- |
 | ConvertFrom-SecureString  | &check; | &check; | &check; | &check; |                                         |
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
-| Get-ACL                   | &check; | &check; | &check; | &check; | Alleen Windows                            |
+| Get-Acl                   | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Get-CmsMessage            | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
 | Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | Retourneert **onbeperkt** op Linux/macOS |
-| Get-pfx        | &check; | &check; | &check; | &check; |                                         |
+| Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Protect-CmsMessage        | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Set-ACL                   | &check; | &check; | &check; | &check; | Alleen Windows                            |
@@ -329,7 +329,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | ----------------------------------------- |
 | Lid toevoegen                | &check; | &check; | &check; | &check; |                                           |
 | Add-type                  | &check; | &check; | &check; | &check; |                                           |
-| Clear-variabele            | &check; | &check; | &check; | &check; |                                           |
+| Clear-Variable            | &check; | &check; | &check; | &check; |                                           |
 | Compare-object            | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-CSV           | &check; | &check; | &check; | &check; |                                           |
 | ConvertFrom-JSON          | &check; | &check; | &check; | &check; |                                           |
@@ -347,9 +347,9 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Disable-RunspaceDebug     | &check; | &check; | &check; | &check; |                                           |
 | Enable-PSBreakpoint       | &check; | &check; | &check; | &check; |                                           |
 | Enable-RunspaceDebug      | &check; | &check; | &check; | &check; |                                           |
-| Exporteren-alias              | &check; | &check; | &check; | &check; |                                           |
+| Export-Alias              | &check; | &check; | &check; | &check; |                                           |
 | Exporteren-Clixml             | &check; | &check; | &check; | &check; |                                           |
-| Export-Csv                | &check; | &check; | &check; | &check; |                                           |
+| Exporteren-CSV                | &check; | &check; | &check; | &check; |                                           |
 | Exporteren-FormatData         | &check; | &check; | &check; | &check; |                                           |
 | Exporteren-PSSession          | &check; | &check; | &check; | &check; |                                           |
 | Format-Custom             | &check; | &check; | &check; | &check; |                                           |
@@ -357,7 +357,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Format-List               | &check; | &check; | &check; | &check; |                                           |
 | Format-Table              | &check; | &check; | &check; | &check; |                                           |
 | Format-Wide               | &check; | &check; | &check; | &check; |                                           |
-| Get-alias                 | &check; | &check; | &check; | &check; |                                           |
+| Get-Alias                 | &check; | &check; | &check; | &check; |                                           |
 | Get-cultuur               | &check; | &check; | &check; | &check; |                                           |
 | Ophalen datum                  | &check; | &check; | &check; | &check; |                                           |
 | Get-fout                 |         |         | &check; | &check; |                                           |
@@ -378,12 +378,12 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Get-UICulture             | &check; | &check; | &check; | &check; |                                           |
 | Get-Unique                | &check; | &check; | &check; | &check; |                                           |
 | Get-uptime                |         | &check; | &check; | &check; |                                           |
-| Get-variabele              | &check; | &check; | &check; | &check; |                                           |
+| Get-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Get-term                  |         | &check; | &check; | &check; |                                           |
 | Groep-object              | &check; | &check; | &check; | &check; |                                           |
-| Import-alias              | &check; | &check; | &check; | &check; |                                           |
+| Import-Alias              | &check; | &check; | &check; | &check; |                                           |
 | Import-Clixml             | &check; | &check; | &check; | &check; |                                           |
-| Import-Csv                | &check; | &check; | &check; | &check; |                                           |
+| Import-CSV                | &check; | &check; | &check; | &check; |                                           |
 | Import-LocalizedData      | &check; | &check; | &check; | &check; |                                           |
 | Import-PowerShellDataFile | &check; | &check; | &check; | &check; |                                           |
 | Import-PSSession          | &check; | &check; | &check; | &check; |                                           |
@@ -391,18 +391,18 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Invoke-RestMethod         | &check; | &check; | &check; | &check; |                                           |
 | Invoke-WebRequest         | &check; | &check; | &check; | &check; |                                           |
 | Samen voegen-teken reeks               |         | &check; | &check; | &check; |                                           |
-| Measure-Command           | &check; | &check; | &check; | &check; |                                           |
+| Meting-opdracht           | &check; | &check; | &check; | &check; |                                           |
 | Meting object            | &check; | &check; | &check; | &check; |                                           |
-| Nieuwe alias                 | &check; | &check; | &check; | &check; |                                           |
-| Nieuw-gebeurtenis                 | &check; | &check; | &check; | &check; | Er zijn geen gebeurtenis bronnen beschikbaar in Linux/macOS |
+| New-Alias                 | &check; | &check; | &check; | &check; |                                           |
+| New-Event                 | &check; | &check; | &check; | &check; | Er zijn geen gebeurtenis bronnen beschikbaar in Linux/macOS |
 | New-Guid                  | &check; | &check; | &check; | &check; |                                           |
 | Nieuw-object                | &check; | &check; | &check; | &check; |                                           |
 | New-TemporaryFile         | &check; | &check; | &check; | &check; |                                           |
 | Nieuw-time span              | &check; | &check; | &check; | &check; |                                           |
-| Nieuwe variabele              | &check; | &check; | &check; | &check; |                                           |
+| New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-file                  | &check; | &check; | &check; | &check; |                                           |
 | Out-GridView              | &check; |         | &check; | &check; |                                           |
-| Out-Printer               | &check; |         | &check; | &check; |                                           |
+| Out-printer               | &check; |         | &check; | &check; |                                           |
 | Out-teken reeks                | &check; | &check; | &check; | &check; |                                           |
 | Read-host                 | &check; | &check; | &check; | &check; |                                           |
 | REGI ster-EngineEvent      | &check; | &check; | &check; | &check; | Er zijn geen gebeurtenis bronnen beschikbaar in Linux/macOS |
@@ -411,28 +411,28 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Remove-gebeurtenis              | &check; | &check; | &check; | &check; | Er zijn geen gebeurtenis bronnen beschikbaar in Linux/macOS |
 | Remove-PSBreakpoint       | &check; | &check; | &check; | &check; |                                           |
 | Remove-TypeData           | &check; | &check; | &check; | &check; |                                           |
-| Remove-variabele           | &check; | &check; | &check; | &check; |                                           |
+| Remove-Variable           | &check; | &check; | &check; | &check; |                                           |
 | Select-Object             | &check; | &check; | &check; | &check; |                                           |
 | Selecteer teken reeks             | &check; | &check; | &check; | &check; |                                           |
 | Select-XML                | &check; | &check; | &check; | &check; |                                           |
 | Bericht verzenden          | &check; | &check; | &check; | &check; |                                           |
-| Set-alias                 | &check; | &check; | &check; | &check; |                                           |
+| Set-Alias                 | &check; | &check; | &check; | &check; |                                           |
 | Set-date                  | &check; | &check; | &check; | &check; |                                           |
 | Set-MarkdownOption        |         |   6.1   | &check; | &check; |                                           |
 | Set-PSBreakpoint          | &check; | &check; | &check; | &check; |                                           |
 | Set-TraceSource           | &check; | &check; | &check; | &check; |                                           |
-| Set-variabele              | &check; | &check; | &check; | &check; |                                           |
+| Set-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Weer geven-opdracht              | &check; |         | &check; | &check; |                                           |
 | Weer geven-prijs verlaging             |         |   6.1   | &check; | &check; |                                           |
 | Sorteer object               | &check; | &check; | &check; | &check; |                                           |
 | Start-slaap stand               | &check; | &check; | &check; | &check; |                                           |
 | T-object                | &check; | &check; | &check; | &check; |                                           |
 | Test-JSON                 |         | &check; | &check; | &check; |                                           |
-| Tracering-opdracht             | &check; | &check; | &check; | &check; |                                           |
+| Trace-Command             | &check; | &check; | &check; | &check; |                                           |
 | Blok kering van bestand opheffen              | &check; | &check; | &check; | &check; | Er is ondersteuning toegevoegd voor macOS in 7,0            |
 | Registratie ongedaan maken-gebeurtenis          | &check; | &check; | &check; | &check; | Er zijn geen gebeurtenis bronnen beschikbaar in Linux/macOS |
 | Update-FormatData         | &check; | &check; | &check; | &check; |                                           |
-| Update-List               | &check; |         | &check; | &check; |                                           |
+| Update-lijst               | &check; |         | &check; | &check; |                                           |
 | Update-TypeData           | &check; | &check; | &check; | &check; |                                           |
 | Wacht debugger             | &check; | &check; | &check; | &check; |                                           |
 | Wachten gebeurtenis                | &check; | &check; | &check; | &check; |                                           |
@@ -636,4 +636,4 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 |   Naam van cmdlet   |  5,1  |   6.x   |   7.0   |   7.1   | Opmerking |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | Kan worden geïnstalleerd in Power shell 5,1 |
