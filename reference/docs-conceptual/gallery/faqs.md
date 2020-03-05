@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818121"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278172"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -93,8 +93,8 @@ Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worde
 
 Typ wat u zoekt in het tekstvak. Als u bijvoorbeeld modules wilt zoeken die verwant zijn aan Azure SQL, typt u ' Azure SQL '. Onze zoek machine zoekt naar deze tref woorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en andere meta gegevens. Op basis van een score met een gewogen kwaliteit worden de meest overeenkomende resultaten weer gegeven. U kunt ook zoeken op specifiek veld met de syntaxis Field: ' value ' in de zoek query voor de volgende velden:
 
-- Labels
-- Functions
+- Tags
+- Functies
 - Cmdlets
 - DscResources
 - PowerShellVersion
@@ -148,7 +148,7 @@ Op de Power shell-cmdlet [Installatie-module][] in feite een smalle wrapper rond
 
 In de laag van de package management-pakket provider roept de PSModule-pakket provider echt aan bij andere package management-pakket providers. Als u bijvoorbeeld werkt met galerieën op basis van NuGet (zoals de PowerShell Gallery), gebruikt de PSModule-pakket provider de NuGet-pakket provider om met de opslag plaats te werken.
 
-![PowerShellGet-architectuur](Images/powershellgetArchitecture.png)
+![PowerShellGet-architectuur](media/faqs/powershellgetArchitecture.png)
 
 Afbeelding 1: PowerShellGet-architectuur
 
@@ -162,7 +162,7 @@ Daarom vereist **PowerShellGet** een van de volgende besturingssystemen:
 
 - Windows 10
 - Windows 8.1 Pro
-- Windows 8.1 Enterprise
+- Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
 - Windows Server 2012 R2

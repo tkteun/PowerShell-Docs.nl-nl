@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakketten met compatibele Power shell-edities of besturings systeem
-ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329146"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278351"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakketten met compatibele Power shell-edities of-besturings systemen
 
@@ -17,15 +17,15 @@ Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin vers
 ## <a name="searching-by-powershell-edition"></a>Zoeken op Power shell-editie
 
 De twee versies van Power shell zijn:
-- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
-- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
+- **Desktop Edition:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een volledige footprint, zoals Server Core en Windows Desktop.
+- **Core-editie:** Gebaseerd op .NET core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een verminderde footprint, zoals nano server en Windows IoT.
 
 ### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Met PowerShell Gallery kunt u pakketten filteren die compatibel zijn voor specifieke Power shell-edities
 
 Als voor een pakket compatibele PSEditions is opgegeven, worden deze vermeld als onderdeel van Power shell-edities op de pagina pakket weergave en ook in pakketten met resultaten.
 U kunt ook zoeken naar compatibele pakketten met behulp van Power shell.
 
-![Pagina item weergave met PSEditions](../../Images/packagedisplaypagewithpseditions.PNG)
+![Pagina item weergave met PSEditions](media/searching-by-compatibility/packagedisplaypagewithpseditions.PNG)
 
 ### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Pakketten zoeken in de gebruikers interface van de galerie die werkt met Power shell core
 
@@ -33,11 +33,11 @@ Tags: "PSEdition_Desktop" en Tags: "PSEdition_Core" gebruiken om de pakketten op
 
 ### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags gebruiken: ' PSEdition_Core ' om items te zoeken die compatibel zijn met Power shell Core Edition.
 
-![Zoek resultaten voor items die compatibel zijn met Core PSEdition](../../Images/searchresultswithpseditions.PNG)
+![Zoek resultaten voor items die compatibel zijn met Core PSEdition](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
 ### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags gebruiken: ' PSEdition_Desktop ' om items te zoeken die compatibel zijn met Power shell Desktop Edition.
 
-![Zoek resultaten voor items die compatibel zijn met Desktop PSEdition](../../Images/searchresultswithpseditionsdesktop.PNG)
+![Zoek resultaten voor items die compatibel zijn met Desktop PSEdition](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Pakketten zoeken om compatibele versies te vinden met behulp van Power shell
 U kunt labels opgeven voor het filteren van de Power shell-editie en het besturings systeem.

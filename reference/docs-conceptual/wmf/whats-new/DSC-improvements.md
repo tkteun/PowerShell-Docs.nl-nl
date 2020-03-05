@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818104"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277588"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
@@ -59,7 +59,7 @@ Bekijk de onderstaande moment opnamen:
 
 - Lokale configuratie-instellingen waarmee een gedeeltelijke configuratie wordt gedefinieerd die een knoop punt mag ontvangen.
 
-  ![Voor beeld van een automatische configuratie](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Voor beeld van een automatische configuratie](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - Voor beeld van gedeeltelijke configuratie definitie
 
@@ -80,11 +80,11 @@ Bekijk de onderstaande moment opnamen:
 
 - Configuratiepad is inge sloten in het gegenereerde MOF-bestand.
 
-  ![Voor beeld van gegenereerd MOF-bestand](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![Voor beeld van gegenereerd MOF-bestand](media/DSC-improvements/PartialGeneratedMof.png)
 
 - Bestands naam in de opslag plaats voor pull-configuratie
 
-  ![Bestands naam in configuratie opslagplaats](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![Bestands naam in configuratie opslagplaats](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure Automation door de service naam gegenereerde MOF-bestanden als `<ConfigurationName>.<NodeName>.mof`. De onderstaande configuratie compileert daarom met PartialOne. localhost. mof.
 
@@ -293,11 +293,11 @@ Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt
 > Handtekening validatie voor module-Catalog en configuratie wordt alleen uitgevoerd wanneer de configuratie voor de eerste keer wordt toegepast op het systeem of wanneer de module wordt gedownload en geïnstalleerd.
 > Met consistentie runs wordt de hand tekening van huidige. MOF of de bijbehorende module-afhankelijkheden niet gevalideerd. Als de verificatie is mislukt in elk stadium, bijvoorbeeld als de configuratie die is opgehaald van de pull-server niet is ondertekend, wordt de verwerking van de configuratie beëindigd met de fout die hieronder wordt weer gegeven en worden alle tijdelijke bestanden verwijderd.
 
-![Configuratie van voorbeeld fout uitvoer](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Configuratie van voorbeeld fout uitvoer](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 Op dezelfde manier wordt het ophalen van een module waarvan de catalogus niet is ondertekend met de volgende fout:
 
-![Uitvoer module voor voorbeeld fout](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Uitvoer module voor voorbeeld fout](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Push
 
@@ -345,12 +345,12 @@ Een configuratie die wordt geleverd met behulp van push kan worden geknoeid met 
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Onderteken het configuratie bestand met het certificaat voor ondertekening van programma code.
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - Probeer het ondertekende MOF-bestand te pushen.
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
