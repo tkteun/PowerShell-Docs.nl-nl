@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galerie, Power shell, cmdlet, psgallery
 description: Richt lijnen voor uitgevers
 title: Richt lijnen voor publicatie PowerShell Gallery en aanbevolen procedures
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417685"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278207"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Richt lijnen voor publicatie van PowerShellGallery en aanbevolen procedures
 
@@ -128,7 +128,7 @@ Gebruik de volgende tags om te laten zien welke gebruikers pakketten goed kunnen
 - MacOS: pakketten die compatibel zijn met het Mac-besturings systeem
 
 Door uw pakket te labelen met de compatibele platform (s), wordt het opgenomen in de galerie Zoek filters in het linkerdeel venster van de zoek resultaten. Als u uw pakket host op GitHub, kunt u, wanneer u uw pakket labelt, ook profiteren van onze [PowerShell Gallery Compatibility shields](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![Compatibility Shield](../Images/CosmosDB.svg).
+![Compatibility Shield](media/publishing-guidelines/CosmosDB.svg).
 
 ## <a name="include-tests"></a>Tests toevoegen
 

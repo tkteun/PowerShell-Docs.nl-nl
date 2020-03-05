@@ -2,23 +2,16 @@
 title: PowerShell Core in Windows installeren
 description: Informatie over het installeren van Power shell core in Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9e78e3ab182099caf3dbf74b033168f1f2927d5
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416784"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280269"
 ---
 # <a name="installing-powershell-core-on-windows"></a>PowerShell Core in Windows installeren
 
 Er zijn meerdere manieren om Power shell core in Windows te installeren.
-
-> [!TIP]
-> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,7 +25,6 @@ Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aa
 Als u Power shell wilt installeren op een Windows-client of Windows-Server (werkt met Windows 7 SP1, Server 2008 R2 en hoger), downloadt u het MSI-pakket van onze pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
 Het MSI-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
 
 Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwijzingen.
 
@@ -40,6 +32,15 @@ Het installatie programma maakt een snelkoppeling in het menu Start van Windows.
 
 - Standaard wordt het pakket geïnstalleerd op `$env:ProgramFiles\PowerShell\<version>`
 - U kunt Power shell starten via het menu Start of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+
+> [!NOTE]
+> Power shell 7 wordt geïnstalleerd in een nieuwe map en wordt naast elkaar uitgevoerd met Windows Power shell 5,1. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
+>
+> - Power shell 7 is geïnstalleerd op `%programfiles%\PowerShell\7`
+> - De map `%programfiles%\PowerShell\7` wordt toegevoegd aan `$env:PATH`
+> - De map `%programfiles%\PowerShell\6` wordt verwijderd
+>
+> Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met de methode [zip-installatie](#zip) .
 
 ### <a name="administrative-install-from-the-command-line"></a>Beheerders installatie vanaf de opdracht regel
 
@@ -165,9 +166,17 @@ De volgende stappen begeleiden u bij de implementatie van Power shell core naar 
 
 - Als u externe toegang op basis van WSMan wilt gebruiken, volgt u de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
+## <a name="install-as-a-net-global-tool"></a>Installeren als een Global .NET-hulp programma
+
+Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 
-Power shell core ondersteunt het PSRP (Power shell Remoting Protocol) voor zowel WSMan als SSH. Zie voor meer informatie
+Power shell core ondersteunt het PSRP (Power shell Remoting Protocol) voor zowel WSMan als SSH. Zie voor meer informatie:
 
 - [Externe SSH-communicatie in Power shell core][ssh-remoting]
 - [Externe WSMan-communicatie in Power shell core][wsman-remoting]

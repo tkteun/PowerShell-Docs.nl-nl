@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Get-test-set
-ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942179"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278411"
 ---
 # <a name="get-test-set"></a>Get-test-set
 
 >Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-![Ophalen, testen en instellen](../media/get-test-set.png)
+![Ophalen, testen en instellen](media/get-test-set/get-test-set.png)
 
 De gewenste status configuratie van Power shell is geconstrueerd rond een **Get**-, **test**-en **set** -proces. DSC- [resources](resources.md) bevatten elk methoden voor het volt ooien van elk van deze bewerkingen. In een [configuratie](../configurations/configurations.md)definieert u resource blokken om sleutels in te vullen die para meters voor de **Get**-, **test**-en **set** -methoden van een resource worden.
 
@@ -175,7 +175,7 @@ Service [String] #ResourceName
 }
 ```
 
-## <a name="test"></a>Test
+## <a name="test"></a>Testen
 
 De **test** methode van een bron bepaalt of het doel knooppunt momenteel compatibel is met de *gewenste status*van de resource. De **test** methode retourneert alleen `$True` of `$False` alleen om aan te geven of het knoop punt compatibel is.
 Wanneer u [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)aanroept, roept de LCM de **test** methode van elke bron in de huidige toegepaste configuratie aan. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.

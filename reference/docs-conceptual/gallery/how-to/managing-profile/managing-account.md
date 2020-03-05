@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
-ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328859"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278073"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
@@ -25,7 +25,7 @@ De PowerShell Gallery biedt de volgende account instellingen:
 
 Het e-mail adres is het doel voor PowerShell Gallery meldingen. Het hoeft niet overeen te komen met het aanmeldings account. U kunt elk e-mail account gebruiken waarmee u toegang hebt. Uw e-mail adres wordt nooit rechtstreeks door de PowerShell Gallery door gegeven aan andere gebruikers.
 
-![E-mail adres wijzigen](../../Images/PSGallery_AcccountEmailAddress.png)
+![E-mail adres wijzigen](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 Wanneer u een nieuw e-mail adres invoert, stuurt de PowerShell Gallery een verificatie bericht naar dat adres. De e-mail verificatie bevat een koppeling terug naar de PowerShell Gallery om het wijzigings proces te volt ooien. Totdat u het verificatie proces hebt voltooid, worden alle meldingen naar het vorige adres verzonden.
 
@@ -36,7 +36,7 @@ PowerShell Gallery biedt de volgende meldings opties:
 - Gebruikers kunnen contact met mij opnemen via de PowerShell Gallery
 - Ik wil een melding ontvangen wanneer een pakket wordt gepusht naar de PowerShell Gallery met mijn account
 
-![E-mail adres wijzigen](../../Images/PSGallery_AccountEmailOptions.png)
+![E-mail adres wijzigen](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Zoals op de pagina is aangegeven, kunnen essentiële meldingen van de PowerShell Gallery niet worden uitgeschakeld.
 Deze omvatten:
@@ -49,20 +49,20 @@ Deze omvatten:
 
 Als u het aanmeldings account wilt wijzigen, moet u zijn aangemeld met het huidige account. Gebruik de volgende stappen om de wijziging te volt ooien.
 
-![Instellingen voor aanmeldings account](../../Images/PSGallery_LoginAccountSettings.png)
+![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Klik op **account wijzigen**. In een pop-upvenster wordt uitgelegd dat het wijzigen van het aanmeldings account van toepassing is op alle toepassingen van dat account in de PowerShell Gallery. Lees de informatie en klik vervolgens op **OK** om door te gaan.
 
-   ![Instellingen voor aanmeldings account](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. U wordt vervolgens gevraagd om u aan te melden met het _nieuwe account_.
 
-   ![Instellingen voor aanmeldings account](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. Wanneer u op **volgende**klikt, wordt er een bericht weer gegeven dat u bent aangemeld met het huidige account.
    Klik op **Afmelden en meld u aan met een ander account**.
 
-   ![Instellingen voor aanmeldings account](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Voer het wacht woord van het nieuwe account in. Nadat u het wacht woord hebt ingevoerd, keert u terug naar de pagina account instellingen, waarin wordt weer gegeven dat het aanmeldings account is bijgewerkt.
 
@@ -81,6 +81,6 @@ Wanneer twee ledige is ingeschakeld, moet u zich bij het PowerShell Gallery veri
 > [!IMPORTANT]
 > Als u twee ledige verificatie voor de PowerShell Gallery-site inschakelt, hoeft u twee ledige niet in te scha kelen voor het gebruik van uw aanmeldings account. Zie [about verificatie in twee stappen](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)voor meer informatie.
 
-## <a name="change-your-profile-picture"></a>Uw profielfoto wijzigen
+## <a name="change-your-profile-picture"></a>Uw profiel afbeelding wijzigen
 
 De PowerShell Gallery is afhankelijk van Gravatar om de afbeelding op te slaan en weer te geven die aan uw profiel is gekoppeld. Ga naar [Gravatar.com](http://www.gravatar.com/)om de profiel afbeelding bij te werken.

@@ -2,12 +2,12 @@
 title: PowerShell Core in macOS installeren
 description: Informatie over het installeren van Power shell core in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7ea1d494b12d31ffec330a0a68e282a05b011fc
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444439"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280286"
 ---
 # <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
 
@@ -15,18 +15,16 @@ Power shell core ondersteunt macOS 10,12 en hoger.
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] .
 Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal.
 
-> [!TIP]
-> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+> [!NOTE]
+> Power shell 7 is een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
 >
-> ```
-> dotnet tool install --global PowerShell
-> ```
+> De map `/usr/local/microsoft/powershell/6` wordt vervangen door `/usr/local/microsoft/powershell/7`.
+>
+> Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met behulp van de [binaire archief](#binary-archives) methode.
 
 ## <a name="about-brew"></a>Over Brew
 
-[Homebrew][brew] is de voorkeurs pakket beheerder voor macOS.
-Als de `brew` opdracht niet wordt gevonden, moet u homebrew installeren volgens [de instructies][brew].
-Anders kunt u Power Shell installeren via [direct downloaden](#installation-via-direct-download) of vanuit [binaire archieven](#binary-archives).
+[Homebrew][brew] is de voorkeurs pakket beheerder voor macOS. Als de `brew` opdracht niet wordt gevonden, moet u homebrew installeren volgens [de instructies][brew]. Anders kunt u Power Shell installeren via [direct downloaden](#installation-via-direct-download) of vanuit [binaire archieven](#binary-archives).
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installatie van de laatste stabiele release via homebrew op macOS 10,12 of hoger
 
@@ -102,6 +100,14 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
+
+## <a name="install-as-a-net-global-tool"></a>Installeren als een Global .NET-hulp programma
+
+Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
 
 ## <a name="binary-archives"></a>Binaire archieven
 
@@ -198,7 +204,7 @@ Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt`.
 `$PSHOME` is dus `/usr/local/microsoft/powershell/6.2.0/`en de symbolische koppeling wordt in `/usr/local/bin/pwsh`geplaatst.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Extra bronnen
 
 * [Homebrew-Web][brew]
 * [Homebrew github-opslag plaats][GitHub]

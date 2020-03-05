@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Resources verpakken en uploaden naar een pull-server
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942242"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278495"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Resources verpakken en uploaden naar een pull-server
 
@@ -27,7 +27,7 @@ Elke resource die beschikbaar is voor een client die kan worden gedownload, moet
 
 U kunt de resource directory comprimeren met elk hulp programma, script of methode die u wilt gebruiken. In Windows kunt u met de rechter muisknop op de map ' xPSDesiredStateConfiguration ' *klikken* en ' verzenden naar ' en ' gecomprimeerde map ' selecteren.
 
-![Met de rechter muisknop](../media/right-click.gif)
+![Met de rechter muisknop](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>De naam van het Resource Archief benoemen
 

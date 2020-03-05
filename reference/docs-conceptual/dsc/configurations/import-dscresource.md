@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
-ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417425"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277500"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
@@ -80,7 +80,7 @@ Dit gebruik heeft de volgende voor delen:
 
 Bij het ontwerpen van de DSC-configuratie in ISE biedt Power shell IntelliSence voor resources en resource-eigenschappen. Bron definities onder het pad van de `$pshome` module worden automatisch geladen. Wanneer u resources importeert met behulp van het sleutel woord `Import-DSCResource`, worden de opgegeven resource definities toegevoegd en wordt IntelliSense uitgebreid met het schema van de geïmporteerde resource.
 
-![Resource IntelliSense](../media/resource-intellisense.png)
+![Resource IntelliSense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > Vanaf Power shell 5,0 is het tabblad voltooiings punt toegevoegd aan de ISE voor DSC-resources en de bijbehorende eigenschappen. Zie [resources](../resources/resources.md)voor meer informatie.
@@ -139,11 +139,11 @@ Het installeren en gebruiken van meerdere versies van resources naast elkaar wer
 
 In de onderstaande afbeelding zijn twee versies van de module **xPSDesiredStateConfiguration** geïnstalleerd.
 
-![Er zijn meerdere resource versies opgelost](../media/multiple-resource-versions-broken.png)
+![Er zijn meerdere resource versies opgelost](media/import-dscresource/multiple-resource-versions-broken.png)
 
 Kopieer de inhoud van de gewenste module versie naar het hoogste niveau van de module directory.
 
-![Er zijn meerdere resource versies opgelost](../media/multiple-resource-versions-fixed.png)
+![Er zijn meerdere resource versies opgelost](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Resource locatie
 

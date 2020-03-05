@@ -2,12 +2,12 @@
 title: PowerShell Core in Linux installeren
 description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
 ms.date: 07/19/2019
-ms.openlocfilehash: 3b0b9b1520247fa49760e631c837196fb7107b5f
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 3a1f0299d1fa1fac7601afc75a59618e901ffa63
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022264"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280320"
 ---
 # <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
 
@@ -16,6 +16,13 @@ Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [
 Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks te implementeren met behulp van het Linux [`tar.gz` Archive][tar], maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
 
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal. Voer `pwsh-preview` uit als u een [Preview-versie](#installing-preview-releases)hebt geïnstalleerd.
+
+> [!NOTE]
+> Power shell 7 is een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
+>
+> De map `/usr/local/microsoft/powershell/6` wordt vervangen door `/usr/local/microsoft/powershell/7`.
+>
+> Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met behulp van de [binaire archief](#binary-archives) methode.
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
@@ -32,12 +39,6 @@ Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat 
 [snap]: #snap-package
 [tar]: #binary-archives
 
-> [!TIP]
-> Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
 
@@ -47,7 +48,7 @@ Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
 De volgende tabel bevat de opdrachten om de stabiele en preview-pakketten te installeren met behulp van de verschillende pakket beheerders:
 
-|Distributie(s)|Stabiele opdracht | Opdracht preview |
+|Distributie (s)|Stabiele opdracht | Opdracht preview |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -685,6 +686,14 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="install-as-a-net-global-tool"></a>Installeren als een Global .NET-hulp programma
+
+Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power shell eenvoudig installeren als een [wereld wijd .net-hulp programma](/dotnet/core/tools/global-tools).
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="binary-archives"></a>Binaire archieven
 
 Er zijn binaire Power shell-`tar.gz` archieven beschikbaar voor Linux-platforms om geavanceerde implementatie scenario's mogelijk te maken.
@@ -695,7 +704,7 @@ Power shell bouwt draag bare binaire bestanden voor alle Linux-distributies. .NE
 
 In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel worden ondersteund op verschillende Linux-distributies.
 
-| Besturingssysteem                 | Afhankelijkheden |
+| OS                 | Afhankelijkheden |
 | ------------------ | ------------ |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
 | Ubuntu 17,10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |

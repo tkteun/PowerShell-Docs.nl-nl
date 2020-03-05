@@ -2,12 +2,12 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117401"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279062"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
@@ -48,7 +48,7 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
    1. De weer gave **extensies** wordt weer gegeven op de balk aan de zijkant. Selecteer de Power shell-extensie van micro soft.
       Er wordt een VSCode-scherm weer gegeven dat vergelijkbaar is met de volgende afbeelding:
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VSCode](media/using-vscode/vscode.png)
 
    1. Klik op de knop **installeren** in de Power shell-extensie van micro soft.
    1. Na de installatie ziet u de knop **installeren** om opnieuw te **laden**. Klik op **opnieuw laden**.

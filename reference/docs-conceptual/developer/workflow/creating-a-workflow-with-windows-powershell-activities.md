@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352155"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277458"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Een werkstroom maken met Windows PowerShell-activiteiten
 
@@ -69,13 +69,13 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
     |**ComputerName**|Comp|
     |**Referentie**|MachineCred|
     |**Zo**|Micro soft. Power shell. commands. WaitForServiceTypes. Power shell|
-    |**Force**|True|
-    |Wachten|True|
+    |**Verkopers**|Waar|
+    |Wachten|Waar|
     |PSComputerName|{""}|
 
 13. Voeg een **GetWmiObject** -activiteit toe aan de **JoinDomain** -reeks na de activiteit **RestartComputer** . Bewerk de eigenschappen zodanig dat deze hetzelfde zijn als de vorige **GetWmiObject** -activiteit.
 
     Wanneer u de procedures hebt voltooid, ziet het werk stroom ontwerp venster er als volgt uit.
 
-    ![JoinDomain XAML in Workflow Designer](../media/joindomainworkflow.png)
-    ![XAML in Workflow Designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML in Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![XAML in Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

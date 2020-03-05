@@ -2,12 +2,12 @@
 title: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 description: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67264025"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279120"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code gebruiken voor externe bewerking en foutopsporing
 
@@ -38,7 +38,7 @@ In deze voor beelden ziet u het op afstand bewerken en fout opsporing van een Ma
 
 Met de Power shell-extensie voor VSCode gestart en de Power shell-geïntegreerde console geopend, kunnen we `Open-EditorFile foo.ps1`-of `psedit foo.ps1` om het lokale bestand foo. ps1 rechtstreeks in de editor te openen.
 
-![Open-EditorFile foo. ps1 werkt lokaal](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo. ps1 werkt lokaal](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > De bestands `foo.ps1` moet al bestaan.
@@ -47,11 +47,11 @@ Vanaf daar kunnen we het volgende doen:
 
 - Onderbrekings punten toevoegen aan de rugmarge
 
-  ![onderbrekings punt toevoegen aan rugmarge](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![onderbrekings punt toevoegen aan rugmarge](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Druk op F5 om fouten op te sporen in het Power shell-script.
 
-  ![fout opsporing van het lokale Power shell-script](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![fout opsporing van het lokale Power shell-script](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Tijdens het opsporen van fouten kunt u communiceren met de console fout opsporing, de variabelen in het bereik aan de linkerkant bekijken en alle andere standaardfout opsporingsprogramma's.
 
@@ -73,20 +73,20 @@ Omdat we vanuit macOS naar een Ubuntu-VM in azure gaan, gebruiken we SSH voor ex
 
 Voer eerst in de geïntegreerde console het `Enter-PSSession`uit. U bent verbonden met de externe sessie wanneer `[<hostname>]` links van uw prompt wordt weer gegeven.
 
-![Het aanroepen van ENTER-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Het aanroepen van ENTER-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Nu kunnen we dezelfde stappen uitvoeren als voor het bewerken van een lokaal script.
 
 1. Voer `Open-EditorFile test.ps1` of `psedit test.ps1` uit om het externe `test.ps1`-bestand te openen
 
-  ![Open-EditorFile het bestand test. ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile het bestand test. ps1](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Het bestand of de set onderbrekings punten bewerken
 
-   ![onderbrekings punten bewerken en instellen](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![onderbrekings punten bewerken en instellen](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Fout opsporing starten (F5) het externe bestand
 
-   ![fout opsporing van het externe bestand](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![fout opsporing van het externe bestand](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 Als u problemen hebt, kunt u problemen openen in de [github-opslag plaats](https://github.com/powershell/vscode-powershell).

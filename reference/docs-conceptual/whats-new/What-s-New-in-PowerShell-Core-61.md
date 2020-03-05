@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995502"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277721"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
@@ -38,7 +38,7 @@ Met het Windows-compatibiliteits pakket kan Power shell core gebruikmaken **van 
 
 Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en de Application white list van [device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) . Met Application white list kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd met de [modus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)voor de beperkte Power shell-taal.
 
-## <a name="performance-improvements"></a>Verbeterde prestaties
+## <a name="performance-improvements"></a>Prestatieverbeteringen
 
 Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebracht. Power shell Core 6,1 blijft de snelheid van bepaalde bewerkingen verbeteren.
 
@@ -51,7 +51,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tijd (SEC)   | 25,178                 | 19,653              | 6,641               |
-| Versnellen (%) | N.v.t.                    | 21,9%               | 66,2%               |
+| Versnellen (%) | N.V.T.                    | 21,9%               | 66,2%               |
 
 Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met meer dan 15%:
 
@@ -62,7 +62,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
 |--------------|------------------------|---------------------|---------------------|
 | Tijd (SEC)   | 12,170                 | 8,493               | 7,08                |
-| Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
+| Versnellen (%) | N.V.T.                    | 30,2%               | 16,6%               |
 
 `Import-Csv` is ook aanzienlijk sped na een regressie van Windows Power shell.
 In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kolommen gebruikt:
@@ -74,7 +74,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
 | Tijd (SEC)   | 0,441                  | 1,069               | 0,268                  |
-| Versnellen (%) | N.v.t.                    | -142,4%             | 74,9% (39,2% van WPS) |
+| Versnellen (%) | N.V.T.                    | -142,4%             | 74,9% (39,2% van WPS) |
 
 Ten slotte is de conversie van JSON naar `PSObject` sped van meer dan 50% sinds Windows Power shell.
 In het volgende voor beeld wordt een JSON-test bestand van ~ 2 MB gebruikt:
@@ -86,7 +86,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 |              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
 |--------------|------------------------|---------------------|------------------------|
 | Tijd (SEC)   | 0,259                  | 0,577               | 0,125                  |
-| Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
+| Versnellen (%) | N.V.T.                    | -122,8%             | 78,3% (51,7% van WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleer `system32` op compatibele modules in Windows
 
@@ -169,7 +169,7 @@ Er zijn enkele cmdlets toegevoegd in 6,1 waarmee u de verkortings documenten kun
 
 `Show-Markdown` geeft bijvoorbeeld een bestand voor korting weer in de-console:
 
-![Voor beeld van korting weer geven](./images/markdown_example.png)
+![Voor beeld van korting weer geven](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 Bekijk [deze rfc's](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md)voor meer informatie over de werking van deze cmdlets.
 
@@ -204,7 +204,7 @@ In het verleden is Power shell direct verbonden via de Windows Power shell-insta
 
 `Enable-PSRemoting` maakt nu twee externe sessie configuraties:
 
-- Een voor de primaire versie van Power shell. Voorbeeld: `PowerShell.6`. Dit eind punt dat kan worden verzorgd voor alle secundaire versie-updates als de ' systeembrede ' configuratie van de Power shell 6-sessie
+- Een voor de primaire versie van Power shell. Bijvoorbeeld `PowerShell.6`. Dit eind punt dat kan worden verzorgd voor alle secundaire versie-updates als de ' systeembrede ' configuratie van de Power shell 6-sessie
 - Een versie-specifieke sessie configuratie, bijvoorbeeld: `PowerShell.6.1.0`
 
 Dit is handig als u wilt dat er meerdere Power shell 6-versies op dezelfde computer zijn geïnstalleerd en toegankelijk zijn.
@@ -264,7 +264,7 @@ SSH-clients ondersteunen doorgaans een connection string in de indeling `user@ho
 
 Bedankt voor het [@bergmeister](https://github.com/bergmeister)u kunt nu een context menu inschakelen in Windows. U kunt nu de systeembrede installatie van Power shell 6,1 openen vanuit een wille keurige map in Windows Verkenner:
 
-![Context menu van shell voor Power shell 6](./images/shell_context_menu.png)
+![Context menu van shell voor Power shell 6](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>Goodies
 
@@ -272,7 +272,7 @@ Bedankt voor het [@bergmeister](https://github.com/bergmeister)u kunt nu een con
 
 Bedankt voor het [@bergmeister](https://github.com/bergmeister)de Jump List van de Power shell core-snelkoppeling bevat nu "als administrator uitvoeren":
 
-![Als administrator uitvoeren in de Power shell 6 Jump List](./images/jumplist.png)
+![Als administrator uitvoeren in de Power shell 6 Jump List](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` keert terug naar de vorige map
 

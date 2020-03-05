@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885384"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278440"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration
 
@@ -28,10 +28,10 @@ De aanbevolen schaal voor elke oplossing is als volgt:
 |                   Oplossing                   |              Client knooppunten              |
 | -------------------------------------------- | -------------------------------------- |
 | Windows pull-server met MDB/ESENT-data base | Maxi maal 500 knoop punten                        |
-| Windows pull-server met SQL database       | Maxi maal 1000 knoop punten                       |
-| Azure Automation DSC                         | Scenario's met meer dan 1000 knoop punten |
+| Windows pull-server met SQL database       | Maxi maal 3500 knoop punten                       |
+| Azure Automation DSC                         | Zowel kleine als grote omgevingen      |
 
-**De aanbevolen oplossing**en de optie met de meeste beschik bare functies is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**De aanbevolen oplossing**en de optie met de meeste beschik bare functies is [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). Een bovengrens voor het aantal knoop punten per Automation-account is niet geïdentificeerd.
 
 Met de Azure-service kunt u knoop punten on-premises beheren in particuliere data centers of in open bare Clouds, zoals Azure en AWS. Voor particuliere omgevingen waarbij servers niet rechtstreeks verbinding kunnen maken met internet, kunt u overwegen om uitgaand verkeer alleen te beperken tot het gepubliceerde Azure IP-bereik (Zie [IP-bereiken van Azure-data centers](https://www.microsoft.com/download/details.aspx?id=41653)).
 
@@ -239,12 +239,12 @@ Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand z
 > [!NOTE]
 > Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.
 
-### <a name="tooling"></a>Hulpprogram ma's
+### <a name="tooling"></a>Hulpprogramma's
 
 De volgende hulpprogram ma's zijn opgenomen in de meest recente versie van de xPSDesiredStateConfiguration-module, zodat het instellen, valideren en beheren van de pull-server eenvoudiger wordt.
 
 1. Een module die u helpt bij het inpakken van DSC-resource modules en configuratie bestanden die op de pull-server kunnen worden gebruikt.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
+   [PublishModulesAndMofsToPullServer. psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
    Voor beelden:
 
     ```powershell
@@ -256,7 +256,7 @@ De volgende hulpprogram ma's zijn opgenomen in de meest recente versie van de xP
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Een script dat de pull-server valideert, is op de juiste wijze geconfigureerd. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
+1. Een script dat de pull-server valideert, is op de juiste wijze geconfigureerd. [PullServerSetupTests. ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Community-oplossingen voor pull-service
 

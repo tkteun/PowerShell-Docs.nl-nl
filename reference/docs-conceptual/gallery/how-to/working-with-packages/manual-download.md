@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, psgallery
 title: Pakket handmatig downloaden
-ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328761"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278704"
 ---
 # <a name="manual-package-download"></a>Pakket handmatig downloaden
 
@@ -22,7 +22,7 @@ De PowerShell Gallery ondersteunt het downloaden van een pakket van de website r
 
 Elke pagina heeft een koppeling voor hand matig downloaden, zoals hier wordt weer gegeven:
 
-![Hand matig downloaden](../../Images/packagedisplaypagewithpseditions.png)
+![Hand matig downloaden](media/manual-download/packagedisplaypagewithpseditions.png)
 
 Als u hand matig wilt downloaden, klikt u op **het onbewerkte nupkg-bestand downloaden**. Een kopie van het pakket wordt gekopieerd naar de downloadmap voor uw browser met de naam `<name>.<version>.nupkg`.
 
@@ -46,7 +46,8 @@ Zie voor de lijst met NuGet-elementen [hand matig downloaden gebruiken om een pa
 
 De stappen zijn als volgt:
 
-1. Pak de inhoud van het NuGet-pakket uit naar een lokale map.
+1. Deblokkeren van het door internet gedownloade NuGet-pakket (`.nupkg`), bijvoorbeeld met behulp van `Unblock-File -Path C:\Downloads\module.nupkg`-cmdlet.
+2. Pak de inhoud van het NuGet-pakket uit naar een lokale map.
 2. Verwijder de NuGet elementen uit de map.
 3. Wijzig de naam van de map. De naam van de standaard map is doorgaans `<name>.<version>`. De versie kan `-prerelease` bevatten als de module is gelabeld als een voorlopige versie. Wijzig de naam van de map in alleen de module. `azurerm.storage.5.0.4-preview` wordt bijvoorbeeld `azurerm.storage`.
 4. Kopieer de map naar een van de mappen in de `$env:PSModulePath value`. `$env:PSModulePath` is een door punt komma's gescheiden set paden waarin Power shell naar modules moet zoeken.
@@ -63,7 +64,8 @@ De eenvoudigste manier is om het NuGet-pakket uit te pakken en vervolgens het sc
 
 De stappen zijn als volgt:
 
-1. Pak de inhoud van het NuGet-pakket uit.
+1. Deblokkeren van het door internet gedownloade NuGet-pakket (`.nupkg`), bijvoorbeeld met behulp van `Unblock-File -Path C:\Downloads\package.nupkg`-cmdlet.
+2. Pak de inhoud van het NuGet-pakket uit.
 2. Het `.PS1`-bestand in de map kan rechtstreeks vanuit deze locatie worden gebruikt.
 3. U kunt de NuGet-specifieke elementen in de map verwijderen.
 

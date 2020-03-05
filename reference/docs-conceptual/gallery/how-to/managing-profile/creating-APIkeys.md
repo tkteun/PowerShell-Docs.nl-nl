@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: API-sleutels beheren
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329041"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278283"
 ---
 # <a name="managing-api-keys"></a>API-sleutels beheren
 
@@ -19,7 +19,7 @@ De PowerShell Gallery biedt ondersteuning voor het maken van meerdere API-sleute
 
 In de volgende afbeelding ziet u de beschik bare opties bij het maken van een scoped API-sleutel.
 
-![API-sleutels maken](../../Images/PSGallery_KeyScoped.png)
+![API-sleutels maken](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 In dit voor beeld hebben we een API-sleutel met de naam **AzureRMDataFactory**gemaakt. Deze sleutel waarde kan worden gebruikt om pakketten te pushen met namen die beginnen met ' AzureRM. DataFactory ' en die 365 dagen geldig zijn. Dit is een typisch scenario wanneer verschillende teams binnen dezelfde organisatie op verschillende pakketten werken. De leden van het team beschikken over een sleutel waarmee ze bevoegdheden worden verleend voor het specifieke pakket waaraan ze werken.
 De verloop waarde voor komt het gebruik van verouderde of verg eten sleutels.
@@ -32,7 +32,7 @@ Als u op meerdere pakketten werkt, kunt u globbing-patronen gebruiken om meerder
 
 Ter beveiliging wordt een nieuwe sleutel waarde nooit op het scherm weer gegeven en is deze alleen beschikbaar met de Kopieer knop, zoals hieronder wordt weer gegeven.
 
-![Nieuwe API-sleutel waarde verkrijgen](../../Images/PSGallery_CopyCreatedKey.png)
+![Nieuwe API-sleutel waarde verkrijgen](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > U kunt de waarde van de API-sleutel alleen direct na het maken of vernieuwen kopiëren. Deze wordt niet weer gegeven en is niet meer toegankelijk nadat de pagina is vernieuwd. Als u de sleutel waarde kwijtraakt, moet u Regenerate gebruiken en de sleutel kopiëren nadat deze opnieuw is gegenereerd.
@@ -59,7 +59,7 @@ Deze instellingen kunnen niet worden gewijzigd nadat de sleutel is gemaakt. U ku
 
 U kunt sommige instellingen van een bestaande sleutel wijzigen. Zoals eerder is vermeld, kunt u het beveiligings bereik voor een bestaande API-sleutel niet wijzigen of de verval datum wijzigen. De opties die u kunt wijzigen, worden weer gegeven in de volgende scherm afbeelding:
 
-![Nieuwe API-sleutel waarde verkrijgen](../../Images/PSGallery_EditAPIKey.png)
+![Nieuwe API-sleutel waarde verkrijgen](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Als u de pakketten wilt wijzigen die worden beheerd door een sleutel, kunt u afzonderlijke pakketten kiezen in de lijst of het Globs-patroon wijzigen.
 
