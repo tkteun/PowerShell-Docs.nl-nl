@@ -1,15 +1,15 @@
 ---
-title: PowerShell Core in Linux installeren
-description: Informatie over het installeren van Power shell Core op diverse Linux-distributies
+title: Power Shell installeren in Linux
+description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 07/19/2019
-ms.openlocfilehash: 3a1f0299d1fa1fac7601afc75a59618e901ffa63
+ms.openlocfilehash: a31f1f2011f484d823b068ccf4aa224334cfdaa4
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280320"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405093"
 ---
-# <a name="installing-powershell-core-on-linux"></a>PowerShell Core in Linux installeren
+# <a name="installing-powershell-on-linux"></a>Power Shell installeren in Linux
 
 Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]en [Arch Linux][arch].
 
@@ -42,7 +42,7 @@ Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat 
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
 
-Wanneer u een Power shell core preview-versie voor Linux installeert via een pakket opslagplaats, wordt de naam van het pakket gewijzigd van `powershell` in `powershell-preview`.
+Wanneer u een Power shell preview-versie voor Linux installeert via een pakket opslagplaats, wordt de naam van het pakket gewijzigd van `powershell` in `powershell-preview`.
 
 Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
@@ -58,7 +58,7 @@ De volgende tabel bevat de opdrachten om de stabiele en preview-pakketten te ins
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via pakket opslagplaats-Ubuntu 16,04
 
-Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 
@@ -105,7 +105,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Installatie via pakket opslagplaats-Ubuntu 18,04
 
-Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 
@@ -169,7 +169,7 @@ De installatie wordt ondersteund via `snapd`. Zie [snap package][snap]voor instr
 
 ### <a name="installation-via-package-repository---debian-8"></a>Installatie via pakket opslagplaats-Debian 8
 
-Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 
@@ -200,7 +200,7 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-package-repository---debian-9"></a>Installatie via pakket opslagplaats-Debian 9
 
-Power shell core voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 
@@ -348,7 +348,7 @@ pwsh-preview
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Installatie via pakket opslagplaats (voor keur)-CentOS 7
 
-Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -391,7 +391,7 @@ sudo yum remove powershell
 
 ### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>Installatie via pakket opslagplaats (voor keur)-Red Hat Enterprise Linux (RHEL) 7
 
-Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -489,14 +489,14 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> Fedora 28 wordt alleen ondersteund in Power shell Core 6,1 en hoger.
+> Fedora 28 wordt alleen ondersteund in Power shell 6,1 en nieuwer.
 
 > [!NOTE]
 > Fedora 29 en 30 worden alleen ondersteund in Power shell 7,0 en nieuwer.
 
 ### <a name="installation-via-package-repository-preferred---fedora-28-29-and-30"></a>Installatie via pakket opslagplaats (voor keur): Fedora 28, 29 en 30
 
-Power shell core voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd op officiële micro soft-opslag plaatsen voor eenvoudige installatie en updates.
 
 ```sh
 # Register the Microsoft signature key
@@ -570,7 +570,7 @@ Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u 
 
 ### <a name="installation-via-snap"></a>Installatie via snap
 
-Power shell core voor Linux wordt gepubliceerd in de [snap Store](https://snapcraft.io/store) voor eenvoudige installatie en updates.
+Power shell voor Linux wordt gepubliceerd in de [snap Store](https://snapcraft.io/store) voor eenvoudige installatie en updates.
 
 De voorkeurs methode is als volgt:
 
@@ -635,7 +635,7 @@ apt -y remove powershell
 
 Power shell wordt momenteel alleen ondersteund voor Raspbian stretch.
 
-CoreCLR en Power shell core werken alleen op pi 2-en Pi 3-apparaten als andere apparaten, zoals [pi nul](https://github.com/dotnet/coreclr/issues/10605), een niet-ondersteunde processor.
+CoreCLR en Power shell werken alleen op pi 2-en Pi 3-apparaten als andere apparaten, zoals [pi nul](https://github.com/dotnet/coreclr/issues/10605), een niet-ondersteunde processor.
 
 Down load [Raspbian stretch](https://www.raspberrypi.org/downloads/raspbian/) en volg de [installatie-instructies](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) om de app te downloaden naar uw pi.
 
