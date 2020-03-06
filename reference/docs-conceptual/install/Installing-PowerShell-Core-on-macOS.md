@@ -1,17 +1,17 @@
 ---
-title: PowerShell Core in macOS installeren
-description: Informatie over het installeren van Power shell core in macOS
+title: Power shell in macOS installeren
+description: Informatie over het installeren van Power shell in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: b7ea1d494b12d31ffec330a0a68e282a05b011fc
+ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280286"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404823"
 ---
-# <a name="installing-powershell-core-on-macos"></a>PowerShell Core in macOS installeren
+# <a name="installing-powershell-on-macos"></a>Power shell in macOS installeren
 
-Power shell core ondersteunt macOS 10,12 en hoger.
+Power shell ondersteunt macOS 10,12 en hoger.
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] .
 Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal.
 
@@ -167,7 +167,7 @@ sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## <a name="uninstalling-powershell-core"></a>Power shell core verwijderen
+## <a name="uninstalling-powershell"></a>Power shell verwijderen
 
 Als u Power shell hebt geïnstalleerd met Homebrew, gebruikt u de volgende opdracht om te verwijderen:
 
@@ -204,7 +204,7 @@ Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt`.
 `$PSHOME` is dus `/usr/local/microsoft/powershell/6.2.0/`en de symbolische koppeling wordt in `/usr/local/bin/pwsh`geplaatst.
 
-## <a name="additional-resources"></a>Extra bronnen
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 * [Homebrew-Web][brew]
 * [Homebrew github-opslag plaats][GitHub]
@@ -214,5 +214,5 @@ Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebrui
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[shell]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: de Windows Power shell-console op basis van het web gebruiken
 ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278956"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405191"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -132,7 +132,7 @@ Het meren deel van de functionaliteit van de Windows Power shell-host is beschik
 
 ### <a name="unsupported-shortcut-keys"></a>Niet-ondersteunde sneltoetsen
 
- Functie toets   |                                                                                         Actie
+ Functie toets   |                                                                                         Bewerking
 --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CTRL + C          | In Windows Power shell Web Access wordt **CTRL + C** door de browser gebruikt om inhoud te kopiëren. De console bevat de knop **Annuleren**, maar gebruikers kunnen ook opdrachten annuleren met **Ctrl+Q**.
 Alt+spatiebalk, e, l | Door de schermbuffer bladeren

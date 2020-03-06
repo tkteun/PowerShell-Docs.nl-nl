@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 3e83fbe9d863a5e29acbcc1e88b58c88501922ae
+ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
 ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280303"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404992"
 ---
 # <a name="whats-new-in-powershell-70"></a>Wat is er nieuw in Power shell 7,0
 
@@ -112,7 +112,7 @@ De ternaire operator van Power shell is nauw keurig gemodelleerd uit de syntaxis
 <condition> ? <if-true> : <if-false>
 ```
 
-De voor waarde-expressie wordt altijd geëvalueerd en het resultaat dat is geconverteerd naar een **Booleaanse** waarde om te bepalen welke vertakking vervolgens wordt geëvalueerd:
+De voor waarde-expressie wordt altijd geëvalueerd en het resultaat wordt omgezet in een **Booleaanse** waarde om te bepalen welke vertakking vervolgens wordt geëvalueerd:
 
 - De `<if-true>` expressie wordt uitgevoerd als de `<condition>`-expressie waar is
 - De `<if-false>` expressie wordt uitgevoerd als de `<condition>`-expressie onwaar is
@@ -225,7 +225,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### <a name="null-conditional-member-access-operators--and--experimental"></a>Null-Opera tors voor voorwaardelijk leden?. maar? [] (Experimenteel)
 
 > [!NOTE]
-> Dit is een experimentele functie met de naam **PSNullConditionalOperators**. Voor meer informatie [over experimentele functies](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Dit is een experimentele functie met de naam **PSNullConditionalOperators**. Meer informatie [over experimentele functies](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 Een voorwaardelijke operator met een null-waarde heeft leden toegang, `?.`, of element toegang, alleen `?[]`aan de operand als die operand resulteert in niet-Null; anders wordt Null geretourneerd.
 
@@ -282,7 +282,7 @@ Als de fout optreedt tijdens het uitvoeren van een script of als het een Parseer
 
 ![Fout bij het weer geven van een script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-De standaard weergave in Power shell 7 is **ConciseView**. De vorige standaard weergave **NormalView** kunnen door de gebruiker worden geselecteerd door de voorkeurs variabele `$ErrorView`in te stellen.
+De standaard weergave in Power shell 7 is **ConciseView**. De vorige standaard weergave was **NormalView** en kan door de gebruiker worden geselecteerd door de voorkeurs variabele `$ErrorView`in te stellen.
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -350,7 +350,7 @@ Voor meer informatie [over meldingen over updates](/powershell/module/microsoft.
 ## <a name="new-dsc-resource-support-with-invoke-dscresource-experimental"></a>Nieuwe ondersteuning voor DSC-resources met invoke-Dscresource bieden (experimenteel)
 
 > [!NOTE]
-> Dit is een experimentele functie met de naam **PSDesiredStateConfiguration. InvokeDscResource**. Voor meer informatie [over experimentele functies](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Dit is een experimentele functie met de naam **PSDesiredStateConfiguration. InvokeDscResource**. Meer informatie [over experimentele functies](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
 
 Met de cmdlet `Invoke-DscResource` wordt een methode uitgevoerd van een opgegeven DSC-resource (desired state Configuration) van Power shell.
 
@@ -521,7 +521,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - AutomationEngine opschonen en extra SetSessionStateDrive-methode aanroep (#10416) verwijderen (Bedankt @iSazonov!)
 - Wijzig de naam van de standaard ParameterSetName weer in scheidings teken voor ConvertTo-CSV en ConvertFrom-CSV (#10425)
 
-### <a name="tools"></a>Extra
+### <a name="tools"></a>Hulpprogramma's
 
 - Voeg de standaard instelling voor de eigenschap SDKToUse toe zodat deze wordt gebouwd in VS (#11085)
 - Install-Powershell. ps1: para meter toevoegen voor het gebruik van MSI-installatie (#10921) (Bedankt @MJECloud!)

@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Release geschiedenis van modules en cmdlets
-ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 9b7c769198fa2a39d8efcc9602f2a913c041289c
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706123"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404967"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Release geschiedenis van modules en cmdlets
 
@@ -112,7 +112,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | ForEach-object                    | &check; | &check; | &check; | &check; |                            |
 | Get-Command                       | &check; | &check; | &check; | &check; |                            |
 | Get-ExperimentalFeature           |         |   6.2   | &check; | &check; |                            |
-| Help ontvangen                          | &check; | &check; | &check; | &check; |                            |
+| Get-Help                          | &check; | &check; | &check; | &check; |                            |
 | Get-History                       | &check; | &check; | &check; | &check; |                            |
 | Get-job                           | &check; | &check; | &check; | &check; |                            |
 | Get-module                        | &check; | &check; | &check; | &check; |                            |
@@ -401,7 +401,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Nieuw-time span              | &check; | &check; | &check; | &check; |                                           |
 | New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-file                  | &check; | &check; | &check; | &check; |                                           |
-| Out-GridView              | &check; |         | &check; | &check; |                                           |
+| Out-GridView              | &check; |         | &check; | &check; | Alleen Windows                              |
 | Out-printer               | &check; |         | &check; | &check; |                                           |
 | Out-teken reeks                | &check; | &check; | &check; | &check; |                                           |
 | Read-host                 | &check; | &check; | &check; | &check; |                                           |

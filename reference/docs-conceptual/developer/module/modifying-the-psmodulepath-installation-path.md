@@ -8,18 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: 5957ea4c15cd3778bd09b67c4b97de0ef0cfdd2a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953837"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405037"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Het PSModulePath-installatiepad wijzigen
 
 De variabele `PSModulePath` omgeving slaat de paden op naar de locaties van de modules die op schijf zijn geïnstalleerd. Power shell gebruikt deze variabele om modules te zoeken wanneer de gebruiker niet het volledige pad naar een module opgeeft. De paden in deze variabele worden doorzocht in de volg orde waarin ze worden weer gegeven.
 
-Wanneer Power shell wordt gestart, wordt `PSModulePath` gemaakt als een systeem omgevingsvariabele met de volgende standaard waarde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` of `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` voor Windows Power shell.
+Wanneer Power shell wordt gestart, wordt `PSModulePath` gemaakt als een systeem omgevingsvariabele met de volgende standaard waarde: `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` op Windows en `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` in Linux of Mac en `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` voor Windows Power shell.
+
+> [!NOTE]
+> De gebruikerspecifieke locatie van **CurrentUser** is de `WindowsPowerShell\Modules` map die zich op de locatie van het **document** in uw gebruikers profiel bevindt. Het specifieke pad van die locatie is afhankelijk van de versie van Windows en of u nu Mapomleiding gebruikt. Op Windows 10 is deze locatie standaard `$HOME\Documents\WindowsPowerShell\Modules`.
 
 ## <a name="to-view-the-psmodulepath-variable"></a>De variabele PSModulePath weer geven
 
@@ -56,3 +59,5 @@ U kunt paden uit de variabele verwijderen met soort gelijke methoden: `$env:PSMo
 ## <a name="see-also"></a>Zie ook
 
 [Een Windows Power shell-module schrijven](./writing-a-windows-powershell-module.md)
+
+[about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)
