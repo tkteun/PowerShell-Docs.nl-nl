@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het PowerShellTab-object
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736927"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404945"
 ---
 # <a name="the-powershelltab-object"></a>Het PowerShellTab-object
 
@@ -165,7 +165,7 @@ De alleen-lezen eigenschap waarmee het uitvoer deel venster van de huidige [Edit
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Vragen
+### <a name="prompt"></a>Vraag
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
