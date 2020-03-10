@@ -1,897 +1,192 @@
 ---
 title: Compatibiliteit met Power shell 7-module
 ms.date: 02/03/2020
-ms.openlocfilehash: 1f7a2f4fa04e07b8f56635d0a39e580924ae0134
-ms.sourcegitcommit: d34841a44742af1123da007fefbdc24a2f1762dd
+ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78926197"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935197"
 ---
-# <a name="powershell-7-module-compatibility"></a><span data-ttu-id="de917-102">Compatibiliteit met Power shell 7-module</span><span class="sxs-lookup"><span data-stu-id="de917-102">PowerShell 7 module compatibility</span></span>
+# <a name="powershell-7-module-compatibility"></a><span data-ttu-id="2cd6f-102">Compatibiliteit met Power shell 7-module</span><span class="sxs-lookup"><span data-stu-id="2cd6f-102">PowerShell 7 module compatibility</span></span>
 
-<span data-ttu-id="de917-103">Dit artikel bevat een lijst met Power shell-modules die door micro soft zijn gepubliceerd en die beheer en ondersteuning bieden voor diverse micro soft-producten en-services.</span><span class="sxs-lookup"><span data-stu-id="de917-103">This article contains a list of PowerShell modules published by Microsoft that provide management and support for various Microsoft products and services.</span></span> <span data-ttu-id="de917-104">Deze modules zijn bijgewerkt voor gebruik in combi natie met Power shell 7 of getest op compatibiliteit met Power shell 7.</span><span class="sxs-lookup"><span data-stu-id="de917-104">These modules have been updated to work natively with PowerShell 7 or tested for compatibility with PowerShell 7.</span></span>
+<span data-ttu-id="2cd6f-103">Dit artikel bevat een lijst met Power shell-modules die zijn gepubliceerd door micro soft.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-103">This article contains a list of PowerShell modules published by Microsoft.</span></span> <span data-ttu-id="2cd6f-104">Deze modules bieden beheer en ondersteuning voor diverse micro soft-producten en-services.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-104">This modules provide management and support for various Microsoft products and services.</span></span> <span data-ttu-id="2cd6f-105">Deze modules zijn bijgewerkt voor gebruik met Power shell 7 of getest op compatibiliteit met Power shell 7.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-105">These modules have been update to work natively with PowerShell 7 or tested for compatibility with PowerShell 7.</span></span> <span data-ttu-id="2cd6f-106">Deze lijst wordt bijgewerkt met nieuwe informatie, omdat er meer modules worden geïdentificeerd en getest.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-106">This list will be updated with new information as more modules are identified and tested.</span></span>
 
-<span data-ttu-id="de917-105">Deze lijst wordt bijgewerkt met nieuwe informatie, omdat er meer modules worden geïdentificeerd en getest.</span><span class="sxs-lookup"><span data-stu-id="de917-105">This list will be updated with new information as more modules are identified and tested.</span></span> <span data-ttu-id="de917-106">Als u informatie hebt om te delen of problemen met specifieke modules op te lossen, kunt u een probleem melden in de [WindowsCompatibility](https://github.com/PowerShell/WindowsCompatibility) -opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="de917-106">If you have information to share or issues with specific modules, please file an issue in the [WindowsCompatibility](https://github.com/PowerShell/WindowsCompatibility) repository.</span></span>
+<span data-ttu-id="2cd6f-107">Als u informatie hebt om te delen of problemen met specifieke modules op te lossen, kunt u een probleem in de [WindowsCompatibility-opslag plaats](https://github.com/PowerShell/WindowsCompatibility)oplossen.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-107">If you have information to share or issues with specific modules, please file an issue in the [WindowsCompatibility repo](https://github.com/PowerShell/WindowsCompatibility).</span></span>
 
-## <a name="windows-management-modules"></a><span data-ttu-id="de917-107">Windows-beheer modules</span><span class="sxs-lookup"><span data-stu-id="de917-107">Windows management modules</span></span>
+## <a name="windows-management-modules"></a><span data-ttu-id="2cd6f-108">Windows-beheer modules</span><span class="sxs-lookup"><span data-stu-id="2cd6f-108">Windows management modules</span></span>
 
-<span data-ttu-id="de917-108">De Windows-beheer modules worden op verschillende manieren geïnstalleerd, afhankelijk van het type Windows en de wijze waarop de module is verpakt.</span><span class="sxs-lookup"><span data-stu-id="de917-108">The Windows management modules are installed in different ways depending on the type of Windows and how the module was packaged.</span></span> <span data-ttu-id="de917-109">Deze modules moeten worden geïnstalleerd vanuit een Power shell-sessie met verhoogde bevoegdheid met de optie **als administrator uitvoeren** .</span><span class="sxs-lookup"><span data-stu-id="de917-109">These modules must be installed from an elevate PowerShell session using the **Run as administrator** option.</span></span>
+<span data-ttu-id="2cd6f-109">De Windows-beheer module wordt op verschillende manieren geïnstalleerd, afhankelijk van de versie van Windows en de wijze waarop de module voor die editie is verpakt.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-109">The Windows management module are installed in different ways dependent on the Edition of Windows and how the module was packaged for that Edition.</span></span>
 
-<span data-ttu-id="de917-110">Gebruik op Windows Server de functie naam met de [install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) om de module te installeren.</span><span class="sxs-lookup"><span data-stu-id="de917-110">On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) to install the module.</span></span> <span data-ttu-id="de917-111">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="de917-111">For example:</span></span>
+<span data-ttu-id="2cd6f-110">Gebruik op Windows Server de functie naam met de cmdlet [install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) als beheerder.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-110">On Windows Server, use the feature name with the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) cmdlet as an Administrator.</span></span> <span data-ttu-id="2cd6f-111">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-111">For example:</span></span>
 
 ```powershell
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-<span data-ttu-id="de917-112">In Windows 10 moet u een van deze cmdlets gebruiken, afhankelijk van het pakket type:</span><span class="sxs-lookup"><span data-stu-id="de917-112">On Windows 10, you have to use one of these cmdlets depending the package type:</span></span>
-- [<span data-ttu-id="de917-113">Enable-WindowsOptionalFeature</span><span class="sxs-lookup"><span data-stu-id="de917-113">Enable-WindowsOptionalFeature</span></span>](/powershell/module/dism/enable-windowsoptionalfeature)
-- [<span data-ttu-id="de917-114">Add-WindowsCapability</span><span class="sxs-lookup"><span data-stu-id="de917-114">Add-WindowsCapability</span></span>](/powershell/module/dism/add-windowscapability)
-
-<span data-ttu-id="de917-115">Voor modules die worden geïnstalleerd als Windows-onderdelen:</span><span class="sxs-lookup"><span data-stu-id="de917-115">For modules that install as Windows Features:</span></span>
-
-```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName FooFeatureName
-```
-
-<span data-ttu-id="de917-116">Voor modules die als Windows-mogelijkheden worden geïnstalleerd, moet u `~~~~0.0.1.0` toevoegen aan het einde van de pakket naam.</span><span class="sxs-lookup"><span data-stu-id="de917-116">For modules that install as Windows Capabilities, you have to append `~~~~0.0.1.0` to the end of the package name.</span></span> <span data-ttu-id="de917-117">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="de917-117">For example:</span></span>
-
-```powershell
-Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
-```
-
-### <a name="activedirectory"></a><span data-ttu-id="de917-118">ActiveDirectory</span><span class="sxs-lookup"><span data-stu-id="de917-118">ActiveDirectory</span></span>
-
-<span data-ttu-id="de917-119">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-119">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-120">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-120">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-121">Server versie: 1809 + met RSAT-AD-Power shell</span><span class="sxs-lookup"><span data-stu-id="de917-121">Server version: 1809+ with RSAT-AD-PowerShell</span></span>
-- <span data-ttu-id="de917-122">Windows 10-versie: 1809 + met RSAT. ActiveDirectory. DS-LDS. tools</span><span class="sxs-lookup"><span data-stu-id="de917-122">Windows 10 version: 1809+ with Rsat.ActiveDirectory.DS-LDS.Tools</span></span>
-
-### <a name="adfs"></a><span data-ttu-id="de917-123">ADFS</span><span class="sxs-lookup"><span data-stu-id="de917-123">ADFS</span></span>
-
-<span data-ttu-id="de917-124">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-124">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="appbackgroundtask"></a><span data-ttu-id="de917-125">AppBackgroundTask</span><span class="sxs-lookup"><span data-stu-id="de917-125">AppBackgroundTask</span></span>
-
-<span data-ttu-id="de917-126">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-126">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-127">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-127">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-128">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-128">Windows 10 version: 1903+</span></span>
-
-### <a name="applocker"></a><span data-ttu-id="de917-129">AppLocker</span><span class="sxs-lookup"><span data-stu-id="de917-129">AppLocker</span></span>
-
-<span data-ttu-id="de917-130">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-130">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="appvclient"></a><span data-ttu-id="de917-131">AppvClient</span><span class="sxs-lookup"><span data-stu-id="de917-131">AppvClient</span></span>
-
-<span data-ttu-id="de917-132">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-132">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="appx"></a><span data-ttu-id="de917-133">Appx</span><span class="sxs-lookup"><span data-stu-id="de917-133">Appx</span></span>
-
-<span data-ttu-id="de917-134">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-134">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-135">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-135">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-136">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-136">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-137">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-137">Windows 10 version: 1809+</span></span>
-
-### <a name="assignedaccess"></a><span data-ttu-id="de917-138">AssignedAccess</span><span class="sxs-lookup"><span data-stu-id="de917-138">AssignedAccess</span></span>
-
-<span data-ttu-id="de917-139">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-139">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-140">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-140">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-141">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-141">Windows 10 version: 1809+</span></span>
-
-### <a name="bestpractices"></a><span data-ttu-id="de917-142">BestPractices</span><span class="sxs-lookup"><span data-stu-id="de917-142">BestPractices</span></span>
-
-<span data-ttu-id="de917-143">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-143">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="bitlocker"></a><span data-ttu-id="de917-144">BitLocker</span><span class="sxs-lookup"><span data-stu-id="de917-144">BitLocker</span></span>
-
-<span data-ttu-id="de917-145">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-145">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-146">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-146">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-147">Server versie: 1809 + met BitLocker</span><span class="sxs-lookup"><span data-stu-id="de917-147">Server version: 1809+ with BitLocker</span></span>
-- <span data-ttu-id="de917-148">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-148">Windows 10 version: 1809+</span></span>
-
-### <a name="bitstransfer"></a><span data-ttu-id="de917-149">BitsTransfer</span><span class="sxs-lookup"><span data-stu-id="de917-149">BitsTransfer</span></span>
-
-<span data-ttu-id="de917-150">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-150">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-151">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-151">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-152">Server versie: 20H1</span><span class="sxs-lookup"><span data-stu-id="de917-152">Server version: 20H1</span></span>
-- <span data-ttu-id="de917-153">Windows 10-versie: 20H1</span><span class="sxs-lookup"><span data-stu-id="de917-153">Windows 10 version: 20H1</span></span>
-
-### <a name="booteventcollector"></a><span data-ttu-id="de917-154">BootEventCollector</span><span class="sxs-lookup"><span data-stu-id="de917-154">BootEventCollector</span></span>
-
-<span data-ttu-id="de917-155">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-155">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="branchcache"></a><span data-ttu-id="de917-156">BranchCache</span><span class="sxs-lookup"><span data-stu-id="de917-156">BranchCache</span></span>
-
-<span data-ttu-id="de917-157">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-157">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-158">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-158">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-159">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-159">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-160">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-160">Windows 10 version: 1809+</span></span>
-
-### <a name="cimcmdlets"></a><span data-ttu-id="de917-161">CimCmdlets</span><span class="sxs-lookup"><span data-stu-id="de917-161">CimCmdlets</span></span>
-
-<span data-ttu-id="de917-162">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-162">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-163">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-163">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-164">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-164">Built into PowerShell 7</span></span>
-
-### <a name="clusterawareupdating"></a><span data-ttu-id="de917-165">ClusterAwareUpdating</span><span class="sxs-lookup"><span data-stu-id="de917-165">ClusterAwareUpdating</span></span>
-
-<span data-ttu-id="de917-166">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-166">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="configci"></a><span data-ttu-id="de917-167">ConfigCI</span><span class="sxs-lookup"><span data-stu-id="de917-167">ConfigCI</span></span>
-
-<span data-ttu-id="de917-168">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-168">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="defender"></a><span data-ttu-id="de917-169">Beschermd</span><span class="sxs-lookup"><span data-stu-id="de917-169">Defender</span></span>
-
-<span data-ttu-id="de917-170">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-170">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-171">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-171">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-172">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-172">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-173">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-173">Windows 10 version: 1809+</span></span>
-
-### <a name="deliveryoptimization"></a><span data-ttu-id="de917-174">DeliveryOptimization</span><span class="sxs-lookup"><span data-stu-id="de917-174">DeliveryOptimization</span></span>
-
-<span data-ttu-id="de917-175">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-175">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-176">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-176">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-177">Server versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-177">Server version: 1903+</span></span>
-- <span data-ttu-id="de917-178">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-178">Windows 10 version: 1903+</span></span>
-
-### <a name="dfsn"></a><span data-ttu-id="de917-179">DFSN</span><span class="sxs-lookup"><span data-stu-id="de917-179">DFSN</span></span>
-
-<span data-ttu-id="de917-180">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-180">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-181">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-181">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-182">Server versie: 1809 + met FS-DFS-naam ruimte</span><span class="sxs-lookup"><span data-stu-id="de917-182">Server version: 1809+ with FS-DFS-Namespace</span></span>
-- <span data-ttu-id="de917-183">Windows 10-versie: 1809 + met RSAT. FailoverCluster. Management. tools</span><span class="sxs-lookup"><span data-stu-id="de917-183">Windows 10 version: 1809+ with Rsat.FailoverCluster.Management.Tools</span></span>
-
-### <a name="dfsr"></a><span data-ttu-id="de917-184">DFSR</span><span class="sxs-lookup"><span data-stu-id="de917-184">DFSR</span></span>
-
-<span data-ttu-id="de917-185">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-185">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="dhcpserver"></a><span data-ttu-id="de917-186">DHCP</span><span class="sxs-lookup"><span data-stu-id="de917-186">DhcpServer</span></span>
-
-<span data-ttu-id="de917-187">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-187">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="directaccessclientcomponents"></a><span data-ttu-id="de917-188">DirectAccessClientComponents</span><span class="sxs-lookup"><span data-stu-id="de917-188">DirectAccessClientComponents</span></span>
-
-<span data-ttu-id="de917-189">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-189">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-190">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-190">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-191">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-191">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-192">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-192">Windows 10 version: 1809+</span></span>
-
-### <a name="dism"></a><span data-ttu-id="de917-193">DISM</span><span class="sxs-lookup"><span data-stu-id="de917-193">Dism</span></span>
-
-<span data-ttu-id="de917-194">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-194">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-195">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-195">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-196">Server versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-196">Server version: 1903+</span></span>
-- <span data-ttu-id="de917-197">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-197">Windows 10 version: 1903+</span></span>
-
-### <a name="dnsclient"></a><span data-ttu-id="de917-198">DnsClient</span><span class="sxs-lookup"><span data-stu-id="de917-198">DnsClient</span></span>
-
-<span data-ttu-id="de917-199">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-199">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-200">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-200">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-201">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-201">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-202">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-202">Windows 10 version: 1809+</span></span>
-
-### <a name="dnsserver"></a><span data-ttu-id="de917-203">DnsServer</span><span class="sxs-lookup"><span data-stu-id="de917-203">DnsServer</span></span>
-
-<span data-ttu-id="de917-204">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-204">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-205">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-205">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-206">Server versie: 1809 + met DNS of RSAT-DNS-server</span><span class="sxs-lookup"><span data-stu-id="de917-206">Server version: 1809+ with DNS or RSAT-DNS-Server</span></span>
-- <span data-ttu-id="de917-207">Windows 10-versie: 1809 + met RSAT. DNS. tools</span><span class="sxs-lookup"><span data-stu-id="de917-207">Windows 10 version: 1809+ with Rsat.Dns.Tools</span></span>
-
-### <a name="eventtracingmanagement"></a><span data-ttu-id="de917-208">EventTracingManagement</span><span class="sxs-lookup"><span data-stu-id="de917-208">EventTracingManagement</span></span>
-
-<span data-ttu-id="de917-209">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-209">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-210">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-210">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-211">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-211">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-212">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-212">Windows 10 version: 1809+</span></span>
-
-### <a name="failoverclusters"></a><span data-ttu-id="de917-213">FailoverClusters</span><span class="sxs-lookup"><span data-stu-id="de917-213">FailoverClusters</span></span>
-
-<span data-ttu-id="de917-214">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-214">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="failoverclusterset"></a><span data-ttu-id="de917-215">FailoverClusterSet</span><span class="sxs-lookup"><span data-stu-id="de917-215">FailoverClusterSet</span></span>
-
-<span data-ttu-id="de917-216">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-216">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="fileserverresourcemanager"></a><span data-ttu-id="de917-217">FileServerResourceManager</span><span class="sxs-lookup"><span data-stu-id="de917-217">FileServerResourceManager</span></span>
-
-<span data-ttu-id="de917-218">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-218">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-219">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-219">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-220">Server versie: 1809 + met FS-Resource-Manager</span><span class="sxs-lookup"><span data-stu-id="de917-220">Server version: 1809+ with FS-Resource-Manager</span></span>
-
-### <a name="grouppolicy"></a><span data-ttu-id="de917-221">Architectuur</span><span class="sxs-lookup"><span data-stu-id="de917-221">GroupPolicy</span></span>
-
-<span data-ttu-id="de917-222">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-222">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="hgsclient"></a><span data-ttu-id="de917-223">HgsClient</span><span class="sxs-lookup"><span data-stu-id="de917-223">HgsClient</span></span>
-
-<span data-ttu-id="de917-224">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-224">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-225">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-225">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-226">Server versie: 1903 + met Hyper-V of RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="de917-226">Server version: 1903+ with Hyper-V or RSAT-Shielded-VM-Tools</span></span>
-- <span data-ttu-id="de917-227">Windows 10-versie: 1903 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="de917-227">Windows 10 version: 1903+ with Rsat.Shielded.VM.Tools</span></span>
-
-### <a name="hgsdiagnostics"></a><span data-ttu-id="de917-228">HgsDiagnostics</span><span class="sxs-lookup"><span data-stu-id="de917-228">HgsDiagnostics</span></span>
-
-<span data-ttu-id="de917-229">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-229">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-230">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-230">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-231">Server versie: 1809 + met Hyper-V of RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="de917-231">Server version: 1809+ with Hyper-V or RSAT-Shielded-VM-Tools</span></span>
-- <span data-ttu-id="de917-232">Windows 10-versie: 1809 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="de917-232">Windows 10 version: 1809+ with Rsat.Shielded.VM.Tools</span></span>
-
-### <a name="hyper-v"></a><span data-ttu-id="de917-233">Hyper-V</span><span class="sxs-lookup"><span data-stu-id="de917-233">Hyper-V</span></span>
-
-<span data-ttu-id="de917-234">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-234">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-235">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-235">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-236">Server versie: 1809 + met Hyper-V-Power shell</span><span class="sxs-lookup"><span data-stu-id="de917-236">Server version: 1809+ with Hyper-V-PowerShell</span></span>
-- <span data-ttu-id="de917-237">Windows 10-versie: 1809 + met micro soft-Hyper-V-Management-Power shell</span><span class="sxs-lookup"><span data-stu-id="de917-237">Windows 10 version: 1809+ with Microsoft-Hyper-V-Management-PowerShell</span></span>
-
-### <a name="iisadministration"></a><span data-ttu-id="de917-238">IISAdministration</span><span class="sxs-lookup"><span data-stu-id="de917-238">IISAdministration</span></span>
-
-<span data-ttu-id="de917-239">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-239">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="international"></a><span data-ttu-id="de917-240">Nederland</span><span class="sxs-lookup"><span data-stu-id="de917-240">International</span></span>
-
-<span data-ttu-id="de917-241">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-241">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-242">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-242">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-243">Server versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-243">Server version: 1903+</span></span>
-- <span data-ttu-id="de917-244">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-244">Windows 10 version: 1903+</span></span>
-
-### <a name="ipamserver"></a><span data-ttu-id="de917-245">IpamServer</span><span class="sxs-lookup"><span data-stu-id="de917-245">IpamServer</span></span>
-
-<span data-ttu-id="de917-246">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-246">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="iscsi"></a><span data-ttu-id="de917-247">iSCSI</span><span class="sxs-lookup"><span data-stu-id="de917-247">iSCSI</span></span>
-
-<span data-ttu-id="de917-248">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-248">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="iscsitarget"></a><span data-ttu-id="de917-249">IscsiTarget</span><span class="sxs-lookup"><span data-stu-id="de917-249">IscsiTarget</span></span>
-
-<span data-ttu-id="de917-250">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-250">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="ise"></a><span data-ttu-id="de917-251">ISE</span><span class="sxs-lookup"><span data-stu-id="de917-251">ISE</span></span>
-
-<span data-ttu-id="de917-252">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-252">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="kds"></a><span data-ttu-id="de917-253">KDS</span><span class="sxs-lookup"><span data-stu-id="de917-253">Kds</span></span>
-
-<span data-ttu-id="de917-254">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-254">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-255">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-255">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-256">Server versie: 20H1</span><span class="sxs-lookup"><span data-stu-id="de917-256">Server version: 20H1</span></span>
-- <span data-ttu-id="de917-257">Windows 10-versie: 20H1</span><span class="sxs-lookup"><span data-stu-id="de917-257">Windows 10 version: 20H1</span></span>
-
-### <a name="microsoftpowershellarchive"></a><span data-ttu-id="de917-258">Micro soft. Power shell. Archive</span><span class="sxs-lookup"><span data-stu-id="de917-258">Microsoft.PowerShell.Archive</span></span>
-
-<span data-ttu-id="de917-259">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-259">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-260">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-260">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-261">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-261">Built into PowerShell 7</span></span>
-
-### <a name="microsoftpowershelldiagnostics"></a><span data-ttu-id="de917-262">Microsoft.PowerShell.Diagnostics</span><span class="sxs-lookup"><span data-stu-id="de917-262">Microsoft.PowerShell.Diagnostics</span></span>
-
-<span data-ttu-id="de917-263">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-263">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-264">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-264">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-265">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-265">Built into PowerShell 7</span></span>
-
-### <a name="microsoftpowershellhost"></a><span data-ttu-id="de917-266">Microsoft.PowerShell.Host</span><span class="sxs-lookup"><span data-stu-id="de917-266">Microsoft.PowerShell.Host</span></span>
-
-<span data-ttu-id="de917-267">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-267">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-268">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-268">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-269">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-269">Built into PowerShell 7</span></span>
-
-### <a name="microsoftpowershelllocalaccounts"></a><span data-ttu-id="de917-270">Micro soft. Power shell. LocalAccounts</span><span class="sxs-lookup"><span data-stu-id="de917-270">Microsoft.PowerShell.LocalAccounts</span></span>
-
-<span data-ttu-id="de917-271">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-271">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-272">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-272">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-273">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-273">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-274">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-274">Windows 10 version: 1809+</span></span>
-
-### <a name="microsoftpowershellmanagement"></a><span data-ttu-id="de917-275">Microsoft.PowerShell.Management</span><span class="sxs-lookup"><span data-stu-id="de917-275">Microsoft.PowerShell.Management</span></span>
-
-<span data-ttu-id="de917-276">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-276">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-277">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-277">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-278">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-278">Built into PowerShell 7</span></span>
-
-### <a name="microsoftpowershellodatautils"></a><span data-ttu-id="de917-279">Micro soft. Power shell. ODataUtils</span><span class="sxs-lookup"><span data-stu-id="de917-279">Microsoft.PowerShell.ODataUtils</span></span>
-
-<span data-ttu-id="de917-280">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-280">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="microsoftpowershellsecurity"></a><span data-ttu-id="de917-281">Microsoft.PowerShell.Security</span><span class="sxs-lookup"><span data-stu-id="de917-281">Microsoft.PowerShell.Security</span></span>
-
-<span data-ttu-id="de917-282">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-282">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-283">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-283">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-284">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-284">Built into PowerShell 7</span></span>
-
-### <a name="microsoftpowershellutility"></a><span data-ttu-id="de917-285">Microsoft.PowerShell.Utility</span><span class="sxs-lookup"><span data-stu-id="de917-285">Microsoft.PowerShell.Utility</span></span>
-
-<span data-ttu-id="de917-286">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-286">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-287">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-287">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-288">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-288">Built into PowerShell 7</span></span>
-
-### <a name="microsoftwsmanmanagement"></a><span data-ttu-id="de917-289">Microsoft.WSMan.Management</span><span class="sxs-lookup"><span data-stu-id="de917-289">Microsoft.WSMan.Management</span></span>
-
-<span data-ttu-id="de917-290">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-290">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-291">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-291">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-292">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-292">Built into PowerShell 7</span></span>
-
-### <a name="mmagent"></a><span data-ttu-id="de917-293">MMAgent</span><span class="sxs-lookup"><span data-stu-id="de917-293">MMAgent</span></span>
-
-<span data-ttu-id="de917-294">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-294">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-295">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-295">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-296">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-296">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-297">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-297">Windows 10 version: 1809+</span></span>
-
-### <a name="mpio"></a><span data-ttu-id="de917-298">MPIO</span><span class="sxs-lookup"><span data-stu-id="de917-298">MPIO</span></span>
-
-<span data-ttu-id="de917-299">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-299">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-300">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-300">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-301">Server versie: 1809 + met meerdere paden-IO</span><span class="sxs-lookup"><span data-stu-id="de917-301">Server version: 1809+ with Multipath-IO</span></span>
-
-### <a name="msdtc"></a><span data-ttu-id="de917-302">MsDtc</span><span class="sxs-lookup"><span data-stu-id="de917-302">MsDtc</span></span>
-
-<span data-ttu-id="de917-303">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-303">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="netadapter"></a><span data-ttu-id="de917-304">NetAdapter</span><span class="sxs-lookup"><span data-stu-id="de917-304">NetAdapter</span></span>
-
-<span data-ttu-id="de917-305">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-305">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-306">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-306">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-307">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-307">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-308">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-308">Windows 10 version: 1809+</span></span>
-
-### <a name="netconnection"></a><span data-ttu-id="de917-309">NetConnection</span><span class="sxs-lookup"><span data-stu-id="de917-309">NetConnection</span></span>
-
-<span data-ttu-id="de917-310">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-310">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-311">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-311">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-312">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-312">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-313">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-313">Windows 10 version: 1809+</span></span>
-
-### <a name="neteventpacketcapture"></a><span data-ttu-id="de917-314">NetEventPacketCapture</span><span class="sxs-lookup"><span data-stu-id="de917-314">NetEventPacketCapture</span></span>
-
-<span data-ttu-id="de917-315">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-315">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-316">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-316">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-317">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-317">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-318">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-318">Windows 10 version: 1809+</span></span>
-
-### <a name="netlbfo"></a><span data-ttu-id="de917-319">NetLbfo</span><span class="sxs-lookup"><span data-stu-id="de917-319">NetLbfo</span></span>
-
-<span data-ttu-id="de917-320">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-320">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-321">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-321">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-322">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-322">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-323">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-323">Windows 10 version: 1809+</span></span>
-
-### <a name="netlldpagent"></a><span data-ttu-id="de917-324">NetLldpAgent</span><span class="sxs-lookup"><span data-stu-id="de917-324">NetLldpAgent</span></span>
-
-<span data-ttu-id="de917-325">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-325">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="netnat"></a><span data-ttu-id="de917-326">NetNat</span><span class="sxs-lookup"><span data-stu-id="de917-326">NetNat</span></span>
-
-<span data-ttu-id="de917-327">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-327">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-328">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-328">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-329">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-329">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-330">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-330">Windows 10 version: 1809+</span></span>
-
-### <a name="netqos"></a><span data-ttu-id="de917-331">NetQos</span><span class="sxs-lookup"><span data-stu-id="de917-331">NetQos</span></span>
-
-<span data-ttu-id="de917-332">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-332">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-333">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-333">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-334">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-334">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-335">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-335">Windows 10 version: 1809+</span></span>
-
-### <a name="netsecurity"></a><span data-ttu-id="de917-336">Netbeveiliging</span><span class="sxs-lookup"><span data-stu-id="de917-336">NetSecurity</span></span>
-
-<span data-ttu-id="de917-337">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-337">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-338">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-338">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-339">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-339">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-340">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-340">Windows 10 version: 1809+</span></span>
-
-### <a name="netswitchteam"></a><span data-ttu-id="de917-341">NetSwitchTeam</span><span class="sxs-lookup"><span data-stu-id="de917-341">NetSwitchTeam</span></span>
-
-<span data-ttu-id="de917-342">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-342">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-343">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-343">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-344">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-344">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-345">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-345">Windows 10 version: 1809+</span></span>
-
-### <a name="nettcpip"></a><span data-ttu-id="de917-346">NetTCPIP</span><span class="sxs-lookup"><span data-stu-id="de917-346">NetTCPIP</span></span>
-
-<span data-ttu-id="de917-347">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-347">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-348">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-348">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-349">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-349">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-350">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-350">Windows 10 version: 1809+</span></span>
-
-### <a name="netwnv"></a><span data-ttu-id="de917-351">NetWNV</span><span class="sxs-lookup"><span data-stu-id="de917-351">NetWNV</span></span>
-
-<span data-ttu-id="de917-352">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-352">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="networkconnectivitystatus"></a><span data-ttu-id="de917-353">NetworkConnectivityStatus</span><span class="sxs-lookup"><span data-stu-id="de917-353">NetworkConnectivityStatus</span></span>
-
-<span data-ttu-id="de917-354">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-354">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-355">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-355">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-356">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-356">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-357">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-357">Windows 10 version: 1809+</span></span>
-
-### <a name="networkcontroller"></a><span data-ttu-id="de917-358">Network controller</span><span class="sxs-lookup"><span data-stu-id="de917-358">NetworkController</span></span>
-
-<span data-ttu-id="de917-359">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-359">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="networkcontrollerdiagnostics"></a><span data-ttu-id="de917-360">NetworkControllerDiagnostics</span><span class="sxs-lookup"><span data-stu-id="de917-360">NetworkControllerDiagnostics</span></span>
-
-<span data-ttu-id="de917-361">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-361">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="networkloadbalancingclusters"></a><span data-ttu-id="de917-362">NetworkLoadBalancingClusters</span><span class="sxs-lookup"><span data-stu-id="de917-362">NetworkLoadBalancingClusters</span></span>
-
-<span data-ttu-id="de917-363">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-363">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="networkswitchmanager"></a><span data-ttu-id="de917-364">NetworkSwitchManager</span><span class="sxs-lookup"><span data-stu-id="de917-364">NetworkSwitchManager</span></span>
-
-<span data-ttu-id="de917-365">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-365">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-366">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-366">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-367">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-367">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-368">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-368">Windows 10 version: 1809+</span></span>
-
-### <a name="networktransition"></a><span data-ttu-id="de917-369">NetworkTransition</span><span class="sxs-lookup"><span data-stu-id="de917-369">NetworkTransition</span></span>
-
-<span data-ttu-id="de917-370">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-370">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-371">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-371">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-372">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-372">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-373">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-373">Windows 10 version: 1809+</span></span>
-
-### <a name="nfs"></a><span data-ttu-id="de917-374">NFS</span><span class="sxs-lookup"><span data-stu-id="de917-374">NFS</span></span>
-
-<span data-ttu-id="de917-375">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-375">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-376">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-376">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-377">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-377">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-378">Windows 10-versie: 1809 + met RSAT. Server Manager. tools</span><span class="sxs-lookup"><span data-stu-id="de917-378">Windows 10 version: 1809+ with Rsat.ServerManager.Tools</span></span>
-
-### <a name="packagemanagement"></a><span data-ttu-id="de917-379">Package Management</span><span class="sxs-lookup"><span data-stu-id="de917-379">PackageManagement</span></span>
-
-<span data-ttu-id="de917-380">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-380">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-381">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-381">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-382">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-382">Built into PowerShell 7</span></span>
-
-### <a name="pcsvdevice"></a><span data-ttu-id="de917-383">PcsvDevice</span><span class="sxs-lookup"><span data-stu-id="de917-383">PcsvDevice</span></span>
-
-<span data-ttu-id="de917-384">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-384">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-385">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-385">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-386">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-386">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-387">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-387">Windows 10 version: 1809+</span></span>
-
-### <a name="persistentmemory"></a><span data-ttu-id="de917-388">PersistentMemory</span><span class="sxs-lookup"><span data-stu-id="de917-388">PersistentMemory</span></span>
-
-<span data-ttu-id="de917-389">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-389">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="pki"></a><span data-ttu-id="de917-390">PKI</span><span class="sxs-lookup"><span data-stu-id="de917-390">PKI</span></span>
-
-<span data-ttu-id="de917-391">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-391">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="pnpdevice"></a><span data-ttu-id="de917-392">PnpDevice</span><span class="sxs-lookup"><span data-stu-id="de917-392">PnpDevice</span></span>
-
-<span data-ttu-id="de917-393">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-393">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-394">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-394">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-395">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-395">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-396">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-396">Windows 10 version: 1809+</span></span>
-
-### <a name="powershellget"></a><span data-ttu-id="de917-397">PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="de917-397">PowerShellGet</span></span>
-
-<span data-ttu-id="de917-398">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-398">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-399">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-399">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-400">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-400">Built into PowerShell 7</span></span>
-
-### <a name="printmanagement"></a><span data-ttu-id="de917-401">PrintManagement</span><span class="sxs-lookup"><span data-stu-id="de917-401">PrintManagement</span></span>
-
-<span data-ttu-id="de917-402">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-402">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-403">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-403">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-404">Server versie: 1903 + met Afdruk Services</span><span class="sxs-lookup"><span data-stu-id="de917-404">Server version: 1903+ with Print-Services</span></span>
-- <span data-ttu-id="de917-405">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-405">Windows 10 version: 1903+</span></span>
-
-### <a name="processmitigations"></a><span data-ttu-id="de917-406">ProcessMitigations</span><span class="sxs-lookup"><span data-stu-id="de917-406">ProcessMitigations</span></span>
-
-<span data-ttu-id="de917-407">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-407">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-408">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-408">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-409">Server versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-409">Server version: 1903+</span></span>
-- <span data-ttu-id="de917-410">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-410">Windows 10 version: 1903+</span></span>
-
-### <a name="provisioning"></a><span data-ttu-id="de917-411">Inrichten</span><span class="sxs-lookup"><span data-stu-id="de917-411">Provisioning</span></span>
-
-<span data-ttu-id="de917-412">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-412">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="psdesiredstateconfiguration"></a><span data-ttu-id="de917-413">PSDesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="de917-413">PSDesiredStateConfiguration</span></span>
-
-<span data-ttu-id="de917-414">Status: gedeeltelijk</span><span class="sxs-lookup"><span data-stu-id="de917-414">Status: Partially</span></span>
-
-<span data-ttu-id="de917-415">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-415">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-416">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-416">Built into PowerShell 7</span></span>
-
-### <a name="psdiagnostics"></a><span data-ttu-id="de917-417">PSDiagnostics</span><span class="sxs-lookup"><span data-stu-id="de917-417">PSDiagnostics</span></span>
-
-<span data-ttu-id="de917-418">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-418">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-419">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-419">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-420">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="de917-420">Built into PowerShell 7</span></span>
-
-### <a name="psscheduledjob"></a><span data-ttu-id="de917-421">PSScheduledJob</span><span class="sxs-lookup"><span data-stu-id="de917-421">PSScheduledJob</span></span>
-
-<span data-ttu-id="de917-422">Status: werkt niet met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-422">Status: Not working with Compatibility Layer</span></span>
-
-<span data-ttu-id="de917-423">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-423">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-424">Ingebouwd in Power shell 5,1</span><span class="sxs-lookup"><span data-stu-id="de917-424">Built into PowerShell 5.1</span></span>
-
-### <a name="psworkflow"></a><span data-ttu-id="de917-425">PSWorkflow</span><span class="sxs-lookup"><span data-stu-id="de917-425">PSWorkflow</span></span>
-
-<span data-ttu-id="de917-426">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-426">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="psworkflowutility"></a><span data-ttu-id="de917-427">PSWorkflowUtility</span><span class="sxs-lookup"><span data-stu-id="de917-427">PSWorkflowUtility</span></span>
-
-<span data-ttu-id="de917-428">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-428">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="remoteaccess"></a><span data-ttu-id="de917-429">Remote</span><span class="sxs-lookup"><span data-stu-id="de917-429">RemoteAccess</span></span>
-
-<span data-ttu-id="de917-430">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-430">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="remotedesktop"></a><span data-ttu-id="de917-431">RemoteDesktop</span><span class="sxs-lookup"><span data-stu-id="de917-431">RemoteDesktop</span></span>
-
-<span data-ttu-id="de917-432">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-432">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="scheduledtasks"></a><span data-ttu-id="de917-433">ScheduledTasks</span><span class="sxs-lookup"><span data-stu-id="de917-433">ScheduledTasks</span></span>
-
-<span data-ttu-id="de917-434">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-434">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-435">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-435">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-436">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-436">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-437">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-437">Windows 10 version: 1809+</span></span>
-
-### <a name="secureboot"></a><span data-ttu-id="de917-438">SecureBoot</span><span class="sxs-lookup"><span data-stu-id="de917-438">SecureBoot</span></span>
-
-<span data-ttu-id="de917-439">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-439">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-440">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-440">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-441">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-441">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-442">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-442">Windows 10 version: 1809+</span></span>
-
-### <a name="servercore"></a><span data-ttu-id="de917-443">ServerCore</span><span class="sxs-lookup"><span data-stu-id="de917-443">ServerCore</span></span>
-
-<span data-ttu-id="de917-444">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-444">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="servermanager"></a><span data-ttu-id="de917-445">Manager</span><span class="sxs-lookup"><span data-stu-id="de917-445">ServerManager</span></span>
-
-<span data-ttu-id="de917-446">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-446">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="servermanagertasks"></a><span data-ttu-id="de917-447">ServerManagerTasks</span><span class="sxs-lookup"><span data-stu-id="de917-447">ServerManagerTasks</span></span>
-
-<span data-ttu-id="de917-448">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-448">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="shieldedvmdatafile"></a><span data-ttu-id="de917-449">ShieldedVMDataFile</span><span class="sxs-lookup"><span data-stu-id="de917-449">ShieldedVMDataFile</span></span>
-
-<span data-ttu-id="de917-450">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-450">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-451">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-451">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-452">Server versie: 1903 + met RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="de917-452">Server version: 1903+ with RSAT-Shielded-VM-Tools</span></span>
-- <span data-ttu-id="de917-453">Windows 10-versie: 1903 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="de917-453">Windows 10 version: 1903+ with Rsat.Shielded.VM.Tools</span></span>
-
-### <a name="shieldedvmprovisioning"></a><span data-ttu-id="de917-454">ShieldedVMProvisioning</span><span class="sxs-lookup"><span data-stu-id="de917-454">ShieldedVMProvisioning</span></span>
-
-<span data-ttu-id="de917-455">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-455">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-456">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-456">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-457">Server versie: 1809 + met HostGuardian</span><span class="sxs-lookup"><span data-stu-id="de917-457">Server version: 1809+ with HostGuardian</span></span>
-- <span data-ttu-id="de917-458">Windows 10-versie: 1809 + met HostGuardian</span><span class="sxs-lookup"><span data-stu-id="de917-458">Windows 10 version: 1809+ with HostGuardian</span></span>
-
-### <a name="shieldedvmtemplate"></a><span data-ttu-id="de917-459">ShieldedVMTemplate</span><span class="sxs-lookup"><span data-stu-id="de917-459">ShieldedVMTemplate</span></span>
-
-<span data-ttu-id="de917-460">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-460">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-461">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-461">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-462">Server versie: 1809 + met RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="de917-462">Server version: 1809+ with RSAT-Shielded-VM-Tools</span></span>
-- <span data-ttu-id="de917-463">Windows 10-versie: 1809 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="de917-463">Windows 10 version: 1809+ with Rsat.Shielded.VM.Tools</span></span>
-
-### <a name="smbshare"></a><span data-ttu-id="de917-464">SmbShare</span><span class="sxs-lookup"><span data-stu-id="de917-464">SmbShare</span></span>
-
-<span data-ttu-id="de917-465">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-465">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-466">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-466">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-467">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-467">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-468">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-468">Windows 10 version: 1809+</span></span>
-
-### <a name="smbwitness"></a><span data-ttu-id="de917-469">SmbWitness</span><span class="sxs-lookup"><span data-stu-id="de917-469">SmbWitness</span></span>
-
-<span data-ttu-id="de917-470">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-470">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-471">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-471">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-472">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-472">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-473">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-473">Windows 10 version: 1809+</span></span>
-
-### <a name="smisconfig"></a><span data-ttu-id="de917-474">SMISConfig</span><span class="sxs-lookup"><span data-stu-id="de917-474">SMISConfig</span></span>
-
-<span data-ttu-id="de917-475">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-475">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-476">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-476">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-477">Server versie: 1903 + met WindowsStorageManagementService</span><span class="sxs-lookup"><span data-stu-id="de917-477">Server version: 1903+ with WindowsStorageManagementService</span></span>
-
-### <a name="sms"></a><span data-ttu-id="de917-478">Sms</span><span class="sxs-lookup"><span data-stu-id="de917-478">SMS</span></span>
-
-<span data-ttu-id="de917-479">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-479">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="softwareinventorylogging"></a><span data-ttu-id="de917-480">SoftwareInventoryLogging</span><span class="sxs-lookup"><span data-stu-id="de917-480">SoftwareInventoryLogging</span></span>
-
-<span data-ttu-id="de917-481">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-481">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-482">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-482">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-483">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-483">Server version: 1809+</span></span>
-
-### <a name="startlayout"></a><span data-ttu-id="de917-484">StartLayout</span><span class="sxs-lookup"><span data-stu-id="de917-484">StartLayout</span></span>
-
-<span data-ttu-id="de917-485">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-485">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-486">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-486">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-487">Server versie: 1809 + met bureaublad ervaring</span><span class="sxs-lookup"><span data-stu-id="de917-487">Server version: 1809+ with Desktop Experience</span></span>
-- <span data-ttu-id="de917-488">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-488">Windows 10 version: 1809+</span></span>
-
-### <a name="storage"></a><span data-ttu-id="de917-489">Opslag</span><span class="sxs-lookup"><span data-stu-id="de917-489">Storage</span></span>
-
-<span data-ttu-id="de917-490">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-490">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-491">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-491">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-492">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-492">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-493">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-493">Windows 10 version: 1809+</span></span>
-
-### <a name="storagebuscache"></a><span data-ttu-id="de917-494">StorageBusCache</span><span class="sxs-lookup"><span data-stu-id="de917-494">StorageBusCache</span></span>
-
-<span data-ttu-id="de917-495">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-495">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="storagemigrationservice"></a><span data-ttu-id="de917-496">StorageMigrationService</span><span class="sxs-lookup"><span data-stu-id="de917-496">StorageMigrationService</span></span>
-
-<span data-ttu-id="de917-497">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-497">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="storageqos"></a><span data-ttu-id="de917-498">StorageQOS</span><span class="sxs-lookup"><span data-stu-id="de917-498">StorageQOS</span></span>
-
-<span data-ttu-id="de917-499">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-499">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-500">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-500">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-501">Server versie: 1809 + met RSAT-clustering-Power shell</span><span class="sxs-lookup"><span data-stu-id="de917-501">Server version: 1809+ with RSAT-Clustering-PowerShell</span></span>
-- <span data-ttu-id="de917-502">Windows 10-versie: 1809 + met RSAT. FailoverCluster. Management. tools</span><span class="sxs-lookup"><span data-stu-id="de917-502">Windows 10 version: 1809+ with Rsat.FailoverCluster.Management.Tools</span></span>
-
-### <a name="storagereplica"></a><span data-ttu-id="de917-503">Storage replica</span><span class="sxs-lookup"><span data-stu-id="de917-503">StorageReplica</span></span>
-
-<span data-ttu-id="de917-504">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-504">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="syncshare"></a><span data-ttu-id="de917-505">SyncShare</span><span class="sxs-lookup"><span data-stu-id="de917-505">SyncShare</span></span>
-
-<span data-ttu-id="de917-506">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-506">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-507">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-507">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-508">Server versie: 1809 + met FS-SyncShareService</span><span class="sxs-lookup"><span data-stu-id="de917-508">Server version: 1809+ with FS-SyncShareService</span></span>
-
-### <a name="systeminsights"></a><span data-ttu-id="de917-509">SystemInsights</span><span class="sxs-lookup"><span data-stu-id="de917-509">SystemInsights</span></span>
-
-<span data-ttu-id="de917-510">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-510">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="tls"></a><span data-ttu-id="de917-511">TLS</span><span class="sxs-lookup"><span data-stu-id="de917-511">TLS</span></span>
-
-<span data-ttu-id="de917-512">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-512">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="troubleshootingpack"></a><span data-ttu-id="de917-513">TroubleshootingPack</span><span class="sxs-lookup"><span data-stu-id="de917-513">TroubleshootingPack</span></span>
-
-<span data-ttu-id="de917-514">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-514">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-515">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-515">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-516">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-516">Windows 10 version: 1903+</span></span>
-
-### <a name="trustedplatformmodule"></a><span data-ttu-id="de917-517">TrustedPlatformModule</span><span class="sxs-lookup"><span data-stu-id="de917-517">TrustedPlatformModule</span></span>
-
-<span data-ttu-id="de917-518">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-518">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-519">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-519">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-520">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-520">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-521">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-521">Windows 10 version: 1809+</span></span>
-
-### <a name="uev"></a><span data-ttu-id="de917-522">UEV</span><span class="sxs-lookup"><span data-stu-id="de917-522">UEV</span></span>
-
-<span data-ttu-id="de917-523">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-523">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-524">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-524">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-525">Server versie:? Toekomstige versie van server met bureaublad ervaring?</span><span class="sxs-lookup"><span data-stu-id="de917-525">Server version: ??Future version of Server with Desktop Experience??</span></span>
-- <span data-ttu-id="de917-526">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-526">Windows 10 version: 1903+</span></span>
-
-### <a name="updateservices"></a><span data-ttu-id="de917-527">Installeer WindowsFeature</span><span class="sxs-lookup"><span data-stu-id="de917-527">UpdateServices</span></span>
-
-<span data-ttu-id="de917-528">Status: werkt niet met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-528">Status: Not working with Compatibility Layer</span></span>
-
-### <a name="vpnclient"></a><span data-ttu-id="de917-529">VpnClient</span><span class="sxs-lookup"><span data-stu-id="de917-529">VpnClient</span></span>
-
-<span data-ttu-id="de917-530">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-530">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-531">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-531">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-532">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-532">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-533">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-533">Windows 10 version: 1809+</span></span>
-
-### <a name="wdac"></a><span data-ttu-id="de917-534">Wdac</span><span class="sxs-lookup"><span data-stu-id="de917-534">Wdac</span></span>
-
-<span data-ttu-id="de917-535">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-535">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-536">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-536">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-537">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-537">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-538">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-538">Windows 10 version: 1809+</span></span>
-
-### <a name="webadministration"></a><span data-ttu-id="de917-539">Webbeheer</span><span class="sxs-lookup"><span data-stu-id="de917-539">WebAdministration</span></span>
-
-<span data-ttu-id="de917-540">Status: niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="de917-540">Status: Untested with Compatibility Layer</span></span>
-
-### <a name="whea"></a><span data-ttu-id="de917-541">WHEA</span><span class="sxs-lookup"><span data-stu-id="de917-541">WHEA</span></span>
-
-<span data-ttu-id="de917-542">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-542">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-543">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-543">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-544">Server versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-544">Server version: 1903+</span></span>
-- <span data-ttu-id="de917-545">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-545">Windows 10 version: 1903+</span></span>
-
-### <a name="windowsdeveloperlicense"></a><span data-ttu-id="de917-546">WindowsDeveloperLicense</span><span class="sxs-lookup"><span data-stu-id="de917-546">WindowsDeveloperLicense</span></span>
-
-<span data-ttu-id="de917-547">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-547">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-548">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-548">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-549">Server versie: 1809 + met bureaublad ervaring</span><span class="sxs-lookup"><span data-stu-id="de917-549">Server version: 1809+ with Desktop Experience</span></span>
-- <span data-ttu-id="de917-550">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-550">Windows 10 version: 1809+</span></span>
-
-### <a name="windowserrorreporting"></a><span data-ttu-id="de917-551">WindowsErrorReporting</span><span class="sxs-lookup"><span data-stu-id="de917-551">WindowsErrorReporting</span></span>
-
-<span data-ttu-id="de917-552">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-552">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-553">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-553">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-554">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-554">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-555">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-555">Windows 10 version: 1809+</span></span>
-
-### <a name="windowssearch"></a><span data-ttu-id="de917-556">WindowsSearch</span><span class="sxs-lookup"><span data-stu-id="de917-556">WindowsSearch</span></span>
-
-<span data-ttu-id="de917-557">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-557">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-558">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-558">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-559">Windows 10-versie: 1903 +</span><span class="sxs-lookup"><span data-stu-id="de917-559">Windows 10 version: 1903+</span></span>
-
-### <a name="windowsserverbackup"></a><span data-ttu-id="de917-560">WindowsServerBackup</span><span class="sxs-lookup"><span data-stu-id="de917-560">WindowsServerBackup</span></span>
-
-<span data-ttu-id="de917-561">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-561">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-562">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-562">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-563">Server versie: 19H2 met Windows-Server-Backup</span><span class="sxs-lookup"><span data-stu-id="de917-563">Server version: 19H2 with Windows-Server-Backup</span></span>
-
-### <a name="windowsupdate"></a><span data-ttu-id="de917-564">WindowsUpdate</span><span class="sxs-lookup"><span data-stu-id="de917-564">WindowsUpdate</span></span>
-
-<span data-ttu-id="de917-565">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-565">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-566">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-566">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-567">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-567">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-568">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-568">Windows 10 version: 1809+</span></span>
-
-### <a name="windowsupdateprovider"></a><span data-ttu-id="de917-569">WindowsUpdateProvider</span><span class="sxs-lookup"><span data-stu-id="de917-569">WindowsUpdateProvider</span></span>
-
-<span data-ttu-id="de917-570">Status: systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="de917-570">Status: Natively Compatible</span></span>
-
-<span data-ttu-id="de917-571">Compatibel met:</span><span class="sxs-lookup"><span data-stu-id="de917-571">Compatible with:</span></span>
-
-- <span data-ttu-id="de917-572">Server versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-572">Server version: 1809+</span></span>
-- <span data-ttu-id="de917-573">Windows 10-versie: 1809 +</span><span class="sxs-lookup"><span data-stu-id="de917-573">Windows 10 version: 1809+</span></span>
+<span data-ttu-id="2cd6f-112">In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optionele Windows-functies** of **Windows-mogelijkheden**.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-112">On Windows 10, the Windows management modules are made available as **Windows Optional Features** or **Windows Capabilities**.</span></span> <span data-ttu-id="2cd6f-113">De volgende opdrachten moeten worden uitgevoerd vanuit een verhoogde sessie met de **uitvoeren als-beheerder**.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-113">The following commands must be run from an elevated session using **Run as administrator**.</span></span>
+
+
+- <span data-ttu-id="2cd6f-114">Voor optionele Windows-functies</span><span class="sxs-lookup"><span data-stu-id="2cd6f-114">For Windows Optional Features</span></span>
+
+  <span data-ttu-id="2cd6f-115">Voer de volgende opdracht uit om een lijst met optionele functies weer te geven:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-115">To get a list of Optional Features, run the following command:</span></span>
+
+  ```powershell
+  Get-WindowsOptionalFeature -Online
+  ```
+
+  <span data-ttu-id="2cd6f-116">De functie installeren:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-116">To install the feature:</span></span>
+
+  ```powershell
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
+  ```
+
+  <span data-ttu-id="2cd6f-117">Zie voor meer informatie:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-117">For more information see:</span></span>
+
+  - [<span data-ttu-id="2cd6f-118">Get-WindowsOptionalFeature</span><span class="sxs-lookup"><span data-stu-id="2cd6f-118">Get-WindowsOptionalFeature</span></span>](/powershell/module/dism/get-windowsoptionalfeature)
+  - [<span data-ttu-id="2cd6f-119">Enable-WindowsOptionalFeature</span><span class="sxs-lookup"><span data-stu-id="2cd6f-119">Enable-WindowsOptionalFeature</span></span>](/powershell/module/dism/enable-windowsoptionalfeature)
+
+- <span data-ttu-id="2cd6f-120">Voor Windows-mogelijkheden</span><span class="sxs-lookup"><span data-stu-id="2cd6f-120">For Windows Capabilities</span></span>
+
+  <span data-ttu-id="2cd6f-121">Voer de volgende opdracht uit om een lijst met Windows-mogelijkheden te verkrijgen:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-121">To get a list of Windows Capabilities, run the following command:</span></span>
+
+  ```powershell
+  Get-WindowsCapability -online
+  ```
+
+  <span data-ttu-id="2cd6f-122">U ziet dat de naam van het functionaliteits pakket eindigt met `~~~~0.0.1.0`.</span><span class="sxs-lookup"><span data-stu-id="2cd6f-122">Notice that the name of the capability package ends with `~~~~0.0.1.0`.</span></span> <span data-ttu-id="2cd6f-123">U moet de volledige naam gebruiken om de mogelijkheid te installeren:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-123">You must use the full name to install the capability:</span></span>
+
+  ```powershell
+  Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
+  ```
+
+  <span data-ttu-id="2cd6f-124">Zie voor meer informatie:</span><span class="sxs-lookup"><span data-stu-id="2cd6f-124">For more information see:</span></span>
+
+  - [<span data-ttu-id="2cd6f-125">Get-WindowsCapability</span><span class="sxs-lookup"><span data-stu-id="2cd6f-125">Get-WindowsCapability</span></span>](/powershell/module/dism/get-windowscapability)
+  - [<span data-ttu-id="2cd6f-126">Add-WindowsCapability</span><span class="sxs-lookup"><span data-stu-id="2cd6f-126">Add-WindowsCapability</span></span>](/powershell/module/dism/add-windowscapability)
+
+### <a name="module-list"></a><span data-ttu-id="2cd6f-127">Module lijst</span><span class="sxs-lookup"><span data-stu-id="2cd6f-127">Module list</span></span>
+
+| <span data-ttu-id="2cd6f-128">Module naam</span><span class="sxs-lookup"><span data-stu-id="2cd6f-128">Module name</span></span>                        | <span data-ttu-id="2cd6f-129">Status</span><span class="sxs-lookup"><span data-stu-id="2cd6f-129">Status</span></span>                               | <span data-ttu-id="2cd6f-130">Ondersteund besturingssysteem</span><span class="sxs-lookup"><span data-stu-id="2cd6f-130">Supported OS</span></span>                       |
+| ---------------------------------- | ------------------------------------ | ---------------------------------- |
+| <span data-ttu-id="2cd6f-131">ActiveDirectory</span><span class="sxs-lookup"><span data-stu-id="2cd6f-131">ActiveDirectory</span></span>                    | <span data-ttu-id="2cd6f-132">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-132">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-133">Windows Server 1809 + met RSAT-AD-Power shell</span><span class="sxs-lookup"><span data-stu-id="2cd6f-133">Windows Server 1809+ with RSAT-AD-PowerShell</span></span><br><span data-ttu-id="2cd6f-134">Windows 10 1809 + met RSAT. ActiveDirectory. DS-LDS. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-134">Windows 10 1809+ with Rsat.ActiveDirectory.DS-LDS.Tools</span></span> |
+| <span data-ttu-id="2cd6f-135">ADFS</span><span class="sxs-lookup"><span data-stu-id="2cd6f-135">ADFS</span></span>                               | <span data-ttu-id="2cd6f-136">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-136">Untested with Compatibility Layer</span></span>    |                                    |
+| <span data-ttu-id="2cd6f-137">AppBackgroundTask</span><span class="sxs-lookup"><span data-stu-id="2cd6f-137">AppBackgroundTask</span></span>                  | <span data-ttu-id="2cd6f-138">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-138">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-139">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-139">Windows 10 1903+</span></span>                   |
+| <span data-ttu-id="2cd6f-140">AppLocker</span><span class="sxs-lookup"><span data-stu-id="2cd6f-140">AppLocker</span></span>                          | <span data-ttu-id="2cd6f-141">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-141">Untested with Compatibility Layer</span></span>    |                                    |
+| <span data-ttu-id="2cd6f-142">AppvClient</span><span class="sxs-lookup"><span data-stu-id="2cd6f-142">AppvClient</span></span>                         | <span data-ttu-id="2cd6f-143">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-143">Untested with Compatibility Layer</span></span>    |                                    |
+| <span data-ttu-id="2cd6f-144">Appx</span><span class="sxs-lookup"><span data-stu-id="2cd6f-144">Appx</span></span>                               | <span data-ttu-id="2cd6f-145">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-145">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-146">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-146">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-147">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-147">Windows 10 1809+</span></span> |
+| <span data-ttu-id="2cd6f-148">AssignedAccess</span><span class="sxs-lookup"><span data-stu-id="2cd6f-148">AssignedAccess</span></span>                     | <span data-ttu-id="2cd6f-149">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-149">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-150">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-150">Windows 10 1809+</span></span>                   |
+| <span data-ttu-id="2cd6f-151">BestPractices</span><span class="sxs-lookup"><span data-stu-id="2cd6f-151">BestPractices</span></span>                      | <span data-ttu-id="2cd6f-152">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-152">Untested with Compatibility Layer</span></span>    |                                    |
+| <span data-ttu-id="2cd6f-153">BitLocker</span><span class="sxs-lookup"><span data-stu-id="2cd6f-153">BitLocker</span></span>                          | <span data-ttu-id="2cd6f-154">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-154">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-155">Windows Server 1809 + met BitLocker</span><span class="sxs-lookup"><span data-stu-id="2cd6f-155">Windows Server 1809+ with BitLocker</span></span><br><span data-ttu-id="2cd6f-156">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-156">Windows 10 1809+</span></span> |
+| <span data-ttu-id="2cd6f-157">BitsTransfer</span><span class="sxs-lookup"><span data-stu-id="2cd6f-157">BitsTransfer</span></span>                       | <span data-ttu-id="2cd6f-158">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-158">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-159">Windows Server-20H1</span><span class="sxs-lookup"><span data-stu-id="2cd6f-159">Windows Server 20H1</span></span><br><span data-ttu-id="2cd6f-160">Windows 10-20H1</span><span class="sxs-lookup"><span data-stu-id="2cd6f-160">Windows 10 20H1</span></span> |
+| <span data-ttu-id="2cd6f-161">BootEventCollector</span><span class="sxs-lookup"><span data-stu-id="2cd6f-161">BootEventCollector</span></span>                 | <span data-ttu-id="2cd6f-162">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-162">Untested with Compatibility Layer</span></span>    |                                        |
+| <span data-ttu-id="2cd6f-163">BranchCache</span><span class="sxs-lookup"><span data-stu-id="2cd6f-163">BranchCache</span></span>                        | <span data-ttu-id="2cd6f-164">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-164">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-165">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-165">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-166">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-166">Windows 10 1809+</span></span> |
+| <span data-ttu-id="2cd6f-167">CimCmdlets</span><span class="sxs-lookup"><span data-stu-id="2cd6f-167">CimCmdlets</span></span>                         | <span data-ttu-id="2cd6f-168">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-168">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-169">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-169">Built into PowerShell 7</span></span> |
+| <span data-ttu-id="2cd6f-170">ClusterAwareUpdating</span><span class="sxs-lookup"><span data-stu-id="2cd6f-170">ClusterAwareUpdating</span></span>               | <span data-ttu-id="2cd6f-171">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-171">Untested with Compatibility Layer</span></span>    |                         |
+| <span data-ttu-id="2cd6f-172">ConfigCI</span><span class="sxs-lookup"><span data-stu-id="2cd6f-172">ConfigCI</span></span>                           | <span data-ttu-id="2cd6f-173">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-173">Untested with Compatibility Layer</span></span>    |                         |
+| <span data-ttu-id="2cd6f-174">Beschermd</span><span class="sxs-lookup"><span data-stu-id="2cd6f-174">Defender</span></span>                           | <span data-ttu-id="2cd6f-175">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-175">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-176">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-176">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-177">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-177">Windows 10 1809+</span></span>  |
+| <span data-ttu-id="2cd6f-178">DeliveryOptimization</span><span class="sxs-lookup"><span data-stu-id="2cd6f-178">DeliveryOptimization</span></span>               | <span data-ttu-id="2cd6f-179">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-179">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-180">Windows Server 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-180">Windows Server 1903+</span></span><br><span data-ttu-id="2cd6f-181">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-181">Windows 10 1903+</span></span>  |
+| <span data-ttu-id="2cd6f-182">DFSN</span><span class="sxs-lookup"><span data-stu-id="2cd6f-182">DFSN</span></span>                               | <span data-ttu-id="2cd6f-183">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-183">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-184">Windows Server 1809 + met FS-DFS-naam ruimte</span><span class="sxs-lookup"><span data-stu-id="2cd6f-184">Windows Server 1809+ with FS-DFS-Namespace</span></span><br><span data-ttu-id="2cd6f-185">Windows 10 1809 + met RSAT. FailoverCluster. Management. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-185">Windows 10 1809+ with Rsat.FailoverCluster.Management.Tools</span></span> |
+| <span data-ttu-id="2cd6f-186">DFSR</span><span class="sxs-lookup"><span data-stu-id="2cd6f-186">DFSR</span></span>                               | <span data-ttu-id="2cd6f-187">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-187">Untested with Compatibility Layer</span></span>    |                                   |
+| <span data-ttu-id="2cd6f-188">DHCP</span><span class="sxs-lookup"><span data-stu-id="2cd6f-188">DhcpServer</span></span>                         | <span data-ttu-id="2cd6f-189">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-189">Untested with Compatibility Layer</span></span>    |                                   |
+| <span data-ttu-id="2cd6f-190">DirectAccessClientComponents</span><span class="sxs-lookup"><span data-stu-id="2cd6f-190">DirectAccessClientComponents</span></span>       | <span data-ttu-id="2cd6f-191">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-191">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-192">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-192">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-193">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-193">Windows 10 1809+</span></span>  |
+| <span data-ttu-id="2cd6f-194">DISM</span><span class="sxs-lookup"><span data-stu-id="2cd6f-194">Dism</span></span>                               | <span data-ttu-id="2cd6f-195">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-195">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-196">Windows Server 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-196">Windows Server 1903+</span></span><br><span data-ttu-id="2cd6f-197">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-197">Windows 10 1903+</span></span>  |
+| <span data-ttu-id="2cd6f-198">DnsClient</span><span class="sxs-lookup"><span data-stu-id="2cd6f-198">DnsClient</span></span>                          | <span data-ttu-id="2cd6f-199">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-199">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-200">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-200">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-201">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-201">Windows 10 1809+</span></span>  |
+| <span data-ttu-id="2cd6f-202">DnsServer</span><span class="sxs-lookup"><span data-stu-id="2cd6f-202">DnsServer</span></span>                          | <span data-ttu-id="2cd6f-203">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-203">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-204">Windows Server 1809 + met DNS of RSAT-DNS-server</span><span class="sxs-lookup"><span data-stu-id="2cd6f-204">Windows Server 1809+ with DNS or RSAT-DNS-Server</span></span><br><span data-ttu-id="2cd6f-205">Windows 10 1809 + met RSAT. DNS. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-205">Windows 10 1809+ with Rsat.Dns.Tools</span></span> |
+| <span data-ttu-id="2cd6f-206">EventTracingManagement</span><span class="sxs-lookup"><span data-stu-id="2cd6f-206">EventTracingManagement</span></span>             | <span data-ttu-id="2cd6f-207">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-207">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-208">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-208">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-209">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-209">Windows 10 1809+</span></span>  |
+| <span data-ttu-id="2cd6f-210">FailoverClusters</span><span class="sxs-lookup"><span data-stu-id="2cd6f-210">FailoverClusters</span></span>                   | <span data-ttu-id="2cd6f-211">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-211">Untested with Compatibility Layer</span></span>    |                                  |
+| <span data-ttu-id="2cd6f-212">FailoverClusterSet</span><span class="sxs-lookup"><span data-stu-id="2cd6f-212">FailoverClusterSet</span></span>                 | <span data-ttu-id="2cd6f-213">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-213">Untested with Compatibility Layer</span></span>    |                                  |
+| <span data-ttu-id="2cd6f-214">FileServerResourceManager</span><span class="sxs-lookup"><span data-stu-id="2cd6f-214">FileServerResourceManager</span></span>          | <span data-ttu-id="2cd6f-215">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-215">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-216">Windows Server 1809 + met FS-Resource-Manager</span><span class="sxs-lookup"><span data-stu-id="2cd6f-216">Windows Server 1809+ with FS-Resource-Manager</span></span> |
+| <span data-ttu-id="2cd6f-217">Architectuur</span><span class="sxs-lookup"><span data-stu-id="2cd6f-217">GroupPolicy</span></span>                        | <span data-ttu-id="2cd6f-218">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-218">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-219">HgsClient</span><span class="sxs-lookup"><span data-stu-id="2cd6f-219">HgsClient</span></span>                          | <span data-ttu-id="2cd6f-220">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-220">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-221">Windows Server 1903 + met Hyper-V of RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="2cd6f-221">Windows Server 1903+ with Hyper-V or RSAT-Shielded-VM-Tools</span></span><br><span data-ttu-id="2cd6f-222">Windows 10 1903 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-222">Windows 10 1903+ with Rsat.Shielded.VM.Tools</span></span> |
+| <span data-ttu-id="2cd6f-223">HgsDiagnostics</span><span class="sxs-lookup"><span data-stu-id="2cd6f-223">HgsDiagnostics</span></span>                     | <span data-ttu-id="2cd6f-224">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-224">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-225">Windows Server 1809 + met Hyper-V of RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="2cd6f-225">Windows Server 1809+ with Hyper-V or RSAT-Shielded-VM-Tools</span></span><br><span data-ttu-id="2cd6f-226">Windows 10 1809 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-226">Windows 10 1809+ with Rsat.Shielded.VM.Tools</span></span> |
+| <span data-ttu-id="2cd6f-227">Hyper-V</span><span class="sxs-lookup"><span data-stu-id="2cd6f-227">Hyper-V</span></span>                            | <span data-ttu-id="2cd6f-228">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-228">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-229">Windows Server 1809 + met Hyper-V-Power shell</span><span class="sxs-lookup"><span data-stu-id="2cd6f-229">Windows Server 1809+ with Hyper-V-PowerShell</span></span><br><span data-ttu-id="2cd6f-230">Windows 10 1809 + met micro soft-Hyper-V-Management-Power shell</span><span class="sxs-lookup"><span data-stu-id="2cd6f-230">Windows 10 1809+ with Microsoft-Hyper-V-Management-PowerShell</span></span> |
+| <span data-ttu-id="2cd6f-231">IISAdministration</span><span class="sxs-lookup"><span data-stu-id="2cd6f-231">IISAdministration</span></span>                  | <span data-ttu-id="2cd6f-232">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-232">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-233">Nederland</span><span class="sxs-lookup"><span data-stu-id="2cd6f-233">International</span></span>                      | <span data-ttu-id="2cd6f-234">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-234">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-235">Windows Server 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-235">Windows Server 1903+</span></span><br><span data-ttu-id="2cd6f-236">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-236">Windows 10 1903+</span></span>      |
+| <span data-ttu-id="2cd6f-237">IpamServer</span><span class="sxs-lookup"><span data-stu-id="2cd6f-237">IpamServer</span></span>                         | <span data-ttu-id="2cd6f-238">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-238">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-239">iSCSI</span><span class="sxs-lookup"><span data-stu-id="2cd6f-239">iSCSI</span></span>                              | <span data-ttu-id="2cd6f-240">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-240">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-241">IscsiTarget</span><span class="sxs-lookup"><span data-stu-id="2cd6f-241">IscsiTarget</span></span>                        | <span data-ttu-id="2cd6f-242">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-242">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-243">ISE</span><span class="sxs-lookup"><span data-stu-id="2cd6f-243">ISE</span></span>                                | <span data-ttu-id="2cd6f-244">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-244">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-245">KDS</span><span class="sxs-lookup"><span data-stu-id="2cd6f-245">Kds</span></span>                                | <span data-ttu-id="2cd6f-246">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-246">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-247">Windows Server-20H1</span><span class="sxs-lookup"><span data-stu-id="2cd6f-247">Windows Server 20H1</span></span><br><span data-ttu-id="2cd6f-248">Windows 10-20H1</span><span class="sxs-lookup"><span data-stu-id="2cd6f-248">Windows 10 20H1</span></span>        |
+| <span data-ttu-id="2cd6f-249">Micro soft. Power shell. Archive</span><span class="sxs-lookup"><span data-stu-id="2cd6f-249">Microsoft.PowerShell.Archive</span></span>       | <span data-ttu-id="2cd6f-250">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-250">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-251">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-251">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-252">Microsoft.PowerShell.Diagnostics</span><span class="sxs-lookup"><span data-stu-id="2cd6f-252">Microsoft.PowerShell.Diagnostics</span></span>   | <span data-ttu-id="2cd6f-253">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-253">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-254">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-254">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-255">Microsoft.PowerShell.Host</span><span class="sxs-lookup"><span data-stu-id="2cd6f-255">Microsoft.PowerShell.Host</span></span>          | <span data-ttu-id="2cd6f-256">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-256">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-257">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-257">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-258">Micro soft. Power shell. LocalAccounts</span><span class="sxs-lookup"><span data-stu-id="2cd6f-258">Microsoft.PowerShell.LocalAccounts</span></span> | <span data-ttu-id="2cd6f-259">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-259">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-260">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-260">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-261">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-261">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-262">Microsoft.PowerShell.Management</span><span class="sxs-lookup"><span data-stu-id="2cd6f-262">Microsoft.PowerShell.Management</span></span>    | <span data-ttu-id="2cd6f-263">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-263">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-264">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-264">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-265">Micro soft. Power shell. ODataUtils</span><span class="sxs-lookup"><span data-stu-id="2cd6f-265">Microsoft.PowerShell.ODataUtils</span></span>    | <span data-ttu-id="2cd6f-266">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-266">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-267">Microsoft.PowerShell.Security</span><span class="sxs-lookup"><span data-stu-id="2cd6f-267">Microsoft.PowerShell.Security</span></span>      | <span data-ttu-id="2cd6f-268">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-268">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-269">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-269">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-270">Microsoft.PowerShell.Utility</span><span class="sxs-lookup"><span data-stu-id="2cd6f-270">Microsoft.PowerShell.Utility</span></span>       | <span data-ttu-id="2cd6f-271">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-271">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-272">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-272">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-273">Microsoft.WSMan.Management</span><span class="sxs-lookup"><span data-stu-id="2cd6f-273">Microsoft.WSMan.Management</span></span>         | <span data-ttu-id="2cd6f-274">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-274">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-275">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-275">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-276">MMAgent</span><span class="sxs-lookup"><span data-stu-id="2cd6f-276">MMAgent</span></span>                            | <span data-ttu-id="2cd6f-277">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-277">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-278">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-278">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-279">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-279">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-280">MPIO</span><span class="sxs-lookup"><span data-stu-id="2cd6f-280">MPIO</span></span>                               | <span data-ttu-id="2cd6f-281">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-281">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-282">Windows Server 1809 + met meerdere paden-IO</span><span class="sxs-lookup"><span data-stu-id="2cd6f-282">Windows Server 1809+ with Multipath-IO</span></span>        |
+| <span data-ttu-id="2cd6f-283">MsDtc</span><span class="sxs-lookup"><span data-stu-id="2cd6f-283">MsDtc</span></span>                              | <span data-ttu-id="2cd6f-284">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-284">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-285">NetAdapter</span><span class="sxs-lookup"><span data-stu-id="2cd6f-285">NetAdapter</span></span>                         | <span data-ttu-id="2cd6f-286">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-286">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-287">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-287">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-288">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-288">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-289">NetConnection</span><span class="sxs-lookup"><span data-stu-id="2cd6f-289">NetConnection</span></span>                      | <span data-ttu-id="2cd6f-290">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-290">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-291">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-291">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-292">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-292">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-293">NetEventPacketCapture</span><span class="sxs-lookup"><span data-stu-id="2cd6f-293">NetEventPacketCapture</span></span>              | <span data-ttu-id="2cd6f-294">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-294">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-295">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-295">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-296">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-296">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-297">NetLbfo</span><span class="sxs-lookup"><span data-stu-id="2cd6f-297">NetLbfo</span></span>                            | <span data-ttu-id="2cd6f-298">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-298">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-299">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-299">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-300">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-300">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-301">NetLldpAgent</span><span class="sxs-lookup"><span data-stu-id="2cd6f-301">NetLldpAgent</span></span>                       | <span data-ttu-id="2cd6f-302">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-302">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-303">NetNat</span><span class="sxs-lookup"><span data-stu-id="2cd6f-303">NetNat</span></span>                             | <span data-ttu-id="2cd6f-304">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-304">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-305">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-305">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-306">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-306">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-307">NetQos</span><span class="sxs-lookup"><span data-stu-id="2cd6f-307">NetQos</span></span>                             | <span data-ttu-id="2cd6f-308">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-308">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-309">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-309">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-310">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-310">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-311">Netbeveiliging</span><span class="sxs-lookup"><span data-stu-id="2cd6f-311">NetSecurity</span></span>                        | <span data-ttu-id="2cd6f-312">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-312">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-313">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-313">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-314">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-314">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-315">NetSwitchTeam</span><span class="sxs-lookup"><span data-stu-id="2cd6f-315">NetSwitchTeam</span></span>                      | <span data-ttu-id="2cd6f-316">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-316">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-317">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-317">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-318">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-318">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-319">NetTCPIP</span><span class="sxs-lookup"><span data-stu-id="2cd6f-319">NetTCPIP</span></span>                           | <span data-ttu-id="2cd6f-320">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-320">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-321">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-321">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-322">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-322">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-323">NetWNV</span><span class="sxs-lookup"><span data-stu-id="2cd6f-323">NetWNV</span></span>                             | <span data-ttu-id="2cd6f-324">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-324">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-325">NetworkConnectivityStatus</span><span class="sxs-lookup"><span data-stu-id="2cd6f-325">NetworkConnectivityStatus</span></span>          | <span data-ttu-id="2cd6f-326">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-326">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-327">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-327">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-328">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-328">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-329">Network controller</span><span class="sxs-lookup"><span data-stu-id="2cd6f-329">NetworkController</span></span>                  | <span data-ttu-id="2cd6f-330">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-330">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-331">NetworkControllerDiagnostics</span><span class="sxs-lookup"><span data-stu-id="2cd6f-331">NetworkControllerDiagnostics</span></span>       | <span data-ttu-id="2cd6f-332">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-332">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-333">NetworkLoadBalancingClusters</span><span class="sxs-lookup"><span data-stu-id="2cd6f-333">NetworkLoadBalancingClusters</span></span>       | <span data-ttu-id="2cd6f-334">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-334">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-335">NetworkSwitchManager</span><span class="sxs-lookup"><span data-stu-id="2cd6f-335">NetworkSwitchManager</span></span>               | <span data-ttu-id="2cd6f-336">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-336">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-337">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-337">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-338">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-338">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-339">NetworkTransition</span><span class="sxs-lookup"><span data-stu-id="2cd6f-339">NetworkTransition</span></span>                  | <span data-ttu-id="2cd6f-340">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-340">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-341">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-341">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-342">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-342">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-343">NFS</span><span class="sxs-lookup"><span data-stu-id="2cd6f-343">NFS</span></span>                                | <span data-ttu-id="2cd6f-344">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-344">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-345">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-345">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-346">Windows 10 1809 + met RSAT. Server Manager. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-346">Windows 10 1809+ with Rsat.ServerManager.Tools</span></span> |
+| <span data-ttu-id="2cd6f-347">Package Management</span><span class="sxs-lookup"><span data-stu-id="2cd6f-347">PackageManagement</span></span>                  | <span data-ttu-id="2cd6f-348">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-348">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-349">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-349">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-350">PcsvDevice</span><span class="sxs-lookup"><span data-stu-id="2cd6f-350">PcsvDevice</span></span>                         | <span data-ttu-id="2cd6f-351">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-351">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-352">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-352">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-353">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-353">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-354">PersistentMemory</span><span class="sxs-lookup"><span data-stu-id="2cd6f-354">PersistentMemory</span></span>                   | <span data-ttu-id="2cd6f-355">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-355">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-356">PKI</span><span class="sxs-lookup"><span data-stu-id="2cd6f-356">PKI</span></span>                                | <span data-ttu-id="2cd6f-357">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-357">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-358">PnpDevice</span><span class="sxs-lookup"><span data-stu-id="2cd6f-358">PnpDevice</span></span>                          | <span data-ttu-id="2cd6f-359">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-359">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-360">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-360">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-361">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-361">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-362">PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="2cd6f-362">PowerShellGet</span></span>                      | <span data-ttu-id="2cd6f-363">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-363">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-364">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-364">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-365">PrintManagement</span><span class="sxs-lookup"><span data-stu-id="2cd6f-365">PrintManagement</span></span>                    | <span data-ttu-id="2cd6f-366">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-366">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-367">Windows Server 1903 + met Afdruk Services</span><span class="sxs-lookup"><span data-stu-id="2cd6f-367">Windows Server 1903+ with Print-Services</span></span><br><span data-ttu-id="2cd6f-368">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-368">Windows 10 1903+</span></span>  |
+| <span data-ttu-id="2cd6f-369">ProcessMitigations</span><span class="sxs-lookup"><span data-stu-id="2cd6f-369">ProcessMitigations</span></span>                 | <span data-ttu-id="2cd6f-370">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-370">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-371">Windows Server 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-371">Windows Server 1903+</span></span><br><span data-ttu-id="2cd6f-372">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-372">Windows 10 1903+</span></span>      |
+| <span data-ttu-id="2cd6f-373">Inrichten</span><span class="sxs-lookup"><span data-stu-id="2cd6f-373">Provisioning</span></span>                       | <span data-ttu-id="2cd6f-374">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-374">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-375">PSDesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="2cd6f-375">PSDesiredStateConfiguration</span></span>        | <span data-ttu-id="2cd6f-376">Gedeeltelijk</span><span class="sxs-lookup"><span data-stu-id="2cd6f-376">Partially</span></span>                            | <span data-ttu-id="2cd6f-377">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-377">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-378">PSDiagnostics</span><span class="sxs-lookup"><span data-stu-id="2cd6f-378">PSDiagnostics</span></span>                      | <span data-ttu-id="2cd6f-379">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-379">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-380">Ingebouwd in Power shell 7</span><span class="sxs-lookup"><span data-stu-id="2cd6f-380">Built into PowerShell 7</span></span>                       |
+| <span data-ttu-id="2cd6f-381">PSScheduledJob</span><span class="sxs-lookup"><span data-stu-id="2cd6f-381">PSScheduledJob</span></span>                     | <span data-ttu-id="2cd6f-382">Niet werken met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-382">Not working with Compatibility Layer</span></span> | <span data-ttu-id="2cd6f-383">Ingebouwd in Power shell 5,1</span><span class="sxs-lookup"><span data-stu-id="2cd6f-383">Built into PowerShell 5.1</span></span>                     |
+| <span data-ttu-id="2cd6f-384">PSWorkflow</span><span class="sxs-lookup"><span data-stu-id="2cd6f-384">PSWorkflow</span></span>                         | <span data-ttu-id="2cd6f-385">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-385">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-386">PSWorkflowUtility</span><span class="sxs-lookup"><span data-stu-id="2cd6f-386">PSWorkflowUtility</span></span>                  | <span data-ttu-id="2cd6f-387">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-387">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-388">Remote</span><span class="sxs-lookup"><span data-stu-id="2cd6f-388">RemoteAccess</span></span>                       | <span data-ttu-id="2cd6f-389">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-389">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-390">RemoteDesktop</span><span class="sxs-lookup"><span data-stu-id="2cd6f-390">RemoteDesktop</span></span>                      | <span data-ttu-id="2cd6f-391">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-391">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-392">ScheduledTasks</span><span class="sxs-lookup"><span data-stu-id="2cd6f-392">ScheduledTasks</span></span>                     | <span data-ttu-id="2cd6f-393">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-393">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-394">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-394">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-395">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-395">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-396">SecureBoot</span><span class="sxs-lookup"><span data-stu-id="2cd6f-396">SecureBoot</span></span>                         | <span data-ttu-id="2cd6f-397">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-397">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-398">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-398">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-399">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-399">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-400">ServerCore</span><span class="sxs-lookup"><span data-stu-id="2cd6f-400">ServerCore</span></span>                         | <span data-ttu-id="2cd6f-401">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-401">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-402">Manager</span><span class="sxs-lookup"><span data-stu-id="2cd6f-402">ServerManager</span></span>                      | <span data-ttu-id="2cd6f-403">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-403">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-404">ServerManagerTasks</span><span class="sxs-lookup"><span data-stu-id="2cd6f-404">ServerManagerTasks</span></span>                 | <span data-ttu-id="2cd6f-405">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-405">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-406">ShieldedVMDataFile</span><span class="sxs-lookup"><span data-stu-id="2cd6f-406">ShieldedVMDataFile</span></span>                 | <span data-ttu-id="2cd6f-407">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-407">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-408">Windows Server 1903 + met RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="2cd6f-408">Windows Server 1903+ with RSAT-Shielded-VM-Tools</span></span><br><span data-ttu-id="2cd6f-409">Windows 10 1903 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-409">Windows 10 1903+ with Rsat.Shielded.VM.Tools</span></span> |
+| <span data-ttu-id="2cd6f-410">ShieldedVMProvisioning</span><span class="sxs-lookup"><span data-stu-id="2cd6f-410">ShieldedVMProvisioning</span></span>             | <span data-ttu-id="2cd6f-411">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-411">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-412">Windows Server 1809 + met HostGuardian</span><span class="sxs-lookup"><span data-stu-id="2cd6f-412">Windows Server 1809+ with HostGuardian</span></span><br><span data-ttu-id="2cd6f-413">Windows 10 1809 + met HostGuardian</span><span class="sxs-lookup"><span data-stu-id="2cd6f-413">Windows 10 1809+ with HostGuardian</span></span>  |
+| <span data-ttu-id="2cd6f-414">ShieldedVMTemplate</span><span class="sxs-lookup"><span data-stu-id="2cd6f-414">ShieldedVMTemplate</span></span>                 | <span data-ttu-id="2cd6f-415">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-415">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-416">Windows Server 1809 + met RSAT-afgeschermde-VM-Hulpprogram Ma's</span><span class="sxs-lookup"><span data-stu-id="2cd6f-416">Windows Server 1809+ with RSAT-Shielded-VM-Tools</span></span><br><span data-ttu-id="2cd6f-417">Windows 10 1809 + met RSAT. afgeschermde. VM. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-417">Windows 10 1809+ with Rsat.Shielded.VM.Tools</span></span> |
+| <span data-ttu-id="2cd6f-418">SmbShare</span><span class="sxs-lookup"><span data-stu-id="2cd6f-418">SmbShare</span></span>                           | <span data-ttu-id="2cd6f-419">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-419">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-420">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-420">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-421">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-421">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-422">SmbWitness</span><span class="sxs-lookup"><span data-stu-id="2cd6f-422">SmbWitness</span></span>                         | <span data-ttu-id="2cd6f-423">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-423">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-424">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-424">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-425">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-425">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-426">SMISConfig</span><span class="sxs-lookup"><span data-stu-id="2cd6f-426">SMISConfig</span></span>                         | <span data-ttu-id="2cd6f-427">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-427">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-428">Windows Server 1903 + met WindowsStorageManagementService</span><span class="sxs-lookup"><span data-stu-id="2cd6f-428">Windows Server 1903+ with WindowsStorageManagementService</span></span> |
+| <span data-ttu-id="2cd6f-429">Sms</span><span class="sxs-lookup"><span data-stu-id="2cd6f-429">SMS</span></span>                                | <span data-ttu-id="2cd6f-430">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-430">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-431">SoftwareInventoryLogging</span><span class="sxs-lookup"><span data-stu-id="2cd6f-431">SoftwareInventoryLogging</span></span>           | <span data-ttu-id="2cd6f-432">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-432">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-433">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-433">Windows Server 1809+</span></span>                          |
+| <span data-ttu-id="2cd6f-434">StartLayout</span><span class="sxs-lookup"><span data-stu-id="2cd6f-434">StartLayout</span></span>                        | <span data-ttu-id="2cd6f-435">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-435">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-436">Windows Server 1809 + met bureaublad ervaring</span><span class="sxs-lookup"><span data-stu-id="2cd6f-436">Windows Server 1809+ with Desktop Experience</span></span><br><span data-ttu-id="2cd6f-437">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-437">Windows 10 1809+</span></span> |
+| <span data-ttu-id="2cd6f-438">Opslag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-438">Storage</span></span>                            | <span data-ttu-id="2cd6f-439">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-439">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-440">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-440">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-441">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-441">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-442">StorageBusCache</span><span class="sxs-lookup"><span data-stu-id="2cd6f-442">StorageBusCache</span></span>                    | <span data-ttu-id="2cd6f-443">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-443">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-444">StorageMigrationService</span><span class="sxs-lookup"><span data-stu-id="2cd6f-444">StorageMigrationService</span></span>            | <span data-ttu-id="2cd6f-445">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-445">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-446">StorageQOS</span><span class="sxs-lookup"><span data-stu-id="2cd6f-446">StorageQOS</span></span>                         | <span data-ttu-id="2cd6f-447">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-447">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-448">Windows Server 1809 + met RSAT-clustering-Power shell</span><span class="sxs-lookup"><span data-stu-id="2cd6f-448">Windows Server 1809+ with RSAT-Clustering-PowerShell</span></span><br><span data-ttu-id="2cd6f-449">Windows 10 1809 + met RSAT. FailoverCluster. Management. tools</span><span class="sxs-lookup"><span data-stu-id="2cd6f-449">Windows 10 1809+ with Rsat.FailoverCluster.Management.Tools</span></span> |
+| <span data-ttu-id="2cd6f-450">Storage replica</span><span class="sxs-lookup"><span data-stu-id="2cd6f-450">StorageReplica</span></span>                     | <span data-ttu-id="2cd6f-451">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-451">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-452">SyncShare</span><span class="sxs-lookup"><span data-stu-id="2cd6f-452">SyncShare</span></span>                          | <span data-ttu-id="2cd6f-453">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-453">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-454">Windows Server 1809 + met FS-SyncShareService</span><span class="sxs-lookup"><span data-stu-id="2cd6f-454">Windows Server 1809+ with FS-SyncShareService</span></span> |
+| <span data-ttu-id="2cd6f-455">SystemInsights</span><span class="sxs-lookup"><span data-stu-id="2cd6f-455">SystemInsights</span></span>                     | <span data-ttu-id="2cd6f-456">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-456">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-457">TLS</span><span class="sxs-lookup"><span data-stu-id="2cd6f-457">TLS</span></span>                                | <span data-ttu-id="2cd6f-458">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-458">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-459">TroubleshootingPack</span><span class="sxs-lookup"><span data-stu-id="2cd6f-459">TroubleshootingPack</span></span>                | <span data-ttu-id="2cd6f-460">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-460">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-461">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-461">Windows 10 1903+</span></span>                              |
+| <span data-ttu-id="2cd6f-462">TrustedPlatformModule</span><span class="sxs-lookup"><span data-stu-id="2cd6f-462">TrustedPlatformModule</span></span>              | <span data-ttu-id="2cd6f-463">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-463">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-464">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-464">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-465">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-465">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-466">UEV</span><span class="sxs-lookup"><span data-stu-id="2cd6f-466">UEV</span></span>                                | <span data-ttu-id="2cd6f-467">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-467">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-468">Windows Server? Toekomstige versie van server met bureaublad ervaring?</span><span class="sxs-lookup"><span data-stu-id="2cd6f-468">Windows Server ??Future version of Server with Desktop Experience??</span></span><br><span data-ttu-id="2cd6f-469">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-469">Windows 10 1903+</span></span> |
+| <span data-ttu-id="2cd6f-470">Installeer WindowsFeature</span><span class="sxs-lookup"><span data-stu-id="2cd6f-470">UpdateServices</span></span>                     | <span data-ttu-id="2cd6f-471">Niet werken met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-471">Not working with Compatibility Layer</span></span> |                                               |
+| <span data-ttu-id="2cd6f-472">VpnClient</span><span class="sxs-lookup"><span data-stu-id="2cd6f-472">VpnClient</span></span>                          | <span data-ttu-id="2cd6f-473">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-473">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-474">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-474">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-475">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-475">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-476">Wdac</span><span class="sxs-lookup"><span data-stu-id="2cd6f-476">Wdac</span></span>                               | <span data-ttu-id="2cd6f-477">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-477">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-478">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-478">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-479">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-479">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-480">Webbeheer</span><span class="sxs-lookup"><span data-stu-id="2cd6f-480">WebAdministration</span></span>                  | <span data-ttu-id="2cd6f-481">Niet getest met compatibiliteit slaag</span><span class="sxs-lookup"><span data-stu-id="2cd6f-481">Untested with Compatibility Layer</span></span>    |                                               |
+| <span data-ttu-id="2cd6f-482">WHEA</span><span class="sxs-lookup"><span data-stu-id="2cd6f-482">WHEA</span></span>                               | <span data-ttu-id="2cd6f-483">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-483">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-484">Windows Server 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-484">Windows Server 1903+</span></span><br><span data-ttu-id="2cd6f-485">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-485">Windows 10 1903+</span></span>      |
+| <span data-ttu-id="2cd6f-486">WindowsDeveloperLicense</span><span class="sxs-lookup"><span data-stu-id="2cd6f-486">WindowsDeveloperLicense</span></span>            | <span data-ttu-id="2cd6f-487">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-487">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-488">Windows Server 1809 + met bureaublad ervaring</span><span class="sxs-lookup"><span data-stu-id="2cd6f-488">Windows Server 1809+ with Desktop Experience</span></span><br><span data-ttu-id="2cd6f-489">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-489">Windows 10 1809+</span></span> |
+| <span data-ttu-id="2cd6f-490">WindowsErrorReporting</span><span class="sxs-lookup"><span data-stu-id="2cd6f-490">WindowsErrorReporting</span></span>              | <span data-ttu-id="2cd6f-491">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-491">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-492">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-492">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-493">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-493">Windows 10 1809+</span></span>      |
+| <span data-ttu-id="2cd6f-494">WindowsSearch</span><span class="sxs-lookup"><span data-stu-id="2cd6f-494">WindowsSearch</span></span>                      | <span data-ttu-id="2cd6f-495">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-495">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-496">Windows 10 1903 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-496">Windows 10 1903+</span></span>                              |
+| <span data-ttu-id="2cd6f-497">WindowsServerBackup</span><span class="sxs-lookup"><span data-stu-id="2cd6f-497">WindowsServerBackup</span></span>                | <span data-ttu-id="2cd6f-498">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-498">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-499">Windows Server-19H2 met Windows-Server-Backup</span><span class="sxs-lookup"><span data-stu-id="2cd6f-499">Windows Server 19H2 with Windows-Server-Backup</span></span> |
+| <span data-ttu-id="2cd6f-500">WindowsUpdate</span><span class="sxs-lookup"><span data-stu-id="2cd6f-500">WindowsUpdate</span></span>                      | <span data-ttu-id="2cd6f-501">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-501">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-502">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-502">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-503">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-503">Windows 10 1809+</span></span>       |
+| <span data-ttu-id="2cd6f-504">WindowsUpdateProvider</span><span class="sxs-lookup"><span data-stu-id="2cd6f-504">WindowsUpdateProvider</span></span>              | <span data-ttu-id="2cd6f-505">Systeem eigen compatibel</span><span class="sxs-lookup"><span data-stu-id="2cd6f-505">Natively Compatible</span></span>                  | <span data-ttu-id="2cd6f-506">Windows Server 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-506">Windows Server 1809+</span></span><br><span data-ttu-id="2cd6f-507">Windows 10 1809 +</span><span class="sxs-lookup"><span data-stu-id="2cd6f-507">Windows 10 1809+</span></span>       |
