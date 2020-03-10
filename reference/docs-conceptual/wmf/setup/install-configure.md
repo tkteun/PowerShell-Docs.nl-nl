@@ -5,11 +5,11 @@ keywords: wmf,powershell,installeren
 contributor: keithb
 title: WMF 5.1 installeren en configureren
 ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71145094"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404808"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5,1 installeren en configureren
 
@@ -23,18 +23,18 @@ Down load het WMF 5,1-pakket voor het besturings systeem en de architectuur waar
 
 | Besturingssysteem       | Vereisten           | Pakket koppelingen                          |
 |------------------------|-------------------------|----------------------------------------|
-| Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
-| Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
-| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
+| Windows Server 2012 R2 |                         | [Win 8.1 AndW2K12R2-KB3191564-x64. MSU][] |
+| Windows Server 2012    |                         | [W2K12-KB3191565-x64. MSU][]            |
+| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64. ZIP][]    |
+| Windows 8.1            |                         | **x64:** [win 8.1 andw2k12r2-kb3191564-x64. MSU][]</br>**x86:** [win 8.1-kb3191564-x86. MSU][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64. zip][]</br>**x86:** [Win7-KB3191566-x86. zip][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
-[W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
-[Win7-KB3191566-x86.ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
-[Win7AndW2K8R2-KB3191566-x64.ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
-[Win8.1-KB3191564-x86.msu]: https://go.microsoft.com/fwlink/?linkid=839521
-[Win8.1AndW2K12R2-KB3191564-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839516
+[W2K12-KB3191565-x64. MSU]: https://go.microsoft.com/fwlink/?linkid=839513
+[Win7-KB3191566-x86. ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
+[Win7AndW2K8R2-KB3191566-x64. ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
+[Win 8.1-KB3191564-x86. MSU]: https://go.microsoft.com/fwlink/?linkid=839521
+[Win 8.1 AndW2K12R2-KB3191564-x64. MSU]: https://go.microsoft.com/fwlink/?linkid=839516
 
 - De preview-versie van WMF 5,1 moet worden verwijderd voordat u WMF 5,1 RTM installeert.
 - WMF 5,1 kan rechtstreeks via WMF 5,0 of WMF 4,0 worden geïnstalleerd.

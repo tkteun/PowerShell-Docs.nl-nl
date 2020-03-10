@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Opmerkingen bij de WMF 5.x-release
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416499"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404804"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
 
@@ -45,12 +45,12 @@ WMF 5,1 bevat de onderdelen van Power shell, WMI, WinRM en Software Inventory lo
 > [!IMPORTANT]
 > Voordat u WMF 5,1 installeert op Windows Server 2008 of Windows 7, controleert u of WMF 3,0 niet is geïnstalleerd. Zie voor meer informatie [WMF 5,1-vereisten voor Windows Server 2008 R2 SP1 en Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
-## <a name="powershell-editions"></a>PowerShell-edities
+## <a name="powershell-editions"></a>Power shell-edities
 
 Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin verschillende functie sets en platform compatibiliteit worden aangegeven.
 
-- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
-- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
+- **Desktop Edition:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een volledige footprint, zoals Server Core en Windows Desktop.
+- **Core-editie:** Gebaseerd op .NET core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een verminderde footprint, zoals nano server en Windows IoT.
 
 ### <a name="learn-more-about-using-powershell-editions"></a>Meer informatie over het gebruik van Power shell-edities
 

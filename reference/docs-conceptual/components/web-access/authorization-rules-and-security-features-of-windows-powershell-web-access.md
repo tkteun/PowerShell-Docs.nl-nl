@@ -3,17 +3,17 @@ ms.date: 06/27/2017
 keywords: Power shell, cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058417"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405231"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
 Bijgewerkt: 24 juni 2013
 
-Van toepassing op: Windows Server 2012 R2, WindowsServer 2012
+Van toepassing op: Windows Server 2012 R2, Windows Server 2012
 
 Windows Power shell Web Access in Windows Server 2012 R2 en Windows Server 2012 heeft een beperkt beveiligings model. Gebruikers moeten uitdrukkelijk toegang worden verleend voordat ze zich kunnen aanmelden bij de gateway voor Windows Power shell-webtoegang en de Windows Power shell-console van het web gebruiken.
 
@@ -83,7 +83,7 @@ De laatste laag van beveiliging voor Windows Power shell-webtoegang is de eigen 
 
 Deze laag biedt dezelfde beveiligings mechanismen die Verbindings pogingen evalueren als gebruikers proberen een externe Windows Power shell-sessie te maken met een doel computer vanuit Windows Power shell door de [Enter-PSSession-](/powershell/module/microsoft.powershell.core/Enter-PSSession) of [New-PSSession-](/powershell/module/microsoft.powershell.core/new-pssession) cmdlets uit te voeren.
 
-Windows Power shell Web Access maakt standaard gebruik van de primaire gebruikers naam en het wacht woord voor verificatie op de gateway en de doel computer. De webgebaseerde aanmeldings pagina, in een sectie met de naam **optionele Verbindings instellingen**, biedt gebruikers de mogelijkheid om andere referenties op te geven voor de doel computer, indien nodig. Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
+Windows Power shell Web Access maakt standaard gebruik van de primaire gebruikers naam en het wacht woord voor verificatie op de gateway en de doel computer. De aanmeldingswebpagina biedt gebruikers de mogelijkheid zo nodig andere referenties voor de doelcomputer op te geven in een gedeelte genaamd **Optionele verbindingsinstellingen**. Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
 
 Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie. U kunt _beperkte runspaces_ of sessie configuraties voor Windows Power shell-Internet toegang maken en specifieke gebruikers toestaan alleen verbinding te maken met specifieke sessie configuraties wanneer ze zich aanmelden bij Windows Power shell-webtoegang. U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en de toegang tot het eindpunt voor specifieke gebruikers verder beperken met behulp van de autorisatieregels die in dit gedeelte worden beschreven. Zie [een beperkte runs Pace maken](https://msdn.microsoft.com/library/dn614668)voor meer informatie over runspaces.
 
@@ -100,11 +100,11 @@ Windows Power shell Web Access-cmdlets ondersteunen één Joker teken, een aster
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>Een beperkende autorisatieregel toevoegen
 
-1. Doe het volgende om een Windows PowerShell-sessie met verhoogde gebruikersrechten te openen.
+1. Voer een van de volgende handelingen uit om een Windows Power shell-sessie met verhoogde gebruikers rechten te openen.
 
-   - Het Windows-bureaublad met de rechtermuisknop op **Windows PowerShell** op de taakbalk en klik vervolgens op **als Administrator uitvoeren**.
+   - Klik op het Windows-bureau blad met de rechter muisknop op **Windows Power shell** op de taak balk en klik vervolgens op **als administrator uitvoeren**.
 
-   - Klik op het Windows- **Start** scherm met de rechter muisknop op **Windows Power shell**en klik vervolgens op **als administrator uitvoeren**.
+   - Klik in het **startscherm** van Windows met de rechtermuisknop op **Windows PowerShell** en klik vervolgens op **Als administrator uitvoeren**.
 
 2. **Optionele stap** Voor het beperken van gebruikers toegang met behulp van sessie configuraties:
 
@@ -127,13 +127,13 @@ Windows Power shell Web Access-cmdlets ondersteunen één Joker teken, een aster
    ```
 
 4. Controleer of de regel is gemaakt door de cmdlet **Get-PswaAuthorizationRule** of `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>`uit te voeren.
-   Voorbeeld: `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
+   Bijvoorbeeld `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
 
 #### <a name="to-remove-an-authorization-rule"></a>Een autorisatieregel verwijderen
 
 1. Als er nog geen Windows Power shell-sessie is geopend, raadpleegt u stap 1 van [om een beperkende autorisatie regel toe te voegen](#to-add-a-restrictive-authorization-rule) in deze sectie.
 
-2. Typ het volgende en druk vervolgens op **Enter**, waarbij de *regel-id* staat voor het unieke id-nummer van de regel die u wilt verwijderen.
+2. Typ het volgende en druk vervolgens op **Enter**, waarbij *rule ID* staat voor de unieke id van de regel die u wilt verwijderen.
 
    ```
    Remove-PswaAuthorizationRule -ID <rule ID>
@@ -147,38 +147,38 @@ Windows Power shell Web Access-cmdlets ondersteunen één Joker teken, een aster
    ```
 
 > [!NOTE]
-> U wordt niet gevraagd om te bevestigen of u de opgegeven autorisatie regel wilt verwijderen. de regel wordt verwijderd wanneer u op **Enter**drukt. Wees er zeker van dat u de autorisatieregel wilt verwijderen voordat u de cmdlet `Remove-PswaAuthorizationRule` uitvoert.
+> U wordt niet gevraagd te bevestigen of u de opgegeven autorisatieregel wilt verwijderen. De regel wordt verwijderd wanneer u op **Enter** drukt. Wees er zeker van dat u de autorisatieregel wilt verwijderen voordat u de cmdlet `Remove-PswaAuthorizationRule` uitvoert.
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Andere voorbeeldscenario’s met autorisatieregels
 
 Elke Windows Power shell-sessie maakt gebruik van een sessie configuratie. Als er geen is opgegeven voor een sessie, gebruikt Windows Power shell de standaard ingebouwde Windows Power shell-sessie configuratie met de naam micro soft. Power shell. De standaardsessieconfiguratie bevat alle cmdlets die beschikbaar zijn op een computer. Beheerders kunnen de toegang tot alle computers beperken door een sessieconfiguratie met een beperkte runspace (een beperkt aantal cmdlets en taken die eindgebruikers kunnen uitvoeren) te definiëren. Een gebruiker die toegang tot één computer met volledige taal toegang of alleen de Windows Power shell-cmdlets voor extern beheer heeft gekregen, kan verbinding maken met andere computers die zijn verbonden met de eerste computer. Het definiëren van een beperkte runs Pace kan verhinderen dat gebruikers toegang hebben tot andere computers vanaf hun toegestane Windows Power shell-runs Pace en verbetert de beveiliging van uw Windows Power shell-webtoegang. De sessie configuratie kan worden gedistribueerd (met behulp van groepsbeleid) naar alle computers die beheerders toegankelijk willen maken via Windows Power shell-webtoegang. Zie [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)voor meer informatie over sessie configuraties. Hier volgen enkele voorbeelden van dit scenario.
 
-- Een beheerder maakt een eind punt met de naam **pswaeindpunt**, met een beperkte runs Pace. Vervolgens maakt de beheerder een regel, `*,*,PswaEndpoint`en distribueert het eind punt naar andere computers. Met de regel kunnen alle gebruikers toegang krijgen tot alle computers met het eind punt **pswaeindpunt**.
+- Een beheerder maakt een eindpunt met de naam **PswaEindpunt**, met een beperkte runspace. Vervolgens maakt de beheerder een regel, `*,*,PswaEndpoint`en distribueert het eind punt naar andere computers. Deze regel verleent alle gebruikers toegang tot alle computers met het eindpunt **PswaEindpunt**.
   Als dit de enige autorisatieregel is die is gedefinieerd in de regelset, zijn computers zonder dat eindpunt niet toegankelijk.
 
-- De beheerder heeft een eind punt met een beperkte runs Pace met de naam **pswaeindpunt**gemaakt en wil de toegang tot specifieke gebruikers beperken. De beheerder maakt een groep gebruikers met de naam **niveau1ondersteuning**en definieert de volgende regel: **niveau1ondersteuning,\*, pswaeindpunt**. De regel verleent alle gebruikers in de groep **niveau1ondersteuning** toegang tot alle computers met de **pswaeindpunt** -configuratie. Op vergelijkbare wijze kan de toegang worden beperkt tot een specifieke set computers.
+- De beheerder heeft een eindpunt met een beperkte runspace genaamd **PswaEindpunt** gemaakt en wil de toegang beperken tot specifieke gebruikers. De beheerder maakt een groep gebruikers met de naam **niveau1ondersteuning**en definieert de volgende regel: **niveau1ondersteuning,\*, pswaeindpunt**. Deze regel verleent alle gebruikers in de groep **Niveau1Ondersteuning** toegang tot alle computers met de configuratie **PswaEindpunt**. Op vergelijkbare wijze kan de toegang worden beperkt tot een specifieke set computers.
 
-- Sommige beheerders bieden bepaalde gebruikers uitgebreidere toegang dan andere. Een beheerder maakt bijvoorbeeld twee gebruikers groepen, **beheerders** en **basis ondersteuning**. De beheerder maakt ook een eind punt met een beperkte runs Pace met de naam **pswaeindpunt**en definieert de volgende twee regels: **beheerders,\*,\*** en **basis ondersteuning,\*, pswaeindpunt**. De eerste regel biedt alle gebruikers in de **beheerders** groep toegang tot alle computers en de tweede regel biedt alle gebruikers in de groep **basis ondersteuning** alleen toegang tot deze computers met **pswaeindpunt**.
+- Sommige beheerders bieden bepaalde gebruikers uitgebreidere toegang dan andere. Een beheerder maakt bijvoorbeeld twee gebruikersgroepen, **Beheerders** en **Basisondersteuning**. De beheerder maakt ook een eind punt met een beperkte runs Pace met de naam **pswaeindpunt**en definieert de volgende twee regels: **beheerders,\*,\*** en **basis ondersteuning,\*, pswaeindpunt**. De eerste regel biedt alle gebruikers in de groep **Beheerders** toegang tot alle computers en de tweede regel biedt alle gebruikers in de groep **Basisondersteuning** alleen toegang tot computers met **PswaEindpunt**.
 
 - Een beheerder heeft een besloten testomgeving ingesteld en wil alle geautoriseerde netwerkgebruikers toegang geven tot alle computers in het netwerk waartoe ze gewoonlijk toegang hebben, met toegang tot alle sessieconfiguraties waartoe ze gewoonlijk toegang hebben. Omdat dit een besloten testomgeving is, maakt de beheerder een autorisatieregel die niet veilig is. -De beheerder voert de cmdlet uit `Add-PswaAuthorizationRule * * *`, die gebruikmaakt van het Joker teken **\*** om alle gebruikers, alle computers en alle configuraties weer te geven. -Deze regel is het equivalent van het volgende: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   > [!NOTE]
   > Deze regel wordt niet aanbevolen in een beveiligde omgeving en omzeilt de beveiligingslaag van de autorisatie regel van Windows Power shell-webtoegang.
 
-- Een beheerder moet gebruikers toestaan verbinding te maken met doelcomputers in een omgeving met zowel werkgroepen als domeinen, waarbij werkgroepcomputers af en toe worden gebruikt om verbinding te maken met doelcomputers in domeinen en computers in domeinen af en toe worden gebruikt om verbinding te maken met doelcomputers in werkgroepen. De beheerder heeft een gateway server, *PswaServer*, in een werk groep. en de *SRV1.contoso.com* van de doel computer bevindt zich in een domein. Gebruiker *Chris* is een geautoriseerde lokale gebruiker op de gateway server van de werk groep en de doel computer. De gebruikers naam op de werkgroepserver is *chrisLocal*. en zijn gebruikers naam op de doel computer is *contoso\\Chris*. De beheerder verleent Chris toegang tot srv1.contoso.com door de volgende regel toe te voegen.
+- Een beheerder moet gebruikers toestaan verbinding te maken met doelcomputers in een omgeving met zowel werkgroepen als domeinen, waarbij werkgroepcomputers af en toe worden gebruikt om verbinding te maken met doelcomputers in domeinen en computers in domeinen af en toe worden gebruikt om verbinding te maken met doelcomputers in werkgroepen. De beheerder heeft een gatewayserver, *PswaServer*, in een werkgroep en de doelcomputer *srv1.contoso.com* bevindt zich in een domein. De gebruiker *Chris* is een geautoriseerde lokale gebruiker op zowel de gatewayserver van de werkgroep als de doelcomputer. De gebruikers naam op de werkgroepserver is *chrisLocal*. en zijn gebruikers naam op de doel computer is *contoso\\Chris*. De beheerder verleent Chris toegang tot srv1.contoso.com door de volgende regel toe te voegen.
 
 ```powershell
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
    -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-Het voor beeld van de voor gaande regel verifieert Chris op de gateway server en autoriseert zijn toegang tot *SRV1*. Op de aanmeldings pagina moet Chris een tweede set referenties opgeven in het gedeelte **optionele Verbindings instellingen** (*Contoso\\Chris*). De gateway server gebruikt de extra set referenties om hem te verifiëren op de doel computer, *SRV1.contoso.com*.
+In het vorige regelvoorbeeld wordt voor Chris verificatie uitgevoerd op de gatewayserver waarna zijn toegang tot *srv1* wordt geautoriseerd. Op de aanmeldings pagina moet Chris een tweede set referenties opgeven in het gedeelte **optionele Verbindings instellingen** (*Contoso\\Chris*). De gatewayserver gebruikt de aanvullende set referenties om hem te verifiëren op de doelcomputer, *srv1.contoso.com*.
 
 In het voor gaande scenario maakt Windows Power shell-webtoegang pas een geslaagde verbinding met de doel computer nadat het volgende is geslaagd en is toegestaan door ten minste één autorisatie regel.
 
 1. Verificatie op de gateway server van de werk groep door een gebruikers naam in de indeling *server_name*\\*user_name* aan de autorisatie regel toe te voegen
 
-2. Verificatie op de doel computer met behulp van alternatieve referenties op de aanmeldings pagina in het gedeelte **optionele Verbindings instellingen**
+2. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de aanmeldingspagina in het gedeelte **Optionele verbindingsinstellingen**
 
    > [!NOTE]
    > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows Power shell Web Access Authorization Rule-cmdlets. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie [domeinen en forest-vertrouwens relaties maken](https://technet.microsoft.com/library/cc794775.aspx)voor meer informatie over het configureren van een vertrouwens relatie tussen verschillende domeinen.
@@ -188,7 +188,7 @@ In het voor gaande scenario maakt Windows Power shell-webtoegang pas een geslaag
 
 Autorisatieregels worden opgeslagen in een XML-bestand. De naam van het pad van het XML-bestand is standaard `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Het pad naar het XML-bestand met autorisatie regels wordt opgeslagen in het bestand **powwa. config** , dat zich in `$env:windir\Web\PowershellWebAccess\data`bevindt. De beheerder heeft de flexibiliteit om de verwijzing naar het standaardpad in **powwa. config** aan te passen aan de voor keuren of vereisten. Door de beheerder in staat te stellen de locatie van het bestand te wijzigen, kunnen meerdere Windows Power shell-Web Access-gateways dezelfde autorisatie regels gebruiken als een dergelijke configuratie gewenst is.
+Het pad naar het XML-bestand met autorisatie regels wordt opgeslagen in het bestand **powwa. config** , dat zich in `$env:windir\Web\PowershellWebAccess\data`bevindt. De beheerder heeft de flexibiliteit de verwijzing naar het standaardpad in **powwa.config** te wijzigen op basis van zijn voorkeuren of vereisten. Door de beheerder in staat te stellen de locatie van het bestand te wijzigen, kunnen meerdere Windows Power shell-Web Access-gateways dezelfde autorisatie regels gebruiken als een dergelijke configuratie gewenst is.
 
 ## <a name="session-management"></a>Sessiebeheer
 
@@ -198,7 +198,7 @@ IIS-webserver is standaard geconfigureerd om de groep van toepassingen opnieuw t
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Standaardparameters instellen op de aanmeldingspagina
 
-Als uw Windows Power shell Web Access-Gateway wordt uitgevoerd op Windows Server 2012 R2, kunt u standaard waarden configureren voor de instellingen die worden weer gegeven op de aanmeldings pagina van de Windows Power shell-webtoegang. U kunt in het bestand **Web. config** waarden configureren dat wordt beschreven in de vorige alinea. Standaard waarden voor de instellingen van de aanmeldings pagina vindt u in de sectie **appSettings** van het bestand Web. config. Hier volgt een voor beeld van de sectie **appSettings** . Geldige waarden voor veel van deze instellingen zijn dezelfde als die voor de overeenkomstige para meters van de cmdlet [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) in Windows Power shell.
+Als uw Windows Power shell Web Access-Gateway wordt uitgevoerd op Windows Server 2012 R2, kunt u standaard waarden configureren voor de instellingen die worden weer gegeven op de aanmeldings pagina van de Windows Power shell-webtoegang. U kunt in het bestand **Web. config** waarden configureren dat wordt beschreven in de vorige alinea. Standaardwaarden voor instellingen voor de aanmeldingspagina zijn te vinden in het gedeelte **appSettings** van het bestand web.config. Hieronder ziet u een voorbeeld van het gedeelte **appSettings**. Geldige waarden voor veel van deze instellingen zijn dezelfde als die voor de overeenkomstige para meters van de cmdlet [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) in Windows Power shell.
 
 Bijvoorbeeld, de `defaultApplicationName` sleutel, zoals in het volgende code blok wordt weer gegeven, is de waarde van de voorkeurs variabele **$PSSessionApplicationName** op de doel computer.
 
@@ -219,7 +219,7 @@ Bijvoorbeeld, de `defaultApplicationName` sleutel, zoals in het volgende code bl
 
 Time-out voor Windows Power shell-Web Access-sessies. In Windows Power shell Web Access, dat wordt uitgevoerd op Windows Server 2012, wordt een time-outbericht weer gegeven aan aangemelde gebruikers na 15 minuten van inactiviteit van de sessie. Als de gebruiker niet binnen vijf minuten reageert nadat het time-outbericht wordt weer gegeven, wordt de sessie beëindigd en wordt de gebruiker afgemeld. U kunt de time-outperioden voor sessies wijzigen in de website-instellingen in IIS-beheer.
 
-In Windows Power shell Web Access, dat wordt uitgevoerd op Windows Server 2012 R2, time-out van sessies, standaard na 20 minuten inactiviteit. Als gebruikers geen verbinding meer hebben met sessies in de webconsole vanwege netwerk fouten of andere niet-geplande afsluit gebeurtenissen of storingen, en niet omdat ze de sessies zelf hebben gesloten, blijven de Windows Power shell-sessies voor webtoegang actief, verbonden met doel computers, totdat de time-outperiode aan de client zijde vervalt. De sessie wordt beëindigd na de standaardperiode van 20 minuten of na de time-outperiode die is opgegeven door de beheerder van de gateway, afhankelijk van welke periode korter is.
+In Windows Power shell Web Access, dat wordt uitgevoerd op Windows Server 2012 R2, time-out van sessies, standaard na 20 minuten inactiviteit. Als gebruikers geen verbinding meer hebben met sessies in de webconsole vanwege netwerk fouten of andere niet-geplande afsluit gebeurtenissen of storingen, en niet omdat ze de sessies zelf hebben gesloten, blijven de Windows Power shell-sessies voor webtoegang actief, verbonden met doel computers, totdat de time-outperiode aan de client zijde vervalt. De sessie wordt verbroken na de standaardinstelling van 20 minuten of na de time-outperiode die is opgegeven door de gatewaybeheerder, als deze korter is.
 
 Als op de gateway server Windows Server 2012 R2 wordt uitgevoerd, kunnen gebruikers met Windows Power shell-webtoegang op een later tijdstip opnieuw verbinding maken met opgeslagen sessies, maar wanneer er netwerk fouten, niet-gepland afsluiten of andere fouten worden verbroken, worden gebruikers niet weer geven of opnieuw verbonden met opslaan sessies tot na de time-outperiode die is opgegeven door de Gateway beheerder.
 
