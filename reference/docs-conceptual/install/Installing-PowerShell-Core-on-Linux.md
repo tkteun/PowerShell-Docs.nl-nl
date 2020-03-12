@@ -1,13 +1,13 @@
 ---
 title: Power Shell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
-ms.date: 07/19/2019
-ms.openlocfilehash: a31f1f2011f484d823b068ccf4aa224334cfdaa4
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.date: 03/09/2020
+ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405093"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128422"
 ---
 # <a name="installing-powershell-on-linux"></a>Power Shell installeren in Linux
 
@@ -48,11 +48,11 @@ Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
 De volgende tabel bevat de opdrachten om de stabiele en preview-pakketten te installeren met behulp van de verschillende pakket beheerders:
 
-|Distributie (s)|Stabiele opdracht | Opdracht preview |
-|---------------|---------------|-----------------|
-| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| Distributie (s) |            Stabiele opdracht            |               Opdracht preview                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -251,7 +251,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installatie via direct downloaden-Debian 10
 
-Down load het tar. gz-pakket `powershell_7.0.0-preview-7-linux-x64.tar.gz` van de pagina [releases][] op de computer Debian.
+Down load het tar. gz-pakket `powershell_7.0.0-linux-x64.tar.gz` van de pagina [releases][] op de computer Debian.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -273,22 +273,22 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="alpine-39-and-310"></a>Alpine 3,9 en 3,10
@@ -298,7 +298,7 @@ pwsh-preview
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installatie via direct downloaden-Alpine 3,9 en 3,10
 
-Down load het tar. gz-pakket `powershell_7.0.0-preview-7-linux-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
+Down load het tar. gz-pakket `powershell_7.0.0-linux-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -323,22 +323,22 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="centos-7"></a>CentOS 7
@@ -749,13 +749,13 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/opt/microsoft/powershell/7/`
-* Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
-* Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
-* Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
-* Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
-* Standaard modules worden gelezen uit `$PSHOME/Modules`
-* De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- `$PSHOME` is `/opt/microsoft/powershell/7/`
+- Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
+- Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
+- Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
+- Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
+- Standaard modules worden gelezen uit `$PSHOME/Modules`
+- De PSReadline-geschiedenis wordt geregistreerd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` op dezelfde locatie bestaan.
 
