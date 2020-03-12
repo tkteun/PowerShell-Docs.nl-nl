@@ -726,6 +726,36 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: Community
+  items:
+    - name: Communityresources
+      href: community/community-support.md
+    - name: Digitale kunst
+      href: community/digital-art.md
+    - name: Wat is er nieuw in de PowerShell-documentatie?
+      href: community/whats-new-in-docs.md
+    - name: Handleiding voor inzenders
+      items:
+        - name: Overzicht
+          href: community/contributing/overview.md
+        - name: Een documentatieprobleem indienen
+          href: community/contributing/file-an-issue.md
+        - name: Aan de slag met het schrijven van documentatie
+          href: community/contributing/get-started-writing.md
+        - name: Een pull-aanvraag verzenden
+          href: community/contributing/pull-requests.md
+        - name: Stijlgids voor PowerShell-documentatie
+          href: community/contributing/powershell-style-guide.md
+        - name: Naslaginformatie voor cmdlets bewerken
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: Aanvullende bronnen
+          items:
+            - name: Redactionele controlelijst
+              href: community/contributing/editorial-checklist.md
+            - name: De manier waarop we problemen beheren
+              href: community/contributing/managing-issues.md
+            - name: De manier waarop we pull-aanvragen beheren
+              href: community/contributing/managing-pull-requests.md
 - name: PowerShell SDK
   items:
     - name: Overzicht
