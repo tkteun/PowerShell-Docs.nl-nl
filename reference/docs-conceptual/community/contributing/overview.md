@@ -4,11 +4,11 @@ description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078582"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407047"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bijdragen aan Power shell-documentatie
 

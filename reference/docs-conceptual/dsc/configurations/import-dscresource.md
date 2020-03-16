@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
 ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277500"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406907"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 

@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Opmerkingen bij de WMF 5.x-release
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404804"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406844"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
 

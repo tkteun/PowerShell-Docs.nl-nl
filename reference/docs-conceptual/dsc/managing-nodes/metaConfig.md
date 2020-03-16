@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: De lokale Configuration Manager configureren
 ms.openlocfilehash: 606cf77ddc3865749e900753aba7c41b66424450
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405030"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406893"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De lokale Configuration Manager configureren
 

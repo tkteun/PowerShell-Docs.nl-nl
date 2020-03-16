@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Problemen met DSC oplossen
 ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405140"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406879"
 ---
 # <a name="troubleshooting-dsc"></a>Problemen met DSC oplossen
 

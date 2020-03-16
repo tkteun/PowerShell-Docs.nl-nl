@@ -3,11 +3,11 @@ ms.date: 06/27/2017
 keywords: Power shell, cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405231"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407033"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
