@@ -4,11 +4,11 @@ description: Dit artikel bevat de regels van de stijl voor het schrijven van Pow
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 964536c5195c3bb8abd98b5996a96fc7b9362489
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078645"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79407012"
 ---
 # <a name="powershell-docs-style-guide"></a>Power shell-stijl gids voor docs
 
