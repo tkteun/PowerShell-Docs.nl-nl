@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Release geschiedenis van modules en cmdlets
-ms.openlocfilehash: 9b7c769198fa2a39d8efcc9602f2a913c041289c
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404967"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082738"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Release geschiedenis van modules en cmdlets
 
@@ -112,7 +112,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | ForEach-object                    | &check; | &check; | &check; | &check; |                            |
 | Get-Command                       | &check; | &check; | &check; | &check; |                            |
 | Get-ExperimentalFeature           |         |   6.2   | &check; | &check; |                            |
-| Get-Help                          | &check; | &check; | &check; | &check; |                            |
+| Help ontvangen                          | &check; | &check; | &check; | &check; |                            |
 | Get-History                       | &check; | &check; | &check; | &check; |                            |
 | Get-job                           | &check; | &check; | &check; | &check; |                            |
 | Get-module                        | &check; | &check; | &check; | &check; |                            |
@@ -311,17 +311,17 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
 | Get-Acl                   | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Alleen Windows                            |
-| Get-CmsMessage            | &check; | &check; | &check; | &check; | Alleen Windows                            |
+| Get-CmsMessage            | &check; | &check; | &check; | &check; | Ondersteuning voor Linux/macOS toegevoegd in 7,1    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
 | Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | Retourneert **onbeperkt** op Linux/macOS |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | Alleen Windows                            |
-| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Alleen Windows                            |
+| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Ondersteuning voor Linux/macOS toegevoegd in 7,1    |
 | Set-ACL                   | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Set-AuthenticodeSignature | &check; | &check; | &check; | &check; | Alleen Windows                            |
 | Set-ExecutionPolicy       | &check; | &check; | &check; | &check; | Doet niets in Linux/macOS             |
 | Test-FileCatalog          | &check; | &check; | &check; | &check; | Alleen Windows                            |
-| Beveiliging opheffen-CmsMessage      | &check; | &check; | &check; | &check; | Alleen Windows                            |
+| Beveiliging opheffen-CmsMessage      | &check; | &check; | &check; | &check; | Ondersteuning voor Linux/macOS toegevoegd in 7,1    |
 
 ### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
 
@@ -516,66 +516,22 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 |                Naam van cmdlet                 |   5,1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Add-NodeKeys                               |         | &check; |         |         |              |
-| ConvertTo-MOFInstance                      |         | &check; |         |         |              |
 | Disable-DscDebug                           | &check; |         |         |         | Alleen Windows |
 | Enable-DscDebug                            | &check; |         |         |         | Alleen Windows |
-| Generate-VersionInfo                       |         | &check; |         |         |              |
-| Get-CompatibleVersionAddtionaPropertiesStr |         | &check; |         |         |              |
-| Get-ComplexResourceQualifier               |         | &check; |         |         |              |
-| Get-ConfigurationErrorCount                |         | &check; |         |         |              |
 | Get-DscConfiguration                       | &check; |         |         |         | Alleen Windows |
 | Get-DscConfigurationStatus                 | &check; |         |         |         | Alleen Windows |
 | Get-DscLocalConfigurationManager           | &check; |         |         |         | Alleen Windows |
 | Get-Dscresource bieden                            | &check; | &check; | &check; | &check; |              |
-| Get-DSCResourceModules                     |         | &check; |         |         |              |
-| Get-EncryptedPassword                      |         | &check; |         |         |              |
-| Get-InnerMostErrorRecord                   |         | &check; |         |         |              |
-| Get-MofInstanceName                        |         | &check; |         |         |              |
-| Get-MofInstanceText                        |         | &check; |         |         |              |
-| Get-PositionInfo                           |         | &check; |         |         |              |
-| Get-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Get-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Get-PSMetaConfigDocumentInstVersionInfo    |         | &check; |         |         |              |
-| Get-PSMetaConfigurationProcessed           |         | &check; |         |         |              |
-| Get-PSTopConfigurationName                 |         | &check; |         |         |              |
-| Get-PublicKeyFromFile                      |         | &check; |         |         |              |
-| Get-PublicKeyFromStore                     |         | &check; |         |         |              |
-| Initialisatie-ConfigurationRuntimeState       |         | &check; |         |         |              |
 | Invoke-Dscresource bieden                         | &check; |         | &check; | &check; |              |
 | New-DSCCheckSum                            | &check; | &check; | &check; | &check; |              |
 | Publish-DscConfiguration                   | &check; |         |         |         | Alleen Windows |
 | Remove-DscConfigurationDocument            | &check; |         |         |         | Alleen Windows |
 | Restore-DscConfiguration                   | &check; |         |         |         | Alleen Windows |
 | Set-DscLocalConfigurationManager           | &check; |         |         |         | Alleen Windows |
-| Set-NodeExclusiveResources                 |         | &check; |         |         |              |
-| Set-NodeManager                            |         | &check; |         |         |              |
-| Set-NodeResources                          |         | &check; |         |         |              |
-| Set-NodeResourceSource                     |         | &check; |         |         |              |
-| Set-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Set-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Set-PSMetaConfigDocInsProcessedBeforeMeta  |         | &check; |         |         |              |
-| Set-PSMetaConfigVersionInfoV2              |         | &check; |         |         |              |
-| Set-PSTopConfigurationName                 |         | &check; |         |         |              |
 | Start-DscConfiguration                     | &check; |         |         |         | Alleen Windows |
 | Stoppen-DscConfiguration                      | &check; |         |         |         | Alleen Windows |
-| Test-ConflictingResources                  |         | &check; |         |         |              |
 | Test-DscConfiguration                      | &check; |         |         |         | Alleen Windows |
-| Test-ModuleReloadRequired                  |         | &check; |         |         |              |
-| Test-MofInstanceText                       |         | &check; |         |         |              |
-| Test-NodeManager                           |         | &check; |         |         |              |
-| Test-NodeResources                         |         | &check; |         |         |              |
-| Test-NodeResourceSource                    |         | &check; |         |         |              |
-| Update-ConfigurationDocumentRef            |         | &check; |         |         |              |
-| Update-ConfigurationErrorCount             |         | &check; |         |         |              |
-| Update-DependsOn                           |         | &check; |         |         |              |
 | Update-DscConfiguration                    | &check; |         |         |         | Alleen Windows |
-| Update-LocalConfigManager                  |         | &check; |         |         |              |
-| Update-ModuleVersion                       |         | &check; |         |         |              |
-| ValidateUpdate-ConfigurationData           |         | &check; |         |         |              |
-| Schrijf logboek                                  |         | &check; |         |         |              |
-| Write-MetaConfigFile                       |         | &check; |         |         |              |
-| Write-NodeMOFFile                          |         | &check; |         |         |              |
 
 ### <a name="psdiagnostics"></a>PSDiagnostics
 

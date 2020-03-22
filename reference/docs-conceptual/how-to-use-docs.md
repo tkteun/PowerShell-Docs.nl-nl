@@ -2,18 +2,18 @@
 ms.date: 10/20/2019
 keywords: Power shell, cmdlet
 title: De Power shell-documentatie gebruiken
-ms.openlocfilehash: 7b73bc82f32e3ce1e6015822e0cc82078183931b
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279300"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082837"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>De Power shell-documentatie gebruiken
 
 Welkom bij de online documentatie voor Power shell. Deze site bevat een cmdlet-verwijzing voor de volgende versies van Power shell:
 
-- Power shell 7 (preview-versie)
+- Power shell 7
 - Power shell 6
 - PowerShell 5.1
 

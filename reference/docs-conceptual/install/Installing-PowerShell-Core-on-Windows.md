@@ -2,12 +2,12 @@
 title: Power shell in Windows installeren
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406886"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082784"
 ---
 # <a name="installing-powershell-on-windows"></a>Power shell in Windows installeren
 
@@ -20,7 +20,7 @@ Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aa
 - Installeer de [Universal C runtime](https://www.microsoft.com/download/details.aspx?id=50410) op Windows-versies ouder dan Windows 10. Het is beschikbaar via direct downloaden of Windows Update. Volledige patches (inclusief optionele pakketten), de ondersteunde systemen hebben dit al geïnstalleerd.
 - Installeer Windows Management Framework (WMF) 4,0 of nieuwer op Windows 7 en Windows Server 2008 R2. Zie [overzicht van WMF](/powershell/scripting/wmf/overview)voor meer informatie over WMF.
 
-## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />het MSI-pakket niet installeren
+## <a name="installing-the-msi-package"></a><a id="msi" />het MSI-pakket niet installeren
 
 Als u Power shell wilt installeren op een Windows-client of Windows-Server (werkt met Windows 7 SP1, Server 2008 R2 en hoger), downloadt u het MSI-pakket van onze pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
@@ -58,7 +58,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor Msiexec. exe.
 
-## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />het MSIX-pakket niet installeren
+## <a name="installing-the-msix-package"></a><a id="msix" />het MSIX-pakket niet installeren
 
 Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van de pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
@@ -70,7 +70,7 @@ Nadat u het installatie programma hebt gedownload, kunt u het niet gewoon dubbel
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
-## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />het ZIP-pakket niet installeren
+## <a name="installing-the-zip-package"></a><a id="zip" />het ZIP-pakket niet installeren
 
 Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Wanneer u het ZIP-archief gebruikt, wordt de controle van vereisten niet weer gegeven als in het MSI-pakket. Zorg ervoor dat u aan de [vereisten](#prerequisites)hebt voldaan voor externe communicatie via WSMan.
 
@@ -81,7 +81,8 @@ Windows IoT wordt al geleverd met Windows Power shell en kan worden gebruikt voo
 1. `PSSession` maken op doel apparaat
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. Het ZIP-pakket kopiëren naar het apparaat
@@ -173,6 +174,8 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 ```
 dotnet tool install --global PowerShell
 ```
+
+Het installatie programma voor het DotNet-hulp programma voegt `$env:USERPROFILE\dotnet\tools` toe aan de omgevings variabele `$env:PATH`. De momenteel actieve shell beschikt echter niet over de bijgewerkte `$env:PATH`. U moet Power shell kunnen starten vanuit een nieuwe shell door `pwsh`te typen.
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 

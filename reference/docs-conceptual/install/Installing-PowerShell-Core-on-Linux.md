@@ -2,12 +2,12 @@
 title: Power Shell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 03/09/2020
-ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406984"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082799"
 ---
 # <a name="installing-powershell-on-linux"></a>Power Shell installeren in Linux
 
@@ -298,7 +298,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installatie via direct downloaden-Alpine 3,9 en 3,10
 
-Down load het tar. gz-pakket `powershell_7.0.0-linux-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
+Down load het tar. gz-pakket `powershell-7.0.0-linux-alpine-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -693,6 +693,8 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 ```
 dotnet tool install --global PowerShell
 ```
+
+Het installatie programma voor het DotNet-hulp programma voegt `~/.dotnet/tools` toe aan de omgevings variabele `PATH`. De momenteel actieve shell beschikt echter niet over de bijgewerkte `PATH`. U moet Power shell kunnen starten vanuit een nieuwe shell door `pwsh`te typen.
 
 ## <a name="binary-archives"></a>Binaire archieven
 

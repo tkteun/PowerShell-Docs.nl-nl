@@ -2,18 +2,23 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279062"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082443"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
-Naast [Power shell ISE][ise]is Power shell ook goed ondersteund in Visual Studio code (VSCode). De ISE wordt niet ondersteund met Power shell core, maar VSCode wordt ondersteund voor Power shell Core op alle platforms: Windows, macOS en Linux.
+[Visual Studio code](https://code.visualstudio.com/) is een cross-platform (Windows, MacOS en Linux) script editor van micro soft. Samen met de [Power shell-extensie](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)biedt het een uitgebreide en interactieve script bewerking, waardoor het eenvoudiger is om betrouw bare Power shell-scripts te schrijven.
 
-U kunt VSCode in Windows met Power shell versie 5 gebruiken met behulp van Windows 10 of door Windows Management Framework 5,1 te installeren voor down level Windows OSs, zoals Windows 8,1. Zie [WMF 5,1 installeren en configureren](/powershell/scripting/wmf/setup/install-configure)voor meer informatie.
+Visual Studio code met de Power shell-extensie is de aanbevolen editor voor het schrijven van Power shell-scripts.
+Het ondersteunt de volgende Power shell-versies:
+
+- Power shell 7 en up
+- Power shell Core 6
+- Windows Power shell 5,1
 
 Controleer voordat u begint of Power shell op het systeem bestaat. Raadpleeg de volgende koppelingen voor moderne werk belastingen op Windows, macOS en Linux:
 
@@ -23,38 +28,38 @@ Controleer voordat u begint of Power shell op het systeem bestaat. Raadpleeg de 
 
 Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads van Windows Power shell.
 
-## <a name="editing-with-vscode"></a>Bewerken met VSCode
+> [!NOTE]
+> Visual Studio code is niet hetzelfde als [Visual Studio](https://visualstudio.microsoft.com/).
 
-1. Installeer VSCode. Zie voor meer informatie het overzicht instellen [van Visual Studio code](https://code.visualstudio.com/Docs/setup/setup-overview).
+> [!IMPORTANT]
+> De [Windows PowerShell ISE][ise] is ook nog steeds beschikbaar voor Windows, maar is niet langer in het ontwikkelen van actieve functies en werkt niet met Power shell 7 en up of Power shell Core 6.
+> Als onderdeel van Windows-verzen ding wordt het officieel ondersteund voor beveiligings updates en onderhoud met hoge prioriteit. Er zijn momenteel geen abonnementen om de ISE van Windows te verwijderen.
 
-   Er zijn installatie-instructies voor elk platform:
+## <a name="editing-with-visual-studio-code"></a>Bewerken met Visual Studio code
 
-   - **Linux**: Volg de installatie-instructies op de pagina [actieve VSCode op Linux](https://code.visualstudio.com/docs/setup/linux) .
-   - **macOS**: Volg de installatie-instructies op de pagina [actieve VSCode op macOS](https://code.visualstudio.com/docs/setup/mac) .
+1. Installeer Visual Studio code. Zie voor meer informatie het overzicht instellen [van Visual Studio code](https://code.visualstudio.com/Docs/setup/setup-overview).
 
-     > [!IMPORTANT]
-     > Bij macOS moet u OpenSSL installeren om de Power shell-extensie correct te laten werken. De eenvoudigste manier om dit te doen is door [homebrew](https://brew.sh/) te installeren en vervolgens `brew install openssl`uit te voeren. VSCode kan nu de Power shell-uitbrei ding laden.
+    Er zijn installatie-instructies voor elk platform:
 
-   - **Windows**: Volg de installatie-instructies op de pagina [actieve VSCode op Windows](https://code.visualstudio.com/docs/setup/windows) .
+    - **Windows**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Windows](https://code.visualstudio.com/docs/setup/windows) .
+    - **macOS**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op MacOS](https://code.visualstudio.com/docs/setup/mac) .
+    - **Linux**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Linux](https://code.visualstudio.com/docs/setup/linux) .
 
 1. Installeer de Power shell-extensie.
 
-   1. Start de VSCode-app op:
-      - **Windows**: `code` in uw Power shell-sessie typen
-      - **Linux**: `code` in uw terminal typen
-      - **macOS**: `code` in uw terminal typen
+   1. Start de app Visual Studio code door `code` te typen in een-console of `code-insiders` als u Visual Studio code insiders hebt geïnstalleerd.
    1. Start **snel openen** in Windows of Linux door op <kbd>CTRL</kbd>+<kbd>P</kbd>te drukken. Druk in macOS op <kbd>Cmd</kbd>+<kbd>P</kbd>.
    1. Typ `ext install powershell` in snel openen en druk op **Enter**.
    1. De weer gave **extensies** wordt weer gegeven op de balk aan de zijkant. Selecteer de Power shell-extensie van micro soft.
-      Er wordt een VSCode-scherm weer gegeven dat vergelijkbaar is met de volgende afbeelding:
+      Er wordt een Visual Studio-code scherm weer gegeven dat vergelijkbaar is met de volgende afbeelding:
 
-      ![VSCode](media/using-vscode/vscode.png)
+      ![Visual Studio Code](media/using-vscode/vscode.png)
 
    1. Klik op de knop **installeren** in de Power shell-extensie van micro soft.
-   1. Na de installatie ziet u de knop **installeren** om opnieuw te **laden**. Klik op **opnieuw laden**.
-   1. Nadat VSCode opnieuw is geladen, bent u klaar om te bewerken.
+   1. Als u na de installatie de knop **installeren** ziet, klikt u **op opnieuw** **laden**.
+   1. Nadat Visual Studio code opnieuw is geladen, bent u klaar om te bewerken.
 
-Als u bijvoorbeeld een nieuw bestand wilt maken, klikt u op **bestand > nieuw**. Als u deze wilt opslaan, klikt u op **bestand > opslaan** en geeft u een bestands naam op, zoals `HelloWorld.ps1`. Als u het bestand wilt sluiten, klikt u op de `X` naast de bestands naam. **Bestand >** afsluiten om VSCode af te sluiten.
+Als u bijvoorbeeld een nieuw bestand wilt maken, klikt u op **bestand > nieuw**. Als u deze wilt opslaan, klikt u op **bestand > opslaan** en geeft u een bestands naam op, zoals `HelloWorld.ps1`. Als u het bestand wilt sluiten, klikt u op de `X` naast de bestands naam. Als u Visual Studio code wilt afsluiten, wordt het **bestand > sluiten**.
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>De Power shell-uitbrei ding installeren op beperkte systemen
 
@@ -64,13 +69,46 @@ Sommige systemen zijn zodanig ingesteld dat alle code handtekeningen moeten word
 Language server startup failed.
 ```
 
-Open een Power shell-prompt en voer de volgende opdracht uit om Power shell editor-Services en de Power shell-uitbrei ding voor VSCode hand matig goed te keuren:
+Open een Power shell-prompt en voer de volgende opdracht uit om de Power shell editor-Services en de Power shell-extensie voor Visual Studio code hand matig goed te keuren:
 
 ```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-U wordt gevraagd of **u software van deze niet-vertrouwde uitgever wilt uitvoeren?** Typ `A` om het bestand uit te voeren. Open vervolgens VSCode en controleer of de Power shell-extensie goed werkt. Als u nog steeds problemen ondervindt, laat het ons dan weten op [github](https://github.com/PowerShell/vscode-powershell/issues).
+U wordt gevraagd of **u software van deze niet-vertrouwde uitgever wilt uitvoeren?**
+Typ `A` om het bestand uit te voeren. Open vervolgens Visual Studio code en controleer of de Power shell-extensie goed werkt. Als u nog steeds problemen ondervindt, laat het ons dan weten op [github](https://github.com/PowerShell/vscode-powershell/issues).
+
+> [!NOTE]
+> De Power shell-extensie voor Visual Studio code biedt geen ondersteuning voor uitvoering in een modus met beperkte taal. Raadpleeg de GitHub voor het [bijhouden van problemen die ondersteuning biedt](https://github.com/PowerShell/vscode-powershell/issues/606) voor meer informatie.
+
+### <a name="using-an-older-version-of-the-powershell-extension-for-windows-powershell-v3-and-v4"></a>Een oudere versie van de Power shell-uitbrei ding voor Windows Power Shell v3 en v4 gebruiken
+
+Hoewel de huidige Power shell-uitbrei ding het [ondersteunen van v3 en v4 heeft gestopt](https://github.com/PowerShell/vscode-powershell/issues/1310), kunt u nog steeds de laatste versie van de uitbrei ding gebruiken.
+
+> [!NOTE]
+> Er zijn geen aanvullende oplossingen voor deze oudere versie van de uitbrei ding. Het wordt weer gegeven als IS, maar is beschikbaar voor u als u nog steeds Windows Power Shell v3 en Windows Power shell v4 gebruikt.
+
+Open eerst het deel venster uitbrei ding en zoek naar `PowerShell`. Klik vervolgens op het vistuig en selecteer **een andere versie installeren...** .
+
+![Een andere versie installeren...](media/using-vscode/install-another-version.png)
+
+Selecteer vervolgens de **`2020.1.0`** versie. Deze versie van de uitbrei ding is de laatste versie voor de ondersteuning van v3 en v4.
+
+Voeg ook de volgende instelling toe zodat uw extensie versie niet automatisch wordt bijgewerkt:
+
+```json
+{
+    "extensions.autoUpdate": false
+}
+```
+
+Hoewel dit in de forseeable toekomst werkt, kan Visual Studio code een wijziging implementeren waardoor deze versie van de uitbrei ding wordt verbroken.
+Als gevolg van deze en het ontbreken van ondersteuning raden wij u ten zeerste aan:
+
+- Power shell 7 downloaden: dit is een side-by-side installatie van Windows Power shell en werkt het beste met de Power shell-extensie
+- Upgraden naar Windows Power shell 5,1
+
+De sectie [Editing with Visual Studio code](#editing-with-visual-studio-code) in dit artikel is een koppeling naar waar u deze kunt installeren.
 
 ### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Een versie van Power shell kiezen die moet worden gebruikt met de extensie
 
@@ -89,7 +127,7 @@ Met Power shell core die naast Windows Power shell wordt geïnstalleerd, is het 
 
 ### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Uw eigen Power shell-paden toevoegen aan het menu sessie
 
-U kunt andere uitvoer bare Power shell-paden toevoegen aan het menu sessie via een VSCode-instelling.
+U kunt andere uitvoer bare Power shell-paden toevoegen aan het menu sessie via de [code-instelling van Visual Studio](https://code.visualstudio.com/docs/getstarted/settings): `powershell.powerShellAdditionalExePaths`.
 
 Voeg een item toe aan de lijst `powershell.powerShellAdditionalExePaths` of maak een lijst als deze niet bestaat in uw `settings.json`:
 
@@ -110,8 +148,8 @@ Voeg een item toe aan de lijst `powershell.powerShellAdditionalExePaths` of maak
 
 Elk item moet het volgende bevatten:
 
-* `exePath`: het pad naar de `pwsh` of `powershell` uitvoer bare bestand.
-* `versionName`: de tekst die wordt weer gegeven in het menu van de sessie.
+- `exePath`: het pad naar de `pwsh` of `powershell` uitvoer bare bestand.
+- `versionName`: de tekst die wordt weer gegeven in het menu van de sessie.
 
 U kunt de standaard-Power shell-versie instellen op het gebruik van de `powershell.powerShellDefaultVersion` instelling door dit in te stellen op de tekst die wordt weer gegeven in het menu sessie (ook wel bekend als de `versionName` in de laatste instelling):
 
@@ -132,66 +170,70 @@ U kunt de standaard-Power shell-versie instellen op het gebruik van de `powershe
 }
 ```
 
-Nadat u deze instelling hebt geconfigureerd, start u VSCode opnieuw of laadt u het huidige VSCode-venster opnieuw vanuit het **opdracht palet**, typt u **ontwikkelaar: venster opnieuw laden**.
+Nadat u deze instelling hebt geconfigureerd, start u Visual Studio code opnieuw of laadt u het huidige venster Visual Studio-code opnieuw vanuit het **opdracht palet**, typt u **ontwikkelaar: venster opnieuw laden**.
 
 Als u het menu sessie opent, ziet u nu uw extra Power shell-versies!
 
 > [!NOTE]
 > Als u Power shell bouwt vanaf een bron, is dit een fantastische manier om uw lokale build van Power shell te testen.
 
-### <a name="configuration-settings-for-vscode"></a>Configuratie-instellingen voor VSCode
+### <a name="configuration-settings-for-visual-studio-code"></a>Configuratie-instellingen voor Visual Studio code
+
+Als u niet bekend bent met het wijzigen van instellingen in Visual Studio code, raden we u aan [de documentatie van de Visual Studio code-instellingen](https://code.visualstudio.com/docs/getstarted/settings)te raadplegen.
 
 U kunt met behulp van de stappen in de vorige alinea configuratie-instellingen toevoegen in `settings.json`.
 
-We raden de volgende configuratie-instellingen aan voor VSCode:
-
 ```json
 {
-    "csharp.suppressDotnetRestoreNotification": true,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "omnisharp.projectLoadTimeout": 120,
     "files.trimTrailingWhitespace": true,
     "files.encoding": "utf8bom",
     "files.autoGuessEncoding": true
 }
 ```
 
-Als u niet wilt dat deze instellingen van invloed zijn op alle bestands typen, kunt u met VSCode ook configuraties per taal configureren. Maak een taalspecifieke instelling door instellingen in een `[<language-name>]` veld in te voeren. Bijvoorbeeld:
+Als u niet wilt dat deze instellingen van invloed zijn op alle bestands typen, kunt u met Visual Studio code ook configuraties per taal instellen. Maak een taalspecifieke instelling door instellingen in een `[<language-name>]` veld in te voeren. Bijvoorbeeld:
 
 ```json
-"[powershell]": {
-    "files.encoding": "utf8bom",
-    "files.autoGuessEncoding": true
+{
+    "[powershell]": {
+        "files.encoding": "utf8bom",
+        "files.autoGuessEncoding": true
+    }
 }
 ```
 
-Zie [Wat is bestands codering](understanding-file-encoding.md)? voor meer informatie over bestands codering in VSCode.
+> [!TIP]
+> Zie [informatie over bestands codering](understanding-file-encoding.md)voor meer informatie over het coderen van bestanden in Visual Studio code.
+>
+> Lees ook de [informatie over het repliceren van de ISE-ervaring in Visual Studio code](How-To-Replicate-the-ISE-Experience-In-VSCode.md) voor andere tips over het configureren van Visual Studio code voor het bewerken van Power shell.
 
-## <a name="debugging-with-vscode"></a>Fout opsporing met VSCode
+## <a name="debugging-with-visual-studio-code"></a>Fout opsporing met Visual Studio code
 
 ### <a name="no-workspace-debugging"></a>Geen-werk ruimte: fout opsporing
 
-Vanaf VSCode-versie 1,9 kunt u fouten opsporen in Power shell-scripts zonder de map met het Power shell-script te openen. Open het Power shell-script bestand met het **bestand > bestand openen...** , stel een onderbrekings punt in op een regel, druk op <kbd>F9</kbd>en druk vervolgens op <kbd>F5</kbd> om de fout opsporing te starten. Het deel venster acties voor fout opsporing wordt weer gegeven, waarin u de fout opsporing kunt opdelen, stap, CV en stoppen.
+Vanaf Visual Studio code versie 1,9 kunt u fouten opsporen in Power shell-scripts zonder de map met het Power shell-script te openen. Open het Power shell-script bestand met het **bestand > bestand openen...** , stel een onderbrekings punt in op een regel, druk op <kbd>F9</kbd>en druk vervolgens op <kbd>F5</kbd> om de fout opsporing te starten. Het deel venster acties voor fout opsporing wordt weer gegeven, waarin u de fout opsporing kunt opdelen, stap, CV en stoppen.
 
 ### <a name="workspace-debugging"></a>Fout opsporing voor werk ruimten
 
 Fout opsporing voor werk ruimten verwijst naar fout opsporing in de context van een map die u hebt geopend in Visual Studio code vanuit het menu **bestand** met **open map...** . De map die u opent, is doorgaans uw Power shell-projectmap en/of de hoofdmap van uw Git-opslag plaats.
 
-Zelfs in deze modus kunt u de fout opsporing van het momenteel geselecteerde Power shell-script starten door op <kbd>F5</kbd>te drukken. Met fout opsporing in werk ruimten kunt u echter meerdere debug-configuraties definiëren, anders dan alleen fouten opsporen in het bestand dat momenteel is geopend. U kunt bijvoorbeeld een configuratie toevoegen aan:
-
-- Start de tests van parasieten in het fout opsporingsprogramma.
-- Start een specifiek bestand met argumenten in het fout opsporingsprogramma.
-- Start een interactieve sessie in het fout opsporingsprogramma.
-- Koppel het fout opsporingsprogramma aan een Power shell-hostproces.
+Zelfs in deze modus kunt u de fout opsporing van het momenteel geselecteerde Power shell-script starten door op <kbd>F5</kbd>te drukken. Met fout opsporing in werk ruimten kunt u echter meerdere debug-configuraties definiëren, anders dan alleen fouten opsporen in het bestand dat momenteel is geopend. We gaan alles op dit moment.
 
 Voer de volgende stappen uit om het configuratie bestand voor fout opsporing te maken:
 
   1. Open de weer gave **fout opsporing** op Windows of Linux door op <kbd>Ctrl</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>te drukken. Druk in macOS op <kbd>Cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>.
-  1. Klik op het pictogram vistuig **configureren** op de werk balk.
-  1. U wordt door VSCode gevraagd om **omgeving te selecteren**. Kies **Power shell**.
+  1. Klik op de koppeling ' een launch. JSON-bestand maken '.
+  1. Visual Studio code vraagt u om **omgeving te selecteren**. Kies **Power shell**.
+  1. Kies ten slotte het type fout opsporing dat u wilt gebruiken:
 
-Het resultaat is dat VSCode een map en een bestand `.vscode\launch.json` maakt in de hoofdmap van de map met de werk ruimte. Deze locatie is waar de configuratie van de fout opsporing wordt opgeslagen. Als uw bestanden zich in een Git-opslag plaats bevinden, wilt u meestal het `launch.json` bestand door voeren. De inhoud van het `launch.json` bestand zijn:
+- Het **huidige bestand starten** -starten en fouten opsporen in het bestand in het huidige venster van de editor
+- **Script starten** : starten en fouten opsporen in opgegeven bestand of opdracht
+- **Interactieve sessie** -opdrachten voor fout opsporing in de geïntegreerde console
+- Het fout **opsporingsprogramma koppelen aan** een actief Power shell-hostproces
+
+Het resultaat is dat Visual Studio code een map en een bestand `.vscode\launch.json` maakt in de hoofdmap van de map met de werk ruimte. Deze locatie is waar de configuratie van de fout opsporing wordt opgeslagen. Als uw bestanden zich in een Git-opslag plaats bevinden, wilt u meestal het `launch.json` bestand door voeren. De inhoud van het `launch.json` bestand zijn:
 
 ```json
 {
@@ -253,6 +295,12 @@ Er zijn enkele blogs die handig kunnen zijn om aan de slag te gaan met Power she
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-vscode"></a>Power shell-uitbrei ding voor VSCode
+## <a name="powershell-extension-for-visual-studio-code"></a>Power shell-extensie voor Visual Studio code
 
 De bron code van de Power shell-extensie vindt u op [github](https://github.com/PowerShell/vscode-powershell).
+
+Als u geïnteresseerd bent in bijdragen, worden pull-aanvragen aanzienlijk gewaardeerd. Volg samen met de [documentatie voor ontwikkel aars op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) om aan de slag te gaan.
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Problemen met de Power shell-extensie voor Visual Studio code oplossen
+
+Als u problemen ondervindt met het gebruik van Visual Studio code voor het ontwikkelen van Power shell-scripts, raadpleegt u de [hand leiding voor probleem oplossing op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)

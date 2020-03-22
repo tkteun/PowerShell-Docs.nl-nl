@@ -2,12 +2,12 @@
 title: Power shell in macOS installeren
 description: Informatie over het installeren van Power shell in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404823"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082758"
 ---
 # <a name="installing-powershell-on-macos"></a>Power shell in macOS installeren
 
@@ -108,6 +108,8 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 ```
 dotnet tool install --global PowerShell
 ```
+
+Het installatie programma voor het DotNet-hulp programma voegt `~/.dotnet/tools` toe aan de omgevings variabele `PATH`. De momenteel actieve shell beschikt echter niet over de bijgewerkte `PATH`. U moet Power shell kunnen starten vanuit een nieuwe shell door `pwsh`te typen.
 
 ## <a name="binary-archives"></a>Binaire archieven
 
@@ -214,5 +216,5 @@ Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebrui
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[shell]: https://github.com/PowerShell/PowerShell/releases/latest
+[releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
