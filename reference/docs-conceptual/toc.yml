@@ -298,7 +298,7 @@
       href: whats-new/cmdlet-versions.md
     - name: Compatibiliteitslijst van modules
       href: whats-new/module-compatibility.md
-- name: Levenscyclus voor ondersteuning van PowerShell Core
+- name: Levenscyclus voor ondersteuning van PowerShell
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
   items:
