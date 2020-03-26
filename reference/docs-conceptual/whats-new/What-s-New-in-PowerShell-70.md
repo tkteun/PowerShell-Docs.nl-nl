@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404992"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263132"
 ---
 # <a name="whats-new-in-powershell-70"></a>Wat is er nieuw in Power shell 7,0
 
@@ -396,6 +396,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Los een bron lekkage op door de registratie van de gebeurtenis-handler van AppDomain. CurrentDomain. ProcessExit (#10626) ongedaan te maken.
 - Voeg ondersteuning toe aan ActionPreference. Store om in het fout opsporingsprogramma te kraken wanneer fout opsporing, fout, informatie, voortgang, uitgebreide of waarschuwings berichten worden gegenereerd (#8205) (Bedankt @KirkMunro!)
 - Schakel het starten van invoeg toepassingen in het configuratie scherm in Power shell core in zonder op te geven. CPL-extensie. (#9828)
+- Ondersteuning voor negatieve getallen in de Splits operator (#8960) (Bedankt @ece-jacob-scott!)
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Algemene cmdlet-updates en-oplossingen
 

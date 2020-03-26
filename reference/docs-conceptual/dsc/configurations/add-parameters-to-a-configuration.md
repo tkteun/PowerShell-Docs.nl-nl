@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Parameters toevoegen aan een configuratie
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71942116"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263149"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Parameters toevoegen aan een configuratie
 
@@ -36,17 +36,18 @@ Configuration TestConfig
 
 In tegens telling tot een functie, voegt het kenmerk [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) geen functionaliteit toe. Naast de [algemene para meters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kunnen configuraties ook gebruikmaken van de volgende ingebouwde para meters, zonder dat u ze hoeft te definiëren.
 
-|Parameter  |Beschrijving  |
-|---------|---------|
-|`-InstanceName`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
-|`-DependsOn`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)|
-|`-ConfigurationData`|Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie.|
-|`-OutputPath`|Wordt gebruikt om op te geven waar uw '\<computer naam\>. MOF-bestand wordt gecompileerd|
+|        Parameter        |                                         Beschrijving                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)                             |
+| `-DependsOn`            | Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)                             |
+| `-PSDSCRunAsCredential` | Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)                             |
+| `-ConfigurationData`    | Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie. |
+| `-OutputPath`           | Wordt gebruikt om op te geven waar uw '\<computer naam\>. MOF-bestand wordt gecompileerd                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Uw eigen para meters aan configuraties toevoegen
 
-Naast de ingebouwde para meters kunt u ook uw eigen para meters aan uw configuraties toevoegen. Het parameter blok gaat direct in de configuratie declaratie, net als een functie. Een configuratie parameter blok moet zich buiten eventuele **knooppunt** declaraties bevinden en boven alle *import* instructies. Door para meters toe te voegen, kunt u uw configuraties robuuster en dynamisch maken.
+Naast de ingebouwde para meters kunt u ook uw eigen para meters aan uw configuraties toevoegen.
+Het parameter blok gaat direct in de configuratie declaratie, net als een functie. Een configuratie parameter blok moet zich buiten eventuele **knooppunt** declaraties bevinden en boven alle *import* instructies. Door para meters toe te voegen, kunt u uw configuraties robuuster en dynamisch maken.
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Geavanceerde para meters in configuraties
 
-Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen. In het volgende voor beeld wordt een parameter blok met een `-ServiceName`-para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State`-para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
+Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen.
+In het volgende voor beeld wordt een parameter blok met een `-ServiceName`-para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State`-para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
 
 ```powershell
 Configuration TestConfig
@@ -149,7 +151,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> In meer advacned scenario's is het wellicht beter om uw dynamische gegevens te verplaatsen naar een Structured [configuratie gegevens](configData.md).
+> In meer geavanceerde scenario's kan het zinvol zijn om uw dynamische gegevens te verplaatsen naar een gestructureerde [configuratie gegevens](configData.md).
 
 De voorbeeld configuratie heeft nu een dynamische `$ServiceName`, maar als er geen is opgegeven, wordt er een fout opgetreden bij het compileren van resultaten. U kunt bijvoorbeeld een standaard waarde toevoegen, zoals in dit voor beeld.
 
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {
