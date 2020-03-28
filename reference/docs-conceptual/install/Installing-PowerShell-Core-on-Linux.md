@@ -1,15 +1,15 @@
 ---
-title: Power Shell installeren in Linux
+title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 03/09/2020
-ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 0b15f3de5eba8f4f399f9be27b74469c8c5d1b67
+ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082799"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80374911"
 ---
-# <a name="installing-powershell-on-linux"></a>Power Shell installeren in Linux
+# <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
 Ondersteunt [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE schrikkel 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora]en [Arch Linux][arch].
 
@@ -248,6 +248,29 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > Debian 10 wordt alleen ondersteund in Power shell 7,0 en nieuwer.
+
+### <a name="installation-via-package-repository---debian-10"></a>Installatie via pakket opslagplaats-Debian 10
+
+Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudige installatie en updates.
+
+De voorkeurs methode is als volgt:
+
+```sh
+# Download the Microsoft repository GPG keys
+wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
+
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installatie via direct downloaden-Debian 10
 
