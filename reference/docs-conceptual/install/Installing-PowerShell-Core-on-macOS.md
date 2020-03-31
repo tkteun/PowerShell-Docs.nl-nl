@@ -1,15 +1,15 @@
 ---
-title: Power shell in macOS installeren
+title: PowerShell installeren in macOS
 description: Informatie over het installeren van Power shell in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082758"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394999"
 ---
-# <a name="installing-powershell-on-macos"></a>Power shell in macOS installeren
+# <a name="installing-powershell-on-macos"></a>PowerShell installeren in macOS
 
 Power shell ondersteunt macOS 10,12 en hoger.
 Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] .
@@ -90,13 +90,13 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installatie via direct downloaden
 
-Down load het pakket package `powershell-6.2.0-osx-x64.pkg`
+Down load het pakket package `powershell-lts-7.0.0-osx-x64.pkg`
 van de pagina [releases][] op uw macOS-computer.
 
 U kunt dubbel klikken op het bestand en de prompts volgen of installeren vanaf de terminal:
 
 ```sh
-sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.0.0-osx-x64.pkg -target /
 ```
 
 Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
@@ -119,19 +119,19 @@ Er zijn binaire Power shell-`tar.gz` archieven beschikbaar voor het macOS-platfo
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.0.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.0.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.0.0/pwsh /usr/local/bin/pwsh
 ```
 
 Installeer [openssl](#install-openssl). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
@@ -190,7 +190,7 @@ Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden
 
 ## <a name="paths"></a>Paden
 
-* `$PSHOME` is `/usr/local/microsoft/powershell/6.2.0/`
+* `$PSHOME` is `/usr/local/microsoft/powershell/7.0.0/`
 * Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
 * Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
 * Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
@@ -204,7 +204,7 @@ Het standaard-host-profiel bestaat dus op `Microsoft.PowerShell_profile.ps1` op 
 Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 
 Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt`.
-`$PSHOME` is dus `/usr/local/microsoft/powershell/6.2.0/`en de symbolische koppeling wordt in `/usr/local/bin/pwsh`geplaatst.
+`$PSHOME` is dus `/usr/local/microsoft/powershell/7.0.0/`en de symbolische koppeling wordt in `/usr/local/bin/pwsh`geplaatst.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 

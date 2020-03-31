@@ -1,13 +1,13 @@
 ---
 title: De Windows PowerShell SDK installeren
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444506"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394980"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>De Windows PowerShell SDK installeren
 
@@ -18,7 +18,7 @@ In het volgende onderwerp wordt beschreven hoe u de Power shell SDK installeert 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows Power Shell 3,0 SDK voor Windows 8 en Windows Server 2012 installeren
 
 Windows Power Shell 3,0 wordt automatisch geïnstalleerd met Windows 8 en Windows Server 2012. Daarnaast kunt u de referentie-assembly's voor Windows Power Shell 3,0 downloaden en installeren als onderdeel van de SDK van Windows 8. Met deze assembly's kunt u cmdlets, providers en host-Program ma's schrijven voor Windows Power Shell 3,0. Wanneer u de Windows SDK voor Windows 8 installeert, worden de Windows Power shell-assembly's automatisch geïnstalleerd in de map Reference assembly, in `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Zie de download site voor Windows 8 SDK voor meer informatie. Voor beelden van Windows Power shell-code zijn ook beschikbaar in het Development Center op het [Windows Power shell 3,0 SDK-voorbeeld pakket](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Zie de download site voor Windows 8 SDK voor meer informatie. Voor beelden van Windows Power shell-code zijn ook beschikbaar in de opslag plaats [Power shell-SDK-samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) .
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows Power Shell 3,0 SDK installeren voor Windows 7 en Windows Server 2008 R2
 
@@ -34,9 +34,7 @@ Referentie-assembly's worden standaard geïnstalleerd op de volgende locatie: `c
 Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
->
 > Code die is gecompileerd op basis van de Windows Power Shell 2,0-assembly's, kan niet worden geladen in Windows Power shell 1,0-installaties. Code die wordt gecompileerd op basis van de Windows Power shell 1,0-assembly's kan echter worden geladen in Windows Power Shell 2,0-installaties.
-
 
 ### <a name="samples"></a>Voorbeelden
 
@@ -73,12 +71,12 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. In de volgende secties vi
 #### <a name="hosting-application-samples"></a>Voor beelden van hosting toepassingen
 
 - Runspace01: laat zien hoe u de Power shell-klasse kunt gebruiken om de `Get-Process`-cmdlet synchroon uit te voeren.
-De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer.
+  De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer.
 - Runspace02: laat zien hoe u de Power shell-klasse kunt gebruiken om de `Get-Process`-en `Sort-Object`-cmdlets synchroon uit te voeren. De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer, en de `Sort-Object` sorteert de objecten op basis van hun id-eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een DataGridView-besturings element.
 - Runspace03: laat zien hoe u de Power shell-klasse kunt gebruiken om een script synchroon uit te voeren en om niet-afsluit fouten te verwerken. Het script ontvangt een lijst met proces namen en haalt deze processen vervolgens op. De resultaten van het script, met inbegrip van eventuele niet-afsluit fouten die zijn gegenereerd bij het uitvoeren van het script, worden weer gegeven in een console venster.
 - Runspace04: toont hoe u de Power shell-klasse gebruikt om opdrachten uit te voeren en hoe u afsluit fouten kunt opvangen die worden gegenereerd bij het uitvoeren van de opdrachten. Er worden twee opdrachten uitgevoerd en de laatste opdracht is een ongeldig parameter argument door gegeven. Als gevolg hiervan worden er geen objecten geretourneerd en wordt er een afsluit fout gegenereerd.
 - Runspace05: laat zien hoe u een module kunt toevoegen aan een InitialSessionState-object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample01-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
-- Runspace06: laat zien hoe u een module aan een InitialSessionState-object toevoegt, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module bevat een Get-proc-cmdlet (gedefinieerd door het GetProcessSample02-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
+- Runspace06: laat zien hoe u een module aan een InitialSessionState-object toevoegt, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample02-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
 - Runspace07: laat zien hoe u een runs Pace maakt en vervolgens die runs Pace gebruikt om twee cmdlets synchroon uit te voeren met behulp van een Power shell-object.
 - Runspace08: laat zien hoe u opdrachten en argumenten kunt toevoegen aan de pijp lijn van een Power shell-object en hoe de opdrachten synchroon moeten worden uitgevoerd.
 - Runspace09: hier wordt uitgelegd hoe u een script toevoegt aan de pijp lijn van een Power shell-object en hoe u het script asynchroon uitvoert. Gebeurtenissen worden gebruikt voor het afhandelen van de uitvoer van het script.
@@ -89,7 +87,7 @@ De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt ui
 
 #### <a name="host-samples"></a>Host-voor beelden
 
-- Host01: laat zien hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host. In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host, waarna de Power shell-API wordt gebruikt om een script uit te voeren dat "Exit" aanroept. De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.
+- Host01: laat zien hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host. In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host, waarna de Power shell-API wordt gebruikt om een script uit te voeren dat `exit`aanroept. De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.
 - Host02: laat zien hoe u een hosttoepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host. Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de `Get-Process`-cmdlet uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.
 - Host03: hier ziet u hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console.
 - Host04: hier ziet u hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console. Deze hosttoepassing biedt ook ondersteuning voor het weer geven van prompts waarmee de gebruiker meerdere keuzes kan opgeven.
