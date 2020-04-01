@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Wat is er nieuw in Windows Power shell 5,0
-ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417582"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500471"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows Power shell 5,0
 
@@ -17,7 +17,8 @@ Windows Power shell 5,0 is achterwaarts compatibel. Cmdlets, providers, modules,
 
 ## <a name="installing-windows-powershell"></a>Windows PowerShell installeren
 
-Windows Power shell 5,0 wordt standaard geïnstalleerd in Windows Server 2016 Technical Preview en Windows 10.
+Windows Power shell 5,0 wordt standaard geïnstalleerd in Windows Server 2016 Technical Preview en Windows
+10.
 
 Als u Windows Power shell 5,0 wilt installeren op Windows Server 2012 R2, Windows 8,1 ENTER prise of Windows 8,1 Pro, downloadt en installeert u [Windows Management Framework 5,0](https://aka.ms/wmf5download). Lees de Download gegevens en zorg ervoor dat aan alle systeem vereisten wordt voldaan voordat u Windows Management Framework 5,0 installeert.
 
@@ -32,18 +33,18 @@ Als u Windows Power shell 5,0 wilt installeren op Windows Server 2012 R2, Window
 
 Veel updates en verbeteringen in Windows Power shell desired state Configuration (DSC) in Windows Power Shell 4,0 zijn beschikbaar in het [Update pakket van November 2014 voor Windows RT 8,1, Windows 8,1 en Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850). U kunt bepalen of KB 3000850 is geïnstalleerd op uw systeem door `Get-Hotfix -Id KB3000850` uit te voeren in Windows Power shell.
 
-- Updates voor bestaande cmdlets in de [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) -module
-  - [Get-dscresource bieden](https://technet.microsoft.com/library/dn521625.aspx) is sneller (vooral in ISE).
-  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) heeft een nieuwe para meter,-UseExisting, waarmee de laatst toegepaste configuratie opnieuw wordt toegepast.
-  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -Force is opgelost.
-  - [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) toont meer nuttige informatie over de status van de engine.
-  - [Test-DscConfiguration](https://technet.microsoft.com/library/dn407382.aspx) retourneert nu de computer naam samen met waar of onwaar.
-  - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) ondersteunt nu UNC-paden.
+- Updates voor bestaande cmdlets in de [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration) -module
+  - [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration) is sneller (vooral in ISE).
+  - [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) heeft een nieuwe para meter,-UseExisting, waarmee de laatst toegepaste configuratie opnieuw wordt toegepast.
+  - [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) -Force is opgelost.
+  - [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration) toont meer nuttige informatie over de status van de engine.
+  - [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) retourneert nu de computer naam samen met waar of onwaar.
+  - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration) ondersteunt nu UNC-paden.
 
-- Nieuwe cmdlets in de [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) -module
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): voert een controle op de pull-server op aanvraag uit.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): Hiermee wordt een configuratie gestopt die al wordt uitgevoerd.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): Hiermee kunt u configuratie documenten in verschillende fasen verwijderen (in behandeling, eerder of actueel).
+- Nieuwe cmdlets in de [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration) -module
+  - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration): voert een controle op de pull-server op aanvraag uit.
+  - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration): Hiermee wordt een configuratie gestopt die al wordt uitgevoerd.
+  - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument): Hiermee kunt u configuratie documenten in verschillende fasen verwijderen (in behandeling, eerder of actueel).
 
 - Taal verbeteringen
   - DependsOn biedt nu ondersteuning voor samengestelde resources.
@@ -86,8 +87,8 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
   - De pakket resource
     - Installeert niet langer het verkeerde pakket (op basis van lokale of webbronnen).
     - Biedt nu ondersteuning voor HTTPS.
-  - Er wordt nu ondersteuning geboden voor HTTPS in de [pakket bron](https://technet.microsoft.com/library/dn282132.aspx).
-  - De [Archief resource](https://technet.microsoft.com/library/dn249917.aspx) ondersteunt nu referenties.
+  - Er wordt nu ondersteuning geboden voor HTTPS in de [pakket bron](/powershell/scripting/dsc/reference/resources/windows/packageresource).
+  - De [Archief resource](/powershell/scripting/dsc/reference/resources/windows/archiveresource) ondersteunt nu referenties.
 
 ## <a name="new-features-in-windows-powershell-50"></a>Nieuwe functies in Windows Power shell 5,0
 
@@ -99,7 +100,8 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 
 ### <a name="new-features-in-windows-powershell"></a>Nieuwe functies in Windows Power shell
 
-- Vanaf Windows Power shell 5,0 kunt u ontwikkelen met behulp van klassen, door gebruik te maken van formele syntaxis en semantiek die vergelijkbaar zijn met andere object georiënteerde programmeer talen. **Klasse**, **Enum**en andere tref woorden zijn toegevoegd aan de Windows Power shell-taal ter ondersteuning van de nieuwe functie. Zie about_Classes voor meer informatie over het werken met klassen.
+- Vanaf Windows Power shell 5,0 kunt u ontwikkelen met behulp van klassen, door gebruik te maken van formele syntaxis en semantiek die vergelijkbaar zijn met andere object georiënteerde programmeer talen. **Klasse**, **Enum**en andere tref woorden zijn toegevoegd aan de Windows Power shell-taal ter ondersteuning van de nieuwe functie.
+  Zie about_Classes voor meer informatie over het werken met klassen.
 
 - Windows Power shell 5,0 introduceert een nieuwe, gestructureerde informatie stroom die u kunt gebruiken voor het verzenden van gestructureerde gegevens tussen een script en de aanroepers (of hosting omgeving). U kunt nu write-host gebruiken om uitvoer naar de informatie stroom te verzenden. Informatie stromen werkt ook voor Power shell. streams, taken, geplande taken en werk stromen. De volgende functies ondersteunen de informatie stroom.
   - Een nieuwe cmdlet write-Information waarmee u kunt opgeven hoe Windows Power shell gegevens streams voor een opdracht verwerkt. Write-host is een wrapper voor schrijf informatie. Write-Information is ook een ondersteunde werk stroom activiteit.
@@ -111,27 +113,30 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 - In samen werking met [micro soft Research](https://research.microsoft.com/)is een nieuwe cmdlet, ConvertFrom teken reeks, toegevoegd. Met de ConvertFrom-teken reeks kunt u gestructureerde objecten uit de inhoud van teken reeksen ophalen en parseren. Zie ConvertFrom-string (Engelstalig) voor meer informatie.
 - Met een nieuwe cmdlet Convert-string wordt tekst automatisch opgemaakt op basis van een voor beeld van een para meter die u opgeeft.
 - Een nieuwe module, micro soft. Power shell. Archive, bevat cmdlets waarmee u bestanden en mappen kunt comprimeren in archief (ook wel ZIP-bestanden genoemd), bestanden kunt extra heren uit bestaande ZIP-bestanden en ZIP-bestanden bijwerken met nieuwere versies van bestanden die zijn gecomprimeerd.
-- Met een nieuwe module, Package Management, kunt u software pakketten op Internet detecteren en installeren. De package management-module (voorheen bekend als OneGet) is een manager of multiplexer van bestaande pakket beheerders (ook wel pakket providers genoemd) om Windows-pakket beheer samen te voegen met één Windows Power shell-interface.
+- Met een nieuwe module, Package Management, kunt u software pakketten op Internet detecteren en installeren.
+  De package management-module (voorheen bekend als OneGet) is een manager of multiplexer van bestaande pakket beheerders (ook wel pakket providers genoemd) om Windows-pakket beheer samen te voegen met één Windows Power shell-interface.
 - Met een nieuwe module, PowerShellGet, kunt u modules en DSC-resources zoeken, installeren, publiceren en bijwerken op de [PowerShell Gallery](https://www.powershellgallery.com/), of op een interne module opslagplaats die u kunt instellen door de cmdlet REGI ster-PSRepository uit te voeren.
-- Er is een nieuw tref woord voor de taal, **verborgen**, toegevoegd om op te geven dat een lid (een eigenschap of methode) niet standaard wordt weer gegeven in de resultaten van de Get-leden (tenzij u de para meter-Force toevoegt). Eigenschappen of methoden die zijn gemarkeerd als verborgen, worden ook niet weer gegeven in IntelliSense-resultaten, tenzij u zich in een context bevindt waarin het lid zichtbaar moet zijn. Zo moet bij de automatische variabele $This verborgen leden worden weer gegeven in de methode klasse.
+- Er is een nieuw tref woord voor de taal, **verborgen**, toegevoegd om op te geven dat een lid (een eigenschap of methode) niet standaard wordt weer gegeven in de resultaten van de Get-leden (tenzij u de para meter-Force toevoegt).
+  Eigenschappen of methoden die zijn gemarkeerd als verborgen, worden ook niet weer gegeven in IntelliSense-resultaten, tenzij u zich in een context bevindt waarin het lid zichtbaar moet zijn. Zo moet bij de automatische variabele $This verborgen leden worden weer gegeven in de methode klasse.
 - Nieuwe items, verwijder items en Get-Child item zijn verbeterd ter ondersteuning van het maken en beheren van [symbolische koppelingen](https://en.wikipedia.org/wiki/Symbolic_link). De para meter **-item type** voor nieuw item accepteert een nieuwe waarde, **SymbolicLink**. U kunt nu symbolische koppelingen maken op één lijn door de cmdlet New-item uit te voeren.
 - Get-Child item heeft ook een nieuwe depth-para meter, die u met de para meter-recursief gebruikt om de recursie te beperken. Get-Child item-recursief-diepte 2 retourneert bijvoorbeeld resultaten uit de huidige map, alle onderliggende mappen in de huidige map en alle mappen in de onderliggende mappen.
-- Met kopie-item kunt u nu bestanden of mappen van de ene Windows Power shell-sessie naar een andere kopiëren, wat betekent dat u bestanden kunt kopiëren naar sessies die zijn verbonden met externe computers (inclusief computers waarop [nano server](https://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx)wordt uitgevoerd en dus geen andere interface heeft). Als u bestanden wilt kopiëren, geeft u PSSession-Id's op als de waarde van de para meters New-FromSession en-ToSession, en add-Path en-Destination om respectievelijk het oorspronkelijke pad en de doel locatie op te geven. Kopieer-item-path c: bijvoorbeeld\\myFile. txt-ToSession $s-bestemming d:\\destinationFolder.
+- Met kopie-item kunt u nu bestanden of mappen van de ene Windows Power shell-sessie naar een andere kopiëren, wat betekent dat u bestanden kunt kopiëren naar sessies die zijn verbonden met externe computers (inclusief computers waarop nano server wordt uitgevoerd en dus geen andere interface heeft). Als u bestanden wilt kopiëren, geeft u PSSession-Id's op als de waarde van de para meters New-FromSession en-ToSession, en add-Path en-Destination om respectievelijk het oorspronkelijke pad en de doel locatie op te geven. Kopieer-item-path c: bijvoorbeeld\\myFile. txt-ToSession $s-bestemming d:\\destinationFolder.
 - Windows Power shell transcriptie is verbeterd voor alle hosting toepassingen (zoals Windows PowerShell ISE) naast de console-host (**Power shell. exe**). Transcriptie-opties (inclusief het inschakelen van een transcript voor het hele systeem) kunnen worden geconfigureerd door de instelling **Power shell transcriptie** Groepsbeleid in te scha kelen in Beheersjablonen/Windows-onderdelen/Windows Power shell.
 - Met een nieuwe uitgebreide functie voor het traceren van scripts kunt u het gebruik van Windows Power shell-scripts op een systeem gedetailleerd bijhouden en analyseren. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken door Windows Power shell geregistreerd in het gebeurtenis logboek van de Event Tracing for Windows (ETW), **micro soft-Windows-Power shell/operationeel**.
-- Met ingang van Windows Power shell 5,0 worden nieuwe cmdlets voor cryptografische bericht syntaxis versleuteling en ontsleuteling van inhoud ondersteund door gebruik te maken van de indeling van de IETF-standaard voor het cryptografisch beveiligen van berichten zoals beschreven door [RFC5652](https://tools.ietf.org/html/rfc5652). De cmdlets Get-CmsMessage, Protect-CmsMessage en Unprotect-CmsMessage zijn toegevoegd aan de module [micro soft. Power shell. Security](https://technet.microsoft.com/library/hh849807.aspx) .
-- Nieuwe cmdlets in de module [micro soft. Power shell. Utility](https://technet.microsoft.com/library/hh849958.aspx) , Get-runs, debug-runs Pace, Get-RunspaceDebug, Enable-RunspaceDebug en Disable-RunspaceDebug, kunt u opties voor fout opsporing op een runs Pace instellen en de fout opsporing op een runs Pace starten en stoppen. Voor wille keurige runspaces (dat wil zeggen runspaces die niet de standaard runs Pace zijn voor een Windows Power shell-console of Windows PowerShell ISE-sessie) kunt u met Windows Power shell onderbrekings punten in een script instellen en onderbrekings punten toevoegen het script stoppen vanaf uitvoeren totdat u een fout opsporingsprogramma kunt toevoegen om fouten op te sporen in het runs Pace-script. Geneste probleemoplossings ondersteuning voor wille keurige runspaces is toegevoegd aan de Windows Power shell-script debugger voor runspaces.
-- Er is een nieuwe indeling-hex-cmdlet toegevoegd aan de module [micro soft. Power shell. Utility](https://technet.microsoft.com/library/hh849958.aspx) . Met Format-hex kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
-- Get-klem bord-en set-Klembord-cmdlets zijn toegevoegd aan de module [micro soft. Power shell. Utility](https://technet.microsoft.com/library/hh849958.aspx) ; Ze vereenvoudigen de overdracht van inhoud naar en van een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
-- Er is een nieuwe cmdlet, Clear-RecycleBin, toegevoegd aan de module [micro soft. Power shell. Management.](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) met deze cmdlet wordt de Prullenbak leeg gemaakt voor een vast station, dat externe stations bevat. Standaard wordt u gevraagd om een Clear-RecycleBin opdracht te bevestigen, omdat de eigenschap ConfirmImpact van de cmdlet is ingesteld op ConfirmImpact. High.
+- Met ingang van Windows Power shell 5,0 worden nieuwe cmdlets voor cryptografische bericht syntaxis versleuteling en ontsleuteling van inhoud ondersteund door gebruik te maken van de indeling van de IETF-standaard voor het cryptografisch beveiligen van berichten zoals beschreven door [RFC5652](https://tools.ietf.org/html/rfc5652). De cmdlets Get-CmsMessage, Protect-CmsMessage en Unprotect-CmsMessage zijn toegevoegd aan de module [micro soft. Power shell. Security](/powershell/module/Microsoft.PowerShell.Security) .
+- Nieuwe cmdlets in de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) , Get-runs, debug-runs Pace, Get-RunspaceDebug, Enable-RunspaceDebug en Disable-RunspaceDebug, kunt u opties voor fout opsporing op een runs Pace instellen en de fout opsporing op een runs Pace starten en stoppen. Voor wille keurige runspaces (dat wil zeggen runspaces die niet de standaard runs Pace zijn voor een Windows Power shell-console of Windows PowerShell ISE-sessie) kunt u met Windows Power shell onderbrekings punten in een script instellen en onderbrekings punten toevoegen het script stoppen vanaf uitvoeren totdat u een fout opsporingsprogramma kunt toevoegen om fouten op te sporen in het runs Pace-script. Geneste probleemoplossings ondersteuning voor wille keurige runspaces is toegevoegd aan de Windows Power shell-script debugger voor runspaces.
+- Er is een nieuwe indeling-hex-cmdlet toegevoegd aan de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) .
+  Met Format-hex kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
+- Get-klem bord-en set-Klembord-cmdlets zijn toegevoegd aan de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) ; Ze vereenvoudigen de overdracht van inhoud naar en van een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
+- Er is een nieuwe cmdlet, Clear-RecycleBin, toegevoegd aan de module [micro soft. Power shell. Management.](/powershell/module/Microsoft.PowerShell.Management) met deze cmdlet wordt de Prullenbak leeg gemaakt voor een vast station, dat externe stations bevat. Standaard wordt u gevraagd om een Clear-RecycleBin opdracht te bevestigen, omdat de eigenschap ConfirmImpact van de cmdlet is ingesteld op ConfirmImpact. High.
 - Met een nieuwe cmdlet New-TemporaryFile kunt u een tijdelijk bestand maken als onderdeel van het uitvoeren van scripts. Het nieuwe tijdelijke bestand wordt standaard gemaakt in ```C:\Users\<user name>\AppData\Local\Temp```.
 - De cmdlets out-file, add-content en set-content hebben nu een nieuwe para meter-New-nieuwe regel, waarbij een nieuwe lijn na de uitvoer wordt wegge laten.
 - De cmdlet New-GUID maakt gebruik van de .NET Framework GUID-klasse voor het genereren van een GUID, handig wanneer u scripts of DSC-resources schrijft.
-- Omdat de gegevens van de bestands versie misleidend kunnen zijn, met name nadat een bestand is geïnstalleerd, zijn er nieuwe FileVersionRaw-en ProductVersionRaw-script eigenschappen beschikbaar voor file info-objecten. U kunt bijvoorbeeld de volgende opdracht uitvoeren om de waarden van deze eigenschappen voor Power shell. exe weer te geven, waarbij $pid de proces-ID bevat voor een actieve sessie van Windows Power shell: ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Omdat de gegevens van de bestands versie misleidend kunnen zijn, met name nadat een bestand is geïnstalleerd, zijn er nieuwe FileVersionRaw-en ProductVersionRaw-script eigenschappen beschikbaar voor file info-objecten. U kunt bijvoorbeeld de volgende opdracht uitvoeren om de waarden van deze eigenschappen voor Power shell. exe weer te geven, waarbij $pid de proces-ID bevat voor een actieve sessie van Windows Power shell: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - Met de nieuwe cmdlets Enter-PSHostProcess en Exit-PSHostProcess kunt u fouten opsporen in Windows Power shell-scripts in processen gescheiden van het huidige proces dat wordt uitgevoerd in de Windows Power shell-console. Voer Enter-PSHostProcess uit om een specifieke proces-ID in te voeren of toe te voegen, en voer Get-runs Pace uit om de actieve runspaces binnen het proces te retour neren. Voer exit-PSHostProcess uit om het proces te ontkoppelen wanneer u klaar bent met het opsporen van fouten in het script in het proces.
-- Er is een nieuwe wacht fout-cmdlet toegevoegd aan de module [micro soft. Power shell. Utility](https://technet.microsoft.com/library/hh849958.aspx) . U kunt wacht debugging uitvoeren om een script in het fout opsporingsprogramma te stoppen voordat u de volgende instructie in het script uitvoert.
+- Er is een nieuwe wacht fout-cmdlet toegevoegd aan de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) . U kunt wacht debugging uitvoeren om een script in het fout opsporingsprogramma te stoppen voordat u de volgende instructie in het script uitvoert.
 - Het fout opsporingsprogramma van de Windows Power shell-werk stroom ondersteunt nu het volt ooien van opdrachten of tabbladen en u kunt fouten opsporen in geneste werk stromen U kunt nu op **CTRL + onderbreken** drukken om de fout opsporing in een actief script in te voeren, zowel voor lokale als externe sessies, en in een werk stroom script.
-- Er is een cmdlet voor fout opsporing-taak toegevoegd aan de module [micro soft. Power shell. core](https://technet.microsoft.com/library/hh849695.aspx) voor fout opsporing bij het uitvoeren van taak scripts voor Windows Power shell-werk stroom, achtergrond en taken die worden uitgevoerd in externe sessies.
+- Er is een cmdlet voor fout opsporing-taak toegevoegd aan de module [micro soft. Power shell. core](/powershell/module/Microsoft.PowerShell.Core) voor fout opsporing bij het uitvoeren van taak scripts voor Windows Power shell-werk stroom, achtergrond en taken die worden uitgevoerd in externe sessies.
 - Er is een nieuwe status, AtBreakpoint, toegevoegd voor Windows Power shell-taken. De AtBreakpoint-status is van toepassing wanneer een taak een script uitvoert dat set-onderbrekings punten bevat en het script een onderbrekings punt heeft bereikt. Wanneer een taak wordt gestopt bij een onderbrekings punt voor fout opsporing, moet u fouten opsporen in de taak door de cmdlet debug-job uit te voeren.
 - Windows Power shell 5,0 implementeert ondersteuning voor meerdere versies van één Windows Power shell-module in dezelfde map in $PSModulePath. Er is een eigenschap RequiredVersion toegevoegd aan de klasse ModuleSpecification om u te helpen de gewenste versie van een module op te halen. Deze eigenschap is wederzijds exclusief met de eigenschap ModuleVersion. RequiredVersion wordt nu ondersteund als onderdeel van de waarde van de para meter FullyQualifiedName van de cmdlets Get-module, import-module en Remove-module.
 - U kunt nu de module versie validatie uitvoeren door de cmdlet test-ModuleManifest uit te voeren.
@@ -143,7 +148,7 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 - De para meter FullyQualifiedName is toegevoegd aan cmdlets voor import-module en Remove-module, ter ondersteuning van het opslaan van meerdere versies van één module.
 - Save-Help, update-Help, import-PSSession, export-PSSession en Get-Command hebben een nieuwe para meter, FullyQualifiedModule, van het type ModuleSpecification. Voeg deze para meter toe om een module op te geven met de volledig gekwalificeerde naam.
 - De waarde van **$PSVersionTable. PSVersion** is bijgewerkt naar 5,0.
-- WMF 5,0 (Power shell 5,0) bevat de module **pest** .  De ziekte is een framework voor het testen van eenheden voor Power shell. Het bevat enkele eenvoudig te gebruiken tref woorden waarmee u tests kunt maken voor uw scripts.
+- WMF 5,0 (Power shell 5,0) bevat de module **pest** . De ziekte is een framework voor het testen van eenheden voor Power shell. Het bevat enkele eenvoudig te gebruiken tref woorden waarmee u tests kunt maken voor uw scripts.
 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nieuwe functies in Windows Power shell desired state Configuration
 
@@ -170,8 +175,9 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 - Windows Power shell bevat nu ondersteuning voor aangepaste Help voor DSC-configuraties die zijn gedefinieerd door \[CmdletBinding ()] toe te voegen aan de gegenereerde configuratie functie.
 - Een nieuw **DscLocalConfigurationManager** -kenmerk geeft een configuratie blok aan als een meta configuratie, dat wordt gebruikt om de DSC lokale Configuration Manager te configureren. Dit kenmerk beperkt een configuratie tot alleen items die de DSC lokale Configuration Manager configureren. Tijdens de verwerking genereert deze configuratie een \*. meta. MOF-bestand dat vervolgens wordt verzonden naar de juiste doel knooppunten door de cmdlet Set-DscLocalConfigurationManager uit te voeren.
 - Gedeeltelijke configuraties zijn nu toegestaan in Windows Power shell 5,0. U kunt configuratie documenten verzenden naar een knoop punt in fragmenten. Voor een knoop punt om meerdere fragmenten van een configuratie document te ontvangen, moet de lokale Configuration Manager van het knoop punt eerst worden ingesteld om de verwachte fragmenten op te geven
-- Synchronisatie tussen computers is nieuw in DSC in Windows Power shell 5,0. Door gebruik te maken van de ingebouwde WaitFor\* resources (**WaitForAll**, **WaitForAny**en **WaitForSome**), kunt u nu afhankelijkheden opgeven tussen computers tijdens de configuratie uitvoeringen, zonder externe integraties. Deze bronnen bieden synchronisatie van knoop punt naar knoop punt met behulp van CIM-verbindingen via het WS-man-protocol. Een configuratie kan wachten tot de specifieke resource status van een andere computer is gewijzigd.
-- Net genoeg beheer (JEA), een nieuwe functie voor delegering van de beveiliging, maakt gebruik van DSC-en Windows Power shell-beperkte runspaces om ondernemingen te helpen beschermen tegen gegevens verlies of inbreuk op werk nemers, ongeacht of dit opzettelijk of onbedoeld is. Zie voor meer informatie over JEA, met inbegrip van waar u de DSC-resource van xJEA kunt downloaden, [net voldoende beheer, stap voor stap](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
+- Synchronisatie tussen computers is nieuw in DSC in Windows Power shell 5,0. Door gebruik te maken van de ingebouwde WaitFor\* resources (**WaitForAll**, **WaitForAny**en **WaitForSome**), kunt u nu afhankelijkheden opgeven tussen computers tijdens de configuratie uitvoeringen, zonder externe integraties. Deze bronnen bieden synchronisatie van knoop punt naar knoop punt met behulp van CIM-verbindingen via het WS-man-protocol.
+  Een configuratie kan wachten tot de specifieke resource status van een andere computer is gewijzigd.
+- Net genoeg beheer (JEA), een nieuwe functie voor delegering van de beveiliging, maakt gebruik van DSC-en Windows Power shell-beperkte runspaces om ondernemingen te helpen beschermen tegen gegevens verlies of inbreuk op werk nemers, ongeacht of dit opzettelijk of onbedoeld is. Zie [net genoeg beheer](/powershell/scripting/learn/remoting/jea/overview)voor meer informatie over JEA, waaronder waar u de DSC-resource van xJEA kunt downloaden.
 - De volgende nieuwe cmdlets zijn toegevoegd aan de PSDesiredStateConfiguration-module.
   - Een nieuwe cmdlet Get-DscConfigurationStatus krijgt informatie op hoog niveau over de configuratie status van een doel knooppunt. U kunt de status van de laatste of van alle configuraties verkrijgen.
   - Een nieuwe cmdlet Compare-DscConfiguration vergelijkt een opgegeven configuratie met de werkelijke status van een of meer doel knooppunten.
@@ -188,7 +194,7 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Nieuwe functies in Windows Power shell Web Services (Management OData IIS extension)
 
-- Vanaf Windows Power shell 5,0 kunt u een set Windows Power shell-cmdlets genereren op basis van de functionaliteit die wordt weer gegeven door een bepaald OData-eind punt, door de cmdlet Export-ODataEndpointProxy uit te voeren in de nieuwe module [micro soft. Power shell. OdataUtils](https://technet.microsoft.com/library/dn818507(v=wps.640).aspx) .
+- Vanaf Windows Power shell 5,0 kunt u een set Windows Power shell-cmdlets genereren op basis van de functionaliteit die wordt weer gegeven door een bepaald OData-eind punt, door de cmdlet Export-ODataEndpointProxy uit te voeren in de nieuwe module [micro soft. Power shell. OdataUtils](/powershell/module/microsoft.powershell.odatautils) .
 
 ### <a name="notable-bug-fixes-in-windows-powershell-50"></a>Belang rijke oplossingen voor fouten in Windows Power shell 5,0
 
@@ -210,16 +216,17 @@ Windows Power Shell 4,0 wordt standaard geïnstalleerd op Windows 8,1 en Windows
 
 Windows Power Shell 4,0 bevat de volgende nieuwe functies.
 
-### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a>Nieuwe functies <a name="new-features-in-windows-powershell-1" />in Windows Power shell
+### <a name="new-features-in-windows-powershell"></a>Nieuwe functies <a name="new-features-in-windows-powershell-1" />in Windows Power shell
 
-- **Windows Power shell desired state Configuration** (DSC) is een nieuw beheer systeem in Windows power Shell 4,0 waarmee u configuratie gegevens kunt implementeren en beheren voor software services en de omgeving waarin deze services worden uitgevoerd. Zie [aan de slag met Windows Power shell desired state Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)(Engelstalig) voor meer informatie over DSC.
+- **Windows Power shell desired state Configuration** (DSC) is een nieuw beheer systeem in Windows power Shell 4,0 waarmee u configuratie gegevens kunt implementeren en beheren voor software services en de omgeving waarin deze services worden uitgevoerd. Zie [aan de slag met Windows Power shell desired state Configuration](/powershell/scripting/dsc/getting-started/wingettingstarted)(Engelstalig) voor meer informatie over DSC.
 - **Met Save-Help** kunt u nu Help opslaan voor modules die op externe computers zijn geïnstalleerd. U kunt Save-Help gebruiken om de module Help te downloaden van een client met Internet verbinding (waarop niet alle modules zijn geïnstalleerd waarvoor u hulp nodig hebt), en vervolgens de opgeslagen Help kopiëren naar een externe gedeelde map of een externe computer die geen Internet heeft Access.
 - De Windows Power Shell-fout opsporing is uitgebreid voor het toestaan van fout opsporing van Windows Power shell-werk stromen en voor scripts die worden uitgevoerd op externe computers. Windows Power shell-werk stromen kunnen nu worden opgespoord op script niveau vanuit de Windows Power shell-opdracht regel of Windows PowerShell ISE. Windows Power shell-scripts, met inbegrip van script werk stromen, kunnen nu worden opgespoord via externe sessies. Sessies voor externe fout opsporing worden bewaard via externe Windows Power shell-sessies die niet meer zijn verbonden en vervolgens opnieuw verbinding maken.
 - Een **RunNow** -para meter voor **REGI ster-ScheduledJob** en **set-ScheduledJob** elimineert de nood zaak om een onmiddellijke start datum en-tijd voor taken in te stellen met behulp van de **trigger** parameter.
 - Met **invoke-RestMethod** en **invoke-WebRequest** kunt u nu alle headers instellen met behulp van de para meter headers. Hoewel deze para meter altijd bestaat, was het een van de para meters voor de Web-cmdlets die hebben geleid tot uitzonde ringen of fouten.
 - **Get-module** heeft een nieuwe para meter, **FullyQualifiedName**, van het type **ModuleSpecification\[]** . Met de para meter **FullyQualifiedName** van de Get-module kunt u nu een module opgeven met behulp van de naam, versie en optioneel de GUID van de module.
 - De standaard instelling voor het uitvoerings beleid van Windows Server 2012 R2 is **RemoteSigned**. In Windows 8,1 is er geen wijziging in de standaard instelling.
-- Vanaf Windows Power Shell 4,0 wordt de methode aanroep met behulp van dynamische methode namen ondersteund. U kunt een variabele gebruiken om een methode naam op te slaan en de methode vervolgens dynamisch aanroepen door de variabele aan te roepen.
+- Vanaf Windows Power Shell 4,0 wordt de methode aanroep met behulp van dynamische methode namen ondersteund.
+  U kunt een variabele gebruiken om een methode naam op te slaan en de methode vervolgens dynamisch aanroepen door de variabele aan te roepen.
 - Asynchrone werk stroom taken worden niet meer verwijderd wanneer de time-outperiode die is opgegeven door de algemene para meter **PSElapsedTimeoutSec** workflow is verstreken.
 - Er is een nieuwe para meter, **RepeatIndefinitely**, toegevoegd aan de cmdlets **New-JobTrigger** en **set-JobTrigger** . Dit elimineert de nood zaak van het opgeven van een **time span. MaxValue** -waarde voor de para meter **RepetitionDuration** om een geplande taak herhaaldelijk voor een onbepaalde periode uit te voeren.
 - Er is een **PassThru** -para meter toegevoegd aan de cmdlets **Enable-JobTrigger** en **Disable-JobTrigger** . De para meter PassThru geeft alle objecten weer die zijn gemaakt of gewijzigd door de opdracht.
@@ -230,7 +237,8 @@ Windows Power Shell 4,0 bevat de volgende nieuwe functies.
 - Een nieuwe cmdlet **Get-FileHash**, die een bestandshash retourneert in een van de verschillende indelingen voor een opgegeven bestand, is toegevoegd.
 - In Windows Power Shell 4,0, als een module de sleutel **DefaultCommandPrefix** in het manifest gebruikt, of als de gebruiker een module importeert met de para meter **prefix** , worden de opdrachten in de module met het voor voegsel in de eigenschap **ExportedCommands** van de module weer gegeven. Wanneer u de opdrachten uitvoert met behulp van de module-gekwalificeerde syntaxis, module naam\\opdrachtnaam, moeten de opdracht namen het voor voegsel bevatten.
 - De waarde van **$PSVersionTable. PSVersion** is bijgewerkt naar 4,0.
-- **Waar ()** operator gedrag is gewijzigd. `Collection.Where('property -match name')` het accepteren van een teken reeks expressie in de indeling `"Property -CompareOperator Value"` niet meer wordt ondersteund. De operator **WHERE ()** accepteert echter teken reeks expressies in de indeling van een script Block; Dit wordt nog steeds ondersteund.
+- **Waar ()** operator gedrag is gewijzigd. `Collection.Where('property -match name')` het accepteren van een teken reeks expressie in de indeling `"Property -CompareOperator Value"` niet meer wordt ondersteund.
+  De operator **WHERE ()** accepteert echter teken reeks expressies in de indeling van een script Block; Dit wordt nog steeds ondersteund.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nieuwe functies in Windows Power shell Integrated Scripting Environment (ISE)
 
@@ -249,11 +257,12 @@ Windows Power Shell 4,0 bevat de volgende nieuwe functies.
 
 ### <a name="new-features-in-windows-powershell-web-services"></a>Nieuwe functies in Windows Power shell-webservices
 
-- Wanneer zich een fout voordoet in Windows Power shell Web Services (PSWS, ook wel Management OData IIS extension), terwijl een cmdlet wordt uitgevoerd, worden er meer gedetailleerde fout berichten naar de oproepende functie geretourneerd. Daarnaast volgen fout codes de [richt lijnen voor de fout code van Windows Azure rest API](https://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
+- Wanneer zich een fout voordoet in Windows Power shell Web Services (PSWS, ook wel Management OData IIS extension), terwijl een cmdlet wordt uitgevoerd, worden er meer gedetailleerde fout berichten naar de oproepende functie geretourneerd. Daarnaast volgen fout codes de [richt lijnen voor de fout code van Windows Azure rest API](/rest/api/storageservices/Common-REST-API-Error-Codes).
 - Een eind punt kan nu de API-versie definiëren, maar ook het gebruik van een specifieke API-versie afdwingen. Wanneer de versie van de client en de server niet overeenkomt, worden fouten op de client en de server weer gegeven.
 - Het beheer van het verzend schema is vereenvoudigd door automatisch waarden te genereren voor ontbrekende velden in het schema. Genereren vindt plaats als handig begin punt, zelfs als het verzend schema niet bestaat.
 - Type verwerking in PSWS is verbeterd tot ondersteuning voor typen die gebruikmaken van een andere constructor dan de standaardconstructor, door te werken op dezelfde manier als de **PSTypeConverter** in Windows Power shell. Hiermee kunt u complexe typen gebruiken met PSWS.
-- Met PSWS kan nu een gekoppeld exemplaar worden uitgebreid tijdens het uitvoeren van een query. Voor grotere binaire inhoud (zoals afbeeldingen, audio of video) zijn de kosten voor de overdracht aanzienlijk en is het beter om binaire gegevens zonder code ring over te dragen. PSWS maakt gebruik van benoemde resource stromen voor het overbrengen zonder code ring. De naam van de resource stroom is een eigenschap van een entiteit van het type **EDM. Stream** . Elke benoemde resource stroom heeft een afzonderlijke URI voor GET-of UPDATE-bewerkingen.
+- Met PSWS kan nu een gekoppeld exemplaar worden uitgebreid tijdens het uitvoeren van een query. Voor grotere binaire inhoud (zoals afbeeldingen, audio of video) zijn de kosten voor de overdracht aanzienlijk en is het beter om binaire gegevens zonder code ring over te dragen. PSWS maakt gebruik van benoemde resource stromen voor het overbrengen zonder code ring.
+  De naam van de resource stroom is een eigenschap van een entiteit van het type **EDM. Stream** . Elke benoemde resource stroom heeft een afzonderlijke URI voor GET-of UPDATE-bewerkingen.
 - OData-acties bieden nu een mechanisme voor het aanroepen van niet-ruwe methoden (maken, lezen, bijwerken en verwijderen) voor een resource. U kunt een actie aanroepen door een HTTP POST-aanvraag te verzenden naar de URI die voor de actie is gedefinieerd. De para meters voor de actie worden gedefinieerd in de hoofd tekst van de POST-aanvraag.
 - Om consistent te zijn met de richt lijnen voor Windows Azure, moeten alle Url's worden vereenvoudigd. Een wijziging die is opgenomen in de **sleutel als segment** , staat het weer gegeven van afzonderlijke sleutels als segmenten. Houd er rekening mee dat verwijzingen die gebruikmaken van meerdere sleutel waarden, door komma's gescheiden waarden hebben in de notatie tussen haakjes, net als voorheen.
 - Vóór deze release van PSWS is de enige manier om bewerkingen voor maken, bijwerken of verwijderen uit te voeren op een resource op het hoogste niveau. In deze release van PSWS kunnen gebruikers met een opgenomen resource dezelfde resultaten bereiken, terwijl ze dezelfde resource minder rechtstreeks bereiken, alsof deze bronnen zich bevinden.
@@ -313,13 +322,14 @@ Windows Power Shell 3,0 bevat de volgende nieuwe functies.
 - [Verbeteringen in de opmaak en uitvoer](#formatting-and-output-improvements)
 - [Verbeterde beleving van de console-host](#enhanced-console-host-experience)
 - [Nieuwe cmdlet-en hosting-Api's](#new-cmdlet-and-hosting-apis)
-- [Prestatieverbeteringen](#performance-improvements)
+- [Prestatie verbeteringen](#performance-improvements)
 - [Ondersteuning voor runas en gedeelde host](#runas-and-shared-host-support)
 - [Verbeteringen voor speciale teken verwerking](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows Power shell-werk stroom
 
-De Windows Power shell-werk stroom biedt de kracht van Windows Workflow Foundation naar Windows Power shell. U kunt werk stromen schrijven in XAML of in de Windows Power shell-taal en uitvoeren op dezelfde manier als u een cmdlet zou uitvoeren. De cmdlet [Get-opdracht](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) haalt werk stroom opdrachten op en de cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) krijgt hulp voor werk stromen.
+De Windows Power shell-werk stroom biedt de kracht van Windows Workflow Foundation naar Windows Power shell.
+U kunt werk stromen schrijven in XAML of in de Windows Power shell-taal en uitvoeren op dezelfde manier als u een cmdlet zou uitvoeren. Met de cmdlet `Get-Command` worden werk stroom opdrachten opgehaald en de `Get-Help`-cmdlet biedt hulp voor werk stromen.
 
 Werk stromen zijn reeksen van multicomputer Management-activiteiten die langdurig worden uitgevoerd, herhaal bare, frequente, kan worden opgestart, onderbreekbaar, suspendable en opnieuw kunnen worden gestart. Werk stromen kunnen worden hervat met een opzettelijke of accidentele onderbreking, zoals een netwerk storing, een Windows-computer of een stroom storing.
 
@@ -329,23 +339,25 @@ Hier volgen de voor delen van Windows Power shell-werk stroom
 
 - Automatisering van geordende, langlopende taken.
 - **Externe controle van langlopende taken**. De status en voortgang van activiteiten zijn op elk gewenst moment zichtbaar.
-- **Beheer van alle computers.** Gelijktijdig taken uitvoeren als werk stromen op honderden beheerde knoop punten. De Windows Power shell-werk stroom bevat een ingebouwde bibliotheek met algemene beheer parameters, zoals **PSComputerName**, waarmee beheer scenario's voor meerdere computers mogelijk zijn.
+- **Beheer van alle computers.** Gelijktijdig taken uitvoeren als werk stromen op honderden beheerde knoop punten.
+  De Windows Power shell-werk stroom bevat een ingebouwde bibliotheek met algemene beheer parameters, zoals **PSComputerName**, waarmee beheer scenario's voor meerdere computers mogelijk zijn.
 - **Uitvoering van een enkele taak van complexe processen.** U kunt gerelateerde scripts combi neren die een volledig end-to-end-scenario implementeren in één werk stroom.
 - **Persistentie.** : een werk stroom wordt opgeslagen (of Check-Point) op specifieke punten die zijn gedefinieerd door de auteur, zodat u de werk stroom kunt hervatten vanaf de laatste persistente taak (of controle punt), in plaats van de werk stroom vanaf het begin opnieuw te starten.
-- **Kracht.** Automatisch herstel van fouten. Werk stromen blijven gepland en niet-gepland opnieuw worden gestart. U kunt de uitvoering van de werk stroom onderbreken en de werk stroom vervolgens hervatten vanaf het laatste persistentie punt. Werk stroom ontwerpers kunnen specifieke activiteiten aanwijzen die opnieuw moeten worden uitgevoerd in geval van een storing op een of meer beheerde knoop punten.
+- **Kracht.** Automatisch herstel van fouten. Werk stromen blijven gepland en niet-gepland opnieuw worden gestart. U kunt de uitvoering van de werk stroom onderbreken en de werk stroom vervolgens hervatten vanaf het laatste persistentie punt.
+  Werk stroom ontwerpers kunnen specifieke activiteiten aanwijzen die opnieuw moeten worden uitgevoerd in geval van een storing op een of meer beheerde knoop punten.
 - **De mogelijkheid om de verbinding te verbreken, opnieuw te verbinden en uit te voeren in sessies zonder verbinding.** Gebruikers kunnen verbinding maken met de werk stroom server en de verbinding verbreken, maar de werk stroom wordt doorlopend uitgevoerd. U kunt zich afmelden bij de client computer of de client computer opnieuw opstarten en de uitvoering van de werk stroom op een andere computer controleren zonder de werk stroom te onderbreken.
 - **Schema.** Werk stroom taken kunnen worden gepland zoals elke Windows Power shell-cmdlet of script.
 - **Beperking van werk stromen en verbindingen.** Het uitvoeren van werk stromen en verbindingen met knoop punten kunnen worden beperkt, waardoor de scenario's voor schaal baarheid en hoge Beschik baarheid worden ingeschakeld.
 
-### <a name="windows-powershell-web-access"></a>Windows PowerShell Web Access
+### <a name="windows-powershell-web-access"></a>Windows Power shell-Internet toegang
 
 Windows Power shell Web Access is een Windows Server 2012-functie waarmee gebruikers Windows Power shell-opdrachten en-scripts kunnen uitvoeren in een webconsole. Voor apparaten die gebruikmaken van de webconsole, zijn geen Windows Power shell, software voor extern beheer of installatie van invoeg toepassingen vereist. Alles wat vereist is, is een correct geconfigureerde Windows Power shell Web Access-Gateway en een browser voor client apparaten die Java script ondersteunt en cookies accepteert.
 
-Zie [deploy Windows Power shell Web Access](https://go.microsoft.com/fwlink/p/?LinkID=221050)(Engelstalig) voor meer informatie.
+Zie [deploy Windows Power shell Web Access](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)(Engelstalig) voor meer informatie.
 
 ### <a name="new-windows-powershell-ise-features"></a>Nieuwe Windows PowerShell ISE functies
 
-Voor Windows Power Shell 3,0 heeft Windows Power shell Integrated Scripting Environment (ISE) tal van nieuwe functies, waaronder IntelliSense, show-Opdrachtvenster, een gecombineerd console venster, fragmenten, accolades, vouw-samen vouwen secties, automatisch opslaan, recente items lijst, uitgebreide kopie, blok kopie en volledige ondersteuning voor het schrijven van Windows Power shell-script werk stromen. Zie [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)voor meer informatie.
+Voor Windows Power Shell 3,0 heeft Windows Power shell Integrated Scripting Environment (ISE) tal van nieuwe functies, waaronder IntelliSense, show-Opdrachtvenster, een gecombineerd console venster, fragmenten, accolades, vouw-samen vouwen secties, automatisch opslaan, recente items lijst, uitgebreide kopie, blok kopie en volledige ondersteuning voor het schrijven van Windows Power shell-script werk stromen. Zie [about_Windows_PowerShell_ISE](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise)voor meer informatie.
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Ondersteuning voor Microsoft .NET Framework 4
 
@@ -353,7 +365,8 @@ Windows Power shell is gebouwd op basis van de common language runtime 4,0. Voor
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Ondersteuning voor Windows Preinstallation Environment
 
-Windows Power Shell 3,0 is een optioneel onderdeel van Windows Preinstallation Environment (Windows PE) 4,0 voor Windows 8. Windows PE is een mini maal besturings systeem waarmee een computer zonder besturings systeem wordt gestart en wordt voor bereid voor de installatie van Windows. Windows PE kan worden gebruikt voor het partitioneren en Format teren van harde schijven, het kopiëren van schijf installatie kopieën naar een computer en het initiëren van Windows Setup vanaf een netwerk share. Windows Power Shell 3,0 kan worden gebruikt in Windows PE voor het beheren van implementatie-, diagnose-en herstel scenario's.
+Windows Power Shell 3,0 is een optioneel onderdeel van Windows Preinstallation Environment (Windows PE) 4,0 voor Windows 8. Windows PE is een mini maal besturings systeem waarmee een computer zonder besturings systeem wordt gestart en wordt voor bereid voor de installatie van Windows. Windows PE kan worden gebruikt voor het partitioneren en Format teren van harde schijven, het kopiëren van schijf installatie kopieën naar een computer en het initiëren van Windows Setup vanaf een netwerk share.
+Windows Power Shell 3,0 kan worden gebruikt in Windows PE voor het beheren van implementatie-, diagnose-en herstel scenario's.
 
 ### <a name="disconnected-sessions"></a>Verbroken sessies
 
@@ -361,9 +374,9 @@ Met ingang van Windows Power Shell 3,0, permanente door de gebruiker beheerde se
 
 U kunt nu de verbinding met een sessie verbreken zonder de opdrachten die worden uitgevoerd in de sessie te onderbreken. U kunt de sessie sluiten en de computer afsluiten. Later kunt u opnieuw verbinding maken met de sessie vanuit een andere sessie op hetzelfde of op een andere computer.
 
-De para meter **ComputerName** van de cmdlet [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) haalt nu alle sessies van de gebruiker op die verbinding maken met de computer, zelfs als deze zijn gestart in een andere sessie op een andere computer. U kunt verbinding maken met de sessies, de resultaten van opdrachten ophalen, nieuwe opdrachten starten en vervolgens de verbinding met de sessie verbreken.
+De para meter **ComputerName** van de cmdlet `Get-PSSession` haalt nu alle sessies van de gebruiker die verbinding maken met de computer, zelfs als ze zijn gestart in een andere sessie op een andere computer. U kunt verbinding maken met de sessies, de resultaten van opdrachten ophalen, nieuwe opdrachten starten en vervolgens de verbinding met de sessie verbreken.
 
-Er zijn nieuwe cmdlets toegevoegd ter ondersteuning van de functie voor verbroken sessies, waaronder [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060)en receive-PSSession, en er zijn nieuwe para meters toegevoegd aan cmdlets die PSSessions beheren, zoals de **InDisconnectedSession** -para meter van de cmdlet [invoke-opdracht](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) .
+Er zijn nieuwe cmdlets toegevoegd ter ondersteuning van de functie voor verbroken sessies, waaronder `Disconnect-PSSession`, `Connect-PSSession`en `Receive-PSSession`, en er zijn nieuwe para meters toegevoegd aan cmdlets die PSSessions beheren, zoals de para meter **InDisconnectedSession** van de cmdlet `Invoke-Command`.
 
 De functie voor het beëindigen van de verbinding wordt alleen ondersteund als de computers op de oorspronkelijke server (' client ') en het afsluiten van de verbinding Windows Power Shell 3,0 worden uitgevoerd.
 
@@ -377,19 +390,20 @@ Deze functies bieden een betrouwbaardere en onherstelbare mogelijkheden voor ext
 
 ### <a name="updatable-help-system"></a>Bij te werken Help-systeem
 
-U kunt nu bijgewerkte Help-bestanden voor de cmdlets in uw modules downloaden. Met de cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) worden de nieuwste Help-bestanden geïdentificeerd, worden deze gedownload van het Internet, worden ze uitgepakt, gevalideerd en worden ze in de juiste taalspecifieke Directory voor de module geïnstalleerd.
+U kunt nu bijgewerkte Help-bestanden voor de cmdlets in uw modules downloaden. De cmdlet `Update-Help` identificeert de nieuwste Help-bestanden, downloadt ze van het Internet, pakt ze uit, valideert ze en installeert deze in de juiste taalspecifieke Directory voor de module.
 
 Als u de bijgewerkte Help-bestanden wilt gebruiken, typt u `Get-Help`. U hoeft Windows of Windows Power shell niet opnieuw op te starten. Als u de Help voor modules in de map $pshome wilt bijwerken, start u Windows Power shell met de optie als administrator uitvoeren.
 
-Ter ondersteuning van gebruikers die geen toegang hebben tot internet en gebruikers achter firewalls, downloadt de nieuwe cmdlet [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Help-bestanden naar een bestandssysteem Directory, zoals een bestands share. Gebruikers kunnen vervolgens de cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) gebruiken om bijgewerkte Help-bestanden van de bestands share op te halen.
+Ter ondersteuning van gebruikers die geen toegang hebben tot internet en gebruikers achter firewalls, downloadt de nieuwe `Save-Help`-cmdlet Help-bestanden naar een bestandssysteem Directory, zoals een bestands share. Gebruikers kunnen vervolgens de cmdlet `Update-Help` gebruiken om bijgewerkte Help-bestanden van de bestands share op te halen.
 
-U kunt de cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) gebruiken om Help-bestanden voor alle of bepaalde modules in alle ondersteunde gebruikersinterface culturen bij te werken. U kunt zelfs een [Update-Help-](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) opdracht in uw Windows Power shell-profiel opnemen. Windows Power shell downloadt standaard de Help-bestanden voor een module niet meer dan één keer per dag.
+U kunt de cmdlet `Update-Help` gebruiken om Help-bestanden voor alle of bepaalde modules in alle ondersteunde GEBRUIKERSINTERFACE culturen bij te werken. U kunt zelfs een `Update-Help`-opdracht in uw Windows Power shell-profiel plaatsen.
+Windows Power shell downloadt standaard de Help-bestanden voor een module niet meer dan één keer per dag.
 
-Windows 8-en Windows Server 2012-modules bevatten geen Help-bestanden. Als u de nieuwste Help-bestanden wilt downloaden, typt u `Update-Help`. Typ `Get-Help` (zonder para meters) of Zie [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)voor meer informatie.
+Windows 8-en Windows Server 2012-modules bevatten geen Help-bestanden. Als u de nieuwste Help-bestanden wilt downloaden, typt u `Update-Help`. Typ `Get-Help` (zonder para meters) of Zie [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_Updatable_Help)voor meer informatie.
 
-Als de Help-bestanden voor een cmdlet niet op de computer zijn geïnstalleerd, wordt met de cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) nu automatisch gegenereerde Help weer gegeven. De automatisch gegenereerde Help omvat de opdracht syntaxis en instructies voor het gebruik van de cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) om Help-bestanden te downloaden.
+Als de Help-bestanden voor een cmdlet niet op de computer zijn geïnstalleerd, wordt in de `Get-Help`-cmdlet nu automatisch gegenereerde Help weer gegeven. De automatisch gegenereerde Help bevat de opdracht syntaxis en instructies voor het gebruik van de cmdlet `Update-Help` om Help-bestanden te downloaden.
 
-Elke auteur van een module kan de Help-informatie voor de module ondersteunen. U kunt Help-bestanden in de module toevoegen en Help-informatie gebruiken om ze bij te werken of de Help-bestanden te verwijderen en de bij te werken hulp gebruiken om ze te installeren. Zie [ondersteunende Help](https://go.microsoft.com/FWLink/?LinkID=242129) in MSDN voor meer informatie over het ondersteunen van de Help die kan worden bijgewerkt.
+Elke auteur van een module kan de Help-informatie voor de module ondersteunen. U kunt Help-bestanden in de module toevoegen en Help-informatie gebruiken om ze bij te werken of de Help-bestanden te verwijderen en de bij te werken hulp gebruiken om ze te installeren. Zie [ondersteunende Help](/powershell/scripting/developer/module/supporting-updatable-help)voor meer informatie over ondersteunende Help.
 
 ### <a name="enhanced-online-help"></a>Uitgebreide online-Help
 
@@ -422,15 +436,16 @@ Windows Power Shell 3,0 bevat ondersteuning voor de Common Information Model (CI
 
 ### <a name="session-configuration-files"></a>Sessie configuratie bestanden
 
-Vanaf Windows Power Shell 3,0 kunt u een aangepaste sessie configuratie ontwerpen met behulp van een bestand. Met het nieuwe sessie configuratie bestand kunt u de omgeving van sessies bepalen die gebruikmaken van de sessie configuratie, inclusief welke modules, scripts en indelings bestanden worden geladen in sessies, welke cmdlets en taal elementen gebruikers kunnen gebruiken, welke modules en scripts die ze kunnen uitvoeren en de variabelen die ze kunnen zien.
+Vanaf Windows Power Shell 3,0 kunt u een aangepaste sessie configuratie ontwerpen met behulp van een bestand.
+Met het nieuwe sessie configuratie bestand kunt u de omgeving van sessies bepalen die gebruikmaken van de sessie configuratie, inclusief welke modules, scripts en indelings bestanden worden geladen in sessies, welke cmdlets en taal elementen gebruikers kunnen gebruiken, welke modules en scripts die ze kunnen uitvoeren en de variabelen die ze kunnen zien.
 
 U kunt een sessie ontwerpen waarin gebruikers alleen de cmdlets van een bepaalde module kunnen uitvoeren, of een sessie waarin gebruikers volledige taal hebben, toegang hebben tot alle modules en toegang hebben tot scripts waarmee geavanceerde taken worden uitgevoerd.
 
 In eerdere versies van Windows Power shell was besturing op dit niveau alleen beschikbaar voor gebruikers die een C# programma of een complex opstart script kunnen schrijven. Nu kan elk lid van de groep Administrators op de computer een sessie configuratie aanpassen met behulp van een configuratie bestand.
 
-Gebruik de cmdlet [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) om een sessie configuratie bestand te maken. Als u het sessie configuratie bestand wilt Toep assen op een sessie configuratie, gebruikt u de cmdlets [REGI ster-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) of [set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) .
+Gebruik de cmdlet `New-PSSessionConfigurationFile` om een sessie configuratie bestand te maken. Gebruik de `Register-PSSessionConfiguration`-of set-PSSessionConfiguration-cmdlets om het sessie configuratie bestand toe te passen op een sessie configuratie.
 
-Zie [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) en [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)voor meer informatie.
+Zie [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files) en `New-PSSessionConfigurationFile`voor meer informatie.
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Geplande taken en de integratie van taak planner
 
@@ -438,13 +453,14 @@ U kunt nu Windows Power shell-achtergrond taken plannen en deze beheren in Windo
 
 Geplande Windows Power shell-taken zijn een handige hybride taak voor Windows Power shell-achtergrond taken en Task Scheduler-taken.
 
-Net als Windows Power shell-achtergrond taken worden geplande taken asynchroon uitgevoerd op de achtergrond. Exemplaren van geplande taken die zijn voltooid, kunnen worden beheerd met behulp van de taak-cmdlets, zoals [Start-job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) en [Get-job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Net als Windows Power shell-achtergrond taken worden geplande taken asynchroon uitgevoerd op de achtergrond.
+Exemplaren van geplande taken die zijn voltooid, kunnen worden beheerd met behulp van de taak-cmdlets, zoals `Start-Job` en `Get-Job`.
 
 Net als taak planner-taken kunt u geplande taken uitvoeren op een eenmalige of terugkerende planning of als reactie op een actie of gebeurtenis. U kunt geplande taken weer geven en beheren in Task Scheduler, deze indien nodig inschakelen en uitschakelen, uitvoeren of gebruiken als sjablonen, en voor waarden instellen waaronder de taken worden gestart.
 
 Daarnaast worden geplande taken geleverd met een aangepaste set cmdlets voor het beheer van deze functies. Met de cmdlets kunt u geplande taken maken, bewerken, beheren, uitschakelen en opnieuw inschakelen, geplande taak triggers maken en opties voor geplande taken instellen.
 
-Zie [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92)voor meer informatie over geplande taken.
+Zie [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs)voor meer informatie over geplande taken.
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows Power shell-taal verbeteringen
 
@@ -454,36 +470,36 @@ Windows Power Shell 3,0 bevat veel functies die zijn ontworpen om de taal eenvou
 
 Er zijn nieuwe cmdlets toegevoegd aan de Windows Power shell Core-installatie, inclusief cmdlets voor het beheren van geplande taken, verbroken sessies, CIM-integratie en het Help-systeem dat kan worden bijgewerkt.
 
-|||
-|-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
-|ConvertFrom-JSON|New-PSTransportOption|
-|ConvertTo-Json|New-New psworkflowexecutionoption|
-|Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|New-ScheduledJobOption|
-|Verbinding verbreken-PSSession|New-Wine vent|
-|Enable-JobTrigger|Receive-PSSession|
-|Enable-ScheduledJob|REGI ster-CimIndicationEvent|
-|Get-CimAssociatedInstance|REGI ster-ScheduledJob|
-|Get-CimClass|Remove-CimInstance|
-|Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Naam wijzigen-computer|
-|Get-IseSnippet|Resume-job|
-|Get-JobTrigger|Help opslaan|
-|Get-ScheduledJob|Set-CimInstance|
-|Get-ScheduledJobOption|Set-JobTrigger|
-|Get-TypeData|Set-ScheduledJob|
-|Import-IseSnippet|Set-ScheduledJobOption|
-|Invoke-AsWorkflow|Weer geven-opdracht|
-|Invoke-CimMethod|Show-ControlPanelItem|
-|Invoke-RestMethod|Onderbreken-taak|
-|Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|New-CimInstance|Blok kering van bestand opheffen|
-|New-CimSession|Registratie ongedaan maken-ScheduledJob|
-|New-CimSessionOption|Help bijwerken|
-|New-IseSnippet||
+|                           |                                 |
+| ------------------------- | ------------------------------- |
+| Add-JobTrigger            | New-JobTrigger                  |
+| Connect-PSSession         | New-PSSessionConfigurationFile  |
+| ConvertFrom-JSON          | New-PSTransportOption           |
+| ConvertTo-Json            | New-New psworkflowexecutionoption   |
+| Disable-JobTrigger        | New-PSWorkflowSession           |
+| Disable-ScheduledJob      | New-ScheduledJobOption          |
+| Verbinding verbreken-PSSession      | New-Wine vent                    |
+| Enable-JobTrigger         | Receive-PSSession               |
+| Enable-ScheduledJob       | REGI ster-CimIndicationEvent     |
+| Get-CimAssociatedInstance | REGI ster-ScheduledJob           |
+| Get-CimClass              | Remove-CimInstance              |
+| Get-CimInstance           | Remove-CimSession               |
+| Get-CimSession            | Remove-TypeData                 |
+| Get-ControlPanelItem      | Naam wijzigen-computer                 |
+| Get-IseSnippet            | Resume-job                      |
+| Get-JobTrigger            | Help opslaan                       |
+| Get-ScheduledJob          | Set-CimInstance                 |
+| Get-ScheduledJobOption    | Set-JobTrigger                  |
+| Get-TypeData              | Set-ScheduledJob                |
+| Import-IseSnippet         | Set-ScheduledJobOption          |
+| Invoke-AsWorkflow         | Weer geven-opdracht                    |
+| Invoke-CimMethod          | Show-ControlPanelItem           |
+| Invoke-RestMethod         | Onderbreken-taak                     |
+| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
+| New-CimInstance           | Blok kering van bestand opheffen                    |
+| New-CimSession            | Registratie ongedaan maken-ScheduledJob         |
+| New-CimSessionOption      | Help bijwerken                     |
+| New-IseSnippet            |                                 |
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen aan bestaande kern-cmdlets en-providers
 
@@ -495,23 +511,25 @@ De Windows Power shell-providers zijn ook aanzienlijk verbeterd, inclusief onder
 
 Windows Power Shell 3,0 breidt module detectie, import en impliciete mogelijkheden voor externe communicatie uit op externe computers. Met de module-cmdlets worden modules op externe computers opgehaald en worden de modules naar de externe of lokale computer geïmporteerd met behulp van externe communicatie van Windows Power shell. Met de nieuwe ondersteuning voor CIM-sessies kunt u CIM en WMI gebruiken voor het beheren van niet-Windows-computers door opdrachten te importeren naar de lokale computer die impliciet wordt uitgevoerd op de externe computer.
 
-Zie de Help-onderwerpen voor de cmdlets [Get-module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) en [import-module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) voor meer informatie.
+Zie de Help-onderwerpen voor de `Get-Module` en `Import-Module`-cmdlets voor meer informatie.
 
 ### <a name="enhanced-tab-completion"></a>Uitgebreide tabblad voltooiing
 
-Tabblad voltooiing in de Windows Power shell-console voltooit nu de namen van cmdlets, para meters, parameter waarden, opsommingen, .NET Frameworks-typen, COM-objecten, verborgen directory's en meer. De functie voor het volt ooien van het tabblad is volledig herschreven op basis van een nieuwe parser en abstracte syntaxis structuur ter ondersteuning van meer scenario's, waaronder het in-Memory parseren van structuren en de vulling van het tabblad middenlijn.
+Tabblad voltooiing in de Windows Power shell-console voltooit nu de namen van cmdlets, para meters, parameter waarden, opsommingen, .NET Frameworks-typen, COM-objecten, verborgen directory's en meer.
+De functie voor het volt ooien van het tabblad is volledig herschreven op basis van een nieuwe parser en abstracte syntaxis structuur ter ondersteuning van meer scenario's, waaronder het in-Memory parseren van structuren en de vulling van het tabblad middenlijn.
 
 ### <a name="module-auto-loading"></a>Module automatisch laden
 
-De cmdlet [Get-opdracht](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) haalt nu alle cmdlets en functies op uit alle modules die op de computer zijn geïnstalleerd, zelfs als de module niet in de huidige sessie is geïmporteerd.
+De cmdlet `Get-Command` haalt nu alle cmdlets en functies op uit alle modules die op de computer zijn geïnstalleerd, zelfs als de module niet in de huidige sessie is geïmporteerd.
 
-Wanneer u de cmdlet krijgt die u nodig hebt, kunt u deze direct gebruiken zonder modules te importeren. Windows Power shell-modules worden nu automatisch geïmporteerd wanneer u een cmdlet in de module gebruikt. U hoeft niet langer te zoeken naar de module en deze te importeren om de bijbehorende cmdlets te gebruiken.
+Wanneer u de cmdlet krijgt die u nodig hebt, kunt u deze direct gebruiken zonder modules te importeren.
+Windows Power shell-modules worden nu automatisch geïmporteerd wanneer u een cmdlet in de module gebruikt. U hoeft niet langer te zoeken naar de module en deze te importeren om de bijbehorende cmdlets te gebruiken.
 
-Het automatisch importeren van modules wordt geactiveerd met behulp van de cmdlet in een opdracht, het uitvoeren van **Get-opdracht** voor een cmdlet zonder joker tekens of het uitvoeren van [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) voor een cmdlet zonder joker tekens.
+Het automatisch importeren van modules wordt geactiveerd met behulp van de cmdlet in een opdracht, het uitvoeren van `Get-Command` voor een cmdlet zonder joker tekens of voor het uitvoeren van `Get-Help` voor een cmdlet zonder joker tekens.
 
 U kunt het automatisch importeren van modules in-en uitschakelen en configureren door gebruik te maken van de **$PSModuleAutoLoadingPreference** voorkeurs variabele.
 
-Zie [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)en de Help-onderwerpen voor de cmdlets [Get-opdracht](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) en [import-module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) voor meer informatie.
+Zie [about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules), [about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_Preference_Variables)en de Help-onderwerpen voor de cmdlets `Get-Command` en `Import-Module` voor meer informatie.
 
 ### <a name="module-experience-improvements"></a>Verbeteringen in module-ervaring
 
@@ -523,15 +541,15 @@ Windows Power Shell 3,0 biedt ondersteuning voor geavanceerde functies voor modu
 4. Verbeterde detectie van beschik bare (niet-geïmporteerde) modules, inclusief het toestaan van de para meters **Path** en **ListAvailable** in dezelfde opdracht
 5. Nieuwe **DefaultCommandPrefix** -sleutel in module manifesten die geen naam conflicten voor komen zonder module code te wijzigen.
 6. Verbeterde module vereisten, met inbegrip van volledig gekwalificeerde vereiste modules met versie en GUID en automatische invoer van vereiste modules
-7. Stillere, gestroomlijnde bewerking van de cmdlet [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) .
+7. Stillere, gestroomlijnde werking van de `New-ModuleManifest`-cmdlet.
 8. Nieuwe **module** parameter voor #Requires
-9. Verbeterde cmdlet [import-module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) met de para meters **MinimumVersion** en **RequiredVersion** .
+9. Verbeterde `Import-Module` cmdlet met de para meters **MinimumVersion** en **RequiredVersion** .
 
 ### <a name="simplified-command-discovery"></a>Vereenvoudigde opdracht detectie
 
-U hoeft niet langer alle modules te importeren om de opdrachten te ontdekken die beschikbaar zijn voor uw sessie. In Windows Power Shell 3,0 worden met de cmdlet [Get-opdracht](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) alle opdrachten van alle geïnstalleerde modules opgehaald. En als u een opdracht gebruikt, wordt de module die de opdracht exporteert automatisch geïmporteerd in uw sessie.
+U hoeft niet langer alle modules te importeren om de opdrachten te ontdekken die beschikbaar zijn voor uw sessie. In Windows Power Shell 3,0 worden alle opdrachten van alle geïnstalleerde modules opgehaald met de cmdlet `Get-Command`. En als u een opdracht gebruikt, wordt de module die de opdracht exporteert automatisch geïmporteerd in uw sessie.
 
-De nieuwe [show-opdracht-](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet is speciaal ontworpen voor beginners. U kunt zoeken naar opdrachten in een venster. U kunt alle opdrachten weer geven of filteren op module, een module importeren door te klikken op een knop, tekst vakken en vervolg keuzelijsten gebruiken om een geldige opdracht te maken en de opdracht vervolgens te kopiëren of uit te voeren zonder het venster te verlaten.
+De nieuwe `Show-Command` cmdlet is speciaal ontworpen voor beginners. U kunt zoeken naar opdrachten in een venster. U kunt alle opdrachten weer geven of filteren op module, een module importeren door te klikken op een knop, tekst vakken en vervolg keuzelijsten gebruiken om een geldige opdracht te maken en de opdracht vervolgens te kopiëren of uit te voeren zonder het venster te verlaten.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Verbeterde ondersteuning voor logboek registratie, diagnostiek en groepsbeleid
 
@@ -545,15 +563,13 @@ Dankzij de nieuwe opmaak-en uitvoer verbeteringen wordt de efficiëntie van alle
 
 Het Windows Power shell-console-hostprogramma beschikt over nieuwe functies in Windows Power Shell 3,0, waaronder Apartment met één thread. Met de nieuwe optie uitvoeren met Power shell in Verkenner kunt u scripts uitvoeren in een onbeperkte sessie, alleen door met de rechter muisknop te klikken. Met de nieuwe logica voor het starten van de console-host wordt Windows Power shell sneller gestart en met nieuwe letter typen kunt u de bekende ervaring van het console venster personaliseren.
 
-Zie [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)voor meer informatie.
-
 ### <a name="new-cmdlet-and-hosting-apis"></a>Nieuwe cmdlet-en hosting-Api's
 
 De nieuwe cmdlet-API en hosting-API omvatten open bare geavanceerde syntaxis structuur (AST) Api's en Api's voor het pagineren van pijp lijnen, geneste pijp lijnen, het tabblad voltooiing van runs Pace, Windows RT, het verouderde cmdlet-kenmerk en de verb-en zelfstandige eigenschappen van het object FunctionInfo.
 
-### <a name="performance-improvements"></a>Verbeterde prestaties
+### <a name="performance-improvements"></a>Prestatie verbeteringen
 
-Belang rijke prestatie verbeteringen in Windows Power shell zijn afkomstig van de nieuwe taal-parser, die is gebouwd op dynamische runtime Language (DLR) in .NET Framework 4. samen met compilatie van het runtime-script, verbeteringen van de prestaties van de engine en wijzigingen in het algoritme van de [Get-Child item](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) die de prestatie verbeteren, met name bij het zoeken naar netwerk shares.
+Belang rijke prestatie verbeteringen in Windows Power shell zijn afkomstig van de nieuwe taal-parser, die is gebouwd op dynamische runtime Language (DLR) in .NET Framework 4. samen met compilatie van het runtime-script, verbeteringen van de prestaties van de engine en wijzigingen in het algoritme van de `Get-ChildItem` die de prestatie verbeteren, met name bij het zoeken naar netwerk shares.
 
 ### <a name="runas-and-shared-host-support"></a>Ondersteuning voor runas en gedeelde host
 
@@ -565,9 +581,9 @@ Met de functie **SharedHost** kunnen meerdere gebruikers op meerdere computers g
 
 ### <a name="special-character-handling-improvements"></a>Verbeteringen voor speciale teken verwerking
 
-Voor het verbeteren van de mogelijkheden van Windows Power Shell 3,0 het interpreteren en goed verwerken van speciale tekens, is de para meter **LiteralPath** , die speciale tekens in paden verwerkt, geldig op bijna alle cmdlets die de para meter **Path** hebben, inclusief de nieuwe [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) en cmdlets voor [opslaan-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) . De parser bevat ook speciale logica voor het verbeteren van de verwerking van het apostroffen teken (\`) en vier Kante haken in bestands namen en paden.
+Voor het verbeteren van de mogelijkheden van Windows Power Shell 3,0 het interpreteren en goed verwerken van speciale tekens, is de para meter **LiteralPath** , die speciale tekens in paden verwerkt, geldig op bijna alle cmdlets die de para meter **Path** hebben, inclusief de nieuwe `Update-Help` en `Save-Help`-cmdlets. De parser bevat ook speciale logica voor het verbeteren van de verwerking van het apostroffen teken (\`) en vier Kante haken in bestands namen en paden.
 
 ## <a name="see-also"></a>Zie ook
 
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [Windows Power shell](https://go.microsoft.com/fwlink/?LinkID=107116)

@@ -2,22 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Het hulp programma resource Designer gebruiken
-ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941178"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500633"
 ---
 # <a name="using-the-resource-designer-tool"></a>Het hulp programma resource Designer gebruiken
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven door de **xDscResourceDesigner** -module, waardoor DSC-resources (desired state Configuration) van Windows Power shell eenvoudiger kunnen worden gemaakt. De cmdlets in deze resource helpen u bij het maken van het MOF-schema, de script module en de mapstructuur voor uw nieuwe resource. Zie voor meer informatie over DSC-resources [aangepaste Windows Power shell-configuratie bronnen voor de gewenste status bouwen](authoringResource.md).
-In dit onderwerp gaan we een DSC-resource maken die Active Directory gebruikers beheert.
-Gebruik de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) om de **xDscResourceDesigner** -module te installeren.
-
->**Opmerking**: **install-module** is opgenomen in de **PowerShellGet** -module, die is opgenomen in Power shell 5,0. U kunt de **PowerShellGet** -module voor power Shell 3,0 en 4,0 downloaden van [Package Management Power shell-modules preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven door de **xDscResourceDesigner** -module, waardoor DSC-resources (desired state Configuration) van Windows Power shell eenvoudiger kunnen worden gemaakt. De cmdlets in deze resource helpen u bij het maken van het MOF-schema, de script module en de mapstructuur voor uw nieuwe resource. Zie voor meer informatie over DSC-resources [aangepaste Windows Power shell-configuratie bronnen voor de gewenste status bouwen](authoringResource.md). In dit onderwerp gaan we een DSC-resource maken die Active Directory gebruikers beheert. Gebruik de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) om de **xDscResourceDesigner** -module te installeren.
 
 ## <a name="creating-resource-properties"></a>Resource-eigenschappen maken
 Het eerste wat u moet doen, is beslissen over eigenschappen die de resource beschikbaar maakt. In dit voor beeld wordt een Active Directory gebruiker gedefinieerd met de volgende eigenschappen.
@@ -60,7 +56,8 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Het bron script bevindt zich in **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. psm1**. Het bevat niet de werkelijke logica voor het implementeren van de resource, die u zelf moet toevoegen. De inhoud van het skelet script is als volgt.
+Het bron script bevindt zich in **C:\Program files\windowspowershell\modules\ Demo_DSCModule \dscresources\ Demo_ADUser \ Demo_ADUser. psm1**.
+Het bevat niet de werkelijke logica voor het implementeren van de resource, die u zelf moet toevoegen. De inhoud van het skelet script is als volgt.
 
 ```powershell
 function Get-TargetResource
@@ -180,5 +177,5 @@ Het hulp programma resource designer toont een meer cmdlet die kan worden gebrui
 #### <a name="concepts"></a>Concepten
 [Aangepaste Windows Power shell-configuratie bronnen voor desired state bouwen](authoringResource.md)
 
-#### <a name="other-resources"></a>Andere bronnen
+#### <a name="other-resources"></a>Meer informatie
 [xDscResourceDesigner-module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

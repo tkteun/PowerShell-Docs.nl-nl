@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
-ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417249"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500747"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
 
@@ -61,7 +61,7 @@ U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](/powershell/scripting/dsc/secureserver#guids).
+Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](secureServer.md#guids).
 
 ### <a name="configuration-names"></a>Configuratie namen
 

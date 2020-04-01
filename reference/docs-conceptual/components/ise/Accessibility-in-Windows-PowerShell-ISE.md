@@ -2,12 +2,12 @@
 ms.date: 12/19/2019
 keywords: Power shell, cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
-ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736280"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500951"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -22,7 +22,7 @@ Dit onderwerp bevat een beschrijving van de toegankelijkheids functies van Windo
 - [Sneltoetsen voor het starten en afsluiten](#keyboard-shortcuts-for-starting-and-exiting)
 - [Onderbrekings beheer met cmdlets](#breakpoint-management)
 
-Microsoft streeft ernaar om zijn producten en diensten gebruiksvriendelijker te maken voor iedereen. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE toegankelijker maken voor mensen met een handicap.
+Microsoft stelt alles in het werk om Microsoft-producten en -services voor iedereen gebruikersvriendelijker te maken. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE toegankelijker maken voor mensen met een handicap.
 
 Naast de toegankelijkheids functies en-hulpprogram ma's in micro soft Windows maken de volgende functies Windows PowerShell ISE meer toegankelijk voor mensen met een handicap:
 
@@ -60,9 +60,9 @@ Voer een van de volgende handelingen uit:
 
 U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
-|           Actie            |       Sneltoetsen       |          Gebruiken in           |
+|           Bewerking            |       Sneltoetsen       |          Gebruiken in           |
 | --------------------------- | ------------------------------ | ------------------------- |
-| **Copy**                    | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Script venster, console venster |
+| **Kopieer**                    | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Script venster, console venster |
 | **Verminderen**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Script venster, console venster |
 | **Zoeken in script**          | <kbd>CTRL</kbd>+<kbd>F</kbd>   | Script venster               |
 | **Volgende zoeken in script**     | <kbd>Toets</kbd>                  | Script venster               |
@@ -78,11 +78,11 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
 U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het Script-venster.
 
-|            Actie            |                                                                                                     Sneltoets                                                                                                      |
+|            Bewerking            |                                                                                                     Sneltoets                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
-| **Lopend**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
-| **Uitvoeren**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
+| **Staan**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
+| **Uitvoeringsrun**                      | <kbd>Drukt</kbd>                                                                                                                                                                                                              |
 | **Selectie uitvoeren**            | <kbd>Drukken</kbd>                                                                                                                                                                                                              |
 | **Uitvoering stoppen**           | <kbd>CTRL</kbd>+<kbd>onderbroken</kbd>. <kbd>CTRL</kbd>+<kbd>C</kbd> kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).                                                                               |
 | **Tabblad** (naar volgend script)     | <kbd>CTRL</kbd>+<kbd>Tab</kbd> **Opmerking:** tab naar volgende script werkt alleen wanneer er één Power shell-tabblad is geopend of als u meer dan één Power shell-tabblad hebt geopend, maar de focus is in het Script-venster.                |
@@ -92,7 +92,7 @@ U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het S
 
 U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell ISE aan te passen. Ze zijn toegankelijk vanuit alle deel Vensters in de toepassing.
 
-|           Actie           |         Sneltoets        |
+|           Bewerking           |         Sneltoets        |
 | -------------------------- | -------------------------------- |
 | **Naar het console venster gaan**     | <kbd>CTRL</kbd>+<kbd>D</kbd>     |
 | **Naar het Script venster gaan**      | <kbd>CTRL</kbd>+<kbd>Ik</kbd>     |
@@ -108,9 +108,9 @@ U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell I
 
 U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
-|           Actie           |               Sneltoets                |                Gebruiken in                |
+|           Bewerking           |               Sneltoets                |                Gebruiken in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
-| **Uitvoeren/door gaan**           | <kbd>F5</kbd>                                  | Script-deel venster bij fout opsporing van een script |
+| **Uitvoeren/door gaan**           | <kbd>Drukt</kbd>                                  | Script-deel venster bij fout opsporing van een script |
 | **Stap in**              | <kbd>Drukken</kbd>                                 | Script-deel venster bij fout opsporing van een script |
 | **Stap over**              | <kbd>F10</kbd>                                 | Script-deel venster bij fout opsporing van een script |
 | **Stap uit**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | Script-deel venster bij fout opsporing van een script |
@@ -121,17 +121,17 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 | **Fout opsporing stoppen**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                 | Script-deel venster bij fout opsporing van een script |
 
 > [!NOTE]
-> U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het console venster typen en op ENTER drukken.
+> U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het console venster typen en op <kbd>Enter</kbd>drukken.
 
-|                 Actie                  |      Sneltoets       |                Gebruiken in                 |
+|                 Bewerking                  |      Sneltoets       |                Gebruiken in                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
 | **Doen**                            | <kbd>C</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Stap in**                           | <kbd>S</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Stap in**                           | <kbd>Z</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap over**                           | <kbd>Verticale</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap uit**                            | <kbd>O</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Laatste opdracht herhalen**(stap in/over) | <kbd>Voer</kbd>             | Console venster, bij fout opsporing van een script |
 | **Aanroep stack weer geven**                  | <kbd>Middel</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Fout opsporing stoppen**                      | <kbd>Q</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Fout opsporing stoppen**                      | <kbd>Nils</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Het script weer geven**                     | <kbd>Winst</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Opties voor fout opsporing in console weer geven**  | <kbd>H</kbd> of <kbd>?</kbd> | Console venster, bij fout opsporing van een script |
 
@@ -139,26 +139,25 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen gebruikt.
 
-|             Actie              |                                 Sneltoets                                  |
+|             Bewerking              |                                 Sneltoets                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Tabblad Power shell sluiten**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
 | **Nieuw Power shell-tabblad**          | <kbd>CTRL</kbd>+<kbd>t</kbd>                                                       |
-| **Vorig Power shell-tabblad**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>tabblad</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad)                 |
+| **Vorig Power shell-tabblad**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>tabblad</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
 | **Volgende Windows Power shell-tabblad** | <kbd>CTRL</kbd>+<kbd>tabblad</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
 
 U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (**Power shell. exe**) te starten of Windows PowerShell ISE af te sluiten.
 
-|                        Actie                         |               Sneltoets               |
+|                        Bewerking                         |               Sneltoets               |
 | ----------------------------------------------------- | --------------------------------------------- |
-| **Afsluiten**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
+| **Toepassing**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
 | **Power shell. exe starten** (Windows Power shell-console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Onderbrekings beheer
 
-Voor visueel gehandicapten is informatie over onderbrekings punten beschikbaar via de cmdlets voor het beheren van onderbrekings punten, zoals [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) en [set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
-Zie voor meer informatie ' onderbrekings punten beheren ' in [de Windows PowerShell ISE fouten opsporen in scripts](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
+Voor visueel gehandicapten is informatie over onderbrekings punten beschikbaar via de cmdlets voor het beheren van onderbrekings punten, zoals [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) en [set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). Zie voor meer informatie ' onderbrekings punten beheren ' in [de Windows PowerShell ISE fouten opsporen in scripts](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
 ## <a name="see-also"></a>Zie ook
 

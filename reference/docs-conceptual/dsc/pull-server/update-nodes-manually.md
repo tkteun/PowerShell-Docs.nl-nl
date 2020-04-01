@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Knooppunten bijwerken vanaf een pull-server
-ms.openlocfilehash: 516e50b0c39e4747a123307cb3f5e25259ac7ce5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa59a2f6574db2dbc96621be4326f1d5a55e5de9
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417710"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500661"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>Knooppunten bijwerken vanaf een pull-server
 
@@ -38,4 +38,4 @@ $cimSession | Remove-CimSession
 
 ## <a name="see-also"></a>Zie ook
 
-[De performrequiredconfigurationchecks](/powershell/scripting/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks)
+[De performrequiredconfigurationchecks](../reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)

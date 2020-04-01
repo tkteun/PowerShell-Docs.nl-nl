@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 03/09/2020
-ms.openlocfilehash: 28a76506df2183b5c94a18a884b205d0321d920b
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395060"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500555"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -579,7 +579,7 @@ Power shell is beschikbaar via de [Arch Linux][] -gebruikers OPSLAGPLAATS (Aur).
 
 Pakketten in de AUR worden beheerd door de Gemeenschap; Er is geen officiële ondersteuning.
 
-Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of de community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
+Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u de [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) of [Power shell in docker](powershell-in-docker.md).
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/

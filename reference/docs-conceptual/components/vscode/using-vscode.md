@@ -2,12 +2,12 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 8644aa7c648d649651ca679238e0b79ff35ac579
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082443"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500900"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
@@ -22,9 +22,9 @@ Het ondersteunt de volgende Power shell-versies:
 
 Controleer voordat u begint of Power shell op het systeem bestaat. Raadpleeg de volgende koppelingen voor moderne werk belastingen op Windows, macOS en Linux:
 
-- [Installing PowerShell Core on Linux][install-pscore-linux] (PowerShell Core installeren in Linux)
-- [Installing PowerShell Core on macOS][install-pscore-macos] (PowerShell Core installeren in macOS)
-- [Power shell Core installeren in Windows][install-pscore-windows]
+- [Power Shell installeren in Linux][install-pscore-linux]
+- [Power shell in macOS installeren][install-pscore-macos]
+- [Power shell in Windows installeren][install-pscore-windows]
 
 Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads van Windows Power shell.
 
@@ -268,7 +268,16 @@ Dit bestand vertegenwoordigt de veelvoorkomende scenario's voor fout opsporing. 
 
 Nadat de configuratie van de fout opsporing is ingesteld, kunt u selecteren welke configuratie u tijdens een foutopsporingssessie wilt gebruiken. Selecteer een configuratie in de vervolg keuzelijst debug Configuration in de werk balk van de weer gave van de **fout opsporing** .
 
-Er zijn enkele blogs die handig kunnen zijn om aan de slag te gaan met Power shell-extensie voor Visual Studio code:
+## <a name="useful-resources"></a>Nuttige informatie
+
+Er zijn enkele Video's en blog berichten die handig kunnen zijn om aan de slag te gaan met behulp van de Power shell-extensie voor Visual Studio code:
+
+### <a name="videos"></a>Video's
+
+- [Visual Studio code gebruiken als uw standaard Power shell-editor](https://youtu.be/bGn45vIeAMM)
+- [Visual Studio code: dieper in fout opsporing voor uw Power shell-scripts](https://youtu.be/cSbIXmlkr8o)
+
+### <a name="blog-posts"></a>Blogberichten
 
 - [Power shell-uitbrei ding][ps-extension]
 - [Power shell-scripts schrijven en fouten opsporen in Visual Studio code][debug]
@@ -279,6 +288,16 @@ Er zijn enkele blogs die handig kunnen zijn om aan de slag te gaan met Power she
 - [Visual Studio code editing-functies voor Power shell-ontwikkeling-deel 2][editing-part2]
 - [Fout opsporing voor Power shell-script in Visual Studio code – deel 1][debugging-part1]
 - [Fout opsporing voor Power shell-script in Visual Studio code – deel 2][debugging-part2]
+
+## <a name="powershell-extension-for-visual-studio-code"></a>Power shell-extensie voor Visual Studio code
+
+De bron code van de Power shell-extensie vindt u op [github](https://github.com/PowerShell/vscode-powershell).
+
+Als u geïnteresseerd bent in bijdragen, worden pull-aanvragen aanzienlijk gewaardeerd. Volg samen met de [documentatie voor ontwikkel aars op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) om aan de slag te gaan.
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Problemen met de Power shell-extensie voor Visual Studio code oplossen
+
+Als u problemen ondervindt met het gebruik van Visual Studio code voor het ontwikkelen van Power shell-scripts, raadpleegt u de [hand leiding voor probleem oplossing op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -294,13 +313,3 @@ Er zijn enkele blogs die handig kunnen zijn om aan de slag te gaan met Power she
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## <a name="powershell-extension-for-visual-studio-code"></a>Power shell-extensie voor Visual Studio code
-
-De bron code van de Power shell-extensie vindt u op [github](https://github.com/PowerShell/vscode-powershell).
-
-Als u geïnteresseerd bent in bijdragen, worden pull-aanvragen aanzienlijk gewaardeerd. Volg samen met de [documentatie voor ontwikkel aars op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) om aan de slag te gaan.
-
-## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Problemen met de Power shell-extensie voor Visual Studio code oplossen
-
-Als u problemen ondervindt met het gebruik van Visual Studio code voor het ontwikkelen van Power shell-scripts, raadpleegt u de [hand leiding voor probleem oplossing op github](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
-ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278172"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500575"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -29,10 +29,10 @@ Modules zijn over het algemeen beter te delen, maar we scha kelen het delen van 
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Hoe kan ik publiceren naar de PowerShell Gallery?
 
-U moet een account registreren in de PowerShell Gallery voordat u pakketten kunt publiceren naar de galerie. Dit komt doordat voor publicatie pakketten een NuGetApiKey is vereist, dat wordt meegeleverd bij de registratie. Als u zich wilt registreren, gebruikt u uw persoonlijke, werk-of school account om u aan te melden bij de PowerShell Gallery. Een eenmalig registratie proces is vereist wanneer u zich voor de eerste keer aanmeldt. Daarna is uw NuGetApiKey beschikbaar op uw profiel pagina.
+U moet een account registreren in de PowerShell Gallery voordat u pakketten kunt publiceren naar de galerie. Dit komt doordat voor publicatie pakketten een NuGetApiKey is vereist, dat wordt meegeleverd bij de registratie. Als u zich wilt registreren, gebruikt u uw persoonlijke, werk-of school account om u aan te melden bij de PowerShell Gallery. Een eenmalig registratie proces is vereist wanneer u zich voor de eerste keer aanmeldt.
+Daarna is uw NuGetApiKey beschikbaar op uw profiel pagina.
 
-Nadat u in de galerie hebt geregistreerd, gebruikt u de cmdlets [Publish-module][] of [Publish-script][] om uw pakket naar de galerie te publiceren.
-Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad publiceren of leest u de documentatie [Publish-Module][] en [Publish-Script][] .
+Nadat u in de galerie hebt geregistreerd, gebruikt u de cmdlets [Publish-module][] of [Publish-script][] om uw pakket naar de galerie te publiceren. Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad publiceren of leest u de documentatie [Publish-Module][] en [Publish-Script][] .
 
 **U hoeft zich niet te registreren of u aan te melden bij de galerie om pakketten te installeren of op te slaan.**
 
@@ -40,16 +40,15 @@ Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad
 
 Deze fout kan de volgende oorzaken hebben:
 
-- **De opgegeven API-sleutel is ongeldig.**
-     Zorg ervoor dat u de geldige API-sleutel hebt opgegeven in uw account. Als u uw API-sleutel wilt ophalen, bekijkt u de profiel pagina.
-- **De opgegeven pakket naam is geen eigendom van u.**
-     Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de pagina Details van het pakket: `https://www.powershellgallery.com/packages/<packageName>`. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` navigeert, gaat u naar de pagina Details van de ondertekenaar, of deze niet is vermeld of niet. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
-    - Selecteer een andere naam voor het pakket.
-    - Neem contact op met de eigen aren van het bestaande pakket.
+- **De opgegeven API-sleutel is ongeldig.** Zorg ervoor dat u de geldige API-sleutel hebt opgegeven in uw account. Als u uw API-sleutel wilt ophalen, bekijkt u de profiel pagina.
+- **De opgegeven pakket naam is geen eigendom van u.** Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de pagina Details van het pakket: `https://www.powershellgallery.com/packages/<packageName>`. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` navigeert, gaat u naar de pagina Details van de ondertekenaar, of deze niet is vermeld of niet. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
+  - Selecteer een andere naam voor het pakket.
+  - Neem contact op met de eigen aren van het bestaande pakket.
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Waarom kan ik me niet aanmelden met mijn persoonlijke account, maar ik kan me gisteren aanmelden?
 
-Houd er rekening mee dat uw account in de galerie geen wijzigingen in uw primaire e-mail alias heeft. Zie [e-mail aliassen van micro soft](https://windows.microsoft.com/windows/outlook/add-alias-account)voor meer informatie.
+Houd er rekening mee dat uw account in de galerie geen wijzigingen in uw primaire e-mail alias heeft.
+Zie [e-mail aliassen van micro soft](https://windows.microsoft.com/windows/outlook/add-alias-account)voor meer informatie.
 
 ## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Waarom zie ik niet alle galerie pakketten wanneer ik alle selectie vakjes van de categorie Selecteer op het tabblad pakketten?
 
@@ -57,13 +56,9 @@ Als u een categorie selectie vakje inschakelt, wordt ' Ik wil graag alle pakkett
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Wat zijn de vereisten voor het publiceren van een module naar de PowerShell Gallery?
 
-Elk soort Power shell-module (script modules, binaire modules of manifest modules) kan worden gepubliceerd in de galerie.
-Voor het publiceren van een module moet PowerShellGet een aantal dingen kennen: de versie, beschrijving, auteur en de licentie.
-Deze informatie wordt gelezen als onderdeel van het publicatie proces van het *module manifest* bestand (. psd1) of van de waarde van de **LicenseUri** -para meter van de cmdlet [Publish-module][] .
-Alle modules die naar de galerie worden gepubliceerd, moeten module manifesten hebben.
-Alle modules die de volgende informatie bevatten in het manifest, kunnen worden gepubliceerd in de galerie:
+Elk soort Power shell-module (script modules, binaire modules of manifest modules) kan worden gepubliceerd in de galerie. Voor het publiceren van een module moet PowerShellGet een aantal dingen kennen: de versie, beschrijving, auteur en de licentie. Deze informatie wordt gelezen als onderdeel van het publicatie proces van het *module manifest* bestand (. psd1) of van de waarde van de **LicenseUri** -para meter van de cmdlet [Publish-module][] . Alle modules die naar de galerie worden gepubliceerd, moeten module manifesten hebben. Alle modules die de volgende informatie bevatten in het manifest, kunnen worden gepubliceerd in de galerie:
 
-- Versie
+- Version
 - Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van de module, hetzij als onderdeel van de sectie **PrivateData** van het manifest, of in de para meter **LicenseUri** van de cmdlet [Publish-module][] .
@@ -78,13 +73,9 @@ Als u de velden in het manifest bestand van de module wilt bijwerken, gebruikt u
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Wat zijn de vereisten voor het publiceren van een script naar de galerie?
 
-Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in de galerie.
-Voor het publiceren van een script moet PowerShellGet enkele dingen weten over it: de versie, beschrijving, auteur en de licentie.
-Deze informatie wordt gelezen als onderdeel van het publicatie proces van de sectie *PSScriptInfo* van het script bestand of van de waarde van de **LicenseUri** -para meter van de [Publish-Script][] cmdlet.
-Alle scripts die naar de galerie worden gepubliceerd, moeten meta gegevens bevatten.
-Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worden gepubliceerd in de galerie:
+Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in de galerie. Voor het publiceren van een script moet PowerShellGet enkele dingen weten over it: de versie, beschrijving, auteur en de licentie. Deze informatie wordt gelezen als onderdeel van het publicatie proces van de sectie *PSScriptInfo* van het script bestand of van de waarde van de **LicenseUri** -para meter van de [Publish-Script][] cmdlet. Alle scripts die naar de galerie worden gepubliceerd, moeten meta gegevens bevatten. Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worden gepubliceerd in de galerie:
 
-- Versie
+- Version
 - Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van het script, hetzij als onderdeel van de sectie **PSScriptInfo** van het script, of in de para meter **LicenseUri** van de cmdlet [Publish-script][] .
@@ -121,10 +112,7 @@ Alle modules in de galerie bevatten module manifesten en de meeste van deze modu
 
 Package Management is een gemeen schappelijke interface voor het werken met pakket beheer. Uiteindelijk, of u nu gebruikmaakt van Power shell-modules, MSIs, Ruby edelsteen, NuGet-pakketten of perl-modules, moet u de opdrachten van Package Management (zoek-package en install-package) kunnen gebruiken om ze te zoeken en te installeren. Package Management doet dit door een pakket provider te hebben voor elke pakket manager die wordt aangesloten op Package Management. Providers doen al het werkelijke werk. ze halen inhoud op uit opslag plaatsen en installeren de inhoud lokaal. Vaak verloopt pakket providers gewoon om de bestaande pakket beheer Programma's voor een bepaald pakket type.
 
-PowerShellGet is pakket beheer voor Power shell-pakketten.
-Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management.
-Daarom kunt u [Installatie-module][] of install-package-provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery.
-Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
+PowerShellGet is pakket beheer voor Power shell-pakketten. Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management. Daarom kunt u [Installatie-module][] of install-package-provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery. Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
 
 In samen vatting is PowerShellGet alleen gericht op het beheer van een Premium-ervaring voor Power shell-inhoud. Package Management is gericht op het beschikbaar maken van alle pakket beheer-ervaringen via één algemene set hulpprogram ma's. Als u vindt dat dit antwoord niet voldoet, is er een lang antwoord onder aan dit document, in de sectie **Hoe heeft package management eigenlijk betrekking op de PowerShellGet?**
 
@@ -132,7 +120,8 @@ Ga naar de [Package Management-project pagina](https://oneget.org/)voor meer inf
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>Wat is de relatie tussen NuGet en PowerShellGet?
 
-De PowerShell Gallery is een gewijzigde versie van de [NuGet-galerie](https://www.nuget.org/). PowerShellGet maakt gebruik van NuGet-provider om te werken met opslag plaatsen op basis van NuGet, zoals de PowerShell Gallery.
+De PowerShell Gallery is een gewijzigde versie van de [NuGet-galerie](https://www.nuget.org/).
+PowerShellGet maakt gebruik van NuGet-provider om te werken met opslag plaatsen op basis van NuGet, zoals de PowerShell Gallery.
 
 U kunt PowerShellGet gebruiken voor elke geldige NuGet-opslag plaats of-bestands share. U hoeft alleen de opslag plaats toe te voegen door de cmdlet [REGI ster-PSRepository][] uit te voeren.
 
@@ -144,7 +133,7 @@ Ja.
 
 Onder de motorkap maakt PowerShellGet intensief gebruik van Package Management-infra structuur.
 
-Op de Power shell-cmdlet [Installatie-module][] in feite een smalle wrapper rondom install-package-provider PSModule.
+Op de Power shell-cmdlet [Installatie-module][] in feite een smalle wrapper rond `Install-Package -Provider PSModule`.
 
 In de laag van de package management-pakket provider roept de PSModule-pakket provider echt aan bij andere package management-pakket providers. Als u bijvoorbeeld werkt met galerieën op basis van NuGet (zoals de PowerShell Gallery), gebruikt de PSModule-pakket provider de NuGet-pakket provider om met de opslag plaats te werken.
 
@@ -162,17 +151,18 @@ Daarom vereist **PowerShellGet** een van de volgende besturingssystemen:
 
 - Windows 10
 - Windows 8.1 Pro
-- Windows 8.1 Enterprise
+- Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-Voor **PowerShellGet** is ook .NET Framework 4.5 of hoger vereist. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
+**PowerShellGet** vereist ook .NET Framework 4,5 of hoger. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Is het mogelijk namen te reserveren voor pakketten die in de toekomst zullen worden gepubliceerd?
 
-Het is niet mogelijk om pakket namen te squat. [Neem contact op met de eigenaar van het pakket](./how-to/working-with-packages/contacting-package-owners.md)als u denkt dat een bestaand pakket de naam heeft gehaald die aansluit bij uw pakket. Als u binnen een paar weken geen antwoord hebt ontvangen, kunt u contact opnemen met de ondersteuning en wordt het PowerShell Gallery-team erin kijken.
+Het is niet mogelijk om pakket namen te squat. [Neem contact op met de eigenaar van het pakket](./how-to/working-with-packages/contacting-package-owners.md)als u denkt dat een bestaand pakket de naam heeft gehaald die aansluit bij uw pakket.
+Als u binnen een paar weken geen antwoord hebt ontvangen, kunt u contact opnemen met de ondersteuning en wordt het PowerShell Gallery-team erin kijken.
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>Hoe kan ik eigendom van het claimen voor pakketten?
 
@@ -180,12 +170,12 @@ Bekijk het [beheer van pakket eigenaren op PowerShellGallery.com](./how-to/publi
 
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Hoe kan ik omgaan met een pakket eigenaar die in strijd is met mijn pakket licentie?
 
-We raden de Power shell-community aan samen te werken om geschillen op te lossen die kunnen ontstaan tussen pakket eigenaren en de eigen aren van andere pakketten.  We hebben een proces voor het [oplossen van geschillen](./how-to/getting-support/dispute-resolution.md) opgesteld dat wij u vragen om te volgen voordat PowerShellGallery.com beheerders van tevoren te zijn.
+We raden de Power shell-community aan samen te werken om geschillen op te lossen die kunnen ontstaan tussen pakket eigenaren en de eigen aren van andere pakketten. We hebben een proces voor het [oplossen van geschillen](./how-to/getting-support/dispute-resolution.md) opgesteld dat wij u vragen om te volgen voordat PowerShellGallery.com beheerders van tevoren te zijn.
 
+<!-- link references-->
 [New-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
 [Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
-[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
-
+[Update-ModuleManifest]: /powershell/module/PowerShellGet/Update-ModuleManifest
 [Installatie-module]: /powershell/module/PowershellGet/Install-Module
 [New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
 [Publish-Module]: /powershell/module/PowershellGet/Publish-Module

@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galerie, Power shell, cmdlet, psgallery
 description: Richt lijnen voor uitgevers
 title: Richt lijnen voor publicatie PowerShell Gallery en aanbevolen procedures
-ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 5ee33ba12475f9d3e5ceb3b31f37d9f2acc19d9e
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278207"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500606"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Richt lijnen voor publicatie van PowerShellGallery en aanbevolen procedures
 
@@ -165,7 +165,8 @@ Power shell ondersteunt validatie van ondertekening van programma code via twee 
 
 Het ondertekenen van Power Shell-bestanden is een goed opgebouwde benadering om ervoor te zorgen dat de code die wordt uitgevoerd, is geproduceerd met een betrouw bare bron en niet is gewijzigd. Meer informatie over het ondertekenen van Power shell-script bestanden wordt behandeld in het artikel [over ondertekening](/powershell/module/microsoft.powershell.core/about/about_signing) . In overzicht kan een hand tekening worden toegevoegd aan een `.PS1` bestand dat door Power shell wordt gevalideerd wanneer het script wordt geladen. Power shell kan worden beperkt met behulp van de-cmdlets voor het uitvoeren van het [beleid](/powershell/module/microsoft.powershell.core/about/about_execution_policies) om te zorgen voor het gebruik van ondertekende scripts.
 
-Modules voor catalogus ondertekening is een functie die is toegevoegd aan Power shell in versie 5,1. Het ondertekenen van een module wordt behandeld in het artikel [Catalog-cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) . In overzicht wordt de ondertekening van de catalogus uitgevoerd door een catalogus bestand te maken dat een hash-waarde voor elk bestand in de module bevat en dat bestand vervolgens te ondertekenen.
+Modules voor catalogus ondertekening is een functie die is toegevoegd aan Power shell in versie 5,1. Het ondertekenen van een module wordt behandeld in het artikel [Catalog-cmdlets](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets) .
+In overzicht wordt de ondertekening van de catalogus uitgevoerd door een catalogus bestand te maken dat een hash-waarde voor elk bestand in de module bevat en dat bestand vervolgens te ondertekenen.
 
 Met de cmdlets **PowerShellGet** `Publish-Module`, `Install-Module`en `Update-Module` wordt de hand tekening gecontroleerd om te controleren of deze geldig is. Controleer vervolgens of de hash-waarde voor elk pakket overeenkomt met wat er in de catalogus staat. `Save-Module` een hand tekening niet valideren. Als er een eerdere versie van de module op het systeem is geïnstalleerd, wordt in `Install-Module` bevestigd dat de handtekening instantie voor de nieuwe versie overeenkomt met wat eerder is geïnstalleerd. `Install-Module` en `Update-Module` gebruiken de hand tekening voor een `.PSD1` bestand als het pakket niet is ondertekend door een catalogus. Catalogus ondertekening werkt met, maar vervangt geen handtekeningen script bestanden. Power shell valideert catalogus handtekeningen tijdens het laden van de module niet.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Gedeeltelijke configuraties van de desired state Configuration van Power shell
-ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417739"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500777"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Gedeeltelijke configuraties van de desired state Configuration van Power shell
 
@@ -23,7 +23,7 @@ Als u gedeeltelijke configuraties wilt gebruiken in de push-modus, configureert 
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>De LCM configureren voor gedeeltelijke configuratie van de push modus
 
-Als u de LCM wilt configureren voor gedeeltelijke configuraties in de push-modus, maakt u een **DSCLocalConfigurationManager** -configuratie met één **PartialConfiguration** -blok voor elke gedeeltelijke configuratie. Zie [Windows Configuring the Local Configuration Manager](/powershell/scripting/dsc/metaConfig)voor meer informatie over het configureren van de LCM. In het volgende voor beeld ziet u een configuratie van de LCM die twee gedeeltelijke configuraties verwacht, een die het besturings systeem implementeert en een die share point implementeert en configureert.
+Als u de LCM wilt configureren voor gedeeltelijke configuraties in de push-modus, maakt u een **DSCLocalConfigurationManager** -configuratie met één **PartialConfiguration** -blok voor elke gedeeltelijke configuratie. Zie [Windows Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md)voor meer informatie over het configureren van de LCM. In het volgende voor beeld ziet u een configuratie van de LCM die twee gedeeltelijke configuraties verwacht, een die het besturings systeem implementeert en een die share point implementeert en configureert.
 
 ```powershell
 [DSCLocalConfigurationManager()]

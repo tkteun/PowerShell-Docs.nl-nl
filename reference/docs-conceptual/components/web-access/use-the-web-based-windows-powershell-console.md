@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: de Windows Power shell-console op basis van het web gebruiken
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407019"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500873"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -102,7 +102,7 @@ Een van de volgende afmelden van een Windows Power shell-sessie op het web.
 
 - Schakel het clientapparaat uit waarop de browser wordt uitgevoerd of verbreek de verbinding met het netwerk.
 
-- Voer de opdracht **Afsluiten** uit in de webconsole. Deze opdracht werkt niet als de sessie configuratie waarmee u verbinding hebt, zodanig is geconfigureerd dat deze de modus voor niet- [talen](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) ondersteunt of zich in een beperkte runs Pace bevindt.
+- Voer de opdracht **Afsluiten** uit in de webconsole. Deze opdracht werkt niet als de sessie configuratie waarmee u verbinding hebt, zodanig is geconfigureerd dat deze de modus voor niet- [talen](/dotnet/api/system.management.automation.pslanguagemode) ondersteunt of zich in een beperkte runs Pace bevindt.
 
 Als u zich opnieuw wilt aanmelden, opent u de webpagina van Windows Power shell Web Access opnieuw en meldt u zich aan met behulp van de stappen in [Aanmelden bij Windows Power shell-Internet toegang](#signing-in-to-windows-powershell-web-access) in dit onderwerp.
 
@@ -215,8 +215,5 @@ Alt+F7          | De opdrachtgeschiedenislijst wissen
 
 ## <a name="see-also"></a>Zie ook
 
-- [Naslag informatie voor Windows Power shell-cmdlets](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Windows Power shell op micro soft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet-Script centrum-opslag](https://gallery.technet.microsoft.com/scriptcenter)
-- [Script Center: Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows Power shell-team blog](https://blogs.msdn.com/b/powershell/)
+- [Hoi Scripting Guy!](https://devblogs.microsoft.com/scripting/)
+- [Power shell-team blog](https://devblogs.microsoft.com/powershell/)

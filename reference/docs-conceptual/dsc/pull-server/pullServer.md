@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79406900"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500714"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration
 
@@ -70,7 +70,7 @@ De beste manier om Windows Server te configureren voor het hosten van pull-servi
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | EXTENSIE     | ESENT (standaard), MDB | ESENT (standaard), MDB | ESENT (standaard), SQL Server, MDB               |
 
-Vanaf release 17090 van [Windows Server Insider preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)is SQL Server een ondersteunde optie voor de pull-service (Windows-functie *DSC-service*). Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Vanaf release 17090 van Windows Server is SQL Server een ondersteunde optie voor de pull-service (Windows-functie *DSC-service*). Dit biedt een nieuwe optie voor het schalen van grote DSC-omgevingen die niet zijn gemigreerd naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > SQL Server ondersteuning wordt niet toegevoegd aan eerdere versies van WMF 5,1 (of eerder) en is alleen beschikbaar op Windows Server-versies die groter zijn dan of gelijk zijn aan 17090.
@@ -82,7 +82,7 @@ Voor een voor beeld van SQL Server configuratie met **xDscWebService**, lees dan
 
 De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te maken van de **xDscWebService** -resource die is opgenomen in de **xPSDesiredStateConfiguration** -module. In de volgende stappen wordt uitgelegd hoe u de resource gebruikt in een `Configuration` waarmee de webservice wordt ingesteld.
 
-1. Roep de cmdlet [install-module](/reference/6/PowerShellGet/Install-Module.md) aan om de **xPSDesiredStateConfiguration** -module te installeren.
+1. Roep de cmdlet [install-module](/powershell/module/PowerShellGet/Install-Module) aan om de **xPSDesiredStateConfiguration** -module te installeren.
 
    > [!NOTE]
    > `Install-Module` is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0 en hoger.
@@ -234,7 +234,7 @@ Gebruik `New-DscChecksum {module zip file}` om een controlesom bestand te maken 
 
 ### <a name="configuration-mof-format"></a>MOF-indeling voor configuratie
 
-Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) aan. De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map. Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
+Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map. Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
 
 > [!NOTE]
 > Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.

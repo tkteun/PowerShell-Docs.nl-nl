@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
-ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417236"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500737"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
 
@@ -46,7 +46,7 @@ U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder 
 [System.Guid]::NewGuid()
 ```
 
-Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](/powershell/scripting/dsc/secureserver#guids).
+Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan for guid's](secureserver.md#guids).
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Een pull-client instellen om configuraties te downloaden
 
@@ -244,8 +244,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-Als u een rapport server wilt opgeven, gebruikt u een **ReportRepositoryWeb** -blok. Een rapport server kan geen SMB-server zijn.
-Met de volgende configuratie wordt een pull-client geconfigureerd voor het ophalen van de configuraties van **Contoso-PullSrv** en de bijbehorende resources van **Contoso-ResourceSrv**, en het verzenden van status rapporten naar **CONTOSO-ReportSrv**:
+Als u een rapport server wilt opgeven, gebruikt u een **ReportRepositoryWeb** -blok. Een rapport server kan geen SMB-server zijn. Met de volgende configuratie wordt een pull-client geconfigureerd voor het ophalen van de configuraties van **Contoso-PullSrv** en de bijbehorende resources van **Contoso-ResourceSrv**, en het verzenden van status rapporten naar **CONTOSO-ReportSrv**:
 
 ```powershell
 [DSCLocalConfigurationManager()]

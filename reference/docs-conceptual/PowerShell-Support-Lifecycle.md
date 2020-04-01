@@ -2,18 +2,18 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 03/09/2020
-ms.openlocfilehash: 2f4ba267bce3ce773fc912605618a43bdf70397b
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395044"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500994"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
 Power shell is een afzonderlijke set hulpprogram ma's en onderdelen die los van Windows Power shell worden geleverd, geïnstalleerd en geconfigureerd. Power shell is niet opgenomen in de Windows-licentie overeenkomsten.
 
-Power shell wordt ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [premier][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
+Power shell wordt ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [betaalde ondersteuning][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
 U kunt ook betalen voor [ondersteuning][] voor Power shell door een ondersteunings aanvraag voor uw probleem te archiveren.
 
 ## <a name="community-support"></a>Community-ondersteuning
@@ -155,7 +155,7 @@ De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power sh
 | Power shell 1,0       |   Nov-2006   | Installeerbaar op Windows XP SP2, Windows Server 2003 SP1 en Windows Vista. Optioneel onderdeel van Windows Server 2008.                          |
 
 <!-- hyperlink references -->
-[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
+[betaalde ondersteuning]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [Community-ondersteuning]: /powershell/scripting/community/community-support

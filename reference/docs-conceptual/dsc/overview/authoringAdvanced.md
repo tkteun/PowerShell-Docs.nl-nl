@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Informatie over de rol van DSC in een CI/CD-pijp lijn
-ms.openlocfilehash: 79740225c030974546035b67e0f873fa00aa690a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279346"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500828"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
 
@@ -41,7 +41,7 @@ Klanten hebben feedback gegeven die dit kan leiden tot bron conflicten, onbedoel
 
 Daarnaast hebben klanten feedback gegeven die bij het gebruik van dit model de configuratie wijzigingen van teams beheert waarschijnlijk niet volledig worden getest via een release pijplijn, waardoor onverwachte resultaten ontstaan bij de productie.
 
-**Het is essentieel dat één pijp lijn wordt gebruikt om alle wijzigingen te evalueren die aan servers worden vrijgegeven.**
+**Het is essentieel dat één pijp lijn wordt gebruikt voor het evalueren van alle wijzigingen die zijn uitgebracht op servers.**
 
 In de onderstaande afbeelding heeft Team B hun gedeeltelijke configuratie vrijgegeven aan team A. team A voert vervolgens hun tests uit op een server waarop beide configuraties zijn toegepast. In dit model is slechts één instantie gemachtigd om wijzigingen aan te brengen in de productie.
 

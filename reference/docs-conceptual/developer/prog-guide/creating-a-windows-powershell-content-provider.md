@@ -3,12 +3,12 @@ title: Een Windows PowerShell-inhoudsprovider maken
 ms.date: 09/13/2016
 ms.topic: article
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-ms.openlocfilehash: 2d48c18cb41dcca372b1e12e1f3abc4c3f5e4bee
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 149ddb5becf2e0237973e535323ddf8b03b86f24
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870724"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500838"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Een Windows PowerShell-inhoudsprovider maken
 
@@ -22,8 +22,7 @@ In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt w
 
 Een Windows Power shell-inhouds provider moet een .NET-klasse maken die ondersteuning biedt voor de interface [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) . Hier volgt de klassedefinitie voor de item provider die in deze sectie wordt beschreven.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33
-"AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
 
 Houd er rekening mee dat in deze klassedefinitie het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) twee para meters bevat. De eerste para meter geeft u een beschrijvende naam op voor de provider die wordt gebruikt door Windows Power shell. Met de tweede para meter geeft u de specifieke Windows Power shell-mogelijkheden op die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens het verwerken van opdrachten. Voor deze provider zijn er geen specifieke Windows Power shell-functies toegevoegd.
 
@@ -47,7 +46,7 @@ Voor ondersteuning van recursieve opdrachten, geneste containers en relatieve pa
 Voor het lezen van inhoud van een item moet een provider een inhouds lezer-klasse implementeren die is afgeleid van [System. Management. Automation. provider. Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader).
 De inhouds lezer voor deze provider biedt toegang tot de inhoud van een rij in een gegevens tabel. De klasse inhouds lezer definieert een **Lees** methode voor het ophalen van gegevens uit de aangegeven rij en retourneert een lijst die die gegevens vertegenwoordigt, een **Zoek** methode waarmee de inhouds lezer wordt verplaatst, een **Close** -methode die de inhouds lezer sluit en een **afstoten** methode heeft.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
 "AccessDBProviderSample06.cs")]
 
 ## <a name="implementing-a-content-writer"></a>Een inhouds schrijver implementeren
@@ -55,7 +54,7 @@ De inhouds lezer voor deze provider biedt toegang tot de inhoud van een rij in e
 Als u inhoud naar een item wilt schrijven, moet een provider een klasse Content Writer implementeren die is afgeleid van [System. Management. Automation. provider. Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter).
 De klasse Content Writer definieert een **Schrijf** methode voor het schrijven van de opgegeven rij-inhoud, een **Zoek** methode waarmee de schrijver van de inhoud wordt verplaatst, een **Close** **-methode die** de schrijver van de inhoud sluit en een verwerkings methode.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
 ## <a name="retrieving-the-content-reader"></a>De inhouds lezer wordt opgehaald
 
@@ -84,7 +83,7 @@ public IContentReader GetContentReader(string path)
 } // GetContentReader
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1829-L1846 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1829-L1846 "AccessDBProviderSample06.cs")]
 
 #### <a name="things-to-remember-about-implementing-getcontentreader"></a>Wat u moet weten over implementatie van GetContentReader
 
@@ -107,7 +106,7 @@ public object GetContentReaderDynamicParameters(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1853-L1856 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1853-L1856 "AccessDBProviderSample06.cs")]
 
 ## <a name="retrieving-the-content-writer"></a>De inhouds schrijver wordt opgehaald
 
@@ -136,7 +135,7 @@ public IContentWriter GetContentWriter(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1863-L1880 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1863-L1880 "AccessDBProviderSample06.cs")]
 
 #### <a name="things-to-remember-about-implementing-getcontentwriter"></a>Wat u moet weten over implementatie van GetContentWriter
 
@@ -152,7 +151,7 @@ Voor de cmdlets `Add-Content` en `Set-Content` zijn mogelijk extra dynamische pa
 
 Deze methode wordt niet door deze Windows Power shell-container provider geïmplementeerd. De volgende code is echter de standaard implementatie van deze methode.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1887-L1890 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1887-L1890 "AccessDBProviderSample06.cs")]
 
 ## <a name="clearing-content"></a>Inhoud wissen
 
@@ -160,7 +159,7 @@ Uw inhouds provider implementeert de methode [System. Management. Automation. pr
 
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) voor deze provider.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1775-L1812 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1775-L1812 "AccessDBProviderSample06.cs")]
 
 #### <a name="things-to-remember-about-implementing-clearcontent"></a>Wat u moet weten over implementatie van ClearContent
 
@@ -187,7 +186,7 @@ public object ClearContentDynamicParameters(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -195,7 +194,7 @@ Zie [AccessDbProviderSample06 code sample](./accessdbprovidersample06-code-sampl
 
 ## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
-Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit is gebeurd, moet u een bestands typen bestand maken dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie [object typen en opmaak uitbreiden](/previous-versions//ms714665(v=vs.85))voor meer informatie.
+Wanneer u een provider schrijft, kan het nodig zijn om leden toe te voegen aan bestaande objecten of nieuwe objecten te definiëren. Wanneer dit is gebeurd, moet u een bestands typen bestand maken dat door Windows Power shell kan worden gebruikt om de leden van het object en een indelings bestand te identificeren dat definieert hoe het object wordt weer gegeven. Zie [object typen en opmaak uitbreiden](/previous-versions/ms714665(v=vs.85))voor meer informatie.
 
 ## <a name="building-the-windows-powershell-provider"></a>De Windows Power shell-provider bouwen
 

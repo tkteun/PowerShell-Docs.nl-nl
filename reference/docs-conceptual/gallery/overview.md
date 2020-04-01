@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: De PowerShell Gallery
-ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328740"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500566"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell Gallery
 
@@ -21,32 +21,21 @@ De PowerShellGet-module bevat cmdlets voor het detecteren, installeren, bijwerke
 
 ## <a name="getting-started-with-the-gallery"></a>Aan de slag met de galerie
 
-Voor het installeren van pakketten in de galerie is de nieuwste versie van de PowerShellGet-module vereist.
-Zie [PowerShellGet installeren](installing-psget.md) voor volledige instructies.
+Voor het installeren van pakketten in de galerie is de nieuwste versie van de PowerShellGet-module vereist. Zie [PowerShellGet installeren](installing-psget.md) voor volledige instructies.
 
 Raadpleeg de pagina [Aan de slag](getting-started.md) voor meer informatie over het uitvoeren van PowerShellGet-opdrachten in de Gallery. U kunt ook *Update-Help -Module PowerShellGet* uitvoeren om lokale Help-onderwerpen voor deze opdrachten te installeren.
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-De **PowerShellGet** -module vereist **Windows Power Shell 3,0 of hoger**, of **Power shell Core 6,0 of hoger**.
-
-Er is een geschikte versie van **Windows Power shell** beschikbaar voor deze besturings systemen:
-
-- Windows 10
-- Windows 8.1 Pro
-- Windows 8.1 Enterprise
-- Windows 7 SP1
-- Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2008 R2 SP1
+Voor de **PowerShellGet**-module is **PowerShell 3.0 of hoger** vereist.
 
 **PowerShellGet** vereist .NET Framework 4,5 of hoger. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
 
-Aangezien **Power shell core** meerdere platformen heeft, betekent dit dat het werkt in Windows, Linux en MacOS, waardoor **PowerShellGet** ook beschikbaar is op deze systemen. Zie [Power Shell installeren](/powershell/scripting/setup/installing-powershell)voor een volledige lijst met systemen die worden ondersteund door **Power shell core** .
+Aangezien **Power shell core** meerdere platformen heeft, betekent dit dat het werkt in Windows, Linux en MacOS, waardoor **PowerShellGet** ook beschikbaar is op deze systemen. Zie [Power Shell installeren](/powershell/scripting/install/installing-powershell)voor een volledige lijst met systemen die worden ondersteund door **Power shell core** .
 
-Veel modules die in de galerie worden gehost, bieden ondersteuning voor verschillende besturings systemen en hebben aanvullende vereisten. Raadpleeg de documentatie voor de modules voor meer informatie.
+Veel modules die in de galerie worden gehost, bieden ondersteuning voor verschillende besturings systemen en hebben aanvullende vereisten.
+Raadpleeg de documentatie voor de modules voor meer informatie.
 
-## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Wilt u feedback geven?
+## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Feedback geven?
 
 Meer informatie over de PowerShell Gallery en PowerShellGet vindt u op de pagina [aan](getting-started.md) de slag. Geef feedback en Meld problemen met [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

@@ -2,12 +2,12 @@
 title: Migreren van Windows PowerShell 5.1 naar PowerShell 7
 description: Update van Power shell 5,1 naar Power shell 7 voor uw Windows-platforms.
 ms.date: 03/25/2020
-ms.openlocfilehash: feb8895e53bd3c46506c25691fac3395ca944478
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80394961"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500492"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migreren van Windows PowerShell 5.1 naar PowerShell 7
 
@@ -142,7 +142,7 @@ De bestands namen van het profiel zijn ook gewijzigd:
 De meeste modules die u in Windows Power shell 5,1 gebruikt, werken al met Power shell 7, met inbegrip van Azure PowerShell en Active Directory. We blijven samen werken met andere teams om native Power shell 7-ondersteuning toe te voegen voor meer modules, waaronder Microsoft Graph, Office 365 en anderen. Voor de huidige lijst met ondersteunde modules raadpleegt u compatibiliteit met de [module Power shell 7](/powershell/scripting/whats-new/module-compatibility).
 
 > [!NOTE]
-> In Windows hebben we ook een **UseWindowsPowerShell** -Schakel optie toegevoegd aan `Import-Module` om de overgang naar Power shell 7 te vereenvoudigen voor degenen die gebruikmaken van incompatibele modules. Zie [about_Windows_PowerShell_Compatibility](/powershell/modules/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility)voor meer informatie over deze functionaliteit.
+> In Windows hebben we ook een **UseWindowsPowerShell** -Schakel optie toegevoegd aan `Import-Module` om de overgang naar Power shell 7 te vereenvoudigen voor degenen die gebruikmaken van incompatibele modules. Zie [about_Windows_PowerShell_Compatibility](/powershell/module/Microsoft.PowerShell.Core/About/about_windows_powershell_compatibility)voor meer informatie over deze functionaliteit.
 
 ### <a name="powershell-remoting"></a>Externe communicatie met Power shell
 

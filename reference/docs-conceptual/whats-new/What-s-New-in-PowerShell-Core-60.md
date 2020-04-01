@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,0
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995493"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500478"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in Power shell Core 6,0
 
@@ -159,11 +159,11 @@ Dit betekent dat alle ingebouwde cmdlets die gebruikmaken van de para meter `-En
 
 - Add-content
 - Exporteren-Clixml
-- Export-Csv
+- Exporteren-CSV
 - Exporteren-PSSession
 - Format-Hex
 - Get-Content
-- Import-Csv
+- Import-CSV
 - Out-file
 - Selecteer teken reeks
 - Bericht verzenden
@@ -231,7 +231,7 @@ Als u `&` aan het einde van een pijp lijn plaatst, wordt de pijp lijn uitgevoerd
 - Koppelings header paginering in Web-cmdlets (#3828) ondersteunen
   - Voor `Invoke-WebRequest`, wanneer het antwoord een koppelings header bevat, maken we een RelationLink-eigenschap als een woorden lijst die de Url's en `rel` kenmerken vertegenwoordigt, en zorgt u ervoor dat de Url's absoluut zijn zodat de ontwikkelaar deze gemakkelijker kan gebruiken.
   - Voor `Invoke-RestMethod`, wanneer het antwoord een koppelings header bevat, wordt er een `-FollowRelLink` schakelaar weer gegeven waarmee `next` `rel` koppelingen automatisch worden gevolgd totdat deze niet meer bestaan of wanneer de optionele waarde voor `-MaximumFollowRelLink` para meter is bereikt.
-- Voeg `-CustomMethod`-para meter toe aan Web-cmdlets voor het toestaan van niet-standaard methode werk woorden. (#3142) (Bedankt voor [@Lee303](https://github.com/Lee303)!)
+- Voeg `-CustomMethod`-para meter toe aan Web-cmdlets voor het toestaan van niet-standaard methode werk woorden. (#3142) (Bedankt voor @Lee303!)
 - Voeg `SslProtocol` ondersteuning toe aan Web-cmdlets. (#5329) (Bedankt [@markekraus](https://github.com/markekraus)!)
 - Voeg meerdelige ondersteuning toe aan Web-cmdlets. (#4782) (Bedankt [@markekraus](https://github.com/markekraus))
 - Voeg `-NoProxy` toe aan Web-cmdlets zodat ze de systeem-brede proxy instelling negeren. (#3447) (Bedankt voor [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)!)
@@ -248,7 +248,7 @@ Als u `&` aan het einde van een pijp lijn plaatst, wordt de pijp lijn uitgevoerd
 - Web-cmdlets `UserAgent` wijzigen van `WindowsPowerShell` in `PowerShell`. (#4914) (Bedankt [@markekraus](https://github.com/markekraus))
 - Expliciete detectie van `ContentType` toevoegen aan `Invoke-RestMethod` (#4692)
 - Herstel Web-cmdlets `-SkipHeaderValidation` om met niet-standaard headers voor de gebruikers agent te werken. (#4479 &
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (bedankt [@markekraus](https://github.com/markekraus))
+  #<a name="4512-thanks-markekraus"></a>4512) (bedankt [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-cmdlets
 

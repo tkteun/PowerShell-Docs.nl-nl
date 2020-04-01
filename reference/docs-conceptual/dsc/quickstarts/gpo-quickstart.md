@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, Power shell, configuratie, installatie
 title: Quick Start-groepsbeleid converteren naar DSC
-ms.openlocfilehash: 8c89dbbce5b2b146194b799d7e36ecce3105bfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71941605"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500643"
 ---
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
@@ -56,6 +56,6 @@ Elk beheerd knoop punt heeft ook de volgende twee modules nodig:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [aan](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)de slag om uw configuratie script te uploaden naar de configuratie van Azure Automation status.
+- Zie [aan](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)de slag om uw configuratie script te uploaden naar de configuratie van Azure Automation status.
 - Voeg de **SecurityPolicyDSC** -en **AuditPolicyDSC** -modules toe aan uw [Automation-account](/azure/automation/shared-resources/modules).
 - DSC-configuraties en-resources zoeken in de [PowerShell Gallery](https://www.powershellgallery.com/).

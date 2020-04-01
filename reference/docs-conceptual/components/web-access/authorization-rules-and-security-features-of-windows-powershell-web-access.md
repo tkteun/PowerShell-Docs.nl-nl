@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: Power shell, cmdlet
 title: Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407033"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500885"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisatieregels en beveiligingsfuncties van Windows PowerShell-internettoegang
 
@@ -85,7 +85,7 @@ Deze laag biedt dezelfde beveiligings mechanismen die Verbindings pogingen evalu
 
 Windows Power shell Web Access maakt standaard gebruik van de primaire gebruikers naam en het wacht woord voor verificatie op de gateway en de doel computer. De aanmeldingswebpagina biedt gebruikers de mogelijkheid zo nodig andere referenties voor de doelcomputer op te geven in een gedeelte genaamd **Optionele verbindingsinstellingen**. Als de gebruiker geen alternatieve referenties opgeeft, worden de primaire gebruikersnaam en het primaire wachtwoord die worden gebruikt om verbinding te maken met de gateway, ook gebruikt om verbinding te maken met de doelcomputer.
 
-Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie. U kunt _beperkte runspaces_ of sessie configuraties voor Windows Power shell-Internet toegang maken en specifieke gebruikers toestaan alleen verbinding te maken met specifieke sessie configuraties wanneer ze zich aanmelden bij Windows Power shell-webtoegang. U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en de toegang tot het eindpunt voor specifieke gebruikers verder beperken met behulp van de autorisatieregels die in dit gedeelte worden beschreven. Zie [een beperkte runs Pace maken](https://msdn.microsoft.com/library/dn614668)voor meer informatie over runspaces.
+Autorisatieregels kunnen worden gebruikt om gebruikers toegang te verlenen tot een bepaalde sessieconfiguratie. U kunt _beperkte runspaces_ of sessie configuraties voor Windows Power shell-Internet toegang maken en specifieke gebruikers toestaan alleen verbinding te maken met specifieke sessie configuraties wanneer ze zich aanmelden bij Windows Power shell-webtoegang. U kunt toegangsbeheerlijsten (ACL's) gebruiken om te bepalen welke gebruikers toegang hebben tot specifieke eindpunten en de toegang tot het eindpunt voor specifieke gebruikers verder beperken met behulp van de autorisatieregels die in dit gedeelte worden beschreven. Zie [een beperkte runs Pace maken](/powershell/scripting/developer/hosting/creating-a-constrained-runspace)voor meer informatie over runspaces.
 
 ### <a name="configuring-authorization-rules"></a>Autorisatieregels configureren
 
@@ -112,7 +112,7 @@ Windows Power shell Web Access-cmdlets ondersteunen één Joker teken, een aster
 
    Als ze nog niet zijn gemaakt, gebruikt u de instructies voor het maken van sessie configuraties in [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
-3. Met deze autorisatie regel kan een specifieke gebruiker toegang hebben tot één computer in het netwerk waartoe deze doorgaans toegang hebben, met toegang tot een specifieke sessie configuratie die wordt toegewezen aan de gebruiker™ s typische scripting-en cmdlet-behoeften. Typ het volgende en druk vervolgens op **Enter**.
+3. Met deze autorisatie regel kan een specifieke gebruiker toegang hebben tot één computer in het netwerk waartoe deze doorgaans toegang hebben, met toegang tot een specifieke sessie configuratie die wordt toegewezen aan de gebruiker&trade;s typische scripting-en cmdlet-behoeften. Typ het volgende en druk vervolgens op **Enter**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Windows Power shell Web Access-cmdlets ondersteunen één Joker teken, een aster
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Andere voorbeeldscenario’s met autorisatieregels
 
-Elke Windows Power shell-sessie maakt gebruik van een sessie configuratie. Als er geen is opgegeven voor een sessie, gebruikt Windows Power shell de standaard ingebouwde Windows Power shell-sessie configuratie met de naam micro soft. Power shell. De standaardsessieconfiguratie bevat alle cmdlets die beschikbaar zijn op een computer. Beheerders kunnen de toegang tot alle computers beperken door een sessieconfiguratie met een beperkte runspace (een beperkt aantal cmdlets en taken die eindgebruikers kunnen uitvoeren) te definiëren. Een gebruiker die toegang tot één computer met volledige taal toegang of alleen de Windows Power shell-cmdlets voor extern beheer heeft gekregen, kan verbinding maken met andere computers die zijn verbonden met de eerste computer. Het definiëren van een beperkte runs Pace kan verhinderen dat gebruikers toegang hebben tot andere computers vanaf hun toegestane Windows Power shell-runs Pace en verbetert de beveiliging van uw Windows Power shell-webtoegang. De sessie configuratie kan worden gedistribueerd (met behulp van groepsbeleid) naar alle computers die beheerders toegankelijk willen maken via Windows Power shell-webtoegang. Zie [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)voor meer informatie over sessie configuraties. Hier volgen enkele voorbeelden van dit scenario.
+Elke Windows Power shell-sessie maakt gebruik van een sessie configuratie. Als er geen is opgegeven voor een sessie, gebruikt Windows Power shell de standaard ingebouwde Windows Power shell-sessie configuratie met de naam micro soft. Power shell. De standaardsessieconfiguratie bevat alle cmdlets die beschikbaar zijn op een computer. Beheerders kunnen de toegang tot alle computers beperken door een sessieconfiguratie met een beperkte runspace (een beperkt aantal cmdlets en taken die eindgebruikers kunnen uitvoeren) te definiëren. Een gebruiker die toegang tot één computer met volledige taal toegang of alleen de Windows Power shell-cmdlets voor extern beheer heeft gekregen, kan verbinding maken met andere computers die zijn verbonden met de eerste computer. Het definiëren van een beperkte runs Pace kan verhinderen dat gebruikers toegang hebben tot andere computers vanaf hun toegestane Windows Power shell-runs Pace en verbetert de beveiliging van uw Windows Power shell-webtoegang. De sessie configuratie kan worden gedistribueerd (met behulp van groepsbeleid) naar alle computers die beheerders toegankelijk willen maken via Windows Power shell-webtoegang. Zie [about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations)voor meer informatie over sessie configuraties.
+Hier volgen enkele voorbeelden van dit scenario.
 
 - Een beheerder maakt een eindpunt met de naam **PswaEindpunt**, met een beperkte runspace. Vervolgens maakt de beheerder een regel, `*,*,PswaEndpoint`en distribueert het eind punt naar andere computers. Deze regel verleent alle gebruikers toegang tot alle computers met het eindpunt **PswaEindpunt**.
   Als dit de enige autorisatieregel is die is gedefinieerd in de regelset, zijn computers zonder dat eindpunt niet toegankelijk.
@@ -181,8 +182,8 @@ In het voor gaande scenario maakt Windows Power shell-webtoegang pas een geslaag
 2. Verificatie op de doelcomputer met behulp van alternatieve referenties die zijn opgegeven op de aanmeldingspagina in het gedeelte **Optionele verbindingsinstellingen**
 
    > [!NOTE]
-   > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows Power shell Web Access Authorization Rule-cmdlets. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie [domeinen en forest-vertrouwens relaties maken](https://technet.microsoft.com/library/cc794775.aspx)voor meer informatie over het configureren van een vertrouwens relatie tussen verschillende domeinen.
-   > Zie [extern beheer met Serverbeheer](https://technet.microsoft.com/library/dd759202.aspx)voor meer informatie over het toevoegen van werkgroepcomputers aan een lijst met vertrouwde hosts.
+   > Als de gateway en de doelcomputer zich in verschillende werkgroepen of domeinen bevinden, moet een vertrouwensrelatie tussen de twee werkgroepcomputers, de twee domeinen of de werkgroep en het domein worden ingesteld. Deze relatie kan niet worden geconfigureerd met behulp van Windows Power shell Web Access Authorization Rule-cmdlets. Autorisatieregels definiëren geen vertrouwensrelatie tussen computers. Ze kunnen enkel gebruikers toestaan verbinding te maken met specifieke doelcomputers en sessieconfiguraties. Zie [domeinen en forest-vertrouwens relaties maken](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10))voor meer informatie over het configureren van een vertrouwens relatie tussen verschillende domeinen.
+   > Zie [extern beheer met Serverbeheer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11))voor meer informatie over het toevoegen van werkgroepcomputers aan een lijst met vertrouwde hosts.
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Eén set autorisatieregels gebruiken voor meerdere sites
 
@@ -198,7 +199,7 @@ IIS-webserver is standaard geconfigureerd om de groep van toepassingen opnieuw t
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Standaardparameters instellen op de aanmeldingspagina
 
-Als uw Windows Power shell Web Access-Gateway wordt uitgevoerd op Windows Server 2012 R2, kunt u standaard waarden configureren voor de instellingen die worden weer gegeven op de aanmeldings pagina van de Windows Power shell-webtoegang. U kunt in het bestand **Web. config** waarden configureren dat wordt beschreven in de vorige alinea. Standaardwaarden voor instellingen voor de aanmeldingspagina zijn te vinden in het gedeelte **appSettings** van het bestand web.config. Hieronder ziet u een voorbeeld van het gedeelte **appSettings**. Geldige waarden voor veel van deze instellingen zijn dezelfde als die voor de overeenkomstige para meters van de cmdlet [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) in Windows Power shell.
+Als uw Windows Power shell Web Access-Gateway wordt uitgevoerd op Windows Server 2012 R2, kunt u standaard waarden configureren voor de instellingen die worden weer gegeven op de aanmeldings pagina van de Windows Power shell-webtoegang. U kunt in het bestand **Web. config** waarden configureren dat wordt beschreven in de vorige alinea. Standaardwaarden voor instellingen voor de aanmeldingspagina zijn te vinden in het gedeelte **appSettings** van het bestand web.config. Hieronder ziet u een voorbeeld van het gedeelte **appSettings**. Geldige waarden voor veel van deze instellingen zijn dezelfde als die voor de overeenkomstige para meters van de cmdlet [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) in Windows Power shell.
 
 Bijvoorbeeld, de `defaultApplicationName` sleutel, zoals in het volgende code blok wordt weer gegeven, is de waarde van de voorkeurs variabele **$PSSessionApplicationName** op de doel computer.
 
@@ -225,8 +226,8 @@ Als op de gateway server Windows Server 2012 R2 wordt uitgevoerd, kunnen gebruik
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows Power shell-webtoegang installeren en gebruiken](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Windows Power shell-webtoegang installeren en gebruiken](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Windows Power shell Web Access-cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
