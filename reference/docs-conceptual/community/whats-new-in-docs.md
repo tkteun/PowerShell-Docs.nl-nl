@@ -1,19 +1,58 @@
 ---
 title: Wat is er nieuw in Power shell docs?
 description: Lijst met wijzigingen in de Power shell-documentatie
-ms.date: 03/04/2020
-ms.openlocfilehash: b2b196a83eafc87daf9f9eb06a93377058f1ff20
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.date: 03/31/2020
+ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
+ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078491"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537072"
 ---
-# <a name="whats-new-in-powershell-docs"></a>Wat is er nieuw in Power shell docs?
+# <a name="whats-new-in-powershell-docs"></a>Wat is er nieuw in de PowerShell-documentatie?
 
 In dit artikel vindt u een overzicht van enkele belang rijke wijzigingen in documenten tijdens deze vorige maand en de bijdragen van de community.
 
 Help ons de documentatie beter voor u te maken. Lees de [hand leiding van de mede werker][contrib] voor meer informatie over hoe u aan de slag kunt gaan.
+
+## <a name="2020-march"></a>2020-maart
+
+### <a name="highlights"></a>Hoogtepunten
+
+- Nieuwe documenten
+  - De Power shell-documenten Community-pagina's
+    - Pagina [community-resources](/powershell/scripting/community/community-support)
+    - Pagina [Wat is er nieuw in Power shell docs](#2020-march) (deze pagina)
+    - [Power shell-infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf) toegevoegd aan de pagina digitale Art
+    - [Power shell-hand leiding voor inzenders](/powershell/scripting/community/contributing/overview?view=powershell-7)
+  - Nieuwe Power shell-inhoud
+    - [Migreren van Windows Power shell 5,1 naar Power shell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
+    - [Compatibiliteits lijst voor de module Power shell 7](/PowerShell/scripting/whats-new/module-compatibility)
+    - [Power shell gebruiken in docker](/powershell/scripting/install/powershell-in-docker)
+  - Nieuwe wiki-inhoud
+    - [Power shell voor komt uitzonde ringen voor niet-bestaande sleutels voor typen die IDictionary TKey implementeren, TValue](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell-prevents-exceptions-for-non-existent-keys-for-types-that-implement-IDictionary-TKey,-TValue-)
+    - [De behandeling van naam ruimten in Power shell is hoofdletter gevoelig, maar het is niet altijd](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell's-treatment-of-namespaces-is-case-insensitive-but-case-preserving)
+
+- Documentatie onderhoud
+  - Enorme opschoning van verbroken koppelingen
+  - Oude en dubbele problemen opschonen
+
+- GitHub-statistieken
+  - 100 pull samengevoegd (14 van Community)
+  - 68 problemen geopend (56 van Community)
+  - 109 problemen gesloten
+
+### <a name="top-community-contributors"></a>Belangrijkste mede werkers van de Community
+
+De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Dank u!
+
+- k-takai-7 pull
+- mklement0-5-problemen
+- juvtib-4 problemen
+- iSazonov-3-probleem
+- doctordns-2-problemen
+- mdorantesm-2-problemen
+- qt3m45su0najc7-2-problemen
 
 ## <a name="2020-february"></a>2020-februari
 
@@ -77,11 +116,11 @@ Pull-aanvragen helpen ons deze problemen op te lossen en de documentatie beter v
 
 | Docs pull verzonden | 2016 | 2017 | 2018 | 2019 | 2020 | Eindtotaal |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Totaal Community    |  194 |  447 |  467 |  320 |   16 |        1447 |
+| Totaal Community    |  198 |  448 |  468 |  322 |   22 |        1469 |
 | matt9ucci          |      |  157 |   80 |   30 |      |         267 |
 | nschonni           |      |      |   14 |  138 |      |         152 |
 | kiazhi             |   25 |   79 |   12 |      |      |         116 |
-| alexandair         |   57 |    7 |   26 |    2 |      |          92 |
+| alexandair         |   59 |    8 |   26 |    2 |      |          95 |
 | doctordns          |    5 |   32 |   20 |    7 |    2 |          66 |
 | sethvs             |      |    1 |   44 |      |      |          45 |
 | Dan1el42           |   20 |      |      |      |      |          20 |
@@ -89,8 +128,10 @@ Pull-aanvragen helpen ons deze problemen op te lossen en de documentatie beter v
 | IT-praktyk         |      |      |   16 |    1 |      |          17 |
 | markekraus         |      |   11 |    5 |      |      |          16 |
 | purdo17            |      |      |   13 |      |      |          13 |
+| k-takai            |      |      |    5 |    1 |    7 |          13 |
 | kvprasoon          |    2 |    1 |    7 |    2 |      |          12 |
 | PlagueHO           |   10 |      |      |    1 |      |          11 |
+| KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 
 ### <a name="github-issues-opened"></a>GitHub problemen geopend
@@ -99,14 +140,14 @@ GitHub-problemen helpen ons bij het identificeren van fouten en hiaten in onze d
 
 | Docs-problemen geopend | 2016 | 2017 | 2018 | 2019 | 2020 | Eindtotaal |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Totaal Community    |   34 |   95 |  213 |  575 |   86 |        1003 |
-| mklement0          |      |   19 |   60 |   56 |   13 |         148 |
+| Totaal Community    |   34 |   95 |  213 |  575 |  123 |        1081 |
+| mklement0          |      |   19 |   60 |   56 |   17 |         153 |
 | jszabo98           |      |      |    2 |   15 |    2 |          19 |
-| iSazonov           |      |    1 |    4 |   10 |      |          15 |
-| doctordns          |      |    5 |    3 |    5 |    2 |          15 |
+| iSazonov           |      |    1 |    4 |   10 |    2 |          18 |
+| doctordns          |      |    5 |    3 |    5 |    4 |          17 |
+| alexandair         |    9 |    4 |    2 |      |      |          15 |
 | KirkMunro          |      |      |    7 |    7 |      |          14 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
-| alexandair         |    6 |    4 |    2 |      |      |          12 |
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
