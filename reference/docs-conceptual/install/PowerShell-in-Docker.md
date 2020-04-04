@@ -1,23 +1,23 @@
 ---
-title: Power shell gebruiken in docker
+title: PowerShell gebruiken in Docker
 description: Power shell gebruiken die vooraf is geïnstalleerd in een docker-installatie kopie.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 771214c719ef01fe2c8bc56a4b26c629fcad3856
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: b16a31a04ca863ab55c7c9718b1a1a973e61ee46
+ms.sourcegitcommit: f55da6dea4b58a2cd13c7be7c24c07341f177b71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279948"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80646376"
 ---
-# <a name="using-powershell-in-docker"></a>Power shell gebruiken in docker
+# <a name="using-powershell-in-docker"></a>PowerShell gebruiken in Docker
 
 Docker-installatie kopieën worden gepubliceerd met vooraf geïnstalleerde Power shell. In dit artikel wordt beschreven hoe u Power shell in de docker-container kunt gaan gebruiken.
 
-## <a name="finding-available-images"></a>Beschik bare installatie kopieën zoeken
+## <a name="finding-available-images"></a>Beschikbare installatiekopieën zoeken
 
-De uitgebrachte installatie kopieën vereisen docker 17,05 of nieuwer. Er wordt ook verwacht dat u docker kunt uitvoeren zonder `sudo` of lokale beheerders rechten. Volg de officiële [instructies][install] van de docker om `docker` correct te installeren.
+De uitgebrachte installatiekopieën hebben Docker 17.05 of hoger nodig. Er wordt ook verwacht dat u Docker kunt uitvoeren zonder `sudo` of lokale beheerdersrechten. Volg de officiële [instructies][install] van Docker om `docker` juist te installeren.
 
 De release containers zijn afgeleid van de officiële distributie kopie, zoals `centos:7`, vervolgens afhankelijkheden installeren en tot slot het Power shell-pakket installeren.
 
@@ -27,15 +27,15 @@ Ga naar de [Power shell-docker-][PowerShell-Docker] opslag plaats op github voor
 
 ## <a name="using-powershell-in-a-container"></a>Power shell in een container gebruiken
 
-In de volgende stappen ziet u de docker-opdrachten die vereist zijn om de installatie kopie te downloaden en een interactieve Power shell-sessie te starten.
+In de volgende stappen worden de Docker-opdrachten laten zien die nodig zijn om de installatiekopie te downloaden en een interactieve PowerShell-sessie te starten.
 
 ```console
 docker run -it mcr.microsoft.com/powershell
 ```
 
-### <a name="remove-the-image-when-no-longer-needed"></a>De installatie kopie verwijderen wanneer deze niet meer nodig is
+### <a name="remove-the-image-when-no-longer-needed"></a>Verwijder de installatiekopie als deze niet langer nodig is.
 
-De volgende opdracht wordt gebruikt om de docker-container te verwijderen wanneer u deze niet meer nodig hebt.
+De volgende opdracht wordt gebruikt om de docker-installatie kopie te verwijderen wanneer u deze niet meer nodig hebt.
 
 ```console
 docker rmi mcr.microsoft.com/powershell
