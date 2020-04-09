@@ -2,12 +2,12 @@
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: 17b2c7c51e54cea42ee68dc1812ffe89654806fc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374896"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977485"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -84,9 +84,9 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Het installeren van het ZIP-archief controleert niet de vereisten zoals de MSI-pakketten. Zorg ervoor dat u aan de [vereisten](#prerequisites)voldoet om externe toegang tot WSMan goed te laten werken.
 
-## <a name="deploying-on-windows-iot"></a>Implementeren op Windows IoT
+## <a name="deploying-on-windows-10-iot-enterprise"></a>Implementeren in Windows 10 IoT Enter prise
 
-Windows IoT wordt geleverd met Windows Power shell en kan worden gebruikt voor het implementeren van Power shell 7.
+Windows 10 IoT Enter prise wordt geleverd met Windows Power shell en kan worden gebruikt voor het implementeren van Power shell 7.
 
 1. `PSSession` maken op doel apparaat
 
@@ -128,6 +128,16 @@ Windows IoT wordt geleverd met Windows Power shell en kan worden gebruikt voor h
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## <a name="deploying-on-windows-10-iot-core"></a>Implementeren in Windows 10 IoT core
+
+Windows 10 IoT core voegt Windows Power shell toe wanneer u *IOT_POWERSHELL* -functie opneemt, die we kunnen gebruiken om Power shell 7 te implementeren.
+De stappen die hierboven voor Windows 10 IoT Enter prise zijn gedefinieerd, kunnen ook worden gevolgd voor IoT core.
+
+Voor het toevoegen van de meest recente Power shell in de verzend installatie kopie gebruikt u de opdracht [import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) om het pakket op te zetten in de workarea en voegt u *OPENSRC_POWERSHELL* functie toe aan uw installatie kopie.
+
+> [!NOTE]
+> Voor ARM64-architectuur wordt Windows Power shell niet toegevoegd wanneer u *IOT_POWERSHELL*opneemt. De op ZIP gebaseerde installatie werkt dus niet.
+> U moet de opdracht import-PSCoreRelease gebruiken om deze toe te voegen aan de installatie kopie.
 
 ## <a name="deploying-on-nano-server"></a>Implementeren op nano server
 

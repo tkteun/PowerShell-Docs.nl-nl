@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 0ca2ccc5188f0c1784ec14ac204c1fdd624c2e66
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d17a67019b7451f2da5595b3258457a01cc86b0b
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416107"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978352"
 ---
 # <a name="getproc04-c-sample-code"></a>GetProc04-codevoorbeeld (C#)
 
@@ -21,12 +21,11 @@ De volgende code toont de implementatie van een `Get-Process`-cmdlet die niet-af
 
 > [!NOTE]
 > U kunt het C# bron bestand (getprov04.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
 > De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-[!code-csharp[GetProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample04/GetProcessSample04.cs#L11-L98 "GetProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample04/GetProcessSample04.cs" range="11-98":::
 
 ## <a name="see-also"></a>Zie ook
 

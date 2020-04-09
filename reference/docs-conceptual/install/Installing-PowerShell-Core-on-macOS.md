@@ -2,12 +2,12 @@
 title: PowerShell installeren in macOS
 description: Informatie over het installeren van Power shell in macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80394999"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977519"
 ---
 # <a name="installing-powershell-on-macos"></a>PowerShell installeren in macOS
 
@@ -146,13 +146,7 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>OpenSSL installeren
 
-OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen. U kunt installeren via MacPorts of Brew.
-
-#### <a name="install-openssl-via-brew"></a>OpenSSL installeren via Brew
-
-Zie [about Brew](#about-brew) voor informatie over Brew.
-
-Voer `brew install openssl`uit om OpenSSL te installeren.
+OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen. U kunt installeren via MacPorts.
 
 #### <a name="install-openssl-via-macports"></a>OpenSSL installeren via MacPorts
 
@@ -161,12 +155,12 @@ Voer `brew install openssl`uit om OpenSSL te installeren.
    Raadpleeg de [installatie handleiding](https://guide.macports.org/chunked/installing.macports.html)als u instructies nodig hebt.
 1. Werk MacPorts bij door `sudo port selfupdate`uit te voeren.
 1. Upgrade MacPorts-pakketten door `sudo port upgrade outdated`uit te voeren.
-1. Installeer OpenSSL door `sudo port install openssl`uit te voeren.
+1. Installeer OpenSSL door `sudo port install openssl10`uit te voeren.
 1. Koppel de bibliotheken om ze beschikbaar te maken voor Power shell:
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell"></a>Power shell verwijderen

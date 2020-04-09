@@ -11,16 +11,16 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352778"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978505"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen
 
-Dit onderwerp is het begin punt voor het leren van het maken van een Windows Power shell-provider. De hier beschreven basis provider bevat methoden voor het starten en stoppen van de provider en hoewel deze provider geen manier biedt om toegang te krijgen tot een gegevens archief of om gegevens op te halen of in te stellen in het gegevens archief, beschikt u over de basis functionaliteit die is vereist voor alle providers.
+Dit onderwerp is het begin punt voor het leren van het maken van een Windows Power shell-provider. De hier beschreven basis provider biedt methoden voor het starten en stoppen van de provider, maar deze provider biedt geen manier om toegang te krijgen tot een gegevens archief of om gegevens op te halen of in te stellen in het gegevens archief, maar biedt de basis functionaliteit die is vereist voor alle providers.
 
 Zoals eerder vermeld, implementeert de Basic-provider die hier wordt beschreven, methoden voor het starten en stoppen van de provider. De Windows Power shell-runtime roept deze methoden aan om de provider te initialiseren en op te starten.
 
@@ -38,7 +38,7 @@ Het is raadzaam om uw provider klassen in een `Providers` naam ruimte van uw API
 
 Dit is de klassedefinitie voor deze basis provider:
 
-[!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
 Rechts voor de klassedefinitie moet u het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) declareren met de syntaxis [CmdletProvider ()].
 
@@ -91,9 +91,9 @@ Als uw Windows Power shell-provider is geregistreerd bij Windows Power shell, ku
 Get-PSProvider
 ```
 
-De volgende uitvoer wordt weergegeven:
+De volgende uitvoer wordt weer gegeven:
 
-```output
+```Output
 Name                 Capabilities                  Drives
 ----                 ------------                  ------
 AccessDb             None                          {}

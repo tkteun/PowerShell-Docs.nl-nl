@@ -8,23 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417524"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978556"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDBProviderSample03-codevoorbeeld
 
-De volgende code toont de implementatie van de Windows Power shell-provider die wordt beschreven in [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md). Deze provider die de gegevens kan bewerken in een gegevens archief.
+De volgende code toont de implementatie van de Windows Power shell-provider die wordt beschreven in [een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md).
+Deze provider die de gegevens kan bewerken in een gegevens archief.
 
 > [!NOTE]
 > U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
->
-> Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -997,7 +995,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
 ## <a name="see-also"></a>Zie ook
 

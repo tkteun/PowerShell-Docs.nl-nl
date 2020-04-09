@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Wat is er nieuw in Windows Power shell 5,0
-ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500471"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978199"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows Power shell 5,0
 
@@ -460,7 +460,7 @@ Net als taak planner-taken kunt u geplande taken uitvoeren op een eenmalige of t
 
 Daarnaast worden geplande taken geleverd met een aangepaste set cmdlets voor het beheer van deze functies. Met de cmdlets kunt u geplande taken maken, bewerken, beheren, uitschakelen en opnieuw inschakelen, geplande taak triggers maken en opties voor geplande taken instellen.
 
-Zie [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs)voor meer informatie over geplande taken.
+Zie [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1)voor meer informatie over geplande taken.
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows Power shell-taal verbeteringen
 

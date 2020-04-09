@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65094bb7-1972-44b3-b8b0-5f639860b58c
 caps.latest.revision: 5
-ms.openlocfilehash: 499a688ce5e8daa78baff58c454ad237836bbe48
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71ba68521ed8d26d0c85169d2b0d547cc6d2d5e3
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416172"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978420"
 ---
 # <a name="getproc01-c-sample-code"></a>GetProc01-codevoorbeeld (C#)
 
@@ -21,12 +21,11 @@ De volgende code toont de implementatie van de voor beeld-cmdlet GetProc01. U zi
 
 > [!NOTE]
 > U kunt het C# bron bestand (getproc01.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
 > De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L11-L126 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="11-126":::
 
 ## <a name="see-also"></a>Zie ook
 

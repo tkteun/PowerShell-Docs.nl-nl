@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Lijst met pakketten opzeggen
-ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71329027"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978267"
 ---
 # <a name="unlisting-packages"></a>Pakketten uit de catalogus verwijderen
 
@@ -16,17 +16,17 @@ ms.locfileid: "71329027"
 
 De PowerShell Gallery biedt geen ondersteuning voor gebruikers die hun pakketten permanent verwijderen.
 Op deze manier kunnen anderen afhankelijkheden maken op uw pakketten zonder dat u in de toekomst over mogelijke onderbrekingen hoeft te zorgen.
-Als de insluitings module bijvoorbeeld afhankelijk is van de Azure-module en de Azure-module uit de galerie is verwijderd, kan de gebruiker niet langer gebruikmaken van de module Pest.
+Als de insluitings module bijvoorbeeld afhankelijk is van de Azure-module en de Azure-module uit de galerie wordt verwijderd, kunnen gebruikers de module pest niet meer gebruiken.
 
-In plaats van een pakket te verwijderen, kunt u de weer gave echter opheffen.
+In plaats van een pakket te verwijderen, kunt u de weer gave ervan opheffen.
 
 **Wat houdt het weer geven van een pakket op PowerShell Gallery?**
 
-Het opheffen van de weer geven van een pakket, zoals module of script op PowerShell Gallery, wordt verwijderd uit het tabblad pakketten. Daarnaast kunnen niet-vermelde pakketten niet worden gedetecteerd met behulp van de zoek balk.
+Als u de weer geven van een pakket, zoals een module of script in de PowerShell Gallery, verwijdert u dit op het tabblad pakketten. Daarnaast kunnen niet-vermelde pakketten niet worden gedetecteerd met behulp van de zoek balk.
 De enige manier om een niet-vermeld pakket te downloaden, is door de exacte naam en versie van het pakket op te geven.
-Als gevolg hiervan worden de onvermelding van een pakket geen andere modules of scripts die hiervan afhankelijk zijn, verbroken.
+Als gevolg hiervan worden de onweer gave van een pakket geen andere modules of scripts die hiervan afhankelijk zijn.
 
-Ga naar de pagina pakket Details en selecteer module verwijderen om het pakket weer te geven. Schakel het selectie vakje ' weer gegeven ' uit en klik op opslaan.
+Ga naar de pagina pakket Details en selecteer module verwijderen om het pakket weer te geven. Schakel het selectie vakje ' weer gegeven ' uit en selecteer Opslaan.
 
 **Hoe kan ik een pakket verwijderen?**
 

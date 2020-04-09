@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5337dc40-c56e-458b-aedc-5f5d401dfd28
 caps.latest.revision: 6
-ms.openlocfilehash: fcc424f83275452e223ef025cc8d95128520bdbc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 25201200eb437c58a38c88feb1e4c17c974d3e24
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417862"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977570"
 ---
 # <a name="runspace10-code-sample"></a>Runspace10-codevoorbeeld
 
@@ -21,12 +21,11 @@ Dit is de bron code voor het Runspace10-voor beeld. Deze voorbeeld toepassing vo
 
 > [!NOTE]
 > U kunt het C# bron bestand (runspace10.cs) downloaden met behulp van de Windows-Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
->
 > De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-[!code-csharp[Runspace10.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace10/Runspace10.cs#L11-L118 "Runspace10.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace10/Runspace10.cs" range="11-118":::
 
 ## <a name="see-also"></a>Zie ook
 

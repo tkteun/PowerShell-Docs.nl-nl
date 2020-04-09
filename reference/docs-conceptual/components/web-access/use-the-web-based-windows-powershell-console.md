@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: de Windows Power shell-console op basis van het web gebruiken
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500873"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978658"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>De webconsole voor Windows PowerShell gebruiken
 
@@ -94,9 +94,9 @@ Een van de volgende afmelden van een Windows Power shell-sessie op het web.
 
 - De sessie is 20 minuten inactief. De beheerder van de gateway kan de time-outperiode voor inactiviteit aanpassen. Zie [sessie beheer](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management)voor meer informatie.
 
-  - Als u geen verbinding hebt met een sessie in de webconsole vanwege een netwerk fout of andere niet-gepland afsluiten of mislukken, en niet omdat u de sessie zelf hebt gesloten, blijft de Windows Power shell-sessie voor webtoegang actief, verbonden met het doel computer, totdat de time-outperiode aan de client zijde vervalt. De time-outperiode is standaard 20 minuten. Dit wordt geconfigureerd door de gatewaybeheerder. De sessie wordt verbroken na de standaardinstelling van 20 minuten of na de time-outperiode die is opgegeven door de gatewaybeheerder, als deze korter is.
+  - Als u geen verbinding hebt met een sessie in de webconsole vanwege een netwerk fout of andere niet-gepland afsluiten of mislukken, en niet omdat u de sessie zelf hebt gesloten, blijft de Windows Power shell-sessie voor webtoegang actief, verbonden met de doel computer totdat de time-outperiode aan de client zijde vervalt. De time-outperiode is standaard 20 minuten. Dit wordt geconfigureerd door de gatewaybeheerder. De sessie wordt verbroken na de standaardinstelling van 20 minuten of na de time-outperiode die is opgegeven door de gatewaybeheerder, als deze korter is.
 
-    Als op de gateway server Windows Server 2012 R2 wordt uitgevoerd, kunnen gebruikers met Windows Power shell-webtoegang op een later tijdstip opnieuw verbinding maken met opgeslagen sessies, maar kunt u pas weer verbinding maken met opgeslagen sessies nadat de time-outperiode die is opgegeven door de Gateway beheerder verlopen.
+    Als op de gateway server Windows Server 2012 R2 wordt uitgevoerd, kunnen gebruikers met Windows Power shell-webtoegang op een later tijdstip opnieuw verbinding maken met opgeslagen sessies, maar kunt u pas weer verbinding maken met opgeslagen sessies nadat de time-outperiode die is opgegeven door de Gateway beheerder is verstreken.
 
 - Sluit het browservenster of -tabblad.
 
@@ -211,9 +211,8 @@ Alt+F7          | De opdrachtgeschiedenislijst wissen
 
     U kunt de hoogte van de console op dezelfde manier wijzigen.
 
-    Aanvullende voor beelden voor het aanpassen van de console weergave zijn beschikbaar in het [Windows Power shell-team blog](h https://devblogs.microsoft.com/powershell).
+    Aanvullende voor beelden voor het aanpassen van de console weergave zijn beschikbaar in het [Windows Power shell-team blog](https://devblogs.microsoft.com/powershell).
 
 ## <a name="see-also"></a>Zie ook
 
 - [Hoi Scripting Guy!](https://devblogs.microsoft.com/scripting/)
-- [Power shell-team blog](https://devblogs.microsoft.com/powershell/)

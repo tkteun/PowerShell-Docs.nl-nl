@@ -1,82 +1,79 @@
 ---
-title: Informatie over bestandscodering in VSCode en PowerShell
-description: Bestands codering configureren in VSCode en Power shell
+title: Uitleg over bestands codering in VS code en Power shell
+description: Bestands codering configureren in VS code en Power shell
 ms.date: 02/28/2019
-ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b09c13374c28e88c66d1d84fbe56ca5c66b34c8c
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117403"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978675"
 ---
-# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Informatie over bestandscodering in VSCode en PowerShell
+# <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>Uitleg over bestands codering in VS code en Power shell
 
 Wanneer u VS code gebruikt om Power shell-scripts te maken en te bewerken, is het belang rijk dat uw bestanden worden opgeslagen met de juiste indeling voor teken versleuteling.
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>Wat is bestands codering en waarom is het belang rijk?
 
-VSCode beheert de interface tussen een menselijk invoer van teken reeksen in een buffer en lees-en schrijf blokken van bytes naar het bestands systeem. Wanneer VSCode een bestand opslaat, wordt een tekst codering gebruikt om te bepalen welke bytes elk teken wordt.
+VS code beheert de interface tussen een menselijk invoer van teken reeksen in een buffer en lees-en schrijf blokken van bytes naar het bestands systeem. Als VS code een bestand opslaat, wordt een tekst codering gebruikt om te bepalen welke bytes elk teken wordt.
 
-Op dezelfde manier moet, wanneer Power shell een script uitvoert, de bytes in een bestand converteren naar tekens om het bestand opnieuw te maken in een Power shell-programma. Omdat VSCode het bestand schrijft en Power shell het bestand leest, moeten ze hetzelfde coderings systeem gebruiken. Dit proces voor het parseren van een Power shell-script gaat over: *bytes* -> *tekens* -> *tokens* -> *abstracte syntaxis structuur* -> *worden uitgevoerd*.
+Op dezelfde manier moet, wanneer Power shell een script uitvoert, de bytes in een bestand converteren naar tekens om het bestand opnieuw te maken in een Power shell-programma. Omdat VS code het bestand schrijft en Power shell het bestand leest, moeten ze hetzelfde coderings systeem gebruiken. Dit proces voor het parseren van een Power shell-script gaat over: *bytes* -> *tekens* -> *tokens* -> *abstracte syntaxis structuur* -> *worden uitgevoerd*.
 
-Zowel VSCode als Power shell zijn geïnstalleerd met een geverstandige standaard coderings configuratie. De standaard codering die door Power shell wordt gebruikt, is echter gewijzigd met de release van Power shell core (v6. x). Om ervoor te zorgen dat u geen problemen hebt met het gebruik van Power shell of de Power shell-extensie in VSCode, moet u uw VSCode-en Power shell-instellingen correct configureren.
+Zowel VS code als Power shell worden geïnstalleerd met een verstandig standaard coderings configuratie. De standaard codering die door Power shell wordt gebruikt, is echter gewijzigd met de release van Power shell core (v6. x). Om ervoor te zorgen dat u geen problemen hebt met het gebruik van Power shell of de Power shell-extensie in VS code, moet u de VS code en Power shell-instellingen op de juiste wijze configureren.
 
 ## <a name="common-causes-of-encoding-issues"></a>Veelvoorkomende oorzaken van het coderen van problemen
 
-Coderings problemen treden op wanneer de code ring van VSCode of uw script bestand niet overeenkomt met de verwachte code ring van Power shell. Het is niet mogelijk om in Power shell automatisch de bestands codering te bepalen.
+Coderings problemen treden op wanneer de code ring van VS code of uw script bestand niet overeenkomt met de verwachte code ring van Power shell. Het is niet mogelijk om in Power shell automatisch de bestands codering te bepalen.
 
 Het is waarschijnlijker dat u problemen hebt met het coderen wanneer u tekens gebruikt die niet voor komt in de [7-bits ASCII-tekenset](https://ascii.cl/). Bijvoorbeeld:
 
-- Uitgebreide niet-letter tekens zoals em-streepje (`—`), vaste spatie (` `) of dubbele aanhalings tekens (`“`)
+- Uitgebreide niet-letter tekens zoals em-streepje (`—`), vaste spatie (` `) of dubbele aanhalings tekens (`"`)
 - Geaccentde Latijnse tekens (`É`, `ü`)
 - Niet-Latijnse tekens zoals Cyrillisch (`Д`, `Ц`)
 - CJK-tekens (`本`, `화`, `が`)
 
 Veelvoorkomende redenen voor het coderen van problemen zijn:
 
-- De code ringen van VSCode en Power shell zijn niet gewijzigd ten opzichte van de standaard waarden. Voor Power shell 5,1 en lager is de standaard codering afwijkende van VSCode.
+- De code ringen van VS code en Power shell zijn niet gewijzigd ten opzichte van hun standaard waarden. Voor Power shell 5,1 en lager is de standaard codering verschillend van VS code.
 - Een andere editor heeft het bestand geopend en overschreven in een nieuwe code ring. Dit gebeurt vaak met de ISE.
-- Het bestand wordt in broncode beheer gecontroleerd in een code ring die afwijkt van wat VSCode of Power shell verwacht. Dit kan gebeuren wanneer samen werkers editors gebruiken met verschillende coderings configuraties.
+- Het bestand is in broncode beheer ingecheckt in een code ring die verschilt van wat VS code of Power shell verwacht. Dit kan gebeuren wanneer samen werkers editors gebruiken met verschillende coderings configuraties.
 
 ### <a name="how-to-tell-when-you-have-encoding-issues"></a>Hoe weet ik wanneer u problemen met het coderen hebt
 
-Codeer fouten worden vaak als fouten in scripts geparseerd. Als u vreemde teken reeksen in uw script vindt, kan dit het probleem zijn. In het onderstaande voor beeld wordt een en-streepje (`–`) weer gegeven als de tekens `â€“`:
+Codeer fouten worden vaak als fouten in scripts geparseerd. Als u vreemde teken reeksen in uw script vindt, kan dit het probleem zijn. In het onderstaande voor beeld wordt een en-streepje (`–`) weer gegeven als de tekens `â&euro;"`:
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â€“From $from â€“To $recipient1 â€“Subject $subject  ...
++ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
 ```
 
-Dit probleem treedt op omdat met VSCode het teken `–` in UTF-8 wordt gecodeerd als de bytes `0xE2 0x80 0x93`.
-Wanneer deze bytes worden gedecodeerd als Windows-1252, worden ze geïnterpreteerd als de tekens `â€“`.
+Dit probleem treedt op omdat VS code het teken `–` in UTF-8 codeert als de bytes `0xE2 0x80 0x93`. Wanneer deze bytes worden gedecodeerd als Windows-1252, worden ze geïnterpreteerd als de tekens `â&euro;"`.
 
 U kunt onder andere de volgende vreemde teken reeksen zien:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` In plaats van `–`
-- `â€”` In plaats van `—`
-- `Ã„2` In plaats van `Ä`
+- `â&euro;"` in plaats van `–`
+- `â&euro;"` in plaats van `—`
+- `Ã„2` in plaats van `Ä`
 - `Â` in plaats van ` ` (een vaste spatie)
-- `Ã©` In plaats van `é`
+- `Ã&copy;` in plaats van `é`
 <!-- markdownlint-enable MD038 -->
 
 Deze handige [Naslag informatie](https://www.i18nqa.com/debug/utf8-debug.html) bevat de algemene patronen die duiden op een UTF-8-of Windows-1252-coderings probleem.
 
-## <a name="how-the-powershell-extension-in-vscode-interacts-with-encodings"></a>Hoe de Power shell-uitbrei ding in VSCode communiceert met code ringen
+## <a name="how-the-powershell-extension-in-vs-code-interacts-with-encodings"></a>Hoe de Power shell-uitbrei ding in VS code communiceert met code ringen
 
 De Power shell-extensie communiceert op een aantal manieren met scripts:
 
-1. Wanneer scripts worden bewerkt in VSCode, wordt de inhoud door VSCode naar de extensie verzonden. Het [Protocol voor taal server][] verplichtt dat deze inhoud wordt overgedragen in UTF-8. Daarom is het niet mogelijk om de uitbrei ding de verkeerde code ring te verkrijgen.
-2. Wanneer scripts rechtstreeks worden uitgevoerd in de geïntegreerde console, worden ze rechtstreeks door Power shell gelezen uit het bestand. Als de code ring van Power shell verschilt van VSCode, kan er iets mis gaan.
-3. Wanneer een script dat is geopend in VSCode verwijst naar een ander script dat niet is geopend in VSCode, valt de extensie terug om de inhoud van dat script uit het bestands systeem te laden. De Power shell-extensie wordt standaard ingesteld op UTF-8-code ring, maar gebruikt een [byte-volgorde markering][]of stuk lijst, detectie om de juiste code ring te selecteren.
+1. Wanneer scripts worden bewerkt in VS code, wordt de inhoud door VS-code naar de uitbrei ding verzonden. Het [Protocol voor taal server][] verplichtt dat deze inhoud wordt overgedragen in UTF-8. Daarom is het niet mogelijk om de uitbrei ding de verkeerde code ring te verkrijgen.
+2. Wanneer scripts rechtstreeks worden uitgevoerd in de geïntegreerde console, worden ze rechtstreeks door Power shell gelezen uit het bestand. Als de code ring van Power shell verschilt van VS code, kan er iets fout hier worden weer gegeven.
+3. Wanneer een script dat is geopend in VS code verwijst naar een ander script dat niet is geopend in VS code, valt de uitbrei ding terug om de inhoud van dat script uit het bestands systeem te laden. De Power shell-extensie wordt standaard ingesteld op UTF-8-code ring, maar gebruikt een [byte-volgorde markering][]of stuk lijst, detectie om de juiste code ring te selecteren.
 
-Het probleem treedt op bij het afnemen van de code ring van een stuk lijst-less-indeling (zoals [UTF-8][] zonder stuk lijst en [Windows-1252][]).
-De Power shell-extensie wordt standaard ingesteld op UTF-8. De uitbrei ding kan de coderings instellingen voor VSCode niet wijzigen.
-Zie [issue #824](https://github.com/Microsoft/vscode/issues/824)(Engelstalig) voor meer informatie.
+Het probleem treedt op bij het afnemen van de code ring van een stuk lijst-less-indeling (zoals [UTF-8][] zonder stuk lijst en [Windows-1252][]). De Power shell-extensie wordt standaard ingesteld op UTF-8. De uitbrei ding kan de coderings instellingen van VS code niet wijzigen. Zie [issue #824] (https://github.com/Microsoft/VS code/issues/824) (Engelstalig) voor meer informatie.
 
 ## <a name="choosing-the-right-encoding"></a>De juiste code ring kiezen
 
@@ -99,11 +96,11 @@ Stuk lijsten zijn optioneel en hun acceptatie is niet hetzelfde als populair in 
   Sommige oudere Windows-toepassingen kunnen echter afhankelijk zijn.
 - Het is ook belang rijk dat het ondertekenen van een script [coderings afhankelijke](https://github.com/PowerShell/PowerShell/issues/3466)is, wat betekent dat het wijzigen van de code ring van een ondertekend script opnieuw moet worden ondertekend.
 
-## <a name="configuring-vscode"></a>VSCode configureren
+## <a name="configuring-vs-code"></a>VS-code configureren
 
-De standaard codering van VSCode is UTF-8 zonder stuk lijst.
+De standaard codering van VS code is UTF-8 zonder stuk lijst.
 
-Als u de [code ring van VSCode][]wilt instellen, gaat u naar de instellingen van VSCode (<kbd>CTRL</kbd>+<kbd>,</kbd>) en stelt u de instelling `"files.encoding"`:
+Als u de code [Versleuteling van VS code][]wilt instellen, gaat u naar de instellingen van VS code (<kbd>CTRL</kbd>+<kbd>,</kbd>) en stelt u de instelling `"files.encoding"`:
 
 ```json
 "files.encoding": "utf8bom"
@@ -125,7 +122,7 @@ U kunt indien mogelijk ook het volgende toevoegen voor het automatisch detectere
 "files.autoGuessEncoding": true
 ```
 
-Als u niet wilt dat deze instellingen van invloed zijn op alle bestands typen, kunt u met VSCode ook configuraties per taal configureren. Maak een taalspecifieke instelling door instellingen in een `[<language-name>]` veld in te voeren. Bijvoorbeeld:
+Als u niet wilt dat deze instellingen van invloed zijn op alle bestands typen, kunt u in VS code configuraties per taal instellen. Maak een taalspecifieke instelling door instellingen in een `[<language-name>]` veld in te voeren. Bijvoorbeeld:
 
 ```json
 "[powershell]": {
@@ -183,7 +180,8 @@ finally
 }
 ```
 
-Het is mogelijk om Power shell te configureren voor het gebruik van een bepaalde code ring, met behulp van profiel instellingen. Zie de volgende artikelen:
+Het is mogelijk om Power shell te configureren voor het gebruik van een bepaalde code ring, met behulp van profiel instellingen.
+Zie de volgende artikelen:
 
 - [@mklement0] [antwoord over Power shell-code ring op stack overflow](https://stackoverflow.com/a/40098904).
 - het blog bericht van [@rkeithhill] [over het afhandelen van een stuk lijst zonder UTF-8-invoer in Power shell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
@@ -195,7 +193,7 @@ Het is niet mogelijk om Power shell te dwingen een specifieke invoer codering te
 
 ### <a name="existing-scripts"></a>Bestaande scripts
 
-Scripts die zich al op het bestands systeem bevinden, moeten mogelijk opnieuw worden gecodeerd met de nieuwe gekozen code ring. In de onderste balk van VSCode ziet u het label UTF-8. Klik hierop om de actie balk te openen en selecteer **opslaan met code ring**. U kunt nu een nieuwe code ring voor dat bestand kiezen. Zie [code ring van VSCode][] voor volledige instructies.
+Scripts die zich al op het bestands systeem bevinden, moeten mogelijk opnieuw worden gecodeerd met de nieuwe gekozen code ring. In de onderste balk van VS code ziet u het label UTF-8. Klik hierop om de actie balk te openen en selecteer **opslaan met code ring**. U kunt nu een nieuwe code ring voor dat bestand kiezen. Bekijk [Versleuteling van VS code][] voor volledige instructies.
 
 Als u meerdere bestanden opnieuw moet versleutelen, kunt u het volgende script gebruiken:
 
@@ -215,12 +213,11 @@ Houd er rekening mee dat dit niet kan worden gehandhaafd tussen opstart handelin
 
 ### <a name="source-control-software"></a>Broncode beheer software
 
-Sommige hulpprogram ma's voor broncode beheer, zoals git, negeren code ringen. Git houdt alleen de bytes bij.
-Andere, zoals Azure DevOps of mercurial, is niet mogelijk. Zelfs sommige Git-hulpprogram ma's zijn afhankelijk van het decoderen van tekst.
+Sommige hulpprogram ma's voor broncode beheer, zoals git, negeren code ringen. Git houdt alleen de bytes bij. Andere, zoals Azure DevOps of mercurial, is niet mogelijk. Zelfs sommige Git-hulpprogram ma's zijn afhankelijk van het decoderen van tekst.
 
 Als dit het geval is, moet u het volgende doen:
 
-- Configureer de tekst codering in het bron beheer zodat deze overeenkomt met uw VSCode-configuratie.
+- Configureer de tekst codering in het bron beheer zodat deze overeenkomt met de configuratie van de VS code.
 - Zorg ervoor dat al uw bestanden in de juiste code ring zijn ingecheckt in broncode beheer.
 - Wees op de hoede van wijzigingen in de code ring die via broncode beheer wordt ontvangen. Een sleutel teken van dit is een verschil waarmee de wijzigingen worden aangegeven, maar waarbij niets lijkt te zijn gewijzigd (omdat het aantal bytes maar tekens bevat).
 
@@ -232,14 +229,14 @@ Zorg ervoor dat uw samen werkers op bestanden die u deelt geen instellingen hebb
 
 Elk ander programma dat een Power shell-script leest of schrijft, kan het opnieuw versleutelen.
 
-Enkele voorbeelden:
+Een aantal voorbeelden:
 
 - Het klem bord gebruiken om een script te kopiëren en te plakken. Dit is gebruikelijk in scenario's zoals:
   - Een script naar een VM kopiëren
   - Een script uit een e-mail bericht of webpagina kopiëren
   - Een script kopiëren naar of van een micro soft Word-of Power Point-document
 - Andere tekst editors, zoals:
-  - Kladblok
+  - Notitie
   - vim
   - Een andere Power shell-script editor
 - Hulpprogram ma's voor tekst bewerking, zoals:
@@ -257,12 +254,12 @@ Sommige van deze hulpprogram ma's maken deel uit van bytes in plaats van tekst, 
 Er zijn enkele andere leuke berichten over code ring en het configureren van code ring in Power shell die een lees bewerking zijn:
 
 - [overzicht van Power shell-code ring op stack overflow van](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8) [@mklement0]
-- Eerdere problemen die zijn geopend op vscode-Power shell voor het coderen van problemen:
-  - [#1308](https://github.com/PowerShell/vscode-powershell/issues/1308)
-  - [#1628](https://github.com/PowerShell/vscode-powershell/issues/1628)
-  - [#1680](https://github.com/PowerShell/vscode-powershell/issues/1680)
-  - [#1744](https://github.com/PowerShell/vscode-powershell/issues/1744)
-  - [#1751](https://github.com/PowerShell/vscode-powershell/issues/1751)
+- Eerdere problemen die zijn geopend op VS code-Power shell voor het coderen van problemen:
+  - [#1308](https://github.com/PowerShell/VS Code-powershell/issues/1308)
+  - [#1628](https://github.com/PowerShell/VS Code-powershell/issues/1628)
+  - [#1680](https://github.com/PowerShell/VS Code-powershell/issues/1680)
+  - [#1744](https://github.com/PowerShell/VS Code-powershell/issues/1744)
+  - [#1751](https://github.com/PowerShell/VS Code-powershell/issues/1751)
 - [De klassieke *Joel op software* schrijven over Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Coderen in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
@@ -275,4 +272,4 @@ Er zijn enkele andere leuke berichten over code ring en het configureren van cod
 [byte-volgorde markering]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Protocol voor taal server]: https://microsoft.github.io/language-server-protocol/
-[Code ring van VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[Versleuteling van VS code]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support

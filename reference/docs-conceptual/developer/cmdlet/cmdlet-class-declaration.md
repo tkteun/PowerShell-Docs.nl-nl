@@ -11,21 +11,22 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354885"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978709"
 ---
 # <a name="cmdlet-class-declaration"></a>Declaratie van cmdlet-klassen
 
-Een Microsoft .NET Framework-klasse wordt gedeclareerd als een cmdlet door het **cmdlet** -kenmerk op te geven als meta gegevens voor de klasse. (Het **cmdlet** -kenmerk is het enige vereiste kenmerk voor alle cmdlets). Wanneer u het **cmdlet** -kenmerk opgeeft, moet u de combi natie van verb en samen stelling opgeven waarmee de cmdlet aan de gebruiker wordt geïdentificeerd. En u moet de Windows Power shell-functionaliteit beschrijven die door de cmdlet wordt ondersteund. Zie voor meer informatie over de declaratie syntaxis die wordt gebruikt om het **cmdlet** -kenmerk op te geven de [cmdlet-kenmerk declaratie](./cmdlet-attribute-declaration.md).
+Een Microsoft .NET Framework-klasse wordt gedeclareerd als een cmdlet door het **cmdlet** -kenmerk op te geven als meta gegevens voor de klasse. (Het **cmdlet** -kenmerk is het enige vereiste kenmerk voor alle cmdlets).
+Wanneer u het **cmdlet** -kenmerk opgeeft, moet u de combi natie van verb en samen stelling opgeven waarmee de cmdlet aan de gebruiker wordt geïdentificeerd. En u moet de Windows Power shell-functionaliteit beschrijven die door de cmdlet wordt ondersteund. Zie voor meer informatie over de declaratie syntaxis die wordt gebruikt om het **cmdlet** -kenmerk op te geven de [cmdlet-kenmerk declaratie](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
 > Het **cmdlet** -kenmerk wordt gedefinieerd door de klasse [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . De eigenschappen van deze klasse komen overeen met de declaratie parameters die worden gebruikt bij het declareren van het kenmerk.
 
-## <a name="nouns"></a>Zelfstandige naamwoorden
+## <a name="nouns"></a>Woorden
 
 Het zelfstandige naam woord van de cmdlet specificeert de resources waarop de cmdlet optreedt. Het zelfstandig naam woord onderscheidt uw cmdlets van andere cmdlets.
 
@@ -49,7 +50,7 @@ Zie voor meer informatie over de declaratie syntaxis die wordt gebruikt om het *
 
 De volgende code is de definitie voor een GetProc-cmdlet-klasse. U ziet dat Pascal-behuizing wordt gebruikt en dat de naam van de klasse het werk woord en het zelfstandige woord van de cmdlet bevat.
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Pascal-behuizing
 

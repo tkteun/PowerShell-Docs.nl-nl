@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978624"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Parametersets toevoegen aan een cmdlet
 
@@ -60,7 +60,7 @@ Met deze cmdlet worden drie para meters gedefinieerd die nodig zijn als invoer v
 
 Met deze invoer parameter kan de gebruiker de namen opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` kenmerk van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter `ProcessName` bevat die voor deze para meter is ingesteld.
 
-[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _
@@ -229,23 +229,23 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
 
 - Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `ProcessId` ingesteld op het stoppen van een proces op basis van de id. In dit geval gebruikt de cmdlet de `ProcessId` para meter die is ingesteld om het proces te stoppen.
 
-    ```
-    PS> stop-proc -Id 444
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
-    ```
+  ```
+  PS> stop-proc -Id 444
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+  ```
 
 - Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `InputObject` ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald door de `Get-Process` opdracht.
 
-    ```
-    PS> get-process notepad | stop-proc
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
-    ```
+  ```
+  PS> get-process notepad | stop-proc
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
+  ```
 
 ## <a name="see-also"></a>Zie ook
 

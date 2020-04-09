@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 32f58d70dc01130f37639960109bf9ef4a8aa7cc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870707"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978437"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
@@ -32,7 +32,7 @@ De Windows Power shell-item provider die in dit onderwerp wordt beschreven, haal
 
 Een Windows Power shell-item provider moet een .NET-klasse definiëren die is afgeleid van de basis klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Hier volgt de klassedefinitie voor de item provider die in deze sectie wordt beschreven.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 Houd er rekening mee dat in deze klassedefinitie het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) twee para meters bevat. De eerste para meter geeft u een beschrijvende naam op voor de provider die wordt gebruikt door Windows Power shell. Met de tweede para meter geeft u de specifieke Windows Power shell-mogelijkheden op die de provider beschikbaar maakt voor de Windows Power shell-runtime tijdens het verwerken van opdrachten. Voor deze provider zijn er geen specifieke Windows Power shell-functies toegevoegd.
 
@@ -52,7 +52,7 @@ Een Windows Power shell-item provider moet de syntaxis en de semantische geldigh
 
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) voor deze provider. Houd er rekening mee dat deze implementatie een NormalizePath-hulp methode aanroept om alle scheidings tekens in het pad naar een uniforme te converteren.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## <a name="determining-if-an-item-exists"></a>Bepalen of een item bestaat
 
@@ -60,7 +60,7 @@ Nadat het pad is geverifieerd, moet de Windows Power shell-runtime bepalen of er
 
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) voor deze provider. Houd er rekening mee dat deze methode de PathIsDrive-, ChunkPath-en getter-helper-methoden aanroept en gebruikmaakt van een door de provider gedefinieerd DatabaseTableInfo-object.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### <a name="things-to-remember-about-implementing-itemexists"></a>Wat u moet weten over implementatie van ItemExists
 
@@ -84,7 +84,7 @@ Voor het ophalen van een item moet de provider van Windows Power shell-items [Sy
 
 Hier volgt de implementatie van de methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) voor deze provider. Houd er rekening mee dat met deze methode de methoden Gette en GetRow worden gebruikt voor het ophalen van items die bestaan uit tabellen in de Access-Data Base of rijen in een gegevens tabel.
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>Wat u moet weten over implementatie van GetItem
 
