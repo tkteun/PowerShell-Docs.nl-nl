@@ -158,7 +158,7 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: Informatie over bestandscodering in VSCode en PowerShell
+        - name: Informatie over bestandscodering in VS Code en PowerShell
           href: components/vscode/understanding-file-encoding.md
     - name: Web Access
       items:
