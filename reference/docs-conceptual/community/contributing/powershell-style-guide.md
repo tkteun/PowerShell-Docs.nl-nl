@@ -1,16 +1,16 @@
 ---
-title: Power shell-stijl gids voor docs
+title: Stijlgids voor PowerShell-documentatie
 description: Dit artikel bevat de regels van de stijl voor het schrijven van Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 964536c5195c3bb8abd98b5996a96fc7b9362489
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: b4bc547c3560538ba246a6ed582fd4f9ce796dd2
+ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407012"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005581"
 ---
-# <a name="powershell-docs-style-guide"></a>Power shell-stijl gids voor docs
+# <a name="powershell-docs-style-guide"></a>Stijlgids voor PowerShell-documentatie
 
 Dit artikel bevat richt lijnen die specifiek zijn voor de Power shell-docs-inhoud. Dit is gebaseerd op de informatie die wordt beschreven in het [overzicht](overview.md#get-started-writing-docs).
 
@@ -57,7 +57,7 @@ Gebruik alleen [ATX-koppen][atx] (# Style, in plaats van `=`-of `-` stijl header
 ### <a name="limit-line-length-to-100-characters"></a>Regel lengte beperken tot 100 tekens
 
 Dit geldt voor conceptuele artikelen en cmdlet-verwijzingen. About_topics is beperkt tot 80 tekens.
-Als u de regel lengte beperkt, worden de Lees baarheid van Git en geschiedenis verbeterd. Het maakt het ook gemakkelijker voor andere schrijvers om bijdragen te maken.
+Als u de lijn lengte beperkt, wordt de Lees baarheid van Git-verschillen en-geschiedenis verbeterd. Het maakt het ook gemakkelijker voor andere schrijvers om bijdragen te maken.
 
 Gebruik de [uitprijs][reflow] uitbreiding opnieuw plaatsen in Visual Studio code om alinea's eenvoudig opnieuw te plaatsen zodat deze overeenkomen met de voorgeschreven regel lengte.
 
@@ -257,7 +257,7 @@ Er zijn twee typen hyper links die worden ondersteund door het publicatie systee
 Een URL-koppeling kan een URL-pad zijn dat relatief is ten opzichte van de hoofdmap van docs.microsoft.com. Of een absolute URL die de syntaxis van de volledige URL bevat. (Bijvoorbeeld: `https:/github.com/MicrosoftDocs/PowerShell-Docs`)
 
 - Gebruik URL-koppelingen wanneer u een koppeling maakt naar inhoud buiten Power shell-docs of tussen Naslag informatie over de cmdlet en conceptuele artikelen in Power shell-docs.
-- De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren vanuit uw browser en vervolgens `https://docs.microsoft.com/en-us` te verwijderen van de waarde die u in de prijs van de geplakte hebt geplakt.
+- De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw browser en vervolgens `https://docs.microsoft.com/en-us` te verwijderen van de waarde die u in de prijs van de geplakte hebt geplakt.
    - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. /en-US verwijderen uit de URL).
 - Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site.
 
@@ -416,7 +416,7 @@ U moet altijd de volledige naam van alle cmdlets en para meters gebruiken, tenzi
 
 ### <a name="using-parameters-in-examples"></a>Para meters in voor beelden gebruiken
 
-Vermijd het gebruik van positionele para meters. In het algemeen moet u altijd de parameter naam in een voor beeld gebruiken, zelfs als de para meter positioneel is. Dit verkleint de kans op Verwar ring in uw voor beelden.
+Vermijd het gebruik van positionele para meters. Over het algemeen moet u altijd de parameter naam in een voor beeld meenemen, zelfs als de para meter positioneel is. Dit verkleint de kans op Verwar ring in uw voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
