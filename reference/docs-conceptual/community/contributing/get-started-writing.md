@@ -3,12 +3,12 @@ title: Aan de slag met bijdragen aan Power shell-documentatie
 description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als bijdrager aan de Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 95eb2c3157a99fcb6560914da8464022e1b64fad
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
+ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078554"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005513"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Aan de slag met bijdragen aan Power shell-documentatie
 
@@ -43,7 +43,7 @@ De [conceptuele documentatie][conceptual] is niet ingedeeld op versie. Alle arti
 
 ## <a name="using-git-branches"></a>Git-vertakkingen gebruiken
 
-De standaard vertakking voor Power shell-docs is de vertakking `staging`. Wijzigingen die zijn aangebracht in werk vertakkingen worden samengevoegd in de `staging` vertakking vóór de publicatie. Ongeveer eenmaal per week wordt de `staging` vertakking samengevoegd in de `live` vertakking. De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.microsoft.com. Wijzigingen mogen nooit rechtstreeks in de `live` vertakking worden aangebracht.
+De standaard vertakking voor Power shell-docs is de vertakking `staging`. Wijzigingen die zijn aangebracht in werk vertakkingen worden samengevoegd in de `staging` vertakking voordat ze worden gepubliceerd. Ongeveer eenmaal per week wordt de `staging` vertakking samengevoegd in de `live` vertakking. De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.microsoft.com. Wijzigingen mogen nooit rechtstreeks in de `live` vertakking worden aangebracht.
 
 Als u een wijziging in de documentatie indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u of er een release vertakking voor die versie is. Alle wijzigingen die van toepassing zijn op een specifieke, toekomstige versie, moeten zijn gericht op de release vertakking. Release vertakkingen hebben het volgende naam patroon: `release-<version>`.
 
@@ -55,7 +55,7 @@ Breng de wijzigingen aan die u wilt verzenden na het proces in het gedeelte [uw 
 
 Er moet een GitHub-probleem worden gemaakt voor elk nieuw document dat u wilt bijdragen. Controleer of er bestaande problemen zijn om er zeker van te zijn dat u geen dubbele taken uitvoert. Problemen die aan iemand worden toegewezen, worden beschouwd als in uitvoering. Als u wilt samen werken aan een probleem, neemt u contact op met de persoon die aan het probleem is toegewezen.
 
-Net als bij het Power shell [RFC-proces][rfc], het maken van een probleem voordat de inhoud wordt geschreven, zorgt u ervoor dat u niet veel tijd en moeite besteedt aan iets dat wordt afgewezen door het Power shell-docs-team. Op deze manier kunnen we ook contact met u opnemen over het bereik van de inhoud en waar deze in de Power shell-documentatie moeten passen.
+Net als bij het Power shell [RFC-proces][rfc], het maken van een probleem voordat de inhoud wordt geschreven, zorgt u ervoor dat u niet veel tijd en moeite besteedt aan iets dat wordt afgewezen door het Power shell-docs-team. Zo kunnen we met u instemmen op het bereik van de inhoud en waar deze in de Power shell-documentatie moeten passen.
 
 ### <a name="updating-existing-articles"></a>Bestaande artikelen bijwerken
 
