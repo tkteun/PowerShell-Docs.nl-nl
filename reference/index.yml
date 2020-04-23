@@ -10,10 +10,10 @@ metadata:
   ms.author: sewhee
   ms.date: 09/04/2019
   ms.openlocfilehash: dfaf084a76d6f1cb37a722956fb8abca5bc8416c
-  ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+  ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 04/01/2020
+  ms.lasthandoff: 04/22/2020
   ms.locfileid: "80500537"
 highlightedContent:
   items:
@@ -77,7 +77,7 @@ productDirectory:
       text: Aan de slag gaan met DSC voor Linux
     - url: https://dsccommunity.org/
       text: DSC-community
-  - title: Bronnen voor ontwikkelaars
+  - title: Resources voor ontwikkelaars
     imageSrc: https://docs.microsoft.com/media/common/i_code-edit.svg
     links:
     - url: https://docs.microsoft.com/powershell/scripting/developer/windows-powershell
@@ -139,7 +139,7 @@ additionalContent:
   - title: PowerShell-team
     summary: Communiceren met het PowerShell-team
     items:
-    - title: Officieel PowerShell-blog
+    - title: Officiële PowerShell-blog
       summary: Officieel nieuws en aankondigingen
       url: https://devblogs.microsoft.com/powershell/
     - title: PowerShell-team op Twitter
