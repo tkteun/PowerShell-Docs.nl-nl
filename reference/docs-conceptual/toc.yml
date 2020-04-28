@@ -182,7 +182,7 @@
       href: gallery/installing-psget.md
     - name: Aan de slag
       href: gallery/getting-started.md
-    - name: Instructies
+    - name: 'Uitleg:'
       items:
         - name: Pakketten zoeken in de galerie
           items:
@@ -372,9 +372,9 @@
         - name: Aan de slag gaan met DSC op Nano
           href: dsc/getting-started/nanoDSC.md
         - name: Aan de slag gaan met DSC in Azure Automation
-          href: dsc/getting-started/azureDSC.md
-        - name: Aan de slag gaan met DSC op Azure Virtual Machines
-          href: dsc/getting-started/azureDSCexthistory.md
+          href: /azure/automation/automation-dsc-getting-started
+        - name: Aan de slag met de gastconfiguratie van Azure Policy
+          href: /azure/governance/policy/concepts/guest-configuration
     - name: Snelstartgidsen
       expanded: true
       items:
@@ -428,7 +428,7 @@
                   href: dsc/configurations/crossNodeDependencies.md
                 - name: Een knooppunt opnieuw opstarten
                   href: dsc/configurations/reboot-a-node.md
-    - name: Bronnen
+    - name: Resources
       items:
         - name: Concepten
           items:
@@ -640,7 +640,7 @@
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
             - name: TestConfiguration-methode
               href: dsc/reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
-    - name: Lees hier meer over
+    - name: Meer informatie
       items:
         - name: Whitepapers
           href: dsc/further-reading/whitepapers.md
@@ -750,7 +750,7 @@
           href: community/contributing/powershell-style-guide.md
         - name: Naslaginformatie voor cmdlets bewerken
           href: community/contributing/editing-cmdlet-ref.md
-        - name: Aanvullende resources
+        - name: Aanvullende bronnen
           items:
             - name: Redactionele controlelijst
               href: community/contributing/editorial-checklist.md
