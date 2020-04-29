@@ -3,16 +3,16 @@ ms.date: 08/27/2018
 keywords: Power shell, cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030938"
 ---
-# <a name="getting-information-about-commands"></a><span data-ttu-id="5bc51-103">Informatie over opdrachten verkrijgen</span><span class="sxs-lookup"><span data-stu-id="5bc51-103">Getting information about commands</span></span>
+# <a name="getting-information-about-commands"></a><span data-ttu-id="c0f09-103">Informatie over opdrachten verkrijgen</span><span class="sxs-lookup"><span data-stu-id="c0f09-103">Getting information about commands</span></span>
 
-<span data-ttu-id="5bc51-104">De Power shell-`Get-Command` bevat opdrachten die beschikbaar zijn in uw huidige sessie.</span><span class="sxs-lookup"><span data-stu-id="5bc51-104">The PowerShell `Get-Command` displays commands that are available in your current session.</span></span>
-<span data-ttu-id="5bc51-105">Wanneer u de `Get-Command` cmdlet uitvoert, ziet u iets zoals in de volgende uitvoer:</span><span class="sxs-lookup"><span data-stu-id="5bc51-105">When you run the `Get-Command` cmdlet, you see something similar to the following output:</span></span>
+<span data-ttu-id="c0f09-104">De Power `Get-Command` shell-opdrachten die beschikbaar zijn in uw huidige sessie worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="c0f09-104">The PowerShell `Get-Command` displays commands that are available in your current session.</span></span>
+<span data-ttu-id="c0f09-105">Wanneer u de `Get-Command` cmdlet uitvoert, ziet u iets zoals in de volgende uitvoer:</span><span class="sxs-lookup"><span data-stu-id="c0f09-105">When you run the `Get-Command` cmdlet, you see something similar to the following output:</span></span>
 
 ```output
 CommandType     Name                    Version    Source
@@ -28,9 +28,9 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-<span data-ttu-id="5bc51-106">Deze uitvoer lijkt veel op de Help-uitvoer van **cmd. exe**: een samen vatting van interne opdrachten in tabel vorm.</span><span class="sxs-lookup"><span data-stu-id="5bc51-106">This output looks a lot like the Help output of **cmd.exe**: a tabular summary of internal commands.</span></span> <span data-ttu-id="5bc51-107">In het fragment van de `Get-Command` opdracht uitvoer die hierboven wordt weer gegeven, heeft elke opdracht die wordt weer gegeven een CommandType van cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5bc51-107">In the excerpt of the `Get-Command` command output shown above, every command shown has a CommandType of Cmdlet.</span></span> <span data-ttu-id="5bc51-108">Een cmdlet is het intrinsieke opdracht type van Power shell.</span><span class="sxs-lookup"><span data-stu-id="5bc51-108">A cmdlet is PowerShell's intrinsic command type.</span></span> <span data-ttu-id="5bc51-109">Dit type komt ongeveer overeen met opdrachten als `dir` en `cd` in **cmd. exe** of de ingebouwde opdrachten van UNIX-shells zoals bash.</span><span class="sxs-lookup"><span data-stu-id="5bc51-109">This type corresponds roughly to commands like `dir` and `cd` in **cmd.exe** or the built-in commands of Unix shells like bash.</span></span>
+<span data-ttu-id="c0f09-106">Deze uitvoer lijkt veel op de Help-uitvoer van **cmd. exe**: een samen vatting van interne opdrachten in tabel vorm.</span><span class="sxs-lookup"><span data-stu-id="c0f09-106">This output looks a lot like the Help output of **cmd.exe**: a tabular summary of internal commands.</span></span> <span data-ttu-id="c0f09-107">In het fragment van de `Get-Command` opdracht uitvoer die hierboven wordt weer gegeven, heeft elke opdracht die wordt weer gegeven een CommandType van cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c0f09-107">In the excerpt of the `Get-Command` command output shown above, every command shown has a CommandType of Cmdlet.</span></span> <span data-ttu-id="c0f09-108">Een cmdlet is het intrinsieke opdracht type van Power shell.</span><span class="sxs-lookup"><span data-stu-id="c0f09-108">A cmdlet is PowerShell's intrinsic command type.</span></span> <span data-ttu-id="c0f09-109">Dit type komt ongeveer overeen met opdrachten `dir` als `cd` en in **cmd. exe** of de ingebouwde opdrachten van UNIX-shells, zoals bash.</span><span class="sxs-lookup"><span data-stu-id="c0f09-109">This type corresponds roughly to commands like `dir` and `cd` in **cmd.exe** or the built-in commands of Unix shells like bash.</span></span>
 
-<span data-ttu-id="5bc51-110">De cmdlet `Get-Command` heeft een **syntaxis** parameter waarmee de syntaxis van elke cmdlet wordt geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="5bc51-110">The `Get-Command` cmdlet has a **Syntax** parameter that returns syntax of each cmdlet.</span></span> <span data-ttu-id="5bc51-111">In het volgende voor beeld ziet u hoe u de syntaxis van de `Get-Help`-cmdlet kunt ophalen:</span><span class="sxs-lookup"><span data-stu-id="5bc51-111">The following example shows how to get the syntax of the `Get-Help` cmdlet:</span></span>
+<span data-ttu-id="c0f09-110">De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet retourneert.</span><span class="sxs-lookup"><span data-stu-id="c0f09-110">The `Get-Command` cmdlet has a **Syntax** parameter that returns syntax of each cmdlet.</span></span> <span data-ttu-id="c0f09-111">In het volgende voor beeld ziet u hoe u de syntaxis `Get-Help` van de cmdlet kunt ophalen:</span><span class="sxs-lookup"><span data-stu-id="c0f09-111">The following example shows how to get the syntax of the `Get-Help` cmdlet:</span></span>
 
 ```powershell
 Get-Command Get-Help -Syntax
@@ -50,44 +50,44 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-## <a name="displaying-available-command-by-type"></a><span data-ttu-id="5bc51-112">De beschik bare opdracht wordt weer gegeven op type</span><span class="sxs-lookup"><span data-stu-id="5bc51-112">Displaying available command by type</span></span>
+## <a name="displaying-available-command-by-type"></a><span data-ttu-id="c0f09-112">De beschik bare opdracht wordt weer gegeven op type</span><span class="sxs-lookup"><span data-stu-id="c0f09-112">Displaying available command by type</span></span>
 
-<span data-ttu-id="5bc51-113">De `Get-Command` opdracht bevat alleen de cmdlets in de huidige sessie.</span><span class="sxs-lookup"><span data-stu-id="5bc51-113">The `Get-Command` command lists only the cmdlets in the current session.</span></span> <span data-ttu-id="5bc51-114">Power shell ondersteunt diverse andere soorten opdrachten:</span><span class="sxs-lookup"><span data-stu-id="5bc51-114">PowerShell actually supports several other types of commands:</span></span>
+<span data-ttu-id="c0f09-113">De `Get-Command` opdracht bevat alleen de cmdlets in de huidige sessie.</span><span class="sxs-lookup"><span data-stu-id="c0f09-113">The `Get-Command` command lists only the cmdlets in the current session.</span></span> <span data-ttu-id="c0f09-114">Power shell ondersteunt diverse andere soorten opdrachten:</span><span class="sxs-lookup"><span data-stu-id="c0f09-114">PowerShell actually supports several other types of commands:</span></span>
 
-- <span data-ttu-id="5bc51-115">Aliassen</span><span class="sxs-lookup"><span data-stu-id="5bc51-115">Aliases</span></span>
-- <span data-ttu-id="5bc51-116">Functies</span><span class="sxs-lookup"><span data-stu-id="5bc51-116">Functions</span></span>
-- <span data-ttu-id="5bc51-117">Scripts</span><span class="sxs-lookup"><span data-stu-id="5bc51-117">Scripts</span></span>
+- <span data-ttu-id="c0f09-115">Aliassen</span><span class="sxs-lookup"><span data-stu-id="c0f09-115">Aliases</span></span>
+- <span data-ttu-id="c0f09-116">Functions</span><span class="sxs-lookup"><span data-stu-id="c0f09-116">Functions</span></span>
+- <span data-ttu-id="c0f09-117">Scripts</span><span class="sxs-lookup"><span data-stu-id="c0f09-117">Scripts</span></span>
 
-<span data-ttu-id="5bc51-118">Externe uitvoer bare bestanden of bestanden met een geregistreerde bestands type-handler worden ook als opdrachten geclassificeerd.</span><span class="sxs-lookup"><span data-stu-id="5bc51-118">External executable files, or files that have a registered file type handler, are also classified as commands.</span></span>
+<span data-ttu-id="c0f09-118">Externe uitvoer bare bestanden of bestanden met een geregistreerde bestands type-handler worden ook als opdrachten geclassificeerd.</span><span class="sxs-lookup"><span data-stu-id="c0f09-118">External executable files, or files that have a registered file type handler, are also classified as commands.</span></span>
 
-<span data-ttu-id="5bc51-119">Als u alle opdrachten in de sessie wilt ophalen, typt u:</span><span class="sxs-lookup"><span data-stu-id="5bc51-119">To get all commands in the session, type:</span></span>
+<span data-ttu-id="c0f09-119">Als u alle opdrachten in de sessie wilt ophalen, typt u:</span><span class="sxs-lookup"><span data-stu-id="c0f09-119">To get all commands in the session, type:</span></span>
 
 ```powershell
 Get-Command *
 ```
 
-<span data-ttu-id="5bc51-120">Deze lijst bevat externe opdrachten in uw zoekpad, zodat deze duizenden items kan bevatten.</span><span class="sxs-lookup"><span data-stu-id="5bc51-120">This list includes external commands in your search path so it can contain thousands of items.</span></span>
-<span data-ttu-id="5bc51-121">Het is handiger om een gereduceerde reeks opdrachten te bekijken.</span><span class="sxs-lookup"><span data-stu-id="5bc51-121">It is more useful to look at a reduced set of commands.</span></span>
+<span data-ttu-id="c0f09-120">Deze lijst bevat externe opdrachten in uw zoekpad, zodat deze duizenden items kan bevatten.</span><span class="sxs-lookup"><span data-stu-id="c0f09-120">This list includes external commands in your search path so it can contain thousands of items.</span></span>
+<span data-ttu-id="c0f09-121">Het is handiger om een gereduceerde reeks opdrachten te bekijken.</span><span class="sxs-lookup"><span data-stu-id="c0f09-121">It is more useful to look at a reduced set of commands.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5bc51-122">Het sterretje (\*) wordt gebruikt voor het vergelijken van joker tekens in Power shell-opdracht argumenten.</span><span class="sxs-lookup"><span data-stu-id="5bc51-122">The asterisk (\*) is used for wildcard matching in PowerShell command arguments.</span></span> <span data-ttu-id="5bc51-123">Het \* betekent een of meer wille keurige tekens.</span><span class="sxs-lookup"><span data-stu-id="5bc51-123">The \* means "match one or more of any characters".</span></span> <span data-ttu-id="5bc51-124">U kunt `Get-Command a*` typen om alle opdrachten te vinden die beginnen met de letter ' a '.</span><span class="sxs-lookup"><span data-stu-id="5bc51-124">You can type `Get-Command a*` to find all commands that begin with the letter "a".</span></span> <span data-ttu-id="5bc51-125">In tegens telling tot joker tekens in **cmd. exe**komt het Joker teken van Power shell ook overeen met een punt.</span><span class="sxs-lookup"><span data-stu-id="5bc51-125">Unlike wildcard matching in **cmd.exe**, PowerShell's wildcard will also match a period.</span></span>
+> <span data-ttu-id="c0f09-122">Het sterretje (\*) wordt gebruikt voor het vergelijken van joker tekens in Power shell-opdracht argumenten.</span><span class="sxs-lookup"><span data-stu-id="c0f09-122">The asterisk (\*) is used for wildcard matching in PowerShell command arguments.</span></span> <span data-ttu-id="c0f09-123">De \* betekent ' overeenkomen met een of meer wille keurige tekens '.</span><span class="sxs-lookup"><span data-stu-id="c0f09-123">The \* means "match one or more of any characters".</span></span> <span data-ttu-id="c0f09-124">U kunt typen `Get-Command a*` om te zoeken naar alle opdrachten die beginnen met de letter "a".</span><span class="sxs-lookup"><span data-stu-id="c0f09-124">You can type `Get-Command a*` to find all commands that begin with the letter "a".</span></span> <span data-ttu-id="c0f09-125">In tegens telling tot joker tekens in **cmd. exe**komt het Joker teken van Power shell ook overeen met een punt.</span><span class="sxs-lookup"><span data-stu-id="c0f09-125">Unlike wildcard matching in **cmd.exe**, PowerShell's wildcard will also match a period.</span></span>
 
-<span data-ttu-id="5bc51-126">Gebruik de **CommandType** -para meter van `Get-Command` om systeem eigen opdrachten van andere typen op te halen.</span><span class="sxs-lookup"><span data-stu-id="5bc51-126">Use the **CommandType** parameter of `Get-Command` to get native commands of other types.</span></span>
-<span data-ttu-id="5bc51-127">cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5bc51-127">cmdlet.</span></span>
+<span data-ttu-id="c0f09-126">Gebruik de **CommandType** -para `Get-Command` meter van om systeem eigen opdrachten van andere typen op te halen.</span><span class="sxs-lookup"><span data-stu-id="c0f09-126">Use the **CommandType** parameter of `Get-Command` to get native commands of other types.</span></span>
+<span data-ttu-id="c0f09-127">cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c0f09-127">cmdlet.</span></span>
 
-<span data-ttu-id="5bc51-128">Om opdracht aliassen te verkrijgen, zoals de toegewezen bijnamen van opdrachten, typt u:</span><span class="sxs-lookup"><span data-stu-id="5bc51-128">To get command aliases, which are the assigned nicknames of commands, type:</span></span>
+<span data-ttu-id="c0f09-128">Om opdracht aliassen te verkrijgen, zoals de toegewezen bijnamen van opdrachten, typt u:</span><span class="sxs-lookup"><span data-stu-id="c0f09-128">To get command aliases, which are the assigned nicknames of commands, type:</span></span>
 
 ```powershell
 Get-Command -CommandType Alias
 ```
 
-<span data-ttu-id="5bc51-129">Als u de functies in de huidige sessie wilt ophalen, typt u:</span><span class="sxs-lookup"><span data-stu-id="5bc51-129">To get the functions in the current session, type:</span></span>
+<span data-ttu-id="c0f09-129">Als u de functies in de huidige sessie wilt ophalen, typt u:</span><span class="sxs-lookup"><span data-stu-id="c0f09-129">To get the functions in the current session, type:</span></span>
 
 ```powershell
 Get-Command -CommandType Function
 ```
 
-<span data-ttu-id="5bc51-130">Als u scripts wilt weer geven in het zoekpad van Power shell, typt u:</span><span class="sxs-lookup"><span data-stu-id="5bc51-130">To display scripts in PowerShell's search path, type:</span></span>
+<span data-ttu-id="c0f09-130">Als u scripts wilt weer geven in het zoekpad van Power shell, typt u:</span><span class="sxs-lookup"><span data-stu-id="c0f09-130">To display scripts in PowerShell's search path, type:</span></span>
 
 ```powershell
 Get-Command -CommandType Script

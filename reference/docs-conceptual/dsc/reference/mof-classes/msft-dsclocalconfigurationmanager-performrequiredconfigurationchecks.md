@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: PerformRequiredConfigurationChecks-methode
 ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942683"
 ---
-# <a name="performrequiredconfigurationchecks-method"></a><span data-ttu-id="d0afd-103">PerformRequiredConfigurationChecks-methode</span><span class="sxs-lookup"><span data-stu-id="d0afd-103">PerformRequiredConfigurationChecks method</span></span>
+# <a name="performrequiredconfigurationchecks-method"></a><span data-ttu-id="48825-103">PerformRequiredConfigurationChecks-methode</span><span class="sxs-lookup"><span data-stu-id="48825-103">PerformRequiredConfigurationChecks method</span></span>
 
-<span data-ttu-id="d0afd-104">Start een consistentie controle met behulp van de taak planner.</span><span class="sxs-lookup"><span data-stu-id="d0afd-104">Starts a consistency check by using the Task Scheduler.</span></span>
+<span data-ttu-id="48825-104">Start een consistentie controle met behulp van de taak planner.</span><span class="sxs-lookup"><span data-stu-id="48825-104">Starts a consistency check by using the Task Scheduler.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d0afd-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="d0afd-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="48825-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="48825-105">Syntax</span></span>
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -21,31 +21,31 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="d0afd-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="d0afd-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="48825-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="48825-106">Parameters</span></span>
 
-<span data-ttu-id="d0afd-107">*Markeert* \[in\] een bitmasker dat het type consistentie controle opgeeft dat moet worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d0afd-107">*Flags* \[in\] A bitmask that specifies the type of consistency check to run.</span></span> <span data-ttu-id="d0afd-108">De volgende waarden zijn geldig en kunnen worden gecombineerd met behulp van een bitsgewijze **or** -bewerking:</span><span class="sxs-lookup"><span data-stu-id="d0afd-108">The following values are valid, and can be combined by using a bitwise **OR** operation:</span></span>
+<span data-ttu-id="48825-107">*Vlaggen* \[in\] een bitmasker die het type consistentie controle opgeeft dat moet worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="48825-107">*Flags* \[in\] A bitmask that specifies the type of consistency check to run.</span></span> <span data-ttu-id="48825-108">De volgende waarden zijn geldig en kunnen worden gecombineerd met behulp van een bitsgewijze **or** -bewerking:</span><span class="sxs-lookup"><span data-stu-id="48825-108">The following values are valid, and can be combined by using a bitwise **OR** operation:</span></span>
 
-|<span data-ttu-id="d0afd-109">Value</span><span class="sxs-lookup"><span data-stu-id="d0afd-109">Value</span></span> |<span data-ttu-id="d0afd-110">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="d0afd-110">Description</span></span> |
+|<span data-ttu-id="48825-109">Waarde</span><span class="sxs-lookup"><span data-stu-id="48825-109">Value</span></span> |<span data-ttu-id="48825-110">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="48825-110">Description</span></span> |
 |:--- |:---|
-|<span data-ttu-id="d0afd-111">**1**</span><span class="sxs-lookup"><span data-stu-id="d0afd-111">**1**</span></span> | <span data-ttu-id="d0afd-112">Een normale consistentie controle.</span><span class="sxs-lookup"><span data-stu-id="d0afd-112">A normal consistency check.</span></span> |
-|<span data-ttu-id="d0afd-113">**2**</span><span class="sxs-lookup"><span data-stu-id="d0afd-113">**2**</span></span> | <span data-ttu-id="d0afd-114">Een voortzetting van een consistentie controle na het opnieuw opstarten.</span><span class="sxs-lookup"><span data-stu-id="d0afd-114">A continuation of a consistency check after a reboot.</span></span> <span data-ttu-id="d0afd-115">Deze waarde mag niet worden gecombineerd met andere waarden.</span><span class="sxs-lookup"><span data-stu-id="d0afd-115">This value should not be combined with other values.</span></span> |
-|<span data-ttu-id="d0afd-116">**4**</span><span class="sxs-lookup"><span data-stu-id="d0afd-116">**4**</span></span> | <span data-ttu-id="d0afd-117">De configuratie moet worden opgehaald van de pull-server die is opgegeven in de-configuratie voor het knoop punt.</span><span class="sxs-lookup"><span data-stu-id="d0afd-117">The configuration should be pulled from the pull server specified in the metaconfiguration for the node.</span></span> <span data-ttu-id="d0afd-118">Deze waarde moet altijd worden gecombineerd met **1**, voor een waarde van **5**.</span><span class="sxs-lookup"><span data-stu-id="d0afd-118">This value should always be combined with **1**, for a value of **5**.</span></span> |
-|<span data-ttu-id="d0afd-119">**8**</span><span class="sxs-lookup"><span data-stu-id="d0afd-119">**8**</span></span> | <span data-ttu-id="d0afd-120">Status verzenden naar de rapport server.</span><span class="sxs-lookup"><span data-stu-id="d0afd-120">Send status to the report server.</span></span> |
+|<span data-ttu-id="48825-111">**1**</span><span class="sxs-lookup"><span data-stu-id="48825-111">**1**</span></span> | <span data-ttu-id="48825-112">Een normale consistentie controle.</span><span class="sxs-lookup"><span data-stu-id="48825-112">A normal consistency check.</span></span> |
+|<span data-ttu-id="48825-113">**2**</span><span class="sxs-lookup"><span data-stu-id="48825-113">**2**</span></span> | <span data-ttu-id="48825-114">Een voortzetting van een consistentie controle na het opnieuw opstarten.</span><span class="sxs-lookup"><span data-stu-id="48825-114">A continuation of a consistency check after a reboot.</span></span> <span data-ttu-id="48825-115">Deze waarde mag niet worden gecombineerd met andere waarden.</span><span class="sxs-lookup"><span data-stu-id="48825-115">This value should not be combined with other values.</span></span> |
+|<span data-ttu-id="48825-116">**4**</span><span class="sxs-lookup"><span data-stu-id="48825-116">**4**</span></span> | <span data-ttu-id="48825-117">De configuratie moet worden opgehaald van de pull-server die is opgegeven in de-configuratie voor het knoop punt.</span><span class="sxs-lookup"><span data-stu-id="48825-117">The configuration should be pulled from the pull server specified in the metaconfiguration for the node.</span></span> <span data-ttu-id="48825-118">Deze waarde moet altijd worden gecombineerd met **1**, voor een waarde van **5**.</span><span class="sxs-lookup"><span data-stu-id="48825-118">This value should always be combined with **1**, for a value of **5**.</span></span> |
+|<span data-ttu-id="48825-119">**achtste**</span><span class="sxs-lookup"><span data-stu-id="48825-119">**8**</span></span> | <span data-ttu-id="48825-120">Status verzenden naar de rapport server.</span><span class="sxs-lookup"><span data-stu-id="48825-120">Send status to the report server.</span></span> |
 
-## <a name="return-value"></a><span data-ttu-id="d0afd-121">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="d0afd-121">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="48825-121">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="48825-121">Return value</span></span>
 
-<span data-ttu-id="d0afd-122">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="d0afd-122">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="48825-122">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="48825-122">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="d0afd-123">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="d0afd-123">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="48825-123">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="48825-123">Remarks</span></span>
 
-<span data-ttu-id="d0afd-124">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="d0afd-124">This is a static method.</span></span>
+<span data-ttu-id="48825-124">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="48825-124">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="d0afd-125">Vereisten</span><span class="sxs-lookup"><span data-stu-id="d0afd-125">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="48825-125">Vereisten</span><span class="sxs-lookup"><span data-stu-id="48825-125">Requirements</span></span>
 
-<span data-ttu-id="d0afd-126">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="d0afd-126">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="48825-126">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="48825-126">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="d0afd-127">**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d0afd-127">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="48825-127">**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="48825-127">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d0afd-128">Zie ook</span><span class="sxs-lookup"><span data-stu-id="d0afd-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="48825-128">Zie ook</span><span class="sxs-lookup"><span data-stu-id="48825-128">See also</span></span>
 
-[<span data-ttu-id="d0afd-129">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d0afd-129">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="48825-129">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="48825-129">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
