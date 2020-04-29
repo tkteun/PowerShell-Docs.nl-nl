@@ -3,15 +3,15 @@ ms.date: 08/27/2018
 keywords: Power shell, cmdlet
 title: Informatie over opdrachten verkrijgen
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030938"
 ---
 # <a name="getting-information-about-commands"></a>Informatie over opdrachten verkrijgen
 
-De Power shell-`Get-Command` bevat opdrachten die beschikbaar zijn in uw huidige sessie.
+De Power `Get-Command` shell-opdrachten die beschikbaar zijn in uw huidige sessie worden weer gegeven.
 Wanneer u de `Get-Command` cmdlet uitvoert, ziet u iets zoals in de volgende uitvoer:
 
 ```output
@@ -28,9 +28,9 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Deze uitvoer lijkt veel op de Help-uitvoer van **cmd. exe**: een samen vatting van interne opdrachten in tabel vorm. In het fragment van de `Get-Command` opdracht uitvoer die hierboven wordt weer gegeven, heeft elke opdracht die wordt weer gegeven een CommandType van cmdlet. Een cmdlet is het intrinsieke opdracht type van Power shell. Dit type komt ongeveer overeen met opdrachten als `dir` en `cd` in **cmd. exe** of de ingebouwde opdrachten van UNIX-shells zoals bash.
+Deze uitvoer lijkt veel op de Help-uitvoer van **cmd. exe**: een samen vatting van interne opdrachten in tabel vorm. In het fragment van de `Get-Command` opdracht uitvoer die hierboven wordt weer gegeven, heeft elke opdracht die wordt weer gegeven een CommandType van cmdlet. Een cmdlet is het intrinsieke opdracht type van Power shell. Dit type komt ongeveer overeen met opdrachten `dir` als `cd` en in **cmd. exe** of de ingebouwde opdrachten van UNIX-shells, zoals bash.
 
-De cmdlet `Get-Command` heeft een **syntaxis** parameter waarmee de syntaxis van elke cmdlet wordt geretourneerd. In het volgende voor beeld ziet u hoe u de syntaxis van de `Get-Help`-cmdlet kunt ophalen:
+De `Get-Command` cmdlet heeft een **syntaxis** parameter die de syntaxis van elke cmdlet retourneert. In het volgende voor beeld ziet u hoe u de syntaxis `Get-Help` van de cmdlet kunt ophalen:
 
 ```powershell
 Get-Command Get-Help -Syntax
@@ -55,7 +55,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 De `Get-Command` opdracht bevat alleen de cmdlets in de huidige sessie. Power shell ondersteunt diverse andere soorten opdrachten:
 
 - Aliassen
-- Functies
+- Functions
 - Scripts
 
 Externe uitvoer bare bestanden of bestanden met een geregistreerde bestands type-handler worden ook als opdrachten geclassificeerd.
@@ -70,9 +70,9 @@ Deze lijst bevat externe opdrachten in uw zoekpad, zodat deze duizenden items ka
 Het is handiger om een gereduceerde reeks opdrachten te bekijken.
 
 > [!NOTE]
-> Het sterretje (\*) wordt gebruikt voor het vergelijken van joker tekens in Power shell-opdracht argumenten. Het \* betekent een of meer wille keurige tekens. U kunt `Get-Command a*` typen om alle opdrachten te vinden die beginnen met de letter ' a '. In tegens telling tot joker tekens in **cmd. exe**komt het Joker teken van Power shell ook overeen met een punt.
+> Het sterretje (\*) wordt gebruikt voor het vergelijken van joker tekens in Power shell-opdracht argumenten. De \* betekent ' overeenkomen met een of meer wille keurige tekens '. U kunt typen `Get-Command a*` om te zoeken naar alle opdrachten die beginnen met de letter "a". In tegens telling tot joker tekens in **cmd. exe**komt het Joker teken van Power shell ook overeen met een punt.
 
-Gebruik de **CommandType** -para meter van `Get-Command` om systeem eigen opdrachten van andere typen op te halen.
+Gebruik de **CommandType** -para `Get-Command` meter van om systeem eigen opdrachten van andere typen op te halen.
 cmdlet.
 
 Om opdracht aliassen te verkrijgen, zoals de toegewezen bijnamen van opdrachten, typt u:

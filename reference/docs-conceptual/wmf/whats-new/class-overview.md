@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Aangepaste typen maken met PowerShell-klassen
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145199"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Aangepaste typen maken met PowerShell-klassen
@@ -104,7 +104,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-Voor het aanroepen van basis klassen methoden van overschreven implementaties, Casting naar de basis klasse (`[baseClass]$this`) op aanroep:
+Voor het aanroepen van basis klassen methoden van overschreven implementaties, Casting naar`[baseClass]$this`de basis klasse () op aanroepen:
 
 ```powershell
 class childClass2 : baseClass
@@ -137,7 +137,7 @@ $list[0] # return 200
 
 ### <a name="declare-implemented-interface"></a>Geïmplementeerde interface declareren
 
-U kunt geïmplementeerde interfaces na basis typen of direct na een dubbele punt (:) declareren als er geen basis type is opgegeven. Scheid alle type namen met behulp van komma's. Het is vergelijkbaar met C# de syntaxis.
+U kunt geïmplementeerde interfaces na basis typen of direct na een dubbele punt (:) declareren als er geen basis type is opgegeven. Scheid alle type namen met behulp van komma's. Het is vergelijkbaar met de syntaxis van C#.
 
 ```powershell
 class MyComparable : system.IComparable
@@ -163,7 +163,7 @@ Power shell 5,0 introduceert de volgende nieuwe taal elementen in Power shell:
 
 ### <a name="class-keyword"></a>Tref woord klasse
 
-Het sleutel woord `class` definieert een nieuwe klasse. Dit is een True .NET Framework type. Klasse-leden zijn openbaar, maar alleen openbaar binnen het module bereik. U kunt niet naar de type naam verwijzen als een teken reeks (`New-Object` bijvoorbeeld niet werkt), en in deze release kunt u geen letterlijke type waarde (bijvoorbeeld `[MyClass]`) gebruiken buiten het script of module bestand waarin de klasse is gedefinieerd.
+Het `class` sleutel woord definieert een nieuwe klasse. Dit is een True .NET Framework type. Klasse-leden zijn openbaar, maar alleen openbaar binnen het module bereik. U kunt niet naar de type naam verwijzen als een teken reeks (bijvoorbeeld `New-Object` niet werkt), en in deze release kunt u geen letterlijke type waarde (bijvoorbeeld `[MyClass]`) gebruiken buiten het script of module bestand waarin de klasse is gedefinieerd.
 
 ```powershell
 class MyClass
@@ -174,7 +174,7 @@ class MyClass
 
 ### <a name="enum-keyword-and-enumerations"></a>Tref woord en opsommingen inventariseren
 
-Er is ondersteuning voor het sleutel woord `enum` toegevoegd. Dit maakt gebruik van een nieuwe regel als scheidings teken. Op dit moment kunt u geen enumerator definiëren in termen van zichzelf. U kunt echter een Enum initialiseren in termen van een andere Enum, zoals wordt weer gegeven in het volgende voor beeld. Het basis type kan ook niet worden opgegeven. het is altijd `[int]`.
+Ondersteuning voor het `enum` tref woord is toegevoegd. Dit maakt gebruik van een nieuwe regel als scheidings teken. Op dit moment kunt u geen enumerator definiëren in termen van zichzelf. U kunt echter een Enum initialiseren in termen van een andere Enum, zoals wordt weer gegeven in het volgende voor beeld. Het basis type kan ook niet worden opgegeven. het is altijd `[int]`.
 
 ```powershell
 enum Color2
@@ -204,7 +204,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 ### <a name="import-dscresource"></a>Import-Dscresource bieden
 
-`Import-DscResource` is nu een echt dynamisch sleutel woord. Power shell parseert de hoofd module van de opgegeven module. er wordt gezocht naar klassen die het kenmerk **dscresource bieden** bevatten.
+`Import-DscResource`is nu een echt dynamisch sleutel woord. Power shell parseert de hoofd module van de opgegeven module. er wordt gezocht naar klassen die het kenmerk **dscresource bieden** bevatten.
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 
@@ -218,7 +218,7 @@ Velden met initialisatie functies:
 [int] $i = 5
 ```
 
-`Static` wordt ondersteund. Het werkt als een kenmerk, zoals de type beperkingen. Dit kan in een wille keurige volg orde worden opgegeven.
+`Static`wordt ondersteund. Het werkt als een kenmerk, zoals de type beperkingen. Dit kan in een wille keurige volg orde worden opgegeven.
 
 ```powershell
 static [int] $count = 0
@@ -234,12 +234,12 @@ Alle leden zijn openbaar.
 
 ### <a name="constructors-and-instantiation"></a>Constructors en instantiëring
 
-Power shell-klassen kunnen constructors hebben. Ze hebben dezelfde naam als hun klasse. Constructors kunnen overbelast zijn. Statische Constructors worden ondersteund. Eigenschappen met initialisatie-expressies worden geïnitialiseerd voordat code in een constructor wordt uitgevoerd. Statische eigenschappen worden geïnitialiseerd voordat de hoofd tekst van een statische constructor, en instantie-eigenschappen worden geïnitialiseerd vóór de hoofd tekst van de niet-statische constructor. Op dit moment is er geen syntaxis voor het aanroepen van een constructor vanuit een andere constructor (zoals de C\# syntaxis ': This () '). De tijdelijke oplossing is het definiëren van een algemene `Init()` methode.
+Power shell-klassen kunnen constructors hebben. Ze hebben dezelfde naam als hun klasse. Constructors kunnen overbelast zijn. Statische Constructors worden ondersteund. Eigenschappen met initialisatie-expressies worden geïnitialiseerd voordat code in een constructor wordt uitgevoerd. Statische eigenschappen worden geïnitialiseerd voordat de hoofd tekst van een statische constructor, en instantie-eigenschappen worden geïnitialiseerd vóór de hoofd tekst van de niet-statische constructor. Op dit moment is er geen syntaxis voor het aanroepen van een constructor vanuit een andere constructor (\# zoals de C-syntaxis ": This ()"). De tijdelijke oplossing is het definiëren van `Init()` een algemene methode.
 
 #### <a name="creating-instances"></a>Instanties maken
 
 > [!NOTE]
-> In Power shell 5,0 werkt `New-Object` niet met klassen die in Power shell zijn gedefinieerd. De type naam is ook op een lexicale zicht bare locatie, wat betekent dat deze niet zichtbaar is buiten de module of het script waarmee de klasse wordt gedefinieerd. Functies kunnen exemplaren retour neren van een klasse die is gedefinieerd in Power shell. Deze instanties werken buiten de module of het script.
+> In Power shell 5,0 `New-Object` werkt niet met klassen die in Power shell zijn gedefinieerd. De type naam is ook op een lexicale zicht bare locatie, wat betekent dat deze niet zichtbaar is buiten de module of het script waarmee de klasse wordt gedefinieerd. Functies kunnen exemplaren retour neren van een klasse die is gedefinieerd in Power shell. Deze instanties werken buiten de module of het script.
 
 1. Instantiëren met behulp van de standaardconstructor.
 
@@ -259,7 +259,7 @@ Power shell-klassen kunnen constructors hebben. Ze hebben dezelfde naam als hun 
    $c = [MyClass]::new(@(42,43,44), "Hello")
    ```
 
-De pseudo-statische methode `new()` werkt met .NET-typen, zoals wordt weer gegeven in het volgende voor beeld.
+De pseudo-statische methode `new()` werkt met .net-typen, zoals wordt weer gegeven in het volgende voor beeld.
 
 ```powershell
 [hashtable]::new()
@@ -267,7 +267,7 @@ De pseudo-statische methode `new()` werkt met .NET-typen, zoals wordt weer gegev
 
 #### <a name="discovering-constructors"></a>Constructors detecteren
 
-U kunt nu de constructor Overloads zien met `Get-Member`, of zoals in dit voor beeld wordt weer gegeven:
+U kunt nu overbelasting van constructor zien met `Get-Member`, of zoals in dit voor beeld wordt weer gegeven:
 
 ```powershell
 PS> [hashtable]::new
@@ -278,7 +278,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-`Get-Member -Static` maakt deel uit van constructors, zodat u Overloads kunt bekijken, zoals elke andere methode. De prestaties van deze syntaxis zijn ook aanzienlijk sneller dan `New-Object`.
+`Get-Member -Static`Hierin worden constructors weer gegeven, zodat u Overloads kunt bekijken, zoals een andere methode. De prestaties van deze syntaxis zijn ook aanzienlijk sneller dan `New-Object`.
 
 ### <a name="methods"></a>Methoden
 
@@ -308,15 +308,15 @@ Overbelaste methoden worden ook ondersteund.
 
 Alle eigenschappen zijn openbaar. Eigenschappen vereisen een nieuwe regel of een punt komma. Als er geen object type is opgegeven, is het eigenschaps type object.
 
-Eigenschappen die gebruikmaken van validatie-of argument transformatie kenmerken (zoals `[ValidateSet("aaa")]`) werken zoals verwacht.
+Eigenschappen die gebruikmaken van validatie-of argument transformatie kenmerken `[ValidateSet("aaa")]`(zoals) werken zoals verwacht.
 
 ### <a name="hidden"></a>Verborgen
 
-Er is een nieuw tref woord, `Hidden`, toegevoegd. `Hidden` kan worden toegepast op Eigenschappen en methoden (inclusief constructors).
+Er is een nieuw `Hidden`tref woord,, toegevoegd. `Hidden`kan worden toegepast op Eigenschappen en methoden (inclusief constructors).
 
-Verborgen leden zijn openbaar, maar worden niet weer gegeven in de uitvoer van `Get-Member` tenzij de para meter `-Force` is toegevoegd. Verborgen leden worden niet opgenomen wanneer het tabblad wordt voltooid of gebruikmaakt van IntelliSense, tenzij de voltooiing plaatsvindt in de klasse die het verborgen lid definieert.
+Verborgen leden zijn openbaar, maar worden niet weer gegeven in de uitvoer `Get-Member` van tenzij `-Force` de para meter is toegevoegd. Verborgen leden worden niet opgenomen wanneer het tabblad wordt voltooid of gebruikmaakt van IntelliSense, tenzij de voltooiing plaatsvindt in de klasse die het verborgen lid definieert.
 
-Er is een nieuw kenmerk, **System. Management. Automation. HiddenAttribute** toegevoegd, zodat C\# code dezelfde semantiek kan hebben in Power shell.
+Er is een nieuw kenmerk, **System. Management. Automation. HiddenAttribute** toegevoegd, zodat\# de C-code dezelfde semantiek kan hebben in Power shell.
 
 ### <a name="return-types"></a>Retour typen
 

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: De PowerShell Gallery
 ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500566"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell Gallery
@@ -36,6 +36,6 @@ Aangezien **Power shell core** meerdere platformen heeft, betekent dit dat het w
 Veel modules die in de galerie worden gehost, bieden ondersteuning voor verschillende besturings systemen en hebben aanvullende vereisten.
 Raadpleeg de documentatie voor de modules voor meer informatie.
 
-## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Feedback geven?
+## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Wilt u feedback geven?
 
 Meer informatie over de PowerShell Gallery en PowerShellGet vindt u op de pagina [aan](getting-started.md) de slag. Geef feedback en Meld problemen met [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

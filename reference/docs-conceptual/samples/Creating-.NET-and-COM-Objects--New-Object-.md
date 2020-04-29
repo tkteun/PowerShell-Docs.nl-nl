@@ -3,13 +3,13 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: .NET-en COM-objecten maken nieuw object
 ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325172"
 ---
-# <a name="creating-net-and-com-objects-new-object"></a>.NET-en COM-objecten maken (nieuw-object)
+# <a name="creating-net-and-com-objects-new-object"></a>.NET- en COM-objecten maken (New-Object)
 
 Er zijn software onderdelen met .NET Framework en COM-interfaces waarmee u veel systeem beheer taken kunt uitvoeren. Met Windows Power shell kunt u deze onderdelen gebruiken, zodat u niet beperkt bent tot de taken die kunnen worden uitgevoerd met behulp van-cmdlets. Veel van de cmdlets in de eerste versie van Windows Power shell werken niet op externe computers. Er wordt gedemonstreerd hoe u deze beperking omzeilt bij het beheer van gebeurtenis logboeken met behulp van de klasse .NET Framework **System. Diagnostics. Eventlog** rechtstreeks vanuit Windows Power shell.
 

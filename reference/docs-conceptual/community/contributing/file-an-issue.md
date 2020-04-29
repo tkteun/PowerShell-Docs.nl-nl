@@ -4,10 +4,10 @@ description: In dit artikel wordt uitgelegd hoe u feedback kunt geven over de Po
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078547"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>Een Power shell-docs-probleem opslaan
@@ -21,7 +21,7 @@ Er zijn twee manieren om een probleem te maken:
 
 Zie het docs-team blog waarin deze [functie][feedback]wordt aangekondigd voor een volledige beschrijving van de feedback besturings elementen.
 
-Onder aan de meeste pagina's op `docs.microsoft.com`ziet u twee feedback knoppen. Een is een koppeling voor product feedback en één is voor documentatie feedback. Voor de documentatie feedback is een GitHub-account vereist. Als u op de knop klikt, wordt u in GitHub geauthenticeerd. vervolgens geeft u een eenvoudig formulier om uw feedback in te voeren. Wanneer u het formulier verzendt, maakt het besturings element feedback een nieuw GitHub-probleem en koppelt het aan het huidige artikel.
+Onder aan de meeste pagina's `docs.microsoft.com`ziet u twee feedback knoppen. Een is een koppeling voor product feedback en één is voor documentatie feedback. Voor de documentatie feedback is een GitHub-account vereist. Als u op de knop klikt, wordt u in GitHub geauthenticeerd. vervolgens geeft u een eenvoudig formulier om uw feedback in te voeren. Wanneer u het formulier verzendt, maakt het besturings element feedback een nieuw GitHub-probleem en koppelt het aan het huidige artikel.
 
 > [!NOTE]
 > Dit is geen ondersteunings kanaal. Dit is een manier om vragen te stellen over documentatie of fouten en omissies te rapporteren. Als u technische ondersteuning nodig hebt, raadpleegt u de resources van de [Community](../community-support.md).
@@ -36,9 +36,9 @@ Lees de bestaande problemen voordat u een nieuw probleem hebt gemaakt om te zien
 
 Zie [aan de slag schrijven](get-started-writing.md).
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
-[Hoe we problemen beheren](managing-issues.md)
+[De manier waarop we problemen beheren](managing-issues.md)
 
 <!-- reference links -->
 [feedback]: /teamblog/a-new-feedback-system-is-coming-to-docs

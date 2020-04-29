@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een specifieke versie van een geïnstalleerde resource importeren
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941969"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>Een specifieke versie van een geïnstalleerde resource importeren
@@ -38,7 +38,7 @@ Als u een specifieke versie van een module wilt installeren, geeft u een **Requi
 PS> Install-Module xFailOverCluster -RequiredVersion 1.1
 ```
 
-Nu ziet u beide versies van de module die wordt weer gegeven wanneer u `Get-DSCResource`gebruikt.
+Nu ziet u beide versies van de module die wordt weer gegeven wanneer `Get-DSCResource`u gebruikt.
 
 ```powershell
 PS> Get-DscResource xCluster

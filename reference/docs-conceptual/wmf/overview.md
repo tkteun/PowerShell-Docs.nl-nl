@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: wmf,powershell,installeren
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145248"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -47,7 +47,7 @@ Raadpleeg de onderstaande koppelingen voor meer informatie over verschillende ui
 | Windows Server 2008 R2 SP1              | Ja          | Ja                         | Ja          | Ja          | Verzonden in box |
 | Windows 7 SP1                           | Ja          | Ja                         | Ja          | Ja          | Verzonden in box |
 | Windows Server 2008 SP2                 |              |                             |              | Ja          | Ja          |
-| Windows Vista<br>*Geen ondersteuning meer*       |              |                             |              |              | Ja          |
+| Windows Vista<br>*Geen ondersteuning meer*       |              |                             |              |              | Ja          |
 | Windows Server 2003<br>*Geen ondersteuning meer* |              |                             |              |              | Ja          |
 | Windows XP<br>*Geen ondersteuning meer*          |              |                             |              | Ja          | Ja          |
 

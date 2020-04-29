@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het ISESnippet-object
 ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500929"
 ---
 # <a name="the-isesnippetobject"></a>Het ISESnippet-object
@@ -53,5 +53,5 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ## <a name="see-also"></a>Zie ook
 
 - [Het ISESnippetCollection-object](The-ISESnippetCollection-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

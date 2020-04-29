@@ -4,10 +4,10 @@ contributor: Farehar
 keywords: Galerie, Power shell, psgallery
 title: Acceptatie van de licentie vereisen
 ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278641"
 ---
 # <a name="require-license-acceptance"></a>Acceptatie van de licentie vereisen
@@ -24,7 +24,7 @@ Als de module die wordt geïmplementeerd op Azure Automation vereist acceptatie 
 
 ![Implementeren naar Azure Automation vereist acceptatie van de licentie](media/packages-that-require-license-acceptance/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
-[Acceptatie van de licentie in de PowerShellGet](../../concepts/module-license-acceptance.md)
-[Azure Automation-website](/azure/automation) vereisen
+[Acceptatie van de licentie vereisen in de PowerShellGet](../../concepts/module-license-acceptance.md)
+[Azure Automation-website](/azure/automation)

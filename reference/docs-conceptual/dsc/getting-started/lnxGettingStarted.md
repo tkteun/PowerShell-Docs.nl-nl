@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Linux
 ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73933840"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met de desired state Configuration (DSC) voor Linux
@@ -28,9 +28,9 @@ In de volgende tabel worden de vereiste pakket afhankelijkheden voor DSC voor Li
 
 |  Vereist pakket |  Beschrijving |  Minimale versie |
 |---|---|---|
-| glibc| GNU-bibliotheek| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
-| omiserver| Open Management Infrastructure| 1.0.8.1|
+| glibc| GNU-bibliotheek| 2... 4 – 31,30|
+| python| Python| 2,4 – 3,4|
+| omiserver| Open-beheer infrastructuur| 1.0.8.1|
 | openssl| OpenSSL-bibliotheken| 0.9.8 of 1.0|
 | ctypes| Python CTypes-bibliotheek| Moet overeenkomen met python-versie|
 | libkrul| Krul HTTP-client bibliotheek| 7.15.1|
@@ -46,7 +46,7 @@ De desired state Configuration voor Linux vereist de open Management Infrastruct
 Als u OMI wilt installeren, installeert u het pakket dat geschikt is voor uw Linux-systeem (. rpm of. deb) en OpenSSL-versie (ssl_098 of ssl_100) en architectuur (x64/x86). RPM-pakketten zijn geschikt voor CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server en Oracle Linux. DEB-pakketten zijn geschikt voor Debian GNU/Linux en Ubuntu Server. De ssl_098-pakketten zijn geschikt voor computers waarop OpenSSL 0.9.8 is geïnstalleerd terwijl de ssl_100 pakketten geschikt zijn voor computers waarop OpenSSL 1,0 is geïnstalleerd.
 
 > [!NOTE]
-> Als u de geïnstalleerde versie van OpenSSL wilt bepalen, voert u de opdracht uit `openssl version`.
+> Voer de opdracht `openssl version`uit om de geïnstalleerde versie van openssl te bepalen.
 
 Voer de volgende opdracht uit om OMI te installeren op een CentOS 7 x64-systeem.
 
@@ -75,7 +75,7 @@ Het sleutel woord Windows Power shell-configuratie wordt gebruikt voor het maken
 
 1. Importeer de NX-module. De NX Windows Power shell-module bevat het schema voor ingebouwde resources voor DSC voor Linux en moet worden geïnstalleerd op uw lokale computer en worden geïmporteerd in de configuratie.
 
-   - Als u de NX-module wilt installeren, kopieert u de map van de NX-module naar een `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules`. De NX-module is opgenomen in het installatie pakket voor DSC voor Linux. Als u de NX-module in uw configuratie wilt importeren, gebruikt u de opdracht `Import-DSCResource`:
+   - Als u de NX-module wilt installeren, kopieert u de map `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` van `$PSHOME\Modules`de NX-module naar ofwel of. De NX-module is opgenomen in het installatie pakket voor DSC voor Linux. Als u de NX-module in uw configuratie wilt importeren `Import-DSCResource` , gebruikt u de opdracht:
 
    ```powershell
    Configuration ExampleConfiguration{
@@ -127,9 +127,9 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 
 > [!NOTE]
 > De gebruikers referenties voor de push-modus moeten de hoofd gebruiker zijn op de Linux-computer.
-> Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux. de `New-CimSession` moet worden gebruikt met de para meter – UseSSL die is ingesteld op $true.
-> Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in het bestand: `/etc/opt/omi/conf/omiserver.conf` met de eigenschappen: pemfile en keyfile.
-> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de opties voor CimSession: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, `New-CimSession` de moet worden gebruikt met de para meter – UseSSL die is ingesteld op $True.
+> Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in `/etc/opt/omi/conf/omiserver.conf` het bestand: met de eigenschappen: pemfile en keyfile.
+> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de CimSession-opties:`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Voer de volgende opdracht uit om de DSC-configuratie naar het Linux-knoop punt te pushen.
 
@@ -141,11 +141,11 @@ Configuraties kunnen worden gedistribueerd naar een Linux-computer met een pull-
 
 ### <a name="working-with-configurations-locally"></a>Lokaal met configuraties werken
 
-DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale Linux-computer. Deze scripts zijn te vinden in `/opt/microsoft/dsc/Scripts` en bevatten het volgende:
+DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale Linux-computer. Deze scripts zijn te vinden `/opt/microsoft/dsc/Scripts` in en bevatten het volgende:
 
 - GetDscConfiguration.py
 
-Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power shell cmdlet `Get-DscConfiguration`.
+Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power `Get-DscConfiguration` shell cmdlet.
 
 `# sudo ./GetDscConfiguration.py`
 
@@ -183,7 +183,7 @@ Past een MOF-bestand van de meta configuratie toe op de computer. Vergelijkbaar 
 
 De volgende logboek bestanden worden gegenereerd voor DSC voor Linux-berichten.
 
-|Logboekbestand|Adreslijst|Beschrijving|
+|Logboekbestand|Directory|Beschrijving|
 |---|---|---|
 |**omiserver. log**|`/var/opt/omi/log`|Berichten met betrekking tot de werking van de OMI CIM-server.|
 |**DSC. log**|`/var/opt/omi/log`|Berichten met betrekking tot de werking van de lokale Configuration Manager (LCM) en DSC-bron bewerkingen.|

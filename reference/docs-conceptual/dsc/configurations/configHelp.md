@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Schrijfhulp voor DSC-configuraties
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942074"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Schrijfhulp voor DSC-configuraties
 
 >Van toepassing op: Windows Power shell 5,0
 
-U kunt op opmerkingen gebaseerde hulp gebruiken in DSC-configuraties. Gebruikers kunnen toegang krijgen tot de Help door de **configuratie** aan te roepen met `-?`of door de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) te gebruiken. Plaats de Help op basis van opmerkingen direct boven het tref woord `Configuration`.
+U kunt op opmerkingen gebaseerde hulp gebruiken in DSC-configuraties. Gebruikers kunnen toegang krijgen tot de Help door **Configuration** de configuratie `-?`aan te roepen met of door gebruik te maken van de cmdlet [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) . Plaats de op opmerkingen gebaseerde Help direct boven het `Configuration` tref woord.
 U kunt de Help van de para meter in-line plaatsen met uw commentaar blok, direct boven de parameter declaratie of beide zoals in het onderstaande voor beeld.
 
 Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)voor meer informatie over Help op basis van een opmerking.
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>Help bij configuratie weer geven
 
-Als u de Help voor een configuratie wilt weer geven, gebruikt u de cmdlet `Get-Help` met de naam van de functie of typt u de naam van de functie, gevolgd door `-?`. Hier volgt de uitvoer van de vorige configuratie die is door gegeven aan `Get-Help`.
+Als u de Help voor een configuratie wilt weer geven `Get-Help` , gebruikt u de cmdlet met de naam van de functie of typt u de naam van `-?`de functie gevolgd door. Hier volgt de uitvoer van de vorige configuratie die is door `Get-Help`gegeven aan.
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -162,5 +162,5 @@ REMARKS
 ## <a name="see-also"></a>Zie ook
 
 - [DSC-configuraties](configurations.md)
-- [Een configuratie schrijven, compileren en Toep assen](write-compile-apply-configuration.md)
-- [Para meters toevoegen aan een configuratie](add-parameters-to-a-configuration.md)
+- [Een configuratie schrijven, compileren en toepassen](write-compile-apply-configuration.md)
+- [Parameters toevoegen aan een configuratie](add-parameters-to-a-configuration.md)

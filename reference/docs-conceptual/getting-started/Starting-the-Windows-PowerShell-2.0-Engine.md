@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: De Windows PowerShell 2.0-engine starten
 ms.openlocfilehash: 824077008d2dcfd707e977d2112f0882d07a8aca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030439"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-engine starten
 
-In deze sectie wordt uitgelegd hoe u de Windows Power Shell 2,0-Engine start op Windows 8,1, Windows Server 2012 R2, Windows 8 en Windows Server 2012, waaronder de Windows Power Shell 2,0-engine, en op andere systemen waarop Windows Power Shell 2,0, Windows Power shell 3,0 en Windows Power Shell 4,0 zijn geïnstalleerd.
+In deze sectie wordt uitgelegd hoe u de Windows Power Shell 2,0-Engine start op Windows 8,1, Windows Server 2012 R2, Windows 8 en Windows Server 2012, waaronder de Windows Power Shell 2,0-engine, en op andere systemen waarop Windows Power Shell 2,0, Windows Power Shell 3,0 en Windows Power Shell 4,0 zijn geïnstalleerd.
 
-Windows Power Shell 4,0 en Windows Power Shell 3,0 zijn ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0, worden ongewijzigd uitgevoerd in Windows Power Shell 4,0 en Windows Power Shell 3,0. Als gevolg van een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4, Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 kunnen niet zonder aanpassing worden uitgevoerd in Windows Power Shell 3,0 of Windows Power Shell 4,0, die zijn gecompileerd met CLR 4,0. De Windows Power Shell 2,0-engine is alleen bedoeld voor gebruik wanneer een bestaand script of hostprogramma niet kan worden uitgevoerd omdat het niet compatibel is met Windows Power Shell 4,0, Windows Power Shell 3,0 of Microsoft .NET Framework 4. Dergelijke gevallen worden naar verwachting zeldzaam.
+Windows Power Shell 4,0 en Windows Power Shell 3,0 zijn ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0, worden ongewijzigd uitgevoerd in Windows Power Shell 4,0 en Windows Power Shell 3,0. Vanwege een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4 worden Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 niet uitgevoerd zonder aanpassing in Windows Power Shell 3,0 of Windows Power Shell 4,0, die zijn gecompileerd met CLR-4,0. De Windows Power Shell 2,0-engine is alleen bedoeld voor gebruik wanneer een bestaand script of hostprogramma niet kan worden uitgevoerd omdat het niet compatibel is met Windows Power Shell 4,0, Windows Power Shell 3,0 of Microsoft .NET Framework 4. Dergelijke gevallen worden naar verwachting zeldzaam.
 
 Veel Program ma's die de Windows Power Shell 2,0-engine nodig hebben, worden automatisch gestart. Deze instructies zijn opgenomen in zeldzame gevallen waarin u de engine hand matig moet starten.
 

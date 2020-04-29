@@ -3,13 +3,13 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086357"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Beveiligings overwegingen voor externe communicatie met Power shell
+# <a name="powershell-remoting-security-considerations"></a>Beveiligingsoverwegingen bij externe communicatie met PowerShell
 
 Externe communicatie van Power shell is de aanbevolen manier om Windows-systemen te beheren. Externe communicatie van Power shell is standaard ingeschakeld in Windows Server 2012 R2. Dit document bevat beveiligings problemen, aanbevelingen en aanbevolen procedures voor het gebruik van externe communicatie met Power shell.
 
@@ -66,7 +66,7 @@ Omdat het NTLM-verificatie protocol de identiteit van de doel server niet kan ga
 
 #### <a name="ignoring-ntlm-based-server-identity-errors"></a>Server identiteits fouten op basis van NTLM negeren
 
-Als het implementeren van een SSL-certificaat op een server voor NTLM-verbindingen niet haalbaar is, kunt u de resulterende identiteits fouten onderdrukken door de server toe te voegen aan de lijst met WinRM **TrustedHosts** . Het toevoegen van een server naam aan de TrustedHosts-lijst mag niet worden beschouwd als een instructie van de betrouw baarheid van de hosts zelf, omdat het NTLM-verificatie protocol niet kan garanderen dat u verbinding maakt met de host die u bent wil verbinding maken met.
+Als het implementeren van een SSL-certificaat op een server voor NTLM-verbindingen niet haalbaar is, kunt u de resulterende identiteits fouten onderdrukken door de server toe te voegen aan de lijst met WinRM **TrustedHosts** . Het toevoegen van een server naam aan de lijst met TrustedHosts mag niet worden beschouwd als een vorm van een verklaring van de betrouw baarheid van de hosts zelf, omdat het NTLM-verificatie protocol niet kan garanderen dat u verbinding maakt met de host waarmee u verbinding wilt maken.
 In plaats daarvan moet u de TrustedHosts-instelling beschouwen als de lijst met hosts waarvoor u de fout die is gegenereerd door de server identiteit niet kunt controleren.
 
 

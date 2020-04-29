@@ -1,13 +1,13 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: zo
+keywords: powershell
 title: Modules die instemming met licentie vereisen
 ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082817"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules die instemming met licentie vereisen
@@ -28,8 +28,8 @@ Aan de volgende vereisten moet worden voldaan aan de modules die gebruikers nodi
 ## <a name="impact-on-installsaveupdate-module"></a>Gevolgen voor installeren/opslaan/bijwerken-module
 
 - Installeren/opslaan/bijwerken cmdlets ondersteunen een nieuwe para meter **AcceptLicense** die zich gedraagt alsof de gebruiker de licentie heeft gezien.
-- Als **RequiredLicenseAcceptance** is ingesteld op True en **AcceptLicense** niet is opgegeven, wordt de gebruiker de `license.txt`weer gegeven en wordt u gevraagd om: `Do you accept these license terms
-  (Yes/No/YesToAll/NoToAll)`.
+- Als **RequiredLicenseAcceptance** is ingesteld op True en **AcceptLicense** niet is opgegeven, wordt de gebruiker `license.txt`weer gegeven en wordt u `Do you accept these license terms
+  (Yes/No/YesToAll/NoToAll)`gevraagd om:.
   - Als de licentie is geaccepteerd
     - **Save-module:** de module wordt gekopieerd naar het systeem van de gebruiker
     - **Installatie-module:** de module wordt naar het systeem van de gebruiker gekopieerd naar de juiste map (op basis van het bereik)
@@ -48,7 +48,7 @@ Aan de volgende vereisten moet worden voldaan aan de modules die gebruikers nodi
 
 ## <a name="impact-on--force"></a>Impact op Force
 
-Het opgeven van `–Force` is niet voldoende om een licentie te accepteren. `–AcceptLicense` is vereist voor de installatie van. Als `–Force` is opgegeven, RequiredLicenseAcceptance True is en `–AcceptLicense` niet is opgegeven, mislukt de bewerking.
+Opgeven `–Force` is niet voldoende om een licentie te accepteren. `–AcceptLicense`is vereist voor de installatie van. Als `–Force` is opgegeven, RequiredLicenseAcceptance de waarde True heeft `–AcceptLicense` en niet is opgegeven, mislukt de bewerking.
 
 ## <a name="examples"></a>VOORBEELDEN
 
@@ -87,7 +87,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie uit `license.txt` bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 3: een module installeren waarvoor een licentie moet worden geaccepteerd met-AcceptLicense
 
@@ -177,7 +177,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie uit `license.txt` bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 9: een module opslaan waarvoor een licentie wordt geaccepteerd met-AcceptLicense
 
@@ -208,7 +208,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie uit `license.txt` bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 11: Update-module waarvoor licentie acceptatie is vereist met-AcceptLicense
 
@@ -218,7 +218,7 @@ Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 De module wordt bijgewerkt zonder dat u wordt gevraagd om een licentie te accepteren.
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 [Acceptatie van de licentie vereisen voor scripts](./script-license-acceptance.md)
 

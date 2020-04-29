@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Nieuwe en bijgewerkte cmdlets
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145024"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nieuwe en bijgewerkte cmdlets
@@ -15,7 +15,7 @@ We hebben nieuwe en bijgewerkte bestaande cmdlets toegevoegd op basis van feedba
 
 ## <a name="archive-cmdlets"></a>Archief-cmdlets
 
-Met twee nieuwe cmdlets, `Compress-Archive` en `Expand-Archive`, kunt u ZIP-bestanden comprimeren en uitvouwen.
+`Compress-Archive` Met twee nieuwe cmdlets en `Expand-Archive`kunt u zip-bestanden comprimeren en uitvouwen.
 
 Zie de documentatie over de module [micro soft. Power shell. Archive](/powershell/module/microsoft.powershell.archive/) voor meer informatie.
 
@@ -30,9 +30,9 @@ Deze genereren en valideren Windows-catalogus bestanden.
 
 ## <a name="clipboard-cmdlets"></a>Klembord-cmdlets
 
-`Get-Clipboard` en `Set-Clipboard` maken het gemakkelijker voor u om inhoud over te dragen van en naar een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
+`Get-Clipboard`en `Set-Clipboard` Maak het eenvoudiger voor u om inhoud over te dragen van en naar een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
 
-Zie voor meer informatie
+Zie voor meer informatie:
 
 - [Get-klem bord](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Set-klem bord](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)
@@ -51,7 +51,7 @@ Zie voor meer informatie:
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Beveiliging opheffen-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-Certificaten vereisen een unieke sleutel gebruiks-id (EKU), zoals ' hand tekening bij programma code ' of ' versleutelde E-mail ', om ze te identificeren als certificaten voor gegevens versleuteling in Power shell. Als u certificaten voor document versleuteling in de certificaat provider wilt weer geven, kunt u de **DocumentEncryptionCert** dynamische para meter van `Get-ChildItem`gebruiken:
+Certificaten vereisen een unieke sleutel gebruiks-id (EKU), zoals ' hand tekening bij programma code ' of ' versleutelde E-mail ', om ze te identificeren als certificaten voor gegevens versleuteling in Power shell. Als u certificaten voor document versleuteling in de certificaat provider wilt weer geven, **DocumentEncryptionCert** kunt u de para `Get-ChildItem`meter DocumentEncryptionCert Dynamic gebruiken van:
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
@@ -68,13 +68,13 @@ De nieuwe `ConvertFrom-String` cmdlet ondersteunt twee modi:
 
 Met een scheidings teken voor het parseren wordt standaard de invoer gesplitst in witruimte en worden eigenschapnamen toegewezen aan de resulterende groepen.
 
-De **UpdateTemplate** para meter slaat de resultaten van het leer algoritme op in een opmerking in het sjabloon bestand. Dit maakt het leer proces (het langzaamste stadium) één eenmalige kosten. Het is nu bijna onmiddellijk om `ConvertFrom-String` uit te voeren met een sjabloon die het algoritme voor gesleutelde lessen bevat.
+De **UpdateTemplate** para meter slaat de resultaten van het leer algoritme op in een opmerking in het sjabloon bestand. Dit maakt het leer proces (het langzaamste stadium) één eenmalige kosten. Het `ConvertFrom-String` uitvoeren van een sjabloon die het algoritme voor gecodeerde lessen bevat, is nu bijna direct.
 
 Zie [ConvertFrom-string (](/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-String)Engelstalig) voor meer informatie.
 
 ### <a name="convert-string"></a>Convert-String
 
-met `Convert-String` kunt u vóór en na voor beelden opgeven hoe tekst eruit moet zien. De cmdlet formatteert uw tekst automatisch.
+`Convert-String`Hiermee kunt u vóór en na voor beelden opgeven hoe tekst eruit moet zien. De cmdlet formatteert uw tekst automatisch.
 
 Zie [Convert-string](/powershell/module/Microsoft.PowerShell.Utility/Convert-String)(Engelstalig) voor meer informatie.
 
@@ -96,13 +96,13 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="format-hex"></a>Format-Hex
 
-met `Format-Hex` kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
+`Format-Hex`Hiermee kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
 
 Zie [Format-hex](/powershell/module/microsoft.powershell.utility/format-hex)voor meer informatie.
 
 ## <a name="get-childitem-has--depth-parameter"></a>Get-Child item heeft para meter-Depth
 
-`Get-ChildItem` heeft nu een **diepte** parameter voor gebruik met **recursief** om de recursie te beperken:
+`Get-ChildItem`heeft nu een **diepte** parameter voor gebruik met **recursie** om de recursie te beperken:
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modules ondersteunen voor het declareren van versie bereiken (1. *, etc.)
 
@@ -124,7 +124,7 @@ VERBOSE: Importing function 'PSConsoleHostReadline'.
 
 ## <a name="new-guid"></a>New-Guid
 
-Er zijn veel scenario's waarbij youneed voor een unieke id. De cmdlet `New-GUID` biedt een eenvoudige manier om een nieuwe GUID te maken.
+Er zijn veel scenario's waarbij youneed voor een unieke id. De `New-GUID` cmdlet biedt een eenvoudige manier om een nieuwe GUID te maken.
 
 ```powershell
 New-Guid
@@ -138,7 +138,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 
 ## <a name="nonewline-parameter"></a>De para meter voor een nieuwe regel
 
-`Out-File`, `Add-Content`en `Set-Content` hebben nu een nieuwe optie voor het opnieuw uitvoeren van een **nieuwe nieuwe regel** . Bijvoorbeeld:
+`Out-File`, `Add-Content`en `Set-Content` nu een nieuwe optie voor het wijzigen van een nieuwe **nieuwe** regel, waardoor er na de uitvoer niet meer wordt gelaat. Bijvoorbeeld:
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -208,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-Child item
 
-`Get-ChildItem` wordt nu een ' l ' weer gegeven in de eigenschap **mode** om aan te geven dat het een symbolische koppelings bestand of map is.
+`Get-ChildItem`in wordt nu een ' l ' weer gegeven in de eigenschap **mode** om een symbolische koppelings bestand of-map aan te geven.
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
@@ -242,7 +242,7 @@ Remove-Item C:\Temp\MySymLinkDir -Force
 
 ## <a name="new-temporaryfile"></a>New-TemporaryFile
 
-Soms moet u in uw scripts een tijdelijk bestand maken. U kunt dit nu doen met de cmdlet `New-TemporaryFile`:
+Soms moet u in uw scripts een tijdelijk bestand maken. U kunt dit nu doen met de `New-TemporaryFile` cmdlet:
 
 ```powershell
 $tempFile = New-TemporaryFile
@@ -286,7 +286,7 @@ Met de ODataUtils-module kunnen Power shell-cmdlets van REST-eind punten worden 
 - Filters aan de server zijde met behulp van de para meter-Select
 - Ondersteuning voor webaanvraag headers
 
-De proxy-cmdlets die door de `Export-ODataEndPointProxy` cmdlet worden gegenereerd, bieden aanvullende informatie van het OData-eind punt aan de server zijde in de **informatie** stroom.
+De proxy-cmdlets die door `Export-ODataEndPointProxy` de cmdlet worden gegenereerd, bieden aanvullende informatie van het OData-eind punt aan de server zijde in de **informatie** stroom.
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -324,7 +324,7 @@ De gegenereerde proxy-cmdlets ondersteunen de **Select** -para meter die wordt g
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-De cmdlet `Export-ODataEndpointProxy` en de proxy-cmdlets die door deze worden gegenereerd, ondersteunen nu de para meter **headers** . De header kan worden gebruikt om aanvullende informatie die wordt verwacht door het OData-eind punt te kanaal te kanalen.
+De `Export-ODataEndpointProxy` cmdlet en de proxy-cmdlets die door worden gegenereerd, ondersteunen nu de para meter **headers** . De header kan worden gebruikt om aanvullende informatie die wordt verwacht door het OData-eind punt te kanaal te kanalen.
 
 In het volgende voor beeld wordt een hash-tabel met een abonnements sleutel aan de para meter **headers** door gegeven. Dit is een typisch voor beeld van services waarvoor een abonnements sleutel voor verificatie wordt verwacht.
 

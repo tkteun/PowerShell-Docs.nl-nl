@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Afhankelijkheden van meerdere knooppunten opgeven
 ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942053"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Afhankelijkheden van meerdere knooppunten opgeven
@@ -21,7 +21,7 @@ DSC biedt speciale resources, **WaitForAll**, **WaitForAny**en **WaitForSome** d
 
 ## <a name="syntax"></a>Syntaxis
 
-De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang \<resource type\> in het onderstaande voor beeld met een **WaitForAny** of **WaitForAll**.
+De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang \<resource\> type in het onderstaande voor beeld door ofwel **WaitForAny** of **WaitForAll**.
 Net als het sleutel woord **DependsOn** moet u de naam als ' [resource type] ResourceName ' Format teren. Als de resource deel uitmaakt van een afzonderlijke [configuratie](configurations.md), neemt u de **configuratiepad** op in de opgemaakte teken reeks ' [resource type] ResourceName:: [configuratiepad]:: [configuratiepad] '. De **knooppunt** naam is de computer of het knoop punt waarop de huidige resource moet wachten.
 
 ```
@@ -59,7 +59,7 @@ Alle **WaitForXXXX** delen de volgende syntaxis sleutels.
 |---------|---------------------|
 | RetryIntervalSec| Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1.|
 | RetryCount| Het maximum aantal keren dat opnieuw moet worden geprobeerd.|
-| ThrottleLimit| Aantal machines om tegelijkertijd verbinding te maken. De standaard instelling is `New-CimSession` standaard waarde.|
+| ThrottleLimit| Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard.|
 | DependsOn | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Zie [DependsOn](resource-depends-on.md) voor meer informatie.|
 | PsDscRunAsCredential | Zie [DSC gebruiken met gebruikers referenties](./runAsUser.md) |
 

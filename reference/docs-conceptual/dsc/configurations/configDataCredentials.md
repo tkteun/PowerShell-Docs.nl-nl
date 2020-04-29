@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Referenties opties in configuratie gegevens
 ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870554"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Referenties opties in configuratie gegevens
@@ -25,14 +25,14 @@ DSC-configuraties met een referentie zonder versleuteling genereren een fout ber
 
 ## <a name="handling-credentials-in-dsc"></a>Referenties verwerken in DSC
 
-DSC-configuratie resources worden standaard uitgevoerd als `Local System`. Sommige resources hebben echter een referentie nodig, bijvoorbeeld wanneer de `Package` resource software moet installeren onder een specifiek gebruikers account.
+DSC-configuratie resources worden `Local System` standaard uitgevoerd. Sommige resources hebben echter een referentie nodig, bijvoorbeeld wanneer de `Package` bron software moet installeren onder een specifiek gebruikers account.
 
-In eerdere bronnen is een hardcoded `Credential` eigenschaps naam gebruikt om dit te verwerken. WMF 5,0 heeft een automatische `PsDscRunAsCredential`-eigenschap toegevoegd voor alle resources. Zie [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over het gebruik van `PsDscRunAsCredential`. Nieuwe resources en aangepaste resources kunnen deze automatische eigenschap gebruiken in plaats van een eigen eigenschap voor referenties te maken.
+In eerdere bronnen is een vastgelegde `Credential` eigenschaps naam gebruikt om dit te verwerken. WMF 5,0 heeft een automatische `PsDscRunAsCredential` eigenschap voor alle resources toegevoegd. Zie `PsDscRunAsCredential` [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over het gebruik van. Nieuwe resources en aangepaste resources kunnen deze automatische eigenschap gebruiken in plaats van een eigen eigenschap voor referenties te maken.
 
 > [!NOTE]
 > Het ontwerp van sommige resources is om een specifieke reden om meerdere referenties te gebruiken, en ze hebben hun eigen referentie-eigenschappen.
 
-Als u de beschik bare referentie-eigenschappen voor een resource wilt zoeken, gebruikt u `Get-DscResource -Name ResourceName -Syntax` of IntelliSense in het ISE (`CTRL+SPACE`).
+Als u de beschik bare referentie-eigenschappen voor een `Get-DscResource -Name ResourceName -Syntax` resource wilt zoeken, gebruikt u ofwel`CTRL+SPACE`de IntelliSense in de ISE ().
 
 ```powershell
 Get-DscResource -Name Group -Syntax
@@ -53,15 +53,15 @@ Group [String] #ResourceName
 }
 ```
 
-In dit voor beeld wordt een [groeps](../resources/resources.md) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource module gebruikt. Hiermee kunnen lokale groepen worden gemaakt en leden worden toegevoegd of verwijderd. Zowel de eigenschap `Credential` als de eigenschap Automatic `PsDscRunAsCredential` wordt geaccepteerd. De resource maakt echter alleen gebruik van de eigenschap `Credential`.
+In dit voor beeld wordt een [groeps](../resources/resources.md) resource uit de `PSDesiredStateConfiguration` ingebouwde DSC-resource module gebruikt. Hiermee kunnen lokale groepen worden gemaakt en leden worden toegevoegd of verwijderd. Deze accepteert zowel de `Credential` eigenschap als de automatische `PsDscRunAsCredential` eigenschap. De resource maakt echter alleen gebruik van `Credential` de eigenschap.
 
-Zie [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over de eigenschap `PsDscRunAsCredential`.
+Zie `PsDscRunAsCredential` [DSC uitvoeren met gebruikers referenties](runAsUser.md)voor meer informatie over de eigenschap.
 
 ## <a name="example-the-group-resource-credential-property"></a>Voor beeld: de eigenschap groeps bron referentie
 
-DSC wordt uitgevoerd onder `Local System`, zodat het al machtigingen heeft voor het wijzigen van lokale gebruikers en groepen. Als het toegevoegde lid een lokaal account is, is er geen referentie nood zakelijk. Als de `Group` resource een domein account aan de lokale groep toevoegt, is een referentie vereist.
+DSC wordt uitgevoerd `Local System`onder, zodat het al machtigingen heeft voor het wijzigen van lokale gebruikers en groepen. Als het toegevoegde lid een lokaal account is, is er geen referentie nood zakelijk. Als de `Group` resource een domein account aan de lokale groep toevoegt, is een referentie vereist.
 
-Anonieme query's voor Active Directory zijn niet toegestaan. De eigenschap `Credential` van de `Group` resource is het domein account dat wordt gebruikt voor het opvragen van Active Directory. In de meeste gevallen kan dit een Gene riek gebruikers account zijn, omdat standaard gebruikers de meeste objecten in Active Directory kunnen *lezen* .
+Anonieme query's voor Active Directory zijn niet toegestaan. De `Credential` eigenschap van de `Group` resource is het domein account dat wordt gebruikt om Active Directory op te vragen. In de meeste gevallen kan dit een Gene riek gebruikers account zijn, omdat standaard gebruikers de meeste objecten in Active Directory kunnen *lezen* .
 
 ## <a name="example-configuration"></a>Voorbeeld configuratie
 
@@ -131,7 +131,7 @@ De vlaggen **PSDSCAllowPlainTextPassword** en **PSDSCAllowDomainUser** onderdruk
 
 Het eerste fout bericht heeft een URL met documentatie. In deze koppeling wordt uitgelegd hoe u wacht woorden versleutelt met behulp van een [ConfigurationData](./configData.md) -structuur en een certificaat. [Lees dit bericht](https://aka.ms/certs4dsc)voor meer informatie over certificaten en DSC.
 
-Voor het afdwingen van een wacht woord voor tekst zonder opmaak vereist de resource het sleutel woord `PsDscAllowPlainTextPassword` in de sectie configuratie gegevens als volgt:
+Voor het afdwingen van een wacht woord voor tekst zonder `PsDscAllowPlainTextPassword` opmaak vereist de bron het sleutel woord in de sectie configuratie gegevens als volgt:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -220,11 +220,11 @@ Wanneer het voorbeeld configuratie script opnieuw wordt uitgevoerd (met of zonde
 
 **Wanneer u referenties gebruikt met DSC-resources, moet u, indien mogelijk, een lokaal account via een domein account gebruiken.**
 
-Als de eigenschap `Username` van de referentie een '\\' of '\@' bevat, wordt deze door DSC als een domein account behandeld. Er is een uitzonde ring voor ' localhost ', ' 127.0.0.1 ' en ':: 1 ' in het domein gedeelte van de gebruikers naam.
+Als de `Username` eigenschap van de\\referentie een '\@' of ' ' bevat, wordt deze door DSC als een domein account behandeld. Er is een uitzonde ring voor ' localhost ', ' 127.0.0.1 ' en ':: 1 ' in het domein gedeelte van de gebruikers naam.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-In het bovenstaande voor beeld van DSC `Group`-resource is een domein account *vereist* voor het uitvoeren van een query op een Active Directory-domein. In dit geval voegt u de eigenschap `PSDscAllowDomainUser` als volgt toe aan het blok `ConfigurationData`:
+In het bovenstaande `Group` voor beeld van DSC-resources *moet* u een domein account voor een query uitvoeren op een Active Directory domein. In dit geval voegt u `PSDscAllowDomainUser` de eigenschap als `ConfigurationData` volgt toe aan het blok:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

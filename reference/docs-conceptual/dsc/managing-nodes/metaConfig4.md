@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: De LCM configureren in PowerShell 4.0
 ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941857"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>De LCM configureren in PowerShell 4.0
@@ -34,14 +34,14 @@ Hieronder vindt u de lokale Configuration Manager eigenschappen die u kunt inste
 - **Referentie**: geeft referenties aan (net als bij Get-Credential) die zijn vereist voor toegang tot externe bronnen, zoals om contact op te nemen met de configuratie service.
 - **DownloadManagerCustomData**: vertegenwoordigt een matrix die aangepaste gegevens bevat die specifiek zijn voor het Download beheer.
 - **DownloadManagerName**: geeft de naam aan van de configuratie-en module Download beheer.
-- **RebootNodeIfNeeded**: Stel dit in op `$true` zodat resources het knoop punt opnieuw kunnen opstarten met behulp van de `$global:DSCMachineStatus` vlag. Als dat niet het geval is, moet u het knoop punt hand matig opnieuw opstarten voor een configuratie waarvoor deze vereist is. De standaardwaarde is `$false`. Als u deze instelling wilt gebruiken wanneer een voor waarde voor opnieuw opstarten wordt aangenomen door iets anders dan DSC (zoals Windows Installer), moet u deze instelling combi neren met de module [xPendingReboot](https://github.com/powershell/xpendingreboot) .
+- **RebootNodeIfNeeded**: Stel dit in `$true` op om resources toe te staan het knoop punt `$global:DSCMachineStatus` opnieuw op te starten met de vlag. Als dat niet het geval is, moet u het knoop punt hand matig opnieuw opstarten voor een configuratie waarvoor deze vereist is. De standaardwaarde is `$false`. Als u deze instelling wilt gebruiken wanneer een voor waarde voor opnieuw opstarten wordt aangenomen door iets anders dan DSC (zoals Windows Installer), moet u deze instelling combi neren met de module [xPendingReboot](https://github.com/powershell/xpendingreboot) .
 - **RefreshFrequencyMins**: wordt gebruikt wanneer u een pull-service hebt ingesteld. Vertegenwoordigt de frequentie (in minuten) waarmee de lokale Configuration Manager contact opneemt met een pull-service om de huidige configuratie te downloaden. Deze waarde kan worden ingesteld in combi natie met ConfigurationModeFrequencyMins. Wanneer RefreshMode is ingesteld op PULL, neemt het doel knooppunt contact op met de pull-service met een interval dat is ingesteld door RefreshFrequencyMins en downloadt de huidige configuratie. Op basis van het interval dat is ingesteld door ConfigurationModeFrequencyMins, past de consistentie-engine de meest recente configuratie toe die is gedownload naar het doel knooppunt. Als RefreshFrequencyMins niet is ingesteld op een veelvoud van een geheel getal van ConfigurationModeFrequencyMins, wordt het door het systeem afgerond. De standaardwaarde is 30.
 - **RefreshMode**: mogelijke waarden zijn **Push** (de standaard instelling) en **pull**. In de configuratie ' push ' moet u een configuratie bestand op elk doel knooppunt plaatsen met behulp van elke client computer. In de pull-modus moet u een pull-service voor lokale Configuration Manager instellen om contact op te nemen met de configuratie bestanden en deze te openen.
 
 > [!NOTE]
 > De LCM start de **ConfigurationModeFrequencyMins** -cyclus op basis van:
 >
-> - Er wordt een nieuwe configuratie toegepast met `Set-DscLocalConfigurationManager`
+> - Er wordt een nieuwe-configuratie toegepast met behulp van`Set-DscLocalConfigurationManager`
 > - Een computer opnieuw opstarten
 >
 > Voor elke voor waarde waarbij het timer proces vastloopt, wordt dit binnen 30 seconden gedetecteerd en wordt de cyclus opnieuw gestart.

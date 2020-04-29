@@ -2,12 +2,12 @@
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444378"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174127"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -19,17 +19,17 @@ WinRM biedt een robuust hosting model voor externe Power shell-sessies. Op SSH g
 
 Met SSH-externe communicatie kunt u een eenvoudige Power shell-sessie tussen Windows-en Linux-computers uitvoeren. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Uiteindelijk implementeren we een algemeen hosting model, vergelijkbaar met WinRM, ter ondersteuning van de eindpunt configuratie en JEA.
 
-De cmdlets `New-PSSession`, `Enter-PSSession`en `Invoke-Command` hebben nu een nieuwe para meter ingesteld ter ondersteuning van deze nieuwe externe verbinding.
+De `New-PSSession`cmdlets `Enter-PSSession`, `Invoke-Command` en hebben nu een nieuwe para meter die is ingesteld voor de ondersteuning van deze nieuwe externe verbinding.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter `HostName` en geeft u de gebruikers naam op met `UserName`. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke-sleutel bestand met de para meter `KeyFilePath`.
+Als u een externe sessie wilt maken, geeft u de doel computer `HostName` op met de para meter en geeft `UserName`u de gebruikers naam op bij. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke- `KeyFilePath` sleutel bestand met de para meter.
 
 ## <a name="general-setup-information"></a>Algemene informatie over de installatie
 
-Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client (`ssh.exe`) als de server (`sshd.exe`) zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)(Engelstalig) voor meer informatie. Voor Linux installeert u SSH, met inbegrip van de sshd-server, die geschikt is voor uw platform. U moet Power shell ook installeren vanaf GitHub om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. En u moet verificatie **op basis van** **wacht woord** of sleutel inschakelen.
+Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client`ssh.exe`() als de`sshd.exe`server (), zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)(Engelstalig) voor meer informatie. Voor Linux installeert u SSH, met inbegrip van de sshd-server, die geschikt is voor uw platform. U moet Power shell ook installeren vanaf GitHub om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. En u moet verificatie **op basis van** **wacht woord** of sleutel inschakelen.
 
 ## <a name="set-up-on-a-windows-computer"></a>Instellen op een Windows-computer
 
@@ -53,7 +53,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    > [!NOTE]
    > Als u Power shell wilt instellen als de standaard shell voor OpenSSH, raadpleegt u [Windows configureren voor OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).
 
-1. Bewerk het `sshd_config`-bestand dat zich op `$env:ProgramData\ssh`bevindt.
+1. Bewerk het `sshd_config` bestand dat zich `$env:ProgramData\ssh`bevindt in.
 
    Controleer of wachtwoord verificatie is ingeschakeld:
 
@@ -64,13 +64,15 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Maak het SSH-subsysteem dat als host fungeert voor een Power Shell-proces op de externe computer:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > De standaard locatie van het uitvoer bare Power `c:/progra~1/powershell/7/pwsh.exe`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
+   >
    > U moet de korte naam van 8,3 gebruiken voor bestands paden die spaties bevatten. Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie dit [github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
-   > De korte naam van 8,3 voor de map `Program Files` in Windows is doorgaans `Progra~1`. U kunt echter de volgende opdracht gebruiken om ervoor te zorgen:
+   > De korte naam van 8,3 voor `Program Files` de map in Windows is `Progra~1`doorgaans. U kunt echter de volgende opdracht gebruiken om ervoor te zorgen:
    >
    > ```powershell
    > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
@@ -97,7 +99,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Restart-Service sshd
    ```
 
-1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Voorbeeld: `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
+1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Bijvoorbeeld `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Instellen op een Ubuntu 16,04 Linux-computer
 
@@ -123,6 +125,9 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
+   > [!NOTE]
+   > De standaard locatie van het uitvoer bare Power `/usr/bin/pwsh`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
+
    Schakel eventueel sleutel verificatie in:
 
    ```
@@ -143,7 +148,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
    1. Open `System Preferences`.
    1. Klik op `Sharing`.
-   1. Controleer `Remote Login` om `Remote Login: On`in te stellen.
+   1. Selecteer `Remote Login` deze optie `Remote Login: On`.
    1. Toegang tot de juiste gebruikers toestaan.
 
 1. Bewerk het `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config`.
@@ -165,6 +170,9 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    ```
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > De standaard locatie van het uitvoer bare Power `/usr/local/bin/pwsh`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
 
    Schakel eventueel sleutel verificatie in:
 
@@ -320,7 +328,7 @@ De opdracht **sudo** werkt niet in een externe sessie met een Linux-computer.
 
 [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md) (PowerShell Core installeren in macOS)
 
-[Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi)
+[PowerShell Core in Windows installeren](../../install/installing-powershell-core-on-windows.md#msi)
 
 [Windows beheren met OpenSSH](/windows-server/administration/openssh/openssh_overview)
 

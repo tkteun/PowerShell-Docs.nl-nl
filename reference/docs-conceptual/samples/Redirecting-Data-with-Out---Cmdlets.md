@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Gegevens omleiden met Out-cmdlets
 ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030076"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Gegevens omleiden met out-*-cmdlets
@@ -120,7 +120,7 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>Gegevens opslaan (out-file)
 
-U kunt uitvoer naar een bestand verzenden in plaats van via het console venster met de **out-file-** cmdlet. De volgende opdracht regel verzendt een lijst met processen naar het bestand **C:\\temp\\processlist. txt**:
+U kunt uitvoer naar een bestand verzenden in plaats van via het console venster met de **out-file-** cmdlet. De volgende opdracht regel verzendt een lijst met processen naar het bestand **C:\\Temp\\processlist. txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt

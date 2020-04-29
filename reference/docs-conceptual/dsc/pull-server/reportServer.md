@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC-rapportserver gebruiken
 ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941682"
 ---
 # <a name="using-a-dsc-report-server"></a>Een DSC-rapportserver gebruiken
@@ -98,7 +98,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Rapport gegevens ophalen
 
-Rapporten die worden verzonden naar de pull-server, worden ingevoerd in een Data Base op de server. De rapporten zijn beschikbaar via aanroepen van de webservice. Als u rapporten wilt ophalen voor een specifiek knoop punt, verzendt u een HTTP-aanvraag naar de webservice voor rapporten in de volgende vorm: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+Rapporten die worden verzonden naar de pull-server, worden ingevoerd in een Data Base op de server. De rapporten zijn beschikbaar via aanroepen van de webservice. Als u rapporten wilt ophalen voor een specifiek knoop punt, verzendt u een HTTP-aanvraag naar de webservice voor rapporten in de volgende vorm:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
 waarbij `MyNodeAgentId` de AgentId is van het knoop punt waarvoor u rapporten wilt ophalen. U kunt de AgentID voor een knoop punt ophalen door [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) op dat knoop punt aan te roepen.
 
 De rapporten worden geretourneerd als een matrix van JSON-objecten.

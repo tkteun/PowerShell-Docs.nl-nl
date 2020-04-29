@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA gebruiken
 ms.openlocfilehash: 1c424eb4a476dd0db3cc69c0e6f14c89a3c523ba
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500517"
 ---
 # <a name="using-jea"></a>JEA gebruiken
@@ -32,7 +32,7 @@ Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Crede
 
 Als het huidige gebruikers account toegang heeft tot het JEA-eind punt, kunt u de **referentie** parameter weglaten.
 
-Wanneer de Power shell-prompt wordt gewijzigd in `[localhost]: PS>` weet u dat u nu met de externe JEA-sessie werkt. U kunt `Get-Command` uitvoeren om te controleren welke opdrachten beschikbaar zijn. Neem contact op met uw beheerder om te zien of er beperkingen gelden voor de beschik bare para meters of toegestane parameter waarden.
+Wanneer de Power shell-prompt `[localhost]: PS>` wordt gewijzigd, weet u zeker dat u nu met de externe JEA-sessie werkt. U kunt uitvoeren `Get-Command` om te controleren welke opdrachten beschikbaar zijn. Neem contact op met uw beheerder om te zien of er beperkingen gelden voor de beschik bare para meters of toegestane parameter waarden.
 
 Houd er rekening mee dat JEA-sessies in de modus voor niet-taal worden uitgevoerd. Sommige manieren waarop u Power shell normaal gesp roken gebruikt, zijn mogelijk niet beschikbaar. U kunt bijvoorbeeld geen variabelen gebruiken om gegevens op te slaan of de eigenschappen te controleren op objecten die worden geretourneerd door cmdlets. In het volgende voor beeld ziet u twee benaderingen waarmee u dezelfde opdrachten kunt gebruiken om te werken in de modus niet-taal.
 
@@ -72,9 +72,9 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> Sommige systemen kunnen mogelijk geen hele JEA-sessie importeren vanwege beperkingen in de standaard-JEA-cmdlets. Als u dit wilt omzeilen, importeert u alleen de opdrachten die u nodig hebt uit de JEA-sessie door expliciet hun namen te verstrekken aan de para meter `-CommandName`. In een toekomstige update wordt het probleem opgelost waarbij hele JEA-sessies op betrokken systemen worden geïmporteerd.
+> Sommige systemen kunnen mogelijk geen hele JEA-sessie importeren vanwege beperkingen in de standaard-JEA-cmdlets. Als u dit wilt omzeilen, importeert u alleen de opdrachten die u nodig hebt uit de JEA-sessie door `-CommandName` expliciet hun namen te verstrekken aan de para meter. In een toekomstige update wordt het probleem opgelost waarbij hele JEA-sessies op betrokken systemen worden geïmporteerd.
 
-Als u een JEA-sessie niet kunt importeren vanwege JEA-beperkingen voor de standaard parameters, volgt u de onderstaande stappen om de standaard opdrachten uit de geïmporteerde set uit te filteren. U kunt opdrachten als `Select-Object`blijven gebruiken, maar u gebruikt gewoon de lokale versie die op uw computer is geïnstalleerd, in plaats van het item dat is geïmporteerd uit de sessie voor externe JEA.
+Als u een JEA-sessie niet kunt importeren vanwege JEA-beperkingen voor de standaard parameters, volgt u de onderstaande stappen om de standaard opdrachten uit de geïmporteerde set uit te filteren. U kunt opdrachten zoals `Select-Object`gebruiken, maar u gebruikt gewoon de lokale versie die op uw computer is geïnstalleerd, in plaats van het item dat is geïmporteerd uit de externe JEA-sessie.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -104,14 +104,14 @@ Voor eenvoudige, eenmalige taken kunt u [invoke-Command](/powershell/module/micr
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
 ```
 
-Als u wilt controleren welke opdrachten beschikbaar zijn voor gebruik wanneer u verbinding maakt met een JEA-sessie, voert u `Get-Command` uit en herhaalt u de resultaten om te controleren of de para meters zijn toegestaan.
+Als u wilt controleren welke opdrachten beschikbaar zijn voor gebruik wanneer u verbinding maakt met een JEA `Get-Command` -sessie, voert u uit en herhaalt u de resultaten om te controleren of de para meters zijn toegestaan.
 
 ```powershell
 $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Command }
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Als u een C# app bouwt, kunt u een Power shell-runs Pace maken die verbinding maakt met een JEA-sessie door de configuratie naam op te geven in een [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) -object.
+Als u een C#-app bouwt, kunt u een Power shell-runs Pace maken die verbinding maakt met een JEA-sessie door de configuratie naam op te geven in een [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) -object.
 
 ```csharp
 // using System.Management.Automation;
@@ -160,7 +160,7 @@ Hyper-V in Windows 10 en Windows Server 2016 biedt [Power shell direct](/virtual
 U kunt Power shell direct met JEA gebruiken om een Hyper-V-beheerder beperkte toegang tot uw virtuele machine te geven.
 Dit kan handig zijn als u de netwerk verbinding met uw virtuele machine kwijtraakt en een datacenter beheerder nodig hebt om de netwerk instellingen te herstellen.
 
-Er is geen aanvullende configuratie vereist om JEA te gebruiken via Power shell direct. Het gast besturingssysteem dat wordt uitgevoerd in de virtuele machine moet echter Windows 10, Windows Server 2016 of hoger zijn. De Hyper-V-beheerder kan verbinding maken met het JEA-eind punt met behulp van de `-VMName`-of `-VMId`-para meters in PSRemoting-cmdlets:
+Er is geen aanvullende configuratie vereist om JEA te gebruiken via Power shell direct. Het gast besturingssysteem dat wordt uitgevoerd in de virtuele machine moet echter Windows 10, Windows Server 2016 of hoger zijn. De Hyper-V-beheerder kan verbinding maken met het JEA-eind `-VMName` punt `-VMId` met behulp van de para meters of in PSRemoting-cmdlets:
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique

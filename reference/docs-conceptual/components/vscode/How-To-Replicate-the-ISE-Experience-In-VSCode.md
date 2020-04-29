@@ -3,10 +3,10 @@ title: De ISE-ervaring in Visual Studio Code repliceren
 description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
 ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
-ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "81005598"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
@@ -21,7 +21,7 @@ In dit document wordt geprobeerd een lijst te maken met de instellingen die u ku
 > Deze functie is beschikbaar in de Power shell preview-uitbrei ding sinds versie 2019.12.0 en in de Power shell-uitbrei ding sinds versie 2020.3.0.
 
 De eenvoudigste manier om de ISE-ervaring in Visual Studio code te repliceren, is door ' ISE-modus ' in te scha kelen.
-Hiertoe opent u het opdracht palet (<kbd>F1</kbd> of <kbd>Ctrl</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> of <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> op macOS) en typt u ' ISE-modus '. Selecteer Power shell: ISE-modus inschakelen in de lijst.
+Hiertoe opent u het opdracht palet (<kbd>F1</kbd> of <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> of <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> op macOS) en typt u ' ISE-modus '. Selecteer Power shell: ISE-modus inschakelen in de lijst.
 
 Met deze opdracht worden de instellingen die onder het resultaat worden beschreven, automatisch toegepast op de volgende manier:
 
@@ -35,9 +35,9 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
 
   |               Functie                |         ISE-binding          |              VS-code binding                |
   | ------------------------------------- | ---------------------------- | ------------------------------------------- |
-  | Fout opsporing onderbreken en verbreken          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
-  | Huidige regel/gemarkeerde tekst uitvoeren | <kbd>Drukken</kbd>                | <kbd>Drukken</kbd>                               |
-  | Beschik bare fragmenten weer geven               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+  | Fout opsporing onderbreken en verbreken          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+  | Huidige regel/gemarkeerde tekst uitvoeren | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
+  | Beschik bare fragmenten weer geven               | <kbd>CTRL</kbd>+<kbd>J</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>ALT+<kbd>J</kbd> |
 
   > [!NOTE]
   > U kunt ook [uw eigen sleutel bindingen configureren](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) in VS code.
@@ -75,7 +75,7 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
   "powershell.integratedConsole.focusConsoleOnExecute": false
   ```
 
-  De standaard waarde is `true` voor toegankelijkheids doeleinden.
+  De standaard instelling `true` is voor toegankelijkheids doeleinden.
 
 - Geïntegreerde console niet starten bij opstarten
 
@@ -96,11 +96,11 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
   "files.defaultLanguage": "powershell",
   ```
 
-- Kleuren schema
+- Kleurenschema
 
   Er zijn een aantal ISE-Thema's beschikbaar voor VS code om ervoor te zorgen dat de editor er veel meer uitziet als de ISE.
 
-  Typ in het [opdracht palet][] `theme` om `Preferences: Color Theme` op te halen en druk op <kbd>Enter</kbd>. Selecteer `PowerShell ISE`in de vervolg keuzelijst.
+  In het [opdracht palet][] typt `theme` u `Preferences: Color Theme` en drukt u op <kbd>Enter</kbd>. Selecteer `PowerShell ISE`in de vervolg keuzelijst.
 
   U kunt dit thema instellen in de instellingen met:
 
@@ -110,9 +110,9 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
 
 - Power shell-opdracht Verkenner
 
-  Dankzij het werk van [@corbob](https://github.com/corbob)heeft de Power shell-uitbrei ding het begin van een eigen opdracht Verkenner.
+  Dankzij het werk van [@corbob](https://github.com/corbob)is de Power shell-uitbrei ding het begin van een eigen opdracht Verkenner.
 
-  Voer in het [opdracht palet][]`PowerShell Command Explorer` in en druk op <kbd>Enter</kbd>.
+  Voer in het [opdracht palet][]Enter `PowerShell Command Explorer` en druk op <kbd>Enter</kbd>.
 
 - Open in de ISE
 
@@ -128,7 +128,7 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
 
 - Opdracht palet
 
-  Het opdracht palet is een handige manier om opdrachten in VS code uit te voeren. Open het opdracht palet met <kbd>F1</kbd> of <kbd>Ctrl</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> of <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> op macOS.
+  Het opdracht palet is een handige manier om opdrachten in VS code uit te voeren. Open het opdracht palet met <kbd>F1</kbd> of <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> of <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>p</kbd> in macOS.
 
   Raadpleeg [de VS code-documentatie][vsc-docs]voor meer informatie.
 
@@ -145,7 +145,7 @@ We zijn altijd blij om pull en bijdragen ook te accepteren.
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [Opdracht palet]: #vs-code-tips
-[opent u een probleem]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[een probleem openen]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/

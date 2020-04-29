@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEMenuItem-object
 ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736978"
 ---
 # <a name="the-isemenuitem-object"></a>Het ISEMenuItem-object
@@ -29,7 +29,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Actie
+### <a name="action"></a>Bewerking
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -91,5 +91,5 @@ $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ## <a name="see-also"></a>Zie ook
 
 - [Het ISEMenuItemCollection-object](The-ISEMenuItemCollection-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

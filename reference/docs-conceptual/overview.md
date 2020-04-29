@@ -1,12 +1,12 @@
 ---
 ms.date: 08/27/2018
 keywords: Power shell, cmdlet
-title: Power shell-scripts
+title: PowerShell-scripts
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058485"
 ---
 # <a name="powershell"></a>PowerShell
@@ -36,23 +36,23 @@ Power Shell maakt het eenvoudig om de functies te ontdekken. Als u bijvoorbeeld 
 Get-Command *-Service
 ```
 
-Nadat u hebt gedetecteerd welke cmdlet een taak uitvoert, kunt u meer informatie over de cmdlet vinden met behulp van de cmdlet `Get-Help`. Als u bijvoorbeeld Help over de cmdlet `Get-Service` wilt weer geven, typt u:
+Nadat u hebt gedetecteerd welke cmdlet een taak uitvoert, kunt u meer informatie over de cmdlet vinden met behulp `Get-Help` van de-cmdlet. Als u bijvoorbeeld Help over de `Get-Service` cmdlet wilt weer geven, typt u:
 
 ```powershell
 Get-Help Get-Service
 ```
 
-De meeste cmdlets retour neren objecten die kunnen worden gemanipuleerd en vervolgens weer gegeven als tekst voor weer gave. Als u de uitvoer van een cmdlet volledig wilt begrijpen, pipet u de uitvoer naar de cmdlet `Get-Member`. Met de volgende opdracht wordt bijvoorbeeld informatie weer gegeven over de leden van de object uitvoer door de cmdlet `Get-Service`.
+De meeste cmdlets retour neren objecten die kunnen worden gemanipuleerd en vervolgens weer gegeven als tekst voor weer gave. Als u de uitvoer van een cmdlet volledig wilt begrijpen, pipet u `Get-Member` de uitvoer naar de cmdlet. Met de volgende opdracht wordt bijvoorbeeld informatie weer gegeven over de leden van het object dat door `Get-Service` de cmdlet wordt uitgevoerd.
 
 ```powershell
 Get-Service | Get-Member
 ```
 
-### <a name="consistency"></a>Consistency
+### <a name="consistency"></a>Consistentie
 
 Het beheren van systemen kan een complexe taak zijn. Hulpprogram ma's die een consistente interface hebben, helpen de inherente complexiteit te beheren. Helaas zijn opdracht regel Programma's en COM-objecten (scriptable Component Object Model) niet bekend voor hun consistentie.
 
-De consistentie van Power shell is een van de primaire activa. Als u bijvoorbeeld informatie wilt over het gebruik van de cmdlet `Sort-Object`, kunt u die kennis gebruiken om de uitvoer van een cmdlet te sorteren. U hoeft niet meer te weten te komen over de verschillende sorteer routines van elke cmdlet.
+De consistentie van Power shell is een van de primaire activa. Als u bijvoorbeeld leert hoe u de `Sort-Object` cmdlet gebruikt, kunt u die kennis gebruiken om de uitvoer van een cmdlet te sorteren. U hoeft niet meer te weten te komen over de verschillende sorteer routines van elke cmdlet.
 
 Daarnaast hoeven cmdlet-ontwikkel aars geen sorteer functies te ontwerpen voor hun cmdlets. Power shell biedt een Framework met de basis functies die consistentie afdwingt. Het Framework elimineert enkele keuzes die resteren voor de ontwikkelaar. Maar als resultaat wordt de ontwikkeling van cmdlets veel eenvoudiger.
 

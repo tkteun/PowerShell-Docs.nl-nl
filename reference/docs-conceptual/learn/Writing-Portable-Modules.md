@@ -3,10 +3,10 @@ ms.date: 01/10/2020
 keywords: Power shell, cmdlet
 title: Draag bare modules schrijven
 ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76022239"
 ---
 # <a name="portable-modules"></a>Draag bare modules
@@ -168,7 +168,7 @@ In de volgende secties worden een aantal technologieën beschreven die worden ge
 [.NET Standard][] is een formele specificatie van .net-api's die beschikbaar zijn in alle .net-implementaties. Beheerde code doelen .NET Standard werkt met de .NET Framework-en .NET Core-versies die compatibel zijn met die versie van de .NET Standard.
 
 > [!NOTE]
-> Hoewel er in .NET Standard een API kan bestaan, kan de API-implementatie in .NET core een `PlatformNotSupportedException` tijdens runtime genereren, zodat de compatibiliteit met Windows Power shell en Power shell core kan worden gecontroleerd. in beide omgevingen kunt u best practice de tests uitvoeren voor uw module.
+> Hoewel er in .NET Standard een API kan bestaan, kan de API-implementatie in .NET core `PlatformNotSupportedException` een tijdens runtime genereren, zodat u de compatibiliteit met Windows Power shell en Power shell Core kunt controleren. de best practice is om in beide omgevingen tests uit te voeren voor uw module.
 > Voer ook tests uit op Linux en macOS als uw module geschikt is voor meerdere platforms.
 
 Met behulp van .NET Standard kunt u ervoor zorgen dat bij het ontwikkelen van de module niet-compatibele Api's per ongeluk worden geïntroduceerd in de module. Incompatibiliteiten worden tijdens het compileren gedetecteerd in plaats van runtime.
@@ -177,9 +177,9 @@ Het is echter niet nodig om .NET Standard te richten op een module om te kunnen 
 
 ## <a name="powershell-standard-library"></a>Standaard bibliotheek van Power shell
 
-De [Power Shell-standaard][] is een formele specificatie van Power shell-api's die beschikbaar zijn in alle Power shell-versies die groter zijn dan of gelijk zijn aan de versie van die Standard.
+De [standaard bibliotheek van Power shell][] is een formele specificatie van Power shell-api's die beschikbaar zijn in alle Power shell-versies die groter zijn dan of gelijk zijn aan de versie van die Standard.
 
-[Power Shell-standaard 5,1][] is bijvoorbeeld compatibel met Windows power shell 5,1 en Power shell Core 6,0 of hoger.
+[Power shell Standard 5,1][] is bijvoorbeeld compatibel met Windows power shell 5,1 en Power shell Core 6,0 of hoger.
 
 U wordt aangeraden uw module te compileren met behulp van de standaard bibliotheek van Power shell. De tape wisselaar zorgt ervoor dat de Api's beschikbaar zijn en in Windows Power shell en Power shell Core 6 worden geïmplementeerd.
 Power shell Standard is bedoeld om altijd compatibel te zijn. Een module die is gemaakt met behulp van de standaard bibliotheek 5,1 van Power shell is altijd compatibel met toekomstige versies van Power shell.
@@ -188,19 +188,19 @@ Power shell Standard is bedoeld om altijd compatibel te zijn. Een module die is 
 
 ### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Duidt op compatibiliteit met Windows Power shell en Power shell core
 
-Nadat u hebt gecontroleerd of de module werkt met Windows Power shell en Power shell core, moet het module manifest expliciet duiden op compatibiliteit met behulp van de eigenschap [CompatiblePSEditions][] . Een waarde van `Desktop` betekent dat de module compatibel is met Windows Power shell, terwijl een waarde van `Core` betekent dat de module compatibel is met Power shell core. Zowel `Desktop` als `Core` betekent dat de module compatibel is met Windows Power shell en Power shell core.
+Nadat u hebt gecontroleerd of de module werkt met Windows Power shell en Power shell core, moet het module manifest expliciet duiden op compatibiliteit met behulp van de eigenschap [CompatiblePSEditions][] . Een waarde `Desktop` betekent dat de module compatibel is met Windows Power shell, terwijl een waarde `Core` betekent dat de module compatibel is met Power shell core. Inclusief beide `Desktop` en `Core` betekent dat de module compatibel is met Windows Power shell en Power shell core.
 
 > [!NOTE]
-> `Core` betekent niet automatisch dat de module compatibel is met Windows, Linux en macOS.
+> `Core`betekent niet automatisch dat de module compatibel is met Windows, Linux en macOS.
 > De eigenschap **CompatiblePSEditions** is geïntroduceerd in Power Shell v5. Module manifesten die gebruikmaken van de eigenschap **CompatiblePSEditions** , kunnen niet worden geladen in versies voorafgaand aan Power Shell v5.
 
 ### <a name="indicating-os-compatibility"></a>De compatibiliteit van besturings systemen aangeven
 
 Controleer eerst of uw module werkt op Linux en macOS. Geef vervolgens compatibiliteit met deze besturings systemen op in het module manifest. Dit maakt het gemakkelijker voor gebruikers om uw module te vinden voor hun besturings systeem wanneer deze naar de [PowerShell Gallery][]worden gepubliceerd.
 
-In het manifest van de module heeft de eigenschap `PrivateData` een `PSData` subeigenschap. De optionele `Tags` eigenschap van `PSData` gebruikt een matrix met waarden die in PowerShell Gallery worden weer gegeven. De PowerShell Gallery ondersteunt de volgende compatibiliteits waarden:
+Binnen het module manifest heeft de `PrivateData` eigenschap een `PSData` subeigenschap. De optionele `Tags` eigenschap van `PSData` heeft een matrix van waarden die worden weer gegeven in PowerShell Gallery. De PowerShell Gallery ondersteunt de volgende compatibiliteits waarden:
 
-| Tag               | Beschrijving                                |
+| Label               | Beschrijving                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Compatibel met Power shell Core 6          |
 | PSEdition_Desktop | Compatibel met Windows Power shell         |

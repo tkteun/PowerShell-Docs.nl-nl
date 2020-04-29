@@ -2,10 +2,10 @@
 title: Compatibiliteit met Power shell 7-module
 ms.date: 02/03/2020
 ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78935197"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibiliteit met Power shell 7-module
@@ -54,7 +54,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
   Get-WindowsCapability -online
   ```
 
-  U ziet dat de naam van het functionaliteits pakket eindigt met `~~~~0.0.1.0`. U moet de volledige naam gebruiken om de mogelijkheid te installeren:
+  U ziet dat de naam van het capaciteits pakket `~~~~0.0.1.0`eindigt op. U moet de volledige naam gebruiken om de mogelijkheid te installeren:
 
   ```powershell
   Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0
@@ -67,9 +67,9 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 
 ### <a name="module-list"></a>Module lijst
 
-| Module naam                        | Status                               | Ondersteund besturingssysteem                       |
+| Module naam                        | Status                               | Ondersteund besturings systeem                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
-| ActiveDirectory                    | Systeem eigen compatibel                  | Windows Server 1809 + met RSAT-AD-Power shell<br>Windows 10 1809 + met RSAT. ActiveDirectory. DS-LDS. tools |
+| Active Directory                    | Systeem eigen compatibel                  | Windows Server 1809 + met RSAT-AD-Power shell<br>Windows 10 1809 + met RSAT. ActiveDirectory. DS-LDS. tools |
 | ADFS                               | Niet getest met compatibiliteit slaag    |                                    |
 | AppBackgroundTask                  | Systeem eigen compatibel                  | Windows 10 1903 +                   |
 | AppLocker                          | Niet getest met compatibiliteit slaag    |                                    |
@@ -84,7 +84,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | CimCmdlets                         | Systeem eigen compatibel                  | Ingebouwd in Power shell 7 |
 | ClusterAwareUpdating               | Niet getest met compatibiliteit slaag    |                         |
 | ConfigCI                           | Niet getest met compatibiliteit slaag    |                         |
-| Beschermd                           | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +  |
+| Defender                           | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +  |
 | DeliveryOptimization               | Systeem eigen compatibel                  | Windows Server 1903 +<br>Windows 10 1903 +  |
 | DFSN                               | Systeem eigen compatibel                  | Windows Server 1809 + met FS-DFS-naam ruimte<br>Windows 10 1809 + met RSAT. FailoverCluster. Management. tools |
 | DFSR                               | Niet getest met compatibiliteit slaag    |                                   |
@@ -109,14 +109,14 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | ISE                                | Niet getest met compatibiliteit slaag    |                                               |
 | KDS                                | Systeem eigen compatibel                  | Windows Server-20H1<br>Windows 10-20H1        |
 | Micro soft. Power shell. Archive       | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
-| Microsoft.PowerShell.Diagnostics   | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
-| Microsoft.PowerShell.Host          | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| Micro soft. Power shell. Diagnostics   | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| Micro soft. Power shell. host          | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
 | Micro soft. Power shell. LocalAccounts | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
-| Microsoft.PowerShell.Management    | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| Micro soft. Power shell. Management    | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
 | Micro soft. Power shell. ODataUtils    | Niet getest met compatibiliteit slaag    |                                               |
-| Microsoft.PowerShell.Security      | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| Micro soft. Power shell. Security      | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
 | Microsoft.PowerShell.Utility       | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
-| Microsoft.WSMan.Management         | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| Micro soft. WSMan. Management         | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
 | MMAgent                            | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | MPIO                               | Systeem eigen compatibel                  | Windows Server 1809 + met meerdere paden-IO        |
 | MsDtc                              | Niet getest met compatibiliteit slaag    |                                               |
@@ -138,7 +138,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | NetworkSwitchManager               | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | NetworkTransition                  | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | NFS                                | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 + met RSAT. Server Manager. tools |
-| Package Management                  | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
+| PackageManagement                  | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
 | PcsvDevice                         | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | PersistentMemory                   | Niet getest met compatibiliteit slaag    |                                               |
 | PKI                                | Niet getest met compatibiliteit slaag    |                                               |
@@ -168,7 +168,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | Sms                                | Niet getest met compatibiliteit slaag    |                                               |
 | SoftwareInventoryLogging           | Systeem eigen compatibel                  | Windows Server 1809 +                          |
 | StartLayout                        | Systeem eigen compatibel                  | Windows Server 1809 + met bureaublad ervaring<br>Windows 10 1809 + |
-| Opslag                            | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
+| Storage                            | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | StorageBusCache                    | Niet getest met compatibiliteit slaag    |                                               |
 | StorageMigrationService            | Niet getest met compatibiliteit slaag    |                                               |
 | StorageQOS                         | Systeem eigen compatibel                  | Windows Server 1809 + met RSAT-clustering-Power shell<br>Windows 10 1809 + met RSAT. FailoverCluster. Management. tools |

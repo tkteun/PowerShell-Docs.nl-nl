@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
 ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80978284"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
@@ -49,7 +49,7 @@ In de eariler-versie van DSC-PullServer werden de ESENT-database logboek bestand
 
 ## <a name="wow64-support-for-configuration-keyword"></a>WOW64-ondersteuning voor configuratie sleutelwoord
 
-Het sleutel woord `Configuration` wordt nu ondersteund in WOW64 op een 64-bits computer. Dit betekent dat een DSC-configuratie kan worden gedefinieerd en gecompileerd binnen een 32-bits proces, zoals Windows PowerShell ISE (x86) dat wordt uitgevoerd op een 64-bits computer.
+Het `Configuration` sleutel woord wordt nu ondersteund in WOW64 op een 64-bits computer. Dit betekent dat een DSC-configuratie kan worden gedefinieerd en gecompileerd binnen een 32-bits proces, zoals Windows PowerShell ISE (x86) dat wordt uitgevoerd op een 64-bits computer.
 
 ## <a name="pull-partial-configuration-naming-convention"></a>Naamgevings Conventie voor gedeeltelijke configuratie pullen
 
@@ -86,7 +86,7 @@ Bekijk de onderstaande moment opnamen:
 
   ![Bestands naam in configuratie opslagplaats](media/DSC-improvements/PartialInConfigRepository.png)
 
-  Azure Automation door de service naam gegenereerde MOF-bestanden als `<ConfigurationName>.<NodeName>.mof`. De onderstaande configuratie compileert daarom met PartialOne. localhost. mof.
+  Azure Automation Service naam heeft MOF-bestanden `<ConfigurationName>.<NodeName>.mof`gegenereerd als. De onderstaande configuratie compileert daarom met PartialOne. localhost. mof.
 
   Hierdoor is het onmogelijk om een van uw gedeeltelijke configuratie van Azure Automation-Service te verzamelen.
 
@@ -105,7 +105,7 @@ Bekijk de onderstaande moment opnamen:
   PartialOne
   ```
 
-  In WMF 5,1 kan een gedeeltelijke configuratie in de pull-Server/-service een naam hebben als `<ConfigurationName>.<NodeName>.mof`. Bovendien, als een machine een configuratie van een pull-Server/-service haalt, kan het configuratie bestand in de opslag plaats van de pull-server een wille keurige bestands naam hebben. Deze naam flexibiliteit biedt u de mogelijkheid om uw knoop punten gedeeltelijk te beheren door Azure Automation Service, waarbij bepaalde configuraties voor uw knoop punt afkomstig zijn van Azure Automation DSC en met een gedeeltelijke configuratie die u lokaal beheert.
+  In WMF 5,1 kan een gedeeltelijke configuratie in de pull-Server/-service worden genoemd `<ConfigurationName>.<NodeName>.mof`. Bovendien, als een machine een configuratie van een pull-Server/-service haalt, kan het configuratie bestand in de opslag plaats van de pull-server een wille keurige bestands naam hebben. Deze naam flexibiliteit biedt u de mogelijkheid om uw knoop punten gedeeltelijk te beheren door Azure Automation Service, waarbij bepaalde configuraties voor uw knoop punt afkomstig zijn van Azure Automation DSC en met een gedeeltelijke configuratie die u lokaal beheert.
 
   De onderstaande configuratie stelt een knoop punt in dat zowel lokaal als door Azure Automation Service moet worden beheerd.
 
@@ -279,14 +279,14 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt handtekening validatie op gedownloade configuraties en modules ingeschakeld. De lokale Configuration Manager voert de volgende stappen uit om de digitale hand tekeningen te controleren.
 
-1. Controleer de hand tekening op een configuratie bestand (. MOF) is geldig met behulp van de cmdlet `Get-AuthenticodeSignature`.
+1. Controleer de hand tekening op een configuratie bestand (. MOF) is geldig met de `Get-AuthenticodeSignature` cmdlet.
 2. Controleer of de certificerings instantie die de ondertekenaar heeft geautoriseerd, vertrouwd is.
 3. Down load module/Resource-afhankelijkheden van de configuratie naar een tijdelijke locatie.
 4. Controleer de hand tekening van de catalogus die is opgenomen in de module.
-   - Zoek een `<moduleName>.cat`-bestand en controleer de hand tekening met behulp van `Get-AuthenticodeSignature`.
+   - Zoek een `<moduleName>.cat` bestand en controleer de hand tekening `Get-AuthenticodeSignature`met behulp van.
    - Controleer of de certificerings instantie die de ondertekenaar heeft geverifieerd, vertrouwd is.
-   - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe cmdlet `Test-FileCatalog`.
-5. `Install-Module` `$env:ProgramFiles\WindowsPowerShell\Modules\`
+   - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe `Test-FileCatalog`cmdlet.
+5. `Install-Module`Aan`$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Proces configuratie
 
 > [!NOTE]

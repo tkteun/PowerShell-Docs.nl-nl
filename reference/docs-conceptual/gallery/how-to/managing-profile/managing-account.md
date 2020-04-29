@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
 ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278073"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
-Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-ID, zoals `user@hotmail.com` of `user@outlook.com`, of een account van het soort Azure Active Directory (AAD).
+Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-ID, `user@hotmail.com` zoals `user@outlook.com`of of een AAD-account (Azure Active Directory).
 
 De PowerShell Gallery biedt de volgende account instellingen:
 
@@ -81,6 +81,6 @@ Wanneer twee ledige is ingeschakeld, moet u zich bij het PowerShell Gallery veri
 > [!IMPORTANT]
 > Als u twee ledige verificatie voor de PowerShell Gallery-site inschakelt, hoeft u twee ledige niet in te scha kelen voor het gebruik van uw aanmeldings account. Zie [about verificatie in twee stappen](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification)voor meer informatie.
 
-## <a name="change-your-profile-picture"></a>Uw profiel afbeelding wijzigen
+## <a name="change-your-profile-picture"></a>Uw profielfoto wijzigen
 
 De PowerShell Gallery is afhankelijk van Gravatar om de afbeelding op te slaan en weer te geven die aan uw profiel is gekoppeld. Ga naar [Gravatar.com](http://www.gravatar.com/)om de profiel afbeelding bij te werken.

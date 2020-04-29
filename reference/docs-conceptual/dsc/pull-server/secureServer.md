@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
 ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500688"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
@@ -37,7 +37,7 @@ De twee belangrijkste secties van dit document:
 
 De informatie in dit document is bedoeld voor toepassing op Windows Management Framework 5,0. Hoewel WMF 5,0 niet is vereist voor het implementeren en gebruiken van een pull-server, is versie 5,0 de focus van dit document.
 
-### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
+### <a name="windows-powershell-desired-state-configuration"></a>Windows Power shell desired state Configuration
 
 Desired state Configuration (DSC) is een beheer platform waarmee configuratie gegevens kunnen worden geïmplementeerd en beheerd met behulp van een industrie syntaxis met de naam de Managed Object Format (MOF) om de Common Information Model (CIM) te beschrijven. Een open-source project, open Management Infrastructure (OMI), bestaat uit het verder ontwikkelen van deze standaarden op verschillende platforms, waaronder Linux en netwerkhardware. Zie voor meer informatie de [DMTF-pagina koppelen aan MOF-specificaties](https://www.dmtf.org/standards/cim)en [Omi-documenten en-bron](https://collaboration.opengroup.org/omi/documents.php).
 
@@ -75,7 +75,7 @@ Windows Server 2012 R2 bevat een functie met de naam DSC-service. De functie DSC
 
 Een pull-Server implementatie kan worden vereenvoudigd door de service in te richten met behulp van een DSC-configuratie script. Dit document bevat configuratie scripts die kunnen worden gebruikt voor het implementeren van een server knooppunt dat gereed is voor productie. Als u de configuratie scripts wilt gebruiken, is een DSC-module vereist die niet is opgenomen in Windows Server. De vereiste module naam is **xPSDesiredStateConfiguration**, die de DSC-resource **xDscWebService**bevat. De xPSDesiredStateConfiguration-module kan [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)worden gedownload.
 
-Gebruik de cmdlet `Install-Module` van de module **PowerShellGet** .
+Gebruik de `Install-Module` cmdlet uit de **PowerShellGet** -module.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -121,9 +121,9 @@ Met een DNS-CNAME kunt u een alias maken om te verwijzen naar uw host (A)-record
 Houd bij het kiezen van een naam voor de DNS-record de oplossings architectuur in acht.
 Als taak verdeling wordt gebruikt, moet het certificaat dat wordt gebruikt voor het beveiligen van verkeer via HTTPS dezelfde naam hebben als de DNS-record.
 
-       Scenario        |                                                                                         Aanbevolen procedure
+       Scenario        |                                                                                         Best Practice
 :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Test omgeving       | Reproduceer, indien mogelijk, de geplande productie omgeving. Een hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres worden gebruikt in plaats van een hostnaam.
+Testomgeving       | Reproduceer, indien mogelijk, de geplande productie omgeving. Een hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres worden gebruikt in plaats van een hostnaam.
 Implementatie met één knoop punt | Maak een DNS CNAME-record die verwijst naar de hostnaam van de server.
 
 Zie [Configuring DNS round robin in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10))(Engelstalig) voor meer informatie.
@@ -175,9 +175,9 @@ In de toekomst wordt deze sectie uitgebreid en opgenomen in een Operations Guide
 
 #### <a name="dsc-modules"></a>DSC-modules
 
-Clients die een configuratie aanvragen, hebben de vereiste DSC-modules nodig. Een functionaliteit van de pull-server is het automatiseren van de distributie op aanvraag van DSC-modules naar clients. Als u een pull-server voor de eerste keer implementeert, mogelijk als test omgeving of concept, is het waarschijnlijk afhankelijk van de DSC-modules die beschikbaar zijn vanuit open bare opslag plaatsen, zoals de PowerShell Gallery of de PowerShell.org GitHub-opslag plaatsen voor DSC-modules .
+Clients die een configuratie aanvragen, hebben de vereiste DSC-modules nodig. Een functionaliteit van de pull-server is het automatiseren van de distributie op aanvraag van DSC-modules naar clients. Als u een pull-server voor de eerste keer implementeert, bijvoorbeeld een Lab of concept, is het waarschijnlijk afhankelijk van de DSC-modules die beschikbaar zijn vanuit open bare opslag plaatsen, zoals de PowerShell Gallery of de PowerShell.org GitHub-opslag plaatsen voor DSC-modules.
 
-Het is belang rijk om te onthouden dat zelfs voor vertrouwde online bronnen, zoals de PowerShell Gallery, elke module die wordt gedownload uit een open bare opslag plaats moet worden gecontroleerd door iemand met een Power shell-ervaring en kennis van de omgeving waarin de modules worden wordt gebruikt voordat in de productie omgeving wordt gebruikt. Bij het volt ooien van deze taak is het een goed idee om te controleren of er extra Payload in de module is die kan worden verwijderd, zoals documentatie en voorbeeld scripts. Hiermee wordt de netwerk bandbreedte per client in de eerste aanvraag verminderd, wanneer modules via het netwerk van de server naar de client worden gedownload.
+Het is belang rijk om te onthouden dat zelfs voor vertrouwde online bronnen, zoals de PowerShell Gallery, elke module die wordt gedownload uit een open bare opslag plaats moet worden gecontroleerd door iemand met een Power shell-ervaring en kennis van de omgeving waarin de modules worden gebruikt voordat deze in productie worden gebruikt. Bij het volt ooien van deze taak is het een goed idee om te controleren of er extra Payload in de module is die kan worden verwijderd, zoals documentatie en voorbeeld scripts. Hiermee wordt de netwerk bandbreedte per client in de eerste aanvraag verminderd, wanneer modules via het netwerk van de server naar de client worden gedownload.
 
 Elke module moet worden verpakt in een specifieke indeling, een ZIP-bestand met de naam ModuleName_Version. zip dat de module Payload bevat. Nadat het bestand is gekopieerd naar de server, moet er een controlesom bestand worden gemaakt.
 Wanneer clients verbinding maken met de server, wordt de controlesom gebruikt om te controleren of de inhoud van de DSC-module niet is gewijzigd sinds deze is gepubliceerd.
@@ -229,7 +229,7 @@ Gebruik de volgende opdracht om de versie van Power shell op uw server te contro
 $PSVersionTable.PSVersion
 ```
 
-Voer, indien mogelijk, een upgrade uit naar de nieuwste versie van Windows Management Framework. Down load vervolgens de `xPsDesiredStateConfiguration`-module met de volgende opdracht.
+Voer, indien mogelijk, een upgrade uit naar de nieuwste versie van Windows Management Framework. Down load vervolgens de `xPsDesiredStateConfiguration` module met de volgende opdracht.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -241,7 +241,7 @@ De opdracht wordt gevraagd naar uw goed keuring voordat u de module downloadt.
 
 De beste methode voor het implementeren van een DSC-pull-server is het gebruik van een DSC-configuratie script. In dit document worden de scripts weer gegeven, inclusief de basis instellingen waarmee alleen de DSC-webservice en geavanceerde instellingen worden geconfigureerd waarmee een end-to-end-service van Windows Server wordt geconfigureerd, inclusief de DSC-webservice.
 
-Opmerking: voor de `xPSDesiredStateConfiguration` DSC-module moet de server zijn ingesteld op de land instelling EN-US.
+Opmerking: de `xPSDesiredStateConfiguration` DSC-module vereist momenteel dat de server is ingesteld op de land instelling en-us.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Basis configuratie voor Windows Server 2012
 

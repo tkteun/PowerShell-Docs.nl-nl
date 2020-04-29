@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: Power shell, cmdlet
 title: toegangs problemen in Windows Power shell-Internet toegang oplossen
 ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870180"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Toegangsproblemen in Windows PowerShell Web Access oplossen
@@ -52,21 +52,21 @@ Dit probleem kan optreden bij gebruikers die zijn aangemeld met een domeinnaam d
 1. Internet Explorer 10 installeren en uitvoeren
 1. Wijzig de instelling voor de **document modus** van Internet Explorer in *IE10* -standaarden.
    1. Druk op **F12** om de Ontwikkelhulpprogramma's-console te openen
-   1. Klik in Internet Explorer 10 op **browser modus**en selecteer vervolgens *Internet Explorer 10*.
+   1. Klik in Internet Explorer 10 op **Browsermodus** en selecteer vervolgens *Internet Explorer 10*.
    1. Klik op **document modus**en klik vervolgens op *IE10* -standaarden.
-   1. Druk nogmaals op **F12** om de Ontwikkelhulpprogramma's-console te sluiten.
+   1. Druk nogmaals op **F12** om de console Ontwikkelhulpprogramma’s te sluiten.
 1. Schakel automatische proxy configuratie uit in Internet Explorer 10.
    1. Klik op **extra**en klik vervolgens op **Internet opties**.
-   1. Klik in het dialoog venster **Internet opties** op het tabblad **verbindingen** op **LAN-instellingen**.
-   1. Schakel het selectie vakje **instellingen automatisch detecteren** uit. Klik op **OK**en klik nogmaals op **OK** om het dialoog venster *Internet opties* te sluiten.
+   1. Klik in het dialoogvenster **Internetopties** op het tabblad **Verbindingen** op **LAN-instellingen**.
+   1. Schakel het selectievakje **Instellingen automatisch detecteren** uit. Klik op **OK** en klik vervolgens nogmaals op **OK** om het dialoogvenster *Internetopties* te sluiten.
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Kan geen verbinding maken met een externe werkgroepcomputer
 
-Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis om uw gebruikers naam op te geven en u aan te melden bij de computer: `<workgroup_name>\<user_name>`
+Als de doel computer lid is van een werk groep, gebruikt u de volgende syntaxis om uw gebruikers naam op te geven en u aan te melden bij de computer:`<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Kan de beheerhulpprogramma's voor Webserver (IIS) niet vinden ook al is de functie geïnstalleerd
 
-Als u Windows Power shell-webtoegang hebt geïnstalleerd met behulp van de cmdlet `Install-WindowsFeature`, worden beheer hulpprogramma's niet geïnstalleerd, tenzij de para meter **IncludeManagementTools** wordt toegevoegd aan de cmdlet.
+Als u Windows Power shell-webtoegang hebt geïnstalleerd `Install-WindowsFeature` met behulp van de-cmdlet, worden beheer hulpprogramma's niet geïnstalleerd, tenzij de para meter **IncludeManagementTools** wordt toegevoegd aan de cmdlet.
 
 Zie [Windows Power shell-webtoegang installeren met behulp van Windows Power shell-cmdlets](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)voor een voor beeld.
 
@@ -88,7 +88,7 @@ Wanneer de gateway server ook de doel server is en deze zich in een werk groep b
 
 #### <a name="all-cases"></a>Alle cases
 
-  Parameter   |                                        Value
+  Parameter   |                                        Waarde
 ------------- | -----------------------------------------------------------------------------------
 UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
 UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
@@ -96,13 +96,13 @@ ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver bevindt zich in een domein.
 
- Parameter   |                        Value
+ Parameter   |                        Waarde
 ------------ | ----------------------------------------------------
 ComputerName | Volledig gekwalificeerde naam van gatewayserver of Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Bestandsserver maakt deel uit van een werkgroep
 
- Parameter   |    Value
+ Parameter   |    Waarde
 ------------ | -----------
 ComputerName | Servernaam
 
@@ -116,7 +116,7 @@ Meld u aan bij een gatewayserver als doelcomputer met referenties die de volgend
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel
 
-Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in plaats van de syntaxis `user_name/computer_name`.
+Er wordt een beveiligings-id (SID) weer gegeven in een autorisatie regel in `user_name/computer_name`plaats van de syntaxis.
 
 De regel is niet meer geldig of de Active Directory Domain Services-query is mislukt. Een autorisatie regel is doorgaans niet geldig in scenario's waarin de gateway server zich in één keer in een werk groep bevond, maar later is toegevoegd aan een domein
 
@@ -128,7 +128,7 @@ Autorisatieregels ondersteunen geen IPv6-adressen in de vorm van een domeinnaam.
 
 Als u een doelcomputer wilt opgeven met behulp van een IPv6-adres, gebruikt u het oorspronkelijke IPv6-adres (dat dubbele punten bevat) in de autorisatieregel. Zowel domein-als numerieke IPv6-adressen (met dubbele punten) worden ondersteund als de naam van de doel computer op de aanmeldings pagina van de Windows Power shell-webtoegang, maar niet in autorisatie regels.
 
-Zie [How IPv6 Works](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))(Engelstalig) voor meer informatie over IPv6-adressen.
+Zie [How IPv6 works](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10)) (Engelstalig) voor meer informatie over IPv6-adressen.
 
 ## <a name="see-also"></a>Zie ook
 

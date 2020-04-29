@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Resources verpakken en uploaden naar een pull-server
 ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278495"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Resources verpakken en uploaden naar een pull-server
@@ -47,7 +47,7 @@ Zodra de resource module is gecomprimeerd en de naam ervan is gewijzigd, moet u 
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Er wordt geen uitvoer weer gegeven, maar u ziet nu een ' xPSDesiredStateConfiguration_8.4.4.0. zip. checksum '. U kunt `New-DSCCheckSum` ook uitvoeren op een map met bestanden met behulp van de para meter `-Path`. Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`.
+Er wordt geen uitvoer weer gegeven, maar u ziet nu een ' xPSDesiredStateConfiguration_8.4.4.0. zip. checksum '. U kunt ook uitvoeren `New-DSCCheckSum` op een map met bestanden met behulp van de `-Path` para meter. Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met `-Force` de para meter.
 
 ### <a name="where-to-store-resource-archives"></a>Locatie voor het opslaan van resource archieven
 

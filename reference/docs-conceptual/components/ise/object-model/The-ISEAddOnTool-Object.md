@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het ISEAddOnTool-object
 ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736127"
 ---
 # <a name="the-iseaddontool-object"></a>Het ISEAddOnTool-object
@@ -146,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De eigenschap Boolean die aangeeft of het invoeg programma momenteel zichtbaar is in het toegewezen deel venster. Als deze zichtbaar is, kunt u de eigenschap **IsVisible** instellen op `$false` om het hulp programma te verbergen of de eigenschap **isvisible** instellen op `$true` om een invoeg toepassing zichtbaar te maken op het Power shell-tabblad. Houd er rekening mee dat na het verbergen van een invoeg toepassing niet meer toegankelijk is via de objecten **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** en daarom niet zichtbaar kan worden gemaakt met behulp van deze eigenschap voor dat object.
+De eigenschap Boolean die aangeeft of het invoeg programma momenteel zichtbaar is in het toegewezen deel venster. Als deze zichtbaar is, kunt u `$false` de eigenschap **IsVisible** instellen op het verbergen van het hulp programma of de eigenschap **IsVisible** instellen `$true` op om een invoeg toepassing zichtbaar te maken op het Power shell-tabblad. Houd er rekening mee dat na het verbergen van een invoeg toepassing niet meer toegankelijk is via de objecten **CurrentVisibleHorizontalTool** of **CurrentVisibleVerticalTool** en daarom niet zichtbaar kan worden gemaakt met behulp van deze eigenschap voor dat object.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -155,7 +155,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Name
+### <a name="name"></a>Naam
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
@@ -173,5 +173,5 @@ Commands
 ## <a name="see-also"></a>Zie ook
 
 - [Het ISEAddOnToolCollection-object](The-ISEAddOnToolCollection-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

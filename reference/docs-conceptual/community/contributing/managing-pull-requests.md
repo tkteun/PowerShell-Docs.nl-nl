@@ -1,13 +1,13 @@
 ---
-title: Hoe wij pull-aanvragen beheren
+title: De manier waarop we pull-aanvragen beheren
 description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078610"
 ---
 # <a name="managing-pull-requests"></a>Pull-aanvragen beheren
@@ -18,7 +18,7 @@ In dit artikel wordt beschreven hoe u pull-aanvragen beheert in het Power shell-
 
 - De persoon die de PR verzendt, mag de PR niet samen voegen zonder een peer beoordeling.
 - Wijs de persoons revisor toe wanneer de PR wordt verzonden. Met een vroege toewijzing kan de revisor snel met redactionele opmerkingen reageren.
-- Gebruik opmerkingen om de aard van de wijziging of het type revisie dat wordt aangevraagd te beschrijven. Zorg ervoor dat u de revisor @mention. Als de wijziging bijvoorbeeld klein is en u geen volledige technische controle nodig hebt, wordt dit in een opmerking beschreven.
+- Gebruik opmerkingen om de aard van de wijziging of het type revisie dat wordt aangevraagd te beschrijven. Zorg ervoor dat @mention u de revisor bekijkt. Als de wijziging bijvoorbeeld klein is en u geen volledige technische controle nodig hebt, wordt dit in een opmerking beschreven.
 
 ## <a name="pr-process-steps"></a>PR proces stappen
 
@@ -56,7 +56,7 @@ Raadpleeg de [controle lijst voor redactionele](editorial-checklist.md) voor een
     - Bestands koppelingen voor lokale bestanden
     - URL-koppelingen voor bestanden buiten de docset
   - Land instellingen uit Url's verwijderen
-  - Url's vereenvoudigen die verwijzen naar `docs.microsoft.com`
+  - Vereenvoudig Url's waarnaar wordt verwezen`docs.microsoft.com`
 
 ## <a name="branch-merge-process"></a>Vertakkings samenvoegings proces
 
@@ -65,8 +65,8 @@ De staging-vertakking is de enige vertakking die ooit in Live moet worden sameng
 | *Samen voegen van/naar*  | *release-vertakking* | *Stell*        | *Galerie*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
 | *werk vertakking* | Squash en samen voegen | Squash en samen voegen | Niet toegestaan |
-| *release-vertakking* | &mdash;          | samen            | Niet toegestaan |
-| *Stell*        | opnieuw baseren           | &mdash;          | samen       |
+| *release-vertakking* | &mdash;          | samenvoegen            | Niet toegestaan |
+| *Stell*        | opnieuw baseren           | &mdash;          | samenvoegen       |
 
 ### <a name="pr-merger-checklist"></a>Controle lijst PR fusie
 
@@ -80,7 +80,7 @@ De staging-vertakking is de enige vertakking die ooit in Live moet worden sameng
 
 ### <a name="notes"></a>Opmerkingen
 
-De volgende waarschuwingen kunnen worden genegeerd:
+De volgende waarschuwingen kunnen niet worden genegeerd:
 
 ```
 Can't find service name for `<version>/<modulepath>/About/About.md`
@@ -97,10 +97,10 @@ Wanneer een PR wordt samengevoegd, wordt de kop van de doel vertakking gewijzigd
 
 ## <a name="publishing-to-live"></a>Publiceren naar Live
 
-De wijzigingen die in de `staging` Branch worden verzameld, moeten regel matig worden gepubliceerd op de website van Live. Hiervoor moet de `staging` vertakking in de `live` vertakking worden samengevoegd.
+De wijzigingen die in de `staging` vertakking zijn verzameld, moeten regel matig worden gepubliceerd op de Live-website. Hiervoor moet de `staging` vertakking in de `live` vertakking worden samengevoegd.
 
-- De `staging` vertakking moet minstens eenmaal per week worden samengevoegd tot `live`.
-- De `staging` vertakking moet na een belang rijke wijziging worden samengevoegd met `live`.
+- De `staging` vertakking moet `live` ten minste eenmaal per week worden samengevoegd.
+- De `staging` vertakking moet worden samengevoegd tot `live` na een belang rijke wijziging.
   - Wijzigingen in 50 of meer bestanden
   - Na het samen voegen van een release vertakking
   - Wijzigingen in opslag plaats-of docset-configuraties (docfx. json, OPS-configuratie, build-scripts enzovoort)

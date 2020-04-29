@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Informatie over de rol van DSC in een CI/CD-pijp lijn
 ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500828"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
@@ -20,7 +20,7 @@ Het doel van elk scenario is hetzelfde, om de complexiteit te reduceren wanneer 
 
 Er zijn twee oplossingen ingebouwd in lokale Configuration Manager om dit concept in te scha kelen:
 
-|        Concept         |                    Gedetailleerde gegevens                     |
+|        Concept         |                    Gedetailleerde informatie                     |
 | ---------------------- | ----------------------------------------------------------- |
 | Gedeeltelijke configuraties | [Documentatie](../pull-server/partialConfigs.md)           |
 | Samengestelde resources    | [Documentatie](../resources/authoringResourceComposite.md) |

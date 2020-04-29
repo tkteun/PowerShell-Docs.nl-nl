@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Statische klassen en methoden gebruiken
 ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030747"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
@@ -46,11 +46,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Zoals eerder vermeld, voegt Windows Power shell automatisch '**System.** ' toe. Als u namen wilt typen wanneer u **Nieuw-object**gebruikt. Hetzelfde gebeurt wanneer u een type naam tussen haakjes gebruikt, zodat u **\[System. Environment]** kunt opgeven als **\[omgeving]** .
+> Zoals eerder vermeld, voegt Windows Power shell automatisch '**System.**' toe. Als u namen wilt typen wanneer u **Nieuw-object**gebruikt. Hetzelfde gebeurt wanneer u een type naam tussen haakjes gebruikt, zodat u ** \[System. Environment]** als ** \[omgeving**kunt opgeven.
 
 De klasse **System. Environment** bevat algemene informatie over de werk omgeving voor het huidige proces, Power shell. exe wanneer u werkt in Windows Power shell.
 
-Als u probeert Details van deze klasse weer te geven, typt u **\[System. Environment] | Get-member**, het object type wordt gerapporteerd als **System. RuntimeType** , niet **System. Environment**:
+Als u de details van deze klasse wilt bekijken door ** \[System. Environment te typen] | Get-member**, het object type wordt gerapporteerd als **System. RuntimeType** , niet **System. Environment**:
 
 ```
 PS> [System.Environment] | Get-Member

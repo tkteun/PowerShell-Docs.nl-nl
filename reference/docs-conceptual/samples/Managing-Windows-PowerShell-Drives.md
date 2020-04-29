@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Windows PowerShell-stations beheren
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215506"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
@@ -102,7 +102,7 @@ Als u een nieuw Windows Power Shell-station wilt maken, moet u drie para meters 
 
 - De basis, dat wil zeggen, het pad naar de hoofdmap van het nieuwe station
 
-U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\programma bestanden\\Microsoft Office\\Office11**. Typ de volgende opdracht om het station te maken:
+U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\Program\\Files Microsoft Office\\Office11**. Typ de volgende opdracht om het station te maken:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -115,9 +115,9 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > In het algemeen zijn paden niet hoofdletter gevoelig.
 
-U verwijst naar het nieuwe Windows Power Shell-station, net zoals u alle Windows Power Shell-stations gebruikt, door de naam gevolgd door een dubbele punt ( **:** ).
+U verwijst naar het nieuwe Windows Power Shell-station, net zoals u alle Windows Power Shell-stations gebruikt, door de naam gevolgd door een dubbele punt (**:**).
 
-Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\SOFTWARE\\micro soft\\Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
+Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\-software\\micro soft\\Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
 
 ```
 PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion

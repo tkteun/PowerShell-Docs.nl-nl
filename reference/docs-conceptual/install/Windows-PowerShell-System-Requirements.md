@@ -3,10 +3,10 @@ ms.date: 12/06/2019
 keywords: Power shell, cmdlet
 title: Windows PowerShell-systeemvereisten
 ms.openlocfilehash: 713b062916fec0c5c70ea9a7f95fea3570afb64a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953786"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
@@ -15,9 +15,9 @@ In dit artikel vindt u een overzicht van de systeem vereisten voor Windows Power
 
 Windows® 8,1 en Windows Server® 2012 R2 bevatten alle vereiste Program ma's. Dit artikel is bedoeld voor gebruikers van eerdere versies van Windows.
 
-## <a name="operating-system-requirements"></a>Besturingssysteemvereisten
+## <a name="operating-system-requirements"></a>Vereisten voor het besturingssysteem
 
-### <a name="windows-powershell-51"></a>Windows PowerShell 5.1
+### <a name="windows-powershell-51"></a>Windows Power shell 5,1
 
 Windows Power shell 5,1 wordt uitgevoerd op de volgende versies van Windows. Als u Windows Power shell 5,1 wilt uitvoeren, installeert u Windows Management Framework 5,1. Zie [WMF 5,1 installeren en configureren](../wmf/setup/install-configure.md)voor meer informatie.
 
@@ -78,7 +78,7 @@ De volgende tabel bevat de .NET Framework vereisten voor Windows Power shell.
 
 | Versie | .NET-vereiste |
 | ----- | ----- |
-| Windows PowerShell 5.1 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5. |
+| Windows Power shell 5,1 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5. |
 | Windows PowerShell 5.0 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5. |
 | Windows PowerShell 4.0 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5. |
 | Windows PowerShell 3.0 | Vereist de volledige installatie van Microsoft .NET Framework 4. Windows 8 en Windows Server 2012 bevatten standaard Microsoft .NET Framework 4,5, waarmee aan deze vereiste wordt voldaan. |
@@ -127,7 +127,7 @@ Voor sommige items is een Graphical User Interface vereist. Zie het Help-artikel
 
 Windows Power Shell 4,0 is ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 3,0 en Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0 en Windows Power Shell 3,0 worden ongewijzigd uitgevoerd in Windows Power Shell 4,0.
 
-Als gevolg van een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4, Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 kunnen niet zonder aanpassing worden uitgevoerd in Windows Power Shell 3,0, dat is gecompileerd met CLR 4,0.
+Vanwege een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4 worden Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 niet uitgevoerd zonder aanpassing in Windows Power Shell 3,0, dat is gecompileerd met CLR 4,0.
 
 De minimale vereiste van de Windows Power Shell 2,0-engine is Microsoft .NET Framework 2.0.50727. Aan deze eis wordt voldaan door Microsoft .NET Framework 3,5 Service Pack 1. Aan deze eis wordt niet voldaan door Microsoft .NET Framework 4 en latere releases van Microsoft .NET Framework.
 
@@ -147,10 +147,10 @@ De **WinRM** -service is niet aanwezig in Windows PE.
 
 ## <a name="see-also"></a>Zie ook
 
-[Aan de slag met Windows Power shell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+[Aan de slag met Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 
-[Windows Power Shell installeren](Installing-Windows-PowerShell.md)
+[Windows PowerShell installeren](Installing-Windows-PowerShell.md)
 
-[Windows Power shell starten](../getting-started/Starting-Windows-PowerShell.md)
+[Windows PowerShell starten](../getting-started/Starting-Windows-PowerShell.md)
 
 [Windows Management Framework](../wmf/overview.md)

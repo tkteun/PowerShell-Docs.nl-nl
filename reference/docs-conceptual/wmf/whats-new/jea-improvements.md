@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Verbeteringen van Just Enough Administration (JEA)
 ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145031"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbeteringen van Just Enough Administration (JEA)
@@ -15,7 +15,7 @@ Net genoeg beheer is een nieuwe functie in WMF 5,0 waarmee beheer op basis van r
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Beperkte bestands kopie naar/van JEA-eind punten
 
-U kunt bestanden nu extern kopiëren naar/van een JEA-eind punt en er zeker van zijn dat de gebruiker die de verbinding maakt, alleen *een* bestand op uw systeem kan kopiëren. Dit is mogelijk door uw PSSC-bestand te configureren om een gebruikers station te koppelen voor het verbinden van gebruikers. Het gebruikers station is een nieuwe PSDrive die uniek is voor elke gebruiker die verbinding maakt en die zich in verschillende sessies bevindt. Als `Copy-Item` wordt gebruikt om bestanden te kopiëren naar of van een JEA-sessie, is deze beperkt tot alleen toegang tot het gebruikers station toestaan. Pogingen om bestanden naar andere PSDrive te kopiëren, mislukken.
+U kunt bestanden nu extern kopiëren naar/van een JEA-eind punt en er zeker van zijn dat de gebruiker die de verbinding maakt, alleen *een* bestand op uw systeem kan kopiëren. Dit is mogelijk door uw PSSC-bestand te configureren om een gebruikers station te koppelen voor het verbinden van gebruikers. Het gebruikers station is een nieuwe PSDrive die uniek is voor elke gebruiker die verbinding maakt en die zich in verschillende sessies bevindt. Wanneer `Copy-Item` wordt gebruikt om bestanden te kopiëren naar of van een JEA-sessie, is deze beperkt om alleen toegang tot het gebruikers station toe te staan. Pogingen om bestanden naar andere PSDrive te kopiëren, mislukken.
 
 Als u het gebruikers station in het configuratie bestand van uw JEA-sessie wilt instellen, gebruikt u de volgende nieuwe velden:
 
@@ -24,9 +24,9 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-De map die een back-up maakt van het gebruikers station wordt gemaakt op `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+De map die een back-up maakt van het gebruikers station wordt gemaakt op`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Als u het gebruikers station wilt gebruiken en bestanden wilt kopiëren naar/van een JEA-eind punt dat is geconfigureerd om het gebruikers station zichtbaar te maken, gebruikt u de para meters `-ToSession` en `-FromSession` in `Copy-Item`.
+Als u het gebruikers station wilt gebruiken en bestanden wilt kopiëren naar/van een JEA-eind punt dat is geconfigureerd om het gebruikers `-ToSession` station `-FromSession` zichtbaar te `Copy-Item`maken, gebruikt u de para meters en op.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -63,7 +63,7 @@ RunAsVirtualAccount = $false
 > Door groepen beheerde service accounts bieden geen isolatie of beperkt bereik van virtuele accounts.
 > Elke gebruiker die verbinding maakt, deelt dezelfde gMSA-identiteit, die mogelijk machtigingen heeft voor uw hele onderneming. Wees voorzichtig bij het selecteren van een gMSA en gebruik altijd de voor keur aan virtuele accounts die worden beperkt tot de lokale machine wanneer dat mogelijk is.
 
-## <a name="conditional-access-policies"></a>Beleid voor voorwaardelijke toegang
+## <a name="conditional-access-policies"></a>Voorwaardelijk toegangsbeleid
 
 JEA is handig om te beperken wat iemand kan doen wanneer ze zijn verbonden met een systeem om het te beheren, maar wat als u ook wilt beperken *Wanneer* iemand JEA kan gebruiken? Er zijn configuratie opties toegevoegd aan de sessie configuratie bestanden (. pssc) waarmee u beveiligings groepen kunt opgeven waarvoor een gebruiker moet behoren om een JEA-sessie tot stand te brengen. Dit is met name handig als u een just-in-time-systeem (JIT) in uw omgeving hebt en u wilt dat uw gebruikers hun bevoegdheden kunnen verhogen voordat ze toegang krijgen tot een JEA-eind punt met hoge privileges.
 

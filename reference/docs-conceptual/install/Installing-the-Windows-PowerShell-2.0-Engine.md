@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: De Windows PowerShell 2.0-engine installeren
 ms.openlocfilehash: 24bca7bd18fd33392f4f79b958189d3251ec35c1
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870537"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>De Windows PowerShell 2.0-engine installeren
 
 In dit onderwerp wordt uitgelegd hoe u de Windows Power Shell 2,0-engine installeert.
 
-Windows Power Shell 3,0 is ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0, worden ongewijzigd uitgevoerd in Windows Power Shell 3,0 en Windows Power Shell 4,0. Als gevolg van een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4, Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 kunnen niet zonder aanpassing in latere versies worden uitgevoerd releases van Windows Power shell, die zijn gecompileerd met CLR 4,0.
+Windows Power Shell 3,0 is ontworpen om achterwaarts compatibel te zijn met Windows Power Shell 2,0. Cmdlets, providers, modules, modules en scripts die zijn geschreven voor Windows Power Shell 2,0, worden ongewijzigd uitgevoerd in Windows Power Shell 3,0 en Windows Power Shell 4,0. Als gevolg van een wijziging in het runtime-activerings beleid in Microsoft .NET Framework 4, worden Windows Power shell-host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en gecompileerd met common language runtime (CLR) 2,0 niet uitgevoerd zonder aanpassing in latere versies van Windows Power shell, die zijn gecompileerd met CLR 4,0.
 
 Om achterwaartse compatibiliteit te behouden met opdrachten en host-Program ma's die worden beïnvloed door deze wijzigingen, zijn de Windows Power Shell 2,0-, Windows Power Shell 3,0-en Windows Power Shell 4,0-engines ontworpen om naast elkaar te worden uitgevoerd. Daarnaast is de Windows Power Shell 2,0-engine opgenomen in Windows Server 2012 R2, Windows 8,1, Windows 8, Windows Server 2012 en Windows Management Framework 3,0. De Windows Power Shell 2,0-engine is alleen bedoeld voor gebruik wanneer een bestaand script of hostprogramma niet kan worden uitgevoerd omdat het niet compatibel is met Windows Power Shell 3,0, Windows Power Shell 4,0 of Microsoft .NET Framework 4. Dergelijke gevallen worden naar verwachting zeldzaam.
 
@@ -54,7 +54,7 @@ Gebruik de volgende procedures om de Windows Power Shell 2,0-engine en Microsoft
 
 2. Selecteer op de pagina **installatie type** de optie installatie die op de **functie of het onderdeel is gebaseerd**.
 
-3. Vouw op de pagina **functies** het knoop punt **.net 3,5 Framework-functies** uit en selecteer **.NET Framework 3,5 (inclusief .net 2,0 en 3,0)** .
+3. Vouw op de pagina **functies** het knoop punt **.net 3,5 Framework-functies** uit en selecteer **.NET Framework 3,5 (inclusief .net 2,0 en 3,0)**.
 
    De andere opties onder dat knoop punt zijn niet vereist voor de Windows Power Shell 2,0-engine.
 
@@ -78,7 +78,7 @@ Het Windows Management Framework 3,0-pakket dat Windows Power Shell 3,0 installe
 
 ## <a name="see-also"></a>Zie ook
 
-- [Systeem vereisten voor Windows Power shell](Windows-PowerShell-System-Requirements.md)
-- [Windows Power Shell installeren](Installing-Windows-PowerShell.md)
-- [Windows Power shell starten](/previous-versions/ms714415(v=vs.85))
+- [Windows PowerShell-systeemvereisten](Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell installeren](Installing-Windows-PowerShell.md)
+- [Windows PowerShell starten](/previous-versions/ms714415(v=vs.85))
 - [De Windows PowerShell 2.0-engine starten](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)

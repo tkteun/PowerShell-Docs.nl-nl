@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Met bestanden, mappen en registersleutels werken
 ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030758"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en register sleutels
@@ -17,7 +17,7 @@ Windows Power shell gebruikt het **item** van de zelfstandig naam om te verwijze
 
 Omdat het ophalen van een verzameling items van een bepaalde locatie een veelvoorkomende taak is, is de cmdlet **Get-Child item** specifiek ontworpen om alle items te retour neren die zijn gevonden in een container, zoals een map.
 
-Als u alle bestanden en mappen wilt retour neren die zich rechtstreeks in de map C bevinden:\\Windows, typt u:
+Als u alle bestanden en mappen wilt retour neren die zich rechtstreeks in de map C:\\Windows bevinden, typt u:
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -84,11 +84,11 @@ Deze para meter heeft de naam Force omdat u het normale gedrag van de opdracht *
 
 Omdat het vergelijken van het Joker teken wordt verwerkt door de Windows Power shell-engine, gebruiken alle cmdlets die joker tekens accepteren, dezelfde notatie en hebben hetzelfde overeenkomstige gedrag. De Windows Power shell-Joker teken notatie bevat:
 
-- Asterisk (\*) komt overeen met nul of meer exemplaren van elk wille keurig teken.
+- Sterretje (\*) komt overeen met nul of meer exemplaren van elk wille keurig teken.
 
 - Vraag teken (?) komt overeen met één teken.
 
-- Teken voor haakje links (\[) en haakje (]) rond een reeks tekens die moeten worden vergeleken.
+- Teken voor haakje\[links () en haakje (]) rond een reeks tekens die moeten worden vergeleken.
 
 Hier volgen enkele voor beelden van de werking van joker tekens.
 
@@ -127,7 +127,7 @@ U kunt specifieke items uitsluiten met behulp van de **exclude** -para meter van
 
 Stel dat u de Windows Time-service-DLL wilt vinden in de map System32 en dat u meer weet over de DLL-naam dat deze begint met ' W ' en dat deze ' 32 ' bevat.
 
-Een expressie zoals **w\&#42; 32\&#42;. het dll** -bestand bevat alle dll-bestanden die voldoen aan de voor waarden, maar deze kunnen ook de Windows-compatibiliteits-dll's (95 en 16-bits) retour neren die "95" of "16" in hun namen bevatten. U kunt bestanden met een van deze getallen in hun namen weglaten met de **exclude** -para meter met het patroon **\&#42;\[9516]\&#42;** :
+Een expressie zoals **w\&#42; 32\&#42;. het dll** -bestand bevat alle dll-bestanden die voldoen aan de voor waarden, maar deze kunnen ook de Windows-compatibiliteits-dll's (95 en 16-bits) retour neren die "95" of "16" in hun namen bevatten. U kunt bestanden met een van deze getallen in hun namen weglaten door de **exclude** -para meter te gebruiken met het patroon ** \&#42;\[ 9516]\&#42;**:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

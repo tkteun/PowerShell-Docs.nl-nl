@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: Power shell, cmdlet
 title: Informatie over Power shell-pijp lijnen
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030391"
 ---
 # <a name="understanding-pipelines"></a>Pijp lijnen
@@ -19,7 +19,7 @@ De notatie die wordt gebruikt voor pijp lijnen, is vergelijkbaar met de notatie 
 
 Pijp lijnen zijn weliswaar het meest waardevolle concept dat wordt gebruikt in opdracht regel interfaces. Wanneer u correct gebruikt, kunnen pijp lijnen de moeite van het gebruik van complexe opdrachten verminderen en is het eenvoudiger om de werk stroom voor de opdrachten te zien. Elke opdracht in een pijp lijn (een pijplijn element genoemd) geeft de uitvoer door aan de volgende opdracht in de pijp lijn, item-per-item. Opdrachten hoeven niet meer dan één item tegelijk te verwerken. Het resultaat is een gereduceerd Resource verbruik en de mogelijkheid om de uitvoer onmiddellijk te verkrijgen.
 
-Als u bijvoorbeeld de cmdlet `Out-Host` gebruikt om een pagina-op-pagina weer te geven van uitvoer van een andere opdracht, ziet de uitvoer er net zo uit als de normale tekst die op het scherm wordt weer gegeven, onderverdeeld in pagina's:
+Als u bijvoorbeeld de `Out-Host` cmdlet gebruikt om een pagina-op-pagina weer te geven van uitvoer van een andere opdracht, ziet de uitvoer er net zo uit als de normale tekst die op het scherm wordt weer gegeven, onderverdeeld in pagina's:
 
 ```powershell
 Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -58,7 +58,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 ...
 ```
 
-Paginering vermindert ook het CPU-gebruik omdat de verwerking van de `Out-Host`-cmdlet wordt uitgevoerd wanneer er een volledige pagina gereed is om weer te geven. De cmdlets die voorafgaan aan de pijp lijn worden uitgevoerd, totdat de volgende pagina van uitvoer beschikbaar is.
+Paginering vermindert ook het `Out-Host` CPU-gebruik omdat er een volledige pagina kan worden weer gegeven. De cmdlets die voorafgaan aan de pijp lijn worden uitgevoerd, totdat de volgende pagina van uitvoer beschikbaar is.
 
 U kunt zien hoe pijpleidingen het CPU-en geheugen gebruik in Windows taak beheer beïnvloedt door de volgende opdrachten te vergelijken:
 
@@ -81,7 +81,7 @@ U kunt zien hoe pijpleidingen het CPU-en geheugen gebruik in Windows taak beheer
 
 Wanneer u een cmdlet in Power shell uitvoert, wordt tekst uitvoer weer gegeven, omdat het nodig is om objecten als tekst in een console venster aan te duiden. In de tekst uitvoer worden mogelijk niet alle eigenschappen weer gegeven van het object dat wordt uitgevoerd.
 
-Denk bijvoorbeeld aan de `Get-Location`-cmdlet. Als u `Get-Location` uitvoert terwijl uw huidige locatie de hoofdmap van station C is, ziet u de volgende uitvoer:
+Denk bijvoorbeeld aan de `Get-Location` cmdlet. Als u uitvoert `Get-Location` terwijl uw huidige locatie de hoofdmap van station C is, ziet u de volgende uitvoer:
 
 ```
 PS> Get-Location
@@ -91,9 +91,9 @@ Path
 C:\
 ```
 
-De tekst uitvoer is een samen vatting van informatie, niet een volledige weer gave van het object dat wordt geretourneerd door `Get-Location`. De kop in de uitvoer wordt toegevoegd door het proces waarmee de gegevens voor het scherm worden opgemaakt.
+De tekst uitvoer is een samen vatting van informatie, niet een volledige weer gave van het object `Get-Location`dat wordt geretourneerd door. De kop in de uitvoer wordt toegevoegd door het proces waarmee de gegevens voor het scherm worden opgemaakt.
 
-Wanneer u de uitvoer naar de `Get-Member`-cmdlet Pipet, krijgt u informatie over het object dat door `Get-Location`wordt geretourneerd.
+Wanneer u de uitvoer naar de `Get-Member` cmdlet Pipet, krijgt u informatie over het object `Get-Location`dat wordt geretourneerd door.
 
 ```powershell
 Get-Location | Get-Member
@@ -114,4 +114,4 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location` retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.
+`Get-Location`retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.

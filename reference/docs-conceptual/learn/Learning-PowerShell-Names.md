@@ -3,10 +3,10 @@ ms.date: 08/24/2018
 keywords: Power shell, cmdlet
 title: Power shell-opdracht namen leren
 ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030425"
 ---
 # <a name="learning-powershell-command-names"></a>Power shell-opdracht namen leren
@@ -18,13 +18,13 @@ Dit lijkt logisch voor opdracht namen, aangezien elke opdracht een afzonderlijk 
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Opdracht namen leren in traditionele schalen
 
-De meeste opdrachten zijn gebouwd om elementen van het besturings systeem of toepassingen, zoals services of processen, te beheren. De opdrachten hebben namen die al dan niet in een familie passen. U kunt bijvoorbeeld op Windows-systemen de opdrachten `net start` en `net stop` gebruiken om een service te starten en te stoppen. **Sc. exe** is een ander Service beheer programma voor Windows. Deze naam past niet bij het naamgevings patroon voor de **net. exe** -service opdrachten. Voor proces beheer heeft Windows de opdracht **tasklist. exe** voor het weer geven van processen en de opdracht **taskkill. exe** om processen af te breken.
+De meeste opdrachten zijn gebouwd om elementen van het besturings systeem of toepassingen, zoals services of processen, te beheren. De opdrachten hebben namen die al dan niet in een familie passen. U kunt bijvoorbeeld op Windows-systemen de `net start` -en `net stop` -opdrachten gebruiken om een service te starten en te stoppen. **Sc. exe** is een ander Service beheer programma voor Windows. Deze naam past niet bij het naamgevings patroon voor de **net. exe** -service opdrachten. Voor proces beheer heeft Windows de opdracht **tasklist. exe** voor het weer geven van processen en de opdracht **taskkill. exe** om processen af te breken.
 
-Deze opdrachten hebben ook onregelmatige parameter specificaties. U kunt de opdracht `net start` niet gebruiken om een service op een externe computer te starten. Met de opdracht **sc. exe** kunt u een service op een externe computer starten. Maar om de externe computer op te geven, moet u een voor voegsel van de naam met een dubbele back slash opgeven. Als u de Spooler-service wilt starten op een externe computer met de naam DC01, typt u `sc.exe \\DC01 start spooler`.
-Als u taken wilt weer geven die worden uitgevoerd op DC01, gebruikt u de **/s** para meter en de computer naam zonder backslashes. Voorbeeld: `tasklist /S DC01`.
+Deze opdrachten hebben ook onregelmatige parameter specificaties. U kunt de `net start` opdracht niet gebruiken om een service op een externe computer te starten. Met de opdracht **sc. exe** kunt u een service op een externe computer starten. Maar om de externe computer op te geven, moet u een voor voegsel van de naam met een dubbele back slash opgeven. Als u de Spooler-service wilt starten op een externe computer met de `sc.exe \\DC01 start spooler`naam DC01, typt u.
+Als u taken wilt weer geven die worden uitgevoerd op DC01, gebruikt u de **/s** para meter en de computer naam zonder backslashes. Bijvoorbeeld `tasklist /S DC01`.
 
 > [!NOTE]
-> Vóór Power shell V6 was `sc` een alias voor de `Set-Content`-cmdlet. Daarom moet u, om de **sc. exe** -opdracht uit te voeren in een versie van Power shell vóór V6, de volledige bestands naam **sc. exe** opnemen, inclusief de bestands extensie **exe**.
+> Vóór Power shell V6 `sc` was een alias voor de `Set-Content` cmdlet. Daarom moet u, om de **sc. exe** -opdracht uit te voeren in een versie van Power shell vóór V6, de volledige bestands naam **sc. exe** opnemen, inclusief de bestands extensie **exe**.
 
 Services en processen zijn voor beelden van beheer bare elementen op een computer met goed gedefinieerde levens cycli. U kunt Services en processen starten of stoppen of een lijst ophalen van alle services of processen die momenteel worden uitgevoerd. Hoewel er belang rijke technische verschillen tussen hen zijn, zijn de acties die u uitvoert op Services en processen conceptueel gezien hetzelfde. Bovendien is het mogelijk om een actie aan te passen door para meters op te geven. Dit kan ook conceptueel zijn.
 
@@ -34,14 +34,14 @@ Power Shell maakt gebruik van deze overeenkomsten om het aantal afzonderlijke na
 
 Power Shell maakt gebruik van een naamgevings systeem voor werk woorden. Elke cmdlet-naam bestaat uit een standaard woord dat is afgebroken met een specifieke naam. Power shell-werk woorden zijn niet altijd Engels, maar ze drukken specifieke acties uit in Power shell. Zelfstandige naam woorden zijn veel hetzelfde als zelfstandige naam woorden in elke taal. Hierin worden specifieke typen objecten beschreven die belang rijk zijn in systeem beheer. Het is eenvoudig om te laten zien hoe deze twee deel namen de leer inspanningen verminderen door enkele voor beelden te bekijken.
 
-Power Shell heeft een aanbevolen set standaard woorden. Zelfstandige naam woorden zijn minder beperkt, maar geven altijd aan waar de term op reageert. Power Shell heeft opdrachten als `Get-Process`, `Stop-Process`, `Get-Service`en `Stop-Service`.
+Power Shell heeft een aanbevolen set standaard woorden. Zelfstandige naam woorden zijn minder beperkt, maar geven altijd aan waar de term op reageert. Power Shell heeft opdrachten als `Get-Process`, `Stop-Process` `Get-Service`, en `Stop-Service`.
 
 Voor dit voor beeld van twee zelfstandige naam woorden en termen is consistentie niet vereenvoudigd. Breid deze lijst uit naar een gestandaardiseerde set van 10 werk woorden en tien zelfstandige naam woorden. Nu hebt u slechts twintig woorden om te begrijpen.
 Deze woorden kunnen echter worden gecombineerd om 100 afzonderlijke opdracht namen te maken.
 
-Het is eenvoudig om te begrijpen wat een Power shell-opdracht doet door de naam ervan te lezen. De opdracht voor het afsluiten van een computer is `Stop-Computer`. De opdracht voor het weer geven van alle computers in een netwerk is `Get-Computer`. De opdracht voor het ophalen van de systeem datum is `Get-Date`.
+Het is eenvoudig om te begrijpen wat een Power shell-opdracht doet door de naam ervan te lezen. De opdracht om een computer af te sluiten `Stop-Computer`is. De opdracht voor het weer geven van alle computers in `Get-Computer`een netwerk is. De opdracht voor het ophalen van de systeem `Get-Date`datum is.
 
-U kunt alle opdrachten weer geven die een bepaalde term bevatten met de para meter **Verb** voor `Get-Command`. Als u bijvoorbeeld alle cmdlets wilt zien die gebruikmaken van de term `Get`, typt u:
+U kunt alle opdrachten weer geven die een bepaalde term bevatten met **Verb** de para meter `Get-Command`verb voor. Als u bijvoorbeeld alle cmdlets wilt zien die de bewerking `Get`gebruiken, typt u:
 
 ```
 PS> Get-Command -Verb Get
@@ -79,19 +79,19 @@ Zoals eerder is opgemerkt, hebben opdrachten die worden gebruikt in traditionele
 
 In tegens telling tot de meeste andere traditionele opdracht regel interfaces, worden para meters rechtstreeks door Power shell verwerkt en wordt deze rechtstreekse toegang tot de para meters, samen met de richt lijnen voor ontwikkel aars, gebruikt om parameter namen te standaardiseren. Deze richt lijnen moedigen aan, maar garandeert niet dat elke cmdlet voldoet aan de standaard.
 
-Power Shell standaard het scheidings teken voor para meters. Voor parameter namen wordt altijd een '-' voorafgegaan door een Power shell-opdracht. Kijk eens naar het volgende voorbeeld:
+Power Shell standaard het scheidings teken voor para meters. Voor parameter namen wordt altijd een '-' voorafgegaan door een Power shell-opdracht. Kijk een naar het volgende voorbeeld:
 
 ```powershell
 Get-Command -Name Clear-Host
 ```
 
-De naam van de para meter is **naam**, maar wordt getypt als `-Name` wanneer deze wordt gebruikt op de opdracht regel als een para meter.
+De naam van de para meter is **naam**, maar wordt getypt `-Name` wanneer deze wordt gebruikt op de opdracht regel als een para meter.
 
 Hier volgen enkele van de algemene kenmerken van de standaard parameter namen en-gebruik.
 
 ### <a name="the-help-parameter-"></a>De Help-para meter (?)
 
-Wanneer u de para meter `-?` opgeeft voor een cmdlet, wordt in Power shell Help voor de cmdlet weer gegeven.
+Wanneer u de `-?` para meter voor een cmdlet opgeeft, wordt in Power shell Help voor de cmdlet weer gegeven.
 De cmdlet wordt niet uitgevoerd.
 
 ### <a name="common-parameters"></a>Algemene para meters

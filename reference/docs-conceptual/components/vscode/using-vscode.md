@@ -3,10 +3,10 @@ title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
 ms.openlocfilehash: 5251094388f6abc7da7f2cc706537eade78df7c9
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80978692"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
@@ -26,9 +26,9 @@ Het ondersteunt de volgende Power shell-versies:
 
 Controleer voordat u begint of Power shell op het systeem bestaat. Raadpleeg de volgende koppelingen voor moderne werk belastingen op Windows, macOS en Linux:
 
-- [Power Shell installeren in Linux][install-pscore-linux]
-- [Power shell in macOS installeren][install-pscore-macos]
-- [Power shell in Windows installeren][install-pscore-windows]
+- [PowerShell installeren in Linux][install-pscore-linux]
+- [PowerShell installeren in macOS][install-pscore-macos]
+- [PowerShell installeren in Windows][install-pscore-windows]
 
 Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads van Windows Power shell.
 
@@ -38,7 +38,7 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
 
 ## <a name="editing-with-visual-studio-code"></a>Bewerken met Visual Studio code
 
-1. Installeer Visual Studio code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
+1. Installeer Visual Studio Code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
 
    Er zijn installatie-instructies voor elk platform:
 
@@ -48,8 +48,8 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
 
 1. Installeer de Power shell-extensie.
 
-   1. Start de app Visual Studio code door `code` te typen in een-console of `code-insiders` als u Visual Studio code insiders hebt geïnstalleerd.
-   1. Start **snel openen** in Windows of Linux door op <kbd>CTRL</kbd>+<kbd>P</kbd>te drukken. Druk in macOS op <kbd>Cmd</kbd>+<kbd>P</kbd>.
+   1. Start de app Visual Studio code door te `code` typen in een- `code-insiders` console of als u Visual Studio code insiders hebt geïnstalleerd.
+   1. Start **snel openen** in Windows of Linux door op <kbd>CTRL</kbd>+<kbd>P</kbd>te drukken. Druk op macOS op <kbd>cmd</kbd>+<kbd>P</kbd>.
    1. Typ `ext install powershell` in snel openen en druk op **Enter**.
    1. De weer gave **extensies** wordt weer gegeven op de balk aan de zijkant. Selecteer de Power shell-extensie van micro soft.
       Er wordt een Visual Studio-code scherm weer gegeven dat vergelijkbaar is met de volgende afbeelding:
@@ -60,7 +60,7 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
    1. Als u na de installatie de knop **installeren** ziet, klikt u **op opnieuw** **laden**.
    1. Nadat Visual Studio code opnieuw is geladen, bent u klaar om te bewerken.
 
-Als u bijvoorbeeld een nieuw bestand wilt maken, klikt u op **bestand > nieuw**. Als u deze wilt opslaan, klikt u op **bestand > opslaan** en geeft u een bestands naam op, zoals `HelloWorld.ps1`. Als u het bestand wilt sluiten, klikt u op de `X` naast de bestands naam. Als u Visual Studio code wilt afsluiten, wordt het **bestand > sluiten**.
+Als u bijvoorbeeld een nieuw bestand wilt maken, klikt u op **bestand > nieuw**. Als u deze wilt opslaan, klikt u op **bestand > opslaan** en geeft u een bestands `HelloWorld.ps1`naam op, zoals. Als u het bestand wilt sluiten, `X` klikt u op het volgende bij de bestands naam. Als u Visual Studio code wilt afsluiten, wordt het **bestand > sluiten**.
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>De Power shell-uitbrei ding installeren op beperkte systemen
 
@@ -76,7 +76,7 @@ Dit probleem kan optreden wanneer het uitvoerings beleid van Power shell is inge
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-U wordt gevraagd of **u software van deze niet-vertrouwde uitgever wilt uitvoeren?** Typ `A` om het bestand uit te voeren. Open vervolgens Visual Studio code en controleer of de Power shell-extensie goed werkt. Als u nog steeds problemen ondervindt, laat het ons dan weten over [Problemen met GitHub][].
+U wordt gevraagd of **u software van deze niet-vertrouwde uitgever wilt uitvoeren?** Typ `A` om het bestand uit te voeren. Open vervolgens Visual Studio code en controleer of de Power shell-extensie goed werkt. Als u nog steeds problemen ondervindt, laat het ons dan weten over [github-problemen][].
 
 > [!NOTE]
 > De Power shell-extensie voor Visual Studio code biedt geen ondersteuning voor uitvoering in een modus met beperkte taal. Zie [github issue #606][i606]voor meer informatie.
@@ -87,7 +87,7 @@ Met Power shell core die naast Windows Power shell wordt geïnstalleerd, is het 
 
 Gebruik de volgende stappen om de versie te kiezen:
 
-1. Open het **opdracht palet** in Windows of Linux met <kbd>Ctrl</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>. In macOS, gebruikt u <kbd>Cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>.
+1. Open het **opdracht palet** in Windows of Linux met <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>. Gebruik <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>in macOS.
 1. Zoek naar de **sessie**.
 1. Klik op **Power shell: menu sessie weer geven**.
 1. Kies de versie van Power shell die u wilt gebruiken in de lijst, bijvoorbeeld: **Power shell core**.
@@ -101,7 +101,7 @@ Als u Power shell hebt geïnstalleerd op een niet-typische locatie, wordt deze m
 
 Als u niet bekend bent met het wijzigen van instellingen in Visual Studio code, raden we u aan [de documentatie van de Visual Studio code-instellingen][vsc-settings] te lezen.
 
-Nadat u de documentatie hebt gelezen, kunt u configuratie-instellingen toevoegen in `settings.json`.
+Na het lezen van de documentatie kunt u configuratie-instellingen `settings.json`toevoegen in.
 
 ```json
 {
@@ -131,9 +131,9 @@ Als u niet wilt dat deze instellingen van invloed zijn op alle bestands typen, k
 
 ### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Uw eigen Power shell-paden toevoegen aan het menu sessie
 
-U kunt andere uitvoer bare Power shell-paden toevoegen aan het menu sessie via de [code-instelling van Visual Studio](https://code.visualstudio.com/docs/getstarted/settings): `powershell.powerShellAdditionalExePaths`.
+U kunt andere uitvoer bare Power shell-paden toevoegen aan het menu sessie met behulp van `powershell.powerShellAdditionalExePaths`de [Visual Studio code-instelling](https://code.visualstudio.com/docs/getstarted/settings):.
 
-Voeg een item toe aan de lijst `powershell.powerShellAdditionalExePaths` of maak een lijst als deze niet bestaat in uw `settings.json`:
+Voeg een item toe aan de `powershell.powerShellAdditionalExePaths` lijst of maak een lijst als deze niet bestaat in `settings.json`uw:
 
 ```json
 {
@@ -152,10 +152,10 @@ Voeg een item toe aan de lijst `powershell.powerShellAdditionalExePaths` of maak
 
 Elk item moet het volgende bevatten:
 
-- `exePath`: het pad naar de `pwsh` of `powershell` uitvoer bare bestand.
-- `versionName`: de tekst die wordt weer gegeven in het menu van de sessie.
+- `exePath`: Het pad naar het `pwsh` of `powershell` het uitvoer bare bestand.
+- `versionName`: De tekst die wordt weer gegeven in het menu van de sessie.
 
-Als u de standaard versie van Power shell wilt instellen, stelt u de waarde `powershell.powerShellDefaultVersion` in op de tekst die wordt weer gegeven in het menu sessie (ook wel bekend als de `versionName`):
+Als u de standaard-Power shell-versie wilt `powershell.powerShellDefaultVersion` instellen, stelt u de waarde in op de tekst die wordt weer `versionName`gegeven in het menu sessie (ook wel bekend als de):
 
 ```json
 {
@@ -188,7 +188,7 @@ De huidige Power shell-extensie biedt geen ondersteuning voor [Power Shell v3 en
 > [!CAUTION]
 > Er zijn geen aanvullende oplossingen voor deze oudere versie van de uitbrei ding. Het wordt weer gegeven als IS, maar is beschikbaar voor u als u nog steeds Windows Power Shell v3 en Windows Power shell v4 gebruikt.
 
-Open eerst het deel venster uitbrei ding en zoek naar `PowerShell`. Klik vervolgens op het vistuig en selecteer **een andere versie installeren...** .
+Open eerst het deel venster uitbrei ding en `PowerShell`zoek naar. Klik vervolgens op het vistuig en selecteer **een andere versie installeren...**.
 
 ![Een andere versie installeren...](media/using-vscode/install-another-version.png)
 
@@ -219,11 +219,11 @@ Het deel venster acties voor fout opsporing wordt weer gegeven, waarin u de fout
 
 ### <a name="workspace-debugging"></a>Fout opsporing voor werk ruimten
 
-Fout opsporing in werk ruimte verwijst naar fout opsporing in de context van een map die u hebt geopend vanuit het menu **bestand** met **open map...** . De map die u opent, is doorgaans uw Power shell-projectmap of de hoofdmap van uw Git-opslag plaats. Met fout opsporing voor werk ruimten kunt u meerdere debug-configuraties definiëren, anders dan alleen fouten opsporen in het bestand dat momenteel is geopend.
+Fout opsporing in werk ruimte verwijst naar fout opsporing in de context van een map die u hebt geopend vanuit het menu **bestand** met **open map...**. De map die u opent, is doorgaans uw Power shell-projectmap of de hoofdmap van uw Git-opslag plaats. Met fout opsporing voor werk ruimten kunt u meerdere debug-configuraties definiëren, anders dan alleen fouten opsporen in het bestand dat momenteel is geopend.
 
 Voer de volgende stappen uit om een configuratie bestand voor fout opsporing te maken:
 
-1. Open de weer gave **fout opsporing** op Windows of Linux door op <kbd>Ctrl</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>te drukken. Druk in macOS op <kbd>Cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>.
+1. Open de weer gave **fout opsporing** in Windows of Linux door op <kbd>CTRL</kbd>+<kbd>+ SHIFT</kbd>+<kbd>D</kbd>te drukken. Druk op macOS op <kbd>cmd</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>.
 1. Klik op de koppeling **een launch. JSON-bestand maken** .
 1. Kies **Power shell**in het venster **omgeving selecteren** .
 1. Kies het type fout opsporing dat u wilt gebruiken:
@@ -233,7 +233,7 @@ Voer de volgende stappen uit om een configuratie bestand voor fout opsporing te 
    - **Interactieve sessie** -opdrachten voor fout opsporing in de geïntegreerde console
    - Het fout **opsporingsprogramma koppelen aan** een actief Power shell-hostproces
 
-Met Visual Studio code maakt u een map en een bestand `.vscode\launch.json` in de hoofdmap van de map werk ruimte om de configuratie van fout opsporing op te slaan. Als uw bestanden zich in een Git-opslag plaats bevinden, wilt u meestal het `launch.json` bestand door voeren. De inhoud van het `launch.json` bestand zijn:
+Met Visual Studio code maakt u een map en `.vscode\launch.json` een bestand in de hoofdmap van de map werk ruimte voor het opslaan van de configuratie van fout opsporing. Als uw bestanden zich in een Git-opslag plaats bevinden, wilt u `launch.json` het bestand doorgaans door voeren. De inhoud van het `launch.json` bestand is:
 
 ```json
 {

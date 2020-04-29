@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: Power shell, cmdlet, down load, install, Setup, Windows 10, Windows 8,1, Windows 8.0, Windows 7
 title: Windows PowerShell installeren
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086473"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell installeren
@@ -59,7 +59,7 @@ De enige uitzonde ring op de bovenstaande regel is de ISE in Windows Server 2008
 
 ## <a name="how-to-check-the-version-of-powershell"></a>De versie van Power shell controleren
 
-Als u wilt weten welke versie van Power shell u hebt geïnstalleerd, start u een Power shell-console (of de ISE), typt u `$PSVersionTable` en drukt u op **Enter**. Zoek naar de `PSVersion` waarde.
+Als u wilt weten welke versie van Power shell u hebt geïnstalleerd, start u een Power shell-console ( `$PSVersionTable` of de ISE) en typt u en drukt u op **Enter**. Zoek naar de `PSVersion` waarde.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Bestaande Windows Power shell bijwerken
 
@@ -70,9 +70,9 @@ Als u uw bestaande versie van Power shell in Windows wilt bijwerken, gebruikt u 
 
 Windows | PS 3.0 | PS 4.0 | PS 5,0 | PS 5.1 |
 --|--|--|--|--|
-Windows 10 (Zie Note1)<br/>Windows Server 2016 | - | - | - | geïnstalleerd
-Windows 8.1<br/>Windows Server 2012 R2 | - | geïnstalleerd | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | geïnstalleerd | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 10 (Zie Note1)<br/>Windows Server 2016 | - | - | - | nstalleerd
+Windows 8.1<br/>Windows Server 2012 R2 | - | nstalleerd | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | nstalleerd | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]
@@ -89,6 +89,6 @@ Als dat niet het geval is, moet u [Azure PowerShell installeren en configureren]
 
 ## <a name="see-also"></a>Zie ook
 
-[Systeem vereisten voor Windows Power shell](Windows-PowerShell-System-Requirements.md)
+[Windows PowerShell-systeemvereisten](Windows-PowerShell-System-Requirements.md)
 
-[Windows Power shell starten](../getting-started/Starting-Windows-PowerShell.md)
+[Windows PowerShell starten](../getting-started/Starting-Windows-PowerShell.md)

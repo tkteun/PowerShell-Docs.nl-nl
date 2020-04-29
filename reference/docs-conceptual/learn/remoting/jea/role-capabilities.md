@@ -3,15 +3,15 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA
 ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406872"
 ---
 # <a name="jea-role-capabilities"></a>JEA
 
-Wanneer u een JEA-eind punt maakt, moet u een of meer functie mogelijkheden definiëren die beschrijven wat iemand kan doen in een JEA-sessie. Een functie mogelijkheid is een Power shell-gegevens bestand met de extensie `.psrc` die alle cmdlets, functies, providers en externe Program ma's bevat die beschikbaar worden gesteld voor het verbinden van gebruikers.
+Wanneer u een JEA-eind punt maakt, moet u een of meer functie mogelijkheden definiëren die beschrijven wat iemand kan doen in een JEA-sessie. Een functie mogelijkheid is een Power shell-gegevens bestand `.psrc` met de extensie waarin alle cmdlets, functies, providers en externe Program ma's worden vermeld die beschikbaar worden gesteld voor het verbinden van gebruikers.
 
 ## <a name="determine-which-commands-to-allow"></a>Bepalen welke opdrachten moeten worden toegestaan
 
@@ -51,7 +51,7 @@ Het resulterende bestand met de functie moet worden bewerkt om de opdrachten toe
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>Power shell-cmdlets en-functies toestaan
 
-Als u gebruikers wilt autoriseren om Power shell-cmdlets of-functies uit te voeren, voegt u de cmdlet of functie naam toe aan de velden VisibleCmdlets of VisibleFunctions. Als u niet zeker weet of een opdracht een cmdlet of functie is, kunt u `Get-Command <name>` uitvoeren en de eigenschap **CommandType** in de uitvoer controleren.
+Als u gebruikers wilt autoriseren om Power shell-cmdlets of-functies uit te voeren, voegt u de cmdlet of functie naam toe aan de velden VisibleCmdlets of VisibleFunctions. Als u niet zeker weet of een opdracht een cmdlet of functie is, kunt u `Get-Command <name>` de eigenschap **CommandType** in de uitvoer uitvoeren en controleren.
 
 ```powershell
 VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
@@ -77,15 +77,15 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 In de volgende tabel worden de verschillende manieren beschreven waarop u een zicht bare cmdlet of functie kunt aanpassen.
 U kunt elk van de onderstaande items combi neren in het veld **VisibleCmdlets** .
 
-|                                           Voorbeeld                                           |                                                             Use-case                                                              |
+|                                           Voorbeeld                                           |                                                             Gebruiksvoorbeeld                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `'My-Func'` of `@{ Name = 'My-Func' }`                                                      | Hiermee kan de gebruiker `My-Func` uitvoeren zonder enige beperkingen van de para meters.                                                      |
-| `'MyModule\My-Func'`                                                                        | Hiermee kan de gebruiker `My-Func` uitvoeren vanuit de module `MyModule` zonder enige beperkingen van de para meters.                           |
-| `'My-*'`                                                                                    | Hiermee kan de gebruiker een cmdlet of functie uitvoeren met de term `My`.                                                                 |
-| `'*-Func'`                                                                                  | Hiermee kan de gebruiker een cmdlet of functie uitvoeren met het zelfstandige naam `Func`.                                                               |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Hiermee kan de gebruiker `My-Func` uitvoeren met de `Param1`-en `Param2`-para meters. Elke waarde kan worden opgegeven voor de para meters.          |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Hiermee kan de gebruiker `My-Func` uitvoeren met de para meter `Param1`. Alleen waarde1 en waarde2 kunnen worden opgegeven voor de para meter.        |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Hiermee kan de gebruiker `My-Func` uitvoeren met de para meter `Param1`. Elke waarde die begint met ' Contoso ' kan worden opgegeven voor de para meter. |
+| `'My-Func'` of `@{ Name = 'My-Func' }`                                                      | Hiermee kan de gebruiker zonder `My-Func` beperkingen voor de para meters worden uitgevoerd.                                                      |
+| `'MyModule\My-Func'`                                                                        | Hiermee kan de gebruiker zonder `My-Func` enige beperkingen van `MyModule` de para meters worden uitgevoerd vanuit de module.                           |
+| `'My-*'`                                                                                    | Hiermee kan de gebruiker een cmdlet of functie met de bewerking `My`uitvoeren.                                                                 |
+| `'*-Func'`                                                                                  | Hiermee kan de gebruiker een cmdlet of functie uitvoeren met het zelfstandig `Func`naam woord.                                                               |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | Hiermee kan de gebruiker uitvoeren `My-Func` met de `Param1` para `Param2` meters en. Elke waarde kan worden opgegeven voor de para meters.          |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | Hiermee kan de gebruiker met `My-Func` de `Param1` para meter worden uitgevoerd. Alleen waarde1 en waarde2 kunnen worden opgegeven voor de para meter.        |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | Hiermee kan de gebruiker met `My-Func` de `Param1` para meter worden uitgevoerd. Elke waarde die begint met ' Contoso ' kan worden opgegeven voor de para meter. |
 
 > [!WARNING]
 > Voor de beste beveiligings procedures wordt het niet aanbevolen joker tekens te gebruiken bij het definiëren van zicht bare cmdlets of functies. In plaats daarvan moet u elke vertrouwde opdracht expliciet vermelden om ervoor te zorgen dat geen andere opdrachten die hetzelfde naamgevings schema delen, per ongeluk worden geautoriseerd.
@@ -108,7 +108,7 @@ Als dat mogelijk is, kunt u de Power shell-cmdlet of functie equivalenten gebrui
 
 Met veel uitvoer bare bestanden kunt u de huidige status lezen en deze vervolgens wijzigen door verschillende para meters op te geven.
 
-Denk bijvoorbeeld aan de rol van een bestands Server beheerder die netwerk shares beheert die worden gehost op een systeem. Een manier om shares te beheren, is het gebruik van `net share`. Het toestaan van **net. exe** is echter gevaarlijk omdat de gebruiker de opdracht kan gebruiken om beheerders bevoegdheden te verkrijgen met `net group Administrators unprivilegedjeauser /add`. Een veiligere optie is om [Get-SmbShare](/powershell/module/smbshare/get-smbshare)toe te staan, waardoor hetzelfde resultaat wordt gerealiseerd, maar een veel beperkt bereik heeft.
+Denk bijvoorbeeld aan de rol van een bestands Server beheerder die netwerk shares beheert die worden gehost op een systeem. Een manier om shares te beheren, `net share`is het gebruik van. Het toestaan van **net. exe** is echter gevaarlijk omdat de gebruiker de opdracht kan gebruiken om beheerders bevoegdheden te `net group Administrators unprivilegedjeauser /add`verkrijgen met. Een veiligere optie is om [Get-SmbShare](/powershell/module/smbshare/get-smbshare)toe te staan, waardoor hetzelfde resultaat wordt gerealiseerd, maar een veel beperkt bereik heeft.
 
 Wanneer u externe opdrachten beschikbaar wilt maken voor gebruikers in een JEA-sessie, geeft u altijd het volledige pad naar het uitvoer bare bestand op. Dit voor komt dat de uitvoering van op dezelfde wijze benoemde en mogelijk schadelijke Program ma's elders op het systeem wordt uitgevoerd.
 
@@ -116,7 +116,7 @@ Wanneer u externe opdrachten beschikbaar wilt maken voor gebruikers in een JEA-s
 
 Standaard zijn er geen Power shell-providers beschikbaar in JEA-sessies. Dit vermindert het risico van gevoelige informatie en configuratie-instellingen die worden gepresenteerd aan de gebruiker die verbinding maakt.
 
-Als dat nodig is, kunt u toegang tot de Power shell-providers toestaan met de opdracht `VisibleProviders`. Voer `Get-PSProvider`uit voor een volledige lijst met providers.
+Als dat nodig is, kunt u toegang tot de Power shell- `VisibleProviders` providers toestaan met behulp van de opdracht. Voer uit `Get-PSProvider`voor een volledige lijst met providers.
 
 ```powershell
 VisibleProviders = 'Registry'
@@ -148,10 +148,10 @@ FunctionDefinitions = @{
 
 De hoofd tekst (script blok) van aangepaste functies wordt uitgevoerd in de standaard taal modus voor het systeem en is niet onderhevig aan de taal beperkingen van de JEA. Dit betekent dat functies toegang hebben tot het bestands systeem en het REGI ster en om opdrachten uit te voeren die niet zichtbaar zijn gemaakt in het functie-Capability-bestand. Zorg ervoor dat u geen wille keurige code uitvoert wanneer para meters worden gebruikt. Vermijd de gebruikers invoer van sluizen rechtstreeks in cmdlets zoals `Invoke-Expression`.
 
-In het bovenstaande voor beeld ziet u dat de volledig gekwalificeerde module naam (FQMN) `Microsoft.PowerShell.Utility\Select-Object` gebruikt in plaats van de steno `Select-Object`.
+In het bovenstaande voor beeld ziet u dat de volledig gekwalificeerde module naam (FQMN `Microsoft.PowerShell.Utility\Select-Object` ) is gebruikt in plaats van `Select-Object`de steno.
 Functies die zijn gedefinieerd in de functie-Capability-bestanden, zijn nog steeds afhankelijk van het bereik van JEA-sessies. Dit omvat de proxy functies JEA maakt om bestaande opdrachten te beperken.
 
-`Select-Object` is standaard een beperkte cmdlet in alle JEA-sessies waarbij geen wille keurige eigenschappen van objecten zijn toegestaan. Als u de niet-beperkende `Select-Object` in functies wilt gebruiken, moet u de volledige implementatie expliciet aanvragen met behulp van de FQMN. Een beperkte cmdlet in een JEA-sessie heeft dezelfde beperkingen als deze worden aangeroepen vanuit een functie. Zie [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)voor meer informatie.
+Standaard `Select-Object` is een beperkte cmdlet in alle JEA-sessies die niet toestaan dat wille keurige eigenschappen van objecten worden geselecteerd. U kunt de volledige implementatie expliciet `Select-Object` aanvragen met behulp van de FQMN om de onbeperkte functies te gebruiken. Een beperkte cmdlet in een JEA-sessie heeft dezelfde beperkingen als deze worden aangeroepen vanuit een functie. Zie [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)voor meer informatie.
 
 Als u verschillende aangepaste functies schrijft, is het handiger om ze in een Power shell-script module te plaatsen. U maakt deze functies zichtbaar in de JEA-sessie met behulp van het veld **VisibleFunctions** , zoals u dat ook zou doen met ingebouwde en modules van derden.
 
@@ -159,9 +159,9 @@ Voor een juiste werking van de tabtoets in JEA-sessies moet u de ingebouwde func
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>De functie mogelijkheden beschikbaar maken voor een configuratie
 
-Vóór Power shell 6, voor Power shell om een functie bestand te vinden, moet het worden opgeslagen in een **RoleCapabilities** -map in een Power shell-module. De module kan worden opgeslagen in een map die is opgenomen in de omgevings variabele `$env:PSModulePath`, maar mag niet worden geplaatst in `$env:SystemRoot\System32` of een map waarin niet-vertrouwde gebruikers de bestanden kunnen wijzigen.
+Vóór Power shell 6, voor Power shell om een functie bestand te vinden, moet het worden opgeslagen in een **RoleCapabilities** -map in een Power shell-module. De module kan worden opgeslagen in een map die is opgenomen `$env:PSModulePath` in de omgevings variabele, maar mag niet `$env:SystemRoot\System32` worden geplaatst in of een map waarin niet-vertrouwde gebruikers de bestanden kunnen wijzigen.
 
-In het volgende voor beeld wordt een Power shell-script module met de naam **ContosoJEA** in het pad `$env:ProgramFiles` gemaakt om het bestand met functie mogelijkheden te hosten.
+In het volgende voor beeld wordt een Power shell **ContosoJEA** -script module `$env:ProgramFiles` gemaakt met de naam ContosoJEA in het pad voor het hosten van het bestand met functie mogelijkheden.
 
 ```powershell
 # Create a folder for the module
@@ -245,7 +245,7 @@ $mergedAandB = @{
 Alle andere velden in het bestand met de functie worden toegevoegd aan een cumulatieve set toegestane externe opdrachten, aliassen, providers en opstart scripts. Alle opdrachten, aliassen, providers of scripts die beschikbaar zijn in een functie mogelijkheid, zijn beschikbaar voor de JEA-gebruiker.
 
 Zorg ervoor dat de gecombineerde set providers van de ene functie mogelijkheid en cmdlets/functions/functies/opdrachten van een andere gebruikers geen onbedoelde toegang tot systeem bronnen biedt.
-Als bijvoorbeeld de ene rol de `Remove-Item`-cmdlet toestaat en een andere de `FileSystem` provider toestaat, loopt u het risico dat een JEA-gebruiker wille keurige bestanden op uw computer verwijdert. Meer informatie over het identificeren van de juiste machtigingen van gebruikers vindt u in het artikel [controle JEA](audit-and-report.md) .
+Als bijvoorbeeld de ene rol de `Remove-Item` cmdlet toestaat en een andere de `FileSystem` provider toestaat, loopt u het risico dat een JEA-gebruiker wille keurige bestanden op uw computer verwijdert. Meer informatie over het identificeren van de juiste machtigingen van gebruikers vindt u in het artikel [controle JEA](audit-and-report.md) .
 
 ## <a name="next-steps"></a>Volgende stappen
 

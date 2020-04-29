@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: Power shell, cmdlet
 title: Met software-installaties werken
 ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76996130"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
@@ -33,7 +33,7 @@ Name             Caption                   Vendor                    Version    
 Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
-Als u alle eigenschappen van het **Win32_Product** -object wilt weer geven in de weer gave, gebruikt u de para meter **Eigenschappen** van de opmaak-cmdlets, zoals de `Format-List` cmdlet, met de waarde `*` (alle).
+Als u alle eigenschappen van het **Win32_Product** -object wilt weer geven in de weer gave, gebruikt u de para meter **Eigenschappen** van de format `Format-List` -cmdlets, zoals de `*` cmdlet, met een waarde van (alle).
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -75,7 +75,7 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-U kunt ook de para meter `Get-CimInstance` **filter** gebruiken om alleen Microsoft .net 2,0-runtime te selecteren. De waarde van de **filter** parameter maakt gebruik van de syntaxis WMI Query Language (WQL), geen Windows Power shell-syntaxis. Bijvoorbeeld:
+U kunt ook de `Get-CimInstance` **filter** parameter gebruiken om alleen Microsoft .net 2,0-runtime te selecteren. De waarde van de **filter** parameter maakt gebruik van de syntaxis WMI Query Language (WQL), geen Windows Power shell-syntaxis. Bijvoorbeeld:
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
@@ -127,7 +127,7 @@ We hebben nu een station met de naam ' uninstall: ' dat kan worden gebruikt om s
 459
 ```
 
-We kunnen deze lijst met toepassingen verder doorzoeken door gebruik te maken van verschillende technieken, te beginnen met `Get-ChildItem`. Gebruik de volgende opdracht om een lijst met toepassingen op te halen en deze op te slaan in de variabele `$UninstallableApplications`:
+We kunnen deze lijst met toepassingen verder doorzoeken door gebruik te maken van verschillende technieken, te `Get-ChildItem`beginnen met. Gebruik de volgende opdracht om een lijst met toepassingen op te `$UninstallableApplications` halen en deze op te slaan in de variabele:
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
@@ -189,7 +189,7 @@ U kunt de klasse **Win32_Product** gebruiken om Windows Installer pakketten exte
 > [!NOTE]
 > Als u een toepassing wilt installeren, moet u Power shell starten met de optie als administrator uitvoeren.
 
-Wanneer u extern installeert, gebruikt u een UNC-netwerkpad (Universal Naming Convention) om het pad naar het MSI-pakket op te geven, omdat het WMI-subsysteem geen Power shell-paden begrijpt. Als u bijvoorbeeld het pakket NewPackage. msi wilt installeren dat zich bevindt in de netwerk share `\\AppServ\dsp` op de externe computer PC01, typt u de volgende opdracht achter de Power shell-prompt:
+Wanneer u extern installeert, gebruikt u een UNC-netwerkpad (Universal Naming Convention) om het pad naar het MSI-pakket op te geven, omdat het WMI-subsysteem geen Power shell-paden begrijpt. Als u bijvoorbeeld het pakket NewPackage. msi wilt installeren dat zich bevindt `\\AppServ\dsp` in de netwerk share op de externe computer PC01, typt u de volgende opdracht achter de Power shell-prompt:
 
 ```powershell
 Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}

@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Samengestelde resources: met behulp van een DSC-configuratie als resource'
 ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75415894"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Samengestelde resources: het gebruik van een DSC-configuratie als een resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In praktijk situaties kunnen configuraties lang en complex worden, waardoor veel verschillende bronnen worden aangeroepen en een groot aantal eigenschappen kan worden ingesteld. U kunt deze complexiteit helpen aanpakken door een Windows Power shell desired state Configuration (DSC)-configuratie te gebruiken als een resource voor andere configuraties. Dit wordt een samengestelde resource genoemd. Een samengestelde resource is een DSC-configuratie waarvoor para meters worden gebruikt. De para meters van de configuratie Act als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met een `.schema.psm1`-extensie. Het is de plaats van zowel het MOF-schema als het bron script in een typische DSC-resource. Zie [Windows Power shell desired state Configuration resources](resources.md)(Engelstalig) voor meer informatie over DSC-resources.
+In praktijk situaties kunnen configuraties lang en complex worden, waardoor veel verschillende bronnen worden aangeroepen en een groot aantal eigenschappen kan worden ingesteld. U kunt deze complexiteit helpen aanpakken door een Windows Power shell desired state Configuration (DSC)-configuratie te gebruiken als een resource voor andere configuraties. Dit wordt een samengestelde resource genoemd. Een samengestelde resource is een DSC-configuratie waarvoor para meters worden gebruikt. De para meters van de configuratie Act als de eigenschappen van de resource. De configuratie wordt opgeslagen als een bestand met een `.schema.psm1` extensie. Het is de plaats van zowel het MOF-schema als het bron script in een typische DSC-resource. Zie [Windows Power shell desired state Configuration resources](resources.md)(Engelstalig) voor meer informatie over DSC-resources.
 
 ## <a name="creating-the-composite-resource"></a>De samengestelde resource maken
 
@@ -136,14 +136,14 @@ Configuration xVirtualMachine
 
 ### <a name="saving-the-configuration-as-a-composite-resource"></a>De configuratie opslaan als een samengestelde resource
 
-Als u de para meter configuratie wilt gebruiken als een DSC-resource, slaat u deze op in een directory structuur, zoals die van elke andere op MOF gebaseerde resource, en noemt u deze met een `.schema.psm1`-extensie. In dit voor beeld noemen we het bestand `xVirtualMachine.schema.psm1`. U moet ook een manifest maken met de naam `xVirtualMachine.psd1` die de volgende regel bevat.
+Als u de para meter configuratie wilt gebruiken als een DSC-resource, slaat u deze op in een directory structuur zoals die van elke andere op MOF gebaseerde resource, `.schema.psm1` en noemt u deze met een uitbrei ding. In dit voor beeld noemen we het bestand `xVirtualMachine.schema.psm1`. U moet ook een manifest maken met de `xVirtualMachine.psd1` naam die de volgende regel bevat.
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
 > [!NOTE]
-> Dit is een aanvulling op `MyDscResources.psd1`, het module manifest voor alle resources in de map `MyDscResources`.
+> Dit is een aanvulling op `MyDscResources.psd1`het module manifest voor alle resources in de `MyDscResources` map.
 
 Wanneer u klaar bent, moet de mapstructuur de volgende zijn.
 
@@ -157,7 +157,7 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-De resource kan nu worden gedetecteerd met behulp van de cmdlet `Get-DscResource`, en de bijbehorende eigenschappen kunnen worden gedetecteerd door de cmdlet of door gebruik te maken van <kbd>Ctrl</kbd>+<kbd>Space</kbd> automatisch aanvullen in de Windows PowerShell ISE.
+De resource kan nu worden gedetecteerd met behulp van `Get-DscResource` de-cmdlet, en de bijbehorende eigenschappen kunnen worden gedetecteerd door de cmdlet of door gebruik te maken van de functie voor automatisch aanvullen met <kbd>CTRL</kbd>+-<kbd>ruimte</kbd> in de Windows PowerShell ISE.
 
 ## <a name="using-the-composite-resource"></a>De samengestelde Resource gebruiken
 
@@ -221,7 +221,7 @@ Configuration MultipleVms
 
 De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie](../configurations/configurations.md) bron blok om op te geven dat de resource moet worden uitgevoerd onder een opgegeven set referenties. Zie [DSC uitvoeren met gebruikers referenties](../configurations/runAsUser.md)voor meer informatie.
 
-Als u toegang wilt krijgen tot de gebruikers context vanuit een aangepaste resource, kunt u de automatische variabele `$PsDscContext`gebruiken.
+Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$PsDscContext`gebruiken.
 
 Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 

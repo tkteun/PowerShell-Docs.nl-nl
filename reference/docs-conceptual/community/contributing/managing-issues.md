@@ -1,16 +1,16 @@
 ---
-title: Hoe we problemen beheren
+title: De manier waarop we problemen beheren
 description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078533"
 ---
-# <a name="how-we-manage-issues"></a>Hoe we problemen beheren
+# <a name="how-we-manage-issues"></a>De manier waarop we problemen beheren
 
 In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het Power shell-docs-team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs 
 
 #### <a name="label-types"></a>Label typen
 
-|Beleids  | Beschrijving                                                         |
+|Voorvoegsel  | Beschrijving                                                         |
 |------- | --------------------------------------------------------------------|
 |Onderwerp    | Wordt gebruikt om aan te geven welk gedeelte van Power shell of welke docs het probleem ondervindt.<br>Deze optie is handig voor eigen aars om problemen voor hun functie te vinden.|
 |Pri     | Wordt gebruikt om de prioriteit van het probleem aan te geven. Waarde bereik 0-4.        |
@@ -39,7 +39,7 @@ In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs 
 |Status  | Wordt gebruikt om de status van het werk item aan te geven                        |
 |Wachten | Wordt gebruikt om aan te geven dat wij wachten op iets                   |
 
-#### <a name="milestones"></a>Mijl palen
+#### <a name="milestones"></a>Milestones
 
 Problemen en pull moeten worden gelabeld met de juiste mijl paal. Als het probleem niet is gericht op een specifieke versie, wordt er geen mijl paal gebruikt. Problemen voor docs pull die nog moeten worden samengevoegd met de Power shell-code basis, moeten worden toegewezen aan de **toekomstige** mijl paal. Nadat de code wijziging is samengevoegd, wijzigt u de mijl paal naar de juiste versie.
 
@@ -48,7 +48,7 @@ Problemen en pull moeten worden gelabeld met de juiste mijl paal. Als het proble
 | 6.x              | Werk items met betrekking tot Power shell 6,0 t/m 6.2. x |
 | 7.0.0            | Werk items met betrekking tot Power shell 7,0               |
 | 7.1.0            | Werk items met betrekking tot Power shell 7,1               |
-| toekomstig           | Werk items een toekomstige versie van Power shell          |
+| Toekomstig           | Werk items een toekomstige versie van Power shell          |
 | PSReadline-vNext | Werk items een toekomstige versie van PSReadline          |
 
 ## <a name="triage-process"></a>Sorteren-proces
@@ -62,19 +62,19 @@ Het Power shell docs-team voldoet slechts één keer per week voor het bespreken
 
   | DocSet    | URL van product feedback                                         |
   | --------- | ------------------------------------------------------------ |
-  | Developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | sjablonen   | https://github.com/powershell/powershellgallery/issues/new   |
+  | ontwikkelaar | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | DSC       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | galerie   | https://github.com/powershell/powershellgallery/issues/new   |
   | JEA       | https://github.com/powershell/jea/issues/new                 |
-  | Verwijzing | https://github.com/PowerShell/PowerShell/issues/new/choose   |
+  | referentielaag | https://github.com/PowerShell/PowerShell/issues/new/choose   |
   | WMF       | https://windowsserver.uservoice.com/forums/301869-powershell |
 
-### <a name="support-requests"></a>Ondersteunings aanvragen
+### <a name="support-requests"></a>Ondersteuningsaanvragen
 
 - Als de vraag van de ondersteuning eenvoudig is, beantwoordt u deze en sluit u het probleem.
 - Als de vraag gecompliceerder is, of als de indiener antwoordt met meer vragen, stuurt u deze om naar forums en ondersteunings kanalen. Voorgestelde tekst voor omleiding naar forums:
 
-    > Dit is niet het juiste forum voor dit soort vragen. Probeer uw vraag te plaatsen in een forum Community-ondersteuning. Zie https://docs.microsoft.com/powershell/scripting/community/community-support voor een lijst met community-forums.
+    > Dit is niet het juiste forum voor dit soort vragen. Probeer uw vraag te plaatsen in een forum Community-ondersteuning. Zie voor een lijst met Community-Forums:https://docs.microsoft.com/powershell/scripting/community/community-support
 
 ### <a name="code-of-conduct-violations"></a>Gedrags code schendingen
 

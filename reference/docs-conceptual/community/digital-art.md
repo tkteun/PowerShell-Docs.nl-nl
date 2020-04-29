@@ -4,10 +4,10 @@ ms.author: sewhee
 ms.date: 02/14/2020
 title: Power shell-digitale illustraties
 ms.openlocfilehash: e67cafa274ca1720661aa24953278c13444d7698
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078561"
 ---
 # <a name="powershell-digital-art"></a>Power shell-digitale illustraties
@@ -26,7 +26,7 @@ Geniet van de onderstaande digitale illustraties. Laat zien hoe u uw peers *hebt
 - [Power shell-handhelds Comic (afdruk resolutie)](https://aka.ms/powershellherocomic_print)
 - [Power shell-handhelds Comic (webresolutie)](https://aka.ms/powershellherocomic_web)
 
-## <a name="wallpaper"></a>Bitmapindeling
+## <a name="wallpaper"></a>Achtergrond
 
 - [Power shell-handheld Comic-achtergrond (resolutie van 4.000)](https://aka.ms/powershellherowallpaper)
 - [Power shell-afbeelding roze achtergrond (resolutie van 4.000)](https://aka.ms/powershellherowallpaper1)
@@ -48,4 +48,4 @@ Als algemene regel kunnen derden geen micro soft-logo's en-illustraties gebruike
 
 Alle toepassingen buiten deze richt lijnen, zoals bepaald door micro soft, zijn strikt verboden. Gebruik niet het logo of de illustratie van micro soft power shell in producten, product verpakking of andere zakelijke services waarvoor een formele licentie is vereist.
 
-Micro soft behoudt zich het recht voor om de toestemming voor het weer geven van het logo of de illustratie te beëindigen of te wijzigen, en kan verzoeken dat derden het logo of de illustratie wijzigen of verwijderen die, in het enige arrest van micro soft, niet aan deze voor schriften voldoen richt lijnen of kunnen anderszins van invloed zijn op de rechten van micro soft in het logo.
+Micro soft behoudt zich het recht voor om toestemming voor het weer geven van het logo of de illustratie te beëindigen of te wijzigen, en kan verzoeken dat derden het logo of de illustratie wijzigen of verwijderen die, in het enige arrest van micro soft, niet aan deze richt lijnen voldoen of anderszins van invloed kunnen zijn op de rechten van micro soft in het logo.

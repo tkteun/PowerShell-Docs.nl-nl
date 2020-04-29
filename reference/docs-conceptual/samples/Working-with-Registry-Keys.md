@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: Power shell, cmdlet
 title: Met registersleutels werken
 ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736842"
 ---
 # <a name="working-with-registry-keys"></a>Met registersleutels werken
@@ -15,7 +15,7 @@ Omdat register sleutels items op Power Shell-stations zijn, is het samen werken 
 
 ## <a name="listing-all-subkeys-of-a-registry-key"></a>Alle subsleutels van een register sleutel weer geven
 
-U kunt alle items rechtstreeks in een register sleutel weer geven met behulp van `Get-ChildItem`. Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht worden bijvoorbeeld de items rechtstreeks weer gegeven in het Power Shell-station `HKCU:`, dat overeenkomt met de `HKEY_CURRENT_USER` register component:
+U kunt alle items rechtstreeks in een register sleutel weer geven met `Get-ChildItem`behulp van. Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht worden bijvoorbeeld de items rechtstreeks in het Power shell `HKCU:`-station weer gegeven, `HKEY_CURRENT_USER` die overeenkomen met de register component:
 
 ```powershell
 Get-ChildItem -Path HKCU:\ | Select-Object Name
@@ -45,9 +45,9 @@ HKEY_CURRENT_USER\WXP
 HKEY_CURRENT_USER\Volatile Environment
 ```
 
-Dit zijn de sleutels op het hoogste niveau die zichtbaar zijn onder `HKEY_CURRENT_USER` in de REGI ster-editor (Regedit. exe).
+Dit zijn de sleutels op het hoogste niveau die `HKEY_CURRENT_USER` zichtbaar zijn onder in de REGI ster-editor (Regedit. exe).
 
-U kunt dit registerpad ook opgeven door de naam van de register provider op te geven, gevolgd door `::`. De volledige naam van de register provider is `Microsoft.PowerShell.Core\Registry`, maar dit kan worden inge kort tot alleen `Registry`. Met een van de volgende opdrachten wordt de inhoud direct onder `HKCU:`weer geven.
+U kunt dit registerpad ook opgeven door de naam van de register provider op te geven, `::`gevolgd door. De volledige naam van de register provider `Microsoft.PowerShell.Core\Registry`is, maar dit kan worden inge kort tot `Registry`alleen. Met een van de volgende opdrachten wordt de inhoud direct onder `HKCU:`weer geven.
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -57,13 +57,13 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Met deze opdrachten worden alleen de rechtstreeks opgenomen items weer geven, vergelijkbaar met het gebruik van `DIR` in **cmd. exe** of `ls` in een Unix-shell. Als u opgenomen items wilt weer geven, moet u de para meter **recursief** opgeven. Als u alle register sleutels in `HKCU:`wilt weer geven, gebruikt u de volgende opdracht.
+Met deze opdrachten worden alleen de direct opgenomen items weer geven, `DIR` net als in **cmd. exe** of `ls` in een Unix-shell. Als u opgenomen items wilt weer geven, moet u de para meter **recursief** opgeven. Als u alle register sleutels in `HKCU:`wilt weer geven, gebruikt u de volgende opdracht.
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem` kunt complexe filter mogelijkheden uitvoeren met de para meters **Path**, **filter**, **include**en **exclude** , maar die para meters zijn doorgaans alleen gebaseerd op naam. U kunt complexe filtering op basis van andere eigenschappen van items uitvoeren met behulp van de cmdlet `Where-Object`. Met de volgende opdracht worden alle sleutels in `HKCU:\Software` gevonden die niet meer dan één subsleutel hebben en ook precies vier waarden hebben:
+`Get-ChildItem`kan complexe filter functies uitvoeren met de para meters **Path**, **filter**, **include**en **exclude** , maar die para meters zijn doorgaans alleen gebaseerd op naam. U kunt complexe filtering uitvoeren op basis van andere eigenschappen van items met `Where-Object` behulp van de-cmdlet. Met de volgende opdracht worden alle sleutels `HKCU:\Software` in die niet meer dan één subsleutel en ook precies vier waarden bevatten:
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -72,13 +72,13 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>Sleutels kopiëren
 
-Kopiëren wordt uitgevoerd met `Copy-Item`. In het volgende voor beeld wordt de `CurrentVersion` subsleutel van `HKLM:\SOFTWARE\Microsoft\Windows\` en alle bijbehorende eigenschappen naar `HKCU:\`gekopieerd.
+Kopiëren is voltooid met `Copy-Item`. In het volgende voor beeld `CurrentVersion` worden de `HKLM:\SOFTWARE\Microsoft\Windows\` subsleutel van en alle bijbehorende `HKCU:\`eigenschappen naar gekopieerd.
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:
 ```
 
-Als u deze nieuwe sleutel in de REGI ster-Editor bekijkt of `Get-ChildItem`gebruikt, ziet u dat er geen kopieën van de subsleutels in de nieuwe locatie aanwezig zijn. Als u de gehele inhoud van een container wilt kopiëren, moet u de para meter **recursief** opgeven. Als u de voor gaande Kopieer opdracht recursief wilt maken, gebruikt u deze opdracht:
+Als u deze nieuwe sleutel in de REGI ster-editor bestudeert of gebruikt `Get-ChildItem`, ziet u dat er geen kopieën van de subsleutels in de nieuwe locatie aanwezig zijn. Als u de gehele inhoud van een container wilt kopiëren, moet u de para meter **recursief** opgeven. Als u de voor gaande Kopieer opdracht recursief wilt maken, gebruikt u deze opdracht:
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
@@ -111,7 +111,7 @@ Remove-Item -Path 'HKCU:\key with spaces in the name'
 
 ## <a name="removing-all-keys-under-a-specific-key"></a>Verwijderen van alle sleutels onder een bepaalde sleutel
 
-U kunt opgenomen items verwijderen door gebruik te maken van `Remove-Item`, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als we bijvoorbeeld proberen de `HKCU:\CurrentVersion` subsleutel te verwijderen, zien we dit:
+U kunt opgenomen items verwijderen met `Remove-Item`, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als we bijvoorbeeld proberen de subsleutel te verwijderen `HKCU:\CurrentVersion` die we hebben gemaakt, zien we het volgende:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion
@@ -131,7 +131,7 @@ Als u opgenomen items zonder vragen wilt verwijderen, geeft u de para meter **re
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 
-Als u alle items in `HKCU:\CurrentVersion` wilt verwijderen, maar niet `HKCU:\CurrentVersion` zelf, kunt u in plaats daarvan het volgende gebruiken:
+Als u alle items binnen `HKCU:\CurrentVersion` maar niet `HKCU:\CurrentVersion` zelf wilt verwijderen, kunt u in plaats daarvan het volgende gebruiken:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse

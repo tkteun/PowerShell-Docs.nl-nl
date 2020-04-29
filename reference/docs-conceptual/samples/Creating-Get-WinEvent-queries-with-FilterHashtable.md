@@ -2,19 +2,19 @@
 ms.date: 09/13/2019
 title: Get-WinEvent-query's maken met FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444385"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
 
 Zie [FilterHashTable gebruiken om gebeurtenis logboeken te filteren met Power shell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/)voor meer informatie over de oorspronkelijke blog post van 3 juni 2014 **Scripting Guy** .
 
-Dit artikel is een uittreksel van het oorspronkelijke blog bericht en legt uit hoe u de **FilterHashtable** -para meter van de `Get-WinEvent`-cmdlet kunt gebruiken om gebeurtenis logboeken te filteren. De cmdlet `Get-WinEvent` van Power shell is een krachtige methode voor het filteren van Windows-gebeurtenis-en Diagnostische logboeken. Prestaties verbeteren wanneer een `Get-WinEvent` query de para meter **FilterHashtable** gebruikt.
+Dit artikel is een fragment van het oorspronkelijke blog bericht en legt uit hoe u de `Get-WinEvent` **FilterHashtable** -para meter van de cmdlet kunt gebruiken om gebeurtenis logboeken te filteren. De cmdlet `Get-WinEvent` van Power shell is een krachtige methode voor het filteren van Windows-gebeurtenis-en Diagnostische logboeken. Prestaties verbeteren wanneer een `Get-WinEvent` query gebruikmaakt van de para meter **FilterHashtable** .
 
-Wanneer u werkt met grote gebeurtenis logboeken, is het niet efficiënt om objecten naar een `Where-Object` opdracht naar de pijp lijn te verzenden. Vóór Power shell 6 was de `Get-EventLog` cmdlet een andere optie om logboek gegevens op te halen. De volgende opdrachten zijn bijvoorbeeld inefficiënt om de logboeken van **micro soft-Windows-defragmentatie** te filteren:
+Wanneer u werkt met grote gebeurtenis logboeken, is het niet efficiënt om objecten naar een `Where-Object` opdracht van de pijp lijn te verzenden. Vóór Power shell 6 was de `Get-EventLog` cmdlet een andere optie om logboek gegevens op te halen. De volgende opdrachten zijn bijvoorbeeld inefficiënt om de logboeken van **micro soft-Windows-defragmentatie** te filteren:
 
 ```powershell
 Get-EventLog -LogName Application | Where-Object Source -Match defrag
@@ -38,8 +38,8 @@ Zie de [Scripting Guy-serie blog berichten over inventarisatie](https://devblogs
 
 ## <a name="hash-table-key-value-pairs"></a>Hash-tabel sleutel-waardeparen
 
-Voor het bouwen van efficiënte query's gebruikt u de cmdlet `Get-WinEvent` met de para meter **FilterHashtable** .
-**FilterHashtable** accepteert een hash-tabel als een filter voor het ophalen van specifieke informatie uit Windows-gebeurtenis Logboeken. Een hash-tabel gebruikt **sleutel-** waardeparen. Zie voor meer informatie over hashtabellen [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+Voor het bouwen van efficiënte query's gebruikt `Get-WinEvent` u de cmdlet met de para meter **FilterHashtable** .
+**FilterHashtable** accepteert een hash-tabel als een filter voor het ophalen van specifieke informatie uit Windows-gebeurtenis Logboeken. Een hash-tabel gebruikt **sleutel-** waardeparen. Zie [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)voor meer informatie over hash-tabellen.
 
 Als de **sleutel-** waardeparen zich op dezelfde regel bevinden, moeten ze worden gescheiden door een punt komma. Als elk **sleutel/waarde-** paar zich op een afzonderlijke regel bevindt, hoeft u geen punt komma te koppelen. Dit artikel plaatst bijvoorbeeld **sleutel-** waardeparen op afzonderlijke regels en maakt geen gebruik van punt komma's.
 
@@ -56,11 +56,11 @@ De volgende tabel geeft de sleutel namen, gegevens typen en of joker tekens word
 | ProviderName   | `<String[]>`    | Ja                          |
 | Pad           | `<String[]>`    | Nee                           |
 | Trefwoorden       | `<Long[]>`      | Nee                           |
-| ID             | `<Int32[]>`     | Nee                           |
+| Id             | `<Int32[]>`     | Nee                           |
 | Niveau          | `<Int32[]>`     | Nee                           |
 | StartTime      | `<DateTime>`    | Nee                           |
 | EndTime        | `<DateTime>`    | Nee                           |
-| Gebruikers-id         | `<SID>`         | Nee                           |
+| UserID         | `<SID>`         | Nee                           |
 | Gegevens           | `<String[]>`    | Nee                           |
 | `<named-data>` | `<String[]>`    | Nee                           |
 
@@ -81,11 +81,11 @@ Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
 > [!NOTE]
-> De mogelijkheid om een query uit te zoeken voor `<named-data>` is toegevoegd aan Power shell 6.
+> De mogelijkheid om een query `<named-data>` voor uit te zoeken, is toegevoegd aan Power shell 6.
 
 ## <a name="building-a-query-with-a-hash-table"></a>Een query bouwen met een hash-tabel
 
-Om de resultaten te controleren en problemen op te lossen, kunt u de hash-tabel één **sleutel/waarde-** paar tegelijk maken. De query haalt gegevens op uit het **toepassings** logboek. De hash-tabel is gelijk aan `Get-WinEvent –LogName Application`.
+Om de resultaten te controleren en problemen op te lossen, kunt u de hash-tabel één **sleutel/waarde-** paar tegelijk maken. De query haalt gegevens op uit het **toepassings** logboek. De hash-tabel is gelijk `Get-WinEvent –LogName Application`aan.
 
 Maak de `Get-WinEvent` query om te beginnen. Gebruik het **sleutel-** waardepaar van de para meter **FilterHashtable** met de sleutel, **LogName**en de waarde **toepassings**.
 
@@ -112,7 +112,7 @@ Als uw query gegevens moet ophalen uit gearchiveerde gebeurtenis logboeken, gebr
 
 ## <a name="using-enumerated-values-in-a-hash-table"></a>Opsommings waarden gebruiken in een hash-tabel
 
-**Tref woorden** is de volgende sleutel in de hash-tabel. Het gegevens type **Keywords** is een matrix van het `[long]` waardetype dat een groot getal bevat. Gebruik de volgende opdracht om de maximale waarde van `[long]`te vinden:
+**Tref woorden** is de volgende sleutel in de hash-tabel. Het gegevens type **Keywords** is een matrix van `[long]` het waardetype dat een groot getal bevat. Gebruik de volgende opdracht om de maximum waarde te vinden `[long]`van:
 
 ```powershell
 [long]::MaxValue
@@ -129,7 +129,7 @@ De vervolg keuzelijst **tref woorden** bevat de beschik bare tref woorden, zoals
 
 ![Afbeelding van Windows-Logboeken tref woorden.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
-Gebruik de volgende opdracht om de namen van de `StandardEventKeywords`-eigenschappen weer te geven.
+Gebruik de volgende opdracht om de namen `StandardEventKeywords` van de eigenschappen weer te geven.
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
@@ -155,7 +155,7 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **tref woorden** en opgesomde waarden zijn als volgt:
 
-| Naam             |  Value            |
+| Naam             |  Waarde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -213,7 +213,7 @@ Get-WinEvent -FilterHashtable @{
 Gebruik de **niveau** sleutel om de resultaten verder te verfijnen en alleen gebeurtenissen toe te voegen die fouten bevatten.
 **Windows logboeken** geeft het **niveau** weer als teken reeks waarden, maar ze zijn opsommings waarden. Als u in de tabel hash de **niveau** sleutel met een teken reeks waarde gebruikt, wordt er een fout bericht weer gegeven.
 
-**Niveau** heeft waarden zoals **fout**, **waarschuwing**of **informatief**. Gebruik de volgende opdracht om de namen van de `StandardEventLevel`-eigenschappen weer te geven.
+**Niveau** heeft waarden zoals **fout**, **waarschuwing**of **informatief**. Gebruik de volgende opdracht om de namen `StandardEventLevel` van de eigenschappen weer te geven.
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventLevel] | Get-Member -Static -MemberType Property
@@ -236,13 +236,13 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **niveau** sleutel en opgesomde waarden zijn als volgt:
 
-| Naam           | Value |
+| Naam           | Waarde |
 | -------------- | ----- |
 | Verbose        |   5   |
-| Ter informatie  |   4   |
+| Informatief  |   4   |
 | Waarschuwing        |   3   |
 | Fout          |   2   |
-| Kritieke       |   1   |
+| Kritiek       |   1   |
 | LogAlways      |   0   |
 
 De hash-tabel voor de voltooide query bevat de sleutel, het **niveau**en de waarde **2**.

@@ -4,10 +4,10 @@ contributor: keithb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Voorlopige versies van scripts
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71329174"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Voorlopige versies van scripts
@@ -61,7 +61,7 @@ Voor het verwerken van prerelease-pakketten met behulp van PowerShellGet zoeken-
 De enige uitzonde ringen hierop in de PowerShellGet-script opdrachten zijn Get-InstalledScript en sommige gevallen met uninstall-script.
 
 - Get-InstalledScript toont altijd automatisch de voorlopige gegevens in de versie teken reeks als deze aanwezig is.
-- Uninstall-script wordt standaard de meest recente versie van een script verwijderd als **er geen versie** is opgegeven. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven met behulp van `-RequiredVersion`, is `-AllowPrerelease` vereist.
+- Uninstall-script wordt standaard de meest recente versie van een script verwijderd als **er geen versie** is opgegeven. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven `-RequiredVersion`met `-AllowPrerelease` , is vereist.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -138,7 +138,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 - [Versies van de module Prerelease](module-prerelease-support.md)
 - [Zoeken-script](/powershell/module/powershellget/find-script)

@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEEditor-object
 ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736186"
 ---
 # <a name="the-iseeditor-object"></a>Het ISEEditor-object
@@ -15,7 +15,7 @@ Een **ISEEditor** -object is een exemplaar van de klasse micro soft. Power shell
 
 ## <a name="methods"></a>Methoden
 
-### <a name="clear"></a>\(\) wissen
+### <a name="clear"></a>Maak\(\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -50,7 +50,7 @@ Hiermee stelt u de focus naar de editor.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -69,14 +69,14 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee verplaatst u het caret naar het overeenkomende teken als de eigenschap **CanGoToMatch** van het object editor is `$true`. dit gebeurt wanneer het caret direct vóór een haakje openen, een haakje of een accolade `(`,`[`,`{` of direct na een haakje sluiten, `)`,`]`. Het caret wordt geplaatst vóór een openings teken of na een afsluitend teken. Als de eigenschap **CanGoToMatch** is `$false`, heeft deze methode niets.
+`$true`Hiermee wordt het caret naar het overeenkomende teken verplaatst als de eigenschap **CanGoToMatch** van het object editor, die optreedt wanneer het caret direct vóór een haakje openen, een haakje sluiten of `(`een`[`accolade`{` ,,, of direct na een haakje, een haakje of een accolade `)`-`]`,`}`, wordt weer gegeven. Het caret wordt geplaatst vóór een openings teken of na een afsluitend teken. Als de eigenschap **CanGoToMatch** is `$false`, heeft deze methode niets.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
 $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
-### <a name="inserttext-text-"></a>InsertText\( tekst \)
+### <a name="inserttext-text-"></a>InsertText\( -tekst\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -86,7 +86,7 @@ Hiermee wordt de selectie vervangen door tekst of wordt tekst ingevoegd op de hu
 
 Zie het [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Selecteer\( startLine, start column, endLine, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Selecteer\( startLine, start column, EndLine, endColumn\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -115,7 +115,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( LineNumber, columnNumber\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -147,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen Booleaanse eigenschap om aan te geven of het caret naast een haakje, een haakje of een accolade `()`, `[]``{}`. Als het caret direct vóór het begin teken of direct na het afsluitende teken van een paar staat, wordt deze eigenschaps waarde `$true`. Zo niet, dan is het `$false`.
+De alleen-lezen Booleaanse eigenschap om aan te geven of het caret naast een haakje, een haakje of een accolade `()`- `[]`, `{}`-,-,-,-,-,-,-,. Als het caret direct vóór het begin teken of direct na het afsluitende teken van een paar staat, is `$true`deze eigenschaps waarde. Anders is `$false`dit.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -247,5 +247,5 @@ $myEditor.InsertText($selection.ToLower())
 
 - [Het ISEFile-object](The-ISEFile-Object.md)
 - [Het PowerShellTab-object](The-PowerShellTab-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

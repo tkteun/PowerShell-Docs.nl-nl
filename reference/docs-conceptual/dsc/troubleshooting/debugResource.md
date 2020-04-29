@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Foutopsporing voor DSC-resources
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942158"
 ---
 # <a name="debugging-dsc-resources"></a>Foutopsporing voor DSC-resources
@@ -63,7 +63,7 @@ PSWebAccess
 ```
 Nadat u de configuratie hebt gecompileerd, start u deze door [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)aan te roepen.
 De configuratie wordt gestopt wanneer de lokale Configuration Manager (LCM) aanroept in de eerste bron in de configuratie.
-Als u de para meters `-Verbose` en `-Wait` gebruikt, worden in de uitvoer de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
+Als u de `-Verbose` para meters en `-Wait` gebruikt, worden de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -91,7 +91,7 @@ In de laatste drie regels in de uitvoer ziet u hoe u aan het proces kunt koppele
 ## <a name="debugging-the-resource-script"></a>Fout opsporing van het resource script
 
 Start een nieuw exemplaar van de Power shell-ISE.
-Voer in het console venster de laatste drie regels uitvoer van de `Start-DscConfiguration` uitvoer als opdrachten in, waarbij `<credentials>` wordt vervangen door geldige gebruikers referenties.
+Voer in het console venster de laatste drie regels uitvoer van de `Start-DscConfiguration` uitvoer in als opdrachten, vervangen `<credentials>` door geldige gebruikers referenties.
 Er wordt nu een prompt weer gegeven die er ongeveer als volgt uitziet:
 
 ```powershell

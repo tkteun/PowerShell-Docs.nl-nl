@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Tracering en logboekregistratie voor scripts
 ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145171"
 ---
 # <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
-Hoewel Power shell al over de groepsbeleid **LogPipelineExecutionDetails** -instelling beschikt voor het vastleggen van de aanroep van cmdlets, heeft de script taal van Power shell verschillende functies die u mogelijk wilt registreren en controleren. De nieuwe uitgebreide functie voor het traceren van scripts biedt gedetailleerde tracering en analyse van Power shell-script activiteit op een systeem. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken in Power shell geregistreerd in het ETW-gebeurtenis logboek, **micro soft-Windows-Power shell/operationeel**. Als een script blok een ander script blok maakt, bijvoorbeeld door het aanroepen van `Invoke-Expression`, wordt het aangeroepen script blok ook vastgelegd.
+Hoewel Power shell al over de groepsbeleid **LogPipelineExecutionDetails** -instelling beschikt voor het vastleggen van de aanroep van cmdlets, heeft de script taal van Power shell verschillende functies die u mogelijk wilt registreren en controleren. De nieuwe uitgebreide functie voor het traceren van scripts biedt gedetailleerde tracering en analyse van Power shell-script activiteit op een systeem. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken in Power shell geregistreerd in het ETW-gebeurtenis logboek, **micro soft-Windows-Power shell/operationeel**. Als een script blok een ander script blok maakt, bijvoorbeeld door aanroepen `Invoke-Expression`, wordt het aangeroepen script blok ook vastgelegd.
 
-Logboek registratie wordt ingeschakeld via de instelling **logboek registratie van Power shell-script blok inschakelen** groepsbeleid in **Beheersjablonen** -> **Windows-onderdelen** -> **Windows Power shell**.
+Logboek registratie wordt ingeschakeld via de instelling **logboek registratie van Power shell-script blok inschakelen** Groepsbeleid in **Beheersjablonen** -> **Windows-onderdelen** -> **Windows Power shell**.
 
 De gebeurtenissen zijn:
 
@@ -22,8 +22,8 @@ De gebeurtenissen zijn:
 | Niveau   | Verbose                                                                 |
 | Code  | Maken                                                                  |
 | Taak    | CommandStart                                                            |
-| Trefwoord | Runs                                                                |
-| Gebeurtenis-id | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
+| Zoek | Runs                                                                |
+| Gebeurtenis | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
 | Bericht | Script Block-tekst maken (%1 van %2): </br> %3 </br> Script Block-ID: %4 |
 
 
@@ -36,8 +36,8 @@ Als u uitgebreide logboek registratie inschakelt, schrijft de functie begin-en e
 | Niveau   | Verbose                                                                    |
 | Code  | Openen/sluiten                                                               |
 | Taak    | CommandStart / CommandStop                                                 |
-| Trefwoord | Runs                                                                   |
-| Gebeurtenis-id | Script Block\_aanroepen\_\_detail te starten (0x1009 = 4105)/ </br> Script Block\_invoke\_volt ooien\_detail (0x100A = 4106) |
+| Zoek | Runs                                                                   |
+| Gebeurtenis | Script Block\_roep\_start\_detail (0x1009 = 4105)/ </br> Script Block\_\_aanroepen\_volledige details (0x100A = 4106) |
 | Bericht | Gestart/voltooide aanroep van script Block-ID: %1 </br> Runs Pace-ID: %2 |
 
 De ID is de GUID die het script blok vertegenwoordigt (dat kan worden gecorreleerd met gebeurtenis-ID 0x1008) en de runs Pace-ID vertegenwoordigt de runs Pace waarin dit script blok is uitgevoerd.

@@ -3,10 +3,10 @@ ms.date: 06/18/2019
 keywords: Power shell, cmdlet
 title: Meer informatie over PowerShell
 ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416742"
 ---
 # <a name="more-powershell-learning"></a>Meer informatie over PowerShell
@@ -25,7 +25,7 @@ Naast de Help die beschikbaar is op de opdracht regel, bieden de volgende bronne
 
 Channel 9 is ons video publicatie platform. Er zijn honderden Video's over Power shell beschikbaar. [Zoek naar Power shell](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) om te zien welke Video's er beschikbaar zijn.
 
-### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
+### <a name="microsoft-virtual-academy"></a>Micro soft Virtual Academy
 
 De Video's van de micro soft Virtual Academy zijn verplaatst naar Channel 9.
 
@@ -40,5 +40,5 @@ De Video's van de micro soft Virtual Academy zijn verplaatst naar Channel 9.
 
 De volgende bronnen bevatten bronnen waarmee ontwikkel aars hun eigen Power shell-modules,-functies,-cmdlets,-providers en hosting toepassingen kunnen maken.
 
-- [Power shell SDK](/powershell/scripting/developer/windows-powershell)
+- [PowerShell SDK](/powershell/scripting/developer/windows-powershell)
 - [Power shell SDK API-browser](/dotnet/api/system.management.automation)

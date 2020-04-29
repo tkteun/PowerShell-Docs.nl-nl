@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: GetConfiguration-methode
 ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942711"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration-methode
@@ -24,9 +24,9 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*configurationData* \[in\] geeft aan welke configuratie gegevens moeten worden verzonden.
+*configurationData* \[in\] geeft de configuratie gegevens op die moeten worden verzonden.
 
-*configuraties* \[out\] als resultaat, bevat een Inge sloten exemplaar van de configuraties.
+*configuraties* \[uit\] op retour, bevat een Inge sloten exemplaar van de configuraties.
 
 ## <a name="return-value"></a>Retourwaarde
 

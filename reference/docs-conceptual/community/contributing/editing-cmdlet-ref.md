@@ -3,41 +3,40 @@ title: Verwijzings artikelen bewerken
 description: In dit artikel worden de specifieke vereisten beschreven voor het bewerken van cmdlet-verwijzingen en over onderwerpen in de Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3aed1c14429310c57681397d4877a3a6f48400fd
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: e135f6cc81ba7537a535a08421e1ca9b2b2af573
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500982"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624768"
 ---
 # <a name="editing-reference-articles"></a>Verwijzings artikelen bewerken
 
-De cmdlet-referentie artikelen hebben een specifieke structuur. Deze structuur wordt gedefinieerd door [PlatyPS][].
-PlatyPS genereert de cmdlet-Help voor Power shell-modules in korting. Nadat de bestanden voor de verlaging zijn bewerkt, wordt PlatyPS gebruikt om de MAML-Help bestanden te maken die worden gebruikt door de `Get-Help`-cmdlet.
+Artikelen met naslaginformatie voor cmdlets hebben een specifieke structuur. Deze structuur wordt gedefinieerd door [PlatyPS][].
+PlatyPS genereert de cmdlet-Help voor Power shell-modules in korting. Nadat de Markdown-bestanden zijn bewerkt, wordt PlatyPS gebruikt om de MAML-helpbestanden te maken die door de `Get-Help`-cmdlet worden gebruikt.
 
-PlatyPS heeft een in code vastgelegd schema voor cmdlet-verwijzingen die in de code zijn geschreven. Het [platyPS.schema.MD][] -document probeert deze structuur te beschrijven. Schema schendingen veroorzaken compilatie fouten die moeten worden opgelost voordat we uw bijdrage kunnen accepteren.
+In PlatyPS is een in code vastgelegd schema voor cmdlet-naslaginformatie. Dit schema is in de code geschreven. In het document [platyPS. schema.md][] is deze structuur beschreven. Schendingen van het schema veroorzaken compilatiefouten die moeten worden opgelost voordat we uw bijdrage kunnen accepteren.
 
 ## <a name="general-guidelines"></a>Algemene richtlijnen
 
-- Verwijder geen koptekst structuren. PlatyPS verwacht een specifieke set kopteksten.
-- Het **invoer type** en de headers van het **uitvoer type** moeten een type hebben. Als de cmdlet geen invoer heeft of een waarde retourneert, gebruikt u de waarde `None`.
-- Geomheiningde code blokken zijn alleen toegestaan in de sectie [voor beelden](#structuring-examples) .
-- Inline code reeksen kunnen worden gebruikt in een wille keurige alinea.
+- Verwijder geen koptekststructuren. PlatyPS verwacht een specifieke reeks kopteksten.
+- De kopteksten **Inputtype ** en **Outputtype ** moeten een type hebben. Als de cmdlet geen invoer heeft of een waarde retourneert, gebruikt u de waarde `None`.
+- Afgebakende codeblokken zijn alleen toegestaan in de sectie [Voorbeelden](#structuring-examples).
+- In elke alinea kunnen inline codereeksen worden gebruikt.
 
-## <a name="formatting-about_-files"></a>About_ bestanden Format teren
+## <a name="formatting-about_-files"></a>About_-bestanden opmaken
 
-`About_*`-bestanden worden nu verwerkt door [pandoc][]in plaats van PlatyPS. `About_*` bestanden zijn ingedeeld voor de beste compatibiliteit tussen alle versies van Power shell en met de hulpprogram ma's voor publiceren.
+`About_*`bestanden worden in korting geschreven, maar worden als tekst bestanden verzonden. We gebruiken [pandoc][] om de prijs verlaging te converteren naar platte tekst. `About_*`bestanden zijn ingedeeld voor de beste compatibiliteit tussen alle versies van Power shell en met de hulpprogram ma's voor publiceren.
 
-Richt lijnen voor basis opmaak:
+Algemene richtlijnen voor het opmaken:
 
-- Regels beperken tot 80 tekens
-- Code blokken en tabellen zijn beperkt tot 76 tekens omdat pandoc deze met vier spaties inspringt tijdens de conversie naar tekst zonder opmaak
-- Tabellen moeten binnen 76 tekens passen
-  - Hand matig inhoud van cellen op meerdere regels laten teruglopen
-  - `|` tekens openen en sluiten op elke regel gebruiken
-  - Een werk voorbeeld in [about_Comparison_Operators][about-example] weer geven
-- Pandoc speciale tekens gebruiken `\`,`$`en `<`
-  - In een koptekst-deze tekens moeten worden voorafgegaan door een voorloop `\` teken of worden inge sloten in accents graves (`` ` ``)
+- Regels beperken tot 80 tekens. Met pandoc worden enkele prijsverlagings blokken Inge sprongen zodat dit blok moet worden aangepast.
+  - Code blokken zijn beperkt tot 76 tekens
+  - Tabellen zijn beperkt tot 76 tekens
+  - Block Quotes (en waarschuwingen) zijn beperkt tot 78 tekens
+
+- De speciale meta tekens `\`van pandoc gebruiken,`$`en`<`
+  - In een koptekst-deze tekens moeten worden voorafgegaan door een voorloop `\` teken of worden inge sloten in code reeksen met behulp`` ` ``van accents graves ()
   - In een alinea moeten deze tekens in code reeksen worden geplaatst. Bijvoorbeeld:
 
     ~~~markdown
@@ -46,11 +45,34 @@ Richt lijnen voor basis opmaak:
     The `$foo` variable is used to store ...
     ~~~
 
+- Tabellen moeten binnen 76 tekens passen
+  - Laat inhoud van cellen die over meerdere regels valt handmatig teruglopen
+  - Gebruik op elke regel `|`-tekens voor openen en sluiten
+  - In het volgende voor beeld ziet u hoe u een tabel op een juiste manier kunt samen stellen die informatie bevat die op meerdere regels in een cel inloopt.
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > De limiet van 76 kolommen geldt alleen voor `About_*` onderwerpen. U kunt brede kolommen gebruiken in conceptuele of cmdlet-referentie artikelen.
+
 ## <a name="structuring-examples"></a>Voor beelden van structureren
 
-In het PlatyPS-schema is de **voor** beeld-header een H2-kop en elk voor beeld is een H3-header.
+In het PlatyPS-schema is de koptekst **VOORBEELDEN** een H2-kop en elk voorbeeld een H3-koptekst.
 
-Binnen een voor beeld staat het schema niet toe dat code blokken worden gescheiden door alinea's. Het ondersteunde schema is:
+Het schema staat binnen een voorbeeld niet toe dat codeblokken worden gescheiden door alinea’s. Het ondersteunde schema is:
 
 ```
 ### Example #X title
@@ -60,7 +82,7 @@ Binnen een voor beeld staat het schema niet toe dat code blokken worden gescheid
 0 or more paragraphs.
 ```
 
-Nummer elk voor beeld en voeg een korte titel toe.
+Geef elk voorbeeld een nummer en voeg een korte titel toe.
 
 Bijvoorbeeld:
 
@@ -80,7 +102,7 @@ Get-Command -ListImported
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Controle lijst voor redactionele](editorial-checklist.md)
+[Redactionele controlelijst](editorial-checklist.md)
 
 <!-- link references -->
 [PlatyPS]: https://github.com/powershell/platyps

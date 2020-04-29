@@ -3,10 +3,10 @@ ms.date: 02/28/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-resources
 ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278240"
 ---
 # <a name="dsc-resources"></a>DSC-resources
@@ -23,10 +23,10 @@ Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het g
 Het schema van een resource kan op de volgende manieren worden gedefinieerd:
 
 - **' Schema. mof '** File: de meeste resources definiëren hun _schema_ in een schema. MOF-bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **'\<resource naam\>. schema. psm1 '** bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een<ResourceName>. schema. psm1-bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **'\<Resource Name\>. psm1 '** File: DSC-resources op basis van klassen definiëren hun _schema_ in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
+- **'\<Resource naam\>. schema. Psm1 '** bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een<ResourceName>. schema. psm1-bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- **'\<Resource naam\>. psm1 '** bestand: op klassen gebaseerde DSC-resources zijn hun _schema_ in de klassedefinitie gedefinieerd. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
 
-Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de para meter `-Syntax`. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de para meter `-Syntax` om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
+Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de `-Syntax` para meter. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de para meter om de syntaxis van de `-Syntax` cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -104,7 +104,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u het <kbd>tabblad</kbd> en <kbd></kbd> de <kbd>plaats+ruimte</kbd> gebruiken om sleutel namen automatisch te volt ooien.
+> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u de <kbd>Tab</kbd> - <kbd>en</kbd>+<kbd>plaatsings ruimte</kbd> gebruiken om sleutel namen automatisch te volt ooien.
 
 ![Voltooiing van resource tabblad](media/resources/resource-tabcompletion.png)
 

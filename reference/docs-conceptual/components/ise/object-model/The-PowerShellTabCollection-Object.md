@@ -3,19 +3,19 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het PowerShellTabCollection-object
 ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736110"
 ---
 # <a name="the-powershelltabcollection-object"></a>Het PowerShellTabCollection-object
 
-Het **PowerShellTab** -verzamelings object is een verzameling **PowerShellTab** -objecten. Elk **PowerShellTab** -object fungeert als een afzonderlijke runtime-omgeving. Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. PowerShellTabs. Een voor beeld is het `$psISE.PowerShellTabs`-object.
+Het **PowerShellTab** -verzamelings object is een verzameling **PowerShellTab** -objecten. Elk **PowerShellTab** -object fungeert als een afzonderlijke runtime-omgeving. Het is een exemplaar van de klasse micro soft. Power shell. host. ISE. PowerShellTabs. Een voor beeld is `$psISE.PowerShellTabs` het object.
 
 ## <a name="methods"></a>Methoden
 
-### <a name="add"></a>\(\) toevoegen
+### <a name="add"></a>Toe\(\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -26,7 +26,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Verwijder\(Microsoft. Power shell. host. ISE. PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Verwijder\(micro soft. Power shell. host. ISE. PowerShellTab psTab\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -64,5 +64,5 @@ $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ## <a name="see-also"></a>Zie ook
 
 - [Het PowerShellTab-object](The-PowerShellTab-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

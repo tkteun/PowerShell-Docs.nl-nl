@@ -3,10 +3,10 @@ ms.date: 04/11/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC SMB-pull-server instellen
 ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500705"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Een DSC SMB-pull-server instellen
@@ -32,7 +32,7 @@ Er zijn een aantal manieren om een SMB-bestands share in te stellen, maar we bek
 Roep de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) aan om de **xSmbShare** -module te installeren.
 
 > [!NOTE]
-> `Install-Module` is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0.
+> `Install-Module`is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0.
 > De **xSmbShare** bevat de DSC-resource **xSmbShare**, die kan worden gebruikt voor het maken van een SMB-bestands share.
 
 ### <a name="create-the-directory-and-file-share"></a>De map en bestands share maken
@@ -69,7 +69,7 @@ Configuration SmbShare
 }
 ```
 
-De configuratie maakt de Directory `C:\DscSmbShare`, als deze nog niet bestaat, en gebruikt die map als een SMB-bestands share. **FullAccess** moet worden opgegeven voor alle accounts die moeten worden geschreven of verwijderd uit de bestands share. **ReadAccess** moet worden toegewezen aan alle client knooppunten die configuraties en/of DSC-resources van de share ophalen.
+De-configuratie maakt de `C:\DscSmbShare`map, als deze nog niet bestaat, en gebruikt deze map als een SMB-bestands share. **FullAccess** moet worden opgegeven voor alle accounts die moeten worden geschreven of verwijderd uit de bestands share. **ReadAccess** moet worden toegewezen aan alle client knooppunten die configuraties en/of DSC-resources van de share ophalen.
 
 > [!NOTE]
 > DSC wordt standaard uitgevoerd als het systeem account, zodat de computer zelf toegang moet hebben tot de share.
@@ -136,18 +136,18 @@ Elk configuratie MOF-bestand moet de naam *ConfigurationID*. MOF hebben, waarbij
 > [!NOTE]
 > U moet configuratie-Id's gebruiken als u een SMB-pull-server gebruikt. Configuratie namen worden niet ondersteund voor SMB.
 
-Elke resource module moet een gezipte en een naam hebben volgens het volgende patroon `{Module Name}_{Module Version}.zip`. Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 zou bijvoorbeeld ' xWebAdministration_3.2.1.0. zip ' worden genoemd. Elke versie van een module moet zich in één ZIP-bestand bevinden. Afzonderlijke versies van een module in een zip-bestand worden niet ondersteund.
+Elke resource module moet een gezipte en een naam hebben op basis van `{Module Name}_{Module Version}.zip`het volgende patroon. Een module met de naam xWebAdminstration met een module versie van 3.1.2.0 zou bijvoorbeeld ' xWebAdministration_3.2.1.0. zip ' worden genoemd. Elke versie van een module moet zich in één ZIP-bestand bevinden. Afzonderlijke versies van een module in een zip-bestand worden niet ondersteund.
 Voordat u DSC-resource modules inpakt voor gebruik met een pull-server, moet u een kleine wijziging aanbrengen in de mapstructuur.
 
-De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
+De standaard indeling van modules met DSC-resource in WMF 5,0 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`is.
 
-Voordat u de pull-server inpakt, verwijdert u gewoon de `{Module version}` map zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map SMB share.
+Voordat u de pull-server kunt inpakken, `{Module version}` verwijdert u gewoon de map `{Module Folder}\DscResources\{DSC Resource Folder}\`, zodat het pad wordt gewijzigd. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map SMB share.
 
 ## <a name="creating-the-mof-checksum"></a>De MOF-controlesom maken
 
-Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een `Path` para meter op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map.
+Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een `Path` para meter op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met `ConfigurationMOFName.mof.checksum`de naam `ConfigurationMOFName` , waarbij de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map.
 
-Het controlesom bestand moet zich in dezelfde map bevinden als het MOF-configuratie bestand (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` standaard) en dezelfde naam hebben als de uitbrei ding `.checksum` is toegevoegd.
+Het controlesom bestand moet zich in dezelfde map bevinden als het MOF-bestand van`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` de configuratie (standaard) en dezelfde naam hebben als de `.checksum` extensie is toegevoegd.
 
 > [!NOTE]
 > Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.
@@ -203,7 +203,7 @@ $ConfigurationData = @{
 }
 ```
 
-## <a name="acknowledgements"></a>Dankbetuigingen
+## <a name="acknowledgements"></a>Erkenningen
 
 Speciale dank aan de volgende personen:
 

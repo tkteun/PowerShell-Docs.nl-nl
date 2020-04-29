@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Opmerkingen bij de WMF 5.x-release
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406844"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
@@ -45,12 +45,12 @@ WMF 5,1 bevat de onderdelen van Power shell, WMI, WinRM en Software Inventory lo
 > [!IMPORTANT]
 > Voordat u WMF 5,1 installeert op Windows Server 2008 of Windows 7, controleert u of WMF 3,0 niet is geïnstalleerd. Zie voor meer informatie [WMF 5,1-vereisten voor Windows Server 2008 R2 SP1 en Windows 7 SP1](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1).
 
-## <a name="powershell-editions"></a>Power shell-edities
+## <a name="powershell-editions"></a>PowerShell-edities
 
 Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin verschillende functie sets en platform compatibiliteit worden aangegeven.
 
-- **Desktop Edition:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een volledige footprint, zoals Server Core en Windows Desktop.
-- **Core-editie:** Gebaseerd op .NET core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een verminderde footprint, zoals nano server en Windows IoT.
+- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
+- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
 ### <a name="learn-more-about-using-powershell-editions"></a>Meer informatie over het gebruik van Power shell-edities
 
@@ -65,7 +65,7 @@ Vanaf WMF 5,1 biedt Power shell controle over het bestand dat wordt gebruikt voo
 
 Deze cache wordt standaard opgeslagen in het bestand `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. De cache wordt doorgaans tijdens het opstarten gelezen tijdens het zoeken naar een opdracht en wordt ergens op een achtergrond thread geschreven nadat een module is geïmporteerd.
 
-Als u de standaard locatie van de cache wilt wijzigen, moet u de omgevings variabele `$env:PSModuleAnalysisCachePath` instellen voordat u Power shell start. Wijzigingen aan deze omgevings variabele worden alleen toegepast op onderliggende processen. De waarde moet een volledig pad (inclusief bestands naam) zijn dat Power shell toestemming heeft om bestanden te maken en te schrijven. Als u de bestands cache wilt uitschakelen, stelt u deze waarde in op een ongeldige locatie, bijvoorbeeld:
+Als u de standaard locatie van de cache wilt wijzigen, `$env:PSModuleAnalysisCachePath` stelt u de omgevings variabele in voordat u Power shell start. Wijzigingen aan deze omgevings variabele worden alleen toegepast op onderliggende processen. De waarde moet een volledig pad (inclusief bestands naam) zijn dat Power shell toestemming heeft om bestanden te maken en te schrijven. Als u de bestands cache wilt uitschakelen, stelt u deze waarde in op een ongeldige locatie, bijvoorbeeld:
 
 ```powershell
 $env:PSModuleAnalysisCachePath = 'nul'
@@ -87,7 +87,7 @@ Het instellen van deze omgevings variabele wordt direct van kracht in het huidig
 
 ## <a name="specifying-module-version"></a>Module versie opgeven
 
-In WMF 5,1 werkt `using module` op dezelfde manier als andere modules-gerelateerde constructies in Power shell.
+In WMF 5,1 `using module` gedraagt zich op dezelfde manier als andere module constructies in Power shell.
 U had eerder geen manier om een bepaalde module versie op te geven. Als er meerdere versies aanwezig zijn, resulteert dit in een fout.
 
 In WMF 5,1:
@@ -96,9 +96,9 @@ In WMF 5,1:
 
   Deze hash-tabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName`.
 
-  **Voor beeld:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+  **Voor beeld:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- Als er meerdere versies van de module zijn, maakt Power shell gebruik van **dezelfde oplossings logica** als `Import-Module` en retourneert deze geen fout--hetzelfde gedrag als `Import-Module` en `Import-DscResource`.
+- Als er meerdere versies van de module zijn, maakt Power shell gebruik van **dezelfde oplossings logica** als `Import-Module` en wordt er geen fout geretourneerd-- `Import-Module` hetzelfde `Import-DscResource`gedrag als en.
 
 ## <a name="improvements-to-pester"></a>Verbeteringen aan de ziekte
 

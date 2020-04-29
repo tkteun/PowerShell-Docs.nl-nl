@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: PowerShellGet installeren
 ms.openlocfilehash: 69dc851c54089b47fb19e5b32990d579d26effb9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328978"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet installeren
@@ -37,7 +37,7 @@ Install-Module -Name PowerShellGet -Force
 Exit
 ```
 
-Gebruik `Update-Module` om nieuwere versies op te halen.
+Gebruiken `Update-Module` om nieuwere versies op te halen.
 
 ```powershell
 Update-Module -Name PowerShellGet
@@ -48,11 +48,11 @@ Exit
 
 Deze instructies zijn van toepassing op computers waarop de **Package Management-preview** is geïnstalleerd of waarvoor geen versie van **PowerShellGet** is geïnstalleerd.
 
-De cmdlet `Save-Module` wordt gebruikt in beide sets instructies. `Save-Module` downloadt en slaat een module en eventuele afhankelijkheden op uit een geregistreerde opslag plaats. De meest recente versie van de module wordt opgeslagen op een opgegeven pad op de lokale computer, maar is niet geïnstalleerd. Zie [Save-module](/powershell/module/PowershellGet/Save-Module)voor meer informatie.
+De `Save-Module` cmdlet wordt gebruikt in beide sets instructies. `Save-Module`Hiermee worden een module en eventuele afhankelijkheden uit een geregistreerde opslag plaats gedownload en opgeslagen. De meest recente versie van de module wordt opgeslagen op een opgegeven pad op de lokale computer, maar is niet geïnstalleerd. Zie [Save-module](/powershell/module/PowershellGet/Save-Module)voor meer informatie.
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Computers waarop het package management-voor beeld is geïnstalleerd
 
-1. Gebruik `Save-Module` uit een Power shell-sessie om de modules op te slaan in een lokale map.
+1. Gebruik `Save-Module` vanuit een Power shell-sessie om de modules op te slaan in een lokale map.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -71,7 +71,7 @@ De cmdlet `Save-Module` wordt gebruikt in beide sets instructies. `Save-Module` 
 
 Voor computers waarop geen versie van **PowerShellGet** is geïnstalleerd, is een computer met **PowerShellGet** geïnstalleerd nodig om de modules te downloaden.
 
-1. Gebruik `Save-Module` om de huidige versie van **PowerShellGet**te downloaden van de computer waarop **PowerShellGet** is geïnstalleerd. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management**. Elke map bevat een submap met een versie nummer.
+1. Op de computer waarop **PowerShellGet** is geïnstalleerd, gebruikt `Save-Module` u om de huidige versie van **PowerShellGet**te downloaden. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management**. Elke map bevat een submap met een versie nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -79,4 +79,4 @@ Voor computers waarop geen versie van **PowerShellGet** is geïnstalleerd, is ee
 
 1. Kopieer de mappen **PowerShellGet** en **Package Management** naar de computer waarop geen **PowerShellGet** is geïnstalleerd.
 
-   De doelmap is: `$env:ProgramFiles\WindowsPowerShell\Modules`
+   De doelmap is:`$env:ProgramFiles\WindowsPowerShell\Modules`

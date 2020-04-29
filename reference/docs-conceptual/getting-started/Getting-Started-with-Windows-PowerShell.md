@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Aan de slag met Windows PowerShell
 ms.openlocfilehash: fde0788a877cf93ee6423566c3275380474f4ee4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74117540"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Aan de slag met Windows PowerShell
@@ -22,8 +22,8 @@ Deze hand leiding bevat een inleiding tot Windows Power shell: de taal, de cmdle
 
 In dit onderwerp:
 
-- [Systeem vereisten voor Windows Power shell](../install/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell-systeemvereisten](../install/Windows-PowerShell-System-Requirements.md)
 
-- [Windows Power Shell installeren](../install/Installing-Windows-PowerShell.md)
+- [Windows PowerShell installeren](../install/Installing-Windows-PowerShell.md)
 
-- [Windows Power shell starten](Starting-Windows-PowerShell.md)
+- [Windows PowerShell starten](Starting-Windows-PowerShell.md)

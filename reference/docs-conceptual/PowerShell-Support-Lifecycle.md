@@ -3,10 +3,10 @@ title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 03/09/2020
 ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500994"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
@@ -19,7 +19,7 @@ U kunt ook betalen voor [ondersteuning][] voor Power shell door een ondersteunin
 ## <a name="community-support"></a>Community-ondersteuning
 
 We bieden ook [Community-ondersteuning][] op github waar u een probleem, een fout of een functie aanvraag kunt indienen.
-U kunt ook hulp van andere leden van de Community vinden in de micro soft [Technische community van Power shell][] of een van de forums die worden vermeld in het gedeelte community van de pagina [Power shell][pshub] hub. We bieden geen garantie dat de Community tijdig het probleem zal verhelpen of oplossen. Als u een probleem ondervindt dat onmiddellijke aandacht vereist, moet u de traditionele, betaalde ondersteunings opties gebruiken.
+U kunt ook hulp van andere leden van de Community vinden in de micro soft [Power shell tech Community][] of een van de forums die worden vermeld in het gedeelte community van de pagina [Power shell][pshub] hub. We bieden geen garantie dat de Community tijdig het probleem zal verhelpen of oplossen. Als u een probleem ondervindt dat onmiddellijke aandacht vereist, moet u de traditionele, betaalde ondersteunings opties gebruiken.
 
 ## <a name="lifecycle-of-powershell-7"></a>Levens cyclus van Power shell 7
 
@@ -54,7 +54,7 @@ Raadpleeg de volgende tabel om te controleren of uw platform en versie van Power
 
 Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze worden niet officieel ondersteund. Deze pakketten zijn gemarkeerd als `Community` in de tabel.
 
-Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteund, maar zijn beschikbaar voor experimenteren en feedback.
+Platforms die worden `Experimental` vermeld als niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
 | Platform                                          |      6.2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
@@ -90,7 +90,7 @@ Platforms die worden vermeld als `Experimental`, worden niet officieel ondersteu
 
 Op basis van de [levens cyclus van Power shell](#lifecycle-of-powershell-7), worden in de volgende tabel de datums weer gegeven wanneer verschillende releases niet meer worden ondersteund.
 
-| Version |    Einde van de levens duur     |
+| Versie |    Einde van de levens duur     |
 | :-----: | ------------------ |
 |   7.0   | 3 december 2022   |
 |   6.2   | 4 september 2020  |
@@ -103,31 +103,31 @@ Wanneer een platform versie het einde van de levens duur bereikt zoals gedefinie
 
 De distributie-eigen aren hebben daarom de volgende versies gestopt en worden niet ondersteund.
 
-|    Platform    | Version |                                                         Einde van de levens duur                                                          |
+|    Platform    | Versie |                                                         Einde van de levens duur                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | Debian         |    8    | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
-| Fedora         |   24    | [2017 augustus](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
+| Fedora         |   24    | [Augustus 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
 | Fedora         |   25    | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
 | Fedora         |   26    | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
 | Fedora         |   27    | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
 | Fedora         |   28    | [Mei 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
-| openSUSE       |  42.1   | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
+| openSUSE       |  42,1   | [Mei 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
 | openSUSE       |  42,2   | [Januari 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                  |
-| openSUSE       |  42,3   | [2019 juli](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                     |
-| Ubuntu         |  14.04  | [April 2019](https://wiki.ubuntu.com/Releases)                                                                               |
-| Ubuntu         |  16,10  | [2017 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
+| openSUSE       |  42,3   | [Juli 2019](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                     |
+| Ubuntu         |  14,04  | [April 2019](https://wiki.ubuntu.com/Releases)                                                                               |
+| Ubuntu         |  16,10  | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
 | Ubuntu         |  17,04  | [Januari 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                           |
-| Ubuntu         |  17,10  | [2018 juli](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
+| Ubuntu         |  17,10  | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
 | Windows        |    7    | [Januari 2020](https://support.microsoft.com/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
 | Windows Server | 2008 R2 | [Januari 2020](https://support.microsoft.com/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## <a name="notes-on-licensing"></a>Opmerkingen over licenties
 
-Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licentie en zonder een betaalde ondersteunings overeenkomst zijn gebruikers beperkt tot [Community-ondersteuning][]van de community. Met ondersteuning van de Community biedt micro soft geen garanties voor reactie tijd of oplossingen.
+Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licentie en zonder een betaalde ondersteunings overeenkomst zijn gebruikers beperkt tot [ondersteuning][]van de community. Met ondersteuning van de Community biedt micro soft geen garanties voor reactie tijd of oplossingen.
 
 ## <a name="windows-powershell-compatibility"></a>Compatibiliteit met Windows Power shell
 
-De ondersteunings levenscyclus voor Power Shell heeft geen betrekking op modules die buiten het Power shell-release pakket worden verzonden. Het gebruik van de `ActiveDirectory`-module die wordt geleverd als onderdeel van Windows Server wordt bijvoorbeeld ondersteund onder de [Windows-ondersteunings levenscyclus][].
+De ondersteunings levenscyclus voor Power Shell heeft geen betrekking op modules die buiten het Power shell-release pakket worden verzonden. Het gebruik van de `ActiveDirectory` module die wordt geleverd als onderdeel van Windows Server wordt bijvoorbeeld ondersteund onder de [levens cyclus van Windows-ondersteuning][].
 
 Power shell 7 verbetert de compatibiliteit met bestaande Power shell-modules die zijn geschreven voor Windows Power shell.
 Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibiliteits modules][]voor meer informatie.
@@ -143,14 +143,14 @@ Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibilitei
 
 De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power shell. Deze tabel wordt vermeld voor historische Naslag informatie. Het is niet bedoeld voor gebruik om de ondersteunings levenscyclus te bepalen.
 
-|       Version        | Releasedatum |                                                                     Opmerking                                                                      |
+|       Versie        | Release datum |                                                                     Opmerking                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Power shell 7,0 (LTS) |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
 | Power shell 6,0       |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |
 | PowerShell 5.1       |   Aug-2016   | Uitgebracht in Windows 10 jubileum update en Windows Server 2016                                                                             |
-| Power shell 5,0       |   Feb-2016   | Uitgebracht in Windows Management Framework (WMF) 5,0                                                                                            |
-| Power Shell 4,0       |   Okt-2013   | Geïntegreerd in Windows 8,1 en met Windows Server 2012 R2. Installeerbaar op Windows 7 SP1, Windows Server 2008 R2 SP1 en Windows Server 2012. |
-| Power Shell 3,0       |   Okt-2012   | Geïntegreerd in Windows 8 en Windows Server 2012. Installeerbaar op Windows 7 SP1, Windows Server 2008 SP1 en Windows Server 2008 R2 SP1.  |
+| PowerShell 5.0       |   Feb-2016   | Uitgebracht in Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 4.0       |   Okt-2013   | Geïntegreerd in Windows 8,1 en met Windows Server 2012 R2. Installeerbaar op Windows 7 SP1, Windows Server 2008 R2 SP1 en Windows Server 2012. |
+| PowerShell 3.0       |   Okt-2012   | Geïntegreerd in Windows 8 en Windows Server 2012. Installeerbaar op Windows 7 SP1, Windows Server 2008 SP1 en Windows Server 2008 R2 SP1.  |
 | Power Shell 2,0       |   Jul-2009   | Geïntegreerd in Windows 7 en Windows Server 2008 R2. Installeerbaar op Windows XP SP3, Windows Server 2003 SP2 en Windows Vista SP1.            |
 | Power shell 1,0       |   Nov-2006   | Installeerbaar op Windows XP SP2, Windows Server 2003 SP1 en Windows Vista. Optioneel onderdeel van Windows Server 2008.                          |
 
@@ -161,7 +161,7 @@ De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power sh
 [Community-ondersteuning]: /powershell/scripting/community/community-support
 [pshub]: /powershell
 [Technische community van Power shell]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[ondersteuning]: https://support.microsoft.com/assistedsupportproducts
+[ondersteuning voor assistentie]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
 [lifecycle-chart]: ./images/modern-lifecycle.png

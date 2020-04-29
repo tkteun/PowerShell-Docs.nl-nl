@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
 ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500737"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Een pull-client instellen met configuratie-Id's in Power shell 5,0 en hoger
@@ -28,7 +28,7 @@ Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configurati
 
 ## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
-Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigID** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie aangeduid met de naam `localhost.meta.mof`.
+Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigID** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie `localhost.meta.mof`aangeduid met de naam.
 
 Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigurationManager** aan, waarbij het **pad** is ingesteld op de locatie van het MOF-bestand met de meta configuratie. Bijvoorbeeld:
 
@@ -38,7 +38,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>Configuratie-ID
 
-In de onderstaande voor beelden wordt de eigenschap **ConfigurationID** van de LCM ingesteld op een **GUID** die eerder is gemaakt voor dit doel. De **ConfigurationID** is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet zijn benoemd `ConfigurationID.mof`, waarbij *ConfigurationID* de waarde is van de eigenschap **CONFIGURATIONID** van de LCM van het doel knooppunt. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
+In de onderstaande voor beelden wordt de eigenschap **ConfigurationID** van de LCM ingesteld op een **GUID** die eerder is gemaakt voor dit doel. De **ConfigurationID** is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet `ConfigurationID.mof`een naam hebben, waarbij *ConfigurationID* de waarde is van de eigenschap **ConfigurationID** van de LCM van het doel knooppunt. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
 
 U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
 
@@ -84,7 +84,7 @@ In het script definieert de pull-server in het **ConfigurationRepositoryWeb** -b
 
 ### <a name="smb-share"></a>SMB-share
 
-Met het volgende script wordt de LCM geconfigureerd om configuraties te halen uit de SMB-share `\\SMBPullServer\Pull`.
+Met het volgende script wordt de LCM geconfigureerd om configuraties te halen uit de `\\SMBPullServer\Pull`SMB-share.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -153,7 +153,7 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB-share
 
-In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van configuraties uit de SMB-share `\\SMBPullServer\Configurations`en bronnen van de SMB-share `\\SMBPullServer\Resources`.
+In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van configuraties `\\SMBPullServer\Configurations`van de SMB-share en bronnen `\\SMBPullServer\Resources`van de SMB-share.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -185,7 +185,7 @@ PullClientConfigID
 
 #### <a name="automatically-download-resources-in-push-mode"></a>Automatisch bronnen in de push-modus downloaden
 
-Vanaf Power shell 5,0 kunnen uw pull-clients modules downloaden van een SMB-share, zelfs wanneer ze zijn geconfigureerd voor de **Push** -modus. Dit is vooral handig in scenario's waarin u geen pull-server wilt instellen. Het **ResourceRepositoryShare** -blok kan worden gebruikt zonder een **ConfigurationRepositoryShare**op te geven. In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van resources van een SMB-share `\\SMBPullServer\Resources`. Wanneer het knoop punt een configuratie heeft **gepusht** , worden de vereiste resources automatisch gedownload van de opgegeven share.
+Vanaf Power shell 5,0 kunnen uw pull-clients modules downloaden van een SMB-share, zelfs wanneer ze zijn geconfigureerd voor de **Push** -modus. Dit is vooral handig in scenario's waarin u geen pull-server wilt instellen. Het **ResourceRepositoryShare** -blok kan worden gebruikt zonder een **ConfigurationRepositoryShare**op te geven. In het volgende voor beeld ziet u een-configuratie die een client instelt voor het ophalen van resources `\\SMBPullServer\Resources`van een SMB-share. Wanneer het knoop punt een configuratie heeft **gepusht** , worden de vereiste resources automatisch gedownload van de opgegeven share.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -288,7 +288,7 @@ Een rapport server kan geen SMB-share zijn.
 
 Zodra de pull-client is geconfigureerd, kunt u de volgende hand leidingen gebruiken om de volgende stappen uit te voeren:
 
-- [Configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)
+- [Configuraties publiceren naar een pull-server (v4/v5)](publishConfigs.md)
 - [Resources verpakken en uploaden naar een pull-server (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Zie ook

@@ -3,23 +3,23 @@ ms.date: 12/23/2019
 keywords: Power shell, cmdlet
 title: Ophalen van WMI-objecten CimInstance
 ms.openlocfilehash: 4ff47844fd367a49f554c7c05c491bdddf28eabc
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77004692"
 ---
 # <a name="getting-wmi-objects-get-ciminstance"></a>WMI-objecten ophalen (Get-CimInstance)
 
 ## <a name="getting-wmi-objects-get-ciminstance"></a>WMI-objecten ophalen (Get-CimInstance)
 
-Windows Management Instrumentation (WMI) is een kern technologie voor Windows-systeem beheer, omdat een breed scala aan gegevens op een uniforme manier wordt weer gegeven. Als gevolg van de mate waarin WMI mogelijk is, is de Power shell-cmdlet voor toegang tot WMI-objecten, `Get-CimInstance`, een van de handigste voor het uitvoeren van echte werk. We bespreken hoe u de CimCmdlets kunt gebruiken voor toegang tot WMI-objecten en hoe u WMI-objecten kunt gebruiken om specifieke dingen uit te voeren.
+Windows Management Instrumentation (WMI) is een kern technologie voor Windows-systeem beheer, omdat een breed scala aan gegevens op een uniforme manier wordt weer gegeven. Als gevolg van de mate van WMI kan de Power shell-cmdlet voor toegang tot `Get-CimInstance`WMI-objecten,, een van de meest handig zijn voor het uitvoeren van echte werk. We bespreken hoe u de CimCmdlets kunt gebruiken voor toegang tot WMI-objecten en hoe u WMI-objecten kunt gebruiken om specifieke dingen uit te voeren.
 
 ### <a name="listing-wmi-classes"></a>WMI-klassen weer geven
 
 Het eerste probleem dat de meeste WMI-gebruikers ondervindt, probeert te ontdekken wat er met WMI kan worden gedaan. WMI-klassen beschrijven de resources die kunnen worden beheerd. Er zijn honderden WMI-klassen waarvan sommige van de eigenschappen tien tallen bevatten.
 
-`Get-CimClass` lost dit probleem op door WMI detecteerbaar te maken. U kunt een lijst weer geven van de WMI-klassen die beschikbaar zijn op de lokale computer door het volgende te typen:
+`Get-CimClass`Hiermee wordt dit probleem opgelost door WMI detecteerbaar te maken. U kunt een lijst weer geven van de WMI-klassen die beschikbaar zijn op de lokale computer door het volgende te typen:
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 |
@@ -70,7 +70,7 @@ C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA
 ```
 
 Hoewel alle para meters worden weer gegeven, kan de opdracht op een meer beknopte manier worden aangegeven.
-De para meter **ComputerName** is niet nodig bij het maken van verbinding met het lokale systeem. We laten u zien hoe u het meest algemene geval kunt demonstreren en u kunt u herinneren over de para meter. De **naam ruimte** wordt standaard ingesteld op `root/CIMV2`en kan ook worden wegge laten. Ten slotte kunt u met de meeste cmdlets de naam van algemene para meters weglaten. Als er bij `Get-CimInstance`geen naam is opgegeven voor de eerste para meter, wordt deze door Power shell beschouwd als de **klasse** -para meter. Dit betekent dat de laatste opdracht kan zijn uitgegeven door het volgende te typen:
+De para meter **ComputerName** is niet nodig bij het maken van verbinding met het lokale systeem. We laten u zien hoe u het meest algemene geval kunt demonstreren en u kunt u herinneren over de para meter. De **naam ruimte** wordt `root/CIMV2`standaard ingesteld op en kan ook worden wegge laten. Ten slotte kunt u met de meeste cmdlets de naam van algemene para meters weglaten. Als `Get-CimInstance`er geen naam is opgegeven voor de eerste para meter, wordt deze door Power shell beschouwd als de **klasse** -para meter. Dit betekent dat de laatste opdracht kan zijn uitgegeven door het volgende te typen:
 
 ```powershell
 Get-CimInstance Win32_OperatingSystem
@@ -119,7 +119,7 @@ TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemo
 ```
 
 > [!NOTE]
-> Joker tekens werken met eigenschapnamen in `Format-Table`, zodat het laatste pijplijn element kan worden gereduceerd tot `Format-Table -Property Total*Memory*, Free*`
+> Joker tekens werken met eigenschapnamen in `Format-Table`, zodat het laatste pijplijn element kan worden gereduceerd tot`Format-Table -Property Total*Memory*, Free*`
 
 De geheugen gegevens kunnen beter leesbaar zijn als u deze als een lijst formatteert door het volgende te typen:
 

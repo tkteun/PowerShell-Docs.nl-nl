@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Geschillenoplossing
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328901"
 ---
 # <a name="dispute-resolution"></a>Geschillenoplossing
 
 Dit document is een aanbevolen oplossings proces voor het oplossen van problemen met leden van de community om geschillen met andere PowerShell Gallery uitgevers op te lossen.
 
-## <a name="process"></a>Process
+## <a name="process"></a>Proces
 
 1. Neem contact op met de eigen aren van het pakket met de koppeling **eigenaar van contact persoon** op de pagina pakket Details.
    Leg uw probleem op een soort en direct manier uit.
 2. Stuur een kopie van uw bericht naar [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) zodat PowerShell Gallery beheerders op de hoogte zijn van uw geschil.
-3. Wacht Maxi maal 30 dagen en als u geen oplossings melding meer [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) .
+3. Wacht Maxi maal 30 dagen en als u geen oplossings kennisgeving [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) meer hebt.
 
 Het PowerShellGallery.com-ondersteunings team komt bij u betrokken en probeert dit uit te werken.
 

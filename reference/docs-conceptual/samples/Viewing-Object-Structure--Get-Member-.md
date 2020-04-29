@@ -3,13 +3,13 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Object structuur ophalen lid weer geven
 ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030716"
 ---
-# <a name="viewing-object-structure-get-member"></a>Object structuur weer geven (Get-member)
+# <a name="viewing-object-structure-get-member"></a>Objectstructuur weergeven (Get-Member)
 
 Omdat objecten een dergelijke centrale rol spelen in Windows Power shell, zijn er verschillende systeem eigen opdrachten ontworpen om te werken met wille keurige object typen. De belangrijkste is de opdracht **Get-member** .
 

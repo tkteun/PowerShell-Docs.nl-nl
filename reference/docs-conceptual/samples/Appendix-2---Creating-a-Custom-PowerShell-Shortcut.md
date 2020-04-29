@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
 ms.openlocfilehash: 6f1a6a8187b1797103e3620b2cf9155978807ea5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030297"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Bijlage 2: een aangepaste Power shell-snelkoppeling maken
@@ -17,7 +17,7 @@ In de volgende procedure wordt beschreven hoe u een snelkoppeling maakt naar Win
 
 2. Klik met de rechter muisknop op de snelkoppeling en klik vervolgens op **Eigenschappen**.
 
-3. Klik op de **opties** tabblad.
+3. Klik op het tabblad **Options**.
 
 4. Schakel in het gedeelte **bewerkings opties** het selectie vakje **snel** bewerken in.
 

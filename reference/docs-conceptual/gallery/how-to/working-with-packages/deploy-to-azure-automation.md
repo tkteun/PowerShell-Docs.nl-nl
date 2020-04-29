@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Implementeren naar Azure Automation
 ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278700"
 ---
 # <a name="deploy-to-azure-automation"></a>Implementeren naar Azure Automation
@@ -32,7 +32,7 @@ Als de module die wordt geïmplementeerd op Azure Automation vereist acceptatie 
 
 ![Implementeren naar Azure Automation vereist acceptatie van de licentie](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 - [Acceptatie van de licentie vereisen in PowerShellGet](../../concepts/module-license-acceptance.md)
 - [Acceptatie van de licentie vereisen in PowerShell Gallery](packages-that-require-license-acceptance.md)

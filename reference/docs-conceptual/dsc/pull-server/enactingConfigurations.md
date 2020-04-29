@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuraties doorvoeren
 ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277887"
 ---
 # <a name="enacting-configurations"></a>Configuraties doorvoeren
@@ -15,13 +15,13 @@ ms.locfileid: "78277887"
 
 Er zijn twee manieren om de configuraties van desired state Configuration (DSC) van Power shell te nemen: push-modus en pull-modus.
 
-## <a name="push-mode"></a>Push modus
+## <a name="push-mode"></a>Push-modus
 
-![Push modus](media/enactingConfigurations/pushModel.png "De werking van de push modus")
+![Push-modus](media/enactingConfigurations/pushModel.png "De werking van de push modus")
 
 De push modus verwijst naar een gebruiker die actief een configuratie toepast op een doel knooppunt door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.
 
-Nadat u een configuratie hebt gemaakt en gecompileerd, kunt u deze in de push-modus Toep assen door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen en de para meter-Path van de cmdlet in te stellen op het pad waar de configuratie-MOF zich bevindt. Als de configuratie-MOF zich bijvoorbeeld bevindt op `C:\DSC\Configurations\localhost.mof`, past u deze toe op de lokale computer met de volgende opdracht: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+Nadat u een configuratie hebt gemaakt en gecompileerd, kunt u deze in de push-modus Toep assen door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen en de para meter-Path van de cmdlet in te stellen op het pad waar de configuratie-MOF zich bevindt. Als de configuratie-MOF zich bijvoorbeeld bevindt `C:\DSC\Configurations\localhost.mof`op, past u deze toe op de lokale computer met de volgende opdracht:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
 > DSC voert een configuratie standaard uit als achtergrond taak. Als u de configuratie interactief wilt uitvoeren, roept u [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan met de para meter **wait** .

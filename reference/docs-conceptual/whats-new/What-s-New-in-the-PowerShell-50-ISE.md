@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: Power shell, cmdlet
 title: Wat is er nieuw in de Power shell 5,0 ISE
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416645"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Wat is er nieuw in de Windows Power shell 5,0 ISE
@@ -34,7 +34,7 @@ De volgende tabel bevat de nieuwe en gewijzigde functies voor deze versie van Wi
 IntelliSense is een functie voor het automatisch volt ooien van hulp die deel uitmaakt van Windows PowerShell ISE.
 IntelliSense bevat een klikable menu met mogelijk overeenkomende cmdlets, para meters, parameter waarden, bestanden of mappen die u typt.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 Met het toevoegen van IntelliSense, is het eenvoudiger om cmdlets en syntaxis te ontdekken wanneer u Windows PowerShell ISE gebruikt om scripts te maken. U kunt ook Windows PowerShell ISE gebruiken om Windows Power shell te leren wanneer u nieuwe scripts maakt.
 
@@ -46,9 +46,9 @@ Wanneer u cmdlets in de Windows PowerShell ISE typt, wordt een schuif bare menu 
 
 > Toegevoegd in ISE 3,0
 
-*Fragmenten* zijn korte secties van Windows Power shell-code die u kunt invoegen in de scripts die u maakt in Windows PowerShell ISE. Windows PowerShell ISE wordt geleverd met een standaardset fragmenten. U kunt fragmenten toevoegen met behulp van de cmdlet `New-Snippet` terwijl u aan het werk bent in Windows PowerShell ISE.
+*Fragmenten* zijn korte secties van Windows Power shell-code die u kunt invoegen in de scripts die u maakt in Windows PowerShell ISE. Windows PowerShell ISE wordt geleverd met een standaardset fragmenten. U kunt fragmenten toevoegen met behulp van `New-Snippet` de-cmdlet terwijl u werkt in Windows PowerShell ISE.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 U kunt met behulp van fragmenten snel scripts verzamelen en maken om uw omgeving te automatiseren.
 
@@ -62,7 +62,7 @@ Als u fragmenten wilt gebruiken in Windows Power Shell 3,0 of hoger, klikt u in 
 
 Windows PowerShell ISE ondersteunt nu invoeg toepassingen met het object model. Deze invoeg toepassingen zijn Windows Presentation Foundation (WPF)-besturings elementen die worden weer gegeven als een verticaal of horizon taal deel venster in de-console. Meerdere invoeg toepassingen in een deel venster worden weer gegeven als besturings element met tabbladen. U kunt ook invoeg toepassingen toevoegen of verwijderen die door niet-micro soft-partijen worden geproduceerd. Zie [het doel van het Windows PowerShell ISE scripting object model](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)voor meer informatie.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 Invoeg toepassingen bieden u de mogelijkheid om Windows PowerShell ISE uit te breiden en aan te passen met hulpprogram ma's waarmee functionaliteit wordt toegevoegd en uw script ervaring wordt verbeterd.
 
@@ -78,9 +78,9 @@ Aanvullende invoeg toepassingen kunt u vinden met behulp van de opdracht **invoe
 
 Windows PowerShell ISE worden nu automatisch elke twee minuten uw geopende scripts opgeslagen op een andere locatie. Wanneer Windows PowerShell ISE opnieuw wordt opgestart na een onverwachte crash of opnieuw opstarten, worden scripts hersteld die in de laatste sessie zijn geopend, zelfs als de scripts niet zijn opgeslagen.
 
-Als u het interval voor automatisch opslaan wilt wijzigen, voert u de volgende opdracht uit in het console venster: `$psise.Options.AutoSaveMinuteInterval`.
+Als u het interval voor automatisch opslaan wilt wijzigen, voert u de volgende opdracht uit `$psise.Options.AutoSaveMinuteInterval`in het console venster:.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 U kunt nu binnen Windows PowerShell ISE weten dat uw geopende scripts automatisch worden opgeslagen.
 
@@ -94,9 +94,9 @@ De scripts worden niet automatisch door Windows PowerShell ISE 2,0 opgeslagen.
 
 Windows PowerShell ISE hebt nu een meest recent gebruikte lijst voor bestanden. Wanneer u een bestand opent in Windows PowerShell ISE, wordt het bestand toegevoegd aan de lijst met meest recent gebruikte bestanden in het menu **bestand** .
 
-Als u het standaard aantal bestanden in de meest recent gebruikte lijst wilt wijzigen, voert u de volgende opdracht uit in het console venster: `$psise.Options.MruCount`.
+Als u het standaard aantal bestanden in de meest recent gebruikte lijst wilt wijzigen, voert u de volgende opdracht uit in het console `$psise.Options.MruCount`venster:.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 U kunt nu de meest recent gebruikte lijst gebruiken om eenvoudig toegang te krijgen tot uw veelgebruikte bestanden.
 
@@ -116,14 +116,14 @@ De afzonderlijke opdracht-en uitvoer deel Vensters die beschikbaar waren in de e
 - Fout melding
 - Volledige Unicode-ondersteuning
 - Context afhankelijke Help van <kbd>F1</kbd>
-- <kbd>Ctrl</kbd>+<kbd>F1</kbd> context gevoelige weer gave-opdracht
+- <kbd>CTRL</kbd>+<kbd>F1</kbd> context gevoelige weer gave-opdracht
 - Ondersteuning voor complex schrift en van rechts naar links
 - Lettertype ondersteuning
 - Zoom
 - Lijn-selecteren en blok keren-selectie modi
 - Behoud van getypte inhoud op de opdracht regel wanneer u op de <kbd>pijl-omlaag</kbd> drukt om de geschiedenis in de-console weer te geven
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 De toevoeging van deze wijzigingen in het console venster biedt een script ervaring die consistent is met de interface van de console.
 
@@ -137,11 +137,11 @@ Windows PowerShell ISE 2,0 heeft afzonderlijke opdracht-en uitvoer deel Vensters
 
 Als u Windows PowerShell ISE start vanaf de opdracht regel (door **powershell_ise. exe**te typen), kunt u de volgende nieuwe opdracht regel opties toevoegen.
 
-- `-NoProfile`: er wordt Windows PowerShell ISE gestart zonder dat `$profile` wordt uitgevoerd
+- `-NoProfile`: Start Windows PowerShell ISE zonder uit te voeren`$profile`
 - `-Help`: Hiermee wordt een Help-venster weer gegeven
-- `-mta`: de Windows PowerShell ISE wordt gestart in de modus voor meerdere threads. De standaard bewerkings modus voor Windows PowerShell ISE is modus met één thread of `-sta`.
+- `-mta`: Hiermee wordt Windows PowerShell ISE gestart in de modus voor meerdere threads. De standaard bewerkings modus voor de Windows PowerShell ISE is modus met één thread of `-sta`.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 Met deze opdracht regel opties kunt u de omgeving bepalen waarin de Windows PowerShell ISE wordt uitgevoerd.
 
@@ -156,15 +156,15 @@ Windows PowerShell ISE 2,0 herkent deze opdracht regel opties niet.
 Andere functies voor het bewerken van Windows PowerShell ISE zijn onder andere:
 
 - **XML-syntaxis kleuren** -Windows PowerShell ISE nu kleuren XML-syntaxis op dezelfde manier als de Windows Power shell-syntaxis.
-- **Vergeleken met accolades** : Windows PowerShell ISE omvatten accolades en markeringen en kunnen op de volgende manieren worden gebruikt: (als u bijvoorbeeld de opdracht **Go to Match** of <kbd>CTRL</kbd>+<kbd>]</kbd> zoekt, wordt de accolade gesloten als u een openings accolade hebt geselecteerd).
-- **Overzichts weergave** Het deel venster script ondersteunt overzichten, waarmee u gedeelten van code kunt samen vouwen of uitvouwen door te klikken op een plus teken of minteken in de linkermarge. U kunt accolades of de `#region`-en `#endregion`-Tags gebruiken om het begin of einde van een inklap bare sectie te markeren. Als u alle regio's wilt uitvouwen of samen vouwen, drukt u op <kbd>Ctrl</kbd>+<kbd>M</kbd>.
+- **Vergeleken met accolades** : Windows PowerShell ISE bestaan uit accolades en markeringen en kunnen op de volgende manieren worden gebruikt: (als u bijvoorbeeld de opdracht **Go to match** of <kbd>CTRL</kbd>+<kbd>]</kbd> gebruikt, zoekt u de accolade sluiten als u een openings accolade hebt geselecteerd).
+- **Overzichts weergave** Het deel venster script ondersteunt overzichten, waarmee u gedeelten van code kunt samen vouwen of uitvouwen door te klikken op een plus teken of minteken in de linkermarge. U kunt accolades of de `#region` Tags en `#endregion` gebruiken om het begin of einde van een inklap bare sectie te markeren. Als u alle regio's wilt uitvouwen of samen vouwen, drukt u op <kbd>CTRL</kbd>+<kbd>M</kbd>.
 - **Slepen en neerzetten van tekst** -Windows PowerShell ISE ondersteunt nu slepen en neerzetten van tekst. U kunt elk wille keurig blok tekst selecteren en deze tekst naar een andere locatie in de editor of de-console slepen om de tekst te verplaatsen. Als u de <kbd>CTRL</kbd> -toets ingedrukt houdt terwijl u de geselecteerde tekst sleept, wordt de tekst gekopieerd naar de nieuwe locatie wanneer u de muis knop loslaat. In deze versie van Windows PowerShell ISE, wanneer u bestanden naar Windows PowerShell ISE sleept en neerzet, Windows PowerShell ISE het bestand wordt geopend.
 - **Fout weer geven bij parseren** -parseren van fouten worden aangeduid met rode onderstrepingen. Wanneer u de muis aanwijzer over een aangegeven fout beweegt, wordt in de tekst van de knop Info het probleem weer gegeven dat in de code is gevonden.
-- **Zoom** -het zoom percentage van de inhoud van de console kan worden ingesteld met behulp van de schuif regelaar in-en uitzoomen (in de rechter benedenhoek van Windows PowerShell ISE venster) of door de opdracht `$psise.options.Zoom` in het console venster in te voeren.
+- **Zoom** -het zoom percentage van de inhoud van de console kan worden ingesteld met behulp van de schuif regelaar in-en uitzoomen (in de rechter benedenhoek van Windows PowerShell ISE `$psise.options.Zoom` venster) of door de opdracht in te voeren in het console venster.
 - **RTF kopiëren en plakken** kopiëren naar het klem bord in Windows PowerShell ISE behoudt het letter type, de grootte en de kleur gegevens van de oorspronkelijke selectie.
-- **Selectie blok keren** : u kunt een blok tekst selecteren door de <kbd>Alt</kbd> -toets ingedrukt te houden terwijl u tekst in het Script venster met de muis selecteert, of door op <kbd>Alt</kbd>+<kbd>SHIFT</kbd>+<kbd>pijl</kbd>te drukken.
+- **Selectie blok keren** : u kunt een blok tekst selecteren door de <kbd>Alt</kbd> -toets ingedrukt te houden terwijl u tekst in het Script venster met de muis selecteert, of door op de<kbd>pijl</kbd> <kbd>Alt</kbd>+<kbd>SHIFT</kbd>+te drukken.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 De aanvullende bewerkings functies bieden een consistente en krachtige bewerkings omgeving.
 
@@ -176,13 +176,13 @@ Deze bewerkings uitbreidingen zijn niet aanwezig in Windows PowerShell ISE 2,0.
 
 > Toegevoegd in Power Shell 3,0
 
-Als u op <kbd>F1</kbd> drukt wanneer uw cursor zich in een cmdlet bevindt of als u een deel van een cmdlet hebt gemarkeerd, opent de nieuwe Help-viewer context gevoelige Help-informatie over de gemarkeerde cmdlet. Als u de Help van Windows Power **Shell wilt weer** geven, typt u `operators` in het console venster en drukt u vervolgens op <kbd>F1</kbd>.
+Als u op <kbd>F1</kbd> drukt wanneer uw cursor zich in een cmdlet bevindt of als u een deel van een cmdlet hebt gemarkeerd, opent de nieuwe Help-viewer context gevoelige Help-informatie over de gemarkeerde cmdlet. Als u **de Help van** Windows Power shell `operators` wilt weer geven, typt u in het console venster en drukt u vervolgens op <kbd>F1</kbd>.
 
-Voordat u deze functie gebruikt, downloadt u de meest recente versie van de Help-onderwerpen voor Windows Power shell op de website van micro soft. De eenvoudigste methode voor het downloaden van de Help-onderwerpen is het uitvoeren van de `Update-Help`-cmdlet in het console venster wanneer u Windows PowerShell ISE als beheerder uitvoert.
+Voordat u deze functie gebruikt, downloadt u de meest recente versie van de Help-onderwerpen voor Windows Power shell op de website van micro soft. De eenvoudigste methode voor het downloaden van de Help-onderwerpen is `Update-Help` het uitvoeren van de cmdlet in het console venster wanneer u Windows PowerShell ISE als Administrator uitvoert.
 
 U kunt wijzigen waar de <kbd>F1</kbd> -toets naar Help zoekt. In het menu **extra**/**Opties** , op het tabblad **algemene instellingen** onder **andere instellingen**, kunt u het selectie vakje **lokale Help-inhoud gebruiken in plaats van online inhoud**in-of uitschakelen. Als u dit selectie vakje inschakelt, zoekt de client naar de Help van de cmdlet in de gedownloade Help die in de map modules is gevonden. Als het selectie vakje is uitgeschakeld, zoekt de client online naar Help.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
 Context gevoelige Help zonder uw huidige cmdlet of script te verlaten biedt een geïntegreerde leer ervaring.
 
@@ -194,16 +194,16 @@ Als u op <kbd>F1</kbd> drukt in vorige versies van Windows PowerShell ISE hebt u
 
 > Toegevoegd in Power Shell 3,0
 
-Met de cmdlet `Show-Command` kunt u een cmdlet of functie samen stellen of uitvoeren door een grafisch formulier in te vullen. Met het formulier kunnen gebruikers werken met Windows Power shell in een grafische omgeving.
-met `Show-Command` kunt u ook geavanceerde scripters een snelle, op Windows Power shell gebaseerde gebruikers interface maken.
+Met `Show-Command` de cmdlet kunt u een cmdlet of functie samen stellen of uitvoeren door een grafisch formulier in te vullen. Met het formulier kunnen gebruikers werken met Windows Power shell in een grafische omgeving.
+`Show-Command`biedt geavanceerde scripters ook de mogelijkheid een snelle, op Windows Power shell gebaseerde GUI te maken.
 
-**Welke waarde voegt deze wijziging toe?**
+**Wat is de toegevoegde waarde van deze wijziging?**
 
-Met behulp van `Show-Command` in uw Windows Power shell-scripts kunt u uw gebruikers voorzien van de grafische omgeving waarmee ze bekend zijn. `Show-Command` kan de inleidende gebruikers ook helpen bij het leren van Windows Power shell.
+Met `Show-Command` in uw Windows Power shell-scripts kunt u uw gebruikers voorzien van de grafische omgeving waarmee ze bekend zijn. `Show-Command`kan de inleidende gebruikers ook helpen bij het leren van Windows Power shell.
 
 **Wat werkt er anders?**
 
-`Show-Command` is nieuw Windows PowerShell ISE 3,0.
+`Show-Command`is nieuw Windows PowerShell ISE 3,0.
 
 ## <a name="see-also"></a>Zie ook
 

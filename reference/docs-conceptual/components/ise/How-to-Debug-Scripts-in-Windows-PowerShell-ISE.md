@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: Power shell, cmdlet
 title: Fouten opsporen in scripts in Windows PowerShell ISE
 ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500942"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in scripts in Windows PowerShell ISE
@@ -28,7 +28,7 @@ U kunt drie typen onderbrekings punten instellen in de Windows Power shell-omgev
 
 Van deze opties kunt u in de omgeving Windows PowerShell ISE fout opsporing alleen regel onderbrekingen instellen met behulp van het menu of de sneltoetsen. De andere twee typen onderbrekings punten kunnen worden ingesteld, maar ze worden ingesteld vanuit het console venster met behulp van de cmdlet [set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) . In deze sectie wordt beschreven hoe u fout opsporing in Windows PowerShell ISE kunt uitvoeren met behulp van de menu's die beschikbaar zijn, en voert u een breder scala van opdrachten uit vanuit het console venster met behulp van scripts.
 
-### <a name="to-set-a-breakpoint"></a>Een onderbrekingspunt instellen
+### <a name="to-set-a-breakpoint"></a>Een onderbrekings punt instellen
 
 Een onderbrekings punt kan alleen in een script worden ingesteld nadat het is opgeslagen. Klik met de rechter muisknop op de regel waar u een regel onderbrekings punt wilt instellen en klik vervolgens op **onderbrekings punt in**-en uitschakelen. Of klik op de regel waar u een regel onderbrekings punt wilt instellen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt in**-en uitschakelen.
 
@@ -122,17 +122,17 @@ Druk op <kbd>F5</kbd> of klik op de werk balk op het pictogram **script uitvoere
 
 ### <a name="to-continue-debugging"></a>Fout opsporing voortzetten
 
-Druk op <kbd>F5</kbd> of klik op de werk balk op het pictogram **script uitvoeren** of Klik in het menu **fout opsporing** op **uitvoeren/door gaan** of, in het deel venster console, typ `C` en druk op <kbd>Enter</kbd>. Dit zorgt ervoor dat het script wordt voortgezet op het volgende onderbrekings punt of aan het einde van het script als er geen verdere onderbrekings punten worden gevonden.
+Druk op <kbd>F5</kbd> of klik op de werk balk op het pictogram **script uitvoeren** of Klik in het menu **fout opsporing** op **uitvoeren/door gaan** of, in het console venster `C` , typ en druk vervolgens op <kbd>Enter</kbd>. Dit zorgt ervoor dat het script wordt voortgezet op het volgende onderbrekings punt of aan het einde van het script als er geen verdere onderbrekings punten worden gevonden.
 
 ### <a name="to-view-the-call-stack"></a>De aanroep stack weer geven
 
 In de aanroep stack wordt de huidige uitvoerings locatie in het script weer gegeven. Als het script wordt uitgevoerd in een functie die is aangeroepen door een andere functie, wordt deze in de uitvoer weer gegeven op extra rijen. In de onderste rij worden het oorspronkelijke script en de regel weer gegeven waarin een functie is aangeroepen. Bij de volgende regel omhoog ziet u die functie en de regel waarin een andere functie mogelijk is aangeroepen. In de bovenste rij wordt de huidige context van de huidige regel weer gegeven waarop het onderbrekings punt is ingesteld.
 
-Als u de huidige aanroep stack wilt weer geven, drukt u op <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd> of klikt u in het menu **fout opsporing** op **aanroep stack weer geven** of in het deel venster console, typt u `K` en drukt u vervolgens op <kbd>Enter</kbd>.
+Als u de huidige aanroep stack wilt weer geven, drukt u op <kbd>CTRL</kbd>+<kbd>+</kbd>+<kbd>D</kbd> of klikt u in het menu **fout opsporing** op **aanroep stack weer geven** of in het deel venster `K` console, typt u en drukt u vervolgens op <kbd>Enter</kbd>.
 
 ### <a name="to-stop-debugging"></a>Fout opsporing stoppen
 
-Druk op <kbd>SHIFT</kbd>+<kbd>F5</kbd> of Klik in het menu **debug** op **debugger stoppen**of typ `Q` in het console venster en druk op <kbd>Enter</kbd>.
+Druk op <kbd>SHIFT</kbd>+<kbd>F5</kbd> of Klik in het menu **fout opsporing** op **debugger stoppen**of typ in het deel venster console `Q` het type en druk vervolgens op <kbd>Enter</kbd>.
 
 ## <a name="how-to-step-over-step-into-and-step-out-while-debugging"></a>Stap over, Step Into en uitstappen tijdens het opsporen van fouten
 
@@ -140,10 +140,10 @@ Step ping is het proces van het uitvoeren van één instructie per keer. U kunt 
 
 | Fout opsporen taak |                                                                                                                   Beschrijving                                                                                                                    |                                                      Hoe u dit kunt doen in Power shell ISE                                                       |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Stap in**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, worden de stappen voor het fout opsporingsprogramma in die functie of dit script uitgevoerd, anders stopt het met de volgende instructie.                      | Druk op <kbd>F11</kbd> of Klik in het menu **fout opsporing** op **stap in**of typ `S` in het deel venster console en druk op <kbd>Enter</kbd>.                 |
-| **Stap over**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, voert het fout opsporingsprogramma de volledige functie of het script uit en stopt het met de volgende instructie na de functie aanroep. | Druk op <kbd>F10</kbd> of Klik in het menu **fout opsporing** op **stap over**, of typ `V` in het console venster en druk op <kbd>Enter</kbd>.                 |
-| **Stap uit**   | Stappen van de huidige functie en één niveau omhoog als de functie is genest. In de hoofd tekst wordt het script uitgevoerd naar het einde of naar het volgende onderbrekings punt. De overgeslagen instructies worden uitgevoerd, maar niet getrapt via.                   | Druk op <kbd>SHIFT</kbd>+<kbd>F11</kbd>of Klik in het menu **fout opsporing** op **stap uit**of typ `O` in het console venster en druk op <kbd>Enter</kbd>. |
-| **Doen**   | Gaat verder met de uitvoering naar het einde of naar het volgende onderbrekings punt. De overgeslagen functies en aanroepen worden uitgevoerd, maar niet door lopen.                                                                                                          | Druk op <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **uitvoeren/door gaan**of typ `C` in het deel venster console en druk op <kbd>Enter</kbd>.               |
+| **Stap in**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, worden de stappen voor het fout opsporingsprogramma in die functie of dit script uitgevoerd, anders stopt het met de volgende instructie.                      | Druk op <kbd>F11</kbd> of Klik in het menu **fout opsporing** op **stap in**of typ `S` in het console venster en druk op <kbd>Enter</kbd>.                 |
+| **Stap over**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, voert het fout opsporingsprogramma de volledige functie of het script uit en stopt het met de volgende instructie na de functie aanroep. | Druk op <kbd>F10</kbd> of Klik in het menu **fout opsporing** op **stap over**, of typ in het deel venster `V` console het type en druk op <kbd>Enter</kbd>.                 |
+| **Stap uit**   | Stappen van de huidige functie en één niveau omhoog als de functie is genest. In de hoofd tekst wordt het script uitgevoerd naar het einde of naar het volgende onderbrekings punt. De overgeslagen instructies worden uitgevoerd, maar niet getrapt via.                   | Druk op <kbd>SHIFT</kbd>+<kbd>F11</kbd>of Klik in het menu **fout opsporing** op **stap uit**, of typ in het deel venster `O` console het type en druk op <kbd>Enter</kbd>. |
+| **Doorgaan**   | Gaat verder met de uitvoering naar het einde of naar het volgende onderbrekings punt. De overgeslagen functies en aanroepen worden uitgevoerd, maar niet door lopen.                                                                                                          | Druk op <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **uitvoeren/door gaan**of typ in het deel venster `C` console het type en druk op <kbd>Enter</kbd>.               |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>De waarden van variabelen weer geven tijdens fout opsporing
 
@@ -151,7 +151,7 @@ U kunt de huidige waarden van variabelen in het script weer geven tijdens het do
 
 ### <a name="to-display-the-values-of-standard-variables"></a>De waarden van standaard variabelen weer geven
 
-Hanteer één van de volgende methoden:
+Gebruik een van de volgende methoden:
 
 - Beweeg de muis aanwijzer over de variabele in het deel venster script om de waarde weer te geven als knop info.
 
@@ -173,13 +173,13 @@ U kunt de voor gaande methode gebruiken om de waarde van vrijwel alle variabelen
 
 - `$Args`
 
-Als u probeert de waarde van een van deze variabelen weer te geven, krijgt u de waarde van die variabele voor in een interne pijp lijn die wordt gebruikt door het fout opsporingsprogramma, niet de waarde van de variabele in het script. U kunt dit voor enkele variabelen (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`en `$Args`) omzeilen met behulp van de volgende methode:
+Als u probeert de waarde van een van deze variabelen weer te geven, krijgt u de waarde van die variabele voor in een interne pijp lijn die wordt gebruikt door het fout opsporingsprogramma, niet de waarde van de variabele in het script. U`$_`kunt dit voor enkele variabelen (, `$Input` `$MyInvocation` `$PSBoundParameters`,, en `$Args`) omzeilen met behulp van de volgende methode:
 
 1. Wijs in het script de waarde van de automatische variabele toe aan een nieuwe variabele.
 
 1. Geef de waarde van de nieuwe variabele weer door de muis aanwijzer over de nieuwe variabele in het Script venster te bewegen of door de nieuwe variabele in het console venster te typen.
 
-Als u bijvoorbeeld de waarde van de variabele `$MyInvocation` wilt weer geven, wijst u in het script de waarde toe aan een nieuwe variabele, zoals `$scriptName`, houdt u de muis aanwijzer over of typt u de `$scriptName` variabele om de waarde ervan weer te geven.
+Als u bijvoorbeeld de waarde van de `$MyInvocation` variabele wilt weer geven, wijst u in het script de waarde toe aan een nieuwe variabele, `$scriptName`zoals, of typt u de `$scriptName` variabele om de waarde ervan weer te geven.
 
 ```powershell
 # In C:\ps-test\MyScript.ps1

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een pull-client instellen met behulp van configuratie namen in Power shell 5,0 en hoger
 ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941717"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Een pull-client instellen met behulp van configuratie namen in Power shell 5,0 en hoger
@@ -29,7 +29,7 @@ Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configurati
 
 ## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
-Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigName** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie aangeduid met de naam `localhost.meta.mof`.
+Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigName** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie `localhost.meta.mof`aangeduid met de naam.
 
 Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigurationManager** aan, waarbij het **pad** is ingesteld op de locatie van het MOF-bestand met de meta configuratie. Bijvoorbeeld:
 
@@ -39,7 +39,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-name"></a>Configuratie naam
 
-In de onderstaande voor beelden wordt de eigenschap **configuratiepad** van de LCM ingesteld op de naam van een eerder gecompileerde configuratie die is gemaakt voor dit doel. De **configuratie** naam is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet de naam `<ConfigurationName>.mof`, in dit geval ' ClientConfig. mof '. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
+In de onderstaande voor beelden wordt de eigenschap **configuratiepad** van de LCM ingesteld op de naam van een eerder gecompileerde configuratie die is gemaakt voor dit doel. De **configuratie** naam is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet `<ConfigurationName>.mof`een naam hebben, in dit geval ' ClientConfig. mof '. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Een pull-client instellen om configuraties te downloaden
 

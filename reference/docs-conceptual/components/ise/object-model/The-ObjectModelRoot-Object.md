@@ -3,15 +3,15 @@ ms.date: 08/25/2017
 keywords: Power shell, cmdlet
 title: Het ObjectModelRoot-object
 ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736025"
 ---
 # <a name="the-objectmodelroot-object"></a>Het ObjectModelRoot-object
 
-Het `$psISE`-object, het hoofd object in Windows Power shell® Integrated Scripting Environment (ISE) is een exemplaar van de klasse micro soft. Power shell. host. ISE. ObjectModelRoot. In dit onderwerp worden de eigenschappen van het object **ObjectModelRoot** beschreven.
+Het `$psISE` object, het hoofd object in Windows power shell® Integrated Scripting Environment (ISE) is een exemplaar van de klasse micro soft. Power shell. host. ISE. ObjectModelRoot. In dit onderwerp worden de eigenschappen van het object **ObjectModelRoot** beschreven.
 
 ## <a name="properties"></a>Eigenschappen
 
@@ -53,5 +53,5 @@ De alleen-lezen eigenschap waarmee de verzameling van de Power shell-tabbladen w
 
 ## <a name="see-also"></a>Zie ook
 
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

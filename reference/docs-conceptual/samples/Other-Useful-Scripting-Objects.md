@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Andere nuttige scriptobjecten
 ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325144"
 ---
 # <a name="other-useful-scripting-objects"></a>Andere nuttige scriptobjecten
@@ -32,7 +32,7 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die zijn opgenomen in `$psLocalHelp`.
+Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die `$psLocalHelp`zijn opgenomen in.
 
 ```powershell
 # See the local help map
@@ -77,4 +77,4 @@ $psOnlineHelp.Add("get-myNoun", "https://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>Zie ook
 
-[Doel van het Windows PowerShell ISE scripting object model](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Doel van het scriptobjectmodel van Windows PowerShell ISE](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

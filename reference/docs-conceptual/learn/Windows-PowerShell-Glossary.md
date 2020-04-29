@@ -3,35 +3,35 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Windows Power shell-woorden lijst
 ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030357"
 ---
 # <a name="windows-powershell-glossary"></a>Windows Power shell-woorden lijst
 
 
-|Term|De definitie van|
+|Termijn|Definitie|
 |--------|--------------|
 |binaire module|Een Windows Power shell-module met een binaire module bestand (. dll). Een binaire module kan een module manifest bevatten.|
 |algemene para meter|Een para meter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werk stromen door de Windows Power shell-engine.|
 |punt bron|In Windows Power shell kunt u een opdracht starten door een punt en een spatie voor de opdracht te typen. Opdrachten die met een punt zijn genoteerd, worden uitgevoerd in de huidige scope in plaats van in een nieuwe scope. Alle variabelen, aliassen, functies of stations die door de opdracht worden gemaakt, worden gemaakt in het huidige bereik en zijn beschikbaar voor gebruikers wanneer de opdracht is voltooid.|
 |dynamische module|Een module die alleen bestaat in het geheugen. Met de cmdlets New-module en import-PSSession worden dynamische modules gemaakt.|
-|Dynamische para meter|Een para meter die wordt toegevoegd aan een Windows Power shell-cmdlet,-functie of-script onder bepaalde voor waarden. Cmdlets, functies, providers en scripts kunnen dynamische para meters toevoegen.|
+|dynamische para meter|Een para meter die wordt toegevoegd aan een Windows Power shell-cmdlet,-functie of-script onder bepaalde voor waarden. Cmdlets, functies, providers en scripts kunnen dynamische para meters toevoegen.|
 |Opmaak bestand|Een Windows Power shell XML-bestand met de extensie. Format. ps1xml dat bepaalt hoe Windows Power shell een object weergeeft op basis van het .NET Framework type.|
 |algemene sessie status|De sessie status die de gegevens bevat die toegankelijk is voor de gebruiker van een Windows Power shell-sessie.|
 |host|De interface die door de Windows Power shell-engine wordt gebruikt om met de gebruiker te communiceren. De host geeft bijvoorbeeld op hoe prompts worden afgehandeld tussen Windows Power shell en de gebruiker.|
 |hosttoepassing|Een programma dat de Windows Power shell-engine in het proces laadt en gebruikt om bewerkingen uit te voeren.|
-|Invoer verwerkings methode|Een methode die een cmdlet kan gebruiken voor het verwerken van de records die worden ontvangen als invoer. De invoer methoden omvatten de methode BeginProcessing, de methode ProcessRecord, de methode EndProcessing en de methode StopProcessing.|
+|invoer verwerkings methode|Een methode die een cmdlet kan gebruiken voor het verwerken van de records die worden ontvangen als invoer. De invoer methoden omvatten de methode BeginProcessing, de methode ProcessRecord, de methode EndProcessing en de methode StopProcessing.|
 |Manifest module|Een Windows Power shell-module met een manifest en waarvan de RootModule-sleutel leeg is.|
 |module manifest|Een Windows Power shell-gegevens bestand (. psd1) waarmee de inhoud van een module wordt beschreven en waarmee wordt bepaald hoe een module wordt verwerkt.|
 |sessie status van de module|De sessie status die de open bare en persoonlijke gegevens van een Windows Power shell-module bevat. De persoonlijke gegevens in deze sessie status zijn niet beschikbaar voor de gebruiker van een Windows Power shell-sessie.|
 |niet-afsluit fout|Er is een fout opgetreden die Windows Power shell niet stopt met het verwerken van de opdracht.|
 |zelfstandig|Het woord dat volgt op het afbreek streepje in de naam van een Windows Power shell-cmdlet. In het zelfstandig naam woord worden de resources beschreven waarop de cmdlet optreedt.|
-|Parameterset|Een groep para meters die in dezelfde opdracht kunnen worden gebruikt om een specifieke actie uit te voeren.|
+|parameterset|Een groep para meters die in dezelfde opdracht kunnen worden gebruikt om een specifieke actie uit te voeren.|
 |teer|In Windows Power shell om de resultaten van de voor gaande opdracht als invoer naar de volgende opdracht in de pijp lijn te verzenden.|
-|pijp lijn|Een reeks opdrachten die zijn verbonden door pijplijn operators&#124;() (ASCII 124). Elke pijplijn operator verzendt de resultaten van de voor gaande opdracht als invoer voor de volgende opdracht.|
+|pijp lijn|Een reeks opdrachten die zijn verbonden door pijplijn operators (&#124;) (ASCII 124). Elke pijplijn operator verzendt de resultaten van de voor gaande opdracht als invoer voor de volgende opdracht.|
 |PSSession|Een type Windows Power shell-sessie dat door de gebruiker wordt gemaakt, beheerd en gesloten.|
 |hoofd module|De module die is opgegeven in de sleutel RootModule in een module manifest.|
 |runs|In Windows Power shell wordt de besturings omgeving waarin elke opdracht in een pijp lijn wordt uitgevoerd.|
@@ -50,7 +50,7 @@ ms.locfileid: "67030357"
 |Windows Power Shell-station|Een virtuele schijf die rechtstreekse toegang biedt tot een gegevens archief. Het kan worden gedefinieerd door een Windows Power shell-provider of worden gemaakt op de opdracht regel. Stations die zijn gemaakt op de opdracht regel, zijn sessie-specifieke stations en gaan verloren wanneer de sessie wordt gesloten.|
 |Windows PowerShell ISE (Integrated Scripting Environment)|Een Windows Power shell-hosttoepassing waarmee u opdrachten kunt uitvoeren en scripts kunt schrijven, testen en opsporen in een beschrijvende, Unicode-compatibele omgeving.|
 |Windows PowerShell-module|Een onafhankelijke herbruikbare eenheid waarmee u uw Windows Power shell-code kunt partitioneren, organiseren en samen voegen. Een module kan cmdlets, providers, functies, variabelen en andere typen resources bevatten die als één eenheid kunnen worden geïmporteerd.|
-|Windows PowerShell-provider|Een op Microsoft .NET Framework gebaseerd programma dat de gegevens in een gespecialiseerd gegevens archief beschikbaar maakt in Windows Power shell, zodat u het kunt weer geven en beheren.|
+|Windows Power shell-provider|Een op Microsoft .NET Framework gebaseerd programma dat de gegevens in een gespecialiseerd gegevens archief beschikbaar maakt in Windows Power shell, zodat u het kunt weer geven en beheren.|
 |Windows Power shell-script|Een script dat is geschreven in de Windows Power shell-taal.|
 |Windows Power shell-script bestand|Een bestand met de extensie. ps1 en dat een script bevat dat is geschreven in de Windows Power shell-taal.|
 |Windows Power shell-module|Een resource die een set cmdlets, providers en Microsoft .NET Framework-typen definieert die kunnen worden toegevoegd aan de Windows Power shell-omgeving.|

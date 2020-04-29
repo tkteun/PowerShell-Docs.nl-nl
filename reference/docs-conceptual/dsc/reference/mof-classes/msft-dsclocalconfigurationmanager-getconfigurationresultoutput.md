@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: GetConfigurationResultOutput-methode
 ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941570"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput-methode
@@ -29,7 +29,7 @@ uint32 GetConfigurationResultOutput(
 
 *resumeOutputBookmark* \[in\] geeft aan dat de uitvoer een voortzetting van een vorige blad wijzer moet zijn.
 
-*uitvoer* \[\] de uitvoer voor de opgegeven taak.
+*uitvoer* \[van\] de uitvoer voor de opgegeven taak.
 
 ## <a name="return-value"></a>Retourwaarde
 

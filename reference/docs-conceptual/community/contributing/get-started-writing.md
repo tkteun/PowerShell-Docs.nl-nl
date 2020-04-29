@@ -4,10 +4,10 @@ description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
-ms.sourcegitcommit: bda70d2163eef5a158441cb1c38ac422d704535d
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "81005513"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Aan de slag met bijdragen aan Power shell-documentatie
@@ -21,7 +21,7 @@ De [Power shell-docs-opslag plaats][psdocs] is onderverdeeld in twee inhouds gro
 ### <a name="reference-content"></a>Referentie-inhoud
 
 De referentie-inhoud is de Power shell-cmdlet-verwijzing voor de cmdlets die in Power shell worden geleverd.
-De [verwijzing][ref] wordt verzameld in versie mappen (5,1, 6, 7,0 en 7,1). Deze inhoud bevat alleen cmdlet-verwijzingen voor de modules die worden geleverd met Power shell. Deze inhoud wordt ook gebruikt voor het maken van de Help-informatie die wordt weer gegeven door de `Get-Help`-cmdlet.
+De [verwijzing][ref] wordt verzameld in versie mappen (5,1, 6, 7,0 en 7,1). Deze inhoud bevat alleen cmdlet-verwijzingen voor de modules die worden geleverd met Power shell. Deze inhoud wordt ook gebruikt voor het maken van de Help-informatie `Get-Help` die door de cmdlet wordt weer gegeven.
 
 > [!NOTE]
 > De inhouds opgave (TOC) voor referentie-inhoud wordt automatisch gegenereerd door het publicatie systeem. U hoeft de inhouds opgave niet bij te werken.
@@ -43,11 +43,11 @@ De [conceptuele documentatie][conceptual] is niet ingedeeld op versie. Alle arti
 
 ## <a name="using-git-branches"></a>Git-vertakkingen gebruiken
 
-De standaard vertakking voor Power shell-docs is de vertakking `staging`. Wijzigingen die zijn aangebracht in werk vertakkingen worden samengevoegd in de `staging` vertakking voordat ze worden gepubliceerd. Ongeveer eenmaal per week wordt de `staging` vertakking samengevoegd in de `live` vertakking. De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.microsoft.com. Wijzigingen mogen nooit rechtstreeks in de `live` vertakking worden aangebracht.
+De standaard vertakking voor Power shell-docs is `staging` de vertakking. Wijzigingen die zijn aangebracht in werk vertakkingen worden `staging` samengevoegd in de vertakking voordat ze worden gepubliceerd. Ongeveer eenmaal per week wordt de `staging` vertakking in de `live` vertakking samengevoegd. De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.Microsoft.com. Wijzigingen mogen nooit rechtstreeks in de `live` vertakking worden aangebracht.
 
-Als u een wijziging in de documentatie indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u of er een release vertakking voor die versie is. Alle wijzigingen die van toepassing zijn op een specifieke, toekomstige versie, moeten zijn gericht op de release vertakking. Release vertakkingen hebben het volgende naam patroon: `release-<version>`.
+Als u een wijziging indient voor documentatie die alleen op een niet-uitgebrachte versie van PowerShell van toepassing is, moet u controleren of er een releasevertakking is voor die versie. Alle wijzigingen die op een specifieke, toekomstige versie van toepassing zijn, moeten worden gericht op de releasevertakking. Releasevertakkingen hebben het volgende naamgevingspatroon: `release-<version>`.
 
-Voordat u wijzigingen start, maakt u een werk vertakking in uw lokale kopie van de Power shell-docs-opslag plaats. Dit moet een [kloon van uw Fork][fork]zijn. Zorg ervoor dat u uw lokale opslag plaats synchroniseert voordat u uw werk vertakking maakt. De werk vertakking moet worden gemaakt op basis van een update naar datum-kopie van de `staging` of `release` vertakking.
+Voordat u wijzigingen start, maakt u een werk vertakking in uw lokale kopie van de Power shell-docs-opslag plaats. Dit moet een [kloon van uw Fork][fork]zijn. Zorg ervoor dat u uw lokale opslag plaats synchroniseert voordat u uw werk vertakking maakt. De werk vertakking moet worden gemaakt op basis van een update-to-date kopie `staging` van `release` de of vertakking.
 
 Breng de wijzigingen aan die u wilt verzenden na het proces in het gedeelte [uw wijziging door voeren][making-changes] in de hand leiding voor centrale mede werkers.
 
@@ -59,7 +59,7 @@ Net als bij het Power shell [RFC-proces][rfc], het maken van een probleem voorda
 
 ### <a name="updating-existing-articles"></a>Bestaande artikelen bijwerken
 
-Waar van toepassing, worden het cmdlet-referentie artikel gedupliceerd in alle versies van Power shell. Bij het rapporteren van een probleem met betrekking tot een cmdlet-verwijzing of een `About_` artikel, moet u opgeven welke versies worden beïnvloed door het probleem. De uitgifte sjabloon in GitHub bevat een controle lijst met versies. Gebruik de selectie vakjes om op te geven welke versies van de inhoud worden beïnvloed. Wanneer u een wijziging in een artikel indient voor een probleem dat van invloed is op meerdere versies van de inhoud, moet u de juiste wijziging Toep assen op elke versie van het bestand.
+Waar van toepassing, worden het cmdlet-referentie artikel gedupliceerd in alle versies van Power shell. Wanneer u een probleem met een cmdlet-verwijzing of `About_` een artikel rapporteert, moet u opgeven welke versies worden beïnvloed door het probleem. De uitgifte sjabloon in GitHub bevat een controle lijst met versies. Gebruik de selectie vakjes om op te geven welke versies van de inhoud worden beïnvloed. Wanneer u een wijziging in een artikel indient voor een probleem dat van invloed is op meerdere versies van de inhoud, moet u de juiste wijziging Toep assen op elke versie van het bestand.
 
 ## <a name="next-steps"></a>Volgende stappen
 

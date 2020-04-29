@@ -3,10 +3,10 @@ ms.date: 01/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pull-service
 ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500714"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Pull-service desired state Configuration
@@ -59,7 +59,7 @@ Vereisten voor het gebruik van een pull-server:
 - Een server met:
   - WMF/Power Shell 4,0 of hoger
   - IIS-serverrol
-  - DSC Service
+  - DSC-service
 - In het ideale geval wordt een certificaat gegenereerd voor het beveiligen van referenties die worden door gegeven aan de lokale Configuration Manager (LCM) op doel knooppunten
 
 De beste manier om Windows Server te configureren voor het hosten van pull-service is het gebruik van een DSC-configuratie. Hieronder vindt u een voorbeeld script.
@@ -75,23 +75,23 @@ Vanaf release 17090 van Windows Server is SQL Server een ondersteunde optie voor
 > [!NOTE]
 > SQL Server ondersteuning wordt niet toegevoegd aan eerdere versies van WMF 5,1 (of eerder) en is alleen beschikbaar op Windows Server-versies die groter zijn dan of gelijk zijn aan 17090.
 
-Als u de pull-server wilt configureren voor het gebruik van SQL Server, stelt u **SqlProvider** in op `$true` en **SqlConnectionString** op een geldige SQL Server verbindings reeks. Zie voor meer informatie [SqlClient-verbindings reeksen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+Als u de pull-server wilt configureren voor het gebruik van `$true` SQL Server, stelt u **SqlProvider** in op en **SqlConnectionString** naar een geldige SQL Server verbindings reeks. Zie voor meer informatie [SqlClient-verbindings reeksen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Voor een voor beeld van SQL Server configuratie met **xDscWebService**, lees dan eerst [met behulp van de xDscWebService-resource](#using-the-xdscwebservice-resource) en controleer vervolgens [Sample_xDscWebServiceRegistration_UseSQLProvider. ps1 op github](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>De xDscWebService-Resource gebruiken
 
-De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te maken van de **xDscWebService** -resource die is opgenomen in de **xPSDesiredStateConfiguration** -module. In de volgende stappen wordt uitgelegd hoe u de resource gebruikt in een `Configuration` waarmee de webservice wordt ingesteld.
+De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te maken van de **xDscWebService** -resource die is opgenomen in de **xPSDesiredStateConfiguration** -module. In de volgende stappen wordt uitgelegd hoe u de resource gebruikt `Configuration` in een waarmee de webservice wordt ingesteld.
 
 1. Roep de cmdlet [install-module](/powershell/module/PowerShellGet/Install-Module) aan om de **xPSDesiredStateConfiguration** -module te installeren.
 
    > [!NOTE]
-   > `Install-Module` is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0 en hoger.
+   > `Install-Module`is opgenomen in de **PowerShellGet** -module, die is opgenomen in power shell 5,0 en hoger.
 
 1. Een SSL-certificaat voor de DSC-pull-server ophalen van een vertrouwde certificerings instantie, binnen uw organisatie of een open bare instantie. Het certificaat dat is ontvangen van de certificerings instantie is meestal in de PFX-indeling.
-1. Installeer het certificaat op het knoop punt dat de DSC-pull-server wordt op de standaard locatie, dat moet worden `CERT:\LocalMachine\My`.
+1. Installeer het certificaat op het knoop punt dat de DSC-pull-server wordt op de standaard locatie, dat `CERT:\LocalMachine\My`wil zeggen.
    - Noteer de vinger afdruk van het certificaat.
-1. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, voert u het volgende in bij de PS-prompt en drukt u op ENTER: `[guid]::newGuid()` of `New-Guid`. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
-1. In het Power shell-ISE start (<kbd>F5</kbd>) het volgende configuratie script (opgenomen in de map van de **xPSDesiredStateConfiguration** -module als `Sample_xDscWebServiceRegistration.ps1`). Met dit script wordt de pull-server ingesteld.
+1. Selecteer een GUID die moet worden gebruikt als de registratie sleutel. Als u een rapport wilt genereren met Power shell, voert u het volgende in bij `[guid]::newGuid()` de `New-Guid`PS-prompt en drukt u op ENTER: of. Deze sleutel wordt gebruikt door client knooppunten als een gedeelde sleutel voor verificatie tijdens de registratie. Zie de sectie registratie sleutel hieronder voor meer informatie.
+1. In het Power shell-ISE start (<kbd>F5</kbd>) het volgende configuratie script (opgenomen in de map van de **xPSDesiredStateConfiguration** - `Sample_xDscWebServiceRegistration.ps1`module als). Met dit script wordt de pull-server ingesteld.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -163,12 +163,12 @@ De eenvoudigste manier om een webpull-server in te stellen, is door gebruik te m
 
 #### <a name="registration-key"></a>Registratie sleutel
 
-Als u client knooppunten wilt toestaan om te registreren bij de server, zodat ze configuratie namen kunnen gebruiken in plaats van een configuratie-ID, wordt een registratie sleutel die is gemaakt met de bovenstaande configuratie opgeslagen in een bestand met de naam `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService`. De registratie sleutel functioneert als een gedeeld geheim dat wordt gebruikt tijdens de eerste registratie door de client met de pull-server. De client genereert een zelfondertekend certificaat dat wordt gebruikt om een unieke verificatie uit te dienen bij de pull-server zodra de registratie is voltooid. De vinger afdruk van dit certificaat wordt lokaal opgeslagen en gekoppeld aan de URL van de pull-server.
+Als u client knooppunten wilt toestaan om te registreren bij de server, zodat ze configuratie namen kunnen gebruiken in plaats van een configuratie-ID, wordt een registratie sleutel die is gemaakt met de bovenstaande configuratie `RegistrationKeys.txt` opgeslagen `C:\Program Files\WindowsPowerShell\DscService`in een bestand met de naam in. De registratie sleutel functioneert als een gedeeld geheim dat wordt gebruikt tijdens de eerste registratie door de client met de pull-server. De client genereert een zelfondertekend certificaat dat wordt gebruikt om een unieke verificatie uit te dienen bij de pull-server zodra de registratie is voltooid. De vinger afdruk van dit certificaat wordt lokaal opgeslagen en gekoppeld aan de URL van de pull-server.
 
 > [!NOTE]
 > Registratie sleutels worden niet ondersteund in Power Shell 4,0.
 
-Als u een knoop punt wilt configureren voor verificatie met de pull-server, moet de registratie sleutel zich in de-configuratie voor elk doel knooppunt bevindt dat wordt geregistreerd bij deze pull-server. Houd er rekening mee dat de **RegistrationKey** in de onderstaande meta configuratie wordt verwijderd nadat de doel computer is geregistreerd en dat de waarde moet overeenkomen met de waarde die is opgeslagen in het `RegistrationKeys.txt` bestand op de pull-server (' 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' voor dit voor beeld). De registratie sleutel waarde altijd veilig behandelen, omdat een doel machine kan worden geregistreerd bij de pull-server.
+Als u een knoop punt wilt configureren voor verificatie met de pull-server, moet de registratie sleutel zich in de-configuratie voor elk doel knooppunt bevindt dat wordt geregistreerd bij deze pull-server. Houd er rekening mee dat de **RegistrationKey** in de onderstaande meta configuratie wordt verwijderd nadat de doel computer is geregistreerd en dat de waarde moet overeenkomen met de waarde `RegistrationKeys.txt` die is opgeslagen in het bestand op de pull-server (' 140a952b-b9d6-406b-b416-e0f759c9c0e4 ' voor dit voor beeld). De registratie sleutel waarde altijd veilig behandelen, omdat een doel machine kan worden geregistreerd bij de pull-server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -225,16 +225,16 @@ Nadat de installatie van de pull-server is voltooid, worden in de mappen die zij
 
 ### <a name="dsc-resource-module-package-format"></a>Pakket indeling voor DSC-resource module
 
-Elke resource module moet een gezipte en een naam hebben volgens het volgende patroon `{Module Name}_{Module Version}.zip`.
+Elke resource module moet een gezipte en een naam hebben op basis van `{Module Name}_{Module Version}.zip`het volgende patroon.
 
-Een module met de naam **xWebAdminstration** met een module versie van 3.1.2.0 krijgt bijvoorbeeld de naam `xWebAdministration_3.1.2.0.zip`. Elke versie van een module moet zich in één ZIP-bestand bevinden.
-Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund. Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht. De standaard indeling van modules met DSC-resource in WMF 5,0 is `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het pad wordt `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
+Een module met de naam **xWebAdminstration** met een module versie van 3.1.2.0 zou bijvoorbeeld een naam `xWebAdministration_3.1.2.0.zip`hebben. Elke versie van een module moet zich in één ZIP-bestand bevinden.
+Omdat er slechts één versie van een resource in elk zip-bestand is, wordt de module-indeling die is toegevoegd in WMF 5,0 met ondersteuning voor meerdere module versies in één map niet ondersteund. Dit betekent dat voordat u DSC-resource modules inpakt voor gebruik met een pull-server, een kleine wijziging in de directory structuur moet worden aangebracht. De standaard indeling van modules met DSC-resource in WMF 5,0 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`is. Voordat u de pull-server inpakt, verwijdert u de map **{module versie}** zodat het `{Module Folder}\DscResources\{DSC Resource Folder}\`pad wordt gemaakt. Ga met deze wijziging naar de map die hierboven is beschreven en plaats deze zip-bestanden in de map **para modulepath in** .
 
 Gebruik `New-DscChecksum {module zip file}` om een controlesom bestand te maken voor de zojuist toegevoegde module.
 
 ### <a name="configuration-mof-format"></a>MOF-indeling voor configuratie
 
-Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met de naam `ConfigurationMOFName.mof.checksum`, waarbij `ConfigurationMOFName` de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map. Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
+Een configuratie-MOF-bestand moet worden gekoppeld aan een controlesom bestand zodat een LCM op een doel knooppunt de configuratie kan valideren. Als u een controlesom wilt maken, roept u de cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) aan. De cmdlet neemt een para meter **Path** op die de map specificeert waarin de configuratie-MOF zich bevindt. De cmdlet maakt een controlesom bestand met `ConfigurationMOFName.mof.checksum`de naam `ConfigurationMOFName` , waarbij de naam is van het MOF-configuratie bestand. Als er meer dan één configuratie-MOF-bestanden in de opgegeven map zijn, wordt er een controlesom gemaakt voor elke configuratie in de map. Plaats de MOF-bestanden en de bijbehorende controlesom bestanden in de map **ConfigurationPath** .
 
 > [!NOTE]
 > Als u het MOF-configuratie bestand op een wille keurige manier wijzigt, moet u het controlesom bestand ook opnieuw maken.

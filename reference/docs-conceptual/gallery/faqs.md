@@ -4,19 +4,19 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
 ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500575"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-## <a name="what-is-a-powershell-module"></a>Wat is een Power shell-module?
+## <a name="what-is-a-powershell-module"></a>Wat is een PowerShell-module?
 
 Een Power shell-module is een herbruikbaar pakket met een Power shell-functionaliteit. Alles in Power shell (functies, variabelen, DSC-resources, enz.) kan worden verpakt in modules. Doorgaans zijn modules mappen met specifieke typen bestanden die zijn opgeslagen op een specifiek pad. Er zijn een aantal verschillende typen Power shell-modules.
 
-## <a name="what-is-a-powershell-script"></a>Wat is een Power shell-script?
+## <a name="what-is-a-powershell-script"></a>Wat is een PowerShell-script?
 
 Een Power shell-script is een reeks opdrachten die zijn opgeslagen in een. ps1-bestand om het opnieuw gebruiken en delen mogelijk te maken. Power shell-werk stromen zijn ook Power shell-scripts, die een overzicht maken van een reeks taken en het bepalen van sequentiëren voor deze taken. Ga voor meer informatie naar [aan de slag met Power shell-werk stroom](https://technet.microsoft.com/library/jj134242.aspx).
 
@@ -32,16 +32,16 @@ Modules zijn over het algemeen beter te delen, maar we scha kelen het delen van 
 U moet een account registreren in de PowerShell Gallery voordat u pakketten kunt publiceren naar de galerie. Dit komt doordat voor publicatie pakketten een NuGetApiKey is vereist, dat wordt meegeleverd bij de registratie. Als u zich wilt registreren, gebruikt u uw persoonlijke, werk-of school account om u aan te melden bij de PowerShell Gallery. Een eenmalig registratie proces is vereist wanneer u zich voor de eerste keer aanmeldt.
 Daarna is uw NuGetApiKey beschikbaar op uw profiel pagina.
 
-Nadat u in de galerie hebt geregistreerd, gebruikt u de cmdlets [Publish-module][] of [Publish-script][] om uw pakket naar de galerie te publiceren. Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad publiceren of leest u de documentatie [Publish-Module][] en [Publish-Script][] .
+Nadat u in de galerie hebt geregistreerd, gebruikt u de cmdlets [Publish-module][] of [Publish-script][] om uw pakket naar de galerie te publiceren. Voor meer informatie over het uitvoeren van deze cmdlets gaat u naar het tabblad publiceren of leest u de documentatie [publiceren-module][] en [publicatie-script][] .
 
 **U hoeft zich niet te registreren of u aan te melden bij de galerie om pakketten te installeren of op te slaan.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat moet dat betekenen?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat houdt dat in?
 
 Deze fout kan de volgende oorzaken hebben:
 
 - **De opgegeven API-sleutel is ongeldig.** Zorg ervoor dat u de geldige API-sleutel hebt opgegeven in uw account. Als u uw API-sleutel wilt ophalen, bekijkt u de profiel pagina.
-- **De opgegeven pakket naam is geen eigendom van u.** Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de pagina Details van het pakket: `https://www.powershellgallery.com/packages/<packageName>`. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` navigeert, gaat u naar de pagina Details van de ondertekenaar, of deze niet is vermeld of niet. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
+- **De opgegeven pakket naam is geen eigendom van u.** Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de `https://www.powershellgallery.com/packages/<packageName>`pagina Details van het pakket:. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` de pagina met details van de ziekte gaat gaan, kunt u deze niet meer weer geven. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
   - Selecteer een andere naam voor het pakket.
   - Neem contact op met de eigen aren van het bestaande pakket.
 
@@ -58,7 +58,7 @@ Als u een categorie selectie vakje inschakelt, wordt ' Ik wil graag alle pakkett
 
 Elk soort Power shell-module (script modules, binaire modules of manifest modules) kan worden gepubliceerd in de galerie. Voor het publiceren van een module moet PowerShellGet een aantal dingen kennen: de versie, beschrijving, auteur en de licentie. Deze informatie wordt gelezen als onderdeel van het publicatie proces van het *module manifest* bestand (. psd1) of van de waarde van de **LicenseUri** -para meter van de cmdlet [Publish-module][] . Alle modules die naar de galerie worden gepubliceerd, moeten module manifesten hebben. Alle modules die de volgende informatie bevatten in het manifest, kunnen worden gepubliceerd in de galerie:
 
-- Version
+- Versie
 - Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van de module, hetzij als onderdeel van de sectie **PrivateData** van het manifest, of in de para meter **LicenseUri** van de cmdlet [Publish-module][] .
@@ -73,9 +73,9 @@ Als u de velden in het manifest bestand van de module wilt bijwerken, gebruikt u
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Wat zijn de vereisten voor het publiceren van een script naar de galerie?
 
-Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in de galerie. Voor het publiceren van een script moet PowerShellGet enkele dingen weten over it: de versie, beschrijving, auteur en de licentie. Deze informatie wordt gelezen als onderdeel van het publicatie proces van de sectie *PSScriptInfo* van het script bestand of van de waarde van de **LicenseUri** -para meter van de [Publish-Script][] cmdlet. Alle scripts die naar de galerie worden gepubliceerd, moeten meta gegevens bevatten. Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worden gepubliceerd in de galerie:
+Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in de galerie. Voor het publiceren van een script moet PowerShellGet enkele dingen weten over it: de versie, beschrijving, auteur en de licentie. Deze informatie wordt gelezen als onderdeel van het publicatie proces van de sectie *PSScriptInfo* van het script bestand of van de waarde van de **LicenseUri** -para meter van de [Publish-script-][] cmdlet. Alle scripts die naar de galerie worden gepubliceerd, moeten meta gegevens bevatten. Elk script dat de volgende informatie bevat in de sectie PSScriptInfo, kan worden gepubliceerd in de galerie:
 
-- Version
+- Versie
 - Beschrijving
 - Auteur
 - Een URI naar de licentie voorwaarden van het script, hetzij als onderdeel van de sectie **PSScriptInfo** van het script, of in de para meter **LicenseUri** van de cmdlet [Publish-script][] .
@@ -85,7 +85,7 @@ Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in
 Typ wat u zoekt in het tekstvak. Als u bijvoorbeeld modules wilt zoeken die verwant zijn aan Azure SQL, typt u ' Azure SQL '. Onze zoek machine zoekt naar deze tref woorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en andere meta gegevens. Op basis van een score met een gewogen kwaliteit worden de meest overeenkomende resultaten weer gegeven. U kunt ook zoeken op specifiek veld met de syntaxis Field: ' value ' in de zoek query voor de volgende velden:
 
 - Tags
-- Functies
+- Functions
 - Cmdlets
 - DscResources
 - PowerShellVersion
@@ -112,7 +112,7 @@ Alle modules in de galerie bevatten module manifesten en de meeste van deze modu
 
 Package Management is een gemeen schappelijke interface voor het werken met pakket beheer. Uiteindelijk, of u nu gebruikmaakt van Power shell-modules, MSIs, Ruby edelsteen, NuGet-pakketten of perl-modules, moet u de opdrachten van Package Management (zoek-package en install-package) kunnen gebruiken om ze te zoeken en te installeren. Package Management doet dit door een pakket provider te hebben voor elke pakket manager die wordt aangesloten op Package Management. Providers doen al het werkelijke werk. ze halen inhoud op uit opslag plaatsen en installeren de inhoud lokaal. Vaak verloopt pakket providers gewoon om de bestaande pakket beheer Programma's voor een bepaald pakket type.
 
-PowerShellGet is pakket beheer voor Power shell-pakketten. Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management. Daarom kunt u [Installatie-module][] of install-package-provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery. Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
+PowerShellGet is pakket beheer voor Power shell-pakketten. Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management. Daarom kunt u [install-module][] of install-package-provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery. Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
 
 In samen vatting is PowerShellGet alleen gericht op het beheer van een Premium-ervaring voor Power shell-inhoud. Package Management is gericht op het beschikbaar maken van alle pakket beheer-ervaringen via één algemene set hulpprogram ma's. Als u vindt dat dit antwoord niet voldoet, is er een lang antwoord onder aan dit document, in de sectie **Hoe heeft package management eigenlijk betrekking op de PowerShellGet?**
 
@@ -133,7 +133,7 @@ Ja.
 
 Onder de motorkap maakt PowerShellGet intensief gebruik van Package Management-infra structuur.
 
-Op de Power shell-cmdlet [Installatie-module][] in feite een smalle wrapper rond `Install-Package -Provider PSModule`.
+Op de Power shell-cmdlet [-laag is install-module][] eigenlijk een smalle `Install-Package -Provider PSModule`wrapper rondom.
 
 In de laag van de package management-pakket provider roept de PSModule-pakket provider echt aan bij andere package management-pakket providers. Als u bijvoorbeeld werkt met galerieën op basis van NuGet (zoals de PowerShell Gallery), gebruikt de PSModule-pakket provider de NuGet-pakket provider om met de opslag plaats te werken.
 

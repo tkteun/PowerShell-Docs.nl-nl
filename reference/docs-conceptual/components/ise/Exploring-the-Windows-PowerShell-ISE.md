@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: Power shell, cmdlet
 title: Kennismaking met Windows PowerShell ISE
 ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737097"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
@@ -16,7 +16,7 @@ U kunt de Windows Power shell® Integrated Scripting Environment (ISE) gebruiken
 > [!NOTE]
 > Vanaf Windows PowerShell ISE 3,0 worden de opdracht-en uitvoer deel Vensters gecombineerd in één console venster.
 
-## <a name="menu-bar"></a>Menubalk
+## <a name="menu-bar"></a>Menu balk
 
 De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**, **fout opsporing**, **invoeg toepassingen**en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
@@ -34,13 +34,13 @@ De volgende knoppen bevinden zich op de werk balk.
 |             Knop             |                                                                                     Functie                                                                                     |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                        | Hiermee opent u een nieuw script.                                                                                                                                                              |
-| **Lopend**                       | Hiermee opent u een bestaand script of bestand.                                                                                                                                                |
+| **Openen**                       | Hiermee opent u een bestaand script of bestand.                                                                                                                                                |
 | **Opslaan**                       | Hiermee slaat u een script of bestand op.                                                                                                                                                          |
-| **Verminderen**                        | Hiermee knipt u de geselecteerde tekst en kopieert u deze naar het klem bord.                                                                                                                           |
-| **Copy**                       | Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.                                                                                                                                       |
+| **Knippen**                        | Hiermee knipt u de geselecteerde tekst en kopieert u deze naar het klem bord.                                                                                                                           |
+| **Kopieer**                       | Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.                                                                                                                                       |
 | **Plakken**                      | Hiermee wordt de inhoud van het klem bord op de cursor locatie geplakt.                                                                                                                     |
 | **Uitvoer venster wissen**          | Hiermee wordt alle inhoud in het deel venster Uitvoer gewist.                                                                                                                                           |
-| **Opdracht**                       | Hiermee wordt de zojuist uitgevoerde actie omgedraaid.                                                                                                                                     |
+| **Ongedaan maken**                       | Hiermee wordt de zojuist uitgevoerde actie omgedraaid.                                                                                                                                     |
 | **Redo**                       | Voert de actie uit die zojuist ongedaan is gemaakt.                                                                                                                                        |
 | **Script uitvoeren**                 | Voert een script uit.                                                                                                                                                                   |
 | **Selectie uitvoeren**              | Hiermee voert u een geselecteerd deel van een script uit.                                                                                                                                             |
@@ -67,9 +67,9 @@ Hier worden de resultaten weer gegeven van de opdrachten en scripts die u hebt u
 
 ## <a name="command-pane"></a>Opdracht venster
 
-Hiermee kunt u opdrachten schrijven. U kunt een opdracht met één regel of een opdracht voor meerdere regels uitvoeren in het opdracht venster. Druk op <kbd>SHIFT</kbd>+<kbd>Enter</kbd> om elke regel van een opdracht voor meerdere regels op te geven en druk op <kbd>Enter</kbd> na de laatste regel om de opdracht voor meerdere regels uit te voeren. In de prompt boven in het opdracht venster wordt het pad naar de huidige werkmap weer gegeven.
+Hiermee kunt u opdrachten schrijven. U kunt een opdracht met één regel of een opdracht voor meerdere regels uitvoeren in het opdracht venster. Druk op <kbd>SHIFT</kbd>+<kbd>Enter</kbd> om elke regel van een opdracht voor meerdere regels in te voeren en druk na de laatste regel op <kbd>Enter</kbd> om de opdracht voor meerdere regels uit te voeren. In de prompt boven in het opdracht venster wordt het pad naar de huidige werkmap weer gegeven.
 
-## <a name="status-bar"></a>Status balk
+## <a name="status-bar"></a>Statusbalk
 
 Met kunt u zien of de opdrachten en scripts die u uitvoert, zijn voltooid. De status balk bevindt zich aan de onderkant van de weer gave. Geselecteerde delen van fout berichten worden weer gegeven op de status balk.
 
@@ -80,7 +80,7 @@ Hiermee wordt de grootte van de tekst op het scherm verg root of verkleind.
 ## <a name="help"></a>Help
 
 Help voor Windows PowerShell ISE is beschikbaar op internet in de TechNet-bibliotheek. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de <kbd>F1</kbd> -toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster.
-In het **Help** -menu kunt u ook de `Update-Help`-cmdlet uitvoeren en het opdracht venster weer geven waarmee u opdrachten aanbiedt door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
+Vanuit het menu **Help** kunt u ook de `Update-Help` cmdlet uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
 
 ## <a name="see-also"></a>Zie ook
 

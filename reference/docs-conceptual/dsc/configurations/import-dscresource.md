@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
 ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406907"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
-`Import-DScResource` is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok. Het sleutel woord `Import-DSCResource` om alle resources te importeren die nodig zijn in uw configuratie. Resources onder `$pshome` worden automatisch geïmporteerd, maar worden nog steeds beschouwd als best practice voor het expliciet importeren van alle resources die worden gebruikt in uw [configuratie](Configurations.md).
+`Import-DScResource`is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok. Het `Import-DSCResource` sleutel woord voor het importeren van alle resources die nodig zijn in uw configuratie. Resources onder `$pshome` worden automatisch geïmporteerd, maar worden nog steeds beschouwd als best practice voor het expliciet importeren van alle resources die worden gebruikt in uw [configuratie](Configurations.md).
 
 De syntaxis voor `Import-DSCResource` wordt hieronder weer gegeven.  Wanneer u modules op naam opgeeft, is het een vereiste om elk op een nieuwe regel te vermelden.
 
@@ -65,7 +65,7 @@ Overwegingen bij het gebruik van alleen de para meter name:
 - Het is een resource-intensieve bewerking, afhankelijk van het aantal modules dat op de computer is geïnstalleerd.
 - Hiermee wordt de eerste resource geladen die met de opgegeven naam is gevonden. Als er meer dan één resource met dezelfde naam is geïnstalleerd, kan de verkeerde resource worden geladen.
 
-Het aanbevolen gebruik is om `–ModuleName` op te geven met de para meter `-Name`, zoals hieronder wordt beschreven.
+Het aanbevolen gebruik moet worden opgegeven `–ModuleName` met de `-Name` para meter, zoals hieronder wordt beschreven.
 
 Dit gebruik heeft de volgende voor delen:
 
@@ -78,7 +78,7 @@ Dit gebruik heeft de volgende voor delen:
 
 ## <a name="intellisense-with-import-dscresource"></a>IntelliSense met import-Dscresource bieden
 
-Bij het ontwerpen van de DSC-configuratie in ISE biedt Power shell IntelliSence voor resources en resource-eigenschappen. Bron definities onder het pad van de `$pshome` module worden automatisch geladen. Wanneer u resources importeert met behulp van het sleutel woord `Import-DSCResource`, worden de opgegeven resource definities toegevoegd en wordt IntelliSense uitgebreid met het schema van de geïmporteerde resource.
+Bij het ontwerpen van de DSC-configuratie in ISE biedt Power shell IntelliSence voor resources en resource-eigenschappen. Bron definities onder het `$pshome` pad naar de module worden automatisch geladen. Wanneer u resources importeert met behulp van het `Import-DSCResource` tref woord, worden de opgegeven resource definities toegevoegd en wordt IntelliSense uitgebreid met het schema van de geïmporteerde resource.
 
 ![Resource IntelliSense](media/import-dscresource/resource-intellisense.png)
 
@@ -145,13 +145,13 @@ Kopieer de inhoud van de gewenste module versie naar het hoogste niveau van de m
 
 ![Er zijn meerdere resource versies opgelost](media/import-dscresource/multiple-resource-versions-fixed.png)
 
-### <a name="resource-location"></a>Resource locatie
+### <a name="resource-location"></a>Resourcelocatie
 
 Bij het ontwerpen en compileren van configuraties kunnen uw resources worden opgeslagen in een map die is opgegeven door uw [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). In Power Shell 4,0 moeten alle DSC-resource modules zijn opgeslagen onder Program Files\WindowsPowerShell\Modules of `$pshome\Modules`. Vanaf Power shell 5,0 is deze vereiste verwijderd en kunnen resource modules worden opgeslagen in een map die is opgegeven door `PSModulePath`.
 
 ### <a name="moduleversion-added"></a>ModuleVersion toegevoegd
 
-Vanaf Power shell 5,0 kunt u met de para meter `-ModuleVersion` opgeven welke versie van een module moet worden gebruikt in uw configuratie.
+Vanaf Power shell 5,0 kunt u `-ModuleVersion` met de para meter opgeven welke versie van een module moet worden gebruikt in uw configuratie.
 
 ## <a name="see-also"></a>Zie ook
 

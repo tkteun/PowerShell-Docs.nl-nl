@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: Power shell, cmdlet
 title: Computerstatus wijzigen
 ms.openlocfilehash: 9278df55ba027134a61c8ed4e89b5b839d460b29
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736910"
 ---
 # <a name="changing-computer-state"></a>Computerstatus wijzigen
@@ -22,7 +22,7 @@ De enige manier om een computer rechtstreeks te vergren delen met de standaard b
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-Met deze opdracht wordt het werk station onmiddellijk vergrendeld. Er wordt gebruik gemaakt van **rundll32. exe**, dat Windows-dll's uitvoert (en de bibliotheken opslaat voor herhaalde gebruik) om `user32.dll`uit te voeren, een bibliotheek met Windows-beheer functies.
+Met deze opdracht wordt het werk station onmiddellijk vergrendeld. Er wordt gebruik gemaakt van **rundll32. exe**, dat Windows-dll's uitvoert (en de bibliotheken opslaat voor herhaalde gebruik) om uit te voeren `user32.dll`, een bibliotheek met Windows-beheer functies.
 
 Wanneer u een werk station vergrendelt terwijl snelle gebruikers wisseling is ingeschakeld, zoals op Windows XP, wordt in de computer het aanmeldings scherm van de gebruiker weer gegeven in plaats van de scherm beveiliging van de huidige gebruiker.
 
@@ -30,7 +30,7 @@ Als u bepaalde sessies op een Terminal Server wilt afsluiten, gebruikt u het opd
 
 ## <a name="logging-off-the-current-session"></a>De huidige sessie afmelden
 
-U kunt verschillende technieken gebruiken om u af te melden bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdracht regel programma Extern bureaublad/Terminal Services, **Logoff. exe** (Typ `logoff /?`in het Power shell-venster voor meer informatie). Als u de huidige actieve sessie wilt afmelden, typt u `logoff` zonder argumenten.
+U kunt verschillende technieken gebruiken om u af te melden bij een sessie op het lokale systeem. De eenvoudigste manier is het gebruik van het opdracht regel programma Extern bureaublad/Terminal Services, **Afmelden. exe** (Typ in het Power shell-prompt type `logoff /?`) voor meer informatie. Als u de huidige actieve sessie wilt afmelden `logoff` , typt u zonder argumenten.
 
 U kunt ook het hulp programma **shutdown. exe** gebruiken met de optie voor afmelden:
 
@@ -49,7 +49,7 @@ Get-CimInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName 
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Afsluiten of opnieuw opstarten van een computer
 
-Het afsluiten en opnieuw opstarten van computers zijn over het algemeen hetzelfde type taak. Hulpprogram ma's die een computer afsluiten, zullen deze doorgaans ook opnieuw starten en vice versa. Er zijn twee eenvoudige opties voor het opnieuw opstarten van een computer vanuit Power shell. Gebruik de juiste argumenten van **tsshutdn. exe** of **shutdown. exe** . U kunt gedetailleerde gebruiks gegevens verkrijgen van `tsshutdn.exe /?` of `shutdown.exe /?`.
+Het afsluiten en opnieuw opstarten van computers zijn over het algemeen hetzelfde type taak. Hulpprogram ma's die een computer afsluiten, zullen deze doorgaans ook opnieuw starten en vice versa. Er zijn twee eenvoudige opties voor het opnieuw opstarten van een computer vanuit Power shell. Gebruik de juiste argumenten van **tsshutdn. exe** of **shutdown. exe** . U kunt gedetailleerde gebruiks gegevens ophalen van `tsshutdn.exe /?` of `shutdown.exe /?`.
 
 U kunt ook de bewerkingen voor afsluiten en opnieuw opstarten rechtstreeks vanuit Power shell uitvoeren.
 

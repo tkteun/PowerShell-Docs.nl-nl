@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: MSFT_DSCLocalConfigurationManager-klasse
 ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941465"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klasse
@@ -37,11 +37,11 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 |Methode |Beschrijving |
 |:--- |:---|
 | [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Maakt gebruik van de configuratie agent om de in behandeling zijnde configuratie toe te passen.|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources uit.|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources in.|
-| [De getconfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.|
-| [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Hiermee wordt de uitvoer van de configuratie agent opgehaald die betrekking heeft op een specifieke taak.|
-| [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| De geschiedenis van de configuratie status ophalen.|
+| [De disabledebugconfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources uit.|
+| [De enabledebugconfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources in.|
+| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.|
+| [De getconfigurationresultoutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Hiermee wordt de uitvoer van de configuratie agent opgehaald die betrekking heeft op een specifieke taak.|
+| [De getconfigurationstatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| De geschiedenis van de configuratie status ophalen.|
 | [De getmetaconfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Hiermee worden de instellingen van de LCM opgehaald die worden gebruikt voor het beheren van de configuratie agent.|
 | [De performrequiredconfigurationchecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| Hiermee wordt de consistentie controle gestart.|
 | [De removeconfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Hiermee verwijdert u de configuratie bestanden.|
@@ -51,10 +51,10 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 | [Actie](msft-dsclocalconfigurationmanager-rollback.md)| Hiermee wordt teruggedraaid naar een eerdere configuratie.|
 | [De sendconfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en opgeslagen als een wijziging in behandeling.|
 | [De sendconfigurationapply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de configuratie agent gebruikt om de configuratie toe te passen.|
-| [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Stuur het configuratie document naar het beheerde knoop punt en start met behulp van de configuratie agent om de configuratie toe te passen. Gebruik de getconfigurationresultoutput om resultaat uitvoer op te halen.|
+| [De sendconfigurationapplyasync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Stuur het configuratie document naar het beheerde knoop punt en start met behulp van de configuratie agent om de configuratie toe te passen. Gebruik de getconfigurationresultoutput om resultaat uitvoer op te halen.|
 | [De sendmetaconfigurationapply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| Hiermee stelt u de instellingen voor de LCM die worden gebruikt voor het beheren van de configuratie agent.|
 | [De stopconfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| Hiermee wordt de configuratie gestopt die momenteel wordt uitgevoerd.|
-| [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de huidige configuratie gecontroleerd op basis van het document.|
+| [De testconfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de huidige configuratie gecontroleerd op basis van het document.|
 
 ## <a name="requirements"></a>Vereisten
 

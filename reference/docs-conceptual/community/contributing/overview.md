@@ -4,10 +4,10 @@ description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79407047"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bijdragen aan Power shell-documentatie
@@ -31,13 +31,13 @@ Er zijn twee manieren om bij te dragen. Beide bijdragen zijn waardevol voor ons.
 U hebt allereerst een GitHub-account nodig om bij te dragen aan de documentatie. Gebruik de volgende controle lijst om de hulpprogram ma's op te halen en inzicht te krijgen in de processen die we gebruiken om bijdragen te leveren.
 
 1. [Aanmelden voor GitHub](/contribute/get-started-setup-github)
-1. [Git-en prijs verlaging-hulpprogram ma's installeren](/contribute/get-started-setup-tools)
+1. [Hulpprogramma's voor Git/Markdown installeren](/contribute/get-started-setup-tools)
 1. [Het docs-ontwerp pakket installeren](/contribute/how-to-write-docs-auth-pack)
 1. [Installeer posh-Git][posh-git] -niet vereist maar wordt aanbevolen
-1. [Een lokale Git-opslag plaats instellen](/contribute/get-started-setup-local)
+1. [Een lokale Git-opslagplaats instellen](/contribute/get-started-setup-local)
 1. [De basis principes van Git en GitHub controleren](/contribute/git-github-fundamentals)
 
-## <a name="get-started-writing-docs"></a>Aan de slag met het schrijven van documenten
+## <a name="get-started-writing-docs"></a>Aan de slag met het schrijven van documentatie
 
 Er zijn twee manieren om wijzigingen in de documentatie bij te dragen:
 
@@ -50,11 +50,11 @@ Lees ook de sectie over het [schrijven van essentiële](/contribute/style-quick-
 
 Kleine correcties of verduidelijkingen van documentatie en code voorbeelden in open bare opslag plaatsen vallen onder de [gebruiks voorwaarden van][terms-of-use]docs.Microsoft.com.
 
-Gebruik de volledige GitHub-werk stroom wanneer u belang rijke wijzigingen aanbrengt. Als u geen werk nemer van micro soft bent, wordt in belang rijke wijzigingen een opmerking in de pull-aanvraag gegenereerd waarin u wordt gevraagd om een online [contribution License Agreement (CLA)][cla]in te dienen. U moet het online formulier invullen voordat we uw pull-aanvraag kunnen controleren of accepteren.
+Gebruik de volledige GitHub-werk stroom wanneer u belang rijke wijzigingen aanbrengt. Als u geen werk nemer van micro soft bent, wordt in belang rijke wijzigingen een opmerking in de pull-aanvraag gegenereerd waarin u wordt gevraagd om een online [contribution License Agreement (CLA)][cla]in te dienen. U moet het onlineformulier invullen voordat we uw pull-aanvraag kunnen beoordelen of accepteren.
 
 ## <a name="code-of-conduct"></a>Gedragscode
 
-Voor alle opslag plaatsen die naar docs.microsoft.com publiceren, is de [micro soft open source-gedrags code](https://opensource.microsoft.com/codeofconduct/) of de [.net Foundation](https://dotnetfoundation.org/code-of-conduct)-gedrags code aangenomen. Zie de [Veelgestelde vragen over de gedrags code](https://opensource.microsoft.com/codeofconduct/faq/)voor meer informatie.
+Op alle opslagplaatsen die naar docs.microsoft.com publiceren, is de [Microsoft Open Source-gedragscode](https://opensource.microsoft.com/codeofconduct/) of de [.NET Foundation-gedragscode](https://dotnetfoundation.org/code-of-conduct) van toepassing. Zie [Veelgestelde vragen over de gedragscode](https://opensource.microsoft.com/codeofconduct/faq/) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -63,16 +63,16 @@ De volgende artikelen behandelen informatie die specifiek is afgestemd op Power 
 Bekijk de volgende documenten:
 
 - [Een probleem in een bestand opslaan](file-an-issue.md)
-- [Aan de slag met het schrijven van documenten](get-started-writing.md)
+- [Aan de slag met het schrijven van documentatie](get-started-writing.md)
 - [Een pull-aanvraag verzenden](pull-requests.md)
-- [Power shell-stijl gids voor docs](powershell-style-guide.md)
-- [Naslag informatie voor het bewerken van cmdlets](editing-cmdlet-ref.md)
+- [Stijlgids voor PowerShell-documentatie](powershell-style-guide.md)
+- [Naslaginformatie voor cmdlets bewerken](editing-cmdlet-ref.md)
 
-Aanvullende resources
+Aanvullende bronnen
 
-- [Controle lijst voor redactionele](editorial-checklist.md)
-- [Hoe we problemen beheren](managing-issues.md)
-- [Hoe wij pull-aanvragen beheren](managing-pull-requests.md)
+- [Redactionele controlelijst](editorial-checklist.md)
+- [De manier waarop we problemen beheren](managing-issues.md)
+- [De manier waarop we pull-aanvragen beheren](managing-pull-requests.md)
 
 <!--link refs-->
 [cla]: https://cla.microsoft.com/

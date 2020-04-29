@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEOptions-object
 ms.openlocfilehash: 9caa78a70cb837c755b2eff9af6ce0aa5dbb7452
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736944"
 ---
 # <a name="the-iseoptions-object"></a>Het ISEOptions-object
@@ -139,7 +139,7 @@ Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere v
 
 Hiermee geeft u de kleuren van de IntelliSense-tokens in het deel venster Windows PowerShell ISE console. Deze eigenschap is een woordenlijst object dat naam/waarde-paren van token typen en kleuren voor het console venster bevat. Zie [TokenColors](#tokencolors)voor informatie over het wijzigen van de kleuren van de IntelliSense-tokens in het Script-venster.
 Zie [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)als u de kleuren opnieuw wilt instellen op de standaard waarden.
-Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele.
+Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, onbekend, variabele.
 
 ```powershell
 # Sets the color of commands to green.
@@ -279,7 +279,7 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u het aantal onlangs geopende bestanden op dat Windows PowerShell ISE gevolgd en onder aan het menu **bestand openen** wordt weer gegeven. De standaard waarde is 10. De waarde is een geheel getal.
+Hiermee geeft u het aantal onlangs geopende bestanden op dat Windows PowerShell ISE gevolgd en onder aan het menu **bestand openen** wordt weer gegeven. De standaardwaarde is 10. De waarde is een geheel getal.
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.
@@ -361,7 +361,7 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee wordt aangegeven of de <kbd>CTRL</kbd>+<kbd>J</kbd> -lijst met fragmenten de starter set bevat die is opgenomen in Windows Power shell. Als deze functie is ingesteld op `$false`, worden alleen door de gebruiker gedefinieerde fragmenten weer gegeven in de lijst met <kbd>CTRL</kbd>+<kbd>J</kbd> .
+Hiermee wordt aangegeven of de <kbd>CTRL</kbd>+<kbd>J</kbd> -lijst met code fragmenten de starter set bevat die is opgenomen in Windows Power shell. Als deze instelling `$false`is ingesteld op, worden alleen door de gebruiker gedefinieerde fragmenten weer gegeven in de lijst met <kbd>CTRL</kbd>+<kbd>J</kbd> .
 De standaardwaarde is `$true`.
 
 ```powershell
@@ -408,7 +408,7 @@ $psISE.Options.ShowLineNumbers = $false
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee wordt aangegeven of het deel venster script uitbreid bare en samengevouwen haakjes naast de secties met de code in de linkermarge worden weer gegeven. Wanneer deze worden weer gegeven, kunt u op de minknop `-` naast een tekst blok klikken om deze samen te vouwen of op het plus `+` pictogram klikken om een tekst blok te verg Roten. De standaardwaarde is `$true`.
+Hiermee wordt aangegeven of het deel venster script uitbreid bare en samengevouwen haakjes naast de secties met de code in de linkermarge worden weer gegeven. Wanneer deze worden weer gegeven, kunt u op de `-` min-pictogrammen naast een tekst blok klikken om deze samen te vouwen of `+` op het plus pictogram klikken om een tekst blok te verg Roten. De standaardwaarde is `$true`.
 
 ```powershell
 # Turn off outlining in the Script pane.
@@ -443,7 +443,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee wordt aangegeven of een waarschuwing wordt weer gegeven wanneer hetzelfde bestand wordt geopend in verschillende Power shell-tabbladen. Als de instelling is ingesteld op `$true`, wordt in het volgende bericht weer gegeven: ' een kopie van dit bestand is geopend op een ander Windows Power shell-tabblad. wijzigingen in dit bestand zijn van invloed op alle geopende exemplaren. ' De standaardwaarde is `$true`.
+Hiermee wordt aangegeven of een waarschuwing wordt weer gegeven wanneer hetzelfde bestand wordt geopend in verschillende Power shell-tabbladen. Als deze instelling `$true`is ingesteld op, wordt het volgende bericht weer gegeven: ' een kopie van dit bestand is geopend in een ander Windows Power shell-tabblad. wijzigingen in dit bestand zijn van invloed op alle geopende exemplaren. ' De standaardwaarde is `$true`.
 
 ```powershell
 # Enable the warning message when a file is
@@ -457,7 +457,7 @@ Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Hiermee geeft u de kleuren van de IntelliSense-tokens in het deel venster Windows PowerShell ISE script. Deze eigenschap is een woordenlijst object dat naam/waarde-paren van token typen en kleuren voor het Script-venster bevat. Zie [ConsoleTokenColors](#consoletokencolors)voor informatie over het wijzigen van de kleuren van de IntelliSense-tokens in het console venster.
 Zie [RestoreDefaultTokenColors](#restoredefaulttokencolors)als u de kleuren opnieuw wilt instellen op de standaard waarden.
-Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele.
+Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, onbekend, variabele.
 
 ```powershell
 # Sets the color of commands to green.
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of de lokaal geïnstalleerde Help of de Help van de online TechNet-bibliotheek wordt weer gegeven wanneer u op <kbd>F1</kbd> drukt met de cursor in een tref woord. Als deze is ingesteld op `$true`, wordt in een pop-upvenster inhoud weer gegeven van de lokaal geïnstalleerde Help. U kunt de Help-bestanden installeren door de `Update-Help` opdracht uit te voeren. Als deze is ingesteld op `$false`, wordt uw browser geopend met een pagina in de TechNet-bibliotheek.
+Hiermee geeft u op of de lokaal geïnstalleerde Help of de Help van de online TechNet-bibliotheek wordt weer gegeven wanneer u op <kbd>F1</kbd> drukt met de cursor in een tref woord. Als deze is `$true`ingesteld op, wordt in een pop-upvenster inhoud weer gegeven van de lokaal geïnstalleerde Help. U kunt de Help-bestanden installeren door de `Update-Help` opdracht uit te voeren. Als deze is `$false`ingesteld op, wordt uw browser geopend op een pagina in de TechNet-bibliotheek.
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -549,7 +549,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u een woordenlijst object op dat naam/waarde-paren van token typen en kleuren bevat voor XML-inhoud die wordt weer gegeven in Windows PowerShell ISE. Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, Onbekende, variabele. Zie ook [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
+Hiermee geeft u een woordenlijst object op dat naam/waarde-paren van token typen en kleuren bevat voor XML-inhoud die wordt weer gegeven in Windows PowerShell ISE. Token kleuren kunnen worden ingesteld voor het volgende: kenmerk, opdracht, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, sleutel woord, LineContinuation, LoopLabel, lid, nieuwe regel, nummer, operator, positie, StatementSeparator, teken reeks, type, onbekend, variabele. Zie ook [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
 
 ```powershell
 # Sets the color of XML element names to green.
@@ -572,5 +572,5 @@ $psISE.Options.Zoom = 200
 
 ## <a name="see-also"></a>Zie ook
 
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

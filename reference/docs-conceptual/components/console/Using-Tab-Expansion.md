@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Met behulp van de tabbladuitbreiding
 ms.openlocfilehash: d96cbf848f464aff29a7bed9b70d0b6a000aa808
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67031022"
 ---
 # <a name="using-tab-expansion"></a>Met behulp van de tabbladuitbreiding
@@ -18,9 +18,9 @@ Opdracht regel shells bieden vaak een manier om de namen van lange bestanden of 
 
 Als u automatisch een bestands naam of pad van de beschik bare opties wilt invullen, typt u een deel van de naam en drukt u op de <kbd>Tab</kbd> -toets. Power shell breidt de naam automatisch uit naar het eerste overeenkomende item dat wordt gevonden. Door herhaaldelijk op de <kbd>Tab</kbd> -toets te drukken, worden alle beschik bare opties door lopen.
 
-De tabblad-uitbrei ding van de namen van cmdlets is iets anders. Als u tabblad uitbrei ding wilt gebruiken voor de naam van een cmdlet, typt u het volledige eerste deel van de naam (de opdracht) en het afbreek streepje dat deze volgt. U kunt de naam van een gedeeltelijke overeenkomst invullen. Als u bijvoorbeeld `get-co` typt en vervolgens op de <kbd>Tab</kbd> -toets drukt, wordt dit door Power shell automatisch uitgebreid naar de `Get-Command`-cmdlet (u ziet dat het hoofdletter gebruik ook wordt gewijzigd in het standaard formulier). Als u opnieuw op <kbd>Tab</kbd> drukt, wordt dit door Power shell vervangen door de enige andere overeenkomende cmdlet-naam `Get-Content`.
+De tabblad-uitbrei ding van de namen van cmdlets is iets anders. Als u tabblad uitbrei ding wilt gebruiken voor de naam van een cmdlet, typt u het volledige eerste deel van de naam (de opdracht) en het afbreek streepje dat deze volgt. U kunt de naam van een gedeeltelijke overeenkomst invullen. Als u bijvoorbeeld typt `get-co` en vervolgens op de <kbd>Tab</kbd> -toets drukt, wordt dit door Power shell automatisch uitgebreid `Get-Command` naar de cmdlet (u ziet dat het hoofdletter gebruik ook wordt gewijzigd in het standaard formulier). Als u opnieuw op <kbd>Tab</kbd> drukt, wordt dit door Power shell vervangen door de enige andere overeenkomende `Get-Content`naam van de cmdlet.
 
-U kunt de tab-uitbrei ding herhaaldelijk op dezelfde regel gebruiken. U kunt bijvoorbeeld tabblad uitbreiding gebruiken op de naam van de cmdlet `Get-Content` door het volgende in te voeren:
+U kunt de tab-uitbrei ding herhaaldelijk op dezelfde regel gebruiken. U kunt bijvoorbeeld tabblad uitbrei ding op de naam van de `Get-Content` cmdlet gebruiken door het volgende in te voeren:
 
 ```
 PS> Get-Con<Tab>

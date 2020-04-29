@@ -4,10 +4,10 @@ contributor: keithb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Versies van de module Prerelease
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328936"
 ---
 # <a name="prerelease-module-versions"></a>Versies van de module Prerelease
@@ -17,8 +17,8 @@ Vanaf versie 1.6.0, PowerShellGet en de PowerShell Gallery bieden ondersteuning 
 Op hoog niveau zijn de functies van de prerelease-module onder andere:
 
 - Als u een prerelease-teken reeks toevoegt aan de sectie PSData van het module manifest, wordt de module geïdentificeerd als een voorlopige versie. Wanneer de module wordt gepubliceerd naar de PowerShell Gallery, worden deze gegevens geëxtraheerd uit het manifest en gebruikt om voorlopige pakketten te identificeren.
-- Voor het verkrijgen van voorlopige pakketten moet u `-AllowPrerelease` markering toevoegen aan de PowerShellGet-opdrachten `Find-Module`, `Install-Module`, `Update-Module`en `Save-Module`. Als de vlag niet is opgegeven, worden er geen voorlopige pakketten weer gegeven.
-- Module versies die worden weer gegeven door `Find-Module`, `Get-InstalledModule`en in de PowerShell Gallery worden weer gegeven als één teken reeks met de teken reeks Prerelease, zoals in 2.5.0-alpha.
+- Voor het verkrijgen van voorlopige pakketten moet `-AllowPrerelease` u een markering toevoegen aan `Find-Module`de `Install-Module`PowerShellGet `Update-Module`-opdrachten `Save-Module`,, en. Als de vlag niet is opgegeven, worden er geen voorlopige pakketten weer gegeven.
+- Module versies die worden `Find-Module`weer `Get-InstalledModule`gegeven door, en in de PowerShell Gallery worden weer gegeven als één teken reeks met de teken reeks Prerelease toegevoegd, zoals in 2.5.0-alpha.
 
 Hieronder vindt u meer informatie over de functies.
 
@@ -57,7 +57,7 @@ De gedetailleerde vereisten voor de prerelease-teken reeks zijn:
 
 ### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Impact op de versie voor de sorteer volgorde en installatie mappen
 
-De sorteer volgorde verandert wanneer u een prerelease-versie gebruikt. Dit is belang rijk bij het publiceren naar de PowerShell Gallery en wanneer u modules installeert met behulp van PowerShellGet-opdrachten. Als de teken reeks voor Prerelease is opgegeven voor twee modules, is de sorteer volgorde gebaseerd op het teken reeks gedeelte na het afbreek streepje. Versie 2.5.0-alpha is dus kleiner dan 2.5.0-Beta, wat kleiner is dan 2.5.0-gamma. Als twee modules dezelfde ModuleVersion hebben en slechts één de teken reeks voor de voorlopige versie heeft, wordt aangenomen dat de module zonder de voorlopige versie de productie-en de voor bereiding heeft en wordt gesorteerd als een grotere versie dan de voorlopige versie (inclusief de prerelease teken reeks). Als voor beeld bij het vergelijken van Releases 2.5.0 en 2.5.0-Beta, wordt de 2.5.0-versie als een groter van beide beschouwd.
+De sorteer volgorde verandert wanneer u een prerelease-versie gebruikt. Dit is belang rijk bij het publiceren naar de PowerShell Gallery en wanneer u modules installeert met behulp van PowerShellGet-opdrachten. Als de teken reeks voor Prerelease is opgegeven voor twee modules, is de sorteer volgorde gebaseerd op het teken reeks gedeelte na het afbreek streepje. Versie 2.5.0-alpha is dus kleiner dan 2.5.0-Beta, wat kleiner is dan 2.5.0-gamma. Als twee modules dezelfde ModuleVersion hebben en er slechts één van een voorlopige versie teken reeks is, wordt ervan uitgegaan dat de module zonder de prerelease-teken reeks de productie-gereedheid is en worden gesorteerd als een grotere versie dan de voorlopige versie (die de prerelease-teken reeks bevat). Als voor beeld bij het vergelijken van Releases 2.5.0 en 2.5.0-Beta, wordt de 2.5.0-versie als een groter van beide beschouwd.
 
 Wanneer u publiceert naar de PowerShell Gallery, moet de versie van de module die wordt gepubliceerd, standaard een grotere versie hebben dan een eerder gepubliceerde versie in de PowerShell Gallery.
 
@@ -72,7 +72,7 @@ De enige uitzonde ringen hierop in de PowerShellGet-module opdrachten zijn Get-I
 
 ## <a name="examples"></a>Voorbeelden
 
-Stel dat de PowerShell Gallery TestPackage module versies 1.8.0 en 1.9.0-alpha heeft. Als `-AllowPrerelease` niet is opgegeven, wordt alleen versie 1.8.0 geretourneerd.
+Stel dat de PowerShell Gallery TestPackage module versies 1.8.0 en 1.9.0-alpha heeft. Als `-AllowPrerelease` niet wordt opgegeven, wordt alleen versie 1.8.0 geretourneerd.
 
 ```powershell
 find-module TestPackage
@@ -110,7 +110,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 ```
 
-De vorige opdracht is mislukt omdat-AllowPrerelease niet is opgegeven. Het toevoegen van `-AllowPrerelease` resulteert in geslaagde pogingen.
+De vorige opdracht is mislukt omdat-AllowPrerelease niet is opgegeven. Toevoegen `-AllowPrerelease` resulteert in geslaagde pogingen.
 
 ```powershell
 Install-module TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease
@@ -123,7 +123,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-Gelijktijdige installatie van versies van een module die alleen verschillen als gevolg van de opgegeven Prerelease, wordt niet ondersteund. Wanneer u een module installeert met behulp van PowerShellGet, worden verschillende versies van dezelfde module naast elkaar geïnstalleerd door de naam van een map te maken met behulp van de ModuleVersion. De ModuleVersion, zonder de voorlopige release teken reeks, wordt gebruikt voor de mapnaam. Als een gebruiker MyModule-versie 2.5.0-alpha installeert, wordt deze geïnstalleerd in de map `MyModule\2.5.0`. Als de gebruiker vervolgens 2.5.0-beta installeert, wordt de inhoud van de map `MyModule\2.5.0`**overschreven** door de versie van de 2.5.0-Beta. Een voor deel van deze benadering is dat het niet nodig is om de installatie van de voorlopige versie ongedaan te maken na installatie van de productie-gereede versie. In het voor beeld hieronder ziet u wat u kunt verwachten:
+Gelijktijdige installatie van versies van een module die alleen verschillen als gevolg van de opgegeven Prerelease, wordt niet ondersteund. Wanneer u een module installeert met behulp van PowerShellGet, worden verschillende versies van dezelfde module naast elkaar geïnstalleerd door de naam van een map te maken met behulp van de ModuleVersion. De ModuleVersion, zonder de voorlopige release teken reeks, wordt gebruikt voor de mapnaam. Als een gebruiker MyModule-versie 2.5.0-alpha installeert, wordt deze in de `MyModule\2.5.0` map geïnstalleerd. Als de gebruiker vervolgens 2.5.0-beta installeert, wordt de inhoud van de `MyModule\2.5.0`map **overschreven** door de versie van de 2.5.0-Beta. Een voor deel van deze benadering is dat het niet nodig is om de installatie van de voorlopige versie ongedaan te maken na installatie van de productie-gereede versie. In het voor beeld hieronder ziet u wat u kunt verwachten:
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -192,7 +192,7 @@ Version         Name          Repository   Description
 1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 - [Voorlopige script versies](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)

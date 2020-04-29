@@ -3,10 +3,10 @@ ms.date: 08/15/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Windows
 ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416168"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Aan de slag met de desired state Configuration (DSC) voor Windows
@@ -20,7 +20,7 @@ De volgende versies worden ondersteund:
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012R2
+- Windows Server-2012R2
 - Windows Server 2012
 - Windows Server 2008 R2 SP1
 - Windows 10
@@ -43,7 +43,7 @@ In de volgende secties wordt uitgelegd hoe u DSC-configuraties maakt en uitvoert
 
 ### <a name="creating-a-configuration-mof-document"></a>Een configuratie-MOF-document maken
 
-Het sleutel woord `Configuration` van Windows Power shell wordt gebruikt om een configuratie te maken.
+Het sleutel woord `Configuration` Windows Power shell wordt gebruikt om een configuratie te maken.
 De volgende stappen beschrijven het maken van een configuratie document met behulp van Windows Power shell.
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>Definieer een configuratie en Genereer het configuratie document:
@@ -83,7 +83,7 @@ Install-Module 'PSDscResources' -Verbose
 #### <a name="apply-the-configuration-to-the-machine"></a>De configuratie Toep assen op de computer
 
 > [!NOTE]
-> Om DSC te kunnen uitvoeren, moet Windows worden geconfigureerd om externe Power shell-opdrachten te ontvangen, zelfs wanneer u een `localhost` configuratie uitvoert. Als u uw omgeving eenvoudig wilt configureren, voert u `Set-WsManQuickConfig -Force` uit in een Power shell-terminal met verhoogde bevoegdheden.
+> Om DSC te kunnen uitvoeren, moet Windows worden geconfigureerd om externe Power shell-opdrachten te ontvangen, zelfs wanneer u `localhost` een configuratie uitvoert. Als u uw omgeving eenvoudig op de juiste wijze `Set-WsManQuickConfig -Force` wilt configureren, voert u de opdracht uit in een Power shell-terminal met verhoogde bevoegdheden.
 
 Configuratie documenten (MOF-bestanden) kunnen worden toegepast op de machineusing van de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
@@ -124,5 +124,5 @@ Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbo
 
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows Power shell desired state Configuration-logboek bestanden
 
-Logboeken voor DSC worden naar het Windows-gebeurtenis logboek geschreven in het pad `Microsoft-Windows-Dsc/Operational`.
+Logboeken voor DSC worden in het pad `Microsoft-Windows-Dsc/Operational`naar het Windows-gebeurtenis logboek geschreven.
 Aanvullende logboeken voor fout opsporing kunnen worden ingeschakeld Volg de stappen in [waar vindt u de logboeken van DSC-gebeurtenissen](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Quick Start: een website maken met DSC'
 ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416134"
 ---
 # <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>Quick Start: een website maken met desired state Configuration (DSC)
@@ -14,7 +14,7 @@ ms.locfileid: "75416134"
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 In deze oefening wordt uitgelegd hoe u een desired state Configuration (DSC)-configuratie kunt maken en Toep assen van het begin tot het einde.
-In het voor beeld dat we gebruiken, zorgt u ervoor dat de functie `Web-Server` (IIS) is ingeschakeld op een server en dat de inhoud voor een eenvoudige website ' Hallo wereld ' aanwezig is in de `inetpub\wwwroot` map van die server.
+In het voor beeld dat we gebruiken, zorgt u ervoor `Web-Server` dat de functie (IIS) is ingeschakeld op een server en dat de inhoud van een eenvoudige website ' Hallo wereld `inetpub\wwwroot` ' aanwezig is in de directory van die server.
 
 Voor een overzicht van wat DSC is en hoe het werkt, raadpleegt [u overzicht van desired state Configuration voor besluit vormers](../overview/decisionMaker.md).
 
@@ -37,7 +37,7 @@ Typ de volgende tekst in een tekst editor:
 </body>
 ```
 
-Sla dit op als `index.htm` in de `test` map die u eerder hebt gemaakt.
+Sla dit `index.htm` op in de `test` map die u eerder hebt gemaakt.
 
 ## <a name="write-the-configuration"></a>De configuratie schrijven
 
@@ -103,19 +103,19 @@ Mode                LastWriteTime         Length Name
 
 De eerste regel maakt de configuratie functie beschikbaar in de-console.
 De tweede regel voert de configuratie uit.
-Het resultaat is dat een nieuwe map met de naam `WebsiteTest` wordt gemaakt als een submap van de huidige map.
-De map `WebsiteTest` bevat een bestand met de naam `localhost.mof`.
+Het resultaat is dat een nieuwe map met de `WebsiteTest` naam wordt gemaakt als een submap van de huidige map.
+De `WebsiteTest` map bevat een bestand met `localhost.mof`de naam.
 Dit is het bestand dat vervolgens kan worden toegepast op het doel knooppunt.
 
 ## <a name="apply-the-configuration"></a>De configuratie Toep assen
 
 Nu u de gecompileerde MOF hebt, kunt u de configuratie Toep assen op het doel knooppunt (in dit geval de lokale computer) door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.
 
-De cmdlet `Start-DscConfiguration` vertelt de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de engine van DSC, om de configuratie toe te passen.
+De `Start-DscConfiguration` cmdlet vertelt de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de engine van DSC, om de configuratie toe te passen.
 De LCM maakt het mogelijk om de DSC-resources aan te roepen om de configuratie toe te passen.
 
 > [!NOTE]
-> Om DSC te kunnen uitvoeren, moet Windows worden geconfigureerd voor het ontvangen van externe Power shell-opdrachten, zelfs wanneer u een `localhost` configuratie uitvoert. Als u uw omgeving eenvoudig wilt configureren, voert u `Set-WsManQuickConfig -Force` uit in een Power shell-terminal met verhoogde bevoegdheden.
+> Om DSC te kunnen uitvoeren, moet Windows worden geconfigureerd voor het ontvangen van externe Power shell-opdrachten, zelfs wanneer u `localhost` een configuratie uitvoert. Als u uw omgeving eenvoudig op de juiste wijze `Set-WsManQuickConfig -Force` wilt configureren, voert u de opdracht uit in een Power shell-terminal met verhoogde bevoegdheden.
 
 In een Power shell-console gaat u naar de map waar u de configuratie hebt opgeslagen en voert u de volgende opdracht uit:
 
@@ -127,7 +127,7 @@ Start-DscConfiguration .\WebsiteTest
 
 U kunt de cmdlet [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) aanroepen om te zien of de configuratie is geslaagd.
 
-U kunt de resultaten ook rechtstreeks testen, in dit geval door te bladeren naar `http://localhost/` in een webbrowser.
+U kunt de resultaten ook rechtstreeks testen, in dit geval door te bladeren `http://localhost/` naar in een webbrowser.
 U ziet de HTML-pagina ' Hallo wereld ' die u hebt gemaakt als de eerste stap in dit voor beeld.
 
 ## <a name="next-steps"></a>Volgende stappen

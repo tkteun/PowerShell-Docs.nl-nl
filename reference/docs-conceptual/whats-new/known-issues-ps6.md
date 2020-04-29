@@ -3,10 +3,10 @@ ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Bekende problemen met Power shell 6,0
 ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76996104"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen met Power shell 6,0
@@ -32,11 +32,11 @@ In het verleden is Power shell uniform niet hoofdletter gevoelig, met enkele uit
 
 ### <a name="ps1-file-extensions"></a>. PS1-bestands extensies
 
-Power shell-scripts moeten eindigen op `.ps1` voor de interpreter om te begrijpen hoe ze in het huidige proces kunnen worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het `#!` Magic-nummer kan worden toegevoegd aan een script dat geen `.ps1` extensie heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar, waardoor het script niet goed werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell-script van `bash` of een andere shell.)
+Power shell-scripts moeten `.ps1` eindigen op in voor de interpreter om te begrijpen hoe ze in het huidige proces kunnen worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het `#!` Magic-nummer kan worden toegevoegd aan een script dat geen `.ps1` extensie heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar zodat het script niet goed werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell `bash` -script uit of een andere shell.)
 
 ### <a name="missing-command-aliases"></a>Ontbrekende opdracht aliassen
 
-In Linux/macOS zijn de ' gebruiks vriendelijke aliassen ' voor de basis opdrachten `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
+In Linux/macOS zijn de ' gebruiks vriendelijke aliassen ' voor de basis `ls`opdrachten `cp`, `mv` `rm` `cat`,,, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
 
 Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen opdracht-ervaring voor de Power shell-gebruiker beschikbaar, maar vermindert de functionaliteit in de shell omdat de systeem eigen opdrachten teken reeksen retour neren in plaats van objecten.
 
@@ -47,7 +47,7 @@ Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen op
 ### <a name="missing-wildcard-globbing-support"></a>Ondersteuning voor joker tekens ontbreekt (globbing)
 
 Op dit moment voert Power shell alleen Joker uitbrei ding (globbing) uit voor ingebouwde cmdlets in Windows, en voor externe opdrachten of binaire bestanden, evenals cmdlets op Linux. Dit betekent dat een opdracht als `ls
-*.txt` mislukt omdat het sterretje niet is uitgevouwen om bestands namen te vinden. U kunt dit probleem omzeilen door `ls (gci *.txt | % name)` of, meer te doen `gci *.txt` met behulp van de ingebouwde Power shell-equivalent voor `ls`.
+*.txt` mislukt omdat het sterretje niet is uitgevouwen om te voldoen aan de bestands namen. U kunt dit probleem omzeilen door `ls (gci *.txt | % name)` `gci *.txt` met behulp van de ingebouwde Power shell gelijk te maken aan `ls`.
 
 Zie [#954](https://github.com/PowerShell/PowerShell/issues/954) om ons feedback te geven over het verbeteren van de globbing-ervaring op Linux/macOS.
 
@@ -62,9 +62,9 @@ Met de komst van [.NET Standard 2,0](https://devblogs.microsoft.com/dotnet/intro
 Invoer omleiding wordt niet ondersteund in Power shell op een platform.
 [Probleem #1629](https://github.com/PowerShell/PowerShell/issues/1629)
 
-Gebruik `Get-Content` om de inhoud van een bestand naar de pijp lijn te schrijven.
+Gebruiken `Get-Content` om de inhoud van een bestand naar de pijp lijn te schrijven.
 
-Omgeleide uitvoer bevat de Unicode-byte order mark (BOM) wanneer de standaard UTF-8-code ring wordt gebruikt. De stuk lijst veroorzaakt problemen bij het werken met hulpprogram ma's die het niet verwachten of wanneer ze worden toegevoegd aan een bestand. Gebruik `-Encoding Ascii` voor het schrijven van ASCII-tekst, die geen stuk lijst heeft.
+Omgeleide uitvoer bevat de Unicode-byte order mark (BOM) wanneer de standaard UTF-8-code ring wordt gebruikt. De stuk lijst veroorzaakt problemen bij het werken met hulpprogram ma's die het niet verwachten of wanneer ze worden toegevoegd aan een bestand. Gebruiken `-Encoding Ascii` voor het schrijven van ASCII-tekst, die geen stuk lijst heeft.
 
 > [!Note]
 > Zie [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) om ons feedback te geven over het verbeteren van de coderings ervaring voor Power shell Core op alle platforms. We werken met de ondersteuning van UTF-8 zonder een stuk lijst en kunnen de standaard waarden voor de code ring wijzigen voor verschillende cmdlets op verschillende platforms.
@@ -72,7 +72,7 @@ Omgeleide uitvoer bevat de Unicode-byte order mark (BOM) wanneer de standaard UT
 ### <a name="job-control"></a>Taak beheer
 
 Er is geen taak beheer ondersteuning in Power shell op Linux/macOS.
-De opdrachten `fg` en `bg` zijn niet beschikbaar.
+De `fg` opdrachten `bg` en zijn niet beschikbaar.
 
 Voor deze tijd kunt u [Power shell-taken](/powershell/module/microsoft.powershell.core/about/about_jobs) gebruiken die op alle platforms werken.
 
@@ -90,7 +90,7 @@ De mogelijkheid om JEA-eind punten (congebonden beheer) te maken, is momenteel n
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`en Power shell
 
-Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde modules. (u kunt natuurlijk `pwsh` uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo, bijvoorbeeld `sudo Set-Date 8/18/2016`, kunt u `sudo pwsh Set-Date 8/18/2016`. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan moet u `exec pwsh item_to_exec`doen.
+Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde invoeg toepassingen. (u `pwsh` kunt natuurlijk ook uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo `sudo Set-Date 8/18/2016`, bijvoorbeeld, moet u `sudo pwsh Set-Date 8/18/2016`dat doen. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan zou u moeten `exec pwsh item_to_exec`doen.
 
 Dit probleem wordt bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
@@ -102,12 +102,12 @@ Een groot aantal opdrachten (cmdlets) die normaal gesp roken beschikbaar zijn in
 
 De volgende tabel bevat opdrachten die bekend zijn in Power shell op Linux/macOS.
 
-|Opdrachten|Operationele status|Notities|
+|Opdrachten|Operationele status|Opmerkingen|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
-|`Wait-Process`|Beschikbaar, werkt niet goed. |`Start-Process gvim -PassThru | Wait-Process` werkt bijvoorbeeld niet; Er kan niet worden gewacht op het proces.|
+|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld `Start-Process gvim -PassThru | Wait-Process` , werkt niet; Er kan niet worden gewacht op het proces.|
 |`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenis bronnen beschikbaar.|De opdrachten voor het uitvoeren van Power shell-gebeurtenissen zijn aanwezig, maar de meeste gebeurtenis bronnen die worden gebruikt met de opdrachten (zoals System. time-out. timer) zijn niet beschikbaar in Linux, waardoor de opdrachten overbodig zijn in de alpha-release.|
 |`Set-ExecutionPolicy`|Beschikbaar, maar werkt niet.|Retourneert een bericht dat niet wordt ondersteund op dit platform. Uitvoerings beleid is een gebruikers gerichte "veiligheids gordel" waarmee wordt voor komen dat de gebruiker kost bare fouten kan maken. Het is geen beveiligings grens.|
-|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, maar `New-PSSession` werken niet.|`New-PSSessionOption` en `New-PSTransportOption` momenteel niet worden gecontroleerd om `New-PSSession` nu te werken.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, `New-PSSession` maar werkt niet.|`New-PSSessionOption`en `New-PSTransportOption` worden momenteel niet gecontroleerd om nu `New-PSSession` te werken.|

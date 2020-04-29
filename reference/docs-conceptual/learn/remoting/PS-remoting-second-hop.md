@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 04/15/2020
 keywords: Power shell, cmdlet
 title: De tweede hop maken voor externe communicatie met PowerShell
-ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7819058bd8118ba44e66ec658017f536076609b5
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417625"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81527619"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken voor externe communicatie met PowerShell
 
@@ -28,7 +28,7 @@ Voor meer informatie over beveiligings problemen bij het gebruik van CredSSP voo
 
 Zie voor meer informatie over aanvallen op het weglaten van referentie dief stal [Pass-the-hash-aanvallen (PtH) en andere referentie diefstal](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
-Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe communicatie met Power shell raadpleegt [u CredSSP gebruiken om het probleem met de tweede hop op te lossen](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe communicatie met Power shell, raadpleegt u [Power shell-functie voor tweede hop inschakelen met CredSSP](https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/).
 
 ### <a name="pros"></a>Voordelen
 
@@ -43,7 +43,8 @@ Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe co
 
 U kunt ook Kerberos-onbeperkte overdracht gebruiken om de tweede hop te maken. Deze methode biedt echter geen controle over waar gedelegeerde referenties worden gebruikt.
 
->**Opmerking:** Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
+> [!NOTE]
+> Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)voor meer informatie.
 
 ### <a name="pros"></a>Voordelen
 
@@ -54,12 +55,12 @@ U kunt ook Kerberos-onbeperkte overdracht gebruiken om de tweede hop te maken. D
 - Biedt geen ondersteuning voor de tweede hop voor WinRM.
 - Biedt geen controle over waar referenties worden gebruikt, waardoor een beveiligings probleem wordt opgelost.
 
-## <a name="kerberos-constrained-delegation"></a>Kerberos-beperkte overdracht
+## <a name="kerberos-constrained-delegation"></a>Beperkte Kerberos-overdracht
 
 U kunt verouderde, beperkte delegering (niet op basis van bronnen) gebruiken om de tweede hop te maken. Configureer beperkte Kerberos-delegering met de optie elk verificatie protocol gebruiken om protocol overgang toe te staan.
 
 > [!NOTE]
-> Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
+> Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
 
 ### <a name="pros"></a>Voordelen
 
@@ -74,10 +75,10 @@ U kunt verouderde, beperkte delegering (niet op basis van bronnen) gebruiken om 
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>Op resources gebaseerde Kerberos-beperkte overdracht
 
-Met behulp van beperkte Kerberos-delegering (geïntroduceerd in Windows Server 2012), configureert u de overdracht van referenties op het Server object waar de resources zich bevinden.
-In het tweede hop-scenario dat hierboven wordt beschreven, configureert u _ServerC_ om op te geven waar de gedelegeerde referenties worden geaccepteerd.
+Met behulp van beperkte Kerberos-delegering (geïntroduceerd in Windows Server 2012), configureert u de overdracht van referenties op het Server object waar de resources zich bevinden. In het tweede hop-scenario dat hierboven wordt beschreven, configureert u _ServerC_ om op te geven waar de gedelegeerde referenties worden geaccepteerd.
 
->**Opmerking:** Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
+> [!NOTE]
+> Active Directory accounts met het **account is vertrouwelijk en kan niet worden** overgedragen, kan niet worden gedelegeerd. Zie [Security Focus: analyse van het account is vertrouwelijk en kan niet worden gedelegeerd voor bevoegde accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) en [Hulpprogram ma's en instellingen voor Kerberos-verificatie](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) voor meer informatie.
 
 ### <a name="pros"></a>Voordelen
 
@@ -95,16 +96,15 @@ In het tweede hop-scenario dat hierboven wordt beschreven, configureert u _Serve
 
 ### <a name="example"></a>Voorbeeld
 
-We kijken naar een Power shell-voor beeld dat op resources gebaseerde beperkte delegering op _ServerC_ zodanig configureert dat gedelegeerde referenties van een _ServerB_worden toegestaan.
-In dit voor beeld wordt ervan uitgegaan dat op alle servers Windows Server 2012 of hoger wordt uitgevoerd en dat er ten minste één domein controller met Windows Server 2012 elk domein is waarvan de servers deel uitmaken.
+We kijken naar een Power shell-voor beeld dat op resources gebaseerde beperkte delegering op _ServerC_ zodanig configureert dat gedelegeerde referenties van een _ServerB_worden toegestaan. In dit voor beeld wordt ervan uitgegaan dat op alle servers Windows Server 2012 of hoger wordt uitgevoerd en dat er ten minste één domein controller met Windows Server 2012 elk domein is waarvan de servers deel uitmaken.
 
-Voordat u beperkte delegering kunt configureren, moet u de functie `RSAT-AD-PowerShell` toevoegen om de Active Directory Power shell-module te installeren en deze module vervolgens in uw sessie te importeren:
+Voordat u beperkte delegering kunt configureren, moet u de `RSAT-AD-PowerShell` functie toevoegen om de Active Directory Power shell-module te installeren en deze module vervolgens in uw sessie te importeren:
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
-
 PS C:\> Import-Module ActiveDirectory
 ```
+
 Verschillende beschik bare cmdlets hebben nu een **PrincipalsAllowedToDelegateToAccount** -para meter:
 
 ```powershell
@@ -131,7 +131,7 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-WinRM (en dus externe communicatie van Power shell) wordt standaard uitgevoerd als het computer account. U kunt dit zien door te kijken naar de eigenschap **Start** naam van de `winrm`-service:
+WinRM (en dus externe communicatie van Power shell) wordt standaard uitgevoerd als het computer account. U kunt dit zien door te kijken naar de eigenschap **Start** naam van `winrm` de service:
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -177,7 +177,8 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-In dit voor beeld wordt de variabele `$using` gebruikt om de `$ServerC`-variabele zichtbaar te maken voor _ServerB_. Zie [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx)voor meer informatie over de variabele `$using`.
+In dit voor beeld wordt `$using` de variabele gebruikt om de `$ServerC` variabele zichtbaar te maken voor _ServerB_.
+Zie about_Remote_Variables voor meer informatie `$using` over de variabele [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Als u wilt toestaan dat meerdere servers referenties delegeren naar _ServerC_, stelt u de waarde van de para meter **PrincipalsAllowedToDelegateToAccount** op _ServerC_ in op een matrix:
 
@@ -202,7 +203,7 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-Als u de bevoegdheid voor het delegeren van referenties wilt verwijderen naar ServerC, stelt u de waarde van de para meter **PrincipalsAllowedToDelegateToAccount** op _ServerC_ in op `$null`:
+Als u de bevoegdheid voor het delegeren van referenties wilt verwijderen naar ServerC, stelt u _ServerC_ de waarde `$null`van de para meter **PrincipalsAllowedToDelegateToAccount** op ServerC in op:
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -210,20 +211,19 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Informatie over op resources gebaseerde Kerberos-beperkte delegering
 
-- [Wat is er nieuw in Kerberos-verificatie](https://technet.microsoft.com/library/hh831747.aspx)
+- [Wat is nieuw in Kerberos-verificatie](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 - [Hoe Windows Server 2012 de knel punt van Kerberos-beperkte overdracht, deel 1, vereenvoudigt](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hoe Windows Server 2012 de knel punt van Kerberos-beperkte overdracht, deel 2, vereenvoudigt](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Meer informatie over Kerberos-beperkte overdracht voor Azure Active Directory-toepassingsproxy-implementaties met geïntegreerde Windows-verificatie](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory schema kenmerken M 2.210 kenmerk msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
 - [[MS-SFU]: Kerberos protocol Extensions: Service for User en congebonden delegering Protocol 1.3.2 S4U2proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
-- [Op resources gebaseerde Kerberos-beperkte overdracht](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [Extern beheer zonder beperkte delegering met behulp van PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [Extern beheer zonder beperkte delegering met behulp van PrincipalsAllowedToDelegateToAccount](/archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount)
 
 ## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration met behulp van runas
 
 U kunt een sessie configuratie op _ServerB_ maken en de para meter **RunAsCredential** instellen.
 
-Voor informatie over het gebruik van PSSessionConfiguration en Runas om het probleem met de tweede hop op te lossen, raadpleegt [u een andere oplossing voor externe communicatie met Power shell voor multi-hop](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+Voor informatie over het gebruik van PSSessionConfiguration en Runas om het probleem met de tweede hop op te lossen, raadpleegt [u een andere oplossing voor externe communicatie met Power shell voor multi-hop](/archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting).
 
 ### <a name="pros"></a>Voordelen
 

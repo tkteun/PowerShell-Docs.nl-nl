@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA-configuraties registreren
 ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706203"
 ---
 # <a name="registering-jea-configurations"></a>JEA-configuraties registreren
@@ -24,7 +24,7 @@ Voordat u begint, moet u ervoor zorgen dat aan de volgende vereisten is voldaan:
 - De gebruiker die de JEA-configuratie registreert, heeft beheerders rechten op het systeem.
 - U hebt een naam geselecteerd voor uw JEA-eind punt.
 
-De naam van het JEA-eind punt is vereist wanneer gebruikers verbinding maken met het systeem met behulp van JEA. De cmdlet [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) geeft de namen van de eind punten op een systeem weer. Eind punten die beginnen met `microsoft` worden doorgaans geleverd met Windows. Het `microsoft.powershell`-eind punt is het standaard eindpunt dat wordt gebruikt om verbinding te maken met een extern Power shell-eind punt.
+De naam van het JEA-eind punt is vereist wanneer gebruikers verbinding maken met het systeem met behulp van JEA. De cmdlet [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) geeft de namen van de eind punten op een systeem weer. Eind punten die beginnen met `microsoft` , worden doorgaans geleverd met Windows. Het `microsoft.powershell` eind punt is het standaard eindpunt dat wordt gebruikt om verbinding te maken met een extern Power shell-eind punt.
 
 ```powershell
 Get-PSSessionConfiguration | Select-Object Name
@@ -75,7 +75,7 @@ De volgende eigenschappen kunnen worden geconfigureerd met behulp van de DSC-res
 
 De syntaxis voor elk van deze eigenschappen in een DSC-configuratie is consistent met het configuratie bestand van de Power shell-sessie.
 
-Hieronder vindt u een voor beeld van een DSC-configuratie voor een algemene server onderhoud module. Hierbij wordt ervan uitgegaan dat een geldige Power shell-module met functie mogelijkheden zich op de `\\myfileshare\JEA` bestands share bevindt.
+Hieronder vindt u een voor beeld van een DSC-configuratie voor een algemene server onderhoud module. Hierbij wordt ervan uitgegaan dat een geldige Power shell-module met functie mogelijkheden `\\myfileshare\JEA` zich op de bestands share bevindt.
 
 ```powershell
 Configuration JEAMaintenance

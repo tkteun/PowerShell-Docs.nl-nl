@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Aan de slag met de PowerShell Gallery
-ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995878"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81219690"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
 
@@ -19,22 +19,22 @@ De PowerShell Gallery is een pakket opslagplaats met scripts, modules en DSC-res
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Pakketten detecteren van de PowerShell Gallery
 
-U kunt pakketten vinden in de PowerShell Gallery met behulp van het besturings element **zoeken** op de [Start pagina](https://www.powershellgallery.com)van de PowerShell Gallery of door de modules en scripts te bladeren op de [pagina pakketten](https://www.powershellgallery.com/packages). U kunt ook pakketten van de PowerShell Gallery vinden door de cmdlets [Find-Module][], [zoeken-dscresource bieden]en [Zoeken-script][] uit te voeren, afhankelijk van het type pakket, met `-Repository PSGallery`.
+U kunt pakketten vinden in de PowerShell Gallery met behulp van het besturings element **zoeken** op de [Start pagina](https://www.powershellgallery.com)van de PowerShell Gallery of door de modules en scripts te bladeren op de [pagina pakketten](https://www.powershellgallery.com/packages). U kunt ook pakketten van de PowerShell Gallery vinden door de cmdlets [zoeken-module][], [zoeken-dscresource bieden]en [Zoeken-script][] uit te voeren, afhankelijk van het type pakket, met `-Repository PSGallery`.
 
 U kunt de resultaten van de galerie filteren met behulp van de volgende para meters:
 
-- Name
+- Naam
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Tag
-- Bevat
+- Label
+- Omvat
 - Dscresource bieden
 - RoleCapability
 - Opdracht
 - Filteren
 
-Als u alleen geïnteresseerd bent in het detecteren van specifieke DSC-resources in de galerie, kunt u de cmdlet [Zoeken-Dscresource bieden][] uitvoeren. Find-Dscresource bieden retourneert gegevens over DSC-resources in de galerie. Omdat DSC-resources altijd worden geleverd als onderdeel van een module, moet u nog steeds [Installatie-module][] uitvoeren om die DSC-resources te installeren.
+Als u alleen geïnteresseerd bent in het detecteren van specifieke DSC-resources in de galerie, kunt u de cmdlet [Find-dscresource bieden][] uitvoeren. Find-Dscresource bieden retourneert gegevens over DSC-resources in de galerie. Omdat DSC-resources altijd worden geleverd als onderdeel van een module, moet u nog steeds [install-module][] uitvoeren om die DSC-resources te installeren.
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>Meer informatie over pakketten in de PowerShell Gallery
 
@@ -42,7 +42,7 @@ Zodra u een pakket hebt geïdentificeerd waarin u bent geïnteresseerd, kunt u m
 
 Als u een pakket detecteert waarvan u denkt dat het niet goed trouw is gepubliceerd, klikt u op **misbruik melden** op de pagina van het pakket.
 
-Als u [Find-Module][] of [Zoeken-script][]uitvoert, kunt u deze gegevens weer geven in het geretourneerde PSGetModuleInfo-object. Bijvoorbeeld: het uitvoeren van `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` retourneert gegevens in de PSReadLine-module in de galerie.
+Als u [Zoek-module][] of [Zoeken-script][]uitvoert, kunt u deze gegevens weer geven in het geretourneerde PSGetModuleInfo-object. Als u bijvoorbeeld uitvoert `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` , worden gegevens in de PSReadLine-module in de galerie geretourneerd.
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>Pakketten downloaden van de PowerShell Gallery
 
@@ -60,15 +60,15 @@ Als u een pakket detecteert waarvan u denkt dat het niet goed trouw is gepublice
 
 Als u een pakket wilt installeren uit de galerie, voert u de [installatie-module][] of de cmdlet [install-script][] uit, afhankelijk van het type pakket.
 
-[Installatie-module][] installeert standaard de Module naar `$env:ProgramFiles\WindowsPowerShell\Modules`.
-Hiervoor is een beheerders account vereist. Als u de para meter `-Scope CurrentUser` toevoegt, wordt de module geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`.
+[Install-module][] installeert standaard de module `$env:ProgramFiles\WindowsPowerShell\Modules` .
+Hiervoor is een beheerders account vereist. Als u de `-Scope CurrentUser` para meter toevoegt, wordt de module geïnstalleerd `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` in.
 
-Met [install-script][] wordt het script standaard geïnstalleerd op `$env:ProgramFiles\WindowsPowerShell\Scripts`.
-Hiervoor is een beheerders account vereist. Als u de para meter `-Scope CurrentUser` toevoegt, wordt het script geïnstalleerd op `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`.
+Met `$env:ProgramFiles\WindowsPowerShell\Scripts` [install-script][] wordt het script standaard geïnstalleerd.
+Hiervoor is een beheerders account vereist. Als u de `-Scope CurrentUser` para meter toevoegt, wordt het script geïnstalleerd `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` in.
 
-Standaard installeert [Installatie-module][] en [install-script][] de meest recente versie van een pakket. Als u een oudere versie van het pakket wilt installeren, voegt u de para meter `-RequiredVersion` toe.
+Standaard installeert [install-module][] en [install-script][] de meest recente versie van een pakket. Als u een oudere versie van het pakket wilt installeren, `-RequiredVersion` voegt u de para meter toe.
 
-### <a name="deploy"></a>Implementatie
+### <a name="deploy"></a>Implementeren
 
 Als u een pakket wilt implementeren vanuit het PowerShell Gallery naar Azure Automation, klikt u op **Azure Automation**en klikt u vervolgens op **implementeren in azure Automation** op de pagina pakket Details. U wordt omgeleid naar de Azure-Beheerportal waar u zich aanmeldt met behulp van de referenties van uw Azure-account. Houd er rekening mee dat het implementeren van pakketten met afhankelijkheden alle afhankelijkheden van Azure Automation implementeert. De knop implementeren naar Azure Automation kan worden uitgeschakeld door het label **AzureAutomationNotSupported** toe te voegen aan de meta gegevens van uw pakket.
 
@@ -76,15 +76,25 @@ Raadpleeg de [Azure Automation](/azure/automation) -documentatie voor meer infor
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>De pakketten van de PowerShell Gallery worden bijgewerkt
 
-Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module][] of [update-script][] uit. Wanneer u zonder aanvullende para meters uitvoert, probeert [Update-Module][] alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt bijwerken, voegt u de para meter `-Name` toe.
+Als u pakketten wilt bijwerken die zijn geïnstalleerd vanaf de PowerShell Gallery, voert u de cmdlet [Update-module][] of [update-script][] uit. Wanneer u zonder aanvullende para meters uitvoert, probeert [Update module][] alle modules bij te werken die zijn geïnstalleerd door de [installatie-module][]uit te voeren. Als u de modules selectief wilt `-Name` bijwerken, voegt u de para meter toe.
 
-Op dezelfde manier wordt bij het uitvoeren van een [Update-script][] ook geprobeerd alle scripts die zijn geïnstalleerd door het [Install-script][]uit te voeren, wanneer u uitvoert zonder aanvullende para meters. Als u scripts selectief wilt bijwerken, voegt u de para meter `-Name` toe.
+Op dezelfde manier wordt bij het uitvoeren van een [update script][] ook geprobeerd alle scripts die zijn geïnstalleerd door het [installatie script][]uit te voeren, wanneer u uitvoert zonder aanvullende para meters. Als u scripts selectief wilt bijwerken `-Name` , voegt u de para meter toe.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Pakketten weer geven die u hebt geïnstalleerd via de PowerShell Gallery
 
 Voer de cmdlet [Get-InstalledModule][] uit om erachter te komen welke modules zijn geïnstalleerd op de PowerShell Gallery. Met deze opdracht worden alle modules op uw systeem weer gegeven die rechtstreeks van de PowerShell Gallery zijn geïnstalleerd.
 
 Voer de cmdlet [Get-InstalledScript][] uit om erachter te komen welke scripts zijn geïnstalleerd op de PowerShell Gallery. Met deze opdracht worden alle scripts die u op uw systeem hebt geïnstalleerd, rechtstreeks vanuit de PowerShell Gallery weer gegeven.
+
+## <a name="network-access-to-the-powershell-gallery"></a>Netwerk toegang tot de PowerShell Gallery
+
+De PowerShell Gallery gebruikt de volgende hostnamen.
+
+- `psg-prod-eastus.azureedge.net`-de CDN-hostnaam
+- `devopsgallerystorage.blob.core.windows.net`-de hostnaam van het opslag account
+- `*.powershellgallery.com`-de website
+
+Deze hostnamen moeten worden toegevoegd aan de lijst toestaan waarmee de toegang vanuit uw netwerk wordt beheerd.
 
 [Zoeken-Dscresource bieden]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

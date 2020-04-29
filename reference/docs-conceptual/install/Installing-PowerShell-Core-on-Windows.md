@@ -2,12 +2,12 @@
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 17b2c7c51e54cea42ee68dc1812ffe89654806fc
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
+ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80977485"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141385"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -26,9 +26,9 @@ Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aa
 
 Als u Power shell in Windows wilt installeren, downloadt u het installatie pakket van onze pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de pagina release. De sectie **assets** kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
-## <a name="installing-the-msi-package"></a><a id="msi" />het MSI-pakket niet installeren
+## <a name="installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
-Het MSI-bestand ziet eruit als `PowerShell-<version>-win-<os-arch>.msi`. Bijvoorbeeld:
+Het MSI-bestand ziet `PowerShell-<version>-win-<os-arch>.msi`er als volgt uit. Bijvoorbeeld:
 
 - `PowerShell-7.0.0-win-x64.msi`
 - `PowerShell-7.0.0-win-x86.msi`
@@ -37,15 +37,15 @@ Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwi
 
 Het installatie programma maakt een snelkoppeling in het menu Start van Windows.
 
-- Standaard wordt het pakket geïnstalleerd op `$env:ProgramFiles\PowerShell\<version>`
-- U kunt Power shell starten via het menu Start of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Het pakket is standaard geïnstalleerd voor`$env:ProgramFiles\PowerShell\<version>`
+- U kunt Power shell starten via het menu Start of`$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
 > Power shell 7 wordt geïnstalleerd in een nieuwe map en wordt naast elkaar uitgevoerd met Windows Power shell 5,1. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
 >
-> - Power shell 7 is geïnstalleerd op `$env:ProgramFiles\PowerShell\7`
-> - De map `$env:ProgramFiles\PowerShell\7` wordt toegevoegd aan `$env:PATH`
-> - De map `$env:ProgramFiles\PowerShell\6` wordt verwijderd
+> - Power shell 7 is geïnstalleerd op`$env:ProgramFiles\PowerShell\7`
+> - De `$env:ProgramFiles\PowerShell\7` map wordt toegevoegd aan`$env:PATH`
+> - De `$env:ProgramFiles\PowerShell\6` map wordt verwijderd
 >
 > Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met de methode [zip-installatie](#zip) .
 
@@ -63,15 +63,15 @@ In het volgende voor beeld ziet u hoe u Power shell op de achtergrond installeer
 msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor `Msiexec.exe`.
+Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht `Msiexec.exe`regel opties voor.
 
-## <a name="installing-the-msix-package"></a><a id="msix" />het MSIX-pakket niet installeren
+## <a name="installing-the-msix-package"></a><a id="msix" />Het MSIX-pakket installeren
 
 Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van de pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
-Het MSIX-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
+Het MSIX-bestand ziet er als volgt uit:`PowerShell-<version>-win-<os-arch>.msix`
 
-Als u het pakket wilt installeren, moet u de cmdlet `Add-AppxPackage` gebruiken.
+Als u het pakket wilt installeren, moet u `Add-AppxPackage` de cmdlet gebruiken.
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
@@ -80,15 +80,15 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 > [!NOTE]
 > Het MSIX-pakket is nog niet vrijgegeven. Wanneer het pakket is vrijgegeven, is het beschikbaar in het Microsoft Store en op de pagina met GitHub- [releases][releases] .
 
-## <a name="installing-the-zip-package"></a><a id="zip" />het ZIP-pakket niet installeren
+## <a name="installing-the-zip-package"></a><a id="zip" />Het ZIP-pakket installeren
 
-Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Het installeren van het ZIP-archief controleert niet de vereisten zoals de MSI-pakketten. Zorg ervoor dat u aan de [vereisten](#prerequisites)voldoet om externe toegang tot WSMan goed te laten werken.
+Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Het installeren van het ZIP-archief controleert niet de vereisten zoals de MSI-pakketten. Down load het ZIP-archief vanaf de pagina [releases][releases] . Afhankelijk van hoe u het bestand downloadt, moet u het bestand mogelijk deblokkeren met de `Unblock-File` cmdlet. Pak de inhoud uit naar de gewenste locatie en voer `pwsh.exe` deze uit. Zorg ervoor dat u aan de [vereisten](#prerequisites)voldoet om externe toegang tot WSMan goed te laten werken.
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Implementeren in Windows 10 IoT Enter prise
 
 Windows 10 IoT Enter prise wordt geleverd met Windows Power shell en kan worden gebruikt voor het implementeren van Power shell 7.
 
-1. `PSSession` maken op doel apparaat
+1. Maken `PSSession` op doel apparaat
 
    ```powershell
    Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
@@ -196,11 +196,11 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 dotnet tool install --global PowerShell
 ```
 
-Het installatie programma voor het DotNet-hulp programma voegt `$env:USERPROFILE\dotnet\tools` toe aan de omgevings variabele `$env:PATH`. De momenteel actieve shell beschikt echter niet over de bijgewerkte `$env:PATH`. U kunt Power shell starten vanuit een nieuwe shell door `pwsh`te typen.
+Het hulp programma DotNet tool `$env:USERPROFILE\dotnet\tools` wordt toegevoegd `$env:PATH` aan de omgevings variabele. De momenteel actieve shell beschikt echter niet over de bijgewerkte `$env:PATH`versie. U kunt Power shell starten vanuit een nieuwe shell door `pwsh`te typen.
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 
-Power shell ondersteunt het Power shell Remoting Protocol (PSRP) voor zowel WSMan als SSH. Ga voor meer informatie naar:
+Power shell ondersteunt het Power shell Remoting Protocol (PSRP) voor zowel WSMan als SSH. Zie voor meer informatie:
 
 - [Externe SSH-communicatie in Power shell core][ssh-remoting]
 - [Externe WSMan-communicatie in Power shell core][wsman-remoting]

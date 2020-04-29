@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.0
 ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145129"
 ---
 # <a name="known-issues-in-wmf-50"></a>Bekende problemen in WMF 5.0
@@ -40,11 +40,11 @@ Het oude Exchange-eind punt wordt omgeleid naar een nieuw eind punt. Er is een f
 
 Bij de installatie van WMF 5,0 op een Windows Server 2012 R2 waarop SIL al wordt uitgevoerd, wordt de functie logboek registratie van software-inventarisatie na installatie foutief gestopt.
 
-**Oplossing:** Voer de `Start-SilLogging`-cmdlet eenmaal na de WMF-installatie uit, terwijl het installatie proces de functie voor logboek registratie van software-inventarisatie foutievelijk stoppen.
+**Oplossing:** Voer de `Start-SilLogging` cmdlet eenmaal na de WMF-installatie uit, terwijl het installatie proces de functie voor logboek registratie van software-inventarisatie foutievelijk stoppen.
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` werkt niet als-LiteralPath en-recursieve samen worden gebruikt
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`werkt niet als-LiteralPath en-recursieve samen worden gebruikt
 
-Als een mapnaam een ongeldig Joker teken bevat, worden `Get-ChildItem` geen verwachte resultaten gegenereerd wanneer zowel LiteralPath als-recursief worden gebruikt.
+Als een mapnaam een ongeldig Joker teken bevat, `Get-ChildItem` worden er geen verwachte resultaten gegenereerd wanneer zowel LiteralPath als-recursief worden gebruikt.
 
 **Oplossing:** Niet ideaal, maar de huidige tijdelijke oplossing is het implementeren van recursie in het script in plaats van te vertrouwen op de cmdlet.
 
@@ -52,7 +52,7 @@ Als een mapnaam een ongeldig Joker teken bevat, worden `Get-ChildItem` geen verw
 
 Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie van Windows Server die u gebruikt.
 
-**Oplossing:**
+**Opgelost**
 
 - Voor systemen met **Windows Server 2008 R2**
   1. Power shell openen als beheerder
@@ -78,7 +78,7 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
 
 - Voor systemen met **Windows Server 2012**
   1. Meld u aan als beheerder nadat u WMF 5,0 op de server hebt geïnstalleerd als Sysprep.
-  2. Kopieer Generize. XML vanuit Directory `\Windows\System32\Sysprep\ActionFiles\` naar een locatie buiten de Windows-map, `C:\` bijvoorbeeld.
+  2. Kopieer Generize. XML vanuit een `\Windows\System32\Sysprep\ActionFiles\` map naar een locatie buiten de Windows-map `C:\` , bijvoorbeeld.
   3. Open uw generaliseer. XML-kopie met Klad blok.
   4. Zoek en verwijder de volgende tekst, één exemplaar van elke moet worden verwijderd (ze worden bijna het einde van het document).
 
@@ -102,7 +102,7 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
      ```
 
      - Beantwoord Ja bij de vraag om bevestiging.
-     - Houd er rekening mee dat `<AdministratorUserName>` moet worden vervangen door de gebruikers naam die beheerder is op de computer. Bijvoorbeeld ' Administrator '.
+     - Houd er `<AdministratorUserName>` rekening mee dat moet worden vervangen door de gebruikers naam die beheerder is op de computer. Bijvoorbeeld ' Administrator '.
 
   9. Kopieer het bestand dat u hebt bewerkt en opgeslagen naar de Sysprep-map met behulp van de volgende opdracht:
 

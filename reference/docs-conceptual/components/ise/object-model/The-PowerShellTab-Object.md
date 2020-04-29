@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Het PowerShellTab-object
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79406970"
 ---
 # <a name="the-powershelltab-object"></a>Het PowerShellTab-object
@@ -15,7 +15,7 @@ Het **PowerShellTab** -object vertegenwoordigt een Windows Power shell runtime-o
 
 ## <a name="methods"></a>Methoden
 
-### <a name="invoke-script-"></a>\( script aanroepen \)
+### <a name="invoke-script-"></a>Script\( aanroepen\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -32,7 +32,7 @@ Voert het opgegeven script uit op het Power shell-tabblad.
 $psISE.PowerShellTabs[1].Invoke({dir})
 ```
 
-### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( script, \[useNewScope\], millisecondsTimeout \)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( script, \[useNewScope\], millisecondsTimeout\)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
@@ -43,9 +43,9 @@ Voert het opgegeven script uit op het Power shell-tabblad.
 
 **Script** -System. Management. Automation. script block of teken reeks het uit te voeren script blok.
 
-**\[useNewScope\]** : een optionele Booleaanse waarde die standaard wordt `$true` als deze is ingesteld op `$true`, wordt een nieuwe scope gemaakt waarin de opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
+`$true` `$true` **useNewScope\] : een optionele Booleaanse waarde die standaard wordt ingesteld op, wordt een nieuwe scope gemaakt waarin de \[** opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
 
-**\[millisecondsTimeout\]** -optioneel geheel getal dat standaard wordt ingesteld op **500**.
+millisecondsTimeout: een optioneel geheel getal dat standaard wordt ingesteld op **500**. ** \[\] **
 Als de opdracht niet binnen de opgegeven tijd wordt voltooid, wordt door de opdracht een **TimeoutException** gegenereerd met het bericht ' er is een time-out van de bewerking opgetreden. '
 
 ```powershell
@@ -227,5 +227,5 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ## <a name="see-also"></a>Zie ook
 
 - [Het PowerShellTabCollection-object](The-PowerShellTabCollection-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

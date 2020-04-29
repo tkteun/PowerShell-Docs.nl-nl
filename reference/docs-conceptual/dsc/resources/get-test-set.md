@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Get-test-set
 ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278411"
 ---
 # <a name="get-test-set"></a>Get-test-set
@@ -121,13 +121,13 @@ ModuleVersion = "1.0";
 };
 ```
 
-Als de [lokale Configuration Manager](../managing-nodes/metaConfig.md) (LCM) wordt toegepast, wordt de waarde ' spooler ' in het bestand '. mof ' gelezen en door gegeven aan de para meter `-Name` van de methoden **Get**, **test**en **set** voor het exemplaar ' MyService ' van de **service** resource.
+Als de [lokale Configuration Manager](../managing-nodes/metaConfig.md) (LCM) wordt toegepast, wordt de waarde ' spooler ' in het bestand '. mof ' gelezen en door gegeven aan de `-Name` para meter van de methoden **Get**, **test**en **set** voor het exemplaar ' MyService ' van de **service** resource.
 
 ## <a name="get"></a>Ophalen
 
 De **Get** -methode van een resource haalt de status van de resource op zoals deze is geconfigureerd op het doel knooppunt. Deze status wordt geretourneerd als [hash](/powershell/module/microsoft.powershell.core/about/about_hash_tables)-tabel. De sleutels van de **hashtabel** zijn de Configureer bare waarden, of para meters, die door de resource worden geaccepteerd.
 
-De **Get** -methode wijst rechtstreeks toe aan de cmdlet [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) . Wanneer u `Get-DSCConfiguration`aanroept, voert de LCM de **Get** -methode van elke bron in de huidige toegepaste configuratie uit. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.
+De **Get** -methode wijst rechtstreeks toe aan de cmdlet [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) . Wanneer u aanroept `Get-DSCConfiguration`, wordt de **Get** -methode van elke bron uitgevoerd in de huidige toegepaste configuratie. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.
 
 Dit is een voor beeld van uitvoer van een **service** resource waarmee de Spooler-service wordt geconfigureerd.
 
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Testen
 
-De **test** methode van een bron bepaalt of het doel knooppunt momenteel compatibel is met de *gewenste status*van de resource. De **test** methode retourneert alleen `$True` of `$False` alleen om aan te geven of het knoop punt compatibel is.
+De **test** methode van een bron bepaalt of het doel knooppunt momenteel compatibel is met de *gewenste status*van de resource. De **test** methode retourneert `$True` of `$False` alleen om aan te geven of het knoop punt compatibel is.
 Wanneer u [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)aanroept, roept de LCM de **test** methode van elke bron in de huidige toegepaste configuratie aan. De LCM gebruikt de sleutel waarden die zijn opgeslagen in het MOF-bestand als para meters voor elk bijbehorend bron exemplaar.
 
-Als het resultaat van de **test** van een afzonderlijke resource is `$False`, `Test-DSCConfiguration` retourneert `$False` om aan te geven dat het knoop punt niet aan het beleid voldoet. Als de **test** methoden van alle resources `$True`retour neren, `Test-DSCConfiguration` retourneert `$True` om aan te geven dat het knoop punt compatibel is.
+Als het resultaat van de **test** van een afzonderlijke resource `$False`is `Test-DSCConfiguration` , `$False` wordt hiermee aangegeven dat het knoop punt niet aan het beleid voldoet. Als de **test** methode van alle resources `$True`retourneert `Test-DSCConfiguration` , `$True` wordt geretourneerd om aan te geven dat het knoop punt compatibel is.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-Vanaf Power shell 5,0 is de para meter `-Detailed` toegevoegd. Als u `-Detailed` opgeeft, wordt `Test-DSCConfiguration` een object geretourneerd dat verzamelingen resultaten bevat voor compatibele en niet-compatibele resources.
+Vanaf Power shell 5,0 is de `-Detailed` para meter toegevoegd. Opgeven `-Detailed` van `Test-DSCConfiguration` oorzaken voor het retour neren van een object met verzamelingen resultaten voor compatibele en niet-compatibele resources.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -206,9 +206,9 @@ Zie [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-
 
 ## <a name="set"></a>Instellen
 
-De methode **set** van een resource probeert het knoop punt af te dwingen te voldoen aan de *gewenste status*van de resource. De **set** -methode is bedoeld om te worden **idempotent**. Dit betekent dat de **set** kan worden uitgevoerd meerdere keren en dat altijd hetzelfde resultaat oplevert zonder fouten.  Wanneer u [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)uitvoert, wordt door de LCM elke bron in de huidige toegepaste configuratie door lopen. De LCM haalt sleutel waarden voor het huidige bron exemplaar op uit het MOF-bestand en gebruikt deze als para meters voor de **test** methode. Als de **test** methode retourneert `$True`, is het knoop punt compatibel met de huidige resource en wordt de methode **set** overgeslagen. Als de **Test** `$False`retourneert, is het knoop punt niet compatibel.  De LCM geeft de sleutel waarden van het resource-exemplaar als para meters door aan de **ingestelde** methode van de resource. het knoop punt wordt teruggezet op naleving.
+De methode **set** van een resource probeert het knoop punt af te dwingen te voldoen aan de *gewenste status*van de resource. De **set** -methode is bedoeld om te worden **idempotent**. Dit betekent dat de **set** kan worden uitgevoerd meerdere keren en dat altijd hetzelfde resultaat oplevert zonder fouten.  Wanneer u [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)uitvoert, wordt door de LCM elke bron in de huidige toegepaste configuratie door lopen. De LCM haalt sleutel waarden voor het huidige bron exemplaar op uit het MOF-bestand en gebruikt deze als para meters voor de **test** methode. Als de **test** methode retourneert `$True`, is het knoop punt compatibel met de huidige resource en wordt de methode **set** overgeslagen. Als de **test** retourneert `$False`, is het knoop punt niet compatibel.  De LCM geeft de sleutel waarden van het resource-exemplaar als para meters door aan de **ingestelde** methode van de resource. het knoop punt wordt teruggezet op naleving.
 
-Door de para meters `-Verbose` en `-Wait` op te geven, kunt u de voortgang van de `Start-DSCConfiguration` cmdlet bekijken. In dit voor beeld is het knoop punt al compatibel. De `Verbose` uitvoer geeft aan dat de **ingestelde** methode is overgeslagen.
+Als u de `-Verbose` para `-Wait` meters en opgeeft, kunt u de voortgang `Start-DSCConfiguration` van de cmdlet bekijken. In dit voor beeld is het knoop punt al compatibel. De `Verbose` uitvoer geeft aan dat de **ingestelde** methode is overgeslagen.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting

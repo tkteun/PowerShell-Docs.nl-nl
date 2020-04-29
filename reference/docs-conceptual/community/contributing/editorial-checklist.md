@@ -1,14 +1,14 @@
 ---
-title: Controle lijst voor redactionele
+title: Redactionele controlelijst
 description: Dit is een overzicht van de regels voor het bewerken van Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79078575"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624734"
 ---
 # <a name="editors-checklist"></a>Controle lijst van de editor
 
@@ -23,7 +23,7 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
     - Nieuwe informatie toevoegen
   - Wijzig de datum niet als de update niet significant is
     - Typfouten en opmaak corrigeren
-- `title`: een unieke teken reeks van 43-59 tekens inclusief spaties
+- `title`: unieke teken reeks van 43-59 tekens inclusief spaties
   - Site-id niet toevoegen (deze wordt automatisch gegenereerd)
   - Gebruik een hoofd letter: alleen het eerste woord en eventuele eigen naam woorden
 - `description`: 115-145 tekens inclusief spaties: deze abstract wordt weer gegeven in het Zoek resultaat
@@ -31,15 +31,16 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 ## <a name="formatting"></a>Opmaak
 
 - Apostroffen-syntaxis elementen die worden weer gegeven, inline in een alinea
-  - Cmdlet-namen `Verb-Noun`
-  - Variabele `$counter`
-  - Voor beelden van syntaxis `Verb-Noun -Parameter`
-  - Bestands paden `C:\Program Files\PowerShell`, `/usr/bin/pwsh`
+  - Namen van cmdlets`Verb-Noun`
+  - Variabeletype`$counter`
+  - Syntaxis voorbeelden`Verb-Noun -Parameter`
+  - Bestands paden `C:\Program Files\PowerShell`,`/usr/bin/pwsh`
   - Url's die niet in het document kunnen worden geklikt
-- Vet gebruiken voor eigenschapnamen, parameter waarden, parameter namen, klassen namen, module namen, namen van entiteiten, object-of type namen
+  - Eigenschaps-of parameter waarden
+- Vetgedrukt gebruiken voor eigenschapnamen van eigenschappen, parameter namen, klassenamen, module namen, entiteits namen, object-of type namen
   - Vet wordt gebruikt voor semantische opmaak, niet nadruk
-  - Vet: sterretjes `**` gebruiken
-- Cursief: onderstrepings `_` gebruiken
+  - Vet: sterretjes gebruiken`**`
+- Cursief: onderstrepings tekens gebruiken`_`
   - Alleen gebruikt voor nadruk, niet voor semantische opmaak
 - Regel einden in 100 kolommen (of op 80 voor **about_Topics**)
 - Geen harde tabbladen: alleen spaties gebruiken
@@ -55,19 +56,19 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 - Lege regel voor en na
 - PlatyPS dwingt specifieke headers in het schema af-Voeg geen headers toe of verwijder deze
 
-### <a name="code-blocks"></a>Code blokken
+### <a name="code-blocks"></a>Codeblokken
 
 - Lege regel voor en na
 - Gelabelde code Fences gebruiken- **Power shell**, **output**of een andere geschikte taal-id
 - Niet-gecodeerde blokken met omheinings syntaxis of andere shells
-- Plaats de **uitvoer** in een afzonderlijk code blok, met uitzonde ring van eenvoudige voor beelden waarin u niet van plan bent om de knop **kopiëren** te gebruiken voor de lezer
+- Plaats de uitvoer in een afzonderlijk code blok, met uitzonde ring van eenvoudige voor beelden waarin u niet van plan bent om de knop **kopiëren** te gebruiken voor de lezer
 - Lijst met [ondersteunde talen](/contribute/code-in-docs#supported-languages) weer geven
 
 ### <a name="lists"></a>Lijsten
 
 - Correct Inge sprongen
 - Lege regel voor het eerste item en na het laatste item
-- Bullet: use afbreek streepje (`-`) geen asterisk (`*`)-te eenvoudig te verwarren met nadruk
+- Bullet: use afbreek`-`streepje () geen`*`asterisk ()-te eenvoudig te verwarren met nadruk
 - Voor genummerde lijsten zijn alle cijfers ' 1 '.
 
 ## <a name="terminology"></a>Terminologie
@@ -79,11 +80,11 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 
 - Er moet ten minste één voor beeld in de cmdlet-verwijzing zijn
 - Voor beelden moeten net genoeg code zijn om het gebruik te demonstreren
-- Power shell-syntaxis
+- PowerShell-syntaxis
   - Volledige namen van cmdlets en para meters gebruiken-geen aliassen
   - Splatting gebruiken voor para meters wanneer de opdracht regel te lang wordt
   - Vermijd het gebruik van regel voortzettings accents graves indien nodig
-- De Power shell-prompt (`PS>`) verwijderen of vereenvoudigen, behalve wanneer dit nodig is voor het voor beeld
+- Verwijder of Vereenvoudig de Power shell-`PS>`prompt (), met uitzonde ring van waar nodig voor het voor beeld
 - Voor de cmdlet-referentie moet het volgende PlatyPS-schema worden gevolgd
 
   ~~~Markdown
@@ -108,10 +109,10 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 ## <a name="linking-to-other-documents"></a>Koppelen aan andere documenten
 
 - Koppelen buiten de docset of tussen de cmdlet-verwijzing en de conceptuele
-  - Relatieve Url's gebruiken bij het koppelen aan docs.microsoft.com (`https://docs.microsoft.com/en-us`verwijderen)
-  - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. `/en-us` verwijderen uit URL)
+  - Relatieve Url's gebruiken wanneer u een koppeling maakt naar `https://docs.microsoft.com/en-us`docs.Microsoft.com (verwijderen)
+  - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. verwijderen `/en-us` uit URL)
   - Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site
 - Binnen docset
   - Koppeling naar bestandspad (bijvoorbeeld `../folder/file.md`)
-  - Alle bestands paden gebruiken tekens voor voorwaartse slash (`/`)
+  - Alle bestands paden gebruiken tekens voor voorwaartse`/`slash ()
 - Afbeeldings koppelingen moeten unieke alternatieve tekst bevatten

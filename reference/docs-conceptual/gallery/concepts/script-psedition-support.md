@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Script met compatibele Power shell-edities
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328880"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele Power shell-edities
@@ -35,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Script auteurs kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele versie van Power shell met behulp van de para meter PSEdition in een `#requires`-instructie.
+Auteurs van het script kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele editie van Power shell met `#requires` behulp van de para meter PSEdition in een-instructie.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
@@ -64,7 +64,7 @@ Find-Script -Tag PSEdition_Desktop
 Find-Script -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 - [Modules met PSEditions](module-psedition-support.md)
 - [PSEditions-ondersteuning op PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)

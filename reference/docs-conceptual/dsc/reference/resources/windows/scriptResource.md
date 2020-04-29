@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-script resource
 ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941325"
 ---
 # <a name="dsc-script-resource"></a>DSC-script resource
@@ -45,13 +45,13 @@ Script [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]
 > De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
-### <a name="additional-information"></a>Meer informatie
+### <a name="additional-information"></a>Aanvullende informatie
 
 #### <a name="getscript"></a>GetScript
 
@@ -65,7 +65,7 @@ Met de cmdlet [test-DscConfiguration](/powershell/module/PSDesiredStateConfigura
 In dit geval wordt **SetScript** echter niet uitgevoerd, ongeacht welk **TestScript** Block retourneert.
 
 > [!NOTE]
-> Alle uitvoer van uw **TestScript** maakt deel uit van de geretourneerde waarde. Power shell interpreteert niet-onderdrukte uitvoer als niet-nul, wat betekent dat uw **TestScript** retour neren `$true`, ongeacht de status van uw knoop punt. Dit resulteert in onvoorspelbare resultaten, fout-positieven en veroorzaakt problemen tijdens het oplossen van problemen.
+> Alle uitvoer van uw **TestScript** maakt deel uit van de geretourneerde waarde. Power shell interpreteert niet-onderdrukte uitvoer als niet-nul, **TestScript** wat betekent dat `$true` uw TestScript wordt geretourneerd, ongeacht de status van uw knoop punt. Dit resulteert in onvoorspelbare resultaten, fout-positieven en veroorzaakt problemen tijdens het oplossen van problemen.
 
 #### <a name="setscript"></a>SetScript
 
@@ -75,7 +75,7 @@ In dit geval wordt **SetScript** echter niet uitgevoerd, ongeacht welk **TestScr
 
 ### <a name="example-1-write-sample-text-using-a-script-resource"></a>Voor beeld 1: voorbeeld tekst schrijven met behulp van een script resource
 
-In dit voor beeld wordt getest op het bestaan van `C:\TempFolder\TestFile.txt` op elk knoop punt. Als deze niet bestaat, wordt deze gemaakt met behulp van de `SetScript`. De `GetScript` retourneert de inhoud van het bestand en de bijbehorende retour waarde wordt niet gebruikt.
+In dit voor beeld wordt getest of `C:\TempFolder\TestFile.txt` op elk knoop punt bestaat. Als deze niet bestaat, wordt deze gemaakt met behulp `SetScript`van de. Het `GetScript` retourneert de inhoud van het bestand en de geretourneerde waarde wordt niet gebruikt.
 
 ```powershell
 Configuration ScriptTest
@@ -100,7 +100,7 @@ Configuration ScriptTest
 
 ### <a name="example-2-compare-version-information-using-a-script-resource"></a>Voor beeld 2: versie-informatie vergelijken met een script resource
 
-In dit voor beeld worden de gegevens van de *compatibele* versie opgehaald uit een tekst bestand op de ontwerp computer en opgeslagen in de variabele `$version`. Bij het genereren van het MOF-bestand van het knoop punt worden de `$using:version` variabelen in elk script blok vervangen door de waarde van de `$version` variabele.
+In dit voor beeld worden de gegevens van de *compatibele* versie opgehaald uit een tekst bestand op de ontwerp computer en `$version` opgeslagen in de variabele. Bij het genereren van het MOF-bestand van het knoop `$using:version` punt vervangt DSC de variabelen in elk script blok met `$version` de waarde van de variabele.
 Tijdens de uitvoering wordt de *compatibele* versie opgeslagen in een tekst bestand op elk knoop punt en vergeleken en bijgewerkt bij de volgende uitvoeringen.
 
 ```powershell

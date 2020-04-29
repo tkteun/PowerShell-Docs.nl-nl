@@ -3,19 +3,19 @@ ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEMenuItemCollection-object
 ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736169"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Het ISEMenuItemCollection-object
 
-Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItemCollection** . Een voor beeld is het `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`-object dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows power shell® Integrated Scripting Environment (ISE).
+Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItemCollection** . Een voor beeld is `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` het object dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows Power shell® Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Methode
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>\(teken reeks weergave naam, System. Management. Automation. script block-actie, System. Windows. input. toets-beweging toevoegen \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Teken\(reeks DisplayName, System. Management. Automation. script block-actie, System. Windows. input. toets-beweging toevoegen\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -35,7 +35,7 @@ Hiermee wordt een menu opdracht toegevoegd aan de verzameling.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 ```
 
-### <a name="clear"></a>\(\) wissen
+### <a name="clear"></a>Maak\(\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -49,5 +49,5 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ## <a name="see-also"></a>Zie ook
 
 - [Het ISEMenuItem-object](The-ISEMenuItem-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

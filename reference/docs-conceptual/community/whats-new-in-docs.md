@@ -3,10 +3,10 @@ title: Wat is er nieuw in Power shell docs?
 description: Lijst met wijzigingen in de Power shell-documentatie
 ms.date: 03/31/2020
 ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
-ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80537072"
 ---
 # <a name="whats-new-in-powershell-docs"></a>Wat is er nieuw in de PowerShell-documentatie?
@@ -26,9 +26,9 @@ Help ons de documentatie beter voor u te maken. Lees de [hand leiding van de med
     - [Power shell-infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf) toegevoegd aan de pagina digitale Art
     - [Power shell-hand leiding voor inzenders](/powershell/scripting/community/contributing/overview?view=powershell-7)
   - Nieuwe Power shell-inhoud
-    - [Migreren van Windows Power shell 5,1 naar Power shell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
+    - [Migreren van Windows PowerShell 5.1 naar PowerShell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
     - [Compatibiliteits lijst voor de module Power shell 7](/PowerShell/scripting/whats-new/module-compatibility)
-    - [Power shell gebruiken in docker](/powershell/scripting/install/powershell-in-docker)
+    - [PowerShell gebruiken in Docker](/powershell/scripting/install/powershell-in-docker)
   - Nieuwe wiki-inhoud
     - [Power shell voor komt uitzonde ringen voor niet-bestaande sleutels voor typen die IDictionary TKey implementeren, TValue](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell-prevents-exceptions-for-non-existent-keys-for-types-that-implement-IDictionary-TKey,-TValue-)
     - [De behandeling van naam ruimten in Power shell is hoofdletter gevoelig, maar het is niet altijd](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell's-treatment-of-namespaces-is-case-insensitive-but-case-preserving)
@@ -44,7 +44,7 @@ Help ons de documentatie beter voor u te maken. Lees de [hand leiding van de med
 
 ### <a name="top-community-contributors"></a>Belangrijkste mede werkers van de Community
 
-De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Dank u!
+De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Met vriendelijke groet,
 
 - k-takai-7 pull
 - mklement0-5-problemen
@@ -71,7 +71,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 
 ### <a name="top-community-contributors"></a>Belangrijkste mede werkers van de Community
 
-De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Dank u!
+De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Met vriendelijke groet,
 
 - Maamue-2 pull
 - doctordns-2 pull
@@ -95,7 +95,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 
 ### <a name="top-community-contributors"></a>Belangrijkste mede werkers van de Community
 
-De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Dank u!
+De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aanvragen of opvolgings problemen te verzenden. Met vriendelijke groet,
 
 - Makovec-3 pull
 - mklement0-9 problemen

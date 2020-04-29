@@ -3,10 +3,10 @@ ms.date: 10/13/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Overzicht Desired State Configuration voor technici
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941836"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Overzicht Desired State Configuration voor technici
@@ -134,6 +134,6 @@ Als u wilt implementeren in de verschillende omgevingen, kunt u **Start-DscConfi
 
 [Configuraties](../configurations/configurations.md)
 
-[Configuratie gegevens](../configurations/configData.md)
+[Configuratiegegevens](../configurations/configData.md)
 
 [Resources](../resources/resources.md)

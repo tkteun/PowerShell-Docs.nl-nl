@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Referenties gebruiken met DSC-resources
 ms.openlocfilehash: fea2e3cad8d081c17853e127203f1d40d98c5de2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941962"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>Referenties gebruiken met DSC-resources
@@ -20,7 +20,7 @@ Elke DSC-resource heeft een **PsDscRunAsCredential** -eigenschap die kan worden 
 > [!NOTE]
 > In Power shell 5,0 wordt het gebruik van de eigenschap **PsDscRunAsCredential** in configuraties waarmee samengestelde resources worden aangeroepen, niet ondersteund. In Power shell 5,1 wordt de eigenschap **PsDscRunAsCredential** ondersteund in configuraties waarmee samengestelde resources worden aangeroepen. De eigenschap **PsDscRunAsCredential** is niet beschikbaar in power Shell 4,0.
 
-In het volgende voor beeld wordt `Get-Credential` gebruikt om de gebruiker om referenties te vragen. De **register** bron wordt gebruikt om de register sleutel te wijzigen waarmee de achtergrond kleur voor het Windows-opdracht prompt venster wordt opgegeven.
+In het volgende voor beeld `Get-Credential` wordt gebruikt om de gebruiker om referenties te vragen. De **register** bron wordt gebruikt om de register sleutel te wijzigen waarmee de achtergrond kleur voor het Windows-opdracht prompt venster wordt opgegeven.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -58,4 +58,4 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 
 > [!NOTE]
-> In dit voor beeld wordt ervan uitgegaan dat u een geldig certificaat op `C:\publicKeys\targetNode.cer`hebt en dat de vinger afdruk van het certificaat de weer gegeven waarde is. Zie [het MOF-bestand beveiligen](../pull-server/secureMOF.md)voor meer informatie over het versleutelen van referenties in MOF-bestanden van de DSC-configuratie.
+> In dit voor beeld wordt ervan uitgegaan dat u een `C:\publicKeys\targetNode.cer`geldig certificaat hebt op en dat de vinger afdruk van het certificaat de weer gegeven waarde is. Zie [het MOF-bestand beveiligen](../pull-server/secureMOF.md)voor meer informatie over het versleutelen van referenties in MOF-bestanden van de DSC-configuratie.

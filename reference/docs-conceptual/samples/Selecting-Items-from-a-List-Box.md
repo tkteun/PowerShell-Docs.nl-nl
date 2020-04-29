@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Items selecteren in een keuzelijst
 ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706169"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Items selecteren in een keuzelijst
@@ -142,7 +142,7 @@ $listBox.Height = 80
 In de volgende sectie geeft u de waarden op die u in de keuze lijst wilt weer geven voor gebruikers.
 
 > [!NOTE]
-> In de keuze lijst die door dit script wordt gemaakt, is slechts één selectie toegestaan. Als u een besturings element keuze lijst wilt maken dat meerdere selecties toestaat, geeft u een waarde op voor de eigenschap **SelectionMode** , op de volgende manier: `$listBox.SelectionMode = 'MultiExtended'`. Zie [keuze lijsten met meerdere keuze mogelijkheden](Multiple-selection-List-Boxes.md)voor meer informatie.
+> In de keuze lijst die door dit script wordt gemaakt, is slechts één selectie toegestaan. Als u een besturings element keuze lijst wilt maken dat meerdere selecties toestaat, geeft u een waarde op voor de eigenschap **SelectionMode** , `$listBox.SelectionMode = 'MultiExtended'`op de volgende manier:. Zie [keuze lijsten met meerdere keuze mogelijkheden](Multiple-selection-List-Boxes.md)voor meer informatie.
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')

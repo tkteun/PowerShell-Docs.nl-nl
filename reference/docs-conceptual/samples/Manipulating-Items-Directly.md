@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Items rechtstreeks bewerken
 ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030127"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
@@ -35,7 +35,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 
 Gebruik de cmdlet **New-item** om een nieuw item in het bestands systeem te maken. Neem de para meter **Path** op met het pad naar het item en de **item** type-para meter met de waarde "file" of "directory".
 
-Als u bijvoorbeeld een nieuwe map met de naam ' New. Directory ' wilt maken in de map C:\\Temp, typt u:
+Als u bijvoorbeeld een nieuwe map met de naam ' New. Directory ' wilt maken in de\\map C: Temp, typt u:
 
 ```
 PS> New-Item -Path c:\temp\New.Directory -ItemType Directory
@@ -72,13 +72,13 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Wanneer u een registerpad typt, moet u de dubbele punt ( **:** ) in de namen van Windows Power Shell-stations, HKLM: en HKCU: toevoegen. Zonder de dubbele punt herkent Windows Power shell de naam van het station niet in het pad.
+Wanneer u een registerpad typt, moet u de dubbele punt (**:**) in de namen van Windows Power Shell-stations, HKLM: en HKCU: toevoegen. Zonder de dubbele punt herkent Windows Power shell de naam van het station niet in het pad.
 
 ## <a name="why-registry-values-are-not-items"></a>Waarom register waarden geen items zijn
 
 Wanneer u de cmdlet **Get-Child item** gebruikt om de items in een register sleutel te vinden, zult u nooit de werkelijke Register vermeldingen of hun waarden zien.
 
-De register sleutel **HKEY_LOCAL_MACHINE\\Software\\micro soft\\Windows\\CurrentVersion\\run** bevat doorgaans diverse register vermeldingen die toepassingen vertegenwoordigen die worden uitgevoerd wanneer het systeem wordt gestart.
+De register sleutel **\\HKEY_LOCAL_MACHINE software\\van micro\\Soft Windows\\CurrentVersion\\run** meestal bevat doorgaans diverse register vermeldingen die toepassingen vertegenwoordigen die worden uitgevoerd wanneer het systeem wordt gestart.
 
 Als u echter **Get-Child item** gebruikt om te zoeken naar onderliggende items in de sleutel, ziet u de subsleutel **OptionalComponents** van de sleutel:
 
@@ -92,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Hoewel het handig is om Register vermeldingen als items te behandelen, kunt u geen pad naar een register vermelding opgeven op een manier die ervoor zorgt dat deze uniek is. De pad-notatie maakt geen onderscheid tussen de registersubsleutel **Run** en de **(standaard)** register vermelding in de **Run** -subsleutel. Omdat Register vermeldingen echter de back slash-teken ( **\\** ) kunnen bevatten, kunt u, als register items items zijn, de pad-notatie niet gebruiken om onderscheid te maken tussen een register vermelding met de naam **Windows\\CurrentVersion\\worden uitgevoerd** vanuit de subsleutel die zich in dat pad bevindt.
+Hoewel het handig is om Register vermeldingen als items te behandelen, kunt u geen pad naar een register vermelding opgeven op een manier die ervoor zorgt dat deze uniek is. De pad-notatie maakt geen onderscheid tussen de registersubsleutel **Run** en de **(standaard)** register vermelding in de **Run** -subsleutel. Omdat Register vermeldingen echter de back slash-teken (**\\**) kunnen bevatten, kunt u, als de register items items zijn, de pad-notatie niet gebruiken om een register vermelding met de naam **Windows\\CurrentVersion\\run** te onderscheiden van de subsleutel die zich in dat pad bevindt.
 
 ## <a name="renaming-existing-items-rename-item"></a>De naam van bestaande items wijzigen (naam wijzigen-item)
 
@@ -115,7 +115,7 @@ At line:1 char:12
 
 Als u een bestand of map wilt verplaatsen, gebruikt u de cmdlet **Move-item** .
 
-Met de volgende opdracht wordt bijvoorbeeld de nieuwe Directory Directory verplaatst van de map C:\\Temp naar de hoofdmap van station C:. Als u wilt controleren of het item is verplaatst, neemt u de para meter **PassThru** van de cmdlet **Move-item** op. Zonder **PassThru**worden met de cmdlet **Move-item** geen resultaten weer gegeven.
+Met de volgende opdracht wordt bijvoorbeeld de nieuwe Directory Directory verplaatst van de map C:\\Temp naar de hoofdmap van station c:. Als u wilt controleren of het item is verplaatst, neemt u de para meter **PassThru** van de cmdlet **Move-item** op. Zonder **PassThru**worden met de cmdlet **Move-item** geen resultaten weer gegeven.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -131,13 +131,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 
 Als u bekend bent met de Kopieer bewerkingen in andere shells, kunt u het gedrag van de cmdlet **copy-item** in Windows Power shell ongebruikelijk vinden. Wanneer u een item van de ene locatie naar een andere kopieert, wordt de inhoud niet standaard gekopieerd.
 
-Als u bijvoorbeeld de map **New. Directory** van station c: kopieert naar de map c:\\Temp, is de opdracht geslaagd, maar de bestanden in de nieuwe directory-map worden niet gekopieerd.
+Als u bijvoorbeeld de map **New. Directory** van station c: naar de map c:\\Temp kopieert, is de opdracht geslaagd, maar de bestanden in de nieuwe Directory-Directory worden niet gekopieerd.
 
 ```powershell
 Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Als u de inhoud van **C:\\temp\\New. Directory**weergeeft, ziet u dat deze geen bestanden bevat:
+Als u de inhoud van **C:\\Temp\\New. Directory**weergeeft, ziet u dat deze geen bestanden bevat:
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
@@ -197,7 +197,7 @@ Stel bijvoorbeeld dat u de volgende opdracht uitvoert:
 Invoke-Item C:\WINDOWS
 ```
 
-Een Verkenner-venster dat zich bevindt in C:\\Windows wordt weer gegeven, net zoals als u op de map C:\\Windows hebt gedubbelklikt.
+Een Verkenner-venster dat zich bevindt\\in C: Windows wordt weer gegeven, net zoals als u op de\\map C: Windows hebt gedubbelklikt.
 
 Als u het bestand **boot. ini** aanroept op een systeem vóór Windows Vista:
 

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
 ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500747"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publiceren naar een pull-server met behulp van configuratie-Id's (v4/V5)
@@ -20,7 +20,7 @@ Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configurati
 
 ## <a name="compile-configurations"></a>Configuraties compileren
 
-De eerste stap voor het opslaan van [configuraties](../configurations/configurations.md) op een pull-server is het compileren van deze in `.mof`-bestanden. Als u een algemene configuratie wilt maken en van toepassing is op meer clients, gebruikt u `localhost` in uw knooppunt blok. In het onderstaande voor beeld ziet u een configuratie shell die gebruikmaakt van `localhost` in plaats van een specifieke client naam.
+De eerste stap voor het opslaan van [configuraties](../configurations/configurations.md) op een pull-server is het compileren van deze in `.mof` bestanden. Als u een algemeen configuratie wilt maken en van toepassing is op meer `localhost` clients, gebruikt u in uw knooppunt blok. In het onderstaande voor beeld ziet u een configuratie `localhost` shell die wordt gebruikt in plaats van een specifieke client naam.
 
 ```powershell
 Configuration GenericConfig
@@ -33,15 +33,15 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Wanneer u de algemene configuratie hebt gecompileerd, hebt u een `localhost.mof`-bestand nodig.
+Wanneer u de algemene configuratie hebt gecompileerd, hebt u een `localhost.mof` bestand nodig.
 
 ## <a name="renaming-the-mof-file"></a>De naam van het MOF-bestand wijzigen
 
-U kunt configuratie-`.mof` bestanden opslaan op een pull-server via **configuratiepad** of **ConfigurationID**. Afhankelijk van hoe u uw pull-clients wilt instellen, kunt u een van de onderstaande secties kiezen om de naam van uw gecompileerde `.mof`-bestanden goed te wijzigen.
+U kunt configuratie `.mof` bestanden opslaan op een pull-server via **configuratiepad** of **ConfigurationID**. Afhankelijk van hoe u uw pull-clients wilt instellen, kunt u een van de onderstaande secties kiezen om de naam van uw `.mof` gecompileerde bestanden goed te wijzigen.
 
 ### <a name="configuration-ids-guid"></a>Configuratie-Id's (GUID)
 
-U moet de naam van uw `localhost.mof` bestand wijzigen in `<GUID>.mof` bestand. U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
+U moet de naam van het `localhost.mof` bestand wijzigen `<GUID>.mof` in bestand. U kunt een wille keurige **GUID** maken met behulp van het voor beeld hieronder of met de cmdlet [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) .
 
 ```powershell
 [System.Guid]::NewGuid()
@@ -55,7 +55,7 @@ Guid
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
+U kunt de naam van `.mof` uw bestand vervolgens wijzigen met behulp van een aanvaard bare methode. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
@@ -65,7 +65,7 @@ Zie voor meer informatie over het gebruik van **guid's** in uw omgeving [plan fo
 
 ### <a name="configuration-names"></a>Configuratie namen
 
-U moet de naam van uw `localhost.mof` bestand wijzigen in `<Configuration Name>.mof` bestand. In het volgende voor beeld wordt de naam van de configuratie uit de vorige sectie gebruikt. U kunt de naam van uw `.mof`-bestand vervolgens met behulp van een aanvaard bare methode wijzigen. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
+U moet de naam van het `localhost.mof` bestand wijzigen `<Configuration Name>.mof` in bestand. In het volgende voor beeld wordt de naam van de configuratie uit de vorige sectie gebruikt. U kunt de naam van `.mof` uw bestand vervolgens wijzigen met behulp van een aanvaard bare methode. In het onderstaande voor beeld wordt de cmdlet [Rename-item](/powershell/module/microsoft.powershell.management/rename-item) gebruikt.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
@@ -73,11 +73,11 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 
 ## <a name="create-the-checksum"></a>De controlesom maken
 
-Elk `.mof`-bestand dat is opgeslagen op een pull-server of de SMB-share moet een gekoppeld `.checksum` bestand hebben.
-Met dit bestand kunnen clients weten wanneer het bijbehorende `.mof`-bestand is gewijzigd en het opnieuw moet worden gedownload.
+Elk `.mof` bestand dat is opgeslagen op een pull-server of de SMB-share moet `.checksum` een bijbehorend bestand hebben.
+Met dit bestand kunnen clients weten wanneer het `.mof` bijbehorende bestand is gewijzigd en het opnieuw moet worden gedownload.
 
-U kunt een **controlesom** maken met de cmdlet [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) . U kunt `New-DSCCheckSum` ook uitvoeren op een map met bestanden met behulp van de para meter `-Path`.
-Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met de para meter `-Force`. In het volgende voor beeld is een map opgegeven met het `.mof`-bestand uit de vorige sectie en wordt de `-Force`-para meter gebruikt.
+U kunt een **controlesom** maken met de cmdlet [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) . U kunt ook uitvoeren `New-DSCCheckSum` op een map met bestanden met behulp van de `-Path` para meter.
+Als er al een controlesom bestaat, kunt u afdwingen dat deze opnieuw wordt gemaakt met `-Force` de para meter. In het volgende voor beeld is een map `.mof` opgegeven met het bestand uit de vorige sectie en `-Force` wordt de para meter gebruikt.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
@@ -89,7 +89,7 @@ Er wordt geen uitvoer weer gegeven, maar u ziet nu een `<GUID or Configuration N
 
 ### <a name="on-a-dsc-http-pull-server"></a>Op een DSC HTTP-pull-server
 
-Wanneer u de HTTP-pull-server instelt, zoals wordt uitgelegd in [een DSC HTTP-pull-server instellen](pullServer.md), geeft u directory's op voor de sleutels **para modulepath in** en **ConfigurationPath** . De **para modulepath in** -sleutel geeft aan waar de verpakte bestanden van een module `.zip` moeten worden opgeslagen. De **ConfigurationPath** geeft aan waar elke `.mof` bestanden en `.checksum` bestanden moeten worden opgeslagen.
+Wanneer u de HTTP-pull-server instelt, zoals wordt uitgelegd in [een DSC HTTP-pull-server instellen](pullServer.md), geeft u directory's op voor de sleutels **para modulepath in** en **ConfigurationPath** . De **para modulepath in** -sleutel geeft aan waar de verpakte `.zip` bestanden van een module moeten worden opgeslagen. De **ConfigurationPath** geeft aan waar `.mof` bestanden en `.checksum` bestanden moeten worden opgeslagen.
 
 ```powershell
     xDscWebService PSDSCPullServer

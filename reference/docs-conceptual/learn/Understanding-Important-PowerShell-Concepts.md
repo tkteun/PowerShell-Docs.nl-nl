@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: Power shell, cmdlet
 title: Informatie over belangrijke PowerShell-concepten
 ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030980"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Informatie over belangrijke PowerShell-concepten
@@ -30,13 +30,13 @@ De systeem eigen opdrachten in Power shell worden ' *cmdlets* ' (uitgesp roken o
 
 Wanneer u een opdracht typt, verwerkt Power shell de invoer van de opdracht regel altijd rechtstreeks. Power shell formatteert ook de uitvoer die op het scherm wordt weer gegeven. Dit verschil is aanzienlijk omdat het de vereiste werk van elke cmdlet vermindert. Zo zorgt u ervoor dat u altijd op dezelfde manier kunt werken met elke cmdlet. Cmdlet-ontwikkel aars hoeven geen code te schrijven voor het parseren van de opdracht regel argumenten of het format teren van de uitvoer.
 
-Traditionele opdracht regel Programma's hebben hun eigen schema's voor het aanvragen en weer geven van Help. Sommige opdracht regel Programma's gebruiken **/?** de Help-weer gave activeren; andere gebruiken **-?** , **/h**of zelfs **//** . De Help wordt in een GUI-venster weer gegeven, in plaats van in de-console weer te geven. Als u de verkeerde para meter gebruikt, kan het hulp programma mogelijk negeren wat u hebt getypt en de uitvoering van een taak automatisch starten.
+Traditionele opdracht regel Programma's hebben hun eigen schema's voor het aanvragen en weer geven van Help. Sommige opdracht regel Programma's gebruiken **/?** de Help-weer gave activeren; andere gebruiken **-?**, **/h**of zelfs **//**. De Help wordt in een GUI-venster weer gegeven, in plaats van in de-console weer te geven. Als u de verkeerde para meter gebruikt, kan het hulp programma mogelijk negeren wat u hebt getypt en de uitvoering van een taak automatisch starten.
 Omdat Power shell de opdracht regel automatisch parseert en verwerkt, wordt de **-?** de para meter betekent altijd Help voor deze opdracht weer geven.
 
 > [!NOTE]
 > Als u een grafische toepassing uitvoert in Power shell, wordt het venster voor de toepassing geopend.
 > Power shell is alleen van toepassing op het verwerken van de opdracht regel invoer die u opgeeft of de toepassings uitvoer die wordt geretourneerd naar het console venster. Dit heeft geen invloed op de manier waarop de toepassing intern werkt.
 
-## <a name="powershell-uses-some-c-syntax"></a>Power shell gebruikt C# een van de volgende syntaxis
+## <a name="powershell-uses-some-c-syntax"></a>Power shell gebruikt een van de C#-syntaxis
 
-Power shell is gebaseerd op de .NET Framework. Het deelt een aantal syntaxis functies en tref woorden C# met de programmeer taal. Met Power shell leren is het veel eenvoudiger om C#u te leren. Als u al bekend bent met C#, kunt u met deze overeenkomsten eenvoudiger kennis maken met Power shell.
+Power shell is gebaseerd op de .NET Framework. Er worden enkele syntaxis functies en tref woorden gedeeld met de programmeer taal C#. Met Power shell leren is het veel eenvoudiger om C# te leren. Als u al bekend bent met C#, kunnen deze overeenkomsten eenvoudiger worden gemaakt met Power shell.

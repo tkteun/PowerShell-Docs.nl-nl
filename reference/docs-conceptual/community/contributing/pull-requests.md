@@ -4,21 +4,21 @@ description: In dit artikel wordt uitgelegd hoe u pull-aanvragen verzendt naar d
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79078505"
 ---
 # <a name="how-to-submit-pull-requests"></a>Pull-aanvragen verzenden
 
 Als u inhoud wilt wijzigen, moet u een pull-aanvraag (PR) bij uw Fork indienen. Een pull-aanvraag moet worden gecontroleerd voordat deze kan worden samengevoegd. Voor de beste resultaten raadpleegt u de [controle lijst voor redactionele](editorial-checklist.md) voordat u uw pull-aanvraag indient.
 
-## <a name="target-the-correct-branch"></a>Doel van de juiste vertakking
+## <a name="target-the-correct-branch"></a>De juiste vertakking kiezen
 
-Alle pull-aanvragen moeten gericht zijn op de `staging` vertakking. Wijzigingen mogen nooit worden verzonden naar de `live` vertakking. Wijzigingen die zijn aangebracht in de `staging` vertakking, worden samengevoegd in `live`, waarbij wijzigingen in `live`worden overschreven.
+Alle pull-aanvragen moeten gericht `staging` zijn op de vertakking. Wijzigingen mogen nooit naar de `live` vertakking worden verzonden. Wijzigingen die in de `staging` vertakking zijn aangebracht, `live`worden samengevoegd in, waarbij wijzigingen in `live`worden overschreven.
 
-Als u een wijziging indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u op een release vertakking voor die versie. Uw PR moet zijn gericht op de release vertakking. Release vertakkingen hebben het volgende naam patroon: `release-<version>`.
+Als u een wijziging indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u op een release vertakking voor die versie. Uw PR moet zijn gericht op de release vertakking. Releasevertakkingen hebben het volgende naamgevingspatroon: `release-<version>`.
 
 ## <a name="make-the-pull-request-process-work-better-for-everyone"></a>Het proces voor pull-aanvragen voor iedereen beter laten werken
 
@@ -26,21 +26,21 @@ Het eenvoudiger en gerichter u kunt uw PR maken, des te sneller kan deze worden 
 
 ### <a name="avoid-branches-that-update-large-numbers-of-files-or-contain-unrelated-changes"></a>Vermijd vertakkingen die een groot aantal bestanden bijwerken of niet-gerelateerde wijzigingen bevatten
 
-Vermijd het maken van pull die niet-gerelateerde wijzigingen bevatten. Afzonderlijke kleine updates van bestaande artikelen van nieuwe artikelen of grote herschrijf bewerkingen. Werk aan deze wijzigingen in afzonderlijke werk takken.
+Vermijd het maken van pull die niet-gerelateerde wijzigingen bevatten. Scheid kleine updates aan bestaande artikelen van nieuwe artikelen of artikelen die grotendeels zijn herschreven. Behandel deze wijzigingen in aparte werkstromen.
 
-Bulk wijzigingen maken pull met een groot aantal gewijzigde bestanden. Beperk uw pull tot Maxi maal 50 gewijzigde bestanden. Grote pull zijn moeilijk te controleren en zijn gevoelig voor fouten.
+Bulk wijzigingen maken pull met een groot aantal gewijzigde bestanden. Beperk uw pull-aanvragen tot maximaal 50 gewijzigde bestanden. Grote pull-aanvragen zijn moeilijk te controleren en gevoeliger voor fouten.
 
 ### <a name="renaming-or-deleting-files"></a>Bestanden een andere naam geven of verwijderen
 
 Als u een nieuwe naam wilt geven of bestanden wilt verwijderen, moet er een probleem zijn dat is gekoppeld aan de PR. Dit probleem moet betrekking hebben op de nood zaak om de bestanden een andere naam te geven of te verwijderen.
 
-Vermijd het combi neren van inhouds toevoegingen of wijziging van het wijzigen van de naam en het verwijderen van bestanden. Elk bestand waarvan de naam wordt gewijzigd of verwijderd, moet worden toegevoegd aan het Master-omleidings bestand. Indien mogelijk moet u ook alle bestanden bijwerken die zijn gekoppeld aan de hernoemde of verwijderde inhoud. Dit omvat alle inhoudsopgave bestanden.
+Vermijd het combi neren van inhouds toevoegingen of wijziging van het wijzigen van de naam en het verwijderen van bestanden. Elk bestand waarvan de naam wordt gewijzigd of verwijderd, moet worden toegevoegd aan het Master-omleidings bestand. Indien mogelijk moet u ook alle bestanden bijwerken die zijn gekoppeld aan de hernoemde of verwijderde inhoud. Dit omvat ook alle inhoudsopgavebestanden.
 
-## <a name="docs-pr-validation-service"></a>Docs PR-validatie service
+## <a name="docs-pr-validation-service"></a>Docs PR-validatieservice
 
-De docs PR-validatie service is een GitHub-app waarmee validatie regels worden uitgevoerd voor de bestanden in een PR. U moet eventuele fouten of waarschuwingen oplossen (Zie uitzonde ringen) die door de validatie service zijn gerapporteerd.
+De Docs PR-validatieservice is een GitHub-app die validatieregels uitvoert op de bestanden in een PR. U moet eventuele fouten of waarschuwingen oplossen (Zie uitzonde ringen) die door de validatie service zijn gerapporteerd.
 
-De volgende waarschuwingen kunnen worden genegeerd:
+De volgende waarschuwingen kunnen niet worden genegeerd:
 
 ```
 Can't find service name for `<version>/<modulepath>/About/About.md`
@@ -55,18 +55,18 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 
 U ziet het volgende gedrag:
 
-1. U verzendt een PR.
-1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status van ' controles ' die zijn ingeschakeld op de opslag plaats. In dit voor beeld zijn er twee controles ingeschakeld: ' door voeren van validatie ' en ' openpublicerend. build '.
+1. U dient een PR in.
+1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status van controles die zijn ingeschakeld voor de opslagplaats. In dit voorbeeld zijn er twee controles ingeschakeld, namelijk "Commit Validation" en "OpenPublishing.Build":
 
-   ![Sommige controles zijn mislukt](media/pull-requests/validation-failed.png)
+   ![sommige controles zijn mislukt](media/pull-requests/validation-failed.png)
 
    De build kan worden door gegeven, zelfs als de commit-validatie is mislukt.
 
 1. Klik op **Details** voor meer informatie.
-1. Op de pagina Details ziet u alle validatie controles die zijn mislukt, met informatie over het oplossen van de problemen.
-1. Wanneer de validatie is gelukt, wordt de volgende opmerking toegevoegd aan de PR:
+1. Op de pagina Details ziet u alle validatiecontroles die zijn mislukt, met informatie over wat u moet doen om de problemen op te lossen.
+1. Als de validatie slaagt, wordt de volgende opmerking toegevoegd aan de pull-aanvraag:
 
-   ![validatie opbouwen](media/pull-requests/build-validation.png)
+   ![build-validatie](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > Als u een externe mede werker (niet een micro soft-mede werker) bent, hebt u geen toegang tot de gedetailleerde rapporten van de build of de preview-koppelingen.
@@ -75,8 +75,8 @@ Wanneer de PR wordt gecontroleerd door een lid van het Power shell-docs-team, wo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Power shell-stijl gids voor docs](powershell-style-guide.md)
+[Stijlgids voor PowerShell-documentatie](powershell-style-guide.md)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
-[Hoe wij pull-aanvragen beheren](managing-pull-requests.md)
+[De manier waarop we pull-aanvragen beheren](managing-pull-requests.md)

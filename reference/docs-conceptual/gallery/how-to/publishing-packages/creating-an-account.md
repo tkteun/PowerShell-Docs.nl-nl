@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Een PowerShell Gallery-account maken
 ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278774"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>Een PowerShell Gallery-account maken
@@ -15,7 +15,7 @@ ms.locfileid: "78278774"
 U moet een PowerShell Gallery account maken voordat u iets publiceert naar de PowerShell Gallery.
 PowerShell Gallery accounts moeten worden gekoppeld aan een aanmeldings account waarvoor een e-mail is ingeschakeld. Dit account kan een Azure Active Directory account of een micro soft-ID zijn, zoals een e-mail account van outlook.com of hotmail.com.
 
-Als u een PowerShell Gallery account wilt maken, gaat u naar [https://PowerShellGallery.com](https://PowerShellGallery.com) en klikt u op **Aanmelden** , zoals wordt weer gegeven in de volgende afbeelding.
+Als u een PowerShell Gallery account wilt maken, [https://PowerShellGallery.com](https://PowerShellGallery.com) gaat u naar en klikt u op **Aanmelden** , zoals wordt weer gegeven in de volgende afbeelding.
 
 ![Nieuw account registreren](media/creating-an-account/CreateAccount-Register.png)
 

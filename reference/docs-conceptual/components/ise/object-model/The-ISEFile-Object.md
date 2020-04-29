@@ -3,25 +3,25 @@ ms.date: 12/31/2019
 keywords: Power shell, cmdlet
 title: Het ISEFile-object
 ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736995"
 ---
 # <a name="the-isefile-object"></a>Het ISEFile-object
 
-Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` en de bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
+Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Methoden
 
-### <a name="save-saveencoding-"></a>\( \[saveEncoding\] opslaan \)
+### <a name="save-saveencoding-"></a>SaveEncoding\( \[opslaan\]\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Hiermee slaat u het bestand op schijf.
 
-**\[saveEncoding\]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
+saveEncoding-optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. **\] \[** De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
@@ -39,7 +39,7 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>SaveAs\(filename, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>\(Bestands naam: opslaan \[als, saveEncoding\]\)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -47,7 +47,7 @@ Hiermee slaat u het bestand op met de opgegeven bestands naam en-code ring.
 
 **Bestands naam** : de naam van de teken reeks die moet worden gebruikt om het bestand op te slaan.
 
-**\[saveEncoding\]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
+saveEncoding-optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. **\] \[** De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen Booleaanse eigenschap die `$true` retourneert als het bestand is opgeslagen nadat het voor het laatst is gewijzigd.
+De alleen-lezen Booleaanse eigenschap die retourneert `$true` als het bestand is opgeslagen nadat het voor het laatst is gewijzigd.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap die `$true` retourneert als er nooit een titel is opgegeven voor het bestand.
+De alleen-lezen eigenschap die retourneert `$true` als er nooit een titel is opgegeven voor het bestand.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -137,5 +137,5 @@ $psISE.CurrentFile.IsUntitled
 ## <a name="see-also"></a>Zie ook
 
 - [De ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Doel van het Windows PowerShell ISE scripting object model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [De objectmodelhiërarchie van ISE](The-ISE-Object-Model-Hierarchy.md)
+- [Doel van het scriptobjectmodel van Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [De ISE-object model hiërarchie](The-ISE-Object-Model-Hierarchy.md)

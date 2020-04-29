@@ -4,10 +4,10 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakketten met compatibele Power shell-edities of besturings systeem
 ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278351"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakketten met compatibele Power shell-edities of-besturings systemen
@@ -17,8 +17,8 @@ Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin vers
 ## <a name="searching-by-powershell-edition"></a>Zoeken op Power shell-editie
 
 De twee versies van Power shell zijn:
-- **Desktop Edition:** Gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een volledige footprint, zoals Server Core en Windows Desktop.
-- **Core-editie:** Gebaseerd op .NET core en biedt compatibiliteit met scripts en modules die zijn gericht op versies van Power shell die worden uitgevoerd op edities van Windows met een verminderde footprint, zoals nano server en Windows IoT.
+- **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
+- **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
 ### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Met PowerShell Gallery kunt u pakketten filteren die compatibel zijn voor specifieke Power shell-edities
 
@@ -41,7 +41,7 @@ Tags: "PSEdition_Desktop" en Tags: "PSEdition_Core" gebruiken om de pakketten op
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Pakketten zoeken om compatibele versies te vinden met behulp van Power shell
 U kunt labels opgeven voor het filteren van de Power shell-editie en het besturings systeem.
-U gebruikt de cmdlet `Find-Package` om de `-Tag`-para meter op te geven voor de editie (en het besturings systeem) waarop u zich wilt richten.
+U gebruikt de `Find-Package` cmdlet waarmee de `-Tag` para meter wordt opgegeven voor de editie (en het besturings systeem) waarop u zich wilt richten.
 Zo:
 
 ```powershell
@@ -60,7 +60,7 @@ Omdat Power shell core beschikbaar is voor Windows, Linux en MacOS, kunnen pakke
 - Tags: Linux
 - Tags: "MacOS"
 
-U kunt deze Tags opgeven op `Find-Module` (en andere cmdlets in de module PowerShellGet), bijvoorbeeld:
+U kunt deze tags op `Find-Module` (en andere cmdlets in de PowerShellGet-module) als volgt opgeven:
 
 ```powershell
 # Find Modules compatible with Windows
@@ -77,7 +77,7 @@ Als u bijvoorbeeld zoekt naar een pakket met Power shell core-compatibiliteit da
 
 Tags: "PSEdition_Core" "Windows" "Linux"
 
-Als u wilt zoeken met behulp van Power shell, kunt u de `Find-Module` (en de andere cmdlets in de module PowerShellGet) gebruiken, zoals:
+Als u wilt zoeken met behulp van Power `Find-Module` shell, kunt u de (en de andere cmdlets in de PowerShellGet-module) gebruiken, bijvoorbeeld:
 
 ```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: SendMetaConfigurationApply-methode
 ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71942592"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply-methode
@@ -26,7 +26,7 @@ uint32 SendMetaConfigurationApply(
 
 *ConfigurationData* \[in\] de omgevings gegevens voor de configuratie.
 
-*dwing* \[in\] **waar** om te voor komen dat de configuratie wordt gestopt.
+*geforceerd* \[in\] op **waar** om te zorgen dat de configuratie wordt gestopt.
 
 ## <a name="return-value"></a>Retourwaarde
 

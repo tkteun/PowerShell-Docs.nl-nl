@@ -4,10 +4,10 @@ contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Modules met compatibele Power shell-edities
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71329188"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibele Power shell-edities
@@ -162,7 +162,7 @@ $PSModule.OnRemove = {
 In PS 5,1 of hoger is $PSEdition globale variabele toegestaan in het manifest bestand van de module. Met deze variabele kan module Author de voorwaardelijke waarden opgeven in het manifest bestand van de module. Naar $PSEdition-variabele kan worden verwezen in de modus voor beperkte talen of in een gegevens gedeelte.
 
 > [!NOTE]
-> Zodra een module manifest is opgegeven met de CompatiblePSEditions-sleutel of `$PSEdition` variabele gebruikt, kan het niet worden geïmporteerd in lagere versies van Power shell.
+> Zodra een module manifest is opgegeven met de sleutel CompatiblePSEditions of de `$PSEdition` variabele gebruikt, kan het niet worden geïmporteerd in lagere versies van Power shell.
 
 Voor beeld van module manifest bestand met CompatiblePSEditions-sleutel
 
@@ -239,7 +239,7 @@ Find-Module -Tag PSEdition_Desktop
 Find-Module -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a>Meer details
+## <a name="more-details"></a>Meer informatie
 
 [Scripts met PSEditions](script-psedition-support.md)
 

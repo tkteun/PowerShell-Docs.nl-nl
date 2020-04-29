@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: Galerie, Power shell, psgallery, AVG
 title: AVG-naleving van PowerShell Gallery
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71329062"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>AVG-naleving van PowerShell Gallery
@@ -19,7 +19,7 @@ De AVG legt nieuwe regels aan voor bedrijven, overheids instanties, non-profit o
 De AVG is van toepassing, ongeacht waar u zich bevindt.
 
 > [!NOTE]
-> Dit artikel bevat stappen voor het verwijderen van persoonlijke gegevens uit de PowerShell Gallery en kan worden gebruikt ter ondersteuning van uw verplichtingen onder het AVG. Zie de [AVG-sectie van Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) voor algemene informatie over de AVG.
+> Dit artikel bevat stappen voor het verwijderen van persoonlijke gegevens uit de PowerShell Gallery en kan worden gebruikt ter ondersteuning van uw verplichtingen onder het AVG. Zie het [gedeelte AVG van de Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted) als u op zoek bent naar algemene informatie over de AVG.
 
 ## <a name="personally-identifiable-data"></a>Persoons gegevens
 
@@ -46,14 +46,14 @@ In de volgende secties wordt beschreven hoe de PowerShell Gallery gegevens subje
 E-mail correspondentie kan bestaan uit een van de volgende:
 
 - E-mail bericht verzonden naar de eigen aren van PowerShell Gallery-pakketten als tijdens het scannen van de code analyse is vastgesteld dat er een probleem is met een pakket dat ze naar de PowerShell Gallery hebben gepubliceerd
-- E-mail berichten die door iedereen naar het PowerShell Gallery-team worden verzonden met behulp van het e-mail adres op de pagina contact opnemen [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- E-mail die door iemand naar het PowerShell Gallery-team is verzonden met behulp van het e-mail adres op de pagina contact opnemen[cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
 - Geregistreerde gebruikers die gebruikmaken van de functie contact opnemen met de eigenaar van de PowerShell Gallery om e-mail te verzenden naar de eigenaar van een pakket in de PowerShell Gallery
 
 E-mail berichten die worden verzonden door of naar het PowerShell Gallery een Bewaar beleid van 90 dagen hebben om mogelijke beveiligings onderzoeken te ondersteunen, moeten schadelijke code worden gedetecteerd op de PowerShell Gallery.
 E-mail berichten worden na 90 dagen verwijderd door beleid.
 
 U kunt een kopie aanvragen van alle e-mails die zijn verzonden naar of van uw e-mail adres en de PowerShell Gallery in de afgelopen 90 dagen.
-Als u deze correspondentie wilt aanvragen, stuurt u een e-mail bericht naar [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)met de titel: ' DSR-aanvraag voor e-mail berichten met betrekking tot dit account '.
+Als u deze correspondentie wilt aanvragen, stuurt u [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)een e-mail bericht naar met de titel: ' DSR-aanvraag voor e-mail berichten met betrekking tot dit account '.
 Geef in de hoofd tekst van het bericht aan welke gegevens u aanvraagt (bijvoorbeeld: verzend alle e-mails die zijn verzonden naar of ontvangen van dit e-mail adres.) Alle e-mail berichten met uw e-mail adres binnen 90 dagen na de aanvraag worden binnen 7 werk dagen verzonden.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell Gallery-account gegevens
@@ -92,7 +92,7 @@ U wordt gevraagd om de auteur en een map op het systeem op te geven waar u de pa
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Persoonlijke gegevens verwijderen uit de PowerShell Gallery
 
-Als u uw PowerShell Gallery account of een pakket dat u in de PowerShell Gallery bezit wilt verwijderen, stuurt u een e-mail bericht naar cgadmin@microsoft.com met de titel: ' AVG-aanvraag voor items met betrekking tot dit account '.
+Als u uw PowerShell Gallery account of een pakket dat u in de PowerShell Gallery bezit wilt verwijderen, cgadmin@microsoft.com stuurt u een e-mail naar met de titel: ' AVG-aanvraag voor items met betrekking tot dit account '.
 In de hoofd tekst van de bericht status welke informatie u wilt verwijderen. Bijvoorbeeld:
 
 - Verwijder versie x. y. z van mijn pakket "pakket naam"

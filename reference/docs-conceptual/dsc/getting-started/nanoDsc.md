@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC gebruiken op Nano Server
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941878"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC gebruiken op Nano Server
 
 > Van toepassing op: Windows Power shell 5,0
 
-**DSC op nano server** is een optioneel pakket in de map `NanoServer\Packages` van de Windows Server 2016-media. Het pakket kan worden geïnstalleerd wanneer u een VHD maakt voor een nano server door het opgeven van **micro soft-nano server-DSC-package** als de waarde van de para meter **packages** van de functie **New-nano Server image** . Als u bijvoorbeeld een VHD voor een virtuele machine maakt, ziet de opdracht er als volgt uit:
+**DSC op nano server** is een optioneel pakket in de `NanoServer\Packages` map van de Windows Server 2016-media. Het pakket kan worden geïnstalleerd wanneer u een VHD maakt voor een nano server door het opgeven van **micro soft-nano server-DSC-package** als de waarde van de para meter **packages** van de functie **New-nano Server image** . Als u bijvoorbeeld een VHD voor een virtuele machine maakt, ziet de opdracht er als volgt uit:
 
 ```powershell
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
@@ -80,13 +80,13 @@ Zowel push-als pull-modi
 
 - Volledig functionele bronnen
 
-- **Archief**
+- **Archiveren**
 - **Omgeving**
-- **File**
-- **Log**
+- **Bestand**
+- **Logbestand**
 - **ProcessSet**
 - **Registersubsleutel**
-- **Script**
+- **Schriften**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
@@ -124,4 +124,4 @@ Voltooi end-to-end tests voordat u eventuele DSC-aangepaste resources implemente
 
 ## <a name="see-also"></a>Zie ook
 
-- [Aan de slag met nano server](/windows-server/get-started/getting-started-with-nano-server)
+- [Aan de slag met Nano Server](/windows-server/get-started/getting-started-with-nano-server)

@@ -3,10 +3,10 @@ ms.date: 12/19/2019
 keywords: Power shell, cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
 ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500951"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
@@ -22,7 +22,7 @@ Dit onderwerp bevat een beschrijving van de toegankelijkheids functies van Windo
 - [Sneltoetsen voor het starten en afsluiten](#keyboard-shortcuts-for-starting-and-exiting)
 - [Onderbrekings beheer met cmdlets](#breakpoint-management)
 
-Microsoft stelt alles in het werk om Microsoft-producten en -services voor iedereen gebruikersvriendelijker te maken. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE toegankelijker maken voor mensen met een handicap.
+Microsoft streeft ernaar om zijn producten en diensten gebruiksvriendelijker te maken voor iedereen. De volgende onderwerpen bevatten informatie over de functies, producten en services die Windows PowerShell ISE toegankelijker maken voor mensen met een handicap.
 
 Naast de toegankelijkheids functies en-hulpprogram ma's in micro soft Windows maken de volgende functies Windows PowerShell ISE meer toegankelijk voor mensen met een handicap:
 
@@ -48,7 +48,7 @@ Voer een van de volgende handelingen uit:
 
 - Als u het Script venster boven het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd>+<kbd>1</kbd> of klikt u op de werk balk op het bovenste pictogram van het **Script venster weer geven** of klikt u in het menu **weer gave** op **Script venster bovenaan weer geven**.
 
-- Als u het deel venster script wilt verplaatsen naar de rechter kant van het console venster, drukt u op <kbd>CTRL</kbd>+<kbd>2</kbd> of klikt u op de werk balk op het pictogram **Script venster rechts tonen** of in het menu **weer gave** op **Script venster rechts weer geven**.
+- Als u het Script venster rechts van het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd>+<kbd>2</kbd> of klikt u op de werk balk op het pictogram **Script venster rechts tonen** of klikt u in het menu **weer gave** op **Script venster rechts weer geven**.
 
 - Om het deel venster script te maximaliseren, drukt u op <kbd>CTRL</kbd>+<kbd>3</kbd> of klikt u op de werk balk op het **deel venster script weer geven pictogram gemaximaliseerd** , of klikt u in het menu **weer gave** op **Script venster gemaximaliseerd weer geven**.
 
@@ -63,16 +63,16 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 |           Bewerking            |       Sneltoetsen       |          Gebruiken in           |
 | --------------------------- | ------------------------------ | ------------------------- |
 | **Kopieer**                    | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Script venster, console venster |
-| **Verminderen**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Script venster, console venster |
+| **Knippen**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Script venster, console venster |
 | **Zoeken in script**          | <kbd>CTRL</kbd>+<kbd>F</kbd>   | Script venster               |
-| **Volgende zoeken in script**     | <kbd>Toets</kbd>                  | Script venster               |
-| **Vorige zoeken in script** | <kbd>SHIFT</kbd>+<kbd>F3</kbd> | Script venster               |
+| **Volgende zoeken in script**     | <kbd>F3</kbd>                  | Script venster               |
+| **Vorige zoeken in script** | <kbd>Shift</kbd>+<kbd>F3</kbd> | Script venster               |
 | **Plakken**                   | <kbd>CTRL</kbd>+<kbd>V</kbd>   | Script venster, console venster |
 | **Redo**                    | <kbd>CTRL</kbd>+<kbd>Y</kbd>   | Script venster, console venster |
 | **Vervangen in script**       | <kbd>CTRL</kbd>+<kbd>H</kbd>   | Script venster               |
 | **Opslaan**                    | <kbd>CTRL</kbd>+<kbd>S</kbd>   | Script venster               |
 | **Alles selecteren**              | <kbd>CTRL</kbd>+<kbd>A</kbd>   | Script venster, console venster |
-| **Opdracht**                    | <kbd>CTRL</kbd>+<kbd>Z</kbd>   | Script venster, console venster |
+| **Ongedaan maken**                    | <kbd>CTRL</kbd>+<kbd>Z</kbd>   | Script venster, console venster |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 
@@ -81,12 +81,12 @@ U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het S
 |            Bewerking            |                                                                                                     Sneltoets                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
-| **Staan**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
-| **Uitvoeringsrun**                      | <kbd>Drukt</kbd>                                                                                                                                                                                                              |
-| **Selectie uitvoeren**            | <kbd>Drukken</kbd>                                                                                                                                                                                                              |
-| **Uitvoering stoppen**           | <kbd>CTRL</kbd>+<kbd>onderbroken</kbd>. <kbd>CTRL</kbd>+<kbd>C</kbd> kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).                                                                               |
-| **Tabblad** (naar volgend script)     | <kbd>CTRL</kbd>+<kbd>Tab</kbd> **Opmerking:** tab naar volgende script werkt alleen wanneer er één Power shell-tabblad is geopend of als u meer dan één Power shell-tabblad hebt geopend, maar de focus is in het Script-venster.                |
-| **Tab** (naar het vorige script) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>Tab</kbd> **Opmerking:** tab naar vorig script werkt wanneer er slechts één Power shell-tabblad is geopend, of als u meer dan één Power shell-tabblad hebt geopend en de focus in het Script-venster wordt weer geven. |
+| **Openen**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
+| **Uitvoeringsrun**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
+| **Selectie uitvoeren**            | <kbd>F8</kbd>                                                                                                                                                                                                              |
+| **Uitvoering stoppen**           | <kbd>CTRL-toets</kbd>+<kbd>.</kbd> <kbd>CTRL</kbd>+<kbd>C</kbd> kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).                                                                               |
+| **Tabblad** (naar volgend script)     | <kbd>CTRL</kbd>+-<kbd>tabblad</kbd> **Opmerking:** tab naar volgende script werkt alleen wanneer er één Power shell-tabblad is geopend of als u meer dan één Power shell-tabblad hebt geopend, maar de focus in het Script-venster is.                |
+| **Tab** (naar het vorige script) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>SHIFT+<kbd>Tab</kbd> **Opmerking:** tab naar vorig script werkt wanneer er slechts één Power shell-tabblad is geopend, of als u meer dan één Power shell-tabblad hebt geopend en de focus in het Script-venster is. |
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Sneltoetsen voor het aanpassen van de weer gave
 
@@ -95,14 +95,14 @@ U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell I
 |           Bewerking           |         Sneltoets        |
 | -------------------------- | -------------------------------- |
 | **Naar het console venster gaan**     | <kbd>CTRL</kbd>+<kbd>D</kbd>     |
-| **Naar het Script venster gaan**      | <kbd>CTRL</kbd>+<kbd>Ik</kbd>     |
+| **Naar het Script venster gaan**      | <kbd>CTRL</kbd>+<kbd>I</kbd>     |
 | **Script venster weer geven**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
 | **Script venster verbergen**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
 | **Script paneel omhoog verplaatsen**    | <kbd>CTRL</kbd>+<kbd>1</kbd>     |
 | **Script venster naar rechts verplaatsen** | <kbd>CTRL</kbd>+<kbd>2</kbd>     |
 | **Script venster maximaliseren**   | <kbd>CTRL</kbd>+<kbd>3</kbd>     |
 | **Inzoomen**                | <kbd>CTRL</kbd>+<kbd>plus</kbd>  |
-| **Uitzoomen**               | <kbd>CTRL</kbd>+<kbd>minteken</kbd> |
+| **Uitzoomen**               | <kbd>CTRL</kbd>+<kbd>min</kbd> |
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Sneltoetsen voor fout opsporing in scripts
 
@@ -110,29 +110,29 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
 |           Bewerking           |               Sneltoets                |                Gebruiken in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
-| **Uitvoeren/door gaan**           | <kbd>Drukt</kbd>                                  | Script-deel venster bij fout opsporing van een script |
-| **Stap in**              | <kbd>Drukken</kbd>                                 | Script-deel venster bij fout opsporing van een script |
+| **Uitvoeren/door gaan**           | <kbd>F5</kbd>                                  | Script-deel venster bij fout opsporing van een script |
+| **Stap in**              | <kbd>F11</kbd>                                 | Script-deel venster bij fout opsporing van een script |
 | **Stap over**              | <kbd>F10</kbd>                                 | Script-deel venster bij fout opsporing van een script |
-| **Stap uit**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | Script-deel venster bij fout opsporing van een script |
-| **Aanroep stack weer geven**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>  | Script-deel venster bij fout opsporing van een script |
-| **Onderbrekings punten weer geven**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>L</kbd>  | Script-deel venster bij fout opsporing van een script |
+| **Stap uit**               | <kbd>Shift</kbd>+<kbd>F11</kbd>                | Script-deel venster bij fout opsporing van een script |
+| **Aanroep stack weer geven**     | <kbd>CTRL</kbd>+<kbd>+ SHIFT</kbd>+<kbd>D</kbd>  | Script-deel venster bij fout opsporing van een script |
+| **Onderbrekings punten weer geven**       | <kbd>CTRL</kbd>+-<kbd>SHIFT</kbd>+<kbd>L</kbd>  | Script-deel venster bij fout opsporing van een script |
 | **Onderbrekings punt in-/uitschakelen**      | <kbd>F9</kbd>                                  | Script-deel venster bij fout opsporing van een script |
-| **Alle onderbrekings punten verwijderen** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>F9</kbd> | Script-deel venster bij fout opsporing van een script |
-| **Fout opsporing stoppen**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                 | Script-deel venster bij fout opsporing van een script |
+| **Alle onderbrekings punten verwijderen** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>SHIFT+<kbd>F9</kbd> | Script-deel venster bij fout opsporing van een script |
+| **Fout opsporing stoppen**          | <kbd>Shift</kbd>+<kbd>F5</kbd>                 | Script-deel venster bij fout opsporing van een script |
 
 > [!NOTE]
 > U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het console venster typen en op <kbd>Enter</kbd>drukken.
 
 |                 Bewerking                  |      Sneltoets       |                Gebruiken in                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
-| **Doen**                            | <kbd>C</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Stap in**                           | <kbd>Z</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Doorgaan**                            | <kbd>G</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Stap in**                           | <kbd>S</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap over**                           | <kbd>Verticale</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap uit**                            | <kbd>O</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Laatste opdracht herhalen**(stap in/over) | <kbd>Voer</kbd>             | Console venster, bij fout opsporing van een script |
 | **Aanroep stack weer geven**                  | <kbd>Middel</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Fout opsporing stoppen**                      | <kbd>Nils</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Het script weer geven**                     | <kbd>Winst</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Het script weer geven**                     | <kbd>L</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Opties voor fout opsporing in console weer geven**  | <kbd>H</kbd> of <kbd>?</kbd> | Console venster, bij fout opsporing van een script |
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Sneltoetsen voor Windows Power shell-tabbladen
@@ -142,9 +142,9 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen
 |             Bewerking              |                                 Sneltoets                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Tabblad Power shell sluiten**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
-| **Nieuw Power shell-tabblad**          | <kbd>CTRL</kbd>+<kbd>t</kbd>                                                       |
-| **Vorig Power shell-tabblad**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>tabblad</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
-| **Volgende Windows Power shell-tabblad** | <kbd>CTRL</kbd>+<kbd>tabblad</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
+| **Nieuw Power shell-tabblad**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
+| **Vorig Power shell-tabblad**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>++<kbd>Tab</kbd> (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
+| **Volgende Windows Power shell-tabblad** | <kbd>CTRL</kbd>+<kbd>Tab</kbd> Ctrl (alleen wanneer er geen bestanden zijn geopend op een Power shell-tabblad) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
 
@@ -153,7 +153,7 @@ U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (**Po
 |                        Bewerking                         |               Sneltoets               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Toepassing**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Power shell. exe starten** (Windows Power shell-console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
+| **Power shell. exe starten** (Windows Power shell-console) | <kbd>CTRL</kbd>+-<kbd>SHIFT</kbd>+<kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Onderbrekings beheer
 

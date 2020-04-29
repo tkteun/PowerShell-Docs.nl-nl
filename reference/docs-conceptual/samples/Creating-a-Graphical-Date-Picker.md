@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Een grafische datumkiezer maken
 ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706122"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Een grafische datumkiezer maken
@@ -80,7 +80,7 @@ In dit voor beeld worden waarden toegewezen aan vier eigenschappen van deze klas
 
 3. **Tekst**: dit wordt de titel van het venster.
 
-4. **Bovenste**: door deze eigenschap in te stellen op `$true`, kunt u het venster dwingen hierop andere open vensters en dialoog vensters te openen.
+4. **Bovenste**: door deze eigenschap in te `$true`stellen op, kunt u ervoor zorgen dat het venster hierop andere open vensters en dialoog vensters opent.
 
 Vervolgens maakt en voegt u vervolgens een besturings element kalender toe aan het formulier.
 In dit voor beeld wordt de huidige dag niet gemarkeerd of omcirkeld.
@@ -127,7 +127,7 @@ Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 $result = $form.ShowDialog()
 ```
 
-Ten slotte geeft de code binnen het `if`-blok aan dat Windows wat er moet gebeuren met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op **Enter** . De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
+Ten slotte krijgt de code in `if` de blok kering van Windows wat te doen met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd. Klik vervolgens op de knop **OK** of druk op **Enter** . De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {

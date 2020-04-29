@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxArchive-resource
 ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941507"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive-resource
@@ -40,12 +40,12 @@ nxArchive <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Als de ID van het resource-configuratie script blok dat u eerst wilt uitvoeren bijvoorbeeld de naam ResourceName is, en het type van de bron resource is, is de syntaxis voor het gebruik van deze eigenschap `DependsOn = "[ResourceType]ResourceName"`. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
 |Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming**. Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u de **nxArchive** -resource kunt gebruiken om ervoor te zorgen dat de inhoud van een archief bestand met de naam `website.tar` bestaan en op een bepaalde bestemming wordt geëxtraheerd.
+In het volgende voor beeld ziet u hoe u de **nxArchive** -resource kunt gebruiken om ervoor te zorgen dat `website.tar` de inhoud van een archief bestand met de naam exists wordt geëxtraheerd op een bepaalde bestemming.
 
 ```powershell
 Import-DSCResource -Module nx

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: Power shell, cmdlet
 title: Huidige locatie beheren
 ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030200"
 ---
 # <a name="managing-current-location"></a>Huidige locatie beheren
@@ -49,9 +49,9 @@ C:\WINDOWS
 
 De para meter **-PassThru** kan worden gebruikt met veel set-opdrachten in Windows Power shell om informatie over het resultaat te retour neren in gevallen waarin er geen standaard uitvoer is.
 
-U kunt paden ten opzichte van uw huidige locatie opgeven op dezelfde manier als in de meeste UNIX-en Windows-opdracht shells. In de standaard notatie voor relatieve paden, een punt ( **.** ) vertegenwoordigt de huidige map en een dubbele punt ( **..** ) vertegenwoordigt de bovenliggende map van uw huidige locatie.
+U kunt paden ten opzichte van uw huidige locatie opgeven op dezelfde manier als in de meeste UNIX-en Windows-opdracht shells. In de standaard notatie voor relatieve paden, een punt (**.**) vertegenwoordigt de huidige map en een dubbele punt (**..**) vertegenwoordigt de bovenliggende map van uw huidige locatie.
 
-Bijvoorbeeld, als u zich in de map **C:\\Windows** bevindt, een punt ( **.** ) vertegenwoordigt **c:\\Windows** en dubbele punten ( **..** ) zijn **c:** . U kunt van uw huidige locatie naar de hoofdmap van station C: overschakelen door het volgende te typen:
+Bijvoorbeeld, als u zich in de map **C:\\Windows** bevindt, een punt (**.**) vertegenwoordigt **c:\\Windows** en dubbele punten (**..**) vertegenwoordigen **c:**. U kunt van uw huidige locatie naar de hoofdmap van station C: overschakelen door het volgende te typen:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -61,7 +61,7 @@ Path
 C:\
 ```
 
-Dezelfde techniek werkt op Windows Power Shell-stations die geen bestandssysteem stations zijn, zoals **HKLM:** . U kunt uw locatie instellen op de sleutel HKLM\\software in het REGI ster door het volgende te typen:
+Dezelfde techniek werkt op Windows Power Shell-stations die geen bestandssysteem stations zijn, zoals **HKLM:**. U kunt uw locatie in het REGI ster\\instellen op de HKLM-Software sleutel door het volgende te typen:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

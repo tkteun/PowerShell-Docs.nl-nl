@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: Power shell, cmdlet
 title: Externe opdrachten uitvoeren
 ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030309"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
@@ -94,7 +94,7 @@ LCID    Name     DisplayName               PSComputerName
 
 ### <a name="run-a-script"></a>Een script uitvoeren
 
-Als u een script wilt uitvoeren op een of meer externe computers, gebruikt u de para meter FilePath van de cmdlet `Invoke-Command`. Het script moet op of toegankelijk zijn voor uw lokale computer. De resultaten worden teruggestuurd naar de lokale computer.
+Als u een script wilt uitvoeren op een of meer externe computers, gebruikt u de para `Invoke-Command` meter filepath van de cmdlet. Het script moet op of toegankelijk zijn voor uw lokale computer. De resultaten worden teruggestuurd naar de lokale computer.
 
 Met de volgende opdracht wordt bijvoorbeeld het script DiskCollect. ps1 uitgevoerd op de externe computers, Server01 en Server02.
 
@@ -104,7 +104,7 @@ Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect
 
 ### <a name="establish-a-persistent-connection"></a>Een permanente verbinding tot stand brengen
 
-Gebruik de cmdlet `New-PSSession` om een permanente sessie te maken op een externe computer. In het volgende voor beeld worden externe sessies gemaakt op Server01 en Server02. De sessie objecten worden opgeslagen in de variabele `$s`.
+Gebruik de `New-PSSession` cmdlet om een permanente sessie te maken op een externe computer. In het volgende voor beeld worden externe sessies gemaakt op Server01 en Server02. De sessie objecten worden opgeslagen in de `$s` variabele.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
@@ -118,7 +118,7 @@ Met de volgende opdracht wordt bijvoorbeeld een Get-HotFix-opdracht uitgevoerd i
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-U kunt nu de gegevens in de variabele `$h` gebruiken met andere opdrachten in dezelfde sessie. De resultaten worden weer gegeven op de lokale computer. Bijvoorbeeld:
+Nu kunt u de gegevens in de `$h` variabele gebruiken met andere opdrachten in dezelfde sessie. De resultaten worden weer gegeven op de lokale computer. Bijvoorbeeld:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -126,13 +126,13 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 
 ### <a name="advanced-remoting"></a>Geavanceerde externe communicatie
 
-Windows Power shell Remote Management begint hier gewoon. Door gebruik te maken van de cmdlets die zijn geïnstalleerd met Windows Power shell, kunt u externe sessies instellen en configureren op basis van de lokale en externe eind punten, aangepaste en beperkte sessies opstellen, gebruikers toestaan opdrachten te importeren uit een externe sessie die daad werkelijk wordt uitgevoerd op de externe sessie kunt u de beveiliging van een externe sessie configureren, en nog veel meer.
+Windows Power shell Remote Management begint hier gewoon. Door gebruik te maken van de cmdlets die zijn geïnstalleerd met Windows Power shell, kunt u externe sessies instellen en configureren op basis van de lokale en externe eind punten, aangepaste en beperkte sessies opstellen, gebruikers opdrachten laten importeren uit een externe sessie die daad werkelijk impliciet is uitgevoerd op de externe sessie, de beveiliging van een externe sessie configureren, en nog veel meer.
 
 Windows Power shell bevat een WSMan-provider. De provider maakt een `WSMAN:` station waarmee u kunt navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
 
 Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ `Get-Help wsman`in de Windows Power shell-console.
 
-Zie voor meer informatie
+Zie voor meer informatie:
 
 - [Over externe Veelgestelde vragen](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

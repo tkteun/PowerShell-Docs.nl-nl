@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Aanvullende DSC-resources installeren
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417792"
 ---
 # <a name="install-additional-dsc-resources"></a>Aanvullende DSC-resources installeren
@@ -18,16 +18,16 @@ Dit is een lijst met de OOB-resources die zijn opgenomen in Power Shell 4,0 en e
 > [!NOTE]
 > Dit is een onvolledige lijst, omdat het aantal OOB-resources is toegenomen met elke versie van Power shell.
 
-|Informatiebron  |Beschrijving  |
+|Resource  |Beschrijving  |
 |---------|---------|
-|**File**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **doel** en werkt deze bij wanneer de **bron** wordt gewijzigd door datums, controle sommen en hashes te vergelijken.|
-|**Archief**|De archieven en een opgegeven locatie worden uitgepakt. Valideert de archieven met een opgegeven **controlesom**.|
+|**Bestand**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **doel** en werkt deze bij wanneer de **bron** wordt gewijzigd door datums, controle sommen en hashes te vergelijken.|
+|**Archiveren**|De archieven en een opgegeven locatie worden uitgepakt. Valideert de archieven met een opgegeven **controlesom**.|
 |**Omgeving**|Hiermee beheert u omgevings variabelen.|
 |**Groep**|Beheert lokale groepen en beheert groepslid maatschap.|
-|**Log**|Hiermee worden berichten naar het `Microsoft-Windows-Desired State Configuration/Analytic`-gebeurtenis logboek geschreven.|
+|**Logbestand**|Hiermee worden berichten naar `Microsoft-Windows-Desired State Configuration/Analytic` het gebeurtenis logboek geschreven.|
 |**Pakket**|Installeert of verwijdert pakketten met behulp van **argumenten**, **logPath**, **return code**en andere instellingen.|
 |**Registersubsleutel**|Beheert register sleutels en-waarden.|
-|**Script**|Met kunt u uw eigen script blokken voor [Get-test-set](../resources/get-test-set.md) ontwerpen.|
+|**Schriften**|Met kunt u uw eigen script blokken voor [Get-test-set](../resources/get-test-set.md) ontwerpen.|
 |**Service**|Hiermee configureert u Windows-Services.|
 |**Gebruiker** |Hiermee beheert u lokale gebruikers en kenmerken.|
 |**WindowsFeature**|Beheert functies en onderdelen.|
@@ -45,7 +45,7 @@ Als u wilt weten of u al **Power shell** Get hebt of als u hulp nodig hebt bij d
 
 Zodra **PowerShellGet** op uw systeem is geïnstalleerd, kunt u DSC-resources zoeken en installeren die worden gehost in de [PowerShell Gallery](https://www.powershellgallery.com/).
 
-Gebruik eerst de cmdlet [Find-dscresource bieden](/powershell/module/powershellget/find-dscresource) om DSC-resources te zoeken. Wanneer u `Find-DSCResource` voor de eerste keer uitvoert, ziet u de volgende prompt om de NuGet-provider te installeren.
+Gebruik eerst de cmdlet [Find-dscresource bieden](/powershell/module/powershellget/find-dscresource) om DSC-resources te zoeken. Wanneer u voor `Find-DSCResource` de eerste keer uitvoert, ziet u de volgende prompt om de NuGet-provider te installeren.
 
 ```
 PS> Find-DSCResource
@@ -64,10 +64,10 @@ Nadat u op y hebt gedrukt, wordt de NuGet-provider geïnstalleerd en ziet u een 
 > [!NOTE]
 > De lijst wordt niet weer gegeven omdat deze erg groot is.
 
-U kunt ook de para meter `-Name` opgeven met behulp van joker tekens of met `-Filter` para meter zonder joker tekens om uw zoek opdracht te verfijnen. In dit voor beeld wordt geprobeerd een ' time zone ' DSC-resource te vinden met behulp van de joker tekens.
+U kunt de `-Name` para meter ook opgeven met Joker tekens of `-Filter` para meter zonder joker tekens om uw zoek opdracht te verfijnen. In dit voor beeld wordt geprobeerd een ' time zone ' DSC-resource te vinden met behulp van de joker tekens.
 
 > [!IMPORTANT]
-> Er is momenteel een bug in de `Find-DSCResource`-cmdlet waarmee u geen joker tekens kunt gebruiken in de `-Name`-en `-Filter`-para meters. In het tweede voor beeld hieronder ziet u een tijdelijke oplossing met behulp van `Where-Object`.
+> Er is momenteel een fout in de `Find-DSCResource` cmdlet die voor komt dat Joker tekens worden gebruikt `-Name` in `-Filter` de para meters en. In het tweede voor beeld hieronder ziet u `Where-Object`een tijdelijke oplossing met behulp van.
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-U kunt `Where-Object` ook gebruiken om DSC-resources te zoeken met nauw keurigere filters. Deze aanpak is trager dan het gebruik van ingebouwde filter parameters.
+U kunt ook gebruiken `Where-Object` om DSC-resources te zoeken met nauw keurigere filters. Deze aanpak is trager dan het gebruik van ingebouwde filter parameters.
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-U kunt ook andere resources in de zojuist geïnstalleerde module weer geven door de para meter `-ModuleName` op te geven.
+U kunt ook andere resources in de zojuist geïnstalleerde module bekijken door de `-ModuleName` para meter op te geven.
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC
@@ -153,4 +153,4 @@ PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0
 
 ## <a name="see-also"></a>Zie ook
 
-- [Wat zijn bronnen?](../resources/resources.md)
+- [Wat zijn resources?](../resources/resources.md)

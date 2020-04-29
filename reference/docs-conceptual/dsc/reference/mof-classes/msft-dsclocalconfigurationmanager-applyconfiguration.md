@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: ApplyConfiguration-methode
 ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71941598"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration-methode
@@ -25,7 +25,7 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-\[*afdwingen* in\] als dit **waar**is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
+*Force* \[in\] als dit **waar**is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
 
 ## <a name="return-value"></a>Retourwaarde
 

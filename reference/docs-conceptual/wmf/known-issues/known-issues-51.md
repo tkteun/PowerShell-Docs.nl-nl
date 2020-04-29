@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.1
 ms.openlocfilehash: 8348f9d45dca32dcda2ef8baa75d586c8728d0a4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71145276"
 ---
 # <a name="known-issues-in-wmf-51"></a>Bekende problemen in WMF 5.1
@@ -25,7 +25,7 @@ In deze release zijn er twee problemen waarvan u rekening moet houden bij het ge
 
 ## <a name="operation-validation"></a>Bewerkings validatie
 
-- `Update-Help` mislukt voor de module micro soft. Power shell. Operation. Validation vanwege een niet-werkende Help-URI
+- `Update-Help`mislukt voor de module micro soft. Power shell. Operation. validatie vanwege een niet-werkende Help-URI
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC na verwijderen van WMF
 
