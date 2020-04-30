@@ -296,6 +296,8 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Migreren van Windows PowerShell 5.1 naar PowerShell 7
       href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+    - name: Experimentele functies gebruiken
+      href: whats-new/experimental-features.md
     - name: Releasegeschiedenis van modules en cmdlets
       href: whats-new/cmdlet-versions.md
     - name: Compatibiliteitslijst van modules
