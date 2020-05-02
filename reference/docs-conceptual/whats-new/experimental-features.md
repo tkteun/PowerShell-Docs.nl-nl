@@ -2,22 +2,27 @@
 ms.date: 04/28/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: e2c9f30cb1d4ec7b89596cebd1e5df27968626cc
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+ms.openlocfilehash: 72a4309d6eeede4cd2ff7c38ce8e99ce3ace30eb
+ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587391"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82630764"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
 De experimentele functies ondersteuning in Power shell biedt een mechanisme voor experimentele functies die naast bestaande stabiele functies in Power shell-of Power shell-modules kunnen worden gebruikt.
 
-In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken. Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features)voor meer informatie over het in-of uitschakelen van deze functies.
+Een experimentele functie is een onderdeel waar het ontwerp niet is voltooid. De functie is beschikbaar voor gebruikers om te testen en feedback te geven. Zodra een experimentele functie is voltooid, worden de wijzigingen in het ontwerp doorgevoerd.
+
+> [!CAUTION]
+> Experimentele functies zijn niet bedoeld om te worden gebruikt in productie, omdat de wijzigingen niet mogen worden opgesplitst. Experimentele functies worden niet officieel ondersteund. We waarderen echter alle feedback-en fouten rapporten. U kunt problemen in de [github-bron opslagplaats](https://github.com/PowerShell/PowerShell/issues/new/choose)opslaan.
+
+Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features)voor meer informatie over het in-of uitschakelen van deze functies.
 
 ## <a name="available-features"></a>Beschikbare functies
 
-De volgende tabel geeft een lijst van de functies die beschikbaar zijn in verschillende versies van Power shell.
+In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken.
 
 |                            Naam                            |   6.2   |   7.0   | 7,1 (preview-versie) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
