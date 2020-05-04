@@ -731,13 +731,20 @@
         - name: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: Community
+  expanded: true
   items:
-    - name: Communityresources
+    - name: Community-update
+      href: community/community-update.yml
+    - name: Ondersteuning voor community
       href: community/community-support.md
-    - name: Digitale kunst
-      href: community/digital-art.md
-    - name: Wat is er nieuw in de PowerShell-documentatie?
-      href: community/whats-new-in-docs.md
+    - name: Eregalerij voor bijdragers
+      href: community/hall-of-fame.md
+    - name: Wat is er nieuw voor Docs
+      items:
+        - name: 2020-K2
+          href: community/2020-Q2.md
+        - name: 2020-K1
+          href: community/2020-Q1.md
     - name: Handleiding voor inzenders
       items:
         - name: Overzicht
@@ -760,6 +767,8 @@
               href: community/contributing/managing-issues.md
             - name: De manier waarop we pull-aanvragen beheren
               href: community/contributing/managing-pull-requests.md
+    - name: Digitale kunst
+      href: community/digital-art.md
 - name: PowerShell SDK
   items:
     - name: Overzicht
