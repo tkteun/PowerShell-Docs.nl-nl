@@ -2,25 +2,25 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ad637bd30e5e40ccc9532bae6f1171ecf79734a
-ms.sourcegitcommit: e0a737961280026832cff9c658ed1468dc904e80
+ms.openlocfilehash: e04d8a91999cd6e9b2d669230c7a1b412f11eeb8
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605846"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271896"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
-Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert `pwsh` u uit vanaf een Terminal. Voer `pwsh-preview` uit als u een [Preview-versie](#installing-preview-releases)hebt geïnstalleerd.
+Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal. Voer uit `pwsh-preview` Als u een [Preview-versie](#installing-preview-releases)hebt geïnstalleerd.
 
 > [!NOTE]
 > Power shell 7 is een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
 >
-> De `/usr/local/microsoft/powershell/6` map wordt vervangen door `/usr/local/microsoft/powershell/7`.
+> De `/usr/local/microsoft/powershell/6` map wordt vervangen door `/usr/local/microsoft/powershell/7` .
 >
 > Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met behulp van de [binaire archief](#binary-archives) methode.
 
-Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks [ `tar.gz` ][tar]te implementeren met behulp van het Linux-archief, maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
+Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen Power shell te installeren met behulp van het [Power shell-snap package][snap]. U kunt ook proberen om Power shell-binaire bestanden rechtstreeks te implementeren met behulp van het Linux- [ `tar.gz` Archief][tar], maar u moet de vereiste afhankelijkheden instellen op basis van het besturings systeem in afzonderlijke stappen.
 
 [snap]: #snap-package
 [tar]: #binary-archives
@@ -55,6 +55,10 @@ Alternatieve installatie methoden
 - Binaire archieven
 - Hulp programma .NET Global
 
+Momenteel niet ondersteund 
+
+- Ubuntu 20,04
+
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via pakket opslagplaats-Ubuntu 16,04
@@ -80,11 +84,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via direct downloaden-Ubuntu 16,04
 
-Down load het Debian `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` -pakket van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -94,7 +98,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht `apt-get install -f` worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht worden `apt-get install -f` deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Installatie ongedaan maken-Ubuntu 16,04
 
@@ -130,11 +134,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via direct downloaden-Ubuntu 18,04
 
-Down load het Debian `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` -pakket van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -144,7 +148,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht `apt-get install -f` worden deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
+> De `dpkg -i` opdracht mislukt met unmet-afhankelijkheden. Met de volgende opdracht worden `apt-get install -f` deze problemen opgelost en wordt de configuratie van het Power shell-pakket voltooid.
 
 ### <a name="uninstallation---ubuntu-1804"></a>Installatie ongedaan maken-Ubuntu 18,04
 
@@ -154,17 +158,21 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-De installatie wordt ondersteund `snapd`via. Zie [snap package][snap]voor instructies.
+De installatie wordt ondersteund via `snapd` . Zie [snap package][snap]voor instructies.
 
 > [!NOTE]
 > Ubuntu 18,10 is een [voorlopige versie](https://www.ubuntu.com/about/release-cycle) die door de [community wordt ondersteund](../powershell-support-lifecycle.md).
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19,04
 
-De installatie wordt ondersteund `snapd`via. Zie [snap package][snap]voor instructies.
+De installatie wordt ondersteund via `snapd` . Zie [snap package][snap]voor instructies.
 
 > [!NOTE]
 > Ubuntu 19,04 is een [voorlopige versie](https://www.ubuntu.com/about/release-cycle) die door de [community wordt ondersteund](../powershell-support-lifecycle.md).
+
+## <a name="ubuntu-2004"></a>Ubuntu 20,04
+
+Ubuntu 20,04 is een LTS-release. Power shell biedt momenteel geen ondersteuning voor deze versie. Ondersteuning voor deze versie wordt overwogen voor de Power shell 7,1-release. Ga naar deze [aanvraag](https://github.com/PowerShell/PowerShell/issues/12626) als u ondersteuning wilt voor Ubuntu 20,04.
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -195,7 +203,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo apt-get upgrade powershell` .
 
 ## <a name="debian-9"></a>Debian 9
 
@@ -226,11 +234,11 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo apt-get upgrade powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo apt-get upgrade powershell` .
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installatie via direct downloaden-Debian 9
 
-Down load het Debian `powershell-lts_7.0.0-1.debian.9_amd64.deb` -pakket van de pagina [releases][] op de Debian-computer.
+Down load het Debian-pakket `powershell-lts_7.0.0-1.debian.9_amd64.deb` van de pagina [releases][] op de Debian-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -275,7 +283,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installatie via direct downloaden-Debian 10
 
-Down load het pakket `powershell_7.0.0-linux-x64.tar.gz` tar. gz van de pagina [releases][] op de Debian-machine.
+Down load het pakket tar. gz `powershell_7.0.0-linux-x64.tar.gz` van de pagina [releases][] op de Debian-machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -322,7 +330,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installatie via direct downloaden-Alpine 3,9 en 3,10
 
-Down load het pakket `powershell-7.0.0-linux-alpine-x64.tar.gz` tar. gz van de pagina [releases][] op de Alpine machine.
+Down load het pakket tar. gz `powershell-7.0.0-linux-alpine-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -385,11 +393,11 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo yum update powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo yum update powershell` .
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via direct downloaden-CentOS 7
 
-Gebruik [CentOS 7][]om het rpm-pakket `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` te downloaden van de pagina [releases][] op de CentOS-computer.
+Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -428,11 +436,11 @@ sudo yum install -y powershell
 pwsh
 ```
 
-Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken `sudo yum update powershell`met.
+Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de registratie kunt u Power shell bijwerken met `sudo yum update powershell` .
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via direct downloaden-Red Hat Enterprise Linux (RHEL) 7
 
-Down load het RPM `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` -pakket van de pagina [releases][] op de Red Hat Enterprise Linux machine.
+Down load het RPM-pakket `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Red Hat Enterprise Linux machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -544,7 +552,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installatie via direct downloaden-Fedora 28, 29 en 30
 
-Down load het RPM `powershell-7.0.0-1.rhel.7.x86_64.rpm` -pakket van de pagina [releases][] op de computer Fedora.
+Down load het RPM-pakket `powershell-7.0.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de computer Fedora.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -590,7 +598,7 @@ Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u 
 
 ### <a name="getting-snapd"></a>Bezig met uitlijnen
 
-`snapd`is vereist voor het uitvoeren van snaps. Volg [deze instructies](https://docs.snapcraft.io/core/install) om te controleren of u `snapd` hebt geïnstalleerd.
+`snapd`is vereist voor het uitvoeren van snaps. Volg [deze instructies](https://docs.snapcraft.io/core/install) om te controleren of u hebt `snapd` geïnstalleerd.
 
 ### <a name="installation-via-snap"></a>Installatie via snap
 
@@ -616,7 +624,7 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-Na de installatie wordt de module automatisch bijgewerkt. U kunt een upgrade activeren met `sudo snap refresh powershell` of `sudo snap refresh powershell-preview`.
+Na de installatie wordt de module automatisch bijgewerkt. U kunt een upgrade activeren met `sudo snap refresh powershell` of `sudo snap refresh powershell-preview` .
 
 ### <a name="uninstallation"></a>Installatie ongedaan maken
 
@@ -712,7 +720,7 @@ rm -rf ~/powershell
 
 ## <a name="installing-preview-releases"></a>Preview-versies installeren
 
-Wanneer u een Power shell preview-release voor Linux installeert via een pakket opslagplaats, wordt de `powershell` naam `powershell-preview`van het pakket gewijzigd van in.
+Wanneer u een Power shell preview-release voor Linux installeert via een pakket opslagplaats, wordt de naam van het pakket gewijzigd van `powershell` in `powershell-preview` .
 
 Installeren via direct downloaden verandert niet, behalve de bestands naam.
 
@@ -732,11 +740,11 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 dotnet tool install --global PowerShell
 ```
 
-Het hulp programma DotNet tool `~/.dotnet/tools` wordt toegevoegd `PATH` aan de omgevings variabele. De momenteel actieve shell beschikt echter niet over de bijgewerkte `PATH`versie. U moet Power shell kunnen starten vanuit een nieuwe shell door te typen `pwsh`.
+Het hulp programma DotNet tool wordt toegevoegd `~/.dotnet/tools` aan de `PATH` omgevings variabele. De momenteel actieve shell beschikt echter niet over de bijgewerkte versie `PATH` . U moet Power shell kunnen starten vanuit een nieuwe shell door te typen `pwsh` .
 
 ## <a name="binary-archives"></a>Binaire archieven
 
-Er zijn `tar.gz` binaire Power shell-archieven beschikbaar voor Linux-platforms om geavanceerde implementatie scenario's mogelijk te maken.
+Er zijn binaire Power shell- `tar.gz` archieven beschikbaar voor Linux-platforms om geavanceerde implementatie scenario's mogelijk te maken.
 
 ### <a name="dependencies"></a>Afhankelijkheden
 
@@ -744,7 +752,7 @@ Power shell bouwt draag bare binaire bestanden voor alle Linux-distributies. .NE
 
 In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel worden ondersteund op verschillende Linux-distributies.
 
-| OS                 | Afhankelijkheden |
+| Besturingssysteem                 | Afhankelijkheden |
 | ------------------ | ------------ |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
 | Ubuntu 17,10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |
@@ -756,7 +764,7 @@ In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel w
 | openSUSE Schrikkel 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | afwikkeling, libkrul, openssl-Bibliotheken, libicu, compat-openssl10 |
 
-Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die niet officieel worden ondersteund, moet u in afzonderlijke stappen de vereiste afhankelijkheden voor het doel besturingssysteem installeren. Bijvoorbeeld, onze [Amazon Linux-dockerfile][amazon-dockerfile] installeert eerst afhankelijkheden en extraheert vervolgens het Linux `tar.gz` -archief.
+Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die niet officieel worden ondersteund, moet u in afzonderlijke stappen de vereiste afhankelijkheden voor het doel besturingssysteem installeren. Bijvoorbeeld, onze [Amazon Linux-dockerfile][amazon-dockerfile] installeert eerst afhankelijkheden en extraheert vervolgens het Linux- `tar.gz` Archief.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
