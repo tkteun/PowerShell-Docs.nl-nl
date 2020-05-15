@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 45b639ea5f1a4d4e1decaaeacd998cdd3e3d7d02
+ms.sourcegitcommit: 28a40a0fe590a7efe893793f7db88320dbba64ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500994"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83407764"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -54,7 +54,7 @@ Raadpleeg de volgende tabel om te controleren of uw platform en versie van Power
 
 Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze worden niet officieel ondersteund. Deze pakketten zijn gemarkeerd als `Community` in de tabel.
 
-Platforms die worden `Experimental` vermeld als niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
+Platforms die worden vermeld als `Experimental` niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
 | Platform                                          |      6.2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
@@ -107,7 +107,7 @@ De distributie-eigen aren hebben daarom de volgende versies gestopt en worden ni
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | Debian         |    8    | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
 | Fedora         |   24    | [Augustus 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
-| Fedora         |   25    | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
+| Fedora         |   25    | [december 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
 | Fedora         |   26    | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
 | Fedora         |   27    | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
 | Fedora         |   28    | [Mei 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
@@ -127,7 +127,7 @@ Power shell core wordt uitgebracht onder de [MIT-licentie][]. Onder deze licenti
 
 ## <a name="windows-powershell-compatibility"></a>Compatibiliteit met Windows Power shell
 
-De ondersteunings levenscyclus voor Power Shell heeft geen betrekking op modules die buiten het Power shell-release pakket worden verzonden. Het gebruik van de `ActiveDirectory` module die wordt geleverd als onderdeel van Windows Server wordt bijvoorbeeld ondersteund onder de [levens cyclus van Windows-ondersteuning][].
+De ondersteunings levenscyclus voor Power Shell heeft geen betrekking op modules die buiten het Power shell-release pakket worden verzonden. Het gebruik `ActiveDirectory` van de module die wordt geleverd als onderdeel van Windows Server wordt bijvoorbeeld ondersteund onder de [levens cyclus van Windows-ondersteuning][].
 
 Power shell 7 verbetert de compatibiliteit met bestaande Power shell-modules die zijn geschreven voor Windows Power shell.
 Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibiliteits modules][]voor meer informatie.
@@ -138,6 +138,17 @@ Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibilitei
 ## <a name="experimental-features"></a>Experimentele functies
 
 [Experimentele functies][] zijn beperkt tot [ondersteuning](#community-support)van de community.
+
+## <a name="security-servicing-criteria"></a>Criteria voor beveiligings onderhoud
+
+Power shell volgt de [micro soft security Servicing criteria voor Windows][].
+De onderstaande tabel bevat een overzicht van de functies die voldoen aan de onderhouds criteria en die niet.
+
+| Onderdeel                          | Type             | Intentie tot service? |
+|----------------------------------|------------------|--------------------|
+| Uitvoerings beleid                 | Diep ingrijpende verdediging | Nee                 |
+| Systeem vergrendeling-met AppLocker | Diep ingrijpende verdediging | Nee                 |
+| Systeem Lockdown-met WDAC      | Beveiligings functie | Ja                |
 
 ## <a name="release-history"></a>Release geschiedenis
 
@@ -172,3 +183,4 @@ De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power sh
 [lijst met compatibiliteits modules]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentele functies]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[Micro soft security-onderhouds criteria voor Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
