@@ -755,22 +755,20 @@
               href: community/contributing/managing-pull-requests.md
     - name: Digitale kunst
       href: community/digital-art.md
-- name: PowerShell Developer
+- name: Ontwikkelen en scripts schrijven
   items:
-    - name: Platformoverschrijdende ontwikkelmogelijkheden
+    - name: Visual Studio Code
       items:
-        - name: Visual Studio Code
-          items:
-            - name: Visual Studio Code gebruiken
-              href: components/vscode/using-vscode.md
-            - name: De ISE-ervaring in Visual Studio Code repliceren
-              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-            - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
-              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-            - name: Informatie over bestandscodering in VS Code en PowerShell
-              href: components/vscode/understanding-file-encoding.md
-        - name: Draagbare modules schrijven
-          href: learn/writing-portable-modules.md
+        - name: Visual Studio Code gebruiken
+          href: components/vscode/using-vscode.md
+        - name: De ISE-ervaring in Visual Studio Code repliceren
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Informatie over bestandscodering in VS Code en PowerShell
+          href: components/vscode/understanding-file-encoding.md
+    - name: Draagbare modules schrijven
+      href: learn/writing-portable-modules.md
     - name: Verouderde PowerShell SDK
       items:
         - name: Overzicht
