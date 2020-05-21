@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 12b0b246b78142f3811f9f566cd94e4dabd40cc9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277458"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557462"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Een werkstroom maken met Windows PowerShell-activiteiten
 
@@ -31,21 +31,21 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 1. Voeg een **reeks** activiteit toe aan de werk stroom.
 
-2. Maak een argument met de naam `ComputerName` met het argument type `String[]`. Dit argument vertegenwoordigt de namen van de computers die moeten worden gecontroleerd en toegevoegd.
+2. Maak een argument `ComputerName` met de naam met een argument type van `String[]` . Dit argument vertegenwoordigt de namen van de computers die moeten worden gecontroleerd en toegevoegd.
 
 3. Maak een argument met de naam `DomainCred` van het type [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument vertegenwoordigt de domein referenties van een domein account dat is gemachtigd om een computer toe te voegen aan het domein.
 
 4. Maak een argument met de naam `MachineCred` van het type [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dit argument vertegenwoordigt de referenties van een beheerder op de computers om te controleren en samen te voegen.
 
-5. Voeg een **ParallelForEach** -activiteit toe binnen de **reeks** activiteit. Voer `comp` in en `ComputerName` in de tekst vakken zodat de lus door de elementen van de `ComputerName` matrix doorloopt.
+5. Voeg een **ParallelForEach** -activiteit toe binnen de **reeks** activiteit. Typ `comp` en `ComputerName` in de tekst vakken zodat de lus door de elementen van de matrix doorloopt `ComputerName` .
 
-6. Voeg een **sequentie** activiteit toe aan de hoofd tekst van de **ParallelForEach** -activiteit. Stel de eigenschap **DisplayName** van de reeks in op `JoinDomain`.
+6. Voeg een **sequentie** activiteit toe aan de hoofd tekst van de **ParallelForEach** -activiteit. Stel de eigenschap **DisplayName** van de reeks in op `JoinDomain` .
 
 7. Voeg een **GetWmiObject** -activiteit toe aan de **JoinDomain** -reeks.
 
 8. Bewerk de eigenschappen van de **GetWmiObject** -activiteit als volgt.
 
-   |Eigenschap|Value|
+   |Eigenschap|Waarde|
    |--------------|-----------|
    |**Klasse**|"Win32_ComputerSystem"|
    |**PSComputerName**|Comp|
@@ -55,7 +55,7 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 10. Bewerk de eigenschappen van de **AddComputer** -activiteit als volgt.
 
-    |Eigenschap|Value|
+    |Eigenschap|Waarde|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**DomainCredential**|DomainCred|
@@ -64,18 +64,18 @@ In de volgende procedures wordt beschreven hoe u een werk stroom maakt waarmee d
 
 12. Bewerk de eigenschappen van de **RestartComputer** -activiteit als volgt.
 
-    |Eigenschap|Value|
+    |Eigenschap|Waarde|
     |--------------|-----------|
     |**ComputerName**|Comp|
     |**Referentie**|MachineCred|
     |**Zo**|Micro soft. Power shell. commands. WaitForServiceTypes. Power shell|
-    |**Verkopers**|Waar|
-    |Wachten|Waar|
+    |**Verkopers**|True|
+    |Wait|True|
     |PSComputerName|{""}|
 
 13. Voeg een **GetWmiObject** -activiteit toe aan de **JoinDomain** -reeks na de activiteit **RestartComputer** . Bewerk de eigenschappen zodanig dat deze hetzelfde zijn als de vorige **GetWmiObject** -activiteit.
 
     Wanneer u de procedures hebt voltooid, ziet het werk stroom ontwerp venster er als volgt uit.
 
-    ![JoinDomain XAML in Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
-    ![XAML in Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")
+    ![JoinDomain XAML in Workflow Designer ](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+     ![JoinDomain XAML in Workflow Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
-ms.openlocfilehash: 5761ed2168a46d6ed9a2e50554d459f5b93223ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f45b5e985fa38ca4ff41707f1842ddb8b930e2b1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352176"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557496"
 ---
 # <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a>Een werkstroomactiviteit maken uit een Windows PowerShell-cmdlet
 
-Een Windows Power shell-module of-cmdlet kan worden verpakt als een werk stroom activiteit met behulp van de methoden van de klasse [micro soft. Power shell. activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) . Gebruik de methoden [Microsoft. Power shell. activities. Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft. Power shell. activities. Activitygenerator. Generatefromcommandinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)en Microsoft. Power shell. activities [. Activitygenerator. Generatefromname *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) van de klasse [micro soft. Power shell. activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) om code te genereren C# die een activiteit vertegenwoordigt. Vervolgens kunt u de resulterende C# code compileren in een assembly die als activiteit kan worden toegevoegd aan een project.
+Een Windows Power shell-module of-cmdlet kan worden verpakt als een werk stroom activiteit met behulp van de methoden van de klasse [micro soft. Power shell. activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) . Gebruik de methoden [micro soft. Power shell. activities. Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft. Power shell. activities. Activitygenerator. Generatefromcommandinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)en micro soft. Power shell. activities [. Activitygenerator. Generatefromname *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) van de klasse [micro soft. Power shell. activities. Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) om C#-code te genereren die een activiteit vertegenwoordigt. Vervolgens kunt u de resulterende C#-code compileren in een assembly die als activiteit kan worden toegevoegd aan een project.
 
-U kunt vervolgens de resulterende C# code compileren in een assembly die als activiteit kan worden toegevoegd aan een project met behulp van een opdracht regel met het volgende formulier.
+U kunt vervolgens de resulterende C#-code compileren in een assembly die als activiteit kan worden toegevoegd aan een project met behulp van een opdracht regel met het volgende formulier.
 
 **CSC/nologo/out: Assemblyname/target: bibliotheek/Reference: System. activities. activity/Reference: micro soft. Power shell. activities codefile.cs**
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe C# u code kunt genereren voor een activiteit vanuit een Windows Power shell-module.
+In het volgende voor beeld ziet u hoe u C#-code voor een activiteit kunt genereren vanuit een Windows Power shell-module.
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ namespace MakeActivity
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe C# u code kunt genereren voor een activiteit vanuit een Windows Power shell-cmdlet.
+In het volgende voor beeld ziet u hoe u C#-code voor een activiteit genereert vanuit een Windows Power shell-cmdlet.
 
 ```csharp
 using System;

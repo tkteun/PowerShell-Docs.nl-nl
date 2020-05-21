@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
-ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357846"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557058"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Help op basis van opmerkingen in functies plaatsen
 
-In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een functie kunt plaatsen zodat de cmdlet `Get-Help` het Help-onderwerp op basis van opmerkingen koppelt aan de juiste functie.
+In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een functie kunt plaatsen zodat de `Get-Help` cmdlet het Help-onderwerp op basis van opmerkingen koppelt aan de juiste functie.
 
 ## <a name="where-to-place-comment-based-help-for-a-function"></a>Waar kunt u op opmerkingen gebaseerde hulp voor een functie plaatsen
 
@@ -25,7 +25,7 @@ In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een 
 
 - Aan het einde van de hoofd tekst van de functie.
 
-- Vóór het sleutel woord `Function`. Wanneer de functie zich in een script of script module bevindt, kan er niet meer dan één lege regel zijn tussen de laatste regel van de op opmerkingen gebaseerde Help en het sleutel woord `Function`. Anders wordt de Help door `Get-Help` gekoppeld aan het script, niet met de functie.
+- Vóór het `Function` sleutel woord. Wanneer de functie zich in een script of script module bevindt, kan er niet meer dan één lege regel tussen de laatste regel van de op opmerkingen gebaseerde Help en het `Function` tref woord zijn. Als dat niet het geval is, `Get-Help` koppelt u de Help aan het script, niet met de functie.
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Voor beelden van de plaatsing van een Help in een functie
 

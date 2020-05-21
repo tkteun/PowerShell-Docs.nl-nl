@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
-ms.openlocfilehash: 5720200ce32f114cd4965d961b9e2804bd154b2e
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: cc613240e056e8443b075019cbff6dd15da3716f
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870843"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557445"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Een werkstroom maken met behulp van een Windows PowerShell-script
 
@@ -28,7 +28,7 @@ U vindt de werk stroom op dezelfde manier als elke andere Windows Power shell-op
 
 ## <a name="implementing-parallel-and-sequence"></a>Parallelle en sequentieel implementeren
 
-[Windows Workflow Foundation](/previous-versions/dotnet/netframework-3.5/ms735967(v=vs.90)) ondersteunt de uitvoering van activiteiten parallel. Als u deze functie in een Windows Power shell-script wilt implementeren, gebruikt u het sleutel woord `parallel` vóór een script blok. U kunt ook de `foreach -parallel`-constructie gebruiken om een verzameling objecten parallel te herhalen. Als u een groep activiteiten in sequentiële volg orde binnen een parallel blok wilt uitvoeren, sluit u die groep activiteiten in een script blok en plaatst u de blok kering met het sleutel woord sequence.
+[Windows Workflow Foundation](/previous-versions/dotnet/netframework-3.5/ms735967(v=vs.90)) ondersteunt de uitvoering van activiteiten parallel. Als u deze functie in een Windows Power shell-script wilt implementeren, gebruikt u het `parallel` sleutel woord voor een script blok. U kunt ook de `foreach -parallel` constructie gebruiken om een verzameling objecten parallel te herhalen. Als u een groep activiteiten in sequentiële volg orde binnen een parallel blok wilt uitvoeren, sluit u die groep activiteiten in een script blok en plaatst u de blok kering met het sleutel woord sequence.
 
 ## <a name="joining-computers-to-a-domain"></a>Computers toevoegen aan een domein
 

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC PackageManagementSource-resource
-ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a4219f3c4ad7e547025a2b9cde442c7b69eeac4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942529"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557138"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resource
 
@@ -39,7 +39,7 @@ PackageManagementSource [String] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Naam |Hiermee geeft u de naam van de pakket bron moet worden geregistreerd of niet geregistreerd op uw systeem. |
+|Name |Hiermee geeft u de naam van de pakket bron moet worden geregistreerd of niet geregistreerd op uw systeem. |
 |ProviderName |Hiermee geeft u de naam van de OneGet-provider op waarmee u interop met de pakket bron kunt doen. |
 |SourceLocation |Hiermee geeft u de URI van de pakket bron. |
 |InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd**. |
@@ -49,7 +49,7 @@ PackageManagementSource [String] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt bepaald of de bron van het pakket moet worden geregistreerd of verwijderd. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
@@ -58,7 +58,7 @@ PackageManagementSource [String] #ResourceName
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld `https://nuget.org` wordt de pakket bron geregistreerd met behulp van de DSC-resource **PackageManagementSource** .
+In dit voor beeld wordt de `https://nuget.org` pakket bron geregistreerd met behulp van de DSC-resource **PackageManagementSource** .
 
 ```powershell
 Configuration PackageManagementSourceTest

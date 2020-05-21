@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 9cf4499ec2992c6cfea83fc5d0bf51d0bbfaa96a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870486"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556849"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Een aangepaste Windows PowerShell-module schrijven
 
@@ -31,7 +31,7 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
    In dit voor beeld is de naam van de klasse ' CustomPSSnapinTest '.
 
-3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ```*`
+3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: `#` , `.` , `,` , `(` , `)` ,,,,,, `{` ,, `}` `[` `]` `&` `-` `/` `\` , `$` , `;` , `:` , `"` ,,, `'` `<` ,, `>` `|` `?` , `@` , `` ` `` ,,,,,,,,,,`*`
 
    In dit voor beeld is de naam van de module ' CustomPSSnapInTest '.
 
@@ -45,7 +45,7 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
 6. Voeg een open bare eigenschap toe voor de beschrijving van de module (vereist).
 
-   In dit voor beeld is de beschrijving: "Dit is een aangepaste Windows Power shell-module die de `Test-HelloWorld` en `Test-CustomSnapinTest`-cmdlets bevat.
+   In dit voor beeld is de beschrijving: ' Dit is een aangepaste Windows Power shell-module die de `Test-HelloWorld` `Test-CustomSnapinTest` cmdlets bevat.
 
 7. Voeg een open bare eigenschap voor de beschrijvings resource van de module toe (optioneel).
 
@@ -53,7 +53,7 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
    > CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.
 
-8. Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet` name.dll-help.xml`zijn).
+8. Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet zijn `name.dll-help.xml` ).
 
    In dit voor beeld worden de cmdlets test-HelloWorld en TestCustomSnapinTest toegevoegd.
 
@@ -71,7 +71,7 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de `Test-HelloWorld`-en `Test-CustomSnapinTest`-cmdlets te registreren. Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.
+In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de `Test-HelloWorld` cmdlets en te registreren `Test-CustomSnapinTest` . Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.
 
 ```csharp
 [RunInstaller(true)]

@@ -2,21 +2,20 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: Vereisten voor JEA
-ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5083a9ad4aa87c753799d36f55540342225ecddd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416724"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556866"
 ---
 # <a name="prerequisites"></a>Vereisten
 
 Net genoeg beheer is een functie die is opgenomen in Power shell 5,0 en hoger. In dit artikel worden de vereisten beschreven waaraan moet worden voldaan om JEA te kunnen gebruiken.
 
-
 ## <a name="check-which-version-of-powershell-is-installed"></a>Controleren welke versie van Power shell is geïnstalleerd
 
-Als u wilt controleren welke versie van Power shell op uw systeem is geïnstalleerd `$PSVersionTable` , controleert u de variabele in een Windows Power shell-prompt.
+Als u wilt controleren welke versie van Power shell op uw systeem is geïnstalleerd, controleert u de `$PSVersionTable` variabele in een Windows Power shell-prompt.
 
 ```powershell
 $PSVersionTable.PSVersion
@@ -83,7 +82,7 @@ Met de volgende stappen kunt u logboek registratie inschakelen voor alle Power s
 U kunt het beleid voor logboek registratie van Power shell-modules configureren met behulp van groepsbeleid.
 
 1. Open de Lokale groepsbeleidsobjecteditor op een werk station of een groepsbeleid-object in de console Groepsbeleidbeheer op een Active Directory-domein controller
-2. Navigeren naar **computer configuratie\\Beheersjablonen\\Windows-\\onderdelen Windows Power shell**
+2. Navigeren naar **computer configuratie \\ Beheersjablonen \\ Windows- \\ onderdelen Windows Power shell**
 3. Dubbel klik op **inschakelen logboek registratie** van de module
 4. Klik op **ingeschakeld**
 5. Klik in de sectie opties op **weer geven** naast module namen

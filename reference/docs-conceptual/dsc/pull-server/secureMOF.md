@@ -2,12 +2,12 @@
 ms.date: 10/31/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Het MOF-bestand beveiligen
-ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278461"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556384"
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand beveiligen
 
@@ -15,7 +15,7 @@ ms.locfileid: "78278461"
 
 DSC beheert de configuratie van server knooppunten door gegevens die zijn opgeslagen in een MOF-bestand toe te passen, waarbij de lokale Configuration Manager (LCM) de gewenste eind status implementeert. Omdat dit bestand de details van de configuratie bevat, is het belang rijk om het beveiligd te blijven. In dit onderwerp wordt beschreven hoe u ervoor zorgt dat het bestand is versleuteld met het doel knooppunt.
 
-Vanaf Power shell versie 5,0 wordt het volledige MOF-bestand standaard versleuteld wanneer het wordt toegepast op het knoop punt `Start-DSCConfiguration` met behulp van de-cmdlet. Het proces dat in dit artikel wordt beschreven, is alleen vereist bij het implementeren van een oplossing met het pull-service protocol als certificaten niet worden beheerd, om ervoor te zorgen dat de configuraties die door het doel knooppunt worden gedownload, kunnen worden ontsleuteld en gelezen voordat ze worden toegepast (bijvoorbeeld de pull-service die beschikbaar is in Windows Server). Knoop punten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) , hebben automatisch certificaten geïnstalleerd en beheerd door de service zonder dat er administratieve overhead nodig is.
+Vanaf Power shell versie 5,0 wordt het volledige MOF-bestand standaard versleuteld wanneer het wordt toegepast op het knoop punt met behulp van de- `Start-DSCConfiguration` cmdlet. Het proces dat in dit artikel wordt beschreven, is alleen vereist bij het implementeren van een oplossing met het pull-service protocol als certificaten niet worden beheerd, om ervoor te zorgen dat de configuraties die door het doel knooppunt worden gedownload, kunnen worden ontsleuteld en gelezen voordat ze worden toegepast (bijvoorbeeld de pull-service die beschikbaar is in Windows Server). Knoop punten die zijn geregistreerd bij [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) , hebben automatisch certificaten geïnstalleerd en beheerd door de service zonder dat er administratieve overhead nodig is.
 
 > [!NOTE]
 > In dit onderwerp worden de certificaten beschreven die worden gebruikt voor versleuteling. Voor versleuteling is een zelfondertekend certificaat voldoende, omdat de persoonlijke sleutel altijd geheim is en versleuteling niet het vertrouwen van het document impliceert. Zelfondertekende certificaten mogen *niet* worden gebruikt voor verificatie doeleinden. U moet een certificaat van een vertrouwde certificerings instantie (CA) gebruiken voor verificatie doeleinden.
@@ -84,11 +84,11 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Na het exporteren moet `DscPublicKey.cer` de worden gekopieerd naar het **ontwerp knooppunt**.
+Na het exporteren `DscPublicKey.cer` moet de worden gekopieerd naar het **ontwerp knooppunt**.
 
 > Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 > [!WARNING]
-> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en windows server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u of `makecert.exe` `certutil.exe` gebruiken om het certificaat te maken. Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
+> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u `makecert.exe` of gebruiken `certutil.exe` om het certificaat te maken. Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -114,7 +114,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Na het exporteren moet ```DscPublicKey.cer``` de worden gekopieerd naar het **ontwerp knooppunt**.
+Na het exporteren ```DscPublicKey.cer``` moet de worden gekopieerd naar het **ontwerp knooppunt**.
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>Op het ontwerp knooppunt: de open bare sleutel van het certificaat importeren
 
@@ -149,11 +149,11 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-Na het exporteren moet `DscPrivateKey.pfx` de worden gekopieerd naar het **doel knooppunt**.
+Na het exporteren `DscPrivateKey.pfx` moet de worden gekopieerd naar het **doel knooppunt**.
 
 > Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 > [!WARNING]
-> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en windows server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u of `makecert.exe` `certutil.exe` gebruiken om het certificaat te maken. Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
+> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u `makecert.exe` of gebruiken `certutil.exe` om het certificaat te maken. Een alternatieve methode is [het script New-SelfSignedCertificateEx. ps1 te downloaden uit het micro soft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) en dit te gebruiken om in plaats daarvan het certificaat te maken:
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -303,8 +303,8 @@ configuration CredentialEncryptionExample
 
 Op dit moment kunt u de configuratie uitvoeren, waardoor twee bestanden worden uitgevoerd:
 
-- Een meta. MOF-bestand waarmee de lokale Configuration Manager worden geconfigureerd om de referenties te ontsleutelen met behulp van het certificaat dat is opgeslagen in het archief van de lokale computer en wordt geïdentificeerd door de vinger afdruk.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)Hiermee past u het bestand *. meta. MOF toe.
+- Een \* . meta. MOF-bestand waarmee de lokale Configuration Manager worden geconfigureerd om de referenties te ontsleutelen met behulp van het certificaat dat is opgeslagen in het archief van de lokale computer en wordt geïdentificeerd door de vinger afdruk.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx)past het \* . meta. MOF-bestand toe.
 - Een MOF-bestand dat de configuratie werkelijk toepast. Start-DscConfiguration past de configuratie toe.
 
 Met deze opdrachten voert u de volgende stappen uit:

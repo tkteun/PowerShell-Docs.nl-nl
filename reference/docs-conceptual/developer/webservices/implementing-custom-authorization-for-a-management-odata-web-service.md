@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4989b0bb8a379011cde1a1d2cc803a081d79d97f
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352190"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557291"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Aangepaste autorisatie implementeren voor een Management OData-webservice
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Op rollen gebaseerde autorisatie
 
-In het volgende voor beeld wordt een op rollen gebaseerd autorisatie beleid geïmplementeerd. Het beleid wordt gedefinieerd in een XML-bestand dat zich in de hoofdmap van de toepassing bevindt met de schema bestanden Web. config en MOF en XML-toewijzing. Zie [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md)voor meer informatie over het configureren van het autorisatie schema bestand. In het eerste deel van het voor beeld worden de methoden [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [micro soft. Management. odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) geïmplementeerd. In dit geval roept de interface methoden methoden aan in de `RbacSystem` klasse (hieronder gedefinieerd) die het werkelijke werk van de machtigingen voor de gebruiker controleren.
+In het volgende voor beeld wordt een op rollen gebaseerd autorisatie beleid geïmplementeerd. Het beleid wordt gedefinieerd in een XML-bestand dat zich in de hoofdmap van de toepassing bevindt met de schema bestanden Web. config en MOF en XML-toewijzing. Zie [autorisatie op basis van rollen configureren](./configuring-role-based-authorization.md)voor meer informatie over het configureren van het autorisatie schema bestand. In het eerste deel van het voor beeld worden de methoden [micro soft. Management. odata. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) en [micro soft. Management. odata. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) geïmplementeerd. In dit geval roepen de interface methoden methoden in de `RbacSystem` klasse (gedefinieerd hieronder) die het werkelijke werk van de machtigingen voor de gebruiker controleren.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
