@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakketten met compatibele Power shell-edities of besturings systeem
-ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278351"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691446"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakketten met compatibele Power shell-edities of-besturings systemen
 
@@ -17,6 +17,7 @@ Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin vers
 ## <a name="searching-by-powershell-edition"></a>Zoeken op Power shell-editie
 
 De twee versies van Power shell zijn:
+
 - **Desktop-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een volledige footprint zoals Server Core en Windows Desktop.
 - **Core-editie:** deze editie is gebaseerd op .NET Framework en biedt compatibiliteit met scripts en modules die zijn gericht op versies van PowerShell die worden uitgevoerd op edities van Windows met een verminderde footprint zoals Nano Server en Windows IoT.
 
@@ -77,7 +78,7 @@ Als u bijvoorbeeld zoekt naar een pakket met Power shell core-compatibiliteit da
 
 Tags: "PSEdition_Core" "Windows" "Linux"
 
-Als u wilt zoeken met behulp van Power `Find-Module` shell, kunt u de (en de andere cmdlets in de PowerShellGet-module) gebruiken, bijvoorbeeld:
+Als u wilt zoeken met behulp van Power shell, kunt u de `Find-Module` (en de andere cmdlets in de PowerShellGet-module) gebruiken, bijvoorbeeld:
 
 ```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux

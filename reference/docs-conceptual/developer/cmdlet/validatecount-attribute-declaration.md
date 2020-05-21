@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359166"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692367"
 ---
 # <a name="validatecount-attribute-declaration"></a>Declaratie van het kenmerk ValidateCount
 
@@ -31,21 +31,21 @@ Het kenmerk ValidateCount geeft het minimale en maximale aantal argumenten op da
 
 #### <a name="parameters"></a>Parameters
 
-`MinLength` ([System. Int32][]) vereist. Hiermee geeft u het minimum aantal argumenten op.
+`MinLength`([System. Int32][]) vereist. Hiermee geeft u het minimum aantal argumenten op.
 
 `MaxLength`([System. Int32][]) vereist. Hiermee geeft u het maximum aantal argumenten op.
 
 ## <a name="remarks"></a>Opmerkingen
 
-- Zie [Een aantal argumenten valideren][](Engelstalig) voor meer informatie over het declareren van dit kenmerk.
+- Zie [How to validate a argument Count][](Engelstalig) voor meer informatie over het declareren van dit kenmerk.
 
 - Als dit kenmerk niet wordt aangeroepen, kan de bijbehorende cmdlet-para meter een wille keurig aantal argumenten hebben.
 
 - De Windows Power shell-runtime genereert een fout in de volgende situaties:
 
-    - De kenmerk parameters `MinLength` en `MaxLength` zijn niet van het type [System. Int32][].
+  - De `MinLength` `MaxLength` para meters en zijn niet van het type [System. Int32][].
 
-    - De waarde van de para meter `MaxLength` kenmerk is kleiner dan de waarde van de kenmerk parameter `MinLength`.
+  - De waarde van de `MaxLength` kenmerk parameter is kleiner dan de waarde van de `MinLength` kenmerk parameter.
 
 - Het kenmerk ValidateCount wordt gedefinieerd door de klasse [System. Management. Automation. ValidateCountAttribute][] .
 
@@ -53,12 +53,12 @@ Het kenmerk ValidateCount geeft het minimale en maximale aantal argumenten op da
 
 [System. Management. Automation. ValidateCountAttribute][]
 
-[Een aantal argumenten valideren][]
+[Het aantal argumenten valideren][]
 
-[Een Windows Power shell-cmdlet schrijven][]
+[Een Windows PowerShell-cmdlet schrijven][]
 
-[Een aantal argumenten valideren]: how-to-validate-an-argument-count.md
-[Een Windows Power shell-cmdlet schrijven]: writing-a-windows-powershell-cmdlet.md
+[Het aantal argumenten valideren]: how-to-validate-an-argument-count.md
+[Een Windows PowerShell-cmdlet schrijven]: writing-a-windows-powershell-cmdlet.md
 
 [System. Int32]: /dotnet/api/System.Int32
 [System. Management. Automation. ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

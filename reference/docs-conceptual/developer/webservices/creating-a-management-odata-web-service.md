@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 06b1b050-0bf7-48f5-ba05-43f489d597c0
 caps.latest.revision: 10
-ms.openlocfilehash: 476fce9fc087b870bad93a9204a820c5a84df99e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f903c99300a34c0dfbed598738e96142588d69d9
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352218"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691483"
 ---
 # <a name="creating-a-management-odata-web-service"></a>Een Management OData-webservice maken
 
@@ -24,30 +24,30 @@ Down load en installeer het [PswsRoleBasedPlugins](https://code.msdn.microsoft.c
 > [!IMPORTANT]
 > Voordat u de beheer-ODATA IIS-extensie inschakelt in Windows Server 2008 R2 SP1, moeten de volgende functies zijn ingeschakeld.
 >
-> 1.  IIS-WebServerRole
-> 2.  IIS-WebServer
-> 3.  IIS-HttpTracing
-> 4.  IIS-ManagementOData
+> 1. IIS-WebServerRole
+> 2. IIS-WebServer
+> 3. IIS-HttpTracing
+> 4. IIS-ManagementOData
 
 ## <a name="steps-for-creating-a-management-odata-web-service"></a>Stappen voor het maken van een management OData-webservice
 
 In de volgende onderwerpen wordt beschreven hoe u een management OData-webservice maakt en implementeert.
 
-- [Resources toevoegen aan een management OData-webservice](./adding-resources-to-a-management-odata-web-service.md)
+- [Resources toevoegen aan een Management OData-webservice](./adding-resources-to-a-management-odata-web-service.md)
 
-- [Aangepaste autorisatie implementeren voor een management OData-webservice](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+- [Aangepaste autorisatie implementeren voor een Management OData-webservice](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-- [SessionConfiguration implementeren voor een management OData-webservice](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+- [SessionConfiguration implementeren voor een Management OData-webservice](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-- [Het MOF-schema bestand voor een management OData-webservice ontwerpen](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+- [Het MOF-schemabestand maken voor een Management OData-webservice](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-- [Het XML-schema bestand voor een management OData-webservice ontwerpen](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+- [Het XML-schemabestand maken voor een Management OData-webservice](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-- [Het web. config-bestand voor een management OData-webservice ontwerpen](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+- [Het Web.config-bestand maken voor een Management OData-webservice](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-- [Een management OData-webservice implementeren](./deploying-a-management-odata-web-service.md)
+- [Een Management OData-webservice implementeren](./deploying-a-management-odata-web-service.md)
 
-- [Beheer OData-entiteiten koppelen](./associating-management-odata-entities.md)
+- [Management OData-entiteiten koppelen](./associating-management-odata-entities.md)
 
 ## <a name="see-also"></a>Zie ook
 

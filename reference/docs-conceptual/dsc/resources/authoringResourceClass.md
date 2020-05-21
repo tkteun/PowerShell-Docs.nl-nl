@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een aangepaste DSC-resource schrijven met Power shell-klassen
-ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941157"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692226"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Een aangepaste DSC-resource schrijven met Power shell-klassen
 
@@ -454,7 +454,7 @@ PowerShellVersion = '5.0'
 
 ## <a name="test-the-resource"></a>De resource testen
 
-Nadat u de klasse en de manifest bestanden in de mappen structuur hebt opgeslagen zoals eerder beschreven, kunt u een configuratie maken die gebruikmaakt van de nieuwe resource. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [configuraties](../pull-server/enactingConfigurations.md). Met de volgende configuratie wordt gecontroleerd of het bestand `c:\test\test.txt` al bestaat, en, als dat niet het geval is, kopieert `c:\test.txt` u het bestand van `c:\test.txt` (u moet maken voordat u de configuratie uitvoert).
+Nadat u de klasse en de manifest bestanden in de mappen structuur hebt opgeslagen zoals eerder beschreven, kunt u een configuratie maken die gebruikmaakt van de nieuwe resource. Zie voor meer informatie over het uitvoeren van een DSC-configuratie [configuraties](../pull-server/enactingConfigurations.md). Met de volgende configuratie wordt gecontroleerd of het bestand `c:\test\test.txt` al bestaat, en, als dat niet het geval is, kopieert u het bestand van `c:\test.txt` (u moet maken `c:\test.txt` voordat u de configuratie uitvoert).
 
 ```powershell
 Configuration Test
@@ -486,7 +486,7 @@ Deze para meter heeft een van de drie volgende waarden:
 - `Optional`**PsDscRunAsCredential** is optioneel voor configuraties die deze bron aanroepen. Dit is de standaardwaarde.
 - `Mandatory`**PsDscRunAsCredential** moet worden gebruikt voor elke configuratie die deze bron aanroept.
 - `NotSupported`Configuraties die deze resource aanroepen, kunnen **PsDscRunAsCredential**niet gebruiken.
-- `Default`Hetzelfde als `Optional`.
+- `Default`Hetzelfde als `Optional` .
 
 Gebruik bijvoorbeeld het volgende kenmerk om op te geven dat uw aangepaste resource geen ondersteuning biedt voor het gebruik van **PsDscRunAsCredential**:
 
@@ -500,7 +500,7 @@ class FileResource {
 
 Een module kan meerdere DSC-resources op basis van klassen definiëren. U kunt de mapstructuur op de volgende manieren maken:
 
-1. Definieer de eerste resource in het bestand<ModuleName>'. psm1 ' en de volgende resources onder de map **DSCResources** .
+1. Definieer de eerste resource in het `<ModuleName>.psm1` bestand en de volgende resources in de map **DSCResources** .
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -528,7 +528,7 @@ Een module kan meerdere DSC-resources op basis van klassen definiëren. U kunt d
 
 ### <a name="access-the-user-context"></a>De gebruikers context openen
 
-Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele `$global:PsDscContext`gebruiken.
+Voor toegang tot de gebruikers context vanuit een aangepaste resource kunt u de automatische variabele gebruiken `$global:PsDscContext` .
 
 Met de volgende code wordt bijvoorbeeld de gebruikers context geschreven waarmee de resource wordt uitgevoerd naar de uitgebreide uitvoer stroom:
 

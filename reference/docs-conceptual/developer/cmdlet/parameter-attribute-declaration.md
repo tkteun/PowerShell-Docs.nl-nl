@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7482690c44cdaabf23b886107ac5d112c0fa5c9d
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356173"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692399"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaratie van het kenmerk Parameter
 
@@ -32,23 +32,23 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
 #### <a name="parameters"></a>Parameters
 
-`Mandatory` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter is vereist. Als een vereiste para meter niet wordt opgegeven wanneer de cmdlet wordt aangeroepen, vraagt Windows Power shell de gebruiker om een parameter waarde. De standaardwaarde is `false`.
+`Mandatory`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`Hiermee wordt aangegeven dat de cmdlet-para meter is vereist. Als een vereiste para meter niet wordt opgegeven wanneer de cmdlet wordt aangeroepen, vraagt Windows Power shell de gebruiker om een parameter waarde. De standaardwaarde is `false`.
 
-`ParameterSetName` ([System. String](/dotnet/api/System.String)) een optionele benoemde para meter. Hiermee geeft u de para meter instellen waarvan deze cmdlet-para meter deel uitmaakt. Als er geen parameterset is opgegeven, hoort de para meter bij alle parameter sets.
+`ParameterSetName`([System. String](/dotnet/api/System.String)) een optionele benoemde para meter. Hiermee geeft u de para meter instellen waarvan deze cmdlet-para meter deel uitmaakt. Als er geen parameterset is opgegeven, hoort de para meter bij alle parameter sets.
 
-`Position` ([System. Int32](/dotnet/api/System.Int32)) een optionele benoemde para meter. Hiermee geeft u de positie van de para meter in een Windows Power shell-opdracht.
+`Position`([System. Int32](/dotnet/api/System.Int32)) een optionele benoemde para meter. Hiermee geeft u de positie van de para meter in een Windows Power shell-opdracht.
 
-`ValueFromPipeline` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter de waarde ervan uit een pijplijn object haalt. Geef dit tref woord op als de cmdlet toegang heeft tot het volledige object, niet alleen een eigenschap van het object. De standaardwaarde is `false`.
+`ValueFromPipeline`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de para meter cmdlet van een pijplijn object de waarde ervan meeneemt. Geef dit tref woord op als de cmdlet toegang heeft tot het volledige object, niet alleen een eigenschap van het object. De standaardwaarde is `false`.
 
-`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de para meter cmdlet de waarde van een eigenschap van een pijplijn object met dezelfde naam of dezelfde alias als deze para meter heeft. Als de cmdlet bijvoorbeeld een `Name` para meter heeft en het pijplijn object ook een eigenschap `Name` heeft, wordt de waarde van de eigenschap `Name` toegewezen aan de para meter `Name` van de cmdlet. De standaardwaarde is `false`.
+`ValueFromPipelineByPropertyName`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de para meter cmdlet de waarde van een eigenschap van een pijplijn object heeft die dezelfde naam of dezelfde alias heeft als deze para meter. Als de cmdlet bijvoorbeeld een `Name` para meter heeft en het pijplijn object ook een `Name` eigenschap heeft, wordt de waarde van de `Name` eigenschap toegewezen aan de `Name` para meter van de cmdlet. De standaardwaarde is `false`.
 
-`ValueFromRemainingArguments` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter alle resterende argumenten accepteert die worden door gegeven aan de cmdlet. De standaardwaarde is `false`.
+`ValueFromRemainingArguments`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de cmdlet-para meter alle resterende argumenten accepteert die worden door gegeven aan de cmdlet. De standaardwaarde is `false`.
 
-`HelpMessage` optionele benoemde para meter. Hiermee geeft u een korte beschrijving van de para meter. In Windows Power shell wordt dit bericht weer gegeven wanneer een cmdlet wordt uitgevoerd en er geen verplichte para meter is opgegeven.
+`HelpMessage`Optionele benoemde para meter. Hiermee geeft u een korte beschrijving van de para meter. In Windows Power shell wordt dit bericht weer gegeven wanneer een cmdlet wordt uitgevoerd en er geen verplichte para meter is opgegeven.
 
-`HelpMessageBaseName` optionele benoemde para meter. Hiermee geeft u de locatie op waar resource-id's zich bevinden. Met deze para meter kan bijvoorbeeld een bron-assembly worden opgegeven die Help-berichten bevat die u wilt lokaliseren.
+`HelpMessageBaseName`Optionele benoemde para meter. Hiermee geeft u de locatie op waar resource-id's zich bevinden. Met deze para meter kan bijvoorbeeld een bron-assembly worden opgegeven die Help-berichten bevat die u wilt lokaliseren.
 
-`HelpMessageResourceId` optionele benoemde para meter. Hiermee wordt de resource-id voor een Help-bericht opgegeven.
+`HelpMessageResourceId`Optionele benoemde para meter. Hiermee wordt de resource-id voor een Help-bericht opgegeven.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -56,21 +56,21 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
 - Een cmdlet kan een wille keurig aantal para meters hebben. Voor een betere gebruikers ervaring beperkt u echter het aantal para meters.
 
-- Para meters moeten worden gedeclareerd voor open bare niet-statische velden of eigenschappen. Para meters moeten worden gedeclareerd voor eigenschappen. De eigenschap moet een accessor voor een open bare set hebben en als het sleutel woord `ValueFromPipeline` of `ValueFromPipelineByPropertyName` is opgegeven, moet de eigenschap een open bare Get-accessor hebben.
+- Para meters moeten worden gedeclareerd voor open bare niet-statische velden of eigenschappen. Para meters moeten worden gedeclareerd voor eigenschappen. De eigenschap moet een accessor voor een open bare set hebben en als het `ValueFromPipeline` `ValueFromPipelineByPropertyName` sleutel woord or is opgegeven, moet de eigenschap een open bare Get-accessor hebben.
 
 - Wanneer u positionele para meters opgeeft, beperkt u het aantal positionele para meters in een para meter ingesteld op minder dan vijf. En positionele para meters hoeven niet aaneengesloten te zijn. De posities 5, 100 en 250 werken hetzelfde als de posities 0, 1 en 2.
 
-- Wanneer het sleutel woord `Position` niet is opgegeven, moet er naar de cmdlet-para meter worden verwezen met de naam.
+- Wanneer het `Position` sleutel woord niet is opgegeven, moet er naar de cmdlet-para meter worden verwezen met de naam.
 
 - Let op het volgende wanneer u parameter sets gebruikt:
 
-    - Elke parameterset moet ten minste één unieke para meter hebben. Goede cmdlet-ontwerp geeft aan dat deze unieke para meter ook verplicht moet zijn, indien mogelijk. Als uw cmdlet is ontworpen om zonder para meters te worden uitgevoerd, kan de unieke para meter niet verplicht zijn.
+  - Elke parameterset moet ten minste één unieke para meter hebben. Goede cmdlet-ontwerp geeft aan dat deze unieke para meter ook verplicht moet zijn, indien mogelijk. Als uw cmdlet is ontworpen om zonder para meters te worden uitgevoerd, kan de unieke para meter niet verplicht zijn.
 
-    - Geen enkele parameterset mag meer dan één positionele para meter met dezelfde positie bevatten.
+  - Geen enkele parameterset mag meer dan één positionele para meter met dezelfde positie bevatten.
 
-    - Er mag slechts één para meter in een parameterset `ValueFromPipeline = true`declareren. Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true`definiëren.
+  - Er mag slechts één para meter in een parameterset worden gedeclareerd `ValueFromPipeline = true` . Meerdere para meters kunnen worden gedefinieerd `ValueFromPipelineByPropertyName = true` .
 
-    - Meerdere para meters kunnen `ValueFromPipelineByPropertyName = true`definiëren.
+  - Meerdere para meters kunnen worden gedefinieerd `ValueFromPipelineByPropertyName = true` .
 
 - Zie [cmdlet para meter names](standard-cmdlet-parameter-names-and-types.md)(Engelstalig) voor meer informatie over de richt lijnen voor parameter namen.
 
@@ -82,4 +82,4 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
 [Cmdlet-parameter namen](standard-cmdlet-parameter-names-and-types.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

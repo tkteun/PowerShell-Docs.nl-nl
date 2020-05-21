@@ -3,12 +3,12 @@ title: De manier waarop we problemen beheren
 description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078533"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692528"
 ---
 # <a name="how-we-manage-issues"></a>De manier waarop we problemen beheren
 
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs 
 
 |Voorvoegsel  | Beschrijving                                                         |
 |------- | --------------------------------------------------------------------|
-|Onderwerp    | Wordt gebruikt om aan te geven welk gedeelte van Power shell of welke docs het probleem ondervindt.<br>Deze optie is handig voor eigen aars om problemen voor hun functie te vinden.|
+|Gebied    | Wordt gebruikt om aan te geven welk gedeelte van Power shell of welke docs het probleem ondervindt.<br>Deze optie is handig voor eigen aars om problemen voor hun functie te vinden.|
 |Pri     | Wordt gebruikt om de prioriteit van het probleem aan te geven. Waarde bereik 0-4.        |
 |Probleem   | Hiermee wordt het type feedback voor het probleem geclassificeerd                     |
 |Beoordelen  | Gebruikt voor een probleem waarvoor verdere beoordeling door het team is vereist              |
@@ -60,21 +60,25 @@ Het Power shell docs-team voldoet slechts één keer per week voor het bespreken
 - Voer een opmerking in voor de klant die aangeeft dat het product feedback is en geef een koppeling naar het juiste feedback kanaal op.
 - Optioneel: Kopieer het probleem naar de juiste locatie van de product feedback, voeg een koppeling naar het gekopieerde item toe en sluit het probleem. GEEN problemen naar UserVoice kopiëren.
 
-  | DocSet    | URL van product feedback                                         |
-  | --------- | ------------------------------------------------------------ |
-  | ontwikkelaar | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | DSC       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | galerie   | https://github.com/powershell/powershellgallery/issues/new   |
-  | JEA       | https://github.com/powershell/jea/issues/new                 |
-  | referentielaag | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | WMF       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | DocSet    | URL van product feedback                                           |
+  | --------- | -------------------------------------------------------------- |
+  | ontwikkelaar | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | DSC       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | galerie   | `https://github.com/powershell/powershellgallery/issues/new`   |
+  | JEA       | `https://github.com/powershell/jea/issues/new`                 |
+  | referentielaag | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | WMF       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
 
 ### <a name="support-requests"></a>Ondersteuningsaanvragen
 
 - Als de vraag van de ondersteuning eenvoudig is, beantwoordt u deze en sluit u het probleem.
 - Als de vraag gecompliceerder is, of als de indiener antwoordt met meer vragen, stuurt u deze om naar forums en ondersteunings kanalen. Voorgestelde tekst voor omleiding naar forums:
 
-    > Dit is niet het juiste forum voor dit soort vragen. Probeer uw vraag te plaatsen in een forum Community-ondersteuning. Zie voor een lijst met Community-Forums:https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```Markdown
+  > This is not the right forum for these kinds of questions. Try posting your question in a
+  > community support forum. For a list of community forums see:
+  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```
 
 ### <a name="code-of-conduct-violations"></a>Gedrags code schendingen
 

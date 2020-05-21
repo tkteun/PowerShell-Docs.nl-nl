@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
-ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79406907"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692455"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
@@ -123,10 +123,12 @@ Met IntelliSense en schema validatie kunt u meer fouten tijdens de parsering-en 
 
 > [!NOTE]
 > Elke DSC-resource kan een naam hebben en een **FriendlyName** die is gedefinieerd in het schema van de resource. Hieronder ziet u de eerste twee regels van ' MSFT_ServiceResource. Shema. mof '.
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > Wanneer u deze bron in een configuratie gebruikt, kunt u **MSFT_ServiceResource** of **service**opgeven.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Verschillen Power shell v4 en V5
@@ -145,13 +147,13 @@ Kopieer de inhoud van de gewenste module versie naar het hoogste niveau van de m
 
 ![Er zijn meerdere resource versies opgelost](media/import-dscresource/multiple-resource-versions-fixed.png)
 
-### <a name="resource-location"></a>Resourcelocatie
+### <a name="resource-location"></a>Resource locatie
 
-Bij het ontwerpen en compileren van configuraties kunnen uw resources worden opgeslagen in een map die is opgegeven door uw [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). In Power Shell 4,0 moeten alle DSC-resource modules zijn opgeslagen onder Program Files\WindowsPowerShell\Modules of `$pshome\Modules`. Vanaf Power shell 5,0 is deze vereiste verwijderd en kunnen resource modules worden opgeslagen in een map die is opgegeven door `PSModulePath`.
+Bij het ontwerpen en compileren van configuraties kunnen uw resources worden opgeslagen in een map die is opgegeven door uw [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path). In Power Shell 4,0 moeten alle DSC-resource modules zijn opgeslagen onder Program Files\WindowsPowerShell\Modules of `$pshome\Modules` . Vanaf Power shell 5,0 is deze vereiste verwijderd en kunnen resource modules worden opgeslagen in een map die is opgegeven door `PSModulePath` .
 
 ### <a name="moduleversion-added"></a>ModuleVersion toegevoegd
 
-Vanaf Power shell 5,0 kunt u `-ModuleVersion` met de para meter opgeven welke versie van een module moet worden gebruikt in uw configuratie.
+Vanaf Power shell 5,0 `-ModuleVersion` kunt u met de para meter opgeven welke versie van een module moet worden gebruikt in uw configuratie.
 
 ## <a name="see-also"></a>Zie ook
 

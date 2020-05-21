@@ -12,12 +12,12 @@ helpviewer_keywords:
 - attributes, ValidateRange
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
-ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359133"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692007"
 ---
 # <a name="validaterange-attribute-declaration"></a>Declaratie van het kenmerk ValidateRange
 
@@ -31,19 +31,19 @@ Met het kenmerk ValidateRange worden de minimum-en maximum waarden (het bereik) 
 
 #### <a name="parameters"></a>Parameters
 
-`MinRange` ([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane minimum waarde.
+`MinRange`([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane minimum waarde.
 
-`MaxRange` ([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane maximum waarde.
+`MaxRange`([System. object](/dotnet/api/system.object)) vereist. Hiermee geeft u de toegestane maximum waarde.
 
 ## <a name="remarks"></a>Opmerkingen
 
-- De Windows Power shell-runtime genereert een constructie fout wanneer de waarde van de para meter `MinRange` groter is dan de waarde van de para meter `MaxRange`.
+- De Windows Power shell-runtime genereert een constructie fout wanneer de waarde van de `MinRange` para meter groter is dan de waarde van de `MaxRange` para meter.
 
 - De Windows Power shell-runtime genereert een validatie fout in de volgende situaties:
 
-    - Wanneer de waarde van het argument kleiner is dan de `MinRange` limiet of groter is dan de limiet van `MaxRange`.
+  - Wanneer de waarde van het argument kleiner is dan de `MinRange` limiet of groter is dan de `MaxRange` limiet.
 
-    - Wanneer het argument niet van hetzelfde type is als de `MinRange` en de `MaxRange`-para meters.
+  - Wanneer het argument niet van hetzelfde type is als de `MinRange` `MaxRange` para meters en.
 
 - Het kenmerk ValidateRange wordt gedefinieerd door de klasse [System. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) .
 
@@ -51,4 +51,4 @@ Met het kenmerk ValidateRange worden de minimum-en maximum waarden (het bereik) 
 
 [System. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

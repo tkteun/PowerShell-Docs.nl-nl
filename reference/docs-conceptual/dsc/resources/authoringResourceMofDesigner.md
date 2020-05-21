@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Het hulp programma resource Designer gebruiken
-ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500633"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692196"
 ---
 # <a name="using-the-resource-designer-tool"></a>Het hulp programma resource Designer gebruiken
 
@@ -19,6 +19,7 @@ Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven d
 Het eerste wat u moet doen, is beslissen over eigenschappen die de resource beschikbaar maakt. In dit voor beeld wordt een Active Directory gebruiker gedefinieerd met de volgende eigenschappen.
 
 Parameter naam beschrijving
+
 * **Gebruikers naam**: sleutel eigenschap die een unieke identificatie vormt van een gebruiker.
 * **Zorg ervoor**: Hiermee geeft u op of het gebruikers account aanwezig of afwezig moet zijn. Deze para meter heeft slechts twee mogelijke waarden.
 * **DomainCredential**: het domein wachtwoord voor de gebruiker.

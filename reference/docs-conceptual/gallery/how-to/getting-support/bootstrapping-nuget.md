@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: Galerie, Power shell, cmdlet, psget
 title: Boots trap-NuGet
-ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 139b2c5a9e742eca8f5ac36c9acd721216584335
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935168"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690864"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Boots trap de NuGet-provider en NuGet. exe
 
@@ -140,13 +140,13 @@ Import-PackageProvider -Name NuGet
 
 ## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>NuGet. exe hand matig Boots trappen voor het ondersteunen van publicatie bewerkingen op een computer die niet is verbonden met Internet
 
-Naast het proces voor het hand matig Boots trapn van de NuGet-provider, is het binaire bestand NuGet. exe vereist als de computer wordt gebruikt `Publish-Module` voor `Publish-Script` het publiceren van modules of scripts in een persoonlijke galerie met behulp van de-of-cmdlets.
+Naast het proces voor het hand matig Boots trapn van de NuGet-provider, is het `Publish-Module` binaire bestand NuGet. exe vereist als de computer wordt gebruikt voor het publiceren van modules of scripts in een persoonlijke galerie met behulp van de-of `Publish-Script` -cmdlets.
 
 De meest voorkomende use-case voor dit scenario is wanneer een persoonlijke galerie beschikbaar is voor de ondersteuning van een geïsoleerde omgeving. Er zijn twee opties voor het verkrijgen van het bestand NuGet. exe.
 
 Een optie is een Boots trap uitvoeren van een computer die is verbonden met internet en de bestanden kopiëren naar de offline machines met behulp van een vertrouwd proces. Na Boots traping van de met internet verbonden computer, bevindt het binaire bestand NuGet. exe zich in een van de volgende mappen:
 
- - Als de `Publish-Module` cmdlets of `Publish-Script` zijn uitgevoerd met verhoogde machtigingen (als beheerder):
+- Als de `Publish-Module` `Publish-Script` cmdlets of zijn uitgevoerd met verhoogde machtigingen (als beheerder):
 
    ```powershell
    $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
@@ -158,9 +158,9 @@ Een optie is een Boots trap uitvoeren van een computer die is verbonden met inte
   $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
-Een tweede mogelijkheid is om NuGet. exe te downloaden van de NuGet.Org- [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) website: wanneer u een Brok-versie voor productie machines selecteert, moet u ervoor zorgen dat deze later is dan 2.8.5.208 en de versie identificeren die wordt aanbevolen. Vergeet niet om het bestand te deblokkeren als dit is gedownload met behulp van een browser. Dit kan worden uitgevoerd met behulp `Unblock-File` van de-cmdlet.
+Een tweede mogelijkheid is om NuGet. exe te downloaden van de NuGet.Org-website: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Wanneer u een Brok-versie voor productie machines selecteert, moet u ervoor zorgen dat deze later is dan 2.8.5.208 en de versie identificeren die wordt aanbevolen. Vergeet niet om het bestand te deblokkeren als dit is gedownload met behulp van een browser. Dit kan worden uitgevoerd met behulp van de- `Unblock-File` cmdlet.
 
-In beide gevallen kan het bestand NuGet. exe worden gekopieerd naar een wille keurige locatie in `$env:path`, maar de standaard locaties zijn:
+In beide gevallen kan het bestand NuGet. exe worden gekopieerd naar een wille keurige locatie in `$env:path` , maar de standaard locaties zijn:
 
 - Om het uitvoer bare bestand beschikbaar te maken zodat alle gebruikers `Publish-Module` `Publish-Script` cmdlets kunnen gebruiken:
 

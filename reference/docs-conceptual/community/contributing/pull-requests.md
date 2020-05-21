@@ -3,12 +3,12 @@ title: Pull-aanvragen verzenden
 description: In dit artikel wordt uitgelegd hoe u pull-aanvragen verzendt naar de Power shell-docs-opslag plaats.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078505"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690961"
 ---
 # <a name="how-to-submit-pull-requests"></a>Pull-aanvragen verzenden
 
@@ -16,7 +16,7 @@ Als u inhoud wilt wijzigen, moet u een pull-aanvraag (PR) bij uw Fork indienen. 
 
 ## <a name="target-the-correct-branch"></a>De juiste vertakking kiezen
 
-Alle pull-aanvragen moeten gericht `staging` zijn op de vertakking. Wijzigingen mogen nooit naar de `live` vertakking worden verzonden. Wijzigingen die in de `staging` vertakking zijn aangebracht, `live`worden samengevoegd in, waarbij wijzigingen in `live`worden overschreven.
+Alle pull-aanvragen moeten gericht zijn op de `staging` vertakking. Wijzigingen mogen nooit naar de vertakking worden verzonden `live` . Wijzigingen die in de `staging` vertakking zijn aangebracht, worden samengevoegd in `live` , waarbij wijzigingen in worden overschreven `live` .
 
 Als u een wijziging indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u op een release vertakking voor die versie. Uw PR moet zijn gericht op de release vertakking. Releasevertakkingen hebben het volgende naamgevingspatroon: `release-<version>`.
 

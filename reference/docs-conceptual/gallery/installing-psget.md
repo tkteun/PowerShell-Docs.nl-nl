@@ -3,12 +3,12 @@ ms.date: 09/19/2019
 contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: PowerShellGet installeren
-ms.openlocfilehash: 69dc851c54089b47fb19e5b32990d579d26effb9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f42eb0df101eb63a5dc267196fa9f666747b8e35
+ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328978"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83727792"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet installeren
 
@@ -48,23 +48,28 @@ Exit
 
 Deze instructies zijn van toepassing op computers waarop de **Package Management-preview** is geïnstalleerd of waarvoor geen versie van **PowerShellGet** is geïnstalleerd.
 
-De `Save-Module` cmdlet wordt gebruikt in beide sets instructies. `Save-Module`Hiermee worden een module en eventuele afhankelijkheden uit een geregistreerde opslag plaats gedownload en opgeslagen. De meest recente versie van de module wordt opgeslagen op een opgegeven pad op de lokale computer, maar is niet geïnstalleerd. Zie [Save-module](/powershell/module/PowershellGet/Save-Module)voor meer informatie.
+De `Save-Module` cmdlet wordt gebruikt in beide sets instructies. `Save-Module`Hiermee worden een module en eventuele afhankelijkheden uit een geregistreerde opslag plaats gedownload en opgeslagen. De meest recente versie van de module wordt opgeslagen op een opgegeven pad op de lokale computer, maar is niet geïnstalleerd. Als u de modules in Power Shell 3,0 of 4,0 wilt installeren, kopieert u de mappen in de module opgeslagen naar `$env:ProgramFiles\WindowsPowerShell\Modules` .
+
+Zie [Save-module](/powershell/module/PowershellGet/Save-Module)voor meer informatie.
+
+> [!NOTE]
+> Power Shell 3,0 en Power Shell 4,0 ondersteunen slechts één versie van een module. Vanaf Power shell 5,0 worden modules geïnstalleerd in `<modulename>\<version>` . Zo hebt u de mogelijkheid om meerdere versies naast elkaar te installeren. Nadat u de module hebt gedownload met behulp `Save-Module` van, moet u de bestanden van de `<modulename>\<version>` naar de `<modulename>` map op de doel computer kopiëren.
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Computers waarop het package management-voor beeld is geïnstalleerd
 
-1. Gebruik `Save-Module` vanuit een Power shell-sessie om de modules op te slaan in een lokale map.
+1. Gebruik vanuit een Power shell-sessie `Save-Module` om de modules op te slaan in een lokale map.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
 1. Zorg ervoor dat de **PowerShellGet** -en **Package Management** -modules niet zijn geladen in andere processen.
-1. Verwijder de inhoud van de mappen: `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` en `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\`.
+1. Verwijder de inhoud van de mappen: `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` en `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` .
 1. Open de Power shell-console opnieuw met verhoogde machtigingen en voer de volgende opdrachten uit.
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
    ```
 
 #### <a name="computers-without-powershellget"></a>Computers zonder PowerShellGet

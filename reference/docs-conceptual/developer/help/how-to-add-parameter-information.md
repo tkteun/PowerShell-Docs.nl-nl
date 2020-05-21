@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
-ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b9ccca75c2d9126e84a7f486ffe803042a742b62
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353282"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565557"
 ---
 # <a name="how-to-add-parameter-information"></a>Parametergegevens toevoegen
 
@@ -157,7 +157,7 @@ De inhoud van de para METERs sectie moet consistent zijn met de inhoud van de se
 
 Hier volgen enkele dingen die u moet onthouden wanneer u para meters toevoegt.
 
-- De kenmerken van de para meter worden niet weer gegeven in alle weer gaven van het Help-onderwerp van de cmdlet. Ze worden echter wel weer gegeven in een tabel die volgt op de parameter beschrijving, wanneer de gebruiker vraagt om de volledige (Get-Help \<cmdlet naam >-Full) of de para meter (Get-Help \<cmdlet naam >-para meter) weer gave van het onderwerp.
+- De kenmerken van de para meter worden niet weer gegeven in alle weer gaven van het Help-onderwerp van de cmdlet. Ze worden echter weer gegeven in een tabel die volgt op de parameter beschrijving wanneer de gebruiker vraagt naar de volledige (Get-Help \< cmdlet naam>-Full) of para meter (Get-Help \< cmdlet naam>-para meter) weer gave van het onderwerp.
 
 - De parameter beschrijving is een van de belangrijkste onderdelen van een Help-onderwerp voor cmdlets. De beschrijving moet kort en uitgebreid zijn. Houd er ook rekening mee dat als de parameter beschrijving te lang wordt, bijvoorbeeld wanneer twee para meters met elkaar communiceren, kunt u meer inhoud toevoegen in de sectie Notities van het Help-onderwerp van de cmdlet.
 
@@ -171,11 +171,11 @@ Hier volgen enkele dingen die u moet onthouden wanneer u para meters toevoegt.
 
 De standaard waarde van de para meter is de waarde die wordt gebruikt als de para meter niet is opgegeven op de opdracht regel. Houd er rekening mee dat de standaard waarde Optioneel is en niet nodig is voor sommige para meters, zoals de vereiste para meters. U moet echter een standaard waarde opgeven voor de meeste optionele para meters.
 
-De standaard waarde helpt de gebruiker bij het begrijpen van het effect van het gebruik van de para meter. Beschrijf de standaard waarde zeer specifiek, zoals de ' huidige map ' of de ' Windows Power shell-installatiemap ($pshome) ' voor een optioneel pad. U kunt ook een zin schrijven waarin de standaard waarde wordt beschreven, zoals de volgende zin die wordt gebruikt voor de para meter `PassThru`: "als PassThru niet is opgegeven, geeft de cmdlet geen objecten uit de pijp lijn."  Omdat de waarde tegenover de veld naam '**standaard waarde**' wordt weer gegeven, hoeft u niet de term ' standaard waarde ' in de vermelding op te geven.
+De standaard waarde helpt de gebruiker bij het begrijpen van het effect van het gebruik van de para meter. Beschrijf de standaard waarde zeer specifiek, zoals de ' huidige map ' of de ' Windows Power shell-installatiemap ($pshome) ' voor een optioneel pad. U kunt ook een zin schrijven waarin de standaard waarde wordt beschreven, zoals de volgende zin die wordt gebruikt voor de `PassThru` para meter: "als PassThru niet is opgegeven, geeft de cmdlet geen objecten uit de pijp lijn."  Omdat de waarde tegenover de veld naam '**standaard waarde**' wordt weer gegeven, hoeft u niet de term ' standaard waarde ' in de vermelding op te geven.
 
-De standaard waarde van de para meter wordt niet weer gegeven in alle weer gaven van het Help-onderwerp van de cmdlet. Het wordt echter wel weer gegeven in een tabel (samen met de parameter kenmerken) op basis van de parameter beschrijving wanneer de gebruiker de volledige (Get-Help \<cmdlet naam >-Full) of de para meter (Get-Help \<cmdlet naam >-para meter) van het onderwerp weergeeft.
+De standaard waarde van de para meter wordt niet weer gegeven in alle weer gaven van het Help-onderwerp van de cmdlet. Het wordt echter weer gegeven in een tabel (samen met de parameter kenmerken) op basis van de parameter beschrijving wanneer de gebruiker vraagt naar de volledige (Get-Help \< cmdlet naam>-Full) of de para meter (Get-Help \< cmdlet naam>-para meter) weer gave van het onderwerp.
 
-In het volgende XML-bestand ziet u een paar `<dev:defaultValue>` Tags die zijn toegevoegd aan het knoop punt `<command:parameter>`. U ziet dat de standaard waarde direct na het afsluitende `</command:parameterValue>` label wordt gevolgd (wanneer de parameter waarde is opgegeven) of het afsluitende `</maml:description>` label van de parameter beschrijving. Naam.
+In het volgende XML-bestand ziet `<dev:defaultValue>` u een paar tags die zijn toegevoegd aan het `<command:parameter>` knoop punt. U ziet dat de standaard waarde direct na het afsluitende `</command:parameterValue>` label wordt gevolgd (wanneer de parameter waarde is opgegeven) of de afsluit `</maml:description>` code van de parameter beschrijving. naam.
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ In het volgende XML-bestand ziet u een paar `<dev:defaultValue>` Tags die zijn t
 
 Waarden voor opgesomde typen toevoegen
 
-Als de para meter meerdere waarden of waarden van een opgesomd type heeft, kunt u een optioneel \<dev: possibleValues > knoop punt gebruiken. Met dit knoop punt kunt u een naam en beschrijving voor meerdere waarden opgeven.
+Als de para meter meerdere waarden of waarden van een opgesomd type heeft, kunt u een optioneel \< dev: possibleValues>-knoop punt gebruiken. Met dit knoop punt kunt u een naam en beschrijving voor meerdere waarden opgeven.
 
-Houd er rekening mee dat de beschrijvingen van de opgesomde waarden niet worden weer gegeven in een van de standaard-Help-weer gaven die worden weer gegeven door de `Get-Help`-cmdlet, maar andere Help-viewers kunnen deze inhoud in hun weer gaven weer geven.
+Houd er rekening mee dat de beschrijvingen van de opgesomde waarden niet worden weer gegeven in een van de standaard Help-weer gaven die worden weer gegeven door de `Get-Help` cmdlet, maar dat andere Help-viewers deze inhoud kunnen weer geven in hun weer gaven.
 
-Het volgende XML-bestand bevat een `<dev:possibleValues>` knoop punt met twee opgegeven waarden.
+In het volgende XML-bestand ziet u een `<dev:possibleValues>` knoop punt met twee opgegeven waarden.
 
 ```xml
 <command:parameters>

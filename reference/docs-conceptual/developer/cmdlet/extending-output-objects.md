@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
-ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359327"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690894"
 ---
 # <a name="extending-output-objects"></a>Uitvoerobjecten uitbreiden
 
-U kunt de .NET Framework-objecten die worden geretourneerd door cmdlets, functies en scripts uitbreiden met behulp van typen bestanden (. ps1xml). Typen bestanden zijn XML-bestanden waarmee u eigenschappen en methoden aan bestaande objecten kunt toevoegen. Windows Power shell biedt bijvoorbeeld het bestand types. ps1xml, waarmee elementen aan verschillende bestaande .NET Framework objecten worden toegevoegd. Het bestand types. ps1xml bevindt zich in de installatiemap van Windows Power shell (`$pshome`). U kunt uw eigen bestands typen maken om deze objecten verder uit te breiden of om andere objecten uit te breiden. Wanneer u een object uitbreidt met behulp van een bestands typen, wordt een wille keurig exemplaar van het object uitgebreid met de nieuwe elementen.
+U kunt de .NET Framework-objecten die worden geretourneerd door cmdlets, functies en scripts uitbreiden met behulp van typen bestanden (. ps1xml). Typen bestanden zijn XML-bestanden waarmee u eigenschappen en methoden aan bestaande objecten kunt toevoegen. Windows Power shell biedt bijvoorbeeld het bestand types. ps1xml, waarmee elementen aan verschillende bestaande .NET Framework objecten worden toegevoegd. Het bestand types. ps1xml bevindt zich in de installatiemap van Windows Power shell ( `$pshome` ). U kunt uw eigen bestands typen maken om deze objecten verder uit te breiden of om andere objecten uit te breiden. Wanneer u een object uitbreidt met behulp van een bestands typen, wordt een wille keurig exemplaar van het object uitgebreid met de nieuwe elementen.
 
 ## <a name="extending-the-systemarray-object"></a>Het object System. array uitbreiden
 
-In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het bestand types. ps1xml. [Systeem. matrix](/dotnet/api/System.Array) -objecten hebben standaard een `Length`-eigenschap die het aantal objecten in de matrix vermeldt. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de `Count` alias eigenschap toe, die dezelfde waarde als de eigenschap `Length` weergeeft. De volgende XML voegt de eigenschap `Count` toe aan het type [System. array](/dotnet/api/System.Array) .
+In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het bestand types. ps1xml. [Systeem. matrix](/dotnet/api/System.Array) -objecten hebben standaard een `Length` eigenschap die het aantal objecten in de matrix vermeldt. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de `Count` alias eigenschap toe, die dezelfde waarde als de `Length` eigenschap weergeeft. De volgende XML-code voegt de `Count` eigenschap toe aan het type [System. array](/dotnet/api/System.Array) .
 
 ```xml
 <Type>
@@ -43,6 +43,7 @@ Get-Member -InputObject (1,2,3,4)
 ```
 
 De opdracht retourneert de volgende resultaten.
+
 ```output
 Name           MemberType    Definition
 ----           ----------    ----------
@@ -55,7 +56,8 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
-U kunt de eigenschap `Count` of de eigenschap `Length` gebruiken om te bepalen hoeveel objecten zich in een matrix bevinden. Bijvoorbeeld:
+
+U kunt de `Count` eigenschap of de eigenschap gebruiken `Length` om te bepalen hoeveel objecten zich in een matrix bevinden. Bijvoorbeeld:
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -75,7 +77,7 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>Aangepaste bestands typen
 
-Als u een bestand met aangepaste typen wilt maken, moet u eerst een bestaand type bestand kopiëren. Het nieuwe bestand kan een wille keurige naam hebben, maar het moet de bestands extensie. ps1xml hebben. Wanneer u het bestand kopieert, kunt u het nieuwe bestand plaatsen in elke map die toegankelijk is voor Windows Power shell, maar het is handig om de bestanden in de installatie directory van Windows Power shell (`$pshome`) of in een submap van de installatiemap te plaatsen.
+Als u een bestand met aangepaste typen wilt maken, moet u eerst een bestaand type bestand kopiëren. Het nieuwe bestand kan een wille keurige naam hebben, maar het moet de bestands extensie. ps1xml hebben. Wanneer u het bestand kopieert, kunt u het nieuwe bestand plaatsen in elke map die toegankelijk is voor Windows Power shell, maar het is handig om de bestanden in de installatie directory van Windows Power shell ( `$pshome` ) of in een submap van de installatiemap te plaatsen.
 
 Om uw eigen uitgebreide typen aan het bestand toe te voegen, voegt u een-element types toe voor elk object dat u wilt uitbreiden. De volgende onderwerpen bevatten voor beelden.
 
@@ -87,7 +89,7 @@ Om uw eigen uitgebreide typen aan het bestand toe te voegen, voegt u een-element
 
 Nadat u uw eigen uitgebreide typen hebt gedefinieerd, kunt u een van de volgende methoden gebruiken om uw uitgebreide objecten beschikbaar te maken:
 
-- Gebruik de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) om het nieuwe bestand toe te voegen om het uitgebreide-type bestand beschikbaar te maken voor de huidige sessie. Als u wilt dat uw typen voor rang hebben op de typen die zijn gedefinieerd in andere typen bestanden (met inbegrip van het bestand types. ps1xml), gebruikt u de para meter `PrependData` van de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
+- Gebruik de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) om het nieuwe bestand toe te voegen om het uitgebreide-type bestand beschikbaar te maken voor de huidige sessie. Als u wilt dat uw typen voor rang hebben op de typen die zijn gedefinieerd in andere typen bestanden (met inbegrip van het bestand types. ps1xml), gebruikt u de `PrependData` para meter van de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
 - Als u het uitgebreide-type bestand beschikbaar wilt maken voor alle toekomstige sessies, voegt u het typen bestand toe aan een module, exporteert u de huidige sessie of voegt u de opdracht [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) toe aan uw Windows Power shell-profiel.
 
 ## <a name="signing-types-files"></a>Bestands typen voor ondertekening
@@ -98,8 +100,8 @@ Bestands typen moeten digitaal worden ondertekend om knoeien te voor komen, omda
 
 [Standaard eigenschappen voor objecten definiëren](./extending-properties-for-objects.md)
 
-[Standaard methoden voor objecten definiëren](./defining-default-methods-for-objects.md)
+[Standaardmethoden voor objecten definiëren](./defining-default-methods-for-objects.md)
 
-[Standaard leden sets voor objecten definiëren](./defining-default-member-sets-for-objects.md)
+[Standaardledenreeksen voor objecten definiëren](./defining-default-member-sets-for-objects.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

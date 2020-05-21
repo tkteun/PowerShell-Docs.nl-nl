@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: De lokale Configuration Manager configureren
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271845"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691988"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De lokale Configuration Manager configureren
 
@@ -125,6 +125,7 @@ Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
 |ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
 
 > [!NOTE]
+>
 > * Ondersteund in Windows versie 1809 en hoger.
 
 Een voorbeeld script voor het vereenvoudigen van het configureren van de ConfigurationRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -152,6 +153,7 @@ Een **ResourceRepositoryWeb** definieert de volgende eigenschappen.
 |ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
 
 > [!NOTE]
+>
 > * Ondersteund in Windows versie 1809 en hoger.
 
 Een voorbeeld script voor het vereenvoudigen van het configureren van de ResourceRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -180,6 +182,7 @@ De rapport server functie is niet compatibel met de SMB-gebaseerde pull-service.
 |ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
 
 > [!NOTE]
+>
 > * Ondersteund in Windows versie 1809 en hoger.
 
 Een voorbeeld script voor het vereenvoudigen van het configureren van de ReportServerWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)

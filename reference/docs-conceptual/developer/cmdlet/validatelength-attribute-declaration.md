@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a1a494534169b2da470286020dfacfa8e9084839
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359152"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692320"
 ---
 # <a name="validatelength-attribute-declaration"></a>Declaratie van het kenmerk ValidateLength
 
@@ -31,9 +31,9 @@ Het kenmerk ValidateLength geeft het minimale en maximale aantal tekens voor een
 
 #### <a name="parameters"></a>Parameters
 
-`MinLength` ([System. Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het minimum aantal tekens op dat is toegestaan.
+`MinLength`([System. Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het minimum aantal tekens op dat is toegestaan.
 
-`MaxLength` ([System. Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het maximum aantal tekens op dat is toegestaan.
+`MaxLength`([System. Int32](/dotnet/api/System.Int32)) vereist. Hiermee geeft u het maximum aantal tekens op dat is toegestaan.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -43,11 +43,11 @@ Het kenmerk ValidateLength geeft het minimale en maximale aantal tekens voor een
 
 - De Windows Power shell-runtime genereert een fout in de volgende situaties:
 
-    - Wanneer de waarde van de para meter `MaxLength` van het kenmerk kleiner is dan de waarde van de kenmerk parameter `MinLength`.
+  - Wanneer de waarde van de `MaxLength` kenmerk parameter kleiner is dan de waarde van de `MinLength` kenmerk parameter.
 
-    - Wanneer de `MaxLength` kenmerk parameter is ingesteld op 0.
+  - Wanneer de `MaxLength` kenmerk parameter is ingesteld op 0.
 
-    - Wanneer het argument geen teken reeks is.
+  - Wanneer het argument geen teken reeks is.
 
 - Het kenmerk ValidateLength wordt gedefinieerd door de klasse [System. Management. Automation. Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) .
 
@@ -55,4 +55,4 @@ Het kenmerk ValidateLength geeft het minimale en maximale aantal tekens voor een
 
 [System. Management. Automation. Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

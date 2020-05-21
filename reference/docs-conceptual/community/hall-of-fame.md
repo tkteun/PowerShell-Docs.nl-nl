@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell docs?
 description: Lijst met wijzigingen in de Power shell-documentatie
 ms.date: 04/29/2020
-ms.openlocfilehash: a3b99c4d98362f2509ca9974d32c1a4d4780b664
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630971"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692506"
 ---
 # <a name="community-contributor-hall-of-fame"></a>Community contributor-hal van Fame
 
@@ -15,7 +15,7 @@ De Power shell-Community is een levendige en samen werkende groep. We stellen al
 
 Met ingang van 2020 april zijn deze GitHub-gebruikers de enige tijd van de community van de meeste mede werkers.
 
-### <a name="pull-requests-opened"></a>Pull-aanvragen geopend
+## <a name="pull-requests-opened"></a>Pull-aanvragen geopend
 
 Pull-aanvragen helpen ons deze problemen op te lossen en de documentatie beter voor iedereen te maken.
 
@@ -40,7 +40,7 @@ Pull-aanvragen helpen ons deze problemen op te lossen en de documentatie beter v
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### <a name="github-issues-opened"></a>GitHub problemen geopend
+## <a name="github-issues-opened"></a>GitHub problemen geopend
 
 GitHub-problemen helpen ons bij het identificeren van fouten en hiaten in onze documentatie.
 

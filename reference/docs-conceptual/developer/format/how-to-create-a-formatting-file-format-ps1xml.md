@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
-ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a578dd63a53562f992b2970573258b8676e2a52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354955"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692266"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Een opmaakbestand (.format.ps1xml) maken
 
@@ -36,11 +36,11 @@ In dit onderwerp wordt beschreven hoe u een opmaak bestand (. Format. ps1xml) ma
    </Configuration>
    ```
 
-   - Met de \<Configuration >\</configuratie > Tags wordt het hoofd knooppunt `Configuration` gedefinieerd. Alle extra XML-tags worden inge sloten binnen dit knoop punt.
+   - De `<Configuration></Configuration>` Tags definiëren het hoofd `Configuration` knooppunt. Alle extra XML-tags worden inge sloten binnen dit knoop punt.
 
-   - De <ViewDefinitions></ViewDefinitions> labels definiëren het `ViewDefinitions` knoop punt. Alle weer gaven worden binnen dit knoop punt gedefinieerd.
+   - De `<ViewDefinitions></ViewDefinitions>` Tags bepalen het `ViewDefinitions` knoop punt. Alle weer gaven worden binnen dit knoop punt gedefinieerd.
 
-3. Sla het bestand op naar de installatiemap van Windows Power shell, naar de map module, of naar een submap van de map module. Gebruik de volgende naam indeling wanneer u het bestand opslaat: `MyFile.format.ps1xml`. Het format teren van bestanden moet de extensie `.format.ps1xml` gebruiken.
+3. Sla het bestand op naar de installatiemap van Windows Power shell, naar de map module, of naar een submap van de map module. Gebruik de volgende naam indeling wanneer u het bestand opslaat: `MyFile.format.ps1xml` . Het format teren van bestanden moet de `.format.ps1xml` extensie gebruiken.
 
    U bent nu klaar om weer gaven toe te voegen aan het opmaak bestand. Er is geen limiet voor het aantal weer gaven dat kan worden gedefinieerd in een opmaak bestand. U kunt één weer gave voor elk object, meerdere weer gaven voor hetzelfde object of één weer gave die wordt gebruikt door meerdere objecten toevoegen.
 

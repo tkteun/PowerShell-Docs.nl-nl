@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500688"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692249"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -86,6 +86,7 @@ De module **PowerShellGet** wordt door de module gedownload naar:
 `C:\Program Files\Windows PowerShell\Modules`
 
 Taak plannen
+
 - Hebt u toegang tot de installatie bestanden voor Windows Server 2012 R2?
 - Heeft de implementatie omgeving via internet toegang tot het downloaden van WMF en de module vanuit de online galerie?
 - Hoe installeert u de nieuwste beveiligings updates na de installatie van het besturings systeem?
@@ -102,6 +103,7 @@ Pull-server implementaties worden ondersteund op zowel fysieke als virtuele serv
 - Netwerk: Gigabit Ethernet-adapter
 
 Taak plannen
+
 - Gaat u implementeren op fysieke hardware of op een virtualisatieplatform?
 - Wat is het proces voor het aanvragen van een nieuwe server voor uw doel omgeving?
 - Wat is de gemiddelde verlever tijd voor een server die beschikbaar moet zijn?
@@ -121,14 +123,15 @@ Met een DNS-CNAME kunt u een alias maken om te verwijzen naar uw host (A)-record
 Houd bij het kiezen van een naam voor de DNS-record de oplossings architectuur in acht.
 Als taak verdeling wordt gebruikt, moet het certificaat dat wordt gebruikt voor het beveiligen van verkeer via HTTPS dezelfde naam hebben als de DNS-record.
 
-       Scenario        |                                                                                         Best Practice
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Testomgeving       | Reproduceer, indien mogelijk, de geplande productie omgeving. Een hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres worden gebruikt in plaats van een hostnaam.
-Implementatie met één knoop punt | Maak een DNS CNAME-record die verwijst naar de hostnaam van de server.
+|       Scenario        |                                                                                         Best Practice
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Testomgeving       | Reproduceer, indien mogelijk, de geplande productie omgeving. Een hostnaam van een server is geschikt voor eenvoudige configuraties. Als DNS niet beschikbaar is, kan een IP-adres worden gebruikt in plaats van een hostnaam.
+|Implementatie met één knoop punt | Maak een DNS CNAME-record die verwijst naar de hostnaam van de server.
 
 Zie [Configuring DNS round robin in Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10))(Engelstalig) voor meer informatie.
 
 Taak plannen
+
 - Weet u met wie u contact moet opnemen om DNS-records te maken en te wijzigen?
 - Wat is de gemiddelde oplever van een aanvraag voor een DNS-record?
 - Moet u statische hostname-records (A) aanvragen voor servers?
@@ -143,6 +146,7 @@ Hoewel het mogelijk is om een pull-server te implementeren met behulp van HTTP, 
 De certificaat vereisten voor het beveiligen van HTTPS-verkeer voor de pull-server zijn niet anders dan het beveiligen van elke andere HTTPS-website. De **webserver** sjabloon in een Windows Server Certificate Services voldoet aan de vereiste mogelijkheden.
 
 Taak plannen
+
 - Als certificaat aanvragen niet worden geautomatiseerd, wie moet u contact opnemen om een certificaat aan te vragen?
 - Wat is de gemiddelde oplever actie voor de aanvraag?
 - Hoe wordt het certificaat bestand overgezet?
@@ -159,6 +163,7 @@ Een pull-server kan worden geïmplementeerd met behulp van een webservice die wo
 Clients die communiceren met de webservice maken een aanvraag voor informatie die in één antwoord wordt geretourneerd. Er zijn geen opeenvolgende aanvragen vereist, dus het is niet nodig om ervoor te zorgen dat sessies op één server op elk moment worden onderhouden.
 
 Taak plannen
+
 - Welke oplossing wordt gebruikt voor taak verdeling verkeer tussen servers?
 - Als er een hardware-load balancer wordt gebruikt, kan deze een nieuwe configuratie toevoegen aan het apparaat?
 - Wat is de gemiddelde verwerkings tijd voor een aanvraag om een nieuwe webservice met gelijke taak verdeling te configureren?
@@ -187,6 +192,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Taak plannen
+
 - Als u van plan bent een test-of lab-omgeving te plannen, welke scenario's zijn de sleutel die moet worden gevalideerd?
 - Zijn er openbaar beschik bare modules die resources bevatten voor alles wat u nodig hebt, of moet u uw eigen resources maken?
 - Heeft uw omgeving Internet toegang om open bare modules op te halen?
@@ -210,6 +216,7 @@ Het plannen van configuratie- **guid's** is extra aandacht wanneer u een pull-Se
   De GUID is iets wat moet worden beschouwd als gevoelige gegevens omdat deze kan worden gebruikt door iemand met kwaad aardigheid om informatie te verkrijgen over hoe servers worden geïmplementeerd en geconfigureerd in uw omgeving. Zie voor meer informatie [veilig toewijzing van guid's in Power shell pull-modus voor desired state Configuration](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Taak plannen
+
 - Wie is verantwoordelijk voor het kopiëren van configuraties in de map van de pull-server wanneer deze klaar zijn?
 - Als er configuraties worden gemaakt door een toepassings team, wat moet het proces dan hand matig worden afgebroken?
 - Maakt u gebruik van een opslag plaats voor het opslaan van configuraties zoals ze worden geschreven in teams?

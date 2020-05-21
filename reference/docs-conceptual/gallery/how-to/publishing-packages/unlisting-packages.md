@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Lijst met pakketten opzeggen
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978267"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692364"
 ---
 # <a name="unlisting-packages"></a>Pakketten uit de catalogus verwijderen
 
@@ -32,6 +32,7 @@ Ga naar de pagina pakket Details en selecteer module verwijderen om het pakket w
 
 Als u een scenario ondervindt waarbij het verwijderen van pakketten nood zakelijk is, neemt u contact op met de PowerShell Gallery-beheerders.
 Geldige verwijderings scenario's zijn:
+
 - Problemen met inbreuk op het auteurs recht.
 - Het pakket bevat mogelijk schadelijke inhoud.
 - Het pakket bevat gevoelige gegevens.

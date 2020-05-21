@@ -2,12 +2,12 @@
 ms.date: 02/28/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-resources
-ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278240"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692201"
 ---
 # <a name="dsc-resources"></a>DSC-resources
 
@@ -22,11 +22,11 @@ Een resource kan een model als algemeen hebben als een bestand of als een IIS-se
 Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het gebruik van de bron in een [configuratie](../configurations/configurations.md).
 Het schema van een resource kan op de volgende manieren worden gedefinieerd:
 
-- **' Schema. mof '** File: de meeste resources definiëren hun _schema_ in een schema. MOF-bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **'\<Resource naam\>. schema. Psm1 '** bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een<ResourceName>. schema. psm1-bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **'\<Resource naam\>. psm1 '** bestand: op klassen gebaseerde DSC-resources zijn hun _schema_ in de klassedefinitie gedefinieerd. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
+- `Schema.Mof`bestand: de meeste resources definiëren hun _schema_ in een bestand van het schema. mof, met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- `<Resource Name>.schema.psm1`bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een `<ResourceName>.schema.psm1` bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- `<Resource Name>.psm1`bestand: DSC-resources op basis van klassen definiëren hun _schema_ in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
 
-Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de `-Syntax` para meter. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de para meter om de syntaxis van de `-Syntax` cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
+Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de `-Syntax` para meter. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de `-Syntax` para meter om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -104,7 +104,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u de <kbd>Tab</kbd> - <kbd>en</kbd>+<kbd>plaatsings ruimte</kbd> gebruiken om sleutel namen automatisch te volt ooien.
+> Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u de <kbd>Tab</kbd> - <kbd>en</kbd> + <kbd>plaatsings ruimte</kbd> gebruiken om sleutel namen automatisch te volt ooien.
 
 ![Voltooiing van resource tabblad](media/resources/resource-tabcompletion.png)
 

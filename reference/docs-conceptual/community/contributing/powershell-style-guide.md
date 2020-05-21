@@ -3,12 +3,12 @@ title: Stijlgids voor PowerShell-documentatie
 description: Dit artikel bevat de regels van de stijl voor het schrijven van Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 90dc93d608440ce7388614b552c0cd873a385cd9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81624785"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690858"
 ---
 # <a name="powershell-docs-style-guide"></a>Stijlgids voor PowerShell-documentatie
 
@@ -110,7 +110,7 @@ Dit is een lijst met subelementen onder een opsommingsteken.
 
 #### <a name="ordered-lists"></a>Geordende lijsten
 
-Lijn de inspringing uit met het eerste teken achter het itemnummer om een alinea of andere elementen onder een genummerd item op te nemen. Alle items in een genummerde lijst moeten het `1.` nummer gebruiken in plaats van elk item te verhogen. Bij het weergeven van de Markdown wordt de waarde automatisch verhoogd. Hierdoor kunnen items gemakkelijker in een andere volgorde worden geplaatst en wordt de inspringing van onderliggende inhoud gestandaardiseerd.
+Lijn de inspringing uit met het eerste teken achter het itemnummer om een alinea of andere elementen onder een genummerd item op te nemen. Alle items in een genummerde lijst moeten het nummer gebruiken in `1.` plaats van elk item te verhogen. Bij het weergeven van de Markdown wordt de waarde automatisch verhoogd. Hierdoor kunnen items gemakkelijker in een andere volgorde worden geplaatst en wordt de inspringing van onderliggende inhoud gestandaardiseerd.
 
 Bijvoorbeeld:
 
@@ -152,7 +152,7 @@ Hierbij is `alt text` een korte beschrijving van de afbeelding en `<folder path>
 Afbeeldingen moeten worden opgeslagen in een `media/<article-name>` map in de map waarin het artikel zich bevindt.
 Afbeeldingen moeten niet worden gedeeld tussen artikelen. Maak onder de map `media` een map die overeenkomt met de bestandsnaam van uw artikel. Kopieer de afbeeldingen voor dat artikel naar de nieuwe map. Als een afbeelding door meerdere artikelen wordt gebruikt, moet elke afbeeldingsmap een kopie van het afbeeldingsbestand bevatten. Dit voorkomt dat een wijziging voor een afbeelding in het ene artikel gevolgen heeft voor het andere artikelen.
 
-De volgende afbeeldings bestands typen worden ondersteund `*.png`: `*.gif`, `*.jpeg`, `*.jpg`,,`*.svg`
+De volgende afbeeldings bestands typen worden ondersteund: `*.png` , `*.gif` , `*.jpeg` , `*.jpg` ,`*.svg`
 
 ### <a name="markdown-extensions-supported-by-open-publishing"></a>Markdown-extensies ondersteund door Open Publishing
 
@@ -222,7 +222,7 @@ Er zijn twee typen hyper links die worden ondersteund door het publicatie systee
 
 Een **URL-koppeling** kan een URL-pad zijn dat relatief is ten opzichte van de hoofdmap van docs.Microsoft.com. Of een absolute URL die de syntaxis van de volledige URL bevat. Bijvoorbeeld: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
 
-- Gebruik URL-koppelingen wanneer u een koppeling maakt naar inhoud buiten Power shell-docs of tussen Naslag informatie over de cmdlet en conceptuele artikelen in Power shell-docs. De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw `https://docs.microsoft.com/en-us` browser en vervolgens te verwijderen van de waarde die u in de prijs opsplitsen hebt geplakt.
+- Gebruik URL-koppelingen wanneer u een koppeling maakt naar inhoud buiten Power shell-docs of tussen Naslag informatie over de cmdlet en conceptuele artikelen in Power shell-docs. De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw browser en vervolgens te verwijderen `https://docs.microsoft.com/en-us` van de waarde die u in de prijs opsplitsen hebt geplakt.
 - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. verwijderen `/en-us` van URL).
 - Verwijder overbodige query parameters uit de URL, tenzij u een koppeling moet maken naar een specifieke versie van een artikel. Voorbeelden:
   - `?view=powershell-5.1`: dit wordt gebruikt om een koppeling te maken naar een specifieke versie van Power shell
@@ -231,8 +231,8 @@ Een **URL-koppeling** kan een URL-pad zijn dat relatief is ten opzichte van de h
 
 Een **koppeling** naar een bestand wordt gebruikt om te koppelen van het ene referentie artikel naar het andere of van het ene conceptuele artikel naar het andere. Als u een verwijzing naar een referentie artikel moet koppelen voor een specifieke versie van Power shell, moet u een URL-koppeling gebruiken.
 
-- Bestands koppelingen bevatten een relatief bestandspad (bijvoorbeeld: `../folder/file.md`)
-- Alle bestands paden gebruiken tekens voor voorwaartse`/`slash ()
+- Bestands koppelingen bevatten een relatief bestandspad (bijvoorbeeld: `../folder/file.md` )
+- Alle bestands paden gebruiken tekens voor voorwaartse slash ( `/` )
 
 Uitgebreide koppeling is toegestaan voor URL-en bestands koppelingen. Voeg het anker toe aan het einde van het doelpad.
 Bijvoorbeeld:
@@ -247,10 +247,10 @@ Zie [koppelingen in documentatie gebruiken](https://docs.microsoft.com/contribut
 - Gebruik altijd de volledige naam voor cmdlets en para meters. Vermijd het gebruik van aliassen tenzij u de alias expliciet demonstreert.
 
 - Eigenschap, para meter, object, type namen, klassen namen en klassen methoden moeten **vet**zijn.
-  - Eigenschaps-en parameter waarden moeten worden verpakt in`` ` ``accents graves ().
+  - Eigenschaps-en parameter waarden moeten worden verpakt in accents graves ( `` ` `` ).
   - Wanneer u verwijst naar typen met behulp van de stijl met tussen haakjes, gebruikt u accents graves. Bijvoorbeeld: `[System.Io.FileInfo]`
 
-- Taal trefwoorden, namen van cmdlets, functies, variabelen, systeem eigen exe, bestands paden en in-line syntaxis voorbeelden moeten worden verpakt`` ` ``in apostroffen-tekens ().
+- Taal trefwoorden, namen van cmdlets, functies, variabelen, systeem eigen exe, bestands paden en in-line syntaxis voorbeelden moeten worden verpakt in apostroffen- `` ` `` tekens ().
 
   Bijvoorbeeld:
 
@@ -294,12 +294,12 @@ Zie [koppelingen in documentatie gebruiken](https://docs.microsoft.com/contribut
 
 Markdown ondersteunt twee verschillende codestijlen:
 
-- **Code reeksen (inline)** : gemarkeerd met één apostroffen (`` ` ``)-teken. Wordt gebruikt in een alinea in plaats van als een zelfstandig blok.
-- **Code blokken** : een blok met meerdere regels dat is omgeven door Triple-`` ``` ``apostroffen () teken reeksen. Code blokken kunnen ook een taal label volgen volgens het accents graves. Het taal label schakelt syntaxis markering in voor de inhoud van het code blok.
+- **Code reeksen (inline)** : gemarkeerd met één apostroffen ( `` ` `` )-teken. Wordt gebruikt in een alinea in plaats van als een zelfstandig blok.
+- **Code blokken** : een blok met meerdere regels dat is omgeven door Triple-apostroffen ( `` ``` `` ) teken reeksen. Code blokken kunnen ook een taal label volgen volgens het accents graves. Het taal label schakelt syntaxis markering in voor de inhoud van het code blok.
 
 Alle codeblokken moeten zich binnen een afscheiding bevinden. Gebruik nooit inspringing voor code blokken. Met prijs verlaging wordt dit patroon toegestaan, maar dit kan een probleem zijn en moet worden vermeden.
 
-Een code blok bestaat uit een of meer regels code omgeven door een code Fence van Triple`` ``` ``-apostroffen ().
+Een code blok bestaat uit een of meer regels code omgeven door een code Fence van Triple-apostroffen ( `` ``` `` ).
 De markeringen voor de codeafscheiding moeten zich op een eigen regel voor en na het codevoorbeeld bevinden. De markering na het begin van het codeblok heeft mogelijk een optioneel taallabel. In het Open Publishing System (OPS) van Microsoft wordt het taallabel gebruikt om de functie voor markering van de syntaxis te ondersteunen.
 
 Zie [Geomheiningde code blokken](/contribute/code-in-docs#fenced-code-blocks) in de hand leiding gecentraliseerde Inzender voor een volledige lijst met ondersteunde taal codes.
@@ -414,7 +414,7 @@ Vermijd tekens voor voortzetting van de regel (`` ` ``) in PowerShell-codevoorbe
 
 ### <a name="avoid-using-powershell-prompts-in-examples"></a>PowerShell-prompts vermijden in voorbeelden
 
-Het gebruik van de prompt-tekenreeks wordt afgeraden en moet worden beperkt tot scenario’s die zijn bedoeld om het gebruik van de opdrachtregel te illustreren. Voor de meeste van deze voor beelden moet de prompt teken `PS>`reeks zijn. Deze prompt is onafhankelijk van indicatoren voor specifieke besturingssystemen.
+Het gebruik van de prompt-tekenreeks wordt afgeraden en moet worden beperkt tot scenario’s die zijn bedoeld om het gebruik van de opdrachtregel te illustreren. Voor de meeste van deze voor beelden moet de prompt teken reeks zijn `PS>` . Deze prompt is onafhankelijk van indicatoren voor specifieke besturingssystemen.
 
 Prompts zijn vereist voor voorbeelden waarin opdrachten worden weergegeven waarmee de prompt wordt aangepast of als het getoonde pad van belang is voor het scenario dat wordt geïllustreerd. In het volgende voorbeeld wordt getoond hoe de prompt verandert als de registerprovider wordt gebruikt.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Foutopsporing voor DSC-resources
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942158"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691956"
 ---
 # <a name="debugging-dsc-resources"></a>Foutopsporing voor DSC-resources
 
@@ -22,7 +22,6 @@ Deze cmdlet gebruikt een verplichte para meter, **BreakAll**.
 U kunt controleren of de fout opsporing is ingeschakeld door te kijken naar het resultaat van een aanroep naar [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
 De volgende Power shell-uitvoer toont het resultaat van het inschakelen van fout opsporing:
-
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -40,7 +39,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Een configuratie starten met fout opsporing ingeschakeld
 Als u fouten wilt opsporen in een DSC-resource, start u een configuratie die deze bron aanroept.
@@ -61,9 +59,10 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 Nadat u de configuratie hebt gecompileerd, start u deze door [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)aan te roepen.
 De configuratie wordt gestopt wanneer de lokale Configuration Manager (LCM) aanroept in de eerste bron in de configuratie.
-Als u de `-Verbose` para meters en `-Wait` gebruikt, worden de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
+Als u de `-Verbose` `-Wait` para meters en gebruikt, worden de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,13 +84,14 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 De LCM heeft nu de resource genoemd en komt tot het eerste afbreek punt.
 In de laatste drie regels in de uitvoer ziet u hoe u aan het proces kunt koppelen en de fout opsporing van het resource script start.
 
 ## <a name="debugging-the-resource-script"></a>Fout opsporing van het resource script
 
 Start een nieuw exemplaar van de Power shell-ISE.
-Voer in het console venster de laatste drie regels uitvoer van de `Start-DscConfiguration` uitvoer in als opdrachten, vervangen `<credentials>` door geldige gebruikers referenties.
+Voer in het console venster de laatste drie regels uitvoer van de uitvoer in `Start-DscConfiguration` als opdrachten, vervangen `<credentials>` door geldige gebruikers referenties.
 Er wordt nu een prompt weer gegeven die er ongeveer als volgt uitziet:
 
 ```powershell
