@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WaitForAny-resource
-ms.openlocfilehash: 61fee456d2652e08ed9bdbe64457627ff5b2e145
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 181760ba0a4f493c451dafb68e7881adda2d58c0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941276"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560777"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny-resource
 
@@ -39,17 +39,17 @@ WaitForAny [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|ResourceName |De resource naam waarvan afhankelijk is. Als deze resource deel uitmaakt van een andere configuratie, moet u `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`de naam indelen als. |
+|ResourceName |De resource naam waarvan afhankelijk is. Als deze resource deel uitmaakt van een andere configuratie, moet u de naam indelen als `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]` . |
 |NodeName |De doel knooppunten van de resource waarvan afhankelijk is. |
 |RetryIntervalSec |Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1. |
 |RetryCount |Het maximum aantal keren dat opnieuw moet worden geprobeerd. |
-|ThrottleLimit |Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard. |
+|ThrottleLimit |Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling is `New-CimSession` standaard. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

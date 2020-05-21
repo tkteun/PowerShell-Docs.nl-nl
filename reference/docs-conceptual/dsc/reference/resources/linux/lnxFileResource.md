@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxFile-resource
-ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 71096b2d269340b3568c95071089e114ef5c5db9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942557"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560862"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile-resource
 
@@ -39,11 +39,11 @@ nxFile <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DestinationPath |Hiermee geeft u de locatie op waar u de status van een bestand of map wilt controleren. |
-|Bronpad |Hiermee geeft u het pad op waaruit het bestand of de bron van de map moet worden gekopieerd. Dit pad mag een lokaal pad of een `http/https/ftp` URL zijn. Externe `http/https/ftp` url's worden alleen ondersteund wanneer de waarde van de eigenschap **type** **File**is. |
+|Bronpad |Hiermee geeft u het pad op waaruit het bestand of de bron van de map moet worden gekopieerd. Dit pad mag een lokaal pad of een URL zijn `http/https/ftp` . Externe `http/https/ftp` url's worden alleen ondersteund wanneer de waarde van de eigenschap **type** **File**is. |
 |Type |Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Stel deze eigenschap in op **Directory** om aan te geven dat de resource een directory is. Stel deze in op **bestand** om aan te geven dat de resource een bestand is. De standaard waarde is **File**. |
 |Inhoud |Hiermee geeft u de inhoud van een bestand, zoals een bepaalde teken reeks. |
 |Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Waarden zijn: **ctime**, **mtime**of **MD5**. |
-|Recurse |Hiermee wordt aangegeven of submappen zijn opgenomen. Stel deze eigenschap in `$true` op om aan te geven dat u submappen wilt opnemen. De standaardwaarde is `$false`. Deze eigenschap is alleen geldig wanneer de eigenschap **type** is ingesteld op **Directory**. |
+|Recurse |Hiermee wordt aangegeven of submappen zijn opgenomen. Stel deze eigenschap in op `$true` om aan te geven dat u submappen wilt opnemen. De standaardwaarde is `$false`. Deze eigenschap is alleen geldig wanneer de eigenschap **type** is ingesteld op **Directory**. |
 |Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaardwaarde is `$false`. |
 |Koppelingen |Hiermee geeft u het gewenste gedrag voor symbolische koppelingen op. Stel deze eigenschap in op **volgen** van symbolische koppelingen volgen en reageren op het doel van de koppelingen. Kopieer bijvoorbeeld het bestand in plaats van de koppeling. Stel deze eigenschap in op **beheren** om op de koppeling te reageren. Kopieer bijvoorbeeld de koppeling zelf. Stel deze eigenschap in op **negeren** om symbolische koppelingen te negeren. |
 |Groep |De naam van de **groep** die machtigingen voor het bestand of de map moet hebben. |
@@ -54,7 +54,7 @@ nxFile <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt bepaald of het bestand al bestaat. Stel deze eigenschap in op **presen teren** om te controleren of het bestand bestaat. Stel deze in op **afwezig** om te controleren of het bestand niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="additional-information"></a>Aanvullende informatie
@@ -132,7 +132,7 @@ Linux en Windows gebruiken standaard andere regel-afbreek tekens in tekst bestan
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld wordt ervoor `/opt/mydir` gezorgd dat de map bestaat en dat er voor een bestand met de opgegeven inhoud deze map bestaat.
+In het volgende voor beeld wordt ervoor gezorgd dat de map `/opt/mydir` bestaat en dat er voor een bestand met de opgegeven inhoud deze map bestaat.
 
 ```powershell
 Import-DSCResource -Module nx

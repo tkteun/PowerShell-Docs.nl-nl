@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van PowerShell-engine in WMF 5.1
-ms.openlocfilehash: a0af702832c0a90c994650e25918ecacdc33fc4b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: cccfcf8872ac60e0902669bcc797d0ed250317ba
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145066"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560131"
 ---
 # <a name="powershell-engine-improvements"></a>Verbeteringen in Power shell-engine
 
@@ -31,6 +31,6 @@ Enkele voor beelden van verbeteringen (uw resultaten kunnen variëren, afhankeli
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
 > [!NOTE]
-> Een wijziging met betrekking tot het opstarten kan van invloed zijn op bepaalde niet-ondersteunde scenario's. De bestanden `$pshome\*.ps1xml` worden niet langer door Power shell gelezen: deze bestanden zijn naar C# geconverteerd om te voor komen dat een bestand en CPU-overhead voor het verwerken van de XML-bestanden. De bestanden bestaan nog steeds voor de ondersteuning van v2 naast elkaar, dus als u de bestands inhoud wijzigt, heeft dit geen effect op V5, alleen v2. Houd er rekening mee dat het wijzigen van de inhoud van deze bestanden nooit een ondersteund scenario was.
+> Een wijziging met betrekking tot het opstarten kan van invloed zijn op bepaalde niet-ondersteunde scenario's. De bestanden worden niet langer door Power shell gelezen `$pshome\*.ps1xml` : deze bestanden zijn naar C# geconverteerd om te voor komen dat een bestand en CPU-overhead voor het verwerken van de XML-bestanden. De bestanden bestaan nog steeds voor de ondersteuning van v2 naast elkaar, dus als u de bestands inhoud wijzigt, heeft dit geen effect op V5, alleen v2. Houd er rekening mee dat het wijzigen van de inhoud van deze bestanden nooit een ondersteund scenario was.
 
-Een andere zicht bare wijziging is hoe Power shell de geëxporteerde opdrachten en andere informatie voor modules die op een systeem zijn geïnstalleerd, in de cache opslaat. Voorheen werd deze cache opgeslagen in de map `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis`. In WMF 5,1 is de cache één bestand `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. Zie [module analyse cache](release-notes.md#module-analysis-cache) voor meer informatie.
+Een andere zicht bare wijziging is hoe Power shell de geëxporteerde opdrachten en andere informatie voor modules die op een systeem zijn geïnstalleerd, in de cache opslaat. Voorheen werd deze cache opgeslagen in de map `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` . In WMF 5,1 is de cache één bestand `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache` . Zie [module analyse cache](release-notes.md#module-analysis-cache) voor meer informatie.

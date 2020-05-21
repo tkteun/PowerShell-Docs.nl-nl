@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Release geschiedenis van modules en cmdlets
-ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0a1a8b0e4b1460bbaeb30495262aff2b414a649b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082738"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564632"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Release geschiedenis van modules en cmdlets
 
@@ -23,7 +23,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ## <a name="module-release-history"></a>Release geschiedenis van de module
 
-|         Module naam/PS-versie          |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|         Module naam/PS-versie          |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | ----------------------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | CimCmdlets                                | &check; | &check; | &check; | &check; | Alleen op Windows |
 | ISE (geïntroduceerd in 2,0)                   | &check; |         |         |         | Alleen op Windows |
@@ -53,7 +53,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="cimcmdlets"></a>CimCmdlets
 
-|         Naam van cmdlet         |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|         Naam van cmdlet         |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Exporteren-BinaryMiLog          | &check; | &check; | &check; | &check; | Alleen op Windows |
 | Get-CimAssociatedInstance   | &check; | &check; | &check; | &check; | Alleen op Windows |
@@ -72,23 +72,22 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="ise-introduced-in-20"></a>ISE (geïntroduceerd in 2,0)
 
-|    Naam van cmdlet    |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|    Naam van cmdlet    |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | ----------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Get-IseSnippet    | &check; |      |       |       | Alleen op Windows |
 | Import-IseSnippet | &check; |      |       |       | Alleen op Windows |
 | New-IseSnippet    | &check; |      |       |       | Alleen op Windows |
 
-
 ### <a name="microsoftpowershellarchive"></a>Micro soft. Power shell. Archive
 
-|   Naam van cmdlet    |   5.1   |   6.x   |   7.0   |   7.1   | Opmerking |
+|   Naam van cmdlet    |   5.1   |   6.x   |   7.0   |   7.1   | Notitie |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Comprimeren-archief | &check; | &check; | &check; | &check; |      |
 | Uitvouwen-archief   | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershellcore"></a>Micro soft. Power shell. core
 
-|            Naam van cmdlet            |   5.1   |   6.x   |   7.0   |   7.1   |            Opmerking            |
+|            Naam van cmdlet            |   5.1   |   6.x   |   7.0   |   7.1   |            Notitie            |
 | --------------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------- |
 | Toevoegen-geschiedenis                       | &check; | &check; | &check; | &check; |                            |
 | Add-PSSnapin                      | &check; |         |         |         | Alleen op Windows               |
@@ -160,7 +159,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftpowershelldiagnostics"></a>Micro soft. Power shell. Diagnostics
 
-|  Naam van cmdlet   |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|  Naam van cmdlet   |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | -------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Exporteren-teller | &check; |         |         |         | Alleen op Windows |
 | Get-teller    | &check; |         | &check; | &check; | Alleen op Windows |
@@ -170,14 +169,14 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftpowershellhost"></a>Micro soft. Power shell. host
 
-|   Naam van cmdlet    |   5.1   |   6.x   |   7.0   |   7.1   | Opmerking |
+|   Naam van cmdlet    |   5.1   |   6.x   |   7.0   |   7.1   | Notitie |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Start-transcript | &check; | &check; | &check; | &check; |      |
 | Stoppen-transcriptie  | &check; | &check; | &check; | &check; |      |
 
 ### <a name="microsoftpowershelllocalaccounts"></a>Micro soft. Power shell. LocalAccounts
 
-|       Naam van cmdlet       |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|       Naam van cmdlet       |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | ----------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Add-LocalGroupMember    | &check; |      |       |       | Alleen op Windows |
 | Disable-Lokalegebruiker       | &check; |      |       |       | Alleen op Windows |
@@ -197,7 +196,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftpowershellmanagement"></a>Micro soft. Power shell. Management
 
-|          Naam van cmdlet          |   5.1   |   6.x   |   7.0   |   7.1   |               Opmerking               |
+|          Naam van cmdlet          |   5.1   |   6.x   |   7.0   |   7.1   |               Notitie               |
 | ----------------------------- | :-----: | :-----: | :-----: | :-----: | -------------------------------- |
 | Add-computer                  | &check; |         |         |         | Alleen op Windows                     |
 | Add-content                   | &check; | &check; | &check; | &check; |                                  |
@@ -292,20 +291,20 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftpowershellodatautils"></a>Micro soft. Power shell. ODataUtils
 
-|        Naam van cmdlet        |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|        Naam van cmdlet        |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | ------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Exporteren-ODataEndpointProxy | &check; |      |       |       | Alleen op Windows |
 
 ### <a name="microsoftpowershelloperationvalidation"></a>Micro soft. Power shell. Operation. validatie
 
-|        Naam van cmdlet         |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|        Naam van cmdlet         |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | -------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Get-OperationValidation    | &check; |      |       |       | Alleen op Windows |
 | Invoke-OperationValidation | &check; |      |       |       | Alleen op Windows |
 
 ### <a name="microsoftpowershellsecurity"></a>Micro soft. Power shell. Security
 
-|        Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   |                  Opmerking                   |
+|        Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   |                  Notitie                   |
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | --------------------------------------- |
 | ConvertFrom-SecureString  | &check; | &check; | &check; | &check; |                                         |
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
@@ -325,7 +324,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
 
-|        Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   |                   Opmerking                    |
+|        Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   |                   Notitie                    |
 | ------------------------- | :-----: | :-----: | :-----: | :-----: | ----------------------------------------- |
 | Lid toevoegen                | &check; | &check; | &check; | &check; |                                           |
 | Add-type                  | &check; | &check; | &check; | &check; |                                           |
@@ -447,7 +446,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="microsoftwsmanmanagement"></a>Micro soft. WsMan. Management
 
-|      Naam van cmdlet       |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|      Naam van cmdlet       |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | ---------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Connect-WSMan          | &check; | &check; | &check; | &check; | Alleen op Windows |
 | Disable-WSManCredSSP   | &check; | &check; | &check; | &check; | Alleen op Windows |
@@ -465,7 +464,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="packagemanagement"></a>PackageManagement
 
-|       Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   | Opmerking |
+|       Naam van cmdlet        |   5.1   |   6.x   |   7.0   |   7.1   | Notitie |
 | ------------------------ | :-----: | :-----: | :-----: | :-----: | ---- |
 | Zoeken-pakket             | &check; | &check; | &check; | &check; |      |
 | Zoeken-package provider     | &check; | &check; | &check; | &check; |      |
@@ -483,7 +482,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="powershellget"></a>PowershellGet
 
-|           Naam van cmdlet           |   5.1   |   6.x   |   7.0   |   7.1   | Opmerking |
+|           Naam van cmdlet           |   5.1   |   6.x   |   7.0   |   7.1   | Notitie |
 | ------------------------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Zoeken-opdracht                    | &check; | &check; | &check; | &check; |      |
 | Zoeken-Dscresource bieden                | &check; | &check; | &check; | &check; |      |
@@ -514,7 +513,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="psdesiredstateconfiguration"></a>PSDesiredStateConfiguration
 
-|                Naam van cmdlet                 |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|                Naam van cmdlet                 |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Disable-DscDebug                           | &check; |         |         |         | Alleen op Windows |
 | Enable-DscDebug                            | &check; |         |         |         | Alleen op Windows |
@@ -535,7 +534,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="psdiagnostics"></a>PSDiagnostics
 
-|         Naam van cmdlet          |   5.1   |   6.x   |   7.0   |   7.1   |     Opmerking     |
+|         Naam van cmdlet          |   5.1   |   6.x   |   7.0   |   7.1   |     Notitie     |
 | ---------------------------- | :-----: | :-----: | :-----: | :-----: | ------------ |
 | Disable-PSTrace              | &check; |   6.2   | &check; | &check; | Alleen op Windows |
 | Disable-PSWSManCombinedTrace | &check; |   6.2   | &check; | &check; | Alleen op Windows |
@@ -550,7 +549,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="psreadline"></a>PSReadline
 
-|         Naam van cmdlet         |   5.1   |   6.x   |   7.0   |   7.1   | Opmerking |
+|         Naam van cmdlet         |   5.1   |   6.x   |   7.0   |   7.1   | Notitie |
 | --------------------------- | :-----: | :-----: | :-----: | :-----: | ---- |
 | Get-PSReadlineKeyHandler    | &check; | &check; | &check; | &check; |      |
 | Get-PSReadlineOption        | &check; | &check; | &check; | &check; |      |
@@ -561,7 +560,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="psscheduledjob"></a>PSScheduledJob
 
-|       Naam van cmdlet       |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|       Naam van cmdlet       |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | ----------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | Add-JobTrigger          | &check; |      |       |       | Alleen op Windows |
 | Disable-JobTrigger      | &check; |      |       |       | Alleen op Windows |
@@ -582,7 +581,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="psworkflow--psworkflowutility"></a>PSWorkflow & PSWorkflowUtility
 
-|          Naam van cmdlet          |   5.1   | 6.x  |  7.0  |  7.1  |     Opmerking     |
+|          Naam van cmdlet          |   5.1   | 6.x  |  7.0  |  7.1  |     Notitie     |
 | ----------------------------- | :-----: | :--- | :---: | :---: | ------------ |
 | New-New psworkflowexecutionoption | &check; |      |       |       | Alleen op Windows |
 | New-PSWorkflowSession         | &check; |      |       |       | Alleen op Windows |
@@ -590,6 +589,6 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 
 ### <a name="threadjob"></a>ThreadJob
 
-|   Naam van cmdlet   |  5.1  |   6.x   |   7.0   |   7.1   | Opmerking |
+|   Naam van cmdlet   |  5.1  |   6.x   |   7.0   |   7.1   | Notitie |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
 | Start-ThreadJob |       | &check; | &check; | &check; | Kan worden geïnstalleerd in Power shell 5,1 |

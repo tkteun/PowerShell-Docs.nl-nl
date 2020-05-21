@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-groeps resource
-ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b71e66e09b0af0faf252ce85f8f8746d8489b4ff
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942438"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559859"
 ---
 # <a name="dsc-group-resource"></a>DSC-groeps resource
 
@@ -39,15 +39,15 @@ Group [string] #ResourceName
 |GroupName |De naam van de groep waarvoor u een specifieke status wilt controleren. |
 |Referentie |De referenties die nodig zijn voor toegang tot externe bronnen. Dit account moet over de juiste Active Directory machtigingen beschikken om alle niet-lokale accounts aan de groep toe te voegen. anders treedt er een fout op wanneer de configuratie wordt uitgevoerd op het doel knooppunt.
 |Beschrijving |De beschrijving van de groep. |
-|Leden |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
-|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
-|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|Leden |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Hierdoor wordt er een fout gegenereerd. |
+|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt aangegeven of de groep bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groep niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groep bestaat. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

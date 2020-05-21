@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62086357"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564426"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Beveiligingsoverwegingen bij externe communicatie met PowerShell
 
@@ -69,11 +69,9 @@ Omdat het NTLM-verificatie protocol de identiteit van de doel server niet kan ga
 Als het implementeren van een SSL-certificaat op een server voor NTLM-verbindingen niet haalbaar is, kunt u de resulterende identiteits fouten onderdrukken door de server toe te voegen aan de lijst met WinRM **TrustedHosts** . Het toevoegen van een server naam aan de lijst met TrustedHosts mag niet worden beschouwd als een vorm van een verklaring van de betrouw baarheid van de hosts zelf, omdat het NTLM-verificatie protocol niet kan garanderen dat u verbinding maakt met de host waarmee u verbinding wilt maken.
 In plaats daarvan moet u de TrustedHosts-instelling beschouwen als de lijst met hosts waarvoor u de fout die is gegenereerd door de server identiteit niet kunt controleren.
 
-
 ### <a name="ongoing-communication"></a>Doorlopende communicatie
 
 Zodra de initiële verificatie is voltooid, versleutelt het [Power shell Remoting-protocol](https://msdn.microsoft.com/library/dd357801.aspx) alle lopende communicatie met een symmetrische sleutel van AES-256.
-
 
 ## <a name="making-the-second-hop"></a>De tweede hop maken
 

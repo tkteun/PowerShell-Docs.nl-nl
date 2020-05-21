@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52244ee7496b99e11f0306e93728736fc9c51be5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356810"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564700"
 ---
 # <a name="public-resource-schema"></a>Schema van openbare resources
 
@@ -38,13 +38,13 @@ class PswsTest_Process
 
 Elke eigenschaps naam wordt voorafgegaan door een gegevens type. De gegevens typen in dit voor beeld komen overeen met primitieve CLR-gegevens typen in de .NET Frameworks, maar eigenschappen kunnen ook verwijzingen naar andere bronnen of complexe typen zijn, die beide later worden beschreven.
 
-De `Key` kwalificatie geeft aan dat een eigenschap wordt gebruikt om een resource-exemplaar uniek te identificeren. Een resource kan meer dan één sleutel hebben.
+De `Key` kwalificatie geeft aan dat een eigenschap wordt gebruikt om een bron exemplaar uniek te identificeren. Een resource kan meer dan één sleutel hebben.
 
-De `Required` kwalificatie geeft aan dat de eigenschap vereist is. Als een eigenschap is gelabeld met de `Key` kwalificatie, wordt aangenomen dat deze vereist is en is de `Required`-kwalificatie niet nodig.
+De `Required` kwalificatie geeft aan dat de eigenschap vereist is. Als een eigenschap is gelabeld met de `Key` kwalificatie, wordt ervan uitgegaan dat deze vereist is en `Required` is de kwalificatie niet nodig.
 
 ### <a name="complex-data-types"></a>Complexe gegevens typen
 
-Eigenschappen van entiteiten kunnen complexe gegevens typen hebben. Complexe gegevens typen zijn typen die bestaan uit andere typen, vergelijkbaar met structs in de programmeer taal C. Een complex type wordt in het MOF-bestand gedeclareerd als een klasse met de `ComplexType` kwalificatie, zoals in het volgende voor beeld.
+Eigenschappen van entiteiten kunnen complexe gegevens typen hebben. Complexe gegevens typen zijn typen die bestaan uit andere typen, vergelijkbaar met structs in de programmeer taal C. Een complex type wordt in het MOF-bestand als een klasse met de `ComplexType` Kwalificatie gedefinieerd, zoals in het volgende voor beeld.
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Als u een entiteits eigenschap wilt declareren als een complex type, declareert u deze als een `string` type met de `EmbeddedInstance` kwalificatie, met inbegrip van de naam van het complexe type. In het volgende voor beeld ziet u de declaratie van een eigenschap van het `PswsTest_ProcessModule` type dat in het vorige voor beeld is gedeclareerd.
+Als u een entiteit eigenschap wilt declareren als een complex type, declareert u deze als een `string` type met de `EmbeddedInstance` kwalificatie, met inbegrip van de naam van het complexe type. In het volgende voor beeld ziet u de declaratie van een eigenschap van het `PswsTest_ProcessModule` type dat in het vorige voor beeld is gedeclareerd.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

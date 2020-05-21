@@ -1,18 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Windows Power shell-woorden lijst
-ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1e2285bb49ed6a30fb5624ab3cf136cbf06401b5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030357"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560403"
 ---
 # <a name="windows-powershell-glossary"></a>Windows Power shell-woorden lijst
 
-
-|Termijn|Definitie|
+|Term|Definitie|
 |--------|--------------|
 |binaire module|Een Windows Power shell-module met een binaire module bestand (. dll). Een binaire module kan een module manifest bevatten.|
 |algemene para meter|Een para meter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werk stromen door de Windows Power shell-engine.|

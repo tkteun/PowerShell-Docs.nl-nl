@@ -1,12 +1,12 @@
 ---
 title: Compatibiliteit met Power shell 7-module
 ms.date: 02/03/2020
-ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935197"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565060"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibiliteit met Power shell 7-module
 
@@ -25,7 +25,6 @@ Install-WindowsFeature -Name ActiveDirectory
 ```
 
 In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optionele Windows-functies** of **Windows-mogelijkheden**. De volgende opdrachten moeten worden uitgevoerd vanuit een verhoogde sessie met de **uitvoeren als-beheerder**.
-
 
 - Voor optionele Windows-functies
 
@@ -54,7 +53,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
   Get-WindowsCapability -online
   ```
 
-  U ziet dat de naam van het capaciteits pakket `~~~~0.0.1.0`eindigt op. U moet de volledige naam gebruiken om de mogelijkheid te installeren:
+  U ziet dat de naam van het capaciteits pakket eindigt op `~~~~0.0.1.0` . U moet de volledige naam gebruiken om de mogelijkheid te installeren:
 
   ```powershell
   Add-WindowsCapability -Online -Name Rsat.ServerManager.Tools~~~~0.0.1.0

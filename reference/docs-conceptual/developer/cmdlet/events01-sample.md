@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359360"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561444"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
 
@@ -24,13 +24,13 @@ Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. command
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
 1. Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map Events01.
-   De standaard locatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
+   De standaard locatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01` .
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN).
    Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
 3. Selecteer in het menu **Build** de optie **Build Solution**.
-   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard `\bin` of `\bin\debug` mappen.
+   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard- `\bin` of- `\bin\debug` mappen.
 
 ### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Een cmdlet schrijven voor gebeurtenis registratie
 
-De cmdlet is afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor algemene para meters voor de `Register-*Event`-cmdlets.
-Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden te overschrijven.
+De cmdlet is afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor de algemene para meters van de `Register-*Event` cmdlets.
+Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden te negeren.
 
 ## <a name="example"></a>Voorbeeld
 
@@ -189,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](writing-a-windows-powershell-cmdlet.md)

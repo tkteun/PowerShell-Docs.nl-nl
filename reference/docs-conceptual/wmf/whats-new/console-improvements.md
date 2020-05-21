@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Verbeteringen van de console in WMF 5.1
-ms.openlocfilehash: d0dd8e3c31dc0ddebab1bb899468b77a9292954d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145052"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564271"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Verbeteringen van de console in WMF 5.1
 
@@ -34,18 +34,18 @@ else
 }
 ```
 
-Hier volgt een volledig [voor beeld](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) dat kan worden gebruikt voor het markeren `Select-String`van overeenkomsten. Sla het voor beeld op in een `MatchInfo.format.ps1xml`bestand met de naam en voer `Update-FormatData -Prepend MatchInfo.format.ps1xml`het vervolgens uit in uw profiel of elders.
+Hier volgt een volledig [voor beeld](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) dat kan worden gebruikt voor het markeren van overeenkomsten `Select-String` . Sla het voor beeld op in een bestand met `MatchInfo.format.ps1xml` de naam en voer het vervolgens uit in uw profiel of elders `Update-FormatData -Prepend MatchInfo.format.ps1xml` .
 
 Houd er rekening mee dat VT100-escape reeksen alleen worden ondersteund vanaf de Windows 10 jubileum update.
 Ze worden niet ondersteund op eerdere systemen.
 
 ### <a name="vi-mode-support-in-psreadline"></a>Ondersteuning voor de VI-modus in PSReadline
 
-[PSReadline](https://github.com/PowerShell/PSReadLine) voegt ondersteuning toe voor de modus voor VI. Als u de modus VI wilt `Set-PSReadlineOption -EditMode Vi`gebruiken, voert u uit.
+[PSReadline](https://github.com/PowerShell/PSReadLine) voegt ondersteuning toe voor de modus voor VI. Als u de modus VI wilt gebruiken, voert u uit `Set-PSReadlineOption -EditMode Vi` .
 
 ### <a name="redirected-stdin-with-interactive-input"></a>Omgeleide stdin met interactieve invoer
 
-In eerdere versies was het starten van `powershell -File -` Power shell met was vereist toen stdin werd omgeleid en wilt u opdrachten interactief invoeren.
+In eerdere versies was het starten van Power shell met `powershell -File -` was vereist toen stdin werd omgeleid en wilt u opdrachten interactief invoeren.
 
 Met WMF 5,1 is deze optie moeilijk te detecteren niet meer nodig. U kunt Power shell zonder opties starten.
 

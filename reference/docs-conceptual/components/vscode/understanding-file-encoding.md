@@ -2,12 +2,12 @@
 title: Informatie over bestandscodering in VS Code en PowerShell
 description: Bestands codering configureren in VS code en Power shell
 ms.date: 02/28/2019
-ms.openlocfilehash: 991e3ccc95dd0dd2106cefe6c68371e59c031f35
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: 1333c5aedd5abd16078ac32979f19f38818a26c8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271862"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563830"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>Informatie over bestandscodering in VS Code en PowerShell
 
@@ -27,6 +27,7 @@ Coderings problemen treden op wanneer de code ring van VS code of uw script best
 
 Het is waarschijnlijker dat u problemen hebt met het coderen wanneer u tekens gebruikt die niet voor komt in de [7-bits ASCII-tekenset](https://ascii.cl/). Bijvoorbeeld:
 
+<!-- markdownlint-disable MD038 -->
 - Uitgebreide niet-letter-tekens zoals em-streepje ( `—` ), non-Break Space ( ` ` ) of dubbele aanhalings teken `"` ()
 - Latijnse tekens met accenten ( `É` , `ü` )
 - Niet-Latijnse tekens zoals Cyrillisch ( `Д` , `Ц` )
@@ -262,7 +263,6 @@ Er zijn enkele andere leuke berichten over code ring en het configureren van cod
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [De klassieke *Joel op software* schrijven over Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Coderen in .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
-
 
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill

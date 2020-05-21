@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
-ms.openlocfilehash: 584e5923008e8369a83c699478844f0e0c295adc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da74c674c704794d8648dcdf9ba0a1617decba9b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357832"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560607"
 ---
 # <a name="syntax-of-comment-based-help"></a>Syntaxis van de Help op basis van opmerkingen
 
@@ -37,7 +37,7 @@ In deze sectie wordt de syntaxis van op opmerkingen gebaseerde Help beschreven.
 
 ## <a name="syntax-description"></a>Syntaxis beschrijving
 
- Help op basis van opmerkingen wordt geschreven als een reeks opmerkingen. U kunt voor elke regel met opmerkingen een opmerkings symbool (#) typen, maar u kunt ook de symbolen '\<# ' en ' # > ' gebruiken om een opmerkingen blok te maken. Alle regels in het opmerkingen blok worden geïnterpreteerd als opmerkingen.
+ Help op basis van opmerkingen wordt geschreven als een reeks opmerkingen. U kunt vóór elke regel met opmerkingen een opmerkings symbool (#) typen, maar u kunt ook de \< symbolen # en # > gebruiken om een opmerkingen blok te maken. Alle regels in het opmerkingen blok worden geïnterpreteerd als opmerkingen.
 
  Elke sectie van Help op basis van opmerkingen is gedefinieerd met een tref woord en elk tref woord wordt voorafgegaan door een punt (.). De tref woorden kunnen in elke wille keurige volg orde worden weer gegeven. De namen van tref woorden zijn niet hoofdletter gevoelig.
 

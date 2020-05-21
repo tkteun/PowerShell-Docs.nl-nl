@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Verbeteringen van Just Enough Administration (JEA)
-ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4e469e4554e9220733bdaecc1779772fb0312b93
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145031"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560097"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbeteringen van Just Enough Administration (JEA)
 
@@ -26,7 +26,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 De map die een back-up maakt van het gebruikers station wordt gemaakt op`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Als u het gebruikers station wilt gebruiken en bestanden wilt kopiëren naar/van een JEA-eind punt dat is geconfigureerd om het gebruikers `-ToSession` station `-FromSession` zichtbaar te `Copy-Item`maken, gebruikt u de para meters en op.
+Als u het gebruikers station wilt gebruiken en bestanden wilt kopiëren naar/van een JEA-eind punt dat is geconfigureerd om het gebruikers station zichtbaar te maken, gebruikt u de `-ToSession` `-FromSession` para meters en op `Copy-Item` .
 
 ```powershell
 # Connect to the JEA endpoint

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakket eigenaren beheren
-ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329020"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564666"
 ---
 # <a name="managing-package-owners"></a>Pakket eigenaren beheren
 
@@ -41,7 +41,6 @@ Dit proces van uitnodigingen voor komt dat gebruikers onterecht andere gebruiker
 
 Houd er rekening mee dat de meta gegevens van ' auteurs ' niet-vrije tekst zijn. alleen "eigen aren" worden beheerd.
 
-
 ## <a name="removing-owners"></a>Eigen aren verwijderen
 
 Wanneer een pakket meerdere eigen aren heeft en één moet worden verwijderd, is het proces eenvoudig:
@@ -50,8 +49,6 @@ Wanneer een pakket meerdere eigen aren heeft en één moet worden verwijderd, is
 2. Ga naar een pakket pagina met het tabblad pakketten, zoek of klik op uw gebruikers naam en vervolgens op [**mijn pakketten beheren**](https://www.powershellgallery.com/account/Packages).
 3. Wanneer u bent aangemeld als eigenaar van een pakket, kunt u aan de linkerkant op de link eigen aren beheren klikken;
 4. Klik op de koppeling verwijderen naast de eigenaar die moet worden verwijderd.
-
-
 
 ## <a name="transferring-package-ownership"></a>Eigendom van het pakket overdragen
 
@@ -65,7 +62,6 @@ Deze aanvraag is beschikbaar in een paar formulieren, maar het proces werkt op d
 
 - Het eigendom van het pakket verandert van de ene ontwikkelaar naar een andere
 - Het pakket is per ongeluk gepubliceerd met het verkeerde account
-
 
 ## <a name="orphaned-packages"></a>Zwevende pakketten
 

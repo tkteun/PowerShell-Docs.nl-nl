@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e619ab16-90ad-46e9-9bde-d6dce492ba56
 caps.latest.revision: 4
-ms.openlocfilehash: e3d32f36b597088abc41e229bb0955c1b25504e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d740c0028fd2d4ddd83fe97d66ea45aa6300e16b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353177"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561032"
 ---
 # <a name="writing-comment-based-help-topics"></a>Help-onderwerpen op basis van opmerkingen schrijven
 
 U kunt Help-onderwerpen op basis van opmerkingen schrijven voor functies en scripts door speciale tref woorden voor opmerkingen te gebruiken.
 
- De cmdlet `Get-Help` geeft Help op basis van opmerkingen weer in dezelfde indeling waarin de Help-onderwerpen over cmdlets worden weer gegeven die zijn gegenereerd op basis van XML-bestanden. Gebruikers kunnen alle para meters van `Get-Help`, zoals gedetailleerd, volledig, voor beeld en online, gebruiken om Help voor de functie en het script weer te geven.
+ Met de `Get-Help` cmdlet wordt Help op basis van opmerkingen weer gegeven in dezelfde indeling waarin de Help-onderwerpen over cmdlets worden weer gegeven die zijn gegenereerd op basis van XML-bestanden. Gebruikers kunnen alle para meters van `Get-Help` , zoals gedetailleerd, volledig, voor beeld en online, gebruiken om Help voor de functie en het script weer te geven.
 
  U kunt ook op XML gebaseerde Help-onderwerpen voor scripts en functies schrijven en de tref woorden voor Help-opmerkingen gebruiken om gebruikers om te leiden naar de op XML gebaseerde onderwerpen of andere onderwerpen.
 

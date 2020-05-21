@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
-ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2c9d6040b7a9c17dc5204c8eb835fd69780f62c5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352253"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564254"
 ---
 # <a name="configuring-role-based-authorization"></a>Autorisatie op basis van rollen configureren
 
@@ -23,9 +23,9 @@ In dit voor beeld configureert u een XML-bestand dat wordt gebruikt door de voor
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Het bestand RBacConfiguration. xml wijzigen
 
-Dit bestand definieert het autorisatie beleid voor de toepassing. Rollen worden gedefinieerd met behulp van `Group` knooppunten. Een `Group` knoop punt definieert de Windows Power shell-opdrachten die gebruikers die zijn toegewezen aan die groep kunnen uitvoeren. Gebruikers worden toegewezen aan groepen met behulp van `User` knooppunten.
+Dit bestand definieert het autorisatie beleid voor de toepassing. Rollen worden gedefinieerd met behulp van `Group` knoop punten. Een `Group` knoop punt definieert de Windows Power shell-opdrachten die gebruikers die zijn toegewezen aan die groep kunnen uitvoeren. Gebruikers worden toegewezen aan groepen met behulp van `User` knoop punten.
 
-In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `Group` en een gebruiker toevoegen aan elke groep.
+In deze voor beelden gaat u een module toevoegen aan het beheerders `Group` knooppunt en een gebruiker toevoegen aan elke groep.
 
 #### <a name="adding-a-module-to-a-group-node"></a>Een module toevoegen aan een groeps knooppunt
 
@@ -85,9 +85,9 @@ In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `G
    </RbacConfiguration>
    ```
 
-2. Het bestand bevat twee `Group` knoop punten. Dit zijn de twee rollen die in dit voor beeld worden gebruikt, de `NonAdminGroup` en de `AdminGroup` rollen.
+2. Het bestand bevat twee `Group` knoop punten. Dit zijn de twee rollen die in dit voor beeld worden gebruikt, `NonAdminGroup` evenals de `AdminGroup` rollen.
 
-   Voeg het volgende XML-bestand toe aan de label `Cmdlets` sluiten in het eerste `Group` knooppunt:
+   `Cmdlets` `Group` Voeg het volgende XML-bestand toe na de afsluit code in het eerste knoop punt:
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ In deze voor beelden gaat u een module toevoegen aan het knoop punt beheerder `G
 
 #### <a name="adding-a-user-to-a-group-node"></a>Een gebruiker toevoegen aan een groeps knooppunt
 
-1. Open het bestand **RBacConfiguration. XML** in een tekst editor. Dit bestand bevindt zich in de map C:\\\inetpub\wwwroot\Modata als u de naam van het eind punt niet hebt gewijzigd vóór de installatie.
+1. Open het bestand **RBacConfiguration. XML** in een tekst editor. Dit bestand bevindt zich in de map C: \\ \inetpub\wwwroot\Modata als u de naam van het eind punt niet hebt gewijzigd vóór de installatie.
 
-2. Voeg in het knoop punt `Users` de volgende XML-code toe:
+2. Voeg, direct na het afsluitende label in het `Users` knoop punt, de volgende XML toe:
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

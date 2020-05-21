@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 03/09/2020
-ms.openlocfilehash: 45b639ea5f1a4d4e1decaaeacd998cdd3e3d7d02
-ms.sourcegitcommit: 28a40a0fe590a7efe893793f7db88320dbba64ff
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83407764"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560726"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -23,7 +23,7 @@ U kunt ook hulp van andere leden van de Community vinden in de micro soft [Power
 
 ## <a name="lifecycle-of-powershell-7"></a>Levens cyclus van Power shell 7
 
-Met de release van Power shell 7 wordt Power shell nog steeds ondersteund onder het [beleid voor moderne levenscyclus van micro soft][modern], maar ondersteunings datums zijn gekoppeld aan [de ondersteunings levenscyclus van .net core][Long-Term]. In deze onderhouds benadering kunnen klanten LTS-releases (Long term support) of actuele releases kiezen. Power shell 7,0 is een LTS-release. Ondersteuning eindigt met de ondersteuning van .NET Core 3,1. De volgende LTS-release volgt de volgende versie van .NET core LTS. Zie de [tabel einde van Power shell-releases](#powershell-releases-end-of-life) voor huidige laatste ondersteunings datums. LTS release-updates bevatten alleen essentiële updates en oplossingen voor beveiliging en onderhoud die zijn ontworpen om de invloed op bestaande workloads te voor komen of minimaliseren.
+Met de release van Power shell 7 wordt Power shell nog steeds ondersteund onder het [beleid voor moderne levenscyclus van micro soft][modern], maar ondersteunings datums zijn gekoppeld aan [de ondersteunings levenscyclus van .net core][Long-Term]. In deze onderhouds benadering kunnen klanten LTS-releases (Long term support) of actuele releases kiezen. Power shell 7,0 is een LTS-release. Ondersteuning eindigt met de ondersteuning van .NET Core 3,1. De volgende LTS-release volgt de volgende versie van .NET core LTS. Zie de [tabel einde van Power shell-releases](#powershell-releases-end-of-life) voor de huidige laatste ondersteunings datums. LTS release-updates bevatten alleen essentiële updates en oplossingen voor beveiliging en onderhoud die zijn ontworpen om de invloed op bestaande workloads te voor komen of minimaliseren.
 
 Een huidige release is een release die plaatsvindt tussen LTS-releases. Huidige releases kunnen essentiële oplossingen, innovaties en nieuwe functies bevatten. Een huidige release wordt drie maanden na de volgende huidige of LTS release ondersteund.
 
@@ -144,17 +144,17 @@ Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibilitei
 Power shell volgt de [micro soft security Servicing criteria voor Windows][].
 De onderstaande tabel bevat een overzicht van de functies die voldoen aan de onderhouds criteria en die niet.
 
-| Onderdeel                          | Type             | Intentie tot service? |
-|----------------------------------|------------------|--------------------|
-| Uitvoerings beleid                 | Diep ingrijpende verdediging | Nee                 |
-| Systeem vergrendeling-met AppLocker | Diep ingrijpende verdediging | Nee                 |
-| Systeem Lockdown-met WDAC      | Beveiligings functie | Ja                |
+| Functie                          | Type             |
+|----------------------------------|------------------|
+| Uitvoerings beleid                 | Diep ingrijpende verdediging |
+| Systeem vergrendeling-met AppLocker | Diep ingrijpende verdediging |
+| Systeem Lockdown-met WDAC      | Beveiligings functie |
 
 ## <a name="release-history"></a>Release geschiedenis
 
 De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power shell. Deze tabel wordt vermeld voor historische Naslag informatie. Het is niet bedoeld voor gebruik om de ondersteunings levenscyclus te bepalen.
 
-|       Versie        | Release datum |                                                                     Opmerking                                                                      |
+|       Versie        | Release datum |                                                                     Notitie                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Power shell 7,0 (LTS) |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
 | Power shell 6,0       |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |

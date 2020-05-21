@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996037"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560165"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Het Help-bestand voor cmdlets maken
 
@@ -93,18 +93,18 @@ In deze sectie wordt beschreven hoe u een geldig XML-bestand maakt dat inhoud be
 
  [De gedetailleerde beschrijving toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-a-cmdlet-description.md)
 
- [De syntaxis van een Help-onderwerp toevoegen aan een cmdlet](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Syntaxis toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Para meters toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-parameter-information.md)
 
- [Invoer typen toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
+ [Invoertypen toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Retour waarden toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
  [Opmerkingen toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Voor beelden toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Verwante koppelingen toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
- [Windows Power shell SDK](../windows-powershell-reference.md)
+ [Windows PowerShell SDK](../windows-powershell-reference.md)

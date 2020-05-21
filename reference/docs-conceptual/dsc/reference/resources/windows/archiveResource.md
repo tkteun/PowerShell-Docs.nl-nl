@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-archief resource
-ms.openlocfilehash: ddabe1a623783fe213b8059f47851184d5253fc5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942515"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560369"
 ---
 # <a name="dsc-archive-resource"></a>DSC-archief resource
 
@@ -45,7 +45,7 @@ Archive [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming**. Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
@@ -54,7 +54,7 @@ Archive [string] #ResourceName
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u de archief resource gebruikt om ervoor te zorgen dat de inhoud `Test.zip` van een archief bestand bestaat en op een bepaalde bestemming wordt geëxtraheerd.
+In het volgende voor beeld ziet u hoe u de archief resource gebruikt om ervoor te zorgen dat de inhoud van een archief bestand `Test.zip` bestaat en op een bepaalde bestemming wordt geëxtraheerd.
 
 ```powershell
 Archive ArchiveExample {

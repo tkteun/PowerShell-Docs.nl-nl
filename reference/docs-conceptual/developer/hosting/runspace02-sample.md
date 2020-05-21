@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7630bb63-ef39-4abd-b795-8000f984c1e5
 caps.latest.revision: 9
-ms.openlocfilehash: 6352169cffbb8a8bf59a42f79979f5003c150fa4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 997b1d6841ff014093ba54bf7a1db7b0b7d746b8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353100"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564803"
 ---
 # <a name="runspace02-sample"></a>Voorbeeld Runspace02
 
-In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) gebruikt om de cmdlets voor [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uit te voeren. De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourneert [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` sorteert de objecten op basis van hun [System.Diagnostics.process.id *](/dotnet/api/System.Diagnostics.Process.Id) -eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.
+In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) gebruikt om de cmdlets voor [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uit te voeren. De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourneert [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` objecten worden gesorteerd op basis van hun [System.Diagnostics.process.id *](/dotnet/api/System.Diagnostics.Process.Id) -eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.
 
 ## <a name="requirements"></a>Vereisten
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -116,4 +116,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)
+[Een Windows PowerShell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)

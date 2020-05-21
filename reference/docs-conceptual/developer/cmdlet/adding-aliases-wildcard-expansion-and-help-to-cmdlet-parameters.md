@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7c4098c6c670f22253fe7d463b33e45208d00790
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415652"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559995"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 
@@ -35,13 +35,13 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Para meters definiëren voor systeem wijziging
 
-Uw cmdlet moet para meters definiëren die systeem wijzigingen en gebruikers feedback ondersteunen. De cmdlet moet een `Name` para meter of gelijkwaardig definiëren, zodat de cmdlet het systeem kan wijzigen door een bepaalde soort id. Daarnaast moet de cmdlet de `Force`-en `PassThru`-para meters definiëren. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze para meters.
+Uw cmdlet moet para meters definiëren die systeem wijzigingen en gebruikers feedback ondersteunen. Met de cmdlet wordt een `Name` para meter of gelijkwaardige waarde gedefinieerd, zodat de cmdlet het systeem kan wijzigen met een bepaalde sorteer-id. Daarnaast moet de cmdlet de `Force` `PassThru` para meters en opgeven. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze para meters.
 
 ## <a name="defining-a-parameter-alias"></a>Een parameter alias definiëren
 
 Een parameter alias kan een alternatieve naam of een goed gedefinieerde korte naam van één of twee letters zijn voor een cmdlet-para meter. In beide gevallen is het doel van het gebruik van aliassen om de gebruikers vermelding te vereenvoudigen vanaf de opdracht regel. Windows Power shell ondersteunt parameter aliassen via het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) , dat gebruikmaakt van de declaratie syntaxis [alias ()].
 
-De volgende code laat zien hoe een alias wordt toegevoegd aan de para meter `Name`.
+De volgende code laat zien hoe een alias wordt toegevoegd aan de `Name` para meter.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Naast het gebruik van het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) voert de Windows Power shell-runtime gedeeltelijke naam aanpassing uit, zelfs als er geen aliassen zijn opgegeven. Als uw cmdlet bijvoorbeeld de para meter `FileName` heeft en de enige para meter is die begint met `F`, kan de gebruiker `Filename`, `Filenam`, `File`, `Fi`of `F` invoeren en de vermelding toch herkennen als de `FileName`-para meter.
+Naast het gebruik van het kenmerk [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) voert de Windows Power shell-runtime gedeeltelijke naam aanpassing uit, zelfs als er geen aliassen zijn opgegeven. Als uw cmdlet bijvoorbeeld een para meter heeft `FileName` en de enige para meter is die begint met `F` , kan de gebruiker `Filename` `Filenam` `File` `Fi` `F` de vermelding als de para meter opgeven,,, of en nog steeds herkennen `FileName` .
 
 ## <a name="creating-help-for-parameters"></a>Help voor para meters maken
 
-Met Windows Power shell kunt u Help maken voor cmdlet-para meters. Doe dit voor alle para meters die worden gebruikt voor systeem wijzigingen en gebruikers feedback. Voor elke para meter om hulp te ondersteunen, kunt u het sleutel woord `HelpMessage` kenmerk instellen in de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Dit sleutel woord definieert de tekst die voor de gebruiker moet worden weer gegeven voor hulp bij het gebruik van de para meter. U kunt ook het sleutel woord `HelpMessageBaseName` instellen om de basis naam te identificeren van een resource die moet worden gebruikt voor het bericht. Als u dit tref woord hebt ingesteld, moet u ook het sleutel woord `HelpMessageResourceId` instellen om de resource-id op te geven.
+Met Windows Power shell kunt u Help maken voor cmdlet-para meters. Doe dit voor alle para meters die worden gebruikt voor systeem wijzigingen en gebruikers feedback. Voor elke para meter om hulp te ondersteunen, kunt u het `HelpMessage` sleutel woord kenmerk instellen in de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Dit sleutel woord definieert de tekst die voor de gebruiker moet worden weer gegeven voor hulp bij het gebruik van de para meter. U kunt ook het `HelpMessageBaseName` tref woord instellen om de basis naam te identificeren van een resource die moet worden gebruikt voor het bericht. Als u dit tref woord hebt ingesteld, moet u ook het `HelpMessageResourceId` tref woord instellen om de resource-id op te geven.
 
-De volgende code uit deze stop-proc-cmdlet definieert het sleutel woord `HelpMessage` kenmerk voor de para meter `Name`.
+Met de volgende code uit deze stop-proc-cmdlet wordt het `HelpMessage` sleutel woord attribute voor de `Name` para meter gedefinieerd.
 
 ```csharp
 /// <summary>
@@ -92,7 +92,7 @@ De cmdlet moet een invoer verwerkings methode overschrijven. Dit is meestal [Sys
 
 ## <a name="supporting-wildcard-expansion"></a>Ondersteuning voor het uitbreiden van joker tekens
 
-Als u wilt toestaan dat meerdere objecten worden geselecteerd, kan uw cmdlet de klassen [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) en [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) gebruiken om ondersteuning voor joker tekens te bieden voor de invoer van para meters. Voor beelden van Joker teken patronen zijn LSA *, \*. txt en [a-c]\*. Gebruik het back-quote teken (') als escape-teken wanneer het patroon een teken bevat dat letterlijk moet worden gebruikt.
+Als u wilt toestaan dat meerdere objecten worden geselecteerd, kan uw cmdlet de klassen [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) en [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) gebruiken om ondersteuning voor joker tekens te bieden voor de invoer van para meters. Voor beelden van Joker teken patronen zijn LSA *, \* . txt en [a-c] \* . Gebruik het back-quote teken (') als escape-teken wanneer het patroon een teken bevat dat letterlijk moet worden gebruikt.
 
 Een Joker teken uitbreiding van bestands-en padnamen zijn voor beelden van veelvoorkomende scenario's waarbij de cmdlet mogelijk ondersteuning biedt voor invoer van paden wanneer de selectie van meerdere objecten is vereist. Een veelvoorkomend geval is in het bestands systeem, waarbij een gebruiker alle bestanden in de huidige map wil weer geven.
 
@@ -100,7 +100,7 @@ U moet een aangepaste implementatie van Joker teken patronen die slechts zelden 
 
 - **Vraag teken (?).** Komt overeen met een teken op de opgegeven locatie.
 
-- **Asterisk (\*).** Komt overeen met nul of meer tekens, te beginnen bij de opgegeven locatie.
+- **Asterisk ( \* ).** Komt overeen met nul of meer tekens, te beginnen bij de opgegeven locatie.
 
 - **Haakje openen ([).** Introduceert een patroon rechte haak expressie die tekens of een reeks tekens kan bevatten. Als een bereik vereist is, wordt een koppel teken (-) gebruikt om het bereik aan te geven.
 
@@ -130,7 +130,7 @@ if (!wildcard.IsMatch(processName))
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-Zie StopProcessSample03- C# voor [beeld](./stopprocesssample03-sample.md)voor de volledige voorbeeld code.
+Zie StopProcessSample03-voor [beeld](./stopprocesssample03-sample.md)voor de volledige C#-voorbeeld code.
 
 ## <a name="define-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
@@ -144,13 +144,13 @@ Na de implementatie van een cmdlet moet deze met Windows Power shell zijn geregi
 
 Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld van de cmdlet stop-proc testen. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
 
-- Start Windows Power shell en gebruik stop-proc om een proces te stoppen met behulp van de verwerkings alias voor de para meter `Name`.
+- Start Windows Power shell en gebruik stop-proc om een proces te stoppen met de alias van de procesnaam voor de `Name` para meter.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     Confirm
@@ -165,7 +165,7 @@ De volgende uitvoer wordt weer gegeven.
     PS> stop-proc
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ De volgende uitvoer wordt weer gegeven.
     Name[0]: notepad
     ```
 
-- Maak nu de volgende vermelding om alle processen te stoppen die overeenkomen met het Joker teken * Note\*. U wordt gevraagd om elk proces dat overeenkomt met het patroon te stoppen.
+- Maak nu de volgende vermelding om alle processen te stoppen die overeenkomen met het Joker teken ' * Note \* '. U wordt gevraagd om elk proces dat overeenkomt met het patroon te stoppen.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ De volgende uitvoer wordt weer gegeven.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     Confirm
@@ -221,4 +221,4 @@ De volgende uitvoer wordt weer gegeven.
 
 [Ondersteuning voor joker tekens in cmdlet-para meters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

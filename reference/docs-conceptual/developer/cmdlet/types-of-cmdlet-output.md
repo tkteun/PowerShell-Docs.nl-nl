@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
-ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359187"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561407"
 ---
 # <a name="types-of-cmdlet-output"></a>Typen cmdlet-uitvoer
 
@@ -54,7 +54,7 @@ Standaard worden fout opsporings berichten niet weer gegeven. U kunt de para met
 
 Met cmdlets kunt u waarschuwings berichten weer geven door de methode [System. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) aan te roepen.
 
-Standaard worden waarschuwings berichten weer gegeven. U kunt echter waarschuwings berichten configureren met behulp van de variabele `$WarningPreference` of door de para meters **uitgebreid** en **fout opsporing** te gebruiken wanneer de cmdlet wordt aangeroepen.
+Standaard worden waarschuwings berichten weer gegeven. U kunt echter waarschuwings berichten configureren met behulp van de `$WarningPreference` variabele of door gebruik te maken van de para meters **uitgebreid** en **fout opsporing** wanneer de cmdlet wordt aangeroepen.
 
 ## <a name="displaying-output"></a>Uitvoer weer geven
 
@@ -66,8 +66,8 @@ U kunt ook een cmdlet ontwerpen om rechtstreeks toegang te krijgen tot de uitvoe
 
 ## <a name="see-also"></a>Zie ook
 
-[Basis concepten voor fouten rapportage](./error-reporting-concepts.md)
+[Concepten voor foutrapportage](./error-reporting-concepts.md)
 
-[Overzicht van de cmdlet](./cmdlet-overview.md)
+[Overzicht van cmdlets](./cmdlet-overview.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pakket resource
-ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ff2eae712b4117da9bca915f52e18caed7c4885d
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941381"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559927"
 ---
 # <a name="dsc-package-resource"></a>DSC-pakket resource
 
@@ -37,7 +37,7 @@ Package [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Naam |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
+|Name |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
 |Pad |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
 |ProductId |Hiermee wordt de product-ID aangegeven waarmee het pakket uniek wordt geïdentificeerd. |
 |Argumenten |Een lijst met argumenten die precies zo worden door gegeven aan het pakket. |
@@ -49,7 +49,7 @@ Package [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt aangegeven of het pakket is geïnstalleerd. Stel deze eigenschap in op **afwezig** om te controleren of het pakket niet is geïnstalleerd (of verwijder het pakket als dit is geïnstalleerd). Stel deze in op **aanwezig** om te controleren of het pakket is geïnstalleerd. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

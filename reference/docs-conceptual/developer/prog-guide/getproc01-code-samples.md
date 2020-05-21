@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
-ms.openlocfilehash: 6d47fbc6b41d87cb830683ea412826275083b8a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c9b2179adc4ea4803f103e9d2dda85b52659a8cf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352736"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560029"
 ---
 # <a name="getproc01-code-samples"></a>GetProc01-codevoorbeelden
 
-Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc01. Dit is het basis voorbeeld van `Get-Process` cmdlet dat wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md). Een `Get-Process`-cmdlet is ontworpen voor het ophalen van informatie over alle processen die worden uitgevoerd op de lokale computer.
+Hier volgen de code voorbeelden voor de voor beeld-cmdlet GetProc01. Dit is het basis `Get-Process` voorbeeld van de cmdlet die wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md). Een `Get-Process` cmdlet is ontworpen voor het ophalen van informatie over alle processen die worden uitgevoerd op de lokale computer.
 
 Zie de volgende onderwerpen voor een volledige voorbeeld code.
 
 |Taal|Onderwerp|
 |--------------|-----------|
-|C#|[GetProc01 (C#) voorbeeld code](./getproc01-csharp-sample-code.md)|
-|VB.NET|[Voorbeeld code voor GetProc01 (VB.NET)](./getproc01-vb-net-sample-code.md)|
+|C#|[GetProc01-codevoorbeeld (C#)](./getproc01-csharp-sample-code.md)|
+|VB.NET|[GetProc01-codevoorbeeld (VB.NET)](./getproc01-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

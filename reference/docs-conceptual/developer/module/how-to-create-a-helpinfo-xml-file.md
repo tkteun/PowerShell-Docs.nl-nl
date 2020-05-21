@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357545"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564786"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Een HelpInfo-XML-bestand maken
 
@@ -27,18 +27,18 @@ Elke module heeft slechts één HelpInfo XML-bestand, zelfs als de module meerde
 
 Het is essentieel dat het XML-bestand HelpInfo zorgvuldig wordt bewaard. Als u nieuwe bestanden uploadt, maar vergeet de versie nummers niet te verhogen, worden de nieuwe bestanden niet gedownload naar de computers van gebruikers. Als u Help-bestanden toevoegt voor een nieuwe UI-cultuur, maar u het XML-bestand HelpInfo niet bijwerkt of op de juiste locatie plaatst, worden de nieuwe bestanden niet gedownload met de Help die kan worden bijgewerkt.
 
-## <a name="in-this-section"></a>In dit gedeelte
+## <a name="in-this-section"></a>In deze sectie doet u het volgende
 
 Deze sectie bevat de volgende onderwerpen:
 
-- [HelpInfo XML-schema](./helpinfo-xml-schema.md)
+- [HelpInfo-XML-schema](./helpinfo-xml-schema.md)
 
-- [HelpInfo XML-voorbeeld bestand](./helpinfo-xml-sample-file.md)
+- [HelpInfo-XML-voorbeeldbestand](./helpinfo-xml-sample-file.md)
 
-- [Een HelpInfo XML-bestand een naam](./how-to-name-a-helpinfo-xml-file.md)
+- [Een naam geven aan een HelpInfo-XML-bestand](./how-to-name-a-helpinfo-xml-file.md)
 
-- [HelpInfo XML-versie nummers instellen](./how-to-set-helpinfo-xml-version-numbers.md)
+- [HelpInfo-XML-versienummers instellen](./how-to-set-helpinfo-xml-version-numbers.md)
 
 ## <a name="see-also"></a>Zie ook
 
-[Ondersteunende Help die kan worden bijgewerkt](./supporting-updatable-help.md)
+[Ondersteunende help die kan worden bijgewerkt](./supporting-updatable-help.md)

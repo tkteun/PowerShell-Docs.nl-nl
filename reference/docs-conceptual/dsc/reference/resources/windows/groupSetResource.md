@@ -3,18 +3,18 @@ ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 description: Biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt.
 title: DSC-groeps resource
-ms.openlocfilehash: d36274741b2c96a0852f384ccf5d187ac8d27131
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941402"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560335"
 ---
 # <a name="dsc-groupset-resource"></a>DSC-groeps resource
 
 > Van toepassing op: Windows Power shell 5. x
 
-De **groeps** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die de [groeps bron](groupResource.md) aanroept voor elke groep die `GroupName` in de para meter is opgegeven.
+De **groeps** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die de [groeps bron](groupResource.md) aanroept voor elke groep die in de `GroupName` para meter is opgegeven.
 
 Gebruik deze resource als u dezelfde lijst met leden wilt toevoegen aan of verwijderen uit meer dan één groep, als u meer dan één groep wilt verwijderen of meer dan één groep met dezelfde lijst met leden wilt toevoegen.
 
@@ -40,17 +40,17 @@ Group [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |GroupName |De namen van de groepen waarvoor u een specifieke status wilt controleren. |
-|Leden |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|Leden |Gebruik deze eigenschap om het huidige groepslid maatschap te vervangen door de opgegeven leden. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, moet u de eigenschap **MembersToExclude** of **MembersToInclude** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
 |Beschrijving |De beschrijving van de groep. |
-|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
-|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met teken reeksen van het `Domain\UserName`formulier. Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|MembersToInclude |Gebruik deze eigenschap om leden toe te voegen aan het bestaande lidmaatschap van de groep. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
+|MembersToExclude |Gebruik deze eigenschap om leden te verwijderen uit het bestaande lidmaatschap van de groepen. De waarde van deze eigenschap is een matrix met teken reeksen van het formulier `Domain\UserName` . Als u deze eigenschap in een configuratie instelt, mag u de eigenschap **Members** niet gebruiken. Als u dit doet, wordt er een fout gegenereerd. |
 |Referentie |De referenties die nodig zijn voor toegang tot externe bronnen. Dit account moet over de juiste Active Directory machtigingen beschikken om alle niet-lokale accounts aan de groep toe te voegen. anders treedt er een fout op. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt aangegeven of de groepen bestaan. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groepen niet bestaan. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groepen bestaan. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

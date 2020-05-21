@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxEnvironment-resource
-ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 64de54fbde15f9d4d7fac425af27b6ef11347dce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941437"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560892"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-resource
 
@@ -30,22 +30,22 @@ nxEnvironment <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Naam |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
+|Name |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
 |Waarde |De waarde die moet worden toegewezen aan de omgevings variabele. |
-|Pad |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in `$true` op **als de variabele een padvariabele** is; Stel in dat geval in `$false`op. De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
+|Pad |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in op `$true` als de variabele een **padvariabele** is. anders stelt u deze in op `$false` . De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de variabele bestaat. Stel deze eigenschap in op **presen teren** om ervoor te zorgen dat de variabele bestaat. Stel deze in op **afwezig** om te controleren of de variabele niet bestaat. De standaard waarde is **aanwezig**. |
 
 ## <a name="additional-information"></a>Aanvullende informatie
 
-- Als het **pad** ontbreekt of is ingesteld `$false`op, worden omgevings variabelen `/etc/environment`beheerd in.
+- Als het **pad** ontbreekt of is ingesteld op `$false` , worden omgevings variabelen beheerd in `/etc/environment` .
   Uw Program ma's of scripts kunnen de configuratie van het `/etc/environment` bestand vereisen om toegang te krijgen tot de variabelen van de beheerde omgeving.
-- Als **Path** is ingesteld op `$true`, wordt de omgevings variabele in het bestand `/etc/profile.d/DSCenvironment.sh`beheerd. Dit bestand wordt gemaakt als het niet bestaat. Als **het** is ingesteld op **afwezig** en **pad** is ingesteld op `$true`, wordt een bestaande omgevings variabele alleen uit `/etc/profile.d/DSCenvironment.sh` andere bestanden verwijderd.
+- Als **Path** is ingesteld op `$true` , wordt de omgevings variabele in het bestand beheerd `/etc/profile.d/DSCenvironment.sh` . Dit bestand wordt gemaakt als het niet bestaat. Als het is ingesteld op **afwezig** en **pad** **is ingesteld** op `$true` , wordt een bestaande omgevings variabele alleen uit `/etc/profile.d/DSCenvironment.sh` andere bestanden verwijderd.
 
 ## <a name="example"></a>Voorbeeld
 

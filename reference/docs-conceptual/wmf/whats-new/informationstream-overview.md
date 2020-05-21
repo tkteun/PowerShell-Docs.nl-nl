@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Gegevensstroom
-ms.openlocfilehash: c54603cf0dd4f0b69f8147620130f9f29bc3e5ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 39cb3c36a70530b3ff9777edc74b88d276cbbb7c
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145038"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560114"
 ---
 # <a name="information-stream"></a>Gegevensstroom
 
@@ -53,14 +53,14 @@ I <3 Output
 SCRIPT COMPLETE!!
 ```
 
-De `$r` variabele heeft de proces informatie vastgelegd in de script variabele `$p`.
+De `$r` variabele heeft de proces informatie vastgelegd in de script variabele `$p` .
 
 ```powershell
 $r.Id
 4008
 ```
 
-In tegens `Write-Host` telling tot de cmdlet kunt u met `Write-Information` de para meter **InformationVariable** van de uitvoer vastleggen in een variabele. Met behulp van de- **tag**kunt u afzonderlijke kanalen maken voor het bericht dat naar de **informatie** stroom wordt verzonden.
+In tegens telling tot de `Write-Host` cmdlet kunt u met de para meter **InformationVariable** van `Write-Information` de uitvoer vastleggen in een variabele. Met behulp van de- **tag**kunt u afzonderlijke kanalen maken voor het bericht dat naar de **informatie** stroom wordt verzonden.
 
 ```powershell
 $r = OutputGusher -InformationVariable iv

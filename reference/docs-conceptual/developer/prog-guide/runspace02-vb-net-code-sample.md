@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
-ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 38e022012bc5302fb28cd2e3d9f3a8d2859d72f6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357048"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559876"
 ---
 # <a name="runspace02-vbnet-code-sample"></a>Runspace02-codevoorbeeld (VB.NET)
 
-Dit is de VB.NET-bron code voor het Runspace02-voor beeld. In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om de `Get-Process`-cmdlet synchroon uit te voeren. Windows Forms en gegevens binding worden vervolgens gebruikt om de resultaten in een DataGridView-besturings element weer te geven.
+Dit is de VB.NET-bron code voor het Runspace02-voor beeld. In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om de cmdlet synchroon uit te voeren `Get-Process` . Windows Forms en gegevens binding worden vervolgens gebruikt om de resultaten in een DataGridView-besturings element weer te geven.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -88,4 +88,4 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9f1b94e722e59e707a26547949c661b5098d29e0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356824"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560947"
 ---
 # <a name="windows-powershell-provider-overview"></a>Overzicht van Windows PowerShell-providers
 
-Met een Windows Power shell-provider kan elk gegevens archief worden weer gegeven als een bestands systeem alsof het een gekoppeld station is. Met de ingebouwde register provider kunt u bijvoorbeeld navigeren in het REGI ster, net zoals u navigeert naar het `c` station van de computer. Een provider kan ook de `Item`-cmdlets overschrijven (bijvoorbeeld `Get-Item`, `Set-Item`, enzovoort), zodat de gegevens in uw gegevens archief kunnen worden behandeld als bestanden en mappen die worden behandeld bij het navigeren door een bestands systeem. Zie [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)voor meer informatie over providers en stations en de ingebouwde providers in Windows Power shell.
+Met een Windows Power shell-provider kan elk gegevens archief worden weer gegeven als een bestands systeem alsof het een gekoppeld station is. Zo kunt u met de ingebouwde register provider navigeren in het REGI ster, net zoals u zou navigeren door het `c` station van de computer. Een provider kan ook de `Item` cmdlets (bijvoorbeeld, `Get-Item` `Set-Item` enzovoort) overschrijven, zodat de gegevens in uw gegevens archief kunnen worden behandeld als bestanden en mappen die worden behandeld bij het navigeren door een bestands systeem. Zie [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)voor meer informatie over providers en stations en de ingebouwde providers in Windows Power shell.
 
 ## <a name="providers-and-drives"></a>Providers en stations
 
@@ -43,15 +43,15 @@ Een stationspad is een combi natie van de naam van het item, de container en de 
 
 ### <a name="provider-qualified-paths"></a>Door de provider gekwalificeerde paden
 
-De provider moet een pad naar een provider ondersteunen om de Windows Power shell-engine in staat te stellen om uw provider te initialiseren en ongedaan te maken. De gebruiker kan bijvoorbeeld de File System-Provider initialiseren en de initialisatie ongedaan te maakt, omdat deze het volgende door de provider gekwalificeerde pad definieert: `FileSystem::\\uncshare\abc\bar`.
+De provider moet een pad naar een provider ondersteunen om de Windows Power shell-engine in staat te stellen om uw provider te initialiseren en ongedaan te maken. De gebruiker kan bijvoorbeeld de bestandssysteem provider initialiseren en de initialisatie ongedaan te maakt, omdat hiermee het volgende provider-gekwalificeerde pad wordt gedefinieerd: `FileSystem::\\uncshare\abc\bar` .
 
 ### <a name="provider-direct-paths"></a>Provider-directe paden
 
-Als u externe toegang tot uw Windows Power shell-provider wilt toestaan, moet het een provider-direct-pad ondersteunen om rechtstreeks door te geven aan de Windows Power shell-provider voor de huidige locatie. De Windows Power shell-provider van het REGI ster kan bijvoorbeeld `\\server\regkeypath` als een provider-direct pad gebruiken.
+Als u externe toegang tot uw Windows Power shell-provider wilt toestaan, moet het een provider-direct-pad ondersteunen om rechtstreeks door te geven aan de Windows Power shell-provider voor de huidige locatie. Het REGI ster van Windows Power shell-provider kan bijvoorbeeld worden gebruikt `\\server\regkeypath` als een provider-direct-pad.
 
 ### <a name="provider-internal-paths"></a>Provider-interne paden
 
-Uw Windows Power shell-provider moet een provider-intern pad ondersteunen om de provider-cmdlet toegang te geven tot gegevens met behulp van niet-Windows Power shell-Api's (Application Programming Interfaces). Dit pad wordt aangegeven na ':: ' in het provider-pad. Bijvoorbeeld: het pad naar de provider-intern voor de Windows Power shell-provider van het bestands systeem is `\\uncshare\abc\bar`.
+Uw Windows Power shell-provider moet een provider-intern pad ondersteunen om de provider-cmdlet toegang te geven tot gegevens met behulp van niet-Windows Power shell-Api's (Application Programming Interfaces). Dit pad wordt aangegeven na ':: ' in het provider-pad. Bijvoorbeeld: het pad van de provider-intern voor de Windows Power shell-provider van het bestands systeem is `\\uncshare\abc\bar` .
 
 ## <a name="overriding-cmdlet-parameters"></a>Cmdlet-para meters overschrijven
 
@@ -74,9 +74,9 @@ De opsomming [System. Management. Automation. provider. Providercapabilities](/d
 
 Wanneer u een provider schrijft, kunt u uw eigen Help implementeren voor de provider-cmdlets die u ondersteunt. Dit omvat één Help-onderwerp voor elke provider-cmdlet of meerdere versies van een Help-onderwerp voor gevallen waarbij de provider-cmdlet anders reageert op basis van het gebruik van dynamische para meters. Ter ondersteuning van de cmdlet-specifieke Help van de provider moet uw provider de interface [System. Management. Automation. provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) implementeren.
 
-De Windows Power shell-engine roept de methode [System. Management. Automation. provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) aan om het Help-onderwerp voor uw provider-cmdlets weer te geven. De engine bevat de naam van de cmdlet die de gebruiker heeft opgegeven bij het uitvoeren van de `Get-Help` cmdlet en het huidige pad van de gebruiker. Het huidige pad is vereist als uw provider verschillende versies van dezelfde provider-cmdlet voor verschillende stations implementeert. De-methode moet een teken reeks retour neren die de XML voor de Help van de cmdlet bevat.
+De Windows Power shell-engine roept de methode [System. Management. Automation. provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) aan om het Help-onderwerp voor uw provider-cmdlets weer te geven. De engine bevat de naam van de cmdlet die de gebruiker heeft opgegeven bij het uitvoeren `Get-Help` van de cmdlet en het huidige pad van de gebruiker. Het huidige pad is vereist als uw provider verschillende versies van dezelfde provider-cmdlet voor verschillende stations implementeert. De-methode moet een teken reeks retour neren die de XML voor de Help van de cmdlet bevat.
 
-De inhoud van het Help-bestand wordt geschreven met behulp van PSMAML XML. Dit is hetzelfde XML-schema dat wordt gebruikt voor het schrijven van Help-inhoud voor zelfstandige cmdlets. Voeg de inhoud voor de Help van uw aangepaste cmdlet toe aan het Help-bestand voor uw provider onder het `CmdletHelpPaths`-element. In het volgende voor beeld ziet u het `command`-element voor een cmdlet van één provider en ziet u hoe u de naam van de provider-cmdlet opgeeft die uw provider heeft. steun
+De inhoud van het Help-bestand wordt geschreven met behulp van PSMAML XML. Dit is hetzelfde XML-schema dat wordt gebruikt voor het schrijven van Help-inhoud voor zelfstandige cmdlets. Voeg de inhoud voor de Help van uw aangepaste cmdlet toe aan het Help-bestand voor uw provider onder het- `CmdletHelpPaths` element. In het volgende voor beeld ziet `command` u het-element voor een cmdlet van één provider en ziet u hoe u de naam van de provider-cmdlet opgeeft die uw provider heeft. steun
 
 ```xml
 <CmdletHelpPaths>
@@ -96,4 +96,4 @@ De inhoud van het Help-bestand wordt geschreven met behulp van PSMAML XML. Dit i
 
 [Provider-cmdlets](./provider-cmdlets.md)
 
-[Een Windows Power shell-provider schrijven](./writing-a-windows-powershell-provider.md)
+[Een Windows PowerShell-provider schrijven](./writing-a-windows-powershell-provider.md)

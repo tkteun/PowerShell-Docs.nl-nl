@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2551ceed-836f-4275-9fc0-ea68446d6a35
 caps.latest.revision: 7
-ms.openlocfilehash: 4f0be193fb5b5c753d040a48e5f49235ece11708
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8a9938a1685e9abc2f1dbfb18c3b2b9008d9be
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356628"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564923"
 ---
 # <a name="writing-a-windows-powershell-workflow"></a>Een Windows PowerShell-werkstroom schrijven
 
@@ -36,12 +36,12 @@ U kunt een XAML-werk stroom maken door activiteiten die worden weer gegeven door
 
   In de volgende onderwerpen wordt beschreven hoe u een werk stroom maakt met behulp van Windows Power shell-activiteiten.
 
-- [Windows Power shell-activiteiten toevoegen aan de Visual Studio-werkset](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)
+- [Windows PowerShell-activiteiten toevoegen aan de Visual Studio-werkset](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)
 
-- [Een werk stroom maken met Windows Power shell-activiteiten](./creating-a-workflow-with-windows-powershell-activities.md)
+- [Een werkstroom maken met Windows PowerShell-activiteiten](./creating-a-workflow-with-windows-powershell-activities.md)
 
-- [Een werk stroom maken met behulp van een Windows Power shell-script](./creating-a-workflow-by-using-a-windows-powershell-script.md)
+- [Een werkstroom maken met behulp van een Windows PowerShell-script](./creating-a-workflow-by-using-a-windows-powershell-script.md)
 
-- [Een Windows Power shell-werk stroom importeren en aanroepen](./importing-and-invoking-a-windows-powershell-workflow.md)
+- [Een Windows PowerShell-werkstroom importeren en aanroepen](./importing-and-invoking-a-windows-powershell-workflow.md)
 
-- [Een werk stroom activiteit maken op basis van een Windows Power shell-cmdlet](./creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md)
+- [Een werkstroomactiviteit maken uit een Windows PowerShell-cmdlet](./creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md)

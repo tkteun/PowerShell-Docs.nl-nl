@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
-ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357349"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559961"
 ---
 # <a name="supporting-updatable-help"></a>Ondersteunende help die kan worden bijgewerkt
 
@@ -23,22 +23,22 @@ Het *Windows Power shell-hulp systeem*dat kan worden bijgewerkt in Windows® 8 e
 
 Deze sectie bevat de volgende onderwerpen:
 
-- [Overzicht van bijwerk bare Help](./updatable-help-overview.md)
+- [Overzicht van Help die kan worden bijgewerkt](./updatable-help-overview.md)
 
-- [Bijwerk bare Help-ontwerp: stapsgewijze instructies](./updatable-help-authoring-step-by-step.md)
+- [Ontwerpen van Help die kan worden bijgewerkt: stap voor stap](./updatable-help-authoring-step-by-step.md)
 
-- [Hoe kan Help werken?](./how-updatable-help-works.md)
+- [De werking van Help die kan worden bijgewerkt](./how-updatable-help-works.md)
 
-- [Een HelpInfo XML-bestand maken](./how-to-create-a-helpinfo-xml-file.md)
+- [Een HelpInfo-XML-bestand maken](./how-to-create-a-helpinfo-xml-file.md)
 
-- [Bijwerk bare Help CAB-bestanden voorbereiden](./how-to-prepare-updatable-help-cab-files.md)
+- [CAB-bestanden voorbereiden voor een Help die kan worden bijgewerkt](./how-to-prepare-updatable-help-cab-files.md)
 
 - [Help-bestanden bijwerken](./how-to-update-help-files.md)
 
-- [Help-informatie testen die kan worden bijgewerkt](./how-to-test-updatable-help.md)
+- [Help testen die kan worden bijgewerkt](./how-to-test-updatable-help.md)
 
 ## <a name="see-also"></a>Zie ook
 
-[Online-Help ondersteunen](./supporting-online-help.md)
+[Ondersteunende online help](./supporting-online-help.md)
 
 [Bijwerk bare Help-status tabel](https://www.microsoft.com/en-us/itpro/windows)

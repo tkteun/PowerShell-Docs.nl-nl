@@ -3,16 +3,16 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
-ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278073"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560454"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
-Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-ID, `user@hotmail.com` zoals `user@outlook.com`of of een AAD-account (Azure Active Directory).
+Uw PowerShell Gallery account is een openbaar zicht bare naam die is gekoppeld aan een identiteit. Deze identiteit is een micro soft-ID, zoals `user@hotmail.com` of of `user@outlook.com` een Aad-account (Azure Active Directory).
 
 De PowerShell Gallery biedt de volgende account instellingen:
 
@@ -65,7 +65,6 @@ Als u het aanmeldings account wilt wijzigen, moet u zijn aangemeld met het huidi
    ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Voer het wacht woord van het nieuwe account in. Nadat u het wacht woord hebt ingevoerd, keert u terug naar de pagina account instellingen, waarin wordt weer gegeven dat het aanmeldings account is bijgewerkt.
-
 
 ## <a name="enable-two-factor-authentication-2fa"></a>Twee ledige verificatie inschakelen (twee ledige)
 

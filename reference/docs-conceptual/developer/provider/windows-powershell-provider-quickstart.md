@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352358"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560930"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snelstartgids voor Windows PowerShell-providers
 
@@ -35,9 +35,9 @@ Maak in Visual Studio een Class Library-project met de naam AccessDBProviderSamp
 
 1. Voeg de assembly System. Management. Automation toe als referentie voor uw project.
 
-2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing**. Klik in **Start project**op **extern programma starten**en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\Windows\System32\WindowsPowerShell\v1.0\\. Power shell. exe).
+2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing**. Klik in **Start project**op **extern programma starten**en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\Windows\System32\WindowsPowerShell\v1.0 \\ . Power shell. exe).
 
-3. Onder **Start opties**typt u het volgende in het vak **opdracht regel argumenten** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Onder **Start opties**typt u het volgende in het vak **opdracht regel argumenten** :`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>De provider klasse declareren
 
@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 De methode [System. Management. Automation. provider. Drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) wordt aangeroepen door de Windows Power shell-engine wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) aanroept en de naam van uw provider opgeeft. De para meter PSDriveInfo wordt door gegeven door de Windows Power shell-engine en de methode retourneert het nieuwe station naar de Windows Power shell-engine. Deze methode moet worden gedeclareerd in de hierboven gemaakte klasse.
 
-Met de methode wordt eerst gecontroleerd of zowel het object station als de hoofdmap van het station die zijn door gegeven, bestaan, `null` retour neren als een van beide. Vervolgens wordt een constructor van de interne klasse AccessDBPSDriveInfo gebruikt voor het maken van een nieuwe schijf en een verbinding met de Access-Data Base die op het station staat.
+Met de methode wordt eerst gecontroleerd of zowel het object station als de hoofdmap van het station die zijn door gegeven, aanwezig zijn, `null` indien van toepassing. Vervolgens wordt een constructor van de interne klasse AccessDBPSDriveInfo gebruikt voor het maken van een nieuwe schijf en een verbinding met de Access-Data Base die op het station staat.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

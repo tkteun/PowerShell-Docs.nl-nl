@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416026"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561066"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Gebruikersberichten toevoegen aan uw cmdlet
 
@@ -56,7 +56,7 @@ Er zijn geen beperkingen voor het aantal berichten dat door de cmdlet kan worden
 
 De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Elke sorteer-of cmdlet kan gebruikers meldingen schrijven van de invoer methoden. in het algemeen kunt u deze cmdlet een naam gegeven met een wille keurige term die aangeeft welke systeem wijzigingen de cmdlet uitvoert. Zie [cmdlet verb names](./approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-De cmdlet stop-proc is ontworpen om het systeem te wijzigen. Daarom moet de declaratie [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) voor de .net-klasse het sleutel woord `SupportsShouldProcess` kenmerk bevatten en moet worden ingesteld op `true`.
+De cmdlet stop-proc is ontworpen om het systeem te wijzigen. Daarom moet de declaratie [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) voor de .net-klasse het `SupportsShouldProcess` sleutel woord attribute bevatten en worden ingesteld op `true` .
 
 De volgende code is de definitie voor deze klasse stop-proc-cmdlet. Zie voor meer informatie over deze definitie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Para meters definiëren voor systeem wijziging
 
-De cmdlet stop-proc definieert drie para meters: `Name`, `Force`en `PassThru`. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over het definiëren van deze para meters.
+De cmdlet stop-proc definieert drie para meters: `Name` , `Force` en `PassThru` . Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over het definiëren van deze para meters.
 
 Dit is de para meter declaratie voor de cmdlet stop-proc.
 
@@ -143,7 +143,7 @@ WriteVerbose(message);
 De methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) wordt gebruikt voor het schrijven van fout opsporingsgegevens die kunnen worden gebruikt om de werking van de cmdlet op te lossen. De aanroep wordt uitgevoerd vanuit een invoer verwerkings methode.
 
 > [!NOTE]
-> Windows Power shell definieert ook een `Debug` para meter waarmee zowel uitgebreide informatie als fout opsporingsgegevens worden weer gegeven. Als uw cmdlet deze para meter ondersteunt, hoeft [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) niet te worden aangeroepen in dezelfde code die [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)aanroept.
+> Windows Power shell definieert ook een `Debug` para meter die zowel uitgebreide als fout opsporingsgegevens bevat. Als uw cmdlet deze para meter ondersteunt, hoeft [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) niet te worden aangeroepen in dezelfde code die [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)aanroept.
 
 In de volgende twee secties van code uit de cmdlet stop-proc worden aanroepen naar de methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) van de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) weer gegeven.
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows Power shell stuurt automatisch alle [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -aanroepen naar de tracerings infrastructuur en-cmdlets. Hierdoor kan de methode aanroepen naar de hosttoepassing, een bestand of een fout opsporingsprogramma worden getraceerd zonder dat u in de cmdlet extra ontwikkel werkzaamheden hoeft te doen. Het volgende opdracht regel item implementeert een tracerings bewerking.
 
-**PS > trace-Expression stop-proc-File proc. log-opdracht stop-proc Notepad**
+**PS> Trace-Expression stop-proc-File proc. log-opdracht stop-proc Notepad**
 
 ## <a name="writing-a-warning-message"></a>Een waarschuwings bericht schrijven
 
@@ -208,7 +208,7 @@ WriteProgress(pr);
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-Zie StopProcessSample02- C# voor [beeld](./stopprocesssample02-sample.md)voor de volledige voorbeeld code.
+Zie StopProcessSample02-voor [beeld](./stopprocesssample02-sample.md)voor de volledige C#-voorbeeld code.
 
 ## <a name="define-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
@@ -228,7 +228,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-De volgende uitvoer wordt weer gegeven.
+    De volgende uitvoer wordt weer gegeven.
 
     ```
     VERBOSE: Attempting to stop process " notepad ".
@@ -255,4 +255,4 @@ De volgende uitvoer wordt weer gegeven.
 
 [Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355515"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561049"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Dynamische parameters declareren
 
-In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijdens runtime worden toegevoegd aan de cmdlet. In dit voor beeld wordt de para meter `Department` toegevoegd aan de cmdlet wanneer de gebruiker de para meter `Employee` switch opgeeft. Zie [cmdlet Dynamic para meters](./cmdlet-dynamic-parameters.md)voor meer informatie over dynamische para meters.
+In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijdens runtime worden toegevoegd aan de cmdlet. In dit voor beeld `Department` wordt de para meter toegevoegd aan de cmdlet wanneer de gebruiker de `Employee` para meter switch opgeeft. Zie [cmdlet Dynamic para meters](./cmdlet-dynamic-parameters.md)voor meer informatie over dynamische para meters.
 
 ## <a name="to-define-dynamic-parameters"></a>Dynamische para meters definiëren
 
@@ -27,7 +27,7 @@ In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijde
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. Roep de methode [System. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) aan, waarmee het object wordt geretourneerd waarin de dynamische para meters zijn gedefinieerd. In dit voor beeld wordt de-methode aangeroepen wanneer de para meter `Employee` is opgegeven.
+2. Roep de methode [System. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) aan, waarmee het object wordt geretourneerd waarin de dynamische para meters zijn gedefinieerd. In dit voor beeld wordt de-methode aangeroepen wanneer de `Employee` para meter is opgegeven.
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ In dit voor beeld ziet u hoe u dynamische para meters kunt definiëren die tijde
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt de para meter `Department` toegevoegd wanneer de gebruiker de `Employee`-para meter opgeeft. De para meter `Department` is een optionele para meter en het kenmerk validate wordt gebruikt om de toegestane argumenten op te geven.
+In dit voor beeld `Department` wordt de para meter toegevoegd wanneer de gebruiker de `Employee` para meter opgeeft. De `Department` para meter is een optionele para meter en het kenmerk validate wordt gebruikt om de toegestane argumenten op te geven.
 
 ```csharp
 using System;
@@ -141,6 +141,6 @@ namespace SendGreeting
 
 [System. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Cmdlet dynamische para meters](./cmdlet-dynamic-parameters.md)
+[Dynamische cmdlet-parameters](./cmdlet-dynamic-parameters.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

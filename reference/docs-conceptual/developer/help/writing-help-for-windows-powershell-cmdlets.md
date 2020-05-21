@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55908d67-7cbe-482a-a105-5a6da93c5311
 caps.latest.revision: 4
-ms.openlocfilehash: 8d692cf88d1d356886ef973f0989294d6b51ee6d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd565e8bf8429d91d785664c8cc69d1843439219
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353170"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560590"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>Help schrijven voor Power shell-cmdlets
 
@@ -87,22 +87,22 @@ U kunt ook feedback van nieuws groepen aanvragen.
 
  [Het Help-bestand voor cmdlets maken](./how-to-create-the-cmdlet-help-file.md)
 
- [De naam en samen vatting van de cmdlet toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
+ [De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 
  [De gedetailleerde beschrijving toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-a-cmdlet-description.md)
 
- [De syntaxis van een Help-onderwerp toevoegen aan een cmdlet](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Syntaxis toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Para meters toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-parameter-information.md)
 
  [Invoer typen toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Retour waarden toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
- [Opmerkingen toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-notes-to-a-cmdlet-help-topic.md)
+ [Notities toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Voor beelden toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Verwante koppelingen toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
- [Windows Power shell SDK](../windows-powershell-reference.md)
+ [Windows PowerShell SDK](../windows-powershell-reference.md)

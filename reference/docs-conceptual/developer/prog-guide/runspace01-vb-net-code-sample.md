@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ce6bdec379a7ba9bf9b088c79a08ad5cef5da80b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352568"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560301"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01-codevoorbeeld (VB.NET)
 
-Hier volgen de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Hiervoor roept de toepassing een runs Pace aan en roept hij een opdracht aan. (Houd er rekening mee dat met deze toepassing geen runs Pace-configuratie gegevens worden opgegeven, en dat er geen pijp lijn expliciet wordt gemaakt.) De opdracht die wordt aangeroepen, is de `Get-Process`-cmdlet.
+Hier volgen de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Hiervoor roept de toepassing een runs Pace aan en roept hij een opdracht aan. (Houd er rekening mee dat met deze toepassing geen runs Pace-configuratie gegevens worden opgegeven, en dat er geen pijp lijn expliciet wordt gemaakt.) De opdracht die wordt aangeroepen, is de `Get-Process` cmdlet.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -73,4 +73,4 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-gebruikers resource
-ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bbfa74bda984110471dd193339c9d965c659a909
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941283"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560811"
 ---
 # <a name="dsc-user-resource"></a>DSC-gebruikers resource
 
@@ -40,18 +40,18 @@ User [string] #ResourceName
 |---|---|
 |UserName |Hiermee wordt de account naam aangegeven waarvoor u een specifieke status wilt waarborgen. |
 |Beschrijving |Hiermee geeft u de beschrijving op die u wilt gebruiken voor het gebruikers account. |
-|Uitgeschakeld |Hiermee wordt aangegeven of het account is ingeschakeld. Stel deze eigenschap in `$true` op om ervoor te zorgen dat dit account is uitgeschakeld en stel `$false` dit in op om ervoor te zorgen dat deze is ingeschakeld. |
+|Uitgeschakeld |Hiermee wordt aangegeven of het account is ingeschakeld. Stel deze eigenschap in op `$true` om ervoor te zorgen dat dit account is uitgeschakeld en stel dit in op `$false` om ervoor te zorgen dat deze is ingeschakeld. |
 |FullName |Hiermee geeft u een teken reeks met de volledige naam die u wilt gebruiken voor het gebruikers account. |
 |Wachtwoord |Hiermee geeft u het wacht woord op dat u wilt gebruiken voor dit account. |
-|PasswordChangeNotAllowed |Hiermee wordt aangegeven of de gebruiker het wacht woord kan wijzigen. Stel deze eigenschap in `$true` op om ervoor te zorgen dat de gebruiker het wacht woord niet kan wijzigen `$false` en stel in om de gebruiker in staat te stellen het wacht woord te wijzigen. De standaardwaarde is `$false`. |
-|PasswordChangeRequired |Hiermee wordt aangegeven of de gebruiker het wacht woord moet wijzigen bij de volgende aanmelding. Stel deze eigenschap in `$true` op als de gebruiker het wacht woord moet wijzigen. De standaardwaarde is `$true`. |
-|PasswordNeverExpires |Hiermee wordt aangegeven of het wacht woord verloopt. Stel deze eigenschap in `$true`op om ervoor te zorgen dat het wacht woord voor dit account nooit verloopt. Stel deze waarde `$false` in op als het wacht woord verloopt. De standaardwaarde is `$false`. |
+|PasswordChangeNotAllowed |Hiermee wordt aangegeven of de gebruiker het wacht woord kan wijzigen. Stel deze eigenschap in op `$true` om ervoor te zorgen dat de gebruiker het wacht woord niet kan wijzigen en stel in om de gebruiker in staat te stellen `$false` het wacht woord te wijzigen. De standaardwaarde is `$false`. |
+|PasswordChangeRequired |Hiermee wordt aangegeven of de gebruiker het wacht woord moet wijzigen bij de volgende aanmelding. Stel deze eigenschap in op `$true` als de gebruiker het wacht woord moet wijzigen. De standaardwaarde is `$true`. |
+|PasswordNeverExpires |Hiermee wordt aangegeven of het wacht woord verloopt. Stel deze eigenschap in op om ervoor te zorgen dat het wacht woord voor dit account nooit verloopt `$true` . Stel deze waarde in op `$false` als het wacht woord verloopt. De standaardwaarde is `$false`. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 |Zo |Hiermee wordt aangegeven of het account bestaat. Stel deze eigenschap in op aanwezig om er zeker van te **zijn** dat het account bestaat en stel het in op **afwezig** om ervoor te zorgen dat het account niet bestaat. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 

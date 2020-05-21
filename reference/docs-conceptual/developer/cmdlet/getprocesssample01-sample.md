@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
-ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 27f1c346863458920b310c6c4ce1403b3aab69ba
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359314"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563791"
 ---
 # <a name="getprocesssample01-sample"></a>Voorbeeld GetProcessSample01
 
-In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet die wordt meegeleverd met Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Deze cmdlet is een vereenvoudigde versie van de `Get-Process` cmdlet die wordt meegeleverd met Windows Power shell 2,0.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
@@ -68,7 +68,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 Voor dit voor beeld is Windows Power shell 1,0 of hoger vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -194,4 +194,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
-ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357566"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560998"
 ---
 # <a name="windows-powershell01-sample"></a>Voorbeeld Windows PowerShell01
 
@@ -23,7 +23,7 @@ In dit voor beeld ziet u hoe u een object [System. Management. Automation. Runsp
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende:
 
@@ -259,4 +259,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)
+[Een Windows PowerShell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)

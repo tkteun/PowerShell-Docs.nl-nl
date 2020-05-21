@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
-ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e99b2936520c00150fe7ba55a9b7ef7ca8d63258
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357538"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560250"
 ---
 # <a name="runspace08-sample"></a>Voorbeeld Runspace08
 
@@ -23,7 +23,7 @@ Dit voor beeld laat zien hoe u opdrachten en argumenten kunt toevoegen aan de pi
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -122,4 +122,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)
+[Een Windows PowerShell-hosttoepassing schrijven](./writing-a-windows-powershell-host-application.md)

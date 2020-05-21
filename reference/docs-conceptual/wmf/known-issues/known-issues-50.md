@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.0
-ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71145129"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564122"
 ---
 # <a name="known-issues-in-wmf-50"></a>Bekende problemen in WMF 5.0
 
@@ -44,7 +44,7 @@ Bij de installatie van WMF 5,0 op een Windows Server 2012 R2 waarop SIL al wordt
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`werkt niet als-LiteralPath en-recursieve samen worden gebruikt
 
-Als een mapnaam een ongeldig Joker teken bevat, `Get-ChildItem` worden er geen verwachte resultaten gegenereerd wanneer zowel LiteralPath als-recursief worden gebruikt.
+Als een mapnaam een ongeldig Joker teken bevat, worden er `Get-ChildItem` geen verwachte resultaten gegenereerd wanneer zowel LiteralPath als-recursief worden gebruikt.
 
 **Oplossing:** Niet ideaal, maar de huidige tijdelijke oplossing is het implementeren van recursie in het script in plaats van te vertrouwen op de cmdlet.
 
@@ -78,7 +78,7 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
 
 - Voor systemen met **Windows Server 2012**
   1. Meld u aan als beheerder nadat u WMF 5,0 op de server hebt geïnstalleerd als Sysprep.
-  2. Kopieer Generize. XML vanuit een `\Windows\System32\Sysprep\ActionFiles\` map naar een locatie buiten de Windows-map `C:\` , bijvoorbeeld.
+  2. Kopieer Generize. XML vanuit `\Windows\System32\Sysprep\ActionFiles\` een map naar een locatie buiten de Windows-map, `C:\` bijvoorbeeld.
   3. Open uw generaliseer. XML-kopie met Klad blok.
   4. Zoek en verwijder de volgende tekst, één exemplaar van elke moet worden verwijderd (ze worden bijna het einde van het document).
 
@@ -102,7 +102,7 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
      ```
 
      - Beantwoord Ja bij de vraag om bevestiging.
-     - Houd er `<AdministratorUserName>` rekening mee dat moet worden vervangen door de gebruikers naam die beheerder is op de computer. Bijvoorbeeld ' Administrator '.
+     - Houd er rekening mee dat `<AdministratorUserName>` moet worden vervangen door de gebruikers naam die beheerder is op de computer. Bijvoorbeeld ' Administrator '.
 
   9. Kopieer het bestand dat u hebt bewerkt en opgeslagen naar de Sysprep-map met behulp van de volgende opdracht:
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5aadb730-4eb7-4936-b8df-3b0c0ca04fd5
 caps.latest.revision: 5
-ms.openlocfilehash: aa46cbc5bfcfdfec9fcf9d2581ff641baa532860
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0a6403e2dea16d73e2fdcb8cf5df39b2aa5b5dae
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353275"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560267"
 ---
 # <a name="how-to-add-related-links-to-a-cmdlet-help-topic"></a>Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets
 
@@ -33,6 +33,3 @@ In het volgende XML-bestand ziet u hoe u een RelatedLinks-knoop punt kunt toevoe
   </maml:navigationLink>
 </ maml:relatedLinks >
 ```
-
-
-

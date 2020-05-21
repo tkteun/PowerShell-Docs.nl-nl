@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxService-resource
-ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30f3b15fccd1491fac2989832486ad15d062c1ad
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942564"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563990"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService-resource
 
@@ -30,16 +30,16 @@ nxService <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Naam |De naam van de service/daemon die moet worden geconfigureerd. |
+|Name |De naam van de service/daemon die moet worden geconfigureerd. |
 |Regelaar |Het type service controller dat moet worden gebruikt bij het configureren van de service. |
 |Ingeschakeld |Hiermee wordt aangegeven of de service wordt gestart bij het opstarten. |
-|Status |Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap in op **gestopt** om er zeker van te zijn dat de service niet wordt uitgevoerd. Stel deze in op **wordt uitgevoerd** om ervoor te zorgen dat de service wordt uitgevoerd. |
+|Staat |Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap in op **gestopt** om er zeker van te zijn dat de service niet wordt uitgevoerd. Stel deze in op **wordt uitgevoerd** om ervoor te zorgen dat de service wordt uitgevoerd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
-|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+|DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 
 ## <a name="additional-information"></a>Aanvullende informatie
 
