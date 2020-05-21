@@ -8,40 +8,40 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
-ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357566"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560998"
 ---
-# <a name="windows-powershell01-sample"></a><span data-ttu-id="0896f-102">Voorbeeld Windows PowerShell01</span><span class="sxs-lookup"><span data-stu-id="0896f-102">Windows PowerShell01 Sample</span></span>
+# <a name="windows-powershell01-sample"></a><span data-ttu-id="12577-102">Voorbeeld Windows PowerShell01</span><span class="sxs-lookup"><span data-stu-id="12577-102">Windows PowerShell01 Sample</span></span>
 
-<span data-ttu-id="0896f-103">In dit voor beeld ziet u hoe u een object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) kunt gebruiken om de functionaliteit van een runs Pace te beperken.</span><span class="sxs-lookup"><span data-stu-id="0896f-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="0896f-104">De uitvoer van dit voor beeld laat zien hoe u de taal modus van de runs Pace kunt beperken, hoe u een cmdlet als privé markeert, hoe u cmdlets en providers toevoegt en verwijdert, hoe u een proxy opdracht toevoegt, en meer.</span><span class="sxs-lookup"><span data-stu-id="0896f-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="0896f-105">Dit voor beeld is gericht op het programmatisch beperken van de runs Pace.</span><span class="sxs-lookup"><span data-stu-id="0896f-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="0896f-106">Het uitvoeren van scripts voor het beperken van de runs Pace bevat de opdrachten $ExecutionContext. SessionState. LanguageMode en PSSessionConfiguration.</span><span class="sxs-lookup"><span data-stu-id="0896f-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
+<span data-ttu-id="12577-103">In dit voor beeld ziet u hoe u een object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) kunt gebruiken om de functionaliteit van een runs Pace te beperken.</span><span class="sxs-lookup"><span data-stu-id="12577-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="12577-104">De uitvoer van dit voor beeld laat zien hoe u de taal modus van de runs Pace kunt beperken, hoe u een cmdlet als privé markeert, hoe u cmdlets en providers toevoegt en verwijdert, hoe u een proxy opdracht toevoegt, en meer.</span><span class="sxs-lookup"><span data-stu-id="12577-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="12577-105">Dit voor beeld is gericht op het programmatisch beperken van de runs Pace.</span><span class="sxs-lookup"><span data-stu-id="12577-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="12577-106">Het uitvoeren van scripts voor het beperken van de runs Pace bevat de opdrachten $ExecutionContext. SessionState. LanguageMode en PSSessionConfiguration.</span><span class="sxs-lookup"><span data-stu-id="12577-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="0896f-107">Vereisten</span><span class="sxs-lookup"><span data-stu-id="0896f-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="12577-107">Vereisten</span><span class="sxs-lookup"><span data-stu-id="12577-107">Requirements</span></span>
 
-<span data-ttu-id="0896f-108">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="0896f-108">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="12577-108">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="12577-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="0896f-109">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="0896f-109">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="12577-109">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="12577-109">Demonstrates</span></span>
 
-<span data-ttu-id="0896f-110">In dit voor beeld ziet u het volgende:</span><span class="sxs-lookup"><span data-stu-id="0896f-110">This sample demonstrates the following:</span></span>
+<span data-ttu-id="12577-110">In dit voor beeld ziet u het volgende:</span><span class="sxs-lookup"><span data-stu-id="12577-110">This sample demonstrates the following:</span></span>
 
-- <span data-ttu-id="0896f-111">De taal beperken door de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) in te stellen.</span><span class="sxs-lookup"><span data-stu-id="0896f-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
+- <span data-ttu-id="12577-111">De taal beperken door de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) in te stellen.</span><span class="sxs-lookup"><span data-stu-id="12577-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
 
-- <span data-ttu-id="0896f-112">Aliassen toevoegen aan de oorspronkelijke sessie status met behulp van [System. Management. Automation. Runspaces. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -object.</span><span class="sxs-lookup"><span data-stu-id="0896f-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
+- <span data-ttu-id="12577-112">Aliassen toevoegen aan de oorspronkelijke sessie status met behulp van [System. Management. Automation. Runspaces. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -object.</span><span class="sxs-lookup"><span data-stu-id="12577-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
 
-- <span data-ttu-id="0896f-113">Het markeren van opdrachten als persoonlijk.</span><span class="sxs-lookup"><span data-stu-id="0896f-113">Marking commands as private.</span></span>
+- <span data-ttu-id="12577-113">Het markeren van opdrachten als persoonlijk.</span><span class="sxs-lookup"><span data-stu-id="12577-113">Marking commands as private.</span></span>
 
-- <span data-ttu-id="0896f-114">Het verwijderen van providers uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .</span><span class="sxs-lookup"><span data-stu-id="0896f-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
+- <span data-ttu-id="12577-114">Het verwijderen van providers uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .</span><span class="sxs-lookup"><span data-stu-id="12577-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
 
-- <span data-ttu-id="0896f-115">Het verwijderen van opdrachten uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .</span><span class="sxs-lookup"><span data-stu-id="0896f-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
+- <span data-ttu-id="12577-115">Het verwijderen van opdrachten uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .</span><span class="sxs-lookup"><span data-stu-id="12577-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
 
-- <span data-ttu-id="0896f-116">Opdrachten en providers toevoegen aan het object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .</span><span class="sxs-lookup"><span data-stu-id="0896f-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="12577-116">Opdrachten en providers toevoegen aan het object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .</span><span class="sxs-lookup"><span data-stu-id="12577-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-## <a name="example"></a><span data-ttu-id="0896f-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="0896f-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="12577-117">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="12577-117">Example</span></span>
 
-<span data-ttu-id="0896f-118">In dit voor beeld ziet u verschillende manieren om de functionaliteit van een runs Pace te beperken.</span><span class="sxs-lookup"><span data-stu-id="0896f-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
+<span data-ttu-id="12577-118">In dit voor beeld ziet u verschillende manieren om de functionaliteit van een runs Pace te beperken.</span><span class="sxs-lookup"><span data-stu-id="12577-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
 
 ```csharp
 namespace Sample
@@ -257,6 +257,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0896f-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="0896f-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="12577-119">Zie ook</span><span class="sxs-lookup"><span data-stu-id="12577-119">See Also</span></span>
 
-[<span data-ttu-id="0896f-120">Een Windows Power shell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="0896f-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="12577-120">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="12577-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

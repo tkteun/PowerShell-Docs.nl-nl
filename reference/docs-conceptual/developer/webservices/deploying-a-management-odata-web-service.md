@@ -8,36 +8,36 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
-ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d29a652b32d07b7825bc5bed5099daa67dd32ff4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356747"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564592"
 ---
-# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="890cd-102">Een Management OData-webservice implementeren</span><span class="sxs-lookup"><span data-stu-id="890cd-102">Deploying a Management OData web service</span></span>
+# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="cc19a-102">Een Management OData-webservice implementeren</span><span class="sxs-lookup"><span data-stu-id="cc19a-102">Deploying a Management OData web service</span></span>
 
-<span data-ttu-id="890cd-103">Nadat u alle stappen hebt voltooid die nodig zijn om een management OData-webservice te maken, moet u deze implementeren als een webtoepassing in IIS.</span><span class="sxs-lookup"><span data-stu-id="890cd-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
+<span data-ttu-id="cc19a-103">Nadat u alle stappen hebt voltooid die nodig zijn om een management OData-webservice te maken, moet u deze implementeren als een webtoepassing in IIS.</span><span class="sxs-lookup"><span data-stu-id="cc19a-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
 
-## <a name="deploying-the-web-service"></a><span data-ttu-id="890cd-104">De webservice implementeren</span><span class="sxs-lookup"><span data-stu-id="890cd-104">Deploying the web service</span></span>
+## <a name="deploying-the-web-service"></a><span data-ttu-id="cc19a-104">De webservice implementeren</span><span class="sxs-lookup"><span data-stu-id="cc19a-104">Deploying the web service</span></span>
 
-<span data-ttu-id="890cd-105">Voer de volgende stappen uit om de Management OData-webservice te implementeren.</span><span class="sxs-lookup"><span data-stu-id="890cd-105">Complete the following steps to deploy the Management OData web service.</span></span>
+<span data-ttu-id="cc19a-105">Voer de volgende stappen uit om de Management OData-webservice te implementeren.</span><span class="sxs-lookup"><span data-stu-id="cc19a-105">Complete the following steps to deploy the Management OData web service.</span></span>
 
-1. <span data-ttu-id="890cd-106">Maak een map voor uw webtoepassing in de IIS-`WWWRoot` Directory.</span><span class="sxs-lookup"><span data-stu-id="890cd-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
+1. <span data-ttu-id="cc19a-106">Maak een map voor uw webtoepassing in de IIS- `WWWRoot` Directory.</span><span class="sxs-lookup"><span data-stu-id="cc19a-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
 
-2. <span data-ttu-id="890cd-107">Kopieer het MOF-schema bestand, het XML-schema bestand, de Dll's die de [micro soft. Management. Odata. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -en [System. Management. Automation. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -interfaces en het web. config-bestand exporteren naar de toepassingsmap.</span><span class="sxs-lookup"><span data-stu-id="890cd-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
+2. <span data-ttu-id="cc19a-107">Kopieer het MOF-schema bestand, het XML-schema bestand, de Dll's die de [micro soft. Management. Odata. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -en [System. Management. Automation. Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -interfaces en het web. config-bestand exporteren naar de toepassingsmap.</span><span class="sxs-lookup"><span data-stu-id="cc19a-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
 
-3. <span data-ttu-id="890cd-108">Een site-ID maken.</span><span class="sxs-lookup"><span data-stu-id="890cd-108">Create a site ID.</span></span>
+3. <span data-ttu-id="cc19a-108">Een site-ID maken.</span><span class="sxs-lookup"><span data-stu-id="cc19a-108">Create a site ID.</span></span>
 
-4. <span data-ttu-id="890cd-109">Een groep van toepassingen maken en configureren.</span><span class="sxs-lookup"><span data-stu-id="890cd-109">Create and configure an app pool.</span></span>
+4. <span data-ttu-id="cc19a-109">Een groep van toepassingen maken en configureren.</span><span class="sxs-lookup"><span data-stu-id="cc19a-109">Create and configure an app pool.</span></span>
 
-5. <span data-ttu-id="890cd-110">Configureer verificatie voor de site.</span><span class="sxs-lookup"><span data-stu-id="890cd-110">Configure authentication for the site.</span></span>
+5. <span data-ttu-id="cc19a-110">Configureer verificatie voor de site.</span><span class="sxs-lookup"><span data-stu-id="cc19a-110">Configure authentication for the site.</span></span>
 
-6. <span data-ttu-id="890cd-111">Configureer de firewall.</span><span class="sxs-lookup"><span data-stu-id="890cd-111">Configure the firewall.</span></span>
+6. <span data-ttu-id="cc19a-111">Configureer de firewall.</span><span class="sxs-lookup"><span data-stu-id="cc19a-111">Configure the firewall.</span></span>
 
-7. <span data-ttu-id="890cd-112">Start de site.</span><span class="sxs-lookup"><span data-stu-id="890cd-112">Start the site.</span></span>
+7. <span data-ttu-id="cc19a-112">Start de site.</span><span class="sxs-lookup"><span data-stu-id="cc19a-112">Start the site.</span></span>
 
-<span data-ttu-id="890cd-113">De volgende Windows Power shell-scripts laten zien hoe u een management OData-webservice implementeert.</span><span class="sxs-lookup"><span data-stu-id="890cd-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
+<span data-ttu-id="cc19a-113">De volgende Windows Power shell-scripts laten zien hoe u een management OData-webservice implementeert.</span><span class="sxs-lookup"><span data-stu-id="cc19a-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
 
 ```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
@@ -425,16 +425,16 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a><span data-ttu-id="890cd-114">Zie ook</span><span class="sxs-lookup"><span data-stu-id="890cd-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cc19a-114">Zie ook</span><span class="sxs-lookup"><span data-stu-id="cc19a-114">See Also</span></span>
 
-[<span data-ttu-id="890cd-115">Aangepaste autorisatie implementeren voor een management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="890cd-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-115">Aangepaste autorisatie implementeren voor een Management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="cc19a-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="890cd-116">SessionConfiguration implementeren voor een management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="890cd-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-116">SessionConfiguration implementeren voor een Management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="cc19a-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="890cd-117">Het MOF-schema bestand voor een management OData-webservice ontwerpen</span><span class="sxs-lookup"><span data-stu-id="890cd-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-117">Het MOF-schemabestand maken voor een Management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="cc19a-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="890cd-118">Het XML-schema bestand voor een management OData-webservice ontwerpen</span><span class="sxs-lookup"><span data-stu-id="890cd-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-118">Het XML-schemabestand maken voor een Management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="cc19a-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="890cd-119">Het web. config-bestand voor een management OData-webservice ontwerpen</span><span class="sxs-lookup"><span data-stu-id="890cd-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-119">Het Web.config-bestand maken voor een Management OData-webservice</span><span class="sxs-lookup"><span data-stu-id="cc19a-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="890cd-120">Een management OData-webservice maken</span><span class="sxs-lookup"><span data-stu-id="890cd-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="cc19a-120">Een Management OData-webservice maken</span><span class="sxs-lookup"><span data-stu-id="cc19a-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)

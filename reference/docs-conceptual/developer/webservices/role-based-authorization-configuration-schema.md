@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f224eed114e8a8925960ec4cac82ef74023f647c
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356712"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564683"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="2044c-102">Configuratieschema voor autorisatie op basis van rollen</span><span class="sxs-lookup"><span data-stu-id="2044c-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="4f796-102">Configuratieschema voor autorisatie op basis van rollen</span><span class="sxs-lookup"><span data-stu-id="4f796-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="2044c-103">Het [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) -voor beeld maakt gebruik van XML-bestanden voor het configureren van het autorisatie beleid.</span><span class="sxs-lookup"><span data-stu-id="2044c-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="2044c-104">De volgende XSD definieert het schema dat wordt gebruikt voor deze bestanden.</span><span class="sxs-lookup"><span data-stu-id="2044c-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="4f796-103">Het [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) -voor beeld maakt gebruik van XML-bestanden voor het configureren van het autorisatie beleid.</span><span class="sxs-lookup"><span data-stu-id="4f796-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="4f796-104">De volgende XSD definieert het schema dat wordt gebruikt voor deze bestanden.</span><span class="sxs-lookup"><span data-stu-id="4f796-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
