@@ -148,20 +148,6 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: Het PowerShellTab-object
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Web Access
-      items:
-        - name: Autorisatieregels en beveiligingsfuncties
-          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-        - name: Installatie
-          href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: Toegangsproblemen oplossen
-          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-        - name: Windows PowerShell-webtoegang verwijderen
-          href: components/web-access/uninstall-windows-powershell-web-access.md
-        - name: De webconsole voor PowerShell gebruiken
-          href: components/web-access/use-the-web-based-windows-powershell-console.md
-    - name: Handleiding voor werkstromen
-      href: components/workflows-guide.md
 - name: PowerShell Gallery
   items:
     - name: Overzicht
