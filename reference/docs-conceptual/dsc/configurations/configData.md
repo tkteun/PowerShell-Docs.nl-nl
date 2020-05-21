@@ -2,34 +2,34 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuratie gegevens gebruiken
-ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5eb7fedec9a0abece1068496cdf5cb940eae3340
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942109"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557036"
 ---
-# <a name="using-configuration-data-in-dsc"></a><span data-ttu-id="46218-103">Configuratie gegevens gebruiken in DSC</span><span class="sxs-lookup"><span data-stu-id="46218-103">Using configuration data in DSC</span></span>
+# <a name="using-configuration-data-in-dsc"></a><span data-ttu-id="54de5-103">Configuratie gegevens gebruiken in DSC</span><span class="sxs-lookup"><span data-stu-id="54de5-103">Using configuration data in DSC</span></span>
 
-> <span data-ttu-id="46218-104">Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0</span><span class="sxs-lookup"><span data-stu-id="46218-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="54de5-104">Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0</span><span class="sxs-lookup"><span data-stu-id="54de5-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="46218-105">Met de ingebouwde DSC **ConfigurationData** para meter kunt u gegevens definiëren die in een configuratie kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="46218-105">By using the built-in DSC **ConfigurationData** parameter, you can define data that can be used within a configuration.</span></span>
-<span data-ttu-id="46218-106">Hierdoor kunt u één configuratie maken die kan worden gebruikt voor meerdere knoop punten of voor verschillende omgevingen.</span><span class="sxs-lookup"><span data-stu-id="46218-106">This allows you to create a single configuration that can be used for multiple nodes or for different environments.</span></span>
-<span data-ttu-id="46218-107">Als u bijvoorbeeld een toepassing ontwikkelt, kunt u een configuratie gebruiken voor zowel ontwikkel-als productie omgevingen en configuratie gegevens gebruiken om gegevens op te geven voor elke omgeving.</span><span class="sxs-lookup"><span data-stu-id="46218-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="54de5-105">Met de ingebouwde DSC **ConfigurationData** para meter kunt u gegevens definiëren die in een configuratie kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="54de5-105">By using the built-in DSC **ConfigurationData** parameter, you can define data that can be used within a configuration.</span></span>
+<span data-ttu-id="54de5-106">Hierdoor kunt u één configuratie maken die kan worden gebruikt voor meerdere knoop punten of voor verschillende omgevingen.</span><span class="sxs-lookup"><span data-stu-id="54de5-106">This allows you to create a single configuration that can be used for multiple nodes or for different environments.</span></span>
+<span data-ttu-id="54de5-107">Als u bijvoorbeeld een toepassing ontwikkelt, kunt u een configuratie gebruiken voor zowel ontwikkel-als productie omgevingen en configuratie gegevens gebruiken om gegevens op te geven voor elke omgeving.</span><span class="sxs-lookup"><span data-stu-id="54de5-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-<span data-ttu-id="46218-108">In dit onderwerp wordt de structuur van de **ConfigurationData** hashtabel beschreven.</span><span class="sxs-lookup"><span data-stu-id="46218-108">This topic describes the structure of the **ConfigurationData** hashtable.</span></span>
-<span data-ttu-id="46218-109">Zie [configuratie-en omgevings gegevens scheiden](separatingEnvData.md)voor voor beelden van het gebruik van configuratie gegevens.</span><span class="sxs-lookup"><span data-stu-id="46218-109">For examples of how to use configuration data, see [Separating configuration and environment data](separatingEnvData.md).</span></span>
+<span data-ttu-id="54de5-108">In dit onderwerp wordt de structuur van de **ConfigurationData** hashtabel beschreven.</span><span class="sxs-lookup"><span data-stu-id="54de5-108">This topic describes the structure of the **ConfigurationData** hashtable.</span></span>
+<span data-ttu-id="54de5-109">Zie [configuratie-en omgevings gegevens scheiden](separatingEnvData.md)voor voor beelden van het gebruik van configuratie gegevens.</span><span class="sxs-lookup"><span data-stu-id="54de5-109">For examples of how to use configuration data, see [Separating configuration and environment data](separatingEnvData.md).</span></span>
 
-## <a name="the-configurationdata-common-parameter"></a><span data-ttu-id="46218-110">De algemene para meter ConfigurationData</span><span class="sxs-lookup"><span data-stu-id="46218-110">The ConfigurationData common parameter</span></span>
+## <a name="the-configurationdata-common-parameter"></a><span data-ttu-id="54de5-110">De algemene para meter ConfigurationData</span><span class="sxs-lookup"><span data-stu-id="54de5-110">The ConfigurationData common parameter</span></span>
 
-<span data-ttu-id="46218-111">Een DSC-configuratie gebruikt een gemeen schappelijke para meter, **ConfigurationData**, die u opgeeft wanneer u de configuratie compileert.</span><span class="sxs-lookup"><span data-stu-id="46218-111">A DSC configuration takes a common parameter, **ConfigurationData**, that you specify when you compile the configuration.</span></span>
-<span data-ttu-id="46218-112">Zie [DSC-configuraties](configurations.md)voor meer informatie over het compileren van configuraties.</span><span class="sxs-lookup"><span data-stu-id="46218-112">For information about compiling configurations, see [DSC configurations](configurations.md).</span></span>
+<span data-ttu-id="54de5-111">Een DSC-configuratie gebruikt een gemeen schappelijke para meter, **ConfigurationData**, die u opgeeft wanneer u de configuratie compileert.</span><span class="sxs-lookup"><span data-stu-id="54de5-111">A DSC configuration takes a common parameter, **ConfigurationData**, that you specify when you compile the configuration.</span></span>
+<span data-ttu-id="54de5-112">Zie [DSC-configuraties](configurations.md)voor meer informatie over het compileren van configuraties.</span><span class="sxs-lookup"><span data-stu-id="54de5-112">For information about compiling configurations, see [DSC configurations](configurations.md).</span></span>
 
-<span data-ttu-id="46218-113">De para meter **ConfigurationData** is een hashtabel die ten minste één sleutel met de naam **AllNodes**moet hebben.</span><span class="sxs-lookup"><span data-stu-id="46218-113">The **ConfigurationData** parameter is a hashtable that must have at least one key named **AllNodes**.</span></span>
-<span data-ttu-id="46218-114">Het kan ook een of meer andere sleutels hebben.</span><span class="sxs-lookup"><span data-stu-id="46218-114">It can also have one or more other keys.</span></span>
+<span data-ttu-id="54de5-113">De para meter **ConfigurationData** is een hashtabel die ten minste één sleutel met de naam **AllNodes**moet hebben.</span><span class="sxs-lookup"><span data-stu-id="54de5-113">The **ConfigurationData** parameter is a hashtable that must have at least one key named **AllNodes**.</span></span>
+<span data-ttu-id="54de5-114">Het kan ook een of meer andere sleutels hebben.</span><span class="sxs-lookup"><span data-stu-id="54de5-114">It can also have one or more other keys.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="46218-115">In de voor beelden in dit onderwerp wordt een enkele extra sleutel (met uitzonde ring van de `NonNodeData`naam **AllNodes** Key) met de naam gebruikt, maar u kunt een wille keurig aantal extra sleutels toevoegen en deze een naam geven wat u wilt.</span><span class="sxs-lookup"><span data-stu-id="46218-115">The examples in this topic use a single additional key (other than the named **AllNodes** key) named `NonNodeData`, but you can include any number of additional keys, and name them whatever you want.</span></span>
+> <span data-ttu-id="54de5-115">In de voor beelden in dit onderwerp wordt een enkele extra sleutel (met uitzonde ring van de naam **AllNodes** Key) met de naam gebruikt `NonNodeData` , maar u kunt een wille keurig aantal extra sleutels toevoegen en deze een naam geven wat u wilt.</span><span class="sxs-lookup"><span data-stu-id="54de5-115">The examples in this topic use a single additional key (other than the named **AllNodes** key) named `NonNodeData`, but you can include any number of additional keys, and name them whatever you want.</span></span>
 
 ```powershell
 $MyData =
@@ -39,7 +39,7 @@ $MyData =
 }
 ```
 
-<span data-ttu-id="46218-116">De waarde van de sleutel **AllNodes** is een matrix.</span><span class="sxs-lookup"><span data-stu-id="46218-116">The value of the **AllNodes** key is an array.</span></span> <span data-ttu-id="46218-117">Elk element van deze matrix is ook een hash-tabel die ten minste één sleutel met de naam **node**name moet hebben:</span><span class="sxs-lookup"><span data-stu-id="46218-117">Each element of this array is also a hash table that must have at least one key named **NodeName**:</span></span>
+<span data-ttu-id="54de5-116">De waarde van de sleutel **AllNodes** is een matrix.</span><span class="sxs-lookup"><span data-stu-id="54de5-116">The value of the **AllNodes** key is an array.</span></span> <span data-ttu-id="54de5-117">Elk element van deze matrix is ook een hash-tabel die ten minste één sleutel met de naam **node**name moet hebben:</span><span class="sxs-lookup"><span data-stu-id="54de5-117">Each element of this array is also a hash table that must have at least one key named **NodeName**:</span></span>
 
 ```powershell
 $MyData =
@@ -65,7 +65,7 @@ $MyData =
 }
 ```
 
-<span data-ttu-id="46218-118">U kunt ook andere sleutels toevoegen aan elke hash-tabel:</span><span class="sxs-lookup"><span data-stu-id="46218-118">You can add other keys to each hash table as well:</span></span>
+<span data-ttu-id="54de5-118">U kunt ook andere sleutels toevoegen aan elke hash-tabel:</span><span class="sxs-lookup"><span data-stu-id="54de5-118">You can add other keys to each hash table as well:</span></span>
 
 ```powershell
 $MyData =
@@ -94,8 +94,8 @@ $MyData =
 }
 ```
 
-<span data-ttu-id="46218-119">Als u een eigenschap wilt Toep assen op alle knoop punten, kunt u een lid maken van de **AllNodes** -matrix met `*`een **knooppunt** naam van.</span><span class="sxs-lookup"><span data-stu-id="46218-119">To apply a property to all nodes, you can create a member of the **AllNodes** array that has a **NodeName** of `*`.</span></span>
-<span data-ttu-id="46218-120">U kunt bijvoorbeeld het volgende doen om elk `LogPath` knoop punt een eigenschap te geven:</span><span class="sxs-lookup"><span data-stu-id="46218-120">For example, to give every node a `LogPath` property, you could do this:</span></span>
+<span data-ttu-id="54de5-119">Als u een eigenschap wilt Toep assen op alle knoop punten, kunt u een lid maken van de **AllNodes** -matrix met een **knooppunt** naam van `*` .</span><span class="sxs-lookup"><span data-stu-id="54de5-119">To apply a property to all nodes, you can create a member of the **AllNodes** array that has a **NodeName** of `*`.</span></span>
+<span data-ttu-id="54de5-120">U kunt bijvoorbeeld het volgende doen om elk knoop punt een eigenschap te geven `LogPath` :</span><span class="sxs-lookup"><span data-stu-id="54de5-120">For example, to give every node a `LogPath` property, you could do this:</span></span>
 
 ```powershell
 $MyData =
@@ -132,14 +132,14 @@ $MyData =
 }
 ```
 
-<span data-ttu-id="46218-121">Dit is het equivalent van het toevoegen van een eigenschap met de `LogPath` naam met de waarde `"C:\Logs"` voor elk van de andere blokken (`VM-1`, `VM-2`, en `VM-3`).</span><span class="sxs-lookup"><span data-stu-id="46218-121">This is the equivalent of adding a property with a name of `LogPath` with a value of `"C:\Logs"` to each of the other blocks (`VM-1`, `VM-2`, and `VM-3`).</span></span>
+<span data-ttu-id="54de5-121">Dit is het equivalent van het toevoegen van een eigenschap met de naam `LogPath` met de waarde `"C:\Logs"` voor elk van de andere blokken ( `VM-1` , `VM-2` , en `VM-3` ).</span><span class="sxs-lookup"><span data-stu-id="54de5-121">This is the equivalent of adding a property with a name of `LogPath` with a value of `"C:\Logs"` to each of the other blocks (`VM-1`, `VM-2`, and `VM-3`).</span></span>
 
-## <a name="defining-the-configurationdata-hashtable"></a><span data-ttu-id="46218-122">De ConfigurationData hashtabel definiëren</span><span class="sxs-lookup"><span data-stu-id="46218-122">Defining the ConfigurationData hashtable</span></span>
+## <a name="defining-the-configurationdata-hashtable"></a><span data-ttu-id="54de5-122">De ConfigurationData hashtabel definiëren</span><span class="sxs-lookup"><span data-stu-id="54de5-122">Defining the ConfigurationData hashtable</span></span>
 
-<span data-ttu-id="46218-123">U kunt **ConfigurationData** definiëren als een variabele binnen hetzelfde script bestand als een configuratie (zoals in de voor gaande voor beelden) of in een afzonderlijk `.psd1` bestand.</span><span class="sxs-lookup"><span data-stu-id="46218-123">You can define **ConfigurationData** either as a variable within the same script file as a configuration (as in our previous examples) or in a separate `.psd1` file.</span></span>
-<span data-ttu-id="46218-124">Als u **ConfigurationData** in een `.psd1` bestand wilt definiëren, maakt u een bestand dat alleen de hashtabel bevat die de configuratie gegevens vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="46218-124">To define **ConfigurationData** in a `.psd1` file, create a file that contains only the hashtable that represents the configuration data.</span></span>
+<span data-ttu-id="54de5-123">U kunt **ConfigurationData** definiëren als een variabele binnen hetzelfde script bestand als een configuratie (zoals in de voor gaande voor beelden) of in een afzonderlijk `.psd1` bestand.</span><span class="sxs-lookup"><span data-stu-id="54de5-123">You can define **ConfigurationData** either as a variable within the same script file as a configuration (as in our previous examples) or in a separate `.psd1` file.</span></span>
+<span data-ttu-id="54de5-124">Als u **ConfigurationData** in een `.psd1` bestand wilt definiëren, maakt u een bestand dat alleen de hashtabel bevat die de configuratie gegevens vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="54de5-124">To define **ConfigurationData** in a `.psd1` file, create a file that contains only the hashtable that represents the configuration data.</span></span>
 
-<span data-ttu-id="46218-125">U kunt bijvoorbeeld een bestand maken met de naam `MyData.psd1` met de volgende inhoud:</span><span class="sxs-lookup"><span data-stu-id="46218-125">For example, you could create a file named `MyData.psd1` with the following contents:</span></span>
+<span data-ttu-id="54de5-125">U kunt bijvoorbeeld een bestand maken `MyData.psd1` met de naam met de volgende inhoud:</span><span class="sxs-lookup"><span data-stu-id="54de5-125">For example, you could create a file named `MyData.psd1` with the following contents:</span></span>
 
 ```powershell
 @{
@@ -158,50 +158,50 @@ $MyData =
 }
 ```
 
-## <a name="compiling-a-configuration-with-configuration-data"></a><span data-ttu-id="46218-126">Een configuratie met configuratie gegevens compileren</span><span class="sxs-lookup"><span data-stu-id="46218-126">Compiling a configuration with configuration data</span></span>
+## <a name="compiling-a-configuration-with-configuration-data"></a><span data-ttu-id="54de5-126">Een configuratie met configuratie gegevens compileren</span><span class="sxs-lookup"><span data-stu-id="54de5-126">Compiling a configuration with configuration data</span></span>
 
-<span data-ttu-id="46218-127">Als u een configuratie wilt compileren waarvoor u configuratie gegevens hebt gedefinieerd, geeft u de configuratie gegevens op als de waarde van de para meter **ConfigurationData** .</span><span class="sxs-lookup"><span data-stu-id="46218-127">To compile a configuration for which you have defined configuration data, you pass the configuration data as the value of the **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="54de5-127">Als u een configuratie wilt compileren waarvoor u configuratie gegevens hebt gedefinieerd, geeft u de configuratie gegevens op als de waarde van de para meter **ConfigurationData** .</span><span class="sxs-lookup"><span data-stu-id="54de5-127">To compile a configuration for which you have defined configuration data, you pass the configuration data as the value of the **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="46218-128">Hiermee maakt u een MOF-bestand voor elke vermelding in de **AllNodes** -matrix.</span><span class="sxs-lookup"><span data-stu-id="46218-128">This will create a MOF file for each entry in the **AllNodes** array.</span></span>
-<span data-ttu-id="46218-129">Elk MOF-bestand krijgt een naam met `NodeName` de eigenschap van de bijbehorende matrix vermelding.</span><span class="sxs-lookup"><span data-stu-id="46218-129">Each MOF file will be named with the `NodeName` property of the corresponding array entry.</span></span>
+<span data-ttu-id="54de5-128">Hiermee maakt u een MOF-bestand voor elke vermelding in de **AllNodes** -matrix.</span><span class="sxs-lookup"><span data-stu-id="54de5-128">This will create a MOF file for each entry in the **AllNodes** array.</span></span>
+<span data-ttu-id="54de5-129">Elk MOF-bestand krijgt een naam met de `NodeName` eigenschap van de bijbehorende matrix vermelding.</span><span class="sxs-lookup"><span data-stu-id="54de5-129">Each MOF file will be named with the `NodeName` property of the corresponding array entry.</span></span>
 
-<span data-ttu-id="46218-130">Als u bijvoorbeeld configuratie gegevens definieert zoals in het bovenstaande bestand `MyData.psd1` , worden met het compileren van een configuratie zowel `VM-1.mof` als `VM-2.mof` bestanden gemaakt.</span><span class="sxs-lookup"><span data-stu-id="46218-130">For example, if you define configuration data as in the `MyData.psd1` file above, compiling a configuration would create both `VM-1.mof` and `VM-2.mof` files.</span></span>
+<span data-ttu-id="54de5-130">Als u bijvoorbeeld configuratie gegevens definieert zoals in het `MyData.psd1` bovenstaande bestand, worden met het compileren van een configuratie zowel `VM-1.mof` als `VM-2.mof` bestanden gemaakt.</span><span class="sxs-lookup"><span data-stu-id="54de5-130">For example, if you define configuration data as in the `MyData.psd1` file above, compiling a configuration would create both `VM-1.mof` and `VM-2.mof` files.</span></span>
 
-### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a><span data-ttu-id="46218-131">Een configuratie met configuratie gegevens compileren met behulp van een variabele</span><span class="sxs-lookup"><span data-stu-id="46218-131">Compiling a configuration with configuration data using a variable</span></span>
+### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a><span data-ttu-id="54de5-131">Een configuratie met configuratie gegevens compileren met behulp van een variabele</span><span class="sxs-lookup"><span data-stu-id="54de5-131">Compiling a configuration with configuration data using a variable</span></span>
 
-<span data-ttu-id="46218-132">Als u configuratie gegevens wilt gebruiken die zijn gedefinieerd als een variabele in `.ps1` hetzelfde bestand als de configuratie, geeft u de naam van de variabele door als de waarde van de para meter **ConfigurationData** bij het compileren van de configuratie:</span><span class="sxs-lookup"><span data-stu-id="46218-132">To use configuration data that is defined as a variable in the same `.ps1` file as the configuration, you pass the variable name as the value of the **ConfigurationData** parameter when compiling the configuration:</span></span>
+<span data-ttu-id="54de5-132">Als u configuratie gegevens wilt gebruiken die zijn gedefinieerd als een variabele in hetzelfde `.ps1` bestand als de configuratie, geeft u de naam van de variabele door als de waarde van de para meter **ConfigurationData** bij het compileren van de configuratie:</span><span class="sxs-lookup"><span data-stu-id="54de5-132">To use configuration data that is defined as a variable in the same `.ps1` file as the configuration, you pass the variable name as the value of the **ConfigurationData** parameter when compiling the configuration:</span></span>
 
 ```powershell
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-### <a name="compiling-a-configuration-with-configuration-data-using-a-data-file"></a><span data-ttu-id="46218-133">Een configuratie met configuratie gegevens compileren met behulp van een gegevens bestand</span><span class="sxs-lookup"><span data-stu-id="46218-133">Compiling a configuration with configuration data using a data file</span></span>
+### <a name="compiling-a-configuration-with-configuration-data-using-a-data-file"></a><span data-ttu-id="54de5-133">Een configuratie met configuratie gegevens compileren met behulp van een gegevens bestand</span><span class="sxs-lookup"><span data-stu-id="54de5-133">Compiling a configuration with configuration data using a data file</span></span>
 
-<span data-ttu-id="46218-134">Als u configuratie gegevens wilt gebruiken die zijn gedefinieerd in een. psd1-bestand, geeft u het pad en de naam van het bestand door als de waarde van de para meter **ConfigurationData** bij het compileren van de configuratie:</span><span class="sxs-lookup"><span data-stu-id="46218-134">To use configuration data that is defined in a .psd1 file, you pass the path and name of that file as the value of the **ConfigurationData** parameter when compiling the configuration:</span></span>
+<span data-ttu-id="54de5-134">Als u configuratie gegevens wilt gebruiken die zijn gedefinieerd in een. psd1-bestand, geeft u het pad en de naam van het bestand door als de waarde van de para meter **ConfigurationData** bij het compileren van de configuratie:</span><span class="sxs-lookup"><span data-stu-id="54de5-134">To use configuration data that is defined in a .psd1 file, you pass the path and name of that file as the value of the **ConfigurationData** parameter when compiling the configuration:</span></span>
 
 ```powershell
 MyDscConfiguration -ConfigurationData .\MyData.psd1
 ```
 
-## <a name="using-configurationdata-variables-in-a-configuration"></a><span data-ttu-id="46218-135">ConfigurationData-variabelen gebruiken in een configuratie</span><span class="sxs-lookup"><span data-stu-id="46218-135">Using ConfigurationData variables in a configuration</span></span>
+## <a name="using-configurationdata-variables-in-a-configuration"></a><span data-ttu-id="54de5-135">ConfigurationData-variabelen gebruiken in een configuratie</span><span class="sxs-lookup"><span data-stu-id="54de5-135">Using ConfigurationData variables in a configuration</span></span>
 
-<span data-ttu-id="46218-136">DSC biedt de volgende speciale variabelen die kunnen worden gebruikt in een configuratie script:</span><span class="sxs-lookup"><span data-stu-id="46218-136">DSC provides the following special variables that can be used in a configuration script:</span></span>
+<span data-ttu-id="54de5-136">DSC biedt de volgende speciale variabelen die kunnen worden gebruikt in een configuratie script:</span><span class="sxs-lookup"><span data-stu-id="54de5-136">DSC provides the following special variables that can be used in a configuration script:</span></span>
 
-- <span data-ttu-id="46218-137">**$AllNodes** verwijst naar de volledige verzameling knoop punten die in **ConfigurationData**zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="46218-137">**$AllNodes** refers to the entire collection of nodes defined in **ConfigurationData**.</span></span> <span data-ttu-id="46218-138">U kunt de **AllNodes** -verzameling filteren met behulp van **. WHERE ()** en **. ForEach ()**.</span><span class="sxs-lookup"><span data-stu-id="46218-138">You can filter the **AllNodes** collection by using **.Where()** and **.ForEach()**.</span></span>
-- <span data-ttu-id="46218-139">**ConfigurationData** verwijst naar de volledige hash-tabel die wordt door gegeven als de para meter bij het compileren van een configuratie.</span><span class="sxs-lookup"><span data-stu-id="46218-139">**ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.</span></span>
-- <span data-ttu-id="46218-140">**MyTypeName** bevat de [configuratie](configurations.md) naam waarin de variabele wordt gebruikt.</span><span class="sxs-lookup"><span data-stu-id="46218-140">**MyTypeName** contains the [configuration](configurations.md) name the variable is used in.</span></span> <span data-ttu-id="46218-141">In de configuratie `MyDscConfiguration`heeft de bijvoorbeeld de `$MyTypeName` waarde. `MyDscConfiguration`</span><span class="sxs-lookup"><span data-stu-id="46218-141">For example, in the configuration `MyDscConfiguration`, the `$MyTypeName` will have a value of `MyDscConfiguration`.</span></span>
-- <span data-ttu-id="46218-142">Het **knoop punt** verwijst naar een bepaalde vermelding in de **AllNodes** -verzameling nadat deze is gefilterd met behulp van **. WHERE ()** of **. ForEach ()**.</span><span class="sxs-lookup"><span data-stu-id="46218-142">**Node** refers to a particular entry in the **AllNodes** collection after it is filtered by using **.Where()** or **.ForEach()**.</span></span>
-  - <span data-ttu-id="46218-143">Meer informatie over deze methoden vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span><span class="sxs-lookup"><span data-stu-id="46218-143">You can read more about these methods in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span></span>
+- <span data-ttu-id="54de5-137">**$AllNodes** verwijst naar de volledige verzameling knoop punten die in **ConfigurationData**zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="54de5-137">**$AllNodes** refers to the entire collection of nodes defined in **ConfigurationData**.</span></span> <span data-ttu-id="54de5-138">U kunt de **AllNodes** -verzameling filteren met behulp van **. WHERE ()** en **. ForEach ()**.</span><span class="sxs-lookup"><span data-stu-id="54de5-138">You can filter the **AllNodes** collection by using **.Where()** and **.ForEach()**.</span></span>
+- <span data-ttu-id="54de5-139">**ConfigurationData** verwijst naar de volledige hash-tabel die wordt door gegeven als de para meter bij het compileren van een configuratie.</span><span class="sxs-lookup"><span data-stu-id="54de5-139">**ConfigurationData** refers to the entire hash table that is passed as the parameter when compiling a configuration.</span></span>
+- <span data-ttu-id="54de5-140">**MyTypeName** bevat de [configuratie](configurations.md) naam waarin de variabele wordt gebruikt.</span><span class="sxs-lookup"><span data-stu-id="54de5-140">**MyTypeName** contains the [configuration](configurations.md) name the variable is used in.</span></span> <span data-ttu-id="54de5-141">In de configuratie `MyDscConfiguration` heeft de bijvoorbeeld de `$MyTypeName` waarde `MyDscConfiguration` .</span><span class="sxs-lookup"><span data-stu-id="54de5-141">For example, in the configuration `MyDscConfiguration`, the `$MyTypeName` will have a value of `MyDscConfiguration`.</span></span>
+- <span data-ttu-id="54de5-142">Het **knoop punt** verwijst naar een bepaalde vermelding in de **AllNodes** -verzameling nadat deze is gefilterd met behulp van **. WHERE ()** of **. ForEach ()**.</span><span class="sxs-lookup"><span data-stu-id="54de5-142">**Node** refers to a particular entry in the **AllNodes** collection after it is filtered by using **.Where()** or **.ForEach()**.</span></span>
+  - <span data-ttu-id="54de5-143">Meer informatie over deze methoden vindt u in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span><span class="sxs-lookup"><span data-stu-id="54de5-143">You can read more about these methods in [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)</span></span>
 
-## <a name="using-non-node-data"></a><span data-ttu-id="46218-144">Niet-knooppunt gegevens gebruiken</span><span class="sxs-lookup"><span data-stu-id="46218-144">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="54de5-144">Niet-knooppunt gegevens gebruiken</span><span class="sxs-lookup"><span data-stu-id="54de5-144">Using non-node data</span></span>
 
-<span data-ttu-id="46218-145">Zoals we in eerdere voor beelden hebben gezien, kan de **ConfigurationData** hashtabel een of meer sleutels hebben naast de vereiste **AllNodes** -sleutel.</span><span class="sxs-lookup"><span data-stu-id="46218-145">As we've seen in previous examples, the **ConfigurationData** hashtable can have one or more keys in addition to the required **AllNodes** key.</span></span>
-<span data-ttu-id="46218-146">In de voor beelden in dit onderwerp hebben we slechts één extra knoop punt gebruikt, met de naam `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="46218-146">In the examples in this topic, we have used only a single additional node, and named it `NonNodeData`.</span></span>
-<span data-ttu-id="46218-147">U kunt echter een wille keurig aantal extra sleutels definiëren en ze elke gewenste naam geven.</span><span class="sxs-lookup"><span data-stu-id="46218-147">However, you can define any number of additional keys, and name them anything you want.</span></span>
+<span data-ttu-id="54de5-145">Zoals we in eerdere voor beelden hebben gezien, kan de **ConfigurationData** hashtabel een of meer sleutels hebben naast de vereiste **AllNodes** -sleutel.</span><span class="sxs-lookup"><span data-stu-id="54de5-145">As we've seen in previous examples, the **ConfigurationData** hashtable can have one or more keys in addition to the required **AllNodes** key.</span></span>
+<span data-ttu-id="54de5-146">In de voor beelden in dit onderwerp hebben we slechts één extra knoop punt gebruikt, met de naam `NonNodeData` .</span><span class="sxs-lookup"><span data-stu-id="54de5-146">In the examples in this topic, we have used only a single additional node, and named it `NonNodeData`.</span></span>
+<span data-ttu-id="54de5-147">U kunt echter een wille keurig aantal extra sleutels definiëren en ze elke gewenste naam geven.</span><span class="sxs-lookup"><span data-stu-id="54de5-147">However, you can define any number of additional keys, and name them anything you want.</span></span>
 
-<span data-ttu-id="46218-148">Zie [configuratie-en omgevings gegevens scheiden](separatingEnvData.md)voor een voor beeld van het gebruik van niet-knooppunt gegevens.</span><span class="sxs-lookup"><span data-stu-id="46218-148">For an example of using non-node data, see [Separating configuration and environment data](separatingEnvData.md).</span></span>
+<span data-ttu-id="54de5-148">Zie [configuratie-en omgevings gegevens scheiden](separatingEnvData.md)voor een voor beeld van het gebruik van niet-knooppunt gegevens.</span><span class="sxs-lookup"><span data-stu-id="54de5-148">For an example of using non-node data, see [Separating configuration and environment data](separatingEnvData.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="46218-149">Zie ook</span><span class="sxs-lookup"><span data-stu-id="46218-149">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="54de5-149">Zie ook</span><span class="sxs-lookup"><span data-stu-id="54de5-149">See Also</span></span>
 
-- [<span data-ttu-id="46218-150">Referenties opties in configuratie gegevens</span><span class="sxs-lookup"><span data-stu-id="46218-150">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="46218-151">DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="46218-151">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="54de5-150">Referenties opties in configuratie gegevens</span><span class="sxs-lookup"><span data-stu-id="54de5-150">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="54de5-151">DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="54de5-151">DSC Configurations</span></span>](configurations.md)

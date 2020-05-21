@@ -11,67 +11,67 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 9cf4499ec2992c6cfea83fc5d0bf51d0bbfaa96a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870486"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556849"
 ---
-# <a name="writing-a-custom-windows-powershell-snap-in"></a><span data-ttu-id="8ee95-102">Een aangepaste Windows PowerShell-module schrijven</span><span class="sxs-lookup"><span data-stu-id="8ee95-102">Writing a Custom Windows PowerShell Snap-in</span></span>
+# <a name="writing-a-custom-windows-powershell-snap-in"></a><span data-ttu-id="caea2-102">Een aangepaste Windows PowerShell-module schrijven</span><span class="sxs-lookup"><span data-stu-id="caea2-102">Writing a Custom Windows PowerShell Snap-in</span></span>
 
-<span data-ttu-id="8ee95-103">In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft waarmee specifieke cmdlets worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="8ee95-103">This example shows how to write a Windows PowerShell snap-in that registers specific cmdlets.</span></span>
+<span data-ttu-id="caea2-103">In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft waarmee specifieke cmdlets worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="caea2-103">This example shows how to write a Windows PowerShell snap-in that registers specific cmdlets.</span></span>
 
-<span data-ttu-id="8ee95-104">Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen u wilt registreren.</span><span class="sxs-lookup"><span data-stu-id="8ee95-104">With this type of snap-in, you specify which cmdlets, providers, types, or formats to register.</span></span> <span data-ttu-id="8ee95-105">Zie [een Windows Power shell-module schrijven](./writing-a-windows-powershell-snap-in.md)voor meer informatie over het schrijven van een module voor het registreren van alle cmdlets en providers in een assembly.</span><span class="sxs-lookup"><span data-stu-id="8ee95-105">For more information about how to write a snap-in that registers all the cmdlets and providers in an assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powershell-snap-in.md).</span></span>
+<span data-ttu-id="caea2-104">Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen u wilt registreren.</span><span class="sxs-lookup"><span data-stu-id="caea2-104">With this type of snap-in, you specify which cmdlets, providers, types, or formats to register.</span></span> <span data-ttu-id="caea2-105">Zie [een Windows Power shell-module schrijven](./writing-a-windows-powershell-snap-in.md)voor meer informatie over het schrijven van een module voor het registreren van alle cmdlets en providers in een assembly.</span><span class="sxs-lookup"><span data-stu-id="caea2-105">For more information about how to write a snap-in that registers all the cmdlets and providers in an assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powershell-snap-in.md).</span></span>
 
-## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a><span data-ttu-id="8ee95-106">Een Windows Power shell-module schrijven waarin specifieke cmdlets worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="8ee95-106">To write a Windows PowerShell Snap-in that registers specific cmdlets.</span></span>
+## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a><span data-ttu-id="caea2-106">Een Windows Power shell-module schrijven waarin specifieke cmdlets worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="caea2-106">To write a Windows PowerShell Snap-in that registers specific cmdlets.</span></span>
 
-1. <span data-ttu-id="8ee95-107">Voeg het kenmerk RunInstallerAttribute toe.</span><span class="sxs-lookup"><span data-stu-id="8ee95-107">Add the RunInstallerAttribute attribute.</span></span>
-2. <span data-ttu-id="8ee95-108">Maak een open bare klasse die is afgeleid van de klasse [System. Management. Automation. Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .</span><span class="sxs-lookup"><span data-stu-id="8ee95-108">Create a public class that derives from the [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class.</span></span>
+1. <span data-ttu-id="caea2-107">Voeg het kenmerk RunInstallerAttribute toe.</span><span class="sxs-lookup"><span data-stu-id="caea2-107">Add the RunInstallerAttribute attribute.</span></span>
+2. <span data-ttu-id="caea2-108">Maak een open bare klasse die is afgeleid van de klasse [System. Management. Automation. Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .</span><span class="sxs-lookup"><span data-stu-id="caea2-108">Create a public class that derives from the [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class.</span></span>
 
-   <span data-ttu-id="8ee95-109">In dit voor beeld is de naam van de klasse ' CustomPSSnapinTest '.</span><span class="sxs-lookup"><span data-stu-id="8ee95-109">In this example, the class name is "CustomPSSnapinTest".</span></span>
+   <span data-ttu-id="caea2-109">In dit voor beeld is de naam van de klasse ' CustomPSSnapinTest '.</span><span class="sxs-lookup"><span data-stu-id="caea2-109">In this example, the class name is "CustomPSSnapinTest".</span></span>
 
-3. <span data-ttu-id="8ee95-110">Voeg een open bare eigenschap toe voor de naam van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="8ee95-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="8ee95-111">Gebruik bij het benoemen van modules geen van de volgende tekens: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, \`\` ` ```*`</span><span class="sxs-lookup"><span data-stu-id="8ee95-111">When naming snap-ins, do not use any of the following characters: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`</span></span>
+3. <span data-ttu-id="caea2-110">Voeg een open bare eigenschap toe voor de naam van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="caea2-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="caea2-111">Gebruik bij het benoemen van modules geen van de volgende tekens: `#` , `.` , `,` , `(` , `)` ,,,,,, `{` ,, `}` `[` `]` `&` `-` `/` `\` , `$` , `;` , `:` , `"` ,,, `'` `<` ,, `>` `|` `?` , `@` , `` ` `` ,,,,,,,,,,`*`</span><span class="sxs-lookup"><span data-stu-id="caea2-111">When naming snap-ins, do not use any of the following characters: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`</span></span>
 
-   <span data-ttu-id="8ee95-112">In dit voor beeld is de naam van de module ' CustomPSSnapInTest '.</span><span class="sxs-lookup"><span data-stu-id="8ee95-112">In this example, the name of the snap-in is "CustomPSSnapInTest".</span></span>
+   <span data-ttu-id="caea2-112">In dit voor beeld is de naam van de module ' CustomPSSnapInTest '.</span><span class="sxs-lookup"><span data-stu-id="caea2-112">In this example, the name of the snap-in is "CustomPSSnapInTest".</span></span>
 
-4. <span data-ttu-id="8ee95-113">Voeg een open bare eigenschap toe voor de leverancier van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="8ee95-113">Add a public property for the vendor of the snap-in (required).</span></span>
+4. <span data-ttu-id="caea2-113">Voeg een open bare eigenschap toe voor de leverancier van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="caea2-113">Add a public property for the vendor of the snap-in (required).</span></span>
 
-   <span data-ttu-id="8ee95-114">In dit voor beeld is de leverancier ' micro soft '.</span><span class="sxs-lookup"><span data-stu-id="8ee95-114">In this example, the vendor is "Microsoft".</span></span>
+   <span data-ttu-id="caea2-114">In dit voor beeld is de leverancier ' micro soft '.</span><span class="sxs-lookup"><span data-stu-id="caea2-114">In this example, the vendor is "Microsoft".</span></span>
 
-5. <span data-ttu-id="8ee95-115">Een open bare eigenschap voor de leveranciers resource van de module toevoegen (optioneel).</span><span class="sxs-lookup"><span data-stu-id="8ee95-115">Add a public property for the vendor resource of the snap-in (optional).</span></span>
+5. <span data-ttu-id="caea2-115">Een open bare eigenschap voor de leveranciers resource van de module toevoegen (optioneel).</span><span class="sxs-lookup"><span data-stu-id="caea2-115">Add a public property for the vendor resource of the snap-in (optional).</span></span>
 
-   <span data-ttu-id="8ee95-116">In dit voor beeld is de resource van de leverancier "CustomPSSnapInTest, micro soft".</span><span class="sxs-lookup"><span data-stu-id="8ee95-116">In this example, the vendor resource is "CustomPSSnapInTest,Microsoft".</span></span>
+   <span data-ttu-id="caea2-116">In dit voor beeld is de resource van de leverancier "CustomPSSnapInTest, micro soft".</span><span class="sxs-lookup"><span data-stu-id="caea2-116">In this example, the vendor resource is "CustomPSSnapInTest,Microsoft".</span></span>
 
-6. <span data-ttu-id="8ee95-117">Voeg een open bare eigenschap toe voor de beschrijving van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="8ee95-117">Add a public property for the description of the snap-in (required).</span></span>
+6. <span data-ttu-id="caea2-117">Voeg een open bare eigenschap toe voor de beschrijving van de module (vereist).</span><span class="sxs-lookup"><span data-stu-id="caea2-117">Add a public property for the description of the snap-in (required).</span></span>
 
-   <span data-ttu-id="8ee95-118">In dit voor beeld is de beschrijving: "Dit is een aangepaste Windows Power shell-module die de `Test-HelloWorld` en `Test-CustomSnapinTest`-cmdlets bevat.</span><span class="sxs-lookup"><span data-stu-id="8ee95-118">In this example, the description is: "This is a custom Windows PowerShell snap-in that includes the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets".</span></span>
+   <span data-ttu-id="caea2-118">In dit voor beeld is de beschrijving: ' Dit is een aangepaste Windows Power shell-module die de `Test-HelloWorld` `Test-CustomSnapinTest` cmdlets bevat.</span><span class="sxs-lookup"><span data-stu-id="caea2-118">In this example, the description is: "This is a custom Windows PowerShell snap-in that includes the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets".</span></span>
 
-7. <span data-ttu-id="8ee95-119">Voeg een open bare eigenschap voor de beschrijvings resource van de module toe (optioneel).</span><span class="sxs-lookup"><span data-stu-id="8ee95-119">Add a public property for the description resource of the snap-in (optional).</span></span>
+7. <span data-ttu-id="caea2-119">Voeg een open bare eigenschap voor de beschrijvings resource van de module toe (optioneel).</span><span class="sxs-lookup"><span data-stu-id="caea2-119">Add a public property for the description resource of the snap-in (optional).</span></span>
 
-   <span data-ttu-id="8ee95-120">In dit voor beeld is de resource van de leverancier:</span><span class="sxs-lookup"><span data-stu-id="8ee95-120">In this example, the vendor resource is:</span></span>
+   <span data-ttu-id="caea2-120">In dit voor beeld is de resource van de leverancier:</span><span class="sxs-lookup"><span data-stu-id="caea2-120">In this example, the vendor resource is:</span></span>
 
-   > <span data-ttu-id="8ee95-121">CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.</span><span class="sxs-lookup"><span data-stu-id="8ee95-121">CustomPSSnapInTest, This is a custom Windows PowerShell snap-in that includes the Test-HelloWorld and Test-CustomSnapinTest cmdlets".</span></span>
+   > <span data-ttu-id="caea2-121">CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.</span><span class="sxs-lookup"><span data-stu-id="caea2-121">CustomPSSnapInTest, This is a custom Windows PowerShell snap-in that includes the Test-HelloWorld and Test-CustomSnapinTest cmdlets".</span></span>
 
-8. <span data-ttu-id="8ee95-122">Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) .</span><span class="sxs-lookup"><span data-stu-id="8ee95-122">Specify the cmdlets that belong to the custom snap-in (optional) using the [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) class.</span></span> <span data-ttu-id="8ee95-123">De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet` name.dll-help.xml`zijn).</span><span class="sxs-lookup"><span data-stu-id="8ee95-123">The information added here includes the name of the cmdlet, its .NET type, and the cmdlet Help file name (the format of the cmdlet Help file name should be` name.dll-help.xml`).</span></span>
+8. <span data-ttu-id="caea2-122">Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) .</span><span class="sxs-lookup"><span data-stu-id="caea2-122">Specify the cmdlets that belong to the custom snap-in (optional) using the [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) class.</span></span> <span data-ttu-id="caea2-123">De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet zijn `name.dll-help.xml` ).</span><span class="sxs-lookup"><span data-stu-id="caea2-123">The information added here includes the name of the cmdlet, its .NET type, and the cmdlet Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).</span></span>
 
-   <span data-ttu-id="8ee95-124">In dit voor beeld worden de cmdlets test-HelloWorld en TestCustomSnapinTest toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="8ee95-124">This example adds the Test-HelloWorld and TestCustomSnapinTest cmdlets.</span></span>
+   <span data-ttu-id="caea2-124">In dit voor beeld worden de cmdlets test-HelloWorld en TestCustomSnapinTest toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="caea2-124">This example adds the Test-HelloWorld and TestCustomSnapinTest cmdlets.</span></span>
 
-9. <span data-ttu-id="8ee95-125">Geef de providers op die deel uitmaken van de aangepaste module (optioneel).</span><span class="sxs-lookup"><span data-stu-id="8ee95-125">Specify the providers that belong to the custom snap-in (optional).</span></span>
+9. <span data-ttu-id="caea2-125">Geef de providers op die deel uitmaken van de aangepaste module (optioneel).</span><span class="sxs-lookup"><span data-stu-id="caea2-125">Specify the providers that belong to the custom snap-in (optional).</span></span>
 
-   <span data-ttu-id="8ee95-126">In dit voor beeld worden geen providers opgegeven.</span><span class="sxs-lookup"><span data-stu-id="8ee95-126">This example does not specify any providers.</span></span>
+   <span data-ttu-id="caea2-126">In dit voor beeld worden geen providers opgegeven.</span><span class="sxs-lookup"><span data-stu-id="caea2-126">This example does not specify any providers.</span></span>
 
-10. <span data-ttu-id="8ee95-127">Geef de typen op die bij de aangepaste module horen (optioneel).</span><span class="sxs-lookup"><span data-stu-id="8ee95-127">Specify the types that belong to the custom snap-in (optional).</span></span>
+10. <span data-ttu-id="caea2-127">Geef de typen op die bij de aangepaste module horen (optioneel).</span><span class="sxs-lookup"><span data-stu-id="caea2-127">Specify the types that belong to the custom snap-in (optional).</span></span>
 
-    <span data-ttu-id="8ee95-128">In dit voor beeld worden geen typen opgegeven.</span><span class="sxs-lookup"><span data-stu-id="8ee95-128">This example does not specify any types.</span></span>
+    <span data-ttu-id="caea2-128">In dit voor beeld worden geen typen opgegeven.</span><span class="sxs-lookup"><span data-stu-id="caea2-128">This example does not specify any types.</span></span>
 
-11. <span data-ttu-id="8ee95-129">Geef de indelingen op die deel uitmaken van de aangepaste module (optioneel).</span><span class="sxs-lookup"><span data-stu-id="8ee95-129">Specify the formats that belong to the custom snap-in (optional).</span></span>
+11. <span data-ttu-id="caea2-129">Geef de indelingen op die deel uitmaken van de aangepaste module (optioneel).</span><span class="sxs-lookup"><span data-stu-id="caea2-129">Specify the formats that belong to the custom snap-in (optional).</span></span>
 
-    <span data-ttu-id="8ee95-130">In dit voor beeld worden geen indelingen opgegeven.</span><span class="sxs-lookup"><span data-stu-id="8ee95-130">This example does not specify any formats.</span></span>
+    <span data-ttu-id="caea2-130">In dit voor beeld worden geen indelingen opgegeven.</span><span class="sxs-lookup"><span data-stu-id="caea2-130">This example does not specify any formats.</span></span>
 
-## <a name="example"></a><span data-ttu-id="8ee95-131">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="8ee95-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="caea2-131">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="caea2-131">Example</span></span>
 
-<span data-ttu-id="8ee95-132">In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de `Test-HelloWorld`-en `Test-CustomSnapinTest`-cmdlets te registreren.</span><span class="sxs-lookup"><span data-stu-id="8ee95-132">This example shows how to write a Custom Windows PowerShell snap-in that can be used to register the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets.</span></span> <span data-ttu-id="8ee95-133">Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="8ee95-133">Be aware that in this example, the complete assembly could contain other cmdlets and providers that would not be registered by this snap-in.</span></span>
+<span data-ttu-id="caea2-132">In dit voor beeld ziet u hoe u een aangepaste Windows Power shell-module schrijft die kan worden gebruikt om de `Test-HelloWorld` cmdlets en te registreren `Test-CustomSnapinTest` .</span><span class="sxs-lookup"><span data-stu-id="caea2-132">This example shows how to write a Custom Windows PowerShell snap-in that can be used to register the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets.</span></span> <span data-ttu-id="caea2-133">Houd er rekening mee dat in dit voor beeld de volledige assembly andere cmdlets en providers zou kunnen bevatten die niet door deze module zouden worden geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="caea2-133">Be aware that in this example, the complete assembly could contain other cmdlets and providers that would not be registered by this snap-in.</span></span>
 
 ```csharp
 [RunInstaller(true)]
@@ -214,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-<span data-ttu-id="8ee95-134">Zie voor meer informatie over het registreren van modules [cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85)) in de [hand leiding voor Windows Power shell-programmeurs](../prog-guide/windows-powershell-programmer-s-guide.md).</span><span class="sxs-lookup"><span data-stu-id="8ee95-134">For more information about registering snap-ins, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85)) in the [Windows PowerShell Programmer's Guide](../prog-guide/windows-powershell-programmer-s-guide.md).</span></span>
+<span data-ttu-id="caea2-134">Zie voor meer informatie over het registreren van modules [cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85)) in de [hand leiding voor Windows Power shell-programmeurs](../prog-guide/windows-powershell-programmer-s-guide.md).</span><span class="sxs-lookup"><span data-stu-id="caea2-134">For more information about registering snap-ins, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85)) in the [Windows PowerShell Programmer's Guide](../prog-guide/windows-powershell-programmer-s-guide.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="8ee95-135">Zie ook</span><span class="sxs-lookup"><span data-stu-id="8ee95-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="caea2-135">Zie ook</span><span class="sxs-lookup"><span data-stu-id="caea2-135">See Also</span></span>
 
-<span data-ttu-id="8ee95-136">[Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))</span><span class="sxs-lookup"><span data-stu-id="8ee95-136">[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))</span></span>
+<span data-ttu-id="caea2-136">[Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))</span><span class="sxs-lookup"><span data-stu-id="caea2-136">[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))</span></span>
 
-[<span data-ttu-id="8ee95-137">Windows Power shell shell SDK</span><span class="sxs-lookup"><span data-stu-id="8ee95-137">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="caea2-137">Windows Power shell shell SDK</span><span class="sxs-lookup"><span data-stu-id="caea2-137">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
