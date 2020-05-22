@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
-ms.date: 08/06/2018
-ms.openlocfilehash: 77da64b9692b326d83c04ce329675cdfd942e64c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.date: 05/21/2020
+ms.openlocfilehash: 864f297e4f569030439bd6b581ef593d36f8b910
+ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691936"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791490"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -30,8 +30,8 @@ Als u Power shell in Windows wilt installeren, downloadt u het installatie pakke
 
 Het MSI-bestand ziet er als volgt uit `PowerShell-<version>-win-<os-arch>.msi` . Bijvoorbeeld:
 
-- `PowerShell-7.0.0-win-x64.msi`
-- `PowerShell-7.0.0-win-x86.msi`
+- `PowerShell-7.0.1-win-x64.msi`
+- `PowerShell-7.0.1-win-x86.msi`
 
 Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwijzingen.
 
@@ -60,7 +60,7 @@ MSI-pakketten kunnen worden geïnstalleerd vanaf de opdracht regel zodat beheerd
 In het volgende voor beeld ziet u hoe u Power shell op de achtergrond installeert met alle installatie opties ingeschakeld.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe`Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor.

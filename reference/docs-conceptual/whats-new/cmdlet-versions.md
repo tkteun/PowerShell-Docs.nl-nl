@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Release geschiedenis van modules en cmdlets
-ms.openlocfilehash: 0a1a8b0e4b1460bbaeb30495262aff2b414a649b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
+ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564632"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83751326"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Release geschiedenis van modules en cmdlets
 
@@ -259,7 +259,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Naam wijzigen-item Property           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Alleen op Windows                     |
 | Oplossen-pad                  | &check; | &check; | &check; | &check; |                                  |
-| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-Computer              | &check; | &check; | &check; | &check; | Toegevoegde ondersteuning voor Linux/macOS in 7,1 |
 | Restart-Service               | &check; | &check; | &check; | &check; | Alleen op Windows                     |
 | Herstellen-computer              | &check; |         |         |         | Alleen op Windows                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | Alleen op Windows                     |
@@ -277,7 +277,7 @@ Dit is een onderhanden werk. Help ons deze gegevens actueel te houden.
 | Start-process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Alleen op Windows                     |
 | Start-trans actie             | &check; |         |         |         | Alleen op Windows                     |
-| Stop-computer                 | &check; | &check; | &check; | &check; | Toegevoegde ondersteuning voor Linux/macOS in 7,0 |
+| Stop-computer                 | &check; | &check; | &check; | &check; | Toegevoegde ondersteuning voor Linux/macOS in 7,1 |
 | Stoppen-proces                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | Alleen op Windows                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | Alleen op Windows                     |
