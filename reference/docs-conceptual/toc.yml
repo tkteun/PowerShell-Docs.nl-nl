@@ -1,57 +1,48 @@
 - name: Deze documentatie gebruiken
   href: how-to-use-docs.md
 - name: Overzicht
-  href: overview.md
+  expanded: true
+  items:
+    - name: Wat is PowerShell?
+      href: overview.md
+    - name: Levenscyclus voor ondersteuning van PowerShell
+      href: powershell-support-lifecycle.md
 - name: Installeren
   items:
-    - name: Verschillende versies van PowerShell installeren
+    - name: Overzicht
       href: install/installing-powershell.md
-    - name: PowerShell installeren
-      items:
-        - name: PowerShell installeren in Windows
-          href: install/installing-powershell-core-on-windows.md
-        - name: PowerShell installeren in Linux
-          href: install/installing-powershell-core-on-linux.md
-        - name: PowerShell installeren in macOS
-          href: install/installing-powershell-core-on-macos.md
-        - name: PowerShell installeren in ARM
-          href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell 5.1 installeren
-      items:
-        - name: Windows PowerShell installeren
-          href: install/installing-windows-powershell.md
-        - name: De Windows PowerShell 2.0-engine installeren
-          href: install/installing-the-windows-powershell-2.0-engine.md
-        - name: Windows PowerShell-systeemvereisten
-          href: install/windows-powershell-system-requirements.md
+    - name: Migreren van Windows PowerShell 5.1 naar PowerShell 7
+      href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+    - name: PowerShell installeren in Windows
+      href: install/installing-powershell-core-on-windows.md
+    - name: PowerShell installeren in Linux
+      href: install/installing-powershell-core-on-linux.md
+    - name: PowerShell installeren in macOS
+      href: install/installing-powershell-core-on-macos.md
+    - name: PowerShell installeren in ARM
+      href: install/powershell-core-on-arm.md
     - name: PowerShell gebruiken in Docker
       href: install/PowerShell-in-Docker.md
-- name: Aan de slag
-  items:
-    - name: Aan de slag met PowerShell
-      href: getting-started/getting-started-with-windows-powershell.md
-    - name: Windows PowerShell starten
-      href: getting-started/starting-windows-powershell.md
-    - name: De Windows PowerShell 2.0-engine starten
-      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Meer informatie over PowerShell
   items:
-    - name: Informatie over belangrijke PowerShell-concepten
-      href: learn/understanding-important-powershell-concepts.md
-    - name: Meer informatie over PowerShell-namen
-      href: learn/learning-powershell-names.md
-    - name: Bekende opdrachtnamen gebruiken
-      href: learn/using-familiar-command-names.md
-    - name: Gedetailleerde Help-informatie verkrijgen
-      href: learn/getting-detailed-help-information.md
-    - name: Informatie over opdrachten verkrijgen
-      href: learn/getting-information-about-commands.md
-    - name: Variabelen gebruiken om objecten op te slaan
-      href: learn/using-variables-to-store-objects.md
-    - name: Informatie over de PowerShell-pijplijn
-      href: learn/understanding-the-powershell-pipeline.md
-    - name: Meer informatie over PowerShell
-      href: learn/more-powershell-learning.md
+    - name: PowerShell 101
+      items:
+        - name: Meer informatie over PowerShell-namen
+          href: learn/ps101/learning-powershell-names.md
+        - name: Bekende opdrachtnamen gebruiken
+          href: learn/ps101/using-familiar-command-names.md
+        - name: Gedetailleerde Help-informatie verkrijgen
+          href: learn/ps101/getting-detailed-help-information.md
+        - name: Informatie over opdrachten verkrijgen
+          href: learn/ps101/getting-information-about-commands.md
+        - name: Variabelen gebruiken om objecten op te slaan
+          href: learn/ps101/using-variables-to-store-objects.md
+        - name: Opdrachtregelopties voor PowerShell
+          href: learn/ps101/powershell.exe-command-line-help.md
+        - name: Tabbladuitbreiding gebruiken
+          href: learn/ps101/using-tab-expansion.md
+    - name: Experimentele functies gebruiken
+      href: learn/experimental-features.md
     - name: Externe communicatie van powershell
       items:
         - name: Just Enough Administration (JEA)
@@ -82,167 +73,12 @@
           href: learn/remoting/winrmsecurity.md
         - name: De tweede hop maken voor externe communicatie met PowerShell
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Aanvullende bronnen
+      href: learn/more-powershell-learning.md
     - name: Woordenlijst
-      href: learn/windows-powershell-glossary.md
-- name: Onderdelen
-  items:
-    - name: Console
-      items:
-        - name: Opdrachtregelopties voor PowerShell
-          href: components/console/powershell.exe-command-line-help.md
-        - name: Tabbladuitbreiding gebruiken
-          href: components/console/using-tab-expansion.md
-    - name: ISE
-      items:
-        - name: Kennismaking met Windows PowerShell ISE
-          href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell ISE gebruiken
-          items:
-            - name: Kennismaking met Windows PowerShell ISE
-              href: components/ise/exploring-the-windows-powershell-ise.md
-            - name: Een PowerShell-tabblad maken in Windows PowerShell ISE
-              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-            - name: Fouten opsporen in scripts in Windows PowerShell ISE
-              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-            - name: Profielen gebruiken in Windows PowerShell ISE
-              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-            - name: Tab-aanvulling gebruiken in het script- en consolevenster
-              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-            - name: Het consolevenster gebruiken in Windows PowerShell ISE
-              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-            - name: Scripts schrijven en uitvoeren in Windows PowerShell ISE
-              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-            - name: Sneltoetsen voor Windows PowerShell ISE
-              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-            - name: Toegankelijkheid in Windows PowerShell ISE
-              href: components/ise/accessibility-in-windows-powershell-ise.md
-        - name: Het objectmodel voor ISE-scripts
-          items:
-            - name: Doel van het scriptobjectmodel van Windows PowerShell ISE
-              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-            - name: De objectmodelhiërarchie van ISE
-              href: components/ise/object-model/the-ise-object-model-hierarchy.md
-            - name: Het ObjectModelRoot-object
-              href: components/ise/object-model/the-objectmodelroot-object.md
-            - name: Het ISEAddOnToolCollection-object
-              href: components/ise/object-model/the-iseaddontoolcollection-object.md
-            - name: Het ISEAddOnTool-object
-              href: components/ise/object-model/the-iseaddontool-object.md
-            - name: Het ISEEditor-object
-              href: components/ise/object-model/the-iseeditor-object.md
-            - name: Het ISEFileCollection-object
-              href: components/ise/object-model/the-isefilecollection-object.md
-            - name: Het ISEFile-object
-              href: components/ise/object-model/the-isefile-object.md
-            - name: Het ISEMenuItemCollection-object
-              href: components/ise/object-model/the-isemenuitemcollection-object.md
-            - name: Het ISEMenuItem-object
-              href: components/ise/object-model/the-isemenuitem-object.md
-            - name: Het ISEOptions-object
-              href: components/ise/object-model/the-iseoptions-object.md
-            - name: Het ISESnippetCollection-object
-              href: components/ise/object-model/the-isesnippetcollection-object.md
-            - name: Het ISESnippet-object
-              href: components/ise/object-model/the-isesnippetobject.md
-            - name: Het PowerShellTabCollection-object
-              href: components/ise/object-model/the-powershelltabcollection-object.md
-            - name: Het PowerShellTab-object
-              href: components/ise/object-model/the-powershelltab-object.md
-- name: PowerShell Gallery
-  items:
-    - name: Overzicht
-      href: gallery/overview.md
-    - name: PowerShellGet installeren
-      href: gallery/installing-psget.md
-    - name: Aan de slag
-      href: gallery/getting-started.md
-    - name: 'Uitleg:'
-      items:
-        - name: Pakketten zoeken in de galerie
-          items:
-            - name: Zoeken naar pakketten
-              href: gallery/how-to/finding-packages/search-syntax.md
-            - name: Zoeken op compatibiliteit
-              href: gallery/how-to/finding-packages/searching-by-compatibility.md
-            - name: Zoekresultaten filteren
-              href: gallery/how-to/finding-packages/filtering-packages.md
-        - name: Publiceren naar de galerie
-          items:
-            - name: Pakketten maken en publiceren
-              href: gallery/how-to/publishing-packages/publishing-a-package.md
-            - name: Een PowerShellGallery-account maken
-              href: gallery/how-to/publishing-packages/creating-an-account.md
-            - name: Pakketten uit de catalogus verwijderen
-              href: gallery/how-to/publishing-packages/unlisting-packages.md
-            - name: Pakketten verwijderen
-              href: gallery/how-to/publishing-packages/deleting-packages.md
-            - name: Pakketeigenaren beheren
-              href: gallery/how-to/publishing-packages/managing-package-owners.md
-        - name: Werken met pakketten
-          items:
-            - name: FileList-weergave
-              href: gallery/how-to/working-with-packages/filelist-view.md
-            - name: Implementeren naar Azure Automation
-              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
-            - name: Pakket handmatig downloaden
-              href: gallery/how-to/working-with-packages/manual-download.md
-            - name: Pakketten waarvoor acceptatie van de licentie is vereist
-              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
-            - name: Contact opnemen met pakketeigenaren
-              href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: Feedback geven via sociale media of opmerkingen
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
-        - name: Accountprofielen beheren
-          items:
-            - name: PowerShell Gallery-accountinstellingen
-              href: gallery/how-to/managing-profile/managing-account.md
-            - name: API-sleutels beheren
-              href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Werken met PowerShellGet-privé-opslagplaatsen
-          href: gallery/how-to/working-with-local-psrepositories.md
-    - name: Concepten
-      items:
-        - name: Publicatierichtlijnen en best practices
-          href: gallery/concepts/publishing-guidelines.md
-        - name: Pakketmanifest en de galerie-UI
-          href: gallery/concepts/package-manifest-affecting-ui.md
-        - name: Specifieke PSEditions vereisen
-          items:
-            - name: Scripts met ondersteuning voor PSEditions schrijven
-              href: gallery/concepts/script-psedition-support.md
-            - name: Modules met ondersteuning voor PSEditions schrijven
-              href: gallery/concepts/module-psedition-support.md
-        - name: Acceptatie van licentie vereisen
-          items:
-            - name: Acceptatie van licentie vereisen voor scripts
-              href: gallery/concepts/script-license-acceptance.md
-            - name: Acceptatie van licentie vereisen voor modules
-              href: gallery/concepts/module-license-acceptance.md
-        - name: Pakketten definiëren als voorlopige versie
-          items:
-            - name: Een module definiëren als voorlopige versie
-              href: gallery/concepts/module-prerelease-support.md
-            - name: Een script definiëren als voorlopige versie
-              href: gallery/concepts/script-prerelease-support.md
-        - name: Regelprofiel voor PSScriptAnalyzer
-          href: gallery/concepts/scriptanalyzer-rule-profile.md
-    - name: Ondersteuning krijgen
-      items:
-        - name: Misbruik melden
-          href: gallery/how-to/getting-support/report-abuse.md
-        - name: Geschillenoplossing
-          href: gallery/how-to/getting-support/dispute-resolution.md
-        - name: Contact opnemen met beheerders
-          href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: Problemen oplossen
-          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
-        - name: NuGet-provider en NuGet.exe opstarten
-          href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: AVG-naleving
-          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
-    - name: Galerie Veelgestelde vragen
-      href: gallery/faqs.md
+      href: learn/glossary.md
 - name: Nieuwe functies
+  expanded: true
   items:
     - name: Wat is er nieuw in PowerShell 7.x?
       items:
@@ -260,71 +96,135 @@
           href: whats-new/breaking-changes-ps6.md
         - name: Bekende problemen in PowerShell Core 6.0
           href: whats-new/known-issues-ps6.md
-    - name: Wat is er nieuw in PowerShell 5.x?
-      items:
-        - name: Wat is er nieuw in Windows PowerShell 5.x?
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: Wat is er nieuw in PowerShell 5.0 ISE?
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-    - name: Migreren van Windows PowerShell 5.1 naar PowerShell 7
-      href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
-    - name: Experimentele functies gebruiken
-      href: whats-new/experimental-features.md
     - name: Releasegeschiedenis van modules en cmdlets
       href: whats-new/cmdlet-versions.md
     - name: Compatibiliteitslijst van modules
       href: whats-new/module-compatibility.md
-- name: Levenscyclus voor ondersteuning van PowerShell
-  href: powershell-support-lifecycle.md
-- name: Windows Management Framework (WMF)
+- name: Windows PowerShell
   items:
-    - name: Overzicht
-      href: wmf/overview.md
-    - name: Installatie
+    - name: Windows PowerShell 5.1 installeren
       items:
-        - name: WMF 5.1 installeren en configureren
-          href: wmf/setup/install-configure.md
-        - name: WMF 5.0 verwijderen
-          href: wmf/setup/uninstall.md
-    - name: Nieuwe functies
-      expanded: true
+        - name: Windows PowerShell installeren
+          href: windows-powershell/install/installing-windows-powershell.md
+        - name: De Windows PowerShell 2.0-engine installeren
+          href: windows-powershell/install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell-systeemvereisten
+          href: windows-powershell/install/windows-powershell-system-requirements.md
+    - name: Wat is er nieuw in PowerShell 5.x?
       items:
-        - name: Opmerkingen bij de WMF 5.x-release
-          href: wmf/whats-new/release-notes.md
-        - name: Oplossingen voor bugs in WMF 5.1
-          href: wmf/whats-new/bugfixes.md
-        - name: Nieuwe en bijgewerkte cmdlets
-          href: wmf/whats-new/new-updated-cmdlets.md
-        - name: Aangepaste typen maken met PowerShell-klassen
-          href: wmf/whats-new/class-overview.md
-        - name: Verbeteringen van de console in WMF 5.1
-          href: wmf/whats-new/console-improvements.md
-        - name: Verbeteringen in foutopsporing voor PowerShell-scripts
-          href: wmf/whats-new/debug-overview.md
-        - name: Tracering en logboekregistratie voor scripts
-          href: wmf/whats-new/script-logging.md
-        - name: Verbeteringen van DSC in WMF 5.1
-          href: wmf/whats-new/DSC-improvements.md
-        - name: Verbeteringen van PowerShell-engine in WMF 5.1
-          href: wmf/whats-new/engine-improvements.md
-        - name: Gegevensstroom
-          href: wmf/whats-new/informationstream-overview.md
-        - name: Verbeteringen van Just Enough Administration (JEA)
-          href: wmf/whats-new/jea-improvements.md
-        - name: Verbeteringen van pakketbeheer in WMF 5.1
-          href: wmf/whats-new/package-management-improvements.md
-        - name: Registratie van software-inventaris (SIL)
-          href: wmf/whats-new/sil-overview.md
-        - name: Productcompatibiliteitsstatus
-          href: wmf/whats-new/compatibility.md
-    - name: Bekende problemen
+        - name: Wat is er nieuw in Windows PowerShell 5.x?
+          href: windows-powershell/whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Wat is er nieuw in PowerShell 5.0 ISE?
+          href: windows-powershell/whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: ISE
       items:
-        - name: Bekende problemen in WMF 5.0
-          href: wmf/known-issues/known-issues-50.md
-        - name: Bekende problemen in WMF 5.1
-          href: wmf/known-issues/known-issues-51.md
-        - name: Bekende problemen en beperkingen in DSC
-          href: wmf/known-issues/known-issues-dsc.md
+        - name: Kennismaking met Windows PowerShell ISE
+          href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell ISE gebruiken
+          items:
+            - name: Kennismaking met Windows PowerShell ISE
+              href: windows-powershell/ise/exploring-the-windows-powershell-ise.md
+            - name: Een PowerShell-tabblad maken in Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Fouten opsporen in scripts in Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Profielen gebruiken in Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Tab-aanvulling gebruiken in het script- en consolevenster
+              href: windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Het consolevenster gebruiken in Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Scripts schrijven en uitvoeren in Windows PowerShell ISE
+              href: windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Sneltoetsen voor Windows PowerShell ISE
+              href: windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Toegankelijkheid in Windows PowerShell ISE
+              href: windows-powershell/ise/accessibility-in-windows-powershell-ise.md
+        - name: Het objectmodel voor ISE-scripts
+          items:
+            - name: Doel van het scriptobjectmodel van Windows PowerShell ISE
+              href: windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: De objectmodelhiërarchie van ISE
+              href: windows-powershell/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: Het ObjectModelRoot-object
+              href: windows-powershell/ise/object-model/the-objectmodelroot-object.md
+            - name: Het ISEAddOnToolCollection-object
+              href: windows-powershell/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: Het ISEAddOnTool-object
+              href: windows-powershell/ise/object-model/the-iseaddontool-object.md
+            - name: Het ISEEditor-object
+              href: windows-powershell/ise/object-model/the-iseeditor-object.md
+            - name: Het ISEFileCollection-object
+              href: windows-powershell/ise/object-model/the-isefilecollection-object.md
+            - name: Het ISEFile-object
+              href: windows-powershell/ise/object-model/the-isefile-object.md
+            - name: Het ISEMenuItemCollection-object
+              href: windows-powershell/ise/object-model/the-isemenuitemcollection-object.md
+            - name: Het ISEMenuItem-object
+              href: windows-powershell/ise/object-model/the-isemenuitem-object.md
+            - name: Het ISEOptions-object
+              href: windows-powershell/ise/object-model/the-iseoptions-object.md
+            - name: Het ISESnippetCollection-object
+              href: windows-powershell/ise/object-model/the-isesnippetcollection-object.md
+            - name: Het ISESnippet-object
+              href: windows-powershell/ise/object-model/the-isesnippetobject.md
+            - name: Het PowerShellTabCollection-object
+              href: windows-powershell/ise/object-model/the-powershelltabcollection-object.md
+            - name: Het PowerShellTab-object
+              href: windows-powershell/ise/object-model/the-powershelltab-object.md
+    - name: Windows Management Framework (WMF)
+      items:
+        - name: Overzicht
+          href: windows-powershell/wmf/overview.md
+        - name: Installatie
+          items:
+            - name: WMF 5.1 installeren en configureren
+              href: windows-powershell/wmf/setup/install-configure.md
+            - name: WMF 5.0 verwijderen
+              href: windows-powershell/wmf/setup/uninstall.md
+        - name: Nieuwe functies
+          expanded: true
+          items:
+            - name: Opmerkingen bij de WMF 5.x-release
+              href: windows-powershell/wmf/whats-new/release-notes.md
+            - name: Oplossingen voor bugs in WMF 5.1
+              href: windows-powershell/wmf/whats-new/bugfixes.md
+            - name: Nieuwe en bijgewerkte cmdlets
+              href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
+            - name: Aangepaste typen maken met PowerShell-klassen
+              href: windows-powershell/wmf/whats-new/class-overview.md
+            - name: Verbeteringen van de console in WMF 5.1
+              href: windows-powershell/wmf/whats-new/console-improvements.md
+            - name: Verbeteringen in foutopsporing voor PowerShell-scripts
+              href: windows-powershell/wmf/whats-new/debug-overview.md
+            - name: Tracering en logboekregistratie voor scripts
+              href: windows-powershell/wmf/whats-new/script-logging.md
+            - name: Verbeteringen van DSC in WMF 5.1
+              href: windows-powershell/wmf/whats-new/DSC-improvements.md
+            - name: Verbeteringen van PowerShell-engine in WMF 5.1
+              href: windows-powershell/wmf/whats-new/engine-improvements.md
+            - name: Gegevensstroom
+              href: windows-powershell/wmf/whats-new/informationstream-overview.md
+            - name: Verbeteringen van Just Enough Administration (JEA)
+              href: windows-powershell/wmf/whats-new/jea-improvements.md
+            - name: Verbeteringen van pakketbeheer in WMF 5.1
+              href: windows-powershell/wmf/whats-new/package-management-improvements.md
+            - name: Registratie van software-inventaris (SIL)
+              href: windows-powershell/wmf/whats-new/sil-overview.md
+            - name: Productcompatibiliteitsstatus
+              href: windows-powershell/wmf/whats-new/compatibility.md
+            - name: Bekende problemen
+              items:
+                - name: Bekende problemen in WMF 5.0
+                  href: windows-powershell/wmf/known-issues/known-issues-50.md
+                - name: Bekende problemen in WMF 5.1
+                  href: windows-powershell/wmf/known-issues/known-issues-51.md
+                - name: Bekende problemen en beperkingen in DSC
+                  href: windows-powershell/wmf/known-issues/known-issues-dsc.md
+    - name: Windows PowerShell starten
+      href: windows-powershell/starting-windows-powershell.md
+    - name: De Windows PowerShell 2.0-engine starten
+      href: windows-powershell/starting-the-windows-powershell-2.0-engine.md
 - name: Desired State Configuration (DSC)
   items:
     - name: Overzicht
@@ -618,6 +518,44 @@
       items:
         - name: Whitepapers
           href: dsc/further-reading/whitepapers.md
+- name: Community
+  items:
+    - name: Community-update
+      href: community/community-update.yml
+    - name: Ondersteuning voor community
+      href: community/community-support.md
+    - name: Eregalerij voor bijdragers
+      href: community/hall-of-fame.md
+    - name: Wat is er nieuw voor Docs
+      items:
+        - name: 2020-K2
+          href: community/2020-Q2.md
+        - name: 2020-K1
+          href: community/2020-Q1.md
+    - name: Handleiding voor inzenders
+      items:
+        - name: Overzicht
+          href: community/contributing/overview.md
+        - name: Een documentatieprobleem indienen
+          href: community/contributing/file-an-issue.md
+        - name: Aan de slag met het schrijven van documentatie
+          href: community/contributing/get-started-writing.md
+        - name: Een pull-aanvraag verzenden
+          href: community/contributing/pull-requests.md
+        - name: Stijlgids voor PowerShell-documentatie
+          href: community/contributing/powershell-style-guide.md
+        - name: Naslaginformatie voor cmdlets bewerken
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: Aanvullende bronnen
+          items:
+            - name: Redactionele controlelijst
+              href: community/contributing/editorial-checklist.md
+            - name: De manier waarop we problemen beheren
+              href: community/contributing/managing-issues.md
+            - name: De manier waarop we pull-aanvragen beheren
+              href: community/contributing/managing-pull-requests.md
+    - name: Digitale kunst
+      href: community/digital-art.md
 - name: Voorbeeldscripts
   items:
     - name: Voorbeeldscripts voor beheer
@@ -702,124 +640,125 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Bijlage 2 - Een aangepaste PowerShell-snelkoppeling maken
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-- name: Community
-  expanded: true
+- name: PowerShell Gallery
   items:
-    - name: Community-update
-      href: community/community-update.yml
-    - name: Ondersteuning voor community
-      href: community/community-support.md
-    - name: Eregalerij voor bijdragers
-      href: community/hall-of-fame.md
-    - name: Wat is er nieuw voor Docs
+    - name: Overzicht
+      href: gallery/overview.md
+    - name: PowerShellGet installeren
+      href: gallery/installing-psget.md
+    - name: Aan de slag
+      href: gallery/getting-started.md
+    - name: 'Uitleg:'
       items:
-        - name: 2020-K2
-          href: community/2020-Q2.md
-        - name: 2020-K1
-          href: community/2020-Q1.md
-    - name: Handleiding voor inzenders
-      items:
-        - name: Overzicht
-          href: community/contributing/overview.md
-        - name: Een documentatieprobleem indienen
-          href: community/contributing/file-an-issue.md
-        - name: Aan de slag met het schrijven van documentatie
-          href: community/contributing/get-started-writing.md
-        - name: Een pull-aanvraag verzenden
-          href: community/contributing/pull-requests.md
-        - name: Stijlgids voor PowerShell-documentatie
-          href: community/contributing/powershell-style-guide.md
-        - name: Naslaginformatie voor cmdlets bewerken
-          href: community/contributing/editing-cmdlet-ref.md
-        - name: Aanvullende bronnen
+        - name: Pakketten zoeken in de galerie
           items:
-            - name: Redactionele controlelijst
-              href: community/contributing/editorial-checklist.md
-            - name: De manier waarop we problemen beheren
-              href: community/contributing/managing-issues.md
-            - name: De manier waarop we pull-aanvragen beheren
-              href: community/contributing/managing-pull-requests.md
-    - name: Digitale kunst
-      href: community/digital-art.md
+            - name: Zoeken naar pakketten
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: Zoeken op compatibiliteit
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: Zoekresultaten filteren
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: Publiceren naar de galerie
+          items:
+            - name: Pakketten maken en publiceren
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: Een PowerShellGallery-account maken
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: Pakketten uit de catalogus verwijderen
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: Pakketten verwijderen
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: Pakketeigenaren beheren
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: Werken met pakketten
+          items:
+            - name: FileList-weergave
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Implementeren naar Azure Automation
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: Pakket handmatig downloaden
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: Pakketten waarvoor acceptatie van de licentie is vereist
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: Contact opnemen met pakketeigenaren
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: Feedback geven via sociale media of opmerkingen
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: Accountprofielen beheren
+          items:
+            - name: PowerShell Gallery-accountinstellingen
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: API-sleutels beheren
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: Werken met PowerShellGet-privé-opslagplaatsen
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: Concepten
+      items:
+        - name: Publicatierichtlijnen en best practices
+          href: gallery/concepts/publishing-guidelines.md
+        - name: Pakketmanifest en de galerie-UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: Specifieke PSEditions vereisen
+          items:
+            - name: Scripts met ondersteuning voor PSEditions schrijven
+              href: gallery/concepts/script-psedition-support.md
+            - name: Modules met ondersteuning voor PSEditions schrijven
+              href: gallery/concepts/module-psedition-support.md
+        - name: Acceptatie van licentie vereisen
+          items:
+            - name: Acceptatie van licentie vereisen voor scripts
+              href: gallery/concepts/script-license-acceptance.md
+            - name: Acceptatie van licentie vereisen voor modules
+              href: gallery/concepts/module-license-acceptance.md
+        - name: Pakketten definiëren als voorlopige versie
+          items:
+            - name: Een module definiëren als voorlopige versie
+              href: gallery/concepts/module-prerelease-support.md
+            - name: Een script definiëren als voorlopige versie
+              href: gallery/concepts/script-prerelease-support.md
+        - name: Regelprofiel voor PSScriptAnalyzer
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: Ondersteuning krijgen
+      items:
+        - name: Misbruik melden
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: Geschillenoplossing
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: Contact opnemen met beheerders
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: Problemen oplossen
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: NuGet-provider en NuGet.exe opstarten
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: AVG-naleving
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: Galerie Veelgestelde vragen
+      href: gallery/faqs.md
 - name: Ontwikkelen en scripts schrijven
   items:
     - name: Visual Studio Code
       items:
         - name: Visual Studio Code gebruiken
-          href: components/vscode/using-vscode.md
+          href: dev-cross-plat/vscode/using-vscode.md
         - name: De ISE-ervaring in Visual Studio Code repliceren
-          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+          href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Visual Studio Code gebruiken voor externe bewerking en foutopsporing
-          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+          href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: Informatie over bestandscodering in VS Code en PowerShell
-          href: components/vscode/understanding-file-encoding.md
+          href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Draagbare modules schrijven
-      href: learn/writing-portable-modules.md
+      href: dev-cross-plat/writing-portable-modules.md
     - name: Verouderde PowerShell SDK
       items:
         - name: Overzicht
           href: developer/windows-powershell.md
         - name: De Windows PowerShell SDK installeren
           href: developer/installing-the-windows-powershell-sdk.md
-        - name: Een Windows PowerShell-module schrijven
-          href: developer/module/writing-a-windows-powershell-module.md
-          items:
-            - name: Inzicht in een Windows PowerShell-module
-              href: developer/module/understanding-a-windows-powershell-module.md
-            - name: Een PowerShell-scriptmodule schrijven
-              href: developer/module/how-to-write-a-powershell-script-module.md
-            - name: Een binaire PowerShell-module schrijven
-              href: developer/module/how-to-write-a-powershell-binary-module.md
-            - name: Een manifest voor een PowerShell-module schrijven
-              href: developer/module/how-to-write-a-powershell-module-manifest.md
-            - name: Een PowerShell-module installeren
-              href: developer/module/installing-a-powershell-module.md
-            - name: Het PSModulePath-installatiepad wijzigen
-              href: developer/module/modifying-the-psmodulepath-installation-path.md
-            - name: Een PowerShell-module importeren
-              href: developer/module/importing-a-powershell-module.md
-            - name: Help voor Windows PowerShell-modules schrijven
-              href: developer/module/writing-help-for-windows-powershell-modules.md
-              items:
-                - name: Naamgeving van Help-bestanden
-                  href: developer/module/naming-help-files.md
-                - name: Ondersteunende help die kan worden bijgewerkt
-                  href: developer/module/supporting-updatable-help.md
-                  items:
-                    - name: Overzicht van Help die kan worden bijgewerkt
-                      href: developer/module/updatable-help-overview.md
-                    - name: 'Ontwerpen van Help die kan worden bijgewerkt: stap voor stap'
-                      href: developer/module/updatable-help-authoring-step-by-step.md
-                    - name: De werking van Help die kan worden bijgewerkt
-                      href: developer/module/how-updatable-help-works.md
-                    - name: Een HelpInfo-XML-bestand maken
-                      href: developer/module/how-to-create-a-helpinfo-xml-file.md
-                      items:
-                        - name: HelpInfo-XML-schema
-                          href: developer/module/helpinfo-xml-schema.md
-                        - name: HelpInfo-XML-voorbeeldbestand
-                          href: developer/module/helpinfo-xml-sample-file.md
-                        - name: Een naam geven aan een HelpInfo-XML-bestand
-                          href: developer/module/how-to-name-a-helpinfo-xml-file.md
-                        - name: HelpInfo-XML-versienummers instellen
-                          href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
-                    - name: CAB-bestanden voorbereiden voor een Help die kan worden bijgewerkt
-                      href: developer/module/how-to-prepare-updatable-help-cab-files.md
-                      items:
-                        - name: CAB-bestanden maken en uploaden
-                          href: developer/module/how-to-create-and-upload-cab-files.md
-                        - name: CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
-                          href: developer/module/how-to-name-an-updatable-help-cab-file.md
-                        - name: Bestandstypen die zijn toegestaan in een CAB-bestand voor een Help die kan worden bijgewerkt
-                          href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
-                    - name: Help-bestanden bijwerken
-                      href: developer/module/how-to-update-help-files.md
-                    - name: Help testen die kan worden bijgewerkt
-                      href: developer/module/how-to-test-updatable-help.md
-                - name: Ondersteunende online help
-                  href: developer/module/supporting-online-help.md
+        - name: Naslaginformatie over Windows PowerShell
+          href: developer/windows-powershell-reference.md
+        - name: Nieuwe functies
+          href: developer/windows-powershell-reference-whats-new.md
         - name: Een Windows PowerShell-cmdlet schrijven
-          href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
           items:
             - name: Overzicht van cmdlets
               href: developer/cmdlet/cmdlet-overview.md
@@ -926,20 +865,6 @@
                           href: developer/cmdlet/defining-default-member-sets-for-objects.md
                     - name: Aangepaste opmaakbestanden
                       href: developer/cmdlet/custom-formatting-files.md
-                - name: Cmdlets registreren
-                  href: developer/cmdlet/registering-cmdlets.md
-                  items:
-                    - name: Modules en snap-ins
-                      href: developer/cmdlet/modules-and-snap-ins.md
-                    - name: Cmdlets importeren met modules
-                      href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
-                    - name: Een Windows PowerShell-module maken
-                      href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
-                      items:
-                        - name: Een Windows PowerShell-module schrijven
-                          href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
-                        - name: Een aangepaste Windows PowerShell-module schrijven
-                          href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
                 - name: Bevestiging vragen
                   href: developer/cmdlet/requesting-confirmation.md
                   items:
@@ -1061,8 +986,41 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Voorbeeld Events01
                   href: developer/cmdlet/events01-sample.md
+        - name: Een Windows PowerShell-module schrijven
+          items:
+            - name: Overzicht
+              href: developer/module/writing-a-windows-powershell-module.md
+            - name: Inzicht in een Windows PowerShell-module
+              href: developer/module/understanding-a-windows-powershell-module.md
+            - name: Een PowerShell-scriptmodule schrijven
+              href: developer/module/how-to-write-a-powershell-script-module.md
+            - name: Een binaire PowerShell-module schrijven
+              href: developer/module/how-to-write-a-powershell-binary-module.md
+            - name: Een manifest voor een PowerShell-module schrijven
+              href: developer/module/how-to-write-a-powershell-module-manifest.md
+            - name: Een PowerShell-module installeren
+              href: developer/module/installing-a-powershell-module.md
+            - name: Het PSModulePath-installatiepad wijzigen
+              href: developer/module/modifying-the-psmodulepath-installation-path.md
+            - name: Cmdlets registreren
+              items:
+                - name: Overzicht
+                  href: developer/module/registering-cmdlets.md
+                - name: Modules en snap-ins
+                  href: developer/module/modules-and-snap-ins.md
+                - name: Cmdlets importeren met modules
+                  href: developer/module/how-to-import-cmdlets-using-modules.md
+                - name: Een Windows PowerShell-module maken
+                  items:
+                    - name: Overzicht
+                      href: developer/module/how-to-create-a-windows-powershell-snap-in.md
+                    - name: Een Windows PowerShell-module schrijven
+                      href: developer/module/writing-a-windows-powershell-snap-in.md
+                    - name: Een aangepaste Windows PowerShell-module schrijven
+                      href: developer/module/writing-a-custom-windows-powershell-snap-in.md
+            - name: Een PowerShell-module importeren
+              href: developer/module/importing-a-powershell-module.md
         - name: Een Windows PowerShell-provider schrijven
-          href: developer/provider/writing-a-windows-powershell-provider.md
           items:
             - name: Snelstartgids voor Windows PowerShell-providers
               href: developer/provider/windows-powershell-provider-quickstart.md
@@ -1099,7 +1057,6 @@
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
         - name: Een Windows PowerShell-hosttoepassing schrijven
-          href: developer/hosting/writing-a-windows-powershell-host-application.md
           items:
             - name: Snelstartgids voor Windows PowerShell-hosts
               href: developer/hosting/windows-powershell-host-quickstart.md
@@ -1176,13 +1133,13 @@
                     - name: Voorbeeld RemoteRunspacePool01
                       href: developer/hosting/remoterunspacepool01-sample.md
         - name: Een PowerShell-opmaakbestand schrijven
-          href: developer/format/writing-a-powershell-formatting-file.md
           items:
             - name: Overzicht voor opmaakbestanden
               href: developer/format/formatting-file-overview.md
             - name: Concepten voor opmaakbestanden
-              href: developer/format/formatting-file-concepts.md
               items:
+                - name: Overzicht
+                  href: developer/format/formatting-file-concepts.md
                 - name: Een tabelweergave maken
                   href: developer/format/creating-a-table-view.md
                 - name: Een lijstweergave maken
@@ -1201,13 +1158,14 @@
                   href: developer/format/defining-conditions-for-displaying-data.md
                 - name: Weergegeven gegevens opmaken
                   href: developer/format/formatting-displayed-data.md
-                - name: PowerShell-opmaakbestanden
-                  href: developer/format/powershell-formatting-files.md
-            - name: Voorbeelden van opmaakbestanden
-              href: developer/format/examples-of-formatting-files.md
+            - name: PowerShell-opmaakbestanden
               items:
+                - name: Overzicht
+                  href: developer/format/powershell-formatting-files.md
                 - name: Een opmaakbestand (.format.ps1xml) maken
                   href: developer/format/how-to-create-a-formatting-file-format-ps1xml.md
+            - name: Voorbeelden van opmaakbestanden
+              items:
                 - name: Brede weergave (Basis)
                   href: developer/format/wide-view-basic.md
                 - name: Brede weergave (GroupBy)
@@ -1639,22 +1597,14 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: Het element WrapTables (opmaak)
                   href: developer/format/wraptables-element-format.md
-        - name: Help-onderwerpen op basis van opmerkingen schrijven
-          href: developer/help/writing-comment-based-help-topics.md
+        - name: Help voor Windows PowerShell schrijven
           items:
-            - name: Help voor Windows PowerShell-cmdlets schrijven
-              href: developer/help/writing-help-for-windows-powershell-cmdlets.md
-            - name: Help voor Windows PowerShell-providers schrijven
-              items:
-                - name: Dynamische parameters toevoegen aan een Help-onderwerp over providers
-                  href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-                - name: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
-                  href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-            - name: Help voor Windows PowerShell-scripts en -functies schrijven
+            - name: Overzicht
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
             - name: Help-onderwerpen op basis van opmerkingen schrijven
-              href: developer/help/writing-comment-based-help-topics.md
               items:
+                - name: Overzicht
+                  href: developer/help/writing-comment-based-help-topics.md
                 - name: Syntaxis van de Help op basis van opmerkingen
                   href: developer/help/syntax-of-comment-based-help.md
                 - name: Trefwoorden voor Help op basis van opmerkingen
@@ -1669,39 +1619,92 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: Help-onderwerpen op basis van XML voor opdrachten schrijven
               items:
-                - name: Het Help-bestand voor cmdlets maken
-                  href: developer/help/how-to-create-the-cmdlet-help-file.md
-                - name: De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-                - name: Een cmdlet-beschrijving toevoegen
-                  href: developer/help/how-to-add-a-cmdlet-description.md
-                - name: Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-                - name: Parametergegevens toevoegen
-                  href: developer/help/how-to-add-parameter-information.md
-                - name: Invoertypen toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-                - name: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-                - name: Notities toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
-                - name: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
-                - name: Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets
-                  href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Help voor Windows PowerShell-cmdlets schrijven
+                  items:
+                    - name: Overzicht
+                      href: developer/help/writing-help-for-windows-powershell-cmdlets.md
+                    - name: Het Help-bestand voor cmdlets maken
+                      href: developer/help/how-to-create-the-cmdlet-help-file.md
+                    - name: De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+                    - name: Een cmdlet-beschrijving toevoegen
+                      href: developer/help/how-to-add-a-cmdlet-description.md
+                    - name: Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+                    - name: Parametergegevens toevoegen
+                      href: developer/help/how-to-add-parameter-information.md
+                    - name: Invoertypen toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+                    - name: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+                    - name: Notities toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
+                    - name: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
+                    - name: Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets
+                      href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Help voor Windows PowerShell-modules schrijven
+                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                  items:
+                    - name: Naamgeving van Help-bestanden
+                      href: developer/help/naming-help-files.md
+                    - name: Ondersteunende help die kan worden bijgewerkt
+                      href: developer/help/supporting-updatable-help.md
+                      items:
+                        - name: Overzicht van Help die kan worden bijgewerkt
+                          href: developer/help/updatable-help-overview.md
+                        - name: 'Ontwerpen van Help die kan worden bijgewerkt: stap voor stap'
+                          href: developer/help/updatable-help-authoring-step-by-step.md
+                        - name: De werking van Help die kan worden bijgewerkt
+                          href: developer/help/how-updatable-help-works.md
+                        - name: Een HelpInfo-XML-bestand maken
+                          href: developer/help/how-to-create-a-helpinfo-xml-file.md
+                          items:
+                            - name: HelpInfo-XML-schema
+                              href: developer/help/helpinfo-xml-schema.md
+                            - name: HelpInfo-XML-voorbeeldbestand
+                              href: developer/help/helpinfo-xml-sample-file.md
+                            - name: Een naam geven aan een HelpInfo-XML-bestand
+                              href: developer/help/how-to-name-a-helpinfo-xml-file.md
+                            - name: HelpInfo-XML-versienummers instellen
+                              href: developer/help/how-to-set-helpinfo-xml-version-numbers.md
+                        - name: CAB-bestanden voorbereiden voor een Help die kan worden bijgewerkt
+                          href: developer/help/how-to-prepare-updatable-help-cab-files.md
+                          items:
+                            - name: CAB-bestanden maken en uploaden
+                              href: developer/help/how-to-create-and-upload-cab-files.md
+                            - name: CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
+                              href: developer/help/how-to-name-an-updatable-help-cab-file.md
+                            - name: Bestandstypen die zijn toegestaan in een CAB-bestand voor een Help die kan worden bijgewerkt
+                              href: developer/help/file-types-permitted-in-an-updatable-help-cab-file.md
+                            - name: Help-bestanden bijwerken
+                              href: developer/help/how-to-update-help-files.md
+                            - name: Help testen die kan worden bijgewerkt
+                              href: developer/help/how-to-test-updatable-help.md
+                        - name: Ondersteunende online help
+                          href: developer/help/supporting-online-help.md
+                - name: Help voor Windows PowerShell-providers schrijven
+                  items:
+                    - name: Dynamische parameters toevoegen aan een Help-onderwerp over providers
+                      href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
+                    - name: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
+                      href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Een Management OData-webservice maken
-          href: developer/webservices/creating-a-management-odata-web-service.md
           items:
+            - name: Overzicht
+              href: developer/webservices/creating-a-management-odata-web-service.md
             - name: Resources toevoegen aan een Management OData-webservice
               href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
             - name: Aangepaste autorisatie implementeren voor een Management OData-webservice
-              href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
               items:
+                - name: Overzicht
+                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
                 - name: Autorisatie op basis van rollen configureren
                   href: developer/webservices/configuring-role-based-authorization.md
-                  items:
-                    - name: Configuratieschema voor autorisatie op basis van rollen
-                      href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: Configuratieschema voor autorisatie op basis van rollen
+                  href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: Windows PowerShell-cmdlets aanroepen met Management OData-webservices
+                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: SessionConfiguration implementeren voor een Management OData-webservice
               href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
             - name: Het MOF-schemabestand maken voor een Management OData-webservice
@@ -1714,32 +1717,32 @@
               href: developer/webservices/deploying-a-management-odata-web-service.md
             - name: Management OData-entiteiten koppelen
               href: developer/webservices/associating-management-odata-entities.md
-            - name: Windows PowerShell-cmdlets aanroepen met Management OData-webservices
-              href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: Schemabestanden voor Management OData IIS Extension
-              href: developer/webservices/management-odata-iis-extension-schema-files.md
               items:
+                - name: Overzicht
+                  href: developer/webservices/management-odata-iis-extension-schema-files.md
                 - name: Schema voor resourcetoewijzing
                   href: developer/webservices/resource-mapping-schema.md
                 - name: Schema van openbare resources
                   href: developer/webservices/public-resource-schema.md
         - name: Een Windows PowerShell-werkstroom schrijven
-          href: developer/workflow/writing-a-windows-powershell-workflow.md
           items:
+            - name: Overzicht
+              href: developer/workflow/writing-a-windows-powershell-workflow.md
             - name: Windows PowerShell-activiteiten toevoegen aan de Visual Studio-werkset
               href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: Veelvoorkomende werkstroomparameters
-              href: developer/workflow/common-workflow-parameters.md
-            - name: Een werkstroomactiviteit maken uit een Windows PowerShell-cmdlet
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: Een werkstroom maken met behulp van een Windows PowerShell-script
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Een werkstroom maken met Windows PowerShell-activiteiten
               href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
+            - name: Een werkstroom maken met behulp van een Windows PowerShell-script
+              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Een Windows PowerShell-werkstroom importeren en aanroepen
               href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
+            - name: Een werkstroomactiviteit maken uit een Windows PowerShell-cmdlet
+              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
             - name: Taken plannen met de Windows PowerShell-API
               href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
+            - name: Veelvoorkomende werkstroomparameters
+              href: developer/workflow/common-workflow-parameters.md
         - name: Handleiding voor Windows PowerShell-programmeurs
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
@@ -1866,8 +1869,3 @@
                   href: developer/prog-guide/runspace09-code-sample.md
                 - name: Runspace10-codevoorbeeld
                   href: developer/prog-guide/runspace10-code-sample.md
-        - name: Naslaginformatie over Windows PowerShell
-          href: developer/windows-powershell-reference.md
-          items:
-            - name: Nieuwe functies
-              href: developer/windows-powershell-reference-whats-new.md
