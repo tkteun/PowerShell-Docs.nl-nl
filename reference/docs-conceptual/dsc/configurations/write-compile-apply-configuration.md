@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, service, installatie
 title: Een configuratie schrijven, compileren en toepassen
-ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76818155"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808296"
 ---
-> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
-
 # <a name="write-compile-and-apply-a-configuration"></a>Een configuratie schrijven, compileren en toepassen
+
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 In deze oefening wordt uitgelegd hoe u een desired state Configuration (DSC)-configuratie kunt maken en Toep assen van het begin tot het einde.
 In het volgende voor beeld wordt uitgelegd hoe u een eenvoudige configuratie kunt schrijven en Toep assen. De configuratie zorgt ervoor dat het bestand HelloWorld. txt bestaat op de lokale computer. Als u het bestand verwijdert, maakt DSC de volgende keer dat het wordt bijgewerkt opnieuw.
@@ -47,7 +47,7 @@ Configuration HelloWorld {
 }
 ```
 
-> ! Belang rijk in meer geavanceerde scenario's waarin meerdere modules moeten worden geïmporteerd zodat u met een groot aantal DSC-resources in dezelfde configuratie kunt werken, moet u ervoor zorgen dat elke module op een `Import-DscResource`aparte regel wordt geplaatst met.
+> ! Belang rijk in meer geavanceerde scenario's waarin meerdere modules moeten worden geïmporteerd zodat u met een groot aantal DSC-resources in dezelfde configuratie kunt werken, moet u ervoor zorgen dat elke module op een aparte regel wordt geplaatst met `Import-DscResource` .
 > Dit is eenvoudiger te onderhouden in broncode beheer en is vereist bij het werken met DSC in azure-status configuratie.
 >
 > ```powershell
@@ -61,19 +61,19 @@ Configuration HelloWorld {
 
 Sla het bestand op als ' HelloWorld. ps1 '.
 
-Het definiëren van een configuratie is vergelijkbaar met het definiëren van een functie. Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. `localhost`in dit geval.
+Het definiëren van een configuratie is vergelijkbaar met het definiëren van een functie. Het **knoop punt** blok geeft het doel knooppunt op dat moet worden geconfigureerd. in dit geval `localhost` .
 
-De configuratie roept één [resources](../resources/resources.md)aan, `File` de resource. Resources maken het werk om ervoor te zorgen dat het doel knooppunt zich in de status bevindt die door de configuratie is gedefinieerd.
+De configuratie roept één [resources](../resources/resources.md)aan, de `File` resource. Resources maken het werk om ervoor te zorgen dat het doel knooppunt zich in de status bevindt die door de configuratie is gedefinieerd.
 
 ## <a name="compile-the-configuration"></a>De configuratie compileren
 
 Een DSC-configuratie die wordt toegepast op een knoop punt, moet eerst worden gecompileerd in een MOF-bestand.
-Door de configuratie uit te voeren, zoals een functie, wordt een '. MOF-bestand ' gecompileerd voor elk `Node` knoop punt dat door het blok wordt gedefinieerd.
+Door de configuratie uit te voeren, zoals een functie, wordt een '. MOF-bestand ' gecompileerd voor elk knoop punt dat door het blok wordt gedefinieerd `Node` .
 Als u de configuratie wilt uitvoeren, moet *u het script* ' HelloWorld. ps1 ' in het huidige bereik.
 Zie [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)voor meer informatie.
 
 <!-- markdownlint-disable MD038 -->
-*Punt bron* het ' HelloWorld. ps1-script door te typen in het pad waar u het hebt opgeslagen, `. ` na de (punt, spatie). U kunt vervolgens uw configuratie uitvoeren door deze als een functie aan te roepen.
+*Punt bron* het ' HelloWorld. ps1-script door te typen in het pad waar u het hebt opgeslagen, na de `. ` (punt, spatie). U kunt vervolgens uw configuratie uitvoeren door deze als een functie aan te roepen.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -99,10 +99,10 @@ Nu u de gecompileerde MOF hebt, kunt u de configuratie Toep assen op het doel kn
 De `Start-DscConfiguration` cmdlet vertelt de [lokale Configuration Manager (LCM)](../managing-nodes/metaConfig.md), de engine van DSC, om de configuratie toe te passen.
 De LCM maakt het mogelijk om de DSC-resources aan te roepen om de configuratie toe te passen.
 
-Gebruik de onderstaande code om de `Start-DSCConfiguration` cmdlet uit te voeren. Geef het mappad op waar uw ' localhost. mof ' wordt opgeslagen in de `-Path` para meter. De `Start-DSCConfiguration` cmdlet zoekt naar de map die is opgegeven voor\<de bestanden\>computer naam. mof. De `Start-DSCConfiguration` cmdlet probeert elk bestand '. mof ' toe te passen op de computer naam die is opgegeven door de filename (' localhost ', ' Server01 ', ' DC-02 ', enzovoort).
+Gebruik de onderstaande code om de cmdlet uit te voeren `Start-DSCConfiguration` . Geef het mappad op waar uw ' localhost. mof ' wordt opgeslagen in de `-Path` para meter. De `Start-DSCConfiguration` cmdlet zoekt naar de map die is opgegeven voor de \< bestanden computer naam \> . mof. De `Start-DSCConfiguration` cmdlet probeert elk bestand '. mof ' toe te passen op de computer naam die is opgegeven door de filename (' localhost ', ' Server01 ', ' DC-02 ', enzovoort).
 
 > [!NOTE]
-> Als de `-Wait` para meter niet wordt opgegeven `Start-DSCConfiguration` , maakt een achtergrond taak om de bewerking uit te voeren. Door de `-Verbose` para meter op te geven, kunt u de **uitgebreide** uitvoer van de bewerking bekijken. `-Wait`en `-Verbose` zijn beide optionele para meters.
+> Als de `-Wait` para meter niet wordt opgegeven, `Start-DSCConfiguration` maakt een achtergrond taak om de bewerking uit te voeren. Door de `-Verbose` para meter op te geven, kunt u de **uitgebreide** uitvoer van de bewerking bekijken. `-Wait`en `-Verbose` zijn beide optionele para meters.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -134,7 +134,7 @@ Hello World from DSC!
 
 ## <a name="re-applying-the-configuration"></a>De configuratie opnieuw Toep assen
 
-Als u wilt zien hoe de configuratie Get opnieuw wordt toegepast, kunt u het tekst bestand verwijderen dat door uw configuratie is gemaakt. De `Start-DSCConfiguration` cmdlet gebruiken met de `-UseExisting` para meter. De `-UseExisting` para meter `Start-DSCConfiguration` geeft aan dat het huidige. MOF-bestand opnieuw moet worden toegepast. Dit is de meest recent toegepaste configuratie.
+Als u wilt zien hoe de configuratie Get opnieuw wordt toegepast, kunt u het tekst bestand verwijderen dat door uw configuratie is gemaakt. De cmdlet gebruiken `Start-DSCConfiguration` met de `-UseExisting` para meter. De `-UseExisting` para meter geeft `Start-DSCConfiguration` aan dat het huidige. MOF-bestand opnieuw moet worden toegepast. Dit is de meest recent toegepaste configuratie.
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt

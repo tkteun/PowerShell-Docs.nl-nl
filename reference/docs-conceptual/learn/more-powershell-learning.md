@@ -1,25 +1,25 @@
 ---
 ms.date: 06/18/2019
-keywords: Power shell, cmdlet
-title: Meer informatie over PowerShell
-ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+keywords: powershell,cmdlet
+title: Power shell-trainings materialen
+ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416742"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808432"
 ---
-# <a name="more-powershell-learning"></a>Meer informatie over PowerShell
+# <a name="powershell-learning-resources"></a>Power shell-trainings materialen
 
-Andere bronnen voor informatie over Power shell
+Aanvullende bronnen voor meer informatie over Power shell.
 
-## <a name="resources-for-powershell-users"></a>Resources voor Power shell-gebruikers
+## <a name="blogs-and-community"></a>Blogs en Community
 
 Naast de Help die beschikbaar is op de opdracht regel, bieden de volgende bronnen meer informatie over gebruikers die Power shell willen uitvoeren.
 
 - [Power shell-team blog](https://devblogs.microsoft.com/powershell/). De beste resource voor het rechtstreeks leren van het Power shell-product team.
 - [De hey, Scripting Guy! Blog](https://devblogs.microsoft.com/scripting/) artikelen worden gebaseerd op scenario's en op een aantrekkelijke en levendige manier geschreven.
-- Hebt u vragen over het gebruik van Power shell? Maak verbinding met honderden mensen die vergelijk bare belangen hebben in een van de vele community-forums die worden vermeld op de pagina [Power shell Community](/powershell/#pivot=main&panel=community) .
+- Hebt u vragen over het gebruik van Power shell? Maak verbinding met honderden mensen die vergelijk bare belangen hebben in een van de vele community-forums die worden vermeld op de pagina [Power shell Community](/powershell/scripting/community/community-support) .
 
 ## <a name="channel-9-videos"></a>Channel 9-video's
 

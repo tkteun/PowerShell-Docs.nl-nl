@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: De registersleutel DSCAutomationHostEnabled
-ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0f35a798e5b7d51fdfb66e4e79ceab0e36ccea5b
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942165"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808330"
 ---
->Van toepassing op: Windows Power shell 5,0
-
 # <a name="dscautomationhostenabled-registry-key"></a>De registersleutel DSCAutomationHostEnabled
+
+> Van toepassing op: Windows Power shell 5,0
 
 DSC maakt gebruik van de register sleutel **DSCAutomationHostEnabled** onder **HKEY_LOCAL_MACHINE \Software\Microsoft\Windows\CurrentVersion\Policies\System** om de configuratie van de machine bij de eerste keer opstarten in te scha kelen.
 **DSCAutomationHostEnabled** ondersteunt drie modi:

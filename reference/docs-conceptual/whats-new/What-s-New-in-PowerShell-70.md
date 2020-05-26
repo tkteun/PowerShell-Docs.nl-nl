@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 97bdac7dc7636f27c184a6c46eddf15609a8c25f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692538"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808398"
 ---
 # <a name="whats-new-in-powershell-70"></a>Wat is er nieuw in Power shell 7,0
 
@@ -53,19 +53,20 @@ Zie de [Power shell-ondersteunings levenscyclus](/powershell/scripting/powershel
 
 ## <a name="running-powershell-7"></a>Power shell 7 wordt uitgevoerd
 
-Power shell 7 wordt geïnstalleerd in een nieuwe map en wordt naast elkaar uitgevoerd met Windows Power shell 5,1. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
+Power shell 7 installeert in een map, gescheiden van Windows Power shell.
+Hierdoor kunt u Power shell 7 naast Windows Power shell 5,1 uitvoeren. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
 
 - Power shell 7 is geïnstalleerd op`%programfiles%\PowerShell\7`
 - De `%programfiles%\PowerShell\7` map wordt toegevoegd aan`$env:PATH`
 
-De installatie pakketten voor Power shell 7 upgraden eerdere versies van Power shell Core 6. x:
+Het Power shell 7 Installer-pakket upgradet eerdere versies van Power shell Core 6. x:
 
 - Power shell Core 6. x op Windows: `%programfiles%\PowerShell\6` wordt vervangen door`%programfiles%\PowerShell\7`
 - Linux: `/opt/microsoft/powershell/6` is vervangen door`/opt/microsoft/powershell/7`
 - macOS: `/usr/local/microsoft/powershell/6` wordt vervangen door`/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
-> In Windows Power shell heet het uitvoer bare bestand voor het starten van Power shell `powershell.exe` . In versie 6 en hoger wordt het uitvoer bare bestand gewijzigd om gelijktijdige uitvoering te ondersteunen. Het nieuwe uitvoer bare bestand voor het starten van Power shell 7 is `pwsh.exe` . Preview-builds blijven in-place, net als in `pwsh-preview` `pwsh` de map 7-Preview.
+> In Windows Power shell heet het uitvoer bare bestand voor het starten van Power shell `powershell.exe` . In versie 6 en hoger wordt de naam van het uitvoer bare bestand gewijzigd voor ondersteuning van gelijktijdige uitvoering. De nieuwe naam van het uitvoer bare bestand voor het starten van Power shell 7 is `pwsh.exe` . Preview-builds blijven in-place, net als in `pwsh-preview` `pwsh` de map 7-Preview.
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>Verbeterde achterwaartse compatibiliteit met Windows Power shell
 
@@ -240,7 +241,7 @@ ${Service}?.status
 Stopped
 ```
 
-In het volgende voor beeld wordt Null geretourneerd zonder dat wordt geprobeerd om de **status**van de lidnaam te openen:
+In het volgende voor beeld wordt Null geretourneerd zonder dat u toegang probeert te krijgen tot de **status**van de lidnaam:
 
 ```powershell
 $service = $Null
@@ -266,7 +267,7 @@ ${a}?[0]
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>Nieuwe weer gave-ConciseView en cmdlet Get-fout
 
-De weer gave van fout berichten is verbeterd om de Lees baarheid van interactieve en script fouten te verbeteren met een nieuwe standaard weergave **ConciseView**. De weer gaven kunnen door de gebruiker worden geselecteerd via de voorkeurs variabele `$ErrorView` .
+Power shell 7,0 verbetert de weer gave van fout berichten om de Lees baarheid van interactieve en script fouten te verbeteren met een nieuwe standaard weergave **ConciseView**. De weer gaven kunnen door de gebruiker worden geselecteerd via de voorkeurs variabele `$ErrorView` .
 
 Als een fout niet is opgetreden in een script of parserfout, wordt met **ConciseView**een fout bericht met één regel weer gegeven:
 
@@ -282,8 +283,8 @@ Als de fout optreedt tijdens het uitvoeren van een script of als het een Parseer
 
 ![Fout bij het weer geven van een script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-De standaard weergave in Power shell 7 is **ConciseView**. De vorige standaard weergave was **NormalView** en kan door de gebruiker worden geselecteerd door de voorkeurs variabele in te stellen `$ErrorView` .
-
+De standaard weergave in Power shell 7 is **ConciseView**. De vorige standaard weergave is **NormalView** en u kunt de voorkeurs variabele thisby instellen `$ErrorView` .
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
