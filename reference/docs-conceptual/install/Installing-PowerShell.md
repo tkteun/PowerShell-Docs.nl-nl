@@ -2,12 +2,12 @@
 ms.date: 08/09/2018
 keywords: installeren, Windows, Linux, macOS, ARM, raspbian
 title: PowerShell installeren
-ms.openlocfilehash: 22c88bfbbe4cd6b163e69ab5e599a98528caf9c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fd62d33945e0253b43b80f294964d5e9b8ba03a0
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78405060"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841001"
 ---
 # <a name="installing-various-versions-of-powershell"></a>Verschillende versies van PowerShell installeren
 
@@ -24,4 +24,4 @@ Power shell Core is een open-source project op [github](https://github.com/power
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 
-Zie [Windows Power Shell installeren](installing-windows-powershell.md)voor meer informatie over het installeren van de oudere versies van Power shell in Windows.
+Zie [Windows Power Shell installeren](../windows-powershell/install/installing-windows-powershell.md)voor meer informatie over het installeren van de oudere versies van Power shell in Windows.

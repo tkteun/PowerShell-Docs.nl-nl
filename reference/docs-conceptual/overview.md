@@ -1,17 +1,37 @@
 ---
 ms.date: 05/22/2020
 keywords: powershell,cmdlet
-title: Wat is Power shell?
-ms.openlocfilehash: f9fcd536747d2063fe34c7104d0088bc70d39c1d
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+title: Wat is PowerShell?
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808449"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868476"
 ---
-# <a name="what-is-powershell"></a>Wat is Power shell?
+# <a name="what-is-powershell"></a>Wat is PowerShell?
 
-Power shell is een framework voor taak automatisering en configuratie beheer, bestaande uit een opdracht regel shell en script taal. In tegens telling tot de meeste shells, die tekst accepteren en retour neren, is Power shell gebaseerd op de .NET common language runtime (CLR) en worden .NET-objecten geaccepteerd en geretourneerd. Deze fundamentele wijziging brengt volledig nieuwe hulpprogram ma's en methoden voor automatisering in.
+Power shell is een platform voor taak automatisering en configuratie beheer voor meerdere platforms, dat bestaat uit een opdracht regel shell en script taal. In tegens telling tot de meeste shells, die tekst accepteren en retour neren, is Power shell gebaseerd op de .NET common language runtime (CLR) en worden .NET-objecten geaccepteerd en geretourneerd. Deze fundamentele wijziging brengt volledig nieuwe hulpprogram ma's en methoden voor automatisering in.
+
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
 ## <a name="output-is-object-based"></a>Uitvoer is op objecten gebaseerd
 
