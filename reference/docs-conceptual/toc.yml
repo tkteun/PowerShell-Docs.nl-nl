@@ -41,8 +41,28 @@
           href: learn/ps101/powershell.exe-command-line-help.md
         - name: Tabbladuitbreiding gebruiken
           href: learn/ps101/using-tab-expansion.md
-    - name: Experimentele functies gebruiken
-      href: learn/experimental-features.md
+    - name: Uitgebreide presentaties
+      items:
+        - name: Overzicht
+          href: learn/deep-dives/overview.md
+        - name: Alles wat u wilt weten over matrices
+          href: learn/deep-dives/everything-about-arrays.md
+        - name: Alles wat u wilt weten over hashtables
+          href: learn/deep-dives/everything-about-hashtable.md
+        - name: Alles wat u wilt weten over PSCustomObject
+          href: learn/deep-dives/everything-about-pscustomobject.md
+        - name: Alles wat u wilt weten over tekenreeksvervanging
+          href: learn/deep-dives/everything-about-string-substitutions.md
+        - name: Alles wat u wilt weten over if/then/else
+          href: learn/deep-dives/everything-about-if.md
+        - name: Alles wat u wilt weten over switch
+          href: learn/deep-dives/everything-about-switch.md
+        - name: Alles wat u wilt weten over uitzonderingen
+          href: learn/deep-dives/everything-about-exceptions.md
+        - name: Alles wat u wilt weten over $null
+          href: learn/deep-dives/everything-about-null.md
+        - name: Alles wat u wilt weten over ShouldProcess
+          href: learn/deep-dives/everything-about-shouldprocess.md
     - name: Externe communicatie van powershell
       items:
         - name: Just Enough Administration (JEA)
@@ -73,6 +93,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: De tweede hop maken voor externe communicatie met PowerShell
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Experimentele functies gebruiken
+      href: learn/experimental-features.md
     - name: Aanvullende bronnen
       href: learn/more-powershell-learning.md
     - name: Woordenlijst
@@ -748,6 +770,8 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Draagbare modules schrijven
       href: dev-cross-plat/writing-portable-modules.md
+    - name: Een binaire module van een standaardbibliotheek maken
+      href: dev-cross-plat/create-standard-library-binary-module.md
     - name: Verouderde PowerShell SDK
       items:
         - name: Overzicht
