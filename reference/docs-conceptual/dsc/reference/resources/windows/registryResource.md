@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-register resource
-ms.openlocfilehash: 9f65815cbe6a94831b88cb3425bf688e1a99a9c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
+ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559899"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203644"
 ---
 # <a name="dsc-registry-resource"></a>DSC-register resource
 
@@ -54,9 +54,11 @@ Registry [string] #ResourceName
 > [!NOTE]
 > De algemene eigenschap **PsDscRunAsCredential** is toegevoegd aan WMF 5,0 om het uitvoeren van een DSC-resource in de context van andere referenties toe te staan. Zie [referenties gebruiken met DSC-resources](../../../configurations/runasuser.md)voor meer informatie.
 
-## <a name="example"></a>Voorbeeld
+## <a name="examples"></a>Voorbeelden
 
-In dit voor beeld wordt ervoor gezorgd dat een sleutel met de naam ' ExampleKey ' aanwezig is in de ** \_ lokale \_ machine** -component HKEY.
+### <a name="example-1-ensure-specified-value-and-data-under-specified-registry-key"></a>Voor beeld 1: Zorg ervoor dat de opgegeven waarde en gegevens onder de opgegeven register sleutel
+
+In dit voor beeld wordt ervoor gezorgd dat de register waarde ' TestValue ' onder een sleutel met de naam ' ExampleKey1 ' aanwezig is in de `HKEY\_LOCAL\_MACHINE` component en de gegevens ' TestData ' bevat.
 
 ```powershell
 Configuration RegistryTest
@@ -64,9 +66,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### <a name="example-2-ensure-specified-registry-key-exists"></a>Voor beeld 2: controleren of de opgegeven register sleutel bestaat
+
+In dit voor beeld wordt ervoor gezorgd dat een sleutel met de naam ' ExampleKey2 ' aanwezig is in de ** \_ lokale \_ machine** -component HKEY.
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```
