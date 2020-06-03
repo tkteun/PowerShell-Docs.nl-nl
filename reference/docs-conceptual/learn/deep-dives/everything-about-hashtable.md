@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over hashtabellen
 description: Hashtabellen zijn heel belang rijk in Power shell, zodat het goed is om een duidelijker beeld te krijgen.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149857"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307126"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles wat u wilt weten over hashtabellen
 
@@ -541,10 +541,9 @@ Hiermee maakt u dezelfde hashtabel die we hierboven hebben gezien en toegang heb
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+Er zijn veel manieren om de structuur van uw objecten te benaderen. Hier volgt een tweede manier om een geneste hashtabel te bekijken.
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 Er zijn twee belang rijke punten over deze methode. Ten eerste is de JSON wegge schreven, zodat ik de optie moet gebruiken `-Raw` om deze weer in één teken reeks te lezen. Ten tweede is het geïmporteerde object niet meer een `[hashtable]` . Het is nu a `[pscustomobject]` en dat kan problemen veroorzaken als u deze niet verwacht.
 
+Kijk voor een diep geneste hashtabellen. Wanneer u deze converteert naar JSON, worden de verwachte resultaten mogelijk niet weer geven.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Gebruik de para meter **Depth** om ervoor te zorgen dat u alle geneste hashtabellen hebt uitgebreid.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 Als u wilt dat deze bij het `[hashtable]` importeren moet worden, moet u de `Export-CliXml` opdrachten en gebruiken `Import-CliXml` .
 
 ### <a name="converting-json-to-hashtable"></a>JSON converteren naar hashtabel
@@ -682,6 +711,18 @@ Als u JSON naar a moet converteren `[hashtable]` , is er een manier waarop u dez
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+Vanaf Power shell V6 maakt JSON-ondersteuning gebruik van de Newton Soft-JSON.NET en voegt hashtabel-ondersteuning toe.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+Power shell 6,2 heeft de **Depth** -para meter toegevoegd aan `ConvertFrom-Json` . De standaard **diepte** is 1024.
 
 ### <a name="reading-directly-from-a-file"></a>Rechtstreeks vanuit een bestand lezen
 
@@ -698,9 +739,9 @@ De inhoud van het bestand wordt geïmporteerd in een `scriptblock` , waarna word
 
 Wist u dat een module manifest (het psd1-bestand) alleen een hashtabel is?
 
-## <a name="keys-are-just-strings"></a>Sleutels zijn alleen teken reeksen
+## <a name="keys-can-be-any-object"></a>Sleutels kunnen elk wille keurig object zijn
 
-Ik wil geen eerdere versie van deze tangens uitschakelen, maar de sleutels zijn alleen teken reeksen. Daarom kunnen we aanhalings tekens maken en deze een eigen sleutel geven.
+De meeste tijd zijn de sleutels alleen uit teken reeksen. Daarom kunnen we aanhalings tekens maken en deze een eigen sleutel geven.
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 Maar omdat u iets kunt doen, betekent dit niet dat u moet. Het laatste lijkt erop dat er een fout is opgetreden die in de wacht staat en dat de code eenvoudig te begrijpen is.
 
-Technisch uw sleutel hoeft geen teken reeks te zijn, maar ze zijn gemakkelijker te zien als u alleen teken reeksen gebruikt.
+Technisch uw sleutel hoeft geen teken reeks te zijn, maar ze zijn gemakkelijker te zien als u alleen teken reeksen gebruikt. Indexering werkt echter niet goed met de complexe sleutels.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+Het is niet altijd mogelijk om een waarde in de hashtabel te openen met de bijbehorende sleutel. Bijvoorbeeld:
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+Het gebruik van de notatie member Access ( `.` ) retourneert niets. Maar het gebruik van de notatie matrix index ( `[]` ) werkt.
 
 ## <a name="use-in-automatic-variables"></a>Gebruiken in automatische variabelen
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters] [] is een automatische variabele die alleen in de context van een functie bestaat. Het bevat alle para meters waarmee de functie is aangeroepen. Dit is niet precies een hashtabel, maar bijna genoeg zodat u deze kunt behandelen als één.
+[$PSBoundParameters] [] is een automatische variabele die alleen in de context van een functie bestaat.
+Het bevat alle para meters waarmee de functie is aangeroepen. Dit is niet precies een hashtabel, maar bijna genoeg zodat u deze kunt behandelen als één.
 
 Dit omvat het verwijderen van sleutels en het splatting aan andere functies. Als u een proxy functie hebt gevonden, kunt u deze beter bekijken.
 
@@ -893,8 +955,6 @@ Er worden geen andere verwijzings typen of-matrices verwerkt, maar dit is een go
 ## <a name="anything-else"></a>Nog iets?
 
 Ik heb veel moeite gedekt. Ik hoop dat u er geen zorgen meer meer over hebt, of dat u deze beter kunt zien wanneer u dit leest. Omdat ik het volledige spectrum van deze functie heb gezien, zijn er aspecten die alleen op u nu mogelijk niet van toepassing zijn. Dat is heel goed en de verwachte soort is afhankelijk van hoeveel u met Power shell werkt.
-
-Hier volgt een overzicht van alles wat we hebben behandeld in geval van een back-up naar iets. Normaal gesp roken gaat dit aan het begin, maar dit is van boven naar beneden geschreven met voor beelden die zijn gebaseerd op alles wat eerder werd geleverd.
 
 <!-- link references -->
 [oorspronkelijke versie]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
