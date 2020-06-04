@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over uitzonde ringen
 description: Het afhandelen van fouten is slechts een deel van de levens duur van het schrijven van code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149878"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337179"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Alles wat u wilt weten over uitzonde ringen
 
@@ -55,7 +55,7 @@ Hier volgt een kort overzicht van de standaard syntaxis voor het afhandelen van 
 We hebben een uitzonde ring gegenereerd met het tref woord om onze eigen uitzonderings gebeurtenis te maken `throw` .
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 Hiermee maakt u een runtime-uitzonde ring die een afsluit fout vormt. Het wordt verwerkt door een `catch` in een aanroepende functie of sluit het script af met een bericht als dit.
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Hartelijk dank dat u dagelijks Lee hebt om u te herinneren over het gebruik van 
 Als u `-ErrorAction Stop` een geavanceerde functie of cmdlet opgeeft, worden alle- `Write-Error` instructies omgezet in afsluit fouten die de uitvoering stoppen of die kunnen worden verwerkt door een `catch` .
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Try/catch
@@ -99,7 +99,7 @@ De manier waarop uitzonde ringen worden verwerkt in Power shell (en veel andere 
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ Met deze eigenschap wordt de volg orde van functie aanroepen weer gegeven waarme
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ U kunt selectief selecteren met de uitzonde ringen die u ondervangt. Uitzonde ri
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ Het is mogelijk meerdere uitzonderings typen met dezelfde instructie te ondervan
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 Wanneer het fout bericht wordt weer gegeven dat mijn script is beschadigd omdat ik `throw` op regel 31 werd aangeroepen, is er een onjuist bericht voor gebruikers van uw script. Er zijn geen nuttige informatie.
 
 Met Dexter Dhami is aangegeven dat ik dit kan `ThrowTerminatingError()` oplossen.
@@ -495,13 +494,13 @@ Hiermee wijzigt u de bron van de fout in de cmdlet en verbergt u de interne func
 Kirk Munro wijst op dat sommige uitzonde ringen alleen afsluit fouten bevatten wanneer ze in een blok worden uitgevoerd `try/catch` . Hier ziet u dat er een deling door een runtime-uitzonde ring door nul wordt gegenereerd.
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 Vervolgens roept u dit als volgt aan om te zien hoe de fout wordt gegenereerd en wordt het bericht nog steeds uitgevoerd.
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 Maar door dezelfde code te plaatsen in een `try/catch` , zien we iets anders.
@@ -509,14 +508,13 @@ Maar door dezelfde code te plaatsen in een `try/catch` , zien we iets anders.
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 Er wordt een fout melding weer gegeven dat er een afsluit fout optreedt en het eerste bericht niet wordt uitgevoerd. Wat ik niet bevalt, is dat u deze code kunt gebruiken in een functie en anders reageert als iemand een `try/catch` .
 
@@ -528,12 +526,12 @@ Eén nuance van `$PSCmdlet.ThrowTerminatingError()` is dat er een afsluit fout b
 
 ### <a name="public-function-templates"></a>Sjablonen voor open bare functies
 
-Een van de laatste een manier waarop ik met Kirk Munro werd gecommuniceerd, was dat hij een `try{...}catch{...}` rond elke en `begin` `process` `end` blok keren in al zijn geavanceerde functies. In deze generieke vangst blokken wordt hij als één regel gebruikt `$PSCmdlet.ThrowTerminatingError($PSitem)` om alle uitzonde ringen te behandelen die zijn functies verlaten.
+Een van de laatste een manier waarop ik met Kirk Munro werd gecommuniceerd, was dat hij een `try{...}catch{...}` rond elke en `begin` `process` `end` blok keren in al zijn geavanceerde functies. In deze generieke vangst blokken heeft hij één regel die gebruikmaakt `$PSCmdlet.ThrowTerminatingError($PSItem)` van alle uitzonde ringen die zijn functies verlaten.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }
