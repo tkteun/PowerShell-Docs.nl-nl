@@ -1,16 +1,16 @@
 ---
-title: One-Lines en de pijp lijn
+title: One-liners en de pijplijn
 description: Een Power shell One-line is een doorlopende pijp lijn met meerdere opdrachten om één taak uit te voeren.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 4244c34628e8f2ee8d54471fc2d5ad81a870e739
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
+ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436356"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84633342"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>Hoofd stuk 4: One-Lines en de pijp lijn
 
@@ -407,8 +407,8 @@ Maak een aangepast object om de invoer van de pijp lijn te testen op naam van ei
 
 ```powershell
 $CustomObject = [pscustomobject]@{
->> Name = 'w32time'
->> }
+ Name = 'w32time'
+ }
 ```
 
 De inhoud van de variabele **CustomObject** is een object type **PSCustomObject** en bevat een eigenschap met de naam **naam**.
