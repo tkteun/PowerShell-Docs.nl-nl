@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: API-sleutels beheren
-ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278283"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777592"
 ---
 # <a name="managing-api-keys"></a>API-sleutels beheren
 
@@ -59,7 +59,7 @@ Deze instellingen kunnen niet worden gewijzigd nadat de sleutel is gemaakt. U ku
 
 U kunt sommige instellingen van een bestaande sleutel wijzigen. Zoals eerder is vermeld, kunt u het beveiligings bereik voor een bestaande API-sleutel niet wijzigen of de verval datum wijzigen. De opties die u kunt wijzigen, worden weer gegeven in de volgende scherm afbeelding:
 
-![Nieuwe API-sleutel waarde verkrijgen](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![Uw API-sleutel waarde bewerken](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Als u de pakketten wilt wijzigen die worden beheerd door een sleutel, kunt u afzonderlijke pakketten kiezen in de lijst of het Globs-patroon wijzigen.
 

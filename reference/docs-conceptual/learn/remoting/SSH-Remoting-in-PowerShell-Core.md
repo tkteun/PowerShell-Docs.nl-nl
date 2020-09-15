@@ -1,13 +1,13 @@
 ---
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
-ms.date: 09/30/2019
-ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
-ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
+ms.date: 07/23/2020
+ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
+ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82174127"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133466"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -19,17 +19,17 @@ WinRM biedt een robuust hosting model voor externe Power shell-sessies. Op SSH g
 
 Met SSH-externe communicatie kunt u een eenvoudige Power shell-sessie tussen Windows-en Linux-computers uitvoeren. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Uiteindelijk implementeren we een algemeen hosting model, vergelijkbaar met WinRM, ter ondersteuning van de eindpunt configuratie en JEA.
 
-De `New-PSSession`cmdlets `Enter-PSSession`, `Invoke-Command` en hebben nu een nieuwe para meter die is ingesteld voor de ondersteuning van deze nieuwe externe verbinding.
+De `New-PSSession` `Enter-PSSession` `Invoke-Command` cmdlets, en hebben nu een nieuwe para meter die is ingesteld voor de ondersteuning van deze nieuwe externe verbinding.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer `HostName` op met de para meter en geeft `UserName`u de gebruikers naam op bij. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke- `KeyFilePath` sleutel bestand met de para meter.
+Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter **hostname** en geeft u de gebruikers naam met de **naam**van de gebruiker. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke-sleutel bestand met de para meter/ **filepath** .
 
 ## <a name="general-setup-information"></a>Algemene informatie over de installatie
 
-Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client`ssh.exe`() als de`sshd.exe`server (), zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)(Engelstalig) voor meer informatie. Voor Linux installeert u SSH, met inbegrip van de sshd-server, die geschikt is voor uw platform. U moet Power shell ook installeren vanaf GitHub om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. En u moet verificatie **op basis van** **wacht woord** of sleutel inschakelen.
+Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Installeer zowel de SSH-client ( `ssh.exe` ) als de server ( `sshd.exe` ), zodat u op afstand van en naar de computers kunt. OpenSSH voor Windows is nu beschikbaar in Windows 10 build 1809 en Windows Server 2019. Zie [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview)(Engelstalig) voor meer informatie. Voor Linux installeert u SSH, met inbegrip van de sshd-server, die geschikt is voor uw platform. U moet Power shell ook installeren vanaf GitHub om de externe SSH-functie te krijgen. De SSH-server moet worden geconfigureerd om een SSH-subsysteem te maken voor het hosten van een Power Shell-proces op de externe computer. En u moet verificatie **op basis van** **wacht woord** of sleutel inschakelen.
 
 ## <a name="set-up-on-a-windows-computer"></a>Instellen op een Windows-computer
 
@@ -53,7 +53,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    > [!NOTE]
    > Als u Power shell wilt instellen als de standaard shell voor OpenSSH, raadpleegt u [Windows configureren voor OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).
 
-1. Bewerk het `sshd_config` bestand dat zich `$env:ProgramData\ssh`bevindt in.
+1. Bewerk het `sshd_config` bestand dat zich bevindt in `$env:ProgramData\ssh` .
 
    Controleer of wachtwoord verificatie is ingeschakeld:
 
@@ -64,15 +64,15 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Maak het SSH-subsysteem dat als host fungeert voor een Power Shell-proces op de externe computer:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
    > [!NOTE]
-   > De standaard locatie van het uitvoer bare Power `c:/progra~1/powershell/7/pwsh.exe`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
+   > De standaard locatie van het uitvoer bare Power shell-bestand is `c:/progra~1/powershell/7/pwsh.exe` . De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
    >
    > U moet de korte naam van 8,3 gebruiken voor bestands paden die spaties bevatten. Er is een fout in OpenSSH voor Windows waarmee wordt voor komen dat ruimten in subsysteem uitvoer bare paden werken. Zie voor meer informatie dit [github-probleem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
-   > De korte naam van 8,3 voor `Program Files` de map in Windows is `Progra~1`doorgaans. U kunt echter de volgende opdracht gebruiken om ervoor te zorgen:
+   > De korte naam van 8,3 voor de `Program Files` map in Windows is doorgaans `Progra~1` . U kunt echter de volgende opdracht gebruiken om ervoor te zorgen:
    >
    > ```powershell
    > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
@@ -99,7 +99,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Restart-Service sshd
    ```
 
-1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Bijvoorbeeld `C:\Program Files\OpenSSH\`. Met deze vermelding kan de `ssh.exe` worden gevonden.
+1. Voeg het pad toe waar OpenSSH wordt geïnstalleerd in uw omgevings variabele PATH. Bijvoorbeeld `C:\Program Files\OpenSSH\`. Met deze vermelding kan de worden `ssh.exe` gevonden.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Instellen op een Ubuntu 16,04 Linux-computer
 
@@ -111,7 +111,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    sudo apt install openssh-server
    ```
 
-1. Bewerk het `sshd_config` bestand op locatie `/etc/ssh`.
+1. Bewerk het `sshd_config` bestand op locatie `/etc/ssh` .
 
    Controleer of wachtwoord verificatie is ingeschakeld:
 
@@ -122,11 +122,11 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Een vermelding voor een Power shell-subsysteem toevoegen:
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
-   > De standaard locatie van het uitvoer bare Power `/usr/bin/pwsh`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
+   > De standaard locatie van het uitvoer bare Power shell-bestand is `/usr/bin/pwsh` . De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
 
    Schakel eventueel sleutel verificatie in:
 
@@ -148,10 +148,10 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
    1. Open `System Preferences`.
    1. Klik op `Sharing`.
-   1. Selecteer `Remote Login` deze optie `Remote Login: On`.
+   1. Selecteer deze optie `Remote Login` `Remote Login: On` .
    1. Toegang tot de juiste gebruikers toestaan.
 
-1. Bewerk het `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config`.
+1. Bewerk het `sshd_config` bestand op locatie `/private/etc/ssh/sshd_config` .
 
    Gebruik een tekst editor zoals **nano**:
 
@@ -168,11 +168,11 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    Een vermelding voor een Power shell-subsysteem toevoegen:
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
-   > De standaard locatie van het uitvoer bare Power `/usr/local/bin/pwsh`shell-bestand is. De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
+   > De standaard locatie van het uitvoer bare Power shell-bestand is `/usr/local/bin/pwsh` . De locatie kan variëren, afhankelijk van de manier waarop u Power shell hebt geïnstalleerd.
 
    Schakel eventueel sleutel verificatie in:
 
@@ -191,12 +191,14 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
 Externe communicatie van Power shell is afhankelijk van de verificatie uitwisseling tussen de SSH-client en de SSH-service en implementeert geen verificatie schema's zelf. Het resultaat is dat alle geconfigureerde verificatie schema's, waaronder multi-factor Authentication, worden afgehandeld door SSH en onafhankelijk van Power shell. U kunt bijvoorbeeld de SSH-service zo configureren dat verificatie met een open bare sleutel en een eenmalig wacht woord voor extra beveiliging zijn vereist. Configuratie van multi-factor Authentication valt buiten het bereik van deze documentatie. Raadpleeg de documentatie voor SSH over het correct configureren van multi-factor Authentication en het valideren van de oplossing werkt buiten Power shell voordat u deze probeert te gebruiken met externe communicatie met Power shell.
 
+> [!NOTE]
+> Gebruikers behouden dezelfde bevoegdheden in externe sessies. Dat wil zeggen dat beheerders toegang hebben tot een verhoogde shell en dat gewone gebruikers dat niet doen.
+
 ## <a name="powershell-remoting-example"></a>Externe Power shell-voor beeld
 
 De eenvoudigste manier om externe communicatie te testen is door deze te proberen op één computer. In dit voor beeld maken we een externe sessie terug naar dezelfde Linux-computer. Power shell-cmdlets worden interactief gebruikt, dus er worden prompts van SSH weer gegeven waarin wordt gevraagd om de hostcomputer te controleren en te vragen om een wacht woord. U kunt hetzelfde doen op een Windows-computer om ervoor te zorgen dat externe toegang werkt. Vervolgens op afstand tussen computers door de hostnaam te wijzigen.
 
 ```powershell
-#
 # Linux to Linux
 #
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
@@ -249,7 +251,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```Output
+```
 PTestName@WinVM1s password:
 ```
 
@@ -318,9 +320,13 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a>Bekende problemen
+### <a name="limitations"></a>Beperkingen
 
-De opdracht **sudo** werkt niet in een externe sessie met een Linux-computer.
+- De opdracht **sudo** werkt niet in een externe sessie met een Linux-computer.
+
+- PSRemoting via SSH ondersteunt geen profielen en heeft geen toegang tot `$PROFILE` . Eenmaal in een sessie kunt u een profiel laden met punt op het profiel met het volledige bestandspad. Dit is niet gerelateerd aan SSH-profielen. U kunt de SSH-server configureren voor het gebruik van Power shell als de standaard shell en een profiel laden via SSH. Raadpleeg de SSH-documentatie voor meer informatie.
+
+- Voorafgaand aan Power shell 7,1 heeft externe toegang via SSH geen ondersteuning voor externe sessies van de tweede hop. Deze mogelijkheid is beperkt tot sessies met WinRM. Met Power shell 7,1 kunt `Enter-PSSession` `Enter-PSHostProcess` u binnen elke interactieve externe sessie werken.
 
 ## <a name="see-also"></a>Zie ook
 

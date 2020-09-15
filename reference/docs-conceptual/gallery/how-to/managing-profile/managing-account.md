@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
-ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560454"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771784"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
@@ -36,7 +36,7 @@ PowerShell Gallery biedt de volgende meldings opties:
 - Gebruikers kunnen contact met mij opnemen via de PowerShell Gallery
 - Ik wil een melding ontvangen wanneer een pakket wordt gepusht naar de PowerShell Gallery met mijn account
 
-![E-mail adres wijzigen](media/managing-account/PSGallery_AccountEmailOptions.png)
+![E-mail adres opties selecteren](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Zoals op de pagina is aangegeven, kunnen essentiële meldingen van de PowerShell Gallery niet worden uitgeschakeld.
 Deze omvatten:
@@ -49,20 +49,20 @@ Deze omvatten:
 
 Als u het aanmeldings account wilt wijzigen, moet u zijn aangemeld met het huidige account. Gebruik de volgende stappen om de wijziging te volt ooien.
 
-![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountSettings.png)
+![Instellingen voor aanmeldings account wijzigen](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Klik op **account wijzigen**. In een pop-upvenster wordt uitgelegd dat het wijzigen van het aanmeldings account van toepassing is op alle toepassingen van dat account in de PowerShell Gallery. Lees de informatie en klik vervolgens op **OK** om door te gaan.
 
-   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-1.png)
+   ![Wijzigings bevestiging: OK/Annuleren](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. U wordt vervolgens gevraagd om u aan te melden met het _nieuwe account_.
 
-   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-2.png)
+   ![Meld u aan met het nieuwe account](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. Wanneer u op **volgende**klikt, wordt er een bericht weer gegeven dat u bent aangemeld met het huidige account.
    Klik op **Afmelden en meld u aan met een ander account**.
 
-   ![Instellingen voor aanmeldings account](media/managing-account/PSGallery_LoginAccountChange-3.png)
+   ![Afmelden en aanmelden met een ander account](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Voer het wacht woord van het nieuwe account in. Nadat u het wacht woord hebt ingevoerd, keert u terug naar de pagina account instellingen, waarin wordt weer gegeven dat het aanmeldings account is bijgewerkt.
 

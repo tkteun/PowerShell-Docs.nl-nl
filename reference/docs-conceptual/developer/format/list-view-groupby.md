@@ -1,19 +1,12 @@
 ---
 title: Lijst weergave (GroupBy) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a2e66c86-83a7-4148-8575-c28d6d429d4f
-caps.latest.revision: 6
-ms.openlocfilehash: c178c4a48f9595001bcc249d5f55886fa54bb9f2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7956d13e196454a3f6da185e9be74f9d3cb8ef63
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356019"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773399"
 ---
 # <a name="list-view-groupby"></a>Lijstweergave (GroupBy)
 
@@ -23,14 +16,14 @@ In dit voor beeld ziet u hoe u een lijst weergave implementeert waarmee de rijen
 
 1. Kopieer de XML uit de sectie voor beeld van dit onderwerp naar een tekst bestand.
 
-2. Sla het tekstbestand op. Zorg ervoor dat u de extensie `format.ps1xml` toevoegt aan het bestand om het te identificeren als een opmaak bestand.
+2. Sla het tekstbestand op. Zorg ervoor dat u de `format.ps1xml` extensie toevoegt aan het bestand om het te identificeren als een indelings bestand.
 
-3. Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile`.
+3. Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile` .
 
    > [!WARNING]
-   > Dit opmaak bestand definieert de weer gave van een object dat al is gedefinieerd door een Windows Power shell-indelings bestand. U moet de para meter `prependPath` gebruiken wanneer u de cmdlet uitvoert. u kunt dit indelings bestand niet laden als een module.
+   > Dit opmaak bestand definieert de weer gave van een object dat al is gedefinieerd door een Windows Power shell-indelings bestand. U moet de `prependPath` para meter gebruiken bij het uitvoeren van de cmdlet en u kunt dit indelings bestand niet laden als een module.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit opmaak bestand worden de volgende XML-elementen gedemonstreerd:
 
@@ -138,6 +131,6 @@ ServiceType : Win32OwnProcess
 
 ## <a name="see-also"></a>Zie ook
 
-[Voor beelden van het format teren van bestanden](./examples-of-formatting-files.md)
+[Voorbeelden van opmaakbestanden](./examples-of-formatting-files.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

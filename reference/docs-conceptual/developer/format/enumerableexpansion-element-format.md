@@ -1,19 +1,12 @@
 ---
 title: EnumerableExpansion-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
-caps.latest.revision: 9
-ms.openlocfilehash: bc1e58c00ca8419f9204076f0a46050281e704db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 81a8959c19502a2e56f4cfa48a1e480509d84b6e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358975"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774045"
 ---
 # <a name="enumerableexpansion-element-format"></a>Het element EnumerableExpansion (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u hoe specifieke .NET-verzamelings objecten worden uitgevouwe
 
 Configuratie-element (indeling) DefaultSettings element (indeling) EnumerableExpansions element (indeling) EnumerableExpansion element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <EnumerableExpansion>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) DefaultSettings element (indeling) EnumerableExp
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EnumerableExpansion` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `EnumerableExpansion` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,21 +35,21 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EntrySelectedBy-element voor EnumerableExpansion (indeling)](./entryselectedby-element-for-enumerableexpansion-format.md)|Optioneel element.<br /><br /> Hiermee definieert u welke .NET-verzamelings objecten worden uitgevouwen door deze definitie.|
-|[Element uitbreiden (indeling)](./expand-element-format.md)|Hiermee geeft u op hoe het verzamelings object voor deze definitie moet worden uitgebreid.|
+|[Het element EntrySelectedBy voor EnumerableExpansion (opmaak)](./entryselectedby-element-for-enumerableexpansion-format.md)|Optioneel element.<br /><br /> Hiermee definieert u welke .NET-verzamelings objecten worden uitgevouwen door deze definitie.|
+|[Het element Uitvouwen (opmaak)](./expand-element-format.md)|Hiermee geeft u op hoe het verzamelings object voor deze definitie moet worden uitgebreid.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EnumerableExpansions-element (indeling)](./enumerableexpansions-element-format.md)|Definieert de verschillende manieren waarop .NET-verzamelings objecten worden uitgevouwen wanneer ze in een weer gave worden weer gegeven.|
+|[Het element EnumerableExpansions (opmaak)](./enumerableexpansions-element-format.md)|Definieert de verschillende manieren waarop .NET-verzamelings objecten worden uitgevouwen wanneer ze in een weer gave worden weer gegeven.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Dit element wordt gebruikt om te definiëren hoe verzamelings objecten en de objecten in de verzameling worden weer gegeven. In dit geval verwijst een verzamelings object naar een object dat de interface **System. Collections. ICollection** ondersteunt.
+Dit element wordt gebruikt om te definiëren hoe verzamelings objecten en de objecten in de verzameling worden weer gegeven. In dit geval verwijst een verzamelings object naar een object dat de interface  **System. Collections. ICollection** ondersteunt.
 
 Het standaard gedrag is om alleen de eigenschappen van de objecten in de verzameling weer te geven.
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

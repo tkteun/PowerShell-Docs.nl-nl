@@ -1,19 +1,12 @@
 ---
 title: Events01-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
-caps.latest.revision: 10
-ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561444"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774454"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
 
@@ -24,7 +17,7 @@ Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. command
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
 1. Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map Events01.
-   De standaard locatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01` .
+   De standaardlocatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN).
    Hiermee opent u het voorbeeld project in micro soft Visual Studio.

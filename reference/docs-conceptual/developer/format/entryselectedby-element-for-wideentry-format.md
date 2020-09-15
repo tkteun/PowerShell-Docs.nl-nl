@@ -1,19 +1,12 @@
 ---
 title: EntrySelectedBy-element voor WideEntry (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
-caps.latest.revision: 9
-ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ba0a776839c39d753d12859335388c5326639fd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354752"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774079"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>Het element EntrySelectedBy voor WideEntry (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u de .NET-typen die gebruikmaken van deze definitie van de br
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) WideControl element (indeling) WideEntries element (indeling) WideEntry element (indeling) EntrySelectedBy-element voor WideEntry (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <EntrySelectedBy>
@@ -33,7 +26,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EntrySelectedBy` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `EntrySelectedBy` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,7 +38,7 @@ Geen.
 |-------------|-----------------|
 |[SelectionCondition-element voor EntrySelectedBy voor WideEntry (indeling)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van deze brede weergave definitie.|
 |[SelectionSetName-element voor EntrySelectedBy voor WideEntry (indeling)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een set .NET-typen op die gebruikmaken van deze brede weergave definitie.|
-|[TypeName-element voor EntrySelectedBy voor WideEntry (indeling)](./typename-element-for-entryselectedby-for-wideentry-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op dat gebruikmaakt van deze brede weergave definitie.|
+|[Het element TypeName voor EntrySelectedBy voor WideEntry (opmaak)](./typename-element-for-entryselectedby-for-wideentry-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op dat gebruikmaakt van deze brede weergave definitie.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -57,7 +50,7 @@ Geen.
 
 U moet ten minste één type, selectieset of selectie voorwaarde opgeven voor een brede weergave definitie. Er is geen maximum limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
 
-De selectie voorwaarden worden gebruikt voor het definiëren van een voor waarde die voor de definitie moet bestaan, zoals wanneer een object een specifieke eigenschap heeft of een bepaalde eigenschaps waarde of script waarde `true`wordt geëvalueerd. Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
+Selectie voorwaarden worden gebruikt voor het definiëren van een voor waarde die voor de definitie moet bestaan, zoals wanneer een object een specifieke eigenschap heeft of een bepaalde eigenschaps waarde of script waarde resulteert in `true` . Zie voor [waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)voor meer informatie over selectie voorwaarden.
 
 Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie over andere onderdelen van een brede weer gave.
 
@@ -69,10 +62,10 @@ Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie o
 
 [SelectionSetName-element voor EntrySelectedBy voor WideEntry (indeling)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-[TypeName-element voor EntrySelectedBy voor WideEntry (indeling)](./typename-element-for-entryselectedby-for-wideentry-format.md)
+[Het element TypeName voor EntrySelectedBy voor WideEntry (opmaak)](./typename-element-for-entryselectedby-for-wideentry-format.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Voor waarden definiëren voor het weer geven van gegevens](./defining-conditions-for-displaying-data.md)
+[Voorwaarden voor het weergeven van gegevens definiëren](./defining-conditions-for-displaying-data.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

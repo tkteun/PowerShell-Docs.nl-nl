@@ -1,19 +1,12 @@
 ---
 title: EnumerableExpansions-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
-caps.latest.revision: 9
-ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2b536b1ab9b34b0089d0a38d3c5dc7a937176443
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354731"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774011"
 ---
 # <a name="enumerableexpansions-element-format"></a>Het element EnumerableExpansions (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u hoe .NET-verzamelings objecten worden uitgevouwen wanneer z
 
 Configuratie-element (indeling) DefaultSettings element (indeling) EnumerableExpansions element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <EnumerableExpansions>
@@ -31,7 +24,7 @@ Configuratie-element (indeling) DefaultSettings element (indeling) EnumerableExp
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EnumerableExpansions` beschreven. Er is geen limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `EnumerableExpansions` element beschreven. Er is geen limiet voor het aantal onderliggende elementen dat u kunt gebruiken.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -41,18 +34,18 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EnumerableExpansion-element (indeling)](./enumerableexpansion-element-format.md)|Optioneel element.<br /><br /> Hiermee worden de specifieke .NET-verzamelings objecten gedefinieerd die worden uitgevouwen wanneer ze worden weer gegeven in een weer gave.|
+|[Het element EnumerableExpansion (opmaak)](./enumerableexpansion-element-format.md)|Optioneel element.<br /><br /> Hiermee worden de specifieke .NET-verzamelings objecten gedefinieerd die worden uitgevouwen wanneer ze worden weer gegeven in een weer gave.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[DefaultSettings-element (indeling)](./defaultsettings-element-format.md)|Hiermee definieert u algemene instellingen die van toepassing zijn op alle weer gaven van het opmaak bestand.|
+|[Het element DefaultSettings (opmaak)](./defaultsettings-element-format.md)|Hiermee definieert u algemene instellingen die van toepassing zijn op alle weer gaven van het opmaak bestand.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Dit element wordt gebruikt om te definiëren hoe verzamelings objecten en de objecten in de verzameling worden weer gegeven. In dit geval verwijst een verzamelings object naar een object dat de interface **System. Collections. ICollection** ondersteunt.
+Dit element wordt gebruikt om te definiëren hoe verzamelings objecten en de objecten in de verzameling worden weer gegeven. In dit geval verwijst een verzamelings object naar een object dat de interface  **System. Collections. ICollection** ondersteunt.
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

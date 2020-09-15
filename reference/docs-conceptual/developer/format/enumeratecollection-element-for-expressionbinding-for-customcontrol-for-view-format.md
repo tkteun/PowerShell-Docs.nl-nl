@@ -1,27 +1,20 @@
 ---
 title: EnumerateCollection-element voor ExpressionBinding voor CustomControl voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3182c0c5-ba43-4d00-b3e0-27f24d272b2f
-caps.latest.revision: 9
-ms.openlocfilehash: b0ed329600811206b8569b864032825818841479
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 91505ca2661c6bfd0dcb2bbdb26a645d237a7fb9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354682"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773926"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format"></a>Het element EnumerateCollection voor ExpressionBinding voor CustomControl voor Weergave (opmaak)
 
 Hiermee geeft u op dat de elementen van verzamelingen worden weer gegeven. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) CustomControl-element (indeling) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor View (Format) ExpressionBinding-element voor CustomItem voor CustomControl voor weer gave (indeling) EnumerateCollection element voor expressie binding voor CustomControl voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) weer gave element (indeling) CustomControl element (Format) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (Format) ExpressionBinding element voor CustomItem voor weer gave (Format) voor expressie binding
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <EnumerateCollection/>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EnumerateCollection` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `EnumerateCollection` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -51,4 +44,4 @@ Geen.
 
 [ExpressionBinding-element voor CustomItem (indeling)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

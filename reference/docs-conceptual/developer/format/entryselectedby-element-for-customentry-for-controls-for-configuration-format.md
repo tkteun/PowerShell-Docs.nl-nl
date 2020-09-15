@@ -1,27 +1,20 @@
 ---
 title: EntrySelectedBy-element voor CustomEntry voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
-caps.latest.revision: 10
-ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9467c8c2d80e46c0a47c31569efbddbabe25bb1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359003"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774266"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
 
 Definieert de .NET-typen die gebruikmaken van de definitie van het algemene besturings element of de voor waarde die moet bestaan voor het gebruik van dit besturings element. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (Format) EntrySelectedBy element voor CustomEntry voor besturings elementen voor configuratie (indeling)
+Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (indeling) EntrySelectedBy
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <EntrySelectedBy>
@@ -33,7 +26,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `EntrySelectedBy` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `EntrySelectedBy` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,15 +36,15 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[SelectionCondition-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van de algemene controle definitie.|
-|[SelectionSetName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een set .NET-typen op die gebruikmaken van deze definitie van het gemeen schappelijke besturings element.|
-|[TypeName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op dat gebruikmaakt van deze definitie van het algemene besturings element.|
+|[Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van de algemene controle definitie.|
+|[Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een set .NET-typen op die gebruikmaken van deze definitie van het gemeen schappelijke besturings element.|
+|[Het element TypeName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op dat gebruikmaakt van deze definitie van het algemene besturings element.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomEntry-element voor CustomControl voor besturings elementen voor configuratie (indeling)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Biedt een definitie van het algemene besturings element.|
+|[Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Biedt een definitie van het algemene besturings element.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -59,12 +52,12 @@ Elke definitie moet mini maal één .NET-type,-selectieset of-selectie voorwaard
 
 ## <a name="see-also"></a>Zie ook
 
-[SelectionCondition-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+[Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
-[SelectionSetName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[CustomEntry-element voor CustomControl voor besturings elementen voor configuratie (indeling)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
+[Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[TypeName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[Het element TypeName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

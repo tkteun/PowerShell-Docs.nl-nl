@@ -1,25 +1,18 @@
 ---
 title: Eigenschappen declareren als para meters | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
-caps.latest.revision: 9
-ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 63113f541df534b1f720ceb06e14b5031f2311b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356446"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774640"
 ---
 # <a name="declaring-properties-as-parameters"></a>Eigenschappen declareren als parameters
 
 In dit onderwerp vindt u basis informatie die u moet begrijpen voordat u de para meters van een cmdlet declareert.
 
-Als u de para meters van een cmdlet binnen de cmdlet-klasse wilt declareren, definieert u de open bare eigenschappen die voor elke para meter vertegenwoordigen en voegt u vervolgens een of meer parameter kenmerken toe aan elke eigenschap. De Windows Power shell-runtime maakt gebruik van de parameter kenmerken om de eigenschap te identificeren als een cmdlet-para meter. De basis syntaxis voor het declareren van het parameter kenmerk is `[Parameter()]`.
+Als u de para meters van een cmdlet binnen de cmdlet-klasse wilt declareren, definieert u de open bare eigenschappen die voor elke para meter vertegenwoordigen en voegt u vervolgens een of meer parameter kenmerken toe aan elke eigenschap. De Windows Power shell-runtime maakt gebruik van de parameter kenmerken om de eigenschap te identificeren als een cmdlet-para meter. De basis syntaxis voor het declareren van het parameter kenmerk is `[Parameter()]` .
 
 Hier volgt een voor beeld van een eigenschap die is gedefinieerd als een vereiste para meter.
 
@@ -51,4 +44,4 @@ Windows Power shell biedt ook een aantal algemene para meters die automatisch be
 
 [Typen cmdlet-para meter](./types-of-cmdlet-parameters.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

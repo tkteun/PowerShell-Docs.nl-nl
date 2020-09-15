@@ -1,19 +1,12 @@
 ---
 title: Kenmerken in cmdlet-code | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: aea8d293-c45b-41eb-8385-548f7c9b280b
-caps.latest.revision: 10
-ms.openlocfilehash: 14505c4f7cc8490418ca463e3b81902f29d4f90b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f92e329d304754d5596cef0c95dc597aca3a538
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359463"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774912"
 ---
 # <a name="attributes-in-cmdlet-code"></a>Kenmerken in de cmdlet-code
 
@@ -32,6 +25,6 @@ Zie [kenmerk typen](./attribute-types.md)voor meer informatie over de verschille
 
 ## <a name="see-also"></a>Zie ook
 
-[Kenmerk typen](./attribute-types.md)
+[Typen kenmerken](./attribute-types.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

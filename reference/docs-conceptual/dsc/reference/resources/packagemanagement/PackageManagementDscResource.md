@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/15/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC Package Management-resource
-ms.openlocfilehash: ba8ab1e6c2d79e98084a52e3cffec39d57d800c9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 983a288398f710ecc5d2bc557028282ccd58561b
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557155"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464261"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC Package Management-resource
 
@@ -18,22 +18,22 @@ De **Package Management** -resource in Windows Power shell desired state Configu
 > [!IMPORTANT]
 > De **Package Management** -module moet ten minste versie 1.1.7.0 zijn voor de volgende eigenschaps gegevens die u wilt corrigeren.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 PackageManagement [string] #ResourceName
 {
     Name = [string]
     [ AdditionalParameters = [HashTable] ]
+    [ DependsOn = [string[]] ]
+    [ Ensure = [string]{ Absent | Present } ]
     [ MaximumVersion = [string] ]
     [ MinimumVersion = [string] ]
     [ ProviderName = [string] ]
+    [ PsDscRunAsCredential = [PSCredential] ]
     [ RequiredVersion = [string] ]
     [ Source = [string] ]
     [ SourceCredential = [PSCredential] ]
-    [ DependsOn = [string[]] ]
-    [ Ensure = [string]{ Absent | Present } ]
-    [ PsDscRunAsCredential = [PSCredential] ]
 }
 ```
 
@@ -41,7 +41,7 @@ PackageManagement [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee geeft u de naam op van het pakket dat moet worden geïnstalleerd of verwijderd. |
+|Naam |Hiermee geeft u de naam op van het pakket dat moet worden geïnstalleerd of verwijderd. |
 |AdditionalParameters |Providerspecifieke hashtabel van para meters die worden door gegeven aan `Get-Package -AdditionalArguments` . U kunt bijvoorbeeld voor NuGet-provider aanvullende para meters door geven zoals doelpad. |
 |MaximumVersion |Hiermee geeft u de Maxi maal toegestane versie van het pakket dat u wilt zoeken. Als u deze para meter niet toevoegt, vindt de resource de hoogste beschik bare versie van het pakket. |
 |MinimumVersion |Hiermee geeft u de mini maal toegestane versie van het pakket dat u wilt zoeken. Als u deze para meter niet toevoegt, zoekt de resource de hoogste beschik bare versie van het pakket die ook voldoet aan de maximum opgegeven versie die is opgegeven door de para meter **MaximumVersion** . |

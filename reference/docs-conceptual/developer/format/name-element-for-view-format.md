@@ -1,19 +1,12 @@
 ---
 title: Naam element voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3a31010d-1db9-44ae-a7f3-6ed32cb641cb
-caps.latest.revision: 16
-ms.openlocfilehash: 097d20cb6a04635124d1f96823248df6095ca1af
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 670b089f850fa4b39b7b100ca1e1ce45b05ea72d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354269"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773229"
 ---
 # <a name="name-element-for-view-format"></a>Het element Naam voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u de naam op die wordt gebruikt om de weer gave te identificeren.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element (indeling) naam element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Name>ViewName</Name>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element (inde
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Name` beschreven. Voor elke weer gave is slechts één `Name` element toegestaan.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Name` element beschreven. `Name`Voor elke weer gave is slechts één element toegestaan.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer .NET-objecten weer te geven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer .NET-objecten weer te geven.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -55,7 +48,7 @@ Voor meer informatie over de verschillende typen weer gaven raadpleegt u de volg
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `View`-element dat een tabel weergave definieert voor het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) . De naam van de weer gave is ' service '.
+In het volgende voor beeld ziet u een- `View` element dat een tabel weergave definieert voor het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) . De naam van de weer gave is ' service '.
 
 ```xml
 <View>
@@ -70,14 +63,14 @@ In het volgende voor beeld ziet u een `View`-element dat een tabel weergave defi
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Aangepaste besturings elementen maken](./creating-custom-controls.md)
+[Aangepaste besturingselementen maken](./creating-custom-controls.md)
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

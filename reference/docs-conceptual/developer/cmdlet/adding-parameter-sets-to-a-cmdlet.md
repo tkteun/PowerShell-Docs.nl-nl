@@ -1,21 +1,14 @@
 ---
 title: Parameter sets toevoegen aan een cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
-ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978624"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774980"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Parametersets toevoegen aan een cmdlet
 
@@ -23,11 +16,11 @@ ms.locfileid: "80978624"
 
 Windows Power shell definieert een para meter die is ingesteld als een groep para meters die samen werken. Als u de para meters van een cmdlet groepeert, kunt u een enkele cmdlet maken die de functionaliteit ervan kan wijzigen op basis van de groep para meters die de gebruiker opgeeft.
 
-Een voor beeld van een cmdlet die gebruikmaakt van twee parameters sets voor het definiëren van verschillende functies is de `Get-EventLog`-cmdlet die wordt meegeleverd met Windows Power shell. Deze cmdlet retourneert andere informatie wanneer de gebruiker de para meter `List` of `LogName` opgeeft. Als de para meter `LogName` is opgegeven, retourneert de cmdlet informatie over de gebeurtenissen in een bepaald gebeurtenis logboek. Als de para meter `List` is opgegeven, retourneert de cmdlet informatie over de logboek bestanden zelf (niet de gebeurtenis gegevens die ze bevatten). In dit geval identificeren de para meters `List` en `LogName` twee afzonderlijke parameter sets.
+Een voor beeld van een cmdlet die gebruikmaakt van twee parameters sets om verschillende functies te definiëren, is de `Get-EventLog` cmdlet die wordt verschaft door Windows Power shell. Met deze cmdlet wordt een andere informatie geretourneerd als de gebruiker de `List` `LogName` para meter of opgeeft. Als de `LogName` para meter is opgegeven, retourneert de cmdlet informatie over de gebeurtenissen in een bepaald gebeurtenis logboek. Als de `List` para meter is opgegeven, retourneert de cmdlet informatie over de logboek bestanden zelf (niet de gebeurtenis gegevens die ze bevatten). In dit geval identificeren de `List` `LogName` para meters twee afzonderlijke parameter sets.
 
 Twee belang rijke zaken die u moet onthouden over parameter sets is dat de Windows Power shell-runtime slechts één para meterset voor een bepaalde invoer gebruikt en dat elke parameterset ten minste één para meter moet hebben die uniek is voor de ingestelde para meter.
 
-Ter illustratie van dat laatste punt gebruikt deze stop-proc-cmdlet drie parameter sets: `ProcessName`, `ProcessId`en `InputObject`. Elk van deze parameter sets heeft één para meter die zich niet in de andere parameter sets bevindt. De parameter sets kunnen andere para meters delen, maar de cmdlet gebruikt de unieke para meters `ProcessName`, `ProcessId`en `InputObject` om te bepalen welke set para meters moet worden gebruikt door de Windows Power shell-runtime.
+Ter illustratie van dat laatste punt gebruikt deze stop-proc-cmdlet drie parameter sets: `ProcessName` , `ProcessId` en `InputObject` . Elk van deze parameter sets heeft één para meter die zich niet in de andere parameter sets bevindt. De parameters sets kunnen andere para meters delen, maar de cmdlet gebruikt de unieke para meters, `ProcessName` `ProcessId` en `InputObject` om te identificeren welke set para meters de Windows Power shell-runtime moet gebruiken.
 
 ## <a name="declaring-the-cmdlet-class"></a>De cmdlet-klasse declareren
 
@@ -54,11 +47,11 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>De para meters van de cmdlet declareren
 
-Met deze cmdlet worden drie para meters gedefinieerd die nodig zijn als invoer voor de cmdlet (deze para meters definiëren ook de parameter sets), evenals een `Force` para meter waarmee wordt beheerd wat de cmdlet doet en een `PassThru`-para meter die bepaalt of de cmdlet een uitvoer object via de pijp lijn verzendt. Met deze cmdlet wordt standaard geen object door gegeven via de pijp lijn. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze laatste twee para meters.
+Met deze cmdlet worden drie para meters gedefinieerd die nodig zijn voor de invoer van de cmdlet (deze para meters definiëren ook de parameter sets), evenals een `Force` para meter die de werking van de cmdlet beheert en een `PassThru` para meter die bepaalt of de cmdlet een uitvoer object via de pijp lijn verzendt. Met deze cmdlet wordt standaard geen object door gegeven via de pijp lijn. Zie [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)voor meer informatie over deze laatste twee para meters.
 
 ### <a name="declaring-the-name-parameter"></a>De para meter name declareren
 
-Met deze invoer parameter kan de gebruiker de namen opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` kenmerk van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter `ProcessName` bevat die voor deze para meter is ingesteld.
+Met deze invoer parameter kan de gebruiker de namen opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het `ParameterSetName` sleutel woord attribute van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de `ProcessName` para meter die is ingesteld voor deze para meter.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
@@ -84,7 +77,7 @@ Houd er rekening mee dat de alias ' procesnaam ' wordt gegeven aan deze para met
 
 ### <a name="declaring-the-id-parameter"></a>Declareren van de id-para meter
 
-Met deze invoer parameter kan de gebruiker de id's opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` kenmerk van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter set `ProcessId` bevat.
+Met deze invoer parameter kan de gebruiker de id's opgeven van de processen die moeten worden gestopt. Houd er rekening mee dat het `ParameterSetName` sleutel woord van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de `ProcessId` ingestelde para meter bevat.
 
 ```csharp
 [Parameter(
@@ -122,7 +115,7 @@ Houd er rekening mee dat de alias ' ProcessId ' wordt opgegeven voor deze para m
 
 ### <a name="declaring-the-inputobject-parameter"></a>Declareren van de para meter input object
 
-Met deze invoer parameter kan de gebruiker een invoer object opgeven dat informatie bevat over de processen die moeten worden gestopt. Houd er rekening mee dat het sleutel woord `ParameterSetName` kenmerk van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de para meter `InputObject` bevat die voor deze para meter is ingesteld.
+Met deze invoer parameter kan de gebruiker een invoer object opgeven dat informatie bevat over de processen die moeten worden gestopt. Houd er rekening mee dat het `ParameterSetName` sleutel woord attribute van het kenmerk [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) de `InputObject` para meter die is ingesteld voor deze para meter.
 
 ```csharp
 [Parameter(
@@ -213,7 +206,7 @@ De Help-methoden die worden aangeroepen door de SELECT-instructie worden hier ni
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-Zie StopProcessSample04- C# voor [beeld](./stopprocesssample04-sample.md)voor de volledige voorbeeld code.
+Zie StopProcessSample04-voor [beeld](./stopprocesssample04-sample.md)voor de volledige C#-voorbeeld code.
 
 ## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
@@ -225,9 +218,9 @@ Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell re
 
 ## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. Hier volgen enkele tests die laten zien hoe de para meters `ProcessId` en `InputObject` kunnen worden gebruikt om de parameter sets te testen om een proces te stoppen.
+Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. Hier volgen enkele tests die laten zien hoe de `ProcessId` en- `InputObject` para meters kunnen worden gebruikt om de parameter sets te testen om een proces te stoppen.
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `ProcessId` ingesteld op het stoppen van een proces op basis van de id. In dit geval gebruikt de cmdlet de `ProcessId` para meter die is ingesteld om het proces te stoppen.
+- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de `ProcessId` para meter ingesteld op het stoppen van een proces op basis van de id. In dit geval gebruikt de cmdlet de `ProcessId` para meter die is ingesteld om het proces te stoppen.
 
   ```
   PS> stop-proc -Id 444
@@ -237,7 +230,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de para meter `InputObject` ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald door de `Get-Process` opdracht.
+- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de `InputObject` para meter ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald met de `Get-Process` opdracht.
 
   ```
   PS> get-process notepad | stop-proc
@@ -249,7 +242,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
 
 ## <a name="see-also"></a>Zie ook
 
-[Een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)
+[Een cmdlet maken waarmee het systeem wordt gewijzigd](./creating-a-cmdlet-that-modifies-the-system.md)
 
 [Een Windows Power shell-cmdlet maken](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
@@ -257,4 +250,4 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
 
 [Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

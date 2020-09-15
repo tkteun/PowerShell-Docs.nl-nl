@@ -1,27 +1,20 @@
 ---
 title: FirstLineIndent-element voor frame voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ec63f4f9-8858-4529-8646-ffbbc278f83e
-caps.latest.revision: 7
-ms.openlocfilehash: 694c5baaa5e90a772257276ba139d90acf7ec0e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3927be2cdce24b65b4d94dfb17ae57a1b47270c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354584"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773518"
 ---
 # <a name="firstlineindent-element-for-frame-for-controls-for-view-format"></a>Het element FirstLineIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 
 Geeft aan hoeveel tekens de eerste regel van de gegevens naar rechts wordt geschoven. Dit element wordt gebruikt bij het definiëren van besturings elementen die kunnen worden gebruikt door een weer gave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (opmaak) voor besturings elementen voor de weer gave (indeling) CustomControl-element voor besturings elementen voor Controls (Format) CustomEntries element voor CustomControl voor View (Format) CustomEntry element voor CustomEntries voor besturings elementen voor de weer gave (Format) CustomItem-element voor CustomEntry voor besturings elementen voor de weer gave (Format)-frame-element voor CustomItem voor besturings elementen voor weer gave (Format) FirstLineIndent-element van frame met besturings elementen voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (indeling) voor besturings elementen voor weer gave (indeling) CustomControl-element voor besturings elementen voor het element Control Format) CustomEntry element voor CustomEntries voor besturings elementen voor de weer gave (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor het frame-element van de weer gave (Format) voor CustomItem voor besturings elementen voor de weer gave (indeling) FirstLineIndent element van het frame van de besturings elementen van de weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <FirstLineIndent>NumberOfCharactersToShift</FirstLineIndent>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `FirstLineIndent` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `FirstLineIndent` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -55,8 +48,8 @@ Als dit element is opgegeven, kunt u het [FirstLineHanging](./firstlinehanging-e
 
 ## <a name="see-also"></a>Zie ook
 
-[FirstLineHanging-element voor frame voor besturings elementen voor weer gave (indeling)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)
+[Het element FirstLineHanging voor Frame voor Besturingselementen voor Weergave (opmaak)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)
 
-[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)
+[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

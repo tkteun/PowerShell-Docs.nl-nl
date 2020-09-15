@@ -1,19 +1,12 @@
 ---
 title: Achtergrond taken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
-caps.latest.revision: 13
-ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354913"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774844"
 ---
 # <a name="background-jobs"></a>Achtergrondtaken
 
@@ -35,11 +28,11 @@ Zie het volgende voor meer informatie over de manier waarop achtergrond taken wo
 
 Als u een cmdlet wilt schrijven die als achtergrond taak kan worden uitgevoerd, moet u de volgende taken uitvoeren:
 
-- Definieer een `asJob` switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als achtergrond taak.
+- Definieer een `asJob` Switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als achtergrond taak.
 
 - Maak een-object dat is afgeleid van de klasse [System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) . Dit object kan een aangepast taak object zijn of een taak object dat wordt meegeleverd met Windows Power shell, zoals een [System. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -object.
 
-- Voeg in een methode voor het verwerken van records een `if`-instructie toe die detecteert of de cmdlet moet worden uitgevoerd als een achtergrond taak.
+- Voeg in een methode voor het verwerken van records een `if` instructie toe die detecteert of de cmdlet moet worden uitgevoerd als een achtergrond taak.
 
 - Implementeer voor aangepaste taak objecten de taak klasse.
 
@@ -91,4 +84,4 @@ Onderdrukt de opdracht prompt totdat een of alle Windows Power shell-achtergrond
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

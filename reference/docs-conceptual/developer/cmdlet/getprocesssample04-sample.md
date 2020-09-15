@@ -1,23 +1,16 @@
 ---
 title: GetProcessSample04-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: aa2aa4c4-3457-4601-806a-801afe3dcc80
-caps.latest.revision: 6
-ms.openlocfilehash: 095bebf868efd00f8eeaec979a5606f140714cb1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4858c44302f7315625be02dd0dc1d335b9c3f158
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356418"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774419"
 ---
 # <a name="getprocesssample04-sample"></a>Voorbeeld GetProcessSample04
 
-In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Er wordt een niet-afsluit fout gegenereerd als er een fout optreedt tijdens het ophalen van een proces. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Er wordt een niet-afsluit fout gegenereerd als er een fout optreedt tijdens het ophalen van een proces. Deze cmdlet is een vereenvoudigde versie van de `Get-Process` cmdlet die wordt meegeleverd met Windows Power shell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Het voor beeld maken met Visual Studio.
 
@@ -51,7 +44,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -164,4 +157,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

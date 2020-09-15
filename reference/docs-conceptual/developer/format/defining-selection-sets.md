@@ -1,23 +1,16 @@
 ---
 title: Selectie sets definiëren | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
-caps.latest.revision: 16
-ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692294"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774300"
 ---
 # <a name="defining-selection-sets"></a>Selectiereeksen definiëren
 
-Wanneer u meerdere weer gaven en besturings elementen maakt, kunt u sets van objecten definiëren die worden aangeduid als selectie sets. Met een selectieset kunt u de objecten één keer definiëren, zonder dat u ze herhaaldelijk hoeft te definiëren voor elke weer gave of elk besturings element. Selectie sets worden meestal gebruikt wanneer u een set gerelateerde .NET-objecten hebt. Het `FileSystem` Opmaak bestand (bestands systeem. Format. ps1xml) definieert bijvoorbeeld een selectieset van de bestandssysteem typen die door verschillende weer gaven worden gebruikt.
+Wanneer u meerdere weer gaven en besturings elementen maakt, kunt u sets van objecten definiëren die worden aangeduid als selectie sets. Met een selectieset kunt u de objecten één keer definiëren, zonder dat u ze herhaaldelijk hoeft te definiëren voor elke weer gave of elk besturings element. Selectie sets worden meestal gebruikt wanneer u een set gerelateerde .NET-objecten hebt. Bijvoorbeeld, het `FileSystem` Opmaak bestand (FileSystem.format.ps1XML) definieert een selectie reeks van de bestandssysteem typen die door verschillende weer gaven worden gebruikt.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Waar worden selectie sets gedefinieerd en waarnaar wordt verwezen
 

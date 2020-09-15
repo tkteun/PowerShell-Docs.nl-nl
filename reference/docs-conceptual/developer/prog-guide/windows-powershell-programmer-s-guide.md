@@ -1,23 +1,16 @@
 ---
-title: Hand leiding voor&#39;Windows Power shell-programmeurs | Microsoft Docs
-ms.custom: ''
+title: Hand leiding voor Windows Power Shell-programmeur&#39;s | Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
-ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
-caps.latest.revision: 9
-ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417774"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771563"
 ---
-# <a name="windows-powershell-programmer39s-guide"></a>Hand leiding voor&#39;Windows Power shell-programmeurs
+# <a name="windows-powershell-programmer39s-guide"></a>Hand leiding voor Windows Power shell-programmeer&#39;s
 
 Deze hand leiding voor programmeurs is gericht op ontwikkel aars die geïnteresseerd zijn in een beheer omgeving voor de opdracht regel voor systeem beheerders. Windows Power shell biedt een eenvoudige manier om beheer opdrachten te bouwen die .NET-objecten beschikbaar maken, terwijl Windows Power shell het meeste werk voor u kan doen.
 
@@ -37,9 +30,9 @@ Bij traditionele opdracht ontwikkeling moet u een para meter-parser schrijven, e
 
 Windows Power shell definieert verschillende soorten opdrachten die u in ontwikkeling kunt gebruiken. Deze opdrachten omvatten: functions, filters, scripts, aliassen en uitvoer bare bestanden (toepassingen). Het hoofd opdracht type dat in deze hand leiding wordt besproken, is een eenvoudige, kleine opdracht met de naam ' cmdlet '. Windows Power Shell levert een set cmdlets en biedt volledige ondersteuning voor het aanpassen van cmdlets voor uw omgeving. De Windows Power shell-runtime verwerkt alle opdracht typen net zoals cmdlets, met behulp van pijp lijnen.
 
-Naast de opdrachten ondersteunt Windows Power shell diverse aanpas bare Windows Power shell-providers die beschik bare specifieke sets van cmdlets maken. De shell werkt in de Windows Power shell-opgegeven host-toepassing (Windows Power shell. exe), maar is ook gelijk toegankelijk vanuit een aangepaste Host-toepassing die u kunt ontwikkelen om te voldoen aan specifieke vereisten. Zie [How Windows Power shell](/previous-versions//ms714658(v=vs.85))(Engelstalig) voor meer informatie.
+Naast de opdrachten ondersteunt Windows Power shell diverse aanpas bare Windows Power shell-providers die beschik bare specifieke sets van cmdlets maken. De shell werkt in de Windows Power shell-opgegeven host-toepassing (Windows PowerShell.exe), maar is even toegankelijk vanuit een aangepaste Host-toepassing die u kunt ontwikkelen om te voldoen aan specifieke vereisten. Zie [How Windows Power shell](/previous-versions//ms714658(v=vs.85))(Engelstalig) voor meer informatie.
 
-### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
+### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-cmdlets
 
 Een cmdlet is een licht gewicht opdracht die wordt gebruikt in de Windows Power shell-omgeving. De Windows Power shell-runtime roept deze cmdlets aan in de context van automatiserings scripts die op de opdracht regel worden gegeven en de Windows Power shell-runtime roept deze ook programmatisch via Windows Power shell-Api's aan.
 
@@ -55,7 +48,7 @@ Als u een gegevens archief beschikbaar maakt waartoe de gebruiker toegang moet h
 
 ### <a name="host-application"></a>Hosttoepassing
 
-Windows Power shell bevat de standaard toepassing Power shell. exe van de host, een console toepassing die samenwerkt met de gebruiker en de Windows Power shell-runtime host met behulp van een console venster.
+Windows Power shell bevat de standaardhost-toepassings powershell.exe, een console toepassing die samenwerkt met de gebruiker en de Windows Power shell-runtime host met behulp van een console venster.
 
 U hoeft slechts zelden uw eigen hosttoepassing te schrijven voor Windows Power shell, hoewel aanpassing wordt ondersteund. Eén geval waarin u mogelijk uw eigen toepassing nodig hebt, is wanneer u een interface hebt die uitgebreid is dan de interface van de standaardhost-toepassing. Mogelijk wilt u ook een aangepaste toepassing maken wanneer u de grafische gebruikers interface baseert op de opdracht regel. Zie [How to Create a Windows Power shell host Application](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)(Engelstalig) voor meer informatie.
 
@@ -79,7 +72,7 @@ Windows Power shell biedt toegang tot verschillende objecten, zoals .NET en XML-
 
 - Aangepaste objecten schrijven.
 
-  Met behulp van ETS kunt u flexibele nieuwe typen maken die compatibel zijn met de Windows Power shell-taal. Als u een .NET-ontwikkelaar bent, kunt u met objecten werken met dezelfde semantiek als de Windows Power shell-taal van toepassing op scripting, bijvoorbeeld om te bepalen of een object `true`.
+  Met behulp van ETS kunt u flexibele nieuwe typen maken die compatibel zijn met de Windows Power shell-taal. Als u een .NET-ontwikkelaar bent, kunt u werken met objecten die dezelfde semantiek gebruiken als de Windows Power shell-taal van toepassing op scripting, bijvoorbeeld om te bepalen of een object wordt geëvalueerd `true` .
 
   Zie [Windows Power shell-object concepten](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)voor meer informatie over ETS en hoe Windows Power shell objecten gebruikt.
 
@@ -97,14 +90,14 @@ Zie voor meer informatie over het gebruik van de Windows Power shell-shell [aan 
 
 ## <a name="contents-of-this-guide"></a>Inhoud van deze hand leiding
 
-|Onderwerp|De definitie van|
+|Onderwerp|Definitie|
 |-----------|----------------|
-|[Een Windows Power shell-provider maken](./how-to-create-a-windows-powershell-provider.md)|In deze sectie wordt beschreven hoe u een Windows Power shell-provider voor Windows Power shell bouwt.|
+|[Een Windows PowerShell-provider maken](./how-to-create-a-windows-powershell-provider.md)|In deze sectie wordt beschreven hoe u een Windows Power shell-provider voor Windows Power shell bouwt.|
 |[Een Windows Power shell-hosttoepassing maken](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|In deze sectie wordt beschreven hoe u een hosttoepassing schrijft die een runs Pace bewerkt en hoe u een hosttoepassing schrijft die zijn eigen aangepaste host implementeert.|
-|[Een Windows Power shell-module maken](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|In deze sectie wordt beschreven hoe u een module maakt die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en het maken van een aangepaste module.|
-|[Een console shell maken](./how-to-create-a-console-shell.md)|In deze sectie wordt beschreven hoe u een console Shell maakt die niet uitbreidbaar is.|
-|[Windows Power shell-concepten](./windows-powershell-concepts.md)|Deze sectie bevat conceptuele informatie waarmee u inzicht krijgt in Windows Power shell vanuit het oogpunt van een ontwikkelaar.|
+|[Een Windows PowerShell-module maken](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|In deze sectie wordt beschreven hoe u een module maakt die wordt gebruikt voor het registreren van alle cmdlets en providers in een assembly en het maken van een aangepaste module.|
+|[Een console-shell maken](./how-to-create-a-console-shell.md)|In deze sectie wordt beschreven hoe u een console Shell maakt die niet uitbreidbaar is.|
+|[Windows PowerShell-concepten](./windows-powershell-concepts.md)|Deze sectie bevat conceptuele informatie waarmee u inzicht krijgt in Windows Power shell vanuit het oogpunt van een ontwikkelaar.|
 
 ## <a name="see-also"></a>Zie ook
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

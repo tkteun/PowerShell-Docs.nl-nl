@@ -1,19 +1,12 @@
 ---
 title: SelectionSetName-element voor EntrySelectedBy voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
-caps.latest.revision: 8
-ms.openlocfilehash: 819906127e81355c45103ede85ef3608e1c1cfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e68aa74b201abf345e87411db6cb2787ddd4f72b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358849"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772685"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-tablecontrol-format"></a>Het element SelectionSetName voor EntrySelectedBy voor TableControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u een set .NET-typen op die gebruikmaken van dit item van de tabel
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) EntrySelectedBy element (indeling) SelectionSetName element voor EntrySelectedBy voor TableRowEntry (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
@@ -63,6 +56,6 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 [Sets van objecten voor een weer gave definiëren](./defining-selection-sets.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

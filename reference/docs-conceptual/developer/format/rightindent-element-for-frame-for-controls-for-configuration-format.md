@@ -1,27 +1,20 @@
 ---
 title: RightIndent-element voor frame voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3a6cedcc-0437-4312-961e-0845cc249532
-caps.latest.revision: 8
-ms.openlocfilehash: 9d8779c90421145b40d7b6b537686caf1ccd2a09
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: edd299f4a39a8f2f55385b750b530de50ffff203
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353982"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772991"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
 
 Hiermee geeft u op hoeveel tekens de gegevens van de rechter marge worden verplaatst. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor het element configuratie frame voor CustomItem voor besturings elementen voor de configuratie (indeling) RightIndent-element voor frame voor Besturings elementen voor configuratie (indeling)
+Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor CustomControl voor Configuration (Format) CustomEntry element voor het CustomItem-element voor het configureren van de configuratie (indeling) voor CustomEntry voor besturings elementen voor het element configuratie frame voor CustomItem voor besturings elementen voor de configuratie (Format) RightIndent-element voor de configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <RightIndent>CharactersToShift</RightIndent>
@@ -29,7 +22,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `RightIndent` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `RightIndent` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -53,6 +46,6 @@ Geef het aantal tekens op waarmee u de gegevens naar rechts wilt verplaatsen.
 
 ## <a name="see-also"></a>Zie ook
 
-[Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

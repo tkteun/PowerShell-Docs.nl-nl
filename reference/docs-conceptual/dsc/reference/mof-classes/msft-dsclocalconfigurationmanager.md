@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: MSFT_DSCLocalConfigurationManager-klasse
-ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941465"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464278"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klasse
 
@@ -15,7 +15,7 @@ De lokale Configuration Manager (LCM) die de statussen van configuratie bestande
 
 De volgende syntaxis is vereenvoudigd via de code van Managed Object Format (MOF) en bevat alle overgenomen eigenschappen.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
@@ -34,12 +34,12 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft de volgende leden:
 
 De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 
-|Methode |Beschrijving |
+|Methoden |Beschrijving |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Maakt gebruik van de configuratie agent om de in behandeling zijnde configuratie toe te passen.|
-| [De disabledebugconfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources uit.|
-| [De enabledebugconfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources in.|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.|
+| [ApplyConfiguration (Booleaans)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Maakt gebruik van de configuratie agent om de in behandeling zijnde configuratie toe te passen.|
+| [De disabledebugconfiguration ()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources uit.|
+| [De enabledebugconfiguration (Booleaans)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Hiermee schakelt u fout opsporing voor DSC-resources in.|
+| [De getconfiguration ()](msft-dsclocalconfigurationmanager-getconfiguration.md)| Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.|
 | [De getconfigurationresultoutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Hiermee wordt de uitvoer van de configuratie agent opgehaald die betrekking heeft op een specifieke taak.|
 | [De getconfigurationstatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| De geschiedenis van de configuratie status ophalen.|
 | [De getmetaconfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Hiermee worden de instellingen van de LCM opgehaald die worden gebruikt voor het beheren van de configuratie agent.|

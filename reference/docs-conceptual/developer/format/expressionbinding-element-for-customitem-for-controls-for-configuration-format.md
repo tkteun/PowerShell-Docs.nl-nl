@@ -1,27 +1,20 @@
 ---
 title: ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c6649d07-4762-4602-9b4b-d9e2e9e63312
-caps.latest.revision: 13
-ms.openlocfilehash: 531ff447f8407a737131a38351d7e4c6e7da90fb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1ad83fa9d915822eaefb490658f8a219defdddf2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354654"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773909"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 
 Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor configuratie ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling)
+Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie-ExpressionBinding element voor CustomItem voor besturings elementen voor configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ExpressionBinding>
@@ -36,7 +29,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `ExpressionBinding` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `ExpressionBinding` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,11 +40,11 @@ Geen.
 |Element|Beschrijving|
 |-------------|-----------------|
 |`CustomControl Element`|Optioneel element.<br /><br /> Hiermee wordt een besturings element gedefinieerd dat door dit besturings element wordt gebruikt.|
-|[CustomControlName-element voor ExpressionBinding voor besturings elementen voor configuratie (indeling)](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam op van een algemeen besturings element of een weergave besturings element.|
-|[EnumerateCollection-element voor ExpressionBinding voor besturings elementen voor configuratie (indeling)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Opgegeven dat de elementen van verzamelingen worden weer gegeven door het besturings element.|
-|[ItemSelectionCondition-element voor ExpressionBinding voor besturings elementen voor configuratie (indeling)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit algemene besturings element.|
-|[Het element PropertyName voor ExpressionBinding voor besturings elementen voor configuratie (indeling)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarvan de waarde wordt weer gegeven door het algemene besturings element.|
-|[Script block-element voor ExpressionBinding voor besturings elementen voor configuratie (indeling)](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarvan de waarde wordt weer gegeven door het algemene besturings element.|
+|[Het element CustomControlName voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam op van een algemeen besturings element of een weergave besturings element.|
+|[Het element EnumerateCollection voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Opgegeven dat de elementen van verzamelingen worden weer gegeven door het besturings element.|
+|[Het element ItemSelectionCondition voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit algemene besturings element.|
+|[Het element PropertyName voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarvan de waarde wordt weer gegeven door het algemene besturings element.|
+|[Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarvan de waarde wordt weer gegeven door het algemene besturings element.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -65,4 +58,4 @@ Geen.
 
 [CustomItem-element voor CustomEntry voor besturings elementen voor configuratie](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

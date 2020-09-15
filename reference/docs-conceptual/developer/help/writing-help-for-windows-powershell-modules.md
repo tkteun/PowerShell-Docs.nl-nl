@@ -1,12 +1,12 @@
 ---
 title: Hulp voor het schrijven van Power shell-modules
 ms.date: 04/10/2020
-ms.openlocfilehash: 2c6450c03fb9847de331605fb6b9bfb203af3d89
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810349"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893064"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Hulp voor het schrijven van Power shell-modules
 
@@ -27,9 +27,9 @@ Een module kan de volgende soorten Help bevatten.
 - **Help voor scripts**. De Help-onderwerpen waarin scripts in een module worden beschreven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de script-of script module.
 
 - **Conceptuele informatie ("about")**. U kunt een conceptueel ("about") Help-onderwerp gebruiken om de module en de bijbehorende leden te beschrijven en te uitleggen hoe de leden kunnen worden gebruikt om taken uit te voeren.
-  Conceptuele Help-onderwerpen zijn tekst bestanden met Unicode-code ring (UTF-8). De bestands naam moet de `about_<name>.help.txt` indeling gebruiken, zoals `about_MyModule.help.txt` . Power shell bevat standaard meer dan 100 van de volgende conceptuele informatie over Help-onderwerpen en ze zijn ingedeeld zoals in het volgende voor beeld.
+  Conceptuele Help-onderwerpen zijn tekst bestanden met Unicode-code ring (UTF-8). De bestands naam moet de `about_<name>.help.txt` indeling gebruiken, bijvoorbeeld `about_MyModule.help.txt` . Power shell bevat standaard meer dan 100 van de volgende conceptuele informatie over Help-onderwerpen en ze zijn ingedeeld zoals in het volgende voor beeld.
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 

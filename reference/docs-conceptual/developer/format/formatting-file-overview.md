@@ -1,23 +1,16 @@
 ---
 title: Overzicht van het format teren van bestanden | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
-caps.latest.revision: 13
-ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: efdd3eed15c5f3c88636fcbe7a39f6c6cfb20ced
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355004"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773501"
 ---
 # <a name="formatting-file-overview"></a>Overzicht voor opmaakbestanden
 
-De weer gave-indeling voor de objecten die worden geretourneerd door de opdrachten (cmdlets, functies en scripts) worden gedefinieerd met behulp van indelings bestanden (ps1xml-bestanden). Een aantal van deze bestanden wordt geleverd door Power shell om de weer gave-indeling te definiëren voor objecten die worden geretourneerd door Power shell-opdrachten, zoals het [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -object dat door de `Get-Process`-cmdlet wordt geretourneerd. U kunt echter ook uw eigen aangepaste opmaak bestanden maken om de standaard notaties te overschrijven of u kunt een aangepast opmaak bestand schrijven om de weer gave van objecten te definiëren die door uw eigen opdrachten worden geretourneerd.
+De weer gave-indeling voor de objecten die worden geretourneerd door de opdrachten (cmdlets, functies en scripts) worden gedefinieerd met behulp van indelings bestanden (format.ps1XML-bestanden). Verschillende van deze bestanden worden geleverd door Power shell om de weergave notatie te definiëren voor objecten die worden geretourneerd door Power shell-opdrachten, zoals het [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -object dat door de cmdlet wordt geretourneerd `Get-Process` . U kunt echter ook uw eigen aangepaste opmaak bestanden maken om de standaard notaties te overschrijven of u kunt een aangepast opmaak bestand schrijven om de weer gave van objecten te definiëren die door uw eigen opdrachten worden geretourneerd.
 
 > [!IMPORTANT]
 > Indelings bestanden bepalen niet welke elementen van een object worden geretourneerd naar de pijp lijn. Wanneer een object wordt geretourneerd naar de pijp lijn, zijn alle leden van dat object beschikbaar, zelfs als sommige niet worden weer gegeven.
@@ -38,19 +31,19 @@ Elk opmaak bestand kan de volgende onderdelen definiëren die kunnen worden gede
 
 In opmaak weergaven kunnen objecten worden weer gegeven in een tabel indeling, lijst opmaak, brede notatie en aangepaste notatie. Voor de meeste delen wordt elke opmaak definitie beschreven met een set XML-tags die de weer gave beschrijven. Elke weer gave bevat de naam van de weer gave, de objecten die gebruikmaken van de weer gave en de elementen van de weer gave, zoals de kolom-en rij-informatie voor een tabel weergave.
 
-In de tabel weergave worden de eigenschappen van een object of een script blok waarde in een of meer kolommen weer gegeven. Elke kolom vertegenwoordigt één eigenschap van het object of een script waarde. U kunt een tabel weergave definiëren waarin alle eigenschappen van een object, een subset van de eigenschappen van een object of een combi natie van eigenschappen en script waarden worden weer gegeven. Elke rij van de tabel vertegenwoordigt een geretourneerd object. Het maken van een tabel weergave lijkt sterk op wanneer u een object pipet naar de cmdlet `Format-Table`. Zie [tabel weergave](./creating-a-table-view.md)voor meer informatie over deze weer gave.
+In de tabel weergave worden de eigenschappen van een object of een script blok waarde in een of meer kolommen weer gegeven. Elke kolom vertegenwoordigt één eigenschap van het object of een script waarde. U kunt een tabel weergave definiëren waarin alle eigenschappen van een object, een subset van de eigenschappen van een object of een combi natie van eigenschappen en script waarden worden weer gegeven. Elke rij van de tabel vertegenwoordigt een geretourneerd object. Het maken van een tabel weergave lijkt sterk op wanneer u een object naar de `Format-Table` cmdlet pipet. Zie [tabel weergave](./creating-a-table-view.md)voor meer informatie over deze weer gave.
 
-In de lijst weergave worden de eigenschappen van een object of een script waarde in één kolom weer gegeven. Elke rij van de lijst bevat een optioneel label of de naam van de eigenschap gevolgd door de waarde van de eigenschap of het script. Het maken van een lijst weergave lijkt sterk op het sluizen van een object naar de cmdlet `Format-List`. Zie [lijst weergave](./creating-a-list-view.md)voor meer informatie over deze weer gave.
+In de lijst weergave worden de eigenschappen van een object of een script waarde in één kolom weer gegeven. Elke rij van de lijst bevat een optioneel label of de naam van de eigenschap gevolgd door de waarde van de eigenschap of het script. Het maken van een lijst weergave lijkt sterk op het sluizen van een object naar de `Format-List` cmdlet. Zie [lijst weergave](./creating-a-list-view.md)voor meer informatie over deze weer gave.
 
-Breedbeeld weergave bevat een enkele eigenschap van een object of een script waarde in een of meer kolommen. Er is geen label of koptekst voor deze weer gave. Het maken van een brede weer gave lijkt sterk op het sluizen van een object naar de cmdlet `Format-Wide`. Zie [brede weer](./creating-a-wide-view.md)gave voor meer informatie over deze weer gave.
+Breedbeeld weergave bevat een enkele eigenschap van een object of een script waarde in een of meer kolommen. Er is geen label of koptekst voor deze weer gave. Het maken van een brede weer gave lijkt sterk op het sluizen van een object naar de `Format-Wide` cmdlet. Zie [brede weer](./creating-a-wide-view.md)gave voor meer informatie over deze weer gave.
 
-In de aangepaste weer gave wordt een aanpas bare weer gave weer gegeven van object eigenschappen of script waarden die niet voldoen aan de stijve structuur van tabel weergaven, lijst weergaven of brede weer gaven. U kunt een zelfstandige aangepaste weer gave definiëren, maar u kunt ook een aangepaste weer gave definiëren die wordt gebruikt door een andere weer gave, zoals een tabel weergave of lijst weergave. Het maken van een aangepaste weer gave lijkt sterk op het sluizen van een object naar de `Format-Custom`-cmdlet. Zie [aangepaste weer gave](./creating-custom-controls.md)voor meer informatie over deze weer gave.
+In de aangepaste weer gave wordt een aanpas bare weer gave weer gegeven van object eigenschappen of script waarden die niet voldoen aan de stijve structuur van tabel weergaven, lijst weergaven of brede weer gaven. U kunt een zelfstandige aangepaste weer gave definiëren, maar u kunt ook een aangepaste weer gave definiëren die wordt gebruikt door een andere weer gave, zoals een tabel weergave of lijst weergave. Het maken van een aangepaste weer gave lijkt sterk op het sluizen van een object naar de `Format-Custom` cmdlet. Zie [aangepaste weer gave](./creating-custom-controls.md)voor meer informatie over deze weer gave.
 
 ## <a name="components-of-a-view"></a>Onderdelen van een weer gave
 
 In de volgende XML-voor beelden ziet u de algemene XML-onderdelen van een weer gave. De afzonderlijke XML-elementen variëren, afhankelijk van de weer gave die u wilt maken, maar de basis onderdelen van de weer gaven zijn allemaal hetzelfde.
 
-Om te beginnen heeft elke weer gave een `Name`-element waarmee een gebruiks vriendelijke naam wordt opgegeven die wordt gebruikt om te verwijzen naar de weer gave. een `ViewSelectedBy`-element waarmee wordt gedefinieerd welke .NET-objecten worden weer gegeven in de weer gave en een *Control* -element waarmee de weer gave wordt gedefinieerd.
+Elke weer gave heeft een `Name` element dat een gebruiks vriendelijke naam specificeert die wordt gebruikt om te verwijzen naar de weer gave om te beginnen met. een `ViewSelectedBy` element dat definieert welke .net-objecten worden weer gegeven in de weer gave en een *Control* -element waarmee de weer gave wordt gedefinieerd.
 
 ```xml
 <ViewDefinitions>
@@ -155,12 +148,12 @@ In het volgende voor beeld ziet u de XML-labels die worden gebruikt voor het def
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Aangepaste besturings elementen maken](./creating-custom-controls.md)
+[Aangepaste besturingselementen maken](./creating-custom-controls.md)
 
 [Een Power shell-indeling en-typen bestand schrijven](./writing-a-powershell-formatting-file.md)
