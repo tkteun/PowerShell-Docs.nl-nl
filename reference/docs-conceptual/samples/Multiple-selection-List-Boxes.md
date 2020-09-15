@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Meerdere selectielijstvelden
-ms.openlocfilehash: dcfa43ac8e7cc4ba6147f71791edbf7989af3583
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7bf71fb76a11f88c4ad4790bf3a2b383d0babb81
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030092"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216070"
 ---
-# <a name="multiple-selection-list-boxes"></a><span data-ttu-id="cfad9-103">Keuze lijsten met meerdere keuze mogelijkheden</span><span class="sxs-lookup"><span data-stu-id="cfad9-103">Multiple-selection List Boxes</span></span>
+# <a name="multiple-selection-list-boxes"></a><span data-ttu-id="abcdd-103">Keuze lijsten met meerdere keuze mogelijkheden</span><span class="sxs-lookup"><span data-stu-id="abcdd-103">Multiple-selection List Boxes</span></span>
 
-<span data-ttu-id="cfad9-104">Gebruik Windows Power Shell 3,0 en hoger om een besturings element keuze lijst met meerdere keuze mogelijkheden te maken in een aangepast Windows-formulier.</span><span class="sxs-lookup"><span data-stu-id="cfad9-104">Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.</span></span>
+<span data-ttu-id="abcdd-104">Gebruik Windows Power Shell 3,0 en hoger om een besturings element keuze lijst met meerdere keuze mogelijkheden te maken in een aangepast Windows-formulier.</span><span class="sxs-lookup"><span data-stu-id="abcdd-104">Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.</span></span>
 
-## <a name="create-list-box-controls-that-allow-multiple-selections"></a><span data-ttu-id="cfad9-105">Besturings elementen keuze lijst maken waarmee meerdere selecties mogelijk zijn</span><span class="sxs-lookup"><span data-stu-id="cfad9-105">Create list box controls that allow multiple selections</span></span>
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a><span data-ttu-id="abcdd-105">Besturings elementen keuze lijst maken waarmee meerdere selecties mogelijk zijn</span><span class="sxs-lookup"><span data-stu-id="abcdd-105">Create list box controls that allow multiple selections</span></span>
 
-<span data-ttu-id="cfad9-106">Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).</span><span class="sxs-lookup"><span data-stu-id="cfad9-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="abcdd-106">Kopieer en plak het volgende in Windows PowerShell ISE en sla het vervolgens op als Windows Power shell-script (. ps1).</span><span class="sxs-lookup"><span data-stu-id="abcdd-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -73,19 +73,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-<span data-ttu-id="cfad9-107">Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**.</span><span class="sxs-lookup"><span data-stu-id="cfad9-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="cfad9-108">Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="cfad9-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="abcdd-107">Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**.</span><span class="sxs-lookup"><span data-stu-id="abcdd-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="abcdd-108">Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="abcdd-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-<span data-ttu-id="cfad9-109">Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe aan drie eigenschappen van deze klasse.</span><span class="sxs-lookup"><span data-stu-id="cfad9-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
+<span data-ttu-id="abcdd-109">Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe aan drie eigenschappen van deze klasse.</span><span class="sxs-lookup"><span data-stu-id="abcdd-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
 
-- <span data-ttu-id="cfad9-110">**SMS.**</span><span class="sxs-lookup"><span data-stu-id="cfad9-110">**Text.**</span></span> <span data-ttu-id="cfad9-111">Dit wordt de titel van het venster.</span><span class="sxs-lookup"><span data-stu-id="cfad9-111">This becomes the title of the window.</span></span>
+- <span data-ttu-id="abcdd-110">**SMS.**</span><span class="sxs-lookup"><span data-stu-id="abcdd-110">**Text.**</span></span> <span data-ttu-id="abcdd-111">Dit wordt de titel van het venster.</span><span class="sxs-lookup"><span data-stu-id="abcdd-111">This becomes the title of the window.</span></span>
 
-- <span data-ttu-id="cfad9-112">**Size.**</span><span class="sxs-lookup"><span data-stu-id="cfad9-112">**Size.**</span></span> <span data-ttu-id="cfad9-113">Dit is de grootte van het formulier, in pixels.</span><span class="sxs-lookup"><span data-stu-id="cfad9-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="cfad9-114">Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.</span><span class="sxs-lookup"><span data-stu-id="cfad9-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
+- <span data-ttu-id="abcdd-112">**Size.**</span><span class="sxs-lookup"><span data-stu-id="abcdd-112">**Size.**</span></span> <span data-ttu-id="abcdd-113">Dit is de grootte van het formulier, in pixels.</span><span class="sxs-lookup"><span data-stu-id="abcdd-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="abcdd-114">Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.</span><span class="sxs-lookup"><span data-stu-id="abcdd-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
 
-- <span data-ttu-id="cfad9-115">**StartingPosition.**</span><span class="sxs-lookup"><span data-stu-id="cfad9-115">**StartingPosition.**</span></span> <span data-ttu-id="cfad9-116">Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script.</span><span class="sxs-lookup"><span data-stu-id="cfad9-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="cfad9-117">Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="cfad9-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="cfad9-118">Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="cfad9-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+- <span data-ttu-id="abcdd-115">**StartingPosition.**</span><span class="sxs-lookup"><span data-stu-id="abcdd-115">**StartingPosition.**</span></span> <span data-ttu-id="abcdd-116">Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script.</span><span class="sxs-lookup"><span data-stu-id="abcdd-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="abcdd-117">Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="abcdd-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="abcdd-118">Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="abcdd-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -93,7 +93,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-<span data-ttu-id="cfad9-119">Maak vervolgens een knop **OK** voor uw formulier.</span><span class="sxs-lookup"><span data-stu-id="cfad9-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="cfad9-120">Geef de grootte en het gedrag op van de knop **OK** .</span><span class="sxs-lookup"><span data-stu-id="cfad9-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="cfad9-121">In dit voor beeld is de knop positie 120 pixels van de bovenrand van het formulier en 75 pixels vanaf de linkerrand.</span><span class="sxs-lookup"><span data-stu-id="cfad9-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="cfad9-122">De knop hoogte is 23 pixels en de knop lengte is 75 pixels.</span><span class="sxs-lookup"><span data-stu-id="cfad9-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="cfad9-123">Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.</span><span class="sxs-lookup"><span data-stu-id="cfad9-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="abcdd-119">Maak vervolgens een knop **OK** voor uw formulier.</span><span class="sxs-lookup"><span data-stu-id="abcdd-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="abcdd-120">Geef de grootte en het gedrag op van de knop **OK** .</span><span class="sxs-lookup"><span data-stu-id="abcdd-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="abcdd-121">In dit voor beeld is de knop positie 120 pixels van de bovenrand van het formulier en 75 pixels vanaf de linkerrand.</span><span class="sxs-lookup"><span data-stu-id="abcdd-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="abcdd-122">De knop hoogte is 23 pixels en de knop lengte is 75 pixels.</span><span class="sxs-lookup"><span data-stu-id="abcdd-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="abcdd-123">Het script maakt gebruik van vooraf gedefinieerde Windows Forms typen om het knop gedrag te bepalen.</span><span class="sxs-lookup"><span data-stu-id="abcdd-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -105,7 +105,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-<span data-ttu-id="cfad9-124">Op dezelfde manier maakt u een knop **Annuleren** .</span><span class="sxs-lookup"><span data-stu-id="cfad9-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="cfad9-125">De knop **Annuleren** is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.</span><span class="sxs-lookup"><span data-stu-id="cfad9-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="abcdd-124">Op dezelfde manier maakt u een knop **Annuleren** .</span><span class="sxs-lookup"><span data-stu-id="abcdd-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="abcdd-125">De knop **Annuleren** is 120 pixels vanaf de bovenkant, maar 150 pixels vanaf de linkerrand van het venster.</span><span class="sxs-lookup"><span data-stu-id="abcdd-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -117,7 +117,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-<span data-ttu-id="cfad9-126">Geef vervolgens label tekst op in het venster waarin de informatie wordt beschreven die gebruikers moeten opgeven.</span><span class="sxs-lookup"><span data-stu-id="cfad9-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
+<span data-ttu-id="abcdd-126">Geef vervolgens label tekst op in het venster waarin de informatie wordt beschreven die gebruikers moeten opgeven.</span><span class="sxs-lookup"><span data-stu-id="abcdd-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -127,7 +127,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-<span data-ttu-id="cfad9-127">Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven.</span><span class="sxs-lookup"><span data-stu-id="cfad9-127">Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="cfad9-128">Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN voor meer besturings elementen.</span><span class="sxs-lookup"><span data-stu-id="cfad9-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
+<span data-ttu-id="abcdd-127">Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven.</span><span class="sxs-lookup"><span data-stu-id="abcdd-127">Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="abcdd-128">Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN voor meer besturings elementen.</span><span class="sxs-lookup"><span data-stu-id="abcdd-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -135,13 +135,13 @@ $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 ```
 
-<span data-ttu-id="cfad9-129">Hier geeft u op hoe u gebruikers in staat wilt stellen om meerdere waarden te selecteren in de lijst.</span><span class="sxs-lookup"><span data-stu-id="cfad9-129">Here’s how you specify that you want to allow users to select multiple values from the list.</span></span>
+<span data-ttu-id="abcdd-129">Hier geeft u op hoe u gebruikers in staat wilt stellen om meerdere waarden te selecteren in de lijst.</span><span class="sxs-lookup"><span data-stu-id="abcdd-129">Here’s how you specify that you want to allow users to select multiple values from the list.</span></span>
 
 ```powershell
 $listBox.SelectionMode = 'MultiExtended'
 ```
 
-<span data-ttu-id="cfad9-130">In de volgende sectie geeft u de waarden op die u in de keuze lijst wilt weer geven voor gebruikers.</span><span class="sxs-lookup"><span data-stu-id="cfad9-130">In the next section, you specify the values you want the list box to display to users.</span></span>
+<span data-ttu-id="abcdd-130">In de volgende sectie geeft u de waarden op die u in de keuze lijst wilt weer geven voor gebruikers.</span><span class="sxs-lookup"><span data-stu-id="abcdd-130">In the next section, you specify the values you want the list box to display to users.</span></span>
 
 ```powershell
 [void] $listBox.Items.Add('Item 1')
@@ -151,26 +151,26 @@ $listBox.SelectionMode = 'MultiExtended'
 [void] $listBox.Items.Add('Item 5')
 ```
 
-<span data-ttu-id="cfad9-131">De maximum hoogte van het besturings element keuze lijst opgeven.</span><span class="sxs-lookup"><span data-stu-id="cfad9-131">Specify the maximum height of the list box control.</span></span>
+<span data-ttu-id="abcdd-131">De maximum hoogte van het besturings element keuze lijst opgeven.</span><span class="sxs-lookup"><span data-stu-id="abcdd-131">Specify the maximum height of the list box control.</span></span>
 
 ```powershell
 $listBox.Height = 70
 ```
 
-<span data-ttu-id="cfad9-132">Voeg het besturings element keuze lijst aan het formulier toe en geef Windows opdracht om het formulier te openen hierop andere vensters en dialoog vensters wanneer deze wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="cfad9-132">Add the list box control to your form, and instruct Windows to open the form atop other windows and dialog boxes when it’s opened.</span></span>
+<span data-ttu-id="abcdd-132">Voeg het besturings element keuze lijst aan het formulier toe en geef Windows opdracht om het formulier te openen hierop andere vensters en dialoog vensters wanneer deze wordt geopend.</span><span class="sxs-lookup"><span data-stu-id="abcdd-132">Add the list box control to your form, and instruct Windows to open the form atop other windows and dialog boxes when it’s opened.</span></span>
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-<span data-ttu-id="cfad9-133">Voeg de volgende regel code toe om het formulier in Windows weer te geven.</span><span class="sxs-lookup"><span data-stu-id="cfad9-133">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="abcdd-133">Voeg de volgende regel code toe om het formulier in Windows weer te geven.</span><span class="sxs-lookup"><span data-stu-id="abcdd-133">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="cfad9-134">Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden gedaan met het formulier nadat gebruikers een of meer opties in de keuze lijst hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op de **Enter** -toets.</span><span class="sxs-lookup"><span data-stu-id="cfad9-134">Finally, the code inside the **If** block instructs Windows what to do with the form after users select one or more options from the list box, and then click the **OK** button or press the **Enter** key.</span></span>
+<span data-ttu-id="abcdd-134">Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden gedaan met het formulier nadat gebruikers een of meer opties in de keuze lijst hebben geselecteerd, en klik vervolgens op de knop **OK** of druk op de **Enter** -toets.</span><span class="sxs-lookup"><span data-stu-id="abcdd-134">Finally, the code inside the **If** block instructs Windows what to do with the form after users select one or more options from the list box, and then click the **OK** button or press the **Enter** key.</span></span>
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -180,8 +180,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cfad9-135">Zie ook</span><span class="sxs-lookup"><span data-stu-id="cfad9-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="abcdd-135">Zie ook</span><span class="sxs-lookup"><span data-stu-id="abcdd-135">See Also</span></span>
 
-- [<span data-ttu-id="cfad9-136">Hoi Scripting Guy: Waarom werken deze Power shell GUI-voor beelden niet?</span><span class="sxs-lookup"><span data-stu-id="cfad9-136">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="cfad9-137">GitHub: de WinFormsExampleUpdates van Dave Wyatt</span><span class="sxs-lookup"><span data-stu-id="cfad9-137">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="cfad9-138">Windows Power shell-Tip van de week: meervoudige selectie vakken-en meer!</span><span class="sxs-lookup"><span data-stu-id="cfad9-138">Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!</span></span>](https://technet.microsoft.com/library/ff730950.aspx)
+- [<span data-ttu-id="abcdd-136">Weekend scripter: Power shell GUI-voor beelden worden hersteld</span><span class="sxs-lookup"><span data-stu-id="abcdd-136">Weekend Scripter:  Fixing PowerShell GUI Examples</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [<span data-ttu-id="abcdd-137">GitHub: de WinFormsExampleUpdates van Dave Wyatt</span><span class="sxs-lookup"><span data-stu-id="abcdd-137">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [<span data-ttu-id="abcdd-138">Windows Power shell-Tip van de week: meervoudige selectie vakken-en meer!</span><span class="sxs-lookup"><span data-stu-id="abcdd-138">Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!</span></span>](https://technet.microsoft.com/library/ff730950.aspx)
