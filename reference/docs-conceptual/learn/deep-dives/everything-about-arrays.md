@@ -1,14 +1,14 @@
 ---
 title: Alles wat u wilt weten over matrices
 description: Matrices zijn een fundamentele taal functie van de meeste programmeer talen.
-ms.date: 05/23/2020
+ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 5cab354a99b122401f8f8119de24e075cf9d21f8
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149920"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092096"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Alles wat u wilt weten over matrices
 
@@ -31,7 +31,7 @@ Omdat matrices een van de basis functies van Power shell zijn, is er een eenvoud
 
 ### <a name="create-an-array"></a>Een matrix maken
 
-Een lege matrix kan worden gemaakt met behulp van`@()`
+Een lege matrix kan worden gemaakt met behulp van `@()`
 
 ```powershell
 PS> $data = @()
@@ -164,7 +164,7 @@ PS> $data[-1]
 Three
 ```
 
-Dit is een woord van voorzichtig met de `..` operator. De volg orde `0..-1` en `-1..0` evalueren van de waarden `0,-1` en `-1,0` . Het is eenvoudig om te zien en te controleren `$data[0..-1]` of alle items zouden worden opgesomd als u deze details vergeet. `$data[0..-1]`geeft u dezelfde waarde als `$data[0,-1]` door u het eerste en laatste item in de matrix te geven (en geen van de andere waarden).
+Dit is een woord van voorzichtig met de `..` operator. De volg orde `0..-1` en `-1..0` evalueren van de waarden `0,-1` en `-1,0` . Het is eenvoudig om te zien en te controleren `$data[0..-1]` of alle items zouden worden opgesomd als u deze details vergeet. `$data[0..-1]` geeft u dezelfde waarde als `$data[0,-1]` door u het eerste en laatste item in de matrix te geven (en geen van de andere waarden).
 
 #### <a name="out-of-bounds"></a>Buiten het bereik
 
@@ -187,7 +187,7 @@ Error: Cannot index into a null array.
 
 Zorg er dus voor dat uw matrices niet `$null` voordat u probeert toegang te krijgen tot elementen erin.
 
-#### <a name="count"></a>Count
+#### <a name="count"></a>Aantal
 
 Matrices en andere verzamelingen hebben een eigenschap Count waarmee wordt aangegeven hoeveel items zich in de matrix bevinden.
 
@@ -241,6 +241,8 @@ Lee Dailey wijst ook naar me dat we kunnen gebruiken `$data.GetUpperBound(0)` om
 
 ```powershell
 PS> $data.GetUpperBound(0)
+3
+PS> $data[ $data.GetUpperBound(0) ]
 Three
 ```
 
@@ -290,7 +292,7 @@ Als u nog niet eerder hebt gezien `$PSItem` , weet u zeker dat het hetzelfde is 
 
 #### <a name="foreach-loop"></a>ForEach-lus
 
-De `ForEach` lus werkt goed met verzamelingen. Met de syntaxis:`foreach ( <variable> in <collection> )`
+De `ForEach` lus werkt goed met verzamelingen. Met de syntaxis: `foreach ( <variable> in <collection> )`
 
 ```powershell
 foreach ( $node in $data )
@@ -574,7 +576,7 @@ LAX-SQL-02
 LAX-SQL-03
 ```
 
-### <a name="-contains"></a>-bevat
+### <a name="-contains"></a>-contains
 
 Met de `-contains` operator kunt u een matrix met waarden controleren om te zien of deze een opgegeven waarde bevat.
 
@@ -586,7 +588,7 @@ True
 
 ### <a name="-in"></a>-in
 
-Wanneer u één waarde hebt die u wilt verifiëren, kunt u een van de volgende waarden gebruiken `-in` . De waarde is links en de matrix aan de rechter kant van de bewerking.
+Wanneer u één waarde hebt die u wilt verifiëren, kunt u een van de volgende waarden gebruiken `-in` . De waarde is links en de matrix aan de rechter kant van de operator.
 
 ```powershell
 PS> $data = @('red','green','blue')
@@ -641,7 +643,7 @@ if ( $data -ne 'green' )
 
 Ik ga dit op een moment opnieuw door met het bespreken van testen `$null` .
 
-### <a name="-match"></a>-overeenkomst
+### <a name="-match"></a>-match
 
 De `-match` operator probeert elk item in de verzameling te koppelen.
 
@@ -680,7 +682,7 @@ if ( $array -eq $null)
 }
 ```
 
-Maar ik heb zojuist overgegaan hoe `-eq` elk item in de matrix wordt gecontroleerd. We kunnen dus een matrix van verschillende items hebben met één $null waarde en deze evalueren`$true`
+Maar ik heb zojuist overgegaan hoe `-eq` elk item in de matrix wordt gecontroleerd. We kunnen dus een matrix van verschillende items hebben met één $null waarde en deze evalueren `$true`
 
 ```powershell
 $array = @('one',$null,'three')
@@ -850,7 +852,7 @@ De reden `[void]` dat ik aan het begin van de regel bevindt, is om de retour cod
 
 Als de enige gegevens die u in uw matrix hebt, teken reeksen zijn, bekijkt u ook de gebruik van [String Builder][]. Het is bijna hetzelfde, maar heeft een aantal methoden die alleen worden behandeld met teken reeksen. De `StringBuilder` is speciaal ontworpen voor prestaties.
 
-Het is gebruikelijk om te zien hoe mensen `ArrayList` van matrices worden verplaatst. Maar het is afkomstig van een keer dat C# geen algemene ondersteuning heeft. De `ArrayList` wordt afgeschreven ter ondersteuning van de algemene`List[]`
+Het is gebruikelijk om te zien hoe mensen `ArrayList` van matrices worden verplaatst. Maar het is afkomstig van een keer dat C# geen algemene ondersteuning heeft. De `ArrayList` is afgeschaft in ondersteuning voor de algemene `List[]`
 
 ### <a name="generic-list"></a>Algemene lijst
 
@@ -1076,7 +1078,7 @@ Hier raden we u aan een vergelijk bare post te bekijken die ik heb geschreven ov
 [oorspronkelijke versie]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
-[Matrixen]: /powershell/module/microsoft.powershell.core/about/about_arrays
+[Matrices]: /powershell/module/microsoft.powershell.core/about/about_arrays
 [switch-instructie]: everything-about-switch.md
 [hashtabellen]: everything-about-hashtable.md
 [De vele manieren om regex te gebruiken]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/

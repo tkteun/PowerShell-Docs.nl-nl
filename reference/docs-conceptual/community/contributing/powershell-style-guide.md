@@ -3,12 +3,12 @@ title: Stijlgids voor PowerShell-documentatie
 description: Dit artikel bevat de regels van de stijl voor het schrijven van Power shell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690858"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837440"
 ---
 # <a name="powershell-docs-style-guide"></a>Stijlgids voor PowerShell-documentatie
 
@@ -152,7 +152,7 @@ Hierbij is `alt text` een korte beschrijving van de afbeelding en `<folder path>
 Afbeeldingen moeten worden opgeslagen in een `media/<article-name>` map in de map waarin het artikel zich bevindt.
 Afbeeldingen moeten niet worden gedeeld tussen artikelen. Maak onder de map `media` een map die overeenkomt met de bestandsnaam van uw artikel. Kopieer de afbeeldingen voor dat artikel naar de nieuwe map. Als een afbeelding door meerdere artikelen wordt gebruikt, moet elke afbeeldingsmap een kopie van het afbeeldingsbestand bevatten. Dit voorkomt dat een wijziging voor een afbeelding in het ene artikel gevolgen heeft voor het andere artikelen.
 
-De volgende afbeeldings bestands typen worden ondersteund: `*.png` , `*.gif` , `*.jpeg` , `*.jpg` ,`*.svg`
+De volgende afbeeldings bestands typen worden ondersteund: `*.png` , `*.gif` , `*.jpeg` , `*.jpg` , `*.svg`
 
 ### <a name="markdown-extensions-supported-by-open-publishing"></a>Markdown-extensies ondersteund door Open Publishing
 
@@ -204,7 +204,7 @@ Waarschuwings blok
 
 ### <a name="hyperlinks"></a>Hyperlinks
 
-- Hyper links moeten de syntaxis van de korting gebruiken`[friendlyname](url-or-path)`
+- Hyper links moeten de syntaxis van de korting gebruiken `[friendlyname](url-or-path)`
 - Koppelingen moeten indien mogelijk HTTPS zijn.
 - Koppelingen moeten een beschrijvende naam hebben, meestal de titel van het onderwerp waarnaar wordt verwezen
 - Met alle items in de sectie ' Verwante koppelingen ' aan de onderkant moet een Hyper link worden
@@ -225,8 +225,8 @@ Een **URL-koppeling** kan een URL-pad zijn dat relatief is ten opzichte van de h
 - Gebruik URL-koppelingen wanneer u een koppeling maakt naar inhoud buiten Power shell-docs of tussen Naslag informatie over de cmdlet en conceptuele artikelen in Power shell-docs. De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw browser en vervolgens te verwijderen `https://docs.microsoft.com/en-us` van de waarde die u in de prijs opsplitsen hebt geplakt.
 - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. verwijderen `/en-us` van URL).
 - Verwijder overbodige query parameters uit de URL, tenzij u een koppeling moet maken naar een specifieke versie van een artikel. Voorbeelden:
-  - `?view=powershell-5.1`: dit wordt gebruikt om een koppeling te maken naar een specifieke versie van Power shell
-  - `?redirectedfrom=MSDN`: deze wordt toegevoegd aan de URL wanneer u wordt omgeleid van een oud artikel naar de nieuwe locatie
+  - `?view=powershell-5.1` : dit wordt gebruikt om een koppeling te maken naar een specifieke versie van Power shell
+  - `?redirectedfrom=MSDN` : deze wordt toegevoegd aan de URL wanneer u wordt omgeleid van een oud artikel naar de nieuwe locatie
 - Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site.
 
 Een **koppeling** naar een bestand wordt gebruikt om te koppelen van het ene referentie artikel naar het andere of van het ene conceptuele artikel naar het andere. Als u een verwijzing naar een referentie artikel moet koppelen voor een specifieke versie van Power shell, moet u een URL-koppeling gebruiken.
@@ -240,7 +240,7 @@ Bijvoorbeeld:
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-Zie [koppelingen in documentatie gebruiken](https://docs.microsoft.com/contribute/how-to-write-links)voor meer informatie.
+Zie [koppelingen in documentatie gebruiken](/contribute/how-to-write-links)voor meer informatie.
 
 ## <a name="formatting-command-syntax-elements"></a>Syntaxiselementen van opdrachten opmaken
 

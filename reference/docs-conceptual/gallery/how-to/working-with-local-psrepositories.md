@@ -3,12 +3,12 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: Werken met lokale PSRepositories
-ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415822"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837576"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Werken met PowerShellGet-privé-opslagplaatsen
 
@@ -32,7 +32,7 @@ Er zijn twee manieren om een lokale PSRepository: NuGet-server of-bestands share
 | --- | --- |
 | PowerShellGallery-functionaliteit nauw keurig nabootsen | Voor een app met meerdere lagen is ondersteuning van operations-planning & |
 | NuGet kan worden geïntegreerd met Visual Studio, andere hulpprogram ma's | Het verificatie model en het NuGet-account beheer zijn vereist |
-| NuGet biedt ondersteuning voor `.Nupkg` meta gegevens in pakketten | Voor publiceren is API-sleutel beheer & onderhoud vereist |
+| NuGet biedt ondersteuning voor meta gegevens in `.Nupkg` pakketten | Voor publiceren is API-sleutel beheer & onderhoud vereist |
 | Biedt zoeken, pakket beheer, enzovoort. | |
 
 ### <a name="file-share"></a>Bestandsshare
@@ -61,7 +61,7 @@ Zorg ervoor dat uw gebruikers machtigingen hebben voor toegang tot de bestands s
 
 ## <a name="registering-a-local-repository"></a>Een lokale opslag plaats registreren
 
-Voordat een opslag plaats kan worden gebruikt, moet deze worden geregistreerd met `Register-PSRepository` behulp van de opdracht.
+Voordat een opslag plaats kan worden gebruikt, moet deze worden geregistreerd met behulp van de `Register-PSRepository` opdracht.
 In de onderstaande voor beelden wordt de **InstallationPolicy** ingesteld op *vertrouwd*, op de veronderstelling dat u uw eigen opslag plaats vertrouwt.
 
 ```powershell
@@ -109,16 +109,16 @@ Voorbeelden:
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> Om de beveiliging te waarborgen, moeten API-sleutels niet in scripts worden vastgelegd. Gebruik een systeem voor beveiligd sleutel beheer. Wanneer u een opdracht hand matig uitvoert, moeten de API-sleutels niet worden door gegeven als onbewerkte tekst om te voor komen dat deze wordt geregistreerd `Read-Host` . de cmdlet kan worden gebruikt om de waarde van de API-sleutel veilig door te geven.
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> Om de beveiliging te waarborgen, moeten API-sleutels niet in scripts worden vastgelegd. Gebruik een systeem voor beveiligd sleutel beheer.
 
 ### <a name="publishing-a-module-from-the-psgallery"></a>Een module publiceren vanuit de PSGallery
 
@@ -136,9 +136,9 @@ Voorbeeld:
 Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
-Als uw lokale PSRepository is gebaseerd op het web, is er een extra stap nodig die gebruikmaakt van nuget. exe om te publiceren.
+Als uw lokale PSRepository is gebaseerd op het web, hebt u een extra stap nodig die gebruikmaakt van nuget.exe om te publiceren.
 
-Raadpleeg de documentatie voor het gebruik van [nuget. exe][].
+Raadpleeg de documentatie voor het gebruik van [nuget.exe][].
 
 ## <a name="installing-powershellget-on-a-disconnected-system"></a>PowerShellGet installeren op een systeem zonder verbinding
 
@@ -147,11 +147,11 @@ Het implementeren van PowerShellGet is moeilijk in omgevingen waarin de verbindi
 Als u een offline-implementatie wilt Boots trappen, moet u het volgende doen:
 
 - Down load en installeer de OfflinePowerShellGetDeploy uw systeem met Internet verbinding en uw niet-verbonden systemen
-- PowerShellGet en de bijbehorende afhankelijkheden downloaden op het met internet verbonden systeem `Save-PowerShellGetForOffline` met behulp van de cmdlet
+- PowerShellGet en de bijbehorende afhankelijkheden downloaden op het met internet verbonden systeem met behulp van de `Save-PowerShellGetForOffline` cmdlet
 - PowerShellGet en de bijbehorende afhankelijkheden kopiëren van het systeem dat is verbonden met internet naar het niet-verbonden systeem
 - Gebruik de `Install-PowerShellGetOffline` op het niet-verbonden systeem om PowerShellGet en de bijbehorende afhankelijkheden in de juiste mappen te plaatsen
 
-De volgende opdrachten gebruiken `Save-PowerShellGetForOffline` om alle onderdelen in een map te plaatsen`f:\OfflinePowerShellGet`
+De volgende opdrachten gebruiken `Save-PowerShellGetForOffline` om alle onderdelen in een map te plaatsen `f:\OfflinePowerShellGet`
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -164,7 +164,7 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Save-PowerShellGetForOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-Op dit moment moet u de inhoud van `F:\OfflinePowerShellGet` beschikbaar maken voor uw niet-verbonden systemen. Voer de `Install-PowerShellGetOffline` cmdlet uit om PowerShellGet op het niet-verbonden systeem te installeren.
+Op dit moment moet u de inhoud van beschikbaar maken `F:\OfflinePowerShellGet` voor uw niet-verbonden systemen. Voer de `Install-PowerShellGetOffline` cmdlet uit om PowerShellGet op het niet-verbonden systeem te installeren.
 
 > [!NOTE]
 > Het is belang rijk dat u PowerShellGet in de Power shell-sessie niet uitvoert voordat u deze opdrachten uitvoert. Zodra PowerShellGet in de sessie is geladen, kunnen de onderdelen niet worden bijgewerkt. Als u PowerShellGet per ongeluk start, sluit u Power shell af en start u het opnieuw.
@@ -179,20 +179,22 @@ Nadat u deze opdrachten hebt uitgevoerd, kunt u PowerShellGet publiceren naar uw
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> Om de beveiliging te waarborgen, moeten API-sleutels niet in scripts worden vastgelegd. Gebruik een systeem voor beveiligd sleutel beheer. Wanneer u een opdracht hand matig uitvoert, moeten de API-sleutels niet worden door gegeven als onbewerkte tekst om te voor komen dat deze wordt geregistreerd `Read-Host` . de cmdlet kan worden gebruikt om de waarde van de API-sleutel veilig door te geven.
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
 ## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Verpakkings oplossingen gebruiken voor het hosten van PowerShellGet-opslag plaatsen
 
-U kunt ook verpakkings oplossingen zoals Azure-artefacten gebruiken om een persoonlijke of open bare PowerShellGet-opslag plaats te hosten. Zie de [documentatie van Azure artefacten](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library)voor meer informatie en instructies.
-
-> [!IMPORTANT]
-> Om de beveiliging te waarborgen, moeten API-sleutels niet in scripts worden vastgelegd. Gebruik een systeem voor beveiligd sleutel beheer.
+U kunt ook verpakkings oplossingen zoals Azure-artefacten gebruiken om een persoonlijke of open bare PowerShellGet-opslag plaats te hosten. Zie de [documentatie van Azure artefacten](/azure/devops/artifacts/tutorials/private-powershell-library)voor meer informatie en instructies.
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
 [Nuget. server]: /nuget/hosting-packages/nuget-server
-[nuget. exe]: /nuget/tools/nuget-exe-cli-reference
+[nuget.exe]: /nuget/tools/nuget-exe-cli-reference

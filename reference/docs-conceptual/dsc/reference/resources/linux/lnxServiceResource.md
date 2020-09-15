@@ -1,19 +1,19 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxService-resource
-ms.openlocfilehash: 30f3b15fccd1491fac2989832486ad15d062c1ad
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 2aec8b943d386fad33dfc1cfdd916c5e18039eaa
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563990"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463632"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC voor Linux nxService-resource
 
 De **nxService** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op een Linux-knoop punt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 nxService <string> #ResourceName
@@ -30,10 +30,10 @@ nxService <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |De naam van de service/daemon die moet worden geconfigureerd. |
+|Naam |De naam van de service/daemon die moet worden geconfigureerd. |
 |Regelaar |Het type service controller dat moet worden gebruikt bij het configureren van de service. |
 |Ingeschakeld |Hiermee wordt aangegeven of de service wordt gestart bij het opstarten. |
-|Staat |Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap in op **gestopt** om er zeker van te zijn dat de service niet wordt uitgevoerd. Stel deze in op **wordt uitgevoerd** om ervoor te zorgen dat de service wordt uitgevoerd. |
+|Status |Hiermee wordt aangegeven of de service wordt uitgevoerd. Stel deze eigenschap in op **gestopt** om er zeker van te zijn dat de service niet wordt uitgevoerd. Stel deze in op **wordt uitgevoerd** om ervoor te zorgen dat de service wordt uitgevoerd. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-register resource
-ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
-ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
+ms.openlocfilehash: da4be9152a58d9945051f9c811270e871612ca0d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84203644"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463615"
 ---
 # <a name="dsc-registry-resource"></a>DSC-register resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "84203644"
 
 De **register** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van register sleutels en-waarden op een doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Registry [string] #ResourceName

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: GetMetaConfiguration-methode
-ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5111cb3b15e0fba0bf71b412580efdd3cd95b2dc
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941563"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463972"
 ---
 # <a name="getmetaconfiguration-method"></a>GetMetaConfiguration-methode
 
@@ -23,7 +23,7 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*MetaConfiguration* \[De meta-\] configuratie out voor Return bevat een Inge sloten instantie van de klasse **MSFT_DSCMetaConfiguration** die de instellingen definieert.
+- **Configuratie** \[ out \] on return bevat een Inge sloten exemplaar van de klasse **MSFT_DSCMetaConfiguration** die de instellingen definieert.
 
 ## <a name="return-value"></a>Retourwaarde
 

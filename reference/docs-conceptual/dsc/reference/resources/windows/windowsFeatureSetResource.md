@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WindowsFeatureSet-resource
-ms.openlocfilehash: 4707616b23a125e49e17031e0b75fd3cde4b9a3d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 856c56e0b35a26add729ef77db9dca71fdc0a4d0
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565414"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463853"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-resource
 
@@ -17,7 +17,7 @@ De **WindowsFeatureSet** -resource in Windows Power shell desired state Configur
 
 Gebruik deze resource als u een aantal Windows-onderdelen wilt configureren met dezelfde status.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 WindowsFeatureSet [string] #ResourceName
@@ -37,7 +37,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   |
 |---|---|
-|Name |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) en niet de weergave naam van de functies of onderdelen. |
+|Naam |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) en niet de weergave naam van de functies of onderdelen. |
 |Bron |Hiermee wordt de locatie aangegeven van het bron bestand dat moet worden gebruikt voor installatie, indien nodig. |
 |IncludeAllSubFeature |Stel deze eigenschap in op `$true` om alle vereiste subonderdelen toe te voegen met de functies die u opgeeft met de eigenschap **naam** . |
 |Referentie |De referenties die moeten worden gebruikt om de functies of onderdelen toe te voegen of te verwijderen. |

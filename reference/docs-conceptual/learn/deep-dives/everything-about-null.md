@@ -4,10 +4,10 @@ description: De Power shell-$null lijkt vaak eenvoudig te zijn, maar er zijn vee
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: e0553a5e17450d8044f548792649369e99903850
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 07/01/2020
 ms.locfileid: "84149829"
 ---
 # <a name="everything-you-wanted-to-know-about-null"></a>Alles wat u wilt weten over $null
@@ -23,7 +23,7 @@ U kunt NULL beschouwen als een onbekende of lege waarde. Een variabele is NULL t
 
 ### <a name="powershell-null"></a>Power shell-$null
 
-`$null`is een automatische variabele in Power shell die wordt gebruikt om NULL weer te geven. U kunt deze toewijzen aan variabelen, deze gebruiken in vergelijkingen en deze gebruiken als plaatsaanduiding voor NULL in een verzameling.
+`$null` is een automatische variabele in Power shell die wordt gebruikt om NULL weer te geven. U kunt deze toewijzen aan variabelen, deze gebruiken in vergelijkingen en deze gebruiken als plaatsaanduiding voor NULL in een verzameling.
 
 Power shell behandelt `$null` als een object met de waarde Null. Dit wijkt af van wat u kunt verwachten als u uit een andere taal komt.
 
@@ -49,7 +49,7 @@ True
 
 ## <a name="impact-of-null"></a>Gevolgen van $null
 
-`$null`waarden beïnvloeden uw code anders, afhankelijk van waar ze worden weer gegeven.
+`$null` waarden beïnvloeden uw code anders, afhankelijk van waar ze worden weer gegeven.
 
 ### <a name="in-strings"></a>In teken reeksen
 
@@ -157,7 +157,7 @@ if ( $value -ne $null )
 }
 ```
 
-Als ik niet Definieer `$value` , wordt het eerste geëvalueerd `$true` en het bericht is `The array is $null` . Deze trap is het mogelijk om een te maken `$value` waarmee beide kunnen worden`$false`
+Als ik niet Definieer `$value` , wordt het eerste geëvalueerd `$true` en het bericht is `The array is $null` . Deze trap is het mogelijk om een te maken `$value` waarmee beide kunnen worden `$false`
 
 ```powershell
 $value = @( $null )
@@ -198,7 +198,7 @@ Als de waarde is `$null` , wordt deze geëvalueerd als `$false` . Dit is eenvoud
 
 Maar dat is niet het hele verhaal. Deze regel heeft de volgende melding:
 
-> Als `$value` is niet `$null` of `0` of of `$false` een`empty string`
+> Als `$value` is niet `$null` of `0` of of `$false` een `empty string`
 
 Hier volgt een meer uitgebreid voor beeld van deze instructie.
 
@@ -372,13 +372,13 @@ Zodra u het type van de para meter instelt als een `string` , mag de waarde nooi
 if ( $null -ne $Value ){...}
 ```
 
-`$Value`is een lege teken reeks `''` als er geen waarde is opgegeven. Gebruik `$PSBoundParameters.Value` in plaats daarvan de automatische variabele.
+`$Value` is een lege teken reeks `''` als er geen waarde is opgegeven. Gebruik `$PSBoundParameters.Value` in plaats daarvan de automatische variabele.
 
 ```powershell
 if ( $null -ne $PSBoundParameters.Value ){...}
 ```
 
-`$PSBoundParameters`bevat alleen de para meters die zijn opgegeven bij het aanroepen van de functie.
+`$PSBoundParameters` bevat alleen de para meters die zijn opgegeven bij het aanroepen van de functie.
 U kunt ook de `ContainsKey` methode gebruiken om te controleren op de eigenschap.
 
 ```powershell
@@ -442,8 +442,8 @@ function Do-Something
 
 De verwachting is dat `Get-Something` ofwel een resultaat of een lege waarde `$null` . Als er een fout optreedt, wordt het geregistreerd. Vervolgens controleren we of we een geldig resultaat hebben ontvangen voordat we het verwerken.
 
-De fout bij het verbergen van deze code is wanneer `Get-Something` een uitzonde ring wordt gegenereerd en er geen waarde aan wordt toegewezen `$result` . Dit mislukt vóór de toewijzing, dus we gaan niet zelfs `$null` toe aan de `$result` variabele. `$result`bevat nog steeds de voor gaande geldige `$result` van andere herhalingen.
-`Update-Something`meerdere keren uitvoeren op hetzelfde object in dit voor beeld.
+De fout bij het verbergen van deze code is wanneer `Get-Something` een uitzonde ring wordt gegenereerd en er geen waarde aan wordt toegewezen `$result` . Dit mislukt vóór de toewijzing, dus we gaan niet zelfs `$null` toe aan de `$result` variabele. `$result` bevat nog steeds de voor gaande geldige `$result` van andere herhalingen.
+`Update-Something` meerdere keren uitvoeren op hetzelfde object in dit voor beeld.
 
 Ik ben ingesteld `$result` op `$null` rechts in de foreach-lus voordat ik deze gebruik om dit probleem te verhelpen.
 

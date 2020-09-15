@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 070ecb871003487e2f1ff7b0d56c44c562acaaf8
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 7a50bc3a909df38d21a604399d590a2805359593
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837540"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
@@ -34,9 +34,9 @@ We hebben het Windows-compatibiliteits pakket toegevoegd aan Power shell Core 6,
 
 Met het Windows-compatibiliteits pakket kan Power shell core gebruikmaken **van meer dan 1900 cmdlets die worden geleverd met Windows 10 oktober 2018 update en Windows Server 2019**.
 
-## <a name="support-for-application-whitelisting"></a>Ondersteuning voor White List van toepassingen
+## <a name="support-for-application-allow-lists"></a>Ondersteuning voor lijsten voor het toestaan van toepassingen
 
-Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en de Application white list van [device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) . Met Application white list kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd met de [modus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)voor de beperkte Power shell-taal.
+Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en lijsten voor het toestaan van de [device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -toepassing. Met lijsten met toepassingen kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd in de Power shell- [modus voor beperkte taal](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestatieverbeteringen
 
@@ -64,7 +64,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | Tijd (SEC)   | 12,170                 | 8,493               | 7,08                |
 | Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
 
-`Import-Csv`is ook aanzienlijk sped na een regressie van Windows Power shell.
+`Import-Csv` is ook aanzienlijk sped na een regressie van Windows Power shell.
 In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kolommen gebruikt:
 
 ```powershell
@@ -88,9 +88,9 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 | Tijd (SEC)   | 0,259                  | 0,577               | 0,125                  |
 | Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
 
-## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Controleren `system32` op compatibele modules in Windows
+## <a name="check-system32-for-compatible-built-in-modules-on-windows"></a>Controleren `system32` op compatibele ingebouwde modules op Windows
 
-In de Windows 10 1809-update en Windows Server 2019 hebben we een aantal Power shell-modules bijgewerkt om ze te markeren als compatibel met Power shell core.
+In de Windows 10 1809-update en Windows Server 2019 hebben we een aantal ingebouwde Power shell-modules bijgewerkt om ze te markeren als compatibel met Power shell core.
 
 Wanneer Power shell Core 6,1 wordt gestart, wordt het automatisch opgenomen `$windir\System32` als onderdeel van de `PSModulePath` omgevings variabele. Er worden echter alleen modules beschikbaar gemaakt `Get-Module` en als deze zijn `Import-Module` `CompatiblePSEdition` gemarkeerd als compatibel met `Core` .
 
@@ -182,12 +182,12 @@ Meer informatie over deze functie vindt u in [Power shell RFC0029](https://githu
 
 ## <a name="web-cmdlet-improvements"></a>Verbeteringen voor web-cmdlets
 
-Dankzij [@markekraus](https://github.com/markekraus) onze web-cmdlets hebt u een volledig Slew van verbeteringen aangebracht:[`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+Dankzij [@markekraus](https://github.com/markekraus) onze web-cmdlets hebt u een volledig Slew van verbeteringen aangebracht: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 en [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod) .
 
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) : standaard codering ingesteld op UTF-8 voor `application-json` antwoorden
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation`para meter voor het toestaan van `Content-Type` headers die niet compatibel zijn met standaarden
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form`para meter ter ondersteuning van vereenvoudigde `multipart/form-data` ondersteuning
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` para meter voor het toestaan van `Content-Type` headers die niet compatibel zijn met standaarden
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` para meter ter ondersteuning van vereenvoudigde `multipart/form-data` ondersteuning
 - [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) -compatibele, hoofdletter gevoelige verwerking van relatie sleutels
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - `-Resume` para meter voor web-cmdlets toevoegen
 
@@ -197,14 +197,14 @@ en [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-
 
 [Power shell direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is een functie van Power shell en hyper-v waarmee u verbinding kunt maken met een hyper-v-VM of-container zonder netwerk verbinding of andere services voor extern beheer.
 
-In het verleden is Power shell direct verbonden via de Windows Power shell-instantie postvak in in de container. Nu probeert Power shell direct eerst verbinding te maken met behulp van de beschik bare `pwsh.exe` `PATH` omgevings variabele. Als deze `pwsh.exe` niet beschikbaar is, valt Power shell direct terug naar het gebruik `powershell.exe` .
+In het verleden is Power shell direct verbonden via het ingebouwde Windows Power shell-exemplaar op de container. Nu probeert Power shell direct eerst verbinding te maken met behulp van de beschik bare `pwsh.exe` `PATH` omgevings variabele. Als deze `pwsh.exe` niet beschikbaar is, valt Power shell direct terug naar het gebruik `powershell.exe` .
 
-### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting`maakt nu afzonderlijke externe eind punten voor Preview-versies
+### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` maakt nu afzonderlijke externe eind punten voor Preview-versies
 
-`Enable-PSRemoting`maakt nu twee externe sessie configuraties:
+`Enable-PSRemoting` maakt nu twee externe sessie configuraties:
 
 - Een voor de primaire versie van Power shell. Bijvoorbeeld `PowerShell.6`. Dit eind punt dat kan worden verzorgd voor alle secundaire versie-updates als de ' systeembrede ' configuratie van de Power shell 6-sessie
-- Een versie-specifieke sessie configuratie, bijvoorbeeld:`PowerShell.6.1.0`
+- Een versie-specifieke sessie configuratie, bijvoorbeeld: `PowerShell.6.1.0`
 
 Dit is handig als u wilt dat er meerdere Power shell 6-versies op dezelfde computer zijn geïnstalleerd en toegankelijk zijn.
 
@@ -253,7 +253,7 @@ RunAsUser     :
 Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed, BUILTIN\Remote Management Users AccessAllowed
 ```
 
-### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port`syntaxis die wordt ondersteund voor SSH
+### <a name="userhostport-syntax-supported-for-ssh"></a>`user@host:port` syntaxis die wordt ondersteund voor SSH
 
 SSH-clients ondersteunen doorgaans een connection string in de indeling `user@host:port` . Met het toevoegen van SSH als protocol voor externe communicatie met Power Shell hebben we ondersteuning toegevoegd voor deze indeling van connection string:
 
@@ -273,7 +273,7 @@ Hartelijk dank voor [@bergmeister](https://github.com/bergmeister) de Jump List 
 
 ![Als administrator uitvoeren in de Power shell 6 Jump List](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
-### <a name="cd---returns-to-previous-directory"></a>`cd -`Hiermee wordt naar de vorige map gekeerd
+### <a name="cd---returns-to-previous-directory"></a>`cd -` Hiermee wordt naar de vorige map gekeerd
 
 ```powershell
 C:\Windows\System32> cd C:\
@@ -295,11 +295,11 @@ PS /etc>
 
 Hartelijk dank voor [@iSazonov](https://github.com/iSazonov) de [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) cmdlet is geporteerd naar Power shell core.
 
-### <a name="update-help-as-non-admin"></a>`Update-Help`Als niet-beheerder
+### <a name="update-help-as-non-admin"></a>`Update-Help` Als niet-beheerder
 
-Op de populaire vraag `Update-Help` hoeft u niet meer te worden uitgevoerd als beheerder. `Update-Help`de standaard instelling is dat de Help-informatie wordt opgeslagen in een map die door de gebruiker is gedefinieerd.
+Op de populaire vraag `Update-Help` hoeft u niet meer te worden uitgevoerd als beheerder. `Update-Help` de standaard instelling is dat de Help-informatie wordt opgeslagen in een map die door de gebruiker is gedefinieerd.
 
-### <a name="new-methodsproperties-on-pscustomobject"></a>Nieuwe methoden/eigenschappen op`PSCustomObject`
+### <a name="new-methodsproperties-on-pscustomobject"></a>Nieuwe methoden/eigenschappen op `PSCustomObject`
 
 Hartelijk dank voor het [@iSazonov](https://github.com/iSazonov) toevoegen van nieuwe methoden en eigenschappen aan `PSCustomObject` . `PSCustomObject`bevat nu een `Count` / `Length` eigenschap zoals andere objecten.
 
@@ -351,7 +351,7 @@ Met deze opdracht worden bijvoorbeeld alle services geretourneerd waarvoor geen 
 Get-Service | Where-Object -Not DependentServices
 ```
 
-### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest`Hiermee maakt u een stuk lijst zonder UTF-8-document
+### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a>`New-ModuleManifest` Hiermee maakt u een stuk lijst zonder UTF-8-document
 
 Gezien onze overgang naar een stuk lijst-minder UTF-8 in Power shell 6,0, hebben we de `New-ModuleManifest` cmdlet bijgewerkt om een stuk lijst van minder dan UTF-8-documenten te maken in plaats van een UTF-16 1.
 
@@ -377,7 +377,7 @@ class M {
 
 Bekijk [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287)voor meer informatie over deze wijziging.
 
-### <a name="standard-deviation-in-measure-object"></a>Standaard afwijking in`Measure-Object`
+### <a name="standard-deviation-in-measure-object"></a>Standaard afwijking in `Measure-Object`
 
 Hartelijk dank voor [@CloudyDino](https://github.com/CloudyDino) het toevoegen van een `StandardDeviation` eigenschap aan `Measure-Object` :
 
@@ -412,7 +412,7 @@ In het verleden heeft Power shell een functie geleverd in Windows `more` die is 
 
 Daarnaast is de `help` functie gewijzigd in gebruik `more.com` in Windows, of de standaard paginering van het systeem die is opgegeven door `$env:PAGER` op niet-Windows-platforms.
 
-### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:`retourneert nu gebruikers naar de huidige werkmap in dat station
+### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` retourneert nu gebruikers naar de huidige werkmap in dat station
 
 Voorheen gebruik `Set-Location` of `cd` om terug te gaan naar een PSDrive die gebruikers naar de standaard locatie voor dat station heeft verzonden.
 
@@ -467,7 +467,7 @@ Name                                Methods              Properties
 Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
-### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp`alias voor alle `-LiteralPath` para meters
+### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp` alias voor alle `-LiteralPath` para meters
 
 [@kvprasoon](https://github.com/kvprasoon)We hebben nu een parameter alias `-lp` voor alle ingebouwde Power shell-cmdlets die een `-LiteralPath` para meter hebben.
 
@@ -477,8 +477,8 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 In Windows wordt het MSI-pakket nu geïnstalleerd op het volgende pad:
 
-- `$env:ProgramFiles\PowerShell\6\`voor de stabiele installatie van 6. x
-- `$env:ProgramFiles\PowerShell\6-preview\`voor de preview-installatie van 6. x
+- `$env:ProgramFiles\PowerShell\6\` voor de stabiele installatie van 6. x
+- `$env:ProgramFiles\PowerShell\6-preview\` voor de preview-installatie van 6. x
 
 Met deze wijziging wordt ervoor gezorgd dat Power shell core kan worden bijgewerkt/onderhouden door Microsoft Update.
 
@@ -500,7 +500,7 @@ Voor meer informatie over deze wijzigingen raadpleegt u [Issue #6779](https://gi
 
 In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type` cmdlet. Visual Basic wordt zelden gebruikt met `Add-Type` . Deze functie is verwijderd om de grootte van Power shell te reduceren.
 
-### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Opgeruimd gebruik van `CommandTypes.Workflow` en`WorkflowInfoCleaned`
+### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Opgeruimd gebruik van `CommandTypes.Workflow` en `WorkflowInfoCleaned`
 
 Zie [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708)voor meer informatie over deze wijzigingen.
 

@@ -1,12 +1,12 @@
 ---
 title: Compatibiliteit met Power shell 7-module
 ms.date: 02/03/2020
-ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565060"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722810"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibiliteit met Power shell 7-module
 
@@ -69,13 +69,14 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | Module naam                        | Status                               | Ondersteund besturings systeem                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | Active Directory                    | Systeem eigen compatibel                  | Windows Server 1809 + met RSAT-AD-Power shell<br>Windows 10 1809 + met RSAT. ActiveDirectory. DS-LDS. tools |
+| ADDSDeployment                     | Werkt met compatibiliteit slaag       |  Windows Server 2019 1809 +         |
 | ADFS                               | Niet getest met compatibiliteit slaag    |                                    |
 | AppBackgroundTask                  | Systeem eigen compatibel                  | Windows 10 1903 +                   |
 | AppLocker                          | Niet getest met compatibiliteit slaag    |                                    |
 | AppvClient                         | Niet getest met compatibiliteit slaag    |                                    |
 | Appx                               | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 + |
 | AssignedAccess                     | Systeem eigen compatibel                  | Windows 10 1809 +                   |
-| BestPractices                      | Niet getest met compatibiliteit slaag    |                                    |
+| BestPractices                      | Niet ondersteund door compatibiliteit slaag |                                    |
 | BitLocker                          | Systeem eigen compatibel                  | Windows Server 1809 + met BitLocker<br>Windows 10 1809 + |
 | BitsTransfer                       | Systeem eigen compatibel                  | Windows Server-20H1<br>Windows 10-20H1 |
 | BootEventCollector                 | Niet getest met compatibiliteit slaag    |                                        |
@@ -148,7 +149,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | Inrichten                       | Niet getest met compatibiliteit slaag    |                                               |
 | PSDesiredStateConfiguration        | Gedeeltelijk                            | Ingebouwd in Power shell 7                       |
 | PSDiagnostics                      | Systeem eigen compatibel                  | Ingebouwd in Power shell 7                       |
-| PSScheduledJob                     | Niet werken met compatibiliteit slaag | Ingebouwd in Power shell 5,1                     |
+| PSScheduledJob                     | Niet ondersteund door compatibiliteit slaag | Ingebouwd in Power shell 5,1                     |
 | PSWorkflow                         | Niet getest met compatibiliteit slaag    |                                               |
 | PSWorkflowUtility                  | Niet getest met compatibiliteit slaag    |                                               |
 | Remote                       | Niet getest met compatibiliteit slaag    |                                               |
@@ -156,7 +157,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | ScheduledTasks                     | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | SecureBoot                         | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | ServerCore                         | Niet getest met compatibiliteit slaag    |                                               |
-| Manager                      | Niet getest met compatibiliteit slaag    |                                               |
+| Manager                      | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 + met RSAT. Server Manager. tools<br>_Zie de opmerkingen hieronder_ |
 | ServerManagerTasks                 | Niet getest met compatibiliteit slaag    |                                               |
 | ShieldedVMDataFile                 | Systeem eigen compatibel                  | Windows Server 1903 + met RSAT-afgeschermde-VM-Hulpprogram Ma's<br>Windows 10 1903 + met RSAT. afgeschermde. VM. tools |
 | ShieldedVMProvisioning             | Systeem eigen compatibel                  | Windows Server 1809 + met HostGuardian<br>Windows 10 1809 + met HostGuardian  |
@@ -178,7 +179,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | TroubleshootingPack                | Systeem eigen compatibel                  | Windows 10 1903 +                              |
 | TrustedPlatformModule              | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | UEV                                | Systeem eigen compatibel                  | Windows Server? Toekomstige versie van server met bureaublad ervaring?<br>Windows 10 1903 + |
-| Installeer WindowsFeature                     | Niet werken met compatibiliteit slaag |                                               |
+| Installeer WindowsFeature                     | Niet ondersteund door compatibiliteit slaag |                                               |
 | VpnClient                          | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | Wdac                               | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +      |
 | Webbeheer                  | Niet getest met compatibiliteit slaag    |                                               |
@@ -189,3 +190,10 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | WindowsServerBackup                | Systeem eigen compatibel                  | Windows Server-19H2 met Windows-Server-Backup |
 | WindowsUpdate                      | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +       |
 | WindowsUpdateProvider              | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 +       |
+
+## <a name="notes"></a>Opmerkingen
+
+### <a name="servermanager-module"></a>Server Manager-module
+
+De module heeft een aantal kleine compatibiliteits problemen met de opgemaakte uitvoer in Power shell 7. De `Get-WindowsFeature` cmdlet retourneert bijvoorbeeld het juiste object met alle eigenschappen, maar de standaard notatie voor weer gave is dat sommige eigenschappen leeg zijn. De werkelijke waarden zijn beschikbaar in de object eigenschappen met `Select-Object` of door rechtstreekse leden toegang.
+

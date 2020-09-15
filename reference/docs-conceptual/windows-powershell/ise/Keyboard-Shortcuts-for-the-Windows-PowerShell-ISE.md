@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: Sneltoetsen voor Windows PowerShell ISE
-ms.openlocfilehash: ee1b5961f8528d44330345bc49368e61970861ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811063"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092113"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Sneltoetsen voor Windows PowerShell ISE
 
@@ -19,8 +19,8 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
 |              Bewerking              |       Sneltoetsen       |                                                                                                                                                 Gebruiken in                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Help**                         | <kbd>Step</kbd>                  | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> Help afkomstig is uit de TechNet-bibliotheek op internet of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra**, **Opties**en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
-| **Kopieer**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
+| **Help**                         | <kbd>F1</kbd>                  | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> Help afkomstig is uit de TechNet-bibliotheek op internet of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra**, **Opties**en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
+| **Kopiëren**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
 | **Knippen**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
 | **Overzicht uitvouwen of samen vouwen** | <kbd>CTRL</kbd> + <kbd>M</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
 | **Zoeken in script**               | <kbd>CTRL</kbd> + <kbd>F</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
@@ -75,7 +75,7 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 | **Uitvoeren/door gaan**           | <kbd>F5</kbd>                                  | Script-deel venster bij fout opsporing van een script |
 | **Stap in**              | <kbd>F11</kbd>                                 | Script-deel venster bij fout opsporing van een script |
 | **Stap over**              | <kbd>F10</kbd>                                 | Script-deel venster bij fout opsporing van een script |
-| **Stap uit**               | <kbd>SHIFT</kbd> + <kbd> <kbd>F11</kbd></kbd>     | Script-deel venster bij fout opsporing van een script |
+| **Stap uit**               | <kbd>SHIFT</kbd> + <kbd>F11</kbd>                | Script-deel venster bij fout opsporing van een script |
 | **Aanroep stack weer geven**     | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>  | Script-deel venster bij fout opsporing van een script |
 | **Onderbrekings punten weer geven**       | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>L</kbd>  | Script-deel venster bij fout opsporing van een script |
 | **Onderbrekings punt in-/uitschakelen**      | <kbd>F9</kbd>                                  | Script-deel venster bij fout opsporing van een script |
@@ -110,12 +110,12 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
 
-U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (Power shell. exe) te starten of Windows PowerShell ISE af te sluiten.
+U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (PowerShell.exe) te starten of Windows PowerShell ISE af te sluiten.
 
 |                        Bewerking                        |               Sneltoets               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Afsluiten**                                             | <kbd>Alt</kbd> + <kbd>F4</kbd>                  |
-| **Power shell. exe starten**(Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
+| **PowerShell.exestarten **(Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
 
 ## <a name="see-also"></a>Zie ook
 

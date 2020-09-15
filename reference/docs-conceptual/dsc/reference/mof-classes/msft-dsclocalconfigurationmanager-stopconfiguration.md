@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: StopConfiguration-methode
-ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 76e50c98b09dca86983320918c6899082580672a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941528"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463700"
 ---
 # <a name="stopconfiguration-method"></a>StopConfiguration-methode
 
@@ -23,7 +23,7 @@ uint32 StopConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*geforceerd* \[in\] op **waar** om te zorgen dat de configuratie wordt gestopt.
+**forceren** \[ in \] **True** om te zorgen dat de configuratie wordt gestopt.
 
 ## <a name="return-value"></a>Retourwaarde
 

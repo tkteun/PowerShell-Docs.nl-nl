@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-Service Resource
-ms.openlocfilehash: acd0710fb4b131876e3edece15b07cff8e9a8a9e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557002"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463581"
 ---
 # <a name="dsc-service-resource"></a>DSC-Service Resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "83557002"
 
 De **service** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op het doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Service [string] #ResourceName
@@ -23,14 +23,18 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
+    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
+    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
+    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -38,12 +42,16 @@ Service [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
+|Naam |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
 |BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**en **Network Service**. |
 |Referentie |Hiermee geeft u de referenties op voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt. |
+|StartupTimeout | De tijd die moet worden gewacht voordat de service wordt uitgevoerd in milliseconden.|
 |Opstart type |Hiermee geeft u het opstart type voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch**, **uitgeschakeld**en **hand matig**. |
-|Staat |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **actief** of **gestopt**. |
+|Status |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **actief** of **gestopt**. |
+|TerminateTimeout |De tijd die moet worden gewacht voordat de service wordt gestopt in milliseconden.|
+|Afhankelijkheden | Een matrix met de namen van de afhankelijkheden die de service moet hebben. |
 |Beschrijving |Hiermee wordt de beschrijving van de doel service aangegeven. |
+|DesktopInteract | Hiermee wordt aangegeven of de service kan communiceren met een venster op het bureau blad. Moet onwaar zijn voor services die niet als LocalSystem worden uitgevoerd.|
 |DisplayName |Hiermee wordt de weergave naam van de doel service aangegeven. |
 |Pad |Hiermee wordt het pad naar het binaire bestand voor een nieuwe service aangegeven. |
 

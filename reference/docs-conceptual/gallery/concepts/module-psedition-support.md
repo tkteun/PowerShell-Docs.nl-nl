@@ -1,18 +1,18 @@
 ---
-ms.date: 03/28/2019
+ms.date: 06/10/2020
 contributor: manikb
 keywords: Galerie, Power shell, cmdlet, psget
 title: Modules met compatibele Power shell-edities
-ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329188"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671407"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules met compatibele Power shell-edities
 
-Vanaf versie 5.1 is PowerShell beschikbaar in verschillende edities die staan voor verschillende functies en platformcompatibiliteit.
+Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities, waarbij verschillende functie sets en platform compatibiliteit worden aangegeven.
 
 - **Desktop Edition:** Gebaseerd op .NET Framework, is van toepassing op Windows Power shell v 4.0 en hieronder, evenals Windows Power shell 5,1 op Windows Desktop, Windows Server, Windows Server Core en de meeste andere Windows-edities.
 - **Core-editie:** Gebaseerd op .NET core, is van toepassing op Power shell Core 6,0 en hoger, evenals Windows Power shell 5,1 op Windows-edities met verminderde footprint, zoals Windows IoT en Windows nano server.
@@ -21,10 +21,10 @@ Zie [about_PowerShell_Editions][]voor meer informatie over Power shell-edities.
 
 ## <a name="declaring-compatible-editions"></a>Compatibele edities declareren
 
-Auteurs van modules kunnen hun modules zo opstellen dat deze compatibel zijn met een of meer PowerShell-edities door de sleutel voor het modulemanifestbestand CompatiblePSEditions te gebruiken. Deze sleutel wordt alleen ondersteund in PowerShell 5.1 of hoger.
+Module auteurs kunnen hun modules declareren om compatibel te zijn met een of meer Power shell-edities met behulp van de `CompatiblePSEditions` manifest sleutel van de module. Deze sleutel wordt alleen ondersteund in PowerShell 5.1 of hoger.
 
 > [!NOTE]
-> Zodra een module manifest is opgegeven met de CompatiblePSEditions-sleutel, kan het niet worden geïmporteerd in Power shell-versie 4 en lager.
+> Zodra een module manifest is opgegeven met de `CompatiblePSEditions` sleutel of gebruikmaakt `$PSEdition` van de variabele, kan het niet worden geïmporteerd in Power shell v4 of lager.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -58,7 +58,6 @@ Get-Module -ListAvailable -PSEdition Desktop
 ```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
-
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
@@ -73,11 +72,28 @@ Desktop
 Core
 ```
 
+Vanaf Power shell 6 wordt de `CompatiblePSEditions` waarde gebruikt om te bepalen of een module compatibel is wanneer er modules worden geïmporteerd `$env:windir\System32\WindowsPowerShell\v1.0\Modules` .
+Dit gedrag geldt alleen voor Windows. Buiten dit scenario wordt de waarde alleen gebruikt als meta gegevens.
+
+## <a name="finding-compatible-modules"></a>Compatibele modules zoeken
+
+PowerShell Gallery gebruikers kunnen de lijst met modules die worden ondersteund in een specifieke Power shell-editie vinden met behulp van labels **PSEdition_Desktop** en **PSEdition_Core**.
+
+Modules zonder **PSEdition_Desktop** en **PSEdition_Core** -Tags worden beschouwd als goed op Power shell-Desktop-edities.
+
+```powershell
+# Find modules supported on PowerShell Desktop edition
+Find-Module -Tag PSEdition_Desktop
+
+# Find modules supported on PowerShell Core editions
+Find-Module -Tag PSEdition_Core
+```
+
 ## <a name="targeting-multiple-editions"></a>Meerdere edities richten
 
 Ontwerpers van modules kunnen één module richten op een of beide Power shell-edities (desktop en Core).
 
-Eén module kan zowel op bureau blad-als op kern-edities worden uitgevoerd. in die module auteur moet de vereiste logica worden toegevoegd in RootModule of in het manifest module met $PSEdition variabele. Modules kunnen twee sets gecompileerde Dll's hebben die zijn gericht op zowel CoreCLR als FullCLR. Hier vindt u een aantal opties voor het inpakken van uw module met logica voor het laden van de juiste dll's.
+Eén module kan zowel op bureau blad-als op kern-edities worden uitgevoerd. in die module auteur moet de vereiste logica worden toegevoegd in RootModule of in het module manifest met behulp van een `$PSEdition` variabele. Modules kunnen twee sets gecompileerde Dll's hebben die zijn gericht op zowel **CoreCLR** als **FullCLR**. Hier vindt u de verpakkings opties met logica voor het laden van de juiste Dll's.
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Optie 1: een module verpakken voor het richten op meerdere versies en meerdere versies van Power shell
 
@@ -87,7 +103,7 @@ Inhoud van module map
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
-- ScriptAnalyzer. Format. ps1xml
+- ScriptAnalyzer.format.ps1XML
 - ScriptAnalyzer.types.ps1xml
 - coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
@@ -101,7 +117,7 @@ Inhoud van module map
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-Inhoud van het bestand PSScriptAnalyzer. psd1
+Inhoud van `PSScriptAnalyzer.psd1` bestand
 
 ```powershell
 @{
@@ -121,7 +137,7 @@ ModuleVersion = '1.6.1'
 
 Onder Logic worden de vereiste assembly's geladen, afhankelijk van de huidige editie of versie.
 
-Inhoud van het bestand PSScriptAnalyzer. psm1:
+Inhoud van het `PSScriptAnalyzer.psm1` bestand:
 
 ```powershell
 #
@@ -157,14 +173,11 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Optie 2: gebruik $PSEdition variabele in het PSD1-bestand om de juiste Dll's en geneste/vereiste modules te laden
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls"></a>Optie 2: gebruik $PSEdition variabele in het PSD1-bestand om de juiste Dll's te laden
 
-In PS 5,1 of hoger is $PSEdition globale variabele toegestaan in het manifest bestand van de module. Met deze variabele kan module Author de voorwaardelijke waarden opgeven in het manifest bestand van de module. Naar $PSEdition-variabele kan worden verwezen in de modus voor beperkte talen of in een gegevens gedeelte.
+In PS 5,1 of hoger `$PSEdition` is globale variabele toegestaan in het manifest bestand van de module. Met deze variabele kan module Author de voorwaardelijke waarden opgeven in het manifest bestand van de module. `$PSEdition` naar een variabele kan worden verwezen in de modus voor beperkte talen of in een gegevens gedeelte.
 
-> [!NOTE]
-> Zodra een module manifest is opgegeven met de sleutel CompatiblePSEditions of de `$PSEdition` variabele gebruikt, kan het niet worden geïmporteerd in lagere versies van Power shell.
-
-Voor beeld van module manifest bestand met CompatiblePSEditions-sleutel
+Voor beeld van manifest bestand van module met `CompatiblePSEditions` sleutel.
 
 ```powershell
 @{
@@ -195,49 +208,15 @@ Voor beeld van module manifest bestand met CompatiblePSEditions-sleutel
 }
 ```
 
-### <a name="module-contents"></a>Inhoud van module
+Inhoud van module
 
-```powershell
-dir -Recurse
-```
-
-```Output
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
-d-----    7/5/2016   1:37 PM          clr
-d-----    7/5/2016   1:36 PM          coreclr
--a----    7/5/2016   1:34 PM     4906 ModuleWithEditions.psd1
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
-
-Mode           LastWriteTime    Length Name
-----           -------------    ------ ----
--a----    7/5/2016   1:35 PM         0 MyFullClrNM1.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrNM2.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrRM.dl
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM1.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM2.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
-```
-
-PowerShell Gallery gebruikers kunnen de lijst met modules die worden ondersteund in een specifieke Power shell-editie vinden met behulp van labels PSEdition_Desktop en PSEdition_Core.
-
-Modules zonder PSEdition_Desktop en PSEdition_Core-Tags worden beschouwd als goed op Power shell-Desktop-edities.
-
-```powershell
-# Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEdition_Desktop
-
-# Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEdition_Core
-```
+- ModuleWithEditions\ModuleWithEditions.psd1
+- ModuleWithEditions\clr\MyFullClrNM1.dll
+- ModuleWithEditions\clr\MyFullClrNM2.dll
+- ModuleWithEditions\clr\MyFullClrRM.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM1.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM2.dll
+- ModuleWithEditions\coreclr\MyCoreClrRM.dll
 
 ## <a name="more-details"></a>Meer informatie
 

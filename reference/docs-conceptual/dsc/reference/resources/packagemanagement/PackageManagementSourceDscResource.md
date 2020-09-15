@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/15/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC PackageManagementSource-resource
-ms.openlocfilehash: 4a4219f3c4ad7e547025a2b9cde442c7b69eeac4
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b24558574f192347aace5a809d57385e01d9acb3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557138"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463887"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resource
 
@@ -19,7 +19,7 @@ De **PackageManagementSource** -resource in Windows Power shell desired state Co
 > [!IMPORTANT]
 > De **Package Management** -module moet ten minste versie 1.1.7.0 zijn voor de volgende eigenschaps gegevens die u wilt corrigeren.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 PackageManagementSource [String] #ResourceName
@@ -39,7 +39,7 @@ PackageManagementSource [String] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee geeft u de naam van de pakket bron moet worden geregistreerd of niet geregistreerd op uw systeem. |
+|Naam |Hiermee geeft u de naam van de pakket bron moet worden geregistreerd of niet geregistreerd op uw systeem. |
 |ProviderName |Hiermee geeft u de naam van de OneGet-provider op waarmee u interop met de pakket bron kunt doen. |
 |SourceLocation |Hiermee geeft u de URI van de pakket bron. |
 |InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd**. |

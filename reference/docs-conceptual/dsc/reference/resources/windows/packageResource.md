@@ -1,21 +1,21 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-pakket resource
-ms.openlocfilehash: ff2eae712b4117da9bca915f52e18caed7c4885d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: faeebc5bac7caad733600720f1c9f3d916d4c0a8
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559927"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464006"
 ---
 # <a name="dsc-package-resource"></a>DSC-pakket resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
-De **pakket** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakketten, zoals Windows Installer en Setup. exe-pakketten, op een doel knooppunt.
+De **pakket** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakketten, zoals Windows Installer en setup.exe pakketten, op een doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Package [string] #ResourceName
@@ -37,7 +37,7 @@ Package [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
+|Naam |Hiermee wordt de naam aangegeven van het pakket waarvoor u een specifieke status wilt controleren. |
 |Pad |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
 |ProductId |Hiermee wordt de product-ID aangegeven waarmee het pakket uniek wordt geïdentificeerd. |
 |Argumenten |Een lijst met argumenten die precies zo worden door gegeven aan het pakket. |

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Linux
-ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 64657dda04fa2df97fa2ad7c7a5c2d15b66a270a
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73933840"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301332"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met de desired state Configuration (DSC) voor Linux
 
@@ -15,25 +15,14 @@ In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Powe
 
 ## <a name="supported-linux-operation-system-versions"></a>Ondersteunde versies van Linux-besturings systeem
 
-De volgende versies van Linux-besturings systemen worden ondersteund voor DSC voor Linux.
+De volgende versies van Linux-besturings systemen worden ondersteund door DSC voor Linux.
 
 - CentOS 5, 6 en 7 (x86/x64)
 - Debian GNU/Linux 6, 7 en 8 (x86/x64)
 - Oracle Linux 5, 6 en 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 en 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 en 12 (x86/x64)
-- Ubuntu Server 12,04 LTS, 14,04 LTS en 16,04 LTS (x86/x64)
-
-In de volgende tabel worden de vereiste pakket afhankelijkheden voor DSC voor Linux beschreven.
-
-|  Vereist pakket |  Beschrijving |  Minimale versie |
-|---|---|---|
-| glibc| GNU-bibliotheek| 2... 4 – 31,30|
-| python| Python| 2,4 – 3,4|
-| omiserver| Open-beheer infrastructuur| 1.0.8.1|
-| openssl| OpenSSL-bibliotheken| 0.9.8 of 1.0|
-| ctypes| Python CTypes-bibliotheek| Moet overeenkomen met python-versie|
-| libkrul| Krul HTTP-client bibliotheek| 7.15.1|
+- Ubuntu Server 12,04 LTS, 14,04 LTS, 16,04 LTS (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>DSC voor Linux installeren
 
@@ -46,7 +35,7 @@ De desired state Configuration voor Linux vereist de open Management Infrastruct
 Als u OMI wilt installeren, installeert u het pakket dat geschikt is voor uw Linux-systeem (. rpm of. deb) en OpenSSL-versie (ssl_098 of ssl_100) en architectuur (x64/x86). RPM-pakketten zijn geschikt voor CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server en Oracle Linux. DEB-pakketten zijn geschikt voor Debian GNU/Linux en Ubuntu Server. De ssl_098-pakketten zijn geschikt voor computers waarop OpenSSL 0.9.8 is geïnstalleerd terwijl de ssl_100 pakketten geschikt zijn voor computers waarop OpenSSL 1,0 is geïnstalleerd.
 
 > [!NOTE]
-> Voer de opdracht `openssl version`uit om de geïnstalleerde versie van openssl te bepalen.
+> Voer de opdracht uit om de geïnstalleerde versie van OpenSSL te bepalen `openssl version` .
 
 Voer de volgende opdracht uit om OMI te installeren op een CentOS 7 x64-systeem.
 
@@ -75,7 +64,7 @@ Het sleutel woord Windows Power shell-configuratie wordt gebruikt voor het maken
 
 1. Importeer de NX-module. De NX Windows Power shell-module bevat het schema voor ingebouwde resources voor DSC voor Linux en moet worden geïnstalleerd op uw lokale computer en worden geïmporteerd in de configuratie.
 
-   - Als u de NX-module wilt installeren, kopieert u de map `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` van `$PSHOME\Modules`de NX-module naar ofwel of. De NX-module is opgenomen in het installatie pakket voor DSC voor Linux. Als u de NX-module in uw configuratie wilt importeren `Import-DSCResource` , gebruikt u de opdracht:
+   - Als u de NX-module wilt installeren, kopieert u de map van de NX-module naar ofwel `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules` . De NX-module is opgenomen in het installatie pakket voor DSC voor Linux. Als u de NX-module in uw configuratie wilt importeren, gebruikt u de `Import-DSCResource` opdracht:
 
    ```powershell
    Configuration ExampleConfiguration{
@@ -127,9 +116,9 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 
 > [!NOTE]
 > De gebruikers referenties voor de push-modus moeten de hoofd gebruiker zijn op de Linux-computer.
-> Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, `New-CimSession` de moet worden gebruikt met de para meter – UseSSL die is ingesteld op $True.
-> Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in `/etc/opt/omi/conf/omiserver.conf` het bestand: met de eigenschappen: pemfile en keyfile.
-> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de CimSession-opties:`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, de `New-CimSession` moet worden gebruikt met de para meter – UseSSL die is ingesteld op $True.
+> Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in het bestand: `/etc/opt/omi/conf/omiserver.conf` met de eigenschappen: pemfile en keyfile.
+> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de CimSession-opties: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Voer de volgende opdracht uit om de DSC-configuratie naar het Linux-knoop punt te pushen.
 
@@ -141,11 +130,11 @@ Configuraties kunnen worden gedistribueerd naar een Linux-computer met een pull-
 
 ### <a name="working-with-configurations-locally"></a>Lokaal met configuraties werken
 
-DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale Linux-computer. Deze scripts zijn te vinden `/opt/microsoft/dsc/Scripts` in en bevatten het volgende:
+DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale Linux-computer. Deze scripts zijn te vinden in `/opt/microsoft/dsc/Scripts` en bevatten het volgende:
 
 - GetDscConfiguration.py
 
-Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power `Get-DscConfiguration` shell cmdlet.
+Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power shell cmdlet `Get-DscConfiguration` .
 
 `# sudo ./GetDscConfiguration.py`
 

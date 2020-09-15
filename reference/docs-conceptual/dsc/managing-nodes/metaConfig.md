@@ -2,37 +2,32 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: De lokale Configuration Manager configureren
-ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b4766157bca72a7c2bb385ab2255c9780846830a
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691988"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837559"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>De lokale Configuration Manager configureren
 
 > Van toepassing op: Windows Power shell 5,0
 
-De lokale Configuration Manager (LCM) is de engine van desired state Configuration (DSC).
-De LCM wordt uitgevoerd op elk doel knooppunt en is verantwoordelijk voor het parseren en door voeren van configuraties die naar het knoop punt worden verzonden.
-Het is ook verantwoordelijk voor een aantal andere aspecten van DSC, waaronder de volgende.
+De lokale Configuration Manager (LCM) is de engine van desired state Configuration (DSC). De LCM wordt uitgevoerd op elk doel knooppunt en is verantwoordelijk voor het parseren en door voeren van configuraties die naar het knoop punt worden verzonden. Het is ook verantwoordelijk voor een aantal andere aspecten van DSC, waaronder de volgende.
 
 - Vernieuwings modus bepalen (push of pull).
 - Opgeven hoe vaak een knoop punt configuraties ophaalt en overgeeft.
 - Het knoop punt koppelen aan de pull-service.
 - Gedeeltelijke configuraties opgeven.
 
-U gebruikt een speciaal type configuratie om de LCM te configureren om elk van deze gedragingen op te geven.
-In de volgende secties wordt beschreven hoe u de LCM kunt configureren.
+U gebruikt een speciaal type configuratie om de LCM te configureren om elk van deze gedragingen op te geven. In de volgende secties wordt beschreven hoe u de LCM kunt configureren.
 
-Windows Power shell 5,0 heeft nieuwe instellingen geïntroduceerd voor het beheren van lokale Configuration Manager.
-Zie [Configuring the Local configuration manager in eerdere versies van Windows Power shell](metaconfig4.md)(Engelstalig) voor meer informatie over het configureren van de LCM in Windows power Shell 4,0.
+Windows Power shell 5,0 heeft nieuwe instellingen geïntroduceerd voor het beheren van lokale Configuration Manager. Zie [Configuring the Local configuration manager in eerdere versies van Windows Power shell](metaconfig4.md)(Engelstalig) voor meer informatie over het configureren van de LCM in Windows power Shell 4,0.
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Een configuratie van een LCM schrijven en opstellen
 
 Als u de LCM wilt configureren, maakt en voert u een speciaal type configuratie uit waarmee de instellingen van de LCM worden toegepast.
-Als u een configuratie van een LCM wilt opgeven, gebruikt u het kenmerk DscLocalConfigurationManager.
-Hieronder ziet u een eenvoudige configuratie waarmee de LCM wordt ingesteld op push-modus.
+Als u een configuratie van een LCM wilt opgeven, gebruikt u het kenmerk DscLocalConfigurationManager. Hieronder ziet u een eenvoudige configuratie waarmee de LCM wordt ingesteld op push-modus.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,27 +43,20 @@ configuration LCMConfig
 }
 ```
 
-Het proces voor het Toep assen van instellingen op LCM is vergelijkbaar met het Toep assen van een DSC-configuratie.
-U maakt een configuratie van de LCM, compileert deze in een MOF-bestand en past deze toe op het knoop punt.
-In tegens telling tot DSC-configuraties is het niet mogelijk een configuratie van de LCM te maken door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.
-In plaats daarvan roept u [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)aan, waarbij u het pad naar de ICM-configuratie-MOF opgeeft als een para meter.
-Nadat u de configuratie van de LCM hebt aangenomen, kunt u de eigenschappen van de LCM zien door de cmdlet [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) aan te roepen.
+Het proces voor het Toep assen van instellingen op LCM is vergelijkbaar met het Toep assen van een DSC-configuratie. U maakt een configuratie van de LCM, compileert deze in een MOF-bestand en past deze toe op het knoop punt. In tegens telling tot DSC-configuraties is het niet mogelijk een configuratie van de LCM te maken door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen. In plaats daarvan roept u [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)aan, waarbij u het pad naar de ICM-configuratie-MOF opgeeft als een para meter. Nadat u de configuratie van de LCM hebt aangenomen, kunt u de eigenschappen van de LCM zien door de cmdlet [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) aan te roepen.
 
-Een configuratie van de LCM kan alleen blokken bevatten voor een beperkt aantal resources.
-In het vorige voor beeld is de enige resource met de naam **instellingen**.
-De andere beschik bare bronnen zijn:
+Een configuratie van de LCM kan alleen blokken bevatten voor een beperkt aantal resources. In het vorige voor beeld is de enige resource met de naam **instellingen**. De andere beschik bare bronnen zijn:
 
-* **ConfigurationRepositoryWeb**: Hiermee geeft u een HTTP pull-service voor configuraties.
-* **ConfigurationRepositoryShare**: Hiermee geeft u een SMB-share op voor configuraties.
-* **ResourceRepositoryWeb**: Hiermee geeft u een http-pull-service voor modules op.
-* **ResourceRepositoryShare**: Hiermee geeft u een SMB-share voor modules op.
-* **ReportServerWeb**: Hiermee geeft u een http-pull-service aan waarnaar rapporten worden verzonden.
-* **PartialConfiguration**: biedt gegevens om gedeeltelijke configuraties mogelijk te maken.
+- **ConfigurationRepositoryWeb**: Hiermee geeft u een HTTP pull-service voor configuraties.
+- **ConfigurationRepositoryShare**: Hiermee geeft u een SMB-share op voor configuraties.
+- **ResourceRepositoryWeb**: Hiermee geeft u een http-pull-service voor modules op.
+- **ResourceRepositoryShare**: Hiermee geeft u een SMB-share voor modules op.
+- **ReportServerWeb**: Hiermee geeft u een http-pull-service aan waarnaar rapporten worden verzonden.
+- **PartialConfiguration**: biedt gegevens om gedeeltelijke configuraties mogelijk te maken.
 
 ## <a name="basic-settings"></a>Basisinstellingen
 
-Behalve dat pull-service-eind punten/-paden en gedeeltelijke configuraties worden opgegeven, worden alle eigenschappen van de LCM geconfigureerd in een **instellingen** blok.
-De volgende eigenschappen zijn beschikbaar in een **instellingen** blok.
+Behalve dat pull-service-eind punten/-paden en gedeeltelijke configuraties worden opgegeven, worden alle eigenschappen van de LCM geconfigureerd in een **instellingen** blok. De volgende eigenschappen zijn beschikbaar in een **instellingen** blok.
 
 |  Eigenschap  |  Type  |  Beschrijving   |
 |----------- |------- |--------------- |
@@ -91,13 +79,10 @@ De volgende eigenschappen zijn beschikbaar in een **instellingen** blok.
 > [!NOTE]
 > De LCM start de **ConfigurationModeFrequencyMins** -cyclus op basis van:
 >
-> - Er wordt een nieuwe-configuratie toegepast met behulp van`Set-DscLocalConfigurationManager`
+> - Er wordt een nieuwe configuratie voor **ConfigurationModeFrequencyMins** met de wijziging van het bestand toegepast met behulp van `Set-DscLocalConfigurationManager`
 > - Een computer opnieuw opstarten
 >
-> Voor elke voor waarde waarbij het timer proces vastloopt, wordt dit binnen 30 seconden gedetecteerd en wordt de cyclus opnieuw gestart.
-> Een gelijktijdige bewerking kan ertoe leiden dat de cyclus wordt gestart. als de duur van deze bewerking de geconfigureerde cyclus frequentie overschrijdt, wordt de volgende timer niet gestart.
->
-> Voor beeld: de configuratie van de instellingen van een pull-interval van vijf tien minuten en een pull vindt plaats in T1.  Het knoop punt is 16 minuten niet voltooid.  De eerste vijf tien minuten wordt genegeerd en de volgende pull-bewerking wordt uitgevoerd op T1 + 15 + 15.
+> Voor elke voor waarde waarbij het timer proces vastloopt, wordt dit binnen 30 seconden gedetecteerd en wordt de cyclus opnieuw gestart. Een gelijktijdige bewerking kan ertoe leiden dat de cyclus wordt gestart. als de duur van deze bewerking de geconfigureerde cyclus frequentie overschrijdt, wordt de volgende timer niet gestart. Voor beeld: de configuratie van de instellingen van een pull-interval van vijf tien minuten en een pull vindt plaats in T1. Het knoop punt is 16 minuten niet voltooid. De eerste vijf tien minuten wordt genegeerd en de volgende pull-bewerking wordt uitgevoerd op T1 + 15 + 15.
 
 ## <a name="pull-service"></a>Pull-service
 
@@ -111,8 +96,7 @@ Zie [desired state Configuration pull service](../pull-server/pullServer.md)(Eng
 
 ## <a name="configuration-server-blocks"></a>Configuratie server blokken
 
-Als u een configuratie server op het web wilt definiëren, maakt u een **ConfigurationRepositoryWeb** -blok.
-Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
+Als u een configuratie server op het web wilt definiëren, maakt u een **ConfigurationRepositoryWeb** -blok. Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
 
 |Eigenschap|Type|Beschrijving|
 |---|---|---|
@@ -125,38 +109,35 @@ Een **ConfigurationRepositoryWeb** definieert de volgende eigenschappen.
 |ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
 
 > [!NOTE]
->
-> * Ondersteund in Windows versie 1809 en hoger.
+> Ondersteund in Windows versie 1809 en hoger.
 
-Een voorbeeld script voor het vereenvoudigen van het configureren van de ConfigurationRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Een voorbeeld script voor het vereenvoudigen van het configureren van de ConfigurationRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
-Als u een op SMB gebaseerde configuratie server wilt definiëren, maakt u een **ConfigurationRepositoryShare** -blok.
-Een **ConfigurationRepositoryShare** definieert de volgende eigenschappen.
+Als u een op SMB gebaseerde configuratie server wilt definiëren, maakt u een **ConfigurationRepositoryShare** -blok. Een **ConfigurationRepositoryShare** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
-|---|---|---|
-|Referentie|MSFT_Credential|De referentie die wordt gebruikt om te verifiëren bij de SMB-share.|
-|Bronpad|tekenreeks|Het pad naar de SMB-share.|
+|  Eigenschap  |      Type       |                      Beschrijving                      |
+| ---------- | --------------- | ----------------------------------------------------- |
+| Referentie | MSFT_Credential | De referentie die wordt gebruikt om te verifiëren bij de SMB-share. |
+| Bronpad | tekenreeks          | Het pad naar de SMB-share.                            |
 
 ## <a name="resource-server-blocks"></a>Resource server blokken
 
 Voor het definiëren van een webbronserver maakt u een **ResourceRepositoryWeb** -blok.
 Een **ResourceRepositoryWeb** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
-|---|---|---|
-|AllowUnsecureConnection|booleaans|Ingesteld op **$True** om verbindingen van het knoop punt met de-server zonder verificatie toe te staan. Ingesteld op **$False** om verificatie te vereisen.|
-|CertificateID|tekenreeks|De vinger afdruk van een certificaat dat wordt gebruikt voor verificatie bij de server.|
-|RegistrationKey|tekenreeks|Een GUID waarmee het knoop punt wordt geïdentificeerd voor de pull-service.|
-|ServerURL|tekenreeks|De URL van de configuratie server.|
-|ProxyURL*|tekenreeks|De URL van de http-proxy die moet worden gebruikt voor de communicatie met de configuratie service.|
-|ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
+|        Eigenschap         |     Type     |                                                              Beschrijving                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | booleaans         | Ingesteld op **$True** om verbindingen van het knoop punt met de-server zonder verificatie toe te staan. Ingesteld op **$False** om verificatie te vereisen. |
+| CertificateID           | tekenreeks       | De vinger afdruk van een certificaat dat wordt gebruikt voor verificatie bij de server.                                                                    |
+| RegistrationKey         | tekenreeks       | Een GUID waarmee het knoop punt wordt geïdentificeerd voor de pull-service.                                                                                   |
+| ServerURL               | tekenreeks       | De URL van de configuratie server.                                                                                                   |
+| ProxyURL*               | tekenreeks       | De URL van de http-proxy die moet worden gebruikt voor de communicatie met de configuratie service.                                                    |
+| ProxyCredential*        | pscredential | Referentie die moet worden gebruikt voor de http-proxy.                                                                                                  |
 
 > [!NOTE]
->
-> * Ondersteund in Windows versie 1809 en hoger.
+> Ondersteund in Windows versie 1809 en hoger.
 
-Een voorbeeld script voor het vereenvoudigen van het configureren van de ResourceRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Een voorbeeld script voor het vereenvoudigen van het configureren van de ResourceRepositoryWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Als u een SMB-gebaseerde resource server wilt definiëren, maakt u een **ResourceRepositoryShare** -blok.
 **ResourceRepositoryShare** definieert de volgende eigenschappen.
@@ -168,29 +149,25 @@ Als u een SMB-gebaseerde resource server wilt definiëren, maakt u een **Resourc
 
 ## <a name="report-server-blocks"></a>Blokken rapport server
 
-Als u een rapport server wilt definiëren, maakt u een **ReportServerWeb** -blok.
-De rapport server functie is niet compatibel met de SMB-gebaseerde pull-service.
-**ReportServerWeb** definieert de volgende eigenschappen.
+Als u een rapport server wilt definiëren, maakt u een **ReportServerWeb** -blok. De rapport server functie is niet compatibel met de SMB-gebaseerde pull-service. **ReportServerWeb** definieert de volgende eigenschappen.
 
-|Eigenschap|Type|Beschrijving|
-|---|---|---|
-|AllowUnsecureConnection|booleaans|Ingesteld op **$True** om verbindingen van het knoop punt met de-server zonder verificatie toe te staan. Ingesteld op **$False** om verificatie te vereisen.|
-|CertificateID|tekenreeks|De vinger afdruk van een certificaat dat wordt gebruikt voor verificatie bij de server.|
-|RegistrationKey|tekenreeks|Een GUID waarmee het knoop punt wordt geïdentificeerd voor de pull-service.|
-|ServerURL|tekenreeks|De URL van de configuratie server.|
-|ProxyURL*|tekenreeks|De URL van de http-proxy die moet worden gebruikt voor de communicatie met de configuratie service.|
-|ProxyCredential*|pscredential|Referentie die moet worden gebruikt voor de http-proxy.|
+|        Eigenschap         |     Type     |                                                              Beschrijving                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | booleaans         | Ingesteld op **$True** om verbindingen van het knoop punt met de-server zonder verificatie toe te staan. Ingesteld op **$False** om verificatie te vereisen. |
+| CertificateID           | tekenreeks       | De vinger afdruk van een certificaat dat wordt gebruikt voor verificatie bij de server.                                                                    |
+| RegistrationKey         | tekenreeks       | Een GUID waarmee het knoop punt wordt geïdentificeerd voor de pull-service.                                                                                   |
+| ServerURL               | tekenreeks       | De URL van de configuratie server.                                                                                                   |
+| ProxyURL*               | tekenreeks       | De URL van de http-proxy die moet worden gebruikt voor de communicatie met de configuratie service.                                                    |
+| ProxyCredential*        | pscredential | Referentie die moet worden gebruikt voor de http-proxy.                                                                                                  |
 
 > [!NOTE]
->
-> * Ondersteund in Windows versie 1809 en hoger.
+> Ondersteund in Windows versie 1809 en hoger.
 
-Een voorbeeld script voor het vereenvoudigen van het configureren van de ReportServerWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Een voorbeeld script voor het vereenvoudigen van het configureren van de ReportServerWeb-waarde voor on-premises knoop punten is beschikbaar-Zie [DSC-configuratie genereren](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Gedeeltelijke configuraties
 
-Als u een gedeeltelijke configuratie wilt definiëren, maakt u een **PartialConfiguration** -blok.
-Zie voor meer informatie over gedeeltelijke configuraties [DSC-gedeeltelijke configuraties](../pull-server/partialConfigs.md).
+Als u een gedeeltelijke configuratie wilt definiëren, maakt u een **PartialConfiguration** -blok. Zie voor meer informatie over gedeeltelijke configuraties [DSC-gedeeltelijke configuraties](../pull-server/partialConfigs.md).
 **PartialConfiguration** definieert de volgende eigenschappen.
 
 |Eigenschap|Type|Beschrijving|
@@ -199,17 +176,19 @@ Zie voor meer informatie over gedeeltelijke configuraties [DSC-gedeeltelijke con
 |DependsOn|tekenreeks{}|Een lijst met namen van andere configuraties die moeten worden voltooid voordat deze gedeeltelijke configuratie wordt toegepast.|
 |Description|tekenreeks|De tekst die wordt gebruikt om de gedeeltelijke configuratie te beschrijven.|
 |ExclusiveResources|teken reeks []|Een matrix met bronnen die exclusief zijn voor deze gedeeltelijke configuratie.|
-|RefreshMode|tekenreeks|Hiermee geeft u op hoe de LCM deze gedeeltelijke configuratie kan ophalen. De mogelijke waarden zijn __' disabled '__, __' push '__ en __' pull '__. <ul><li>__Uitgeschakeld__: deze gedeeltelijke configuratie is uitgeschakeld.</li><li> __Push__: de gedeeltelijke configuratie wordt naar het knoop punt gepusht door de cmdlet [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aan te roepen. Nadat alle gedeeltelijke configuraties voor het knoop punt zijn gepusht of opgehaald van een service, kan de configuratie worden gestart door het aanroepen van `Start-DscConfiguration –UseExisting` . Dit is de standaardwaarde.</li><li>__Pull:__ Het knoop punt is geconfigureerd om regel matig te controleren op gedeeltelijke configuratie van een pull-service. Als deze eigenschap is ingesteld op __pull__, moet u een pull-service opgeven in een eigenschap __ConfigurationSource__ . Zie [Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview)(Engelstalig) voor meer informatie over Azure Automation pull-service.</li></ul>|
+|RefreshMode|tekenreeks|Hiermee geeft u op hoe de LCM deze gedeeltelijke configuratie kan ophalen. De mogelijke waarden zijn __' disabled '__, __' push '__ en __' pull '__. <ul><li>__Uitgeschakeld__: deze gedeeltelijke configuratie is uitgeschakeld.</li><li> __Push__: de gedeeltelijke configuratie wordt naar het knoop punt gepusht door de cmdlet [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aan te roepen. Nadat alle gedeeltelijke configuraties voor het knoop punt zijn gepusht of opgehaald van een service, kan de configuratie worden gestart door het aanroepen van `Start-DscConfiguration –UseExisting` . Dit is de standaardwaarde.</li><li>__Pull:__ Het knoop punt is geconfigureerd om regel matig te controleren op gedeeltelijke configuratie van een pull-service. Als deze eigenschap is ingesteld op __pull__, moet u een pull-service opgeven in een eigenschap __ConfigurationSource__ . Zie [Azure Automation DSC Overview](/azure/automation/automation-dsc-overview)(Engelstalig) voor meer informatie over Azure Automation pull-service.</li></ul>|
 |ResourceModuleSource|teken reeks []|Een matrix van de namen van resource servers waaruit de vereiste bronnen voor deze gedeeltelijke configuratie moeten worden gedownload. Deze namen moeten verwijzen naar service-eind punten die eerder zijn gedefinieerd in **ResourceRepositoryWeb** -en **ResourceRepositoryShare** -blokken.|
 
-__Opmerking:__ gedeeltelijke configuraties worden ondersteund met Azure Automation DSC, maar er kan slechts één configuratie worden opgehaald uit elk Automation-account per knoop punt.
+> [!NOTE]
+> gedeeltelijke configuraties worden ondersteund met Azure Automation DSC, maar er kan slechts één configuratie worden opgehaald uit elk Automation-account per knoop punt.
 
 ## <a name="see-also"></a>Zie ook
 
 ### <a name="concepts"></a>Concepten
+
 [Overzicht van desired state Configuration](../overview/overview.md)
 
-[Aan de slag met Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+[Aan de slag met Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Meer informatie
 

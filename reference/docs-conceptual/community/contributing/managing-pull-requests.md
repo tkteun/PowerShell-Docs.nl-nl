@@ -3,22 +3,22 @@ title: De manier waarop we pull-aanvragen beheren
 description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078610"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158170"
 ---
 # <a name="managing-pull-requests"></a>Pull-aanvragen beheren
 
-In dit artikel wordt beschreven hoe u pull-aanvragen beheert in het Power shell-docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het Power shell-docs-team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
+In dit artikel wordt beschreven hoe we pull-aanvragen beheren in de Power shell-docs-opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het Power shell-docs-team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
 - De persoon die de PR verzendt, mag de PR niet samen voegen zonder een peer beoordeling.
 - Wijs de persoons revisor toe wanneer de PR wordt verzonden. Met een vroege toewijzing kan de revisor snel met redactionele opmerkingen reageren.
-- Gebruik opmerkingen om de aard van de wijziging of het type revisie dat wordt aangevraagd te beschrijven. Zorg ervoor dat @mention u de revisor bekijkt. Als de wijziging bijvoorbeeld klein is en u geen volledige technische controle nodig hebt, wordt dit in een opmerking beschreven.
+- Gebruik opmerkingen om de aard van de wijziging of het type revisie dat wordt aangevraagd te beschrijven. Zorg ervoor dat u @mention de revisor bekijkt. Als de wijziging bijvoorbeeld klein is en u geen volledige technische controle nodig hebt, wordt dit in een opmerking beschreven.
 
 ## <a name="pr-process-steps"></a>PR proces stappen
 
@@ -56,7 +56,7 @@ Raadpleeg de [controle lijst voor redactionele](editorial-checklist.md) voor een
     - Bestands koppelingen voor lokale bestanden
     - URL-koppelingen voor bestanden buiten de docset
   - Land instellingen uit Url's verwijderen
-  - Vereenvoudig Url's waarnaar wordt verwezen`docs.microsoft.com`
+  - Vereenvoudig Url's waarnaar wordt verwezen `docs.microsoft.com`
 
 ## <a name="branch-merge-process"></a>Vertakkings samenvoegings proces
 
@@ -97,13 +97,13 @@ Wanneer een PR wordt samengevoegd, wordt de kop van de doel vertakking gewijzigd
 
 ## <a name="publishing-to-live"></a>Publiceren naar Live
 
-De wijzigingen die in de `staging` vertakking zijn verzameld, moeten regel matig worden gepubliceerd op de Live-website. Hiervoor moet de `staging` vertakking in de `live` vertakking worden samengevoegd.
+De wijzigingen die in de vertakking zijn verzameld, moeten regel matig `staging` worden gepubliceerd op de Live-website. Hiervoor moet de `staging` vertakking in de vertakking worden samengevoegd `live` .
 
 - De `staging` vertakking moet `live` ten minste eenmaal per week worden samengevoegd.
 - De `staging` vertakking moet worden samengevoegd tot `live` na een belang rijke wijziging.
   - Wijzigingen in 50 of meer bestanden
   - Na het samen voegen van een release vertakking
-  - Wijzigingen in opslag plaats-of docset-configuraties (docfx. json, OPS-configuratie, build-scripts enzovoort)
+  - Wijzigingen in opslag plaats-of docset-configuraties (docfx.jsin, OPS-configuratie, build-scripts enzovoort)
   - Wijzigingen in het omleidings bestand
   - Wijzigingen in de inhouds opgave
   - Na het samen voegen van een ' project-' vertakking (content Reorg, bulksgewijze update, enzovoort)

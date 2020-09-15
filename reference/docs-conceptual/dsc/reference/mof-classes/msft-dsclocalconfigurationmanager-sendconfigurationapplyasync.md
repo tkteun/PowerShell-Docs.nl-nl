@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: SendConfigurationApplyAsync-methode
-ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941542"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463734"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync-methode
 
@@ -25,11 +25,11 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="parameters"></a>Parameters
 
-*ConfigurationData* \[in\] de omgevings gegevens voor de configuratie.
+**ConfigurationData** \[ in \] de omgevings gegevens voor de configuratie.
 
-*geforceerd* \[in\] op **waar** om te zorgen dat de configuratie wordt gestopt.
+**forceren** \[ in \] **True** om te zorgen dat de configuratie wordt gestopt.
 
-*jobId* \[in\] de id van de taak waarvoor de configuratie moet worden verzonden.
+**jobId** \[ in \] de id van de taak waarvoor de configuratie moet worden verzonden.
 
 ## <a name="return-value"></a>Retourwaarde
 

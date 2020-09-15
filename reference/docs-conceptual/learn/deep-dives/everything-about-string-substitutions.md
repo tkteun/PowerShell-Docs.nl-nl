@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over variabele vervanging in teken reeksen
 description: Er zijn veel manieren om variabelen in teken reeksen te gebruiken om opgemaakte tekst te maken.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1e65e90ffa09b34f62bc49ad64b062d429483c33
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 786526fb98dbf1b3ec7c5c6c985ac95b85a96259
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149822"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301315"
 ---
 # <a name="everything-you-wanted-to-know-about-variable-substitution-in-strings"></a>Alles wat u wilt weten over variabele vervanging in teken reeksen
 
@@ -71,7 +71,7 @@ $message = "Time: $($directory.CreationTime)"
 
 Dit werkt prima voor bepaalde situaties, maar het kan net zo gekke zijn als samen voegen als u slechts een paar variabelen hebt.
 
-### <a name="command-execution"></a>Opdracht uitvoering
+### <a name="command-execution"></a>Opdrachtuitvoering
 
 U kunt opdrachten binnen een teken reeks uitvoeren. Hoewel ik deze optie heb, vind ik deze niet mooi. Het wordt snel en moeilijk geruimed om fouten op te sporen. Ik voer de opdracht uit en sla deze op in een variabele of gebruik een opmaak teken reeks.
 

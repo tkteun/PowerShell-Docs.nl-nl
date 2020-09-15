@@ -1,19 +1,19 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxFileLine-resource
-ms.openlocfilehash: 4b07c5dd2715ce9f937b1e52deb97b6b4de64975
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c87054ec7039923bcb5e7c5c5d58f9221a12c9ca
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560879"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463666"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC voor Linux nxFileLine-resource
 
 De **nxFileLine** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van regels in een configuratie bestand op een Linux-knoop punt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 nxFileLine <string> #ResourceName

@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over hashtabellen
 description: Hashtabellen zijn heel belang rijk in Power shell, zodat het goed is om een duidelijker beeld te krijgen.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
-ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
+ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307126"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85353818"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles wat u wilt weten over hashtabellen
 
@@ -777,12 +777,13 @@ Het is niet altijd mogelijk om een waarde in de hashtabel te openen met de bijbe
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-Het gebruik van de notatie member Access ( `.` ) retourneert niets. Maar het gebruik van de notatie matrix index ( `[]` ) werkt.
+Wanneer de sleutel een matrix is, moet u de `$key` variabele in een subexpressie laten teruglopen zodat deze kan worden gebruikt met de notatie member Access ( `.` ). U kunt ook de notatie matrix index ( `[]` ) gebruiken.
 
 ## <a name="use-in-automatic-variables"></a>Gebruiken in automatische variabelen
 
@@ -962,7 +963,7 @@ Ik heb veel moeite gedekt. Ik hoop dat u er geen zorgen meer meer over hebt, of 
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [hashtabellen]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [matrices]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[Als u prestatie problemen hebt, test u deze]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[Als u prestatie problemen hebt, test u deze]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8

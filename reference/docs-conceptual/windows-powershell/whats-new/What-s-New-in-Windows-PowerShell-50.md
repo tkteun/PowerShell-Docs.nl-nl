@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Wat is er nieuw in Windows Power shell 5,0
-ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810580"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216002"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows Power shell 5,0
 
@@ -120,8 +120,8 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
   Eigenschappen of methoden die zijn gemarkeerd als verborgen, worden ook niet weer gegeven in IntelliSense-resultaten, tenzij u zich in een context bevindt waarin het lid zichtbaar moet zijn. Zo moet bij de automatische variabele $This verborgen leden worden weer gegeven in de methode klasse.
 - Nieuwe items, verwijder items en Get-Child item zijn verbeterd ter ondersteuning van het maken en beheren van [symbolische koppelingen](https://en.wikipedia.org/wiki/Symbolic_link). De para meter **-item type** voor nieuw item accepteert een nieuwe waarde, **SymbolicLink**. U kunt nu symbolische koppelingen maken op één lijn door de cmdlet New-item uit te voeren.
 - Get-Child item heeft ook een nieuwe depth-para meter, die u met de para meter-recursief gebruikt om de recursie te beperken. Get-Child item-recursief-diepte 2 retourneert bijvoorbeeld resultaten uit de huidige map, alle onderliggende mappen in de huidige map en alle mappen in de onderliggende mappen.
-- Met kopie-item kunt u nu bestanden of mappen van de ene Windows Power shell-sessie naar een andere kopiëren, wat betekent dat u bestanden kunt kopiëren naar sessies die zijn verbonden met externe computers (inclusief computers waarop nano server wordt uitgevoerd en dus geen andere interface heeft). Als u bestanden wilt kopiëren, geeft u PSSession-Id's op als de waarde van de para meters New-FromSession en-ToSession, en add-Path en-Destination om respectievelijk het oorspronkelijke pad en de doel locatie op te geven. Kopieer-item-path c: \\ MyFile. txt-ToSession $s-bestemming d: \\ destinationFolder.
-- Windows Power shell transcriptie is verbeterd voor alle hosting toepassingen (zoals Windows PowerShell ISE) naast de console-host (**Power shell. exe**). Transcriptie-opties (inclusief het inschakelen van een transcript voor het hele systeem) kunnen worden geconfigureerd door de instelling **Power shell transcriptie** Groepsbeleid in te scha kelen in Beheersjablonen/Windows-onderdelen/Windows Power shell.
+- Met kopie-item kunt u nu bestanden of mappen van de ene Windows Power shell-sessie naar een andere kopiëren, wat betekent dat u bestanden kunt kopiëren naar sessies die zijn verbonden met externe computers (inclusief computers waarop nano server wordt uitgevoerd en dus geen andere interface heeft). Als u bestanden wilt kopiëren, geeft u PSSession-Id's op als de waarde van de para meters New-FromSession en-ToSession, en add-Path en-Destination om respectievelijk het oorspronkelijke pad en de doel locatie op te geven. Bijvoorbeeld copy-item-path c: \\myFile.txt-ToSession $s-bestemming d: \\ destinationFolder.
+- Windows Power shell transcriptie is verbeterd tot toepassing op alle hosting toepassingen (zoals Windows PowerShell ISE) naast de console-host (**powershell.exe**). Transcriptie-opties (inclusief het inschakelen van een transcript voor het hele systeem) kunnen worden geconfigureerd door de instelling **Power shell transcriptie** Groepsbeleid in te scha kelen in Beheersjablonen/Windows-onderdelen/Windows Power shell.
 - Met een nieuwe uitgebreide functie voor het traceren van scripts kunt u het gebruik van Windows Power shell-scripts op een systeem gedetailleerd bijhouden en analyseren. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken door Windows Power shell geregistreerd in het gebeurtenis logboek van de Event Tracing for Windows (ETW), **micro soft-Windows-Power shell/operationeel**.
 - Met ingang van Windows Power shell 5,0 worden nieuwe cmdlets voor cryptografische bericht syntaxis versleuteling en ontsleuteling van inhoud ondersteund door gebruik te maken van de indeling van de IETF-standaard voor het cryptografisch beveiligen van berichten zoals beschreven door [RFC5652](https://tools.ietf.org/html/rfc5652). De cmdlets Get-CmsMessage, Protect-CmsMessage en Unprotect-CmsMessage zijn toegevoegd aan de module [micro soft. Power shell. Security](/powershell/module/Microsoft.PowerShell.Security) .
 - Nieuwe cmdlets in de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) , Get-runs, debug-runs Pace, Get-RunspaceDebug, Enable-RunspaceDebug en Disable-RunspaceDebug, kunt u opties voor fout opsporing op een runs Pace instellen en de fout opsporing op een runs Pace starten en stoppen. Voor wille keurige runspaces (dat wil zeggen runspaces die niet de standaard runs Pace zijn voor een Windows Power shell-console of Windows PowerShell ISE-sessie), kunt u met Windows Power shell onderbrekings punten in een script instellen en onderbrekings punten toevoegen het script stoppen om uit te voeren, totdat u een fout opsporingsprogramma kunt toevoegen om fouten op te sporen in het runs Pace-script. Geneste probleemoplossings ondersteuning voor wille keurige runspaces is toegevoegd aan de Windows Power shell-script debugger voor runspaces.
@@ -132,7 +132,7 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 - Met een nieuwe cmdlet New-TemporaryFile kunt u een tijdelijk bestand maken als onderdeel van het uitvoeren van scripts. Het nieuwe tijdelijke bestand wordt standaard gemaakt in ```C:\Users\<user name>\AppData\Local\Temp``` .
 - De cmdlets out-file, add-content en set-content hebben nu een nieuwe para meter-New-nieuwe regel, waarbij een nieuwe lijn na de uitvoer wordt wegge laten.
 - De cmdlet New-GUID maakt gebruik van de .NET Framework GUID-klasse voor het genereren van een GUID, handig wanneer u scripts of DSC-resources schrijft.
-- Omdat de gegevens van de bestands versie misleidend kunnen zijn, met name nadat een bestand is geïnstalleerd, zijn er nieuwe FileVersionRaw-en ProductVersionRaw-script eigenschappen beschikbaar voor file info-objecten. U kunt bijvoorbeeld de volgende opdracht uitvoeren om de waarden van deze eigenschappen voor Power shell. exe weer te geven, waarbij $pid de proces-ID bevat voor een actieve sessie van Windows Power shell:`Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
+- Omdat de gegevens van de bestands versie misleidend kunnen zijn, met name nadat een bestand is geïnstalleerd, zijn er nieuwe FileVersionRaw-en ProductVersionRaw-script eigenschappen beschikbaar voor file info-objecten. U kunt bijvoorbeeld de volgende opdracht uitvoeren om de waarden van deze eigenschappen voor powershell.exe weer te geven, waarbij $pid de proces-ID bevat voor een actieve sessie van Windows Power shell: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - Met de nieuwe cmdlets Enter-PSHostProcess en Exit-PSHostProcess kunt u fouten opsporen in Windows Power shell-scripts in processen gescheiden van het huidige proces dat wordt uitgevoerd in de Windows Power shell-console. Voer Enter-PSHostProcess uit om een specifieke proces-ID in te voeren of toe te voegen, en voer Get-runs Pace uit om de actieve runspaces binnen het proces te retour neren. Voer exit-PSHostProcess uit om het proces te ontkoppelen wanneer u klaar bent met het opsporen van fouten in het script in het proces.
 - Er is een nieuwe wacht fout-cmdlet toegevoegd aan de module [micro soft. Power shell. Utility](/powershell/module/Microsoft.PowerShell.Utility) . U kunt wacht debugging uitvoeren om een script in het fout opsporingsprogramma te stoppen voordat u de volgende instructie in het script uitvoert.
 - Het fout opsporingsprogramma van de Windows Power shell-werk stroom ondersteunt nu het volt ooien van opdrachten of tabbladen en u kunt fouten opsporen in geneste werk stromen U kunt nu op **CTRL + onderbreken** drukken om de fout opsporing in een actief script in te voeren, zowel voor lokale als externe sessies, en in een werk stroom script.
@@ -187,7 +187,7 @@ Veel updates en verbeteringen in Windows Power shell desired state Configuration
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nieuwe functies in Windows PowerShell ISE
 
-- U kunt nu externe Windows Power shell-scripts en-bestanden bewerken in een lokale kopie van Windows PowerShell ISE, door Enter-PSSession uit te voeren om een externe sessie te starten op de computer die de bestanden opslaat die u wilt bewerken en vervolgens **PSEdit \< pad en bestands naam op \> de externe computer uit**te voeren. Deze functie vereenvoudigt het bewerken van Windows Power Shell-bestanden die zijn opgeslagen op de Server Core-installatie optie van Windows Server, waarbij Windows PowerShell ISE niet kan worden uitgevoerd.
+- U kunt nu externe Windows Power shell-scripts en-bestanden in een lokale kopie van Windows PowerShell ISE bewerken door Enter-PSSession uit te voeren om een externe sessie te starten op de computer die de bestanden opslaat die u wilt bewerken en vervolgens **PSEdit \<path and file name on the remote computer\> **uit te voeren. Deze functie vereenvoudigt het bewerken van Windows Power Shell-bestanden die zijn opgeslagen op de Server Core-installatie optie van Windows Server, waarbij Windows PowerShell ISE niet kan worden uitgevoerd.
 - De cmdlet start-transcriptie wordt nu ondersteund in Windows PowerShell ISE.
 - U kunt nu fouten opsporen in externe scripts in Windows PowerShell ISE.
 - Een nieuwe menu opdracht, **verbreekt alle** (CTRL + B), breekt de fout opsporing voor zowel lokale als extern uitgevoerde scripts.
@@ -237,7 +237,7 @@ Windows Power Shell 4,0 bevat de volgende nieuwe functies.
 - Een nieuwe cmdlet **Get-FileHash**, die een bestandshash retourneert in een van de verschillende indelingen voor een opgegeven bestand, is toegevoegd.
 - In Windows Power Shell 4,0, als een module de sleutel **DefaultCommandPrefix** in het manifest gebruikt, of als de gebruiker een module importeert met de para meter **prefix** , worden de opdrachten in de module met het voor voegsel in de eigenschap **ExportedCommands** van de module weer gegeven. Wanneer u de opdrachten uitvoert met behulp van de module-gekwalificeerde syntaxis, module \\ naam opdracht, moeten de opdracht namen het voor voegsel bevatten.
 - De waarde van **$PSVersionTable. PSVersion** is bijgewerkt naar 4,0.
-- **Waar ()** operator gedrag is gewijzigd. `Collection.Where('property -match name')`het accepteren van een teken reeks expressie in de indeling `"Property -CompareOperator Value"` wordt niet meer ondersteund.
+- **Waar ()** operator gedrag is gewijzigd. `Collection.Where('property -match name')` het accepteren van een teken reeks expressie in de indeling `"Property -CompareOperator Value"` wordt niet meer ondersteund.
   De operator **WHERE ()** accepteert echter teken reeks expressies in de indeling van een script Block; Dit wordt nog steeds ondersteund.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nieuwe functies in Windows Power shell Integrated Scripting Environment (ISE)
@@ -270,7 +270,7 @@ Windows Power Shell 4,0 bevat de volgende nieuwe functies.
 ### <a name="new-features-in-windows-powershell-web-access"></a>Nieuwe functies in Windows Power shell Web Access
 
 - U kunt de verbinding verbreken en opnieuw verbinding maken met bestaande sessies in de web-console van Windows Power shell Web Access. Met de knop **Opslaan** in de webconsole kunt u de verbinding met een sessie verbreken zonder deze te verwijderen en opnieuw verbinding te maken met de sessie.
-- Standaard parameters kunnen worden weer gegeven op de aanmeldings pagina. Als u standaard parameters wilt weer geven, configureert u waarden voor alle instellingen die worden weer gegeven in het gedeelte **optionele Verbindings instellingen** van de aanmeldings pagina in een bestand met de naam **Web. config**. U kunt het bestand **Web. config** gebruiken om alle optionele Verbindings instellingen te configureren, behalve voor een tweede of alternatieve set referenties.
+- Standaard parameters kunnen worden weer gegeven op de aanmeldings pagina. Als u standaard parameters wilt weer geven, configureert u waarden voor alle instellingen die worden weer gegeven in het gedeelte **optionele Verbindings instellingen** van de aanmeldings pagina in een bestand met de naam **web.config**. U kunt het **web.config** -bestand gebruiken om alle optionele Verbindings instellingen te configureren, behalve voor een tweede of alternatieve set referenties.
 - In Windows Server 2012 R2 kunt u autorisatie regels voor Windows Power shell-Internet toegang op afstand beheren. De cmdlets **add-PswaAuthorizationRule** en **test-PswaAuthorizationRule** bevatten nu een referentie parameter waarmee beheerders autorisatie regels kunnen beheren vanaf een externe computer of in een Windows Power shell-sessie voor Internet toegang.
 - U kunt nu meerdere Windows Power shell-sessies voor webtoegang hebben in één browser sessie met behulp van een nieuw browser tabblad voor elke sessie. U hoeft niet langer een nieuwe browser sessie te openen om verbinding te maken met een nieuwe sessie in de Windows Power shell-console van het web.
 
@@ -322,7 +322,7 @@ Windows Power Shell 3,0 bevat de volgende nieuwe functies.
 - [Verbeteringen in de opmaak en uitvoer](#formatting-and-output-improvements)
 - [Verbeterde beleving van de console-host](#enhanced-console-host-experience)
 - [Nieuwe cmdlet-en hosting-Api's](#new-cmdlet-and-hosting-apis)
-- [Prestatie verbeteringen](#performance-improvements)
+- [Prestatieverbeteringen](#performance-improvements)
 - [Ondersteuning voor runas en gedeelde host](#runas-and-shared-host-support)
 - [Verbeteringen voor speciale teken verwerking](#special-character-handling-improvements)
 
@@ -353,7 +353,7 @@ Hier volgen de voor delen van Windows Power shell-werk stroom
 
 Windows Power shell Web Access is een Windows Server 2012-functie waarmee gebruikers Windows Power shell-opdrachten en-scripts kunnen uitvoeren in een webconsole. Voor apparaten die gebruikmaken van de webconsole, zijn geen Windows Power shell, software voor extern beheer of installatie van invoeg toepassingen vereist. Alles wat vereist is, is een correct geconfigureerde Windows Power shell Web Access-Gateway en een browser voor client apparaten die Java script ondersteunt en cookies accepteert.
 
-Zie [deploy Windows Power shell Web Access](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)(Engelstalig) voor meer informatie.
+Zie [deploy Windows Power shell Web Access](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)(Engelstalig) voor meer informatie.
 
 ### <a name="new-windows-powershell-ise-features"></a>Nieuwe Windows PowerShell ISE functies
 
@@ -557,7 +557,7 @@ Windows Power Shell 3,0 verbetert de ondersteuning voor logboek registratie en t
 
 ### <a name="formatting-and-output-improvements"></a>Verbeteringen in de opmaak en uitvoer
 
-Dankzij de nieuwe opmaak-en uitvoer verbeteringen wordt de efficiëntie van alle Windows Power shell-gebruikers verbeterd. De verbeteringen omvatten uitvoer omleiding voor alle stromen, een uitgebreide cmdlet voor update typen waarmee typen dynamisch worden toegevoegd zonder indeling. ps1xml-bestanden, tekst omloop in uitvoer, standaard opmaak eigenschappen van aangepaste objecten, het type **PSCustomObject** , verbeterde opmaak voor WMI-objecten en heterogene objecten, en ondersteuning voor het detecteren van overbelasting van de methode.
+Dankzij de nieuwe opmaak-en uitvoer verbeteringen wordt de efficiëntie van alle Windows Power shell-gebruikers verbeterd. De verbeteringen omvatten uitvoer omleiding voor alle streams, een uitgebreide cmdlet voor update typen waarmee typen dynamisch worden toegevoegd zonder Format.ps1XML-bestanden, tekst omloop in uitvoer, standaard opmaak eigenschappen van aangepaste objecten, het type **PSCustomObject** , verbeterde opmaak voor WMI-objecten en heterogene objecten, en ondersteuning voor het detecteren van overbelasting van de methode.
 
 ### <a name="enhanced-console-host-experience"></a>Verbeterde beleving van de console-host
 

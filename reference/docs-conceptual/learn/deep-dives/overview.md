@@ -1,11 +1,11 @@
 ---
-title: Diepe Dives
+title: Uitgebreide presentaties
 ms.date: 05/23/2020
 ms.openlocfilehash: 9ba687c81f5bdc64881fa78a6e4ebbe051320358
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 07/01/2020
 ms.locfileid: "84149780"
 ---
 # <a name="deep-dive-articles"></a>Diep gaande artikelen

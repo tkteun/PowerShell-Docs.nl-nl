@@ -1,15 +1,15 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/10/2020
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 contributor: keithb
 title: WMF 5.1 installeren en configureren
-ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809964"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671390"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5,1 installeren en configureren
 
@@ -25,14 +25,14 @@ Down load het WMF 5,1-pakket voor het besturings systeem en de architectuur waar
 |------------------------|-------------------------|----------------------------------------|
 | Windows Server 2012 R2 |                         | [Win 8.1 AndW2K12R2-KB3191564-x64. MSU][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64. MSU][]            |
-| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64. ZIP][]    |
+| Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
 | Windows 8.1            |                         | **x64:** [win 8.1 andw2k12r2-kb3191564-x64. MSU][]</br>**x86:** [win 8.1-kb3191564-x86. MSU][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64. zip][]</br>**x86:** [Win7-KB3191566-x86. zip][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64. MSU]: https://go.microsoft.com/fwlink/?linkid=839513
-[Win7-KB3191566-x86. ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
-[Win7AndW2K8R2-KB3191566-x64. ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
+[Win7-KB3191566-x86.ZIP]: https://go.microsoft.com/fwlink/?linkid=839522
+[Win7AndW2K8R2-KB3191566-x64.ZIP]: https://go.microsoft.com/fwlink/?linkid=839523
 [Win 8.1-KB3191564-x86. MSU]: https://go.microsoft.com/fwlink/?linkid=839521
 [Win 8.1 AndW2K12R2-KB3191564-x64. MSU]: https://go.microsoft.com/fwlink/?linkid=839516
 
@@ -51,20 +51,19 @@ Voor de installatie van WMF 5,1 op Windows Server 2008 R2 SP1 of Windows 7 SP1 i
 
 - Het meest recente Service Pack moet zijn geïnstalleerd.
 - WMF 3,0 **moet niet** zijn geïnstalleerd. Het installeren van WMF 5,1 via WMF 3,0 resulteert in het verlies van de **PSModulePath** ( `$env:PSModulePath` ), wat kan leiden tot het mislukken van andere toepassingen. Voordat u WMF 5,1 installeert, moet u WMF 3,0 verwijderen of de **PSModulePath** opslaan en deze vervolgens hand matig herstellen nadat de installatie van WMF 5,1 is voltooid.
-- Voor WMF 5,1 is ten minste [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642)vereist.
-  U kunt Microsoft .NET Framework 4.5.2 installeren door de instructies op de download locatie te volgen.
+- Voor WMF 5,1 is ten minste [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642)vereist. U kunt Microsoft .NET Framework 4.5.2 installeren door de instructies op de download locatie te volgen.
 
 ### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>WMF 5,1 installeren op Windows Server 2008 R2 en Windows 7
 
 1. Navigeer naar de map waarin u het ZIP-bestand hebt gedownload.
 
-2. Klik met de rechter muisknop op het ZIP-bestand en selecteer **Alles uitpakken...**. Het ZIP-bestand bevat twee bestanden: een MSU en het `Install-WMF5.1.ps1` script bestand. Zodra u het ZIP-bestand hebt uitgepakt, kunt u de inhoud kopiëren naar een computer met Windows 7 of Windows Server 2008 R2.
+1. Klik met de rechter muisknop op het ZIP-bestand en selecteer **Alles uitpakken...**. Het ZIP-bestand bevat twee bestanden: een MSU en het `Install-WMF5.1.ps1` script bestand. Zodra u het ZIP-bestand hebt uitgepakt, kunt u de inhoud kopiëren naar een computer met Windows 7 of Windows Server 2008 R2.
 
-3. Nadat u de inhoud van het ZIP-bestand hebt uitgepakt, opent u Power shell als beheerder en navigeert u naar de map met de inhoud van het ZIP-bestand.
+1. Nadat u de inhoud van het ZIP-bestand hebt uitgepakt, opent u Power shell als beheerder en navigeert u naar de map met de inhoud van het ZIP-bestand.
 
-4. Voer het `Install-WMF5.1.ps1` script uit in die map en volg de instructies. Met dit script worden de vereisten op de lokale computer gecontroleerd en wordt WMF 5,1 geïnstalleerd als aan de vereisten is voldaan. De vereisten worden hieronder weer gegeven.
+1. Voer het `Install-WMF5.1.ps1` script uit in die map en volg de instructies. Met dit script worden de vereisten op de lokale computer gecontroleerd en wordt WMF 5,1 geïnstalleerd als aan de vereisten is voldaan. De vereisten worden hieronder weer gegeven.
 
-   `Install-WMF5.1.ps1`neemt de volgende para meters op om de installatie van Windows Server 2008 R2 en Windows 7 te vereenvoudigen:
+   `Install-WMF5.1.ps1` neemt de volgende para meters op om de installatie van Windows Server 2008 R2 en Windows 7 te vereenvoudigen:
 
    - **AcceptEula**: als deze para meter wordt opgenomen, wordt de gebruiksrecht overeenkomst automatisch geaccepteerd en wordt deze niet weer gegeven.
    - **AllowRestart**: deze para meter kan alleen worden gebruikt als AcceptEula is opgegeven. Als deze para meter is opgenomen en de computer opnieuw moet worden opgestart na de installatie van de WMF 5,1, wordt de computer opnieuw opgestart zonder dat u onmiddellijk wordt gevraagd of de installatie is voltooid.
@@ -78,16 +77,16 @@ Windows Power shell desired state Configuration (DSC) is afhankelijk van WinRM. 
 ### <a name="install-from-windows-file-explorer"></a>Installeren vanuit Windows Verkenner
 
 1. Navigeer naar de map waarin u het MSU-bestand hebt gedownload.
-2. Dubbel klik op de MSU om deze uit te voeren.
+1. Dubbel klik op de MSU om deze uit te voeren.
 
 ### <a name="installing-from-the-command-prompt"></a>Installeren vanaf de opdracht prompt
 
 1. Nadat u het juiste pakket voor de architectuur van de computer hebt gedownload, opent u een opdracht prompt venster met verhoogde gebruikers rechten (als administrator uitvoeren). Op de Server Core-installatie opties van Windows Server 2012 R2, Windows Server 2012 of Windows Server 2008 R2 SP1 wordt opdracht prompt standaard geopend met verhoogde gebruikers rechten.
-2. Wijzig de mappen in de map waarin u het WMF 5,1-installatie pakket hebt gedownload of gekopieerd.
-3. Voer een van de volgende opdrachten uit:
-   - Voer uit op computers met Windows Server 2012 R2 of Windows 8,1 x64 `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet` .
-   - Voer uit op computers met Windows Server 2012 `W2K12-KB3191565-x64.msu /quiet` .
-   - Voer uit op computers met Windows 8,1 x86 `Win8.1-KB3191564-x86.msu /quiet` .
+1. Wijzig de mappen in de map waarin u het WMF 5,1-installatie pakket hebt gedownload of gekopieerd.
+1. Voer een van de volgende opdrachten uit:
+   - Voer uit op computers met Windows Server 2012 R2 of Windows 8,1 x64 `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet /norestart` .
+   - Voer uit op computers met Windows Server 2012 `W2K12-KB3191565-x64.msu /quiet /norestart` .
+   - Voer uit op computers met Windows 8,1 x86 `Win8.1-KB3191564-x86.msu /quiet /norestart` .
 
-> [!NOTE]
-> Voor het installeren van WMF 5,1 moet opnieuw worden opgestart. Als u de `/quiet` optie gebruikt, wordt het systeem zonder waarschuwing opnieuw opgestart. Gebruik de `/norestart` optie om het opnieuw opstarten te voor komen. WMF 5,1 wordt echter pas geïnstalleerd nadat u de computer opnieuw hebt opgestart.
+   > [!NOTE]
+   > Voor het installeren van WMF 5,1 moet opnieuw worden opgestart. Als u de `/quiet` optie alleen gebruikt, wordt het systeem zonder waarschuwing opnieuw opgestart. Gebruik de `/norestart` optie om het opnieuw opstarten te voor komen. WMF 5,1 wordt echter pas geïnstalleerd nadat u de computer opnieuw hebt opgestart.

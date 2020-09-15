@@ -1,20 +1,20 @@
 ---
 title: Bijdragen aan Power shell-documentatie
-description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als bijdrager aan de Power shell-documentatie.
+description: Dit artikel bevat een overzicht van hoe u als inzender aan de slag kunt gaan met PowerShell-documentatie.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5f9efbff500b1fd0c11e9b43ca0a7feb77684c6a
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560658"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158153"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bijdragen aan Power shell-documentatie
 
 Hartelijk dank voor uw ondersteuning van Power shell.
 
-De hand leiding voor inzenders is een verzameling artikelen waarin de hulpprogram ma's en processen worden uitgelegd die we gebruiken om documentatie bij micro soft te maken. Sommige van deze hand leidingen beslaan informatie die gemeen schappelijk is voor elke documentatieset die wordt gepubliceerd op [docs.Microsoft.com][docs]. Sommige hand leidingen zijn specifiek voor het schrijven van documentatie voor Power shell.
+De gids voor inzenders is een verzameling artikelen waarin de hulpprogramma's en processen worden uitgelegd die we gebruiken om documentatie bij Microsoft te maken. Sommige van deze hand leidingen beslaan informatie die gemeen schappelijk is voor elke documentatieset die wordt gepubliceerd op [docs.Microsoft.com][docs]. Sommige gidsen zijn specifiek voor het schrijven van documentatie voor PowerShell.
 
 De gemeen schappelijke artikelen zijn beschikbaar in onze gecentraliseerde [hand leiding voor mede][contribute]werkers. De Power shell-specifieke hand leidingen zijn hier beschikbaar.
 
@@ -30,7 +30,7 @@ Er zijn twee manieren om bij te dragen. Beide bijdragen zijn waardevol voor ons.
 
 U hebt allereerst een GitHub-account nodig om bij te dragen aan de documentatie. Gebruik de volgende controle lijst om de hulpprogram ma's op te halen en inzicht te krijgen in de processen die we gebruiken om bijdragen te leveren.
 
-1. [Aanmelden voor GitHub](/contribute/get-started-setup-github)
+1. [Registreren voor GitHub](/contribute/get-started-setup-github)
 1. [Hulpprogramma's voor Git/Markdown installeren](/contribute/get-started-setup-tools)
 1. [Het docs-ontwerp pakket installeren](/contribute/how-to-write-docs-auth-pack)
 1. [Installeer posh-Git][posh-git] -niet vereist maar wordt aanbevolen
@@ -80,6 +80,6 @@ Aanvullende bronnen
 [docs]: https://docs.microsoft.com/
 [file-an-issue]: file-an-issue.md
 [posh-git]: https://www.powershellgallery.com/packages/posh-git
-[psdocs]: https://docs.microsoft.com/powershell
-[style-guide]: https://docs.microsoft.com/style-guide/welcome/
-[terms-of-use]: https://docs.microsoft.com/legal/termsofuse
+[psdocs]: /powershell
+[style-guide]: /style-guide/welcome/
+[terms-of-use]: /legal/termsofuse

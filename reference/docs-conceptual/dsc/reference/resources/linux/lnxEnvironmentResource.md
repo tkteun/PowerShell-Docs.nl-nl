@@ -1,19 +1,19 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxEnvironment-resource
-ms.openlocfilehash: 64de54fbde15f9d4d7fac425af27b6ef11347dce
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560892"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463683"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC voor Linux nxEnvironment-resource
 
 De **nxEnvironment** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van systeem omgevingsvariabelen op een Linux-knoop punt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 nxEnvironment <string> #ResourceName
@@ -30,7 +30,7 @@ nxEnvironment <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
+|Naam |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
 |Waarde |De waarde die moet worden toegewezen aan de omgevings variabele. |
 |Pad |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in op `$true` als de variabele een **padvariabele** is. anders stelt u deze in op `$false` . De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
 

@@ -1,15 +1,15 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/11/2020
 keywords: powershell,cmdlet
-title: Power shell-trainings materialen
-ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+title: PowerShell-trainingsbronnen
+ms.openlocfilehash: d9d2f77090a7da7a5bef0c6d0c2af80c3a07be46
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808432"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722844"
 ---
-# <a name="powershell-learning-resources"></a>Power shell-trainings materialen
+# <a name="powershell-learning-resources"></a>PowerShell-trainingsbronnen
 
 Aanvullende bronnen voor meer informatie over Power shell.
 
@@ -23,7 +23,7 @@ Naast de Help die beschikbaar is op de opdracht regel, bieden de volgende bronne
 
 ## <a name="channel-9-videos"></a>Channel 9-video's
 
-Channel 9 is ons video publicatie platform. Er zijn honderden Video's over Power shell beschikbaar. [Zoek naar Power shell](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) om te zien welke Video's er beschikbaar zijn.
+Channel 9 is ons video publicatie platform. Er zijn honderden Video's over Power shell beschikbaar. [Zoek naar Power shell](https://channel9.msdn.com/Tags/powershell) om te zien welke Video's er beschikbaar zijn.
 
 ### <a name="microsoft-virtual-academy"></a>Micro soft Virtual Academy
 

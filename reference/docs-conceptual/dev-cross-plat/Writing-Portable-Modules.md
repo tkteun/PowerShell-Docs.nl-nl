@@ -2,12 +2,12 @@
 ms.date: 01/10/2020
 keywords: powershell,cmdlet
 title: Draag bare modules schrijven
-ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810958"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158119"
 ---
 # <a name="portable-modules"></a>Draag bare modules
 
@@ -130,15 +130,12 @@ Time Elapsed 00:00:05.40
 Nadat u de module hebt gemaakt, kunt u deze importeren en de voor beeld-cmdlet uitvoeren.
 
 ```powershell
-ipmo .\bin\Debug\netstandard2.0\myModule.dll
+Import-Module .\bin\Debug\netstandard2.0\myModule.dll
 Test-SampleCmdlet -?
 Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 ```
 
 ```output
-PS C:\Users\Steve\myModule> ipmo .\bin\Debug\netstandard2.0\myModule.dll
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -?
-
 NAME
     Test-SampleCmdlet
 
@@ -153,8 +150,6 @@ ALIASES
 REMARKS
     None
 
-
-PS C:\Users\Steve\myModule> Test-SampleCmdlet -FavoriteNumber 7 -FavoritePet Cat
 
 FavoriteNumber FavoritePet
 -------------- -----------
@@ -191,7 +186,7 @@ Power shell Standard is bedoeld om altijd compatibel te zijn. Een module die is 
 Nadat u hebt gecontroleerd of de module werkt met Windows Power shell en Power shell core, moet het module manifest expliciet duiden op compatibiliteit met behulp van de eigenschap [CompatiblePSEditions][] . Een waarde `Desktop` betekent dat de module compatibel is met Windows Power shell, terwijl een waarde `Core` betekent dat de module compatibel is met Power shell core. Inclusief beide `Desktop` en `Core` betekent dat de module compatibel is met Windows Power shell en Power shell core.
 
 > [!NOTE]
-> `Core`betekent niet automatisch dat de module compatibel is met Windows, Linux en macOS.
+> `Core` betekent niet automatisch dat de module compatibel is met Windows, Linux en macOS.
 > De eigenschap **CompatiblePSEditions** is geïntroduceerd in Power Shell v5. Module manifesten die gebruikmaken van de eigenschap **CompatiblePSEditions** , kunnen niet worden geladen in versies voorafgaand aan Power Shell v5.
 
 ### <a name="indicating-os-compatibility"></a>De compatibiliteit van besturings systemen aangeven
@@ -306,4 +301,4 @@ managed.dll folder
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET-portabiliteit Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
-[.NET RID-catalogus]: https://docs.microsoft.com/dotnet/core/rid-catalog
+[.NET RID-catalogus]: /dotnet/core/rid-catalog

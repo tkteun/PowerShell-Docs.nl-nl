@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-archief resource
-ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560369"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463785"
 ---
 # <a name="dsc-archive-resource"></a>DSC-archief resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "83560369"
 
 De archief resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het uitpakken van archief bestanden (. zip) op een specifiek pad.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Archive [string] #ResourceName
@@ -23,6 +23,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -35,11 +36,12 @@ Archive [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Doel |Hiermee geeft u de locatie op waar de archief inhoud moet worden uitgepakt. |
-|Pad |Hiermee geeft u het bronpad van het archief bestand. |
-|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Geldige waarden zijn: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. |
-|Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaard waarde is **False**. |
-|Valideren| Maakt gebruik van de eigenschap **checksum** om te bepalen of het archief overeenkomt met de hand tekening. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. Als u **Validate** zonder **controlesom**opgeeft, wordt standaard een _SHA-256-_ **controlesom** gebruikt. |
+| Doel | Hiermee geeft u de locatie op waar de archief inhoud moet worden uitgepakt. |
+| Pad | Hiermee geeft u het bronpad van het archief bestand. |
+| Controlesom | Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Geldige waarden zijn: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. |
+| Referentie | De referentie van een gebruikers account met machtigingen voor toegang tot het opgegeven pad en de bestemming van het archief, indien nodig. |
+| Force | Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaard waarde is **False**. |
+| Valideren| Maakt gebruik van de eigenschap **checksum** om te bepalen of het archief overeenkomt met de hand tekening. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. Als u **Validate** zonder **controlesom**opgeeft, wordt standaard een _SHA-256-_ **controlesom** gebruikt. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
@@ -54,7 +56,7 @@ Archive [string] #ResourceName
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u de archief resource gebruikt om ervoor te zorgen dat de inhoud van een archief bestand `Test.zip` bestaat en op een bepaalde bestemming wordt geëxtraheerd.
+In het volgende voor beeld ziet u hoe u de archief resource gebruikt om ervoor te zorgen dat de inhoud van een archief bestand `Test.zip` bestaat en dat wordt geëxtraheerd op een bepaald doel met en gemachtigd.
 
 ```powershell
 Archive ArchiveExample {
