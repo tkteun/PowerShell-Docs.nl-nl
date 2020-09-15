@@ -1,19 +1,12 @@
 ---
-title: HelpInfo XML-voorbeeld bestand | Microsoft Docs
-ms.custom: ''
+title: HelpInfo-XML-voorbeeldbestand
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6544070f-5549-407f-8603-5df60fe9e013
-caps.latest.revision: 7
-ms.openlocfilehash: 3cf4790be3e26c8b55335da32152a4e2c1ee67b6
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: ec9a2a1afed4f22be00900cbc80b580ff99f8f38
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810846"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953264"
 ---
 # <a name="helpinfo-xml-sample-file"></a>HelpInfo-XML-voorbeeldbestand
 
@@ -24,7 +17,7 @@ In dit onderwerp wordt een voor beeld weer gegeven van een juist opgemaakt besta
 ```xml
 
 <?xml version="1.0" encoding="utf-8"?>
-<HelpInfo xmlns="https://schemas.microsoft.com/powershell/help/2010/05">
+<HelpInfo xmlns="http://schemas.microsoft.com/powershell/help/2010/05">
    <HelpContentURI>https://go.microsoft.com/fwlink/?LinkID=141553</HelpContentURI>
    <SupportedUICultures>
     <UICulture>

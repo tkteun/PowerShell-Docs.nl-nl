@@ -1,19 +1,12 @@
 ---
-title: Help in functies op basis van opmerkingen plaatsen | Microsoft Docs
-ms.custom: ''
+title: Help op basis van opmerkingen in functies plaatsen
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
-caps.latest.revision: 5
-ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557058"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893200"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Help op basis van opmerkingen in functies plaatsen
 
@@ -29,14 +22,13 @@ In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een 
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Voor beelden van de plaatsing van een Help in een functie
 
- In de volgende voor beelden ziet u de drie plaatsings opties voor op opmerkingen gebaseerde Help voor een functie.
+In de volgende voor beelden ziet u de drie plaatsings opties voor op opmerkingen gebaseerde Help voor een functie.
 
 ### <a name="help-at-the-beginning-of-a-function-body"></a>Help aan het begin van een functie hoofd tekst
 
- In het volgende voor beeld wordt aan het begin van een functie hoofdtekst een opmerking weer gegeven.
+In het volgende voor beeld wordt aan het begin van een functie hoofdtekst een opmerking weer gegeven.
 
 ```powershell
-
 function MyProcess
 {
     <#
@@ -46,7 +38,6 @@ function MyProcess
 
     Get-Process powershell
 }
-
 ```
 
 ### <a name="help-at-the-end-of-a-function-body"></a>Help aan het einde van een functie hoofd tekst
@@ -54,7 +45,6 @@ function MyProcess
  In het volgende voor beeld wordt een opmerking weer gegeven aan het einde van de hoofd tekst van een functie.
 
 ```powershell
-
 function MyFunction
 {
     Get-Process powershell
@@ -64,7 +54,6 @@ function MyFunction
        The MyProcess function gets the Windows PowerShell process.
     #>
 }
-
 ```
 
 ### <a name="help-before-the-function-keyword"></a>Help voor het tref woord function
@@ -72,11 +61,9 @@ function MyFunction
  In de volgende voor beelden ziet u opmerkingen op basis van de regel voor het gereserveerde woord function.
 
 ```powershell
-
 <#
     .Description
     The MyProcess function gets the Windows PowerShell process.
 #>
 function MyFunction { Get-Process powershell}
-
 ```

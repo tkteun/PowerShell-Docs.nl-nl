@@ -1,19 +1,12 @@
 ---
 title: SelectionSetName-element voor ViewSelectedBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
-caps.latest.revision: 13
-ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f6410b463bcb00d2758849c2f7e13cd839277e50
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358815"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772600"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>Het element SelectionSetName voor ViewSelectedBy (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u een set .NET-objecten op die worden weer gegeven in de weer gave
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) ViewSelectedBy element (Format) SelectionSetName element voor ViewSelectedBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <SelectionSetName>Name of selection set<SelectionSetName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSetName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `SelectionSetName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ViewSelectedBy-element (indeling)](./viewselectedby-element-format.md)|Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.|
+|[Het element ViewSelectedBy (opmaak)](./viewselectedby-element-format.md)|Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
-Geef de naam op van de selectieset die is gedefinieerd door het `Name`-element voor de selectieset.
+Geef de naam op van de selectieset die is gedefinieerd door het `Name` element voor de selectieset.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -69,8 +62,8 @@ In het volgende voor beeld ziet u hoe u een selectieset kunt opgeven voor een li
 
 ## <a name="see-also"></a>Zie ook
 
-[Selectie sets definiëren](./defining-selection-sets.md)
+[Selectiereeksen definiëren](./defining-selection-sets.md)
 
-[ViewSelectedBy-element (indeling)](./viewselectedby-element-format.md)
+[Het element ViewSelectedBy (opmaak)](./viewselectedby-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

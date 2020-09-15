@@ -1,23 +1,16 @@
 ---
 title: Voor beeld van Windows PowerShell01 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
-ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560998"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771937"
 ---
 # <a name="windows-powershell01-sample"></a>Voorbeeld Windows PowerShell01
 
-In dit voor beeld ziet u hoe u een object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) kunt gebruiken om de functionaliteit van een runs Pace te beperken. De uitvoer van dit voor beeld laat zien hoe u de taal modus van de runs Pace kunt beperken, hoe u een cmdlet als privé markeert, hoe u cmdlets en providers toevoegt en verwijdert, hoe u een proxy opdracht toevoegt, en meer. Dit voor beeld is gericht op het programmatisch beperken van de runs Pace. Het uitvoeren van scripts voor het beperken van de runs Pace bevat de opdrachten $ExecutionContext. SessionState. LanguageMode en PSSessionConfiguration.
+In dit voor beeld ziet u hoe u een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object gebruikt om de functionaliteit van een runs Pace te beperken. De uitvoer van dit voor beeld laat zien hoe u de taal modus van de runs Pace kunt beperken, hoe u een cmdlet als privé markeert, hoe u cmdlets en providers toevoegt en verwijdert, hoe u een proxy opdracht toevoegt, en meer. Dit voor beeld is gericht op het programmatisch beperken van de runs Pace. Het uitvoeren van scripts voor het beperken van de runs Pace bevat de opdrachten $ExecutionContext. SessionState. LanguageMode en PSSessionConfiguration.
 
 ## <a name="requirements"></a>Vereisten
 
@@ -27,17 +20,17 @@ Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
 In dit voor beeld ziet u het volgende:
 
-- De taal beperken door de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) in te stellen.
+- De taal beperken door deSystem.Management.Automation.Runspaces.Initialsessionstate in te stellen [ . Eigenschap Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) .
 
 - Aliassen toevoegen aan de oorspronkelijke sessie status met behulp van [System. Management. Automation. Runspaces. Sessionstatealiasentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) -object.
 
 - Het markeren van opdrachten als persoonlijk.
 
-- Het verwijderen van providers uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .
+- Het verwijderen van providers uit de oorspronkelijke sessie status met behulp van de [System.Management.Automation.Runspaces.Initialsessionstate. Eigenschap providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .
 
-- Het verwijderen van opdrachten uit de oorspronkelijke sessie status met behulp van de eigenschap [System. Management. Automation. Runspaces. Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
+- Het verwijderen van opdrachten uit de oorspronkelijke sessie status met behulp van de eigenschap [System.Management.Automation.Runspaces.Initialsessionstate. commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
 
-- Opdrachten en providers toevoegen aan het object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Opdrachten en providers toevoegen aan het [ tialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object vanSystem.Management.Automation.Runspaces.Ini.
 
 ## <a name="example"></a>Voorbeeld
 

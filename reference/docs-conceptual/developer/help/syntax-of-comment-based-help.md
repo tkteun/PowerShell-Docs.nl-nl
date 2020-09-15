@@ -1,19 +1,12 @@
 ---
-title: Syntaxis van op opmerkingen gebaseerde Help | Microsoft Docs
-ms.custom: ''
+title: Syntaxis van de Help op basis van opmerkingen
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
-caps.latest.revision: 4
-ms.openlocfilehash: da74c674c704794d8648dcdf9ba0a1617decba9b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 950afecc39f9d27207f77547679faab700481458
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560607"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893217"
 ---
 # <a name="syntax-of-comment-based-help"></a>Syntaxis van de Help op basis van opmerkingen
 
@@ -37,11 +30,11 @@ In deze sectie wordt de syntaxis van op opmerkingen gebaseerde Help beschreven.
 
 ## <a name="syntax-description"></a>Syntaxis beschrijving
 
- Help op basis van opmerkingen wordt geschreven als een reeks opmerkingen. U kunt vóór elke regel met opmerkingen een opmerkings symbool (#) typen, maar u kunt ook de \< symbolen # en # > gebruiken om een opmerkingen blok te maken. Alle regels in het opmerkingen blok worden geïnterpreteerd als opmerkingen.
+ Help op basis van opmerkingen wordt geschreven als een reeks opmerkingen. U kunt een opmerkings symbool ( `#` ) voor elke regel met opmerkingen typen, maar u kunt ook `<#` de `#>` symbolen en gebruiken om een opmerkingen blok te maken. Alle regels in het opmerkingen blok worden geïnterpreteerd als opmerkingen.
 
- Elke sectie van Help op basis van opmerkingen is gedefinieerd met een tref woord en elk tref woord wordt voorafgegaan door een punt (.). De tref woorden kunnen in elke wille keurige volg orde worden weer gegeven. De namen van tref woorden zijn niet hoofdletter gevoelig.
+ Elke sectie van Help op basis van opmerkingen is gedefinieerd met een tref woord en elk tref woord wordt voorafgegaan door een punt ( `.` ). De tref woorden kunnen in elke wille keurige volg orde worden weer gegeven. De namen van tref woorden zijn niet hoofdletter gevoelig.
 
- Een opmerkingen blok moet ten minste één Help-tref woord bevatten. Sommige tref woorden, zoals voor beeld, kunnen vaak in hetzelfde commentaar blok worden weer gegeven. De Help-inhoud voor elk tref woord begint op de regel na het sleutel woord en kan meerdere regels omvatten.
+ Een opmerkingen blok moet ten minste één Help-tref woord bevatten. Sommige tref woorden, zoals **voor beeld**, kunnen vaak in hetzelfde commentaar blok worden weer gegeven. De Help-inhoud voor elk tref woord begint op de regel na het sleutel woord en kan meerdere regels omvatten.
 
  Alle regels in een Help-onderwerp op basis van opmerkingen moeten aaneengesloten zijn. Als een Help-onderwerp op basis van opmerkingen een opmerking volgt die geen deel uitmaakt van het Help-onderwerp, moet er ten minste één lege regel tussen de laatste niet-Help opmerkings regel en het begin van de op opmerkingen gebaseerde Help zijn.
 

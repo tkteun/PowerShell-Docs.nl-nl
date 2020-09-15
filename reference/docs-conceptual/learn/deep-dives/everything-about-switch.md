@@ -3,12 +3,12 @@ title: Alles wat u moet weten over de instructie switch
 description: De instructie switch in Power shell biedt functies die niet in andere talen zijn gevonden.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ebf6191d56374273465ae6bee49ef82a02cc1580
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 685a5691599408a0d54ca99bf383bcd7702322a6
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149794"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469715"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Alles wat u moet weten over de instructie switch
 
@@ -17,7 +17,7 @@ Net als bij veel andere talen heeft Power shell opdrachten voor het beheren van 
 > [!NOTE]
 > De [oorspronkelijke versie][] van dit artikel is gepubliceerd op de blog geschreven door [@KevinMarquette][] . Het Power shell-team hartelijk dank voor het delen van deze inhoud met ons. Raadpleeg zijn blog op [PowerShellExplained.com][].
 
-## <a name="if-statement"></a>Als-instructie
+## <a name="the-if-statement"></a>De `if` instructie
 
 Een van de eerste instructies die u leert, is de `if` instructie. U kunt hiermee een script blok uitvoeren als een instructie is `$true` .
 
@@ -142,7 +142,7 @@ is a role
 
 Ik heb besloten om het niet `Component` in te pakken `Role` en `Location` komt hier overeen met aanhalings tekens om te markeren dat ze optioneel zijn. `switch`In de meeste gevallen worden deze behandeld als een teken reeks.
 
-## <a name="arrays"></a>Matrixen
+## <a name="arrays"></a>Matrices
 
 Een van de coole functies van Power shell `switch` is de manier waarop de arrays worden verwerkt. Als u een `switch` matrix geeft, wordt elk element in die verzameling verwerkt.
 
@@ -341,9 +341,9 @@ switch -Wildcard -File $path
 
 Omdat een regel in het invoer bestand het woord zou kunnen bevatten `Error` en `Warning` , willen we alleen dat het eerst wordt uitgevoerd en vervolgens door gaan met het verwerken van het bestand.
 
-### <a name="break"></a>Opsplitsen
+### <a name="break"></a>Breken
 
-Een `break` instructie sluit de switch af. Dit is hetzelfde gedrag dat `continue` voor één waarde wordt weer gegeven. Het verschil wordt weer gegeven bij het verwerken van een matrix. `break`stopt alle verwerking van de switch en `continue` gaat naar het volgende item.
+Een `break` instructie sluit de switch af. Dit is hetzelfde gedrag dat `continue` voor één waarde wordt weer gegeven. Het verschil wordt weer gegeven bij het verwerken van een matrix. `break` stopt alle verwerking van de switch en `continue` gaat naar het volgende item.
 
 ``` powershell
 $Messages = @(

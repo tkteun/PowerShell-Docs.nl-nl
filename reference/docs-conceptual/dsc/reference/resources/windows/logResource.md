@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-logboek resource
-ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870758"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464023"
 ---
 # <a name="dsc-log-resource"></a>DSC-logboek resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "75870758"
 
 De **logboek** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het schrijven van berichten naar het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Log [string] #ResourceName
@@ -39,7 +39,7 @@ Log [string] #ResourceName
 
 |       Eigenschap       |                                                                                                                                                          Beschrijving                                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| DependsOn            | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is `DependsOn = "[ResourceType]ResourceName"`bijvoorbeeld als de id van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is. |
+| DependsOn            | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
 | PsDscRunAsCredential | Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als.                                                                                                                                                                                                                                                                        |
 
 > [!NOTE]

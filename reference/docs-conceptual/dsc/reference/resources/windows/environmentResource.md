@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-omgevings resource
-ms.openlocfilehash: 5670646b6e94019f436d85296deff4de8da920f6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560352"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464414"
 ---
 # <a name="dsc-environment-resource"></a>DSC-omgevings resource
 
@@ -15,13 +15,14 @@ ms.locfileid: "83560352"
 
 De **omgevings** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van systeem omgevingsvariabelen.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -33,8 +34,9 @@ Environment [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
+|Naam |Hiermee wordt de naam van de omgevings variabele opgegeven waarvoor u een specifieke status wilt waarborgen. |
 |Pad |Hiermee definieert u de omgevings variabele die wordt geconfigureerd. Stel deze eigenschap in op `$true` als de variabele een **padvariabele** is. anders stelt u deze in op `$false` . De standaardwaarde is `$false`. Als **de variabele die wordt geconfigureerd de padvariabele** is, wordt de waarde die is opgegeven via de eigenschap **Value** , aan de bestaande waarde toegevoegd. |
+|Doel| Hiermee wordt aangegeven waar de variabele moet worden opgehaald: de computer of het proces. Als beide worden aangegeven, wordt alleen de waarde van de computer geretourneerd. De standaard waarde is beide, omdat dit de standaard waarde is voor de rest van de resource. |
 |Waarde |De waarde die moet worden toegewezen aan de omgevings variabele. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen

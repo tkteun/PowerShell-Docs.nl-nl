@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: RemoveConfiguration-methode
-ms.openlocfilehash: aacbed96beb960d7e0d449423a4de9a27f0a287e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ef15c873d8dfaf28e5cdeb611b72a70921c099be
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941556"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464346"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration-methode
 
@@ -24,7 +24,7 @@ uint32 RemoveConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*Fase* \[in\] geeft aan welk configuratie document moet worden verwijderd. De volgende waarden zijn geldig:
+**Fase** \[ in \] geeft aan welk configuratie document moet worden verwijderd. De volgende waarden zijn geldig:
 
 |Waarde |Beschrijving |
 |:--- |:---|
@@ -32,7 +32,7 @@ uint32 RemoveConfiguration(
 |**2** | Het **in behandeling zijnde** configuratie document (in behandeling. MOF).  |
 |**4** | Het **vorige** configuratie document (vorige. MOF). |
 
-*Geforceerd* \[in\] op **True** om het verwijderen van de configuratie af te dwingen.
+*Forceren* \[ in \] **True** om het verwijderen van de configuratie af te dwingen.
 
 ## <a name="return-value"></a>Retourwaarde
 

@@ -1,27 +1,20 @@
 ---
 title: SelectionCondition-element voor EntrySelectedBy voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
-caps.latest.revision: 6
-ms.openlocfilehash: a6738a7c4c934b2d6a16695a711f7c6c80afdd2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0930d8076c314c12cac6cdfa2b33716b7efeb6a9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358885"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772838"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
 
 Hiermee definieert u een voor waarde die moet bestaan voor het gebruik van een definitie van een besturings element. Dit element wordt gebruikt bij het definiëren van de manier waarop een nieuwe groep objecten wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het element GroupBy (indeling) CustomEntries voor CustomControl voor het element GroupBy (Format) CustomEntry voor CustomControl voor het element GroupBy (indeling) EntrySelectedBy voor CustomEntry voor GroupBy (Format) SelectionCondition-element voor EntrySelectedBy voor GroupBy (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van het type GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het CustomEntries-element van GroupBy (Format) voor CustomControl voor het element GroupBy (Format) CustomEntry element voor CustomControl voor het object GroupBy (Format) voor CustomEntry voor het element GroupBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <SelectionCondition>
@@ -34,7 +27,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionCondition` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `SelectionCondition` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,16 +37,16 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Het element PropertyName voor SelectionCondition voor GroupBy (indeling)](./propertyname-element-for-selectioncondition-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-eigenschap op waarmee de voor waarde wordt geactiveerd.|
+|[Het element PropertyName voor SelectionCondition voor GroupBy (opmaak)](./propertyname-element-for-selectioncondition-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-eigenschap op waarmee de voor waarde wordt geactiveerd.|
 |[Script block-element voor SelectionCondition voor GroupBy (indeling)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd.|
-|[SelectionSetName-element voor SelectionCondition voor GroupBy (indeling)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de set .NET-typen op waarmee de voor waarde wordt geactiveerd.|
+|[Het element SelectionSetName voor SelectionCondition voor GroupBy (opmaak)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de set .NET-typen op waarmee de voor waarde wordt geactiveerd.|
 |[TypeName-element voor SelectionCondition voor GroupBy (indeling)](./typename-element-for-selectioncondition-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een .NET-type op waarmee de voor waarde wordt geactiveerd.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EntrySelectedBy-element voor CustomEntry voor GroupBy (indeling)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.|
+|[Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -67,14 +60,14 @@ Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defin
 
 ## <a name="see-also"></a>Zie ook
 
-[Het element PropertyName voor SelectionCondition voor CustomControl voor weer gave (indeling)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[Het element PropertyName voor SelectionCondition voor CustomControl voor Weergave (opmaak)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[Script block-element voor SelectionCondition voor CustomControl voor weer gave (indeling)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[Het element ScriptBlock voor SelectionCondition voor CustomControl voor Weergave (opmaak)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
 [SelectionSetName-element voor SelectionCondition voor aangepast besturings element voor weer gave (indeling)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
 [TypeName-element voor SelectionCondition voor GroupBy (indeling)](./typename-element-for-selectioncondition-for-groupby-format.md)
 
-[EntrySelectedBy-element voor CustomEntry voor GroupBy (indeling)](./entryselectedby-element-for-customentry-for-groupby-format.md)
+[Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

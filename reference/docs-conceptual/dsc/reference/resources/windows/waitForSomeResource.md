@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WaitForSome-resource
-ms.openlocfilehash: 37c73ed4a42975194938f78de04096a988cf9846
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ea2618fbb77dd24a0c73fd9357e87862da514b66
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561083"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464380"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resource
 
@@ -20,7 +20,7 @@ Deze resource slaagt als de resource die is opgegeven door de eigenschap **Resou
 > [!NOTE]
 > **WaitForSome** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 WaitForSome [String] #ResourceName

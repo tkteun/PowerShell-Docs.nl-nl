@@ -1,19 +1,19 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxPackage-resource
-ms.openlocfilehash: 49eef4adc9700a13bfb1e96457d90898a353d60d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f61b337f6fbb8e2ea48128642874f050787fc576
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560828"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464482"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC voor Linux nxPackage-resource
 
 De **nxPackage** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van pakketten op een Linux-knoop punt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 nxPackage <string> #ResourceName
@@ -33,7 +33,7 @@ nxPackage <string> #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |De naam van het pakket waarvoor u een specifieke status wilt controleren. |
+|Naam |De naam van het pakket waarvoor u een specifieke status wilt controleren. |
 |PackageManager |Ondersteunde waarden zijn **yum**, **apt**en **Zypper**. Hiermee geeft u op welke pakket beheer moet worden gebruikt bij het installeren van pakketten. Als **filepath** is opgegeven, wordt het opgegeven pad gebruikt om het pakket te installeren. Anders wordt een pakket beheer gebruikt om het pakket te installeren vanuit een vooraf geconfigureerde opslag plaats. Als geen van beide **PackageManager** of **filepath** wordt gegeven, wordt de standaard pakket beheerder voor het systeem gebruikt. |
 |PackageGroup |Als `$true` de **naam** naar verwachting de naam van een pakket groep is voor gebruik met een **PackageManager**. **PackageGroup** is niet geldig voor het opgeven van een **bestandspad**. |
 |Argumenten |Een teken reeks argumenten die exact als opgegeven worden door gegeven aan het pakket. |

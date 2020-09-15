@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: TestConfiguration-methode
-ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942585"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464295"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration-methode
 
@@ -26,13 +26,13 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*configurationData* \[in\] omgevings gegevens voor de confuguration.
+**configurationData** \[ in \] omgevings gegevens voor de configuratie.
 
-*InDesiredState* \[out\] bij retour, geeft aan of het beheerde knoop punt zich in de status bevindt die is opgegeven in het configuratie document.
+**InDesiredState** \[ \] Hiermee geeft u op of het beheerde knoop punt zich in de status bevindt die is opgegeven in het configuratie document.
 
-*ResourcesInDesiredState* \[out\] on return bevat een Inge sloten instantie van de klasse **MSFT_ResourceInDesiredState** waarmee resources worden opgegeven die de gewenste status hebben.
+**ResourcesInDesiredState** \[ out \] on return bevat een Inge sloten exemplaar van de klasse **MSFT_ResourceInDesiredState** die resources opgeeft die de gewenste status hebben.
 
-*ResourcesNotInDesiredState* \[out\] on return bevat een Inge sloten instantie van de klasse **MSFT_ResourceNotInDesiredState** waarmee resources worden opgegeven die niet de gewenste status hebben.
+**ResourcesNotInDesiredState** \[ out \] on return bevat een Inge sloten exemplaar van de **MSFT_ResourceNotInDesiredState** -klasse waarmee resources worden opgegeven die niet de gewenste status hebben.
 
 ## <a name="return-value"></a>Retourwaarde
 

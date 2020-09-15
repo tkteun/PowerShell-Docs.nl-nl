@@ -1,19 +1,12 @@
 ---
 title: Type-element voor Selectieset (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
-caps.latest.revision: 15
-ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9978daefb3e97ab131774ca4dff633dde6b4dfbf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358743"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772515"
 ---
 # <a name="types-element-for-selectionset-format"></a>Het element Typen voor SelectionSet (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u de .NET-objecten die zich in de selectieset bevinden.
 
 Configuratie-element (indeling) SelectionSets element (Format) element van het type Selectionset (indeling) element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Types>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) SelectionSets element (Format) element van het t
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Types` beschreven. Er moet ten minste één onderliggend element zijn, maar er is geen maximum limiet voor het aantal onderliggende elementen dat kan worden toegevoegd.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Types` element beschreven. Er moet ten minste één onderliggend element zijn, maar er is geen maximum limiet voor het aantal onderliggende elementen dat kan worden toegevoegd.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -48,7 +41,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Selectie verzamelings element (indeling)](./selectionset-element-format.md)|Hiermee wordt een set .NET-objecten gedefinieerd waarnaar kan worden verwezen door de naam van de set.|
+|[Het element SelectionSet (opmaak)](./selectionset-element-format.md)|Hiermee wordt een set .NET-objecten gedefinieerd waarnaar kan worden verwezen door de naam van de set.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -56,7 +49,7 @@ De objecten die door dit element worden gedefinieerd, vormen een selectie reeks 
 
 ## <a name="example"></a>Voorbeeld
 
-Dit voor beeld toont een `SelectionSet`-element waarmee vier .NET-typen worden gedefinieerd.
+In dit voor beeld ziet u een- `SelectionSet` element dat vier .net-typen definieert.
 
 ```xml
 <SelectionSets>
@@ -76,8 +69,8 @@ Dit voor beeld toont een `SelectionSet`-element waarmee vier .NET-typen worden g
 
 [Sets van objecten definiëren](./defining-selection-sets.md)
 
-[Selectie verzamelings element (indeling)](./selectionset-element-format.md)
+[Het element SelectionSet (opmaak)](./selectionset-element-format.md)
 
 [TypeName-element van typen (indeling)](./typename-element-for-types-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

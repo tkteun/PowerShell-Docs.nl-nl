@@ -1,16 +1,16 @@
 ---
-title: Alles wat u wilt weten over de IF-instructie
+title: Alles wat u wilt weten over de if-instructie
 description: Net als bij veel andere talen bevat Power shell instructies voor het voorwaardelijk uitvoeren van code in uw scripts.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6ffb70af694e80430d31991045b9fadc1a2cc3f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: b6bafb99bfb8ecd0152bae841e5c58d4c27ccd3e
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149864"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469749"
 ---
-# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>Alles wat u wilt weten over de IF-instructie
+# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>Alles wat u wilt weten over de `if` verklaring
 
 Net als bij veel andere talen bevat Power shell instructies voor het voorwaardelijk uitvoeren van code in uw scripts. Een van deze instructies is de [if][] -instructie. Vandaag gaan we dieper in op een van de belangrijkste opdrachten in Power shell.
 
@@ -22,7 +22,7 @@ Net als bij veel andere talen bevat Power shell instructies voor het voorwaardel
 Uw scripts moeten vaak beslissingen nemen en op basis van deze beslissingen andere logica uitvoeren.
 Dit is wat ik wil zeggen door voorwaardelijke uitvoering. U hebt één instructie of waarde om te evalueren en vervolgens voert u een andere sectie met code uit op basis van die evaluatie. Dit is precies wat de `if` instructie doet.
 
-## <a name="the-if-statement"></a>De if-instructie
+## <a name="the-if-statement"></a>De `if` instructie
 
 Hier volgt een basis voorbeeld van de- `if` instructie:
 
@@ -40,7 +40,7 @@ In het vorige voor beeld werd de- `if` instructie gewoon geëvalueerd `$conditio
 
 In sommige talen kunt u één regel code plaatsen na de `if` instructie en deze wordt uitgevoerd. Dat is niet het geval in Power shell. U moet een volledig `scriptblock` haakje met accolades opgeven om het correct te laten werken.
 
-## <a name="comparison-operators"></a>Vergelijkingsoperators
+## <a name="comparison-operators"></a>Vergelijkingsoperatoren
 
 Het meest voorkomende gebruik van de `if` instructie voor is het vergelijken van twee items met elkaar. Power Shell heeft speciale Opera tors voor verschillende vergelijkings scenario's. Wanneer u een vergelijkings operator gebruikt, wordt de waarde aan de linkerkant vergeleken met de waarde aan de rechter kant.
 
@@ -60,17 +60,17 @@ In dit voor beeld maken we een bekende waarde van `5` en vergelijken deze met mi
 
 Een mogelijke use-case is het controleren van de status van een waarde voordat u een actie onderneemt. U kunt een service ophalen en controleren of de status werd uitgevoerd voordat u deze aanroept `Restart-Service` .
 
-Het is gebruikelijk in andere talen als C# om te gebruiken `==` voor gelijkheid (bijvoorbeeld: `5 == $value` ), maar dat werkt niet met Power shell. Een andere veelvoorkomende fout die gebruikers doen, is het gelijkteken (bijvoorbeeld) te gebruiken `5 = $value` dat is gereserveerd voor het toewijzen van waarden aan variabelen. Als u de bekende waarde aan de linkerkant plaatst, wordt er meer vreemd.
+Het is gebruikelijk in andere talen als C# om te gebruiken `==` voor gelijkheid (bijvoorbeeld: `5 == $value` ), maar dat werkt niet met Power shell. Een andere veelvoorkomende fout die gebruikers doen, is het gelijkteken (bijvoorbeeld) te gebruiken `5 = $value` dat is gereserveerd voor het toewijzen van waarden aan variabelen. Als u de bekende waarde aan de linkerkant plaatst, wordt deze fout meer vreemd.
 
 Deze operator (en andere) heeft enkele variaties.
 
-- `-eq`hoofdletter gevoelig gelijkheid
-- `-ieq`hoofdletter gevoelig gelijkheid
-- `-ceq`hoofdletter gevoelige gelijkheid
+- `-eq` hoofdletter gevoelig gelijkheid
+- `-ieq` hoofdletter gevoelig gelijkheid
+- `-ceq` hoofdletter gevoelige gelijkheid
 
 ### <a name="-ne-not-equal"></a>-ne niet gelijk
 
-Veel opera tors hebben een gerelateerde operator die het tegenovergestelde resultaat controleren. `-ne`verifieert of de waarden niet gelijk zijn aan elkaar.
+Veel opera tors hebben een gerelateerde operator die het tegenovergestelde resultaat controleren. `-ne` verifieert of de waarden niet gelijk zijn aan elkaar.
 
 ```powershell
 if ( 5 -ne $value )
@@ -83,9 +83,9 @@ Gebruik deze methode om ervoor te zorgen dat de actie alleen wordt uitgevoerd al
 
 **Verschillen**
 
-- `-ne`niet hoofdletter gevoelig niet gelijk aan
-- `-ine`niet hoofdletter gevoelig niet gelijk aan
-- `-cne`hoofdletter gevoelig niet gelijk
+- `-ne` niet hoofdletter gevoelig niet gelijk aan
+- `-ine` niet hoofdletter gevoelig niet gelijk aan
+- `-cne` hoofdletter gevoelig niet gelijk
 
 Dit zijn inverse variaties van `-eq` . Ik Groepeer deze typen samen wanneer ik variaties voor andere opera tors vermeld.
 
@@ -103,18 +103,18 @@ if ( $value -gt 5 )
 
 **Verschillen**
 
-- `-gt`groter dan
-- `-igt`groter dan, niet hoofdletter gevoelig
-- `-cgt`groter dan, hoofdletter gevoelig
-- `-ge`groter dan of gelijk aan
-- `-ige`groter dan of gelijk aan, niet hoofdletter gevoelig
-- `-cge`groter dan of gelijk aan, hoofdletter gevoelig
-- `-lt`kleiner dan
-- `-ilt`kleiner dan, niet hoofdletter gevoelig
-- `-clt`kleiner dan, hoofdletter gevoelig
-- `-le`kleiner dan of gelijk aan
-- `-ile`kleiner dan of gelijk aan, niet hoofdletter gevoelig
-- `-cle`kleiner dan of gelijk aan, hoofdletter gevoelig
+- `-gt` groter dan
+- `-igt` groter dan, niet hoofdletter gevoelig
+- `-cgt` groter dan, hoofdletter gevoelig
+- `-ge` groter dan of gelijk aan
+- `-ige` groter dan of gelijk aan, niet hoofdletter gevoelig
+- `-cge` groter dan of gelijk aan, hoofdletter gevoelig
+- `-lt` kleiner dan
+- `-ilt` kleiner dan, niet hoofdletter gevoelig
+- `-clt` kleiner dan, hoofdletter gevoelig
+- `-le` kleiner dan of gelijk aan
+- `-ile` kleiner dan of gelijk aan, niet hoofdletter gevoelig
+- `-cle` kleiner dan of gelijk aan, hoofdletter gevoelig
 
 Ik weet niet waarom u hoofdletter gevoelige en ingevoelige opties zou gebruiken voor deze opera tors.
 
@@ -122,8 +122,8 @@ Ik weet niet waarom u hoofdletter gevoelige en ingevoelige opties zou gebruiken 
 
 Power Shell heeft een eigen syntaxis op basis van joker tekens die overeenkomt en u kunt deze gebruiken met de `-like` operator. Deze Joker teken patronen zijn redelijk eenvoudig.
 
-- `?`komt overeen met één wille keurig teken
-- `*`komt overeen met een wille keurig aantal tekens
+- `?` komt overeen met één wille keurig teken
+- `*` komt overeen met een wille keurig aantal tekens
 
 ```powershell
 $value = 'S-ATX-SQL01'
@@ -145,12 +145,12 @@ if ( $value -like '*SQL*')
 
 **Verschillen**
 
-- `-like`hoofdletter gevoelig Joker teken
-- `-ilike`hoofdletter gevoelig Joker teken
-- `-clike`hoofdletter gevoelig Joker teken
-- `-notlike`hoofdletter gevoelig Joker teken niet gevonden
-- `-inotlike`hoofdletter gevoelig Joker teken niet gevonden
-- `-cnotlike`hoofdletter gevoelige joker tekens komen niet overeen
+- `-like` hoofdletter gevoelig Joker teken
+- `-ilike` hoofdletter gevoelig Joker teken
+- `-clike` hoofdletter gevoelig Joker teken
+- `-notlike` hoofdletter gevoelig Joker teken niet gevonden
+- `-inotlike` hoofdletter gevoelig Joker teken niet gevonden
+- `-cnotlike` hoofdletter gevoelige joker tekens komen niet overeen
 
 ### <a name="-match-regular-expression"></a>-overeenkomende reguliere expressie
 
@@ -178,12 +178,12 @@ Regex is een complexe taal van eigen talen en is aan het kijken. Ik spreek meer 
 
 **Verschillen**
 
-- `-match`hoofdletter gevoelige regex
-- `-imatch`hoofdletter gevoelige regex
-- `-cmatch`hoofdletter gevoelige regex
-- `-notmatch`hoofdletter gebruik: ongevoelige regex komt niet overeen
-- `-inotmatch`hoofdletter gebruik: ongevoelige regex komt niet overeen
-- `-cnotmatch`hoofdletter gevoelige regex niet gevonden
+- `-match` hoofdletter gevoelige regex
+- `-imatch` hoofdletter gevoelige regex
+- `-cmatch` hoofdletter gevoelige regex
+- `-notmatch` hoofdletter gebruik: ongevoelige regex komt niet overeen
+- `-inotmatch` hoofdletter gebruik: ongevoelige regex komt niet overeen
+- `-cnotmatch` hoofdletter gevoelige regex niet gevonden
 
 ### <a name="-is-of-type"></a>-is van het type
 
@@ -207,8 +207,8 @@ if ( $Service -isnot [System.ServiceProcess.ServiceController] )
 
 **Verschillen**
 
-- `-is`van het type
-- `-isnot`niet van het type
+- `-is` van het type
+- `-isnot` niet van het type
 
 ## <a name="collection-operators"></a>Verzamelings operators
 
@@ -240,7 +240,7 @@ PS> 1,2,3 -ne 4
 
 Dit ziet eruit als een slimme truc, maar we hebben Opera tors `-contains` en `-in` die dit efficiënter afhandelen. En `-notcontains` wat u verwacht.
 
-### <a name="-contains"></a>-bevat
+### <a name="-contains"></a>-contains
 
 De `-contains` operator controleert de verzameling op uw waarde. Zodra er een overeenkomst wordt gevonden, wordt deze geretourneerd `$true` .
 
@@ -256,12 +256,12 @@ Dit is de aanbevolen manier om te zien of een verzameling uw waarde bevat. Met `
 
 **Verschillen**
 
-- `-contains`hoofdletter gevoelig overeenkomst
-- `-icontains`hoofdletter gevoelig overeenkomst
-- `-ccontains`hoofdletter gevoelige overeenkomst
-- `-notcontains`niet hoofdletter gevoelig niet gevonden
-- `-inotcontains`niet hoofdletter gevoelig niet gevonden
-- `-cnotcontains`hoofdletter gevoelig niet gevonden
+- `-contains` hoofdletter gevoelig overeenkomst
+- `-icontains` hoofdletter gevoelig overeenkomst
+- `-ccontains` hoofdletter gevoelige overeenkomst
+- `-notcontains` niet hoofdletter gevoelig niet gevonden
+- `-inotcontains` niet hoofdletter gevoelig niet gevonden
+- `-cnotcontains` hoofdletter gevoelig niet gevonden
 
 ### <a name="-in"></a>-in
 
@@ -277,12 +277,12 @@ if ( 3 -in $array )
 
 **Verschillen**
 
-- `-in`hoofdletter gevoelig overeenkomst
-- `-iin`hoofdletter gevoelig overeenkomst
-- `-cin`hoofdletter gevoelige overeenkomst
-- `-notin`niet hoofdletter gevoelig niet gevonden
-- `-inotin`niet hoofdletter gevoelig niet gevonden
-- `-cnotin`hoofdletter gevoelig niet gevonden
+- `-in` hoofdletter gevoelig overeenkomst
+- `-iin` hoofdletter gevoelig overeenkomst
+- `-cin` hoofdletter gevoelige overeenkomst
+- `-notin` niet hoofdletter gevoelig niet gevonden
+- `-inotin` niet hoofdletter gevoelig niet gevonden
+- `-cnotin` hoofdletter gevoelig niet gevonden
 
 ## <a name="logical-operators"></a>Logische operators
 
@@ -343,20 +343,20 @@ Houd er ook rekening mee dat de syntaxis voor deze opera tors werkt. U hebt twee
 
 ### <a name="-xor-exclusive-or"></a>-XOR exclusieve of
 
-Dit is een beetje ongebruikelijk. `-xor`Hiermee kan slechts één expressie worden geëvalueerd `$true` . Dus als beide items `$false` of beide items zijn `$true` , is de hele expressie `$false` . Een andere manier om dit te bekijken is de expressie alleen `$true` wanneer de resultaten van de expressie verschillend zijn.
+Dit is een beetje ongebruikelijk. `-xor` Hiermee kan slechts één expressie worden geëvalueerd `$true` . Dus als beide items `$false` of beide items zijn `$true` , is de hele expressie `$false` . Een andere manier om dit te bekijken is de expressie alleen `$true` wanneer de resultaten van de expressie verschillend zijn.
 
 Het komt zelden voor dat iedereen deze logische operator zou gebruiken en ik niet op de juiste manier kan zien waarom ik deze ooit zou gebruiken.
 
-## <a name="bitwise-operators"></a>Bitsgewijze Opera tors
+## <a name="bitwise-operators"></a>Bitsgewijze operatoren
 
 Bitsgewijze Opera tors voeren berekeningen uit op de bits binnen de waarden en produceren een nieuwe waarde als resultaat. Leer [bitsgewijze Opera tors][] vallen buiten het bereik van dit artikel, maar dit is de lijst.
 
-- `-band`binaire en
-- `-bor`binair of
-- `-bxor`binaire exclusieve of
-- `-bnot`binair niet
-- `-shl`Shift-links
-- `-shr`naar rechts verplaatsen
+- `-band` binaire en
+- `-bor` binair of
+- `-bxor` binaire exclusieve of
+- `-bnot` binair niet
+- `-shl` Shift-links
+- `-shr` naar rechts verplaatsen
 
 ## <a name="powershell-expressions"></a>Power shell-expressies
 
@@ -366,7 +366,7 @@ U kunt normaal Power shell gebruiken in de voor waarde-instructie.
 if ( Test-Path -Path $Path )
 ```
 
-`Test-Path`retourneert `$true` of `$false` wanneer deze wordt uitgevoerd. Dit geldt ook voor opdrachten die andere waarden retour neren.
+`Test-Path` retourneert `$true` of `$false` wanneer deze wordt uitgevoerd. Dit geldt ook voor opdrachten die andere waarden retour neren.
 
 ```powershell
 if ( Get-Process Notepad* )
@@ -491,7 +491,7 @@ De uitvoering vindt plaats van boven naar beneden. De `if` instructie top wordt 
 
 ### <a name="switch"></a>schakelen
 
-Op dit moment moet ik de `switch` instructie vermelden. Het bevat een alternatieve syntaxis voor het uitvoeren van meerdere vergelijkingen met een waarde. Met de `switch` kunt u een expressie opgeven en wordt het resultaat vergeleken met verschillende waarden. Als een van deze waarden overeenkomt, wordt het overeenkomende code blok uitgevoerd. Bekijk dit voor beeld:
+Op dit moment moet ik de `switch` instructie vermelden. Het bevat een alternatieve syntaxis voor het uitvoeren van meerdere vergelijkingen met een waarde. Met de `switch` kunt u een expressie opgeven en wordt het resultaat vergeleken met verschillende waarden. Als een van deze waarden overeenkomt, wordt het overeenkomende code blok uitgevoerd. Bekijk dit voorbeeld:
 
 ```powershell
 $itemType = 'Role'
@@ -533,7 +533,7 @@ else
 }
 ```
 
-Elk script blok plaatst de resultaten van de opdrachten of de waarde in de pijp lijn. Vervolgens wijzen we het resultaat van de if-instructie toe aan de `$discount` variabele. Dit voor beeld kan net zo eenvoudig worden toegewezen aan de `$discount` variabele rechtstreeks in elke script Block. Ik kan dit niet zeggen dat ik dit met de `if` instructie regel matig gebruik, maar ik heb er wel een voor beeld van.
+Elk script blok plaatst de resultaten van de opdrachten of de waarde in de pijp lijn. Vervolgens wijzen we het resultaat van de `if` instructie toe aan de `$discount` variabele. Dit voor beeld kan net zo eenvoudig worden toegewezen aan de `$discount` variabele rechtstreeks in elke script Block. Ik kan dit niet zeggen dat ik dit met de `if` instructie regel matig gebruik, maar ik heb er wel een voor beeld van.
 
 ### <a name="array-inline"></a>Matrix inline
 
@@ -567,7 +567,7 @@ Ik Beoordeel deze inline binnen de initialisatie van mijn matrix. Als `$Debug` i
 
 ## <a name="simplify-complex-operations"></a>Vereenvoudig complexe bewerkingen
 
-Het is onvermijdelijk dat u een situatie ondervindt die te veel vergelijkingen heeft om te controleren en de if-instructie verschuift de rechter kant van het scherm.
+Het is onvermijdelijk dat u een situatie ondervindt die te veel vergelijkingen heeft om te controleren en uw `If` instructie schuift in de rechter kant van het scherm.
 
 ```powershell
 $user = Get-ADUser -Identity $UserName
@@ -599,7 +599,7 @@ Dit wordt in het algemeen gebruikt wanneer ik meer dan twee vergelijkingen krijg
 
 ### <a name="pre-calculating-results"></a>Resultaten vooraf berekenen
 
-We kunnen deze instructie uit de if-instructie halen en alleen het resultaat controleren.
+We kunnen deze instructie uit de verklaring halen `if` en alleen het resultaat controleren.
 
 ```powershell
 $needsSecureHomeDrive = $null -ne $user -and
@@ -691,11 +691,11 @@ Als u nog iets meer wilt weten over uitzonde ringen, kunt u een artikel over [Al
 De `if` instructie is een eenvoudige instructie, maar is een fundamenteel onderdeel van Power shell. U kunt deze meermaals gebruiken in bijna elk script dat u schrijft. Ik hoop dat u een beter inzicht hebt dan voorheen.
 
 <!-- link references -->
-[oorspronkelijke versie]: https://powershellexplained.com/2019-08-11-PowerShell-if-then-else-equals-operator/
+[oorspronkelijke versie]: https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [If]: /powershell/module/microsoft.powershell.core/about/about_if
-[bitsgewijze Opera tors]: https://powershellexplained.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
+[bitsgewijze Opera tors]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
 [de vele manieren om regex te gebruiken]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
 [alles wat u moet weten over uitzonde ringen]: everything-about-exceptions.md
 [alles wat u wilt weten over $null]: everything-about-null.md

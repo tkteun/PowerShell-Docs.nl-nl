@@ -1,19 +1,12 @@
 ---
 title: Runspace01-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
-caps.latest.revision: 11
-ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1ac286512f3cb3b97a6b3179c9dd45f1fefe1ecf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357615"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772192"
 ---
 # <a name="runspace01-sample"></a>Voorbeeld Runspace01
 
@@ -23,7 +16,7 @@ In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power 
 
  Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 - Een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object maken om een opdracht uit te voeren.
 

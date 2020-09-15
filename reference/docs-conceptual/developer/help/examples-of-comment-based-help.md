@@ -1,19 +1,12 @@
 ---
-title: Voor beelden van Help op basis van opmerkingen | Microsoft Docs
-ms.custom: ''
+title: Voorbeelden van de Help op basis van opmerkingen
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
-caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564837"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772294"
 ---
 # <a name="examples-of-comment-based-help"></a>Voorbeelden van de Help op basis van opmerkingen
 
@@ -71,13 +64,13 @@ function Add-Extension
 }
 ```
 
-In de volgende uitvoer ziet u de resultaten van de opdracht Get-Help waarmee de Help voor de functie add-Extension wordt weer gegeven.
+In de volgende uitvoer ziet u de resultaten van een `Get-Help` opdracht die de Help voor de `Add-Extension` functie weergeeft.
 
 ```powershell
 C:\PS> get-help add-extension -full
 ```
 
-```output
+```Output
         NAME
             Add-Extension
 
@@ -145,7 +138,7 @@ C:\PS> get-help add-extension -full
 
 De volgende voorbeeld functie bevat Help op basis van opmerkingen.
 
-Let op de lege regels tussen de afsluitende **#>** en de `Param` instructie. In een script zonder `Param` instructie moeten er ten minste twee lege regels tussen de laatste opmerking in het Help-onderwerp en de eerste functie declaratie zijn. Zonder deze lege regels wordt het Help-onderwerp gekoppeld aan de functie in plaats van het script.
+Let op de lege regels tussen de afsluitende **#>** en de `Param` instructie. In een script zonder `Param` instructie moeten er ten minste twee lege regels tussen de laatste opmerking in het Help-onderwerp en de eerste functie declaratie zijn. Zonder deze lege regels wordt `Get-Help` het Help-onderwerp gekoppeld aan de functie, in plaats van het script.
 
 ```powershell
 <#
@@ -185,13 +178,13 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-Met de volgende opdracht wordt de Help van het script opgehaald. Omdat het script geen n-map is die wordt vermeld in de omgevings variabele PATH, moet met de opdracht Get-Help die de script-Help haalt, het scriptpad worden opgegeven.
+Met de volgende opdracht wordt de Help van het script opgehaald. Omdat het script zich niet in een map bevindt die wordt vermeld in de omgevings variabele PATH, `Get-Help` moet de opdracht die het script ophaalt het pad naar het script opgeven.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
 ```
 
-```output
+```Output
             NAME
                 C:\ps-test\Update-Month.ps1
 
@@ -257,7 +250,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Voor beeld 3: parameter beschrijvingen in een para meter-instructie
 
-In dit voor beeld ziet u hoe u parameterdescriptions invoegt in de `Param` instructie van een functie of script. Deze indeling is het handigst wanneer de parameter beschrijvingen kort zijn.
+In dit voor beeld ziet u hoe u parameter beschrijvingen kunt invoegen in de `Param` instructie van een functie of script. Deze indeling is het handigst wanneer de parameter beschrijvingen kort zijn.
 
 ```powershell
 function Add-Extension
@@ -282,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-De resultaten zijn hetzelfde als de resultaten voor bijvoorbeeld 1. Get-Help interpreteert de parameter beschrijvingen alsof ze vergezeld gaan van het `.Parameter` tref woord.
+De resultaten zijn hetzelfde als de resultaten voor bijvoorbeeld 1. `Get-Help` interpreteert de parameter beschrijvingen alsof ze vergezeld gaan van het `.Parameter` sleutel woord.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Voor beeld 4: omleiden naar een XML-bestand
 
-U kunt op XML gebaseerde Help-onderwerpen voor functies en scripts schrijven. Hoewel Help op basis van opmerkingen eenvoudiger kan worden geïmplementeerd, is Help op basis van XML vereist als u meer controle wilt over Help-inhoud of als u Help-onderwerpen vertaalt in meerdere talen. In het volgende voor beeld worden de eerste regels van het script Update-Month. ps1 weer gegeven. Het script maakt gebruik `.ExternalHelp` van het sleutel woord om het pad naar een op XML gebaseerd Help-onderwerp voor het script op te geven.
+U kunt op XML gebaseerde Help-onderwerpen voor functies en scripts schrijven. Hoewel Help op basis van opmerkingen eenvoudiger kan worden geïmplementeerd, is Help op basis van XML vereist als u meer controle wilt over Help-inhoud of als u Help-onderwerpen vertaalt in meerdere talen. In het volgende voor beeld worden de eerste regels van het script weer gegeven `Update-Month.ps1` . Het script maakt gebruik `.ExternalHelp` van het sleutel woord om het pad naar een op XML gebaseerd Help-onderwerp voor het script op te geven.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -311,7 +304,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Voor beeld 5: omleiden naar een ander Help-onderwerp
 
-De volgende code is een uittreksel van het begin van de ingebouwde `Help` functie in Windows Power shell, die één scherm met Help-tekst per keer weergeeft. Omdat in het Help-onderwerp voor de cmdlet Get-Help de Help-functie wordt beschreven, gebruikt de Help-functie de `.ForwardHelpTargetName` sleutel woorden en wordt de `.ForwardHelpCategory` gebruiker omgeleid naar het Help-onderwerp Get-Help cmdlet.
+De volgende code is een uittreksel van het begin van de ingebouwde `Help` functie in Power shell, waarmee een scherm met Help-tekst per keer wordt weer gegeven. Omdat in het Help-onderwerp voor de cmdlet Get-Help de Help-functie wordt beschreven, gebruikt de Help-functie de `.ForwardHelpTargetName` sleutel woorden en wordt de `.ForwardHelpCategory` gebruiker omgeleid naar het Help-onderwerp Get-Help cmdlet.
 
 ```powershell
 function help
@@ -329,13 +322,13 @@ function help
     ...
 ```
 
-De volgende opdracht maakt gebruik van deze functie. Wanneer een gebruiker de opdracht Get-Help typt voor de Help-functie, wordt het Help-onderwerp weer gegeven voor de cmdlet Get-Help.
+De volgende opdracht maakt gebruik van deze functie. Wanneer een gebruiker een `Get-Help` opdracht voor de `Help` functie typt, `Get-Help` wordt het Help-onderwerp voor de cmdlet weer gegeven `Get-Help` .
 
 ```powershell
 C:\PS> get-help help
 ```
 
-```output
+```Output
             NAME
                 Get-Help
 

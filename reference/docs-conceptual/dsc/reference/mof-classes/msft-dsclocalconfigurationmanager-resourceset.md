@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: ResourceSet-methode
-ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942648"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464045"
 ---
 # <a name="resourceset-method"></a>ResourceSet-methode
 
@@ -26,13 +26,13 @@ uint32 ResourceSet(
 
 ## <a name="parameters"></a>Parameters
 
-*ResourceType* \[Resource type\] in de naam van de resource die moet worden aangeroepen.
+**Resource type** \[ in \] de naam van de resource die moet worden aangeroepen.
 
-Module naam voor de module die de resource bevat die moet worden aangeroepen. *ModuleName* \[\]
+**Module naam** \[ in \] de naam van de module die de resource bevat die moet worden aangeroepen.
 
-*resource Property* \[in\] Hiermee geeft u de naam van de resource eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
+**resource Property** \[ in \] geeft de naam van de bron eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
 
-*RebootRequired* \[RebootRequired\] op retour waarde deze eigenschap is ingesteld op **True** als het doel knooppunt opnieuw moet worden opgestart.
+**RebootRequired** \[ \] Deze eigenschap wordt ingesteld op **True** als het doel knooppunt opnieuw moet worden opgestart.
 
 ## <a name="return-value"></a>Retourwaarde
 

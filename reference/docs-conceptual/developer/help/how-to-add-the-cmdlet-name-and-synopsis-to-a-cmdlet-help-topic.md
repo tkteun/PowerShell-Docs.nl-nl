@@ -1,32 +1,26 @@
 ---
-title: De naam en samen vatting van de cmdlet toevoegen aan een Help-onderwerp voor cmdlets | Microsoft Docs
-ms.custom: ''
+title: De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1d0e1eb1-a962-4406-9625-175cfa3364ad
-caps.latest.revision: 10
-ms.openlocfilehash: 5b4c04a14c3d86c7a3b94b768e8fb59116d8c6f5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 399defcb596ff9e9a596f4cd25ebcb6bcb7c34d2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560624"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892877"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
 
-In deze sectie wordt beschreven hoe u inhoud kunt toevoegen die wordt weer gegeven in de secties naam en samen VATTING van de Help van de cmdlet. In het Help-bestand wordt deze inhoud toegevoegd aan het opdracht knooppunt voor elke cmdlet.
+In deze sectie wordt beschreven hoe u inhoud kunt toevoegen die wordt weer gegeven in de secties **naam** en samen **vatting** van de Help van de cmdlet. In het Help-bestand wordt deze inhoud toegevoegd aan het opdracht knooppunt voor elke cmdlet.
 
 > [!NOTE]
-> Voor een volledig overzicht van een Help-bestand opent u een van de dll-Help. XML-bestanden die zich in de installatiemap van Windows Power shell bevinden. Het bestand micro soft. Power shell. commands. Management. dll-Help. XML bevat bijvoorbeeld inhoud voor verschillende Windows Power shell-cmdlets.
+> Als u een volledig overzicht van een Help-bestand wilt weer geven, opent u een van de `dll-Help.xml` bestanden die zich in de installatie directory van Power shell bevinden. Het `Microsoft.PowerShell.Commands.Management.dll-Help.xml` bestand bevat bijvoorbeeld inhoud voor verschillende Power shell-cmdlets.
 
-### <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>De naam van de cmdlet en een samen vatting toevoegen
+## <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>De naam van de cmdlet en een samen vatting toevoegen
 
-- De Help van de cmdlet kan twee beschrijvingen voor de cmdlet weer geven. De eerste beschrijving is een korte beschrijving die de samen vatting wordt genoemd. De tweede beschrijving is een gedetailleerde beschrijving die wordt beschreven in [de gedetailleerde beschrijving toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-a-cmdlet-description.md). Beide beschrijvingen moeten worden geschreven als één alinea.
+- De Help van de cmdlet kan twee beschrijvingen voor de cmdlet weer geven. De eerste beschrijving is een korte beschrijving die de samen vatting wordt genoemd. De tweede beschrijving is een gedetailleerde beschrijving die wordt beschreven in [de gedetailleerde beschrijving toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-a-cmdlet-description.md).
+  Beide beschrijvingen moeten worden geschreven als één alinea.
 
-- Herhaal de naam van de cmdlet niet in de samen vatting. Door de gebruiker te informeren dat de get-server-cmdlet een server krijgt, is kort, maar niet informatief. Gebruik in plaats daarvan synoniemen en Voeg details toe aan de beschrijving.
+- Herhaal de naam van de cmdlet niet in de samen vatting. De gebruiker te informeren dat de `Get-Server` cmdlet een server krijgt, is kort, maar niet informatie. Gebruik in plaats daarvan synoniemen en Voeg details toe aan de beschrijving.
 
   Voor beeld: "haalt een object op dat een lokale of externe computer vertegenwoordigt."
 
@@ -40,4 +34,4 @@ In deze sectie wordt beschreven hoe u inhoud kunt toevoegen die wordt weer gegev
 
 ## <a name="see-also"></a>Zie ook
 
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,19 +1,12 @@
 ---
-title: HelpInfo XML-schema | Microsoft Docs
-ms.custom: ''
+title: HelpInfo-XML-schema
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
-caps.latest.revision: 7
-ms.openlocfilehash: 3e2a113e120c61fab1ba76c4fd897ded67d13319
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810832"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953247"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo-XML-schema
 
@@ -25,7 +18,7 @@ HelpInfo XML-bestanden zijn gebaseerd op het volgende XML-schema.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<schema targetNamespace="https://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
     <complexType>
       <sequence>
@@ -54,12 +47,12 @@ HelpInfo XML-bestanden zijn gebaseerd op het volgende XML-schema.
 
 Het HelpInfo XML-bestand bevat de volgende elementen.
 
-HelpContentURI bevat de URI van de locatie van de CAB-bestanden voor de Help voor de module. De URI moet beginnen met http of https. De URI moet een Internet locatie opgeven, maar mag de naam van het CAB-bestand niet bevatten. De **HelpContentURI** -waarde kan gelijk zijn aan of verschillen van de **HelpInfoURI** -waarde.
+- **HelpContentURI** : bevat de URI van de locatie van de cab-bestanden voor de Help voor de module. De URI moet beginnen met http of https. De URI moet een Internet locatie opgeven, maar mag de CAB-bestands naam niet bevatten. De **HelpContentURI** -waarde kan gelijk zijn aan of verschillen van de **HelpInfoURI** -waarde.
 
-SupportedUICultures vertegenwoordigt de Help-bestanden van de module in alle GEBRUIKERSINTERFACE culturen. Bevat **uiCulture** -elementen, die elk een set Help-bestanden voor de module in een opgegeven UI-cultuur vertegenwoordigen.
+- **SupportedUICultures** : dit is de Help-bestanden van de module in alle gebruikersinterface culturen. Bevat **uiCulture** -elementen, die elk een set Help-bestanden voor de module in een opgegeven UI-cultuur vertegenwoordigen.
 
-UICulture vertegenwoordigt een set Help-bestanden voor de module in een opgegeven UI-cultuur. Voeg een **uiCulture** -element toe voor elke UI-cultuur waarin de Help bestanden zijn geschreven.
+- **UiCulture** : vertegenwoordigt een set Help-bestanden voor de module in een opgegeven UI-cultuur. Voeg een **uiCulture** -element toe voor elke UI-cultuur waarin de Help bestanden zijn geschreven.
 
-UICultureName bevat de taal code voor de UI-cultuur waarin de Help-bestanden zijn geschreven.
+- **UICultureName** : bevat de taal code voor de UI-cultuur waarin de Help-bestanden zijn geschreven.
 
-UICultureVersion bevat een versie nummer van 4 onderdelen in N1. N2. N3. N4: dit is de indeling die de versie van het CAB-bestand van de Help vertegenwoordigt in de UI-cultuur. Verhoog dit versie nummer telkens wanneer u nieuwe CAB-bestanden van de Help uploadt in de UI-cultuur die is opgegeven door **UICultureName**. Zie "version-klasse (systeem)" in MSDN voor meer informatie over deze waarde.
+- **UICultureVersion** -bevat een versie nummer van 4 onderdelen in N1. N2. N3. N4: dit is de indeling die de versie van het CAB-bestand van de Help vertegenwoordigt in de UI-cultuur. Verhoog dit versie nummer telkens wanneer u nieuwe CAB-bestanden van de Help uploadt in de UI-cultuur die is opgegeven door **UICultureName**. Zie [versie klasse](/dotnet/api/system.version)voor meer informatie over deze waarde.

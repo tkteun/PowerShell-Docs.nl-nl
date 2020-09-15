@@ -1,19 +1,12 @@
 ---
 title: Host01-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
-caps.latest.revision: 14
-ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a2ef53d36697d5637dff3de8a286902984f3c5a1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353149"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772244"
 ---
 # <a name="host01-sample"></a>Voorbeeld Host01
 
@@ -25,7 +18,7 @@ In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaak
 
  Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 - Er wordt een aangepaste host-klasse gemaakt die is afgeleid van de [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) -klasse.
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WindowsPackageCab-resource
-ms.openlocfilehash: 1b1b8b6d065882400608d26a991318fec9ad5747
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 7205a454d100bb369fd6cf0c5ac419585c8bbe86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563951"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464142"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab-resource
 
@@ -17,7 +17,7 @@ De **WindowsPackageCab** -resource in Windows Power shell desired state Configur
 
 Op het doel knooppunt moet de Power shell-module DISM zijn geïnstalleerd. Zie [DISM gebruiken in Windows Power shell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)voor meer informatie.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 {
@@ -34,7 +34,7 @@ Op het doel knooppunt moet de Power shell-module DISM zijn geïnstalleerd. Zie [
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam van het pakket aangegeven dat u een specifieke status wilt bieden. |
+|Naam |Hiermee wordt de naam van het pakket aangegeven dat u een specifieke status wilt bieden. |
 |Bronpad |Hiermee wordt het pad aangegeven waar het pakket zich bevindt. |
 |Logboekpad |Hiermee wordt het volledige pad aangegeven waar u wilt dat de provider een logboek bestand opslaat om het pakket te installeren of te verwijderen. |
 

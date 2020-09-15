@@ -1,14 +1,14 @@
 ---
 title: Alles wat u wilt weten over PSCustomObject
 description: PSCustomObject is een eenvoudige manier om gestructureerde gegevens te maken.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149843"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410135"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Alles wat u wilt weten over PSCustomObject
 
@@ -71,7 +71,7 @@ Op deze manier is het heel wat langzamer, maar dit is mogelijk de beste optie vo
 
 ### <a name="saving-to-a-file"></a>Opslaan naar een bestand
 
-Ik vind de beste manier om een hashtabel op te slaan in een bestand om het op te slaan als JSON. U kunt deze weer importeren in een`[PSCusomObject]`
+Ik vind de beste manier om een hashtabel op te slaan in een bestand om het op te slaan als JSON. U kunt deze weer importeren in een `[PSCustomObject]`
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -139,7 +139,7 @@ $myObject.$property
 
 Ik weet dat dat vreemd lijkt, maar het werkt.
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a>Pscustomboject naar een hashtabel converteren
+### <a name="convert-pscustombobject-into-a-hashtable"></a>PSCustombObject naar een hashtabel converteren
 
 Als u wilt door gaan met de laatste sectie, kunt u de eigenschappen dynamisch door lopen en een hashtabel maken.
 
@@ -254,6 +254,9 @@ $myObject = [PSCustomObject]@{
 ```
 
 Ik ben geweldig hoe mooi dit precies in de taal past. Nu we een object met de juiste type naam hebben, kunnen we meer dingen doen.
+
+> [!NOTE]
+> U kunt ook aangepaste Power shell-typen maken met behulp van Power shell-klassen. Zie [overzicht van Power shell-klassen](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes)voor meer informatie.
 
 ## <a name="using-defaultpropertyset-the-long-way"></a>DefaultPropertySet gebruiken (de lange manier)
 

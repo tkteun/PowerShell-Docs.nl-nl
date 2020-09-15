@@ -1,19 +1,19 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC voor Linux nxGroup-resource
-ms.openlocfilehash: 3682cb728d314d00b4a64a93b93018e8a6d12a21
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560845"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464431"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC voor Linux nxGroup-resource
 
 De **nxGroup** -resource in Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op een Linux-knoop punt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 nxGroup <string> #ResourceName

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: GetConfigurationStatus-methode
-ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c2c478151428052d656832fb4079f12d666a910d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942690"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464044"
 ---
 # <a name="getconfigurationstatus-method"></a>GetConfigurationStatus-methode
 
@@ -24,9 +24,9 @@ uint32 GetConfigurationStatus(
 
 ## <a name="parameters"></a>Parameters
 
-*Alle* \[in\] **waar** als deze methode informatie moet retour neren over alle configuratie runs op de computer, met inbegrip van de configuratie toepassing en de consistentie controle.
+**Alle** \[ in \] **True** als deze methode informatie moet retour neren over alle configuratie runs op de computer, met inbegrip van de configuratie toepassing en de consistentie controle.
 
-*configurationStatus* \[out\] on return bevat een Inge sloten instantie van de klasse **MSFT_DSCConfigurationStatus** die de instellingen definieert.
+**configurationStatus** \[ out \] on return bevat een Inge sloten exemplaar van de klasse **MSFT_DSCConfigurationStatus** die de instellingen definieert.
 
 ## <a name="return-value"></a>Retourwaarde
 

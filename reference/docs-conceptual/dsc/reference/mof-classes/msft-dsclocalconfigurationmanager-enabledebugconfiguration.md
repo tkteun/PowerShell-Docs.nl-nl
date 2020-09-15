@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: EnableDebugConfiguration-methode
-ms.openlocfilehash: f1290e4d898332361850ffc85aa0a8d79863c8f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: be75b1012f49db79eb75a68c6912ffd5772bf16f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941584"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464091"
 ---
 # <a name="enabledebugconfiguration-method"></a>EnableDebugConfiguration-methode
 
@@ -23,7 +23,7 @@ uint32 EnableDebugConfiguration(
 
 ## <a name="parameters"></a>Parameters
 
-*BreakAll* \[in\] stelt een onderbrekings punt in op elke regel in het bron script.
+**BreakAll** \[ in \] stelt een onderbrekings punt in op elke regel in het bron script.
 
 ## <a name="return-value"></a>Retourwaarde
 

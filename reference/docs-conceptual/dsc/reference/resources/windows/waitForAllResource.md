@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WaitForAll-resource
-ms.openlocfilehash: b756bad2c49659d983c58ba8d0c989888674722e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a0cf553af96ecc3df4968581f8f393b72fc3dabf
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560794"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464363"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll-resource
 
@@ -20,7 +20,7 @@ Deze resource slaagt als de resource die is opgegeven door de eigenschap **Resou
 > [!NOTE]
 > **WaitForAll** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 WaitForAll [string] #ResourceName

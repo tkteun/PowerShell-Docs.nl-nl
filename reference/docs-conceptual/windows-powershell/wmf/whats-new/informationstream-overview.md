@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Gegevensstroom
-ms.openlocfilehash: 39cb3c36a70530b3ff9777edc74b88d276cbbb7c
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
+ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810370"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567838"
 ---
 # <a name="information-stream"></a>Gegevensstroom
 
-Power shell 5,0 voegt een nieuwe gestructureerde **informatie** stroom toe voor het verzenden van gestructureerde gegevens tussen een script en de host. `Write-Host`is ook bijgewerkt met het verzenden van de uitvoer naar de **informatie** stroom waar u deze nu kunt vastleggen of stilte. De nieuwe `Write-Information` cmdlet die wordt gebruikt met de algemene para meters **InformationVariable** en **Information Action** biedt meer flexibiliteit en meer mogelijkheden.
+Power shell 5,0 voegt een nieuwe gestructureerde **informatie** stroom toe voor het verzenden van gestructureerde gegevens tussen een script en de host. `Write-Host` is ook bijgewerkt met het verzenden van de uitvoer naar de **informatie** stroom waar u deze nu kunt vastleggen of stilte. De nieuwe `Write-Information` cmdlet die wordt gebruikt met de algemene para meters **InformationVariable** en **Information Action** biedt meer flexibiliteit en meer mogelijkheden.
 
 De volgende functie maakt gebruik van cmdlets die gebruikmaken van de nieuwe **informatie** stroom.
 
@@ -41,7 +41,7 @@ function OutputGusher {
 In de volgende voor beelden ziet u de resultaten van het uitvoeren van deze functie.
 
 ```powershell
-$r = c:\temp\OutputGusher
+$r = OutputGusher
 ```
 
 ```Output

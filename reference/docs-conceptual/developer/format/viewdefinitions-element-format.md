@@ -1,19 +1,12 @@
 ---
 title: ViewDefinitions-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
-caps.latest.revision: 18
-ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a108c4f8b03e3dec3905181b390aee2c82ab0028
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353415"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772481"
 ---
 # <a name="viewdefinitions-element-format"></a>Het element ViewDefinitions (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee worden de weer gaven gedefinieerd die worden gebruikt om .NET-objecten w
 
 Element configuratie-element (indeling) ViewDefinitions (XML-indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 
@@ -32,7 +25,7 @@ Element configuratie-element (indeling) ViewDefinitions (XML-indeling)
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ViewDefinitions` beschreven. Er is geen limiet voor het aantal weer gaven dat kan worden gedefinieerd in een opmaak bestand en ze kunnen in elke wille keurige volg orde worden toegevoegd.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ViewDefinitions` element beschreven. Er is geen limiet voor het aantal weer gaven dat kan worden gedefinieerd in een opmaak bestand en ze kunnen in elke wille keurige volg orde worden toegevoegd.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,29 +35,29 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om een of meer .NET-objecten weer te geven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om een of meer .NET-objecten weer te geven.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Configuratie-element (indeling)](./configuration-element-format.md)|Vertegenwoordigt het element op het hoogste niveau van een opmaak bestand.|
+|[Het element Configuratie (opmaak)](./configuration-element-format.md)|Vertegenwoordigt het element op het hoogste niveau van een opmaak bestand.|
 
 ## <a name="remarks"></a>Opmerkingen
 
 Zie de volgende onderwerpen voor meer informatie over de onderdelen van de verschillende typen weer gaven:
 
-- [Een tabel weergave maken](./creating-a-table-view.md)
+- [Een tabelweergave maken](./creating-a-table-view.md)
 
-- [Een lijst weergave maken](./creating-a-list-view.md)
+- [Een lijstweergave maken](./creating-a-list-view.md)
 
-- [Een brede weer gave maken](./creating-a-wide-view.md)
+- [Een brede weergave maken](./creating-a-wide-view.md)
 
 - [Aangepaste besturings elementen](./creating-custom-controls.md)
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een `ViewDefinitions`-element weer gegeven dat de bovenliggende elementen voor een tabel weergave en een lijst weergave bevat.
+In dit voor beeld ziet u een- `ViewDefinitions` element dat de bovenliggende elementen bevat voor een tabel weergave en een lijst weergave.
 
 ```xml
 <Configuration>
@@ -81,16 +74,16 @@ In dit voor beeld wordt een `ViewDefinitions`-element weer gegeven dat de bovenl
 
 ## <a name="see-also"></a>Zie ook
 
-[Configuratie-element (indeling)](./configuration-element-format.md)
+[Het element Configuratie (opmaak)](./configuration-element-format.md)
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
 [Aangepaste besturings elementen](./creating-custom-controls.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

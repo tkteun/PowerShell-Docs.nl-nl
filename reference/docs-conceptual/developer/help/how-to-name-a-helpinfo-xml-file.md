@@ -1,19 +1,12 @@
 ---
-title: Een HelpInfo XML-bestand benoemen | Microsoft Docs
-ms.custom: ''
+title: Een naam geven aan een HelpInfo-XML-bestand
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 64e85b53-5aeb-4d6c-903c-af4ab62f11c1
-caps.latest.revision: 7
-ms.openlocfilehash: 45e8a5bb0066f38c82cd3be8ec881383befd9c85
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9505a7f66852a569d25ac0c1be86e68f870a7930
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810132"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892928"
 ---
 # <a name="how-to-name-a-helpinfo-xml-file"></a>Een naam geven aan een HelpInfo-XML-bestand
 
@@ -27,9 +20,9 @@ Een HelpInfo XML-bestand moet een naam hebben met de volgende indeling.
 
 De elementen van de naam zijn als volgt.
 
-Module naam de waarde van de eigenschap **name** van het **ModuleInfo** -object dat door de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) wordt geretourneerd.
+- `<ModuleName>` -De waarde van de eigenschap **name** van het **ModuleInfo** -object dat door de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) wordt geretourneerd.
 
-ModuleGUID de waarde van de **GUID** -sleutel in het manifest van de module.
+- `<ModuleGUID>` -De waarde van de **GUID** -sleutel in het module manifest.
 
 Als de module naam bijvoorbeeld ' TestModule ' is en de module-GUID 9cabb9ad-f2ac-4914-a46b-bfc1bebf07f9, zou de naam van het HelpInfo XML-bestand voor de module er als volgt uitziet:
 

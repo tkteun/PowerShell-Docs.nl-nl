@@ -1,19 +1,12 @@
 ---
-title: Voor beelden toevoegen aan een Help-onderwerp over cmdlets | Microsoft Docs
-ms.custom: ''
+title: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
-caps.latest.revision: 5
-ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557087"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893438"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
 
@@ -21,7 +14,7 @@ ms.locfileid: "83557087"
 
 - Een lijst met alle parameter namen in de opdracht, zelfs wanneer de parameter namen optioneel zijn. Op deze manier kan de gebruiker de opdracht eenvoudig interpreteren.
 
-- Vermijd aliassen en gedeeltelijke parameter namen, zelfs als ze werken in Windows Power shell®.
+- Vermijd aliassen en gedeeltelijke parameter namen, ook al werken ze in Power shell.
 
 - In het voor beeld wordt de rationele uitleg uitgelegd voor het bouwen van de opdracht. Leg uit waarom u specifieke para meters en waarden hebt gekozen en hoe u variabelen gebruikt.
 
@@ -35,7 +28,7 @@ Voor beelden worden alleen weer gegeven in de gedetailleerde en volledige weer g
 
 ## <a name="adding-an-examples-node"></a>Een voor beeld-knoop punt toevoegen
 
-In het volgende XML-bestand ziet u hoe u een knoop punt voor beelden kunt toevoegen die één voorbeeld knooppunt bevat. Voeg extra voorbeeld knooppunten toe voor elk voor beeld dat u wilt toevoegen in het onderwerp.
+In het volgende XML-bestand ziet u hoe u een knoop punt **voor beelden** kunt toevoegen die één **voorbeeld** knooppunt bevat. Voeg extra voorbeeld knooppunten toe voor elk voor beeld dat u wilt toevoegen in het onderwerp.
 
 ```xml
 <command:examples>
@@ -46,7 +39,7 @@ In het volgende XML-bestand ziet u hoe u een knoop punt voor beelden kunt toevoe
 
 ## <a name="adding-an-example-title"></a>Een voorbeeld titel toevoegen
 
-In het volgende XML-bestand ziet u hoe u een titel kunt toevoegen voor het voor beeld. De titel wordt gebruikt om het voor beeld uit te stellen uit andere voor beelden. Windows Power shell® gebruikt een standaard header die een opeenvolgend voorbeeld nummer bevat.
+In het volgende XML-bestand ziet u hoe u een **titel** kunt toevoegen voor het voor beeld. De **titel** wordt gebruikt om het voor beeld uit te stellen uit andere voor beelden. Power shell gebruikt een standaard header die een opeenvolgend voorbeeld nummer bevat.
 
 ```xml
 <command:examples>
@@ -58,7 +51,7 @@ In het volgende XML-bestand ziet u hoe u een titel kunt toevoegen voor het voor 
 
 ## <a name="adding-preceding-characters"></a>Voorafgaande tekens toevoegen
 
-In het volgende XML-bestand ziet u hoe u tekens kunt toevoegen, zoals de Windows Power shell-prompt, die direct vóór de voor beeld-opdracht worden weer gegeven (zonder tussenliggende spaties). Windows Power Shell® maakt gebruik van de Windows Power shell-prompt: C:\PS>.
+In het volgende XML-bestand ziet u hoe u tekens kunt toevoegen, zoals de Windows Power shell-prompt, die direct vóór de voor beeld-opdracht worden weer gegeven (zonder tussenliggende spaties). Power Shell maakt gebruik van de Windows Power shell-prompt: `C:\PS>` .
 
 ```xml
 <command:examples>
@@ -89,7 +82,7 @@ In het volgende XML-bestand ziet u hoe u de werkelijke opdracht van het voor bee
 
 ## <a name="adding-a-description"></a>Een beschrijving toevoegen
 
-In het volgende XML-bestand ziet u hoe u een beschrijving voor het voor beeld kunt toevoegen. Windows Power shell® gebruikt één set \< maml: para> Tags voor de beschrijving, zelfs als er meerdere \< maml: para codes> Tags kunnen worden gebruikt.
+In het volgende XML-bestand ziet u hoe u een beschrijving voor het voor beeld kunt toevoegen. Power shell gebruikt één set `<maml:para>` Tags voor de beschrijving, zelfs als er meerdere `<maml:para>` Tags kunnen worden gebruikt.
 
 ```xml
 <command:examples>
@@ -108,7 +101,8 @@ In het volgende XML-bestand ziet u hoe u een beschrijving voor het voor beeld ku
 
 ## <a name="adding-example-output"></a>Voorbeeld uitvoer toevoegen
 
-In het volgende XML-bestand ziet u hoe de uitvoer van de opdracht kan worden toegevoegd. De gegevens van de opdracht resultaten zijn optioneel, maar in sommige gevallen is het handig om te demonstreren wat het effect is van het gebruik van specifieke para meters. Windows Power shell® gebruikt twee sets lege \< maml: para codes> om de uitvoer van de opdracht van de opdracht te scheiden.
+In het volgende XML-bestand ziet u hoe de uitvoer van de opdracht kan worden toegevoegd. De gegevens van de opdracht resultaten zijn optioneel, maar in sommige gevallen is het handig om te demonstreren wat het effect is van het gebruik van specifieke para meters.
+Power shell gebruikt twee sets lege `<maml:para>` Tags voor het scheiden van de uitvoer van de opdracht van de opdracht.
 
 ```xml
 <command:examples>

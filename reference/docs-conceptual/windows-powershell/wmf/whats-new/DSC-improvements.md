@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
-ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810496"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771546"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
@@ -36,7 +36,7 @@ In eerdere versies van WMF zouden gelijktijdige registraties/rapporten naar een 
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Circulair data base-exemplaar van het logboek inschakelen.
 
-In de eariler-versie van DSC-PullServer werden de ESENT-database logboek bestanden de schijf ruimte van de PullServer opgevuld omdat het data base-exemplaar werd gemaakt zonder circulaire logboek registratie. In deze release hebt u de mogelijkheid om de circulaire logboek registratie van het exemplaar te beheren met de web. config van de pullserver. CircularLogging is standaard ingesteld op TRUE.
+In de eariler-versie van DSC-PullServer werden de ESENT-database logboek bestanden de schijf ruimte van de PullServer opgevuld omdat het data base-exemplaar werd gemaakt zonder circulaire logboek registratie. In deze release hebt u de mogelijkheid om het circulaire logboek registratie gedrag van het exemplaar te beheren met behulp van de web.config van de pullserver. CircularLogging is standaard ingesteld op TRUE.
 
 ```xml
 <appSettings>
@@ -286,7 +286,7 @@ Bij het instellen van de hierboven genoemde configuratie op een knoop punt wordt
    - Zoek een `<moduleName>.cat` bestand en controleer de hand tekening met behulp van `Get-AuthenticodeSignature` .
    - Controleer of de certificerings instantie die de ondertekenaar heeft geverifieerd, vertrouwd is.
    - Controleer of de inhoud van de modules niet is geknoeid met de nieuwe cmdlet `Test-FileCatalog` .
-5. `Install-Module`Aan`$env:ProgramFiles\WindowsPowerShell\Modules\`
+5. `Install-Module` Aan `$env:ProgramFiles\WindowsPowerShell\Modules\`
 6. Proces configuratie
 
 > [!NOTE]
@@ -345,12 +345,12 @@ Een configuratie die wordt geleverd met behulp van push kan worden geknoeid met 
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
+  ![Fout-niet-ondertekend MOF-bestand gepusht](media/DSC-improvements/PushUnsignedMof.png)
 
 - Onderteken het configuratie bestand met het certificaat voor ondertekening van programma code.
 
-  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
+  ![Het MOF-bestand ondertekenen](media/DSC-improvements/SignMofFile.png)
 
 - Probeer het ondertekende MOF-bestand te pushen.
 
-  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
+  ![Het ondertekende MOF-bestand pushen](media/DSC-improvements/PushSignedMof.png)

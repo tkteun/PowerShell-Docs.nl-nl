@@ -1,19 +1,12 @@
 ---
-title: 'Bijwerk bare Help-ontwerpen: Step-by-Step | Microsoft Docs'
-ms.custom: ''
+title: Bij te werken hulp bij het ontwerpen-stap voor stap
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
-caps.latest.revision: 13
-ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810111"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893115"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Ontwerpen van Help die kan worden bijgewerkt: stap voor stap
 
@@ -48,14 +41,10 @@ HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 
 Het HelpInfo XML-informatie bestand bevat de URI van de Internet locatie van uw Help-bestanden en de versie nummers van de nieuwste Help-bestanden voor uw module in elke ondersteunde UI-cultuur. Elke Windows Power shell-module heeft één HelpInfo XML-bestand. Wanneer u de Help-bestanden bijwerkt, moet u het HelpInfo XML-bestand bewerken of vervangen. u kunt geen andere toevoegen. Zie [How to Create a HELPINFO XML file](./how-to-create-a-helpinfo-xml-file.md)(Engelstalig) voor meer informatie.
 
-### <a name="step-4-sign-your-help-files"></a>Stap 4: uw Help-bestanden ondertekenen
+### <a name="step-4-create-cab-files"></a>Stap 4: CAB-bestanden maken
 
-Digitale hand tekeningen zijn niet vereist, maar het is een aanbevolen aanbeveling wanneer u bestanden deelt.
+Gebruik een hulp programma waarmee u Cabinet ( `.cab` )-bestanden maakt, zoals `MakeCab.exe` , om een CAB-bestand te maken dat de Help-bestanden voor uw module bevat. Maak een afzonderlijk CAB-bestand voor de Help-bestanden in elke ondersteunde UI-cultuur. Zie voor meer informatie voor [bereiding voor het voorbereiden van bijwerk bare Help cab-bestanden](./how-to-prepare-updatable-help-cab-files.md).
 
-### <a name="step-5-create-cab-files"></a>Stap 5: CAB-bestanden maken
-
-Gebruik een hulp programma dat cab-bestanden (. cab) maakt, zoals MakeCab. exe, om een te maken. CAB-bestand dat de Help-bestanden voor uw module bevat. Maak een afzonderlijk CAB-bestand voor de Help-bestanden in elke ondersteunde UI-cultuur. Zie voor meer informatie voor [bereiding voor het voorbereiden van bijwerk bare Help cab-bestanden](./how-to-prepare-updatable-help-cab-files.md).
-
-### <a name="step-6-upload-your-files"></a>Stap 6: uw bestanden uploaden
+### <a name="step-5-upload-your-files"></a>Stap 5: uw bestanden uploaden
 
 Als u nieuwe of bijgewerkte Help-bestanden wilt publiceren, uploadt u de CAB-bestanden naar de Internet locatie die is opgegeven door het element **HelpContentUri** in het XML-bestand HelpInfo. Upload vervolgens het HelpInfo XML-bestand naar de Internet locatie die is opgegeven door de waarde van de sleutel **HelpInfoUri** in het module manifest.

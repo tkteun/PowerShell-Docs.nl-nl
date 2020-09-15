@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over ShouldProcess
 description: ShouldProcess is een belang rijke functie die vaak wordt weer geven. Met de para meters WhatIf en confirm kunt u eenvoudig toevoegen aan uw functies.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1d9110302a191b90bd11bdf742f77704a8c9d6f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149836"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469732"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>Alles wat u wilt weten over ShouldProcess
 
@@ -238,7 +238,7 @@ if($PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)){
 $reason
 ```
 
-De variabele moet worden door gegeven aan `$reason` de vierde para meter als referentie variabele met `[ref]` . `ShouldProcess`vult `$reason` met de waarde `None` of `WhatIf` . Ik heb dit niet gedaan, maar ik heb geen reden gehad om deze ooit te gebruiken.
+De variabele moet worden door gegeven aan `$reason` de vierde para meter als referentie variabele met `[ref]` . `ShouldProcess` vult `$reason` met de waarde `None` of `WhatIf` . Ik heb dit niet gedaan, maar ik heb geen reden gehad om deze ooit te gebruiken.
 
 ### <a name="where-to-place-it"></a>Locatie van de locatie
 
@@ -313,7 +313,7 @@ Ik wil `-Force` de ondersteuning voor een latere sectie toevoegen.
 
 ### <a name="confirmpreference"></a>$ConfirmPreference
 
-`$ConfirmPreference`is een automatische variabele die bepaalt wanneer `ConfirmImpact` u wordt gevraagd om de uitvoering te bevestigen. Dit zijn de mogelijke waarden voor zowel `$ConfirmPreference` als `ConfirmImpact` .
+`$ConfirmPreference` is een automatische variabele die bepaalt wanneer `ConfirmImpact` u wordt gevraagd om de uitvoering te bevestigen. Dit zijn de mogelijke waarden voor zowel `$ConfirmPreference` als `ConfirmImpact` .
 
 - `High`
 - `Medium`
@@ -348,7 +348,7 @@ Hiermee gaat u terug naar een eerdere waarschuwing: er zijn nuances die niet wor
 
 ## <a name="pscmdletshouldcontinue"></a>$PSCmdlet. ShouldContinue
 
-Als u meer controle nodig hebt dan `ShouldProcess` biedt, kunt u de prompt direct activeren met `ShouldContinue` . `ShouldContinue`negeert `$ConfirmPreference` ,,, `ConfirmImpact` `-Confirm` `$WhatIfPreference` en `-WhatIf` wordt gevraagd elke keer dat deze wordt uitgevoerd.
+Als u meer controle nodig hebt dan `ShouldProcess` biedt, kunt u de prompt direct activeren met `ShouldContinue` . `ShouldContinue` negeert `$ConfirmPreference` ,,, `ConfirmImpact` `-Confirm` `$WhatIfPreference` en `-WhatIf` wordt gevraagd elke keer dat deze wordt uitgevoerd.
 
 In een kort overzicht kunt u gemakkelijk verwarren `ShouldProcess` en `ShouldContinue` . Ik wil het vaak niet gebruiken `ShouldProcess` omdat de para meter wordt aangeroepen `SupportsShouldProcess` in de `CmdletBinding` .
 U moet `ShouldProcess` in vrijwel elk scenario gebruiken. Daarom heb ik die methode eerst gedekt.
@@ -411,7 +411,7 @@ Ik heb een `foreach` lus en een verzameling toegevoegd om deze in actie weer te 
 
 ## <a name="implementing--force"></a>Implementatie-forceren
 
-`ShouldProcess`en `ShouldContinue` moet `-Force` op verschillende manieren worden geïmplementeerd. De truc van deze implementaties is dat `ShouldProcess` altijd moet worden uitgevoerd, maar `ShouldContinue` niet moet worden uitgevoerd als `-Force` is opgegeven.
+`ShouldProcess` en `ShouldContinue` moet `-Force` op verschillende manieren worden geïmplementeerd. De truc van deze implementaties is dat `ShouldProcess` altijd moet worden uitgevoerd, maar `ShouldContinue` niet moet worden uitgevoerd als `-Force` is opgegeven.
 
 ### <a name="shouldprocess--force"></a>ShouldProcess-forceren
 
@@ -481,7 +481,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 
 Als iemand beide opgeeft `-Force` en `-WhatIf` , moet de prioriteit worden ingesteld `-WhatIf` . Deze aanpak behoudt de `-WhatIf` verwerking omdat deze `ShouldProcess` altijd wordt uitgevoerd.
 
-Voeg geen controle toe voor de `$Force` waarde in de if-instructie met de `ShouldProcess` . Dit is een anti patroon voor dit specifieke scenario, zelfs als dat zo is, in de volgende sectie voor `ShouldContinue` .
+Voeg geen controle toe voor de `$Force` waarde in de `if` instructie met de `ShouldProcess` . Dit is een anti patroon voor dit specifieke scenario, zelfs als dat zo is, in de volgende sectie voor `ShouldContinue` .
 
 ### <a name="shouldcontinue--force"></a>ShouldContinue-forceren
 

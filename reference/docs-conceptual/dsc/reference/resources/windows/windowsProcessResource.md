@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WindowsProcess-resource
-ms.openlocfilehash: 5c30af98bf7b99551396082630605c566a866697
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a1f8840a5894049efd27c5d213a66363cd8dbebc
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560488"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464125"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "83560488"
 
 De **WindowsProcess** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het configureren van processen op een doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 WindowsProcess [string] #ResourceName

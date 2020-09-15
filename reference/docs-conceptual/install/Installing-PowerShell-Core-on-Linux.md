@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
-ms.date: 05/21/2020
-ms.openlocfilehash: 1f3526507f84c43fbe44235e9a44e43d7f3d3e37
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.date: 07/30/2020
+ms.openlocfilehash: ce69f75416eb326e38d42991a4ae85a3a7298c5d
+ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84148460"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87441766"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -59,6 +59,9 @@ Momenteel niet ondersteund
 
 - Ubuntu 20,04
 
+> [!NOTE]
+> Power shell kan alleen de distributies ondersteunen die door .NET worden ondersteund. Zie de [opmerkingen bij de release van .net core][distros] voor een lijst met ondersteunde distributies. Als er een distrbution wordt ondersteund door .NET dat hier niet wordt vermeld, kunt u aanvragen dat ondersteuning voor de distributie wordt toegevoegd. U kunt een aanvraag indienen via de sjabloon voor de [ondersteunings aanvraag voor distributie][] .
+
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>Installatie via pakket opslagplaats-Ubuntu 16,04
@@ -88,12 +91,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via direct downloaden-Ubuntu 16,04
 
-Down load het Debian-pakket `powershell-lts_7.0.1-1.ubuntu.16.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell-lts_7.0.3-1.ubuntu.16.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.0.1-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.3-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -138,12 +141,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via direct downloaden-Ubuntu 18,04
 
-Down load het Debian-pakket `powershell-lts_7.0.1-1.ubuntu.18.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell-lts_7.0.3-1.ubuntu.18.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.0.1-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -238,12 +241,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installatie via direct downloaden-Debian 9
 
-Down load het Debian-pakket `powershell-lts_7.0.1-1.debian.9_amd64.deb` van de pagina [releases][] op de Debian-computer.
+Down load het Debian-pakket `powershell-lts_7.0.3-1.debian.9_amd64.deb` van de pagina [releases][] op de Debian-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.0.1-1.debian.9_amd64.deb
+sudo dpkg -i powershell-lts_7.0.3-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -283,7 +286,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installatie via direct downloaden-Debian 10
 
-Down load het pakket tar. gz `powershell-7.0.1-linux-x64.tar.gz` van de pagina [releases][] op de Debian-machine.
+Down load het pakket tar. gz `powershell-7.0.3-linux-x64.tar.gz` van de pagina [releases][] op de Debian-machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -305,7 +308,7 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -330,7 +333,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installatie via direct downloaden-Alpine 3,9 en 3,10
 
-Down load het pakket tar. gz `powershell-7.0.1-linux-alpine-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
+Down load het pakket tar. gz `powershell-7.0.3-linux-alpine-x64.tar.gz` van de pagina [releases][] op de Alpine machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
@@ -355,7 +358,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -397,18 +400,18 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via direct downloaden-CentOS 7
 
-Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-lts-7.0.1-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
+Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-lts-7.0.3-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo yum install powershell-lts-7.0.1-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-lts-7.0.1-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-lts-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Installatie ongedaan maken-CentOS 7
@@ -440,18 +443,18 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via direct downloaden-Red Hat Enterprise Linux (RHEL) 7
 
-Down load het RPM-pakket `powershell-lts-7.0.1-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Red Hat Enterprise Linux machine.
+Down load het RPM-pakket `powershell-lts-7.0.3-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Red Hat Enterprise Linux machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo yum install powershell-lts-7.0.1-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-lts-7.0.1-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-lts-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Ongedaan maken-Red Hat Enterprise Linux (RHEL) 7
@@ -469,7 +472,7 @@ sudo yum remove powershell
 zypper update && zypper --non-interactive install curl tar libicu52_1
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -494,7 +497,7 @@ pwsh
 zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -552,20 +555,20 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installatie via direct downloaden-Fedora 28, 29 en 30
 
-Down load het RPM-pakket `powershell-7.0.1-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de computer Fedora.
+Down load het RPM-pakket `powershell-7.0.3-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de computer Fedora.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-7.0.1-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-28-29-and-30"></a>Installatie ongedaan maken-Fedora 28, 29 en 30
@@ -598,7 +601,7 @@ Voor meer informatie over het installeren van pakketten van de AUR raadpleegt u 
 
 ### <a name="getting-snapd"></a>Bezig met uitlijnen
 
-`snapd`is vereist voor het uitvoeren van snaps. Volg [deze instructies](https://docs.snapcraft.io/core/install) om te controleren of u hebt `snapd` geïnstalleerd.
+`snapd` is vereist voor het uitvoeren van snaps. Volg [deze instructies](https://docs.snapcraft.io/core/install) om te controleren of u hebt `snapd` geïnstalleerd.
 
 ### <a name="installation-via-snap"></a>Installatie via snap
 
@@ -688,13 +691,13 @@ sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
 # Download and extract PowerShell
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.0.1-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-7.0.3-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -752,7 +755,7 @@ Power shell bouwt draag bare binaire bestanden voor alle Linux-distributies. .NE
 
 In het volgende diagram ziet u de .NET Core 2,0-afhankelijkheden die officieel worden ondersteund op verschillende Linux-distributies.
 
-| Besturingssysteem                 | Afhankelijkheden |
+| OS                 | Afhankelijkheden |
 | ------------------ | ------------ |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu55 |
 | Ubuntu 17,10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc + + 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl 1.0.0, libicu57 |
@@ -774,7 +777,7 @@ Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -798,16 +801,23 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>Paden
 
 - `$PSHOME` is `/opt/microsoft/powershell/7/`
-- Gebruikers profielen worden gelezen van`~/.config/powershell/profile.ps1`
-- Standaard profielen worden gelezen uit`$PSHOME/profile.ps1`
-- Gebruikers modules worden gelezen uit`~/.local/share/powershell/Modules`
-- Gedeelde modules worden gelezen van`/usr/local/share/powershell/Modules`
-- Standaard modules worden gelezen van`$PSHOME/Modules`
-- De PSReadLine-geschiedenis wordt vastgelegd in`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
+- Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
+- Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
+- Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
+- Standaard modules worden gelezen van `$PSHOME/Modules`
+- De PSReadLine-geschiedenis wordt vastgelegd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` dezelfde locatie bestaan.
 
 Power shell respecteert de [XDG base-specificatie][xdg-bds] op Linux.
 
+## <a name="installation-support"></a>Ondersteuning voor installatie
+
+Micro soft ondersteunt de installatie methoden in dit document. Er zijn mogelijk andere methoden van installatie beschikbaar van andere bronnen. Deze hulpprogram ma's en methoden kunnen werken, maar deze methoden kunnen niet door micro soft worden ondersteund.
+
+<!-- link references -->
 [shell]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[distros]: https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md#linux
+[Aanvraag voor distributie ondersteuning]: https://github.com/PowerShell/PowerShell/issues/new?assignees=&labels=Distribution-Request&template=Distribution_Request.md&title=Distribution+Support+Request
