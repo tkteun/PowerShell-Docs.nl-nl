@@ -1,26 +1,26 @@
 ---
 title: Alles wat u wilt weten over PSCustomObject
 description: PSCustomObject is een eenvoudige manier om gestructureerde gegevens te maken.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149843"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410135"
 ---
-# <a name="everything-you-wanted-to-know-about-pscustomobject"></a><span data-ttu-id="41310-103">Alles wat u wilt weten over PSCustomObject</span><span class="sxs-lookup"><span data-stu-id="41310-103">Everything you wanted to know about PSCustomObject</span></span>
+# <a name="everything-you-wanted-to-know-about-pscustomobject"></a><span data-ttu-id="31db4-103">Alles wat u wilt weten over PSCustomObject</span><span class="sxs-lookup"><span data-stu-id="31db4-103">Everything you wanted to know about PSCustomObject</span></span>
 
-<span data-ttu-id="41310-104">`PSCustomObject`s zijn een uitstekend hulp programma om toe te voegen aan de band van uw Power shell-tool.</span><span class="sxs-lookup"><span data-stu-id="41310-104">`PSCustomObject`s are a great tool to add into your PowerShell tool belt.</span></span> <span data-ttu-id="41310-105">Laten we beginnen met de basis principes en werken op onze manier in de meer geavanceerde functies.</span><span class="sxs-lookup"><span data-stu-id="41310-105">Let's start with the basics and work our way into the more advanced features.</span></span> <span data-ttu-id="41310-106">Het idee van het gebruik van a `PSCustomObject` is een eenvoudige manier om gestructureerde gegevens te maken.</span><span class="sxs-lookup"><span data-stu-id="41310-106">The idea behind using a `PSCustomObject` is to have a simple way to create structured data.</span></span> <span data-ttu-id="41310-107">Bekijk het eerste voor beeld en u hebt een beter idee van wat dat betekent.</span><span class="sxs-lookup"><span data-stu-id="41310-107">Take a look at the first example and you'll have a better idea of what that means.</span></span>
+<span data-ttu-id="31db4-104">`PSCustomObject`s zijn een uitstekend hulp programma om toe te voegen aan de band van uw Power shell-tool.</span><span class="sxs-lookup"><span data-stu-id="31db4-104">`PSCustomObject`s are a great tool to add into your PowerShell tool belt.</span></span> <span data-ttu-id="31db4-105">Laten we beginnen met de basis principes en werken op onze manier in de meer geavanceerde functies.</span><span class="sxs-lookup"><span data-stu-id="31db4-105">Let's start with the basics and work our way into the more advanced features.</span></span> <span data-ttu-id="31db4-106">Het idee van het gebruik van a `PSCustomObject` is een eenvoudige manier om gestructureerde gegevens te maken.</span><span class="sxs-lookup"><span data-stu-id="31db4-106">The idea behind using a `PSCustomObject` is to have a simple way to create structured data.</span></span> <span data-ttu-id="31db4-107">Bekijk het eerste voor beeld en u hebt een beter idee van wat dat betekent.</span><span class="sxs-lookup"><span data-stu-id="31db4-107">Take a look at the first example and you'll have a better idea of what that means.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="41310-108">De [oorspronkelijke versie][] van dit artikel is gepubliceerd op de blog geschreven door [@KevinMarquette][] .</span><span class="sxs-lookup"><span data-stu-id="41310-108">The [original version][] of this article appeared on the blog written by [@KevinMarquette][].</span></span> <span data-ttu-id="41310-109">Het Power shell-team hartelijk dank voor het delen van deze inhoud met ons.</span><span class="sxs-lookup"><span data-stu-id="41310-109">The PowerShell team thanks Kevin for sharing this content with us.</span></span> <span data-ttu-id="41310-110">Raadpleeg zijn blog op [PowerShellExplained.com][].</span><span class="sxs-lookup"><span data-stu-id="41310-110">Please check out his blog at [PowerShellExplained.com][].</span></span>
+> <span data-ttu-id="31db4-108">De [oorspronkelijke versie][] van dit artikel is gepubliceerd op de blog geschreven door [@KevinMarquette][] .</span><span class="sxs-lookup"><span data-stu-id="31db4-108">The [original version][] of this article appeared on the blog written by [@KevinMarquette][].</span></span> <span data-ttu-id="31db4-109">Het Power shell-team hartelijk dank voor het delen van deze inhoud met ons.</span><span class="sxs-lookup"><span data-stu-id="31db4-109">The PowerShell team thanks Kevin for sharing this content with us.</span></span> <span data-ttu-id="31db4-110">Raadpleeg zijn blog op [PowerShellExplained.com][].</span><span class="sxs-lookup"><span data-stu-id="31db4-110">Please check out his blog at [PowerShellExplained.com][].</span></span>
 
-## <a name="creating-a-pscustomobject"></a><span data-ttu-id="41310-111">Een PSCustomObject maken</span><span class="sxs-lookup"><span data-stu-id="41310-111">Creating a PSCustomObject</span></span>
+## <a name="creating-a-pscustomobject"></a><span data-ttu-id="31db4-111">Een PSCustomObject maken</span><span class="sxs-lookup"><span data-stu-id="31db4-111">Creating a PSCustomObject</span></span>
 
-<span data-ttu-id="41310-112">Ik ben gek `[PSCustomObject]` op het gebruik van Power shell.</span><span class="sxs-lookup"><span data-stu-id="41310-112">I love using `[PSCustomObject]` in PowerShell.</span></span> <span data-ttu-id="41310-113">Het maken van een bruikbaar object is nog nooit zo eenvoudig geweest.</span><span class="sxs-lookup"><span data-stu-id="41310-113">Creating a usable object has never been easier.</span></span>
-<span data-ttu-id="41310-114">Daarom ga ik over op alle andere manieren om een object te maken, maar ik moet vermelden dat de meeste van deze voor beelden Power shell v 3.0 en hoger zijn.</span><span class="sxs-lookup"><span data-stu-id="41310-114">Because of that, I'm going to skip over all the other ways you can create an object but I need to mention that most of these examples are PowerShell v3.0 and newer.</span></span>
+<span data-ttu-id="31db4-112">Ik ben gek `[PSCustomObject]` op het gebruik van Power shell.</span><span class="sxs-lookup"><span data-stu-id="31db4-112">I love using `[PSCustomObject]` in PowerShell.</span></span> <span data-ttu-id="31db4-113">Het maken van een bruikbaar object is nog nooit zo eenvoudig geweest.</span><span class="sxs-lookup"><span data-stu-id="31db4-113">Creating a usable object has never been easier.</span></span>
+<span data-ttu-id="31db4-114">Daarom ga ik over op alle andere manieren om een object te maken, maar ik moet vermelden dat de meeste van deze voor beelden Power shell v 3.0 en hoger zijn.</span><span class="sxs-lookup"><span data-stu-id="31db4-114">Because of that, I'm going to skip over all the other ways you can create an object but I need to mention that most of these examples are PowerShell v3.0 and newer.</span></span>
 
 ```powershell
 $myObject = [PSCustomObject]@{
@@ -30,17 +30,17 @@ $myObject = [PSCustomObject]@{
 }
 ```
 
-<span data-ttu-id="41310-115">Deze methode werkt goed voor mij omdat ik hashtabellen gebruik voor vrijwel alles.</span><span class="sxs-lookup"><span data-stu-id="41310-115">This method works well for me because I use hashtables for just about everything.</span></span> <span data-ttu-id="41310-116">Er zijn echter momenten waarop Power shell hashtabellen meer lijkt te behandelen als een object.</span><span class="sxs-lookup"><span data-stu-id="41310-116">But there are times when I would like PowerShell to treat hashtables more like an object.</span></span> <span data-ttu-id="41310-117">De eerste plaats die u ziet, is het verschil wanneer u wilt gebruiken `Format-Table` of `Export-CSV` en u beseft dat een hashtabel alleen een verzameling sleutel-waardeparen is.</span><span class="sxs-lookup"><span data-stu-id="41310-117">The first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is just a collection of key/value pairs.</span></span>
+<span data-ttu-id="31db4-115">Deze methode werkt goed voor mij omdat ik hashtabellen gebruik voor vrijwel alles.</span><span class="sxs-lookup"><span data-stu-id="31db4-115">This method works well for me because I use hashtables for just about everything.</span></span> <span data-ttu-id="31db4-116">Er zijn echter momenten waarop Power shell hashtabellen meer lijkt te behandelen als een object.</span><span class="sxs-lookup"><span data-stu-id="31db4-116">But there are times when I would like PowerShell to treat hashtables more like an object.</span></span> <span data-ttu-id="31db4-117">De eerste plaats die u ziet, is het verschil wanneer u wilt gebruiken `Format-Table` of `Export-CSV` en u beseft dat een hashtabel alleen een verzameling sleutel-waardeparen is.</span><span class="sxs-lookup"><span data-stu-id="31db4-117">The first place you notice the difference is when you want to use `Format-Table` or `Export-CSV` and you realize that a hashtable is just a collection of key/value pairs.</span></span>
 
-<span data-ttu-id="41310-118">U kunt de waarden vervolgens openen en gebruiken, net zoals u een normaal object zou doen.</span><span class="sxs-lookup"><span data-stu-id="41310-118">You can then access and use the values like you would a normal object.</span></span>
+<span data-ttu-id="31db4-118">U kunt de waarden vervolgens openen en gebruiken, net zoals u een normaal object zou doen.</span><span class="sxs-lookup"><span data-stu-id="31db4-118">You can then access and use the values like you would a normal object.</span></span>
 
 ```powershell
 $myObject.Name
 ```
 
-### <a name="converting-a-hashtable"></a><span data-ttu-id="41310-119">Een hashtabel converteren</span><span class="sxs-lookup"><span data-stu-id="41310-119">Converting a hashtable</span></span>
+### <a name="converting-a-hashtable"></a><span data-ttu-id="31db4-119">Een hashtabel converteren</span><span class="sxs-lookup"><span data-stu-id="31db4-119">Converting a hashtable</span></span>
 
-<span data-ttu-id="41310-120">Wist u dat u het onderwerp hebt, maar u hebt wel de volgende handelingen uitgevoerd:</span><span class="sxs-lookup"><span data-stu-id="41310-120">While I am on the topic, did you know you could do this:</span></span>
+<span data-ttu-id="31db4-120">Wist u dat u het onderwerp hebt, maar u hebt wel de volgende handelingen uitgevoerd:</span><span class="sxs-lookup"><span data-stu-id="31db4-120">While I am on the topic, did you know you could do this:</span></span>
 
 ```powershell
 $myHashtable = @{
@@ -51,11 +51,11 @@ $myHashtable = @{
 $myObject = [pscustomobject]$myHashtable
 ```
 
-<span data-ttu-id="41310-121">Ik wil het object nu vanuit het begin maken, maar er zijn tijden dat u eerst met een hashtabel moet werken.</span><span class="sxs-lookup"><span data-stu-id="41310-121">I do prefer to create the object from the start but there are times you have to work with a hashtable first.</span></span> <span data-ttu-id="41310-122">Dit voor beeld werkt omdat de constructor een hashtabel voor de object eigenschappen gebruikt.</span><span class="sxs-lookup"><span data-stu-id="41310-122">This example works because the constructor takes a hashtable for the object properties.</span></span> <span data-ttu-id="41310-123">Een belang rijke opmerking is dat hoewel deze methode werkt, het geen exacte equivalent is.</span><span class="sxs-lookup"><span data-stu-id="41310-123">One important note is that while this method works, it isn't an exact equivalent.</span></span> <span data-ttu-id="41310-124">Het grootste verschil is dat de volg orde van de eigenschappen niet wordt behouden.</span><span class="sxs-lookup"><span data-stu-id="41310-124">The biggest difference is that the order of the properties isn't preserved.</span></span>
+<span data-ttu-id="31db4-121">Ik wil het object nu vanuit het begin maken, maar er zijn tijden dat u eerst met een hashtabel moet werken.</span><span class="sxs-lookup"><span data-stu-id="31db4-121">I do prefer to create the object from the start but there are times you have to work with a hashtable first.</span></span> <span data-ttu-id="31db4-122">Dit voor beeld werkt omdat de constructor een hashtabel voor de object eigenschappen gebruikt.</span><span class="sxs-lookup"><span data-stu-id="31db4-122">This example works because the constructor takes a hashtable for the object properties.</span></span> <span data-ttu-id="31db4-123">Een belang rijke opmerking is dat hoewel deze methode werkt, het geen exacte equivalent is.</span><span class="sxs-lookup"><span data-stu-id="31db4-123">One important note is that while this method works, it isn't an exact equivalent.</span></span> <span data-ttu-id="31db4-124">Het grootste verschil is dat de volg orde van de eigenschappen niet wordt behouden.</span><span class="sxs-lookup"><span data-stu-id="31db4-124">The biggest difference is that the order of the properties isn't preserved.</span></span>
 
-### <a name="legacy-approach"></a><span data-ttu-id="41310-125">Verouderde aanpak</span><span class="sxs-lookup"><span data-stu-id="41310-125">Legacy approach</span></span>
+### <a name="legacy-approach"></a><span data-ttu-id="31db4-125">Verouderde aanpak</span><span class="sxs-lookup"><span data-stu-id="31db4-125">Legacy approach</span></span>
 
-<span data-ttu-id="41310-126">U hebt misschien gezien dat mensen `New-Object` aangepaste objecten kunnen maken.</span><span class="sxs-lookup"><span data-stu-id="41310-126">You may have seen people use `New-Object` to create custom objects.</span></span>
+<span data-ttu-id="31db4-126">U hebt misschien gezien dat mensen `New-Object` aangepaste objecten kunnen maken.</span><span class="sxs-lookup"><span data-stu-id="31db4-126">You may have seen people use `New-Object` to create custom objects.</span></span>
 
 ```powershell
 $myHashtable = @{
@@ -67,24 +67,24 @@ $myHashtable = @{
 $myObject = New-Object -TypeName PSObject -Property $myHashtable
 ```
 
-<span data-ttu-id="41310-127">Op deze manier is het heel wat langzamer, maar dit is mogelijk de beste optie voor vroege versies van Power shell.</span><span class="sxs-lookup"><span data-stu-id="41310-127">This way is quite a bit slower but it may be your best option on early versions of PowerShell.</span></span>
+<span data-ttu-id="31db4-127">Op deze manier is het heel wat langzamer, maar dit is mogelijk de beste optie voor vroege versies van Power shell.</span><span class="sxs-lookup"><span data-stu-id="31db4-127">This way is quite a bit slower but it may be your best option on early versions of PowerShell.</span></span>
 
-### <a name="saving-to-a-file"></a><span data-ttu-id="41310-128">Opslaan naar een bestand</span><span class="sxs-lookup"><span data-stu-id="41310-128">Saving to a file</span></span>
+### <a name="saving-to-a-file"></a><span data-ttu-id="31db4-128">Opslaan naar een bestand</span><span class="sxs-lookup"><span data-stu-id="31db4-128">Saving to a file</span></span>
 
-<span data-ttu-id="41310-129">Ik vind de beste manier om een hashtabel op te slaan in een bestand om het op te slaan als JSON.</span><span class="sxs-lookup"><span data-stu-id="41310-129">I find the best way to save a hashtable to a file is to save it as JSON.</span></span> <span data-ttu-id="41310-130">U kunt deze weer importeren in een`[PSCusomObject]`</span><span class="sxs-lookup"><span data-stu-id="41310-130">You can import it back into a `[PSCusomObject]`</span></span>
+<span data-ttu-id="31db4-129">Ik vind de beste manier om een hashtabel op te slaan in een bestand om het op te slaan als JSON.</span><span class="sxs-lookup"><span data-stu-id="31db4-129">I find the best way to save a hashtable to a file is to save it as JSON.</span></span> <span data-ttu-id="31db4-130">U kunt deze weer importeren in een `[PSCustomObject]`</span><span class="sxs-lookup"><span data-stu-id="31db4-130">You can import it back into a `[PSCustomObject]`</span></span>
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
 $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
-<span data-ttu-id="41310-131">Ik vind meer manieren voor het opslaan van objecten in een bestand in mijn artikel op [de vele manieren om bestanden te lezen en te schrijven][].</span><span class="sxs-lookup"><span data-stu-id="41310-131">I cover more ways to save objects to a file in my article on [The many ways to read and write to files][].</span></span>
+<span data-ttu-id="31db4-131">Ik vind meer manieren voor het opslaan van objecten in een bestand in mijn artikel op [de vele manieren om bestanden te lezen en te schrijven][].</span><span class="sxs-lookup"><span data-stu-id="31db4-131">I cover more ways to save objects to a file in my article on [The many ways to read and write to files][].</span></span>
 
-## <a name="working-with-properties"></a><span data-ttu-id="41310-132">Werken met eigenschappen</span><span class="sxs-lookup"><span data-stu-id="41310-132">Working with properties</span></span>
+## <a name="working-with-properties"></a><span data-ttu-id="31db4-132">Werken met eigenschappen</span><span class="sxs-lookup"><span data-stu-id="31db4-132">Working with properties</span></span>
 
-### <a name="adding-properties"></a><span data-ttu-id="41310-133">Eigenschappen toevoegen</span><span class="sxs-lookup"><span data-stu-id="41310-133">Adding properties</span></span>
+### <a name="adding-properties"></a><span data-ttu-id="31db4-133">Eigenschappen toevoegen</span><span class="sxs-lookup"><span data-stu-id="31db4-133">Adding properties</span></span>
 
-<span data-ttu-id="41310-134">U kunt nog steeds nieuwe eigenschappen toevoegen aan uw `PSCustomObject` met `Add-Member` .</span><span class="sxs-lookup"><span data-stu-id="41310-134">You can still add new properties to your `PSCustomObject` with `Add-Member`.</span></span>
+<span data-ttu-id="31db4-134">U kunt nog steeds nieuwe eigenschappen toevoegen aan uw `PSCustomObject` met `Add-Member` .</span><span class="sxs-lookup"><span data-stu-id="31db4-134">You can still add new properties to your `PSCustomObject` with `Add-Member`.</span></span>
 
 ```powershell
 $myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
@@ -92,56 +92,56 @@ $myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquett
 $myObject.ID
 ```
 
-### <a name="remove-properties"></a><span data-ttu-id="41310-135">Eigenschappen verwijderen</span><span class="sxs-lookup"><span data-stu-id="41310-135">Remove properties</span></span>
+### <a name="remove-properties"></a><span data-ttu-id="31db4-135">Eigenschappen verwijderen</span><span class="sxs-lookup"><span data-stu-id="31db4-135">Remove properties</span></span>
 
-<span data-ttu-id="41310-136">U kunt de eigenschappen van een object ook verwijderen.</span><span class="sxs-lookup"><span data-stu-id="41310-136">You can also remove properties off of an object.</span></span>
+<span data-ttu-id="31db4-136">U kunt de eigenschappen van een object ook verwijderen.</span><span class="sxs-lookup"><span data-stu-id="31db4-136">You can also remove properties off of an object.</span></span>
 
 ```powershell
 $myObject.psobject.properties.remove('ID')
 ```
 
-<span data-ttu-id="41310-137">De `psobject` is een verborgen eigenschap waarmee u toegang krijgt tot de meta gegevens van het basis object.</span><span class="sxs-lookup"><span data-stu-id="41310-137">The `psobject` is a hidden property that gives you access to base object metadata.</span></span>
+<span data-ttu-id="31db4-137">De `psobject` is een verborgen eigenschap waarmee u toegang krijgt tot de meta gegevens van het basis object.</span><span class="sxs-lookup"><span data-stu-id="31db4-137">The `psobject` is a hidden property that gives you access to base object metadata.</span></span>
 
-### <a name="enumerating-property-names"></a><span data-ttu-id="41310-138">Eigenschaps namen opsommen</span><span class="sxs-lookup"><span data-stu-id="41310-138">Enumerating property names</span></span>
+### <a name="enumerating-property-names"></a><span data-ttu-id="31db4-138">Eigenschaps namen opsommen</span><span class="sxs-lookup"><span data-stu-id="31db4-138">Enumerating property names</span></span>
 
-<span data-ttu-id="41310-139">Soms hebt u een lijst nodig van alle eigenschapnamen van een object.</span><span class="sxs-lookup"><span data-stu-id="41310-139">Sometimes you need a list of all the property names on an object.</span></span>
+<span data-ttu-id="31db4-139">Soms hebt u een lijst nodig van alle eigenschapnamen van een object.</span><span class="sxs-lookup"><span data-stu-id="31db4-139">Sometimes you need a list of all the property names on an object.</span></span>
 
 ```powershell
 $myObject | Get-Member -MemberType NoteProperty | Select -ExpandProperty Name
 ```
 
-<span data-ttu-id="41310-140">Deze lijst kan ook worden opgehaald van de `psobject` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="41310-140">We can get this same list off of the `psobject` property too.</span></span>
+<span data-ttu-id="31db4-140">Deze lijst kan ook worden opgehaald van de `psobject` eigenschap.</span><span class="sxs-lookup"><span data-stu-id="31db4-140">We can get this same list off of the `psobject` property too.</span></span>
 
 ```powershell
 $myobject.psobject.properties.name
 ```
 
-### <a name="dynamically-accessing-properties"></a><span data-ttu-id="41310-141">Eigenschappen dynamisch gebruiken</span><span class="sxs-lookup"><span data-stu-id="41310-141">Dynamically accessing properties</span></span>
+### <a name="dynamically-accessing-properties"></a><span data-ttu-id="31db4-141">Eigenschappen dynamisch gebruiken</span><span class="sxs-lookup"><span data-stu-id="31db4-141">Dynamically accessing properties</span></span>
 
-<span data-ttu-id="41310-142">Ik heb al aangegeven dat u rechtstreeks toegang hebt tot eigenschaps waarden.</span><span class="sxs-lookup"><span data-stu-id="41310-142">I already mentioned that you can access property values directly.</span></span>
+<span data-ttu-id="31db4-142">Ik heb al aangegeven dat u rechtstreeks toegang hebt tot eigenschaps waarden.</span><span class="sxs-lookup"><span data-stu-id="31db4-142">I already mentioned that you can access property values directly.</span></span>
 
 ```powershell
 $myObject.Name
 ```
 
-<span data-ttu-id="41310-143">U kunt een teken reeks gebruiken voor de naam van de eigenschap. deze blijft echter wel werken.</span><span class="sxs-lookup"><span data-stu-id="41310-143">You can use a string for the property name and it will still work.</span></span>
+<span data-ttu-id="31db4-143">U kunt een teken reeks gebruiken voor de naam van de eigenschap. deze blijft echter wel werken.</span><span class="sxs-lookup"><span data-stu-id="31db4-143">You can use a string for the property name and it will still work.</span></span>
 
 ```powershell
 $myObject.'Name'
 ```
 
-<span data-ttu-id="41310-144">We kunnen een extra stap uitvoeren en een variabele voor de naam van de eigenschap gebruiken.</span><span class="sxs-lookup"><span data-stu-id="41310-144">We can take this one more step and use a variable for the property name.</span></span>
+<span data-ttu-id="31db4-144">We kunnen een extra stap uitvoeren en een variabele voor de naam van de eigenschap gebruiken.</span><span class="sxs-lookup"><span data-stu-id="31db4-144">We can take this one more step and use a variable for the property name.</span></span>
 
 ```powershell
 $property = 'Name'
 $myObject.$property
 ```
 
-<span data-ttu-id="41310-145">Ik weet dat dat vreemd lijkt, maar het werkt.</span><span class="sxs-lookup"><span data-stu-id="41310-145">I know that looks strange, but it works.</span></span>
+<span data-ttu-id="31db4-145">Ik weet dat dat vreemd lijkt, maar het werkt.</span><span class="sxs-lookup"><span data-stu-id="31db4-145">I know that looks strange, but it works.</span></span>
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a><span data-ttu-id="41310-146">Pscustomboject naar een hashtabel converteren</span><span class="sxs-lookup"><span data-stu-id="41310-146">Convert pscustomboject into a hashtable</span></span>
+### <a name="convert-pscustombobject-into-a-hashtable"></a><span data-ttu-id="31db4-146">PSCustombObject naar een hashtabel converteren</span><span class="sxs-lookup"><span data-stu-id="31db4-146">Convert PSCustombObject into a hashtable</span></span>
 
-<span data-ttu-id="41310-147">Als u wilt door gaan met de laatste sectie, kunt u de eigenschappen dynamisch door lopen en een hashtabel maken.</span><span class="sxs-lookup"><span data-stu-id="41310-147">To continue on from the last section, you can dynamically walk the properties and create a hashtable from them.</span></span>
+<span data-ttu-id="31db4-147">Als u wilt door gaan met de laatste sectie, kunt u de eigenschappen dynamisch door lopen en een hashtabel maken.</span><span class="sxs-lookup"><span data-stu-id="31db4-147">To continue on from the last section, you can dynamically walk the properties and create a hashtable from them.</span></span>
 
 ```powershell
 $hashtable = @{}
@@ -151,23 +151,23 @@ foreach( $property in $myobject.psobject.properties.name )
 }
 ```
 
-### <a name="testing-for-properties"></a><span data-ttu-id="41310-148">Testen op Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="41310-148">Testing for properties</span></span>
+### <a name="testing-for-properties"></a><span data-ttu-id="31db4-148">Testen op Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="31db4-148">Testing for properties</span></span>
 
-<span data-ttu-id="41310-149">Als u wilt weten of een eigenschap bestaat, kunt u gewoon controleren of de eigenschap een waarde heeft.</span><span class="sxs-lookup"><span data-stu-id="41310-149">If you need to know if a property exists, you could just check for that property to have a value.</span></span>
+<span data-ttu-id="31db4-149">Als u wilt weten of een eigenschap bestaat, kunt u gewoon controleren of de eigenschap een waarde heeft.</span><span class="sxs-lookup"><span data-stu-id="31db4-149">If you need to know if a property exists, you could just check for that property to have a value.</span></span>
 
 ```powershell
 if( $null -ne $myObject.ID )
 ```
 
-<span data-ttu-id="41310-150">Maar als de waarde zou kunnen zijn `$null` en u deze nog steeds moet controleren, kunt u de `psobject.properties` voor IT controleren.</span><span class="sxs-lookup"><span data-stu-id="41310-150">But if the value could be `$null` and you still need to check for it, you can check the `psobject.properties` for it.</span></span>
+<span data-ttu-id="31db4-150">Maar als de waarde zou kunnen zijn `$null` en u deze nog steeds moet controleren, kunt u de `psobject.properties` voor IT controleren.</span><span class="sxs-lookup"><span data-stu-id="31db4-150">But if the value could be `$null` and you still need to check for it, you can check the `psobject.properties` for it.</span></span>
 
 ```powershell
 if( $myobject.psobject.properties.match('ID') )
 ```
 
-## <a name="adding-object-methods"></a><span data-ttu-id="41310-151">Object methoden toevoegen</span><span class="sxs-lookup"><span data-stu-id="41310-151">Adding object methods</span></span>
+## <a name="adding-object-methods"></a><span data-ttu-id="31db4-151">Object methoden toevoegen</span><span class="sxs-lookup"><span data-stu-id="31db4-151">Adding object methods</span></span>
 
-<span data-ttu-id="41310-152">Als u een script methode moet toevoegen aan een object, kunt u dit doen met `Add-Member` en een `ScriptBlock` .</span><span class="sxs-lookup"><span data-stu-id="41310-152">If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`.</span></span> <span data-ttu-id="41310-153">U moet de `this` automatische variabelen referentie het huidige object gebruiken.</span><span class="sxs-lookup"><span data-stu-id="41310-153">You have to use the `this` automatic variable reference the current object.</span></span> <span data-ttu-id="41310-154">Hier is een `scriptblock` om een object in een hashtabel in te scha kelen.</span><span class="sxs-lookup"><span data-stu-id="41310-154">Here is a `scriptblock` to turn an object into a hashtable.</span></span> <span data-ttu-id="41310-155">(dezelfde code vormen het laatste voor beeld)</span><span class="sxs-lookup"><span data-stu-id="41310-155">(same code form the last example)</span></span>
+<span data-ttu-id="31db4-152">Als u een script methode moet toevoegen aan een object, kunt u dit doen met `Add-Member` en een `ScriptBlock` .</span><span class="sxs-lookup"><span data-stu-id="31db4-152">If you need to add a script method to an object, you can do it with `Add-Member` and a `ScriptBlock`.</span></span> <span data-ttu-id="31db4-153">U moet de `this` automatische variabelen referentie het huidige object gebruiken.</span><span class="sxs-lookup"><span data-stu-id="31db4-153">You have to use the `this` automatic variable reference the current object.</span></span> <span data-ttu-id="31db4-154">Hier is een `scriptblock` om een object in een hashtabel in te scha kelen.</span><span class="sxs-lookup"><span data-stu-id="31db4-154">Here is a `scriptblock` to turn an object into a hashtable.</span></span> <span data-ttu-id="31db4-155">(dezelfde code vormen het laatste voor beeld)</span><span class="sxs-lookup"><span data-stu-id="31db4-155">(same code form the last example)</span></span>
 
 ```powershell
 $ScriptBlock = {
@@ -180,7 +180,7 @@ $ScriptBlock = {
 }
 ```
 
-<span data-ttu-id="41310-156">Vervolgens voegen we het toe aan ons object als een script eigenschap.</span><span class="sxs-lookup"><span data-stu-id="41310-156">Then we add it to our object as a script property.</span></span>
+<span data-ttu-id="31db4-156">Vervolgens voegen we het toe aan ons object als een script eigenschap.</span><span class="sxs-lookup"><span data-stu-id="31db4-156">Then we add it to our object as a script property.</span></span>
 
 ```powershell
 $memberParam = @{
@@ -192,15 +192,15 @@ $memberParam = @{
 Add-Member @memberParam
 ```
 
-<span data-ttu-id="41310-157">Vervolgens kunnen we onze functie als volgt aanroepen:</span><span class="sxs-lookup"><span data-stu-id="41310-157">Then we can call our function like this:</span></span>
+<span data-ttu-id="31db4-157">Vervolgens kunnen we onze functie als volgt aanroepen:</span><span class="sxs-lookup"><span data-stu-id="31db4-157">Then we can call our function like this:</span></span>
 
 ```powershell
 $myObject.ToHashtable()
 ```
 
-### <a name="objects-vs-value-types"></a><span data-ttu-id="41310-158">Objecten versus waardetypen</span><span class="sxs-lookup"><span data-stu-id="41310-158">Objects vs Value types</span></span>
+### <a name="objects-vs-value-types"></a><span data-ttu-id="31db4-158">Objecten versus waardetypen</span><span class="sxs-lookup"><span data-stu-id="31db4-158">Objects vs Value types</span></span>
 
-<span data-ttu-id="41310-159">Met objecten en waardetypen worden variabelen toewijzingen niet op dezelfde manier afgehandeld.</span><span class="sxs-lookup"><span data-stu-id="41310-159">Objects and value types don't handle variable assignments the same way.</span></span> <span data-ttu-id="41310-160">Als u waardetypen aan elkaar toewijst, wordt alleen de waarde opgehaald die wordt gekopieerd naar de nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="41310-160">If you assign value types to each other, only the value get copied to the new variable.</span></span>
+<span data-ttu-id="31db4-159">Met objecten en waardetypen worden variabelen toewijzingen niet op dezelfde manier afgehandeld.</span><span class="sxs-lookup"><span data-stu-id="31db4-159">Objects and value types don't handle variable assignments the same way.</span></span> <span data-ttu-id="31db4-160">Als u waardetypen aan elkaar toewijst, wordt alleen de waarde opgehaald die wordt gekopieerd naar de nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="31db4-160">If you assign value types to each other, only the value get copied to the new variable.</span></span>
 
 ```powershell
 $first = 1
@@ -208,9 +208,9 @@ $second = $first
 $second = 2
 ```
 
-<span data-ttu-id="41310-161">In dit geval `$first` is 1 en `$second` 2.</span><span class="sxs-lookup"><span data-stu-id="41310-161">In this case, `$first` is 1 and `$second` is 2.</span></span>
+<span data-ttu-id="31db4-161">In dit geval `$first` is 1 en `$second` 2.</span><span class="sxs-lookup"><span data-stu-id="31db4-161">In this case, `$first` is 1 and `$second` is 2.</span></span>
 
-<span data-ttu-id="41310-162">Object variabelen bevatten een verwijzing naar het daad werkelijke object.</span><span class="sxs-lookup"><span data-stu-id="41310-162">Object variables hold a reference to the actual object.</span></span> <span data-ttu-id="41310-163">Wanneer u één object toewijst aan een nieuwe variabele, verwijzen ze nog steeds naar hetzelfde object.</span><span class="sxs-lookup"><span data-stu-id="41310-163">When you assign one object to a new variable, they still reference the same object.</span></span>
+<span data-ttu-id="31db4-162">Object variabelen bevatten een verwijzing naar het daad werkelijke object.</span><span class="sxs-lookup"><span data-stu-id="31db4-162">Object variables hold a reference to the actual object.</span></span> <span data-ttu-id="31db4-163">Wanneer u één object toewijst aan een nieuwe variabele, verwijzen ze nog steeds naar hetzelfde object.</span><span class="sxs-lookup"><span data-stu-id="31db4-163">When you assign one object to a new variable, they still reference the same object.</span></span>
 
 ```powershell
 $third = [PSCustomObject]@{Key=3}
@@ -218,11 +218,11 @@ $fourth = $third
 $fourth.Key = 4
 ```
 
-<span data-ttu-id="41310-164">Omdat `$third` en `$fourth` naar hetzelfde exemplaar van een object verwijst, `$third.key` zijn beide en `$fourth.Key` 4.</span><span class="sxs-lookup"><span data-stu-id="41310-164">Because `$third` and `$fourth` reference the same instance of an object, both `$third.key` and `$fourth.Key` are 4.</span></span>
+<span data-ttu-id="31db4-164">Omdat `$third` en `$fourth` naar hetzelfde exemplaar van een object verwijst, `$third.key` zijn beide en `$fourth.Key` 4.</span><span class="sxs-lookup"><span data-stu-id="31db4-164">Because `$third` and `$fourth` reference the same instance of an object, both `$third.key` and `$fourth.Key` are 4.</span></span>
 
-### <a name="psobjectcopy"></a><span data-ttu-id="41310-165">psobject. Copy ()</span><span class="sxs-lookup"><span data-stu-id="41310-165">psobject.copy()</span></span>
+### <a name="psobjectcopy"></a><span data-ttu-id="31db4-165">psobject. Copy ()</span><span class="sxs-lookup"><span data-stu-id="31db4-165">psobject.copy()</span></span>
 
-<span data-ttu-id="41310-166">Als u een echt exemplaar van een object nodig hebt, kunt u dit klonen.</span><span class="sxs-lookup"><span data-stu-id="41310-166">If you need a true copy of an object, you can clone it.</span></span>
+<span data-ttu-id="31db4-166">Als u een echt exemplaar van een object nodig hebt, kunt u dit klonen.</span><span class="sxs-lookup"><span data-stu-id="31db4-166">If you need a true copy of an object, you can clone it.</span></span>
 
 ```powershell
 $third = [PSCustomObject]@{Key=3}
@@ -230,19 +230,19 @@ $fourth = $third.psobject.copy()
 $fourth.Key = 4
 ```
 
-<span data-ttu-id="41310-167">Met de kloon maakt u een bestaand exemplaar van het object.</span><span class="sxs-lookup"><span data-stu-id="41310-167">Clone creates a shallow copy of the object.</span></span> <span data-ttu-id="41310-168">Ze hebben nu verschillende exemplaren en zijn `$third.key` 3 en `$fourth.Key` 4 in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="41310-168">They have different instances now and `$third.key` is 3 and `$fourth.Key` is 4 in this example.</span></span>
+<span data-ttu-id="31db4-167">Met de kloon maakt u een bestaand exemplaar van het object.</span><span class="sxs-lookup"><span data-stu-id="31db4-167">Clone creates a shallow copy of the object.</span></span> <span data-ttu-id="31db4-168">Ze hebben nu verschillende exemplaren en zijn `$third.key` 3 en `$fourth.Key` 4 in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="31db4-168">They have different instances now and `$third.key` is 3 and `$fourth.Key` is 4 in this example.</span></span>
 
-<span data-ttu-id="41310-169">Ik roep dit een inkomend exemplaar aan omdat als u geneste objecten hebt.</span><span class="sxs-lookup"><span data-stu-id="41310-169">I call this a shallow copy because if you have nested objects.</span></span> <span data-ttu-id="41310-170">(waarbij de eigenschappen andere objecten bevatten).</span><span class="sxs-lookup"><span data-stu-id="41310-170">(where the properties contain other objects).</span></span> <span data-ttu-id="41310-171">Alleen de waarden op het hoogste niveau worden gekopieerd.</span><span class="sxs-lookup"><span data-stu-id="41310-171">Only the top-level values are copied.</span></span> <span data-ttu-id="41310-172">De onderliggende objecten verwijzen naar elkaar.</span><span class="sxs-lookup"><span data-stu-id="41310-172">The child objects will reference each other.</span></span>
+<span data-ttu-id="31db4-169">Ik roep dit een inkomend exemplaar aan omdat als u geneste objecten hebt.</span><span class="sxs-lookup"><span data-stu-id="31db4-169">I call this a shallow copy because if you have nested objects.</span></span> <span data-ttu-id="31db4-170">(waarbij de eigenschappen andere objecten bevatten).</span><span class="sxs-lookup"><span data-stu-id="31db4-170">(where the properties contain other objects).</span></span> <span data-ttu-id="31db4-171">Alleen de waarden op het hoogste niveau worden gekopieerd.</span><span class="sxs-lookup"><span data-stu-id="31db4-171">Only the top-level values are copied.</span></span> <span data-ttu-id="31db4-172">De onderliggende objecten verwijzen naar elkaar.</span><span class="sxs-lookup"><span data-stu-id="31db4-172">The child objects will reference each other.</span></span>
 
-### <a name="pstypename-for-custom-object-types"></a><span data-ttu-id="41310-173">PSTypeName voor aangepaste object typen</span><span class="sxs-lookup"><span data-stu-id="41310-173">PSTypeName for custom object types</span></span>
+### <a name="pstypename-for-custom-object-types"></a><span data-ttu-id="31db4-173">PSTypeName voor aangepaste object typen</span><span class="sxs-lookup"><span data-stu-id="31db4-173">PSTypeName for custom object types</span></span>
 
-<span data-ttu-id="41310-174">Nu we een object hebben, zijn er nog enkele dingen die u kunt doen. Dit kan bijna niet zo duidelijk zijn.</span><span class="sxs-lookup"><span data-stu-id="41310-174">Now that we have an object, there are a few more things we can do with it that may not be nearly as obvious.</span></span> <span data-ttu-id="41310-175">Het eerste wat u moet doen, is een `PSTypeName` .</span><span class="sxs-lookup"><span data-stu-id="41310-175">First thing we need to do is give it a `PSTypeName`.</span></span> <span data-ttu-id="41310-176">Dit is de meest voorkomende manier waarop ik mensen kan zien:</span><span class="sxs-lookup"><span data-stu-id="41310-176">This is the most common way I see people do it:</span></span>
+<span data-ttu-id="31db4-174">Nu we een object hebben, zijn er nog enkele dingen die u kunt doen. Dit kan bijna niet zo duidelijk zijn.</span><span class="sxs-lookup"><span data-stu-id="31db4-174">Now that we have an object, there are a few more things we can do with it that may not be nearly as obvious.</span></span> <span data-ttu-id="31db4-175">Het eerste wat u moet doen, is een `PSTypeName` .</span><span class="sxs-lookup"><span data-stu-id="31db4-175">First thing we need to do is give it a `PSTypeName`.</span></span> <span data-ttu-id="31db4-176">Dit is de meest voorkomende manier waarop ik mensen kan zien:</span><span class="sxs-lookup"><span data-stu-id="31db4-176">This is the most common way I see people do it:</span></span>
 
 ```powershell
 $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 ```
 
-<span data-ttu-id="41310-177">Ik heb onlangs een andere manier ontdekt om dit te doen vanuit dit [bericht door/u/markekraus][].</span><span class="sxs-lookup"><span data-stu-id="41310-177">I recently discovered another way to do this from this [post by /u/markekraus][].</span></span> <span data-ttu-id="41310-178">Ik heb een beetje Blijf spitten en meer posts over het idee van [Adam Bertram][] en [Mike Shepard][] , waar ze over deze aanpak praten, zodat u deze inline kunt definiëren.</span><span class="sxs-lookup"><span data-stu-id="41310-178">I did a little digging and more posts about the idea from [Adam Bertram][] and [Mike Shepard][] where they talk about this approach that allows you to define it inline.</span></span>
+<span data-ttu-id="31db4-177">Ik heb onlangs een andere manier ontdekt om dit te doen vanuit dit [bericht door/u/markekraus][].</span><span class="sxs-lookup"><span data-stu-id="31db4-177">I recently discovered another way to do this from this [post by /u/markekraus][].</span></span> <span data-ttu-id="31db4-178">Ik heb een beetje Blijf spitten en meer posts over het idee van [Adam Bertram][] en [Mike Shepard][] , waar ze over deze aanpak praten, zodat u deze inline kunt definiëren.</span><span class="sxs-lookup"><span data-stu-id="31db4-178">I did a little digging and more posts about the idea from [Adam Bertram][] and [Mike Shepard][] where they talk about this approach that allows you to define it inline.</span></span>
 
 ```powershell
 $myObject = [PSCustomObject]@{
@@ -253,11 +253,14 @@ $myObject = [PSCustomObject]@{
 }
 ```
 
-<span data-ttu-id="41310-179">Ik ben geweldig hoe mooi dit precies in de taal past.</span><span class="sxs-lookup"><span data-stu-id="41310-179">I love how nicely this just fits into the language.</span></span> <span data-ttu-id="41310-180">Nu we een object met de juiste type naam hebben, kunnen we meer dingen doen.</span><span class="sxs-lookup"><span data-stu-id="41310-180">Now that we have an object with a proper type name, we can do some more things.</span></span>
+<span data-ttu-id="31db4-179">Ik ben geweldig hoe mooi dit precies in de taal past.</span><span class="sxs-lookup"><span data-stu-id="31db4-179">I love how nicely this just fits into the language.</span></span> <span data-ttu-id="31db4-180">Nu we een object met de juiste type naam hebben, kunnen we meer dingen doen.</span><span class="sxs-lookup"><span data-stu-id="31db4-180">Now that we have an object with a proper type name, we can do some more things.</span></span>
 
-## <a name="using-defaultpropertyset-the-long-way"></a><span data-ttu-id="41310-181">DefaultPropertySet gebruiken (de lange manier)</span><span class="sxs-lookup"><span data-stu-id="41310-181">Using DefaultPropertySet (the long way)</span></span>
+> [!NOTE]
+> <span data-ttu-id="31db4-181">U kunt ook aangepaste Power shell-typen maken met behulp van Power shell-klassen.</span><span class="sxs-lookup"><span data-stu-id="31db4-181">You can also create custom PowerShell types using PowerShell classes.</span></span> <span data-ttu-id="31db4-182">Zie [overzicht van Power shell-klassen](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="31db4-182">For more information, see [PowerShell Class Overview](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).</span></span>
 
-<span data-ttu-id="41310-182">Power Shell heeft voor ons besloten welke eigenschappen standaard moeten worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="41310-182">PowerShell decides for us what properties to display by default.</span></span> <span data-ttu-id="41310-183">Veel van de systeem eigen opdrachten hebben een `.ps1xml` [Opmaak bestand][] dat het hoge aantal opheffen.</span><span class="sxs-lookup"><span data-stu-id="41310-183">A lot of the native commands have a `.ps1xml` [formatting file][] that does all the heavy lifting.</span></span> <span data-ttu-id="41310-184">Vanuit dit [bericht van BOE-proxy][]is het een andere manier om dit te doen voor ons aangepaste object met behulp van alleen Power shell.</span><span class="sxs-lookup"><span data-stu-id="41310-184">From this [post by Boe Prox][], there's another way for us to do this on our custom object using just PowerShell.</span></span> <span data-ttu-id="41310-185">We kunnen het een voor stel geven `MemberSet` om het te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="41310-185">We can give it a `MemberSet` for it to use.</span></span>
+## <a name="using-defaultpropertyset-the-long-way"></a><span data-ttu-id="31db4-183">DefaultPropertySet gebruiken (de lange manier)</span><span class="sxs-lookup"><span data-stu-id="31db4-183">Using DefaultPropertySet (the long way)</span></span>
+
+<span data-ttu-id="31db4-184">Power Shell heeft voor ons besloten welke eigenschappen standaard moeten worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="31db4-184">PowerShell decides for us what properties to display by default.</span></span> <span data-ttu-id="31db4-185">Veel van de systeem eigen opdrachten hebben een `.ps1xml` [Opmaak bestand][] dat het hoge aantal opheffen.</span><span class="sxs-lookup"><span data-stu-id="31db4-185">A lot of the native commands have a `.ps1xml` [formatting file][] that does all the heavy lifting.</span></span> <span data-ttu-id="31db4-186">Vanuit dit [bericht van BOE-proxy][]is het een andere manier om dit te doen voor ons aangepaste object met behulp van alleen Power shell.</span><span class="sxs-lookup"><span data-stu-id="31db4-186">From this [post by Boe Prox][], there's another way for us to do this on our custom object using just PowerShell.</span></span> <span data-ttu-id="31db4-187">We kunnen het een voor stel geven `MemberSet` om het te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="31db4-187">We can give it a `MemberSet` for it to use.</span></span>
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
@@ -266,11 +269,11 @@ $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisp
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```
 
-<span data-ttu-id="41310-186">Nu wanneer mijn object net in de shell is ingedeeld, worden deze eigenschappen standaard alleen weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="41310-186">Now when my object just falls to the shell, it will only show those properties by default.</span></span>
+<span data-ttu-id="31db4-188">Nu wanneer mijn object net in de shell is ingedeeld, worden deze eigenschappen standaard alleen weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="31db4-188">Now when my object just falls to the shell, it will only show those properties by default.</span></span>
 
-### <a name="update-typedata-with-defaultpropertyset"></a><span data-ttu-id="41310-187">Update-TypeData met DefaultPropertySet</span><span class="sxs-lookup"><span data-stu-id="41310-187">Update-TypeData with DefaultPropertySet</span></span>
+### <a name="update-typedata-with-defaultpropertyset"></a><span data-ttu-id="31db4-189">Update-TypeData met DefaultPropertySet</span><span class="sxs-lookup"><span data-stu-id="31db4-189">Update-TypeData with DefaultPropertySet</span></span>
 
-<span data-ttu-id="41310-188">Dit is leuk, maar ik heb onlangs een betere manier gezien wanneer [Power shell is ontkoppeld 2016 met Jeffrey Snover & Daan Jansen][psunplugged].</span><span class="sxs-lookup"><span data-stu-id="41310-188">This is nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones][psunplugged].</span></span> <span data-ttu-id="41310-189">Jeffrey heeft [Update-TypeData][] gebruikt om de standaard eigenschappen op te geven.</span><span class="sxs-lookup"><span data-stu-id="41310-189">Jeffrey was using [Update-TypeData][] to specify the default properties.</span></span>
+<span data-ttu-id="31db4-190">Dit is leuk, maar ik heb onlangs een betere manier gezien wanneer [Power shell is ontkoppeld 2016 met Jeffrey Snover & Daan Jansen][psunplugged].</span><span class="sxs-lookup"><span data-stu-id="31db4-190">This is nice but I recently saw a better way when watching [PowerShell unplugged 2016 with Jeffrey Snover & Don Jones][psunplugged].</span></span> <span data-ttu-id="31db4-191">Jeffrey heeft [Update-TypeData][] gebruikt om de standaard eigenschappen op te geven.</span><span class="sxs-lookup"><span data-stu-id="31db4-191">Jeffrey was using [Update-TypeData][] to specify the default properties.</span></span>
 
 ```powershell
 $TypeData = @{
@@ -280,15 +283,15 @@ $TypeData = @{
 Update-TypeData @TypeData
 ```
 
-<span data-ttu-id="41310-190">Dat is zo eenvoudig dat ik dit niet kan onthouden als ik dit bericht niet had als snelle verwijzing.</span><span class="sxs-lookup"><span data-stu-id="41310-190">That is simple enough that I could almost remember it if I didn't have this post as a quick reference.</span></span> <span data-ttu-id="41310-191">Ik kan nu eenvoudig objecten met veel eigenschappen maken en deze toch een fraaie, overzichtelijke weer gave geven bij het bekijken van de shell.</span><span class="sxs-lookup"><span data-stu-id="41310-191">Now I can easily create objects with lots of properties and still give it a nice clean view when looking at it from the shell.</span></span> <span data-ttu-id="41310-192">Als ik de andere eigenschappen moet openen of bekijken, zijn ze nog steeds beschikbaar.</span><span class="sxs-lookup"><span data-stu-id="41310-192">If I need to access or see those other properties, they're still there.</span></span>
+<span data-ttu-id="31db4-192">Dat is zo eenvoudig dat ik dit niet kan onthouden als ik dit bericht niet had als snelle verwijzing.</span><span class="sxs-lookup"><span data-stu-id="31db4-192">That is simple enough that I could almost remember it if I didn't have this post as a quick reference.</span></span> <span data-ttu-id="31db4-193">Ik kan nu eenvoudig objecten met veel eigenschappen maken en deze toch een fraaie, overzichtelijke weer gave geven bij het bekijken van de shell.</span><span class="sxs-lookup"><span data-stu-id="31db4-193">Now I can easily create objects with lots of properties and still give it a nice clean view when looking at it from the shell.</span></span> <span data-ttu-id="31db4-194">Als ik de andere eigenschappen moet openen of bekijken, zijn ze nog steeds beschikbaar.</span><span class="sxs-lookup"><span data-stu-id="31db4-194">If I need to access or see those other properties, they're still there.</span></span>
 
 ```powershell
 $myObject | Format-List *
 ```
 
-### <a name="update-typedata-with-scriptproperty"></a><span data-ttu-id="41310-193">Update-TypeData met ScriptProperty</span><span class="sxs-lookup"><span data-stu-id="41310-193">Update-TypeData with ScriptProperty</span></span>
+### <a name="update-typedata-with-scriptproperty"></a><span data-ttu-id="31db4-195">Update-TypeData met ScriptProperty</span><span class="sxs-lookup"><span data-stu-id="31db4-195">Update-TypeData with ScriptProperty</span></span>
 
-<span data-ttu-id="41310-194">Iets anders heb ik van deze video bezig met het maken van script eigenschappen voor objecten.</span><span class="sxs-lookup"><span data-stu-id="41310-194">Something else I got out of that video was creating script properties for your objects.</span></span> <span data-ttu-id="41310-195">Dit is een goed moment om te wijzen dat dit ook voor bestaande objecten werkt.</span><span class="sxs-lookup"><span data-stu-id="41310-195">This would be a good time to point out that this works for existing objects too.</span></span>
+<span data-ttu-id="31db4-196">Iets anders heb ik van deze video bezig met het maken van script eigenschappen voor objecten.</span><span class="sxs-lookup"><span data-stu-id="31db4-196">Something else I got out of that video was creating script properties for your objects.</span></span> <span data-ttu-id="31db4-197">Dit is een goed moment om te wijzen dat dit ook voor bestaande objecten werkt.</span><span class="sxs-lookup"><span data-stu-id="31db4-197">This would be a good time to point out that this works for existing objects too.</span></span>
 
 ```powershell
 $TypeData = @{
@@ -300,21 +303,21 @@ $TypeData = @{
 Update-TypeData @TypeData
 ```
 
-<span data-ttu-id="41310-196">U kunt dit doen voordat het object wordt gemaakt of wanneer het nog steeds wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="41310-196">You can do this before your object is created or after and it will still work.</span></span> <span data-ttu-id="41310-197">Zo maakt u dit anders met `Add-Member` een script eigenschap.</span><span class="sxs-lookup"><span data-stu-id="41310-197">This is what makes this different then using `Add-Member` with a script property.</span></span> <span data-ttu-id="41310-198">Wanneer u `Add-Member` de verwijzing eerder gebruikt, bestaat deze alleen op die specifieke instantie van het object.</span><span class="sxs-lookup"><span data-stu-id="41310-198">When you use `Add-Member` the way I referenced earlier, it only exists on that specific instance of the object.</span></span> <span data-ttu-id="41310-199">Dit geldt voor alle objecten met deze naam `TypeName` .</span><span class="sxs-lookup"><span data-stu-id="41310-199">This one applies to all objects with this `TypeName`.</span></span>
+<span data-ttu-id="31db4-198">U kunt dit doen voordat het object wordt gemaakt of wanneer het nog steeds wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="31db4-198">You can do this before your object is created or after and it will still work.</span></span> <span data-ttu-id="31db4-199">Zo maakt u dit anders met `Add-Member` een script eigenschap.</span><span class="sxs-lookup"><span data-stu-id="31db4-199">This is what makes this different then using `Add-Member` with a script property.</span></span> <span data-ttu-id="31db4-200">Wanneer u `Add-Member` de verwijzing eerder gebruikt, bestaat deze alleen op die specifieke instantie van het object.</span><span class="sxs-lookup"><span data-stu-id="31db4-200">When you use `Add-Member` the way I referenced earlier, it only exists on that specific instance of the object.</span></span> <span data-ttu-id="31db4-201">Dit geldt voor alle objecten met deze naam `TypeName` .</span><span class="sxs-lookup"><span data-stu-id="31db4-201">This one applies to all objects with this `TypeName`.</span></span>
 
-## <a name="function-parameters"></a><span data-ttu-id="41310-200">Functie parameters</span><span class="sxs-lookup"><span data-stu-id="41310-200">Function parameters</span></span>
+## <a name="function-parameters"></a><span data-ttu-id="31db4-202">Functie parameters</span><span class="sxs-lookup"><span data-stu-id="31db4-202">Function parameters</span></span>
 
-<span data-ttu-id="41310-201">U kunt deze aangepaste typen nu gebruiken voor para meters in uw functies en scripts.</span><span class="sxs-lookup"><span data-stu-id="41310-201">You can now use these custom types for parameters in your functions and scripts.</span></span> <span data-ttu-id="41310-202">U kunt deze aangepaste objecten met één functie maken en vervolgens door geven aan andere functies.</span><span class="sxs-lookup"><span data-stu-id="41310-202">You can have one function create these custom objects and then pass them into other functions.</span></span>
+<span data-ttu-id="31db4-203">U kunt deze aangepaste typen nu gebruiken voor para meters in uw functies en scripts.</span><span class="sxs-lookup"><span data-stu-id="31db4-203">You can now use these custom types for parameters in your functions and scripts.</span></span> <span data-ttu-id="31db4-204">U kunt deze aangepaste objecten met één functie maken en vervolgens door geven aan andere functies.</span><span class="sxs-lookup"><span data-stu-id="31db4-204">You can have one function create these custom objects and then pass them into other functions.</span></span>
 
 ```powershell
 param( [PSTypeName('My.Object')]$Data )
 ```
 
-<span data-ttu-id="41310-203">Voor Power shell is vereist dat het object het type is dat u hebt opgegeven.</span><span class="sxs-lookup"><span data-stu-id="41310-203">PowerShell requires that the object is the type you specified.</span></span> <span data-ttu-id="41310-204">Er wordt een validatie fout gegenereerd als het type niet automatisch overeenkomt met het opslaan van de stap van de test in uw code.</span><span class="sxs-lookup"><span data-stu-id="41310-204">It throws a validation error if the type doesn't match automatically to save you the step of testing for it in your code.</span></span> <span data-ttu-id="41310-205">Een goed voor beeld van Power shell om te laten zien wat het beste werkt.</span><span class="sxs-lookup"><span data-stu-id="41310-205">A great example of letting PowerShell do what it does best.</span></span>
+<span data-ttu-id="31db4-205">Voor Power shell is vereist dat het object het type is dat u hebt opgegeven.</span><span class="sxs-lookup"><span data-stu-id="31db4-205">PowerShell requires that the object is the type you specified.</span></span> <span data-ttu-id="31db4-206">Er wordt een validatie fout gegenereerd als het type niet automatisch overeenkomt met het opslaan van de stap van de test in uw code.</span><span class="sxs-lookup"><span data-stu-id="31db4-206">It throws a validation error if the type doesn't match automatically to save you the step of testing for it in your code.</span></span> <span data-ttu-id="31db4-207">Een goed voor beeld van Power shell om te laten zien wat het beste werkt.</span><span class="sxs-lookup"><span data-stu-id="31db4-207">A great example of letting PowerShell do what it does best.</span></span>
 
-### <a name="function-outputtype"></a><span data-ttu-id="41310-206">Functie output type</span><span class="sxs-lookup"><span data-stu-id="41310-206">Function OutputType</span></span>
+### <a name="function-outputtype"></a><span data-ttu-id="31db4-208">Functie output type</span><span class="sxs-lookup"><span data-stu-id="31db4-208">Function OutputType</span></span>
 
-<span data-ttu-id="41310-207">U kunt ook een `OutputType` voor uw geavanceerde functies definiëren.</span><span class="sxs-lookup"><span data-stu-id="41310-207">You can also define an `OutputType` for your advanced functions.</span></span>
+<span data-ttu-id="31db4-209">U kunt ook een `OutputType` voor uw geavanceerde functies definiëren.</span><span class="sxs-lookup"><span data-stu-id="31db4-209">You can also define an `OutputType` for your advanced functions.</span></span>
 
 ```powershell
 function Get-MyObject
@@ -326,17 +329,17 @@ function Get-MyObject
             ...
 ```
 
-<span data-ttu-id="41310-208">De waarde van het kenmerk **output** type is alleen een documentatie opmerking.</span><span class="sxs-lookup"><span data-stu-id="41310-208">The **OutputType** attribute value is only a documentation note.</span></span> <span data-ttu-id="41310-209">Het is niet afgeleid van de functie code of vergeleken met de daad werkelijke functie-uitvoer.</span><span class="sxs-lookup"><span data-stu-id="41310-209">It isn't derived from the function code or compared to the actual function output.</span></span>
+<span data-ttu-id="31db4-210">De waarde van het kenmerk **output** type is alleen een documentatie opmerking.</span><span class="sxs-lookup"><span data-stu-id="31db4-210">The **OutputType** attribute value is only a documentation note.</span></span> <span data-ttu-id="31db4-211">Het is niet afgeleid van de functie code of vergeleken met de daad werkelijke functie-uitvoer.</span><span class="sxs-lookup"><span data-stu-id="31db4-211">It isn't derived from the function code or compared to the actual function output.</span></span>
 
-<span data-ttu-id="41310-210">De belangrijkste reden voor het gebruik van een uitvoer type is dat meta gegevens over uw functie uw bedoelingen kunnen weer spie gelen.</span><span class="sxs-lookup"><span data-stu-id="41310-210">The main reason you would use an output type is so that meta information about your function reflects your intentions.</span></span> <span data-ttu-id="41310-211">Wat `Get-Command` `Get-Help` u kunt doen met uw ontwikkel omgeving.</span><span class="sxs-lookup"><span data-stu-id="41310-211">Things like `Get-Command` and `Get-Help` that your development environment can take advantage of.</span></span> <span data-ttu-id="41310-212">Als u meer informatie wilt, raadpleegt u de Help voor IT: [about_Functions_OutputTypeAttribute][].</span><span class="sxs-lookup"><span data-stu-id="41310-212">If you want more information, then take a look at the help for it: [about_Functions_OutputTypeAttribute][].</span></span>
+<span data-ttu-id="31db4-212">De belangrijkste reden voor het gebruik van een uitvoer type is dat meta gegevens over uw functie uw bedoelingen kunnen weer spie gelen.</span><span class="sxs-lookup"><span data-stu-id="31db4-212">The main reason you would use an output type is so that meta information about your function reflects your intentions.</span></span> <span data-ttu-id="31db4-213">Wat `Get-Command` `Get-Help` u kunt doen met uw ontwikkel omgeving.</span><span class="sxs-lookup"><span data-stu-id="31db4-213">Things like `Get-Command` and `Get-Help` that your development environment can take advantage of.</span></span> <span data-ttu-id="31db4-214">Als u meer informatie wilt, raadpleegt u de Help voor IT: [about_Functions_OutputTypeAttribute][].</span><span class="sxs-lookup"><span data-stu-id="31db4-214">If you want more information, then take a look at the help for it: [about_Functions_OutputTypeAttribute][].</span></span>
 
-<span data-ttu-id="41310-213">Als u een functie voor het testen van uw functies gebruikt, is het een goed idee om de uitvoer objecten te valideren die overeenkomen met uw **output**type.</span><span class="sxs-lookup"><span data-stu-id="41310-213">With that said, if you're using Pester to unit test your functions then it would be a good idea to validate the output objects match your **OutputType**.</span></span> <span data-ttu-id="41310-214">Dit kan ertoe leiden dat variabelen die net tot de pipe vallen, worden onderschept wanneer dat niet het geval is.</span><span class="sxs-lookup"><span data-stu-id="41310-214">This could catch variables that just fall to the pipe when they shouldn't.</span></span>
+<span data-ttu-id="31db4-215">Als u een functie voor het testen van uw functies gebruikt, is het een goed idee om de uitvoer objecten te valideren die overeenkomen met uw **output**type.</span><span class="sxs-lookup"><span data-stu-id="31db4-215">With that said, if you're using Pester to unit test your functions then it would be a good idea to validate the output objects match your **OutputType**.</span></span> <span data-ttu-id="31db4-216">Dit kan ertoe leiden dat variabelen die net tot de pipe vallen, worden onderschept wanneer dat niet het geval is.</span><span class="sxs-lookup"><span data-stu-id="31db4-216">This could catch variables that just fall to the pipe when they shouldn't.</span></span>
 
-## <a name="closing-thoughts"></a><span data-ttu-id="41310-215">Afsluitende ideeën</span><span class="sxs-lookup"><span data-stu-id="41310-215">Closing thoughts</span></span>
+## <a name="closing-thoughts"></a><span data-ttu-id="31db4-217">Afsluitende ideeën</span><span class="sxs-lookup"><span data-stu-id="31db4-217">Closing thoughts</span></span>
 
-<span data-ttu-id="41310-216">De context van dit was alles `[PSCustomObject]` , maar een groot aantal van deze informatie is van toepassing op objecten in het algemeen.</span><span class="sxs-lookup"><span data-stu-id="41310-216">The context of this was all about `[PSCustomObject]`, but a lot of this information applies to objects in general.</span></span>
+<span data-ttu-id="31db4-218">De context van dit was alles `[PSCustomObject]` , maar een groot aantal van deze informatie is van toepassing op objecten in het algemeen.</span><span class="sxs-lookup"><span data-stu-id="31db4-218">The context of this was all about `[PSCustomObject]`, but a lot of this information applies to objects in general.</span></span>
 
-<span data-ttu-id="41310-217">Ik heb de meeste van deze functies in de door gave gezien, maar u hebt deze nooit gezien als een verzameling gegevens over `PSCustomObject` .</span><span class="sxs-lookup"><span data-stu-id="41310-217">I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`.</span></span> <span data-ttu-id="41310-218">Alleen deze afgelopen week heb ik stumbled bij een ander abonnement en was het verbaasd dat ik het nog niet had gezien.</span><span class="sxs-lookup"><span data-stu-id="41310-218">Just this last week I stumbled upon another one and was surprised that I had not seen it before.</span></span> <span data-ttu-id="41310-219">Ik wilde al deze ideeën samen stellen, zodat u de foto groter kunt zien en weet wanneer u de mogelijkheid hebt om ze te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="41310-219">I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opportunity to use them.</span></span> <span data-ttu-id="41310-220">Ik hoop dat u iets hebt geleerd en een manier kunt vinden om dit in uw scripts te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="41310-220">I hope you learned something and can find a way to work this into your scripts.</span></span>
+<span data-ttu-id="31db4-219">Ik heb de meeste van deze functies in de door gave gezien, maar u hebt deze nooit gezien als een verzameling gegevens over `PSCustomObject` .</span><span class="sxs-lookup"><span data-stu-id="31db4-219">I have seen most of these features in passing before but never saw them presented as a collection of information on `PSCustomObject`.</span></span> <span data-ttu-id="31db4-220">Alleen deze afgelopen week heb ik stumbled bij een ander abonnement en was het verbaasd dat ik het nog niet had gezien.</span><span class="sxs-lookup"><span data-stu-id="31db4-220">Just this last week I stumbled upon another one and was surprised that I had not seen it before.</span></span> <span data-ttu-id="31db4-221">Ik wilde al deze ideeën samen stellen, zodat u de foto groter kunt zien en weet wanneer u de mogelijkheid hebt om ze te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="31db4-221">I wanted to pull all these ideas together so you can hopefully see the bigger picture and be aware of them when you have an opportunity to use them.</span></span> <span data-ttu-id="31db4-222">Ik hoop dat u iets hebt geleerd en een manier kunt vinden om dit in uw scripts te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="31db4-222">I hope you learned something and can find a way to work this into your scripts.</span></span>
 
 <!-- link references -->
 [oorspronkelijke versie]: https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/
