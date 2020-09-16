@@ -1,27 +1,20 @@
 ---
 title: Meerdere runspaces maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
-caps.latest.revision: 4
-ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1047492d2b859ae14ddd279e25e5e1dff0013820
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357748"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779622"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="5389f-102">Meerdere runspaces maken</span><span class="sxs-lookup"><span data-stu-id="5389f-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="30d87-102">Meerdere runspaces maken</span><span class="sxs-lookup"><span data-stu-id="30d87-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="5389f-103">Als u een groot aantal runspaces maakt, kunt u overwegen om een runs Pace-groep te maken.</span><span class="sxs-lookup"><span data-stu-id="5389f-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="5389f-104">U kunt de prestaties verbeteren door het object [System. Management. Automation. Runspaces. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) te gebruiken in plaats van een groot aantal afzonderlijke Runspaces met dezelfde kenmerken te maken.</span><span class="sxs-lookup"><span data-stu-id="5389f-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="30d87-103">Als u een groot aantal runspaces maakt, kunt u overwegen om een runs Pace-groep te maken.</span><span class="sxs-lookup"><span data-stu-id="30d87-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="30d87-104">U kunt de prestaties verbeteren door het object [System. Management. Automation. Runspaces. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) te gebruiken in plaats van een groot aantal afzonderlijke Runspaces met dezelfde kenmerken te maken.</span><span class="sxs-lookup"><span data-stu-id="30d87-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="5389f-105">Een runs Pace-groep maken en gebruiken.</span><span class="sxs-lookup"><span data-stu-id="5389f-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="30d87-105">Een runs Pace-groep maken en gebruiken.</span><span class="sxs-lookup"><span data-stu-id="30d87-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="5389f-106">In het volgende voor beeld ziet u hoe u een runs Pace-groep maakt en hoe u een opdracht asynchroon uitvoert in een runs Pace van de groep.</span><span class="sxs-lookup"><span data-stu-id="5389f-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="30d87-106">In het volgende voor beeld ziet u hoe u een runs Pace-groep maakt en hoe u een opdracht asynchroon uitvoert in een runs Pace van de groep.</span><span class="sxs-lookup"><span data-stu-id="30d87-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +72,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="5389f-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="5389f-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="30d87-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="30d87-107">See Also</span></span>
 
- [<span data-ttu-id="5389f-108">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="5389f-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="30d87-108">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="30d87-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
