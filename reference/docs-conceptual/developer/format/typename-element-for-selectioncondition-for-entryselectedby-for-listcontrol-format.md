@@ -1,27 +1,20 @@
 ---
 title: TypeName-element voor SelectionCondition voor EntrySelectedBy voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bd025a3a-3780-40db-a068-873e7df38015
-caps.latest.revision: 9
-ms.openlocfilehash: 2b76b040b39088cc9c3b9d6890c38df3c533b39f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bc58d630e65b316f9223bf3c529f928358e38ebc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353513"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787372"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>Het element TypeName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
 
 Hiermee geeft u een .NET-type op waarmee de voor waarde wordt geactiveerd. Wanneer dit type aanwezig is, wordt de vermelding in de lijst gebruikt.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling). element (Format) voor ListControl List entry voor ListControl (Format) SelectionCondition-element voor EntrySelectedBy voor ListControl (Format) TypeName-element voor SelectionCondition voor de EntrySelectedBy voor ListControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van het object (indeling) ListControl element (indeling) (Format) element list item voor ListControl (indeling) element List entry voor List Entries (Format) EntrySelectedBy element voor List entry voor ListControl (Format) SelectionCondition-element voor het object voor de ListControl (Format) voor de SelectionCondition voor ListControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `TypeName` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TypeName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[SelectionCondition-element voor EntrySelectedBy voor ListControl (indeling)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van deze lijst vermelding.|
+|[Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van deze lijst vermelding.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -57,10 +50,10 @@ Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie ov
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
 [Voor waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)
 
-[SelectionCondition-element voor EntrySelectedBy voor ListControl (indeling)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
+[Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

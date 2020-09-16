@@ -1,19 +1,12 @@
 ---
 title: WideControl-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
-caps.latest.revision: 14
-ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6f19cf94dcb440eeaf53547db407287e5462520
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358706"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784976"
 ---
 # <a name="widecontrol-element-format"></a>Het element WideControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt een brede lijst indeling (enkelvoudige waarde) gedefinieerd voor d
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) WideControl-element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <WideControl>
@@ -33,7 +26,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `WideControl` beschreven. U kunt de `AutoSize`-en `ColumnNumber`-elementen niet tegelijk opgeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `WideControl` element beschreven. U kunt de `AutoSize` elementen en niet `ColumnNumber` tegelijkertijd opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,19 +36,19 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Het element AutoSize voor WideControl (Format)](./autosize-element-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee wordt aangegeven of de kolom grootte en het aantal kolommen worden aangepast op basis van de grootte van de gegevens.|
-|[ColumnNumber-element voor WideControl (indeling)](./columnnumber-element-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het aantal kolommen op dat wordt weer gegeven in de brede weer gave.|
+|[Het element AutoSize voor WideControl (opmaak)](./autosize-element-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee wordt aangegeven of de kolom grootte en het aantal kolommen worden aangepast op basis van de grootte van de gegevens.|
+|[Het element ColumnNumber voor WideControl (opmaak)](./columnnumber-element-for-widecontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het aantal kolommen op dat wordt weer gegeven in de brede weer gave.|
 |[WideEntries-element (indeling)](./wideentries-element-for-widecontrol-format.md)|Vereist element.<br /><br /> Biedt de definities van de brede weer gave.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om een of meer .NET-objecten weer te geven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om een of meer .NET-objecten weer te geven.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Bij het definiëren van een brede weer gave kunt u het `AutoSize`-element of de `ColumnNumber` toevoegen, maar u kunt niet beide toevoegen.
+Bij het definiëren van een brede weer gave kunt u het `AutoSize` element toevoegen of het, `ColumnNumber` maar u kunt niet beide toevoegen.
 
 In de meeste gevallen is er slechts één definitie vereist voor elke brede weer gave, maar het is mogelijk om meerdere definities te hebben als u dezelfde weer gave wilt gebruiken om verschillende .NET-objecten weer te geven. In dergelijke gevallen kunt u een afzonderlijke definitie opgeven voor elk object of set met objecten.
 
@@ -63,7 +56,7 @@ Zie [Wide View-onderdelen](./creating-a-wide-view.md)voor meer informatie over d
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `WideControl` element dat wordt gebruikt om een eigenschap van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) weer te geven.
+In het volgende voor beeld ziet u een- `WideControl` element dat wordt gebruikt om een eigenschap van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) weer te geven.
 
 ```xml
 <View>
@@ -83,14 +76,14 @@ Zie [Wide View (Basic)](./wide-view-basic.md)voor een volledig voor beeld van ee
 
 [Het element AutoSize voor WideControl (Format)](./autosize-element-for-widecontrol-format.md)
 
-[ColumnNumber-element voor WideControl (indeling)](./columnnumber-element-for-widecontrol-format.md)
+[Het element ColumnNumber voor WideControl (opmaak)](./columnnumber-element-for-widecontrol-format.md)
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
 [WideEntries-element (indeling)](./wideentries-element-for-widecontrol-format.md)
 
-[Brede weer gave (basis)](./wide-view-basic.md)
+[Brede weergave (Basis)](./wide-view-basic.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

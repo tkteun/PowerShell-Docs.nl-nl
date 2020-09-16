@@ -1,19 +1,12 @@
 ---
 title: Voor beelden van cmdlet-code | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
-caps.latest.revision: 9
-ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d2597d3d3f64cae1c1494eb2f05873f6feae5e0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355571"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784330"
 ---
 # <a name="examples-of-cmdlet-code"></a>Voorbeelden van cmdlet-code
 
@@ -48,4 +41,4 @@ Deze sectie bevat voor beelden van cmdlet-code die u kunt gebruiken om uw eigen 
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

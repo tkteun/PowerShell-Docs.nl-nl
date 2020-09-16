@@ -1,19 +1,12 @@
 ---
 title: Cmdlets en scripts aanroepen binnen een cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
-caps.latest.revision: 10
-ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3d5f76242c02763c41b81215bbb031e19869066a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355424"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786574"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Cmdlets en scripts in een cmdlet aanroepen
 
@@ -38,4 +31,4 @@ De methode [System. Management. Automation. cmdlet. Invoke *](/dotnet/api/System
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

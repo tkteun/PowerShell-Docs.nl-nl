@@ -1,19 +1,12 @@
 ---
 title: ListControl-element (Format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
-caps.latest.revision: 12
-ms.openlocfilehash: 7a117c25b0d117dc846ba8e060e31e838b5edd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354367"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785724"
 ---
 # <a name="listcontrol-element-format"></a>Het element ListControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u een lijst indeling voor de weer gave.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) ListControl-element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ListControl>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ListControl` beschreven. Dit element mag slechts één onderliggend element bevatten.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ListControl` element beschreven. Dit element mag slechts één onderliggend element bevatten.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -48,7 +41,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer objecten weer te geven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer objecten weer te geven.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -74,10 +67,10 @@ In dit voor beeld ziet u een lijst weergave voor het object [System. ServiceProc
 
 ## <a name="see-also"></a>Zie ook
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
 [Element List Entries (indeling)](./listentries-element-for-listcontrol-format.md)
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
 [Een Windows Power shell-indeling en-type bestand schrijven](./writing-a-powershell-formatting-file.md)

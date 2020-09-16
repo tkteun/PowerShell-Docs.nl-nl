@@ -1,19 +1,12 @@
 ---
 title: RemoteRunspacePool01-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
-caps.latest.revision: 8
-ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 77283008f1c6bce79cec60d426e3933508fced64
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357622"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783191"
 ---
 # <a name="remoterunspacepool01-sample"></a>Voorbeeld RemoteRunspacePool01
 
@@ -23,7 +16,7 @@ Dit voor beeld laat zien hoe u een externe runs Pace-groep bouwt en hoe u meerde
 
  Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 - Een [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object maken.
 

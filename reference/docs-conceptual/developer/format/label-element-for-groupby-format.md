@@ -1,19 +1,12 @@
 ---
 title: Label element voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
-caps.latest.revision: 11
-ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07b4d037472a9dd2329e94576ec10f5b82f46b34
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356061"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785775"
 ---
 # <a name="label-element-for-groupby-format"></a>Het element Label voor GroupBy (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u een label op dat wordt weer gegeven wanneer een nieuwe groep wor
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) GroupBy-element voor weer gave (indeling) label element voor GroupBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Label>DisplayedLabel</Label>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Label` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Label` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)|Hiermee wordt gedefinieerd hoe een nieuwe groep objecten wordt weer gegeven.|
+|[Het element GroupBy voor Weergave (opmaak)](./groupby-element-for-view-format.md)|Hiermee wordt gedefinieerd hoe een nieuwe groep objecten wordt weer gegeven.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -69,6 +62,6 @@ Zie [Wide View (GroupBy)](./wide-view-groupby.md)voor een voor beeld van een vol
 
 ## <a name="see-also"></a>Zie ook
 
-[Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)
+[Het element GroupBy voor Weergave (opmaak)](./groupby-element-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

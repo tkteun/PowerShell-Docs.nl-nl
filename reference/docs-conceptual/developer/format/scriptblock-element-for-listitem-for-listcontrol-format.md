@@ -1,27 +1,20 @@
 ---
 title: Script block-element voor lijst item voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
-caps.latest.revision: 11
-ms.openlocfilehash: 76b600256af3f957f7fe0578f9fef810262aa5d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249d3e36b4246b7baa410815122f8e30340f1862
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355788"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785452"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>Het element ScriptBlock voor ListItem voor ListControl (opmaak)
 
 Hiermee geeft u het script op waarvan de waarde wordt weer gegeven in de rij.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling). element (Format) voor ListControl voor ListControl (Format) lijst item-element voor list items voor ListControl (Format) script block-element voor de lijst item voor ListControl (Format)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) item type-element (indeling) van het element list item (Format) voor de ListControl (indeling) element list item voor ListControl (Format) List items element voor List entry voor ListControl (Format) lijst item element voor de ListControl (indeling) script block-element
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ScriptBlock` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ScriptBlock` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -68,10 +61,10 @@ In het volgende voor beeld ziet u hoe u de eigenschap kunt opgeven waarvan de wa
 
 ## <a name="see-also"></a>Zie ook
 
-[PropertyName-element voor lijst item voor ListControl (indeling)](./propertyname-element-for-listitem-for-listcontrol-format.md)
+[Het element PropertyName voor ListItem voor ListControl (opmaak)](./propertyname-element-for-listitem-for-listcontrol-format.md)
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Lijst item-element voor list items voor ListControl (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)
+[Het element ListItem voor ListItems voor ListControl (opmaak)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

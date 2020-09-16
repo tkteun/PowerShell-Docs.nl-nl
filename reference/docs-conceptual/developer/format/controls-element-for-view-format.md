@@ -1,19 +1,12 @@
 ---
 title: Element Controls voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
-caps.latest.revision: 14
-ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 26b7e73afd465b1be9632cd71a75e4be6cc4aeca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354794"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786166"
 ---
 # <a name="controls-element-for-view-format"></a>Het element Besturingselementen voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee worden de weergave besturings elementen gedefinieerd die kunnen worden g
 
 Element van het configuratie-element (indeling) ViewDefinitions element (indeling) elementen weer geven (Format) element Controls (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Controls>
@@ -31,7 +24,7 @@ Element van het configuratie-element (indeling) ViewDefinitions element (indelin
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het element `Controls` beschreven. Dit element moet ten minste één onderliggend element bevatten. Er is geen maximum aantal onderliggende elementen, noch de volg orde hiervan significant.
+In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het `Controls` element beschreven. Dit element moet ten minste één onderliggend element bevatten. Er is geen maximum aantal onderliggende elementen, noch de volg orde hiervan significant.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,7 +40,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer .NET-objecten weer te geven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd die wordt gebruikt om de leden van een of meer .NET-objecten weer te geven.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -55,6 +48,6 @@ Geen.
 
 [Control-element (indeling)](./control-element-for-controls-for-view-format.md)
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

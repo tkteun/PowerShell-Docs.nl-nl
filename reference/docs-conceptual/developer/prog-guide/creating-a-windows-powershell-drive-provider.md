@@ -1,23 +1,16 @@
 ---
 title: Een Windows Power shell-schijf provider maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - drive providers [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], drive provider
 - drives [PowerShell Programmer's Guide]
-ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
-caps.latest.revision: 6
-ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978454"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787186"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Een Windows PowerShell-stationprovider maken
 
@@ -44,7 +37,7 @@ De meeste providers (met inbegrip van de hier beschreven provider) kunnen echter
 
 Alle Windows Power shell-providers worden beschouwd als stateless, wat betekent dat de provider van het station status informatie moet maken die nodig is voor de Windows Power shell-runtime wanneer deze uw provider aanroept.
 
-De status informatie voor deze schijf provider bevat de verbinding met de data base die wordt bewaard als onderdeel van de informatie van het station. Hier volgt een code die laat zien hoe deze informatie wordt opgeslagen in het object [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) dat het station beschrijft:
+De status informatie voor deze schijf provider bevat de verbinding met de data base die wordt bewaard als onderdeel van de informatie van het station. Hier volgt een code die laat zien hoe deze informatie wordt opgeslagen in het [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station beschrijft:
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
@@ -56,17 +49,17 @@ Om ervoor te zorgen dat Windows Power shell runtime een station kan maken, moet 
 
 Uw onderdrukking van deze methode moet het volgende doen:
 
-- Controleer of het lid [System. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) bestaat en of er verbinding kan worden gemaakt met het gegevens archief.
-- Maak een station en vul het lid van de verbinding in voor ondersteuning van de cmdlet `New-PSDrive`.
-- Valideer het object [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) voor het voorgestelde station.
-- Wijzig het [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station beschrijft met de vereiste prestaties of betrouw baarheid, of geef extra gegevens op voor aanroepers met behulp van het station.
-- Fout bij het verwerken van de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) en retour `null`.
+- Controleer of de [System.Management.Automation.PSDriveinfo. Hoofdmap *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) lid bestaat en er kan een verbinding met het gegevens archief worden gemaakt.
+- Maak een station en vul het lid van de verbinding in voor ondersteuning van de `New-PSDrive` cmdlet.
+- Valideer het [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object voor het voorgestelde station.
+- Wijzig het [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -object dat het station beschrijft met de vereiste prestatie-of betrouwbaarheids gegevens, of geef extra gegevens op voor aanroepers met behulp van het station.
+- Los fouten op met behulp van de methode [System. Management. Automation. provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) en retour neer `null` .
 
   Deze methode retourneert de stationsgegevens die zijn door gegeven aan de methode of een providerspecifieke versie van de schijf.
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Dynamische para meters aan NewDrive koppelen
 
-De `New-PSDrive`-cmdlet die wordt ondersteund door de provider van uw schijf, vereist mogelijk extra para meters. Om deze dynamische para meters aan de cmdlet te koppelen, implementeert de provider de methode [System. Management. Automation. provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
+`New-PSDrive`Voor de cmdlet die door de provider van de schijf wordt ondersteund, zijn mogelijk extra para meters vereist. Om deze dynamische para meters aan de cmdlet te koppelen, implementeert de provider de methode [System. Management. Automation. provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
 
 Deze schijf provider overschrijft deze methode niet. De volgende code toont echter de standaard implementatie van deze methode:
 
@@ -80,15 +73,15 @@ De volgende code toont de implementatie van de methode [System. Management. Auto
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
-Als het station kan worden verwijderd, moet de methode de informatie retour neren die wordt door gegeven aan de methode via de para meter `drive`. Als het station niet kan worden verwijderd, moet de methode een uitzonde ring schrijven en vervolgens `null`retour neren. Als uw provider deze methode niet overschrijft, retourneert de standaard implementatie van deze methode alleen de stationsgegevens die zijn door gegeven als invoer.
+Als het station kan worden verwijderd, moet de methode de informatie retour neren die wordt door gegeven aan de methode via de `drive` para meter. Als het station niet kan worden verwijderd, moet de methode een uitzonde ring schrijven en vervolgens terugkeren `null` . Als uw provider deze methode niet overschrijft, retourneert de standaard implementatie van deze methode alleen de stationsgegevens die zijn door gegeven als invoer.
 
 ## <a name="initializing-default-drives"></a>Standaard stations initialiseren
 
-De provider van het station implementeert de methode [System. Management. Automation. provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) om stations te koppelen. Zo kan de Active Directory provider een station koppelen voor de standaard naamgevings context als de computer lid is van een domein.
+De provider van uw station implementeert de [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) -methode om stations te koppelen. Zo kan de Active Directory provider een station koppelen voor de standaard naamgevings context als de computer lid is van een domein.
 
 Deze methode retourneert een verzameling station gegevens over de geïnitialiseerde stations of een lege verzameling. De aanroep van deze methode wordt uitgevoerd nadat de Windows Power shell-runtime de methode [System. Management. Automation. provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) aanroept om de provider te initialiseren.
 
-Deze stations-provider overschrijft de methode [System. Management. Automation. provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) niet. De volgende code toont echter de standaard implementatie, waarmee een lege stations verzameling wordt geretourneerd:
+Deze stations-provider overschrijft de [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) -methode niet. De volgende code toont echter de standaard implementatie, waarmee een lege stations verzameling wordt geretourneerd:
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinitializedefaultdrives](Msh_samplestestcmdlets#testproviderinitializedefaultdrives)]  -->
 
@@ -106,9 +99,9 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
 
 1. Voer de `Get-PSProvider` cmdlet uit om de lijst met providers op te halen om ervoor te zorgen dat de AccessDB-schijf provider aanwezig is:
 
-   **PS > `Get-PSProvider`**
+   **PS-> `Get-PSProvider`**
 
-   De volgende uitvoer wordt weer gegeven:
+   De volgende uitvoer wordt weergegeven:
 
    ```Output
    Name                 Capabilities                  Drives
@@ -121,7 +114,7 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. Zorg ervoor dat er een DSN (Data Base Server name) bestaat voor de data base door toegang te krijgen tot het gedeelte **gegevens bronnen** van de **beheer Programma's** voor het besturings systeem. Dubbel klik in de tabel **gebruikers-DSN** op **MS Access-Data Base** en voeg het stationspad toe `C:\ps\northwind.mdb`.
+2. Zorg ervoor dat er een DSN (Data Base Server name) bestaat voor de data base door toegang te krijgen tot het gedeelte **gegevens bronnen** van de **beheer Programma's** voor het besturings systeem. Dubbel klik in de tabel **gebruikers-DSN** op **MS Access-Data Base** en voeg het stationspad toe `C:\ps\northwind.mdb` .
 
 3. Maak een nieuw station met behulp van de provider van het voorbeeld station:
 
@@ -129,7 +122,7 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
    new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
    ```
 
-   De volgende uitvoer wordt weer gegeven:
+   De volgende uitvoer wordt weergegeven:
 
    ```Output
    Name     Provider     Root                   CurrentLocation
@@ -142,9 +135,9 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
    > [!NOTE]
    > De gebruiker kan nog niet communiceren met de provider als een station, omdat de provider container functionaliteit voor die interactie nodig heeft. Zie [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md)voor meer informatie.
 
-   **PS > (Get-psdrive myDb). Connection**
+   **PS> (Get-psdrive myDb). Connection**
 
-   De volgende uitvoer wordt weer gegeven:
+   De volgende uitvoer wordt weergegeven:
 
    ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb
@@ -171,4 +164,4 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
 
 [Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
 
-[Een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)
+[Een eenvoudige Windows PowerShell-provider ontwerpen](./creating-a-basic-windows-powershell-provider.md)

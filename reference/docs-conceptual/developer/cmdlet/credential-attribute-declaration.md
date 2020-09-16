@@ -1,25 +1,18 @@
 ---
 title: Verwijzing kenmerk declaratie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
-caps.latest.revision: 6
-ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a6deca52fa6c9e46138ae92401f58ac5dbd15852
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359421"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784364"
 ---
 # <a name="credential-attribute-declaration"></a>Declaratie van het kenmerk Referentie
 
 Het referentie kenmerk is een optioneel kenmerk dat kan worden gebruikt met referentie parameters van het type [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) , zodat een teken reeks ook als argument kan worden door gegeven aan de para meter. Wanneer dit kenmerk wordt toegevoegd aan een parameter declaratie, wordt de invoer van de teken reeks door Windows Power shell geconverteerd naar een [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) -object. De cmdlet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) gebruikt dit kenmerk bijvoorbeeld om Windows Power shell het [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) -object te laten genereren dat door de cmdlet wordt geretourneerd.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```csharp
 [Credential]
@@ -37,8 +30,8 @@ Het referentie kenmerk is een optioneel kenmerk dat kan worden gebruikt met refe
 
 ## <a name="see-also"></a>Zie ook
 
-[Parameter aliassen](./parameter-aliases.md)
+[Parameteraliassen](./parameter-aliases.md)
 
-[Parameter kenmerk declaratie](./parameter-attribute-declaration.md)
+[Declaratie van het kenmerk Parameter](./parameter-attribute-declaration.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

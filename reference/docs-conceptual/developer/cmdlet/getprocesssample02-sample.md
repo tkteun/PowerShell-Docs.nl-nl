@@ -1,23 +1,16 @@
 ---
 title: GetProcessSample02-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
-caps.latest.revision: 7
-ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa10774508b70f4aab4546cf4d6fbe8978032f1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355620"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784228"
 ---
 # <a name="getprocesssample02-sample"></a>Voorbeeld GetProcessSample02
 
-In dit voor beeld ziet u hoe u een cmdlet schrijft waarmee de processen op de lokale computer worden opgehaald. Het bevat een `Name` para meter die kan worden gebruikt om op te geven welke processen moeten worden opgehaald. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet schrijft waarmee de processen op de lokale computer worden opgehaald. Het bevat een `Name` para meter die kan worden gebruikt om op te geven welke processen moeten worden opgehaald. Deze cmdlet is een vereenvoudigde versie van de `Get-Process` cmdlet die wordt meegeleverd met Windows Power shell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Het voor beeld maken met Visual Studio.
 
@@ -51,7 +44,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft waarmee de processen op de lo
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -137,4 +130,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

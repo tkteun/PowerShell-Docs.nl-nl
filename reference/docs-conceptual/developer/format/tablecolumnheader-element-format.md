@@ -1,19 +1,12 @@
 ---
 title: TableColumnHeader-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
-caps.latest.revision: 19
-ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6296aea5c567663b1c3c0a2cf0a57b21aa5394de
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353716"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785180"
 ---
 # <a name="tablecolumnheader-element-format"></a>Het element TableColumnHeader (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u het label, de breedte van de kolom en de uitlijning van het
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableHeaders element voor TableControl (Format) TableColumnHeader-element voor TableHeaders voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TableColumnHeader>
@@ -33,7 +26,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `TableColumnHeader` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TableColumnHeader` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,14 +37,14 @@ Geen.
 |Element|Beschrijving|
 |-------------|-----------------|
 |[Label element voor TableColumnHeader voor TableControl (indeling)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee wordt het label gedefinieerd dat boven aan de kolom wordt weer gegeven. Als er geen label is opgegeven, wordt de naam van de eigenschap waarvan de waarde wordt weer gegeven in de rijen gebruikt.|
-|[Width-element voor TableColumnHeader voor TableControl (indeling)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Vereist element.<br /><br /> Geeft de breedte van de kolom aan (in tekens).|
-|[Alignment-element voor TableColumnHeader voor TableControl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee wordt aangegeven hoe het label van de kolom wordt weer gegeven. Als er geen uitlijning is opgegeven, wordt het label links uitgelijnd.|
+|[Het element Breedte voor TableColumnHeader voor TableControl (opmaak)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Vereist element.<br /><br /> Geeft de breedte van de kolom aan (in tekens).|
+|[Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Optioneel element.<br /><br /> Hiermee wordt aangegeven hoe het label van de kolom wordt weer gegeven. Als er geen uitlijning is opgegeven, wordt het label links uitgelijnd.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableHeaders-element (indeling)](./tableheaders-element-format.md)|Hiermee worden de kolommen van een tabel weergave gedefinieerd.|
+|[Het element TableHeaders (opmaak)](./tableheaders-element-format.md)|Hiermee worden de kolommen van een tabel weergave gedefinieerd.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -82,14 +75,14 @@ In het volgende voor beeld ziet u twee `TableColumnHeader` elementen. Het eerste
 
 ## <a name="see-also"></a>Zie ook
 
-[Alignment-element voor TableColumnHeader voor TableControl (indeling)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Label element voor TableColumnHeader voor TableControl (indeling)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Het element Label voor TableColumnHeader voor TableControl (opmaak)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [TableHeaders-element voor TableControl (indeling)](./tableheaders-element-format.md)
 
 [Breedte voor TableColumnHeader voor het TableControl-element (indeling)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample02-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359223"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786438"
 ---
 # <a name="stopprocesssample02-sample"></a>Voorbeeld StopProcessSample02
 
-In dit voor beeld ziet u hoe u een cmdlet schrijft die de berichten debug (WriteDebug), verbose (WriteVerbose) en waarschuwing (WriteWarning) schrijft tijdens het stoppen van processen op de lokale computer. Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet schrijft die de berichten debug (WriteDebug), verbose (WriteVerbose) en waarschuwing (WriteWarning) schrijft tijdens het stoppen van processen op de lokale computer. Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
@@ -53,7 +46,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die de berichten debug (Write
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -69,7 +62,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-Dit voor beeld laat zien hoe u fout opsporing, uitgebreide en waarschuwings berichten schrijft met behulp van de methoden `WriteDebug`, `WriteVerbose`en `WriteWarning`.
+In dit voor beeld ziet u hoe u fout opsporing, uitgebreide en waarschuwings berichten schrijft met behulp van de `WriteDebug` -, `WriteVerbose` -en- `WriteWarning` methoden.
 
 ```csharp
 using System;
@@ -312,4 +305,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: Besturings element voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
-caps.latest.revision: 11
-ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 13ea2f09aec7fea8e5460197f133b5f5219cd369
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354850"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783803"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Het element Besturingselement voor Besturingselementen voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt een besturings element gedefinieerd dat kan worden gebruikt door d
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer gave elementen (indeling) Controls element (Format) Control element (indeling) voor besturings elementen voor weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Control>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Control` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Control` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 |Element|Beschrijving|
 |-------------|-----------------|
 |[Naam element voor besturings element voor weer gave (indeling)](./name-element-for-control-for-controls-for-view-format.md)|Vereist element.<br /><br /> Hiermee geeft u de naam van het besturings element op.|
-|[CustomControl-element voor besturings elementen voor de weer gave (indeling)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Vereist element.<br /><br /> Hiermee wordt het besturings element gedefinieerd dat door deze weer gave wordt gebruikt.|
+|[Het element CustomControl voor Besturingselement voor Besturingselementen voor Weergave (opmaak)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Vereist element.<br /><br /> Hiermee wordt het besturings element gedefinieerd dat door deze weer gave wordt gebruikt.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -55,28 +48,28 @@ Geen.
 
 Dit besturings element kan worden opgegeven met de volgende elementen:
 
-- [CustomControlName-element voor ExpressionBinding voor besturings elementen voor weer gave (indeling)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+- [Het element CustomControlName voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
-- [CustomControlName-element voor ExpressionBinding voor CustomControl voor weer gave (indeling)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+- [Het element CustomControlName voor ExpressionBinding voor CustomControl voor Weergave (opmaak)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
-- [CustomControlName-element voor ExpressionBinding voor GroupBy (indeling)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+- [Het element CustomControlName voor ExpressionBinding voor GroupBy (opmaak)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
-- [CustomControlName-element voor GroupBy (indeling)](./customcontrolname-element-for-groupby-format.md)
+- [Het element CustomControlName voor GroupBy (opmaak)](./customcontrolname-element-for-groupby-format.md)
 
 ## <a name="see-also"></a>Zie ook
 
-[CustomControl-element voor besturings elementen voor de weer gave (indeling)](./customcontrol-element-for-control-for-controls-for-view-format.md)
+[Het element CustomControl voor Besturingselement voor Besturingselementen voor Weergave (opmaak)](./customcontrol-element-for-control-for-controls-for-view-format.md)
 
-[CustomControlName-element voor ExpressionBinding voor besturings elementen voor weer gave (indeling)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+[Het element CustomControlName voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
-[CustomControlName-element voor ExpressionBinding voor CustomControl voor weer gave (indeling)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+[Het element CustomControlName voor ExpressionBinding voor CustomControl voor Weergave (opmaak)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
-[CustomControlName-element voor ExpressionBinding voor GroupBy (indeling)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+[Het element CustomControlName voor ExpressionBinding voor GroupBy (opmaak)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
-[CustomControlName-element voor ExpressionBinding voor GroupBy (indeling)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+[Het element CustomControlName voor ExpressionBinding voor GroupBy (opmaak)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
 [Controls-element (indeling)](./controls-element-for-view-format.md)
 
-[Element naam voor besturings elementen voor weer gave (indeling)](./name-element-for-control-for-controls-for-view-format.md)
+[Het element Naam voor Besturingselement voor Besturingselementen voor Weergave (opmaak)](./name-element-for-control-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

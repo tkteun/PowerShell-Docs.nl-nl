@@ -1,27 +1,20 @@
 ---
 title: Uitvoer objecten uitbreiden | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
-caps.latest.revision: 11
-ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 48f4f2996159d84257ad72d499e3a796aeaa9116
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690894"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784313"
 ---
 # <a name="extending-output-objects"></a>Uitvoerobjecten uitbreiden
 
-U kunt de .NET Framework-objecten die worden geretourneerd door cmdlets, functies en scripts uitbreiden met behulp van typen bestanden (. ps1xml). Typen bestanden zijn XML-bestanden waarmee u eigenschappen en methoden aan bestaande objecten kunt toevoegen. Windows Power shell biedt bijvoorbeeld het bestand types. ps1xml, waarmee elementen aan verschillende bestaande .NET Framework objecten worden toegevoegd. Het bestand types. ps1xml bevindt zich in de installatiemap van Windows Power shell ( `$pshome` ). U kunt uw eigen bestands typen maken om deze objecten verder uit te breiden of om andere objecten uit te breiden. Wanneer u een object uitbreidt met behulp van een bestands typen, wordt een wille keurig exemplaar van het object uitgebreid met de nieuwe elementen.
+U kunt de .NET Framework-objecten die worden geretourneerd door cmdlets, functies en scripts uitbreiden met behulp van typen bestanden (. ps1xml). Typen bestanden zijn XML-bestanden waarmee u eigenschappen en methoden aan bestaande objecten kunt toevoegen. Windows Power shell biedt bijvoorbeeld het Types.ps1XML-bestand, waarmee elementen aan verschillende bestaande .NET Framework-objecten worden toegevoegd. Het Types.ps1XML-bestand bevindt zich in de installatiemap van Windows Power shell ( `$pshome` ). U kunt uw eigen bestands typen maken om deze objecten verder uit te breiden of om andere objecten uit te breiden. Wanneer u een object uitbreidt met behulp van een bestands typen, wordt een wille keurig exemplaar van het object uitgebreid met de nieuwe elementen.
 
 ## <a name="extending-the-systemarray-object"></a>Het object System. array uitbreiden
 
-In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het bestand types. ps1xml. [Systeem. matrix](/dotnet/api/System.Array) -objecten hebben standaard een `Length` eigenschap die het aantal objecten in de matrix vermeldt. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de `Count` alias eigenschap toe, die dezelfde waarde als de `Length` eigenschap weergeeft. De volgende XML-code voegt de `Count` eigenschap toe aan het type [System. array](/dotnet/api/System.Array) .
+In het volgende voor beeld ziet u hoe Windows Power shell het object [System. array](/dotnet/api/System.Array) uitbreidt in het XML-bestand van Types.ps1. [Systeem. matrix](/dotnet/api/System.Array) -objecten hebben standaard een `Length` eigenschap die het aantal objecten in de matrix vermeldt. Omdat de naam echter niet duidelijk de eigenschap beschrijft, voegt Windows Power shell de `Count` alias eigenschap toe, die dezelfde waarde als de `Length` eigenschap weergeeft. De volgende XML-code voegt de `Count` eigenschap toe aan het type [System. array](/dotnet/api/System.Array) .
 
 ```xml
 <Type>
@@ -89,7 +82,7 @@ Om uw eigen uitgebreide typen aan het bestand toe te voegen, voegt u een-element
 
 Nadat u uw eigen uitgebreide typen hebt gedefinieerd, kunt u een van de volgende methoden gebruiken om uw uitgebreide objecten beschikbaar te maken:
 
-- Gebruik de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) om het nieuwe bestand toe te voegen om het uitgebreide-type bestand beschikbaar te maken voor de huidige sessie. Als u wilt dat uw typen voor rang hebben op de typen die zijn gedefinieerd in andere typen bestanden (met inbegrip van het bestand types. ps1xml), gebruikt u de `PrependData` para meter van de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
+- Gebruik de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) om het nieuwe bestand toe te voegen om het uitgebreide-type bestand beschikbaar te maken voor de huidige sessie. Als u wilt dat uw typen voor rang hebben op de typen die zijn gedefinieerd in andere typen bestanden (inclusief het Types.ps1XML-bestand), gebruikt u de `PrependData` para meter van de cmdlet [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
 - Als u het uitgebreide-type bestand beschikbaar wilt maken voor alle toekomstige sessies, voegt u het typen bestand toe aan een module, exporteert u de huidige sessie of voegt u de opdracht [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) toe aan uw Windows Power shell-profiel.
 
 ## <a name="signing-types-files"></a>Bestands typen voor ondertekening

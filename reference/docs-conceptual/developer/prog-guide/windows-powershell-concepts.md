@@ -1,19 +1,12 @@
 ---
 title: Windows Power shell-concepten | Microsoft Docs
-ms.custom: ''
 ms.date: 6/12/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
-caps.latest.revision: 7
-ms.openlocfilehash: 56545599f1f5e593045294ed645c79df20738159
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a31c1df784b7b5f872c4647aece8fafa535db66b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563264"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786948"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell-concepten
 
@@ -23,7 +16,7 @@ Deze sectie bevat conceptuele informatie die u helpt bij het begrijpen van Power
 |----------------|-----------------|
 |[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|Beschrijving van Power shell-objecten. Zie [informatie over het maken van objecten](/powershell/module/microsoft.powershell.core/about/about_object_creation) voor meer informatie.|
 |[Runspaces maken](../hosting/creating-runspaces.md)|De besturings omgevingen waarin opdrachten worden verwerkt. Zie de [klasse runs Pace](/dotnet/api/system.management.automation.runspaces.runspace)voor meer informatie.|
-|[Uitvoerobjecten uitbreiden](../cmdlet/extending-output-objects.md)|Het uitbreiden van Power shell-objecten. Zie about types voor meer informatie [. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
+|[Uitvoerobjecten uitbreiden](../cmdlet/extending-output-objects.md)|Het uitbreiden van Power shell-objecten. Zie voor meer informatie [over Types.ps1XML](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
 |[Cmdlets registreren](../cmdlet/registering-cmdlets.md)|Modules en modules beschikbaar maken in Power shell. Zie [modules en](../cmdlet/modules-and-snap-ins.md)modules voor meer informatie.|
 |[Bevestiging vragen vanuit cmdlets](../cmdlet/requesting-confirmation-from-cmdlets.md)|Hoe cmdlets en providers feedback van de gebruiker aanvragen voordat een actie wordt ondernomen.|
 |[Klasse RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)|Runtime parameter declaraties.|

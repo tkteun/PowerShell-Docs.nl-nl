@@ -1,27 +1,20 @@
 ---
 title: Alignment-element voor TableColumnItem voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
-caps.latest.revision: 10
-ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: baa858b7c15b5afcc7f6087e8a9eace8d8fb67bb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359122"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783905"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>Het element Uitlijning voor TableColumnItem voor TableControl (opmaak)
 
 Bepaalt hoe de gegevens in een kolom van de rij worden weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) TableColumnItems element (indeling) TableColumnItem element (indeling) Alignment-element voor TableColumnItem (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) TableColumnItems element (indeling) TableColumnItem element (indeling) element uitlijning voor TableColumnItem (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Alignment>AlignmentType</Alignment>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Alignment` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Alignment` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 

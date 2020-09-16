@@ -1,19 +1,12 @@
 ---
 title: Selectionset-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
-caps.latest.revision: 17
-ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cf47229993458492c712d28e04913e75d1bde386
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358871"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783395"
 ---
 # <a name="selectionset-element-format"></a>Het element SelectionSet (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt een set .NET-objecten gedefinieerd waarnaar kan worden verwezen do
 
 Configuratie-element (indeling) SelectionSets element (indeling) element verzameling (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <SelectionSet>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) SelectionSets element (indeling) element verzame
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `SelectionSet` beschreven. Elke selectie reeks moet een naam hebben en moet de .NET-objecten van de set opgeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `SelectionSet` element beschreven. Elke selectie reeks moet een naam hebben en moet de .NET-objecten van de set opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,7 +35,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Naam element voor Selectieset (indeling)](./name-element-for-selectionset-format.md)|Vereist element.<br /><br /> Hiermee geeft u de naam op die wordt gebruikt om te verwijzen naar de selectieset.|
+|[Het element Naam voor SelectionSet (opmaak)](./name-element-for-selectionset-format.md)|Vereist element.<br /><br /> Hiermee geeft u de naam op die wordt gebruikt om te verwijzen naar de selectieset.|
 |[Type-element (indeling)](./types-element-for-selectionset-format.md)|Vereist element.<br /><br /> Hiermee definieert u de .NET-objecten die zich in de selectieset bevinden.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
@@ -55,11 +48,11 @@ Geen.
 
 U kunt selectie sets gebruiken wanneer u een set verwante objecten hebt waarnaar u wilt verwijzen met behulp van één naam, zoals een set objecten die zijn gerelateerd aan overname. Wanneer u uw weer gaven definieert, kunt u de set met objecten opgeven door de naam van de selectieset te gebruiken in plaats van alle objecten in elke weer gave te vermelden.
 
-Algemene selectie sets worden opgegeven met hun naam bij het definiëren van de weer gaven van het opmaak bestand of de definities van de weer gaven. In dergelijke gevallen specificeert het `SelectionSetName` onderliggende element van de `ViewSelectedBy` en `EntrySelectedBy` elementen de set die moet worden gebruikt. Zie [sets van objecten definiëren](./defining-selection-sets.md)voor meer informatie over selectie sets.
+Algemene selectie sets worden opgegeven met hun naam bij het definiëren van de weer gaven van het opmaak bestand of de definities van de weer gaven. In deze gevallen geeft het `SelectionSetName` onderliggende element van de- `ViewSelectedBy` en- `EntrySelectedBy` elementen de set op die moet worden gebruikt. Zie [sets van objecten definiëren](./defining-selection-sets.md)voor meer informatie over selectie sets.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `SelectionSet`-element waarmee vier .NET-typen worden gedefinieerd.
+In het volgende voor beeld ziet u een- `SelectionSet` element dat vier .net-typen definieert.
 
 ```xml
 <SelectionSets>
@@ -77,12 +70,12 @@ In het volgende voor beeld ziet u een `SelectionSet`-element waarmee vier .NET-t
 
 ## <a name="see-also"></a>Zie ook
 
-[Selectie sets definiëren](./defining-selection-sets.md)
+[Selectiereeksen definiëren](./defining-selection-sets.md)
 
 [Element naam van de Selectieset (indeling)](./name-element-for-selectionset-format.md)
 
-[SelectionSets-element (indeling)](./selectionsets-element-format.md)
+[Het element SelectionSets (opmaak)](./selectionsets-element-format.md)
 
 [Type-element (indeling)](./types-element-for-selectionset-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

@@ -1,27 +1,20 @@
 ---
 title: CustomItem-element voor CustomEntry voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 33cb5350-73ef-4b79-a879-0edf051869e4
-caps.latest.revision: 7
-ms.openlocfilehash: 174ba6a14819f823ec39f72e49a626e781221d8c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 747ea14e7118be62ebee00e7d80af2dccb5c8353
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355179"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785843"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-view-format"></a>Het element CustomItem voor CustomEntry voor Besturingselementen voor Weergave (opmaak)
 
 Hiermee definieert u welke gegevens worden weer gegeven door het besturings element en hoe deze worden weer gegeven. Dit element wordt gebruikt bij het definiëren van besturings elementen die kunnen worden gebruikt door een weer gave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (opmaak) voor besturings elementen voor de weer gave (indeling) CustomControl-element voor besturings elementen voor Controls (Format) CustomEntries element voor CustomControl voor View (Format) CustomEntry-element voor CustomEntries voor besturings elementen voor de weer gave (Format) CustomItem-element voor CustomEntry voor besturings elementen voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element (indeling) Controls element (Format) Controls-element voor besturings elementen voor weer gave (indeling) CustomControl-element voor besturings elementen voor de weer gave (Format) CustomEntries-element voor het element voor controle voor Controls voor de Control
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <CustomItem>
@@ -34,7 +27,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `CustomItem` beschreven. Zie Opmerkingen voor meer informatie.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `CustomItem` element beschreven. Zie Opmerkingen voor meer informatie.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,22 +37,22 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ExpressionBinding-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
-|[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
-|[Element nieuwe regel voor CustomItem voor besturings elementen voor weer gave (indeling)](./newline-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee voegt u een lege regel toe aan de weer gave van het besturings element.|
-|[Tekst element voor CustomItem voor besturings elementen voor weer gave (indeling)](./text-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Voegt tekst, zoals haakjes of haakjes, toe aan de weer gave van het besturings element.|
+|[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
+|[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element NewLine voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./newline-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Hiermee voegt u een lege regel toe aan de weer gave van het besturings element.|
+|[Het element Tekst voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./text-element-for-customitem-for-controls-for-view-format.md)|Optioneel element.<br /><br /> Voegt tekst, zoals haakjes of haakjes, toe aan de weer gave van het besturings element.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomEntry-element voor CustomEntries voor besturings elementen voor weer gave (indeling)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Biedt een definitie van het besturings element.|
+|[Het element CustomEntry voor CustomEntries voor Besturingselementen voor Weergave (opmaak)](./customentry-element-for-customentries-for-controls-for-view-format.md)|Biedt een definitie van het besturings element.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Houd bij het opgeven van de onderliggende elementen van het element `CustomItem` het volgende in acht:
+Wanneer u de onderliggende elementen van het `CustomItem` element opgeeft, houdt u het volgende in acht:
 
-- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde: `ExpressionBinding`, `NewLine`, `Text`en `Frame`.
+- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde:,, en `ExpressionBinding` `NewLine` `Text` `Frame` .
 
 - Er is geen maximum limiet voor het aantal reeksen dat u kunt opgeven.
 
@@ -67,12 +60,12 @@ Houd bij het opgeven van de onderliggende elementen van het element `CustomItem`
 
 ## <a name="see-also"></a>Zie ook
 
-[ExpressionBinding-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
-[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)
+[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[Element nieuwe regel voor CustomItem voor besturings elementen voor weer gave (indeling)](./newline-element-for-customitem-for-controls-for-view-format.md)
+[Het element NewLine voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./newline-element-for-customitem-for-controls-for-view-format.md)
 
-[Tekst element voor CustomItem voor besturings elementen voor weer gave (indeling)](./text-element-for-customitem-for-controls-for-view-format.md)
+[Het element Tekst voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./text-element-for-customitem-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

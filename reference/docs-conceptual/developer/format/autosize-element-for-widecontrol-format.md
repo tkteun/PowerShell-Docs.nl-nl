@@ -1,19 +1,12 @@
 ---
 title: Het element AutoSize voor WideControl (Format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
-caps.latest.revision: 11
-ms.openlocfilehash: 6dbaef5886a0600bd9fe96dbc8d21f00a674dfcf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64e62142738916978b37eb1cd3a73536b0447099
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359099"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783871"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>Het element AutoSize voor WideControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt aangegeven of de kolom grootte en het aantal kolommen worden aange
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) WideControl element (indeling) AutoSize element voor WideControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <AutoSize/>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `AutoSize` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `AutoSize` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[WideControl-element (indeling)](./widecontrol-element-format.md)|Hiermee wordt een brede lijst indeling (enkelvoudige waarde) gedefinieerd voor de weer gave.|
+|[Het element WideControl (opmaak)](./widecontrol-element-format.md)|Hiermee wordt een brede lijst indeling (enkelvoudige waarde) gedefinieerd voor de weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Bij het definiëren van een brede weer gave kunt u het `AutoSize`-element of het [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) -element toevoegen, maar u kunt niet beide toevoegen.
+Bij het definiëren van een brede weer gave kunt u het `AutoSize` element of het [ColumnNumber](./columnnumber-element-for-widecontrol-format.md) -element toevoegen, maar u kunt niet beide toevoegen.
 
 Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie over de onderdelen van een brede weer gave.
 
@@ -55,10 +48,10 @@ Zie [Wide View (Basic)](./wide-view-basic.md)voor een voor beeld van een brede w
 
 ## <a name="see-also"></a>Zie ook
 
-[ColumnNumber-element voor WideControl (indeling)](./columnnumber-element-for-widecontrol-format.md)
+[Het element ColumnNumber voor WideControl (opmaak)](./columnnumber-element-for-widecontrol-format.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[WideControl-element (indeling)](./widecontrol-element-format.md)
+[Het element WideControl (opmaak)](./widecontrol-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

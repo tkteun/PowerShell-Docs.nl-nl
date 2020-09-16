@@ -1,27 +1,20 @@
 ---
 title: Label element voor TableColumnHeader voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
-caps.latest.revision: 11
-ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356040"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785741"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Label voor TableColumnHeader voor TableControl (opmaak)
 
 Hiermee wordt het label gedefinieerd dat boven aan een kolom wordt weer gegeven. Dit element wordt gebruikt bij het definiëren van een tabel weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) TableControl element (Format) TableHeaders element voor TableControl (Format) TableColumnHeader-element voor TableHeaders voor TableControl (Format) voor TableColumnHeader voor TableControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weergave (indeling) TableControl element (Format) TableHeaders element voor TableControl (Format) TableColumnHeader-element voor TableHeaders voor TableControl (Format) voor TableColumnHeader voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Label>DisplayedLabel</Label>
@@ -30,7 +23,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element van w
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Label` beschreven. Voor elke kolom is slechts één label toegestaan.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Label` element beschreven. Voor elke kolom is slechts één label toegestaan.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -70,8 +63,8 @@ In dit voor beeld ziet u een `TableColumnHeader` element waarvan het label ' kol
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)
+[Het element TableColumnHeader (opmaak)](./tablecolumnheader-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

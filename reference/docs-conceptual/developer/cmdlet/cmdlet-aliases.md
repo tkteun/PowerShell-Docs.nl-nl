@@ -1,19 +1,12 @@
 ---
 title: Cmdlet-aliassen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d0d70864-33fb-49ce-8054-c41ba19fd554
-caps.latest.revision: 11
-ms.openlocfilehash: 32f45702cc0d28e6652ef61ebdbe085291013408
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359458"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784534"
 ---
 # <a name="cmdlet-aliases"></a>Cmdlet-aliassen
 
@@ -27,7 +20,7 @@ Volg deze richt lijnen wanneer u ingebouwde aliassen voor uw cmdlets maakt:
 
 - Voordat u aliassen toewijst, start u Windows Power shell en voert u de cmdlet [Get-alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) uit om de aliassen weer te geven die al zijn gebruikt.
 
-- Neem een voor voegsel van een alias op dat verwijst naar het werk woord van de naam van de cmdlet en een alias achtervoegsel dat verwijst naar het zelfstandig naam woord van de cmdletnaam. De alias voor de `Import-Module`-cmdlet is bijvoorbeeld ' ipmo '. Zie [cmdlet-termen](./approved-verbs-for-windows-powershell-commands.md)voor een lijst met alle termen en de bijbehorende aliassen.
+- Neem een voor voegsel van een alias op dat verwijst naar het werk woord van de naam van de cmdlet en een alias achtervoegsel dat verwijst naar het zelfstandig naam woord van de cmdletnaam. De alias voor de `Import-Module` cmdlet is bijvoorbeeld ' ipmo '. Zie [cmdlet-termen](./approved-verbs-for-windows-powershell-commands.md)voor een lijst met alle termen en de bijbehorende aliassen.
 
 - Voor cmdlets die dezelfde term hebben, neemt u hetzelfde alias voorvoegsel op. Bijvoorbeeld: de aliassen voor alle Windows Power shell-cmdlets die de opdracht ' Get ' hebben in hun naam, gebruiken het voor voegsel ' g '.
 
@@ -39,4 +32,4 @@ Volg deze richt lijnen wanneer u ingebouwde aliassen voor uw cmdlets maakt:
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

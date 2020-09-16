@@ -1,22 +1,15 @@
 ---
 title: Cmdlet-klassen declaratie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], declaring
 - declaring cmdlets [PowerShell SDK]
-ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
-caps.latest.revision: 14
-ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978709"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784500"
 ---
 # <a name="cmdlet-class-declaration"></a>Declaratie van cmdlet-klassen
 
@@ -26,11 +19,11 @@ Wanneer u het **cmdlet** -kenmerk opgeeft, moet u de combi natie van verb en sam
 > [!NOTE]
 > Het **cmdlet** -kenmerk wordt gedefinieerd door de klasse [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . De eigenschappen van deze klasse komen overeen met de declaratie parameters die worden gebruikt bij het declareren van het kenmerk.
 
-## <a name="nouns"></a>Woorden
+## <a name="nouns"></a>Zelfstandige naamwoorden
 
 Het zelfstandige naam woord van de cmdlet specificeert de resources waarop de cmdlet optreedt. Het zelfstandig naam woord onderscheidt uw cmdlets van andere cmdlets.
 
-Zelfstandige naam woorden in de namen van de cmdlets moeten specifiek zijn en in het geval van algemene zelfstandig naam woorden, zoals *Server*, is het raadzaam om een kort voor voegsel toe te voegen waarmee uw resource van andere vergelijk bare bronnen wordt onderscheiden. Bijvoorbeeld een naam van een cmdlet die een zelfstandig nummer met een voor voegsel bevat `Get-SQLServer`. Met de combi natie van een specifiek zelfstandig naam woord met een meer algemene term kan de gebruiker snel de cmdlet vinden op basis van de actie en vervolgens de cmdlet identificeren aan de hand van de bijbehorende resource, terwijl het voor komen van onnodige naam duplicatie van de cmdlet.
+Zelfstandige naam woorden in de namen van de cmdlets moeten specifiek zijn en in het geval van algemene zelfstandig naam woorden, zoals *Server*, is het raadzaam om een kort voor voegsel toe te voegen waarmee uw resource van andere vergelijk bare bronnen wordt onderscheiden. Bijvoorbeeld een naam van een cmdlet die een zelfstandig nummer met een voor voegsel bevat `Get-SQLServer` . Met de combi natie van een specifiek zelfstandig naam woord met een meer algemene term kan de gebruiker snel de cmdlet vinden op basis van de actie en vervolgens de cmdlet identificeren aan de hand van de bijbehorende resource, terwijl het voor komen van onnodige naam duplicatie van de cmdlet.
 
 Zie [vereiste ontwikkel richtlijnen](./required-development-guidelines.md)voor een lijst met speciale tekens die niet kunnen worden gebruikt in cmdlet-namen.
 
@@ -54,7 +47,7 @@ De volgende code is de definitie voor een GetProc-cmdlet-klasse. U ziet dat Pasc
 
 ## <a name="pascal-casing"></a>Pascal-behuizing
 
-Wanneer u een naam wilt voor cmdlets, gebruikt u het hoofdletter gebruik. De cmdlets `Get-Item` en `Get-ItemProperty` tonen bijvoorbeeld de juiste manier om hoofdletter gebruik te gebruiken wanneer u de naamgeving van cmdlets gebruikt.
+Wanneer u een naam wilt voor cmdlets, gebruikt u het hoofdletter gebruik. De `Get-Item` `Get-ItemProperty` cmdlets en tonen bijvoorbeeld de juiste manier om hoofdletter gebruik te gebruiken wanneer u de naamgeving van cmdlets gebruikt.
 
 ## <a name="see-also"></a>Zie ook
 
@@ -64,6 +57,6 @@ Wanneer u een naam wilt voor cmdlets, gebruikt u het hoofdletter gebruik. De cmd
 
 [Namen van cmdlet-termen](./approved-verbs-for-windows-powershell-commands.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

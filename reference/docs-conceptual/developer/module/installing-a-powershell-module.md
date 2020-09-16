@@ -1,19 +1,12 @@
 ---
 title: Een Power shell-module installeren | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
-ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357370"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784857"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
 
@@ -62,7 +55,7 @@ De waarde van de omgevings variabele **PSModulePath** bevat standaard de volgend
   ```
 
   > [!IMPORTANT]
-  > Zodra u het pad naar **PSModulePath**hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** bericht verzenden met `lParam` ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath**heeft bijgewerkt.
+  > Zodra u het pad naar **PSModulePath**hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** -bericht verzenden `lParam` dat is ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath**heeft bijgewerkt.
 
 ### <a name="use-the-correct-module-directory-name"></a>De juiste naam voor de module directory gebruiken
 
@@ -70,7 +63,7 @@ Een goed opgemaakte module is een module die is opgeslagen in een map met dezelf
 
 De ' basis naam ' van een bestand is de naam zonder de bestandsnaam extensie. In een goed opgemaakte module moet de naam van de map die de module bestanden bevat, overeenkomen met de basis naam van ten minste één bestand in de module.
 
-In de voor beeld-module Fabrikam is de map die de module bestanden bevat de naam ' fabrikam ' en ten minste één bestand de basis naam ' fabrikam ' heeft. In dit geval hebben zowel fabrikam. psd1 als fabrikam. dll de basis naam ' fabrikam '.
+In de voor beeld-module Fabrikam is de map die de module bestanden bevat de naam ' fabrikam ' en ten minste één bestand de basis naam ' fabrikam ' heeft. In dit geval hebben zowel Fabrikam.psd1 als Fabrikam.dll de basis naam ' fabrikam '.
 
 ```
 C:\Program Files
@@ -89,7 +82,7 @@ Als de module niet de juiste indeling heeft en de locatie ervan niet is opgenome
 
 - Met de functie voor het automatisch laden van de module kan de module niet automatisch worden geïmporteerd.
 
-- Met de para meter `ListAvailable` van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan de module niet worden gevonden.
+- De- `ListAvailable` para meter van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) kan de module niet vinden.
 
 - De module voor [importeren-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) kan niet worden gevonden. Als u de module wilt importeren, moet u het volledige pad naar het hoofd module bestand of het manifest bestand van de module opgeven.
 
@@ -101,7 +94,7 @@ Als de module niet de juiste indeling heeft en de locatie ervan niet is opgenome
 
 - Met de cmdlet [show-command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) kunnen de opdrachten in de module niet worden gevonden en weer gegeven.
 
-  De opdrachten in de module ontbreken in het `Show-Command` venster in Windows Power shell Integrated Scripting Environment (ISE).
+  De opdrachten in de module ontbreken `Show-Command` in het venster in Windows Power shell Integrated Scripting Environment (ISE).
 
 ## <a name="where-to-install-modules"></a>Waar modules worden geïnstalleerd?
 
@@ -153,7 +146,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Als een module door meerdere onderdelen van een product of meerdere versies van een product wordt gebruikt, installeert u de module in een module-specifieke submap van de map%ProgramFiles%\Common Files\Modules.
 
-In het volgende voor beeld wordt de module fabrikam geïnstalleerd in een submap fabrikam van de submap `%ProgramFiles%\Common Files\Modules`. Elke module bevindt zich in een eigen submap in de submap modules.
+In het volgende voor beeld wordt de module fabrikam geïnstalleerd in een submap van Fabrikam van de `%ProgramFiles%\Common Files\Modules` submap. Elke module bevindt zich in een eigen submap in de submap modules.
 
 ```
 C:\Program Files
@@ -185,7 +178,7 @@ Als u meerdere versies van dezelfde module wilt installeren, gebruikt u de volge
 2. Maak een module manifest voor elke versie van de module. Voer in de waarde van de sleutel **ModuleVersion** in het manifest het module versie nummer in. Sla het manifest bestand (. psd1) op in de versie-specifieke directory voor de module.
 3. Voeg het pad van de module-basismap toe aan de waarde van de omgevings variabele **PSModulePath** , zoals wordt weer gegeven in de volgende voor beelden.
 
-Als u een bepaalde versie van de module wilt importeren, kan de eind gebruiker gebruikmaken van de para meters `MinimumVersion` of `RequiredVersion` van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Als u een bepaalde versie van de module wilt importeren, kan de eind gebruiker gebruikmaken `MinimumVersion` `RequiredVersion` van de para meters of van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Bijvoorbeeld, als de module fabrikam beschikbaar is in versie 8,0 en 9,0, kan de directory structuur van de module Fabrikam er als volgt uitzien.
 
@@ -210,7 +203,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Wanneer deze stappen zijn voltooid, haalt de para meter **ListAvailable** van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) beide fabrikam-modules op. Als u een bepaalde module wilt importeren, gebruikt u de para meters `MinimumVersion` of `RequiredVersion` van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Wanneer deze stappen zijn voltooid, haalt de para meter **ListAvailable** van de cmdlet [Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) beide fabrikam-modules op. Als u een bepaalde module wilt importeren, gebruikt u de `MinimumVersion` `RequiredVersion` para meters van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Als beide modules in dezelfde sessie worden geïmporteerd en de modules cmdlets met dezelfde namen bevatten, zijn de cmdlets die het laatst zijn geïmporteerd in de sessie effectief.
 
@@ -220,7 +213,7 @@ Conflicten met de naam van de opdracht kunnen zich voordoen wanneer de opdrachte
 
 Wanneer een sessie twee opdrachten met dezelfde naam bevat, voert Windows Power shell het type opdracht uit dat voor rang heeft. Wanneer een sessie twee opdrachten bevat die dezelfde naam en hetzelfde type hebben, voert Windows Power shell de opdracht uit die het laatst aan de sessie is toegevoegd. Als u een opdracht wilt uitvoeren die niet standaard wordt uitgevoerd, kunnen gebruikers de naam van de opdracht kwalificeren met de module naam.
 
-Als de sessie bijvoorbeeld een `Get-Date`-functie en de `Get-Date`-cmdlet bevat, wordt de functie standaard uitgevoerd door Windows Power shell. Als u de cmdlet wilt uitvoeren, moet u voor de opdracht de module naam gebruiken, bijvoorbeeld:
+Als de sessie bijvoorbeeld een `Get-Date` functie en de `Get-Date` cmdlet bevat, wordt de functie standaard uitgevoerd door Windows Power shell. Als u de cmdlet wilt uitvoeren, moet u voor de opdracht de module naam gebruiken, bijvoorbeeld:
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,10 +221,10 @@ Microsoft.PowerShell.Utility\Get-Date
 
 Om conflicten met de naam te voor komen, kunnen module auteurs de sleutel **DefaultCommandPrefix** in het module manifest gebruiken om een zelfstandig naam woord voor voegsel op te geven voor alle opdrachten die vanuit de module worden geëxporteerd.
 
-Gebruikers kunnen de para meter **prefix** van de cmdlet `Import-Module` gebruiken om een alternatief voor voegsel te gebruiken. De waarde van de para meter **prefix krijgt voor** rang op de waarde van de sleutel **DefaultCommandPrefix** .
+Gebruikers kunnen de para meter **prefix** van de `Import-Module` cmdlet gebruiken om een alternatief voor voegsel te gebruiken. De waarde van de para meter **prefix krijgt voor** rang op de waarde van de sleutel **DefaultCommandPrefix** .
 
 ## <a name="see-also"></a>Zie ook
 
 [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 
-[Een Windows Power shell-module schrijven](./writing-a-windows-powershell-module.md)
+[Een Windows PowerShell-module schrijven](./writing-a-windows-powershell-module.md)

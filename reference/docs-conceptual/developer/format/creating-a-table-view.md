@@ -1,19 +1,12 @@
 ---
 title: Een tabel weergave maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
-ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354808"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786149"
 ---
 # <a name="creating-a-table-view"></a>Een tabelweergave maken
 
@@ -21,7 +14,7 @@ In een tabel weergave worden gegevens in een of meer kolommen weer gegeven. Elke
 
 ## <a name="a-table-view-display"></a>Een tabel weergave weer geven
 
-In het volgende voor beeld ziet u hoe in Windows Power shell het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) wordt weer gegeven dat wordt geretourneerd door de cmdlet [Get-service](/powershell/module/microsoft.powershell.management/get-service) . Voor dit object heeft Windows Power shell een tabel weergave gedefinieerd waarin de eigenschap `Status` wordt weer gegeven, de eigenschap `Name` (deze eigenschap is een alias eigenschap voor de eigenschap `ServiceName`) en de eigenschap `DisplayName`. Elke rij in de tabel vertegenwoordigt een object dat door de cmdlet wordt geretourneerd.
+In het volgende voor beeld ziet u hoe in Windows Power shell het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) wordt weer gegeven dat wordt geretourneerd door de cmdlet [Get-service](/powershell/module/microsoft.powershell.management/get-service) . Voor dit object heeft Windows Power shell een tabel weergave gedefinieerd waarin de eigenschap wordt weer gegeven `Status` , de `Name` eigenschap (deze eigenschap is een alias eigenschap voor de `ServiceName` eigenschap) en de `DisplayName` eigenschap. Elke rij in de tabel vertegenwoordigt een object dat door de cmdlet wordt geretourneerd.
 
 ```output
 Status   Name               DisplayName
@@ -215,7 +208,7 @@ De volgende XML-elementen kunnen worden gebruikt om de objecten op te geven die 
 
 ## <a name="using-format-strings"></a>Opmaak teken reeksen gebruiken
 
-Opmaak teken reeksen kunnen worden toegevoegd aan een weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+Opmaak teken reeksen kunnen worden toegevoegd aan een weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <TableColumnItem>
@@ -232,7 +225,7 @@ De volgende XML-elementen kunnen worden gebruikt om een notatie patroon op te ge
 
 - Het element [formats Tring](./label-element-for-listitem-for-listcontrol-format.md) geeft een opmaak patroon op dat bepaalt hoe de eigenschap of script waarde wordt weer gegeven.
 
-In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString`, die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
+In het volgende voor beeld wordt de- `ToString` methode aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString` die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
 
 ```xml
 <ListItem>
@@ -243,7 +236,7 @@ In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde 
 </ListItem>
 ```
 
-Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roepen:
+Het volgende XML-element kan worden gebruikt om de methode aan te roepen `ToString` :
 
 - Het [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) -element definieert de eigenschap of het script waarvan de waarde wordt weer gegeven in de kolom van de rij. Voor elke kolom van de rij is een [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) -element vereist. De eerste vermelding wordt weer gegeven in de eerste kolom, de tweede vermelding in de tweede kolom, enzovoort.
 
@@ -251,4 +244,4 @@ Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roe
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

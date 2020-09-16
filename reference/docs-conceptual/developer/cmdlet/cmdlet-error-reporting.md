@@ -1,25 +1,18 @@
 ---
 title: Fout rapportage voor cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error records [PowerShell], terminating
 - non-terminating errors [PowerShell]
 - error records [PowerShell]
 - terminating errors [PowerShell]
 - error records [PowerShell], non-terminating
-ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
-caps.latest.revision: 8
-ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356565"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784466"
 ---
 # <a name="cmdlet-error-reporting"></a>Fout rapportage voor cmdlets
 
@@ -82,12 +75,12 @@ Fout categorieën worden gebruikt om fouten te groeperen voor de gebruiker. In P
 
 Zie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -inventarisatie voor een beschrijving van de fout categorieën die beschikbaar zijn. Over het algemeen moet u voor komen dat u, indien mogelijk, **UndefinedError**en **algemene fout** **gebruiken.**
 
-Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze `$ErrorView` instellen op **CategoryView**.
+Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze zijn ingesteld `$ErrorView` op **CategoryView**.
 
 ## <a name="see-also"></a>Zie ook
 
-[Overzicht van de cmdlet](./cmdlet-overview.md)
+[Overzicht van cmdlets](./cmdlet-overview.md)
 
-[Typen cmdlet-uitvoer](./types-of-cmdlet-output.md)
+[Soorten cmdlet-uitvoer](./types-of-cmdlet-output.md)
 
-[Naslag informatie voor Windows Power shell](../windows-powershell-reference.md)
+[Naslaginformatie over Windows PowerShell](../windows-powershell-reference.md)

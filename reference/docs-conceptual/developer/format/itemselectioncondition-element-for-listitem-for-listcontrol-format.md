@@ -1,27 +1,20 @@
 ---
 title: ItemSelectionCondition-element voor lijst item voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
-caps.latest.revision: 10
-ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f5c388928668e03b96923130fb5849f637548f12
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356054"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783616"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>Het element ItemSelectionCondition voor ListItem voor ListControl (opmaak)
 
 Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit lijst item.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling). element (Format) voor ListControl voor ListControl (Format) lijst item-element voor list items voor ListControl (Format) ItemSelectionCondition-element voor de lijst item voor ListControl (Format)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) item type-element (indeling) van het element list item (Format) voor de ListControl (indeling) element list item voor ListControl (Format) List items element voor List entry voor ListControl (Format) lijst item element voor de ListControl (indeling) ItemSelectionCondition-element
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ItemSelectionCondition>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `ItemSelectionCondition` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `ItemSelectionCondition` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,14 +35,14 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[PropertyName-element voor ItemSelectionCondition voor ListControl (indeling)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd.|
-|[Script block-element voor ItemSelectionCondition voor ListControl (indeling)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd.|
+|[Het element PropertyName voor ItemSelectionCondition voor ListControl (opmaak)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd.|
+|[Het element ScriptBlock voor ItemSelectionCondition voor ListControl (opmaak)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Lijst item-element voor list items voor ListControl (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
+|[Het element ListItem voor ListItems voor ListControl (opmaak)](./listitem-element-for-listitems-for-listcontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -57,10 +50,10 @@ U kunt voor dit probleem één eigenschaps naam of een script opgeven, maar niet
 
 ## <a name="see-also"></a>Zie ook
 
-[Lijst item-element voor list items voor ListControl (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)
+[Het element ListItem voor ListItems voor ListControl (opmaak)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[PropertyName-element voor ItemSelectionCondition voor ListControl (indeling)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
+[Het element PropertyName voor ItemSelectionCondition voor ListControl (opmaak)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[Script block-element voor ItemSelectionCondition voor ListControl (indeling)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+[Het element ScriptBlock voor ItemSelectionCondition voor ListControl (opmaak)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

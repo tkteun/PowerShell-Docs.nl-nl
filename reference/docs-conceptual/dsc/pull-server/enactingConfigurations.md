@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuraties doorvoeren
-ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277887"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783072"
 ---
 # <a name="enacting-configurations"></a>Configuraties doorvoeren
 
@@ -17,18 +17,18 @@ Er zijn twee manieren om de configuraties van desired state Configuration (DSC) 
 
 ## <a name="push-mode"></a>Push-modus
 
-![Push-modus](media/enactingConfigurations/pushModel.png "De werking van de push modus")
+![Overzicht van de push-modus](media/enactingConfigurations/pushModel.png "De werking van de push modus")
 
 De push modus verwijst naar een gebruiker die actief een configuratie toepast op een doel knooppunt door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen.
 
-Nadat u een configuratie hebt gemaakt en gecompileerd, kunt u deze in de push-modus Toep assen door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen en de para meter-Path van de cmdlet in te stellen op het pad waar de configuratie-MOF zich bevindt. Als de configuratie-MOF zich bijvoorbeeld bevindt `C:\DSC\Configurations\localhost.mof`op, past u deze toe op de lokale computer met de volgende opdracht:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+Nadat u een configuratie hebt gemaakt en gecompileerd, kunt u deze in de push-modus Toep assen door de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan te roepen en de para meter-Path van de cmdlet in te stellen op het pad waar de configuratie-MOF zich bevindt. Als de configuratie-MOF zich bijvoorbeeld bevindt op `C:\DSC\Configurations\localhost.mof` , past u deze toe op de lokale computer met de volgende opdracht: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
 > DSC voert een configuratie standaard uit als achtergrond taak. Als u de configuratie interactief wilt uitvoeren, roept u [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aan met de para meter **wait** .
 
 ## <a name="pull-mode"></a>Pull-modus
 
-![Pull-modus](media/enactingConfigurations/pullModel.png "Hoe werkt de pull-modus?")
+![Overzicht van de pull-modus](media/enactingConfigurations/pullModel.png "Hoe werkt de pull-modus?")
 
 Pull-clients worden in de pull-modus geconfigureerd om de gewenste status configuraties te verkrijgen van een externe pull-service. Op dezelfde manier is de pull-service ingesteld voor het hosten van de DSC-service en is deze ingericht met de configuraties en resources die vereist zijn voor de pull-clients. Elk van de pull-clients heeft een geplande gebeurtenis die een periodieke controle op de naleving van de configuratie van het knoop punt uitvoert. Wanneer de gebeurtenis de eerste keer wordt geactiveerd, maakt de lokale Configuration Manager (LCM) op de pull-client een aanvraag voor de pull-service om de configuratie op te halen die is opgegeven in de LCM. Als deze configuratie bestaat in de pull-service en de initiële validatie controles worden door gegeven, wordt de configuratie gedownload naar de pull-client, waar deze wordt uitgevoerd door de LCM.
 
@@ -40,6 +40,6 @@ Zie [een DSC Web-pull-server instellen](pullServer.md)voor meer informatie over 
 
 In de volgende onderwerpen worden pull-Services en-clients beschreven:
 
-- [Overzicht van Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Overzicht van Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Een SMB-pull-server instellen](pullServerSMB.md)
 - [Een pull-client configureren](pullClientConfigID.md)

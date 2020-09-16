@@ -1,19 +1,12 @@
 ---
 title: Het element AutoSize voor TableControl (Format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
-caps.latest.revision: 11
-ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f29b3eb278fd9ff29d2f6f4fbd000513dcaeec7b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355368"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783888"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>Het element AutoSize voor TableControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt aangegeven of de kolom grootte en het aantal kolommen worden aange
 
 ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) AutoSize element voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <AutoSize/>
@@ -29,7 +22,7 @@ ViewDefinitions element (indeling) element weer geven (indeling) TableControl el
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `AutoSize` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `AutoSize` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableControl-element (indeling)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
+|[Het element TableControl (opmaak)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -51,8 +44,8 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableControl-element (indeling)](./tablecontrol-element-format.md)
+[Het element TableControl (opmaak)](./tablecontrol-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

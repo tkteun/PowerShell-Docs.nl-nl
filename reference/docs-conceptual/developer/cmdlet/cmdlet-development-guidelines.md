@@ -1,22 +1,15 @@
 ---
 title: Richt lijnen voor het ontwikkelen van cmdlets | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - development guidelines [PowerShell Programmer's Guide]
 - cmdlets [PowerShell Programmer's Guide], development guidelines
-ms.assetid: c30cc3c0-e958-4a8f-b81f-1e38de772f13
-caps.latest.revision: 14
-ms.openlocfilehash: 89c7682e87fa6f389349fc44275be0d2ffc83957
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5dd83b12a9052ff5f146c4c4e077a9358907cbd0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359438"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784483"
 ---
 # <a name="cmdlet-development-guidelines"></a>Richtlijnen voor de ontwikkeling van cmdlets
 
@@ -24,14 +17,14 @@ De onderwerpen in deze sectie bieden ontwikkel richtlijnen die u kunt gebruiken 
 
 ## <a name="in-this-section"></a>In deze sectie
 
-- [Vereiste ontwikkel richtlijnen](./required-development-guidelines.md)
+- [Vereiste richtlijnen voor de ontwikkeling](./required-development-guidelines.md)
 
-- [Sterk aanbevolen ontwikkel richtlijnen](./strongly-encouraged-development-guidelines.md)
+- [Zeer aangeraden richtlijnen voor de ontwikkeling](./strongly-encouraged-development-guidelines.md)
 
-- [Richt lijnen voor advies ontwikkeling](./advisory-development-guidelines.md)
+- [Geadviseerde richtlijnen voor de ontwikkeling](./advisory-development-guidelines.md)
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

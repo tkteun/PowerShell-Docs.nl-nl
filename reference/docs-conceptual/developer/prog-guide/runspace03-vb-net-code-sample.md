@@ -1,19 +1,12 @@
 ---
 title: RunSpace03 (VB.NET)-code voorbeeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
-caps.latest.revision: 6
-ms.openlocfilehash: e744caf0201a6e2a7fbf86138d7b28e4f14d549f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3b4181889ed15e14c59e3f47a09e39a2696df28c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417960"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784772"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Runspace03-codevoorbeeld (VB.NET)
 
@@ -21,7 +14,7 @@ Dit is de VB.NET-bron code voor de console toepassing die wordt beschreven in ee
 
 > [!NOTE]
 > U kunt het VB.NET-bron bestand (runspace03. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
+> De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -107,6 +100,6 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

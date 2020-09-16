@@ -1,27 +1,20 @@
 ---
 title: Tekst element voor CustomItem voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5d3ecec9-cc95-482e-9ee0-4e4e353b6357
-caps.latest.revision: 6
-ms.openlocfilehash: 7ce29ef8f58f52ecca68b10a4818ffe7c1bfbf27
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e611800c0d1e22ac427e9915f18536c995131809
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353674"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787356"
 ---
 # <a name="text-element-for-customitem-for-controls-for-view-format"></a>Het element Tekst voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 
 Hiermee geeft u tekst op die wordt toegevoegd aan de gegevens die worden weer gegeven door het besturings element, zoals een label, haakjes om de gegevens op te nemen en spaties om de gegevens te laten inspringen. Dit element wordt gebruikt bij het definiëren van besturings elementen die kunnen worden gebruikt door een weer gave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (opmaak) voor besturings elementen voor de weer gave (indeling) CustomControl-element voor besturings elementen voor Controls (Format) CustomEntries element voor CustomControl voor View (Format) CustomEntry-element voor CustomEntries voor besturings elementen voor de weer gave (Format) CustomItem-element voor CustomEntry voor besturings elementen voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element (indeling) Controls element (Format) Controls-element voor besturings elementen voor weer gave (indeling) CustomControl-element voor besturings elementen voor de weer gave (Format) CustomEntries-element voor het element voor controle voor Controls voor de Control
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Text>TextToDisplay</Text>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Text` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Text` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomItem-element voor CustomEntry voor besturings elementen voor weer gave (indeling)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Hiermee definieert u welke gegevens worden weer gegeven door het besturings element en hoe deze worden weer gegeven.|
+|[Het element CustomItem voor CustomEntry voor Besturingselementen voor Weergave (opmaak)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Hiermee definieert u welke gegevens worden weer gegeven door het besturings element en hoe deze worden weer gegeven.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -53,6 +46,6 @@ Geef de tekst op van een besturings element voor gegevens die u wilt weer geven.
 
 ## <a name="see-also"></a>Zie ook
 
-[CustomItem-element voor CustomEntry voor besturings elementen voor weer gave (indeling)](./customitem-element-for-customentry-for-controls-for-view-format.md)
+[Het element CustomItem voor CustomEntry voor Besturingselementen voor Weergave (opmaak)](./customitem-element-for-customentry-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

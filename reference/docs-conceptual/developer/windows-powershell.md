@@ -1,19 +1,18 @@
 ---
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0501f511499bc5de35fad5d7798f0d16e2d3b36b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356663"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786659"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
 Bijgewerkt: 8 juli 2013
 
-Windows PowerShell® is een taakgebaseerde opdrachtregel-shell en scripttaal, speciaal ontworpen voor systeembeheer. Windows Power shell-® is gebouwd op basis van de .NET Framework en helpt IT-professionals en hoofd gebruikers te beheren en het beheer van het Windows-besturings systeem en de toepassingen die worden uitgevoerd in Windows te automatiseren.
+Windows Power shell® is een op taken gebaseerde opdracht regel shell en script taal die speciaal is ontworpen voor systeem beheer. Windows Power shell-® is gebouwd op basis van de .NET Framework en helpt IT-professionals en hoofd gebruikers te beheren en het beheer van het Windows-besturings systeem en de toepassingen die worden uitgevoerd in Windows te automatiseren.
 
 De documenten die hier worden gepubliceerd, worden voornamelijk geschreven voor de ontwikkel aars van de cmdlet, provider en host die referentie gegevens nodig hebben over de Api's van Windows Power shell.
 Systeem beheerders kunnen de informatie die door deze documenten wordt verstrekt, echter ook nuttig vinden.

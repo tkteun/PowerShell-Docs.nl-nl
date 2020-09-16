@@ -1,15 +1,14 @@
 ---
 title: Naslag informatie voor Windows Power shell-What's New
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 364d081ddf2f87ceeaa47732266a35f4a126246f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4e87fce34f74e0fcbfe25939e1555df308a7f7d0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356684"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786693"
 ---
-# <a name="whats-new"></a>Wat is nieuw
+# <a name="whats-new"></a>Nieuwe functies
 
 Windows Power Shell 2,0 biedt de volgende nieuwe functies die u kunt gebruiken bij het schrijven van cmdlets, providers en hosttoepassingen.
 

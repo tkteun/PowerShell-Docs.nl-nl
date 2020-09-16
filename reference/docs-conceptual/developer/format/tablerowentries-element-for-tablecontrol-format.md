@@ -1,19 +1,12 @@
 ---
 title: TableRowEntries-element voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
-caps.latest.revision: 15
-ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4cc5d354df3e552e181a95148caa020f0041db92
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358788"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785112"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>Het element TableRowEntries voor TableControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee worden de rijen van de tabel gedefinieerd.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableRowEntries element voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TableRowEntries>
@@ -31,7 +24,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `TableRowEntries` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `TableRowEntries` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -41,23 +34,23 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableRowEntry-element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Vereist element.<br /><br /> Hiermee worden de gegevens gedefinieerd die worden weer gegeven in een rij van de tabel.|
+|[Het element TableRowEntry voor TableRowEntries voor TableControl (opmaak)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Vereist element.<br /><br /> Hiermee worden de gegevens gedefinieerd die worden weer gegeven in een rij van de tabel.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableControl-element (indeling)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
+|[Het element TableControl (opmaak)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-U moet een of meer `TableRowEntry` elementen voor de tabel weergave opgeven. Er is geen maximum limiet voor het aantal `TableRowEntry` elementen dat kan worden toegevoegd, en de volg orde hiervan is aanzienlijk.
+U moet een of meer `TableRowEntry` elementen opgeven voor de tabel weergave. Er is geen maximum limiet voor het aantal `TableRowEntry` elementen dat kan worden toegevoegd en de volg orde hiervan is aanzienlijk.
 
 Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie over de onderdelen van een tabel weergave.
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u een `TableRowEntries`-element dat een rij definieert waarin de waarden van twee eigenschappen van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) worden weer gegeven.
+In het volgende voor beeld ziet u een- `TableRowEntries` element dat een rij definieert waarin de waarden van twee eigenschappen van het object [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) worden weer gegeven.
 
 ```xml
 <TableRowEntries>
@@ -80,10 +73,10 @@ In het volgende voor beeld ziet u een `TableRowEntries`-element dat een rij defi
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableControl-element (indeling)](./tablecontrol-element-format.md)
+[Het element TableControl (opmaak)](./tablecontrol-element-format.md)
 
 [TableRowEntry-element (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

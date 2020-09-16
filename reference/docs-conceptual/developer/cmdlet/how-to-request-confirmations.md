@@ -1,19 +1,12 @@
 ---
 title: Bevestigingen aanvragen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
-caps.latest.revision: 9
-ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ebe928724f1b750afc11c1e3c1207375f4ec8e42
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359338"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784092"
 ---
 # <a name="how-to-request-confirmations"></a>Bevestigingen aanvragen
 
@@ -24,14 +17,14 @@ In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. cmdl
 
 ## <a name="to-request-confirmation"></a>Vragen om bevestiging
 
-1. Zorg ervoor dat de para meter `SupportsShouldProcess` van het kenmerk cmdlet is ingesteld op `true`. (Voor functions is dit een para meter van het kenmerk CmdletBinding.)
+1. Zorg ervoor dat de `SupportsShouldProcess` para meter van het cmdlet-kenmerk is ingesteld op `true` . (Voor functions is dit een para meter van het kenmerk CmdletBinding.)
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
             SupportsShouldProcess = true)]
     ```
 
-2. Voeg een `Force`-para meter toe aan de cmdlet, zodat de gebruiker een bevestigings aanvraag kan onderdrukken.
+2. Voeg een `Force` para meter toe aan de cmdlet, zodat de gebruiker een bevestigings aanvraag kan onderdrukken.
 
     ```csharp
     [Parameter()]
@@ -43,9 +36,9 @@ In dit voor beeld ziet u hoe u de methoden [System. Management. Automation. cmdl
     private bool force;
     ```
 
-3. Voeg een `if`-instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) om te bepalen of de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wordt aangeroepen.
+3. Voeg een `if` instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) om te bepalen of de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wordt aangeroepen.
 
-4. Voeg een tweede `if`-instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en de waarde van de para meter `Force` om te bepalen of de bewerking moet worden uitgevoerd.
+4. Voeg een tweede `if` instructie toe die gebruikmaakt van de retour waarde van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en de waarde van de `Force` para meter om te bepalen of de bewerking moet worden uitgevoerd.
 
 ## <a name="example"></a>Voorbeeld
 
@@ -66,4 +59,4 @@ protected override void ProcessRecord()
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

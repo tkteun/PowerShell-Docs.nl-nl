@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Informatie over de rol van DSC in een CI/CD-pijp lijn
-ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500828"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783106"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
 
 In dit artikel worden de soorten benaderingen beschreven die beschikbaar zijn voor het combi neren van configuraties en resources.
 Het doel van elk scenario is hetzelfde, om de complexiteit te reduceren wanneer meerdere configuraties de voor keur hebben om de eind status van de server implementatie te bereiken. Een voor beeld hiervan is dat meerdere teams bijdragen aan het resultaat van een server implementatie, zoals een toepassings eigenaar die de toepassings status bijhoudt en een centraal team wijzigingen in de beveiligings basislijnen aanbrengt. De nuances van elke benadering, met inbegrip van de voor delen en risico's, worden hier beschreven.
 
-![Pijplijn](media/authoringAdvanced/Pipeline.jpg)
+![Proces stroom van een CI/CD-pijp lijn](media/authoringAdvanced/Pipeline.jpg)
 
 ## <a name="types-of-collaborative-authoring-techniques"></a>Typen technieken voor gezamenlijk ontwerpen
 
@@ -33,7 +33,7 @@ Een van deze oplossingen kan worden gebruikt om het resultaat van een server imp
 
 Bij het gebruik van gedeeltelijke configuraties is lokale Configuration Manager geconfigureerd om meerdere configuraties onafhankelijk te beheren. Configuraties worden onafhankelijk gecompileerd en vervolgens toegewezen aan het knoop punt. Hiervoor moet LCM vooraf worden geconfigureerd met de naam van elke configuratie.
 
-![PartialConfiguration](media/authoringAdvanced/PartialConfiguration.jpg)
+![Diagram van gedeeltelijke configuraties](media/authoringAdvanced/PartialConfiguration.jpg)
 
 Gedeeltelijke configuraties bieden twee of meer teams die de configuratie van een server volledig kunnen beheren, vaak zonder het voor deel van communicatie of samen werking.
 
@@ -45,7 +45,7 @@ Daarnaast hebben klanten feedback gegeven die bij het gebruik van dit model de c
 
 In de onderstaande afbeelding heeft Team B hun gedeeltelijke configuratie vrijgegeven aan team A. team A voert vervolgens hun tests uit op een server waarop beide configuraties zijn toegepast. In dit model is slechts één instantie gemachtigd om wijzigingen aan te brengen in de productie.
 
-![PartialSinglePipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
+![Diagram van een gedeeltelijke enkele pijp lijn](media/authoringAdvanced/PartialSinglePipeline.jpg)
 
 Als er wijzigingen zijn vereist van Team B, moeten ze een pull-aanvraag indienen bij de bron beheer omgeving van team A. Team A bekijkt vervolgens de wijzigingen met behulp van test automatisering en release to Production wanneer er betrouw baarheid is dat de wijzigingen geen fouten veroorzaken in de toepassingen of services die door de server worden gehost.
 
@@ -53,7 +53,7 @@ Als er wijzigingen zijn vereist van Team B, moeten ze een pull-aanvraag indienen
 
 Een samengestelde resource is een DSC-configuratie die is verpakt als een resource. Er zijn geen speciale vereisten voor het configureren van LCM om samengestelde resources te accepteren. De resources worden gebruikt binnen een nieuwe configuratie en een enkele compilatie resulteert in één MOF-bestand.
 
-![CompositeResource](media/authoringAdvanced/CompositeResource.jpg)
+![Diagram van een samengestelde resource](media/authoringAdvanced/CompositeResource.jpg)
 
 Er zijn twee veelvoorkomende scenario's voor samengestelde resources. De eerste is om complexiteit en abstracte unieke concepten te reduceren. De tweede is om toe te staan dat basis lijnen worden verpakt zodat een toepassings team veilig kan worden geïmplementeerd via hun release pijplijn tot productie nadat alle tests zijn geslaagd.
 

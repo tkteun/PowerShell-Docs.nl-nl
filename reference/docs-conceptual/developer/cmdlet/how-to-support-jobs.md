@@ -1,19 +1,12 @@
 ---
 title: Taken ondersteunen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
-ms.openlocfilehash: 65f6b3d44910a0a3e848b4d2cd3e619186e5ed25
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706237"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786625"
 ---
 # <a name="how-to-support-jobs"></a>Taken ondersteunen
 
@@ -21,7 +14,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
 ## <a name="to-support-jobs"></a>Om taken te ondersteunen
 
-1. Definieer een `AsJob` switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als een taak.
+1. Definieer een `AsJob` Switch parameter zodat de gebruiker kan bepalen of de cmdlet moet worden uitgevoerd als een taak.
 
     In het volgende voor beeld wordt een AsJob-parameter declaratie weer gegeven.
 
@@ -47,7 +40,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Voeg in een methode voor het verwerken van records een `if`-instructie toe om te detecteren of de cmdlet als een taak moet worden uitgevoerd. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+3. Voeg in een methode voor het verwerken van records een `if` instructie toe om te detecteren of de cmdlet moet worden uitgevoerd als een taak. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()

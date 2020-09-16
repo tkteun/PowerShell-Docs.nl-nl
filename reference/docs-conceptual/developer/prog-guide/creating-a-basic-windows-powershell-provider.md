@@ -1,22 +1,15 @@
 ---
 title: Een eenvoudige Windows Power shell-provider maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - base provider [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], base provider
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
-ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978505"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787220"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen
 
@@ -29,9 +22,9 @@ Zoals eerder vermeld, implementeert de Basic-provider die hier wordt beschreven,
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>De Windows Power shell-provider klasse definiëren
 
-De eerste stap bij het maken van een Windows Power shell-provider is het definiëren van de .NET-klasse. Deze basis provider definieert een klasse met de naam `AccessDBProvider` die is afgeleid van de basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
+De eerste stap bij het maken van een Windows Power shell-provider is het definiëren van de .NET-klasse. Deze basis provider definieert een klasse `AccessDBProvider` met de naam die is afgeleid van de basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 
-Het is raadzaam om uw provider klassen in een `Providers` naam ruimte van uw API-naam ruimte te plaatsen, bijvoorbeeld xxx. Power shell. providers. Deze provider maakt gebruik van de naam ruimte `Microsoft.Samples.PowerShell.Provider`, waarin alle voor beelden van Windows Power shell-providers worden uitgevoerd.
+Het is raadzaam om uw provider klassen in een `Providers` naam ruimte van uw API-naam ruimte te plaatsen, bijvoorbeeld xxx. Power shell. providers. Deze provider maakt gebruik `Microsoft.Samples.PowerShell.Provider` van de naam ruimte, waarin alle voor beelden van Windows Power shell-providers worden uitgevoerd.
 
 > [!NOTE]
 > De klasse voor een Windows Power shell-provider moet expliciet als openbaar worden gemarkeerd. Klassen die niet als openbaar zijn gemarkeerd, zijn standaard intern en worden niet gevonden door de Windows Power shell-runtime.
@@ -85,13 +78,13 @@ Zie [AccessDbProviderSample01 code sample](./accessdbprovidersample01-code-sampl
 
 ## <a name="testing-the-windows-powershell-provider"></a>De Windows Power shell-provider testen
 
-Als uw Windows Power shell-provider is geregistreerd bij Windows Power shell, kunt u deze testen door de ondersteunde cmdlets uit te voeren op de opdracht regel. Voor deze Basic-provider voert u de nieuwe shell uit en gebruikt u de cmdlet `Get-PSProvider` om de lijst met providers op te halen en ervoor te zorgen dat de AccessDb-provider aanwezig is.
+Als uw Windows Power shell-provider is geregistreerd bij Windows Power shell, kunt u deze testen door de ondersteunde cmdlets uit te voeren op de opdracht regel. Voor deze Basic-provider voert u de nieuwe shell uit en gebruikt `Get-PSProvider` u de cmdlet om de lijst met providers op te halen en ervoor te zorgen dat de AccessDb-provider aanwezig is.
 
 ```powershell
 Get-PSProvider
 ```
 
-De volgende uitvoer wordt weer gegeven:
+De volgende uitvoer wordt weergegeven:
 
 ```Output
 Name                 Capabilities                  Drives
@@ -108,4 +101,4 @@ Registry             ShouldProcess                 {HKLM, HKCU}
 
 [Windows Power shell-providers maken](./how-to-create-a-windows-powershell-provider.md)
 
-[Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)
+[Uw Windows PowerShell-provider ontwerpen](./designing-your-windows-powershell-provider.md)

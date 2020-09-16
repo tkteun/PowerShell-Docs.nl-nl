@@ -1,27 +1,20 @@
 ---
 title: Tekst element voor CustomItem voor CustomView voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
-caps.latest.revision: 9
-ms.openlocfilehash: 00ff3a357cfef0b250bb55dd3a206d69d5d42609
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358775"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783378"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>Het element Tekst voor CustomItem voor CustomView voor Weergave (opmaak)
 
 Hiermee geeft u tekst op die wordt toegevoegd aan de gegevens die worden weer gegeven door het besturings element, zoals een label, haakjes om de gegevens op te nemen en spaties om de gegevens te laten inspringen. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) CustomControl-element (indeling) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (indeling) tekst element voor CustomItem (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) weer gave element (indeling) CustomControl element (Format) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Text>TextToDisplay</Text>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Text` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Text` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -55,4 +48,4 @@ Geef de tekst op van een besturings element voor gegevens die u wilt weer geven.
 
 [CustomItem-element voor CustomEntry voor weer gave (indeling)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,16 @@
 ---
 title: Een Windows Power shell-provider maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - providers [PowerShell Programmer's Guide]
 - providers [PowerShellProgrammer's Guide], creating
 - Windows PowerShell Programmer's Guide, providers
-ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
-caps.latest.revision: 5
-ms.openlocfilehash: 4c84d015aba327c0ab039558414c5777d43ec4ba
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 5e7424c035d22d0f5eb154b369427a6da80b1c49
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870877"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787101"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Een Windows PowerShell-provider maken
 
@@ -29,7 +22,7 @@ Voor de ontwikkelaar is de Windows Power shell-provider de interface tussen de g
 
 Windows Power shell biedt verschillende providers (zoals de bestandssysteem provider, register provider en alias provider) die worden gebruikt voor toegang tot bekende gegevens archieven. Voor meer informatie over de providers die worden geleverd door Windows Power shell, gebruikt u de volgende opdracht om de online-Help te openen:
 
-**> Get-Help van PS-about_providers**
+**>Get-Help van PS-about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Toegang tot de opgeslagen gegevens met behulp van Windows Power shell-paden
 
@@ -47,23 +40,23 @@ Windows Power shell past de volgende regels toe voor een Windows Power Shell-sta
 
 ## <a name="in-this-section"></a>In deze sectie
 
-De volgende tabel bevat onderwerpen met code voorbeelden die op elkaar zijn gebaseerd. Met ingang van het tweede onderwerp kan de basis provider van Windows Power shell worden geïnitialiseerd en niet geïnitialiseerd door de Windows Power shell-runtime, het volgende onderwerp voegt functionaliteit toe voor het openen van de gegevens. het volgende onderwerp voegt functionaliteit toe voor het bewerken van de gegevens ( de items in de opgeslagen gegevens), enzovoort.
+De volgende tabel bevat onderwerpen met code voorbeelden die op elkaar zijn gebaseerd. Met ingang van het tweede onderwerp kan de Basic Windows Power shell-provider worden geïnitialiseerd en niet geïnitialiseerd door de Windows Power shell-runtime, het volgende onderwerp voegt functionaliteit toe voor het openen van de gegevens, het volgende onderwerp voegt functionaliteit toe voor het bewerken van de gegevens (de items in de opgeslagen gegevens), enzovoort.
 
-|                                                    Onderwerp                                                    |                                                                                         De definitie van                                                                                          |
+|                                                    Onderwerp                                                    |                                                                                         Definitie                                                                                          |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)               | In dit onderwerp wordt beschreven wat u moet overwegen voordat u een Windows Power shell-provider implementeert. Het bevat een overzicht van de basis klassen en-interfaces van de Windows Power shell-provider die worden gebruikt. |
-| [Een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md)           | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de Windows Power shell-runtime de provider kan initialiseren en deinitialiseeren.                                        |
-| [Een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md)           | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker via een Windows Power Shell-station toegang kan krijgen tot een gegevens archief.                                                |
-| [Een Windows Power shell-item provider maken](./creating-a-windows-powershell-item-provider.md)             | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de items in een gegevens archief kan bewerken.                                                                  |
-| [Een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md)   | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker op meerdere laag gegevens archieven kan werken.                                                                        |
-| [Een Windows Power shell-navigatie provider maken](./creating-a-windows-powershell-navigation-provider.md) | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker op een hiërarchische manier door de items in een gegevens archief kan navigeren.                                           |
-| [Een Windows Power shell-inhouds provider maken](./creating-a-windows-powershell-content-provider.md)       | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de inhoud van items in een gegevens archief kan bewerken.                                                       |
-| [Een Windows Power shell-eigenschaps provider maken](./creating-a-windows-powershell-property-provider.md)     | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de eigenschappen van items in een gegevens archief kan bewerken.                                                    |
+| [Uw Windows PowerShell-provider ontwerpen](./designing-your-windows-powershell-provider.md)               | In dit onderwerp wordt beschreven wat u moet overwegen voordat u een Windows Power shell-provider implementeert. Het bevat een overzicht van de basis klassen en-interfaces van de Windows Power shell-provider die worden gebruikt. |
+| [Een eenvoudige Windows PowerShell-provider ontwerpen](./creating-a-basic-windows-powershell-provider.md)           | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de Windows Power shell-runtime de provider kan initialiseren en deinitialiseeren.                                        |
+| [Een Windows PowerShell-stationprovider maken](./creating-a-windows-powershell-drive-provider.md)           | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker via een Windows Power Shell-station toegang kan krijgen tot een gegevens archief.                                                |
+| [Een Windows PowerShell-itemprovider maken](./creating-a-windows-powershell-item-provider.md)             | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de items in een gegevens archief kan bewerken.                                                                  |
+| [Een Windows PowerShell-containerprovider maken](./creating-a-windows-powershell-container-provider.md)   | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker op meerdere laag gegevens archieven kan werken.                                                                        |
+| [Een Windows PowerShell-navigatieprovider maken](./creating-a-windows-powershell-navigation-provider.md) | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker op een hiërarchische manier door de items in een gegevens archief kan navigeren.                                           |
+| [Een Windows PowerShell-inhoudsprovider maken](./creating-a-windows-powershell-content-provider.md)       | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de inhoud van items in een gegevens archief kan bewerken.                                                       |
+| [Een Windows PowerShell-eigenschapsprovider maken](./creating-a-windows-powershell-property-provider.md)     | In dit onderwerp wordt beschreven hoe u een Windows Power shell-provider maakt waarmee de gebruiker de eigenschappen van items in een gegevens archief kan bewerken.                                                    |
 
 ## <a name="see-also"></a>Zie ook
 
 [Hoe Windows Power shell werkt](/previous-versions/ms714658(v=vs.85))
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)

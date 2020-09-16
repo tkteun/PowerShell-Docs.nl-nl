@@ -1,19 +1,12 @@
 ---
 title: Een lijst weergave maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
-ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359080"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783769"
 ---
 # <a name="creating-a-list-view"></a>Een lijstweergave maken
 
@@ -255,7 +248,7 @@ Zie [lijst weergave (GroupBy)](./list-view-groupby.md)voor een voor beeld van ee
 
 ## <a name="using-format-strings"></a>Opmaak teken reeksen gebruiken
 
-Opmaak teken reeksen kunnen worden toegevoegd aan een weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+Opmaak teken reeksen kunnen worden toegevoegd aan een weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <ListItem>
@@ -274,7 +267,7 @@ De volgende XML-elementen kunnen worden gebruikt om een notatie patroon op te ge
 
 - Het element [script Block](./scriptblock-element-for-listitem-for-listcontrol-format.md) (niet weer gegeven) Hiermee geeft u het script op waarvan de waarde wordt weer gegeven in de weer gave. U moet een script of een eigenschap opgeven, maar u kunt niet beide opgeven.
 
-In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString`, die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
+In het volgende voor beeld wordt de- `ToString` methode aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString` die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
 
 ```xml
 <ListItem>
@@ -285,7 +278,7 @@ In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde 
 </ListItem>
 ```
 
-Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roepen:
+Het volgende XML-element kan worden gebruikt om de methode aan te roepen `ToString` :
 
 - Het element [lijst item](./listitem-element-for-listitems-for-listcontrol-format.md) geeft de gegevens aan die worden weer gegeven in de weer gave.
 
@@ -293,4 +286,4 @@ Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roe
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](../cmdlet/writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](../cmdlet/writing-a-windows-powershell-cmdlet.md)

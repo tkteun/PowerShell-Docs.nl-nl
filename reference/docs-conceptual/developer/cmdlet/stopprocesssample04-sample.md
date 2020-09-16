@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample04-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
-caps.latest.revision: 8
-ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359197"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786421"
 ---
 # <a name="stopprocesssample04-sample"></a>Voorbeeld StopProcessSample04
 
-In dit voor beeld ziet u hoe u een cmdlet schrijft die parameter sets declareert, de standaard parameterset opgeeft en een invoer object accepteert. Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet schrijft die parameter sets declareert, de standaard parameterset opgeeft en een invoer object accepteert. Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
@@ -51,7 +44,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die parameter sets declareert
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -492,4 +485,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: Alignment-element voor TableColumnHeader voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
-caps.latest.revision: 19
-ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355487"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783922"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt gedefinieerd hoe de gegevens in een kolomkop worden weer gegeven.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableHeaders element (indeling) TableColumnHeader element (indeling) uitlijning element voor TableColumnHeader (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Alignment>AlignmentType</Alignment>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Alignment` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Alignment` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)|Hiermee definieert u een label, de breedte en de uitlijning van de gegevens voor een kolom van de tabel.|
+|[Het element TableColumnHeader (opmaak)](./tablecolumnheader-element-format.md)|Hiermee definieert u een label, de breedte en de uitlijning van de gegevens voor een kolom van de tabel.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
-Geef een van de volgende waarden op. Deze waarden zijn niet hoofdletter gevoelig.
+Geef een van de volgende waarden op. Deze waarden zijn niet hoofdlettergevoelig.
 
 Hiermee worden de gegevens links uitgelijnd die worden weer gegeven in de kolom links dit is de standaard waarde als dit element niet is opgegeven.
 
@@ -73,8 +66,8 @@ In dit voor beeld ziet u een `TableColumnHeader` element waarvan de gegevens aan
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)
+[Het element TableColumnHeader (opmaak)](./tablecolumnheader-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

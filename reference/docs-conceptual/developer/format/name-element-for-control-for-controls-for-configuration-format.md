@@ -1,19 +1,12 @@
 ---
 title: Naam element voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
-caps.latest.revision: 8
-ms.openlocfilehash: 2704a530e0ae269efb772ac10e531bcbb12f6eff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3d45ba98b909ebee18e01d2b6985a48906ce39d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354318"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783531"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>Het element Naam voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u de naam van het besturings element op. Dit element wordt gebruik
 
 Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor de configuratie (indeling) naam element voor besturings elementen voor configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Name>NameOfControl</Name>
@@ -30,7 +23,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Name` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Name` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,7 +37,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Control-element voor besturings elementen voor configuratie (indeling)](./control-element-for-controls-for-configuration-format.md)|Hiermee wordt een algemeen besturings element gedefinieerd dat kan worden gebruikt door alle weer gaven van het opmaak bestand en de naam die wordt gebruikt om te verwijzen naar het besturings element.|
+|[Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./control-element-for-controls-for-configuration-format.md)|Hiermee wordt een algemeen besturings element gedefinieerd dat kan worden gebruikt door alle weer gaven van het opmaak bestand en de naam die wordt gebruikt om te verwijzen naar het besturings element.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -62,12 +55,12 @@ De naam die u hier opgeeft, kan worden gebruikt in de volgende elementen om te v
 
 ## <a name="see-also"></a>Zie ook
 
-[Control-element voor besturings elementen voor configuratie (indeling)](./control-element-for-controls-for-configuration-format.md)
+[Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./control-element-for-controls-for-configuration-format.md)
 
-[ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[ExpressionBinding-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
-[Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)
+[Het element GroupBy voor Weergave (opmaak)](./groupby-element-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

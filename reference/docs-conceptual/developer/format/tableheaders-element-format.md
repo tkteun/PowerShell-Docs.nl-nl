@@ -1,19 +1,12 @@
 ---
 title: TableHeaders-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
-caps.latest.revision: 15
-ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353695"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787424"
 ---
 # <a name="tableheaders-element-format"></a>Het element TableHeaders (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee worden de kopteksten van de kolommen van een tabel gedefinieerd.
 
 ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (Format) TableHeaders element voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TableHeaders>
@@ -32,7 +25,7 @@ ViewDefinitions element (indeling) element weer geven (indeling) TableControl el
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het element `TableHeaders` beschreven. Er moet een onderliggend element zijn voor elke eigenschap van het object dat moet worden weer gegeven. De informatie in de kolomkop wordt weer gegeven in de volg orde waarin de onderliggende elementen zijn opgegeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en bovenliggende elementen van het `TableHeaders` element beschreven. Er moet een onderliggend element zijn voor elke eigenschap van het object dat moet worden weer gegeven. De informatie in de kolomkop wordt weer gegeven in de volg orde waarin de onderliggende elementen zijn opgegeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,13 +35,13 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)|Optioneel element.<br /><br /> Hiermee definieert u het label, de breedte en de uitlijning van de gegevens voor een kolom van een tabel weergave.|
+|[Het element TableColumnHeader (opmaak)](./tablecolumnheader-element-format.md)|Optioneel element.<br /><br /> Hiermee definieert u het label, de breedte en de uitlijning van de gegevens voor een kolom van een tabel weergave.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableControl-element (indeling)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
+|[Het element TableControl (opmaak)](./tablecontrol-element-format.md)|Definieert een tabel indeling voor een weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -56,7 +49,7 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u een `TableHeaders`-element waarmee twee kolom koppen worden gedefinieerd.
+In dit voor beeld ziet u een- `TableHeaders` element dat twee kolom koppen definieert.
 
 ```xml
 <TableHeaders>
@@ -75,10 +68,10 @@ In dit voor beeld ziet u een `TableHeaders`-element waarmee twee kolom koppen wo
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableColumnHeader-element (indeling)](./tablecolumnheader-element-format.md)
+[Het element TableColumnHeader (opmaak)](./tablecolumnheader-element-format.md)
 
-[TableControl-element (indeling)](./tablecontrol-element-format.md)
+[Het element TableControl (opmaak)](./tablecontrol-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

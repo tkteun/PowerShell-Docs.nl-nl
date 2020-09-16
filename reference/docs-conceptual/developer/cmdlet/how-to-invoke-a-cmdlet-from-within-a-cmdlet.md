@@ -1,23 +1,16 @@
 ---
 title: Een cmdlet aanroepen vanuit een cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
-caps.latest.revision: 12
-ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356306"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784143"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Een cmdlet aanroepen vanuit een cmdlet
 
-In dit voor beeld ziet u hoe u een cmdlet aanroept vanuit een andere cmdlet, waarmee u de functionaliteit van de aangeroepen cmdlet kunt toevoegen aan de cmdlet die u ontwikkelt. In dit voor beeld wordt de cmdlet `Get-Process` aangeroepen om de processen te verkrijgen die worden uitgevoerd op de lokale computer. De aanroep van de `Get-Process`-cmdlet is gelijk aan de volgende opdracht. Met deze opdracht worden alle processen opgehaald waarvan de namen beginnen met de tekens a tot en met t.
+In dit voor beeld ziet u hoe u een cmdlet aanroept vanuit een andere cmdlet, waarmee u de functionaliteit van de aangeroepen cmdlet kunt toevoegen aan de cmdlet die u ontwikkelt. In dit voor beeld `Get-Process` wordt de cmdlet aangeroepen om de processen op te halen die worden uitgevoerd op de lokale computer. De aanroep van de `Get-Process` cmdlet is gelijk aan de volgende opdracht. Met deze opdracht worden alle processen opgehaald waarvan de namen beginnen met de tekens a tot en met t.
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +21,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Een cmdlet aanroepen vanuit een cmdlet
 
-1. Controleer of er wordt verwezen naar de assembly die de cmdlet definieert die moet worden aangeroepen en dat de juiste `using` instructie is toegevoegd. In dit voor beeld worden de volgende naam ruimten toegevoegd.
+1. Controleer of de assembly die de cmdlet definieert die moet worden aangeroepen, wordt verwezen en of de juiste `using` instructie is toegevoegd. In dit voor beeld worden de volgende naam ruimten toegevoegd.
 
     ```csharp
     using System.Diagnostics;
@@ -43,7 +36,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. Roep de methode [System. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) aan om de `Get-Process`-cmdlet aan te roepen.
+3. Roep de methode [System. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) aan om de cmdlet aan te roepen `Get-Process` .
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -55,7 +48,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt de cmdlet `Get-Process` aangeroepen vanuit de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) van een cmdlet.
+In dit voor beeld `Get-Process` wordt de cmdlet aangeroepen vanuit de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) van een cmdlet.
 
 ```csharp
 using System;
@@ -105,4 +98,4 @@ namespace SendGreeting
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: Control-element voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
-caps.latest.revision: 13
-ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9447efac84cff3cc33468aeebc97a8bdd6137518
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359087"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783820"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt een algemeen besturings element gedefinieerd dat kan worden gebrui
 
 Configuratie-element (Format) Controls element van configuratie-element (Format) voor besturings elementen voor configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Control>
@@ -32,7 +25,7 @@ Configuratie-element (Format) Controls element van configuratie-element (Format)
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element voor het `Control`-element beschreven. U moet slechts één van beide onderliggende elementen opgeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Control` element beschreven. U moet slechts één van beide onderliggende elementen opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -42,7 +35,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomControl-element voor besturings elementen voor configuratie (indeling)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Vereist element.<br /><br /> Hiermee wordt het besturings element gedefinieerd.|
+|[Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Vereist element.<br /><br /> Hiermee wordt het besturings element gedefinieerd.|
 |[Naam element voor besturings element voor configuratie (indeling)](./name-element-for-control-for-controls-for-configuration-format.md)|Vereist element.<br /><br /> Hiermee geeft u de naam op die wordt gebruikt om te verwijzen naar het besturings element.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
@@ -69,6 +62,6 @@ In de volgende elementen kan worden verwezen naar de naam die aan dit besturings
 
 [Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)
 
-[Element naam voor besturings elementen voor configuratie (indeling)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Het element Naam voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

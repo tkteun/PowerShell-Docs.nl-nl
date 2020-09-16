@@ -1,19 +1,12 @@
 ---
 title: Voor beeld van AccessDbProviderSample03-code | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
-ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978556"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787288"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDBProviderSample03-codevoorbeeld
 
@@ -21,8 +14,8 @@ De volgende code toont de implementatie van de Windows Power shell-provider die 
 Deze provider die de gegevens kan bewerken in een gegevens archief.
 
 > [!NOTE]
-> U kunt het C# bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
+> U kunt het C#-bron bestand (AccessDBSampleProvider03.cs) voor deze provider downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map. Zie [uw Windows Power shell-provider ontwerpen](./designing-your-windows-powershell-provider.md)voor meer informatie over andere implementaties van Windows Power shell-providers.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -999,6 +992,6 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

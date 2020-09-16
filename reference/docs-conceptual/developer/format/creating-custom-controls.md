@@ -1,19 +1,12 @@
 ---
 title: Aangepaste besturings elementen maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
-ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354787"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786115"
 ---
 # <a name="creating-custom-controls"></a>Aangepaste besturingselementen maken
 
@@ -21,7 +14,7 @@ Aangepaste besturings elementen zijn de meest flexibele onderdelen van een opmaa
 
 ## <a name="custom-control-example"></a>Voor beeld van aangepast besturings element
 
-In het volgende voor beeld ziet u een aangepast besturings element dat is gedefinieerd in het bestand certificates. Format. ps1xml. Dit aangepaste besturings element wordt gebruikt om de objecten [System. Management. Automation. Signature](/dotnet/api/System.Management.Automation.Signature) te scheiden die in een tabel weergave worden weer gegeven.
+In het volgende voor beeld ziet u een aangepast besturings element dat is gedefinieerd in het Certificates.Format.ps1XML-bestand. Dit aangepaste besturings element wordt gebruikt om de objecten [System. Management. Automation. Signature](/dotnet/api/System.Management.Automation.Signature) te scheiden die in een tabel weergave worden weer gegeven.
 
 ```xml
 <Controls>
@@ -53,4 +46,4 @@ In het volgende voor beeld ziet u een aangepast besturings element dat is gedefi
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

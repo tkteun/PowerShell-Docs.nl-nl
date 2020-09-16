@@ -1,27 +1,20 @@
 ---
 title: CustomItem-element voor CustomEntry voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
-caps.latest.revision: 7
-ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355242"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785860"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Het element CustomItem voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
 
 Hiermee definieert u welke gegevens worden weer gegeven door het besturings element en hoe deze worden weer gegeven. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (indeling) CustomItem-element voor CustomEntry voor configuratie besturings elementen
+Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (Format) CustomEntry-element voor het voor het configureren van configuratie (Format) CustomItem-element voor besturings elementen
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <CustomItem>
@@ -34,7 +27,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `CustomItem` beschreven. Zie Opmerkingen voor meer informatie.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `CustomItem` element beschreven. Zie Opmerkingen voor meer informatie.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,22 +37,22 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
-|[Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
-|[Element nieuwe regel voor CustomItem voor besturings elementen voor configuratie (indeling)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee voegt u een lege regel toe aan de weer gave van het besturings element.|
-|[Tekst element voor CustomItem voor besturings elementen voor configuratie (indeling)](./text-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Voegt tekst, zoals haakjes of haakjes, toe aan de weer gave van het besturings element.|
+|[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
+|[Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element NewLine voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee voegt u een lege regel toe aan de weer gave van het besturings element.|
+|[Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./text-element-for-customitem-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Voegt tekst, zoals haakjes of haakjes, toe aan de weer gave van het besturings element.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomEntry-element voor CustomControl voor besturings elementen voor configuratie (indeling)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Biedt een definitie van het besturings element.|
+|[Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Biedt een definitie van het besturings element.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-Houd bij het opgeven van de onderliggende elementen van het element `CustomItem` het volgende in acht:
+Wanneer u de onderliggende elementen van het `CustomItem` element opgeeft, houdt u het volgende in acht:
 
-- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde: `ExpressionBinding`, `NewLine`, `Text`en `Frame`.
+- De onderliggende elementen moeten worden toegevoegd in de volgende volg orde:,, en `ExpressionBinding` `NewLine` `Text` `Frame` .
 
 - Er is geen maximum limiet voor het aantal reeksen dat u kunt opgeven.
 
@@ -67,12 +60,12 @@ Houd bij het opgeven van de onderliggende elementen van het element `CustomItem`
 
 ## <a name="see-also"></a>Zie ook
 
-[ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Element nieuwe regel voor CustomItem voor besturings elementen voor configuratie (indeling)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element NewLine voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Tekst element voor CustomItem voor besturings elementen voor configuratie (indeling)](./text-element-for-customitem-for-controls-for-configuration-format.md)
+[Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)](./text-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

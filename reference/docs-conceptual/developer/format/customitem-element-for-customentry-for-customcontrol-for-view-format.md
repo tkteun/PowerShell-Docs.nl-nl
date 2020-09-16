@@ -1,27 +1,20 @@
 ---
 title: CustomItem-element voor CustomEntry voor CustomControl voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
-caps.latest.revision: 12
-ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 25101c9c156ef91657f51db7044bf9a6653142a2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355186"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785826"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>Het element CustomItem voor CustomEntry voor CustomControl voor Weergave (opmaak)
 
 Hiermee definieert u welke gegevens worden weer gegeven in de weer gave van het aangepaste besturings element en hoe deze worden weer gegeven. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) CustomControl-element (indeling) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) weer gave element (indeling) CustomControl element (Format) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <CustomItem>
@@ -34,7 +27,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `CustomItem` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `CustomItem` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -44,8 +37,8 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ExpressionBinding-element voor CustomItem voor CustomControl voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
-|[Frame-element voor CustomItem voor CustomControl voor weer gave (indeling)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Optioneel element.<br /><br /> Hiermee definieert u welke gegevens worden weer gegeven in de weer gave van het aangepaste besturings element en hoe deze worden weer gegeven.|
+|[Het element ExpressionBinding voor CustomItem voor CustomControl voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Optioneel element.<br /><br /> Hiermee worden de gegevens gedefinieerd die door het besturings element worden weer gegeven.|
+|[Het element Frame voor CustomItem voor CustomControl voor Weergave (opmaak)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Optioneel element.<br /><br /> Hiermee definieert u welke gegevens worden weer gegeven in de weer gave van het aangepaste besturings element en hoe deze worden weer gegeven.|
 |[Element nieuwe regel voor CustomItem voor aangepast besturings element voor weer gave (indeling)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|Optioneel element.<br /><br /> Hiermee voegt u een lege regel toe aan de weer gave van het besturings element.|
 |[Tekst element voor CustomItem voor CustomControl voor weer gave (indeling)](./text-element-for-customitem-for-customview-for-view-format.md)|Optioneel element.<br /><br /> Hiermee geeft u aanvullende tekst op voor de gegevens die door het besturings element worden weer gegeven.|
 
@@ -53,7 +46,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomEntry-element voor CustomEntries voor CustomControl voor weer gave (indeling)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Biedt een definitie van de aangepaste beheer weergave.|
+|[Het element CustomEntry voor CustomEntries voor CustomControl voor Weergave (opmaak)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Biedt een definitie van de aangepaste beheer weergave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -61,12 +54,12 @@ Geen.
 
 [CustomEntry-element voor CustomEntries voor weer gave (indeling)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
 
-[ExpressionBinding-element voor CustomItem voor CustomControl voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+[Het element ExpressionBinding voor CustomItem voor CustomControl voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Frame-element voor CustomItem voor CustomControl voor weer gave (indeling)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+[Het element Frame voor CustomItem voor CustomControl voor Weergave (opmaak)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Element nieuwe regel voor CustomItem voor CustomControl voor weer gave (indeling)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
+[Het element NewLine voor CustomItem voor CustomControl voor Weergave (opmaak)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
 
 [Tekst element voor CustomItem voor CustomControl voor weer gave (indeling)](./text-element-for-customitem-for-customview-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

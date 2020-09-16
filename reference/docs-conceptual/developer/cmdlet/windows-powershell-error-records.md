@@ -1,24 +1,17 @@
 ---
 title: Windows Power Shell-fout records | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error category [PowerShell SDK]
 - error identifier [PowerShell SDK]
 - error records [PowerShell SDK]
 - error category string [PowerShell SDK]
-ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
-caps.latest.revision: 9
-ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52243916adf18b4f3a1e00f1fb4199c2619946e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359118"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783973"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-foutrecords
 
@@ -38,7 +31,7 @@ Als de cmdlet geen uitzonde ring heeft ondervangen, moet deze een nieuwe uitzond
 
 - Optionele aanroep informatie over de cmdlet die de fout heeft veroorzaakt. Deze informatie wordt opgegeven door Windows Power shell (Zie aanroep bericht).
 
-- Het doel object dat werd verwerkt toen de fout optrad. Dit kan het invoer object zijn of een ander object dat door de cmdlet werd verwerkt. Voor de opdracht `remove-item -recurse c:\somedirectory`kan de fout bijvoorbeeld een exemplaar zijn van een file info-object voor ' c:\somedirectory\lockedfile '. De gegevens van het doel object zijn optioneel.
+- Het doel object dat werd verwerkt toen de fout optrad. Dit kan het invoer object zijn of een ander object dat door de cmdlet werd verwerkt. Voor de opdracht `remove-item -recurse c:\somedirectory` kan de fout bijvoorbeeld een exemplaar zijn van een file info-object voor ' c:\somedirectory\lockedfile '. De gegevens van het doel object zijn optioneel.
 
 ## <a name="error-identifier"></a>Fout-id
 
@@ -58,9 +51,9 @@ Gebruik de volgende richt lijnen om fout-id's te genereren wanneer u fout record
 
 - Genereer niet dynamisch fout-id's op een niet-reproduceer bare manier. Neem bijvoorbeeld geen fout gegevens op zoals een proces-ID. Fout-id's zijn alleen nuttig als ze overeenkomen met de fout-id's die worden weer gegeven door andere gebruikers die dezelfde fout situatie ondervinden.
 
-## <a name="error-category"></a>Foutcategorie
+## <a name="error-category"></a>Fout categorie
 
-Wanneer u een fout record maakt, geeft u de categorie van de fout op met behulp van een van de constanten die zijn gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows Power shell gebruikt de fout categorie om fout gegevens weer te geven wanneer gebruikers de variabele `$ErrorView` instellen op `"CategoryView"`.
+Wanneer u een fout record maakt, geeft u de categorie van de fout op met behulp van een van de constanten die zijn gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows Power shell gebruikt de fout categorie om fout gegevens weer te geven wanneer gebruikers de `$ErrorView` variabele instellen op `"CategoryView"` .
 
 Vermijd het gebruik van de constante [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** . Als u informatie over de fout hebt of over de bewerking die de fout heeft veroorzaakt, kiest u de categorie die het beste de fout of de bewerking beschrijft, zelfs als de categorie geen perfecte overeenkomst is.
 
@@ -88,7 +81,7 @@ Wanneer u een fout record voor een cmdlet ontwikkelt, wordt het standaard fout b
 
 Het vervangende bericht wordt gegeven door een [System. Management. Automation. error Details](/dotnet/api/System.Management.Automation.ErrorDetails) -object. Gebruik een van de volgende constructors van dit object omdat deze aanvullende lokalisatie gegevens bieden die kunnen worden gebruikt door Windows Power shell.
 
-- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de methode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de methode  [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
 - [Error Details (assembly, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): gebruik deze constructor als de sjabloon teken reeks zich in een andere assembly bevindt en u deze niet laadt via een onderdrukking van [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
@@ -120,6 +113,6 @@ Wanneer een cmdlet [System. Management. Automation. cmdlet. WriteError](/dotnet/
 
 [System. Management. Automation. Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 
-[Windows Power Shell-fout rapportage](./error-reporting-concepts.md)
+[Windows PowerShell-foutrapportage](./error-reporting-concepts.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

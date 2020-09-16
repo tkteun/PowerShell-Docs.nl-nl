@@ -1,23 +1,16 @@
 ---
 title: Runspace10-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
-caps.latest.revision: 7
-ms.openlocfilehash: 1a73c0b6731073b1bac941e323416e8c45d2c252
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565237"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784942"
 ---
 # <a name="runspace10-sample"></a>Voorbeeld Runspace10
 
-Dit voor beeld laat zien hoe u een standaard begin sessie status kunt maken, hoe u een cmdlet kunt toevoegen aan [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hoe u een runs Pace maakt die de oorspronkelijke sessie status gebruikt en hoe u de opdracht uitvoert met behulp van een object [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) .
+Dit voor beeld laat zien hoe u een standaard begin sessie status kunt maken, hoe u een cmdlet kunt toevoegen aan de [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), hoe u een runs Pace maakt die de oorspronkelijke sessie status gebruikt en hoe u de opdracht uitvoert met behulp van een object [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) .
 
 ## <a name="requirements"></a>Vereisten
 
@@ -27,9 +20,9 @@ Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
 In dit voor beeld ziet u het volgende.
 
-- Een [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
+- Een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
 
-- Een cmdlet (gedefinieerd door de hosttoepassing) toevoegen aan het object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Het toevoegen van een cmdlet (gedefinieerd door de hosttoepassing) aan hetSystem.Management.Automation.Runspaces.Ini-object [ tialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 - Een object [System. Management. Automation. Runspaces. runs Pace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) maken dat gebruikmaakt van het-object.
 
@@ -41,7 +34,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een runs Pace gemaakt waarin een [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object wordt gebruikt om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt de cmdlet Get-proc (gedefinieerd door de hosttoepassing) toegevoegd aan de eerste sessie status en wordt de cmdlet synchroon uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt de cmdlet Get-proc (gedefinieerd door de hosttoepassing) toegevoegd aan de eerste sessie status en wordt de cmdlet synchroon uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

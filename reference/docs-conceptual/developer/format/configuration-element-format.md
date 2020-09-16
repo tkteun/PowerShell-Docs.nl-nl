@@ -1,19 +1,12 @@
 ---
 title: Configuratie-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
-caps.latest.revision: 28
-ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 90be02f8e27c0bd391e01da1a08ecd8eeb29b84c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354871"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783837"
 ---
 # <a name="configuration-element-format"></a>Het element Configuratie (opmaak)
 
@@ -21,7 +14,7 @@ Vertegenwoordigt het element op het hoogste niveau van een opmaak bestand.
 
 Configuratie-element
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Configuration>
@@ -35,7 +28,7 @@ Configuratie-element
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `Configuration` beschreven. Dit element moet het hoofd element voor elk opmaak bestand zijn en dit element moet ten minste één onderliggend element bevatten.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `Configuration` element beschreven. Dit element moet het hoofd element voor elk opmaak bestand zijn en dit element moet ten minste één onderliggend element bevatten.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,10 +38,10 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Controls-element voor configuratie (indeling)](./controls-element-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de algemene besturings elementen die kunnen worden gebruikt door alle weer gaven van het opmaak bestand.|
-|[DefaultSettings-element (indeling)](./defaultsettings-element-format.md)|Optioneel element.<br /><br /> Hiermee definieert u algemene instellingen die van toepassing zijn op alle weer gaven van het opmaak bestand.|
+|[Het element Besturingselementen voor Configuratie (opmaak)](./controls-element-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee definieert u de algemene besturings elementen die kunnen worden gebruikt door alle weer gaven van het opmaak bestand.|
+|[Het element DefaultSettings (opmaak)](./defaultsettings-element-format.md)|Optioneel element.<br /><br /> Hiermee definieert u algemene instellingen die van toepassing zijn op alle weer gaven van het opmaak bestand.|
 |[SelectionSets element indeling](./selectionsets-element-format.md)|Optioneel element.<br /><br /> Hiermee worden de algemene sets van .NET-objecten gedefinieerd die kunnen worden gebruikt door alle weer gaven van het opmaak bestand.|
-|[ViewDefinitions-element (indeling)](./viewdefinitions-element-format.md)|Optioneel element.<br /><br /> Hiermee worden de weer gaven gedefinieerd waarmee objecten worden weer gegeven.|
+|[Het element ViewDefinitions (opmaak)](./viewdefinitions-element-format.md)|Optioneel element.<br /><br /> Hiermee worden de weer gaven gedefinieerd waarmee objecten worden weer gegeven.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -60,12 +53,12 @@ Het format teren van bestanden bepaalt hoe objecten worden weer gegeven. In de m
 
 ## <a name="see-also"></a>Zie ook
 
-[Controls-element voor configuratie (indeling)](./controls-element-for-configuration-format.md)
+[Het element Besturingselementen voor Configuratie (opmaak)](./controls-element-for-configuration-format.md)
 
-[DefaultSettings-element (indeling)](./defaultsettings-element-format.md)
+[Het element DefaultSettings (opmaak)](./defaultsettings-element-format.md)
 
-[SelectionSets-element (indeling)](./selectionsets-element-format.md)
+[Het element SelectionSets (opmaak)](./selectionsets-element-format.md)
 
-[ViewDefinitions-element (indeling)](./viewdefinitions-element-format.md)
+[Het element ViewDefinitions (opmaak)](./viewdefinitions-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

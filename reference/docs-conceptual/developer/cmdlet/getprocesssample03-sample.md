@@ -1,23 +1,16 @@
 ---
 title: GetProcessSample03-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
-caps.latest.revision: 6
-ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359309"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784211"
 ---
 # <a name="getprocesssample03-sample"></a>Voorbeeld GetProcessSample03
 
-In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Het biedt een `Name` para meter waarmee een object kan worden geaccepteerd van de pijp lijn of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de parameter naam. Deze cmdlet is een vereenvoudigde versie van de `Get-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op de lokale computer worden opgehaald. Het bevat een `Name` para meter die een object van de pijp lijn kan accepteren of een waarde van een eigenschap van een object waarvan de naam van de eigenschap gelijk is aan de naam van de para meter. Deze cmdlet is een vereenvoudigde versie van de `Get-Process` cmdlet die wordt meegeleverd met Windows Power shell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Het voor beeld maken met Visual Studio.
 
@@ -51,7 +44,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -67,7 +60,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u een implementatie van de cmdlet Get-proc die een `Name` para meter bevat waarmee invoer van de pijp lijn wordt geaccepteerd.
+Dit voor beeld toont een implementatie van de cmdlet Get-proc die een `Name` para meter bevat die invoer van de pijp lijn accepteert.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -142,4 +135,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,16 +1,16 @@
 ---
-title: Aan de slag met Power shell
+title: Aan de slag met PowerShell
 description: Waar u kunt zoeken en hoe u Power shell kunt starten voor nieuwe gebruikers.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 0f72fb5baf5b829142b18ed774261e9b3b66291b
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436328"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786744"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Hoofd stuk 1: aan de slag met Power shell
 
@@ -29,7 +29,7 @@ Alle moderne versies van Windows-besturings systemen worden geleverd met Power s
 
 De eenvoudigste manier om Power shell te vinden in Windows 10 is **Power shell** in de zoek balk te typen, zoals weer gegeven in afbeelding 1-1.
 
-![Afbeelding 1-1](media/figure1-1.png)
+![Afbeelding 1-1-zoeken naar Power shell in het menu Start](media/figure1-1.png)
 
 U ziet dat er vier verschillende snelkoppelingen voor Power shell worden weer gegeven in afbeelding 1-1. Op de computer die wordt gebruikt voor demonstratie doeleinden in dit boek wordt de 64-bits versie van Windows 10 uitgevoerd, dus is er een 64-bits versie van de Power shell-console en de Power shell ISE (Integrated Scripting Environment), en een 32-bits versie van elk item, zoals aangeduid door het achtervoegsel (x86) op de snelkoppelingen. Als u een 32-bits versie van Windows 10 gebruikt, hebt u slechts twee snelkoppelingen. Deze items hebben niet het achtervoegsel (x86), maar zijn 32-bits versies. Als u een 64-bits besturings systeem hebt, is het raadzaam om de 64-bits versie van Power shell uit te voeren, tenzij u een specifieke reden hebt om de 32-bits versie uit te voeren.
 
@@ -41,7 +41,7 @@ In de Enter prise-bedrijfs omgevingen die worden ondersteund, gebruiken we drie 
 
 Ik heb de Power shell-console gestart door te klikken op de snelkoppeling Windows Power shell, zoals weer gegeven in afbeelding 1-1.
 
-![Afbeelding 1-4](media/figure1-4.png)
+![Afbeelding 1-4-titel balk van het Power shell-venster](media/figure1-4.png)
 
 U ziet dat de titel balk van de Power shell-console ' Windows Power shell ' aangeeft, zoals wordt weer gegeven in afbeelding 1-4. Sommige opdrachten worden prima uitgevoerd, maar Power shell kan niet deel nemen aan gebruikers Access Control (UAC). Dit betekent dat het niet mogelijk is om te vragen om benodigde bevoegdheden voor taken die de goed keuring van een beheerder vereisen.
 Het volgende fout bericht wordt gegenereerd:
@@ -66,7 +66,7 @@ Dit is hoe mijn tweede domein gebruikers account is geconfigureerd. Met de princ
 
 Sluit Power shell. Start de Power shell-console opnieuw, behalve deze tijd, klik met de rechter muisknop op de snelkoppeling **Windows Power shell** en selecteer als **administrator uitvoeren** , zoals weer gegeven in afbeelding 1-5.
 
-![Afbeelding 1-5](media/figure1-5.png)
+![Afbeelding 1-5-context menu-als administrator uitvoeren](media/figure1-5.png)
 
 Als u bent aangemeld als normale gebruiker bij Windows, wordt u gevraagd om referenties. Ik voer de referenties in voor mijn gebruikers account dat een domein gebruiker en een lokale beheerder is, zoals wordt weer gegeven in afbeelding 1-6.
 
@@ -86,11 +86,11 @@ Zoek opnieuw naar Power shell, maar deze keer met de rechter muisknop op en sele
 
 Klik met de rechter muisknop op de Power shell-snelkoppeling die nu is vastgemaakt aan de taak balk en selecteer Eigenschappen, zoals weer gegeven in afbeelding 1-9.
 
-![Afbeelding 1-9](media/figure1-9.png)
+![Afbeelding 1-9-gebruikers account beheer-referenties opgeven](media/figure1-9.png)
 
 Klik op Geavanceerd als aangeduid door #1 in afbeelding 1-10, schakel het selectie vakje als administrator uitvoeren in zoals aangegeven door #2 in afbeelding 1-10, en klik vervolgens twee maal op OK om de wijzigingen te accepteren en af te sluiten van beide dialoog vensters.
 
-![Afbeelding 1-10](media/figure1-10.png)
+![Afbeelding 1-10: titel balk met "beheerder"](media/figure1-10.png)
 
 U hoeft zich nooit zorgen te maken over het vinden van Power shell of het al dan niet uitvoeren van een beheerder.
 
@@ -217,13 +217,15 @@ In dit hoofd stuk hebt u geleerd hoe u Power shell kunt vinden en starten, en ho
 Voor degenen die meer informatie willen over de onderwerpen die in dit hoofd stuk worden behandeld, raden we u aan de volgende Help-onderwerpen voor Power shell te lezen.
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 In het volgende hoofd stuk vindt u informatie over de vind baarheid van opdrachten in Power shell. Een van de dingen die worden behandeld, is het bijwerken van Power shell, zodat deze Help-onderwerpen direct vanuit Power shell kunnen worden weer gegeven in plaats van ze op internet te hoeven bekijken.
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [Bestaande Windows Power shell bijwerken]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [PowerShell installeren]: /powershell/scripting/install/installing-powershell
 [Windows PowerShell starten]: /powershell/scripting/windows-powershell/starting-windows-powershell

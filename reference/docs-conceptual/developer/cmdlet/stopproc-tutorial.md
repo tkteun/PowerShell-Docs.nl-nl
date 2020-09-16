@@ -1,19 +1,12 @@
 ---
 title: Zelf studie voor StopProc | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a142aeb6-9c11-44a0-b34f-1f9470fa347b
-caps.latest.revision: 5
-ms.openlocfilehash: 27c8e2c7525aba38e69e50b2b7fd3b18b8e54989
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e298c729b7ac59141638052d19b95ab77aa25cd6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359229"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786472"
 ---
 # <a name="stopproc-tutorial"></a>StopProc-zelfstudie
 
@@ -33,12 +26,12 @@ De onderwerpen in deze zelf studie zijn zodanig ontworpen dat ze opeenvolgend wo
 
 ## <a name="see-also"></a>Zie ook
 
-[Een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)
+[Een cmdlet maken waarmee het systeem wordt gewijzigd](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Gebruikers berichten toevoegen aan uw cmdlet](./adding-user-messages-to-your-cmdlet.md)
+[Gebruikersberichten toevoegen aan uw cmdlet](./adding-user-messages-to-your-cmdlet.md)
 
-[Aliassen, uitbrei ding van joker tekens en Help voor cmdlet-para meters toevoegen](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
+[Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
 
 [Parameter sets toevoegen aan cmdlets](./adding-parameter-sets-to-a-cmdlet.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

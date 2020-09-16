@@ -1,22 +1,15 @@
 ---
 title: Een cmdlet zonder para meters maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], creating
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
-caps.latest.revision: 8
-ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415665"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784381"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Een cmdlet maken zonder parameters
 
@@ -29,11 +22,11 @@ In deze sectie wordt beschreven hoe u een cmdlet maakt waarmee informatie wordt 
 
 De naam van een cmdlet bestaat uit een werk woord waarmee de actie wordt aangegeven die de cmdlet uitvoert en een zelfstandig naam woord dat de items aangeeft waarop de cmdlet op betrekking heeft. Omdat in deze voor beeld-cmdlet Get-proc proces objecten worden opgehaald, wordt de term Get gebruikt, die is gedefinieerd door [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -inventarisatie en het zelfstandig naam woord ' proc ' om aan te geven dat de cmdlet werkt voor het verwerken van items.
 
-Gebruik bij het benoemen van cmdlets geen van de volgende tekens: #, () {} [] &-/\ $; : "' < > &#124; ? @ ` .
+Gebruik bij het benoemen van cmdlets geen van de volgende tekens: #, () {} [] &-/\ $;: ' ' <> &#124; ? @ ` .
 
 ### <a name="choosing-a-noun"></a>Een zelfstandig naam woord kiezen
 
-Kies een specifiek zelfstandig naam woord. U kunt het beste een enkelvoudig zelfstandig naam woord gebruiken, met een kortere versie van de product naam. Een voor beeld van een cmdlet-naam van dit type is "`Get-SQLServer`".
+Kies een specifiek zelfstandig naam woord. U kunt het beste een enkelvoudig zelfstandig naam woord gebruiken, met een kortere versie van de product naam. Een voor beeld van een cmdlet-naam van dit type is ' `Get-SQLServer` '.
 
 ### <a name="choosing-a-verb"></a>Een werk woord kiezen
 
@@ -54,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-U ziet dat er eerder aan de klassedefinitie, het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) met de syntaxis `[Cmdlet(verb, noun, ...)]`, wordt gebruikt om deze klasse te identificeren als een cmdlet. Dit is het enige vereiste kenmerk voor alle cmdlets en de Windows Power shell-runtime kan ze op de juiste wijze aanroepen. U kunt kenmerk trefwoorden instellen om de klasse zo nodig verder te declareren. Houd er rekening mee dat de kenmerk declaratie voor onze voor beeld-GetProcCommand-klasse alleen de namen van de zelfstandig naam woord en de verb declareert voor de cmdlet Get-proc.
+U ziet dat er eerder aan de klassedefinitie, het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , met de syntaxis `[Cmdlet(verb, noun, ...)]` , wordt gebruikt om deze klasse te identificeren als een cmdlet. Dit is het enige vereiste kenmerk voor alle cmdlets en de Windows Power shell-runtime kan ze op de juiste wijze aanroepen. U kunt kenmerk trefwoorden instellen om de klasse zo nodig verder te declareren. Houd er rekening mee dat de kenmerk declaratie voor onze voor beeld-GetProcCommand-klasse alleen de namen van de zelfstandig naam woord en de verb declareert voor de cmdlet Get-proc.
 
 > [!NOTE]
 > Voor alle Windows Power shell-kenmerk klassen moeten de tref woorden die u kunt instellen overeenkomen met de eigenschappen van de kenmerk klasse.
@@ -78,7 +71,7 @@ Voor alle typen invoer roept Windows Power shell runtime [System. Management. Au
 > [!NOTE]
 > Windows Power shell gebruikt de term ' record ' om de set parameter waarden te beschrijven die worden opgegeven wanneer een cmdlet wordt aangeroepen.
 
-Als uw cmdlet pijplijn invoer accepteert, moet deze de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) negeren en optioneel de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Zo kan een cmdlet beide methoden overschrijven als alle invoer wordt verzameld met [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) en vervolgens op de invoer als geheel wordt uitgevoerd in plaats van één element tegelijk, zoals de cmdlet `Sort-Object`.
+Als uw cmdlet pijplijn invoer accepteert, moet deze de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) negeren en optioneel de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Zo kan een cmdlet beide methoden overschrijven als alle invoer wordt verzameld met [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) en vervolgens als de cmdlet wordt uitgevoerd op de invoer als geheel in plaats van één element tegelijk `Sort-Object` .
 
 Als uw cmdlet geen pijplijn invoer heeft, moet deze de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) overschrijven. Houd er rekening mee dat deze methode veelvuldig wordt gebruikt in plaats van [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) wanneer de cmdlet op één element per keer niet kan worden uitgevoerd, zoals in het geval van een sorteer-cmdlet.
 
@@ -131,7 +124,7 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-Zie GetProcessSample01- C# voor [beeld](./getprocesssample01-sample.md)voor de volledige voorbeeld code.
+Zie GetProcessSample01-voor [beeld](./getprocesssample01-sample.md)voor de volledige C#-voorbeeld code.
 
 ## <a name="defining-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
@@ -233,7 +226,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
     ...
     ```
 
-7. Gebruik de cmdlet `Get-Member` om de eigenschappen weer te geven die beschikbaar zijn voor elk proces.
+7. Gebruik de `Get-Member` cmdlet om de eigenschappen weer te geven die beschikbaar zijn voor elk proces.
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -268,6 +261,6 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
 
 [Cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85))
 
-[Naslag informatie voor Windows Power shell](../windows-powershell-reference.md)
+[Naslaginformatie over Windows PowerShell](../windows-powershell-reference.md)
 
-[Voor beelden van cmdlets](./cmdlet-samples.md)
+[Cmdlet-voorbeelden](./cmdlet-samples.md)

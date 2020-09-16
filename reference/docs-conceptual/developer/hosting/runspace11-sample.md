@@ -1,19 +1,12 @@
 ---
 title: Runspace11-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
-caps.latest.revision: 8
-ms.openlocfilehash: 606f06339d0bbec3393c6b2602df3636c1f4e458
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e8a4080bb4fb33f7e0d428e24483b5cfac5c70e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565380"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784925"
 ---
 # <a name="runspace11-sample"></a>Voorbeeld Runspace11
 
@@ -29,11 +22,11 @@ In dit voor beeld ziet u het volgende.
 
 - Een [System. Management. Automation. Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) -object maken waarmee de meta gegevens van een bestaande cmdlet worden beschreven.
 
-- Een [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
+- Een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
 
 - De cmdlet-meta gegevens wijzigen om een para meter van de cmdlet te verwijderen.
 
-- De cmdlet wordt toegevoegd aan het object [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) en maakt de cmdlet persoonlijk.
+- De cmdlet wordt toegevoegd aan het tialsessionstate-object van [System.Management.Automation.Runspaces.Ini](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) en de cmdlet is persoonlijk.
 
 - Het maken van een proxy functie die de bestaande cmdlet aanroept, maar alleen een beperkt aantal para meters beschikbaar stelt.
 

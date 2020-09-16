@@ -1,26 +1,19 @@
 ---
 title: Cmdlet-kenmerken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes [PowerShell SDK]
 - attributes [PowerShell SDK], described
-ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
-caps.latest.revision: 14
-ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f22c2882fbe5b2f51ca5ea218b921192b0a7d41f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359446"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784517"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet-kenmerken
 
-Windows Power shell definieert diverse kenmerken die u kunt gebruiken om algemene functionaliteit toe te voegen aan uw cmdlets zonder dat u deze functionaliteit in uw eigen code hoeft te implementeren. Dit omvat het cmdlet-kenmerk dat een Microsoft .NET Framework-klasse identificeert als een cmdlet-klasse, het kenmerk output type waarmee de .NET Framework typen worden opgegeven die worden geretourneerd door de cmdlet, het parameter kenmerk dat open bare eigenschappen identificeert als cmdlet para meters en nog veel meer.
+Windows Power shell definieert diverse kenmerken die u kunt gebruiken om algemene functionaliteit toe te voegen aan uw cmdlets zonder dat u deze functionaliteit in uw eigen code hoeft te implementeren. Dit omvat het cmdlet-kenmerk dat een Microsoft .NET Framework-klasse identificeert als een cmdlet-klasse, het kenmerk output type waarmee de .NET Framework typen worden opgegeven die door de cmdlet worden geretourneerd, het parameter kenmerk dat open bare eigenschappen identificeert als cmdlet-para meters en meer.
 
 ## <a name="in-this-section"></a>In deze sectie
 
@@ -48,6 +41,6 @@ Windows Power shell definieert diverse kenmerken die u kunt gebruiken om algemen
 
 [Verklaring van de kenmerkset validate](./validateset-attribute-declaration.md) Hierin wordt beschreven hoe u de mogelijke waarden voor een parameter argument definieert.
 
-## <a name="reference"></a>Verwijzing
+## <a name="reference"></a>Naslaginformatie
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

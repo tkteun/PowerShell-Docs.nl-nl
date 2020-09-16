@@ -2,12 +2,12 @@
 title: De ISE-ervaring in Visual Studio Code repliceren
 description: De ISE-ervaring in Visual Studio Code repliceren
 ms.date: 08/06/2018
-ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6b0b8ce054695d6cc0fc578290c554e2dc1472bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810944"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784619"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>De ISE-ervaring in Visual Studio Code repliceren
 
@@ -25,7 +25,7 @@ Hiertoe opent u het opdracht palet (<kbd>F1</kbd> of <kbd>CTRL</kbd> + <kbd>SHIF
 
 Met deze opdracht worden de instellingen die onder het resultaat worden beschreven, automatisch toegepast op de volgende manier:
 
-![ISE-modus](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![Visual Studio code in de modus ISE](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 ## <a name="ise-mode-configuration-settings"></a>Configuratie-instellingen voor ISE-modus
 
@@ -53,7 +53,7 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
 
   Deze instellingen verbergen de ' activiteiten balk ' en de sectie ' fout opsporen van zijkant ' in het rode vak hieronder weer gegeven:
 
-  ![de gemarkeerde sectie bevat de activiteiten balk en de fout balk aan de zijkant](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  ![De gemarkeerde sectie bevat de activiteiten balk en de fout balk aan de zijkant](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
   Het eind resultaat ziet er als volgt uit:
 
@@ -122,7 +122,7 @@ Met de ISE-modus worden de volgende wijzigingen aangebracht in VS-code-instellin
 
 - 4sysops heeft [een geweldig artikel][4sysops] over het configureren van VS code zodat deze meer lijkt op het ISE.
 - Mike F Robbins heeft [een geweldig bericht over het][mikefrobbins] instellen van VS code.
-- Meer informatie over Power shell vindt [u in een uitstekende][learnpwsh] installatie voor schrijven voor Power shell.
+<!-- - Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell. -->
 
 ## <a name="vs-code-tips"></a>VS-code tips
 

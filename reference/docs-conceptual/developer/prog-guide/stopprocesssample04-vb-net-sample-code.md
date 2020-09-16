@@ -1,28 +1,21 @@
 ---
 title: Voorbeeld code voor StopProcessSample04 (VB.NET) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
-caps.latest.revision: 5
-ms.openlocfilehash: 3e709f0897b0d77f4c5f12e1c042edd4e24b142a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5526bec79f3bb38f0de11680302a94699240a3d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417818"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786982"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>StopProcessSample04-codevoorbeeld (VB.NET)
 
-Dit is de volledige VB.NET-voorbeeld code voor de voor beeld-cmdlet StopProc04. Dit is de code voor de `Stop-Process`-cmdlet die wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). De cmdlet `Stop-Process` is ontworpen voor het stoppen van processen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+Dit is de volledige VB.NET-voorbeeld code voor de voor beeld-cmdlet StopProc04. Dit is de code voor de `Stop-Process` cmdlet die wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). De `Stop-Process` cmdlet is ontworpen voor het stoppen van processen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
 > U kunt het bron bestand VB.NET (stopprocesssample04. VB) voor deze stop-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
+> De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.
 
 ```vb
 Imports System
@@ -479,6 +472,6 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

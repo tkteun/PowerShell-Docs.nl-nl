@@ -1,19 +1,12 @@
 ---
 title: RunSpace04 (VB.NET)-code voorbeeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
-caps.latest.revision: 6
-ms.openlocfilehash: a0c04adb64ab5f2a9fd42fa7dee3977638d3b535
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 853e3d223843fb39b2e6a08a21d041a5e696ce2c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417944"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784755"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>Runspace04-codevoorbeeld (VB.NET)
 
@@ -22,7 +15,7 @@ Dit is de VB.NET-bron code voor het Runspace04-voor beeld. In dit voor beeld wor
 > [!NOTE]
 > U kunt het VB.NET-bron bestand (runspace02. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
+> De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -117,6 +110,6 @@ End Namespace
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

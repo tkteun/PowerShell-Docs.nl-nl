@@ -1,19 +1,12 @@
 ---
 title: Element List entries voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
-caps.latest.revision: 12
-ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0fe07e739c2d2fec153599ec6c0c0b3ecc14df18
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354353"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785707"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>Het element ListEntries voor ListControl (opmaak)
 
@@ -21,7 +14,7 @@ Biedt de definities van de lijst weergave. In de lijst weergave moeten een of me
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer gave (indeling) ListControl element (indeling) element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ListEntries>
@@ -31,7 +24,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ListEntries` beschreven. Er moet mini maal één onderliggend element worden opgegeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ListEntries` element beschreven. Er moet mini maal één onderliggend element worden opgegeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,7 +40,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ListControl-element (indeling)](./listcontrol-element-format.md)|Hiermee definieert u een lijst indeling voor de weer gave.|
+|[Het element ListControl (opmaak)](./listcontrol-element-format.md)|Hiermee definieert u een lijst indeling voor de weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -75,7 +68,7 @@ In dit voor beeld worden de XML-elementen weer gegeven die de lijst weergave def
 
 ## <a name="see-also"></a>Zie ook
 
-[ListControl-element (indeling)](./listcontrol-element-format.md)
+[Het element ListControl (opmaak)](./listcontrol-element-format.md)
 
 [Element List entry (indeling)](./listentry-element-for-listcontrol-format.md)
 

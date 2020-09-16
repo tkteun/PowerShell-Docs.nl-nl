@@ -1,19 +1,12 @@
 ---
 title: List Entry-element voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
-caps.latest.revision: 12
-ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d98f0b5215eea7668f866d2733214ade79d748f1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354346"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785690"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>Het element ListEntry voor ListControl (opmaak)
 
@@ -21,7 +14,7 @@ Geeft een definitie van de lijst weergave.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl-element (indeling) element (indeling) List item (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ListEntry>
@@ -32,7 +25,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ListEntry` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ListEntry` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -77,7 +70,7 @@ In dit voor beeld worden de XML-elementen weer gegeven die de lijst weergave def
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
 [Element EntrySelectedBy voor List entry (indeling)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Get-WinEvent-query's maken met FilterHashtable
-ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563925"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786642"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
 
@@ -52,15 +52,15 @@ De volgende tabel geeft de sleutel namen, gegevens typen en of joker tekens word
 
 |    Sleutelnaam    | Waarde gegevens type | Joker tekens accepteren? |
 | -------------- | --------------- | ---------------------------- |
-| LogName        | `<String[]>`    | Ja                          |
-| ProviderName   | `<String[]>`    | Ja                          |
-| Pad           | `<String[]>`    | Nee                           |
-| Trefwoorden       | `<Long[]>`      | Nee                           |
-| Id             | `<Int32[]>`     | Nee                           |
-| Niveau          | `<Int32[]>`     | Nee                           |
-| StartTime      | `<DateTime>`    | Nee                           |
-| EndTime        | `<DateTime>`    | Nee                           |
-| UserID         | `<SID>`         | Nee                           |
+| LogName        | `<String[]>`    | Yes                          |
+| ProviderName   | `<String[]>`    | Yes                          |
+| Pad           | `<String[]>`    | No                           |
+| Trefwoorden       | `<Long[]>`      | No                           |
+| Id             | `<Int32[]>`     | No                           |
+| Niveau          | `<Int32[]>`     | No                           |
+| StartTime      | `<DateTime>`    | No                           |
+| EndTime        | `<DateTime>`    | No                           |
+| UserID         | `<SID>`         | No                           |
 | Gegevens           | `<String[]>`    | Nee                           |
 | `<named-data>` | `<String[]>`    | Nee                           |
 
@@ -97,7 +97,7 @@ Get-WinEvent -FilterHashtable @{
 
 Ga door met het samen stellen van de hash-tabel met de sleutel van de **provider** . De **ProviderName** is de naam die wordt weer gegeven in het **bron** veld in het **Windows logboeken**. Bijvoorbeeld **.NET runtime** in de volgende scherm afbeelding:
 
-![Afbeelding van Windows-Logboeken bronnen.](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Afbeelding van Windows-Logboeken bronnen](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 Werk de hash-tabel bij en neem het **sleutel-** waardepaar op met de sleutel, **ProviderName**en de waarde **.NET runtime**.
 
@@ -127,7 +127,7 @@ Voor de sleutel **tref woorden** gebruikt Power shell een getal, geen teken reek
 Open de **Windows-logboeken** en klik in het deel venster **acties** op **Huidig logboek filteren**.
 De vervolg keuzelijst **tref woorden** bevat de beschik bare tref woorden, zoals wordt weer gegeven in de volgende scherm afbeelding:
 
-![Afbeelding van Windows-Logboeken tref woorden.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Afbeelding van Windows-Logboeken tref woorden](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 Gebruik de volgende opdracht om de namen van de eigenschappen weer te geven `StandardEventKeywords` .
 
@@ -155,7 +155,7 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **tref woorden** en opgesomde waarden zijn als volgt:
 
-| Name             |  Waarde            |
+| Naam             |  Waarde            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -236,9 +236,9 @@ De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [Standa
 
 De namen van de **niveau** sleutel en opgesomde waarden zijn als volgt:
 
-| Name           | Waarde |
+| Naam           | Waarde |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Uitgebreid        |   5   |
 | Informatief  |   4   |
 | Waarschuwing        |   3   |
 | Fout          |   2   |

@@ -1,23 +1,16 @@
 ---
 title: Aangepaste indelings bestanden | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
-ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359416"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784347"
 ---
 # <a name="custom-formatting-files"></a>Aangepaste opmaakbestanden
 
-De weer gave-indeling voor objecten die worden geretourneerd door cmdlets, functies en scripts worden gedefinieerd met behulp van indelings bestanden (ps1xml-bestanden). Een aantal van deze bestanden wordt geleverd door Windows Power shell om de standaard weergave-indeling te definiëren voor de objecten die worden geretourneerd door Windows Power shell-cmdlets. U kunt echter ook uw eigen aangepaste opmaak bestanden maken om de standaard weergave indelingen te overschrijven of om de weer gave van objecten te definiëren die door uw eigen opdrachten worden geretourneerd.
+De weergave notatie voor de objecten die worden geretourneerd door cmdlets, functies en scripts worden gedefinieerd met behulp van indelings bestanden (format.ps1XML-bestanden). Een aantal van deze bestanden wordt geleverd door Windows Power shell om de standaard weergave-indeling te definiëren voor de objecten die worden geretourneerd door Windows Power shell-cmdlets. U kunt echter ook uw eigen aangepaste opmaak bestanden maken om de standaard weergave indelingen te overschrijven of om de weer gave van objecten te definiëren die door uw eigen opdrachten worden geretourneerd.
 
 Windows Power shell gebruikt de gegevens in deze indelings bestanden om te bepalen wat wordt weer gegeven en hoe de gegevens worden opgemaakt. De weer gegeven gegevens kunnen de eigenschappen van een object of de waarde van een script blok bevatten.  Script blokken worden gebruikt als u een bepaalde waarde wilt weer geven die niet rechtstreeks vanuit de eigenschappen van een object beschikbaar is. U kunt bijvoorbeeld de waarde van twee eigenschappen van een object toevoegen en de som als afzonderlijke gegevens weer geven. Wanneer u uw eigen opmaak bestand schrijft, moet u *weer gaven* definiëren voor de objecten die u wilt weer geven. U kunt één weer gave definiëren voor elk object, u kunt één weer gave voor meerdere objecten definiëren, maar u kunt ook meerdere weer gaven definiëren voor hetzelfde object. Er is geen limiet voor het aantal weer gaven dat u kunt definiëren.
 
@@ -40,7 +33,7 @@ In de aangepaste weer gave wordt een aanpas bare weer gave weer gegeven van obje
 
 ## <a name="view-xml-elements"></a>XML-elementen weer geven
 
-In het volgende voor beeld ziet u de XML-labels die worden gebruikt voor het definiëren van een tabel weergave die twee kolommen bevat. Het element [ViewDefinitions](../format/viewdefinitions-element-format.md) is het container element voor alle weer gaven die in het opmaak bestand zijn gedefinieerd. Het element [weer gave](../format/view-element-format.md) definieert de specifieke tabel, lijst, brede of aangepaste weer gave. In elke weer gave geeft het element [name](../format/name-element-for-view-format.md) de naam van de weer gave, het [ViewSelectedBy](../format/viewselectedby-element-format.md) -element definieert de objecten die gebruikmaken van de weer gave en de verschillende elementen van het besturings element (zoals het element `TableControl`) definiëren de indeling van de weer gave.
+In het volgende voor beeld ziet u de XML-labels die worden gebruikt voor het definiëren van een tabel weergave die twee kolommen bevat. Het element [ViewDefinitions](../format/viewdefinitions-element-format.md) is het container element voor alle weer gaven die in het opmaak bestand zijn gedefinieerd. Het element [weer gave](../format/view-element-format.md) definieert de specifieke tabel, lijst, brede of aangepaste weer gave. In elke weer gave geeft het element [name](../format/name-element-for-view-format.md) de naam van de weer gave, het [ViewSelectedBy](../format/viewselectedby-element-format.md) -element definieert de objecten die gebruikmaken van de weer gave en de verschillende elementen van het besturings element (zoals het `TableControl` element) definiëren de indeling van de weer gave.
 
 ```xml
 ViewDefinitions
@@ -87,4 +80,4 @@ ViewDefinitions
 
 [Aangepaste weer gave](../format/creating-custom-controls.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

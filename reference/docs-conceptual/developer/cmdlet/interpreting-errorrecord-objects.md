@@ -1,19 +1,12 @@
 ---
 title: ErrorRecord-objecten interpreteren | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
-ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356215"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786591"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord-objecten interpreteren
 
@@ -52,7 +45,7 @@ Met de cmdlet kunt u de categorieën CloseError, openerror, InvalidType, ReadErr
 
 De uitzonde ring die is opgenomen in de fout record wordt geleverd door de cmdlet en kan worden geopend via de eigenschap [System. Management. Automation. ErrorRecord. Exception *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) van het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) .
 
-Hosttoepassingen kunnen het sleutel woord `is` gebruiken om te bepalen dat de uitzonde ring van een specifieke klasse of van een afgeleide klasse is. Het is beter vertakking op het uitzonderings type, zoals wordt weer gegeven in het volgende voor beeld.
+Hosttoepassingen kunnen het `is` sleutel woord gebruiken om aan te geven dat de uitzonde ring van een specifieke klasse of van een afgeleide klasse is. Het is beter vertakking op het uitzonderings type, zoals wordt weer gegeven in het volgende voor beeld.
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 
@@ -90,8 +83,8 @@ Het object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Mana
 
 [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[Niet-beëindigde fout rapportage toevoegen aan uw cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
+[Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 
-[Windows Power Shell-fout rapportage](./error-reporting-concepts.md)
+[Windows PowerShell-foutrapportage](./error-reporting-concepts.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

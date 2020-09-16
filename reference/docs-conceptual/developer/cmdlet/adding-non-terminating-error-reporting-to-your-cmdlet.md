@@ -1,19 +1,12 @@
 ---
 title: Niet-beëindigde fout rapportage toevoegen aan uw cmdlet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
-caps.latest.revision: 8
-ms.openlocfilehash: ec29d1cffa083e4cce667d3e1efbd4eeecbffb51
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870112"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784585"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
 
@@ -27,7 +20,7 @@ Zie [Windows Power Shell-fout records](./windows-powershell-error-records.md)voo
 
 De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Met deze cmdlet worden proces gegevens opgehaald, zodat de naam van de term ' Get ' is. (Bijna elk soort cmdlet waarmee informatie kan worden opgehaald, kan opdracht regel invoer verwerken.) Zie [cmdlet verb names](approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-Hier volgt de definitie voor deze `Get-Proc`-cmdlet. Details van deze definitie vindt u in [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
+Hier volgt de definitie voor deze `Get-Proc` cmdlet. Details van deze definitie vindt u in [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -161,13 +154,13 @@ protected override void ProcessRecord()
 
 Voor een niet-afsluit fout moet de cmdlet een specifieke fout-id genereren voor elk specifiek invoer object.
 
-Een cmdlet moet regel matig de Power shell-actie wijzigen die is geproduceerd door een niet-afsluit fout. U kunt dit doen door de `ErrorAction`-en `ErrorVariable`-para meters te definiëren. Als u de para meter `ErrorAction` definieert, geeft de cmdlet de gebruikers opties [System. Management. Automation. ActionPreference][]. u kunt ook rechtstreeks van invloed zijn op de actie door de `$ErrorActionPreference`-variabele in te stellen.
+Een cmdlet moet regel matig de Power shell-actie wijzigen die is geproduceerd door een niet-afsluit fout. U kunt dit doen door de `ErrorAction` `ErrorVariable` para meters en te definiëren. Bij het definiëren `ErrorAction` van de para meter geeft de cmdlet de gebruikers opties [System. Management. Automation. ActionPreference][], kunt u ook rechtstreeks van invloed zijn op de actie door de variabele in te stellen `$ErrorActionPreference` .
 
-Met de cmdlet kunnen niet-afsluit fouten worden opgeslagen in een variabele met behulp van de para meter `ErrorVariable`, die niet wordt beïnvloed door de instelling van `ErrorAction`. Fouten kunnen worden toegevoegd aan een bestaande fout variabele door een plus teken (+) toe te voegen aan het begin van de naam van de variabele.
+Met de-cmdlet kunnen niet-afsluit fouten worden opgeslagen in een variabele met behulp `ErrorVariable` van de para meter, die niet wordt beïnvloed door de instelling van `ErrorAction` . Fouten kunnen worden toegevoegd aan een bestaande fout variabele door een plus teken (+) toe te voegen aan het begin van de naam van de variabele.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
-Zie GetProcessSample04- C# voor [beeld](./getprocesssample04-sample.md)voor de volledige voorbeeld code.
+Zie GetProcessSample04-voor [beeld](./getprocesssample04-sample.md)voor de volledige C#-voorbeeld code.
 
 ## <a name="define-object-types-and-formatting"></a>Object typen en-opmaak definiëren
 
@@ -197,7 +190,7 @@ Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit
 
 ## <a name="see-also"></a>Zie ook
 
-[Para meters toevoegen die de invoer van de pijp lijn verwerken](./adding-parameters-that-process-pipeline-input.md)
+[Parameters toevoegen die pijplijninvoer verwerken](./adding-parameters-that-process-pipeline-input.md)
 
 [Para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md)
 
@@ -207,9 +200,9 @@ Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit
 
 [Cmdlets, providers en hosttoepassingen registreren](/previous-versions/ms714644(v=vs.85))
 
-[Naslag informatie voor Windows Power shell](../windows-powershell-reference.md)
+[Naslaginformatie over Windows PowerShell](../windows-powershell-reference.md)
 
-[Voor beelden van cmdlets](./cmdlet-samples.md)
+[Cmdlet-voorbeelden](./cmdlet-samples.md)
 
 [System. Exception]: /dotnet/api/System.Exception
 [System. Management. Automation. ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference

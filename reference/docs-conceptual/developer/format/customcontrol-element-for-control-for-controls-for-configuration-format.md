@@ -1,19 +1,12 @@
 ---
 title: CustomControl-element voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
-caps.latest.revision: 10
-ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5aacf824421dfce19f1f495fc0a95e766cdbaf8b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359068"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786081"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u een besturings element. Dit element wordt gebruikt bij het 
 
 Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <CustomControl>
@@ -31,7 +24,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `CustomControl` beschreven. Dit element moet ten minste één onderliggend element bevatten. Er is geen maximum limiet voor het aantal onderliggende elementen dat kan worden opgegeven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `CustomControl` element beschreven. Dit element moet ten minste één onderliggend element bevatten. Er is geen maximum limiet voor het aantal onderliggende elementen dat kan worden opgegeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,14 +40,14 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Control-element voor besturings elementen voor configuratie (indeling)](./control-element-for-controls-for-configuration-format.md)|Hiermee wordt een algemeen besturings element gedefinieerd dat kan worden gebruikt door alle weer gaven van het opmaak bestand en de naam die wordt gebruikt om te verwijzen naar het besturings element.|
+|[Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./control-element-for-controls-for-configuration-format.md)|Hiermee wordt een algemeen besturings element gedefinieerd dat kan worden gebruikt door alle weer gaven van het opmaak bestand en de naam die wordt gebruikt om te verwijzen naar het besturings element.|
 
 ## <a name="remarks"></a>Opmerkingen
 
 ## <a name="see-also"></a>Zie ook
 
-[Control-element voor besturings elementen voor configuratie (indeling)](./control-element-for-controls-for-configuration-format.md)
+[Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)](./control-element-for-controls-for-configuration-format.md)
 
 [CustomEntries-element voor CustomControl voor configuratie (indeling)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

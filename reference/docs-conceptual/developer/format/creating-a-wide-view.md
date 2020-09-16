@@ -1,19 +1,12 @@
 ---
 title: Een brede weer gave maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
-caps.latest.revision: 16
-ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0cf6a35201c47e4b12dd160191570eccec3427ef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359075"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786132"
 ---
 # <a name="creating-a-wide-view"></a>Een brede weergave maken
 
@@ -220,7 +213,7 @@ Zie [Wide View (GroupBy)](./wide-view-groupby.md)voor een voor beeld van een vol
 
 ## <a name="using-format-strings"></a>Opmaak teken reeksen gebruiken
 
-Opmaak teken reeksen kunnen worden toegevoegd aan een brede weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+Opmaak teken reeksen kunnen worden toegevoegd aan een brede weer gave om te bepalen hoe de gegevens worden weer gegeven. In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <WideItem>
@@ -239,7 +232,7 @@ De volgende XML-elementen kunnen worden gebruikt om een notatie patroon op te ge
 
 - Het element [script Block](./scriptblock-element-for-wideitem-for-widecontrol-format.md) (niet weer gegeven) Hiermee geeft u het script op waarvan de waarde wordt weer gegeven in de weer gave. U moet een script of een eigenschap opgeven, maar u kunt niet beide opgeven.
 
-In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString`, die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
+In het volgende voor beeld wordt de- `ToString` methode aangeroepen om de waarde van het script op te maken. Scripts kunnen een wille keurige methode van een object aanroepen. Als een object een methode heeft, zoals `ToString` die opmaak parameters heeft, kan het script deze methode ook aanroepen om de uitvoer waarde van het script op te maken.
 
 ```xml
 <WideItem>
@@ -250,7 +243,7 @@ In het volgende voor beeld wordt de methode `ToString` aangeroepen om de waarde 
 </WideItem>
 ```
 
-Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roepen:
+Het volgende XML-element kan worden gebruikt om de methode aan te roepen `ToString` :
 
 - Het element [WideItem](./wideitem-element-for-widecontrol-format.md) geeft de gegevens aan die worden weer gegeven in de weer gave.
 
@@ -258,8 +251,8 @@ Het volgende XML-element kan worden gebruikt om de `ToString` methode aan te roe
 
 ## <a name="see-also"></a>Zie ook
 
-[Brede weer gave (basis)](./wide-view-basic.md)
+[Brede weergave (Basis)](./wide-view-basic.md)
 
-[Brede weer gave (GroupBy)](./wide-view-groupby.md)
+[Brede weergave (GroupBy)](./wide-view-groupby.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

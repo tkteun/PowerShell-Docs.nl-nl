@@ -1,19 +1,12 @@
 ---
 title: CustomEntries-element voor CustomControl voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
-caps.latest.revision: 11
-ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c89eb25f6922a92e2c18298d0128c4c2ca93df3d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355277"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785962"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>Het element CustomEntries voor CustomControl voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Biedt de definities van de aangepaste beheer weergave. In de aangepaste beheer w
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer gave (indeling) CustomControl element (indeling) CustomEntries element voor CustomControl voor weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <CustomEntries>
@@ -31,7 +24,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `CustomControlEntries` beschreven. U moet een of meer onderliggende elementen opgeven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `CustomControlEntries` element beschreven. U moet een of meer onderliggende elementen opgeven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,16 +40,16 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomControl-element voor weer gave (indeling)](./customcontrol-element-for-view-format.md)|Vereist element.<br /><br /> Hiermee wordt een aangepaste besturings element-indeling gedefinieerd voor de weer gave.|
+|[Het element CustomControl voor Weergave (opmaak)](./customcontrol-element-for-view-format.md)|Vereist element.<br /><br /> Hiermee wordt een aangepaste besturings element-indeling gedefinieerd voor de weer gave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
-In de meeste gevallen heeft een besturings element slechts één definitie, die in één `CustomEntry` element is gedefinieerd. Het is echter mogelijk om meerdere definities te hebben als u hetzelfde besturings element wilt gebruiken om verschillende .NET-objecten weer te geven. In dergelijke gevallen kunt u een `CustomEntry` element definiëren voor elk object of set met objecten.
+In de meeste gevallen heeft een besturings element slechts één definitie, die in één element is gedefinieerd `CustomEntry` . Het is echter mogelijk om meerdere definities te hebben als u hetzelfde besturings element wilt gebruiken om verschillende .NET-objecten weer te geven. In dergelijke gevallen kunt u een element definiëren `CustomEntry` voor elk object of set met objecten.
 
 ## <a name="see-also"></a>Zie ook
 
-[CustomControl-element voor weer gave (indeling)](./customcontrol-element-for-view-format.md)
+[Het element CustomControl voor Weergave (opmaak)](./customcontrol-element-for-view-format.md)
 
 [CustomEntry-element voor CustomEntries voor weer gave (indeling)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

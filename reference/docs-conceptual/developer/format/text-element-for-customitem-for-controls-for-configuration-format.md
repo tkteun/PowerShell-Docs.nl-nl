@@ -1,27 +1,20 @@
 ---
 title: Tekst element voor CustomItem voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
-caps.latest.revision: 6
-ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72358782"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787390"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 
 Hiermee geeft u tekst op die wordt toegevoegd aan de gegevens die worden weer gegeven door het besturings element, zoals een label, haakjes om de gegevens op te nemen en spaties om de gegevens te laten inspringen. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor de configuratie (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor de configuratie tekst element voor CustomItem voor besturings elementen voor configuratie (indeling)
+Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie tekst element voor CustomItem voor besturings elementen voor configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Text>TextToDisplay</Text>
@@ -29,7 +22,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Text` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Text` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -55,4 +48,4 @@ Geef de tekst op van een besturings element voor gegevens die u wilt weer geven.
 
 [CustomItem-element voor CustomEntry voor besturings elementen voor configuratie](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)
