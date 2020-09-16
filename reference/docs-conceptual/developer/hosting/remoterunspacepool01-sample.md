@@ -1,43 +1,36 @@
 ---
 title: RemoteRunspacePool01-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
-caps.latest.revision: 8
-ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 77283008f1c6bce79cec60d426e3933508fced64
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357622"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783191"
 ---
-# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="3f83d-102">Voorbeeld RemoteRunspacePool01</span><span class="sxs-lookup"><span data-stu-id="3f83d-102">RemoteRunspacePool01 Sample</span></span>
+# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="f64bf-102">Voorbeeld RemoteRunspacePool01</span><span class="sxs-lookup"><span data-stu-id="f64bf-102">RemoteRunspacePool01 Sample</span></span>
 
-<span data-ttu-id="3f83d-103">Dit voor beeld laat zien hoe u een externe runs Pace-groep bouwt en hoe u meerdere opdrachten gelijktijdig kunt uitvoeren met behulp van deze groep.</span><span class="sxs-lookup"><span data-stu-id="3f83d-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+<span data-ttu-id="f64bf-103">Dit voor beeld laat zien hoe u een externe runs Pace-groep bouwt en hoe u meerdere opdrachten gelijktijdig kunt uitvoeren met behulp van deze groep.</span><span class="sxs-lookup"><span data-stu-id="f64bf-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="3f83d-104">Vereisten</span><span class="sxs-lookup"><span data-stu-id="3f83d-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="f64bf-104">Vereisten</span><span class="sxs-lookup"><span data-stu-id="f64bf-104">Requirements</span></span>
 
- <span data-ttu-id="3f83d-105">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="3f83d-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="f64bf-105">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="f64bf-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="3f83d-106">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="3f83d-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="f64bf-106">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="f64bf-106">Demonstrates</span></span>
 
-- <span data-ttu-id="3f83d-107">Een [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object maken.</span><span class="sxs-lookup"><span data-stu-id="3f83d-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="f64bf-107">Een [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object maken.</span><span class="sxs-lookup"><span data-stu-id="f64bf-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="3f83d-108">Het instellen van de eigenschappen [System. Management. Automation. Runspaces. Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) en [System. Management. Automation. Runspaces. Runspaceconnectioninfo. opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .</span><span class="sxs-lookup"><span data-stu-id="3f83d-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="f64bf-108">Het instellen van de eigenschappen [System. Management. Automation. Runspaces. Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) en [System. Management. Automation. Runspaces. Runspaceconnectioninfo. opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .</span><span class="sxs-lookup"><span data-stu-id="f64bf-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="3f83d-109">Er wordt een externe runs Pace gemaakt die gebruikmaakt van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) om de externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="3f83d-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="f64bf-109">Er wordt een externe runs Pace gemaakt die gebruikmaakt van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) om de externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="f64bf-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="3f83d-110">De cmdlets [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Get-service](/powershell/module/microsoft.powershell.management/get-service) gelijktijdig uitvoeren met behulp van de externe runs Pace-groep.</span><span class="sxs-lookup"><span data-stu-id="3f83d-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
+- <span data-ttu-id="f64bf-110">De cmdlets [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Get-service](/powershell/module/microsoft.powershell.management/get-service) gelijktijdig uitvoeren met behulp van de externe runs Pace-groep.</span><span class="sxs-lookup"><span data-stu-id="f64bf-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
 
-- <span data-ttu-id="3f83d-111">De externe runs Pace-groep sluiten om de externe verbinding vrij te geven.</span><span class="sxs-lookup"><span data-stu-id="3f83d-111">Closing the remote runspace pool to release the remote connection.</span></span>
+- <span data-ttu-id="f64bf-111">De externe runs Pace-groep sluiten om de externe verbinding vrij te geven.</span><span class="sxs-lookup"><span data-stu-id="f64bf-111">Closing the remote runspace pool to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="3f83d-112">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="3f83d-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f64bf-112">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f64bf-112">Example</span></span>
 
- <span data-ttu-id="3f83d-113">Dit voor beeld laat zien hoe u een externe runs Pace-groep bouwt en hoe u meerdere opdrachten gelijktijdig kunt uitvoeren met behulp van deze groep.</span><span class="sxs-lookup"><span data-stu-id="3f83d-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+ <span data-ttu-id="f64bf-113">Dit voor beeld laat zien hoe u een externe runs Pace-groep bouwt en hoe u meerdere opdrachten gelijktijdig kunt uitvoeren met behulp van deze groep.</span><span class="sxs-lookup"><span data-stu-id="f64bf-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
 ```csharp
 namespace Samples
@@ -132,4 +125,4 @@ namespace Samples
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="3f83d-114">Zie ook</span><span class="sxs-lookup"><span data-stu-id="3f83d-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f64bf-114">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f64bf-114">See Also</span></span>
