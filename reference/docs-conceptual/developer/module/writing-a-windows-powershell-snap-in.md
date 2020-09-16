@@ -1,21 +1,14 @@
 ---
 title: Een Windows Power shell-module schrijven | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
-ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
-caps.latest.revision: 7
-ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811112"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779105"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module schrijven
 
@@ -31,7 +24,7 @@ Met dit type module selecteert u niet welke cmdlets en providers u wilt registre
 
     In dit voor beeld is de naam van de klasse ' GetProcPSSnapIn01 '.
 
-3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: `#` , `.` , `,` , `(` , `)` ,,,,,, `{` ,, `}` `[` `]` `&` `-` `/` `\` , `$` , `;` , `:` , `"` ,,, `'` `<` ,, `>` `|` `?` , `@` , `` ` `` ,,,,,,,,,,`*`
+3. Voeg een open bare eigenschap toe voor de naam van de module (vereist). Gebruik bij het benoemen van modules geen van de volgende tekens: `#` , `.` , `,` , `(` , `)` ,,,,,, `{` ,, `}` `[` `]` `&` `-` `/` `\` , `$` , `;` , `:` , `"` ,,, `'` `<` ,, `>` `|` `?` , `@` , `` ` `` ,,,,,,,,,, `*`
 
     In dit voor beeld is de naam van de module ' GetProcPSSnapIn01 '.
 

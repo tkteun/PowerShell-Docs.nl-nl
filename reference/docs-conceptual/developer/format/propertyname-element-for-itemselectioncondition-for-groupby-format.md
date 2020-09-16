@@ -1,27 +1,20 @@
 ---
 title: Het element PropertyName voor ItemSelectionCondition voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 221cbdc2-f794-4f3a-9d40-bfdd8cba1013
-caps.latest.revision: 6
-ms.openlocfilehash: aae65789cf5572cbcc9251eca802a2d43065e49f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f6d671035bfd2ef6323b638fdd951bb020bd6548
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354108"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780879"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
 
-Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd. Wanneer deze eigenschap aanwezig is of wordt geëvalueerd als `true`, wordt aan de voor waarde voldaan en wordt het besturings element gebruikt. Dit element wordt gebruikt bij het definiëren van de manier waarop een nieuwe groep objecten wordt weer gegeven.
+Hiermee geeft u de .NET-eigenschap op waarmee de voor waarde wordt geactiveerd. Wanneer deze eigenschap aanwezig is of wanneer deze wordt geëvalueerd `true` , wordt voldaan aan de voor waarde en wordt het besturings element gebruikt. Dit element wordt gebruikt bij het definiëren van de manier waarop een nieuwe groep objecten wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het element GroupBy (indeling) CustomEntries voor CustomControl voor het element GroupBy (Format) CustomEntry voor CustomControl voor het element GroupBy (Format) CustomItem voor CustomEntry voor het element GroupBy (Format) ExpressionBinding voor CustomItem voor het element GroupBy (Format) ItemSelectionCondition voor ExpressionBinding voor het element GroupBy (Format) voor ItemSelectionCondition voor GroupBy (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element voor weer gave (indeling) CustomControl-element voor het element GroupBy (indeling) CustomEntries voor CustomControl voor het element GroupBy (Format) CustomEntry voor CustomControl voor GroupBy (Format) CustomItem-element voor CustomEntry voor het element GroupBy (Format) ExpressionBinding voor CustomItem voor het element GroupBy (Format) ItemSelectionCondition voor ExpressionBinding voor het element GroupBy (Format) voor ItemSelectionCondition voor GroupBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <PropertyName>.NetTypeProperty</PropertyName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `PropertyName` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `PropertyName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ItemSelectionCondition-element voor ExpressionBinding voor GroupBy (indeling)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit besturings element.|
+|[Het element ItemSelectionCondition voor ExpressionBinding voor GroupBy (opmaak)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit besturings element.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -55,8 +48,8 @@ Als dit element wordt gebruikt, kunt u het [script Block](./scriptblock-element-
 
 ## <a name="see-also"></a>Zie ook
 
-[Script block-element voor ItemSelectionCondition voor GroupBy (indeling)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)
+[Het element ScriptBlock voor ItemSelectionCondition voor GroupBy (opmaak)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)
 
-[ItemSelectionCondition-element voor ExpressionBinding voor GroupBy (indeling)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
+[Het element ItemSelectionCondition voor ExpressionBinding voor GroupBy (opmaak)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

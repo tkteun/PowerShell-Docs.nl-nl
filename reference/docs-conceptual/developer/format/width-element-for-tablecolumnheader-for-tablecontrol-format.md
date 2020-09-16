@@ -1,19 +1,12 @@
 ---
 title: Width-element voor TableColumnHeader voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
-caps.latest.revision: 18
-ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9540d3d351041ad7cb98a21bb360ebea7eca117
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "84514853"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779910"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt de breedte (in tekens) van een kolom gedefinieerd.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableHeaders element voor TableControl (indeling) TableColumnHeader element TableHeaders voor TableControl (indeling) breedte-element voor TableColumnHeader voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Width>NumberOfCharacters</Width>

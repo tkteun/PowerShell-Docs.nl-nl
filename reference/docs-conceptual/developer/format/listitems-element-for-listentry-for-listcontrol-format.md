@@ -1,19 +1,12 @@
 ---
 title: List items-element voor List entry voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
-caps.latest.revision: 9
-ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03b89a3df2ab0498533d0c00f303f643e0039b25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354339"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781134"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>Het element ListItems voor ListEntry voor ListControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee worden de eigenschappen en scripts gedefinieerd waarvan de waarden worde
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling) element van het type list item (indeling) voor het besturings element List Control (Format) voor ListControl (Format) List items element voor ListControl (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ListItems>
@@ -31,7 +24,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `ListItems` beschreven. Er is geen limiet voor het aantal onderliggende elementen dat kan worden opgegeven. De volg orde van de onderliggende elementen definieert de volg orde waarin waarden worden weer gegeven in de lijst weergave.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `ListItems` element beschreven. Er is geen limiet voor het aantal onderliggende elementen dat kan worden opgegeven. De volg orde van de onderliggende elementen definieert de volg orde waarin waarden worden weer gegeven in de lijst weergave.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -47,7 +40,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[List Entry-element voor ListControl (indeling)](./listentry-element-for-listcontrol-format.md)|Geeft een definitie van de lijst weergave.|
+|[Het element ListEntry voor ListControl (opmaak)](./listentry-element-for-listcontrol-format.md)|Geeft een definitie van de lijst weergave.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -75,10 +68,10 @@ In dit voor beeld worden de XML-elementen weer gegeven waarmee drie rijen van de
 
 ## <a name="see-also"></a>Zie ook
 
-[List Entry-element voor ListControl (indeling)](./listentry-element-for-listcontrol-format.md)
+[Het element ListEntry voor ListControl (opmaak)](./listentry-element-for-listcontrol-format.md)
 
 [Lijst item-element voor ListControl (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

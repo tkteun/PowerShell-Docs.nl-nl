@@ -1,27 +1,20 @@
 ---
 title: TypeName-element voor EntrySelectedBy voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
-caps.latest.revision: 6
-ms.openlocfilehash: 3b5ce60d3a0d76988af48f49445a5478a415d498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e62762cf142bd2d20b21ad8f4249285bd3679280
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353590"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780262"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>Het element TypeName voor EntrySelectedBy voor GroupBy (opmaak)
 
 Hiermee geeft u een .NET-type op dat gebruikmaakt van deze definitie van het aangepaste besturings element. Dit element wordt gebruikt bij het definiëren van de manier waarop een nieuwe groep objecten wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het element GroupBy (indeling) CustomEntries voor CustomControl voor het element GroupBy (Format) CustomEntry voor CustomControl voor het element GroupBy (indeling) EntrySelectedBy voor CustomEntry voor het element GroupBy (Format) voor EntrySelectedBy voor GroupBy (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van het type GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het CustomEntries-element van GroupBy (Format) voor CustomControl voor het element GroupBy (Format) CustomEntry-element voor CustomControl voor het element GroupBy (Format) voor CustomEntry voor het object GroupBy (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `TypeName` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TypeName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[EntrySelectedBy-element voor CustomEntry voor GroupBy (indeling)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.|
+|[Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -57,8 +50,8 @@ Zie [aangepaste besturings elementen maken](./creating-custom-controls.md)voor m
 
 ## <a name="see-also"></a>Zie ook
 
-[Aangepaste besturings elementen maken](./creating-custom-controls.md)
+[Aangepaste besturingselementen maken](./creating-custom-controls.md)
 
-[EntrySelectedBy-element voor CustomEntry voor GroupBy (indeling)](./entryselectedby-element-for-customentry-for-groupby-format.md)
+[Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

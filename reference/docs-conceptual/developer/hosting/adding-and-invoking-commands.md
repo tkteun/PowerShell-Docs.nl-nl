@@ -1,19 +1,12 @@
 ---
 title: Opdrachten toevoegen en aanroepen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357755"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779791"
 ---
 # <a name="adding-and-invoking-commands"></a>Opdrachten toevoegen en aanroepen
 
@@ -47,7 +40,7 @@ Nadat u een runs Pace hebt gemaakt, kunt u Windows-PowerShellcommands en-scripts
 
 ### <a name="addparameter"></a>AddParameter
 
- In het vorige voor beeld wordt één opdracht zonder para meters uitgevoerd. U kunt para meters toevoegen aan de opdracht met behulp van de methode [System. Management. Automation. Pscommand. Addparameter *.](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) de volgende code haalt een lijst op met alle processen met de naam `PowerShell` uitgevoerd op de computer.
+ In het vorige voor beeld wordt één opdracht zonder para meters uitgevoerd. U kunt para meters toevoegen aan de opdracht met behulp van de methode [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) . de volgende code haalt een lijst op met alle processen die worden `PowerShell` uitgevoerd op de computer.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +72,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie aan het einde van de pijp lijn wordt toegevoegd met de volgende code wordt een lijst met actieve processen met de naam `PowerShell`opgehaald en wordt vervolgens de lijst met actieve services opgehaald.
+ U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie aan het einde van de pijp lijn wordt toegevoegd met de volgende code wordt een lijst met actieve processen met de naam opgehaald `PowerShell` en wordt vervolgens de lijst met actieve services opgehaald.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +83,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen. In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd. In dit voor beeld wordt ervan uitgegaan dat er al een script met de naam `MyScript.ps1` in een map met de naam `D:\PSScripts`is.
+ U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen. In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd. In dit voor beeld wordt ervan uitgegaan dat er al een script `MyScript.ps1` met de naam in een map wordt genoemd `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Er is ook een versie van de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) die een Boole-para meter met de naam `useLocalScope`heeft. Als deze para meter is ingesteld op `true`, wordt het script uitgevoerd in het lokale bereik. Met de volgende code wordt het script uitgevoerd in het lokale bereik.
+ Er is ook een versie van de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) die een Boole-para meter met de naam heeft `useLocalScope` . Als deze para meter is ingesteld op `true` , wordt het script uitgevoerd in het lokale bereik. Met de volgende code wordt het script uitgevoerd in het lokale bereik.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -186,4 +179,4 @@ namespace HostPS3
 
  [Een InitialSessionState maken](./creating-an-initialsessionstate.md)
 
- [Een beperkte runs Pace maken](./creating-a-constrained-runspace.md)
+ [Een beperkte runspace maken](./creating-a-constrained-runspace.md)

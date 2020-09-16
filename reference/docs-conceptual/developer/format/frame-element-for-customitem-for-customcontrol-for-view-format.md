@@ -1,27 +1,20 @@
 ---
 title: Frame-element voor CustomItem voor CustomControl voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
-caps.latest.revision: 6
-ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4864ea1a865f77c9de6e495d7e8296e81c19b366
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354969"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781440"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Het element Frame voor CustomItem voor CustomControl voor Weergave (opmaak)
 
 Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen. Dit element wordt gebruikt bij het definiëren van een aangepaste beheer weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) CustomControl-element (indeling) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor CustomControlView (Format) frame-element voor CustomItem voor CustomControl voor weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) weer gave element (indeling) CustomControl element (Format) CustomEntries element voor CustomControl voor weer gave (Format) CustomEntry-element voor CustomEntries voor weer gave (Format) CustomItem element voor CustomEntry voor CustomControlView (Format) voor CustomItem voor de weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Frame>
@@ -35,7 +28,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Frame` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Frame` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -59,7 +52,7 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-U kunt de [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) -en [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) -elementen niet opgeven in hetzelfde `Frame` element.
+U kunt de [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) -en [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) -elementen in hetzelfde element niet opgeven `Frame` .
 
 ## <a name="see-also"></a>Zie ook
 
@@ -73,4 +66,4 @@ U kunt de [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcont
 
 [CustomItem-element voor CustomEntry voor weer gave (indeling)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

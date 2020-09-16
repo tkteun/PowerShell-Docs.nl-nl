@@ -1,27 +1,20 @@
 ---
 title: Element formats Tring voor lijst item voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd2cac66-88bb-449f-9d47-bd2cd4fe1801
-caps.latest.revision: 13
-ms.openlocfilehash: e6024ec4f7fc490c92408047c8c15c775e45bf9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9ec73aa1c2e8180258722627e30344de4e67bda5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354535"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781576"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>Het element FormatString voor ListItem voor ListControl (opmaak)
 
 Geeft een opmaak patroon aan dat definieert hoe de eigenschap of script waarde wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling) element (Format) List item voor ListControl (indeling) element entry View voor ListControl (Format) List items element voor ListControl Lijst item-element voor ListControl (Format) formats-element voor lijst item voor ListControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling). element (Format) List item voor ListControl (Format) element Entry List voor ListControl (Format) List items element voor ListControl (Format) lijst item element voor ListControl (Format) formats-element voor ListControl (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <FormatString>PropertyPattern</FormatString>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `FormatString` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `FormatString` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -57,7 +50,7 @@ Zie [lijst weergave maken](./creating-a-list-view.md)voor meer informatie over h
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <ListItem>
@@ -68,7 +61,7 @@ In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor d
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
 [Lijst item-element (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)
 

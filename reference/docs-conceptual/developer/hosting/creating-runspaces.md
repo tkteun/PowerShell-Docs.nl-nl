@@ -1,31 +1,24 @@
 ---
 title: Runspaces maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 17f323c3-e873-449e-8a28-477f1c6b5e12
-caps.latest.revision: 6
-ms.openlocfilehash: b4e61600f68521e4e7ab56ceae3349381e88a70a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0c27e2bf54e16a3bdc93c4b91629893bb1cc1e3e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357727"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779570"
 ---
 # <a name="creating-runspaces"></a>Runspaces maken
 
 Een runs Pace is de besturings omgeving voor de opdrachten die worden aangeroepen door een hosttoepassing. Deze omgeving bevat de opdrachten en gegevens die momenteel aanwezig zijn en de taal beperkingen die momenteel van toepassing zijn.
 
- Hosttoepassingen kunnen gebruikmaken van de standaard runs Pace van Windows Power shell, die alle beschik bare kern opdrachten bevat, of een aangepaste runs Pace maken die alleen een subset van de beschik bare opdrachten bevat. Als u een aangepaste runs Pace wilt maken, maakt u een [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object en wijst u dit toe aan uw runs Pace.
+ Hosttoepassingen kunnen gebruikmaken van de standaard runs Pace van Windows Power shell, die alle beschik bare kern opdrachten bevat, of een aangepaste runs Pace maken die alleen een subset van de beschik bare opdrachten bevat. Als u een aangepaste runs Pace wilt maken, maakt u een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object en wijst u dit toe aan uw runs Pace.
 
 ## <a name="runspace-tasks"></a>Runs Pace-taken
 
 1. [Een InitialSessionState maken](./creating-an-initialsessionstate.md)
 
-2. [Een beperkte runs Pace maken](./creating-a-constrained-runspace.md)
+2. [Een beperkte runspace maken](./creating-a-constrained-runspace.md)
 
 3. [Meerdere runspaces maken](./creating-multiple-runspaces.md)
 

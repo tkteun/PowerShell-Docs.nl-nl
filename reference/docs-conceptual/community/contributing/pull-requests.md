@@ -3,12 +3,12 @@ title: Pull-aanvragen verzenden
 description: In dit artikel wordt uitgelegd hoe u pull-aanvragen verzendt naar de Power shell-docs-opslag plaats.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690961"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782647"
 ---
 # <a name="how-to-submit-pull-requests"></a>Pull-aanvragen verzenden
 
@@ -56,9 +56,9 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 U ziet het volgende gedrag:
 
 1. U dient een PR in.
-1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status van controles die zijn ingeschakeld voor de opslagplaats. In dit voorbeeld zijn er twee controles ingeschakeld, namelijk "Commit Validation" en "OpenPublishing.Build":
+1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status ' controles ' die zijn ingeschakeld voor de opslag plaats. In dit voorbeeld zijn er twee controles ingeschakeld, namelijk "Commit Validation" en "OpenPublishing.Build":
 
-   ![sommige controles zijn mislukt](media/pull-requests/validation-failed.png)
+   ![validatie status-sommige controles zijn mislukt](media/pull-requests/validation-failed.png)
 
    De build kan worden door gegeven, zelfs als de commit-validatie is mislukt.
 
@@ -66,7 +66,7 @@ U ziet het volgende gedrag:
 1. Op de pagina Details ziet u alle validatiecontroles die zijn mislukt, met informatie over wat u moet doen om de problemen op te lossen.
 1. Als de validatie slaagt, wordt de volgende opmerking toegevoegd aan de pull-aanvraag:
 
-   ![build-validatie](media/pull-requests/build-validation.png)
+   ![Validatie status: geslaagd](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > Als u een externe mede werker (niet een micro soft-mede werker) bent, hebt u geen toegang tot de gedetailleerde rapporten van de build of de preview-koppelingen.

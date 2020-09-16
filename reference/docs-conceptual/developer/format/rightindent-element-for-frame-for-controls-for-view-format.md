@@ -1,27 +1,20 @@
 ---
 title: RightIndent-element voor frame voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af128d87-24f3-4e33-9457-6f8678993236
-caps.latest.revision: 6
-ms.openlocfilehash: b9b66adb9c36977859c9516dc132f99be424d12b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353968"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780454"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 
 Hiermee geeft u op hoeveel tekens de gegevens van de rechter marge worden verplaatst. Dit element wordt gebruikt bij het definiëren van besturings elementen die kunnen worden gebruikt door een weer gave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (opmaak) voor besturings elementen voor de weer gave (indeling) CustomControl-element voor besturings elementen voor Controls (Format) CustomEntries element voor CustomControl voor View (Format) CustomEntry-element voor CustomEntries voor besturings elementen voor weer gave (Format) CustomItem-element voor CustomEntry voor besturings elementen voor de weer gave (Format)-frame-element voor CustomItem voor besturings elementen voor weer gave (indeling) RightIndent element van frame van Besturings elementen van weer gave (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (indeling) voor besturings elementen voor weer gave (indeling) CustomControl-element voor besturings elementen voor het element Control Format) CustomEntry element voor CustomEntries voor besturings elementen voor de weer gave (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor het frame-element van de weer gave (Format) voor CustomItem voor besturings elementen voor de weer gave (indeling) RightIndent element van het frame van de besturings elementen van de weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <RightIndent>CharactersToShift</RightIndent>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `RightIndent` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `RightIndent` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -53,6 +46,6 @@ Geef het aantal tekens op waarmee u de gegevens naar rechts wilt verplaatsen.
 
 ## <a name="see-also"></a>Zie ook
 
-[Frame-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./frame-element-for-customitem-for-controls-for-view-format.md)
+[Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

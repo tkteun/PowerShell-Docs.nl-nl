@@ -1,27 +1,20 @@
 ---
 title: Element formats Tring voor TableColumnItem voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8a150731-d4b4-4d63-8db5-f14d463c8c37
-caps.latest.revision: 13
-ms.openlocfilehash: b7e1d0adc43254141056a729e1c1cc9699b6ac9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 848583e697d0ab7bd5b017c14c47aba3c51a3c17
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355018"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781542"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>Het element FormatString voor TableColumnItem voor TableControl (opmaak)
 
 Hiermee geeft u een indelings patroon op dat definieert hoe de eigenschap of script waarde van de tabel wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) TableColumnItems element (indeling) TableColumnItem element (indeling) Element formats Tring voor TableColumnItem (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) TableColumnItems element (indeling) TableColumnItem element (opmaak) formats element voor TableColumnItem (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <FormatString>FormatPattern</FormatString>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `FormatString` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `FormatString` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -57,7 +50,7 @@ Zie [tabel weergave](./creating-a-table-view.md)voor meer informatie over de ond
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <TableColumnItem>
@@ -68,10 +61,10 @@ In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor d
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Weer gegeven gegevens opmaken](./formatting-displayed-data.md)
+[Weergegeven gegevens opmaken](./formatting-displayed-data.md)
 
 [TableColumnItem-element (indeling)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

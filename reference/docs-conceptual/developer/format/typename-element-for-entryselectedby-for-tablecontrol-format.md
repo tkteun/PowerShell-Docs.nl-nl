@@ -1,27 +1,20 @@
 ---
 title: TypeName-element voor EntrySelectedBy voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd872ada-d476-4c4d-a788-ccac3f983070
-caps.latest.revision: 10
-ms.openlocfilehash: 7bbb47268a23fcb37a34e2287a6ce949313a13bb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c514d3e6155278ddd3a0565c87e9377dc8419356
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353562"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780199"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>Het element TypeName voor EntrySelectedBy voor TableControl (opmaak)
 
 Hiermee geeft u een .NET-type op dat gebruikmaakt van dit item van de tabel weergave. Er is geen limiet voor het aantal typen dat voor een tabel vermelding kan worden opgegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) EntrySelectedBy element (indeling) element-TypeName voor EntrySelectedBy voor TableRowEntry (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) TableControl element (indeling) TableRowEntries element (indeling) TableRowEntry element (indeling) EntrySelectedBy element (indeling) element-TypeName voor EntrySelectedBy voor TableRowEntry (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `TypeName` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TypeName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -57,8 +50,8 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
 [EntrySelectedBy-element (indeling)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

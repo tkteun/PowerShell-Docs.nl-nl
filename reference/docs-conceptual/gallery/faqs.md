@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
-ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500575"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777821"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -36,12 +36,12 @@ Nadat u in de galerie hebt geregistreerd, gebruikt u de cmdlets [Publish-module]
 
 **U hoeft zich niet te registreren of u aan te melden bij de galerie om pakketten te installeren of op te slaan.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat houdt dat in?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ik heb ' kan de aanvraag niet verwerken ' ontvangen. ' De opgegeven API-sleutel is ongeldig of heeft geen machtiging voor toegang tot het opgegeven pakket. De externe server heeft een fout geretourneerd: (403) verboden. " fout bij het publiceren van een pakket naar het PowerShell Gallery. Wat betekent dat?
 
 Deze fout kan de volgende oorzaken hebben:
 
 - **De opgegeven API-sleutel is ongeldig.** Zorg ervoor dat u de geldige API-sleutel hebt opgegeven in uw account. Als u uw API-sleutel wilt ophalen, bekijkt u de profiel pagina.
-- **De opgegeven pakket naam is geen eigendom van u.** Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de `https://www.powershellgallery.com/packages/<packageName>`pagina Details van het pakket:. Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` de pagina met details van de ziekte gaat gaan, kunt u deze niet meer weer geven. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
+- **De opgegeven pakket naam is geen eigendom van u.** Als u hebt bevestigd dat uw API-sleutel juist is, bestaat er mogelijk al een pakket met dezelfde naam als de versie die u probeert te gebruiken. Het pakket is mogelijk niet meer vermeld door de eigenaar, in dat geval wordt het niet weer gegeven in de zoek resultaten. Als u wilt bepalen of er al een pakket met dezelfde naam bestaat, opent u een browser en navigeert u naar de pagina Details van het pakket: `https://www.powershellgallery.com/packages/<packageName>` . Als u bijvoorbeeld rechtstreeks naar `https://www.powershellgallery.com/packages/pester` de pagina met details van de ziekte gaat gaan, kunt u deze niet meer weer geven. Als er al een pakket met een conflicterende naam bestaat en niet is vermeld, kunt u het volgende doen:
   - Selecteer een andere naam voor het pakket.
   - Neem contact op met de eigen aren van het bestaande pakket.
 
@@ -125,7 +125,7 @@ PowerShellGet maakt gebruik van NuGet-provider om te werken met opslag plaatsen 
 
 U kunt PowerShellGet gebruiken voor elke geldige NuGet-opslag plaats of-bestands share. U hoeft alleen de opslag plaats toe te voegen door de cmdlet [REGI ster-PSRepository][] uit te voeren.
 
-## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Betekent dit dat ik NuGet. exe kan gebruiken om met de galerie te werken?
+## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Betekent dit dat ik NuGet.exe gebruiken om met de galerie te werken?
 
 Ja.
 
@@ -133,11 +133,11 @@ Ja.
 
 Onder de motorkap maakt PowerShellGet intensief gebruik van Package Management-infra structuur.
 
-Op de Power shell-cmdlet [-laag is install-module][] eigenlijk een smalle `Install-Package -Provider PSModule`wrapper rondom.
+Op de Power shell-cmdlet [-laag is install-module][] eigenlijk een smalle wrapper rondom `Install-Package -Provider PSModule` .
 
 In de laag van de package management-pakket provider roept de PSModule-pakket provider echt aan bij andere package management-pakket providers. Als u bijvoorbeeld werkt met galerieën op basis van NuGet (zoals de PowerShell Gallery), gebruikt de PSModule-pakket provider de NuGet-pakket provider om met de opslag plaats te werken.
 
-![PowerShellGet-architectuur](media/faqs/powershellgetArchitecture.png)
+![Diagram van de PowerShellGet-architectuur](media/faqs/powershellgetArchitecture.png)
 
 Afbeelding 1: PowerShellGet-architectuur
 

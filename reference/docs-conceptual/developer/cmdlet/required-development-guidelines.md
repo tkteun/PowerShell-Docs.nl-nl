@@ -1,19 +1,12 @@
 ---
 title: Vereiste ontwikkel richtlijnen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
-caps.latest.revision: 19
-ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359295"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781695"
 ---
 # <a name="required-development-guidelines"></a>Vereiste richtlijnen voor de ontwikkeling
 
@@ -21,7 +14,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 ## <a name="in-this-topic"></a>In dit onderwerp
 
-### <a name="design-guidelines"></a>Ontwerprichtlijnen
+### <a name="design-guidelines"></a>Ontwerp richtlijnen
 
 - [Alleen goedgekeurde werk woorden gebruiken (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +44,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 - [Een Windows Power shell-module gebruiken voor het implementeren van uw cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Ontwerprichtlijnen
+## <a name="design-guidelines"></a>Ontwerp richtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -75,7 +68,7 @@ De opdracht die is opgegeven in het cmdlet-kenmerk moet afkomstig zijn uit de he
 
 Zie cmdlet-werk [woorden](./approved-verbs-for-windows-powershell-commands.md)voor meer informatie over de namen van goedgekeurde werk woorden.
 
-Gebruikers moeten een set Detecteer bare en verwachte cmdlet-namen hebben. Gebruik de juiste opdracht, zodat de gebruiker een snelle beoordeling kan doen van wat een cmdlet doet en om eenvoudig de mogelijkheden van het systeem te ontdekken. De volgende opdracht regel opdracht haalt bijvoorbeeld een lijst op met alle opdrachten op het systeem waarvan de naam begint met ' Start ': `get-command start-*`. Gebruik de zelfstandige naam woorden in de cmdlets om uw cmdlets te onderscheiden van andere cmdlets. Het zelfstandig naam woord geeft de resource aan waarop de bewerking wordt uitgevoerd. De bewerking zelf wordt vertegenwoordigd door de term.
+Gebruikers moeten een set Detecteer bare en verwachte cmdlet-namen hebben. Gebruik de juiste opdracht, zodat de gebruiker een snelle beoordeling kan doen van wat een cmdlet doet en om eenvoudig de mogelijkheden van het systeem te ontdekken. De volgende opdracht regel opdracht haalt bijvoorbeeld een lijst op met alle opdrachten op het systeem waarvan de naam begint met ' Start ': `get-command start-*` . Gebruik de zelfstandige naam woorden in de cmdlets om uw cmdlets te onderscheiden van andere cmdlets. Het zelfstandig naam woord geeft de resource aan waarop de bewerking wordt uitgevoerd. De bewerking zelf wordt vertegenwoordigd door de term.
 
 ### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>Cmdlet-namen: tekens die niet kunnen worden gebruikt (RD02)
 
@@ -89,11 +82,11 @@ Wanneer u een naam voor cmdlets gebruikt, mag u de volgende speciale tekens niet
 |{}|accolades|
 |[]|haken|
 |&|operator|
-|-|afbreek streepje **:** het koppel teken kan worden gebruikt om de term van het zelfstandig naam woord te scheiden, maar kan niet worden gebruikt binnen het zelfstandige zelfstandig of in de term.|
+|-|afbreek streepje **:**  het koppel teken kan worden gebruikt om de term van het zelfstandig naam woord te scheiden, maar kan niet worden gebruikt binnen het zelfstandige zelfstandig of in de term.|
 |/|slash-teken|
 |\\| back slash|
 |$|dollarteken|
-|^|caret|
+|^|dakje|
 |;|dubbele|
 |:|punt|
 |"|dubbel aanhalings teken|
@@ -122,7 +115,7 @@ Als u deze aanroepen wilt maken, moet de cmdlet opgeven dat deze bevestigings aa
 > [!NOTE]
 > Als het cmdlet-kenmerk van de klasse cmdlet aangeeft dat de cmdlet aanroepen ondersteunt naar de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) en de cmdlet de aanroep naar de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) niet kan aanroepen, kan de gebruiker het systeem onverwacht wijzigen.
 
-Gebruik de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) voor elke wijziging van het systeem. Een gebruikers voorkeur en de `WhatIf` para meter bepalen de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . De aanroep [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) voert daarentegen een extra controle uit op mogelijke schadelijke wijzigingen. Deze methode wordt niet beheerd door een gebruikers voorkeur of de para meter `WhatIf`. Als uw cmdlet de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moet deze een `Force` para meter hebben die de aanroepen naar deze twee methoden omzeilt en die de bewerking doorloopt. Dit is belang rijk omdat de cmdlet kan worden gebruikt in niet-interactieve scripts en hosts.
+Gebruik de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) voor elke wijziging van het systeem. Een gebruikers voorkeur en de `WhatIf` para meter bepalen de methode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . De aanroep [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) voert daarentegen een extra controle uit op mogelijke schadelijke wijzigingen. Deze methode wordt niet beheerd door een gebruikers voorkeur of de `WhatIf` para meter. Als uw cmdlet de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aanroept, moet deze een `Force` para meter hebben die de aanroepen naar deze twee methoden omzeilt en die de bewerking doorloopt. Dit is belang rijk omdat de cmdlet kan worden gebruikt in niet-interactieve scripts en hosts.
 
 Als uw cmdlets ondersteuning bieden voor deze aanroepen, kan de gebruiker bepalen of de actie daad werkelijk moet worden uitgevoerd. De cmdlet [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) roept bijvoorbeeld de methode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aan voordat een set kritieke processen wordt gestopt, met inbegrip van de systeem-, Winlogon-en Spoolsv-processen.
 
@@ -200,7 +193,7 @@ Een beheer omgeving detecteert en brengt belang rijke wijzigingen aan in het sys
 
 - Het [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -object waarnaar wordt verwezen door de methoden [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) en [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) , vereist een uitzonde ring op de kern. Volg de .NET Framework ontwerp richtlijnen wanneer u de uitzonde ring bepaalt die moet worden gebruikt. Als de fout semantisch gelijk is aan die van een bestaande uitzonde ring, moet u die uitzonde ring gebruiken of afleiden van die uitzonde ring. Anders moet u een nieuwe uitzonde ring of uitzonderings hiërarchie rechtstreeks van het type [System. Exception](/dotnet/api/System.Exception) afleiden.
 
-Voor een object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) is ook een fout categorie vereist waarin fouten voor de gebruiker worden gegroepeerd. De gebruiker kan fouten weer geven op basis van de categorie door de waarde van de `$ErrorView`-shell variabele in te stellen op CategoryView. De mogelijke categorieën worden gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
+Voor een object [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) is ook een fout categorie vereist waarin fouten voor de gebruiker worden gegroepeerd. De gebruiker kan fouten weer geven op basis van de categorie door de waarde van de `$ErrorView` shell-variabele in te stellen op CategoryView. De mogelijke categorieën worden gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
 
 - Als een cmdlet een nieuwe thread maakt en de code die in die thread wordt uitgevoerd, een niet-verwerkte uitzonde ring genereert, wordt de fout niet onderschept door Windows Power shell en wordt het proces beëindigd.
 
@@ -212,8 +205,8 @@ Maak een Windows Power shell-module voor het inpakken en implementeren van uw cm
 
 ## <a name="see-also"></a>Zie ook
 
-[Sterk aanbevolen ontwikkel richtlijnen](./strongly-encouraged-development-guidelines.md)
+[Zeer aangeraden richtlijnen voor de ontwikkeling](./strongly-encouraged-development-guidelines.md)
 
-[Richt lijnen voor advies ontwikkeling](./advisory-development-guidelines.md)
+[Geadviseerde richtlijnen voor de ontwikkeling](./advisory-development-guidelines.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,27 +1,20 @@
 ---
 title: Element formats Tring voor WideItem voor WideControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
-caps.latest.revision: 7
-ms.openlocfilehash: a1dc145864a6904fd4af6c3b9187819c49e224b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4f1f0826a1cebb1526858875df640baac9d4ce48
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354542"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781525"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>Het element FormatString voor WideItem voor WideControl (opmaak)
 
 Geeft een indelings patroon aan dat definieert hoe de eigenschap of script waarde wordt weer gegeven in de weer gave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) WideControl element (indeling) WideEntries element (indeling) WideEntry element voor WideControl (Format) WideItem element voor WideControl (indeling) formats Tring element voor WideItem voor WideControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) WideControl element (indeling) WideEntries element (indeling) WideEntry element voor WideControl (Format) WideItem-element voor WideControl (Format) voor WideItem-element voor WideControl (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <FormatString>PropertyPattern</FormatString>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `FormatString` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `FormatString` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[WideItem-element voor WideControl (indeling)](./wideitem-element-for-widecontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
+|[Het element WideItem voor WideControl (opmaak)](./wideitem-element-for-widecontrol-format.md)|Hiermee wordt de eigenschap of het script gedefinieerd waarvan de waarde wordt weer gegeven in een rij van de lijst weergave.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -57,7 +50,7 @@ Zie [een brede weer gave maken](./creating-a-wide-view.md)voor meer informatie o
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de eigenschap `StartTime`.
+In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor de waarde van de `StartTime` eigenschap.
 
 ```xml
 <WideItem>
@@ -68,8 +61,8 @@ In het volgende voor beeld ziet u hoe u een opmaak teken reeks definieert voor d
 
 ## <a name="see-also"></a>Zie ook
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[WideItem-element voor WideControl (indeling)](./wideitem-element-for-widecontrol-format.md)
+[Het element WideItem voor WideControl (opmaak)](./wideitem-element-for-widecontrol-format.md)
 
 [Een Windows Power shell-indeling en-type bestand schrijven](./writing-a-powershell-formatting-file.md)

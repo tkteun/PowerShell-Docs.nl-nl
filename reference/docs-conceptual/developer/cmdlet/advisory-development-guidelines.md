@@ -1,37 +1,30 @@
 ---
 title: Richt lijnen voor advies ontwikkeling | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
-caps.latest.revision: 9
-ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dc8ef586954106f6d7fbce550dc22cd935018936
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359489"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782426"
 ---
 # <a name="advisory-development-guidelines"></a>Geadviseerde richtlijnen voor de ontwikkeling
 
 In deze sectie worden richt lijnen beschreven waarmee u rekening moet houden om te zorgen voor een goede ontwikkeling en gebruikers ervaring. Soms kunnen ze van toepassing zijn, en soms ook niet.
 
-## <a name="design-guidelines"></a>Ontwerprichtlijnen
+## <a name="design-guidelines"></a>Ontwerp richtlijnen
 
 Bij het ontwerpen van cmdlets moet u rekening houden met de volgende richt lijnen. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>Een input object-para meter (AD01) ondersteunen
 
-Omdat Windows Power shell rechtstreeks werkt met Microsoft .NET Framework-objecten, is een .NET Framework-object vaak beschikbaar dat exact overeenkomt met het type dat de gebruiker nodig heeft om een bepaalde bewerking uit te voeren. `InputObject` is de standaard naam voor een para meter waarmee zo'n object als invoer wordt gebruikt. De voor beeld van de cmdlet **Stop-proc** in de [zelf studie StopProc](./stopproc-tutorial.md) definieert een `InputObject` parameter van het type proces die de invoer van de pijp lijn ondersteunt. De gebruiker kan een set proces objecten ophalen, ze bewerken om de exacte objecten te selecteren die moeten worden gestopt en deze vervolgens rechtstreeks door geven aan de cmdlet **Stop-proc** .
+Omdat Windows Power shell rechtstreeks werkt met Microsoft .NET Framework-objecten, is een .NET Framework-object vaak beschikbaar dat exact overeenkomt met het type dat de gebruiker nodig heeft om een bepaalde bewerking uit te voeren. `InputObject` is de standaard naam voor een para meter waarmee zo'n object als invoer wordt gebruikt. De voor beeld van de cmdlet **Stop-proc** in de [StopProc-zelf studie](./stopproc-tutorial.md) definieert een `InputObject` para meter van het type proces die de invoer van de pijp lijn ondersteunt. De gebruiker kan een set proces objecten ophalen, ze bewerken om de exacte objecten te selecteren die moeten worden gestopt en deze vervolgens rechtstreeks door geven aan de cmdlet **Stop-proc** .
 
 ### <a name="support-the-force-parameter-ad02"></a>Ondersteuning voor de para meter Force (AD02)
 
 In sommige gevallen moet een cmdlet de gebruiker beveiligen tegen het uitvoeren van een aangevraagde bewerking. Een dergelijke cmdlet moet een `Force` para meter ondersteunen zodat de gebruiker die beveiliging kan onderdrukken als de gebruiker gemachtigd is om de bewerking uit te voeren.
 
-De cmdlet [Remove-item](/powershell/module/microsoft.powershell.management/remove-item) verwijdert bijvoorbeeld Norma liter geen alleen-lezen bestand. Deze cmdlet ondersteunt echter een `Force` para meter, zodat een gebruiker het verwijderen van een alleen-lezen bestand kan afdwingen. Als de gebruiker al gemachtigd is om het kenmerk alleen-lezen te wijzigen en de gebruiker het bestand verwijdert, vereenvoudigt het gebruik van de para meter `Force` de bewerking. De para meter `Force` heeft echter geen effect als de gebruiker niet gemachtigd is om het bestand te verwijderen.
+De cmdlet [Remove-item](/powershell/module/microsoft.powershell.management/remove-item) verwijdert bijvoorbeeld Norma liter geen alleen-lezen bestand. Deze cmdlet ondersteunt echter een `Force` para meter, zodat een gebruiker het verwijderen van een alleen-lezen bestand kan afdwingen. Als de gebruiker al gemachtigd is om het kenmerk alleen-lezen te wijzigen en de gebruiker het bestand verwijdert, vereenvoudigt het gebruik van de `Force` para meter de bewerking. De `Force` para meter heeft echter geen effect als de gebruiker niet gemachtigd is om het bestand te verwijderen.
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Referenties afhandelen via Windows Power shell (AD03)
 
@@ -55,11 +48,11 @@ Door de volgende standaard naamgevings conventies te gebruiken, kunt u uw cmdlet
 
 #### <a name="define-a-cmdlet-in-the-correct-namespace"></a>Een cmdlet in de juiste naam ruimte definiëren
 
-Normaal gesp roken definieert u de klasse voor een cmdlet in een .NET Framework naam ruimte die wordt toegevoegd. Commands "naar de naam ruimte die het product vertegenwoordigt waarin de cmdlet wordt uitgevoerd. Cmdlets die zijn opgenomen in Windows Power shell, worden bijvoorbeeld gedefinieerd in de naam ruimte `Microsoft.PowerShell.Commands`.
+Normaal gesp roken definieert u de klasse voor een cmdlet in een .NET Framework naam ruimte die wordt toegevoegd. Commands "naar de naam ruimte die het product vertegenwoordigt waarin de cmdlet wordt uitgevoerd. Cmdlets die zijn opgenomen in Windows Power shell, worden bijvoorbeeld gedefinieerd in de `Microsoft.PowerShell.Commands` naam ruimte.
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>Geef de cmdlet-klasse een naam die overeenkomt met de naam van de cmdlet
 
-Wanneer u de .NET Framework klasse die een cmdlet implementeert, een naam Geef de klasse ' *\<term > **\<zelfstandignaam >** \<opdracht*> ', waarbij u het *\<woord* > en *\<* tijdelijke aanduidingen voor de naam van de cmdlet vervangt door de bewerking en het zelfstandige woord groep dat u hebt gebruikt voor de para-out. De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) wordt bijvoorbeeld geïmplementeerd door een klasse met de naam `GetProcessCommand`.
+Wanneer u een naam voor de .NET Framework klasse die een cmdlet implementeert, een naam genoemd *\<Verb>**\<Noun>**\<Command>* , waarbij u de *\<Verb>* *\<Noun>* tijdelijke aanduidingen vervangt door het woord en het zelfstandig naam woord dat wordt gebruikt voor de cmdletnaam. De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) wordt bijvoorbeeld geïmplementeerd door een klasse met de naam `GetProcessCommand` .
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Als er geen invoer van de pijp lijn is, wordt de methode BeginProcessing (AC02) overschreven
 
@@ -73,7 +66,7 @@ Overschrijf de methode [System. Management. Automation. cmdlet. StopProcessing](
 
 Als uw cmdlet objecten bevat die niet worden verwijderd van (geschreven naar de pijp lijn) door de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , moet uw cmdlet mogelijk extra objecten worden verwijderd. Als uw cmdlet bijvoorbeeld een bestands ingang opent in de methode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) en de ingang geopend heeft voor gebruik door de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , moet deze ingang worden gesloten aan het einde van de verwerking.
 
-De Windows Power shell-runtime roept niet altijd de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) aan. Zo kan de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) niet worden aangeroepen als de cmdlet halverwege de bewerking wordt geannuleerd of als er een afsluit fout optreedt in een deel van de cmdlet. Daarom moet de klasse .NET Framework voor een cmdlet die het opruimen van objecten vereist, het volledige [System. IDisposable](/dotnet/api/System.IDisposable) -interface patroon implementeren, met inbegrip van de FINALIZE, zodat de Windows Power shell-runtime de methoden [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System. IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose) aan het einde van de verwerking kan aanroepen.
+De Windows Power shell-runtime roept niet altijd de methode  [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) aan. Zo kan de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) niet worden aangeroepen als de cmdlet halverwege de bewerking wordt geannuleerd of als er een afsluit fout optreedt in een deel van de cmdlet. Daarom moet de klasse .NET Framework voor een cmdlet die het opruimen van objecten vereist, het volledige  [System. IDisposable](/dotnet/api/System.IDisposable) -interface patroon implementeren, met inbegrip van de FINALIZE, zodat de Windows Power shell-runtime de methoden [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) en [System. IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose) aan het einde van de verwerking kan aanroepen.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Gebruik een gebruiks vriendelijke parameter typen (AC05) voor serialisatie
 
@@ -117,8 +110,8 @@ Gebruik voor het verwerken van gevoelige gegevens altijd het gegevens type [Syst
 
 ## <a name="see-also"></a>Zie ook
 
-[Vereiste ontwikkel richtlijnen](./required-development-guidelines.md)
+[Vereiste richtlijnen voor de ontwikkeling](./required-development-guidelines.md)
 
-[Sterk aanbevolen ontwikkel richtlijnen](./strongly-encouraged-development-guidelines.md)
+[Zeer aangeraden richtlijnen voor de ontwikkeling](./strongly-encouraged-development-guidelines.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

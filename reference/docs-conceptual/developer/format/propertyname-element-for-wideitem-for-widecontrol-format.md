@@ -1,19 +1,12 @@
 ---
 title: Het element PropertyName voor WideItem voor WideControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3d91d0e6-bf18-4587-b651-db66849e5df5
-caps.latest.revision: 6
-ms.openlocfilehash: 326880834cd82ab826aadc409cd7a8f21cd36824
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7728f960a67faa99eaafb4a4934674e119b8af27
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355879"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780471"
 ---
 # <a name="propertyname-element-for-wideitem-for-widecontrol-format"></a>Het element PropertyName voor WideItem voor WideControl (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u de eigenschap op van het object waarvan de waarde wordt weer geg
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) WideControl element (indeling) WideEntries element (indeling) WideEntry element (indeling) WideItem element (indeling) eigenschap Naam element voor WideItem (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <PropertyName>.NetTypeProperty</PropertyName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element van w
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `PropertyName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `PropertyName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -80,6 +73,6 @@ View>
 
 [WideItem-element (indeling)](./wideitem-element-for-widecontrol-format.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

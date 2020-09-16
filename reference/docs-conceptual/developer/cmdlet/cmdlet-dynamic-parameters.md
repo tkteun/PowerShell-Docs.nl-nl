@@ -1,19 +1,12 @@
 ---
 title: Cmdlet dynamische para meters | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
-caps.latest.revision: 13
-ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f44f71326d4711242c754c332a151dd997721595
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359442"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782358"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Cmdlet dynamische para meters
 
@@ -24,7 +17,7 @@ Met cmdlets kunt u para meters definiëren die beschikbaar zijn voor de gebruike
 
 ## <a name="dynamic-parameters-in-powershell-cmdlets"></a>Dynamische para meters in Power shell-cmdlets
 
-Power shell gebruikt dynamische para meters in verschillende provider-cmdlets. Bijvoorbeeld, de cmdlets `Get-Item` en `Get-ChildItem` een **CodeSigningCert** -para meter tijdens runtime toevoegen wanneer de para meter **Path** het pad naar de **certificaat** provider specificeert. Als met de para meter **Path** een pad voor een andere provider wordt opgegeven, is de para meter **CodeSigningCert** niet beschikbaar.
+Power shell gebruikt dynamische para meters in verschillende provider-cmdlets. De `Get-Item` `Get-ChildItem` cmdlets en voegen bijvoorbeeld tijdens runtime een **CodeSigningCert** -para meter toe wanneer de para meter **Path** het pad naar de **certificaat** provider specificeert. Als met de para meter **Path** een pad voor een andere provider wordt opgegeven, is de para meter **CodeSigningCert** niet beschikbaar.
 
 In de volgende voor beelden ziet u hoe de para meter **CodeSigningCert** wordt toegevoegd tijdens runtime wanneer `Get-Item` wordt uitgevoerd.
 
@@ -115,6 +108,6 @@ Zie [dynamische para meters declareren](./how-to-declare-dynamic-parameters.md)v
 
 [System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Dynamische para meters declareren](./how-to-declare-dynamic-parameters.md)
+[Dynamische parameters declareren](./how-to-declare-dynamic-parameters.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

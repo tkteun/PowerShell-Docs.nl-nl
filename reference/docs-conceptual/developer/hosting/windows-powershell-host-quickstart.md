@@ -1,19 +1,12 @@
 ---
 title: Snelstartgids voor Windows Power shell-host | Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
-caps.latest.revision: 9
-ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fea6bd5ae49ecf552c583271ee9d869b1ccebae8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352988"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779400"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snelstartgids voor Windows PowerShell-hosts
 
@@ -58,7 +51,7 @@ Als u niet wilt dat het resultaat van een vorige opdracht naar een opdracht word
 
 In het vorige voor beeld wordt één opdracht zonder para meters uitgevoerd.
 U kunt para meters toevoegen aan de opdracht met behulp van de methode [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) .
-Met de volgende code wordt bijvoorbeeld een lijst opgehaald van alle processen met de naam `PowerShell` uitgevoerd op de computer.
+Met de volgende code wordt bijvoorbeeld een lijst opgehaald van alle processen die worden `PowerShell` uitgevoerd op de computer.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +84,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie wordt toegevoegd aan het einde van de pijp lijn.
-Met de volgende code wordt een lijst met actieve processen met de naam `PowerShell`opgehaald en wordt vervolgens de lijst met actieve services opgehaald.
+Met de volgende code wordt een lijst met actieve processen met de naam opgehaald `PowerShell` en wordt vervolgens de lijst met actieve services opgehaald.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +97,15 @@ ps.Invoke();
 
 U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen.
 In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd.
-In dit voor beeld wordt ervan uitgegaan dat er al een script met de naam `MyScript.ps1` in een map met de naam `D:\PSScripts`is.
+In dit voor beeld wordt ervan uitgegaan dat er al een script `MyScript.ps1` met de naam in een map wordt genoemd `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Er is ook een versie van de methode AddScript die een Boole-para meter met de naam `useLocalScope`heeft.
-Als deze para meter is ingesteld op `true`, wordt het script uitgevoerd in het lokale bereik.
+Er is ook een versie van de methode AddScript die een Boole-para meter met de naam heeft `useLocalScope` .
+Als deze para meter is ingesteld op `true` , wordt het script uitgevoerd in het lokale bereik.
 Met de volgende code wordt het script uitgevoerd in het lokale bereik.
 
 ```csharp
@@ -125,11 +118,11 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 Hoewel de standaard runs Pace die in de vorige voor beelden wordt gebruikt, alle kern opdrachten van Windows Power shell laden, kunt u een aangepaste runs Pace maken waarmee alleen een opgegeven subset van alle opdrachten wordt geladen.
 U kunt dit doen om de prestaties te verbeteren (het laden van een groter aantal opdrachten is een prestatie treffer), of om de functionaliteit van de gebruiker te beperken om bewerkingen uit te voeren.
 Een runs Pace waarmee slechts een beperkt aantal opdrachten wordt weer gegeven, wordt een beperkte runs Pace genoemd.
-Als u een beperkte runs Pace wilt maken, gebruikt u de klassen [System. Management. Automation. Runspaces. runs Pace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) en [System. Management. Automation. Runspaces. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+Als u een beperkte runs Pace wilt maken, gebruikt u de klassen [System. Management. Automation. Runspaces. runs Pace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) en [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 ### <a name="creating-an-initialsessionstate-object"></a>Een InitialSessionState-object maken
 
-Als u een aangepaste runs Pace wilt maken, moet u eerst een [System. Management. Automation. Runspaces. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
+Als u een aangepaste runs Pace wilt maken, moet u eerst een [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object maken.
 In het volgende voor beeld gebruiken we [System. Management. Automation. Runspaces. RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) om een runs Pace te maken na het maken van een standaard InitialSessionState-object.
 
 ```csharp
@@ -144,14 +137,14 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>De runs Pace beperken
 
-In het vorige voor beeld is een standaard [System. Management. Automation. Runspaces. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object gemaakt dat alle ingebouwde kernen van Windows Power shell laadt.
-We hebben ook de methode [System. Management. Automation. Runspaces. InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) aangeroepen om een InitialSessionState-object te maken dat alleen de opdrachten in de module micro soft. Power shell. Core zou laden.
-Als u een meer beperkte runs Pace wilt maken, moet u een leeg InitialSessionState-object maken door de methode [System. Management. Automation. Runspaces. InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) aan te roepen en vervolgens opdrachten toe te voegen aan de InitialSessionState.
+In het vorige voor beeld is een standaard [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object gemaakt waarmee alle ingebouwde kernen van Windows Power shell worden geladen.
+We hebben ook de [System.Management.Automation.Runspaces.InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) -methode aangeroepen om een InitialSessionState-object te maken dat alleen de opdrachten in de module micro soft. Power shell. Core zou laden.
+Als u een meer beperkte runs Pace wilt maken, moet u een leeg InitialSessionState-object maken door de [System.Management.Automation.Runspaces.InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) -methode aan te roepen en vervolgens opdrachten toe te voegen aan de InitialSessionState.
 
 Het gebruik van een runs Pace waarmee alleen de door u opgegeven opdrachten worden geladen, levert aanzienlijk betere prestaties.
 
 U gebruikt de methoden van de klasse [System. Management. Automation. Runspaces. SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) om cmdlets te definiëren voor de oorspronkelijke sessie status.
-In het volgende voor beeld wordt een lege begin sessie status gemaakt. vervolgens worden de `Get-Command`-en `Import-Module`-opdrachten voor de eerste sessie status gedefinieerd en toegevoegd.
+In het volgende voor beeld wordt een lege begin sessie status gemaakt `Get-Command` . vervolgens worden de opdrachten en toegevoegd `Import-Module` aan de eerste sessie status.
 Vervolgens maken we een runs Pace die is beperkt door de eerste sessie status en voert u de opdrachten in die runs Pace uit.
 
 Maak de eerste sessie status.

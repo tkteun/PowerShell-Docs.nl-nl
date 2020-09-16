@@ -1,19 +1,12 @@
 ---
 title: Voor beelden van aangepaste host | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
-caps.latest.revision: 11
-ms.openlocfilehash: 1e58b74cf1c37c70ebfb0f4970cfbf8a8263ec5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a10d3da6d8bf93986a3f5b029fdae3afb23a903
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357678"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779519"
 ---
 # <a name="custom-host-samples"></a>Voorbeelden van aangepaste hosts
 
@@ -23,7 +16,7 @@ Deze sectie bevat voorbeeld code voor het schrijven van een aangepaste host. U k
 
  [Host01](./host01-sample.md) -voor beeld In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaakt van een eenvoudige aangepaste host.
 
- [Host02](./host02-sample.md) -voor beeld In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host. Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh. exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.
+ [Host02](./host02-sample.md) -voor beeld In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van de Windows Power shell-runtime samen met een aangepaste implementatie van de host. Met de hosttoepassing wordt de host-cultuur ingesteld op Duits, wordt de cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) uitgevoerd en worden de resultaten weer gegeven zoals u deze zou zien met behulp van pwrsh.exe, waarna de huidige gegevens en tijd in het Duits worden afgedrukt.
 
  [Host03](./host03-sample.md) -voor beeld Dit voor beeld laat zien hoe u een interactieve op een console gebaseerde host-toepassing bouwt waarmee opdrachten worden gelezen vanaf de opdracht regel, de opdrachten worden uitgevoerd en de resultaten vervolgens worden weer gegeven in de console.
 

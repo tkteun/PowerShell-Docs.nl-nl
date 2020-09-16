@@ -1,27 +1,20 @@
 ---
 title: PropertyName-element voor lijst item voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
-caps.latest.revision: 12
-ms.openlocfilehash: 405184f7bdbf1955f1df7766bf2723c244dcc27f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9ee466d7f73e53b129f8d46f49a21549683bb32c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354087"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780828"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>Het element PropertyName voor ListItem voor ListControl (opmaak)
 
 Hiermee geeft u de .NET-eigenschap op waarvan de waarde wordt weer gegeven in de lijst.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl-element (indeling) element (indeling) List item (Format) element (notatie) List items element (Format) lijst item element (indeling) eigenschap naam Lijst item (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) ListControl element (indeling) (Format) List item (Format) element Entry element (indeling) List items element (Format) lijst item element (indeling) eigenschap Naam element voor lijst item (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <PropertyName>.NetTypeProperty</PropertyName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `PropertyName` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `PropertyName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -69,10 +62,10 @@ ListItem>
 
 ## <a name="see-also"></a>Zie ook
 
-[Script block-element voor lijst item voor ListControl (indeling)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
+[Het element ScriptBlock voor ListItem voor ListControl (opmaak)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
 [Lijst item-element voor ListControl (indeling)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

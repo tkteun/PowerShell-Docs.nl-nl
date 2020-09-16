@@ -1,19 +1,12 @@
 ---
 title: Element GroupBy voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
-caps.latest.revision: 8
-ms.openlocfilehash: abb8b91626128b3deaa2db24a9fd8b34a6563410
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f9071a3ebbc7cc2ccb7721dd518e82723e9cc4e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354962"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781423"
 ---
 # <a name="groupby-element-for-view-format"></a>Het element GroupBy voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee wordt gedefinieerd hoe een nieuwe groep objecten wordt weer gegeven. Dit
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <GroupBy>
@@ -45,17 +38,17 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[CustomControl-element voor GroupBy (indeling)](./customcontrol-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee definieert u het aangepaste besturings element waarmee nieuwe groepen worden weer gegeven.|
-|[CustomControlName-element voor GroupBy (indeling)](./customcontrolname-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam op van een besturings element dat wordt gebruikt om de nieuwe groep weer te geven.|
-|[Label element voor GroupBy (indeling)](./label-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een label op dat wordt weer gegeven wanneer een nieuwe groep wordt aangetroffen.|
-|[PropertyName-element voor GroupBy (indeling)](./propertyname-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarmee een nieuwe groep wordt gestart wanneer de waarde wordt gewijzigd.|
-|[Script block-element voor GroupBy (indeling)](./scriptblock-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee een nieuwe groep wordt gestart wanneer de waarde ervan wordt gewijzigd.|
+|[Het element CustomControl voor GroupBy (opmaak)](./customcontrol-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee definieert u het aangepaste besturings element waarmee nieuwe groepen worden weer gegeven.|
+|[Het element CustomControlName voor GroupBy (opmaak)](./customcontrolname-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de naam op van een besturings element dat wordt gebruikt om de nieuwe groep weer te geven.|
+|[Het element Label voor GroupBy (opmaak)](./label-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u een label op dat wordt weer gegeven wanneer een nieuwe groep wordt aangetroffen.|
+|[Het element PropertyName voor GroupBy (opmaak)](./propertyname-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u de .NET-eigenschap op waarmee een nieuwe groep wordt gestart wanneer de waarde wordt gewijzigd.|
+|[Het element ScriptBlock voor GroupBy (opmaak)](./scriptblock-element-for-groupby-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het script op waarmee een nieuwe groep wordt gestart wanneer de waarde ervan wordt gewijzigd.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element weer geven (indeling)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd waarin een of meer .NET-objecten worden weer gegeven.|
+|[Het element Weergave (opmaak)](./view-element-format.md)|Hiermee wordt een weer gave gedefinieerd waarin een of meer .NET-objecten worden weer gegeven.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -63,14 +56,14 @@ Wanneer u definieert hoe een nieuwe groep objecten wordt weer gegeven, moet u de
 
 ## <a name="see-also"></a>Zie ook
 
-[CustomControlName-element voor GroupBy (indeling)](./customcontrolname-element-for-groupby-format.md)
+[Het element CustomControlName voor GroupBy (opmaak)](./customcontrolname-element-for-groupby-format.md)
 
-[Label element voor GroupBy (indeling)](./label-element-for-groupby-format.md)
+[Het element Label voor GroupBy (opmaak)](./label-element-for-groupby-format.md)
 
-[PropertyName-element voor GroupBy (indeling)](./propertyname-element-for-groupby-format.md)
+[Het element PropertyName voor GroupBy (opmaak)](./propertyname-element-for-groupby-format.md)
 
-[Script block-element voor GroupBy (indeling)](./scriptblock-element-for-groupby-format.md)
+[Het element ScriptBlock voor GroupBy (opmaak)](./scriptblock-element-for-groupby-format.md)
 
-[Element weer geven (indeling)](./view-element-format.md)
+[Het element Weergave (opmaak)](./view-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

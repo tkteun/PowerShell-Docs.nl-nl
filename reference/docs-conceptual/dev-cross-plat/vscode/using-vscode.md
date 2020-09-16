@@ -2,12 +2,12 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: b492e59f340f4cec92c177ad44bbab9dc95da5da
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810314"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782528"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
@@ -38,7 +38,7 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
 
 ## <a name="editing-with-visual-studio-code"></a>Bewerken met Visual Studio code
 
-1. Installeer Visual Studio Code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
+1. Installeer Visual Studio code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
 
    Er zijn installatie-instructies voor elk platform:
 
@@ -54,7 +54,7 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
    1. De weer gave **extensies** wordt weer gegeven op de balk aan de zijkant. Selecteer de Power shell-extensie van micro soft.
       Er wordt een Visual Studio-code scherm weer gegeven dat vergelijkbaar is met de volgende afbeelding:
 
-      ![Visual Studio Code](media/using-vscode/vscode.png)
+      ![Visual Studio code: weer gave van de Power shell-uitbrei ding](media/using-vscode/vscode.png)
 
    1. Klik op de knop **installeren** in de Power shell-extensie van micro soft.
    1. Als u na de installatie de knop **installeren** ziet, klikt u **op opnieuw** **laden**.
@@ -190,7 +190,7 @@ De huidige Power shell-extensie biedt geen ondersteuning voor [Power Shell v3 en
 
 Open eerst het deel venster uitbrei ding en zoek naar `PowerShell` . Klik vervolgens op het vistuig en selecteer **een andere versie installeren...**.
 
-![Een andere versie installeren...](media/using-vscode/install-another-version.png)
+![Menu-item-Installeer een andere versie...](media/using-vscode/install-another-version.png)
 
 Selecteer vervolgens de **2020.1.0** -versie. Deze versie van de uitbrei ding is de laatste versie voor de ondersteuning van v3 en v4. Zorg ervoor dat u de volgende instelling toevoegt zodat uw extensie versie niet automatisch wordt bijgewerkt:
 
@@ -224,7 +224,7 @@ Fout opsporing in werk ruimte verwijst naar fout opsporing in de context van een
 Voer de volgende stappen uit om een configuratie bestand voor fout opsporing te maken:
 
 1. Open de weer gave **fout opsporing** in Windows of Linux door op <kbd>CTRL</kbd> + <kbd>+ SHIFT</kbd> + <kbd>D</kbd>te drukken. Druk op macOS op <kbd>cmd</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>.
-1. Klik op de koppeling **een launch. JSON-bestand maken** .
+1. Klik op de koppeling **een launch.jsmaken op bestand** .
 1. Kies **Power shell**in het venster **omgeving selecteren** .
 1. Kies het type fout opsporing dat u wilt gebruiken:
 

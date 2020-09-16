@@ -1,19 +1,12 @@
 ---
 title: Indelings gegevens laden en exporteren | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
-caps.latest.revision: 6
-ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356005"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781117"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Opmaakgegevens laden en exporteren
 
@@ -31,7 +24,7 @@ Indelings bestanden kunnen worden geladen in de huidige sessie met de volgende m
 
 - Als u opdrachten via een programma aanroept, kunt u een vermelding in het indelings bestand toevoegen aan de oorspronkelijke sessie status van de runs Pace waar de opdrachten worden uitgevoerd. Voor meer informatie over .NET-type dat wordt gebruikt om het opmaak bestand toe te voegen, Zie [System. Management. Automation. Runspaces. Sessionstateformatentry? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) -klasse.
 
-Wanneer een opmaak bestand wordt geladen, wordt het toegevoegd aan een interne lijst die door Windows Power shell wordt gebruikt om te bepalen welke weer gave moet worden gebruikt bij het weer geven van objecten op de opdracht regel. U kunt het opmaak bestand laten voorafgaan door aan het begin van de lijst of u kunt het toevoegen aan het einde van de lijst. Als u weet waar uw opmaak bestand wordt toegevoegd aan deze lijst is belang rijk als u een opmaak bestand laadt dat een weer gave definieert voor een object waarvoor een bestaande weer gave is gedefinieerd, zoals wanneer u wilt wijzigen hoe een object dat wordt geretourneerd door een Windows Power shell core-cmdlet  weer. Als u een opmaak bestand laadt dat de enige weer gave voor een object definieert, kunt u een van de eerder beschreven methoden gebruiken.  Als u een opmaak bestand laadt dat een andere weer gave voor een object definieert, moet u de cmdlet [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) gebruiken en uw bestand laten voorafgaan door aan het begin van de lijst.
+Wanneer een opmaak bestand wordt geladen, wordt het toegevoegd aan een interne lijst die door Windows Power shell wordt gebruikt om te bepalen welke weer gave moet worden gebruikt bij het weer geven van objecten op de opdracht regel. U kunt het opmaak bestand laten voorafgaan door aan het begin van de lijst of u kunt het toevoegen aan het einde van de lijst. Als u weet waar uw opmaak bestand wordt toegevoegd aan deze lijst is belang rijk als u een opmaak bestand laadt dat een weer gave definieert voor een object waarvoor een bestaande weer gave is gedefinieerd, zoals wanneer u wilt wijzigen hoe een object dat wordt geretourneerd door een Windows Power shell core-cmdlet wordt weer gegeven. Als u een opmaak bestand laadt dat de enige weer gave voor een object definieert, kunt u een van de eerder beschreven methoden gebruiken.  Als u een opmaak bestand laadt dat een andere weer gave voor een object definieert, moet u de cmdlet [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) gebruiken en uw bestand laten voorafgaan door aan het begin van de lijst.
 
 ## <a name="storing-your-formatting-file"></a>Uw indelings bestand opslaan
 

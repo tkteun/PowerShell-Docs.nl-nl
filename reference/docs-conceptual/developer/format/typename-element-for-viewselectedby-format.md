@@ -1,19 +1,12 @@
 ---
 title: TypeName-element voor ViewSelectedBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
-caps.latest.revision: 12
-ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9a391565c3e66041dd9a340455dccfce9ce929b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353429"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780029"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>Het element TypeName voor ViewSelectedBy (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u een .NET-object op dat wordt weer gegeven in de weer gave.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) ViewSelectedBy element (Format) voor ViewSelectedBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <TypeName>FullyQualifiedTypeName</TypeName>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het element `TypeName` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het `TypeName` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,11 +36,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ViewSelectedBy-element (indeling)](./viewselectedby-element-format.md)|Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.|
+|[Het element ViewSelectedBy (opmaak)](./viewselectedby-element-format.md)|Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
-Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo`.
+Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -69,14 +62,14 @@ In het volgende voor beeld ziet u hoe u het object [System. ServiceProcess. serv
 
 ## <a name="see-also"></a>Zie ook
 
-[Een lijst weergave maken](./creating-a-list-view.md)
+[Een lijstweergave maken](./creating-a-list-view.md)
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[Een brede weer gave maken](./creating-a-wide-view.md)
+[Een brede weergave maken](./creating-a-wide-view.md)
 
-[Aangepaste besturings elementen maken](./creating-custom-controls.md)
+[Aangepaste besturingselementen maken](./creating-custom-controls.md)
 
-[ViewSelectedBy-element (indeling)](./viewselectedby-element-format.md)
+[Het element ViewSelectedBy (opmaak)](./viewselectedby-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

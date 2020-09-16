@@ -1,27 +1,20 @@
 ---
 title: Omloop-element voor TableRowEntry voor TableControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
-caps.latest.revision: 11
-ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353394"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779876"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Het element Wrap voor TableRowEntry voor TableControl (opmaak)
 
 Geeft aan dat de tekst die de kolom breedte overschrijdt wordt weer gegeven op de volgende regel. Standaard wordt tekst die de kolom breedte overschrijdt, afgekapt.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling) TableControl element (Format) TableRowEntries element voor TableControl (Format) TableRowEntry-element voor TableRowEntries voor TableControl (Format)-terugloop element voor TableRowEntry voor TableControl (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element weergave (indeling) TableControl element (Format) TableRowEntries element voor TableControl (Format) TableRowEntry-element voor TableRowEntries voor TableControl (Format) voor TableRowEntry voor TableControl (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Wrap/>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element van w
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en bovenliggende elementen van het element `Wrap` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en bovenliggende elementen van het `Wrap` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[TableRowEntry-element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Hiermee worden de gegevens gedefinieerd die worden weer gegeven in een rij van de tabel.|
+|[Het element TableRowEntry voor TableRowEntries voor TableControl (opmaak)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Hiermee worden de gegevens gedefinieerd die worden weer gegeven in een rij van de tabel.|
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -51,8 +44,8 @@ Zie [een tabel weergave maken](./creating-a-table-view.md)voor meer informatie o
 
 ## <a name="see-also"></a>Zie ook
 
-[Een tabel weergave maken](./creating-a-table-view.md)
+[Een tabelweergave maken](./creating-a-table-view.md)
 
-[TableRowEntry-element voor TableRowEntries voor TableControl (indeling)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
+[Het element TableRowEntry voor TableRowEntries voor TableControl (opmaak)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

@@ -1,28 +1,21 @@
 ---
 title: Voorbeeld code voor GetProc01 (VB.NET) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3ee87f67-6d2c-48cc-b300-3ae917c6dc88
-caps.latest.revision: 5
-ms.openlocfilehash: 80f145da8f4e2f3a39b1cdd533478b7fdc2f0a31
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0d6573a41d627b18f1d577973450463f965d95f1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417446"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778816"
 ---
 # <a name="getproc01-vbnet-sample-code"></a>GetProc01-codevoorbeeld (VB.NET)
 
 De volgende code toont de implementatie van de voor beeld-cmdlet GetProc01. U ziet dat de cmdlet wordt vereenvoudigd door de werkelijke hoeveelheid werk van het ophalen van het proces aan de methode [System. Diagnostics. process. GetProcesses *](/dotnet/api/System.Diagnostics.Process.GetProcesses) te laten staan.
 
 > [!NOTE]
-> U kunt het C# bron bestand (getproc01.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> U kunt het C#-bron bestand (getproc01.cs) voor deze Get-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
-> De gedownloade bron bestanden zijn beschikbaar in de **\<Power shell-voor beelden >** map.
+> De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -30,6 +23,6 @@ De volgende code toont de implementatie van de voor beeld-cmdlet GetProc01. U zi
 
 ## <a name="see-also"></a>Zie ook
 
-[Hand leiding voor Windows Power shell-programmeurs](./windows-powershell-programmer-s-guide.md)
+[Handleiding voor Windows PowerShell-programmeurs](./windows-powershell-programmer-s-guide.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

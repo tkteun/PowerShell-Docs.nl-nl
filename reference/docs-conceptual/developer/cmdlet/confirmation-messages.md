@@ -1,19 +1,12 @@
 ---
 title: Bevestigings berichten | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
-caps.latest.revision: 8
-ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8f8192f6ed96b1eeb22e3b28ce1366eee8e7c16a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356432"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782188"
 ---
 # <a name="confirmation-messages"></a>Bevestigingsberichten
 
@@ -24,7 +17,7 @@ Hier zijn verschillende bevestigings berichten die kunnen worden weer gegeven, a
 
 ## <a name="specifying-the-resource"></a>De resource opgeven
 
-U kunt de resource opgeven die moet worden gewijzigd door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de bron op met behulp van de para meter `target` van de methode. de bewerking wordt toegevoegd door Windows Power shell. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en de bewerking is de naam van de opdracht die de aanroep uitvoert.
+U kunt de resource opgeven die moet worden gewijzigd door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de resource op met behulp `target` van de para meter van de methode. de bewerking wordt toegevoegd door Windows Power shell. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en de bewerking is de naam van de opdracht die de aanroep uitvoert.
 
 ```output
 Confirm
@@ -48,7 +41,7 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>De bewerking en resource opgeven
 
-U kunt de resource opgeven die moet worden gewijzigd en de bewerking die de opdracht gaat uitvoeren door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de bron op met behulp van de para meter `target` en de bewerking met behulp van de para meter `target`. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en ' MyAction ' de bewerking die moet worden uitgevoerd.
+U kunt de resource opgeven die moet worden gewijzigd en de bewerking die de opdracht gaat uitvoeren door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de bron op met behulp van de `target` para meter en de bewerking met behulp van de `target` para meter. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en ' MyAction ' de bewerking die moet worden uitgevoerd.
 
 ```output
 Confirm
@@ -72,4 +65,4 @@ Continue with this operation?
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

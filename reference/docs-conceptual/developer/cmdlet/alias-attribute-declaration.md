@@ -1,23 +1,16 @@
 ---
 title: Alias kenmerk declaratie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Alias attribute
 - attributes, Alias
 - Alias attribute, described
-ms.assetid: d0df3a46-b1cc-42b9-beb1-e16bce254007
-caps.latest.revision: 10
-ms.openlocfilehash: 4d20672c5181c994c1b53624f6c42a301db11f26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4c1ff34a244611173ca919a44d6598189b19dc98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359484"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782409"
 ---
 # <a name="alias-attribute-declaration"></a>Declaratie van het kenmerk Alias
 
@@ -31,7 +24,7 @@ Met het alias kenmerk kan de gebruiker verschillende namen opgeven voor een cmdl
 
 #### <a name="parameters"></a>Parameters
 
-`aliasName` (string []) vereist. Hiermee geeft u een set met door komma's gescheiden alias namen op voor de cmdlet-para meter.
+`aliasName` (Teken reeks []) Vereist. Hiermee geeft u een set met door komma's gescheiden alias namen op voor de cmdlet-para meter.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -45,6 +38,6 @@ Met het alias kenmerk kan de gebruiker verschillende namen opgeven voor een cmdl
 
 ## <a name="see-also"></a>Zie ook
 
-[Parameter aliassen](./parameter-aliases.md)
+[Parameteraliassen](./parameter-aliases.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -1,26 +1,19 @@
 ---
 title: Algemene parameter namen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
-ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356439"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782222"
 ---
 # <a name="common-parameter-names"></a>Namen van veelvoorkomende parameters
 
 De para meters die in dit onderwerp worden beschreven, worden *algemene para meters*genoemd. Ze worden toegevoegd aan cmdlets door de Windows Power shell-runtime en kunnen niet worden gedeclareerd door de cmdlet.
 
 > [!NOTE]
-> Deze para meters worden ook toegevoegd aan provider-cmdlets en aan functies die met het kenmerk `CmdletBinding` worden gedecoreerd.
+> Deze para meters worden ook toegevoegd aan provider-cmdlets en aan functies die met het kenmerk zijn gedecoreerd `CmdletBinding` .
 
 ## <a name="general-common-parameters"></a>Algemene algemene para meters
 
@@ -40,13 +33,13 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd als er een fout opt
 
 ### <a name="errorvariable-alias-ev"></a>ErrorVariable (alias: EV)
 
-Gegevenstype: tekenreeks
+Gegevens type: teken reeks
 
 Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outvariable-alias-ov"></a>Outvariable (alias: OV)
 
-Gegevenstype: tekenreeks
+Gegevens type: teken reeks
 
 Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
@@ -70,7 +63,7 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd wanneer de cmdlet e
 
 ### <a name="warningvariable-alias-wv"></a>WarningVariable (alias: WV)
 
-Gegevenstype: tekenreeks
+Gegevens type: teken reeks
 
 Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
@@ -108,6 +101,6 @@ Met deze para meter geeft u op of de cmdlet de huidige trans actie gaat gebruike
 
 [System. Management. Automation. internal. Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
 
-[Windows Power shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

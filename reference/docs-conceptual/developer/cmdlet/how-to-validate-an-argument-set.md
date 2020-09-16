@@ -1,21 +1,14 @@
 ---
 title: Een argument set valideren | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateSet attribute, example
-ms.assetid: 55f0f664-d2ad-4501-a3dc-9f7a27c8ab11
-caps.latest.revision: 8
-ms.openlocfilehash: 6d8b189ed6311efd5a7348ab1e58934e9bff12a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356278"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782001"
 ---
 # <a name="how-to-validate-an-argument-set"></a>Een argumentenreeks valideren
 
@@ -26,7 +19,7 @@ In dit voor beeld ziet u hoe u een validatie regel opgeeft die door de Windows P
 
 ## <a name="to-validate-an-argument-set"></a>Een argumentset valideren
 
-- Voeg het kenmerk validate toe, zoals in de volgende code wordt weer gegeven. In dit voor beeld wordt een set van drie mogelijke waarden opgegeven voor de para meter `UserName`.
+- Voeg het kenmerk validate toe, zoals in de volgende code wordt weer gegeven. In dit voor beeld wordt een set van drie mogelijke waarden voor de `UserName` para meter opgegeven.
 
     ```csharp
     [ValidateSet("Steve", "Mary", "Carl", IgnoreCase = true)]
@@ -46,6 +39,6 @@ Zie [Validate-kenmerk declaratie](./validateset-attribute-declaration.md)voor me
 
 [System. Management. Automation. Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
-[Verklaring van de kenmerkset validate](./validateset-attribute-declaration.md)
+[Declaratie van het kenmerk ValidateSet](./validateset-attribute-declaration.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

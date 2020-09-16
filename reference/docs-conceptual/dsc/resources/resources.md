@@ -1,13 +1,13 @@
 ---
-ms.date: 02/28/2020
+ms.date: 07/23/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-resources
-ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692201"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777920"
 ---
 # <a name="dsc-resources"></a>DSC-resources
 
@@ -22,11 +22,11 @@ Een resource kan een model als algemeen hebben als een bestand of als een IIS-se
 Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het gebruik van de bron in een [configuratie](../configurations/configurations.md).
 Het schema van een resource kan op de volgende manieren worden gedefinieerd:
 
-- `Schema.Mof`bestand: de meeste resources definiëren hun _schema_ in een bestand van het schema. mof, met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- `<Resource Name>.schema.psm1`bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun *schema* in een `<ResourceName>.schema.psm1` bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- `<Resource Name>.psm1`bestand: DSC-resources op basis van klassen definiëren hun _schema_ in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
+- `Schema.Mof` bestand: de meeste resources definiëren hun _schema_ in een `schema.mof` bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- `<Resource Name>.schema.psm1` bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun _schema_ in een `<ResourceName>.schema.psm1` bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- `<Resource Name>.psm1` bestand: DSC-resources op basis van klassen definiëren hun _schema_ in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
 
-Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de `-Syntax` para meter. Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de `-Syntax` para meter om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
+Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de para meter **syntax** . Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de **syntaxis** parameter om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -54,6 +54,9 @@ Service [String] #ResourceName
     [State = [string]{ Running | Stopped }]
 }
 ```
+
+> [!NOTE]
+> In Power shell-versies onder 7,0 worden `Get-DscResource` op klassen gebaseerde DSC-resources niet gevonden.
 
 Binnen een configuratie kan een **service** bron blok er als volgt uitzien, om **ervoor te zorgen** dat de Spooler-service wordt uitgevoerd.
 
@@ -106,7 +109,7 @@ Configuration TestConfig
 > [!NOTE]
 > Vanaf Power shell 5,0 is IntelliSense toegevoegd voor DSC. Met deze nieuwe functie kunt u de <kbd>Tab</kbd> - <kbd>en</kbd> + <kbd>plaatsings ruimte</kbd> gebruiken om sleutel namen automatisch te volt ooien.
 
-![Voltooiing van resource tabblad](media/resources/resource-tabcompletion.png)
+![Resource IntelliSense met Tab-aanvulling](media/resources/resource-tabcompletion.png)
 
 ## <a name="types-of-resources"></a>Typen resources
 

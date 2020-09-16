@@ -1,23 +1,16 @@
 ---
 title: Een beperkte runs Pace maken | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
-caps.latest.revision: 5
-ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72357762"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779808"
 ---
 # <a name="creating-a-constrained-runspace"></a>Een beperkte runspace maken
 
-Uit veiligheids overwegingen kunt u het beste de Windows Power shell-opdrachten beperken die beschikbaar zijn voor uw hosttoepassing. Als u dit wilt doen, maakt u een leeg [System. Management. Automation. Runspaces. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) door de methode [System. Management. Automation. Runspaces. Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) aan te roepen en vervolgens alleen de gewenste opdrachten toe te voegen.
+Uit veiligheids overwegingen kunt u het beste de Windows Power shell-opdrachten beperken die beschikbaar zijn voor uw hosttoepassing. Als u dit wilt doen, maakt u een lege [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) door deSystem.Management.Automation.Runspaces.Initialsessionstate aan te roepen [ . Maak](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) de methode * en voeg vervolgens alleen de opdrachten toe die u wilt weer beschikbaar.
 
  Het gebruik van een runs Pace waarmee alleen de door u opgegeven opdrachten worden geladen, levert aanzienlijk betere prestaties.
 

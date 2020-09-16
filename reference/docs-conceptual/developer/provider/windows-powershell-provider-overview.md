@@ -1,19 +1,12 @@
 ---
 title: Overzicht van Windows Power shell-provider | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
-caps.latest.revision: 13
-ms.openlocfilehash: 9f1b94e722e59e707a26547949c661b5098d29e0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560947"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778232"
 ---
 # <a name="windows-powershell-provider-overview"></a>Overzicht van Windows PowerShell-providers
 
@@ -63,7 +56,7 @@ Providers kunnen dynamische para meters definiëren die worden toegevoegd aan ee
 
 ## <a name="provider-capabilities"></a>Provider mogelijkheden
 
-De opsomming [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieert een aantal mogelijkheden die providers kunnen ondersteunen. Dit zijn onder andere de mogelijkheid om joker tekens te gebruiken, items te filteren en trans acties te ondersteunen. Als u mogelijkheden voor een provider wilt opgeven, voegt u een lijst met waarden van de inventarisatie [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) toe, gecombineerd met een logische `OR` bewerking, als [System. Management. Automation. provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (de tweede para meter van het kenmerk) van het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) voor uw provider klasse. Het volgende kenmerk geeft bijvoorbeeld aan dat de provider de functies [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** en [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) - **trans acties** ondersteunt.
+De opsomming [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieert een aantal mogelijkheden die providers kunnen ondersteunen. Dit zijn onder andere de mogelijkheid om joker tekens te gebruiken, items te filteren en trans acties te ondersteunen. Als u mogelijkheden voor een provider wilt opgeven, voegt u een lijst met waarden van de inventarisatie  [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) toe, gecombineerd met een logische `OR` bewerking, als [System. Management. Automation. provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (de tweede para meter van het kenmerk) van het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) voor uw provider klasse. Het volgende kenmerk geeft bijvoorbeeld aan dat de provider de functies [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** en [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) - **trans acties** ondersteunt.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

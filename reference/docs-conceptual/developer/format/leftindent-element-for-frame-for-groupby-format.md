@@ -1,27 +1,20 @@
 ---
 title: LeftIndent-element voor frame voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
-caps.latest.revision: 6
-ms.openlocfilehash: 907ee7d070e5ac02464dc58eb32504cb0721f663
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4bf848047a01ff61183fb6b3ec5d540ab22b50c9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72356026"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781151"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>Het element LeftIndent voor Frame voor GroupBy (opmaak)
 
 Hiermee geeft u op hoeveel tekens de gegevens van de linkermarge worden verplaatst. Dit element wordt gebruikt bij het definiëren van de manier waarop een nieuwe groep objecten wordt weer gegeven.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het element GroupBy (indeling) CustomEntries voor CustomControl voor het element GroupBy (Format) CustomEntry voor CustomControl voor het CustomItem-element van GroupBy (Format) voor CustomEntry voor het object GroupBy (Format) voor CustomItem voor het object GroupBy (Format) voor het frame voor het object GroupBy (indeling)
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van het type GroupBy-element (Format) voor weer gave (indeling) CustomControl-element voor het CustomEntries-element van GroupBy (Format) voor CustomControl voor het element GroupBy (Format) CustomEntry element voor CustomControl voor het object GroupBy (Format) voor CustomEntry voor het element GroupBy (Format) voor het object voor GroupBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <LeftIndent>CharactersToShift</LeftIndent>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het element `LeftIndent` beschreven.
+In de volgende secties worden de kenmerken, onderliggende elementen en het bovenliggende element van het `LeftIndent` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Frame-element voor CustomItem voor GroupBy (indeling)](./frame-element-for-customitem-for-groupby-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
+|[Het element Frame voor CustomItem voor GroupBy (opmaak)](./frame-element-for-customitem-for-groupby-format.md)|Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -53,6 +46,6 @@ Geef het aantal tekens op waarmee u de gegevens naar links wilt verplaatsen.
 
 ## <a name="see-also"></a>Zie ook
 
-[Frame-element voor CustomItem voor GroupBy (indeling)](./frame-element-for-customitem-for-groupby-format.md)
+[Het element Frame voor CustomItem voor GroupBy (opmaak)](./frame-element-for-customitem-for-groupby-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

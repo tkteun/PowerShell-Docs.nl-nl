@@ -1,27 +1,20 @@
 ---
 title: Frame-element voor CustomItem voor besturings elementen voor configuratie (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d879c8ce-679d-4622-bc43-c207f6413871
-caps.latest.revision: 9
-ms.openlocfilehash: b11b154a94daccead57bdfb5e579e1de2c190c09
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa435b8d6b868d2d7c94b7926321d94edc2ec290
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354983"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781474"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 
 Hiermee definieert u hoe de gegevens worden weer gegeven, zoals de gegevens naar links of rechts verplaatsen. Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.
 
-Configuratie-element (Format) Controls element van configuratie (Format) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor Control for Configuration (Format) CustomEntries element voor het configureren van een configuratie ( Format) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (indeling) CustomItem-element voor CustomEntry voor besturings elementen voor het element configuratie frame voor CustomItem voor besturings elementen voor configuratie (indeling)
+Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie frame-element voor CustomItem voor besturings elementen voor configuratie van het type configuratie (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Frame>
@@ -35,7 +28,7 @@ Configuratie-element (Format) Controls element van configuratie (Format) Control
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Frame` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Frame` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -46,10 +39,10 @@ Geen.
 |Element|Beschrijving|
 |-------------|-----------------|
 |`CustomItem Element`|Vereist element|
-|[FirstLineHanging-element voor frame voor besturings elementen voor configuratie (indeling)](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Geeft aan hoeveel tekens de eerste regel van de gegevens naar links verschuift.|
-|[FirstLineIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Geeft aan hoeveel tekens de eerste regel van de gegevens naar rechts wordt geschoven.|
-|[LeftIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./leftindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoeveel tekens de gegevens van de linkermarge worden verplaatst.|
-|[RightIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./rightindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoeveel tekens de gegevens van de rechter marge worden verplaatst.|
+|[Het element FirstLineHanging voor Frame voor Besturingselementen voor Configuratie (opmaak)](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Geeft aan hoeveel tekens de eerste regel van de gegevens naar links verschuift.|
+|[Het element FirstLineIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Geeft aan hoeveel tekens de eerste regel van de gegevens naar rechts wordt geschoven.|
+|[Het element LeftIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./leftindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoeveel tekens de gegevens van de linkermarge worden verplaatst.|
+|[Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./rightindent-element-for-frame-for-controls-for-configuration-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op hoeveel tekens de gegevens van de rechter marge worden verplaatst.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -59,18 +52,18 @@ Geen.
 
 ## <a name="remarks"></a>Opmerkingen
 
-U kunt de [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md) -en [FirstLineIndent](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md) -elementen niet opgeven in hetzelfde `Frame` element.
+U kunt de [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md) -en [FirstLineIndent](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md) -elementen in hetzelfde element niet opgeven `Frame` .
 
 ## <a name="see-also"></a>Zie ook
 
-[FirstLineHanging-element voor frame voor besturings elementen voor configuratie (indeling)](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)
+[Het element FirstLineHanging voor Frame voor Besturingselementen voor Configuratie (opmaak)](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)
 
-[FirstLineIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)
+[Het element FirstLineIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)
 
-[LeftIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./leftindent-element-for-frame-for-controls-for-configuration-format.md)
+[Het element LeftIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./leftindent-element-for-frame-for-controls-for-configuration-format.md)
 
-[RightIndent-element voor frame voor besturings elementen voor configuratie (indeling)](./rightindent-element-for-frame-for-controls-for-configuration-format.md)
+[Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)](./rightindent-element-for-frame-for-controls-for-configuration-format.md)
 
 [CustomItem-element voor CustomEntry voor besturings elementen voor configuratie](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

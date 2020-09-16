@@ -1,19 +1,12 @@
 ---
 title: Element naam voor besturings elementen voor weer gave (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
-caps.latest.revision: 7
-ms.openlocfilehash: 7e24aa60f7abae5768707d2527826c452b709002
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 109f3a40606dbe82322decf0c69d2367c75175f6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355991"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781083"
 ---
 # <a name="name-element-for-control-for-controls-for-view-format"></a>Het element Naam voor Besturingselement voor Besturingselementen voor Weergave (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u de naam van het besturings element op.
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) Controls-element (Format) Control element (indeling) voor besturings elementen voor weer gave (Format) naam element voor besturings element voor weer gave (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <Name>ControlName</Name>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `Name` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `Name` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -59,10 +52,10 @@ De naam die u hier opgeeft, kan worden gebruikt in de volgende elementen om te v
 
 ## <a name="see-also"></a>Zie ook
 
-[Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)
+[Het element GroupBy voor Weergave (opmaak)](./groupby-element-for-view-format.md)
 
-[ExpressionBinding-element voor CustomItem voor besturings elementen voor weer gave (indeling)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
 [Besturings element voor besturings elementen voor weer gave (indeling)](./control-element-for-controls-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

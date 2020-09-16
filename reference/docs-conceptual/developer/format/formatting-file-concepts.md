@@ -1,19 +1,12 @@
 ---
 title: Opmaak van bestands concepten | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1804dbe4-69eb-4b0b-bc40-cbb2f00bb083
-caps.latest.revision: 10
-ms.openlocfilehash: 81b035f3cb44dcb672f5951511d03542e694cc42
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6849a61ab1796ae49c73550b48e78de6f787274e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72354507"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781491"
 ---
 # <a name="formatting-file-concepts"></a>Concepten voor opmaakbestanden
 
@@ -29,7 +22,7 @@ De onderwerpen in deze sectie bevatten informatie die u mogelijk moet kennen bij
 
 [Aangepaste besturings elementen maken](./creating-custom-controls.md) Biedt een voor beeld van een aangepast besturings element.
 
-[Algemene configuratie functies definiëren](./defining-common-configuration-features.md)
+[Veelvoorkomende configuratiefuncties definiëren](./defining-common-configuration-features.md)
 
 [Selectie sets definiëren](./defining-selection-sets.md) Hierin vindt u informatie, een voor beeld en een beschrijving van de XML-elementen die worden gebruikt voor het maken van een selectieset.
 

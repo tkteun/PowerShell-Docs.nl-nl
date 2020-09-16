@@ -1,23 +1,16 @@
 ---
 title: Parameter kenmerk declaratie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, Parameter
 - Parameter attribute, described
 - Parameter attribute
-ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
-caps.latest.revision: 13
-ms.openlocfilehash: 7482690c44cdaabf23b886107ac5d112c0fa5c9d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 55b157b93c3a42324d63e16ddfa8db1f0d38f82b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692399"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781848"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaratie van het kenmerk Parameter
 
@@ -32,23 +25,23 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
 #### <a name="parameters"></a>Parameters
 
-`Mandatory`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`Hiermee wordt aangegeven dat de cmdlet-para meter is vereist. Als een vereiste para meter niet wordt opgegeven wanneer de cmdlet wordt aangeroepen, vraagt Windows Power shell de gebruiker om een parameter waarde. De standaardwaarde is `false`.
+`Mandatory` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` Hiermee wordt aangegeven dat de cmdlet-para meter is vereist. Als een vereiste para meter niet wordt opgegeven wanneer de cmdlet wordt aangeroepen, vraagt Windows Power shell de gebruiker om een parameter waarde. De standaardwaarde is `false`.
 
-`ParameterSetName`([System. String](/dotnet/api/System.String)) een optionele benoemde para meter. Hiermee geeft u de para meter instellen waarvan deze cmdlet-para meter deel uitmaakt. Als er geen parameterset is opgegeven, hoort de para meter bij alle parameter sets.
+`ParameterSetName` ([System. String](/dotnet/api/System.String)) een optionele benoemde para meter. Hiermee geeft u de para meter instellen waarvan deze cmdlet-para meter deel uitmaakt. Als er geen parameterset is opgegeven, hoort de para meter bij alle parameter sets.
 
-`Position`([System. Int32](/dotnet/api/System.Int32)) een optionele benoemde para meter. Hiermee geeft u de positie van de para meter in een Windows Power shell-opdracht.
+`Position` ([System. Int32](/dotnet/api/System.Int32)) een optionele benoemde para meter. Hiermee geeft u de positie van de para meter in een Windows Power shell-opdracht.
 
-`ValueFromPipeline`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de para meter cmdlet van een pijplijn object de waarde ervan meeneemt. Geef dit tref woord op als de cmdlet toegang heeft tot het volledige object, niet alleen een eigenschap van het object. De standaardwaarde is `false`.
+`ValueFromPipeline` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de para meter cmdlet van een pijplijn object de waarde ervan meeneemt. Geef dit tref woord op als de cmdlet toegang heeft tot het volledige object, niet alleen een eigenschap van het object. De standaardwaarde is `false`.
 
-`ValueFromPipelineByPropertyName`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de para meter cmdlet de waarde van een eigenschap van een pijplijn object heeft die dezelfde naam of dezelfde alias heeft als deze para meter. Als de cmdlet bijvoorbeeld een `Name` para meter heeft en het pijplijn object ook een `Name` eigenschap heeft, wordt de waarde van de `Name` eigenschap toegewezen aan de `Name` para meter van de cmdlet. De standaardwaarde is `false`.
+`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de para meter cmdlet de waarde van een eigenschap van een pijplijn object heeft die dezelfde naam of dezelfde alias heeft als deze para meter. Als de cmdlet bijvoorbeeld een `Name` para meter heeft en het pijplijn object ook een `Name` eigenschap heeft, wordt de waarde van de `Name` eigenschap toegewezen aan de `Name` para meter van de cmdlet. De standaardwaarde is `false`.
 
-`ValueFromRemainingArguments`([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True`geeft aan dat de cmdlet-para meter alle resterende argumenten accepteert die worden door gegeven aan de cmdlet. De standaardwaarde is `false`.
+`ValueFromRemainingArguments` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. `True` geeft aan dat de cmdlet-para meter alle resterende argumenten accepteert die worden door gegeven aan de cmdlet. De standaardwaarde is `false`.
 
-`HelpMessage`Optionele benoemde para meter. Hiermee geeft u een korte beschrijving van de para meter. In Windows Power shell wordt dit bericht weer gegeven wanneer een cmdlet wordt uitgevoerd en er geen verplichte para meter is opgegeven.
+`HelpMessage` Optionele benoemde para meter. Hiermee geeft u een korte beschrijving van de para meter. In Windows Power shell wordt dit bericht weer gegeven wanneer een cmdlet wordt uitgevoerd en er geen verplichte para meter is opgegeven.
 
-`HelpMessageBaseName`Optionele benoemde para meter. Hiermee geeft u de locatie op waar resource-id's zich bevinden. Met deze para meter kan bijvoorbeeld een bron-assembly worden opgegeven die Help-berichten bevat die u wilt lokaliseren.
+`HelpMessageBaseName` Optionele benoemde para meter. Hiermee geeft u de locatie op waar resource-id's zich bevinden. Met deze para meter kan bijvoorbeeld een bron-assembly worden opgegeven die Help-berichten bevat die u wilt lokaliseren.
 
-`HelpMessageResourceId`Optionele benoemde para meter. Hiermee wordt de resource-id voor een Help-bericht opgegeven.
+`HelpMessageResourceId` Optionele benoemde para meter. Hiermee wordt de resource-id voor een Help-bericht opgegeven.
 
 ## <a name="remarks"></a>Opmerkingen
 
