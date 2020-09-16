@@ -73,6 +73,8 @@
           href: learn/deep-dives/everything-about-null.md
         - name: Alles wat u wilt weten over ShouldProcess
           href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: Schrijfvoortgang tijdens multithreading
+          href: learn/deep-dives/write-progress-across-multiple-threads.md
     - name: Externe communicatie van powershell
       items:
         - name: Just Enough Administration (JEA)
@@ -225,7 +227,7 @@
               href: windows-powershell/wmf/whats-new/bugfixes.md
             - name: Nieuwe en bijgewerkte cmdlets
               href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
-            - name: Aangepaste typen maken met PowerShell-klassen
+            - name: Nieuwe taalfuncties in PowerShell 5.0
               href: windows-powershell/wmf/whats-new/class-overview.md
             - name: Verbeteringen van de console in WMF 5.1
               href: windows-powershell/wmf/whats-new/console-improvements.md
@@ -358,7 +360,7 @@
               href: dsc/resources/authoringResourceClass.md
             - name: Samengestelde resources schrijven in PowerShell
               href: dsc/resources/authoringResourceComposite.md
-            - name: 'Op MOF gebaseerde resources schrijven in C#'
+            - name: Op MOF gebaseerde resources schrijven in C#
               href: dsc/resources/authoringResourceMofCS.md
             - name: Resource Designer Tool gebruiken
               href: dsc/resources/authoringResourceMofDesigner.md
@@ -562,6 +564,8 @@
       href: community/hall-of-fame.md
     - name: Wat is er nieuw voor Docs
       items:
+        - name: 2020-K3
+          href: community/2020-Q3.md
         - name: 2020-K2
           href: community/2020-Q2.md
         - name: 2020-K1
@@ -626,7 +630,7 @@
           href: samples/managing-processes-with-process-cmdlets.md
         - name: Services beheren
           href: samples/managing-services.md
-        - name: Windows PowerShell-stations beheren
+        - name: PowerShell-stations beheren
           href: samples/managing-windows-powershell-drives.md
         - name: Met printers werken
           href: samples/working-with-printers.md
@@ -782,8 +786,14 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Draagbare modules schrijven
       href: dev-cross-plat/writing-portable-modules.md
+    - name: Modulehelp maken met PlatyPS
+      href: dev-cross-plat/create-help-using-platyps.md
     - name: Een binaire module van een standaardbibliotheek maken
       href: dev-cross-plat/create-standard-library-binary-module.md
+    - name: Het juiste NuGet-pakket kiezen voor uw .NET-project
+      href: dev-cross-plat/choosing-the-right-nuget-package.md
+    - name: Afhankelijkheidsconflicten oplossen in module-assembly's
+      href: dev-cross-plat/resolving-dependency-conflicts.md
     - name: Verouderde PowerShell SDK
       items:
         - name: Overzicht
@@ -794,11 +804,11 @@
           href: developer/windows-powershell-reference.md
         - name: Nieuwe functies
           href: developer/windows-powershell-reference-whats-new.md
-        - name: Een Windows PowerShell-cmdlet schrijven
+        - name: Een PowerShell-cmdlet schrijven
           items:
             - name: Overzicht van cmdlets
               href: developer/cmdlet/cmdlet-overview.md
-            - name: Concepten voor Windows PowerShell-cmdlets
+            - name: Concepten voor PowerShell-cmdlets
               href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
               items:
                 - name: Richtlijnen voor de ontwikkeling van cmdlets
@@ -812,7 +822,7 @@
                       href: developer/cmdlet/advisory-development-guidelines.md
                 - name: Declaratie van cmdlet-klassen
                   href: developer/cmdlet/cmdlet-class-declaration.md
-                - name: Goedgekeurde werkwoorden voor Windows PowerShell-opdrachten
+                - name: Goedgekeurde werkwoorden voor PowerShell-opdrachten
                   href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
                 - name: Invoerverwerkingsmethoden voor cmdlets
                   href: developer/cmdlet/cmdlet-input-processing-methods.md
@@ -910,7 +920,7 @@
                       href: developer/cmdlet/users-requesting-confirmation.md
                     - name: Bevestigingsberichten
                       href: developer/cmdlet/confirmation-messages.md
-                - name: Windows PowerShell-foutrapportage
+                - name: PowerShell-foutrapportage
                   href: developer/cmdlet/windows-powershell-error-reporting.md
                   items:
                     - name: Concepten voor foutrapportage
@@ -921,7 +931,7 @@
                       href: developer/cmdlet/non-terminating-errors.md
                     - name: Foutgegevens weergeven
                       href: developer/cmdlet/displaying-error-information.md
-                    - name: Windows PowerShell-foutrecords
+                    - name: PowerShell-foutrecords
                       href: developer/cmdlet/windows-powershell-error-records.md
                     - name: ErrorRecord-objecten interpreteren
                       href: developer/cmdlet/interpreting-errorrecord-objects.md
@@ -931,7 +941,7 @@
                   href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
                 - name: Cmdlet-reeksen
                   href: developer/cmdlet/cmdlet-sets.md
-                - name: Windows PowerShell-sessiestatus
+                - name: PowerShell-sessiestatus
                   href: developer/cmdlet/windows-powershell-session-state.md
             - name: Voorbeelden van cmdlet-code
               href: developer/cmdlet/examples-of-cmdlet-code.md
@@ -1022,11 +1032,11 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Voorbeeld Events01
                   href: developer/cmdlet/events01-sample.md
-        - name: Een Windows PowerShell-module schrijven
+        - name: Een PowerShell-module schrijven
           items:
             - name: Overzicht
               href: developer/module/writing-a-windows-powershell-module.md
-            - name: Inzicht in een Windows PowerShell-module
+            - name: Inzicht in een PowerShell-module
               href: developer/module/understanding-a-windows-powershell-module.md
             - name: Een PowerShell-scriptmodule schrijven
               href: developer/module/how-to-write-a-powershell-script-module.md
@@ -1050,17 +1060,17 @@
                   items:
                     - name: Overzicht
                       href: developer/module/how-to-create-a-windows-powershell-snap-in.md
-                    - name: Een Windows PowerShell-module schrijven
+                    - name: Een PowerShell-module schrijven
                       href: developer/module/writing-a-windows-powershell-snap-in.md
-                    - name: Een aangepaste Windows PowerShell-module schrijven
+                    - name: Een aangepaste PowerShell-module schrijven
                       href: developer/module/writing-a-custom-windows-powershell-snap-in.md
             - name: Een PowerShell-module importeren
               href: developer/module/importing-a-powershell-module.md
-        - name: Een Windows PowerShell-provider schrijven
+        - name: Een PowerShell-provider schrijven
           items:
-            - name: Snelstartgids voor Windows PowerShell-providers
+            - name: Quickstart voor PowerShell-providers
               href: developer/provider/windows-powershell-provider-quickstart.md
-            - name: Overzicht van Windows PowerShell-providers
+            - name: Overzicht van PowerShell-providers
               href: developer/provider/windows-powershell-provider-overview.md
               items:
                 - name: Typen providers
@@ -1092,9 +1102,9 @@
                   href: developer/provider/accessdbprovidersample05.md
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
-        - name: Een Windows PowerShell-hosttoepassing schrijven
+        - name: Een PowerShell-hosttoepassing schrijven
           items:
-            - name: Snelstartgids voor Windows PowerShell-hosts
+            - name: Quickstart voor PowerShell-hosts
               href: developer/hosting/windows-powershell-host-quickstart.md
             - name: Runspaces maken
               href: developer/hosting/creating-runspaces.md
@@ -1114,12 +1124,12 @@
             - name: Voorbeelden van hosttoepassingen
               href: developer/hosting/host-application-samples.md
               items:
-                - name: Voorbeelden van Windows PowerShell-API's
+                - name: Voorbeelden van PowerShell-API's
                   href: developer/hosting/windows-powershell-api-samples.md
                   items:
-                    - name: Voorbeeld Windows PowerShell01
+                    - name: Voorbeeld van PowerShell01
                       href: developer/hosting/windows-powershell01-sample.md
-                    - name: Voorbeeld Windows PowerShell02
+                    - name: Voorbeeld van PowerShell02
                       href: developer/hosting/windows-powershell02-sample.md
                 - name: Voorbeelden van aangepaste hosts
                   href: developer/hosting/custom-host-samples.md
@@ -1633,7 +1643,7 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: Het element WrapTables (opmaak)
                   href: developer/format/wraptables-element-format.md
-        - name: Help voor Windows PowerShell schrijven
+        - name: Help voor PowerShell schrijven
           items:
             - name: Overzicht
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
@@ -1655,7 +1665,7 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: Help-onderwerpen op basis van XML voor opdrachten schrijven
               items:
-                - name: Help voor Windows PowerShell-cmdlets schrijven
+                - name: Help voor PowerShell-cmdlets schrijven
                   items:
                     - name: Overzicht
                       href: developer/help/writing-help-for-windows-powershell-cmdlets.md
@@ -1679,9 +1689,10 @@
                       href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
                     - name: Gerelateerde koppelingen toevoegen aan een Help-onderwerp voor cmdlets
                       href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-                - name: Help voor Windows PowerShell-modules schrijven
-                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                - name: Help voor PowerShell-modules schrijven
                   items:
+                    - name: Overzicht
+                      href: developer/help/writing-help-for-windows-powershell-modules.md
                     - name: Naamgeving van Help-bestanden
                       href: developer/help/naming-help-files.md
                     - name: Ondersteunende help die kan worden bijgewerkt
@@ -1719,93 +1730,55 @@
                               href: developer/help/how-to-test-updatable-help.md
                         - name: Ondersteunende online help
                           href: developer/help/supporting-online-help.md
-                - name: Help voor Windows PowerShell-providers schrijven
+                - name: Help voor PowerShell-providers schrijven
                   items:
                     - name: Dynamische parameters toevoegen aan een Help-onderwerp over providers
                       href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
                     - name: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
                       href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-        - name: Een Management OData-webservice maken
+        - name: Extended Type System (ETS)
           items:
-            - name: Overzicht
-              href: developer/webservices/creating-a-management-odata-web-service.md
-            - name: Resources toevoegen aan een Management OData-webservice
-              href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
-            - name: Aangepaste autorisatie implementeren voor een Management OData-webservice
-              items:
-                - name: Overzicht
-                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
-                - name: Autorisatie op basis van rollen configureren
-                  href: developer/webservices/configuring-role-based-authorization.md
-                - name: Configuratieschema voor autorisatie op basis van rollen
-                  href: developer/webservices/role-based-authorization-configuration-schema.md
-                - name: Windows PowerShell-cmdlets aanroepen met Management OData-webservices
-                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
-            - name: SessionConfiguration implementeren voor een Management OData-webservice
-              href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
-            - name: Het MOF-schemabestand maken voor een Management OData-webservice
-              href: developer/webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
-            - name: Het XML-schemabestand maken voor een Management OData-webservice
-              href: developer/webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
-            - name: Het Web.config-bestand maken voor een Management OData-webservice
-              href: developer/webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
-            - name: Een Management OData-webservice implementeren
-              href: developer/webservices/deploying-a-management-odata-web-service.md
-            - name: Management OData-entiteiten koppelen
-              href: developer/webservices/associating-management-odata-entities.md
-            - name: Schemabestanden voor Management OData IIS Extension
-              items:
-                - name: Overzicht
-                  href: developer/webservices/management-odata-iis-extension-schema-files.md
-                - name: Schema voor resourcetoewijzing
-                  href: developer/webservices/resource-mapping-schema.md
-                - name: Schema van openbare resources
-                  href: developer/webservices/public-resource-schema.md
-        - name: Een Windows PowerShell-werkstroom schrijven
-          items:
-            - name: Overzicht
-              href: developer/workflow/writing-a-windows-powershell-workflow.md
-            - name: Windows PowerShell-activiteiten toevoegen aan de Visual Studio-werkset
-              href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: Een werkstroom maken met Windows PowerShell-activiteiten
-              href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
-            - name: Een werkstroom maken met behulp van een Windows PowerShell-script
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
-            - name: Een Windows PowerShell-werkstroom importeren en aanroepen
-              href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
-            - name: Een werkstroomactiviteit maken uit een Windows PowerShell-cmdlet
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: Taken plannen met de Windows PowerShell-API
-              href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
-            - name: Veelvoorkomende werkstroomparameters
-              href: developer/workflow/common-workflow-parameters.md
+            - name: Overzicht van ETS
+              href: developer/ets/overview.md
+            - name: ETS-leden
+              href: developer/ets/members.md
+            - name: ETS-ledensets
+              href: developer/ets/membersets.md
+            - name: ETS-eigenschappen
+              href: developer/ets/properties.md
+            - name: ETS-methoden
+              href: developer/ets/methods.md
+            - name: Conversieprogramma's voor ETS-type
+              href: developer/ets/typeconverters.md
+            - name: Fouten en uitzonderingen in ETS
+              href: developer/ets/errors-exceptions.md
         - name: Handleiding voor Windows PowerShell-programmeurs
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
-            - name: Een Windows PowerShell-provider maken
+            - name: Een PowerShell-provider maken
               href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
               items:
-                - name: Uw Windows PowerShell-provider ontwerpen
+                - name: Uw PowerShell-provider ontwerpen
                   href: developer/prog-guide/designing-your-windows-powershell-provider.md
-                - name: Een eenvoudige Windows PowerShell-provider ontwerpen
+                - name: Een eenvoudige PowerShell-provider ontwerpen
                   href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
-                - name: Een Windows PowerShell-stationprovider maken
+                - name: Een PowerShell-stationprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
-                - name: Een Windows PowerShell-itemprovider maken
+                - name: Een PowerShell-itemprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
-                - name: Een Windows PowerShell-containerprovider maken
+                - name: Een PowerShell-containerprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
-                - name: Een Windows PowerShell-navigatieprovider maken
+                - name: Een PowerShell-navigatieprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
-                - name: Een Windows PowerShell-inhoudsprovider maken
+                - name: Een PowerShell-inhoudsprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
-                - name: Een Windows PowerShell-eigenschapsprovider maken
+                - name: Een PowerShell-eigenschappenprovider maken
                   href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
             - name: Een console-shell maken
               href: developer/prog-guide/how-to-create-a-console-shell.md
-            - name: Windows PowerShell-concepten
+            - name: PowerShell-concepten
               href: developer/prog-guide/windows-powershell-concepts.md
-            - name: Windows PowerShell-voorbeeldcode
+            - name: PowerShell-voorbeeldcode
               href: developer/prog-guide/windows-powershell-sample-code.md
               items:
                 - name: AccessDbProviderSample01-codevoorbeeld
@@ -1823,68 +1796,68 @@
                 - name: GetProc01-codevoorbeelden
                   href: developer/prog-guide/getproc01-code-samples.md
                   items:
-                    - name: 'GetProc01-codevoorbeeld (C#)'
+                    - name: GetProc01-codevoorbeeld (C#)
                       href: developer/prog-guide/getproc01-csharp-sample-code.md
                     - name: GetProc01-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/getproc01-vb-net-sample-code.md
                 - name: GetProc02-codevoorbeelden
                   href: developer/prog-guide/getproc02-code-samples.md
                   items:
-                    - name: 'GetProc02-codevoorbeeld (C#)'
+                    - name: GetProc02-codevoorbeeld (C#)
                       href: developer/prog-guide/getproc02-csharp-sample-code.md
                     - name: GetProc02-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/getproc02-vb-net-sample-code.md
                 - name: GetProc03-codevoorbeelden
                   href: developer/prog-guide/getproc03-code-samples.md
                   items:
-                    - name: 'GetProc03-codevoorbeeld (C#)'
+                    - name: GetProc03-codevoorbeeld (C#)
                       href: developer/prog-guide/getproc03-csharp-sample-code.md
                     - name: GetProc03-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/getproc03-vb-net-sample-code.md
                 - name: GetProc04-codevoorbeelden
                   href: developer/prog-guide/getproc04-code-samples.md
                   items:
-                    - name: 'GetProc04-codevoorbeeld (C#)'
+                    - name: GetProc04-codevoorbeeld (C#)
                       href: developer/prog-guide/getproc04-csharp-sample-code.md
                     - name: GetProc04-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/getproc04-vb-net-sample-code.md
                 - name: GetProc05-codevoorbeelden
                   href: developer/prog-guide/getproc05-code-samples.md
                   items:
-                    - name: 'GetProc05-codevoorbeeld (C#)'
+                    - name: GetProc05-codevoorbeeld (C#)
                       href: developer/prog-guide/getproc05-csharp-sample-code.md
                     - name: GetProc05-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/getproc05-vb-net-sample-code.md
                 - name: StopProc01-codevoorbeelden
                   href: developer/prog-guide/stopproc01-code-samples.md
                   items:
-                    - name: 'StopProc01-codevoorbeeld (C#)'
+                    - name: StopProc01-codevoorbeeld (C#)
                       href: developer/prog-guide/stopproc01-csharp-sample-code.md
                 - name: StopProcessSample04-codevoorbeelden
                   href: developer/prog-guide/stopprocesssample04-code-samples.md
                   items:
-                    - name: 'StopProcessSample04-codevoorbeeld (C#)'
+                    - name: StopProcessSample04-codevoorbeeld (C#)
                       href: developer/prog-guide/stopprocesssample04-csharp-sample-code.md
                     - name: StopProcessSample04-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/stopprocesssample04-vb-net-sample-code.md
                 - name: Runspace01-codevoorbeelden
                   href: developer/prog-guide/runspace01-code-samples.md
                   items:
-                    - name: 'Runspace01-codevoorbeeld (C#)'
+                    - name: Runspace01-codevoorbeeld (C#)
                       href: developer/prog-guide/runspace01-csharp-code-sample.md
                     - name: Runspace01-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/runspace01-vb-net-code-sample.md
                 - name: Runspace02-codevoorbeelden
                   href: developer/prog-guide/runspace02-code-samples.md
                   items:
-                    - name: 'Runspace02-codevoorbeeld (C#)'
+                    - name: Runspace02-codevoorbeeld (C#)
                       href: developer/prog-guide/runspace02-csharp-code-sample.md
                     - name: Runspace02-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/runspace02-vb-net-code-sample.md
                 - name: Runspace03-codevoorbeelden
                   href: developer/prog-guide/runspace03-code-samples.md
                   items:
-                    - name: 'Runspace03-codevoorbeeld (C#)'
+                    - name: Runspace03-codevoorbeeld (C#)
                       href: developer/prog-guide/runspace03-csharp-code-sample.md
                     - name: Runspace03-codevoorbeeld (VB.NET)
                       href: developer/prog-guide/runspace03-vb-net-code-sample.md
