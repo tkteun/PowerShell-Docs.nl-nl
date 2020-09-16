@@ -1,13 +1,13 @@
 ---
-ms.date: 08/31/2020
+ms.date: 09/14/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: f6bd17b0a3bb70d0b538dd6615b905082c87f800
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 74623240bfb19022ae342a5d23e2ed4f455afa45
+ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236268"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574467"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -24,19 +24,19 @@ Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/a
 
 In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken.
 
-|                            Naam                            |   6,2   |   7,0   | 7,1 (preview-versie) |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
-| PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |               |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |               |
-| PSCommandNotFoundSuggestion                                | &check; | &check; |    &check;    |
-| PSImplicitRemotingBatching                                 | &check; | &check; |    &check;    |
-| Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; |    &check;    |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
-| PSNullConditionalOperators                                 |         | &check; |    &check;    |
-| PSUnixFileStat (niet-Windows)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution (mainstream in PS 7.1 +)           |         |         |    &check;    |
-| PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
-| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
+|                            Naam                            |   6,2   |   7,0   |   7.1   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
+| PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |         |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
+| Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
+| PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |
+| PSUnixFileStat (niet-Windows)                          |         | &check; | &check; |
+| PSNativePSPathResolution (mainstream in PS 7.1 +)           |         |         |         |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace
 
@@ -160,7 +160,9 @@ Ook in Windows, als het pad begint met `~` , dat wordt omgezet naar het volledig
 
 Wanneer deze experimentele functie is ingeschakeld, worden fout records die worden omgeleid van systeem eigen opdrachten, zoals het gebruik van omleidings operatoren ( `2>&1` ), niet naar de `$Error` variabele geschreven en is de voorkeurs variabele niet van `$ErrorActionPreference` invloed op de omgeleide uitvoer.
 
-Veel systeem eigen opdrachten schrijven naar `stderr` als alternatieve stroom voor aanvullende informatie. Dit gedrag kan leiden tot Verwar ring bij het opzoeken van fouten. of de aanvullende uitvoer gegevens kunnen naar de gebruiker worden verwijderd als deze `$ErrorActionPreference` is ingesteld op een status waardoor de uitvoer wordt gedempt.
+Veel systeem eigen opdrachten schrijven naar `stderr` als alternatieve stroom voor aanvullende informatie. Dit gedrag kan leiden tot Verwar ring bij het opzoeken van fouten of de aanvullende uitvoer gegevens kunnen verloren gaan voor de gebruiker als deze `$ErrorActionPreference` is ingesteld op een status die de uitvoer dempt.
+
+Wanneer een systeem eigen opdracht een afsluit code heeft die niet gelijk is aan nul, `$?` wordt ingesteld op `$false` . Als de afsluit code nul is, `$?` wordt ingesteld op `$true` .
 
 ## <a name="psnullconditionaloperators"></a>PSNullConditionalOperators
 
@@ -182,6 +184,9 @@ De eigenschap `propname` is toegankelijk en de waarde ervan wordt alleen geretou
 De `?.` `?[]` Opera tors en zijn lid van de operator toegang en staan geen ruimte tussen de naam van de variabele en de operator toe.
 
 Omdat Power shell `?` als onderdeel van de naam van de variabele is toegestaan, is ondubbelzinnige installatie vereist wanneer de Opera tors worden gebruikt zonder ruimte tussen de naam van de variabele en de operator. Voor dubbel zinnigheid moeten de variabelen worden gebruikt `{}` om de naam van de variabele te gebruiken, zoals: `${x?}?.propertyName` of `${y}?[0]` .
+
+> [!NOTE]
+> Deze functie is uit de experimentele fase verplaatst en is een mainstream functie in Power shell 7,1 en hoger.
 
 ## <a name="pstempdrive"></a>PSTempDrive
 
