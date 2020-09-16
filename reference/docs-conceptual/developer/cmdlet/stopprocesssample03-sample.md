@@ -1,71 +1,64 @@
 ---
 title: StopProcessSample03-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
-caps.latest.revision: 8
-ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359216"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787832"
 ---
-# <a name="stopprocesssample03-sample"></a><span data-ttu-id="32d7c-102">Voorbeeld StopProcessSample03</span><span class="sxs-lookup"><span data-stu-id="32d7c-102">StopProcessSample03 Sample</span></span>
+# <a name="stopprocesssample03-sample"></a><span data-ttu-id="f8b38-102">Voorbeeld StopProcessSample03</span><span class="sxs-lookup"><span data-stu-id="f8b38-102">StopProcessSample03 Sample</span></span>
 
-<span data-ttu-id="32d7c-103">In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliassen hebben en waarvan de para meters ondersteuning bieden voor joker tekens.</span><span class="sxs-lookup"><span data-stu-id="32d7c-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="32d7c-104">Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.</span><span class="sxs-lookup"><span data-stu-id="32d7c-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="f8b38-103">In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliassen hebben en waarvan de para meters ondersteuning bieden voor joker tekens.</span><span class="sxs-lookup"><span data-stu-id="f8b38-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="f8b38-104">Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.</span><span class="sxs-lookup"><span data-stu-id="f8b38-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="32d7c-105">Het voor beeld maken met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="32d7c-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="f8b38-105">Het voor beeld maken met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="f8b38-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="32d7c-106">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="32d7c-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="32d7c-107">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="32d7c-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
+1. <span data-ttu-id="f8b38-106">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="f8b38-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="f8b38-107">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="f8b38-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
 
-2. <span data-ttu-id="32d7c-108">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="32d7c-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="32d7c-109">Hiermee opent u het voorbeeld project in micro soft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="32d7c-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="f8b38-108">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="f8b38-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="f8b38-109">Hiermee opent u het voorbeeld project in micro soft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="f8b38-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="32d7c-110">Selecteer in het menu **Build** de optie **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="32d7c-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="f8b38-110">Selecteer in het menu **Build** de optie **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="f8b38-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="32d7c-111">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="32d7c-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="f8b38-111">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="f8b38-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="32d7c-112">Het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="32d7c-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="f8b38-112">Het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="f8b38-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="32d7c-113">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="32d7c-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="f8b38-113">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="f8b38-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2. <span data-ttu-id="32d7c-114">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="32d7c-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="f8b38-114">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="f8b38-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="32d7c-115">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="32d7c-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="f8b38-115">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f8b38-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="32d7c-116">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="32d7c-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="f8b38-116">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="f8b38-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample03`
 
-5. <span data-ttu-id="32d7c-117">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="32d7c-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="f8b38-117">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="f8b38-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="32d7c-118">Vereisten</span><span class="sxs-lookup"><span data-stu-id="32d7c-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="f8b38-118">Vereisten</span><span class="sxs-lookup"><span data-stu-id="f8b38-118">Requirements</span></span>
 
-<span data-ttu-id="32d7c-119">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="32d7c-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="f8b38-119">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="f8b38-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="32d7c-120">Hier ziet u</span><span class="sxs-lookup"><span data-stu-id="32d7c-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="f8b38-120">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="f8b38-120">Demonstrates</span></span>
 
-<span data-ttu-id="32d7c-121">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="32d7c-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="f8b38-121">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="f8b38-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="32d7c-122">Declareer een cmdlet-klasse met behulp van het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="32d7c-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="f8b38-122">Declareer een cmdlet-klasse met behulp van het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="f8b38-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="32d7c-123">Het declareren van een cmdlet-para meter met behulp van het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="32d7c-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="f8b38-123">Het declareren van een cmdlet-para meter met behulp van het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="f8b38-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="32d7c-124">Aliassen toevoegen aan parameter declaraties..</span><span class="sxs-lookup"><span data-stu-id="32d7c-124">Adding aliases to parameter declarations..</span></span>
+- <span data-ttu-id="f8b38-124">Aliassen toevoegen aan parameter declaraties..</span><span class="sxs-lookup"><span data-stu-id="f8b38-124">Adding aliases to parameter declarations..</span></span>
 
-- <span data-ttu-id="32d7c-125">Ondersteuning voor joker tekens toevoegen aan para meters.</span><span class="sxs-lookup"><span data-stu-id="32d7c-125">Adding wildcard support to parameters.</span></span>
+- <span data-ttu-id="f8b38-125">Ondersteuning voor joker tekens toevoegen aan para meters.</span><span class="sxs-lookup"><span data-stu-id="f8b38-125">Adding wildcard support to parameters.</span></span>
 
-## <a name="example"></a><span data-ttu-id="32d7c-126">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="32d7c-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f8b38-126">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f8b38-126">Example</span></span>
 
-<span data-ttu-id="32d7c-127">Dit voor beeld laat zien hoe u parameter aliassen declareert en Joker tekens ondersteunt.</span><span class="sxs-lookup"><span data-stu-id="32d7c-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
+<span data-ttu-id="f8b38-127">Dit voor beeld laat zien hoe u parameter aliassen declareert en Joker tekens ondersteunt.</span><span class="sxs-lookup"><span data-stu-id="f8b38-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
 
 ```csharp
 using System;
@@ -350,6 +343,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="32d7c-128">Zie ook</span><span class="sxs-lookup"><span data-stu-id="32d7c-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f8b38-128">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f8b38-128">See Also</span></span>
 
-[<span data-ttu-id="32d7c-129">Een Windows Power shell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="32d7c-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="f8b38-129">Een Windows PowerShell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="f8b38-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
