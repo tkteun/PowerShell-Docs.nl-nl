@@ -1,23 +1,16 @@
 ---
 title: Verklaring van de kenmerkset validate | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateSet
 - ValidateSet attribute, described
 - ValidateSet attribute
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
-ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355417"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787764"
 ---
 # <a name="validateset-attribute-declaration"></a>Declaratie van het kenmerk ValidateSet
 
@@ -41,7 +34,7 @@ Als dit kenmerk is opgegeven, bepaalt de Windows Power shell-runtime of het opge
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. De standaard waarde van `true` geeft aan dat het geval wordt genegeerd. Met een waarde van `false` wordt de cmdlet hoofdletter gevoelig gemaakt.
+`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) een optionele benoemde para meter. De standaard waarde van `true` geeft aan dat de aanvraag wordt genegeerd. De waarde van `false` de cmdlet is hoofdletter gevoelig.
 
 ## <a name="remarks"></a>Opmerkingen
 
@@ -55,4 +48,4 @@ Als dit kenmerk is opgegeven, bepaalt de Windows Power shell-runtime of het opge
 
 [System. Management. Automation. Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

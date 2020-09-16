@@ -1,19 +1,12 @@
 ---
 title: Script block-element voor GroupBy (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
-caps.latest.revision: 6
-ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e761e02a7910cd598449d564e827889162da9f25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355872"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787679"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>Het element ScriptBlock voor GroupBy (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee geeft u het script op waarmee een nieuwe groep wordt gestart wanneer de 
 
 Configuratie-element (indeling) ViewDefinitions element (indeling) element voor weer gave (indeling) GroupBy-element voor weer gave (Format) script block-element voor GroupBy (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element voor 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `ScriptBlock` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `ScriptBlock` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Element GroupBy voor weer gave (indeling)](./groupby-element-for-view-format.md)|Hiermee definieert u hoe een groep .NET-objecten wordt weer gegeven.|
+|[Het element GroupBy voor Weergave (opmaak)](./groupby-element-for-view-format.md)|Hiermee definieert u hoe een groep .NET-objecten wordt weer gegeven.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -57,8 +50,8 @@ Als dit element is opgegeven, kunt u het element [PropertyName](propertyname-ele
 
 ## <a name="see-also"></a>Zie ook
 
-[PropertyName-element voor GroupBy (indeling)](propertyname-element-for-groupby-format.md)
+[Het element PropertyName voor GroupBy (opmaak)](propertyname-element-for-groupby-format.md)
 
-[Element GroupBy voor weer gave (indeling)](groupby-element-for-view-format.md)
+[Het element GroupBy voor Weergave (opmaak)](groupby-element-for-view-format.md)
 
-[Een Power shell-indelings bestand schrijven](writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](writing-a-powershell-formatting-file.md)

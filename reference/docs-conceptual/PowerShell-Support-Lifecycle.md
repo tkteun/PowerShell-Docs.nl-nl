@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Beleids regels die ondersteuning bieden voor Power shell core
 ms.date: 03/09/2020
-ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560726"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236200"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -56,7 +56,7 @@ Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze w
 
 Platforms die worden vermeld als `Experimental` niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
-| Platform                                          |      6.2      |    7.0    |
+| Platform                                          |      6,2      |    7,0    |
 | ------------------------------------------------- | :-----------: | :-------: |
 | Windows 8,1 en 10                               |   Ondersteund   | Ondersteund |
 | Windows Server 2012 R2, 2016                      |   Ondersteund   | Ondersteund |
@@ -92,10 +92,13 @@ Op basis van de [levens cyclus van Power shell](#lifecycle-of-powershell-7), wor
 
 | Versie |    Einde van de levens duur     |
 | :-----: | ------------------ |
-|   7.0   | 3 december 2022   |
-|   6.2   | 4 september 2020  |
+|   7,0   | 3 december 2022   |
+|   6,2   | 4 september 2020  |
 |   6.1   | 28 september 2019 |
-|   6.0   | 13 februari 2019  |
+|   6,0   | 13 februari 2019  |
+
+> [!NOTE]
+> Dit document bevat ondersteuning voor Power shell Core 6 en Power shell 7. Windows Power shell (1,0-5,1) is een onderdeel van het Windows-besturings systeem. Onderdelen ontvangen dezelfde ondersteuning als het bovenliggende product of platform. Zie [informatie over levens cyclus van producten en services](/lifecycle/products/) voor meer informatie.
 
 ## <a name="unsupported-platforms"></a>Niet-ondersteunde platforms
 
@@ -183,4 +186,4 @@ De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power sh
 [lijst met compatibiliteits modules]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentele functies]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
-[Micro soft security-onderhouds criteria voor Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
+[Micro soft security-onderhouds criteria voor Windows]: https://www.microsoft.com/msrc/windows-security-servicing-criteria

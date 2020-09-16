@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692249"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236251"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -21,7 +21,7 @@ Samen vatting: dit document is bedoeld om proces en uitbreid baarheid te omvatte
 |           |                      Doc-info                      |
 | :-------- | :------------------------------------------------- |
 | Auteur    | Michael Greene                                     |
-| Revisoren | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
+| Reviewers | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
 | Gepubliceerd | April, 2015                                        |
 
 ## <a name="abstract"></a>Abstract
@@ -64,7 +64,7 @@ Naast het installeren van de meest recente inhoud van Windows Update, worden er 
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 bevat een functie met de naam DSC-service. De functie DSC-service biedt de functionaliteit van de pull-server, met inbegrip van de binaire bestanden die ondersteuning bieden voor het OData-eind punt. WMF is opgenomen in Windows Server en wordt bijgewerkt op een flexibele uitgebracht tussen Windows Server-releases.
-[Nieuwe versies van WMF 5,0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) kunnen updates bevatten voor de functie DSC-service. Daarom is het een best practice om de meest recente versie van WMF te downloaden en de release opmerkingen te bekijken om te bepalen of de release een update voor de DSC-service functie bevat. U moet ook de sectie van de release-opmerkingen door nemen die aangeven of de ontwerp status voor een update of scenario wordt weer gegeven als stabiel of experimenteel. Om een flexibele release cyclus mogelijk te maken, kunnen afzonderlijke functies worden gedeclareerd als stabiel, wat aangeeft dat de functie gereed is om te worden gebruikt in een productie omgeving, zelfs wanneer WMF in Preview wordt uitgebracht. Andere functies die historisch zijn bijgewerkt door WMF-releases (zie opmerkingen bij de WMF-release voor meer informatie):
+[Nieuwe versies van WMF 5,0](https://www.microsoft.com/download/details.aspx?id=54616) kunnen updates bevatten voor de functie DSC-service. Daarom is het een best practice om de meest recente versie van WMF te downloaden en de release opmerkingen te bekijken om te bepalen of de release een update voor de DSC-service functie bevat. U moet ook de sectie van de release-opmerkingen door nemen die aangeven of de ontwerp status voor een update of scenario wordt weer gegeven als stabiel of experimenteel. Om een flexibele release cyclus mogelijk te maken, kunnen afzonderlijke functies worden gedeclareerd als stabiel, wat aangeeft dat de functie gereed is om te worden gebruikt in een productie omgeving, zelfs wanneer WMF in Preview wordt uitgebracht. Andere functies die historisch zijn bijgewerkt door WMF-releases (zie opmerkingen bij de WMF-release voor meer informatie):
 
 - Windows Power shell Windows Power shell Integrated Scripting
 - Environment (ISE) Windows Power shell-webservices (Management OData
@@ -184,7 +184,7 @@ Clients die een configuratie aanvragen, hebben de vereiste DSC-modules nodig. Ee
 
 Het is belang rijk om te onthouden dat zelfs voor vertrouwde online bronnen, zoals de PowerShell Gallery, elke module die wordt gedownload uit een open bare opslag plaats moet worden gecontroleerd door iemand met een Power shell-ervaring en kennis van de omgeving waarin de modules worden gebruikt voordat deze in productie worden gebruikt. Bij het volt ooien van deze taak is het een goed idee om te controleren of er extra Payload in de module is die kan worden verwijderd, zoals documentatie en voorbeeld scripts. Hiermee wordt de netwerk bandbreedte per client in de eerste aanvraag verminderd, wanneer modules via het netwerk van de server naar de client worden gedownload.
 
-Elke module moet worden verpakt in een specifieke indeling, een ZIP-bestand met de naam ModuleName_Version. zip dat de module Payload bevat. Nadat het bestand is gekopieerd naar de server, moet er een controlesom bestand worden gemaakt.
+Elke module moet worden verpakt in een specifieke indeling, een ZIP-bestand met de naam ModuleName_Version.zip dat de module Payload bevat. Nadat het bestand is gekopieerd naar de server, moet er een controlesom bestand worden gemaakt.
 Wanneer clients verbinding maken met de server, wordt de controlesom gebruikt om te controleren of de inhoud van de DSC-module niet is gewijzigd sinds deze is gepubliceerd.
 
 ```powershell
@@ -541,4 +541,4 @@ Er wordt een gegevens bestand opgeslagen om informatie te maken tijdens de imple
 - **Windows Server 2012** Het bestands type is altijd. mdb
 - **Windows Server 2012 R2** Het bestands type wordt standaard ingesteld op. edb tenzij er een. mdb is opgegeven in de configuratie
 
-In het [geavanceerde voorbeeld script](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) voor het installeren van een pull-Server vindt u ook een voor beeld van het automatisch beheren van de instellingen van het web. config-bestand om een kans op fouten die door het bestands type wordt veroorzaakt te voor komen.
+In het [geavanceerde voorbeeld script](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) voor het installeren van een pull-Server vindt u ook een voor beeld van het automatisch beheren van de bestands instellingen van web.config om te voor komen dat er een fout wordt veroorzaakt door het bestands type.

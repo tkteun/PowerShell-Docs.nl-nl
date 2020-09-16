@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-bestands resource
-ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560471"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799601"
 ---
 # <a name="dsc-file-resource"></a>DSC-bestands resource
 
@@ -15,7 +15,7 @@ ms.locfileid: "83560471"
 
 De bron van het **bestand** in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op het doel knooppunt. **Doelpad** en **bronpad** moeten beide toegankelijk zijn voor het doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 File [string] #ResourceName
@@ -45,11 +45,11 @@ File [string] #ResourceName
 |Controlesom |Het type controlesom dat moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Geldige waarden zijn: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
 |Inhoud |Alleen geldig als deze wordt gebruikt met het **type** **bestand**. Hiermee wordt **aangegeven dat de** inhoud **aanwezig** is of **ontbreekt** in het doel bestand. |
 |Referentie |De referenties die nodig zijn voor toegang tot bronnen, zoals bron bestanden. |
-|Force |Onderdrukt de toegangs bewerkingen die resulteren in een fout (bijvoorbeeld het overschrijven van een bestand of het verwijderen van een niet-lege map). De standaard waarde is `$false` . |
-|Recurse |Alleen geldig als deze wordt gebruikt met het **type** **Directory**. Voert de status bewerking recursief uit op alle submappen. De standaard waarde is `$false` . |
+|Force |Onderdrukt de toegangs bewerkingen die resulteren in een fout (bijvoorbeeld het overschrijven van een bestand of het verwijderen van een niet-lege map). De standaardwaarde is `$false`. |
+|Recurse |Alleen geldig als deze wordt gebruikt met het **type** **Directory**. Hiermee wordt de status bewerking recursief uitgevoerd voor alle directory-inhoud, submappen en submappen. De standaardwaarde is `$false`. |
 |Bronpad |Het pad waaruit de bron van het bestand of de map moet worden gekopieerd. |
 |Type |Het type resource dat wordt geconfigureerd. Geldige waarden zijn **map** en **bestand**. De standaard waarde is een **bestand**. |
-|MatchSource |Hiermee wordt bepaald of de resource moet controleren op nieuwe bestanden die worden toegevoegd aan de bron directory na de eerste kopie. Een waarde van `$true` geeft aan dat na de eerste kopie nieuwe bron bestanden moeten worden gekopieerd naar de bestemming. Als `$false` deze is ingesteld op, wordt de inhoud van de bronmap in cache opgeslagen en worden alle bestanden die na de eerste kopie worden toegevoegd, genegeerd. De standaard waarde is `$false` . |
+|MatchSource |Hiermee wordt bepaald of de resource moet controleren op nieuwe bestanden die worden toegevoegd aan de bron directory na de eerste kopie. Een waarde van `$true` geeft aan dat na de eerste kopie nieuwe bron bestanden moeten worden gekopieerd naar de bestemming. Als `$false` deze is ingesteld op, wordt de inhoud van de bronmap in cache opgeslagen en worden alle bestanden die na de eerste kopie worden toegevoegd, genegeerd. De standaardwaarde is `$false`. |
 
 > [!WARNING]
 > Als u geen waarde opgeeft voor **referentie** -of **PSRunAsCredential**, gebruikt de resource het computer account van het doel knooppunt om toegang te krijgen tot het **bronpad**. Wanneer het **bronpad** een UNC-share is, kan dit resulteren in een fout ' toegang geweigerd '. Zorg ervoor dat uw machtigingen dienovereenkomstig zijn ingesteld, of gebruik de eigenschappen **Credential** of **PSRunAsCredential** om het account op te geven dat moet worden gebruikt.
@@ -69,6 +69,7 @@ File [string] #ResourceName
 
 - Wanneer u alleen een **doelpad**opgeeft, zorgt de bron ervoor dat het pad bestaat, indien het **aanwezig** is of niet bestaat als het **ontbreekt**.
 - Wanneer u een **bronpad** en een **doelpad** met de **type** waarde **Directory**opgeeft, wordt de bron Directory gekopieerd naar het doelpad. Met de **Eigenschappen wordt**het type Kopieer bewerking dat wordt uitgevoerd, gewijzigd, **geforceerd**en **MatchSource** , terwijl de **referentie** bepaalt welk account moet worden gebruikt om toegang te krijgen tot de bron directory.
+- Als u de eigenschap **recursief** niet instelt op bij het `$true` kopiëren van een map, wordt geen van de inhoud van de bestaande map gekopieerd. Alleen de opgegeven map wordt gekopieerd.
 - Als u voor de eigenschap **Attributes** naast een **doelpad**de waarde **ReadOnly** hebt opgegeven **, moet u** **ervoor zorgen dat** het opgegeven pad wordt gemaakt, terwijl de **inhoud** van het bestand is ingesteld. Als u **ervoor zorgt dat** de instelling niet **aanwezig** is, wordt de eigenschap **Attributes** volledig genegeerd en worden alle bestanden verwijderd uit het opgegeven pad.
 
 ## <a name="example"></a>Voorbeeld

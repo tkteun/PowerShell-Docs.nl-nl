@@ -1,13 +1,13 @@
 ---
-ms.date: 04/28/2020
+ms.date: 08/31/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: 72a4309d6eeede4cd2ff7c38ce8e99ce3ace30eb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: f6bd17b0a3bb70d0b538dd6615b905082c87f800
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810559"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236268"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -24,7 +24,7 @@ Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/a
 
 In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken.
 
-|                            Naam                            |   6.2   |   7.0   | 7,1 (preview-versie) |
+|                            Naam                            |   6,2   |   7,0   | 7,1 (preview-versie) |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----------: |
 | PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |               |
 | PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |               |
@@ -34,12 +34,36 @@ In dit artikel worden de experimentele functies beschreven die beschikbaar zijn 
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; |    &check;    |
 | PSNullConditionalOperators                                 |         | &check; |    &check;    |
 | PSUnixFileStat (niet-Windows)                          |         | &check; |    &check;    |
-| PSNativePSPathResolution                                   |         |         |    &check;    |
+| PSNativePSPathResolution (mainstream in PS 7.1 +)           |         |         |    &check;    |
 | PSCultureInvariantReplaceOperator                          |         |         |    &check;    |
+| PSNotApplyErrorActionToStderr                              |         |         |    &check;    |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace
 
-Hiermee schakelt u de para meter **BreakAll** in op de `Debug-Runspace` `Debug-Job` cmdlets, zodat gebruikers kunnen bepalen of ze Power shell direct op de huidige locatie moeten afkraken wanneer ze een debugger koppelen.
+In Power shell 7,0 stelt het experiment de para meter **BreakAll** in op de `Debug-Runspace` `Debug-Job` cmdlets, zodat gebruikers kunnen bepalen of ze Power shell onmiddellijk op de huidige locatie moeten afkraken wanneer ze een debugger koppelen.
+
+In Power shell 7,1 voegt dit experiment ook de **runs Pace** -para meter toe aan de `*-PSBreakpoint` cmdlets.
+
+- `Disable-PSBreakpoint`
+- `Enable-PSBreakpoint`
+- `Get-PSBreakpoint`
+- `Remove-PSBreakpoint`
+- `Set-PSBreakpoint`
+
+De para meter **runs Pace** geeft een **runs Pace** -object op om te communiceren met onderbrekings punten in de opgegeven runs Pace.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
+In dit voor beeld wordt een taak gestart en wordt een onderbrekings punt ingesteld op break wanneer de `Set-PSBreakPoint` wordt uitgevoerd. De runs Pace wordt opgeslagen in een variabele en door gegeven aan de `Get-PSBreakPoint` opdracht met de para meter **runs Pace** . U kunt vervolgens het onderbrekings punt in de variabele inspecteren `$breakpoint` .
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
@@ -129,6 +153,15 @@ Ook in Windows, als het pad begint met `~` , dat wordt omgezet naar het volledig
 - Als het pad geen PSDrive of `~` (in Windows) is, treedt de normalisatie van het pad niet op
 - Als het pad zich in enkele aanhalings tekens bevindt, wordt het niet opgelost en behandeld als een letterlijke waarde
 
+> [!NOTE]
+> Deze functie is uit de experimentele fase verplaatst en is een mainstream functie in Power shell 7,1 en hoger.
+
+## <a name="psnotapplyerroractiontostderr"></a>PSNotApplyErrorActionToStderr
+
+Wanneer deze experimentele functie is ingeschakeld, worden fout records die worden omgeleid van systeem eigen opdrachten, zoals het gebruik van omleidings operatoren ( `2>&1` ), niet naar de `$Error` variabele geschreven en is de voorkeurs variabele niet van `$ErrorActionPreference` invloed op de omgeleide uitvoer.
+
+Veel systeem eigen opdrachten schrijven naar `stderr` als alternatieve stroom voor aanvullende informatie. Dit gedrag kan leiden tot Verwar ring bij het opzoeken van fouten. of de aanvullende uitvoer gegevens kunnen naar de gebruiker worden verwijderd als deze `$ErrorActionPreference` is ingesteld op een status waardoor de uitvoer wordt gedempt.
+
 ## <a name="psnullconditionaloperators"></a>PSNullConditionalOperators
 
 Hierin worden nieuwe Opera tors geïntroduceerd voor de null-Opera tors voor voorwaardelijke toegang, `?.` en `?[]` . Toegangs operatoren voor Null-leden kunnen worden gebruikt voor scalaire typen en matrix typen. Retourneert de waarde van het geopende lid als de variabele niet null is. Als de waarde van de variabele null is, retourneert dan Null.
@@ -164,7 +197,7 @@ Deze functie biedt nieuw gedrag om gegevens op te nemen uit de UNIX **stat** -AP
 De uitvoer van `Get-ChildItem` moet er ongeveer als volgt uitzien:
 
 ```powershell
-PS> dir | select -first 4 -skip 5
+dir | select -first 4 -skip 5
 
 
     Directory: /Users/jimtru/src/github/forks/JamesWTruher/PowerShell-1
@@ -183,8 +216,8 @@ Met deze functie kunt u het tabblad volt ooien van verkorte cmdlets en functies:
 
 Bijvoorbeeld:
 
-- `i-psdf<tab>`retourneert `Import-PowerShellDataFile` .
-- `u-akvmssdr<tab>`retourneert`Undo-AzKeyVaultManagedStorageSasDefinitionRemoval`
+- `i-psdf<tab>` retourneert `Import-PowerShellDataFile` .
+- `u-akvmssdr<tab>` retourneert `Undo-AzKeyVaultManagedStorageSasDefinitionRemoval`
 
 Dit werkt alleen voor tabblad voltooiing (interactief gebruik), dus `i-psdf` is geen geldige cmdlet-naam in een script.
 

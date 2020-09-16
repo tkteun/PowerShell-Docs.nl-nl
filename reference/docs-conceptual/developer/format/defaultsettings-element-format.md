@@ -1,19 +1,12 @@
 ---
 title: DefaultSettings-element (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
-caps.latest.revision: 11
-ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7da7948fc0814e38a8f3910596e223470ec27d75
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72355130"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787730"
 ---
 # <a name="defaultsettings-element-format"></a>Het element DefaultSettings (opmaak)
 
@@ -21,7 +14,7 @@ Hiermee definieert u algemene instellingen die van toepassing zijn op alle weer 
 
 Configuratie-element (indeling) DefaultSettings element (indeling)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <DefaultSettings>
@@ -35,7 +28,7 @@ Configuratie-element (indeling) DefaultSettings element (indeling)
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het element `DefaultSettings` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `DefaultSettings` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -45,11 +38,11 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[Display error-element (indeling)](./displayerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de teken reeks #ERR wordt weer gegeven als er een fout optreedt bij het weer geven van een stukje gegevens.|
-|[EnumerableExpansions-element (indeling)](./enumerableexpansions-element-format.md)|Optioneel element.<br /><br /> Definieert de verschillende manieren waarop .NET-objecten worden uitgevouwen wanneer ze in een weer gave worden weer gegeven.|
+|[Het element DisplayError (opmaak)](./displayerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de teken reeks #ERR wordt weer gegeven als er een fout optreedt bij het weer geven van een stukje gegevens.|
+|[Het element EnumerableExpansions (opmaak)](./enumerableexpansions-element-format.md)|Optioneel element.<br /><br /> Definieert de verschillende manieren waarop .NET-objecten worden uitgevouwen wanneer ze in een weer gave worden weer gegeven.|
 |[PropertyCountForTable (indeling)](./propertycountfortable-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u het minimum aantal eigenschappen op dat een object moet hebben om het object weer te geven in een tabel weergave.|
-|[Show Error-element (indeling)](./showerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de volledige fout record wordt weer gegeven als er een fout optreedt bij het weer geven van een stukje gegevens.|
-|[WrapTables-element (indeling)](./wraptables-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de gegevens in een tabel naar de volgende regel worden verplaatst als deze niet in de kolom breedte passen.|
+|[Het element ShowError (opmaak)](./showerror-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de volledige fout record wordt weer gegeven als er een fout optreedt bij het weer geven van een stukje gegevens.|
+|[Het element WrapTables (opmaak)](./wraptables-element-format.md)|Optioneel element.<br /><br /> Hiermee geeft u op dat de gegevens in een tabel naar de volgende regel worden verplaatst als deze niet in de kolom breedte passen.|
 
 ### <a name="parent-elements"></a>Bovenliggende elementen
 
@@ -63,14 +56,14 @@ Geen.
 
 [Configuratie-element](./configuration-element-format.md)
 
-[Display error-element (indeling)](./displayerror-element-format.md)
+[Het element DisplayError (opmaak)](./displayerror-element-format.md)
 
-[EnumerableExpansions-element (indeling)](./enumerableexpansions-element-format.md)
+[Het element EnumerableExpansions (opmaak)](./enumerableexpansions-element-format.md)
 
 [PropertyCountForTable (indeling)](./propertycountfortable-element-format.md)
 
-[Show Error-element (indeling)](./showerror-element-format.md)
+[Het element ShowError (opmaak)](./showerror-element-format.md)
 
-[WrapTables-element (indeling)](./wraptables-element-format.md)
+[Het element WrapTables (opmaak)](./wraptables-element-format.md)
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

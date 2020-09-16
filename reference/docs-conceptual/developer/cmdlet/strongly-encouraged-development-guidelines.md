@@ -1,25 +1,18 @@
 ---
 title: Sterk aangeraden ontwikkel richtlijnen | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
-caps.latest.revision: 13
-ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 02488fea557b42ed30ea5cfde177b3efe0b3f559
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359191"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787815"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Zeer aangeraden richtlijnen voor de ontwikkeling
 
 In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmdlets schrijft. Ze zijn onderverdeeld in richt lijnen voor het ontwerpen van cmdlets en richt lijnen voor het schrijven van uw cmdlet-code. Het kan voor komen dat deze richt lijnen niet van toepassing zijn op elk scenario. Als ze echter wel van toepassing zijn en u deze richt lijnen niet volgt, hebben uw gebruikers mogelijk een slechte ervaring wanneer ze uw cmdlets gebruiken.
 
-## <a name="design-guidelines"></a>Ontwerprichtlijnen
+## <a name="design-guidelines"></a>Ontwerp richtlijnen
 
 - [Een specifiek zelfstandig naam woord gebruiken voor een Cmdletnaam (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +34,7 @@ In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmd
 
 - [Cmdlets hoofdletter gevoelig maken en case-behoud (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Ontwerprichtlijnen
+## <a name="design-guidelines"></a>Ontwerp richtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -61,7 +54,7 @@ Een cmdlet heeft para meters nodig die de gegevens ontvangen waarop het moet wor
 
 #### <a name="use-standard-parameter-names"></a>Standaard parameter namen gebruiken
 
-De cmdlet moet standaard parameter namen gebruiken, zodat de gebruiker snel kan bepalen wat een bepaalde para meter aangeeft. Als een meer specifieke naam vereist is, gebruikt u een standaard parameter naam en geeft u een specifieke naam op als alias. De `Get-Service` cmdlet heeft bijvoorbeeld een para meter met een algemene naam (`Name`) en een meer specifieke alias (`ServiceName`). Beide termen kunnen worden gebruikt om de para meter op te geven.
+De cmdlet moet standaard parameter namen gebruiken, zodat de gebruiker snel kan bepalen wat een bepaalde para meter aangeeft. Als een meer specifieke naam vereist is, gebruikt u een standaard parameter naam en geeft u een specifieke naam op als alias. De `Get-Service` cmdlet heeft bijvoorbeeld een para meter met een algemene naam ( `Name` ) en een meer specifieke alias ( `ServiceName` ). Beide termen kunnen worden gebruikt om de para meter op te geven.
 
 Zie [cmdlet-parameter naam en-functionaliteit](./standard-cmdlet-parameter-names-and-types.md)voor meer informatie over parameter namen en de bijbehorende gegevens typen.
 
@@ -73,7 +66,7 @@ Meervouds parameter namen mogen alleen worden gebruikt in gevallen waarin de waa
 
 #### <a name="use-pascal-case-for-parameter-names"></a>Pascal-cases gebruiken voor parameter namen
 
-Gebruik Pascal cases voor parameter namen. Met andere woorden, met de eerste letter van elk woord in de parameter naam, met inbegrip van de eerste letter van de naam. De parameter naam `ErrorAction` gebruikt bijvoorbeeld het juiste hoofdletter gebruik. De volgende parameter namen gebruiken een onjuist hoofdletter gebruik:
+Gebruik Pascal cases voor parameter namen. Met andere woorden, met de eerste letter van elk woord in de parameter naam, met inbegrip van de eerste letter van de naam. De naam van de para meter `ErrorAction` gebruikt bijvoorbeeld het juiste hoofdletter gebruik. De volgende parameter namen gebruiken een onjuist hoofdletter gebruik:
 
 - `errorAction`
 
@@ -97,13 +90,13 @@ Para meters moeten worden gedefinieerd als .NET Framework typen voor een betere 
 
 #### <a name="use-consistent-parameter-types"></a>Consistente parameter typen gebruiken
 
-Wanneer dezelfde para meter wordt gebruikt door meerdere cmdlets, moet u altijd hetzelfde parameter type gebruiken.  Als de para meter `Process` bijvoorbeeld het type [System. Int16](/dotnet/api/System.Int16) is voor één cmdlet, moet u de para meter `Process` niet voor een andere cmdlet van het type [System. Uint16](/dotnet/api/System.UInt16) maken.
+Wanneer dezelfde para meter wordt gebruikt door meerdere cmdlets, moet u altijd hetzelfde parameter type gebruiken.  Als de `Process` para meter bijvoorbeeld een [System. Int16](/dotnet/api/System.Int16) -type is voor één cmdlet, mag u de `Process` para meter niet voor een andere cmdlet van het type [System. Uint16](/dotnet/api/System.UInt16) maken.
 
 #### <a name="parameters-that-take-true-and-false"></a>Para meters die waar en ONWAAR doen
 
-Als uw para meter alleen `true` en `false`, definieert u de para meter als type [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Een para meter switch wordt behandeld als `true` wanneer deze in een opdracht is opgegeven. Als de para meter niet is opgenomen in een opdracht, beschouwt Windows Power shell de waarde van de para meter die moet worden `false`. Definieer geen Boole-para meters.
+Als uw para meter alleen `true` en gebruikt `false` , definieert u de para meter als type [System. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Een para meter switch wordt beschouwd als `true` wanneer deze in een opdracht wordt opgegeven. Als de para meter niet is opgenomen in een opdracht, beschouwt Windows Power shell de waarde van de para meter `false` . Definieer geen Boole-para meters.
 
-Als uw para meter onderscheid moet maken tussen drie waarden: $true, $false en ' niet opgegeven ', definieert u een para meter van het type nullable\<BOOL >.  De nood zaak van een derde, niet-opgegeven waarde treedt doorgaans op wanneer de cmdlet een Booleaanse eigenschap van een object kan wijzigen. In dit geval betekent "niet opgegeven" dat de huidige waarde van de eigenschap niet kan worden gewijzigd.
+Als uw para meter onderscheid moet maken tussen drie waarden: $true, $false en ' niet opgegeven ', definieert u een para meter van het type nullable \<bool> .  De nood zaak van een derde, niet-opgegeven waarde treedt doorgaans op wanneer de cmdlet een Booleaanse eigenschap van een object kan wijzigen. In dit geval betekent "niet opgegeven" dat de huidige waarde van de eigenschap niet kan worden gewijzigd.
 
 #### <a name="support-arrays-for-parameters"></a>Ondersteunings matrices voor para meters
 
@@ -111,7 +104,7 @@ Gebruikers moeten vaak dezelfde bewerking uitvoeren op meerdere argumenten. Voor
 
 #### <a name="support-the-passthru-parameter"></a>Ondersteuning voor de PassThru-para meter
 
-Standaard kunnen veel cmdlets die het systeem wijzigen, zoals de cmdlet [Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) , fungeren als ' sinks ' voor-objecten en geen resultaten retour neren. Met deze cmdlet moet de para meter `PassThru` worden geïmplementeerd om ervoor te zorgen dat de cmdlet een object retourneert. Wanneer de para meter `PassThru` is opgegeven, retourneert de cmdlet een object met behulp van een aanroep van de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . Met de volgende opdracht wordt het proces berekenen bijvoorbeeld gestopt en wordt het resulterende proces door gegeven aan de pijp lijn.
+Standaard kunnen veel cmdlets die het systeem wijzigen, zoals de cmdlet [Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) , fungeren als ' sinks ' voor-objecten en geen resultaten retour neren. Deze cmdlet moet de `PassThru` para meter implementeren om ervoor te zorgen dat de cmdlet een object retourneert. Wanneer de `PassThru` para meter is opgegeven, retourneert de cmdlet een-object met behulp van een aanroep van de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . Met de volgende opdracht wordt het proces berekenen bijvoorbeeld gestopt en wordt het resulterende proces door gegeven aan de pijp lijn.
 
 ```powershell
 Stop-Process calc -passthru
@@ -131,7 +124,7 @@ Wanneer er parameter sets worden gebruikt, wordt de standaard parameterset gedef
 
 Gebruik de richt lijnen in deze sectie om feedback te geven aan de gebruiker. Met deze feedback kan de gebruiker op de hoogte zijn van wat er in het systeem gebeurt en om betere administratieve beslissingen te nemen.
 
-De Windows Power shell-runtime geeft een gebruiker de mogelijkheid om op te geven hoe de uitvoer van elke aanroep naar de `Write` methode moet worden afgehandeld door een voorkeurs variabele in te stellen. De gebruiker kan verschillende voorkeurs variabelen instellen, met inbegrip van een variabele die bepaalt of het systeem informatie moet weer geven en een variabele die bepaalt of het systeem een query moet uitvoeren op de gebruiker voordat verdere actie wordt ondernomen.
+De Windows Power shell-runtime geeft een gebruiker de mogelijkheid om op te geven hoe de uitvoer van elke aanroep naar de methode moet worden afgehandeld `Write` door een voorkeurs variabele in te stellen. De gebruiker kan verschillende voorkeurs variabelen instellen, met inbegrip van een variabele die bepaalt of het systeem informatie moet weer geven en een variabele die bepaalt of het systeem een query moet uitvoeren op de gebruiker voordat verdere actie wordt ondernomen.
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>De WriteWarning-, WriteVerbose-en WriteDebug-methoden ondersteunen
 
@@ -139,7 +132,7 @@ Een cmdlet moet de methode [System. Management. Automation. cmdlet. WriteWarning
 
 Een cmdlet moet de methode [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) aanroepen als de gebruiker enige details nodig heeft over wat de cmdlet uitvoert. Een cmdlet moet deze informatie bijvoorbeeld aanroepen als de maker van de cmdlet laat zien dat er scenario's zijn die mogelijk meer informatie nodig hebben over de werking van de cmdlet.
 
-De cmdlet moet de methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroepen wanneer een ontwikkelaar of producttechnische mede werker moet weten wat de cmdlet-bewerking heeft beschadigd. Het is niet nodig dat de cmdlet de methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroept in dezelfde code die de methode [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) aanroept omdat de para meter `Debug` beide gegevens sets presenteert.
+De cmdlet moet de methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroepen wanneer een ontwikkelaar of producttechnische mede werker moet weten wat de cmdlet-bewerking heeft beschadigd. Het is niet nodig dat de cmdlet de methode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) aanroept in dezelfde code die de methode [System. Management. Automation. cmdlet. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) aanroept omdat de `Debug` para meter beide gegevens sets bevat.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Ondersteuning voor WriteProgress voor bewerkingen die veel tijd in beslag nemen
 
@@ -156,7 +149,7 @@ Tenzij een cmdlet specifiek is ontworpen voor het genereren van een Graphical Us
 
 ### <a name="create-a-cmdlet-help-file-sd05"></a>Een Help-bestand voor cmdlets maken (SD05)
 
-Maak voor elke cmdlet-assembly een Help. XML-bestand dat informatie over de cmdlet bevat. Deze informatie bevat een beschrijving van de cmdlet, beschrijvingen van de para meters van de cmdlet, voor beelden van het gebruik van de cmdlet en meer.
+Maak voor elke cmdlet-assembly een Help.xml-bestand dat informatie over de cmdlet bevat. Deze informatie bevat een beschrijving van de cmdlet, beschrijvingen van de para meters van de cmdlet, voor beelden van het gebruik van de cmdlet en meer.
 
 ## <a name="code-guidelines"></a>Code richtlijnen
 
@@ -170,7 +163,7 @@ Definieer een para meter door een open bare eigenschap van de cmdlet-klasse te d
 
 Het Windows Power shell-pad is het mechanisme voor het normaliseren van toegang tot naam ruimten. Wanneer u een Windows Power shell-pad toewijst aan een para meter in de cmdlet, kan de gebruiker een aangepast station definiëren dat fungeert als een snelkoppeling naar een specifiek pad. Wanneer een gebruiker een dergelijk station aanwijst, kunnen opgeslagen gegevens, zoals gegevens in het REGI ster, op een consistente manier worden gebruikt.
 
-Als uw cmdlet toestaat dat de gebruiker een bestand of een gegevens bron opgeeft, moet er een para meter van het type [System. String](/dotnet/api/System.String)worden gedefinieerd. Als er meer dan één station wordt ondersteund, moet het type een matrix zijn. De naam van de para meter moet `Path`zijn, met een alias van `PSPath`. Daarnaast moet de para meter `Path` joker tekens ondersteunen. Als ondersteuning voor joker tekens niet is vereist, definieert u een `LiteralPath` para meter.
+Als uw cmdlet toestaat dat de gebruiker een bestand of een gegevens bron opgeeft, moet er een para meter van het type [System. String](/dotnet/api/System.String)worden gedefinieerd. Als er meer dan één station wordt ondersteund, moet het type een matrix zijn. De naam van de para meter moet zijn `Path` , met een alias van `PSPath` . Daarnaast moet de `Path` para meter joker tekens ondersteunen. Als ondersteuning voor joker tekens niet is vereist, definieert u een `LiteralPath` para meter.
 
 Als de gegevens die door de cmdlet worden gelezen of geschreven, een bestand moeten zijn, moet de cmdlet Windows Power shell-pad invoer accepteren. de cmdlet moet de eigenschap [System. Management. Automation. sessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) gebruiken om de Windows Power shell-paden om te zetten in paden die het bestands systeem herkent. De specifieke mechanismen zijn onder andere de volgende methoden:
 
@@ -182,7 +175,7 @@ Als de gegevens die door de cmdlet worden gelezen of geschreven, een bestand moe
 
 - [System. Management. Automation. PathIntrinsics. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Als de gegevens die door de cmdlet worden gelezen of geschreven, slechts een set teken reeksen zijn in plaats van een bestand, moet de cmdlet de inhouds gegevens van de provider (`Content` lid) gebruiken om te lezen en te schrijven. Deze informatie wordt opgehaald uit de eigenschap [System. Management. Automation. provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Met deze mechanismen kunnen andere gegevens archieven deel nemen aan het lezen en schrijven van gegevens.
+Als de gegevens die door de cmdlet worden gelezen of geschreven, slechts een set teken reeksen zijn in plaats van een bestand, moet de cmdlet de inhouds informatie van de provider ( `Content` lid) gebruiken om te lezen en te schrijven. Deze informatie wordt opgehaald uit de eigenschap [System. Management. Automation. provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Met deze mechanismen kunnen andere gegevens archieven deel nemen aan het lezen en schrijven van gegevens.
 
 #### <a name="support-wildcard-characters"></a>Joker tekens ondersteunen
 
@@ -198,15 +191,15 @@ Deze sectie bevat richt lijnen voor het definiëren van objecten voor cmdlets en
 
 ##### <a name="define-standard-members"></a>Standaard leden definiëren
 
-Standaard leden definiëren voor het uitbreiden van een object type in een aangepast type. ps1xml-bestand (gebruik het bestand Windows Power shell types. ps1xml als een sjabloon). Standaard leden worden gedefinieerd door een knoop punt met de naam PSStandardMembers. Met deze definities kunnen andere cmdlets en de Windows Power shell-runtime op een consistente manier werken met uw object.
+Standaard leden definiëren voor het uitbreiden van een object type in een aangepast Types.ps1XML-bestand (gebruik het Windows Power shell-Types.ps1XML-bestand als een sjabloon). Standaard leden worden gedefinieerd door een knoop punt met de naam PSStandardMembers. Met deze definities kunnen andere cmdlets en de Windows Power shell-runtime op een consistente manier werken met uw object.
 
 ##### <a name="define-objectmembers-to-be-used-as-parameters"></a>ObjectMembers definiëren die moeten worden gebruikt als para meters
 
 Als u een-object ontwerpt voor een cmdlet, moet u ervoor zorgen dat de leden rechtstreeks zijn gekoppeld aan de para meters van de cmdlets die deze gaan gebruiken. Met deze toewijzing kan het object eenvoudig naar de pijp lijn worden verzonden en worden door gegeven van de ene cmdlet naar de andere.
 
-Bestaande .NET Framework objecten die worden geretourneerd door cmdlets, missen vaak enkele belang rijke of handige leden die nodig zijn voor de script ontwikkelaar of gebruiker. Deze ontbrekende leden kunnen met name belang rijk zijn voor weer gave en voor het maken van de juiste lidnamen, zodat het object correct kan worden door gegeven aan de pijp lijn. Maak een aangepast type ps1xml-bestand om deze vereiste leden te documenteren. Wanneer u dit bestand maakt, raden we u aan de volgende naam Conventie toe te voegen: *< Your_Product_Name >* . Typen. ps1xml.
+Bestaande .NET Framework objecten die worden geretourneerd door cmdlets, missen vaak enkele belang rijke of handige leden die nodig zijn voor de script ontwikkelaar of gebruiker. Deze ontbrekende leden kunnen met name belang rijk zijn voor weer gave en voor het maken van de juiste lidnamen, zodat het object correct kan worden door gegeven aan de pijp lijn. Maak een aangepast Types.ps1XML-bestand om deze vereiste leden te documenteren. Wanneer u dit bestand maakt, raden we u aan de volgende naam Conventie toe te voegen: *<Your_Product_Name>*.Types.ps1XML.
 
-U kunt bijvoorbeeld een `Mode` script-eigenschap toevoegen aan het type [System. io. file info](/dotnet/api/System.IO.FileInfo) om de kenmerken van een bestand duidelijker weer te geven. Daarnaast kunt u een alias eigenschap `Count` toevoegen aan het type [System. array](/dotnet/api/System.Array) om het consistente gebruik van die eigenschaps naam (in plaats van `Length`) toe te staan.
+U kunt bijvoorbeeld een `Mode` script eigenschap toevoegen aan het type [System. io. file info](/dotnet/api/System.IO.FileInfo) om de kenmerken van een bestand duidelijker weer te geven. Daarnaast kunt u een `Count` alias eigenschap toevoegen aan het type [System. array](/dotnet/api/System.Array) om het consistente gebruik van die eigenschaps naam (in plaats van) toe te staan `Length` .
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementeer de interface IComparable
 
@@ -214,19 +207,19 @@ Implementeer een [System. IComparable](/dotnet/api/System.IComparable) -interfac
 
 ##### <a name="update-display-information"></a>Weer gave-informatie bijwerken
 
-Als de weer gave voor een object niet de verwachte resultaten geeft, maakt u een aangepaste *\<YourProductName >* . Format. ps1xml-bestand voor dat object.
+Als de weer gave voor een object niet de verwachte resultaten geeft, maakt u een aangepast *\<YourProductName>*.Format.ps1XML-bestand voor dat object.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Ondersteuning van goed gedefinieerde pijplijn invoer (SC02)
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implementeren voor het midden van een pijp lijn
 
-Implementeer een cmdlet, ervan uitgaande dat deze vanuit het midden van een pijp lijn wordt aangeroepen (dat wil zeggen dat andere cmdlets de invoer produceren of de uitvoer verbruiken). U kunt bijvoorbeeld aannemen dat de cmdlet `Get-Process`, omdat deze gegevens genereert, wordt alleen gebruikt als de eerste cmdlet in een pijp lijn. Omdat deze cmdlet echter is ontworpen voor het midden van een pijp lijn, kunnen met deze cmdlet eerdere cmdlets of gegevens in de pijp lijn worden opgegeven voor de processen die moeten worden opgehaald.
+Implementeer een cmdlet, ervan uitgaande dat deze vanuit het midden van een pijp lijn wordt aangeroepen (dat wil zeggen dat andere cmdlets de invoer produceren of de uitvoer verbruiken). U kunt bijvoorbeeld aannemen dat de `Get-Process` cmdlet, omdat deze gegevens genereert, alleen wordt gebruikt als de eerste cmdlet in een pijp lijn. Omdat deze cmdlet echter is ontworpen voor het midden van een pijp lijn, kunnen met deze cmdlet eerdere cmdlets of gegevens in de pijp lijn worden opgegeven voor de processen die moeten worden opgehaald.
 
 #### <a name="support-input-from-the-pipeline"></a>Invoer van de pijp lijn ondersteunen
 
 Voor elke para meter die is ingesteld voor een cmdlet, moet u ten minste één para meter opgeven die invoer van de pijp lijn ondersteunt. Ondersteuning voor pijplijn invoer staat de gebruiker toe om gegevens of objecten op te halen, deze te verzenden naar de juiste parameterset en de resultaten rechtstreeks door te geven aan een cmdlet.
 
-Een para meter accepteert invoer van de pijp lijn als het **parameter** kenmerk het sleutel woord `ValueFromPipeline`, het kenmerk `ValueFromPipelineByPropertyName` sleutel woord of beide sleutel woorden in de declaratie bevat. Als geen van de para meters in een para meter set ondersteuning biedt voor de `ValueFromPipeline`-of `ValueFromPipelineByPropertyName` sleutel woorden, kan de cmdlet niet relevant worden geplaatst na een andere cmdlet, omdat hiermee de invoer van de pijp lijn wordt genegeerd.
+Een para meter accepteert invoer van de pijp lijn als het **parameter** kenmerk het `ValueFromPipeline` sleutel woord, het `ValueFromPipelineByPropertyName` Trefwoord kenmerk of beide sleutel woorden in de declaratie bevat. Als geen van de para meters in een para meter set ondersteuning biedt voor de `ValueFromPipeline` of `ValueFromPipelineByPropertyName` gereserveerde woorden, kan de cmdlet niet relevant worden geplaatst na een andere cmdlet, omdat alle pijplijn invoer wordt genegeerd.
 
 #### <a name="support-the-processrecord-method"></a>Ondersteuning voor de methode ProcessRecord
 
@@ -234,7 +227,7 @@ Voor het accepteren van alle records uit de voor gaande cmdlet in de pijp lijn m
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Eén record naar de pijp lijn schrijven (SC03)
 
-Wanneer een cmdlet objecten retourneert, moet de cmdlet de objecten onmiddellijk schrijven wanneer ze worden gegenereerd. De cmdlet mag niet worden ingecheckt om deze te bufferen in een gecombineerde matrix. De cmdlets die de objecten als invoer ontvangen, kunnen vervolgens de uitvoer objecten zonder vertraging verwerken, weer geven of verwerken en weer geven. Een cmdlet waarmee uitvoer objecten per keer worden gegenereerd moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroepen. Een cmdlet waarmee uitvoer objecten worden gegenereerd in batches (bijvoorbeeld omdat een onderliggende API een matrix met uitvoer objecten retourneert) moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) met de tweede para meter ingesteld op `true`.
+Wanneer een cmdlet objecten retourneert, moet de cmdlet de objecten onmiddellijk schrijven wanneer ze worden gegenereerd. De cmdlet mag niet worden ingecheckt om deze te bufferen in een gecombineerde matrix. De cmdlets die de objecten als invoer ontvangen, kunnen vervolgens de uitvoer objecten zonder vertraging verwerken, weer geven of verwerken en weer geven. Een cmdlet waarmee uitvoer objecten per keer worden gegenereerd moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroepen. Een cmdlet waarmee uitvoer objecten worden gegenereerd in batches (bijvoorbeeld omdat een onderliggende API een matrix van uitvoer objecten retourneert) moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroepen met de tweede para meter ingesteld op `true` .
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Cmdlets hoofdletter gevoelig maken en case-behoud (SC04)
 
@@ -242,8 +235,8 @@ Windows Power shell is standaard niet hoofdletter gevoelig. Omdat de IT-omgeving
 
 ## <a name="see-also"></a>Zie ook
 
-[Vereiste ontwikkel richtlijnen](./required-development-guidelines.md)
+[Vereiste richtlijnen voor de ontwikkeling](./required-development-guidelines.md)
 
-[Richt lijnen voor advies ontwikkeling](./advisory-development-guidelines.md)
+[Geadviseerde richtlijnen voor de ontwikkeling](./advisory-development-guidelines.md)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: WMF 5.0 verwijderen
-ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810188"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236302"
 ---
 # <a name="uninstallation-instructions"></a>Instructies voor verwijderen
 
 ## <a name="using-command-prompt"></a>Opdracht prompt gebruiken
 
 1. Open de **opdracht prompt.**
-2. Voer de [Windows Update zelfstandige Launcher](https://support.microsoft.com/en-us/kb/934307) uit, zoals hieronder wordt weer gegeven:
+2. Voer de [Windows Update zelfstandige Launcher](https://support.microsoft.com/kb/934307) uit, zoals hieronder wordt weer gegeven:
 
 In Windows Server 2012 R2 en Windows 8,1:
 

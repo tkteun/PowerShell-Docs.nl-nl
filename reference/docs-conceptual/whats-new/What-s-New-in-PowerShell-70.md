@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,0
 ms.date: 03/04/2020
-ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808398"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162457"
 ---
 # <a name="whats-new-in-powershell-70"></a>Wat is er nieuw in Power shell 7,0
 
@@ -15,11 +15,11 @@ Power shell 7,0 is een open-source, platformoverschrijdende versie van het platf
 
 In deze release introduceren we een aantal nieuwe functies, waaronder:
 
-- Pijp lijn parallel Lise ring met`ForEach-Object -Parallel`
+- Pijp lijn parallel Lise ring met `ForEach-Object -Parallel`
 - Nieuwe Opera tors:
-  - Ternaire operator:`a ? b : c`
-  - Pijplijn keten operators: `||` en`&&`
-  - Null-voorwaardelijke Opera tors: `??` en`??=`
+  - Ternaire operator: `a ? b : c`
+  - Pijplijn keten operators: `||` en `&&`
+  - Null-voorwaardelijke Opera tors: `??` en `??=`
 - Een vereenvoudigde en dynamische fout weergave en- `Get-Error` cmdlet voor eenvoudiger onderzoek van fouten
 - Een compatibiliteit slaag waarmee gebruikers modules kunnen importeren in een impliciete Windows Power shell-sessie
 - Meldingen voor automatische nieuwe versie
@@ -56,14 +56,14 @@ Zie de [Power shell-ondersteunings levenscyclus](/powershell/scripting/powershel
 Power shell 7 installeert in een map, gescheiden van Windows Power shell.
 Hierdoor kunt u Power shell 7 naast Windows Power shell 5,1 uitvoeren. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
 
-- Power shell 7 is geïnstalleerd op`%programfiles%\PowerShell\7`
-- De `%programfiles%\PowerShell\7` map wordt toegevoegd aan`$env:PATH`
+- Power shell 7 is geïnstalleerd op `%programfiles%\PowerShell\7`
+- De `%programfiles%\PowerShell\7` map wordt toegevoegd aan `$env:PATH`
 
 Het Power shell 7 Installer-pakket upgradet eerdere versies van Power shell Core 6. x:
 
-- Power shell Core 6. x op Windows: `%programfiles%\PowerShell\6` wordt vervangen door`%programfiles%\PowerShell\7`
-- Linux: `/opt/microsoft/powershell/6` is vervangen door`/opt/microsoft/powershell/7`
-- macOS: `/usr/local/microsoft/powershell/6` wordt vervangen door`/usr/local/microsoft/powershell/7`
+- Power shell Core 6. x op Windows: `%programfiles%\PowerShell\6` wordt vervangen door `%programfiles%\PowerShell\7`
+- Linux: `/opt/microsoft/powershell/6` is vervangen door `/opt/microsoft/powershell/7`
+- macOS: `/usr/local/microsoft/powershell/6` wordt vervangen door `/usr/local/microsoft/powershell/7`
 
 > [!NOTE]
 > In Windows Power shell heet het uitvoer bare bestand voor het starten van Power shell `powershell.exe` . In versie 6 en hoger wordt de naam van het uitvoer bare bestand gewijzigd voor ondersteuning van gelijktijdige uitvoering. De nieuwe naam van het uitvoer bare bestand voor het starten van Power shell 7 is `pwsh.exe` . Preview-builds blijven in-place, net als in `pwsh-preview` `pwsh` de map 7-Preview.
@@ -130,7 +130,7 @@ Voor meer informatie [over als](/powershell/module/microsoft.powershell.core/abo
 
 ## <a name="pipeline-chain-operators"></a>Opera tors voor pijplijn keten
 
-Power shell 7 implementeert `&&` de `||` Opera tors en om pijp lijnen voorwaardelijk te koppelen. Deze opera tors zijn bekend in Power shell als Opera tors voor pipeline-ketens en zijn vergelijkbaar met en en of lijsten in schalen zoals **bash** en **zsh**, evenals voorwaardelijke verwerkings symbolen in de Windows-opdracht shell (**cmd. exe**).
+Power shell 7 implementeert `&&` de `||` Opera tors en om pijp lijnen voorwaardelijk te koppelen. Deze opera tors zijn bekend in Power shell als Opera tors voor pipeline-ketens en zijn vergelijkbaar met en en of lijsten in schalen zoals **bash** en **zsh**, evenals voorwaardelijke verwerkings symbolen in de Windows-opdracht shell (**cmd.exe**).
 
 De `&&` operator voert de rechter pijplijn uit, als de pijplijn is geslaagd. De operator voert daarentegen `||` de rechter pijp lijn uit als de linker pijp lijn is mislukt.
 
@@ -284,7 +284,7 @@ Als de fout optreedt tijdens het uitvoeren van een script of als het een Parseer
 ![Fout bij het weer geven van een script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 De standaard weergave in Power shell 7 is **ConciseView**. De vorige standaard weergave is **NormalView** en u kunt de voorkeurs variabele thisby instellen `$ErrorView` .
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -299,7 +299,7 @@ Standaard worden de volledige details van de cmdlet weer gegeven, met inbegrip v
 ![Weer geven bij Get-error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
 
 De `Get-Error` cmdlet ondersteunt invoer van de pijp lijn met behulp van de ingebouwde variabele `$Error` .
-`Get-Error`alle gesluisde fouten weer gegeven.
+`Get-Error` alle gesluisde fouten weer gegeven.
 
 ```powershell
 $Error | Get-Error
@@ -357,11 +357,12 @@ Voor meer informatie [over meldingen over updates](/powershell/module/microsoft.
 
 Met deze cmdlet wordt een DSC-resource rechtstreeks aangeroepen zonder dat er een configuratie document wordt gemaakt. Met deze cmdlet kunnen Configuration Management-producten Windows of Linux beheren met behulp van DSC-resources. Met deze cmdlet schakelt u ook fout opsporing van resources in wanneer de DSC-engine wordt uitgevoerd met fout opsporing ingeschakeld.
 
-Met deze opdracht wordt de methode **set** aangeroepen van een resource met de naam log en wordt een **bericht** eigenschap opgegeven.
+Met deze opdracht wordt de **set** -methode van een resource met de naam **WindowsProcess** aangeroepen en worden de eigenschappen van het verplichte **pad** en de **argumenten** opgegeven om het gespecificeerde Windows-proces te starten.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
@@ -390,7 +391,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Update-instelling PSModulePath om de variabelen process en machine Environment samen te voegen (#11276)
 - Beduw .NET core naar 3.1.0 (#11260)
 - Detectie van $PSHOME voor $env:P AD (#11141) oplossen
-- Toestaan dat pwsh overneemt $env:P SModulePath en Power shell. exe op de juiste wijze kan worden gestart (#11057)
+- Toestaan dat pwsh overneemt $env:P SModulePath en dat powershell.exe correct wordt gestart (#11057)
 - Naar .NET Core 3,1 Preview 1 (#10798)
 - Controles van reparse-Tags in de bestandssysteem provider (#10431) (bedankt @iSazonov !)
 - Vervang CR en New line door een 0x23CE-teken in script logging (#10616)
@@ -464,7 +465,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Voeg ondersteuning voor \\ WSL $ \-paden toe aan de File System Provider (#10674)
 - Voeg de ontbrekende token tekst toe voor TokenKind. QuestionMark in parser (#10706)
 - Stel de huidige werkmap van elk ForEach-object-parallel uitgevoerd script in op dezelfde locatie als het aanroepende script. (#10672)
-- Vervang API-MS-Win-Core-File-L1-2 -2. dll met Kernell32. dll voor FindFirstStreamW en FindNextStreamW Api's (#10680) (bedankt @iSazonov !)
+- Vervang api-ms-win-core-file-l1-2-2.dll door Kernell32.dll voor FindFirstStreamW-en FindNextStreamW-Api's (#10680) (bedankt @iSazonov !)
 - Tweak Help opmaak script om StrictMode tolerant te maken (#10563)
 - De para meter SecurityDescriptorSDDL toevoegen aan New-Service (#10483) (bedankt @kvprasoon !)
 - Informatieve uitvoer verwijderen, het gebruik van ping in Test-Connection consolideren (#10478) (bedankt @vexx32 !)
@@ -478,7 +479,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Update de console-host ter ondersteuning van XTPUSHSGR/XTPOPSGR VT-controle reeksen die worden gebruikt in scenario's voor het opstellen van een scenario. (#10208)
 - De para meter variabele workingdirectory toevoegen aan de start-Job (#10324) (bedankt @davinci26 !)
 - Verwijder de gebeurtenis-handler waardoor wijzigingen in onderbrekings punten onjuist worden gerepliceerd naar de host runs Pace Debugger (#10503) (bedankt @KirkMunro !)
-- Vervang API-MS-Win-core-job-12-1 -0. dll met Kernell32. dll in micro soft. Power shell. commands. NativeMethods P/Invoke API (#10417) (bedankt @iSazonov !)
+- Vervang api-ms-win-core-job-12-1-0.dll door Kernell32.dll in micro soft. Power shell. commands. NativeMethods P/Invoke API (#10417) (bedankt @iSazonov !)
 - De verkeerde uitvoer voor een nieuwe service in een variabele toewijzing en-outvariabele (#10444) oplossen (bedankt @kvprasoon !)
 - Algemene problemen met het hulp programma oplossen rond de afsluit code, opdracht regel parameters en pad met spaties (#10461)
 - Herstel recursie in OneDrive-Change FindFirstFileEx () voor het gebruik van SafeFindHandle type (#10405)
@@ -490,7 +491,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 
 - Vermijd het gebruik van closure in parser. saving (#11006)
 - De cache verbeteren bij het maken van nieuwe regex-instanties (#10657) (bedankt @iSazonov !)
-- Verbeter de verwerking van de ingebouwde Power shell-type gegevens van types. ps1xml, typesV3. ps1xml en GetEvent. types. ps1xml (#10898)
+- De verwerking van het ingebouwde Power shell-type gegevens van types.ps1XML, typesV3.ps1XML en GetEvent.types.ps1XML (#10898) verbeteren
 - Werk PSConfiguration. ReadValueFromFile bij om het sneller en meer geheugen efficiënt te maken (#10839)
 - Voeg kleine prestatie verbeteringen toe voor runs Pace-initialisatie (#10569) (bedankt @iSazonov !)
 - Maak ForEach-object sneller voor de meestgebruikte scenario's (#10454) en los het probleem van ForEach-object-parallel op met veel runspaces (#10455)
@@ -518,7 +519,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Opschonen van CodeFactor stijl problemen die in de afgelopen maand worden doorgevoerd (#10591) (bedankt @iSazonov !)
 - Een type fout in beschrijving van de PSTernaryOperator experimentele functie (#10586) oplossen (bedankt @bergmeister !)
 - ActionPreference omzetten in een niet-ondersteunde, gereserveerde status en de beperking voor het gebruik van ActionPreference. ignore negeren in voorkeurs variabelen (#10317) (bedankt @KirkMunro !)
-- Vervang de array list door lijst \< T> om meer Lees bare en betrouw bare code te verkrijgen zonder de functionaliteit te wijzigen (#10333) (bedankt @iSazonov !)
+- Vervang de array list with list \<T> om meer Lees bare en betrouw bare code te verkrijgen zonder de functionaliteit te wijzigen (#10333) (bedankt @iSazonov !)
 - Code stijl oplossingen maken voor TestConnectionCommand (#10439) (bedankt @vexx32 !)
 - AutomationEngine opschonen en extra SetSessionStateDrive-methode aanroep (#10416) verwijderen (bedankt @iSazonov !)
 - Wijzig de naam van de standaard ParameterSetName weer in scheidings teken voor ConvertTo-CSV en ConvertFrom-CSV (#10425)
@@ -526,13 +527,13 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 ### <a name="tools"></a>Hulpprogramma's
 
 - Voeg de standaard instelling voor de eigenschap SDKToUse toe zodat deze wordt gebouwd in VS (#11085)
-- Install-Powershell. ps1: para meter toevoegen voor het gebruik van MSI-installatie (#10921) (bedankt @MJECloud !)
-- Basis voorbeelden voor install-PowerShell. ps1 (#10914) toevoegen (bedankt @kilasuit !)
-- Maak Install-PowerShellRemoting. ps1 een lege teken reeks verwerkt in de PowerShellHome-para meter (#10526) (bedankt @Orca88 !)
+- Install-Powershell.ps1: para meter toevoegen voor het gebruik van MSI-installatie (#10921) (bedankt @MJECloud !)
+- Eenvoudige voor beelden voor install-powershell.ps1 (#10914) toevoegen (bedankt @kilasuit !)
+- Een lege teken reeks in de PowerShellHome-para meter (#10526) laten verwerken Install-PowerShellRemoting.ps1 (hartelijk dank @Orca88 !)
 - Schakel over van/etc/lsb-release naar/etc/OS-release in install-powershell.sh #10773 (bedankt @Himura2la !)
-- Controleer pwsh. exe en pwsh in de dagelijkse versie van Windows (#10738) (bedankt @centreboard !)
+- Controleer pwsh.exe en pwsh in een dagelijkse versie op Windows (#10738) (bedankt @centreboard !)
 - Verwijder overbodige tikken in installpsh-osx.sh (#10752)
-- Werk install-PowerShell. ps1 bij om te controleren of er al een geïnstalleerde dagelijkse build is (#10489)
+- install-powershell.ps1 bijwerken om te controleren op reeds geïnstalleerde dagelijkse build (#10489)
 
 ### <a name="tests"></a>Testen
 
@@ -560,13 +561,13 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Schakel alleen experimentele functies in vóór RC (#11162)
 - Minimum versie van macOS bijwerken (#11163)
 - Duw NJsonSchema van 10.0.27 naar 10.0.28 (#11170)
-- Koppelingen in README.md en meta data. json bijwerken voor preview. 5 (#10854)
+- Koppelingen in README.md en metadata.jsworden bijgewerkt op voor beeld. 5 (#10854)
 - Selecteer de bestanden voor nalevings tests die eigendom zijn van Power shell (#10837)
 - Win7x86 msix-pakket mag worden gemaakt. (Interne 10515)
 - Toestaan dat semantische versies worden door gegeven aan de functie NormalizeVersion (#11087)
 - .NET core Framework omlaag dalen tot 3,1-Preview. 3 (#11079)
 - Duw PSReadLine van 2.0.0-beta5 naar 2.0.0-beta6 in/src/Modules (#11078)
-- Duw Newton soft. json van 12.0.2 naar 12.0.3 (#11037) (#11038)
+- Duw Newtonsoft.Jsop van 12.0.2 naar 12.0.3 (#11037) (#11038)
 - Debian-pakketten van 10, 11 en CentOS 8 toevoegen (#11028)
 - Het JSON-bestand voor Build-info uploaden met het veld ReleaseDate (#10986)
 - .NET core Framework omlaag dalen tot 3,1-Preview. 2 (#10993)
@@ -576,7 +577,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - Duw ThreadJob van 2.0.1 naar 2.0.2 (#10886)
 - AppX-manifest en verpakkings module bijwerken om te voldoen aan de vereisten voor MS Store (#10878)
 - Pakket verwijzing voor Power shell SDK bijwerken naar preview. 5 (interne 10295)
-- Update ThirdPartyNotices. txt (#10834)
+- ThirdPartyNotices.txt bijwerken (#10834)
 - Duw micro soft. Power shell. native naar 7.0.0-Preview. 3 (#10826)
 - Duw micro soft. ApplicationInsights van 2.10.0 naar 2.11.0 (#10608)
 - Duw NJsonSchema van 10.0.24 naar 10.0.27 (#10756)
@@ -590,7 +591,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - MSIX-verpakking bijwerken zodat de versie van Windows Store-vereisten (#10588)
 - PowerShellGet-versie van 2,2 naar 2.2.1 (#10382)
 - Package Management-versie van 1.4.3 naar 1.4.4 (#10383)
-- README.md en meta data. json bijwerken voor 7.0.0-Preview. 4 (interne 10011)
+- README.md en metadata.jsbijwerken op voor 7.0.0-Preview. 4 (interne 10011)
 - Voer een upgrade uit van de .net Core 3,0-versie van preview 9 naar RC1 (#10552) (bedankt @bergmeister !)
 - Genereren van ExperimentalFeature-lijst oplossen (intern 9996)
 - Duw PSReadLine-versie van 2.0.0-beta4 naar 2.0.0-beta5 (#10536)
@@ -609,7 +610,7 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - FWLinks voor Power shell 7 online-Help-documenten (#11071) herstellen
 - Update CONTRIBUTING.md (#11096) (bedankt @mklement0 !)
 - Koppelingen voor installatie doc herstellen in README.md (#11083)
-- Voor beelden toevoegen aan het script install-PowerShell. ps1 (#11024) (bedankt @kilasuit !)
+- Voor beelden toevoegen aan install-powershell.ps1 script (#11024) (bedankt @kilasuit !)
 - Fix to select-string nadruk en import-Dscresource bieden in CHANGELOG.md (#10890)
 - De verouderde koppeling verwijderen van powershell-beginners-guide.md (#10926)
 - Stabiele en onderhouds logboeken voor wijzigingen samen voegen (#10527)
@@ -622,4 +623,4 @@ Voor meer informatie over [invoke-dscresource bieden](/powershell/module/psdesir
 - README.md en meta gegevens bijwerken voor v 6.1.6-en v 6.2.3-releases (#10523)
 - Een type fout in README.md (#10465) oplossen (bedankt @vedhasp !)
 - Voeg een verwijzing naar de PSKoans-module toe aan de documentatie voor Learning resources (#10369) (bedankt @vexx32 !)
-- README.md en meta data. json bijwerken voor 7.0.0-Preview. 3 (#10393)
+- README.md en metadata.jsbijwerken op voor 7.0.0-Preview. 3 (#10393)

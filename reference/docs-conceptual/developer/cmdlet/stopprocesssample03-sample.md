@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample03-voor beeld | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
-caps.latest.revision: 8
-ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359216"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787832"
 ---
 # <a name="stopprocesssample03-sample"></a>Voorbeeld StopProcessSample03
 
-In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliassen hebben en waarvan de para meters ondersteuning bieden voor joker tekens. Deze cmdlet is vergelijkbaar met de `Stop-Process`-cmdlet van Windows Power Shell 2,0.
+In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliassen hebben en waarvan de para meters ondersteuning bieden voor joker tekens. Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
@@ -51,7 +44,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliass
 
 Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
-## <a name="demonstrates"></a>Hier ziet u
+## <a name="demonstrates"></a>Demonstreert
 
 In dit voor beeld ziet u het volgende.
 
@@ -352,4 +345,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

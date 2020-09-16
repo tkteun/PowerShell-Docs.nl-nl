@@ -1,23 +1,16 @@
 ---
 title: ValidatePattern kenmerk declaratie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidatePattern
 - ValidatePattern attribute, described
 - ValidatePattern attribute
-ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
-caps.latest.revision: 13
-ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359143"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787798"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Declaratie van het kenmerk ValidatePattern
 
@@ -42,7 +35,7 @@ Opties ([System. Text. RegularExpressions. Regexoptions](/dotnet/api/System.Text
 
 - Dit kenmerk kan slechts eenmaal per para meter worden gebruikt.
 
-- U kunt de para meter `Option` van het kenmerk gebruiken om het patroon verder te definiëren. U kunt bijvoorbeeld het patroon hoofdletter gevoelig maken.
+- U kunt de `Option` para meter van het kenmerk gebruiken om het patroon verder te definiëren. U kunt bijvoorbeeld het patroon hoofdletter gevoelig maken.
 
 - Als dit kenmerk wordt toegepast op een verzameling, moet elk element in de verzameling overeenkomen met het patroon.
 
@@ -52,4 +45,4 @@ Opties ([System. Text. RegularExpressions. Regexoptions](/dotnet/api/System.Text
 
 [System. Management. Automation. Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)
 
-[Een Windows Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een Windows PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)

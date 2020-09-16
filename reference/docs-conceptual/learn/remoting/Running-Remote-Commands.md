@@ -1,19 +1,19 @@
 ---
-ms.date: 08/14/2018
-keywords: Power shell, cmdlet
+ms.date: 08/21/2020
+keywords: powershell,cmdlet
 title: Externe opdrachten uitvoeren
-ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030309"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799618"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
 U kunt opdrachten uitvoeren op een of honderden computers met één Power shell-opdracht. Windows Power shell ondersteunt extern computer gebruik met behulp van verschillende technologieën, waaronder WMI, RPC en WS-Management.
 
-Power shell core ondersteunt WMI, WS-beheer en externe SSH-communicatie. RPC wordt niet meer ondersteund.
+Power shell core ondersteunt WMI, WS-beheer en externe SSH-communicatie. In Power shell 6 wordt RPC niet meer ondersteund. In Power shell 7 en hoger wordt RPC alleen ondersteund in Windows.
 
 Raadpleeg de volgende artikelen voor meer informatie over externe communicatie in Power shell core:
 
@@ -55,8 +55,7 @@ In dit artikel worden slechts enkele hiervan vermeld. Zie [over extern](/powersh
 
 ### <a name="start-an-interactive-session"></a>Een interactieve sessie starten
 
-Als u een interactieve sessie met één externe computer wilt starten, gebruikt u de cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) .
-Als u bijvoorbeeld een interactieve sessie met de externe computer Server01 wilt starten, typt u:
+Als u een interactieve sessie met één externe computer wilt starten, gebruikt u de cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) . Als u bijvoorbeeld een interactieve sessie met de externe computer Server01 wilt starten, typt u:
 
 ```powershell
 Enter-PSSession Server01
@@ -94,9 +93,9 @@ LCID    Name     DisplayName               PSComputerName
 
 ### <a name="run-a-script"></a>Een script uitvoeren
 
-Als u een script wilt uitvoeren op een of meer externe computers, gebruikt u de para `Invoke-Command` meter filepath van de cmdlet. Het script moet op of toegankelijk zijn voor uw lokale computer. De resultaten worden teruggestuurd naar de lokale computer.
+Als u een script wilt uitvoeren op een of meer externe computers, gebruikt u de para meter FilePath van de `Invoke-Command` cmdlet. Het script moet op of toegankelijk zijn voor uw lokale computer. De resultaten worden teruggestuurd naar de lokale computer.
 
-Met de volgende opdracht wordt bijvoorbeeld het script DiskCollect. ps1 uitgevoerd op de externe computers, Server01 en Server02.
+Met de volgende opdracht wordt bijvoorbeeld het DiskCollect.ps1 script uitgevoerd op de externe computers, Server01 en Server02.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
@@ -130,7 +129,7 @@ Windows Power shell Remote Management begint hier gewoon. Door gebruik te maken 
 
 Windows Power shell bevat een WSMan-provider. De provider maakt een `WSMAN:` station waarmee u kunt navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
 
-Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ `Get-Help wsman`in de Windows Power shell-console.
+Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ in de Windows Power shell-console `Get-Help wsman` .
 
 Zie voor meer informatie:
 

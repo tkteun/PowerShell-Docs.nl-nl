@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over uitzonde ringen
 description: Het afhandelen van fouten is slechts een deel van de levens duur van het schrijven van code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
-ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
+ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
+ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337179"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90012558"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Alles wat u wilt weten over uitzonde ringen
 
@@ -82,7 +82,7 @@ Ik heb genoteerd dat `Write-Error` standaard geen afsluit fout wordt gegenereerd
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 ```
 
-Hartelijk dank dat u dagelijks Lee hebt om u te herinneren over het gebruik van `-ErrorAction Stop` deze methode.
+Hartelijk dank voor het maken van een Dailey voor een herinnering over het gebruik van `-ErrorAction Stop` deze methode.
 
 #### <a name="cmdlet--erroraction-stop"></a>Cmdlet-error Action stoppen
 
@@ -122,7 +122,7 @@ Het `catch` script wordt alleen uitgevoerd als er een afsluit fout is opgetreden
 
 Soms is het niet nodig om een fout af te handelen, maar moet u nog steeds code uitvoeren als er een uitzonde ring optreedt of niet. Een `finally` script heeft precies dat.
 
-Bekijk dit voor beeld:
+Bekijk dit voorbeeld:
 
 ```powershell
 $command = [System.Data.SqlClient.SqlCommand]::New(queryString, connection)
@@ -168,7 +168,7 @@ In deze voor beelden hebt u een ongeldig pad gebruikt in `ReadAllText` om deze u
 
 ### <a name="psitemtostring"></a>PSItem. ToString ()
 
-Dit geeft u het schone bericht dat u kunt gebruiken in logboek registratie en algemene uitvoer. `ToString()`wordt automatisch aangeroepen als `$PSItem` binnen een teken reeks wordt geplaatst.
+Dit geeft u het schone bericht dat u kunt gebruiken in logboek registratie en algemene uitvoer. `ToString()` wordt automatisch aangeroepen als `$PSItem` binnen een teken reeks wordt geplaatst.
 
 ```powershell
 catch
@@ -583,5 +583,5 @@ Nu u de tijd hebt genomen voor het schrijven van uitzonde ringen in deze details
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Reddit/r/Power shell-Community]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
 [De grote lijst met .NET-uitzonde ringen]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
-[FileNotFoundException]: https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException
-[.NET-documentatie]: https://docs.microsoft.com/dotnet/api
+[FileNotFoundException]: /dotnet/api/System.IO.FileNotFoundException
+[.NET-documentatie]: /dotnet/api

@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, Power shell, configuratie, installatie
 title: Quick Start-groepsbeleid converteren naar DSC
-ms.openlocfilehash: a9ce9cecd71fe00d2908024a3ee474ec836af3ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808245"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236234"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>Snelstartgids: groepsbeleid converteren naar DSC
 
@@ -15,15 +15,15 @@ ms.locfileid: "83808245"
 
 U kunt een DSC-configuratie genereren vanuit een groepsbeleid of Azure Security Center basis lijn. De [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) -module bevat de volgende opdrachten voor het uitvoeren van deze taak.
 
-- `ConvertFrom-GPO`-Groeps beleid en opgeslagen als bestanden worden geconverteerd. U kunt ook een map met meerdere beleids regels opgeven die worden gecombineerd in één configuratie.
+- `ConvertFrom-GPO` -Groeps beleid en opgeslagen als bestanden worden geconverteerd. U kunt ook een map met meerdere beleids regels opgeven die worden gecombineerd in één configuratie.
   - Als u groeps beleid in uw omgeving wilt exporteren, gebruikt u de cmdlet [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) of volgt u de instructies in [een groeps beleidsobject exporteren naar een bestand](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
-- `ConvertFrom-SCM`-Hiermee worden basis lijnen van Security Compliance Manager geconverteerd, opgeslagen als `.xml` bestanden.
-- `ConvertFrom-ASC`-Hiermee worden Azure Security Center basis lijnen, opgeslagen als bestanden, geconverteerd `.json` .
-- `Merge-GPOs`-Groeps beleid dat wordt toegepast op een doel computer, wordt geconverteerd.
+- `ConvertFrom-SCM` -Hiermee worden basis lijnen van Security Compliance Manager geconverteerd, opgeslagen als `.xml` bestanden.
+- `ConvertFrom-ASC` -Hiermee worden Azure Security Center basis lijnen, opgeslagen als bestanden, geconverteerd `.json` .
+- `Merge-GPOs` -Groeps beleid dat wordt toegepast op een doel computer, wordt geconverteerd.
 
 Met de cmdlets die hierboven worden weer gegeven, wordt een basis lijn geconverteerd naar een DSC- `.mof` bestand. U kunt er ook voor kiezen om een configuratie script ( `.ps1` ) uit te voeren dat u kunt bewerken en opnieuw compileren. De cmdlets detecteren compilatie fouten voor ontbrekende resources of dubbele resource blokken. Resource blokken waardoor er geen opmerkingen kunnen worden gevonden.
 
-In het volgende voor beeld wordt een [micro soft-beveiligings basislijn](https://www.microsoft.com/en-us/download/details.aspx?id=55319) geconverteerd naar een DSC-configuratie script ( `.ps1` ) en een `.mof` bestand.
+In het volgende voor beeld wordt een [micro soft-beveiligings basislijn](https://www.microsoft.com/download/details.aspx?id=55319) geconverteerd naar een DSC-configuratie script ( `.ps1` ) en een `.mof` bestand.
 
 ```powershell
 Install-Module BaselineManagement

@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 08/28/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC WindowsOptionalFeature-resource
-ms.openlocfilehash: bca6294db74c92a2c1940cfbe00305542a1c5d19
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
+ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565363"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89093247"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature-resource
 
@@ -15,13 +15,15 @@ ms.locfileid: "83565363"
 
 De **WindowsOptionalFeature** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat optionele functies zijn ingeschakeld op een doel knooppunt.
 
-## <a name="syntax"></a>Syntaxis
+> [!NOTE]
+> **WindowsOptionalFeature** werkt alleen op Windows-client computers zoals Windows 10.
+
+## <a name="syntax"></a>Syntax
 
 ```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string[]] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
@@ -36,8 +38,7 @@ WindowsOptionalFeature [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Name |Hiermee wordt de naam aangegeven van de functie die u wilt inschakelen, is ingeschakeld of uitgeschakeld. |
-|Bron |Niet geïmplementeerd. |
+|Naam |Hiermee wordt de naam aangegeven van de functie die u wilt inschakelen, is ingeschakeld of uitgeschakeld. |
 |NoWindowsUpdateCheck |Hiermee geeft u op of DISM-contact personen Windows Update (WU) bij het zoeken naar de bron bestanden om een functie in te scha kelen. Als `$true` kan DISM geen contact opnemen met Wu. |
 |RemoveFilesOnDisable |Stel deze `$true` optie in om alle bestanden te verwijderen die zijn gekoppeld aan de functie als u **zeker weet dat** deze is ingesteld op **afwezig**. |
 |Logniveau |Het maximale uitvoer niveau dat wordt weer gegeven in de logboeken. De geaccepteerde waarden zijn: **ErrorsOnly**, **ErrorsAndWarning**en **ErrorsAndWarningAndInformation**. |

@@ -1,27 +1,20 @@
 ---
 title: Script block-element voor ItemSelectionCondition voor ListControl (indeling) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c929a6df-d050-416a-9de0-e913dd5a035c
-caps.latest.revision: 8
-ms.openlocfilehash: a0768a9c1ac66cd9dcf1848c4b031ccbc722b4c2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 38dc952bfadd6aed24bae8cbef05adcd22e61dd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72353891"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787628"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>Het element ScriptBlock voor ItemSelectionCondition voor ListControl (opmaak)
 
-Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd. Wanneer dit script wordt geëvalueerd om `true`, wordt aan de voor waarde voldaan en wordt het lijst item gebruikt. Dit element wordt gebruikt bij het definiëren van een lijst weergave.
+Hiermee geeft u het script op waarmee de voor waarde wordt geactiveerd. Wanneer dit script wordt geëvalueerd `true` , wordt voldaan aan de voor waarde en wordt het lijst item gebruikt. Dit element wordt gebruikt bij het definiëren van een lijst weergave.
 
-Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) bestand van ListControl element (indeling). element (Format) voor ListControl voor ListControl (Format) lijst item-element voor list items voor List Control (Format) ItemSelectionCondition-element voor lijst item voor ListControl (Format) script block element voor ListControl (Format) voor ItemSelectionCondition
+Configuratie-element (indeling) ViewDefinitions element (indeling) element van weer gave (indeling). element van ListControl element (Format) voor ListControl (indeling) element List entry voor List Entries (Format) List items element voor List entry voor ListControl (Format) lijst item-element voor de list items voor listing Control (Format) ItemSelectionCondition element voor ListControl (Format)
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```xml
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
@@ -29,7 +22,7 @@ Configuratie-element (indeling) ViewDefinitions element (indeling) element weer 
 
 ## <a name="attributes-and-elements"></a>Kenmerken en elementen
 
-In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het element `ScriptBlock` beschreven.
+In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het `ScriptBlock` element beschreven.
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -43,7 +36,7 @@ Geen.
 
 |Element|Beschrijving|
 |-------------|-----------------|
-|[ItemSelectionCondition-element voor lijst item voor ListControl (indeling)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit lijst item.|
+|[Het element ItemSelectionCondition voor ListItem voor ListControl (opmaak)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van dit lijst item.|
 
 ## <a name="text-value"></a>Tekstwaarde
 
@@ -51,8 +44,8 @@ Geef het script op dat wordt geëvalueerd.
 
 ## <a name="remarks"></a>Opmerkingen
 
-Als dit element wordt gebruikt, kunt u het `PropertyName`-element niet opgeven wanneer u de selectie voorwaarde definieert.
+Als dit element wordt gebruikt, kunt u het element niet opgeven `PropertyName` bij het definiëren van de selectie voorwaarde.
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-indelings bestand schrijven](./writing-a-powershell-formatting-file.md)
+[Een PowerShell-opmaakbestand schrijven](./writing-a-powershell-formatting-file.md)

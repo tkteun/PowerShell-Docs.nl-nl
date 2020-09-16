@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
-ms.date: 07/30/2020
-ms.openlocfilehash: 21dc032afd61b628f2c43912ed6673875479ebff
-ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
+ms.date: 09/14/2020
+ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
+ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441756"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574450"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -64,6 +64,19 @@ msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 ```
 
 `Msiexec.exe`Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor.
+
+### <a name="registry-keys-created-during-installation"></a>Register sleutels die tijdens de installatie zijn gemaakt
+
+Vanaf Power shell 7,1 maakt het MSI-pakket register sleutels waarin de installatie locatie en de versie van Power shell worden opgeslagen. Deze waarden bevinden zich in `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\<GUID>` . De waarde van `<GUID>` is uniek voor elk type Build (release of preview), de primaire versie en de architectuur.
+
+|    Release    | Architectuur |                                          Registersleutel                                           |
+| ------------- | :----------: | ----------------------------------------------------------------------------------------------- |
+| Versie 7.1. x |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\1d00683b-0f84-4db8-a64f-2f98ad42fe06` |
+| Versie 7.1. x |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\31ab5147-9a97-4452-8443-d9709f0516e1` |
+| 7.1. x preview |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\86abcfbd-1ccc-4a88-b8b2-0facfde29094` |
+| 7.1. x preview |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
+
+Dit kan worden gebruikt door beheerders en ontwikkel aars om het pad naar Power shell te vinden. De `<GUID>` waarden zijn hetzelfde voor alle versies van de preview-versie en secundaire versies. De `<GUID>` waarden voor elke grote release worden gewijzigd.
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />Het MSIX-pakket installeren
 

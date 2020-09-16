@@ -3,14 +3,14 @@ title: Een binaire module van een standaard bibliotheek maken
 description: Met de standaard bibliotheek van Power shell kunnen wij platformoverschrijdende modules maken die zowel in Power shell Core als met Windows Power shell 5,1 worden uitgevoerd.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 51734fd9232e7c33b11c6c5a6abddbcc1f28413c
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: ff6a49f70a3fb77f5a30cc909d53bb77b3cd7d43
+ms.sourcegitcommit: 8c01e56f0c10ff2637955dc892ea78432d563a7b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149787"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702742"
 ---
-# <a name="how-to-create-a-standard-library-binary-module"></a>Een binaire module van een standaard bibliotheek maken
+# <a name="how-to-create-a-standard-library-binary-module"></a>Een binaire module van een standaardbibliotheek maken
 
 Ik heb onlangs een idee voor de module die ik wilde implementeren als binaire module. Ik heb een wacht tijd gemaakt met behulp van de [standaard bibliotheek van Power shell][] , zodat deze zo goed mogelijk is. Ik heb de hand leiding [een multi-platform binaire module maken][] gebruikt om deze module zonder obstakels te maken.
 We gaan hetzelfde proces door lopen en ik voeg graag een beetje extra commentaar toe.
@@ -247,7 +247,7 @@ Hier kunt u de map neerzetten `.\Output\$module` in onze `$env:PSModulePath` Dir
 
 Ik heb geleerd dat het `dotnet` hulp programma een `PSModule` sjabloon heeft.
 
-Alle stappen die hieronder worden beschreven, zijn nog steeds geldig, maar deze sjabloon knipt veel uit. Er is nog steeds een redelijk nieuwe sjabloon aanwezig, waardoor er nog steeds een gepolijste manier wordt opgenomen. Verwacht wordt dat u deze beter kunt blijven gebruiken.
+Alle stappen die hieronder worden beschreven, zijn nog steeds geldig, maar deze sjabloon knipt veel hiervan uit. Er is nog steeds een redelijk nieuwe sjabloon aanwezig, waardoor er nog steeds een gepolijste manier wordt opgenomen. Verwacht wordt dat u deze beter kunt blijven gebruiken.
 
 Dit is de manier waarop u de PSModule-sjabloon installeert en gebruikt.
 
@@ -276,7 +276,7 @@ Ik voer de meeste van mijn Power shell-ontwikkel werkzaamheden uit in [VS code][
 
 ### <a name="nested-powershell-sessions"></a>Geneste Power shell-sessies
 
-Een andere mogelijkheid is een goede dekkings test voor de ziekte te hebben. Vervolgens kunt u het script build. ps1 aanpassen om een nieuwe Power shell-sessie te starten, de build uit te voeren, de tests uit te voeren en de sessie te sluiten.
+Een andere mogelijkheid is een goede dekkings test voor de ziekte te hebben. Vervolgens kunt u het build.ps1 script aanpassen om een nieuwe Power shell-sessie te starten, de build uit te voeren, de tests uit te voeren en de sessie te sluiten.
 
 ### <a name="updating-installed-modules"></a>Geïnstalleerde modules bijwerken
 

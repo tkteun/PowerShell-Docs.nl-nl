@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 43d2de7e1f59ce5e980c192decb5309d3f6d0ff8
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
+ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436391"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89493654"
 ---
 # <a name="chapter-2---the-help-system"></a>Hoofd stuk 2: het Help-systeem
 
@@ -34,13 +34,13 @@ Gecompileerde opdrachten in Power shell worden cmdlets genoemd. De cmdlet is uit
 
 - `Get-Command`
 - `Get-Help`
-- `Get-Member`(bedoeld in hoofd stuk 3)
+- `Get-Member` (bedoeld in hoofd stuk 3)
 
 Hoe weet ik vaak hoe snel u weet wat de opdrachten zijn in Power shell? Beide `Get-Command` en `Get-Help` kunnen worden gebruikt om de opdrachten te bepalen.
 
 ## <a name="get-help"></a>Get-Help
 
-`Get-Help`is een opdracht voor meerdere doel einden. `Get-Help`helpt u bij het gebruik van opdrachten nadat u ze hebt gevonden. `Get-Help`kan ook worden gebruikt om opdrachten te vinden, maar op een andere en meer indirecte wijze in vergelijking tot `Get-Command` .
+`Get-Help` is een opdracht voor meerdere doel einden. `Get-Help` helpt u bij het gebruik van opdrachten nadat u ze hebt gevonden. `Get-Help` kan ook worden gebruikt om opdrachten te vinden, maar op een andere en meer indirecte wijze in vergelijking tot `Get-Command` .
 
 Wanneer `Get-Help` wordt gebruikt om opdrachten te vinden, zoekt het eerst naar Joker tekens die overeenkomen met de opdracht namen op basis van de opgegeven invoer. Als er geen overeenkomst wordt gevonden, wordt gezocht in de Help-onderwerpen zelf. als er geen overeenkomst wordt gevonden, wordt er een fout geretourneerd. In tegens telling tot populaire geloofs `Get-Help` kan worden gebruikt om opdrachten te vinden die geen Help-onderwerpen bevatten.
 
@@ -50,7 +50,7 @@ Het eerste wat u moet weten over het Help-systeem in Power shell is het gebruik 
 Get-Help -Name Get-Help
 ```
 
-```Outpout
+```Output
 Do you want to run Update-Help?
 The Update-Help cmdlet downloads the most current Help files for Windows PowerShell
 modules, and installs them on your computer. For more information about the Update-Help
@@ -60,7 +60,7 @@ cmdlet, see http://go.microsoft.com/fwlink/?LinkId=210614.
 
 Vanaf Power shell versie 3 wordt de Power shell-Help niet geleverd bij het besturings systeem. De eerste keer dat `Get-Help` voor een opdracht wordt uitgevoerd, wordt het vorige bericht weer gegeven. Als de `help` functie of `man` alias wordt gebruikt in plaats van de `Get-Help` cmdlet, wordt dit bericht niet weer gegeven.
 
-Als u Ja antwoordt door op <kbd>Y</kbd> wordt de `Update-Help` cmdlet uit te voeren. hiervoor is standaard Internet toegang vereist. `Y`kan worden opgegeven in een hoofd-of kleine letter.
+Als u Ja antwoordt door op <kbd>Y</kbd> wordt de `Update-Help` cmdlet uit te voeren. hiervoor is standaard Internet toegang vereist. `Y` kan worden opgegeven in een hoofd-of kleine letter.
 
 Zodra de Help is gedownload en de update is voltooid, wordt het Help-onderwerp geretourneerd voor de opgegeven opdracht:
 
@@ -79,7 +79,7 @@ Neem even de tijd om dit voor beeld uit te voeren op uw computer, Bekijk de uitv
 
 Zoals u kunt zien, kunnen Help-onderwerpen een enorme hoeveelheid informatie bevatten, maar dit is niet het volledige Help-onderwerp.
 
-Hoewel het niet specifiek is voor Power shell, is een para meter een manier om invoer te leveren aan een opdracht. `Get-Help`heeft veel para meters die kunnen worden opgegeven om het volledige Help-onderwerp of een subset ervan te retour neren.
+Hoewel het niet specifiek is voor Power shell, is een para meter een manier om invoer te leveren aan een opdracht. `Get-Help` heeft veel para meters die kunnen worden opgegeven om het volledige Help-onderwerp of een subset ervan te retour neren.
 
 De sectie syntaxis van het Help-onderwerp dat wordt weer gegeven in de vorige set met resultaten bevat een lijst met alle para meters voor `Get-Help` . Op het eerste gezicht ziet u dezelfde para meters die zes verschillende tijdstippen worden weer gegeven. Elk van deze verschillende blokken in de syntaxis sectie is een parameterset. Dit betekent dat de `Get-Help` cmdlet zes verschillende parameter sets heeft. Als u een kijkje neemt, ziet u dat ten minste één para meter in elk van de parameter sets anders is.
 
@@ -125,7 +125,7 @@ De **volledige** para meter is een switch parameter. Een para meter waarvoor gee
 
 Als u dit hoofd stuk in de Power shell-console hebt door lopen, hebt u opgemerkt dat de vorige opdracht om het volledige Help-onderwerp voor vloog weer te geven `Get-Help` op het scherm, zonder dat u de kans krijgt om het te lezen. Er is een betere manier.
 
-`Help`is een functie die pipet `Get-Help` naar een functie met `more` de naam, een wrapper voor het `more.com` uitvoer bare bestand in Windows. In de Power shell-console `help` biedt één pagina met Help per keer. In de ISE werkt het op dezelfde manier als `Get-Help` . Mijn aanbeveling is de functie te gebruiken `help` in plaats van de `Get-Help` cmdlet, omdat het een betere ervaring biedt en het minder is om te typen.
+`Help` is een functie die pipet `Get-Help` naar een functie met `more` de naam, een wrapper voor het `more.com` uitvoer bare bestand in Windows. In de Power shell-console `help` biedt één pagina met Help per keer. In de ISE werkt het op dezelfde manier als `Get-Help` . Mijn aanbeveling is de functie te gebruiken `help` in plaats van de `Get-Help` cmdlet, omdat het een betere ervaring biedt en het minder is om te typen.
 
 Minder typen zijn echter niet altijd goed. Als u uw opdrachten wilt opslaan als een script of ze wilt delen met iemand anders, moet u volledige cmdlet-en parameter namen gebruiken. De volledige namen zijn zelf gedocumenteerd, waardoor ze gemakkelijker te begrijpen zijn. Denk aan de volgende persoon die uw opdrachten moet lezen en begrijpen. U kunt dit ook doen. Uw collega's en de toekomst zullen u bedanken.
 
@@ -225,7 +225,7 @@ Get-AppvVirtualProcess            Function  AppvClient                ...
 Start-AppvVirtualProcess          Function  AppvClient                ...
 ```
 
-In het vorige voor beeld `*` zijn de joker tekens niet vereist en wordt het weglaten van hetzelfde resultaat. `Get-Help`voegt automatisch de joker tekens achter de schermen toe.
+In het vorige voor beeld `*` zijn de joker tekens niet vereist en wordt het weglaten van hetzelfde resultaat. `Get-Help` voegt automatisch de joker tekens achter de schermen toe.
 
 ```powershell
 help process
@@ -416,7 +416,7 @@ Het Help-systeem in Power shell moet worden bijgewerkt zodat **de Help-** onderw
 
 ## <a name="get-command"></a>Get-Command
 
-`Get-Command`is ontworpen om u te helpen bij het vinden van opdrachten. `Get-Command`Als u zonder para meters uitvoert, wordt een lijst met alle opdrachten op het systeem geretourneerd. In het volgende voor beeld ziet u hoe u de `Get-Command` cmdlet gebruikt om te bepalen welke opdrachten bestaan voor het werken met processen:
+`Get-Command` is ontworpen om u te helpen bij het vinden van opdrachten. `Get-Command`Als u zonder para meters uitvoert, wordt een lijst met alle opdrachten op het systeem geretourneerd. In het volgende voor beeld ziet u hoe u de `Get-Command` cmdlet gebruikt om te bepalen welke opdrachten bestaan voor het werken met processen:
 
 ```powershell
 Get-Command -Noun Process
@@ -550,5 +550,5 @@ In het volgende hoofd stuk vindt u informatie over de `Get-Member` cmdlet en obj
 [Opslaan-Help]: /powershell/module/microsoft.powershell.core/save-help
 [about_Updatable_Help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [about_Command_Syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
-[Power shell-docs]: https://github.com/powershell/powershell
+[PowerShell-Docs]: https://github.com/powershell/powershell
 [Bijlage A]: appendix-a.md
