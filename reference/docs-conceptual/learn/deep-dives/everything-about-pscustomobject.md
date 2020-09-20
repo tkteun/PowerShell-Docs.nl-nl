@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over PSCustomObject
 description: PSCustomObject is een eenvoudige manier om gestructureerde gegevens te maken.
 ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
+ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410135"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804777"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Alles wat u wilt weten over PSCustomObject
 
@@ -139,7 +139,7 @@ $myObject.$property
 
 Ik weet dat dat vreemd lijkt, maar het werkt.
 
-### <a name="convert-pscustombobject-into-a-hashtable"></a>PSCustombObject naar een hashtabel converteren
+### <a name="convert-pscustomobject-into-a-hashtable"></a>PSCustomObject naar een hashtabel converteren
 
 Als u wilt door gaan met de laatste sectie, kunt u de eigenschappen dynamisch door lopen en een hashtabel maken.
 
