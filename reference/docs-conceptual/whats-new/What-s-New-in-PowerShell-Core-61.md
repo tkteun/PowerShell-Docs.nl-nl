@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 7a50bc3a909df38d21a604399d590a2805359593
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837540"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846912"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
@@ -48,8 +48,8 @@ Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebrac
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Tijd (SEC)   | 25,178                 | 19,653              | 6,641               |
 | Versnellen (%) | N.v.t.                    | 21,9%               | 66,2%               |
 
@@ -59,8 +59,8 @@ Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met 
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Tijd (SEC)   | 12,170                 | 8,493               | 7,08                |
 | Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
 
@@ -71,8 +71,8 @@ In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kol
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tijd (SEC)   | 0,441                  | 1,069               | 0,268                  |
 | Versnellen (%) | N.v.t.                    | -142,4%             | 74,9% (39,2% van WPS) |
 
@@ -83,8 +83,8 @@ In het volgende voor beeld wordt een JSON-test bestand van ~ 2 MB gebruikt:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows Power shell 5,1 | Power shell Core 6,0 | Power shell Core 6,1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tijd (SEC)   | 0,259                  | 0,577               | 0,125                  |
 | Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
 

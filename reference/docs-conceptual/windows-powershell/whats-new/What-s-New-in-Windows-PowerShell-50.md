@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Wat is er nieuw in Windows Power shell 5,0
-ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+ms.openlocfilehash: 59ccc83c7d4736181f13b72c4d3725694f80c1c8
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216002"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90847031"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Wat is er nieuw in Windows Power shell 5,0
 
@@ -470,36 +470,70 @@ Windows Power Shell 3,0 bevat veel functies die zijn ontworpen om de taal eenvou
 
 Er zijn nieuwe cmdlets toegevoegd aan de Windows Power shell Core-installatie, inclusief cmdlets voor het beheren van geplande taken, verbroken sessies, CIM-integratie en het Help-systeem dat kan worden bijgewerkt.
 
-|                           |                                 |
-| ------------------------- | ------------------------------- |
-| Add-JobTrigger            | New-JobTrigger                  |
-| Connect-PSSession         | New-PSSessionConfigurationFile  |
-| ConvertFrom-JSON          | New-PSTransportOption           |
-| ConvertTo-Json            | New-New psworkflowexecutionoption   |
-| Disable-JobTrigger        | New-PSWorkflowSession           |
-| Disable-ScheduledJob      | New-ScheduledJobOption          |
-| Verbinding verbreken-PSSession      | New-Wine vent                    |
-| Enable-JobTrigger         | Receive-PSSession               |
-| Enable-ScheduledJob       | REGI ster-CimIndicationEvent     |
-| Get-CimAssociatedInstance | REGI ster-ScheduledJob           |
-| Get-CimClass              | Remove-CimInstance              |
-| Get-CimInstance           | Remove-CimSession               |
-| Get-CimSession            | Remove-TypeData                 |
-| Get-ControlPanelItem      | Naam wijzigen-computer                 |
-| Get-IseSnippet            | Resume-job                      |
-| Get-JobTrigger            | Opslaan-Help                       |
-| Get-ScheduledJob          | Set-CimInstance                 |
-| Get-ScheduledJobOption    | Set-JobTrigger                  |
-| Get-TypeData              | Set-ScheduledJob                |
-| Import-IseSnippet         | Set-ScheduledJobOption          |
-| Invoke-AsWorkflow         | Weer geven-opdracht                    |
-| Invoke-CimMethod          | Show-ControlPanelItem           |
-| Invoke-RestMethod         | Onderbreken-taak                     |
-| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
-| New-CimInstance           | Blok kering van bestand opheffen                    |
-| New-CimSession            | Registratie ongedaan maken-ScheduledJob         |
-| New-CimSessionOption      | Update-Help                     |
-| New-IseSnippet            |                                 |
+- CimCmdlets
+  - Get-CimAssociatedInstance
+  - Get-CimClass
+  - Get-CimInstance
+  - Get-CimSession
+  - Invoke-CimMethod
+  - New-CimInstance
+  - New-CimSession
+  - New-CimSessionOption
+  - REGI ster-CimIndicationEvent
+  - Remove-CimInstance
+  - Remove-CimSession
+  - Set-CimInstance
+- Micro soft. Power shell. core
+  - Connect-PSSession
+  - Verbinding verbreken-PSSession
+  - New-PSSessionConfigurationFile
+  - New-PSTransportOption
+  - Receive-PSSession
+  - Resume-job
+  - Opslaan-Help
+  - Onderbreken-taak
+  - Test-PSSessionConfigurationFile
+  - Update-Help
+- Micro soft. Power shell. Diagnostics
+  - New-Wine vent
+- Micro soft. Power shell. Management
+  - Get-ControlPanelItem
+  - Naam wijzigen-computer
+  - Show-ControlPanelItem
+- Microsoft.PowerShell.Utility
+  - ConvertFrom-JSON
+  - ConvertTo-Json
+  - Get-TypeData
+  - Invoke-RestMethod
+  - Invoke-WebRequest
+  - Remove-TypeData
+  - Weer geven-opdracht
+  - Blok kering van bestand opheffen
+- PSScheduledJob
+  - Add-JobTrigger
+  - Disable-JobTrigger
+  - Disable-ScheduledJob
+  - Enable-JobTrigger
+  - Enable-ScheduledJob
+  - Get-JobTrigger
+  - Get-ScheduledJob
+  - Get-ScheduledJobOption
+  - New-JobTrigger
+  - New-ScheduledJobOption
+  - REGI ster-ScheduledJob
+  - Set-JobTrigger
+  - Set-ScheduledJob
+  - Set-ScheduledJobOption
+  - Registratie ongedaan maken-ScheduledJob
+- PSWorkflow
+  - New-New psworkflowexecutionoption
+  - New-PSWorkflowSession
+- PSWorkflowUtility
+  - Invoke-AsWorkflow
+- ISE
+  - Get-IseSnippet
+  - Import-IseSnippet
+  - New-IseSnippet
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbeteringen aan bestaande kern-cmdlets en-providers
 

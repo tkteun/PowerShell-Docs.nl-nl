@@ -1,13 +1,14 @@
 ---
 ms.date: 06/12/2017
+description: Dit document bevat aanbevolen procedures voor het helpen van technici die de DSC-pull-server implementeren.
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236251"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846946"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -18,11 +19,9 @@ Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 Samen vatting: dit document is bedoeld om proces en uitbreid baarheid te omvatten om de technici te helpen bij het voorbereiden van de oplossing. Details moeten aanbevolen procedures bieden die door klanten worden geïdentificeerd en vervolgens door het product team worden gevalideerd om ervoor te zorgen dat aanbevelingen op de toekomst worden gericht en stabiel worden beschouwd.
 
-|           |                      Doc-info                      |
-| :-------- | :------------------------------------------------- |
-| Auteur    | Michael Greene                                     |
-| Reviewers | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
-| Gepubliceerd | April, 2015                                        |
+- Auteur: Michael Greene
+- Revisoren: ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
+- Gepubliceerd: april, 2015
 
 ## <a name="abstract"></a>Abstract
 
