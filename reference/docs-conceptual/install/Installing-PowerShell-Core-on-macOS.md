@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in macOS
 description: Informatie over het installeren van Power shell in macOS
-ms.date: 08/24/2020
-ms.openlocfilehash: 8f38d573d9d67276dbc95cfb70f1fde80af62bb6
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.date: 09/23/2020
+ms.openlocfilehash: d52595cb7a32a947675486564be2d0230045c709
+ms.sourcegitcommit: 745ccd8f7cea8dc3471cccfaa20ec48bba1448c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88857895"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91137231"
 ---
 # <a name="installing-powershell-on-macos"></a>PowerShell installeren in macOS
 
@@ -48,7 +48,7 @@ Wanneer er nieuwe versies van Power shell worden uitgebracht, werkt u de Power s
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade --cask powershell
 ```
 
 > [!NOTE]
@@ -80,7 +80,7 @@ Wanneer er nieuwe versies van Power shell worden uitgebracht, werkt u de Power s
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade --cask powershell-preview
 ```
 
 > [!NOTE]
