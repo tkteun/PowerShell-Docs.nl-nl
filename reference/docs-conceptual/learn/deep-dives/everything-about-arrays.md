@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over matrices
 description: Matrices zijn een fundamentele taal functie van de meeste programmeer talen.
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
+ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092096"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91543369"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Alles wat u wilt weten over matrices
 
@@ -752,7 +752,10 @@ if ( -not ( $results -ne 'Passed') )
 
 ## <a name="adding-to-arrays"></a>Toevoegen aan matrices
 
-Op dit moment begint u met het toevoegen van items aan een matrix. Het snelle antwoord is dat u dat niet kunt. Een matrix is een vaste grootte in het geheugen. Als u het item wilt verg Roten of er één aan wilt toevoegen, moet u een nieuwe matrix maken en alle waarden van de oude matrix kopiëren. Dit klinkt duurder en lijkt veel werk, maar in Power shell wordt de complexiteit van het maken van de nieuwe matrix echter verborgen.
+Op dit moment begint u met het toevoegen van items aan een matrix. Het snelle antwoord is dat u dat niet kunt. Een matrix is een vaste grootte in het geheugen. Als u het item wilt verg Roten of er één aan wilt toevoegen, moet u een nieuwe matrix maken en alle waarden van de oude matrix kopiëren. Dit klinkt als veel werk, maar in Power shell wordt de complexiteit van het maken van de nieuwe matrix echter verborgen. Power shell implementeert de operator voor optellen ( `+` ) voor matrices.
+
+> [!NOTE]
+> Power shell implementeert geen aftrekkings bewerking. Als u een flexibel alternatief voor een matrix wilt, moet u een [Gene riek `List` ](#generic-list) object gebruiken.
 
 ### <a name="array-addition"></a>Matrix toevoegen
 
@@ -814,8 +817,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-Als u de resultaten van de `foreach` aan een variabele toewijst, worden alle objecten vastgelegd en wordt er één matrix gemaakt.
 
 ## <a name="array-types"></a>Matrix typen
 
