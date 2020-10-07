@@ -1,14 +1,14 @@
 ---
 title: Alles wat u wilt weten over PSCustomObject
 description: PSCustomObject is een eenvoudige manier om gestructureerde gegevens te maken.
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
-ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
+ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804777"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772317"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Alles wat u wilt weten over PSCustomObject
 
@@ -159,10 +159,10 @@ Als u wilt weten of een eigenschap bestaat, kunt u gewoon controleren of de eige
 if( $null -ne $myObject.ID )
 ```
 
-Maar als de waarde zou kunnen zijn `$null` en u deze nog steeds moet controleren, kunt u de `psobject.properties` voor IT controleren.
+Maar als de waarde zou kunnen zijn `$null` , kunt u controleren of deze bestaat door de `psobject.properties` voor IT te controleren.
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## <a name="adding-object-methods"></a>Object methoden toevoegen
@@ -264,7 +264,7 @@ Power Shell heeft voor ons besloten welke eigenschappen standaard moeten worden 
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```

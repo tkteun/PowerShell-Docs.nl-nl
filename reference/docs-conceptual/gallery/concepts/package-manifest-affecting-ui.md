@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface
-ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560420"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772300"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface
 
@@ -26,15 +26,15 @@ In de volgende tabel ziet u de elementen van de gebruikers interface van de Powe
 | **Titel** | Dit is de naam van het pakket dat naar de galerie wordt gepubliceerd  | Nee | Nee |
 | **Versie** | De weer gegeven versie is de versie teken reeks in de meta gegevens en een prerelease als is opgegeven. Het primaire deel van de versie in een module manifest is het ModuleVersion. Voor een script wordt dit aangeduid als. Versie. Als er een teken reeks voor de voorlopige versie is opgegeven, wordt deze toegevoegd aan de ModuleVersion voor modules of opgegeven als onderdeel van. VERSIE voor scripts. Er is documentatie voor het opgeven van voorlopige teken reeksen in [modules](module-prerelease-support.md)en in [scripts](script-prerelease-support.md) | Ja | Ja |
 | **Beschrijving** | Dit is de beschrijving in het module manifest en in een script bestand manifest. BESCHRIJVINGEN | Ja | Ja |
-| **Acceptatie van de licentie vereisen** | Een module kan vereisen dat de gebruiker een licentie accepteert door het module manifest te wijzigen met RequireLicenseAcceptance = $true, een LicenseURI op te geven en een License. txt-bestand op te geven in de hoofdmap van de module map. Meer informatie is beschikbaar in het onderwerp een [acceptatie van licenties nodig](../how-to/working-with-packages/packages-that-require-license-acceptance.md) . | Ja | Nee |
-| **Releaseopmerkingen** | Voor-modules wordt deze informatie opgehaald uit de sectie ReleaseNotes onder PSData\PrivateData. In script manifesten is dit de. RELEASENOTES-element. | Ja | Ja |
+| **Acceptatie van de licentie vereisen** | Een module kan vereisen dat de gebruiker een licentie accepteert door het module manifest te wijzigen met RequireLicenseAcceptance = $true, een LicenseURI op te geven en een license.txt bestand op te geven in de hoofdmap van de module map. Meer informatie is beschikbaar in het onderwerp een [acceptatie van licenties nodig](../how-to/working-with-packages/packages-that-require-license-acceptance.md) . | Ja | Nee |
+| **Opmerkingen bij de release** | Voor-modules wordt deze informatie opgehaald uit de sectie ReleaseNotes onder PSData\PrivateData. In script manifesten is dit de. RELEASENOTES-element. | Ja | Ja |
 | **Eigenaren** | Eigen aren zijn de lijst met gebruikers in de PowerShell Gallery die een pakket kunnen bijwerken. De lijst met eigen aren is niet opgenomen in het pakket manifest. In aanvullende documentatie wordt beschreven hoe u [item eigenaren beheert](../how-to/publishing-packages/managing-package-owners.md). | Nee | Nee |
 | **Auteur** | Dit is opgenomen in het module manifest als auteur en in een script manifest als. Lijsten. Het veld Auteur wordt vaak gebruikt om een bedrijf of organisatie op te geven dat is gekoppeld aan een pakket. | Ja | Ja |
 | **Gegevens** | Dit is het copyright veld in het module manifest en. COPYRIGHT in een script manifest. | Ja | Ja |
 | **File List** | De lijst met bestanden wordt uit het pakket gehaald wanneer het is gepubliceerd naar de PowerShell Gallery. Het kan niet worden bestuurd door de informatie in het manifest. Opmerking: er is een extra. nuspec-bestand dat wordt vermeld bij elk pakket in het PowerShell Gallery dat niet aanwezig is na installatie van het pakket op een systeem. Dit is het Nuget-pakket manifest voor het pakket en kan worden genegeerd. | Nee | Nee |
 | **Tags** | Voor modules worden tags opgenomen onder PSData\PrivateData. Voor scripts is de sectie gelabeld. Koptags. Houd er rekening mee dat Tags geen spaties kunnen bevatten, zelfs als ze zich in een aanhalings teken bevinden. Labels hebben aanvullende vereisten en betekenissen, die verderop in dit onderwerp worden beschreven in de sectie Label Details. | Ja | Ja |
 | **Cmdlets** | Dit wordt in het module manifest beschreven met behulp van CmdletsToExport. Houd er rekening mee dat de best practice expliciet de items moet vermelden, in plaats van het Joker teken ' * ' te gebruiken, omdat de prestaties van de load module voor gebruikers worden verbeterd. | Ja | Nee |
-| **Functions** | Dit wordt in het module manifest beschreven met behulp van FunctionsToExport. Houd er rekening mee dat de best practice expliciet de items moet vermelden, in plaats van het Joker teken ' * ' te gebruiken, omdat de prestaties van de load module voor gebruikers worden verbeterd. | Ja | Nee |
+| **Functies** | Dit wordt in het module manifest beschreven met behulp van FunctionsToExport. Houd er rekening mee dat de best practice expliciet de items moet vermelden, in plaats van het Joker teken ' * ' te gebruiken, omdat de prestaties van de load module voor gebruikers worden verbeterd. | Ja | Nee |
 | **DSC-resources** | Voor modules die worden gebruikt in Power shell-versie 5,0 en hoger, wordt dit in het manifest opgenomen met DscResourcesToExport. Als de module moet worden gebruikt in Power Shell 4, mag de DSCResourcesToExport niet worden gebruikt omdat deze geen ondersteunde manifest sleutel is. (DSC is niet beschikbaar vóór Power Shell 4.) | Ja | Nee |
 | **Werkstromen** | Werk stromen worden gepubliceerd op de PowerShell Gallery als scripts en geïdentificeerd als werk stromen (Zie [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) voor een voor beeld) in de code. Dit wordt niet beheerd door het manifest. | Nee | Nee |
 | **Functie mogelijkheden** | Dit wordt weer gegeven wanneer de module die naar het PowerShell Gallery is gepubliceerd, een of meer functie-psrc-bestanden bevat die door JEA worden gebruikt. Raadpleeg de JEA-documentatie voor meer informatie over [functie mogelijkheden](/powershell/scripting/learn/remoting/jea/role-capabilities). | Ja | Nee |
@@ -44,7 +44,7 @@ In de volgende tabel ziet u de elementen van de gebruikers interface van de Powe
 | **Versie geschiedenis** | De versie geschiedenis weerspiegelt de updates die zijn aangebracht in een module in de PowerShell Gallery. Als een versie van een pakket verborgen is met behulp van de functie verwijderen, wordt het niet weer gegeven in de versie geschiedenis, behalve de eigen aren van het pakket. | Nee | Nee |
 | **Project site** | De project site wordt opgegeven voor modules in de sectie Privatedata\PSData van het module manifest door een ProjectURI op te geven. In het script manifest wordt gecontroleerd door het opgeven van. PROJECTURI. | Ja | Ja |
 | **Licentie** | Er wordt een licentie koppeling voor modules opgegeven in de sectie Privatedata\PSData van het module manifest door een LicenseURI op te geven. In het script manifest wordt gecontroleerd door het opgeven van. LICENSEURI. Het is belang rijk om te weten dat als er geen licentie wordt opgegeven via de LicenseURI of binnen een module, de gebruiks voorwaarden voor het pakket worden opgegeven voor de PowerShell Gallery. Zie de gebruiks voorwaarden voor meer informatie. | Ja | Ja |
-| **Pictogram** | Er kan een pictogram worden opgegeven voor elk pakket in de PowerShell Gallery door de vlag IconURI in het script manifest op te geven of in de sectie Privatedata-PSData van het module manifest. De IconURI moet verwijzen naar een afbeelding van 32x32 met transparantie achtergrond. De URI **moet** een directe afbeeldings-URL zijn en **mag niet** naar een webpagina met de installatie kopie of een bestand in het PowerShell Gallery-pakket gaan. | Ja | Ja |
+| **Pictogram** | Er kan een pictogram worden opgegeven voor elk pakket in de PowerShell Gallery door de vlag IconURI in het script manifest op te geven of in de sectie Privatedata-PSData van het module manifest. De IconURI moet verwijzen naar een 85x85-afbeelding met transparantie achtergrond. De URI **moet** een directe afbeeldings-URL zijn en **mag niet** naar een webpagina met de installatie kopie of een bestand in het PowerShell Gallery-pakket gaan. | Ja | Ja |
 
 ## <a name="editing-package-details"></a>Pakket Details bewerken
 
@@ -92,7 +92,7 @@ Ter referentie zijn hier enkele meestgebruikte Tags vanaf 12/14/2017. In sommige
 | Database | Data bases (plural) zijn minder wenselijk |
 | DevOps |  |
 | Windows |  |
-| Ontwikkelen |  |
+| Build |  |
 | Implementatie | Implementeren wordt iets minder vaak gebruikt |
 | Cloud |  |
 | GIT |  |
@@ -111,7 +111,7 @@ Ter referentie zijn hier enkele meestgebruikte Tags vanaf 12/14/2017. In sommige
 | Exchange |  |
 | Netwerk | Netwerken zijn vergelijkbaar, minder vaak gebruikt |
 | SharePoint |  |
-| Rapportage | Rapportage is een actie, een ding van het rapport |
+| Rapporten | Rapportage is een actie, een ding van het rapport |
 | Rapport | Het rapport is een ding |
 | WinRM |  |
 | Bewaking |  |
