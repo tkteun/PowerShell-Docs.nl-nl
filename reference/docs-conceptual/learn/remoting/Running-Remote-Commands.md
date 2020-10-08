@@ -2,12 +2,12 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Externe opdrachten uitvoeren
-ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
+ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799618"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814732"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -129,7 +129,7 @@ Windows Power shell Remote Management begint hier gewoon. Door gebruik te maken 
 
 Windows Power shell bevat een WSMan-provider. De provider maakt een `WSMAN:` station waarmee u kunt navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
 
-Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), of typ in de Windows Power shell-console `Get-Help wsman` .
+Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), of typ in de Windows Power shell-console `Get-Help wsman` .
 
 Zie voor meer informatie:
 

@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over matrices
 description: Matrices zijn een fundamentele taal functie van de meeste programmeer talen.
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 016c978a00d202a466610c7eaf4a09b9b69f29b2
+ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91543369"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814715"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Alles wat u wilt weten over matrices
 
@@ -706,7 +706,7 @@ Een `$null` matrix is niet hetzelfde als een lege matrix. Als u weet dat u een m
 ```powershell
 if ( $array.count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
