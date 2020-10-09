@@ -1,14 +1,14 @@
 ---
 title: Alles wat u wilt weten over matrices
 description: Matrices zijn een fundamentele taal functie van de meeste programmeer talen.
-ms.date: 07/07/2020
+ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 016c978a00d202a466610c7eaf4a09b9b69f29b2
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
+ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814715"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852558"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Alles wat u wilt weten over matrices
 
@@ -76,7 +76,7 @@ Het `@()` is vaak de syntaxis voor het maken van een matrix, maar door komma's g
 $data = 'Zero','One','Two','Three'
 ```
 
-#### <a name="write-output-to-create-arrays"></a>Write-output voor het maken van matrices
+#### <a name="write-output-to-create-arrays"></a>Write-Output matrix maken
 
 Eén leuke truc is dat u kunt gebruiken `Write-Output` om snel teken reeksen te maken in de-console.
 
@@ -462,7 +462,7 @@ Doe
 
 De inventarisatie wordt nog steeds uitgevoerd, maar de complexiteit ligt daar niet meer te zien.
 
-### <a name="where-object-filtering"></a>Where-object filtering
+### <a name="where-object-filtering"></a>Where-Object filteren
 
 Hier kan worden `Where-Object` gefilterd en geselecteerd wat we uit de matrix willen zien op basis van de eigenschappen van het object.
 
@@ -724,7 +724,7 @@ Als u nog steeds in Power shell 5,1 bent, kunt u het object in een matrix inpakk
 ```powershell
 if ( @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -733,7 +733,7 @@ Als u het veilig wilt afspelen, controleert u op `$null` en controleert u de tel
 ```powershell
 if ( $null -ne $array -and @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -1034,11 +1034,11 @@ PS> $data[$outside][$inside]
 
 Voeg een set met haakjes toe voor elk niveau van matrix Nesting. De eerste set met haken is voor de buitenste matrix en vervolgens werkt u vanuit deze werk wijze.
 
-### <a name="write-output--noenumerate"></a>Write-output-opsomming
+### <a name="write-output--noenumerate"></a>Write-Output-opsomming
 
 Power shell kan de terugloop of het opsommen van matrices opvangen. Dit is een kern aspect van de manier waarop Power shell de pijp lijn gebruikt, maar er zijn tijden die u niet wilt dat.
 
-Ik pipet objecten vaak om `Get-Member` meer te weten te komen over hen. Wanneer ik een matrix naar het object Pipet, wordt deze teruggestuurd en wordt Get-member de leden van de matrix en niet de daad werkelijke matrix weer gegeven.
+Ik pipet objecten vaak om `Get-Member` meer te weten te komen over hen. Wanneer ik een matrix naar het object Pipet, wordt deze teruggeleid en Get-Member ziet de leden van de matrix en niet de daad werkelijke matrix.
 
 ```powershell
 PS> $data = @('red','green','blue')
