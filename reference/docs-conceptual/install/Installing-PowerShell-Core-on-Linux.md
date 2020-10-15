@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 07/30/2020
-ms.openlocfilehash: ce69f75416eb326e38d42991a4ae85a3a7298c5d
-ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
+ms.openlocfilehash: f35366b5b1a0f54ce2c90d0e3cba59be7b9ce82c
+ms.sourcegitcommit: 2ca12827dc64198b4263e8873a45b9466f22a67c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441766"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079792"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -57,10 +57,10 @@ Alternatieve installatie methoden
 
 Momenteel niet ondersteund
 
-- Ubuntu 20,04
+- Ubuntu 20.04
 
 > [!NOTE]
-> Power shell kan alleen de distributies ondersteunen die door .NET worden ondersteund. Zie de [opmerkingen bij de release van .net core][distros] voor een lijst met ondersteunde distributies. Als er een distrbution wordt ondersteund door .NET dat hier niet wordt vermeld, kunt u aanvragen dat ondersteuning voor de distributie wordt toegevoegd. U kunt een aanvraag indienen via de sjabloon voor de [ondersteunings aanvraag voor distributie][] .
+> Power shell kan alleen de distributies ondersteunen die door .NET worden ondersteund. Zie de [opmerkingen bij de release van .net core][distros] voor een lijst met ondersteunde distributies. Als er een distributie wordt ondersteund door .NET die hier niet wordt vermeld, kunt u een aanvraag indienen om de ondersteuning voor de distributie toe te voegen. U kunt een aanvraag indienen via de sjabloon voor de [ondersteunings aanvraag voor distributie][] .
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -71,18 +71,18 @@ Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudi
 De voorkeurs methode is als volgt:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
+# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -118,21 +118,20 @@ Power shell voor Linux wordt gepubliceerd op pakket opslagplaatsen voor eenvoudi
 De voorkeurs methode is als volgt:
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
 # Update the list of products
 sudo apt-get update
-
 # Enable the "universe" repositories
 sudo add-apt-repository universe
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -173,7 +172,7 @@ De installatie wordt ondersteund via `snapd` . Zie [snap package][snap]voor inst
 > [!NOTE]
 > Ubuntu 19,04 is een [voorlopige versie](https://www.ubuntu.com/about/release-cycle) die door de [community wordt ondersteund](../powershell-support-lifecycle.md).
 
-## <a name="ubuntu-2004"></a>Ubuntu 20,04
+## <a name="ubuntu-2004"></a>Ubuntu 20.04
 
 Ubuntu 20,04 is een LTS-release. Power shell biedt momenteel geen ondersteuning voor deze versie. Ondersteuning voor deze versie wordt overwogen voor de Power shell 7,1-release. Ga naar deze [aanvraag](https://github.com/PowerShell/PowerShell/issues/12626) als u ondersteuning wilt voor Ubuntu 20,04.
 
