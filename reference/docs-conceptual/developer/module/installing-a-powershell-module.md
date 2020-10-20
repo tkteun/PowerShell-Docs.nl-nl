@@ -1,12 +1,12 @@
 ---
 title: Een Power shell-module installeren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
+ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784857"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92197822"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
 
@@ -115,7 +115,7 @@ Als u wilt dat een module beschikbaar is voor alle gebruikers accounts op de com
 `$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
-> De locatie van de programma bestanden wordt standaard toegevoegd aan de waarde van de omgevings variabele PSModulePath in Windows Power Shell 4,0 en hoger. Voor eerdere versies van Windows Power shell kunt u de locatie van de programma bestanden ((%ProgramFiles%\WindowsPowerShell\Modules) hand matig maken en dit pad toevoegen aan de omgevings variabele PSModulePath, zoals hierboven wordt beschreven.
+> De locatie van de programma bestanden wordt standaard toegevoegd aan de waarde van de omgevings variabele PSModulePath in Windows Power Shell 4,0 en hoger. Voor eerdere versies van Windows Power shell kunt u de locatie van de programma bestanden (%ProgramFiles%\WindowsPowerShell\Modules) hand matig maken en dit pad toevoegen aan de omgevings variabele PSModulePath, zoals hierboven wordt beschreven.
 
 ### <a name="installing-modules-in-a-product-directory"></a>Modules in een productsitemap installeren
 

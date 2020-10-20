@@ -1,13 +1,13 @@
 ---
 title: Externe communicatie van PowerShell via SSH
 description: Externe communicatie in Power shell core via SSH
-ms.date: 07/23/2020
-ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
-ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
+ms.date: 10/19/2020
+ms.openlocfilehash: b3ffc5e93e72c5b7584bd712ee391e61f773486e
+ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133466"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92197839"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -25,7 +25,7 @@ De `New-PSSession` `Enter-PSSession` `Invoke-Command` cmdlets, en hebben nu een 
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter **hostname** en geeft u de gebruikers naam met de **naam**van de gebruiker. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke-sleutel bestand met de para meter/ **filepath** .
+Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter **hostname** en geeft u de gebruikers naam met de **naam**van de gebruiker. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen. U kunt ook SSH-sleutel verificatie gebruiken met behulp van een persoonlijke-sleutel bestand met de para meter/ **filepath** . Het maken van sleutels voor SSH-verificatie varieert per platform.
 
 ## <a name="general-setup-information"></a>Algemene informatie over de installatie
 
@@ -33,7 +33,7 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
 
 ## <a name="set-up-on-a-windows-computer"></a>Instellen op een Windows-computer
 
-1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren in Windows](../../install/installing-powershell-core-on-windows.md#msi).
+1. Installeer de meest recente versie van Power shell. Zie [Power shell Core installeren op Windows](../../install/installing-powershell-core-on-windows.md#msi)voor meer informatie.
 
    U kunt controleren of Power Shell ondersteuning biedt voor externe SSH door de `New-PSSession` parameter sets op te geven. U ziet dat er namen van parameter sets zijn die beginnen met **SSH**. Deze parameter sets bevatten **SSH** -para meters.
 
@@ -119,6 +119,14 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    PasswordAuthentication yes
    ```
 
+   Schakel eventueel sleutel verificatie in:
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   Zie de manpage voor [ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html)voor meer informatie over het maken van SSH-sleutels op Ubuntu.
+
    Een vermelding voor een Power shell-subsysteem toevoegen:
 
    ```
@@ -134,15 +142,15 @@ Power shell 6 of hoger en SSH moet op alle computers zijn geïnstalleerd. Instal
    PubkeyAuthentication yes
    ```
 
-1. Start de service **sshd** opnieuw.
+1. Start de **SSH** -service opnieuw.
 
    ```bash
-   sudo service sshd restart
+   sudo service ssh restart
    ```
 
 ## <a name="set-up-on-a-macos-computer"></a>Instellen op een macOS-computer
 
-1. Installeer de meest recente versie van Power shell, Zie [Power shell Core installeren op macOS](../../install/installing-powershell-core-on-macos.md).
+1. Installeer de meest recente versie van Power shell. Voor meer informatie [installeert u Power shell core in macOS](../../install/installing-powershell-core-on-macos.md).
 
    Zorg ervoor dat externe SSH-communicatie is ingeschakeld door de volgende stappen te volgen:
 
