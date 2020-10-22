@@ -1,13 +1,13 @@
 ---
-ms.date: 01/10/2020
+ms.date: 10/21/2020
 keywords: powershell,cmdlet
 title: Draag bare modules schrijven
-ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 9cd9e5bfc1110ce149d552f55ba20e35d9206c46
+ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158119"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92357757"
 ---
 # <a name="portable-modules"></a>Draag bare modules
 
@@ -17,8 +17,7 @@ Windows Power shell is geschreven voor [.NET Framework][] terwijl Power shell Co
 
 ### <a name="porting-a-pssnapin"></a>Een PSSnapIn overbrengen
 
-Power shell- [modules](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) worden niet ondersteund in Power shell core. Het is echter een lastigere PSSnapIn te converteren naar een Power shell-module. De registratie code van de PSSnapIn bevindt zich doorgaans in één bron bestand van een klasse die is afgeleid van [PSSnapIn][].
-Dit bron bestand verwijderen uit de build; het is niet meer nodig.
+Power shell- [modules](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) worden niet ondersteund in Power shell core. Het is echter een lastigere PSSnapIn te converteren naar een Power shell-module. De registratie code van de PSSnapIn bevindt zich doorgaans in één bron bestand van een klasse die is afgeleid van [PSSnapIn][]. Dit bron bestand verwijderen uit de build; het is niet meer nodig.
 
 Gebruik [New-ModuleManifest][] om een nieuw module manifest te maken waarmee de PSSnapIn-registratie code moet worden vervangen. Sommige waarden van de **PSSnapIn** (zoals **Description**) kunnen opnieuw worden gebruikt binnen het module manifest.
 
@@ -65,11 +64,11 @@ Options:
   -lang, --language   Filters templates based on language and specifies the language of the template to create.
 
 
-Templates                                         Short Name         Language          Tags
-----------------------------------------------------------------------------------------------------------------------------
-Console Application                               console            [C#], F#, VB      Common/Console
-Class library                                     classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module                        psmodule           [C#]              Library/PowerShell/Module
+Templates                        Short Name         Language          Tags
+-----------------------------------------------------------------------------------------------
+Console Application              console            [C#], F#, VB      Common/Console
+Class library                    classlib           [C#], F#, VB      Common/Library
+PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
 ...
 ```
 
@@ -156,9 +155,15 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
+### <a name="debugging-the-module"></a>Fout opsporing in de module
+
+Zie [Visual Studio code gebruiken voor het opsporen van fouten in gecompileerde cmdlets][]voor een hand leiding voor het instellen van Visual Studio code voor het opsporen van fouten in de module.
+
+## <a name="supporting-technologies"></a>Ondersteunende technologieën
+
 In de volgende secties worden een aantal technologieën beschreven die worden gebruikt door deze sjabloon.
 
-## <a name="net-standard-library"></a>.NET Standard-bibliotheek
+### <a name="net-standard-library"></a>.NET Standard-bibliotheek
 
 [.NET Standard][] is een formele specificatie van .net-api's die beschikbaar zijn in alle .net-implementaties. Beheerde code doelen .NET Standard werkt met de .NET Framework-en .NET Core-versies die compatibel zijn met die versie van de .NET Standard.
 
@@ -170,7 +175,7 @@ Met behulp van .NET Standard kunt u ervoor zorgen dat bij het ontwikkelen van de
 
 Het is echter niet nodig om .NET Standard te richten op een module om te kunnen werken met Windows Power shell en Power shell core, zolang u compatibele Api's gebruikt. De tussen taal (IL) is compatibel tussen de twee Runtimes. U kunt .NET Framework 4.6.1 instellen, die compatibel is met .NET Standard 2,0. Als u geen Api's buiten .NET Standard 2,0 gebruikt, werkt uw module met Power shell Core 6 zonder opnieuw te compileren.
 
-## <a name="powershell-standard-library"></a>Standaard bibliotheek van Power shell
+### <a name="powershell-standard-library"></a>Standaard bibliotheek van Power shell
 
 De [standaard bibliotheek van Power shell][] is een formele specificatie van Power shell-api's die beschikbaar zijn in alle Power shell-versies die groter zijn dan of gelijk zijn aan de versie van die Standard.
 
@@ -179,9 +184,9 @@ De [standaard bibliotheek van Power shell][] is een formele specificatie van Pow
 U wordt aangeraden uw module te compileren met behulp van de standaard bibliotheek van Power shell. De tape wisselaar zorgt ervoor dat de Api's beschikbaar zijn en in Windows Power shell en Power shell Core 6 worden geïmplementeerd.
 Power shell Standard is bedoeld om altijd compatibel te zijn. Een module die is gemaakt met behulp van de standaard bibliotheek 5,1 van Power shell is altijd compatibel met toekomstige versies van Power shell.
 
-## <a name="module-manifest"></a>Module manifest
+### <a name="module-manifest"></a>Module manifest
 
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Duidt op compatibiliteit met Windows Power shell en Power shell core
+#### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Duidt op compatibiliteit met Windows Power shell en Power shell core
 
 Nadat u hebt gecontroleerd of de module werkt met Windows Power shell en Power shell core, moet het module manifest expliciet duiden op compatibiliteit met behulp van de eigenschap [CompatiblePSEditions][] . Een waarde `Desktop` betekent dat de module compatibel is met Windows Power shell, terwijl een waarde `Core` betekent dat de module compatibel is met Power shell core. Inclusief beide `Desktop` en `Core` betekent dat de module compatibel is met Windows Power shell en Power shell core.
 
@@ -249,7 +254,7 @@ Voorbeeld:
 }
 ```
 
-## <a name="dependency-on-native-libraries"></a>Afhankelijkheid van systeem eigen bibliotheken
+### <a name="dependency-on-native-libraries"></a>Afhankelijkheid van systeem eigen bibliotheken
 
 Modules die bedoeld zijn voor gebruik in verschillende besturings systemen of processor architecturen kunnen afhankelijk zijn van een beheerde bibliotheek die zelf afhankelijk is van sommige systeem eigen bibliotheken.
 
@@ -259,33 +264,33 @@ Met Power shell 7 worden systeem eigen binaire bestanden die worden geladen in s
 
 ```
 managed.dll folder
-                |
-                |--- 'win-x64' folder
-                |       |--- native.dll
-                |
-                |--- 'win-x86' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm64' folder
-                |       |--- native.dll
-                |
-                |--- 'linux-x64' folder
-                |       |--- native.so
-                |
-                |--- 'linux-x86' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm64' folder
-                |       |--- native.so
-                |
-                |--- 'osx-x64' folder
-                |       |--- native.dylib
+    |
+    |--- 'win-x64' folder
+    |       |--- native.dll
+    |
+    |--- 'win-x86' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm64' folder
+    |       |--- native.dll
+    |
+    |--- 'linux-x64' folder
+    |       |--- native.so
+    |
+    |--- 'linux-x86' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm64' folder
+    |       |--- native.so
+    |
+    |--- 'osx-x64' folder
+    |       |--- native.dylib
 ```
 
 <!-- reference links -->
@@ -295,6 +300,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [runtime controles]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
+[Visual Studio code gebruiken voor het opsporen van fouten in gecompileerde cmdlets]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
 [.NET Standard]: /dotnet/standard/net-standard
 [Power Shell-standaard]: https://github.com/PowerShell/PowerShellStandard
 [Power Shell-standaard 5,1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
