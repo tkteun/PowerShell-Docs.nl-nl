@@ -784,6 +784,8 @@
           href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: Informatie over bestandscodering in VS Code en PowerShell
           href: dev-cross-plat/vscode/understanding-file-encoding.md
+        - name: Visual Studio Code gebruiken voor het opsporen van fouten in gecompileerde cmdlets
+          href: dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets.md
     - name: Draagbare modules schrijven
       href: dev-cross-plat/writing-portable-modules.md
     - name: Modulehelp maken met PlatyPS
