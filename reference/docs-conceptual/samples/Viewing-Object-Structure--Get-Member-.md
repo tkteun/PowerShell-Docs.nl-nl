@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Object structuur ophalen lid weer geven
-ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Get-Member is een krachtig hulp programma waarmee het type en de structuur van objecten in Power shell kunnen worden weer geven.
+ms.openlocfilehash: 3c294fe47294e2cf8daf125aac55661dd38cf9bb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030716"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501215"
 ---
 # <a name="viewing-object-structure-get-member"></a>Objectstructuur weergeven (Get-Member)
 
@@ -23,7 +24,7 @@ Get-Process | Get-Member | Out-Host -Paging
 
 De uitvoer van deze opdracht ziet er ongeveer als volgt uit:
 
-```output
+```Output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -66,6 +67,6 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 Er zijn meer dan 60 eigenschappen voor een proces. In Windows Power shell worden vaak slechts een aantal eigenschappen voor een bekend object weer gegeven, wat betekent dat ze een niet-beheerde hoeveelheid gegevens produceren.
 
 > [!NOTE]
-> Windows Power shell bepaalt hoe een object type moet worden weer gegeven met behulp van gegevens die zijn opgeslagen in XML-bestanden met namen die eindigen op. Format. ps1xml. De opmaak gegevens voor proces objecten, die .NET System. Diagnostics. process-objecten, worden opgeslagen in DotNetTypes. Format. ps1xml.
+> Windows Power shell bepaalt hoe een object type moet worden weer gegeven met behulp van gegevens die zijn opgeslagen in XML-bestanden met namen die eindigen op .format.ps1XML. De opmaak gegevens voor proces objecten, die .NET System. Diagnostics. process-objecten, worden opgeslagen in DotNetTypes.format.ps1XML.
 
 Als u andere eigenschappen wilt bekijken dan die in Windows Power Shell standaard worden weer gegeven, moet u de uitvoer gegevens zelf opmaken. U kunt dit doen met behulp van de Format-cmdlets.

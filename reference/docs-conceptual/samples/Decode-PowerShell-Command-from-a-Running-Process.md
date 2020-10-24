@@ -1,14 +1,15 @@
 ---
 ms.date: 11/13/2018
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Een PowerShell-opdracht decoderen vanuit een actief proces
 author: randomnote1
-ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u een script blok decodeert dat op dit moment wordt uitgevoerd voor een Power Shell-proces.
+ms.openlocfilehash: 95b4b806665bf8137712ebb183329039bc1e1deb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "66470960"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500484"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Een PowerShell-opdracht decoderen vanuit een actief proces
 
@@ -81,7 +82,7 @@ $commandDetails[0]
 
 De gedecodeerde opdracht kan nu worden gecontroleerd door de gedecodeerde opdracht eigenschap te selecteren.
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP
@@ -104,6 +105,6 @@ DecodedCommand :
                      }
 ```
 
-[Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
+[Taak planner]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process

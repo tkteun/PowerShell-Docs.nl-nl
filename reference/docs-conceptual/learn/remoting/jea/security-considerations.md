@@ -2,18 +2,19 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: Beveiligings overwegingen voor JEA
-ms.openlocfilehash: befc24fec368c4f6d60477daf63bf17e9431133e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Omdat JEA deze gebruikers in staat stelt om beheer opdrachten uit te voeren zonder volledige beheerders toegang, kunt u deze gebruikers vervolgens verwijderen uit beveiligings groepen met hoge bevoegdheden.
+ms.openlocfilehash: f65f9d6c6620261de0a9c8de7812637565ca1806
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017907"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501572"
 ---
 # <a name="jea-security-considerations"></a>Beveiligings overwegingen voor JEA
 
 JEA helpt u uw beveiligings postuur te verbeteren door het aantal permanente beheerders op uw computers te verminderen. JEA maakt gebruik van een Power shell-sessie configuratie voor het maken van een nieuw toegangs punt voor gebruikers om het systeem te beheren. Gebruikers die een verhoogde bevoegdheden nodig hebben, maar niet onbeperkt, toegang tot de computer om taken uit te voeren, kunnen toegang krijgen tot het JEA-eind punt. Omdat JEA deze gebruikers in staat stelt om beheer opdrachten uit te voeren zonder volledige beheerders toegang, kunt u deze gebruikers vervolgens verwijderen uit beveiligings groepen met hoge bevoegdheden.
 
-## <a name="run-as-account"></a>Run as-account
+## <a name="run-as-account"></a>Run-As-account
 
 Elk JEA-eind punt heeft een aangewezen **uitvoeren als-** account. Dit is het account waarmee de acties van de verbinding van de gebruiker worden uitgevoerd. Dit account kan worden geconfigureerd in het [configuratie bestand](session-configurations.md)voor de sessie en het account dat u kiest, heeft een grote invloed op de beveiliging van uw eind punt.
 
@@ -36,7 +37,7 @@ De volgende tabel bevat een overzicht van de mogelijke configuratie opties en de
 | Lidserver of werk station | Standaard                             | Lokale gebruiker, lid van*ingebouwd*\Administrators        | Computer account     |
 | Lidserver of werk station | Lokale groepen C en D                | Lokale gebruiker, lid van*computer*\c en*computer*\d | Computer account     |
 
-Wanneer u gebeurtenissen voor beveiligings controle en logboeken van toepassingen bekijkt, ziet u dat elke JEA-gebruikers sessie een uniek virtueel account heeft. Dit unieke account helpt u bij het volgen van gebruikers acties in een JEA-eind punt naar de oorspronkelijke gebruiker die de opdracht uitvoert. Namen van virtuele accounts de notatie `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` volgen als gebruiker **Lisa** in domein **Contoso** een service opnieuw start in een JEA-eind punt, zou de gebruikers naam die aan de service besturings beheer-gebeurtenissen `WinRM Virtual Users\WinRM_VA_1_contoso_alice`is gekoppeld.
+Wanneer u gebeurtenissen voor beveiligings controle en logboeken van toepassingen bekijkt, ziet u dat elke JEA-gebruikers sessie een uniek virtueel account heeft. Dit unieke account helpt u bij het volgen van gebruikers acties in een JEA-eind punt naar de oorspronkelijke gebruiker die de opdracht uitvoert. Namen van virtuele accounts de notatie volgen `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` als gebruiker **Lisa** in domein **Contoso** een service opnieuw start in een JEA-eind punt, zou de gebruikers naam die aan de service besturings beheer-gebeurtenissen is gekoppeld `WinRM Virtual Users\WinRM_VA_1_contoso_alice` .
 
 Door een **groep beheerde service accounts (gmsa's)** zijn handig wanneer een lidserver toegang moet hebben tot netwerk bronnen in de JEA-sessie. Bijvoorbeeld wanneer een JEA-eind punt wordt gebruikt voor het beheren van de toegang tot een REST API-service die op een andere computer wordt gehost. Het is eenvoudig om functies te schrijven voor het aanroepen van de REST-Api's, maar u hebt een netwerk identiteit nodig om te verifiëren met de API. Door een door een groep beheerd service account te gebruiken, wordt de tweede hop mogelijk bij het behoud van de controle over de computers die het account kunnen gebruiken. De efficiënte machtigingen van de gMSA worden gedefinieerd door de beveiligings groepen (lokaal of domein) waartoe het gMSA-account behoort.
 
@@ -44,7 +45,7 @@ Wanneer een JEA-eind punt is geconfigureerd voor het gebruik van een gMSA, moete
 
 **Pass-Through-referenties** worden gebruikt wanneer u geen **uitvoeren als-** account opgeeft. Power shell gebruikt de referenties van de verbinding van de gebruiker om opdrachten uit te voeren op de externe server. Hiervoor moet u de gebruiker rechtstreeks toegang verlenen tot geprivilegieerde beheer groepen. Deze configuratie wordt **niet** aanbevolen voor jea. Als de gebruiker die de verbinding maakt, al beheerders bevoegdheden heeft, kan deze het JEA voor komen en het systeem beheren via een andere, onbeperkte manier. Zie de sectie hieronder over de manier waarop [JEA geen bescherming biedt tegen beheerders](#jea-doesnt-protect-against-admins)voor meer informatie.
 
-Met de **standaard run as-accounts** kunt u elk gebruikers account opgeven waaronder de volledige Power shell-sessie wordt uitgevoerd. Sessie configuraties die gebruikmaken van vaste **Run-as-** accounts `-RunAsCredential` (met de para meter) zijn niet jea. Roldefinities werken niet meer zoals verwacht. Elke gebruiker die gemachtigd is om toegang te krijgen tot het eind punt krijgt dezelfde rol toegewezen.
+Met de **standaard run as-accounts** kunt u elk gebruikers account opgeven waaronder de volledige Power shell-sessie wordt uitgevoerd. Sessie configuraties die gebruikmaken van vaste **Run-as-** accounts (met de `-RunAsCredential` para meter) zijn niet jea. Roldefinities werken niet meer zoals verwacht. Elke gebruiker die gemachtigd is om toegang te krijgen tot het eind punt krijgt dezelfde rol toegewezen.
 
 U mag geen **RunAsCredential** gebruiken op een JEA-eind punt omdat het lastig is om acties terug te sporen naar specifieke gebruikers en geen ondersteuning voor het toewijzen van gebruikers aan rollen.
 
@@ -52,7 +53,7 @@ U mag geen **RunAsCredential** gebruiken op een JEA-eind punt omdat het lastig i
 
 Net als bij gewone externe Power shell-eind punten heeft elk JEA-eind punt een afzonderlijke toegangs beheer lijst (ACL) die bepaalt wie zich kan verifiëren met het JEA-eind punt. Bij een onjuiste configuratie kunnen vertrouwde gebruikers geen toegang krijgen tot het JEA-eind punt en kunnen niet-vertrouwde gebruikers toegang hebben. De WinRM-ACL heeft geen invloed op de toewijzing van gebruikers aan JEA-rollen. Toewijzing wordt bepaald door het veld **RoleDefinitions** in het sessie configuratie bestand dat wordt gebruikt om het eind punt te registreren.
 
-Wanneer een JEA-eind punt meerdere functie mogelijkheden heeft, wordt de WinRM-ACL standaard zo geconfigureerd dat toegang tot alle toegewezen gebruikers is toegestaan. Een JEA-sessie die is geconfigureerd met de volgende opdrachten, geeft bijvoorbeeld volledige `CONTOSO\JEA_Lev1` toegang `CONTOSO\JEA_Lev2`tot en.
+Wanneer een JEA-eind punt meerdere functie mogelijkheden heeft, wordt de WinRM-ACL standaard zo geconfigureerd dat toegang tot alle toegewezen gebruikers is toegestaan. Een JEA-sessie die is geconfigureerd met de volgende opdrachten, geeft bijvoorbeeld volledige toegang tot `CONTOSO\JEA_Lev1` en `CONTOSO\JEA_Lev2` .
 
 ```powershell
 $roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
@@ -73,9 +74,9 @@ CONTOSO\JEA_Lev1 AccessAllowed
 CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
-Als u wilt wijzigen welke gebruikers toegang hebben, `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` voert u een interactieve prompt `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` uit of werkt u de machtigingen bij. Gebruikers *hebben ten minste recht op* toegang tot het JEA-eind punt.
+Als u wilt wijzigen welke gebruikers toegang hebben, voert u een `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` interactieve prompt uit of `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` werkt u de machtigingen bij. Gebruikers *hebben ten minste recht op* toegang tot het JEA-eind punt.
 
-Het is mogelijk om een JEA-eind punt te maken dat geen gedefinieerde rol toewijst aan elke gebruiker die toegang heeft. Deze gebruikers kunnen een JEA-sessie starten, maar hebben alleen toegang tot de standaard-cmdlets. U kunt de gebruikers machtigingen in een JEA-eind punt `Get-PSSessionCapability`controleren door uit te voeren. Zie [controle en rapportage op JEA](audit-and-report.md)voor meer informatie.
+Het is mogelijk om een JEA-eind punt te maken dat geen gedefinieerde rol toewijst aan elke gebruiker die toegang heeft. Deze gebruikers kunnen een JEA-sessie starten, maar hebben alleen toegang tot de standaard-cmdlets. U kunt de gebruikers machtigingen in een JEA-eind punt controleren door uit te voeren `Get-PSSessionCapability` . Zie [controle en rapportage op JEA](audit-and-report.md)voor meer informatie.
 
 ## <a name="least-privilege-roles"></a>Minimale bevoegdheden rollen
 
@@ -90,7 +91,7 @@ Denk bijvoorbeeld aan de volgende functie-invoer:
 }
 ```
 
-Deze functie biedt gebruikers de mogelijkheid om een Power shell-cmdlet uit te voeren met het zelfstandig **proces** uit de module **micro soft. Power shell. Management** . Gebruikers moeten mogelijk toegang hebben tot cmdlets `Get-Process` zoals om te zien welke toepassingen op het systeem worden `Stop-Process` uitgevoerd en om toepassingen te beëindigen die niet reageren. Deze vermelding kan echter ook `Start-Process`worden gebruikt voor het starten van een wille keurig programma met volledige beheerders machtigingen. Het programma hoeft niet lokaal op het systeem te worden geïnstalleerd. Een verbonden gebruiker kan een programma starten van een bestands share die de lokale Administrator bevoegdheden van de gebruiker geeft, malware uitvoert en meer.
+Deze functie biedt gebruikers de mogelijkheid om een Power shell-cmdlet uit te voeren met het zelfstandig **proces** uit de module **micro soft. Power shell. Management** . Gebruikers moeten mogelijk toegang hebben tot cmdlets zoals `Get-Process` om te zien welke toepassingen op het systeem worden uitgevoerd en `Stop-Process` om toepassingen te beëindigen die niet reageren. Deze vermelding kan echter ook `Start-Process` worden gebruikt voor het starten van een wille keurig programma met volledige beheerders machtigingen. Het programma hoeft niet lokaal op het systeem te worden geïnstalleerd. Een verbonden gebruiker kan een programma starten van een bestands share die de lokale Administrator bevoegdheden van de gebruiker geeft, malware uitvoert en meer.
 
 Een veiligere versie van dezelfde functie capaciteit zou er als volgt uitzien:
 

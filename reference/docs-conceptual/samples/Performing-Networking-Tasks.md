@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Netwerktaken uitvoeren
-ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u WMI-klassen in Power shell gebruikt voor het beheren van de netwerk configuratie-instelling in Windows.
+ms.openlocfilehash: 95b05c193f4168cdcdf8414399c4f8c569bff754
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737199"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500246"
 ---
 # <a name="performing-networking-tasks"></a>Netwerktaken uitvoeren
 
@@ -38,7 +39,7 @@ fe80::60ea:29a7:a233:7cb7
 2601:600:a27f:a470::2ec1
 ```
 
-Als u wilt weten waarom de accolades worden weer `Get-Member` gegeven, gebruikt u de cmdlet om de eigenschap **IPAddress** te controleren:
+Als u wilt weten waarom de accolades worden weer gegeven, gebruikt u de `Get-Member` cmdlet om de eigenschap **IPAddress** te controleren:
 
 ```powershell
  Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -62,9 +63,9 @@ Als u gedetailleerde IP-configuratie gegevens voor elke netwerk adapter wilt wee
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 ```
 
-De standaard weergave voor het configuratie object voor de netwerk adapter is een zeer kleinere set beschik bare informatie. Gebruik `Select-Object` of een opmaak-cmdlet, zoals `Format-List`, om de eigenschappen op te geven die moeten worden weer gegeven voor uitgebreide inspectie en probleem oplossing.
+De standaard weergave voor het configuratie object voor de netwerk adapter is een zeer kleinere set beschik bare informatie. Gebruik `Select-Object` of een opmaak-cmdlet, zoals `Format-List` , om de eigenschappen op te geven die moeten worden weer gegeven voor uitgebreide inspectie en probleem oplossing.
 
-In moderne TCP/IP-netwerken bent u waarschijnlijk niet geïnteresseerd in IPX-of WINS-eigenschappen. U kunt de para meter **ExcludeProperty** van `Select-Object` gebruiken om eigenschappen te verbergen met namen die beginnen met "WINS" of "IPX".
+In moderne TCP/IP-netwerken bent u waarschijnlijk niet geïnteresseerd in IPX-of WINS-eigenschappen. U kunt de para meter **ExcludeProperty** van gebruiken `Select-Object` om eigenschappen te verbergen met namen die beginnen met "WINS" of "IPX".
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -81,7 +82,7 @@ U kunt een eenvoudige ping uitvoeren op een computer met behulp van **Win32_Ping
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
 ```
 
-Een handiger formulier voor samen vattingen geeft een weer gave van de eigenschappen Address, respons tijd en status code, zoals wordt gegenereerd door de volgende opdracht. De **Autosize** para meter AutoSize `Format-Table` van het formaat van de tabel kolommen wijzigen zodat deze correct worden weer gegeven in Power shell.
+Een handiger formulier voor samen vattingen geeft een weer gave van de eigenschappen Address, respons tijd en status code, zoals wordt gegenereerd door de volgende opdracht. De para meter **AutoSize** van `Format-Table` het formaat van de tabel kolommen wijzigen zodat deze correct worden weer gegeven in Power shell.
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'" |
@@ -96,7 +97,7 @@ Address   ResponseTime StatusCode
 
 Een status code van 0 geeft aan dat de ping is geslaagd.
 
-U kunt een matrix gebruiken om meerdere computers te pingen met één opdracht. Omdat er meer dan één adres is, gebruikt u `ForEach-Object` de om elk adres afzonderlijk te pingen:
+U kunt een matrix gebruiken om meerdere computers te pingen met één opdracht. Omdat er meer dan één adres is, gebruikt `ForEach-Object` u de om elk adres afzonderlijk te pingen:
 
 ```powershell
 '127.0.0.1','localhost','research.microsoft.com' |
@@ -133,16 +134,16 @@ Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 
 ## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Toewijzing van het DNS-domein voor een netwerk adapter
 
-Als u het DNS-domein voor automatische naam omzetting wilt toewijzen, gebruikt u de methode **SetDNSDomain** van de **Win32_NetworkAdapterConfiguration**. Omdat u het DNS-domein voor elke configuratie van de netwerk adapter afzonderlijk toewijst, `ForEach-Object` moet u een instructie gebruiken om het domein toe te wijzen aan elke adapter:
+Als u het DNS-domein voor automatische naam omzetting wilt toewijzen, gebruikt u de methode **SetDNSDomain** van de **Win32_NetworkAdapterConfiguration**. Omdat u het DNS-domein voor elke configuratie van de netwerk adapter afzonderlijk toewijst, moet u een `ForEach-Object` instructie gebruiken om het domein toe te wijzen aan elke adapter:
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
   ForEach-Object -Process { $_.SetDNSDomain('fabrikam.com') }
 ```
 
-De filter instructie `IPEnabled=$true` is nodig, omdat zelfs in een netwerk dat alleen TCP/IP gebruikt, een aantal netwerk adapter configuraties op een computer niet waar TCP/IP-adapters zijn. Dit zijn algemene software-elementen die RAS-, PPTP-, QoS-en andere services ondersteunen voor alle adapters, en dus geen eigen adres hebben.
+De filter `IPEnabled=$true` -instructie is nodig, omdat zelfs in een netwerk dat alleen TCP/IP gebruikt, geen gebruik wordt gemaakt van TCP/IP-adapters op een computer. Dit zijn algemene software-elementen die RAS-, PPTP-, QoS-en andere services ondersteunen voor alle adapters, en hebben dus geen eigen adres.
 
-U kunt de opdracht filteren met behulp `Where-Object` van de-cmdlet, in `Get-CimInstance` plaats van het filter te gebruiken.
+U kunt de opdracht filteren met behulp `Where-Object` van de-cmdlet, in plaats van het filter te gebruiken `Get-CimInstance` .
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
@@ -154,7 +155,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration |
 
 Bij het wijzigen van DHCP-details moet u werken met een set netwerk adapters, net zoals de DNS-configuratie. Er zijn verschillende acties die u kunt uitvoeren met behulp van WMI, en we gaan door een aantal van de gemeen schappelijke stappen.
 
-### <a name="determining-dhcp-enabled-adapters"></a>Adapters voor DHCP-ondersteuning bepalen
+### <a name="determining-dhcp-enabled-adapters"></a>DHCP-Enabled adapters bepalen
 
 Als u de DHCP-adapters op een computer wilt zoeken, gebruikt u de volgende opdracht:
 
@@ -170,7 +171,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 
 ### <a name="retrieving-dhcp-properties"></a>DHCP-eigenschappen ophalen
 
-Omdat aan DHCP gerelateerde eigenschappen voor een adapter doorgaans beginnen met `DHCP`, kunt u de eigenschaps parameter van `Format-Table` gebruiken om alleen die eigenschappen weer te geven:
+Omdat aan DHCP gerelateerde eigenschappen voor een adapter doorgaans beginnen met `DHCP` , kunt u de eigenschaps parameter van gebruiken `Format-Table` om alleen die eigenschappen weer te geven:
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" |
@@ -186,7 +187,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
   ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-U kunt de **filter** -instructie `IPEnabled=$true and DHCPEnabled=$false` gebruiken om te voor komen dat DHCP wordt ingeschakeld, maar als deze stap wordt wegge laten, worden er geen fouten veroorzaakt.
+U kunt de **filter** -instructie gebruiken `IPEnabled=$true and DHCPEnabled=$false` om te voor komen dat DHCP wordt ingeschakeld, maar als deze stap wordt wegge laten, worden er geen fouten veroorzaakt.
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>DHCP-leases op specifieke adapters vrijgeven en vernieuwen
 
@@ -245,7 +246,7 @@ Als u een netwerk share wilt maken, gebruikt u de methode **Create** van **Win32
   )
 ```
 
-U kunt de share ook maken met behulp `net share` van in Power shell in Windows:
+U kunt de share ook maken met behulp van `net share` in Power shell in Windows:
 
 ```powershell
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
@@ -271,7 +272,7 @@ tempshare was deleted successfully.
 
 ## <a name="connecting-a-windows-accessible-network-drive"></a>Verbinding maken met een met Windows toegankelijk netwerk station
 
-De `New-PSDrive` cmdlets maken een Power Shell-station, maar stations die op deze manier zijn gemaakt, zijn alleen beschikbaar voor Power shell. Als u een nieuw netwerk station wilt maken, kunt u het object **WScript. Network** com gebruiken. Met de volgende opdracht wordt de `\\FPS01\users` share toegewezen aan `B:`een lokaal station,
+De `New-PSDrive` cmdlets maken een Power Shell-station, maar stations die op deze manier zijn gemaakt, zijn alleen beschikbaar voor Power shell. Als u een nieuw netwerk station wilt maken, kunt u het object **WScript. Network** com gebruiken. Met de volgende opdracht wordt de share toegewezen `\\FPS01\users` aan een lokaal station `B:` ,
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')

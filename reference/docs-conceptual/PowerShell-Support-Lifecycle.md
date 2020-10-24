@@ -1,20 +1,19 @@
 ---
 title: Levenscyclus voor ondersteuning van PowerShell Core
-description: Beleids regels die ondersteuning bieden voor Power shell core
+description: Details van de beleids regels die ondersteuning bieden voor Power shell
 ms.date: 03/09/2020
-ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236200"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501742"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
 Power shell is een afzonderlijke set hulpprogram ma's en onderdelen die los van Windows Power shell worden geleverd, geïnstalleerd en geconfigureerd. Power shell is niet opgenomen in de Windows-licentie overeenkomsten.
 
-Power shell wordt ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [betaalde ondersteuning][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance].
-U kunt ook betalen voor [ondersteuning][] voor Power shell door een ondersteunings aanvraag voor uw probleem te archiveren.
+Power shell wordt ondersteund onder traditionele micro soft-ondersteunings overeenkomsten, waaronder [betaalde ondersteuning][], [micro soft Enter prise agreements][enterprise-agreement]en [micro soft Software Assurance][assurance]. U kunt ook betalen voor [ondersteuning][] voor Power shell door een ondersteunings aanvraag voor uw probleem te archiveren.
 
 ## <a name="community-support"></a>Community-ondersteuning
 
@@ -56,11 +55,11 @@ Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze w
 
 Platforms die worden vermeld als `Experimental` niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
-| Platform                                          |      6,2      |    7,0    |
+| Platform                                          |      6,2      |    7.0    |
 | ------------------------------------------------- | :-----------: | :-------: |
 | Windows 8,1 en 10                               |   Ondersteund   | Ondersteund |
 | Windows Server 2012 R2, 2016                      |   Ondersteund   | Ondersteund |
-| [Windows Server Semi-Annual-kanaal][semi-annual] |   Ondersteund   | Ondersteund |
+| [Windows Server-Semi-Annual kanaal][semi-annual] |   Ondersteund   | Ondersteund |
 | Ubuntu 16,04 en 18,04                            |   Ondersteund   | Ondersteund |
 | Ubuntu 19,10 (via snap package)                   |   Community   | Community |
 | Ubuntu 20,04 (via snap package)                   |   Community   | Community |
@@ -92,13 +91,13 @@ Op basis van de [levens cyclus van Power shell](#lifecycle-of-powershell-7), wor
 
 | Versie |    Einde van de levens duur     |
 | :-----: | ------------------ |
-|   7,0   | 3 december 2022   |
+|   7.0   | 3 december 2022   |
 |   6,2   | 4 september 2020  |
 |   6.1   | 28 september 2019 |
-|   6,0   | 13 februari 2019  |
+|   6.0   | 13 februari 2019  |
 
 > [!NOTE]
-> Dit document bevat ondersteuning voor Power shell Core 6 en Power shell 7. Windows Power shell (1,0-5,1) is een onderdeel van het Windows-besturings systeem. Onderdelen ontvangen dezelfde ondersteuning als het bovenliggende product of platform. Zie [informatie over levens cyclus van producten en services](/lifecycle/products/) voor meer informatie.
+> Dit document bevat ondersteuning voor Power shell Core 6 en Power shell 7. Windows Power shell (1,0-5,1) is een onderdeel van het Windows-besturings systeem. Onderdelen ontvangen dezelfde ondersteuning als het bovenliggende product of platform. Zie [informatie over de levens cyclus van producten en services](/lifecycle/products/)voor meer informatie.
 
 ## <a name="unsupported-platforms"></a>Niet-ondersteunde platforms
 
@@ -157,7 +156,7 @@ De onderstaande tabel bevat een overzicht van de functies die voldoen aan de ond
 
 De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power shell. Deze tabel wordt vermeld voor historische Naslag informatie. Het is niet bedoeld voor gebruik om de ondersteunings levenscyclus te bepalen.
 
-|       Versie        | Release datum |                                                                     Notitie                                                                      |
+|       Versie        | Releasedatum |                                                                     Notitie                                                                      |
 | -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Power shell 7,0 (LTS) |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
 | Power shell 6,0       |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |
@@ -174,7 +173,7 @@ De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power sh
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [Community-ondersteuning]: /powershell/scripting/community/community-support
 [pshub]: /powershell
-[Technische community van Power shell]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [ondersteuning voor assistentie]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core

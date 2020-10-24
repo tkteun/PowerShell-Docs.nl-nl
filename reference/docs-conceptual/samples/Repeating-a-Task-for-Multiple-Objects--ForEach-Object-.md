@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Een taak herhalen voor meerdere objecten ForEach-object
-ms.openlocfilehash: bf89070fd9b006fa9b0b262ab63ffadd81072ecc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Met de ForEach-Object kunt u een reeks opdrachten herhalen voor elk object dat via de pijp lijn wordt door gegeven.
+ms.openlocfilehash: 7353be833dc8bf77dd18b7fc45bdd97e092ff6ef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736876"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499954"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Een taak herhalen voor meerdere objecten (ForEach-Object)
 
@@ -54,4 +55,4 @@ At line:2 char:28
 + FullyQualifiedErrorId : ReadOnlyCIMProperty
 ```
 
-U kunt de gegevens opnieuw indelen met een aantal geavanceerde technieken, maar een eenvoudigere benadering is het maken van een nieuw object `Select-Object`met behulp van.
+U kunt de gegevens opnieuw indelen met een aantal geavanceerde technieken, maar een eenvoudigere benadering is het maken van een nieuw object met behulp van `Select-Object` .

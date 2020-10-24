@@ -2,12 +2,13 @@
 ms.date: 07/28/2020
 keywords: powershell,cmdlet
 title: Met bestanden, mappen en registersleutels werken
-ms.openlocfilehash: 7ead5d0e82feb852845468fb3a012a0908a4ce75
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: In dit artikel wordt beschreven hoe u met Power shell taken voor het bewerken van register sleutels behandelt.
+ms.openlocfilehash: 6f653c1fb409a238aa05658e89261a12e96f6fe1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410186"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499974"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Werken met bestanden, mappen en register sleutels
 
@@ -149,7 +150,7 @@ Mode                 LastWriteTime         Length Name
 -a---           3/18/2019  9:44 PM          64792 wtsapi32.dll
 ```
 
-### <a name="mixing-get-childitem-parameters"></a>Get-Child item-para meters combi neren
+### <a name="mixing-get-childitem-parameters"></a>Get-ChildItem-para meters combi neren
 
 U kunt verschillende para meters van de `Get-ChildItem` cmdlet gebruiken in dezelfde opdracht. Voordat u para meters gaat mengen, moet u ervoor zorgen dat u begrijpt dat er joker tekens overeenkomen. De volgende opdracht retourneert bijvoorbeeld geen resultaten:
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
-title: Overzicht van net voldoende beheer
-ms.openlocfilehash: 4b74e5be9558810748a8844a325c8213e1b3ebc9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Overzicht van net voldoende beheer (JEA)
+description: JEA is een beveiligings technologie waarmee gedelegeerd beheer kan worden ingeschakeld voor alles dat wordt beheerd door Power shell.
+ms.openlocfilehash: cc1c49960e274b58635c1ca4e6769a54c3c7ded6
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017858"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501708"
 ---
 # <a name="just-enough-administration"></a>Net voldoende beheer
 

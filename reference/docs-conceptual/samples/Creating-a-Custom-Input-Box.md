@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Een aangepast invoervak maken
-ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u een aangepast invoervak maakt met behulp van de functies .NET Framework formulier maken in Windows Power shell.
+ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706186"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500552"
 ---
 # <a name="creating-a-custom-input-box"></a>Een aangepast invoervak maken
 
@@ -152,8 +153,8 @@ Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden geda
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $textBox.Text
-    $x
+    $x = $textBox.Text
+    $x
 }
 ```
 

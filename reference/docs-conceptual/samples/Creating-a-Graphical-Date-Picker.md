@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Een grafische datumkiezer maken
-ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u een aangepast besturings element voor de kalender stijl maakt met behulp van de functies voor het maken van .NET Framework formulier in Windows Power shell.
+ms.openlocfilehash: b73c9ba78817af7c38c20642402752765a7a3674
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706122"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500501"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Een grafische datumkiezer maken
 
@@ -80,7 +81,7 @@ In dit voor beeld worden waarden toegewezen aan vier eigenschappen van deze klas
 
 3. **Tekst**: dit wordt de titel van het venster.
 
-4. **Bovenste**: door deze eigenschap in te `$true`stellen op, kunt u ervoor zorgen dat het venster hierop andere open vensters en dialoog vensters opent.
+4. **Bovenste**: door deze eigenschap in te stellen op `$true` , kunt u ervoor zorgen dat het venster hierop andere open vensters en dialoog vensters opent.
 
 Vervolgens maakt en voegt u vervolgens een besturings element kalender toe aan het formulier.
 In dit voor beeld wordt de huidige dag niet gemarkeerd of omcirkeld.
@@ -127,7 +128,7 @@ Voeg de volgende regel code toe om het formulier in Windows weer te geven.
 $result = $form.ShowDialog()
 ```
 
-Ten slotte krijgt de code in `if` de blok kering van Windows wat te doen met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd. Klik vervolgens op de knop **OK** of druk op **Enter** . De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
+Ten slotte krijgt de code in de `if` blok kering van Windows wat te doen met het formulier nadat gebruikers een dag in de agenda hebben geselecteerd. Klik vervolgens op de knop **OK** of druk op **Enter** . De geselecteerde datum wordt weer gegeven voor gebruikers in Windows Power shell.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {

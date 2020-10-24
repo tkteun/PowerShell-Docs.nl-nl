@@ -3,12 +3,12 @@ ms.date: 10/19/2020
 keywords: Power shell, cmdlet, debug
 title: Visual Studio code gebruiken voor het opsporen van fouten in gecompileerde cmdlets
 description: Een bouw taak instellen en configuratie starten voor een PSModule-project in .NET core
-ms.openlocfilehash: ffae03b1edaf9d5ffa5da6381e301f829c8bc8f7
-ms.sourcegitcommit: 57c3527ec6c3124cb9cdab7b07ebb92ed159cb64
+ms.openlocfilehash: b51a69110c64b386f5c3ccf2527d1e184ef89257
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92374201"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501640"
 ---
 # <a name="using-visual-studio-code-to-debug-compiled-cmdlets"></a>Visual Studio code gebruiken voor het opsporen van fouten in gecompileerde cmdlets
 
@@ -124,6 +124,15 @@ Wanneer u de cmdlet aanroept in de terminal sessie, stopt het fout opsporingspro
 
 Het `program` veld wordt gebruikt om te starten `pwsh` zodat de cmdlet die wordt opgespoord, kan worden uitgevoerd. Het `-NoExit` argument voor komt dat de Power shell-sessie wordt afgesloten zodra de module wordt geïmporteerd.
 Het pad in het `Import-Module` argument is het standaarduitvoer traject voor builds wanneer u de hand leiding voor het [schrijven van draag bare modules][] hebt gevolgd. Als u een module manifest ( `.psd1` bestand) hebt gemaakt, moet u het pad hiervoor gebruiken. Het `/` padscheidingsteken werkt in Windows, Linux en macOS. U moet de geïntegreerde Terminal gebruiken om de Power shell-opdrachten uit te voeren waarvoor u fouten wilt opsporen.
+
+> [!NOTE]
+> Als het fout opsporingsprogramma niet stopt bij onderbrekings punten, kijkt u in de Visual Studio code debug console op een regel met de volgende tekst:
+>
+> ```
+> Loaded '/path/to/myModule.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+> ```
+>
+> Als u dit ziet, voegt u toe `"justMyCode": false` aan de start configuratie (op hetzelfde niveau als `"console": "integratedTerminal"` .
 
 ### <a name="configuring-launchjson-for-windows-powershell"></a>launch.jsconfigureren voor voor Windows Power shell
 

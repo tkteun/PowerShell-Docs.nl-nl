@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Processen beheren met proces-cmdlets
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Power shell biedt verschillende cmdlets waarmee processen op lokale en externe computers kunnen worden beheerd.
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870741"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500433"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Processen beheren met proces-cmdlets
 
@@ -37,7 +38,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-U kunt de para meter name van de cmdlet Get-process gebruiken om een subset van processen op te geven op basis van de proces naam. De para meter name kan meerdere namen in een lijst met door komma's gescheiden waarden hebben en ondersteunt het gebruik van joker tekens, zodat u naam patronen kunt typen.
+U kunt de para meter name van de cmdlet Get-Process gebruiken om een subset van processen op te geven op basis van de proces naam. De para meter name kan meerdere namen in een lijst met door komma's gescheiden waarden hebben en ondersteunt het gebruik van joker tekens, zodat u naam patronen kunt typen.
 
 Met de volgende opdracht wordt bijvoorbeeld proces uitgevoerd waarvan de naam begint met ' ex '.
 
@@ -63,7 +64,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-U kunt de para meter ComputerName van Get-process gebruiken om processen op externe computers op te halen. Met de volgende opdracht worden bijvoorbeeld de Power shell-processen op de lokale computer (aangeduid door ' localhost ') en op twee externe computers.
+U kunt de para meter ComputerName van Get-Process gebruiken om processen op externe computers op te halen. Met de volgende opdracht worden bijvoorbeeld de Power shell-processen op de lokale computer (aangeduid door ' localhost ') en op twee externe computers.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -75,7 +76,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-De computer namen zijn niet duidelijk in deze weer gave, maar ze worden opgeslagen in de eigenschap MachineName van de proces objecten die ophalen-process retourneert. De volgende opdracht maakt gebruik van de indeling-tabel-cmdlet om de eigenschappen proces-ID, naam van de proces naam en MachineName (ComputerName) van de proces objecten weer te geven.
+De computer namen zijn niet duidelijk in deze weer gave, maar ze worden opgeslagen in de eigenschap MachineName van de proces objecten die Get-Process retourneert. De volgende opdracht maakt gebruik van de cmdlet Format-Table om de eigenschappen proces-ID, naam van de proces naam en MachineName (ComputerName) van de proces objecten weer te geven.
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
@@ -88,7 +89,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
 5816 powershell  localhost
 ```
 
-Met deze complexere opdracht wordt de eigenschap MachineName toegevoegd aan de standaard Get-process-weer gave.
+Met deze complexere opdracht wordt de eigenschap MachineName aan de standaard Get-Process weer gegeven.
 
 ```
 PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
@@ -149,7 +150,7 @@ U kunt dezelfde benadering gebruiken in andere situaties. Stel bijvoorbeeld dat 
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-De cmdlet stop-Process heeft geen ComputerName-para meter. Daarom moet u de cmdlet invoke-opdracht gebruiken om de opdracht stop process uit te voeren op een externe computer. Als u bijvoorbeeld het Power Shell-proces op de externe computer Server01 wilt stoppen, typt u:
+De cmdlet Stop-Process heeft geen ComputerName-para meter. Daarom moet u de cmdlet Invoke-Command gebruiken om een opdracht stop proces uit te voeren op een externe computer. Als u bijvoorbeeld het Power Shell-proces op de externe computer Server01 wilt stoppen, typt u:
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}

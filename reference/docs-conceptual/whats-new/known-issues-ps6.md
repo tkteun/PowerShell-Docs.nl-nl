@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Bekende problemen met Power shell 6,0
-ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Dit is een overzicht van bekende problemen of beperkingen in Power shell 6
+ms.openlocfilehash: 528315eff660167513045542227dce335355a7b8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996104"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501674"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekende problemen met Power shell 6,0
 
@@ -32,11 +33,11 @@ In het verleden is Power shell uniform niet hoofdletter gevoelig, met enkele uit
 
 ### <a name="ps1-file-extensions"></a>. PS1-bestands extensies
 
-Power shell-scripts moeten `.ps1` eindigen op in voor de interpreter om te begrijpen hoe ze in het huidige proces kunnen worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het `#!` Magic-nummer kan worden toegevoegd aan een script dat geen `.ps1` extensie heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar zodat het script niet goed werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell `bash` -script uit of een andere shell.)
+Power shell-scripts moeten eindigen op in `.ps1` voor de interpreter om te begrijpen hoe ze in het huidige proces kunnen worden geladen en uitgevoerd. Het uitvoeren van scripts in het huidige proces is het verwachte gebruikelijke gedrag voor Power shell. Het `#!` Magic-nummer kan worden toegevoegd aan een script dat geen `.ps1` extensie heeft, maar dit zorgt ervoor dat het script wordt uitgevoerd in een nieuw Power shell-exemplaar zodat het script niet goed werkt wanneer objecten worden gewijzigd. (Opmerking: dit kan het wenselijk gedrag zijn bij het uitvoeren van een Power shell-script uit `bash` of een andere shell.)
 
 ### <a name="missing-command-aliases"></a>Ontbrekende opdracht aliassen
 
-In Linux/macOS zijn de ' gebruiks vriendelijke aliassen ' voor de basis `ls`opdrachten `cp`, `mv` `rm` `cat`,,, `man`, `mount`, `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
+In Linux/macOS zijn de ' gebruiks vriendelijke aliassen ' voor de basis opdrachten,,,,, `ls` `cp` `mv` `rm` `cat` `man` , `mount` `ps` verwijderd. In Windows biedt Power shell een reeks aliassen die worden toegewezen aan linux-opdracht namen voor het gemak van de gebruiker. Deze aliassen zijn verwijderd uit de standaard Power shell op Linux/macOS-distributies, waardoor het systeem eigen uitvoer bare bestand kan worden uitgevoerd zonder een pad op te geven.
 
 Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen opdracht-ervaring voor de Power shell-gebruiker beschikbaar, maar vermindert de functionaliteit in de shell omdat de systeem eigen opdrachten teken reeksen retour neren in plaats van objecten.
 
@@ -47,7 +48,7 @@ Er zijn voor-en nadelen. Als u de aliassen verwijdert, wordt de systeem eigen op
 ### <a name="missing-wildcard-globbing-support"></a>Ondersteuning voor joker tekens ontbreekt (globbing)
 
 Op dit moment voert Power shell alleen Joker uitbrei ding (globbing) uit voor ingebouwde cmdlets in Windows, en voor externe opdrachten of binaire bestanden, evenals cmdlets op Linux. Dit betekent dat een opdracht als `ls
-*.txt` mislukt omdat het sterretje niet is uitgevouwen om te voldoen aan de bestands namen. U kunt dit probleem omzeilen door `ls (gci *.txt | % name)` `gci *.txt` met behulp van de ingebouwde Power shell gelijk te maken aan `ls`.
+*.txt` mislukt omdat het sterretje niet is uitgevouwen om te voldoen aan de bestands namen. U kunt dit probleem omzeilen door `ls (gci *.txt | % name)` `gci *.txt` met behulp van de ingebouwde Power shell gelijk te maken aan `ls` .
 
 Zie [#954](https://github.com/PowerShell/PowerShell/issues/954) om ons feedback te geven over het verbeteren van de globbing-ervaring op Linux/macOS.
 
@@ -72,7 +73,7 @@ Omgeleide uitvoer bevat de Unicode-byte order mark (BOM) wanneer de standaard UT
 ### <a name="job-control"></a>Taak beheer
 
 Er is geen taak beheer ondersteuning in Power shell op Linux/macOS.
-De `fg` opdrachten `bg` en zijn niet beschikbaar.
+De `fg` `bg` opdrachten en zijn niet beschikbaar.
 
 Voor deze tijd kunt u [Power shell-taken](/powershell/module/microsoft.powershell.core/about/about_jobs) gebruiken die op alle platforms werken.
 
@@ -88,9 +89,9 @@ Power shell core biedt ook ondersteuning voor externe communicatie van Power she
 
 De mogelijkheid om JEA-eind punten (congebonden beheer) te maken, is momenteel niet beschikbaar in Power shell op Linux/macOS. Deze functie is momenteel niet beschikbaar in het bereik van 6,0 en iets wat we als een aanzienlijk ontwerp moeten 6,0 beschouwen.
 
-### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`en Power shell
+### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` en Power shell
 
-Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde invoeg toepassingen. (u `pwsh` kunt natuurlijk ook uitvoeren vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo `sudo Set-Date 8/18/2016`, bijvoorbeeld, moet u `sudo pwsh Set-Date 8/18/2016`dat doen. Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan zou u moeten `exec pwsh item_to_exec`doen.
+Omdat Power shell de meeste opdrachten in het geheugen (zoals python of Ruby) uitvoert, kunt u sudo niet rechtstreeks gebruiken met Power shell-ingebouwde invoeg toepassingen. (U kunt natuurlijk uitvoeren `pwsh` vanuit sudo.) Als het nodig is om een Power shell-cmdlet uit te voeren vanuit Power shell met sudo, bijvoorbeeld, moet `sudo Set-Date 8/18/2016` u dat doen `sudo pwsh Set-Date 8/18/2016` . Op dezelfde manier kunt u niet rechtstreeks een Power shell-ingebouwde uitvoeren. In plaats daarvan zou u moeten doen `exec pwsh item_to_exec` .
 
 Dit probleem wordt bijgehouden als onderdeel van [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
@@ -102,12 +103,12 @@ Een groot aantal opdrachten (cmdlets) die normaal gesp roken beschikbaar zijn in
 
 De volgende tabel bevat opdrachten die bekend zijn in Power shell op Linux/macOS.
 
-|Opdrachten|Operationele status|Opmerkingen|
+|Opdracht|Operationele status|Notities|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
-|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld `Start-Process gvim -PassThru | Wait-Process` , werkt niet; Er kan niet worden gewacht op het proces.|
+|`Wait-Process`|Beschikbaar, werkt niet goed. |Bijvoorbeeld `Start-Process gvim -PassThru | Wait-Process` , werkt niet. er wordt niet gewacht op het proces.|
 |`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Niet beschikbaar.|Deze opdrachten worden niet herkend. Dit moet in een toekomstige release worden opgelost.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Beschikbaar, maar er zijn geen gebeurtenis bronnen beschikbaar.|De opdrachten voor het uitvoeren van Power shell-gebeurtenissen zijn aanwezig, maar de meeste gebeurtenis bronnen die worden gebruikt met de opdrachten (zoals System. time-out. timer) zijn niet beschikbaar in Linux, waardoor de opdrachten overbodig zijn in de alpha-release.|
 |`Set-ExecutionPolicy`|Beschikbaar, maar werkt niet.|Retourneert een bericht dat niet wordt ondersteund op dit platform. Uitvoerings beleid is een gebruikers gerichte "veiligheids gordel" waarmee wordt voor komen dat de gebruiker kost bare fouten kan maken. Het is geen beveiligings grens.|
-|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, `New-PSSession` maar werkt niet.|`New-PSSessionOption`en `New-PSTransportOption` worden momenteel niet gecontroleerd om nu `New-PSSession` te werken.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Beschikbaar, maar `New-PSSession` werkt niet.|`New-PSSessionOption` en `New-PSTransportOption` worden momenteel niet gecontroleerd om nu te werken `New-PSSession` .|

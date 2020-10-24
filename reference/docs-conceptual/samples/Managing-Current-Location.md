@@ -1,17 +1,18 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Huidige locatie beheren
-ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Power shell gebruikt de locatie van het zelfstandig naam woord om te verwijzen naar de werkmap en implementeert een groep cmdlets om uw locatie te onderzoeken en te manipuleren.
+ms.openlocfilehash: 0ce9ed1269921233b0d6b07da832c12e159a84dc
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030200"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500467"
 ---
 # <a name="managing-current-location"></a>Huidige locatie beheren
 
-Bij het navigeren door map-systemen in Verkenner, hebt u meestal een specifieke werk locatie, namelijk de huidige geopende map. Items in de huidige map kunnen eenvoudig worden gemanipuleerd door erop te klikken. Voor opdracht regel interfaces zoals cmd. exe, wanneer u zich in dezelfde map bevindt als een bepaald bestand, kunt u deze openen door een relatief korte naam op te geven in plaats van het volledige pad naar het bestand op te geven. De huidige map wordt de werkmap genoemd.
+Bij het navigeren door map-systemen in Verkenner, hebt u meestal een specifieke werk locatie, namelijk de huidige geopende map. Items in de huidige map kunnen eenvoudig worden gemanipuleerd door erop te klikken. Voor opdracht regel interfaces, zoals Cmd.exe, kunt u, wanneer u zich in dezelfde map bevindt als een bepaald bestand, toegang krijgen door een relatief korte naam op te geven in plaats van het volledige pad naar het bestand op te geven. De huidige map wordt de werkmap genoemd.
 
 Windows Power shell gebruikt de **locatie** van het zelfstandig naam woord om te verwijzen naar de werkmap en implementeert een groep cmdlets om uw locatie te onderzoeken en te manipuleren.
 
@@ -27,7 +28,7 @@ C:\Documents and Settings\PowerUser
 ```
 
 > [!NOTE]
-> De cmdlet Get-locatie is vergelijkbaar met de opdracht **pwd** in de bash-shell. De cmdlet Set-Location is vergelijkbaar met de **cd** -opdracht in cmd. exe.
+> De cmdlet Get-Location is vergelijkbaar met de opdracht **pwd** in de bash-shell. De cmdlet Set-Location is vergelijkbaar met de **cd** -opdracht in Cmd.exe.
 
 ## <a name="setting-your-current-location-set-location"></a>Uw huidige locatie instellen (Set-Location)
 
@@ -51,7 +52,7 @@ De para meter **-PassThru** kan worden gebruikt met veel set-opdrachten in Windo
 
 U kunt paden ten opzichte van uw huidige locatie opgeven op dezelfde manier als in de meeste UNIX-en Windows-opdracht shells. In de standaard notatie voor relatieve paden, een punt (**.**) vertegenwoordigt de huidige map en een dubbele punt (**..**) vertegenwoordigt de bovenliggende map van uw huidige locatie.
 
-Bijvoorbeeld, als u zich in de map **C:\\Windows** bevindt, een punt (**.**) vertegenwoordigt **c:\\Windows** en dubbele punten (**..**) vertegenwoordigen **c:**. U kunt van uw huidige locatie naar de hoofdmap van station C: overschakelen door het volgende te typen:
+Bijvoorbeeld, als u zich in de map **C: \\ Windows** bevindt, een punt (**.**) vertegenwoordigt **c: \\ Windows** en dubbele punten (**..**) vertegenwoordigen **c:**. U kunt van uw huidige locatie naar de hoofdmap van station C: overschakelen door het volgende te typen:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -61,7 +62,7 @@ Path
 C:\
 ```
 
-Dezelfde techniek werkt op Windows Power Shell-stations die geen bestandssysteem stations zijn, zoals **HKLM:**. U kunt uw locatie in het REGI ster\\instellen op de HKLM-Software sleutel door het volgende te typen:
+Dezelfde techniek werkt op Windows Power Shell-stations die geen bestandssysteem stations zijn, zoals **HKLM:**. U kunt uw locatie in het REGI ster instellen op de HKLM- \\ software sleutel door het volgende te typen:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru
@@ -81,7 +82,7 @@ Path
 HKLM:\
 ```
 
-U kunt een set-locatie typen of een van de ingebouwde Windows Power shell-aliassen gebruiken voor de ingestelde locatie (cd, chdir, SL). Bijvoorbeeld:
+U kunt Set-Location typen of een van de ingebouwde Windows Power shell-aliassen voor Set-Location (cd, chdir, SL) gebruiken. Bijvoorbeeld:
 
 ```powershell
 cd -Path C:\Windows

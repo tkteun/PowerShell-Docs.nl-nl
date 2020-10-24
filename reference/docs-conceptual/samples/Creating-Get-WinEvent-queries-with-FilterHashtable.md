@@ -1,12 +1,13 @@
 ---
 ms.date: 09/13/2019
 title: Get-WinEvent-query's maken met FilterHashtable
-ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: In dit artikel wordt beschreven hoe u de FilterHashtable van Get-WinEvent kunt gebruiken om de gebeurtenis logboeken van Windows op te vragen.
+ms.openlocfilehash: 8e080f17436d97adda277600cd202a0e6e9283e0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786642"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500603"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent-query's maken met FilterHashtable
 
@@ -52,15 +53,15 @@ De volgende tabel geeft de sleutel namen, gegevens typen en of joker tekens word
 
 |    Sleutelnaam    | Waarde gegevens type | Joker tekens accepteren? |
 | -------------- | --------------- | ---------------------------- |
-| LogName        | `<String[]>`    | Yes                          |
-| ProviderName   | `<String[]>`    | Yes                          |
-| Pad           | `<String[]>`    | No                           |
-| Trefwoorden       | `<Long[]>`      | No                           |
-| Id             | `<Int32[]>`     | No                           |
-| Niveau          | `<Int32[]>`     | No                           |
-| StartTime      | `<DateTime>`    | No                           |
-| EndTime        | `<DateTime>`    | No                           |
-| UserID         | `<SID>`         | No                           |
+| LogName        | `<String[]>`    | Ja                          |
+| ProviderName   | `<String[]>`    | Ja                          |
+| Pad           | `<String[]>`    | Nee                           |
+| Trefwoorden       | `<Long[]>`      | Nee                           |
+| Id             | `<Int32[]>`     | Nee                           |
+| Niveau          | `<Int32[]>`     | Nee                           |
+| StartTime      | `<DateTime>`    | Nee                           |
+| EndTime        | `<DateTime>`    | Nee                           |
+| UserID         | `<SID>`         | Nee                           |
 | Gegevens           | `<String[]>`    | Nee                           |
 | `<named-data>` | `<String[]>`    | Nee                           |
 
@@ -151,7 +152,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [StandardEventKeywords Enumeration (Engelstalig)](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)voor meer informatie.
+De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [StandardEventKeywords Enumeration (Engelstalig)](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords)voor meer informatie.
 
 De namen van de **tref woorden** en opgesomde waarden zijn als volgt:
 
@@ -232,7 +233,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [StandardEventLevel Enumeration (Engelstalig)](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)voor meer informatie.
+De opgesomde waarden worden gedocumenteerd in de **.NET Framework**. Zie [StandardEventLevel Enumeration (Engelstalig)](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel)voor meer informatie.
 
 De namen van de **niveau** sleutel en opgesomde waarden zijn als volgt:
 

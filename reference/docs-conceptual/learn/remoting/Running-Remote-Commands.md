@@ -2,12 +2,13 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Externe opdrachten uitvoeren
-ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+description: Hierin worden de methoden beschreven voor het uitvoeren van opdrachten op externe systemen met behulp van Power shell.
+ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814732"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501351"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -45,7 +46,7 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ## <a name="windows-powershell-remoting"></a>Externe toegang voor Windows Power shell
 
-Met het protocol WS-Management kunt u met Windows Power shell voor externe toegang een Windows Power shell-opdracht uitvoeren op een of meer externe computers. U kunt permanente verbindingen tot stand brengen, interactieve sessies starten en scripts uitvoeren op externe computers.
+Met behulp van het WS-Management-protocol kunt u met Windows Power shell voor externe toegang een Windows Power shell-opdracht op een of meer externe computers uitvoeren. U kunt permanente verbindingen tot stand brengen, interactieve sessies starten en scripts uitvoeren op externe computers.
 
 Als u externe toegang tot Windows Power shell wilt gebruiken, moet u de computer configureren voor extern beheer.
 Zie [over externe vereisten](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)voor meer informatie, waaronder instructies.
@@ -69,7 +70,7 @@ Als u de interactieve sessie wilt beëindigen, typt u:
 Exit-PSSession
 ```
 
-Zie voor meer informatie over de cmdlets Enter-PSSession en Exit-PSSession:
+Zie voor meer informatie over de Enter-PSSession en Exit-PSSession-cmdlets:
 
 - [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
 - [Afsluiten-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
@@ -111,7 +112,7 @@ $s = New-PSSession -ComputerName Server01, Server02
 
 Nu u de sessies tot stand hebt gebracht, kunt u elke opdracht in ze uitvoeren. En omdat de sessies permanent zijn, kunt u gegevens verzamelen van de ene opdracht en deze gebruiken in een andere opdracht.
 
-Met de volgende opdracht wordt bijvoorbeeld een Get-HotFix-opdracht uitgevoerd in de sessies in de variabele $s en worden de resultaten opgeslagen in de $h-variabele. De variabele $h wordt gemaakt in elk van de sessies in $s, maar deze komt niet voor in de lokale sessie.
+Met de volgende opdracht wordt bijvoorbeeld een Get-HotFix-opdracht uitgevoerd in de sessies in de $s variabele en worden de resultaten opgeslagen in de $h variabele. De variabele $h wordt gemaakt in elk van de sessies in $s, maar deze komt niet voor in de lokale sessie.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}

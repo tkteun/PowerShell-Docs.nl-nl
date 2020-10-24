@@ -1,17 +1,18 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Windows PowerShell-stations beheren
-ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Een Power Shell-station is een gegevensopslag locatie die u kunt openen als een bestandssysteem station in Power shell. Power shell bevat standaard providers die ondersteuning bieden voor het bestands systeem, het REGI ster, de certificaat archieven en andere.
+ms.openlocfilehash: e4e5347c3f3458f25cea31c8e5a499474985220a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70215506"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500331"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-stations beheren
 
-Een *Windows Power Shell-station* is een gegevens opslag locatie die u kunt openen als een bestandssysteem station in Windows Power shell. De Windows Power shell-providers maken enkele stations voor u, zoals de bestandssysteem stations (inclusief C: en D:), de register stations (HKCU: en HKLM:) en het certificaat station (CERT:), en u kunt uw eigen Windows Power Shell-stations maken. Deze stations zijn erg nuttig, maar ze zijn alleen beschikbaar in Windows Power shell. U kunt ze niet openen met andere Windows-hulpprogram ma's, zoals bestanden Verkenner of Cmd. exe.
+Een *Windows Power Shell-station* is een gegevens opslag locatie die u kunt openen als een bestandssysteem station in Windows Power shell. De Windows Power shell-providers maken enkele stations voor u, zoals de bestandssysteem stations (inclusief C: en D:), de register stations (HKCU: en HKLM:) en het certificaat station (CERT:), en u kunt uw eigen Windows Power Shell-stations maken. Deze stations zijn erg nuttig, maar ze zijn alleen beschikbaar in Windows Power shell. U kunt ze niet openen met andere Windows-hulpprogram ma's, zoals bestanden Verkenner of Cmd.exe.
 
 Windows Power Shell maakt gebruik van het zelfstandige naam woord, **PSDrive**, voor opdrachten die werken met Windows Power Shell-stations. Voor een lijst met Windows Power Shell-stations in uw Windows Power shell-sessie gebruikt u de cmdlet **Get-PSDrive** .
 
@@ -102,7 +103,7 @@ Als u een nieuw Windows Power Shell-station wilt maken, moet u drie para meters 
 
 - De basis, dat wil zeggen, het pad naar de hoofdmap van het nieuwe station
 
-U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C:\\Program\\Files Microsoft Office\\Office11**. Typ de volgende opdracht om het station te maken:
+U kunt bijvoorbeeld een station met de naam ' Office ' maken dat is toegewezen aan de map die de Microsoft Office toepassingen op uw computer bevat, zoals **C: \\ Program Files \\ Microsoft Office \\ Office11**. Typ de volgende opdracht om het station te maken:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -117,7 +118,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 U verwijst naar het nieuwe Windows Power Shell-station, net zoals u alle Windows Power Shell-stations gebruikt, door de naam gevolgd door een dubbele punt (**:**).
 
-Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE\\-software\\micro soft\\Windows\\CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
+Een Windows Power Shell-station kan veel taken veel eenvoudiger maken. Enkele van de belangrijkste sleutels in het Windows-REGI ster hebben bijvoorbeeld extreem lange paden, waardoor ze lastig toegankelijk zijn en moeilijk te onthouden zijn. Essentiële configuratie-informatie bevindt zich onder **HKEY_LOCAL_MACHINE- \\ software \\ micro soft \\ Windows \\ CurrentVersion**. Als u items in de sleutel CurrentVersion wilt bekijken en wijzigen, kunt u een Windows Power Shell-station maken dat in die sleutel is geroot door het volgende te typen:
 
 ```
 PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
@@ -143,7 +144,7 @@ Path
 cvkey:\
 ```
 
-Met de cmdlet New-PsDrive wordt het nieuwe station alleen toegevoegd aan de huidige Windows Power shell-sessie. Als u het Windows Power shell-venster sluit, gaat het nieuwe station verloren. Als u een Windows Power Shell-station wilt opslaan, gebruikt u de cmdlet Export-console om de huidige Windows Power shell-sessie te exporteren. vervolgens gebruikt u de para meter **PSConsoleFile** van Power shell. exe om deze te importeren. U kunt ook het nieuwe station toevoegen aan uw Windows Power shell-profiel.
+Met de cmdlet New-PsDrive wordt het nieuwe station alleen toegevoegd aan de huidige Windows Power shell-sessie. Als u het Windows Power shell-venster sluit, gaat het nieuwe station verloren. Als u een Windows Power Shell-station wilt opslaan, gebruikt u de cmdlet Export-Console om de huidige Windows Power shell-sessie te exporteren. vervolgens gebruikt u de para meter PowerShell.exe **PSConsoleFile** om deze te importeren. U kunt ook het nieuwe station toevoegen aan uw Windows Power shell-profiel.
 
 ## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows Power Shell-stations verwijderen (Remove-PSDrive)
 

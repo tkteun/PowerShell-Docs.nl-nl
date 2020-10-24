@@ -2,12 +2,13 @@
 ms.date: 05/14/2020
 keywords: powershell,cmdlet
 title: De tweede hop maken voor externe communicatie met PowerShell
-ms.openlocfilehash: 3a9db11726d4c02dc69e52c45da304f7422def39
-ms.sourcegitcommit: 843756c8277e7afb874867703963248abc8a6c91
+description: In dit artikel worden de verschillende methoden beschreven voor het configureren van de tweede hop-verificatie voor externe communicatie met Power shell, met inbegrip van de beveiligings implicaties en aanbevelingen.
+ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83439373"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501368"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken voor externe communicatie met PowerShell
 
@@ -24,7 +25,7 @@ Er zijn verschillende manieren om dit probleem op te lossen. De volgende tabel b
 | -------------------------------------------------------- | ---------------------------------------------------------------------- |
 | CredSSP                                                  | Het gebruiks gemak en de beveiliging                                      |
 | Op resources gebaseerde Kerberos-beperkte overdracht           | Betere beveiliging met een eenvoudigere configuratie                             |
-| Beperkte Kerberos-overdracht                          | Hoge beveiliging, maar vereist domein beheerder                         |
+| Beperkte Kerberos-delegering                          | Hoge beveiliging, maar vereist domein beheerder                         |
 | Kerberos-overdracht (onbeperkt)                      | Niet aanbevolen                                                        |
 | Just Enough Administration (JEA)                         | Kan de beste beveiliging bieden, maar vereist een gedetailleerdere configuratie |
 | PSSessionConfiguration met behulp van runas                       | Eenvoudiger te configureren, maar vereist referentie beheer                |
@@ -41,7 +42,7 @@ Zie voor meer informatie over aanvallen op het weglaten van referentie dief stal
 
 Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe communicatie met Power shell, raadpleegt u [Power shell-functie voor tweede hop inschakelen met CredSSP][credssp-psblog].
 
-**-Professionals**
+**Voordelen**
 
 - Het werkt voor alle servers met Windows Server 2008 of hoger.
 
@@ -51,11 +52,11 @@ Voor een voor beeld van het inschakelen en gebruiken van CredSSP voor externe co
 - Vereist configuratie van de client-en Server functies.
 - Werkt niet met de groep met beveiligde gebruikers. Zie voor meer informatie [beveiligings groep voor beveiligde gebruikers][protected-users].
 
-## <a name="kerberos-constrained-delegation"></a>Beperkte Kerberos-overdracht
+## <a name="kerberos-constrained-delegation"></a>Beperkte Kerberos-delegering
 
 U kunt verouderde, beperkte delegering (niet op basis van bronnen) gebruiken om de tweede hop te maken. Configureer beperkte Kerberos-delegering met de optie elk verificatie protocol gebruiken om protocol overgang toe te staan.
 
-**-Professionals**
+**Voordelen**
 
 - Vereist geen speciale code ring
 - De referenties zijn niet opgeslagen.
@@ -76,7 +77,7 @@ U kunt verouderde, beperkte delegering (niet op basis van bronnen) gebruiken om 
 
 Met behulp van beperkte Kerberos-delegering (geïntroduceerd in Windows Server 2012), configureert u de overdracht van referenties op het Server object waar de resources zich bevinden. In het tweede hop-scenario dat hierboven wordt beschreven, configureert u _ServerC_ om op te geven waar de gedelegeerde referenties worden geaccepteerd.
 
-**-Professionals**
+**Voordelen**
 
 - De referenties zijn niet opgeslagen.
 - Geconfigureerd met Power shell-cmdlets. Er is geen speciale code vereist.
@@ -233,7 +234,7 @@ Met JEA kunt u de opdrachten die een beheerder tijdens een Power shell-sessie ka
 
 Zie [net genoeg beheer](/powershell/scripting/learn/remoting/jea/overview)voor meer informatie over jea.
 
-**-Professionals**
+**Voordelen**
 
 - Geen wachtwoord onderhoud wanneer een virtueel account wordt gebruikt.
 
@@ -248,7 +249,7 @@ U kunt een sessie configuratie op _ServerB_ maken en de para meter **RunAsCreden
 
 Voor informatie over het gebruik van **PSSessionConfiguration** en **runas** om het probleem met de tweede hop op te lossen, raadpleegt [u een andere oplossing voor externe communicatie met Power shell voor multi-hop][pssessionconfig].
 
-**-Professionals**
+**Voordelen**
 
 - Werkt met een wille keurige server met WMF 3,0 of hoger.
 
@@ -257,11 +258,11 @@ Voor informatie over het gebruik van **PSSessionConfiguration** en **runas** om 
 - Vereist de configuratie van **PSSessionConfiguration** en **runas** op elke tussenliggende server (_ServerB_).
 - Vereist wachtwoord onderhoud bij gebruik van een **runas** -account van het domein
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Referenties binnen een invoke-opdracht-script blok door geven
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Referenties binnen een Invoke-Command-script blok door geven
 
 U kunt referenties door geven binnen de para meter **script Block** van een aanroep naar de cmdlet [invoke-opdracht](/powershell/module/microsoft.powershell.core/invoke-command) .
 
-**-Professionals**
+**Voordelen**
 
 - Vereist geen speciale server configuratie.
 - Werkt op elke server waarop WMF 2,0 of hoger wordt uitgevoerd.

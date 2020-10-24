@@ -1,19 +1,20 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: .NET-en COM-objecten maken nieuw object
-ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Als een object-georiënteerde script taal ondersteunt Power shell zowel .NET-als COM-objecten. In dit artikel leest u hoe u deze objecten kunt maken en gebruiken.
+ms.openlocfilehash: e6189ba465749dd045add7015fc82223c31c7e32
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325172"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500569"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET- en COM-objecten maken (New-Object)
 
 Er zijn software onderdelen met .NET Framework en COM-interfaces waarmee u veel systeem beheer taken kunt uitvoeren. Met Windows Power shell kunt u deze onderdelen gebruiken, zodat u niet beperkt bent tot de taken die kunnen worden uitgevoerd met behulp van-cmdlets. Veel van de cmdlets in de eerste versie van Windows Power shell werken niet op externe computers. Er wordt gedemonstreerd hoe u deze beperking omzeilt bij het beheer van gebeurtenis logboeken met behulp van de klasse .NET Framework **System. Diagnostics. Eventlog** rechtstreeks vanuit Windows Power shell.
 
-## <a name="using-new-object-for-event-log-access"></a>Nieuwe objecten gebruiken voor toegang tot gebeurtenis logboeken
+## <a name="using-new-object-for-event-log-access"></a>New-Object gebruiken voor toegang tot gebeurtenis logboeken
 
 De .NET Framework Class-bibliotheek bevat een klasse met de naam **System. Diagnostics. Eventlog** die kan worden gebruikt om gebeurtenis logboeken te beheren. U kunt een nieuw exemplaar van een .NET Framework klasse maken met behulp van de cmdlet **New-object** met de para meter **TypeName** . Met de volgende opdracht maakt u bijvoorbeeld een verwijzing naar gebeurtenis logboek:
 
@@ -26,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Hoewel de opdracht een exemplaar van de klasse Event Class heeft gemaakt, bevat het exemplaar geen gegevens. Dat komt omdat er geen specifiek gebeurtenis logboek is opgegeven. Hoe krijg ik een echt gebeurtenis logboek?
 
-### <a name="using-constructors-with-new-object"></a>Constructors gebruiken met New-object
+### <a name="using-constructors-with-new-object"></a>Constructors gebruiken met New-Object
 
 Als u naar een specifiek gebeurtenis logboek wilt verwijzen, moet u de naam van het logboek opgeven. **New-object** heeft een **argument List** -para meter. De argumenten die u doorgeeft als waarden voor deze para meter worden gebruikt door een speciale opstart methode van het object. De methode wordt een *constructor* genoemd, omdat deze wordt gebruikt om het object samen te stellen. Als u bijvoorbeeld een verwijzing naar het toepassings logboek wilt ophalen, geeft u de teken reeks ' Application ' op als een argument:
 
@@ -61,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een extern gebeurtenis logboek met New-object
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Toegang tot een extern gebeurtenis logboek met New-Object
 
 De opdrachten die in de voor gaande sectie worden gebruikt, zijn gericht op de lokale computer. de cmdlet **get-eventlog** kan dat doen. Als u toegang wilt krijgen tot het toepassings logboek op een externe computer, moet u de naam van het logboek en een computer naam (of IP-adres) als argumenten opgeven.
 
@@ -117,10 +118,10 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-## <a name="creating-com-objects-with-new-object"></a>COM-objecten maken met New-object
+## <a name="creating-com-objects-with-new-object"></a>COM-objecten maken met New-Object
 U kunt **New-object** gebruiken om te werken met component object model-onderdelen (com). Onderdelen variëren van de verschillende bibliotheken die zijn opgenomen in Windows Script Host (WSH) tot ActiveX-toepassingen, zoals Internet Explorer, die op de meeste systemen zijn geïnstalleerd.
 
-**New-object** maakt gebruik van .NET Framework runtime-aanroep bare wrappers om COM-objecten te maken, zodat deze dezelfde beperkingen heeft als .NET Framework bij het aanroepen van COM-objecten. Als u een COM-object wilt maken, moet u de para meter **ComObject** opgeven met de programmatische id of *ProgID* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van het COM-gebruik en het bepalen van de beschik bare Progid's op een systeem valt buiten het bereik van deze gebruikers handleiding, maar de meeste bekende objecten van omgevingen zoals WSH kunnen worden gebruikt in Windows Power shell.
+**New-object** maakt gebruik van .NET Framework Runtime-Callable wrappers om COM-objecten te maken, zodat deze dezelfde beperkingen heeft als .NET Framework bij het aanroepen van COM-objecten. Als u een COM-object wilt maken, moet u de para meter **ComObject** opgeven met de programmatische id of *ProgID* van de COM-klasse die u wilt gebruiken. Een volledige bespreking van de beperkingen van het COM-gebruik en het bepalen van de beschik bare Progid's op een systeem valt buiten het bereik van deze gebruikers handleiding, maar de meeste bekende objecten van omgevingen zoals WSH kunnen worden gebruikt in Windows Power shell.
 
 U kunt de WSH-objecten maken door deze progid's op te geven: **WScript. shell**, **WScript. Network**, **Scripting. Dictionary**en **Scripting. File System object**. Met de volgende opdrachten maakt u deze objecten:
 
@@ -141,7 +142,7 @@ Een taak die snel kan worden uitgevoerd met een COM-object, is het maken van een
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
-Get-member werkt met COM-objecten, zodat u de leden van het object kunt verkennen door het volgende te typen:
+Get-Member werkt met COM-objecten, zodat u de leden van het object kunt verkennen door het volgende te typen:
 
 ```
 PS> $WshShell | Get-Member
@@ -261,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > Er is geen algemene standaard voor of ActiveX-uitvoer bare bestanden worden afgesloten of blijven worden uitgevoerd wanneer u een verwijzing naar een verwijdert. Afhankelijk van de omstandigheden zoals of de toepassing zichtbaar is, of er een bewerkte document wordt uitgevoerd en zelfs of Windows Power shell nog steeds wordt uitgevoerd, wordt de toepassing mogelijk niet afgesloten. Daarom moet u het beëindigings gedrag testen voor elk ActiveX-uitvoerbaar bestand dat u wilt gebruiken in Windows Power shell.
 
-## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen ontvangen over door .NET Framework verpakte COM-objecten
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Waarschuwingen ontvangen over .NET Framework-Wrapped COM-objecten
 
 In sommige gevallen kan een COM-object zijn gekoppeld aan een .NET Framework *runtime-aanroep bare wrapper* of RCW. dit wordt gebruikt door **Nieuw-object**. Aangezien het gedrag van de RCW kan afwijken van het gedrag van het normale COM-object, heeft **New-object** een **strikte** para meter om u te waarschuwen over RCW-toegang. Als u de **strikte** para meter opgeeft en vervolgens een COM-object maakt dat gebruikmaakt van een RCW, wordt er een waarschuwings bericht weer gegeven:
 

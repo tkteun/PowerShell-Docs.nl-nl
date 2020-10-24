@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA
-ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+description: Een functie mogelijkheid is een Power shell-gegevens bestand met de extensie. psrc die alle cmdlets, functies, providers en externe Program ma's bevat die beschikbaar worden gesteld voor het verbinden van gebruikers.
+ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92298348"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499991"
 ---
 # <a name="jea-role-capabilities"></a>JEA
 
@@ -41,7 +42,7 @@ De volgende tabel bevat voor beelden van opdrachten die schadelijk kunnen worden
 
 ## <a name="create-a-role-capability-file"></a>Een functie-mogelijkheidsprofiel maken
 
-U kunt een nieuw Power shell-functie bestand maken met de cmdlet [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) .
+U kunt een nieuw Power shell-functie bestand maken met de cmdlet [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile) .
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc

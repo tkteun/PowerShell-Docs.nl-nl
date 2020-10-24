@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Met software-installaties werken
-ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u WMI gebruikt voor het beheren van software die is geïnstalleerd in Windows.
+ms.openlocfilehash: 3cf8e3c58e9f2814e2551b3602bd7b47b375aed8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996130"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500875"
 ---
 # <a name="working-with-software-installations"></a>Met software-installaties werken
 
@@ -33,7 +34,7 @@ Name             Caption                   Vendor                    Version    
 Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
-Als u alle eigenschappen van het **Win32_Product** -object wilt weer geven in de weer gave, gebruikt u de para meter **Eigenschappen** van de format `Format-List` -cmdlets, zoals de `*` cmdlet, met een waarde van (alle).
+Als u alle eigenschappen van het **Win32_Product** -object wilt weer geven in de weer gave, gebruikt u de para meter **Eigenschappen** van de Format-cmdlets, zoals de `Format-List` cmdlet, met een waarde van `*` (alle).
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -127,7 +128,7 @@ We hebben nu een station met de naam ' uninstall: ' dat kan worden gebruikt om s
 459
 ```
 
-We kunnen deze lijst met toepassingen verder doorzoeken door gebruik te maken van verschillende technieken, te `Get-ChildItem`beginnen met. Gebruik de volgende opdracht om een lijst met toepassingen op te `$UninstallableApplications` halen en deze op te slaan in de variabele:
+We kunnen deze lijst met toepassingen verder doorzoeken door gebruik te maken van verschillende technieken, te beginnen met `Get-ChildItem` . Gebruik de volgende opdracht om een lijst met toepassingen op te halen en deze op te slaan in de `$UninstallableApplications` variabele:
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
@@ -189,7 +190,7 @@ U kunt de klasse **Win32_Product** gebruiken om Windows Installer pakketten exte
 > [!NOTE]
 > Als u een toepassing wilt installeren, moet u Power shell starten met de optie als administrator uitvoeren.
 
-Wanneer u extern installeert, gebruikt u een UNC-netwerkpad (Universal Naming Convention) om het pad naar het MSI-pakket op te geven, omdat het WMI-subsysteem geen Power shell-paden begrijpt. Als u bijvoorbeeld het pakket NewPackage. msi wilt installeren dat zich bevindt `\\AppServ\dsp` in de netwerk share op de externe computer PC01, typt u de volgende opdracht achter de Power shell-prompt:
+Wanneer u extern installeert, gebruikt u een UNC-netwerkpad (Universal Naming Convention) om het pad naar het MSI-pakket op te geven, omdat het WMI-subsysteem geen Power shell-paden begrijpt. Als u bijvoorbeeld het NewPackage.msi-pakket wilt installeren dat zich bevindt in de netwerk share `\\AppServ\dsp` op de externe computer PC01, typt u de volgende opdracht achter de Power shell-prompt:
 
 ```powershell
 Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}

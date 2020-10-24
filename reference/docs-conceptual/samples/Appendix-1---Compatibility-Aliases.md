@@ -2,12 +2,13 @@
 ms.date: 08/03/2020
 keywords: powershell,cmdlet
 title: Bijlage 1 - Compatibiliteitsaliassen
-ms.openlocfilehash: e5bd170fea6b6109d2ef4fd58863d6cc8a0e3ae1
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: Power Shell heeft verschillende aliassen waarmee UNIX-en cmd.exe-gebruikers bekende opdrachten kunnen gebruiken.
+ms.openlocfilehash: 8cbbd5a358de9018fcb5c840e711cd76f7a9a353
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758496"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500739"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Bijlage 1-compatibiliteits aliassen
 

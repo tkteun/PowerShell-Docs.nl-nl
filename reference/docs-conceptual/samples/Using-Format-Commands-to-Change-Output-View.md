@@ -1,17 +1,18 @@
 ---
 ms.date: 11/22/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
-ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Power Shell heeft een uitbreidbaar systeem waarmee u uitvoer kunt presen teren in lijsten, tabellen of aangepaste indelingen.
+ms.openlocfilehash: ebb285a19c7fe1bc80608385f9e2842469e95817
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417585"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500943"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Format-opdrachten gebruiken om de uitvoerweergave te wijzigen
 
-Power Shell heeft een set cmdlets waarmee u kunt bepalen hoe eigenschappen voor bepaalde objecten worden weer gegeven. De namen van alle cmdlets beginnen met de bewerking `Format`. Hiermee kunt u selecteren welke eigenschappen u wilt weer geven.
+Power Shell heeft een set cmdlets waarmee u kunt bepalen hoe eigenschappen voor bepaalde objecten worden weer gegeven. De namen van alle cmdlets beginnen met de bewerking `Format` . Hiermee kunt u selecteren welke eigenschappen u wilt weer geven.
 
 ```powershell
 Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
@@ -27,11 +28,11 @@ Cmdlet          Format-Table       6.1.0.0    Microsoft.PowerShell.Utility
 Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
 ```
 
-In dit artikel worden `Format-Wide`de `Format-List`cmdlets `Format-Table` , en en beschreven.
+In dit artikel worden `Format-Wide` de `Format-List` cmdlets, en en beschreven `Format-Table` .
 
-Elk object type in Power Shell heeft standaard eigenschappen die worden gebruikt wanneer u niet opgeeft welke eigenschappen moeten worden weer gegeven. Elke cmdlet gebruikt ook dezelfde **eigenschaps** parameter om op te geven welke eigenschappen u wilt weer geven. Omdat `Format-Wide` slechts één eigenschap wordt weer gegeven, gebruikt de **eigenschaps** parameter alleen één waarde, maar de eigenschaps `Format-List` parameters `Format-Table` van en accepteren een lijst met eigenschaps namen.
+Elk object type in Power Shell heeft standaard eigenschappen die worden gebruikt wanneer u niet opgeeft welke eigenschappen moeten worden weer gegeven. Elke cmdlet gebruikt ook dezelfde **eigenschaps** parameter om op te geven welke eigenschappen u wilt weer geven. Omdat `Format-Wide` slechts één eigenschap wordt weer gegeven, gebruikt de **eigenschaps** parameter alleen één waarde, maar de eigenschaps parameters van `Format-List` en `Format-Table` accepteren een lijst met eigenschaps namen.
 
-In dit voor beeld toont de standaard uitvoer `Get-Process` van de cmdlet dat er twee exemplaren van Internet Explorer worden uitgevoerd.
+In dit voor beeld toont de standaard uitvoer van de `Get-Process` cmdlet dat er twee exemplaren van Internet Explorer worden uitgevoerd.
 
 ```powershell
 Get-Process -Name iexplore
@@ -46,7 +47,7 @@ De standaard indeling voor **proces** objecten toont de eigenschappen die hier w
      52    11.46      26.46       3.55   21748   1 iexplore
 ```
 
-## <a name="using-format-wide-for-single-item-output"></a>Indeling-breed gebruiken voor uitvoer met één item
+## <a name="using-format-wide-for-single-item-output"></a>Format-Wide gebruiken voor Single-Item uitvoer
 
 De `Format-Wide` cmdlet geeft standaard alleen de eigenschap default van een object weer. De gegevens die aan elk object zijn gekoppeld, worden in één kolom weer gegeven:
 
@@ -72,7 +73,7 @@ List                   Table
 Wide
 ```
 
-### <a name="controlling-format-wide-display-with-column"></a>Weer gave met volledige indeling beheren met kolom
+### <a name="controlling-format-wide-display-with-column"></a>Format-Wide weer geven met kolom
 
 Met de `Format-Wide` cmdlet kunt u slechts één eigenschap tegelijk weer geven. Dit maakt het handig voor het weer geven van grote lijsten in meerdere kolommen.
 
@@ -86,9 +87,9 @@ Table                  Wide
 
 ```
 
-## <a name="using-format-list-for-a-list-view"></a>Indelings lijst gebruiken voor een lijst weergave
+## <a name="using-format-list-for-a-list-view"></a>Format-List gebruiken voor een lijst weergave
 
-Met `Format-List` de cmdlet wordt een object in de vorm van een vermelding weer gegeven, waarbij elke eigenschap wordt aangeduid en op een afzonderlijke regel wordt weer gegeven:
+`Format-List`Met de cmdlet wordt een object in de vorm van een vermelding weer gegeven, waarbij elke eigenschap wordt aangeduid en op een afzonderlijke regel wordt weer gegeven:
 
 ```powershell
 Get-Process -Name iexplore | Format-List
@@ -126,9 +127,9 @@ StartTime   : 10/22/2019 11:23:57 AM
 Id          : 21748
 ```
 
-### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Gedetailleerde informatie ophalen met behulp van de indelings lijst met Joker tekens
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Gedetailleerde informatie ophalen met behulp van Format-List met Joker tekens
 
-Met `Format-List` de cmdlet kunt u een Joker teken gebruiken als de waarde van de **eigenschaps** parameter. Hiermee kunt u gedetailleerde gegevens weer geven. Objecten bevatten vaak meer informatie dan u nodig hebt, waarom Power shell niet alle eigenschaps waarden standaard weergeeft. Als u alle eigenschappen van een object wilt weer geven, `Format-List -Property *` gebruikt u de opdracht. Met de volgende opdracht worden meer dan 60 regels uitvoer voor één proces gegenereerd:
+`Format-List`Met de cmdlet kunt u een Joker teken gebruiken als de waarde van de **eigenschaps** parameter. Hiermee kunt u gedetailleerde gegevens weer geven. Objecten bevatten vaak meer informatie dan u nodig hebt, waarom Power shell niet alle eigenschaps waarden standaard weergeeft. Als u alle eigenschappen van een object wilt weer geven, gebruikt u de `Format-List -Property *` opdracht. Met de volgende opdracht worden meer dan 60 regels uitvoer voor één proces gegenereerd:
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *
@@ -136,9 +137,9 @@ Get-Process -Name iexplore | Format-List -Property *
 
 Hoewel de `Format-List` opdracht handig is om details weer te geven. Als u een overzicht wilt van de uitvoer die veel items bevat, is een eenvoudigere tabellaire weer gave vaak handiger.
 
-## <a name="using-format-table-for-tabular-output"></a>Indelings tabel gebruiken voor tabel uitvoer
+## <a name="using-format-table-for-tabular-output"></a>Format-Table gebruiken voor tabel uitvoer
 
-Als u de `Format-Table` cmdlet gebruikt zonder eigenschaps namen die zijn opgegeven om de uitvoer van `Get-Process` de opdracht op te maken, krijgt u precies dezelfde uitvoer als u `Format` zonder een cmdlet uitvoert. Standaard worden **proces** objecten in Power shell weer gegeven in tabel vorm.
+Als u de cmdlet gebruikt zonder `Format-Table` eigenschaps namen die zijn opgegeven om de uitvoer van de opdracht op te maken `Get-Process` , krijgt u precies dezelfde uitvoer als u zonder een `Format` cmdlet uitvoert. Standaard worden **proces** objecten in Power shell weer gegeven in tabel vorm.
 
 ```powershell
 Get-Service -Name win* | Format-Table
@@ -153,7 +154,7 @@ Running  Winmgmt            Windows Management Instrumentation
 Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-### <a name="improving-format-table-output-autosize"></a>De indeling van de tabel uitvoer verbeteren (AutoSize)
+### <a name="improving-format-table-output-autosize"></a>Format-Table-uitvoer verbeteren (AutoSize)
 
 Hoewel een tabellarische weer gave nuttig is voor het weer geven van veel informatie, kan het lastig zijn om te interpreteren of de weer gave te smal is voor de gegevens. In het vorige voor beeld wordt de uitvoer afgekapt. Als u de para meter **AutoSize** opgeeft wanneer u de `Format-Table` opdracht uitvoert, worden in Power shell kolom breedten berekend op basis van de werkelijke gegevens die worden weer gegeven. Hierdoor kunnen de kolommen worden gelezen.
 
@@ -186,11 +187,11 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-De `Format-Table` opdracht gaat ervan uit dat de eigenschappen worden weer gegeven in volg orde van belang. Hiermee wordt geprobeerd de eigenschappen die het dichtst bij het begin liggen volledig weer te geven. Als met `Format-Table` de opdracht niet alle eigenschappen kunnen worden weer gegeven, worden er een aantal kolommen uit de weer gave verwijderd. U kunt dit gedrag zien in het vorige voor beeld van de eigenschap **DependentServices** .
+De `Format-Table` opdracht gaat ervan uit dat de eigenschappen worden weer gegeven in volg orde van belang. Hiermee wordt geprobeerd de eigenschappen die het dichtst bij het begin liggen volledig weer te geven. Als `Format-Table` met de opdracht niet alle eigenschappen kunnen worden weer gegeven, worden er een aantal kolommen uit de weer gave verwijderd. U kunt dit gedrag zien in het vorige voor beeld van de eigenschap **DependentServices** .
 
-### <a name="wrapping-format-table-output-in-columns-wrap"></a>Terugloop indeling-tabel uitvoer in kolommen (terugloop)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Format-Table uitvoer in kolommen (terugloop) inpakken
 
-Met de para meter voor `Format-Table` de **Terugloop** kunt u de hoeveelheid gegevens die in de weergave kolom loopt, afdwingen. Het gebruik van de para meter **wrap** kan niet wat u verwacht, omdat deze standaard instellingen gebruikt als u niet ook **AutoSize**opgeeft:
+`Format-Table`Met de para meter voor de **Terugloop** kunt u de hoeveelheid gegevens die in de weergave kolom loopt, afdwingen. Het gebruik van de para meter **wrap** kan niet wat u verwacht, omdat deze standaard instellingen gebruikt als u niet ook **AutoSize**opgeeft:
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap

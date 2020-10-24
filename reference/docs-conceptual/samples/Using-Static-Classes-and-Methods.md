@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Statische klassen en methoden gebruiken
-ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt uitgelegd hoe u de eigenschappen en methoden van .NET statische klassen identificeert en gebruikt.
+ms.openlocfilehash: 2e83fe442f7b3fdf62ceaab587450251ac4e7958
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030747"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501249"
 ---
 # <a name="using-static-classes-and-methods"></a>Statische klassen en methoden gebruiken
 
@@ -31,7 +32,7 @@ Deze fouten treden op omdat er geen manier is om een nieuw object te maken op ba
 
 ## <a name="getting-environment-data-with-systemenvironment"></a>Omgevings gegevens ophalen met System. Environment
 
-Normaal gesp roken wordt de eerste stap bij het werken met een object in Windows Power shell gebruikt om erachter te komen welke leden de app bevat. Bij statische klassen is het proces iets anders omdat de daad werkelijke klasse geen object is.
+Normaal gesp roken is de eerste stap bij het werken met een object in Windows Power shell uit het gebruik van Get-Member om erachter te komen welke leden de app bevat. Bij statische klassen is het proces iets anders omdat de daad werkelijke klasse geen object is.
 
 ### <a name="referring-to-the-static-systemenvironment-class"></a>Verwijzen naar de klasse static System. Environment
 
@@ -46,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Zoals eerder vermeld, voegt Windows Power shell automatisch '**System.**' toe. Als u namen wilt typen wanneer u **Nieuw-object**gebruikt. Hetzelfde gebeurt wanneer u een type naam tussen haakjes gebruikt, zodat u ** \[System. Environment]** als ** \[omgeving**kunt opgeven.
+> Zoals eerder vermeld, voegt Windows Power shell automatisch '**System.**' toe. Als u namen wilt typen wanneer u **Nieuw-object**gebruikt. Hetzelfde gebeurt wanneer u een type naam tussen haakjes gebruikt, zodat u ** \[ System. Environment]** als ** \[ omgeving**kunt opgeven.
 
-De klasse **System. Environment** bevat algemene informatie over de werk omgeving voor het huidige proces, Power shell. exe wanneer u werkt in Windows Power shell.
+De klasse **System. Environment** bevat algemene informatie over de werk omgeving voor het huidige proces, dat powershell.exe wanneer u werkt in Windows Power shell.
 
-Als u de details van deze klasse wilt bekijken door ** \[System. Environment te typen] | Get-member**, het object type wordt gerapporteerd als **System. RuntimeType** , niet **System. Environment**:
+Als u de details van deze klasse wilt bekijken door ** \[ System. Environment te typen] | Get-member**, het object type wordt gerapporteerd als **System. RuntimeType** , niet **System. Environment**:
 
 ```
 PS> [System.Environment] | Get-Member

@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Gegevens omleiden met Out-cmdlets
-ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u de-cmdlets gebruikt die uitvoer in Power shell beheren.
+ms.openlocfilehash: 3a9e3b1ac06f5be4e6f3bbc52a15c4afb5b12cef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030076"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500212"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Gegevens omleiden met out-*-cmdlets
 
@@ -69,7 +70,7 @@ Dit geldt voor alle **out** -cmdlets. Een **out** -cmdlet moet altijd aan het ei
 
 ## <a name="paging-console-output-out-host"></a>Uitvoer van de console pagineren (out-host)
 
-Standaard worden gegevens door Windows Power shell naar het venster host verzonden. Dit is precies wat de out-host-cmdlet doet. Het primaire gebruik voor de out-host-cmdlet is het pagineren van gegevens zoals eerder is beschreven. De volgende opdracht gebruikt bijvoorbeeld out-host om de uitvoer van de cmdlet Get-opdracht uit te voeren:
+Standaard worden gegevens door Windows Power shell naar het venster host verzonden. Dit is precies wat de Out-Host-cmdlet doet. Het primaire gebruik voor de Out-Host-cmdlet is het pagineren van gegevens zoals eerder is beschreven. Met de volgende opdracht wordt bijvoorbeeld Out-Host op pagina de uitvoer van de Get-Command cmdlet:
 
 ```powershell
 Get-Command | Out-Host -Paging
@@ -120,7 +121,7 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>Gegevens opslaan (out-file)
 
-U kunt uitvoer naar een bestand verzenden in plaats van via het console venster met de **out-file-** cmdlet. De volgende opdracht regel verzendt een lijst met processen naar het bestand **C:\\Temp\\processlist. txt**:
+U kunt uitvoer naar een bestand verzenden in plaats van via het console venster met de **out-file-** cmdlet. De volgende opdracht regel verzendt een lijst met processen naar het bestand **C: \\ temp \\processlist.txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt

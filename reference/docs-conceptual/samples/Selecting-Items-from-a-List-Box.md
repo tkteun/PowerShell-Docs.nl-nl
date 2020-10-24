@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Items selecteren in een keuzelijst
-ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u een besturings element keuze lijst maakt met behulp van de functies voor het maken van .NET Framework formulier in Windows Power shell.
+ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706169"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501045"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Items selecteren in een keuzelijst
 
@@ -142,7 +143,7 @@ $listBox.Height = 80
 In de volgende sectie geeft u de waarden op die u in de keuze lijst wilt weer geven voor gebruikers.
 
 > [!NOTE]
-> In de keuze lijst die door dit script wordt gemaakt, is slechts één selectie toegestaan. Als u een besturings element keuze lijst wilt maken dat meerdere selecties toestaat, geeft u een waarde op voor de eigenschap **SelectionMode** , `$listBox.SelectionMode = 'MultiExtended'`op de volgende manier:. Zie [keuze lijsten met meerdere keuze mogelijkheden](Multiple-selection-List-Boxes.md)voor meer informatie.
+> In de keuze lijst die door dit script wordt gemaakt, is slechts één selectie toegestaan. Als u een besturings element keuze lijst wilt maken dat meerdere selecties toestaat, geeft u een waarde op voor de eigenschap **SelectionMode** , op de volgende manier: `$listBox.SelectionMode = 'MultiExtended'` . Zie [keuze lijsten met meerdere keuze mogelijkheden](Multiple-selection-List-Boxes.md)voor meer informatie.
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -172,8 +173,8 @@ Ten slotte geeft de code in het **if** -blok aan Windows wat er moet worden geda
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 

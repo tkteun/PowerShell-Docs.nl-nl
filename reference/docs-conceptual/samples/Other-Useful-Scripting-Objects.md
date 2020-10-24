@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Andere nuttige scriptobjecten
-ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel worden objecten beschreven die extra script functionaliteit bieden in de Windows PowerShell ISE.
+ms.openlocfilehash: c20daa0045bc07b1f21aafa42a80ce7c47ee7331
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325144"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500263"
 ---
 # <a name="other-useful-scripting-objects"></a>Andere nuttige scriptobjecten
 
@@ -32,14 +33,14 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die `$psLocalHelp`zijn opgenomen in.
+Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt tussen Help-onderwerpen en de bijbehorende koppelingen in het lokale gecompileerde HTML Help-bestand. Het wordt gebruikt om de lokale Help voor een bepaald onderwerp te vinden. U kunt onderwerpen uit deze lijst toevoegen of verwijderen. In het volgende code voorbeeld ziet u enkele voor beelden van sleutel-waardeparen die zijn opgenomen in `$psLocalHelp` .
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
@@ -61,7 +62,7 @@ Dit is een woordenlijst object dat een context gevoelige toewijzing onderhoudt t
 $psOnlineHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 

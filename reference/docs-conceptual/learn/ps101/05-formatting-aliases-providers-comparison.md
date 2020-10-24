@@ -4,12 +4,13 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: eb23b048a50f10ea83d156c0499772b1be439336
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: Dit hoofd stuk bevat een inleiding tot de concepten van uitvoer opmaak, opdracht aliassen, providers en vergelijkings bewerkingen.
+ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436314"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501606"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Hoofd stuk 5: opmaak, aliassen, providers, vergelijking
 
@@ -21,7 +22,7 @@ De SQL Server Power shell-module is vereist voor enkele van de voor beelden die 
 
 In hoofd stuk 4 hebt u geleerd om zoveel mogelijk naar links te filteren. De regel voor het hand matig Format teren van de uitvoer van een opdracht is vergelijkbaar met die regel, behalve dat deze zoveel mogelijk moet worden uitgevoerd.
 
-De meest voorkomende indelings opdrachten zijn `Format-Table` en `Format-List` . `Format-Wide`en `Format-Custom` kunnen ook worden gebruikt, maar zijn minder gangbaar.
+De meest voorkomende indelings opdrachten zijn `Format-Table` en `Format-List` . `Format-Wide` en `Format-Custom` kunnen ook worden gebruikt, maar zijn minder gangbaar.
 
 Zoals vermeld in hoofd stuk 3, wordt een opdracht die meer dan vier eigenschappen retourneert, standaard ingesteld op een lijst, tenzij aangepaste opmaak wordt gebruikt.
 
@@ -413,7 +414,7 @@ Op basis van de resultaten van de vorige twee voor beelden kunt u waarschijnlijk
 True
 ```
 
-De `-Like` `-Match` Opera tors en kunnen verwarrend zijn, zelfs voor ervaren Power shell-gebruikers. `-Like`wordt gebruikt met Joker tekens `*` en `?` voor het uitvoeren van "like"-overeenkomsten.
+De `-Like` `-Match` Opera tors en kunnen verwarrend zijn, zelfs voor ervaren Power shell-gebruikers. `-Like` wordt gebruikt met Joker tekens `*` en `?` voor het uitvoeren van "like"-overeenkomsten.
 
 ```powershell
 'PowerShell' -like '*shell'
@@ -423,7 +424,7 @@ De `-Like` `-Match` Opera tors en kunnen verwarrend zijn, zelfs voor ervaren Pow
 True
 ```
 
-`-Match`maakt gebruik van een reguliere expressie voor het uitvoeren van de overeenkomst.
+`-Match` maakt gebruik van een reguliere expressie voor het uitvoeren van de overeenkomst.
 
 ```powershell
 'PowerShell' -match '^*.shell$'
@@ -462,7 +463,7 @@ $Numbers -contains 10
 True
 ```
 
-`-NotContains`keert de logica om te zien of de `$Numbers` variabele geen waarde bevat.
+`-NotContains` keert de logica om te zien of de `$Numbers` variabele geen waarde bevat.
 
 ```powershell
 $Numbers -notcontains 15

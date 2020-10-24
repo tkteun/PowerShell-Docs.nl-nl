@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Met registervermeldingen werken
-ms.openlocfilehash: 7f8ee87cebb8b220570bcb969445071a72a68526
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: In dit artikel wordt beschreven hoe u met behulp van Power shell Register vermeldingen kunt verwerken.
+ms.openlocfilehash: 65f8b4ed7b2f9af26bfd22f34577a4bd52f35e70
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758479"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501453"
 ---
 # <a name="working-with-registry-entries"></a>Met registervermeldingen werken
 

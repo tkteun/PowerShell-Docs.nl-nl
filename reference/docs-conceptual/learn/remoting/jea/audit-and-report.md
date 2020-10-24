@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: Controleren en rapporteren op JEA
-ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Met controle kunt u beoordelen of de juiste personen toegang hebben tot het JEA-eind punt en hun toegewezen rollen nog steeds geschikt zijn.
+ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017921"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500008"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Controleren en rapporteren op JEA
 
@@ -46,7 +47,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Beschik bare functies op de computer zoeken
 
-JEA haalt de functie mogelijkheden van `.psrc` de bestanden die zijn opgeslagen in de map **RoleCapabilities** binnen een Power shell-module. Met de volgende functie vindt u alle functie mogelijkheden die beschikbaar zijn op een computer.
+JEA haalt de functie mogelijkheden van de bestanden die zijn `.psrc` opgeslagen in de map **RoleCapabilities** binnen een Power shell-module. Met de volgende functie vindt u alle functie mogelijkheden die beschikbaar zijn op een computer.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -120,7 +121,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-De hoofd tekst van de transcriptie bevat informatie over elke opdracht die de gebruiker heeft aangeroepen. De exacte syntaxis van de gebruikte opdracht is niet beschikbaar in JEA-sessies vanwege de manier waarop opdrachten worden getransformeerd voor externe communicatie met Power shell. U kunt echter nog steeds de daad werkelijke opdracht bepalen die is uitgevoerd. Hieronder vindt u een voor beeld van een transcript fragment `Get-Service Dns` van een gebruiker die wordt uitgevoerd in een JEA-sessie:
+De hoofd tekst van de transcriptie bevat informatie over elke opdracht die de gebruiker heeft aangeroepen. De exacte syntaxis van de gebruikte opdracht is niet beschikbaar in JEA-sessies vanwege de manier waarop opdrachten worden getransformeerd voor externe communicatie met Power shell. U kunt echter nog steeds de daad werkelijke opdracht bepalen die is uitgevoerd. Hieronder vindt u een voor beeld van een transcript fragment van een gebruiker die wordt uitgevoerd `Get-Service Dns` in een JEA-sessie:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -133,7 +134,7 @@ Running  Dns                DNS Server
 
 Er wordt een **CommandInvocation** -regel geschreven voor elke opdracht die door een gebruiker wordt uitgevoerd. **ParameterBindings** registreert elke para meter en waarde die is opgegeven met de opdracht. In het vorige voor beeld ziet u dat de parameter **naam** is opgegeven met de waarde **DNS** voor de `Get-Service` cmdlet.
 
-Met de uitvoer van elke opdracht wordt ook een **CommandInvocation**geactiveerd, `Out-Default`meestal naar. De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
+Met de uitvoer van elke opdracht wordt ook een **CommandInvocation**geactiveerd, meestal naar `Out-Default` . De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
 
 ## <a name="see-also"></a>Zie ook
 

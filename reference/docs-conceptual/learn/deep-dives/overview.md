@@ -1,12 +1,13 @@
 ---
 title: Uitgebreide presentaties
 ms.date: 05/23/2020
-ms.openlocfilehash: 9ba687c81f5bdc64881fa78a6e4ebbe051320358
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+description: De sectie diepe Dives in de documentatie bevat artikelen met meer details en voor beelden dan de cmdlet-verwijzing.
+ms.openlocfilehash: da42df8ff4590d12be88132ebc98278821d4f9ee
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "84149780"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501062"
 ---
 # <a name="deep-dive-articles"></a>Diep gaande artikelen
 

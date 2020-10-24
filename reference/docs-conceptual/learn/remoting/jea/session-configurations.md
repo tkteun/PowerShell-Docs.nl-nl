@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA-sessie configuraties
-ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Met sessie configuraties definieert u wie het JEA-eind punt kan gebruiken en met welke rollen ze toegang hebben.
+ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017879"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501555"
 ---
 # <a name="jea-session-configurations"></a>JEA-sessie configuraties
 
@@ -22,7 +23,7 @@ Als u een JEA-eind punt wilt registreren, moet u opgeven hoe dat eind punt is ge
 - Welke identiteits JEA worden gebruikt onder de kaften
 - De naam van het JEA-eind punt
 
-Deze opties worden gedefinieerd in een Power shell-gegevens bestand `.pssc` met een extensie die een Power shell-sessie configuratie bestand wordt genoemd. Het configuratie bestand van de sessie kan worden bewerkt met behulp van een tekst editor.
+Deze opties worden gedefinieerd in een Power shell-gegevens bestand met een `.pssc` extensie die een Power shell-sessie configuratie bestand wordt genoemd. Het configuratie bestand van de sessie kan worden bewerkt met behulp van een tekst editor.
 
 Voer de volgende opdracht uit om een leeg sjabloon configuratie bestand te maken.
 
@@ -33,16 +34,16 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 > [!TIP]
 > Alleen de meest voorkomende configuratie opties zijn standaard opgenomen in het sjabloon bestand. Gebruik de `-Full` Schakel optie voor het toevoegen van alle toepasselijke instellingen in het gegenereerde PSSC.
 
-In `-SessionType RestrictedRemoteServer` het veld wordt aangegeven dat de sessie configuratie wordt gebruikt door JEA voor beveiligd beheer. Sessies van dit type worden in de modus exclusief **taal** uitgevoerd en hebben alleen toegang tot de volgende standaard opdrachten (en aliassen):
+`-SessionType RestrictedRemoteServer`In het veld wordt aangegeven dat de sessie configuratie wordt gebruikt door JEA voor beveiligd beheer. Sessies van dit type worden in de modus exclusief **taal** uitgevoerd en hebben alleen toegang tot de volgende standaard opdrachten (en aliassen):
 
-- Clear-host (CLS, Clear)
-- Afsluiten-PSSession (exsn, afsluiten)
-- Get-opdracht (GCM)
+- Clear-Host (CLS, Clear)
+- Exit-PSSession (exsn, afsluiten)
+- Get-Command (GCM)
 - Get-FormatData
 - Get-Help
-- Measure-object (measure)
-- Out-standaard
-- Select-object (selecteren)
+- Measure-Object (meting)
+- Out-Default
+- Select-Object (selecteren)
 
 Er zijn geen Power shell-providers beschikbaar en ook geen externe Program ma's (uitvoer bare bestanden of scripts).
 
@@ -135,7 +136,7 @@ Zie [Power Shell-stations beheren](/powershell/scripting/samples/managing-window
 ### <a name="role-definitions"></a>Roldefinities
 
 Roldefinities in een sessie configuratie bestand definiëren de toewijzing van **gebruikers** aan **rollen**. Elke gebruiker of groep die in dit veld is opgenomen, krijgt toegang tot het JEA-eind punt wanneer het is geregistreerd.
-Elke gebruiker of groep kan slechts eenmaal als sleutel in de hashtabel worden opgenomen, maar kan meerdere rollen krijgen. De naam van de functie mogelijkheid moet de naam zijn van het functie-Capability-bestand `.psrc` , zonder de extensie.
+Elke gebruiker of groep kan slechts eenmaal als sleutel in de hashtabel worden opgenomen, maar kan meerdere rollen krijgen. De naam van de functie mogelijkheid moet de naam zijn van het functie-Capability-bestand, zonder de `.psrc` extensie.
 
 ```powershell
 RoleDefinitions = @{
@@ -188,11 +189,11 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ### <a name="other-properties"></a>Andere eigenschappen
 
 Sessie configuratie bestanden kunnen ook alles doen wat een functie-mogelijkheidsprofiel kan doen, alleen zonder de mogelijkheid om verbinding te maken tussen gebruikers en andere opdrachten. Als u alle gebruikers toegang wilt geven tot specifieke cmdlets, functies of providers, kunt u dit rechtstreeks doen in het configuratie bestand voor de sessie.
-Voer uit `Get-Help New-PSSessionConfigurationFile -Full`voor een volledige lijst met ondersteunde eigenschappen in het configuratie bestand voor de sessie.
+Voer uit voor een volledige lijst met ondersteunde eigenschappen in het configuratie bestand voor de sessie `Get-Help New-PSSessionConfigurationFile -Full` .
 
 ## <a name="testing-a-session-configuration-file"></a>Een configuratie bestand voor een sessie testen
 
-U kunt een sessie configuratie testen met de cmdlet [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Het is raadzaam om uw sessie configuratie bestand te testen als u het `.pssc` bestand hand matig hebt bewerkt. Testen zorgt ervoor dat de syntaxis juist is. Als een sessie configuratie bestand deze test niet kan registreren, kan het niet worden geregistreerd op het systeem.
+U kunt een sessie configuratie testen met de cmdlet [test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) . Het is raadzaam om uw sessie configuratie bestand te testen als u het bestand hand matig hebt bewerkt `.pssc` . Testen zorgt ervoor dat de syntaxis juist is. Als een sessie configuratie bestand deze test niet kan registreren, kan het niet worden geregistreerd op het systeem.
 
 ## <a name="sample-session-configuration-file"></a>Configuratie bestand voor voorbeeld sessie
 

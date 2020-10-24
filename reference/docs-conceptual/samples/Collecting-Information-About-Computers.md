@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Informatie over computers verzamelen
-ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u informatie over de configuratie van de computer verzameling WMI en CIM-cmdlets gebruikt.
+ms.openlocfilehash: 5088960ab7c049085a9d7c05ec4571b6fd7e3545
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737233"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500586"
 ---
 # <a name="collecting-information-about-computers"></a>Informatie over computers verzamelen
 
@@ -26,13 +27,13 @@ Hiermee wordt informatie over alle Bureau bladen geretourneerd, ongeacht of deze
 > [!NOTE]
 > Gegevens die door bepaalde WMI-klassen worden geretourneerd, kunnen zeer gedetailleerd zijn en bevatten vaak meta gegevens over de WMI-klasse.
 
-Omdat de meeste van deze eigenschappen van meta gegevens namen hebben die beginnen met **CIM**, kunt u de `Select-Object`eigenschappen filteren met. Geef de para meter **-ExcludeProperty** op als waarde. Bijvoorbeeld:
+Omdat de meeste van deze eigenschappen van meta gegevens namen hebben die beginnen met **CIM**, kunt u de eigenschappen filteren met `Select-Object` . Geef de para meter **-ExcludeProperty** op als waarde. Bijvoorbeeld:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Desktop | Select-Object -ExcludeProperty "CIM*"
 ```
 
-Als u de meta gegevens wilt filteren, gebruikt u een pijplijn operator (|) om de resultaten van `Get-CimInstance` de opdracht `Select-Object -ExcludeProperty "CIM*"`naar te verzenden.
+Als u de meta gegevens wilt filteren, gebruikt u een pijplijn operator (|) om de resultaten van de `Get-CimInstance` opdracht naar te verzenden `Select-Object -ExcludeProperty "CIM*"` .
 
 ## <a name="listing-bios-information"></a>BIOS-gegevens weer geven
 
@@ -117,7 +118,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-De extra gegevens worden geretourneerd, omdat de **eigenschaps** parameter `Get-CimInstance` in de eigenschappen van WMI-klasse-instanties beperkt, niet het object dat naar Power shell wordt geretourneerd. Gebruik `Select-Object`het volgende om de uitvoer te verminderen:
+De extra gegevens worden geretourneerd, omdat de **eigenschaps** parameter in `Get-CimInstance` de eigenschappen van WMI-klasse-instanties beperkt, niet het object dat naar Power shell wordt geretourneerd. Gebruik het volgende om de uitvoer te verminderen `Select-Object` :
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId
@@ -138,7 +139,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem |
   Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-U kunt ook joker tekens gebruiken met de `Select-Object`para meter van de **eigenschap** . Omdat alle eigenschappen die beginnen met ofwel **Build** of **servicepack** belang rijk zijn om hier te gebruiken, kunnen we het volgende formulier inkorten:
+U kunt ook joker tekens gebruiken met de `Select-Object` para meter van de **eigenschap** . Omdat alle eigenschappen die beginnen met ofwel **Build** of **servicepack** belang rijk zijn om hier te gebruiken, kunnen we het volgende formulier inkorten:
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object -Property Build*,OSType,ServicePack*
@@ -236,13 +237,13 @@ PSComputerName :
 
 ## <a name="displaying-service-status"></a>Service status weer geven
 
-Als u de status van alle services op een specifieke computer wilt weer geven, kunt u `Get-Service` de cmdlet lokaal gebruiken. Voor externe systemen kunt u de WMI-klasse **Win32_Service** gebruiken. Als u ook gebruikt `Select-Object` om de resultaten te filteren op **status**, **naam**en **DisplayName**, is de uitvoer indeling bijna identiek aan die van `Get-Service`:
+Als u de status van alle services op een specifieke computer wilt weer geven, kunt u de cmdlet lokaal gebruiken `Get-Service` . Voor externe systemen kunt u de WMI-klasse **Win32_Service** gebruiken. Als u ook gebruikt `Select-Object` om de resultaten te filteren op **status**, **naam**en **DisplayName**, is de uitvoer indeling bijna identiek aan die van `Get-Service` :
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Select-Object -Property Status,Name,DisplayName
 ```
 
-Als u de volledige weer gave van namen voor incidentele Services met extreem lange namen wilt toestaan, kunt u met `Format-Table` de para meters **AutoSize** en **wrap** gebruiken om de kolom breedte te optimaliseren en lange namen te laten teruglopen in plaats van afgekapt:
+Als u de volledige weer gave van namen voor incidentele Services met extreem lange namen wilt toestaan, kunt u `Format-Table` met de para meters **AutoSize** en **wrap** gebruiken om de kolom breedte te optimaliseren en lange namen te laten teruglopen in plaats van afgekapt:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap

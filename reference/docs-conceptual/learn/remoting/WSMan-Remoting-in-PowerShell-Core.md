@@ -2,34 +2,29 @@
 title: Externe communicatie van WS-Management (WSMan) in PowerShell Core
 description: Externe communicatie in Power shell core met behulp van WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b090e1463808ab10758bbd417d52fcc16c31366
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564510"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501300"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Externe communicatie van WS-Management (WSMan) in PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instructies voor het maken van een extern eind punt
 
-Het Power shell core-pakket voor Windows bevat een WinRM-invoeg toepassing ( `pwrshplugin.dll` ) en een installatie script ( `Install-PowerShellRemoting.ps1` ) in `$PSHome` .
-Met deze bestanden kunnen Power shell binnenkomende Power shell-externe verbindingen accepteren wanneer het eind punt is opgegeven.
+Het Power shell core-pakket voor Windows bevat een WinRM-invoeg toepassing ( `pwrshplugin.dll` ) en een installatie script ( `Install-PowerShellRemoting.ps1` ) in `$PSHome` . Met deze bestanden kunnen Power shell binnenkomende Power shell-externe verbindingen accepteren wanneer het eind punt is opgegeven.
 
 ### <a name="motivation"></a>Motivatie
 
-Een installatie van Power shell kan Power shell-sessies tot stand brengen met externe computers met behulp van `New-PSSession` en `Enter-PSSession` .
-Voor het accepteren van binnenkomende Power shell-externe verbindingen, moet de gebruiker een extern eind punt voor WinRM maken.
-Dit is een expliciet opt-in-scenario waarbij de gebruiker Install-PowerShellRemoting. ps1 uitvoert om het WinRM-eind punt te maken.
-Het installatie script is een oplossing voor de korte termijn totdat we extra functionaliteit toevoegen om `Enable-PSRemoting` dezelfde actie uit te voeren.
-Zie issue [#1193](https://github.com/PowerShell/PowerShell/issues/1193)voor meer informatie.
+Een installatie van Power shell kan Power shell-sessies tot stand brengen met externe computers met behulp van `New-PSSession` en `Enter-PSSession` . Voor het accepteren van binnenkomende Power shell-externe verbindingen, moet de gebruiker een extern eind punt voor WinRM maken. Dit is een expliciet opt-in-scenario waarbij de gebruiker Install-PowerShellRemoting.ps1 uitvoert om het WinRM-eind punt te maken. Het installatie script is een oplossing voor de korte termijn totdat we extra functionaliteit toevoegen om `Enable-PSRemoting` dezelfde actie uit te voeren. Zie issue [#1193](https://github.com/PowerShell/PowerShell/issues/1193)voor meer informatie.
 
-### <a name="script-actions"></a>Script acties
+### <a name="script-actions"></a>Scriptacties
 
 Het script
 
-1. Hiermee maakt u een map voor de invoeg toepassing in`$env:windir\System32\PowerShell`
-1. Kopieert pwrshplugin. dll naar die locatie
+1. Hiermee maakt u een map voor de invoeg toepassing in `$env:windir\System32\PowerShell`
+1. pwrshplugin.dll naar die locatie kopiëren
 1. Hiermee genereert u een configuratie bestand
 1. Registreert deze invoeg toepassing met WinRM
 
@@ -56,7 +51,8 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**Opmerking:** Het externe registratie script zal WinRM opnieuw opstarten, zodat alle bestaande PSRP-sessies onmiddellijk worden beëindigd nadat het script is uitgevoerd. Als deze wordt uitgevoerd tijdens een externe sessie, wordt de verbinding verbroken.
+> [!NOTE]
+> Het externe registratie script start WinRM opnieuw op. Alle bestaande PSRP-sessies worden beëindigd zodra het script is uitgevoerd. Als deze wordt uitgevoerd tijdens een externe sessie, wordt de verbinding door het script beëindigd.
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>Verbinding maken met het nieuwe eind punt
 

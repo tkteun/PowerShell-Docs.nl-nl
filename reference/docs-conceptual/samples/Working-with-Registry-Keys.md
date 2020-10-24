@@ -1,13 +1,14 @@
 ---
 ms.date: 12/23/2019
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Met registersleutels werken
-ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u met behulp van Power shell register sleutels kunt verwerken.
+ms.openlocfilehash: 90e8417fc3454b959dc2a86fc63e722832bdab23
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736842"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501385"
 ---
 # <a name="working-with-registry-keys"></a>Met registersleutels werken
 
@@ -15,7 +16,7 @@ Omdat register sleutels items op Power Shell-stations zijn, is het samen werken 
 
 ## <a name="listing-all-subkeys-of-a-registry-key"></a>Alle subsleutels van een register sleutel weer geven
 
-U kunt alle items rechtstreeks in een register sleutel weer geven met `Get-ChildItem`behulp van. Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht worden bijvoorbeeld de items rechtstreeks in het Power shell `HKCU:`-station weer gegeven, `HKEY_CURRENT_USER` die overeenkomen met de register component:
+U kunt alle items rechtstreeks in een register sleutel weer geven met behulp van `Get-ChildItem` . Voeg de optionele **Force** -para meter toe om verborgen of systeem items weer te geven. Met deze opdracht worden bijvoorbeeld de items rechtstreeks in het Power Shell-station weer gegeven `HKCU:` , die overeenkomen met de `HKEY_CURRENT_USER` register component:
 
 ```powershell
 Get-ChildItem -Path HKCU:\ | Select-Object Name
@@ -45,9 +46,9 @@ HKEY_CURRENT_USER\WXP
 HKEY_CURRENT_USER\Volatile Environment
 ```
 
-Dit zijn de sleutels op het hoogste niveau die `HKEY_CURRENT_USER` zichtbaar zijn onder in de REGI ster-editor (Regedit. exe).
+Dit zijn de sleutels op het hoogste niveau die zichtbaar zijn onder `HKEY_CURRENT_USER` in de REGI ster-editor (Regedit.exe).
 
-U kunt dit registerpad ook opgeven door de naam van de register provider op te geven, `::`gevolgd door. De volledige naam van de register provider `Microsoft.PowerShell.Core\Registry`is, maar dit kan worden inge kort tot `Registry`alleen. Met een van de volgende opdrachten wordt de inhoud direct onder `HKCU:`weer geven.
+U kunt dit registerpad ook opgeven door de naam van de register provider op te geven, gevolgd door `::` . De volledige naam van de register provider is `Microsoft.PowerShell.Core\Registry` , maar dit kan worden inge kort tot alleen `Registry` . Met een van de volgende opdrachten wordt de inhoud direct onder weer geven `HKCU:` .
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -57,13 +58,13 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Met deze opdrachten worden alleen de direct opgenomen items weer geven, `DIR` net als in **cmd. exe** of `ls` in een Unix-shell. Als u opgenomen items wilt weer geven, moet u de para meter **recursief** opgeven. Als u alle register sleutels in `HKCU:`wilt weer geven, gebruikt u de volgende opdracht.
+Met deze opdrachten worden alleen de direct opgenomen items weer geven, vergelijkbaar met het gebruik `DIR` van in **Cmd.exe** of `ls` in een Unix-shell. Als u opgenomen items wilt weer geven, moet u de para meter **recursief** opgeven. Als u alle register sleutels in wilt weer geven `HKCU:` , gebruikt u de volgende opdracht.
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem`kan complexe filter functies uitvoeren met de para meters **Path**, **filter**, **include**en **exclude** , maar die para meters zijn doorgaans alleen gebaseerd op naam. U kunt complexe filtering uitvoeren op basis van andere eigenschappen van items met `Where-Object` behulp van de-cmdlet. Met de volgende opdracht worden alle sleutels `HKCU:\Software` in die niet meer dan één subsleutel en ook precies vier waarden bevatten:
+`Get-ChildItem` kan complexe filter functies uitvoeren met de para meters **Path**, **filter**, **include**en **exclude** , maar die para meters zijn doorgaans alleen gebaseerd op naam. U kunt complexe filtering uitvoeren op basis van andere eigenschappen van items met behulp van de- `Where-Object` cmdlet. Met de volgende opdracht worden alle sleutels in `HKCU:\Software` die niet meer dan één subsleutel en ook precies vier waarden bevatten:
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -72,19 +73,19 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>Sleutels kopiëren
 
-Kopiëren is voltooid met `Copy-Item`. In het volgende voor beeld `CurrentVersion` worden de `HKLM:\SOFTWARE\Microsoft\Windows\` subsleutel van en alle bijbehorende `HKCU:\`eigenschappen naar gekopieerd.
+Kopiëren is voltooid met `Copy-Item` . In het volgende voor beeld `CurrentVersion` worden de subsleutel van `HKLM:\SOFTWARE\Microsoft\Windows\` en alle bijbehorende eigenschappen naar gekopieerd `HKCU:\` .
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:
 ```
 
-Als u deze nieuwe sleutel in de REGI ster-editor bestudeert of gebruikt `Get-ChildItem`, ziet u dat er geen kopieën van de subsleutels in de nieuwe locatie aanwezig zijn. Als u de gehele inhoud van een container wilt kopiëren, moet u de para meter **recursief** opgeven. Als u de voor gaande Kopieer opdracht recursief wilt maken, gebruikt u deze opdracht:
+Als u deze nieuwe sleutel in de REGI ster-editor bestudeert of gebruikt `Get-ChildItem` , ziet u dat er geen kopieën van de subsleutels in de nieuwe locatie aanwezig zijn. Als u de gehele inhoud van een container wilt kopiëren, moet u de para meter **recursief** opgeven. Als u de voor gaande Kopieer opdracht recursief wilt maken, gebruikt u deze opdracht:
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
 ```
 
-U kunt nog steeds gebruikmaken van andere hulpprogram ma's die u al beschikbaar hebt voor het uitvoeren van bestandssysteem kopieën. Register bewerkings Programma's, zoals **reg. exe**, **Regini. exe**, **regedit. exe**en COM-objecten die ondersteuning bieden voor het bewerken van het REGI ster, zoals **WScript. shell** en WMI-klasse **StdRegProv** , kunnen worden gebruikt vanuit Windows Power shell.
+U kunt nog steeds gebruikmaken van andere hulpprogram ma's die u al beschikbaar hebt voor het uitvoeren van bestandssysteem kopieën. Register bewerkings Programma's, waaronder **reg.exe**, **regini.exe**, **regedit.exe**en COM-objecten die ondersteuning bieden voor register bewerkingen, zoals **WScript. shell** en de **StdRegProv** -klasse van WMI, kunnen worden gebruikt vanuit Windows Power shell.
 
 ## <a name="creating-keys"></a>Sleutels maken
 
@@ -111,7 +112,7 @@ Remove-Item -Path 'HKCU:\key with spaces in the name'
 
 ## <a name="removing-all-keys-under-a-specific-key"></a>Verwijderen van alle sleutels onder een bepaalde sleutel
 
-U kunt opgenomen items verwijderen met `Remove-Item`, maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als we bijvoorbeeld proberen de subsleutel te verwijderen `HKCU:\CurrentVersion` die we hebben gemaakt, zien we het volgende:
+U kunt opgenomen items verwijderen met `Remove-Item` , maar u wordt gevraagd het verwijderen te bevestigen als het item iets anders bevat. Als we bijvoorbeeld proberen de subsleutel te verwijderen `HKCU:\CurrentVersion` die we hebben gemaakt, zien we het volgende:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion
@@ -131,7 +132,7 @@ Als u opgenomen items zonder vragen wilt verwijderen, geeft u de para meter **re
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 
-Als u alle items binnen `HKCU:\CurrentVersion` maar niet `HKCU:\CurrentVersion` zelf wilt verwijderen, kunt u in plaats daarvan het volgende gebruiken:
+Als u alle items binnen `HKCU:\CurrentVersion` maar niet zelf wilt verwijderen `HKCU:\CurrentVersion` , kunt u in plaats daarvan het volgende gebruiken:
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse

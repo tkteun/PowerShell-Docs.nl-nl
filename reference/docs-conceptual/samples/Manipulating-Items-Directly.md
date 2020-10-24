@@ -1,13 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Items rechtstreeks bewerken
-ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Power shell biedt verschillende cmdlets die u helpen bij het beheren van items op lokale en externe computers. Items zijn objecten die worden weer gegeven door Power shell-providers zoals het bestands systeem, het REGI ster, certificaten en anderen.
+ms.openlocfilehash: 20132b63a8ff4ef24b1d8346066315dbb053e59c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030127"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500314"
 ---
 # <a name="manipulating-items-directly"></a>Items rechtstreeks bewerken
 
@@ -35,7 +36,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 
 Gebruik de cmdlet **New-item** om een nieuw item in het bestands systeem te maken. Neem de para meter **Path** op met het pad naar het item en de **item** type-para meter met de waarde "file" of "directory".
 
-Als u bijvoorbeeld een nieuwe map met de naam ' New. Directory ' wilt maken in de\\map C: Temp, typt u:
+Als u bijvoorbeeld een nieuwe map met de naam ' New. Directory ' wilt maken in de \\ map C: Temp, typt u:
 
 ```
 PS> New-Item -Path c:\temp\New.Directory -ItemType Directory
@@ -47,7 +48,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  11:29 AM            New.Directory
 ```
 
-Als u een bestand wilt maken, wijzigt u de waarde van de para meter **item** type in "bestand". Als u bijvoorbeeld een bestand met de naam ' bestand1. txt ' in de nieuwe map wilt maken, typt u:
+Als u een bestand wilt maken, wijzigt u de waarde van de para meter **item** type in "bestand". Als u bijvoorbeeld een bestand met de naam ' file1.txt ' wilt maken in de nieuwe map. Directory, typt u:
 
 ```
 PS> New-Item -Path C:\temp\New.Directory\file1.txt -ItemType file
@@ -78,7 +79,7 @@ Wanneer u een registerpad typt, moet u de dubbele punt (**:**) in de namen van W
 
 Wanneer u de cmdlet **Get-Child item** gebruikt om de items in een register sleutel te vinden, zult u nooit de werkelijke Register vermeldingen of hun waarden zien.
 
-De register sleutel **\\HKEY_LOCAL_MACHINE software\\van micro\\Soft Windows\\CurrentVersion\\run** meestal bevat doorgaans diverse register vermeldingen die toepassingen vertegenwoordigen die worden uitgevoerd wanneer het systeem wordt gestart.
+De register sleutel **HKEY_LOCAL_MACHINE \\ Software van \\ micro soft \\ Windows \\ CurrentVersion \\ Run** meestal bevat doorgaans diverse register vermeldingen die toepassingen vertegenwoordigen die worden uitgevoerd wanneer het systeem wordt gestart.
 
 Als u echter **Get-Child item** gebruikt om te zoeken naar onderliggende items in de sleutel, ziet u de subsleutel **OptionalComponents** van de sleutel:
 
@@ -92,11 +93,11 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Hoewel het handig is om Register vermeldingen als items te behandelen, kunt u geen pad naar een register vermelding opgeven op een manier die ervoor zorgt dat deze uniek is. De pad-notatie maakt geen onderscheid tussen de registersubsleutel **Run** en de **(standaard)** register vermelding in de **Run** -subsleutel. Omdat Register vermeldingen echter de back slash-teken (**\\**) kunnen bevatten, kunt u, als de register items items zijn, de pad-notatie niet gebruiken om een register vermelding met de naam **Windows\\CurrentVersion\\run** te onderscheiden van de subsleutel die zich in dat pad bevindt.
+Hoewel het handig is om Register vermeldingen als items te behandelen, kunt u geen pad naar een register vermelding opgeven op een manier die ervoor zorgt dat deze uniek is. De pad-notatie maakt geen onderscheid tussen de registersubsleutel **Run** en de **(standaard)** register vermelding in de **Run** -subsleutel. Omdat Register vermeldingen echter de back slash-teken () kunnen bevatten **\\** , kunt u, als de register items items zijn, de pad-notatie niet gebruiken om een register vermelding met de naam **Windows \\ CurrentVersion \\ Run** te onderscheiden van de subsleutel die zich in dat pad bevindt.
 
 ## <a name="renaming-existing-items-rename-item"></a>De naam van bestaande items wijzigen (naam wijzigen-item)
 
-Als u de naam van een bestand of map wilt wijzigen, gebruikt u de cmdlet **Rename-item** . Met de volgende opdracht wordt de naam van het bestand **bestand1. txt** gewijzigd in **fileOne. txt**.
+Als u de naam van een bestand of map wilt wijzigen, gebruikt u de cmdlet **Rename-item** . Met de volgende opdracht wordt de naam van het **file1.txt** bestand gewijzigd in **fileOne.txt**.
 
 ```powershell
 Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
@@ -115,7 +116,7 @@ At line:1 char:12
 
 Als u een bestand of map wilt verplaatsen, gebruikt u de cmdlet **Move-item** .
 
-Met de volgende opdracht wordt bijvoorbeeld de nieuwe Directory Directory verplaatst van de map C:\\Temp naar de hoofdmap van station c:. Als u wilt controleren of het item is verplaatst, neemt u de para meter **PassThru** van de cmdlet **Move-item** op. Zonder **PassThru**worden met de cmdlet **Move-item** geen resultaten weer gegeven.
+Met de volgende opdracht wordt bijvoorbeeld de nieuwe Directory Directory verplaatst van de map C: \\ Temp naar de hoofdmap van station c:. Als u wilt controleren of het item is verplaatst, neemt u de para meter **PassThru** van de cmdlet **Move-item** op. Zonder **PassThru**worden met de cmdlet **Move-item** geen resultaten weer gegeven.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -129,15 +130,15 @@ d----        2006-05-18  12:14 PM            New.Directory
 
 ## <a name="copying-items-copy-item"></a>Items kopiëren (kopiëren-item)
 
-Als u bekend bent met de Kopieer bewerkingen in andere shells, kunt u het gedrag van de cmdlet **copy-item** in Windows Power shell ongebruikelijk vinden. Wanneer u een item van de ene locatie naar een andere kopieert, wordt de inhoud niet standaard gekopieerd.
+Als u bekend bent met de Kopieer bewerkingen in andere shells, kunt u het gedrag van de cmdlet **copy-item** in Windows Power shell ongebruikelijk vinden. Wanneer u een item van de ene locatie naar de andere kopieert, wordt de inhoud van Copy-Item niet standaard gekopieerd.
 
-Als u bijvoorbeeld de map **New. Directory** van station c: naar de map c:\\Temp kopieert, is de opdracht geslaagd, maar de bestanden in de nieuwe Directory-Directory worden niet gekopieerd.
+Als u bijvoorbeeld de map **New. Directory** van station c: naar de map c: \\ temp kopieert, is de opdracht geslaagd, maar de bestanden in de nieuwe Directory-Directory worden niet gekopieerd.
 
 ```powershell
 Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Als u de inhoud van **C:\\Temp\\New. Directory**weergeeft, ziet u dat deze geen bestanden bevat:
+Als u de inhoud van **C: \\ temp \\ New. Directory**weergeeft, ziet u dat deze geen bestanden bevat:
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
@@ -197,12 +198,12 @@ Stel bijvoorbeeld dat u de volgende opdracht uitvoert:
 Invoke-Item C:\WINDOWS
 ```
 
-Een Verkenner-venster dat zich bevindt\\in C: Windows wordt weer gegeven, net zoals als u op de\\map C: Windows hebt gedubbelklikt.
+Een Verkenner-venster dat zich bevindt in C: \\ Windows wordt weer gegeven, net zoals als u op de map C: Windows hebt gedubbelklikt \\ .
 
-Als u het bestand **boot. ini** aanroept op een systeem vóór Windows Vista:
+Als u het **Boot.ini** -bestand aanroept op een systeem vóór Windows Vista:
 
 ```powershell
 Invoke-Item C:\boot.ini
 ```
 
-Als het ini-bestands type is gekoppeld aan Klad blok, wordt het bestand Boot. ini geopend in Klad blok.
+Als het ini-bestands type is gekoppeld aan Klad blok, wordt het boot.ini-bestand geopend in Klad blok.

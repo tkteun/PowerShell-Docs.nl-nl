@@ -1,15 +1,16 @@
 ---
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
-title: WinRMSecurity
-ms.openlocfilehash: ee7e5f2c9c9a863e29c9278c40703a05c1943246
-ms.sourcegitcommit: fd223afa50092839c74d8d5fbba791869665455f
+title: Beveiligings overwegingen voor externe communicatie met Power shell met WinRM
+description: Dit document bevat beveiligings problemen, aanbevelingen en aanbevolen procedures voor het gebruik van externe communicatie met Power shell.
+ms.openlocfilehash: 48167bd297905883b3d75caf9a07d06e6a9fc467
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353835"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501470"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Beveiligingsoverwegingen bij externe communicatie met PowerShell
+# <a name="security-considerations-for-powershell-remoting-using-winrm"></a>Beveiligings overwegingen voor externe communicatie met Power shell met WinRM
 
 Externe communicatie van Power shell is de aanbevolen manier om Windows-systemen te beheren. Externe communicatie van Power shell is standaard ingeschakeld in Windows Server 2012 R2. Dit document bevat beveiligings problemen, aanbevelingen en aanbevolen procedures voor het gebruik van externe communicatie met Power shell.
 
@@ -85,7 +86,7 @@ Power shell Remoting maakt standaard gebruik van Kerberos (indien beschikbaar) o
 
 Er zijn verschillende manieren om dit probleem te voor komen. Zie [de tweede hop in Power shell Remoting maken](PS-remoting-second-hop.md)voor beschrijvingen van deze methoden en de voor-en nadelen van elke methode.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 
 - [Windows Remote Management (WinRM)](/windows/win32/winrm/portal)
 - [Webservicebeheer (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf)

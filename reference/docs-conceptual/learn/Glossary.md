@@ -2,21 +2,22 @@
 ms.date: 06/11/2020
 keywords: powershell,cmdlet
 title: Verklarende woordenlijst voor PowerShell
-ms.openlocfilehash: 8df76fa3a78e9701c28488db0bde25fa245b1160
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+description: Een woorden lijst met Power shell-gerelateerde terminologie.
+ms.openlocfilehash: 75b1ed69df7547474687361a9ad3a15e1d677cdc
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722861"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499889"
 ---
 # <a name="powershell-glossary"></a>Verklarende woordenlijst voor PowerShell
 
-|            Term             | Definitie |
+|            Termijn             | Definitie |
 | --------------------------- | ---------- |
 | binaire module               | Een Power shell-module met een binaire module bestand (. dll). Een binaire module kan een module manifest bevatten. |
 | algemene para meter            | Een para meter die wordt toegevoegd aan alle cmdlets, geavanceerde functies en werk stromen door de Power shell-engine. |
 | punt bron                  | In Power shell kunt u een opdracht starten door een punt en een spatie voor de opdracht te typen. Opdrachten die met een punt zijn genoteerd, worden uitgevoerd in de huidige scope in plaats van in een nieuwe scope. Alle variabelen, aliassen, functies of stations die door de opdracht worden gemaakt, worden gemaakt in het huidige bereik en zijn beschikbaar voor gebruikers wanneer de opdracht is voltooid. |
-| dynamische module              | Een module die alleen bestaat in het geheugen. Met de cmdlets New-module en import-PSSession worden dynamische modules gemaakt. |
+| dynamische module              | Een module die alleen bestaat in het geheugen. Met de cmdlets New-Module en Import-PSSession worden dynamische modules gemaakt. |
 | dynamische para meter           | Een para meter die wordt toegevoegd aan een Power shell-cmdlet, functie of script onder bepaalde voor waarden. Cmdlets, functies, providers en scripts kunnen dynamische para meters toevoegen. |
 | Opmaak bestand             | Een Power shell-XML-bestand met de `.format.ps1xml` extensie en dat definieert hoe Power shell een object weergeeft op basis van het .NET Framework type. |
 | algemene sessie status        | De sessie status die de gegevens bevat die toegankelijk zijn voor de gebruiker van een Power shell-sessie. |

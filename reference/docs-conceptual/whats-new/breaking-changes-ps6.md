@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: Power shell, kern
 title: Belang rijke wijzigingen voor Power shell 6,0
-ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: Dit artikel bevat een overzicht van de verschillen tussen Windows Power shell 5,1 en Power shell 6,0.
+ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158187"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501691"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Belang rijke wijzigingen voor Power shell 6. x
 
@@ -192,15 +193,15 @@ Voorheen, als `-Verbose` of `-Debug` was opgegeven, overrode het gedrag van `$Er
 
 ### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320"></a>Invoke-RestMethod retourneert geen nuttige informatie wanneer er geen gegevens worden geretourneerd. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-Wanneer een API net retourneert `null` , wordt invoke-RestMethod als teken reeks geserialiseerd `"null"` in plaats van `$null` . Met deze wijziging wordt de logica in `Invoke-RestMethod` voor het op de juiste wijze serialiseren van een geldige letterlijke JSON-waarde met een bepaalde teken `null` reeks `$null` .
+Wanneer een API alleen wordt geretourneerd `null` , is Invoke-RestMethod als teken reeks geserialiseerd `"null"` in plaats van `$null` . Met deze wijziging wordt de logica in `Invoke-RestMethod` voor het op de juiste wijze serialiseren van een geldige letterlijke JSON-waarde met een bepaalde teken `null` reeks `$null` .
 
 ### <a name="remove--protocol-from--computer-cmdlets-5277"></a>Verwijderen `-Protocol` uit `*-Computer` cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 Als gevolg van problemen met RPC-externe toegang in CoreFX (met name op niet-Windows-platforms) en het garanderen van een consistente externe ervaring in Power shell, `-Protocol` is de para meter uit de `\*-Computer` cmdlets verwijderd. DCOM wordt niet meer ondersteund voor externe communicatie. De volgende cmdlets bieden alleen ondersteuning voor externe WSMAN-communicatie:
 
-- Naam wijzigen-computer
+- Rename-Computer
 - Restart-Computer
-- Stop-computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090"></a>Verwijderen `-ComputerName` uit `*-Service` cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -228,7 +229,7 @@ Wanneer u HTTP gebruikt, worden inhoud, inclusief wacht woorden, verzonden als o
 
 ### <a name="remove-addtypecommandbase-class-5407"></a>`AddTypeCommandBase` [#5407](https://github.com/PowerShell/PowerShell/issues/5407) klasse verwijderen
 
-De `AddTypeCommandBase` klasse is verwijderd uit `Add-Type` om de prestaties te verbeteren. Deze klasse wordt alleen gebruikt door de cmdlet Add-type en mag geen invloed hebben op gebruikers.
+De `AddTypeCommandBase` klasse is verwijderd uit `Add-Type` om de prestaties te verbeteren. Deze klasse wordt alleen gebruikt door de cmdlet Add-Type en mag niet van invloed zijn op gebruikers.
 
 ### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>De cmdlets worden samen met para meters `-Encoding` van het type `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
@@ -305,7 +306,7 @@ Deze wijziging brengt `Get-ChildItem` meer in overeenstemming met de `ls -r` sys
 
 Voorheen was de uitvoer tijdens het gebruik `Get-Content -Delimiter` inconsistent en onhandig geworden toen verdere verwerking van de gegevens werd vereist om het scheidings teken te verwijderen. Met deze wijziging verwijdert u het scheidings teken in geretourneerde regels.
 
-### <a name="implement-format-hex-in-c-3320"></a>Indeling-hex in C#- [#3320](https://github.com/PowerShell/PowerShell/issues/3320) implementeren
+### <a name="implement-format-hex-in-c-3320"></a>Format-Hex implementeren in C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
 
 De `-Raw` para meter is nu een ' Nee-op ' (in dat geval gebeurt er niets). Alle uitvoer wordt weer gegeven met een echte representatie van getallen die alle bytes voor het type bevat (waarvoor de `-Raw` para meter formeel werd uitgevoerd vóór deze wijziging).
 
@@ -313,7 +314,7 @@ De `-Raw` para meter is nu een ' Nee-op ' (in dat geval gebeurt er niets). Alle 
 
 In UNIX is het een Conventie voor shells om `-i` een interactieve shell te accepteren en veel hulpprogram ma's verwachten dit gedrag ( `script` bijvoorbeeld wanneer Power shell als de standaard shell wordt ingesteld) en wordt de shell aangeroepen met de `-i` Switch. Deze wijziging is opgesplitst in die `-i` eerder als korte hand kan worden gebruikt `-inputformat` , wat nu moet worden gevonden `-in` .
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167"></a>Type correctie in Get-ComputerInfo eigenschap name [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167"></a>Type correctie in Get-ComputerInfo eigenschaps naam [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
 `BiosSerialNumber` is verkeerd gespeld `BiosSeralNumber` en is gewijzigd in de juiste spelling.
 

@@ -1,17 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: Power shell, cmdlet
+keywords: powershell,cmdlet
 title: Objecten sorteren
-ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Met de cmdlet Sort-Object kunt u een verzameling objecten op een of meer eigenschappen sorteren.
+ms.openlocfilehash: 836207adfc566003e9714e45920d9b4e24a677e9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030780"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501011"
 ---
 # <a name="sorting-objects"></a>Objecten sorteren
 
-We kunnen weer gegeven gegevens ordenen om het scannen gemakkelijker te maken met behulp van de `Sort-Object` cmdlet. `Sort-Object`neemt de naam op van een of meer eigenschappen waarop moet worden gesorteerd, en retourneert gegevens die zijn gesorteerd op de waarden van die eigenschappen.
+We kunnen weer gegeven gegevens ordenen om het scannen gemakkelijker te maken met behulp van de `Sort-Object` cmdlet.
+`Sort-Object` neemt de naam op van een of meer eigenschappen waarop moet worden gesorteerd, en retourneert gegevens die zijn gesorteerd op de waarden van die eigenschappen.
 
 ## <a name="basic-sorting"></a>Basis sortering
 
@@ -67,7 +69,7 @@ LastWriteTime          Name
 ## <a name="using-hash-tables"></a>Hash-tabellen gebruiken
 
 U kunt verschillende eigenschappen in verschillende orders sorteren door hash-tabellen in een matrix te gebruiken.
-Elke hash-tabel gebruikt een **expressie** sleutel om de naam van de eigenschap op te geven als teken reeks en een **oplopende** of **aflopende** toets om de sorteer volgorde op `$true` te geven. `$false`
+Elke hash-tabel gebruikt een **expressie** sleutel om de naam van de eigenschap op te geven als teken reeks en een **oplopende** of **aflopende** toets om de sorteer volgorde op te geven `$true` `$false` .
 De **expressie** sleutel is verplicht.
 De **oplopende** of **aflopende** toets is optioneel.
 
@@ -92,7 +94,7 @@ LastWriteTime          Name
 ```
 
 U kunt ook een script Block instellen op de **expressie** sleutel.
-Wanneer de `Sort-Object` cmdlet wordt uitgevoerd, wordt de script Block uitgevoerd en wordt het resultaat gebruikt voor het sorteren.
+Wanneer de cmdlet wordt uitgevoerd `Sort-Object` , wordt de script Block uitgevoerd en wordt het resultaat gebruikt voor het sorteren.
 
 In het volgende voor beeld worden objecten in aflopende volg orde gesorteerd op basis van de tijds Panne tussen **CreationTime** en **LastWriteTime**.
 
@@ -124,7 +126,7 @@ U kunt de naam van de **eigenschap** para meter als volgt weglaten:
 Sort-Object LastWriteTime, Name
 ```
 
-U kunt ook verwijzen naar `Sort-Object` de ingebouwde alias: `sort`
+U kunt ook verwijzen naar `Sort-Object` de ingebouwde alias `sort` :
 
 ```powershell
 sort LastWriteTime, Name

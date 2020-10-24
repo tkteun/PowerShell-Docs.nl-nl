@@ -1,13 +1,13 @@
 ---
 title: Externe communicatie van PowerShell via SSH
-description: Externe communicatie in Power shell core via SSH
 ms.date: 10/19/2020
-ms.openlocfilehash: 23c5dc9c1ff6427cc718114bd58dc7c568e697bc
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+description: In dit artikel wordt uitgelegd hoe u het SSH-protocol instelt voor externe communicatie met Power shell.
+ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92298285"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501334"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Externe communicatie van PowerShell via SSH
 
@@ -336,7 +336,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 - Voorafgaand aan Power shell 7,1 heeft externe toegang via SSH geen ondersteuning voor externe sessies van de tweede hop. Deze mogelijkheid is beperkt tot sessies met WinRM. Met Power shell 7,1 kunt `Enter-PSSession` `Enter-PSHostProcess` u binnen elke interactieve externe sessie werken.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) (PowerShell Core installeren in Linux)
 

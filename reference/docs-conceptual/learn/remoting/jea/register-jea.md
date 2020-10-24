@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: JEA, Power shell, beveiliging
 title: JEA-configuraties registreren
-ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Als het JEA-eind punt wordt geregistreerd bij het systeem, wordt het eind punt beschikbaar voor gebruik door gebruikers en automatiserings engines.
+ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706203"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499906"
 ---
 # <a name="registering-jea-configurations"></a>JEA-configuraties registreren
 
@@ -75,7 +76,7 @@ De volgende eigenschappen kunnen worden geconfigureerd met behulp van de DSC-res
 
 De syntaxis voor elk van deze eigenschappen in een DSC-configuratie is consistent met het configuratie bestand van de Power shell-sessie.
 
-Hieronder vindt u een voor beeld van een DSC-configuratie voor een algemene server onderhoud module. Hierbij wordt ervan uitgegaan dat een geldige Power shell-module met functie mogelijkheden `\\myfileshare\JEA` zich op de bestands share bevindt.
+Hieronder vindt u een voor beeld van een DSC-configuratie voor een algemene server onderhoud module. Hierbij wordt ervan uitgegaan dat een geldige Power shell-module met functie mogelijkheden zich op de bestands share bevindt `\\myfileshare\JEA` .
 
 ```powershell
 Configuration JEAMaintenance

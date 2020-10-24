@@ -2,12 +2,13 @@
 ms.date: 05/22/2020
 keywords: powershell,cmdlet
 title: Wat is PowerShell?
-ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
-ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
+description: Dit artikel is een inleiding tot de Power shell-script omgeving en de bijbehorende functies.
+ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83868476"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500773"
 ---
 # <a name="what-is-powershell"></a>Wat is PowerShell?
 
@@ -42,7 +43,7 @@ Als u hulpprogram ma's voor tekst verwerking hebt gebruikt voor het verwerken va
 
 ## <a name="the-command-family-is-extensible"></a>De opdracht familie is uitbreidbaar
 
-Interfaces zoals `cmd.exe` geen manier om u de ingebouwde opdrachtset direct uit te breiden. U kunt externe opdracht regel Programma's maken die worden uitgevoerd in `cmd.exe` . Deze externe hulpprogram ma's hebben echter geen services, zoals Help-integratie. `cmd.exe`niet automatisch weet dat deze externe hulpprogram ma's geldige opdrachten zijn.
+Interfaces zoals `cmd.exe` geen manier om u de ingebouwde opdrachtset direct uit te breiden. U kunt externe opdracht regel Programma's maken die worden uitgevoerd in `cmd.exe` . Deze externe hulpprogram ma's hebben echter geen services, zoals Help-integratie. `cmd.exe` niet automatisch weet dat deze externe hulpprogram ma's geldige opdrachten zijn.
 
 De opdrachten in Power shell worden _cmdlets_genoemd. U kunt elke cmdlet afzonderlijk gebruiken, maar de kracht ervan wordt gerealiseerd wanneer u deze combineert om complexe taken uit te voeren. Net als bij veel shells krijgt u toegang tot het bestands systeem op de computer. Met Power shell- _providers_ kunt u toegang krijgen tot andere gegevens archieven, zoals het REGI ster en de certificaat archieven, net zo eenvoudig als u toegang hebt tot het bestands systeem.
 
@@ -141,7 +142,7 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location`retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.
+`Get-Location` retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.
 
 ## <a name="built-in-help-system"></a>Ingebouwd Help-systeem
 
