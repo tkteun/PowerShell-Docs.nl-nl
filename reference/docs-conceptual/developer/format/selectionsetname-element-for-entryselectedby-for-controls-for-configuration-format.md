@@ -1,56 +1,58 @@
 ---
-title: SelectionSetName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+description: Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: b775aa8a3184aa3ebcbda17a8e3191c69d67a700
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787560"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645721"
 ---
-# <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a><span data-ttu-id="19936-102">Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="19936-102">SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)</span></span>
+# <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a><span data-ttu-id="a388b-103">Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="a388b-103">SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)</span></span>
 
-<span data-ttu-id="19936-103">Hiermee geeft u een set .NET-typen op die gebruikmaken van deze definitie van het besturings element.</span><span class="sxs-lookup"><span data-stu-id="19936-103">Specifies a set of .NET types that use this definition of the control.</span></span> <span data-ttu-id="19936-104">Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.</span><span class="sxs-lookup"><span data-stu-id="19936-104">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
+<span data-ttu-id="a388b-104">Hiermee geeft u een set .NET-typen op die gebruikmaken van deze definitie van het besturings element.</span><span class="sxs-lookup"><span data-stu-id="a388b-104">Specifies a set of .NET types that use this definition of the control.</span></span> <span data-ttu-id="a388b-105">Dit element wordt gebruikt bij het definiëren van een algemeen besturings element dat kan worden gebruikt door alle weer gaven in het opmaak bestand.</span><span class="sxs-lookup"><span data-stu-id="a388b-105">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
 
-<span data-ttu-id="19936-105">Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (Format) EntrySelectedBy-element voor SelectionSetName voor besturings elementen voor configuratie (indeling)</span><span class="sxs-lookup"><span data-stu-id="19936-105">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format) CustomEntry Element for CustomControl for Controls for Configuration (Format) EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format) SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)</span></span>
+<span data-ttu-id="a388b-106">Configuratie-element (Format) Controls element van configuratie (indeling) Control element voor besturings elementen voor configuratie (Format) CustomControl-element voor besturings element voor configuratie (indeling) CustomEntries element voor CustomControl voor configuratie (indeling) CustomEntry element voor CustomControl voor besturings elementen voor configuratie (Format) EntrySelectedBy-element voor SelectionSetName voor besturings elementen voor configuratie (indeling)</span><span class="sxs-lookup"><span data-stu-id="a388b-106">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format) CustomEntry Element for CustomControl for Controls for Configuration (Format) EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format) SelectionSetName Element for EntrySelectedBy for Controls for Configuration (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="19936-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="19936-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a388b-107">Syntax</span><span class="sxs-lookup"><span data-stu-id="a388b-107">Syntax</span></span>
 
 ```xml
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="19936-107">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="19936-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="a388b-108">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="a388b-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="19936-108">In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `SelectionSetName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="19936-108">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
+<span data-ttu-id="a388b-109">In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `SelectionSetName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="a388b-109">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="19936-109">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="19936-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="a388b-110">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="a388b-110">Attributes</span></span>
 
-<span data-ttu-id="19936-110">Geen</span><span class="sxs-lookup"><span data-stu-id="19936-110">None</span></span>
+<span data-ttu-id="a388b-111">Geen</span><span class="sxs-lookup"><span data-stu-id="a388b-111">None</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="19936-111">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="19936-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="a388b-112">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="a388b-112">Child Elements</span></span>
 
-<span data-ttu-id="19936-112">Geen.</span><span class="sxs-lookup"><span data-stu-id="19936-112">None.</span></span>
+<span data-ttu-id="a388b-113">Geen.</span><span class="sxs-lookup"><span data-stu-id="a388b-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="19936-113">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="19936-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="a388b-114">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="a388b-114">Parent Elements</span></span>
 
-|<span data-ttu-id="19936-114">Element</span><span class="sxs-lookup"><span data-stu-id="19936-114">Element</span></span>|<span data-ttu-id="19936-115">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="19936-115">Description</span></span>|
+|<span data-ttu-id="a388b-115">Element</span><span class="sxs-lookup"><span data-stu-id="a388b-115">Element</span></span>|<span data-ttu-id="a388b-116">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="a388b-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="19936-116">Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="19936-116">EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|<span data-ttu-id="19936-117">Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="19936-117">Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.</span></span>|
+|[<span data-ttu-id="a388b-117">Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="a388b-117">EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|<span data-ttu-id="a388b-118">Hiermee definieert u de .NET-typen die gebruikmaken van deze controle definitie of de voor waarde die voor deze definitie moet worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="a388b-118">Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="19936-118">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="19936-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="a388b-119">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="a388b-119">Text Value</span></span>
 
-<span data-ttu-id="19936-119">Geef de naam op van de selectieset.</span><span class="sxs-lookup"><span data-stu-id="19936-119">Specify the name of the selection set.</span></span>
+<span data-ttu-id="a388b-120">Geef de naam op van de selectieset.</span><span class="sxs-lookup"><span data-stu-id="a388b-120">Specify the name of the selection set.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="19936-120">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="19936-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a388b-121">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="a388b-121">Remarks</span></span>
 
-<span data-ttu-id="19936-121">Voor elke controle definitie moet ten minste één type naam, selectieset of selectie voorwaarde zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="19936-121">Each control definition must have at least one type name, selection set, or selection condition defined.</span></span>
+<span data-ttu-id="a388b-122">Voor elke controle definitie moet ten minste één type naam, selectieset of selectie voorwaarde zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="a388b-122">Each control definition must have at least one type name, selection set, or selection condition defined.</span></span>
 
-<span data-ttu-id="19936-122">Selectie sets worden meestal gebruikt wanneer u een groep objecten wilt definiëren die worden gebruikt in meerdere weer gaven.</span><span class="sxs-lookup"><span data-stu-id="19936-122">Selection sets are typically used when you want to define a group of objects that are used in multiple views.</span></span> <span data-ttu-id="19936-123">Zie [selectie sets definiëren](./defining-selection-sets.md)voor meer informatie over het definiëren van selectie sets.</span><span class="sxs-lookup"><span data-stu-id="19936-123">For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).</span></span>
+<span data-ttu-id="a388b-123">Selectie sets worden meestal gebruikt wanneer u een groep objecten wilt definiëren die worden gebruikt in meerdere weer gaven.</span><span class="sxs-lookup"><span data-stu-id="a388b-123">Selection sets are typically used when you want to define a group of objects that are used in multiple views.</span></span> <span data-ttu-id="a388b-124">Zie [selectie sets definiëren](./defining-selection-sets.md)voor meer informatie over het definiëren van selectie sets.</span><span class="sxs-lookup"><span data-stu-id="a388b-124">For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="19936-124">Zie ook</span><span class="sxs-lookup"><span data-stu-id="19936-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a388b-125">Zie ook</span><span class="sxs-lookup"><span data-stu-id="a388b-125">See Also</span></span>
 
-[<span data-ttu-id="19936-125">Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="19936-125">EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
+[<span data-ttu-id="a388b-126">Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)</span><span class="sxs-lookup"><span data-stu-id="a388b-126">EntrySelectedBy Element for CustomEntry for Controls for Configuration (Format)</span></span>](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
 
-[<span data-ttu-id="19936-126">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="19936-126">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="a388b-127">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="a388b-127">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

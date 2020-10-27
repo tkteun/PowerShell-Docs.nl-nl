@@ -1,30 +1,32 @@
 ---
-title: Een InitialSessionState maken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een InitialSessionState maken
+description: Een InitialSessionState maken
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779723"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649424"
 ---
-# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="e1e57-102">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="e1e57-102">Creating an InitialSessionState</span></span>
+# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="156ab-103">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="156ab-103">Creating an InitialSessionState</span></span>
 
-<span data-ttu-id="e1e57-103">Power shell-opdrachten worden uitgevoerd in een runs Pace.</span><span class="sxs-lookup"><span data-stu-id="e1e57-103">PowerShell commands run in a runspace.</span></span>
-<span data-ttu-id="e1e57-104">Als u Power shell in uw toepassing wilt hosten, moet u een [System. Management. Automation. Runspaces. runs Pace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -object maken.</span><span class="sxs-lookup"><span data-stu-id="e1e57-104">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
-<span data-ttu-id="e1e57-105">Aan elke runs Pace is een [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object gekoppeld.</span><span class="sxs-lookup"><span data-stu-id="e1e57-105">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
-<span data-ttu-id="e1e57-106">De InitialSessionState geeft kenmerken van de runs Pace op, bijvoorbeeld welke opdrachten, variabelen en modules beschikbaar zijn voor die runs Pace.</span><span class="sxs-lookup"><span data-stu-id="e1e57-106">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
+<span data-ttu-id="156ab-104">Power shell-opdrachten worden uitgevoerd in een runs Pace.</span><span class="sxs-lookup"><span data-stu-id="156ab-104">PowerShell commands run in a runspace.</span></span>
+<span data-ttu-id="156ab-105">Als u Power shell in uw toepassing wilt hosten, moet u een [System. Management. Automation. Runspaces. runs Pace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -object maken.</span><span class="sxs-lookup"><span data-stu-id="156ab-105">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+<span data-ttu-id="156ab-106">Aan elke runs Pace is een [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object gekoppeld.</span><span class="sxs-lookup"><span data-stu-id="156ab-106">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
+<span data-ttu-id="156ab-107">De InitialSessionState geeft kenmerken van de runs Pace op, bijvoorbeeld welke opdrachten, variabelen en modules beschikbaar zijn voor die runs Pace.</span><span class="sxs-lookup"><span data-stu-id="156ab-107">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
 
-## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="e1e57-107">Een standaard-InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="e1e57-107">Create a default InitialSessionState</span></span>
+## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="156ab-108">Een standaard-InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="156ab-108">Create a default InitialSessionState</span></span>
 
-<span data-ttu-id="e1e57-108">De methoden [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) en [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) van de klasse **InitialSessionState** kunnen worden gebruikt voor het maken van een **InitialSessionState** -object.</span><span class="sxs-lookup"><span data-stu-id="e1e57-108">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
-<span data-ttu-id="e1e57-109">De methode **CreateDefault** maakt een **InitialSessionState** met alle ingebouwde opdrachten geladen, terwijl de methode **CreateDefault2** alleen de opdrachten laadt die vereist zijn voor het hosten van Power shell (de opdrachten van de module micro soft. Power shell. core).</span><span class="sxs-lookup"><span data-stu-id="e1e57-109">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
+<span data-ttu-id="156ab-109">De methoden [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) en [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) van de klasse **InitialSessionState** kunnen worden gebruikt voor het maken van een **InitialSessionState** -object.</span><span class="sxs-lookup"><span data-stu-id="156ab-109">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
+<span data-ttu-id="156ab-110">De methode **CreateDefault** maakt een **InitialSessionState** met alle ingebouwde opdrachten geladen, terwijl de methode **CreateDefault2** alleen de opdrachten laadt die vereist zijn voor het hosten van Power shell (de opdrachten van de module micro soft. Power shell. core).</span><span class="sxs-lookup"><span data-stu-id="156ab-110">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
 
-<span data-ttu-id="e1e57-110">Als u de opdrachten die beschikbaar zijn in uw host-toepassing verder wilt beperken, moet u een beperkte runs Pace maken.</span><span class="sxs-lookup"><span data-stu-id="e1e57-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
-<span data-ttu-id="e1e57-111">Zie [een beperkte runs Pace maken](creating-a-constrained-runspace.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="e1e57-111">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
+<span data-ttu-id="156ab-111">Als u de opdrachten die beschikbaar zijn in uw host-toepassing verder wilt beperken, moet u een beperkte runs Pace maken.</span><span class="sxs-lookup"><span data-stu-id="156ab-111">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
+<span data-ttu-id="156ab-112">Zie [een beperkte runs Pace maken](creating-a-constrained-runspace.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="156ab-112">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
 
-<span data-ttu-id="e1e57-112">De volgende code laat zien hoe u een **InitialSessionState**kunt maken, deze kunt toewijzen aan een runs Pace, opdrachten kunt toevoegen aan de pijp lijn in die runs Pace en de opdrachten aanroept.</span><span class="sxs-lookup"><span data-stu-id="e1e57-112">The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
-<span data-ttu-id="e1e57-113">Zie [opdrachten toevoegen en aanroepen](adding-and-invoking-commands.md)voor meer informatie over het toevoegen en aanroepen van opdrachten.</span><span class="sxs-lookup"><span data-stu-id="e1e57-113">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
+<span data-ttu-id="156ab-113">De volgende code laat zien hoe u een **InitialSessionState** kunt maken, deze kunt toewijzen aan een runs Pace, opdrachten kunt toevoegen aan de pijp lijn in die runs Pace en de opdrachten aanroept.</span><span class="sxs-lookup"><span data-stu-id="156ab-113">The following code shows how to create an **InitialSessionState** , assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
+<span data-ttu-id="156ab-114">Zie [opdrachten toevoegen en aanroepen](adding-and-invoking-commands.md)voor meer informatie over het toevoegen en aanroepen van opdrachten.</span><span class="sxs-lookup"><span data-stu-id="156ab-114">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
 
 ```csharp
 namespace SampleHost
@@ -86,8 +88,8 @@ namespace SampleHost
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e1e57-114">Zie ook</span><span class="sxs-lookup"><span data-stu-id="e1e57-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="156ab-115">Zie ook</span><span class="sxs-lookup"><span data-stu-id="156ab-115">See Also</span></span>
 
-[<span data-ttu-id="e1e57-115">Een beperkte runspace maken</span><span class="sxs-lookup"><span data-stu-id="e1e57-115">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
+[<span data-ttu-id="156ab-116">Een beperkte runspace maken</span><span class="sxs-lookup"><span data-stu-id="156ab-116">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
 
-[<span data-ttu-id="e1e57-116">Opdrachten toevoegen en aanroepen</span><span class="sxs-lookup"><span data-stu-id="e1e57-116">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)
+[<span data-ttu-id="156ab-117">Opdrachten toevoegen en aanroepen</span><span class="sxs-lookup"><span data-stu-id="156ab-117">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)

@@ -1,26 +1,28 @@
 ---
-title: Een beperkte runs Pace maken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een beperkte runspace maken
+description: Een beperkte runspace maken
+ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779808"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651164"
 ---
-# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="6c41e-102">Een beperkte runspace maken</span><span class="sxs-lookup"><span data-stu-id="6c41e-102">Creating a constrained runspace</span></span>
+# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="b7055-103">Een beperkte runspace maken</span><span class="sxs-lookup"><span data-stu-id="b7055-103">Creating a constrained runspace</span></span>
 
-<span data-ttu-id="6c41e-103">Uit veiligheids overwegingen kunt u het beste de Windows Power shell-opdrachten beperken die beschikbaar zijn voor uw hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="6c41e-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="6c41e-104">Als u dit wilt doen, maakt u een lege [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) door deSystem.Management.Automation.Runspaces.Initialsessionstate aan te roepen [ . Maak](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) de methode \* en voeg vervolgens alleen de opdrachten toe die u wilt weer beschikbaar.</span><span class="sxs-lookup"><span data-stu-id="6c41e-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
+<span data-ttu-id="b7055-104">Uit veiligheids overwegingen kunt u het beste de Windows Power shell-opdrachten beperken die beschikbaar zijn voor uw hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="b7055-104">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="b7055-105">Als u dit wilt doen, maakt u een lege [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) door deSystem.Management.Automation.Runspaces.Initialsessionstate aan te roepen [ . Maak](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) de methode \* en voeg vervolgens alleen de opdrachten toe die u wilt weer beschikbaar.</span><span class="sxs-lookup"><span data-stu-id="b7055-105">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
 
- <span data-ttu-id="6c41e-105">Het gebruik van een runs Pace waarmee alleen de door u opgegeven opdrachten worden geladen, levert aanzienlijk betere prestaties.</span><span class="sxs-lookup"><span data-stu-id="6c41e-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
+ <span data-ttu-id="b7055-106">Het gebruik van een runs Pace waarmee alleen de door u opgegeven opdrachten worden geladen, levert aanzienlijk betere prestaties.</span><span class="sxs-lookup"><span data-stu-id="b7055-106">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
 
- <span data-ttu-id="6c41e-106">U gebruikt de methoden van de klasse [System. Management. Automation. Runspaces. Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) om cmdlets te definiëren voor de oorspronkelijke sessie status.</span><span class="sxs-lookup"><span data-stu-id="6c41e-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
+ <span data-ttu-id="b7055-107">U gebruikt de methoden van de klasse [System. Management. Automation. Runspaces. Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) om cmdlets te definiëren voor de oorspronkelijke sessie status.</span><span class="sxs-lookup"><span data-stu-id="b7055-107">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
 
- <span data-ttu-id="6c41e-107">U kunt ook persoonlijke opdrachten maken.</span><span class="sxs-lookup"><span data-stu-id="6c41e-107">You can also make commands private.</span></span> <span data-ttu-id="6c41e-108">Persoonlijke opdrachten kunnen worden gebruikt door de hosttoepassing, maar niet door gebruikers van de toepassing.</span><span class="sxs-lookup"><span data-stu-id="6c41e-108">Private commands can be used by the host application, but not by users of the application.</span></span>
+ <span data-ttu-id="b7055-108">U kunt ook persoonlijke opdrachten maken.</span><span class="sxs-lookup"><span data-stu-id="b7055-108">You can also make commands private.</span></span> <span data-ttu-id="b7055-109">Persoonlijke opdrachten kunnen worden gebruikt door de hosttoepassing, maar niet door gebruikers van de toepassing.</span><span class="sxs-lookup"><span data-stu-id="b7055-109">Private commands can be used by the host application, but not by users of the application.</span></span>
 
-## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="6c41e-109">Opdrachten toevoegen aan een lege runs Pace</span><span class="sxs-lookup"><span data-stu-id="6c41e-109">Adding commands to an empty runspace</span></span>
+## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="b7055-110">Opdrachten toevoegen aan een lege runs Pace</span><span class="sxs-lookup"><span data-stu-id="b7055-110">Adding commands to an empty runspace</span></span>
 
- <span data-ttu-id="6c41e-110">In het volgende voor beeld ziet u hoe u een lege InitialSessionState maakt en er opdrachten aan toevoegt.</span><span class="sxs-lookup"><span data-stu-id="6c41e-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
+ <span data-ttu-id="b7055-111">In het volgende voor beeld ziet u hoe u een lege InitialSessionState maakt en er opdrachten aan toevoegt.</span><span class="sxs-lookup"><span data-stu-id="b7055-111">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -100,9 +102,9 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="making-commands-private"></a><span data-ttu-id="6c41e-111">Opdrachten privé maken</span><span class="sxs-lookup"><span data-stu-id="6c41e-111">Making commands private</span></span>
+## <a name="making-commands-private"></a><span data-ttu-id="b7055-112">Opdrachten privé maken</span><span class="sxs-lookup"><span data-stu-id="b7055-112">Making commands private</span></span>
 
- <span data-ttu-id="6c41e-112">U kunt ook een persoonlijke opdracht maken door de eigenschap [System. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) in te stellen op [System. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span><span class="sxs-lookup"><span data-stu-id="6c41e-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="6c41e-113">De hosttoepassing en andere opdrachten kunnen deze opdracht aanroepen, maar de gebruiker van de toepassing kan niet.</span><span class="sxs-lookup"><span data-stu-id="6c41e-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="6c41e-114">In het volgende voor beeld is de opdracht [Get-Child item](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privé.</span><span class="sxs-lookup"><span data-stu-id="6c41e-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
+ <span data-ttu-id="b7055-113">U kunt ook een persoonlijke opdracht maken door de eigenschap [System. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) in te stellen op [System. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private** .</span><span class="sxs-lookup"><span data-stu-id="b7055-113">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private** .</span></span> <span data-ttu-id="b7055-114">De hosttoepassing en andere opdrachten kunnen deze opdracht aanroepen, maar de gebruiker van de toepassing kan niet.</span><span class="sxs-lookup"><span data-stu-id="b7055-114">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="b7055-115">In het volgende voor beeld is de opdracht [Get-Child item](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privé.</span><span class="sxs-lookup"><span data-stu-id="b7055-115">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
@@ -113,6 +115,6 @@ this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
 this.runspace.Open();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6c41e-115">Zie ook</span><span class="sxs-lookup"><span data-stu-id="6c41e-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b7055-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="b7055-116">See Also</span></span>
 
- [<span data-ttu-id="6c41e-116">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="6c41e-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="b7055-117">Een InitialSessionState maken</span><span class="sxs-lookup"><span data-stu-id="b7055-117">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

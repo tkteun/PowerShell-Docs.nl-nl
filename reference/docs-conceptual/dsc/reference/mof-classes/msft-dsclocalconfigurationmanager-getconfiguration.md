@@ -1,47 +1,48 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: GetConfiguration-methode
-ms.openlocfilehash: 989aeef4cd9aa5d55741b48c8565c657c4b6512c
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: GetConfiguration-methode
+ms.openlocfilehash: a49f810bd227142c8c3ae4de45f69450400e4e8c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463819"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650877"
 ---
-# <a name="getconfiguration-method"></a><span data-ttu-id="04661-103">GetConfiguration-methode</span><span class="sxs-lookup"><span data-stu-id="04661-103">GetConfiguration method</span></span>
+# <a name="getconfiguration-method"></a><span data-ttu-id="43030-103">GetConfiguration-methode</span><span class="sxs-lookup"><span data-stu-id="43030-103">GetConfiguration method</span></span>
 
-<span data-ttu-id="04661-104">Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.</span><span class="sxs-lookup"><span data-stu-id="04661-104">Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.</span></span>
+<span data-ttu-id="43030-104">Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden en wordt de **Get** -methode van de configuratie agent gebruikt om de configuratie toe te passen.</span><span class="sxs-lookup"><span data-stu-id="43030-104">Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="04661-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="04661-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="43030-105">Syntaxis</span><span class="sxs-lookup"><span data-stu-id="43030-105">Syntax</span></span>
 
 ```mof
 uint32 GetConfiguration(
-  [in]  uint8            configurationData[],
-  [out] OMI_BaseResource configurations[]
+  [in]  uint8            configurationData[],
+  [out] OMI_BaseResource configurations[]
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="04661-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="04661-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="43030-106">Parameters</span><span class="sxs-lookup"><span data-stu-id="43030-106">Parameters</span></span>
 
-<span data-ttu-id="04661-107">**configurationData** \[ in \] geeft de configuratie gegevens op die moeten worden verzonden.</span><span class="sxs-lookup"><span data-stu-id="04661-107">**configurationData** \[in\] Specifies the configuration data to send.</span></span>
+<span data-ttu-id="43030-107">**configurationData** \[ in \] geeft de configuratie gegevens op die moeten worden verzonden.</span><span class="sxs-lookup"><span data-stu-id="43030-107">**configurationData** \[in\] Specifies the configuration data to send.</span></span>
 
-<span data-ttu-id="04661-108">**configuraties** \[ out \] on return bevat een Inge sloten exemplaar van de configuraties.</span><span class="sxs-lookup"><span data-stu-id="04661-108">**configurations** \[out\] On return, contains an embedded instance of the configurations.</span></span>
+<span data-ttu-id="43030-108">**configuraties** \[ out \] on return bevat een Inge sloten exemplaar van de configuraties.</span><span class="sxs-lookup"><span data-stu-id="43030-108">**configurations** \[out\] On return, contains an embedded instance of the configurations.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="04661-109">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="04661-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="43030-109">Retourwaarde</span><span class="sxs-lookup"><span data-stu-id="43030-109">Return value</span></span>
 
-<span data-ttu-id="04661-110">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="04661-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="43030-110">Retourneert nul bij voltooiing; anders wordt een fout code geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="43030-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="04661-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="04661-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="43030-111">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="43030-111">Remarks</span></span>
 
-<span data-ttu-id="04661-112">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="04661-112">This is a static method.</span></span>
+<span data-ttu-id="43030-112">Dit is een statische methode.</span><span class="sxs-lookup"><span data-stu-id="43030-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="04661-113">Vereisten</span><span class="sxs-lookup"><span data-stu-id="04661-113">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="43030-113">Vereisten</span><span class="sxs-lookup"><span data-stu-id="43030-113">Requirements</span></span>
 
-<span data-ttu-id="04661-114">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="04661-114">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="43030-114">**MOF:** DscCore. MOF</span><span class="sxs-lookup"><span data-stu-id="43030-114">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="04661-115">**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="04661-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="43030-115">**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="43030-115">**Namespace** : Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="04661-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="04661-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="43030-116">Zie ook</span><span class="sxs-lookup"><span data-stu-id="43030-116">See also</span></span>
 
-[<span data-ttu-id="04661-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="04661-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="43030-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="43030-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
