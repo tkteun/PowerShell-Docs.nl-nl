@@ -2,21 +2,22 @@
 ms.date: 08/11/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Methoden voor het rechtstreeks aanroepen van DSC-resources
-ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: De cmdlet Invoke-DscResource kan worden gebruikt om de functies of methoden van een DSC-resource aan te roepen. Dit kan worden gebruikt door derden die DSC-resources willen gebruiken of als handig hulp middel bij het ontwikkelen van resources.
+ms.openlocfilehash: 5ccf0f589b60cef4ec197d1e0a583af9ed60d5e7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162491"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651006"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Methoden voor het rechtstreeks aanroepen van DSC-resources
 
->Van toepassing op: Windows Power shell 5,0
+> Van toepassing op: Windows Power shell 5,0
 
-U kunt de cmdlet [invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) gebruiken om de functies of methoden van een DSC-resource rechtstreeks aan te roepen (de `Get-TargetResource` `Set-TargetResource` functies,, en `Test-TargetResource` van een op MOF gebaseerde resource, of de methoden **Get**, **set**en **test** van een bron op basis van een klasse). Dit kan worden gebruikt door derden die DSC-resources willen gebruiken of als handig hulp middel bij het ontwikkelen van resources.
+U kunt de cmdlet [invoke-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) gebruiken om de functies of methoden van een DSC-resource rechtstreeks aan te roepen (de `Get-TargetResource` `Set-TargetResource` functies,, en `Test-TargetResource` van een op MOF gebaseerde resource, of de methoden **Get** , **set** en **test** van een bron op basis van een klasse). Dit kan worden gebruikt door derden die DSC-resources willen gebruiken of als handig hulp middel bij het ontwikkelen van resources.
 
 > [!NOTE]
-> In Power shell 7.0 + `Invoke-DscResource` biedt geen ondersteuning meer voor het aanroepen van WMI DSC-resources. Dit omvat de **Bestands** -en **logboek** bronnen in **PSDesiredStateConfiguration**.
+> In Power shell 7.0 + `Invoke-DscResource` biedt geen ondersteuning meer voor het aanroepen van WMI DSC-resources. Dit omvat de **Bestands** -en **logboek** bronnen in **PSDesiredStateConfiguration** .
 
 Deze cmdlet wordt doorgaans gebruikt in combi natie met een eigenschap `refreshMode = 'Disabled'` **refreshMode** , maar kan ook worden gebruikt, ongeacht de waarde die is ingesteld op.
 
@@ -51,7 +52,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->[!NOTE]
+> [!NOTE]
 > Het rechtstreeks aanroepen van samengestelde resource methoden wordt niet ondersteund. In plaats daarvan roept u de methoden van de onderliggende resources aan waaruit de samengestelde resource is samengesteld.
 
 ## <a name="see-also"></a>Zie ook

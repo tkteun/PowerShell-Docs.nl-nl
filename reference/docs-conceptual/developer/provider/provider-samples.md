@@ -1,12 +1,14 @@
 ---
-title: Voor beelden van providers | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9eb8eb64bbe585ebd8024c0215853ff04a5c3e54
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeelden van providers
+description: Voorbeelden van providers
+ms.openlocfilehash: e6b1e8ce603092a3fd9dd44d7be428587544466b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778441"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651135"
 ---
 # <a name="provider-samples"></a>Voorbeelden van providers
 

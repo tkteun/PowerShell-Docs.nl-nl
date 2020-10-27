@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een specifieke versie van een geïnstalleerde resource importeren
-ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u specifieke versies van resource modules kunt installeren en importeren in uw configuraties.
+ms.openlocfilehash: bb7b3273a5a3fed94fecd90dd3ea1e623fbc332b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941969"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645051"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>Een specifieke versie van een geïnstalleerde resource importeren
 
@@ -17,7 +18,7 @@ In Power shell 5,0 kunnen afzonderlijke versies van DSC-resources worden geïnst
 
 ## <a name="installing-separate-resource-versions-side-by-side"></a>Afzonderlijke resource versies naast elkaar installeren
 
-U kunt de para meters **MinimumVersion**, **MaximumVersion**en **RequiredVersion** van de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) gebruiken om op te geven welke versie van een module moet worden geïnstalleerd. Als u **install-module** aanroept zonder een versie op te geven, wordt de meest recente versie geïnstalleerd.
+U kunt de para meters **MinimumVersion** , **MaximumVersion** en **RequiredVersion** van de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) gebruiken om op te geven welke versie van een module moet worden geïnstalleerd. Als u **install-module** aanroept zonder een versie op te geven, wordt de meest recente versie geïnstalleerd.
 
 Er zijn bijvoorbeeld meerdere versies van de **xFailOverCluster** -module, die elk een **xCluster** -resource bevatten. Als u **install-module** aanroept zonder het versie nummer op te geven, wordt de meest recente versie van de module geïnstalleerd.
 
@@ -26,10 +27,10 @@ PS> Install-Module xFailOverCluster
 PS> Get-DscResource xCluster
 ```
 
-```output
-ImplementedAs   Name                      ModuleName                     Version    Properties
--------------   ----                      ----------                     -------    ----------
-PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, ...
+```Output
+ImplementedAs   Name          ModuleName           Version    Properties
+-------------   ----          ----------           -------    ----------
+PowerShell      xCluster      xFailOverCluster     1.2.0.0    {DomainAdministratorCredential, ...
 ```
 
 Als u een specifieke versie van een module wilt installeren, geeft u een **RequiredVersion** van 1.1.0.0 op. Hiermee wordt de opgegeven versie naast de geïnstalleerde versie geïnstalleerd.
@@ -38,17 +39,17 @@ Als u een specifieke versie van een module wilt installeren, geeft u een **Requi
 PS> Install-Module xFailOverCluster -RequiredVersion 1.1
 ```
 
-Nu ziet u beide versies van de module die wordt weer gegeven wanneer `Get-DSCResource`u gebruikt.
+Nu ziet u beide versies van de module die wordt weer gegeven wanneer u gebruikt `Get-DSCResource` .
 
 ```powershell
 PS> Get-DscResource xCluster
 ```
 
-```output
-ImplementedAs   Name                      ModuleName                     Version    Properties
--------------   ----                      ----------                     -------    ----------
-PowerShell      xCluster                  xFailOverCluster               1.1        {DomainAdministratorCredential, Name, ...
-PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
+```Output
+ImplementedAs   Name          ModuleName            Version    Properties
+-------------   ----          ----------            -------    ----------
+PowerShell      xCluster      xFailOverCluster      1.1        {DomainAdministratorCredential, Name, ...
+PowerShell      xCluster      xFailOverCluster      1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
 ## <a name="specifying-a-resource-version-in-a-configuration"></a>Een bron versie opgeven in een configuratie
@@ -74,7 +75,7 @@ configuration VersionTest
 }
 ```
 
->Opmerking: de para meter ModuleVersion van import-Dscresource bieden is niet beschikbaar in Power Shell 4,0. In Power Shell 4,0 kunt u een module versie opgeven door een module specificatie object door te geven aan de para meter module van import-Dscresource bieden. Een module-specificatie object is een hash-tabel die module-en RequiredVersion-sleutels bevat. Bijvoorbeeld:
+De ModuleVersion-para meter van Import-DscResource is niet beschikbaar in Power Shell 4,0. In Power Shell 4,0 kunt u een module versie opgeven door een module specificatie object door te geven aan de para meter module van import-Dscresource bieden. Een module-specificatie object is een hash-tabel die module-en RequiredVersion-sleutels bevat. Bijvoorbeeld:
 
 ```powershell
 configuration VersionTest

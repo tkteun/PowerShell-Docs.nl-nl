@@ -2,12 +2,13 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, Power shell, configuratie, installatie
 title: Quick Start-groepsbeleid converteren naar DSC
-ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: In deze Quick Start worden de stappen beschreven die nodig zijn om een Windows-groepsbeleid te converteren naar een DSC-configuratie.
+ms.openlocfilehash: b67f6dd2cf6c91d90fa6ac5b6367f9efc7f40ee0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236234"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644704"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>Snelstartgids: groepsbeleid converteren naar DSC
 
@@ -16,7 +17,7 @@ ms.locfileid: "89236234"
 U kunt een DSC-configuratie genereren vanuit een groepsbeleid of Azure Security Center basis lijn. De [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) -module bevat de volgende opdrachten voor het uitvoeren van deze taak.
 
 - `ConvertFrom-GPO` -Groeps beleid en opgeslagen als bestanden worden geconverteerd. U kunt ook een map met meerdere beleids regels opgeven die worden gecombineerd in één configuratie.
-  - Als u groeps beleid in uw omgeving wilt exporteren, gebruikt u de cmdlet [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) of volgt u de instructies in [een groeps beleidsobject exporteren naar een bestand](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
+  - Als u groeps beleid in uw omgeving wilt exporteren, gebruikt u de cmdlet [Backup-GPO](/powershell/module/grouppolicy/backup-gpo) of volgt u de instructies in [een groeps beleidsobject exporteren naar een bestand](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
 - `ConvertFrom-SCM` -Hiermee worden basis lijnen van Security Compliance Manager geconverteerd, opgeslagen als `.xml` bestanden.
 - `ConvertFrom-ASC` -Hiermee worden Azure Security Center basis lijnen, opgeslagen als bestanden, geconverteerd `.json` .
 - `Merge-GPOs` -Groeps beleid dat wordt toegepast op een doel computer, wordt geconverteerd.

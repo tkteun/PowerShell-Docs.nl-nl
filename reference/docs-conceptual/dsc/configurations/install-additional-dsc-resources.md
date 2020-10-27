@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Aanvullende DSC-resources installeren
-ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Dit artikel bevat een overzicht van de DSC-resources die zijn opgenomen in de PSDesiredStateConfiguration-module. Er wordt ook uitgelegd hoe u resources kunt zoeken en installeren vanaf de PowerShell Gallery.
+ms.openlocfilehash: e75561ed539e06716c9a103f905b9d1e4f3e71d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417792"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645128"
 ---
 # <a name="install-additional-dsc-resources"></a>Aanvullende DSC-resources installeren
 
@@ -18,20 +19,20 @@ Dit is een lijst met de OOB-resources die zijn opgenomen in Power Shell 4,0 en e
 > [!NOTE]
 > Dit is een onvolledige lijst, omdat het aantal OOB-resources is toegenomen met elke versie van Power shell.
 
-|Resource  |Beschrijving  |
-|---------|---------|
-|**Bestand**|Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **doel** en werkt deze bij wanneer de **bron** wordt gewijzigd door datums, controle sommen en hashes te vergelijken.|
-|**Archiveren**|De archieven en een opgegeven locatie worden uitgepakt. Valideert de archieven met een opgegeven **controlesom**.|
-|**Omgeving**|Hiermee beheert u omgevings variabelen.|
-|**Groep**|Beheert lokale groepen en beheert groepslid maatschap.|
-|**Logbestand**|Hiermee worden berichten naar `Microsoft-Windows-Desired State Configuration/Analytic` het gebeurtenis logboek geschreven.|
-|**Pakket**|Installeert of verwijdert pakketten met behulp van **argumenten**, **logPath**, **return code**en andere instellingen.|
-|**Registersubsleutel**|Beheert register sleutels en-waarden.|
-|**Schriften**|Met kunt u uw eigen script blokken voor [Get-test-set](../resources/get-test-set.md) ontwerpen.|
-|**Service**|Hiermee configureert u Windows-Services.|
-|**Gebruiker** |Hiermee beheert u lokale gebruikers en kenmerken.|
-|**WindowsFeature**|Beheert functies en onderdelen.|
-|**WindowsProcess**|Configureert Windows-processen.|
+|      Resource      |                                                                                       Beschrijving                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **File**           | Hiermee bepaalt u de status van bestanden en mappen. Kopieert bestanden van een **bron** naar een **doel** en werkt deze bij wanneer de **bron** wordt gewijzigd door datums, controle sommen en hashes te vergelijken. |
+| **Archiveren**        | De archieven en een opgegeven locatie worden uitgepakt. Valideert de archieven met een opgegeven **controlesom** .                                                                                         |
+| **Omgeving**    | Hiermee beheert u omgevings variabelen.                                                                                                                                                           |
+| **Groep**          | Beheert lokale groepen en beheert groepslid maatschap.                                                                                                                                      |
+| **Logbestand**            | Hiermee worden berichten naar het `Microsoft-Windows-Desired State Configuration/Analytic` gebeurtenis logboek geschreven.                                                                                               |
+| **Pakket**        | Installeert of verwijdert pakketten met behulp van **argumenten** , **logPath** , **return code** en andere instellingen.                                                                                        |
+| **Register**       | Beheert register sleutels en-waarden.                                                                                                                                                        |
+| **Script**         | Met kunt u uw eigen script blokken voor [Get-test-set](../resources/get-test-set.md) ontwerpen.                                                                                                |
+| **Service**        | Hiermee configureert u Windows-Services.                                                                                                                                                             |
+| **Gebruiker**           | Hiermee beheert u lokale gebruikers en kenmerken.                                                                                                                                                      |
+| **WindowsFeature** | Beheert functies en onderdelen.                                                                                                                                                              |
+| **WindowsProcess** | Configureert Windows-processen.                                                                                                                                                            |
 
 De OOB-resources bieden een goed uitgangs punt voor veelvoorkomende bewerkingen. Als de OOB-resources niet aan uw behoeften voldoen, kunt u uw eigen [aangepaste resource](../resources/authoringResource.md)schrijven. Voordat u een aangepaste resource schrijft om uw probleem op te lossen, moet u het grote aantal DSC-resources dat u al hebt gemaakt door zowel micro soft als de Power shell-community bekijken.
 
@@ -45,17 +46,17 @@ Als u wilt weten of u al **Power shell** Get hebt of als u hulp nodig hebt bij d
 
 Zodra **PowerShellGet** op uw systeem is geïnstalleerd, kunt u DSC-resources zoeken en installeren die worden gehost in de [PowerShell Gallery](https://www.powershellgallery.com/).
 
-Gebruik eerst de cmdlet [Find-dscresource bieden](/powershell/module/powershellget/find-dscresource) om DSC-resources te zoeken. Wanneer u voor `Find-DSCResource` de eerste keer uitvoert, ziet u de volgende prompt om de NuGet-provider te installeren.
+Gebruik eerst de cmdlet [Find-dscresource bieden](/powershell/module/powershellget/find-dscresource) om DSC-resources te zoeken. Wanneer u `Find-DSCResource` voor de eerste keer uitvoert, ziet u de volgende prompt om de NuGet-provider te installeren.
 
 ```
 PS> Find-DSCResource
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The
-NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider
- by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
-install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+or 'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install
+the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201
+-Force'. Do you want PowerShellGet to install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
@@ -67,7 +68,7 @@ Nadat u op y hebt gedrukt, wordt de NuGet-provider geïnstalleerd en ziet u een 
 U kunt de `-Name` para meter ook opgeven met Joker tekens of `-Filter` para meter zonder joker tekens om uw zoek opdracht te verfijnen. In dit voor beeld wordt geprobeerd een ' time zone ' DSC-resource te vinden met behulp van de joker tekens.
 
 > [!IMPORTANT]
-> Er is momenteel een fout in de `Find-DSCResource` cmdlet die voor komt dat Joker tekens worden gebruikt `-Name` in `-Filter` de para meters en. In het tweede voor beeld hieronder ziet u `Where-Object`een tijdelijke oplossing met behulp van.
+> Er is momenteel een fout in de `Find-DSCResource` cmdlet die voor komt dat Joker tekens worden gebruikt in de `-Name` `-Filter` para meters en. In het tweede voor beeld hieronder ziet u een tijdelijke oplossing met behulp van `Where-Object` .
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -115,9 +116,9 @@ De resource ' tijd zone ' bevindt zich in de module ' ComputerManagementDSC ', d
 PS> Install-Module -Name ComputerManagementDSC
 
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to
+install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
@@ -135,7 +136,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-U kunt ook andere resources in de zojuist geïnstalleerde module bekijken door de `-ModuleName` para meter op te geven.
+U kunt ook andere resources in de zojuist geïnstalleerde module bekijken door de para meter op te geven `-ModuleName` .
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC

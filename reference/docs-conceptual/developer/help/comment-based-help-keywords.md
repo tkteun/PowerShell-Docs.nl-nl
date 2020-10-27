@@ -1,18 +1,20 @@
 ---
-title: Trefwoorden voor Help op basis van opmerkingen
 ms.date: 06/09/2020
-ms.openlocfilehash: fb737c19d7b7f4d003af3ba36bb396bac52d94e7
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Trefwoorden voor Help op basis van opmerkingen
+description: Trefwoorden voor Help op basis van opmerkingen
+ms.openlocfilehash: d87dde8700813767f6c09cfce70ed06c7964ebc7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893149"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645466"
 ---
 # <a name="comment-based-help-keywords"></a>Trefwoorden voor Help op basis van opmerkingen
 
 In dit onderwerp worden de tref woorden in Help op basis van opmerkingen vermeld en beschreven.
 
-## <a name="keywords-in-comment-based-help"></a>Tref woorden in Help op basis van opmerkingen
+## <a name="keywords-in-comment-based-help"></a>Tref woorden in Comment-Based Help
 
 Hieronder vindt u geldige Help-tref woorden op basis van opmerkingen. Ze worden weer gegeven in de volg orde waarin ze doorgaans worden weer gegeven in een Help-onderwerp samen met het beoogde gebruik. Deze tref woorden kunnen in een wille keurige volg orde in de op opmerkingen gebaseerde Help worden weer gegeven en zijn niet hoofdletter gevoelig.
 
@@ -90,7 +92,7 @@ Geldige waarden zijn:
 - Woordenlijst
 - ScriptCommand
 - ExternalScript
-- Filter
+- Filteren
 - Alles
 
 ## <a name="remotehelprunspace-pssession-variable"></a>. REMOTEHELPRUNSPACE \<PSSession-variable>

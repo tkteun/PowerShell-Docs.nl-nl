@@ -1,12 +1,14 @@
 ---
-title: CustomControl-element voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5aacf824421dfce19f1f495fc0a95e766cdbaf8b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
+description: Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 631995c6a50c0f020cb2e991cfbf58a09a75cc72
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786081"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649996"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 

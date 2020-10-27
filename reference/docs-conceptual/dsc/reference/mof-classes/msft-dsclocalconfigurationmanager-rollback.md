@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: RollBack-methode
-ms.openlocfilehash: 301b8926d2ebf1ebe524f52a67928d34e26d860e
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: RollBack-methode
+ms.openlocfilehash: 82ca54ed23a3a892b785f603be3b423def5ee636
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464329"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650619"
 ---
 # <a name="rollback-method"></a>RollBack-methode
 
@@ -17,7 +18,7 @@ Hiermee wordt de configuratie teruggezet naar een eerdere versie.
 
 ```mof
 uint32 RollBack(
-  [in] uint8 configurationNumber
+  [in] uint8 configurationNumber
 );
 ```
 
@@ -37,7 +38,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

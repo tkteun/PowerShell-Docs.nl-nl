@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: ResourceGet-methode
-ms.openlocfilehash: aa7671989db6f4a98d879fd449d09503eddbeda3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceGet-methode
+ms.openlocfilehash: bff737f04e02740fa09fd82d7b27c75b11303dad
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463955"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650765"
 ---
 # <a name="resourceget-method"></a>ResourceGet-methode
 
@@ -17,10 +18,10 @@ Roept rechtstreeks de **Get** -methode van een DSC-resource aan.
 
 ```mof
 uint32 ResourceGet(
-  [in]  string           ResourceType,
-  [in]  string           ModuleName,
-  [in]  uint8            resourceProperty[],
-  [out] OMI_BaseResource configurations
+  [in]  string           ResourceType,
+  [in]  string           ModuleName,
+  [in]  uint8            resourceProperty[],
+  [out] OMI_BaseResource configurations
 );
 ```
 
@@ -46,7 +47,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

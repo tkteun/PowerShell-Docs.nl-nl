@@ -1,14 +1,14 @@
 ---
 ms.date: 09/20/2019
-keywords: DSC, Power shell, configuratie, installatie
-description: Biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt.
+ms.topic: reference
 title: DSC-groeps resource
-ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-groeps resource
+ms.openlocfilehash: f0e10409b0c80658ee05358c506b32da4b9deca7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464192"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650478"
 ---
 # <a name="dsc-groupset-resource"></a>DSC-groeps resource
 
@@ -48,7 +48,7 @@ Group [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de groepen bestaan. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groepen niet bestaan. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groepen bestaan. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of de groepen bestaan. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de groepen niet bestaan. **Als u** deze instelling inschakelt, zorgt u ervoor dat de groepen bestaan. De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

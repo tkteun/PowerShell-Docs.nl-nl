@@ -1,12 +1,14 @@
 ---
-title: Windows Power Shell-fout rapportage | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7f7afcf5186732734976304c8e58e4d940156e1e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-foutrapportage
+description: Windows PowerShell-foutrapportage
+ms.openlocfilehash: 438e3d96bf52d8ac1f770c0550ae49b356d616eb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783956"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650111"
 ---
 # <a name="windows-powershell-error-reporting"></a>Windows PowerShell-foutrapportage
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: ScriptAnalyzer-regel profiel voor de galerie
-ms.openlocfilehash: 939f01dece56b283dbe6e03c888f42ff866707af
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Hierin wordt uitgelegd hoe de Power shell-ScriptAnalyzer is geïntegreerd met de PowerShell Gallery.
+ms.openlocfilehash: 3af710e8811f0fabfb02f5317d5b4ff9c320f29a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329167"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646761"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>ScriptAnalyzer-regel profiel voor de galerie
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: RemoveConfiguration-methode
-ms.openlocfilehash: ef15c873d8dfaf28e5cdeb611b72a70921c099be
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: RemoveConfiguration-methode
+ms.openlocfilehash: d5988ac014c457407c56a097c9a376427376eb3f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464346"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650734"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration-methode
 
@@ -17,8 +18,8 @@ Hiermee verwijdert u de configuratie bestanden.
 
 ```mof
 uint32 RemoveConfiguration(
-  [in] uint32  Stage,
-  [in] boolean Force
+  [in] uint32  Stage,
+  [in] boolean Force
 );
 ```
 
@@ -46,7 +47,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

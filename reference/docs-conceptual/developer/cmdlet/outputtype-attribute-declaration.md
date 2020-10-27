@@ -1,12 +1,14 @@
 ---
-title: Output type kenmerk declaratie | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a4cc874031bba092cfef6041bef0e19e6af3f09c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Declaratie van het kenmerk OutputType
+description: Declaratie van het kenmerk OutputType
+ms.openlocfilehash: b5e33346e9ac29c13323781d62daffab892573a4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786540"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646455"
 ---
 # <a name="outputtype-attribute-declaration"></a>Declaratie van het kenmerk OutputType
 

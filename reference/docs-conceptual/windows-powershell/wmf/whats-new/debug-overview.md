@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,installeren
 title: Verbeteringen in foutopsporing voor PowerShell-scripts
-ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5,0 voegt nieuwe functies voor fout opsporing toe aan Windows PoowerShell.
+ms.openlocfilehash: 5703343e1b85024931638e8b04a09f7208ea123c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810391"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646736"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Verbeteringen in foutopsporing voor PowerShell-scripts
 
@@ -40,8 +41,8 @@ Er zijn nieuwe geavanceerde functies voor fout opsporing waarmee u kunt koppelen
 
 Er zijn nieuwe cmdlets toegevoegd waarmee u de huidige runspaces in een proces kunt weer geven en de Power shell-console of Power shell ISE-fout opsporingsprogramma kunt koppelen aan die runs Pace voor fout opsporing in scripts:
 
-- Get-runs Pace
-- Fout opsporing-runs Pace
+- Get-Runspace
+- Debug-Runspace
 - Enable-RunspaceDebug
 - Disable-RunspaceDebug
 - Get-RunspaceDebug

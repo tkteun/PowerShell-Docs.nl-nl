@@ -1,12 +1,14 @@
 ---
-title: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/12/2016
-ms.openlocfilehash: c164556cd06b332d04857987360c98f740a150b5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
+description: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
+ms.openlocfilehash: f66e642d65c3f679ec3262736f4eff558265ab8f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893353"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649600"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
 

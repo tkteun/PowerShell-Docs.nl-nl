@@ -1,26 +1,25 @@
 ---
-title: Een cmdlet zonder para meters maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmers Guide], creating
-- cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een cmdlet maken zonder parameters
+description: Een cmdlet maken zonder parameters
+ms.openlocfilehash: 5df27ac4c1f6dfcc3e7596d93f8db0f97aae71c1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784381"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646547"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Een cmdlet maken zonder parameters
 
-In deze sectie wordt beschreven hoe u een cmdlet maakt waarmee informatie wordt opgehaald van de lokale computer zonder het gebruik van para meters, en vervolgens de informatie naar de pijp lijn schrijft. De cmdlet die hier wordt beschreven, is een Get-proc-cmdlet waarmee informatie wordt opgehaald over de processen van de lokale computer en die informatie vervolgens wordt weer gegeven op de opdracht regel.
+In deze sectie wordt beschreven hoe u een cmdlet maakt waarmee informatie wordt opgehaald van de lokale computer zonder het gebruik van para meters, en vervolgens de informatie naar de pijp lijn schrijft. De cmdlet die hier wordt beschreven, is een Get-Proc-cmdlet waarmee informatie wordt opgehaald over de processen van de lokale computer en die informatie vervolgens wordt weer gegeven op de opdracht regel.
 
 > [!NOTE]
 > Houd er rekening mee dat bij het schrijven van cmdlets de referentie-assembly's van Windows Power shell® worden gedownload naar schijf (standaard in C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Ze zijn niet geïnstalleerd in de GAC (Global assembly cache).
 
 ## <a name="naming-the-cmdlet"></a>De cmdlet een naam geven
 
-De naam van een cmdlet bestaat uit een werk woord waarmee de actie wordt aangegeven die de cmdlet uitvoert en een zelfstandig naam woord dat de items aangeeft waarop de cmdlet op betrekking heeft. Omdat in deze voor beeld-cmdlet Get-proc proces objecten worden opgehaald, wordt de term Get gebruikt, die is gedefinieerd door [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -inventarisatie en het zelfstandig naam woord ' proc ' om aan te geven dat de cmdlet werkt voor het verwerken van items.
+De naam van een cmdlet bestaat uit een werk woord waarmee de actie wordt aangegeven die de cmdlet uitvoert en een zelfstandig naam woord dat de items aangeeft waarop de cmdlet op betrekking heeft. Omdat dit voor beeld Get-Proc-cmdlet proces objecten ophaalt, wordt de term Get gebruikt, die is gedefinieerd door [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) -inventarisatie en het zelfstandig naam woord ' proc ' om aan te geven dat de cmdlet werkt voor het verwerken van items.
 
 Gebruik bij het benoemen van cmdlets geen van de volgende tekens: #, () {} [] &-/\ $;: ' ' <> &#124; ? @ ` .
 
@@ -34,7 +33,7 @@ U moet een verb gebruiken uit de set met goedgekeurde opdracht namen voor cmdlet
 
 ## <a name="defining-the-cmdlet-class"></a>De cmdlet-klasse definiëren
 
-Nadat u de naam van een cmdlet hebt gekozen, definieert u een .NET-klasse voor het implementeren van de cmdlet. Dit is de klassedefinitie voor deze voor beeld van de cmdlet Get-proc:
+Nadat u de naam van een cmdlet hebt gekozen, definieert u een .NET-klasse voor het implementeren van de cmdlet. Hier volgt de klassedefinitie voor deze voorbeeld Get-Proc-cmdlet:
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -47,12 +46,12 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-U ziet dat er eerder aan de klassedefinitie, het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , met de syntaxis `[Cmdlet(verb, noun, ...)]` , wordt gebruikt om deze klasse te identificeren als een cmdlet. Dit is het enige vereiste kenmerk voor alle cmdlets en de Windows Power shell-runtime kan ze op de juiste wijze aanroepen. U kunt kenmerk trefwoorden instellen om de klasse zo nodig verder te declareren. Houd er rekening mee dat de kenmerk declaratie voor onze voor beeld-GetProcCommand-klasse alleen de namen van de zelfstandig naam woord en de verb declareert voor de cmdlet Get-proc.
+U ziet dat er eerder aan de klassedefinitie, het kenmerk [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , met de syntaxis `[Cmdlet(verb, noun, ...)]` , wordt gebruikt om deze klasse te identificeren als een cmdlet. Dit is het enige vereiste kenmerk voor alle cmdlets en de Windows Power shell-runtime kan ze op de juiste wijze aanroepen. U kunt kenmerk trefwoorden instellen om de klasse zo nodig verder te declareren. Houd er rekening mee dat de kenmerk declaratie voor onze voor beeld-GetProcCommand-klasse alleen de namen van de zelfstandig naam woord en de verb declareert voor de cmdlet Get-Proc.
 
 > [!NOTE]
 > Voor alle Windows Power shell-kenmerk klassen moeten de tref woorden die u kunt instellen overeenkomen met de eigenschappen van de kenmerk klasse.
 
-Wanneer u de klasse van de cmdlet een naam geeft, is het een goed idee om de naam van de cmdlet in de naam van de klasse weer te geven. U doet dit door het formulier "VerbNounCommand" te gebruiken en "verb" en "zelfstandig naam" te vervangen door het werk woord en het zelfstandig naam woord dat wordt gebruikt in de cmdletnaam. Zoals wordt weer gegeven in de vorige klassedefinitie, definieert de voor beeld-cmdlet Get-proc een klasse met de naam GetProcCommand, die is afgeleid van de basis klasse [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) .
+Wanneer u de klasse van de cmdlet een naam geeft, is het een goed idee om de naam van de cmdlet in de naam van de klasse weer te geven. U doet dit door het formulier "VerbNounCommand" te gebruiken en "verb" en "zelfstandig naam" te vervangen door het werk woord en het zelfstandig naam woord dat wordt gebruikt in de cmdletnaam. Zoals wordt weer gegeven in de vorige klassedefinitie, definieert de voor beeld-Get-Proc cmdlet een klasse met de naam GetProcCommand, die wordt afgeleid van de basis klasse [System. Management. Automation. cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) .
 
 > [!IMPORTANT]
 > Als u een cmdlet wilt definiëren die rechtstreeks toegang heeft tot de Windows Power shell-runtime, moet uw .NET-klasse worden afgeleid van de basis klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Zie [een cmdlet maken die parameter sets definieert](./adding-parameter-sets-to-a-cmdlet.md)voor meer informatie over deze klasse.
@@ -75,7 +74,7 @@ Als uw cmdlet pijplijn invoer accepteert, moet deze de methode [System. Manageme
 
 Als uw cmdlet geen pijplijn invoer heeft, moet deze de methode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) overschrijven. Houd er rekening mee dat deze methode veelvuldig wordt gebruikt in plaats van [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) wanneer de cmdlet op één element per keer niet kan worden uitgevoerd, zoals in het geval van een sorteer-cmdlet.
 
-Omdat deze voor beeld-cmdlet Get-proc de pijplijn invoer moet ontvangen, wordt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) genegeerd en worden de standaard implementaties voor [System.](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) management. Automation. cmdlet. BeginProcessing en [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)gebruikt. Met [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) override worden processen opgehaald en naar de opdracht regel geschreven met behulp van de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
+Omdat dit voor beeld Get-Proc-cmdlet pijplijn invoer moet ontvangen, wordt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) genegeerd en worden de standaard implementaties voor [System.](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) management. Automation. cmdlet. BeginProcessing en [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)gebruikt. Met [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) override worden processen opgehaald en naar de opdracht regel geschreven met behulp van de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,7 +135,7 @@ Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell re
 
 ## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. De code voor de voor beeld-cmdlet Get-proc is klein, maar maakt nog steeds gebruik van de Windows Power shell-runtime en een bestaand .NET-object. Dit is voldoende om het handig te maken. Laten we dit testen om beter te begrijpen wat Get-proc kan doen en hoe de uitvoer ervan kan worden gebruikt. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
+Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. De code van de voor beeld-Get-Proc-cmdlet is klein, maar maakt nog steeds gebruik van de Windows Power shell-runtime en een bestaand .NET-object. Dit is voldoende om het handig te maken. Laten we dit testen om beter inzicht te krijgen in wat Get-Proc kan doen en hoe de uitvoer ervan kan worden gebruikt. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
 
 1. Start Windows Power shell en ontvang de huidige processen die op de computer worden uitgevoerd.
 

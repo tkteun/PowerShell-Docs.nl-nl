@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuratie- en omgevingsgegevens scheiden
-ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Het kan handig zijn om de gegevens die in een DSC-configuratie worden gebruikt, te scheiden van de configuratie zelf met behulp van configuratie gegevens. Als u dit doet, kunt u één configuratie voor meerdere omgevingen gebruiken.
+ms.openlocfilehash: 84ca4e4945a36111d23116524fd8f98c04e16d32
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692432"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645072"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Configuratie- en omgevingsgegevens scheiden
 
->Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-Het kan handig zijn om de gegevens die in een DSC-configuratie worden gebruikt, te scheiden van de configuratie zelf met behulp van configuratie gegevens.
-Als u dit doet, kunt u één configuratie voor meerdere omgevingen gebruiken.
+Het kan handig zijn om de gegevens die in een DSC-configuratie worden gebruikt, te scheiden van de configuratie zelf met behulp van configuratie gegevens. Als u dit doet, kunt u één configuratie voor meerdere omgevingen gebruiken.
 
 Als u bijvoorbeeld een toepassing ontwikkelt, kunt u een configuratie gebruiken voor zowel ontwikkel-als productie omgevingen en configuratie gegevens gebruiken om gegevens op te geven voor elke omgeving.
 
@@ -26,8 +26,7 @@ Zie [configuratie gegevens gebruiken](configData.md)voor een gedetailleerde besc
 
 ## <a name="a-simple-example"></a>Een eenvoudig voor beeld
 
-Laten we eens kijken naar een zeer eenvoudig voor beeld om te zien hoe dit werkt.
-Er wordt één configuratie gemaakt die ervoor zorgt dat **IIS** op sommige knoop punten aanwezig is en dat **Hyper-V** aanwezig is voor anderen:
+Laten we eens kijken naar een zeer eenvoudig voor beeld om te zien hoe dit werkt. Er wordt één configuratie gemaakt die ervoor zorgt dat **IIS** op sommige knoop punten aanwezig is en dat **Hyper-V** aanwezig is voor anderen:
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -82,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData`Hiermee geeft u twee verschillende knoop punten, elk met een eigen `NodeName` en `Role` . Met de configuratie worden dynamische **knooppunt** blokken gemaakt door de verzameling knoop punten te nemen die worden opgehaald `$MyData` (met name) en de verzameling wordt `$AllNodes` gefilterd op basis van de `Role` eigenschap.
+`$MyData` Hiermee geeft u twee verschillende knoop punten, elk met een eigen `NodeName` en `Role` . Met de configuratie worden dynamische **knooppunt** blokken gemaakt door de verzameling knoop punten te nemen die worden opgehaald `$MyData` (met name) en de verzameling wordt `$AllNodes` gefilterd op basis van de `Role` eigenschap.
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Configuratie gegevens gebruiken voor het definiëren van ontwikkel-en productie omgevingen
 
@@ -129,13 +128,11 @@ De gegevens voor de ontwikkelings-en productie omgeving worden gedefinieerd in e
 
 ### <a name="configuration-script-file"></a>Configuratie script bestand
 
-Nu worden in de configuratie, die in een bestand is gedefinieerd `.ps1` , de knoop punten gefilterd die we in `DevProdEnvData.psd1` hun rol hebben gedefinieerd ( `MSSQL` , `Dev` of beide) en worden ze dienovereenkomstig geconfigureerd.
-De ontwikkel omgeving heeft zowel de SQL Server als IIS op één knoop punt, terwijl de productie omgeving ze op twee verschillende knoop punten heeft.
-De site-inhoud is ook anders, zoals opgegeven door de `SiteContents` Eigenschappen.
+Nu worden in de configuratie, die in een bestand is gedefinieerd `.ps1` , de knoop punten gefilterd die we in `DevProdEnvData.psd1` hun rol hebben gedefinieerd ( `MSSQL` , `Dev` of beide) en worden ze dienovereenkomstig geconfigureerd. De ontwikkel omgeving heeft zowel de SQL Server als IIS op één knoop punt, terwijl de productie omgeving ze op twee verschillende knoop punten heeft. De site-inhoud is ook anders, zoals opgegeven door de `SiteContents` Eigenschappen.
 
 Aan het einde van het configuratie script noemen we de configuratie (Compileer deze in een MOF-document), waarbij `DevProdEnvData.psd1` de para meter wordt door gegeven `$ConfigurationData` .
 
->**Opmerking:** Voor deze configuratie moeten de modules `xSqlPs` en `xWebAdministration` worden geïnstalleerd op het doel knooppunt.
+> **Opmerking:** Voor deze configuratie moeten de modules `xSqlPs` en `xWebAdministration` worden geïnstalleerd op het doel knooppunt.
 
 Laten we de configuratie definiëren in een bestand met de naam `MyWebApp.ps1` :
 
@@ -244,15 +241,9 @@ Mode                LastWriteTime         Length Name
 
 ## <a name="using-non-node-data"></a>Niet-knooppunt gegevens gebruiken
 
-U kunt extra sleutels toevoegen aan de **ConfigurationData** hashtabel voor gegevens die niet specifiek voor een knoop punt zijn.
-De volgende configuratie zorgt ervoor dat er twee websites aanwezig zijn.
-De gegevens voor elke website worden gedefinieerd in de **AllNodes** -matrix.
-Het bestand `Config.xml` wordt gebruikt voor beide websites, dus we definiëren het in een extra sleutel met de naam `NonNodeData` .
-Houd er rekening mee dat u zoveel extra sleutels kunt hebben als u wilt, en u kunt ze elke gewenste naam geven.
-`NonNodeData`is geen gereserveerd woord. het is precies wat we hebben besloten om de extra sleutel een naam te bieden.
+U kunt extra sleutels toevoegen aan de **ConfigurationData** hashtabel voor gegevens die niet specifiek voor een knoop punt zijn. De volgende configuratie zorgt ervoor dat er twee websites aanwezig zijn. De gegevens voor elke website worden gedefinieerd in de **AllNodes** -matrix. Het bestand `Config.xml` wordt gebruikt voor beide websites, dus we definiëren het in een extra sleutel met de naam `NonNodeData` . Houd er rekening mee dat u zoveel extra sleutels kunt hebben als u wilt, en u kunt ze elke gewenste naam geven. `NonNodeData` is geen gereserveerd woord. het is precies wat we hebben besloten om de extra sleutel een naam te bieden.
 
-U hebt toegang tot extra sleutels met behulp van de speciale variabele **$ConfigurationData**.
-In dit voor beeld `ConfigFileContents` wordt toegang verkregen met de regel:
+U hebt toegang tot extra sleutels met behulp van de speciale variabele **$ConfigurationData** . In dit voor beeld `ConfigFileContents` wordt toegang verkregen met de regel:
 
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
@@ -263,52 +254,52 @@ In dit voor beeld `ConfigFileContents` wordt toegang verkregen met de regel:
 ```powershell
 $MyData =
 @{
-    AllNodes =
-    @(
-        @{
-            NodeName           = "*"
-            LogPath            = "C:\Logs"
-        },
+    AllNodes =
+    @(
+        @{
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
+        },
 
-        @{
-            NodeName = "VM-1"
-            SiteContents = "C:\Site1"
-            SiteName = "Website1"
-        },
+        @{
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
+        },
 
 
-        @{
-            NodeName = "VM-2"
-            SiteContents = "C:\Site2"
-            SiteName = "Website2"
-        }
-    );
+        @{
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
+        }
+    );
 
-    NonNodeData =
-    @{
-        ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }
+    NonNodeData =
+    @{
+        ConfigFileContents = (Get-Content C:\Template\Config.xml)
+     }
 }
 
 configuration WebsiteConfig
 {
-    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
+    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
 
-    node $AllNodes.NodeName
-    {
-        xWebsite Site
-        {
-            Name         = $Node.SiteName
-            PhysicalPath = $Node.SiteContents
-            Ensure       = "Present"
-        }
+    node $AllNodes.NodeName
+    {
+        xWebsite Site
+        {
+            Name         = $Node.SiteName
+            PhysicalPath = $Node.SiteContents
+            Ensure       = "Present"
+        }
 
-        File ConfigFile
-        {
-            DestinationPath = $Node.SiteContents + "\\config.xml"
-            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
-        }
-    }
+        File ConfigFile
+        {
+            DestinationPath = $Node.SiteContents + "\\config.xml"
+            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
+        }
+    }
 }
 ```
 

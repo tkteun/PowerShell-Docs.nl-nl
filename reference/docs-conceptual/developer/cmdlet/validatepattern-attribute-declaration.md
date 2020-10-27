@@ -1,16 +1,14 @@
 ---
-title: ValidatePattern kenmerk declaratie | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidatePattern
-- ValidatePattern attribute, described
-- ValidatePattern attribute
-ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Declaratie van het kenmerk ValidatePattern
+description: Declaratie van het kenmerk ValidatePattern
+ms.openlocfilehash: 364f63d2c52563eaefe64bcbb2bbae511bccb074
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787798"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646163"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Declaratie van het kenmerk ValidatePattern
 

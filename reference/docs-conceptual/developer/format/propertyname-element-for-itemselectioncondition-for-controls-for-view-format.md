@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor ItemSelectionCondition voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c6517b8f63e0511ce071926ac3ac39ba82e7ed21
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)
+description: Het element PropertyName voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: 9fb7a21e19338dbf59dab14291e1b02736835040
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783480"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645820"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-controls-for-view-format"></a>Het element PropertyName voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)
 

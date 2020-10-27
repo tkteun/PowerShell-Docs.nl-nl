@@ -1,16 +1,18 @@
 ---
-title: GetProcessSample05-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld GetProcessSample05
+description: Voorbeeld GetProcessSample05
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784194"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646509"
 ---
 # <a name="getprocesssample05-sample"></a>Voorbeeld GetProcessSample05
 
-In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven.
+In dit voor beeld ziet u een volledige versie van de cmdlet Get-Proc.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Het voor beeld maken met Visual Studio.
 
@@ -20,7 +22,7 @@ In dit voor beeld wordt een volledige versie van de cmdlet Get-proc weer gegeven
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution**.
+3. Selecteer in het menu **Build** de optie **Build Solution** .
 
    De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin en \bin\debug.
 

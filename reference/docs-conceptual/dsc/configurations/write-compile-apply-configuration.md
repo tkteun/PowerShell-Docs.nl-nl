@@ -2,12 +2,13 @@
 ms.date: 06/22/2020
 keywords: DSC, Power shell, configuratie, service, installatie
 title: Een configuratie schrijven, compileren en toepassen
-ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
-ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
+description: In deze oefening wordt het maken en Toep assen van een DSC-configuratie van begin tot eind door lopen. In het volgende voor beeld wordt uitgelegd hoe u een eenvoudige configuratie kunt schrijven en Toep assen
+ms.openlocfilehash: f173fe0dc6cd73e2b49bb8c44a9ee1a53eab475f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295672"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645038"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>Een configuratie schrijven, compileren en toepassen
 
@@ -69,7 +70,7 @@ De configuratie roept één [resources](../resources/resources.md)aan, de `File`
 
 ## <a name="compile-the-configuration"></a>De configuratie compileren
 
-Een DSC-configuratie die wordt toegepast op een knoop punt, moet eerst worden gecompileerd in een MOF-bestand. Het uitvoeren van de configuratie, zoals een functie, compileert één `.mof` bestand voor elk knoop punt dat door het blok wordt gedefinieerd `Node` . Als u de configuratie wilt uitvoeren, moet u de _bron_ van uw `HelloWorld.ps1` script naar het huidige bereik gaan. Zie [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)voor meer informatie.
+Een DSC-configuratie die wordt toegepast op een knoop punt, moet eerst worden gecompileerd in een MOF-bestand. Het uitvoeren van de configuratie, zoals een functie, compileert één `.mof` bestand voor elk knoop punt dat door het blok wordt gedefinieerd `Node` . Als u de configuratie wilt uitvoeren, moet u de _bron_ van uw `HelloWorld.ps1` script naar het huidige bereik gaan. Zie [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing)voor meer informatie.
 
 <!-- markdownlint-disable MD038 -->
 _Punt_ de bron `HelloWorld.ps1` van uw script door het pad te typen waar u het hebt opgeslagen, na de `. ` (punt, spatie). U kunt vervolgens uw configuratie uitvoeren door deze als een functie aan te roepen. U kunt ook de configuratie functie onder aan het script aanroepen, zodat u niet hoeft te stip-bron.

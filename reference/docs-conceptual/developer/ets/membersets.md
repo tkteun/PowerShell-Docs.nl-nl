@@ -1,14 +1,16 @@
 ---
-title: Leden sets van uitgebreid type systeem
 ms.date: 07/09/2020
-ms.openlocfilehash: 3f4e44ed7b498bb7c4a71f7b131270ed4f2ef981
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Leden sets van uitgebreid type systeem
+description: Leden sets van uitgebreid type systeem
+ms.openlocfilehash: b04d2618dc4bcf302d2e683d50c351ad3aa076ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786251"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650083"
 ---
-# <a name="ets-member-sets"></a>ETS-leden sets
+# <a name="ets-member-sets"></a>ETS-ledensets
 
 Met leden sets kunt u de leden van het **PSObject** -object in twee subsets partitioneren, zodat er door de naam van de subset naar de leden van de subsets kan worden verwezen. De twee typen subsets bevatten eigenschappen sets en leden sets. Als u bijvoorbeeld wilt zien hoe Power shell leden sets gebruikt, is er een specifieke eigenschappenset met de naam **DefaultDisplayPropertySet** die wordt gebruikt om tijdens runtime de eigenschappen te bepalen die moeten worden weer gegeven voor een bepaald **PSObject** -object.
 

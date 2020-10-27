@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: ResourceSet-methode
-ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceSet-methode
+ms.openlocfilehash: 2554ff5805d7ed9518bd283565dc879a0fdfdfd0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464045"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650696"
 ---
 # <a name="resourceset-method"></a>ResourceSet-methode
 
@@ -17,10 +18,10 @@ Roept rechtstreeks de **ingestelde** methode van een DSC-resource aan.
 
 ```mof
 uint32 ResourceSet(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean RebootRequired
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean RebootRequired
 );
 ```
 
@@ -46,7 +47,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

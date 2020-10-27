@@ -1,12 +1,14 @@
 ---
-title: Een InitialSessionState maken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een InitialSessionState maken
+description: Een InitialSessionState maken
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779723"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649424"
 ---
 # <a name="creating-an-initialsessionstate"></a>Een InitialSessionState maken
 
@@ -23,7 +25,7 @@ De methode **CreateDefault** maakt een **InitialSessionState** met alle ingebouw
 Als u de opdrachten die beschikbaar zijn in uw host-toepassing verder wilt beperken, moet u een beperkte runs Pace maken.
 Zie [een beperkte runs Pace maken](creating-a-constrained-runspace.md)voor meer informatie.
 
-De volgende code laat zien hoe u een **InitialSessionState**kunt maken, deze kunt toewijzen aan een runs Pace, opdrachten kunt toevoegen aan de pijp lijn in die runs Pace en de opdrachten aanroept.
+De volgende code laat zien hoe u een **InitialSessionState** kunt maken, deze kunt toewijzen aan een runs Pace, opdrachten kunt toevoegen aan de pijp lijn in die runs Pace en de opdrachten aanroept.
 Zie [opdrachten toevoegen en aanroepen](adding-and-invoking-commands.md)voor meer informatie over het toevoegen en aanroepen van opdrachten.
 
 ```csharp

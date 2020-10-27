@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+description: Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: b775aa8a3184aa3ebcbda17a8e3191c69d67a700
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787560"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645721"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>Het element SelectionSetName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
 

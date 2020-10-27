@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC voor Linux nxFile-resource
-ms.openlocfilehash: 37de70fedce77161c97084d5ca7eaf8e1bce45d8
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC voor Linux nxFile-resource
+ms.openlocfilehash: 6ec2d8201f3594879b781fe04e32a28cc87ba934
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463921"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644747"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC voor Linux nxFile-resource
 
@@ -39,15 +40,15 @@ nxFile <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DestinationPath |Hiermee geeft u de locatie op waar u de status van een bestand of map wilt controleren. |
-|Bronpad |Hiermee geeft u het pad op waaruit het bestand of de bron van de map moet worden gekopieerd. Dit pad mag een lokaal pad of een URL zijn `http/https/ftp` . Externe `http/https/ftp` url's worden alleen ondersteund wanneer de waarde van de eigenschap **type** **File**is. |
-|Type |Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Stel deze eigenschap in op **Directory** om aan te geven dat de resource een directory is. Stel deze in op **bestand** om aan te geven dat de resource een bestand is. De standaard waarde is **File**. |
+|Bronpad |Hiermee geeft u het pad op waaruit het bestand of de bron van de map moet worden gekopieerd. Dit pad mag een lokaal pad of een URL zijn `http/https/ftp` . Externe `http/https/ftp` url's worden alleen ondersteund wanneer de waarde van de eigenschap **type** **File** is. |
+|Type |Hiermee geeft u op of de resource die wordt geconfigureerd een map of een bestand is. Stel deze eigenschap in op **Directory** om aan te geven dat de resource een directory is. Stel deze in op **bestand** om aan te geven dat de resource een bestand is. De standaard waarde is **File** . |
 |Inhoud |Hiermee geeft u de inhoud van een bestand, zoals een bepaalde teken reeks. |
-|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Waarden zijn: **ctime**, **mtime**of **MD5**. |
-|Recurse |Hiermee wordt aangegeven of submappen zijn opgenomen. Stel deze eigenschap in op `$true` om aan te geven dat u submappen wilt opnemen. De standaardwaarde is `$false`. Deze eigenschap is alleen geldig wanneer de eigenschap **type** is ingesteld op **Directory**. |
+|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Waarden zijn: **ctime** , **mtime** of **MD5** . |
+|Recurse |Hiermee wordt aangegeven of submappen zijn opgenomen. Stel deze eigenschap in op `$true` om aan te geven dat u submappen wilt opnemen. De standaardwaarde is `$false`. Deze eigenschap is alleen geldig wanneer de eigenschap **type** is ingesteld op **Directory** . |
 |Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaardwaarde is `$false`. |
 |Koppelingen |Hiermee geeft u het gewenste gedrag voor symbolische koppelingen op. Stel deze eigenschap in op **volgen** van symbolische koppelingen volgen en reageren op het doel van de koppelingen. Kopieer bijvoorbeeld het bestand in plaats van de koppeling. Stel deze eigenschap in op **beheren** om op de koppeling te reageren. Kopieer bijvoorbeeld de koppeling zelf. Stel deze eigenschap in op **negeren** om symbolische koppelingen te negeren. |
 |Groep |De naam van de **groep** die machtigingen voor het bestand of de map moet hebben. |
-|Modus |Hiermee geeft u de gewenste machtigingen voor de resource op in een octale of symbolische notatie. Bijvoorbeeld **777** of **rwxrwxrwx**. Als u de symbolische notatie gebruikt, geeft u niet het eerste teken op dat map of bestand aangeeft. |
+|Modus |Hiermee geeft u de gewenste machtigingen voor de resource op in een octale of symbolische notatie. Bijvoorbeeld **777** of **rwxrwxrwx** . Als u de symbolische notatie gebruikt, geeft u niet het eerste teken op dat map of bestand aangeeft. |
 |Eigenaar |De naam van de groep die eigenaar is van het bestand of de map. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
@@ -55,11 +56,11 @@ nxFile <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of het bestand al bestaat. Stel deze eigenschap in op **presen teren** om te controleren of het bestand bestaat. Stel deze in op **afwezig** om te controleren of het bestand niet bestaat. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of het bestand al bestaat. Stel deze eigenschap in op **presen teren** om te controleren of het bestand bestaat. Stel deze in op **afwezig** om te controleren of het bestand niet bestaat. De standaard waarde is **aanwezig** . |
 
 ## <a name="additional-information"></a>Aanvullende informatie
 
-Linux en Windows gebruiken standaard andere regel-afbreek tekens in tekst bestanden. Dit kan leiden tot onverwachte resultaten bij het configureren van een aantal bestanden op een Linux-computer met **nxFile**. Er zijn meerdere manieren om de inhoud van een Linux-bestand te beheren, terwijl er problemen ontstaan die worden veroorzaakt door onverwachte regel einde tekens:
+Linux en Windows gebruiken standaard andere regel-afbreek tekens in tekst bestanden. Dit kan leiden tot onverwachte resultaten bij het configureren van een aantal bestanden op een Linux-computer met **nxFile** . Er zijn meerdere manieren om de inhoud van een Linux-bestand te beheren, terwijl er problemen ontstaan die worden veroorzaakt door onverwachte regel einde tekens:
 
 1. Het bestand kopiëren van een externe bron (http, https of FTP)
 

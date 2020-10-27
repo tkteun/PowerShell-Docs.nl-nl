@@ -1,12 +1,14 @@
 ---
-title: Label element voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 07b4d037472a9dd2329e94576ec10f5b82f46b34
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Label voor GroupBy (opmaak)
+description: Het element Label voor GroupBy (opmaak)
+ms.openlocfilehash: ff4b0dec01bb5b472b1813540661791b91568eed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785775"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649789"
 ---
 # <a name="label-element-for-groupby-format"></a>Het element Label voor GroupBy (opmaak)
 

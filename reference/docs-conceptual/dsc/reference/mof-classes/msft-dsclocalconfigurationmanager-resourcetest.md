@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: ResourceTest-methode
-ms.openlocfilehash: 7ef65227342091cb2a5063aaf95a2780d217f85a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceTest-methode
+ms.openlocfilehash: cbac53ea96a59ec92fa840f75cd264a3125b965a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463802"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650670"
 ---
 # <a name="resourcetest-method"></a>ResourceTest-methode
 
@@ -17,10 +18,10 @@ Roept rechtstreeks de **test** methode van een DSC-resource aan.
 
 ```mof
 uint32 ResourceTest(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean InDesiredState
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean InDesiredState
 );
 ```
 
@@ -30,7 +31,7 @@ uint32 ResourceTest(
 
 **Module naam** \[ in \] de naam van de module die de resource bevat die moet worden aangeroepen.
 
-***resource Property** \[ in \] geeft de naam van de bron eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
+**_resource Property_* \[ in \] geeft de naam van de bron eigenschap en de waarde ervan in een hash-tabel op, respectievelijk sleutel en waarde. Gebruik de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) om de bron eigenschappen en hun typen te detecteren.
 
 *InDesiredState* *  InDesiredState \[ \]Deze eigenschap wordt ingesteld op **True** als het doel knooppunt de gewenste status heeft.
 
@@ -46,7 +47,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

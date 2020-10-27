@@ -1,12 +1,14 @@
 ---
-title: Een beperkte runs Pace maken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een beperkte runspace maken
+description: Een beperkte runspace maken
+ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779808"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651164"
 ---
 # <a name="creating-a-constrained-runspace"></a>Een beperkte runspace maken
 
@@ -102,7 +104,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>Opdrachten privé maken
 
- U kunt ook een persoonlijke opdracht maken door de eigenschap [System. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) in te stellen op [System. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**. De hosttoepassing en andere opdrachten kunnen deze opdracht aanroepen, maar de gebruiker van de toepassing kan niet. In het volgende voor beeld is de opdracht [Get-Child item](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privé.
+ U kunt ook een persoonlijke opdracht maken door de eigenschap [System. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) in te stellen op [System. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private** . De hosttoepassing en andere opdrachten kunnen deze opdracht aanroepen, maar de gebruiker van de toepassing kan niet. In het volgende voor beeld is de opdracht [Get-Child item](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privé.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

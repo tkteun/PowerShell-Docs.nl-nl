@@ -1,12 +1,14 @@
 ---
-title: Informatie over een Windows Power shell-module | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Inzicht in een Windows PowerShell-module
+description: Inzicht in een Windows PowerShell-module
+ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779230"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651151"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Inzicht in een Windows PowerShell-module
 
@@ -84,7 +86,7 @@ Ongeacht het pad van de map wordt de *basis* van de module (erft type) genoemd, 
 
 - Dynamische modules die door de cmdlet worden gemaakt, `New-Module` kunnen worden benoemd met behulp `Name` van de para meter van de cmdlet.
 
-- Modules die worden geïmporteerd uit assembly-objecten met de ** `Import-Module` -Assembly-** opdracht worden benoemd volgens de volgende syntaxis: `"dynamic_code_module_" + assembly.GetName()` .
+- Modules die worden geïmporteerd uit assembly-objecten met de **`Import-Module` -Assembly-** opdracht worden benoemd volgens de volgende syntaxis: `"dynamic_code_module_" + assembly.GetName()` .
 
   Zie [een Power shell-module installeren](./installing-a-powershell-module.md) en het installatiepad voor [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md)voor meer informatie.
 

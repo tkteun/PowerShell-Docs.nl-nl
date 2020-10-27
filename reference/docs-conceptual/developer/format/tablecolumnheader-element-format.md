@@ -1,12 +1,14 @@
 ---
-title: TableColumnHeader-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6296aea5c567663b1c3c0a2cf0a57b21aa5394de
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TableColumnHeader (opmaak)
+description: Het element TableColumnHeader (opmaak)
+ms.openlocfilehash: 30368512875b7c5c4cf3c686f3d09540dea1bd26
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785180"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651532"
 ---
 # <a name="tablecolumnheader-element-format"></a>Het element TableColumnHeader (opmaak)
 

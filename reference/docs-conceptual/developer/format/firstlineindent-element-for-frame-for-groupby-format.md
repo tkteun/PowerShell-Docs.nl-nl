@@ -1,12 +1,14 @@
 ---
-title: FirstLineIndent-element voor frame voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: def5b4e9ca98a15edbb36675ca506e886de567dc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FirstLineIndent voor Frame voor GroupBy (opmaak)
+description: Het element FirstLineIndent voor Frame voor GroupBy (opmaak)
+ms.openlocfilehash: 391a6f338e264fd9fdd1948ded74bf022cb114d1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781661"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645789"
 ---
 # <a name="firstlineindent-element-for-frame-for-groupby-format"></a>Het element FirstLineIndent voor Frame voor GroupBy (opmaak)
 

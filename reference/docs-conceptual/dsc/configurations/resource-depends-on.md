@@ -2,16 +2,17 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Resourceafhankelijkheden met behulp van DependsOn
-ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Naarmate uw configuratie groter en complexer wordt, kunt u de- `DependsOn` sleutel gebruiken om de toegepaste volg orde van uw resources te wijzigen door op te geven dat een resource afhankelijk is van een andere bron.
+ms.openlocfilehash: 18f19a3606834ede0737213930e6af0e251225ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942312"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645102"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Resourceafhankelijkheden met behulp van DependsOn
 
-Wanneer u [configuraties](configurations.md)schrijft, voegt u [resource blokken](../resources/resources.md) toe om aspecten van een doel knooppunt te configureren. Als u nog steeds resource blokken toevoegt, kunnen uw configuraties zeer groot en lastig groeien om te beheren. Een dergelijke uitdaging is de toegepaste volg orde van uw resource blokken. Normaal gesp roken worden resources toegepast in de volg orde waarin ze in de configuratie zijn gedefinieerd. Naarmate uw configuratie groter en complexer wordt, kunt u de `DependsOn` -sleutel gebruiken om de toegepaste volg orde van uw resources te wijzigen door op te geven dat een resource afhankelijk is van een andere bron.
+Wanneer u [configuraties](configurations.md)schrijft, voegt u [resource blokken](../resources/resources.md) toe om aspecten van een doel knooppunt te configureren. Als u nog steeds resource blokken toevoegt, kunnen uw configuraties zeer groot en lastig groeien om te beheren. Een dergelijke uitdaging is de toegepaste volg orde van uw resource blokken. Normaal gesp roken worden resources toegepast in de volg orde waarin ze in de configuratie zijn gedefinieerd. Naarmate uw configuratie groter en complexer wordt, kunt u de- `DependsOn` sleutel gebruiken om de toegepaste volg orde van uw resources te wijzigen door op te geven dat een resource afhankelijk is van een andere bron.
 
 De `DependsOn` sleutel kan worden gebruikt in elk resource blok. Deze is gedefinieerd met hetzelfde sleutel/waarde-mechanisme als andere bron sleutels. De `DependsOn` sleutel verwacht een matrix met teken reeksen met de volgende syntaxis.
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: MSFT_DSCLocalConfigurationManager-klasse
-ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: MSFT_DSCLocalConfigurationManager-klasse
+ms.openlocfilehash: 31112c7d15884699171ec732ac20b6960b0858a9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464278"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644815"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-klasse
 
@@ -60,4 +61,4 @@ De klasse **MSFT_DSCLocalConfigurationManager** heeft deze methoden.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration

@@ -1,12 +1,14 @@
 ---
-title: CustomItem-element voor CustomEntry voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e8086c5330b6644f83316ad4ae33c33ba40d9eee
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomItem voor CustomEntry voor GroupBy (opmaak)
+description: Het element CustomItem voor CustomEntry voor GroupBy (opmaak)
+ms.openlocfilehash: 5db23ad4dad5bd66ea64b9c6e91b8224a4aa4eca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783718"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645991"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>Het element CustomItem voor CustomEntry voor GroupBy (opmaak)
 

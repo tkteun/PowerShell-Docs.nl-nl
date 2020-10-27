@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC-logboek resource
-ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-logboek resource
+ms.openlocfilehash: c5d965924ac8cc9bb68cf7b4e17c4e521a20548f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464023"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650433"
 ---
 # <a name="dsc-log-resource"></a>DSC-logboek resource
 
@@ -50,7 +51,7 @@ Log [string] #ResourceName
 In het volgende voor beeld ziet u hoe u een bericht opneemt in het gebeurtenis logboek micro soft-Windows-desired state Configuration/analytic.
 
 > [!NOTE]
-> Als u [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) uitvoert met deze bron geconfigureerd, wordt er altijd **$False**geretourneerd.
+> Als u [test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration) uitvoert met deze bron geconfigureerd, wordt er altijd **$False** geretourneerd.
 
 ```powershell
 Configuration logResourceTest

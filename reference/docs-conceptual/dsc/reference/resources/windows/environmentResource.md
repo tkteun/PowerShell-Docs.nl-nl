@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC-omgevings resource
-ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-omgevings resource
+ms.openlocfilehash: c114aef76ef8308fa2805c18ab885d67b44d2b2b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464414"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650543"
 ---
 # <a name="dsc-environment-resource"></a>DSC-omgevings resource
 
@@ -52,7 +53,7 @@ Environment [string] #ResourceName
 
 ## <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld wordt ervoor gezorgd dat TestEnvironmentVariable aanwezig is en de waarde _TestValue_heeft. Als deze niet aanwezig is, wordt deze gemaakt.
+In het volgende voor beeld wordt ervoor gezorgd dat TestEnvironmentVariable aanwezig is en de waarde _TestValue_ heeft. Als deze niet aanwezig is, wordt deze gemaakt.
 
 ```powershell
 Environment EnvironmentExample

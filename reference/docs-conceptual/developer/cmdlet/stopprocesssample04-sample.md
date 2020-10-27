@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample04-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld StopProcessSample04
+description: Voorbeeld StopProcessSample04
+ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786421"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650131"
 ---
 # <a name="stopprocesssample04-sample"></a>Voorbeeld StopProcessSample04
 
@@ -18,7 +20,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die parameter sets declareert
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution**.
+3. Selecteer in het menu **Build** de optie **Build Solution** .
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
@@ -60,7 +62,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-De volgende code toont een implementatie van de cmdlet stop-proc die parameter sets declareert, geeft de standaard parameterset op en accepteert een invoer object.
+De volgende code toont een implementatie van de cmdlet Stop-Proc die parameter sets declareert, geeft de standaard parameterset op en kan een invoer object accepteren.
 
 In dit voor beeld ziet u het invoer object, hoe u parameter sets declareert en hoe u de standaard parameterset opgeeft die moet worden gebruikt.
 

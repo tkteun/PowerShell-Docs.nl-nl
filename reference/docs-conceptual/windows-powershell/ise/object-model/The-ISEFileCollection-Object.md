@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEFileCollection-object
-ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het ISEFileCollection-object is een verzameling ISEFile-objecten.
+ms.openlocfilehash: 2feef1200c611d5181bcbc55d5464a0bd390084e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810664"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646747"
 ---
 # <a name="the-isefilecollection-object"></a>Het ISEFileCollection-object
 
@@ -21,7 +21,7 @@ Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Maakt en retourneert een nieuw naamloos bestand en voegt het toe aan de verzameling. De eigenschap **IsUntitled** van het zojuist gemaakte bestand is `$true` .
 
-** \[ FullPath \] ** -optionele teken reeks het volledig opgegeven pad van het bestand. Er wordt een uitzonde ring gegenereerd als u de para meter **FullPath** en een relatief pad opneemt, of als u een bestands naam gebruikt in plaats van het volledige pad.
+**\[ FullPath \]** -optionele teken reeks het volledig opgegeven pad van het bestand. Er wordt een uitzonde ring gegenereerd als u de para meter **FullPath** en een relatief pad opneemt, of als u een bestands naam gebruikt in plaats van het volledige pad.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ Hiermee verwijdert u een opgegeven bestand van het huidige Power shell-tabblad.
 
 **File** -teken reeks het ISEFile-bestand dat u wilt verwijderen uit de verzameling. Als het bestand niet is opgeslagen, genereert deze methode een uitzonde ring. Gebruik de para meter **forceren** om het verwijderen van een niet-opgeslagen bestand af te dwingen.
 
-** \[ Force \] ** -optionele Booleaanse waarde indien ingesteld op `$true` , geeft toestemming voor het verwijderen van het bestand, zelfs als het niet is opgeslagen na het laatste gebruik. De standaardwaarde is `$false`.
+**\[ Force \]** -optionele Booleaanse waarde indien ingesteld op `$true` , geeft toestemming voor het verwijderen van het bestand, zelfs als het niet is opgeslagen na het laatste gebruik. De standaardwaarde is `$false`.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -52,7 +52,7 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile \( selectedFile\)
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile \( selectedFile \)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 

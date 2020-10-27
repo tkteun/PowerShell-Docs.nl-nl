@@ -1,12 +1,14 @@
 ---
-title: SelectionCondition-element voor EntrySelectedBy voor TableControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4a829f9daef22c4b3fd6b21dfb3af2f8539bdeb3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
+description: Het element SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
+ms.openlocfilehash: 22f304615c6433ffb67f3b4046b645d0c37be8a4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780284"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645769"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
 

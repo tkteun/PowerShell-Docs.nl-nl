@@ -2,19 +2,20 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een pull-client instellen met behulp van configuratie namen in Power shell 5,0 en hoger
-ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In het artikel wordt uitgelegd hoe u een pull-client instelt met behulp van configuratie namen in Power shell 5,0 en hoger
+ms.openlocfilehash: db2b08605dd8bc7e48d9d5153861ce9b36118e21
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941717"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644911"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Een pull-client instellen met behulp van configuratie namen in Power shell 5,0 en hoger
 
 > Van toepassing op: Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
+> De pull-server (Windows *-functie DSC-service* ) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
 Voordat u een pull-client instelt, moet u een pull-server instellen. Deze volg orde is niet vereist, maar helpt bij het oplossen van problemen en helpt u ervoor te zorgen dat de registratie is geslaagd. U kunt de volgende hand leidingen gebruiken om een pull-server in te stellen:
 
@@ -24,12 +25,11 @@ Voordat u een pull-client instelt, moet u een pull-server instellen. Deze volg o
 Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configuraties, resources en zelfs het rapporteren van de status ervan. In de volgende secties ziet u hoe u een pull-client kunt configureren met een SMB-share of een HTTP DSC-pull-server. Wanneer de LCM van het knoop punt wordt vernieuwd, neemt het contact op met de geconfigureerde locatie voor het downloaden van toegewezen configuraties. Als er vereiste bronnen niet aanwezig zijn op het knoop punt, worden deze automatisch gedownload vanaf de geconfigureerde locatie. Als het knoop punt is geconfigureerd met een [rapport server](reportServer.md), wordt de status van de bewerking gerapporteerd.
 
 > [!NOTE]
-> Dit onderwerp is van toepassing op Power shell 5,0.
-> Zie [een pull-client instellen met configuratie-ID in Power shell 4,0](pullClientConfigID4.md) voor informatie over het instellen van een pull-client in power Shell 4,0
+> Dit onderwerp is van toepassing op Power shell 5,0. Zie [een pull-client instellen met configuratie-ID in Power shell 4,0](pullClientConfigID4.md) voor informatie over het instellen van een pull-client in power Shell 4,0
 
 ## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
-Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigName** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie `localhost.meta.mof`aangeduid met de naam.
+Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigName** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie aangeduid met de naam `localhost.meta.mof` .
 
 Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigurationManager** aan, waarbij het **pad** is ingesteld op de locatie van het MOF-bestand met de meta configuratie. Bijvoorbeeld:
 
@@ -39,7 +39,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-name"></a>Configuratie naam
 
-In de onderstaande voor beelden wordt de eigenschap **configuratiepad** van de LCM ingesteld op de naam van een eerder gecompileerde configuratie die is gemaakt voor dit doel. De **configuratie** naam is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet `<ConfigurationName>.mof`een naam hebben, in dit geval ' ClientConfig. mof '. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
+In de onderstaande voor beelden wordt de eigenschap **configuratiepad** van de LCM ingesteld op de naam van een eerder gecompileerde configuratie die is gemaakt voor dit doel. De **configuratie** naam is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet een naam `<ConfigurationName>.mof` hebben, in dit geval ' ClientConfig. mof '. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Een pull-client instellen om configuraties te downloaden
 
@@ -49,14 +49,9 @@ Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configu
 
 - In het script definieert de pull-server in het **ConfigurationRepositoryWeb** -blok. De eigenschap **ServerURL** geeft u het eind punt voor de pull-server op.
 
-- De eigenschap **RegistrationKey** is een gedeelde sleutel tussen alle client knooppunten voor een pull-server en die pull-server. Dezelfde waarde wordt opgeslagen in een bestand op de pull-server.
-  > [!NOTE]
-  > Registratie sleutels werken alleen met **Web** -pull-servers. U moet **ConfigurationID** nog steeds gebruiken met een **SMB** -pull-server.
-  > Zie [een pull-client instellen met behulp van de configuratie-ID](pullClientConfigId.md) voor meer informatie over het configureren van een pull-server met behulp van **ConfigurationID**
+- De eigenschap **RegistrationKey** is een gedeelde sleutel tussen alle client knooppunten voor een pull-server en die pull-server. Dezelfde waarde wordt opgeslagen in een bestand op de pull-server. > [!NOTE] > registratie sleutels werken alleen met **Web** -pull-servers. U moet **ConfigurationID** nog steeds gebruiken met een **SMB** -pull-server. Zie [een pull-client instellen met behulp van de configuratie-ID](pullClientConfigId.md) > voor meer informatie over het configureren van een pull-server met behulp van **ConfigurationID**
 
-- De eigenschap **ConfigurationNames** is een matrix die de namen specificeert van de configuraties die zijn bedoeld voor het client knooppunt.
-  >**Opmerking:** Als u meer dan één waarde in de **ConfigurationNames**opgeeft, moet u ook **PartialConfiguration** -blokken in uw configuratie opgeven.
-  >Zie voor meer informatie over gedeeltelijke configuraties de gedeeltelijke configuratie van de [desired state Configuration van Power shell](partialConfigs.md).
+- De eigenschap **ConfigurationNames** is een matrix die de namen specificeert van de configuraties die zijn bedoeld voor het client knooppunt. >**Opmerking:** Als u meer dan één waarde in de **ConfigurationNames** opgeeft, moet u ook **PartialConfiguration** -blokken in uw configuratie opgeven. Zie voor meer informatie over gedeeltelijke configuraties de gedeeltelijke configuratie van de [desired state Configuration van Power shell](partialConfigs.md). >
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -153,5 +148,5 @@ PullClientConfigNames
 
 ## <a name="see-also"></a>Zie ook
 
-* [Instellen van een pull-client met configuratie-ID](PullClientConfigNames.md)
-* [Een DSC Web-pull-server instellen](pullServer.md)
+- [Instellen van een pull-client met configuratie-ID](PullClientConfigNames.md)
+- [Een DSC Web-pull-server instellen](pullServer.md)

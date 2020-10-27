@@ -1,16 +1,18 @@
 ---
-title: Externe runspaces maken | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 2b3c76eeae70de9ef116851313953bba1a1d890f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Externe runspaces maken
+description: Externe runspaces maken
+ms.openlocfilehash: 4a2af4094ff2503fc12ee460d49565f035f0e4fe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779587"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649364"
 ---
 # <a name="creating-remote-runspaces"></a>Externe runspaces maken
 
-Power shell-opdrachten met de para meter **ComputerName** kunnen worden uitgevoerd op elke computer waarop Power shell wordt uitgevoerd. Om opdrachten uit te voeren die geen para meter **ComputerName** hebben, kunt u WS-Management gebruiken om een runs Pace te configureren die verbinding maakt met een opgegeven computer en om opdrachten op die computer uit te voeren.
+Power shell-opdrachten met de para meter **ComputerName** kunnen worden uitgevoerd op elke computer waarop Power shell wordt uitgevoerd. Om opdrachten uit te voeren die geen para meter **ComputerName** hebben, kunt u WS-Management gebruiken om een runs Pace te configureren die verbinding maakt met een opgegeven computer en om opdrachten uit te voeren op die computer.
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>Een WSManConnection gebruiken om een externe runs Pace te maken
 

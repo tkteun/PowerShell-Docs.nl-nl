@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element voor SelectionCondition voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 62f186be9e4b1dd5a297add0ce82011bc1ccdcd1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionSetName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+description: Het element SelectionSetName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 4177aace5a6a9374900e7339167c69b531c1e2e7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785231"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651656"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format"></a>Het element SelectionSetName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
 

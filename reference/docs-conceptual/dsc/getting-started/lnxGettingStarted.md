@@ -2,16 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Linux
-ms.openlocfilehash: 64657dda04fa2df97fa2ad7c7a5c2d15b66a270a
-ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
+description: In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Linux.
+ms.openlocfilehash: 826707654a297306c39d4dfcfd3941f56b7cf91d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86301332"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651120"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met de desired state Configuration (DSC) voor Linux
 
-In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Linux. Zie [aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)(Engelstalig) voor algemene informatie over DSC.
+In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Linux.
+Zie [aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)(Engelstalig) voor algemene informatie over DSC.
 
 ## <a name="supported-linux-operation-system-versions"></a>Ondersteunde versies van Linux-besturings systeem
 
@@ -43,7 +45,7 @@ Voer de volgende opdracht uit om OMI te installeren op een CentOS 7 x64-systeem.
 
 ### <a name="installing-dsc"></a>DSC installeren
 
-DSC voor Linux kan [hier](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294)worden gedownload.
+DSC voor Linux kan worden gedownload via de [Power shell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294) -opslag plaats in de opslag plaats.
 
 Als u DSC wilt installeren, installeert u het pakket dat geschikt is voor uw Linux-systeem (. rpm of. deb) en OpenSSL-versie (ssl_098 of ssl_100) en architectuur (x64/x86). RPM-pakketten zijn geschikt voor CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server en Oracle Linux. DEB-pakketten zijn geschikt voor Debian GNU/Linux en Ubuntu Server. De ssl_098-pakketten zijn geschikt voor computers waarop OpenSSL 0.9.8 is geïnstalleerd terwijl de ssl_100 pakketten geschikt zijn voor computers waarop OpenSSL 1,0 is geïnstalleerd.
 
@@ -62,7 +64,7 @@ In de volgende secties wordt uitgelegd hoe u DSC-configuraties op Linux-computer
 
 Het sleutel woord Windows Power shell-configuratie wordt gebruikt voor het maken van een configuratie voor Linux-computers, net als bij Windows-computers. De volgende stappen beschrijven het maken van een configuratie document voor een Linux-computer met behulp van Windows Power shell.
 
-1. Importeer de NX-module. De NX Windows Power shell-module bevat het schema voor ingebouwde resources voor DSC voor Linux en moet worden geïnstalleerd op uw lokale computer en worden geïmporteerd in de configuratie.
+1. Importeer de NX-module. De NX Windows Power shell-module bevat het schema voor Built-In resources voor DSC voor Linux, en moet op uw lokale computer zijn geïnstalleerd en in de configuratie worden geïmporteerd.
 
    - Als u de NX-module wilt installeren, kopieert u de map van de NX-module naar ofwel `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` of `$PSHOME\Modules` . De NX-module is opgenomen in het installatie pakket voor DSC voor Linux. Als u de NX-module in uw configuratie wilt importeren, gebruikt u de `Import-DSCResource` opdracht:
 
@@ -83,7 +85,7 @@ Het sleutel woord Windows Power shell-configuratie wordt gebruikt voor het maken
 
         Node  "linuxhost.contoso.com"
         {
-            nxFile ExampleFile 
+            nxFile ExampleFile
             {
                 DestinationPath = "/tmp/example"
                 Contents = "hello world `n"
@@ -98,7 +100,7 @@ Het sleutel woord Windows Power shell-configuratie wordt gebruikt voor het maken
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>De configuratie naar de Linux-computer pushen
 
-Configuratie documenten (MOF-bestanden) kunnen worden gepusht naar de Linux-computer met behulp van de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) . Als u deze cmdlet wilt gebruiken, samen met de cmdlets [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)of [test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) , op afstand naar een Linux-computer, moet u een CIMSession gebruiken. De cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) wordt gebruikt om een CimSession te maken op de Linux-computer.
+Configuratie documenten (MOF-bestanden) kunnen worden gepusht naar de Linux-computer met behulp van de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) . Als u deze cmdlet wilt gebruiken, samen met de cmdlets [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)of [test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) , op afstand naar een Linux-computer, moet u een CIMSession gebruiken. De cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) wordt gebruikt om een **CimSession** te maken op de Linux-computer.
 
 De volgende code laat zien hoe u een CIMSession maakt voor DSC voor Linux.
 
@@ -115,10 +117,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 ```
 
 > [!NOTE]
-> De gebruikers referenties voor de push-modus moeten de hoofd gebruiker zijn op de Linux-computer.
-> Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, de `New-CimSession` moet worden gebruikt met de para meter – UseSSL die is ingesteld op $True.
-> Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in het bestand: `/etc/opt/omi/conf/omiserver.conf` met de eigenschappen: pemfile en keyfile.
-> Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de CimSession-opties: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> De gebruikers referenties voor de push-modus moeten de hoofd gebruiker zijn op de Linux-computer. Alleen SSL/TLS-verbindingen worden ondersteund voor DSC voor Linux, de `New-CimSession` moet worden gebruikt met de para meter – UseSSL die is ingesteld op $True. Het SSL-certificaat dat wordt gebruikt door OMI (voor DSC) is opgegeven in het bestand: `/etc/opt/omi/conf/omiserver.conf` met de eigenschappen: pemfile en keyfile. Als dit certificaat niet wordt vertrouwd door de Windows-computer waarop u de cmdlet [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) uitvoert, kunt u certificaat validatie negeren met de CimSession-opties: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Voer de volgende opdracht uit om de DSC-configuratie naar het Linux-knoop punt te pushen.
 
@@ -134,45 +133,45 @@ DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale L
 
 - GetDscConfiguration.py
 
-Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power shell cmdlet `Get-DscConfiguration` .
+  Retourneert de huidige configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet Windows Power shell cmdlet `Get-DscConfiguration` .
 
-`# sudo ./GetDscConfiguration.py`
+  `# sudo ./GetDscConfiguration.py`
 
 - GetDscLocalConfigurationManager.py
 
-Retourneert de huidige meta-configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) cmdlet.
+  Retourneert de huidige meta-configuratie die op de computer is toegepast. Vergelijkbaar met de cmdlet [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) cmdlet.
 
-`# sudo ./GetDscLocalConfigurationManager.py`
+  `# sudo ./GetDscLocalConfigurationManager.py`
 
 - InstallModule.py
 
-Hiermee wordt een aangepaste DSC-resource module geïnstalleerd. Vereist het pad naar een zip-bestand met de module gedeelde object bibliotheek en schema-MOF-bestanden.
+  Hiermee wordt een aangepaste DSC-resource module geïnstalleerd. Vereist het pad naar een zip-bestand met de module gedeelde object bibliotheek en schema-MOF-bestanden.
 
-`# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
+ `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
 - RemoveModule.py
 
-Hiermee verwijdert u een aangepaste DSC-resource module. Vereist de naam van de module die u wilt verwijderen.
+  Hiermee verwijdert u een aangepaste DSC-resource module. Vereist de naam van de module die u wilt verwijderen.
 
-`# sudo ./RemoveModule.py cnx_Resource`
+  `# sudo ./RemoveModule.py cnx_Resource`
 
 - StartDscLocalConfigurationManager.py
 
-Past een MOF-configuratie bestand op de computer toe. Vergelijkbaar met de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) . Vereist het pad naar de configuratie-MOF die moet worden toegepast.
+  Past een MOF-configuratie bestand op de computer toe. Vergelijkbaar met de cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) . Vereist het pad naar de configuratie-MOF die moet worden toegepast.
 
-`# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
+  `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
 - SetDscLocalConfigurationManager.py
 
-Past een MOF-bestand van de meta configuratie toe op de computer. Vergelijkbaar met de cmdlet [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) . Vereist het pad naar de meta configuratie-MOF die moet worden toegepast.
+  Past een MOF-bestand van de meta configuratie toe op de computer. Vergelijkbaar met de cmdlet [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) . Vereist het pad naar de meta configuratie-MOF die moet worden toegepast.
 
-`# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
+  `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
 ## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>Power shell desired state Configuration voor Linux-logboek bestanden
 
 De volgende logboek bestanden worden gegenereerd voor DSC voor Linux-berichten.
 
-|Logboekbestand|Directory|Beschrijving|
-|---|---|---|
-|**omiserver. log**|`/var/opt/omi/log`|Berichten met betrekking tot de werking van de OMI CIM-server.|
-|**DSC. log**|`/var/opt/omi/log`|Berichten met betrekking tot de werking van de lokale Configuration Manager (LCM) en DSC-bron bewerkingen.|
+|     Logboekbestand      |     Directory      |                                               Beschrijving                                                |
+| ----------------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| **omiserver. log** | `/var/opt/omi/log` | Berichten met betrekking tot de werking van de OMI CIM-server.                                                |
+| **DSC. log**       | `/var/opt/omi/log` | Berichten met betrekking tot de werking van de lokale Configuration Manager (LCM) en DSC-bron bewerkingen. |

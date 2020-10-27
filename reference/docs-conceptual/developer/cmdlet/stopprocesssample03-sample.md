@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample03-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld StopProcessSample03
+description: Voorbeeld StopProcessSample03
+ms.openlocfilehash: b633161dd7a329dffa076d828862ee39fb256429
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787832"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650166"
 ---
 # <a name="stopprocesssample03-sample"></a>Voorbeeld StopProcessSample03
 
@@ -18,7 +20,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft waarvan de para meters aliass
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution**.
+3. Selecteer in het menu **Build** de optie **Build Solution** .
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 

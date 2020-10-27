@@ -1,12 +1,14 @@
 ---
-title: TypeName-element voor EntrySelectedBy voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5e7b73db5aa597d96141454008c5c58b1827df24
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TypeName voor EntrySelectedBy voor ListControl (opmaak)
+description: Het element TypeName voor EntrySelectedBy voor ListControl (opmaak)
+ms.openlocfilehash: 6fc5a2385fde3140abbc984e3da6a4dda483b2a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780216"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645662"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>Het element TypeName voor EntrySelectedBy voor ListControl (opmaak)
 

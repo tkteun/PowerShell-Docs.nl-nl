@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: GetConfigurationResultOutput-methode
-ms.openlocfilehash: 9c81082c28b2ffcc329264d29784782deaa9779d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: GetConfigurationResultOutput-methode
+ms.openlocfilehash: 7c885109b3078189b7ac653733a5fb24db66312e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464074"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644705"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput-methode
 
@@ -17,9 +18,9 @@ Hiermee wordt de uitvoer van de configuratie agent opgehaald die is gekoppeld aa
 
 ```mof
 uint32 GetConfigurationResultOutput(
-  [in]  string                      jobId,
-  [in]  uint8                       resumeOutputBookmark[],
-  [out] MSFT_DSCConfigurationOutput output[]
+  [in]  string                      jobId,
+  [in]  uint8                       resumeOutputBookmark[],
+  [out] MSFT_DSCConfigurationOutput output[]
 );
 ```
 
@@ -43,7 +44,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 
